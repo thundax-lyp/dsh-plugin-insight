@@ -13,7 +13,9 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
+| [API Relay Audit](#plugin-1195794651-root) | 在本地检查 AI API 中转行为，生成逐步证据和风险报告，并提供 DSH 命令入口。 | [Q04](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q04) 建议有技术能力的线路使用者先做连通性检查，再在不含真实业务秘密的有限请求上试用，逐项读原因而非只看评级。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | 适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。 |
+| [Browser4](#plugin-124882400-root) | 以 Rust CLI、MCP 与 Kotlin/CDP 后端提供浏览器交互、确定性提取和批量网页自动化。 | 建议有自动化经验者在公开测试站用CLI限定试用，先确定性只读提取并与脚本对照；会话错位或重复副作用立即停并回原流程。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | 有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。 |
 | [DeepSeek Harness Tauri Desktop](#plugin-1333718792-root) | 提供DSH桌面界面、托管运行时和内核、插件与档案管理、数据迁移及移动远程访问。 | [Q04](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q04)、[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)建议有备份的独立profile用户先固定推荐内核，以非关键会话试托管启动与回退。 |
@@ -103,6 +105,8 @@
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
 | [EchoBird](#plugin-1158472225-root) | 桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。 | [Q04](../../plugins/edison7009--echobird/INSIGHT.md#research-q04)、[Q05](../../plugins/edison7009--echobird/INSIGHT.md#research-q05)建议能恢复配置的用户只用少量已知provider在非关键任务试路由，先核对协议和有状态续接。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
+| [HOL Guard](#plugin-1194748811-root) | 为Agent动作提供本地策略审查、审批与证据记录，并提供插件和依赖扫描工具。 | 有策略维护能力的团队可在单一受支持宿主副本试用，先核对前置覆盖、resident失效和误报恢复；若无法承担持续审批与兼容维护，先保留宿主原有确认及定向扫描，不扩大部署。 |
+| [mem9](#plugin-1175756746-root) | 为多 Agent 和多机器提供服务端持久记忆、混合检索及多运行时接入。 | 建议有共享需求的团队限定隔离空间、先关闭自动ingest，用少量人工确认非敏感事实试用读写更正删除；隔离或传播不明即退回项目文档。 |
 | [Mirage](#plugin-1231135337-root) | 通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。 | 构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。 | 需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。 |
 | [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。 |
@@ -129,6 +133,22 @@
 
 [查看完整分析](../../plugins/1708994293-hue--dsh-auto-update/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1195794651-root"></a>
+
+## [API Relay Audit](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md)
+
+[![GitHub ★ 895](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=895&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/toby-bridges/api-relay-audit) [![npm 30d 281](https://img.shields.io/static/v1?label=npm+30d&message=281&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit)
+
+> **用途**：使用第三方中转的开发者可在发送敏感任务前生成可复查报告，但不能据此认定线路安全。
+
+> **亮点**：[Q01](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q01) 与 [Q02](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q02) 支持的已有贡献是把多类中转探针组织为保留未知项的本地报告，再用宿主凭据和当前线路减少手工接线。检测语义来自项目已有 Python 实现，DSH 适配不另创检测算法；没有同条件准确率或节时证据。
+
+> **思考**：[Q03](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q03) 显示 MEDIUM 同时表示未知和异常，SSE 异常也能升为 HIGH。报告保留原因值得肯定，但网络和协议问题不能直接归因为恶意中转，评级不能代替生产信任决定。
+
+> **建议**：[Q05](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md#research-q05) 推导出未验证的“完成覆盖与异常证据分列”假设。用透明、故障和篡改代理同样本盲评归因；正确率不改善或审阅负担上升则停止。
+
+[查看完整分析](../../plugins/toby-bridges--api-relay-audit/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333175049-root"></a>
 
 ## [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)
@@ -144,6 +164,22 @@
 > **建议**：未验证假设是让每条索引附带按固定插件版本、宿主版本及验收时间绑定的最小结果证明，同时保留无证明条目。由当前格式校验与实际可用性之间的缺口推导，增量是帮助用户判断证据新鲜度而非给出安全认证。先取20个不同来源条目，对比普通索引和证据索引的选错率、核查耗时及维护时间；若核查节省不足以覆盖证明维护，或用户将证明误当安全背书，则停止扩展。[Q05](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-124882400-root"></a>
+
+## [Browser4](../../plugins/platonai--browser4/INSIGHT.md)
+
+[![GitHub ★ 1,169](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C169&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/platonai/Browser4)
+
+> **用途**：批量交互后取字段的自动化开发者；静态单页可保留简单fetch或浏览脚本。[Q01](../../plugins/platonai--browser4/INSIGHT.md#research-q01)
+
+> **亮点**：把会话交互、确定性字段提取和批量作业整合进统一CLI/MCP引擎；避免每任务重写接线，但不等所有任务优于简单脚本。[Q01](../../plugins/platonai--browser4/INSIGHT.md#research-q01) [Q02](../../plugins/platonai--browser4/INSIGHT.md#research-q02)
+
+> **思考**：zero-token不等总成本为零，DNS/Host保护不等身份鉴权；会话状态落盘与缓存不证明断线后不会重复有副作用动作。[Q03](../../plugins/platonai--browser4/INSIGHT.md#research-q03)
+
+> **建议**：未验证方向是动作绑定会话/页面版本和结果，断线先核状态再重发，用提交前后断线比较重复与恢复时间。[Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/platonai--browser4/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334862230-root"></a>
 
@@ -1568,6 +1604,38 @@
 > **建议**：未验证改进为创建/授权事务化状态、图片 allowlist/限量、写操作幂等与连接路由鉴权加强。详见[Q05](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1194748811-root"></a>
+
+## [HOL Guard](../../plugins/hashgraph-online--hol-guard/INSIGHT.md)
+
+[![GitHub ★ 1,000](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C000&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hashgraph-online/hol-guard)
+
+> **用途**：面向需管理多Agent、MCP和包安装风险的开发者及团队，保留策略结论与审批依据。
+
+> **亮点**：将支持入口上的执行前策略、审批和本地证据关联起来，较仅依赖宿主弹窗更便于追溯和跨工具管理；覆盖仍受事件与代理条件限制。[Q01](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q01) [Q02](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q02)
+
+> **思考**：保护配置不等于全部执行入口已拦截，后置事件无法撤销动作；必须按指定宿主核查真正前置消费与异常行为，不能将DSH包扫描误当运行时全覆盖。[Q01](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q01) [Q02](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q02)
+
+> **建议**：用已配置、可达、宿主消费三层状态及无副作用探测验证每个事件的实际控制能力；现有doctor是否已满足应先核对，方案尚未验证。[Q05](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/hashgraph-online--hol-guard/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1175756746-root"></a>
+
+## [mem9](../../plugins/mem9-ai--mem9/INSIGHT.md)
+
+[![GitHub ★ 1,227](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C227&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mem9-ai/mem9)
+
+> **用途**：多机器或多Agent需要共享可更正事实的团队；仅单人笔记可继续本地文档。[Q01](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q01)
+
+> **亮点**：把跨机器多runtime记忆状态集中到统一API并提供混合召回，减少各客户端分别维护存储；数据库向量能力归上游，不能把召回相关性当事实正确。[Q01](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q01) [Q02](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q02)
+
+> **思考**：自动记忆默认出站，共享空间中agentId不等独立身份；排序不验证事实新鲜度，断线幂等及更正/删除传播仍需检查。[Q03](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q03)
+
+> **建议**：未验证方向是自动写入先作为待确认事实，以两Agent更正/删除后的读取一致性和人工负担检验共享价值。[Q05](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/mem9-ai--mem9/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1231135337-root"></a>
 

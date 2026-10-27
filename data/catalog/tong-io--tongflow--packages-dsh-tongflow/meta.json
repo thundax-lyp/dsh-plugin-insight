@@ -1,0 +1,45 @@
+{
+    "repository": "tong-io/tongflow",
+    "repository_id": 1204369117,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 1046,
+    "pushed_at": "2026-10-21T15:32:52Z",
+    "issues": {
+        "open": 2,
+        "closed": 2,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-tongflow",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 2027,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-tongflow",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T00:19:58.877Z",
+            "captured_at": "2026-10-26T20:32:35.909Z",
+            "source_url": "https://registry.npmjs.org/dsh-tongflow",
+            "error": null,
+            "latest_version": "0.8.4",
+            "latest_published_at": "2026-10-06T04:24:13.210Z",
+            "latest_error": null
+        }
+    }
+}

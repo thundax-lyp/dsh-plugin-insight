@@ -1,0 +1,54 @@
+{
+    "repository": "Miaotofu01/Study-Mate",
+    "repository_id": 1374986657,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 1220,
+    "pushed_at": "2026-10-21T18:24:00Z",
+    "issues": {
+        "open": 17,
+        "closed": 126,
+        "created_30d": 132,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMiaotofu01%2FStudy-Mate%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 997E:1D4912:48D371:4ED302:6AE02FC8 and timestamp 2026-10-27 04:59:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMiaotofu01%2FStudy-Mate%20is%3Aissue%20updated%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9990:2BD563:4A44A4:504371:6AE02FC9 and timestamp 2026-10-27 04:59:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T00:51:31.108Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@yunmiao/studymate",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 6194,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40yunmiao%2Fstudymate",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-22T02:07:52.256Z",
+            "captured_at": "2026-10-26T13:10:34.281Z",
+            "source_url": "https://registry.npmjs.org/%40yunmiao%2Fstudymate",
+            "error": null,
+            "latest_version": "2.0.3",
+            "latest_published_at": "2026-10-21T15:22:52.770Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "repository": "PicGo/PicGo-Core",
+    "repository_id": 149085734,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 992,
+    "pushed_at": "2026-10-19T12:29:51Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APicGo%2FPicGo-Core%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A41A:316287:121724C:19B461F:6AE0301A and timestamp 2026-10-27 05:01:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APicGo%2FPicGo-Core%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A420:11575E:11AE336:1943544:6AE0301B and timestamp 2026-10-27 05:01:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APicGo%2FPicGo-Core%20is%3Aissue%20created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 987C:316287:1217DD3:19B5646:6AE0301E and timestamp 2026-10-27 05:01:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APicGo%2FPicGo-Core%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9884:22D302:11DFED1:197DDB9:6AE03020 and timestamp 2026-10-27 05:01:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APicGo%2FPicGo-Core%20is%3Aissue%20updated%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9890:D77E7:115CBB6:18BDF13:6AE03021 and timestamp 2026-10-27 05:01:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "picgo",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 3192,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/picgo",
+        "error": null,
+        "publication": {
+            "first_published_at": "2018-09-14T07:09:30.083Z",
+            "captured_at": "2026-10-27T04:59:15.812Z",
+            "source_url": "https://registry.npmjs.org/picgo",
+            "error": null,
+            "latest_version": "3.2.0",
+            "latest_published_at": "2026-10-19T12:33:22.597Z",
+            "latest_error": null
+        }
+    }
+}

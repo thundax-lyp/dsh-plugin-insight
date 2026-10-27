@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[16b5886](https://github.com/27painter/dsh-moli/tree/16b5886d35827047e3e8736da356c8c55c9ae564)
+源码版本：[56a2872](https://github.com/27painter/dsh-moli/tree/56a28721fc2977f450d3ada9f03acad50e9b97d4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/27painter/dsh-moli) [![npm 30d 1,514](https://img.shields.io/static/v1?label=npm+30d&message=1%2C514&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-moli) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-moli)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/27painter/dsh-moli) [![npm 30d 1,991](https://img.shields.io/static/v1?label=npm+30d&message=1%2C991&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-moli) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-moli)
 <!-- END META -->
 
-> **功能**：把本地Moli无头浏览器接入Harness，支持渲染抓取、选择器读取、截图和PDF。
+> **功能**：将本地 Moli 无头浏览器接入 DSH，提供渲染抓取、选择器读取、截图、PDF与引擎探测。
 
-> **亮点**：把独立Moli浏览器适配为两个Harness工具，补充选择器冲突检查、等待与错误分类、文件输出及安装诊断；渲染能力属于Moli上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把上游浏览器接为DSH工具，并显式处理选择器互斥、空输出和二进制结果；渲染能力归Moli上游，不能把字符样本推成通用收益。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。
+> **主要限制**：默认insecureTls:true降低证书核验；抓取使用spawnSync可能占用宿主事件循环，安装器摘要若无受信预期值也不提供来源认证。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -26,12 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要渲染网页抓取和探测，相对手工或宿主原生办法增加什么？](#detail-section-11)
-  - [Q02 · Moli CLI参数、安装器与输出边界如何从入口形成完整调用链，依赖失效怎么办？](#detail-section-12)
-  - [Q03 · 什么实现边界最可能使渲染网页抓取和探测的贡献不成立，哪些工程设计可复用？](#detail-section-13)
-  - [Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？](#detail-section-14)
-  - [Q05 · 可从Moli CLI参数、安装器与输出边界的限制推导什么可证伪改进？](#detail-section-15)
-  - [Q06 · 哪些用户可以受控采用渲染网页抓取和探测，何时应停止？](#detail-section-16)
+  - [Q01 · 本插件相对web_fetch和直接运行Moli，实际增加了什么？](#detail-section-11)
+  - [Q02 · 选择器、滚动和输出如何保持不被静默忽略？](#detail-section-12)
+  - [Q03 · 可信抓取与共享宿主响应性受到什么关键限制？](#detail-section-13)
+  - [Q04 · 引擎安装、持续抓取和失败退出有哪些投入？](#detail-section-14)
+  - [Q05 · 什么最小改造能同时改善来源可信度和宿主响应？](#detail-section-15)
+  - [Q06 · 当前应观察还是可直接用于生产网页任务？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要读取JavaScript渲染页、登录态容器或网页截图/PDF的Harness用户。合格结果应核对页面状态、内容及输出文件；静态文本已可fetch时无需启动浏览器。
+> **用途**：需要读取动态网页、特定容器或截图的DSH用户；静态正文已有web_fetch时无需浏览器。[Q01](#research-q01)
 
-静态公开页优先普通fetch；动态页面可用独立浏览器脚本，本插件把接线/诊断放入Harness但不保证更快。
+普通fetch适合静态正文，独立运行Moli适合不需DSH接线的任务；本插件不证明普遍更快。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,66 +52,67 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| moli_fetch | 渲染网页、定向读取、截图/PDF | 独立引擎，参数互斥与输出权限 |
-| moli_probe | 定位/探测/安装引擎 | 安装运行外部latest脚本，hash非认证 |
-| 设置页 | 代理、TLS和引擎生命周期 | schema依赖可降级，默认TLS需核对 |
+| --- | --- | --- |
+| moli_fetch | 渲染、选择器、截图与PDF | 独立Moli；selector互斥；默认TLS需审 |
+| moli_probe | 定位与探测引擎、可选安装 | 安装会运行第三方脚本；摘要认证需受信预期值 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node >=20.12、Harness tools | 必需 | 注册两个模型工具 | 工具不可用 |
-| 独立Moli引擎及平台能力 | 必需 | 真实页面渲染 | npm包不包含引擎，需另外安装 |
-| 目标网络/代理与TLS | 必需 | 访问网页及安装源 | 默认insecureTls:true需主动核对 |
-| cookie/profile文件、输出权限 | 特定操作必需 | 登录态和截图/PDF | 本地凭据/文件需用户管理 |
+| --- | --- | --- | --- |
+| DSH与Node>=20.12 | 启动必需 | 工具注册 | 核对兼容 |
+| 匹配平台Moli | 抓取必需 | 渲染网页 | 先审来源再安装 |
+| 网络与严格TLS | 可信抓取必需 | 获取目标页 | 不以不安全默认掩盖错误 |
+| cookie/profile | 登录任务才需 | 保持会话 | 不保证公开fetch即可代替 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 用户核对已安装引擎或审查官方安装材料 | probe报告路径/版本，摘要不是签名校验 |
-| 2 | 优先启用严格TLS并确认代理 | HTTPS诊断有效，不能仅有可执行路径 |
-| 3 | Agent按任务选择selector或dump/eval | 核对matched、status、truncated及文件 |
-| 4 | 结果为空或超时先查条件和错误页 | 不把空白页当无信息，必要时改普通fetch |
+| --- | --- | --- |
+| 准备 | 用户核定引擎和TLS | 路径、版本、来源明确 |
+| 探测 | 用户调用probe | 不把可执行等同所有网站通过 |
+| 抓取 | Agent选择dump或selector | 冲突参数明确拒绝 |
+| 核对 | 用户检查页面状态与输出 | 缺内容或宿主停顿即停止 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 单独下载浏览器引擎及磁盘，金额未知 | 审安装源、平台、代理和TLS | 引擎latest与插件固定版独立变化 |
-| 持续使用 | 浏览器进程/网络及模型阅读token | 维护选择器、等待和登录态 | 字符减少不等于等比例token/费用下降 |
-| 失败恢复 | 重试渲染与下载、残留输出 | 判别HTTP错误/不可达/条件超时 | 截图/PDF及cookie需自行清理 |
+| --- | --- | --- | --- |
+| 首次使用 | 引擎下载、宿主与磁盘；金额未知 | 核对平台、引擎来源、TLS和代理；时间未知 | npm包不含引擎 |
+| 持续使用 | 浏览器资源、模型上下文和输出存储 | 核对内容与选择器 | 合格任务成本未测 |
+| 失败恢复 | 重试及引擎诊断资源 | 区分HTTP、等待、选择器和输出错误 | 不应把所有失败当需重装 |
+
+以状态正确且内容足够的页面结果计量，不能把短输出当合格。[Q04](#research-q04)
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 渲染访问 | 本地浏览器CLI参数与状态处理 | 真实目标网站兼容与反爬 |
-| 定向读取 | selector与等待条件校验 | 跨站内容完整性及净token节省 |
-| 可诊断安装 | 多路径下载与SHA256记录 | 脚本真实性及未来引擎兼容 |
+| --- | --- | --- |
+| 动态网页 | CLI渲染接线 | 真实网站兼容及内容完整性 |
+| 定向读取 | 选择器互斥、返回匹配信息 | 净token和合格率 |
+| 图像/PDF | 二进制文件路径检查 | 实际生成质量 |
 
-> **思考**：默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。
+> **思考**：默认insecureTls:true降低证书核验；抓取使用spawnSync可能占用宿主事件循环，安装器摘要若无受信预期值也不提供来源认证。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把独立Moli浏览器适配为两个Harness工具，补充选择器冲突检查、等待与错误分类、文件输出及安装诊断；渲染能力属于Moli上游。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：把上游浏览器接为DSH工具，并显式处理选择器互斥、空输出和二进制结果；渲染能力归Moli上游，不能把字符样本推成通用收益。[Q01](#research-q01) [Q02](#research-q02)
 
-raw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程和不安全默认值得调整。复用时需锁定外部CLI协议、权限和认证策略。
+参数冲突转结构化错误、空输出区分与stdout文件描述符可借鉴；迁移需锁定CLI协议，抓取同步与默认TLS策略不能直接沿用。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-默认insecureTls:true削弱证书核验；安装器来自可变latest，计算SHA256只记录所执行字节，没有可信发布摘要作比对。抓取又使用spawnSync，较慢页面可能阻塞Host事件循环；这些限制直接影响可信抓取与部署负担。参见[Q03](#research-q03)。
+默认insecureTls:true降低证书核验；抓取使用spawnSync可能占用宿主事件循环，安装器摘要若无受信预期值也不提供来源认证。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察；先仅对公开低敏感页面检查严格TLS、已知引擎版本与错误状态，再决定受控试用。生产登录凭据、强来源认证或共享Host延迟敏感任务应暂缓。参见[Q06](#research-q06)。
+建议观察；先在隔离宿主准备已审引擎并设严格TLS，核对公开页面与退出；敏感登录、共享宿主和高可信取证应暂缓。[Q06](#research-q06)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +120,18 @@ raw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程�
 
 **核查状态**：已检查源码。
 
-固定源码支持工具与诊断链；来源认证、实际页面效果及改造假设未验证。
+工具适配与参数检查有源码支持；跨站效果、真实引擎兼容和宿主响应未实测。受信引擎锁与异步抓取为未验证假设。
 
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/moli.js、lib/install.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定版入口、argv/进程/输出和安装器来源及校验语义；未执行Moli或验证脚本，不把已有旧报告当本轮运行。
-- 下一步：固定引擎及公开页面检查证书、HTTP状态、选择器、慢响应和中断，并记录端到端任务质量与Host延迟。
+- 边界：固定提交只读入口、runner、安装器、包声明与README；未执行目标代码、验证脚本或浏览器。
+- 下一步：经授权对固定引擎做错误证书、慢页面、零匹配与取消实验，记录同宿主响应和字节来源；本轮未执行。[Q05](#research-q05)
 
 **分析版本**
 
 - **仓库**：[27painter/dsh-moli](https://github.com/27painter/dsh-moli)
-- **版本号**：1.1.20（[固定提交 16b5886](https://github.com/27painter/dsh-moli/tree/16b5886d35827047e3e8736da356c8c55c9ae564)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.1.20（[固定提交 56a2872](https://github.com/27painter/dsh-moli/tree/56a28721fc2977f450d3ada9f03acad50e9b97d4)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +139,9 @@ raw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程�
 
 <a id="innovation"></a>
 
-可将引擎/安装脚本锁为可审版本并验证受信摘要，抓取改为可取消异步进程，同时返回页面状态与选择器覆盖收据。用故意错误证书、安装器变更及慢页面对照，若不拒绝未授权字节或Host仍阻塞则否定；假设未验证，维护版本矩阵有额外成本。参见[Q05](#research-q05)。
+未验证方向是受信字节与引擎锁定、严格TLS和异步可取消抓取；用错误证书、替换安装器与慢页面检查是否同时保住来源和响应性。[Q05](#research-q05)
 
-固定引擎及公开页面检查证书、HTTP状态、选择器、慢响应和中断，并记录端到端任务质量与Host延迟。
+经授权对固定引擎做错误证书、慢页面、零匹配与取消实验，记录同宿主响应和字节来源；本轮未执行。[Q05](#research-q05)
 
 <a id="detail-section-9"></a>
 
@@ -151,48 +152,48 @@ raw JSON schema注册、参数互斥与失败分类可借鉴；同步子进程�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 4 | 2756 | 1810 | 846 | — |
+| .js | source | 4 | 2762 | 1810 | 852 | — |
 | .md | source | 2 | 1176 | — | — | 13129 |
-| .mjs | source | 14 | 1908 | 1390 | 405 | — |
+| .mjs | source | 14 | 1924 | 1402 | 412 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+created%3A2026-09-23T01%3A49%3A26.824Z..2026-10-23T01%3A49%3A26.824Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A49%3A26.824Z..2026-10-23T01%3A49%3A26.824Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/27painter/dsh-moli/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z)
 
 
 
-统计日期：2026-10-23。
+统计日期：2026-10-27。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 16b5886d35827047e3e8736da356c8c55c9ae564 和截止 2026-10-23T01:41:11Z 范围内，渲染网页抓取和探测能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？
+**插件研究总目标**：固定版本Moli适配器在哪些网页任务中优于普通fetch，认证、进程和引擎依赖是否限制采用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要渲染网页抓取和探测，相对手工或宿主原生办法增加什么？
+### Q01 · 本插件相对web_fetch和直接运行Moli，实际增加了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-需要客户端渲染、登录态或图片/PDF的用户可以获得浏览器视角结果，原生普通fetch适合静态文本且负担更小。该版可用selector只抽容器，但作者列出的字符节省只说明具体页面样本；合格交付需核对预期元素、HTTP状态与文件内容，不由ok:true自动成立。贡献在Harness集成和诊断，不把Moli渲染器算本项目原创。
+目标是已有 DSH、需要读取 JavaScript 渲染页或保存截图的用户。普通 web_fetch 已能取得静态正文时，引入独立浏览器没有必要；动态页面、选择器容器和图片才是明确适用场景。源码注册 moli_fetch 与 moli_probe，将 Moli CLI 的渲染、选择器、文件输出及探测接入模型工具协议，合格结果是目标页面状态正确、所选内容足够且输出文件对应当前页面。浏览器渲染本身属于 Moli 上游，本插件的贡献是输入输出适配、参数冲突处理和可解释失败，而不是原创浏览器或已证明的网页准确率。作者列举的字符压缩样本只是特定页面报告，不能推出普遍节省。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:13-41](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L13-L41)
+**依据 1 · 作者声明**：[README.md:13-36](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/README.md#L13-L36)
 
-作者场景、两工具和静态fetch替代
+作者给出静态fetch基线与适用任务。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（24行）</summary>
 
-````text
+```text
 ## What it does, and when you want it
 
 A plain HTTP fetch returns the HTML the server sent. That is enough for articles, docs and APIs, and
@@ -217,58 +218,215 @@ For those jobs this plugin gives the agent two tools:
 
 The practical question is whether the agent needs the page as a **browser** would see it. If a plain
 fetch already returns the text you want, `web_fetch` is lighter and faster.
-
 ```
-  agent ──moli_fetch──▶ dsh-moli plugin ──spawns──▶ moli.exe
-                              ▲                         │
-                              │                    renders the page,
-````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:103-109](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L103-L109)
+**依据 2 · 源码核查**：[index.js:351-359](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/index.js#L351-L359)
 
-selector与eval/dump边界说明
+源码明确注册抓取工具及返回类型。
 
 ```text
-    selector: {
-      type: 'string',
-      description: 'Return the text of the elements this CSS selector matches instead of the whole page. This is the cheap way to read one container out of a noisy listing page: the cards on a feed measured 1,829 characters against 95,605 for the same page as markdown. All matches are joined with newlines and the result reports how many there were; matching nothing is an error, not empty content, because the engine cannot distinguish an empty selection from a page with no text. Not compatible with `dump` or `eval` — one of them could only be ignored.',
-    },
-    eval: {
-      type: 'string',
-      description: 'JavaScript expression evaluated once the page is ready; its value is returned as text or JSON instead of the page. Combining it with `dump` does NOT return both: the engine discards the expression value and dumps the resulting page state instead (its own documented semantics). Use `eval` alone to read a value, or `dump` alone to read the page.',
+  ctx.tools.register({
+    name: 'moli_fetch',
+    description: 'Fetch a URL with the local Moli headless browser: rendered HTML or Markdown, the semantic'
+      + ' tree, a JSON envelope with status and final_url, a JavaScript expression result, a PNG screenshot, or a'
+      + ' PDF. Use it for pages that need real rendering or JavaScript; prefer web_fetch for plain text. Screenshot'
+      + ' and pdf dumps require writeTo. If moli is missing, run moli_probe with action "install" first.',
+    parameters: FETCH_PARAMETERS,
+    output: { schema: FETCH_OUTPUT_SCHEMA, render: renderFetch },
+    isConcurrencySafe: args => args.writeTo === undefined || args.writeTo === '',
 ```
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · Moli CLI参数、安装器与输出边界如何从入口形成完整调用链，依赖失效怎么办？
+### Q02 · 选择器、滚动和输出如何保持不被静默忽略？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-tools注册moli_fetch后检查abort和引擎路径，再由runFetch构造argv、执行本地进程、解析stdout/stderr并按writeTo写文件；probe另查版本/HTTPS或安装。需要Node/Harness tools、独立引擎、网络及文件权限，用户先probe并核TLS，再按selector或dump使用。schemastery缺失时设置页降级但工具仍可注册，不能把装包成功当引擎可用。
+moli_fetch 先定位引擎，再把参数交给 runFetch。runFetch 明确拒绝 selector 与 dump 或 eval 同用，二进制输出缺 writeTo 也拒绝，避免表面调用成功却得到另一类结果。combineEval 把滚动与选择器读取整合进单一表达式，因为上游只接受一个 --eval。抓取把stdout写文件描述符，保留二进制字节，错误页面有状态分支；空输出且无stderr可为合法空页面，有stderr则作为失败。可借鉴处是把上游CLI语义冲突转为结构化错误并让用户看见，不是只转发参数。限制是这些检查依赖Moli当前协议，不能保证未来引擎语义或所有网站行为。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:19-35](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L19-L35)
+**依据 1 · 源码核查**：[lib/moli.js:148-192](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L148-L192)
 
-可选schema和默认TLS
+单eval约束与滚动/读取组合。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（45行）</summary>
 
 ```text
-let z;
-try {
-  z = (await import('@deepseek-ai/schemastery')).default;
-} catch {
-  z = undefined;
-}
+ * Build the one expression the engine will run from `scroll`, `selector` and `eval`.
+ *
+ * The engine accepts a single `--eval`, so everything that has to happen before the
+ * page is captured is composed here, in the order the caller expects: scroll first,
+ * then read (a selector or the caller's expression).
+ *
+ * What gets returned depends on whether anything else will produce the output, and
+ * getting this wrong breaks the feature in one direction or the other:
+ *
+ * - **A `dump` was requested.** The dump produces the output, so the expression is
+ *   there only for its side effects and its value is discarded by the engine anyway.
+ *   It must still be passed, or the scroll never runs.
+ * - **No `dump`.** The expression's value *is* the output, whether it is a selector
+ *   or the caller's own expression.
+ * - **No `dump`, no selector, no caller expression, only `scroll`.** The engine
+ *   prints whatever `--eval` evaluates to, so passing the scroll expression here
+ *   would replace the page with the scroll's return value. `undefined` is returned
+ *   instead, leaving the engine's default output -- the serialized document --
+ *   intact. This is the case that shipped broken: `moli_fetch url=... scroll=600`
+ *   answered `600`.
+ *
+ * @param evalExpression - the caller's expression, if any.
+ * @param scroll - the caller's `scroll` value, if any.
+ * @param hasDump - whether the caller also asked for a dump.
+ * @param selector - the caller's CSS selector, if any.
+ * @returns the expression to pass, or undefined to let the engine decide.
+ */
+export function combineEval(evalExpression, scroll, hasDump = false, selector = undefined) {
+  const move = scrollScript(scroll);
+  const read = selectorScript(selector);
+  const caller = evalExpression === undefined || evalExpression === '' ? undefined : evalExpression;
 
+  // A selector is a read, so it replaces the caller's expression rather than being
+  // chained with it; `buildArgs` rejects the two together, so only one is ever set.
+  // The selector script is already a call expression; a caller's expression has to be
+  // wrapped so its value is what the engine reports.
+  const body = read !== undefined ? { code: read, wrapped: true } : (caller === undefined ? undefined : { code: caller, wrapped: false });
+
+  if (move === undefined) return body === undefined ? undefined : body.code;
+  if (body === undefined) {
+    // No read at all: keep the scroll only when a dump will produce the output.
+    return hasDump ? move : undefined;
+  }
+  // The read goes last so its value is the one the engine reports; losing it would
+  // contradict the documented `eval` behaviour.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/moli.js:507-543](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L507-L543)
+
+参数互斥和二进制路径检查。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+  // `selector` replaces the whole-page output, so combining it with either reader is a
+  // call that cannot do what it says: one of the two would be silently ignored. That
+  // is the failure mode this plugin keeps having to fix, so it is refused up front and
+  // as a structured result, the same way a binary dump with no writeTo is.
+  if (typeof args.selector === 'string' && args.selector.trim() !== '') {
+    if (args.dump !== undefined) {
+      return {
+        ok: false,
+        url: args.url,
+        selector: args.selector,
+        error: '`selector` and `dump` cannot be combined: a selector returns one container\'s text and a dump returns the whole page, so one of them could only be ignored',
+        hint: 'Use `selector` to read part of the page, or `dump` to read all of it.',
+      };
+    }
+    if (args.eval !== undefined && args.eval !== '') {
+      return {
+        ok: false,
+        url: args.url,
+        selector: args.selector,
+        error: '`selector` and `eval` cannot be combined: only one expression value can be returned',
+        hint: 'Put the extra work in `eval` and drop `selector`, or keep `selector` and read the text it returns.',
+      };
+    }
+  }
+  const argv = buildArgs(args);
+  const timeoutMs = args.timeoutMs ?? 30000;
+  const isBinary = BINARY_DUMPS.has(args.dump);
+
+  // Reject a byte-returning dump with nowhere to put it before spending a fetch.
+  if (isBinary && (args.writeTo === undefined || args.writeTo === '')) {
+    return {
+      ok: false,
+      url: args.url,
+      error: `dump "${String(args.dump)}" produces bytes and cannot be returned as text`,
+      sandboxTlsBlock: false,
+      hint: `Pass writeTo with an absolute .${args.dump === 'pdf' ? 'pdf' : 'png'} path, then read that file.`,
+    };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/moli.js:556-590](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L556-L590)
+
+空输出区分stderr失败与合法空页面。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+  // Empty stdout on a zero exit is not a failure: a page can legitimately have
+  // no content in the requested format, which is exactly what a client-rendered
+  // page yields under `noJs` with a text dump. moli is right to print nothing
+  // for it, and the old code answered with "moli exited with status 0 and no
+  // output" plus a hint to re-check the install, sending the caller after a host
+  // that was never broken.
+  //
+  // Both decisions live in this one branch on purpose. Splitting them -- empty
+  // stdout treated as success here and stderr checked further down -- lets the
+  // case below (silent stdout, a complaint on stderr, exit 0) fall through to
+  // the normal success path with the complaint silently dropped.
+  if (outcome.status === 0 && bytes === 0) {
+    if (stderr !== '') {
+      return {
+        ok: false,
+        url: args.url,
+        error: stderr,
+        sandboxTlsBlock: isSandboxTlsFailure(stderr),
+        unreachable: false,
+        possiblyUnreachable: false,
+        hint: 'The engine exited cleanly but produced no output and explained why on stderr; the text above is its own message.',
+      };
+    }
+    return {
+      ok: true,
+      url: args.url,
+      kind: 'text',
+      dump: args.dump ?? 'html',
+      content: '',
+      chars: 0,
+      bytes: 0,
+      empty: true,
+      note: 'moli succeeded and produced no output, so the page had no content in this format. '
+        + 'A page whose content is built by JavaScript yields nothing when noJs is set; '
+        + 'the same URL renders normally without it.',
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 可信抓取与共享宿主响应性受到什么关键限制？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+默认 insecureTls:true，并在未明确覆盖时传入抓取参数，意味着为解决作者网络环境的证书吊销访问问题而默认降低TLS核验。用户不能把HTTPS内容等同受完整证书检查的可信来源，敏感登录与高可信取证应先设为false。抓取底层runOnce使用spawnSync，即使execute声明async，调用同步子进程仍在等待期间占据宿主事件循环；实际延迟大小没有测量，但不能称为完全异步抓取。安装链与抓取不同，安装已走runAsync，不能把同步风险泛化到所有操作。最强支持是参数与错误分类确有实现，关键反例是页面能返回不等于来源认证及宿主可响应均成立。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:26-35](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/index.js#L26-L35)
+
+默认关闭完整TLS检查的配置。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
 /** Deployment configuration defaults; override via the plugin's `config` entry. */
 const DEFAULTS = {
   defaultTimeoutMs: 30000,
@@ -283,12 +441,312 @@ const DEFAULTS = {
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:351-376](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L351-L376)
+**依据 2 · 源码核查**：[lib/moli.js:501-506](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L501-L506)
 
-工具执行入口与缺引擎处理
+默认TLS配置在未显式覆盖时进入调用。
+
+```text
+export function runFetch(options) {
+  // The configured no-verify default applies only when the call stays silent;
+  // an explicit false still means "verify fully".
+  const args = options.insecureTls === true && options.args.insecureTls === undefined
+    ? { ...options.args, insecureTls: true }
+    : options.args;
+```
+
+**依据 3 · 源码核查**：[lib/moli.js:356-377](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L356-L377)
+
+真实抓取使用spawnSync。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（22行）</summary>
+
+```text
+export function runOnce(options) {
+  const dir = mkdtempSync(join(tmpdir(), 'dsh-moli-'));
+  const outPath = join(dir, 'stdout.bin');
+  const errPath = join(dir, 'stderr.txt');
+  let outFd;
+  let errFd;
+  try {
+    outFd = openSync(outPath, 'w');
+    errFd = openSync(errPath, 'w');
+    const spawnArgs = [...options.args];
+    if (options.timeoutMs !== undefined) spawnArgs.push('-t', String(options.timeoutMs));
+    if (options.proxy !== undefined && options.proxy !== '') {
+      spawnArgs.push('--http-proxy', options.proxy);
+    }
+    const result = spawnSync(options.exe, spawnArgs, {
+      stdio: ['ignore', outFd, errFd],
+      // Cancellation backstop, not the engine's readiness deadline: it must sit
+      // above the `-t` value handed to moli, or the process is killed before it
+      // can report its own timeout.
+      timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),
+      windowsHide: true,
+    });
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/install.js:701-722](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/install.js#L701-L722)
+
+安装路径为异步，限制不应泛化。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+    let run;
+    if (process.platform === 'win32') {
+      // Windows runs asynchronously too: spawn the installer without blocking
+      // the DSH host's event loop. The outer timeout sends SIGTERM then
+      // SIGKILL, and an abort signal kills it immediately, so the host keeps
+      // serving requests while PowerShell's Invoke-WebRequest does its work.
+      run = await runAsync({
+        command: options.powershell ?? 'powershell.exe',
+        args,
+        env,
+        timeoutMs,
+        signal: options.signal,
+      });
+    } else {
+      // Linux/macOS keeps its existing asynchronous behaviour.
+      run = await runAsync({
+        command: 'sh',
+        args,
+        env,
+        timeoutMs,
+        signal: options.signal,
+      });
+```
+
+</details>
+
+#### 缺口
+
+- 未测慢页面对同宿主其他请求的实际阻塞程度。
+  **影响**：不能量化吞吐损失或判断共享宿主是否可接受。
+  **进一步探讨**：在隔离宿主同时发慢抓取与轻量请求，记录响应延迟。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 引擎安装、持续抓取和失败退出有哪些投入？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+插件包不含引擎，用户必须另备匹配平台的 Moli；README给出独立二进制及路径配置，大小是作者报告而非本轮下载。安装下载 latest 安装脚本，可提供 expectedSha256 在执行前拒绝不匹配；未传入可信摘要时，返回计算摘要只证明本次字节可标识，不证明发布者可信，也未绑定未来引擎版本。网络、代理、平台及磁盘由用户承担，登录状态还需管理profileDir/cookieFile。持续抓取需浏览器CPU/内存、模型上下文及输出存储，selector可减少返回文本但可能漏掉所需内容。失败恢复要区分网络、选择器、HTTP和输出路径错误，不能一律重装；金额、耗时及单位合格任务成本均未知。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:68-91](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/README.md#L68-L91)
+
+作者说明npm包不包含独立Moli引擎。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+> Rust binary, built and released by the Moli project on its own schedule.
+>
+> **Why it cannot be bundled:**
+>
+> - **Size.** The engine is roughly 4,000× the plugin. Every install and every plugin update would
+>   carry a browser.
+> - **Ownership.** Moli is `lexmount/moli` under its own MIT copyright. Redistributing its binary
+>   through this package would mean re-publishing someone else's artifact as our own.
+> - **Platforms.** The engine ships per OS and per architecture — Windows/Linux/macOS × x64/arm64.
+>   Bundling would pin one build into every user's install.
+> - **Versions.** The plugin must work with whatever Moli version a user has, including Moli releases
+>   that appear after the plugin was published. Bundling would lock the pair together.
+>
+> **There is no npm package for the engine either.** The registry names `moli` and `moli-cli` belong to
+> unrelated projects, and `@lexmount/moli` does not exist. Moli ships as prebuilt binaries on
+> [GitHub Releases](https://github.com/lexmount/moli/releases/latest) — do not install the engine by
+> guessing a package name.
+
+## The two situations after installing
+
+The two download routes above install the same thing. What differs is whether Moli is already on the
+machine — and that decides whether you are finished or have one more step.
+
+### Situation A — Moli is already installed: nothing else to do
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:149-154](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/index.js#L149-L154)
+
+代理和登录状态文件参数。
+
+```text
+    proxy: {
+      type: 'string',
+      description: 'Forward proxy for this call, e.g. "http://127.0.0.1:7890". Overrides the plugin configuration for one call; loopback URLs always bypass it.',
+    },
+    profileDir: { type: 'string', description: 'Moli profile directory carrying imported cookies or storage.' },
+    cookieFile: { type: 'string', description: 'Netscape/curl cookie-jar file to send.' },
+```
+
+**依据 3 · 源码核查**：[lib/install.js:640-679](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/install.js#L640-L679)
+
+下载最新安装器并可选比对调用者摘要。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+export async function installMoli(options = {}) {
+  const timeoutMs = options.timeoutMs ?? 180000;
+  const workDir = mkdtempSync(join(tmpdir(), 'dsh-moli-install-'));
+  const target = join(workDir, process.platform === 'win32' ? 'moli-installer.ps1' : 'moli-installer.sh');
+  try {
+    // Head: one proxy decision, shared by the download below and the run after it.
+    const proxyConfig = resolveProxy(options.proxy);
+    const proxyAlive = proxyConfig === undefined ? false : await proxyListens(proxyConfig.url);
+    const proxy = proxyConfig === undefined ? undefined : proxyConfig.url;
+
+    const download = await downloadInstaller({
+      target,
+      installerUrl: options.installerUrl,
+      proxy,
+      timeoutMs: options.downloadTimeoutMs ?? 60000,
+      locate: options.locate ?? findMoli,
+      exePath: options.exePath,
+    });
+
+    if (download.ok !== true) {
+      return {
+        ok: false,
+        error: download.error,
+        attempts: download.attempts,
+        note: 'No route to the release host worked. The manual install command below is the fallback.',
+        manualInstall: MANUAL_INSTALL,
+      };
+    }
+
+    // Verify before executing anything, whenever the caller states an expectation.
+    if (typeof options.expectedSha256 === 'string' && options.expectedSha256.length > 0) {
+      const expected = options.expectedSha256.trim().toLowerCase();
+      if (expected !== download.sha256) {
+        return {
+          ok: false,
+          error: `installer checksum mismatch: expected ${expected}, got ${download.sha256}`,
+          installerSha256: download.sha256,
+          expectedSha256: expected,
+          method: download.method,
+          note: 'Refusing to execute the installer.',
+```
+
+</details>
+
+#### 缺口
+
+- 缺少有来源的固定引擎版本、可信摘要与跨站合格任务对照。
+  **影响**：供应链及总成本不能由插件固定SHA覆盖。
+  **进一步探讨**：固定引擎和安装器字节，记录公开页面任务的资源、时间与失败重试。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 什么最小改造能同时改善来源可信度和宿主响应？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是将引擎与安装器锁为受信摘要，默认严格TLS，并把抓取放入可取消异步工作进程，再让结果附页面状态和选择器匹配数量。它由Q03的认证与同步执行限制、Q02的结构化输出基础推导；比现有参数包装多了可审环境和独立生命周期，但会增加版本矩阵维护与进程管理。最小验证使用错误证书、被替换安装脚本、慢页面及零匹配选择器，比较当前实现与原型。应拒绝未知字节、保持同宿主轻量请求可响应、明确零匹配和内容完整性；任一仍被当成功或取消后进程残留，就否定当前原型。未执行实验，不能把此设想列为插件当前能力。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/install.js:669-679](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/install.js#L669-L679)
+
+已有摘要拒绝点可作为固定供应链的实现基础。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+    // Verify before executing anything, whenever the caller states an expectation.
+    if (typeof options.expectedSha256 === 'string' && options.expectedSha256.length > 0) {
+      const expected = options.expectedSha256.trim().toLowerCase();
+      if (expected !== download.sha256) {
+        return {
+          ok: false,
+          error: `installer checksum mismatch: expected ${expected}, got ${download.sha256}`,
+          installerSha256: download.sha256,
+          expectedSha256: expected,
+          method: download.method,
+          note: 'Refusing to execute the installer.',
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/moli.js:370-375](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L370-L375)
+
+同步执行是改异步的具体动因。
+
+```text
+    const result = spawnSync(options.exe, spawnArgs, {
+      stdio: ['ignore', outFd, errFd],
+      // Cancellation backstop, not the engine's readiness deadline: it must sit
+      // above the `-t` value handed to moli, or the process is killed before it
+      // can report its own timeout.
+      timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),
+```
+
+#### 缺口
+
+- 受信摘要来源与多平台异步退出行为未建立。
+  **影响**：假设尚不能保证供应链或可靠取消。
+  **进一步探讨**：先在单一平台实现受信字节锁与取消实验，再决定扩展。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 当前应观察还是可直接用于生产网页任务？
+
+**研究主题**：采用判断
+
+#### 完整回答
+
+建议观察，尤其对共享宿主、敏感登录和需要可信来源的任务。虽然注册、选择器冲突、输出及安装错误链足以解释功能，默认TLS与抓取同步阻塞直接影响主要采用前提，单纯宣称页面能渲染不足以抵消。感兴趣的个人用户可先手工准备已审引擎、明确insecureTls:false，仅在隔离宿主核对公开低敏感页面；这是一条补证路径，不是本轮试用通过。相对直接运行Moli，优势是DSH工具接线和错误解释；若普通web_fetch已有完整正文则用原工具，若出现证书错误、不明引擎字节、页面内容缺失或宿主明显停顿，则停止并回到独立浏览器流程。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:26-35](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/index.js#L26-L35)
+
+默认TLS条件阻碍可信任务采用。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+/** Deployment configuration defaults; override via the plugin's `config` entry. */
+const DEFAULTS = {
+  defaultTimeoutMs: 30000,
+  maxChars: 200000,
+  // Behind this machine's filtering proxy Schannel cannot reach the CRL/OCSP
+  // responder, so GitHub and some APIs fail with
+  // `CRYPT_E_REVOCATION_OFFLINE` ("the revocation server is offline").
+  // moli's no-verify flag clears that; set insecureTls: false to enforce full
+  // certificate checks on a network that can reach the responders.
+  insecureTls: true,
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:351-381](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/index.js#L351-L381)
+
+DSH工具与本地执行链。
+
+<details>
+<summary>查看原文（31行）</summary>
 
 ```text
   ctx.tools.register({
@@ -317,361 +775,26 @@ const DEFAULTS = {
       // different proxy does not require a reconfiguration.
       return runFetch({
         exe,
+        args: { ...args, timeoutMs: args.timeoutMs ?? defaultTimeoutMs },
+        maxChars,
+        proxy: typeof args.proxy === 'string' && args.proxy !== '' ? args.proxy : proxy,
+        insecureTls,
+      });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/moli.js:440-479](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L440-L479)
+**依据 3 · 源码核查**：[lib/moli.js:370-375](https://github.com/27painter/dsh-moli/blob/56a28721fc2977f450d3ada9f03acad50e9b97d4/lib/moli.js#L370-L375)
 
-argv构造与TLS/HTTP参数
-
-<details>
-<summary>查看原文（40行）</summary>
+同步进程影响共享宿主条件。
 
 ```text
-export function buildArgs(args) {
-  if (args.dump !== undefined && !TEXT_DUMPS.has(args.dump) && !BINARY_DUMPS.has(args.dump)) {
-    throw new Error(`unsupported dump: ${String(args.dump)}`);
-  }
-  if (args.wait !== undefined && args.wait !== '' && !WAIT_STAGES.has(args.wait)) {
-    throw new Error(`unsupported wait stage: ${String(args.wait)}`);
-  }
-  const needsLayout = LAYOUT_DUMPS.has(args.dump) || args.layout === true || args.scrollbars === true;
-  const argv = ['fetch', args.url];
-
-  if (args.dump !== undefined) argv.push('-d', args.dump);
-  // Screenshots and PDFs silently produce nothing without the layout renderer.
-  if (needsLayout) argv.push('--layout');
-  if (args.scrollbars === true) argv.push('--scrollbars');
-  // `scroll` and `selector` ride along in the same expression: the engine takes a
-  // single `--eval`. `hasDump` matters -- see combineEval -- because with a dump the
-  // expression exists only for its side effect, and without one it becomes the output.
-  const evaluation = combineEval(args.eval, args.scroll, args.dump !== undefined, args.selector);
-  if (evaluation !== undefined) argv.push('--eval', evaluation);
-  if (args.wait !== undefined && args.wait !== '') argv.push('--wait', args.wait);
-  if (args.waitSelector !== undefined && args.waitSelector !== '') argv.push('--wait-selector', args.waitSelector);
-  if (args.waitScript !== undefined && args.waitScript !== '') argv.push('--wait-script', args.waitScript);
-  // Response waits: the right way to await an AJAX list, where a fixed delay is a
-  // guess. The engine takes one of each, and a caller supplying several is asking
-  // for "any of these", which is the engine's own semantics for multiple waits.
-  if (args.waitResponseUrl !== undefined && args.waitResponseUrl !== '') argv.push('--wait-response-url', args.waitResponseUrl);
-  if (args.waitResponseJson !== undefined && args.waitResponseJson !== '') argv.push('--wait-response-json', args.waitResponseJson);
-  // The engine's own switch, but only when the caller asked for a failure to be
-  // surfaced: adding it unconditionally would turn every 404 into `ok: false` and
-  // change what existing calls do.
-  if (args.failOnHttpError === true) argv.push('--fail-with-body');
-  if (args.delayMs !== undefined) argv.push('--delay-ms', String(args.delayMs));
-  if (args.noJs === true) argv.push('--disable-js');
-  if (args.noCss === true) argv.push('--disable-css');
-  if (args.resources === true) argv.push('--resource');
-  if (args.withFrames === true) argv.push('--with-frames');
-  if (args.insecureTls === true) argv.push('--insecure-disable-tls-host-verification');
-  if (args.userAgent !== undefined && args.userAgent !== '') argv.push('--user-agent', args.userAgent);
-  if (args.profileDir !== undefined && args.profileDir !== '') argv.push('--profile-dir', args.profileDir);
-  if (args.cookieFile !== undefined && args.cookieFile !== '') argv.push('--cookie-file', args.cookieFile);
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 什么实现边界最可能使渲染网页抓取和探测的贡献不成立，哪些工程设计可复用？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-可信抓取最怕把成功读到页面与来源已认证混为一谈。该版默认跳过TLS主机核验，用户可显式关闭；latest安装器SHA256为事后记录，未与可信上游值核验。同步spawnSync对Host有阻塞风险，虽安装器采用异步子进程并有树清理，不应把安装异步泛化为抓取异步。工程可借鉴参数冲突拒绝和诊断分类，但兼容性依赖外部引擎。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:27-35](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L27-L35)
-
-TLS不安全默认值
-
-```text
-const DEFAULTS = {
-  defaultTimeoutMs: 30000,
-  maxChars: 200000,
-  // Behind this machine's filtering proxy Schannel cannot reach the CRL/OCSP
-  // responder, so GitHub and some APIs fail with
-  // `CRYPT_E_REVOCATION_OFFLINE` ("the revocation server is offline").
-  // moli's no-verify flag clears that; set insecureTls: false to enforce full
-  // certificate checks on a network that can reach the responders.
-  insecureTls: true,
-```
-
-**依据 2 · 源码核查**：[lib/moli.js:356-389](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L356-L389)
-
-同步进程执行
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-export function runOnce(options) {
-  const dir = mkdtempSync(join(tmpdir(), 'dsh-moli-'));
-  const outPath = join(dir, 'stdout.bin');
-  const errPath = join(dir, 'stderr.txt');
-  let outFd;
-  let errFd;
-  try {
-    outFd = openSync(outPath, 'w');
-    errFd = openSync(errPath, 'w');
-    const spawnArgs = [...options.args];
-    if (options.timeoutMs !== undefined) spawnArgs.push('-t', String(options.timeoutMs));
-    if (options.proxy !== undefined && options.proxy !== '') {
-      spawnArgs.push('--http-proxy', options.proxy);
-    }
     const result = spawnSync(options.exe, spawnArgs, {
       stdio: ['ignore', outFd, errFd],
       // Cancellation backstop, not the engine's readiness deadline: it must sit
       // above the `-t` value handed to moli, or the process is killed before it
       // can report its own timeout.
       timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),
-      windowsHide: true,
-    });
-    closeSync(outFd);
-    outFd = undefined;
-    closeSync(errFd);
-    errFd = undefined;
-
-    const stdout = existsSync(outPath) ? readFileSync(outPath) : Buffer.alloc(0);
-    const stderrText = existsSync(errPath) ? readFileSync(errPath, 'utf8') : '';
-    const failed = result.error !== undefined && result.error !== null;
-    return {
-      status: failed ? null : (result.status ?? 0),
-      stdout,
-      stderr: condense(stderrText),
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/install.js:749-756](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L749-L756)
-
-SHA256记录且无官方checksum对照
-
-```text
-    return {
-      ok: true,
-      exe,
-      version,
-      installerSha256: download.sha256,
-      installerBytes: download.bytes,
-      method: download.method,
-      note: 'Installed from the official release installer. The SHA256 above is what was actually run; Moli publishes no checksum file to compare it against.',
-```
-
-#### 缺口
-
-- 严格TLS、慢页面及多平台引擎的同版本实测缺失
-  **影响**：来源可信度与共享Host可用性不能确认
-  **进一步探讨**：用固定引擎和已知证书/慢响应页记录结果与Host延迟
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次需单独获取并管理引擎、核对代理及TLS；持续需浏览器CPU/内存、网络和模型阅读成本，选择器维护/登录刷新为人工；失败还需区分HTTP错误、等待条件和网络问题并检查部分输出。字符裁剪不等于减少底层浏览器任务，未测净token、耗时或金额，不能照抄样本节省比例。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:65-85](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/README.md#L65-L85)
-
-插件与引擎独立分发
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-> **The npm package is the plugin only — it does not contain the Moli engine.**
->
-> The npm tarball is 26 kB: eight JavaScript and text files. `moli.exe` is a separate ~101 MB compiled
-> Rust binary, built and released by the Moli project on its own schedule.
->
-> **Why it cannot be bundled:**
->
-> - **Size.** The engine is roughly 4,000× the plugin. Every install and every plugin update would
->   carry a browser.
-> - **Ownership.** Moli is `lexmount/moli` under its own MIT copyright. Redistributing its binary
->   through this package would mean re-publishing someone else's artifact as our own.
-> - **Platforms.** The engine ships per OS and per architecture — Windows/Linux/macOS × x64/arm64.
->   Bundling would pin one build into every user's install.
-> - **Versions.** The plugin must work with whatever Moli version a user has, including Moli releases
->   that appear after the plugin was published. Bundling would lock the pair together.
->
-> **There is no npm package for the engine either.** The registry names `moli` and `moli-cli` belong to
-> unrelated projects, and `@lexmount/moli` does not exist. Moli ships as prebuilt binaries on
-> [GitHub Releases](https://github.com/lexmount/moli/releases/latest) — do not install the engine by
-> guessing a package name.
-
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/moli.js:495-512](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L495-L512)
-
-参数冲突拒绝
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export function runFetch(options) {
-  // The configured no-verify default applies only when the call stays silent;
-  // an explicit false still means "verify fully".
-  const args = options.insecureTls === true && options.args.insecureTls === undefined
-    ? { ...options.args, insecureTls: true }
-    : options.args;
-  // `selector` replaces the whole-page output, so combining it with either reader is a
-  // call that cannot do what it says: one of the two would be silently ignored. That
-  // is the failure mode this plugin keeps having to fix, so it is refused up front and
-  // as a structured result, the same way a binary dump with no writeTo is.
-  if (typeof args.selector === 'string' && args.selector.trim() !== '') {
-    if (args.dump !== undefined) {
-      return {
-        ok: false,
-        url: args.url,
-        selector: args.selector,
-        error: '`selector` and `dump` cannot be combined: a selector returns one container\'s text and a dump returns the whole page, so one of them could only be ignored',
-        hint: 'Use `selector` to read part of the page, or `dump` to read all of it.',
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/moli.js:657-660](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L657-L660)
-
-等待条件失败与网络区分
-
-```text
-      ? `The selector ${JSON.stringify(args.waitSelector)} never matched. The page loaded, so this is not a network problem: check the spelling, and confirm the element is there with \`selector\` (it reports the match count, where a wait only times out) or \`dump\`.`
-      : args.waitScript !== undefined
-        ? 'The wait expression never became truthy. The page loaded, so this is not a network problem: check the expression against the page with `eval`, and remember it is polled rather than evaluated once.'
-        : (args.waitResponseUrl !== undefined || args.waitResponseJson !== undefined)
-```
-
-#### 缺口
-
-- 单位合格抓取的总时间和成本未知
-  **影响**：无法判断渲染是否优于fetch或其他浏览器工具
-  **进一步探讨**：同页面任务对照静态fetch/完整渲染/selector，计入失败和人工核对
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 可从Moli CLI参数、安装器与输出边界的限制推导什么可证伪改进？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是固定引擎版本与受信摘要、默认严格TLS，并以异步可取消执行隔离慢页面。它针对可变安装源和同步执行，而不是替换上游浏览器。最小对照包含错误证书、篡改安装器、长期等待和中断，任何未授权字节被执行或Host延迟不降均否定；平台支持矩阵与回滚包增加维护负担。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/install.js:45-48](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L45-L48)
-
-latest可变安装源
-
-```text
-/** Official installer for the latest release. */
-export const INSTALLER_URL = process.platform === 'win32'
-  ? 'https://github.com/lexmount/moli/releases/latest/download/moli-installer.ps1'
-  : 'https://github.com/lexmount/moli/releases/latest/download/moli-installer.sh';
-```
-
-**依据 2 · 源码核查**：[lib/moli.js:356-389](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/moli.js#L356-L389)
-
-同步执行改造切入点
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-export function runOnce(options) {
-  const dir = mkdtempSync(join(tmpdir(), 'dsh-moli-'));
-  const outPath = join(dir, 'stdout.bin');
-  const errPath = join(dir, 'stderr.txt');
-  let outFd;
-  let errFd;
-  try {
-    outFd = openSync(outPath, 'w');
-    errFd = openSync(errPath, 'w');
-    const spawnArgs = [...options.args];
-    if (options.timeoutMs !== undefined) spawnArgs.push('-t', String(options.timeoutMs));
-    if (options.proxy !== undefined && options.proxy !== '') {
-      spawnArgs.push('--http-proxy', options.proxy);
-    }
-    const result = spawnSync(options.exe, spawnArgs, {
-      stdio: ['ignore', outFd, errFd],
-      // Cancellation backstop, not the engine's readiness deadline: it must sit
-      // above the `-t` value handed to moli, or the process is killed before it
-      // can report its own timeout.
-      timeout: options.spawnTimeoutMs ?? (options.timeoutMs === undefined ? 60000 : options.timeoutMs + 30000),
-      windowsHide: true,
-    });
-    closeSync(outFd);
-    outFd = undefined;
-    closeSync(errFd);
-    errFd = undefined;
-
-    const stdout = existsSync(outPath) ? readFileSync(outPath) : Buffer.alloc(0);
-    const stderrText = existsSync(errPath) ? readFileSync(errPath, 'utf8') : '';
-    const failed = result.error !== undefined && result.error !== null;
-    return {
-      status: failed ? null : (result.status ?? 0),
-      stdout,
-      stderr: condense(stderrText),
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 哪些用户可以受控采用渲染网页抓取和探测，何时应停止？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议观察，适合能管理本地浏览器/代理的技术用户先评估公开低敏感页；不熟悉TLS和登录态边界者、生产凭据及多人共享Host暂缓。成功标准为严格TLS下读到预定内容、正确区分404/空选择器并能取消/退出；默认证书绕过、长时间Host阻塞或状态误读即停止。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:148-154](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/index.js#L148-L154)
-
-TLS与cookie/profile暴露的操作边界
-
-```text
-    insecureTls: { type: 'boolean', description: 'Skip TLS host verification. Use only for a known-broken local endpoint.' },
-    proxy: {
-      type: 'string',
-      description: 'Forward proxy for this call, e.g. "http://127.0.0.1:7890". Overrides the plugin configuration for one call; loopback URLs always bypass it.',
-    },
-    profileDir: { type: 'string', description: 'Moli profile directory carrying imported cookies or storage.' },
-    cookieFile: { type: 'string', description: 'Netscape/curl cookie-jar file to send.' },
-```
-
-**依据 2 · 源码核查**：[lib/install.js:756-759](https://github.com/27painter/dsh-moli/blob/16b5886d35827047e3e8736da356c8c55c9ae564/lib/install.js#L756-L759)
-
-安装验证边界和临时目录清理
-
-```text
-      note: 'Installed from the official release installer. The SHA256 above is what was actually run; Moli publishes no checksum file to compare it against.',
-    };
-  } finally {
-    rmSync(workDir, { recursive: true, force: true });
 ```
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

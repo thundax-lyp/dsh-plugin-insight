@@ -1,0 +1,45 @@
+{
+    "repository": "SeaOf0/dsh-redteam-model",
+    "repository_id": 1336856993,
+    "captured_at": "2026-10-27T04:59:15.812Z",
+    "window_start": "2026-09-27T04:59:15.812Z",
+    "stars": 758,
+    "pushed_at": "2026-10-27T02:05:14Z",
+    "issues": {
+        "open": 4,
+        "closed": 14,
+        "created_30d": 5,
+        "closed_30d": 2,
+        "updated_30d": 5
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@dsh-external/dsh-redteam-model",
+        "captured_at": "2026-10-27T04:59:15.812Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40dsh-external%2Fdsh-redteam-model",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-27T04:59:15.812Z",
+            "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-redteam-model",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}
