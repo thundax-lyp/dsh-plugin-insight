@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts)
+源码版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-ts)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-> **实现功能**：以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。
+> **功能**：以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。
 
-> **核心亮点**：减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。
+> **亮点**：减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：宽 catch 可能误判配置故障，fallback 丢失自定义扩展；详见[Q02](#research-q02)。
+> **主要限制**：宽 catch 可能误判配置故障，fallback 丢失自定义扩展；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -79,8 +79,6 @@ DSH LSP service/tool、fs/subprocess、typescript-language-server 和建议的 T
 
 > **亮点**：减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。
 
-减少 TS/JS LSP 命令和语言 id 装配；协议由共享基座实现，详见[Q01](#research-q01)。
-
 配置覆盖合并；LspStdio 延迟启动；缺服异常由 fallback 返回 LSP_UNAVAILABLE。
 
 <a id="detail-section-5"></a>
@@ -129,7 +127,7 @@ DSH LSP service/tool、fs/subprocess、typescript-language-server 和建议的 T
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

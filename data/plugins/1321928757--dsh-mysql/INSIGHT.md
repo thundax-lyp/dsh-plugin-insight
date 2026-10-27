@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b200ed5](https://github.com/1321928757/dsh-mysql/tree/b200ed57b3c6c1fc0359bd97a972c255f6bad052)
+源码版本：[b200ed5](https://github.com/1321928757/dsh-mysql/tree/b200ed57b3c6c1fc0359bd97a972c255f6bad052)
 
 <!-- BEGIN META -->
 [![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1321928757/dsh-mysql) [![npm 30d 30](https://img.shields.io/static/v1?label=npm+30d&message=30&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mysql) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mysql)
 <!-- END META -->
 
-> **实现功能**：在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。
+> **功能**：在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。
 
-> **核心亮点**：把会话多源选择、schema先行、四类工具和独立行写/DDL权限接到动态上下文，减少手工搬运；不是SQL解析器或数据库隔离层。详见[Q02](#research-q02)。
+> **亮点**：把会话多源选择、schema先行、四类工具和独立行写/DDL权限接到动态上下文，减少手工搬运；不是SQL解析器或数据库隔离层。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：只读按前缀分类，regex表名提取不覆盖全部语法且DML丢库前缀；2000行在全量读取后截断，不限服务器或内存。最小权限、TLS和网关身份仍需独立核对，未执行绕过。详见[Q03](#research-q03)。
+> **主要限制**：只读按前缀分类，regex表名提取不覆盖全部语法且DML丢库前缀；2000行在全量读取后截断，不限服务器或内存。最小权限、TLS和网关身份仍需独立核对，未执行绕过。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -114,8 +114,6 @@
 
 > **亮点**：把会话多源选择、schema先行、四类工具和独立行写/DDL权限接到动态上下文，减少手工搬运；不是SQL解析器或数据库隔离层。详见[Q02](#research-q02)。
 
-把会话多源选择、schema先行、四类工具和独立行写/DDL权限接到动态上下文，减少手工搬运；不是SQL解析器或数据库隔离层。详见[Q02](#research-q02)。
-
 host以内存cachedConfigs作为同步上下文快照，loadedPromise只做一次性加载门闩，persist先换缓存、tmp/rename失败回滚；编辑空密码保留原值、变更结束旧池。这比写失败仍留新内存更细致，但无revision或写入队列，多次并发保存使用同tmp并各基于旧快照，回滚也可覆盖另一成功缓存。坏文件读失败记录日志后返回空配置，未保留损坏原件的隔离副本。
 
 Typert定义七个管理方法，以create()返回zod record满足宿主严格契约，但record(unknown)不是逐操作字段严格Schema，验证主要在方法体。saveConnection对DDL有host侧风险确认位；选择RPC直接接受传入sessionId，本插件内未核对调用者拥有该会话的授权，需网关/宿主提供身份边界。不能因codec.mode=strict就声称会话授权严格。
@@ -168,7 +166,7 @@ pool按连接更新回收，dispose结束全部池，agent/disposed删除选择�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

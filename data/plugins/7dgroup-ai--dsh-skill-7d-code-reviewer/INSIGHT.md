@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[bd0069f](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/tree/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057)
+源码版本：[bd0069f](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer/tree/bd0069f4feabbcb6ede8b0ba2da6a59f4d477057)
 
 <!-- BEGIN META -->
 [![GitHub ★ 11](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=11&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7dgroup-ai/dsh-skill-7d-code-reviewer)
 <!-- END META -->
 
-> **实现功能**：一个注册到 DSH skills 的模板驱动代码审查 Skill，要求模型输出分级问题、评分与文字/HTML 报告。
+> **功能**：一个注册到 DSH skills 的模板驱动代码审查 Skill，要求模型输出分级问题、评分与文字/HTML 报告。
 
-> **核心亮点**：封装五步审查、严重度/四维评分和报告样式，使输出结构一致。详见[Q01](#research-q01)。
+> **亮点**：封装五步审查、严重度/四维评分和报告样式，使输出结构一致。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：没有确定性报告渲染器，动态 HTML 转义/占位符完整性只是 Skill 文本要求；评分无校准。详见[Q02](#research-q02)。
+> **主要限制**：没有确定性报告渲染器，动态 HTML 转义/占位符完整性只是 Skill 文本要求；评分无校准。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -93,8 +93,6 @@
 
 > **亮点**：封装五步审查、严重度/四维评分和报告样式，使输出结构一致。详见[Q01](#research-q01)。
 
-封装五步审查、严重度/四维评分和报告样式，使输出结构一致。详见[Q01](#research-q01)。
-
 TypeScript Cordis provider 读取 SKILL.md；无模型工具、后台路由或可执行 HTML 生成器。
 
 <a id="detail-section-5"></a>
@@ -143,7 +141,7 @@ Skill 注册与资源可核；审查准确率、评分校准和 HTML 转义仅�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

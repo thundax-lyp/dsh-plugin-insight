@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[4dbc65c](https://github.com/452926826/dsh-ssh-logs/tree/4dbc65c4bb250f72388edfd42b3d3e4d0103699c)
+源码版本：[4dbc65c](https://github.com/452926826/dsh-ssh-logs/tree/4dbc65c4bb250f72388edfd42b3d3e4d0103699c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/452926826/dsh-ssh-logs)
 <!-- END META -->
 
-> **实现功能**：通过DSH内置MCP桥提供服务器列表、限量日志读取和固定字符串搜索，使用预设SSH主机与日志根别名返回来源片段。
+> **功能**：通过DSH内置MCP桥提供服务器列表、限量日志读取和固定字符串搜索，使用预设SSH主机与日志根别名返回来源片段。
 
-> **核心亮点**：将固定主机/根别名、quote保护的读命令和有界输出接到MCP/DSH，减少人手复制日志，并不提供任意shell或新SSH协议。详见[Q02](#research-q02)。
+> **亮点**：将固定主机/根别名、quote保护的读命令和有界输出接到MCP/DSH，减少人手复制日志，并不提供任意shell或新SSH协议。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：root只词法normalize，符号链接目标未核；child env不继承SSH_AUTH_SOCK，空grep退出1被当SSH失败。取消/远端后代停止未确认，未实际连接复现。详见[Q03](#research-q03)、[Q05](#research-q05)。
+> **主要限制**：root只词法normalize，符号链接目标未核；child env不继承SSH_AUTH_SOCK，空grep退出1被当SSH失败。取消/远端后代停止未确认，未实际连接复现。详见[Q03](#research-q03)、[Q05](#research-q05)。
 
 **本文目录**
 
@@ -117,8 +117,6 @@
 
 > **亮点**：将固定主机/根别名、quote保护的读命令和有界输出接到MCP/DSH，减少人手复制日志，并不提供任意shell或新SSH协议。详见[Q02](#research-q02)。
 
-将固定主机/根别名、quote保护的读命令和有界输出接到MCP/DSH，减少人手复制日志，并不提供任意shell或新SSH协议。详见[Q02](#research-q02)。
-
 固定三文件拆开配置、命令/SSH和MCP接线，zod入参/正整数配置、每server最大4MiB、stderr16KiB收集，使远端日志读取的局部资源成本可解释。shellQuote和--保护动态路径/模式，不通过本地shell拼接，减少命令解释风险。测试smoke用临时假ssh回固定输出，是作者的适配模拟，不是本轮真实SSH验证。
 
 每次请求新建SSH进程，没有连接复用或并发上限；请求数多时资源/认证开销线性增加。commandTimeout默认120秒与bridge工具timeout同值，外层先超时是否取消in-flight ssh取决于MCP/宿主，本server工具handler没接request AbortSignal。超时只kill本地ssh并马上reject，不确认远端命令/ProxyJump子进程已停止；通常固定读命令副作用小，但不能给后代清理保证。
@@ -177,7 +175,7 @@ root只词法normalize，符号链接目标未核；child env不继承SSH_AUTH_S
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

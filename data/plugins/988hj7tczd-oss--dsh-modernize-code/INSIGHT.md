@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[4d11010](https://github.com/988hj7tczd-oss/dsh-modernize-code/tree/4d110103666fde9515b9a8077b7e0458d00023a8)
+源码版本：[4d11010](https://github.com/988hj7tczd-oss/dsh-modernize-code/tree/4d110103666fde9515b9a8077b7e0458d00023a8)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：通过 Skill 和两个 Python 工具辅助遗留代码预检与热点扫描；迁移方案与改码依赖模型/人工。
+> **功能**：通过 Skill 和两个 Python 工具辅助遗留代码预检与热点扫描；迁移方案与改码依赖模型/人工。
 
-> **核心亮点**：把五问六检与热点线索纳入可重复入口，详见[Q01](#research-q01)。
+> **亮点**：把五问六检与热点线索纳入可重复入口，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：浅层检查的 READY 与固定权重热点不能当迁移安全结论；out 文件写入范围也须约束，详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：浅层检查的 READY 与固定权重热点不能当迁移安全结论；out 文件写入范围也须约束，详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：把五问六检与热点线索纳入可重复入口，详见[Q01](#research-q01)。
 
-把五问六检与热点线索纳入可重复入口，详见[Q01](#research-q01)。
-
 固定 argv 非 shell 调脚本、超时中止；preflight 只探测，assess 用启发式规则。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

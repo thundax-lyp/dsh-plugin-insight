@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[7369098](https://github.com/2008924/dsh-progress-viz/tree/736909845ac33cf5ac671e1a4b6beecc814d983f/plugin)
+源码版本：[7369098](https://github.com/2008924/dsh-progress-viz/tree/736909845ac33cf5ac671e1a4b6beecc814d983f/plugin)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：把 DSH 语义会话事件即时投影成进度 JSON，供独立 Python 看板读取。
+> **功能**：把 DSH 语义会话事件即时投影成进度 JSON，供独立 Python 看板读取。
 
-> **核心亮点**：插件把噪音过滤前移到 DSH 事件源，减少看板直接读会话文件的依赖。详见[Q01](#research-q01)。
+> **亮点**：插件把噪音过滤前移到 DSH 事件源，减少看板直接读会话文件的依赖。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：空闲 finished 状态不可恢复，末项未完成时也显示 100%，费用字段有重复口径风险。详见[Q02](#research-q02)和[Q03](#research-q03)。
+> **主要限制**：空闲 finished 状态不可恢复，末项未完成时也显示 100%，费用字段有重复口径风险。详见[Q02](#research-q02)和[Q03](#research-q03)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@
 
 > **亮点**：插件把噪音过滤前移到 DSH 事件源，减少看板直接读会话文件的依赖。详见[Q01](#research-q01)。
 
-插件把噪音过滤前移到 DSH 事件源，减少看板直接读会话文件的依赖。详见[Q01](#research-q01)。
-
 事件白名单和原子替换利于读取；内存状态 finished 锁死与每事件双写是主要可靠性/资源边界。详见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

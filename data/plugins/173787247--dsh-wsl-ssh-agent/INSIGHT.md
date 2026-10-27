@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[9971638](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)
+源码版本：[9971638](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ssh-agent)
 <!-- END META -->
 
-> **实现功能**：检查WSL宿主SSH_AUTH_SOCK路径、ssh-add身份数量与常见密钥文件名/npiperelay存在，提供转发和认证排查提示。
+> **功能**：检查WSL宿主SSH_AUTH_SOCK路径、ssh-add身份数量与常见密钥文件名/npiperelay存在，提供转发和认证排查提示。
 
-> **核心亮点**：将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
+> **亮点**：将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且render漏detail，易把错误当无身份；直接exec不接signal/config，ok非目标授权。详见[Q03](#research-q03)。
+> **主要限制**：sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且render漏detail，易把错误当无身份；直接exec不接signal/config，ok非目标授权。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -111,8 +111,6 @@
 
 > **亮点**：将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
 
-将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
-
 sockAlive只是exists(sock)，未stat.isSocket/连接验证；普通文件、失效socket节点也可被说成live socket。hasPrivateKeys仅文件名模式，不读格式/类型/权限，名匹配目录也可能true，自定义key文件名会漏；目录不可读catch false，不能等同确无私钥。桥exists也不证明可执行/版本/Windows服务可用。
 
 ssh-add失败或超时统一keyCount0，execute丢list.ok/code，仅保detail；buildAdvice遇sockAlive+0就说“shows no identities”并建议ssh-add，实际可能是权限/工具不存在/超时。formatter不展示sshAddDetail或顶层error，读者更难看见失败原因。ok=false既可能无agent也可能未授权查询，不能做根因结论。
@@ -169,7 +167,7 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

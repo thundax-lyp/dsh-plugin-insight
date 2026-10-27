@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[565cc1f](https://github.com/7starsseeker/MCModsDevBridge/tree/565cc1f65d78af2c7842aac0769df3ce01f31366)
+源码版本：[565cc1f](https://github.com/7starsseeker/MCModsDevBridge/tree/565cc1f65d78af2c7842aac0769df3ce01f31366)
 
 <!-- BEGIN META -->
 [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/mcmodsdevbridge)
 <!-- END META -->
 
-> **实现功能**：驱动真实 Minecraft 服务端与客户端运行场景 JSON，采集探针证据并覆盖 Fabric、Forge、NeoForge。
+> **功能**：驱动真实 Minecraft 服务端与客户端运行场景 JSON，采集探针证据并覆盖 Fabric、Forge、NeoForge。
 
-> **核心亮点**：相对人工点测，它把真实双端启动、交互、断言、证据和清理压成可调用流程，并从上游 Forge 1.20.1 扩到 26.3 三 loader。它提供验证基础设施而非测试设计；绿色只证明已写断言，声音、动画手感等仍需人工。 详见[Q03](#research-q03)。
+> **亮点**：相对人工点测，它把真实双端启动、交互、断言、证据和清理压成可调用流程，并从上游 Forge 1.20.1 扩到 26.3 三 loader。它提供验证基础设施而非测试设计；绿色只证明已写断言，声音、动画手感等仍需人工。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：最关键质疑是探针观察面是否代表玩家体验。HTTP probe 会改变被测环境，场景可能只验证探针可见状态而漏掉渲染、时序或 loader 特有问题；固定端口 39002 使客户端并发受限。环境包含游戏账号/安装、Java 25、loader 和大型进程，失败恢复成本高。 详见[Q04](#research-q04)。
+> **主要限制**：最关键质疑是探针观察面是否代表玩家体验。HTTP probe 会改变被测环境，场景可能只验证探针可见状态而漏掉渲染、时序或 loader 特有问题；固定端口 39002 使客户端并发受限。环境包含游戏账号/安装、Java 25、loader 和大型进程，失败恢复成本高。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -103,8 +103,6 @@ Minecraft 26.3 模组开发者在 AI 写完代码后仍需手工启动游戏、�
 
 > **亮点**：相对人工点测，它把真实双端启动、交互、断言、证据和清理压成可调用流程，并从上游 Forge 1.20.1 扩到 26.3 三 loader。它提供验证基础设施而非测试设计；绿色只证明已写断言，声音、动画手感等仍需人工。 详见[Q03](#research-q03)。
 
-相对人工点测，它把真实双端启动、交互、断言、证据和清理压成可调用流程，并从上游 Forge 1.20.1 扩到 26.3 三 loader。它提供验证基础设施而非测试设计；绿色只证明已写断言，声音、动画手感等仍需人工。 详见[Q03](#research-q03)。
-
 DSH wrapper 保持薄层，核心 devrun 可脱离宿主运行；probe 安装用 manifest+sha256 控制卸载，natives 缓存带锁，失败非零退出。可复用的是“真实系统+场景 DSL+证据目录+清理”闭环；迁移到新 MC 版本需维护协议、loader 骨架、启动参数和 probe API。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -153,7 +151,7 @@ DSH wrapper 保持薄层，核心 devrun 可脱离宿主运行；probe 安装用
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

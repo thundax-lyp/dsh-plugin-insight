@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1d01737](https://github.com/7bder/dsh-plugin-orchd/tree/1d01737c5656cfc01d74be30ba6e1ffd2a8114e8)
+源码版本：[1d01737](https://github.com/7bder/dsh-plugin-orchd/tree/1d01737c5656cfc01d74be30ba6e1ffd2a8114e8)
 
 <!-- BEGIN META -->
 [![npm 30d 359](https://img.shields.io/static/v1?label=npm+30d&message=359&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-orchd) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-orchd)
 <!-- END META -->
 
-> **实现功能**：在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。
+> **功能**：在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。
 
-> **核心亮点**：将CLI任务状态映射成会话绑定侧栏，并以参数白名单和去身份环境限制读调用，任务引擎由项目提供。见 [Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：将CLI任务状态映射成会话绑定侧栏，并以参数白名单和去身份环境限制读调用，任务引擎由项目提供。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：命令白名单不是项目Python沙箱；Web前缀来源栅栏未统一验证，安装确认还会注入真实用户消息。见 [Q03](#research-q03)。
+> **主要限制**：命令白名单不是项目Python沙箱；Web前缀来源栅栏未统一验证，安装确认还会注入真实用户消息。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -96,8 +96,6 @@
 
 > **亮点**：将CLI任务状态映射成会话绑定侧栏，并以参数白名单和去身份环境限制读调用，任务引擎由项目提供。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-将CLI任务状态映射成会话绑定侧栏，并以参数白名单和去身份环境限制读调用，任务引擎由项目提供。见 [Q01](#research-q01)、[Q02](#research-q02)。
-
 fail-closed命令形状与去会话身份环境值得借鉴；项目引擎应固定hash并验收。/orchd与/api栅栏分离需要独立访问控制，confirm只是误触保护。
 
 <a id="detail-section-5"></a>
@@ -146,7 +144,7 @@ fail-closed命令形状与去会话身份环境值得借鉴；项目引擎应固
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

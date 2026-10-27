@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[c52399d](https://github.com/9087/dsh-diff-approval/tree/c52399da9e58cd46ab7403ce785d4f04579f0b71)
+源码版本：[c52399d](https://github.com/9087/dsh-diff-approval/tree/c52399da9e58cd46ab7403ce785d4f04579f0b71)
 
 <!-- BEGIN META -->
 [![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/9087/dsh-diff-approval) [![npm 30d 4,671](https://img.shields.io/static/v1?label=npm+30d&message=4%2C671&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-diff-approval) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-diff-approval)
 <!-- END META -->
 
-> **实现功能**：记录DSH工具变更并在差异面板审阅、保留或回退，也可导入本地版本控制改动。
+> **功能**：记录DSH工具变更并在差异面板审阅、保留或回退，也可导入本地版本控制改动。
 
-> **核心亮点**：把工具变更基线、细粒度审阅和会话讨论纳入同一流程，相对手工打开VCS减少切换；不替代权限审批或测试。见 [Q01](#research-q01)。
+> **亮点**：把工具变更基线、细粒度审阅和会话讨论纳入同一流程，相对手工打开VCS减少切换；不替代权限审批或测试。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：Undo内容检查不等于所有回退都有并发保护，栈不跨重启且新增文件删除不可Undo；回退前需核实际内容。见 [Q03](#research-q03)。
+> **主要限制**：Undo内容检查不等于所有回退都有并发保护，栈不跨重启且新增文件删除不可Undo；回退前需核实际内容。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：把工具变更基线、细粒度审阅和会话讨论纳入同一流程，相对手工打开VCS减少切换；不替代权限审批或测试。见 [Q01](#research-q01)。
 
-把工具变更基线、细粒度审阅和会话讨论纳入同一流程，相对手工打开VCS减少切换；不替代权限审批或测试。见 [Q01](#research-q01)。
-
 结构化捕获与请求者权限值得复用，统一路径身份和谱系可见性则需要严密状态管理；Undo前提可作为更普遍回退契约的参考。见 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Undo内容检查不等于所有回退都有并发保护，栈不跨重启且新�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

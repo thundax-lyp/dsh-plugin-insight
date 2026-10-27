@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[9f56c82](https://github.com/173787247/dsh-wsl-jev/tree/9f56c8231b4a226ad1b396c38b6375fbdf3d83fb)
+源码版本：[9f56c82](https://github.com/173787247/dsh-wsl-jev/tree/9f56c8231b4a226ad1b396c38b6375fbdf3d83fb)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-jev)
 <!-- END META -->
 
-> **实现功能**：向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。
+> **功能**：向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。
 
-> **核心亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
+> **亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：缺 evidence 仍可问模型，有限清洗不能保证外发安全，未知 rank key 仍可 ok:true。详见[Q03](#research-q03)。
+> **主要限制**：缺 evidence 仍可问模型，有限清洗不能保证外发安全，未知 rank key 仍可 ok:true。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -92,8 +92,6 @@
 
 > **亮点**：把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
 
-把 Jev System One API 包装为 DSH 工具并处理 WSL 代理和候选键映射；模型能力归外部服务。详见[Q02](#research-q02)。
-
 无 key 工具仍注册但调用失败；client 发 state/questions；rank 未识别 key 可 ok:true 且 text:null；错误响应片段可能进工具结果。
 
 <a id="detail-section-5"></a>
@@ -142,7 +140,7 @@ mock 注入空证据/假密钥/异常返回；真实低敏有标签集对照直�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

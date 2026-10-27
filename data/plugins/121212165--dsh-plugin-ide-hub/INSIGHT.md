@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[f4e57a7](https://github.com/121212165/dsh-plugin-ide-hub/tree/f4e57a76bb8ac36867d237d148352ec15dfc0bc3)
+源码版本：[f4e57a7](https://github.com/121212165/dsh-plugin-ide-hub/tree/f4e57a76bb8ac36867d237d148352ec15dfc0bc3)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/121212165/dsh-plugin-ide-hub) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-ide-hub)
 <!-- END META -->
 
-> **实现功能**：汇总多IDE本地会话、用量和规则，生成规则指针、配额计划与Obsidian快照。
+> **功能**：汇总多IDE本地会话、用量和规则，生成规则指针、配额计划与Obsidian快照。
 
-> **核心亮点**：把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：运行导入依赖只列为devDependencies，扫描用stat跟随链接，计量字段依赖私有格式，批量写无事务；静态风险尚未等同真实失败。[Q03](#research-q03)、[Q04](#research-q04)
+> **主要限制**：运行导入依赖只列为devDependencies，扫描用stat跟随链接，计量字段依赖私有格式，批量写无事务；静态风险尚未等同真实失败。[Q03](#research-q03)、[Q04](#research-q04)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
 
-把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
-
 适配器分层和内容幂等写值得借鉴；运行依赖与多文件事务边界未闭合，stat扫描与“不跟链接”的注释不符。[Q03](#research-q03)、[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

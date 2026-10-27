@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[305794f](https://github.com/173787247/dsh-wsl-glab/tree/305794fc429ad5fa43be6e6e6f3fb9abd80c135f)
+源码版本：[305794f](https://github.com/173787247/dsh-wsl-glab/tree/305794fc429ad5fa43be6e6e6f3fb9abd80c135f)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-glab)
 <!-- END META -->
 
-> **实现功能**：将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。
+> **功能**：将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。
 
-> **核心亮点**：把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。
+> **亮点**：把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。
+> **主要限制**：auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误包装ok，项目和CLI版本隐式。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。
 
-把常见GitLab读取命令统一到模型摘要入口。详见[Q01](#research-q01)。
-
 固定读命令边界明确，测试不足以守脱敏/CLI/降级，需显式状态。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ auth正则可能漏空格分隔秘密，issue parse失败render假空，CI错误
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

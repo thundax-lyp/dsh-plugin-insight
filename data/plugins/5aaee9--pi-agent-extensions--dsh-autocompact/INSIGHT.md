@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[8ba4f8a](https://github.com/5aaee9/pi-agent-extensions/tree/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact)
+源码版本：[8ba4f8a](https://github.com/5aaee9/pi-agent-extensions/tree/8ba4f8a5d90d5091c81c9850a9b3bbb56c9f0fce/dsh-autocompact)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 804](https://img.shields.io/static/v1?label=npm+30d&message=804&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
 <!-- END META -->
 
-> **实现功能**：为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。
+> **功能**：为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。
 
-> **核心亮点**：在原生压缩上增加不改真实窗口的精确route阈值控制，并保护当前surface配对和tail；它明确是pi-autocompact的DSH移植，摘要算法仍属于宿主。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：在原生压缩上增加不改真实窗口的精确route阈值控制，并保护当前surface配对和tail；它明确是pi-autocompact的DSH移植，摘要算法仍属于宿主。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **风险与缺陷**：提前阈值是触发尝试而非硬上限，缺后台/容量、不可拆范围或失败都会继续；更早摘要可能增加费用与语义丢失。pill不显示内存会话覆盖，持久默认不等于实际有效阈值。参见[Q03](#research-q03)。
+> **主要限制**：提前阈值是触发尝试而非硬上限，缺后台/容量、不可拆范围或失败都会继续；更早摘要可能增加费用与语义丢失。pill不显示内存会话覆盖，持久默认不等于实际有效阈值。参见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：在原生压缩上增加不改真实窗口的精确route阈值控制，并保护当前surface配对和tail；它明确是pi-autocompact的DSH移植，摘要算法仍属于宿主。参见[Q01](#research-q01)、[Q02](#research-q02)。
 
-在原生压缩上增加不改真实窗口的精确route阈值控制，并保护当前surface配对和tail；它明确是pi-autocompact的DSH移植，摘要算法仍属于宿主。参见[Q01](#research-q01)、[Q02](#research-q02)。
-
 WeakMap绑定真实Session、精确route及token-meter/current surface逐项一致是值得借鉴的状态与正确性约束；移植需宿主compactRegion和原生配对语义。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ WeakMap绑定真实Session、精确route及token-meter/current surface逐项一�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

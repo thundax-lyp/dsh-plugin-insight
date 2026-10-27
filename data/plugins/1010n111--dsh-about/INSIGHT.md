@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[febf7b0](https://github.com/1010n111/dsh-about/tree/febf7b0da6a2255ddfd84028c624ad9e4953dd83)
+源码版本：[febf7b0](https://github.com/1010n111/dsh-about/tree/febf7b0da6a2255ddfd84028c624ad9e4953dd83)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1010n111/dsh-about)
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 设置页展示推断的运行版本、插件版本和 GitHub Releases 摘要。
+> **功能**：在 DSH Web 设置页展示推断的运行版本、插件版本和 GitHub Releases 摘要。
 
-> **核心亮点**：把本地版本与远端 Release 信息集中到 Web 设置页，降低查找步骤。详见[Q02](#research-q02)。
+> **亮点**：把本地版本与远端 Release 信息集中到 Web 设置页，降低查找步骤。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：通过 clientModules bundle 路径拼 node_modules 候选无法保证与实际 dsh --version 一致；路由统一 200 且未限 GET。详见[Q03](#research-q03)。
+> **主要限制**：通过 clientModules bundle 路径拼 node_modules 候选无法保证与实际 dsh --version 一致；路由统一 200 且未限 GET。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -91,8 +91,6 @@ CLI dsh --version 与 GitHub Releases；插件只提供界面整合。
 
 > **亮点**：把本地版本与远端 Release 信息集中到 Web 设置页，降低查找步骤。详见[Q02](#research-q02)。
 
-把本地版本与远端 Release 信息集中到 Web 设置页，降低查找步骤。详见[Q02](#research-q02)。
-
 Host 不检查请求方法，JSON 失败仍 HTTP 200；版本从 client bundle 路径推断，Releases 固定远端代理缓存。
 
 <a id="detail-section-5"></a>
@@ -141,7 +139,7 @@ Host 不检查请求方法，JSON 失败仍 HTTP 200；版本从 client bundle �
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

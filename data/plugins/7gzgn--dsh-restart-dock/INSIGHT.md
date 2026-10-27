@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[bb74ab5](https://github.com/7gzgn/dsh-restart-dock/tree/bb74ab5d5eafdd97cec75a0be759346fdcacece7)
+源码版本：[bb74ab5](https://github.com/7gzgn/dsh-restart-dock/tree/bb74ab5d5eafdd97cec75a0be759346fdcacece7)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：在 DSH Web 界面提供可拖动的刷新/Windows 宿主重启坞，并用独立 helper 留下重启报告。
+> **功能**：在 DSH Web 界面提供可拖动的刷新/Windows 宿主重启坞，并用独立 helper 留下重启报告。
 
-> **核心亮点**：相对手工重开，它把“只刷新 client”和“重启 Host”分成明确按钮，并加入包重建门禁、倒计时撤回和重启报告。贡献是开发交互与安全接线，不是跨平台进程管理；Windows-only 和强制停止限制了普适性。 详见[Q03](#research-q03)。
+> **亮点**：相对手工重开，它把“只刷新 client”和“重启 Host”分成明确按钮，并加入包重建门禁、倒计时撤回和重启报告。贡献是开发交互与安全接线，不是跨平台进程管理；Windows-only 和强制停止限制了普适性。 详见[Q03](#research-q03)。
 
-> **风险与缺陷**：关键风险是重启属于破坏性副作用。自定义头/CORS 防跨站不等于完整鉴权，同源受害页面或宿主路由暴露仍需核对；helper 若受 job object 牵连可能无法拉起。插件不等本轮结束、不自动续话，未保存状态会被中断。 详见[Q04](#research-q04)。
+> **主要限制**：关键风险是重启属于破坏性副作用。自定义头/CORS 防跨站不等于完整鉴权，同源受害页面或宿主路由暴露仍需核对；helper 若受 job object 牵连可能无法拉起。插件不等本轮结束、不自动续话，未保存状态会被中断。 详见[Q04](#research-q04)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@ Windows 上调试 DSH 插件的开发者需要频繁区分客户端刷新和 Hos
 
 > **亮点**：相对手工重开，它把“只刷新 client”和“重启 Host”分成明确按钮，并加入包重建门禁、倒计时撤回和重启报告。贡献是开发交互与安全接线，不是跨平台进程管理；Windows-only 和强制停止限制了普适性。 详见[Q03](#research-q03)。
 
-相对手工重开，它把“只刷新 client”和“重启 Host”分成明确按钮，并加入包重建门禁、倒计时撤回和重启报告。贡献是开发交互与安全接线，不是跨平台进程管理；Windows-only 和强制停止限制了普适性。 详见[Q03](#research-q03)。
-
 Host 路由、UI 和 PowerShell helper 职责分离，目标探测与报告可审计，bundle-ready 防止刚改 client.js 时刷新到坏包。可借鉴的是“破坏动作先探测、确认、离进程执行、落盘报告”；移植到 macOS/Linux 必须重写进程树与拉起语义。 详见[Q07](#research-q07)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@ Host 路由、UI 和 PowerShell helper 职责分离，目标探测与报告可�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

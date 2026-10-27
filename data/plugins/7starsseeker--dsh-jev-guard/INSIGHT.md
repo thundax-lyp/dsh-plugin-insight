@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[958da7d](https://github.com/7starsseeker/dsh-jev-guard/tree/958da7d14b8a18dccd724daa6c270f20892ce983)
+源码版本：[958da7d](https://github.com/7starsseeker/dsh-jev-guard/tree/958da7d14b8a18dccd724daa6c270f20892ce983)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7starsseeker/dsh-jev-guard) [![npm 30d 1,591](https://img.shields.io/static/v1?label=npm+30d&message=1%2C591&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-guard) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-guard)
 <!-- END META -->
 
-> **实现功能**：在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。
+> **功能**：在DSH工具执行前组合静态规则、Jev判据和人工升级，检查删除或覆盖风险。
 
-> **核心亮点**：把成熟规则和语义判据接到工具执行前的硬决策点，区分改写/阻断/人工；是附加事故阀而非完整安全边界。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把成熟规则和语义判据接到工具执行前的硬决策点，区分改写/阻断/人工；是附加事故阀而非完整安全边界。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **风险与缺陷**：模型或adapter错误可能放回原生管线，非指定工具跳过；令牌未绑cwd/状态/TTL且折叠命令空白，局部一次性不等严格资源授权。[Q03](#research-q03)
+> **主要限制**：模型或adapter错误可能放回原生管线，非指定工具跳过；令牌未绑cwd/状态/TTL且折叠命令空白，局部一次性不等严格资源授权。[Q03](#research-q03)
 
 **本文目录**
 
@@ -99,8 +99,6 @@
 
 > **亮点**：把成熟规则和语义判据接到工具执行前的硬决策点，区分改写/阻断/人工；是附加事故阀而非完整安全边界。[Q01](#research-q01)、[Q02](#research-q02)
 
-把成熟规则和语义判据接到工具执行前的硬决策点，区分改写/阻断/人工；是附加事故阀而非完整安全边界。[Q01](#research-q01)、[Q02](#research-q02)
-
 判据/adapter分离、typed路由及cwd缓存可复用；规则优先级明确但显式off例外；授权需资源绑定和跨进程消费，不能以日志/缓存数量当安全证据。[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
@@ -149,7 +147,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

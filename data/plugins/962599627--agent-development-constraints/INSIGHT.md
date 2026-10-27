@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[fc9af91](https://github.com/962599627/agent-development-constraints/tree/fc9af918ac14f03d63bee299cab90862adbc8963)
+源码版本：[fc9af91](https://github.com/962599627/agent-development-constraints/tree/fc9af918ac14f03d63bee299cab90862adbc8963)
 
 <!-- BEGIN META -->
 
 <!-- END META -->
 
-> **实现功能**：提供项目开发规则库与提炼精简合并流程，DSH按症状查询规则并一次注入入口目录，另有上下文成本观察和可选提交脱敏检查。
+> **功能**：提供项目开发规则库与提炼精简合并流程，DSH按症状查询规则并一次注入入口目录，另有上下文成本观察和可选提交脱敏检查。
 
-> **核心亮点**：把规则/触发/检查/证据模板、症状索引与DSH一次入口提醒连接，减少复盘只留长日志的问题。详见[Q02](#research-q02)。
+> **亮点**：把规则/触发/检查/证据模板、症状索引与DSH一次入口提醒连接，减少复盘只留长日志的问题。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：非每步强制执行；当前DSH面跨home日志/写probe/cache与隐私承诺不符。status无独立守卫且全局last资料可能混会话；Linux基线缺失/标记替换及自改资产保留有边界。详见[Q03](#research-q03)、[Q04](#research-q04)。
+> **主要限制**：非每步强制执行；当前DSH面跨home日志/写probe/cache与隐私承诺不符。status无独立守卫且全局last资料可能混会话；Linux基线缺失/标记替换及自改资产保留有边界。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
 **本文目录**
 
@@ -120,8 +120,6 @@ audit只采近14天>50KiB最多8会话，旧/小/不可读日志可能漏；坏�
 
 > **亮点**：把规则/触发/检查/证据模板、症状索引与DSH一次入口提醒连接，减少复盘只留长日志的问题。详见[Q02](#research-q02)。
 
-把规则/触发/检查/证据模板、症状索引与DSH一次入口提醒连接，减少复盘只留长日志的问题。详见[Q02](#research-q02)。
-
 install.sh保留已有constraints.md，force才覆盖，这是规则资产保护的具体优点。流程、stacks、templates/scripts和文档始终cp -f更新，根.githooks也同名覆盖；因此“幂等”只是不重复规则引用且默认保主库，不代表用户自改模板/技术栈/hook都受保护。
 
 AGENTS类文件从AGENTS.md/CLAUDE.md/GEMINI.md/.cursorrules取首个，按HTML begin/end替换。若原文件只有begin缺end，awk会skip直到EOF，可能丢余下内容；没有先验证成对标记/备份/事务。命令不自动提交/push，但安装本身会改项目指导文件和hook资产。hooks独立命令设置core.hooksPath，默认安装复制hook但不启用该配置，不能混淆。
@@ -178,7 +176,7 @@ Linux install.sh没有写.baseline，contribute.sh无基线则导全部规则；
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

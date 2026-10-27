@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[b75c3a1](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)
+源码版本：[b75c3a1](https://github.com/863683348/dsh-plugin-gate/tree/b75c3a1b768448ee84a6fa07735206e6f8945411)
 
 <!-- BEGIN META -->
 [![npm 30d 1,494](https://img.shields.io/static/v1?label=npm+30d&message=1%2C494&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-gate) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-gate)
 <!-- END META -->
 
-> **实现功能**：向 DSH Agent 提供插件源码静态扫描、风险差分/报告及破坏性操作建议工具，以 systemPrompt 提醒调用。
+> **功能**：向 DSH Agent 提供插件源码静态扫描、风险差分/报告及破坏性操作建议工具，以 systemPrompt 提醒调用。
 
-> **核心亮点**：把静态签名、OSV 查询和基线差分整合为 Agent 可调用工具；详见[Q01](#research-q01)。
+> **亮点**：把静态签名、OSV 查询和基线差分整合为 Agent 可调用工具；详见[Q01](#research-q01)。
 
-> **风险与缺陷**：扫描截断/读取或 OSV 失败不一定改变 PASS；guard 不是执行钩子，“绝不写文件”不涵盖 diff/report 可选写入。详见[Q02](#research-q02)、[Q03](#research-q03)。
+> **主要限制**：扫描截断/读取或 OSV 失败不一定改变 PASS；guard 不是执行钩子，“绝不写文件”不涵盖 diff/report 可选写入。详见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -98,8 +98,6 @@
 
 > **亮点**：把静态签名、OSV 查询和基线差分整合为 Agent 可调用工具；详见[Q01](#research-q01)。
 
-把静态签名、OSV 查询和基线差分整合为 Agent 可调用工具；详见[Q01](#research-q01)。
-
 Cordis 插件注册四个模型工具并注入提示段；扫描 verdict 由 high/medium 命中数得出，截断 notes 不参与。
 
 <a id="detail-section-5"></a>
@@ -148,7 +146,7 @@ Cordis 插件注册四个模型工具并注入提示段；扫描 verdict 由 hig
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

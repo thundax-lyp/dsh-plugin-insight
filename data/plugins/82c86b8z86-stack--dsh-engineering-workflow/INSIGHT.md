@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[3e251eb](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/tree/3e251eb78002625bcc238a42d9926d87c3a38bfe)
+源码版本：[3e251eb](https://github.com/82c86b8z86-stack/dsh-engineering-workflow/tree/3e251eb78002625bcc238a42d9926d87c3a38bfe)
 
 <!-- BEGIN META -->
 [![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/82c86b8z86-stack/dsh-engineering-workflow)
 <!-- END META -->
 
-> **实现功能**：可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。
+> **功能**：可选工程 preset 与六个方法 Skill，以五阶段文字门禁引导 DSH Agent；Host 自动同步本地预设并公告。
 
-> **核心亮点**：打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。
+> **亮点**：打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：自动同步同名 preset 目录时无备份覆写用户改动/删除附加文件；默认公告影响未选 preset 的新会话。详见[Q02](#research-q02)。
+> **主要限制**：自动同步同名 preset 目录时无备份覆写用户改动/删除附加文件；默认公告影响未选 preset 的新会话。详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -100,8 +100,6 @@ DSH 内置 preset 与按需独立 Skill；本包强推五阶段纪律流程。
 
 > **亮点**：打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。
 
-打包五阶段工程方法与 DSH preset/Skill 工具组合，减少手工配置。详见[Q01](#research-q01)。
-
 宿主同步目录并加提示段；preset 指定工具组合和六个显式技能，硬门禁由文本驱动。 全部技能分工与矛盾见[Q04](#research-q04)，有界修复与新鲜证据的成本见[Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -150,7 +148,7 @@ preset 与 Skill 结构可核；自动同步会覆盖同名自改并删除额外
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

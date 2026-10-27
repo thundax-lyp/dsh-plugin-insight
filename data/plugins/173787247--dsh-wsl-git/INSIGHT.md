@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[79fa248](https://github.com/173787247/dsh-wsl-git/tree/79fa248103904f63b552e92c9655be0d3c6e4981)
+源码版本：[79fa248](https://github.com/173787247/dsh-wsl-git/tree/79fa248103904f63b552e92c9655be0d3c6e4981)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-git)
 <!-- END META -->
 
-> **实现功能**：提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。
+> **功能**：提供固定Git状态、历史与diff stat摘要，限制返回长度并可设允许目录根。
 
-> **核心亮点**：把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。
+> **亮点**：把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。
 
-> **风险与缺陷**：porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父仓/Git环境范围。详见[Q03](#research-q03)。
+> **主要限制**：porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父仓/Git环境范围。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -102,8 +102,6 @@
 
 > **亮点**：把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。
 
-把常用Git摘要、返回上限与路径根配置接入模型工具。详见[Q01](#research-q01)。
-
 物理路径/固定argv可复用，补全子命令失败与显式partial更关键。详见[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
@@ -152,7 +150,7 @@ porcelain失败仍计数ok，文本render漏截断，allowRoots只守cwd非父�
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

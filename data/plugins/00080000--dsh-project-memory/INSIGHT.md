@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[f5aa9dc](https://github.com/00080000/dsh-project-memory/tree/f5aa9dcfd815edf4256e619648e9455889b316a7)
+源码版本：[f5aa9dc](https://github.com/00080000/dsh-project-memory/tree/f5aa9dcfd815edf4256e619648e9455889b316a7)
 
 <!-- BEGIN META -->
 [![GitHub ★ 25](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=25&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/00080000/dsh-project-memory) [![npm 30d 3,686](https://img.shields.io/static/v1?label=npm+30d&message=3%2C686&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
 <!-- END META -->
 
-> **实现功能**：为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。
+> **功能**：为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。
 
-> **核心亮点**：从静态笔记扩展为任务绑定、索引和经验召回组合，减少重新组织入口的潜在负担，但不保证减少错误。见 [Q01](#research-q01)。
+> **亮点**：从静态笔记扩展为任务绑定、索引和经验召回组合，减少重新组织入口的潜在负担，但不保证减少错误。见 [Q01](#research-q01)。
 
-> **风险与缺陷**：相关性命中不证明条目仍正确，global可见性和模型看不到source元数据要求更强回源；内存更新也不能替代成功落盘。见 [Q03](#research-q03)。
+> **主要限制**：相关性命中不证明条目仍正确，global可见性和模型看不到source元数据要求更强回源；内存更新也不能替代成功落盘。见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -101,8 +101,6 @@
 
 > **亮点**：从静态笔记扩展为任务绑定、索引和经验召回组合，减少重新组织入口的潜在负担，但不保证减少错误。见 [Q01](#research-q01)。
 
-从静态笔记扩展为任务绑定、索引和经验召回组合，减少重新组织入口的潜在负担，但不保证减少错误。见 [Q01](#research-q01)。
-
 分层职责、跨进程锁和显式持久化状态可复用；跨项目可见性、事件归属与经验时效需要持续管理。见 [Q03](#research-q03) 与 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
@@ -151,7 +149,7 @@
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

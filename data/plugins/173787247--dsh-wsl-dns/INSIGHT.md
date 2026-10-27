@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[04d6ff1](https://github.com/173787247/dsh-wsl-dns/tree/04d6ff1aff856dd22b78c53013a9286efa0ddc35)
+源码版本：[04d6ff1](https://github.com/173787247/dsh-wsl-dns/tree/04d6ff1aff856dd22b78c53013a9286efa0ddc35)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-dns)
 <!-- END META -->
 
-> **实现功能**：在WSL内比较指定域名的WSL与Windows IPv4解析集合，展示首个nameserver及差异/排查提示。
+> **功能**：在WSL内比较指定域名的WSL与Windows IPv4解析集合，展示首个nameserver及差异/排查提示。
 
-> **核心亮点**：把两侧IPv4查询、集合差异和配置片段汇成模型工具，减少手查；固定PowerShell脚本对host单引号转义。详见[Q02](#research-q02)。
+> **亮点**：把两侧IPv4查询、集合差异和配置片段汇成模型工具，减少手查；固定PowerShell脚本对host单引号转义。详见[Q02](#research-q02)。
 
-> **风险与缺陷**：两侧错误折叠[]、ok只WSL非空，地址不同非劫持根因；多host串行总预算不接config/signal，直接exec与域名/内网披露需核。详见[Q03](#research-q03)。
+> **主要限制**：两侧错误折叠[]、ok只WSL非空，地址不同非劫持根因；多host串行总预算不接config/signal，直接exec与域名/内网披露需核。详见[Q03](#research-q03)。
 
 **本文目录**
 
@@ -110,8 +110,6 @@
 
 > **亮点**：把两侧IPv4查询、集合差异和配置片段汇成模型工具，减少手查；固定PowerShell脚本对host单引号转义。详见[Q02](#research-q02)。
 
-把两侧IPv4查询、集合差异和配置片段汇成模型工具，减少手查；固定PowerShell脚本对host单引号转义。详见[Q02](#research-q02)。
-
 两侧resolver都catch→[]，丢失NXDOMAIN/无A/超时/权限/PowerShell不存在/解析错等原因。第一nameserver读失败也退空且无错误。于是空集合只表示这条路径无地址，不足以认定“域名不能解析”；只有IPv6结果的主机同样不在A记录观察范围。format不输出顶层error，notWSL返回error实际读者可能只见ok=false而没有原因。
 
 工具timeoutMs来自config默认15s，但execute传config后core形参_config未用；每Windows查询硬15s、WSL resolve4无插件显式timeout/signal，多个host串行可能超过外层预算。hosts无数量/长度/重复上限，isConcurrencySafe=true也没有全局查询预算；宿主取消信号未传，外层超时不保证DNS/Windows子进程立即停。
@@ -166,7 +164,7 @@ runPowerShell直接node execFile而非宿主subprocess/sandboxPolicy，优先固
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|

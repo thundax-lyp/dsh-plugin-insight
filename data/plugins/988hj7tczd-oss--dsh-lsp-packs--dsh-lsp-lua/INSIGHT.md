@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-lua)
+源码版本：[258bb64](https://github.com/988hj7tczd-oss/dsh-lsp-packs/tree/258bb6409c504fa1eed20b6f70d13009522ca0ce/dsh-lsp-lua)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/988hj7tczd-oss/dsh-lsp-packs)
 <!-- END META -->
 
-> **实现功能**：以 lua-language-server 为外部服务器的 Lua LSP 配置包，默认 --stdio 与 .lua→lua。
+> **功能**：以 lua-language-server 为外部服务器的 Lua LSP 配置包，默认 --stdio 与 .lua→lua。
 
-> **核心亮点**：减少 Lua LSP 装配；不实现协议，详见[Q01](#research-q01)。
+> **亮点**：减少 Lua LSP 装配；不实现协议，详见[Q01](#research-q01)。
 
-> **风险与缺陷**：宽 catch 可能误判故障，fallback 不保留自定义扩展；详见[Q02](#research-q02)。
+> **主要限制**：宽 catch 可能误判故障，fallback 不保留自定义扩展；详见[Q02](#research-q02)。
 
 **本文目录**
 
@@ -79,8 +79,6 @@ DSH LSP service/tool、fs/subprocess 与 LuaLS。
 
 > **亮点**：减少 Lua LSP 装配；不实现协议，详见[Q01](#research-q01)。
 
-减少 Lua LSP 装配；不实现协议，详见[Q01](#research-q01)。
-
 配置覆盖合并；通过 LspStdio 启动；异常 fallback 用 LSP_UNAVAILABLE。
 
 <a id="detail-section-5"></a>
@@ -129,7 +127,7 @@ DSH LSP service/tool、fs/subprocess 与 LuaLS。
 ## 3 辅助信息
 
 <details>
-<summary>工程统计与口径</summary>
+<summary>工程统计</summary>
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
