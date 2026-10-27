@@ -1,0 +1,27 @@
+{
+    "repository": "lencx/Minke",
+    "repository_id": 1334714311,
+    "captured_at": "2026-10-27T08:34:14.025Z",
+    "window_start": "2026-09-27T08:34:14.025Z",
+    "stars": 693,
+    "pushed_at": "2026-10-18T13:48:05Z",
+    "issues": {
+        "open": 3,
+        "closed": 11,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}
