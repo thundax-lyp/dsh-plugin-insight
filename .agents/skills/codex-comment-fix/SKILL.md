@@ -1,9 +1,9 @@
 ---
 name: codex-comment-fix
-description: Explicitly invoked workflow for triaging unresolved Codex review threads and actionable Codex review-summary findings on a dsh-plugin-insight pull request, applying minimal safe fixes, and recording each disposition. Accepts #3 or 3; when omitted, uses the open PR for the current branch.
+description: 仅在显式调用时处理本工程 PR 中未解决的 Codex 线程与可执行汇总意见，判断成立性、实施最小修复并记录处置。接受 #3 或 3；省略时解析当前分支的 open PR。
 ---
 
-# Codex Comment Fix
+# Codex 评论修复
 
 仅在用户显式调用 `$codex-comment-fix` 时执行。参数接受 `#<number>`、`<number>`，省略时解析当前分支以 `main` 为 base 的 open PR。
 
@@ -19,6 +19,14 @@ description: Explicitly invoked workflow for triaging unresolved Codex review th
 
 处理 GitHub 评论格式、去重、稳定标记、额度提示和 API 写入前，完整读取 [GitHub 评论协议](references/GITHUB-REVIEW-PROTOCOL.md)。
 
+## 按阶段读取
+
+| 阶段 | 依据 |
+| --- | --- |
+| 确认 PR／提交与推送范围 | 根 AGENTS、[PR 规则](../../../docs/00-governance/PR-RULES.md)、[提交规则](../../../docs/00-governance/COMMIT-RULES.md) |
+| 评论来源、去重与任何 GitHub 写入 | [GitHub 评论协议](references/GITHUB-REVIEW-PROTOCOL.md)，须完整读取 |
+| 判断或修复 finding | 仅加载该 finding 涉及的数据契约、研究／输出标准、Schema 及实现 |
+
 ## 分类
 
 finding 是否成立与建议方案是否合适分别判断：
@@ -31,6 +39,8 @@ finding 是否成立与建议方案是否合适分别判断：
 最小修复不得破坏身份、来源版本、证据边界、增量不变量、生成一致性、幂等和授权边界。文件数量或单一 caller 不能单独证明建议过度设计。
 
 ## 流程
+
+依次完成“读取并判断 → 修复与验证 → 提交／推送 → 回复并回读”。先确定处置和实际 fix 归属，再声称 fixed；脚本返回成功不能代替远端状态回读。
 
 1. 运行 `npm run codex-review -- inspect [--pr <number>] --out <local-json>`，读取 PR head/base/state、reviews、review comments、issue comments 和 GraphQL review threads；该本地 JSON 只作为当轮工作资料，不提交 Git。复核脚本建立的去重 finding 集、已有稳定标记及额度提示候选，不能把机器分类直接当作处置结论。
 2. 读取根 `AGENTS.md`、`docs/00-governance/PR-RULES.md`、`COMMIT-RULES.md`，再按 finding 范围读取数据契约、研究规范、输出标准、Schema、脚本或当前研究数据。归属不明的工作区改动必须保留并停止冲突范围。
