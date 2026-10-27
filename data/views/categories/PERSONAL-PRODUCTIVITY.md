@@ -29,6 +29,7 @@
 | [dock-markdown](#plugin-1340492424-root) | dock 体系的 Markdown Web 查看器，支持 GFM、消毒 HTML、大纲与相对资源解析/编辑切换。 | 当前不要在含敏感文件的 profile 中采用；先修路由文件授权和 traversal，再隔离测试功能。 |
 | [dock-spreadsheet](#plugin-1400109121-root) | 在DSH dock-files中只读预览XLSX、XLS、ODS、CSV与TSV，支持切表、搜索筛选、坐标检查和显式链接导航。 | 可信私有Host普通文件可条件试用，先核三方加载/路径权限、缓存与字符串排序；公开Host/恶意大书/验算不宜直接依赖。 |
 | [DPH 任务看板](#plugin-1336994666-root) | 把真实DSH会话组织为四列任务看板，支持建会话、拖拽状态、备注、回收站和导入导出。 | 多会话用户可观察，试用前先验证localStorage与宿主快照冲突、补丁卸载和导入覆盖恢复。 |
+| [dsh Browser Control](#plugin-1324996099-root) | 通过Chrome或Firefox扩展和DSH侧栏，使用结构化文本读取并操作已有登录网页。 | 有重复登录网页任务且接受页面文本发送模型的DSH用户可先在测试站点试用；保持明确共享与审批设置，检查换页和取消；画布任务或敏感正文无法发送时退回人工或隔离自动化。 |
 | [DSH Calendar](#plugin-1376880747-root) | 在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。 | 备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。 |
 | [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、语义操作和定向输入能力。 | 需要操作无API原生应用的macOS开发者可先试可丢弃表单或编辑任务。 |
 | [DSH Cost Tracker](#plugin-1338230382-root) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 只建议需要会话级费用线索且能准备可丢弃宿主副本的用户，先在该副本仅启本地账本，对正常、缓存、取消三类调用与厂商账单核对。 |
@@ -36,6 +37,7 @@
 | [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | [Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。 |
 | [DSH Wallpaper Engine](#plugin-1336114531-root) | 把本地图片、视频及 Wallpaper Engine 场景和网页壁纸接入 DSH Web 界面。 | 有profile恢复经验的个人用户可在临时环境从可信静态图和小视频开始；复杂动态内容和发布集需先核对。 |
 | [DSH Weekly Panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在DSH主面板显示插件周榜、模型可用性与赞助信息。 | 经常查看DSH周榜的本地用户可试用主面板入口。 |
+| [DSH 语音 AI 女友套件](#plugin-1335189481-root) | 为 DSH 会话接入本地语音识别、回复朗读、数字人口播及可选 QQ 通信。 | [Q04](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q04) 当前观察，先分清纯语音、数字人与QQ的独立需求，核对桥地址、接口权限和完整朗读，再谈试用；重要内容不要在未知数据流中处理，异常外发或漏读时停服务回文字。 |
 | [dsh-accountdisplayname-edit](#plugin-1424420835-root) | 在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。 | 经常分享界面的用户可先在非敏感截图中试用，检查保存、取消、恢复默认和重载；不要省略整图复核。 |
 | [dsh-ai-arcade](#plugin-1413897334-root) | DSH 内的双脑贪吃蛇和中国象棋，游戏规则本地运行，模型提供策略或解说。 | 假 LLM 先验规则/性能；授权少额试用前封住付费路由的身份与预算。 |
 | [dsh-alive](#plugin-1335661970-root) | 在会话头部显示本地 DSH 插件端点的 15 秒轮询可达状态。 | 仅以“本地 DSH Web 端点可达”解释，并在固定版本上做故障矩阵。 |
@@ -48,6 +50,7 @@
 | [dsh-balance-chip](#plugin-1347136944-root) | 在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。 | 建议观察；若试用，应使用隔离 Key 与可核账户余额，先测非美元/错误值、route 访问和停用后请求是否停止。 |
 | [dsh-better-workspace-file-manager](#plugin-1425087677-root) | 为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。 | 适合需要Web工作区文件交接的人在独立测试目录先试上传、下载和版本受保护编辑。 |
 | [dsh-boo550wt-animation](#plugin-1422328385-root) | 为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。 | 观察；只在可信素材隔离环境先验收路由、HTML、跳过与禁用，不需要个性化者不启用。 |
+| [dsh-bridge-browser](#plugin-1324996099-packages-browser-bridge-browser) | 在DSH与浏览器扩展之间提供WebSocket桥、会话事件和文本浏览器工具。 | 熟悉DSH的用户可固定宿主与扩展版本，在本地非敏感测试站点试用；先检查页面共享、目标tab与取消；需通用多用户鉴权或事务撤销时暂不扩大使用。 |
 | [dsh-butler-memory](#plugin-1335928912-root) | 历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。 | 只作为历史参考；存量实例先隔离验权限、修订、崩溃/超时恢复和当前 DSH 契约。 |
 | [dsh-callout](#plugin-1359145352-root) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。 | 不建议作为当前生产依赖：仓库已归档且作者承认 16 样本不足。 |
@@ -99,6 +102,7 @@
 | [dsh-message-copy-enhance](#plugin-1337978261-root) | 将助手消息选区复制为 Markdown，恢复链接、LaTeX 源码和代码围栏。 | 经常摘录技术回答的人可先试，选取链接、公式和多行代码各一段，粘贴到常用编辑器并逐字核对URL、TeX和换行，再测试禁用后默认复制恢复。 |
 | [dsh-message-ops](#plugin-1389945615-root) | 为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。 | 先保留可重载的会话备份，验证回撤、分步恢复、中断和重载均一致，再考虑限定试用；涉及已执行工具的区间必须另外核对现实状态。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 将DSH已定稿助手回复通过MiMo TTS合成为音频，提供内联播放器与多版本语音历史。 | 有限试用非敏感短文，技术内容回读原文；先验收覆盖提示、播放、历史删除和禁用。 |
+| [dsh-mobile-apk（DeepCode）](#plugin-1333629201-root) | 将DeepSeek Harness和本地命令环境封装到Android应用，提供通知、设备控制与移动界面。 | 熟悉Android权限和备份的用户可在备用机非敏感任务试用，先保持virtual-only并逐项开权限；关键后台任务和敏感账号控制暂不依赖未经设备核验的恢复承诺。 |
 | [dsh-model-selector-search](#plugin-1358317875-root) | 替换会话模型选择器，提供宽松搜索、供应商分组、推理档位选择和偏好记忆。 | 先观察并核对 {ok:false} 返回路径，修正或确认记忆语义后再在隔离 profile 比较同组模型搜索与原生菜单。 |
 | [dsh-monitor](#plugin-1333440937-root) | 通过文件或命令轮询监听新内容，空闲时唤醒所属Agent，并提供查看和停止工具。 | 观察，可信单用户file场景可继续探讨，但保外部日志补读，避免唯一通知链。 |
 | [dsh-my-plugins](#plugin-1429766953-root) | 在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。 | 明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。 |
@@ -475,6 +479,22 @@
 
 [查看完整分析](../../plugins/1070296335-create--dph-taskboard/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1324996099-root"></a>
+
+## [dsh Browser Control](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md)
+
+[![GitHub ★ 908](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=908&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-browser)
+
+> **用途**：让DSH用户对已有登录网页查读或填写常规表单，以最终页面和业务状态验收。
+
+> **亮点**：把已有登录网页、文本工具和侧栏会话连接起来，审批后复核文档/来源，减少状态错配；不是截图视觉代理。[Q01](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md#research-q01) [Q02](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md#research-q02)
+
+> **思考**：字段遮罩不等于全页面脱敏，auto允许直接读页而显式unrestricted绕过审批；真实账号动作需检查最终业务状态，不能以工具ok代替验收。[Q02](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md#research-q02)
+
+> **建议**：对同文档动态重排增加快照版本和控件语义绑定，先与现有元素验证比较错点和误拒，再决定是否引入；尚未验证。[Q04](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1376880747-root"></a>
 
 ## [DSH Calendar](../../plugins/alonefu--dsh-calendar-plugin/INSIGHT.md)
@@ -586,6 +606,22 @@
 > **建议**：[Q05](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q05)以同内容书签为对照检验主动拉取面板的价值，假设未验证。
 
 [查看完整分析](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335189481-root"></a>
+
+## [DSH 语音 AI 女友套件](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md)
+
+[![GitHub ★ 731](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=731&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/beiyege-01/dsh-voice-ai-girlfriend)
+
+> **用途**：已有兼容GPU和多服务运维能力、确需语音/数字人交互的用户，可进一步评估分层方案。
+
+> **亮点**：[Q01](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q01) 与 [Q02](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q02)支持的贡献是既有DSH会话与STT/TTS/数字人的集成和打断/排队接线，不是新语音模型，也不证明0.5秒或情感效果。
+
+> **思考**：[Q03](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q03)显示请求前已推进spoken，失败只日志，后端512字符截断也可能与整句前端不对齐；能开口不代表完整朗读。bridge的loopback/CORS不是身份认证，可选QQ也会外发，不能用本地宣传概括整个数据流。
+
+> **建议**：[Q05](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q05) 提出与anchor/code兼容的段级排队、合成、播放完成账本假设，先核对现有speaker回调再对照长句、失败和打断；未实现且不自动重放整轮。
+
+[查看完整分析](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1424420835-root"></a>
 
@@ -778,6 +814,22 @@
 > **建议**：未验证的静态默认/独立来源HTML与显式路由信任边界，可能保留个性化并缩小权限；隔离实验测兼容与退出。见 [Q04](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/456erddgr--dsh-boo550wt-animation/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1324996099-packages-browser-bridge-browser"></a>
+
+## [dsh-bridge-browser](../../plugins/omdsh-dev--dsh-browser--packages-browser-bridge-browser/INSIGHT.md)
+
+[![GitHub ★ 908](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=908&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-browser)
+
+> **用途**：让DSH用户从会话操作已有登录浏览器，桥承担宿主到扩展的工具传输。
+
+> **亮点**：将宿主工具和会话接到真实浏览器扩展，保留登录状态并明确文本页面与图像消息通道；DOM执行和审批属于扩展侧。[Q01](../../plugins/omdsh-dev--dsh-browser--packages-browser-bridge-browser/INSIGHT.md#research-q01)
+
+> **思考**：本地Chrome免token信任扩展Origin类别而非唯一ID；取消帧只控制尚未完成流程，不保证网页操作回滚，单连接替换后要核对状态。[Q02](../../plugins/omdsh-dev--dsh-browser--packages-browser-bridge-browser/INSIGHT.md#research-q02)
+
+> **建议**：按未执行、已执行与未知保存动作状态，重连先读页面对账再重试，比较连接替换下重复提交与恢复成本；尚未验证。[Q04](../../plugins/omdsh-dev--dsh-browser--packages-browser-bridge-browser/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-browser--packages-browser-bridge-browser/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335928912-root"></a>
 
@@ -1594,6 +1646,22 @@
 > **建议**：未验证的音频版本覆盖标记可能减少误解；以长文/代码/表格理解对照和定位时间证伪。见 [Q05](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/1497105876--dsh-mimotts/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333629201-root"></a>
+
+## [dsh-mobile-apk（DeepCode）](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md)
+
+[![GitHub ★ 897](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=897&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kelai141/dsh-mobile-apk)
+
+> **用途**：面向在Android本地执行命令、监督Agent并按需控制App的用户。
+
+> **亮点**：把本地命令环境、通知应答与原生设备控制组织成手机上的Agent工作流，贡献在系统集成而非模型能力。[Q01](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q01) [Q02](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q02)
+
+> **思考**：局部屏幕检查不证明所有shell/ADB入口受同等限制；WebView独立profile也不保证完整擦除，后台服务存活不能直接证明任务继续。[Q02](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q02) [Q04](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q04)
+
+> **建议**：分层展示服务、引擎、任务与通知健康，用备用机中断测试验证是否减少误判自愈；尚未验证。[Q04](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1358317875-root"></a>
 
