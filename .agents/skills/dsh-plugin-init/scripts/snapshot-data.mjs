@@ -571,7 +571,7 @@ export function stageRecord(workPath, id, observationPath, reportPath, displayPa
     }
 }
 // Validate a batch against one fixed baseline and persist only after every entry passes.
-export function stageRecords(workPath, entries, root = ROOT) {
+export function stageRecords(workPath, entries, root = ROOT, verifyRecord = null) {
     if (!Array.isArray(entries) || !entries.length) throw Error('stage batch must be nonempty');
     const lock = workPath + '.lock',
         fd = openSync(lock, 'wx', 0o600);
@@ -587,6 +587,9 @@ export function stageRecords(workPath, entries, root = ROOT) {
             if (!entry.id || !entry.observations || !entry.report || !entry.display)
                 throw Error('batch entry requires id, observations, report and display');
             stageRecordUnlocked(workPath, entry.id, entry.observations, entry.report, entry.display, root, context);
+            // Acceptance callers bind the exact in-memory payload read under this lock,
+            // rather than trusting a preflight of files that a worker may still change.
+            if (verifyRecord) verifyRecord(entry.id, work.records[entry.id], work);
         }
         assemble(base, work, root);
         if (digest(readSnapshot(root)) !== work.base_digest) throw Error('snapshot baseline changed');
