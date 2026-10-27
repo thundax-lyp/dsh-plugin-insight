@@ -5,7 +5,7 @@
 分析版本：[d9b20e1](https://github.com/Airmetro/dsh-update-checker/tree/d9b20e1de7298f43a8bd50d0e3565685bb17eeb8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/Airmetro/dsh-update-checker) [![npm 30d 7,106](https://img.shields.io/static/v1?label=npm+30d&message=7%2C106&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-update-checker) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-update-checker)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Airmetro/dsh-update-checker) [![npm 30d 7,106](https://img.shields.io/static/v1?label=npm+30d&message=7%2C106&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-update-checker) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-update-checker)
 <!-- END META -->
 
 > **实现功能**：在DSH GUI检查主程序和第三方插件版本，提供备份更新回退与Web重启流程，Desktop主程序转原生更新。
@@ -181,7 +181,7 @@ writeGate拒绝返回err=json(...)而json无返回值，if(g.err)无法退出；
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 12](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=12&color=grey&logo=github&style=flat)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+created%3A2026-09-22T10%3A14%3A28.197Z..2026-10-22T10%3A14%3A28.197Z) [![近30天关闭 14](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=grey&logo=github&style=flat)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A14%3A28.197Z..2026-10-22T10%3A14%3A28.197Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 12](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=12&color=737b86&logo=github)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+created%3A2026-09-22T10%3A14%3A28.197Z..2026-10-22T10%3A14%3A28.197Z) [![近30天关闭 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=737b86&logo=github)](https://github.com/Airmetro/dsh-update-checker/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A14%3A28.197Z..2026-10-22T10%3A14%3A28.197Z)
 
 
 

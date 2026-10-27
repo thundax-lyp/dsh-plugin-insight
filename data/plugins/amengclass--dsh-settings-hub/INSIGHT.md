@@ -5,7 +5,7 @@
 分析版本：[2c89559](https://github.com/Amengclass/dsh-settings-hub/tree/2c89559685a14375dcc6cc318ffc1c7c728a14c6)
 
 <!-- BEGIN META -->
-[![npm 30d 939](https://img.shields.io/static/v1?label=npm+30d&message=939&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-settings-hub)
+[![npm 30d 939](https://img.shields.io/static/v1?label=npm+30d&message=939&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-08-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub)
 <!-- END META -->
 
 > **实现功能**：接管 DSH 设置侧边栏，将第三方 settings.section 聚合、分组并持久化排序。
@@ -142,7 +142,7 @@ DSH webServer、slots、modules；浏览器 localStorage 和 profile package/nod
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-09-22T07%3A27%3A24.176Z..2026-10-22T07%3A27%3A24.176Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A27%3A24.176Z..2026-10-22T07%3A27%3A24.176Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-09-22T07%3A27%3A24.176Z..2026-10-22T07%3A27%3A24.176Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A27%3A24.176Z..2026-10-22T07%3A27%3A24.176Z)
 
 
 

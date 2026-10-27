@@ -5,7 +5,7 @@
 分析版本：[ca9694b](https://github.com/All3nCN/dsh-better-sidebar-N23/tree/ca9694b4d232ff47eefec07e395b23eef0766831)
 
 <!-- BEGIN META -->
-[![npm 30d 1,125](https://img.shields.io/static/v1?label=npm+30d&message=1%2C125&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23)
+[![npm 30d 1,125](https://img.shields.io/static/v1?label=npm+30d&message=1%2C125&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23) [![最新发布 2026-09-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@all3cn/dsh-better-sidebar-n23)
 <!-- END META -->
 
 > **实现功能**：为DSH提供文件编辑预览、真实终端、Git、浏览器与可扩展双面板工作台。
@@ -160,7 +160,7 @@ src/lib刻意分轨意味着“源码有修复”不能证明发布包具有同�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A11.437Z..2026-10-23T07%3A58%3A11.437Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A58%3A11.437Z..2026-10-23T07%3A58%3A11.437Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A11.437Z..2026-10-23T07%3A58%3A11.437Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-better-sidebar-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A58%3A11.437Z..2026-10-23T07%3A58%3A11.437Z)
 
 
 

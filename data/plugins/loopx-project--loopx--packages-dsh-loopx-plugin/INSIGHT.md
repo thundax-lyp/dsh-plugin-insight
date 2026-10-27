@@ -5,7 +5,7 @@
 分析版本：[e1c42d1](https://github.com/loopx-project/loopx/tree/e1c42d1605669e6c03004585b070c70b5cb6a57e/packages/dsh-loopx-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,421](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C421&color=yellow&logo=github&style=flat)](https://github.com/loopx-project/loopx)
+[![GitHub ★ 6,421](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C421&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/loopx-project/loopx)
 <!-- END META -->
 
 > **实现功能**：在DSH接入LoopX技能、同会话续轮Driver和GoalBar，展示权威目标状态并控制后续推进。
@@ -168,7 +168,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 114](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=114&color=grey&logo=github&style=flat)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=grey&logo=github&style=flat)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+created%3A2026-09-26T09%3A39%3A20.318Z..2026-10-26T09%3A39%3A20.318Z) [![近30天关闭 107](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=107&color=grey&logo=github&style=flat)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A39%3A20.318Z..2026-10-26T09%3A39%3A20.318Z)
+[![Issue 未关闭 114](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=114&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+created%3A2026-09-26T09%3A39%3A20.318Z..2026-10-26T09%3A39%3A20.318Z) [![近30天关闭 107](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=107&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A39%3A20.318Z..2026-10-26T09%3A39%3A20.318Z)
 
 
 

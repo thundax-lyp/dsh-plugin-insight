@@ -5,7 +5,7 @@
 分析版本：[edea1ec](https://github.com/GCWing/OpenBitFun/tree/edea1ec7f268a2d13f343b699abb86e415670ff0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,263](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C263&color=yellow&logo=github&style=flat)](https://github.com/GCWing/OpenBitFun)
+[![GitHub ★ 3,263](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C263&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GCWing/OpenBitFun)
 <!-- END META -->
 
 > **实现功能**：提供多模式Agent工作区、跨设备远程控制和可定制Mini App能力。
@@ -186,7 +186,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 96](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=96&color=grey&logo=github&style=flat)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 60](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=60&color=grey&logo=github&style=flat)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z) [![近30天关闭 28](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=28&color=grey&logo=github&style=flat)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z)
+[![Issue 未关闭 96](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=96&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=60&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z) [![近30天关闭 28](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=28&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z)
 
 
 

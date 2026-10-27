@@ -5,7 +5,7 @@
 分析版本：[b976645](https://github.com/99galaxy/dsh-plugin-market/tree/b97664510aafd55a74f17e304e271956f1c07659)
 
 <!-- BEGIN META -->
-[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
+[![npm 30d 1,454](https://img.shields.io/static/v1?label=npm+30d&message=1%2C454&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
 <!-- END META -->
 
 > **实现功能**：在 DSH 设置页展示社区目录、已安装与可更新项，并触发插件安装。

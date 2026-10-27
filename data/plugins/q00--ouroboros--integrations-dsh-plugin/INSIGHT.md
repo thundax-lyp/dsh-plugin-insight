@@ -5,7 +5,7 @@
 分析版本：[05d2718](https://github.com/Q00/ouroboros/tree/05d2718de3edf7ba25de920c78652f646b7a9704/integrations/dsh-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C272&color=yellow&logo=github&style=flat)](https://github.com/Q00/ouroboros)
+[![GitHub ★ 6,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
 <!-- END META -->
 
 > **实现功能**：通过DSH的MCP客户端挂载Ouroboros访谈、规格、执行与评估工具。

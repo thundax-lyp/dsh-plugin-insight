@@ -5,7 +5,7 @@
 分析版本：[032e2c9](https://github.com/february2015/dsh-taskswarm/tree/032e2c9d228c20cab65fe0ea061d78a7c753ab8c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=yellow&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm)
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/february2015/dsh-taskswarm)
 <!-- END META -->
 
 > **实现功能**：为DSH按任务包依赖分波并行调度worker，以Git worktree、检查点、状态/邮箱和review/merge流程集成代码产出。
@@ -182,7 +182,7 @@ TaskPlane是明确MIT移植参照，wave/worktree/git/mailbox并非本项目新�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+created%3A2026-09-22T10%3A23%3A50.800Z..2026-10-22T10%3A23%3A50.800Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A23%3A50.800Z..2026-10-22T10%3A23%3A50.800Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+created%3A2026-09-22T10%3A23%3A50.800Z..2026-10-22T10%3A23%3A50.800Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/february2015/dsh-taskswarm/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T10%3A23%3A50.800Z..2026-10-22T10%3A23%3A50.800Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[b202312](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/tree/b2023124a1fa08278e3ee82aefa8ed9faeade995)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,960](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C960&color=yellow&logo=github&style=flat)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite)
+[![GitHub ★ 2,960](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C960&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite)
 <!-- END META -->
 
 > **实现功能**：用可选Skill模块与Python控制器维护长任务状态、源码映射和证据检查。
@@ -171,7 +171,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Tiger3807861189/J-Space-Cognition-Suite/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

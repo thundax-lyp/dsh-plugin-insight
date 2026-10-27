@@ -5,7 +5,7 @@
 分析版本：[4eff126](https://github.com/AntaresCorn/dsh-auto-reviewer/tree/4eff126d8687c7a5cdf9273f7d9ca1b5e6b9a14e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AntaresCorn/dsh-auto-reviewer)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AntaresCorn/dsh-auto-reviewer)
 <!-- END META -->
 
 > **实现功能**：为 DSH 增加 auto-review 权限预设，按规则与可选 LLM 裁决提权并显示通知。
@@ -162,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AntaresCorn/dsh-auto-reviewer/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AntaresCorn/dsh-auto-reviewer/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

@@ -5,7 +5,7 @@
 分析版本：[ad2de74](https://github.com/xiaobright/dsh-anchored-standard/tree/ad2de749a3574e58d126324288ce5e90af66e1ce)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,739](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C739&color=yellow&logo=github&style=flat)](https://github.com/xiaobright/dsh-anchored-standard)
+[![GitHub ★ 3,739](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C739&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xiaobright/dsh-anchored-standard)
 <!-- END META -->
 
 > **实现功能**：提供实验性DSH预设，通过首轮上下文门控、工具分阶段暴露与历史种子控制模型轨迹。

@@ -5,7 +5,7 @@
 分析版本：[1952733](https://github.com/yjh051108/dsh-routing-suite/tree/195273352f23bff7f9023ebe2ec0cdbdf9c98f10)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,997](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C997&color=yellow&logo=github&style=flat)](https://github.com/yjh051108/dsh-routing-suite)
+[![GitHub ★ 6,997](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C997&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yjh051108/dsh-routing-suite)
 <!-- END META -->
 
 > **实现功能**：组合运行时注入器、思维模式路由预设与分级任务协议。

@@ -5,7 +5,7 @@
 分析版本：[ec56ac2](https://github.com/esengine/DeepSeek-Reasonix/tree/ec56ac27a34a47aa36f8748f93d08aaab21027fb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 35,959](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C959&color=yellow&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix)
+[![GitHub ★ 35,959](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C959&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/esengine/DeepSeek-Reasonix)
 <!-- END META -->
 
 > **实现功能**：独立开源编码Agent，提供终端、Studio、Web及ACP入口，可由DSH委派任务。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 482](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=482&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,154](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C154&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z) [![近30天关闭 1,877](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C877&color=grey&logo=github&style=flat)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z)
+[![Issue 未关闭 482](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=482&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,154](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C154&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z) [![近30天关闭 1,877](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C877&color=737b86&logo=github)](https://github.com/esengine/DeepSeek-Reasonix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A16.401Z..2026-10-26T03%3A38%3A16.401Z)
 
 
 

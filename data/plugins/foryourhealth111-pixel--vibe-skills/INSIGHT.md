@@ -5,7 +5,7 @@
 分析版本：[5200420](https://github.com/foryourhealth111-pixel/Vibe-Skills/tree/5200420c1992508a2d69952b9f02babf232a21ac)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,768](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C768&color=yellow&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
+[![GitHub ★ 3,768](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C768&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
 <!-- END META -->
 
 > **实现功能**：通过本地Skill发现、任务分解、阶段控制和验收组织复杂工作流。
@@ -156,7 +156,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 36](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=36&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 17](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 18](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=18&color=grey&logo=github&style=flat)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 36](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=36&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/foryourhealth111-pixel/Vibe-Skills/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
 
 
 

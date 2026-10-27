@@ -5,7 +5,7 @@
 分析版本：[ab3a9a4](https://github.com/Artenx/dsh-honeybee/tree/ab3a9a4aad213dd6d2f9e773644583bde9180b29/packages/dshb)
 
 <!-- BEGIN META -->
-[![npm 30d 2,574](https://img.shields.io/static/v1?label=npm+30d&message=2%2C574&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@artenx/dshb) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@artenx/dshb)
+[![npm 30d 2,574](https://img.shields.io/static/v1?label=npm+30d&message=2%2C574&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb)
 <!-- END META -->
 
 > **实现功能**：将 DSH 文件、命令和终端操作路由到本地、SSH 或 Docker 节点，并管理认证与工作区绑定。
@@ -164,7 +164,7 @@ bundle接线、binding和工具路由有源码支持；远端全链安全、断�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Artenx/dsh-honeybee/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Artenx/dsh-honeybee/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

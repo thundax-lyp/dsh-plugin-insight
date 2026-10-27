@@ -5,7 +5,7 @@
 分析版本：[ae10f46](https://github.com/AphyTOT/dsh-plugin-preflight/tree/ae10f46bcf65258d61fe54d966e8bdcc0daf60f6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AphyTOT/dsh-plugin-preflight)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AphyTOT/dsh-plugin-preflight)
 <!-- END META -->
 
 > **实现功能**：以 CLI 和模型工具预检 DSH 插件清单、patch、客户端包和预发布 peer 范围。

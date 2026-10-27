@@ -166,7 +166,7 @@ code_check 优先全局最近缓存项目而非调用会话 cwd，可能返回�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+created%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/All3nCN/dsh-qa-suite-N23/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A17%3A35.949Z..2026-10-22T05%3A17%3A35.949Z)
 
 
 

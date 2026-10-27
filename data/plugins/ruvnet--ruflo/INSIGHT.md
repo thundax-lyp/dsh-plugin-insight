@@ -5,7 +5,7 @@
 分析版本：[631c155](https://github.com/ruvnet/ruflo/tree/631c1557b5f325163c4f9f029a397bb30a61c730)
 
 <!-- BEGIN META -->
-[![GitHub ★ 79,217](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C217&color=yellow&logo=github&style=flat)](https://github.com/ruvnet/ruflo) [![npm 30d 49,674](https://img.shields.io/static/v1?label=npm+30d&message=49%2C674&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/claude-flow)
+[![GitHub ★ 79,217](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C217&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 49,674](https://img.shields.io/static/v1?label=npm+30d&message=49%2C674&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
 <!-- END META -->
 
 > **实现功能**：面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 661](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=661&color=grey&logo=github&style=flat)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 262](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=262&color=grey&logo=github&style=flat)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+created%3A2026-09-26T03%3A39%3A21.782Z..2026-10-26T03%3A39%3A21.782Z) [![近30天关闭 288](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=288&color=grey&logo=github&style=flat)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A39%3A21.782Z..2026-10-26T03%3A39%3A21.782Z)
+[![Issue 未关闭 661](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=661&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 262](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=262&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+created%3A2026-09-26T03%3A39%3A21.782Z..2026-10-26T03%3A39%3A21.782Z) [![近30天关闭 288](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=288&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A39%3A21.782Z..2026-10-26T03%3A39%3A21.782Z)
 
 
 

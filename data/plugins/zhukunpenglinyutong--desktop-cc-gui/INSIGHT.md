@@ -5,7 +5,7 @@
 分析版本：[af3537b](https://github.com/zhukunpenglinyutong/desktop-cc-gui/tree/af3537bee62d9f219c879353276f2d6c840e9e6c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,520](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C520&color=yellow&logo=github&style=flat)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
+[![GitHub ★ 4,520](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C520&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
 <!-- END META -->
 
 > **实现功能**：用独立桌面界面接入DSH及多个编码CLI，管理会话、工具输出和项目。

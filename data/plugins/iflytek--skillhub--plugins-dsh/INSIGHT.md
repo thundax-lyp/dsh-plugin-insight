@@ -5,7 +5,7 @@
 分析版本：[89b7991](https://github.com/iflytek/skillhub/tree/89b7991e411733e3ec893acaad4b8f6ffb0c2908/plugins/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5,292](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C292&color=yellow&logo=github&style=flat)](https://github.com/iflytek/skillhub) [![npm 30d 257](https://img.shields.io/static/v1?label=npm+30d&message=257&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@astron-team/skillhub-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@astron-team/skillhub-dsh)
+[![GitHub ★ 5,292](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C292&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/iflytek/skillhub) [![npm 30d 257](https://img.shields.io/static/v1?label=npm+30d&message=257&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@astron-team/skillhub-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@astron-team/skillhub-dsh)
 <!-- END META -->
 
 > **实现功能**：在DSH搜索和查看SkillHub技能，管理用户或项目级安装、升级、卸载及当前可用性。
@@ -173,7 +173,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 26](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=26&color=grey&logo=github&style=flat)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 32](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=32&color=grey&logo=github&style=flat)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+created%3A2026-09-26T09%3A38%3A01.975Z..2026-10-26T09%3A38%3A01.975Z) [![近30天关闭 29](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=grey&logo=github&style=flat)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A38%3A01.975Z..2026-10-26T09%3A38%3A01.975Z)
+[![Issue 未关闭 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=26&color=737b86&logo=github)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 32](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=32&color=737b86&logo=github)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+created%3A2026-09-26T09%3A38%3A01.975Z..2026-10-26T09%3A38%3A01.975Z) [![近30天关闭 29](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=29&color=737b86&logo=github)](https://github.com/iflytek/skillhub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A38%3A01.975Z..2026-10-26T09%3A38%3A01.975Z)
 
 
 

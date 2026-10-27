@@ -5,7 +5,7 @@
 分析版本：[0de1cc5](https://github.com/Devin-AXIS/iPolloWork/tree/0de1cc50c24395fed7cfbb21ff6d933cdce1f52e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7,286](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C286&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork)
+[![GitHub ★ 7,286](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C286&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/iPolloWork)
 <!-- END META -->
 
 > **实现功能**：独立桌面工作台，连接多种Agent运行时、项目任务与可编辑创作产物。
@@ -167,7 +167,7 @@ mux逻辑订阅与连接清理、审批pending响应校验有复用价值。当�
 
 **活跃度**
 
-[![Issue 未关闭 60](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=60&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z)
+[![Issue 未关闭 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=60&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+created%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Devin-AXIS/iPolloWork/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A32%3A03.449Z..2026-10-26T09%3A32%3A03.449Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[1c1a6c5](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2/tree/1c1a6c5ad59d78ef5e3c5a3fe88613f6a9601377/plugins/dsh-orchestrator2)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AngleZhang-ZhangJiao/dsh-orchestrator2)
 <!-- END META -->
 
 > **实现功能**：提供自动开发调度预设，以任务包组织设计、开发、审查、预算与人工验收。
