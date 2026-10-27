@@ -1,35 +1,40 @@
-# DSH Model Everything
+# dsh-model-everything
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-分析版本：[1abe8ab](https://github.com/AmethystLuna/dsh-model-everything/tree/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875)
+分析版本：[29b0bae](https://github.com/AmethystLuna/dsh-model-everything/tree/29b0bae2bf4b355243a0ca757512dc489440d659)
 
 <!-- BEGIN META -->
-[![npm 30d 415](https://img.shields.io/static/v1?label=npm+30d&message=415&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model-everything) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model-everything)
+[![npm 30d 1,186](https://img.shields.io/static/v1?label=npm+30d&message=1%2C186&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-model-everything) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-model-everything)
 <!-- END META -->
 
-> **实现功能**：为设计与代码断言提供建模Skill、有限模型验证、UML/依赖审查及可复算报告工具。
+> **实现功能**：把设计和代码断言建成模型，执行验证、图审查和前后报告比较。
 
-> **核心亮点**：已有增量是把断言核验、有限模型执行、反例和可复算报告接入DSH工作流，报告明确区分跳过、未决和判定；有限状态方法本身及外部检查器不是插件原创。[Q01](#research-q01) [Q02](#research-q02)
+> **核心亮点**：[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
 
-> **风险与缺陷**：忠实抽象是贡献成立的前提。模型pass、规范化hash和工具ok均不能证明源码程序安全；漏掉现实异常或截断搜索时必须收窄结论，构模成本也可能超过简单办法。[Q03](#research-q03)
+> **风险与缺陷**：[Q03](#research-q03) 模型通过能否说明实际代码通过？引擎明确不建立抽象，漏抽一个实现事件便能使模型结论失去代表性；应把报告当抽象范围内的证据，不能替代实现验收。
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 工程亮点](#detail-section-4)
-  - [1.4 主要限制](#detail-section-5)
-  - [1.5 使用建议](#detail-section-6)
-  - [1.6 核查说明与分析版本](#detail-section-7)
-- [2 未来设计假设（未验证）](#detail-section-8)
-- [3 辅助信息](#detail-section-9)
-- [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 可执行模型审查相对读代码或外部检查器增加什么？](#detail-section-11)
-  - [Q02 · 注册、模型读取和报告语义如何避免虚假通过？](#detail-section-12)
-  - [Q03 · 抽象正确性与状态爆炸怎样约束核心价值和总成本？](#detail-section-13)
-  - [Q04 · 怎样把模型反例与程序证据闭环，并界定采用？](#detail-section-14)
+  - [1.3 启动与依赖](#detail-section-4)
+  - [1.4 启动步骤](#detail-section-5)
+  - [1.5 成本](#detail-section-6)
+  - [1.6 效果](#detail-section-7)
+  - [1.7 工程亮点](#detail-section-8)
+  - [1.8 主要限制](#detail-section-9)
+  - [1.9 使用建议](#detail-section-10)
+  - [1.10 核查说明与分析版本](#detail-section-11)
+- [2 未来设计假设（未验证）](#detail-section-12)
+- [3 辅助信息](#detail-section-13)
+- [4 研究问题与完整回答](#detail-section-14)
+  - [Q01 · 哪些审查值得使用模型报告，何时退回直接阅读？](#detail-section-15)
+  - [Q02 · 工具如何从DSH注册进入有预算的验证？](#detail-section-16)
+  - [Q03 · 模型哈希与重构对照的贡献能否延伸为代码正确性证明？](#detail-section-17)
+  - [Q04 · 成本、失败恢复和工程复用是否足以支持有试用？](#detail-section-18)
+  - [Q05 · 抽取证据清单能否减少模型与实现脱节？](#detail-section-19)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +44,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要检查复杂行为断言及保存反例/报告的开发者，目标是对明确模型性质给出可追溯判断。
+> **用途**：面向能抽取有限模型的架构与重构审查者，用可复算模型报告回查行为断言。
 
-简单事实用通读或脚本；复杂全路径性质可直接用TLA+/SPIN等检查器。插件贡献是宿主集成与报告契约，未做外部工具效果排名。
+简单基线是人工读代码加既有单元测试，专业基线是直接准备SPIN等验证输入；本轮只比较实现与交接方式，未做效果排名。
 
 <a id="detail-section-3"></a>
 
@@ -50,98 +55,109 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 有限模型验证 | 检查明确模型的性质和反例 | 模型不等于程序；截断/未决不是通过 |
-| 图与结构工具 | 渲染/解析/审查UML与依赖图 | 各图族契约不同，不能泛化为全部语义证明 |
-| 报告与导出 | 冻结hash、比较报告并交外部检查器 | hash只绑定模型，导出不代表外部工具已运行 |
-| 域Skill | 分解断言和指导工具使用 | 模型仍需维护源码映射和验收条件 |
+|---|---|---|
+| 模型验证与回归 | 检查有限模型并比较前后行为 | 用户负责抽取，预算截断不等于通过 |
+| 报告哈希与对照 | 归档和复算同一抽象 | 不证明抽象与实际代码一致 |
+| 包内Skill | 指导模型与判定阅读 | 依赖宿主Skill提供者 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| Node≥20；DSH ^0.1.7-alpha.2 ∨ ^0.1.7-rc.1 ∨ ^0.2.0-rc.1 ∨ ^0.2.1-alpha.1；Cordis ^4.0.4 | 启动必需 | 注册Skills与模型工具 | 以上为作者包声明，本轮未加载；声明范围外兼容未知 |
-| 忠实模型、明确性质与源码映射 | 效果必需 | 限定判定对象和对应实现 | 缺映射不得把模型pass当程序通过 |
-| 外部检查器 | 交叉验证/导出后可选 | 复核模型或处理状态爆炸 | 未安装不阻止本地模型检查，外部结论仍未知 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 明确断言 | 用户/助手列性质并核对源码 | 确定不能用简单办法解决且建模有价值 |
-| 构模与验证 | 助手/工程师选schema并运行指定工具 | 读verdict、truncated、skip和反例，不只看ok |
-| 回到实现 | 工程师回放反例并冻结报告/模型 | 无映射或未决则停止放行，必要时换检查器 |
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | Skill上下文、工具定义与构模模型调用 | 学习schema、抽象和性质设计 | 作者有任务成本声明，未独立核对 |
-| 持续使用 | 状态枚举资源与模型更新调用 | 维护映射、核对反例和报告diff | 无同条件合格任务成本数据 |
-| 失败恢复 | 重构模型/外部检查器资源 | 缩减状态、定位遗漏并重验源码 | 增大maxStates不保证解决，时间未知 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 可复算报告 | 规范化hash、检查/判定/截断字段 | 模型与源码一致性及全部算法正确性 |
-| 全路径性质 | 有限状态探索与反例机制 | 超过边界未决，不能覆盖任意程序 |
-| 效果/成本 | 作者报告特定任务成本范围 | 独立任务收益、净节时及质量改进 |
-
-> **思考**：忠实抽象是贡献成立的前提。模型pass、规范化hash和工具ok均不能证明源码程序安全；漏掉现实异常或截断搜索时必须收窄结论，构模成本也可能超过简单办法。[Q03](#research-q03)
+**流程与依赖**
 
 <a id="detail-section-4"></a>
 
-### 1.3 工程亮点
+### 1.3 启动与依赖
 
-> **亮点**：已有增量是把断言核验、有限模型执行、反例和可复算报告接入DSH工作流，报告明确区分跳过、未决和判定；有限状态方法本身及外部检查器不是插件原创。[Q01](#research-q01) [Q02](#research-q02)
-
-已有增量是把断言核验、有限模型执行、反例和可复算报告接入DSH工作流，报告明确区分跳过、未决和判定；有限状态方法本身及外部检查器不是插件原创。[Q01](#research-q01) [Q02](#research-q02)
-
-报告语义分层、未知/skip显式和模型hash值得复用。状态引擎与宿主工具分离便于检查，但工具族庞大、构模接口与报告契约维护成本高；本次只核对代表路径，不凭测试目录数量保证引擎正确。
+| 条件 | 用途 | 失效与退路 |
+|---|---|---|
+| Node与包声明的DSH peer | 加载原生工具与Skill | 版本不符先停止接入 |
+| tools与skills宿主服务 | 注册工具和包内建模说明 | 服务不可用时核查注册日志 |
+| 有限模型及人工抽取能力 | 让判定代表目标断言 | 无法忠实抽取时回到代码测试 |
 
 <a id="detail-section-5"></a>
 
-### 1.4 主要限制
+### 1.4 启动步骤
 
-忠实抽象是贡献成立的前提。模型pass、规范化hash和工具ok均不能证明源码程序安全；漏掉现实异常或截断搜索时必须收窄结论，构模成本也可能超过简单办法。[Q03](#research-q03)
+| 步骤 | 执行者与完成判据 | 失败处理 |
+|---|---|---|
+| 隔离配置匹配宿主 | 使用者核对工具与Skill可见 | 不可见则停用并排查peer与服务 |
+| 提供已知反例模型 | 审查者确认出处与约束覆盖 | 漏抽则先修模型 |
+| 验证并比较报告 | 审查者区分失败、跳过、未决 | 截断先缩模，必要时转专业验证器 |
+| 回查实际代码 | 代码负责人复核反例与映射 | 不能对应则不将模型报告用于放行 |
+
+**效果与成本**
 
 <a id="detail-section-6"></a>
 
-### 1.5 使用建议
+### 1.5 成本
 
-适合理解有限模型、愿意维护源码映射的工程师小范围试用；未决、跳过关键性质或无法映射实现时停止放行，不把它当自动程序正确性证明。[Q04](#research-q04)
+| 阶段 | 现金／资源 | 人工／时间 |
+|---|---|---|
+| 首次使用 | Node、DSH及模型调用资源，金额未知 | 配置宿主、学习schema、抽取模型，时长未知 |
+| 持续使用 | 每轮建模与回查调用，费用未知 | 代码变动后重抽与解释报告，时长未知 |
+| 失败恢复 | 重试与外部验证器资源，费用未知 | 修正选项、缩模、复查未决及接管，时长未知 |
 
 <a id="detail-section-7"></a>
 
-### 1.6 核查说明与分析版本
+### 1.6 效果
+
+| 合格任务 | 源码支持 | 仍缺依据 |
+|---|---|---|
+| 有限模型审查 | 有预算搜索、参数拒绝和反例报告接线 | 本轮未执行正确性与宿主验收 |
+| 重构回归 | 接收beforeModel及stateMapping | 抽取忠实性、总耗时与错误放行率未测 |
+
+> **思考**：[Q03](#research-q03) 模型通过能否说明实际代码通过？引擎明确不建立抽象，漏抽一个实现事件便能使模型结论失去代表性；应把报告当抽象范围内的证据，不能替代实现验收。
+
+<a id="detail-section-8"></a>
+
+### 1.7 工程亮点
+
+> **亮点**：[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
+
+[Q03](#research-q03) 核心增量是将有限模型验证、版本哈希和重构对照组织为宿主内可归档的审查交付；成熟搜索算法及哈希不作原创归属，代码到模型的忠实性仍由人负责。
+
+统一hash与选项拒绝值得复用，但必须连同规范版本和判定语义迁移；src/index.ts批量注册中途失败后的effect与重试关系尚需宿主检验，不能当已确认故障。详见[Q02](#research-q02)、[Q04](#research-q04)。
+
+<a id="detail-section-9"></a>
+
+### 1.8 主要限制
+
+[Q03](#research-q03) 模型通过能否说明实际代码通过？引擎明确不建立抽象，漏抽一个实现事件便能使模型结论失去代表性；应把报告当抽象范围内的证据，不能替代实现验收。
+
+<a id="detail-section-10"></a>
+
+### 1.9 使用建议
+
+[Q01](#research-q01)、[Q04](#research-q04) 建议仅对已有小模型能力的架构师隔离试用，先检查已知反例与抽取覆盖，再核对报告是否正确区分skip和未决；不以模型通过放行实际代码。
+
+<a id="detail-section-11"></a>
+
+### 1.10 核查说明与分析版本
 
 **核查状态**：已检查源码。
 
-已核查代表性状态验证链路及发布入口；未执行工具，未审计全部算法，模型结论不能外推程序正确。
+已核查宿主接线、模型工具、预算截断与哈希机制；效果与宿主兼容未经运行，抽取证据清单是未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、skills/model-everything/SKILL.md、src/engine.ts、lib/index.js、src/index.ts、src/tool.ts、src/model-file.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/tool.ts、src/engine.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交的作者材料与关键源码只读核查；未安装或执行目标代码，未运行作者测试，未安排真实宿主验收。引用的既有作者运行记录不视为本轮独立验证。
-- 下一步：用带已知异常分支的实现及忠实/遗漏模型，比较假放行、反例回放与人工成本；小模型交叉外部检查器。当前未执行目标代码。
+- 边界：只读固定提交的README、清单与核心源码；未执行目标代码与测试，未独立复现作者成本数据。
+- 下一步：最小验证先用一个已知缺陷的小状态机确认反例和未决语义，再以相同预算比较五个协议的抽取清单；记录漏检、人工分钟及调用费。尚未执行。
 
 **分析版本**
 
 - **仓库**：[AmethystLuna/dsh-model-everything](https://github.com/AmethystLuna/dsh-model-everything)
-- **版本号**：0.3.0（[固定提交 1abe8ab](https://github.com/AmethystLuna/dsh-model-everything/tree/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.0（[固定提交 29b0bae](https://github.com/AmethystLuna/dsh-model-everything/tree/29b0bae2bf4b355243a0ca757512dc489440d659)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-8"></a>
+<a id="detail-section-12"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
-未验证假设是性质—源码—模型映射—可回放反例的最小证据闭环，能减少模型正确而程序有错的假放行；以已知缺陷和遗漏迁移对照，计入构模/复核成本。[Q04](#research-q04)
+[Q05](#research-q05) 未验证假设是把每个转换的代码出处与独立摘要作为抽取交接清单，在运行验证前确认覆盖，以减少模型和实现脱节；五个已知缺陷协议对照漏检与人工时间，未改善即停止。
 
-用带已知异常分支的实现及忠实/遗漏模型，比较假放行、反例回放与人工成本；小模型交叉外部检查器。当前未执行目标代码。
+最小验证先用一个已知缺陷的小状态机确认反例和未决语义，再以相同预算比较五个协议的抽取清单；记录漏检、人工分钟及调用费。尚未执行。
 
-<a id="detail-section-9"></a>
+<a id="detail-section-13"></a>
 
 ## 3 辅助信息
 
@@ -150,223 +166,167 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 63 | 9336 | — | — | 122188 |
-| .mjs | source | 12 | 2433 | 1929 | 312 | — |
+| .md | source | 69 | 10196 | — | — | 132584 |
+| .mjs | source | 15 | 2592 | 2045 | 342 | — |
 | .md | example | 6 | 104 | — | — | 687 |
 | .js | example | 17 | 546 | 458 | 22 | — |
-| .js | source | 39 | 17943 | 15311 | 2638 | — |
-| .ts | source | 39 | 19597 | 15170 | 3314 | — |
-| .md | test | 3 | 268 | — | — | 2875 |
-| .mjs | test | 36 | 14082 | 11241 | 1702 | — |
+| .js | source | 58 | 21712 | 18598 | 3140 | — |
+| .ts | source | 58 | 22833 | 17561 | 3903 | — |
+| .md | test | 3 | 288 | — | — | 3064 |
+| .mjs | test | 40 | 16824 | 13589 | 1816 | — |
 | .mjs | example | 1 | 118 | 91 | 23 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/dsh-model-everything/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/dsh-model-everything/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A30.854Z..2026-10-23T07%3A58%3A30.854Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/dsh-model-everything/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/dsh-model-everything/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmethystLuna/dsh-model-everything/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
 
-暂未获取：近30天关闭。
 
-统计日期：2026-10-23。
 
-<a id="detail-section-10"></a>
+统计日期：2026-10-27。
+
+<a id="detail-section-14"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：有限模型验证如何把行为断言变成可复算报告，抽象正确性和状态截断如何约束结论？
+**插件研究总目标**：核查建模报告相对聊天式代码审查的可追溯增量及抽取边界。
 
 <a id="research-q01"></a>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-15"></a>
 
-### Q01 · 可执行模型审查相对读代码或外部检查器增加什么？
+### Q01 · 哪些审查值得使用模型报告，何时退回直接阅读？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、采用判断
 
 #### 完整回答
 
-适合需要检查状态机/协议全路径断言、重构前后性质或交付可复算报告的开发者。合格结果不是一段“看起来安全”的解释，而是明确模型、性质、边界、反例与报告hash，并回到源码确认抽象。作者同时提供技能和模型工具，将断言清单、建模、验证、读报告和导出放进DSH，增量在可复算工作流集成与结果语义，不是发明有限状态探索或替代TLA+/SPIN。对人工一次通读或几行脚本即可确定的断言，该方法建模固定成本不合算。README的0.93×–1.11×成本比为作者特定任务报告，本轮没有检查其完整配对实验，不作收益证据。模型检查只能决定输入模型，不自动证明程序实现。结构依赖工具可从源码建图，不应与状态机引擎的抽象责任混淆。
+适合已经能抽取有限状态机的架构师与重构审查者，在跨模块协议、迁移或行为保持审查中，把模糊断言改成可以复算的模型判定。合格交付是带出处、模型与报告的审查记录，并由人把反例回查实际代码；不是拿到pass便宣布实现正确。简单替代是直接阅读代码加单元测试，或人工给外部验证器准备输入。此插件把模型输入、判定、前后对比和报告集中在宿主工具链，减少切换与报告格式拼装，但不能省掉抽象与验收。作者称中大型项目可摊薄开销，其成本倍数只是作者报告；项目大不意味着引擎可以枚举大状态空间。初次试用应选已有已知反例的小协议，报告未指出反例、模型遗漏业务约束或抽取负担超过直接复核时退出。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:11-39](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/README.md#L11-L39)
+**依据 1 · 作者声明**：[README.md:25-39](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/README.md#L25-L39)
 
-作者目标、成本声明与模型/程序界线。
+作者同时限定目标项目尺度和已经抽象的小模型，不能把项目规模直接解释为验证规模。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
+## 专精于中大型、中高复杂度项目的建模审查
 
-把设计与代码里的断言抽象成模型，交给引擎跑一遍：结论带出处与哈希，能复算、能比对。让结论来自一次运行，而不是一次通盘推理：把「想清楚」变成「跑一遍」。
+这个工具专做一件事：把项目里关于行为、结构、数据的断言建成模型，跑一遍，拿回一条可复算的结论，而不是一段读起来像结论的散文。
 
-DeepSeek Harness 原生插件。把设计与代码里**关于行为的断言**变成可运行、可审查、可导出的模型：
+**它专精的尺度是中大型、中高复杂度的项目**：几万行代码、上百个文件、跨模块的协议与状态机。在那个尺度上，一次判定替代的是几十次阅读，技能正文与工具定义那部分固定开销也随之摊开；我们测到的成本比在这一档回落到 0.93×–1.11×。
 
-- **核验断言**：逐条对着源码检查，引用到 `file:line`。
-- **跑模型**：状态机、协议、多机协作、数据模型先建成可执行模型，再交给引擎跑。
-- **审图**：UML 图按模型读、按模型审，并与模型对照。
-- **对照重构**：重构前后各建一份模型，两份报告摆一起比。
-- **留痕**：结论固化成带哈希的报告，可复算、可比对、可导出。
+它交回三样东西：
 
-## 它更贵，但它给的是判定
-
-这是一个**能力型工具，不是省钱工具**。
-
-**贵多少取决于任务大小，而且是反过来的**：几百行的夹具上它贵出数倍——固定成本（技能正文、工具定义）摊不开；对象涨到几万行、上百文件，比例回落到持平附近，我们测到 0.93×–1.11×。**任务越大，这笔钱越值**：一次判定替代的是几十次 `read`，而不是几行代码。
-
-换来的是别的东西：
-
-- 一条**可复算**的结论：哈希、`verdict`、出处，而不是一段读起来像结论的散文；
+- 一条**可复算**的结论：哈希、`verdict`、出处；
 - 一条**反例路径**：哪几步、哪个事件序列让断言不成立；
 - 一份**可导出的模型**：同一条结论能交给 UPPAAL、TLA+、PRISM、SPIN 复核。
 
-什么时候不值得：断言能靠通读一次代码、或者写三行脚本数出来的时候。**它买不到比读一遍更快**；它买到的是「读一遍给不出判定」的那类断言。
+**它专精的对象，是人已经抽象好的小模型**：状态机、有限词自动机、数据模型与迁移、设计声明、依赖图。模型大到枚举不动时，它报 `truncated` 并点名未决的检查；减模型（去掉性质不读的变量、合并对称状态），或把那份模型交给 SPIN 的偏序归约、NuSMV 的符号化、CBMC 的有界 SAT，都能接着往下走。
 
-**它判定的是小模型，不是程序。** 引擎显式枚举状态，模型炸开时会报 `truncated` 并点名未决的检查。那不是重试一个更大的 `maxStates` 就能解决的：先减模型（去掉性质不读的变量、合并对称状态），仍然炸开就换不靠枚举的工具——SPIN 的偏序归约、NuSMV 的符号化、CBMC 的有界 SAT。本插件不建立抽象，也不读程序源码。
-
-## 能力范围
-
+## 报告卡片
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[skills/model-everything/SKILL.md:10-25](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/skills/model-everything/SKILL.md#L10-L25)
+**依据 2 · 作者声明**：[README.md:84-95](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/README.md#L84-L95)
 
-技能要求断言核验及小模型边界，说明人工建模责任。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-## When This Skill Applies
-
-**This is the entry point.** Load this skill when a claim about the code has to be settled and a reading will not settle it. It owns the doctrine: enumerate the claims, verify each against the code, cite `file:line`, read `verdict`. It also owns the executable verification for behaviour. A neighbouring domain goes to its own skill through the routing table below.
-
-**It decides small models, not programs.** The engine enumerates states, so a model that explodes is reported `truncated` with the undecided check named. That is not a bug to retry with a larger `maxStates`: reduce the model first (drop variables the property does not read, collapse symmetric states), and if it still explodes the property needs a tool that does not enumerate - SPIN for partial-order reduction, NuSMV for symbolic search, CBMC for bounded SAT. This plugin builds no abstraction and reads no program source.
-
-**This costs more than reading, and less the larger the task.** On a fixture of a few hundred lines it costs several times a plain reading, because the fixed cost has nothing to amortise against. On a tree of tens of thousands of lines the ratio falls to roughly parity. Spend it where the object is large enough for one decision to replace many reads. Reach for it when the claim is about all paths rather than one, when nothing in the repository will go red if it is false, or when the verdict has to be reproducible later. A claim one reading settles belongs in a sentence, not in a model.
-
-| The task involves… | What it does |
-|---|---|
-| Any claim about code: design doc, spec, plan, review comment, README, commit message, refactor proposal, "this is safe", "this always holds", "this can't deadlock" | Enumerate the verifiable claims (Phase 1), verify each with `file:line` evidence (Phase 2), classify the gaps (Phase 3) |
-| A state machine or protocol with three or more states, guards, ACK/NACK/retry, lock/unlock, or start/stop ordering | Build an executable model. Run the S1-S8 structural checks and the A1-A14 adversarial probes |
-| A quantitative or temporal guarantee: worst-case cost within a budget, "90% of runs reach SAFE", "must leave within 2 ticks" | A12 budget, A13 probabilistic reachability, A14 deadlines. Each returns a counterexample path |
-| A handshake or power-up sequence across two or more components | `model_compose_verify`: C1 composition deadlock, C2 rendezvous that never fires |
-| A refactoring that changes state topology or guards | Compare BEFORE and AFTER models for behaviour preservation, invariant continuity and deadlock regression (D1-D4) |
-| An explicit request to prove code correct, verify a module, or check a migration for breakage | Route by domain through [Routing to the Sibling Skills](#routing-to-the-sibling-skills). Keep the doctrine |
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/engine.ts:1363-1385](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L1363-L1385)
-
-有限状态探索支撑工具机制，非直接执行程序。
+重构工作流由用户提供前后模型并回查代码，限定采用任务。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-function explore(model: LogicModelV1, options: NormalizedOptions): Exploration {
-  const init = initialState(model)
-  const reachable: RuntimeState[] = []
-  const reachableKeys = new Set<string>()
-  const queue: RuntimeState[] = [init]
-  let truncated = false
-  while (queue.length > 0) {
-    const runtime = queue.shift()!
-    const key = runtimeKey(runtime)
-    if (reachableKeys.has(key)) continue
-    reachableKeys.add(key)
-    reachable.push(runtime)
-    if (reachable.length > options.maxStates) {
-      truncated = true
-      break
-    }
-    for (const event of allEvents(model)) {
-      for (const next of stepRuntime(model, runtime, event)) {
-        if (!reachableKeys.has(runtimeKey(next))) queue.push(next)
-      }
-    }
-  }
-  return { reachable, reachableKeys, truncated, initialState: init }
+
+每个场景都只讲「给什么、看哪个字段、它不管什么」。
+
+### 重构 harness
+
+1. 重构前抽 **BEFORE** 模型；数据侧留一份旧 schema。
+2. 重构。
+3. 抽 **AFTER** 模型。
+4. `model_verify` 带 `beforeModel` 与 `stateMapping`；数据侧用 `model_datamodel_verify` 的 `fieldMapping`。
+5. `report_diff` 拿基线报告比对：**新增的 error 就是拒绝这次重构的理由**。
+
+它比的是两份模型，不是两份代码；也不读 diff、不改代码、不跑测试。
 ```
 
 </details>
 
 #### 缺口
 
-- 作者成本比对应的同条件合格任务证据未独立核验
-  **影响**：不能宣称规模越大越省钱或更高效
-  **进一步探讨**：冻结同任务/模型/质量门槛，比读代码、简单脚本和模型工作流的总费用与人工
+- 未独立测量抽取和复核总时间
+  **影响**：不能确认整体节时或作者成本倍数
+  **进一步探讨**：同一小协议比较直接审查与建模审查的合格率、人工分钟和总调用成本
 
 <a id="research-q02"></a>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-16"></a>
 
-### Q02 · 注册、模型读取和报告语义如何避免虚假通过？
+### Q02 · 工具如何从DSH注册进入有预算的验证？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-发布lib/index注册验证、数据/组合、UML、结构、设计、编辑与报告diff等工具，并通过文件系统provider注册本包Skills。以model_verify为代表，参数要求inline模型和modelPath二选一，stateMapping须为非空目标状态映射且要求beforeModel，错误参数返回拒绝报告。引擎校验模型后枚举状态，超maxStates标truncated；未决检查的_UNDECIDED后缀统一传播到summary.truncated，checksRun不把skip计作已检查，报告携带规范化hash及判定。调用者需读verdict、各检查和truncated，而非只看ok或hash。hash固定的是模型内容/规范，不证明模型对应程序、性质足够或引擎无缺陷。可借鉴的是拒绝、跳过、未决与失败分开，移植仍要维护各工具族一致报告契约；本次抽读状态验证链路，不宣称所有图族/概率性质算法均已审计正确。
+apply取得tools服务后通过ctx.effect注册model_verify及相关数据、组合、导出和报告工具；服务尚未挂载时直接返回，在agent/pre-step之后再次尝试。Skill使用宿主FileSystemSkillProvider加载包内skills，根组件有明确原生工具与Skill接线。model_verify接收内联模型或modelPath，先核对stateMapping形状与beforeModel依赖，再调用runVerification；错误转为VERIFY_OPTION_INVALID拒绝。搜索队列按运行状态去重，达到maxStates上限设置truncated并停止，报告指引明确未决不等于证明。Node与DSH peer版本是启动前提，API能注册、effect能销毁与实际宿主接线仍需安装验收。重试注册是在下一个模型步骤进行，不能解释为所有服务异常都能自动恢复。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:179-205](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/lib/index.js#L179-L205)
+**依据 1 · 源码核查**：[src/index.ts:233-262](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/index.ts#L233-L262)
 
-发布入口工具注册支持运行接线，非只看文档清单。
+显示tools服务、注册效果及异常处理。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-        if (toolRegistered)
-            return;
-        const tools = ctx.get('tools');
-        if (tools === undefined)
-            return;
-        try {
-            ctx.effect(() => tools.register(modelVerifyTool), 'dsh-model-everything: verify tool');
-            ctx.effect(() => tools.register(modelDataModelVerifyTool), 'dsh-model-everything: data verify tool');
-            ctx.effect(() => tools.register(modelConcurrencyScanTool), 'dsh-model-everything: concurrency scan tool');
-            ctx.effect(() => tools.register(modelComposeTool), 'dsh-model-everything: compose tool');
-            ctx.effect(() => tools.register(modelExportTool), 'dsh-model-everything: export tool');
-            ctx.effect(() => tools.register(umlRenderTool), 'dsh-model-everything: uml render tool');
-            ctx.effect(() => tools.register(umlParseTool), 'dsh-model-everything: uml parse tool');
-            ctx.effect(() => tools.register(umlReviewTool), 'dsh-model-everything: uml review tool');
-            ctx.effect(() => tools.register(umlExplainLabelsTool), 'dsh-model-everything: uml explain-labels tool');
-            ctx.effect(() => tools.register(umlStructureTool), 'dsh-model-everything: structure tool');
-            ctx.effect(() => tools.register(designTool), 'dsh-model-everything: design review tool');
-            ctx.effect(() => tools.register(reportDiffTool), 'dsh-model-everything: report diff tool');
-            ctx.effect(() => tools.register(modelEditTool), 'dsh-model-everything: model edit tool');
-            ctx.effect(() => tools.register(modelAutomatonTool), 'dsh-model-everything: automaton tool');
-            toolRegistered = true;
-            dataToolRegistered = true;
-            concurrencyToolRegistered = true;
-            composeToolRegistered = true;
-            exportToolRegistered = true;
-            umlToolsRegistered = true;
-            structureToolRegistered = true;
+  const registerTool = (): void => {
+    if (toolRegistered) return
+    const tools = ctx.get('tools') as ToolRegistryLike | undefined
+    if (tools === undefined) return
+    try {
+      ctx.effect(() => tools.register(modelVerifyTool), 'dsh-model-everything: verify tool')
+      ctx.effect(() => tools.register(modelDataModelVerifyTool), 'dsh-model-everything: data verify tool')
+      ctx.effect(() => tools.register(modelConcurrencyScanTool), 'dsh-model-everything: concurrency scan tool')
+      ctx.effect(() => tools.register(modelComposeTool), 'dsh-model-everything: compose tool')
+      ctx.effect(() => tools.register(modelExportTool), 'dsh-model-everything: export tool')
+      ctx.effect(() => tools.register(umlRenderTool), 'dsh-model-everything: uml render tool')
+      ctx.effect(() => tools.register(umlParseTool), 'dsh-model-everything: uml parse tool')
+      ctx.effect(() => tools.register(umlReviewTool), 'dsh-model-everything: uml review tool')
+      ctx.effect(() => tools.register(umlExplainLabelsTool), 'dsh-model-everything: uml explain-labels tool')
+      ctx.effect(() => tools.register(umlStructureTool), 'dsh-model-everything: structure tool')
+      ctx.effect(() => tools.register(designTool), 'dsh-model-everything: design review tool')
+      ctx.effect(() => tools.register(reportDiffTool), 'dsh-model-everything: report diff tool')
+      ctx.effect(() => tools.register(modelEditTool), 'dsh-model-everything: model edit tool')
+      ctx.effect(() => tools.register(modelAutomatonTool), 'dsh-model-everything: automaton tool')
+      toolRegistered = true
+      dataToolRegistered = true
+      concurrencyToolRegistered = true
+      composeToolRegistered = true
+      exportToolRegistered = true
+      umlToolsRegistered = true
+      structureToolRegistered = true
+      reportDiffToolRegistered = true
+    } catch (err) {
+      console.warn('[dsh-model-everything] model_verify/model_datamodel_verify tool registration failed', err)
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:269-281](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/index.ts#L269-L281)
+**依据 2 · 源码核查**：[src/index.ts:275-292](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/index.ts#L275-L292)
 
-文件系统Skill provider注册本包目录。
+Skill提供者与pre-step重试实际接线。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-  // Ship the bundled skill through the registry: reuse the standard
-  // filesystem provider over this package's own `skills/` directory, so
-  // catalog discovery, frontmatter parsing, and SKILL.md loading behave
-  // exactly like project/user skills while the plugin stays self-contained.
-  // Registration lands in the global registry layer (this row mounts at the
-  // profile root), so every agent preset sees the skill. `registerProvider`
   // returns the effect disposer; its teardown unregisters and invalidates.
   ctx.skills.registerProvider((control) => {
     return new FileSystemSkillProvider(ctx, control, {
@@ -374,16 +334,27 @@ function explore(model: LogicModelV1, options: NormalizedOptions): Exploration {
       includeDefaultRoots: false,
       customSkillDirs: [SKILLS_DIR],
     })
+  })
+  // Optional services register opportunistically and a base-bundle row can mount after
+  // this one applies, so registration is retried on the first model step - the point by
+  // which the app is fully booted. Nothing is appended to the step: the tools and the
+  // skill text are the guide, not an injected reminder. Session-start routing, if a
+  // deployment wants it, is the separate gate component in `gate.ts`, not this row.
+  ctx.on('agent/pre-step', async (_payload, next) => {
+    const decision = await next()
+    registerIntegrations()
+    return decision
+  })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/tool.ts:75-106](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/tool.ts#L75-L106)
+**依据 3 · 源码核查**：[src/tool.ts:76-108](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/tool.ts#L76-L108)
 
-参数形状与前后映射要求及引擎调用。
+选项检查到runVerification及拒绝输出的调用链。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
   async execute(args) {
@@ -418,144 +389,14 @@ function explore(model: LogicModelV1, options: NormalizedOptions): Exploration {
       }) as unknown as JsonValue
     } catch (error) {
       return optionRefusal(error, 'VERIFY_OPTION_INVALID') as unknown as JsonValue
+    }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/model-file.ts:35-48](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/model-file.ts#L35-L48)
+**依据 4 · 源码核查**：[src/engine.ts:1363-1385](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L1363-L1385)
 
-内联模型与文件路径互斥。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/**
- * Exactly one of the inline value and the file path. Both is ambiguous, neither is a missing
- * argument, and each gets its own sentence so the caller knows which one to drop.
- */
-export function oneOf(value: unknown, path: unknown, inlineName: string, pathName: string, code: string): unknown {
-  const hasValue = value !== undefined
-  const hasPath = path !== undefined
-  if (hasValue && hasPath) {
-    throw new OptionShapeError(code, `Pass either ${inlineName} or ${pathName}, not both: the file would be read and then ignored, or the other way round.`)
-  }
-  if (!hasValue && !hasPath) {
-    throw new OptionShapeError(code, `Pass ${inlineName} or ${pathName}: the model has to come from somewhere.`)
-  }
-  return hasPath ? readJsonFile(path, pathName, code) : value
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/engine.ts:3972-3991](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L3972-L3991)
-
-skip、未决、截断与边界注记进入正式报告。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-    summary: {
-      states: model.states.length,
-      transitions: model.transitions.length,
-      errors,
-      warnings,
-      // `checksRun` counts the checks that examined the model, which is what the name promises. It used to
-      // count every check object, so a model that declared nothing still read as "22 checks ran".
-      checksRun: checks.filter((check) => check.status !== 'skip').length,
-      ...(() => {
-        const skipped = checks.filter((check) => check.status === 'skip').map((check) => check.id)
-        return skipped.length === 0 ? {} : { checksSkipped: skipped }
-      })(),
-      truncated: exploration.truncated || hasUndecidedFinding(checks),
-      ...(boundNotes.length === 0 ? {} : { boundNotes }),
-    },
-    checks,
-    nextSteps: verificationNextSteps(checks, narrativeCoverage),
-    ...(model.narrative === undefined ? {} : { narrative: model.narrative }),
-    ...(comparison === undefined ? {} : { comparison }),
-    ...(coverageNotes.length === 0 ? {} : { coverageNotes }),
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/engine.ts:424-433](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L424-L433)
-
-规范化hash只是内容绑定。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
- * The hash of any model this plugin carries: the same normalization as `modelHash`,
- * over whatever object the family defines. A use case diagram and a state machine are
- * hashed by one rule, so a report can name either.
- */
-export function valueHash(value: unknown, spec: HashSpec = DEFAULT_HASH_SPEC): string {
-  return createHash('sha256').update(stableStringify(hashPayload(value, spec))).digest('hex')
-}
-
-export function modelHash(model: LogicModelV1, spec: HashSpec = DEFAULT_HASH_SPEC): string {
-  return valueHash(model, spec)
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 抽象正确性与状态爆炸怎样约束核心价值和总成本？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-核心质疑是正确地检查一个遗漏现实行为的模型，是否仍让用户误以为程序正确。技能明确不自动构建状态抽象，状态机引擎只遍历提供模型；漏掉重试、异常或资源分支时，无论hash可复算还是模型pass，都不能外推程序安全。相反，truncated/_UNDECIDED是有意义的不完整结论，不能通过加大maxStates就自动转成证据。引擎会规范化搜索上限并报告调整，显式遍历状态达到阈值即停止。首次成本包含人工/模型抽取、性质设计与工具schema学习，持续使用包括模型随代码更新和反例回放，失败需缩减模型或换外部检查器再核对源码。Node和宿主Skill/tool服务是启动条件；外部检查器仅导出复核时需要，并非本工具所有功能必需。建模引入的LLM费和人工时间均无本轮测量。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[skills/model-everything/SKILL.md:12-16](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/skills/model-everything/SKILL.md#L12-L16)
-
-明确只决定小模型、抽象由外部负责及替代检查器。
-
-```text
-**This is the entry point.** Load this skill when a claim about the code has to be settled and a reading will not settle it. It owns the doctrine: enumerate the claims, verify each against the code, cite `file:line`, read `verdict`. It also owns the executable verification for behaviour. A neighbouring domain goes to its own skill through the routing table below.
-
-**It decides small models, not programs.** The engine enumerates states, so a model that explodes is reported `truncated` with the undecided check named. That is not a bug to retry with a larger `maxStates`: reduce the model first (drop variables the property does not read, collapse symmetric states), and if it still explodes the property needs a tool that does not enumerate - SPIN for partial-order reduction, NuSMV for symbolic search, CBMC for bounded SAT. This plugin builds no abstraction and reads no program source.
-
-**This costs more than reading, and less the larger the task.** On a fixture of a few hundred lines it costs several times a plain reading, because the fixed cost has nothing to amortise against. On a tree of tens of thousands of lines the ratio falls to roughly parity. Spend it where the object is large enough for one decision to replace many reads. Reach for it when the claim is about all paths rather than one, when nothing in the repository will go red if it is false, or when the verdict has to be reproducible later. A claim one reading settles belongs in a sentence, not in a model.
-```
-
-**依据 2 · 源码核查**：[src/engine.ts:3824-3836](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L3824-L3836)
-
-规范化搜索预算与模型校验入口。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-export function runVerification(input: unknown, options: VerificationOptions = {}): VerificationReport {
-  // A bound that was replaced or clamped is recorded here and reported through the summary, so a
-  // caller who asked for 10^12 learns the answer came from a smaller search instead of reading a
-  // truncated report as a complete one.
-  const boundNotes: string[] = []
-  const normalized: NormalizedOptions = {
-    maxStates: boundedOption(options.maxStates, DEFAULT_MAX_STATES, MAX_STATES_CEILING, 'maxStates', boundNotes),
-    maxPermutationEvents: boundedOption(options.maxPermutationEvents, DEFAULT_MAX_PERMUTATION_EVENTS, MAX_PERMUTATION_EVENTS_CEILING, 'maxPermutationEvents', boundNotes),
-  }
-  const hashSpec = options.hashSpec ?? DEFAULT_HASH_SPEC
-  const metadataKeys = metadataKeysOf(input)
-  const metadata = metadataKeys.length === 0 ? {} : { metadataKeys }
-  const validation = validateModel(input)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/engine.ts:1363-1385](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L1363-L1385)
-
-枚举/截断决定能力边界。
+队列去重、maxStates截断和返回值。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -588,159 +429,310 @@ function explore(model: LogicModelV1, options: NormalizedOptions): Exploration {
 
 </details>
 
-**依据 4 · 源码核查**：[src/engine.ts:572-585](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L572-L585)
-
-未决传播而非假通过。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/**
- * Whether a finding means "the search stopped before deciding", as opposed to "the model is wrong".
- * Such a finding must reach `summary.truncated`, or a caller reading only that flag would take an
- * unfinished search for a clean one.
- *
- * The shipped schema reference states the rule as a name: the check that stopped carries a finding
- * whose code ends in `_UNDECIDED`, and the report sets `summary.truncated`. Read from the name, that
- * is one rule in one place. It used to be a hand-written set of codes, and A12 and A14 minted their
- * own codes without joining it: the report carried an undecided finding and `truncated` stayed
- * false, so the two halves of that sentence disagreed.
- */
-function hasUndecidedFinding(checks: CheckResult[]): boolean {
-  return checks.some((check) => check.findings.some((finding) => finding.code.endsWith('_UNDECIDED')))
-}
-```
-
-</details>
-
-**依据 5 · 源码核查**：[package.json:34-38](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/package.json#L34-L38)
-
-作者声明DSH版本范围。
-
-```text
-      "dsh": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1"
-    },
-    "category": "tools/dev",
-    "displayName": "dsh-model-everything",
-    "bundle": {
-```
-
-**依据 6 · 源码核查**：[package.json:71-78](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/package.json#L71-L78)
-
-Cordis及宿主peer依赖。
-
-```text
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.4",
-    "@deepseek-ai/dsh-agent": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
-    "@deepseek-ai/dsh-llm": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
-    "@deepseek-ai/dsh-session": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
-    "@deepseek-ai/dsh-skill-filesystem": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
-    "@deepseek-ai/dsh-tools": "^0.1.7-alpha.2 || ^0.1.7-rc.1 || ^0.2.0-rc.1 || ^0.2.1-alpha.1",
-    "@deepseek-ai/schemastery": "^3.18.4"
-```
-
-**依据 7 · 源码核查**：[package.json:126-128](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/package.json#L126-L128)
-
-Node运行时要求。
-
-```text
-  "engines": {
-    "node": ">=20"
-  }
-```
-
 #### 缺口
 
-- 模型是否忠实覆盖实际源码行为尚无自动保证或本轮对照
-  **影响**：限制程序级安全/重构正确性结论
-  **进一步探讨**：用故意遗漏异常分支的模型对照源码测试或独立检查器
+- 未检查真实宿主版本中可选服务启动顺序
+  **影响**：注册接线的实际兼容尚不确定
+  **进一步探讨**：在隔离宿主观察首次注册、晚挂载和卸载后工具清理
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-17"></a>
 
-### Q04 · 怎样把模型反例与程序证据闭环，并界定采用？
+### Q03 · 模型哈希与重构对照的贡献能否延伸为代码正确性证明？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
-未验证假设是建立“性质→源码位置→抽象映射→反例可回放用例”的最小证据闭环，能够比只保存hash报告更早暴露模型与实现偏离。推导来自可复算报告的优势及抽象缺口，新增负担是维护映射和用例，不是把模型报告直接当CI放行。最小验证对同一含已知异常/重试缺陷的模块，提供忠实模型和删掉关键迁移的模型，比较普通报告流程与闭环流程能否识别抽象遗漏；另以独立模型检查器交叉核对小模型。只有在相同预算下减少假放行、且人工构模/复核量可接受才支持；模型通过而程序缺陷仍漏过则否定保障效果。建议trial给理解有限模型和源码映射的工程师，从一个小协议、明确性质和反例开始；对简单事实或需要自动程序正确性证明的人不适合。遇到未决、缺性质、无源码对应时停止把结果用于交付放行。
+贡献是将结构化模型判定与可归档的报告契约整合进DSH，而非首创状态空间搜索或SHA-256。相对聊天式审查，valueHash通过稳定序列化和统一hashPayload规范绑定模型输入，beforeModel与stateMapping给前后模型的行为保持检查明确接口，报告要求用户区分失败、跳过与未决，因而可以追问结论究竟覆盖什么。这些机制支持复算同一抽象并比较报告；不证明抽象忠实。最强反例是实际代码漏掉一个事件处理，而人工模型仍把该事件建为合法转换，模型可全部通过但实现有错。README和引擎都明确承认不建立抽象、不读取程序源码。相比直接使用专业验证器，增量主要是宿主内工作流和报告统一，不能据源码包装判断算法更强或全球原创。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/engine.ts:424-433](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L424-L433)
+**依据 1 · 源码核查**：[src/engine.ts:417-429](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L417-L429)
 
-内容hash可成为冻结模型的证据锚点，但不含代码对应证明。
+稳定排序序列化与统一模型hash实现支持版本绑定。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+  if (value === null || typeof value !== 'object') return JSON.stringify(value)
+  if (Array.isArray(value)) return '[' + value.map((item) => stableStringify(item)).join(',') + ']'
+  const record = value as Record<string, unknown>
+  return '{' + Object.keys(record).sort().map((key) => JSON.stringify(key) + ':' + stableStringify(record[key])).join(',') + '}'
+}
+
+/**
  * The hash of any model this plugin carries: the same normalization as `modelHash`,
  * over whatever object the family defines. A use case diagram and a state machine are
  * hashed by one rule, so a report can name either.
  */
 export function valueHash(value: unknown, spec: HashSpec = DEFAULT_HASH_SPEC): string {
   return createHash('sha256').update(stableStringify(hashPayload(value, spec))).digest('hex')
-}
-
-export function modelHash(model: LogicModelV1, spec: HashSpec = DEFAULT_HASH_SPEC): string {
-  return valueHash(model, spec)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/engine.ts:3972-3991](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/src/engine.ts#L3972-L3991)
+**依据 2 · 源码核查**：[src/tool.ts:41-47](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/tool.ts#L41-L47)
 
-报告可见跳过、未决及覆盖注记提供闭环条件。
+beforeModel与stateMapping的对照输入。
+
+```text
+    beforeModel: {
+      type: 'json',
+      description: 'Optional BEFORE LogicModelV1 state machine model for refactoring/migration regression comparison.',
+    },
+    stateMapping: {
+      type: 'json',
+      description: 'Optional object mapping BEFORE state ids to AFTER state ids. Omit for identity mapping (same state names).',
+```
+
+**依据 3 · 源码核查**：[src/engine.ts:290-311](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L290-L311)
+
+跳过和未决的报告解释，以及不建立抽象的明确边界。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-    summary: {
-      states: model.states.length,
-      transitions: model.transitions.length,
-      errors,
-      warnings,
-      // `checksRun` counts the checks that examined the model, which is what the name promises. It used to
-      // count every check object, so a model that declared nothing still read as "22 checks ran".
-      checksRun: checks.filter((check) => check.status !== 'skip').length,
-      ...(() => {
-        const skipped = checks.filter((check) => check.status === 'skip').map((check) => check.id)
-        return skipped.length === 0 ? {} : { checksSkipped: skipped }
-      })(),
-      truncated: exploration.truncated || hasUndecidedFinding(checks),
-      ...(boundNotes.length === 0 ? {} : { boundNotes }),
-    },
-    checks,
-    nextSteps: verificationNextSteps(checks, narrativeCoverage),
-    ...(model.narrative === undefined ? {} : { narrative: model.narrative }),
-    ...(comparison === undefined ? {} : { comparison }),
-    ...(coverageNotes.length === 0 ? {} : { coverageNotes }),
+  // A check that had nothing to examine is named here, because a reader who is not told will assume every
+  // named check looked at the model. A list of failures does not say that, and neither does `pass`.
+  const skipped = checks.filter((check) => check.status === 'skip').map((check) => check.name + ' (' + check.id + ')')
+  if (skipped.length > 0) {
+    steps.push('Not checked: ' + skipped.join(', ') + ' examined nothing — silence there is not a pass. Declare what each needs, or treat the model as unverified on those points.')
+  }
+  // Named checks above, bare codes here. That is deliberate: each warning is a different kind of thing,
+  // so there is no single name to give the set, and the sentence points at where each one IS explained
+  // rather than leaving a reader to guess what the codes stand for.
+  if (warningCodes.length > 0) steps.push('Review the warning findings (' + warningCodes.join(', ') + '): they are not failures, but they are not silence either. Each one is explained in its own `message` under `findings`.')
+  if (coverage !== undefined && !narrativeComplete(coverage)) {
+    steps.push('Complete the narrative (states ' + coverage.states + ', events ' + coverage.events + ', scenarios ' + coverage.scenarios + ') — a partial narrative is valid, but a reader still has to re-derive the missing symbols.')
+  }
+  // A truncated search is the one outcome where "look harder" is the wrong advice: the wall is
+  // combinatorial, and raising maxStates buys a constant factor. Name the ladder instead, so the reader
+  // knows this is not a bug to fix but a model to reduce, or a different tool to use.
+  if (hasUndecidedFinding(checks)) {
+    steps.push('The search stopped before deciding, so the undecided checks are neither proven nor refuted. Do not just raise maxStates: first reduce the model (drop variables the property does not read, collapse symmetric states, order independent events), and if it still explodes, move to a tool that does not enumerate every state - SPIN for partial-order reduction, NuSMV/nuXMV for symbolic search, CBMC for bounded SAT. This plugin establishes no abstraction and reads no program source, so a property that needs one is outside it.')
+  }
+  // The range is dropped: the code that would be reported back is already named in `findings`, and a
+  // reader who has not seen a report yet learns nothing from four digits.
+  steps.push('Re-run with beforeModel/stateMapping after the change to prove the behaviour did not regress: behaviour preserved, invariants continuous, the state mapping consistent. Then compare the two reports with `report_diff` rather than reading them side by side.')
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[skills/model-everything/SKILL.md:12-16](https://github.com/AmethystLuna/dsh-model-everything/blob/1abe8ab4caaf0f0d72553d9ac7054a552c4ff875/skills/model-everything/SKILL.md#L12-L16)
+<a id="research-q04"></a>
 
-人工抽象边界决定验证假设的必要性。
+<a id="detail-section-18"></a>
+
+### Q04 · 成本、失败恢复和工程复用是否足以支持有条件试用？
+
+**研究主题**：效果与总成本、工程质量与复用
+
+#### 完整回答
+
+首次成本由使用者承担Node、匹配DSH peer、建模规则学习和模型抽取；持续成本是每次代码变动重抽模型、模型调用和人工回查反例。失败恢复包括错误选项修正、缩小状态空间、保留未决结果并转到SPIN或符号化等外部工具。现金资源与人工时间均无本轮测量，不用未执行的测试套件存在来填补。值得借鉴的是错误选项显式拒绝、skip与truncated分开，以及统一hash规范，移植时必须保留规范版本和调用方的判定解释；若只复制工具名却丢失这些语义，报告可追溯性会下降。注册函数一次批量注册后才设标志，异常发生在中间时已有effect与后续重试的相互作用需要宿主检查；当前不把它写成已复现重复注册。采用仅限隔离的小模型试验，不适合直接作为代码合并放行证明。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/tool.ts:76-108](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/tool.ts#L76-L108)
+
+参数拒绝与状态映射检查可作为可复用的边界设计。
+
+<details>
+<summary>查看原文（33行）</summary>
 
 ```text
-**This is the entry point.** Load this skill when a claim about the code has to be settled and a reading will not settle it. It owns the doctrine: enumerate the claims, verify each against the code, cite `file:line`, read `verdict`. It also owns the executable verification for behaviour. A neighbouring domain goes to its own skill through the routing table below.
-
-**It decides small models, not programs.** The engine enumerates states, so a model that explodes is reported `truncated` with the undecided check named. That is not a bug to retry with a larger `maxStates`: reduce the model first (drop variables the property does not read, collapse symmetric states), and if it still explodes the property needs a tool that does not enumerate - SPIN for partial-order reduction, NuSMV for symbolic search, CBMC for bounded SAT. This plugin builds no abstraction and reads no program source.
-
-**This costs more than reading, and less the larger the task.** On a fixture of a few hundred lines it costs several times a plain reading, because the fixed cost has nothing to amortise against. On a tree of tens of thousands of lines the ratio falls to roughly parity. Spend it where the object is large enough for one decision to replace many reads. Reach for it when the claim is about all paths rather than one, when nothing in the repository will go red if it is false, or when the verdict has to be reproducible later. A claim one reading settles belongs in a sentence, not in a model.
+  async execute(args) {
+    try {
+      // `stateMapping` is declared `json`, so a string, a list or a map to non-strings all arrive here, and the
+      // engine reads the option with `mapping[state] ?? state`: every one of those quietly became the identity
+      // mapping. A renamed state then read as "A was removed and A2 was added" - a D1 error produced by the shape
+      // of an option rather than by the refactor, which is the one thing a regression comparison must not do.
+      requireObjectOption(args.stateMapping, 'stateMapping', 'VERIFY_OPTION_INVALID')
+      const mapping = args.stateMapping as Record<string, unknown> | undefined
+      if (mapping !== undefined) {
+        if (args.beforeModel === undefined) {
+          throw new OptionShapeError(
+            'VERIFY_OPTION_INVALID',
+            'stateMapping was passed without beforeModel: the mapping says how BEFORE state ids turn into AFTER ones, so there is nothing to map. Pass beforeModel, or omit the mapping.',
+          )
+        }
+        const [from, to] = Object.entries(mapping).find(([, value]) => typeof value !== 'string' || value === '') ?? []
+        if (from !== undefined) {
+          throw new OptionShapeError(
+            'VERIFY_OPTION_INVALID',
+            'stateMapping.' + from + ' is not a state id (it is ' + (Array.isArray(to) ? 'an array' : to === null ? 'null' : 'a ' + typeof to) + '). Every value is the AFTER state id the BEFORE state maps to, so it has to be a non-empty string.',
+          )
+        }
+      }
+      const model = oneOf(args.model, args.modelPath, 'model', 'modelPath', 'VERIFY_OPTION_INVALID')
+      return runVerification(model, {
+        maxStates: args.maxStates,
+        maxPermutationEvents: args.maxPermutationEvents,
+        beforeModel: args.beforeModel,
+        stateMapping: mapping as Record<string, string> | undefined,
+      }) as unknown as JsonValue
+    } catch (error) {
+      return optionRefusal(error, 'VERIFY_OPTION_INVALID') as unknown as JsonValue
+    }
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[src/engine.ts:288-311](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L288-L311)
+
+恢复指引区分跳过、warning和未决。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  const warningCodes = [...new Set(checks.flatMap((check) => check.findings).filter((finding) => finding.severity === 'warning').map((finding) => finding.code))].sort()
+  if (failed.length > 0) steps.push('Resolve the failing checks first: ' + failed.join(', ') + '.')
+  // A check that had nothing to examine is named here, because a reader who is not told will assume every
+  // named check looked at the model. A list of failures does not say that, and neither does `pass`.
+  const skipped = checks.filter((check) => check.status === 'skip').map((check) => check.name + ' (' + check.id + ')')
+  if (skipped.length > 0) {
+    steps.push('Not checked: ' + skipped.join(', ') + ' examined nothing — silence there is not a pass. Declare what each needs, or treat the model as unverified on those points.')
+  }
+  // Named checks above, bare codes here. That is deliberate: each warning is a different kind of thing,
+  // so there is no single name to give the set, and the sentence points at where each one IS explained
+  // rather than leaving a reader to guess what the codes stand for.
+  if (warningCodes.length > 0) steps.push('Review the warning findings (' + warningCodes.join(', ') + '): they are not failures, but they are not silence either. Each one is explained in its own `message` under `findings`.')
+  if (coverage !== undefined && !narrativeComplete(coverage)) {
+    steps.push('Complete the narrative (states ' + coverage.states + ', events ' + coverage.events + ', scenarios ' + coverage.scenarios + ') — a partial narrative is valid, but a reader still has to re-derive the missing symbols.')
+  }
+  // A truncated search is the one outcome where "look harder" is the wrong advice: the wall is
+  // combinatorial, and raising maxStates buys a constant factor. Name the ladder instead, so the reader
+  // knows this is not a bug to fix but a model to reduce, or a different tool to use.
+  if (hasUndecidedFinding(checks)) {
+    steps.push('The search stopped before deciding, so the undecided checks are neither proven nor refuted. Do not just raise maxStates: first reduce the model (drop variables the property does not read, collapse symmetric states, order independent events), and if it still explodes, move to a tool that does not enumerate every state - SPIN for partial-order reduction, NuSMV/nuXMV for symbolic search, CBMC for bounded SAT. This plugin establishes no abstraction and reads no program source, so a property that needs one is outside it.')
+  }
+  // The range is dropped: the code that would be reported back is already named in `findings`, and a
+  // reader who has not seen a report yet learns nothing from four digits.
+  steps.push('Re-run with beforeModel/stateMapping after the change to prove the behaviour did not regress: behaviour preserved, invariants continuous, the state mapping consistent. Then compare the two reports with `report_diff` rather than reading them side by side.')
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.ts:237-261](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/index.ts#L237-L261)
+
+批量注册和异常处理范围的静态风险，未运行复现。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+    try {
+      ctx.effect(() => tools.register(modelVerifyTool), 'dsh-model-everything: verify tool')
+      ctx.effect(() => tools.register(modelDataModelVerifyTool), 'dsh-model-everything: data verify tool')
+      ctx.effect(() => tools.register(modelConcurrencyScanTool), 'dsh-model-everything: concurrency scan tool')
+      ctx.effect(() => tools.register(modelComposeTool), 'dsh-model-everything: compose tool')
+      ctx.effect(() => tools.register(modelExportTool), 'dsh-model-everything: export tool')
+      ctx.effect(() => tools.register(umlRenderTool), 'dsh-model-everything: uml render tool')
+      ctx.effect(() => tools.register(umlParseTool), 'dsh-model-everything: uml parse tool')
+      ctx.effect(() => tools.register(umlReviewTool), 'dsh-model-everything: uml review tool')
+      ctx.effect(() => tools.register(umlExplainLabelsTool), 'dsh-model-everything: uml explain-labels tool')
+      ctx.effect(() => tools.register(umlStructureTool), 'dsh-model-everything: structure tool')
+      ctx.effect(() => tools.register(designTool), 'dsh-model-everything: design review tool')
+      ctx.effect(() => tools.register(reportDiffTool), 'dsh-model-everything: report diff tool')
+      ctx.effect(() => tools.register(modelEditTool), 'dsh-model-everything: model edit tool')
+      ctx.effect(() => tools.register(modelAutomatonTool), 'dsh-model-everything: automaton tool')
+      toolRegistered = true
+      dataToolRegistered = true
+      concurrencyToolRegistered = true
+      composeToolRegistered = true
+      exportToolRegistered = true
+      umlToolsRegistered = true
+      structureToolRegistered = true
+      reportDiffToolRegistered = true
+    } catch (err) {
+      console.warn('[dsh-model-everything] model_verify/model_datamodel_verify tool registration failed', err)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[package.json:1-12](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/package.json#L1-L12)
+
+包入口及版本固定；其余peer要求应由使用者依包清单核对。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+{
+  "name": "dsh-model-everything",
+  "version": "0.5.0",
+  "description": "Modeling abstraction, architecture visualisation and automated review for designs and code, including a refactoring harness: draw a Mermaid or PlantUML source and measure its structure, executable verification of machines and protocols with before/after regression, data-model and migration checks, concurrency claim routing, export to external checkers, dependency-graph review, and report diffing. Native plugin for DeepSeek Harness (dsh).",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+```
+
+</details>
 
 #### 缺口
 
-- 源码映射闭环尚无本轮实现与对照
-  **影响**：不能当成当前程序级保证
-  **进一步探讨**：用带已知缺陷模块比较假放行与人工成本，并复核独立引擎一致性
+- 没有目标执行的现金、人工时间与全周期退出记录
+  **影响**：不能称总成本更低或持续采用已成立
+  **进一步探讨**：记录首次配置与每次重抽、重试、回查分钟及调用费，最后验证卸载工具消失
+
+<a id="research-q05"></a>
+
+<a id="detail-section-19"></a>
+
+### Q05 · 抽取证据清单能否减少模型与实现脱节？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是给每个模型转换和关键约束附一条代码出处与反例检查清单，先由审查者确认抽取覆盖，再运行现有验证器，可降低模型本身无误却遗漏实现路径的错误放行。推导来自Q03的哈希绑定能力与引擎明确不建立抽象的缺口；增量在抽取交接责任，而非再增加一个验证算法。元数据可以记录出处，但哈希规范排除的字段不能直接当作证据未变证明，需要把清单独立摘要和代码revision一起保存。最小验证采用五个已有缺陷的有限协议任务，同一模型和审查预算比较有无清单，统计漏掉的代码路径、错误放行和人工时间。清单不能减少错误放行，或额外复核负担超过直接回查，便否定方向；不据此声明市场需求或付费意愿。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/engine.ts:303-307](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L303-L307)
+
+引擎明确不建立抽象，为证据清单的缺口提供直接依据。
+
+```text
+  // A truncated search is the one outcome where "look harder" is the wrong advice: the wall is
+  // combinatorial, and raising maxStates buys a constant factor. Name the ladder instead, so the reader
+  // knows this is not a bug to fix but a model to reduce, or a different tool to use.
+  if (hasUndecidedFinding(checks)) {
+    steps.push('The search stopped before deciding, so the undecided checks are neither proven nor refuted. Do not just raise maxStates: first reduce the model (drop variables the property does not read, collapse symmetric states, order independent events), and if it still explodes, move to a tool that does not enumerate every state - SPIN for partial-order reduction, NuSMV/nuXMV for symbolic search, CBMC for bounded SAT. This plugin establishes no abstraction and reads no program source, so a property that needs one is outside it.')
+```
+
+**依据 2 · 源码核查**：[src/engine.ts:417-429](https://github.com/AmethystLuna/dsh-model-everything/blob/29b0bae2bf4b355243a0ca757512dc489440d659/src/engine.ts#L417-L429)
+
+统一hash可借鉴，但清单仍需独立绑定。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+  if (value === null || typeof value !== 'object') return JSON.stringify(value)
+  if (Array.isArray(value)) return '[' + value.map((item) => stableStringify(item)).join(',') + ']'
+  const record = value as Record<string, unknown>
+  return '{' + Object.keys(record).sort().map((key) => JSON.stringify(key) + ':' + stableStringify(record[key])).join(',') + '}'
+}
+
+/**
+ * The hash of any model this plugin carries: the same normalization as `modelHash`,
+ * over whatever object the family defines. A use case diagram and a state machine are
+ * hashed by one rule, so a report can name either.
+ */
+export function valueHash(value: unknown, spec: HashSpec = DEFAULT_HASH_SPEC): string {
+  return createHash('sha256').update(stableStringify(hashPayload(value, spec))).digest('hex')
+```
+
+</details>
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

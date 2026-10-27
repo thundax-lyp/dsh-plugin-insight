@@ -1,0 +1,40 @@
+{
+    "repository": "Tiger3807861189/J-Space-Cognition-Suite",
+    "repository_id": 1308234922,
+    "captured_at": "2026-10-27T01:50:27.819Z",
+    "window_start": "2026-09-27T01:50:27.819Z",
+    "stars": 2960,
+    "pushed_at": "2026-09-14T03:26:53Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATiger3807861189%2FJ-Space-Cognition-Suite%20is%3Aissue%20created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8284:253693:2F9D4E:333F0A:6AE0064B and timestamp 2026-10-27 02:02:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATiger3807861189%2FJ-Space-Cognition-Suite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8294:11EE01:2E004D:319F99:6AE0064D and timestamp 2026-10-27 02:02:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATiger3807861189%2FJ-Space-Cognition-Suite%20is%3Aissue%20updated%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82B2:1712E3:2CAC7D:304C0E:6AE0064D and timestamp 2026-10-27 02:02:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T20:57:32.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}

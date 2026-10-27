@@ -11,7 +11,12 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
+| [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。 | [Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 当前观察；已有用户备份含数据库sidecars后才操作，部分失败先回读，不把Git提交或本地form草稿当保存。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
+| [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。 | [Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 根入口观察并用于选包；真正试用请进入具体子包范围，不把根源码可见当可安装或无限商用。 |
+| [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) 适合许可范围内的副本项目试用；重要改动先保存版本，冲突后重载重选，不把force当默认恢复。 |
+| [DeepSeek iVideo](#plugin-1335095892-packages-deepseek-ivideo) | 在DSH中加入HyperFrames视频时间线，编辑本地项目、预览并提供受限自动校验。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) 在许可范围内短片副本试用，先确定导出验收和人工全片责任；模型validate只作有限检查，不能当最终发布门槛。 |
+| [DSH × Blender](#plugin-1368569221-root) | 将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 当前观察；先用一次性.blend场景验证GUI连接、暂停、headless和响应中断后状态，未核清前不直接接生产资产。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
@@ -23,6 +28,7 @@
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
+| [dsh-tavern](#plugin-1335944000-root) | 高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。 | [Q04](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q04)仅建议能管理备份和变量的角色卡用户用独立档案试用，固定卡片与模型先验收状态再看速度。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
@@ -31,6 +37,8 @@
 | [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
 | [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
+| [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
+| [书童 Pagekin 桌面写作应用](#plugin-1275436512-root) | 本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。 | [Q04](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q04) 用短篇副本试一章，先明确合格稿标准、费用和人工预算；定稿响应未知先查committed及finalizationId，不重新创建提交。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -46,6 +54,20 @@
 
 > **建议**：可将批准对象改为持久不可变请求摘要，绑定完整prompt、渠道标识、参数及价格上限，输出显式未知账单状态；重启与渠道切换对照中，若批准后实际提交参数不一致或重复计费未减少则否定。会增加状态迁移与上游幂等适配成本，假设未验证。参见[Q05](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md#research-q05)。
 
+<a id="plugin-1275436512-plugins-dsh-ai-novel-writer"></a>
+
+## [AI Novel Writer DSH 插件预览](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md)
+
+[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=yellow&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
+
+> **用途**：现有DSH小说工作台用户逐章生成建议并人工确认保存到独立本地项目。
+
+> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
+
+> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 一项成功不代表整包保存，数据库又不随Git备份；维护冻结和不互通桌面限制新采用，部分失败必须先回读状态。
+
+> **建议**：[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 未验证假设是用逐项接受包暴露权威revision与重试范围，以部分失败任务比较误判和重复操作；无改善或操作更重即停止。
+
 <a id="plugin-1220744720-root"></a>
 
 ## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
@@ -59,6 +81,62 @@
 > **思考**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q02) [Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03)
 
 > **建议**：未验证假设是给模板绑定模型/参数/合格标准和失败卡，比美图目录更能选择生产方案；固定预算盲评合格率与总成本，无改善则否定。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
+
+<a id="plugin-1335095892-root"></a>
+
+## [DeepSeek Design 分发与贡献入口](../../plugins/devin-axis--deepseek-design/INSIGHT.md)
+
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design)
+
+> **用途**：需要选择可编辑设计能力的创作者通过根入口了解独立包与工作区交接。
+
+> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q01)、[Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
+
+> **思考**：[Q02](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q02)、[Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 文件可编辑、保存原子性和有限校验不等于业务成果合格，根镜像可读也不能证明全部构建对应；需选定子包和实际验收范围。
+
+> **建议**：[Q04](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q04) 未验证假设是以目标摘要、选区和验收标准绑定跨AI/手动交接，用并发变更对照错误覆盖和人工分钟；无改善则停止。
+
+<a id="plugin-1335095892-packages-deepseek-idesign"></a>
+
+## [DeepSeek iDesign](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md)
+
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/deepseek-idesign)
+
+> **用途**：需要可继续编辑的原型、海报或信息卡的用户，在本地文件和视觉画布间迭代。
+
+> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q01)、[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
+
+> **思考**：[Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q02)、[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) mtime冲突仅在带基线且非force时检查，原子替换不保证多编辑者事务；旧选区草稿也可能在文件变动后误指对象。
+
+> **建议**：[Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q04) 未验证假设是随选区绑定内容摘要和元素指纹，DOM变动任务比较误改与重选成本；无改善或负担过高则停止。
+
+<a id="plugin-1335095892-packages-deepseek-ivideo"></a>
+
+## [DeepSeek iVideo](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md)
+
+[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=yellow&logo=github&style=flat)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 994](https://img.shields.io/static/v1?label=npm+30d&message=994&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/deepseek-ivideo)
+
+> **用途**：能人工验收短视频的用户，在对话与时间线间迭代产品演示和动态信息项目。
+
+> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q01)、[Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
+
+> **思考**：[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) validate采用5样本并限40问题，退出码0不等于整段视频和业务内容验收；短时缺陷与最终导出仍需检查。
+
+> **建议**：[Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 未验证假设是公开时间覆盖并风险驱动加样，以已知短时缺陷比较漏检和渲染/人工成本；无改善即停止。
+
+<a id="plugin-1368569221-root"></a>
+
+## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
+
+[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=yellow&logo=github&style=flat)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+
+> **用途**：具备Blender验收能力的创作者在持久场景中迭代建模并核对视觉与几何交付。
+
+> **亮点**：[Q01](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q01)、[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
+
+> **思考**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) /act请求异常后的worker fallback不能证明GUI未执行，也不能保证两个场景等价；在响应未知时必须先对账，持久修改可能已发生。
+
+> **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 未验证假设是场景revision与请求票据绑定、超时先查状态后重试，用响应丢失实验比较重复修改、错配和恢复成本；成本过高或无改善即停止。
 
 <a id="plugin-1427791087-root"></a>
 
@@ -214,6 +292,20 @@
 
 > **建议**：未验证假设是显式标注单位与算法覆盖，并将统计移入可取消worker，减少误验及界面阻塞；对照自交/单位错误/大网格任务，若误判或总成本不改善则否定。[Q05](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q05)
 
+<a id="plugin-1335944000-root"></a>
+
+## [dsh-tavern](../../plugins/flizzywine--dsh-tavern/INSIGHT.md)
+
+[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=yellow&logo=github&style=flat)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-profile-tavern)
+
+> **用途**：面向用角色卡、世界书和变量设定进行连续剧情的人，合格结果同时包括可读正文、可回溯分支以及与剧情一致的角色/变量状态。普通提示词加手工记账或既有酒馆中的脚本是直接基线，不因界面或功能表更长就认定替代品不能完成任务。
+
+> **亮点**：[Q01](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q01)、[Q02](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
+
+> **思考**：[Q03](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q03)指出正文先提交且下一轮不阻塞会让变量落后剧情。版本守卫拒绝旧结果，却不证明新变量语义正确，也不能回滚脚本外部动作；外部副作用后的禁重试正说明边界。若状态密集任务持续用旧值决策，保住正文不足以认定合格交付。
+
+> **建议**：未验证假设是为正文和派生状态分别显示revision水位，仅当用户下一步显式依赖未结算变量时暂停该动作或先确认旧状态；普通阅读/无状态对话继续。它来自Q03中“不阻塞下一轮”与旧值风险的张力，不是现有已实现能力。
+
 <a id="plugin-1414936636-root"></a>
 
 ## [dsh-video-pipeline](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md)
@@ -326,6 +418,34 @@
 
 > **建议**：未验证假设是给每次上传保存本地输入摘要、目标配置 ID、远端返回和独立可读性检查的结果清单，将“已上传”与“发布可读”分开。由配置快照与 URL 过滤边界推导；对10组混合成功/失败图片，对比仅返回 URL 和清单复核的漏图、重复上传、人工修正时间。若多余检查延迟超过节省或错误访问了私密对象，应停止。[Q05](../../plugins/molunerfinn--picgo/INSIGHT.md#research-q05)
 
+<a id="plugin-1296647613-root"></a>
+
+## [Vox Director](../../plugins/alisa0808--vox-director/INSIGHT.md)
+
+[![GitHub ★ 2,469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C469&color=yellow&logo=github&style=flat)](https://github.com/Alisa0808/vox-director)
+
+> **用途**：有媒体制作经验的创作者研究短解说/广告的多阶段拼贴视频流水线。
+
+> **亮点**：以beat/shot身份联接多模态阶段和本地音画组装，减少手工交接；生成模型贡献归服务提供方。见[Q01](../../plugins/alisa0808--vox-director/INSIGHT.md#research-q01)。
+
+> **思考**：底层POST不重试但上层pending超时会submit新ID，且批末才落成品URL；未知任务不能当失败安全重跑。见[Q03](../../plugins/alisa0808--vox-director/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是持久shot指纹和预测回执，pending先对账再新建；延迟/中断模拟无重复收益则重新评估。见[Q04](../../plugins/alisa0808--vox-director/INSIGHT.md#research-q04)。
+
+<a id="plugin-1275436512-root"></a>
+
+## [书童 Pagekin 桌面写作应用](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
+
+[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=yellow&logo=github&style=flat)](https://github.com/EthanYoQ/AI-Novel-Writer)
+
+> **用途**：长篇与连载作者在本地作品中组织章节、资料和人工审改，模型由自己配置。
+
+> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02)、[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
+
+> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 上下文快照固定了选择但不保证充分，早期设定被省略时生成与自审可共同漏检，需原定稿对照而非只信摘要。
+
+> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 未验证假设是将高影响省略约束变为审稿定向回查，以跨章冲突案例对照漏检、误报和作者时间；无改善或成本过高就停止。
+
 ## 更新时间
 
-2026-10-26
+2026-10-27

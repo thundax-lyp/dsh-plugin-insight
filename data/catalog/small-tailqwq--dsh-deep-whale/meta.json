@@ -1,0 +1,27 @@
+{
+    "repository": "Small-tailqwq/dsh-deep-whale",
+    "repository_id": 1333123776,
+    "captured_at": "2026-10-27T02:07:28.705Z",
+    "window_start": "2026-09-27T02:07:28.705Z",
+    "stars": 2879,
+    "pushed_at": "2026-10-26T03:28:59Z",
+    "issues": {
+        "open": 9,
+        "closed": 121,
+        "created_30d": 38,
+        "closed_30d": 41,
+        "updated_30d": 49
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-26T13:46:09.196Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
+        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
+        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "latest_error": null
+    }
+}
