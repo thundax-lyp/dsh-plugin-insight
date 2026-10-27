@@ -5,7 +5,7 @@
 分析版本：[20be220](https://github.com/Arun1016/dsh-cost/tree/20be220d554feb5df6c2c71f8b59d8a198e17c8f)
 
 <!-- BEGIN META -->
-[![npm 30d 378](https://img.shields.io/static/v1?label=npm+30d&message=378&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-cost-pill) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-cost-pill)
+[![npm 30d 378](https://img.shields.io/static/v1?label=npm+30d&message=378&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-pill) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cost-pill)
 <!-- END META -->
 
 > **实现功能**：在会话输入框旁显示账户余额、计费时段及按模型拆分的会话费用。

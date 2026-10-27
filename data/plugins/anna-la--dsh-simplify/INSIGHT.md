@@ -5,7 +5,7 @@
 分析版本：[5acef7c](https://github.com/Anna-la/dsh-simplify/tree/5acef7c1be296276af0db5a071b61db3bac1b14d)
 
 <!-- BEGIN META -->
-[![npm 30d 1,237](https://img.shields.io/static/v1?label=npm+30d&message=1%2C237&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-simplify) [![最新发布 2026-10-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-04&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-simplify)
+[![npm 30d 1,237](https://img.shields.io/static/v1?label=npm+30d&message=1%2C237&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-simplify) [![最新发布 2026-10-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-simplify)
 <!-- END META -->
 
 > **实现功能**：清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z)
+[![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+created%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Anna-la/dsh-simplify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T07%3A59%3A07.994Z..2026-10-23T07%3A59%3A07.994Z)
 
 暂未获取：Issue 未关闭。
 

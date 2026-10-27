@@ -5,7 +5,7 @@
 分析版本：[c0e2fbf](https://github.com/AIR-pixel/air-pixel-liquid-glass/tree/c0e2fbff0cbfeb5416e6d3542e5863ccb7360cbc)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AIR-pixel/air-pixel-liquid-glass)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AIR-pixel/air-pixel-liquid-glass)
 <!-- END META -->
 
 > **实现功能**：为DSH提供可配置的液态玻璃主题、壁纸、桌面透明、光标与点击涟漪。

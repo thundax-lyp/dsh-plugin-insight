@@ -5,7 +5,7 @@
 分析版本：[343cab5](https://github.com/AppliedYuu/dsh-WallpaperAndCost/tree/343cab5881ef638e3d5453039726db9c9153038f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=yellow&logo=github&style=flat)](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AppliedYuu/dsh-WallpaperAndCost)
 <!-- END META -->
 
 > **实现功能**：为 DSH 添加图片视频壁纸、余额用量组件和 Wallpaper Engine 本地媒体提取入口。

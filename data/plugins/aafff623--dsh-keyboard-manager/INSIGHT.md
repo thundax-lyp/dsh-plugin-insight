@@ -5,7 +5,7 @@
 分析版本：[6e4d700](https://github.com/Aafff623/dsh-keyboard-manager/tree/6e4d700ca56445a11d6c185efe9332c3680ad4d7)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Aafff623/dsh-keyboard-manager)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aafff623/dsh-keyboard-manager)
 <!-- END META -->
 
 > **实现功能**：在 DSH Web 用可配置 Ctrl 快捷键切换左右栏与设置。
@@ -165,7 +165,7 @@ Ctrl+S 除 better-sidebar panelHost 外全局先 preventDefault，即便动作 n
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+created%3A2026-09-22T05%3A38%3A33.318Z..2026-10-22T05%3A38%3A33.318Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A38%3A33.318Z..2026-10-22T05%3A38%3A33.318Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+created%3A2026-09-22T05%3A38%3A33.318Z..2026-10-22T05%3A38%3A33.318Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aafff623/dsh-keyboard-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A38%3A33.318Z..2026-10-22T05%3A38%3A33.318Z)
 
 
 

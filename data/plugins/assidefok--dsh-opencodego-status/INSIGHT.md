@@ -167,7 +167,7 @@ Host/Client 分层、超时、请求体上限、成功缓存、临时文件 rena
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+created%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Assidefok/dsh-opencodego-status/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T08%3A19%3A16.349Z..2026-10-24T08%3A19%3A16.349Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[bc18b1a](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper/tree/bc18b1a14422f08ea36f7b0f57cf26da07807af0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AprilCrystal/dsh-client-ui-gpt-helper)
 <!-- END META -->
 
 > **实现功能**：以桌面风格弹窗选择模型和思考级别，并提供配色与装饰性快速模式动画。

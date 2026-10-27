@@ -5,7 +5,7 @@
 分析版本：[e3d96e4](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/tree/e3d96e46e3ef0034b1304663ffcd70a87ff70982)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched)
 <!-- END META -->
 
 > **实现功能**：Aqua 玻璃主题的非官方修补分支，针对 DSH 0.1.2-rc.1 修三处加载/设置入口问题。
@@ -162,7 +162,7 @@ DSH 原生 UI 或上游未修补 Aqua；分支只针对后者的版本断裂。
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+created%3A2026-09-22T06%3A15%3A20.003Z..2026-10-22T06%3A15%3A20.003Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A15%3A20.003Z..2026-10-22T06%3A15%3A20.003Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+created%3A2026-09-22T06%3A15%3A20.003Z..2026-10-22T06%3A15%3A20.003Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aliww2468/dsh-client-ui-aqua-patched/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A15%3A20.003Z..2026-10-22T06%3A15%3A20.003Z)
 
 
 

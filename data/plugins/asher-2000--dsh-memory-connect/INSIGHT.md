@@ -5,7 +5,7 @@
 分析版本：[d3df500](https://github.com/Asher-2000/dsh-memory-connect/tree/d3df500883597ecc26db61eeee246fc30a9165ae)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=yellow&logo=github&style=flat)](https://github.com/Asher-2000/dsh-memory-connect) [![npm 30d 146](https://img.shields.io/static/v1?label=npm+30d&message=146&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asher-2000/dsh-memory-connect) [![npm 30d 146](https://img.shields.io/static/v1?label=npm+30d&message=146&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@asherliner/dsh-memory-connect)
 <!-- END META -->
 
 > **实现功能**：跨会话提取和保存记忆，通过关键词召回注入提示，并提供时态纠错与可选向量检索。

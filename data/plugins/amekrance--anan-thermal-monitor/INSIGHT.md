@@ -5,7 +5,7 @@
 分析版本：[13ed26d](https://github.com/AmeKrance/anan-thermal-monitor/tree/13ed26da20da08eecc300fb9963bea3dd4634205)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AmeKrance/anan-thermal-monitor)
 <!-- END META -->
 
 > **实现功能**：Windows WPF 温度桌宠，利用 PowerShell 与随包 LibreHardwareMonitor 采集传感器，DSH Host 负责启动/停止。
@@ -159,7 +159,7 @@ Windows VM 实机传感器、UAC、异常/重启/卸载测试；核 npm tarball 
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+created%3A2026-09-22T06%3A17%3A54.624Z..2026-10-22T06%3A17%3A54.624Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A17%3A54.624Z..2026-10-22T06%3A17%3A54.624Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+created%3A2026-09-22T06%3A17%3A54.624Z..2026-10-22T06%3A17%3A54.624Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AmeKrance/anan-thermal-monitor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A17%3A54.624Z..2026-10-22T06%3A17%3A54.624Z)
 
 
 

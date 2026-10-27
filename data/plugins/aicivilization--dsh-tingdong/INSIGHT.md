@@ -5,7 +5,7 @@
 分析版本：[a2bf5ae](https://github.com/AIcivilization/dsh-tingdong/tree/a2bf5aecb0e6720c9d8a6810d06d31d5f139d0a4)
 
 <!-- BEGIN META -->
-[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-tingdong)
+[![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tingdong)
 <!-- END META -->
 
 > **实现功能**：把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。
@@ -168,7 +168,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-tingdong/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-tingdong/issues?q=is%3Aissue+is%3Aopen)
 
 暂未获取：近30天新建、近30天关闭。
 

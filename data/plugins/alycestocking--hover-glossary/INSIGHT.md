@@ -5,7 +5,7 @@
 分析版本：[620b85d](https://github.com/AlyceStocking/hover-glossary/tree/620b85d4291e6983cc2d1205ff76f4833978f38b)
 
 <!-- BEGIN META -->
-[![npm 30d 48](https://img.shields.io/static/v1?label=npm+30d&message=48&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/hover-glossary) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/hover-glossary)
+[![npm 30d 48](https://img.shields.io/static/v1?label=npm+30d&message=48&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hover-glossary) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hover-glossary)
 <!-- END META -->
 
 > **实现功能**：在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。
@@ -178,7 +178,7 @@ lookupAt的window默认16不是全文工作量硬上限。tokenAt可把连续中
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+created%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+created%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AlyceStocking/hover-glossary/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A53%3A11.466Z..2026-10-22T09%3A53%3A11.466Z)
 
 
 

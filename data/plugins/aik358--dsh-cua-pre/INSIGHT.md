@@ -5,7 +5,7 @@
 分析版本：[6b64708](https://github.com/Aik358/dsh-cua-pre/tree/6b64708e2514ef4a1b9cb6004adb4838d4b114bb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aik358/dsh-cua-pre)
 <!-- END META -->
 
 > **实现功能**：Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。
@@ -155,7 +155,7 @@ Windows 隔离环境以等任务比较坐标基线与 UIA 策略的成功/误操
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+created%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+created%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aik358/dsh-cua-pre/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A06%3A33.222Z..2026-10-22T08%3A06%3A33.222Z)
 
 
 

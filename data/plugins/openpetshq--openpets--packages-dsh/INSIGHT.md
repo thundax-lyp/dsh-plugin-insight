@@ -5,7 +5,7 @@
 分析版本：[bc00ee4](https://github.com/OpenPetsHQ/openpets/tree/bc00ee4bfa47f4215c8a538862d0f8ab00174d89/packages/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,333](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C333&color=yellow&logo=github&style=flat)](https://github.com/OpenPetsHQ/openpets) [![npm 30d 556](https://img.shields.io/static/v1?label=npm+30d&message=556&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@open-pets/dsh) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@open-pets/dsh)
+[![GitHub ★ 1,333](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C333&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/OpenPetsHQ/openpets) [![npm 30d 556](https://img.shields.io/static/v1?label=npm+30d&message=556&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@open-pets/dsh) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@open-pets/dsh)
 <!-- END META -->
 
 > **实现功能**：把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。
@@ -158,7 +158,7 @@ idle被写成success/Done且状态未按session隔离；规则过滤不能覆盖
 
 **活跃度**
 
-[![Issue 未关闭 28](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=28&color=grey&logo=github&style=flat)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 18](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=18&color=grey&logo=github&style=flat)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A38.413Z..2026-10-27T02%3A08%3A38.413Z) [![近30天关闭 15](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=grey&logo=github&style=flat)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A38.413Z..2026-10-27T02%3A08%3A38.413Z)
+[![Issue 未关闭 28](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=28&color=737b86&logo=github)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=18&color=737b86&logo=github)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A38.413Z..2026-10-27T02%3A08%3A38.413Z) [![近30天关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/OpenPetsHQ/openpets/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A38.413Z..2026-10-27T02%3A08%3A38.413Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[1b8cd7e](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/tree/1b8cd7e74ae9bb5cc53b82d6ce55dc134d2cc818)
 
 <!-- BEGIN META -->
-[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=yellow&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)
+[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite)
 <!-- END META -->
 
 > **实现功能**：粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。
@@ -154,7 +154,7 @@ host route 只传 seq；客户端轮询与当前 DOM 关联，hidden 分支只�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+created%3A2026-09-22T06%3A04%3A07.441Z..2026-10-22T06%3A04%3A07.441Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A04%3A07.441Z..2026-10-22T06%3A04%3A07.441Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+created%3A2026-09-22T06%3A04%3A07.441Z..2026-10-22T06%3A04%3A07.441Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Angel2518975237/deepseek-harness-hello-kitty-suite/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A04%3A07.441Z..2026-10-22T06%3A04%3A07.441Z)
 
 
 

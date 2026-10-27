@@ -5,7 +5,7 @@
 分析版本：[a449dd1](https://github.com/AntonyLang/dsh-roam-planner/tree/a449dd11442dbd4550209668f20873d561b08875)
 
 <!-- BEGIN META -->
-[![npm 30d 88](https://img.shields.io/static/v1?label=npm+30d&message=88&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-roam-planner) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-roam-planner)
+[![npm 30d 88](https://img.shields.io/static/v1?label=npm+30d&message=88&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-roam-planner) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-roam-planner)
 <!-- END META -->
 
 > **实现功能**：在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。

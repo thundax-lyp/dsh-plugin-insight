@@ -5,7 +5,7 @@
 分析版本：[2f28338](https://github.com/AnacondaKC/dsh-douyin/tree/2f28338b29503f20d159b1f0123a985530134b6a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnacondaKC/dsh-douyin)
 <!-- END META -->
 
 > **实现功能**：在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。
@@ -160,7 +160,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A30.336Z..2026-10-23T07%3A58%3A30.336Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AnacondaKC/dsh-douyin/issues?q=is%3Aissue+created%3A2026-09-23T07%3A58%3A30.336Z..2026-10-23T07%3A58%3A30.336Z)
 
 暂未获取：近30天关闭。
 

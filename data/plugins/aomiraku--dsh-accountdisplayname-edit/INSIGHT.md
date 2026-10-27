@@ -5,7 +5,7 @@
 分析版本：[fb3c073](https://github.com/AomiRaku/dsh-accountDisplayName-edit/tree/fb3c073725d28e7c718a7fce6bde2d9d7ff6cf92)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=yellow&logo=github&style=flat)](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AomiRaku/dsh-accountDisplayName-edit)
 <!-- END META -->
 
 > **实现功能**：在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。

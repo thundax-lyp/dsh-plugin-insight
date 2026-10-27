@@ -5,7 +5,7 @@
 分析版本：[aa7be41](https://github.com/AI-Galaxy-GPU/dsh-sound/tree/aa7be415ee34570bd1c834da9d8a500e85401583)
 
 <!-- BEGIN META -->
-[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=yellow&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound) [![npm 30d 920](https://img.shields.io/static/v1?label=npm+30d&message=920&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound)
+[![GitHub ★ 14](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=14&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AI-Galaxy-GPU/dsh-sound) [![npm 30d 920](https://img.shields.io/static/v1?label=npm+30d&message=920&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ai-galaxy/dsh-sound)
 <!-- END META -->
 
 > **实现功能**：按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。
@@ -164,7 +164,7 @@ snapshot无结束reason可误响完成，跨tab与静默播放失败不保证恰
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+created%3A2026-09-22T07%3A07%3A14.733Z..2026-10-22T07%3A07%3A14.733Z) [![近30天关闭 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=grey&logo=github&style=flat)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A07%3A14.733Z..2026-10-22T07%3A07%3A14.733Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+created%3A2026-09-22T07%3A07%3A14.733Z..2026-10-22T07%3A07%3A14.733Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AI-Galaxy-GPU/dsh-sound/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A07%3A14.733Z..2026-10-22T07%3A07%3A14.733Z)
 
 
 

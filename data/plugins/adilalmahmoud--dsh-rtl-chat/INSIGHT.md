@@ -5,7 +5,7 @@
 分析版本：[cb47d87](https://github.com/AdilAlmahmoud/dsh-RTL-chat/tree/cb47d8708ae0c95205926f03b6c7228c50de5e29)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AdilAlmahmoud/dsh-RTL-chat)
 <!-- END META -->
 
 > **实现功能**：给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。
@@ -162,7 +162,7 @@ RTL读者本地试用，混排不合适随时切回。详见[Q05](#research-q05)
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+created%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+created%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AdilAlmahmoud/dsh-RTL-chat/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A32%3A31.577Z..2026-10-22T07%3A32%3A31.577Z)
 
 
 

@@ -5,7 +5,7 @@
 分析版本：[c20646a](https://github.com/AKIRACOD/dsh-drag-and-drop/tree/c20646ad6d4ee4c4a0ef12163a074716e17a7ba5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/AKIRACOD/dsh-drag-and-drop)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKIRACOD/dsh-drag-and-drop)
 <!-- END META -->
 
 > **实现功能**：为 DSH Web 拖入文件/文件夹生成可删除路径 chip，并在发送时插入会话草稿。
@@ -163,7 +163,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+created%3A2026-09-22T08%3A39%3A25.300Z..2026-10-22T08%3A39%3A25.300Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A39%3A25.300Z..2026-10-22T08%3A39%3A25.300Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+created%3A2026-09-22T08%3A39%3A25.300Z..2026-10-22T08%3A39%3A25.300Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AKIRACOD/dsh-drag-and-drop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A39%3A25.300Z..2026-10-22T08%3A39%3A25.300Z)
 
 
 

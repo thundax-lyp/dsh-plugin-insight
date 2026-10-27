@@ -5,7 +5,7 @@
 分析版本：[009e04d](https://github.com/Arrosam/dsh-idle-compact/tree/009e04d8016b7ce96eb88f316ddbb6280d2005fd)
 
 <!-- BEGIN META -->
-[![npm 30d 880](https://img.shields.io/static/v1?label=npm+30d&message=880&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-idle-compact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-idle-compact)
+[![npm 30d 880](https://img.shields.io/static/v1?label=npm+30d&message=880&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-idle-compact) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-idle-compact)
 <!-- END META -->
 
 > **实现功能**：在长会话空闲时预生成压缩摘要，并由用户确认后应用到会话。
@@ -160,7 +160,7 @@ PreparedStore单一拥有准备状态，RequestReplay用AsyncLocalStorage隔离�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arrosam/dsh-idle-compact/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A42.402Z..2026-10-24T05%3A56%3A42.402Z)
 
 
 

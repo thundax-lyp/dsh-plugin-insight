@@ -5,7 +5,7 @@
 分析版本：[7ba44b2](https://github.com/elysia395/dsh-wallpaper-engine/tree/7ba44b2424e55b70fe28fea753a7abf27ae7cdb3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,022](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C022&color=yellow&logo=github&style=flat)](https://github.com/elysia395/dsh-wallpaper-engine) [![npm 30d 81,334](https://img.shields.io/static/v1?label=npm+30d&message=81%2C334&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine)
+[![GitHub ★ 3,022](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C022&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) [![npm 30d 81,334](https://img.shields.io/static/v1?label=npm+30d&message=81%2C334&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine)
 <!-- END META -->
 
 > **实现功能**：把本地图片、视频及 Wallpaper Engine 场景和网页壁纸接入 DSH Web 界面。
@@ -163,7 +163,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 45](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=45&color=grey&logo=github&style=flat)](https://github.com/elysia395/dsh-wallpaper-engine/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 96](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=96&color=grey&logo=github&style=flat)](https://github.com/elysia395/dsh-wallpaper-engine/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 45](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=45&color=737b86&logo=github)](https://github.com/elysia395/dsh-wallpaper-engine/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 96](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=96&color=737b86&logo=github)](https://github.com/elysia395/dsh-wallpaper-engine/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
 
 暂未获取：近30天关闭。
 

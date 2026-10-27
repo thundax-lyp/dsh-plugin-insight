@@ -5,7 +5,7 @@
 分析版本：[1961202](https://github.com/ArcaneOrion/dsh-model-selector-search/tree/1961202137a3a06b9512131ff502b074610ac5b3)
 
 <!-- BEGIN META -->
-[![npm 30d 1,140](https://img.shields.io/static/v1?label=npm+30d&message=1%2C140&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search)
+[![npm 30d 1,140](https://img.shields.io/static/v1?label=npm+30d&message=1%2C140&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@arcaneorion/dsh-model-selector-search)
 <!-- END META -->
 
 > **实现功能**：替换会话模型选择器，提供宽松搜索、供应商分组、推理档位选择和偏好记忆。

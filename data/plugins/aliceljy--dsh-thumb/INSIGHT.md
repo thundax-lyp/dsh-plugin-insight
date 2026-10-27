@@ -5,7 +5,7 @@
 分析版本：[cde1359](https://github.com/AliceLJY/dsh-thumb/tree/cde135922e5fdd8729b163c634dd811294555d36)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AliceLJY/dsh-thumb)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AliceLJY/dsh-thumb)
 <!-- END META -->
 
 > **实现功能**：将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。
@@ -177,7 +177,7 @@ smoke源码有具体布局断言及开关对照，但若没有现有会话会跳
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+created%3A2026-09-22T04%3A45%3A48.993Z..2026-10-22T04%3A45%3A48.993Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A45%3A48.993Z..2026-10-22T04%3A45%3A48.993Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+created%3A2026-09-22T04%3A45%3A48.993Z..2026-10-22T04%3A45%3A48.993Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AliceLJY/dsh-thumb/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A45%3A48.993Z..2026-10-22T04%3A45%3A48.993Z)
 
 
 

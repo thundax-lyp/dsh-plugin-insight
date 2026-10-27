@@ -5,7 +5,7 @@
 分析版本：[23de203](https://github.com/whiteguo233/OpenBiliClaw/tree/23de203a72a9b59d2c555d66b9e70ab75583aa2c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C593&color=yellow&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw)
+[![GitHub ★ 3,593](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C593&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/whiteguo233/OpenBiliClaw)
 <!-- END META -->
 
 > **实现功能**：集中跨平台内容信号、个人画像和反馈，提供本地运行的个性化发现与推荐服务。
@@ -177,7 +177,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 19](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 11](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=11&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z) [![近30天关闭 14](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=grey&logo=github&style=flat)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z)
+[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 11](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=11&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+created%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z) [![近30天关闭 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=14&color=737b86&logo=github)](https://github.com/whiteguo233/OpenBiliClaw/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A06%3A27.988Z..2026-10-27T02%3A06%3A27.988Z)
 
 
 

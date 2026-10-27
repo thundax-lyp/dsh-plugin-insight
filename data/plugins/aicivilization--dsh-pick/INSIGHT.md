@@ -5,7 +5,7 @@
 分析版本：[bbae391](https://github.com/AIcivilization/dsh-pick/tree/bbae391f560ccbf8438805d513abaf9142bc31d7)
 
 <!-- BEGIN META -->
-[![npm 30d 1,532](https://img.shields.io/static/v1?label=npm+30d&message=1%2C532&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pick) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pick)
+[![npm 30d 1,532](https://img.shields.io/static/v1?label=npm+30d&message=1%2C532&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick)
 <!-- END META -->
 
 > **实现功能**：从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。
@@ -160,7 +160,7 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z)
 
 
 

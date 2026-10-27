@@ -158,7 +158,7 @@
 
 **活跃度**
 
-[![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/ArimaKana-Akane/dsh-whale-tools/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A32.418Z..2026-10-24T05%3A56%3A32.418Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ArimaKana-Akane/dsh-whale-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A32.418Z..2026-10-24T05%3A56%3A32.418Z)
+[![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/ArimaKana-Akane/dsh-whale-tools/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A32.418Z..2026-10-24T05%3A56%3A32.418Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ArimaKana-Akane/dsh-whale-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A32.418Z..2026-10-24T05%3A56%3A32.418Z)
 
 暂未获取：Issue 未关闭。
 

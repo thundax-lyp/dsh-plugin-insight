@@ -5,7 +5,7 @@
 分析版本：[7353d02](https://github.com/ACGsu/dsh-sidebar-panel-fold/tree/7353d026fe87d4e87b74ea3ba4dac6efd4bf1bec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ACGsu/dsh-sidebar-panel-fold)
 <!-- END META -->
 
 > **实现功能**：把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。
@@ -157,7 +157,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ACGsu/dsh-sidebar-panel-fold/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A30.406Z..2026-10-23T01%3A50%3A30.406Z)
 
 
 

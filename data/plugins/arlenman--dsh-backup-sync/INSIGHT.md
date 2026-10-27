@@ -5,7 +5,7 @@
 分析版本：[9baff60](https://github.com/Arlenman/dsh-backup-sync/tree/9baff601ee5d086f2ee2e078227bb7617138abfd)
 
 <!-- BEGIN META -->
-[![npm 30d 361](https://img.shields.io/static/v1?label=npm+30d&message=361&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-backup-sync) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-backup-sync)
+[![npm 30d 361](https://img.shields.io/static/v1?label=npm+30d&message=361&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-backup-sync) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-backup-sync)
 <!-- END META -->
 
 > **实现功能**：按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。
@@ -162,7 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+created%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Arlenman/dsh-backup-sync/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T05%3A56%3A34.656Z..2026-10-24T05%3A56%3A34.656Z)
 
 
 

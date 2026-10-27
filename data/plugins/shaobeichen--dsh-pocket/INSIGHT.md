@@ -5,7 +5,7 @@
 分析版本：[aee3ae7](https://github.com/shaobeichen/dsh-pocket/tree/aee3ae7e97516206049394c7a37dc38778ffb6da)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,415](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C415&color=yellow&logo=github&style=flat)](https://github.com/shaobeichen/dsh-pocket) [![npm 30d 16,044](https://img.shields.io/static/v1?label=npm+30d&message=16%2C044&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-pocket) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-pocket)
+[![GitHub ★ 2,415](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C415&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shaobeichen/dsh-pocket) [![npm 30d 16,044](https://img.shields.io/static/v1?label=npm+30d&message=16%2C044&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pocket) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pocket)
 <!-- END META -->
 
 > **实现功能**：通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。

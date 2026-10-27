@@ -5,7 +5,7 @@
 分析版本：[31c0aee](https://github.com/crafter-station/petdex/tree/31c0aee7f4fb387774b87d40e8047dc0f9cea94b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C283&color=yellow&logo=github&style=flat)](https://github.com/crafter-station/petdex)
+[![GitHub ★ 4,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C283&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/crafter-station/petdex)
 <!-- END META -->
 
 > **实现功能**：提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。

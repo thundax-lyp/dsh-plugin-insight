@@ -5,7 +5,7 @@
 分析版本：[3bfe9cb](https://github.com/9livewolf/dsh-think-bounce-pet/tree/3bfe9cb32afea176937379351af39dfd46f955f4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=yellow&logo=github&style=flat)](https://github.com/9livewolf/dsh-think-bounce-pet)
+[![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/9livewolf/dsh-think-bounce-pet)
 <!-- END META -->
 
 > **实现功能**：在 DSH Web 叠加常驻与思考弹球，可调整物理参数并交互。
@@ -158,7 +158,7 @@ reasoning 文本不等于真实推理生命周期，空块/切会话可错过或
 
 **活跃度**
 
-[![近30天新建 1](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=grey&logo=github&style=flat)](https://github.com/9livewolf/dsh-think-bounce-pet/issues?q=is%3Aissue+created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/9livewolf/dsh-think-bounce-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z)
+[![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/9livewolf/dsh-think-bounce-pet/issues?q=is%3Aissue+created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/9livewolf/dsh-think-bounce-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z)
 
 暂未获取：Issue 未关闭。
 

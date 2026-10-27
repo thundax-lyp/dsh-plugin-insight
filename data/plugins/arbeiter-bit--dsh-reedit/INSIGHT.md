@@ -5,7 +5,7 @@
 分析版本：[dddb974](https://github.com/Arbeiter-bit/dsh-reedit/tree/dddb9749cdf14358e535ab772e938102d104e9a6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/Arbeiter-bit/dsh-reedit)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Arbeiter-bit/dsh-reedit)
 <!-- END META -->
 
 > **实现功能**：双击自己的消息进行文本改写，在原消息前分叉会话并重发，原对话保留。

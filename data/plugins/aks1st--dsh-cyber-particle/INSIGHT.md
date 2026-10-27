@@ -5,7 +5,7 @@
 分析版本：[e08111d](https://github.com/AKS1st/dsh-cyber-particle/tree/e08111d59df009454d9de6b8384907f697e038f6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=yellow&logo=github&style=flat)](https://github.com/AKS1st/dsh-cyber-particle)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dsh-cyber-particle)
 <!-- END META -->
 
 > **实现功能**：DSH Web Canvas 粒子网络背景，提供设置页与本地持久化。

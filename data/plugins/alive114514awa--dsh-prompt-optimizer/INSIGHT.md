@@ -5,7 +5,7 @@
 分析版本：[0f6d8d4](https://github.com/ALIve114514awa/dsh-prompt-optimizer/tree/0f6d8d42bc3418c78153ad56968117f9c38c3d42)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,527](https://img.shields.io/static/v1?label=npm+30d&message=1%2C527&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-prompt-optimizer)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ALIve114514awa/dsh-prompt-optimizer) [![npm 30d 1,527](https://img.shields.io/static/v1?label=npm+30d&message=1%2C527&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prompt-optimizer) [![最新发布 2026-09-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prompt-optimizer)
 <!-- END META -->
 
 > **实现功能**：先澄清需求再用Harness或Codex生成可编辑预览，确认后填入草稿并由读者自己发送。
@@ -167,7 +167,7 @@ Codex继承provider权限不等Harness无工具只读，TUI无接收ACK/同等CA
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A17%3A56.997Z..2026-10-22T06%3A17%3A56.997Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A17%3A56.997Z..2026-10-22T06%3A17%3A56.997Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+created%3A2026-09-22T06%3A17%3A56.997Z..2026-10-22T06%3A17%3A56.997Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ALIve114514awa/dsh-prompt-optimizer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A17%3A56.997Z..2026-10-22T06%3A17%3A56.997Z)
 
 
 

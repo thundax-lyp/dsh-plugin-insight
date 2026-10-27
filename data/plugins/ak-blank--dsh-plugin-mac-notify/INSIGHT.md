@@ -5,7 +5,7 @@
 分析版本：[a9ef943](https://github.com/AK-blank/dsh-plugin-mac-notify/tree/a9ef9439a1e8f7957a402c742bc639919ab1d1c8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=yellow&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AK-blank/dsh-plugin-mac-notify)
 <!-- END META -->
 
 > **实现功能**：在macOS通知中心提醒DSH回合结束、等待回答、等待批准与错误，并可点击返回DSH页面。
@@ -178,7 +178,7 @@ Mac个人用户可先在非敏感任务试用需要的提醒，核对多会话�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+created%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z) [![近30天关闭 0](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=grey&logo=github&style=flat)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+created%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AK-blank/dsh-plugin-mac-notify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T04%3A52%3A29.427Z..2026-10-22T04%3A52%3A29.427Z)
 
 
 

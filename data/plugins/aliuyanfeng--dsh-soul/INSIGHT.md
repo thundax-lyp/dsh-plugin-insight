@@ -5,7 +5,7 @@
 分析版本：[0a203cc](https://github.com/Aliuyanfeng/dsh-soul/tree/0a203cc24e39beea3d3c8cc00541b4709e87c49f)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=yellow&logo=github&style=flat)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=blue&logo=npm&style=flat)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&labelColor=668a73&color=grey&style=flat)](https://www.npmjs.com/package/dsh-soul)
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
 <!-- END META -->
 
 > **实现功能**：为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。
@@ -161,7 +161,7 @@
 
 **活跃度**
 
-[![近30天新建 2](https://img.shields.io/static/v1?label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=grey&logo=github&style=flat)](https://github.com/Aliuyanfeng/dsh-soul/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A46.072Z..2026-10-22T15%3A12%3A46.072Z)
+[![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Aliuyanfeng/dsh-soul/issues?q=is%3Aissue+created%3A2026-09-22T15%3A12%3A46.072Z..2026-10-22T15%3A12%3A46.072Z)
 
 暂未获取：Issue 未关闭、近30天关闭。
 
