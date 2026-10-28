@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { rankedRecommendations } from '../../_shared/scripts/recommendation.mjs';
+import { rankedRecommendations } from '../../_shared/scripts/research-scoring.mjs';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, relative, dirname, isAbsolute } from 'node:path';
 import { fileURLToPath } from 'node:url';

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { gitReferenceSchema, validateGitReference } from './git-reference.mjs';
-import { validateRecommendation } from './recommendation.mjs';
-import { validateInnovationScores } from './innovation-score.mjs';
+import { validateRecommendation, validateInnovationScores } from './research-scoring.mjs';
+
 import { CATALOG } from './data-paths.mjs';
 import { createHash, randomUUID } from 'node:crypto';
 import {
@@ -17,8 +17,8 @@ import {
 } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseArgs } from 'node:util';
-import { isDeepStrictEqual } from 'node:util';
+import { parseArgs, isDeepStrictEqual } from 'node:util';
+
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { parseTree, printParseErrorCode } from 'jsonc-parser';
