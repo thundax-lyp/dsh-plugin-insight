@@ -1,37 +1,25 @@
 {
     "repository": "Tencent/BrowserSkill",
     "repository_id": 1276665883,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 9680,
-    "pushed_at": "2026-10-27T12:43:50Z",
+    "pushed_at": "2026-10-28T03:52:06Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 48,
+        "closed": 115,
+        "created_30d": 47,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E28E:10ABCC:6DA45A:75DEB9:6AE155C4 and timestamp 2026-10-28 01:54:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E296:3500C5:6E7141:76AC36:6AE155C5 and timestamp 2026-10-28 01:54:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2A4:10B2D1:6AE033:730AF3:6AE155C5 and timestamp 2026-10-28 01:54:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2AA:29A985:6AB058:72E84C:6AE155C6 and timestamp 2026-10-28 01:54:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2AF2:1119D7:80A71F:8A7705:6AE1721A and timestamp 2026-10-28 03:55:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2C8:1098D1:6C7E12:74B59B:6AE155C7 and timestamp 2026-10-28 01:54:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BD8:1D859C:81ED8C:8BBAFE:6AE1721B and timestamp 2026-10-28 03:55:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
@@ -40,14 +28,14 @@
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "@wxg-prc-cpg/browser-skill-dsh-plugin",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": 32486,

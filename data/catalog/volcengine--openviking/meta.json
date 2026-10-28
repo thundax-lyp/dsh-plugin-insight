@@ -1,25 +1,38 @@
 {
     "repository": "volcengine/OpenViking",
     "repository_id": 1128123594,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 40955,
-    "pushed_at": "2026-10-28T01:50:07Z",
+    "pushed_at": "2026-10-28T03:41:50Z",
     "issues": {
-        "open": 398,
+        "open": 399,
         "closed": 1151,
-        "created_30d": 350,
-        "closed_30d": 165,
-        "updated_30d": 447
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avolcengine%2FOpenViking%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BBA:1ED81F:80D6CE:8AA9C6:6AE1721B and timestamp 2026-10-28 03:55:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avolcengine%2FOpenViking%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2CA2:10ABCC:80728E:8A47E4:6AE1721C and timestamp 2026-10-28 03:55:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avolcengine%2FOpenViking%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D8C:36CEFD:832864:8CFB06:6AE1721D and timestamp 2026-10-28 03:55:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
         "captured_at": "2026-10-27T15:55:27.864Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null

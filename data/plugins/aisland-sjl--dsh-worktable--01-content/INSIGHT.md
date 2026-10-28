@@ -164,7 +164,11 @@ UI 绑定、owner 认证、目录 capability 和文件读取机制为固定源�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Aisland-SJL/dsh-worktable/issues) 查看。
+[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
@@ -186,7 +190,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[01_content/README.md:5-18](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L5-L18)
+**依据 1 · 作者声明**：[01_content/README.md:5-18](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L5-L18)
 
 作者定义项目工作区、状态订阅与存储；仅支持用途，不证明业务验收。
 
@@ -403,6 +407,34 @@ HTTP wrapper 在 route.handler 前拒绝。
     terminals.clear()
     try { wss.close() } catch {}
 ```
+
+**依据 5 · 源码核查**：[01_content/lib/index.js:11-26](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/lib/index.js#L11-L26)
+
+package main 实际发布入口含同样 owner admit 与默认拒绝逻辑，不只读取 TypeScript。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+async function requestRejection(ctx, req) {
+  try {
+    const connection = typeof ctx.get === "function" ? ctx.get("connection") : void 0;
+    if (!connection) return 503;
+    if (typeof connection.admit === "function") {
+      const admission = await connection.admit(req);
+      if (!admission || typeof admission !== "object") return 503;
+      if ("rejection" in admission) return admission.rejection === 401 ? 401 : 403;
+      const peer = admission.peer;
+      if (peer?.principal?.kind === "owner") return void 0;
+      if (peer && peer === connection.operator && peer.principal === void 0) return void 0;
+      return 403;
+    }
+  } catch {
+  }
+  return 503;
+```
+
+</details>
 
 #### 缺口
 
@@ -637,6 +669,38 @@ export function createPreviewFiles(now = () => Date.now()) {
 
 </details>
 
+**依据 6 · 源码核查**：[01_content/lib/index.js:529-548](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/lib/index.js#L529-L548)
+
+发布入口实际以 capability 文件读取和 CSP/CORS 返回静态资源，核对源码与运行入口。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        json(res, 405, { error: "method not allowed" });
+        return;
+      }
+      try {
+        const parts = new URL(req.url ?? "/", "http://dsh.internal").pathname.slice(PREVIEW_PREFIX.length + 1).split("/").map(decodeURIComponent);
+        const file = await previews.file(parts.shift() ?? "", parts.filter(Boolean), req.method === "HEAD");
+        if (!file) {
+          json(res, 404, { error: "preview unavailable; refresh to reopen" });
+          return;
+        }
+        const ext = (file.path.split(".").pop() || "").toLowerCase();
+        res.writeHead(200, {
+          "content-type": FILE_TYPES[ext] ?? "application/octet-stream",
+          "cache-control": "no-store",
+          "referrer-policy": "no-referrer",
+          "content-security-policy": PREVIEW_CSP,
+          "x-content-type-options": "nosniff",
+          "access-control-allow-origin": "*"
+        });
+```
+
+</details>
+
 #### 缺口
 
 - 多并发40MiB资源的峰值内存与精确恶意本地竞态未验证。
@@ -769,7 +833,7 @@ package 的 0.5.0 只声明 Node>=22 与 DSH 0.2.0-rc.2/0.2.1-rc.3；旧0.1范�
 
 </details>
 
-**依据 2 · 源码核查**：[01_content/README.md:24-39](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L24-L39)
+**依据 2 · 作者声明**：[01_content/README.md:24-39](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L24-L39)
 
 作者当前兼容、安全与局部验收边界。
 
@@ -797,7 +861,7 @@ package 的 0.5.0 只声明 Node>=22 与 DSH 0.2.0-rc.2/0.2.1-rc.3；旧0.1范�
 
 </details>
 
-**依据 3 · 源码核查**：[01_content/README.md:60-89](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L60-L89)
+**依据 3 · 作者声明**：[01_content/README.md:60-89](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L60-L89)
 
 文件、shell、环境、依赖及不同安装所有者。
 
@@ -923,7 +987,7 @@ package 的 0.5.0 只声明 Node>=22 与 DSH 0.2.0-rc.2/0.2.1-rc.3；旧0.1范�
 
 </details>
 
-**依据 3 · 源码核查**：[01_content/README.md:32-38](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L32-L38)
+**依据 3 · 作者声明**：[01_content/README.md:32-38](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L32-L38)
 
 目录授权、外发和既有 WS 界限决定采用条件。
 

@@ -128,7 +128,7 @@ typed矩阵、next委托、单次session/call/tool证据、cache不重复计费�
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、cordis.patch.yml、src/index.ts、src/config.ts、src/guard.ts、src/preapprove.ts、src/image-offload.ts、src/session-reference.ts、src/jev.ts、src/telemetry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根49个tracked文件统计；重点index、guard/preapprove、image、session-reference、client resilience/telemetry/config及patch。源码不是已发布lib字节验收；未运行目标/provider或真实Host。
+- 边界：根49个tracked文件统计；重点index、guard/preapprove、image、session-reference、client resilience/telemetry/config及patch。源码不是已发布lib字节验收；未运行目标/provider或真实Host。 本轮重新读取固定版本的核心入口、状态提交、权限与故障恢复路径，源码机制不充当实际服务可用性证据。
 - 下一步：合成参数在五挂点shadow/enforce/disabled矩阵中注入超时/半响应/日志失败/取消，检查零shadow副作用与整体bundle恢复；同任务比较原生的误判、最终正确、总费用和人工分钟。
 
 **分析版本**
@@ -167,7 +167,7 @@ typed矩阵、next委托、单次session/call/tool证据、cache不重复计费�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 

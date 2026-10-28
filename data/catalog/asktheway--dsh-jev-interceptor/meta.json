@@ -1,8 +1,8 @@
 {
     "repository": "AskTheWay/dsh-jev-interceptor",
     "repository_id": 1382292535,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 32,
     "pushed_at": "2026-10-27T17:27:16Z",
     "issues": {
@@ -16,7 +16,7 @@
     "archived": false,
     "npm": {
         "package_name": "dsh-jev-interceptor",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": 2815,

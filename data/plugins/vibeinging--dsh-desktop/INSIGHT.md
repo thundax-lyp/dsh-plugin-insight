@@ -159,7 +159,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/vibeinging/dsh-desktop/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -489,7 +489,7 @@ spawn、退出与通知
 
 #### 完整回答
 
-不能把一次初始化或重启能力当无损保证。已有manifest走reconcile而不是新建；已有目录缺manifest直接报错，避免盲目覆盖。初始化队列按home/profile在当前进程串行，发布前检测其他操作已建目录，但这不等于跨进程全局锁。后台启动有超时，曾就绪后退出触发有界自动重试，三次后进入恢复页。safe-profile会改为独立safe home，启动不含社区默认bundle，是隔离诊断退路，不是原profile数据自动修复或迁移。
+不能把一次初始化或重启能力当无损保证。已有manifest走reconcile而不是新建；已有目录缺manifest直接报错，避免盲目覆盖。初始化队列按home/profile在当前进程串行，发布前检测其他操作已建目录，但这不等于跨进程全局锁。后台启动有超时，曾就绪后退出触发有界自动重试，三次后进入恢复页。safe-profile会改为独立safe home，启动不含社区默认bundle，是隔离诊断退路，不是原profile数据自动修复或迁移。 安全 home 只隔离诊断环境，不代表把原 profile 的会话复制进去；恢复界面空白不能直接判定原数据已删除。
 
 #### 证据与依据
 

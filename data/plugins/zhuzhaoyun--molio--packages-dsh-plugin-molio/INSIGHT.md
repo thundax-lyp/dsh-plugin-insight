@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[5234ee6](https://github.com/zhuzhaoyun/Molio/tree/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio)
+源码版本：[c1b90f0](https://github.com/zhuzhaoyun/Molio/tree/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio)
 
 <!-- BEGIN META -->
 [![GitHub ★ 437](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=437&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhuzhaoyun/Molio) [![npm 30d 431](https://img.shields.io/static/v1?label=npm+30d&message=431&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-molio) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-molio)
@@ -117,7 +117,7 @@
 
 只读接入、库解析及大小/错误处理有源码支持；真实宿主、远程权限和问答质量未验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-plugin-molio/README.md、packages/dsh-plugin-molio/src/index.ts、packages/dsh-plugin-molio/src/tools/kb-read.ts、packages/dsh-plugin-molio/src/vault-resolver.ts、packages/dsh-plugin-molio/src/daemon-client.ts、apps/daemon/src/routes/knowledge.ts、apps/daemon/src/core/knowledge.ts、packages/dsh-plugin-molio/src/read-service.ts 及固定范围 inventory；组件：packages/dsh-plugin-molio。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-plugin-molio/README.md、packages/dsh-plugin-molio/src/index.ts、packages/dsh-plugin-molio/src/tools/kb-read.ts、packages/dsh-plugin-molio/src/vault-resolver.ts、packages/dsh-plugin-molio/src/daemon-client.ts、apps/daemon/src/routes/knowledge.ts、apps/daemon/src/core/knowledge.ts、packages/dsh-plugin-molio/src/read-service.ts、apps/daemon/src/server.ts 及固定范围 inventory；组件：packages/dsh-plugin-molio。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：检查目标组件注册/HTTP/库解析/读取工具，并定向读同仓daemon文件路由和磁盘读取；未全面审计Molio平台或远程部署。
 - 下一步：同模型同资料任务比较显式库id与默认库，注入切库、重名、过大文件和取消，记录错库引用、人工核对和全部token。
@@ -125,7 +125,7 @@
 **分析版本**
 
 - **仓库**：[zhuzhaoyun/Molio](https://github.com/zhuzhaoyun/Molio)
-- **版本号**：0.1.0（[固定提交 5234ee6](https://github.com/zhuzhaoyun/Molio/tree/5234ee62b6f79c68d240f09cde9ab68bb730a5e7)）
+- **版本号**：0.1.0（[固定提交 c1b90f0](https://github.com/zhuzhaoyun/Molio/tree/c1b90f05d876953889ff99303697d896e0c84ed9)）
 - **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
@@ -155,7 +155,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=26&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=26&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/zhuzhaoyun/Molio/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -181,7 +181,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-plugin-molio/README.md:3-11](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/README.md#L3-L11)
+**依据 1 · 作者声明**：[packages/dsh-plugin-molio/README.md:3-11](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/README.md#L3-L11)
 
 作者描述任务和前提
 
@@ -197,7 +197,7 @@
 3. dsh `>= 0.2.0-rc.2`
 ```
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/index.ts:21-35](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/index.ts#L21-L35)
+**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/index.ts:21-35](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/index.ts#L21-L35)
 
 真实五工具注册
 
@@ -238,7 +238,7 @@ kb-read将vaultId/path/force及取消信号交给readVaultFile。resolveVault优
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:29-50](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/tools/kb-read.ts#L29-L50)
+**依据 1 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:29-50](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/tools/kb-read.ts#L29-L50)
 
 工具→读取服务→结构化返回
 
@@ -272,7 +272,7 @@ kb-read将vaultId/path/force及取消信号交给readVaultFile。resolveVault优
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:21-49](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/vault-resolver.ts#L21-L49)
+**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:21-49](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/vault-resolver.ts#L21-L49)
 
 库选择规则
 
@@ -313,7 +313,7 @@ kb-read将vaultId/path/force及取消信号交给readVaultFile。resolveVault优
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:128-138](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/daemon-client.ts#L128-L138)
+**依据 3 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:128-138](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/daemon-client.ts#L128-L138)
 
 GET文件请求
 
@@ -336,7 +336,7 @@ GET文件请求
 
 </details>
 
-**依据 4 · 源码核查**：[apps/daemon/src/routes/knowledge.ts:216-239](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/apps/daemon/src/routes/knowledge.ts#L216-L239)
+**依据 4 · 源码核查**：[apps/daemon/src/routes/knowledge.ts:227-250](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/routes/knowledge.ts#L227-L250)
 
 daemon端点→readFile及大小错误
 
@@ -372,7 +372,7 @@ daemon端点→readFile及大小错误
 
 </details>
 
-**依据 5 · 源码核查**：[apps/daemon/src/core/knowledge.ts:184-223](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/apps/daemon/src/core/knowledge.ts#L184-L223)
+**依据 5 · 源码核查**：[apps/daemon/src/core/knowledge.ts:192-231](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/core/knowledge.ts#L192-L231)
 
 路径、大小、编码和真实磁盘读取
 
@@ -434,11 +434,11 @@ export function readFile(vaultPath: string, relPath: string, opts: { force?: boo
 
 #### 完整回答
 
-插件接口只读，不能据此承诺整个daemon只读或远程安全。daemon共享源码说明无认证，库路径边界是主要防护；环境变量允许改为远程URL，插件fetch本身未附认证，不能把远程配置支持当安全部署已验证。省略vaultId依赖实时active vault，用户切库会改变默认目标；跨工具多次调用不是固定快照。过大文件报错或tooLarge后提示force，二进制返回说明；读到原文仍不证明模型引用正确。client在没有调用方signal时用默认超时，有signal则以它为准，读取工具另声明20秒上限。
+插件接口只读，不能据此承诺整个daemon只读或远程安全。daemon共享源码说明无认证，库路径边界是主要防护；环境变量允许改为远程URL，插件fetch本身未附认证，不能把远程配置支持当安全部署已验证。省略vaultId依赖实时active vault，用户切库会改变默认目标；跨工具多次调用不是固定快照。过大文件报错或tooLarge后提示force，二进制返回说明；读到原文仍不证明模型引用正确。client在没有调用方signal时用默认超时，有signal则以它为准，读取工具另声明20秒上限。 实际server把CORS中间件与knowledgeRoutes接上，允许http localhost/127.0.0.1来源；在该知识库路由挂载前未见凭据认证中间件。云端AuthClient登录对象的存在不能等同本地知识库HTTP已鉴权，也不能把CORS当身份认证。 文件树扫描对readdir后消失/无法stat的单文件选择跳过，避免整树失败；若整树扫描抛错，路由限频记录警告并返回500。此降级保留了可用性，却不提供树与后续读取的同一时刻快照，不能把列树成功当所有条目都已读。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:38-41](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/daemon-client.ts#L38-L41)
+**依据 1 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:38-41](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/daemon-client.ts#L38-L41)
 
 远程URL覆盖
 
@@ -449,7 +449,7 @@ export function defaultBaseUrl(): string {
   return `http://127.0.0.1:${process.env['MOLIO_PORT'] ?? 3100}`;
 ```
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:57-81](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/daemon-client.ts#L57-L81)
+**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/daemon-client.ts:57-81](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/daemon-client.ts#L57-L81)
 
 请求信号、HTTP错误和JSON返回
 
@@ -486,7 +486,7 @@ export function defaultBaseUrl(): string {
 
 </details>
 
-**依据 3 · 源码核查**：[apps/daemon/src/core/knowledge.ts:482-493](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/apps/daemon/src/core/knowledge.ts#L482-L493)
+**依据 3 · 源码核查**：[apps/daemon/src/core/knowledge.ts:490-501](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/core/knowledge.ts#L490-L501)
 
 共享实现说明daemon无认证与路径边界
 
@@ -510,7 +510,7 @@ function assertWithinVault(vaultPath: string, resolved: string): void {
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:43-49](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/vault-resolver.ts#L43-L49)
+**依据 4 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:43-49](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/vault-resolver.ts#L43-L49)
 
 默认active vault
 
@@ -524,7 +524,7 @@ function assertWithinVault(vaultPath: string, resolved: string): void {
   return vault;
 ```
 
-**依据 5 · 源码核查**：[packages/dsh-plugin-molio/src/read-service.ts:23-42](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/read-service.ts#L23-L42)
+**依据 5 · 源码核查**：[packages/dsh-plugin-molio/src/read-service.ts:23-42](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/read-service.ts#L23-L42)
 
 大小和二进制分支
 
@@ -556,7 +556,7 @@ function assertWithinVault(vaultPath: string, resolved: string): void {
 
 </details>
 
-**依据 6 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:29-41](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/tools/kb-read.ts#L29-L41)
+**依据 6 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:29-41](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/tools/kb-read.ts#L29-L41)
 
 工具超时和取消信号
 
@@ -581,6 +581,120 @@ function assertWithinVault(vaultPath: string, resolved: string): void {
 
 </details>
 
+**依据 7 · 源码核查**：[apps/daemon/src/server.ts:62-81](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/server.ts#L62-L81)
+
+云端AuthClient与本地CORS是不同对象；CORS仅筛http本地主机来源。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+// 云端认证 client（懒读 MOLIO_AUTH_URL，未设置时回落内置官方地址
+// DEFAULT_AUTH_URL；显式空白才算未配置 → 登录端点回 503）。
+// 启动恢复（restoreSession）由 index.ts 在 listen 之后异步触发，不阻塞启动。
+export const authClient = new AuthClient();
+
+export const app = new Hono();
+
+// CORS — allow Vite dev server, daemon itself, and Electron dev
+app.use('*', cors({
+  origin: (origin) => {
+    if (!origin) return origin;
+    try {
+      const url = new URL(origin);
+      if ((url.hostname === 'localhost' || url.hostname === '127.0.0.1') && url.protocol === 'http:') {
+        return origin;
+      }
+    } catch { /* ignore */ }
+    return undefined;
+  },
+}));
+```
+
+</details>
+
+**依据 8 · 源码核查**：[apps/daemon/src/server.ts:119-135](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/server.ts#L119-L135)
+
+知识库路由真实挂载；此入口未插入认证中间件，不能靠云端登录名称推出本地保护。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+// Routes
+app.route('/api/agents', agentsRoutes(runManager));
+app.route('/api/runs', runsRoutes(db, runManager, conversationService));
+app.route('/api/runs', eventsRoutes(runManager));
+app.route('/api/runs', toolResultRoutes(runManager));
+app.route('/api/config', configRoutes({
+  // Agent env overrides (CLAUDE_BIN etc.) change binary resolution — drop the
+  // detection cache so GET /api/agents re-probes instead of serving stale data.
+  onConfigChanged: () => runManager.invalidateAgentCache(),
+}));
+app.route('/api/skills', skillsRoutes(db, runManager));
+app.route('/api/conversations', conversationRoutes(db, runManager, conversationService));
+app.route('/api/projects', projectRoutes(db));
+app.route('/api/knowledge', knowledgeRoutes(db, runManager, vaultWatcher, treeCache, (vaultId) => vaultWatcher.isReady(vaultId)));
+app.route('/api/publish', publishRoutes());
+app.route('/api/proxy', proxyRoutes());
+app.route('/api/graph', graphRoutes(db, graphCache, (vaultId) => vaultWatcher.isReady(vaultId)));
+```
+
+</details>
+
+**依据 9 · 源码核查**：[apps/daemon/src/core/knowledge.ts:106-124](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/core/knowledge.ts#L106-L124)
+
+目录枚举后stat失败的单文件会continue，树结果不表示所有候选均存在。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+        }
+        break;
+      }
+      const absFile = path.join(absDir, entry.name);
+      // readdir 与 stat 之间文件可能已被删/移走（agent 直写、回收站删除、外部
+      // 编辑器）：单个文件消失不该让整棵树的请求 500 —— 跳过它即可，下一次扫描
+      // 自然收敛。前端刷新失败是静默的，500 会让用户看到一棵不动的旧树。
+      let stat: fs.Stats;
+      try {
+        stat = fs.statSync(absFile);
+      } catch {
+        continue;
+      }
+      nodes.push({
+        name: entry.name,
+        path: relPath,
+        type: 'file',
+        size: stat.size,
+        modifiedAt: stat.mtimeMs,
+```
+
+</details>
+
+**依据 10 · 源码核查**：[apps/daemon/src/routes/knowledge.ts:199-208](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/apps/daemon/src/routes/knowledge.ts#L199-L208)
+
+整树失败限频记录并返回500，与单文件跳过不同。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+      return c.json({ tree });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Failed to scan vault';
+      treeErrorWarn.warn(
+        `tree:${vault.id}`,
+        `[knowledge] GET /vaults/${vault.id}/tree failed (${vault.path}): ${message}`,
+      );
+      return c.json({ error: { code: 'INTERNAL', message } }, 500);
+    }
+  });
+```
+
+</details>
+
 #### 缺口
 
 - 真实daemon权限、远程部署隔离及模型引用正确率未验收
@@ -601,7 +715,7 @@ function assertWithinVault(vaultPath: string, resolved: string): void {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-plugin-molio/README.md:7-22](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/README.md#L7-L22)
+**依据 1 · 作者声明**：[packages/dsh-plugin-molio/README.md:7-22](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/README.md#L7-L22)
 
 daemon/库/DSH前提与安装
 
@@ -629,7 +743,7 @@ dsh plugin --profile <你的profile> add dsh-plugin-molio
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:21-49](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/vault-resolver.ts#L21-L49)
+**依据 2 · 源码核查**：[packages/dsh-plugin-molio/src/vault-resolver.ts:21-49](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/vault-resolver.ts#L21-L49)
 
 固定id与active目标差异
 
@@ -670,7 +784,7 @@ dsh plugin --profile <你的profile> add dsh-plugin-molio
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:43-50](https://github.com/zhuzhaoyun/Molio/blob/5234ee62b6f79c68d240f09cde9ab68bb730a5e7/packages/dsh-plugin-molio/src/tools/kb-read.ts#L43-L50)
+**依据 3 · 源码核查**：[packages/dsh-plugin-molio/src/tools/kb-read.ts:43-50](https://github.com/zhuzhaoyun/Molio/blob/c1b90f05d876953889ff99303697d896e0c84ed9/packages/dsh-plugin-molio/src/tools/kb-read.ts#L43-L50)
 
 结果带明确库信息
 

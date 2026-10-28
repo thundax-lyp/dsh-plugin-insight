@@ -511,7 +511,7 @@
 
 > **思考**：源码修复不等于公开安装已修复：当前 patch 保留默认根，而 README 明示公开 1.0.0 仍不保留默认根；新 Desktop 尚缺原生验收。这使新用户无法靠文档安装命令取得本轮研究的修复。[Q02](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q02)
 
-> **建议**：当前建议观察修复发布与原生 Desktop 验收，而非把当前源码修复当作可直接安装的稳定功能。已经在受支持 CLI 使用发布 1.0.0、且能确认默认 Skill 共存的人，可以继续在隔离 profile 核查；这不构成本轮安装推荐。新用户若只需一张图，手工安装原生 Skill 或简单图通常更直接。由双版本身份和默认根故障推导出的未验证假设是：把适配器、内嵌 Skill、host、所有默认根正文身份一起写入发布收据，能比只查 Skill 名称更早发现分发回归。最小验证以同一包在 base provider 开启/关闭、干净安装/同 profile 升级四格对照，注入错根或旧正文；若收据不能区分错误、或维护成本大于手工清单，就否定自动收据方案。这个假设属于发布质量机制，不是已验证市场需求。 [Q05](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q05)
+> **建议**：未验证假设是将适配器、内嵌 Skill、宿主与默认根正文身份组成发布收据，比仅检查名称更早发现分发回归。用默认 provider 开启／关闭、干净安装／同 profile 升级四格对照注入错根和旧正文，记录检出率、误报及排查分钟；不能提前发现问题或维护成本超过手工清单时停止扩展。[Q05](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1533,7 +1533,7 @@
 
 > **亮点**：相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q01)
 
-> **思考**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q02) [Q03](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q03)
+> **思考**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q02) [Q03](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q03) 同实例写队列不能防另一Host或手工改同一profile，且MCP双文件并非共同事务。
 
 > **建议**：未验证假设是基线文件摘要、延迟删除及代表档位真实请求共同减少配置退化；以截断/虚报/并发/退役对照误删和恢复成本，效果不改善则否定。[Q05](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q05)
 
@@ -2991,7 +2991,7 @@
 
 > **思考**：停止边界不代表异步 retain 已确认；提前推进长度和只记诊断可能让静态会话尾部缺失。启动目录禁用和重构 decision 也限制多工作区及扩展组合。[Q03](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设：以服务确认而不是已尝试长度来推进持久写回水位，并将待确认与失败状态暴露给用户，可能减少静态会话尾部漏写。这个改进需设计幂等文档身份、重试和本地敏感数据留存，不能只添加无限重试。最小验证对照当前游标与确认游标，在断网、超时后重启及fork场景记录漏写、重复提炼、恢复时长和磁盘残留。若确认水位的重复与存储负担抵消漏写改善，或现有服务幂等语义不支持，则否定方案。它是由现有异步写回链推导的设计，不能计为已交付功能。 [Q05](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q05)
+> **建议**：未验证假设是以服务确认推进写回水位，并将待确认和失败状态暴露给用户，以减少静态会话尾部漏写。先核实文档幂等契约，再对照当前游标与确认游标，注入断网、超时后重启和 fork；记录漏写、重复提炼、恢复时长和敏感数据残留。重复与存储负担抵消漏写改善时否定方案。[Q05](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md) · [返回表格](#category-index)
 

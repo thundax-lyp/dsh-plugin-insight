@@ -126,7 +126,7 @@ traffic原子预算与unknown、credential串行同号草稿保护、session投�
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、lib/index.js、lib/scheduler.js、lib/session-delivery.js、lib/auth.js、lib/credentials.js、tools/lib/config.mjs、tools/lib/traffic.mjs、tools/commands/comment.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根118个tracked文件统计；深审Host配置/路由、scheduler/session-delivery、traffic、QR/credentials、comment及tool defaults。未全审全部视频/私信/直播/通知写通道，不执行扫码/模型/平台请求或通知。
+- 边界：根118个tracked文件统计；深审Host配置/路由、scheduler/session-delivery、traffic、QR/credentials、comment及tool defaults。未全审全部视频/私信/直播/通知写通道，不执行扫码/模型/平台请求或通知。 本轮重新沿固定提交检查调度、实际工具约束、跨进程状态、外部发送和恢复边界；未调用B站服务或目标代码。
 - 下一步：全新/空/局部旧/完整配置四类启动对齐有效值，再做双进程同操作、回执丢、慢prompt/保存失败、待审换号和重启矩阵；区分投递/执行/公开，比较同窗口人工收藏的全成本与内容质量。
 
 **分析版本**

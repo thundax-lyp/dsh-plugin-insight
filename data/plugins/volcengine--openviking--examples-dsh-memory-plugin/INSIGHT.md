@@ -12,7 +12,7 @@
 
 > **亮点**：贡献在 DSH 事件生命周期、按会话工作区解析身份、过滤合成上下文和进程内待发恢复的组合，能解释减少记忆交接摩擦的机制，但不能证明任务效果。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：不中断任务与记忆完整性不是同一件事：非可重试失败、有限TTL和错误记忆均可能使跨会话结果不可靠；裸 checkout 的共享模块需预打包生成。[Q03](#research-q03)
+> **主要限制**：不中断任务不能保证记忆完整：非可重试失败与有限 TTL 仍可能缺失。关闭采集也不能据启动重放守卫推断常驻队列被冻结，drainTick 的健康分支没有相同开关判断；退出须核对并处理历史待发与远端记忆。[Q03](#research-q03)
 
 **本文目录**
 
@@ -91,7 +91,7 @@
 | 离线恢复 | 单飞 drainer 与 latch | 长期故障及发布包运行 |
 | 上下文防污染 | 合成用户消息过滤 | 错误记忆纠正的真实效果 |
 
-> **思考**：不中断任务与记忆完整性不是同一件事：非可重试失败、有限TTL和错误记忆均可能使跨会话结果不可靠；裸 checkout 的共享模块需预打包生成。[Q03](#research-q03)
+> **思考**：不中断任务不能保证记忆完整：非可重试失败与有限 TTL 仍可能缺失。关闭采集也不能据启动重放守卫推断常驻队列被冻结，drainTick 的健康分支没有相同开关判断；退出须核对并处理历史待发与远端记忆。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
@@ -105,7 +105,7 @@
 
 ### 1.4 主要限制
 
-不中断任务与记忆完整性不是同一件事：非可重试失败、有限TTL和错误记忆均可能使跨会话结果不可靠；裸 checkout 的共享模块需预打包生成。[Q03](#research-q03)
+不中断任务不能保证记忆完整：非可重试失败与有限 TTL 仍可能缺失。关闭采集也不能据启动重放守卫推断常驻队列被冻结，drainTick 的健康分支没有相同开关判断；退出须核对并处理历史待发与远端记忆。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
@@ -158,7 +158,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 398](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=398&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 350](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=350&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 165](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=165&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 399](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=399&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 351](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=351&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 164](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=164&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -496,7 +496,7 @@ export function promptText(messages) {
 
 #### 完整回答
 
-不支持无条件无损。可重试的消息失败进入本地队列，后续消息先排队；drainer 单飞重放并刷新各会话 latch，使后端恢复后无需重启即可继续。队列原件明确含原始记忆负载，使用目录0700与文件0600，并有默认七天TTL和会话启动重试上限；因此它是有限缓冲，不是无限留存。非可重试初始化失败可能直接结束采集路径，不能把不中断主任务等同于保存成功。组件 checkout 的 shared/ 不存在，但 package prepack 会从 examples/memory-plugin-shared/lib 复制依赖闭包，属于打包设计而非缺源阻断；直接使用裸 checkout 前必须先完成预打包，不能把 npm 发布包内容视作本次已验证。
+不支持无条件无损。可重试的消息失败进入本地队列，后续消息先排队；drainer 单飞重放并刷新各会话 latch，使后端恢复后无需重启即可继续。队列原件明确含原始记忆负载，使用目录0700与文件0600，并有默认七天TTL和会话启动重试上限；因此它是有限缓冲，不是无限留存。非可重试初始化失败可能直接结束采集路径，不能把不中断主任务等同于保存成功。组件 checkout 的 shared/ 不存在，但 package prepack 会从 examples/memory-plugin-shared/lib 复制依赖闭包，属于打包设计而非缺源阻断；直接使用裸 checkout 前必须先完成预打包，不能把 npm 发布包内容视作本次已验证。 此外，initializeState 虽将启动重放放在 isCaptureEnabled 后，常驻 drainTick 却在服务健康时直接 replayPendingQueue，没有同一采集开关判断。因而关闭采集并不等于冻结历史待发写入；这是源码可见的控制边界，实际受影响条目还取决于共享队列内容。
 
 #### 证据与依据
 
@@ -714,7 +714,7 @@ DSH shared 设为不提交的生成副本。
 
 #### 完整回答
 
-需准备 OpenViking 服务与正确凭证、支持事件契约的 DSH 和包声明的三个 peer 模块。配置从共享凭证链、ovcli.conf 与宿主输入合并，连接身份字段有专门优先级，用户应核对有效 endpoint、account、user、peer，而不是仅看单个文件。先在非敏感、单项目会话中验证画像、召回、压缩提交和短暂断网恢复；人为写入一个错误偏好并确认可修正，才能判断记忆是否改善任务。记录开关与召回开关要分别验收；禁用插件停止新采集不代表删除服务端记忆或本地 pending。现金成本包含服务存储、嵌入和提炼模型，人工成本包含身份配置、错误记忆修正和队列清理，均无实测。若错误记忆持续回流、项目串扰或待发队列无法解释，则先关采集和召回，退到可人工检查的笔记，并处理留存状态。
+需准备 OpenViking 服务与正确凭证、支持事件契约的 DSH 和包声明的三个 peer 模块。配置从共享凭证链、ovcli.conf 与宿主输入合并，连接身份字段有专门优先级，用户应核对有效 endpoint、account、user、peer，而不是仅看单个文件。先在非敏感、单项目会话中验证画像、召回、压缩提交和短暂断网恢复；人为写入一个错误偏好并确认可修正，才能判断记忆是否改善任务。记录开关与召回开关要分别验收，尤其要检查关闭记录后常驻 drainer 是否仍发送历史待发；禁用插件停止新采集不代表删除服务端记忆或本地 pending。现金成本包含服务存储、嵌入和提炼模型，人工成本包含身份配置、错误记忆修正和队列清理，均无实测。若错误记忆持续回流、项目串扰或待发队列无法解释，则先关采集和召回，退到可人工检查的笔记，并处理留存状态。
 
 #### 证据与依据
 

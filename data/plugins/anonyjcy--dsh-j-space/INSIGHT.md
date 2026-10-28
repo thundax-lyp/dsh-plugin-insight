@@ -123,7 +123,7 @@ DSH原生goal/todo与人工证据清单；上游J-Space协议是被适配对象�
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、cordis.patch.yml、src/index.ts、src/installer.ts、preset/skills/j-space/SKILL.md、preset/skills/j-space/integration/dsh.md、preset/skills/j-space/scripts/control.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定根组件36个tracked文件统计；读bundle/preset入口、DSH覆盖、旧installer和Python gate关键路径。未运行controller/测试/真实host或模型，不复现上游认知实验。
+- 边界：固定根组件36个tracked文件统计；读bundle/preset入口、DSH覆盖、旧installer和Python gate关键路径。未运行controller/测试/真实host或模型，不复现上游认知实验。 本轮重新核对固定源码的注册、核心执行、失败边界和归属，不将作者测试作本轮运行证据。
 - 下一步：同模型/任务/预算对照原生goal/todo+人工清单，注入有关与无关来源改动，记录最终缺陷、漏复核、恢复分钟、总token和人工；任何伪独立参与者不计验收成功。
 
 **分析版本**
@@ -161,11 +161,7 @@ DSH原生goal/todo与人工证据清单；上游J-Space协议是被适配对象�
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AnonyJcy/dsh-j-space/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/AnonyJcy/dsh-j-space/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AnonyJcy/dsh-j-space/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/AnonyJcy/dsh-j-space/issues) 查看。
 
 <a id="detail-section-10"></a>
 

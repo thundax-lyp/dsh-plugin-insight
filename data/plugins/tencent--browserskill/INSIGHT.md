@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[6469c47](https://github.com/Tencent/BrowserSkill/tree/6469c474423abbac1b6f70a5e2af6daaf9b1e0af)
+源码版本：[70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
@@ -127,8 +127,8 @@
 **分析版本**
 
 - **仓库**：[Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill)
-- **版本号**：未声明（[固定提交 6469c47](https://github.com/Tencent/BrowserSkill/tree/6469c474423abbac1b6f70a5e2af6daaf9b1e0af)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -150,10 +150,10 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 59 | 7269 | — | — | 77135 |
-| .ts | test | 225 | 81615 | 76325 | 2004 | — |
-| .ts | source | 279 | 65575 | 57920 | 4301 | — |
-| .tsx | test | 24 | 5484 | 4990 | 85 | — |
-| .tsx | source | 41 | 9285 | 8814 | 132 | — |
+| .ts | test | 225 | 81843 | 76545 | 2003 | — |
+| .ts | source | 279 | 65572 | 57917 | 4301 | — |
+| .tsx | test | 24 | 5608 | 5111 | 85 | — |
+| .tsx | source | 42 | 9211 | 8745 | 132 | — |
 | .md | example | 3 | 645 | — | — | 5426 |
 | .mjs | source | 39 | 6847 | 6388 | 206 | — |
 | .mjs | example | 8 | 202 | 191 | 0 | — |
@@ -163,11 +163,7 @@
 
 **活跃度**
 
-[![近30天新建 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 33](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=33&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-暂未获取：Issue 未关闭。
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Tencent/BrowserSkill/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -189,7 +185,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:23-35](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/README.md#L23-L35)
+**依据 1 · 作者声明**：[README.md:23-35](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/README.md#L23-L35)
 
 作者定位已登录浏览器、AgentWindow及跨宿主CLI。
 
@@ -214,7 +210,7 @@ Use the `bsk` CLI with Cursor, Claude Code, Codex, OpenClaw, CodeBuddy, WorkBudd
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:47-53](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/README.md#L47-L53)
+**依据 2 · 作者声明**：[README.md:47-53](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/README.md#L47-L53)
 
 本地自动化需要Agent、CLI与扩展。
 
@@ -228,7 +224,7 @@ For local automation, you need **an AI agent + the `bsk` CLI + the browser exten
 | Agent integration | A shell-capable agent with the BrowserSkill skill, or DeepSeek Harness with the [DSH plugin](#deepseek-harness-plugin). |
 ```
 
-**依据 3 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:44-55](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/session-manager/agent-window.ts#L44-L55)
+**依据 3 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:44-55](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/session-manager/agent-window.ts#L44-L55)
 
 普通profile新窗口默认，不新建账号容器。
 
@@ -272,7 +268,7 @@ CLI main 解析命令、设置观察上下文和依赖区域，分派session/nav
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[crates/bsk-cli/src/main.rs:36-40](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/crates/bsk-cli/src/main.rs#L36-L40)
+**依据 1 · 源码核查**：[crates/bsk-cli/src/main.rs:36-40](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/crates/bsk-cli/src/main.rs#L36-L40)
 
 上下文与依赖区域在分派前设置。
 
@@ -284,7 +280,7 @@ fn dispatch(cli: Cli, format: Format) -> Result<(), CliError> {
         Command::Cooperate(args) => cli::cooperate::dispatch(args, format),
 ```
 
-**依据 2 · 源码核查**：[crates/bsk-cli/src/main.rs:77-95](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/crates/bsk-cli/src/main.rs#L77-L95)
+**依据 2 · 源码核查**：[crates/bsk-cli/src/main.rs:77-95](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/crates/bsk-cli/src/main.rs#L77-L95)
 
 实际命令分派。
 
@@ -315,7 +311,7 @@ fn dispatch(cli: Cli, format: Format) -> Result<(), CliError> {
 
 </details>
 
-**依据 3 · 源码核查**：[crates/bsk-cli/src/daemon/sessions.rs:180-215](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/crates/bsk-cli/src/daemon/sessions.rs#L180-L215)
+**依据 3 · 源码核查**：[crates/bsk-cli/src/daemon/sessions.rs:180-215](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/crates/bsk-cli/src/daemon/sessions.rs#L180-L215)
 
 锁内预留避免ID碰撞。
 
@@ -363,7 +359,7 @@ fn dispatch(cli: Cli, format: Format) -> Result<(), CliError> {
 
 </details>
 
-**依据 4 · 源码核查**：[crates/bsk-cli/src/daemon/sessions.rs:681-719](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/crates/bsk-cli/src/daemon/sessions.rs#L681-L719)
+**依据 4 · 源码核查**：[crates/bsk-cli/src/daemon/sessions.rs:681-719](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/crates/bsk-cli/src/daemon/sessions.rs#L681-L719)
 
 发扩展请求与失败撤销。
 
@@ -414,7 +410,7 @@ fn dispatch(cli: Cli, format: Format) -> Result<(), CliError> {
 
 </details>
 
-**依据 5 · 源码核查**：[apps/extension/src/tools/session.ts:124-153](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/tools/session.ts#L124-L153)
+**依据 5 · 源码核查**：[apps/extension/src/tools/session.ts:124-153](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/tools/session.ts#L124-L153)
 
 扩展实际调用manager.start。
 
@@ -456,7 +452,7 @@ export async function handleSessionStart(
 
 </details>
 
-**依据 6 · 源码核查**：[apps/extension/src/session-manager/manager.ts:254-278](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/session-manager/manager.ts#L254-L278)
+**依据 6 · 源码核查**：[apps/extension/src/session-manager/manager.ts:254-278](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/session-manager/manager.ts#L254-L278)
 
 记录窗口与自建tab身份。
 
@@ -493,7 +489,7 @@ export async function handleSessionStart(
 
 </details>
 
-**依据 7 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:76-95](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/session-manager/agent-window.ts#L76-L95)
+**依据 7 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:76-95](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/session-manager/agent-window.ts#L76-L95)
 
 仅复用自有tab。
 
@@ -539,7 +535,7 @@ export async function handleSessionStart(
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:31-55](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/session-manager/agent-window.ts#L31-L55)
+**依据 1 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:31-55](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/session-manager/agent-window.ts#L31-L55)
 
 focus与共享无痕语义和权限检查。
 
@@ -576,7 +572,7 @@ export const chromeAgentWindowApi: AgentWindowApi = {
 
 </details>
 
-**依据 2 · 源码核查**：[apps/extension/src/tools/session.ts:84-95](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/tools/session.ts#L84-L95)
+**依据 2 · 源码核查**：[apps/extension/src/tools/session.ts:84-95](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/tools/session.ts#L84-L95)
 
 返回失败与窗口释放结果。
 
@@ -600,7 +596,7 @@ export interface SessionStopResult {
 
 </details>
 
-**依据 3 · 源码核查**：[apps/extension/src/tools/session.ts:279-305](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/tools/session.ts#L279-L305)
+**依据 3 · 源码核查**：[apps/extension/src/tools/session.ts:279-305](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/tools/session.ts#L279-L305)
 
 归还失败保留活跃会话以重试。
 
@@ -659,7 +655,7 @@ export interface SessionStopResult {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:85-91](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/README.md#L85-L91)
+**依据 1 · 作者声明**：[README.md:85-91](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/README.md#L85-L91)
 
 实际Agent环境的PATH与重启条件。
 
@@ -673,7 +669,7 @@ bsk --version
 If an already-running agent cannot find `bsk`, restart it to pick up the new PATH, or configure the installed binary's absolute path.
 ````
 
-**依据 2 · 作者声明**：[README.md:115-131](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/README.md#L115-L131)
+**依据 2 · 作者声明**：[README.md:115-131](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/README.md#L115-L131)
 
 doctor不证明技能发现与任务窗口工作方式。
 
@@ -702,7 +698,7 @@ The agent opens its own window in the background, reads the page, returns the su
 
 </details>
 
-**依据 3 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:69-74](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/session-manager/agent-window.ts#L69-L74)
+**依据 3 · 源码核查**：[apps/extension/src/session-manager/agent-window.ts:69-74](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/session-manager/agent-window.ts#L69-L74)
 
 清理失败不能假报成功。
 
@@ -715,7 +711,7 @@ The agent opens its own window in the background, reads the page, returns the su
     await chrome.windows.remove(windowId);
 ```
 
-**依据 4 · 源码核查**：[apps/extension/src/tools/session.ts:299-305](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/apps/extension/src/tools/session.ts#L299-L305)
+**依据 4 · 源码核查**：[apps/extension/src/tools/session.ts:299-305](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/apps/extension/src/tools/session.ts#L299-L305)
 
 失败归还的用户恢复路径。
 

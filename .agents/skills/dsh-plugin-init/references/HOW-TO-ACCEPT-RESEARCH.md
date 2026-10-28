@@ -66,6 +66,8 @@ npm run acceptance -- stage --bundle data/runs/<round>/BUNDLE.json \
 
 旧 stage／stage-batch 保留兼容。本流程的语义决定只能由父 Agent 提交，worker 只交付研究；不能用低层入口代替新流程要求的验收。
 
+已暂存后发现需要退修时，先按[会话恢复](SESSION-OPERATIONS.md#新轮次与同轮恢复)的 `snapshot reopen` 解除该项检查点并保留旧记录，再允许 worker 修改交付。重新 prepare、读取受影响问题并撰写完整决定；不能覆盖旧 bundle、决定或直接覆盖暂存记录。
+
 ## 实现与边界
 
 命令与导出函数由 [research-acceptance.mjs](../scripts/research-acceptance.mjs) 实现。`stageRecords` 的可选记录核对回调在锁内、WORK 保存前运行，比较观察、报告、展示输入和全部嵌入证据；现有调用方默认行为不变。

@@ -132,7 +132,7 @@
 | [dsh-forget-session](#plugin-1413882487-root) | 永久删除会话多层状态并防止幽灵复活。 | 2.2.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-forget-session) |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 0.4.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-image2-tool) |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 1.9.3 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-read-url) |
-| [dsh-soul](#plugin-1352089397-root) | 为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。 | 0.8.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-soul) |
+| [dsh-soul](#plugin-1352089397-root) | 为DSH配置回复风格、语言和人格预设，并提供工作区与会话覆盖。 | 0.8.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-soul) |
 | [dsh-moli](#plugin-1415767842-root) | 将本地 Moli 无头浏览器接入 DSH，提供渲染抓取、选择器读取、截图、PDF与引擎探测。 | 1.1.19 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-moli) |
 | [dsh-idle-compact](#plugin-1421755278-root) | 在长会话空闲时预生成压缩摘要，并由用户确认后应用到会话。 | 0.3.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/dsh-idle-compact) |
 | [OpenPets DSH adapter](#plugin-1229168545-packages-dsh) | 把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。 | 4.1.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;19](https://www.npmjs.com/package/@open-pets/dsh) |
@@ -736,7 +736,7 @@
 
 **最新发布**：[0.9.14 · 2026-10-25（北京时间）](https://www.npmjs.com/package/@furongjun1999/dsh-memory)。
 
-**源码版本**：[39517d18](https://github.com/FuRongJun-1999/dsh-memory/commit/39517d18deee020a2f36b40172e652a4269e1d75)（与该发布版本的对应关系未核实）。
+**源码版本**：[ea92345a](https://github.com/FuRongJun-1999/dsh-memory/commit/ea92345a82e6dc3ce0cfe36d050962de16182fbe)（与该发布版本的对应关系未核实）。
 
 **使用条件**：[Q04](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md#research-q04) 在独立非敏感数据根试验写入、读回和会话过滤；若sid缺失或发生跨会话误注入，停止自动召回并回AGENTS.md/人工查阅。
 
@@ -1528,7 +1528,7 @@
 
 **最新发布**：[0.1.0 · 2026-10-22（北京时间）](https://www.npmjs.com/package/dsh-plugin-molio)。
 
-**源码版本**：[5234ee62](https://github.com/zhuzhaoyun/Molio/commit/5234ee62b6f79c68d240f09cde9ab68bb730a5e7)（与该发布版本的对应关系未核实）。
+**源码版本**：[c1b90f05](https://github.com/zhuzhaoyun/Molio/commit/c1b90f05d876953889ff99303697d896e0c84ed9)（与该发布版本的对应关系未核实）。
 
 **使用条件**：[Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04) 已有本地daemon者可显式库id试读已知原文；错库、路径或内容不符时停止据此回答并回Molio/原文件。
 
@@ -2368,15 +2368,15 @@
 
 ## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 3,422](https://img.shields.io/static/v1?label=npm+30d&message=3%2C422&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
 
-**主要用途**：为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。
+**主要用途**：为DSH配置回复风格、语言和人格预设，并提供工作区与会话覆盖。
 
 **最新发布**：[0.8.0 · 2026-10-19（北京时间）](https://www.npmjs.com/package/dsh-soul)。
 
-**源码版本**：[0a203cc2](https://github.com/Aliuyanfeng/dsh-soul/commit/0a203cc24e39beea3d3c8cc00541b4709e87c49f)（与该发布版本的对应关系未核实）。
+**源码版本**：[8ae83c94](https://github.com/Aliuyanfeng/dsh-soul/commit/8ae83c944a2fdb7c53182b771f598888fcd6140b)（与该发布版本的对应关系未核实）。
 
-**使用条件**：频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q09)。
+**使用条件**：当前观察；先隔离单会话核实际提示，再决定是否扩大范围。发现错人格、跨会话提议覆盖或送达不明即禁用，保留配置回原生提示清单。[Q04](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q04)
 
 [查看完整分析 →](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
@@ -2824,7 +2824,7 @@
 
 **最新发布**：[0.3.3 · 2026-10-15（北京时间）](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)。
 
-**源码版本**：[6469c474](https://github.com/Tencent/BrowserSkill/commit/6469c474423abbac1b6f70a5e2af6daaf9b1e0af)（与该发布版本的对应关系未核实）。
+**源码版本**：[70681a2d](https://github.com/Tencent/BrowserSkill/commit/70681a2d6494f396351a331207099110f66762bc)（与该发布版本的对应关系未核实）。
 
 **使用条件**：已用DSH Web者先做只读任务和可重置表单，验收技能显露、预览与停止清理；无法识别副作用或重复动作时暂停并回CLI或人工。[Q04](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q04)
 
@@ -3184,7 +3184,7 @@
 
 **最新发布**：[0.9.6 · 2026-10-09（北京时间）](https://www.npmjs.com/package/dsh-verify)。
 
-**源码版本**：[1cf6506c](https://github.com/263311487-ux/dsh-verify/commit/1cf6506c41fd729e76949b6452b4ce868701edd1)（与该发布版本的对应关系未核实）。
+**源码版本**：[e7ce6376](https://github.com/263311487-ux/dsh-verify/commit/e7ce6376fec8cf94f41ce46264baeb348911693b)（与该发布版本的对应关系未核实）。
 
 **使用条件**：已有明确标准的开发者先在localhost用正确/故意错误断言试用，回读实际URL和报告；未审spec或基线不能放行，Host阻塞或目标不符退回CLI/手写Playwright。[Q05](../../plugins/263311487-ux--dsh-verify/INSIGHT.md#research-q05)
 

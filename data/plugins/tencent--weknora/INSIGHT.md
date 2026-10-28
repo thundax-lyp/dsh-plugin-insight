@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[256a3f2](https://github.com/Tencent/WeKnora/tree/256a3f2966866337f7dc3c5fcc10037f2ae18d52)
+源码版本：[c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324)
 
 <!-- BEGIN META -->
 [![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora)
@@ -88,7 +88,7 @@
 |---|---|---|
 | 受限检索 | 路由与候选阶段逐库授权 | 完整跨租户动态正确性 |
 | 融合排序 | 独立列表归一、RRF和去重 | 召回和引用质量 |
-| 配置排错 | 维度校验在入库前 | 真实恢复时长 |
+| 配置排错 | 查询维度校验在检索前 | 真实恢复时长 |
 
 > **思考**：分数归一仅建立排序口径，不能证明相关性或概率校准；部署和恢复还需额外维护模型、索引与权限。[Q03](#research-q03) [Q04](#research-q04)
 
@@ -112,10 +112,6 @@
 
 有持续资料维护和运维能力的团队可在非敏感语料试用，先验收授权拒绝、引用和恢复，再比较简单搜索；不以目录收录或分数归一证明可靠。[Q04](#research-q04)
 
-**补充建议**
-
-可检验分类型融合权重能否改善留出集引用质量；若最弱类别恶化或维护负担上升，则否定该假设。[Q05](#research-q05)
-
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -132,8 +128,8 @@
 **分析版本**
 
 - **仓库**：[Tencent/WeKnora](https://github.com/Tencent/WeKnora)
-- **版本号**：未声明（[固定提交 256a3f2](https://github.com/Tencent/WeKnora/tree/256a3f2966866337f7dc3c5fcc10037f2ae18d52)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,7 +137,7 @@
 
 <a id="innovation"></a>
 
-未验证假设是按知识库资料类型和查询结构选择融合权重，而不是给全部任务一套全局权重。推导来自现有融合将关键词精确匹配与向量语义排名分开，且多列表量纲差异不能由归一解决。最小验证对照固定默认权重、人工分类型权重和单检索，在不用于调参的题集上统计每类引用正确率、召回及最差退化类别，同时计入调参人工成本。若只在调参题上提高、最弱类别恶化或净维护负担更高，则否定优势。现有 retrievalCfg 可提供参数，不等于已经实现自动学习或证明分类型需求。 [Q05](#research-q05)
+未验证假设是按资料类型和查询结构选择融合权重，以现有默认权重和单检索为对照，在留出题集检查每类引用正确、召回及最差退化类别，并计入调参人工成本。只在调参题上提高、弱类退化或维护净负担更高时否定方案；现有可配置权重不等于自动学习已经实现。[Q05](#research-q05)
 
 本次没有部署、运行目标代码或执行测试；源码支持机制，当前权限全链、任务质量和恢复需要独立验收。
 
@@ -160,7 +156,7 @@
 | .js | source | 13 | 1583 | 1325 | 89 | — |
 | .mjs | source | 20 | 1206 | 1091 | 83 | — |
 | .mjs | test | 81 | 8465 | 7382 | 371 | — |
-| .ts | source | 349 | 107375 | 96350 | 6738 | — |
+| .ts | source | 349 | 107372 | 96347 | 6738 | — |
 | .md | test | 1 | 66 | — | — | 544 |
 | .js | test | 1 | 254 | 227 | 10 | — |
 | .mts | source | 1 | 221 | 191 | 6 | — |
@@ -170,7 +166,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 404](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=404&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 322](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=322&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 236](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=236&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 404](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=404&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 322](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=322&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 236](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=236&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -196,7 +192,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:41-65](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/README.md#L41-L65)
+**依据 1 · 作者声明**：[README.md:41-65](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/README.md#L41-L65)
 
 作者定义共享知识库、权限与部署能力。
 
@@ -233,7 +229,7 @@ Beyond the three modes:
 
 </details>
 
-**依据 2 · 源码核查**：[internal/router/routes_knowledge.go:28-44](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/router/routes_knowledge.go#L28-L44)
+**依据 2 · 源码核查**：[internal/router/routes_knowledge.go:28-44](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/router/routes_knowledge.go#L28-L44)
 
 分块读写按能力与父知识库访问约束。
 
@@ -282,7 +278,7 @@ func RegisterChunkRoutes(r *gin.RouterGroup, handler *handler.ChunkHandler, g *r
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[internal/router/routes_knowledge.go:28-44](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/router/routes_knowledge.go#L28-L44)
+**依据 1 · 源码核查**：[internal/router/routes_knowledge.go:28-44](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/router/routes_knowledge.go#L28-L44)
 
 读写路由能力和父库守卫。
 
@@ -311,7 +307,7 @@ func RegisterChunkRoutes(r *gin.RouterGroup, handler *handler.ChunkHandler, g *r
 
 </details>
 
-**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search.go:49-76](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L49-L76)
+**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search.go:49-76](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L49-L76)
 
 查询向量维度早期诊断。
 
@@ -351,7 +347,7 @@ func validateQueryEmbeddingDimension(model embedding.Embedder, actual int) error
 
 </details>
 
-**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search.go:79-118](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L79-L118)
+**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search.go:79-118](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L79-L118)
 
 模型身份包含endpoint与维度。
 
@@ -403,7 +399,7 @@ func (s *knowledgeBaseService) ResolveEmbeddingModelKeys(ctx context.Context, kb
 
 </details>
 
-**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search.go:130-153](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L130-L153)
+**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search.go:130-153](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L130-L153)
 
 主检索与截断接线。
 
@@ -439,7 +435,7 @@ func (s *knowledgeBaseService) HybridSearch(ctx context.Context,
 
 </details>
 
-**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search.go:194-231](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L194-L231)
+**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search.go:194-231](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L194-L231)
 
 逐库授权、主库存在和一次嵌入扇出。
 
@@ -489,6 +485,39 @@ func (s *knowledgeBaseService) HybridSearch(ctx context.Context,
 
 </details>
 
+**依据 6 · 源码核查**：[internal/application/service/knowledgebase_search.go:236-256](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L236-L256)
+
+实际单次生成 params.QueryEmbedding 后再 resolveStoreGroups，补齐注释到执行的调用链。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+	embeddingKB := kb
+	if !hasEmbeddingModel(embeddingKB) {
+		embeddingKB = nil
+		for _, candidate := range kbs {
+			if hasEmbeddingModel(candidate) {
+				embeddingKB = candidate
+				break
+			}
+		}
+	}
+	if len(params.QueryEmbedding) == 0 && embeddingKB != nil && !params.DisableVectorMatch {
+		emb, embErr := s.GetQueryEmbedding(ctx, embeddingKB.ID, params.QueryText)
+		if embErr != nil {
+			return nil, embErr
+		}
+		params.QueryEmbedding = emb
+	}
+
+	// Group KBs by (storeID, owner tenant), resolve the bound engine for
+	// each group, and build the per-group base RetrieveParams once.
+	groups, err := s.resolveStoreGroups(ctx, kb, kbs, params, matchCount)
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -499,11 +528,11 @@ func (s *knowledgeBaseService) HybridSearch(ctx context.Context,
 
 #### 完整回答
 
-不能。融合层保留每个引擎返回的独立列表，按向量或关键词分类；仅向量保留原余弦值以兼容 FAQ 阈值，仅关键词按本列表最大有限分数归一，混合使用加权RRF并除以理论最大值。每种方式都去重并排序，解决不同量纲和列表拼接顺序导致的排序偏置，这是具体机制支持；RRF本身为成熟方法，不作为原创算法。归一到同一数值区间并不等价于跨模型校准或相关性概率，关键词列表只有一个弱命中也可能被归一到1。服务端截断会影响召回，语料质量、分块和模型仍决定真实效果。需比较最终引用与原问题，而不是因为分数可比较便声称答案可靠。
+不能。融合层保留每个引擎返回的独立列表，按向量或关键词分类；仅向量保留原余弦值以兼容 FAQ 阈值，仅关键词在本列表最大有限分数大于1时归一，混合使用加权RRF并除以理论最大值。每种方式都去重并排序，解决不同量纲和列表拼接顺序导致的排序偏置，这是具体机制支持；RRF本身为成熟方法，不作为原创算法。归一到同一数值区间并不等价于跨模型校准或相关性概率，关键词列表只有一个较弱但原始得分大于1的命中也可能被归一到1。服务端截断会影响召回，语料质量、分块和模型仍决定真实效果。需比较最终引用与原问题，而不是因为分数可比较便声称答案可靠。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search.go:306-320](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L306-L320)
+**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search.go:306-320](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L306-L320)
 
 实际候选链调用融合。
 
@@ -530,7 +559,7 @@ func (s *knowledgeBaseService) HybridSearch(ctx context.Context,
 
 </details>
 
-**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:12-35](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search_fusion.go#L12-L35)
+**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:12-35](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search_fusion.go#L12-L35)
 
 保留不同引擎的独立列表。
 
@@ -566,7 +595,7 @@ func classifyRetrievalResults(ctx context.Context, retrieveResults []*types.Retr
 
 </details>
 
-**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:47-83](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search_fusion.go#L47-L83)
+**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:47-83](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search_fusion.go#L47-L83)
 
 三个融合分支。
 
@@ -615,7 +644,7 @@ func fuseOrDeduplicate(
 
 </details>
 
-**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:114-151](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search_fusion.go#L114-L151)
+**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:114-151](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search_fusion.go#L114-L151)
 
 关键词按列表最大分数归一。
 
@@ -665,7 +694,7 @@ func rescaleUnboundedScores(results []*types.IndexWithScore) {
 
 </details>
 
-**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
+**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
 
 加权RRF及最大值归一。
 
@@ -717,7 +746,7 @@ func fuseWithRRF(
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:63-65](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/README.md#L63-L65)
+**依据 1 · 作者声明**：[README.md:63-65](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/README.md#L63-L65)
 
 作者声明可替换模型、存储与私有部署。
 
@@ -727,7 +756,7 @@ func fuseWithRRF(
 - **Deployment**: LLMs, vector databases and storage backends are all swappable. Deploy locally or on a private cloud and keep the data in your own environment.
 ```
 
-**依据 2 · 作者声明**：[README.md:99-104](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/README.md#L99-L104)
+**依据 2 · 作者声明**：[README.md:99-104](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/README.md#L99-L104)
 
 compose默认拉取和启动。
 
@@ -740,7 +769,7 @@ docker compose pull     # Pull the latest images
 docker compose up -d    # Start core services
 ````
 
-**依据 3 · 作者声明**：[README.md:137-147](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/README.md#L137-L147)
+**依据 3 · 作者声明**：[README.md:137-147](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/README.md#L137-L147)
 
 版本固定和升级一致性提醒。
 
@@ -763,7 +792,7 @@ docker compose up -d    # Recreate containers with new images
 
 </details>
 
-**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search.go:61-76](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search.go#L61-L76)
+**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search.go:61-76](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search.go#L61-L76)
 
 维度错误提示重建索引。
 
@@ -811,7 +840,7 @@ func validateQueryEmbeddingDimension(model embedding.Embedder, actual int) error
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
+**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
 
 融合参数从配置读取，为候选实验提供基础。
 

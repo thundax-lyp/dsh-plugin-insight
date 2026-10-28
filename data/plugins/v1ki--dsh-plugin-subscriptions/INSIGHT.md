@@ -124,7 +124,7 @@
 
 - 已检查：作者 README、包清单、源码路径 package.json、src/index.ts、src/providers/codex.ts、src/providers/common.ts、src/auth/rpc.ts、src/providers/pool.ts、src/providers/replay.ts、src/providers/image-pool.ts、src/auth/store.ts、src/providers/accounts.ts、README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根插件源码重点Codex端到端Adapter、共享token/account/pool/replay、认证存储与路由；其他四provider声明与注册范围不等同于逐wire完整检查。
+- 边界：根插件源码重点Codex端到端Adapter、共享token/account/pool/replay、认证存储与路由；其他四provider声明与注册范围不等同于逐wire完整检查。 本轮重新读取固定提交中所列关键入口、状态与失败路径，研究深度仍为源码核查。
 - 下一步：未安装、运行目标代码或测试，未登录任何账号；没有调用真实供应商，不把作者兼容声明当本次通过结果。
 
 **分析版本**

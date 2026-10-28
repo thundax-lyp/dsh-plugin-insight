@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[f85109b](https://github.com/bruc3van/awesome-dsh-plugin/tree/f85109b23772fc20811d59ded0b86c62dc73b63e)
+源码版本：[52acc43](https://github.com/bruc3van/awesome-dsh-plugin/tree/52acc43fd980808f7d9531a810e86e3908fbc5ba)
 
 <!-- BEGIN META -->
 [![GitHub ★ 472](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=472&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bruc3van/awesome-dsh-plugin)
@@ -116,7 +116,7 @@ GitHub搜索和逐仓README确认安装目标；目录减少发现与安装身�
 
 索引生成、安装声明核验与选择策略有源码支持；线上订阅/安装、安全和采用效果未验收。
 
-- 已检查：作者 README、包清单、源码路径 README.md、scripts/host-market/generate.mjs、scripts/host-market/npm.mjs、scripts/host-market/policy.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、scripts/host-market/generate.mjs、scripts/host-market/npm.mjs、scripts/host-market/policy.mjs、scripts/host-market/refresh.mjs、.github/workflows/refresh-host-market.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：检查根订阅说明与官方宿主索引生成/npm核验/选择/发布策略；未全量复核目录仓库、Git验证器或线上托管服务。
 - 下一步：对同一组选包任务比较现有索引和展示核验层级/入选原因版，测误信率、选对目标时间和维护负担；不改善则停止扩展。
@@ -124,7 +124,7 @@ GitHub搜索和逐仓README确认安装目标；目录减少发现与安装身�
 **分析版本**
 
 - **仓库**：[bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin)
-- **版本号**：未声明（[固定提交 f85109b](https://github.com/bruc3van/awesome-dsh-plugin/tree/f85109b23772fc20811d59ded0b86c62dc73b63e)）
+- **版本号**：未声明（[固定提交 52acc43](https://github.com/bruc3van/awesome-dsh-plugin/tree/52acc43fd980808f7d9531a810e86e3908fbc5ba)）
 - **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
@@ -154,7 +154,11 @@ GitHub搜索和逐仓README确认安装目标；目录减少发现与安装身�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/bruc3van/awesome-dsh-plugin/issues) 查看。
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/bruc3van/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 8](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=8&color=737b86&logo=github)](https://github.com/bruc3van/awesome-dsh-plugin/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/bruc3van/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
@@ -176,7 +180,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:11-31](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/README.md#L11-L31)
+**依据 1 · 作者声明**：[README.md:11-31](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/README.md#L11-L31)
 
 订阅流程、独立市场与核验边界
 
@@ -219,11 +223,11 @@ https://bruc3van.com/dsh-plugins/index.json
 
 #### 完整回答
 
-generateIndex从curated v2 feed中取得command模式安装目标，区分npm和Git，按包或Git目标去重；npm核验获取tarball并检查bundle声明及宿主范围是否与registry元数据相符，保留tarball/integrity依据。候选过排除策略后由选择器截断，再构造format:1索引交给官方parseMarketIndex验证。发布策略拒绝来源读取失败、空目录、超过上限以及相对前次大幅坍缩。贡献是把可读目录变成可机读、带安装身份核验的宿主发现源，而不是新插件功能。
+generateIndex从curated v2 feed中取得command模式安装目标，区分npm和Git，按包或Git目标去重；npm核验获取tarball并检查bundle声明及宿主范围是否与registry元数据相符，保留tarball/integrity依据。候选过排除策略后由选择器截断，再构造format:1索引交给官方parseMarketIndex验证。发布策略拒绝来源读取失败、空目录、超过上限以及相对前次大幅坍缩。贡献是把可读目录变成可机读、带安装身份核验的宿主发现源，而不是新插件功能。 这里有两道不同门禁：generate 在暂存文件写出后检查来源失败、空集和上限；工作流实际调用 refresh，后者等待 generate 成功，再读已发布索引作为 previous 做80%坍缩检查，通过后才 copy 到正式目标。直接运行 generate 的自定义路径不能继承 refresh 的前次比较保证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[scripts/host-market/generate.mjs:174-223](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/generate.mjs#L174-L223)
+**依据 1 · 源码核查**：[scripts/host-market/generate.mjs:174-223](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L174-L223)
 
 feed→分离目标→去重
 
@@ -285,7 +289,7 @@ export async function generateIndex(
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/host-market/npm.mjs:15-41](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/npm.mjs#L15-L41)
+**依据 2 · 源码核查**：[scripts/host-market/npm.mjs:15-41](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/npm.mjs#L15-L41)
 
 tarball与范围核验
 
@@ -324,7 +328,7 @@ tarball与范围核验
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/host-market/generate.mjs:348-375](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/generate.mjs#L348-L375)
+**依据 3 · 源码核查**：[scripts/host-market/generate.mjs:348-375](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L348-L375)
 
 索引构造/官方解析及失败计数
 
@@ -364,7 +368,7 @@ tarball与范围核验
 
 </details>
 
-**依据 4 · 源码核查**：[scripts/host-market/policy.mjs:4-25](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/policy.mjs#L4-L25)
+**依据 4 · 源码核查**：[scripts/host-market/policy.mjs:4-25](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/policy.mjs#L4-L25)
 
 发布门禁
 
@@ -398,6 +402,108 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 </details>
 
+**依据 5 · 源码核查**：[scripts/host-market/generate.mjs:389-413](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L389-L413)
+
+正式生成入口明确传入verifyNpmPlugin，非仅存在未接线核验器。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+    async (name) => {
+      const url = `${REGISTRY}${encodeURIComponent(name)}`
+      const response = await fetch(url, {
+        redirect: 'error',
+        signal: AbortSignal.timeout(20_000),
+        headers: { accept: 'application/json' },
+      })
+      if (!response.ok) throw new Error(`Registry HTTP ${response.status}`)
+      const body = await response.text()
+      evidence.push({
+        name,
+        url,
+        sha256: createHash('sha256').update(body).digest('hex'),
+        fetchedAt: new Date().toISOString(),
+      })
+      return JSON.parse(body)
+    },
+    readGitTarget,
+    (plugin, packument) =>
+      verifyNpmPlugin(plugin, packument, {
+        // Large-but-valid tarballs need more than the reader's default 60s
+        // on slow registry links; the 64 MiB size cap still applies.
+        timeoutMs: 180_000,
+        maxTarballBytes: 64 * 1024 * 1024,
+      }),
+```
+
+</details>
+
+**依据 6 · 源码核查**：[scripts/host-market/generate.mjs:501-509](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L501-L509)
+
+生成器先写暂存文件再assert，本身没有传previous。
+
+```text
+  const reportText = JSON.stringify(report, null, 2) + '\n'
+  if (
+    Buffer.byteLength(serialized) > 5 * 1024 * 1024 ||
+    Buffer.byteLength(reportText) > 5 * 1024 * 1024
+  )
+    throw new Error('Generated JSON exceeds the HTTPS route size limit')
+  await writeFile(`${outputPath}.report.json`, reportText)
+  await writeFile(outputPath, serialized)
+  assertPublishable(result)
+```
+
+**依据 7 · 源码核查**：[scripts/host-market/refresh.mjs:25-49](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/refresh.mjs#L25-L49)
+
+refresh执行generate成功后做previous坍缩检查，才复制正式索引。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+const run = spawnSync(
+  process.execPath,
+  [
+    '--import',
+    new URL('./node_modules/tsx/dist/loader.mjs', import.meta.url).href,
+    fileURLToPath(new URL('./generate.mjs', import.meta.url)),
+    input,
+    candidate,
+  ],
+  { stdio: 'inherit' },
+)
+if (run.status !== 0) process.exit(run.status ?? 1)
+const next = JSON.parse(await readFile(candidate, 'utf8'))
+let previous
+try {
+  previous = JSON.parse(await readFile(target, 'utf8'))
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error
+}
+assertPublishable({ index: next }, previous)
+await copyFile(candidate, target)
+await copyFile(
+  `${candidate}.report.json`,
+  resolve(root, 'data/dsh-market-index.report.json'),
+)
+```
+
+</details>
+
+**依据 8 · 源码核查**：[.github/workflows/refresh-host-market.yml:48-52](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/.github/workflows/refresh-host-market.yml#L48-L52)
+
+刷新工作流实际调用refresh.mjs，证明门禁在此入口接线。
+
+```text
+      - run: node scripts/validate-packages.mjs
+      - name: Generate and validate without write credentials
+        run: |
+          node scripts/host-market/refresh.mjs
+          node scripts/host-market/validate-index.mjs
+```
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -412,7 +518,7 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[scripts/host-market/npm.mjs:23-34](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/npm.mjs#L23-L34)
+**依据 1 · 源码核查**：[scripts/host-market/npm.mjs:23-34](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/npm.mjs#L23-L34)
 
 只对声明一致性作核验
 
@@ -436,7 +542,7 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/host-market/generate.mjs:60-88](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/generate.mjs#L60-L88)
+**依据 2 · 源码核查**：[scripts/host-market/generate.mjs:60-88](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L60-L88)
 
 Star、featured优先与截断
 
@@ -477,7 +583,7 @@ export function selectTopPlugins(plugins, ranks, max = MAX_PLUGINS, featured = n
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/host-market/policy.mjs:1-25](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/policy.mjs#L1-L25)
+**依据 3 · 源码核查**：[scripts/host-market/policy.mjs:1-25](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/policy.mjs#L1-L25)
 
 上限/失败/坍缩门禁
 
@@ -514,7 +620,7 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 </details>
 
-**依据 4 · 源码核查**：[scripts/host-market/generate.mjs:353-361](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/generate.mjs#L353-L361)
+**依据 4 · 源码核查**：[scripts/host-market/generate.mjs:353-361](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L353-L361)
 
 索引自己声明非安全审查
 
@@ -550,7 +656,7 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:21-31](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/README.md#L21-L31)
+**依据 1 · 作者声明**：[README.md:21-31](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/README.md#L21-L31)
 
 用户配置和逐插件条件
 
@@ -573,7 +679,7 @@ export function assertPublishable({ index, fetchFailures = 0 }, previous) {
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/host-market/generate.mjs:60-88](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/generate.mjs#L60-L88)
+**依据 2 · 源码核查**：[scripts/host-market/generate.mjs:60-88](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/generate.mjs#L60-L88)
 
 选择来源为假设依据
 
@@ -614,7 +720,7 @@ export function selectTopPlugins(plugins, ranks, max = MAX_PLUGINS, featured = n
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/host-market/npm.mjs:15-41](https://github.com/bruc3van/awesome-dsh-plugin/blob/f85109b23772fc20811d59ded0b86c62dc73b63e/scripts/host-market/npm.mjs#L15-L41)
+**依据 3 · 源码核查**：[scripts/host-market/npm.mjs:15-41](https://github.com/bruc3van/awesome-dsh-plugin/blob/52acc43fd980808f7d9531a810e86e3908fbc5ba/scripts/host-market/npm.mjs#L15-L41)
 
 核验真实范围
 

@@ -152,11 +152,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/yogsoth-ai/de-anthropocentric-research-engine/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -212,7 +208,7 @@ At every phase boundary, record the decision and its reason in the current Phase
 
 #### 完整回答
 
-入口要求加载 research-catalog、write-research-spec，再在用户批准后加载 execute-research-spec。执行技能重放 decisions 构成内存SpecView，并要求每次战术操作后追加八类Delta检查点。计划变更保留原决定和替换原因，阶段完成需满足门禁；相较反复改写一份计划，状态演变更可追查。这是提示词合同与文件组织贡献，不是独立事务引擎。
+入口要求加载 research-catalog、write-research-spec，再在用户批准后加载 execute-research-spec。执行技能重放 decisions 构成内存SpecView，并要求每次战术操作后追加八类Delta检查点。计划变更保留原决定和替换原因，阶段完成需满足门禁；相较反复改写一份计划，状态演变更可追查。这是提示词合同与文件组织贡献，不是独立事务引擎。 所谓门禁是技能正文对执行 Agent 的约束；本组件没有后台监控者能在 Agent 违规时强制拦截。
 
 #### 证据与依据
 

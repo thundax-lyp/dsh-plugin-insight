@@ -124,7 +124,7 @@
 
 - 已检查：作者 README、包清单、源码路径 src/README.md、src/package.json、src/cordis.patch.yml、src/lib/index.js、src/src/host/chat.ts 及固定范围 inventory；组件：src。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：src组件68个tracked文件统计；重点README/package/patch、TS聊天、发布lib的屏幕、路由、下载路径。未逐帧核动画数量、未审独立版语音、不运行/下载/抓屏。
+- 边界：src组件68个tracked文件统计；重点README/package/patch、TS聊天、发布lib的屏幕、路由、下载路径。未逐帧核动画数量、未审独立版语音、不运行/下载/抓屏。 本轮按package实际执行lib复核屏幕附件、模型选择、自动下载和停止路径，未以TS代替发布实现。
 - 下一步：合成截图与假provider记录附件落点、实际endpoint和网络；延迟请求中关闭监测、切换模式、停helper并核残留。用户无法预测副作用或退出后仍不可接受地出站时停止试用。
 
 **分析版本**

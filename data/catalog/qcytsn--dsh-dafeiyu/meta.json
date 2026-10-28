@@ -1,8 +1,8 @@
 {
     "repository": "QCYTSN/dsh-dafeiyu",
     "repository_id": 1333755311,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 527,
     "pushed_at": "2026-10-27T11:45:07Z",
     "issues": {
@@ -15,23 +15,23 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BF9C:F9F77:6B5DC0:7394C0:6AE15602 and timestamp 2026-10-28 01:55:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C270:1F3C3D:235E523:322CFE7:6AE17250 and timestamp 2026-10-28 03:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BFAC:1AEFC2:6B51BF:737F09:6AE15603 and timestamp 2026-10-28 01:55:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C366:2CB578:232EBD7:31F74EF:6AE17252 and timestamp 2026-10-28 03:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BFAE:10ABCC:6DCCE3:760AB9:6AE15604 and timestamp 2026-10-28 01:55:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C45C:1F3C3D:235EB34:322D87E:6AE17253 and timestamp 2026-10-28 03:56:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BFB8:342204:75C083:7DFA0E:6AE15605 and timestamp 2026-10-28 01:55:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C532:1F3C3D:235EE08:322DCBE:6AE17254 and timestamp 2026-10-28 03:56:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20updated%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BFBA:3527C8:6EB9CB:76F537:6AE15606 and timestamp 2026-10-28 01:55:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AQCYTSN%2Fdsh-dafeiyu%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C620:1BC6A2:22F8163:31C9571:6AE17255 and timestamp 2026-10-28 03:56:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
@@ -40,14 +40,14 @@
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-dafeiyu",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": 60173,
@@ -55,7 +55,7 @@
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T11:27:08.569Z",
-            "captured_at": "2026-10-28T01:52:52.223Z",
+            "captured_at": "2026-10-28T03:54:21.981Z",
             "source_url": "https://registry.npmjs.org/dsh-dafeiyu",
             "error": null,
             "latest_version": "0.1.21",

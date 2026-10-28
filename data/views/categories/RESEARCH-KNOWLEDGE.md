@@ -1169,7 +1169,7 @@
 
 > **亮点**：贡献在 DSH 事件生命周期、按会话工作区解析身份、过滤合成上下文和进程内待发恢复的组合，能解释减少记忆交接摩擦的机制，但不能证明任务效果。[Q01](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q01) [Q02](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q02)
 
-> **思考**：不中断任务与记忆完整性不是同一件事：非可重试失败、有限TTL和错误记忆均可能使跨会话结果不可靠；裸 checkout 的共享模块需预打包生成。[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03)
+> **思考**：不中断任务不能保证记忆完整：非可重试失败与有限 TTL 仍可能缺失。关闭采集也不能据启动重放守卫推断常驻队列被冻结，drainTick 的健康分支没有相同开关判断；退出须核对并处理历史待发与远端记忆。[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03)
 
 > **建议**：在待发队列之上公开每会话记忆覆盖与缺失原因，可能帮助用户识别历史缺口，需用故障识别时间和后续错误率验证。[Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05)
 
@@ -1245,13 +1245,13 @@
 
 [![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 5,203](https://img.shields.io/static/v1?label=npm+30d&message=5%2C203&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
 
-> **用途**：面向已有 WeKnora 的 DSH 团队，把组织文档检索、原文补读与跨文档问答接回当前任务。
+> **用途**：已经维护 WeKnora 的研发或研究人员，在 DSH 中检索组织文档并补读原文，避免在平台网页与宿主间手工搬运证据。
 
 > **亮点**：该包把检索片段、文档补读和服务端问答拆成可组合的 DSH 工具，并保留可追踪文档 ID 和截断信息，减少自行接 API 的工程负担；其增量属于适配层而非检索算法。[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01) [Q02](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q02)
 
 > **思考**：分页结束不代表文本未被裁剪，默认库范围也不是强制白名单；ask 会写会话状态，不能以“知识内容只读”推导无副作用。[Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03) [Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04)
 
-> **建议**：未验证假设：在当前搜索与补读接口之上增加显式证据预算，当引用覆盖不足才升级 ask，可能减少额外模型调用；同时把 truncated 与 has_more 的组合视为不完整信号，避免把分页结束误认为证据齐全。推导来自片段查询与综合问答分离、以及独立裁剪标志，不意味着插件已有自动路由。最小验证应比较只检索、始终 ask 和预算升级三组，固定知识库、问题、模型与验收人员，并记录引用准确性、漏答、总延迟、重试及模型费用。若升级组降低引用正确性或端到端负担没有下降，则推翻优势；不能仅靠减少调用次数接受假设。 [Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05)
+> **建议**：未验证的方向是在现有搜索与补读链上设置证据预算，证据不足才升级服务端问答；需用质量与总负担同时检验，调用数下降不足以证明价值。[Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1267,7 +1267,7 @@
 
 > **思考**：分数归一仅建立排序口径，不能证明相关性或概率校准；部署和恢复还需额外维护模型、索引与权限。[Q03](../../plugins/tencent--weknora/INSIGHT.md#research-q03) [Q04](../../plugins/tencent--weknora/INSIGHT.md#research-q04)
 
-> **建议**：可检验分类型融合权重能否改善留出集引用质量；若最弱类别恶化或维护负担上升，则否定该假设。[Q05](../../plugins/tencent--weknora/INSIGHT.md#research-q05)
+> **建议**：未验证假设是按资料类型和查询结构选择融合权重，以现有默认权重和单检索为对照，在留出题集检查每类引用正确、召回及最差退化类别，并计入调参人工成本。只在调参题上提高、弱类退化或维护净负担更高时否定方案；现有可配置权重不等于自动学习已经实现。[Q05](../../plugins/tencent--weknora/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回表格](#category-index)
 

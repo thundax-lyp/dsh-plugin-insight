@@ -155,7 +155,7 @@
 | [dsh-skill-explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。 | 需要频繁浏览和管理普通文件型 Skill 的用户，可在备份的测试目录试用导入、同名处理、编辑与回收站。 |
 | [dsh-skill-manager](#plugin-1336106328-root) | 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。 | 建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。 |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 | 愿意审阅发送前文本、经常写模糊需求的人可从Light和非关键任务试用；先关闭不必要搜索，检查模型与附件发送范围，再对照原稿看约束、否定和权限。 |
-| [dsh-soul](#plugin-1352089397-root) | 为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。 | 频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 |
+| [dsh-soul](#plugin-1352089397-root) | 为DSH配置回复风格、语言和人格预设，并提供工作区与会话覆盖。 | 当前观察；先隔离单会话核实际提示，再决定是否扩大范围。 |
 | [dsh-sound](#plugin-1335332435-root) | 按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。 | 可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。 |
 | [dsh-speak](#plugin-1334493734-root) | 通过系统语音播报 DSH 最终回复、审批和提问，提供重播与播放控制 | 观察；先用单会话非敏感内容核手动重播和停止，不能以声音作为唯一审批/完成判断。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 在DSH Web用一个快捷键面板搜索会话、slash命令、可见界面动作与插件设置入口。 | 兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。 |
@@ -2515,15 +2515,15 @@
 
 ## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 3,422](https://img.shields.io/static/v1?label=npm+30d&message=3%2C422&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
 
-> **用途**：需要在不同项目或会话中稳定切换角色提示和个性设置的用户可用它管理人格配置并按全局、工作区或会话范围绑定，在提示装配时注入且提供命令、工具和界面入口；合格结果是当前人格和作用域可见、变更即时且可撤销，不在错误项目泄漏提示或历史。详见[Q01](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q01)。
+> **用途**：在不同项目重复使用人格、语言与指令的DSH个人用户，需要正确的范围和可恢复配置。
 
-> **亮点**：把人格存储、范围继承、历史、命令/工具与多处 UI 接线组合为可管理的个性化层。它相对“手工维护系统提示并在每个会话复制，或只使用宿主全局设置”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q03)。
+> **亮点**：将人格与用户资料分开，把手工提示管理接成预设、范围覆盖、配置历史和送达观测，减少重复接线。实际增量是配置管理，不能把人格预设算新增智能体或长期记忆。[Q01](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q01) [Q02](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q02)
 
-> **思考**：多级作用域和兼容接线增加状态复杂度；源码测试不能证明所有宿主版本的实时提示更新和隔离都正确。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q04)。
+> **思考**：三层systemPrompt与只按cwd的主动注入使用不同有效配置；全局待确认槽也没有session/digest绑定，保存/确认成功不足以保证目标回合人格正确。[Q02](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q02) [Q03](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q03)
 
-> **建议**：未来可探索：可用显式优先级图展示每次提示的来源与覆盖关系，并为人格切换提供可回放的差异和撤销事务。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q08)。
+> **建议**：统一按Agent有效配置，并将提议身份/基线摘要与逐回合采纳收据绑定；以两工作区四会话、冷缓存和并发故障矩阵检验零错范围和净核查时间。未验证，不能计现有能力。[Q05](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md) · [返回表格](#category-index)
 

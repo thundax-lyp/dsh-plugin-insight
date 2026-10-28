@@ -1870,7 +1870,7 @@
 
 > **思考**：大目录父摘要可在比例阈值下滞后，锁忙还会跳过尽力更新；需要检验错误路由而非用摘要存在证明可靠。[Q03](../../plugins/volcengine--openviking/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设是把刷新阈值与“改变任务结论的重要性”结合：一般新增仍按现有比例延迟，涉及关键事实反转的文档在读摘要时触发原文回退。当前策略使用子摘要变化事件和数量比例，不能直接识别语义重要性；新增机制必须可解释并避免每次读取都调用模型。最小验证比较比例刷新、全部立即刷新和重要性门控三组，固定变更序列与任务，记录错误路由、最终合格率、摘要生成资源和端到端耗时。若门控漏掉关键反转或资源不低于全部刷新，则推翻优势。此方向不是现有 freshness 函数已经实现的能力，也不从目录结构推断真实需求。 [Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05)
+> **建议**：未验证假设是在已有数量比例刷新上增加任务重要性门控，使关键事实反转触发原文回退，一般变更仍允许延迟。以相同变更序列比较比例刷新、全部立即刷新和重要性门控，记录错误路由、合格率、摘要资源与耗时；漏掉关键反转或资源不少于全部刷新时否定增量。[Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/volcengine--openviking/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1878,7 +1878,7 @@
 
 ## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
 
-[![GitHub ★ 46,878](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46%2C878&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
+[![GitHub ★ 47,121](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=47%2C121&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 
 > **用途**：愿管理渠道并核真实模型/费用的数据敏感度适中个人开发者，期望减少手工endpoint接线。
 

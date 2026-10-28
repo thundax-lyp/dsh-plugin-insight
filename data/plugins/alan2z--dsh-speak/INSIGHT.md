@@ -123,7 +123,7 @@
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、adapters/dsh/speech-hook.js、engine/speak.sh、engine/speak.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交根组件完整inventory，实读adapter、macOS/Windows引擎关键段、package和README。未运行目标/测试，未验证实际声音和外部自然音色。
+- 边界：固定提交根组件完整inventory，实读adapter、macOS/Windows引擎关键段、package和README。未运行目标/测试，未验证实际声音和外部自然音色。 本轮重新读取相同固定提交的关键入口、状态与失败分支，采用判断由这些材料复核。
 - 下一步：隔离profile以20组双会话交错轨迹、慢TTS、timer内关闭设置及卸载为矩阵，记录内容/session、漏播、审批等待和停止延迟；任何错配即停止自动采用。
 
 **分析版本**
@@ -158,11 +158,7 @@
 
 **活跃度**
 
-[![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Alan2Z/dsh-speak/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-暂未获取：Issue 未关闭、近30天新建。
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Alan2Z/dsh-speak/issues) 查看。
 
 <a id="detail-section-10"></a>
 

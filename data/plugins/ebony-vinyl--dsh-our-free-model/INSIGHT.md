@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[38648bf](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/38648bf0ebecc63563e2e3324fbed4d323a442ac)
+源码版本：[f8b9d7a](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092)
 
 <!-- BEGIN META -->
-[![GitHub ★ 46,878](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46%2C878&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
+[![GitHub ★ 47,121](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=47%2C121&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 <!-- END META -->
 
 > **功能**：在 DSH 中统一多渠道模型目录、组合降级与本地兼容网关的插件
@@ -124,14 +124,14 @@
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、index.js、src/core/runtime.js、src/combos.js、src/adapter.js、src/trust.js、src/forward.js、src/updater.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根388个tracked文件统计，仅深审Host/core注册、combo/流commit、trust/forward与updater。未审全部账号/订阅/magpie/desktop链，不运行模型、网络服务、更新或故障测试。
+- 边界：根388个tracked文件统计，仅深审Host/core注册、combo/流commit、trust/forward与updater。未审全部账号/订阅/magpie/desktop链，不运行模型、网络服务、更新或故障测试。 本轮重新读取固定版本的核心入口、状态提交、权限与故障恢复路径，源码机制不充当实际服务可用性证据。
 - 下一步：固定脱敏工具任务，对照单官方endpoint，注入首输出前后失败与禁止/昂贵后备，记录实际目的地/模型、commit、所有费用、副作用和人工分钟；隔离FS单独验更新失败恢复。
 
 **分析版本**
 
 - **仓库**：[Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)
-- **版本号**：2.7.2（[固定提交 38648bf](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/38648bf0ebecc63563e2e3324fbed4d323a442ac)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.7.2（[固定提交 f8b9d7a](https://github.com/Ebony-Vinyl/dsh-our-free-model/tree/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -152,10 +152,10 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 87 | 33474 | 24198 | 7965 | — |
-| .md | source | 83 | 7463 | — | — | 139752 |
-| .mjs | source | 195 | 106030 | 92663 | 12027 | — |
-| .tsx | source | 18 | 2278 | 2175 | 31 | — |
+| .js | source | 87 | 33484 | 24200 | 7973 | — |
+| .md | source | 84 | 7506 | — | — | 142024 |
+| .mjs | source | 201 | 107937 | 94317 | 12214 | — |
+| .tsx | source | 18 | 2289 | 2175 | 41 | — |
 | .ts | source | 2 | 148 | 144 | 0 | — |
 | .md | example | 1 | 8 | — | — | 159 |
 | .mjs | example | 2 | 1551 | 1126 | 358 | — |
@@ -186,7 +186,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:91-113](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/index.js#L91-L113)
+**依据 1 · 源码核查**：[index.js:91-113](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/index.js#L91-L113)
 
 最小硬依赖与可选服务降级。
 
@@ -221,7 +221,7 @@ export const inject = ['llm']
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:426-458](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/index.js#L426-L458)
+**依据 2 · 源码核查**：[index.js:426-458](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/index.js#L426-L458)
 
 共享runtime到真实adapter注册和发现。
 
@@ -266,7 +266,7 @@ export const inject = ['llm']
 
 </details>
 
-**依据 3 · 源码核查**：[README.md:26-33](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/README.md#L26-L33)
+**依据 3 · 源码核查**：[README.md:26-33](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/README.md#L26-L33)
 
 作者免费/不限量声明，不能据此验证上游。
 
@@ -281,7 +281,7 @@ export const inject = ['llm']
 > 纯插件挂载：不改内核、无构建步骤、零依赖。
 ```
 
-**依据 4 · 源码核查**：[package.json:1-7](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/package.json#L1-L7)
+**依据 4 · 源码核查**：[package.json:1-7](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/package.json#L1-L7)
 
 private2.7.2与多账号范围自述。
 
@@ -292,7 +292,7 @@ private2.7.2与多账号范围自述。
   "private": true,
   "type": "module",
   "description": "Our Free Model — 在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型，桌面端另有 EAC 协付渠道；2.0 起接入 LobsterAI、Qoder、TRAE、Cline、Loomy、Raccoon、MiniMax、ZCode、Gemini 十个账号渠道（原有匿名免费通道保留）（登录、账号池、积分领取、本地 OpenAI 网关与局域网转发、数据看板与运行日志），六页毛玻璃界面统一呈现。",
-  "main": "./index.js",
+  "repository": {
 ```
 
 <a id="research-q02"></a>
@@ -309,7 +309,7 @@ buildComboCatalog递归解析成员，拒循环/无成员，用所有成员visio
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/combos.js:106-149](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/combos.js#L106-L149)
+**依据 1 · 源码核查**：[src/combos.js:106-149](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/combos.js#L106-L149)
 
 循环检测与逐项能力汇总。
 
@@ -365,7 +365,7 @@ export function buildComboCatalog(combos, catalog) {
 
 </details>
 
-**依据 2 · 源码核查**：[src/adapter.js:240-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/adapter.js#L240-L279)
+**依据 2 · 源码核查**：[src/adapter.js:240-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/adapter.js#L240-L279)
 
 持有未commit输出，commit后不再advance，保真实结尾。
 
@@ -433,11 +433,11 @@ export function buildComboCatalog(combos, catalog) {
 
 #### 完整回答
 
-Host API通过rejectionFor复用connection.admit或旧requestRejection；服务抛错503，缺服务才用结构性loopback/同源fence。该helper按同步返回读取rejection，精确宿主合约仍需匹配，不能独立视作所有版本认证证明。独立forward监听器不是Host路由，需自发key常量时间比较并约束解析后的本机IP；LAN中继是额外开关/独立key，启用会把额度交给网络上持key的人。Host账号凭据、用户自带key与匿名车道的数据规则不相同，不能因UI统一就互相替代。默认保持LAN关闭，在脱敏输入上检查实际endpoint、认证和监听，再扩任务。
+Host API通过rejectionFor复用connection.admit或旧requestRejection；服务抛错503，没有可用准入方法时用结构性loopback/同源fence。该helper按同步返回读取rejection，精确宿主合约仍需匹配，不能独立视作所有版本认证证明。独立forward监听器不是Host路由，需自发key常量时间比较并约束解析后的本机IP；LAN中继是额外开关/独立key，启用会把额度交给网络上持key的人。Host账号凭据、用户自带key与匿名车道的数据规则不相同，不能因UI统一就互相替代。默认保持LAN关闭，在脱敏输入上检查实际endpoint、认证和监听，再扩任务。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/trust.js:87-117](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/trust.js#L87-L117)
+**依据 1 · 源码核查**：[src/trust.js:87-117](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/trust.js#L87-L117)
 
 真实host与结构性fallback，错误503。
 
@@ -480,7 +480,7 @@ export function rejectionFor(req, connection, onRejection) {
 
 </details>
 
-**依据 2 · 源码核查**：[src/forward.js:100-117](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/forward.js#L100-L117)
+**依据 2 · 源码核查**：[src/forward.js:100-117](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/forward.js#L100-L117)
 
 独立key及bearer提取。
 
@@ -510,7 +510,7 @@ function bearerOf(req) {
 
 </details>
 
-**依据 3 · 源码核查**：[src/forward.js:170-199](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/forward.js#L170-L199)
+**依据 3 · 源码核查**：[src/forward.js:170-199](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/forward.js#L170-L199)
 
 本机监听解析后IP边界。
 
@@ -552,7 +552,7 @@ export async function resolveLoopbackBind(host) {
 
 </details>
 
-**依据 4 · 源码核查**：[README.md:289-289](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/README.md#L289-L289)
+**依据 4 · 源码核查**：[README.md:289-289](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/README.md#L289-L289)
 
 作者LAN独立key、默认关闭与共享额度边界。
 
@@ -580,7 +580,7 @@ package private且README明确同名npm非作者发布，只按可信Release或�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-7](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/package.json#L1-L7)
+**依据 1 · 源码核查**：[package.json:1-7](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/package.json#L1-L7)
 
 真实private版本。
 
@@ -591,10 +591,10 @@ package private且README明确同名npm非作者发布，只按可信Release或�
   "private": true,
   "type": "module",
   "description": "Our Free Model — 在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型，桌面端另有 EAC 协付渠道；2.0 起接入 LobsterAI、Qoder、TRAE、Cline、Loomy、Raccoon、MiniMax、ZCode、Gemini 十个账号渠道（原有匿名免费通道保留）（登录、账号池、积分领取、本地 OpenAI 网关与局域网转发、数据看板与运行日志），六页毛玻璃界面统一呈现。",
-  "main": "./index.js",
+  "repository": {
 ```
 
-**依据 2 · 源码核查**：[README.md:118-125](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/README.md#L118-L125)
+**依据 2 · 源码核查**：[README.md:118-125](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/README.md#L118-L125)
 
 官方明确排除同名npm。
 
@@ -609,7 +609,7 @@ package private且README明确同名npm非作者发布，只按可信Release或�
 > 请只按本文档下方的方式安装：使用本仓库的 Release 发布包，或本地源码目录。
 ```
 
-**依据 3 · 源码核查**：[index.js:119-131](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/index.js#L119-L131)
+**依据 3 · 源码核查**：[index.js:119-131](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/index.js#L119-L131)
 
 managed分发单写所有者。
 
@@ -634,7 +634,7 @@ managed分发单写所有者。
 
 </details>
 
-**依据 4 · 源码核查**：[src/updater.js:407-433](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/updater.js#L407-L433)
+**依据 4 · 源码核查**：[src/updater.js:407-433](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/updater.js#L407-L433)
 
 远端manifest签名检查。
 
@@ -673,7 +673,7 @@ export async function downloadManifest(sources, { timeoutMs = 15000, fetchImpl =
 
 </details>
 
-**依据 5 · 源码核查**：[src/updater.js:1030-1075](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/updater.js#L1030-L1075)
+**依据 5 · 源码核查**：[src/updater.js:1030-1075](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/updater.js#L1030-L1075)
 
 备份、意图、activation版本与恢复分级。
 
@@ -751,7 +751,7 @@ export async function downloadManifest(sources, { timeoutMs = 15000, fetchImpl =
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:426-458](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/index.js#L426-L458)
+**依据 1 · 源码核查**：[index.js:426-458](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/index.js#L426-L458)
 
 多个渠道共用注册且可选发现并非生成可用性。
 
@@ -796,7 +796,7 @@ export async function downloadManifest(sources, { timeoutMs = 15000, fetchImpl =
 
 </details>
 
-**依据 2 · 源码核查**：[src/adapter.js:265-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/adapter.js#L265-L279)
+**依据 2 · 源码核查**：[src/adapter.js:265-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/adapter.js#L265-L279)
 
 commit后不重试及真实失败保留。
 
@@ -823,7 +823,7 @@ commit后不重试及真实失败保留。
 
 </details>
 
-**依据 3 · 源码核查**：[README.md:118-125](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/README.md#L118-L125)
+**依据 3 · 源码核查**：[README.md:118-125](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/README.md#L118-L125)
 
 采用前必须核分发来源。
 
@@ -858,7 +858,7 @@ commit后不重试及真实失败保留。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/combos.js:140-149](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/combos.js#L140-L149)
+**依据 1 · 源码核查**：[src/combos.js:140-149](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/combos.js#L140-L149)
 
 能力摘要不涵盖费用/数据政策。
 
@@ -880,7 +880,7 @@ commit后不重试及真实失败保留。
 
 </details>
 
-**依据 2 · 源码核查**：[src/adapter.js:243-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/src/adapter.js#L243-L279)
+**依据 2 · 源码核查**：[src/adapter.js:243-279](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/src/adapter.js#L243-L279)
 
 候选链与commit提供策略执行点。
 
@@ -929,7 +929,7 @@ commit后不重试及真实失败保留。
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:119-131](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/38648bf0ebecc63563e2e3324fbed4d323a442ac/index.js#L119-L131)
+**依据 3 · 源码核查**：[index.js:119-131](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f8b9d7a3a42eaedd460c9b2987abc7af0b45e092/index.js#L119-L131)
 
 单字节所有者可作为策略配置归属参照。
 

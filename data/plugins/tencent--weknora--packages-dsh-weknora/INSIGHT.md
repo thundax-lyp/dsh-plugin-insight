@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[256a3f2](https://github.com/Tencent/WeKnora/tree/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora)
+源码版本：[c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora)
 
 <!-- BEGIN META -->
 [![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 5,203](https://img.shields.io/static/v1?label=npm+30d&message=5%2C203&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
@@ -40,7 +40,7 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已有 WeKnora 的 DSH 团队，把组织文档检索、原文补读与跨文档问答接回当前任务。
+> **用途**：已经维护 WeKnora 的研发或研究人员，在 DSH 中检索组织文档并补读原文，避免在平台网页与宿主间手工搬运证据。
 
 基线为直接使用已部署的 WeKnora 网页或手写 API 请求。插件新增 DSH 工具适配与结果投影，不将服务端检索和模型能力算作自身贡献。
 
@@ -123,13 +123,13 @@
 - 已检查：作者 README、包清单、源码路径 packages/dsh-weknora/package.json、packages/dsh-weknora/README.md、packages/dsh-weknora/src/index.ts、packages/dsh-weknora/src/config.ts、packages/dsh-weknora/src/tools.ts、packages/dsh-weknora/src/client.ts 及固定范围 inventory；组件：packages/dsh-weknora。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：核查本组件 package、README、index、config、tools 与 client 的入口、调用、输出和失败分支；未穷尽根平台所有算法。
-- 下一步：源码证据支持适配层的条件性判断；召回、引用正确性、端到端耗时与额外服务端消耗需要固定题集对照。
+- 下一步：仅执行源码读取，未安装或运行目标代码，未执行本地测试和真实宿主验收；作者兼容声明不能作为本次通过记录。
 
 **分析版本**
 
 - **仓库**：[Tencent/WeKnora](https://github.com/Tencent/WeKnora)
-- **版本号**：0.1.0（[固定提交 256a3f2](https://github.com/Tencent/WeKnora/tree/256a3f2966866337f7dc3c5fcc10037f2ae18d52)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +137,9 @@
 
 <a id="innovation"></a>
 
-未验证假设：在当前搜索与补读接口之上增加显式证据预算，当引用覆盖不足才升级 ask，可能减少额外模型调用；同时把 truncated 与 has_more 的组合视为不完整信号，避免把分页结束误认为证据齐全。推导来自片段查询与综合问答分离、以及独立裁剪标志，不意味着插件已有自动路由。最小验证应比较只检索、始终 ask 和预算升级三组，固定知识库、问题、模型与验收人员，并记录引用准确性、漏答、总延迟、重试及模型费用。若升级组降低引用正确性或端到端负担没有下降，则推翻优势；不能仅靠减少调用次数接受假设。 [Q05](#research-q05)
+未验证的方向是在现有搜索与补读链上设置证据预算，证据不足才升级服务端问答；需用质量与总负担同时检验，调用数下降不足以证明价值。[Q05](#research-q05)
 
-源码证据支持适配层的条件性判断；召回、引用正确性、端到端耗时与额外服务端消耗需要固定题集对照。
+仅执行源码读取，未安装或运行目标代码，未执行本地测试和真实宿主验收；作者兼容声明不能作为本次通过记录。
 
 <a id="detail-section-9"></a>
 
@@ -158,11 +158,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 404](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=404&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 322](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=322&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 236](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=236&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Tencent/WeKnora/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -184,7 +180,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-weknora/package.json:1-20](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/package.json#L1-L20)
+**依据 1 · 作者声明**：[packages/dsh-weknora/package.json:1-20](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/package.json#L1-L20)
 
 作者定义知识检索工具包的用途。
 
@@ -216,7 +212,7 @@
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/index.ts:28-36](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/index.ts#L28-L36)
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/index.ts:28-36](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/index.ts#L28-L36)
 
 apply 创建客户端并注册工具，确认原生插件身份。
 
@@ -232,7 +228,7 @@ export function apply(ctx: HarnessContext, config: unknown): void {
   ctx.logger?.info(`dsh-weknora: registered ${registered.join(', ')} against ${resolved.baseUrl}`)
 ```
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:243-260](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L243-L260)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:243-260](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L243-L260)
 
 搜索结果的用途是组织文档片段和后续文档阅读。
 
@@ -282,7 +278,7 @@ export function apply(ctx: HarnessContext, config: unknown): void {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/index.ts:12-36](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/index.ts#L12-L36)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/index.ts:12-36](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/index.ts#L12-L36)
 
 注入与注册构成入口。
 
@@ -319,7 +315,7 @@ export function apply(ctx: HarnessContext, config: unknown): void {
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:329-358](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L329-L358)
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:329-358](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L329-L358)
 
 实际搜索请求和标题补充降级。
 
@@ -361,7 +357,7 @@ export function apply(ctx: HarnessContext, config: unknown): void {
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:417-449](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L417-L449)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:417-449](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L417-L449)
 
 文档分页、排序和裁剪。
 
@@ -406,7 +402,7 @@ export function apply(ctx: HarnessContext, config: unknown): void {
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-548](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L518-L548)
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-548](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L518-L548)
 
 ask 实际创建会话并获取服务端生成结果。
 
@@ -449,7 +445,7 @@ ask 实际创建会话并获取服务端生成结果。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:289-305](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/client.ts#L289-L305)
+**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:289-305](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L289-L305)
 
 agent 与 RAG 路由及 SSE 请求。
 
@@ -492,7 +488,7 @@ agent 与 RAG 路由及 SSE 请求。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:168-183](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L168-L183)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:168-183](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L168-L183)
 
 成功缓存无 TTL，显式参数优先于默认配置。
 
@@ -520,7 +516,7 @@ agent 与 RAG 路由及 SSE 请求。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:126-150](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L126-L150)
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:126-150](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L126-L150)
 
 按名结果依据请求范围再次过滤。
 
@@ -557,7 +553,7 @@ function projectNamedDocuments(
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:432-448](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L432-L448)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:432-448](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L432-L448)
 
 裁剪预算与分页结束相互独立。
 
@@ -586,7 +582,7 @@ function projectNamedDocuments(
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-weknora/src/client.ts:145-192](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/client.ts#L145-L192)
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/client.ts:145-192](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L145-L192)
 
 仅针对特定 403 降级并区分传输与响应错误。
 
@@ -646,7 +642,7 @@ function projectNamedDocuments(
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:195-214](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/client.ts#L195-L214)
+**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:195-214](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L195-L214)
 
 data 非数组返回空集合。
 
@@ -698,7 +694,7 @@ data 非数组返回空集合。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/config.ts:133-190](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/config.ts#L133-L190)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/config.ts:133-190](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/config.ts#L133-L190)
 
 配置校验、范围和工具开关。
 
@@ -768,7 +764,7 @@ export function resolveConfig(raw: Config | undefined): ResolvedConfig {
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/client.ts:122-129](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/client.ts#L122-L129)
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/client.ts:122-129](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L122-L129)
 
 API key 与租户由请求头发送。
 
@@ -783,7 +779,7 @@ API key 与租户由请求头发送。
     return headers
 ```
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/client.ts:261-270](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/client.ts#L261-L270)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/client.ts:261-270](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L261-L270)
 
 创建会话有服务端状态副作用。
 
@@ -805,7 +801,7 @@ API key 与租户由请求头发送。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-537](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L518-L537)
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-537](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L518-L537)
 
 ask 会建立会话并运行服务端生成。
 
@@ -857,7 +853,7 @@ ask 会建立会话并运行服务端生成。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:434-448](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L434-L448)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:434-448](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L434-L448)
 
 裁剪标志和分页结果为门控提供候选信号。
 
@@ -884,7 +880,7 @@ ask 会建立会话并运行服务端生成。
 
 </details>
 
-**依据 2 · 作者声明**：[packages/dsh-weknora/src/tools.ts:454-462](https://github.com/Tencent/WeKnora/blob/256a3f2966866337f7dc3c5fcc10037f2ae18d52/packages/dsh-weknora/src/tools.ts#L454-L462)
+**依据 2 · 作者声明**：[packages/dsh-weknora/src/tools.ts:454-462](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L454-L462)
 
 作者明确将综合问答留给跨文档问题。
 

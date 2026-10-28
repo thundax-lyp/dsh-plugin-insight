@@ -59,7 +59,7 @@
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
 | DSH连接/子进程/会话/LLM/凭据 | 必需 | 边栏与作业编排 | 非独立运行包 |
-| Python本地引擎、OCR和Chromium | 必需 | 邮件/票据/链接处理 | 首次需联网安装 |
+| 受支持系统、Python 3.10+、OCR 和 Chromium | 必需 | 邮件/票据/链接处理 | 首次需联网安装 |
 | QQ/163 IMAP授权 | 必需 | 限定邮箱抓取 | 其他邮箱拒绝 |
 | 当前模型 | 字段提取必需 | OCR文本结构化 | 文本会进入配置provider |
 | GLM key | 视觉降级可选 | 失败补识别 | 图片可发外部模型 |
@@ -110,7 +110,7 @@
 
 ### 1.5 使用建议
 
-用测试邮箱和有真值的混合批次试用，先验收原件、关键字段和可用导出，再比较人工总时间；缺票、静默错误或完成无报表时暂停，保留原件人工接管。[Q04](#research-q04)
+仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。缺票、静默错误或完成无报表时暂停，保留原件人工接管。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -120,7 +120,7 @@
 
 边栏RPC、IPC、模型路由和归档接线有源码支持；票据准确性、合格率和成本未测，字段门控仅为假设。
 
-- 已检查：作者 README、包清单、源码路径 plugins/dsh-invoice-downloader/package.json、plugins/dsh-invoice-downloader/src/activate.ts、plugins/dsh-invoice-downloader/src/rpc-handler.ts、plugins/dsh-invoice-downloader/src/invoice-scanner.ts、plugins/dsh-invoice-downloader/engine-adapter/dsh_scan.py、plugins/dsh-invoice-downloader/engine-adapter/engine-src/recognition_chain.py、plugins/dsh-invoice-downloader/engine-adapter/engine-src/deepseek_extractor.py、plugins/dsh-invoice-downloader/src/file-security.ts 及固定范围 inventory；组件：plugins/dsh-invoice-downloader。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 plugins/dsh-invoice-downloader/package.json、plugins/dsh-invoice-downloader/src/activate.ts、plugins/dsh-invoice-downloader/src/rpc-handler.ts、plugins/dsh-invoice-downloader/src/invoice-scanner.ts、plugins/dsh-invoice-downloader/engine-adapter/dsh_scan.py、plugins/dsh-invoice-downloader/engine-adapter/engine-src/recognition_chain.py、plugins/dsh-invoice-downloader/engine-adapter/engine-src/deepseek_extractor.py、plugins/dsh-invoice-downloader/src/file-security.ts、plugins/dsh-invoice-downloader/runtime/install.py 及固定范围 inventory；组件：plugins/dsh-invoice-downloader。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：仅DSH子包，读取activate、scanner、RPC、artifact与Python适配/识别验证原件；不把根桌面版所有能力算作插件已验收。
 - 下一步：未安装、运行目标代码或测试，未访问用户邮箱；真实票据识别与报销合格性需人工真值验收。
@@ -681,7 +681,7 @@ export class ArtifactRegistry {
 
 #### 完整回答
 
-启动需DSH对应服务、本地Python引擎及OCR/Chromium依赖、QQ/163 IMAP授权和所选模型；GLM key仅降级时可选。首次引擎安装要联网，持续成本包括模型提取、下载和人工复核，失败成本包括重试、残留文件和重复扫描对账，现金与分钟数未知。已有DSH且重复批次足够者可先用测试邮箱和授权副本试用，验收每张原件、关键字段和Excel行，并比较总人工分钟；任一关键字段静默错误、原件缺失或完成无可用导出时停止扩展，退到原件与人工表格。未验证假设是按确定性字段和人工复核触发模型提取/降级，而非一律扩大视觉调用，可保留质量并减少资源。固定真值批次比较当前链与明确字段门控链，计错字段、漏票、人工修正、重试及模型费用；若门控增加静默错误或总工时不降则推翻。
+当前安装入口只接受 Windows x64 和 macOS Apple Silicon，失败提示要求 Python 3.10+；因此 Linux 宿主不在本版安装入口的支持范围。启动需DSH对应服务、本地Python引擎及OCR/Chromium依赖、QQ/163 IMAP授权和所选模型；GLM key仅降级时可选。首次引擎安装要联网，持续成本包括模型提取、下载和人工复核，失败成本包括重试、残留文件和重复扫描对账，现金与分钟数未知。已有DSH且重复批次足够者可先用测试邮箱和授权副本试用，验收每张原件、关键字段和Excel行，并比较总人工分钟；任一关键字段静默错误、原件缺失或完成无可用导出时停止扩展，退到原件与人工表格。未验证假设是按确定性字段和人工复核触发模型提取/降级，而非一律扩大视觉调用，可保留质量并减少资源。固定真值批次比较当前链与明确字段门控链，计错字段、漏票、人工修正、重试及模型费用；若门控增加静默错误或总工时不降则推翻。
 
 #### 证据与依据
 
@@ -795,6 +795,63 @@ export function apply(context: PluginContext, config: PluginConfig): void {
 ```
 
 </details>
+
+**依据 4 · 源码核查**：[plugins/dsh-invoice-downloader/src/rpc-handler.ts:94-123](https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/src/rpc-handler.ts#L94-L123)
+
+安装准入限定 Windows x64 与 macOS Apple Silicon，并要求可用 Python 3.10+；这是明确平台边界。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+async function installRuntime(context: InvoiceRpcContext, signal: AbortSignal): Promise<RpcResult> {
+  const status = getRuntimeStatus(context.runtime)
+  if (status.platform === 'unsupported') {
+    return badRequest('此版本仅支持 Windows x64 和 macOS Apple Silicon。')
+  }
+  if (!status.enginePresent) {
+    return internal('插件运行时不完整，请重新安装 npm 包。')
+  }
+  const bootstrapArgv = await resolveBootstrapArgv(context, signal)
+  const result = await runCommand(
+    context,
+    [
+      ...bootstrapArgv,
+      context.runtime.installerPath,
+      '--venv',
+      context.runtime.venvRoot,
+      '--requirements',
+      context.runtime.requirementsPath,
+      '--engine-root',
+      context.runtime.engineRoot,
+      '--health-check',
+      context.runtime.healthCheckPath,
+    ],
+    signal,
+  )
+  if (result.exitCode !== 0) {
+    return internal('本地引擎安装失败。请确认 Python 3.10+ 可用后重试。')
+  }
+  return testConnection(context, signal)
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[plugins/dsh-invoice-downloader/runtime/install.py:48-55](https://github.com/EthanYoQ/Invoice-Downloader/blob/8fe3a1147c619268b41f1480e73c4fa38d97db69/plugins/dsh-invoice-downloader/runtime/install.py#L48-L55)
+
+安装器下载 requirements 并安装 Chromium，支持首次联网成本判断。
+
+```text
+    python = venv_executable(venv_dir, 'python')
+    if not pip.is_file():
+        print('Bootstrapping pip in the local Python environment...')
+        run([str(python), '-m', 'ensurepip', '--upgrade'])
+    print('Installing local invoice runtime dependencies, including RapidOCR and bundled PP-OCRv3 models...')
+    run([str(pip), 'install', '--disable-pip-version-check', '-r', str(requirements)])
+    print('Installing Chromium for invoice-link recovery...')
+    run([str(python), '-m', 'playwright', 'install', 'chromium'])
+```
 
 #### 缺口
 

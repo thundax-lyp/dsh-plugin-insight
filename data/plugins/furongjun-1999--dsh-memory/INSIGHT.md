@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[39517d1](https://github.com/FuRongJun-1999/dsh-memory/tree/39517d18deee020a2f36b40172e652a4269e1d75)
+源码版本：[ea92345](https://github.com/FuRongJun-1999/dsh-memory/tree/ea92345a82e6dc3ce0cfe36d050962de16182fbe)
 
 <!-- BEGIN META -->
 [![GitHub ★ 502](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=502&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/FuRongJun-1999/dsh-memory) [![npm 30d 27,192](https://img.shields.io/static/v1?label=npm+30d&message=27%2C192&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@furongjun1999/dsh-memory) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@furongjun1999/dsh-memory)
@@ -60,7 +60,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 |---|---|---|---|
 | Python与可导入md_cg | 必需 | 认知图服务 | 报未就绪/后台重试，先排环境 |
 | 匹配DSH接口与稳定sid | 自动召回必需 | 工具和会话过滤 | 不扩大多会话使用 |
-| 数据根与写入凭据 | 写操作必需 | 保存/权限 | 无授权不写，核实际token |
+| 数据根与写入凭据 | 写操作必需 | 保存/权限 | DSH 可自动签发；核实际角色与权限 |
 | 备份与人工纠错 | 持续采用必需 | 恢复错误记忆 | 先非敏感隔离库 |
 
 #### 启动步骤
@@ -117,7 +117,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 
 提交/召回接线有源码支持；无幻觉、跨会话效果、隔离稳定性与新策略尚未独立验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、md_cg/mcp_server.py、md_cg/mdcg.py、src/hooks.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、md_cg/mcp_server.py、md_cg/mdcg.py、src/hooks.ts、src/lib/token_store.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：重点检查DSH启动/注册、Python写入回执、统一节点写盘和自动召回；未全面审计全部认知工具、密码学、Rust检索或作者基准。
 - 下一步：用同模型和事实集比较人工Markdown、现有自动召回与缺sid暂停方案，注入冲突/断线/sid缺失，测错误注入、错误完成、人工纠错及全部token。
@@ -125,7 +125,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 **分析版本**
 
 - **仓库**：[FuRongJun-1999/dsh-memory](https://github.com/FuRongJun-1999/dsh-memory)
-- **版本号**：0.9.15（[固定提交 39517d1](https://github.com/FuRongJun-1999/dsh-memory/tree/39517d18deee020a2f36b40172e652a4269e1d75)）
+- **版本号**：0.9.15（[固定提交 ea92345](https://github.com/FuRongJun-1999/dsh-memory/tree/ea92345a82e6dc3ce0cfe36d050962de16182fbe)）
 - **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
@@ -147,7 +147,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 1460 | 188445 | — | — | 3522310 |
+| .md | source | 1462 | 188478 | — | — | 3522848 |
 | .mjs | source | 4 | 302 | 270 | 27 | — |
 | .ts | source | 16 | 6799 | 4169 | 2355 | — |
 | .ts | test | 56 | 9202 | 6920 | 1548 | — |
@@ -158,7 +158,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 
 **活跃度**
 
-[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 278](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=278&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 274](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=274&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 278](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=278&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 274](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=274&color=737b86&logo=github)](https://github.com/FuRongJun-1999/dsh-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -184,7 +184,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:19-22](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/README.md#L19-L22)
+**依据 1 · 作者声明**：[README.md:19-22](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/README.md#L19-L22)
 
 作者定位与已知问题入口
 
@@ -195,7 +195,7 @@ AGENTS.md或人工维护Markdown与显式检索；现有工具增加结构化回
 > DSH Desktop 的启动告警、体积与整目录耦合、异步落盘、以及五条「看起来像 bug 其实是契约」的设计取舍都在那里。
 ```
 
-**依据 2 · 作者声明**：[README.md:69-83](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/README.md#L69-L83)
+**依据 2 · 作者声明**：[README.md:69-83](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/README.md#L69-L83)
 
 显式写入和跨会话召回场景
 
@@ -222,7 +222,7 @@ python -m md_cg.mcp_server             # 直连自检：收到 initialize 应答
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:99-105](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/README.md#L99-L105)
+**依据 3 · 作者声明**：[README.md:99-105](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/README.md#L99-L105)
 
 无幻觉及基准为作者主张
 
@@ -250,7 +250,7 @@ apply解析数据根和token，创建共享MdcgClient，bridge就绪后从服务
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:271-305](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/index.ts#L271-L305)
+**依据 1 · 源码核查**：[src/index.ts:271-305](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/index.ts#L271-L305)
 
 数据根、凭据和客户端配置
 
@@ -297,7 +297,7 @@ apply解析数据根和token，创建共享MdcgClient，bridge就绪后从服务
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:434-449](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/index.ts#L434-L449)
+**依据 2 · 源码核查**：[src/index.ts:434-449](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/index.ts#L434-L449)
 
 就绪后动态工具注册
 
@@ -325,7 +325,7 @@ apply解析数据根和token，创建共享MdcgClient，bridge就绪后从服务
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:469-469](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/index.ts#L469-L469)
+**依据 3 · 源码核查**：[src/index.ts:469-469](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/index.ts#L469-L469)
 
 hooks实际安装
 
@@ -333,7 +333,7 @@ hooks实际安装
     disposers.push(installMemoryHooks(ctx, mdcg, config.memory))
 ```
 
-**依据 4 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/md_cg/mcp_server.py#L4240-L4284)
+**依据 4 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/md_cg/mcp_server.py#L4240-L4284)
 
 排队/冲突/实际提交回执
 
@@ -390,7 +390,7 @@ hooks实际安装
 
 </details>
 
-**依据 5 · 源码核查**：[md_cg/mdcg.py:4310-4322](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/md_cg/mdcg.py#L4310-L4322)
+**依据 5 · 源码核查**：[md_cg/mdcg.py:4310-4322](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/md_cg/mdcg.py#L4310-L4322)
 
 统一封装和原子写入
 
@@ -415,7 +415,7 @@ hooks实际安装
 
 </details>
 
-**依据 6 · 源码核查**：[src/hooks.ts:814-834](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/hooks.ts#L814-L834)
+**依据 6 · 源码核查**：[src/hooks.ts:814-834](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/hooks.ts#L814-L834)
 
 timeline与会话参数
 
@@ -448,7 +448,7 @@ timeline与会话参数
 
 </details>
 
-**依据 7 · 源码核查**：[src/hooks.ts:858-864](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/hooks.ts#L858-L864)
+**依据 7 · 源码核查**：[src/hooks.ts:858-864](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/hooks.ts#L858-L864)
 
 脱敏、不可信边界和实际注入
 
@@ -472,11 +472,11 @@ timeline与会话参数
 
 #### 完整回答
 
-committed只说明该分支完成写入，不能证明内容是真事实、未来检索命中或回答无幻觉。排队与冲突有不同去向，调用方若只看ok就会把未提交当完成。更直接的隔离边界是自动召回：有sid时传session过滤，无sid时传空对象，注释明确退回无过滤行为。多会话场景必须确认sid稳定，不能由“支持多智能体”直接推导每次注入都隔离。默认无token为只读guest，但插件会解析/可能自动签发凭据，直接MCP默认权限与DSH启动后的实际权限也不能混同。
+committed只说明该分支完成写入，不能证明内容是真事实、未来检索命中或回答无幻觉。排队与冲突有不同去向，调用方若只看ok就会把未提交当完成。更直接的隔离边界是自动召回：有sid时传session过滤，无sid时传空对象，注释明确退回无过滤行为。多会话场景必须确认sid稳定，不能由“支持多智能体”直接推导每次注入都隔离。默认无token为只读guest，但插件会解析/可能自动签发凭据，直接MCP默认权限与DSH启动后的实际权限也不能混同。 resolveToken 的具体实现默认 role 为 designer，没有配置或密钥环令牌且未关闭自动签发时会 issueToken 并保存密钥环；因此“我没有手填令牌”也不能作为本次 DSH 接入只读的判据。试用前应核对解析出的 source/role 和实际写入权限，必要时显式关闭自动签发。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/md_cg/mcp_server.py#L4240-L4284)
+**依据 1 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/md_cg/mcp_server.py#L4240-L4284)
 
 ok与committed、去向明确区分
 
@@ -533,7 +533,7 @@ ok与committed、去向明确区分
 
 </details>
 
-**依据 2 · 源码核查**：[src/hooks.ts:814-833](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/hooks.ts#L814-L833)
+**依据 2 · 源码核查**：[src/hooks.ts:814-833](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/hooks.ts#L814-L833)
 
 无sid时未传session过滤
 
@@ -565,7 +565,7 @@ ok与committed、去向明确区分
 
 </details>
 
-**依据 3 · 源码核查**：[md_cg/mcp_server.py:4952-4958](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/md_cg/mcp_server.py#L4952-L4958)
+**依据 3 · 源码核查**：[md_cg/mcp_server.py:4952-4958](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/md_cg/mcp_server.py#L4952-L4958)
 
 直接MCP匿名guest只读
 
@@ -579,7 +579,7 @@ ok与committed、去向明确区分
         auth_mode="anonymous")
 ```
 
-**依据 4 · 源码核查**：[src/index.ts:274-294](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/index.ts#L274-L294)
+**依据 4 · 源码核查**：[src/index.ts:274-294](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/index.ts#L274-L294)
 
 DSH启动解析及自动签发路径
 
@@ -612,6 +612,72 @@ DSH启动解析及自动签发路径
 
 </details>
 
+**依据 5 · 源码核查**：[src/lib/token_store.ts:336-355](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/lib/token_store.ts#L336-L355)
+
+令牌解析优先显式配置和环境；缺省角色是designer。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+export function resolveToken(opts: ResolveTokenOptions): TokenResolution {
+  const extraEnv = { ...(opts.env ?? {}) }
+  const tenant = effectiveTenant(opts.tenant, extraEnv)
+  const keyringPath = opts.keyringPath ?? defaultKeyringPath(extraEnv)
+
+  const configured = (opts.configured ?? '').trim()
+  if (configured) return { token: configured, source: 'config', keyringPath }
+
+  const fromEnv = (process.env.MDCG_TOKEN ?? '').trim()
+  if (fromEnv) return { token: fromEnv, source: 'process-env', keyringPath }
+
+  const autoOff = opts.autoIssue === false
+    ? '本场景未启用自动签发（autoIssue=false）'
+    : autoIssueDisabledByEnv(extraEnv) ? 'MDCG_AUTO_ISSUE 已关闭自动签发' : ''
+
+  const role = opts.role ?? 'designer'
+  const actor = opts.actor ?? 'dsh-memory'
+  const clearance = opts.clearance ?? 'internal'
+
+  const fromRing = readKeyring(keyringPath)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/lib/token_store.ts:402-423](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/lib/token_store.ts#L402-L423)
+
+未关闭自动签发时调用issueToken并落密钥环，不能将未手填token等同只读。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  if (opts.autoIssue === false) {
+    return { source: 'disabled', keyringPath, note: '本场景未启用自动签发（autoIssue=false）' }
+  }
+  if (autoIssueDisabledByEnv(extraEnv)) {
+    return { source: 'disabled', keyringPath, note: 'MDCG_AUTO_ISSUE 已关闭自动签发' }
+  }
+
+  const r = issueToken(opts.python, role, actor, clearance, tenant, extraEnv)
+  if (!r.token) {
+    return { source: 'none', keyringPath, note: r.error }
+  }
+  writeKeyring(keyringPath, r.token)
+  return {
+    token: r.token,
+    source: 'issued',
+    keyringPath,
+    note: `已自动签发认知图写入凭据（role=${role}, actor=${actor}, `
+      + `clearance=${clearance}, tenant=${tenant}, token_id=${r.tokenId}），`
+      + `明文存于 ${keyringPath}。`
+      + '关闭自动签发：设 MDCG_AUTO_ISSUE=0；'
+      + `吊销：python -m md_cg.tokens revoke --token-id ${r.tokenId}。`,
+  }
+```
+
+</details>
+
 #### 缺口
 
 - 多会话sid稳定性、跨进程可见性及语义召回质量缺少同任务验收
@@ -632,7 +698,7 @@ DSH启动解析及自动签发路径
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:390-400](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/index.ts#L390-L400)
+**依据 1 · 源码核查**：[src/index.ts:390-400](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/index.ts#L390-L400)
 
 Python/启动失败处理
 
@@ -655,7 +721,7 @@ Python/启动失败处理
 
 </details>
 
-**依据 2 · 源码核查**：[src/hooks.ts:814-833](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/src/hooks.ts#L814-L833)
+**依据 2 · 源码核查**：[src/hooks.ts:814-833](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/src/hooks.ts#L814-L833)
 
 会话过滤为假设依据
 
@@ -687,7 +753,7 @@ Python/启动失败处理
 
 </details>
 
-**依据 3 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/39517d18deee020a2f36b40172e652a4269e1d75/md_cg/mcp_server.py#L4240-L4284)
+**依据 3 · 源码核查**：[md_cg/mcp_server.py:4240-4284](https://github.com/FuRongJun-1999/dsh-memory/blob/ea92345a82e6dc3ce0cfe36d050962de16182fbe/md_cg/mcp_server.py#L4240-L4284)
 
 多种回执状态为假设依据
 

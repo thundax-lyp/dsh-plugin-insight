@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[1cf6506](https://github.com/263311487-ux/dsh-verify/tree/1cf6506c41fd729e76949b6452b4ce868701edd1)
+源码版本：[e7ce637](https://github.com/263311487-ux/dsh-verify/tree/e7ce6376fec8cf94f41ce46264baeb348911693b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/263311487-ux/dsh-verify) [![npm 30d 2,530](https://img.shields.io/static/v1?label=npm+30d&message=2%2C530&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify)
@@ -123,14 +123,14 @@
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、dsh/plugin.mjs、mcp/server.mjs、bin/verify.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根组件45个tracked文件统计；重点DSH/MCP注册、runOne浏览器/基线/退出路径、README/package。未执行目标/浏览器，未把作者示例和CI当独立验证；未审全部gen/arena算法。
+- 边界：根组件45个tracked文件统计；重点DSH/MCP注册、runOne浏览器/基线/退出路径、README/package。未执行目标/浏览器，未把作者示例和CI当独立验证；未审全部gen/arena算法。 本轮重新核对固定源码的注册、核心执行、失败边界和归属，不将作者测试作本轮运行证据。
 - 下一步：同页面故障集比较JSON与手写Playwright，独立审spec，固定构建与批准基线，记录实际URL、漏检、误放行、总尝试和人工分钟；DSH另测注册/超时与Host响应。
 
 **分析版本**
 
 - **仓库**：[263311487-ux/dsh-verify](https://github.com/263311487-ux/dsh-verify)
-- **版本号**：0.9.6（[固定提交 1cf6506](https://github.com/263311487-ux/dsh-verify/tree/1cf6506c41fd729e76949b6452b4ce868701edd1)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.6（[固定提交 e7ce637](https://github.com/263311487-ux/dsh-verify/tree/e7ce6376fec8cf94f41ce46264baeb348911693b)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -160,7 +160,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -186,7 +186,7 @@
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:22-42](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/README.md#L22-L42)
+**依据 1 · 源码核查**：[README.md:22-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L22-L42)
 
 作者给无key路径并明确PASS和独立性边界。
 
@@ -219,7 +219,7 @@ To check your own app, edit the JSON steps; keep `serve` for static files or use
 
 </details>
 
-**依据 2 · 源码核查**：[README.md:75-100](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/README.md#L75-L100)
+**依据 2 · 源码核查**：[README.md:75-100](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L75-L100)
 
 与Playwright/agent browser/视觉工具的参照。
 
@@ -257,7 +257,7 @@ Tools exposed: `verify_spec` (run a spec JSON), `verify_url` (inline checks, no 
 
 </details>
 
-**依据 3 · 源码核查**：[dsh/plugin.mjs:7-21](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/dsh/plugin.mjs#L7-L21)
+**依据 3 · 源码核查**：[dsh/plugin.mjs:7-21](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L7-L21)
 
 真实DSH工具注册。
 
@@ -284,7 +284,7 @@ export function apply(ctx) {
 
 </details>
 
-**依据 4 · 源码核查**：[mcp/server.mjs:27-91](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/mcp/server.mjs#L27-L91)
+**依据 4 · 源码核查**：[mcp/server.mjs:27-91](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/mcp/server.mjs#L27-L91)
 
 四个MCP工具和可选LLM生成。
 
@@ -375,7 +375,7 @@ runOne读取spec，选择Chromium/Firefox/WebKit，静态serve起127.0.0.1随机
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L81-L98)
+**依据 1 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L81-L98)
 
 仅localhost静态server。
 
@@ -405,7 +405,7 @@ async function serveDir(dir) {
 
 </details>
 
-**依据 2 · 源码核查**：[bin/verify.mjs:131-141](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L131-L141)
+**依据 2 · 源码核查**：[bin/verify.mjs:131-141](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L131-L141)
 
 spec/engine/base的实际初始化。
 
@@ -428,7 +428,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
 </details>
 
-**依据 3 · 源码核查**：[bin/verify.mjs:250-262](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L250-L262)
+**依据 3 · 源码核查**：[bin/verify.mjs:250-262](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L250-L262)
 
 未知action失败、异常收集、cleanup和非空通过。
 
@@ -453,7 +453,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
 </details>
 
-**依据 4 · 源码核查**：[bin/verify.mjs:323-358](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L323-L358)
+**依据 4 · 源码核查**：[bin/verify.mjs:323-358](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L323-L358)
 
 多spec verdict及明确退出。
 
@@ -515,7 +515,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L225-L245)
+**依据 1 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L225-L245)
 
 首次/更新基线直接pass与后续像素阈值比较。
 
@@ -548,7 +548,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
 </details>
 
-**依据 2 · 源码核查**：[bin/verify.mjs:131-136](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L131-L136)
+**依据 2 · 源码核查**：[bin/verify.mjs:131-136](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L131-L136)
 
 serve优先，URL只在无serve时生效。
 
@@ -561,7 +561,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
   const base = served ? served.url : (url || spec.base || 'http://localhost');
 ```
 
-**依据 3 · 源码核查**：[dsh/plugin.mjs:42-61](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/dsh/plugin.mjs#L42-L61)
+**依据 3 · 源码核查**：[dsh/plugin.mjs:42-61](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L42-L61)
 
 同步子进程、超时和静默注册失败。
 
@@ -613,7 +613,7 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:24-42](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/README.md#L24-L42)
+**依据 1 · 源码核查**：[README.md:24-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L24-L42)
 
 Node、浏览器、init和serve cwd/报告边界。
 
@@ -644,7 +644,7 @@ To check your own app, edit the JSON steps; keep `serve` for static files or use
 
 </details>
 
-**依据 2 · 源码核查**：[mcp/server.mjs:70-85](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/mcp/server.mjs#L70-L85)
+**依据 2 · 源码核查**：[mcp/server.mjs:70-85](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/mcp/server.mjs#L70-L85)
 
 可选生成的key/模型条件。
 
@@ -672,7 +672,7 @@ To check your own app, edit the JSON steps; keep `serve` for static files or use
 
 </details>
 
-**依据 3 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L81-L98)
+**依据 3 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L81-L98)
 
 静态读取真实文件并监听localhost。
 
@@ -722,7 +722,7 @@ async function serveDir(dir) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:38-42](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/README.md#L38-L42)
+**依据 1 · 源码核查**：[README.md:38-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L38-L42)
 
 检查报告/截图与PASS范围的作者边界。
 
@@ -734,7 +734,7 @@ Open either HTML report with its adjacent PNG file. The failing spec deliberatel
 To check your own app, edit the JSON steps; keep `serve` for static files or use `base` for an existing URL. `serve` paths resolve from the command's current directory, not the spec file. A PASS applies only to the supplied checks in that run; it does not establish complete coverage, security, accessibility, or independent authorship. The app and spec may come from the same agent; review the spec separately when independence matters. Reports retain assertion details and explicitly requested screenshots, not a complete audit trail.
 ```
 
-**依据 2 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/bin/verify.mjs#L225-L245)
+**依据 2 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L225-L245)
 
 当前首次基线pass是新状态分类的依据。
 
@@ -767,7 +767,7 @@ To check your own app, edit the JSON steps; keep `serve` for static files or use
 
 </details>
 
-**依据 3 · 源码核查**：[dsh/plugin.mjs:48-56](https://github.com/263311487-ux/dsh-verify/blob/1cf6506c41fd729e76949b6452b4ce868701edd1/dsh/plugin.mjs#L48-L56)
+**依据 3 · 源码核查**：[dsh/plugin.mjs:48-56](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L48-L56)
 
 状态null/文本裁剪为runner错误辨识的依据。
 

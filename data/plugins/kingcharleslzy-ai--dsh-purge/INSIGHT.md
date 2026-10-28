@@ -124,7 +124,7 @@
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、lib/index.js、lib/core.js、lib/hooks-deny.js、lib/refusal-retry.js、lib/community.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根337个tracked文件统计；深审main/defaults/apply/revert、core applyPatches、hooks-deny与拒绝stream，未审全80补丁/全部redteam/ASAR/更新链。未运行目标、安装、修改Host或发模型请求。
+- 边界：根337个tracked文件统计；深审main/defaults/apply/revert、core applyPatches、hooks-deny与拒绝stream，未审全80补丁/全部redteam/ASAR/更新链。未运行目标、安装、修改Host或发模型请求。 本轮重新读取固定入口、旁路配置、重试、逐patch部分写入和维护锁，不执行补丁。
 - 下一步：仅在授权隔离官方Host副本注入快照失败、单文件只读、锚点漂移和回滚失败；核状态解释与字节恢复，再对同授权任务与原生策略比较正确、误执行和全成本。
 
 **分析版本**
@@ -162,7 +162,11 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/kingcharleslzy-ai/dsh-purge/issues) 查看。
+[![Issue 未关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 48](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=48&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 30](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=30&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
@@ -605,6 +609,31 @@ audit含failed与snapshot，report返回。
         const shimRevert = await core.revertAllShims();
         lines.push(`shim_dirs=${Object.keys(shimRevert).length}`);
         return { text: `回滚完成 / ${lines.join(", ")}. 重启 dsh 恢复.` };
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/community.js:295-307](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/community.js#L295-L307)
+
+维护路径单独持有并检查锁，不能把此路径保证套用逐文件patch。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+  async locked(fn) {
+    fs.mkdirSync(this.base, { recursive: true, mode: 0o700 });
+    fs.chmodSync(this.base, 0o700);
+    const guard = acquireMaintenanceLock(this.base);
+    this.beat = guard.check;
+    try {
+      const result = await fn();
+      guard.check();
+      return result;
+    } finally {
+      this.beat = null;
+      guard.release();
+    }
 ```
 
 </details>

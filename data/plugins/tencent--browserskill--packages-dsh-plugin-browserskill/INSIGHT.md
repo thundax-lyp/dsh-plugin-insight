@@ -2,7 +2,7 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[6469c47](https://github.com/Tencent/BrowserSkill/tree/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill)
+源码版本：[70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill)
 
 <!-- BEGIN META -->
 [![GitHub ★ 9,680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 32,486](https://img.shields.io/static/v1?label=npm+30d&message=32%2C486&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
@@ -128,8 +128,8 @@ FIFO即使取消仍等待前驱、先拥有资源再注册、将结构化输出�
 **分析版本**
 
 - **仓库**：[Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill)
-- **版本号**：0.3.3（[固定提交 6469c47](https://github.com/Tencent/BrowserSkill/tree/6469c474423abbac1b6f70a5e2af6daaf9b1e0af)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.3（[固定提交 70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -161,7 +161,11 @@ FIFO即使取消仍等待前驱、先拥有资源再注册、将结构化输出�
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Tencent/BrowserSkill/issues) 查看。
+[![Issue 未关闭 48](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=48&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+暂未获取：近30天关闭。
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
@@ -183,7 +187,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:1-4](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/package.json#L1-L4)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:1-4](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/package.json#L1-L4)
 
 作者定位原生模型工具插件。
 
@@ -194,7 +198,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
   "version": "0.3.3",
 ```
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:88-110](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/index.ts#L88-L110)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:88-110](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L88-L110)
 
 创建runner、会话注册、队列、观察与启动日志。
 
@@ -229,7 +233,7 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [Gi
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-153](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/index.ts#L131-L153)
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-153](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L131-L153)
 
 按需技能、工具与Web观察挂载。
 
@@ -284,7 +288,7 @@ apply 创建 bsk runner、SessionRegistry、KeyedExecutor、ObservationService �
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:103-148](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/index.ts#L103-L148)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:103-148](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L103-L148)
 
 启动日志与先清理后注册顺序。
 
@@ -342,7 +346,7 @@ apply 创建 bsk runner、SessionRegistry、KeyedExecutor、ObservationService �
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:59-102](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/browser-tools.ts#L59-L102)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:59-102](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L59-L102)
 
 action解析、contextId和依赖区域。
 
@@ -398,7 +402,7 @@ function defineBrowserTool(
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:450-496](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/browser-tools.ts#L450-L496)
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:450-496](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L450-L496)
 
 操作闭包检查及注册回滚。
 
@@ -457,7 +461,7 @@ export function registerBrowserTools(deps: ToolDeps): () => void {
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:143-155](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/runner.ts#L143-L155)
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:143-155](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/runner.ts#L143-L155)
 
 参数数组spawn。
 
@@ -482,7 +486,7 @@ export function registerBrowserTools(deps: ToolDeps): () => void {
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:8-22](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/observation-http.ts#L8-L22)
+**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:8-22](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/observation-http.ts#L8-L22)
 
 SSE快照同步及headless边界。
 
@@ -509,7 +513,7 @@ SSE快照同步及headless边界。
 
 </details>
 
-**依据 6 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
+**依据 6 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
 
 默认延迟注册与进程生命周期显露。
 
@@ -544,6 +548,70 @@ SSE快照同步及headless边界。
 
 </details>
 
+**依据 7 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:103-122](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L103-L122)
+
+域工具 execute 实际解析 action 再调用私有定义 execute，确认不是只有 schema。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+    },
+    output: {
+      schema: DOMAIN_RESULT,
+      render(args, value) {
+        const definition = definitionFor(definitions, spec.actions, args.action);
+        return definition.output.render(operationArgs(args), value);
+      },
+    },
+    isConcurrencySafe(args) {
+      const definition = definitionFor(definitions, spec.actions, args.action);
+      return definition.isConcurrencySafe?.(operationArgs(args)) === true;
+    },
+    async execute(args, exec) {
+      const definition = definitionFor(definitions, spec.actions, args.action);
+      return (await definition.execute(operationArgs(args), {
+        ...exec,
+        observationContext: args.contextId,
+        observationDependencies: args.dependsOn,
+      } as typeof exec)) as never;
+    },
+```
+
+</details>
+
+**依据 8 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:98-117](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L98-L117)
+
+历史折叠匹配 callId 的成功 tool result，未将发起调用本身当加载成功。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  consume(event: SessionEventLike): void {
+    if (this.successful) return;
+    if (event.type === "user/message" && isSkillInvocationMessage(event.data)) {
+      this.successful = true;
+    } else if (event.type === "tool/call") {
+      const data = record(event.data);
+      if (
+        data?.name === "skill" &&
+        skillNameOf(data.arguments) === BSK_SKILL_NAME &&
+        isCallId(data.callId)
+      ) {
+        this.pending.add(data.callId);
+      }
+    } else if (event.type === "tool/result") {
+      const result = toolResultOf(event.data);
+      if (result !== undefined && this.pending.delete(result.callId)) {
+        this.successful = !result.isError;
+      }
+    }
+    if (this.successful) this.pending.clear();
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -558,7 +626,7 @@ SSE快照同步及headless边界。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/queue.ts:14-54](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/queue.ts#L14-L54)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/queue.ts:14-54](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/queue.ts#L14-L54)
 
 FIFO尾链兼顾前驱与取消任务。
 
@@ -611,7 +679,7 @@ FIFO尾链兼顾前驱与取消任务。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:119-129](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/runner.ts#L119-L129)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:119-129](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/runner.ts#L119-L129)
 
 分平台取消与强杀。
 
@@ -634,7 +702,7 @@ FIFO尾链兼顾前驱与取消任务。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-143](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/index.ts#L131-L143)
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-143](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L131-L143)
 
 技能服务缺席时无操作与延迟工具配置。
 
@@ -659,7 +727,7 @@ FIFO尾链兼顾前驱与取消任务。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:92-102](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/browser-tools.ts#L92-L102)
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:92-102](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L92-L102)
 
 上下文和依赖区域约束。
 
@@ -682,7 +750,7 @@ FIFO尾链兼顾前驱与取消任务。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:47-83](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/observation-http.ts#L47-L83)
+**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:47-83](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/observation-http.ts#L47-L83)
 
 观察通道的浏览器信任检查。
 
@@ -751,7 +819,7 @@ function fenceViolation(req: IncomingMessage): string | undefined {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:68-75](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/package.json#L68-L75)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:68-75](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/package.json#L68-L75)
 
 宿主peer约束。
 
@@ -766,7 +834,7 @@ function fenceViolation(req: IncomingMessage): string | undefined {
     "@deepseek-ai/schemastery": "^3.18.2",
 ```
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:155-165](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/index.ts#L155-L165)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:155-165](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L155-L165)
 
 CLI探针只警告，不证明浏览器已连接。
 
@@ -789,7 +857,7 @@ CLI探针只警告，不证明浏览器已连接。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
 
 按需显露为接口实验基础。
 
@@ -824,7 +892,7 @@ CLI探针只警告，不证明浏览器已连接。
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:64-89](https://github.com/Tencent/BrowserSkill/blob/6469c474423abbac1b6f70a5e2af6daaf9b1e0af/packages/dsh-plugin-browserskill/src/browser-tools.ts#L64-L89)
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:64-89](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L64-L89)
 
 域工具action对模型提出额外选择。
 

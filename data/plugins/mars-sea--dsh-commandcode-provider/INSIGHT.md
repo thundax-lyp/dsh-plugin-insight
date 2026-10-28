@@ -159,9 +159,9 @@ Command Code官方客户端或手工供应商适配；模型质量与套餐能�
 
 **活跃度**
 
-[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 24](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=24&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 25](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=25&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aopen)
 
-
+暂未获取：近30天新建、近30天关闭。
 
 统计日期：2026-10-28。
 
@@ -406,7 +406,7 @@ index构造adapter时提供resolveApiKey和rotateApiKey，再注册为commandcod
 
 #### 完整回答
 
-TRANSPORT失败计数按逻辑请求限制，取消先于预算处理，耗尽抛出诊断；服务明确要求重试的窗口与普通传输错误采用不同规则。这能限制特定连接失败长时间挂住，但不能保证供应商成功，也不能将流前换账号扩展为流中无缝恢复。adapter说明协议来自逆向核对，外部通道变化会带来持续适配负担。ZDR是可选路由请求，README声明默认关闭；本轮不能验证服务端留存行为或真实账单。
+TRANSPORT失败计数按逻辑请求限制，取消先于预算处理，耗尽抛出诊断；服务明确要求重试的窗口与普通传输错误采用不同规则。这能限制特定连接失败长时间挂住，但不能保证供应商成功，也不能将流前换账号扩展为流中无缝恢复。adapter说明协议来自逆向核对，外部通道变化会带来持续适配负担。ZDR是可选路由请求，README声明默认关闭；本轮不能验证服务端留存行为或真实账单。 预算并非仅由弱映射天然按请求隔离：index监听session/event，transportResetAction把step/start映射为reset后清计数；idle亦清理。该接线是“每逻辑请求预算”的源码依据，真实宿主是否按此时序发事件仍未执行验证。
 
 #### 证据与依据
 
@@ -528,6 +528,84 @@ export function absorbTransportFailure(
 - **Zero data retention** — optional ZDR routing (`x-cmd-zdr: 1`), off by default.
 - **Context & output limits** — override the metered context window globally or per model, and cap or omit the per-turn `max_tokens`.
 ```
+
+**依据 5 · 源码核查**：[src/index.ts:699-728](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L699-L728)
+
+真实session/event监听按reset动作清除当前agent预算，idle另清理。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  // Reset the budget at each new STEP — one step is exactly one model request
+  // (`step/start` is appended immediately before the call), so this is what
+  // makes the cap "per logical request" and gives the next step of the same
+  // turn its own grace. `agent/status` → `idle` is deliberately NOT the reset
+  // signal: `setPhase` emits it only on a status CHANGE, and a turn's steps run
+  // inside one `running` phase, so it never fires between them — a budget reset
+  // only there would be per-turn, and a network outage would fail every later
+  // step of that turn instantly instead of retrying each. `assistant/attempt`
+  // is wrong for the opposite reason: the loop appends it for the FAILED
+  // attempt before dispatching `agent/request-error`, so resetting on it would
+  // clear the budget on every failure. `idle` still clears the agent's count,
+  // and the WeakMap drops a finished session on its own.
+  ctx.on('session/event', (session, event) => {
+    const action = transportResetAction(event.type)
+    if (action === 'forget') {
+      sessionAgents.delete(session)
+      return
+    }
+    if (action !== 'reset') return
+    const agent = sessionAgents.get(session)
+    if (agent !== undefined) {
+      resetTransportFailures(agent)
+      resetTransientFailures(agent)
+    }
+  })
+  ctx.on('agent/status', ({ agent, status }) => {
+    if (status === 'idle') {
+      resetTransportFailures(agent)
+      resetTransientFailures(agent)
+    }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/transport-retry.ts:59-82](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/transport-retry.ts#L59-L82)
+
+重置映射明确step/start清计数；只看WeakMap计数函数不足以推出按请求重置。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+export function resetTransportFailures(agent: object): void {
+  counts.delete(agent)
+}
+
+/**
+ * What one session event means for the transport budget.
+ *
+ * Pure and exported on purpose: the choice of event is the part of this design
+ * that is easy to get plausibly wrong (see the module comment), so it is stated
+ * once, where a test can pin it.
+ *
+ * @param type - the appended session event's type.
+ * @returns `'reset'` for a new step, `'forget'` when the turn ended (the
+ *   session → agent mapping is no longer needed), otherwise `'none'`.
+ */
+export function transportResetAction(type: string): 'reset' | 'forget' | 'none' {
+  if (type === 'step/start') return 'reset'
+  if (type === 'turn/end') return 'forget'
+  return 'none'
+}
+
+/**
+ * The diagnosis a capped turn ends with. Bilingual, because the harness renders
+ * a failed turn's message verbatim and this plugin's other user-facing failures
+```
+
+</details>
 
 #### 缺口
 

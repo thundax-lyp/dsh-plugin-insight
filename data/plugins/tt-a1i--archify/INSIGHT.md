@@ -99,7 +99,7 @@
 
 > **亮点**：将结构化创作、交互 HTML 和绑定实际字节的阶段验收串联，使“文件曾通过”和“当前文件被检验”有可检查区别；图形语义仍需人工。[Q01](#research-q01) [Q02](#research-q02)
 
-真实 CLI 动态 import finalize 后传入 input、output、quality、repoRoot、候选 SHA 和 provenance 检查器；browser-check 调用明确 capture=false、requireProvenance=true。阶段不是一个 ok 布尔值：deliver 要规格/产物身份、receiptId 和 validation，check 要当前 provenance、同一 delivery receipt 及 composition，browser 要当前产物、来源和视口检查。收据写入先独占临时文件，绑定 inode、SHA、字节数，再提交，清理警告也不冒充干净完成。stage 非 pass 时记录诊断并 break，避免后续阶段被当已运行。可借鉴的是实际字节身份与阶段证据绑定，而非把某次成功状态永久贴到文件路径上。此范围支持机制判断，不等于本轮证明所有竞态或渲染器可靠。
+阶段收据的可借鉴部分是将验证绑定到当前字节、来源与同一交付身份，且失败不继续冒充后续阶段已执行。其局限是结构身份不能证明每条关系真实，人工仍须核查实际调用和状态所有权。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
@@ -164,7 +164,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 132](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=132&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 152](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=152&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 127](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 132](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=132&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 152](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=152&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 127](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 

@@ -162,11 +162,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
-
-
-
-统计日期：2026-10-28。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/text2future/flowix/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -249,7 +245,7 @@ Flowix根组件是本地笔记客户端，而非单个记忆插件。README针�
 
 #### 完整回答
 
-前端notes.writeDocument通过Tauri文档变更入口发送路径、正文及expectedContent；桌面端要求绝对路径且属于注册笔记本，并检查预期内容。CLI路径解析支持notebook::relative和已注册本下的绝对路径，拒绝空段/点段。CLI write读当前正文并调用NoteService.save；service把写文件结果映射为Saved或Conflict，再构造用户可见文档。贡献是把桌面与CLI围绕共享笔记模型组织，而非让每个Agent维护独立记忆库。
+前端notes.writeDocument通过Tauri文档变更入口发送路径、正文及expectedContent；桌面端要求绝对路径且属于注册笔记本，并检查预期内容。CLI路径解析支持notebook::relative和已注册本下的绝对路径，拒绝空段/点段。CLI write读当前正文并调用NoteService.save；service把写文件结果映射为Saved或Conflict，再构造用户可见文档。贡献是把桌面与CLI围绕共享笔记模型组织，而非让每个Agent维护独立记忆库。 桌面后续同样调用 NoteService.save，并把当次正文作为预期值；仅在 Saved 时发 path-note-changed 事件并返回保存后的正文，冲突返回 None。这使前端完成状态确实来自共享服务结果，不能仅以IPC调用已发送算成功。
 
 #### 证据与依据
 
@@ -464,6 +460,50 @@ pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
                     notebook,
                     path,
                     body: content,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[app/flowix-desktop/src/commands/memo/reads.rs:335-366](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-desktop/src/commands/memo/reads.rs#L335-L366)
+
+桌面入口真实调用共享save，冲突返回None，成功后发事件与返回正文。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+    let (saved_path, saved_content, entry) = {
+        let memo_file = read_lock(&state.memo_file, "memo_file");
+        let mut service = NoteService::new(&memo_file);
+        mark_self_write_for(app, requested_path);
+        match service.save(
+            &notebook_id,
+            &relative_path,
+            content,
+            Some(&current_content),
+        ) {
+            Ok(NoteSaveOutcome::Saved(document)) => {
+                (document.path, document.body, document.entry)
+            }
+            Ok(NoteSaveOutcome::Conflict { .. }) => return Ok(None),
+            Err(error) => return Err(error.to_string()),
+        }
+    };
+
+    mark_self_write_for(app, &saved_path);
+    let _ = app.emit("flowix:path-note-changed", serde_json::json!({
+        "changeId": uuid::Uuid::new_v4().to_string(),
+        "notebookId": notebook_id,
+        "relativePath": relative_path,
+        "entry": entry,
+        "originWindowLabel": origin_window_label,
+    }));
+
+    Ok(Some(WriteDocumentResult {
+        path: saved_path.display().to_string(),
+        content: saved_content,
+        commit: None,
+    }))
 ```
 
 </details>

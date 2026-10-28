@@ -153,9 +153,9 @@
 
 **活跃度**
 
-[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
-
+暂未获取：Issue 未关闭。
 
 统计日期：2026-10-28。
 
@@ -381,7 +381,7 @@ function getFirstArticleLink(dirPath: string, urlBasePath: string): string | nul
 
 #### 完整回答
 
-不能。配置ignoreDeadLinks=true，构建不会把失效链接作为同等强制门禁；部分材料还被明确排除以避开解析失败。抽样文章对social-auto-upload注明功能覆盖不一和重构状态，也列出了上游仓库，这有助于识别条件，但文章内Star和维护状态属于本资源记录时的二手说明，不是本轮对上游的独立核查。适用性取决于读者回查上游版本。
+不能。配置ignoreDeadLinks=true，构建不会把失效链接作为同等强制门禁；部分材料还被明确排除以避开解析失败。抽样文章对social-auto-upload注明功能覆盖不一和重构状态，也列出了上游仓库，这有助于识别条件，但文章内Star和维护状态属于本资源记录时的二手说明，不是本轮对上游的独立核查。适用性取决于读者回查上游版本。 ignoreDeadLinks 只是构建配置，不意味着所有链接已经坏掉；它说明本次不能用构建状态替代逐链接和逐版本核实。
 
 #### 证据与依据
 

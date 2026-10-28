@@ -1,46 +1,25 @@
 {
     "repository": "bruc3van/awesome-dsh-plugin",
     "repository_id": 1333144072,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 472,
     "pushed_at": "2026-10-28T01:49:55Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 1,
+        "closed": 18,
+        "created_30d": 8,
+        "closed_30d": 7,
+        "updated_30d": 8
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Abruc3van%2Fawesome-dsh-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7F6:34E396:6F3780:7774E4:6AE15647 and timestamp 2026-10-28 01:56:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Abruc3van%2Fawesome-dsh-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A806:34FA39:6E27B8:76657B:6AE15647 and timestamp 2026-10-28 01:56:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Abruc3van%2Fawesome-dsh-plugin%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A80C:1E460D:6D601D:759D34:6AE15648 and timestamp 2026-10-28 01:56:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Abruc3van%2Fawesome-dsh-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A81C:1EB5C1:6FAE3D:77EF7F:6AE15649 and timestamp 2026-10-28 01:56:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Abruc3van%2Fawesome-dsh-plugin%20is%3Aissue%20updated%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A824:342204:75F0A8:7E2DDA:6AE1564A and timestamp 2026-10-28 01:56:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
         "captured_at": "2026-10-28T00:45:33.613Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null

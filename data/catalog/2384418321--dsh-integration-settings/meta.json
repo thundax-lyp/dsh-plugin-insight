@@ -1,10 +1,10 @@
 {
     "repository": "2384418321/dsh-integration-settings",
     "repository_id": 1429103083,
-    "captured_at": "2026-10-26T03:22:47.788Z",
-    "window_start": "2026-09-26T03:22:47.788Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 0,
-    "pushed_at": "2026-10-25T10:01:29Z",
+    "pushed_at": null,
     "issues": {
         "open": null,
         "closed": null,
@@ -14,48 +14,32 @@
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A2384418321%2Fdsh-integration-settings%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AFEE:37C437:1533085:1765AEE:6ADECA17 and timestamp 2026-10-26 03:33:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A2384418321%2Fdsh-integration-settings%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B022:36C46F:1499B89:16CCC21:6ADECA17 and timestamp 2026-10-26 03:33:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2384418321%2Fdsh-integration-settings%20is%3Aissue%20created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B05C:38201D:14D0291:1701F8E:6ADECA18 and timestamp 2026-10-26 03:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2384418321%2Fdsh-integration-settings%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB68:2A29EB:15181C3:174A7E1:6ADECA19 and timestamp 2026-10-26 03:33:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2384418321%2Fdsh-integration-settings%20is%3Aissue%20updated%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB9C:37C31F:156FC01:17A3027:6ADECA19 and timestamp 2026-10-26 03:33:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "2384418321/dsh-integration-settings",
+            "message": "GitHub request failed for repositories/1429103083: gh: Not Found (HTTP 404)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-25T23:34:33.511Z",
+        "captured_at": "2026-10-27T09:21:47.136Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
-        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-integration-settings",
-        "captured_at": "2026-10-26T03:22:47.788Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-integration-settings",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-integration-settings",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-26T03:22:47.788Z",
+            "captured_at": "2026-10-28T03:54:21.981Z",
             "source_url": "https://registry.npmjs.org/dsh-integration-settings",
             "error": "HTTP 404",
             "latest_version": null,

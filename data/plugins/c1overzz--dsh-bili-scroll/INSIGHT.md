@@ -124,7 +124,7 @@ profile/工具约束与进程/MCP接线为源码支持；非原子锁和失败fa
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、index.js、lib/state.mjs、lib/mcp.mjs、profile-template/bili-duty/cordis.patch.yml、prompts/duty.md、vendor/bilibili-mcp/mcp_server.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根27个tracked源码统计；另外实读vendored Python工具注册/评论入口、专用profile和duty章程关键段。不执行下载/扫码/模型/平台互动，不声称全Python API或所有私信链已核。
+- 边界：根27个tracked源码统计；另外实读vendored Python工具注册/评论入口、专用profile和duty章程关键段。不执行下载/扫码/模型/平台互动，不声称全Python API或所有私信链已核。 本轮重新沿固定提交检查调度、实际工具约束、跨进程状态、外部发送和恢复边界；未调用B站服务或目标代码。
 - 下一步：相同关键词时间窗与人工收藏比较有效率/遗漏/所有费用和人工分钟；隔离双Host barrier、崩溃、回执丢失、TTL与profile缺失矩阵核权限、防重和恢复。
 
 **分析版本**
@@ -161,7 +161,11 @@ profile/工具约束与进程/MCP接线为源码支持；非原子锁和失败fa
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/c1overzz/dsh-bili-scroll/issues) 查看。
+[![Issue 未关闭 71](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=71&color=737b86&logo=github)](https://github.com/c1overzz/dsh-bili-scroll/issues?q=is%3Aissue+is%3Aopen)
+
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 

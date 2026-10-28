@@ -158,7 +158,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Unclecheng-li/DeepSec/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -463,7 +463,7 @@ async def audit_with_llm(text: str, target: str, review: Callable[[str, str], Aw
 
 #### 完整回答
 
-scan_path先取得候选files，再读取；OSError直接continue，但files_scanned最终仍取len(files)。因此该数量是候选文件数，不能据它证明每个文件都成功分析，零发现尤其不能作为安全放行。默认排除测试、示例、vendor和生成物，是降噪取舍但会收窄覆盖。ScanOptions本体默认l3/remote_l3关闭；CLI会重建选项，明确L3且配置provider时可能开启远端，因此不能只看结构默认就判断实际数据外发。Spear auto在该headless函数明确降为full，也不能把auto名称当差异范围已生效。
+scan_path先取得候选files，再读取；OSError直接continue，但files_scanned最终仍取len(files)。因此该数量是候选文件数，不能据它证明每个文件都成功分析，零发现尤其不能作为安全放行。默认排除测试、示例、vendor和生成物，是降噪取舍但会收窄覆盖。ScanOptions本体默认l3/remote_l3关闭；CLI会重建选项，明确选择L3并具备provider配置时可能开启LLM路径，是否离机取决于本地或外部provider，因此不能只看结构默认就判断实际数据外发。Spear auto在该headless函数明确降为full，也不能把auto名称当差异范围已生效。
 
 #### 证据与依据
 
@@ -611,6 +611,31 @@ def effective_scope_mode(scope_mode: str) -> str:
     """
     return "full" if scope_mode == "auto" else scope_mode
 ```
+
+**依据 6 · 源码核查**：[deepsec/cli/app.py:416-428](https://github.com/Unclecheng-li/DeepSec/blob/fff031fc01fb36b95348214c8ee359f6ede8aa8b/deepsec/cli/app.py#L416-L428)
+
+all不隐式启用LLM；明确L3且local provider或凭据存在会进入该路径，remote_l3变量本身不等于离机。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+def _explicit_l3_with_configured_provider(layer: str, selected: set[str], config: object) -> bool:
+    """`--layer l3` is an explicit opt-in; `all` keeps source local by default."""
+    if layer.strip().lower() == "all" or "L3" not in selected:
+        return False
+    llm = config.llm
+    if llm.provider.lower() == "local":
+        return True
+    if llm.api_key or os.environ.get("DEEPSEC_LLM_API_KEY"):
+        return True
+    return any(
+        provider.api_key or os.environ.get(f"DEEPSEC_{name.upper()}_API_KEY")
+        for name, provider in llm.providers.items()
+    )
+```
+
+</details>
 
 #### 缺口
 

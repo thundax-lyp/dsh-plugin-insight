@@ -1,8 +1,8 @@
 {
     "repository": "12we21/cute-fat-fish-pet",
     "repository_id": 1409724830,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 22,
     "pushed_at": "2026-10-27T15:15:35Z",
     "issues": {
@@ -15,23 +15,23 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2FC:1E1E94:6CBB90:74F631:6AE155CB and timestamp 2026-10-28 01:54:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3092:106BAC:82CC53:8C9BB9:6AE17221 and timestamp 2026-10-28 03:55:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5CC:110F0C:6EF5AC:772DC2:6AE155CC and timestamp 2026-10-28 01:54:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3150:10B2D1:7D87E2:874DCE:6AE17222 and timestamp 2026-10-28 03:55:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5D2:343D03:738DCD:7BC561:6AE155CD and timestamp 2026-10-28 01:54:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3214:11208B:815F65:8B32D9:6AE17223 and timestamp 2026-10-28 03:55:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5DA:34EF71:73E4C5:7C1B40:6AE155CE and timestamp 2026-10-28 01:54:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3328:1E7683:7DA66D:876A8F:6AE17224 and timestamp 2026-10-28 03:55:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20updated%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5DC:129847:6B285A:735ED3:6AE155CF and timestamp 2026-10-28 01:54:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A12we21%2Fcute-fat-fish-pet%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3402:343D03:85FAE0:8FCDC8:6AE17225 and timestamp 2026-10-28 03:55:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
@@ -40,14 +40,14 @@
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "cute-fat-fish-pet",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": null,
@@ -55,7 +55,7 @@
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-28T01:52:52.223Z",
+            "captured_at": "2026-10-28T03:54:21.981Z",
             "source_url": "https://registry.npmjs.org/cute-fat-fish-pet",
             "error": "HTTP 404",
             "latest_version": null,

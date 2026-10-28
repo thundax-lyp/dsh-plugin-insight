@@ -1,10 +1,10 @@
 {
     "repository": "263311487-ux/dsh-verify",
     "repository_id": 1335843750,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 2,
-    "pushed_at": "2026-10-27T15:39:47Z",
+    "pushed_at": "2026-10-28T02:46:19Z",
     "issues": {
         "open": 0,
         "closed": 1,
@@ -19,14 +19,14 @@
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-verify",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": 2530,

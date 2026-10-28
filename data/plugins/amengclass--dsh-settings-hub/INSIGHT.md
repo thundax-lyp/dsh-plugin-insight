@@ -123,7 +123,7 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 
 - 已检查：作者 README、包清单、源码路径 package.json、README.md、index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根组件6个tracked文件统计；读完整Host入口、client归属、renderer、动态重扫、存储与shadow，package/README。未运行GUI，不据截图/宽声明称双端兼容。
+- 边界：根组件6个tracked文件统计；读完整Host入口、client归属、renderer、动态重扫、存储与shadow，package/README。未运行GUI，不据截图/宽声明称双端兼容。 本轮重新读取相同固定提交的关键入口、状态与失败分支，采用判断由这些材料复核。
 - 下一步：固定host/profile，以store/locale/children页、慢deps、同ID换归属、共享依赖、link路径与存储满矩阵，核可达/保存/正确分组和总排查分钟。
 
 **分析版本**
@@ -159,7 +159,7 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 

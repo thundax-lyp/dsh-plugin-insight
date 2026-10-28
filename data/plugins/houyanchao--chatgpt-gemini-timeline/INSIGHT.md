@@ -124,7 +124,7 @@
 **分析版本**
 
 - **仓库**：[houyanchao/chatgpt-gemini-timeline](https://github.com/houyanchao/chatgpt-gemini-timeline)
-- **版本号**：未声明（[固定提交 cfaa5c6](https://github.com/houyanchao/chatgpt-gemini-timeline/tree/cfaa5c6eb1849cb85778fc98df3ce9690cda80e6)）
+- **版本号**：4.7.7（[固定提交 cfaa5c6](https://github.com/houyanchao/chatgpt-gemini-timeline/tree/cfaa5c6eb1849cb85778fc98df3ce9690cda80e6)）
 - **版本日期**：2026-09-17（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
@@ -153,7 +153,11 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/houyanchao/chatgpt-gemini-timeline/issues) 查看。
+[![Issue 未关闭 104](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=104&color=737b86&logo=github)](https://github.com/houyanchao/chatgpt-gemini-timeline/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=15&color=737b86&logo=github)](https://github.com/houyanchao/chatgpt-gemini-timeline/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/houyanchao/chatgpt-gemini-timeline/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
@@ -466,7 +470,7 @@ async function initWithRetry(version, delays, retryIndex = 0) {
 
 #### 完整回答
 
-adapter说明接口未捕获时回退渲染期缓存和占位符；从未渲染轮次在DOM中没有文本，缓存补全不是无条件保证。捕获只识别特定/backend-api/conversation GET格式，异常静默，不会由一次节点出现证明全会话覆盖。点击还依赖marker仍有目标元素；文案完整和几何跳转正确需分别验收。manifest广泛匹配all_urls并有storage/unlimitedStorage/identity权限，实际站点检测收窄功能并不取消权限范围，用户需结合信任与资料敏感性选择。此范围未全面审计云备份、导出或代码运行功能。
+adapter说明接口未捕获时回退渲染期缓存和占位符；从未渲染轮次在DOM中没有文本，缓存补全不是无条件保证。捕获只识别特定/backend-api/conversation GET格式，异常静默，不会由一次节点出现证明全会话覆盖。点击还依赖marker仍有目标元素；文案完整和几何跳转正确需分别验收。manifest广泛匹配all_urls并有storage/unlimitedStorage/identity权限，实际站点检测收窄功能并不取消权限范围，用户需结合信任与资料敏感性选择。此范围未全面审计云备份、导出或代码运行功能。 manifest 为 ChatGPT 捕获脚本单列 MAIN world/document_start，而另一个内容脚本匹配 all_urls；这两类接入范围需分开读，不把捕获脚本误写成监听所有网站的相同接口。
 
 #### 证据与依据
 

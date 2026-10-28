@@ -137,7 +137,7 @@
 
 <a id="innovation"></a>
 
-未验证假设是把刷新阈值与“改变任务结论的重要性”结合：一般新增仍按现有比例延迟，涉及关键事实反转的文档在读摘要时触发原文回退。当前策略使用子摘要变化事件和数量比例，不能直接识别语义重要性；新增机制必须可解释并避免每次读取都调用模型。最小验证比较比例刷新、全部立即刷新和重要性门控三组，固定变更序列与任务，记录错误路由、最终合格率、摘要生成资源和端到端耗时。若门控漏掉关键反转或资源不低于全部刷新，则推翻优势。此方向不是现有 freshness 函数已经实现的能力，也不从目录结构推断真实需求。 [Q05](#research-q05)
+未验证假设是在已有数量比例刷新上增加任务重要性门控，使关键事实反转触发原文回退，一般变更仍允许延迟。以相同变更序列比较比例刷新、全部立即刷新和重要性门控，记录错误路由、合格率、摘要资源与耗时；漏掉关键反转或资源不少于全部刷新时否定增量。[Q05](#research-q05)
 
 未执行安装、目标代码或测试；不继承其他版本的作者基准，模型质量、权限全链和恢复均需当前版本实证。
 
@@ -169,9 +169,9 @@
 
 **活跃度**
 
-[![Issue 未关闭 398](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=398&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 350](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=350&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 165](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=165&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 399](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=399&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aopen)
 
-
+暂未获取：近30天新建、近30天关闭。
 
 统计日期：2026-10-28。
 

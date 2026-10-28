@@ -158,7 +158,7 @@ AGENTS.md与手工项目日志；动态确认与上下文接线是增量，不�
 
 **活跃度**
 
-[![Issue 未关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=14&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=14&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/csyangwen/dsh-memory-evolve/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -524,7 +524,7 @@ export function approveSuggestions(store, todoStore, queue, indices, agent, edit
 
 #### 完整回答
 
-不能把“你确认后才生效”扩大到全部轨道：key add走确认，其它target在该实现直接store.add，日志可自动写；用户必须知道各轨写入权限。分支过滤只有gitBranch成功解析时运行，无法解析或不在Git时所有项目key都注入，是优先不隐藏记忆的取舍，不能视为严格分支隔离。存储锁和rename支持局部并发与文件完整性，但审批队列到记忆文件不是本轮已验证的跨文件事务；进程中断后的重复/遗漏及同步远端仍需独立核查。
+不能把“你确认后才生效”扩大到全部轨道：key add走确认，其它target在该实现直接store.add，日志可自动写；用户必须知道各轨写入权限。分支过滤只有gitBranch成功解析时运行，无法解析或不在Git时所有项目key都注入，是优先不隐藏记忆的取舍，不能视为严格分支隔离。存储锁和rename支持局部并发与文件完整性，但审批队列到记忆文件不是本轮已验证的跨文件事务；进程中断后的重复/遗漏及同步远端仍需独立核查。 批准流程对已存在内容先识别duplicate，确实有防重放帮助；但这只能支持具体去重分支，不能扩成所有中断后都恰好一次生效。
 
 #### 证据与依据
 

@@ -1,8 +1,8 @@
 {
     "repository": "Alterssss/dsh-bili-whale",
     "repository_id": 1423566397,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 616,
     "pushed_at": "2026-10-25T10:17:11Z",
     "issues": {
@@ -15,23 +15,23 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED9A:3556F6:6C629B:7499DB:6AE155FB and timestamp 2026-10-28 01:55:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C162:1F3C3D:235E21E:322CB73:6AE1724F and timestamp 2026-10-28 03:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDB6:34E396:6F013A:773A92:6AE155FB and timestamp 2026-10-28 01:55:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C26C:1BC6A2:22F749B:31C82D5:6AE17250 and timestamp 2026-10-28 03:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDC8:1E10CC:6CB072:74DC5C:6AE155FC and timestamp 2026-10-28 01:55:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C35C:1408BB:2276043:30F88B3:6AE17252 and timestamp 2026-10-28 03:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BF6A:3580EC:713617:796E7A:6AE155FD and timestamp 2026-10-28 01:55:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C452:357B63:230C01C:31CFA6F:6AE17253 and timestamp 2026-10-28 03:56:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20updated%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BF90:34C98E:72DFB5:7B18B0:6AE155FE and timestamp 2026-10-28 01:55:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlterssss%2Fdsh-bili-whale%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C530:148C51:22FAA4D:31CEF1B:6AE17254 and timestamp 2026-10-28 03:56:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
@@ -40,14 +40,14 @@
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
         "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
         "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-bili-whale",
-        "captured_at": "2026-10-28T01:52:52.223Z",
+        "captured_at": "2026-10-28T03:54:21.981Z",
         "window_start": "2026-09-28",
         "window_end": "2026-10-27",
         "downloads_30d": null,
@@ -55,7 +55,7 @@
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-28T01:52:52.223Z",
+            "captured_at": "2026-10-28T03:54:21.981Z",
             "source_url": "https://registry.npmjs.org/dsh-bili-whale",
             "error": "HTTP 404",
             "latest_version": null,

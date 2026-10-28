@@ -115,9 +115,9 @@
 
 本地注册、代理及错误回退有源码支持；数据恢复和就绪提示收益尚未验证。
 
-- 已检查：作者 README、包清单、源码路径 dsh-flowix-memory/README.md、dsh-flowix-memory/cordis.patch.yml、dsh-flowix-memory/launcher.mjs、app/flowix-cli/src/mcp.rs、app/flowix-cli/src/operation.rs 及固定范围 inventory；组件：dsh-flowix-memory。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 dsh-flowix-memory/README.md、dsh-flowix-memory/cordis.patch.yml、dsh-flowix-memory/launcher.mjs、app/flowix-cli/src/mcp.rs、app/flowix-cli/src/operation.rs、app/flowix-cli/src/path_store.rs、app/flowix-core/src/service.rs、app/flowix-core/src/memo_file/note_index.rs 及固定范围 inventory；组件：dsh-flowix-memory。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查目标bundle和launcher，定向读同仓CLI MCP/operation作为必要共享依赖；未全面审计桌面端和store持久化。
+- 边界：检查目标bundle和launcher，定向读同仓CLI MCP/operation作为必要共享依赖；未全面审计桌面端和store持久化。 本项为桥接包，另定向核查共享CLI path_store、NoteService和文件保存/索引刷新边界，未把整个桌面端规模算入子包。
 - 下一步：在独立备份数据根对缺CLI、错误路径和正常状态对照就绪提示，记录无效调用、恢复时间与误写；不改善即停止扩展。
 
 **分析版本**
@@ -152,7 +152,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/text2future/flowix/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -274,7 +274,7 @@ function findCli() {
 
 #### 完整回答
 
-launcher启动本地CLI mcp并转发stdio，memo服务核验tool名称与参数，structured action通过operation::execute进入typed store，write/delete分别转到path_store。这说明业务能力属于Flowix CLI，上层bundle的实际增量是profile内发现CLI、转接标准MCP和缺依赖时给出可操作错误。相较人工CLI或手写MCP配置，减少接线步骤；不是新检索算法。删除是有副作用的非幂等操作，MCP注解已明确标识。
+launcher启动本地CLI mcp并转发stdio，memo服务核验tool名称与参数，structured action通过operation::execute进入typed store，write/delete分别转到path_store。这说明业务能力属于Flowix CLI，上层bundle的实际增量是profile内发现CLI、转接标准MCP和缺依赖时给出可操作错误。相较人工CLI或手写MCP配置，减少接线步骤；不是新检索算法。删除是有副作用的非幂等操作，MCP注解已明确标识。 进一步追到 path_store：write 读取当前正文后调用 NoteService.save；shared service 将 expected_content 传到文件写入层，区分 Saved 与 Conflict。文件保存后路径索引刷新失败会记 pending 并仍返回 Saved，因此写入回执与即时检索可见性是不同状态。
 
 #### 证据与依据
 
@@ -393,6 +393,139 @@ fn call_tool(params: &Value) -> Result<Value, CliError> {
         }
 ```
 
+**依据 5 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-159](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L134-L159)
+
+实际write/delete调用NoteService并区分冲突，不只停在operation分派。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
+    if content.trim().is_empty() {
+        return Err(CliError::Usage("write: content is empty".into()));
+    }
+    let (mf, notebook, relative) = address(raw)?;
+    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
+    let saved =
+        NoteService::new(&mf).save(&notebook.id, &relative, content, Some(&current.body))?;
+    match saved {
+        flowix_core::service::NoteSaveOutcome::Saved(document) => {
+            Ok(json!({"ok": true, "action": "written", "note": document_json(&document)}))
+        }
+        flowix_core::service::NoteSaveOutcome::Conflict { .. } => Err(CliError::Conflict(
+            "note changed on disk; write was not applied".into(),
+        )),
+    }
+}
+
+pub(crate) fn delete(raw: &str) -> Result<Value, CliError> {
+    let (mf, notebook, relative) = address(raw)?;
+    let document = NoteService::new(&mf).get(&notebook.id, &relative)?;
+    let removed = NoteService::new(&mf).delete_checked(&notebook.id, &relative, &document.body)?;
+    Ok(
+        json!({"ok": removed, "action": "deleted", "notebookId": notebook.id,
+        "relativePath": relative, "address": locator(&notebook.id, &relative), "path": document.path}),
+    )
+```
+
+</details>
+
+**依据 6 · 源码核查**：[app/flowix-core/src/service.rs:375-400](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-core/src/service.rs#L375-L400)
+
+共享服务将期望正文传入写入层，并保留冲突结果。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+    pub(crate) fn save_note_by_path(
+        &mut self,
+        notebook_key: &str,
+        relative_path: &str,
+        content: &str,
+        expected_content: Option<&str>,
+    ) -> Result<NoteSaveOutcome, FlowixError> {
+        let notebook = self.resolve_notebook(notebook_key)?;
+        match self.memo_file.write_note_by_path_with_result(
+            &notebook.id,
+            relative_path,
+            content,
+            expected_content,
+        )? {
+            NoteWriteResult::Conflict { disk_content } => {
+                Ok(NoteSaveOutcome::Conflict { disk_content })
+            }
+            NoteWriteResult::Saved {
+                content,
+                index_entry,
+            } => {
+                let entry = match index_entry {
+                    Some(entry) => entry,
+                    None => self
+                        .memo_file
+                        .derive_note_entry_from_disk(&notebook.id, relative_path)?,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:351-395](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-core/src/memo_file/note_index.rs#L351-L395)
+
+保存与索引刷新分离；索引失败记pending仍返回Saved。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+    pub(crate) fn write_note_by_path_with_result(
+        &self,
+        notebook_id: &str,
+        relative_path: &str,
+        content: &str,
+        expected_content: Option<&str>,
+    ) -> io::Result<NoteWriteResult> {
+        let root = self.notebook_root_for_note(notebook_id)?;
+        let path = self.validate_note_path(&root, relative_path, true)?;
+        super::frontmatter::extract_document_metadata_tolerant(content)
+            .map_err(|error| io::Error::new(io::ErrorKind::InvalidData, error.to_string()))?;
+        match self.write_file_if_matches_for_notebook(
+            notebook_id,
+            &path,
+            content,
+            expected_content,
+        )? {
+            super::FileWriteOutcome::Conflict { disk_content } => {
+                Ok(NoteWriteResult::Conflict { disk_content })
+            }
+            super::FileWriteOutcome::Saved => {
+                let index_entry = match self.refresh_note_path_with_content(
+                    notebook_id,
+                    relative_path,
+                    content,
+                ) {
+                    Ok(()) => self
+                        .read_indexed_note_entry_by_path(notebook_id, relative_path)
+                        .ok()
+                        .flatten(),
+                    Err(error) => {
+                        mark_note_index_refresh_pending_logged(&root, notebook_id, relative_path);
+                        tracing::warn!(
+                            notebook_id,
+                            relative_path,
+                            "note saved but path index refresh failed: {error}"
+                        );
+                        None
+                    }
+                };
+                Ok(NoteWriteResult::Saved {
+                    content: content.to_string(),
+                    index_entry,
+                })
+            }
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -403,7 +536,7 @@ fn call_tool(params: &Value) -> Result<Value, CliError> {
 
 #### 完整回答
 
-CLI缺失时回退服务仍响应initialize、tools/list，并暴露memo schema；tools/call才返回isError及安装指引。因此工具注册成功不可作为能力就绪判据。显式配置指向不可执行文件会直接返回不可用，不继续PATH回退；已启动子进程异步error仅记stderr和退出码，不能据此承诺自动切换或重连。README所称环境变量剥离由宿主桥负责，launcher本身传process.env，本轮不替宿主实现背书。
+CLI缺失时回退服务仍响应initialize、tools/list，并暴露memo schema；tools/call才返回isError及安装指引。因此工具注册成功不可作为能力就绪判据。显式配置指向不可执行文件会直接返回不可用，不继续PATH回退；已启动子进程异步error仅记stderr和退出码，不能据此承诺自动切换或重连。README所称环境变量剥离由宿主桥负责，launcher本身传process.env，本轮不替宿主实现背书。 此外 write 的 expected_content 在本次调用内现读，不是 Agent 早先读取版本的令牌；若生成的整篇替换内容已经过时，该校验不能独立阻止覆盖早于调用发生的修改。试写应回读对比原文，局部修改可优先使用恰好匹配一次的 edit。
 
 #### 证据与依据
 
@@ -500,6 +633,59 @@ function proxyToCli(command) {
         id: message.id,
         result: { isError: true, content: [{ type: 'text', text }] },
       })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[app/flowix-cli/src/path_store.rs:108-148](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L108-L148)
+
+edit要求旧片段唯一匹配；write内部现读正文，并未接收调用方读时版本。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+    let (mf, notebook, relative) = address(raw)?;
+    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
+    let matches = current.body.match_indices(old).count();
+    if matches != 1 {
+        return Err(CliError::Usage(format!(
+            "edit: expected exactly one match, found {matches}"
+        )));
+    }
+    let next = current.body.replacen(old, replacement, 1);
+    if !dry_run {
+        match NoteService::new(&mf).save(&notebook.id, &relative, &next, Some(&current.body))? {
+            flowix_core::service::NoteSaveOutcome::Saved(_) => {}
+            flowix_core::service::NoteSaveOutcome::Conflict { .. } => {
+                return Err(CliError::Conflict(
+                    "note changed on disk; edit was not applied".into(),
+                ))
+            }
+        }
+    }
+    Ok(
+        json!({"ok": true, "action": if dry_run {"edit_preview"} else {"edited"},
+        "notebookId": notebook.id, "relativePath": relative, "address": locator(&notebook.id, &relative),
+        "path": current.path, "oldBytes": old.len(), "newBytes": replacement.len(), "wrote": !dry_run}),
+    )
+}
+
+pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
+    if content.trim().is_empty() {
+        return Err(CliError::Usage("write: content is empty".into()));
+    }
+    let (mf, notebook, relative) = address(raw)?;
+    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
+    let saved =
+        NoteService::new(&mf).save(&notebook.id, &relative, content, Some(&current.body))?;
+    match saved {
+        flowix_core::service::NoteSaveOutcome::Saved(document) => {
+            Ok(json!({"ok": true, "action": "written", "note": document_json(&document)}))
+        }
+        flowix_core::service::NoteSaveOutcome::Conflict { .. } => Err(CliError::Conflict(
+            "note changed on disk; write was not applied".into(),
+        )),
 ```
 
 </details>

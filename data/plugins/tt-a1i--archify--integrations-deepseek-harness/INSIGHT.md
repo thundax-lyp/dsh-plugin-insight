@@ -98,7 +98,7 @@
 
 > **亮点**：本包把固定 Skill 版本、profile bundle 和 npm 移除路径串为分发契约；实际入口是 patch 的 filesystem provider。默认根共存验收检查正文与路径，超过仅发现名称的检查，但不证明图本身正确。[Q01](#research-q01) [Q03](#research-q03)
 
-pack 先 stageAdapter，再按 releaseSnapshot 调用 canonical clean-Skill stager，npm pack 使用 --ignore-scripts，最后检查 Skill 入口与 patch 等必须文件。它刻意把适配器提交与内嵌 Skill 提交分开，避免误把仓库 HEAD 当内嵌版本。验收脚本不只数 discovery 名称，还对每个默认根 fixture 检查唯一命中、实际正文 SHA、路径身份，并在 base filesystem provider 禁用时重复，以复现独占 provider 的故障前提。probe 有 90 秒等待和终止逻辑，失败明确终止；因此可借鉴的是“默认根共存＋正文和路径”契约，而非单独一个布尔值。脚本包含安装后 doctor/demo、升级及卸载检查；本轮只检查这些调用存在，不声明已运行通过。
+可借鉴的设计是将适配器、内嵌 Skill 与宿主版本分开固定，并在默认 provider 停用时核对每个默认根的正文摘要与真实路径。仅名称发现通过不能证明正确版本的 Skill 已加载。[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
@@ -137,7 +137,7 @@ pack 先 stageAdapter，再按 releaseSnapshot 调用 canonical clean-Skill stag
 
 <a id="innovation"></a>
 
-当前建议观察修复发布与原生 Desktop 验收，而非把当前源码修复当作可直接安装的稳定功能。已经在受支持 CLI 使用发布 1.0.0、且能确认默认 Skill 共存的人，可以继续在隔离 profile 核查；这不构成本轮安装推荐。新用户若只需一张图，手工安装原生 Skill 或简单图通常更直接。由双版本身份和默认根故障推导出的未验证假设是：把适配器、内嵌 Skill、host、所有默认根正文身份一起写入发布收据，能比只查 Skill 名称更早发现分发回归。最小验证以同一包在 base provider 开启/关闭、干净安装/同 profile 升级四格对照，注入错根或旧正文；若收据不能区分错误、或维护成本大于手工清单，就否定自动收据方案。这个假设属于发布质量机制，不是已验证市场需求。 [Q05](#research-q05)
+未验证假设是将适配器、内嵌 Skill、宿主与默认根正文身份组成发布收据，比仅检查名称更早发现分发回归。用默认 provider 开启／关闭、干净安装／同 profile 升级四格对照注入错根和旧正文，记录检出率、误报及排查分钟；不能提前发现问题或维护成本超过手工清单时停止扩展。[Q05](#research-q05)
 
 在授权隔离环境分别校验公开包和候选包的摘要、默认根正文及路径；原生 Desktop 与 npm CLI 分开验收，比较相同图任务的总人工投入。
 
@@ -159,7 +159,7 @@ pack 先 stageAdapter，再按 releaseSnapshot 调用 canonical clean-Skill stag
 
 **活跃度**
 
-[![Issue 未关闭 132](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=132&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 152](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=152&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 127](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 132](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=132&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 152](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=152&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 127](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=127&color=737b86&logo=github)](https://github.com/tt-a1i/archify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 

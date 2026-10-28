@@ -119,7 +119,7 @@
 
 原生接线与写回边界有源码支持；实际记忆收益和宿主组合未验证，确认游标是研究假设。
 
-- 已检查：作者 README、包清单、源码路径 hindsight-integrations/coding-agents/package.json、hindsight-integrations/coding-agents/src/dsh.ts、hindsight-integrations/coding-agents/src/core/runtime.ts 及固定范围 inventory；组件：hindsight-integrations/coding-agents。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 hindsight-integrations/coding-agents/package.json、hindsight-integrations/coding-agents/src/dsh.ts、hindsight-integrations/coding-agents/src/core/runtime.ts、hindsight-integrations/coding-agents/cordis.patch.yml 及固定范围 inventory；组件：hindsight-integrations/coding-agents。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：仅coding-agents组件，聚焦DSH入口、共享runtime、package导出和关键失败分支；未审计整个Hindsight服务。
 - 下一步：当前证据支持机制和条件，原任务收益、写回缺失率和扩展组合需同版本验收。未执行目标代码、安装或测试。
@@ -136,7 +136,7 @@
 
 <a id="innovation"></a>
 
-未验证假设：以服务确认而不是已尝试长度来推进持久写回水位，并将待确认与失败状态暴露给用户，可能减少静态会话尾部漏写。这个改进需设计幂等文档身份、重试和本地敏感数据留存，不能只添加无限重试。最小验证对照当前游标与确认游标，在断网、超时后重启及fork场景记录漏写、重复提炼、恢复时长和磁盘残留。若确认水位的重复与存储负担抵消漏写改善，或现有服务幂等语义不支持，则否定方案。它是由现有异步写回链推导的设计，不能计为已交付功能。 [Q05](#research-q05)
+未验证假设是以服务确认推进写回水位，并将待确认和失败状态暴露给用户，以减少静态会话尾部漏写。先核实文档幂等契约，再对照当前游标与确认游标，注入断网、超时后重启和 fork；记录漏写、重复提炼、恢复时长和敏感数据残留。重复与存储负担抵消漏写改善时否定方案。[Q05](#research-q05)
 
 当前证据支持机制和条件，原任务收益、写回缺失率和扩展组合需同版本验收。未执行目标代码、安装或测试。
 
@@ -159,7 +159,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 164](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=164&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 512](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=512&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z) [![近30天关闭 442](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=442&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z)
+[![Issue 未关闭 164](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=164&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 512](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=512&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 442](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=442&color=737b86&logo=github)](https://github.com/vectorize-io/hindsight/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
@@ -279,6 +279,16 @@ function workspaceFor(root: string): Workspace | undefined {
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[hindsight-integrations/coding-agents/cordis.patch.yml:16-18](https://github.com/vectorize-io/hindsight/blob/1e3a4841a7eed5d76e796d2f31e5f0a13e78e5cf/hindsight-integrations/coding-agents/cordis.patch.yml#L16-L18)
+
+实际 profile bundle 明确挂载 /dsh 入口，补齐 package 声明到宿主激活的接线。
+
+```text
+- insert:
+    - id: hindsight
+      name: "@vectorize-io/hindsight-coding-agents/dsh"
+```
 
 #### 缺口
 
