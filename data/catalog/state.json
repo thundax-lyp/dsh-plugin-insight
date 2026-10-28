@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "ee7408be31aa25389be0563656d3c9ca0bca656861b1cef59be92bf958eb215d",
-    "index_sha256": "01402663f3bda7f53a350f041974cc9ea0b005301c952affdf24a0b11c635133",
+    "snapshot_digest": "613886329d330d9e4f225a07d0f64f256a4c76364f6d19ffb85a435cad1fd2f3",
+    "index_sha256": "11d758c7bf6b9b469bf0d7468542436fd58c6ca4ae9073e3de23b53e64454605",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-10-27T08:28:34Z",
+        "checked_at": "2026-10-28T01:46:14Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 40，完成 40，受阻 0；已知同版本受阻跳过 6；频繁更新窗口内跳过 80；当前发布 646",
+            "scope": "本轮所选 18，完成 18，受阻 0；已知同版本受阻跳过 5；频繁更新窗口内跳过 110；当前发布 647",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,14 +20,14 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-10-27T08:28:34Z"
+            "checked_at": "2026-10-28T01:46:14Z"
         },
         "registry": {},
         "discovery": {
             "sources": [
                 {
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "02fbf478334167ceb72ae5b93b25ae9d1a8e2865",
+                    "revision": "0b3d3606b217699e7097a3c4d531bb90c6c3887c",
                     "complete": false
                 },
                 {
@@ -52,8 +52,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-10-27-03",
-            "work_digest": "423612ec8cad801821890c3c17b07af25b3c4da25e216be5c1ff730e2120b353"
+            "id": "2026-10-28-01",
+            "work_digest": "bd79626d655807e899f555d505bdd1f018452aeb3cf5f9852b0859d8c29c2b01"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -849,6 +849,7 @@
             "github:1421306160:root",
             "github:1421741516:root",
             "github:1421755278:root",
+            "github:1421822085:root",
             "github:1421963463:root",
             "github:1422091204:root",
             "github:1422121370:root",
@@ -1566,7 +1567,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "publication.metadata": [
             "github:1335557891:root",
@@ -2214,7 +2216,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "publication.summaries": [
             "github:1335557891:root",
@@ -2862,7 +2865,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "publication.capabilities": [
             "github:1335557891:root",
@@ -3510,7 +3514,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "publication.advice": [
             "github:1335557891:root",
@@ -4158,7 +4163,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "registry": [
             "github:1170373459:dsh-invoice-downloader",
@@ -4807,7 +4813,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "reports": [
             "github:1335557891:root",
@@ -5455,7 +5462,8 @@
             "github:1333142935:root",
             "github:1200521020:root",
             "github:1339737707:root",
-            "github:1333171737:root"
+            "github:1333171737:root",
+            "github:1421822085:root"
         ],
         "retained_documents": [
             "github:1170373459:dsh-invoice-downloader"
@@ -6107,7 +6115,8 @@
         "github:1333142935:root",
         "github:1200521020:root",
         "github:1339737707:root",
-        "github:1333171737:root"
+        "github:1333171737:root",
+        "github:1421822085:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-21-04/snapshots/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-java/REVIEWED-SOURCE.json",
@@ -6228,7 +6237,6 @@
         "data/runs/2026-10-22-02/snapshots/amekrance--anan-thermal-monitor/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-db/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-db/OFFICIAL-SQL-SEMANTICS.json",
-        "data/runs/2026-10-22-02/snapshots/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-service/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-eventlog/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/a42null--dsh-opencode-zen-plugin/REVIEWED-SOURCE.json",
@@ -6322,7 +6330,6 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-net/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-open/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/1na-ko--dsh-hdc-bridge/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/263311487-ux--dsh-verify/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/2768651338--dsh-plugin-manager/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/3274375092--dsh-voice/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/3289192-bot--dsh-cache-bricks/REVIEWED-SOURCE.json",
@@ -6398,7 +6405,6 @@
         "data/runs/2026-10-22-02/snapshots/988hj7tczd-oss--dsh-computer-use/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-expose/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-shot/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/amengclass--dsh-settings-hub/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/adonissheldon--dsh-openai-oauth/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/863683348--dsh-memory-setup/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-01/snapshots/131cda1--dsh-scrape-webpage/REVIEWED-SOURCE.json",
@@ -6469,8 +6475,6 @@
         "data/runs/2026-10-23-01/snapshots/aicivilization--dsh-audiobook/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-01/snapshots/aicivilization--dsh-tingdong/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-01/snapshots/aik358--dsh-ark9canvas/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-23-01/snapshots/aisland-sjl--dsh-worktable--01-content/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-23-04/alan2z--dsh-speak/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-04/alannerfranklin--dsh-cutout-pet/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/angeloszou--dsh-pdf-reader/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/angeloszou--dsh-python-env/REVIEWED-SOURCE.json",
@@ -6483,7 +6487,6 @@
         "data/runs/2026-10-23-05/ansonfishing--dsh-ca-ref/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alonefu--dsh-calendar-plugin/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/anglezhang-zhangjiao--dsh-orchestrator2--plugins-dsh-orchestrator2/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-23-05/anonyjcy--dsh-j-space/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/alycestocking--dsh-harness-switch/REVIEWED-SOURCE.json",
         "data/runs/2026-10-23-05/anacondakc--dsh-douyin/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-02/arlenman--dsh-backup-sync/REVIEWED-SOURCE.json",
@@ -6519,17 +6522,6 @@
         "data/runs/2026-10-24-02/aprilcrystal--dsh-remote/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-02/asher-2000--dsh-memory-connect/REVIEWED-SOURCE.json",
         "data/runs/2026-10-24-03/assidefok--dsh-opencodego-status/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-03/asktheway--dsh-jev-interceptor/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tt-a1i--archify/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/vectorize-io--hindsight--hindsight-integrations-coding-agents/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/volcengine--openviking/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tencent--weknora/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-24-04/tencent--browserskill/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-01/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-01/314857493--dsh-vision--packages-vision-tool/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-01/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
@@ -6764,6 +6756,24 @@
         "data/runs/2026-10-27-03/whitelonng--dshcode/REVIEWED-SOURCE.json",
         "data/runs/2026-10-27-03/yejiming--museai/REVIEWED-SOURCE.json",
         "data/runs/2026-10-27-03/zenstory-ai--oh-story-dsh/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-27-03/zhiyuan-fan--awesome-deepseek-harness-plugins/REVIEWED-SOURCE.json"
+        "data/runs/2026-10-27-03/zhiyuan-fan--awesome-deepseek-harness-plugins/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tt-a1i--archify/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tencent--weknora--packages-dsh-weknora/revision-v2/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/vectorize-io--hindsight--hindsight-integrations-coding-agents/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/aisland-sjl--dsh-worktable--01-content/revision-v2/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/volcengine--openviking/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/12we21--cute-fat-fish-pet--src/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/alan2z--dsh-speak/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/anonyjcy--dsh-j-space/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tencent--browserskill/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/tencent--weknora/revision-v2/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/263311487-ux--dsh-verify/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/amengclass--dsh-settings-hub/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/asktheway--dsh-jev-interceptor/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
+        "data/runs/2026-10-28-01/kingcharleslzy-ai--dsh-purge/REVIEWED-SOURCE.json"
     ]
 }

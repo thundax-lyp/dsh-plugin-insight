@@ -8,20 +8,20 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 200 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 202 |
 | [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 24 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 73 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 197 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 71 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 196 |
 | [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 38 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 110 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 112 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（200）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（202）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -39,33 +39,33 @@
 | --- | --- | ---: |
 | [Reactive Resume](../../plugins/reactive-resume--reactive-resume/INSIGHT.md) | 开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。 | [![GitHub Star 44,843](https://img.shields.io/static/v1?label=&message=44%2C843&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume) |
 | [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | [![GitHub Star 24,708](https://img.shields.io/static/v1?label=&message=24%2C708&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase) |
-| [BrowserSkill](../../plugins/tencent--browserskill/INSIGHT.md) | 通过 CLI 和浏览器扩展，让智能体使用现有 Chrome 或 Edge 登录状态执行网页任务。 | [![GitHub Star 9,474](https://img.shields.io/static/v1?label=&message=9%2C474&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
-| [BrowserSkill DSH 插件](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) | 为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。 | [![GitHub Star 9,474](https://img.shields.io/static/v1?label=&message=9%2C474&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
+| [BrowserSkill DSH 插件](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) | 将 BrowserSkill 浏览器自动化接入 DSH 模型工具和 Web 任务预览 | [![GitHub Star 9,680](https://img.shields.io/static/v1?label=&message=9%2C680&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
+| [BrowserSkill 浏览器连接工具](../../plugins/tencent--browserskill/INSIGHT.md) | 通过 bsk CLI 与扩展让 Agent 操作已登录的 Chrome 或 Edge | [![GitHub Star 9,680](https://img.shields.io/static/v1?label=&message=9%2C680&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
 | [dsh-im](../../plugins/xmanrui--dsh-im/INSIGHT.md) | 把微信、飞书等 IM 渠道与多机器人接入 DSH，并提供会话同步和主动投递。 | [![GitHub Star 2,599](https://img.shields.io/static/v1?label=&message=2%2C599&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/xmanrui/dsh-im) |
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（73）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（71）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
-| [Archify](../../plugins/tt-a1i--archify/INSIGHT.md) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | [![GitHub Star 88,446](https://img.shields.io/static/v1?label=&message=88%2C446&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) |
-| [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | [![GitHub Star 40,712](https://img.shields.io/static/v1?label=&message=40%2C712&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) |
-| [OpenViking DSH Memory](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [![GitHub Star 40,712](https://img.shields.io/static/v1?label=&message=40%2C712&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) |
-| [WeKnora](../../plugins/tencent--weknora/INSIGHT.md) | 面向企业文档理解、混合检索和推理的知识框架，提供问答、智能体与知识整理入口。 | [![GitHub Star 35,257](https://img.shields.io/static/v1?label=&message=35%2C257&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
-| [WeKnora DSH 插件](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) | 为 DeepSeek Harness 提供 WeKnora 知识库检索、文档阅读及带引用的问答。 | [![GitHub Star 35,257](https://img.shields.io/static/v1?label=&message=35%2C257&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
+| [OpenViking DSH 记忆插件](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具 | [![GitHub Star 40,955](https://img.shields.io/static/v1?label=&message=40%2C955&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) |
+| [WeKnora DSH 插件](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) | 为 DSH 提供 WeKnora 知识库检索、文档阅读与综合问答工具 | [![GitHub Star 35,641](https://img.shields.io/static/v1?label=&message=35%2C641&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
+| [WeKnora 知识平台](../../plugins/tencent--weknora/INSIGHT.md) | 集中管理组织知识库，并提供检索问答、Agent 与 wiki 能力 | [![GitHub Star 35,641](https://img.shields.io/static/v1?label=&message=35%2C641&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
+| [Distilly](../../plugins/titanwings--distilly/INSIGHT.md) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | [![GitHub Star 26,004](https://img.shields.io/static/v1?label=&message=26%2C004&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/titanwings/distilly) |
+| [Learn Harness Engineering](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | [![GitHub Star 21,413](https://img.shields.io/static/v1?label=&message=21%2C413&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/walkinglabs/learn-harness-engineering) |
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（197）](SOFTWARE-DELIVERY.md)
+### [软件交付（196）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [REA](../../plugins/morluto--rea/INSIGHT.md) | 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 | [![GitHub Star 383,061](https://img.shields.io/static/v1?label=&message=383%2C061&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) |
-| [Archify DSH Skill适配器](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md) | 将固定版本 Archify Skill 作为文件系统 Skill provider 接入 DeepSeek Harness。 | [![GitHub Star 88,446](https://img.shields.io/static/v1?label=&message=88%2C446&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) |
+| [Archify](../../plugins/tt-a1i--archify/INSIGHT.md) | 通过结构化规格生成可交互图形与独立 HTML 说明页的 Agent Skill | [![GitHub Star 90,283](https://img.shields.io/static/v1?label=&message=90%2C283&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) |
+| [Archify DSH 适配器](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md) | 为 DeepSeek Harness 提供 Archify 架构图 Skill 的可选 npm 分发包 | [![GitHub Star 90,283](https://img.shields.io/static/v1?label=&message=90%2C283&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) |
 | [Ruflo](../../plugins/ruvnet--ruflo/INSIGHT.md) | 面向Claude Code、Codex等客户端的Agent元宿主，提供任务、路由、状态与协调工具。 | [![GitHub Star 79,217](https://img.shields.io/static/v1?label=&message=79%2C217&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) |
-| [Hindsight Coding Agents](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md) | 为编码 Agent 提供跨会话项目记忆、知识页工具和后台历史及对话摄取。 | [![GitHub Star 53,255](https://img.shields.io/static/v1?label=&message=53%2C255&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) |
-| [Reasonix](../../plugins/esengine--deepseek-reasonix/INSIGHT.md) | 独立开源编码Agent，提供终端、Studio、Web及ACP入口，可由DSH委派任务。 | [![GitHub Star 35,959](https://img.shields.io/static/v1?label=&message=35%2C959&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/esengine/DeepSeek-Reasonix) |
+| [Hindsight 编码 Agent 记忆集成](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md) | 为编码 Agent 提供 Hindsight 长期记忆、自动摄取和按需知识工具 | [![GitHub Star 54,364](https://img.shields.io/static/v1?label=&message=54%2C364&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) |
 
 [查看全部插件 →](SOFTWARE-DELIVERY.md)
 
@@ -89,15 +89,15 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（110）](INFRASTRUCTURE.md)
+### [基础设施（112）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [DeepSeek Harness](../../plugins/deepseek-ai--deepseek-harness/INSIGHT.md) | 基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。 | [![GitHub Star 261,276](https://img.shields.io/static/v1?label=&message=261%2C276&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness) |
-| [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [![GitHub Star 40,083](https://img.shields.io/static/v1?label=&message=40%2C083&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model) |
+| [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md) | 在 DSH 中统一多渠道模型目录、组合降级与本地兼容网关的插件 | [![GitHub Star 46,878](https://img.shields.io/static/v1?label=&message=46%2C878&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model) |
+| [OpenViking 上下文数据库](../../plugins/volcengine--openviking/INSIGHT.md) | 以文件系统组织 Agent 的知识、记忆和技能，并提供分层检索 | [![GitHub Star 40,955](https://img.shields.io/static/v1?label=&message=40%2C955&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) |
 | [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) | 独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。 | [![GitHub Star 33,082](https://img.shields.io/static/v1?label=&message=33%2C082&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop) |
 | [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) | 维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。 | [![GitHub Star 20,675](https://img.shields.io/static/v1?label=&message=20%2C675&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) |
-| [dsh-web 根工程](../../plugins/zhu1090093659--dsh-web/INSIGHT.md) | 维护 dsh-web 家族的多包工程，并通过根 bundle 入口转接聚合插件安装。 | [![GitHub Star 9,562](https://img.shields.io/static/v1?label=&message=9%2C562&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) |
 
 [查看全部插件 →](INFRASTRUCTURE.md)
 
@@ -113,4 +113,4 @@
 
 ## 更新时间
 
-2026-10-27
+2026-10-28

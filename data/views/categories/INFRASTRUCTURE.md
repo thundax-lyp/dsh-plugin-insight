@@ -54,6 +54,7 @@
 | [dsh-plugin-manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。 | 插件数量较多且愿意在每次重启后检查核心功能的本机用户，可在独立 profile 试用一项非关键扩展更新。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。 | 建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 为DSH提供直连、系统及HTTP/SOCKS手工代理设置，切换Undici全局路由并可导出子进程环境。 | 可信单一管理者且允许失败回原出口可试用。 |
+| [dsh-purge Community](#plugin-1421822085-root) | 集中管理 DSH 提示注入、宿主补丁、状态自检与备份回滚的社区插件 | 一般工程任务不推荐默认应用全套Host补丁；保留原生权限。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。 | 先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。 |
 | [dsh-recipe](#plugin-1336583700-root) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 作为选型草案试用，补齐profile/版本/配置再执行。 |
 | [dsh-remote-ssh](#plugin-1384810201-root) | 以 SSH 将远程 Unix/AIX/macOS 的白名单诊断命令接入 DSH Agent 工具。 | 用最小权限只读账号与固定命令，测试远端参数解释；变更另走人工审批。 |
@@ -114,7 +115,8 @@
 | [mem9](#plugin-1175756746-root) | 为多 Agent 和多机器提供服务端持久记忆、混合检索及多运行时接入。 | 建议有共享需求的团队限定隔离空间、先关闭自动ingest，用少量人工确认非敏感事实试用读写更正删除；隔离或传播不明即退回项目文档。 |
 | [Mirage](#plugin-1231135337-root) | 通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。 | 构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。 | 需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。 |
-| [Our Free Model](#plugin-1385896447-root) | 为 DSH 聚合多渠道模型，提供模型选择、本地兼容网关、用量看板与降级路由。 | [Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06) 建议从单车道脱敏试用开始，核对来源、监听、凭据与失败切换；有稳定供给或严格数据要求时先补足专项证据。 |
+| [OpenViking 上下文数据库](#plugin-1128123594-root) | 以文件系统组织 Agent 的知识、记忆和技能，并提供分层检索 | 有平台运维能力的团队限定非敏感语料试用，先验证原文追溯与关键变更，再比较简单文件搜索。 |
+| [Our Free Model](#plugin-1385896447-root) | 在 DSH 中统一多渠道模型目录、组合降级与本地兼容网关的插件 | 愿管理渠道的个人开发者在可信源码环境先单车道脱敏试用，保持LAN关闭；真实渠道/数据规则不清、重复副作用或恢复状态不明时停止并回已知官方endpoint。 |
 | [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [SandBase Harness](#plugin-1297278222-root) | 本地优先的 Agent 运行时，管理持久会话、工具、记忆、凭据、审计与控制台 | [Q04](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q04) 建议先观察，只用可信只读输入评估会话回收与产物接口；报告不绑定固定提交或结果未知时停止并回到单次脚本加人工验收。 |
@@ -794,6 +796,22 @@
 > **建议**：研究先构建再替换、失败关闭、dispatcher所有权和环境逐键恢复，比较误出口和恢复工时。当前未验证。详见[Q05](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/1624318455--dsh-plugin-proxy/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1421822085-root"></a>
+
+## [dsh-purge Community](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md)
+
+[![GitHub ★ 2,938](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C938&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kingcharleslzy-ai/dsh-purge)
+
+> **用途**：自有或获授权隔离环境中研究宿主行为、提示与恢复机制的人；日常工程需另审控制改变。
+
+> **亮点**：将宿主定位、补丁/提示状态、备份与迁移集中，降低手动多文件维护的分散；社区维护和原始作者归属明确，不能把更多连续执行等同更好任务质量。[Q01](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q01) [Q03](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q03)
+
+> **思考**：核心增益涉及改写原审批/沙箱语义，不仅减少点击；profile快照失败仍继续逐文件应用，工具“完成”文字不等全成功，禁插件也不自动撤已写Host字节。[Q02](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q02) [Q03](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q03) [Q04](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q04)
+
+> **建议**：未验证操作收据分开backup_failed/partial/restart_pending/rollback_partial，绑定精确Host、原字节和独立备份；故障注入盲评误判与恢复，任何部分状态被误认完成即否定，不把收据等同约束改变的收益证明。[Q06](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1367305514-root"></a>
 
@@ -1755,19 +1773,35 @@
 
 [查看完整分析](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1128123594-root"></a>
+
+## [OpenViking 上下文数据库](../../plugins/volcengine--openviking/INSIGHT.md)
+
+[![GitHub ★ 40,955](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C955&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
+
+> **用途**：面向维护长期 Agent 知识、记忆和技能的团队，以可浏览的 URI 与摘要分层读取上下文。
+
+> **亮点**：统一 URI、内容分层、目录范围与会话检索形成可检查的上下文组合，父目录刷新策略进一步将更新成本显式化；真实任务优势未测。[Q01](../../plugins/volcengine--openviking/INSIGHT.md#research-q01) [Q02](../../plugins/volcengine--openviking/INSIGHT.md#research-q02)
+
+> **思考**：大目录父摘要可在比例阈值下滞后，锁忙还会跳过尽力更新；需要检验错误路由而非用摘要存在证明可靠。[Q03](../../plugins/volcengine--openviking/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是把刷新阈值与“改变任务结论的重要性”结合：一般新增仍按现有比例延迟，涉及关键事实反转的文档在读摘要时触发原文回退。当前策略使用子摘要变化事件和数量比例，不能直接识别语义重要性；新增机制必须可解释并避免每次读取都调用模型。最小验证比较比例刷新、全部立即刷新和重要性门控三组，固定变更序列与任务，记录错误路由、最终合格率、摘要生成资源和端到端耗时。若门控漏掉关键反转或资源不低于全部刷新，则推翻优势。此方向不是现有 freshness 函数已经实现的能力，也不从目录结构推断真实需求。 [Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/volcengine--openviking/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1385896447-root"></a>
 
 ## [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md)
 
-[![GitHub ★ 40,083](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C083&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
+[![GitHub ★ 46,878](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=46%2C878&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model)
 
-> **用途**：为DSH用户统一多渠道模型选择、兼容网关与失败切换。
+> **用途**：愿管理渠道并核真实模型/费用的数据敏感度适中个人开发者，期望减少手工endpoint接线。
 
-> **亮点**：多车道目录与虚拟组合模型减少手工接线，视觉和窗口等元信息按成员约束。
+> **亮点**：把目录、DSH模型选择、兼容网关与组合链统一；容量保守汇总、回答commit后不切换和分级恢复有具体机制价值，不能把免费供给或模型能力算原创。[Q01](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q01) [Q02](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q02)
 
-> **思考**：部分免费是作者对上游的声明；真实渠道、供给、成本和数据处理规则仍需分别核对。
+> **思考**：统一模型名可能遮蔽真实渠道、数据和费用差异；capacity元信息与commit边界只能约束部分行为，不能证明后备等质或任务合格。更新回滚也可能进入需恢复状态。[Q02](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q02) [Q03](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q03) [Q04](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q04)
 
-> **建议**：使用可信完整分发，从单车道脱敏任务开始，并核对监听、凭据和实际尝试链。
+> **建议**：未验证任务级渠道策略与逐尝试收据，在发送前限制目的地/费用/能力，记录commit和实际渠道；用禁止后备、视觉不足和流后故障检验越界/重复/合格率与复核时间，出现禁止请求即否定。[Q06](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q06)
 
 [查看完整分析](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1887,4 +1921,4 @@
 
 ## 更新时间
 
-2026-10-27
+2026-10-28
