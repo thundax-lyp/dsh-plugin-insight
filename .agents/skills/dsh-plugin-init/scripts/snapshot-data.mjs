@@ -674,6 +674,41 @@ function stageRecordUnlocked(workPath, id, observationPath, reportPath, displayP
     }
     return work;
 }
+// Reopen one unmerged checkpoint without rewriting its fixed selection or evidence.
+export function reopenRecord(workPath, input, root = ROOT, apply = false) {
+    if (!input?.id || !/^[a-f0-9]{64}$/.test(input.record_digest) || !input.reason?.trim())
+        throw Error('reopen requires id, record_digest and reason');
+    const lock = workPath + '.lock',
+        fd = openSync(lock, 'wx', 0o600);
+    try {
+        writeFileSync(fd, JSON.stringify({ pid: process.pid }));
+        if (existsSync(resolve(dirname(workPath), 'SESSION.json.lock'))) throw Error('active session lock');
+        const work = validateWork(readWork(workPath), root);
+        if (work.base_digest !== digest(readSnapshot(root))) throw Error('snapshot baseline changed');
+        const item = selectedItems(work.session).find((p) => p.id === input.id);
+        const record = work.records[input.id];
+        if (item?.status !== 'complete' || !record) throw Error('reopen requires a staged complete item');
+        if (digest(record) !== input.record_digest) throw Error('staged record changed');
+        const backup = resolve(dirname(workPath), 'reopened', input.record_digest + '.json');
+        const saved = { id: input.id, reason: input.reason, record, item: structuredClone(item) };
+        delete work.records[input.id];
+        item.status = 'pending';
+        delete item.checkpoint;
+        validateWork(work, root);
+        if (apply) {
+            mkdirSync(dirname(backup), { recursive: true });
+            if (existsSync(backup)) {
+                if (digest(read(backup)) !== digest(saved)) throw Error('reopen backup already differs');
+            } else writeFileSync(backup, JSON.stringify(saved, null, 2) + '\n', { flag: 'wx' });
+            if (digest(readSnapshot(root)) !== work.base_digest) throw Error('snapshot baseline changed');
+            saveWork(workPath, work);
+        }
+        return { apply, id: input.id, status: apply ? 'pending' : 'would_reopen', backup: relative(root, backup) };
+    } finally {
+        closeSync(fd);
+        unlinkSync(lock);
+    }
+}
 // null input is an explicit retry of an already selected blocked item.
 export function changeBlockRecord(workPath, id, input, root = ROOT) {
     return changeBlockRecords(workPath, [{ id, input }], root);
@@ -1079,6 +1114,8 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'block-batch') {
         changeBlockRecords(need('work'), read(need('input')));
         console.log('Block batch saved; formal snapshot unchanged');
+    } else if (command === 'reopen') {
+        console.log(JSON.stringify(reopenRecord(need('work'), read(need('input')), ROOT, v.apply), null, 2));
     } else if (command === 'block' || command === 'retry') {
         if (!v.plugin) throw Error('--plugin required');
         changeBlockRecord(need('work'), v.plugin, command === 'block' ? read(need('input')) : null);
@@ -1099,7 +1136,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') cleanWork(need('work'), ROOT, v.apply);
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|reindex|recover-storage|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|reopen|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|reindex|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
