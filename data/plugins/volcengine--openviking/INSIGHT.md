@@ -1,18 +1,18 @@
-# OpenViking
+# OpenViking 上下文数据库
 
-[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[4ab22a4](https://github.com/volcengine/OpenViking/tree/4ab22a4923452362b60aef2826c2083ce36168d2)
+源码版本：[54d4c0f](https://github.com/volcengine/OpenViking/tree/54d4c0fac91fae976325ebed618d7278ff9b5c77)
 
 <!-- BEGIN META -->
-[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
+[![GitHub ★ 40,955](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C955&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
 <!-- END META -->
 
-> **功能**：以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。
+> **功能**：以文件系统组织 Agent 的知识、记忆和技能，并提供分层检索
 
-> **亮点**：将虚拟URI、目录摘要和会话检索组合成可检查的上下文入口。
+> **亮点**：统一 URI、内容分层、目录范围与会话检索形成可检查的上下文组合，父目录刷新策略进一步将更新成本显式化；真实任务优势未测。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：摘要正确性和更新一致性尚无当前任务对照，根平台不等于已验收DSH插件。
+> **主要限制**：大目录父摘要可在比例阈值下滞后，锁忙还会跳过尽力更新；需要检验错误路由而非用摘要存在证明可靠。[Q03](#research-q03)
 
 **本文目录**
 
@@ -20,24 +20,17 @@
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
   - [1.3 工程亮点](#detail-section-4)
-  - [1.4 使用建议](#detail-section-5)
-  - [1.5 核查说明与分析版本](#detail-section-6)
-  - [1.6 启动与流程](#detail-section-7)
-  - [1.7 启动与依赖](#detail-section-8)
-  - [1.8 启动步骤](#detail-section-9)
-  - [1.9 效果与成本](#detail-section-10)
-  - [1.10 成本](#detail-section-11)
-  - [1.11 效果](#detail-section-12)
-  - [1.12 主要限制](#detail-section-13)
-- [2 未来设计假设（未验证）](#detail-section-14)
-- [3 辅助信息](#detail-section-15)
-- [4 研究问题与完整回答](#detail-section-16)
-  - [Q01 · 上下文数据库面向什么任务，分层文件组织增加了什么？](#detail-section-17)
-  - [Q02 · 检索如何使用目录、摘要和会话上下文？](#detail-section-18)
-  - [Q03 · 分层摘要的核心前提与部署边界是什么？](#detail-section-19)
-  - [Q04 · 分层读取是否能降低一次合格任务总成本？](#detail-section-20)
-  - [Q05 · 能否让摘要附带可检测失效的依赖版本？](#detail-section-21)
-  - [Q06 · 什么团队可试用平台，何时简单方案更合适？](#detail-section-22)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 文件系统式上下文平台相对文件搜索增加了什么？](#detail-section-11)
+  - [Q02 · 目录范围与会话检索如何从服务进入存储？](#detail-section-12)
+  - [Q03 · 摘要优先是否可能牺牲新鲜性和正确路由？](#detail-section-13)
+  - [Q04 · 哪些团队值得承担平台部署与持续维护？](#detail-section-14)
+  - [Q05 · 如何在已有刷新策略上形成真正增量的验证方向？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -47,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：为Agent团队组织可浏览的知识、记忆和技能，适合长期多会话知识任务。
+> **用途**：面向维护长期 Agent 知识、记忆和技能的团队，以可浏览的 URI 与摘要分层读取上下文。
 
-用户应围绕可追溯的任务回答验收，不能用向量命中数或摘要数量代替交付质量。场景与参照详见 [Q01](#research-q01)。
+文件目录、全文搜索和人工摘要；比较的是统一可检查上下文与分层路由，不将语义搜索本身视为原创。
 
 <a id="detail-section-3"></a>
 
@@ -59,179 +52,157 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| URI上下文组织 | 浏览知识、记忆、技能 | 是平台能力，非DSH原生工具 |
-| L0摘要读取 | 先判断内容相关性 | 缺失摘要会返回未就绪信息 |
-| 会话检索 | 利用对话上下文检索 | 取决于intent配置和模型 |
-| 直接find | 不依赖会话查询 | 需后端与权限支持 |
+| URI与分层上下文 | 浏览摘要、概览与原文 | 摘要可能未就绪或滞后 |
+| 会话与直接检索 | 按任务选择查询方式 | 模型与后端能力影响结果 |
 
-> **思考**：摘要正确性和更新一致性尚无当前任务对照，根平台不等于已验收DSH插件。
+#### 启动与依赖
+
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Python>=3.10及服务依赖 | 必需 | 平台运行 | 根项目非DSH安装包 |
+| 模型、嵌入与存储 | 效果必需 | 索引、摘要与检索 | 数据不能形成完整语义层 |
+| 支持全文索引的后端 | keywords必需 | 关键词模式 | 服务显式拒绝不支持的配置 |
+| 身份、ACL与备份 | 团队部署必需 | 访问范围与恢复 | 单一URI不能替代权限配置 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 团队配置服务、模型与身份 | 非敏感资料可读写 |
+| 导入 | 服务生成摘要与索引 | 可回到原文并解释未就绪 |
+| 查询 | Agent选find/search及目录层 | 任务答案与原文一致 |
+| 变更恢复 | 管理员验收刷新和备份 | 关键事实反转及时可见 |
+
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次使用 | 部署、嵌入和模型未知 | 语料整理与身份配置未知 | 少量资料可先用文件方案 |
+| 持续使用 | 索引、摘要和存储未知 | 纠错及权限维护未知 | 大目录有刷新取舍 |
+| 失败恢复 | 重建与备份资源未知 | 队列/摘要一致性核对未知 | 未做恢复演练 |
+| 退出 | 导出与迁移资源未知 | 保留原文及迁移URI引用 | 迁移时间未测 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 可检查上下文 | URI和目录摘要/原文分层 | 当前任务正确率 |
+| 检索分工 | find与search区别及后端门槛 | 会话分析净收益 |
+| 更新管理 | 父目录比例刷新与待处理 | 滞后导致错误的频率 |
+
+> **思考**：大目录父摘要可在比例阈值下滞后，锁忙还会跳过尽力更新；需要检验错误路由而非用摘要存在证明可靠。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将虚拟URI、目录摘要和会话检索组合成可检查的上下文入口。
+> **亮点**：统一 URI、内容分层、目录范围与会话检索形成可检查的上下文组合，父目录刷新策略进一步将更新成本显式化；真实任务优势未测。[Q01](#research-q01) [Q02](#research-q02)
 
-[Q01](#research-q01) 与 [Q02](#research-q02) 支持的增量是把知识、记忆和技能放进可浏览的URI与分层内容，结合目录范围与会话上下文控制检索。贡献是机制组合和可检查性；没有把作者旧版基准或DSH适配增量计成当前平台效果。
-
-SearchService参数验证与VikingFS分层、摘要格式错误的显式处理值得借鉴；访问上下文与后端能力检查是复用条件。Python/Rust/多后端边界增加维护成本，本轮没有审计全平台。
+服务参数验证、请求上下文访问层与存储语义分开，便于定位“不支持后端”与“无权限”；纯刷新策略可复用，但读写队列、存储和模型一致性是迁移负担。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
-### 1.4 使用建议
+### 1.4 主要限制
 
-[Q06](#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。
-
-**补充建议**
-
-先用脱敏语料对照简单文件搜索，检查原文追溯、事实反转和总维护负担。
+大目录父摘要可在比例阈值下滞后，锁忙还会跳过尽力更新；需要检验错误路由而非用摘要存在证明可靠。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
-### 1.5 核查说明与分析版本
+### 1.5 使用建议
 
-**核查状态**：已检查源码。
-
-- 已检查根README、Python依赖、检索服务、摘要与访问层。
-- 未执行服务、测试、模型调用或宿主；未覆盖所有后端、ACL组合和迁移恢复。
-
-- 研究范围：根平台范围，重点抽读SearchService、VikingFS摘要与访问层及部署声明；全仓inventory不是逐文件审计，DSH例子另立研究。
-
-
-- **仓库**：[volcengine/OpenViking](https://github.com/volcengine/OpenViking)
-- **版本号**：未声明（[固定提交 4ab22a4](https://github.com/volcengine/OpenViking/tree/4ab22a4923452362b60aef2826c2083ce36168d2)）
-- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
+有平台运维能力的团队限定非敏感语料试用，先验证原文追溯与关键变更，再比较简单文件搜索。摘要导致错选时回退原文，净任务收益不足则不扩大部署。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
-### 1.6 启动与流程
+### 1.6 核查说明与分析版本
+
+**核查状态**：已检查源码。
+
+平台分层、范围与刷新机制有源码支持；当前任务收益未对照，重要性门控是未验证假设。
+
+- 已检查：作者 README、包清单、源码路径 README.md、pyproject.toml、openviking/service/search_service.py、openviking/storage/viking_fs/_semantic.py、openviking/storage/viking_fs/_access.py、openviking/storage/queuefs/semantic_ops/freshness_policy.py、openviking/storage/queuefs/semantic_processor.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：根平台源码抽查SearchService、VikingFS摘要与访问层、freshness策略及调用链、根README和构建声明；不穷尽所有平台功能，DSH例子另项。
+- 下一步：未执行安装、目标代码或测试；不继承其他版本的作者基准，模型质量、权限全链和恢复均需当前版本实证。
+
+**分析版本**
+
+- **仓库**：[volcengine/OpenViking](https://github.com/volcengine/OpenViking)
+- **版本号**：未声明（[固定提交 54d4c0f](https://github.com/volcengine/OpenViking/tree/54d4c0fac91fae976325ebed618d7278ff9b5c77)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
-### 1.7 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Python>=3.10及平台依赖 | 必需 | 服务与解析 | 无法启动对应路径 |
-| Embedding与VLM | 语义处理必需 | 索引、摘要和抽取 | 能力和费用受配置影响 |
-| 数据身份与访问策略 | 多用户必需 | URI和资源隔离 | 不应假定匿名配置等同生产隔离 |
-
-<a id="detail-section-9"></a>
-
-### 1.8 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户配置模型、存储与身份 | 服务健康且授权明确 |
-| 导入 | 用户提交脱敏语料 | 内容及摘要可检查 |
-| 检索 | Agent按目录或会话查询 | 能回读原文验证回答 |
-| 恢复 | 管理者检查重建与纠错 | 摘要与原文一致 |
-
-search与find的上下文差异、摘要读取及权限检查见 [Q02](#research-q02)。
-
-<a id="detail-section-10"></a>
-
-### 1.9 效果与成本
-
-<a id="detail-section-11"></a>
-
-### 1.10 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 模型、索引、存储和部署费用未知 | 配置和语料清理耗时未知 | 依赖embedding与VLM |
-| 持续使用 | 摘要、检索、记忆抽取成本未知 | 纠错与访问治理耗时未知 | 无当前合格任务对照 |
-| 失败恢复 | 重建、备份和重试资源未知 | 排障及一致性核对未知 | 摘要缺失有可见返回 |
-
-<a id="detail-section-12"></a>
-
-### 1.11 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 分层读取 | L0摘要与可检查URI机制 | 当前提交的准确率与总成本 |
-| 会话化检索 | search可使用会话上下文 | 相对find的同任务收益 |
-
-<a id="detail-section-13"></a>
-
-### 1.12 主要限制
-
-[Q03](#research-q03) 追问摘要是否足以可靠选择原文。最强支持是实现显式区分摘要、原文和未就绪状态；反例是摘要陈旧或遗漏限定词会让节省读取量转化为错误路由，需用事实反转任务而非命中数检验。
-
-<a id="detail-section-14"></a>
-
 ## 2 未来设计假设（未验证）
 
-[Q05](#research-q05) 提出未验证的摘要依赖版本与失效可见性，比较自动回退原文对错误路由、任务合格率和总成本的影响。
+<a id="innovation"></a>
 
-<a id="detail-section-15"></a>
+未验证假设是在已有数量比例刷新上增加任务重要性门控，使关键事实反转触发原文回退，一般变更仍允许延迟。以相同变更序列比较比例刷新、全部立即刷新和重要性门控，记录错误路由、合格率、摘要资源与耗时；漏掉关键反转或资源不少于全部刷新时否定增量。[Q05](#research-q05)
+
+未执行安装、目标代码或测试；不继承其他版本的作者基准，模型质量、权限全链和恢复均需当前版本实证。
+
+<a id="detail-section-9"></a>
 
 ## 3 辅助信息
 
 <details>
 <summary>工程统计</summary>
 
-<details>
-<summary>查看辅助统计</summary>
-
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 416 | 106865 | — | — | 864750 |
-| .mjs | source | 18 | 4180 | 3254 | 580 | — |
+| .md | source | 423 | 109445 | — | — | 904853 |
+| .mjs | source | 19 | 4295 | 3329 | 602 | — |
 | .mjs | test | 2 | 230 | 189 | 17 | — |
-| .ts | source | 235 | 40768 | 34235 | 4217 | — |
-| .md | test | 6 | 1036 | — | — | 5748 |
-| .ts | test | 89 | 11377 | 10408 | 554 | — |
+| .ts | source | 237 | 41202 | 34645 | 4246 | — |
+| .md | test | 6 | 1126 | — | — | 6516 |
+| .ts | test | 89 | 11512 | 10537 | 557 | — |
 | .js | source | 8 | 649 | 496 | 102 | — |
-| .md | example | 93 | 23283 | — | — | 181090 |
-| .mjs | example | 311 | 77526 | 61616 | 10174 | — |
+| .md | example | 101 | 24314 | — | — | 189865 |
+| .mjs | example | 316 | 78889 | 62639 | 10417 | — |
 | .tsx | example | 1 | 258 | 230 | 13 | — |
-| .ts | example | 121 | 35216 | 30497 | 1808 | — |
+| .ts | example | 121 | 35213 | 30497 | 1802 | — |
 | .js | example | 2 | 2991 | 2637 | 85 | — |
-| .tsx | test | 88 | 21396 | 19758 | 546 | — |
-| .tsx | source | 238 | 56167 | 52880 | 848 | — |
-
-</details>
-
-统计不覆盖Python与Rust代码，JS/TS及Markdown数量不能代表根平台整体实现规模。
+| .tsx | test | 94 | 22331 | 20629 | 602 | — |
+| .tsx | source | 240 | 56796 | 53500 | 853 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-24），可前往 [GitHub Issues](https://github.com/volcengine/OpenViking/issues) 查看。
+[![Issue 未关闭 399](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=399&color=737b86&logo=github)](https://github.com/volcengine/OpenViking/issues?q=is%3Aissue+is%3Aopen)
 
-<a id="detail-section-16"></a>
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-10-28。
+
+<a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：上下文数据库如何组织、检索并沉淀知识，其相对平面向量检索的增量与条件是什么？
+**插件研究总目标**：文件系统式上下文平台相对文件搜索增加了什么？
 
 <a id="research-q01"></a>
 
-<a id="detail-section-17"></a>
+<a id="detail-section-11"></a>
 
-### Q01 · 上下文数据库面向什么任务，分层文件组织增加了什么？
+### Q01 · 文件系统式上下文平台相对文件搜索增加了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-OpenViking 面向需要长期管理知识、记忆与技能的 Agent 开发者。合格交付应是带来源和可检查内容的任务上下文，而非仅返回一组相似向量。与手动文件加全文搜索相比，它增加语义查找和会话沉淀；与只暴露向量命中的简化基线相比，viking URI、目录摘要和完整原文让调用者可先浏览再选择读取。这里比较的是实现机制，不是所有向量数据库产品的功能全集，也不能据此声称行业首次。README基准明确使用0.3.22和特定模型，本次固定提交不能直接继承这些成绩。
+OpenViking 根条目是上下文数据库基础设施，服务需要长期管理知识、记忆和技能的 Agent 开发者；原生 DSH 适配另在 examples/dsh-memory-plugin，不应把根项目当可直接安装的 DSH 插件。基线为文件目录加全文搜索和人工摘要，合格结果是能够回到原始内容、按任务范围选择相关资料，并理解摘要与来源的关系。平台用 viking URI、目录摘要、概览及原文分层组织上下文，允许先浏览摘要再读详情，减少平铺片段的交接障碍。语义检索和生成摘要并非独创算法；可检查的统一命名空间和分层读取是本次识别的组合贡献。资料很少或关键词即可解决时，平台部署与模型维护可能超过收益。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:41-66](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/README.md#L41-L66)
+**依据 1 · 作者声明**：[README.md:44-62](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/README.md#L44-L62)
 
-作者描述虚拟文件系统、分层摘要和会话记忆。
+作者说明统一文件系统、目录范围和分层读取。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（19行）</summary>
 
-````text
-
-## What is OpenViking
-
+```text
 OpenViking is an open-source context database for AI agents — one filesystem for everything an agent knows: knowledge, memory, and skills.
 
 Most agent memory is a black box: text goes in, embeddings come out, and nobody can see what was actually stored. OpenViking organizes context as a virtual filesystem under `viking://` instead. Agents navigate it like files — `ls`, `tree`, `read`, `write`, `grep` — and you can open any directory to inspect and edit what your agent knows. Every directory carries a generated summary, so agents can scan summaries first and decide what to read.
@@ -251,87 +222,100 @@ Most agent memory is a black box: text goes in, embeddings come out, and nobody 
 - **Search a directory, not the whole index.** Scope semantic search to a project or memory subtree instead of scanning a flat vector pool. `find` runs a query directly; `search` plans retrieval from session context. → [Retrieval](https://docs.openviking.ai/en/concepts/07-retrieval)
 - **Read the summary before the source.** Generated directory abstracts (L0) and overviews (L1) let agents judge relevance before opening full content (L2). → [Context layers](https://docs.openviking.ai/en/concepts/03-context-layers)
 - **Sessions become files you can read.** Committing a session archives the conversation and extracts memories as Markdown you can inspect, edit, and merge. With VikingBot enabled, `ov compile` organizes source material into a wiki, knowledge graph, or report. → [Sessions](https://docs.openviking.ai/en/concepts/08-session) · [Context compilation](https://docs.openviking.ai/en/context-compilation/01-overview)
-
-[Architecture](https://docs.openviking.ai/en/concepts/01-architecture) · [Design rationale](https://blog.openviking.ai/post/openviking-context-database/)
-
 ```
-````
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:113-125](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/README.md#L113-L125)
+**依据 2 · 源码核查**：[pyproject.toml:11-21](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/pyproject.toml#L11-L21)
 
-作者基准绑定版本和模型，限制效果外推。
+Python上下文数据库而非DSH根包。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-The memory evaluation used [Doubao 2.0 Pro](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-seed-2-0-pro) as the VLM and [Doubao-embedding-vision-251215](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-embedding-vision) as the embedding model.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/benchmark-dark.svg">
-  <img alt="Benchmark results. LoCoMo accuracy: OpenClaw 24.20% native vs 82.08% with OpenViking; Hermes 33.38% vs 82.86%; Claude Code 57.21% vs 80.32%. tau2-bench task success: Retail 70.94% vs 77.81%; Airline 54.38% vs 66.25%." src="docs/images/benchmark-light.svg">
-</picture>
-
-- **User memory (LoCoMo)**: with OpenViking, all three agent integrations land at 80–83% accuracy — up from 24–57% on their native memory — while input tokens drop by 34.3–91.0% and query latency by 58.45–66.10%.
-- **Agent experience (tau2-bench)**: experience memory lifts task success by +6.87pp (retail) and +11.87pp (airline) over the same LLM without memory.
-
-## Quick start
-
-Set up an OpenViking server first; if you already have one, skip to [Use it with your agent](#use-it-with-your-agent). Deploying your own needs uv, Python 3.10+ and a model provider with an embedding model and a VLM.
+[project]
+name = "openviking"
+dynamic = ["version", "readme"]
+description = "An Agent-native context database"
+requires-python = ">=3.10"
+authors = [
+    {name = "ByteDance", email = "noreply@bytedance.com"}
+]
+license = "AGPL-3.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
 ```
 
 </details>
+
+#### 缺口
+
+- 没有当前固定版本与简单文件方案的同任务对照
+  **影响**：不能把作者声明转为节省token或质量提升
+  **进一步探讨**：用同一资料和问题集比较原文可追溯性、任务正确率、总读取和人工时间。
 
 <a id="research-q02"></a>
 
-<a id="detail-section-18"></a>
+<a id="detail-section-12"></a>
 
-### Q02 · 检索如何使用目录、摘要和会话上下文？
+### Q02 · 目录范围与会话检索如何从服务进入存储？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-SearchService先检查查询、系统命名空间及后端能力；search可读取会话上下文，再将目标URI、level、过滤条件和检索类型交给VikingFS。find提供无需会话的查询路径；两者不是同一语义操作的重复别名。语义层读取.abstract.md，先做访问检查与路径可见性判断，找不到摘要时返回未就绪描述，不能把摘要缺失解释为原文不存在。服务、存储和CLI异常分层值得复用，但迁移需保留身份上下文和后端能力检查，否则会把可访问性和搜索能力错误混在一起。
+SearchService 验证查询编码、拒绝系统命名空间，按 search_type 判断后端关键词能力。search 在意图分析开启且非图像时读取 session 上下文，再传 target_uri、level、过滤条件到 VikingFS；find 无会话上下文，且可用过滤器替代空查询。两者是不同任务路径，不能互称别名。摘要与概览分别读 .abstract.md 和 .overview.md，读前调用访问检查，文件URI会转读父目录层。访问层在当前 RequestContext 下批量评估并对被拒绝 URI 抛出权限错误。这支持范围和可读性的机制判断，但不等于完成全部认证、ACL继承与跨租户链的安全审计。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[openviking/service/search_service.py:127-181](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/openviking/service/search_service.py#L127-L181)
+**依据 1 · 源码核查**：[openviking/service/search_service.py:34-60](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/service/search_service.py#L34-L60)
 
-search验证并传递会话、目录与层级。
+查询与系统范围验证。
 
 <details>
-<summary>查看原文（55行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
-        ctx: RequestContext,
-        target_uri: Union[str, List[str]] = "",
-        session: Optional["Session"] = None,
-        limit: int = 10,
-        score_threshold: Optional[float] = None,
-        filter: Optional[Dict] = None,
-        level: Optional[List[int]] = None,
-        image_url: str | list[str] | None = None,
-        events_time_decay_protection: Optional[str] = None,
-        search_type: SearchType = "semantic",
-        context_types: Optional[List[ContextType]] = None,
-    ) -> Any:
-        """Search with session context.
+def _reject_system_targets(target_uri: Union[str, List[str]]) -> None:
+    targets = [target_uri] if isinstance(target_uri, str) else target_uri
+    for uri in targets:
+        if uri and is_system_uri(uri):
+            raise InvalidArgumentError(f"search is not supported for namespace: {uri}")
 
-        Args:
-            query: Query string
-            target_uri: Target directory URI(s), supports str or List[str]
-            session: Session object for context
-            limit: Max results
-            score_threshold: Score threshold
-            filter: Metadata filters
-            level: Filter by level (0=abstract, 1=overview, 2=file)
 
-        Returns:
-            FindResult
-        """
+def _validate_query(
+    query: str,
+    image_url: str | list[str] | None = None,
+    filter: Optional[Dict] = None,
+) -> None:
+    """Reject malformed query text or a request with nothing to search for.
+
+    A filter is an acceptable substitute for a query: the result set is then
+    fully determined by the filter, which is exactly what an exact-match lookup
+    (e.g. by a tag carrying an external id) needs. Without either one the call
+    would return an arbitrary slice of the whole store.
+    """
+    try:
+        query.encode("utf-8")
+    except UnicodeEncodeError as exc:
+        raise InvalidArgumentError("Search query must contain valid Unicode text.") from exc
+    if query.strip() or image_url or filter:
+        return
+    raise InvalidArgumentError(
+        "Search query or image_url must not be empty unless a filter is provided."
+```
+
+</details>
+
+**依据 2 · 源码核查**：[openviking/service/search_service.py:178-205](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/service/search_service.py#L178-L205)
+
+search 的会话和范围参数。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
         if search_type == "keywords" and image_url:
             raise InvalidArgumentError("image_url is not supported when search_type='keywords'")
         resolved_image_url = await self._resolve_image_url(image_url, ctx)
@@ -360,17 +344,129 @@ search验证并传递会话、目录与层级。
             search_type=search_type,
             context_types=context_types,
         )
-        return result
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[openviking/storage/viking_fs/_semantic.py:40-88](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/openviking/storage/viking_fs/_semantic.py#L40-L88)
+**依据 3 · 源码核查**：[openviking/service/search_service.py:235-245](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/service/search_service.py#L235-L245)
 
-摘要读取与可访问性判断。
+find 可接受过滤器且无session。
 
 <details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（11行）</summary>
+
+```text
+        if search_type == "keywords" and image_url:
+            raise InvalidArgumentError("image_url is not supported when search_type='keywords'")
+        resolved_image_url = await self._resolve_image_url(image_url, ctx)
+        _validate_query(query, resolved_image_url, filter)
+        _reject_system_targets(target_uri)
+        viking_fs = self._ensure_initialized()
+        result = await viking_fs.find(
+            query=query,
+            ctx=ctx,
+            target_uri=target_uri,
+            limit=limit,
+```
+
+</details>
+
+**依据 4 · 源码核查**：[openviking/storage/viking_fs/_semantic.py:78-106](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/viking_fs/_semantic.py#L78-L106)
+
+目录摘要访问检查和父目录回退。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+    async def abstract(
+        self,
+        uri: str,
+        ctx: Optional[RequestContext] = None,
+    ) -> str:
+        """Read directory's L0 summary (.abstract.md).
+
+        If the caller points to a file, its parent directory is used instead so
+        the endpoint remains usable for both file and directory URIs.
+        """
+        await self._ensure_access(uri, ctx)
+        path = self._uri_to_path(uri, ctx=ctx)
+        try:
+            info = await self._async_agfs.stat(path)
+        except Exception as exc:
+            mapped = map_exception(exc, resource=uri)
+            if mapped is not None:
+                raise mapped from exc
+            raise
+        if not info.get("isDir", info.get("is_dir")):
+            parent_path = path.rsplit("/", 1)[0] or "/"
+            parent_uri = self._path_to_uri(parent_path, ctx=ctx)
+            logger.info(
+                "content/abstract: %s is a file, falling back to parent directory %s",
+                uri,
+                parent_uri,
+            )
+            return await self.abstract(parent_uri, ctx=ctx)
+        return await self._read_abstract_file(path, uri, ctx=ctx)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[openviking/storage/viking_fs/_access.py:239-261](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/viking_fs/_access.py#L239-L261)
+
+请求上下文下的访问判断。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+    async def _ensure_access(
+        self,
+        uri: str,
+        ctx: Optional[RequestContext],
+        *,
+        action: AclAction = AclAction.READ,
+    ) -> None:
+        await self._ensure_access_many([uri], ctx, action=action)
+
+    async def _ensure_access_many(
+        self,
+        uris: Sequence[str],
+        ctx: Optional[RequestContext],
+        *,
+        action: AclAction,
+    ) -> None:
+        real_ctx = self._ctx_or_default(ctx)
+        access = await self._can_access_many(uris, real_ctx, action=action)
+        denied = next((uri for uri in uris if not access.get(uri, False)), None)
+        if denied is not None:
+            raise PermissionDeniedError(
+                f"Access denied for {denied}: {action.value} permission required",
+                resource=denied,
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 摘要优先是否可能牺牲新鲜性和正确路由？
+
+**研究主题**：缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+会。摘要读取把格式错误或不存在转为“not ready”，有利于区分摘要缺失与内容不存在，但缺失状态不自动证明检索覆盖。当前有 freshness-aware 父目录刷新策略：子摘要体未变则不刷新，有基线的大目录按累计变更比例决定立即刷新或标记待处理；计数是变更事件而不是唯一子项数。因此频繁改变同一子项也可触发阈值，低于阈值时父摘要允许滞后。实际处理器在语义变更后调用计划器，默认比例0.10，小目录默认32以下直接刷新；锁忙会跳过 best-effort 更新。已有新鲜性策略应算作当前机制，不能再将“添加刷新版本机制”直接当作完全新设计。核心未知是父摘要滞后是否误导任务路由，需事实反转问题而不是命中数量检验。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[openviking/storage/viking_fs/_semantic.py:40-63](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/viking_fs/_semantic.py#L40-L63)
+
+摘要格式/缺失返回可见未就绪。
+
+<details>
+<summary>查看原文（24行）</summary>
 
 ```text
     async def _read_abstract_file(
@@ -397,57 +493,139 @@ search验证并传递会话、目录与层级。
                     raise mapped from exc
                 raise
         return f"# {uri} [Directory abstract is not ready]"
-
-    async def _read_abstract_for_known_dir(
-        self,
-        uri: str,
-        ctx: Optional[RequestContext] = None,
-    ) -> str:
-        """Read .abstract.md for a directory that is already known to be a directory.
-
-        Bypasses stat() and isDir check. Caller (i.e. _batch_fetch_abstracts)
-        must guarantee that the URI points to a directory.
-        """
-        await self._ensure_access(uri, ctx)
-        real_ctx = self._ctx_or_default(ctx)
-        primary_path = self._uri_to_path(uri, ctx=ctx)
-        for path in self._read_paths(uri, ctx=ctx):
-            if not await self._read_path_visible(uri, path, primary_path, real_ctx):
-                continue
-            try:
-                if not await self._agfs_path_exists(path):
-                    continue
-                return await self._read_abstract_file(path, uri, ctx=ctx)
-            except Exception as exc:
-                if is_not_found_error(exc):
-                    continue
-                raise
 ```
 
 </details>
 
-<a id="research-q03"></a>
+**依据 2 · 源码核查**：[openviking/storage/queuefs/semantic_ops/freshness_policy.py:28-62](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/queuefs/semantic_ops/freshness_policy.py#L28-L62)
 
-<a id="detail-section-19"></a>
+事件计数和比例阈值策略。
 
-### Q03 · 分层摘要的核心前提与部署边界是什么？
+<details>
+<summary>查看原文（35行）</summary>
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+```text
+def decide_parent_refresh(
+    *,
+    l0_body_changed: bool,
+    has_freshness_baseline: bool,
+    total_entries: int,
+    pending_before: int,
+    current_change_count: int,
+    overview_sample_limit: int,
+    refresh_ratio: float,
+    force_refresh: bool = False,
+) -> FreshnessDecision:
+    """Decide whether a parent aggregation should run.
+
+    ``pending_child_changes`` intentionally counts events rather than unique
+    children. For wide directories the equivalent integer threshold is
+    ``ceil(refresh_ratio * total_entries)``; comparing the ratio directly
+    avoids carrying another derived configuration value.
+    """
+
+    if not l0_body_changed or current_change_count <= 0:
+        return FreshnessDecision(FreshnessAction.NOOP, pending_before, total_entries)
+
+    pending_after = pending_before + current_change_count
+    if not has_freshness_baseline:
+        return FreshnessDecision(FreshnessAction.REFRESH_NOW, pending_after, total_entries)
+    if force_refresh or total_entries <= overview_sample_limit:
+        return FreshnessDecision(FreshnessAction.REFRESH_NOW, pending_after, total_entries)
+
+    change_ratio = pending_after / max(total_entries, 1)
+    action = (
+        FreshnessAction.REFRESH_NOW
+        if change_ratio >= refresh_ratio
+        else FreshnessAction.MARK_PENDING
+    )
+    return FreshnessDecision(action, pending_after, total_entries)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[openviking/storage/queuefs/semantic_processor.py:399-430](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/queuefs/semantic_processor.py#L399-L430)
+
+实际处理链调用刷新计划器，锁冲突跳过。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+        parent_ctx = self._ctx_from_semantic_msg(msg)
+        semantic_config = get_openviking_config().semantic
+        try:
+            decision = await plan_abstract_overview_refresh(
+                viking_fs=get_viking_fs(),
+                dir_uri=parent_uri,
+                changed_entries=1,
+                ctx=parent_ctx,
+                l0_body_changed=l0_body_changed,
+                # This helper handles automatic upward propagation only. Manual
+                # refresh/ingest bypasses the threshold for its requested root,
+                # not for every ancestor reached afterwards.
+                force_refresh=False,
+                overview_sample_limit=getattr(semantic_config, "overview_sample_limit", 32),
+                refresh_ratio=getattr(semantic_config, "freshness_refresh_ratio", 0.10),
+                lock_timeout_secs=1.0,
+            )
+        except LockAcquisitionError:
+            logger.info(
+                "Skipping best-effort parent freshness update because sidecars are busy: %s",
+                parent_uri,
+            )
+            return
+
+        if decision.action is not FreshnessAction.REFRESH_NOW:
+            logger.debug(
+                "Parent semantic refresh %s for %s (pending=%d, total=%d)",
+                decision.action.value,
+                parent_uri,
+                decision.pending_after,
+                decision.total_entries,
+            )
+```
+
+</details>
+
+#### 缺口
+
+- 摘要滞后窗口对任务的真实影响未测
+  **影响**：不能声称摘要先读始终节省成本且保持质量
+  **进一步探讨**：修改一条会反转答案的关键文档，测各层可见性、错误选择率与最终结果。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 哪些团队值得承担平台部署与持续维护？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-服务需要Python及大量解析、存储、模型和HTTP依赖；README要求embedding和VLM配置。根仓库是平台，不是可直接安装的DSH bundle，DSH例子另有package与生成式共享代码。最影响贡献的质疑是摘要能否保留足够事实来正确选择原文。摘要过期、丢失限定词或语义误路由会使节约上下文的机制损害任务质量；代码对摘要未就绪作出显式返回，但这不证明摘要与原文始终一致。访问层存在命名空间、ACL与上下文处理，本轮抽读不能证明全平台的多租户隔离。
+有持续语料更新、多个 Agent 需要共享可检查上下文、并能维护服务与模型配置的团队值得受控试用。启动需要 Python>=3.10 及依赖，源码构建还涉及 CMake 和 Rust 构建工具；效果需要可用嵌入、语义处理模型、正确目录与请求身份，以及备份恢复策略。首次投入包括部署、导入和命名整理；持续投入包括摘要生成、检索、存储、错误记忆纠正与访问治理；失败恢复包括队列、索引和摘要一致性检查。现金与人工目前均未知，不输出单位合格任务成本。试用先限定非敏感语料，分别核对 find 与 search、原文追溯、文档变更后的刷新和停用导出；若目录摘要让任务错误，先强制读取原文或回到文件搜索，而不是继续扩大语料。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[pyproject.toml:11-38](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/pyproject.toml#L11-L38)
+**依据 1 · 源码核查**：[pyproject.toml:1-19](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/pyproject.toml#L1-L19)
 
-Python版本、AGPL声明和主要依赖。
+构建依赖和Python版本。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "setuptools-scm>=8.0",
+    "cmake>=3.15",
+    "maturin>=1.0,<2.0",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "openviking"
 dynamic = ["version", "readme"]
@@ -457,194 +635,24 @@ authors = [
     {name = "ByteDance", email = "noreply@bytedance.com"}
 ]
 license = "AGPL-3.0"
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
-    "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-]
+```
+
+</details>
+
+**依据 2 · 源码核查**：[pyproject.toml:31-56](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/pyproject.toml#L31-L56)
+
+服务、模型和解析依赖。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
 dependencies = [
     "aiohttp>=3.13.3",
     "async-timeout>=5.0.1",
     "orjson>=3.11.7",
     "packaging>=24.0",
-    "openviking-sdk>=0.1.15",
-    "pydantic>=2.0.0",
-    "typing-extensions>=4.5.0",
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:127-153](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/README.md#L127-L153)
-
-部署与模型配置条件。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-````text
-<details open>
-<summary><strong>Let your agent deploy it</strong></summary>
-
-```text
-Follow this guide to install and start an OpenViking Server for me:
-
-https://docs.openviking.ai/en/getting-started/04-setup-for-agent
-
-Ask me for the model provider, the models, the workspace directory and whether
-other machines need to reach the server; don't guess. When you ask for the model
-API key, tell me how to hand it over if I'd rather not paste it into this chat,
-and never repeat it back.
-
-When it's running, tell me the server's address and whether auth is turned on.
-```
-
-Your agent will first ask which model provider to use and for its API key.
-
-</details>
-
-<details>
-<summary><strong>Deploy it yourself</strong></summary>
-
-Install OpenViking and run the setup wizard, which configures the models:
-
-```bash
-uv tool install openviking --upgrade && openviking-server init
-````
-
-</details>
-
-**依据 3 · 源码核查**：[openviking/storage/viking_fs/_semantic.py:40-88](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/openviking/storage/viking_fs/_semantic.py#L40-L88)
-
-缺失/格式错误摘要的返回路径。
-
-<details>
-<summary>查看原文（49行）</summary>
-
-```text
-    async def _read_abstract_file(
-        self,
-        path: str,
-        uri: str,
-        ctx: Optional[RequestContext] = None,
-    ) -> str:
-        """Read and decrypt/decode .abstract.md from a known directory path.
-
-        Does NOT perform stat or isDir check -- caller is responsible for
-        ensuring the path points to a directory.
-        """
-        file_path = f"{path}/.abstract.md"
-        try:
-            content_bytes = self._handle_agfs_read(await self._async_agfs.read(file_path))
-            return body_for_preview(self._decode_bytes(content_bytes))
-        except AbstractOverviewFormatError as exc:
-            logger.warning("Malformed directory abstract for %s: %s", uri, exc)
-        except Exception as exc:
-            if not is_not_found_error(exc):
-                mapped = map_exception(exc, resource=uri)
-                if mapped is not None:
-                    raise mapped from exc
-                raise
-        return f"# {uri} [Directory abstract is not ready]"
-
-    async def _read_abstract_for_known_dir(
-        self,
-        uri: str,
-        ctx: Optional[RequestContext] = None,
-    ) -> str:
-        """Read .abstract.md for a directory that is already known to be a directory.
-
-        Bypasses stat() and isDir check. Caller (i.e. _batch_fetch_abstracts)
-        must guarantee that the URI points to a directory.
-        """
-        await self._ensure_access(uri, ctx)
-        real_ctx = self._ctx_or_default(ctx)
-        primary_path = self._uri_to_path(uri, ctx=ctx)
-        for path in self._read_paths(uri, ctx=ctx):
-            if not await self._read_path_visible(uri, path, primary_path, real_ctx):
-                continue
-            try:
-                if not await self._agfs_path_exists(path):
-                    continue
-                return await self._read_abstract_file(path, uri, ctx=ctx)
-            except Exception as exc:
-                if is_not_found_error(exc):
-                    continue
-                raise
-```
-
-</details>
-
-#### 缺口
-
-- 目录摘要更新与原文一致性没有同条件任务结果
-  **影响**：分层读取的质量收益不可量化
-  **进一步探讨**：用新增、删除及事实反转文档测摘要滞后和最终任务误答
-- 仅抽读访问层而非完整隔离审计
-  **影响**：不能把接口存在当跨租户保证
-  **进一步探讨**：围绕身份、peer、资源分享和删除边界构造完整授权矩阵
-
-<a id="research-q04"></a>
-
-<a id="detail-section-20"></a>
-
-### Q04 · 分层读取是否能降低一次合格任务总成本？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-潜在节约来自先读摘要再读少量原文，但摘要生成、向量化、会话抽取、重建索引和人工纠错也消耗资源。应以一批同等合格的问答或Agent任务为单位，计入摄取和维护摊销，不能只比较检索响应token。README列出作者基准的较低token与延迟，但它绑定旧版本、特定模型和任务，本次没有复跑，不能当当前效果。首次部署耗时、不同后端费用和失败恢复投入均未知。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:113-125](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/README.md#L113-L125)
-
-作者基准是特定条件下的声明。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-The memory evaluation used [Doubao 2.0 Pro](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-seed-2-0-pro) as the VLM and [Doubao-embedding-vision-251215](https://console.volcengine.com/ark/region:cn-beijing/model/detail?Id=doubao-embedding-vision) as the embedding model.
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/benchmark-dark.svg">
-  <img alt="Benchmark results. LoCoMo accuracy: OpenClaw 24.20% native vs 82.08% with OpenViking; Hermes 33.38% vs 82.86%; Claude Code 57.21% vs 80.32%. tau2-bench task success: Retail 70.94% vs 77.81%; Airline 54.38% vs 66.25%." src="docs/images/benchmark-light.svg">
-</picture>
-
-- **User memory (LoCoMo)**: with OpenViking, all three agent integrations land at 80–83% accuracy — up from 24–57% on their native memory — while input tokens drop by 34.3–91.0% and query latency by 58.45–66.10%.
-- **Agent experience (tau2-bench)**: experience memory lifts task success by +6.87pp (retail) and +11.87pp (airline) over the same LLM without memory.
-
-## Quick start
-
-Set up an OpenViking server first; if you already have one, skip to [Use it with your agent](#use-it-with-your-agent). Deploying your own needs uv, Python 3.10+ and a model provider with an embedding model and a VLM.
-```
-
-</details>
-
-**依据 2 · 源码核查**：[pyproject.toml:28-65](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/pyproject.toml#L28-L65)
-
-解析、模型、存储/HTTP等依赖说明成本组成。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
-]
-dependencies = [
-    "aiohttp>=3.13.3",
-    "async-timeout>=5.0.1",
-    "orjson>=3.11.7",
-    "packaging>=24.0",
-    "openviking-sdk>=0.1.15",
+    "openviking-sdk>=0.1.17",
     "pydantic>=2.0.0",
     "typing-extensions>=4.5.0",
     "pyyaml>=6.0",
@@ -665,195 +673,44 @@ dependencies = [
     "volcengine-python-sdk[ark]>=5.0.3",
     "fastapi>=0.128.0",
     "uvicorn>=0.39.0",
-    "xxhash>=3.0.0",
-    "rapidfuzz>=3.14,<4",
-    "jinja2>=3.1.6",
-    "tabulate>=0.9.0",
-    "urllib3>=2.7.0",
-    "protobuf>=6.33.5",
-    "pdfminer-six>=20251230",
-    "typer>=0.12.0",
-    "litellm>=1.83.7,<1.91.2",
 ```
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[openviking/service/search_service.py:114-127](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/service/search_service.py#L114-L127)
 
-- 缺少当前提交同任务的摄取、检索与重建成本
-  **影响**：无法判定相对简单文件搜索的单位收益
-  **进一步探讨**：固定语料、模型与正确性门槛，记录摄取摊销、任务费用、人工时间及失败重试
-
-<a id="research-q05"></a>
-
-<a id="detail-section-21"></a>
-
-### Q05 · 能否让摘要附带可检测失效的依赖版本？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是每个目录摘要保存其引用子内容的版本摘要，在原文变化时将摘要标为陈旧，检索优先返回失效提示或回退原文。现有明确摘要文件与未就绪标记提供插入点；相对普通自动重算，新增的是可见的一致性状态，代价是版本维护、额外检查和可能的原文回退成本。最小验证采用事实反转和部分重建故障，与单纯摘要优先方案对照，比较错误路由、最终任务合格率和全生命周期费用。若版本检查成本超过收益且不减少误答，则否定该机制，不把这项推演计作现有贡献。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[openviking/storage/viking_fs/_semantic.py:40-88](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/openviking/storage/viking_fs/_semantic.py#L40-L88)
-
-摘要文件和未就绪返回形成推导基础。
+关键词依赖具体向量后端能力。
 
 <details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-    async def _read_abstract_file(
-        self,
-        path: str,
-        uri: str,
-        ctx: Optional[RequestContext] = None,
-    ) -> str:
-        """Read and decrypt/decode .abstract.md from a known directory path.
-
-        Does NOT perform stat or isDir check -- caller is responsible for
-        ensuring the path points to a directory.
-        """
-        file_path = f"{path}/.abstract.md"
-        try:
-            content_bytes = self._handle_agfs_read(await self._async_agfs.read(file_path))
-            return body_for_preview(self._decode_bytes(content_bytes))
-        except AbstractOverviewFormatError as exc:
-            logger.warning("Malformed directory abstract for %s: %s", uri, exc)
-        except Exception as exc:
-            if not is_not_found_error(exc):
-                mapped = map_exception(exc, resource=uri)
-                if mapped is not None:
-                    raise mapped from exc
-                raise
-        return f"# {uri} [Directory abstract is not ready]"
-
-    async def _read_abstract_for_known_dir(
-        self,
-        uri: str,
-        ctx: Optional[RequestContext] = None,
-    ) -> str:
-        """Read .abstract.md for a directory that is already known to be a directory.
-
-        Bypasses stat() and isDir check. Caller (i.e. _batch_fetch_abstracts)
-        must guarantee that the URI points to a directory.
-        """
-        await self._ensure_access(uri, ctx)
-        real_ctx = self._ctx_or_default(ctx)
-        primary_path = self._uri_to_path(uri, ctx=ctx)
-        for path in self._read_paths(uri, ctx=ctx):
-            if not await self._read_path_visible(uri, path, primary_path, real_ctx):
-                continue
-            try:
-                if not await self._agfs_path_exists(path):
-                    continue
-                return await self._read_abstract_file(path, uri, ctx=ctx)
-            except Exception as exc:
-                if is_not_found_error(exc):
-                    continue
-                raise
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-22"></a>
-
-### Q06 · 什么团队可试用平台，何时简单方案更合适？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议有多会话知识任务、可承担模型与数据服务维护、需要可浏览记忆的团队试用。先用脱敏语料验证导入、目录摘要、检索、原文追溯、纠错和恢复，再以当前人工笔记或简单文件搜索为对照。数据少且全文搜索已够用时，平台依赖和索引维护可能没有额外价值；要求已经证明跨租户隔离或量化节时的团队，应先补足专项证据。根平台研究不代表DSH适配器或所有其他宿主已经通过。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:41-66](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/README.md#L41-L66)
-
-可检查上下文的目标用户与用途。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-````text
-
-## What is OpenViking
-
-OpenViking is an open-source context database for AI agents — one filesystem for everything an agent knows: knowledge, memory, and skills.
-
-Most agent memory is a black box: text goes in, embeddings come out, and nobody can see what was actually stored. OpenViking organizes context as a virtual filesystem under `viking://` instead. Agents navigate it like files — `ls`, `tree`, `read`, `write`, `grep` — and you can open any directory to inspect and edit what your agent knows. Every directory carries a generated summary, so agents can scan summaries first and decide what to read.
-
-<a href="https://studio.openviking.ai" target="_blank" rel="noopener noreferrer">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/studio-filesystem-dark.png">
-    <img src="docs/images/studio-filesystem.png" alt="OpenViking Studio Filesystem: browse personal memories and resources">
-  </picture>
-</a>
-
-[Try OpenViking Studio](https://studio.openviking.ai) in your browser, no installation required. [Self-host Web Studio](web-studio/README.md).
-
-## Why OpenViking
-
-- **One filesystem for knowledge, memory, and skills.** Resources hold documents and code; memories retain user preferences and experience; skills define how to perform tasks — not just extracted facts, but the full context, each with a `viking://` URI for browsing and retrieval. → [Viking URI](https://docs.openviking.ai/en/concepts/04-viking-uri) · [Context types](https://docs.openviking.ai/en/concepts/02-context-types)
-- **Search a directory, not the whole index.** Scope semantic search to a project or memory subtree instead of scanning a flat vector pool. `find` runs a query directly; `search` plans retrieval from session context. → [Retrieval](https://docs.openviking.ai/en/concepts/07-retrieval)
-- **Read the summary before the source.** Generated directory abstracts (L0) and overviews (L1) let agents judge relevance before opening full content (L2). → [Context layers](https://docs.openviking.ai/en/concepts/03-context-layers)
-- **Sessions become files you can read.** Committing a session archives the conversation and extracts memories as Markdown you can inspect, edit, and merge. With VikingBot enabled, `ov compile` organizes source material into a wiki, knowledge graph, or report. → [Sessions](https://docs.openviking.ai/en/concepts/08-session) · [Context compilation](https://docs.openviking.ai/en/context-compilation/01-overview)
-
-[Architecture](https://docs.openviking.ai/en/concepts/01-architecture) · [Design rationale](https://blog.openviking.ai/post/openviking-context-database/)
-
-```
-````
-
-</details>
-
-**依据 2 · 源码核查**：[openviking/service/search_service.py:127-181](https://github.com/volcengine/OpenViking/blob/4ab22a4923452362b60aef2826c2083ce36168d2/openviking/service/search_service.py#L127-L181)
-
-可定义试用的查询与目录范围。
-
-<details>
-<summary>查看原文（55行）</summary>
-
-```text
-        ctx: RequestContext,
-        target_uri: Union[str, List[str]] = "",
-        session: Optional["Session"] = None,
-        limit: int = 10,
-        score_threshold: Optional[float] = None,
-        filter: Optional[Dict] = None,
-        level: Optional[List[int]] = None,
-        image_url: str | list[str] | None = None,
-        events_time_decay_protection: Optional[str] = None,
-        search_type: SearchType = "semantic",
-        context_types: Optional[List[ContextType]] = None,
-    ) -> Any:
-        """Search with session context.
-
-        Args:
-            query: Query string
-            target_uri: Target directory URI(s), supports str or List[str]
-            session: Session object for context
-            limit: Max results
-            score_threshold: Score threshold
-            filter: Metadata filters
-            level: Filter by level (0=abstract, 1=overview, 2=file)
-
-        Returns:
-            FindResult
-        """
-        if search_type == "keywords" and image_url:
-            raise InvalidArgumentError("image_url is not supported when search_type='keywords'")
-        resolved_image_url = await self._resolve_image_url(image_url, ctx)
-        _validate_query(query, resolved_image_url)
-        _reject_system_targets(target_uri)
-        if search_type == "keywords":
-            await self.ensure_keywords_search_supported(ctx)
+    async def ensure_keywords_search_supported(self, ctx: RequestContext) -> None:
+        """Validate keyword-search support at the top-level request boundary."""
         viking_fs = self._ensure_initialized()
+        vector_store = viking_fs._get_vector_store()
+        if not vector_store or not await viking_fs._collection_has_fulltext(
+            vector_store,
+            ctx,
+            supported_modes=("volcengine", "vikingdb"),
+            raise_on_error=True,
+        ):
+            raise InvalidArgumentError(
+                "Keyword search is not supported by the configured vector backend, or full-text "
+                "indexing is not enabled for the content field."
+            )
+```
 
+</details>
+
+**依据 4 · 源码核查**：[openviking/service/search_service.py:187-205](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/service/search_service.py#L187-L205)
+
+会话意图分析影响调用成本和语义。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
         session_info = None
         # Intent off: session_info is unused by VikingFS — skip the archive/message scan.
         if session is not None and self.is_intent_enabled() and not resolved_image_url:
@@ -873,9 +730,88 @@ Most agent memory is a black box: text goes in, embeddings come out, and nobody 
             search_type=search_type,
             context_types=context_types,
         )
-        return result
 ```
 
 </details>
 
-[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
+#### 缺口
+
+- 未有当前部署、恢复演练和合格任务账单
+  **影响**：无法建议无条件持续采用
+  **进一步探讨**：固定服务/模型版本，以代表语料完整记录导入、质量、人工纠错与备份恢复。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何在已有刷新策略上形成真正增量的验证方向？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+未验证假设是把刷新阈值与“改变任务结论的重要性”结合：一般新增仍按现有比例延迟，涉及关键事实反转的文档在读摘要时触发原文回退。当前策略使用子摘要变化事件和数量比例，不能直接识别语义重要性；新增机制必须可解释并避免每次读取都调用模型。最小验证比较比例刷新、全部立即刷新和重要性门控三组，固定变更序列与任务，记录错误路由、最终合格率、摘要生成资源和端到端耗时。若门控漏掉关键反转或资源不低于全部刷新，则推翻优势。此方向不是现有 freshness 函数已经实现的能力，也不从目录结构推断真实需求。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[openviking/storage/queuefs/semantic_ops/freshness_policy.py:41-60](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/queuefs/semantic_ops/freshness_policy.py#L41-L60)
+
+现有阈值以事件数量而非任务重要性为基准。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+    ``pending_child_changes`` intentionally counts events rather than unique
+    children. For wide directories the equivalent integer threshold is
+    ``ceil(refresh_ratio * total_entries)``; comparing the ratio directly
+    avoids carrying another derived configuration value.
+    """
+
+    if not l0_body_changed or current_change_count <= 0:
+        return FreshnessDecision(FreshnessAction.NOOP, pending_before, total_entries)
+
+    pending_after = pending_before + current_change_count
+    if not has_freshness_baseline:
+        return FreshnessDecision(FreshnessAction.REFRESH_NOW, pending_after, total_entries)
+    if force_refresh or total_entries <= overview_sample_limit:
+        return FreshnessDecision(FreshnessAction.REFRESH_NOW, pending_after, total_entries)
+
+    change_ratio = pending_after / max(total_entries, 1)
+    action = (
+        FreshnessAction.REFRESH_NOW
+        if change_ratio >= refresh_ratio
+        else FreshnessAction.MARK_PENDING
+```
+
+</details>
+
+**依据 2 · 源码核查**：[openviking/storage/queuefs/semantic_processor.py:405-414](https://github.com/volcengine/OpenViking/blob/54d4c0fac91fae976325ebed618d7278ff9b5c77/openviking/storage/queuefs/semantic_processor.py#L405-L414)
+
+调用处每次传 changed_entries=1。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+                changed_entries=1,
+                ctx=parent_ctx,
+                l0_body_changed=l0_body_changed,
+                # This helper handles automatic upward propagation only. Manual
+                # refresh/ingest bypasses the threshold for its requested root,
+                # not for every ancestor reached afterwards.
+                force_refresh=False,
+                overview_sample_limit=getattr(semantic_config, "overview_sample_limit", 32),
+                refresh_ratio=getattr(semantic_config, "freshness_refresh_ratio", 0.10),
+                lock_timeout_secs=1.0,
+```
+
+</details>
+
+#### 缺口
+
+- 任务重要性标记和原文门控尚无实现及需求验证
+  **影响**：仅为机制推演，不能计入现有创新评分
+  **进一步探讨**：先收集真实变更引起的错误路由，再做上述三组对照。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

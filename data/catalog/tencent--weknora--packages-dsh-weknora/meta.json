@@ -1,40 +1,61 @@
 {
     "repository": "Tencent/WeKnora",
     "repository_id": 1024118326,
-    "captured_at": "2026-10-24T10:26:52.933Z",
-    "window_start": "2026-09-24T10:26:52.933Z",
-    "stars": 35257,
-    "pushed_at": "2026-10-24T08:55:01Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 35641,
+    "pushed_at": "2026-10-28T03:04:17Z",
     "issues": {
-        "open": 417,
-        "closed": 1105,
-        "created_30d": 322,
-        "closed_30d": 250,
-        "updated_30d": 436
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FWeKnora%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2F5A:34E396:81EDB7:8BBF74:6AE1721F and timestamp 2026-10-28 03:55:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FWeKnora%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3034:3500C5:819B13:8B711F:6AE17221 and timestamp 2026-10-28 03:55:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FWeKnora%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 310C:1E7683:7DA4FB:876907:6AE17222 and timestamp 2026-10-28 03:55:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FWeKnora%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 31E0:347BC7:85A05C:8F71CF:6AE17223 and timestamp 2026-10-28 03:55:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FWeKnora%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32BA:1134C2:7F28A6:88F830:6AE17224 and timestamp 2026-10-28 03:55:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-24T08:55:29.833Z",
+        "captured_at": "2026-10-27T15:55:27.864Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
-        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
-        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "@wxg-prc-cpg/dsh-weknora",
-        "captured_at": "2026-10-24T09:11:34.598Z",
-        "window_start": "2026-09-24",
-        "window_end": "2026-10-23",
-        "downloads_30d": 4785,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40wxg-prc-cpg%2Fdsh-weknora",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 5203,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40wxg-prc-cpg%2Fdsh-weknora",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-21T05:02:22.333Z",
-            "captured_at": "2026-10-24T09:11:34.598Z",
+            "captured_at": "2026-10-27T15:24:06.392Z",
             "source_url": "https://registry.npmjs.org/%40wxg-prc-cpg%2Fdsh-weknora",
             "error": null,
             "latest_version": "0.1.0",

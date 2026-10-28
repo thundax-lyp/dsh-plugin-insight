@@ -1,27 +1,38 @@
 {
     "repository": "Ebony-Vinyl/dsh-our-free-model",
     "repository_id": 1385896447,
-    "captured_at": "2026-10-24T10:26:52.933Z",
-    "window_start": "2026-09-24T10:26:52.933Z",
-    "stars": 40083,
-    "pushed_at": "2026-10-24T06:03:04Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 47121,
+    "pushed_at": "2026-10-28T03:00:15Z",
     "issues": {
-        "open": 270,
-        "closed": 124,
-        "created_30d": 394,
-        "closed_30d": 124,
-        "updated_30d": 394
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-24T08:55:29.833Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
-        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
-        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
-        "latest_error": null
-    }
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AEbony-Vinyl%2Fdsh-our-free-model%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD78:357B63:230DCCC:31D24A1:6AE1725F and timestamp 2026-10-28 03:56:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AEbony-Vinyl%2Fdsh-our-free-model%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CEDC:1408BB:2278530:30FBDCA:6AE17261 and timestamp 2026-10-28 03:56:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEbony-Vinyl%2Fdsh-our-free-model%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D0DC:3A0262:237611A:3247B98:6AE17263 and timestamp 2026-10-28 03:56:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEbony-Vinyl%2Fdsh-our-free-model%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D1D0:3A0262:23763D6:3247F82:6AE17264 and timestamp 2026-10-28 03:56:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEbony-Vinyl%2Fdsh-our-free-model%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2DC:1EA11A:235E251:323B508:6AE17265 and timestamp 2026-10-28 03:56:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
 }

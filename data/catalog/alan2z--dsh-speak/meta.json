@@ -1,33 +1,65 @@
 {
     "repository": "Alan2Z/dsh-speak",
     "repository_id": 1334493734,
-    "captured_at": "2026-10-23T05:06:15.400Z",
-    "window_start": "2026-09-23T05:06:15.400Z",
-    "stars": 18,
-    "pushed_at": "2026-09-26T09:17:08Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 19,
+    "pushed_at": "2026-10-27T15:43:03Z",
     "issues": {
-        "open": 0,
-        "closed": 3,
-        "created_30d": 0,
-        "closed_30d": 1,
-        "updated_30d": 1
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 319E:36A0BF:8289A4:8C590C:6AE17222 and timestamp 2026-10-28 03:55:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3278:1EE918:82DA16:8CA5E6:6AE17224 and timestamp 2026-10-28 03:55:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3378:3515A9:96F008:A0B4D7:6AE17225 and timestamp 2026-10-28 03:55:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 342E:112EA1:80F6A2:8ACB24:6AE17226 and timestamp 2026-10-28 03:55:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 34DC:112EA1:80F74A:8ACBD9:6AE17227 and timestamp 2026-10-28 03:55:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T15:55:27.864Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-speak",
-        "captured_at": "2026-10-23T05:06:23.986Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 1635,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-speak",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 2033,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-speak",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T19:35:28.838Z",
-            "captured_at": "2026-10-23T05:06:23.986Z",
+            "captured_at": "2026-10-27T22:18:54.889Z",
             "source_url": "https://registry.npmjs.org/dsh-speak",
             "error": null,
-            "latest_version": "1.8.2",
-            "latest_published_at": "2026-09-26T08:58:28.647Z",
+            "latest_version": "1.8.4",
+            "latest_published_at": "2026-10-27T15:31:42.590Z",
             "latest_error": null
         }
     }

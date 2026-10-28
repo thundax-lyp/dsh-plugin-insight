@@ -1,53 +1,49 @@
 {
     "repository": "Tencent/BrowserSkill",
     "repository_id": 1276665883,
-    "captured_at": "2026-10-24T10:26:52.933Z",
-    "window_start": "2026-09-24T10:26:52.933Z",
-    "stars": 9474,
-    "pushed_at": "2026-10-23T16:59:28Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 9680,
+    "pushed_at": "2026-10-28T03:52:06Z",
     "issues": {
-        "open": 50,
-        "closed": 108,
-        "created_30d": null,
+        "open": 48,
+        "closed": 115,
+        "created_30d": 47,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20created%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3568:E026B:14255F:168686:6ADC8848 and timestamp 2026-10-24 10:28:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 35CE:E012A:151F67:17810B:6ADC8849 and timestamp 2026-10-24 10:28:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2AF2:1119D7:80A71F:8A7705:6AE1721A and timestamp 2026-10-28 03:55:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3698:E35AF:14938C:16F31B:6ADC884B and timestamp 2026-10-24 10:28:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BD8:1D859C:81ED8C:8BBAFE:6AE1721B and timestamp 2026-10-28 03:55:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-24T08:55:29.833Z",
+        "captured_at": "2026-10-27T15:55:27.864Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "cb189a0da755b0fb01319bb9aec6f939ccbb8cee",
-        "blob_sha": "ad80fe217f81762306d6487e5e5ebca1f403270b",
-        "errors_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
         "latest_error": null
     },
     "npm": {
         "package_name": "@wxg-prc-cpg/browser-skill-dsh-plugin",
-        "captured_at": "2026-10-24T09:11:34.598Z",
-        "window_start": "2026-09-24",
-        "window_end": "2026-10-23",
-        "downloads_30d": 27866,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 32486,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T11:43:40.257Z",
-            "captured_at": "2026-10-24T09:11:34.598Z",
+            "captured_at": "2026-10-27T15:24:06.392Z",
             "source_url": "https://registry.npmjs.org/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
             "error": null,
             "latest_version": "0.3.3",

@@ -1,1 +1,66 @@
-null
+{
+    "repository": "EthanYoQ/Invoice-Downloader",
+    "repository_id": 1170373459,
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 526,
+    "pushed_at": "2026-09-25T10:06:22Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AEthanYoQ%2FInvoice-Downloader%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C348:148C51:22FA3C5:31CE5B0:6AE17251 and timestamp 2026-10-28 03:56:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AEthanYoQ%2FInvoice-Downloader%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C42C:15E58E:21D2658:3030AB6:6AE17253 and timestamp 2026-10-28 03:56:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEthanYoQ%2FInvoice-Downloader%20is%3Aissue%20created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C50A:1F3C3D:235ED8F:322DC19:6AE17254 and timestamp 2026-10-28 03:56:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEthanYoQ%2FInvoice-Downloader%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C5D8:3A0262:2373E8A:3244A0C:6AE17255 and timestamp 2026-10-28 03:56:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEthanYoQ%2FInvoice-Downloader%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C6D8:148C51:22FAF0F:31CF668:6AE17256 and timestamp 2026-10-28 03:56:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T15:55:27.864Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@ethanyoq/dsh-invoice-downloader",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 1348,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40ethanyoq%2Fdsh-invoice-downloader",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-22T09:58:43.632Z",
+            "captured_at": "2026-10-27T15:24:06.392Z",
+            "source_url": "https://registry.npmjs.org/%40ethanyoq%2Fdsh-invoice-downloader",
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-08-23T05:22:36.701Z",
+            "latest_error": null
+        }
+    }
+}

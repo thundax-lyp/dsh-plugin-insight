@@ -12,7 +12,7 @@
 
 > **亮点**：相对手改YAML与上游混合开关，分叉提供模型同步/思考档位职责分离、增删预览和MCP JSON导入，降低操作复杂性的路径明确，收益未测。[Q01](#research-q01)
 
-> **主要限制**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03) 同实例写队列不能防另一Host或手工改同一profile，且MCP双文件并非共同事务。
 
 **本文目录**
 
@@ -91,7 +91,7 @@
 |思考档位同步|解析网关广告字段|真实档位请求兼容|
 |配置恢复|文件备份和原子替换|并发与多文件一致性|
 
-> **思考**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03) 同实例写队列不能防另一Host或手工改同一profile，且MCP双文件并非共同事务。
 
 <a id="detail-section-4"></a>
 
@@ -105,7 +105,7 @@
 
 ### 1.4 主要限制
 
-读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03)
+读取/models广告不是每档真实能力验证；非空不完整列表可删模型，定时分两步写，单文件rename也不保证并发与多文件事务。[Q02](#research-q02) [Q03](#research-q03) 同实例写队列不能防另一Host或手工改同一profile，且MCP双文件并非共同事务。
 
 <a id="detail-section-6"></a>
 
@@ -121,9 +121,9 @@
 
 配置计划、备份及写请求边界有源码支持；真实档位、配置成功率及并发恢复未验证；保护策略假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、lib/client.js、LOCAL-PATCH.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js、LOCAL-PATCH.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：源码级读取打包lib中探测、同步、备份、定时和Origin处理；未逐行审计打包YAML库、全部MCP/凭据/UI代码，未执行。
+- 边界：源码级读取打包lib中探测、同步、备份、定时和Origin处理；未逐行审计打包YAML库、全部MCP/凭据/UI代码，未执行。 本轮固定源码可从本地干净checkout取得；当前目录仓库身份/默认分支接口不可取得，不推断仓库删除或新版状态。补读MCP双文件写入与apply序列化。
 - 下一步：在备份profile中验证MCP连通、代表模型档位调用、并发手改、非空截断和中断恢复；记录错误率、误删与总时间。
 
 **分析版本**
@@ -158,7 +158,7 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/2384418321/dsh-integration-settings/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/2384418321/dsh-integration-settings/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -241,6 +241,64 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [Gi
 - 返回 `{dryRun, wrote, added, updated, skipped, failed[{name,error}], warnings, serverCount, patchFile, mcpFile}`；
   逐条容错，一条都没成功就不落盘；写盘仍走 `writeMcpServers()`（校验 + 备份 + 原子）。
 - URL 查询串/headers 里带凭据时进 `warnings`，提示会明文写进 `cordis.patch.yml`。
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:9121-9166](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9121-L9166)
+
+JSON导入dryRun和部分条目结果，最终进入MCP双文件写入。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+async function importMcpJsonServers(body, env = process.env) {
+  const parsed = parseMcpJsonDocument(body && (body.json !== void 0 ? body.json : body.text));
+  const dryRun = !!(body && body.dryRun);
+  const overwrite = !(body && body.overwrite === false);
+  const current = await readMcpState(env);
+  const list = current.servers.slice();
+  const byName = /* @__PURE__ */ new Map(list.map((s) => [String(s.serverName).toLowerCase(), s]));
+  const added = [];
+  const updated = [];
+  const skipped = [];
+  const failed = [];
+  const warnings = [];
+  for (const name of parsed.names) {
+    let server;
+    try {
+      server = normalizeMcpJsonServer(name, parsed.map[name]);
+    } catch (err) {
+      failed.push({ name: String(name), error: err && err.message ? err.message : String(err) });
+      continue;
+    }
+    const key = server.serverName.toLowerCase();
+    const existing = byName.get(key);
+    if (existing) {
+      if (!overwrite) {
+        skipped.push(server.serverName);
+        continue;
+      }
+      list[list.indexOf(existing)] = server;
+      updated.push(server.serverName);
+    } else {
+      list.push(server);
+      added.push(server.serverName);
+    }
+    byName.set(key, server);
+    warnings.push(...mcpJsonWarnings(server));
+  }
+  if (!added.length && !updated.length) {
+    if (!failed.length && !skipped.length) throw httpError(400, "error.mcp.json", "\u6CA1\u6709\u4EFB\u4F55\u670D\u52A1\u5668\u9700\u8981\u5199\u5165");
+    return { dryRun, wrote: false, added, updated, skipped, failed, warnings, serverCount: list.length, patchFile: current.patchFile };
+  }
+  list.sort((a, b) => String(a.serverName).localeCompare(String(b.serverName)));
+  if (dryRun) {
+    return { dryRun: true, wrote: false, added, updated, skipped, failed, warnings, serverCount: list.length, patchFile: current.patchFile };
+  }
+  const written = await writeMcpServers(list, env);
+  return {
 ```
 
 </details>
@@ -444,7 +502,7 @@ function planModelSync(raw, gatewayModels) {
 
 #### 完整回答
 
-writeFileAtomic先写临时文件再rename并chmod，writeWithBackup保留变更前版本及3份备份，这能降低单文件半写风险。origin门检查loopback/可信Host、跨站Fetch和Origin一致；写操作还要求自定义头及JSON，属于积极边界。不能据此宣称并发事务安全：sync先读取patch和凭据，远端探测后才写patch，expectedDigest检查的是计划摘要，未见在rename前比较整个文件当前摘要或进程锁。手工同时修改或其他配置写入存在覆盖风险，需实验确定。配置涉及patch、MCP JSON、credentials和schedule，单文件原子不等于多文件提交/回滚；本轮未审计全部导入写入链和密钥生命周期。
+writeFileAtomic先写临时文件再rename并chmod，writeWithBackup保留变更前版本及3份备份，这能降低单文件半写风险。origin门检查loopback/可信Host、跨站Fetch和Origin一致；写操作还要求自定义头及JSON，属于积极边界。不能据此宣称并发事务安全：sync先读取patch和凭据，远端探测后才写patch，expectedDigest检查的是计划摘要，同一apply实例用serialize将写HTTP与定时任务排队；但未见跨进程锁或rename前比较整个文件当前摘要。手工同时修改或其他配置写入存在覆盖风险，需实验确定。配置涉及patch、MCP JSON、credentials和schedule，单文件原子不等于多文件提交/回滚；本轮未审计全部导入写入链和密钥生命周期。 writeMcpServers先写mcp.json再写patch，后一步失败可留下两份不一致；这是具体的多文件中断边界，不把同实例串行说成跨宿主事务。
 
 #### 证据与依据
 
@@ -541,6 +599,82 @@ function validateMutation(req) {
   if (!type.toLowerCase().includes("application/json")) {
     throw httpError(415, "error.proto.contentType", "\u5199\u64CD\u4F5C\u5FC5\u987B\u4F7F\u7528 application/json");
   }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:9322-9357](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9322-L9357)
+
+同一apply实例序列化HTTP变更与定时任务；不提供跨实例锁。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+function apply(ctx) {
+  setHostContext(ctx);
+  let queue = Promise.resolve();
+  const serialize = (task) => {
+    const next = queue.then(task, task);
+    queue = next.catch(() => {
+    });
+    return next;
+  };
+  const sweep = () => serialize(() => runScheduledUnlock(process.env)).catch(() => {
+  });
+  ctx.effect(
+    () => {
+      const timer = setInterval(() => {
+        sweep();
+      }, SCHEDULER_TICK_MS);
+      if (typeof timer.unref === "function") timer.unref();
+      sweep();
+      return () => clearInterval(timer);
+    },
+    `${PLUGIN_NAME}: scheduled thinking unlock`
+  );
+  ctx.effect(
+    () => ctx.webServer.register({
+      kind: "prefix",
+      path: API_PREFIX,
+      handler: (req, res) => {
+        const method = req.method || "GET";
+        const run = method === "GET" || method === "HEAD" ? handle(ctx, req, res) : serialize(() => handle(ctx, req, res));
+        Promise.resolve(run).catch((err) => fail(res, err));
+      }
+    }),
+    `${PLUGIN_NAME}: API route`
+  );
+}
+export {
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/index.js:7757-7772](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7757-L7772)
+
+MCP JSON先写、patch后写，没有共同提交点。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+async function writeMcpServers(servers, env = process.env) {
+  const p = paths(env);
+  const list = (Array.isArray(servers) ? servers : []).map(validateServer);
+  const seen = /* @__PURE__ */ new Set();
+  for (const server of list) {
+    const key = server.serverName.toLowerCase();
+    if (seen.has(key)) throw httpError(400, "error.mcp.duplicate", `serverName \u91CD\u590D\uFF1A${server.serverName}`);
+    seen.add(key);
+  }
+  const patchText = await readTextFile(p.patchFile, "");
+  const nextPatch = applyManagedBlock(patchText, renderManagedBlock(list));
+  validatePatchText(nextPatch);
+  validatePatchText(patchText === nextPatch ? patchText : nextPatch);
+  await writeFileAtomic(p.mcpFile, JSON.stringify({ version: 1, servers: list }, null, 2) + "\n", 384);
+  await writeWithBackup(p.patchFile, nextPatch, 384, 3);
+  return { servers: list, patchFile: p.patchFile, mcpFile: p.mcpFile };
 ```
 
 </details>

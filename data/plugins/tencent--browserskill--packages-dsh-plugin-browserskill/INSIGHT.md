@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[b63f551](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill)
+源码版本：[70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9,474](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C474&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 27,866](https://img.shields.io/static/v1?label=npm+30d&message=27%2C866&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
+[![GitHub ★ 9,680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 32,486](https://img.shields.io/static/v1?label=npm+30d&message=32%2C486&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
 <!-- END META -->
 
-> **功能**：为 DeepSeek Harness 提供 BrowserSkill 浏览器工具、任务预览与截图展示。
+> **功能**：将 BrowserSkill 浏览器自动化接入 DSH 模型工具和 Web 任务预览
 
-> **亮点**：六个域工具保留私有操作的取消、并发与呈现语义，配合技能按需显露和会话清理，使 DSH 原生接入比 shell 拼接更可管理；浏览器执行属于根产品。[Q02](#research-q02) [Q03](#research-q03)
+> **亮点**：将域工具、按需技能、观察状态和启动清理统一接入DSH，并保留操作级队列与取消语义，提供超出shell拼接的管理机制。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：CLI、扩展与插件需要协同升级；共享标签页的上下文协议不能代替用户对网页业务操作的授权，也不提供业务回滚。[Q03](#research-q03)
+> **主要限制**：三层版本与技能显露都影响真正可用性，FIFO和取消不回滚网页提交，进程级工具显露也不是权限隔离。[Q03](#research-q03)
 
 **本文目录**
 
@@ -20,16 +20,16 @@
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
   - [1.3 工程亮点](#detail-section-4)
-  - [1.4 使用建议](#detail-section-5)
-  - [1.5 核查说明与分析版本](#detail-section-6)
-- [2 未来设计假设（未验证）](#detail-section-7)
-- [3 辅助信息](#detail-section-8)
-- [4 研究问题与完整回答](#detail-section-9)
-  - [Q01 · DSH 用户为什么需要独立适配层，而非直接运行 bsk？](#detail-section-10)
-  - [Q02 · 六工具如何分发并维护会话、取消和 UI？](#detail-section-11)
-  - [Q03 · 压缩工具数量是否保留控制边界，最重要限制是什么？](#detail-section-12)
-  - [Q04 · 怎样在可控任务试用，预算和收益如何判断？](#detail-section-13)
-  - [Q05 · 会话队列设计有什么价值，能推导怎样的工具设计实验？](#detail-section-14)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 已有 bsk CLI 的 DSH 用户为什么还需要原生插件？](#detail-section-11)
+  - [Q02 · 六个域工具和观察如何实际调用浏览器？](#detail-section-12)
+  - [Q03 · 队列、取消和可见窗口是否等于业务操作可回滚？](#detail-section-13)
+  - [Q04 · 何时值得试用，并能形成什么可证伪改进？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,11 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：用户在 DSH 对话中处理网页资料、表单或调试任务，希望模型能调用浏览器且人在 Web UI 看到任务进展。
+> **用途**：面向 DSH Web 用户，把 BrowserSkill 浏览器操作接为原生工具，并呈现可接管的任务进度。
 
-用户在 DSH 对话中处理网页资料、表单或调试任务，希望模型能调用浏览器且人在 Web UI 看到任务进展。直接 shell 调用 bsk 已可完成浏览器操作，适配层的交付物是模型可见工具、技能指导和前端呈现。该包不重新实现浏览器执行引擎，实际浏览器登录、扩展和 CLI 仍由根 BrowserSkill 产品承担。包清单发布的是 lib、skill 和 cordis.patch.yml，根 package.json 为私有工作区，二者不能视为同一个 npm 发布单元。
-
-替代基线是在 DSH shell 中直接调用 bsk --json；本层增加工具协议、技能显露及前端预览，底层操作能力并未新造。
+直接shell调用bsk已能执行浏览器工作；本包增量为模型接口、原生呈现与资源管理，不重新实现浏览器引擎。
 
 <a id="detail-section-3"></a>
 
@@ -53,82 +51,97 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| bsk_session | 启动、列出、停止和同步插件拥有的浏览器会话 | 共享页动作需观察得到的 contextId，一次上下文对应一次行动 |
-| bsk_page | 导航、前进后退、重载和等待条件 | 需有效会话，页面等待有超时 |
-| bsk_inspect | 观察、截图、HTML、网络/控制台、提取和录制 | extract 仅已加载内容；debug replay 可产生真实请求副作用 |
-| bsk_interact | 点击、输入、按键、脚本和文件传输 | 目标与参数按 action 校验，已提交动作不因取消回滚 |
-| bsk_tabs | 创建选择标签页、借用与归还用户页 | 使用已发现 tabId，任务结束及时归还 |
-| bsk_assist | 调整窗口/设备并请求人类帮助 | 登录验证需人工，completionCriteria 是等待条件而非授权 |
+| 六域浏览器工具 | 按action调用浏览器 | CLI和扩展就绪，依操作校验参数 |
+| browser-skill | 按需显露工具与指导 | 默认需要技能服务 |
+| Web观察 | 预览、停止和接管入口 | webServer与客户端依赖 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| bsk CLI 与连接的浏览器扩展 | 必需 | 实际浏览器执行 | 工具探测告警或运行失败 |
-| DSH tools 与兼容 peer | 必需 | 工具注册与宿主协议 | 加载或协议兼容未知 |
-| skills 服务 | 默认 lazyTools 路径需要 | 技能调用后揭示工具 | 无可用调用入口时需核对 eager 配置 |
-| Web UI / webServer | 预览需要 | 观察路由和截图呈现 | headless 可保留工具，不能推断有 UI |
+| bsk CLI与浏览器扩展 | 必需 | 真正执行浏览器命令 | 包加载仍可能首次调用失败 |
+| DSH peer与tools | 必需 | 注册与事件语义 | 需匹配版本 |
+| skills服务 | 默认延迟工具必需 | 初始能力发现 | 缺少时检查lazyTools=false |
+| webServer及客户端UI | 预览必需 | SSE与缩略图 | headless保留工具但无同样界面 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 用户先更新 bsk CLI 与扩展并检查连接 | 0.3.3 无旧工具别名，先迁移策略 |
-| 加载 | 用户 dsh plugin --profile web add @wxg-prc-cpg/browser-skill-dsh-plugin | 确保 DSH 进程 PATH 有 bsk 或配置 bskPath |
-| 揭示 | 用户在对话调用 /browser-skill | 默认 lazyTools 后出现 bsk_*；未出现检查技能服务 |
-| 任务 | 模型启动会话、观察后交互，Web UI 呈现预览 | 共享页每步先 sync；错误先复核页面状态 |
-| 结束 | 模型 stop 会话，用户检查归还与窗口状态 | 归档/卸载触发清理；清理失败需继续核对 |
+| 准备 | 用户安装CLI、扩展和插件 | 连接可用而非仅版本探针成功 |
+| 显露 | 模型/用户加载browser-skill | 六域工具进入目录 |
+| 操作 | 模型观察后执行，人工接管 | 测试页面结果可核对 |
+| 结束 | 归档或卸载触发清理 | 会话及借用页状态明确 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | CLI、浏览器和宿主资源；金额未知 | 安装三层并迁移 bsk_* 策略；耗时未知 | 0.3.3 需先更新 CLI 与扩展 |
-| 持续使用 | 模型回合、浏览器与缩略图采集；金额未知 | 核对预览和网页结果；频率未知 | 队列控制同会话操作，不是业务事务 |
-| 失败恢复 | 重试命令和会话清理资源；金额未知 | 检查启动日志、归档清理和已发生动作；耗时未知 | 取消有分平台宽限，已提交网页动作不可回滚 |
+| 首次使用 | CLI/浏览器/宿主资源未知 | 三层安装与策略配置未知 | 不含实际兼容验收 |
+| 持续使用 | 模型、截图和浏览器资源未知 | 页面适配及结果复核未知 | 队列不等于业务事务 |
+| 失败恢复 | 重试及残留会话资源未知 | 核对日志和已发生动作 | 不盲目重复提交 |
+| 退出 | 清理状态资源未知 | 归还借用页并确认停止 | 崩溃恢复未执行 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 模型接口 | 六工具将 action 分发到保留原控制规则的私有操作 | 相比多个独立 schema 的 token 与选择错误率未测 |
-| 任务可见性 | ObservationService 与 WebServer 注入可形成预览路径 | 真实 DSH Web 视觉呈现未验收 |
-| 退出管理 | 启动日志、会话 FIFO 和卸载清理存在实现 | 异常杀进程后是否全部收敛未执行验证 |
+| 原生接入 | 域工具真实路由与注册回滚 | token及动作错误净变化 |
+| 任务可见 | SSE快照与观察通道 | 当前Web视觉和接管体验 |
+| 执行管理 | FIFO、取消和启动日志 | 异常下端到端收敛 |
 
-> **思考**：CLI、扩展与插件需要协同升级；共享标签页的上下文协议不能代替用户对网页业务操作的授权，也不提供业务回滚。[Q03](#research-q03)
+> **思考**：三层版本与技能显露都影响真正可用性，FIFO和取消不回滚网页提交，进程级工具显露也不是权限隔离。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：六个域工具保留私有操作的取消、并发与呈现语义，配合技能按需显露和会话清理，使 DSH 原生接入比 shell 拼接更可管理；浏览器执行属于根产品。[Q02](#research-q02) [Q03](#research-q03)
+> **亮点**：将域工具、按需技能、观察状态和启动清理统一接入DSH，并保留操作级队列与取消语义，提供超出shell拼接的管理机制。[Q01](#research-q01) [Q02](#research-q02)
 
-KeyedExecutor 将同会话操作和观察采集排成 FIFO，失败尾链不拒绝，已排队任务取消时仍等待前驱收敛，避免后续任务穿越运行中的任务。资源所有权在注册前建立，加载失败也可进入清理，适合可产生外部资源的插件借鉴；移植时需为外部后端提供真实取消与收敛语义。
+FIFO即使取消仍等待前驱、先拥有资源再注册、将结构化输出和观察分开，值得资源型插件借鉴；移植需外部执行端确实支持取消收敛。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
-### 1.4 使用建议
+### 1.4 主要限制
 
-已用 DSH Web 的用户可从只读网页或测试表单试用，先核对 CLI 和扩展版本、技能显露、任务预览及结束清理，再扩展到实际工作流。[Q04](#research-q04)
+三层版本与技能显露都影响真正可用性，FIFO和取消不回滚网页提交，进程级工具显露也不是权限隔离。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
-### 1.5 核查说明与分析版本
+### 1.5 使用建议
 
-**核查状态**：已检查源码。
-
-- 已检查源码，固定提交 [b63f5512](https://github.com/Tencent/BrowserSkill/tree/b63f551209caba4d7debfc12215b2b7c118bad49)；研究范围为packages/dsh-plugin-browserskill的入口和本文列出的关键机制。
-- 未安装、未运行目标代码或测试，未完成真实宿主与模型任务验收。
-- 固定提交的源码级研究，覆盖上述核心入口与机制；不是全项目所有功能的穷尽核查。
-- 根项目工程统计按工具现有规则记录 JS/TS 与 Markdown，Go/Rust 后端语义来自列出的人工源码核查，不把这些统计当作全语言 LOC。
+已用DSH Web者先做只读任务和可重置表单，验收技能显露、预览与停止清理；无法识别副作用或重复动作时暂停并回CLI或人工。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
-## 2 未来设计假设（未验证）
+### 1.6 核查说明与分析版本
 
-未验证假设是域工具加按需技能能减少上下文而不损害任务成功率，以非法 action、token 和接管次数对照检验。[Q05](#research-q05)
+**核查状态**：已检查源码。
+
+工具、runner、观察及清理接线有固定源码支持；真实界面、业务效果和异常收敛未验收，接口收益为假设。
+
+- 已检查：作者 README、包清单、源码路径 packages/dsh-plugin-browserskill/package.json、packages/dsh-plugin-browserskill/src/index.ts、packages/dsh-plugin-browserskill/src/browser-tools.ts、packages/dsh-plugin-browserskill/src/runner.ts、packages/dsh-plugin-browserskill/src/observation-http.ts、packages/dsh-plugin-browserskill/src/lazy-tools.ts、packages/dsh-plugin-browserskill/src/queue.ts 及固定范围 inventory；组件：packages/dsh-plugin-browserskill。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：仅原生DSH子包，核查index、域工具映射、延迟注册、runner、队列、观察HTTP和package；根CLI/扩展独立研究。
+- 下一步：未安装或运行目标代码，未执行测试和宿主验收；真实Web呈现、取消后业务状态与总成本仍需同版本记录。
+
+**分析版本**
+
+- **仓库**：[Tencent/BrowserSkill](https://github.com/Tencent/BrowserSkill)
+- **版本号**：0.3.3（[固定提交 70681a2](https://github.com/Tencent/BrowserSkill/tree/70681a2d6494f396351a331207099110f66762bc)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
+
+## 2 未来设计假设（未验证）
+
+<a id="innovation"></a>
+
+未验证假设是域工具与按需技能减少初始上下文而不损害选择正确性。以同模型同任务比较全量操作schema和六域接口，记录首轮token、非法action、合格率与接管次数；错误抵消收益即推翻。[Q04](#research-q04)
+
+未安装或运行目标代码，未执行测试和宿主验收；真实Web呈现、取消后业务状态与总成本仍需同版本记录。
+
+<a id="detail-section-9"></a>
 
 ## 3 辅助信息
 
@@ -137,145 +150,62 @@ KeyedExecutor 将同会话操作和观察采集排成 FIFO，失败尾链不拒�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 10 | 993 | — | — | 8546 |
+| .md | source | 11 | 1043 | — | — | 9041 |
 | .mjs | source | 3 | 172 | 142 | 24 | — |
-| .ts | source | 33 | 8615 | 7417 | 833 | — |
-| .tsx | source | 4 | 1467 | 1315 | 68 | — |
-| .ts | test | 21 | 8996 | 8321 | 273 | — |
-| .tsx | test | 5 | 1551 | 1417 | 39 | — |
+| .ts | source | 33 | 8730 | 7531 | 833 | — |
+| .tsx | source | 4 | 1503 | 1335 | 82 | — |
+| .ts | test | 21 | 9067 | 8388 | 274 | — |
+| .tsx | test | 5 | 1616 | 1477 | 41 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 50](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=50&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 48](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=48&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=47&color=737b86&logo=github)](https://github.com/Tencent/BrowserSkill/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
-暂未获取：近30天新建、近30天关闭。
+暂未获取：近30天关闭。
 
-统计日期：2026-10-24。
-
-<a id="detail-section-9"></a>
-
-## 4 研究问题与完整回答
-
-**插件研究总目标**：BrowserSkill DSH 插件 如何在明确边界内形成可采用能力，且贡献与依赖如何区分？
-
-<a id="research-q01"></a>
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
-### Q01 · DSH 用户为什么需要独立适配层，而非直接运行 bsk？
+## 4 研究问题与完整回答
 
-**研究主题**：场景与需求
+**插件研究总目标**：已有 bsk CLI 的 DSH 用户为什么还需要原生插件？
+
+<a id="research-q01"></a>
+
+<a id="detail-section-11"></a>
+
+### Q01 · 已有 bsk CLI 的 DSH 用户为什么还需要原生插件？
+
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-用户在 DSH 对话中处理网页资料、表单或调试任务，希望模型能调用浏览器且人在 Web UI 看到任务进展。直接 shell 调用 bsk 已可完成浏览器操作，适配层的交付物是模型可见工具、技能指导和前端呈现。该包不重新实现浏览器执行引擎，实际浏览器登录、扩展和 CLI 仍由根 BrowserSkill 产品承担。包清单发布的是 lib、skill 和 cordis.patch.yml，根 package.json 为私有工作区，二者不能视为同一个 npm 发布单元。
+用户是在 DSH 对话中处理网页资料、测试表单或调试请求，希望模型工具和 Web 界面同步呈现任务的人。原办法是 shell 执行 bsk，底层同样可以操作浏览器；合格交付应是指定会话的页面结果、人工可接管的进度和可解释清理状态。插件增加六个域工具、按需技能、观察通道和会话资源生命周期，浏览器执行、登录态和扩展属于根产品，不算适配层贡献。只需要一次脚本或已经能正确用 CLI 的 headless 用户，原生预览增量可能不足以抵偿宿主耦合。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:1-18](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/package.json#L1-L18)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:1-4](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/package.json#L1-L4)
 
-包身份与 0.3.3 版本。
-
-<details>
-<summary>查看原文（18行）</summary>
+作者定位原生模型工具插件。
 
 ```text
 {
   "name": "@wxg-prc-cpg/browser-skill-dsh-plugin",
   "description": "DeepSeek Harness tool plugin that exposes BrowserSkill browser automation (bsk_* tools) to the model",
   "version": "0.3.3",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tencent/BrowserSkill.git",
-    "directory": "packages/dsh-plugin-browserskill"
-  },
-  "homepage": "https://github.com/Tencent/BrowserSkill/tree/main/packages/dsh-plugin-browserskill#readme",
-  "bugs": {
-    "url": "https://github.com/Tencent/BrowserSkill/issues"
-  },
 ```
 
-</details>
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:88-110](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L88-L110)
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:32-67](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/package.json#L32-L67)
-
-发布文件和 DSH 客户端入口。
+创建runner、会话注册、队列、观察与启动日志。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-    },
-    "./client": {
-      "default": "./lib/client.cjs"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib",
-    "skill",
-    "cordis.patch.yml",
-    "LICENSE"
-  ],
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "inject": [
-        "@deepseek-ai/dsh-client-ui-tool",
-        "@deepseek-ai/dsh-client-ui-layout"
-      ],
-      "external": [
-        "@deepseek-ai/dsh-client-ui-primitives"
-      ]
-    }
-  },
-  "scripts": {
-    "build": "node scripts/build-client-css.mjs && node scripts/build-skill-content.mjs && tsdown",
-    "typecheck": "pnpm run build:skill && tsc --noEmit",
-    "test": "pnpm run build:css && pnpm run build:skill && vitest run",
-    "build:css": "node scripts/build-client-css.mjs",
-    "build:skill": "node scripts/build-skill-content.mjs",
-    "prepack": "pnpm run build",
-    "lint:publint": "publint"
-  },
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-11"></a>
-
-### Q02 · 六工具如何分发并维护会话、取消和 UI？
-
-**研究主题**：功能与机制、依赖、兼容与流程
-
-#### 完整回答
-
-apply 建立 runner、SessionRegistry、KeyedExecutor、ObservationService 和磁盘启动日志，注册 browser-skill；默认 lazyTools 只在技能调用后显露工具，缺少技能服务的组合需检查是否能揭示。六工具以 action 找到私有操作定义，传递 contextId 和 dependsOn，再复用操作级渲染与并发规则。runner 使用参数数组 spawn bsk 并追加 --json，转换错误、超时与取消。webServer 注入后才注册观察路由，headless 组合不因此阻塞工具。需要外部 bsk、已连接扩展和兼容 DSH peer，安装包不等于 CLI 已就绪。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:86-166](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/index.ts#L86-L166)
-
-真实装配、按需工具和路由。
-
-<details>
-<summary>查看原文（81行）</summary>
-
-```text
-    lazyTools: config.lazyTools ?? true,
-  };
   const runner = options.runnerFactory?.(resolved.bskPath) ?? createBskRunner(resolved.bskPath);
   const registry = new SessionRegistry(resolved.maxSessions);
   const queue = new KeyedExecutor();
@@ -291,6 +221,81 @@ apply 建立 runner、SessionRegistry、KeyedExecutor、ObservationService 和�
     },
   });
 
+  const deps: ToolDeps = { ctx, runner, registry, config: resolved, observation, queue };
+  const journal =
+    options.startJournal ??
+    new DiskStartJournal(
+      resolved.sessionStateDirectory ?? defaultStartJournalDirectory(resolved.bskPath),
+    );
+  if (journal instanceof DiskStartJournal) journal.recover();
+  const starts = (deps.starts = new SessionStarts(deps, journal));
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-153](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L131-L153)
+
+按需技能、工具与Web观察挂载。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+  // Progressive disclosure of the BSK agent skill (catalog entry resident,
+  // body on demand) through the official skill seam; silent no-op when the
+  // composition lacks it. With lazyTools on, the skill entry is initially the
+  // ONLY model-visible advertisement — the tool suite reveals itself on a
+  // successful skill invocation (or a session whose history already has one).
+  disposers.push(registerBskSkill(ctx));
+  // A same-name CLI skill left in ~/.agents is discovered in the nearer preset
+  // layer and shadows the global registration above. Re-register through every
+  // exact agent context at startup so DSH always loads the bsk_* protocol
+  // instructions; the shared CLI skill remains untouched for other agents.
+  disposers.push(armAgentScopedBskSkill(ctx));
+  const registerSuite = () => registerBrowserTools(deps);
+  disposers.push(resolved.lazyTools ? armLazyTools(ctx, registerSuite) : registerSuite());
+  // Route registration rides ctx.inject: the webServer service may be provided
+  // AFTER this plugin loads, and in headless compositions it never appears (the
+  // callback simply never runs, leaving the rest of the plugin unaffected).
+  ctx.inject(["webServer"], (injected) => {
+    return registerObservationRoutes(injected, observation, starts);
+  });
+  // Reap a conversation's browsers when the conversation itself is archived:
+  // archived sessions are hidden from every surface, so their Agent Windows
+  // would otherwise linger unreachable until idle timeout or unload.
+  disposers.push(armArchiveCleanup(ctx, starts));
+```
+
+</details>
+
+#### 缺口
+
+- 没有同任务shell与原生工具的选择错误、人工接管和总时间对照
+  **影响**：无法证明原生界面提高合格率
+  **进一步探讨**：在相同模型和测试站点比较工具选择、任务正确率及接管次数。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 六个域工具和观察如何实际调用浏览器？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+apply 创建 bsk runner、SessionRegistry、KeyedExecutor、ObservationService 和磁盘启动日志，先登记资源清理再执行注册，加载失败也能进入清理。browser-tools 用 action 映射私有操作，非法 action 直接报错，contextId 与 dependsOn 随参数传入；注册前核查缺失与不可达操作，逐项注册失败会撤销本次已注册项，但注释明确这不是原子发布。runner 用参数数组 spawn bsk 并附 --json，不把参数拼成 shell 命令。Web 观察路由在 webServer 出现后注册，SSE 用快照重新同步，headless 不依赖该服务。默认 lazyTools 在技能成功调用或历史恢复后才注册工具；注册是进程生命周期级显露，不是每个 Agent 独立权限边界。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:103-148](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L103-L148)
+
+启动日志与先清理后注册顺序。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
   const deps: ToolDeps = { ctx, runner, registry, config: resolved, observation, queue };
   const journal =
     options.startJournal ??
@@ -337,36 +342,25 @@ apply 建立 runner、SessionRegistry、KeyedExecutor、ObservationService 和�
   // callback simply never runs, leaving the rest of the plugin unaffected).
   ctx.inject(["webServer"], (injected) => {
     return registerObservationRoutes(injected, observation, starts);
-  });
-  // Reap a conversation's browsers when the conversation itself is archived:
-  // archived sessions are hidden from every surface, so their Agent Windows
-  // would otherwise linger unreachable until idle timeout or unload.
-  disposers.push(armArchiveCleanup(ctx, starts));
-
-  // Non-blocking install probe: warn early when bsk is missing instead of
-  // failing the first tool call with a bare spawn error. Uses --version on
-  // purpose — it answers without starting the daemon (`bsk status` would
-  // ensure-spawn one, an expensive side effect for a probe).
-  runner.run(["--version"], { timeoutMs: 10_000 }).then(
-    () => {},
-    (error: unknown) => {
-      const detail = error instanceof Error ? error.message : String(error);
-      console.warn(
-        `[${name}] bsk probe failed (${detail}); browser tools will report install guidance until the bsk CLI is available`,
-      );
-    },
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:66-139](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/browser-tools.ts#L66-L139)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:59-102](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L59-L102)
 
-action 分发与上下文传递。
+action解析、contextId和依赖区域。
 
 <details>
-<summary>查看原文（74行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
+function operationArgs(args: unknown): Record<string, unknown> {
+  const { action: _action, ...rest } = args as Record<string, unknown>;
+  return rest;
+}
+
+function definitionFor(
+  definitions: ReadonlyMap<string, ToolDefinition>,
   actions: Record<string, string>,
   action: unknown,
 ): ToolDefinition {
@@ -404,6 +398,164 @@ function defineBrowserTool(
         description:
           "Shared-tab actions require the context_id you actually received from bsk_session sync. One context authorizes one action; never substitute a newer context into an old plan.",
       },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:450-496](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L450-L496)
+
+操作闭包检查及注册回滚。
+
+<details>
+<summary>查看原文（47行）</summary>
+
+```text
+function indexOperations(definitions: ToolDefinition[]): ReadonlyMap<string, ToolDefinition> {
+  const indexed = new Map<string, ToolDefinition>();
+  for (const definition of definitions) {
+    if (indexed.has(definition.name)) {
+      throw new Error(`duplicate browser operation definition: ${definition.name}`);
+    }
+    indexed.set(definition.name, definition);
+  }
+
+  const routed = new Set(BROWSER_TOOL_SPECS.flatMap((spec) => Object.values(spec.actions)));
+  const missing = [...routed].filter((name) => !indexed.has(name));
+  const unreachable = [...indexed.keys()].filter((name) => !routed.has(name));
+  if (missing.length > 0 || unreachable.length > 0) {
+    throw new Error(
+      [
+        missing.length > 0 ? `missing operations: ${missing.join(", ")}` : undefined,
+        unreachable.length > 0 ? `unreachable operations: ${unreachable.join(", ")}` : undefined,
+      ]
+        .filter(Boolean)
+        .join("; "),
+    );
+  }
+  return indexed;
+}
+
+/** Register all six tools or roll back this attempt; never remove foreign entries. */
+export function registerBrowserTools(deps: ToolDeps): () => void {
+  const operations = indexOperations(createBrowserOperationDefinitions(deps));
+  // Validate every definition before publishing any schema. The host emits
+  // changes per registration; this is rollback, not an atomic registry update.
+  const definitions = BROWSER_TOOL_SPECS.map((spec) => defineBrowserTool(spec, operations));
+  const disposers: (() => void)[] = [];
+  for (const definition of definitions) {
+    try {
+      disposers.push(deps.ctx.tools.register(definition));
+    } catch (cause) {
+      const detail = cause instanceof Error ? cause.message : String(cause);
+      const failure = new Error(`Failed to register ${definition.name}: ${detail}`, { cause });
+      try {
+        disposeAll(disposers);
+      } catch (cleanupError) {
+        throw new AggregateError([failure, cleanupError], failure.message, { cause });
+      }
+      throw failure;
+    }
+  }
+  return () => disposeAll(disposers);
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:143-155](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/runner.ts#L143-L155)
+
+参数数组spawn。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+      return new Promise<BskRunResult>((resolve, reject) => {
+        let child: ChildProcess;
+        try {
+          child = spawnImpl(
+            bskPath,
+            [...args, "--json"],
+            windows
+              ? {
+                  windowsHide: true,
+                  env: { ...process.env, BSK_CANCEL_ON_STDIN_CLOSE: "1" },
+                }
+              : undefined,
+          );
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:8-22](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/observation-http.ts#L8-L22)
+
+SSE快照同步及headless边界。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+ *   GET  /bsk-observation/state      → one-time { sessions, available } read
+ *   GET  /bsk-observation/events     → SSE snapshot, then ObservationEvent increments
+ *                                    (on every connection, including reconnects)
+ *                                    ?thumbnails=0: state only; =1: request screenshots
+ *                                    Omitted parameter defaults to screenshots.
+ *   POST /bsk-observation/interrupt  → body {sessionId?} → {interrupted: boolean}
+ *   POST /bsk-observation/stop       → body {sessionId} → {stopped: boolean}
+ *   GET  /bsk-observation/thumbnail/<attachmentId> → image bytes
+ *
+ * Live clients initialize/resynchronize from the SSE snapshot; a separate
+ * /state read has no ordering guarantee relative to the stream and does not
+ * request screenshots. Closing an SSE connection releases its screenshot demand.
+ *
+ * Routes exist only when a webServer service is mounted (web composition);
+ * headless deployments skip registration entirely.
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
+
+默认延迟注册与进程生命周期显露。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+/**
+ * Lazy tool-schema injection ("progressive disclosure", final stage): with
+ * `lazyTools` on (the default), the six browser tool schemas stay OUT of the
+ * system prompt until the `browser-skill` skill has actually been invoked —
+ * the skill catalog entry is the only advertisement. A successful model
+ * invocation or a claimed user `/browser-skill` gesture reveals
+ * the whole suite for the rest of the process lifetime; repeated invocations
+ * are idempotent no-ops. Session resume is covered by scanning durable
+ * session events for a past successful invocation (tool/call + tool/result
+ * pair, or a skill-invocation sourced message) when a session is entered or
+ * first observed after a reload. Later events are consumed incrementally.
+ *
+ * Host lifecycle boundaries:
+ * - `tools/post-execute` can turn a successful skill load into an actionable
+ *   error before its result reaches the model. `tools/result` is too late.
+ * - There is NO official global tool-visibility switch (`ctx.tools.restrict`
+ *   is agent-scoped and throws from a plain host context), so conditional
+ *   registration + this hook is the intended pattern; the registry supports
+ *   mid-flight register/dispose with an unfiltered `tools/change` notice, and
+ *   tool-skill's per-step catalog digest treats visibility changes as a
+ *   first-class cache-invalidation input. Model tool calls reveal the suite
+ *   for the next step; user gestures must reveal it at agent/inbox/claimed,
+ *   before assembly, so instructions and schemas reach the same request.
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:103-122](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L103-L122)
+
+域工具 execute 实际解析 action 再调用私有定义 execute，确认不是只有 schema。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
     },
     output: {
       schema: DOMAIN_RESULT,
@@ -424,278 +576,62 @@ function defineBrowserTool(
         observationDependencies: args.dependsOn,
       } as typeof exec)) as never;
     },
-    presentCall(args) {
-      const definition = definitionFor(definitions, spec.actions, args.action);
-      return definition.presentCall?.(operationArgs(args));
-    },
-    presentResult(args, result) {
-      const definition = definitionFor(definitions, spec.actions, args.action);
-      return definition.presentResult?.(operationArgs(args), result);
-    },
-  });
-}
-
-const BROWSER_TOOL_SPECS: BrowserToolSpec[] = [
-  {
-    name: toolNames.session,
-    description:
-      "Manage plugin-owned browser sessions. Human collaboration is automatic; share is an optional compatibility alias for sync/rebinding. " +
-      "sync returns current state and context_id; wait-user waits for hand-back; cooperation-status reads ownership. " +
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:142-160](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/runner.ts#L142-L160)
+**依据 8 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:98-117](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L98-L117)
 
-spawn 使用参数数组和 JSON 输出。
+历史折叠匹配 callId 的成功 tool result，未将发起调用本身当加载成功。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
+  consume(event: SessionEventLike): void {
+    if (this.successful) return;
+    if (event.type === "user/message" && isSkillInvocationMessage(event.data)) {
+      this.successful = true;
+    } else if (event.type === "tool/call") {
+      const data = record(event.data);
+      if (
+        data?.name === "skill" &&
+        skillNameOf(data.arguments) === BSK_SKILL_NAME &&
+        isCallId(data.callId)
+      ) {
+        this.pending.add(data.callId);
       }
-      return new Promise<BskRunResult>((resolve, reject) => {
-        let child: ChildProcess;
-        try {
-          child = spawnImpl(
-            bskPath,
-            [...args, "--json"],
-            windows
-              ? {
-                  windowsHide: true,
-                  env: { ...process.env, BSK_CANCEL_ON_STDIN_CLOSE: "1" },
-                }
-              : undefined,
-          );
-          // A child exiting while cancellation closes stdin may report EPIPE.
-          // Process completion remains the authority for the run result.
-          child.stdin?.on("error", () => {});
-        } catch (error) {
-          reject(error);
+    } else if (event.type === "tool/result") {
+      const result = toolResultOf(event.data);
+      if (result !== undefined && this.pending.delete(result.callId)) {
+        this.successful = !result.isError;
+      }
+    }
+    if (this.successful) this.pending.clear();
 ```
 
 </details>
 
 <a id="research-q03"></a>
 
-<a id="detail-section-12"></a>
-
-### Q03 · 压缩工具数量是否保留控制边界，最重要限制是什么？
-
-**研究主题**：贡献与相对优势、缺陷与关键质疑
-
-#### 完整回答
-
-相对将每种浏览器操作单独暴露，六个域工具共享 action 分发，在减少顶层 schema 数量时保留操作级取消、呈现及并发判断。这是宿主交互和资源管理贡献，不能把根项目的浏览器自动化全部计入本层创新。contextId 与 dependsOn 为共享标签页的观察后行动提供接口，但它们本身不证明用户意图正确，也不能保证提交后的业务副作用可撤销。0.3.3 的 bsk_* 名称替代旧 browser_* 且无别名，已有策略和会话技能需迁移；CLI、扩展、插件三层版本协同是采用条件。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:95-118](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/browser-tools.ts#L95-L118)
-
-观察上下文与依赖传入执行。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-        description:
-          "Observed refs/selectors covering all regions used for this decision. Omit to validate the whole page. The action target's region and form values are always checked.",
-      },
-      contextId: {
-        type: "string",
-        description:
-          "Shared-tab actions require the context_id you actually received from bsk_session sync. One context authorizes one action; never substitute a newer context into an old plan.",
-      },
-    },
-    output: {
-      schema: DOMAIN_RESULT,
-      render(args, value) {
-        const definition = definitionFor(definitions, spec.actions, args.action);
-        return definition.output.render(operationArgs(args), value);
-      },
-    },
-    isConcurrencySafe(args) {
-      const definition = definitionFor(definitions, spec.actions, args.action);
-      return definition.isConcurrencySafe?.(operationArgs(args)) === true;
-    },
-    async execute(args, exec) {
-      const definition = definitionFor(definitions, spec.actions, args.action);
-      return (await definition.execute(operationArgs(args), {
-        ...exec,
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:159-172](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/README.md#L159-L172)
-
-升级顺序和工具名称迁移说明。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-````text
-## DeepSeek Harness plugin
-
-The [DSH plugin](packages/dsh-plugin-browserskill/README.md) adds native `bsk_*` tools, browser task previews, and screenshot results to the DeepSeek Harness Web UI. It uses the same `bsk` CLI and extension and includes its own BrowserSkill skill.
-
-**Upgrading to 0.3.3:** update the CLI and extension before the plugin. The six `browser_*` tools have been renamed to `bsk_*`, without aliases for the old names. Update custom tool calls and policies, restart the DSH profile, and invoke `/browser-skill` again in existing conversations. See the [migration guide](packages/dsh-plugin-browserskill/README.md#breaking-tool-api-migration-033).
-
-With DeepSeek Harness, pnpm, and `bsk` installed and the extension connected, add the plugin to your profile:
-
-```sh
-dsh plugin --profile web add @wxg-prc-cpg/browser-skill-dsh-plugin
-dsh --profile web
-```
-
-Replace `web` with your profile name. Make sure `bsk` is available on the PATH used to start DSH, or set the plugin's `bskPath`. In a conversation, invoke `/browser-skill` and describe the task. A separate `bsk install-skill` step is not needed.
-````
-
-</details>
-
-<a id="research-q04"></a>
-
 <a id="detail-section-13"></a>
 
-### Q04 · 怎样在可控任务试用，预算和收益如何判断？
+### Q03 · 队列、取消和可见窗口是否等于业务操作可回滚？
 
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-适合已经使用 DSH Web 的人，在非破坏网页读取或测试站点验证一条完整流程。先安装并核对 CLI 和扩展连接，再加载插件并调用技能，观察任务是否出现、结束后窗口是否释放。首次成本是三层安装和权限配置，持续成本为模型决策、浏览器资源及预览采集，失败恢复包括悬挂会话检查、命令取消与版本回退；没有金额或人时测量。源码存在预览和清理链路，但未完成同版本宿主验收，不能升级为持续安装建议。真实网页提交应另设人工确认步骤，因为队列控制不等于业务回滚。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:121-174](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/index.ts#L121-L174)
-
-清理、恢复及归档联动。
-
-<details>
-<summary>查看原文（54行）</summary>
-
-```text
-          try {
-            await starts.dispose();
-          } finally {
-            observation.dispose();
-          }
-        }
-      })());
-  });
-  void starts.reconcile().catch((error) => console.warn("Browser start recovery failed", error));
-
-  // Progressive disclosure of the BSK agent skill (catalog entry resident,
-  // body on demand) through the official skill seam; silent no-op when the
-  // composition lacks it. With lazyTools on, the skill entry is initially the
-  // ONLY model-visible advertisement — the tool suite reveals itself on a
-  // successful skill invocation (or a session whose history already has one).
-  disposers.push(registerBskSkill(ctx));
-  // A same-name CLI skill left in ~/.agents is discovered in the nearer preset
-  // layer and shadows the global registration above. Re-register through every
-  // exact agent context at startup so DSH always loads the bsk_* protocol
-  // instructions; the shared CLI skill remains untouched for other agents.
-  disposers.push(armAgentScopedBskSkill(ctx));
-  const registerSuite = () => registerBrowserTools(deps);
-  disposers.push(resolved.lazyTools ? armLazyTools(ctx, registerSuite) : registerSuite());
-  // Route registration rides ctx.inject: the webServer service may be provided
-  // AFTER this plugin loads, and in headless compositions it never appears (the
-  // callback simply never runs, leaving the rest of the plugin unaffected).
-  ctx.inject(["webServer"], (injected) => {
-    return registerObservationRoutes(injected, observation, starts);
-  });
-  // Reap a conversation's browsers when the conversation itself is archived:
-  // archived sessions are hidden from every surface, so their Agent Windows
-  // would otherwise linger unreachable until idle timeout or unload.
-  disposers.push(armArchiveCleanup(ctx, starts));
-
-  // Non-blocking install probe: warn early when bsk is missing instead of
-  // failing the first tool call with a bare spawn error. Uses --version on
-  // purpose — it answers without starting the daemon (`bsk status` would
-  // ensure-spawn one, an expensive side effect for a probe).
-  runner.run(["--version"], { timeoutMs: 10_000 }).then(
-    () => {},
-    (error: unknown) => {
-      const detail = error instanceof Error ? error.message : String(error);
-      console.warn(
-        `[${name}] bsk probe failed (${detail}); browser tools will report install guidance until the bsk CLI is available`,
-      );
-    },
-  );
-}
-
-export { armArchiveCleanup, ownerSessionIds } from "./archive-cleanup";
-export { registerBrowserTools } from "./browser-tools";
-export type { ObservationEvent, ObservationOptions, SessionObservation } from "./observation";
-export { ObservationService } from "./observation";
-export { registerObservationRoutes } from "./observation-http";
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:81-106](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/runner.ts#L81-L106)
-
-取消与输出收敛时间边界。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-// Business RPCs translate Ctrl-C / opt-in stdin EOF into cancel(rpc_id).
-// Allow reconciliation before hard-killing an old or unresponsive CLI.
-const KILL_GRACE_MS = 3000;
-// Windows IPC may spend 5s connecting, 2s cancelling, 2s settling,
-// and up to 5s releasing the entire batch of caller-owned transfers.
-const WINDOWS_KILL_GRACE_MS = 15_000;
-// A killed child that never reports `exit` at all must still release the caller
-// once the forced kill has had its chance.
-const SETTLE_AFTER_KILL_SLACK_MS = 1000;
-// `close` fires only once every stdio pipe has reached EOF, which needs every
-// process holding a copy of the pipe handles to be gone, not just `bsk`. When
-// `bsk` auto-spawns the daemon, the daemon can end up holding those handles
-// (Windows `CreateProcess` inherits every inheritable handle; issue #180), so
-// after `exit` we drain what the pipes still give us and then settle, rather
-// than waiting for a `close` that may never come. `close` normally follows
-// `exit` within the same loop turn, so the wait is only ever paid when
-// something else is holding the pipes. Bytes arriving inside the window can
-// still be the child's own buffered output, so every chunk restarts the window
-// and EXIT_DRAIN_MAX_MS caps the total wait.
-const EXIT_DRAIN_GRACE_MS = 1000;
-const EXIT_DRAIN_MAX_MS = 2000;
-const SESSION_BUSY_RETRY_DELAY_MS = 100;
-
-/** One in-flight child plus the bounded shutdown that settles its run. */
-interface LiveRun {
-  tag: string | undefined;
-```
-
-</details>
-
-#### 缺口
-
-- 没有与直接 shell bsk 的同任务对照。
-  **影响**：工具收敛是否降低模型错误和总成本仍未知。
-  **进一步探讨**：比较工具选择错误、任务完成率、token 与人工接管次数。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-14"></a>
-
-### Q05 · 会话队列设计有什么价值，能推导怎样的工具设计实验？
-
-**研究主题**：工程质量与复用、新假设与验证
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-KeyedExecutor 将同会话操作和观察采集排成 FIFO，失败尾链不拒绝，已排队任务取消时仍等待前驱收敛，避免后续任务穿越运行中的任务。资源所有权在注册前建立，加载失败也可进入清理，适合可产生外部资源的插件借鉴；移植时需为外部后端提供真实取消与收敛语义。未验证假设是六工具加按需技能较全量操作 schema 能降低初始上下文负担而不增加 action 参数错误。对照同模型、同任务分别用两种接口，测首轮 token、非法 action、成功率及接管次数；若参数错误抵消上下文收益，应保留分层而调整 schema。
+不等于。同会话 FIFO 把模型命令与观察采集排队；即使排队项提前取消，尾链仍同时等待前驱和该项，避免后续穿越运行中任务。运行中的取消交给 runner，Unix 先SIGINT后强杀，Windows 用stdin关闭请求CLI取消并留收敛宽限；这约束进程与浏览器命令，不会撤回已发生的网页提交。共享标签页 contextId 要求使用实际观察到的上下文，每次行动一个，但它只保护观察新鲜性，不能代替用户对业务动作授权。默认延迟工具在缺少技能服务时可能没有初始发现入口，需要显式配置lazyTools=false或使用完整组合。观察路由复制loopback/Origin/JSON检查限制浏览器信任边界，仍不是多用户账号隔离证明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/queue.ts:14-63](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/queue.ts#L14-L63)
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/src/queue.ts:14-54](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/queue.ts#L14-L54)
 
-FIFO 与取消后的尾链收敛。
+FIFO尾链兼顾前驱与取消任务。
 
 <details>
-<summary>查看原文（50行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
   run<T>(key: string, fn: () => Promise<T>, signal?: AbortSignal): Promise<T> {
@@ -739,37 +675,41 @@ FIFO 与取消后的尾链收敛。
     void tail.then(() => {
       if (this.tails.get(key) === tail) this.tails.delete(key);
     });
-    return task;
-  }
-}
-
-function abortError(): Error {
-  const error = new Error("tool call aborted");
-  error.name = "AbortError";
-  return error;
-}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:121-145](https://github.com/Tencent/BrowserSkill/blob/b63f551209caba4d7debfc12215b2b7c118bad49/packages/dsh-plugin-browserskill/src/index.ts#L121-L145)
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/runner.ts:119-129](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/runner.ts#L119-L129)
 
-先拥有资源再执行可能失败的注册。
+分平台取消与强杀。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-          try {
-            await starts.dispose();
-          } finally {
-            observation.dispose();
-          }
-        }
-      })());
-  });
-  void starts.reconcile().catch((error) => console.warn("Browser start recovery failed", error));
+  function killChild(child: ChildProcess): void {
+    if (child.exitCode !== null || child.signalCode !== null || cancelling.has(child)) return;
+    const force = setTimeout(() => {
+      if (child.exitCode === null && child.signalCode === null) child.kill("SIGKILL");
+    }, killGraceMs);
+    force.unref();
+    cancelling.set(child, force);
+    // Node kills Windows children outright for SIGINT. EOF asks the CLI to
+    // send its existing cancel RPC and wait for browser reconciliation.
+    if (windows && child.stdin) child.stdin.end();
+    else child.kill("SIGINT");
+```
 
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:131-143](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L131-L143)
+
+技能服务缺席时无操作与延迟工具配置。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
   // Progressive disclosure of the BSK agent skill (catalog entry resident,
   // body on demand) through the official skill seam; silent no-op when the
   // composition lacks it. With lazyTools on, the skill entry is initially the
@@ -783,10 +723,217 @@ function abortError(): Error {
   disposers.push(armAgentScopedBskSkill(ctx));
   const registerSuite = () => registerBrowserTools(deps);
   disposers.push(resolved.lazyTools ? armLazyTools(ctx, registerSuite) : registerSuite());
-  // Route registration rides ctx.inject: the webServer service may be provided
-  // AFTER this plugin loads, and in headless compositions it never appears (the
 ```
 
 </details>
+
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:92-102](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L92-L102)
+
+上下文和依赖区域约束。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+      dependsOn: {
+        type: "array",
+        items: { type: "string" },
+        description:
+          "Observed refs/selectors covering all regions used for this decision. Omit to validate the whole page. The action target's region and form values are always checked.",
+      },
+      contextId: {
+        type: "string",
+        description:
+          "Shared-tab actions require the context_id you actually received from bsk_session sync. One context authorizes one action; never substitute a newer context into an old plan.",
+      },
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-plugin-browserskill/src/observation-http.ts:47-83](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/observation-http.ts#L47-L83)
+
+观察通道的浏览器信任检查。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+/**
+ * Browser-trust fence, mirroring the one dsh applies to its /api routes (ours
+ * live outside that prefix, so the checks are replicated here):
+ * - Host must be a loopback authority (localhost / 127.0.0.0/8 / [::1]) — the
+ *   observation channel exposes live screenshots and must never answer a LAN
+ *   or DNS-rebound name;
+ * - a present Origin must be same-host with the Host header (blocks cross-site
+ *   reads), and `sec-fetch-site: cross-site` is refused outright;
+ * - POST must be `application/json` — anything a cross-site *simple request*
+ *   can send (form/plain) never reaches the handler, which kills CSRF.
+ */
+function fenceViolation(req: IncomingMessage): string | undefined {
+  const host = req.headers.host ?? "";
+  const hostname = /^\[.*\](?::\d+)?$/.test(host)
+    ? host.slice(1, host.indexOf("]"))
+    : host.split(":")[0];
+  const isLoopback =
+    hostname === "localhost" ||
+    hostname.endsWith(".localhost") ||
+    hostname === "::1" ||
+    /^127\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(hostname);
+  if (!isLoopback) return "host is not a loopback authority";
+  const origin = req.headers.origin;
+  if (origin !== undefined && origin !== "null") {
+    let originHost: string | undefined;
+    try {
+      originHost = new URL(origin).host;
+    } catch {
+      return "unparseable Origin header";
+    }
+    if (originHost !== host) return "Origin does not match Host";
+  }
+  if (req.headers["sec-fetch-site"] === "cross-site") return "sec-fetch-site: cross-site";
+  if (req.method === "POST") {
+    const contentType = req.headers["content-type"] ?? "";
+    if (!/^\s*application\/json\s*(;|$)/.test(contentType)) {
+      return "POST requires an application/json body";
+```
+
+</details>
+
+#### 缺口
+
+- 未执行取消后网页副作用、崩溃清理与当前宿主组合验收
+  **影响**：不能承诺所有会话自动收敛或业务回滚
+  **进一步探讨**：用可重置测试表单执行提交、取消、重启、归档，核对实际业务与资源状态。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 何时值得试用，并能形成什么可证伪改进？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+需外部 bsk CLI、已连接浏览器扩展、受支持浏览器与匹配 DSH peer；装插件不等于CLI已在PATH或扩展已连接。默认观察增加截图和SSE资源，首次需安装三层，持续需复核页面与维护版本，失败需核对启动日志、借用页和已发生业务动作，金额与工时均未知。适合已用 DSH Web 的用户先做只读或可重置表单，验收技能显露、预览、人工接管和归档清理；出现动作重复、无法停止或清理不明时回到CLI/人工操作。未验证假设是六域工具加按需技能可比全量操作schema减少首轮上下文而不增加action错误。固定同模型同任务对照两种接口，计首轮token、非法action、合格率与接管次数；若action错误抵消上下文收益则否定，而不是只按schema数量证明优势。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-plugin-browserskill/package.json:68-75](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/package.json#L68-L75)
+
+宿主peer约束。
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-attachment": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-client-ui-tool": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-llm": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+    "@deepseek-ai/dsh-tools": "^0.1.5-rc.3 || ^0.2.0-rc.1",
+    "@deepseek-ai/schemastery": "^3.18.2",
+```
+
+**依据 2 · 源码核查**：[packages/dsh-plugin-browserskill/src/index.ts:155-165](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/index.ts#L155-L165)
+
+CLI探针只警告，不证明浏览器已连接。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  // Non-blocking install probe: warn early when bsk is missing instead of
+  // failing the first tool call with a bare spawn error. Uses --version on
+  // purpose — it answers without starting the daemon (`bsk status` would
+  // ensure-spawn one, an expensive side effect for a probe).
+  runner.run(["--version"], { timeoutMs: 10_000 }).then(
+    () => {},
+    (error: unknown) => {
+      const detail = error instanceof Error ? error.message : String(error);
+      console.warn(
+        `[${name}] bsk probe failed (${detail}); browser tools will report install guidance until the bsk CLI is available`,
+      );
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-plugin-browserskill/src/lazy-tools.ts:1-23](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/lazy-tools.ts#L1-L23)
+
+按需显露为接口实验基础。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+/**
+ * Lazy tool-schema injection ("progressive disclosure", final stage): with
+ * `lazyTools` on (the default), the six browser tool schemas stay OUT of the
+ * system prompt until the `browser-skill` skill has actually been invoked —
+ * the skill catalog entry is the only advertisement. A successful model
+ * invocation or a claimed user `/browser-skill` gesture reveals
+ * the whole suite for the rest of the process lifetime; repeated invocations
+ * are idempotent no-ops. Session resume is covered by scanning durable
+ * session events for a past successful invocation (tool/call + tool/result
+ * pair, or a skill-invocation sourced message) when a session is entered or
+ * first observed after a reload. Later events are consumed incrementally.
+ *
+ * Host lifecycle boundaries:
+ * - `tools/post-execute` can turn a successful skill load into an actionable
+ *   error before its result reaches the model. `tools/result` is too late.
+ * - There is NO official global tool-visibility switch (`ctx.tools.restrict`
+ *   is agent-scoped and throws from a plain host context), so conditional
+ *   registration + this hook is the intended pattern; the registry supports
+ *   mid-flight register/dispose with an unfiltered `tools/change` notice, and
+ *   tool-skill's per-step catalog digest treats visibility changes as a
+ *   first-class cache-invalidation input. Model tool calls reveal the suite
+ *   for the next step; user gestures must reveal it at agent/inbox/claimed,
+ *   before assembly, so instructions and schemas reach the same request.
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-plugin-browserskill/src/browser-tools.ts:64-89](https://github.com/Tencent/BrowserSkill/blob/70681a2d6494f396351a331207099110f66762bc/packages/dsh-plugin-browserskill/src/browser-tools.ts#L64-L89)
+
+域工具action对模型提出额外选择。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+function definitionFor(
+  definitions: ReadonlyMap<string, ToolDefinition>,
+  actions: Record<string, string>,
+  action: unknown,
+): ToolDefinition {
+  const operationName = typeof action === "string" ? actions[action] : undefined;
+  const definition = operationName === undefined ? undefined : definitions.get(operationName);
+  if (definition === undefined) throw new Error(`unsupported browser action: ${String(action)}`);
+  return definition;
+}
+
+function defineBrowserTool(
+  spec: BrowserToolSpec,
+  definitions: ReadonlyMap<string, ToolDefinition>,
+): ToolDefinition {
+  const actionNames = Object.keys(spec.actions);
+  return defineTool({
+    name: spec.name,
+    description: spec.description,
+    parameters: {
+      action: {
+        type: "string",
+        required: true,
+        enum: actionNames,
+        description:
+          "Operation to perform. Other arguments are action-dependent and are validated by that operation.",
+```
+
+</details>
+
+#### 缺口
+
+- 缺乏真实宿主预览、全周期成本与接口对照数据
+  **影响**：只能有条件试用，不能把schema压缩算作效果
+  **进一步探讨**：先完成测试站点的正确性和退出验收，再测两种接口的净负担。
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

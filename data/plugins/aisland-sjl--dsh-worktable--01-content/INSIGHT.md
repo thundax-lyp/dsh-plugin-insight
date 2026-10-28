@@ -1,18 +1,18 @@
 # dsh-worktable
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[6cb86b6](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content)
+源码版本：[56ffe0c](https://github.com/Aisland-SJL/dsh-worktable/tree/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content)
 
 <!-- BEGIN META -->
-[![GitHub ★ 781](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=781&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aisland-SJL/dsh-worktable)
+[![GitHub ★ 801](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=801&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aisland-SJL/dsh-worktable)
 <!-- END META -->
 
-> **功能**：在Harness侧栏提供项目容器、分栏窗口、会话绑定与控制室，挂载文件、终端和任务产物。
+> **功能**：在 DSH 侧栏提供项目容器、分栏工作区和会话绑定的工作台插件
 
-> **亮点**：以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：显式项目、窗格、绑定、会话与目录身份减少旧结果串挂；owner 准入和 opaque-origin 目录预览将高权限私有 API 与不可信页面分开。贡献是生命周期与权限边界，不是项目文件隔离。[Q01](#research-q01) [Q02](#research-q02) [Q03](#research-q03)
 
-> **主要限制**：客户端所有权校验不约束Host文件权限，文件读取/写入使用用户或产物路径，PTY继承process.env；多个项目改同一真实文件仍互相影响。撤销持久化失败只在内存生效，刷新后状态需核对；作者也未完成全部审批/子代理/挂载业务验收。参见[Q03](#research-q03)。
+> **主要限制**：绑定当前不保证内容版本，owner 文件写入仍可覆盖共享真实路径；撤销持久失败被吞掉，身份撤销也不会即时断开既有终端。新增鉴权不能掩盖这三类状态边界。[Q02](#research-q02) [Q04](#research-q04)
 
 **本文目录**
 
@@ -26,12 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要工作台内容组件，相对手工或宿主原生办法增加什么？](#detail-section-11)
-  - [Q02 · 文件编辑、分屏与会话集成如何从入口形成完整调用链，依赖失效怎么办？](#detail-section-12)
-  - [Q03 · 什么实现边界最可能使工作台内容组件的贡献不成立，哪些工程设计可复用？](#detail-section-13)
-  - [Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？](#detail-section-14)
-  - [Q05 · 可从文件编辑、分屏与会话集成的限制推导什么可证伪改进？](#detail-section-15)
-  - [Q06 · 哪些用户可以受控采用工作台内容组件，何时应停止？](#detail-section-16)
+  - [Q01 · 项目容器如何减少旧结果串挂？](#detail-section-11)
+  - [Q02 · 私有文件接口与终端是否依赖可确认身份？](#detail-section-12)
+  - [Q03 · 不可信 HTML 的读取与撤销边界是什么？](#detail-section-13)
+  - [Q04 · 绑定当前是否意味着文件内容与撤销持久安全？](#detail-section-14)
+  - [Q05 · 使用路径、平台和总成本如何界定？](#detail-section-15)
+  - [Q06 · 谁可以试用，哪项改进值得验证？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：给同时处理多个Agent项目/会话的人，将文件、终端、网页和产物窗口收在项目容器中；合格交付是项目/窗格/会话绑定不串挂、状态可解释，不能仅看控制室灯变绿。
+> **用途**：同时管理多个 agent 项目与会话的个人开发者，将文件、网页、终端和结果集中到项目工作区。
 
-宿主原生会话加普通窗口/文件管理可替代主要任务；插件价值在项目组织和当前产物挂载，需同任务衡量。
+宿主会话与独立文件/浏览器/终端窗口，或按目录猜产物归属；未执行同任务效率对照。
 
 <a id="detail-section-3"></a>
 
@@ -53,74 +53,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 项目容器与控制室 | 项目/会话绑定及状态总览 | Host状态镜像非业务验收 |
-| 分栏/标签布局 | 组织多类窗口 | localStorage按浏览器来源保存 |
-| 资源管理器 | 列目录并打开文件 | Host可读权限，不是沙箱 |
-| Markdown保存 | 编辑本地文本 | 直接写路径，需备份与授权 |
-| 项目目录创建 | 建立工作目录 | Host文件权限 |
-| 终端窗 | 交互Shell | ws/node-pty，完整环境和用户权限 |
-| Git状态窗 | 只读查看仓库变化 | git可用及工作目录 |
-| 本地站点/网页窗 | 预览HTML与资源 | 页面可联网，路径边界依Host |
-| 自定义产物挂载 | 接收当前任务窗口结果 | project/pane/binding/session/folder须一致 |
-| 会话打开/新建 | 关联宿主对话 | 新宿主未分组空会话受限 |
+| 项目与分栏工作区 | 集中多会话相关窗口 | localStorage按浏览器来源，不自动双端同步 |
+| 结果身份挂载 | 将当前任务文件放到正确窗格 | 不保证真实文件内容隔离 |
+| 目录预览 | opaque origin页面加载相对资源 | 整目录只读且仍可联网 |
+| 终端 | 在工作目录运行本机shell | owner准入，全环境继承，既有连接不即时撤权 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=22与声明兼容Harness | 必需 | 加载Host和客户端 | 兼容仅0.1.1-rc.2/0.1.2-rc.1/0.2.0-rc.2 |
-| Web slots与会话服务 | 必需 | 项目容器/会话打开 | 接口漂移可能使绑定/界面失败 |
-| 浏览器localStorage | 持久界面必需 | 项目、布局和所有权绑定 | 来源之间不同步，失败需明确处理 |
-| Host文件权限与可信会话/产物 | 对应窗口必需 | 读取、保存和自动挂载 | 不是沙箱，路径可来自结果 |
-| ws/node-pty与Shell | 终端可选 | 完整交互终端 | 缺失仅终端降级，继承完整环境 |
+| Node>=22、DSH 0.2.0-rc.2 或0.2.1-rc.3 | 启动必需 | Host/client 接线 | 旧0.1不在支持范围；macOS 实验性 |
+| 宿主 connection/admit 与 owner 身份 | 私有操作必需 | 文件、写入、终端准入 | 缺服务503，非owner403 |
+| ws/node-pty | 终端必需 | 完整本机 shell | 缺失降级，不影响其他窗格 |
+| 可信且不含秘密的预览目录 | 本地网页必需 | 授予整目录只读资源 | 不可信页面仍可联网外发 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 按web/desktop对应CLI安装并完整重启 | 核实际DSH_HOME与兼容版本 |
-| 2 | 建项目、选目录并绑定可用会话 | 项目/窗格独立ID正确，未分组限制如实显示 |
-| 3 | 从目标自定义窗发任务建立握手 | 只接收本binding结果，不读旧根manifest |
-| 4 | 检查实际产物与会话状态后验收 | Host完成状态不等于业务合格 |
-| 5 | 关闭/重绑/换目录后核旧绑定失效 | localStorage失败或刷新后须复核撤销持久性 |
+| 1 | 用户核 host/profile/命令所有者 | Desktop 退出后用自带 CLI |
+| 2 | 用户建立两个低风险项目和不同会话 | 目录相同也不互接旧结果 |
+| 3 | Agent 按当前 binding 输出任务结果 | 五项身份一致才挂载；失败保留待办 |
+| 4 | 用户检查真实内容与预览目录，再启终端 | 错挂/撤销失败停止自动挂载；终端关闭确认 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 本地包/宿主/存储，金额未知 | 配置多项目布局、目录与会话 | 网页/桌面来源设置不同步 |
-| 持续使用 | PTY/Shell、网页自身请求、媒体与产物读取 | 维护窗口和实际文件归属 | 状态订阅不调用模型不代表整个任务无token |
-| 失败恢复 | 重复任务、文件备份和浏览器状态恢复 | 核旧握手/串挂/关闭与重绑 | 多个项目写同一实际文件仍可能互相覆盖 |
+| 首次使用 | 宿主、浏览器和存储资源未知 | 建项目、布局、目录和会话，时长未知 | Web/Desktop 来源不自动同步 |
+| 持续使用 | PTY、网页与媒体资源；模型任务另计 | 核绑定与实际文件归属 | 状态镜像无模型调用不代表任务无费用 |
+| 失败恢复 | 重试与备份资源未知 | 查晚到结果、撤销存储、失效预览 | 共享真实路径可能覆盖 |
+| 退出 | 存储与迁移资源未知 | 关闭连接、停用插件，保留项目和文件 | 切项目保活不等于撤销预览 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 项目隔离挂载 | 三重ID+session/folder当前检查 | 完整审批/子代理/自动挂载业务链 |
-| 界面集中 | 多窗与宿主状态镜像 | 净节时、复杂项目下可理解性 |
-| 平台支持 | 作者报告Windows定向验收 | macOS真机及完整桌面业务未验收 |
+| 结果归属 | project/pane/binding/session/folder 核对 | 内容被晚到写者修改后的正确性 |
+| 权限与网页边界 | owner 准入、无same-origin sandbox、短期目录 token | 即时WS撤销、恶意本机竞态和总并发内存 |
+| 多窗组织 | 侧栏与overlay、状态镜像 | 复杂业务合格率与净节时 |
 
-> **思考**：客户端所有权校验不约束Host文件权限，文件读取/写入使用用户或产物路径，PTY继承process.env；多个项目改同一真实文件仍互相影响。撤销持久化失败只在内存生效，刷新后状态需核对；作者也未完成全部审批/子代理/挂载业务验收。参见[Q03](#research-q03)。
+> **思考**：绑定当前不保证内容版本，owner 文件写入仍可覆盖共享真实路径；撤销持久失败被吞掉，身份撤销也不会即时断开既有终端。新增鉴权不能掩盖这三类状态边界。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：以显式项目/窗格/绑定所有权代替“文件夹相同即项目相同”，并把宿主会话状态与多窗工作区相连，减少旧结果串挂；贡献是组织与生命周期边界，不是文件系统隔离。参见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：显式项目、窗格、绑定、会话与目录身份减少旧结果串挂；owner 准入和 opaque-origin 目录预览将高权限私有 API 与不可信页面分开。贡献是生命周期与权限边界，不是项目文件隔离。[Q01](#research-q01) [Q02](#research-q02) [Q03](#research-q03)
 
-显式project/pane/binding与session/folder一致性、创建持久失败回滚值得复用；撤销失败可见性、内容版本和业务验收需另外设计，实际文件不是自动隔离。
+身份准入默认拒绝、随机目录能力、单句柄限量读取和绑定创建回滚有明确复用价值；但撤销持久化吞错、全环境PTY和共享文件写入仍需承担。已检查发布 lib/index.js 含同一 owner admit、sandbox 与 token 路径，未据 TypeScript 单独推断发布行为。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-客户端所有权校验不约束Host文件权限，文件读取/写入使用用户或产物路径，PTY继承process.env；多个项目改同一真实文件仍互相影响。撤销持久化失败只在内存生效，刷新后状态需核对；作者也未完成全部审批/子代理/挂载业务验收。参见[Q03](#research-q03)。
+绑定当前不保证内容版本，owner 文件写入仍可覆盖共享真实路径；撤销持久失败被吞掉，身份撤销也不会即时断开既有终端。新增鉴权不能掩盖这三类状态边界。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合愿管理本地目录和会话的Windows个人开发者先用两个低风险项目试用；macOS、多人/高权限共享服务和要求完整自动交付者先观察。先验绑定及实际文件，再启终端和网页；状态错位、旧结果复活或权限不符就停止并恢复备份。参见[Q06](#research-q06)。
+Windows 个人用户在精确支持版本从两个低风险项目试用，先验绑定和文件、再验预览及终端；错挂、旧结果复活或权限撤销不符要求时停止并回到原生会话和独立窗口。[Q06](#research-q06)
 
 <a id="detail-section-7"></a>
 
@@ -128,18 +121,18 @@
 
 **核查状态**：已检查源码。
 
-项目/窗格/绑定隔离机制可核；全链业务、macOS和持久撤销失败恢复未验证。
+UI 绑定、owner 认证、目录 capability 和文件读取机制为固定源码支持；Windows 局部验收为作者报告，本轮未运行；内容版本与恢复为未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 01_content/README.md、01_content/package.json、01_content/src/index.ts、01_content/src/client/index.tsx、01_content/src/client/widgetMount.ts、01_content/src/client/hostTransport.ts 及固定范围 inventory；组件：01_content。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 01_content/README.md、01_content/package.json、01_content/src/index.ts、01_content/src/requestAuth.ts、01_content/src/previewFiles.ts、01_content/src/client/widgetMount.ts、01_content/src/client/SandboxedFrame.tsx、01_content/lib/index.js 及固定范围 inventory；组件：01_content。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅分配01_content组件；抽读Host路由/PTY与客户端widget ownership、布局持久和slots，不把仓库根过程文档/其他组件计本插件实现。
-- 下一步：隔离双项目核同目录、重绑、关闭、晚到写者和存储满重载；另核真实文件/PTY权限与业务交付，不把静态门当验收。
+- 边界：仅01_content组件27个tracked文件统计，重点源码为Host鉴权/PTY/写入、预览与绑定；检查发布lib相应入口。未运行目标、测试或模型；作者Windows局部结果不作本轮验证。
+- 下一步：相同两项目分别注入共享路径改写、重绑晚到结果、localStorage满、预览撤销和WS身份撤销，记录错挂/旧内容误认、人工分钟与进程残留；任何边界不符即收缩功能。
 
 **分析版本**
 
 - **仓库**：[Aisland-SJL/dsh-worktable](https://github.com/Aisland-SJL/dsh-worktable)
-- **版本号**：0.4.0（[固定提交 6cb86b6](https://github.com/Aisland-SJL/dsh-worktable/tree/6cb86b6c73b3c356373e06cd81e08952542ea040)）
-- **版本日期**：2026-10-03（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.0（[固定提交 56ffe0c](https://github.com/Aisland-SJL/dsh-worktable/tree/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -147,9 +140,9 @@
 
 <a id="innovation"></a>
 
-可为结果建立内容摘要/生成版本及只读预览收据，把“绑定当前”“文件已变”“业务已验收”分开，并对撤销写失败做可见错误和持久恢复。对照同目录两项目、晚到写者、重绑及存储满，错挂/旧结果复活或额外负担不降就否定；假设未验证。参见[Q05](#research-q05)。
+未验证假设是在结果加入内容摘要/生成版本并提供可见撤销恢复状态，用同目录双项目、晚到结果、重绑与存储满矩阵检验错认和人工负担；指标不降就否定，不把它称为文件沙箱。[Q06](#research-q06)
 
-隔离双项目核同目录、重绑、关闭、晚到写者和存储满重载；另核真实文件/PTY权限与业务交付，不把静态门当验收。
+相同两项目分别注入共享路径改写、重绑晚到结果、localStorage满、预览撤销和WS身份撤销，记录错挂/旧内容误认、人工分钟与进程残留；任何边界不符即收缩功能。
 
 <a id="detail-section-9"></a>
 
@@ -160,45 +153,49 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .mjs | source | 4 | 565 | 446 | 94 | — |
+| .mjs | source | 4 | 586 | 463 | 96 | — |
 | .mjs | test | 1 | 72 | 45 | 14 | — |
-| .js | source | 2 | 24411 | 23005 | 1945 | — |
-| .md | source | 1 | 88 | — | — | 2236 |
-| .ts | source | 14 | 2400 | 2088 | 201 | — |
-| .tsx | source | 2 | 6500 | 5790 | 500 | — |
+| .js | source | 2 | 24776 | 23353 | 1955 | — |
+| .md | source | 1 | 111 | — | — | 3353 |
+| .ts | source | 16 | 2636 | 2290 | 217 | — |
+| .tsx | source | 3 | 6572 | 5856 | 502 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [GitHub Issues](https://github.com/Aisland-SJL/dsh-worktable/issues) 查看。
+[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Aisland-SJL/dsh-worktable/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+
+
+
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 6cb86b6c73b3c356373e06cd81e08952542ea040 和截止 2026-10-23T01:41:11Z 范围内，工作台内容组件能为明确用户提供什么可核查增量，其关键限制、总成本和采用条件是什么？
+**插件研究总目标**：项目多窗、身份绑定与 owner 鉴权/预览隔离能否形成可控个人工作流？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要工作台内容组件，相对手工或宿主原生办法增加什么？
+### Q01 · 项目容器如何减少旧结果串挂？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-多项目Agent用户需要同时看文件、对话和产物，原办法是多个独立窗口/手工标签。工作台提供agent级项目抽屉与分栏，控制室镜像宿主状态。合格输出是正确项目的当前产物和可工作的会话，不能从“完成”镜像推断业务通过；真正增量是显式绑定所有权与撤销，而非重做官方会话或提供沙箱。
+面向同时维护多个 agent 项目/会话的个人使用者，把文件、终端、网页和产物窗格放在同一项目工作区；合格交付是当前任务结果进入正确窗格且能解释状态，不是控制室灯变绿。相对独立窗口和按目录猜归属，WidgetBindings 显式记录 projectId、paneId、bindingId、sessionId、folder；begin 校验窗格唯一性并在持久失败时回滚。resolve 只接受当前绑定及 version=2、三重 ID 和 window 一致的结果；因此同目录新项目不会自动接旧文件。贡献是 UI 所有权与生命周期协议，不是文件系统隔离。控制室状态来源是宿主快照镜像，不调用模型只描述该状态通道，不能推导全部任务无 token。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[01_content/README.md:5-17](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md#L5-L17)
+**依据 1 · 作者声明**：[01_content/README.md:5-18](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L5-L18)
 
-作者项目容器及技术底座
+作者定义项目工作区、状态订阅与存储；仅支持用途，不证明业务验收。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
 ## 是什么
@@ -214,67 +211,14 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-23），可前往 [Gi
 - Cordis 插件协议（客户端 bundle + 服务端路由 /api/worktable/*、终端 WebSocket）。
 - 界面经 slot 座位协议注入侧边栏与 shell.overlay；对话窗复用宿主会话服务（新版 uiWorkspace.openSession，旧版 sessions.open）。
 - 状态监控为宿主会话运行时快照的事件订阅镜像；视图/项目/绑定状态存 localStorage。
+- 客户端：TypeScript + React（host externals）+ 原生 CSS；服务端：Node。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:103-118](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L103-L118)
+**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:73-91](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/widgetMount.ts#L73-L91)
 
-当前绑定校验和结果匹配
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  isCurrent(binding: WidgetBinding, spec: WidgetSpec | null | undefined, folder: string | undefined): boolean {
-    const current = this.records[binding.projectId]?.[binding.paneId]
-    return !!current?.enabled && current.bindingId === binding.bindingId && current.sessionId === binding.sessionId &&
-      current.folder === folder && binding.folder === folder && spec?.id === binding.projectId &&
-      widgetTargets(spec).filter((t) => t.pane.id === binding.paneId).length === 1
-  }
-  resolve(binding: WidgetBinding, raw: string, spec: WidgetSpec | null | undefined, folder: string | undefined):
-    { target: WidgetTarget; item: { kind: 'html' | 'url' | 'file'; path: string } } | null {
-    if (!this.isCurrent(binding, spec, folder)) return null
-    try {
-      const d = JSON.parse(raw)
-      if (!d || Array.isArray(d) || d.version !== 2 || d.projectId !== binding.projectId ||
-          d.paneId !== binding.paneId || d.bindingId !== binding.bindingId || d.window !== binding.window ||
-          !['html', 'url', 'file'].includes(d.kind) || typeof d.path !== 'string' || !d.path.trim()) return null
-      const target = widgetTargets(spec).find((t) => t.pane.id === binding.paneId)!
-      return { target, item: { kind: d.kind, path: d.path.trim() } }
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 文件编辑、分屏与会话集成如何从入口形成完整调用链，依赖失效怎么办？
-
-**研究主题**：功能与机制、依赖、兼容与流程
-
-#### 完整回答
-
-客户端slots注入侧栏和shell.overlay并把项目/布局存localStorage，绑定宿主会话后自定义任务创建独有manifest路径；resolve先核project/pane/binding/session/folder再接受html/url/file。Host提供fs/file/write/mkdir/site及PTY，终端从宿主加载可选ws/node-pty。需兼容Web/desktop接口与浏览器存储，用户按对应CLI安装重启、建项目绑定、显式发自定义任务，旧关联或读取失败需核待办而非强挂。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[01_content/src/client/widgetMount.ts:35-39](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L35-L39)
-
-绑定专属manifest路径
-
-```text
-export function widgetManifestPath(binding: WidgetBinding): string {
-  // Binding-specific files also keep late writers from overwriting a newer binding's result.
-  return joinPath(binding.folder, joinPath('.dsh-worktable', joinPath(
-    'project-' + encodeURIComponent(binding.projectId),
-    'pane-' + encodeURIComponent(binding.paneId) + '-' + binding.bindingId + '.json',
-```
-
-**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:73-91](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L73-L91)
-
-建立与持久化所有权
+创建绑定、校验窗格和持久化失败回滚。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -303,12 +247,12 @@ export function widgetManifestPath(binding: WidgetBinding): string {
 
 </details>
 
-**依据 3 · 源码核查**：[01_content/src/client/widgetMount.ts:103-118](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L103-L118)
+**依据 3 · 源码核查**：[01_content/src/client/widgetMount.ts:103-119](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/widgetMount.ts#L103-L119)
 
-接受当前结果条件
+当前绑定检查及结果对象身份准入。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
   isCurrent(binding: WidgetBinding, spec: WidgetSpec | null | undefined, folder: string | undefined): boolean {
@@ -327,39 +271,72 @@ export function widgetManifestPath(binding: WidgetBinding): string {
           !['html', 'url', 'file'].includes(d.kind) || typeof d.path !== 'string' || !d.path.trim()) return null
       const target = widgetTargets(spec).find((t) => t.pane.id === binding.paneId)!
       return { target, item: { kind: d.kind, path: d.path.trim() } }
+    } catch { return null }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[01_content/src/index.ts:198-227](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts#L198-L227)
+<a id="research-q02"></a>
 
-可选终端依赖与Shell
+<a id="detail-section-12"></a>
+
+### Q02 · 私有文件接口与终端是否依赖可确认身份？
+
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+
+#### 完整回答
+
+是，当前 Host wrapper 在每次私有 HTTP 请求读取 connection 并 await admit，只允许 owner；旧单 operator 无 principal 时要求 peer 严格等于 connection.operator。服务缺失、异常或身份不明返回503，非 owner 返回403，不开放兜底。WS 升级同样先调用 requestRejection，终端 spawn 在准入后，且卸载 terminate 所有连接并 kill shell；这是真实接线，不只是 helper 存在。边界是准入在建连时完成，既有 WS 消息没有逐次身份重验；README 也承认身份撤销后不立即断开。终端继承 process.env，owner 获得的是完整本机 shell，不是限制命令的沙箱。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[01_content/src/requestAuth.ts:1-18](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/requestAuth.ts#L1-L18)
+
+完整 fail-closed 身份判定。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-  if (typeof webServer.registerUpgrade !== 'function') return
-  const wsMod = loadPkg('ws')
-  const ptyMod = loadPkg('node-pty')
-  ctx.logger?.info?.('[dsh-worktable] term deps: ws=' + (wsMod ? 'ok' : 'MISSING') + ' node-pty=' + (ptyMod ? 'ok' : 'MISSING'))
-  if (!wsMod || !ptyMod) {
-    ctx.logger?.warn('[dsh-worktable] 终端路由未注册：ws/node-pty 不可用')
-    return
-  }
-  const WebSocketServer = wsMod.WebSocketServer ?? wsMod.default?.WebSocketServer
-  if (!WebSocketServer) return
-  const pty = ptyMod.default ?? ptyMod
-  const wss = new WebSocketServer({ noServer: true })
-  const spawnShell = (): { cmd: string; args: string[] } =>
-    process.platform === 'win32'
-      ? { cmd: 'powershell.exe', args: ['-NoLogo', '-NoProfile'] } // -NoProfile：跳过用户配置（oh-my-posh 花哨提示符在 xterm 里是乱码，PSReadLine 长输入行不换行被截断）
-      : { cmd: process.env.SHELL || '/bin/bash', args: [] }
-  const clampDim = (v: number, fallback: number) => Math.min(1024, Math.max(2, Number.isFinite(v) ? v : fallback))
+/** Use the host's current authentication service for every request, never a cached grant. */
+export async function requestRejection(ctx: any, req: any): Promise<number | undefined> {
+  try {
+    const connection = typeof ctx.get === 'function' ? ctx.get('connection') : undefined
+    if (!connection) return 503
+    if (typeof connection.admit === 'function') {
+      const admission = await connection.admit(req)
+      if (!admission || typeof admission !== 'object') return 503
+      if ('rejection' in admission) return admission.rejection === 401 ? 401 : 403
+      const peer = admission.peer
+      // 0.2.1 has owner/non-owner principals. 0.2.0 has a single operator Peer.
+      if (peer?.principal?.kind === 'owner') return undefined
+      if (peer && peer === connection.operator && peer.principal === undefined) return undefined
+      return 403
+    }
+  } catch {}
+  // An unavailable or failed security service must not turn into public filesystem access.
+  return 503
+```
 
+</details>
+
+**依据 2 · 源码核查**：[01_content/src/index.ts:233-270](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L233-L270)
+
+WS 建连准入、spawn env 与消息写入。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
   ctx.effect(() => webServer.registerUpgrade({
     path: '/api/worktable/term',
-    handler: (req: any, socket: any, head: any) => {
+    handler: async (req: any, socket: any, head: any) => {
+      let rejected = await requestRejection(ctx, req)
+      if (disposed) rejected = 503
+      if (rejected !== undefined) {
+        socket.end(`HTTP/1.1 ${rejected} ${rejectionText(rejected)}\r\nConnection: close\r\nContent-Length: 0\r\n\r\n`)
+        return
+      }
       wss.handleUpgrade(req, socket, head, (ws: any) => {
         const u = new URL(req.url ?? '/', 'http://dsh.internal')
         const cwd = serverCwd(ctx, u.searchParams.get('sessionId') || undefined, u.searchParams.get('cwd') || undefined)
@@ -369,88 +346,589 @@ export function widgetManifestPath(binding: WidgetBinding): string {
         try {
           const shell = spawnShell()
           term = pty.spawn(shell.cmd, shell.args, { name: 'xterm-256color', cols, rows, cwd, env: process.env })
+          terminals.add(term)
+        } catch (err) {
+          try { ws.send('\r\n[worktable] 终端启动失败：' + String(err)) } catch {}
+          try { ws.close() } catch {}
+          return
+        }
+        term.onData((d: string) => { try { ws.send(d) } catch {} })
+        term.onExit(() => { terminals.delete(term); try { ws.close() } catch {} })
+        ws.on('message', (raw: any) => {
+          const text = String(raw)
+          try {
+            const msg = JSON.parse(text)
+            if (msg && msg.type === 'resize' && Number.isFinite(msg.cols) && Number.isFinite(msg.rows)) {
+              term.resize(clampDim(msg.cols, cols), clampDim(msg.rows, rows))
+              return
+            }
+          } catch {}
+          try { term.write(text) } catch {}
+        })
+        ws.on('close', () => { terminals.delete(term); try { term.kill() } catch {} })
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[01_content/src/index.ts:283-295](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L283-L295)
+
+HTTP wrapper 在 route.handler 前拒绝。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+  const previews = createPreviewFiles()
+  ctx.effect(() => () => previews.clear(), 'dsh-worktable: preview capabilities')
+  // Direct WebServer routes do NOT inherit the host's /api authentication route.
+  const register = (route: any, publicAsset = false) => ctx.effect(() => webServer.register({
+    ...route,
+    handler: async (req: any, res: any) => {
+      if (!publicAsset && route.path !== HEALTH_PATH) {
+        const rejected = await requestRejection(ctx, req)
+        if (rejected !== undefined) { json(res, rejected, { error: rejectionText(rejected) }); return }
+      }
+      return route.handler(req, res)
+    },
+  }), 'dsh-worktable: ' + route.path)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[01_content/src/index.ts:220-225](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L220-L225)
+
+插件卸载清理连接和终端。
+
+```text
+  ctx.effect(() => () => {
+    disposed = true
+    for (const ws of wss.clients ?? []) { try { ws.terminate() } catch {} }
+    for (const term of terminals) { try { term.kill() } catch {} }
+    terminals.clear()
+    try { wss.close() } catch {}
+```
+
+**依据 5 · 源码核查**：[01_content/lib/index.js:11-26](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/lib/index.js#L11-L26)
+
+package main 实际发布入口含同样 owner admit 与默认拒绝逻辑，不只读取 TypeScript。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+async function requestRejection(ctx, req) {
+  try {
+    const connection = typeof ctx.get === "function" ? ctx.get("connection") : void 0;
+    if (!connection) return 503;
+    if (typeof connection.admit === "function") {
+      const admission = await connection.admit(req);
+      if (!admission || typeof admission !== "object") return 503;
+      if ("rejection" in admission) return admission.rejection === 401 ? 401 : 403;
+      const peer = admission.peer;
+      if (peer?.principal?.kind === "owner") return void 0;
+      if (peer && peer === connection.operator && peer.principal === void 0) return void 0;
+      return 403;
+    }
+  } catch {
+  }
+  return 503;
+```
+
+</details>
+
+#### 缺口
+
+- 已建立 WS 的身份撤销不能立即切断。
+  **影响**：身份被收回与 shell 能力终止之间存在窗口，不适合把其视为动态多用户隔离终端。
+  **进一步探讨**：在隔离 host 撤销 owner 后保持终端连接，确认操作窗口，并验证关闭插件/连接后 shell 终止；需要即时策略时先不启终端。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 什么实现边界最可能使工作台内容组件的贡献不成立，哪些工程设计可复用？
+### Q03 · 不可信 HTML 的读取与撤销边界是什么？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-最关键是界面隔离是否被误读为实际文件隔离。Host file直接pathResolve读本机路径，PTY传process.env，结果manifest也可指任意非空path，用户必须信任任务与权限边界；报告不把它当已证实漏洞。撤销本地存储失败被catch，内存有效但重载持久性未保。工程可借鉴binding ID拒晚到旧结果，需补可见写失败与明确业务验收状态；跨平台和全链验收仍有限。
+SandboxedFrame 不授 allow-same-origin，只允许 scripts/forms/downloads，使项目页无法直接共享主文档 origin 和存储。页面需要本地资源时由登录用户 POST mount 根目录，返回随机24字节 base64url capability；静态地址公开读取靠 token 授权，资源级 CORS=* 是为 opaque origin 提供目录静态资源，不代表私有 Host API 无需身份。previewFiles 拒绝路径分隔与目录穿越，并对 realpath、单句柄 dev/inode/size/mtime/ctime 在读取前后重验；单文件40MiB，128挂载，空闲30分钟过期。客户端换 URL、刷新与卸载撤销 token，Host 卸载清空；因此相对同源 iframe 有明确隔离增量。但 capability 授予整个所选目录及子目录，页面仍可联网；不能挂载包含秘密的目录，也不能把句柄复核称为抵御恶意本机写者 ABA 竞态的 OS 沙箱。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[01_content/src/index.ts:267-288](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts#L267-L288)
+**依据 1 · 源码核查**：[01_content/src/client/SandboxedFrame.tsx:4-19](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/SandboxedFrame.tsx#L4-L19)
 
-直接文件读取及大小门
+sandbox 权限和输入 URL 验证。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-  // 本地文件读取（资源管理器点击 .html 后浏览器标签内打开）
-  webServer.register({
+const SANDBOX = 'allow-scripts allow-forms allow-downloads'
+const SITE = '/api/worktable/site/'
+
+/** Accept navigations, not executable URL schemes. Keep saved URLs free of capabilities. */
+export function previewTarget(input: string, base: string) {
+  const url = new URL(input, base)
+  const own = new URL(base)
+  const sameHost = url.protocol === own.protocol && url.host === own.host
+  if (!['http:', 'https:'].includes(url.protocol) && !(sameHost && url.protocol === 'dsh-app:')) throw new Error('Unsupported preview URL')
+  if (!sameHost || !url.pathname.startsWith(SITE)) return { url: url.href }
+  const segments = url.pathname.slice(SITE.length).split('/')
+  const root = decodeURIComponent(segments.shift() ?? '')
+  if (!root) throw new Error('Missing preview directory')
+  const relative = segments.map(decodeURIComponent)
+  if (relative.some(s => s === '..' || /[\\/\0]/.test(s))) throw new Error('Invalid preview path')
+  return { root, relative: relative.map(encodeURIComponent).join('/'), suffix: url.search + url.hash }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[01_content/src/client/SandboxedFrame.tsx:26-56](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/SandboxedFrame.tsx#L26-L56)
+
+申请随机目录地址、失败和卸载撤销，iframe 真正使用 sandbox。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+  useEffect(() => {
+    let alive = true
+    let token: string | undefined
+    const revoke = (value: string) => { void fetch('/api/worktable/preview', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ revoke: value }), keepalive: true,
+    }).catch(() => {}) }
+    setSrc('about:blank')
+    setError('')
+    void (async () => {
+      if (!props.url || props.url === 'about:blank') return
+      const target = previewTarget(props.url, location.href)
+      if ('url' in target) { if (alive) setSrc(target.url!); return }
+      const response = await fetch('/api/worktable/preview', {
+        method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ root: target.root }),
+      })
+      if (!response.ok) throw new Error('Preview HTTP ' + response.status)
+      const grant = await response.json()
+      if (typeof grant.token !== 'string' || !/^[\w-]{32}$/.test(grant.token) || grant.base !== '/api/worktable/preview-static/' + grant.token + '/') throw new Error('Invalid preview grant')
+      token = grant.token
+      if (!alive) { revoke(token!); token = undefined; return }
+      setSrc(hostPreviewUrl(grant.base + target.relative + target.suffix))
+    })().catch(err => {
+      if (token) { revoke(token); token = undefined }
+      if (alive) setError(String(err))
+    })
+    return () => { alive = false; if (token) revoke(token) }
+  }, [props.url, props.reloadKey])
+  if (error) return <div className="dsh-wt_paneWip"><span className="dsh-wt_paneWipText">{error}</span></div>
+  return <iframe key={props.reloadKey} className="dsh-wt_paneFrame" src={src}
+    data-source-url={props.url} title={props.title ?? ''} sandbox={SANDBOX} referrerPolicy="no-referrer" />
+```
+
+</details>
+
+**依据 3 · 源码核查**：[01_content/src/previewFiles.ts:5-45](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/previewFiles.ts#L5-L45)
+
+CSP、限额、token 和路径 containment。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+export const PREVIEW_PREFIX = '/api/worktable/preview-static'
+export const PREVIEW_SANDBOX = 'allow-scripts allow-forms allow-downloads'
+export const PREVIEW_CSP = `sandbox ${PREVIEW_SANDBOX}; base-uri 'none'; object-src 'none'; frame-src 'none'`
+export const PREVIEW_MAX_BYTES = 40 * 1024 * 1024
+const IDLE_MS = 30 * 60 * 1000
+const MAX_MOUNTS = 128
+
+function inside(root: string, file: string): boolean {
+  const rel = relative(root, file)
+  return rel === '' || (!isAbsolute(rel) && rel !== '..' && !rel.startsWith('..' + sep))
+}
+
+/** Short-lived read-only capabilities. They grant one directory, never host APIs. */
+export function createPreviewFiles(now = () => Date.now()) {
+  const mounts = new Map<string, { root: string; touched: number }>()
+  const prune = () => { for (const [key, item] of mounts) if (now() - item.touched >= IDLE_MS) mounts.delete(key) }
+  return {
+    async mount(root: string) {
+      if (!isAbsolute(root)) throw new Error('Preview root must be absolute')
+      const canonical = await realpath(root)
+      if (!(await stat(canonical)).isDirectory()) throw new Error('Preview root is not a directory')
+      prune()
+      if (mounts.size >= MAX_MOUNTS) throw new Error('Too many open previews; close an unused preview first')
+      const token = randomBytes(24).toString('base64url')
+      mounts.set(token, { root: canonical, touched: now() })
+      return token
+    },
+    revoke(token: string) { mounts.delete(token) },
+    clear() { mounts.clear() },
+    async file(token: string, segments: string[], headOnly = false) {
+      prune()
+      const mount = mounts.get(token)
+      if (!mount) return null
+      // Decode exactly once before this call; forbid separators embedded in a segment.
+      if (segments.some(s => s === '..' || s.includes('/') || s.includes('\\') || s.includes('\0'))) return null
+      let target = resolve(mount.root, ...segments)
+      if (!inside(mount.root, target)) return null
+      let info = await stat(target).catch(() => null)
+      if (info?.isDirectory()) target = resolve(target, 'index.html')
+      const canonical = await realpath(target).catch(() => null)
+      if (!canonical || !inside(mount.root, canonical)) return null
+```
+
+</details>
+
+**依据 4 · 源码核查**：[01_content/src/previewFiles.ts:46-89](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/previewFiles.ts#L46-L89)
+
+单句柄身份复核与读取上限。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+      // Keep the read bound to one handle. Recheck path/identity around the read
+      // to reject ordinary replacement races; this is not an OS filesystem jail
+      // against an adversarial local process coordinating ABA path swaps.
+      const handle = await open(canonical, 'r').catch(() => null)
+      if (!handle) return null
+      try {
+        const before = await handle.stat({ bigint: true })
+        if (!before.isFile()) return null
+        const sameFile = (other: typeof before) => other.isFile()
+          && other.dev === before.dev && other.ino === before.ino
+          && other.size === before.size && other.mtimeNs === before.mtimeNs
+          && other.ctimeNs === before.ctimeNs
+        const stillValid = async () => {
+          const current = await realpath(canonical)
+          if (current !== canonical || !inside(mount.root, current)) return false
+          const named = await stat(current, { bigint: true })
+          const opened = await handle.stat({ bigint: true })
+          return sameFile(named) && sameFile(opened)
+            && mounts.get(token) === mount && now() - mount.touched < IDLE_MS
+        }
+        const tooLarge = () => Object.assign(new Error('file too large'), { status: 413 })
+        if (before.size > BigInt(PREVIEW_MAX_BYTES)) throw tooLarge()
+        if (!(await stillValid())) return null
+        const chunks: Buffer[] = []
+        let total = 0
+        if (!headOnly) {
+          // A file may grow after stat. Never allocate/read an unbounded body.
+          while (total <= PREVIEW_MAX_BYTES) {
+            const chunk = Buffer.alloc(Math.min(64 * 1024, PREVIEW_MAX_BYTES + 1 - total))
+            const { bytesRead } = await handle.read(chunk, 0, chunk.length, total)
+            if (!bytesRead) break
+            total += bytesRead
+            if (total > PREVIEW_MAX_BYTES) throw tooLarge()
+            chunks.push(chunk.subarray(0, bytesRead))
+          }
+        }
+        if (!(await stillValid()) || (!headOnly && BigInt(total) !== before.size)) return null
+        mount.touched = now()
+        return { path: canonical, size: Number(before.size), data: headOnly ? undefined : Buffer.concat(chunks, total) }
+      } catch (error: any) {
+        if (error?.status === 413) throw error
+        return null
+      } finally {
+        await handle.close()
+```
+
+</details>
+
+**依据 5 · 源码核查**：[01_content/src/index.ts:311-331](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L311-L331)
+
+公开静态 capability 仅 GET/HEAD，私有准入与此分开。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  register({
+    kind: 'prefix', path: PREVIEW_PREFIX,
+    handler: async (req: any, res: any) => {
+      // A sandboxed document has an opaque origin. It can read only this capability's
+      // static directory, without credentials; it cannot pass the host API admission.
+      if (req.method !== 'GET' && req.method !== 'HEAD') { json(res, 405, { error: 'method not allowed' }); return }
+      try {
+        const parts = new URL(req.url ?? '/', 'http://dsh.internal').pathname.slice(PREVIEW_PREFIX.length + 1).split('/').map(decodeURIComponent)
+        const file = await previews.file(parts.shift() ?? '', parts.filter(Boolean), req.method === 'HEAD')
+        if (!file) { json(res, 404, { error: 'preview unavailable; refresh to reopen' }); return }
+        const ext = (file.path.split('.').pop() || '').toLowerCase()
+        res.writeHead(200, {
+          'content-type': FILE_TYPES[ext] ?? 'application/octet-stream',
+          'cache-control': 'no-store', 'referrer-policy': 'no-referrer',
+          'content-security-policy': PREVIEW_CSP, 'x-content-type-options': 'nosniff',
+          'access-control-allow-origin': '*',
+        })
+        res.end(file.data)
+      } catch (err: any) { json(res, err?.status === 413 ? 413 : 404, { error: err?.status === 413 ? 'file too large' : 'preview unavailable' }) }
+    },
+  }, true)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[01_content/lib/index.js:529-548](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/lib/index.js#L529-L548)
+
+发布入口实际以 capability 文件读取和 CSP/CORS 返回静态资源，核对源码与运行入口。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+      if (req.method !== "GET" && req.method !== "HEAD") {
+        json(res, 405, { error: "method not allowed" });
+        return;
+      }
+      try {
+        const parts = new URL(req.url ?? "/", "http://dsh.internal").pathname.slice(PREVIEW_PREFIX.length + 1).split("/").map(decodeURIComponent);
+        const file = await previews.file(parts.shift() ?? "", parts.filter(Boolean), req.method === "HEAD");
+        if (!file) {
+          json(res, 404, { error: "preview unavailable; refresh to reopen" });
+          return;
+        }
+        const ext = (file.path.split(".").pop() || "").toLowerCase();
+        res.writeHead(200, {
+          "content-type": FILE_TYPES[ext] ?? "application/octet-stream",
+          "cache-control": "no-store",
+          "referrer-policy": "no-referrer",
+          "content-security-policy": PREVIEW_CSP,
+          "x-content-type-options": "nosniff",
+          "access-control-allow-origin": "*"
+        });
+```
+
+</details>
+
+#### 缺口
+
+- 多并发40MiB资源的峰值内存与精确恶意本地竞态未验证。
+  **影响**：单资源上限不是总内存预算，不能承诺高并发稳定或 OS 级隔离。
+  **进一步探讨**：以隔离目录测并发、撤销与普通替换；出现内存压力先收小资源或关闭预览，不向敌对本机写者作保证。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 绑定当前是否意味着文件内容与撤销持久安全？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+不意味着。Host write 在 owner 认证后按请求路径 pathResolve 直接 writeFile，没有项目根沙箱；多个项目改同一真实路径仍互相覆盖。绑定只证明接收结果属于该 UI 关联，不证明内容没被其他写者改动。begin 的 persist 失败会回滚，而 revokePane 把 enabled=false 留在内存并吞掉 persist 错误；刷新后持久旧关联可能恢复，用户必须核对。这是具体失败可见性缺口，不应因新增身份认证而忽略。可信单用户也要把“有权限”“绑定当前”“文件当前内容”“业务验收”分开。可借鉴的部分是三重身份和创建回滚；复用应补撤销错误提示、版本摘要及稳定恢复，不只复制 ID。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[01_content/src/index.ts:493-508](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L493-L508)
+
+真实 writeFile 使用请求绝对路径，无项目 containment。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  register({
     kind: 'exact',
-    path: '/api/worktable/file',
+    path: '/api/worktable/write',
     handler: async (req: any, res: any) => {
       try {
-        const u = new URL(req.url ?? '/', 'http://dsh.internal')
-        const p = u.searchParams.get('path') || ''
+        if (req.method !== 'POST') { res.writeHead(405); res.end(); return }
+        const body = await readJsonBody(req)
+        const p = typeof body.path === 'string' ? body.path : ''
+        const content = typeof body.content === 'string' ? body.content : ''
         if (!p) { json(res, 400, { error: 'missing path' }); return }
+        if (content.length > 20 * 1024 * 1024) { json(res, 413, { error: 'content too large' }); return }
         const abs = pathResolve(p)
-        const stat = await import('node:fs/promises').then((m) => m.stat(abs))
-        if (stat.size > 20 * 1024 * 1024) { json(res, 413, { error: 'file too large' }); return }
-        const data = await readFile(abs)
-        const ext = (abs.split('.').pop() || '').toLowerCase()
-        const types: Record<string, string> = {
-          html: 'text/html; charset=utf-8', htm: 'text/html; charset=utf-8',
-          css: 'text/css; charset=utf-8', js: 'text/javascript; charset=utf-8', mjs: 'text/javascript; charset=utf-8',
-          json: 'application/json; charset=utf-8', md: 'text/markdown; charset=utf-8', markdown: 'text/markdown; charset=utf-8', txt: 'text/plain; charset=utf-8', log: 'text/plain; charset=utf-8',
-          pdf: 'application/pdf', svg: 'image/svg+xml', png: 'image/png', jpg: 'image/jpeg', jpeg: 'image/jpeg', gif: 'image/gif', webp: 'image/webp', bmp: 'image/bmp', ico: 'image/x-icon',
-        }
-        res.writeHead(200, { 'content-type': FILE_TYPES[ext] ?? 'application/octet-stream', 'cache-control': 'no-store' })
-        res.end(data)
+        await import('node:fs/promises').then((m) => m.writeFile(abs, content, 'utf8'))
+        json(res, 200, { ok: true })
+      } catch (err) {
+        json(res, (err as any).status ?? 500, { error: String(err) })
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[01_content/src/index.ts:216-227](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts#L216-L227)
+**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:89-107](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/widgetMount.ts#L89-L107)
 
-完整环境Shell
+创建回滚、撤销吞错和当前身份核查的不同语义。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-  ctx.effect(() => webServer.registerUpgrade({
-    path: '/api/worktable/term',
-    handler: (req: any, socket: any, head: any) => {
-      wss.handleUpgrade(req, socket, head, (ws: any) => {
-        const u = new URL(req.url ?? '/', 'http://dsh.internal')
-        const cwd = serverCwd(ctx, u.searchParams.get('sessionId') || undefined, u.searchParams.get('cwd') || undefined)
-        const cols = clampDim(Number(u.searchParams.get('cols')), 80)
-        const rows = clampDim(Number(u.searchParams.get('rows')), 24)
-        let term: any = null
-        try {
-          const shell = spawnShell()
-          term = pty.spawn(shell.cmd, shell.args, { name: 'xterm-256color', cols, rows, cwd, env: process.env })
+    this.records[projectId] = next
+    try { this.persist() } catch (error) { if (before) this.records[projectId] = before; else delete this.records[projectId]; throw error }
+    return this.entries(projectId).filter((b) => b.sessionId === sessionId)
+  }
+  revokePane(projectId: string, paneId: string) {
+    const b = this.records[projectId]?.[paneId]
+    if (!b || !b.enabled) return
+    this.records[projectId] = { ...this.records[projectId], [paneId]: { ...b, enabled: false } }
+    try { this.persist() } catch { /* Revocation takes effect in memory even if storage is full. */ }
+  }
+  revokeProject(projectId: string) {
+    if (!this.records[projectId]) return
+    for (const b of this.entries(projectId)) this.revokePane(projectId, b.paneId)
+  }
+  isCurrent(binding: WidgetBinding, spec: WidgetSpec | null | undefined, folder: string | undefined): boolean {
+    const current = this.records[binding.projectId]?.[binding.paneId]
+    return !!current?.enabled && current.bindingId === binding.bindingId && current.sessionId === binding.sessionId &&
+      current.folder === folder && binding.folder === folder && spec?.id === binding.projectId &&
+      widgetTargets(spec).filter((t) => t.pane.id === binding.paneId).length === 1
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[01_content/src/client/widgetMount.ts:93-118](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L93-L118)
+#### 缺口
 
-撤销写失败与结果匹配
+- 存储满后撤销失败的用户提示与刷新恢复未由本轮实机验证。
+  **影响**：可能出现用户已关闭而持久记录仍启用的状态，需要人工核对。
+  **进一步探讨**：故障注入 localStorage 写失败并刷新；任何旧结果复活即停止自动挂载，保留文件后清理绑定。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 使用路径、平台和总成本如何界定？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+package 的 0.5.0 只声明 Node>=22 与 DSH 0.2.0-rc.2/0.2.1-rc.3；旧0.1范围不再适用。网页和官方 Windows Desktop 的命令所有者不同，Desktop 要完整退出并用其自带 CLI，不能用独立 web CLI 管理。README 的 Windows 隔离验证、部分 Desktop 点测是作者报告；本轮无运行，macOS 仍实验性。终端依赖宿主 ws/node-pty，缺失降级；React 和 slots 耦合宿主。用户配置项目/目录/会话和布局，状态与媒体按浏览器来源保存在本机，不自动 Web/Desktop 同步。成本既含本地 PTY、媒体和网页网络，也含绑定复核和故障恢复；状态通道不调用模型不代表项目任务无费用。没有同任务对照，不能声称多窗提高净效率。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[01_content/package.json:1-21](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/package.json#L1-L21)
+
+真实组件版本、主入口和精确 engines。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（21行）</summary>
+
+```text
+{
+  "name": "dsh-worktable",
+  "description": "工作台 Worktable：DeepSeek Harness 侧边栏的 agent 级项目容器（应用抽屉）",
+  "version": "0.5.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aisland-SJL/dsh-worktable.git",
+    "directory": "01_content"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": "0.2.0-rc.2 || 0.2.1-rc.3"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+```
+
+</details>
+
+**依据 2 · 作者声明**：[01_content/README.md:24-39](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L24-L39)
+
+作者当前兼容、安全与局部验收边界。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+- HTTP 文件/目录/写入/Git/工作区与终端握手先通过宿主身份验证，仅放行 owner（0.2.0 使用单 operator 身份）；缺少可确认身份的服务时返回 503，不降级开放。health 仍可公开读取状态。以前直接用无登录 curl 调用这些接口的方式将被拒绝；不提供跳过鉴权开关。
+- 候选 dev.1 已在 Windows 隔离数据目录验证 **DSH 0.2.0-rc.2 / 0.2.1-rc.3 网页端**的冷启动、加载、分栏、文件与网页资源；0.2.1 另测创建/写入、控制室绑定和终端，未发送模型请求。用户已在官方 Windows Desktop 0.2.1-rc.3 验证 dev.2 的项目打开、分栏缩放与侧栏设置弹窗正常；前轮新项目也已点测。正式包另做安装与回归检查，这些证据不等于双端全功能验收。
+- 本版的 `engines.dsh` 与兼容矩阵只列上述两个 0.2 版本。旧 0.1.x 不在本版支持范围；下方 v0.4.0 的记录是历史范围，不代表 0.5.0 继续支持旧宿主。
+- 折叠侧栏与展开侧栏共用一份弹窗层，使控制室新建项目、绑定、图标与删除弹窗不因侧栏收起而消失，避免重复渲染。
+- 修复分栏 margin 的小数值被浏览器规范化后误判为外部改写，以及会话根更换后观察器仍盯着旧元素的问题。
+
+### 网页隔离的影响与边界
+
+- 浏览器/动画/自定义 HTML 窗格使用无 `allow-same-origin` 的 sandbox；网页不能直接读取 DSH 主页面及其同源存储；私有文件操作和终端接口仍需宿主身份校验。工作台自己的项目、布局和媒体存储不迁移、不删除。
+- **可能受影响**：嵌入页面的 localStorage、IndexedDB、Cookie 登录、依赖同源的请求、弹出新窗口/顶层跳转，以及标注时自动读取 iframe 内文字。项目页内嵌 iframe/object 被限制；依赖这些能力的页面可能需要单独适配。网页窗口级标注仍可使用，但不能承诺保留逐元素文字提取。
+- **已观察到的兼容限制**：Cesium 等库的 WebGL 纹理可能需要显式跨源加载。StarMap 的月球纹理已在独立项目中修复并验证，改动不包含在工作台安装包里；其他旧网页仍需各自检查。不会为恢复旧网页取消安全隔离。
+- 本地 HTML 通过登录后创建的随机只读地址加载，允许读取该次选择目录内的资源（包括子目录），支持相对 CSS、JS 模块与 fetch；它不是“只能读当前 HTML 文件”。不要给不可信页面挂载含敏感文件的目录；页面仍可主动联网，隔离不等于阻止数据外发。
+- 临时地址不写入项目存档，单资源最多 40 MiB，最多 128 个挂载，连续 30 分钟无读取后失效；失效后点击窗格刷新重新创建。关闭网页标签、刷新替换、组件卸载或插件卸载会撤销；仅关闭/切换项目仍沿用最多 6 个项目的保活池，不立即撤销仍挂载的页面。
+- 预览使用同一文件句柄限量读取，读取前后复核真实路径、文件身份与状态；检测到替换、改写或撤销时不返回内容。此措施不是针对恶意本地写入者精确竞态的操作系统沙箱；40 MiB 是单资源限制，不是所有并发请求的总内存额度。
+- 终端插件卸载时关闭本插件连接及 Shell。鉴权检查发生在每次 HTTP 请求/WS 建连；本轮没有实现宿主身份撤销后即时断开已有 WS 的机制。
+- `npm run test:security` 覆盖鉴权、预览目录越界/生命周期、终端卸载；`npm run pack` 同时执行真实 Chromium 小数 margin 回归。需要本机安装 Edge/Chrome，或用 `DSH_TEST_CHROMIUM` 指定可执行文件。
+```
+
+</details>
+
+**依据 3 · 作者声明**：[01_content/README.md:60-89](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L60-L89)
+
+文件、shell、环境、依赖及不同安装所有者。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+## 权限与外部服务（如实披露）
+
+- **文件访问**：服务端读写工作区与用户指定的目录——文件窗目录列表、MD 编辑保存、项目文件夹 mkdir、站点静态托管、widget 产物读取。除用户当次操作外，插件在加载时、项目状态变化时、已登记窗口任务完成时会自动读取当前关联的 `.dsh-worktable/` 结果文件及其指定产物，并读取宿主提供的工作区数据（workspaces 路由）。不扫描根目录旧 `widget-result.json`；产物路径可来自任务结果，这不是文件系统沙箱。失败返回错误或降级。
+- **网络**：① 更新检查向 api.github.com 发只读 GET（无凭据，请求仅含公开仓库名，不携带会话内容）；② 插件与宿主的通信走宿主自身的 API / WebSocket 通道；③ 网页窗加载用户指定的页面，页面自身可能发起任意网络请求；本版的隔离与存储限制见上节，不等同于完整浏览器页面的功能。
+- **命令执行**：① 「源代码管理」窗运行 git 只读状态命令；② 「终端」窗经 node-pty 启动交互式 Shell（Windows 下为 PowerShell）——这是用户主动使用的完整终端：终端内执行的任何命令都可能读写文件、联网，行为等同用户本人操作。
+- **凭据与环境**：插件代码不专门提取、存储或上传任何 API Key / Token / Cookie；但终端窗把宿主进程的完整环境变量传给子 Shell（其中可能包含敏感信息），终端内命令的行为不受插件约束。插件对 process.env 的读取用于运行参数（数据目录 DSH_HOME、终端默认 Shell SHELL 等），不将其外发。以上声明均有对应源码可查；本说明不是安全保证，高权限能力如实列出，使用风险由用户在自身环境评估。
+- **外部依赖与边界**：无生产依赖；终端窗依赖宿主的 ws / node-pty（缺失时该窗降级提示，不影响其余功能）。不替换、不禁用任何官方插件。本插件不声称解决宿主自身的全部启动问题。
+
+## 安装
+
+### 网页端
+
+方式 A（推荐，无需 Git）——直接安装 GitHub Release 的最新安装包：
+
+    dsh plugin --profile web add "https://github.com/Aisland-SJL/dsh-worktable/releases/latest/download/dsh-worktable.tgz"
+
+方式 B（想改源码用）——克隆仓库后用本地路径注册（`link:` 只接受本地路径，不要带空格）：
+
+    git clone https://github.com/Aisland-SJL/dsh-worktable.git
+    dsh plugin --profile web add "link:<克隆出来的 dsh-worktable 仓库目录的绝对路径>/01_content"
+
+两种方式 `add` 都会把 `dsh-worktable` 注册进 profile 的 bundle 列表（写入 `~/.dsh`），装完重启 dsh web、刷新界面生效。
+
+### Windows 官方桌面端
+
+先保存任务，从应用菜单/托盘完整退出（只关窗口不够）；将占位路径替换为实际桌面端安装目录，在 PowerShell 执行，再手动重新打开应用：
+
+    & "<桌面端安装目录>\resources\runtime\cli\bin\dsh.cmd" plugin --profile desktop add "https://github.com/Aisland-SJL/dsh-worktable/releases/download/v0.5.0/dsh-worktable-0.5.0.tgz"
+
+不要以不固定版本的 npx 或网页端 CLI 代替桌面端自带 CLI；保留实际 DSH_HOME，勿把测试数据目录覆盖正式数据。新建控制室管理对话时，DSH 0.2 用户请选择分组，或直接绑定可用的现有对话。
+```
+
+</details>
+
+#### 缺口
+
+- 复杂布局下总操作时间、完整审批/子 agent/自动挂载闭环未证实。
+  **影响**：不能把局部点测当完整业务成功或 macOS 兼容。
+  **进一步探讨**：用两个低风险项目先核绑定/文件/布局，再覆盖实际审批与晚到产物；记录总人工分钟和错误挂载。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 谁可以试用，哪项改进值得验证？
+
+**研究主题**：采用判断、新假设与验证
+
+#### 完整回答
+
+愿管理本地目录与会话的 Windows 个人开发者可在支持版本隔离 profile 试用两个低风险项目，先不启终端，逐项测重绑、旧结果、预览撤销再扩大。多用户共享高权限服务、无法区分网页外发与本地秘密目录的人，以及要求即时撤销既有终端身份的人先观察。未验证假设是在结果中增加内容摘要与生成版本、将撤销持久失败变成可见恢复状态，能同时减少晚到写者和刷新复活的复核负担。以同目录两项目、重绑、晚到结果、存储满和文件被其他项目改写对照当前身份协议；若错挂/旧内容误认不降或人工时间增加，否定扩展。该假设不把 UI 绑定升级为文件系统沙箱。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[01_content/src/client/widgetMount.ts:93-119](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/client/widgetMount.ts#L93-L119)
+
+撤销与内容未绑定的设计为假设依据。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
   revokePane(projectId: string, paneId: string) {
@@ -479,64 +957,20 @@ export function widgetManifestPath(binding: WidgetBinding): string {
           !['html', 'url', 'file'].includes(d.kind) || typeof d.path !== 'string' || !d.path.trim()) return null
       const target = widgetTargets(spec).find((t) => t.pane.id === binding.paneId)!
       return { target, item: { kind: d.kind, path: d.path.trim() } }
+    } catch { return null }
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[01_content/README.md:19-25](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md#L19-L25)
+**依据 2 · 源码核查**：[01_content/src/index.ts:493-505](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/src/index.ts#L493-L505)
 
-作者验证范围与未完成链
-
-```text
-
-## v0.4.0：兼容与验证范围
-
-- DSH 网页端兼容声明仅列 **0.1.1-rc.2 / 0.1.2-rc.1 / 0.2.0-rc.2**，不是对任意新旧版本的保证。
-- Windows + 0.2.0-rc.2 网页端已有冷启动、工作台/控制室、新建绑定与短文本回复、关闭回切等验收基础；桌面主要页面与交互已点测，共目录串挂修复获用户确认。最终包经过 98 项源码回归、独立安装与客户端加载门禁；这些检查不等于完整桌面端业务验收。旧版沿用此前页面验收并补定向代码回归，未重跑整套旧版 GUI。
-- 实际审批、子代理、自动挂载全链路尚未完成业务验收；macOS 未真机验证。升级后请完整重启 DSH 并刷新页面，仍加载失败需保留完整错误。
-
-```
-
-#### 缺口
-
-- 外层路由认证、刷新撤销与macOS业务链未本轮验收
-  **影响**：不能给共享部署或跨平台保证
-  **进一步探讨**：隔离环境核Host认证及存储满重载、重绑和晚到结果
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 完成一次合格任务的首次、持续和恢复负担是什么？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次需对齐profile/DSH_HOME及布置项目窗口；持续付PTY/网页自身网络、产物IO和界面整理人工，实际模型任务另计；失败需核会话、manifest和实际文件，恢复浏览器存储或文件备份。同文件夹不同绑定可避免串挂，却不能阻止主动写同文件。没有端到端节时/正确交付或金额实测，不能按状态订阅零token推断整任务零成本。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[01_content/README.md:32-36](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md#L32-L36)
-
-来源设置及同实际文件边界
-
-```text
-- 自动挂载只接收经「自定义」任务登记的项目/窗口结果，握手文件位于项目目录的 `.dsh-worktable/project-<项目 ID>/` 下。换目录、重绑项目、修改布局或手动关闭/替换窗口内容后，旧关联不再自动补挂。
-- 同一项目的不同会话只得到和更新各自关联的窗口；同会话追改同名作品可以重新加载。补挂读取失败保留待办，下次打开可重试，成功后才清除。
-- 已保存的旧窗口与产物文件保留；根目录旧 `widget-result.json` 不再自动导入。旧对话若需继续自动挂载，请从目标窗口的「自定义 → 发送到会话」发一次任务以建立新关联，随后可在同一对话直接继续修改。不自动清除此前误挂的标签；多个项目主动改写同一实际文件时，文件内容仍可能互相影响。
-- 两端共享同一 DSH_HOME 时不必复制会话；项目/布局/媒体和外观设置按浏览器来源保存，不会自动从网页来源同步到桌面来源。不要复制整个浏览器配置或登录状态。
-
-```
-
-**依据 2 · 源码核查**：[01_content/src/index.ts:416-428](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/index.ts#L416-L428)
-
-直接写本地文件
+共同实际路径允许写入，是内容版本需求的反例。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
+  register({
     kind: 'exact',
     path: '/api/worktable/write',
     handler: async (req: any, res: any) => {
@@ -549,141 +983,28 @@ export function widgetManifestPath(binding: WidgetBinding): string {
         if (content.length > 20 * 1024 * 1024) { json(res, 413, { error: 'content too large' }); return }
         const abs = pathResolve(p)
         await import('node:fs/promises').then((m) => m.writeFile(abs, content, 'utf8'))
-        json(res, 200, { ok: true })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[01_content/src/client/widgetMount.ts:89-97](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L89-L97)
+**依据 3 · 作者声明**：[01_content/README.md:32-38](https://github.com/Aisland-SJL/dsh-worktable/blob/56ffe0cd1c320cde9f6101c6b2e49ec60ad53a17/01_content/README.md#L32-L38)
 
-创建持久失败回滚与撤销内存降级
+目录授权、外发和既有 WS 界限决定采用条件。
 
 ```text
-    this.records[projectId] = next
-    try { this.persist() } catch (error) { if (before) this.records[projectId] = before; else delete this.records[projectId]; throw error }
-    return this.entries(projectId).filter((b) => b.sessionId === sessionId)
-  }
-  revokePane(projectId: string, paneId: string) {
-    const b = this.records[projectId]?.[paneId]
-    if (!b || !b.enabled) return
-    this.records[projectId] = { ...this.records[projectId], [paneId]: { ...b, enabled: false } }
-    try { this.persist() } catch { /* Revocation takes effect in memory even if storage is full. */ }
+- 浏览器/动画/自定义 HTML 窗格使用无 `allow-same-origin` 的 sandbox；网页不能直接读取 DSH 主页面及其同源存储；私有文件操作和终端接口仍需宿主身份校验。工作台自己的项目、布局和媒体存储不迁移、不删除。
+- **可能受影响**：嵌入页面的 localStorage、IndexedDB、Cookie 登录、依赖同源的请求、弹出新窗口/顶层跳转，以及标注时自动读取 iframe 内文字。项目页内嵌 iframe/object 被限制；依赖这些能力的页面可能需要单独适配。网页窗口级标注仍可使用，但不能承诺保留逐元素文字提取。
+- **已观察到的兼容限制**：Cesium 等库的 WebGL 纹理可能需要显式跨源加载。StarMap 的月球纹理已在独立项目中修复并验证，改动不包含在工作台安装包里；其他旧网页仍需各自检查。不会为恢复旧网页取消安全隔离。
+- 本地 HTML 通过登录后创建的随机只读地址加载，允许读取该次选择目录内的资源（包括子目录），支持相对 CSS、JS 模块与 fetch；它不是“只能读当前 HTML 文件”。不要给不可信页面挂载含敏感文件的目录；页面仍可主动联网，隔离不等于阻止数据外发。
+- 临时地址不写入项目存档，单资源最多 40 MiB，最多 128 个挂载，连续 30 分钟无读取后失效；失效后点击窗格刷新重新创建。关闭网页标签、刷新替换、组件卸载或插件卸载会撤销；仅关闭/切换项目仍沿用最多 6 个项目的保活池，不立即撤销仍挂载的页面。
+- 预览使用同一文件句柄限量读取，读取前后复核真实路径、文件身份与状态；检测到替换、改写或撤销时不返回内容。此措施不是针对恶意本地写入者精确竞态的操作系统沙箱；40 MiB 是单资源限制，不是所有并发请求的总内存额度。
+- 终端插件卸载时关闭本插件连接及 Shell。鉴权检查发生在每次 HTTP 请求/WS 建连；本轮没有实现宿主身份撤销后即时断开已有 WS 的机制。
 ```
 
 #### 缺口
 
-- 多项目任务总工时、串挂频率和恢复投入未知
-  **影响**：无法量化多窗优于普通窗口管理
-  **进一步探讨**：同项目组对照普通窗口与工作台，计入配置和恢复时间
+- 内容版本及撤销恢复是否值得新增操作负担未知。
+  **影响**：不能作为已实现能力或已确认市场机会。
+  **进一步探讨**：先做五类故障矩阵和人工日志对照；收益不成立不扩为独立插件。
 
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 可从文件编辑、分屏与会话集成的限制推导什么可证伪改进？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证方案在当前三重ID上增加内容版本收据与撤销失败告知。绑定匹配只能说明“属于当前窗”，文件随后可变；应显示当前摘要/任务版本并把业务验收另记，不把Host idle当成功。用同目录双项目、旧写者、换目录、存储满重载对照，错挂或旧授权复活不减即否定，新增manifest版本与人工确认成本要观察。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[01_content/src/client/widgetMount.ts:103-118](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L103-L118)
-
-当前检查无内容摘要和验收字段
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  isCurrent(binding: WidgetBinding, spec: WidgetSpec | null | undefined, folder: string | undefined): boolean {
-    const current = this.records[binding.projectId]?.[binding.paneId]
-    return !!current?.enabled && current.bindingId === binding.bindingId && current.sessionId === binding.sessionId &&
-      current.folder === folder && binding.folder === folder && spec?.id === binding.projectId &&
-      widgetTargets(spec).filter((t) => t.pane.id === binding.paneId).length === 1
-  }
-  resolve(binding: WidgetBinding, raw: string, spec: WidgetSpec | null | undefined, folder: string | undefined):
-    { target: WidgetTarget; item: { kind: 'html' | 'url' | 'file'; path: string } } | null {
-    if (!this.isCurrent(binding, spec, folder)) return null
-    try {
-      const d = JSON.parse(raw)
-      if (!d || Array.isArray(d) || d.version !== 2 || d.projectId !== binding.projectId ||
-          d.paneId !== binding.paneId || d.bindingId !== binding.bindingId || d.window !== binding.window ||
-          !['html', 'url', 'file'].includes(d.kind) || typeof d.path !== 'string' || !d.path.trim()) return null
-      const target = widgetTargets(spec).find((t) => t.pane.id === binding.paneId)!
-      return { target, item: { kind: d.kind, path: d.path.trim() } }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:93-97](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L93-L97)
-
-撤销持久失败处理切入点
-
-```text
-  revokePane(projectId: string, paneId: string) {
-    const b = this.records[projectId]?.[paneId]
-    if (!b || !b.enabled) return
-    this.records[projectId] = { ...this.records[projectId], [paneId]: { ...b, enabled: false } }
-    try { this.persist() } catch { /* Revocation takes effect in memory even if storage is full. */ }
-```
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 哪些用户可以受控采用工作台内容组件，何时应停止？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-Windows个人开发者可先建两个低风险项目，核目录/会话/窗格与关闭后旧结果不再挂，确认后才启高权限终端和外部网页。macOS或多人远程部署先观察，作者也未完成全部审批/子代理业务。出现错会话、旧结果复活或文件权限超预期就停用相关窗口并查持久事实，不用重发任务掩盖未知结果。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[01_content/README.md:19-25](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/README.md#L19-L25)
-
-平台与业务验证边界
-
-```text
-
-## v0.4.0：兼容与验证范围
-
-- DSH 网页端兼容声明仅列 **0.1.1-rc.2 / 0.1.2-rc.1 / 0.2.0-rc.2**，不是对任意新旧版本的保证。
-- Windows + 0.2.0-rc.2 网页端已有冷启动、工作台/控制室、新建绑定与短文本回复、关闭回切等验收基础；桌面主要页面与交互已点测，共目录串挂修复获用户确认。最终包经过 98 项源码回归、独立安装与客户端加载门禁；这些检查不等于完整桌面端业务验收。旧版沿用此前页面验收并补定向代码回归，未重跑整套旧版 GUI。
-- 实际审批、子代理、自动挂载全链路尚未完成业务验收；macOS 未真机验证。升级后请完整重启 DSH 并刷新页面，仍加载失败需保留完整错误。
-
-```
-
-**依据 2 · 源码核查**：[01_content/src/client/widgetMount.ts:103-118](https://github.com/Aisland-SJL/dsh-worktable/blob/6cb86b6c73b3c356373e06cd81e08952542ea040/01_content/src/client/widgetMount.ts#L103-L118)
-
-采用验收应核具体所有权
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  isCurrent(binding: WidgetBinding, spec: WidgetSpec | null | undefined, folder: string | undefined): boolean {
-    const current = this.records[binding.projectId]?.[binding.paneId]
-    return !!current?.enabled && current.bindingId === binding.bindingId && current.sessionId === binding.sessionId &&
-      current.folder === folder && binding.folder === folder && spec?.id === binding.projectId &&
-      widgetTargets(spec).filter((t) => t.pane.id === binding.paneId).length === 1
-  }
-  resolve(binding: WidgetBinding, raw: string, spec: WidgetSpec | null | undefined, folder: string | undefined):
-    { target: WidgetTarget; item: { kind: 'html' | 'url' | 'file'; path: string } } | null {
-    if (!this.isCurrent(binding, spec, folder)) return null
-    try {
-      const d = JSON.parse(raw)
-      if (!d || Array.isArray(d) || d.version !== 2 || d.projectId !== binding.projectId ||
-          d.paneId !== binding.paneId || d.bindingId !== binding.bindingId || d.window !== binding.window ||
-          !['html', 'url', 'file'].includes(d.kind) || typeof d.path !== 'string' || !d.path.trim()) return null
-      const target = widgetTargets(spec).find((t) => t.pane.id === binding.paneId)!
-      return { target, item: { kind: d.kind, path: d.path.trim() } }
-```
-
-</details>
-
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

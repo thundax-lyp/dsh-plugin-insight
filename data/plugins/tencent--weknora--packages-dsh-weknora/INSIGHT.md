@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[e1f9a61](https://github.com/Tencent/WeKnora/tree/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora)
+源码版本：[c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora)
 
 <!-- BEGIN META -->
-[![GitHub ★ 35,257](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C257&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 4,785](https://img.shields.io/static/v1?label=npm+30d&message=4%2C785&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
+[![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 5,203](https://img.shields.io/static/v1?label=npm+30d&message=5%2C203&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
 <!-- END META -->
 
-> **功能**：为 DeepSeek Harness 提供 WeKnora 知识库检索、文档阅读及带引用的问答。
+> **功能**：为 DSH 提供 WeKnora 知识库检索、文档阅读与综合问答工具
 
-> **亮点**：它把平台检索包装成可继续阅读、可核对引用的 DSH 工具协议，并通过标题补召回和范围过滤减少模型自行拼 API 的负担；检索算法属于 WeKnora 平台。[Q03](#research-q03)
+> **亮点**：该包把检索片段、文档补读和服务端问答拆成可组合的 DSH 工具，并保留可追踪文档 ID 和截断信息，减少自行接 API 的工程负担；其增量属于适配层而非检索算法。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：ask 会创建会话并触发服务端模型，完全只读仅适用于知识内容；默认全可见库范围也需按任务收窄。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：分页结束不代表文本未被裁剪，默认库范围也不是强制白名单；ask 会写会话状态，不能以“知识内容只读”推导无副作用。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -20,16 +20,17 @@
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
   - [1.3 工程亮点](#detail-section-4)
-  - [1.4 使用建议](#detail-section-5)
-  - [1.5 核查说明与分析版本](#detail-section-6)
-- [2 未来设计假设（未验证）](#detail-section-7)
-- [3 辅助信息](#detail-section-8)
-- [4 研究问题与完整回答](#detail-section-9)
-  - [Q01 · 已有 WeKnora 的团队如何在 DSH 中取得可审查的知识结果？](#detail-section-10)
-  - [Q02 · 工具从注册到 REST/SSE 如何运作，默认范围和权限是什么？](#detail-section-11)
-  - [Q03 · 检索包装的具体增量能否支撑完全只读的表述？](#detail-section-12)
-  - [Q04 · 什么试用范围可控，总成本和效果还缺什么？](#detail-section-13)
-  - [Q05 · 哪些接口设计可复用，如何验证按证据充分性升级 ask 的假设？](#detail-section-14)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 已有知识平台的团队为什么需要这个适配层？](#detail-section-11)
+  - [Q02 · 调用怎样从 DSH 到达知识库并形成可复核结果？](#detail-section-12)
+  - [Q03 · 默认范围与失败处理能否保证完整且最小范围的证据？](#detail-section-13)
+  - [Q04 · 采用需要承担哪些责任，如何限定试用与退出？](#detail-section-14)
+  - [Q05 · 哪些工程改进值得继续验证而不冒充已有贡献？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,11 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：目标用户是已维护组织知识库、又在 DSH 中处理研发或研究任务的团队。
+> **用途**：已经维护 WeKnora 的研发或研究人员，在 DSH 中检索组织文档并补读原文，避免在平台网页与宿主间手工搬运证据。
 
-目标用户是已维护组织知识库、又在 DSH 中处理研发或研究任务的团队。合格结果应包含原始段落、knowledge_id 和可继续阅读的上下文，而非只收到另一模型的结论。原有办法是切换到 WeKnora 网页或手工请求 REST API；插件将检索、全文和综合问答分开，让宿主模型自行决定推理还是委托。该包不提供文档入库、向量索引或 embedding，根平台的知识生产能力不能算作本适配层贡献。
-
-替代基线为直接调用 WeKnora REST、切换平台网页或只检索工作区文件；后两者分别增加应用切换或缺少组织知识范围。
+基线为直接使用已部署的 WeKnora 网页或手写 API 请求。插件新增 DSH 工具适配与结果投影，不将服务端检索和模型能力算作自身贡献。
 
 <a id="detail-section-3"></a>
 
@@ -53,78 +52,96 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| weknora_list_knowledge_bases | 列出凭证可见知识库以确定范围 | 需 retrieve；不是只显示本任务授权库 |
-| weknora_search | 返回排序片段并补充标题匹配文档 | 默认全可见库；片段按 maxChunkChars 截断并标记 |
-| weknora_read_document | 按 knowledge_id 分页阅读完整文档上下文 | 需继续处理 has_more，不能将单页当整篇 |
-| weknora_ask | 委托 WeKnora RAG 或自定义 Agent 回答并返回引用 | 需 chat，可创建会话并额外调用服务端模型 |
+| 搜索与补读 | 获取原文和邻近上下文 | 有后端与权限，注意裁剪 |
+| 服务端问答 | 跨文档综合 | chat 权限并创建会话，额外模型消耗未知 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| WeKnora 地址与 API key | 必需（无鉴权部署除外） | retrieve 访问检索；ask 另需 chat | 401/403 或无法访问知识 |
-| DSH tools 服务 | 必需 | 注册四工具 | 插件无工具入口 |
-| knowledgeBaseIds | 可选但敏感场景建议配置 | 固定默认搜索范围 | 为空则使用凭证所有可见库 |
+| DSH tools 注册服务 | 启动必需 | 注入并注册四类工具 | 无法加载；实际宿主兼容未实测 |
+| WeKnora 与已有可检索语料 | 必需 | 检索、分块、模型与权限后端 | 适配层不能独立产生答案 |
+| API key 与可选 tenantId | 受保护部署必需 | 选择凭证可读范围 | HTTP 错误或无可见库 |
+| chat 权限与服务端模型 | ask 必需 | 建会话并综合答案 | 先禁用 ask，保留搜索补读 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 用户确认可用 WeKnora，签发 retrieve key 并固定库 ID | 先核对库范围；不需问答时关闭 ask |
-| 安装 | 用户 dsh plugin --profile web add @wxg-prc-cpg/dsh-weknora | 配置 URL/key 后加载，错误配置会拒绝加载 |
-| 取证 | 模型 search 得到 knowledge_id，再 read_document 补上下文 | 检查 truncated 和 has_more；不足时继续读 |
-| 委托与复核 | 必要时 ask 并保留 session_id，用户核对引用 | 失败先检查会话和权限，不盲目重复问答 |
+| 准备 | 管理员配置 URL、受限 key 与库范围 | 直接平台能读同一资料 |
+| 加载 | 用户添加包并启用工具 | tools 注册且配置校验通过 |
+| 取证 | Agent 搜索后按文档 ID 补读 | 引用指向原文并解释裁剪 |
+| 验收恢复 | 人工核对答案和范围 | 不符则回平台复核，排查响应与权限 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 已有后端的服务资源；新增金额未知 | 安装包、配置 URL/key 和库范围；耗时未知 | 不自带入库与 embedding |
-| 持续使用 | 搜索后端资源，ask 另用服务端模型；金额未知 | 维护权限、语料并复核引用；频率未知 | 截断可能要求追加全文读取 |
-| 失败恢复 | 失败重试与可能重复问答消耗；金额未知 | 检查 403、超时和已建会话；耗时未知 | public 被拒绝可降级 handle；未保证所有错误可重试 |
+| 首次使用 | 现有后端或新增部署资源，金额未知 | 配置凭证与范围，耗时未知 | 不提供入库与 embedding |
+| 持续使用 | 检索和 ask 模型消耗未知 | 维护语料和复核引用，频率未知 | 未测合格任务成本 |
+| 失败恢复 | 重试和额外会话消耗未知 | 核对状态、权限和截断 | 不盲目重放 ask |
+| 退出 | 后端会话清理资源未知 | 撤销插件与权限、另行清理会话 | 撤销工具不删除后端状态 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 搜索证据链 | 命中提供 knowledge_id、段落和截断标志 | 召回率与答案正确率未测 |
-| 全文补充 | 文档元信息与分页分块可用于继续阅读 | 分页总延迟和模型上下文成本未测 |
-| 委托问答 | SSE 汇总服务端答案、引用及工具记录 | 服务端模型质量、额外消耗与引用正确性未测 |
+| 知识接入 | 原生注册并调用后端 API | 当前宿主端到端可用性 |
+| 证据交接 | 段落 ID、补读与截断标志 | 召回率及引用正确率 |
+| 综合问答 | 创建会话并接 SSE | 质量、延迟与额外费用 |
 
-> **思考**：ask 会创建会话并触发服务端模型，完全只读仅适用于知识内容；默认全可见库范围也需按任务收窄。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：分页结束不代表文本未被裁剪，默认库范围也不是强制白名单；ask 会写会话状态，不能以“知识内容只读”推导无副作用。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：它把平台检索包装成可继续阅读、可核对引用的 DSH 工具协议，并通过标题补召回和范围过滤减少模型自行拼 API 的负担；检索算法属于 WeKnora 平台。[Q03](#research-q03)
+> **亮点**：该包把检索片段、文档补读和服务端问答拆成可组合的 DSH 工具，并保留可追踪文档 ID 和截断信息，减少自行接 API 的工程负担；其增量属于适配层而非检索算法。[Q01](#research-q01) [Q02](#research-q02)
 
-可借鉴的是结构化结果与渲染分离、截断显式化、超时和取消共同约束，以及失败后可重建的知识库范围缓存。移植到别的后端时需重新适配分页、权限及 SSE 事件，不是替换 URL 即可。
+入口、配置、HTTP 客户端、结构化工具与渲染分离，可复用的是职责分层与显式截断；成功缓存无 TTL 和错误 data 归为空集合要求用户特别验收。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
-### 1.4 使用建议
+### 1.4 主要限制
 
-已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。[Q04](#research-q04)
+分页结束不代表文本未被裁剪，默认库范围也不是强制白名单；ask 会写会话状态，不能以“知识内容只读”推导无副作用。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
-### 1.5 核查说明与分析版本
+### 1.5 使用建议
 
-**核查状态**：已检查源码。
-
-- 已检查源码，固定提交 [e1f9a616](https://github.com/Tencent/WeKnora/tree/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7)；研究范围为packages/dsh-weknora的入口和本文列出的关键机制。
-- 未安装、未运行目标代码或测试，未完成真实宿主与模型任务验收。
-- 固定提交的源码级研究，覆盖上述核心入口与机制；不是全项目所有功能的穷尽核查。
-- 根项目工程统计按工具现有规则记录 JS/TS 与 Markdown，Go/Rust 后端语义来自列出的人工源码核查，不把这些统计当作全语言 LOC。
+先禁用 ask，以受限库比较网页与插件的相同问题；要求能回到原文并识别裁剪。明确需要跨文档综合后再开放 chat；若引用与范围核对失败，停止并回平台直接查询。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
-## 2 未来设计假设（未验证）
+### 1.6 核查说明与分析版本
 
-未验证假设是先搜索和全文取证、证据不足才升级 ask，以固定题集的质量、延迟和消耗对照检验，不能当作现有自动路由。[Q05](#research-q05)
+**核查状态**：已检查源码。
+
+工具注册、请求接线、范围选择与裁剪机制有固定源码支持；采用价值为条件性分析。自动证据预算是尚未实现的研究假设。
+
+- 已检查：作者 README、包清单、源码路径 packages/dsh-weknora/package.json、packages/dsh-weknora/README.md、packages/dsh-weknora/src/index.ts、packages/dsh-weknora/src/config.ts、packages/dsh-weknora/src/tools.ts、packages/dsh-weknora/src/client.ts 及固定范围 inventory；组件：packages/dsh-weknora。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：核查本组件 package、README、index、config、tools 与 client 的入口、调用、输出和失败分支；未穷尽根平台所有算法。
+- 下一步：仅执行源码读取，未安装或运行目标代码，未执行本地测试和真实宿主验收；作者兼容声明不能作为本次通过记录。
+
+**分析版本**
+
+- **仓库**：[Tencent/WeKnora](https://github.com/Tencent/WeKnora)
+- **版本号**：0.1.0（[固定提交 c5de34d](https://github.com/Tencent/WeKnora/tree/c5de34d286f91cbfd916c770e620d1046ada9324)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
+
+## 2 未来设计假设（未验证）
+
+<a id="innovation"></a>
+
+未验证的方向是在现有搜索与补读链上设置证据预算，证据不足才升级服务端问答；需用质量与总负担同时检验，调用数下降不足以证明价值。[Q05](#research-q05)
+
+仅执行源码读取，未安装或运行目标代码，未执行本地测试和真实宿主验收；作者兼容声明不能作为本次通过记录。
+
+<a id="detail-section-9"></a>
 
 ## 3 辅助信息
 
@@ -141,105 +158,147 @@
 
 **活跃度**
 
-[![Issue 未关闭 417](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=417&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 322](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=322&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z) [![近30天关闭 250](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=250&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-24T10%3A26%3A52.933Z..2026-10-24T10%3A26%3A52.933Z)
-
-
-
-统计日期：2026-10-24。
-
-<a id="detail-section-9"></a>
-
-## 4 研究问题与完整回答
-
-**插件研究总目标**：WeKnora DSH 插件 如何在明确边界内形成可采用能力，且贡献与依赖如何区分？
-
-<a id="research-q01"></a>
+Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/Tencent/WeKnora/issues) 查看。
 
 <a id="detail-section-10"></a>
 
-### Q01 · 已有 WeKnora 的团队如何在 DSH 中取得可审查的知识结果？
+## 4 研究问题与完整回答
 
-**研究主题**：场景与需求
+**插件研究总目标**：已有 WeKnora 的团队能否借助此适配层可靠地交接组织文档证据？
+
+<a id="research-q01"></a>
+
+<a id="detail-section-11"></a>
+
+### Q01 · 已有知识平台的团队为什么需要这个适配层？
+
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标用户是已维护组织知识库、又在 DSH 中处理研发或研究任务的团队。合格结果应包含原始段落、knowledge_id 和可继续阅读的上下文，而非只收到另一模型的结论。原有办法是切换到 WeKnora 网页或手工请求 REST API；插件将检索、全文和综合问答分开，让宿主模型自行决定推理还是委托。该包不提供文档入库、向量索引或 embedding，根平台的知识生产能力不能算作本适配层贡献。
+目标人群是在 DSH 内处理组织文档问题、且已经维护 WeKnora 的研发或研究人员。原办法是转到平台网页搜索后复制内容，或自行编写 API 请求；合格结果应有命中段落、文档标识和可继续阅读的邻近上下文，而不是只有生成结论。该包把已有平台的检索、文档分块与问答投影为四种宿主工具，增量在调用协议和证据交接。向量检索、重排、入库与模型能力属于服务端，不能计为适配层发明。只有偶发查询、没有现成后端时，直接平台网页通常已足够，部署整套知识平台不能仅由这个入口便利来辩护。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-weknora/README.md:7-14](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/README.md#L7-L14)
+**依据 1 · 作者声明**：[packages/dsh-weknora/package.json:1-20](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/package.json#L1-L20)
 
-作者定位为组织知识访问适配层。
-
-```text
-A [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) plugin that gives the harness agent
-first-class access to a [WeKnora](https://github.com/Tencent/WeKnora) knowledge base: hybrid retrieval, full document
-reading, and WeKnora's own composed answers with citations.
-
-dsh ships no retrieval, embedding or knowledge-base capability of its own — its search tools (`grep`, `glob`) read the
-workspace, and `web_search` reads the internet. This plugin fills that gap with your organization's documents.
-
-## Install
-```
-
-**依据 2 · 作者声明**：[packages/dsh-weknora/README.md:73-96](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/README.md#L73-L96)
-
-四类工具及检索与委托问答的区别。
+作者定义知识检索工具包的用途。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-## Tools
-
-| Tool | WeKnora endpoint | What the model gets |
-|---|---|---|
-| `weknora_list_knowledge_bases` | `GET /knowledge-bases` | Knowledge base names and ids, to report what exists or to narrow a later search |
-| `weknora_search` | `POST /knowledge-search` + `GET /knowledge/search` | Ranked passages verbatim, each with a `knowledge_id`, score and chunk index, plus any document the query names |
-| `weknora_read_document` | `GET /chunks/:knowledge_id` + `GET /knowledge/:id` | One document's passages reassembled in order, led by its title and summary, with paging |
-| `weknora_ask` | `POST /sessions` + `POST /knowledge-chat/:id` or `POST /agent-chat/:id` | WeKnora's own answer, its citations, the server-side tools it used, and a resumable `session_id` |
-
-`weknora_search` is the workhorse: it returns the source text for the agent to reason over, which keeps the agent's own
-reasoning auditable. It answers two questions the model cannot always tell apart — *where is this discussed* and *where
-is the document called X* — by matching passage content and document names in the same call. A query that reads like a
-title additionally reports the documents it names, so a document whose wording differs from its own title is still
-reachable.
-
-Scope works without configuration. An unscoped call is refused by the retrieval endpoint and answered from nothing by
-the RAG one, so when `knowledgeBaseIds` is empty the plugin resolves every knowledge base the credential can see and
-uses all of them, resolving that list once per process and sharing it between `weknora_search` and `weknora_ask`.
-Making the model choose first would be worse: knowledge bases are frequently named too poorly to choose between.
-
-`weknora_ask` delegates the whole question to WeKnora. Reserve it for broad or synthesis questions spanning many
-documents, where retrieving passages yourself would take several rounds — it runs another model server-side, so it is
-slow, and it returns a conclusion rather than the evidence behind it. With `agentId` set it leaves the scope alone: a
-custom agent resolves its own from its KB selection mode, and ids sent from here would override that.
+{
+  "name": "@wxg-prc-cpg/dsh-weknora",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "description": "WeKnora knowledge retrieval tools for DeepSeek Harness (dsh): semantic search, document reading and RAG/agent answers over your own knowledge bases.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "weknora",
+    "rag",
+    "retrieval",
+    "knowledge-base"
+  ],
+  "license": "MIT",
+  "author": "WeKnora",
 ```
 
 </details>
 
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/index.ts:28-36](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/index.ts#L28-L36)
+
+apply 创建客户端并注册工具，确认原生插件身份。
+
+```text
+export function apply(ctx: HarnessContext, config: unknown): void {
+  const resolved = resolveConfig(config as never)
+  const client = new WeknoraClient(resolved)
+  const registered: string[] = []
+  for (const definition of createTools(client, resolved)) {
+    ctx.tools.register(definition)
+    registered.push(definition.name)
+  }
+  ctx.logger?.info(`dsh-weknora: registered ${registered.join(', ')} against ${resolved.baseUrl}`)
+```
+
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:243-260](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L243-L260)
+
+搜索结果的用途是组织文档片段和后续文档阅读。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  if (config.tools.search) {
+    definitions.push({
+      name: name('search'),
+      description: 'Search WeKnora knowledge bases and return the matching passages verbatim (hybrid vector + keyword '
+        + 'retrieval, no model summarization). Use this to ground an answer in the organization\'s own documents, and '
+        + 'also to locate a document by name — a query that reads like a title additionally returns the documents it '
+        + 'names.' + scopeNote
+        + ` Every hit carries a knowledge_id you can pass to ${name('read_document')} for the full document.`,
+      parameters: {
+        type: 'object',
+        properties: {
+          query: { type: 'string', description: 'Natural-language query; a full question retrieves better than keywords.' },
+          knowledge_base_ids: { ...STRING_ARRAY, description: 'Restrict the search to these knowledge base ids.' },
+          knowledge_ids: { ...STRING_ARRAY, description: 'Restrict the search to these document ids.' },
+          max_results: { type: 'integer', description: `Maximum passages to return (default ${config.maxResults}).` },
+        },
+        required: ['query'],
+        additionalProperties: false,
+```
+
+</details>
+
+#### 缺口
+
+- 缺少具体团队重复查询与网页切换的实测记录
+  **影响**：需求强度和节省交接时间不能确定
+  **进一步探讨**：同一人员以现有网页和插件完成相同文档任务，记录合格结果与交接次数。
+
 <a id="research-q02"></a>
 
-<a id="detail-section-11"></a>
+<a id="detail-section-12"></a>
 
-### Q02 · 工具从注册到 REST/SSE 如何运作，默认范围和权限是什么？
+### Q02 · 调用怎样从 DSH 到达知识库并形成可复核结果？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-apply 验证配置后创建 WeknoraClient，再将 createTools 的定义注册到 ctx.tools。未指定知识库时，搜索和普通 RAG 问答共享一次可见知识库列表解析；失败会清缓存供重试。显式 knowledge_ids 可以进入文档范围。客户端发送 X-API-Key 和可选 X-Tenant-ID，将宿主取消信号与请求超时合并。ask 建立或复用 session_id，再选择 knowledge-chat 或 agent-chat，读取 SSE 汇总答案、引用和服务端工具记录。基础检索需 retrieve 权限，ask 还需 chat。所有可见库的默认范围并不等于最小必要范围，敏感团队应显式配置知识库。
+入口声明 inject tools，apply 先校验配置，再生成 WeknoraClient 并逐个注册定义。search 校验 query，解析显式文档或知识库范围，并行调用段落检索与按名找文档；后者出错只取消补充结果，不丢段落。命中保留 knowledge_id、分块位置和截断标志，read_document 据此分页读取并按 chunk_index 排序重组。ask 则创建或复用服务端会话，按 agent_id 选择服务端 RAG 或 agent 路由，最后返回答案、引用与会话标识。这样的搜索→补读→综合是可组合工具链，不是已实现的自动质量门控；宿主模型仍须决定取证是否足够。输出结构和渲染分离便于其他调用模式复用，但不证明宿主实际接受所有定义。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/index.ts:25-37](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/index.ts#L25-L37)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/index.ts:12-36](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/index.ts#L12-L36)
 
-真实注册入口。
+注入与注册构成入口。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
+export const name = 'dsh-weknora'
+
+/** Cordis waits for the tool registry before applying this plugin. */
+export const inject = ['tools'] as const
+
+export type { Config } from './config.ts'
+export { ConfigError, normalizeBaseUrl, resolveConfig } from './config.ts'
+export { WeknoraApiError, WeknoraClient } from './client.ts'
+export { createTools } from './tools.ts'
+
+/**
+ * Register the configured tools. Each registration is an effect, so unloading
+ * or reconfiguring the plugin withdraws the tools without a restart.
  * @param ctx - the Cordis context, with `ctx.tools` injected.
  * @param config - the plugin's `config` row; validated here so a typo fails the load.
  */
@@ -252,92 +311,148 @@ export function apply(ctx: HarnessContext, config: unknown): void {
     registered.push(definition.name)
   }
   ctx.logger?.info(`dsh-weknora: registered ${registered.join(', ')} against ${resolved.baseUrl}`)
-}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:160-193](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/tools.ts#L160-L193)
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:329-358](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L329-L358)
 
-范围缓存和优先级。
+实际搜索请求和标题补充降级。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-    : ' Searches every knowledge base this credential can see unless you narrow it with knowledge_base_ids.'
-
-  // An unscoped call reaches WeKnora as a refusal on the retrieval route and as
-  // an answer grounded in nothing on the RAG route, so an unconfigured
-  // deployment resolves the full visible set once and reuses it. Making the
-  // model pick a scope first is worse: knowledge bases are often named too
-  // poorly to choose between, and fanning out across them is cheap while they
-  // share a vector store.
-  let everyId: Promise<string[]> | undefined
-  const allKnowledgeBaseIds = async (signal: AbortSignal): Promise<string[]> => {
-    everyId ??= client.listKnowledgeBases(signal).then(
-      bases => bases.map(kb => typeof kb.id === 'string' ? kb.id : '').filter(id => id !== ''),
-      (error: unknown) => {
-        everyId = undefined
-        throw error
-      },
-    )
-    return await everyId
-  }
-  const resolveScope = async (requested: string[], knowledgeIds: string[], signal: AbortSignal): Promise<string[]> => {
-    if (requested.length > 0) return requested
-    if (config.knowledgeBaseIds.length > 0) return config.knowledgeBaseIds
-    if (knowledgeIds.length > 0) return []
-    return await allKnowledgeBaseIds(signal)
-  }
-
-  const definitions: ToolDefinition[] = []
-
-  if (config.tools.listKnowledgeBases) {
-    definitions.push({
-      name: name('list_knowledge_bases'),
-      description: 'List the WeKnora knowledge bases this deployment can retrieve from, with their ids. '
-        + `${name('search')} already spans them all, so reach for this only to report what is available or to `
-        + 'narrow a later search to one of them.',
+      async execute(args, exec): Promise<SearchValue> {
+        const toolName = name('search')
+        const query = requiredString(args, 'query', toolName)
+        const knowledgeIds = stringArrayArg(args, 'knowledge_ids')
+        const knowledgeBaseIds = await resolveScope(
+          stringArrayArg(args, 'knowledge_base_ids'),
+          knowledgeIds,
+          exec.signal,
+        )
+        // Fail here rather than let WeKnora answer 400: the model can act on a
+        // message naming the argument to supply, not on a transport error.
+        if (knowledgeBaseIds.length === 0 && knowledgeIds.length === 0) {
+          throw new Error(`${toolName}: this WeKnora credential can see no knowledge base, so there is `
+            + 'nothing to search. Check the deployment\'s API key scope.')
+        }
+        const limit = boundedIntArg(args, 'max_results', config.maxResults, config.maxResults)
+        const [hits, named] = await Promise.all([
+          client.search({ query, knowledgeBaseIds, knowledgeIds }, exec.signal),
+          // By-name matching is an enrichment, and older WeKnora builds may not
+          // route it. Losing it must not cost the model its passages.
+          client.findDocuments({ keyword: query, limit }, exec.signal).catch(() => []),
+        ])
+        const results = hits.slice(0, limit).map((hit, index) => projectHit(hit, index + 1, config.maxChunkChars))
+        return {
+          query,
+          knowledge_base_ids: knowledgeBaseIds,
+          count: results.length,
+          results,
+          documents: projectNamedDocuments(named, results, knowledgeBaseIds, knowledgeIds),
+        }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/client.ts:262-317](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/client.ts#L262-L317)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:417-449](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L417-L449)
 
-会话创建与 SSE 请求。
+文档分页、排序和裁剪。
 
 <details>
-<summary>查看原文（56行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
-  async createSession(title: string, signal: AbortSignal): Promise<string> {
-    const envelope = await this.fetchJson<{ id?: string }>('/sessions', {
-      method: 'POST',
-      body: { title },
-    }, signal)
-    const id = envelope.data?.id
-    if (typeof id !== 'string' || id === '') {
-      throw new WeknoraApiError('POST /sessions returned no session id')
-    }
-    return id
-  }
+      async execute(args, exec): Promise<DocumentValue> {
+        const toolName = name('read_document')
+        const knowledgeId = requiredString(args, 'knowledge_id', toolName)
+        const page = boundedIntArg(args, 'page', 1, 10_000)
+        const pageSize = boundedIntArg(args, 'page_size', 20, 100)
+        const [result, metadata] = await Promise.all([
+          client.listChunks({ knowledgeId, page, pageSize }, exec.signal),
+          // Only page 1 is worth the extra call and the summary's tokens: by
+          // page 2 the model has already seen what this document is. Metadata
+          // is context, not the payload, so a deployment that cannot serve it
+          // must still hand over the text.
+          page === 1
+            ? client.getDocument(knowledgeId, exec.signal).catch(() => ({}) as DocumentRecord)
+            : Promise.resolve({} as DocumentRecord),
+        ])
+        const ordered = [...result.chunks].sort(orderByChunkIndex)
+        const joined = ordered.map(chunk => typeof chunk.content === 'string' ? chunk.content : '').join('\n\n')
+        const clipped = clip(joined, config.maxChunkChars * Math.max(1, Math.min(ordered.length, 10)))
+        const title = typeof metadata.title === 'string' && metadata.title.trim() !== ''
+          ? metadata.title.trim()
+          : typeof metadata.file_name === 'string' ? metadata.file_name.trim() : ''
+        return {
+          knowledge_id: knowledgeId,
+          title,
+          summary: clip(typeof metadata.description === 'string' ? metadata.description.trim() : '', config.maxChunkChars).text,
+          page: result.page,
+          page_size: result.pageSize,
+          total_chunks: result.total,
+          returned_chunks: ordered.length,
+          has_more: result.page * result.pageSize < result.total,
+          truncated: clipped.truncated,
+          content: clipped.text,
+        }
+```
 
-  /**
-   * Ask a question and assemble the streamed answer. `agentId` selects the
-   * ReAct pipeline (`/agent-chat`); without it the RAG pipeline answers
-   * (`/knowledge-chat`).
-   */
-  async ask(
-    input: {
-      sessionId: string
-      query: string
-      knowledgeBaseIds: string[]
-      agentId: string | undefined
-      webSearch: boolean
-    },
-    signal: AbortSignal,
-  ): Promise<StreamedAnswer> {
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-548](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L518-L548)
+
+ask 实际创建会话并获取服务端生成结果。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+      async execute(args, exec): Promise<AskValue> {
+        const toolName = name('ask')
+        const query = requiredString(args, 'query', toolName)
+        const requested = stringArrayArg(args, 'knowledge_base_ids')
+        const agentId = optionalStringArg(args, 'agent_id') ?? config.agentId
+        // A custom agent resolves its own scope server-side from its
+        // KBSelectionMode, and ids sent here would override that as an explicit
+        // mention. The RAG pipeline has no such default: it retrieves only what
+        // the request names, and answers from nothing when it names nothing.
+        const knowledgeBaseIds = agentId === undefined
+          ? await resolveScope(requested, [], exec.signal)
+          : requested.length > 0 ? requested : config.knowledgeBaseIds
+        if (agentId === undefined && knowledgeBaseIds.length === 0) {
+          throw new Error(`${toolName}: this WeKnora credential can see no knowledge base, so there is `
+            + 'nothing to answer from. Check the deployment\'s API key scope.')
+        }
+        const webSearch = argRecord(args)['web_search'] === true
+        const sessionId = optionalStringArg(args, 'session_id')
+          ?? await client.createSession(`dsh: ${clip(query, 60).text}`, exec.signal)
+        const streamed = await client.ask({ sessionId, query, knowledgeBaseIds, agentId, webSearch }, exec.signal)
+        return {
+          answer: streamed.answer.trim(),
+          session_id: streamed.sessionId,
+          pipeline: agentId === undefined ? 'rag' : 'agent',
+          tool_calls: streamed.toolCalls,
+          references: streamed.references.slice(0, config.maxResults).map(reference => ({
+            knowledge_id: typeof reference.knowledge_id === 'string' ? reference.knowledge_id : '',
+            document: documentLabel(reference),
+            chunk_index: typeof reference.chunk_index === 'number' ? reference.chunk_index : -1,
+            content: clip(typeof reference.content === 'string' ? reference.content : '', config.maxChunkChars).text,
+          })),
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:289-305](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L289-L305)
+
+agent 与 RAG 路由及 SSE 请求。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
     const route = input.agentId === undefined ? 'knowledge-chat' : 'agent-chat'
     const path = `/${route}/${encodeURIComponent(input.sessionId)}`
     const body = {
@@ -355,42 +470,58 @@ export function apply(ctx: HarnessContext, config: unknown): void {
           headers: { ...this.headers(), Accept: 'text/event-stream' },
           body: JSON.stringify(body),
           signal: combined,
-        })
-      } catch (cause) {
-        throw new WeknoraApiError(`POST ${path} failed: ${describeTransportFailure(cause, signal)}`)
-      }
-    }
-    let response = await open()
-    if (!response.ok) {
-      const text = await response.text()
-      const error = new WeknoraApiError(`POST ${path} failed with HTTP ${response.status}: ${reasonOf(text)}`, response.status)
-      if (!this.isPublicModeForbidden(error)) throw error
-      this.publicModeBlocked = true
-      response = await open()
 ```
 
 </details>
 
 <a id="research-q03"></a>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-13"></a>
 
-### Q03 · 检索包装的具体增量能否支撑完全只读的表述？
+### Q03 · 默认范围与失败处理能否保证完整且最小范围的证据？
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-相对直接 API 调用，增量在于同一次搜索结合段落与标题匹配、用 knowledge_id 串起全文阅读，并显式标识截断；它把已有 RAG 能力整理成适合模型多步调用的证据协议，混合检索算法仍来自平台。projectNamedDocuments 对标题结果再次按知识库或文档集合过滤，避免租户级标题查询直接扩大展示范围。README 的 only reads 应限于不改知识内容，不能解释为无持久副作用，因为 ask 会 POST /sessions 并写入会话流程。默认 public 引用可能被服务端策略拒绝，客户端只在特定 403 原因下降级 handle；这意味着图片可展示性依赖权限与可达地址。
+不能保证。未显式指定范围时，插件缓存凭证能看见的全部知识库列表，缓存失败会清除以便下次重试，但成功缓存没有过期策略，运行期间新增库可能要重载才进入默认范围。按名查找跨租户可见库，输出再次按请求库或文档 ID 过滤，这提供结果范围约束；它不是服务端授权替代，也不让配置知识库变成强制白名单，调用参数仍可覆盖默认库。read_document 会把多块文本合并后裁剪到至多十块的字符预算；即便 has_more 为 false，truncated 仍可能为 true，不能据此宣称已经完整读完。public 资源模式只对带特定错误文本的 403 自动降级，其他权限错误继续抛出。网络、HTTP 和非 JSON 有不同错误，但有效 JSON 的 data 缺失可被归为空数组，因此“没有结果”不一定说明文档不存在。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:126-159](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/tools.ts#L126-L159)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:168-183](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L168-L183)
 
-标题结果的范围过滤。
+成功缓存无 TTL，显式参数优先于默认配置。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（16行）</summary>
+
+```text
+  let everyId: Promise<string[]> | undefined
+  const allKnowledgeBaseIds = async (signal: AbortSignal): Promise<string[]> => {
+    everyId ??= client.listKnowledgeBases(signal).then(
+      bases => bases.map(kb => typeof kb.id === 'string' ? kb.id : '').filter(id => id !== ''),
+      (error: unknown) => {
+        everyId = undefined
+        throw error
+      },
+    )
+    return await everyId
+  }
+  const resolveScope = async (requested: string[], knowledgeIds: string[], signal: AbortSignal): Promise<string[]> => {
+    if (requested.length > 0) return requested
+    if (config.knowledgeBaseIds.length > 0) return config.knowledgeBaseIds
+    if (knowledgeIds.length > 0) return []
+    return await allKnowledgeBaseIds(signal)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:126-150](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L126-L150)
+
+按名结果依据请求范围再次过滤。
+
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
 function projectNamedDocuments(
@@ -418,28 +549,47 @@ function projectNamedDocuments(
       knowledge_base: typeof document.knowledge_base_name === 'string' ? document.knowledge_base_name : kbId,
     })
     already.add(id)
-  }
-  return out
-}
-
-/** Assemble the four tool definitions for one configured deployment. */
-export function createTools(client: WeknoraClient, config: ResolvedConfig): ToolDefinition[] {
-  const name = (suffix: string): string => `${config.toolPrefix}_${suffix}`
-  const scopeNote = config.knowledgeBaseIds.length > 0
-    ? ` Searches knowledge base(s) ${config.knowledgeBaseIds.join(', ')} unless you name others.`
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/client.ts:144-164](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/client.ts#L144-L164)
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/tools.ts:432-448](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L432-L448)
 
-特定 public 403 降级。
+裁剪预算与分页结束相互独立。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
+        const ordered = [...result.chunks].sort(orderByChunkIndex)
+        const joined = ordered.map(chunk => typeof chunk.content === 'string' ? chunk.content : '').join('\n\n')
+        const clipped = clip(joined, config.maxChunkChars * Math.max(1, Math.min(ordered.length, 10)))
+        const title = typeof metadata.title === 'string' && metadata.title.trim() !== ''
+          ? metadata.title.trim()
+          : typeof metadata.file_name === 'string' ? metadata.file_name.trim() : ''
+        return {
+          knowledge_id: knowledgeId,
+          title,
+          summary: clip(typeof metadata.description === 'string' ? metadata.description.trim() : '', config.maxChunkChars).text,
+          page: result.page,
+          page_size: result.pageSize,
+          total_chunks: result.total,
+          returned_chunks: ordered.length,
+          has_more: result.page * result.pageSize < result.total,
+          truncated: clipped.truncated,
+          content: clipped.text,
+```
 
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/client.ts:145-192](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L145-L192)
+
+仅针对特定 403 降级并区分传输与响应错误。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
   private isPublicModeForbidden(error: unknown): boolean {
     return error instanceof WeknoraApiError
       && this.config.resourceUrls === 'public'
@@ -460,18 +610,184 @@ export function createTools(client: WeknoraClient, config: ResolvedConfig): Tool
       this.publicModeBlocked = true
       return await this.fetchJsonOnce(path, init, signal)
     }
+  }
+
+  private async fetchJsonOnce<T>(
+    path: string,
+    init: { method: 'GET' | 'POST', body?: unknown, query?: Record<string, string | number | undefined> },
+    signal: AbortSignal,
+  ): Promise<Envelope<T>> {
+    const url = this.url(path, init.query)
+    let response: Response
+    try {
+      response = await fetch(url, {
+        method: init.method,
+        headers: this.headers(),
+        ...init.body === undefined ? {} : { body: JSON.stringify(init.body) },
+        signal: deadline(signal, this.config.requestTimeoutMs),
+      })
+    } catch (cause) {
+      throw new WeknoraApiError(`${init.method} ${path} failed: ${describeTransportFailure(cause, signal)}`)
+    }
+    const text = await response.text()
+    if (!response.ok) {
+      throw new WeknoraApiError(`${init.method} ${path} failed with HTTP ${response.status}: ${reasonOf(text)}`, response.status)
+    }
+    try {
+      return JSON.parse(text) as Envelope<T>
+    } catch {
+      throw new WeknoraApiError(`${init.method} ${path} returned a non-JSON body: ${snippet(text)}`, response.status)
+    }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-weknora/src/client.ts:262-272](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/client.ts#L262-L272)
+**依据 5 · 源码核查**：[packages/dsh-weknora/src/client.ts:195-214](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L195-L214)
 
-ask 的服务端会话副作用。
+data 非数组返回空集合。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
+  /** List the knowledge bases this credential can retrieve from. */
+  async listKnowledgeBases(signal: AbortSignal): Promise<KnowledgeBaseSummary[]> {
+    const envelope = await this.fetchJson<KnowledgeBaseSummary[]>('/knowledge-bases', { method: 'GET' }, signal)
+    return Array.isArray(envelope.data) ? envelope.data : []
+  }
+
+  /** Hybrid (vector + keyword) retrieval across one or more knowledge bases. */
+  async search(
+    input: { query: string, knowledgeBaseIds: string[], knowledgeIds: string[] },
+    signal: AbortSignal,
+  ): Promise<SearchResult[]> {
+    const envelope = await this.fetchJson<SearchResult[]>('/knowledge-search', {
+      method: 'POST',
+      body: {
+        query: input.query,
+        ...input.knowledgeBaseIds.length > 0 ? { knowledge_base_ids: input.knowledgeBaseIds } : {},
+        ...input.knowledgeIds.length > 0 ? { knowledge_ids: input.knowledgeIds } : {},
+      },
+    }, signal)
+    return Array.isArray(envelope.data) ? envelope.data : []
+```
+
+</details>
+
+#### 缺口
+
+- 当前后端响应与存量 API 契约是否一致未独立实测
+  **影响**：空集合可能掩盖兼容变化，影响漏检解释
+  **进一步探讨**：对空库、权限错误和缺失 data 的固定响应做实际宿主验收，核对错误是否可区分。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 采用需要承担哪些责任，如何限定试用与退出？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+已有 WeKnora 部署和可读知识库是效果前提；插件只提供适配，不负责语料质量或向量索引。URL、凭证、可选租户与知识库范围由管理员配置，启动时错误会阻止加载。搜索与读文档可先用 retrieve 权限；ask 还依赖 chat 和服务端模型。虽然不改知识内容，ask 的 POST /sessions 会创建持久会话，超时后用户需要核对服务端状态而非无限重试。现金费用由现有服务、向量检索和额外模型调用决定，人工成本由配置、引用复核和故障处理决定，目前均没有可用金额或耗时测量。建议先禁用 ask，在小范围资料上比较插件检索补读与直接网页流程；合格结果必须定位原文且正确解释截断。发现越出任务范围的结果、持续空结果或引用不符时停止依赖回答，回到平台核对；卸载工具不等于删除服务端会话。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/config.ts:133-190](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/config.ts#L133-L190)
+
+配置校验、范围和工具开关。
+
+<details>
+<summary>查看原文（58行）</summary>
+
+```text
+export function resolveConfig(raw: Config | undefined): ResolvedConfig {
+  const violations: string[] = []
+  const config = raw ?? {}
+  if (typeof config !== 'object' || Array.isArray(config)) {
+    throw new ConfigError(['config must be an object'])
+  }
+
+  const baseUrlInput = optionalString(config.baseUrl, 'baseUrl', violations) ?? DEFAULTS.baseUrl
+  let baseUrl: string = DEFAULTS.baseUrl
+  try {
+    const url = new URL(normalizeBaseUrl(baseUrlInput))
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') {
+      violations.push(`baseUrl must use http or https, received ${url.protocol}`)
+    }
+    baseUrl = url.toString().replace(/\/+$/, '')
+  } catch {
+    violations.push(`baseUrl must be an absolute URL, received ${JSON.stringify(baseUrlInput)}`)
+  }
+
+  const resourceUrls = config.resourceUrls ?? DEFAULTS.resourceUrls
+  if (resourceUrls !== 'handle' && resourceUrls !== 'public') {
+    violations.push(`resourceUrls must be "handle" or "public", received ${JSON.stringify(resourceUrls)}`)
+  }
+
+  const toolPrefix = optionalString(config.toolPrefix, 'toolPrefix', violations) ?? DEFAULTS.toolPrefix
+  if (!TOOL_PREFIX.test(toolPrefix)) {
+    violations.push(`toolPrefix must match ${String(TOOL_PREFIX)}, received ${JSON.stringify(toolPrefix)}`)
+  }
+
+  const toolToggles = config.tools ?? {}
+  if (typeof toolToggles !== 'object' || Array.isArray(toolToggles)) {
+    violations.push('tools must be an object of booleans')
+  }
+
+  const resolved: ResolvedConfig = {
+    baseUrl,
+    apiKey: optionalString(config.apiKey, 'apiKey', violations),
+    tenantId: optionalString(config.tenantId, 'tenantId', violations),
+    knowledgeBaseIds: stringList(config.knowledgeBaseIds, 'knowledgeBaseIds', violations) ?? [],
+    agentId: optionalString(config.agentId, 'agentId', violations),
+    maxResults: positiveInt(config.maxResults, 'maxResults', violations) ?? DEFAULTS.maxResults,
+    maxChunkChars: positiveInt(config.maxChunkChars, 'maxChunkChars', violations) ?? DEFAULTS.maxChunkChars,
+    requestTimeoutMs: positiveInt(config.requestTimeoutMs, 'requestTimeoutMs', violations) ?? DEFAULTS.requestTimeoutMs,
+    chatTimeoutMs: positiveInt(config.chatTimeoutMs, 'chatTimeoutMs', violations) ?? DEFAULTS.chatTimeoutMs,
+    resourceUrls: resourceUrls === 'public' ? 'public' : 'handle',
+    toolPrefix,
+    tools: {
+      listKnowledgeBases: toggle(toolToggles.listKnowledgeBases, 'tools.listKnowledgeBases', true, violations),
+      search: toggle(toolToggles.search, 'tools.search', true, violations),
+      readDocument: toggle(toolToggles.readDocument, 'tools.readDocument', true, violations),
+      ask: toggle(toolToggles.ask, 'tools.ask', true, violations),
+    },
+  }
+
+  if (!Object.values(resolved.tools).some(Boolean)) {
+    violations.push('at least one tool must stay enabled; remove the plugin row instead of disabling all of them')
+  }
+  if (violations.length > 0) throw new ConfigError(violations)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-weknora/src/client.ts:122-129](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L122-L129)
+
+API key 与租户由请求头发送。
+
+```text
+  private headers(): Record<string, string> {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    }
+    if (this.config.apiKey !== undefined) headers['X-API-Key'] = this.config.apiKey
+    if (this.config.tenantId !== undefined) headers['X-Tenant-ID'] = this.config.tenantId
+    return headers
+```
+
+**依据 3 · 源码核查**：[packages/dsh-weknora/src/client.ts:261-270](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/client.ts#L261-L270)
+
+创建会话有服务端状态副作用。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+  /** Create a conversation container to hold one or more asked questions. */
   async createSession(title: string, signal: AbortSignal): Promise<string> {
     const envelope = await this.fetchJson<{ id?: string }>('/sessions', {
       method: 'POST',
@@ -481,130 +797,109 @@ ask 的服务端会话副作用。
     if (typeof id !== 'string' || id === '') {
       throw new WeknoraApiError('POST /sessions returned no session id')
     }
-    return id
-  }
 ```
 
 </details>
 
-<a id="research-q04"></a>
+**依据 4 · 源码核查**：[packages/dsh-weknora/src/tools.ts:518-537](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L518-L537)
 
-<a id="detail-section-13"></a>
-
-### Q04 · 什么试用范围可控，总成本和效果还缺什么？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-适合已有可用 WeKnora、能签发受限 API key 的团队先试用搜索与阅读，再按需要开启 ask。对少量静态文件，工作区搜索或手工引用更简单；为这个适配层单独部署整套平台未必合算。首次成本包含宿主安装配置和权限核对，持续成本包括检索服务、embedding 基础设施及 ask 额外模型调用，金额和耗时取决于部署且未实测。失败恢复需区分超时、权限拒绝、截断及服务端已创建会话，避免无条件重试问答带来重复消耗。效果只能确认有段落和引用传输机制，不能给出回答准确率或节时比例。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[packages/dsh-weknora/README.md:17-35](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/README.md#L17-L35)
-
-安装与环境依赖。
+ask 会建立会话并运行服务端生成。
 
 <details>
-<summary>查看原文（19行）</summary>
-
-````text
-# from npm (recommended: installs prebuilt code, no build permission needed)
-dsh plugin --profile web add @wxg-prc-cpg/dsh-weknora
-
-# or from a checkout of this repository
-dsh plugin --profile web add ./packages/dsh-weknora
-```
-
-Then point it at your deployment. The shipped configuration layer reads environment variables, so the quickest start is:
-
-```sh
-export WEKNORA_BASE_URL=https://weknora.example.com   # or http://localhost:8080
-export WEKNORA_API_KEY=sk-...                          # a WeKnora API key with `retrieve` (+ `chat` for ask)
-export WEKNORA_KNOWLEDGE_BASE_IDS=kb-123,kb-456        # optional default scope
-export WEKNORA_RESOURCE_URLS=public                    # default; `handle` keeps internal file refs
-dsh web
-```
-
-For anything beyond that, override the row from your profile's `cordis.patch.yml`
-(`$DSH_HOME/profiles/<name>/cordis.patch.yml`):
-````
-
-</details>
-
-**依据 2 · 作者声明**：[packages/dsh-weknora/README.md:91-98](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/README.md#L91-L98)
-
-作者明确 ask 的额外模型与延迟。
+<summary>查看原文（20行）</summary>
 
 ```text
-Making the model choose first would be worse: knowledge bases are frequently named too poorly to choose between.
-
-`weknora_ask` delegates the whole question to WeKnora. Reserve it for broad or synthesis questions spanning many
-documents, where retrieving passages yourself would take several rounds — it runs another model server-side, so it is
-slow, and it returns a conclusion rather than the evidence behind it. With `agentId` set it leaves the scope alone: a
-custom agent resolves its own from its KB selection mode, and ids sent from here would override that.
-
-`weknora_read_document` exists because retrieval returns fragments: once a passage looks right, the agent usually needs
+      async execute(args, exec): Promise<AskValue> {
+        const toolName = name('ask')
+        const query = requiredString(args, 'query', toolName)
+        const requested = stringArrayArg(args, 'knowledge_base_ids')
+        const agentId = optionalStringArg(args, 'agent_id') ?? config.agentId
+        // A custom agent resolves its own scope server-side from its
+        // KBSelectionMode, and ids sent here would override that as an explicit
+        // mention. The RAG pipeline has no such default: it retrieves only what
+        // the request names, and answers from nothing when it names nothing.
+        const knowledgeBaseIds = agentId === undefined
+          ? await resolveScope(requested, [], exec.signal)
+          : requested.length > 0 ? requested : config.knowledgeBaseIds
+        if (agentId === undefined && knowledgeBaseIds.length === 0) {
+          throw new Error(`${toolName}: this WeKnora credential can see no knowledge base, so there is `
+            + 'nothing to answer from. Check the deployment\'s API key scope.')
+        }
+        const webSearch = argRecord(args)['web_search'] === true
+        const sessionId = optionalStringArg(args, 'session_id')
+          ?? await client.createSession(`dsh: ${clip(query, 60).text}`, exec.signal)
+        const streamed = await client.ask({ sessionId, query, knowledgeBaseIds, agentId, webSearch }, exec.signal)
 ```
+
+</details>
 
 #### 缺口
 
-- 缺少同语料任务的搜索、全文与 ask 对照数据。
-  **影响**：不能确定哪类问题值得支付额外问答成本。
-  **进一步探讨**：对固定题集记录正确引用率、延迟、模型消耗与人工复核时间。
+- 尚无相同任务的总成本与引用正确性对照
+  **影响**：只支持受控试用，不能建议持续安装
+  **进一步探讨**：使用固定文档题集，计入所有重试、人工核对、服务端会话和模型消耗后比较。
 
 <a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q05 · 哪些接口设计可复用，如何验证按证据充分性升级 ask 的假设？
+### Q05 · 哪些工程改进值得继续验证而不冒充已有贡献？
 
-**研究主题**：工程质量与复用、新假设与验证
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-可借鉴的是结构化结果与渲染分离、截断显式化、超时和取消共同约束，以及失败后可重建的知识库范围缓存。移植到别的后端时需重新适配分页、权限及 SSE 事件，不是替换 URL 即可。由搜索提供片段、ask 另行调用模型这一分层，推导出未验证假设：先用片段与全文达到证据门槛，只有覆盖不足时才升级 ask，可能减少额外调用同时保留质量。最小对照是在固定题集比较总是 ask、只搜索、门槛升级三组，若门槛组引用质量下降或总延迟更高则推翻优势；这不是当前已实现的自动路由。
+未验证假设：在当前搜索与补读接口之上增加显式证据预算，当引用覆盖不足才升级 ask，可能减少额外模型调用；同时把 truncated 与 has_more 的组合视为不完整信号，避免把分页结束误认为证据齐全。推导来自片段查询与综合问答分离、以及独立裁剪标志，不意味着插件已有自动路由。最小验证应比较只检索、始终 ask 和预算升级三组，固定知识库、问题、模型与验收人员，并记录引用准确性、漏答、总延迟、重试及模型费用。若升级组降低引用正确性或端到端负担没有下降，则推翻优势；不能仅靠减少调用次数接受假设。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-weknora/src/client.ts:111-116](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/client.ts#L111-L116)
+**依据 1 · 源码核查**：[packages/dsh-weknora/src/tools.ts:434-448](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L434-L448)
 
-取消与超时组合。
-
-```text
-
-export class WeknoraClient {
-  /**
-   * A knowledge-base-restricted API key rejects `resource_urls=public` with
-   * 403. After the first such refusal this client stays on handle mode so
-   * later calls do not pay the same round trip.
-```
-
-**依据 2 · 源码核查**：[packages/dsh-weknora/src/tools.ts:110-124](https://github.com/Tencent/WeKnora/blob/e1f9a6166a593a4804a2f99f1d942919c9cc8ea7/packages/dsh-weknora/src/tools.ts#L110-L124)
-
-截断状态随结构化命中返回。
+裁剪标志和分页结果为门控提供候选信号。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
-    knowledge_id: typeof result.knowledge_id === 'string' ? result.knowledge_id : '',
-    document: documentLabel(result),
-    chunk_index: typeof result.chunk_index === 'number' ? result.chunk_index : -1,
-    // 0 rather than NaN: the canonical value must stay lossless JSON.
-    score: typeof result.score === 'number' && Number.isFinite(result.score) ? result.score : 0,
-    content: clipped.text,
-    truncated: clipped.truncated,
-  }
-}
-
-/**
- * Keep the by-name matches worth showing: inside the scope the caller asked
- * for, and not already represented by a passage hit. WeKnora's by-name search
- * spans the whole tenant, so the scope filter is what stops a narrowed call
- * from reporting documents outside it.
+        const clipped = clip(joined, config.maxChunkChars * Math.max(1, Math.min(ordered.length, 10)))
+        const title = typeof metadata.title === 'string' && metadata.title.trim() !== ''
+          ? metadata.title.trim()
+          : typeof metadata.file_name === 'string' ? metadata.file_name.trim() : ''
+        return {
+          knowledge_id: knowledgeId,
+          title,
+          summary: clip(typeof metadata.description === 'string' ? metadata.description.trim() : '', config.maxChunkChars).text,
+          page: result.page,
+          page_size: result.pageSize,
+          total_chunks: result.total,
+          returned_chunks: ordered.length,
+          has_more: result.page * result.pageSize < result.total,
+          truncated: clipped.truncated,
+          content: clipped.text,
 ```
 
 </details>
+
+**依据 2 · 作者声明**：[packages/dsh-weknora/src/tools.ts:454-462](https://github.com/Tencent/WeKnora/blob/c5de34d286f91cbfd916c770e620d1046ada9324/packages/dsh-weknora/src/tools.ts#L454-L462)
+
+作者明确将综合问答留给跨文档问题。
+
+```text
+  if (config.tools.ask) {
+    const pipeline = config.agentId === undefined ? 'RAG' : 'agent'
+    definitions.push({
+      name: name('ask'),
+      description: `Ask WeKnora a question and get its own composed answer with citations (${pipeline} pipeline runs `
+        + 'server-side: query rewriting, retrieval, reranking and summarization). Reserve it for broad or '
+        + 'synthesis questions whose answer spans many documents, where retrieving passages yourself would take '
+        + `several rounds. For anything you can answer from specific passages, prefer ${name('search')}: it is far `
+        + 'faster and leaves you the evidence to reason over rather than another model\'s conclusion.',
+```
+
+#### 缺口
+
+- 证据预算阈值与自动路由尚未实现和验证
+  **影响**：不能计为本插件已交付的创新
+  **进一步探讨**：先离线标注覆盖是否充分，再设计阈值并以上述对照检验。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

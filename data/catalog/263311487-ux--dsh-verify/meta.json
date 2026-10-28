@@ -1,10 +1,10 @@
 {
     "repository": "263311487-ux/dsh-verify",
     "repository_id": 1335843750,
-    "captured_at": "2026-10-22T05:14:17.880Z",
-    "window_start": "2026-09-22T05:14:17.880Z",
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
     "stars": 2,
-    "pushed_at": "2026-10-09T16:33:59Z",
+    "pushed_at": "2026-10-28T02:46:19Z",
     "issues": {
         "open": 0,
         "closed": 1,
@@ -13,17 +13,28 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T15:55:27.864Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-verify",
-        "captured_at": "2026-10-22T05:14:29.496Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 2385,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-verify",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 2530,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-verify",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-16T11:46:29.465Z",
-            "captured_at": "2026-10-22T05:14:29.496Z",
+            "captured_at": "2026-10-27T22:18:54.889Z",
             "source_url": "https://registry.npmjs.org/dsh-verify",
             "error": null,
             "latest_version": "0.9.6",

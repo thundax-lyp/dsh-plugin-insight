@@ -1,18 +1,18 @@
-# dsh-verify
+# Witness（dsh-verify）
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[d969899](https://github.com/263311487-ux/dsh-verify/tree/d969899808e51dcccd261588f667b18633020fca)
+源码版本：[e7ce637](https://github.com/263311487-ux/dsh-verify/tree/e7ce6376fec8cf94f41ce46264baeb348911693b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/263311487-ux/dsh-verify) [![npm 30d 2,385](https://img.shields.io/static/v1?label=npm+30d&message=2%2C385&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/263311487-ux/dsh-verify) [![npm 30d 2,530](https://img.shields.io/static/v1?label=npm+30d&message=2%2C530&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-verify)
 <!-- END META -->
 
-> **功能**：执行 JSON 浏览器步骤并生成断言、截图和视觉差异报告，提供 CLI、MCP 与 DSH 工具入口。
+> **功能**：用可复跑 JSON 浏览器断言检查网页行为，并输出逐步报告与截图
 
-> **亮点**：将小型JSON动作、真实浏览器与可读结果接到CLI/MCP/DSH，降低手写测试接线；独立执行不等需求或作者独立。详见[Q01](#research-q01)。
+> **亮点**：把常见动作/断言、真实浏览器和报告封装为JSON流程，并接CLI/MCP/DSH，减少手写接线；确定性执行不等需求、覆盖或作者独立。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：首次expect_screenshot创建基线即PASS，结果只对应给定步骤；DSH spawnSync阻塞host且未见会话策略接线，不能当无人复核交付保证。详见[Q03](#research-q03)。
+> **主要限制**：首次截图基线创建即PASS不能当视觉回归通过；DSH spawnSync阻塞Host且注册失败静默；serve优先于url还可能使实际目标与工具描述不符。通过只对应本次给定断言。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 相对Agent自述和Playwright脚本增加什么？](#detail-section-11)
-  - [Q02 · JSON spec怎样生成真实浏览器和报告？](#detail-section-12)
-  - [Q03 · PASS、视觉基线和宿主执行有什么限制？](#detail-section-13)
-  - [Q04 · 依赖、三阶段成本与工程设计是什么？](#detail-section-14)
-  - [Q05 · 可推导何种更强记录，当前怎样采用？](#detail-section-15)
+  - [Q01 · 谁使用Witness，实际入口是什么？](#detail-section-11)
+  - [Q02 · 执行和报告怎样闭环？](#detail-section-12)
+  - [Q03 · PASS、截图基线与URL覆盖的边界是什么？](#detail-section-13)
+  - [Q04 · 要完成合格检查，用户还承担什么？](#detail-section-14)
+  - [Q05 · 怎么试用，哪项改进值得检验？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Agent网页交付后用真实浏览器检查明确行为，合格结果只覆盖独立审读过的spec和基线，不是整站认证。详见[Q01](#research-q01)。
+> **用途**：有明确网页验收标准的开发者/CI用户，需要真实浏览器检查交付中的具体行为。
 
-直接Playwright与人工浏览器检查是简单对照，插件减少接线并提供报告，不改变需求覆盖和独立性责任。
+手写Playwright、agent浏览器操作加人工清单；浏览器能力来自Playwright，独立性来自spec审阅。
 
 <a id="detail-section-3"></a>
 
@@ -51,69 +51,67 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| JSON行为断言 | 检查网页动作 | 覆盖由spec决定 |
-| 视觉差异 | 对比截图 | 基线需独立批准 |
-| CLI/MCP/DSH | 多入口调用 | DSH同步阻塞需注意 |
-
-**流程与依赖**
+|---|---|---|
+| JSON浏览器检查 | 动作、文本、样式及请求断言 | 只验证给定覆盖 |
+| 截图比较 | 像素基线回归 | 首次创建即pass，需独立批准 |
+| CLI/MCP/DSH | 接入agent或CI | DSH同步执行，gen需额外LLM |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| Node/Playwright/browser | 执行步骤 | 未装browser为runner错误 |
-| 可信spec与目标 | 定义检查 | 不全覆盖不能全站通过 |
-| 经批准视觉基线 | 回归对照 | 新基线不是独立证明 |
-| 可选LLM API | 生成spec | 费用与独立审读另算 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node20+、Playwright与浏览器 | 检查必需 | 真浏览器执行 | 浏览器需独立一次下载，未装不能验证 |
+| 可访问测试页/本地目录 | 场景必需 | 被测目标 | serve相对cwd且优先于url，应核实际地址 |
+| 独立审阅spec与基线 | 合格验收必需 | 覆盖与预期定义 | 同agent写spec不构成独立审查 |
+| LLM key/provider | 仅gen必需 | 草拟spec | 确定性runner不需key，生成另计费 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 安装依赖/browser | 开发者 | runner可启动 |
-| 审spec及基线 | 需求/验收者 | 有必要反例且对应构建 |
-| 执行并读报告 | 工具/开发者 | 原动作/截图支持有限结论 |
-| 故障分类后处理 | 开发者 | 不混淆FAIL/ERROR/新基线 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 1 | 用户准备测试环境与浏览器，固定目标 | 不在生产数据上试不可逆动作 |
+| 2 | 用户审JSON，设正确与故意错误用例 | 审实际URL和serve目录 |
+| 3 | CLI/MCP执行并回读HTML+PNG | PASS/FAIL及断言一致；新基线另批准 |
+| 4 | 用户核覆盖再集成CI/DSH | Host工具不可见/阻塞先回CLI |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 下载浏览器及依赖 | 写/审spec、批准基线 | 浏览器下载/依赖规模与spec审阅工时未知 |
-| 持续使用 | browser CPU/内存、截图/CI；可选gen API费 | 分析报告和覆盖，节省未测 | browser/截图/CI资源和可选gen API费依任务；节省未知 |
-| 失败恢复 | 重跑及保留报告 | 区分产品FAIL与runner ERROR，审慎更新基线 | FAIL与ERROR要分；重跑/基线重审工时未知 |
-
+|---|---|---|---|
+| 首次使用 | Node依赖/浏览器下载资源未知 | 安装、写spec与基线审批 | init本身不下载也不启动浏览器 |
+| 持续使用 | 浏览器、报告存储；可选LLM费未知 | 维护断言与状态、审截图 | 无同任务节时数据 |
+| 失败恢复 | 重跑/截图/diff资源未知 | 排目标、依赖、基线与业务副作用 | 失败尝试需计入 |
+| 退出 | 报告/基线存储未知 | 停MCP/禁插件，保留可追溯spec | 浏览器缓存另管理 |
 
 #### 效果
 
-| 目标 | 源码支持 | 边界 |
-| --- | --- | --- |
-| 真实行为检查 | Playwright步骤 | 只查spec覆盖 |
-| 视觉回归 | 像素差阈值 | 初始创建基线直接PASS |
-| 验收材料 | HTML/截图/差异 | 非完整审计或独立需求证明 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 显式网页行为 | 真浏览器动作/断言与非空通过 | 整体功能完整、安全、可访问性 |
+| 视觉回归 | 有基线时按像素阈值比较 | 首次创建不证明正确，设计语义未知 |
+| 检查可复跑 | JSON/HTML和显式截图 | 独立作者、完整审计和效率收益 |
 
-> **思考**：首次expect_screenshot创建基线即PASS，结果只对应给定步骤；DSH spawnSync阻塞host且未见会话策略接线，不能当无人复核交付保证。详见[Q03](#research-q03)。
+> **思考**：首次截图基线创建即PASS不能当视觉回归通过；DSH spawnSync阻塞Host且注册失败静默；serve优先于url还可能使实际目标与工具描述不符。通过只对应本次给定断言。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将小型JSON动作、真实浏览器与可读结果接到CLI/MCP/DSH，降低手写测试接线；独立执行不等需求或作者独立。详见[Q01](#research-q01)。
+> **亮点**：把常见动作/断言、真实浏览器和报告封装为JSON流程，并接CLI/MCP/DSH，减少手写接线；确定性执行不等需求、覆盖或作者独立。[Q01](#research-q01) [Q02](#research-q02)
 
-逐步结果、固定视口和真浏览器对照可借鉴；DSH同步子进程及静默注册失败应理解，视觉测试存在不等测试通过。详见[Q04](#research-q04)。
+逐步结果、finally清浏览器/server、非空通过和退出码易接CI；同步DSH子进程、静默import失败、首次基线PASS及serve/url优先级是需理解的实际边界。可复用声明式小型检查，但复杂流程仍适合直接Playwright。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-首次expect_screenshot创建基线即PASS，结果只对应给定步骤；DSH spawnSync阻塞host且未见会话策略接线，不能当无人复核交付保证。详见[Q03](#research-q03)。
+首次截图基线创建即PASS不能当视觉回归通过；DSH spawnSync阻塞Host且注册失败静默；serve优先于url还可能使实际目标与工具描述不符。通过只对应本次给定断言。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议可信本地有限spec试用，故意缺陷应失败、合法实现应通过；空覆盖、新基线和ERROR不放行，host阻塞或范围不清时停止。详见[Q05](#research-q05)。
+已有明确标准的开发者先在localhost用正确/故意错误断言试用，回读实际URL和报告；未审spec或基线不能放行，Host阻塞或目标不符退回CLI/手写Playwright。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-真实浏览器步骤和报告机制有源码支持；初始基线PASS、覆盖和宿主阻塞限制结果。运行绑定收据为未验证方向。
+入口、浏览器runner和报告/退出机制为源码支持；本轮未执行。作者示例/CI不是本轮验证；严格收据为未来假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、dsh/plugin.mjs、bin/verify.mjs、bin/gen.mjs、tests/visual.test.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、README.md、dsh/plugin.mjs、mcp/server.mjs、bin/verify.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交DSH包装、CLI步骤/视觉基线/静态server、可选gen和视觉测试源码阅读；不启动浏览器、模型或目标服务，不把历史Arena排名当当前有效证据。
-- 下一步：进一步探讨从空spec、初始基线、故意缺CSS和runner缺browser四类反例入手，再比较正确发现率、漏检和维护成本。
+- 边界：根组件45个tracked文件统计；重点DSH/MCP注册、runOne浏览器/基线/退出路径、README/package。未执行目标/浏览器，未把作者示例和CI当独立验证；未审全部gen/arena算法。 本轮重新核对固定源码的注册、核心执行、失败边界和归属，不将作者测试作本轮运行证据。
+- 下一步：同页面故障集比较JSON与手写Playwright，独立审spec，固定构建与批准基线，记录实际URL、漏检、误放行、总尝试和人工分钟；DSH另测注册/超时与Host响应。
 
 **分析版本**
 
 - **仓库**：[263311487-ux/dsh-verify](https://github.com/263311487-ux/dsh-verify)
-- **版本号**：0.9.6（[固定提交 d969899](https://github.com/263311487-ux/dsh-verify/tree/d969899808e51dcccd261588f667b18633020fca)）
-- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.6（[固定提交 e7ce637](https://github.com/263311487-ux/dsh-verify/tree/e7ce6376fec8cf94f41ce46264baeb348911693b)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +138,9 @@
 
 <a id="innovation"></a>
 
-可研究绑定构建/spec/批准基线及browser版本的运行收据，区分新基线、比较PASS和runner错误，并盲评能否正确界定放行范围。当前未验证。详见[Q05](#research-q05)。
+未验证假设是运行收据绑定构建、spec、浏览器及批准基线，并分开新建基线/比较通过/runner错误；故障集盲评判断范围与误放行，无改善或额外成本过高即否定。[Q05](#research-q05)
 
-进一步探讨从空spec、初始基线、故意缺CSS和runner缺browser四类反例入手，再比较正确发现率、漏检和维护成本。
+同页面故障集比较JSON与手写Playwright，独立审spec，固定构建与批准基线，记录实际URL、漏检、误放行、总尝试和人工分钟；DSH另测注册/超时与Host响应。
 
 <a id="detail-section-9"></a>
 
@@ -153,7 +151,7 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 20 | 1032 | — | — | 8834 |
+| .md | source | 23 | 1099 | — | — | 9236 |
 | .mjs | source | 12 | 1432 | 1275 | 88 | — |
 | .js | source | 2 | 46 | 28 | 8 | — |
 | .mjs | test | 8 | 518 | 458 | 8 | — |
@@ -162,63 +160,117 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+created%3A2026-09-22T05%3A14%3A17.880Z..2026-10-22T05%3A14%3A17.880Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A14%3A17.880Z..2026-10-22T05%3A14%3A17.880Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/263311487-ux/dsh-verify/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-28。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本浏览器执行器怎样给出有限spec的PASS/FAIL，视觉基线、执行范围与证据独立性限制是什么？
+**插件研究总目标**：JSON浏览器断言比agent自述多提供什么证据，PASS的范围和成本是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 相对Agent自述和Playwright脚本增加什么？
+### Q01 · 谁使用Witness，实际入口是什么？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-面向让Agent交付网页后需要核对具体交互的开发者。输入是明确JSON步骤与目标构建，合格结果是实际浏览器执行这些步骤的断言和必要截图，不是模型说完成。简单替代是直接写Playwright或人工点页面；插件提供小型动作语言、CLI/DSH/MCP接线和HTML结果，减少每次写测试工程的门槛。
-
-底层浏览器来自Playwright，断言只是已写spec覆盖的范围。应用和spec可能来自同一Agent，因此浏览器执行独立于模型口头自评，不等于需求标准或作者独立。README已明确PASS不证明完整性、安全、无障碍或独立审查；DSH工具description仍称independent acceptance并要求prove works，读者应按实际有限断言收窄理解。已有贡献是执行和可读记录，不是全自动质量认证。
+给agent生成/修改网页后需要核查具体可观察行为的开发者与CI用户，合格任务是人工审定spec覆盖预期行为、真实浏览器执行并返回可读报告。相对agent自述或手写Playwright，它把常见动作/断言编码为JSON，接到CLI、MCP和DSH；Playwright提供浏览器能力，不归本包原创。DSH main注册一个dsh_verify工具，参数为spec/url/out/browser；MCP声明verify_spec、verify_url、generate_and_verify、health，前两者无需模型判断，生成spec才需要LLM。作者把runner称independent不代表需求或spec作者独立；同agent生成页面和spec仍需外部复核覆盖。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-7](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/README.md#L3-L7)
+**依据 1 · 源码核查**：[README.md:22-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L22-L42)
 
-作者首屏限定浏览器断言的证明范围。
+作者给无key路径并明确PASS和独立性边界。
 
-```text
-[中文](README.zh.md) | English
+<details>
+<summary>查看原文（21行）</summary>
 
-> **Witness** — Check the behavior your browser spec describes.
-> Browser assertions can expose some implementation gaps; they do not prove an app is complete or independently reviewed.
-> *(Witness is the product name; `dsh-verify` is the package name — same thing.)*
+````text
+## First success — no API key
+
+Requires Node.js 20+ and a one-time Chromium download. Install the current npm release with `npm install --save-dev dsh-verify@0.9.6`, then run `npx dsh-verify init`. Alternatively, run from a clone checkout:
+
+```bash
+git clone https://github.com/263311487-ux/dsh-verify && cd dsh-verify
+npm ci
+npx playwright install chromium
+node bin/verify.mjs init
+cd dsh-verify-starter
+node ../bin/verify.mjs --spec dsh-verify.spec.json
+# PASS (5/5), exit 0 -> dsh-verify-out/report.html
+node ../bin/verify.mjs --spec dsh-verify.fail.json --out failed-report
+# Intentional FAIL (4/5), exit 1 -> failed-report/report.html
 ```
 
-**依据 2 · 作者声明**：[README.md:40-44](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/README.md#L40-L44)
+Open either HTML report with its adjacent PNG file. The failing spec deliberately expects wrong text; inspect the assertion and screenshot. [Existing missing-CSS failure report](evidence/buggy-report.html) is another inspectable example.
 
-作者明确有限spec与独立性边界。
-
-```text
 `init [directory]` only writes a local fixture and two JSON specs. It never calls an LLM, launches a browser, or downloads anything. The destination must be new (its parent must exist); existing directories, files, and symlinks are refused without changes. No force/overwrite option. GitHub package and browser installation require internet; these starter checks use localhost only. `gen` and MCP `generate_and_verify` are optional, separate features that require an LLM key.
 
 To check your own app, edit the JSON steps; keep `serve` for static files or use `base` for an existing URL. `serve` paths resolve from the command's current directory, not the spec file. A PASS applies only to the supplied checks in that run; it does not establish complete coverage, security, accessibility, or independent authorship. The app and spec may come from the same agent; review the spec separately when independence matters. Reports retain assertion details and explicitly requested screenshots, not a complete audit trail.
+````
 
-![dsh-verify — Agents say done. The browser proves it.](assets/social-card.png)
+</details>
+
+**依据 2 · 源码核查**：[README.md:75-100](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L75-L100)
+
+与Playwright/agent browser/视觉工具的参照。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+````text
+## How it fits with other tools
+
+- Playwright scripts provide a general browser API. This package exposes common checks as a reviewable JSON spec and report; custom scripts remain useful for flows outside this schema.
+- LLM evaluation tools can assess open-ended outputs and may also integrate browsers. This package evaluates explicit browser assertions without an LLM deciding their result.
+- Agent browser tools let agents operate a page. Stored specs make repeat runs inspectable; independent review still depends on who writes and reviews the spec.
+- Visual regression tools detect pixel changes. This package combines screenshot comparisons with behavior assertions; coverage depends on the chosen checks.
+
+## Use it three ways
+
+| Entry point | What it's for | One-liner |
+|---|---|---|
+| **MCP server** | Your AI agent verifies its own deliverable, mid-session | `claude mcp add dsh-verify -- npx -y -p dsh-verify dsh-verify-mcp` |
+| **CLI** | You or your CI verify a build/URL | `npx dsh-verify init` |
+| **GitHub Action** | Every push runs real-browser checks | `uses: 263311487-ux/dsh-verify/.github/actions/dsh-verify@main` |
+
+### From any AI agent (MCP)
+
+```bash
+claude mcp add dsh-verify -- npx -y -p dsh-verify dsh-verify-mcp
 ```
 
-**依据 3 · 源码核查**：[dsh/plugin.mjs:13-20](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/dsh/plugin.mjs#L13-L20)
+Then tell your agent, in plain words:
 
-DSH工具描述和参数表达较强验收措辞。
+> Verify http://localhost:3000 — click `#dark-toggle`, then check `body` background-color changed. Screenshot it.
+
+Tools exposed: `verify_spec` (run a spec JSON), `verify_url` (inline checks, no files), `generate_and_verify` (the AI drafts the checklist, real Chromium executes it), `health`.
+````
+
+</details>
+
+**依据 3 · 源码核查**：[dsh/plugin.mjs:7-21](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L7-L21)
+
+真实DSH工具注册。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
+export const name = 'dsh-verify';
+export const inject = ['tools'];
+
+export function apply(ctx) {
+  import('@deepseek-ai/dsh-tools')
+    .then(({ defineTool }) => {
       ctx.tools.register(defineTool({
         name: 'dsh_verify',
         description: 'Witness — independent browser acceptance testing for agent-built web apps. Runs the dsh-verify CLI (real browser; PASS/FAIL with evidence receipts). Use when the agent built or changed a web app and must prove it works in a real browser.',
@@ -227,30 +279,138 @@ DSH工具描述和参数表达较强验收措辞。
           url: { type: 'string', description: 'Target URL; overrides spec.serve / spec.base / step path' },
           out: { type: 'string', description: 'Output directory for report.html + screenshots (default: ./dsh-verify-out)' },
           browser: { type: 'string', enum: ['chromium', 'firefox', 'webkit'], description: 'Browser engine (default: chromium)' },
+        },
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[mcp/server.mjs:27-91](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/mcp/server.mjs#L27-L91)
+
+四个MCP工具和可选LLM生成。
+
+<details>
+<summary>查看原文（65行）</summary>
+
+```text
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
+  tools: [
+    {
+      name: 'verify_spec',
+      description:
+        'Run a dsh-verify acceptance spec (JSON file, or glob) against a real headless Chromium. ' +
+        'The spec may serve a local static dir (spec.serve) or target any URL (spec.base / step.url). ' +
+        'Returns PASS/FAIL with per-step results and a self-contained HTML report path. ' +
+        'Exit-code semantics: ok=true means every step passed. This is deterministic — no LLM judges the outcome.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          specPath: { type: 'string', description: 'Path to the spec JSON file or glob (e.g. specs/*.json)' },
+          out: { type: 'string', description: 'Output dir for report.html + screenshots (default: ./dsh-verify-out)' },
+          url: { type: 'string', description: 'Optional target URL override (spec.base / step path ignored)' },
+          headed: { type: 'boolean', description: 'Run with a visible browser (debug only)' },
+        },
+        required: ['specPath'],
+      },
+    },
+    {
+      name: 'verify_url',
+      description:
+        'Verify a live URL against a list of human-style checks, driven by a real headless Chromium. ' +
+        'Checks are dsh-verify steps: goto/click/fill/wait/expect_text/expect_class/capture_style/' +
+        'expect_style_changed/expect_url_contains/expect_navigation/expect_console_errors/' +
+        'expect_network_errors/screenshot. If no goto step is given, a goto to the url is prepended. ' +
+        'Returns PASS/FAIL with per-step results and a self-contained HTML report path. Deterministic — no LLM judges the outcome.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          url: { type: 'string', description: 'Target URL to open' },
+          checks: {
+            type: 'array',
+            description: 'Human-style checks, e.g. [{action:"click",selector:"#dark-toggle"}, {action:"capture_style",selector:"body",prop:"backgroundColor",var:"bg"}, {action:"expect_style_changed",selector:"body",prop:"backgroundColor",var:"bg"}]',
+            items: { type: 'object' },
+          },
+          out: { type: 'string', description: 'Output dir for report.html + screenshots (default: ./dsh-verify-out)' },
+          headed: { type: 'boolean', description: 'Run with a visible browser (debug only)' },
+        },
+        required: ['url', 'checks'],
+      },
+    },
+    {
+      name: 'generate_and_verify',
+      description:
+        'AI-drafts an acceptance checklist for a URL (LLM writes it, a real browser executes it), then immediately runs it in real Chromium. ' +
+        'Pass requirements as a plain-language description of what a human QA should verify (e.g. "dark-mode toggle changes the background color"). ' +
+        'Requires DEEPSEEK_API_KEY or OPENAI_API_KEY in the server environment. Returns the drafted spec path plus the PASS/FAIL verdict, per-step results and report path.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          url: { type: 'string', description: 'Target URL to verify' },
+          requirements: { type: 'string', description: 'Plain-language QA requirements (optional)' },
+          out: { type: 'string', description: 'Output dir for spec + report (default: ./dsh-verify-out)' },
+          model: { type: 'string', description: 'LLM model (default: deepseek-v4-flash)' },
+          headed: { type: 'boolean', description: 'Run with a visible browser (debug only)' },
+        },
+        required: ['url'],
+      },
+    },
+    {
+      name: 'health',
+      description: 'Check that the dsh-verify MCP server and its Chromium browser are ready to run verifications.',
+      inputSchema: { type: 'object', properties: {} },
+```
+
+</details>
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · JSON spec怎样生成真实浏览器和报告？
+### Q02 · 执行和报告怎样闭环？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-runOne读JSON，选chromium/firefox/webkit，serve目录可启动本地HTTP或使用目标base，启动浏览器1280x800页面，按顺序goto/click及各类expect操作。pageerror加入失败，console/network错误仅在对应断言步骤检查；每步try/catch保留失败，未知动作也fail，最后报告收集的步骤和截图/差异文件。
-
-DSH插件注册dsh_verify，拼CLI argv然后spawnSync当前Node，固定180秒与16MiB输出上限，status0映射ok。这里是直接宿主子进程，所读入口未接会话sandboxPolicy或cwd；spec路径和serve按进程目录解释。可选gen使用LLM读取页面facts和requirements生成JSON，它不是执行断言时的LLM裁判，也不能因为格式验证就保证需求覆盖。init只生成本地模板，两条路线须区分。
+runOne读取spec，选择Chromium/Firefox/WebKit，静态serve起127.0.0.1随机端口，否则访问base；动作逐条执行、异常转单步fail而非忽略。finally关闭浏览器和临时server，results.every(ok)且total>0才通过；输出HTML包括逐步assertion及显式请求的截图/diff。main按spec逐个运行，全部通过才exit0，缺spec或无匹配exit2；runner异常走exit1。可借鉴点是把黑箱页面行为转为可复跑检查并保留失败上下文，不把浏览器启动或截图存在当通过。报告不是完整audit trail，浏览器console/network等也只受spec所选断言约束；本轮不执行这些功能。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/verify.mjs:131-159](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L131-L159)
+**依据 1 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L81-L98)
 
-浏览器选择、server、事件和步骤执行。
+仅localhost静态server。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（18行）</summary>
+
+```text
+async function serveDir(dir) {
+  const root = resolve(dir);
+  const server = createServer(async (req, res) => {
+    try {
+      const urlPath = decodeURIComponent((req.url || '/').split('?')[0]);
+      let fp = join(root, urlPath);
+      if (!fp.startsWith(root)) { res.writeHead(403); return res.end(); }
+      let st = await stat(fp).catch(() => null);
+      if (st && st.isDirectory()) fp = join(fp, 'index.html');
+      const data = await readFile(fp);
+      res.writeHead(200, { 'content-type': MIME[extname(fp).toLowerCase()] || 'application/octet-stream' });
+      res.end(data);
+    } catch {
+      res.writeHead(404); res.end('not found');
+    }
+  });
+  await new Promise((r) => server.listen(0, '127.0.0.1', r));
+  return { url: `http://127.0.0.1:${server.address().port}`, close: () => server.close() };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[bin/verify.mjs:131-141](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L131-L141)
+
+spec/engine/base的实际初始化。
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
 export async function runOne(specPath, outDir, { headed, url, updateBaselines, browser: browserName } = {}) {
@@ -264,85 +424,79 @@ export async function runOne(specPath, outDir, { headed, url, updateBaselines, b
 
   const fail = (step, msg) => results.push({ ...step, ok: false, detail: msg });
   const pass = (step, detail) => results.push({ ...step, ok: true, detail: detail || 'ok' });
-
-  try {
-    browser = await engine.launch({ headless: !headed });
-    const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
-    const consoleErrors = [];
-    const networkErrors = [];
-    page.on('pageerror', (e) => { results.push({ action: 'pageerror', ok: false, detail: String(e) }); });
-    page.on('console', (m) => { if (m.type() === 'error') consoleErrors.push(m.text()); });
-    page.on('response', (r) => { if (r.status() >= 400) networkErrors.push(`${r.status()} ${r.url()}`); });
-    page.on('requestfailed', (r) => { networkErrors.push(`failed ${r.url()}`); });
-
-    for (const step of spec.steps || []) {
-      const a = step.action;
-      try {
-        if (a === 'goto') { await page.goto(step.url || base + (step.path || '/index.html'), { waitUntil: 'load' }); pass(step, page.url()); }
-        else if (a === 'wait') { await page.waitForTimeout(step.ms || 500); pass(step, `${step.ms || 500}ms`); }
-        else if (a === 'click') {
-          const n = step.count || 1;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/plugin.mjs:42-57](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/dsh/plugin.mjs#L42-L57)
+**依据 3 · 源码核查**：[bin/verify.mjs:250-262](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L250-L262)
 
-同步CLI启动、超时及status映射。
+未知action失败、异常收集、cleanup和非空通过。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-        async execute(args) {
-          const bin = fileURLToPath(new URL('../bin/verify.mjs', import.meta.url));
-          const argv = [bin, '--json', '--spec', String(args.spec)];
-          if (args.url) argv.push('--url', String(args.url));
-          if (args.out) argv.push('--out', String(args.out));
-          if (args.browser) argv.push('--browser', String(args.browser));
-          const r = spawnSync(process.execPath, argv, { encoding: 'utf8', timeout: 180000, maxBuffer: 16 * 1024 * 1024 });
-          const stdout = (r.stdout || '').trim();
-          const stderr = (r.stderr || '').trim();
-          return {
-            ok: r.status === 0,
-            exitCode: r.status,
-            summary: stdout.split('\n').slice(-6).join('\n'),
-            report: stdout.slice(0, 8000),
-            stderr: stderr.slice(0, 2000),
-          };
+        else fail(step, `unknown action "${a}"`);
+      } catch (e) {
+        fail(step, String(e && e.message || e).slice(0, 300));
+      }
+    }
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+    if (served) served.close();
+  }
+
+  const passed = results.filter((r) => r.ok).length;
+  const total = results.length;
+  const ok = results.every((r) => r.ok) && total > 0;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[bin/gen.mjs:119-139](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/gen.mjs#L119-L139)
+**依据 4 · 源码核查**：[bin/verify.mjs:323-358](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L323-L358)
 
-可选LLM生成spec的外部请求。
+多spec verdict及明确退出。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-export async function generateSpec({ url, requirements = '', pageFacts, model, apiKey, baseUrl, provider = 'deepseek', signal }) {
-  const key = apiKey || process.env.DEEPSEEK_API_KEY || process.env.OPENAI_API_KEY;
-  if (!key) throw new Error('no LLM API key — set DEEPSEEK_API_KEY (or pass --api-key)');
-  const base = baseUrl || (provider === 'openai' ? 'https://api.openai.com/v1' : 'https://api.deepseek.com');
-  const mdl = model || (provider === 'openai' ? 'gpt-4o-mini' : 'deepseek-v4-flash');
-  if (!pageFacts) throw new Error('pageFacts is required (browse the page first)');
+  if (has('help')) { process.stdout.write(HELP); process.exit(0); }
+  const pattern = arg('spec');
+  if (!pattern) { process.stdout.write(HELP); process.exit(2); }
+  const specPaths = await expandSpecPaths(pattern);
+  if (specPaths.length === 0) { console.error(`no specs matched: ${pattern}`); process.exit(2); }
+  const outDir = resolve(arg('out', 'dsh-verify-out'));
+  const multi = specPaths.length > 1;
+  const results = [];
 
-  const res = await fetch(`${base}/chat/completions`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` },
-    body: JSON.stringify({
-      model: mdl,
-      messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt({ url, requirements, facts: pageFacts }) }],
-      temperature: 0.2,
-      response_format: { type: 'json_object' },
-    }),
-    signal,
-  });
-  if (!res.ok) throw new Error(`LLM API ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const data = await res.json();
-  const content = (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) || '';
+  for (const sp of specPaths) {
+    const specOut = multi ? join(outDir, basename(sp).replace(/\.json$/, '')) : outDir;
+    const r = await runOne(sp, specOut, { headed: has('headed'), url: arg('url'), updateBaselines: has('update-baselines'), browser: arg('browser') });
+    results.push(r);
+    if (multi) {
+      console.log(`${r.ok ? '[PASS]' : '[FAIL]'} ${sp} (${r.passed}/${r.total})`);
+      if (!r.ok) printFailed(r.failed);
+    } else {
+      console.log(`\ndsh-verify: ${r.ok ? 'PASS' : 'FAIL'} (${r.passed}/${r.total})`);
+      if (!r.ok) printFailed(r.failed);
+      console.log(`report: ${r.report}`);
+    }
+  }
+
+  const allOk = results.length > 0 && results.every((r) => r.ok);
+  if (!has('json') && results.length > 0) {
+    console.log(`\nWitness — useful? ⭐ star the repo: https://github.com/263311487-ux/dsh-verify`);
+  }
+  if (has('json')) {
+    process.stdout.write(JSON.stringify({
+      verdict: allOk ? 'PASS' : 'FAIL',
+      specs: results.map((r) => ({ name: r.name, verdict: r.ok ? 'PASS' : 'FAIL', passed: r.passed, total: r.total, failed: r.failed, report: r.report })),
+      passed: results.filter((r) => r.ok).length,
+      total: results.length,
+    }) + '\n');
+  }
+  process.exit(allOk ? 0 : 1);
 ```
 
 </details>
@@ -351,21 +505,19 @@ export async function generateSpec({ url, requirements = '', pageFacts, model, a
 
 <a id="detail-section-13"></a>
 
-### Q03 · PASS、视觉基线和宿主执行有什么限制？
+### Q03 · PASS、截图基线与URL覆盖的边界是什么？
 
 **研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-视觉expect_screenshot在基线不存在或updateBaselines时写当前png并pass，所以首次绿色只说明建立基线，不能证明与已批准设计一致。即使存在基线，差异比例及像素容差只是视觉变化判据，不能判断按钮实现业务正确。spec.steps为空时循环不做覆盖，验收应由读者另行检查是否真的存在必要动作与反例；同一Agent写“刚好符合实现”的检查仍可能漏需求。
-
-DSH入口spawnSync会阻塞host线程直至子进程返回，三分钟上限可能影响其他会话；它对目标URL、文件spec和out目录没有本地工作区限制，真实权限取决于宿主执行边界。工具导入失败catch为空会静默不注册，不能把未见工具解释为没有风险。静态serve按路径字符串前缀与stat/read提供文件，所读片段未物理核对symlink；仅绑定127.0.0.1不等文件范围隔离。以上为源码边界，未启动浏览器或复现。
+首次expect_screenshot在基线缺失时写当前图并pass，--update-baselines同样更新并pass；这证明创建了基线，不是同已批准图比较成功。断言都可由同一agent编写，因此完整性、语义与独立性不能从通过率推出。DSH工具execute内spawnSync最多180秒，会阻塞当前Node事件循环，超时status可能null；结果仍按status===0判断，而import失败catch为空会静默缺工具。另一个具体行为是runOne先用spec.serve起server，base优先served.url，只有没有serve才用传入url，和工具文字“url overrides serve”不一致；指定url不必然把静态spec转向线上目标。应回读实际goto与报告URL，不能以参数表代替被测对象身份。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L225-L245)
+**依据 1 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L225-L245)
 
-基线不存在/更新直接pass。
+首次/更新基线直接pass与后续像素阈值比较。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -396,20 +548,22 @@ DSH入口spawnSync会阻塞host线程直至子进程返回，三分钟上限可�
 
 </details>
 
-**依据 2 · 源码核查**：[bin/verify.mjs:153-156](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L153-L156)
+**依据 2 · 源码核查**：[bin/verify.mjs:131-136](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L131-L136)
 
-步骤由spec给定，不自行证明覆盖。
+serve优先，URL只在无serve时生效。
 
 ```text
-    for (const step of spec.steps || []) {
-      const a = step.action;
-      try {
-        if (a === 'goto') { await page.goto(step.url || base + (step.path || '/index.html'), { waitUntil: 'load' }); pass(step, page.url()); }
+export async function runOne(specPath, outDir, { headed, url, updateBaselines, browser: browserName } = {}) {
+  const spec = JSON.parse(await readFile(specPath, 'utf8'));
+  const engine = BROWSERS[browserName || spec.browser || 'chromium'];
+  if (!engine) throw new Error(`unknown browser "${browserName || spec.browser}" (chromium | firefox | webkit)`);
+  const served = spec.serve ? await serveDir(spec.serve) : null;
+  const base = served ? served.url : (url || spec.base || 'http://localhost');
 ```
 
-**依据 3 · 源码核查**：[dsh/plugin.mjs:42-61](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/dsh/plugin.mjs#L42-L61)
+**依据 3 · 源码核查**：[dsh/plugin.mjs:42-61](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L42-L61)
 
-同步进程、参数及静默catch。
+同步子进程、超时和静默注册失败。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -439,9 +593,88 @@ DSH入口spawnSync会阻塞host线程直至子进程返回，三分钟上限可�
 
 </details>
 
-**依据 4 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L81-L98)
+#### 缺口
 
-本地静态server的路径检查与读取。
+- Host真实工具注册、180秒阻塞影响及不同URL/serve组合未运行验证。
+  **影响**：不能宣称无人复核安全放行或远程目标必然正确。
+  **进一步探讨**：隔离profile用不同标识的静态/远程页，检查传url后的实际地址；长任务观察Host响应，并单独批准基线。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 要完成合格检查，用户还承担什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+首次需要Node20+、Playwright依赖和对应浏览器下载；init只写新目录fixture/spec，无模型/浏览器/下载动作，不能当安装验收。持续成本主要是编写可观察断言、准备状态和测试数据、审批基线、浏览器资源和失败排查。gen/MCP generate_and_verify是可选模型调用，要另核key、输入内容和费用；无需key的确定性runner不代表所有路径免费。静态serve目录相对命令cwd而非spec位置，用户应确认不会暴露无关本地资源；有写操作的网页检查也会产生真实业务副作用，应在测试环境用可恢复数据。没有合格任务对照无法算每次验收节时或单位成本。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[README.md:24-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L24-L42)
+
+Node、浏览器、init和serve cwd/报告边界。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+````text
+Requires Node.js 20+ and a one-time Chromium download. Install the current npm release with `npm install --save-dev dsh-verify@0.9.6`, then run `npx dsh-verify init`. Alternatively, run from a clone checkout:
+
+```bash
+git clone https://github.com/263311487-ux/dsh-verify && cd dsh-verify
+npm ci
+npx playwright install chromium
+node bin/verify.mjs init
+cd dsh-verify-starter
+node ../bin/verify.mjs --spec dsh-verify.spec.json
+# PASS (5/5), exit 0 -> dsh-verify-out/report.html
+node ../bin/verify.mjs --spec dsh-verify.fail.json --out failed-report
+# Intentional FAIL (4/5), exit 1 -> failed-report/report.html
+```
+
+Open either HTML report with its adjacent PNG file. The failing spec deliberately expects wrong text; inspect the assertion and screenshot. [Existing missing-CSS failure report](evidence/buggy-report.html) is another inspectable example.
+
+`init [directory]` only writes a local fixture and two JSON specs. It never calls an LLM, launches a browser, or downloads anything. The destination must be new (its parent must exist); existing directories, files, and symlinks are refused without changes. No force/overwrite option. GitHub package and browser installation require internet; these starter checks use localhost only. `gen` and MCP `generate_and_verify` are optional, separate features that require an LLM key.
+
+To check your own app, edit the JSON steps; keep `serve` for static files or use `base` for an existing URL. `serve` paths resolve from the command's current directory, not the spec file. A PASS applies only to the supplied checks in that run; it does not establish complete coverage, security, accessibility, or independent authorship. The app and spec may come from the same agent; review the spec separately when independence matters. Reports retain assertion details and explicitly requested screenshots, not a complete audit trail.
+````
+
+</details>
+
+**依据 2 · 源码核查**：[mcp/server.mjs:70-85](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/mcp/server.mjs#L70-L85)
+
+可选生成的key/模型条件。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    {
+      name: 'generate_and_verify',
+      description:
+        'AI-drafts an acceptance checklist for a URL (LLM writes it, a real browser executes it), then immediately runs it in real Chromium. ' +
+        'Pass requirements as a plain-language description of what a human QA should verify (e.g. "dark-mode toggle changes the background color"). ' +
+        'Requires DEEPSEEK_API_KEY or OPENAI_API_KEY in the server environment. Returns the drafted spec path plus the PASS/FAIL verdict, per-step results and report path.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          url: { type: 'string', description: 'Target URL to verify' },
+          requirements: { type: 'string', description: 'Plain-language QA requirements (optional)' },
+          out: { type: 'string', description: 'Output dir for spec + report (default: ./dsh-verify-out)' },
+          model: { type: 'string', description: 'LLM model (default: deepseek-v4-flash)' },
+          headed: { type: 'boolean', description: 'Run with a visible browser (debug only)' },
+        },
+        required: ['url'],
+```
+
+</details>
+
+**依据 3 · 源码核查**：[bin/verify.mjs:81-98](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L81-L98)
+
+静态读取真实文件并监听localhost。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -471,144 +704,39 @@ async function serveDir(dir) {
 
 #### 缺口
 
-- 目标宿主对直接子进程权限、实际spec需求覆盖与基线审批未固定。
-  **影响**：不能作为无人复核的交付放行或安全认证。
-  **进一步探讨**：先固定构建/spec/基线并独立审读必要反例，确认只运行可信目录和目标，再判断结果范围。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 依赖、三阶段成本与工程设计是什么？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、工程质量与复用
-
-#### 完整回答
-
-需要Node>=20、Playwright及所选浏览器下载，MCP另需SDK，DSH工具依宿主dsh-tools动态导入。运行已有spec无需模型Key；gen或generate_and_verify才需要外部LLM及预算。固定视口和本地server便于构造反例，逐步结果与差异图可检查；tests/visual源码明确测试baseline create→page change FAIL→update PASS，这证明作者定义了生命周期，未证明基线内容正确，本轮也未执行。
-
-首次成本包括安装包/浏览器、写或审读spec、创建经认可基线；持续成本是浏览器CPU/内存、截图存储、CI时间和可选模型生成费。失败恢复要区分断言失败、浏览器未装、server/网络及runner错误，不能把ERROR算产品FAIL；更新基线应先人工确认而不是为了绿灯覆盖。实际任务覆盖、维护spec与flaky率没有本轮数据，不量化节省或通过率。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-19](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/package.json#L1-L19)
-
-独立CLI和MCP入口。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-{
-  "name": "dsh-verify",
-  "version": "0.9.6",
-  "description": "Witness — browser acceptance checks for agent-built web apps. CLI, MCP, AI-drafted checklists, visual regression, and multi-browser reports.",
-  "keywords": [
-    "deepseek",
-    "agent",
-    "ai-agent",
-    "llm",
-    "mcp",
-    "mcp-server",
-    "acceptance-testing",
-    "e2e",
-    "browser-automation",
-    "playwright",
-    "visual-regression",
-    "verification",
-    "dsh",
-    "cordis"
-```
-
-</details>
-
-**依据 2 · 源码核查**：[tests/visual.test.mjs:11-29](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/tests/visual.test.mjs#L11-L29)
-
-视觉基线生命周期的测试预期。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-test('visual regression: baseline create -> PASS -> page change FAIL -> update baseline PASS', async () => {
-  const work = await mkdtemp(join(tmpdir(), 'dshv-vis-'));
-  await cp(join(root, 'demo', 'fixed'), join(work, 'site'), { recursive: true });
-  const specPath = join(work, 'spec.json');
-  const spec = {
-    title: 'visual regression test',
-    serve: join(work, 'site'),
-    steps: [
-      { action: 'goto', path: '/index.html' },
-      { action: 'expect_screenshot', name: 'home' },
-      { action: 'expect_console_errors', present: false },
-    ],
-  };
-  await writeFile(specPath, JSON.stringify(spec));
-  const out = join(work, 'out');
-
-  const first = await runOne(specPath, out, {});
-  assert.equal(first.ok, true, JSON.stringify(first.failed));
-  assert.ok(first.failed.every((f) => f.action !== 'expect_screenshot'));
-```
-
-</details>
-
-**依据 3 · 源码核查**：[bin/gen.mjs:119-137](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/gen.mjs#L119-L137)
-
-可选生成才用外部Key/API。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export async function generateSpec({ url, requirements = '', pageFacts, model, apiKey, baseUrl, provider = 'deepseek', signal }) {
-  const key = apiKey || process.env.DEEPSEEK_API_KEY || process.env.OPENAI_API_KEY;
-  if (!key) throw new Error('no LLM API key — set DEEPSEEK_API_KEY (or pass --api-key)');
-  const base = baseUrl || (provider === 'openai' ? 'https://api.openai.com/v1' : 'https://api.deepseek.com');
-  const mdl = model || (provider === 'openai' ? 'gpt-4o-mini' : 'deepseek-v4-flash');
-  if (!pageFacts) throw new Error('pageFacts is required (browse the page first)');
-
-  const res = await fetch(`${base}/chat/completions`, {
-    method: 'POST',
-    headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` },
-    body: JSON.stringify({
-      model: mdl,
-      messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: buildPrompt({ url, requirements, facts: pageFacts }) }],
-      temperature: 0.2,
-      response_format: { type: 'json_object' },
-    }),
-    signal,
-  });
-  if (!res.ok) throw new Error(`LLM API ${res.status}: ${(await res.text()).slice(0, 300)}`);
-```
-
-</details>
-
-#### 缺口
-
-- 缺少真实项目spec维护、波动失败和错误分类的成本对照。
-  **影响**：无法判断比直接Playwright/人工验收更划算。
-  **进一步探讨**：同构建同需求对照脚本与工具，记录正确发现、漏检、总运行及维护时间。
+- spec维护时间、浏览器资源、LLM生成成本和缺陷检出率未知。
+  **影响**：不能断言比手写Playwright便宜或更独立。
+  **进一步探讨**：同页面同故障集对照手写脚本，计断言审阅/失败/重跑全成本与漏检。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 可推导何种更强记录，当前怎样采用？
+### Q05 · 怎么试用，哪项改进值得检验？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
-未验证方向是把构建commit、spec hash、基线hash与批准来源、浏览器/依赖版本、断言覆盖和runner状态绑定成单次可审读收据，将“基线创建”与“已比对PASS”分开。推导来自结果颜色强于记录实际范围，尤其首次基线pass和spec作者独立性。最小验证给审阅者相同页面的漏spec、空spec、新基线、真回归和runner错误，比较是否能正确界定可放行范围；若只是加hash而不能解释覆盖，否定其作为充分验收方案。
-
-建议仅在可信本地应用、明确spec与基线的范围试用CLI或DSH工具，保留独立需求检查。成功标准是故意缺陷样例被正确断言捕获，合法实现通过，报告能查原动作和截图；未执行任何必要断言、新基线或运行错误不应当产品已验收。host长时间阻塞、范围不清或频繁为过测试改基线时停止自动放行。长期自动放行仍需独立spec与批准基线，且DSH同步执行会占住宿主线程，当前适合有限任务试用而非直接全局启用。
+适合已有明确网页验收标准且能审spec的开发者先在localhost测试页面试用：独立指定一个应通过和一个故意错误的断言，检查实际URL、HTML与相邻PNG，再批准截图基线；原生DSH集成另核工具注册与Host可响应。不能把PASS作为安全、无障碍或完整交付证明。未验证假设是绑定构建/spec/浏览器版本/已批准基线的运行收据，区分baseline_created、comparison_pass与runner_error，可降低错误放行。以同一构建变更spec/基线/URL的故障集盲评维护者能否判断检查范围；错误放行不降或文书成本更高即否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/bin/verify.mjs#L225-L245)
+**依据 1 · 源码核查**：[README.md:38-42](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/README.md#L38-L42)
 
-基线create和compare需在收据区分。
+检查报告/截图与PASS范围的作者边界。
+
+```text
+Open either HTML report with its adjacent PNG file. The failing spec deliberately expects wrong text; inspect the assertion and screenshot. [Existing missing-CSS failure report](evidence/buggy-report.html) is another inspectable example.
+
+`init [directory]` only writes a local fixture and two JSON specs. It never calls an LLM, launches a browser, or downloads anything. The destination must be new (its parent must exist); existing directories, files, and symlinks are refused without changes. No force/overwrite option. GitHub package and browser installation require internet; these starter checks use localhost only. `gen` and MCP `generate_and_verify` are optional, separate features that require an LLM key.
+
+To check your own app, edit the JSON steps; keep `serve` for static files or use `base` for an existing URL. `serve` paths resolve from the command's current directory, not the spec file. A PASS applies only to the supplied checks in that run; it does not establish complete coverage, security, accessibility, or independent authorship. The app and spec may come from the same agent; review the spec separately when independence matters. Reports retain assertion details and explicitly requested screenshots, not a complete audit trail.
+```
+
+**依据 2 · 源码核查**：[bin/verify.mjs:225-245](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/bin/verify.mjs#L225-L245)
+
+当前首次基线pass是新状态分类的依据。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -639,12 +767,9 @@ export async function generateSpec({ url, requirements = '', pageFacts, model, a
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/plugin.mjs:48-57](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/dsh/plugin.mjs#L48-L57)
+**依据 3 · 源码核查**：[dsh/plugin.mjs:48-56](https://github.com/263311487-ux/dsh-verify/blob/e7ce6376fec8cf94f41ce46264baeb348911693b/dsh/plugin.mjs#L48-L56)
 
-status与截取报告不等完整验收依据。
-
-<details>
-<summary>查看原文（10行）</summary>
+状态null/文本裁剪为runner错误辨识的依据。
 
 ```text
           const r = spawnSync(process.execPath, argv, { encoding: 'utf8', timeout: 180000, maxBuffer: 16 * 1024 * 1024 });
@@ -656,27 +781,12 @@ status与截取报告不等完整验收依据。
             summary: stdout.split('\n').slice(-6).join('\n'),
             report: stdout.slice(0, 8000),
             stderr: stderr.slice(0, 2000),
-          };
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:40-44](https://github.com/263311487-ux/dsh-verify/blob/d969899808e51dcccd261588f667b18633020fca/README.md#L40-L44)
-
-作者已有有限覆盖原则。
-
-```text
-`init [directory]` only writes a local fixture and two JSON specs. It never calls an LLM, launches a browser, or downloads anything. The destination must be new (its parent must exist); existing directories, files, and symlinks are refused without changes. No force/overwrite option. GitHub package and browser installation require internet; these starter checks use localhost only. `gen` and MCP `generate_and_verify` are optional, separate features that require an LLM key.
-
-To check your own app, edit the JSON steps; keep `serve` for static files or use `base` for an existing URL. `serve` paths resolve from the command's current directory, not the spec file. A PASS applies only to the supplied checks in that run; it does not establish complete coverage, security, accessibility, or independent authorship. The app and spec may come from the same agent; review the spec separately when independence matters. Reports retain assertion details and explicitly requested screenshots, not a complete audit trail.
-
-![dsh-verify — Agents say done. The browser proves it.](assets/social-card.png)
 ```
 
 #### 缺口
 
-- 运行绑定收据和独立需求覆盖流程未验证。
-  **影响**：新设计只作为假设，当前结果仍由人界定。
-  **进一步探讨**：固定混合反例后盲评审阅者是否正确区分PASS范围、基线创建和ERROR。
+- 更严格运行收据对误放行和维护成本的改善未知。
+  **影响**：新假设不计已有贡献或已证需求。
+  **进一步探讨**：在故障集记录范围判断错误、漏检和人工分钟，不改善就保留人工清单。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

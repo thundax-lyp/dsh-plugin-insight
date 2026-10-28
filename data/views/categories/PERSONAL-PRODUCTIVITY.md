@@ -21,7 +21,6 @@
 | [chicheng-cron](#plugin-1335807482-root) | 在DSH Web侧栏管理cron任务，定时执行脚本、Skill或Agent，保存输出并提供推送、会话分组和归档选项。 | 先观察。 |
 | [chicheng-peak](#plugin-1336366824-root) | 按配置峰谷时窗显示页面/输入框光效与角标，并由Host提前调度模板提醒到可选消息渠道。 | 先观察，先核真实适用规则、统一转折/投递收据/热重载，提醒仅辅助不直接作省钱依据。 |
 | [chicheng-vault](#plugin-1337038478-root) | 在输入区管理加密私密片段、普通片段与 WebDAV 备份。 | 保持观察；只存可撤销的测试 token，关闭直接发送并在空会话演练锁定/恢复，长期秘密继续交给专用密码管理器。 |
-| [cute-fat-fish-pet / src](#plugin-1409724830-src) | DSH 插件半侧的动画桌宠，提供 Web/桌面宠物、文字对话和可选屏幕能力；独立 Windows 版另有语音等功能。 | 先观察；仅可信本机、明确模型及附件目的地的无敏感环境可小样评估，屏幕观察与自动 Electron 下载需分别明确配置及残留清理。 |
 | [Cutout Pet · 抠图桌宠](#plugin-1427089201-root) | 将图片在浏览器本地抠图、描边并显示为 Harness 网页桌宠，附带账户余额气泡。 | 有条件试用。 |
 | [deepseek-harness-hello-kitty-suite](#plugin-1343679449-root) | 粉色 Hello Kitty 皮肤加每轮结束/提问提醒插件，皮肤独立安装。 | 个人测试 profile 分开安装两组件，先跑多会话/失败故障矩阵。 |
 | [dock-files](#plugin-1340492214-root) | 为 DSH Dock 添加当前会话工作目录浏览、文件打开及上传下载和文件管理入口。 | 当前建议观察，先确认本地访问边界和当前会话cwd。 |
@@ -33,11 +32,13 @@
 | [DSH Calendar](#plugin-1376880747-root) | 在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。 | 备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。 |
 | [DSH Computer Use](#plugin-1333116579-root) | 为DSH提供macOS原生应用观察、语义操作和定向输入能力。 | 需要操作无API原生应用的macOS开发者可先试可丢弃表单或编辑任务。 |
 | [DSH Cost Tracker](#plugin-1338230382-root) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 只建议需要会话级费用线索且能准备可丢弃宿主副本的用户，先在该副本仅启本地账本，对正常、缓存、取消三类调用与厂商账单核对。 |
+| [DSH Desktop](#plugin-1333000741-root) | 集成官方 DSH Web、固定社区 Bundle 与桌面启动恢复能力的社区客户端 | [Q04](../../plugins/vibeinging--dsh-desktop/INSIGHT.md#research-q04) 先用独立数据根验证正常会话、插件状态及safe模式；若数据归属或恢复后会话不清楚，停止迁入真实数据并回官方Web/CLI。 |
 | [DSH Douyin](#plugin-1332642596-root) | 在DSH WebUI侧栏或浮动面板播放第三方随机短视频，支持系列选择、直链历史与连播。 | 先观察；确有DSH内娱乐需求者可在隔离profile单源短时评估，确认收起停止与布局恢复，持续报错或干扰主任务则停用。 |
 | [DSH Mobile](#plugin-1334817483-root) | 让手机浏览器或 Android App 通过局域网或远程通道继续使用电脑中的 DSH | 建议已有 DSH、确有离开电脑后继续同一会话需要的个人用户在可信局域网试用。 |
 | [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | [Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。 |
 | [DSH Wallpaper Engine](#plugin-1336114531-root) | 把本地图片、视频及 Wallpaper Engine 场景和网页壁纸接入 DSH Web 界面。 | 有profile恢复经验的个人用户可在临时环境从可信静态图和小视频开始；复杂动态内容和发布集需先核对。 |
 | [DSH Weekly Panel](#plugin-1400385991-packages-dsh-weekly-panel) | 在DSH主面板显示插件周榜、模型可用性与赞助信息。 | 经常查看DSH周榜的本地用户可试用主面板入口。 |
+| [DSH 大肥鱼桌面伴侣](#plugin-1333755311-root) | 由 DSH 会话事件驱动的桌面角色，展示任务阶段、待办和可选余额 | 先低动态、无声试用单类长任务，对照宿主通知；误导等待、反复失败或干扰工作即禁用。 |
 | [DSH 语音 AI 女友套件](#plugin-1335189481-root) | 为 DSH 会话接入本地语音识别、回复朗读、数字人口播及可选 QQ 通信。 | [Q04](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q04) 当前观察，先分清纯语音、数字人与QQ的独立需求，核对桥地址、接口权限和完整朗读，再谈试用；重要内容不要在未知数据流中处理，异常外发或漏读时停服务回文字。 |
 | [dsh-accountdisplayname-edit](#plugin-1424420835-root) | 在 DSH 侧栏本地自定义账号显示名和头像，并通过账号菜单编辑。 | 经常分享界面的用户可先在非敏感截图中试用，检查保存、取消、恢复默认和重载；不要省略整图复核。 |
 | [dsh-ads](#plugin-1329113397-root) | 为 DSH 添加虚构复古广告、激励展示和真实社区插件轮播。 | 首次通过web profile装包后重启和刷新，逐项识别广告与真实插件链接；持续付出屏幕面积、声音、注意力、媒体渲染和GitHub查询资源，等待显示不是模型省算力。 |
@@ -52,6 +53,7 @@
 | [dsh-backup-sync](#plugin-1418642133-root) | 按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。 | 先从可丢弃技能目录创建包并异机导入，检查新增、本地修改和冲突各一项；确认未选模块不变，失败文件和基线可解释后扩大范围。 |
 | [dsh-balance-chip](#plugin-1347136944-root) | 在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。 | 建议观察；若试用，应使用隔离 Key 与可核账户余额，先测非美元/错误值、route 访问和停用后请求是否停止。 |
 | [dsh-better-workspace-file-manager](#plugin-1425087677-root) | 为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。 | 适合需要Web工作区文件交接的人在独立测试目录先试上传、下载和版本受保护编辑。 |
+| [dsh-bili-whale](#plugin-1423566397-root) | 以作息、持续会话和日记组织 B站 内容阅读及有限分享互动的 DSH 插件 | 观察无人值守；隔离账号先手动只读/草稿并关闭监听分享，核有效配置/出站与账号。 |
 | [dsh-boo550wt-animation](#plugin-1422328385-root) | 为DSH提供可配置开机遮罩，可播放视频、图片、网页和内置游戏，并支持预览与跳过。 | 观察；只在可信素材隔离环境先验收路由、HTML、跳过与禁用，不需要个性化者不启用。 |
 | [dsh-bridge-browser](#plugin-1324996099-packages-browser-bridge-browser) | 在DSH与浏览器扩展之间提供WebSocket桥、会话事件和文本浏览器工具。 | 熟悉DSH的用户可固定宿主与扩展版本，在本地非敏感测试站点试用；先检查页面共享、目标tab与取消；需通用多用户鉴权或事务撤销时暂不扩大使用。 |
 | [dsh-butler-memory](#plugin-1335928912-root) | 历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。 | 只作为历史参考；存量实例先隔离验权限、修订、崩溃/超时恢复和当前 DSH 契约。 |
@@ -87,6 +89,7 @@
 | [dsh-edit-question](#plugin-1426619074-root) | 在DSH用户提问旁编辑文本与图片，以官方fork复制前缀并在新会话重发。 | 观察；先验收原child恢复，正常试验默认保留原会话，已发生副作用须单独核对。 |
 | [dsh-effort-slider](#plugin-1335766616-root) | 给DSH模型思考档位提供滑块反馈，并向pi-ai缺失声明的模型补写reasoningEfforts与方言配置。 | 备份后单route试用，核实际请求及最后选择。 |
 | [dsh-eye-comfort](#plugin-1426448931-root) | 为DSH增加外观设置，调整主题、字体、字号、宽度、对比度、纸纹和动态效果。 | 个人本机有限试用，保存原设置并验收各界面/禁用恢复，不将名称当健康效果。 |
+| [dsh-flowix-memory](#plugin-1248774202-dsh-flowix-memory) | 将本地 Flowix CLI 的 memo MCP 工具接入 DSH profile 的组合包 | [Q04](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md#research-q04) 先用独立profile和数据副本检索已知笔记，再小范围写回；内容不符或调用反复报CLI不可用时停止并回CLI/原文。 |
 | [dsh-forget-session](#plugin-1413882487-root) | 永久删除会话多层状态并防止幽灵复活。 | 建议观察。 |
 | [dsh-fullscreen-input](#plugin-1407166868-root) | 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。 | 固定宿主长文编辑可试用，先小草稿检查引用附件。 |
 | [dsh-gotify-notify](#plugin-1412623357-root) | 按 DSH 轮次结束和可选提问事件向自管 Gotify 推送通知，并提供设置页测试入口。 | 先用测试按钮核凭据与服务，再逐类事件矩阵验证；关键告警不能仅依赖此尽力推送。 |
@@ -145,15 +148,16 @@
 | [dsh-session-path](#plugin-1412141303-root) | 复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。 | 先观察，继续核真实路径授权、导出完整性与JSONL最新语义，再对受控日志研究接续效果。 |
 | [dsh-session-rename](#plugin-1368115538-root) | 向模型提供 rename_session 工具，显式设置当前或已加载会话标题。 | 先仅省略 session_id 命名当前会话；多用户前核宿主权限。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 按会话步长历史估计回合剩余时间，在输入框下显示时间型进度和中断状态。 | 作为等待提示试用，不据百分比承诺交付。 |
+| [dsh-settings-hub](#plugin-1347749203-root) | 将 DSH 第三方设置页归组、折叠并提供本地拖拽排序的设置导航插件 | 多插件用户先固定环境核native和三类设置页保存、拖动与重载，Web/Desktop分开验；页不可操作、错归属误导或排序丢失就停shadow回原生导航。 |
 | [dsh-side-session](#plugin-1355639507-root) | 从命令菜单创建可继续的旁会话，并在Web自动打开对应子会话视图。 | 先观察，核/修创建ID关联、目录时序与恢复凭据后再评估试用。 |
 | [dsh-sidebar-panel-fold](#plugin-1426455774-root) | 把 DSH 左侧全局面板列表收成一行，并通过浮层切换面板和保存折叠状态。 | 可在面板很多的独立profile试用，先逐个核对浮层切换和展开恢复。 |
 | [dsh-simplify](#plugin-1349207533-root) | 清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。 | 建议仅对个人本地Web的非关键控件试用，先验证恢复与记录落盘；动态组件或多窗口重度使用先暂停扩展。 |
 | [dsh-skill-explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。 | 需要频繁浏览和管理普通文件型 Skill 的用户，可在备份的测试目录试用导入、同名处理、编辑与回收站。 |
 | [dsh-skill-manager](#plugin-1336106328-root) | 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。 | 建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。 |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 发送前改写输入草稿，可追问缺失信息、参考会话并检查关键字面细节。 | 愿意审阅发送前文本、经常写模糊需求的人可从Light和非关键任务试用；先关闭不必要搜索，检查模型与附件发送范围，再对照原稿看约束、否定和权限。 |
-| [dsh-soul](#plugin-1352089397-root) | 为DSH提供可切换人格、会话与工作区范围绑定、提示注入和个性化界面。 | 频繁切换项目角色者可在非敏感工作区试用，先验证作用域优先级、撤销和跨会话隔离。 |
+| [dsh-soul](#plugin-1352089397-root) | 为DSH配置回复风格、语言和人格预设，并提供工作区与会话覆盖。 | 当前观察；先隔离单会话核实际提示，再决定是否扩大范围。 |
 | [dsh-sound](#plugin-1335332435-root) | 按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。 | 可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。 |
-| [dsh-speak](#plugin-1334493734-root) | 为DSH提供最终回复、审批与提问的语音播报、消息重播和设置界面。 | 观察。 |
+| [dsh-speak](#plugin-1334493734-root) | 通过系统语音播报 DSH 最终回复、审批和提问，提供重播与播放控制 | 观察；先用单会话非敏感内容核手动重播和停止，不能以声音作为唯一审批/完成判断。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 在DSH Web用一个快捷键面板搜索会话、slash命令、可见界面动作与插件设置入口。 | 兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。 |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。 | 先观察，资料可读参考但先修profile断链和版本/推荐来源，再评估安装必要性。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 定制DSH运行状态文案、主题、弹幕与鲸尾动画，并提供设置和词库更新。 | 建议先在独立profile试用，从静态文案开始逐项开启装饰；验收原生计时、读屏、配置保存和禁用恢复。 |
@@ -183,6 +187,7 @@
 | [dsh-whale-girl-live2d](#plugin-1387205322-root) | 将 Live2D 桌宠注入 DSH Web/桌面界面，借 SSE 展示会话事件并支持输入、控制和钱包 HUD。 | 个人非关键娱乐可观察；在开放敏感会话/余额前先验证并修正路由信任栅栏，商业复用须单独核素材授权。 |
 | [dsh-whale-tools](#plugin-1365163847-root) | 为鲸鱼挂件提供上传图片抠图换装、当前图片服务、浏览器心跳及会话头部重启入口。 | 已有鲸鱼挂件者可备份原图后先用白底单主体试用，验收主体完整、透明边缘和重载显示；主体被裁或副图丢失就停止并用外部编辑。 |
 | [dsh-workspace-menu](#plugin-1339803365-root) | 为DSH工作区和会话行增加右键/双击菜单，集中置顶、复制、归档及目录打开/删除操作。 | 先观察，优先核查/修正Host目标授权与分步恢复；UI关闭危险项不能替代Host控制。 |
+| [dsh-worktable](#plugin-1336092482-01-content) | 在 DSH 侧栏提供项目容器、分栏工作区和会话绑定的工作台插件 | Windows 个人用户在精确支持版本从两个低风险项目试用，先验绑定和文件、再验预览及终端；错挂、旧结果复活或权限撤销不符要求时停止并回到原生会话和独立窗口。 |
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 适合频繁从 WSL 打开文档或本地服务、且只需要“打开”而非抓取/交互的用户试用。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。 |
 | [dsh-wsl-clipboard](#plugin-1350378372-root) | 在WSL内通过PowerShell读取或设置Windows文本剪贴板，带字符裁剪与结构化结果。 | 明确授权非敏感短文本可试用，保留原内容并核Windows实际文本，异常未知先停。 |
@@ -198,6 +203,7 @@
 | [DSHCode](#plugin-1333142935-root) | 将 DeepSeek Harness 的 Web UI 和插件运行时打包为 macOS、Windows 桌面应用。 | 首次需要匹配平台架构的完整安装包和模型凭据，源码开发另需Node、pnpm及工作区构建；包装免终端不等于模型/API费用为零。 |
 | [DSH小鲸鱼记账挂件](#plugin-1337920628-root) | 在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。 | 可给希望少切控制台的个人用户试用常驻余额和当轮提示，先确认账户范围与部分数据标签。 |
 | [feiyu-memory](#plugin-1415822787-root) | 为Harness保存人格内核、判断和情景日记，并在后续会话按相关性召回记忆。 | 建议观察，不用于正式工作、多人或敏感会话。 |
+| [Flowix](#plugin-1248774202-root) | 本地 Markdown 笔记客户端，通过 CLI 与 MCP 向 Agent 提供持续上下文 | [Q04](../../plugins/text2future--flowix/INSIGHT.md#research-q04) 在副本笔记本验证人工修改、检索和写回；出现过期覆盖或无法解释的搜索结果时停止Agent写入，核对原Markdown与备份。 |
 | [harness-memory](#plugin-1333716755-plugins-harness-memory) | 通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。 | 可在单项目或隔离profile保存少量非敏感偏好试用。 |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
 | [ikun-theme-skin](#plugin-1335144603-root) | 给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。 | 个人隔离试用，需能关闭音效并核原外观偏好；共享环境先经用户选择。 |
@@ -209,9 +215,13 @@
 | [OpenPets DSH adapter](#plugin-1229168545-packages-dsh) | 把 DSH 状态、错误、审批和工具活动转为 OpenPets 桌面伴侣的反应与气泡。 | 非敏感单会话、已有桌宠用户受控试用；保留宿主真实终态与审批流程。 |
 | [Petdex](#plugin-1227102698-root) | 提供动画宠物画廊、安装CLI与响应编码Agent活动的独立桌面应用。 | 喜欢动画陪伴的编码用户可小范围试用桌面宠物与DSH桥。 |
 | [Prompt Desk](#plugin-1418691015-root) | 在对话标题栏编辑全局及共享会话提示，并管理可注入的错误教训库。 | 个人隔离 profile 验证路由权限和多会话行为；只采纳人工核实的教训。 |
+| [Timeline](#plugin-1074296776-root) | 为 AI 网页对话提供时间轴、收藏、提示词与导出等辅助能力的浏览器扩展 | [Q04](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md#research-q04) 接受权限者先用单站非敏感长会话核已知节点和落点；缺失、误跳或缓存串会话时关闭功能并回原页面。 |
 | [Voyager](#plugin-1069943001-root) | 浏览器聊天增强扩展，提供跨AI网页的提示、组织、阅读与导出功能，并支持声明式JSON插件。 | 跨多个AI网页重复整理聊天的用户可先在一个非敏感站点试用单项功能，备份数据后再导入简单JSON，并测试启停、同页多插件和页面刷新。 |
 | [Whaleness](#plugin-1337347330-root) | 通过 Mobile Gateway 远程访问 DSH 会话、Agent 任务与工作区的 Android 和 iOS 原生客户端。 | [Q04](../../plugins/clarklevis1995--dsh-mobile/INSIGHT.md#research-q04) 先固定Gateway和平台传输核验，只读非敏感任务比手机浏览器；当前观察。 |
+| [刷B站（dsh-bili-scroll）](#plugin-1418639621-root) | 按关键词读取 B站 内容、生成日报并可选执行评论提醒的 DSH 值班插件 | 观察自动值班/互动；先隔离手动只读且所有互动关闭，核原文/理由与真实最小工具列表。 |
+| [可爱大肥鱼桌宠（蓝毛小女仆）](#plugin-1409724830-src) | 为 DSH 提供透明动画桌宠、桌面交互、模型陪聊与可选屏幕点评 | 先观察；只在可信本机和无敏感合成内容下核模型、下载及退出，严格离线或敏感桌面先不开屏幕能力。 |
 | [插件名片](#plugin-1424219088-root) | 为DSH插件换图标、中文备注和说明，支持文件夹、收藏、排序、导入导出及启停卸载。 | 先观察，继续研究从授权边界、可信图标和可恢复备份着手。 |
+| [灵枢 dsh-memory](#plugin-1334211162-root) | 将 Markdown 认知图、长期记忆工具与自动召回接入 DSH 和 MCP 宿主 | [Q04](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md#research-q04) 在独立非敏感数据根试验写入、读回和会话过滤；若sid缺失或发生跨会话误注入，停止自动召回并回AGENTS.md/人工查阅。 |
 
 <a id="plugin-1341946801-root"></a>
 
@@ -356,22 +366,6 @@
 > **建议**：将“填入”与“发送”彻底分权，私密项永不自动发送且显示目标模型/会话确认，可显著减少秘密进入上下文。 详见[Q08](../../plugins/534119219--chicheng-quickinput/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/534119219--chicheng-quickinput/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1409724830-src"></a>
-
-## [cute-fat-fish-pet / src](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/12we21/cute-fat-fish-pet)
-
-> **用途**：想在 DSH Web 或桌面显示动画宠物，并与当前模型或本地桌面模型互动。
-
-> **亮点**：把 VP9-alpha 动画、桌面交互和 DSH 会话模型对话组合成宠物插件。详见[Q01](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q01)。
-
-> **思考**：发布 lib 与 TS 的能力不同；可选屏幕观察会保存截图/附件并交宿主模型，local 标签不单独保证目的地，关闭不取消在途且路由准入依外层。详见[Q04](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q04)、[Q05](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q05)、[Q06](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q06)。
-
-> **建议**：首次外部下载、在线记忆发送与屏幕能力单独显式提示并作出站测试，可提高可理解性；待实机。详见[Q03](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q03)。
-
-[查看完整分析](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1427089201-root"></a>
 
@@ -549,6 +543,22 @@
 
 [查看完整分析](../../plugins/angelyeye--dsh-cost-tracker/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333000741-root"></a>
+
+## [DSH Desktop](../../plugins/vibeinging--dsh-desktop/INSIGHT.md)
+
+[![GitHub ★ 485](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=485&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vibeinging/dsh-desktop)
+
+> **用途**：面向希望直接使用官方DSH Web与社区插件的桌面用户，提供统一profile的社区客户端。
+
+> **亮点**：[Q01](../../plugins/vibeinging--dsh-desktop/INSIGHT.md#research-q01)、[Q02](../../plugins/vibeinging--dsh-desktop/INSIGHT.md#research-q02) 将固定插件发行物、离线profile初始化和桌面生命周期组合，实际增量是部署与状态组织。
+
+> **思考**：[Q03](../../plugins/vibeinging--dsh-desktop/INSIGHT.md#research-q03) 安全profile是另一数据home的诊断环境，自动重启有界；两者都不能替代原profile无损恢复验收。
+
+> **建议**：[Q04](../../plugins/vibeinging--dsh-desktop/INSIGHT.md#research-q04) 推导恢复页展示home/bundle差异及原会话入口的未验证假设，用误重置、定位时间与会话完整性比较；无改善或引入误操作则推翻。
+
+[查看完整分析](../../plugins/vibeinging--dsh-desktop/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1332642596-root"></a>
 
 ## [DSH Douyin](../../plugins/anacondakc--dsh-douyin/INSIGHT.md)
@@ -628,6 +638,22 @@
 > **建议**：[Q05](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q05)以同内容书签为对照检验主动拉取面板的价值，假设未验证。
 
 [查看完整分析](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333755311-root"></a>
+
+## [DSH 大肥鱼桌面伴侣](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md)
+
+[![GitHub ★ 527](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=527&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QCYTSN/dsh-dafeiyu) [![npm 30d 60,173](https://img.shields.io/static/v1?label=npm+30d&message=60%2C173&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dafeiyu) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dafeiyu)
+
+> **用途**：面向 Agent 运行时切到其他应用工作的 DSH 用户，在桌面查看任务阶段、等待与错误提示。
+
+> **亮点**：将会话事件、真实todo计数、原生窗口和设置恢复组合成桌面可见状态，明确不从动画猜测进度；可选伴侣失败也隔离宿主。[Q01](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md#research-q01) [Q02](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md#research-q02)
+
+> **思考**：状态只是宿主事件投影，正常结束不证明任务合格；Helper连续失败会停用，余额来源和profile也需核对。[Q03](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是仅在真实等待/错误时突出显示能降低常驻干扰且保留发现速度；交叉比较常驻和条件显示的等待延迟、误提示、切窗与干扰，漏事件或无减扰即推翻。[Q04](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/qcytsn--dsh-dafeiyu/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335189481-root"></a>
 
@@ -852,6 +878,22 @@
 > **建议**：[Q05](../../plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md#research-q05) 提出绑定版本的确认计划与隔离回收区，仍未验证；应以误删恢复、部分失败可解释性及权限边界对照验证。
 
 [查看完整分析](../../plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1423566397-root"></a>
+
+## [dsh-bili-whale](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md)
+
+[![GitHub ★ 616](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=616&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alterssss/dsh-bili-whale)
+
+> **用途**：愿配置专用账号并审核内容/互动的个人用户，希望形成持续兴趣阅读与留档。
+
+> **亮点**：将持续会话/人设、作息、内容工具与流量/未知发送保护组合；真正工程亮点是跨进程预算预留、未知不重发和账号草稿绑定，不是“真看懂”或拟人意识。[Q01](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q01) [Q02](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q02) [Q04](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q04)
+
+> **思考**：文档/Host/tool默认与预算承诺不统一，不能按README猜新装保守状态；prompt投递不是业务完成，dry/go旗标不是可信人审，code0也不等公开送达。[Q03](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q03) [Q05](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q05)
+
+> **建议**：未验证统一版本化有效配置和分层任务收据，分计划/投递/执行/提交未知/公开，绑定账号目标/批准与rpid；新旧配置、慢prompt/重启/回执丢矩阵任一分叉或重复即否定，再比较人工复核收益。[Q07](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md#research-q07)
+
+[查看完整分析](../../plugins/alterssss--dsh-bili-whale/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1422328385-root"></a>
 
@@ -1412,6 +1454,22 @@
 > **建议**：未验证的稳定token与可关闭兼容CSS分层，可能降低宿主升级修复成本；用跨构建视觉矩阵测净收益。见 [Q04](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/aaronkate--dsh-codex-appearance/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1248774202-dsh-flowix-memory"></a>
+
+## [dsh-flowix-memory](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md)
+
+[![GitHub ★ 484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/text2future/flowix)
+
+> **用途**：已使用Flowix本地笔记的用户，通过DSH profile内的memo工具管理笔记。
+
+> **亮点**：[Q02](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md#research-q02) 提供可复用的本地CLI发现与MCP桥接，把已有笔记能力带入DSH；增量是接线便利而非检索创新。
+
+> **思考**：[Q03](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md#research-q03) 缺CLI时工具依然注册但调用失败，就绪判断必须超过tools/list；失败写入和环境过滤也需定向核验。
+
+> **建议**：[Q04](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md#research-q04) 从占位工具行为推导只读就绪状态假设，测无效调用、恢复动作和误写，若不改善则推翻；尚未实现。
+
+[查看完整分析](../../plugins/text2future--flowix--dsh-flowix-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1413882487-root"></a>
 
@@ -2341,6 +2399,22 @@
 
 [查看完整分析](../../plugins/778672151--dsh-session-turn-eta/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1347749203-root"></a>
+
+## [dsh-settings-hub](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md)
+
+[![npm 30d 996](https://img.shields.io/static/v1?label=npm+30d&message=996&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub)
+
+> **用途**：多个第三方设置页导航分散的DSH用户，希望集中分组和保存排序。
+
+> **亮点**：将真实slot设置页按插件聚合并保存拖拽排序；当前registrant优先、未知项保留fallback，比纯源码字符串猜测稳健，但不接管各页业务正确性。[Q01](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md#research-q01)
+
+> **思考**：shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；归属依赖异步deps和ID变化，慢API/共享依赖/profile fallback仍可错组。列出条目不能代替设置保存验收。[Q02](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md#research-q02) [Q03](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是稳定slot来源与异步完成通知替代字符串/定时归属，并显式共享父不确定性；用慢API、ID不变换来源、延迟模块和共享依赖比较错组/漏页/排查分钟，无改善即否定。[Q05](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/amengclass--dsh-settings-hub/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1355639507-root"></a>
 
 ## [dsh-side-session](../../plugins/123dbl--dsh-side-session/INSIGHT.md)
@@ -2441,15 +2515,15 @@
 
 ## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
 
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 2,337](https://img.shields.io/static/v1?label=npm+30d&message=2%2C337&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aliuyanfeng/dsh-soul) [![npm 30d 3,422](https://img.shields.io/static/v1?label=npm+30d&message=3%2C422&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-soul)
 
-> **用途**：需要在不同项目或会话中稳定切换角色提示和个性设置的用户可用它管理人格配置并按全局、工作区或会话范围绑定，在提示装配时注入且提供命令、工具和界面入口；合格结果是当前人格和作用域可见、变更即时且可撤销，不在错误项目泄漏提示或历史。详见[Q01](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q01)。
+> **用途**：在不同项目重复使用人格、语言与指令的DSH个人用户，需要正确的范围和可恢复配置。
 
-> **亮点**：把人格存储、范围继承、历史、命令/工具与多处 UI 接线组合为可管理的个性化层。它相对“手工维护系统提示并在每个会话复制，或只使用宿主全局设置”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q03)。
+> **亮点**：将人格与用户资料分开，把手工提示管理接成预设、范围覆盖、配置历史和送达观测，减少重复接线。实际增量是配置管理，不能把人格预设算新增智能体或长期记忆。[Q01](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q01) [Q02](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q02)
 
-> **思考**：多级作用域和兼容接线增加状态复杂度；源码测试不能证明所有宿主版本的实时提示更新和隔离都正确。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q04)。
+> **思考**：三层systemPrompt与只按cwd的主动注入使用不同有效配置；全局待确认槽也没有session/digest绑定，保存/确认成功不足以保证目标回合人格正确。[Q02](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q02) [Q03](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q03)
 
-> **建议**：未来可探索：可用显式优先级图展示每次提示的来源与覆盖关系，并为人格切换提供可回放的差异和撤销事务。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q08)。
+> **建议**：统一按Agent有效配置，并将提议身份/基线摘要与逐回合采纳收据绑定；以两工作区四会话、冷缓存和并发故障矩阵检验零错范围和净核查时间。未验证，不能计现有能力。[Q05](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2473,15 +2547,15 @@
 
 ## [dsh-speak](../../plugins/alan2z--dsh-speak/INSIGHT.md)
 
-[![GitHub ★ 18](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=18&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alan2Z/dsh-speak) [![npm 30d 1,635](https://img.shields.io/static/v1?label=npm+30d&message=1%2C635&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak) [![最新发布 2026-09-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak)
+[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alan2Z/dsh-speak) [![npm 30d 2,033](https://img.shields.io/static/v1?label=npm+30d&message=2%2C033&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak)
 
-> **用途**：面向本机等待长任务、需要从屏幕之外获知结果或审批请求的个人使用者，交付可识别且可停止的声音提醒。[Q01](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q01)
+> **用途**：本机等待长任务又不想一直盯屏的个人用户，需要可停止且可回文字核对的提醒。
 
-> **亮点**：相对手工复制文本调用系统TTS，增量是把最终回复筛选、审批/提问、FIFO重播和配置整合到DSH注意力交接流程。合成能力继承操作系统，队列与重播上游归属PR #2，不主张原创TTS或生态唯一。[Q02](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q02) [Q03](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q03)
+> **亮点**：把最终回复筛选、审批/提问与宿主FIFO、重播和可更新设置接进注意力交接，减少手工复制；语音引擎继承OS，队列上游归属明确。[Q01](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q01) [Q02](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q02)
 
-> **思考**：可靠提醒是否真受用户控制？默认assistant/message定时器不检查automaticSpeech，关闭自动朗读仍可能入队；全插件共享lastText/timer缺少会话隔离，可被另一会话开始事件取消或错配。此为源码推导而非运行复现，足以收窄采用范围。[Q04](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q04)
+> **思考**：新普通消息会检查automaticSpeech，但已有timer不二次检查；全插件共享lastText/timer可被跨会话事件清理或错配。进程退出也不证明可听，声音不能作唯一验收。[Q03](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设：以session+turn分区待播状态，审批/提问优先并在播放前再次检查开关，可减少错配和关键请求等待。用两会话交错20组事件比较错配、漏播、饥饿和停止延迟；若错配不归零或最终回复饥饿则否定方案，不计入当前插件贡献。[Q08](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q08)
+> **建议**：未验证假设是session+turn分区待播并在出队重验开关，加入有界审批优先级；20组双会话轨迹核错配、漏播、等待与饥饿，任一错配未归零或最终回复饥饿即否定。[Q05](../../plugins/alan2z--dsh-speak/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/alan2z--dsh-speak/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2949,6 +3023,22 @@
 
 [查看完整分析](../../plugins/0imzero--dsh-workspace-menu/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1336092482-01-content"></a>
+
+## [dsh-worktable](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md)
+
+[![GitHub ★ 801](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=801&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Aisland-SJL/dsh-worktable)
+
+> **用途**：同时管理多个 agent 项目与会话的个人开发者，将文件、网页、终端和结果集中到项目工作区。
+
+> **亮点**：显式项目、窗格、绑定、会话与目录身份减少旧结果串挂；owner 准入和 opaque-origin 目录预览将高权限私有 API 与不可信页面分开。贡献是生命周期与权限边界，不是项目文件隔离。[Q01](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q01) [Q02](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q02) [Q03](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q03)
+
+> **思考**：绑定当前不保证内容版本，owner 文件写入仍可覆盖共享真实路径；撤销持久失败被吞掉，身份撤销也不会即时断开既有终端。新增鉴权不能掩盖这三类状态边界。[Q02](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q02) [Q04](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q04)
+
+> **建议**：未验证假设是在结果加入内容摘要/生成版本并提供可见撤销恢复状态，用同目录双项目、晚到结果、重绑与存储满矩阵检验错认和人工负担；指标不降就否定，不把它称为文件沙箱。[Q06](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1350379388-root"></a>
 
 ## [dsh-wsl-browser](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md)
@@ -3189,6 +3279,22 @@
 
 [查看完整分析](../../plugins/airpineapplea--feiyu-memory/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1248774202-root"></a>
+
+## [Flowix](../../plugins/text2future--flowix/INSIGHT.md)
+
+[![GitHub ★ 484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/text2future/flowix)
+
+> **用途**：面向以Markdown保存项目知识的个人与小团队，把同一笔记用于人工阅读和Agent上下文。
+
+> **亮点**：[Q02](../../plugins/text2future--flowix/INSIGHT.md#research-q02) 以人可读Markdown为共同交付物连接人工和Agent，减少另建记忆存储与重复传递；检索与写入效果仍需任务验证。
+
+> **思考**：[Q03](../../plugins/text2future--flowix/INSIGHT.md#research-q03) 保存成功不等于索引已追平，CLI全文写入也未携带Agent最初读时基线，共享文件不能自动消除语义覆盖。
+
+> **建议**：[Q04](../../plugins/text2future--flowix/INSIGHT.md#research-q04) 从正文/索引分离和写入基线推导版本与追平状态合同，比较交错编辑的覆盖错误和修复时间；无改善或总负担上升则推翻。
+
+[查看完整分析](../../plugins/text2future--flowix/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333716755-plugins-harness-memory"></a>
 
 ## [harness-memory](../../plugins/988hj7tczd-oss--harness-desktop--plugins-harness-memory/INSIGHT.md)
@@ -3365,6 +3471,22 @@
 
 [查看完整分析](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1074296776-root"></a>
+
+## [Timeline](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md)
+
+[![GitHub ★ 469](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=469&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/houyanchao/chatgpt-gemini-timeline)
+
+> **用途**：面向频繁回看AI网页长会话的用户，用提问节点导航和整理对话；根是浏览器扩展。
+
+> **亮点**：[Q02](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md#research-q02) 将虚拟化页面接口快照与当前对话缓存结合，补齐提问导航文案并管理SPA生命周期。
+
+> **思考**：[Q03](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md#research-q03) 未捕获的轮次只能回退缓存/占位，接口匹配和DOM落点随平台变化；节点出现不等于完整或正确导航。
+
+> **建议**：[Q04](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md#research-q04) 推导明确展示节点数据来源/覆盖状态的未验证改进，以误找、误跳和耗时比较，无改善则推翻。
+
+[查看完整分析](../../plugins/houyanchao--chatgpt-gemini-timeline/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1069943001-root"></a>
 
 ## [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md)
@@ -3397,6 +3519,38 @@
 
 [查看完整分析](../../plugins/clarklevis1995--dsh-mobile/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1418639621-root"></a>
+
+## [刷B站（dsh-bili-scroll）](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md)
+
+[![GitHub ★ 904](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=904&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/c1overzz/dsh-bili-scroll) [![npm 30d 31,913](https://img.shields.io/static/v1?label=npm+30d&message=31%2C913&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-scroll) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-scroll)
+
+> **用途**：固定兴趣持续看B站且愿核原内容的个人用户，希望把候选/字幕/日报串成任务。
+
+> **亮点**：把搜索、原内容、模型筛选、固定路径留档和延迟评论核查串成值班流程；专用profile与MCP窄工具是实质约束，但失败fallback会削弱，未证选得更值得。[Q01](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md#research-q01) [Q02](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md#research-q02)
+
+> **思考**：跨Host锁是普通读后写且失败放行/10分钟过期，不保证互斥；最小profile失败回headless，定时窗口先登记再启动。自动互动的重复与权限边界不能由锁纸条或started状态证明。[Q02](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md#research-q02) [Q03](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md#research-q03)
+
+> **建议**：未验证事务claim与operation/rpid对账分开未发/未知/公开，未知先查不重发，最小profile失败阻止自动任务；双Host/崩溃/回执丢/TTL故障矩阵任一重复发布即否定，不承诺平台exactly-once。[Q06](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/c1overzz--dsh-bili-scroll/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1409724830-src"></a>
+
+## [可爱大肥鱼桌宠（蓝毛小女仆）](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md)
+
+[![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/12we21/cute-fat-fish-pet)
+
+> **用途**：希望在本机获得动画陪伴和角色聊天的个人DSH用户；不将陪伴等同于工作收益或心理疗效。
+
+> **亮点**：把透明动画、桌面角色和DSH模型陪聊组合，降低在聊天与角色表现之间切换的摩擦；上游dsh-pet架构、模型能力和独立版语音不归本插件新增。[Q01](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q01) [Q05](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q05)
+
+> **思考**：发布lib含看屏幕闭包，截图先入附件再发模型；local标签不独立证明目的地，关闭自动监测不取消在途，且路由内未见owner准入。采用判断必须以发布入口而不是TS功能清单为准。[Q02](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q02) [Q03](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是为首次下载、附件持久化和真实模型出站分开显示收据，并统一可取消阶段；用合成慢请求核用户预测与实际副作用，错误理解或中断率不降就否定。[Q06](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/12we21--cute-fat-fish-pet--src/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1424219088-root"></a>
 
 ## [插件名片](../../plugins/3tiga3--dsh-plugin-namecards/INSIGHT.md)
@@ -3413,8 +3567,24 @@
 
 [查看完整分析](../../plugins/3tiga3--dsh-plugin-namecards/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334211162-root"></a>
+
+## [灵枢 dsh-memory](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md)
+
+[![GitHub ★ 502](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=502&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/FuRongJun-1999/dsh-memory) [![npm 30d 27,192](https://img.shields.io/static/v1?label=npm+30d&message=27%2C192&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@furongjun1999/dsh-memory) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@furongjun1999/dsh-memory)
+
+> **用途**：面向需跨会话保留项目事实和偏好的DSH用户，保存Markdown认知图并把相关记忆带回上下文。
+
+> **亮点**：[Q02](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md#research-q02) 将请求成功、待审、冲突和已提交分开，并以可读文本真源接入自动召回，是状态可解释性与宿主集成贡献。
+
+> **思考**：[Q03](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md#research-q03) committed不等于语义正确，有sid才加会话过滤、无sid退回无过滤；多智能体可用不能当严格会话隔离验收。
+
+> **建议**：[Q04](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md#research-q04) 推导缺sid暂停自动召回并展示提交/审核/冲突状态的未验证方案；同任务比较错误注入和修复成本，若损失正常召回而不减错则推翻。
+
+[查看完整分析](../../plugins/furongjun-1999--dsh-memory/INSIGHT.md) · [返回表格](#category-index)
+
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-10-27
+2026-10-28
