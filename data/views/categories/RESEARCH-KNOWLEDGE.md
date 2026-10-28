@@ -19,10 +19,11 @@
 | [AgentKey](#plugin-1218688296-root) | 提供统一外部数据服务的 Agent Skill、安装脚本与托管 MCP 接入配置。 | [Q04](../../plugins/chainbase-labs--agentkey/INSIGHT.md#research-q04) 先固定外部CLI和宿主，在隔离profile验证完整调用与费用；当前保持观察。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。 | 需要在协议或方案比较中交付单页材料的用户，可先选一份已有答案的短稿试渲染，并逐个核对图形关系与原文。 |
 | [AnySearch for DSH](#plugin-1333247282-root) | 在 DSH 原生网页搜索与抓取接口接入 AnySearch，并提供垂直检索和有限并发批量搜索。 | [Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 非敏感问题先比原provider与批量结果，以有效引用而非命中数决定继续；限流或缺证回人工。 |
-| [Archify](#plugin-1211139949-root) | 将需求、代码关系和解释内容组织成交互式图表及单页 HTML。 | 先选一条熟悉的请求链，检查关系、来源与HTML交付，再决定扩大；无法承担源码复核时先保留简单图。 |
+| [Awesome AI Pedia](#plugin-1321280738-root) | 中文 AI 工具指南、实践笔记与规则的 VitePress 知识库 | [Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。 |
 | [Awesome DeepSeek Harness](#plugin-1330942675-root) | 按场景分类整理 DSH 插件、工具和基础设施，并提供生成的仓库目录。 | 建议作为发现资源试用：按场景挑少量候选后固定目标版本核查；不可访问或过时条目退回原仓库及公开搜索，不批量安装。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
+| [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
@@ -43,6 +44,7 @@
 | [dsh-plugin-academic-writing](#plugin-1336663456-root) | 为DSH提供论文骨架、题目摘要模板、引用和LaTeX片段，以及词法表达、Markdown结构、术语和投稿清单辅助。 | 观察，先修计数/无作者引用/TeX列等基础分支，只当草稿工具，不作学术或投稿验收。 |
 | [dsh-plugin-audit](#plugin-1336223158-root) | 同步 GitHub topic/npm 元数据并评分排行，按需对单插件做有限静态安全扫描。 | 只把分数作线索，确认扫描文件覆盖/错误状态后再读固定 SHA 源码、验证安装；详见[Q03](../../plugins/863683348--dsh-plugin-audit/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-finance-data](#plugin-1336663504-root) | DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。 | 修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。 |
+| [dsh-plugin-molio](#plugin-1259108597-packages-dsh-plugin-molio) | 通过本地 Molio daemon 为 DSH 提供只读知识库浏览、搜索与原文读取 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04) 已有本地daemon者可显式库id试读已知原文；错库、路径或内容不符时停止据此回答并回Molio/原文件。 |
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
@@ -77,14 +79,13 @@
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 限定CLI副本库试用，不以本仓库提交当完整DSH兼容证明；错误关联或裁剪损失便回笔记。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 和其他编码 Agent 提供多引擎网页搜索、X 搜索和页面读取。 | [Q04](../../plugins/liustack--modsearch/INSIGHT.md#research-q04) 用公开小查询比较已有provider，逐条检查来源和uncertainty，不发送内部URL及秘密查询。 |
-| [OpenViking](#plugin-1128123594-root) | 以虚拟文件系统组织 Agent 的知识、记忆与技能，提供分层读取、语义检索和会话沉淀。 | [Q06](../../plugins/volcengine--openviking/INSIGHT.md#research-q06) 建议可承担服务维护的知识团队试用，以可追溯原文和任务正确率验收；少量静态资料仍可用简单文件方案。 |
-| [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 接入 OpenViking 的跨会话记忆、上下文检索和技能访问。 | [Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议已有服务的用户在脱敏仓库试用，先确认 peer 与纠错路径，再比较总负担；不把源码接线当作当前宿主运行通过。 |
+| [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具 | 已有服务的用户可在非敏感单项目试用，先核对打包文件和身份，再对照手工笔记验证错误纠正、短暂断网和停用。 |
 | [ReMe](#plugin-849121458-root) | 以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。 | 可供愿意维护本地知识目录和模型服务的开发者在独立workspace试用文件记忆。 |
 | [ReMe DSH集成](#plugin-849121458-integrations-dsh) | 为DSH提供长期记忆检索、会话自动归档、每日整理与状态页面。 | 适合愿意维护本地ReMe服务的人在虚构或非敏感项目上试用跨会话检索，先检查来源、队列和单调度者。 |
 | [SkillCorpus](#plugin-1330431542-root) | 汇集、筛选和检索 Agent 技能，并提供多宿主接入与语料评估工具。 | [Q04](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q04) 建议源码构建团队先限制本地白名单和任务集，比较合格率、纠错和全部 token；不改善结果便恢复目录。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
-| [WeKnora](#plugin-1024118326-root) | 面向企业文档理解、混合检索和推理的知识框架，提供问答、智能体与知识整理入口。 | 有持续知识维护与运维能力的团队可用代表性语料受控试用，先固定部署版本并核对权限、引用与恢复；少量临时文件先比较简单搜索方案。 |
-| [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DeepSeek Harness 提供 WeKnora 知识库检索、文档阅读及带引用的问答。 | 已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。 |
+| [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档阅读与综合问答工具 | 先禁用 ask，以受限库比较网页与插件的相同问题；要求能回到原文并识别裁剪。 |
+| [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，并提供检索问答、Agent 与 wiki 能力 | 有持续资料维护和运维能力的团队可在非敏感语料试用，先验收授权拒绝、引用和恢复，再比较简单搜索；不以目录收录或分数归一证明可靠。 |
 
 <a id="plugin-1390987906-root"></a>
 
@@ -198,21 +199,21 @@
 
 [查看完整分析](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1211139949-root"></a>
+<a id="plugin-1321280738-root"></a>
 
-## [Archify](../../plugins/tt-a1i--archify/INSIGHT.md)
+## [Awesome AI Pedia](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md)
 
-[![GitHub ★ 88,446](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=88%2C446&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify)
+[![GitHub ★ 504](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=504&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia)
 
-> **用途**：适合向开发者或协作者解释架构、流程和复杂答案；结果需同时可读、可核对。
+> **用途**：面向中文开发者，按主题查找AI工具资料与实践笔记；根条目是知识资源。
 
-> **亮点**：相对直接让模型绘图，贡献是把结构化创作、交互产物和绑定实际文件的阶段验收串成流程；它提高交付可追溯性，不证明模型理解正确。[Q01](../../plugins/tt-a1i--archify/INSIGHT.md#research-q01) [Q02](../../plugins/tt-a1i--archify/INSIGHT.md#research-q02)
+> **亮点**：[Q02](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q02) 将散落中文资料组织为可导航站点，自动侧栏减少部分维护；VitePress能力归框架。
 
-> **思考**：产物与收据一致不等于关系和结论正确；源码证据选择及异常流程覆盖仍由作者负责，自动可读性不能代替语义复核。[Q03](../../plugins/tt-a1i--archify/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q03) 构建忽略死链且笔记可能滞后，资料可读不能证明上游命令和能力仍有效。
 
-> **建议**：未验证假设是在保留重要关系的前提下增加逐关系事实性质和证据覆盖门禁，比较人工清单能否减少遗漏且不放大复核负担。[Q04](../../plugins/tt-a1i--archify/INSIGHT.md#research-q04)
+> **建议**：[Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 提出按文章记录上游版本与定向外链核验的未验证假设；以版本匹配和回查耗时比较，改善不足则否定。
 
-[查看完整分析](../../plugins/tt-a1i--archify/INSIGHT.md) · [返回表格](#category-index)
+[查看完整分析](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1330942675-root"></a>
 
@@ -261,6 +262,22 @@
 > **建议**：[Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 提出以错误结案风险选择评估强度，保留语义门与可恢复派发；若错误率不降或费用反增则否定。
 
 [查看完整分析](../../plugins/clearailhc--clearai-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1154200345-root"></a>
+
+## [DARE](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md)
+
+[![GitHub ★ 505](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=505&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yogsoth-ai/de-anthropocentric-research-engine)
+
+> **用途**：面向需阶段审阅和中断恢复的研究者，用研究Skill图组织方向、规格和证据状态。
+
+> **亮点**：[Q02](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q02) 将计划决定与科学结论分离并保留追加检查点，提供可读的研究流程合同；这属于编排贡献。
+
+> **思考**：[Q03](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q03) 提示词要求停止并非独立执行屏障，Agent越过门禁或错误写入仍需外部发现。
+
+> **建议**：[Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 从八类Delta合同推导外部验证器假设；用中断和损坏实验检验错误完成是否减少，未实现且未验证。
+
+[查看完整分析](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195828337-root"></a>
 
@@ -581,6 +598,22 @@
 > **建议**：统一单位契约并分离最终计算与表格采样，配黄金样本可提高可靠性；修复效果尚未验。详见[Q04](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/863683348--dsh-plugin-finance-data/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1259108597-packages-dsh-plugin-molio"></a>
+
+## [dsh-plugin-molio](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md)
+
+[![GitHub ★ 437](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=437&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhuzhaoyun/Molio) [![npm 30d 431](https://img.shields.io/static/v1?label=npm+30d&message=431&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-molio) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-molio)
+
+> **用途**：面向已有Molio知识库的DSH用户，在对话中查库、搜索并读取原文以支持研究写作。
+
+> **亮点**：[Q02](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q02) 复用CLI读取语义并把库id、原文、类型及错误带回DSH，减少人工搬运资料的接线。
+
+> **思考**：[Q03](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q03) 只读子插件不保证整个daemon权限安全；默认active库可随用户操作改变，多次工具调用不是固定资料快照。
+
+> **建议**：[Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04) 推导一轮检索绑定明确库id的未验证策略，对照切库/同名库的错库率与核对成本；无改善则推翻。
+
+[查看完整分析](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334654243-root"></a>
 
@@ -1126,35 +1159,19 @@
 
 [查看完整分析](../../plugins/liustack--modsearch/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1128123594-root"></a>
-
-## [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md)
-
-[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
-
-> **用途**：为Agent团队组织可浏览的知识、记忆和技能，适合长期多会话知识任务。
-
-> **亮点**：将虚拟URI、目录摘要和会话检索组合成可检查的上下文入口。
-
-> **思考**：摘要正确性和更新一致性尚无当前任务对照，根平台不等于已验收DSH插件。
-
-> **建议**：先用脱敏语料对照简单文件搜索，检查原文追溯、事实反转和总维护负担。
-
-[查看完整分析](../../plugins/volcengine--openviking/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 
-## [OpenViking DSH Memory](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
+## [OpenViking DSH 记忆插件](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
 
-[![GitHub ★ 40,712](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C712&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 34,730](https://img.shields.io/static/v1?label=npm+30d&message=34%2C730&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
+[![GitHub ★ 40,955](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=40%2C955&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 35,928](https://img.shields.io/static/v1?label=npm+30d&message=35%2C928&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
 
-> **用途**：给已有OpenViking服务的DSH用户接入跨会话记忆，适合重复项目任务。
+> **用途**：面向已有 OpenViking 的 DSH 用户，自动带入跨会话背景并采集可持续检索的项目记忆。
 
-> **亮点**：以宿主事件驱动捕获、提交、召回，并把临时写入失败纳入本地重播。
+> **亮点**：贡献在 DSH 事件生命周期、按会话工作区解析身份、过滤合成上下文和进程内待发恢复的组合，能解释减少记忆交接摩擦的机制，但不能证明任务效果。[Q01](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q01) [Q02](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q02)
 
-> **思考**：正确记忆、纠错和项目隔离仍取决于服务与数据；队列有重试和TTL边界。
+> **思考**：不中断任务与记忆完整性不是同一件事：非可重试失败、有限TTL和错误记忆均可能使跨会话结果不可靠；裸 checkout 的共享模块需预打包生成。[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03)
 
-> **建议**：先在脱敏项目试用写入、纠错、重开召回和断网恢复，再决定是否持续使用。
+> **建议**：在待发队列之上公开每会话记忆覆盖与缺失原因，可能帮助用户识别历史缺口，需用故障识别时间和后续错误率验证。[Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1222,40 +1239,40 @@
 
 [查看完整分析](../../plugins/miaotofu01--study-mate/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1024118326-root"></a>
-
-## [WeKnora](../../plugins/tencent--weknora/INSIGHT.md)
-
-[![GitHub ★ 35,257](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C257&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora)
-
-> **用途**：目标是有组织文档、需要集中维护与检索问答的团队。
-
-> **亮点**：相对零散 RAG 拼接，根平台把内容权限与跨知识库检索放在同一服务中，并处理模型空间、维度和跨引擎分数口径；成熟 RRF 方法不计作原创。[Q02](../../plugins/tencent--weknora/INSIGHT.md#research-q02) [Q03](../../plugins/tencent--weknora/INSIGHT.md#research-q03)
-
-> **思考**：归一化分数只能确认排序机制，不能证明语料相关性与答案正确率；自托管还需承担模型、存储、权限和恢复成本。[Q03](../../plugins/tencent--weknora/INSIGHT.md#research-q03) [Q04](../../plugins/tencent--weknora/INSIGHT.md#research-q04)
-
-> **建议**：有持续知识维护与运维能力的团队可用代表性语料受控试用，先固定部署版本并核对权限、引用与恢复；少量临时文件先比较简单搜索方案。[Q04](../../plugins/tencent--weknora/INSIGHT.md#research-q04)
-
-[查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1024118326-packages-dsh-weknora"></a>
 
 ## [WeKnora DSH 插件](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md)
 
-[![GitHub ★ 35,257](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C257&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 4,785](https://img.shields.io/static/v1?label=npm+30d&message=4%2C785&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
+[![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 5,203](https://img.shields.io/static/v1?label=npm+30d&message=5%2C203&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
 
-> **用途**：目标用户是已维护组织知识库、又在 DSH 中处理研发或研究任务的团队。
+> **用途**：面向已有 WeKnora 的 DSH 团队，把组织文档检索、原文补读与跨文档问答接回当前任务。
 
-> **亮点**：它把平台检索包装成可继续阅读、可核对引用的 DSH 工具协议，并通过标题补召回和范围过滤减少模型自行拼 API 的负担；检索算法属于 WeKnora 平台。[Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03)
+> **亮点**：该包把检索片段、文档补读和服务端问答拆成可组合的 DSH 工具，并保留可追踪文档 ID 和截断信息，减少自行接 API 的工程负担；其增量属于适配层而非检索算法。[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01) [Q02](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q02)
 
-> **思考**：ask 会创建会话并触发服务端模型，完全只读仅适用于知识内容；默认全可见库范围也需按任务收窄。[Q02](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q02) [Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03)
+> **思考**：分页结束不代表文本未被裁剪，默认库范围也不是强制白名单；ask 会写会话状态，不能以“知识内容只读”推导无副作用。[Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03) [Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04)
 
-> **建议**：已有 WeKnora 的团队可先用受限库和 retrieve key 试用搜索、读文档，再决定是否开放 ask；核对会话保存和额外模型消耗。[Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04)
+> **建议**：未验证假设：在当前搜索与补读接口之上增加显式证据预算，当引用覆盖不足才升级 ask，可能减少额外模型调用；同时把 truncated 与 has_more 的组合视为不完整信号，避免把分页结束误认为证据齐全。推导来自片段查询与综合问答分离、以及独立裁剪标志，不意味着插件已有自动路由。最小验证应比较只检索、始终 ask 和预算升级三组，固定知识库、问题、模型与验收人员，并记录引用准确性、漏答、总延迟、重试及模型费用。若升级组降低引用正确性或端到端负担没有下降，则推翻优势；不能仅靠减少调用次数接受假设。 [Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1024118326-root"></a>
+
+## [WeKnora 知识平台](../../plugins/tencent--weknora/INSIGHT.md)
+
+[![GitHub ★ 35,641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora)
+
+> **用途**：面向持续维护组织资料的团队，集中管理知识库、权限与可追溯问答。
+
+> **亮点**：在同一服务中把内容权限、跨库向量空间与跨引擎分数口径连起来，降低自行拼接的集成负担；真正检索质量仍依赖语料和模型。[Q02](../../plugins/tencent--weknora/INSIGHT.md#research-q02) [Q03](../../plugins/tencent--weknora/INSIGHT.md#research-q03)
+
+> **思考**：分数归一仅建立排序口径，不能证明相关性或概率校准；部署和恢复还需额外维护模型、索引与权限。[Q03](../../plugins/tencent--weknora/INSIGHT.md#research-q03) [Q04](../../plugins/tencent--weknora/INSIGHT.md#research-q04)
+
+> **建议**：可检验分类型融合权重能否改善留出集引用质量；若最弱类别恶化或维护负担上升，则否定该假设。[Q05](../../plugins/tencent--weknora/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回表格](#category-index)
 
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-10-27
+2026-10-28

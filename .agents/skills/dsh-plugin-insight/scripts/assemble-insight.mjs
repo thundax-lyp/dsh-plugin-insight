@@ -229,6 +229,7 @@ export function assembleInsight(workPath, pluginId, analysisPath) {
         mechanism: 'mechanism',
         scope: 'limitations',
         distribution: 'engineering',
+        dependencies: 'limitations',
         cost: 'limitations',
         adoption: 'adoption',
         value: 'business_value',

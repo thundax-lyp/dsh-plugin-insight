@@ -1,33 +1,57 @@
 {
     "repository": "Alan2Z/dsh-speak",
     "repository_id": 1334493734,
-    "captured_at": "2026-10-23T05:06:15.400Z",
-    "window_start": "2026-09-23T05:06:15.400Z",
-    "stars": 18,
-    "pushed_at": "2026-09-26T09:17:08Z",
+    "captured_at": "2026-10-28T01:52:52.223Z",
+    "window_start": "2026-09-28T01:52:52.223Z",
+    "stars": 19,
+    "pushed_at": "2026-10-27T15:43:03Z",
     "issues": {
-        "open": 0,
-        "closed": 3,
-        "created_30d": 0,
-        "closed_30d": 1,
-        "updated_30d": 1
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": 0,
+        "updated_30d": 0
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5FC:2CC24E:6D641F:7594C5:6AE155D5 and timestamp 2026-10-28 01:54:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA60:351629:6E756E:76AFD5:6AE155D6 and timestamp 2026-10-28 01:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAlan2Z%2Fdsh-speak%20is%3Aissue%20created%3A2026-09-28T01%3A52%3A52.223Z..2026-10-28T01%3A52%3A52.223Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA6E:34ADB1:6EEAD6:7724D6:6AE155D7 and timestamp 2026-10-28 01:54:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T15:55:27.864Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-speak",
-        "captured_at": "2026-10-23T05:06:23.986Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": 1635,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-speak",
+        "captured_at": "2026-10-28T01:52:52.223Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 2033,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-speak",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T19:35:28.838Z",
-            "captured_at": "2026-10-23T05:06:23.986Z",
+            "captured_at": "2026-10-27T22:18:54.889Z",
             "source_url": "https://registry.npmjs.org/dsh-speak",
             "error": null,
-            "latest_version": "1.8.2",
-            "latest_published_at": "2026-09-26T08:58:28.647Z",
+            "latest_version": "1.8.4",
+            "latest_published_at": "2026-10-27T15:31:42.590Z",
             "latest_error": null
         }
     }
