@@ -41,6 +41,7 @@
 | [Code RAG 索引面板](#plugin-1347752454-plugins-dsh-code-rag-index-panel) | 在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。 | 建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。 |
 | [Codex Taskboard 本地任务看板](#plugin-1311108439-root) | 本地优先任务看板，通过浏览器、taskctl和Skill管理项目与AI任务交接。 | [Q01](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md#research-q01)、[Q04](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md#research-q04) 先在非关键项目试用浏览器与CLI，验证任务版本冲突和待审接受；有明确同步收益后才考虑桌面注入或云模式，不把根目录作为DSH可装插件。 |
 | [Coding Tools MCP](#plugin-1245329241-root) | 通过 MCP 为编码客户端提供工作区文件、结构化修改、命令会话和 Git 工具。 | 建议缺原生工具的MCP用户在可丢弃repo以safe/stdio试用，先读再做可审单改；不可信命令需外部容器，状态不明则停并回原工具。 |
+| [DeepSec](#plugin-1295322882-root) | 结合 Shield 代码审计、Spear 授权测试、CLI/TUI 与 IDE 接入的安全工具平台 | [Q04](../../plugins/unclecheng-li--deepsec/INSIGHT.md#research-q04) 仅在自有副本试用本地Shield并人工确认finding；不可读文件或覆盖不明时停止依赖零发现结论，回原扫描和人工审阅。 |
 | [DeepSeek Harness Desktop（社区版）](#plugin-1333486649-root) | 集成官方 DSH Runtime 和 Web UI 的社区桌面客户端，提供窗口、插件及桌面操作入口。 | [Q04](../../plugins/ningbainb--deepseek-harness-desktop/INSIGHT.md#research-q04) 仅建议能核对发行来源和权限的开发者用独立profile及非关键目录探索，先确认启动、完整输出和重启保留结果；权限或恢复不清立即停止，回到官方Web。 |
 | [DeepTide](#plugin-1230068255-root) | 提供 DeepTide 编码客户端入口、Zero CLI 命令别名、Rust实现与 Apple Silicon 本地推理引导。 | 建议先观察并固定单一形态和上游版本；本地profile不满足或自测失败时不继续切配置，保留原客户端/云API作为退路。 |
 | [deja-vu](#plugin-1300173275-root) | 本地索引多个编码 Agent 的历史会话，并向 DSH 提供检索工具和自动上下文。 | 建议个人工作机限定非敏感项目试用，召回仅当线索、原会话与当前代码共同核对；隐私跨项目或错误无匹配出现时关闭自动注入并回原日志。 |
@@ -110,6 +111,7 @@
 | [dsh-lsp-rust](#plugin-1344713526-dsh-lsp-rust) | 以 rust-analyzer 为外部服务器的 Rust LSP 配置包，复用 DSH 共享基座。 | 确认 rustup 组件、rustc 与 DSH PATH；用真实 Cargo workspace 试四操作、首次索引；详见[Q03](../../plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-rust/INSIGHT.md#research-q03)。 |
 | [dsh-lsp-swift](#plugin-1344713526-dsh-lsp-swift) | 为 DSH 接入 Swift 的 sourcekit-lsp，配置 .swift 文件导航所需的服务器命令和语言映射。 | 建议观察，先核包与工具链来源，在小 SwiftPM 工程构建后分别验四操作；失败构建时只记部分可用。 |
 | [dsh-lsp-ts](#plugin-1344713526-dsh-lsp-ts) | 以外部 TypeScript language server 为 TS/JS 文件提供四扩展路由的 DSH LSP 配置包。 | 先核主机 server、共享基座，再在真实 TS/TSX/JS/JSX 项目试四操作；详见[Q03](../../plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/INSIGHT.md#research-q03)。 |
+| [dsh-memory-evolve](#plugin-1323731026-root) | 为 DSH 提供分层记忆、确认队列、待办与可选会话协作能力的组合插件 | [Q04](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md#research-q04) 先在独立profile/备份库验证关键记忆确认和分支切换；若未知分支造成错引用或队列状态不明，停用自动快照并回AGENTS.md/人工日志。 |
 | [dsh-mermaid](#plugin-1334569498-root) | 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。 | 适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。 |
 | [dsh-model-everything](#plugin-1423488109-root) | 把设计和代码断言建成模型，执行验证、图审查和前后报告比较。 | [Q01](../../plugins/amethystluna--dsh-model-everything/INSIGHT.md#research-q01)、[Q04](../../plugins/amethystluna--dsh-model-everything/INSIGHT.md#research-q04) 建议仅对已有小模型能力的架构师隔离试用，先检查已知反例与抽取覆盖，再核对报告是否正确区分skip和未决；不以模型通过放行实际代码。 |
 | [dsh-model-failover](#plugin-1415863200-root) | 把已接入 DSH 的模型组成队列，提供失败重试、切换、会话隔离与自动继续。 | 有限试用可回滚任务，先设总尝试上限并验证取消、隔离和副作用；不可逆操作暂缓。 |
@@ -672,6 +674,22 @@
 > **建议**：未验证方向是跨请求可查询修改事务，响应丢失先核状态再重发，在固定强杀点比较重复、损失和恢复时间。[Q05](../../plugins/xytom--coding-tools-mcp/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/xytom--coding-tools-mcp/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1295322882-root"></a>
+
+## [DeepSec](../../plugins/unclecheng-li--deepsec/INSIGHT.md)
+
+[![GitHub ★ 498](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=498&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Unclecheng-li/DeepSec)
+
+> **用途**：面向开发者的代码安全工具平台；本轮核查Shield本地审计主线，输出待人工复核的候选问题。
+
+> **亮点**：[Q02](../../plugins/unclecheng-li--deepsec/INSIGHT.md#research-q02) 把规则、Python AST、本地启发式和可选LLM组织成可输出统一finding的流程，实际贡献是分层审阅接线。
+
+> **思考**：[Q03](../../plugins/unclecheng-li--deepsec/INSIGHT.md#research-q03) 文件读取失败被跳过而filesScanned仍计候选，零发现不代表完整扫描；默认排除和远端选项还会改变覆盖及数据流。
+
+> **建议**：[Q04](../../plugins/unclecheng-li--deepsec/INSIGHT.md#research-q04) 推导候选/已分析/跳过/失败覆盖回执的未验证改进；以混合失败样本测覆盖判断和误放行，不能降低误判则推翻。
+
+[查看完整分析](../../plugins/unclecheng-li--deepsec/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333486649-root"></a>
 
@@ -1776,6 +1794,22 @@
 > **建议**：故障分类并让fallback保留合并映射，可证伪对照及代价见[Q05](../../plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/988hj7tczd-oss--dsh-lsp-packs--dsh-lsp-ts/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1323731026-root"></a>
+
+## [dsh-memory-evolve](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md)
+
+[![GitHub ★ 451](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=451&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/csyangwen/dsh-memory-evolve)
+
+> **用途**：面向多项目开发者，把长期事实、项目关键记忆与日志分轨，在DSH会话中按项目取回上下文。
+
+> **亮点**：[Q02](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md#research-q02) 将关键记忆的候选、确认与注入连成可读本地文件流程，并保留项目和分支标签。
+
+> **思考**：[Q03](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md#research-q03) 用户确认主要约束key add，其他轨有直接写入；分支无法解析时项目key全部注入，不构成严格分支隔离。
+
+> **建议**：[Q04](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md#research-q04) 推导分支未知时暂停scope记忆自动注入并提示状态的未验证改进；同时测错引用和漏用，若漏用损失更大则推翻。
+
+[查看完整分析](../../plugins/csyangwen--dsh-memory-evolve/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334569498-root"></a>
 

@@ -33,6 +33,8 @@
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
+| [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 用测试邮箱和有真值的混合批次试用，先验收原件、关键字段和可用导出，再比较人工总时间；缺票、静默错误或完成无报表时暂停，保留原件人工接管。 |
+| [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [NocoBase](#plugin-306829688-root) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | 有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。 |
 | [Reactive Resume](#plugin-249995750-root) | 开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。 | 先以虚构/脱敏履历试用非AI编辑、导出和检查，验收权限与PDF再接模型；不用规则分替代事实或招聘效果判断。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
@@ -372,6 +374,38 @@
 > **建议**：把白名单与最小权限设为默认 fail-closed，并验证各平台身份/附件/权限矩阵后再开放真实 bot；现版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-im/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1170373459-dsh-invoice-downloader"></a>
+
+## [InvoiceFlowAI DSH 发票插件](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md)
+
+[![GitHub ★ 526](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=526&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/Invoice-Downloader) [![npm 30d 1,348](https://img.shields.io/static/v1?label=npm+30d&message=1%2C348&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-invoice-downloader) [![最新发布 2026-08-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-invoice-downloader)
+
+> **用途**：面向固定 QQ 或 163 邮箱的重复收票者，在 DSH 边栏下载、识别并整理报销准备材料。
+
+> **亮点**：把既有收票引擎接到DSH当前模型、凭据、作业记录和边栏，减少跨程序交接，并对输出目录和作业状态建立约束。[Q01](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md#research-q01) [Q02](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md#research-q02)
+
+> **思考**：语法字段校验不证明账实一致；导出引用注册失败仍可complete，取消后已有文件也需核对，不能把完成状态当合格交付。[Q03](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是显式字段门控与人工复核触发模型降级可降低资源而不损害质量；用固定真值批次比较错字段、漏票、人工修正、全部重试与模型费用，静默错误增加或总工时不降则推翻。[Q04](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/ethanyoq--invoice-downloader--dsh-invoice-downloader/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1170373459-root"></a>
+
+## [InvoiceFlowAI 发票整理工具](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md)
+
+[![GitHub ★ 526](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=526&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/Invoice-Downloader)
+
+> **用途**：面向每月批量收票的个人和小团队，独立桌面工具将邮箱票据整理为分类原件和报销准备报表。
+
+> **亮点**：把收票、候选识别、归档和最终化组织成有范围及终态的批次流程，明确区分未读邮件、识别失败和可人工处理结果，超出单张OCR入口。[Q01](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md#research-q01) [Q02](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md#research-q02)
+
+> **思考**：本地归档不代表全链离线，远端识别和字段净化需要原件复核；成功数量不证明邮箱完整或关键字段一致。[Q03](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设是用邮箱范围完整、原件保留与关键字段核对组成批次验收门槛，较成功数量能减少漏交付；固定真值对照漏票发现、人工时间和重试，若只增工时不降错误则推翻。[Q04](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-306829688-root"></a>
 

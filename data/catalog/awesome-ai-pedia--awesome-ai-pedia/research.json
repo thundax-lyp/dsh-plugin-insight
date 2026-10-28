@@ -1,0 +1,428 @@
+{
+    "schema_version": 4,
+    "id": "7481baab76bc7affb1a9729e0f928f19",
+    "identity": "github:1321280738:root",
+    "slug": "awesome-ai-pedia--awesome-ai-pedia",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1321280738:root",
+            "repository_id": 1321280738,
+            "component_id": "root",
+            "repository": "Awesome-AI-Pedia/Awesome-AI-Pedia",
+            "path": "",
+            "aliases": [],
+            "name": "Awesome AI Pedia",
+            "entry_type": "resource",
+            "technical_category": "other",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "e0f667b1ac250a6ce4def42c126af45899e06f9dcdf008c23ad48b69b079a95b",
+                "code": "16b509286924399e49371f8933972d64426f1b8b",
+                "maintenance": "38c2a4d34c8f32668ebdc38bd60a1ca040f3bab43d692197655ef44db15215fa"
+            },
+            "sources": [
+                {
+                    "id": "2026-10-28-01-github-1321280738-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-10-28T02:03:21.782Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-10-28-01-github-1321280738-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "README.md",
+                            "content_sha256": "548508cab5f0f6f3a605557e59cf2587fc5b930edbc8d51d39f4aadcdcb88dcf"
+                        }
+                    ],
+                    "revision": "16b509286924399e49371f8933972d64426f1b8b",
+                    "captured_at": "2026-10-28T02:03:21.782Z",
+                    "summary": "中文 AI 工具指南、实践笔记与规则的 VitePress 知识库",
+                    "artifact": "data/runs/2026-10-28-01/awesome-ai-pedia--awesome-ai-pedia/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-10-28-01-github-1321280738-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "README.md",
+                            "content_sha256": "548508cab5f0f6f3a605557e59cf2587fc5b930edbc8d51d39f4aadcdcb88dcf"
+                        },
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "docs/.vitepress/config.ts",
+                            "content_sha256": "6aa9187729929001e0349eb1f5f7f2970d704311e2ee74d3eb3563fed6a3b04a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "docs/.vitepress/utils/sidebar.ts",
+                            "content_sha256": "fd6efe72ab08483d36372dcf128237fefb5954028b0c3c7c55819cd511b478ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "AI视频/多平台自动发布social-auto-upload.md",
+                            "content_sha256": "0a5dcc54ef9ab29c07b1e47df4f34b7c8e30dc0622b870b69f73b55ec39d6886"
+                        },
+                        {
+                            "repository_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia",
+                            "commit": "16b509286924399e49371f8933972d64426f1b8b",
+                            "path": "package.json",
+                            "content_sha256": "c412c960da5d466caba9679979b737f134e6dd31bb1b602258c3608ed9e5743c"
+                        }
+                    ],
+                    "revision": "16b509286924399e49371f8933972d64426f1b8b",
+                    "captured_at": "2026-10-28T02:03:21.782Z",
+                    "summary": "核查 README.md、docs/.vitepress/config.ts、docs/.vitepress/utils/sidebar.ts、AI视频/多平台自动发布social-auto-upload.md、package.json；[Q02](#research-q02) 核实根Markdown进入VitePress、文件系统生成导航和侧栏。",
+                    "artifact": "data/runs/2026-10-28-01/awesome-ai-pedia--awesome-ai-pedia/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查根说明、包清单、VitePress配置、侧栏算法与一篇外部工具笔记；未全面核实全库文章或上游功能。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向中文开发者，按主题查找AI工具资料与实践笔记；根条目是知识资源。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "[Q02](#research-q02) 核实根Markdown进入VitePress、文件系统生成导航和侧栏。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查根说明、包清单、VitePress配置、侧栏算法与一篇外部工具笔记；未全面核实全库文章或上游功能。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "VitePress知识库资源，不是DSH插件；可直接阅读原Markdown。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 直接阅读无新增部署资源 | 筛选适用内容 | 阅读时间未测 |\n| 持续 | 可选站点托管 | 核实上游变化 | 维护工时未知 |\n| 失败恢复 | 重新查找资料 | 纠正失效命令/链接 | 错误代价未测 |\n| 退出 | 原文可保留 | 改用官方文档 | 无独占研究状态迁移 |",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 资料发现 | 分类与自动导航 | 同任务查找节时 |\n| 可用性 | 部分文章记录上游和限制 | 全库时效及外链完整性 |",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 自动导航易复用；[Q03](#research-q03) 弱链接门禁需要独立内容核验流程补足。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 将散落中文资料组织为可导航站点，自动侧栏减少部分维护；VitePress能力归框架。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 构建忽略死链且笔记可能滞后，资料可读不能证明上游命令和能力仍有效。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 提出按文章记录上游版本与定向外链核验的未验证假设；以版本匹配和回查耗时比较，改善不足则否定。",
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1321280738:root",
+                            "area": "code",
+                            "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                        }
+                    ],
+                    "reviewed_at": "2026-10-28T02:03:21.782Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-10-28T02:03:21.782Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "16b509286924399e49371f8933972d64426f1b8b",
+                "reviewed_at": "2026-10-28T02:03:21.782Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1321280738:root",
+                        "area": "code",
+                        "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 以普通VitePress知识站为参照：未识别新方法0%；配置集成机制/迁移/简化均局部便利25%。",
+                    "basis": "interpretation",
+                    "score": 17,
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 10,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01)、[Q04](#research-q04)：资料发现与交付各25%；中文受众进入门槛有实质降低可能50%；未识别成本结构改变0%，不把阅读便利算经济创新。",
+                    "basis": "interpretation",
+                    "score": 27,
+                    "evidence_ids": [
+                        "2026-10-28-01-github-1321280738-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "中文开发者可用 Awesome AI Pedia 按主题查找一项 AI 工具的实践资料。相比逐个仓库搜索，它把中文笔记和上游入口组织在一起，但文章时效需要逐项核实。若命令或能力描述与上游版本冲突，读者应停止照做并回到原始文档。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README分类明确任务与结果，超过泛泛目录；没有直接需求摩擦证据，不到75%。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) config:52-89和sidebar:13-24仅整理与导航便利，25%；未见重要流程改变，不到50%。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)、[Q03](#research-q03)核心资源到页面接线与失败门禁可查，50%；未执行浏览验证，不到75%。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q04](#research-q04)可直接原文阅读，退出不依赖部署，负担较轻75%；内容核验仍需人工，不到100%。"
+                    }
+                },
+                "score": 49,
+                "revision": "16b509286924399e49371f8933972d64426f1b8b",
+                "reviewed_at": "2026-10-28T02:03:21.782Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-10-28-01-github-1321280738-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1321280738:root",
+                        "area": "code",
+                        "fingerprint": "16b509286924399e49371f8933972d64426f1b8b"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1321280738:root",
+            "repository": "Awesome-AI-Pedia/Awesome-AI-Pedia",
+            "path": "",
+            "revision": "16b509286924399e49371f8933972d64426f1b8b",
+            "fingerprints": {
+                "directory": "e0f667b1ac250a6ce4def42c126af45899e06f9dcdf008c23ad48b69b079a95b",
+                "code": "16b509286924399e49371f8933972d64426f1b8b",
+                "maintenance": "38c2a4d34c8f32668ebdc38bd60a1ca040f3bab43d692197655ef44db15215fa"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-10-28T01:46:14Z",
+            "analysis_sha256": "7f253f28e24a67aab4c90970e04ea6f7821a86fb81f82a1bba17aed60a2fb865"
+        },
+        "publication.metadata": "data/catalog/awesome-ai-pedia--awesome-ai-pedia/meta.json",
+        "publication.summaries": {
+            "text": "中文 AI 工具指南、实践笔记与规则的 VitePress 知识库",
+            "revision": "16b509286924399e49371f8933972d64426f1b8b",
+            "source_url": "https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "16b509286924399e49371f8933972d64426f1b8b",
+            "items": {
+                "界面": "中文知识库导航和Markdown阅读页面"
+            },
+            "table": "#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分类导航 | 查找中文AI工具文章 | 须回原始来源确认版本 |"
+        },
+        "publication.advice": {
+            "revision": "16b509286924399e49371f8933972d64426f1b8b",
+            "text": "[Q04](#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。"
+        },
+        "registry": "data/plugins/awesome-ai-pedia--awesome-ai-pedia",
+        "reports": "# Awesome AI Pedia\n\n> 中文 AI 工具指南、实践笔记与规则的 VitePress 知识库\n\n## 研究范围\n\n- **仓库**：[Awesome-AI-Pedia/Awesome-AI-Pedia](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia)\n- **版本号**：1.0.0（[固定提交 16b509286924399e49371f8933972d64426f1b8b](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/tree/16b509286924399e49371f8933972d64426f1b8b)）\n- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n导航接线和内容来源可核查；资料时效与学习效率尚未独立验证。\n\n## 洞察短评\n\n- **用途**：面向中文开发者，按主题查找AI工具资料与实践笔记；根条目是知识资源。\n- **亮点**：[Q02](#research-q02) 将散落中文资料组织为可导航站点，自动侧栏减少部分维护；VitePress能力归框架。\n- **思考**：[Q03](#research-q03) 构建忽略死链且笔记可能滞后，资料可读不能证明上游命令和能力仍有效。\n- **建议**：[Q04](#research-q04) 提出按文章记录上游版本与定向外链核验的未验证假设；以版本匹配和回查耗时比较，改善不足则否定。\n\n采用建议：[Q04](#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。\n\n## 核心贡献\n\n[Q02](#research-q02) 将散落中文资料组织为可导航站点，自动侧栏减少部分维护；VitePress能力归框架。\n\n## 关键质疑\n\n[Q03](#research-q03) 构建忽略死链且笔记可能滞后，资料可读不能证明上游命令和能力仍有效。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 提出按文章记录上游版本与定向外链核验的未验证假设；以版本匹配和回查耗时比较，改善不足则否定。\n\n用同一批查找任务比较带版本核验信息前后找到正确版本的比例、外链失效与人工耗时；无改善则停止该编辑扩展。\n\n## 场景与替代办法\n\n面向中文开发者，按主题查找AI工具资料与实践笔记；根条目是知识资源。\n\n直接阅读上游文档或仓库搜索；本资源提供中文组织便利，不提供上游功能实现。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Markdown阅读器 | 阅读必需 | 查看原始文章 | 直接用GitHub原文 |\n| Node>=18、VitePress/Vue | 本地站点必需 | 构建/预览 | 保留原文浏览 |\n| 上游资料可访问 | 正确采用必需 | 核实版本/命令 | 暂缓照做 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 1 | 读者按主题选文章 | 找到任务与原始出处 |\n| 2 | 读者回查上游版本 | 条件匹配才使用；冲突回上游 |\n| 3 | 维护者可选构建站点 | 页面可达仍需另查链接 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 直接阅读无新增部署资源 | 筛选适用内容 | 阅读时间未测 |\n| 持续 | 可选站点托管 | 核实上游变化 | 维护工时未知 |\n| 失败恢复 | 重新查找资料 | 纠正失效命令/链接 | 错误代价未测 |\n| 退出 | 原文可保留 | 改用官方文档 | 无独占研究状态迁移 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 资料发现 | 分类与自动导航 | 同任务查找节时 |\n| 可用性 | 部分文章记录上游和限制 | 全库时效及外链完整性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：资源整理与站点导航能否改善中文工具资料发现，同时保留来源边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 它给谁提供什么，是否是可安装DSH插件？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n这是面向开发者的中文AI知识资源与博客站点，真实类型resource。README将编码助手、MCP、规则、技能和实战笔记按目录组织；合格结果是找到一条适用资料并回到其原始来源核实，而非安装后得到新的DSH能力。直接浏览上游文档或仓库搜索是基线。中文整理能降低资料发现摩擦，但目录覆盖广不等于每篇结论已验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-30](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/README.md#L13-L30)\n\n作者定义知识库和站点能力\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## ✨ 项目简介\n\n**Awesome AI Pedia** 是一个现代化 AI 知识库，\n旨在为开发者提供全面的 AI 工具使用指南、最佳实践和实战经验分享。\n\n### 🎯 核心特性\n\n- **📚 全方位覆盖** — 从 Claude Code、Cursor、MCP，到 Agent、Skills、Prompt 工程等主流 AI 方向\n- **💡 实战导向** — 从真实项目出发，提供可落地的解决方案\n- **🔍 本地搜索** — 内置全文搜索，快速定位所需内容\n- **🌙 暗黑主题** — 默认暗色界面，长时间阅读不刺眼\n- **🚀 自动部署** — 推送到 `master` 自动构建并发布到 GitHub Pages\n\n---\n\n## 📂 知识库分类\n\n> 以下分类均对应仓库根目录的实际目录，可直接进入查看原始 Markdown。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[README.md:34-64](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/README.md#L34-L64)\n\n主题目录入口\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n| 目录 | 说明 |\n| --- | --- |\n| [`claudeCode/`](./claudeCode) | Claude Code 完整使用指南：安装配置、常用命令、Browser 工具、Settings.json 详解 |\n| [`cursor/`](./cursor) | Cursor 编辑器：功能详解、中文对话、区域限制、菜单栏自定义、版本管理 |\n| [`codex/`](./codex) | OpenAI Codex 相关实践 |\n| [`antigravity/`](./antigravity) | Antigravity 相关笔记 |\n| [`openclaw/`](./openclaw) | Openclaw 相关内容 |\n\n### 🔌 生态与协议\n\n| 目录 | 说明 |\n| --- | --- |\n| [`mcp/`](./mcp) | Model Context Protocol：Figma / 蓝湖 / 飞书 / Playwright / Context7 / Chrome DevTools 等 MCP 实战 |\n| [`Agent/`](./Agent) | AI Agent 相关内容 |\n| [`Harness Engineering/`](./Harness%20Engineering) | 提示词/Agent 编排工程 |\n\n### 💬 提示词与规则\n\n| 目录 | 说明 |\n| --- | --- |\n| [`prompt/`](./prompt) | Prompt 工程：React + UI 设计师、SVG 海报设计、提示词最佳实践 |\n| [`rules/`](./rules) | Next.js / Vue / NuxtJS / Flutter / Expo / Spring Boot / HTML & CSS 等 AI 编码规则 |\n| [`好的rules/`](./好的rules) | 精选优质 Rules 集合 |\n\n### 🛠️ 技能与工具\n\n| 目录 | 说明 |\n| --- | --- |\n| [`skills/`](./skills) | Skills 概念、与 MCP 的区别、安装、自定义开发 |\n| [`常用skills/`](./常用skills) | 高频使用的 Skills 工具集 |\n| [`工具/`](./工具) | 常用辅助工具集合 |\n```\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 文章怎样形成导航，实际增量在哪里？\n\n**研究主题**：功能与机制、贡献与相对优势、工程质量与复用\n\n#### 完整回答\n\nVitePress配置把仓库根目录设为内容源，将README改写为首页，导航与侧栏由generateNav/generateAllSidebars构造。sidebar通过文件系统读取Markdown并排序，提供目录到页面的稳定映射。相较手工维护链接清单，这减少一部分重复导航维护；内容选择与中文解释仍由作者承担。框架的渲染、主题和搜索不应归为该资源独立发明，实际贡献是内容组织和工程配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[docs/.vitepress/config.ts:52-89](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/docs/.vitepress/config.ts#L52-L89)\n\n内容源、排除、首页改写和侧栏接线\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n  // 🆕 指定源目录为项目根目录（srcDir 相对于 docs/ 目录）\n  srcDir: '../',\n  \n  // 🆕 排除不需要的目录和文件\n  srcExclude: [\n    'node_modules/**',\n    'scripts/**',\n    '.git/**',\n    '.github/**',\n    'dist/**',\n    'anime-video/**',\n    '.agent/**',\n    '.claude/**',\n    '.vscode/**',\n    '*.lock',\n    'package.json',\n    'package-lock.json',\n    '*.sh',\n    // 包含大量未闭合的标签示例（Claude 提示词原文），VitePress/Vue 解析会失败\n    'vibe design/claude design/claude design 提示词.md'\n  ],\n  \n  base: '/Awesome-AI-Pedia/',\n  lastUpdated: true,\n  cleanUrls: false, // 🔧 修复：关闭 cleanUrls 避免 404\n  ignoreDeadLinks: true,\n  appearance: 'dark', // 默认使用暗黑主题\n\n  // 🔧 添加路由重写规则，修复 404 问题\n  rewrites: {\n    'README.md': 'index.md'\n  },\n\n  themeConfig: {\n    nav: generateNav(projectRoot),\n\n    // 🆕 动态生成所有内容目录的侧边栏\n    sidebar: generateAllSidebars(projectRoot),\n```\n\n</details>\n\n**依据 2 · 源码核查**：[docs/.vitepress/utils/sidebar.ts:13-24](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/docs/.vitepress/utils/sidebar.ts#L13-L24)\n\nMarkdown读取与排序\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n// 获取目录下的所有markdown文件\nexport function getMarkdownFiles(dirPath: string): string[] {\n  const files: string[] = []\n  if (fs.existsSync(dirPath)) {\n    const items = fs.readdirSync(dirPath, { withFileTypes: true })\n    items.forEach((item: fs.Dirent) => {\n      if (item.isFile() && item.name.endsWith('.md')) {\n        files.push(item.name)\n      }\n    })\n  }\n  return files.sort()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[docs/.vitepress/utils/sidebar.ts:78-96](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/docs/.vitepress/utils/sidebar.ts#L78-L96)\n\n目录首篇链接选择\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n// 获取目录下第一篇文章的链接（按字母序）\nfunction getFirstArticleLink(dirPath: string, urlBasePath: string): string | null {\n  if (!fs.existsSync(dirPath)) return null\n\n  const entries = fs.readdirSync(dirPath, { withFileTypes: true })\n\n  // 获取所有 .md 文件，按字母序排序\n  const mdFiles = entries\n    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md'))\n    .map((e: fs.Dirent) => e.name)\n    .sort()\n\n  // 跳过 index.md，返回第一个文章\n  const firstArticle = mdFiles.find((file: string) => file !== 'index.md')\n\n  if (!firstArticle) return null\n\n  const fileName = stripMarkdownExtension(firstArticle)\n  return `${urlBasePath}/${fileName}`\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 构建成功能否说明资料当前可靠、链接完整？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n不能。配置ignoreDeadLinks=true，构建不会把失效链接作为同等强制门禁；部分材料还被明确排除以避开解析失败。抽样文章对social-auto-upload注明功能覆盖不一和重构状态，也列出了上游仓库，这有助于识别条件，但文章内Star和维护状态属于本资源记录时的二手说明，不是本轮对上游的独立核查。适用性取决于读者回查上游版本。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[docs/.vitepress/config.ts:55-77](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/docs/.vitepress/config.ts#L55-L77)\n\n内容排除和ignoreDeadLinks\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n  // 🆕 排除不需要的目录和文件\n  srcExclude: [\n    'node_modules/**',\n    'scripts/**',\n    '.git/**',\n    '.github/**',\n    'dist/**',\n    'anime-video/**',\n    '.agent/**',\n    '.claude/**',\n    '.vscode/**',\n    '*.lock',\n    'package.json',\n    'package-lock.json',\n    '*.sh',\n    // 包含大量未闭合的标签示例（Claude 提示词原文），VitePress/Vue 解析会失败\n    'vibe design/claude design/claude design 提示词.md'\n  ],\n  \n  base: '/Awesome-AI-Pedia/',\n  lastUpdated: true,\n  cleanUrls: false, // 🔧 修复：关闭 cleanUrls 避免 404\n  ignoreDeadLinks: true,\n```\n\n</details>\n\n**依据 2 · 作者声明**：[AI视频/多平台自动发布social-auto-upload.md:3-20](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/AI%E8%A7%86%E9%A2%91/%E5%A4%9A%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83social-auto-upload.md#L3-L20)\n\n有来源和能力差异声明\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n仓库地址：https://github.com/dreammis/social-auto-upload\n作者：dreammis ｜ 许可证：MIT ｜ Star：14.4k\n\n## 是什么\n\n一款视频**一键多平台自动发布**工具，面向管理多平台分发的内容创作者，用脚本化流程替代重复手动上传和易碎的浏览器 Agent 截图方案。\n\n原作者用途：**提前一天定时发布**，因此很多默认时间逻辑围绕\"次日\"设计。\n\n## 支持平台\n\n抖音、B 站、小红书、快手、微信视频号（tencent）、百家号、支付宝生活号、微博、虎扑、TikTok、YouTube\n\n**能力覆盖不一**：\n- 抖音在当前重构分支上最完善\n- 图文（\"图文\"）仅支持：抖音、快手、小红书、B 站\n- TikTok、百家号无定时发布\n- 只有部分平台有 Skills\n```\n\n</details>\n\n**依据 3 · 作者声明**：[AI视频/多平台自动发布social-auto-upload.md:62-69](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/AI%E8%A7%86%E9%A2%91/%E5%A4%9A%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83social-auto-upload.md#L62-L69)\n\n作者记录的重构及使用限制\n\n```text\n## 注意事项与限制\n\n- 项目**处于重构中**：统一上传器结构、统一 CLI、推进 headless-first\n- Web UI 代码保留但**不再是主线**\n- 部分平台标题长度限制：微博 ≤ 30、虎扑 4–40\n- YouTube 上传需等到 100% 才点发布——提前关闭会中断传输\n- 作者因创业维护带宽下降，但会有一波重构更新\n- 赞助方：DolOffer、chilltion、ClawPower（AI 模型代理商），README 中含推广码\n```\n\n#### 缺口\n\n- 文章对上游版本、价格和可用性的时效覆盖未知\n  **影响**：不能把笔记当当前安装/使用保证\n  **进一步探讨**：从目标文章链接回上游固定版本逐项核实\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样采用，成本和可证伪改进是什么？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n读者可先直接阅读原Markdown，无需部署；维护者若本地运行则需Node和VitePress/Vue，package.json要求Node>=18。首次阅读成本是筛选适用文章，持续成本是回查上游，失败可退回原文和官方资料；无实测节时。由弱链接门禁推导未验证假设：给文章加上游版本和最后核验范围，再定向检查外链，可能比扩大条目数更减少误用。用一组真实查找任务比较现有页面与带核验信息页面，记录找对版本、失效链接和回查耗时；若正确率不升且维护负担增加，则否定。可小范围试读；发现命令与上游冲突就以原始文档为准。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:20-42](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/package.json#L20-L42)\n\n站点脚本、依赖和Node约束\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    \"type\": \"git\",\n    \"url\": \"https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues\"\n  },\n  \"scripts\": {\n    \"dev\": \"vitepress dev docs\",\n    \"build\": \"vitepress build docs\",\n    \"preview\": \"vitepress preview docs\",\n    \"serve\": \"vitepress preview docs\"\n  },\n  \"dependencies\": {\n    \"vitepress\": \"^1.3.4\",\n    \"vue\": \"^3.5.11\",\n    \"@vueuse/core\": \"^11.1.0\"\n  },\n  \"devDependencies\": {\n    \"gray-matter\": \"^4.0.3\",\n    \"glob\": \"^11.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=18\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[docs/.vitepress/config.ts:74-89](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/docs/.vitepress/config.ts#L74-L89)\n\n链接门禁和生成导航为假设依据\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  base: '/Awesome-AI-Pedia/',\n  lastUpdated: true,\n  cleanUrls: false, // 🔧 修复：关闭 cleanUrls 避免 404\n  ignoreDeadLinks: true,\n  appearance: 'dark', // 默认使用暗黑主题\n\n  // 🔧 添加路由重写规则，修复 404 问题\n  rewrites: {\n    'README.md': 'index.md'\n  },\n\n  themeConfig: {\n    nav: generateNav(projectRoot),\n\n    // 🆕 动态生成所有内容目录的侧边栏\n    sidebar: generateAllSidebars(projectRoot),\n```\n\n</details>\n\n**依据 3 · 作者声明**：[AI视频/多平台自动发布social-auto-upload.md:3-10](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/blob/16b509286924399e49371f8933972d64426f1b8b/AI%E8%A7%86%E9%A2%91/%E5%A4%9A%E5%B9%B3%E5%8F%B0%E8%87%AA%E5%8A%A8%E5%8F%91%E5%B8%83social-auto-upload.md#L3-L10)\n\n保留原始来源便于退路\n\n```text\n仓库地址：https://github.com/dreammis/social-auto-upload\n作者：dreammis ｜ 许可证：MIT ｜ Star：14.4k\n\n## 是什么\n\n一款视频**一键多平台自动发布**工具，面向管理多平台分发的内容创作者，用脚本化流程替代重复手动上传和易碎的浏览器 Agent 截图方案。\n\n原作者用途：**提前一天定时发布**，因此很多默认时间逻辑围绕\"次日\"设计。\n```\n\n#### 缺口\n\n- 试读收益与定向核验维护成本未测\n  **影响**：无法证明资料整理降低总任务成本\n  **进一步探讨**：对同一资料查找任务记录正确率与人工回查时间\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f83743498939eed3b6846a5755d0b20f05dcc01c28c42e58ab4c07bfe142765f。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 310 | 25000 | — | — | 213558 |\n| .ts | source | 4 | 728 | 492 | 127 | — |\n| .cjs | source | 1 | 126 | 105 | 5 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n#### 能力\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 分类导航 | 查找中文AI工具文章 | 须回原始来源确认版本 |\n\n## 工程亮点\n\n[Q02](#research-q02) 自动导航易复用；[Q03](#research-q03) 弱链接门禁需要独立内容核验流程补足。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、docs/.vitepress/config.ts、docs/.vitepress/utils/sidebar.ts、AI视频/多平台自动发布social-auto-upload.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查根说明、包清单、VitePress配置、侧栏算法与一篇外部工具笔记；未全面核实全库文章或上游功能。\n- 下一步：用同一批查找任务比较带版本核验信息前后找到正确版本的比例、外链失效与人工耗时；无改善则停止该编辑扩展。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-10-28-01/awesome-ai-pedia--awesome-ai-pedia/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"Awesome-AI-Pedia/Awesome-AI-Pedia\",\n  \"revision\": \"16b509286924399e49371f8933972d64426f1b8b\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"docs/.vitepress/config.ts\",\n    \"docs/.vitepress/utils/sidebar.ts\",\n    \"AI视频/多平台自动发布social-auto-upload.md\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"资源整理与站点导航能否改善中文工具资料发现，同时保留来源边界？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"它给谁提供什么，是否是可安装DSH插件？\",\n        \"answer\": \"这是面向开发者的中文AI知识资源与博客站点，真实类型resource。README将编码助手、MCP、规则、技能和实战笔记按目录组织；合格结果是找到一条适用资料并回到其原始来源核实，而非安装后得到新的DSH能力。直接浏览上游文档或仓库搜索是基线。中文整理能降低资料发现摩擦，但目录覆盖广不等于每篇结论已验证。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 13,\n            \"line_end\": 30,\n            \"observation\": \"作者定义知识库和站点能力\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 34,\n            \"line_end\": 64,\n            \"observation\": \"主题目录入口\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"contribution\",\n          \"engineering\"\n        ],\n        \"question\": \"文章怎样形成导航，实际增量在哪里？\",\n        \"answer\": \"VitePress配置把仓库根目录设为内容源，将README改写为首页，导航与侧栏由generateNav/generateAllSidebars构造。sidebar通过文件系统读取Markdown并排序，提供目录到页面的稳定映射。相较手工维护链接清单，这减少一部分重复导航维护；内容选择与中文解释仍由作者承担。框架的渲染、主题和搜索不应归为该资源独立发明，实际贡献是内容组织和工程配置。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/.vitepress/config.ts\",\n            \"line_start\": 52,\n            \"line_end\": 89,\n            \"observation\": \"内容源、排除、首页改写和侧栏接线\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/.vitepress/utils/sidebar.ts\",\n            \"line_start\": 13,\n            \"line_end\": 24,\n            \"observation\": \"Markdown读取与排序\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/.vitepress/utils/sidebar.ts\",\n            \"line_start\": 78,\n            \"line_end\": 96,\n            \"observation\": \"目录首篇链接选择\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"构建成功能否说明资料当前可靠、链接完整？\",\n        \"answer\": \"不能。配置ignoreDeadLinks=true，构建不会把失效链接作为同等强制门禁；部分材料还被明确排除以避开解析失败。抽样文章对social-auto-upload注明功能覆盖不一和重构状态，也列出了上游仓库，这有助于识别条件，但文章内Star和维护状态属于本资源记录时的二手说明，不是本轮对上游的独立核查。适用性取决于读者回查上游版本。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/.vitepress/config.ts\",\n            \"line_start\": 55,\n            \"line_end\": 77,\n            \"observation\": \"内容排除和ignoreDeadLinks\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"AI视频/多平台自动发布social-auto-upload.md\",\n            \"line_start\": 3,\n            \"line_end\": 20,\n            \"observation\": \"有来源和能力差异声明\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"AI视频/多平台自动发布social-auto-upload.md\",\n            \"line_start\": 62,\n            \"line_end\": 69,\n            \"observation\": \"作者记录的重构及使用限制\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"文章对上游版本、价格和可用性的时效覆盖未知\",\n            \"impact\": \"不能把笔记当当前安装/使用保证\",\n            \"next_step\": \"从目标文章链接回上游固定版本逐项核实\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样采用，成本和可证伪改进是什么？\",\n        \"answer\": \"读者可先直接阅读原Markdown，无需部署；维护者若本地运行则需Node和VitePress/Vue，package.json要求Node>=18。首次阅读成本是筛选适用文章，持续成本是回查上游，失败可退回原文和官方资料；无实测节时。由弱链接门禁推导未验证假设：给文章加上游版本和最后核验范围，再定向检查外链，可能比扩大条目数更减少误用。用一组真实查找任务比较现有页面与带核验信息页面，记录找对版本、失效链接和回查耗时；若正确率不升且维护负担增加，则否定。可小范围试读；发现命令与上游冲突就以原始文档为准。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 20,\n            \"line_end\": 42,\n            \"observation\": \"站点脚本、依赖和Node约束\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/.vitepress/config.ts\",\n            \"line_start\": 74,\n            \"line_end\": 89,\n            \"observation\": \"链接门禁和生成导航为假设依据\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"AI视频/多平台自动发布social-auto-upload.md\",\n            \"line_start\": 3,\n            \"line_end\": 10,\n            \"observation\": \"保留原始来源便于退路\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"试读收益与定向核验维护成本未测\",\n            \"impact\": \"无法证明资料整理降低总任务成本\",\n            \"next_step\": \"对同一资料查找任务记录正确率与人工回查时间\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"<div align=\\\"center\\\">\\n\\n# 🦞 Awesome AI Pedia\\n\\n**一个全面的 AI 知识库与博客平台**\\n\\n[![GitHub Stars](https://img.shields.io/github/stars/Awesome-AI-Pedia/Awesome-AI-Pedia?style=social)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia)\\n\\n[🔥 在线访问](https://awesome-ai-pedia.github.io/Awesome-AI-Pedia/) · [🚀 快速开始](#-快速开始) · [📚 内容目录](#-知识库分类) · [🤝 联系方式](#-联系方式)\\n\\n</div>\\n\\n## ✨ 项目简介\\n\\n**Awesome AI Pedia** 是一个现代化 AI 知识库，\\n旨在为开发者提供全面的 AI 工具使用指南、最佳实践和实战经验分享。\\n\\n### 🎯 核心特性\\n\\n- **📚 全方位覆盖** — 从 Claude Code、Cursor、MCP，到 Agent、Skills、Prompt 工程等主流 AI 方向\\n- **💡 实战导向** — 从真实项目出发，提供可落地的解决方案\\n- **🔍 本地搜索** — 内置全文搜索，快速定位所需内容\\n- **🌙 暗黑主题** — 默认暗色界面，长时间阅读不刺眼\\n- **🚀 自动部署** — 推送到 `master` 自动构建并发布到 GitHub Pages\\n\\n---\\n\\n## 📂 知识库分类\\n\\n> 以下分类均对应仓库根目录的实际目录，可直接进入查看原始 Markdown。\\n\\n### 🤖 AI 编码助手\\n\\n| 目录 | 说明 |\\n| --- | --- |\\n| [`claudeCode/`](./claudeCode) | Claude Code 完整使用指南：安装配置、常用命令、Browser 工具、Settings.json 详解 |\\n| [`cursor/`](./cursor) | Cursor 编辑器：功能详解、中文对话、区域限制、菜单栏自定义、版本管理 |\\n| [`codex/`](./codex) | OpenAI Codex 相关实践 |\\n| [`antigravity/`](./antigravity) | Antigravity 相关笔记 |\\n| [`openclaw/`](./openclaw) | Openclaw 相关内容 |\\n\\n### 🔌 生态与协议\\n\\n| 目录 | 说明 |\\n| --- | --- |\\n| [`mcp/`](./mcp) | Model Context Protocol：Figma / 蓝湖 / 飞书 / Playwright / Context7 / Chrome DevTools 等 MCP 实战 |\\n| [`Agent/`](./Agent) | AI Agent 相关内容 |\\n| [`Harness Engineering/`](./Harness%20Engineering) | 提示词/Agent 编排工程 |\\n\\n### 💬 提示词与规则\\n\\n| 目录 | 说明 |\\n| --- | --- |\\n| [`prompt/`](./prompt) | Prompt 工程：React + UI 设计师、SVG 海报设计、提示词最佳实践 |\\n| [`rules/`](./rules) | Next.js / Vue / NuxtJS / Flutter / Expo / Spring Boot / HTML & CSS 等 AI 编码规则 |\\n| [`好的rules/`](./好的rules) | 精选优质 Rules 集合 |\\n\\n### 🛠️ 技能与工具\\n\\n| 目录 | 说明 |\\n| --- | --- |\\n| [`skills/`](./skills) | Skills 概念、与 MCP 的区别、安装、自定义开发 |\\n| [`常用skills/`](./常用skills) | 高频使用的 Skills 工具集 |\\n| [`工具/`](./工具) | 常用辅助工具集合 |\\n\\n### 📚 学习与实战\\n\\n| 目录 | 说明 |\\n| --- | --- |\\n| [`不可不知的Ai知识/`](./不可不知的Ai知识) | AI 入门必备知识 |\\n| [`使用ai技巧/`](./使用ai技巧) | AI 工具高效使用技巧 |\\n| [`开发ai应用相关问题/`](./开发ai应用相关问题) | AI 应用开发常见问题排查 |\\n| [`部署ai/`](./部署ai) | AI 应用部署策略与实践 |\\n| [`vibe coding/`](./vibe%20coding) | Vibe Coding 实践 |\\n| [`vibe design/`](./vibe%20design) | Vibe Design 实践 |\\n| [`全栈/`](./全栈) | 全栈开发相关 |\\n| [`Ai面试类/`](./Ai面试类) | AI 相关面试题与经验 |\\n| [`其他/`](./其他) | 其他未分类内容 |\\n\\n---\\n\\n## 🚀 快速开始\\n\\n\\n### 方法一：使用启动脚本（推荐）\\n\\n```bash\\ngit clone https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia.git\\ncd Awesome-AI-Pedia\\n\\n# 首次运行需要授予执行权限\\nchmod +x start.sh\\n\\n# 一键启动：自动检查 Node 版本、安装依赖、启动 dev server\\n./start.sh\\n```\\n\\n\\n## 🗂️ 项目结构\\n\\n```\\nAwesome-AI-Pedia/\\n├── docs/                    # VitePress 站点入口\\n│   ├── .vitepress/          # 配置、主题、侧边栏生成器\\n│   ├── blog/                # 博客文章\\n│   └── index.md             # 首页\\n├── claudeCode/              # 各知识分类目录（会被 VitePress 收录）\\n├── cursor/\\n├── mcp/\\n├── skills/\\n├── ...                      # 其他分类目录\\n├── scripts/                 # 构建辅助脚本\\n├── .github/workflows/       # GitHub Actions 自动部署\\n├── start.sh                 # 一键启动脚本\\n└── package.json\\n```\\n\\nVitePress 通过 `srcDir: '../'` 将整个仓库根目录作为文档源，\\n侧边栏由 `docs/.vitepress/utils/sidebar.ts` 自动扫描生成。\\n\\n---\\n\\n\\n## 📞 联系方式\\n\\n微信搜索 **硬核 AI 社** 回复「加群」，加入 AI 交流群，一起学习 AI。\\n\\n- GitHub Issues：[提交问题或建议](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues)\\n- 项目主页：<https://awesome-ai-pedia.github.io/Awesome-AI-Pedia/>\\n\\n---\\n\\n\\n<div align=\\\"center\\\">\\n\\n**如果这个项目对你有帮助，请给一个 ⭐ Star！**\\n\\nMade with ❤️ by [AI-leader](https://github.com/Awesome-AI-Pedia/)\\n\\n<br>\\n<b>愿 AI 早点成为你最好的工作伙伴！</b>\\n\\n</div>\\n\\n\\n\\n<div align=\\\"center\\\">\\n\\n\\n<a href=\\\"\\\">\\n  <picture>\\n    <source\\n      media=\\\"(prefers-color-scheme: dark)\\\"\\n      srcset=\\\"https://api.star-history.com/svg?repos=Awesome-AI-Pedia/Awesome-AI-Pedia&type=Date&theme=dark&sealed_token=1gibffw3ntz8oBm4RSwf9rZxw6JqYs3bqUUY8fJhCnezWe6PXZ1RQM6spAw-ZTmAv8-nDGRq99kPO5hkveWE2dXFT1ZSDfj5FIQS7qARG1sA6u5ZwflT_w\\\"\\n    />\\n    <source\\n      media=\\\"(prefers-color-scheme: light)\\\"\\n      srcset=\\\"https://api.star-history.com/svg?repos=Awesome-AI-Pedia/Awesome-AI-Pedia&type=Date&sealed_token=1gibffw3ntz8oBm4RSwf9rZxw6JqYs3bqUUY8fJhCnezWe6PXZ1RQM6spAw-ZTmAv8-nDGRq99kPO5hkveWE2dXFT1ZSDfj5FIQS7qARG1sA6u5ZwflT_w\\\"\\n    />\\n    <img\\n      alt=\\\"Star History Chart\\\"\\n      src=\\\"https://api.star-history.com/svg?repos=Awesome-AI-Pedia/Awesome-AI-Pedia&type=Date&sealed_token=1gibffw3ntz8oBm4RSwf9rZxw6JqYs3bqUUY8fJhCnezWe6PXZ1RQM6spAw-ZTmAv8-nDGRq99kPO5hkveWE2dXFT1ZSDfj5FIQS7qARG1sA6u5ZwflT_w\\\"\\n      width=\\\"720\\\"\\n    />\\n  </picture>\\n</a>\\n\\n</div>\\n\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"awesome-ai-pedia\\\",\\n  \\\"version\\\": \\\"1.0.0\\\",\\n  \\\"description\\\": \\\"基于 VitePress 的 AI 知识库与博客平台，涵盖 Claude Code、Cursor、MCP、Prompt、Rules、Skills 等 AI 工具的实战经验与最佳实践。\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"keywords\\\": [\\n    \\\"ai\\\",\\n    \\\"vitepress\\\",\\n    \\\"knowledge-base\\\",\\n    \\\"claude-code\\\",\\n    \\\"cursor\\\",\\n    \\\"mcp\\\",\\n    \\\"prompt-engineering\\\",\\n    \\\"blog\\\"\\n  ],\\n  \\\"author\\\": \\\"qdleader\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"homepage\\\": \\\"https://awesome-ai-pedia.github.io/Awesome-AI-Pedia/\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/issues\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"dev\\\": \\\"vitepress dev docs\\\",\\n    \\\"build\\\": \\\"vitepress build docs\\\",\\n    \\\"preview\\\": \\\"vitepress preview docs\\\",\\n    \\\"serve\\\": \\\"vitepress preview docs\\\"\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"vitepress\\\": \\\"^1.3.4\\\",\\n    \\\"vue\\\": \\\"^3.5.11\\\",\\n    \\\"@vueuse/core\\\": \\\"^11.1.0\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"gray-matter\\\": \\\"^4.0.3\\\",\\n    \\\"glob\\\": \\\"^11.0.0\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"volta\\\": {\\n    \\\"node\\\": \\\"22.22.0\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"docs/.vitepress/config.ts\",\n      \"content\": \"import { defineConfig } from 'vitepress'\\nimport type { DefaultTheme } from 'vitepress'\\nimport fs from 'node:fs'\\nimport path from 'node:path'\\nimport { getProjectRoot, generateNav, generateAllSidebars } from './utils/sidebar'\\n\\nconst projectRoot = getProjectRoot()\\n\\nfunction writeRedirect(outDir: string, fromPath: string, toPath: string) {\\n  const targetPath = path.join(outDir, fromPath)\\n  const relativeTarget = path.posix.relative(path.posix.dirname(fromPath), toPath)\\n  const href = relativeTarget || path.posix.basename(toPath)\\n\\n  fs.mkdirSync(path.dirname(targetPath), { recursive: true })\\n  fs.writeFileSync(targetPath, `<!doctype html>\\n<html lang=\\\"zh-CN\\\">\\n<head>\\n  <meta charset=\\\"utf-8\\\">\\n  <meta http-equiv=\\\"refresh\\\" content=\\\"0; url=${href}\\\">\\n  <link rel=\\\"canonical\\\" href=\\\"${href}\\\">\\n  <script>location.replace(${JSON.stringify(href)});</script>\\n  <title>Redirecting...</title>\\n</head>\\n<body>\\n  <a href=\\\"${href}\\\">Redirecting...</a>\\n</body>\\n</html>\\n`)\\n}\\n\\nexport default defineConfig({\\n  title: 'Awesome AI Pedia',\\n  description: '基于 VitePress 的 AI 知识库与博客平台，涵盖 Claude Code、Cursor、MCP、Prompt、Rules、Skills 等 AI 工具的实战经验与最佳实践。',\\n  lang: 'zh-CN',\\n\\n  // 🆕 SEO / 社交分享 meta\\n  head: [\\n    ['meta', { name: 'keywords', content: 'AI, Claude Code, Cursor, MCP, Prompt Engineering, Skills, Rules, Agent, VitePress, 知识库, 博客' }],\\n    ['meta', { name: 'author', content: 'qdleader' }],\\n    ['meta', { name: 'theme-color', content: '#3c8772' }],\\n    ['meta', { property: 'og:type', content: 'website' }],\\n    ['meta', { property: 'og:locale', content: 'zh_CN' }],\\n    ['meta', { property: 'og:title', content: 'Awesome AI Pedia · 全面的 AI 知识库' }],\\n    ['meta', { property: 'og:description', content: '涵盖 Claude Code、Cursor、MCP、Prompt、Rules、Skills 等 AI 工具的实战经验与最佳实践。' }],\\n    ['meta', { property: 'og:site_name', content: 'Awesome AI Pedia' }],\\n    ['meta', { property: 'og:url', content: 'https://awesome-ai-pedia.github.io/Awesome-AI-Pedia/' }],\\n    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],\\n    ['meta', { name: 'twitter:title', content: 'Awesome AI Pedia · 全面的 AI 知识库' }],\\n    ['meta', { name: 'twitter:description', content: '涵盖 Claude Code、Cursor、MCP、Prompt、Rules、Skills 等 AI 工具的实战经验与最佳实践。' }],\\n  ],\\n  \\n  // 🆕 指定源目录为项目根目录（srcDir 相对于 docs/ 目录）\\n  srcDir: '../',\\n  \\n  // 🆕 排除不需要的目录和文件\\n  srcExclude: [\\n    'node_modules/**',\\n    'scripts/**',\\n    '.git/**',\\n    '.github/**',\\n    'dist/**',\\n    'anime-video/**',\\n    '.agent/**',\\n    '.claude/**',\\n    '.vscode/**',\\n    '*.lock',\\n    'package.json',\\n    'package-lock.json',\\n    '*.sh',\\n    // 包含大量未闭合的标签示例（Claude 提示词原文），VitePress/Vue 解析会失败\\n    'vibe design/claude design/claude design 提示词.md'\\n  ],\\n  \\n  base: '/Awesome-AI-Pedia/',\\n  lastUpdated: true,\\n  cleanUrls: false, // 🔧 修复：关闭 cleanUrls 避免 404\\n  ignoreDeadLinks: true,\\n  appearance: 'dark', // 默认使用暗黑主题\\n\\n  // 🔧 添加路由重写规则，修复 404 问题\\n  rewrites: {\\n    'README.md': 'index.md'\\n  },\\n\\n  themeConfig: {\\n    nav: generateNav(projectRoot),\\n\\n    // 🆕 动态生成所有内容目录的侧边栏\\n    sidebar: generateAllSidebars(projectRoot),\\n\\n    socialLinks: [\\n      { icon: 'github', link: 'https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia' }\\n    ],\\n\\n    editLink: {\\n      pattern: 'https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia/edit/master/:path',\\n      text: '在GitHub上编辑此页'\\n    },\\n\\n    docFooter: {\\n      prev: '上一页',\\n      next: '下一页'\\n    },\\n\\n    outline: {\\n      label: '页面目录',\\n      level: 'deep'\\n    },\\n\\n    returnToTopLabel: '返回顶部',\\n\\n    externalLinkIcon: true,\\n\\n    search: {\\n      provider: 'local'\\n    },\\n  },\\n\\n  markdown: {\\n    lineNumbers: true,\\n    toc: { level: [1, 2, 3, 4] }\\n  },\\n\\n  // 🔧 添加构建钩子，确保历史错误链接可跳转到正确页面\\n  buildEnd: async (siteConfig) => {\\n    writeRedirect(\\n      siteConfig.outDir,\\n      'Ai面试类/CLAUDE如何维护.html',\\n      'Ai面试类/CLAUDE.md如何维护.html'\\n    )\\n  }\\n})\\n\"\n    },\n    {\n      \"path\": \"docs/.vitepress/utils/sidebar.ts\",\n      \"content\": \"import path from 'path'\\nimport fs from 'fs'\\nimport { fileURLToPath } from 'url'\\nimport { dirname } from 'path'\\n\\nconst __filename = fileURLToPath(import.meta.url)\\nconst __dirname = dirname(__filename)\\n\\nfunction stripMarkdownExtension(fileName: string): string {\\n  return fileName.replace(/\\\\.md$/, '')\\n}\\n\\n// 获取目录下的所有markdown文件\\nexport function getMarkdownFiles(dirPath: string): string[] {\\n  const files: string[] = []\\n  if (fs.existsSync(dirPath)) {\\n    const items = fs.readdirSync(dirPath, { withFileTypes: true })\\n    items.forEach((item: fs.Dirent) => {\\n      if (item.isFile() && item.name.endsWith('.md')) {\\n        files.push(item.name)\\n      }\\n    })\\n  }\\n  return files.sort()\\n}\\n\\n// 获取中文显示名称\\n// export function getDisplayName(dir: string): string {\\n//   const nameMap: Record<string, string> = {\\n//     'antigravity': 'Antigravity',\\n//     'claudecode': 'Claude Code',\\n//     'claudeCode': 'Claude Code',\\n//     'cursor': 'Cursor',\\n//     'mcp': 'MCP',\\n//     'openclaw': 'openclaw',\\n//     'prompt': 'Prompt',\\n//     'rules': 'Rules',\\n//     'skills': 'Skills',\\n//     'hao-de-rules': '好的Rules',\\n//     '好的rules': '好的Rules',\\n//     'chang-yong-skills': '常用Skills',\\n//     '常用skills': '常用Skills',\\n//     'bu-shu-ai': '部署AI',\\n//     '部署ai': '部署AI',\\n//     'shi-yong-ai-ji-qiao': '使用AI技巧',\\n//     '使用ai技巧': '使用AI技巧',\\n//     'kai-fa-ai-ying-yong': '开发AI应用',\\n//     '开发ai应用相关问题': '开发AI应用',\\n//     'bu-ke-bu-zhi-de-ai-zhi-shi': '不可不知的AI知识',\\n//     '不可不知的Ai知识': '不可不知的AI知识',\\n//     // prompt 子目录\\n//     '图片': '图片',\\n//     '常用类提示词': '常用类提示词',\\n//     '开发类提示词': '开发类提示词',\\n//     '提示词': '提示词',\\n//     '项目初始化': '项目初始化',\\n//     // 其他子目录\\n//     '其他': '其他'\\n//   }\\n//   return nameMap[dir] || dir\\n// }\\n\\n// 获取URL友好的路径名\\nexport function getUrlFriendlyName(dir: string): string {\\n  // const urlMap: Record<string, string> = {\\n  //   'claudeCode': 'claudecode',\\n  //   '好的rules': 'hao-de-rules',\\n  //   '常用skills': 'chang-yong-skills',\\n  //   '部署ai': 'bu-shu-ai',\\n  //   '使用ai技巧': 'shi-yong-ai-ji-qiao',\\n  //   '开发ai应用相关问题': 'kai-fa-ai-ying-yong',\\n  //   '不可不知的Ai知识': 'bu-ke-bu-zhi-de-ai-zhi-shi'\\n  // }\\n  return dir\\n  // return urlMap[dir] || dir.toLowerCase()\\n}\\n\\n// 获取目录下第一篇文章的链接（按字母序）\\nfunction getFirstArticleLink(dirPath: string, urlBasePath: string): string | null {\\n  if (!fs.existsSync(dirPath)) return null\\n\\n  const entries = fs.readdirSync(dirPath, { withFileTypes: true })\\n\\n  // 获取所有 .md 文件，按字母序排序\\n  const mdFiles = entries\\n    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md'))\\n    .map((e: fs.Dirent) => e.name)\\n    .sort()\\n\\n  // 跳过 index.md，返回第一个文章\\n  const firstArticle = mdFiles.find((file: string) => file !== 'index.md')\\n\\n  if (!firstArticle) return null\\n\\n  const fileName = stripMarkdownExtension(firstArticle)\\n  return `${urlBasePath}/${fileName}`\\n}\\n\\n// 生成AI知识库侧边栏\\n// 递归生成侧边栏项目\\nfunction generateSidebarItems(dirPath: string, urlBasePath: string): Array<any> {\\n  const items: Array<any> = []\\n  \\n  if (!fs.existsSync(dirPath)) return items\\n  \\n  const entries = fs.readdirSync(dirPath, { withFileTypes: true })\\n  \\n  // 先添加 md 文件\\n  const mdFiles = entries\\n    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md') && e.name !== 'index.md')\\n    .map((e: fs.Dirent) => e.name)\\n    .sort()\\n  \\n  mdFiles.forEach((file: string) => {\\n    const fileName = stripMarkdownExtension(file)\\n    items.push({\\n      text: fileName,\\n      link: `${urlBasePath}/${fileName}`\\n    })\\n  })\\n  \\n  // 再添加子目录\\n  const subDirs = entries\\n    .filter((e: fs.Dirent) => e.isDirectory() && !e.name.startsWith('.'))\\n    .map((e: fs.Dirent) => e.name)\\n    .sort()\\n  \\n  subDirs.forEach((subDir: string) => {\\n    const subDirPath = path.join(dirPath, subDir)\\n    const subItems = generateSidebarItems(subDirPath, `${urlBasePath}/${subDir}`)\\n    \\n    if (subItems.length > 0) {\\n      items.push({\\n        text: subDir,\\n        // text: getDisplayName(subDir),\\n        collapsed: true,\\n        items: subItems\\n      })\\n    }\\n  })\\n  \\n  return items\\n}\\n\\nexport function generateAISidebar(baseDir: string) {\\n  // baseDir 是项目根目录，ai 文件夹在 docs/ai 下\\n  const aiBase = path.join(baseDir, 'docs', 'ai')\\n  const categories: Array<any> = []\\n\\n  if (!fs.existsSync(aiBase)) {\\n    return []\\n  }\\n\\n  const dirs = fs.readdirSync(aiBase, { withFileTypes: true })\\n    .filter((d: fs.Dirent) => d.isDirectory())\\n    .map((d: fs.Dirent) => d.name)\\n    .sort()\\n\\n  dirs.forEach((dir: string) => {\\n    const dirPath = path.join(aiBase, dir)\\n    const items = generateSidebarItems(dirPath, `/ai/${dir}`)\\n\\n    if (items.length > 0) {\\n      const displayName = dir\\n      // const displayName = getDisplayName(dir)\\n\\n      categories.push({\\n        text: displayName,\\n        collapsed: false,\\n        items\\n      })\\n    }\\n  })\\n\\n  return categories\\n}\\n\\n// 动态生成侧边栏\\n// 递归生成动态侧边栏项目\\nfunction generateDynamicSidebarItems(dirPath: string, urlBasePath: string): Array<any> {\\n  const items: Array<any> = []\\n  \\n  if (!fs.existsSync(dirPath)) return items\\n  \\n  const entries = fs.readdirSync(dirPath, { withFileTypes: true })\\n  \\n  // 先添加 md 文件\\n  const mdFiles = entries\\n    .filter((e: fs.Dirent) => e.isFile() && e.name.endsWith('.md') && e.name !== 'index.md')\\n    .map((e: fs.Dirent) => e.name)\\n    .sort()\\n  \\n  mdFiles.forEach((file: string) => {\\n    const fileName = stripMarkdownExtension(file)\\n    items.push({\\n      text: fileName,\\n      link: `${urlBasePath}/${fileName}`\\n    })\\n  })\\n  \\n  // 再添加子目录\\n  const subDirs = entries\\n    .filter((e: fs.Dirent) => e.isDirectory() && !e.name.startsWith('.'))\\n    .map((e: fs.Dirent) => e.name)\\n    .sort()\\n  \\n  subDirs.forEach((subDir: string) => {\\n    const subDirPath = path.join(dirPath, subDir)\\n    const subItems = generateDynamicSidebarItems(subDirPath, `${urlBasePath}/${subDir}`)\\n    \\n    if (subItems.length > 0) {\\n      items.push({\\n        text: subDir,\\n        // text: getDisplayName(subDir),\\n        collapsed: true,\\n        items: subItems\\n      })\\n    }\\n  })\\n  \\n  return items\\n}\\n\\n// 🆕 修改为从根目录读取\\nexport function generateDynamicSidebar(folderName: string, baseDir: string) {\\n  // 直接从根目录读取，不再使用 ai 子目录\\n  const folderPath = path.join(baseDir, folderName)\\n  \\n  if (!fs.existsSync(folderPath)) {\\n    return []\\n  }\\n\\n  const urlFriendlyDir = getUrlFriendlyName(folderName)\\n  // URL 路径不再包含 /ai/ 前缀\\n  const items = generateDynamicSidebarItems(folderPath, `/${urlFriendlyDir}`)\\n  \\n  if (items.length === 0) {\\n    return []\\n  }\\n\\n  return [\\n    {\\n      // text: getDisplayName(folderName),\\n      text: folderName,\\n      collapsed: false,\\n      items\\n    }\\n  ]\\n}\\n\\n// 🆕 生成所有内容目录的侧边栏配置\\nexport function generateAllSidebars(baseDir: string) {\\n  const sidebarConfig: Record<string, any> = {}\\n  \\n  // 需要排除的目录\\n  const excludedDirs = [\\n    'node_modules',\\n    'docs',\\n    'scripts',\\n    '.git',\\n    '.github',\\n    '.vitepress',\\n    'public',\\n    'dist',\\n    'anime-video',\\n    '.agent',\\n    '.claude'\\n  ]\\n  \\n  // 获取所有内容目录\\n  const allRootItems = fs.readdirSync(baseDir, { withFileTypes: true })\\n  const contentDirs = allRootItems\\n    .filter((item: fs.Dirent) => \\n      item.isDirectory() && \\n      !excludedDirs.includes(item.name) &&\\n      !item.name.startsWith('.')\\n    )\\n    .map((item: fs.Dirent) => item.name)\\n  \\n  // 为每个内容目录生成侧边栏\\n  contentDirs.forEach((dir: string) => {\\n    const urlPath = getUrlFriendlyName(dir)\\n    const sidebar = generateDynamicSidebar(dir, baseDir)\\n    if (sidebar.length > 0) {\\n      sidebarConfig[`/${urlPath}/`] = sidebar\\n    }\\n  })\\n  \\n  // 添加固定的侧边栏 (博客和指南，它们在 docs/ 目录下)\\n  sidebarConfig['/docs/blog/'] = [\\n    {\\n      text: '📚 博客文章',\\n      collapsed: false,\\n      items: [\\n        { text: 'AI开发实践', link: '/docs/blog/ai-development/' },\\n        { text: '智能助手配置', link: '/docs/blog/ai-assistant/' },\\n        { text: 'VitePress使用指南', link: '/docs/blog/vitepress-guide/' }\\n      ]\\n    }\\n  ]\\n  \\n  sidebarConfig['/docs/guide/'] = [\\n    {\\n      text: '📖 使用指南',\\n      collapsed: false,\\n      items: [\\n        { text: '快速开始', link: '/docs/guide/getting-started/' },\\n        { text: '目录结构说明', link: '/docs/guide/directory/' },\\n        { text: '部署指南', link: '/docs/guide/deployment/' }\\n      ]\\n    }\\n  ]\\n  \\n  return sidebarConfig\\n}\\n\\n// 动态生成顶部导航栏\\nexport function getProjectRoot(): string {\\n  return path.resolve(__dirname, '../../../');\\n}\\n\\n// 动态生成顶部导航栏\\nexport function generateNav(baseDir: string) {\\n  const rootDir = baseDir\\n  const navItems: Array<any> = []\\n\\n  const excludedDirs = [\\n    'node_modules',\\n    'docs',\\n    'scripts',\\n    '.git',\\n    '.vitepress',\\n    '.github',\\n    'public',\\n    'dist',\\n    '.claude'\\n  ]\\n\\n  const allRootItems = fs.readdirSync(rootDir, { withFileTypes: true })\\n\\n  // 定义特殊项目的优先级\\n  const priorityMap: Record<string, number> = {\\n    'openclaw': 1,\\n    '常用skills': 2,\\n    'mcp': 3,\\n    'claudeCode': 4,\\n    'Agent': 999 // 放到最后\\n  }\\n\\n  const contentDirs = allRootItems\\n    .filter((item: fs.Dirent) => item.isDirectory() && !excludedDirs.includes(item.name))\\n    .map((item: fs.Dirent) => item.name)\\n    .sort((a: string, b: string) => {\\n      const pA = priorityMap[a] || 50\\n      const pB = priorityMap[b] || 50\\n      \\n      if (pA !== pB) {\\n        return pA - pB\\n      }\\n      return a.localeCompare(b)\\n    })\\n\\n  // 首先添加首页\\n  navItems.push({ text: '首页', link: '/' })\\n\\n  // 添加所有导航项\\n  contentDirs.forEach((dir: string) => {\\n    const urlPath = getUrlFriendlyName(dir)\\n    const dirPath = path.join(rootDir, dir)\\n\\n    // 🆕 获取第一篇文章的链接\\n    const firstArticleLink = getFirstArticleLink(dirPath, `/${urlPath}`)\\n\\n    if (firstArticleLink) {\\n      navItems.push({\\n        text: dir,\\n        // text: getDisplayName(dir),\\n        link: firstArticleLink  // 指向第一篇文章\\n      })\\n    }\\n  })\\n\\n  // 根据导航项总数动态决定是否需要分组\\n  // 10个以内：全部平铺显示\\n  // 超过10个：前10个平铺，其余放入\\\"更多\\\"菜单\\n  if (navItems.length > 10) {\\n    const visibleItems = navItems.slice(0, 10)\\n    const moreItems = navItems.slice(10)\\n\\n    return [\\n      ...visibleItems,\\n      {\\n        text: '更多',\\n        items: moreItems\\n      }\\n    ]\\n  }\\n\\n  return navItems\\n}\\n\"\n    },\n    {\n      \"path\": \"AI视频/多平台自动发布social-auto-upload.md\",\n      \"content\": \"# social-auto-upload 总结\\n\\n仓库地址：https://github.com/dreammis/social-auto-upload\\n作者：dreammis ｜ 许可证：MIT ｜ Star：14.4k\\n\\n## 是什么\\n\\n一款视频**一键多平台自动发布**工具，面向管理多平台分发的内容创作者，用脚本化流程替代重复手动上传和易碎的浏览器 Agent 截图方案。\\n\\n原作者用途：**提前一天定时发布**，因此很多默认时间逻辑围绕\\\"次日\\\"设计。\\n\\n## 支持平台\\n\\n抖音、B 站、小红书、快手、微信视频号（tencent）、百家号、支付宝生活号、微博、虎扑、TikTok、YouTube\\n\\n**能力覆盖不一**：\\n- 抖音在当前重构分支上最完善\\n- 图文（\\\"图文\\\"）仅支持：抖音、快手、小红书、B 站\\n- TikTok、百家号无定时发布\\n- 只有部分平台有 Skills\\n\\n## 核心特性\\n\\n- 登录 / cookie 设置、账号检查、视频上传、图文上传、定时发布\\n- **统一 `sau` CLI**，跨平台一致\\n- **Skills**：与 OpenClaw / Codex / Claude Code 集成（抖音、快手、小红书、B 站）\\n- **多账号**：一账号一文件（按 `account_name`），可并行\\n- B 站运行时自动下载并更新 `biliup`\\n- YouTube 用浏览器自动化而非官方 API，规避未审核项目的私有锁限制；支持播放列表和可见性设置\\n- 短信 2FA 通过 `verify_code.txt` 回填\\n- 受限地区 YouTube 支持 `YT_PROXY` 代理\\n\\n## 技术栈\\n\\n- Python（`uv` 管理，`pyproject.toml`）\\n- 浏览器自动化正迁移到 **`patchright`**（更好的隐身与 headless 支持）\\n- 提供 Dockerfile\\n- 独立的 `sau_backend` / `sau_frontend` 目录（Web 前端**已非主线**，不保证运行与同步）\\n- B 站上传用 `biliup`\\n\\n## 安装\\n\\n详见 `docs/install.md` 与 `docs/update.md`。\\n\\n**AI Agent 引导安装**：把仓库 + `docs/agent-bootstrap.md` 交给 Claude Code / Codex / OpenClaw，它们会优先使用 `uv`、`sau` CLI 和 `skills/` 目录。\\n\\n## 使用\\n\\n统一 CLI 模式：\\n```sh\\nsau <platform> login|check|upload-video|upload-note \\\\\\n  --account <账号名> --file <文件> \\\\\\n  --title <标题> --desc <描述> --tags <标签>\\n```\\n\\n平台特有参数：\\n- B 站：`--tid`\\n- YouTube：`--playlist`、`--visibility`\\n\\n`examples/` 下保留旧版直传脚本供参考。\\n\\n## 注意事项与限制\\n\\n- 项目**处于重构中**：统一上传器结构、统一 CLI、推进 headless-first\\n- Web UI 代码保留但**不再是主线**\\n- 部分平台标题长度限制：微博 ≤ 30、虎扑 4–40\\n- YouTube 上传需等到 100% 才点发布——提前关闭会中断传输\\n- 作者因创业维护带宽下降，但会有一波重构更新\\n- 赞助方：DolOffer、chilltion、ClawPower（AI 模型代理商），README 中含推广码\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"16b509286924399e49371f8933972d64426f1b8b\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [\n      \"skills/release-skills\"\n    ],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"f83743498939eed3b6846a5755d0b20f05dcc01c28c42e58ab4c07bfe142765f\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 310,\n        \"lines\": 25000,\n        \"words\": 213558\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 728,\n        \"code\": 492,\n        \"comments\": 127,\n        \"blank\": 112\n      },\n      {\n        \"extension\": \".cjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 126,\n        \"code\": 105,\n        \"comments\": 5,\n        \"blank\": 16\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"docs/.vitepress/theme.ts\",\n          \"line\": 47,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"docs/.vitepress/theme.ts\",\n          \"line\": 53,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "192d07e4ca8088f0814d0e33902cf721b0fff4d4ac83e0dce6b373a8319d7335"
+        }
+    },
+    "unavailable_artifacts": []
+}

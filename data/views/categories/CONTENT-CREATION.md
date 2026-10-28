@@ -43,6 +43,7 @@
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 中提供小说、短剧、游戏改编与视频解说的创作 Skills 和文件工作台 | [Q04](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q04) 先用已有文本项目试用一次改稿和冲突恢复；不将未核查付费媒体链纳入推荐。 |
 | [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
 | [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
+| [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
 | [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
@@ -546,6 +547,22 @@
 > **建议**：[Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05)提出小批revision与快照验收的未验证假设，用并发和保存故障比较误覆盖与恢复。
 
 [查看完整分析](../../plugins/zseven-w--openpencil/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1197966970-root"></a>
+
+## [OpenStory](../../plugins/zju-llms--openstory/INSIGHT.md)
+
+[![GitHub ★ 436](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=436&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZJU-LLMs/OpenStory)
+
+> **用途**：面向创作者与多Agent研究者生成并推进角色/地点/规则组成的故事世界；根是独立框架。
+
+> **亮点**：[Q02](../../plugins/zju-llms--openstory/INSIGHT.md#research-q02) 把结构化世界产物与多角色状态循环组合成可继续探索的交互流程，而非只生成一篇文本。
+
+> **思考**：[Q03](../../plugins/zju-llms--openstory/INSIGHT.md#research-q03) 单角色计划异常只记日志，tick完成不等于每个角色成功；schema/生成状态也不证明叙事质量或模拟有效。
+
+> **建议**：[Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 推导逐角色回合健康回执与推进门禁的未验证策略；同预算测无声失步、剧情可继续率和修复成本，频繁阻塞却不改善则推翻。
+
+[查看完整分析](../../plugins/zju-llms--openstory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1171186947-root"></a>
 
