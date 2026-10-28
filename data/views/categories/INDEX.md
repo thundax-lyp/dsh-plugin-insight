@@ -12,9 +12,9 @@
 | [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 26 |
 | [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 74 |
 | [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 198 |
-| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 38 |
+| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 39 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 116 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 117 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 ## 分类 Star 榜
@@ -69,7 +69,7 @@
 
 [查看全部插件 →](SOFTWARE-DELIVERY.md)
 
-### [内容生产（38）](CONTENT-CREATION.md)
+### [内容生产（39）](CONTENT-CREATION.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（116）](INFRASTRUCTURE.md)
+### [基础设施（117）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |

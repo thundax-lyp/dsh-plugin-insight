@@ -1,0 +1,27 @@
+{
+    "repository": "ZJU-LLMs/OpenStory",
+    "repository_id": 1197966970,
+    "captured_at": "2026-10-28T01:52:52.223Z",
+    "window_start": "2026-09-28T01:52:52.223Z",
+    "stars": 436,
+    "pushed_at": "2026-08-19T04:52:05Z",
+    "issues": {
+        "open": 1,
+        "closed": 5,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T00:45:33.613Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    }
+}
