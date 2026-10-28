@@ -3,11 +3,11 @@ import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs'
 import { readWork, readResearchSession } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve, relative } from 'node:path';
-import { validateManifest, validateSession } from './research-session.mjs';
+import { validateManifest, validateSession } from './session-state.mjs';
 import { validatePublication } from './publication-data.mjs';
 import { validateRunNames } from './maintain-runs.mjs';
 import { ROOT, read, validate, validateObservations } from '../../_shared/scripts/plugin-data.mjs';
-import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
 import { CATALOG, PUBLICATION, REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 const walk = (path) =>
     existsSync(path)
@@ -17,14 +17,13 @@ const walk = (path) =>
         : [];
 try {
     if (existsSync(resolve(ROOT, 'data/catalog/index.jsonl'))) {
-        const { validateSnapshot, renderSnapshot, validateWork } = await import('./snapshot-data.mjs');
+        const { validateSnapshot, validateWork } = await import('./snapshot-state.mjs');
         validateSnapshot(readSnapshotStorage(resolve(ROOT, 'data/catalog/index.jsonl')));
-        renderSnapshot(ROOT, true);
         for (const path of walk(resolve(ROOT, 'data/runs')).filter(
             (path) => path.endsWith('/WORK.json') && !path.includes('/migration-originals/')
         ))
             validateWork(readWork(path));
-        console.log('Current snapshot and derived outputs valid; historical runs/manifests are optional');
+        console.log('Current snapshot and local work valid; historical runs/manifests are optional');
     } else {
         const runsRoot = resolve(ROOT, 'data/runs');
         if (existsSync(runsRoot)) validateRunNames();

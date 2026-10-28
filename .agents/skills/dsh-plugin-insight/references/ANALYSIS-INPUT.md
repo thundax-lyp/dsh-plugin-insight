@@ -14,7 +14,7 @@ npm run assemble:insight -- --work <WORK.json> --plugin <id> --analysis <ANALYSI
 
 ## 必填字段速查
 
-以下字段均必填，分组只为查阅，不在 JSON 中增加分组层级。文本非空，精确接口以[装配脚本](../scripts/assemble-insight.mjs)及其引用的 Schema 为准。
+以下字段均必填，分组只为查阅，不在 JSON 中增加分组层级。文本非空，精确字段结构以本页及所引用的 Schema 为准。
 
 | 内容 | 顶层字段 | 填写要求 |
 | --- | --- | --- |

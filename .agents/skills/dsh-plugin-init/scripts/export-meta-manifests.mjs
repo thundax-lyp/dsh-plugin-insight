@@ -6,7 +6,7 @@ import { parseArgs } from 'node:util';
 import { ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
-import { SNAPSHOT, validateWork } from './snapshot-data.mjs';
+import { SNAPSHOT, validateWork } from './snapshot-state.mjs';
 import {
     buildManifest,
     defaultWorkPath,
@@ -24,10 +24,11 @@ import {
     META_BRANCH,
     MANIFEST_PATH,
     GIT_MANIFEST_PATH
-} from '../../_shared/scripts/github-file.mjs';
+} from '../../_shared/scripts/github-client.mjs';
 
 export async function syncManifests({
     workPath,
+    root = ROOT,
     repository = META_REPOSITORY,
     branch = META_BRANCH,
     apply = false,
@@ -36,8 +37,8 @@ export async function syncManifests({
     readFile = readGitHubFile,
     writeFiles = writeGitHubFiles
 }) {
-    const work = validateWork(readWork(workPath));
-    const snapshot = readSnapshotStorage(resolve(ROOT, SNAPSHOT));
+    const work = validateWork(readWork(workPath), root);
+    const snapshot = readSnapshotStorage(resolve(root, SNAPSHOT));
     const npm = buildManifest(workPath, { work, snapshot });
     const candidates = buildGitCandidates(work, snapshot);
     const head = await request(`/repos/${repository}/commits/${encodeURIComponent(branch)}`, token);
@@ -60,6 +61,7 @@ export async function syncManifests({
     const changed = files.filter((file) => file.text !== file.previous);
     let commit = null;
     let verified = false;
+    let verifiedCommit = null;
     if (apply && changed.length) {
         commit = await writeFiles({
             repository,
@@ -70,18 +72,25 @@ export async function syncManifests({
             message: 'Data(repo/manifest): 同步 npm 与 Git 仓库清单'
         });
         const afterHead = await request(`/repos/${repository}/commits/${encodeURIComponent(branch)}`, token);
+        if (!/^[a-f0-9]{40}$/.test(afterHead.sha)) throw Error('invalid readback commit SHA');
         const after = await Promise.all(files.map((file) => readFile(repository, file.path, afterHead.sha, token)));
         for (let index = 0; index < files.length; index += 1) {
             if (after[index].text !== files[index].text)
                 throw Error(`manifest readback mismatch: ${files[index].path}; retain WORK and rerun preview`);
         }
         verified = true;
-    } else if (apply) verified = true;
+        verifiedCommit = afterHead.sha;
+    } else if (apply) {
+        verified = true;
+        verifiedCommit = head.sha;
+    }
     return {
         ...npm.summary,
         repository,
         branch,
         remote_commit_sha: head.sha,
+        verified_commit_sha: verifiedCommit,
+        remaining_changes: verified ? { npm: false, git: false } : null,
         npm: {
             path: MANIFEST_PATH,
             remote: previousPackages.length,

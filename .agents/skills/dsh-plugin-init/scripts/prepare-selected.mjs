@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
-import { spawn } from 'node:child_process';
 import {
     existsSync,
     mkdirSync,
@@ -16,14 +15,18 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { read, atomicWrite, digest, ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory, researchDataDirectory } from '../../_shared/scripts/data-paths.mjs';
-import { selectedItems } from './research-session.mjs';
+import { selectedItems } from './session-state.mjs';
 import {
     captureNpmDownloads,
     captureNpmPublication,
-    validateMetadata
-} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { readNpmMetaCache, resolveNpmMetadata } from '../../_shared/scripts/npm-meta-cache.mjs';
-import { readGitMetaCache, gitCacheSnapshot } from '../../_shared/scripts/git-meta-cache.mjs';
+    readNpmMetaCache,
+    resolveNpmMetadata
+} from '../../_shared/scripts/npm-meta.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
+
+import { readGitMetaCache, gitCacheSnapshot } from '../../_shared/scripts/github-meta.mjs';
+import { spawn } from 'node:child_process';
+
 // Kill the whole process group: a material subprocess can itself be waiting on Git.
 export function runPreparationCommand(command, args, { timeout = 180_000, ...options } = {}) {
     return new Promise((accept, reject) => {
@@ -86,6 +89,7 @@ export function runPreparationCommand(command, args, { timeout = 180_000, ...opt
         });
     });
 }
+
 const run = runPreparationCommand;
 const succeeds = async (command, args, options = {}) => {
     try {
@@ -133,13 +137,21 @@ async function prepareSelectedUnlocked(
         publication = captureNpmPublication,
         metaCache = readNpmMetaCache,
         gitMetaCache = readGitMetaCache,
-        at = new Date().toISOString()
+        at = new Date().toISOString(),
+        pluginIds = null
     } = {}
 ) {
     const run = executeCommand;
     const work = readWork(resolve(workPath)),
         folder = resolve(workPath, '..');
     const selected = selectedItems(work.session);
+    if (
+        pluginIds &&
+        (!pluginIds.length ||
+            new Set(pluginIds).size !== pluginIds.length ||
+            pluginIds.some((id) => !selected.some((item) => item.id === id)))
+    )
+        throw Error('materials require distinct selected plugin IDs');
     const binding = digest({
         session: work.session.id,
         checked_at: work.session.checked_at,
@@ -149,7 +161,7 @@ async function prepareSelectedUnlocked(
     const statePath = resolve(folder, 'PREPARATION-STATE.json');
     const state = existsSync(statePath) ? read(statePath) : { binding, completed: {}, meta_sources: {} };
     if (state.binding !== binding) throw Error('preparation selection changed; use the original WORK');
-    const items = selected.filter((i) => i.status === 'pending');
+    const items = selected.filter((i) => i.status === 'pending' && (!pluginIds || pluginIds.includes(i.id)));
     const checkouts = new Map(),
         errors = [];
     const logPath = resolve(folder, 'PREPARATION-ATTEMPTS.jsonl');
@@ -515,9 +527,11 @@ async function prepareSelectedUnlocked(
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))
     try {
-        const { values } = parseArgs({ options: { work: { type: 'string' } } });
+        const { values } = parseArgs({
+            options: { work: { type: 'string' }, plugin: { type: 'string', multiple: true } }
+        });
         if (!values.work) throw Error('--work required');
-        const errors = await prepareSelected(values.work);
+        const errors = await prepareSelected(values.work, { pluginIds: values.plugin ?? null });
         if (errors.length) process.exitCode = 1;
     } catch (e) {
         console.error(e.message);

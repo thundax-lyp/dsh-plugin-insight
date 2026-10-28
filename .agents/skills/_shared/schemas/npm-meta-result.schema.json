@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "npm",
+    "downloads_source",
+    "publication_source",
+    "cache_error"
+  ],
+  "properties": {
+    "npm": {
+      "allOf": [
+        {
+          "$ref": "github-meta.schema.json#/properties/npm"
+        }
+      ],
+      "required": [
+        "publication"
+      ],
+      "type": "object",
+      "properties": {
+        "publication": {
+          "type": "object",
+          "properties": {
+            "latest_version": {},
+            "latest_published_at": {},
+            "latest_error": {}
+          },
+          "required": [
+            "latest_version",
+            "latest_published_at",
+            "latest_error"
+          ]
+        }
+      }
+    },
+    "downloads_source": {
+      "enum": [
+        "github-meta",
+        "npm"
+      ]
+    },
+    "publication_source": {
+      "enum": [
+        "github-meta",
+        "npm"
+      ]
+    },
+    "cache_error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

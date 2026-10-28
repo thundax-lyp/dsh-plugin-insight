@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync, readFileSync, realpathSync, statSync } from 'node:fs';
-import { dirname, isAbsolute, relative, resolve } from 'node:path';
+import { basename, dirname, isAbsolute, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { createHash } from 'node:crypto';
@@ -10,8 +10,9 @@ import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
 import { validateResearchQuestionArtifact } from '../../dsh-plugin-insight/scripts/research-questions.mjs';
-import { validateWork, stageRecords } from './snapshot-data.mjs';
-import { selectedItems } from './research-session.mjs';
+import { validateWork } from './snapshot-state.mjs';
+import { stageRecords } from './research-work.mjs';
+import { selectedItems } from './session-state.mjs';
 
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const ajv = new Ajv({ strict: true, allErrors: true });
@@ -306,7 +307,24 @@ export function stageAcceptance(bundle, submission, root = ROOT) {
     );
     return { status: 'staged', ids: bundle.deliveries.map((e) => e.id) };
 }
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+export function submitAndStageAcceptance(bundle, reviews, decisionPath, root = ROOT) {
+    const round = realpathSync(dirname(inside(root, bundle.work)));
+    const folder = realpathSync(dirname(resolve(root, decisionPath)));
+    const dest = resolve(folder, basename(decisionPath));
+    if (relative(round, folder).startsWith('..') || isAbsolute(relative(round, folder)))
+        throw Error('output must remain in round');
+    if (existsSync(dest)) throw Error('output exists; use a new acceptance filename');
+    const submission = submitAcceptance(bundle, reviews, root);
+    atomicWrite(dest, submission);
+    const result = stageAcceptance(bundle, submission, root);
+    return { ...result, decisions: relative(realpathSync(root), dest), decisions_digest: digest(submission) };
+}
+
+if (
+    process.argv[1] &&
+    existsSync(process.argv[1]) &&
+    realpathSync(process.argv[1]) === realpathSync(fileURLToPath(import.meta.url))
+) {
     try {
         const { positionals, values } = parseArgs({
             allowPositionals: true,
@@ -323,7 +341,9 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
         };
         const command = positionals[0];
         if (values.question && values.artifact) throw Error('choose --question or --artifact');
-        if (command === 'prepare' || command === 'submit') need('out');
+        if (command === 'prepare' || command === 'submit' || (command === 'stage' && values.input)) need('out');
+        if (command === 'stage' && values.input && values.decisions)
+            throw Error('choose reviews input or existing decisions');
         let dest;
         if (values.out) {
             dest = resolve(values.out);
@@ -341,8 +361,12 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
                 ? readAcceptanceArtifact(read(need('bundle')), need('plugin'), values.artifact)
                 : readAcceptance(read(need('bundle')), need('plugin'), values.question);
         else if (command === 'submit') result = submitAcceptance(read(need('bundle')), read(need('input')));
-        else if (command === 'stage') result = stageAcceptance(read(need('bundle')), read(need('decisions')));
-        else throw Error('expected prepare, read, submit or stage');
+        else if (command === 'stage') {
+            if (values.input) {
+                result = submitAndStageAcceptance(read(need('bundle')), read(values.input), dest);
+                dest = null;
+            } else result = stageAcceptance(read(need('bundle')), read(need('decisions')));
+        } else throw Error('expected prepare, read, submit or stage');
         if (dest) {
             atomicWrite(dest, result);
             console.log(JSON.stringify({ command, output: dest, digest: digest(result) }));

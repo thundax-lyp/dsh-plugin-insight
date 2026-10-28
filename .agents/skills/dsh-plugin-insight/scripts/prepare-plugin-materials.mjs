@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ROOT, atomicWrite, digest, read } from '../../_shared/scripts/plugin-data.mjs';
 import { pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
-import { validateSession } from '../../dsh-plugin-init/scripts/research-session.mjs';
+import { validateSession } from '../../dsh-plugin-init/scripts/session-state.mjs';
 
 const git = (root, args) =>
     execFileSync('git', ['-C', root, ...args], {

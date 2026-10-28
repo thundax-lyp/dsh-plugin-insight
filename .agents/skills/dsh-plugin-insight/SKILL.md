@@ -26,22 +26,20 @@ description: 显式研究一个固定版本的 DSH 插件或相关组件，逐�
 
 读取长规范时先按标题定位当前任务的章节，再分段读正文；不要把全部规范、问题参考和 SOURCE 正文拼成一次大输出。工具返回截断时补读缺失部分，不能把截断内容计为已检查。
 
+## 对外入口
+
+- `research:materials -- --work <WORK.json> --plugin <id>`：一次取得固定版本的统计、META、源码包与材料索引；已有完整材料直接复用。
+- `assemble:insight -- --work <WORK.json> --plugin <id> --analysis <ANALYSIS.json>`：将完成的人工分析装配为研究交付，不自动验收或暂存。
+
+研究者只消费材料包和装配结果，不单独调用统计、缓存、META 或评分模块。
+
 ## 1. 核对输入与材料
 
 取得稳定组件 ID、注册 slug、仓库／组件路径、完整提交、检查时间、目标深度、独占输出目录，以及当前同版本分析、证据与依赖。检查时间是材料的基准时间，不是任务执行截止时刻；不据此省略研究。
 
 已有 `INVENTORY.json`、`MATERIALS.json`、`META.json`、`SOURCE.json` 时，核对身份、版本和摘要后复用。材料不足时只补查影响判断的部分；checkout 必须固定且干净，不执行目标代码。缺少身份或固定版本先核实，不编造 ID。没有活跃 WORK 的独立调用由父 Agent 处理事务入口，子 Agent 不伪造会话字段。
 
-未准备材料时，先用 `npm run inventory:plugin -- --root <readonly-checkout> --ref <commit> --component <path> --out <dir>/INVENTORY.json`，根组件省略 component。只有抽读快照时使用 `--snapshot` 并注明子集，不能报成全插件 LOC；统计与能力确认按[工程方法](references/QUESTION-ENGINEERING.md)。再用：
-
-```sh
-npm run prepare:plugin -- \
-  --session data/runs/<round>/SESSION.json --plugin <id> \
-  --checkout <readonly-checkout> --inventory <dir>/INVENTORY.json \
-  --out <dir>/MATERIALS.json
-```
-
-有目录原件时可重复传 `--directory-entry <file>`。准备器只生成材料索引，不形成 observation、finding 或研究结论；身份／提交／组件不一致时停止。META 与源码证据分开；缓存和独立 `--repository-id` 参数按[数据契约](../_shared/references/DATA-CONTRACT.md#发布输入meta-与统计字段)处理，不用 Star 缓存替代源码、Issue 或推送时间核查。
+材料不足时调用上述材料入口，核对返回的源码版本、四份材料、范围及失败项。统计口径见[工程方法](references/QUESTION-ENGINEERING.md)。材料成功不表示研究完成；不能把抽读子集当成完整组件统计，也不能用指标替代源码和接线核查。
 
 ## 2. 列问题并逐题核查
 

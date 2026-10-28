@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { load as loadYaml } from 'js-yaml';
 import { CATALOG, slug } from '../../_shared/scripts/data-paths.mjs';
-import { resolveRepositoriesAsync } from '../../_shared/scripts/github-batch.mjs';
+import { resolveRepositoriesAsync } from '../../_shared/scripts/github-client.mjs';
 import { ROOT, atomicWrite, digest, read } from '../../_shared/scripts/plugin-data.mjs';
 
 export const AWESOME_URL = 'https://github.com/awesome-dsh-plugin/awesome-dsh-plugin';

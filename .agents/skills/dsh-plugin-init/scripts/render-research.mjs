@@ -7,7 +7,7 @@ import { parseArgs } from 'node:util';
 import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { ROOT, read, validate as validateCatalog } from '../../_shared/scripts/plugin-data.mjs';
-import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
 import { template } from './publication/template.mjs';
 import { renderDetailLayout, splitSections } from './publication/detail-layout.mjs';
 import {
@@ -30,7 +30,7 @@ import {
     renderSources
 } from './publication/blocks.mjs';
 import { REGISTRY, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
-import { validateManifest } from './research-session.mjs';
+import { validateManifest } from './session-state.mjs';
 import { validateManifestPlugin } from './publication-data.mjs';
 const ajv = new Ajv({ strict: true, allErrors: true });
 addFormats(ajv);
@@ -457,8 +457,9 @@ export async function main(args = process.argv.slice(2)) {
     });
     if (!v.input) throw Error('--input is required');
     if (existsSync(resolve(ROOT, 'data/catalog/index.jsonl'))) {
-        const { renderSnapshot } = await import('./snapshot-data.mjs');
-        renderSnapshot(ROOT, v.check);
+        const { renderSnapshot } = await import('./render-snapshot.mjs');
+        const result = renderSnapshot(ROOT, v.check);
+        console.log(JSON.stringify(result));
         return;
     }
     const input = read(resolve(v.input));

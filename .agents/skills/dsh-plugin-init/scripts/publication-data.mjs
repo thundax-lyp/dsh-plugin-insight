@@ -12,8 +12,8 @@ import {
     read,
     validate as validateCatalog
 } from '../../_shared/scripts/plugin-data.mjs';
-import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { validateManifest } from './research-session.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
+import { validateManifest } from './session-state.mjs';
 
 import { validatePublication } from '../../_shared/scripts/publication-validation.mjs';
 export { validatePublication };

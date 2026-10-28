@@ -12,11 +12,7 @@
 
 ## 代码规模、能力清单与代码评价
 
-代码行数复用 Node.js CLI [flosse/sloc](https://github.com/flosse/sloc)，锁定 npm 0.3.2；
-项目 `plugin-inventory.mjs` 负责固定 Git 版本、限定组件、过滤文件、分组和 DSH 专有候选清单，不自写 LOC 算法。
-比较过 node-sloc（CLI 输出选项较少）及 tally（本次查阅时尚未发布 npm、需源码构建）；选型看实际输出及接入负担，
-不根据 Star 决定。sloc 0.3.2 CLI 的 alias 在本环境未生效且会忽略点号开头的路径，封装在临时目录使用可见的合成文件名，
-将 md 映射为 html 并仅取总行数，将 cjs 映射为 js、mts／cts 映射为 ts；输出仍保留真实路径与扩展名。不修改或执行目标代码。
+材料包的 INVENTORY 提供固定 Git 版本、目标组件范围的代码统计和能力候选；保留真实路径、扩展名与统计工具版本，不修改或执行目标代码。
 
 - Markdown：只统计 `.md` 的文件数、总行数和字数；字数为每个 Han 字符计1，剩余连续字母／数字词计1，
   词内连字符／撇号可连接；标记和代码块内容不剥离。与 JS／TS 不合成总 LOC。
@@ -25,7 +21,7 @@
 - 生产、测试和示例按路径分组；依赖、dist／build、vendor／third_party、声明文件和压缩 JS 默认排除并列出原因。
   人工核查启发式是否误排源文件、漏掉生成／复制／第三方代码；不能将净 LOC 当作原创量或人天。
 - 只统计目标组件，必要共享代码另跑一次并单列，不能把整个 monorepo 当插件大小。Python和其他扩展名不纳入。
-- 完整统计优先使用只读 Git 固定提交；材料 checkout 禁用换行转换以保留提交中的原始字节，避免仓库属性把混合换行文件检出为即时脏状态；装配固定 `package.json` 时仅兼容移除解码后的前导 UTF-8 BOM，再按 JSON 解析；抽读快照只能标“已核查文件子集”，不能输出全插件规模。
+- 完整统计须覆盖固定提交的目标组件，并保留原始材料字节；抽读快照只能标“已核查文件子集”，不能输出全插件规模。
 
 DSH 能力清单以[官方插件接口](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/develop/basic/index.md)、
 [Skill 注册](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/skills.md)与源码为依据：
@@ -33,12 +29,12 @@ DSH 能力清单以[官方插件接口](https://github.com/deepseek-ai/deepseek-
 | 项目 | 自动产物与人工确认 |
 |---|---|
 | 内嵌 Skill | 找 SKILL.md 入口并提取简单 name／description；区分示例、无效入口、第三方归属和真正注册的能力；外部 Skill 依赖另列 |
-| Agent／Preset | AST 提取 agentPresets.register 的静态 id 候选；角色提示词、运行实例和 AGENTS.md 不计为定义；配置里的预设与动态工厂人工核查 |
+| Agent／Preset | agentPresets.register 的静态 id 候选；角色提示词、运行实例和 AGENTS.md 不计为定义；配置里的预设与动态工厂人工核查 |
 | 工具、用户命令 | 提取字面量名称及路径／行号，名称去重，命令别名单列；定义、注册与运行时可用性分别判断 |
 | 后台与界面 | 列事件、定时器及已识别 UI 注册候选；自动注入、任务调度和其他适配接口需人工补全，不以调用次数代替能力数 |
 | 使用负担 | 从清单和接线核查必要服务、外部账号／密钥、必填配置；记录持久化目录、跨项目状态、联网和子进程副作用，不保存密钥值 |
 
-脚本使用 TypeScript AST，避开注释和字符串示例；字面量名去重只是静态候选数量，confirmed_count 默认 null。
+静态候选不包含注释或字符串中的示例；字面量名去重只是候选数量，confirmed_count 默认 null。
 动态参数、工厂和解析错误保留路径／行号；未检出不等于确认没有。YAML／JSON 组合、作用域覆盖、别名、
 动态提供者及真正挂载情况需要人工检查；同名跨作用域可能表示不同定义，不能将去重数当运行总数。
 

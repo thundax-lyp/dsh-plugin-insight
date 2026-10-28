@@ -2,7 +2,7 @@ import Ajv from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import { resolve } from 'node:path';
 import { ROOT, read } from './plugin-data.mjs';
-import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
+import { validateMetadata } from './metadata-validation.mjs';
 
 const ajv = new Ajv({ strict: true, allErrors: true, verbose: true });
 addFormats(ajv);

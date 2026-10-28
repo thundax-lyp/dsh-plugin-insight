@@ -1,24 +1,11 @@
 #!/usr/bin/env node
-import { execFileSync } from 'node:child_process';
+import { api } from './github-client.mjs';
+export { api } from './github-client.mjs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { atomicWrite, digest } from './plugin-data.mjs';
 
-export const api = (endpoint) => {
-    try {
-        return JSON.parse(
-            execFileSync('gh', ['api', endpoint], {
-                encoding: 'utf8',
-                timeout: 90_000,
-                maxBuffer: 64 * 1024 * 1024,
-                stdio: ['ignore', 'pipe', 'pipe']
-            })
-        );
-    } catch (error) {
-        throw new Error(`GitHub request failed for ${endpoint}: ${error.stderr?.toString().trim() || error.message}`);
-    }
-};
 export const releaseFingerprint = (releases) =>
     digest(
         releases
