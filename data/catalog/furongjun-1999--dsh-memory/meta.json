@@ -1,0 +1,45 @@
+{
+    "repository": "FuRongJun-1999/dsh-memory",
+    "repository_id": 1334211162,
+    "captured_at": "2026-10-28T03:54:21.981Z",
+    "window_start": "2026-09-28T03:54:21.981Z",
+    "stars": 502,
+    "pushed_at": "2026-10-28T01:53:28Z",
+    "issues": {
+        "open": 6,
+        "closed": 292,
+        "created_30d": 278,
+        "closed_30d": 274,
+        "updated_30d": 280
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-27T15:55:27.864Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
+        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
+        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@furongjun1999/dsh-memory",
+        "captured_at": "2026-10-28T03:54:21.981Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 27192,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40furongjun1999%2Fdsh-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T11:04:37.320Z",
+            "captured_at": "2026-10-27T15:24:06.392Z",
+            "source_url": "https://registry.npmjs.org/%40furongjun1999%2Fdsh-memory",
+            "error": null,
+            "latest_version": "0.9.14",
+            "latest_published_at": "2026-10-25T12:34:59.541Z",
+            "latest_error": null
+        }
+    }
+}
