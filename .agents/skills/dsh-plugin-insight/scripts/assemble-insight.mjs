@@ -3,8 +3,8 @@ import { validateDisplay } from '../../_shared/scripts/publication-validation.mj
 import { createGitReference, gitReferenceUrl } from '../../_shared/scripts/git-reference.mjs';
 import { validateResearchQuestions, renderResearchQuestions } from './research-questions.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
-import { assembleRecommendation } from '../../_shared/scripts/recommendation.mjs';
-import { assembleInnovationScores } from '../../_shared/scripts/innovation-score.mjs';
+import { assembleRecommendation, assembleInnovationScores } from '../../_shared/scripts/research-scoring.mjs';
+
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 // Assemble only an explicitly authored, complete single-plugin analysis; never infer findings from inventory.
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';

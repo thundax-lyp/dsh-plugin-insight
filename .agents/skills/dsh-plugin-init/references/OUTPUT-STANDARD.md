@@ -18,7 +18,7 @@
 
 按当前任务读取相关章节，不把展示模板当研究问题清单；字段与状态的真相源仍为数据契约。
 
-## 当前快照与实现边界
+## 当前快照与展示边界
 
 研究事实的唯一正式真相是当前档案及其引用的当前分析、来源和必要证据；本轮记录先在 runs 暂存，校验后最终合并。完整语义见[数据契约](../../_shared/references/DATA-CONTRACT.md#唯一当前快照与本轮增量)。
 展示输入只组织当前成果，生成页面不承担人工研究真相。下一轮、当前校验和页面生成不应依赖旧 SESSION、历史 manifest 链或已经合并的 runs。
@@ -29,13 +29,12 @@
 
 项目根 `README.md` 是面向读者的研究成果总入口，由 `npm run render:research` 生成，不手工维护。
 生成输入为当前 `data/catalog/index.jsonl` 还原的 publication，逻辑结构由[发布输入 Schema](../../_shared/schemas/publication.schema.json)约束。
-README 由独立块函数合成：标题与已研究数量 → 一句话定位 → 推荐尝试／最近发布／下载热门／按场景查找快捷入口 → 紧凑横幅 → 推荐尝试 → 最近发布 → 下载热门 → 按场景查找 → 研究出处 → LICENSE → 更新时间。横幅显示宽960像素，窄屏随容器缩放，保持扁平比例与替代文本；不在首页展开分类 Star 榜。首页第一阅读视口应能看到至少一项具体推荐，按实际预览核对，不把整个 GitHub 仓库首屏等同于 README 首屏。
+README 内容顺序为：标题与已研究数量 → 一句话定位 → 推荐尝试／最近发布／下载热门／按场景查找快捷入口 → 紧凑横幅 → 推荐尝试 → 最近发布 → 下载热门 → 按场景查找 → 研究出处 → LICENSE → 更新时间。横幅显示宽960像素，窄屏随容器缩放，保持扁平比例与替代文本；不在首页展开分类 Star 榜。首页第一阅读视口应能看到至少一项具体推荐，按实际预览核对，不把整个 GitHub 仓库首屏等同于 README 首屏。
 主标题后、头图前展示“已研究”数量 Badge，点击进入分类索引。数量按稳定组件 ID 去重，统计当前有效发布项及正式快照中仍保留完整研究报告的组件，包含暂时退出发布、等待复核的研究成果；不计仅发现、研究中、受阻或仅保留历史展示稿且没有完整研究报告的条目。计数由生成器从当前快照计算并写入 Shields.io 静态 Badge URL，零项显示0，不依赖在线计数接口或旧 runs；它表示研究覆盖规模，不表示运行验收通过，可能大于当前分类展示数量。
 
 LICENSE 区块链接根 `LICENSE`，标明 CC0-1.0，位于末尾更新时间之前。
 Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/` 维护：README／CATALOG 为总模板，UPDATED／HOME-NAVIGATION／WEEKLY-NEW／LATEST／HOT／RECOMMENDED／CATEGORY-STAR-BOARDS／SOURCES 为块模板，
-条目、分类、插件详情入口、META及徽章使用对应小模板。`.agents/skills/dsh-plugin-init/scripts/publication/blocks.mjs` 只负责筛选、排序与装配，不硬编码标题及段落版式。
-总入口读取模板并填充已核验数据，同一列表不维护两份 Markdown。
+条目、分类、插件详情入口、META及徽章使用对应模板；同一列表不维护两份 Markdown。
 不展示研究历史、本轮范围、完成计数、研究深度、工程使用、内部数据入口或“具体来源版本与覆盖限制见本轮报告”等过程说明。
 
 - **更新时间：** 取当前 META 快照最新北京时间日期；无 META 时用会话检查日期。独立的 META 时间保存在数据中。
@@ -74,7 +73,7 @@ Markdown 版式由 `.agents/skills/dsh-plugin-init/assets/templates/publication/
 正式research_blocks保存未完成研究的固定版本、稳定原因和自包含详情；新轮已知同版本跳过数、本轮受阻数与完成数分别报告，不把跳过算完成或失败。未选、受阻和未完成项保留有效的当前成果；只有经过核实的失效状态才调整当前结论和推荐。当前页面的完整条目集从当前快照取得，不靠历史 manifest 补齐。
 当前快照应能独立重新生成 README、分类和详情展示页；人工分析原文是当前快照引用的正式材料，不留在可清理 runs 中充当唯一依据。
 
-正式更新使用 `snapshot stage／plan／apply`；旧 publication-data.mjs 仅保留兼容实现，并拒绝单独覆盖正式派生发布输入。发布 records 绑定当前 catalog 分析摘要，未选、失败和受阻项保留当前有效记录；受依赖变化影响的失效结论退出推荐与当前展示。
+正式更新使用 `snapshot stage／plan／apply`；旧发布入口不允许单独覆盖正式派生发布输入。发布 records 绑定当前 catalog 分析摘要，未选、失败和受阻项保留当前有效记录；受依赖变化影响的失效结论退出推荐与当前展示。
 不得用临时脚本直接覆盖正式数据来替代事务合并，也不得手写 README 或从静态候选自动生成推荐判断。
 
 详情顶部 META 区在现有指标后展示同样样式的“最新发布 YYYY-MM-DD”Badge，不受30天窗口限制。日期只取已核实 npm `dist-tags.latest` 对应版本的发布时间（META 的 `npm.publication.latest_published_at` 且 latest_error 为 null，版本身份已核实）；未知、失败或未核实包不展示，不以仓库创建、推送、提交日期替代。该字段由展示层读取 META，不写入研究原稿，不改变分析版本或核查状态；仍禁止“最后更新”徽章。
@@ -322,20 +321,7 @@ Issue 搜索强制排除 PR；近期关闭指当前已关闭且 closed_at 落在
 详细分析增加代码规模、能力清单、代码评价及可借鉴处。使用研究规范的统计口径，不在分类短评中堆砌明细。
 统计结果保存 `data/runs/<round>/<plugin-slug>/INVENTORY.json`，源码证据可通过现有 artifact 字段引用，不改 catalog 字段。
 
-固定提交的完整组件统计：
-
-```sh
-npm run inventory:plugin -- --root /path/to/readonly-checkout --ref <commit> --component <component-path> --out data/runs/<round>/<plugin-slug>/INVENTORY.json
-```
-
-仅有已采集的源码快照时：
-
-```sh
-npm run inventory:plugin -- --snapshot data/runs/<round>/<plugin-slug>/SOURCE.json --component <component-path> --out data/runs/<round>/<plugin-slug>/INVENTORY.json
-```
-
-后者必须注明抽读子集，不能当作完整组件统计。根组件省略 component；必要共享目录单独统计，不重复相加。
-底层 CLI 可用 `npm run loc -- --format json --details <path>`，正式交付优先用封装以固定范围和排除口径。
+通过 `research:materials -- --work <WORK.json> --plugin <id>` 取得完整材料包，其中 INVENTORY 保存固定提交和组件范围的统计及能力候选。抽读子集必须明确标记，不当作完整组件统计；必要共享目录单列，不重复相加。
 
 详情分别呈现 Markdown 行数／字数，各 JS／TS 扩展名行数，以及生产／测试／示例范围、统计版本、工具版本和排除项。
 列正式 Skill 与 Agent／Preset 定义的人工确认结果及用途；保留脚本静态候选和未解析点，未知不填0。
@@ -396,7 +382,7 @@ GitHub 与 npm 的独立时间保留在数据中，README 与分类页顶部显�
 
 ## 详细分析展示层
 
-生成器以检查点绑定的研究原稿为输入，使用 DETAIL-OPENING、DETAIL-SHORT／DETAIL-LONG、DETAIL-SECTION／DETAIL-FRAGMENT、DETAIL-STATISTICS 与 ISSUES 模板生成 `data/plugins/<plugin-slug>/INSIGHT.md`，
+详情输入为检查点绑定的研究原稿，输出为 `data/plugins/<plugin-slug>/INSIGHT.md`。
 旧原稿“固定范围与依据”只提取固定提交与链接，随核查说明放在文末；不显示组件 ID、路径、轮次、核查时间及材料清单。完整依据保留在当前快照引用的正式分析和证据中。
 追加“活跃度”区块，展示最新 Issue 统计。README和分类页链接此展示页；原稿不改写，不改变证据、结论或检查点摘要。
 详情展示页不展示“历史对照”章节，无论版本是否变化；相关记录保留在研究原稿中。
@@ -458,7 +444,7 @@ INSIGHT 中代码评价与可借鉴内容的章节标题统一为“工程亮点
 
 证据原文达到10行时，以默认关闭的 `<details>` 折叠，摘要为“查看原文（N行）”；不足10行直接展示。折叠仅包裹原文代码块，来源类型、固定版本文件/行号链接、依据说明、完整回答和未知项保持展开。原文逐字保留，仍使用可容纳内部围栏的代码块，不将折叠当作删减证据或折叠整题的理由。
 
-生成器不对报告全文统一清理空白，保留原文的行尾空格、制表符、CRLF 及正文的 Markdown 强制换行。模板拼接产生的多余空格在对应模板或字段处消除。生成详情 `data/plugins/**/INSIGHT.md` 通过根 `.gitattributes` 关闭 Git 空白错误检查，避免把嵌入证据误判为格式错误；这些文件仍须通过生成一致性校验，其他文件继续执行 Git 空白检查。
+报告和证据原文保留行尾空格、制表符、CRLF 及 Markdown 强制换行，不统一清理原文空白。生成详情仍须通过生成一致性校验。
 
 ### Git 材料定位交付
 

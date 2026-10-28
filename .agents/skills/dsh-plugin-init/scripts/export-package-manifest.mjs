@@ -7,8 +7,8 @@ import { parseArgs } from 'node:util';
 import { ROOT } from '../../_shared/scripts/plugin-data.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
-import { validateMetadata } from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { SNAPSHOT, validateWork } from './snapshot-data.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
+import { SNAPSHOT, validateWork } from './snapshot-state.mjs';
 import {
     githubToken,
     MANIFEST_PATH,
@@ -16,7 +16,7 @@ import {
     META_REPOSITORY,
     readGitHubFile,
     writeGitHubFile
-} from '../../_shared/scripts/github-file.mjs';
+} from '../../_shared/scripts/github-client.mjs';
 
 const RUNS = resolve(ROOT, 'data/runs');
 const PACKAGE_NAME = /^(?:@[a-z0-9][a-z0-9._~-]*\/)?[a-z0-9][a-z0-9._~-]*$/;

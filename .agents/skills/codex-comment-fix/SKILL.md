@@ -27,6 +27,15 @@ description: 仅在显式调用时处理本工程 PR 中未解决的 Codex 线�
 | 评论来源、去重与任何 GitHub 写入 | [GitHub 评论协议](references/GITHUB-REVIEW-PROTOCOL.md)，须完整读取 |
 | 判断或修复 finding | 仅加载该 finding 涉及的数据契约、研究／输出标准、Schema 及实现 |
 
+## 能力入口
+
+| 命令 | 输入 | 输出及副作用 |
+| --- | --- | --- |
+| `codex-review -- inspect` | 仓库、PR 及输出路径 | 完整评审资源与归一化 findings，仅写本地结果 |
+| `codex-review -- apply` | 显式操作计划 | 默认预览；加 `--apply` 才执行计划中的 GitHub 写操作并回读 |
+
+评论读取、识别和去重共同形成可审阅的问题集合；写入必须使用另行确认的操作计划。两种操作共享评审协议，但不因连续调用而自动修复、回复或解决讨论。
+
 ## 分类
 
 finding 是否成立与建议方案是否合适分别判断：

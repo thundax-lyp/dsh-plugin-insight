@@ -436,6 +436,7 @@
                     "enum": [
                       "git-meta",
                       "npm-meta",
+                      "npm-api",
                       "formal-meta",
                       null
                     ]

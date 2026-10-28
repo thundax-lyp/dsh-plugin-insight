@@ -13,7 +13,7 @@ npm run acceptance -- prepare --work data/runs/<round>/WORK.json \
   --input data/runs/<round>/DELIVERIES.json --out data/runs/<round>/BUNDLE.json
 ```
 
-复用 WORK、观察、展示／META及逐题校验器，核对固定身份、版本、指纹、证据和报告问题入口。绑定观察、报告、DISPLAY、PLAN（存在时）及观察引用的全部证据字节，包括额外原件。源码交付须有唯一同身份同版本的 `REVIEWED-SOURCE.json` 完整问题对象；不从旧摘要补造问答。不支持的手工证据形态应先明确完善交付，不能伪装为源码材料绕过校验。
+预检查核对固定身份、版本、指纹、证据和报告问题入口。绑定观察、报告、DISPLAY、PLAN（存在时）及观察引用的全部证据字节，包括额外原件。源码交付须有唯一同身份同版本的 `REVIEWED-SOURCE.json` 完整问题对象；不从旧摘要补造问答。不支持的手工证据形态应先明确完善交付，不能伪装为源码材料绕过校验。
 
 预检查成功只证明所列结构与材料可读取，不证明回答充分、原文支持解释、评分准确或目标插件运行通过。
 
@@ -47,31 +47,24 @@ npm run acceptance -- read --bundle data/runs/<round>/BUNDLE.json --plugin <id> 
 | `dependencies.supplements` | 每份补充原件 `{ path, decision, reason }`；没有补充材料时显式为空数组 |
 
 ```sh
-npm run acceptance -- submit --bundle data/runs/<round>/BUNDLE.json \
+npm run acceptance -- stage --bundle data/runs/<round>/BUNDLE.json \
   --input data/runs/<round>/REVIEWS.json --out data/runs/<round>/DECISIONS.json
 ```
 
-submit 重新核对交付摘要，校验决定覆盖并生成绑定整个 bundle 的决定包。允许保存 revise 结果；整体 accept 不能覆盖某题 revise 或依赖 needs_supplement。提交不会改变 WORK，不表示已经暂存。原件修订后重新 prepare、读取受影响问题并提交新的完整决定，不能只改摘要继承旧通过。
+一次调用保存绑定完整交付的 DECISIONS，并在决定全项通过时暂存。revise、漏题、关键依赖待补查或材料变化均拒绝暂存；已保存的决定不表示 WORK 已更新。原件修订后重新 prepare、逐题阅读并提交新决定，不能只改摘要继承旧通过。
 
 ## 批量暂存与恢复
 
-```sh
-npm run acceptance -- stage --bundle data/runs/<round>/BUNDLE.json \
-  --decisions data/runs/<round>/DECISIONS.json
-```
-
-只接受该 bundle 对应的全项 accept。stage 重新检查文件与决定，再调用现有 `stageRecords`；在 WORK 锁内对实际读入的记录核对预审载荷摘要，失败不保存部分检查点。正式快照保持不变，父 Agent 再按 INIT 执行计划和合并。
+只接受该 bundle 对应的全项 accept；交付文件、决定和预审载荷摘要必须一致，失败不保存部分检查点。正式快照保持不变，父 Agent 再按 INIT 执行计划和合并。
 
 整批已按同一交付暂存时返回 `already_staged`，不重复写入；若批内只有部分条目已暂存，停止并为剩余条目重新准备独立批次，不自动修改选择或撤销旧检查点。WORK 或基线漂移、交付变化、摘要不符与语义退回均须先处理原因，不通过手改过程状态继续。
 
-旧 stage／stage-batch 保留兼容。本流程的语义决定只能由父 Agent 提交，worker 只交付研究；不能用低层入口代替新流程要求的验收。
+已有 DECISIONS 且暂存中断时，可用 `acceptance -- stage --bundle <BUNDLE> --decisions <DECISIONS>` 回读并恢复；不覆盖决定文件。旧 stage／stage-batch 保留兼容。本流程的语义决定只能由父 Agent 提交，worker 只交付研究；不能用低层入口代替新流程要求的验收。
 
 已暂存后发现需要退修时，先按[会话恢复](SESSION-OPERATIONS.md#新轮次与同轮恢复)的 `snapshot reopen` 解除该项检查点并保留旧记录，再允许 worker 修改交付。重新 prepare、读取受影响问题并撰写完整决定；不能覆盖旧 bundle、决定或直接覆盖暂存记录。
 
-## 实现与边界
+## 使用边界
 
-命令与导出函数由 [research-acceptance.mjs](../scripts/research-acceptance.mjs) 实现。`stageRecords` 的可选记录核对回调在锁内、WORK 保存前运行，比较观察、报告、展示输入和全部嵌入证据；现有调用方默认行为不变。
-
-此链减少重复协议拼接与临时脚本，不自动缩减研究问题、不生成判断、不承诺 TOKEN 或质量提升。报告与当前正式数据结构不变；BUNDLE、REVIEWS、DECISIONS 只是可清理的本轮过程材料，不能成为下一轮或当前快照的必需依赖。
+验收命令不生成研究判断，也不证明研究质量或 TOKEN 消耗得到改善。BUNDLE、REVIEWS、DECISIONS 是本轮过程材料，不成为下一轮或当前快照的必需依赖。
 
 固定版本重放、拒绝边界和验证限制见[实施验证](ACCEPTANCE-CHAIN-EVIDENCE.md)。

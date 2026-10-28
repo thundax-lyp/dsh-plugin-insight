@@ -29,7 +29,15 @@
         "acceptance": "node .agents/skills/dsh-plugin-init/scripts/research-acceptance.mjs",
         "prepare:selected": "node .agents/skills/dsh-plugin-init/scripts/prepare-selected.mjs",
         "assemble:insight": "node .agents/skills/dsh-plugin-insight/scripts/assemble-insight.mjs",
-        "export:meta-manifests": "node .agents/skills/dsh-plugin-init/scripts/export-meta-manifests.mjs"
+        "export:meta-manifests": "node .agents/skills/dsh-plugin-init/scripts/export-meta-manifests.mjs",
+        "meta:npm": "node .agents/skills/_shared/scripts/npm-meta.mjs",
+        "meta:github": "node .agents/skills/_shared/scripts/github-meta.mjs",
+        "research:start": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs start",
+        "research:next": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs next",
+        "research:plan": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs plan",
+        "research:apply": "node .agents/skills/dsh-plugin-init/scripts/snapshot-data.mjs apply",
+        "research:prepare": "node .agents/skills/dsh-plugin-init/scripts/prepare-research.mjs",
+        "research:materials": "node .agents/skills/dsh-plugin-init/scripts/prepare-research.mjs --materials-only"
     },
     "devDependencies": {
         "ajv": "8.20.0",

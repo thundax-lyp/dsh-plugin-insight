@@ -4,7 +4,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync
 import { resolve, dirname, relative, basename, extname } from 'node:path';
 import { createHash } from 'node:crypto';
 import { ROOT, read, digest, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
-import { validateSession } from './research-session.mjs';
+import { validateSession } from './session-state.mjs';
 import { CATALOG, PUBLICATION, REGISTRY, MIGRATION, slug } from '../../_shared/scripts/data-paths.mjs';
 import { readSnapshotStorage } from '../../_shared/scripts/snapshot-storage.mjs';
 import { verifyCleanup } from './maintain-runs.mjs';

@@ -1,5 +1,8 @@
-import { metricTimestamp as dateTime, metricDate as date } from './metric-time.mjs';
-import { META_BRANCH, META_PATH, META_REPOSITORY, readGitHubFile } from './github-file.mjs';
+import { validateNpmResult, metricTimestamp as dateTime, metricDate as date } from './metadata-validation.mjs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { META_BRANCH, META_PATH, META_REPOSITORY, readGitHubFile } from './github-client.mjs';
 
 const PACKAGE_NAME = /^(?:@[a-z0-9][a-z0-9._~-]*\/)?[a-z0-9][a-z0-9._~-]*$/;
 const META_KEYS = new Set([
@@ -14,20 +17,6 @@ const META_KEYS = new Set([
     'error'
 ]);
 const bytewise = (left, right) => Buffer.compare(Buffer.from(left), Buffer.from(right));
-const DAY_MS = 86400000;
-const freshAt = (checkedAt, at) => {
-    const age = Date.parse(at) - Date.parse(checkedAt);
-    return dateTime(at) && dateTime(checkedAt) && age >= 0 && age <= DAY_MS;
-};
-const downloadWindowAt = (at) => {
-    const end = new Date(Date.parse(at));
-    end.setUTCHours(0, 0, 0, 0);
-    end.setUTCDate(end.getUTCDate() - 1);
-    const start = new Date(end);
-    start.setUTCDate(start.getUTCDate() - 29);
-    return { start: start.toISOString().slice(0, 10), end: end.toISOString().slice(0, 10) };
-};
-
 function validateError(value, line) {
     if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error(`invalid META error at line ${line}`);
     const keys = Object.keys(value);
@@ -104,16 +93,13 @@ export async function readNpmMetaCache({
     return { ...file, repository, path, branch, records: parseNpmMeta(file.text) };
 }
 
-export function cachedNpmDownloads(packageName, record, at = new Date().toISOString()) {
-    const expectedWindow = dateTime(at) ? downloadWindowAt(at) : { start: null, end: null };
+export function cachedNpmDownloads(packageName, record) {
     if (
         !record ||
         record.package !== packageName ||
-        !freshAt(record.checked_at, at) ||
+        !dateTime(record.checked_at) ||
         !date(record.window_start) ||
         !date(record.window_end) ||
-        record.window_start !== expectedWindow.start ||
-        record.window_end !== expectedWindow.end ||
         !Number.isSafeInteger(record.downloads_30d) ||
         record.downloads_30d < 0
     )
@@ -129,11 +115,11 @@ export function cachedNpmDownloads(packageName, record, at = new Date().toISOStr
     };
 }
 
-export function cachedNpmPublication(packageName, record, at = new Date().toISOString()) {
+export function cachedNpmPublication(packageName, record) {
     if (
         !record ||
         record.package !== packageName ||
-        !freshAt(record.checked_at, at) ||
+        !dateTime(record.checked_at) ||
         !dateTime(record.first_published_at) ||
         typeof record.latest_version !== 'string' ||
         !record.latest_version ||
@@ -151,28 +137,128 @@ export function cachedNpmPublication(packageName, record, at = new Date().toISOS
     };
 }
 
+const requestNpm = async (url) => {
+    const response = await fetch(url, { signal: AbortSignal.timeout(30000) });
+    if (!response.ok) throw Error(`HTTP ${response.status}`);
+    return response.json();
+};
+
+export async function captureNpmPublication(name, request = requestNpm, at = new Date().toISOString()) {
+    if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(name)) throw Error('invalid npm package name');
+    const url = `https://registry.npmjs.org/${encodeURIComponent(name)}`;
+    const result = {
+        first_published_at: null,
+        captured_at: at,
+        source_url: url,
+        error: null,
+        latest_version: null,
+        latest_published_at: null,
+        latest_error: null
+    };
+    try {
+        const data = await request(url);
+        if (data.name !== name) throw Error('npm package identity mismatch');
+        const time = Date.parse(data.time?.created);
+        if (!Number.isFinite(time) || time > Date.parse(at)) result.error = 'npm first publication time mismatch';
+        else result.first_published_at = new Date(time).toISOString();
+        const latest = data['dist-tags']?.latest;
+        const release = data.versions?.[latest];
+        const published = Date.parse(data.time?.[latest]);
+        if (
+            typeof latest !== 'string' ||
+            !latest ||
+            release?.version !== latest ||
+            release?.name !== name ||
+            !Number.isFinite(published) ||
+            published > Date.parse(at)
+        ) {
+            result.latest_error = 'npm latest tag, version identity or publication time mismatch';
+        } else {
+            result.latest_version = latest;
+            result.latest_published_at = new Date(published).toISOString();
+        }
+    } catch (e) {
+        result.error = e.message;
+        result.latest_error = e.message;
+    }
+    return result;
+}
+export async function captureNpmDownloads(name, request = requestNpm, at = new Date().toISOString()) {
+    if (!/^(?:@[a-z0-9][a-z0-9._-]*\/)?[a-z0-9][a-z0-9._-]*$/.test(name)) throw Error('invalid npm package name');
+    const end = new Date(Date.parse(at));
+    end.setUTCHours(0, 0, 0, 0);
+    end.setUTCDate(end.getUTCDate() - 1);
+    const start = new Date(end);
+    start.setUTCDate(start.getUTCDate() - 29);
+    const from = start.toISOString().slice(0, 10),
+        to = end.toISOString().slice(0, 10);
+    const url = `https://api.npmjs.org/downloads/point/${from}:${to}/${encodeURIComponent(name)}`;
+    const result = {
+        package_name: name,
+        captured_at: at,
+        window_start: from,
+        window_end: to,
+        downloads_30d: null,
+        source_url: url,
+        error: null
+    };
+    try {
+        const data = await request(url);
+        if (
+            data.package !== name ||
+            data.start !== from ||
+            data.end !== to ||
+            !Number.isSafeInteger(data.downloads) ||
+            data.downloads < 0
+        )
+            throw Error('npm package, window or count mismatch');
+        result.downloads_30d = data.downloads;
+    } catch (e) {
+        result.error = e.message;
+    }
+    return result;
+}
 export async function resolveNpmMetadata(
     packageName,
     record,
-    { downloads, publication, at = new Date().toISOString() }
+    { downloads = captureNpmDownloads, publication = captureNpmPublication, at = new Date().toISOString() } = {}
 ) {
-    const cachedDownloads = cachedNpmDownloads(packageName, record, at);
-    const cachedPublication = cachedNpmPublication(packageName, record, at);
-    if (!cachedDownloads) {
-        const npm = await downloads(packageName, undefined, at, { publication: cachedPublication ?? undefined });
-        if (cachedPublication) npm.publication = cachedPublication;
-        return {
-            npm,
-            downloads_source: 'npm',
-            publication_source: cachedPublication ? 'github-meta' : 'npm'
-        };
-    }
+    if (typeof packageName !== 'string' || packageName.length > 214 || !PACKAGE_NAME.test(packageName))
+        throw Error('invalid npm package name');
+    if (!dateTime(at)) throw Error('invalid META capture time');
+    const cachedDownloads = cachedNpmDownloads(packageName, record);
+    const cachedPublication = cachedNpmPublication(packageName, record);
+    const [npm, published] = await Promise.all([
+        cachedDownloads ?? downloads(packageName, undefined, at),
+        cachedPublication ?? publication(packageName, undefined, at)
+    ]);
     return {
-        npm: {
-            ...cachedDownloads,
-            publication: cachedPublication ?? (await publication(packageName, undefined, at))
-        },
-        downloads_source: 'github-meta',
+        npm: { ...npm, publication: published },
+        downloads_source: cachedDownloads ? 'github-meta' : 'npm',
         publication_source: cachedPublication ? 'github-meta' : 'npm'
     };
+}
+
+export async function getNpmMetadata(packageName, { cache = readNpmMetaCache, at = new Date().toISOString() } = {}) {
+    if (typeof packageName !== 'string' || packageName.length > 214 || !PACKAGE_NAME.test(packageName))
+        throw Error('invalid npm package name');
+    if (!dateTime(at)) throw Error('invalid META capture time');
+    let record,
+        cacheError = null;
+    try {
+        record = (await cache()).records.get(packageName);
+    } catch (error) {
+        cacheError = error.message;
+    }
+    return validateNpmResult({ ...(await resolveNpmMetadata(packageName, record, { at })), cache_error: cacheError });
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+    try {
+        if (process.argv.length !== 3) throw Error('Usage: npm-meta.mjs PACKAGE');
+        console.log(JSON.stringify(await getNpmMetadata(process.argv[2])));
+    } catch (error) {
+        console.error(error.message);
+        process.exitCode = 1;
+    }
 }

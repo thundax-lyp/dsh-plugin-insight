@@ -80,7 +80,7 @@ Refs: PR #87, Codex review #5244237476, finding #1
 
 ## 固定命令与本地计划
 
-评论读取与受控写入统一使用根命令 `npm run codex-review --`。`inspect` 对 REST 列表和 GraphQL threads 分页，输出归一化 JSON；输出文件及 apply plan 是本地过程数据，不进入 Git。脚本只识别配置中的 Codex 登录名，不用正文风格猜测作者。
+评论读取与受控写入统一使用根命令 `npm run codex-review --`。`inspect` 返回完整评论集合的归一化 JSON；输出文件及 apply plan 是本地过程数据，不进入 Git。脚本只识别配置中的 Codex 登录名，不用正文风格猜测作者。
 
 `apply` 默认 dry-run，只有显式 `--apply` 才写 GitHub。计划格式为：
 
@@ -99,6 +99,6 @@ Refs: PR #87, Codex review #5244237476, finding #1
 }
 ```
 
-`key` 形成隐藏幂等标记；重复执行会读取目标状态后跳过已有 reaction、reply、summary comment 和已 resolved thread。额度删除必须同时匹配资源类型、Codex 作者、原正文 SHA-256 和纯额度提示规则。脚本逐项执行并回读，一项失败即停止，不继续推断后续写入成功。
+`key` 形成隐藏幂等标记；重复执行会读取目标状态后跳过已有 reaction、reply、summary comment 和已 resolved thread。额度删除必须同时匹配资源类型、Codex 作者、原正文 SHA-256 和纯额度提示规则。一项失败时停止并报告，后续操作不得标记为成功。
 
 脚本刻意不执行代码修改、暂存、commit、push、PR 创建或合并：这些动作需要结合 finding、工作区和工程授权判断，继续由 Agent 按提交与 PR 规则完成。

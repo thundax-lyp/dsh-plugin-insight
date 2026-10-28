@@ -6,17 +6,19 @@ import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { PUBLICATION, pluginDirectory } from '../../_shared/scripts/data-paths.mjs';
 import { ROOT, read, atomicWrite } from '../../_shared/scripts/plugin-data.mjs';
-import { api } from '../../_shared/scripts/capture-github.mjs';
+import { api } from '../../_shared/scripts/github-client.mjs';
+import { captureMetadata, readGitMetaCache } from '../../_shared/scripts/github-meta.mjs';
 import {
-    captureMetadata,
     captureNpmPublication,
     captureNpmDownloads,
-    validateMetadata
-} from '../../dsh-plugin-insight/scripts/capture-plugin-meta.mjs';
-import { validateManifest } from './research-session.mjs';
+    cachedNpmPublication,
+    readNpmMetaCache,
+    resolveNpmMetadata
+} from '../../_shared/scripts/npm-meta.mjs';
+import { validateMetadata } from '../../_shared/scripts/metadata-validation.mjs';
+import { validateManifest } from './session-state.mjs';
 import { main as render } from './render-research.mjs';
-import { cachedNpmPublication, readNpmMetaCache, resolveNpmMetadata } from '../../_shared/scripts/npm-meta-cache.mjs';
-import { readGitMetaCache } from '../../_shared/scripts/git-meta-cache.mjs';
+
 const scripts = /\.(?:[cm]?[jt]s|[jt]sx)$/i;
 export function inspectUpdate(item, request = api, at = new Date().toISOString()) {
     const result = {
@@ -54,6 +56,7 @@ export function inspectUpdate(item, request = api, at = new Date().toISOString()
     }
     return result;
 }
+
 export async function refresh(
     inputPath,
     {
@@ -183,7 +186,8 @@ export async function refresh(
     publicationInput.metadata = mapping;
     if (snapshot) {
         const { digest } = await import('../../_shared/scripts/plugin-data.mjs');
-        const { validateSnapshot, renderSnapshot } = await import('./snapshot-data.mjs');
+        const { validateSnapshot } = await import('./snapshot-state.mjs');
+        const { renderSnapshot } = await import('./render-snapshot.mjs');
         validateSnapshot(snapshot, root);
         const { openSync, closeSync, unlinkSync } = await import('node:fs');
         const fd = openSync(snapshotPath + '.lock', 'wx', 0o600);
