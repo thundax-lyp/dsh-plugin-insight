@@ -1,0 +1,45 @@
+{
+    "repository": "Yuuyuko-uu/dsh-fish-memory",
+    "repository_id": 1379834969,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 324,
+    "pushed_at": "2026-10-28T16:33:53Z",
+    "issues": {
+        "open": 2,
+        "closed": 8,
+        "created_30d": 10,
+        "closed_30d": 8,
+        "updated_30d": 10
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T06:21:21.324Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-fish-memory",
+        "captured_at": "2026-10-29T01:33:21.476Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-fish-memory",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-10-29T01:33:21.476Z",
+            "source_url": "https://registry.npmjs.org/dsh-fish-memory",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

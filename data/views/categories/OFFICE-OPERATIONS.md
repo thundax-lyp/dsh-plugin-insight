@@ -17,6 +17,7 @@
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI 与扩展让 Agent 操作已登录的 Chrome 或 Edge | 从专用profile的只读任务试用，验收窗口、借还与停止。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DSH × Univer Office](#plugin-1335241492-root) | 在 DSH 中创建、编辑和审阅多种办公内容，并以隔离草稿管理变更与导出 | [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04) 单人简单文件副本有限试用，审核后才合并并在原Office程序核对；复杂格式和不互信多用户部署不包含在建议内。 |
+| [DSH Notes 对话导出](#plugin-1182135360-dsh-plugin) | 将 Agent 整理的 Markdown 写入便签服务，或经匿名渲染生成本地 PNG 长图。 | 已有可信便签服务者可用非敏感短对话试导出，回读内容/分类/实际server；类型不符、内容遗漏或超时重复时停自动流程，先核对已有ID，退回复制粘贴。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
@@ -37,6 +38,7 @@
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [NocoBase](#plugin-306829688-root) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | 有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。 |
 | [Reactive Resume](#plugin-249995750-root) | 开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。 | 先以虚构/脱敏履历试用非AI编辑、导出和检查，验收权限与PDF再接模型；不用规则分替代事实或招聘效果判断。 |
+| [Windows Computer Use](#plugin-1336280167-root) | 把 Windows UIA、截图/OCR、真实输入与后台浏览器通道接入 DSH/MCP，并提供接管提示和停止控制。 | Windows隔离桌面上只试记事本/本地网页无提交动作，逐步核后条件与取消；重要业务先用稳定API或人工，见 [Q04](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q04)。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
 <a id="plugin-1334428397-root"></a>
@@ -118,6 +120,22 @@
 > **建议**：可以提出未验证的审核收据，把readyDraftHeadRevision、人工确认的关键公式/文本断言、截图或lint结果和导出文件摘要绑定到同一版本；任何后续改动使旧结果显式过期。相对只有ready或局部渲染检查，增量是让用户知道“审核的是哪版、导出的又是哪版”，而非再增加Office功能数量。
 
 [查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1182135360-dsh-plugin"></a>
+
+## [DSH Notes 对话导出](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 315](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=315&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes) [![npm 30d 848](https://img.shields.io/static/v1?label=npm+30d&message=848&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes)
+
+> **用途**：希望把对话整理成可编辑便签或分享长图的DSH用户，可使用统一工具，但要明确输出类型与发送目的地。见[Q01](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q01)。
+
+> **亮点**：统一工具连接笔记与图片两类输出，云端更新保留未传字段并带乐观版本比较；减少接线但不证明节时或原文完整。见[Q01](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q01)、[Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02)。
+
+> **思考**：未配baseUrl会把完整markdown发公网演示渲染，图片不是可编辑笔记；409重试也不能解决保存后响应丢失，盲重试新建可能重复。见[Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02)、[Q03](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q03)。
+
+> **建议**：未验证假设是稳定操作ID加结果未知/回读确认状态，可减少断线后的重复导出；以提交后断线、409和本地写失败比较重复与恢复时间，服务无支持时先给可核对ID不假装exactly-once。见[Q05](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418842530-root"></a>
 
@@ -439,6 +457,22 @@
 
 [查看完整分析](../../plugins/reactive-resume--reactive-resume/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1336280167-root"></a>
+
+## [Windows Computer Use](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md)
+
+[![GitHub ★ 289](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=289&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yu-tao-Li/dsh-computer-use-win) [![npm 30d 13,527](https://img.shields.io/static/v1?label=npm+30d&message=13%2C527&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use-win) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-computer-use-win)
+
+> **用途**：没有稳定API的Windows本机操作可在隔离测试桌面逐动作试用；有API时以同任务可靠性比较，不推导无人值守业务可用，见 [Q01](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q01)。
+
+> **亮点**：DSH/MCP与常驻UIA桥、背景优先升级输入、窗口身份/遮挡校验及sent/unknown反馈形成实际工具循环，见 [Q02](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q02)。
+
+> **思考**：sent不是业务成功，取消不撤已发动作；quiet网页不武装桌面Esc，保留浏览器profile也不等无登录隔离，见 [Q02](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q02) 与 [Q03](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q03)。
+
+> **建议**：组合观察版本、目标身份、派发/实际后条件与可撤性的动作收据，检验是否减少误确认与未知重试；未实现需求未知，见 [Q04](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1335382133-root"></a>
 
 ## [赤诚推送 chicheng-push](../../plugins/534119219--chicheng-push/INSIGHT.md)
@@ -459,4 +493,4 @@
 
 ## 更新时间
 
-2026-10-28
+2026-10-29

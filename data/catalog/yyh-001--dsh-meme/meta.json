@@ -1,0 +1,45 @@
+{
+    "repository": "yyh-001/dsh-meme",
+    "repository_id": 1333232606,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 427,
+    "pushed_at": "2026-10-28T17:09:32Z",
+    "issues": {
+        "open": 0,
+        "closed": 33,
+        "created_30d": 21,
+        "closed_30d": 21,
+        "updated_30d": 21
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-meme",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 37800,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-meme",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T02:40:16.885Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
+            "source_url": "https://registry.npmjs.org/dsh-meme",
+            "error": null,
+            "latest_version": "0.1.67",
+            "latest_published_at": "2026-10-28T17:11:30.731Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "xiajiajun516/dsh-config-manager",
+    "repository_id": 1334434081,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 265,
+    "pushed_at": "2026-10-28T23:43:55Z",
+    "issues": {
+        "open": 3,
+        "closed": 59,
+        "created_30d": 40,
+        "closed_30d": 40,
+        "updated_30d": 42
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-config-manager",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 19037,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-config-manager",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T19:01:25.833Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
+            "source_url": "https://registry.npmjs.org/dsh-config-manager",
+            "error": null,
+            "latest_version": "0.1.86",
+            "latest_published_at": "2026-10-27T23:29:38.600Z",
+            "latest_error": null
+        }
+    }
+}

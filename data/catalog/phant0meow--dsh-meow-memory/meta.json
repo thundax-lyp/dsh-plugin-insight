@@ -1,0 +1,50 @@
+{
+    "repository": "Phant0Meow/dsh-meow-memory",
+    "repository_id": 1333986968,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 326,
+    "pushed_at": "2026-10-26T14:26:15Z",
+    "issues": {
+        "open": null,
+        "closed": 47,
+        "created_30d": 39,
+        "closed_30d": 33,
+        "updated_30d": 46
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A204:1AF9A8:58EE710:7ED8682:6AE2A2AA and timestamp 2026-10-29 01:34:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "meow-memory",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 18516,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/meow-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T06:02:58.745Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
+            "source_url": "https://registry.npmjs.org/meow-memory",
+            "error": null,
+            "latest_version": "0.32.1",
+            "latest_published_at": "2026-10-26T14:27:49.927Z",
+            "latest_error": null
+        }
+    }
+}

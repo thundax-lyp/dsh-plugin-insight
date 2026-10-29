@@ -1,9 +1,9 @@
 {
     "repository": "2384418321/dsh-integration-settings",
-    "repository_id": 1429103083,
-    "captured_at": "2026-10-28T03:54:21.981Z",
-    "window_start": "2026-09-28T03:54:21.981Z",
-    "stars": 0,
+    "repository_id": null,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": null,
     "pushed_at": null,
     "issues": {
         "open": null,
@@ -18,28 +18,17 @@
             "message": "GitHub request failed for repositories/1429103083: gh: Not Found (HTTP 404)"
         }
     ],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-27T09:21:47.136Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
-        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
-        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-integration-settings",
-        "captured_at": "2026-10-28T03:54:21.981Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
+        "captured_at": "2026-10-29T01:33:21.476Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-integration-settings",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-integration-settings",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-28T03:54:21.981Z",
+            "captured_at": "2026-10-29T01:33:21.476Z",
             "source_url": "https://registry.npmjs.org/dsh-integration-settings",
             "error": "HTTP 404",
             "latest_version": null,

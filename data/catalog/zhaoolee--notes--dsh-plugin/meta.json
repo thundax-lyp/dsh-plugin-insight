@@ -1,0 +1,45 @@
+{
+    "repository": "zhaoolee/notes",
+    "repository_id": 1182135360,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 315,
+    "pushed_at": "2026-10-28T01:24:58Z",
+    "issues": {
+        "open": 1,
+        "closed": 4,
+        "created_30d": 2,
+        "closed_30d": 1,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@zhaoolee/dsh-notes",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 848,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40zhaoolee%2Fdsh-notes",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T02:06:46.963Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
+            "source_url": "https://registry.npmjs.org/%40zhaoolee%2Fdsh-notes",
+            "error": null,
+            "latest_version": "0.1.2",
+            "latest_published_at": "2026-08-15T13:11:53.368Z",
+            "latest_error": null
+        }
+    }
+}
