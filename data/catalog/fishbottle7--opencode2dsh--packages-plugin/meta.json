@@ -1,0 +1,66 @@
+{
+    "repository": "FishBottle7/opencode2dsh",
+    "repository_id": 1350368388,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 367,
+    "pushed_at": "2026-10-20T14:51:47Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFishBottle7%2Fopencode2dsh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCB0:1E10CC:16397B0:17EE5B0:6AE2A293 and timestamp 2026-10-29 01:34:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFishBottle7%2Fopencode2dsh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCB6:34EF71:16252BE:17DAE9F:6AE2A294 and timestamp 2026-10-29 01:34:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFishBottle7%2Fopencode2dsh%20is%3Aissue%20created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCD2:1E4B67:1613564:17C93F3:6AE2A295 and timestamp 2026-10-29 01:34:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFishBottle7%2Fopencode2dsh%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FCD6:2E517E:1583BDE:1739EDA:6AE2A296 and timestamp 2026-10-29 01:34:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFishBottle7%2Fopencode2dsh%20is%3Aissue%20updated%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0D7E:1D859C:15F0DD7:17A6BBE:6AE2A297 and timestamp 2026-10-29 01:34:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T06:21:21.324Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@opencode2dsh/dsh-plugin",
+        "captured_at": "2026-10-27T15:24:06.392Z",
+        "window_start": "2026-09-27",
+        "window_end": "2026-10-26",
+        "downloads_30d": 12915,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40opencode2dsh%2Fdsh-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-29T08:25:47.895Z",
+            "captured_at": "2026-10-27T15:24:06.392Z",
+            "source_url": "https://registry.npmjs.org/%40opencode2dsh%2Fdsh-plugin",
+            "error": null,
+            "latest_version": "0.3.14",
+            "latest_published_at": "2026-10-20T11:41:33.651Z",
+            "latest_error": null
+        }
+    }
+}

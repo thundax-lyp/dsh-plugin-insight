@@ -1,0 +1,54 @@
+{
+    "repository": "kingOfSoySauce/dsh-skin-market",
+    "repository_id": 1335912966,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 276,
+    "pushed_at": "2026-10-29T01:36:27Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 4,
+        "closed_30d": 6,
+        "updated_30d": 6
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AkingOfSoySauce%2Fdsh-skin-market%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 96EE:1EB5C1:15F4110:17AAFBF:6AE2A326 and timestamp 2026-10-29 01:36:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AkingOfSoySauce%2Fdsh-skin-market%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 96F4:3500C5:15D39DF:178B4E2:6AE2A328 and timestamp 2026-10-29 01:36:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-skin-market",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 10185,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-skin-market",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T03:32:15.373Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
+            "source_url": "https://registry.npmjs.org/dsh-skin-market",
+            "error": null,
+            "latest_version": "0.1.71",
+            "latest_published_at": "2026-10-28T06:25:06.791Z",
+            "latest_error": null
+        }
+    }
+}
