@@ -1,0 +1,45 @@
+{
+    "repository": "PM-Shawn/Abu-Cowork",
+    "repository_id": 1177055450,
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 408,
+    "pushed_at": "2026-10-28T16:14:51Z",
+    "issues": {
+        "open": 46,
+        "closed": 31,
+        "created_30d": 3,
+        "closed_30d": 11,
+        "updated_30d": 14
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "abu",
+        "captured_at": "2026-10-29T03:03:10.741Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 204,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/abu",
+        "error": null,
+        "publication": {
+            "first_published_at": "2012-11-28T16:46:36.072Z",
+            "captured_at": "2026-10-29T03:03:10.741Z",
+            "source_url": "https://registry.npmjs.org/abu",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2013-04-09T10:28:24.869Z",
+            "latest_error": null
+        }
+    }
+}

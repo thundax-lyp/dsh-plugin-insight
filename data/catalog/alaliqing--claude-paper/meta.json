@@ -1,0 +1,45 @@
+{
+    "repository": "alaliqing/claude-paper",
+    "repository_id": 1154333841,
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 353,
+    "pushed_at": "2026-08-14T09:09:33Z",
+    "issues": {
+        "open": 0,
+        "closed": 4,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@zlzliqing/claude-paper",
+        "captured_at": "2026-10-29T03:03:10.741Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 307,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/%40zlzliqing%2Fclaude-paper",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T07:42:45.081Z",
+            "captured_at": "2026-10-29T03:03:10.741Z",
+            "source_url": "https://registry.npmjs.org/%40zlzliqing%2Fclaude-paper",
+            "error": null,
+            "latest_version": "1.2.1",
+            "latest_published_at": "2026-08-14T08:34:47.508Z",
+            "latest_error": null
+        }
+    }
+}

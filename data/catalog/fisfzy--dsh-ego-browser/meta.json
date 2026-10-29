@@ -1,0 +1,66 @@
+{
+    "repository": "Fisfzy/dsh-ego-browser",
+    "repository_id": 1326394141,
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 343,
+    "pushed_at": "2026-10-28T11:28:32Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFisfzy%2Fdsh-ego-browser%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D660:3500C5:16B2813:187D407:6AE2B82C and timestamp 2026-10-29 03:06:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFisfzy%2Fdsh-ego-browser%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D666:1109B8:16BEABE:18897DC:6AE2B82C and timestamp 2026-10-29 03:06:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFisfzy%2Fdsh-ego-browser%20is%3Aissue%20created%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D66C:2C8B20:17441F0:190E13C:6AE2B82F and timestamp 2026-10-29 03:06:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFisfzy%2Fdsh-ego-browser%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 23BE:1AEFC2:167103E:1839BF7:6AE2B832 and timestamp 2026-10-29 03:06:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFisfzy%2Fdsh-ego-browser%20is%3Aissue%20updated%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 23C0:10ABCC:173F9B1:1909DD4:6AE2B833 and timestamp 2026-10-29 03:06:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-ego-browser",
+        "captured_at": "2026-10-29T03:03:10.741Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 12596,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-ego-browser",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-26T09:27:46.335Z",
+            "captured_at": "2026-10-29T03:03:10.741Z",
+            "source_url": "https://registry.npmjs.org/dsh-ego-browser",
+            "error": null,
+            "latest_version": "0.9.6",
+            "latest_published_at": "2026-10-28T11:41:08.717Z",
+            "latest_error": null
+        }
+    }
+}
