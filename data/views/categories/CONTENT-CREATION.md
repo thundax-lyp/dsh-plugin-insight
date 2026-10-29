@@ -51,6 +51,7 @@
 | [TongFlow](#plugin-1204369117-root) | 以模态和能力组织多媒体节点，提供可视化工作流及多种模型插件的执行入口。 | 已有多阶段媒体任务者可在本地副本先试一个slot和最少插件，限制账户额度并记录远端任务状态；若单次生成已足够，或不能承担持久卷和失败对账，继续现有供应商界面。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin 桌面写作应用](#plugin-1275436512-root) | 本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。 | [Q04](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q04) 用短篇副本试一章，先明确合格稿标准、费用和人工预算；定稿响应未知先查committed及finalizationId，不重新创建提交。 |
+| [开源版锤子便签（根应用）](#plugin-1182135360-root) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 先以单人、单活动编辑端和非敏感稿件试用，保留Markdown原稿，核对主题、图片和全文后再分享；多端并发编辑暂缓。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -676,8 +677,24 @@
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1182135360-root"></a>
+
+## [开源版锤子便签（根应用）](../../plugins/zhaoolee--notes/INSIGHT.md)
+
+[![GitHub ★ 315](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=315&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes)
+
+> **用途**：以单人编辑为主的内容作者可把 Markdown 便签排版为主题长图或文章资源，先保留源稿再分享，详见 [Q01](../../plugins/zhaoolee--notes/INSIGHT.md#research-q01)。
+
+> **亮点**：应用把便签源稿、主题、资源等待和截图输出串在同一流程，前端还核对导出主题，减少手动组合不同工具的步骤；价值属于集成设计和有条件推断，见 [Q01](../../plugins/zhaoolee--notes/INSIGHT.md#research-q01) 与 [Q03](../../plugins/zhaoolee--notes/INSIGHT.md#research-q03)。
+
+> **思考**：单页串行保存不能推出多端无覆盖。Web请求未传服务端可选的expectedUpdatedAt，多设备的整工作区后写可能覆盖先写；实际损失尚未复现，因此试用应限制单活动编辑端并保留源稿，见 [Q02](../../plugins/zhaoolee--notes/INSIGHT.md#research-q02)。
+
+> **建议**：让每次Web写入强制带云版本，并在冲突时保留双方副本，可能减少静默覆盖，但也增加人工合并负担。这是未实现假设，用双端不同/相同便签和断网重连对照，任一方内容无提示消失则否定，见 [Q05](../../plugins/zhaoolee--notes/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/zhaoolee--notes/INSIGHT.md) · [返回表格](#category-index)
+
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-10-28
+2026-10-29

@@ -1,10 +1,10 @@
 {
     "repository": "643048695/dsh-subagent-role-router",
     "repository_id": 1421306160,
-    "captured_at": "2026-10-22T16:03:15.556Z",
-    "window_start": "2026-09-22T16:03:15.556Z",
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
     "stars": 1,
-    "pushed_at": "2026-10-20T19:25:47Z",
+    "pushed_at": "2026-10-28T18:34:08Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -13,17 +13,28 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T13:34:01.474Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-subagent-role-router",
-        "captured_at": "2026-10-22T16:03:25.128Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-10-29T01:33:21.476Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-subagent-role-router",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-subagent-role-router",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T16:03:25.128Z",
+            "captured_at": "2026-10-29T01:33:21.476Z",
             "source_url": "https://registry.npmjs.org/dsh-subagent-role-router",
             "error": "HTTP 404",
             "latest_version": null,

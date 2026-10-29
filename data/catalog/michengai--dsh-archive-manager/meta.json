@@ -1,0 +1,45 @@
+{
+    "repository": "MichengAI/dsh-archive-manager",
+    "repository_id": 1335569052,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 262,
+    "pushed_at": "2026-10-27T07:33:46Z",
+    "issues": {
+        "open": 1,
+        "closed": 85,
+        "created_30d": 60,
+        "closed_30d": 60,
+        "updated_30d": 62
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@michengai/dsh-archive-manager",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 70634,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40michengai%2Fdsh-archive-manager",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T05:08:17.762Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
+            "source_url": "https://registry.npmjs.org/%40michengai%2Fdsh-archive-manager",
+            "error": null,
+            "latest_version": "1.1.18",
+            "latest_published_at": "2026-10-27T07:38:39.540Z",
+            "latest_error": null
+        }
+    }
+}

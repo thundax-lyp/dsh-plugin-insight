@@ -1,0 +1,62 @@
+{
+    "repository": "vlln/whale-girl",
+    "repository_id": 1329947687,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 393,
+    "pushed_at": "2026-10-22T02:10:14Z",
+    "issues": {
+        "open": 8,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Avlln%2Fwhale-girl%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2B8E:3527C8:15EF710:17A5B2F:6AE2A283 and timestamp 2026-10-29 01:33:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avlln%2Fwhale-girl%20is%3Aissue%20created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BA8:1ED81F:15CF3A8:1785808:6AE2A284 and timestamp 2026-10-29 01:33:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avlln%2Fwhale-girl%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BB6:177C34:16670FA:181C63A:6AE2A285 and timestamp 2026-10-29 01:33:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avlln%2Fwhale-girl%20is%3Aissue%20updated%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BC8:110F0C:16128B4:17C8CA3:6AE2A287 and timestamp 2026-10-29 01:34:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "whale-girl",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 4296,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/whale-girl",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T16:46:48.052Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
+            "source_url": "https://registry.npmjs.org/whale-girl",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-19T16:46:48.478Z",
+            "latest_error": null
+        }
+    }
+}

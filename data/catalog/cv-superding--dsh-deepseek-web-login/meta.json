@@ -1,0 +1,45 @@
+{
+    "repository": "cv-superding/dsh-deepseek-web-login",
+    "repository_id": 1364181676,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 326,
+    "pushed_at": "2026-10-18T02:18:23Z",
+    "issues": {
+        "open": 15,
+        "closed": 4,
+        "created_30d": 11,
+        "closed_30d": 4,
+        "updated_30d": 14
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T06:21:21.324Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-deepseek-web-login",
+        "captured_at": "2026-10-26T13:10:34.281Z",
+        "window_start": "2026-09-26",
+        "window_end": "2026-10-25",
+        "downloads_30d": 14269,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-deepseek-web-login",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-24T11:34:32.091Z",
+            "captured_at": "2026-10-26T13:10:34.281Z",
+            "source_url": "https://registry.npmjs.org/dsh-deepseek-web-login",
+            "error": null,
+            "latest_version": "1.0.3",
+            "latest_published_at": "2026-10-18T02:20:16.286Z",
+            "latest_error": null
+        }
+    }
+}

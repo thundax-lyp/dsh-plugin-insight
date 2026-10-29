@@ -1,0 +1,58 @@
+{
+    "repository": "Yu-tao-Li/dsh-computer-use-win",
+    "repository_id": 1336280167,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 289,
+    "pushed_at": "2026-10-28T08:45:53Z",
+    "issues": {
+        "open": 1,
+        "closed": 20,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AYu-tao-Li%2Fdsh-computer-use-win%20is%3Aissue%20created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7286:10A8F7:157AEBC:1731834:6AE2A30B and timestamp 2026-10-29 01:36:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AYu-tao-Li%2Fdsh-computer-use-win%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7298:27F604:15AA354:1760FDF:6AE2A30C and timestamp 2026-10-29 01:36:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AYu-tao-Li%2Fdsh-computer-use-win%20is%3Aissue%20updated%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 72B4:36A0BF:15F227D:17A8420:6AE2A30D and timestamp 2026-10-29 01:36:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T20:51:18.907Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-computer-use-win",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 13527,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-computer-use-win",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T04:15:51.780Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
+            "source_url": "https://registry.npmjs.org/dsh-computer-use-win",
+            "error": null,
+            "latest_version": "0.5.3",
+            "latest_published_at": "2026-10-28T02:54:01.047Z",
+            "latest_error": null
+        }
+    }
+}

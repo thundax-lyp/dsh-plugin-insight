@@ -1,0 +1,66 @@
+{
+    "repository": "NativeDog1/dsh-boot-animation",
+    "repository_id": 1387206451,
+    "captured_at": "2026-10-29T01:33:21.476Z",
+    "window_start": "2026-09-29T01:33:21.476Z",
+    "stars": 361,
+    "pushed_at": "2026-10-21T02:46:26Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ANativeDog1%2Fdsh-boot-animation%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2234:1AF9A8:58EBB5B:7ED46A5:6AE2A29A and timestamp 2026-10-29 01:34:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ANativeDog1%2Fdsh-boot-animation%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 223E:357B63:59A45B6:7F9776D:6AE2A29B and timestamp 2026-10-29 01:34:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANativeDog1%2Fdsh-boot-animation%20is%3Aissue%20created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 224C:161C40:57E5630:7D48D13:6AE2A29C and timestamp 2026-10-29 01:34:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANativeDog1%2Fdsh-boot-animation%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 225C:2CB578:59F5F40:7FFD0E8:6AE2A29D and timestamp 2026-10-29 01:34:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANativeDog1%2Fdsh-boot-animation%20is%3Aissue%20updated%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2264:35ED85:579AE4D:7CBD412:6AE2A29E and timestamp 2026-10-29 01:34:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T06:21:21.324Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-boot-animation",
+        "captured_at": "2026-10-29T01:33:21.476Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 8234,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-boot-animation",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-13T10:35:07.659Z",
+            "captured_at": "2026-10-29T01:33:21.476Z",
+            "source_url": "https://registry.npmjs.org/dsh-boot-animation",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-10-13T10:39:28.215Z",
+            "latest_error": null
+        }
+    }
+}
