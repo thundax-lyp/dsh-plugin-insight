@@ -1,44 +1,65 @@
 {
     "repository": "18477514055/dsh-ledger-memory",
     "repository_id": 1412857520,
-    "captured_at": "2026-10-26T01:59:33.546Z",
-    "window_start": "2026-09-26T01:59:33.546Z",
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
     "stars": 2,
-    "pushed_at": "2026-10-23T13:12:41Z",
+    "pushed_at": "2026-10-27T09:42:14Z",
     "issues": {
-        "open": 0,
-        "closed": 1,
-        "created_30d": 1,
-        "closed_30d": 1,
-        "updated_30d": 1
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A18477514055%2Fdsh-ledger-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED8A:343D03:16DA74D:18A39D6:6AE2B7AC and timestamp 2026-10-29 03:04:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A18477514055%2Fdsh-ledger-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDA6:34D3B5:1686BDC:1850C2D:6AE2B7AC and timestamp 2026-10-29 03:04:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A18477514055%2Fdsh-ledger-memory%20is%3Aissue%20created%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDB2:2E517E:1672A8B:183BF1F:6AE2B7AD and timestamp 2026-10-29 03:04:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A18477514055%2Fdsh-ledger-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EDC4:110D77:1721C31:18EB717:6AE2B7AE and timestamp 2026-10-29 03:04:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A18477514055%2Fdsh-ledger-memory%20is%3Aissue%20updated%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EE82:10A8F7:165EDA1:18281CA:6AE2B7AF and timestamp 2026-10-29 03:04:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-25T23:34:33.511Z",
+        "captured_at": "2026-10-28T13:34:01.474Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
-        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-ledger-memory",
-        "captured_at": "2026-10-26T01:59:33.546Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
-        "downloads_30d": 3126,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-ledger-memory",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 4123,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-ledger-memory",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-10T06:20:43.538Z",
-            "captured_at": "2026-10-25T11:38:12.058Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
             "source_url": "https://registry.npmjs.org/dsh-ledger-memory",
             "error": null,
-            "latest_version": "1.6.1",
-            "latest_published_at": "2026-10-23T13:12:01.670Z",
+            "latest_version": "1.6.2",
+            "latest_published_at": "2026-10-27T09:40:46.027Z",
             "latest_error": null
         }
     }

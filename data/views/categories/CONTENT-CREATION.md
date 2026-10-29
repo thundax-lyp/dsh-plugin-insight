@@ -13,6 +13,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
+| [Adult Tension](#plugin-1339714338-root) | 把中文互动叙事交给宿主模型，并以本地 Python 引擎维护角色、时间、事实、事件与存档的 Skill。 | 中性多角色短局先核保存/重试/撤销/退出，才扩长局；只需短篇可用纯聊天，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。 |
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。 | [Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 当前观察；已有用户备份含数据库sidecars后才操作，部分失败先回读，不把Git提交或本地form草稿当保存。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。 | [Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 根入口观察并用于选包；真正试用请进入具体子包范围，不把根源码可见当可安装或无限商用。 |
@@ -47,6 +48,7 @@
 | [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
+| [PPT Design Skill](#plugin-1294612352-root) | 为演示作者提供需求、视觉方向和主题锁定到 PPTX 生成、逐页 PNG 审阅返工及交付记录的方法，生成依赖外部 pptx-designer。 | 观察优先；熟悉Python/审稿者可隔离repo/venv先核安装schema/库/字体/render，再小样，缺环境/模板冲突/MUST不达停止正式交付，保旧版和源稿修后重渲染。 |
 | [Superdesign Skill](#plugin-1139329853-root) | 为编码Agent提供UI、演示稿和图形设计流程，并通过CLI连接Superdesign画布。 | 有设计迭代需求者可先用可公开UI片段试用，核对发送文件、费用和目标草稿后再生成；私密源码或确定性小修优先本地直接修改，不把缓存状态当持续上传许可。 |
 | [TongFlow](#plugin-1204369117-root) | 以模态和能力组织多媒体节点，提供可视化工作流及多种模型插件的执行入口。 | 已有多阶段媒体任务者可在本地副本先试一个slot和最少插件，限制账户额度并记录远端任务状态；若单次生成已足够，或不能承担持久卷和失败对账，继续现有供应商界面。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
@@ -68,6 +70,22 @@
 > **建议**：可将批准对象改为持久不可变请求摘要，绑定完整prompt、渠道标识、参数及价格上限，输出显式未知账单状态；重启与渠道切换对照中，若批准后实际提交参数不一致或重复计费未减少则否定。会增加状态迁移与上游幂等适配成本，假设未验证。参见[Q05](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/aik358--dsh-ark9canvas/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339714338-root"></a>
+
+## [Adult Tension](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md)
+
+[![GitHub ★ 408](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=408&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/daha1216/dsh-adult-tension)
+
+> **用途**：中文互动叙事玩家希望跨回合保留角色/时间/事件，模型写作、引擎管结构状态，见 [Q01](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q01)。
+
+> **亮点**：写作与状态维护分责，版本/幂等和working copy使记录有明确结构约束，见 [Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)。
+
+> **思考**：正文可先行积攒，拒绝可改记录不改正文；授权/回应/tag仍由模型提交，成功记录不能证明可见故事符合结构与玩家意图，见 [Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)。
+
+> **建议**：可见正文—操作—状态差异审阅，测遗漏/矛盾和修复时间，未实现，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1275436512-plugins-dsh-ai-novel-writer"></a>
 
@@ -612,6 +630,22 @@
 > **建议**：为每资产绑定内容摘要与远端标识，在重复提交前对账，同摘要复用、不同摘要报冲突；用同名差异与中断批次检验误链接和处理成本，尚未验证。[Q04](../../plugins/picgo--picgo-core/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/picgo--picgo-core/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1294612352-root"></a>
+
+## [PPT Design Skill](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md)
+
+[![GitHub ★ 399](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=399&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sunchaokun/PPT-Design-Skill)
+
+> **用途**：为愿确认方向并验收稿件的演示作者，把brief、逐页规划、生成和PNG返工组织成可交付流程。见[Q01](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q01)。
+
+> **亮点**：方向/主题/双门返工和清旧渲染/状态记录增强可复核过程，非自动视觉评分或新PPT渲染算法。见[Q02](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q02)、[Q03](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q03)。
+
+> **思考**：默认安装把skill内容直接复制，但validator仍repo/skill路径假设，安装后schema找错；pip/import检测不保证render/版本，PASS记录非视觉/用户确认。见[Q02](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q02)、[Q03](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向在现trace上绑定当前build/主题/字体/实际产物摘要与验收失效，测陈旧误交付/返工，先修路径；见[Q05](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/sunchaokun--ppt-design-skill/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1139329853-root"></a>
 

@@ -28,10 +28,8 @@
 | [agent-qa](#plugin-1232322871-root) | 以自然语言运行Web、Android和iOS测试旅程，保存步骤观察、条件判断与知识材料。 | 有QA能力的团队可在测试副本用它补充探索回归。 |
 | [Coding Tools MCP](#plugin-1245329241-root) | 通过 MCP 为编码客户端提供工作区文件、结构化修改、命令会话和 Git 工具。 | 缺少原生仓库工具的 MCP 客户端用户，可在可丢弃仓库以 safe 模式和本地 stdio 试用读搜与一次结构化修改。 |
 | [deja-vu](#plugin-1300173275-root) | 本地索引多个编码 Agent 的历史会话，并向 DSH 提供检索工具和自动上下文。 | 在个人机器上使用多个编码 Agent 且有非敏感历史的开发者，可限定一个项目试用旧错误与决定检索。 |
-| [@indexyz/dsh-autocompact](#plugin-1324229194-dsh-autocompact) | 为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。 | 单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。 |
 | [dsh Browser Control](#plugin-1324996099-root) | 通过Chrome或Firefox扩展和DSH侧栏，使用结构化文本读取并操作已有登录网页。 | 有重复登录网页任务的DSH用户可先用非敏感测试站点试用。 |
 | [dsh-mnemon](#plugin-1329424520-root) | 为 DSH 组合运行记忆、项目文档和长期记忆来源，并提供每回合查看与管理界面。 | 跨会话反复使用项目资料并愿意维护事实的 DSH 用户，可以用独立本地存储和虚构项目试用分层记忆。 |
-| [LogicProbe](#plugin-1331586818-root) | 为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。 | 能人工核对源码与模型对应关系的开发者可试用小型协议状态机检查。 |
 | [dsh-git-graph](#plugin-1331636953-packages-dsh-git-graph) | 在 DSH 界面显示 Git 分支与提交图，并管理独立 worktree 和新会话工作区。 | 已有Git基础且使用兼容DSH的开发者，可在临时仓库试用为并行任务创建worktree并打开对应新会话。 |
 | [dsh-plugin-manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页检查更新与宿主兼容，并通过官方通道或本机网关管理插件生命周期。 | 使用兼容DSH且可备份临时profile的本机用户，可试用单个npm插件更新后手动重启并核对核心功能。 |
 | [dsh-skill-explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH 中按来源浏览、创建、编辑和导入 Skill，并提供文件启用标记与回收站管理。 | 已有DSH且需要维护多个普通文件型Skill的用户，可在目录备份后试用集中创建、导入和编辑。 |
@@ -59,9 +57,11 @@
 | [dsh-worktable](#plugin-1336092482-01-content) | 在 DSH 侧栏提供项目容器、分栏工作区和会话绑定的工作台插件 | 使用受支持 DSH 版本并愿意管理本地目录的 Windows 个人开发者可以用工作台试用两个低风险项目。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 维护闭环清楚且确认/恢复有实际源码，但真实代码执行、环境继承和全局升级需限可信本地范围。 |
 | [dsh-message-copy-enhance](#plugin-1337978261-root) | 将助手消息选区复制为 Markdown，恢复链接、LaTeX 源码和代码围栏。 | 经常将技术回答片段摘入Markdown的Web用户可在常用编辑器先试单条消息内的链接、公式和代码，并核对源文；不用于逐字原稿归档或跨消息选区。 |
-| [@yolk_vat-y/dsh-project-memory](#plugin-1339316901-root) | 为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。 | 反复接续同一非敏感项目的开发者可备份存储后试用任务记忆检索与按需注入。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | lookup-only的共享笔记、拒答和来源收据值得非敏感单用户试用；审核当前状态与ranked旧页，nightly/导入/CLI另评，不能把canonical当事实认证。 |
 | [dsh-thumb](#plugin-1341694685-root) | 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。 | 适合愿意自行维护的个人窄屏DSH用户受控试用，先核对列定位、设置与轨迹交互并保留关闭重载路径；不把免hash当免维护。 |
+| [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 使用多平台API的单用户可在审阅密钥接收方后试用余额与会话估算看板。 |
+| [dsh-wsl-open](#plugin-1347958944-root) | 让 DSH 网页聊天中的 WSL Linux 路径可点击，并用 Windows 默认应用或 Explorer 打开。 | 适合个人本地WSL办公文件流程试用；仅打开可信文件，核对宿主路由权限和真实窗口结果。 |
+| [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 适合将其作为本地日志排查索引试用，先核对真实数据和模型归因，不据错误率直接做能力排名。 |
 
 <a id="plugin-1401476500-root"></a>
 
@@ -383,26 +383,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1324229194-dsh-autocompact"></a>
-
-## [@indexyz/dsh-autocompact](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5aaee9/pi-agent-extensions) [![npm 30d 804](https://img.shields.io/static/v1?label=npm+30d&message=804&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@indexyz/dsh-autocompact) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@indexyz/dsh-autocompact)
-
-**主要用途**：为Harness按会话与模型配置提前自动压缩阈值，提供持久设置和输入区状态显示。
-
-**建议**：试用
-
-**推荐理由**：单route会话覆盖可控且有明确回默认路径，需同时核语义和全部摘要成本。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：熟悉原生压缩的开发者可单route试用，保留原生对照并检查摘要与关键约束；不要按pill猜有效覆盖，不把off当关闭宿主溢出恢复。任务质量变差或总成本上升时回默认。参见[Q06](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md#research-q06)。
-
-[查看完整分析 →](../../plugins/5aaee9--pi-agent-extensions--dsh-autocompact/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1324996099-root"></a>
 
 ## [dsh Browser Control](../../plugins/omdsh-dev--dsh-browser/INSIGHT.md)
@@ -440,26 +420,6 @@
 **试用条件**：[Q05](../../plugins/omdsh-dev--dsh-mnemon/INSIGHT.md#research-q05) 只启用本地来源，用虚构项目验证保存、读取、纠错及禁用，保持手工文件参照；第三方Provider和Git同步先关闭。串项目、旧错持续或预算失控时停该来源，明确备份范围并核对残留，不把receipt当正确性。
 
 [查看完整分析 →](../../plugins/omdsh-dev--dsh-mnemon/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1331586818-root"></a>
-
-## [LogicProbe](../../plugins/amethystluna--logicprobe/INSIGHT.md)
-
-[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AmethystLuna/logicprobe) [![npm 30d 2,723](https://img.shields.io/static/v1?label=npm+30d&message=2%2C723&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-logicprobe) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-logicprobe)
-
-**主要用途**：为 DSH 提供状态机、数据模型、结构、并发线索和 UML 检查工具与 Skill。
-
-**建议**：试用
-
-**推荐理由**：能人工核对源码与模型对应关系的开发者可试用小型协议状态机检查。相比模型口头认可，源码提供可重复判决、反例和预算未决信息，但真实缺陷发现率与建模收益未测。缺失关键转移、结果undecided或语义超出支持范围时，应停止放行并补建模型或退回专业检查器与人工审查。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：适合愿意人工检查模型的开发者在小型状态机上试用。先核对模型与源码关系，读取verdict、覆盖和未决，不把pass当上线许可。[Q04](../../plugins/amethystluna--logicprobe/INSIGHT.md#research-q04)
-
-[查看完整分析 →](../../plugins/amethystluna--logicprobe/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1003,26 +963,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1339316901-root"></a>
-
-## [@yolk_vat-y/dsh-project-memory](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
-
-[![GitHub ★ 25](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=25&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/00080000/dsh-project-memory) [![npm 30d 3,686](https://img.shields.io/static/v1?label=npm+30d&message=3%2C686&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yolk_vat-y/dsh-project-memory)
-
-**主要用途**：为DSH项目持久保存任务、文档、代码符号与经验，支持检索和自动上下文注入。
-
-**建议**：试用
-
-**推荐理由**：反复接续同一非敏感项目的开发者可备份存储后试用任务记忆检索与按需注入。相比手写任务笔记再搜索文件，源码支持把任务、经验和出处关联，实际接续正确率与token节省未测。出现跨项目内容、无依据指令或保存状态不明时，应暂停注入并回源码及人工任务笔记核查。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：建议单一非敏感工程小范围试用，先按需查询和回源，后逐步开启自动注入；串项目和未落盘等停止标准见 [Q05](../../plugins/00080000--dsh-project-memory/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/00080000--dsh-project-memory/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1341648244-root"></a>
 
 ## [KRouter](../../plugins/398894496-arch--krouter/INSIGHT.md)
@@ -1060,6 +1000,66 @@
 **试用条件**：个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。详见[Q06](../../plugins/aliceljy--dsh-thumb/INSIGHT.md#research-q06)。
 
 [查看完整分析 →](../../plugins/aliceljy--dsh-thumb/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1346196699-root"></a>
+
+## [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
+
+[![GitHub ★ 17](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=17&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/133563825as-ai/dsh-api-dashboard) [![npm 30d 4,117](https://img.shields.io/static/v1?label=npm+30d&message=4%2C117&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-dashboard) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-dashboard)
+
+**主要用途**：在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。
+
+**建议**：试用
+
+**推荐理由**：使用多平台API的单用户可在审阅密钥接收方后试用余额与会话估算看板。相比切各平台控制台和手算token，源码支持同页汇总及旧数据提示，实际对账精度和节费未测。未知模型套默认价、旧余额被当实时或密钥去向不符时，应停止预算判断并回官方控制台，不用自更新修复账单问题。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。详见[Q06](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md#research-q06)。
+
+[查看完整分析 →](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1347958944-root"></a>
+
+## [dsh-wsl-open](../../plugins/173787247--dsh-wsl-open/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-open)
+
+**主要用途**：让 DSH 网页聊天中的 WSL Linux 路径可点击，并用 Windows 默认应用或 Explorer 打开。
+
+**建议**：试用
+
+**推荐理由**：适合个人本地WSL办公文件流程试用；仅打开可信文件，核对宿主路由权限和真实窗口结果。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：建议个人本地WSL用户限定试用可信办公文件，验收以正确窗口实际显示为准；复杂路径误点、权限不清或不明应用启动时停止。详见[Q06](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q06)。
+
+[查看完整分析 →](../../plugins/173787247--dsh-wsl-open/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1349267122-root"></a>
+
+## [dsh-cap-profile](../../plugins/ansonfishing--dsh-cap-profile/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ansonfishing/dsh-cap-profile)
+
+**主要用途**：扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。
+
+**建议**：试用
+
+**推荐理由**：适合将其作为本地日志排查索引试用，先核对真实数据和模型归因，不据错误率直接做能力排名。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。需要模型选型结论时补同任务结果对照。[Q03](../../plugins/ansonfishing--dsh-cap-profile/INSIGHT.md#research-q03)
+
+[查看完整分析 →](../../plugins/ansonfishing--dsh-cap-profile/INSIGHT.md)
 
 [返回表格](#column-index)
 

@@ -1,57 +1,44 @@
 {
     "repository": "2026heshao/dsh-armory",
     "repository_id": 1413052822,
-    "captured_at": "2026-10-26T01:59:33.546Z",
-    "window_start": "2026-09-26T01:59:33.546Z",
-    "stars": 24,
-    "pushed_at": "2026-10-25T01:22:50Z",
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 42,
+    "pushed_at": "2026-10-27T03:26:37Z",
     "issues": {
-        "open": 2,
+        "open": 4,
         "closed": 0,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "created_30d": 4,
+        "closed_30d": 0,
+        "updated_30d": 4
     },
-    "errors": [
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20created%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9D60:3829EA:14A1D06:16C09A5:6ADEB4AF and timestamp 2026-10-26 02:02:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C610:21F663:13E8266:160683F:6ADEB4B2 and timestamp 2026-10-26 02:02:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20updated%3A2026-09-26T01%3A59%3A33.546Z..2026-10-26T01%3A59%3A33.546Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C6DA:6FFE0:13C47DC:15E3C81:6ADEB4B6 and timestamp 2026-10-26 02:02:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-25T23:34:33.511Z",
+        "captured_at": "2026-10-28T13:34:01.474Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
-        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-armory",
-        "captured_at": "2026-10-26T01:59:33.546Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
-        "downloads_30d": 459,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/dsh-armory",
+        "captured_at": "2026-10-28T20:19:57.951Z",
+        "window_start": "2026-09-28",
+        "window_end": "2026-10-27",
+        "downloads_30d": 2752,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-armory",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-13T02:37:33.593Z",
-            "captured_at": "2026-10-25T11:38:12.058Z",
+            "captured_at": "2026-10-28T20:19:57.951Z",
             "source_url": "https://registry.npmjs.org/dsh-armory",
             "error": null,
-            "latest_version": "2.4.0",
-            "latest_published_at": "2026-10-24T14:12:50.564Z",
+            "latest_version": "2.4.3",
+            "latest_published_at": "2026-10-27T03:25:43.257Z",
             "latest_error": null
         }
     }

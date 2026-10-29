@@ -1,18 +1,18 @@
-# plugin-usage-billing
+# Usage Billing
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing)
+源码版本：[9fac17c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,475](https://img.shields.io/static/v1?label=npm+30d&message=1%2C475&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,937](https://img.shields.io/static/v1?label=npm+30d&message=1%2C937&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
 <!-- END META -->
 
-> **功能**：从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。
+> **功能**：从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。
 
-> **亮点**：把usage、价格快照、历史估算与unknown分开并提供分维度视图，增量在可解释聚合而非生成真实provider账单。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：usage、snapshot、backfilled与priced分开并以稳定ID分片，方便解释历史估算和unknown，见 [Q01](#research-q01)。
 
-> **主要限制**：峰谷倍率无provider限定、同名价可跨provider兜底，当前alias重折可覆盖旧ID费用；写时锁价不等所有配置变化下历史不可变。详见[Q02](#research-q02)。
+> **主要限制**：全局峰谷/跨provider同名兜底可能错价，当前alias重折可覆盖旧ID费用，写时快照不等历史不可变，见 [Q02](#research-q02)。
 
 **本文目录**
 
@@ -26,12 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要计费视图，usage到费用账本怎样运行？](#detail-section-11)
-  - [Q02 · 锁价与unknown的贡献成立到哪里，价格口径有哪些限制？](#detail-section-12)
-  - [Q03 · 存储、网络与退出依赖什么？](#detail-section-13)
-  - [Q04 · 三阶段成本与效果如何判断？](#detail-section-14)
-  - [Q05 · 哪些机制可复用，提供商计价契约假设如何证伪？](#detail-section-15)
-  - [Q06 · 目前建议及停止条件是什么？](#detail-section-16)
+  - [Q01 · 账本输入、使用者与真实增量是什么？](#detail-section-11)
+  - [Q02 · 提供商计价、同名兜底和旧行锁价是否可靠？](#detail-section-12)
+  - [Q03 · 采用与恢复负担是什么，下一步计价契约如何证伪？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +38,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：维护者核对模型用量和费用估算，要求计量、提供商价格、历史与unknown可解释。
+> **用途**：维护者可看会话/项目/模型的日志用量与费用估算，合格结果需可解释计量和价差，见 [Q01](#research-q01)。
 
-直接基线是人工用 provider 原始 usage 和合同价表计算同批事件。插件增加会话与工作区视图，但合同、模型别名和缓存 token 桶口径仍需人核；用同一批调用对比缺失、错价、历史重折漂移和恢复人时。
+服务商原始usage/账单与人工表；插件增加日志聚合和来源解释，不生成独立收款事实或预算强制执行。
 
 <a id="detail-section-3"></a>
 
@@ -53,72 +50,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| usage聚合 | 按事件账本 | 缺usage不产生费用行 |
-| 价格快照 | 历史/当前估算 | provider/峰谷匹配待核 |
-| unknown | 缺价/FX不静默计0 | 显示总额仍不等完整账单 |
-| 预算与趋势 | 消耗提醒/分析 | 非调用硬上限，勿用于结算 |
+| usage聚合 | 会话/项目/模型可见 | 依赖上游usage，缺失不出费行 |
+| 快照估价 | 解释历史与unknown | 全局倍率/同名兜底不是合同 |
+| 分片账本 | 稳定ID及重折 | 当前alias可改变旧行 |
+| 预算视图 | 本地进度提示 | 非硬调用上限/账单 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH storageDomain及sessionQuery | 主聚合必需 | 账本表/价格快照与会话读取 | storage缺失降级，query缺失无法真实读会话 |
-| sessionPersistence revision | 优化可选 | 跳过未变日志 | 缺失每轮全会话重读 |
-| Host web服务/网络 | 联网价表可选 | models.dev和汇率刷新 | 降级内置/默认口径需可见 |
-| Client/设置/Typert契约 | 展示/改价必需 | 卡片、趋势、自定义价 | 内部rc版本需核对 |
-| 本地账本/快照存储 | 持久必需 | 分片、别名和口径 | 卸载不等删除敏感会话元数据 |
-
-
+| DSH storageDomain/sessionQuery | 核心必需 | 账本与真实日志 | revision不能代真实读取 |
+| sessionPersistence revision | 可选 | 跳过未变日志 | 缺失重读I/O增加 |
+| 价格/FX/计量桶约定 | 金额必需 | 日志到估价 | unknown或错匹配须人工核 |
+| 网络元数据/UI remote | 刷新/展示 | 目录/汇率及视图 | 降级非实时合同证明 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 固定宿主/包，盘点模型usage与真实定价条款 | 把显示金额当估算，先核provider/峰谷范围 |
-| 加载 | 安装profile并核对历史回填标记 | 区分真实usage、估价、未计价 |
-| 使用 | 对照少量已知事件和账单核对 | 预算提醒不等阻止进一步调用 |
-| 退出/恢复 | 备份账本/快照，检查自定义价与alias变化 | 不盲重建/重计价覆盖历史解释 |
-
-本地账本包含sessionId、cwd、model、tokens/费用，虽不是完整会话正文仍有隐私留存责任；UI/remote共享宿主授权边界需另核。
+| 准备 | 核usage/schema和价目 | provider合同单独确认 |
+| 回填 | Host读历史、分片记行 | snapshot/backfilled/unknown可解释 |
+| 持续 | 变化重折与刷新 | 比对旧行及alias含义 |
+| 异常 | 核片/水位/旧快照 | 不把显示总额当账单 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 历史日志全量读取、账本分片与UI，金额未知 | 定价/汇率/usage桶口径核对 | 安装前金额标估算 |
-| 持续使用 | 变动日志重折、分片写、价表/汇率网络刷新 | 处理未计价、alias和预算提示 | 不新增模型工具/提示，不等0 CPU/I/O |
-| 失败恢复 | 价表降级、日志错误、分片/水位重建 | 检查重复/残留和历史金额漂移 | 网络刷新占写队列，恢复时长未知 |
-
+| 首次使用 | 冷读/分片/存储未知 | 计量、价格、FX核对 | 安装前是估算 |
+| 持续使用 | 重折/索引/网络未知 | unknown/alias/预算复核 | 无新增模型调用不等零开销 |
+| 失败恢复 | 重读/重建资源未知 | 查旧价、重复、残留和水位 | 多片非全局事务 |
+| 退出 | 历史快照存储未知 | 导出并保留口径 | 卸载不代对账 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 用量可见 | 从有usage的assistant事件折叠并按seq去重 | provider usage是否完整及失败调用覆盖 |
-| 费用展示 | 价格/汇率/峰谷计算与unknown状态 | 是否等真实合同/折扣/收款账单 |
-| 历史解释 | snapshot/backfilled与分片ID | 别名/重折后金额是否保持既有含义 |
+| 用量可见 | 有usage事件和seq稳定ID | 失败/漏usage覆盖 |
+| 费用解释 | 快照/FX/unknown | 合同正确、同名/峰谷错价 |
+| 历史记录 | 分片与backfilled | 普通重折后金额不变 |
 
-> **思考**：峰谷倍率无provider限定、同名价可跨provider兜底，当前alias重折可覆盖旧ID费用；写时锁价不等所有配置变化下历史不可变。详见[Q02](#research-q02)。
+> **思考**：全局峰谷/跨provider同名兜底可能错价，当前alias重折可覆盖旧ID费用，写时快照不等历史不可变，见 [Q02](#research-q02)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把usage、价格快照、历史估算与unknown分开并提供分维度视图，增量在可解释聚合而非生成真实provider账单。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：usage、snapshot、backfilled与priced分开并以稳定ID分片，方便解释历史估算和unknown，见 [Q01](#research-q01)。
 
-可复用的是原始usage/价格快照/估算标志分离、ID幂等分片、变化跳过、失败不中断串行队列，以及Host/Client remote方法名单单一真相源。分片减少每事件文件和重复写，但同ID覆盖/跨片移动仍需处理多片失败；storage宿主保证不能从本包推断。
+[Q01](#research-q01) 来源分离与幂等ID有价值；[Q02](#research-q02) 行覆盖和多片失败不能由storage名称推导事务，计价契约需按provider限定。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-峰谷倍率无provider限定、同名价可跨provider兜底，当前alias重折可覆盖旧ID费用；写时锁价不等所有配置变化下历史不可变。详见[Q02](#research-q02)。
+全局峰谷/跨provider同名兜底可能错价，当前alias重折可覆盖旧ID费用，写时快照不等历史不可变，见 [Q02](#research-q02)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。详见[Q06](#research-q06)。
+先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](#research-q03)。
 
 <a id="detail-section-7"></a>
 
@@ -126,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持按会话usage、价表/汇率规则组织用量账目的集成；provider口径、统一峰谷系数与历史锁价行为仍有缺口，不等真实账单。provider计价契约和锁价修订收据尚未验证。
+核心计量/计价/重折代表链已核，建议观察；未读真实会话、取当前价或运行。未来契约无效果证据。
 
-- 已检查：作者 README、包清单、源码路径 packages/plugin-usage-billing/src/index.ts、packages/plugin-usage-billing/src/fold.ts、packages/plugin-usage-billing/src/aggregate.ts、packages/plugin-usage-billing/src/ledger-store.ts、packages/plugin-usage-billing/src/pricing/cost.ts、packages/plugin-usage-billing/src/pricing/tiers.ts、packages/plugin-usage-billing/src/shard-merge.ts、packages/plugin-usage-billing/src/service.ts、packages/plugin-usage-billing/src/pricing/fetch.ts、packages/plugin-usage-billing/src/remote-methods.ts、packages/plugin-usage-billing/README.md、packages/plugin-usage-billing/package.json 及固定范围 inventory；组件：packages/plugin-usage-billing。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/plugin-usage-billing/package.json、packages/plugin-usage-billing/src/aggregate.ts、packages/plugin-usage-billing/src/fold.ts、packages/plugin-usage-billing/src/index.ts、packages/plugin-usage-billing/src/ledger-store.ts、packages/plugin-usage-billing/src/pricing/cost.ts、packages/plugin-usage-billing/src/pricing/tiers.ts、packages/plugin-usage-billing/src/service.ts 及固定范围 inventory；组件：packages/plugin-usage-billing。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定组件index/service/aggregate/fold、价格/峰谷/同名与分片merge/store、remote方法主链；未全面审计主题编译/所有Client，不读真实会话或价格。
-- 下一步：按 [Q05](#research-q05) 设计两 provider 同 model 异价、alias 变化、缺 usage 和分片失败夹具，先验证收费解释与历史稳定，再由明确授权对少量账单核对；本轮无实际日志或价格请求。
+- 边界：旧六题/11findings及自code依赖复核，完整组件inventory；当前读入口、fold/aggregate、cost/tiers与ledger/service代表链，未审全部Client/主题/远端价格。
+- 下一步：同名异价/缺usage-cache/alias变化/跨日/第N片失败夹具，对照原始usage与授权匿名账单；计量、价目、FX、人工负担分开。本轮无运行。
 
 **分析版本**
 
 - **仓库**：[0x7A7A6572/dsh-forge-studio](https://github.com/0x7A7A6572/dsh-forge-studio)
-- **版本号**：1.3.0（[固定提交 be18a39](https://github.com/0x7A7A6572/dsh-forge-studio/tree/be18a392f0c5c60a5253eb267b2f622d3a0e6555)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.3.1（[固定提交 9fac17c](https://github.com/0x7A7A6572/dsh-forge-studio/tree/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -145,9 +137,9 @@
 
 <a id="innovation"></a>
 
-可探讨provider计价契约和锁价收据，绑定usage schema/规则/FX，旧行普通重折保留，重估明确修订；维护和迁移成本未验证。详见[Q05](#research-q05)。
+提供商计量/合同/FX的不可变行收据，普通重折保旧、重估显式修订，以新夹具和授权对账证伪，见 [Q03](#research-q03)。
 
-按 [Q05](#research-q05) 设计两 provider 同 model 异价、alias 变化、缺 usage 和分片失败夹具，先验证收费解释与历史稳定，再由明确授权对少量账单核对；本轮无实际日志或价格请求。
+同名异价/缺usage-cache/alias变化/跨日/第N片失败夹具，对照原始usage与授权匿名账单；计量、价目、FX、人工负担分开。本轮无运行。
 
 <a id="detail-section-9"></a>
 
@@ -160,43 +152,52 @@
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 1 | 47 | — | — | 994 |
 | .mjs | source | 1 | 31 | 16 | 10 | — |
-| .ts | source | 72 | 7441 | 5221 | 1539 | — |
+| .ts | source | 73 | 7518 | 5263 | 1571 | — |
 | .tsx | source | 39 | 3186 | 2612 | 459 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/0x7A7A6572/dsh-forge-studio/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-29），可前往 [GitHub Issues](https://github.com/0x7A7A6572/dsh-forge-studio/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查会话usage到费用账本、价格口径/锁价与采用成本。
+**插件研究总目标**：日志计量、价格/FX与历史重折的边界是否支持可解释账本，何时不能当真实账单？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要计费视图，usage到费用账本怎样运行？
+### Q01 · 账本输入、使用者与真实增量是什么？
 
-**研究主题**：场景与需求、功能与机制
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-适合想在DSH里查看会话/项目token消耗和估算费用的个人维护者。输入为持久会话日志中的assistant/message usage、provider/model上下文与价格/汇率快照，输出会话/日/模型账本和预算进度。合格结果需usage计量桶、价格来源和估算/未计价明确，不能用金额显示推断provider实际扣费。
+@zzerx/dsh-plugin-usage-billing 1.3.1是依赖DSH的原生计费显示插件，面向查看会话/项目/模型token及估价的维护者。输入来自持久日志assistant/message usage及request/context/header的provider/model；只有有usage才出费用行，缺usage的消息只计calls，不能覆盖所有失败请求或提供商漏报。日志usage是上游报告，不是插件独立计量，费用更不是服务商扣款。
 
-Host打开storageDomain，记录install快照，通过sessionPersistence revision跳过未变日志，缺revision则重读。fold跟踪request context/header，遇assistant/message有usage才形成行，以sessionId+seq作稳定ID，按事件时间找快照并算费用，按会话/日分片upsert。UI/remote方法读统计和自定义价，后台web抓目录/汇率；不注册模型工具/系统prompt。
+入口强注入storageDomain，sessionQuery真正读会话、sessionPersistence提供变化revision，缺revision会重读；fold按session+seq形成稳定ID、事件时间选价格/FX快照，保存priced、snapshotId与安装前backfilled。相较手工算总token或一个总金额，贡献是原始usage与估价来源、历史估算/未计价分开，提供可解释聚合。需要核计量桶互斥口径、价格匹配和预算提示，合格结果是能解释差异，不是UI数字更完整。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L30-L38)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/package.json:2-4](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/package.json#L2-L4)
 
-storageDomain是主依赖。
+版本和自述。
 
 ```text
-export async function apply(ctx: Context, config: Config): Promise<void> {
+  "name": "@zzerx/dsh-plugin-usage-billing",
+  "version": "1.3.1",
+  "description": "计费显示：从既有会话日志聚合真实 token 用量，按事件时刻价格写时锁定费用；侧栏 / 输入框下方入口 + 点击弹层 + 设置页用量视图。",
+```
+
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:31-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/index.ts#L31-L38)
+
+storageDomain落地。
+
+```text
   const domainService = ctx.get('storageDomain')
   if (domainService === undefined) {
     ctx.logger.warn('[plugin-usage-billing] storageDomain 未装配，计费聚合不可用（插件已降级）')
@@ -207,22 +208,14 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
   ctx.effect(() => () => { void domain.close() })
 ```
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-88](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L88)
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:63-83](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/index.ts#L63-L83)
 
-revision/日志源与install快照。
+真实sessionQuery与网络价格接线。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-  const source: SessionSource = {
-    listSessions: async () => {
-      const persistence = ctx.get('sessionPersistence') as SessionPersistenceLike | undefined
-      if (persistence !== undefined) {
-        const listed = await persistence.list()
-        return listed.map((s) => ({ header: s.header, stamp: String(s.revision) }))
-      }
-      // 退化：stamp 为 null，该轮每个会话整会话重读。
       const q = ctx.get('sessionQuery') as SessionQueryLike | undefined
       if (q === undefined) return []
       return (await q.listSessions()).map((r) => ({ header: r.header, stamp: null }))
@@ -244,21 +237,16 @@ revision/日志源与install快照。
       const web = ctx.get('web')
       if (web === undefined) return { ok: false, reason: 'web 服务未装配' }
       return await fetchPricingFromNetwork({ web, snapshots, now: () => Date.now() }, force, ttlHours)
-    },
-  })
-
-  // 同时充当「安装前历史」的回填口径。
-  await service.ensureBaseSnapshot({ ...BUILTIN_CATALOG }, DEFAULT_USD_TO_CNY, 'default')
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:53-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L53-L107)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:53-108](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/fold.ts#L53-L108)
 
-模型归属、usage与事件时刻费用。
+usage门、稳定ID与快照/估算字段。
 
 <details>
-<summary>查看原文（55行）</summary>
+<summary>查看原文（56行）</summary>
 
 ```text
   for (const event of events) {
@@ -316,137 +304,134 @@ revision/日志源与install快照。
       snapshotId: table.snapshotId,
       ...(tier === null ? {} : { tier }),
       backfilled: event.time < ctx.installAt,
+    })
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
+#### 缺口
 
-变化日志折叠与水位。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  for (const { header, stamp } of sessions) {
-    try {
-      const wm = deps.folds.get(foldKey(header.id))
-      // 戳相同 = 这份日志自上次折叠以来没变过；headerCreatedAt 只是 id 复用时的兜底。
-      // `rebuild` 那一趟**故意不看水位**：账本换容器后水位对应的是旧容器，必须整语料重折一遍。
-      if (!opts.rebuild && wm !== undefined && stamp !== null && wm.stamp === stamp && wm.headerCreatedAt === header.createdAt) {
-        skipped += 1
-        continue
-      }
-      const snap = await deps.source.readSession(header.id)
-      const result = foldEvents(snap.events, {
-        session: snap.session,
-        installAt: deps.installAt,
-        aliases: aliasMap,
-        resolvePrice: (at) => resolveSnapshotAt(at, snapshots),
-      })
-      // 一个会话一轮只写一次：它的行落在同一片（跨天最多两片）上，逐行写会把整片重写几十遍。
-      // 只有内容真的变了才落盘：正在写的会话每轮都会被重折，绝大多数行是上一轮的旧行。
-      const changed = result.rows.filter((row) => {
-        const previous = deps.ledger.get(row.id)
-        return previous === undefined || !sameRow(previous, row)
-      })
-      await deps.ledger.putMany(changed)
-      await deps.folds.put(foldKey(header.id), {
-        sessionId: header.id,
-        // 戳为 null 时不写这个字段：下一轮继续整会话重读，等后端能给出戳为止。
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
-
-分片串行upsert。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-  putMany(rows: readonly LedgerRow[]): Promise<void> {
-    if (rows.length === 0) return Promise.resolve()
-    const run = this.chain.then(() => this.applyRows(rows))
-    this.chain = run.then(() => undefined, () => undefined)
-    return run
-  }
-
-  /** 链内执行：把一批行落到它们各自的分片上，每片至多一次读写。 */
-  private async applyRows(batch: readonly LedgerRow[]): Promise<void> {
-    const patches = new Map<string, ShardPatch>()
-    const patchAt = (key: string, sessionId: string, day: string): ShardPatch => {
-      let patch = patches.get(key)
-      if (patch === undefined) {
-        patch = { sessionId, day, outgoing: new Set(), incoming: new Map() }
-        patches.set(key, patch)
-      }
-      return patch
-    }
-
-    for (const row of batch) {
-      const previous = this.rowsById.get(row.id)
-      if (previous !== undefined) {
-        const oldKey = ledgerShardKey(previous.sessionId, previous.day)
-        const newKey = ledgerShardKey(row.sessionId, row.day)
-        if (oldKey === newKey) {
-          // 同片且内容未变：整片不写。正在写的会话每轮都会被重折，绝大多数行是旧行。
-          if (sameRow(previous, row)) continue
-        } else {
-          // 换了分片（会话日志被改写导致 day 变了）：先从旧片摘掉，否则同一个 seq
-          // 会在两片里各留一份，等于重复计费。
-          patchAt(oldKey, previous.sessionId, previous.day).outgoing.add(row.id)
-        }
-      }
-      const target = patchAt(ledgerShardKey(row.sessionId, row.day), row.sessionId, row.day)
-      target.incoming.set(row.id, row)
-    }
-
-    for (const [key, patch] of patches) {
-      const current = this.table.get(key)
-      const kept = current === undefined
-        ? []
-        : current.rows.filter((candidate) => !patch.outgoing.has(candidate.id))
-      const merged = mergeShardRows(kept, [...patch.incoming.values()])
-      if (merged.rows.length === 0) {
-        // 摘空即删键：不留空壳，否则每次冷启动都白读一个文件。
-        if (current !== undefined) await this.table.delete(key)
-      } else if (merged.changed || patch.outgoing.size > 0) {
-        await this.table.put(key, emptyShard(patch.sessionId, patch.day, merged.rows))
-      }
-      for (const id of patch.outgoing) this.rowsById.delete(id)
-      for (const row of patch.incoming.values()) this.rowsById.set(row.id, row)
-```
-
-</details>
+- provider usage完整性、宿主实际读写和账单对照未验证。
+  **影响**：不把日志估价或写时快照当真实账单与硬预算保障。
+  **进一步探讨**：先用合成日志核计量桶、缺usage和seq去重，再经授权用匿名已知账单逐层对照。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 锁价与unknown的贡献成立到哪里，价格口径有哪些限制？
+### Q02 · 提供商计价、同名兜底和旧行锁价是否可靠？
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-贡献是把真实日志usage与价格快照分开、保留snapshot/backfilled，并对缺模型/汇率保留priced:false而不静默当0，提供分维度解释而非只加一个总数。价格目录/汇率和usage本身来自上游，插件不产生独立账单或独立测得模型token。
+关键限制仍在计价契约。fold按时间tierAndFactorAt求倍率，再将factor传priceUsage，未按provider选择规则；tiers有全局空闲倍率0.5，不能推广为所有提供商合同。priceUsage又可按模型名跨provider选表内首条同名价格，确定性不代表合同同价；cache字段缺失按0，reasoning已归output的口径也依赖宿主统一约定。缺价格/无有效USD汇率标priced:false有助揭示unknown，但命中错误同名价会是priced:true，未知提示不能覆盖这种错价。
 
-最关键口径限制是峰谷系数按时间统一求，fold和repricing都无provider条件传给priceUsage；代码把0.5空闲倍率应用到所有匹配价。不能把一个时间规则推广为所有提供商合同。sameNameEntryKey还可按模型名跨provider取首条价格，确定性不代表同名服务同价；自定义通配也需读者明确。
-
-写时锁价也不等永久不可变。会话stamp变化后全量fold采用当前alias，aggregate对同ID不同row写入，mergeShardRows后写覆盖；所以别名变化后再重折可能改变旧seq费用，即使repricing入口自身跳过priced行。历史快照有帮助，但当前推导不能被称任意配置变化都不动历史。没有usage的消息只计calls不出费用行；预算只是提示/进度，不是调用硬上限。
+写时锁价不等普通重折永久不变：aggregate遇revision变化会用当前alias全量fold，再对同ID不同row执行putMany。旧费用可被当前alias/新推导覆盖，即使专用repricing只补未计价行；快照存在不证明所有配置变化下金额含义稳定。分片upsert与水位先后降低重复写，但多片写/水位不是本包能保证的全局事务，失败需核实际分片与重复/残留。故金额用于结算、对外承诺或预算硬约束缺少核心依据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:96-117](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L96-L117)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/fold.ts#L77-L82)
 
-未知价/汇率显式priced:false及费用计算。
-
-<details>
-<summary>查看原文（22行）</summary>
+当前alias及未限定provider倍率。
 
 ```text
+    const who = fromContext ?? fromHeader ?? UNKNOWN
+    const alias = ctx.aliases.get(aliasId(who.provider, who.model))
+    const table = ctx.resolvePrice(event.time)
+    const keys = priceKeyCandidates(who.provider, who.model, alias)
+    const { tier, factor } = tierAndFactorAt(event.time, isCnHoliday)
+    const priced = priceUsage(usage, table.entries, keys, table.usdToCny, factor)
+```
+
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/pricing/tiers.ts:25-35](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/pricing/tiers.ts#L25-L35)
+
+全局时间/倍率规则。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+const PEAK_WINDOWS = [[540, 720], [840, 1080]] as const
+
+/** 起点取参考实现记录的政策变更点（北京 2026-08-17，官网未标日期）。 */
+export const TIER_RULES: readonly TierRule[] = [
+  {
+    since: Date.UTC(2026, 7, 16, 16),
+    peakWindows: PEAK_WINDOWS,
+    weekdaysOnly: true,
+    holidays: 'CN',
+    offPeakRatio: 0.5,
+  },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:40-65](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/pricing/cost.ts#L40-L65)
+
+跨provider同名索引。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+/** 同名兜底候选的前缀：首段 `*` + 斜杠 + 模型名 = 「任何 provider 下叫这个名字的价」。 */
+const NAME_FALLBACK_PREFIX = `${WILDCARD}/`
+
+/**
+ * 表内「模型名 → 命中键」索引（延迟构建，按表的键**插入顺序**取第一条）。
+ *
+ * 插入顺序即优先级来源：内置目录在安装时就写进基准快照，网络刷新只会往后追加 delta，
+ * 所以同一个模型名有多个 provider 时先出现的（目录里的官方 provider）胜出 —— 确定性、可解释。
+ *
+ * 用 WeakMap 挂在价目表本身上：快照表是不可变对象，按表缓存不会串味，也不会泄漏。
+ */
+const nameIndexCache = new WeakMap<object, Map<string, string>>()
+
+/** 表内同名条目键；没有则 undefined。 */
+function sameNameEntryKey(table: Readonly<Record<string, PriceEntry>>, name: string): string | undefined {
+  let index = nameIndexCache.get(table)
+  if (index === undefined) {
+    index = new Map<string, string>()
+    for (const key of Object.keys(table)) {
+      const slash = key.indexOf('/')
+      if (slash <= 0) continue
+      const modelPart = key.slice(slash + 1)
+      // `<provider>/*` 与 `*/*` 是兜底价，不是「某个模型的同名价」。
+      if (modelPart === WILDCARD) continue
+      const normalized = normalizeModelId(modelPart)
+      if (normalized !== '' && !index.has(normalized)) index.set(normalized, key)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:77-117](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/pricing/cost.ts#L77-L117)
+
+兜底命中、unknown和实际费用式。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): PriceEntry | undefined {
+  const direct = table[key]
+  if (direct !== undefined) return direct
+  if (!key.startsWith(NAME_FALLBACK_PREFIX)) return undefined
+  const hit = sameNameEntryKey(table, key.slice(NAME_FALLBACK_PREFIX.length))
+  return hit === undefined ? undefined : table[hit]
+}
+
+/**
+ * 按 keys 顺序查价并计价（首段为 `*` 的候选 = 同名兜底，见 `priceKeyCandidates`）。
+ * @param priceFactor - 档位系数：空闲档传规则倍率（官方 0.5），高峰档省略。
+ */
+export function priceUsage(
+  usage: TokenUsage,
+  table: Readonly<Record<string, PriceEntry>>,
+  keys: readonly string[],
+  usdToCny: number,
+  priceFactor = 1,
+): PriceResult {
   for (let rank = 0; rank < keys.length; rank++) {
     const key = keys[rank]!
     const entry = entryFor(table, key)
@@ -473,93 +458,14 @@ revision/日志源与install快照。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L77-L82)
+**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:95-125](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/aggregate.ts#L95-L125)
 
-无provider限定的时间系数。
-
-```text
-    const who = fromContext ?? fromHeader ?? UNKNOWN
-    const alias = ctx.aliases.get(aliasId(who.provider, who.model))
-    const table = ctx.resolvePrice(event.time)
-    const keys = priceKeyCandidates(who.provider, who.model, alias)
-    const { tier, factor } = tierAndFactorAt(event.time, isCnHoliday)
-    const priced = priceUsage(usage, table.entries, keys, table.usdToCny, factor)
-```
-
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/tiers.ts:27-37](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/tiers.ts#L27-L37)
-
-固定空闲倍率0.5。
+当前alias重折与覆盖旧ID、水位次序。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-/** 起点取参考实现记录的政策变更点（北京 2026-08-17，官网未标日期）。 */
-export const TIER_RULES: readonly TierRule[] = [
-  {
-    since: Date.UTC(2026, 7, 16, 16),
-    peakWindows: PEAK_WINDOWS,
-    weekdaysOnly: true,
-    holidays: 'CN',
-    offPeakRatio: 0.5,
-  },
-]
-
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
-
-同名跨provider首项兜底。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-/** 表内同名条目键；没有则 undefined。 */
-function sameNameEntryKey(table: Readonly<Record<string, PriceEntry>>, name: string): string | undefined {
-  let index = nameIndexCache.get(table)
-  if (index === undefined) {
-    index = new Map<string, string>()
-    for (const key of Object.keys(table)) {
-      const slash = key.indexOf('/')
-      if (slash <= 0) continue
-      const modelPart = key.slice(slash + 1)
-      // `<provider>/*` 与 `*/*` 是兜底价，不是「某个模型的同名价」。
-      if (modelPart === WILDCARD) continue
-      const normalized = normalizeModelId(modelPart)
-      if (normalized !== '' && !index.has(normalized)) index.set(normalized, key)
-    }
-    nameIndexCache.set(table, index)
-  }
-  return index.get(normalizeModelId(name))
-}
-
-/**
- * 解析一个候选键：先按字面命中；首段为 `*` 的候选再走同名兜底。
- * @param table - 该时刻解析出的价目表（`<provider>/<model>` → 单价）。
- * @param key - 候选键，见 `priceKeyCandidates`。
- */
-function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): PriceEntry | undefined {
-  const direct = table[key]
-  if (direct !== undefined) return direct
-  if (!key.startsWith(NAME_FALLBACK_PREFIX)) return undefined
-  const hit = sameNameEntryKey(table, key.slice(NAME_FALLBACK_PREFIX.length))
-  return hit === undefined ? undefined : table[hit]
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
-
-变动日志全量重折并写不同row。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  for (const { header, stamp } of sessions) {
     try {
       const wm = deps.folds.get(foldKey(header.id))
       // 戳相同 = 这份日志自上次折叠以来没变过；headerCreatedAt 只是 id 复用时的兜底。
@@ -585,439 +491,21 @@ function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): Pri
       await deps.folds.put(foldKey(header.id), {
         sessionId: header.id,
         // 戳为 null 时不写这个字段：下一轮继续整会话重读，等后端能给出戳为止。
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
-
-同ID后写覆盖。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-/**
- * 把一批行并入分片：身份是 `row.id`（= `<sessionId>__<seq>`），后写覆盖，按 seq 升序归一。
- *
- * 三条不变量（测试钉住）：同批重复并入 → `changed: false` 且内容不变（幂等）；同 id 再次
- * 并入 → 覆盖而不是追加；批内顺序不影响结果（字节稳定，落盘文件可直接比对）。
- */
-export function mergeShardRows(current: readonly LedgerRow[], batch: readonly LedgerRow[]): ShardMerge {
-  const byId = new Map<string, LedgerRow>()
-  for (const row of current) byId.set(row.id, row)
-  let changed = false
-  for (const row of batch) {
-    const previous = byId.get(row.id)
-    if (previous !== undefined && sameRow(previous, row)) continue
-    byId.set(row.id, row)
-    changed = true
-  }
-  // 未变时原样返回：调用方据此整片跳过 put，不必先写再比。
-  if (!changed) return { rows: current as LedgerRow[], changed: false }
-  const rows = [...byId.values()].sort((a, b) => a.seq - b.seq || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
-  return { rows, changed: true }
-```
-
-</details>
-
-**依据 7 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:317-339](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/service.ts#L317-L339)
-
-repricing跳过已定价不等其他重折路径保留。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-  async repricing(): Promise<{ changed: number }> {
-    const all = [...this.snapshots.entries()].map(([, s]) => s)
-    const aliases = new Map(this.listAliases().map((a) => [a.id, a]))
-    let changed = 0
-    const patched: LedgerRow[] = []
-    for (const row of this.ledger.all()) {
-      if (row.priced) continue
-      const table = resolveSnapshotAt(row.time, all)
-      const alias = aliases.get(aliasId(row.provider, row.model))
-      // 按行自己的时刻判档，不能用 now。
-      const { tier, factor } = tierAndFactorAt(row.time, isCnHoliday)
-      const result = priceUsage(
-        { inputTokens: row.input, outputTokens: row.output, cacheReadTokens: row.cacheRead, cacheWriteTokens: row.cacheWrite },
-        table.entries, priceKeyCandidates(row.provider, row.model, alias), table.usdToCny, factor,
-      )
-      if (!result.priced) continue
-      patched.push({
-        ...row,
-        costCny: result.costCny,
-        currency: result.currency,
-        priced: true,
-        snapshotId: table.snapshotId,
-        ...(tier === null ? {} : { tier }),
-```
-
-</details>
-
-**依据 8 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-75](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L71-L75)
-
-缺usage跳过费用行。
-
-```text
-    if (event.type !== 'assistant/message') continue
-
-    calls += 1
-    const usage = (event.data as { usage?: import('@deepseek-ai/dsh-llm').TokenUsage }).usage
-    if (usage === undefined) continue
-```
-
-#### 缺口
-
-- 固定price规则与实际provider合同/usage桶语义未逐项核对。
-  **影响**：只能作日志估算，不能称真实收款或统一折扣准确。
-  **进一步探讨**：可从provider专属计价规则、cache桶含义和已知账单事件逐行对照入手，不用统一时间倍率代替合同。
-- alias变更、历史重折及已定价行变化未做运行对照。
-  **影响**：不能承诺任意改价/别名后历史金额绝不漂移。
-  **进一步探讨**：可用固定旧事件、改alias再追加新事件的夹具比较旧row与snapshot解释，明确锁价不变量。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 存储、网络与退出依赖什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-storageDomain是强注入，缺失降级。sessionQuery决定会话真正可读，sessionPersistence只是省I/O的revision来源。联网从models.dev和open.er-api抓元数据，未见为计算而发送会话正文；本轮只读代码、不取真实价格。失网有内置与默认汇率口径，应按来源说明而非实时价格解释。
-
-
-
-启动顺序决定可见性。storageDomain 先打开，sessionPersistence 只提供变化戳，真实消息仍经 sessionQuery 读入；缺后者不能用缓存戳冒充读取。网络价格失败应保留默认口径，不把当前模型目录当历史真实合同。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:30-38](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L30-L38)
-
-缺storage降级。
-
-```text
-export async function apply(ctx: Context, config: Config): Promise<void> {
-  const domainService = ctx.get('storageDomain')
-  if (domainService === undefined) {
-    ctx.logger.warn('[plugin-usage-billing] storageDomain 未装配，计费聚合不可用（插件已降级）')
-    return
-  }
-
-  const domain = await domainService.open(usageBillingDomain)
-  ctx.effect(() => () => { void domain.close() })
-```
-
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-83](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L83)
-
-query/revision/web服务。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-  const source: SessionSource = {
-    listSessions: async () => {
-      const persistence = ctx.get('sessionPersistence') as SessionPersistenceLike | undefined
-      if (persistence !== undefined) {
-        const listed = await persistence.list()
-        return listed.map((s) => ({ header: s.header, stamp: String(s.revision) }))
-      }
-      // 退化：stamp 为 null，该轮每个会话整会话重读。
-      const q = ctx.get('sessionQuery') as SessionQueryLike | undefined
-      if (q === undefined) return []
-      return (await q.listSessions()).map((r) => ({ header: r.header, stamp: null }))
-    },
-    readSession: async (id: string) => {
-      const q = ctx.get('sessionQuery') as SessionQueryLike | undefined
-      if (q === undefined) throw new Error('sessionQuery unavailable')
-      const snap = await q.readSession(id as never)
-      return { session: snap.session, events: [...snap.events] }
-    },
-  }
-
-  const service = new UsageBillingService(ctx, {
-    domain,
-    settings,
-    installAt,
-    source,
-    fetchPricing: async ({ force, ttlHours }) => {
-      const web = ctx.get('web')
-      if (web === undefined) return { ok: false, reason: 'web 服务未装配' }
-      return await fetchPricingFromNetwork({ web, snapshots, now: () => Date.now() }, force, ttlHours)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/fetch.ts:15-16](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/fetch.ts#L15-L16)
-
-两个元数据URL。
-
-```text
-export const MODELS_DEV_URL = 'https://models.dev/api.json'
-export const FX_URL = 'https://open.er-api.com/v6/latest/USD'
-```
-
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:86-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L86-L107)
-
-持久行会话/目录字段。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    rows.push({
-      id: ledgerKey(ctx.session.id, event.seq),
-      sessionId: ctx.session.id,
-      seq: event.seq,
-      time: event.time,
-      provider: who.provider,
-      model: who.model,
-      day: dayKey(event.time),
-      ...(ctx.session.cwd === undefined ? {} : { cwd: ctx.session.cwd }),
-      isSubagent: ctx.session.origin === 'subagent',
-      ...(ctx.session.delegationDepth === undefined ? {} : { delegationDepth: ctx.session.delegationDepth }),
-      input: usage.inputTokens,
-      cacheRead: usage.cacheReadTokens ?? 0,
-      cacheWrite: usage.cacheWriteTokens ?? 0,
-      output: usage.outputTokens,
-      reasoning: usage.reasoningTokens ?? 0,
-      costCny: priced.costCny,
-      currency: priced.currency,
-      priced: priced.priced,
-      snapshotId: table.snapshotId,
-      ...(tier === null ? {} : { tier }),
-      backfilled: event.time < ctx.installAt,
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
-
-读取和改价远程面。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
-  { method: 'overview', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'daily', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'byModel', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'byWorkspace', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'pricing', params: [] },
-  { method: 'setCustomPrice', params: ['entry'] },
-  { method: 'removeCustomPrice', params: ['key'] },
-  { method: 'refreshPricing', params: ['force'] },
-  { method: 'setAlias', params: ['input'] },
-  { method: 'aliasList', params: [] },
-  { method: 'repricing', params: [] },
-  { method: 'status', params: [] },
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 三阶段成本与效果如何判断？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-完整任务是正确解释同一组调用的用量与估价，并发现无法计价/不一致，不是UI数字更完整。插件不额外调用模型，但冷回填、变化日志重折、表索引与分片/网络仍有成本。模型费用是被观察对象，不应和插件自身开销混成一个“免费”。
-
-
-
-首次冷回填需要遍历历史日志并建立分片；持续开销取决于会话变化戳和改价刷新；失败时要核分片写入与折叠水位是否一致。应记录 CPU/I/O、网络和人工对账，现金与时间分开。
-
-未知实际费用、恢复时长和错误率，不能从不调用模型推出零成本。对照 provider 原始 usage/收款与人工表格时，应分别验证计量正确、价目匹配、折扣/汇率与显示分组，并计修正/重建人时。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/index.ts:55-71](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/index.ts#L55-L71)
-
-缺revision退化全日志。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-  const source: SessionSource = {
-    listSessions: async () => {
-      const persistence = ctx.get('sessionPersistence') as SessionPersistenceLike | undefined
-      if (persistence !== undefined) {
-        const listed = await persistence.list()
-        return listed.map((s) => ({ header: s.header, stamp: String(s.revision) }))
-      }
-      // 退化：stamp 为 null，该轮每个会话整会话重读。
-      const q = ctx.get('sessionQuery') as SessionQueryLike | undefined
-      if (q === undefined) return []
-      return (await q.listSessions()).map((r) => ({ header: r.header, stamp: null }))
-    },
-    readSession: async (id: string) => {
-      const q = ctx.get('sessionQuery') as SessionQueryLike | undefined
-      if (q === undefined) throw new Error('sessionQuery unavailable')
-      const snap = await q.readSession(id as never)
-      return { session: snap.session, events: [...snap.events] }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:94-119](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/aggregate.ts#L94-L119)
-
-变动会话重折。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  for (const { header, stamp } of sessions) {
-    try {
-      const wm = deps.folds.get(foldKey(header.id))
-      // 戳相同 = 这份日志自上次折叠以来没变过；headerCreatedAt 只是 id 复用时的兜底。
-      // `rebuild` 那一趟**故意不看水位**：账本换容器后水位对应的是旧容器，必须整语料重折一遍。
-      if (!opts.rebuild && wm !== undefined && stamp !== null && wm.stamp === stamp && wm.headerCreatedAt === header.createdAt) {
-        skipped += 1
-        continue
-      }
-      const snap = await deps.source.readSession(header.id)
-      const result = foldEvents(snap.events, {
-        session: snap.session,
-        installAt: deps.installAt,
-        aliases: aliasMap,
-        resolvePrice: (at) => resolveSnapshotAt(at, snapshots),
+        ...(stamp === null ? {} : { stamp }),
+        foldedThroughSeq: result.lastSeq,
+        lastTime: result.lastTime,
+        headerCreatedAt: header.createdAt,
+        lastSnapshotId: resolveSnapshotAt(result.lastTime, snapshots).snapshotId,
       })
-      // 一个会话一轮只写一次：它的行落在同一片（跨天最多两片）上，逐行写会把整片重写几十遍。
-      // 只有内容真的变了才落盘：正在写的会话每轮都会被重折，绝大多数行是上一轮的旧行。
-      const changed = result.rows.filter((row) => {
-        const previous = deps.ledger.get(row.id)
-        return previous === undefined || !sameRow(previous, row)
-      })
-      await deps.ledger.putMany(changed)
-      await deps.folds.put(foldKey(header.id), {
-        sessionId: header.id,
-        // 戳为 null 时不写这个字段：下一轮继续整会话重读，等后端能给出戳为止。
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:47-62](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L47-L62)
+**依据 6 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:108-115](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/ledger-store.ts#L108-L115)
 
-启动把所有账本行建内存索引。
-
-<details>
-<summary>查看原文（16行）</summary>
+多片写与内存更新。
 
 ```text
-  constructor(table: KvTable<string, LedgerShard>) {
-    this.table = table
-    for (const [, shard] of table.entries()) {
-      for (const row of shard.rows) this.rowsById.set(row.id, row)
-    }
-  }
-
-  get size(): number { return this.rowsById.size }
-
-  /** 分片记录数（诊断/验收用：这就是冷启动要打开的文件数）。 */
-  get shardCount(): number { return this.table.size }
-
-  get(id: string): LedgerRow | undefined { return this.rowsById.get(id) }
-
-  /** 全量快照（视图层按窗口过滤，不在这里裁剪）。 */
-  all(): LedgerRow[] { return [...this.rowsById.values()] }
-```
-
-</details>
-
-**依据 4 · 作者声明**：[packages/plugin-usage-billing/README.md:33-36](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/README.md#L33-L36)
-
-作者网络刷新占写锁等边界。
-
-```text
-- 目录刷新（含它的网络请求）期间会占用写锁，此时改自定义价要等它结束。
-- 改了刷新间隔要等当前缓存过期才生效。
-- 会话维度的数据由「按工作区」的分组结果带回，在明细页展开工作区时才看得到。
-- 热力图的单格明细只在悬停 / 触摸提示里；键盘用户读到的是上方的活跃天数与区间合计。
-```
-
-#### 缺口
-
-- 缺少同调用集的计量/估价误差、大历史资源与人工核对成本对照。
-  **影响**：不能量化对账准确或净节省。
-  **进一步探讨**：可先用已知usage和专属价格夹具逐行比较，再按明确授权对照真实账单；记录未计价与恢复而非只总额。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 哪些机制可复用，提供商计价契约假设如何证伪？
-
-**研究主题**：工程质量与复用、新假设与验证
-
-#### 完整回答
-
-可复用的是原始usage/价格快照/估算标志分离、ID幂等分片、变化跳过、失败不中断串行队列，以及Host/Client remote方法名单单一真相源。分片减少每事件文件和重复写，但同ID覆盖/跨片移动仍需处理多片失败；storage宿主保证不能从本包推断。
-
-可以探讨未验证的“提供商计价契约与锁价收据”。每条费用记录绑定usage schema、明确provider计价/折扣规则及snapshot/FX来源，默认不对无明确合同提供商套峰谷；同名兜底标估算并由读者确认。旧行价格在普通重折保留，修订必须新版本/明确重估收据，不静默替换。代价是维护更多provider协议、旧行迁移和对账数据隐私。可用两provider同model异价、缺usage/cache字段、alias变化、跨日和第N分片失败夹具，比较误价、重复、历史漂移与恢复人时；若仍可静默改历史或套错折扣，应否定当前契约。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/ledger-store.ts:66-116](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/ledger-store.ts#L66-L116)
-
-分片串行与跨片迁移。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-  putMany(rows: readonly LedgerRow[]): Promise<void> {
-    if (rows.length === 0) return Promise.resolve()
-    const run = this.chain.then(() => this.applyRows(rows))
-    this.chain = run.then(() => undefined, () => undefined)
-    return run
-  }
-
-  /** 链内执行：把一批行落到它们各自的分片上，每片至多一次读写。 */
-  private async applyRows(batch: readonly LedgerRow[]): Promise<void> {
-    const patches = new Map<string, ShardPatch>()
-    const patchAt = (key: string, sessionId: string, day: string): ShardPatch => {
-      let patch = patches.get(key)
-      if (patch === undefined) {
-        patch = { sessionId, day, outgoing: new Set(), incoming: new Map() }
-        patches.set(key, patch)
-      }
-      return patch
-    }
-
-    for (const row of batch) {
-      const previous = this.rowsById.get(row.id)
-      if (previous !== undefined) {
-        const oldKey = ledgerShardKey(previous.sessionId, previous.day)
-        const newKey = ledgerShardKey(row.sessionId, row.day)
-        if (oldKey === newKey) {
-          // 同片且内容未变：整片不写。正在写的会话每轮都会被重折，绝大多数行是旧行。
-          if (sameRow(previous, row)) continue
-        } else {
-          // 换了分片（会话日志被改写导致 day 变了）：先从旧片摘掉，否则同一个 seq
-          // 会在两片里各留一份，等于重复计费。
-          patchAt(oldKey, previous.sessionId, previous.day).outgoing.add(row.id)
-        }
-      }
-      const target = patchAt(ledgerShardKey(row.sessionId, row.day), row.sessionId, row.day)
-      target.incoming.set(row.id, row)
-    }
-
-    for (const [key, patch] of patches) {
-      const current = this.table.get(key)
-      const kept = current === undefined
-        ? []
-        : current.rows.filter((candidate) => !patch.outgoing.has(candidate.id))
       const merged = mergeShardRows(kept, [...patch.incoming.values()])
       if (merged.rows.length === 0) {
         // 摘空即删键：不留空壳，否则每次冷启动都白读一个文件。
@@ -1026,164 +514,129 @@ export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
         await this.table.put(key, emptyShard(patch.sessionId, patch.day, merged.rows))
       }
       for (const id of patch.outgoing) this.rowsById.delete(id)
-      for (const row of patch.incoming.values()) this.rowsById.set(row.id, row)
 ```
 
-</details>
+#### 缺口
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:80-91](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/service.ts#L80-L91)
+- alias变更的旧价漂移、多provider合同差异和第N片失败后恢复未复现。
+  **影响**：不把日志估价或写时快照当真实账单与硬预算保障。
+  **进一步探讨**：用同名异价/缺缓存/alias变化/跨日及写片失败夹具核金额、旧快照和水位；保留旧账本，任何无解释漂移停止信金额。
 
-失败后继续队列与安装快照。
+<a id="research-q03"></a>
 
-<details>
-<summary>查看原文（12行）</summary>
+<a id="detail-section-13"></a>
 
-```text
-  /** 前一次失败不让链条卡死。 */
-  private serialize<T>(work: () => Promise<T>): Promise<T> {
-    const run = this.chain.then(work)
-    this.chain = run.then(() => undefined, () => undefined)
-    return run
-  }
+### Q03 · 采用与恢复负担是什么，下一步计价契约如何证伪？
 
-  async ensureBaseSnapshot(entries: Record<string, PriceEntry>, usdToCny: number, usdToCnySource: 'live' | 'default'): Promise<void> {
-    return this.serialize(async () => {
-      if ([...this.snapshots.entries()].some(([, s]) => s.reason === 'install')) return
-      const snap = planSnapshot(undefined, { entries, usdToCny, usdToCnySource },
-        { id: SNAPSHOT_INSTALL_ID, at: this.config.installAt, reason: 'install' })
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:1-6](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L1-L6)
-
-remote名单防漂移动机。
-
-```text
-/**
- * Remote 方法的**唯一来源**：host 的 markRemoteMethods 与 client 的 descriptors 都读这里。
- *
- * 存在的理由（spec 承重事实 12）：client 的参数个数是硬契约，声明几个就必须传几个，
- * 少传会在运行时抛 `expected N argument(s), got M`。两侧各写一份必然漂移，
- * 所以名单只写一次，并用 tests/service-remote.test.ts 钉住。
-```
-
-**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/remote-methods.ts:20-32](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/remote-methods.ts#L20-L32)
-
-唯一方法契约。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-export const USAGE_BILLING_REMOTE_METHODS = Object.freeze([
-  { method: 'overview', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'daily', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'byModel', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'byWorkspace', params: ['rangeKind', 'includeSubagents'] },
-  { method: 'pricing', params: [] },
-  { method: 'setCustomPrice', params: ['entry'] },
-  { method: 'removeCustomPrice', params: ['key'] },
-  { method: 'refreshPricing', params: ['force'] },
-  { method: 'setAlias', params: ['input'] },
-  { method: 'aliasList', params: [] },
-  { method: 'repricing', params: [] },
-  { method: 'status', params: [] },
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:77-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L77-L107)
-
-假设计价/收据绑定起点。
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-    const who = fromContext ?? fromHeader ?? UNKNOWN
-    const alias = ctx.aliases.get(aliasId(who.provider, who.model))
-    const table = ctx.resolvePrice(event.time)
-    const keys = priceKeyCandidates(who.provider, who.model, alias)
-    const { tier, factor } = tierAndFactorAt(event.time, isCnHoliday)
-    const priced = priceUsage(usage, table.entries, keys, table.usdToCny, factor)
-    const modelLabel = `${who.provider}/${who.model}`
-    if (!priced.priced) unpricedModels.add(modelLabel)
-
-    rows.push({
-      id: ledgerKey(ctx.session.id, event.seq),
-      sessionId: ctx.session.id,
-      seq: event.seq,
-      time: event.time,
-      provider: who.provider,
-      model: who.model,
-      day: dayKey(event.time),
-      ...(ctx.session.cwd === undefined ? {} : { cwd: ctx.session.cwd }),
-      isSubagent: ctx.session.origin === 'subagent',
-      ...(ctx.session.delegationDepth === undefined ? {} : { delegationDepth: ctx.session.delegationDepth }),
-      input: usage.inputTokens,
-      cacheRead: usage.cacheReadTokens ?? 0,
-      cacheWrite: usage.cacheWriteTokens ?? 0,
-      output: usage.outputTokens,
-      reasoning: usage.reasoningTokens ?? 0,
-      costCny: priced.costCny,
-      currency: priced.currency,
-      priced: priced.priced,
-      snapshotId: table.snapshotId,
-      ...(tier === null ? {} : { tier }),
-      backfilled: event.time < ctx.installAt,
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 目前建议及停止条件是什么？
-
-**研究主题**：采用判断
+**研究主题**：效果与总成本、采用判断、工程质量与复用、新假设与验证
 
 #### 完整回答
 
-推荐observe。日志聚合、unknown与历史估算标记有价值，但所有provider统一峰谷、跨provider同名兜底和重折可能修改历史价格，对计费工具的核心可信度影响大。暂不把显示金额用于结算、预算强约束或对外承诺。
+建议观察，不把显示费用当账单或硬预算。先用无真实会话的夹具核provider专属规则、unknown与历史锁价，再经明确授权对照少量真实账单；账本不能解释差异时回服务商原始usage/人工表。首次冷回填读日志建分片并校价格/FX口径，持续有变动重读、网络刷新、分片/索引维护，故障要查片/水位及历史金额；不额外发模型请求不等零CPU/I/O。现金、人工和恢复时间未知，退出须保留快照/账本解释口径，不能只卸载就丢掉历史来源。
 
-继续探讨可先用无真实日志的计量/价格夹具核查provider专属规则和锁价，再按明确授权与少量已知账单对照。缺usage被忽略、不同provider同名错价、无合同折扣、alias后旧价漂移或水位/分片不一致应停止依赖金额，保留旧账本/快照盘点。Q02口径与Q04完整任务结果明确后再评估trial，本轮未触碰用户会话。
+可借鉴原始usage/快照/估算标记分离、稳定ID分片、变动跳过与失败不推进水位。未验证假设为每条行绑定provider计量schema、合同/折扣、FX和不可变费用收据，普通重折保留旧行，重估必须显式新修订，跨provider同名仅候选待确认。代价是规则维护、迁移和账单隐私；用当前/契约方案对照同名异价、别名变化和部分失败，测误价、历史漂移、重复和恢复人时。若仍静默套错折扣或改旧价，或维护负担超过人工对账，否定；不把未来方案算已实现。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:71-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/fold.ts#L71-L82)
+**依据 1 · 源码核查**：[packages/plugin-usage-billing/src/aggregate.ts:95-134](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/aggregate.ts#L95-L134)
 
-usage缺失/统一factor。
+变化跳过、分片后水位、失败重试。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-    if (event.type !== 'assistant/message') continue
-
-    calls += 1
-    const usage = (event.data as { usage?: import('@deepseek-ai/dsh-llm').TokenUsage }).usage
-    if (usage === undefined) continue
-
-    const who = fromContext ?? fromHeader ?? UNKNOWN
-    const alias = ctx.aliases.get(aliasId(who.provider, who.model))
-    const table = ctx.resolvePrice(event.time)
-    const keys = priceKeyCandidates(who.provider, who.model, alias)
-    const { tier, factor } = tierAndFactorAt(event.time, isCnHoliday)
-    const priced = priceUsage(usage, table.entries, keys, table.usdToCny, factor)
+    try {
+      const wm = deps.folds.get(foldKey(header.id))
+      // 戳相同 = 这份日志自上次折叠以来没变过；headerCreatedAt 只是 id 复用时的兜底。
+      // `rebuild` 那一趟**故意不看水位**：账本换容器后水位对应的是旧容器，必须整语料重折一遍。
+      if (!opts.rebuild && wm !== undefined && stamp !== null && wm.stamp === stamp && wm.headerCreatedAt === header.createdAt) {
+        skipped += 1
+        continue
+      }
+      const snap = await deps.source.readSession(header.id)
+      const result = foldEvents(snap.events, {
+        session: snap.session,
+        installAt: deps.installAt,
+        aliases: aliasMap,
+        resolvePrice: (at) => resolveSnapshotAt(at, snapshots),
+      })
+      // 一个会话一轮只写一次：它的行落在同一片（跨天最多两片）上，逐行写会把整片重写几十遍。
+      // 只有内容真的变了才落盘：正在写的会话每轮都会被重折，绝大多数行是上一轮的旧行。
+      const changed = result.rows.filter((row) => {
+        const previous = deps.ledger.get(row.id)
+        return previous === undefined || !sameRow(previous, row)
+      })
+      await deps.ledger.putMany(changed)
+      await deps.folds.put(foldKey(header.id), {
+        sessionId: header.id,
+        // 戳为 null 时不写这个字段：下一轮继续整会话重读，等后端能给出戳为止。
+        ...(stamp === null ? {} : { stamp }),
+        foldedThroughSeq: result.lastSeq,
+        lastTime: result.lastTime,
+        headerCreatedAt: header.createdAt,
+        lastSnapshotId: resolveSnapshotAt(result.lastTime, snapshots).snapshotId,
+      })
+      for (const m of result.unpricedModels) unpriced.add(m)
+      folded += 1
+      rows += result.rows.length
+    } catch (error) {
+      failures += 1
+      // 诊断写入本身还可能失败（storage 抖了），而它是唯一的副作用：让它自己兜住，
+      // 否则一个坏会话会把其余会话一起带走。header 也可能缺失，先本地取值再拼内容。
+      // 键稳定于 (sessionId, kind)：同一个坏会话重试多少次都只 upsert 同一条，
+      // 不推进水位意味着它下轮还会被重试 —— 但重试只累加计数，不会再涨存储。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:53-82](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/pricing/cost.ts#L53-L82)
+**依据 2 · 源码核查**：[packages/plugin-usage-billing/src/service.ts:121-134](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/service.ts#L121-L134)
 
-同名价格兜底。
+重建成功标记与失败边界。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
+  /** 忽略水位，全部会话重折一遍，成功后落标记。 */
+  async rebuildLedger(): Promise<AggregateStats> {
+    this.rebuilding = true
+    try {
+      const stats = await this.aggregatePass(true)
+      if (stats.failures === 0) {
+        await this.config.domain.global.set({
+          rebuiltAt: this.now(), rebuiltRows: this.ledger.size, rebuiltShards: this.ledger.shardCount,
+        })
+      }
+      return stats
+    } finally {
+      this.rebuilding = false
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/pricing/cost.ts:40-65](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/pricing/cost.ts#L40-L65)
+
+明确提供商收据需求。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+/** 同名兜底候选的前缀：首段 `*` + 斜杠 + 模型名 = 「任何 provider 下叫这个名字的价」。 */
+const NAME_FALLBACK_PREFIX = `${WILDCARD}/`
+
+/**
+ * 表内「模型名 → 命中键」索引（延迟构建，按表的键**插入顺序**取第一条）。
+ *
+ * 插入顺序即优先级来源：内置目录在安装时就写进基准快照，网络刷新只会往后追加 delta，
+ * 所以同一个模型名有多个 provider 时先出现的（目录里的官方 provider）胜出 —— 确定性、可解释。
+ *
+ * 用 WeakMap 挂在价目表本身上：快照表是不可变对象，按表缓存不会串味，也不会泄漏。
+ */
+const nameIndexCache = new WeakMap<object, Map<string, string>>()
+
 /** 表内同名条目键；没有则 undefined。 */
 function sameNameEntryKey(table: Readonly<Record<string, PriceEntry>>, name: string): string | undefined {
   let index = nameIndexCache.get(table)
@@ -1197,57 +650,27 @@ function sameNameEntryKey(table: Readonly<Record<string, PriceEntry>>, name: str
       if (modelPart === WILDCARD) continue
       const normalized = normalizeModelId(modelPart)
       if (normalized !== '' && !index.has(normalized)) index.set(normalized, key)
-    }
-    nameIndexCache.set(table, index)
-  }
-  return index.get(normalizeModelId(name))
-}
-
-/**
- * 解析一个候选键：先按字面命中；首段为 `*` 的候选再走同名兜底。
- * @param table - 该时刻解析出的价目表（`<provider>/<model>` → 单价）。
- * @param key - 候选键，见 `priceKeyCandidates`。
- */
-function entryFor(table: Readonly<Record<string, PriceEntry>>, key: string): PriceEntry | undefined {
-  const direct = table[key]
-  if (direct !== undefined) return direct
-  if (!key.startsWith(NAME_FALLBACK_PREFIX)) return undefined
-  const hit = sameNameEntryKey(table, key.slice(NAME_FALLBACK_PREFIX.length))
-  return hit === undefined ? undefined : table[hit]
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin-usage-billing/src/shard-merge.ts:34-53](https://github.com/0x7A7A6572/dsh-forge-studio/blob/be18a392f0c5c60a5253eb267b2f622d3a0e6555/packages/plugin-usage-billing/src/shard-merge.ts#L34-L53)
+**依据 4 · 源码核查**：[packages/plugin-usage-billing/src/fold.ts:102-107](https://github.com/0x7A7A6572/dsh-forge-studio/blob/9fac17c8eb36ab46b1cd7647ccc18dc8b65c3ca6/packages/plugin-usage-billing/src/fold.ts#L102-L107)
 
-后写覆盖旧ID。
-
-<details>
-<summary>查看原文（20行）</summary>
+现有快照与backfilled可扩展。
 
 ```text
-/**
- * 把一批行并入分片：身份是 `row.id`（= `<sessionId>__<seq>`），后写覆盖，按 seq 升序归一。
- *
- * 三条不变量（测试钉住）：同批重复并入 → `changed: false` 且内容不变（幂等）；同 id 再次
- * 并入 → 覆盖而不是追加；批内顺序不影响结果（字节稳定，落盘文件可直接比对）。
- */
-export function mergeShardRows(current: readonly LedgerRow[], batch: readonly LedgerRow[]): ShardMerge {
-  const byId = new Map<string, LedgerRow>()
-  for (const row of current) byId.set(row.id, row)
-  let changed = false
-  for (const row of batch) {
-    const previous = byId.get(row.id)
-    if (previous !== undefined && sameRow(previous, row)) continue
-    byId.set(row.id, row)
-    changed = true
-  }
-  // 未变时原样返回：调用方据此整片跳过 put，不必先写再比。
-  if (!changed) return { rows: current as LedgerRow[], changed: false }
-  const rows = [...byId.values()].sort((a, b) => a.seq - b.seq || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
-  return { rows, changed: true }
+      costCny: priced.costCny,
+      currency: priced.currency,
+      priced: priced.priced,
+      snapshotId: table.snapshotId,
+      ...(tier === null ? {} : { tier }),
+      backfilled: event.time < ctx.installAt,
 ```
 
-</details>
+#### 缺口
+
+- 没有真实计费准确率、CPU/I/O、对账时间或新契约实验。
+  **影响**：不把日志估价或写时快照当真实账单与硬预算保障。
+  **进一步探讨**：合成新样本后做授权匿名对账，分别算计量、价格、FX和人工修正，不以旧夹具通过代新收益。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
