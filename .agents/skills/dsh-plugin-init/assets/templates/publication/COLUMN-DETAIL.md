@@ -2,7 +2,7 @@
 
 ## {{plugin}}
 
-{{meta}}
+{{category}}{{meta}}
 
 **主要用途**：{{purpose}}
 

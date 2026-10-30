@@ -34,22 +34,6 @@
 
     [查看完整分析](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)
 
-- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)** ｜ 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
-
-    **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
-
-    **试用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见[Q09](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q09)。
-
-    [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
-
-- **[dsh-nav-history](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)** ｜ 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
-
-    **推荐理由**：适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。
-
-    **试用条件**：先用普通会话和面板交错导航，检查后退后新访问的分支截断、重载和失效目标；只把它当主视图位置入口。记录不稳定时回侧栏手动查找。[Q03](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md#research-q03)
-
-    [查看完整分析](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)
-
 ## [最近发布](data/views/columns/LATEST.md)
 
 > 查看最近发布的版本，了解用途和使用条件。
