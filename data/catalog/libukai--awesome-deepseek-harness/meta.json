@@ -1,0 +1,48 @@
+{
+    "repository": "libukai/awesome-deepseek-harness",
+    "repository_id": 1333167552,
+    "captured_at": "2026-10-29T05:28:58.410Z",
+    "window_start": "2026-09-29T05:28:58.410Z",
+    "stars": 335,
+    "pushed_at": "2026-09-12T05:53:00Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Alibukai%2Fawesome-deepseek-harness%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84D0:15E58E:5F456C0:881A1BB:6AE2DB54 and timestamp 2026-10-29 05:36:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Alibukai%2Fawesome-deepseek-harness%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84DE:3A0262:638A3AA:8DA5D54:6AE2DB55 and timestamp 2026-10-29 05:36:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alibukai%2Fawesome-deepseek-harness%20is%3Aissue%20created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84E4:357B63:62B38AD:8CA8254:6AE2DB56 and timestamp 2026-10-29 05:36:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alibukai%2Fawesome-deepseek-harness%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 84F2:1408BB:60C4C65:89FD6CA:6AE2DB57 and timestamp 2026-10-29 05:36:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alibukai%2Fawesome-deepseek-harness%20is%3Aissue%20updated%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8502:1214FD:634216A:8D58457:6AE2DB58 and timestamp 2026-10-29 05:36:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    }
+}
