@@ -1,10 +1,10 @@
 {
     "repository": "1497105876/dsh-media-studio",
     "repository_id": 1399694663,
-    "captured_at": "2026-10-26T03:22:47.788Z",
-    "window_start": "2026-09-26T03:22:47.788Z",
+    "captured_at": "2026-10-29T05:28:58.410Z",
+    "window_start": "2026-09-29T05:28:58.410Z",
     "stars": 0,
-    "pushed_at": "2026-10-23T08:12:39Z",
+    "pushed_at": "2026-10-28T07:53:01Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,47 +15,47 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8D8:2A0FCF:14EC026:171FB39:6ADECA09 and timestamp 2026-10-26 03:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BB0E:2BDF0E:61A8CFB:8B6F2B4:6AE2DB44 and timestamp 2026-10-29 05:36:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A910:318E83:14FFC9C:17328F6:6ADECA09 and timestamp 2026-10-26 03:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAAE:3A0262:63878AF:8DA1FB5:6AE2DB45 and timestamp 2026-10-29 05:36:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20created%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A94A:EA964:15816EC:17B4127:6ADECA0A and timestamp 2026-10-26 03:33:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAB6:1F3C3D:63619A6:8D72B1E:6AE2DB46 and timestamp 2026-10-29 05:36:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A986:E012A:148060E:16B3EA7:6ADECA0A and timestamp 2026-10-26 03:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAC8:2D9CD7:63A0423:8D7F490:6AE2DB47 and timestamp 2026-10-29 05:36:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20updated%3A2026-09-26T03%3A22%3A47.788Z..2026-10-26T03%3A22%3A47.788Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9B0:29EDE8:14F2B22:1725802:6ADECA0B and timestamp 2026-10-26 03:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A1497105876%2Fdsh-media-studio%20is%3Aissue%20updated%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DADC:1EA11A:634709A:8D7FA56:6AE2DB48 and timestamp 2026-10-29 05:36:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-25T21:15:37.465Z",
+        "captured_at": "2026-10-28T06:21:21.324Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "b93e081fcea482acac8fe75a9012ef4bacfb52cf",
-        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
         "latest_error": null
     },
     "npm": {
         "package_name": "@gw/dsh-media-studio",
-        "captured_at": "2026-10-26T03:22:47.788Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
+        "captured_at": "2026-10-29T05:28:58.410Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40gw%2Fdsh-media-studio",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/%40gw%2Fdsh-media-studio",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-26T03:22:47.788Z",
+            "captured_at": "2026-10-29T05:28:58.410Z",
             "source_url": "https://registry.npmjs.org/%40gw%2Fdsh-media-studio",
             "error": "HTTP 404",
             "latest_version": null,

@@ -26,23 +26,24 @@
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
-| [dsh-media-studio](#plugin-1399694663-root) | 在DSH对话生成图片和视频或发送本地媒体，提供后台任务、自动保存及富媒体展示。 | 观察；先验收远端提交后断连与job失败的可追溯恢复，再决定后台试用。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。 | 当前建议有透明视频制作经验的素材作者先观察并核对工具路径和质量检查，避免按“全流程可复现”直接批量生成。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 通过 Postiz MCP 在 DSH 中连接社交账号、读取平台规则并准备草稿或安排发布 | [Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) 先观察并以只读账号规则查验为入口；草稿与发布必须回读远端，无法确认时停止DSH写操作回Postiz界面。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
-| [dsh-sticker-pack](#plugin-1418769012-root) | 订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。 | 仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。 |
+| [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tavern](#plugin-1335944000-root) | 高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。 | [Q04](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q04)仅建议能管理备份和变量的角色卡用户用独立档案试用，固定卡片与模型先验收状态再看速度。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将TongFlow媒体工作流、项目树和画布接入DSH会话，支持资产生成与审阅。 | 有多轮媒体资产任务的DSH用户可在副本项目限制额度试用；先核对宿主版本、Python与外部插件权限，人工审阅每轮产物；若需要强预算隔离或只偶发出图，退回供应商界面或简单脚本。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
+| [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | DSH工作区资料创作插件，将对话生成接到Studio修订、学习交互与真实文件交接；引用合法/快照状态和生成答案仍需独立核验。 | 已有兼容环境且允许外发公开小资料者，可试quiz/卡片并人工核答案；不直接学生评分/大批生成，不强开Office/媒体，见[Q04](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q04)/[Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05)。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
+| [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 中提供小说、短剧、游戏改编与视频解说的创作 Skills 和文件工作台 | [Q04](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q04) 先用已有文本项目试用一次改稿和冲突恢复；不将未核查付费媒体链纳入推荐。 |
-| [OpenDesign](#plugin-1223170290-root) | 协作AI设计工作区，把设计系统、Agent生成、预览与团队反馈组织在同一项目。 | 熟悉Agent/设计系统者可本地非敏感brief试用，先确认DSH版本和预览/取消，云分享与数据范围另验收。 |
+| [Open Design](#plugin-1223170290-root) | 独立本地设计应用，把编码Agent、设计资产、项目制品、预览和反馈组织在同一工作区，内含DSH stdio companion。 | 已有编码Agent/设计系统经验者，仅在独立OS账户或隔离环境的非敏感项目副本，匹配实际CLI/profile/companion且先不启云同步/分享/公网，验证一项本地HTML任务。 |
 | [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
 | [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
@@ -279,22 +280,6 @@
 
 [查看完整分析](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1399694663-root"></a>
-
-## [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
-
-
-
-> **用途**：创作者在DSH内从提示到可找回图片/视频，验收内容、保存和会话呈现。
-
-> **亮点**：将生成、媒体保存与会话展示结合，并将长任务转宿主jobs，减少网页下载上传步骤；生成模型能力继承服务商。见 [Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q02)。
-
-> **思考**：jobs注册失败会脱离控制器运行且无jobId；会话消失或推送失败不保证送达，远端ID恢复未见持久对账。见 [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)。
-
-> **建议**：未验证的持久阶段回执与原远端ID核对，可能减少重复生成和丢交付；以四阶段故障矩阵测净收益。见 [Q05](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/1497105876--dsh-media-studio/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1333652151-root"></a>
 
 ## [dsh-pet 素材制作工程](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md)
@@ -365,13 +350,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5V1A-afk/dsh-sticker-pack)
 
-> **用途**：让 DSH 回复按语境适度使用授权图像，并在目标渠道实际显示。
+> **用途**：对话中适度用合适表情图的偏好便利，以目标端真实显示/收到和可接受等待验收；图片数、id、路径和Markdown不是交付。见[Q01](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q01)。
 
-> **亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q02)。
+> **亮点**：把远端图册、宿主coin/工具和HTTP/本地路径组合成可用选图入口；具体增量是资源供给与正常caller下的概率门禁，不是硬输出频率、已发送或已验证语义推荐。见[Q02](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q02)。
 
-> **思考**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q03)。
+> **思考**：非POST查询可写设置且本组件无准入；15秒只清单race不含后续懒图，gif与.gif字段不匹配，.wechat只是原字节副本/发送提示。源更新/撤图也不等缓存同步，源码条件未冒充实机失败，见[Q02](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q02)、[Q03](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q03)。
 
-> **建议**：受保护设置和交付回执能让“能选到图”升级为“已显示/送达”；尚未实现。详见[Q05](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q05)。
+> **建议**：先修准入/字段/总预算与缓存语义，再验证最小可显示主图和目标端结果反馈是否胜过预热/手工图/纯文本；只有真实展示、偏好和延迟净改善才提炼方向，不先建跨渠道平台。未实现/验证，见[Q05](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md) · [返回表格](#category-index)
 
@@ -471,6 +456,22 @@
 
 [查看完整分析](../../plugins/1186258278--dsh-zh-ui/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1369398336-packages-dsh-knowledge-studio"></a>
+
+## [EduWork Knowledge Studio](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md)
+
+[![GitHub ★ 250](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=250&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 1,595](https://img.shields.io/static/v1?label=npm+30d&message=1%2C595&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio)
+
+> **用途**：为已有兼容DSH的教师和培训资料维护者，把允许的资料整理成可追问、可修订的学习草稿；场景明确而需求/学习效果未验证，见[Q01](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q01)。
+
+> **亮点**：当前同会话到学习草稿/真实工件的管理链、条件轮末最终版与失败历史/只重导出机制，比散落聊天复制多了可管理交接。共享服务属直接依赖，输出正确与教学效果仍未证，见[Q01](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q01)/[Q03](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q03)。
+
+> **思考**：引用可选且只验ID/结构；索引fresh比较当前索引而非实时重读文件，合法答案索引也不证答案真值。无索引创作仍静态加载Ladybug native；正常工具/直启RPC权限路径不同，见[Q02](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q02)至[Q04](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q04)。
+
+> **建议**：先补索引与活文件对齐，再在现有快照/修订上核条目级事实和答案支持/教师确认，三组对照误用与总投入；现有能力已等效就否定，见[Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339888505-root"></a>
 
 ## [gzhflow](../../plugins/andiii208--gzhflow/INSIGHT.md)
@@ -486,6 +487,22 @@
 > **建议**：可探索按产物hash绑定质检/审阅、按attempt保存图生/上传/草稿远端ID收据，比较错版/重复与恢复人工；未实现。详见[Q06](../../plugins/andiii208--gzhflow/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/andiii208--gzhflow/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1399694663-root"></a>
+
+## [Media Studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
+
+
+
+> **用途**：反复在DSH内由Agent/命令创作并回交图片或短视频、愿意核端点与素材范围的用户；结果是合格且可找回/可取用的作品，摩擦及替代见[Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)。
+
+> **亮点**：集成价值是让生成资产沿canonical/meta及命令payload进入宿主文件/附件和实际视图，减少另接服务与手动搬运；模型、jobs与浏览器能力继承上游，见[Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q02)。
+
+> **思考**：后台缺句柄降级/无交回确认且需模型再执行工具，取消/超时不代表远端终止；协议字段、无副本卡片与key引用还有实际条件反例，不能从started或文件存在推已交付，见[Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)、[Q04](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q04)。
+
+> **建议**：复用现有job/远端ID/已存文件做最小分阶段关联，未知先查原任务，再对照实际send_media/视图读取；不是再造后台框架，若现有日志+目录已够用则否定独立层，见[Q06](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/1497105876--dsh-media-studio/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1200521020-root"></a>
 
@@ -537,17 +554,17 @@
 
 <a id="plugin-1223170290-root"></a>
 
-## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
+## [Open Design](../../plugins/nexu-io--open-design/INSIGHT.md)
 
-[![GitHub ★ 103,910](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103%2C910&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
+[![GitHub ★ 104,652](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104%2C652&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
 
-> **用途**：面向从brief生成可预览原型并收集团队反馈的设计开发团队；独立应用，可连接DSH，非单插件。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
+> **用途**：为已有编码Agent的设计开发者，把非敏感brief、生成制品、预览和反馈放回同项目接续；根是独立应用，不是DSH根插件。见[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)。
 
-> **亮点**：相对HTML生成后外发截图反馈，把设计资产、Agent、预览及评论放回同项目；具体增量是交接组织，非模型或全球首创证明。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
+> **亮点**：把设计资产/Agent接线、可预览制品及反馈传输组织成同项目交接；身份/缺终态、局部制品门和持久评论修订ACK有实际caller。见[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)至[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)。
 
-> **思考**：协议completed、有限占位检测和完整评论回执不等于设计合格或反馈已落地；固定DSH适配版本范围不能外推所有宿主。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03)
+> **思考**：协议completed含max-tokens且不是设计合格；marker/stub局部有限，正文/manifest非原子写。严格批回执不在所核单条drain，Vela单条空输出/缺数字seq可折0而被调用成功ACK，不能推出云落地或意见已落实。见[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02)至[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)。
 
-> **建议**：未验证假设是评论绑定制品版本和验收项、Agent逐条给修订证据减少遗漏与返工；对照同brief同预算的截图聊天流程，无改善则否定。[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
+> **建议**：先修单条回执shape/未知结果读回，再验证评论到制品版本的具体改动证据和人工验收；已有版本/witness/队列不当新量，简单原应用修复/清单够用就否定新插件。见[Q06](../../plugins/nexu-io--open-design/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/nexu-io--open-design/INSIGHT.md) · [返回表格](#category-index)
 
