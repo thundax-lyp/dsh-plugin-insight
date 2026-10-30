@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 721](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=721&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 733](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=733&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -34,22 +34,6 @@
 
     [查看完整分析](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)
 
-- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)** ｜ 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
-
-    **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
-
-    **试用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见[Q09](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q09)。
-
-    [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
-
-- **[dsh-nav-history](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)** ｜ 为 DSH 会话与整页面板提供后退、前进、历史底栏和本地持久化。
-
-    **推荐理由**：适合频繁跨会话面板的人先核对交错导航与持久化后试用，接受历史记录可能失效及不恢复滚动的边界。
-
-    **试用条件**：先用普通会话和面板交错导航，检查后退后新访问的分支截断、重载和失效目标；只把它当主视图位置入口。记录不稳定时回侧栏手动查找。[Q03](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md#research-q03)
-
-    [查看完整分析](data/plugins/ahacrazy--dsh-nav-history/INSIGHT.md)
-
 ## [最近发布](data/views/columns/LATEST.md)
 
 > 查看最近发布的版本，了解用途和使用条件。
@@ -63,18 +47,18 @@
 > 从近期下载较多的插件中，寻找适合自己任务的工具。
 
 - [billion-context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 为长会话提供模型驱动的增量分层压缩、原文恢复、上下文搜索及多客户端代理/原生通道。 · [![npm 30d 2,010,311](https://img.shields.io/static/v1?label=npm+30d&message=2%2C010%2C311&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
-- [REA](data/plugins/morluto--rea/INSIGHT.md) · 独立CLI和MCP服务器，为应用、二进制及运行行为逆向分析返回证据和限制。 · [![npm 30d 634,260](https://img.shields.io/static/v1?label=npm+30d&message=634%2C260&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+- [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过 CLI 与 MCP 统一提供应用工件、JavaScript/Electron 和多种后端的分析操作，返回带来源、推断性质与限制的证据。 · [![npm 30d 954,223](https://img.shields.io/static/v1?label=npm+30d&message=954%2C223&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
 - [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 · [![npm 30d 538,384](https://img.shields.io/static/v1?label=npm+30d&message=538%2C384&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
 ## 按场景查找
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 229 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 231 |
 | [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 30 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 80 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 212 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 42 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 86 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 216 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 43 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
 | [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 123 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |

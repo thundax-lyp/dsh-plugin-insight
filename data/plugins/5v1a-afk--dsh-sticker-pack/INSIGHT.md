@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[531f16a](https://github.com/5V1A-afk/dsh-sticker-pack/tree/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781)
+源码版本：[92e492d](https://github.com/5V1A-afk/dsh-sticker-pack/tree/92e492d0080cc651fd3f7010adc36d5f066caa63)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/5V1A-afk/dsh-sticker-pack)
 <!-- END META -->
 
-> **功能**：订阅远端表情包清单，镜像图片，向 agent 提供选图工具和 Web/微信渠道贴图提示。
+> **功能**：为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。
 
-> **亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
+> **亮点**：把远端图册、宿主coin/工具和HTTP/本地路径组合成可用选图入口；具体增量是资源供给与正常caller下的概率门禁，不是硬输出频率、已发送或已验证语义推荐。见[Q02](#research-q02)。
 
-> **主要限制**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](#research-q03)。
+> **主要限制**：非POST查询可写设置且本组件无准入；15秒只清单race不含后续懒图，gif与.gif字段不匹配，.wechat只是原字节副本/发送提示。源更新/撤图也不等缓存同步，源码条件未冒充实机失败，见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 表情包如何进入 agent 回复，哪些渠道可真正显示？](#detail-section-11)
-  - [Q02 · 远端清单、懒下载、选图和出图概率如何工作？](#detail-section-12)
-  - [Q03 · 远端来源与设置路由有哪些风险？](#detail-section-13)
-  - [Q04 · 安装、素材分发与回复开销如何估算？](#detail-section-14)
-  - [Q05 · 怎样低风险试用并验证图像交付而非仅有路径？](#detail-section-15)
+  - [Q01 · 它是插件还是图册，真正交付是什么？](#detail-section-11)
+  - [Q02 · 清单、缓存、字符串选图、每轮概率和近期记录怎样实际工作？](#detail-section-12)
+  - [Q03 · 微信、设置权限和响应时限有哪些真实边界？](#detail-section-13)
+  - [Q04 · 安装、使用、维护和退出的条件/成本/效果怎样比较？](#detail-section-14)
+  - [Q05 · 现有概率/缓存之外，是否值得做新的可验证贴图能力？](#detail-section-15)
+  - [Q06 · 当前适合谁，什么时候应停止？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,72 +41,57 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：让 DSH 回复按语境适度使用授权图像，并在目标渠道实际显示。
+> **用途**：对话中适度用合适表情图的偏好便利，以目标端真实显示/收到和可接受等待验收；图片数、id、路径和Markdown不是交付。见[Q01](#research-q01)。
 
-手工选图上传或纯文本回复；本插件降低图册查找和路径拼接负担。
+手工上传/粘图、固定快捷图或纯文本是直接替代；插件主要省查素材/拼路径，未证随机更多图能改善偏好/任务。不是独立Agent或新的图像生成模型，见[Q01](#research-q01)。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| catalog/pick | 给 agent 素材候选 | 无渲染确认 |
-| 缓存/熔断 | 慢源降级 | 仍可能等待配置上限 |
-| 设置路由 | 即时调节概率/等待 | GET 可写、组件无鉴权 |
-| 微信副本 | 绕过图片消息限制 | 手机送达未验 |
+| 图册/选图 | remote镜像、字符串查图/候选 | 来源/授权另核，旧文件复用/残留不是撤销同步 |
+| 概率/工具 | 宿主coin与正常caller下false门禁 | 缺caller放行，非正文强约束/显示反馈 |
+| Web/本地展示 | 提供图片route或宿主文件链接 | 默认loopback/路径不保证远程端，备选未必下载 |
+| 微信适配提示 | 工作区识别、.wechat同字节副本 | gif字段判断不匹配，无转码/实际发送/收件证明 |
+| 设置/等待 | 概率/局部deadline及状态 | GET可写/无局部准入；15秒不包含后续图总耗时 |
 
 **流程与依赖**
 
-| 条件 | 用途 | 失败时 |
-| --- | --- | --- |
-| DSH tools/systemPrompt/Web | 工具和页面 | 部分功能缺失 |
-| 可信远端图册/CDN | 素材来源 | 使用旧镜像或空库 |
-| 目标客户端/微信通道 | 显示 | 路径无效或未送达 |
+素材内容/授权、真实可达URL/磁盘、宿主tool/prompt/turn接口和可选微信发送能力是不同前提；plugin安装不补全渠道。完整条件表见[Q04](#research-q04)。
 
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 配源 | 审核授权 pack.json | URL/内容可信 |
-| 试选 | catalog/pick | 图片可下载 |
-| 验收 | Web 展示或微信收件 | 真实呈现/可下载 |
+先固定小图册并核访问/URL，再以真实语境比较手工图/纯文本；慢源/撤图/备选/微信和退出分别验，不用概率0代替卸载或断网。步骤和失败判据见[Q04](#research-q04)。
 
 **效果与成本**
 
-| 阶段 | 投入 | 未知 |
-| --- | --- | --- |
-| 准备 | 授权图册源与 DSH 配置 | 内容权利 |
-| 持续 | 清单/图片网络与镜像 | 实际延迟、磁盘 |
-| 渠道 | Web 渲染与微信文件 | 送达率和缓存成本 |
+负担集中在网络尾延迟、模型工具/变化提示词、图源维护和副本/镜像清理；15秒及16MiB都不能按注释当整任务资源硬界。四阶段明细见[Q04](#research-q04)，无实际token/缓存/工时或节省数据。
 
-| 结果 | 源码支持 | 未证实 |
-| --- | --- | --- |
-| 素材获取 | 远端缓存/懒下载 | 各 CDN 稳定 |
-| 贴图 | Markdown/HTTP/微信文件路径 | 实际显示/送达 |
-| 概率 | 宿主掷骰和工具复用 | 模型遵循与输出频率 |
+当前可检查的是选图和路径供给；recent连备选都记录，不是显示/收件或语境满意度。效果表见[Q04](#research-q04)，简单替代和可否定反馈假设见[Q05](#research-q05)。
 
-> **思考**：设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](#research-q03)。
+> **思考**：非POST查询可写设置且本组件无准入；15秒只清单race不含后续懒图，gif与.gif字段不匹配，.wechat只是原字节副本/发送提示。源更新/撤图也不等缓存同步，源码条件未冒充实机失败，见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把远端图册与 DSH agent 工具、Web 地址及微信文件格式打通，并由插件决定贴图概率。详见[Q02](#research-q02)。
+> **亮点**：把远端图册、宿主coin/工具和HTTP/本地路径组合成可用选图入口；具体增量是资源供给与正常caller下的概率门禁，不是硬输出频率、已发送或已验证语义推荐。见[Q02](#research-q02)。
 
-设置路由 GET/POST 都可持久化概率与无上限 deadline；远端清单有限制但不是内容来源认证；微信文件副本和提示词不等于发送成功。
+镜像/懒图、头部尺寸缓存、每轮coin与工具门禁可借鉴；移植须统一字段/身份与真实总预算、更新/撤销和目标端回执，不能以返回路径或作者“必收到”代替交付。见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-设置 GET 带参数即写盘，组件内无身份/CSRF 校验；等待上限可无限增大，实际外部保护需核。详见[Q03](#research-q03)。
+非POST查询可写设置且本组件无准入；15秒只清单race不含后续懒图，gif与.gif字段不匹配，.wechat只是原字节副本/发送提示。源更新/撤图也不等缓存同步，源码条件未冒充实机失败，见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-仅可信图册试点，Web/微信均以收件端确认；限制等待时间并检查设置路由保护。详见[Q05](#research-q05)。
+观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](#research-q06)。
 
 <a id="detail-section-7"></a>
 
@@ -113,18 +99,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持镜像和路径/副本生成；真实渲染、微信送达及概率遵循未独立验证；设置 GET 可写。
+固定源码支持图册/coin/工具/链接和副本路径；设置、整次预算、格式/缓存与渠道交付有具体边界，未跑宿主/收件/性能。观察，先做可信小图册验收。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/library.js、lib/remote.js、client.js、test/selftest.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、client.js、cordis.patch.yml、lib/index.js、lib/library.js、lib/remote.js、lib/settings.html、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：审阅固定提交 README、包、Host、Remote、Client 及选图源码；未运行插件或外部渠道。
-- 下一步：隔离宿主用可信/恶意/慢源、Web 与微信测试端，测设置可写边界、渲染送达、延迟、prompt 缓存与概率。
+- 边界：固定根/Host/client/设置页，定向核tools/prompt/route装配、remote校验/读取/重试/镜像/ensureFile、库描述/字段/规则/残留文件、coin/turn caller与recent、真实HTTP/本地链接、微信工作区/副本、设置写及局部deadline/后续懒图和退出。未逐图视觉/授权审阅、全审所有解析/页面、宿主准入或外部微信实现，未运行目标/测试/网络/发送。
+- 下一步：只读固定Git/原件及研究装配；未安装、执行目标测试/代码、访问活CDN或发送渠道。后续以小图册测caller/轮次、换图撤图同名源、首图/备选渲染、慢网总时延/取消、设置访问及真实收件，再评偏好/全成本，见[Q06](#research-q06)。
 
 **分析版本**
 
 - **仓库**：[5V1A-afk/dsh-sticker-pack](https://github.com/5V1A-afk/dsh-sticker-pack)
-- **版本号**：0.6.2（[固定提交 531f16a](https://github.com/5V1A-afk/dsh-sticker-pack/tree/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.2（[固定提交 92e492d](https://github.com/5V1A-afk/dsh-sticker-pack/tree/92e492d0080cc651fd3f7010adc36d5f066caa63)）
+- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -132,9 +118,9 @@
 
 <a id="innovation"></a>
 
-受保护设置和交付回执能让“能选到图”升级为“已显示/送达”；尚未实现。详见[Q05](#research-q05)。
+先修准入/字段/总预算与缓存语义，再验证最小可显示主图和目标端结果反馈是否胜过预热/手工图/纯文本；只有真实展示、偏好和延迟净改善才提炼方向，不先建跨渠道平台。未实现/验证，见[Q05](#research-q05)。
 
-隔离宿主用可信/恶意/慢源、Web 与微信测试端，测设置可写边界、渲染送达、延迟、prompt 缓存与概率。
+只读固定Git/原件及研究装配；未安装、执行目标测试/代码、访问活CDN或发送渠道。后续以小图册测caller/轮次、换图撤图同名源、首图/备选渲染、慢网总时延/取消、设置访问及真实收件，再评偏好/全成本，见[Q06](#research-q06)。
 
 <a id="detail-section-9"></a>
 
@@ -153,669 +139,42 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+created%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A43%3A29.137Z..2026-10-22T05%3A43%3A29.137Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/5V1A-afk/dsh-sticker-pack/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-10-29。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：区分素材选择、模型贴图指令和真实渠道交付；检查设置副作用。
+**插件研究总目标**：核贴图从图源/coin/工具到真实显示或发送的区别，以及设置、缓存、预算/退出条件，对照手工图/纯文本后判断采用和机会。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 表情包如何进入 agent 回复，哪些渠道可真正显示？
+### Q01 · 它是插件还是图册，真正交付是什么？
 
-**研究主题**：场景与需求
-
-#### 完整回答
-
-插件订阅远端 pack.json，agent 用 catalog/pick 得到候选及可复制的 Markdown/图片地址，Web 桌面正文可插图；微信会话另生成 .wechat 文件副本并提示调用 send_to_wechat。合格结果是合适语境、可显示、不会无故拖慢回复；它不是自动保证出图，提示词仍需模型遵循，微信是否真正投递到手机作者也承认未验。基线是手工选图、直接上传或纯文本回复。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:1-10](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L1-L10)
-
-作者目标和缓存说明。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-# dsh-sticker-pack
-
-给 DSH 用的表情包插件：订阅任意多个**远端 `pack.json` 素材源**（GitHub 仓库、CDN、
-自己的服务器都行），把它们变成 agent 能用的图册，agent 在回复正文里直接把图贴出来
-（`![sticker](C:\...\x.gif)`），不走微信、不发文件、不需要前端改动。
-
-素材**只从配置的远端源来**：图片用到才下载，镜像到
-`~/Pictures/dsh-sticker-pack/remotes/<源名>/`（**不放 `~/.dsh`**：GUI 拒绝渲染它自己配置目录里的
-图片，只会显示「无法预览」），之后离线也能贴。谁都能给你加图——
-往那个仓库里丢一张图、在清单里加一行，你这边什么都不用改。
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:32-47](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L32-L47)
-
-作者微信渠道和未真机验证。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-## v0.6.1 变更（2026-10-15）
-
-- **微信会话改成发文件，并且不再发动图。** v0.6.0 的做法是「让模型用 `send_to_wechat` 把图发出去」，
-  实测仍然看不到：dsh-wechat-plugin 按**文件名**决定上传类型（它自己的 `lib/media-kind.js`：
-  图片扩展名走图片消息，其余走普通文件），而**以图片消息发出去的那条在对方手机上不会出现** ——
-  它只会在 `~/.dsh/wechat/boot.log` 留下一行 `outbound: shy.png ... (图片)`，然后手机上什么都没有。
-  现在微信会话里 `sticker_pick` 会把选中的图**复制成一个 `.wechat` 结尾的副本**
-  （`shy.png` → `shy.png.wechat`，放在素材缓存同级的 `wechat-out/`），通道于是按**文件**上传
-  （日志里是 `(文件)`）；真扩展名留在中间，收件人看得出下载的到底是什么。
-- **微信会话的候选池排除 gif。** 动图在那个通道同样是发出去不显示；池子里一张静态图都不剩时，
-  才回退到全部候选（宁可有图可选，也不空手）。
-- **`sticker_pick` 在微信会话里不返回 markdown**（返回空串 + 一句说明），模型手里没有可直接粘贴的
-  链接，`send_to_wechat` 就成了唯一出路。
-- **桌面会话一个字节没改**：同样的 `sticker_pick` 仍然返回 `![sticker](C:\...\x.jpg)`。
-- 自检 **70 条断言全过**，新增 2 条覆盖「动图识别」与「`.wechat` 副本让通道按文件发送」。
-- 仍需真机验证：这条链路我只在代码与日志层面确认过，没有真正发到手机上看过。
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:937-983](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L937-L983)
-
-两个模型工具。
-
-<details>
-<summary>查看原文（47行）</summary>
-
-```text
-/** `sticker_catalog` — the whole pack, so the agent knows what exists. */
-function catalogTool(config) {
-  return {
-    name: 'sticker_catalog',
-    description:
-      '列出表情包图册：每张图的 id、含义标签、尺寸与适用场景。'
-      + '要往回复里插图时别自己拼路径，用 sticker_pick 返回的 markdown 字段。',
-    parameters: { type: 'object', properties: {}, required: [] },
-    output: {
-      schema: {
-        type: 'object',
-        properties: {
-          count: { type: 'number' },
-          sources: { type: 'string' },
-          ok: { type: 'boolean' },
-          lines: { type: 'array', items: { type: 'string' } },
-          notice: { type: 'string' },
-        },
-        required: ['count', 'sources', 'ok', 'lines'],
-      },
-      render: function (_args, value) {
-        const lines = [`素材库 ${value.sources}（${value.count} 张）`].concat(value.lines)
-        if (value.notice !== undefined) lines.push('', value.notice)
-        return [{ type: 'text', text: lines.join('\n') }]
-      },
-    },
-    execute: async function () {
-      const read = await snapshotRemote(config)
-      const pack = read.pack
-      const value = {
-        count: pack.stickers.length,
-        sources: describeSources(read),
-        ok: pack.ok,
-        lines: library.formatCatalog(pack.stickers, { max: 40 }),
-      }
-      const notice = sourceNotice(read)
-      if (!pack.ok) value.notice = blockedMessage(pack)
-      else if (notice !== undefined) value.notice = notice
-      return value
-    },
-  }
-}
-
-/** `sticker_pick` — one sticker plus the exact Markdown its reply must carry. */
-function pickTool(config, ctx) {
-  return {
-    name: 'sticker_pick',
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1150-1164](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L1150-L1164)
-
-微信文件副本提示。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-      // A WeChat-bound session sends the reply body as plain text, so neither the
-      // local path nor the HTTP URL renders there — the phone cannot reach this
-      // machine. The channel's own tool is the only route out, and it has to be
-      // handed something the channel will send as a *file*: the same bytes sent
-      // as a picture do not appear on the phone at all. The notice rides on the
-      // value the model is guaranteed to read.
-      if (wechat) {
-        const staged = wechatFileCopy(sticker)
-        value.channel = 'wechat'
-        // An empty markdown leaves `send_to_wechat` as the only move: a model
-        // handed a link pastes it into the body, where it renders as nothing.
-        value.markdown = ''
-        if (staged !== undefined) value.file = staged
-        notes.push(`这个会话在微信上：正文贴图不显示。用 send_to_wechat 工具把这条路径发出去（它是个文件、不是图片——在这个通道里只有文件形式收得到）：${staged === undefined ? sticker.path : staged}`)
-      }
-```
-
-</details>
-
-#### 缺口
-
-- 真实 DSH 桌面/微信显示未独立复测。
-  **影响**：展示成功率未知。
-  **进一步探讨**：在隔离频道发假素材并核收件端。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 远端清单、懒下载、选图和出图概率如何工作？
-
-**研究主题**：功能与机制、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-远端源 URL 与最多源数经校验，镜像 pack.json 和图片到 Pictures；图片按需下载，清单/图上限分别 2/16MiB。库按 id/tag/context 纯字符串规则选候选，近期 ledger 避重复；宿主按每轮 Math.random 掷骰，把本轮结果写入 system prompt，并在 sticker_pick 里复用决定。相较纯提示词，插件控制随机掷骰和资源路径，但最终回复是否贴图仍依赖模型；概率非硬执行约束。HTTP 路由可给本地 Web 返回图像，缺路由时退本地文件路径。
+根组件是DSH插件dsh-sticker-pack0.6.2、MIT，CommonJS入口lib/index.js和Web client.js均已提交；它会注册sticker_catalog/sticker_pick、提示词与HTTP/设置界面，不是只有静态图片的资源目录。tools是声明依赖，systemPrompt/webServer分别按需获取，实际宿主工具/slots等结构仍须验收；没有额外模型服务或独立Agent循环，选图请求与最后怎么回复由宿主模型处理。
+
+对象是希望对话适度插入合适表情图的人。合格结果是语境/个人偏好合适、目标端真正显示或收到且没有不合理拖慢回复，不是目录数、选到id、文件存在或Markdown字符串。与手工上传/粘图、固定快捷短语或纯文本相比，增量是把远端图册接进模型工具、让宿主掷骰并给出路径/HTTP链接，省找素材步骤；并没有独立证据表明更多图或随机频率提升用户体验。
+
+Git里有stickers和pack.json，但package.files没有stickers；当前settingsOf的活动库只来自已配置远端清单的镜像，不再扫描任意本地目录。默认源是jsDelivr的仓库@main URL，没有固定到本轮SHA，所以固定代码不等图册内容也固定，首次离线安装不保证齐图。代码MIT不代表每个远端图片的来源授权/适用语境已经核实；本轮没有逐张视觉审阅或真实渠道发送，不替素材做质量/权利背书。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/remote.js:49-69](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/remote.js#L49-L69)
+**依据 1 · 作者声明**：[package.json:1-43](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/package.json#L1-L43)
 
-远端边界与缓存。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-/** How long a mirrored manifest is trusted before it is fetched again. */
-const DEFAULT_TTL_MS = 10 * 60 * 1000
-// Kept short on purpose: this plugin sits on a reply's critical path, so a dead
-// network has to cost seconds, not a minute. On top of this, the tool entry
-// points cap the whole refresh (see `TOOL_DEADLINE_MS` in lib/index.js).
-const DEFAULT_TIMEOUT_MS = 6000
-
-/** The remote is untrusted, so both directions are bounded. */
-const MAX_MANIFEST_BYTES = 2 * 1024 * 1024
-const MAX_IMAGE_BYTES = 16 * 1024 * 1024
-const MAX_SOURCES = 16
-const MAX_STICKERS_PER_SOURCE = 2000
-
-const MANIFEST_FILE = 'pack.json'
-const SOURCE_FILE = 'source.json'
-const IMAGES_FILE = 'images.json'
-
-const ID_PATTERN = /^[A-Za-z0-9_$.-]{1,32}$/
-
-/** In-flight fetches, so ten calls in a second still cost one request. */
-const INFLIGHT = new Map()
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/index.js:269-315](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L269-L315)
-
-每轮概率决定。
+根身份、入口、分发files、许可和Web声明。
 
 <details>
-<summary>查看原文（47行）</summary>
-
-```text
-function rollTurn(context, probability) {
-  if (context === null || typeof context !== 'object') return undefined
-  const agent = context.scope ?? context.agent
-  const id = agent !== null && typeof agent === 'object' && agent.id !== undefined ? String(agent.id) : undefined
-  const signal = context.signal
-  if (id === undefined && (signal === null || typeof signal !== 'object')) return undefined
-  const key = id === undefined ? signal : id
-  const known = TURN_DECISIONS.get(key)
-  if (known !== undefined && known.signal === signal) return known.decision
-  const decision = Math.random() < probability
-  if (TURN_DECISIONS.size >= TURN_DECISION_LIMIT) TURN_DECISIONS.clear()
-  TURN_DECISIONS.set(key, { signal, decision })
-  return decision
-}
-
-/**
- * Subagents do not reply to the user, so a sticker there is pointless. They are
- * identified by `options.parentAgent` — the field the agent factory sets on the
- * child (`@deepseek-ai/dsh-agent`).
- */
-function isSubagent(context) {
-  const agent = (context === null || typeof context !== 'object' ? undefined : (context.scope ?? context.agent)) ?? undefined
-  if (agent === null || typeof agent !== 'object') return false
-  if (agent.parentAgent !== undefined && agent.parentAgent !== null) return true
-  const options = agent.options
-  return options !== null && typeof options === 'object' && options.parentAgent !== undefined && options.parentAgent !== null
-}
-
-/**
- * The verdict this turn already reached, or a fresh one if nobody asked yet.
- *
- * `sticker_pick` calls this with the *calling* agent, so the tool and the prompt
- * cannot disagree: a turn that lost the toss gets no sticker even if the model
- * calls the tool anyway. Returns `undefined` when there is no agent to key on,
- * which the caller reads as "no verdict" rather than "no".
- */
-function turnDecision(agent, probability) {
-  if (agent === null || typeof agent !== 'object' || agent.id === undefined) return undefined
-  if (isSubagent({ agent })) return false
-  const key = String(agent.id)
-  const known = TURN_DECISIONS.get(key)
-  if (known !== undefined) return known.decision
-  const decision = Math.random() < probability
-  if (TURN_DECISIONS.size >= TURN_DECISION_LIMIT) TURN_DECISIONS.clear()
-  TURN_DECISIONS.set(key, { signal: undefined, decision })
-  return decision
-}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:1092-1137](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L1092-L1137)
-
-选图、下载和返回。
-
-<details>
-<summary>查看原文（46行）</summary>
-
-```text
-      const query = {
-        avoid: Array.isArray(requested.avoid) ? requested.avoid.map(String) : [],
-        recent: recentAll.slice(0, window),
-        count: requested.count,
-        gifBias: read.settings.gifBias,
-      }
-      if (typeof requested.id === 'string' && requested.id !== '') query.id = requested.id
-      if (typeof requested.tag === 'string' && requested.tag !== '') query.tag = requested.tag
-      if (typeof requested.context === 'string' && requested.context !== '') query.context = requested.context
-
-      const result = await resolveSticker(config, pool, query)
-      const sticker = result.sticker
-      // Every candidate was pending and every download failed. An empty markdown
-      // is this tool's way of saying "no sticker this time" (see the
-      // `markdown === ''` branch in `render`), and it beats a link to a file that
-      // does not exist.
-      if (sticker === undefined || sticker.pending === true) {
-        return {
-          id: '',
-          label: '挑不出可用的表情包：远端图还没下载成功，换一张再试或先用本地素材库',
-          path: '',
-          markdown: '',
-          bytes: 0,
-          matched: 'none',
-          alternatives: [],
-        }
-      }
-      const describe = (candidate) => {
-        const item = {
-          id: candidate.id,
-          label: candidate.label,
-          markdown: candidate.link,
-        }
-        if (candidate.when !== undefined) item.when = candidate.when
-        if (candidate.bytes > read.largeFileBytes) item.large = true
-        return item
-      }
-      const value = {
-        id: sticker.id,
-        label: sticker.label,
-        path: sticker.path,
-        markdown: sticker.link,
-        bytes: sticker.bytes,
-        matched: result.matched,
-        alternatives: result.alternatives.map((candidate) => describe(candidate.sticker)),
-      }
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.md:199-230](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L199-L230)
-
-作者设计解释。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-````text
-## 三件事，各由谁负责
-
-需求是「按上下文挑图」「加素材要方便」「别把回复拖慢」「不用每条都贴」。这四条落在
-三个不同的地方，搞混了就会做成没用的一半：
-
-| 需求 | 落在哪 | 为什么不能换个地方 |
-|---|---|---|
-| 按上下文挑 | `sticker_pick` 的 `context` 参数 + `library.js` 的打分 | 打分是纯字符串匹配（含义/场景/标签/尺寸偏好），不看对话 |
-| 加素材方便 | 远端源仓库 + `pack.json` 清单 | 图册硬编码在代码里改一次要重启，本地文件夹又只有你一个人能改 |
-| 别拖慢回复 | 扫描缓存 + 尺寸缓存 + 内存版 ledger（见「性能」） | 原来的热路径每次砍 18.13 MiB 文件头 + 同步写盘 |
-| 贴图频率 | **插件自己掷骰**，结果写进 system prompt 段落（见下） | 掷骰不能交给被掷的那一方：写在提示词里就等于模型自己决定 |
-
-### system prompt 段落：把「掷骰」和「执行」分开
-
-「这轮要不要贴」是个随机决定，而随机决定不该由被随机的那一方来做——v0.3.0 就是那样，
-所以那 60% 说了等于没说。现在插件每轮先自己掷骰，再把**结果**当成硬指令写进
-`ctx.systemPrompt` 的 `sticker-pack:usage` 段（`order: 9500`，第一方段落都远低于 9000）。
-
-概率在 0 和 1 之间时，命中的那轮（默认 60%）是：
-
-```
-表情包（宿主判定，本轮要贴）：这条回复末尾务必贴一张。
-要贴时先调 sticker_pick，context 写清这条回复在回应什么、什么语气（例：「他夸我了，不好意思」「又要重跑，摆烂」）。
-把返回的 markdown 原样放进回复正文，位置放在整条回复的最后：本地路径的图要等消息落定才显示，放最后读者才不用等。
-不要手写图片路径，不要连着两次贴同一张。
-```
-
-没命中的那轮只有一行：
-
-```
-表情包（宿主判定，本轮不贴）：这条回复不要贴表情包，也不要调用 sticker_pick。
-```
-````
-
-</details>
-
-#### 缺口
-
-- 未跑真实 agent 回合。
-  **影响**：概率指令遵循率和缓存命中未知。
-  **进一步探讨**：固定多轮对照提示词与工具输出。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 远端来源与设置路由有哪些风险？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-远端 pack.json 可以从任意配置的 HTTP(S) 地址获取；清单是非可信输入，代码检查 id、扩展名、大小并由 id 派生本地文件名，降低路径穿越，但目标域名、重定向后的地址和内容真实性仍由用户源配置承担。设置路由把 GET 查询参数 probability/deadlineMs 直接当写入，还接受 POST；组件内未见身份或 CSRF 检查，任何能到路由的请求可调贴图概率与等待上限，实际外网可达性取决于 DSH Web 外层。deadlineMs 只要求正数无上限，用户可把远端等待时间设得很长；失败熔断/超时也是流程性能边界，不等于总响应一定快速。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/remote.js:56-83](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/remote.js#L56-L83)
-
-来源和体积边界。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-/** The remote is untrusted, so both directions are bounded. */
-const MAX_MANIFEST_BYTES = 2 * 1024 * 1024
-const MAX_IMAGE_BYTES = 16 * 1024 * 1024
-const MAX_SOURCES = 16
-const MAX_STICKERS_PER_SOURCE = 2000
-
-const MANIFEST_FILE = 'pack.json'
-const SOURCE_FILE = 'source.json'
-const IMAGES_FILE = 'images.json'
-
-const ID_PATTERN = /^[A-Za-z0-9_$.-]{1,32}$/
-
-/** In-flight fetches, so ten calls in a second still cost one request. */
-const INFLIGHT = new Map()
-
-function trimUrl(value) {
-  if (typeof value !== 'string') return ''
-  return value.trim()
-}
-
-function isHttpUrl(value) {
-  try {
-    const parsed = new URL(value)
-    return parsed.protocol === 'http:' || parsed.protocol === 'https:'
-  } catch (err) {
-    return false
-  }
-}
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/remote.js:187-209](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/remote.js#L187-L209)
-
-跟随重定向并读响应。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-async function fetchOnce(url, limit, timeoutMs) {
-  if (typeof fetch !== 'function') return { error: 'Node 运行时不支持 fetch（需要 Node 18 或更新）', retryable: false }
-  const controller = typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
-    ? AbortSignal.timeout(timeoutMs)
-    : undefined
-  try {
-    const response = await fetch(url, {
-      redirect: 'follow',
-      signal: controller,
-      headers: { 'user-agent': 'dsh-sticker-pack', accept: 'application/json,image/*' },
-    })
-    if (!response.ok) {
-      return { error: `HTTP ${response.status}`, retryable: response.status >= 500 || response.status === 429 }
-    }
-    const declared = Number(response.headers.get('content-length') || '0')
-    if (Number.isFinite(declared) && declared > limit) {
-      return { error: `体积 ${Math.round(declared / 1024)} KB 超过上限 ${Math.round(limit / 1024)} KB`, retryable: false }
-    }
-    const buffer = Buffer.from(await response.arrayBuffer())
-    if (buffer.length > limit) {
-      return { error: `体积 ${Math.round(buffer.length / 1024)} KB 超过上限 ${Math.round(limit / 1024)} KB`, retryable: false }
-    }
-    return { buffer }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:474-535](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L474-L535)
-
-deadline 与设置写入。
-
-<details>
-<summary>查看原文（62行）</summary>
-
-```text
- * the settings page offers a 5–30 s slider for the ordinary answer plus a free
- * field for everything else, and a machine on a slow link is allowed to ask for
- * a two-minute wait. `undefined` means "no opinion" and falls through to the
- * profile config, then to the default.
- */
-function asDeadline(value) {
-  const number = typeof value === 'string' && value.trim() !== '' ? Number(value) : value
-  if (typeof number !== 'number' || !Number.isFinite(number) || number <= 0) return undefined
-  return Math.round(number)
-}
-
-function deadlineOf(config) {
-  const fromPage = asDeadline(readSettings().deadlineMs)
-  if (fromPage !== undefined) return fromPage
-  const fromProfile = asDeadline((config || {}).deadlineMs)
-  return fromProfile === undefined ? DEFAULT_DEADLINE_MS : fromProfile
-}
-
-/** What the settings page (and the self-test) reads back. */
-function settingsSnapshot(config) {
-  const fromPage = asProbability(readSettings().probability)
-  const fromProfile = asProbability((config || {}).probability)
-  const deadlineFromPage = asDeadline(readSettings().deadlineMs)
-  const deadlineFromProfile = asDeadline((config || {}).deadlineMs)
-  return {
-    probability: probabilityOf(config),
-    source: fromPage !== undefined ? 'settings.json' : (fromProfile !== undefined ? 'profile config' : 'default'),
-    defaultProbability: DEFAULT_PROBABILITY,
-    deadlineMs: deadlineOf(config),
-    deadlineSource: deadlineFromPage !== undefined
-      ? 'settings.json'
-      : (deadlineFromProfile !== undefined ? 'profile config' : 'default'),
-    defaultDeadlineMs: DEFAULT_DEADLINE_MS,
-    file: SETTINGS_FILE,
-  }
-}
-
-/**
- * Merge a patch from the settings page into the runtime file. Unknown keys are
- * preserved, `probability` is the only key the page owns today, and a rejected
- * value leaves the file untouched.
- */
-function applySettingsPatch(config, patch) {
-  if (patch === null || typeof patch !== 'object' || Array.isArray(patch)) {
-    return { ok: false, error: 'body must be a JSON object', ...settingsSnapshot(config) }
-  }
-  const next = { ...readSettings() }
-  if (Object.prototype.hasOwnProperty.call(patch, 'probability')) {
-    const value = asProbability(patch.probability)
-    if (value === undefined) {
-      return { ok: false, error: 'probability must be a number between 0 and 1', ...settingsSnapshot(config) }
-    }
-    next.probability = value
-  }
-  if (Object.prototype.hasOwnProperty.call(patch, 'deadlineMs')) {
-    const value = asDeadline(patch.deadlineMs)
-    if (value === undefined) {
-      return { ok: false, error: 'deadlineMs must be a positive number of milliseconds', ...settingsSnapshot(config) }
-    }
-    next.deadlineMs = value
-  }
-  return { ok: writeSettings(next), ...settingsSnapshot(config) }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1230-1277](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L1230-L1277)
-
-GET/POST 设置路由。
-
-<details>
-<summary>查看原文（48行）</summary>
-
-```text
-   * `GET ?probability=0.8` / `?deadlineMs=90000` also write — a deliberate
-   * fallback because this process cannot see the host's route table, and if
-   * plugin routes turn out to be GET/HEAD-only (as `/api/*` is) the page would
-   * otherwise be read-only.
-   */
-  function settingsRoute(req, res) {
-    const url = new URL(req.url || '/', 'http://x')
-    if (req.method !== 'POST') {
-      if (url.searchParams.has('probability') || url.searchParams.has('deadlineMs')) {
-        const patch = {}
-        if (url.searchParams.has('probability')) patch.probability = url.searchParams.get('probability')
-        if (url.searchParams.has('deadlineMs')) patch.deadlineMs = url.searchParams.get('deadlineMs')
-        const result = applySettingsPatch(config, patch)
-        trace(`settings: probability -> ${Math.round(result.probability * 100)}% (${result.source}) deadline -> ${result.deadlineMs}ms (${result.deadlineSource}) ok=${result.ok}`)
-        send(res, result.ok ? 200 : 400, JSON.stringify(result), json)
-        return
-      }
-      send(res, 200, JSON.stringify({ ok: true, ...settingsSnapshot(config) }), json)
-      return
-    }
-    let body = ''
-    let settled = false
-    req.on('data', (chunk) => {
-      if (settled) return
-      body += chunk
-      if (body.length > 16 * 1024) {
-        settled = true
-        send(res, 413, JSON.stringify({ ok: false, error: 'body too large' }), json)
-        req.destroy()
-      }
-    })
-    req.on('end', () => {
-      if (settled) return
-      settled = true
-      let patch
-      try {
-        patch = body.trim() === '' ? {} : JSON.parse(body)
-      } catch (err) {
-        send(res, 400, JSON.stringify({ ok: false, error: 'body is not valid JSON' }), json)
-        return
-      }
-      const result = applySettingsPatch(config, patch)
-      trace(`settings: probability -> ${Math.round(result.probability * 100)}% (${result.source}) deadline -> ${result.deadlineMs}ms (${result.deadlineSource}) ok=${result.ok}`)
-      send(res, result.ok ? 200 : 400, JSON.stringify(result), json)
-    })
-    req.on('error', () => {
-      settled = true
-    })
-```
-
-</details>
-
-**依据 5 · 作者声明**：[README.md:14-30](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L14-L30)
-
-作者确认无上限与 GET 写。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-## v0.6.2 变更（2026-10-15）
-
-- **熔断时间（等待上限）交给用户。** 之前写死的 15 秒现在由设置决定：DSH 设置面板的「表情包」
-  一节与独立设置页 `/sticker-pack/settings.html` 都多了同一组控件——**5–30 秒滑杆**（默认 15 秒，
-  另有 5/10/15/30 快捷键）+ **一个无上限的秒数输入框**（`min=1`、**没有 `max`**，填 90 就是 90 秒）。
-  值存 `~/.dsh/sticker-pack/settings.json` 的 `deadlineMs`，**保存即生效，不用重启**。
-  理由：这 15 秒是这台机器网络的属性，不是插件的属性——CDN 连不上的那台机器上，等多久合适只有用户知道。
-- **取值规则**：正数即可，**无上限**；`0`/负数/非数字被拒（HTTP 400，文件不动），缺省回落到 15 秒。
-  优先级 `settings.json` > profile 配置的 `deadlineMs` > 默认 `DEFAULT_DEADLINE_MS = 15000`
-  （快照里同时给出 `deadlineSource` 与 `defaultDeadlineMs`）。
-- **`GET` 也能写**：`/sticker-pack/settings?deadlineMs=90000` 与 `?probability=` 同级，可一起送
-  （理由同下：万一插件路由只转发 GET/HEAD，设置页至少还能写）。
-- 自检 **90 条断言全过**（v0.6.1 是 70），新增 20 条覆盖等待上限：默认值、字符串入参、
-  **超过滑杆范围不被夹紧**（120000 ms 原样保留）、0/负数回落、GET 写、POST 写、非法值 400 且文件不动、
-  设置页两处控件、客户端面板两处控件——其中面板那条断言的正是**数字框没有 `max`**，
-  因为「无上限」本身就是需求。
-- 仍未真机验证：面板控件只在桩 React 下渲染断言过，没有在真实 GUI 里点过；要等重启 dsh 后才算数。
-```
-
-</details>
-
-#### 缺口
-
-- 未核宿主鉴权和反代。
-  **影响**：设置接口的真实暴露范围未知。
-  **进一步探讨**：以未登录、跨站页面与外网路径测试。
-- 未做恶意源/慢网络试验。
-  **影响**：内容和响应时延风险未量化。
-  **进一步探讨**：mock 重定向、巨型流与故障源。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 安装、素材分发与回复开销如何估算？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-包 0.6.2 MIT，Web client 与 host，依赖 DSH tools/systemPrompt/webServer 可用性及远端 CDN/图片版权许可；默认附作者配置源。每次网络刷新有清单和懒图片下载，磁盘镜像位于 Pictures；工具等待上限默认 15 秒、可配置任意正数，源失败有 10 分钟冷却。中间概率状态进入 system prompt，0<p<1 时文本每轮变化会削弱前缀缓存，这是作者明确承认的成本；微信副本也占磁盘并依赖外部通道行为。性能和断网情形仅有作者自检/报告，没有独立运行。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-42](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/package.json#L1-L42)
-
-包与 Web client。
-
-<details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
 {
@@ -860,84 +219,723 @@ GET/POST 设置路由。
       "platform": "web"
     }
   }
+}
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:14-30](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L14-L30)
+**依据 2 · 源码核查**：[lib/index.js:1513-1544](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1513-L1544)
 
-等待上限和自检。
+真实工具/路由/提示词装配与退出。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+    const tools = service(ctx, 'tools')
+    const webServer = service(ctx, 'webServer')
+    trace(`apply entered — tools=${typeof tools} webServer=${typeof webServer} ${ctxSummary(ctx)}`)
+    if (tools === undefined) {
+      trace('apply: no tools service, sticker tools NOT registered')
+    } else {
+      disposers.push(registerTool(tools, ctx, catalogTool(config)))
+      disposers.push(registerTool(tools, ctx, pickTool(config, ctx)))
+    }
+    registerRoutesWhenReady(ctx, config)
+    if ((config || {}).prompt === false) trace('prompt: disabled by config')
+    else {
+      const stopPrompt = registerPromptWhenReady(ctx, config)
+      if (typeof stopPrompt === 'function') disposers.push(stopPrompt)
+    }
+  } catch (err) {
+    trace(`apply THREW: ${(err && err.stack) || String(err)}`)
+  }
+  if (typeof ctx.on === 'function') {
+    ctx.on('dispose', function () {
+      for (const dispose of disposers) dispose()
+      flushRecent()
+    })
+  }
+  trace('apply finished')
+}
+
+module.exports = {
+  name,
+  inject,
+  apply,
+  default: { name, inject, apply },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[client.js:280-300](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/client.js#L280-L300)
+
+实际Web设置插槽。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    function apply(ctx) {
+      const register = () =>
+        ctx.slots.inject('settings.section', () =>
+          ctx.slots.register(
+            {
+              name: 'settings.section',
+              id: 'sticker-pack',
+              // Built-in sections sit in the 10..30 range, so this lands after them.
+              order: 60,
+              label: () => '表情包',
+            },
+            Panel,
+          ),
+        )
+      if (typeof ctx.effect === 'function') ctx.effect(register)
+      else register()
+    }
+
+    return { apply, inject }
+  },
+})
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:399-405](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L399-L405)
+
+默认远端@main未绑定研究SHA。
+
+```text
+const DEFAULT_REMOTES = [
+  {
+    url: 'https://gcore.jsdelivr.net/gh/5V1A-afk/dsh-sticker-pack@main/stickers/pack.json',
+    name: '大肥鱼',
+  },
+]
+
+```
+
+**依据 5 · 源码核查**：[lib/index.js:575-589](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L575-L589)
+
+活动库仅remotes镜像。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  const base = typeof given.httpBaseUrl === 'string' ? given.httpBaseUrl.trim().replace(/\/+$/u, '') : ''
+  const style = typeof given.linkStyle === 'string' ? given.linkStyle.trim().toLowerCase() : 'auto'
+  return {
+    // The only source of stickers since v0.5.0: every remote manifest is
+    // mirrored into a folder of its own and read from there. No local folder
+    // is scanned any more, so this list is the whole library.
+    remotes: configuredRemotes(config),
+    // A mirror is refreshed at most once per TTL, and never on a path that a
+    // reply is waiting on: see `snapshotRemote` versus `snapshot`.
+    remoteTtlMs: numberSetting(config, 'remoteTtlMs', remote.DEFAULT_TTL_MS),
+    remoteTimeoutMs: numberSetting(config, 'remoteTimeoutMs', remote.DEFAULT_TIMEOUT_MS),
+    // How long a tool call may wait on the network before it answers from the
+    // mirror. Owned by the settings page since 2026-10-15: a 5–30 s slider plus
+    // a free field, because how long a wait is acceptable is a property of the
+    // machine's link, not of this plugin.
+```
+
+</details>
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 清单、缓存、字符串选图、每轮概率和近期记录怎样实际工作？
+
+**研究主题**：功能与机制、工程质量与复用、贡献与相对优势
+
+#### 完整回答
+
+远端源只接受HTTP(S)，最多16源；manifest最多读取前2000项，校验id和图片扩展名，由id派生本地文件名。清单写images/source/pack元数据，图片按需ensureFile，旧镜像可在失败后继续用，源失败有冷却；同URL的inflight Promise可共用。它不是语义向量检索或个人偏好学习：library按id/tag/context字符串打分，近期和avoid是偏好，排空时会退全池，指名id也可退原列表，同分可按GIF权重抽样。
+
+正常有agent/turn信息时，prompt rollTurn记录宿主coin，sticker_pick从exec.agent读turnDecision；false会直接返回空Markdown，说明不只是让模型自觉掷骰。turn/start和signal变化负责刷新决定，子代理有跳过意图；但依赖宿主传相同agent/轮次。turnDecision遇缺agent/id返回undefined，execute只拦false，因此缺caller会放行，即使概率设0也不能把该分支当强制停止。模型还可能复用旧URL或不遵循prompt，最终正文不是按token强制拦截的概率输出。
+
+主图pending时真实走resolveSticker→fetchPending→remote.ensureFile，最多尝试3个候选，成功后重读库；失败可返回空Markdown而不是保证出图。备选不都预下载，本地链接方式下仍可能指向未落盘文件；HTTP图片route可另触发懒下载。value返回所选路径/Markdown后就把主图和alternatives一起记recent，故近期记录是“提供过候选”而不是实际显示/送达回执。
+
+缓存还有内容变更边界：ensureFile遇同路径非零文件直接复用，不核新URL/内容hash；同id/扩展名换远端图不保证更新本地字节。同步manifest也不删除旧图片，loader会自动纳入未登记残留文件，因此源端删项不等本地撤图。源列表只按URL去重，缓存目录却主要取name slug，同名不同URL可共用目录；多源时应给唯一名称并核实际来源。这些是源码条件，不作为已运行缓存故障。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/remote.js:105-125](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/remote.js#L105-L125)
+
+URL去重/源数边界及name。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+function parseRemotes(raw) {
+  const list = Array.isArray(raw) ? raw : (raw === undefined || raw === null || raw === '' ? [] : [raw])
+  const seen = new Set()
+  const sources = []
+  for (const item of list) {
+    if (sources.length >= MAX_SOURCES) break
+    let url = ''
+    let name = ''
+    if (typeof item === 'string') {
+      url = trimUrl(item)
+    } else if (item !== null && typeof item === 'object') {
+      url = trimUrl(item.url || item.manifest || item.src)
+      name = trimUrl(item.name)
+    }
+    if (!isHttpUrl(url) || seen.has(url)) continue
+    seen.add(url)
+    sources.push({ url, name: name === '' ? deriveName(url) : name })
+  }
+  return sources
+}
+
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/remote.js:143-147](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/remote.js#L143-L147)
+
+镜像目录按name生成。
+
+```text
+  const slug = slugOf(source.name) || `remote-${hashOf(source.url)}`
+  return join(cacheDirectory, 'remotes', slug)
+}
+
+function readJson(file) {
+```
+
+**依据 3 · 源码核查**：[lib/remote.js:276-324](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/remote.js#L276-L324)
+
+id/扩展名/文件名与图像映射。
+
+<details>
+<summary>查看原文（49行）</summary>
+
+```text
+  const used = new Set()
+
+  for (const item of list.slice(0, MAX_STICKERS_PER_SOURCE)) {
+    if (item === null || typeof item !== 'object') {
+      skipped.push('非对象条目')
+      continue
+    }
+    const id = typeof item.id === 'string' ? item.id.trim() : ''
+    if (!ID_PATTERN.test(id)) {
+      skipped.push(`id 不合法：${id === '' ? '(空)' : id}`)
+      continue
+    }
+    if (used.has(id.toLowerCase())) {
+      skipped.push(`id 重复：${id}`)
+      continue
+    }
+    const relative = trimUrl(item.file || item.path || item.src)
+    const absolute = trimUrl(item.url)
+    let resolved = ''
+    if (absolute !== '') resolved = absolute
+    else if (relative !== '') {
+      try {
+        resolved = new URL(relative, manifestUrl).toString()
+      } catch (err) {
+        resolved = ''
+      }
+    }
+    if (!isHttpUrl(resolved)) {
+      skipped.push(`${id}：缺少可用的图片地址`)
+      continue
+    }
+    const extension = extensionOf(resolved)
+    if (extension === undefined) {
+      skipped.push(`${id}：不是支持的图片格式（${resolved}）`)
+      continue
+    }
+    used.add(id.toLowerCase())
+    const file = `${id}${extension}`
+    const sticker = { id, file, label: typeof item.label === 'string' && item.label !== '' ? item.label : id }
+    if (Array.isArray(item.tags)) sticker.tags = item.tags.map((tag) => String(tag)).filter((tag) => tag !== '')
+    if (typeof item.when === 'string' && item.when !== '') sticker.when = item.when
+    stickers.push(sticker)
+    images[id] = { url: resolved, file }
+  }
+
+  return {
+    manifest: {
+      version: 1,
+      name,
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/remote.js:485-518](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/remote.js#L485-L518)
+
+实际ensureFile：已有非零文件即复用及写图。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+  const settings = args || {}
+  const directory = settings.directory
+  const file = settings.file
+  const url = settings.url
+  if (typeof directory !== 'string' || typeof file !== 'string') return undefined
+  const target = join(directory, file)
+  if (url === undefined || url === null || url === '') return existsSync(target) ? target : undefined
+  if (existsSync(target)) {
+    try {
+      if (statSync(target).size > 0) return target
+    } catch (err) {
+      // fall through to download
+    }
+  }
+  const fetched = await once(url, () => fetchBounded(url, MAX_IMAGE_BYTES, typeof settings.timeoutMs === 'number' ? settings.timeoutMs : DEFAULT_TIMEOUT_MS))
+  if (fetched.error !== undefined) return undefined
+  try {
+    mkdirSync(directory, { recursive: true })
+    const temporary = `${target}.tmp-${process.pid}`
+    writeFileSync(temporary, fetched.buffer)
+    try {
+      renameSync(temporary, target)
+    } catch (err) {
+      unlinkSync(temporary)
+      throw err
+    }
+  } catch (err) {
+    return undefined
+  }
+  return target
+}
+
+module.exports = {
+  DEFAULT_TTL_MS,
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/library.js:694-715](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/library.js#L694-L715)
+
+recent/avoid为空后的偏好fallback。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+function pickSticker(stickers, query) {
+  const asked = query || {}
+  const random = typeof asked.random === 'function' ? asked.random : Math.random
+  const recent = new Set((asked.recent || []).map((value) => String(value).toLowerCase()))
+  const avoid = new Set((asked.avoid || []).map((value) => String(value).toLowerCase()))
+  const wanted = Number.isFinite(asked.count) ? Math.max(1, Math.min(5, Math.floor(asked.count))) : 1
+  // Animated images are drawn this many times as often as still ones. 1 restores
+  // a plain uniform draw; anything <= 1 is treated as 1.
+  const gifBias = Number.isFinite(asked.gifBias) && asked.gifBias > 1 ? asked.gifBias : 1
+
+  const isRecent = (sticker) => recent.has(sticker.id.toLowerCase())
+  const withoutAvoid = stickers.filter((sticker) => !avoid.has(sticker.id.toLowerCase()))
+  const usable = withoutAvoid.length > 0 ? withoutAvoid : stickers
+  const prefer = usable.filter((sticker) => !isRecent(sticker))
+  const pool = prefer.length > 0 ? prefer : usable
+
+  const done = (sticker, matched, ranked, score) => {
+    const rest = (ranked || []).filter((candidate) => candidate.sticker.id !== sticker.id)
+    return { sticker, matched, score, alternatives: rest.slice(0, Math.max(0, wanted - 1)) }
+  }
+
+  /** Best score first, then anything not used recently. */
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/library.js:741-768](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/library.js#L741-L768)
+
+id/tag/context字符串选择。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+
+  if (asked.id !== undefined && asked.id !== '') {
+    const exact = findSticker(usable, asked.id) || findSticker(stickers, asked.id)
+    if (exact !== undefined) return done(exact, 'id')
+  }
+
+  if (asked.tag !== undefined && asked.tag !== '') {
+    const needle = String(asked.tag).toLowerCase()
+    const matches = usable.filter((sticker) => {
+      return sticker.id.toLowerCase() === needle
+        || sticker.tags.some((tag) => tag.toLowerCase().includes(needle))
+        || sticker.label.toLowerCase().includes(needle)
+        || (sticker.when || '').toLowerCase().includes(needle)
+    })
+    if (matches.length > 0) {
+      const ranked = rank(matches.map((sticker) => ({ sticker, score: 1 })))
+      return done(draw(ranked).sticker, 'tag', ranked)
+    }
+  }
+
+  if (asked.context !== undefined && asked.context !== '') {
+    const terms = termsOf(asked.context)
+    if (terms.length > 0) {
+      const ranked = rank(usable
+        .map((sticker) => ({ sticker, score: scoreSticker(sticker, terms) }))
+        .filter((candidate) => candidate.score > 0))
+      if (ranked.length > 0) {
+        const chosen = draw(ranked)
+```
+
+</details>
+
+**依据 7 · 源码核查**：[lib/index.js:268-281](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L268-L281)
+
+prompt端按agent/signal记coin。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+
+function rollTurn(context, probability) {
+  if (context === null || typeof context !== 'object') return undefined
+  const agent = context.scope ?? context.agent
+  const id = agent !== null && typeof agent === 'object' && agent.id !== undefined ? String(agent.id) : undefined
+  const signal = context.signal
+  if (id === undefined && (signal === null || typeof signal !== 'object')) return undefined
+  const key = id === undefined ? signal : id
+  const known = TURN_DECISIONS.get(key)
+  if (known !== undefined && known.signal === signal) return known.decision
+  const decision = Math.random() < probability
+  if (TURN_DECISIONS.size >= TURN_DECISION_LIMIT) TURN_DECISIONS.clear()
+  TURN_DECISIONS.set(key, { signal, decision })
+  return decision
+```
+
+</details>
+
+**依据 8 · 源码核查**：[lib/index.js:305-315](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L305-L315)
+
+工具端无caller返回undefined。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+function turnDecision(agent, probability) {
+  if (agent === null || typeof agent !== 'object' || agent.id === undefined) return undefined
+  if (isSubagent({ agent })) return false
+  const key = String(agent.id)
+  const known = TURN_DECISIONS.get(key)
+  if (known !== undefined) return known.decision
+  const decision = Math.random() < probability
+  if (TURN_DECISIONS.size >= TURN_DECISION_LIMIT) TURN_DECISIONS.clear()
+  TURN_DECISIONS.set(key, { signal: undefined, decision })
+  return decision
+}
+```
+
+</details>
+
+**依据 9 · 源码核查**：[lib/index.js:1052-1070](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1052-L1070)
+
+execute只拦false，真实第二道门禁。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    execute: async function (args, exec) {
+      // The second gate. The prompt already announced this turn's outcome; a turn
+      // that lost the toss does not get a sticker just because the model called
+      // the tool anyway. `turnDecision` reads the very decision the prompt used.
+      const caller = exec === undefined || exec === null ? undefined : exec.agent
+      if (turnDecision(caller, probabilityOf(config)) === false) {
+        return {
+          id: '',
+          label: '本轮不贴',
+          path: '',
+          markdown: '',
+          bytes: 0,
+          matched: 'turn-skipped',
+          alternatives: [],
+          notice: '本轮由宿主掷骰判定为「不贴」：这条回复不要贴表情包，也不需要重试。',
+        }
+      }
+      const read = await snapshotRemote(config)
+      const pack = read.pack
+```
+
+</details>
+
+**依据 10 · 源码核查**：[lib/index.js:815-839](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L815-L839)
+
+实际最多3图的选择/下载caller。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+async function resolveSticker(config, read, query) {
+  let result = library.pickSticker(read.pack.stickers, query)
+  const tried = []
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const sticker = result.sticker
+    if (sticker === undefined || sticker.pending !== true) return result
+    const fetched = await fetchPending(sticker, read)
+    if (fetched !== undefined) {
+      // Re-read with the scan cache bypassed: the file was written a moment ago.
+      const refreshed = snapshot(config, { fresh: true }).pack
+      const again = library.findSticker(refreshed.stickers, sticker.id)
+      if (again !== undefined && again.pending !== true) {
+        return {
+          sticker: again,
+          matched: result.matched,
+          alternatives: result.alternatives.filter((item) => item.sticker.id !== sticker.id),
+        }
+      }
+    }
+    tried.push(sticker.id)
+    const next = library.pickSticker(read.pack.stickers, { ...query, avoid: query.avoid.concat(tried) })
+    // `pickSticker` falls back to the whole pool when `avoid` excludes
+    // everything, so a repeat would loop forever without this guard.
+    if (next.sticker === undefined || tried.indexOf(next.sticker.id) !== -1) return next
+    result = next
+```
+
+</details>
+
+**依据 11 · 源码核查**：[lib/index.js:1129-1143](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1129-L1143)
+
+主图及备选在交付前一起记recent。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+      const value = {
+        id: sticker.id,
+        label: sticker.label,
+        path: sticker.path,
+        markdown: sticker.link,
+        bytes: sticker.bytes,
+        matched: result.matched,
+        alternatives: result.alternatives.map((candidate) => describe(candidate.sticker)),
+      }
+      if (sticker.when !== undefined) value.when = sticker.when
+      const used = [sticker.id].concat(value.alternatives.map((item) => item.id))
+      const ledger = rememberRecent(used)
+      const notes = []
+      if (sticker.bytes > read.largeFileBytes) {
+        notes.push(`这张 ${Math.round(sticker.bytes / 1024)} KB，偏大、加载会慢，能换就换一张。`)
+```
+
+</details>
+
+**依据 12 · 源码核查**：[lib/library.js:490-512](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/library.js#L490-L512)
+
+未登记文件仍纳入库，非撤图同步。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+  // Anything in the folder the authored layers do not name stays usable, named
+  // by its filename (with `[tags]` honoured), so dropping a new image into the
+  // folder works immediately and never needs a restart.
+  const auto = []
+  for (const pair of byFile) {
+    auto.push(entryFromFileName(pair[0]))
+  }
+  auto.sort((left, right) => left.file.localeCompare(right.file))
+  let counter = 0
+  const nextAutoId = function () {
+    counter += 1
+    return `x${String(counter).padStart(2, '0')}`
+  }
+  for (const draft of auto) {
+    stickers.push(describeFile({
+      id: draft.id,
+      file: draft.file,
+      label: draft.id === '' ? `${draft.label}（自动 id）` : draft.label,
+      tags: draft.tags,
+      note: manifest.exists
+        ? '未登记：在来源仓库的 pack.json 里登记一下，id 与标签才会稳定'
+        : '未登记：加进 pack.json 或把文件名写成「名字 [标签].gif」就能被按含义挑中',
+    }, byFile.get(draft.file), directory, context.used, nextAutoId))
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 微信、设置权限和响应时限有哪些真实边界？
+
+**研究主题**：缺陷与关键质疑、工程质量与复用、功能与机制
+
+#### 完整回答
+
+Web自动HTTP链接以127.0.0.1加宿主port构造，未取远端客户端可达origin；本地路径也指宿主磁盘，因此不能保证远程Web客户端可显示，需正确httpBaseUrl或同机实际渲染。微信识别只比较agent.session.cwd与wechatChannel.workspace的字符串（统一斜杠并小写），不是会话/收件人身份校验。工具实际不调用send_to_wechat，只把Markdown置空、复制同字节到.wechat并要求模型调用外部发送工具；不转码，也没有收件端回执。
+
+静态筛选还存在真实字段不匹配：library.describeFile/Pending的extension去掉点，正常GIF为gif；index.isAnimated却在有extension时比较.gif。因此正常GIF不会因这个判断被排除。即使判断修好，全GIF池也有回退原池的分支；不能依据注释写“保证微信只发静态图”或“手机必收到”。这是源码形状/分支推导，未做手机故障复现，外部微信工具及账号/收件人映射未核。
+
+settingsRoute非POST时带probability/deadlineMs查询就applySettingsPatch写盘，POST也可写；注册的handler内没有身份、connection admission或Origin/CSRF检查。真实端口暴露及宿主外层保护未知，但能触达该handler的请求并非只读；不能将GET链接当安全设置方式，也不宣称本轮已证明匿名公网攻击。deadline只要求有限正数、没有产品上限，存储值优先profile；0%概率不是卸载、关闭所有网络或完整权限边界。
+
+“15秒整次工具硬上限”不符合活动链：withDeadline只race snapshotRemote的manifest同步，超时后同步仍在后台运行；随后resolveSticker的图片下载在它外面，每图有内部timeout/重试，图像route也能单独触发下载。没有使用宿主exec.signal贯穿这些网络动作，不能保证用户停止/卸载就中止。fetchOnce虽先检查Content-Length和读后字节上限，却完整arrayBuffer之后才检查实际长度，缺/错长度时不构成2/16MiB的硬流式峰值内存/网络界；重定向follow且无域/IP逐跳收紧，不能把HTTP(S)/扩展名白名单称来源认证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:625-631](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L625-L631)
+
+自动HTTP base实际为宿主loopback。
+
+```text
+ */
+function linkBase(style, explicit) {
+  if (style === 'file') return undefined
+  if (explicit !== '') return explicit
+  if (serverPort === undefined) return undefined
+  return `http://127.0.0.1:${serverPort}`
+}
+```
+
+**依据 2 · 源码核查**：[lib/index.js:193-209](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L193-L209)
+
+微信只有工作区字符串匹配。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
-## v0.6.2 变更（2026-10-15）
-
-- **熔断时间（等待上限）交给用户。** 之前写死的 15 秒现在由设置决定：DSH 设置面板的「表情包」
-  一节与独立设置页 `/sticker-pack/settings.html` 都多了同一组控件——**5–30 秒滑杆**（默认 15 秒，
-  另有 5/10/15/30 快捷键）+ **一个无上限的秒数输入框**（`min=1`、**没有 `max`**，填 90 就是 90 秒）。
-  值存 `~/.dsh/sticker-pack/settings.json` 的 `deadlineMs`，**保存即生效，不用重启**。
-  理由：这 15 秒是这台机器网络的属性，不是插件的属性——CDN 连不上的那台机器上，等多久合适只有用户知道。
-- **取值规则**：正数即可，**无上限**；`0`/负数/非数字被拒（HTTP 400，文件不动），缺省回落到 15 秒。
-  优先级 `settings.json` > profile 配置的 `deadlineMs` > 默认 `DEFAULT_DEADLINE_MS = 15000`
-  （快照里同时给出 `deadlineSource` 与 `defaultDeadlineMs`）。
-- **`GET` 也能写**：`/sticker-pack/settings?deadlineMs=90000` 与 `?probability=` 同级，可一起送
-  （理由同下：万一插件路由只转发 GET/HEAD，设置页至少还能写）。
-- 自检 **90 条断言全过**（v0.6.1 是 70），新增 20 条覆盖等待上限：默认值、字符串入参、
-  **超过滑杆范围不被夹紧**（120000 ms 原样保留）、0/负数回落、GET 写、POST 写、非法值 400 且文件不动、
-  设置页两处控件、客户端面板两处控件——其中面板那条断言的正是**数字框没有 `max`**，
-  因为「无上限」本身就是需求。
-- 仍未真机验证：面板控件只在桩 React 下渲染断言过，没有在真实 GUI 里点过；要等重启 dsh 后才算数。
+function isWechatSession(ctx, agent) {
+  const channel = wechatChannelOf(ctx)
+  const home = channel !== undefined && typeof channel.workspace === 'string' ? channel.workspace : ''
+  if (home === '') return false
+  const session = agent !== null && typeof agent === 'object' ? agent.session : undefined
+  const cwd = session !== null && typeof session === 'object' && typeof session.cwd === 'string' ? session.cwd : ''
+  if (cwd === '') return false
+  // Both separators, because `cwd` comes from a `realpath` (backslashes on
+  // Windows) while a configured workspace may be written either way.
+  const strip = function (value) { return value.replace(/\\/gu, '/').replace(/\/+$/u, '').toLowerCase() }
+  const match = strip(cwd) === strip(home)
+  if (match && !wechatNoticed) {
+    wechatNoticed = true
+    trace('wechat: session bound to the channel workspace ' + home + ' — stickers will be routed through send_to_wechat')
+  }
+  return match
+}
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:66-75](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L66-L75)
+**依据 3 · 源码核查**：[lib/library.js:584-626](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/library.js#L584-L626)
 
-作者失败冷却与慢网络教训。
+文件及pending扩展名均无点。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
-## v0.5.1 变更（2026-10-15）
+/** A file that is present: the ordinary case. */
+function describeFile(entry, found, directory, used, nextAutoId) {
+  const size = imageSizeFor(found.path, found.stat)
+  const sticker = {
+    id: uniqueId(entry.id, used, directory, nextAutoId),
+    label: entry.label,
+    tags: entry.tags.slice(),
+    file: entry.file,
+    path: found.path,
+    directory,
+    extension: extname(entry.file).toLowerCase().replace('.', ''),
+    bytes: found.bytes,
+    mtimeMs: found.mtimeMs,
+    link: fileLink(found.path),
+  }
+  if (entry.when !== undefined) sticker.when = entry.when
+  if (entry.note !== undefined) sticker.note = entry.note
+  if (size !== undefined) {
+    sticker.width = size.width
+    sticker.height = size.height
+  }
+  return sticker
+}
 
-- **网络再慢也拖不住回复。** 工具入口给整次远端同步加了 **9 秒硬上限**（当时叫 `TOOL_DEADLINE_MS`，v0.6.0 起放宽到 15 秒，
-  v0.6.2 起改为用户可在设置里调的「等待上限」，默认仍是 15 秒，`lib/index.js`）：超时就用本机已有的镜像回答，并把原因写进 `notice`，而不是继续等。
-- **失败熔断。** 某个源拉取失败后 **10 分钟内不再重试**（拉清单时的 `fresh` 强制刷新可绕过）；
-  期间有镜像就沿用镜像。以前每一轮回复都会从头把超时和重试再付一遍。
-- 默认单源超时 **15 秒 → 6 秒**，重试 **3 次 → 2 次**（`lib/remote.js` 的 `DEFAULT_TIMEOUT_MS`
-  与 `DEFAULT_ATTEMPTS`）。
-- 来历：别人装完出现「agent 一直在思考、不回复」。他那边连不上 CDN，每轮回复都在等约
-  47 秒的超时与重试——v0.5.0 加默认远端源时没给这条路径设上限，是这次的锅。
+/**
+ * A file the manifest promises but nobody has fetched yet.
+ *
+ * `size` is deliberately absent (there is nothing to measure) and `bytes` is 0,
+ * which keeps the "this one is huge, load something else" notice quiet until the
+ * real file exists.
+ */
+function describePending(entry, directory, used) {
+  const path = join(directory, entry.file)
+  const sticker = {
+    id: uniqueId(entry.id, used, directory),
+    label: entry.label,
+    tags: entry.tags.slice(),
+    file: entry.file,
+    path,
+    directory,
+    extension: extname(entry.file).toLowerCase().replace('.', ''),
+    bytes: 0,
+    mtimeMs: 0,
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:144-151](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L144-L151)
+**依据 4 · 源码核查**：[lib/index.js:659-671](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L659-L671)
 
-作者提示词缓存代价。
-
-```text
-## v0.4.0 变更（2026-10-14）
-
-- **贴图概率改由插件掷骰，不再是写给模型看的一句话**。v0.3.0 那段 system prompt 里写的是
-  「有约 60% 的概率贴一张，随机决定即可」——掷骰的是模型，插件说什么都不算数。现在每轮
-  由插件先掷一个骰子，再把**结果**当成硬指令写进那段文本：命中写「本轮要贴」，
-  没命中写「本轮不贴」。模型只执行，不随机。`0%` 和 `100%` 两个端点直接退化成恒定文本。
-- **代价写在明处**：那段文本每轮都会变，等于每轮让 system prompt 之后的前缀缓存失效。
-  想要缓存稳定，就把概率设成 `0` 或 `1`（文本恒定），或者 `prompt: false` 关掉整段。
-```
-
-**依据 5 · 源码核查**：[lib/index.js:375-386](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L375-L386)
-
-微信副本。
+真实loadLibrary的pack只改link，直接给后续选图/筛选。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+function snapshot(config, options) {
+  const settings = settingsOf(config)
+  const fresh = options !== undefined && options.fresh === true
+  const pack = library.loadLibrary({
+    directories: libraryFolders(settings),
+    scanTtlMs: fresh ? 0 : settings.scanTtlMs,
+  })
+  if (settings.httpBaseUrl !== undefined) {
+    for (const sticker of pack.stickers) {
+      sticker.link = library.httpLink(settings.httpBaseUrl, sticker.id, Math.floor(sticker.mtimeMs || 0))
+    }
+  }
+  return { pack, settings, largeFileBytes: settings.largeFileBytes }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/index.js:357-385](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L357-L385)
+
+isAnimated比较有点及同字节copy。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+/** Whether a sticker is an animation, which the WeChat channel will not show. */
+function isAnimated(sticker) {
+  if (sticker === null || typeof sticker !== 'object') return false
+  const extension = typeof sticker.extension === 'string' && sticker.extension !== ''
+    ? sticker.extension
+    : extname(typeof sticker.file === 'string' ? sticker.file : '')
+  return extension.toLowerCase() === '.gif'
+}
+
+/**
+ * Stage a copy of `sticker` that the WeChat channel will send as a file.
+ *
+ * Returns the staged path, or `undefined` when the copy cannot be made — the
+ * caller then falls back to the original path rather than sending nothing. A
+ * copy whose size still matches is reused, so picking the same sticker again
+ * does not rewrite the file every turn. Best-effort like every other side
+ * effect here: a failure is traced, never thrown.
+ */
 function wechatFileCopy(sticker) {
   const source = sticker !== null && typeof sticker === 'object' && typeof sticker.path === 'string' ? sticker.path : ''
   if (source === '') return undefined
@@ -949,44 +947,62 @@ function wechatFileCopy(sticker) {
     }
     return target
   } catch (err) {
-    trace(`wechat: staging a file copy failed for ${source} — ${(err && err.message) || String(err)}`)
 ```
 
 </details>
 
-#### 缺口
+**依据 6 · 源码核查**：[lib/index.js:1083-1091](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1083-L1091)
 
-- 无真实回复耗时和 token 缓存数据。
-  **影响**：净体验与成本未知。
-  **进一步探讨**：固定素材数和网络状态测延迟/缓存/磁盘。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 怎样低风险试用并验证图像交付而非仅有路径？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-先配置可信且获授权的图册源，在隔离 Web 会话核真正显示；把等待上限控制在可接受范围，微信须让测试收件人确认收到文件。未实现的改进是假设设置只允许有 CSRF/身份保护的 POST、预览远端内容与大小、每次交付记录渲染/发送结果而非仅返回路径，并把静态概率决策留在工具状态而非变化的 system prompt；比较现行版本的出图准确率、实际渲染率、回应延迟、缓存命中和设置被误改。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1230-1277](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L1230-L1277)
-
-当前 GET 写。
-
-<details>
-<summary>查看原文（48行）</summary>
+筛选及全GIF回退。
 
 ```text
-   * `GET ?probability=0.8` / `?deadlineMs=90000` also write — a deliberate
-   * fallback because this process cannot see the host's route table, and if
-   * plugin routes turn out to be GET/HEAD-only (as `/api/*` is) the page would
-   * otherwise be read-only.
-   */
+      const wechat = isWechatSession(ctx, caller)
+      // A WeChat-bound reply carries a still picture: the channel uploads an
+      // animation as a file the phone cannot play, and shows pictures sent as
+      // pictures not at all. The pool only shrinks when something is left in it,
+      // so a pack of nothing but GIFs still picks rather than refusing.
+      const still = wechat ? pack.stickers.filter((item) => !isAnimated(item)) : pack.stickers
+      const pool = still.length === 0 ? read : { ...read, pack: { ...pack, stickers: still } }
+      const recentAll = readRecent()
+      const window = Math.min(read.settings.recentWindow, Math.max(0, pool.pack.stickers.length - 2))
+```
+
+**依据 7 · 源码核查**：[lib/index.js:1150-1165](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1150-L1165)
+
+仅提示外部发送，不执行/不回执。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+      // A WeChat-bound session sends the reply body as plain text, so neither the
+      // local path nor the HTTP URL renders there — the phone cannot reach this
+      // machine. The channel's own tool is the only route out, and it has to be
+      // handed something the channel will send as a *file*: the same bytes sent
+      // as a picture do not appear on the phone at all. The notice rides on the
+      // value the model is guaranteed to read.
+      if (wechat) {
+        const staged = wechatFileCopy(sticker)
+        value.channel = 'wechat'
+        // An empty markdown leaves `send_to_wechat` as the only move: a model
+        // handed a link pastes it into the body, where it renders as nothing.
+        value.markdown = ''
+        if (staged !== undefined) value.file = staged
+        notes.push(`这个会话在微信上：正文贴图不显示。用 send_to_wechat 工具把这条路径发出去（它是个文件、不是图片——在这个通道里只有文件形式收得到）：${staged === undefined ? sticker.path : staged}`)
+      }
+      if (notes.length > 0) value.notice = notes.join(' ')
+```
+
+</details>
+
+**依据 8 · 源码核查**：[lib/index.js:1235-1279](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1235-L1279)
+
+实际非POST查询/POST写设置，无局部准入。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
   function settingsRoute(req, res) {
     const url = new URL(req.url || '/', 'http://x')
     if (req.method !== 'POST') {
@@ -1030,16 +1046,524 @@ function wechatFileCopy(sticker) {
     req.on('error', () => {
       settled = true
     })
+  }
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1150-1164](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/lib/index.js#L1150-L1164)
+**依据 9 · 源码核查**：[lib/index.js:1359-1364](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1359-L1364)
 
-微信仅提示发送文件。
+直接注册这些handler。
+
+```text
+    disposers.push(webServer.register({ kind: 'exact', path: '/sticker-pack/cat.json', handler: catalog }))
+    disposers.push(webServer.register({ kind: 'exact', path: '/sticker-pack/settings', handler: settingsRoute }))
+    disposers.push(webServer.register({ kind: 'exact', path: '/sticker-pack/settings.html', handler: page }))
+    disposers.push(webServer.register({ kind: 'exact', path: '/sticker-pack/', handler: page }))
+    disposers.push(webServer.register({ kind: 'prefix', path: '/sticker-pack/i', handler: image }))
+    trace('routes /sticker-pack/{cat.json,settings,settings.html,i}: registered')
+```
+
+**依据 10 · 源码核查**：[lib/index.js:478-491](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L478-L491)
+
+正数等待无上限。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+ */
+function asDeadline(value) {
+  const number = typeof value === 'string' && value.trim() !== '' ? Number(value) : value
+  if (typeof number !== 'number' || !Number.isFinite(number) || number <= 0) return undefined
+  return Math.round(number)
+}
+
+function deadlineOf(config) {
+  const fromPage = asDeadline(readSettings().deadlineMs)
+  if (fromPage !== undefined) return fromPage
+  const fromProfile = asDeadline((config || {}).deadlineMs)
+  return fromProfile === undefined ? DEFAULT_DEADLINE_MS : fromProfile
+}
+
+```
+
+</details>
+
+**依据 11 · 源码核查**：[lib/index.js:715-753](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L715-L753)
+
+manifest race不取消工作。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+function withDeadline(work, ms) {
+  let timer
+  return Promise.race([
+    work,
+    new Promise((resolve) => {
+      timer = setTimeout(() => resolve(DEADLINE), ms)
+    }),
+  ]).finally(() => clearTimeout(timer))
+}
+
+async function snapshotRemote(config) {
+  const settings = settingsOf(config)
+  const budgetMs = settings.deadlineMs
+  const remoteSources = await withDeadline(
+    remote.syncRemotes(settings.remotes, {
+      cacheDirectory: REMOTE_CACHE_DIRECTORY,
+      ttlMs: settings.remoteTtlMs,
+      timeoutMs: settings.remoteTimeoutMs,
+    }),
+    budgetMs,
+  )
+  const read = snapshot(config)
+  if (remoteSources === DEADLINE) {
+    trace(`remote: refresh still running after ${budgetMs}ms — answering from the mirror`)
+    read.remoteSources = settings.remotes.map((source) => ({
+      name: source.name,
+      url: source.url,
+      directory: remote.directoryOf(REMOTE_CACHE_DIRECTORY, source),
+      status: 'stale',
+      count: 0,
+      error: `等待远端超过 ${Math.round(budgetMs / 1000)} 秒，本轮先用本地镜像`,
+      skipped: [],
+    }))
+    return read
+  }
+  read.remoteSources = remoteSources
+  return read
+}
+
+```
+
+</details>
+
+**依据 12 · 源码核查**：[lib/index.js:785-839](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L785-L839)
+
+后续懒图不在该race内。
+
+<details>
+<summary>查看原文（55行）</summary>
+
+```text
+async function fetchPending(sticker, read) {
+  const images = remote.readImages(sticker.directory)
+  let url
+  for (const key of Object.keys(images)) {
+    const item = images[key]
+    if (item !== null && typeof item === 'object' && item.file === sticker.file && typeof item.url === 'string') {
+      url = item.url
+      break
+    }
+  }
+  if (url === undefined) return undefined
+  const path = await remote.ensureFile({
+    directory: sticker.directory,
+    file: sticker.file,
+    url,
+    timeoutMs: read.settings.remoteTimeoutMs,
+  })
+  if (path === undefined) trace(`remote: 下载失败 ${url}`)
+  return path
+}
+
+/**
+ * Pick a sticker that can actually be shown.
+ *
+ * A mirrored sticker nobody has fetched yet is not an answer — the model would
+ * paste a path that does not exist — so it is fetched first, and a failed fetch
+ * drops that candidate instead of failing the call. The model asked for a
+ * sticker, not for a particular id; the next candidate is a better answer than
+ * an apology.
+ */
+async function resolveSticker(config, read, query) {
+  let result = library.pickSticker(read.pack.stickers, query)
+  const tried = []
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    const sticker = result.sticker
+    if (sticker === undefined || sticker.pending !== true) return result
+    const fetched = await fetchPending(sticker, read)
+    if (fetched !== undefined) {
+      // Re-read with the scan cache bypassed: the file was written a moment ago.
+      const refreshed = snapshot(config, { fresh: true }).pack
+      const again = library.findSticker(refreshed.stickers, sticker.id)
+      if (again !== undefined && again.pending !== true) {
+        return {
+          sticker: again,
+          matched: result.matched,
+          alternatives: result.alternatives.filter((item) => item.sticker.id !== sticker.id),
+        }
+      }
+    }
+    tried.push(sticker.id)
+    const next = library.pickSticker(read.pack.stickers, { ...query, avoid: query.avoid.concat(tried) })
+    // `pickSticker` falls back to the whole pool when `avoid` excludes
+    // everything, so a repeat would loop forever without this guard.
+    if (next.sticker === undefined || tried.indexOf(next.sticker.id) !== -1) return next
+    result = next
+```
+
+</details>
+
+**依据 13 · 源码核查**：[lib/remote.js:187-210](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/remote.js#L187-L210)
+
+follow redirect及全arrayBuffer后实际大小检查。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+async function fetchOnce(url, limit, timeoutMs) {
+  if (typeof fetch !== 'function') return { error: 'Node 运行时不支持 fetch（需要 Node 18 或更新）', retryable: false }
+  const controller = typeof AbortSignal !== 'undefined' && typeof AbortSignal.timeout === 'function'
+    ? AbortSignal.timeout(timeoutMs)
+    : undefined
+  try {
+    const response = await fetch(url, {
+      redirect: 'follow',
+      signal: controller,
+      headers: { 'user-agent': 'dsh-sticker-pack', accept: 'application/json,image/*' },
+    })
+    if (!response.ok) {
+      return { error: `HTTP ${response.status}`, retryable: response.status >= 500 || response.status === 429 }
+    }
+    const declared = Number(response.headers.get('content-length') || '0')
+    if (Number.isFinite(declared) && declared > limit) {
+      return { error: `体积 ${Math.round(declared / 1024)} KB 超过上限 ${Math.round(limit / 1024)} KB`, retryable: false }
+    }
+    const buffer = Buffer.from(await response.arrayBuffer())
+    if (buffer.length > limit) {
+      return { error: `体积 ${Math.round(buffer.length / 1024)} KB 超过上限 ${Math.round(limit / 1024)} KB`, retryable: false }
+    }
+    return { buffer }
+  } catch (err) {
+```
+
+</details>
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 安装、使用、维护和退出的条件/成本/效果怎样比较？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、缺陷与关键质疑
+
+#### 完整回答
+
+状态/boot.log/recent默认在用户.dsh/sticker-pack，镜像与wechat-out默认在Pictures/dsh-sticker-pack，可用专用环境变量改位置。当前版本活动库只读remote对应镜像，旧签名的directory不能据此当任意本地库仍受支持。网络缓存/请求去重和懒加载是已有优化，但下载/候选/渠道并不自动形成可显示成果；源码或作者性能数字都不是本轮实测。
+
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| DSH tools及兼容ToolDefinition | 核心必需 | catalog/pick供宿主模型调用 | 只装包/注册日志不等工具任务通过 |
+| systemPrompt、agent/turn信息 | 概率指导条件 | 宿主coin与模型指令/工具复用 | 缺caller会放行；不承诺强输出频率 |
+| 可信获授权的HTTP(S)图册 | 当前活动源必需 | 清单/图片来源与语境标签 | 默认是未固定@main，首次离线可无图；代码许可不替图片授权 |
+| 本地磁盘/镜像与正确URL | 显示必需 | 文件缓存、Web/本地渲染 | loopback/宿主路径不保证远程浏览器可读 |
+| wechatChannel与外部发送工具 | 微信分支条件 | 工作区识别、真实发送/账号 | 本插件不发消息/不转码，必须核收件结果 |
+| WebServer及受保护设置入口 | 管理/HTTP图条件 | 图片、概率/等待配置 | 无局部准入和GET写需先修验；非所有宿主兼容有据 |
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| --- | --- | --- |
+| 准备小图册 | 操作者核内容授权/语境并固定源、唯一name | 原始图/清单可对应，源内容变化可追踪 |
+| 核配置与访问 | 检查设置准入、等待、缓存路径和Web base | GET不被当只读安全假设；远程端真能读 |
+| 可控轮次 | 固定问答语境，对照手工图/纯文本 | 核实际展示/用户偏好、总延迟与模型调用，不只看coin |
+| 测故障/渠道 | 慢源、换图/删图、全GIF/备选/取消；微信另授权测试 | 核主图/备选、撤图和真实收件，不重试刷无效工具 |
+| 停用/清理 | 停新工具请求/卸载，核inflight并导出或删owned目录 | 概率0不是断网；卸载不等删镜像/wechat-out/日志 |
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次接入 | 图册网络/磁盘、宿主/模型/可选渠道 | 选素材/授权、设置访问/URL与目标端验收 | 无真实安装/金额/工时，包不附可直接当离线库的stickers目录 |
+| 持续使用 | manifest/懒图/重试、模型工具/提示词与副本磁盘 | 语境/频率管理、图源状态和重复图片检查 | coin文本变化可能影响前缀缓存，实际hit/token/时延未知 |
+| 失败恢复 | 超时后后台同步、三候选图及重复渠道尝试 | 查源/路由/字段、缓存更新/撤图与实际收件 | 15秒非整工具总界、字节限制非硬流式界，无失败率/纠错数据 |
+| 停用/迁移 | 缓存/原始/副本/boot.log及在途网络 | 核文件/原图来源、导出/清理和状态恢复 | dispose有flush/路由清理意图，未证明取消inflight或自动删除数据 |
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
+| --- | --- | --- |
+| 图册/选图 | 有镜像、字符串选择、懒图与去重 | 图源实时/授权/语境质量、换图撤图一致性 |
+| 概率控制 | 正常caller下宿主coin+工具false门禁 | hostcontext兼容、正文真实出图率/用户偏好 |
+| 渠道交付 | 提供主图链接/路径及.wechat副本提示 | Web远程可读、GIF规范与真实微信显示/收到 |
+| 体验/成本 | 有缓存/懒加载/局部等待优化 | 总尾延迟、模型缓存/费用和是否胜过手工/纯文本 |
+
+本轮不执行目标/测试/网络/渠道发送，不把作者自测、boot诊断或近期id当收件回执；钱、工时和净体验收益未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:330-342](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L330-L342)
+
+磁盘镜像位置。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+/** Mirrors live outside `~/.dsh`; the self-test's `DSH_STICKER_PACK_HOME`
+ *  still wins, so tests never touch the real Pictures folder. */
+function libraryRoot() {
+  const explicit = process.env.DSH_STICKER_PACK_LIBRARY
+  if (typeof explicit === 'string' && explicit.trim() !== '') return explicit
+  const stateHome = process.env.DSH_STICKER_PACK_HOME
+  if (typeof stateHome === 'string' && stateHome.trim() !== '') return join(stateHome, 'library')
+  return join(homedir(), 'Pictures', 'dsh-sticker-pack')
+}
+
+// `remote.directoryOf` appends `remotes/<source>/` to whatever it is handed, so
+// this is the library root, not the remotes folder itself.
+const REMOTE_CACHE_DIRECTORY = libraryRoot()
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:575-614](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L575-L614)
+
+当前remote-only配置、缓存和URL条件。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+  const base = typeof given.httpBaseUrl === 'string' ? given.httpBaseUrl.trim().replace(/\/+$/u, '') : ''
+  const style = typeof given.linkStyle === 'string' ? given.linkStyle.trim().toLowerCase() : 'auto'
+  return {
+    // The only source of stickers since v0.5.0: every remote manifest is
+    // mirrored into a folder of its own and read from there. No local folder
+    // is scanned any more, so this list is the whole library.
+    remotes: configuredRemotes(config),
+    // A mirror is refreshed at most once per TTL, and never on a path that a
+    // reply is waiting on: see `snapshotRemote` versus `snapshot`.
+    remoteTtlMs: numberSetting(config, 'remoteTtlMs', remote.DEFAULT_TTL_MS),
+    remoteTimeoutMs: numberSetting(config, 'remoteTimeoutMs', remote.DEFAULT_TIMEOUT_MS),
+    // How long a tool call may wait on the network before it answers from the
+    // mirror. Owned by the settings page since 2026-10-15: a 5–30 s slider plus
+    // a free field, because how long a wait is acceptable is a property of the
+    // machine's link, not of this plugin.
+    deadlineMs: deadlineOf(config),
+    // How many times as often an animated image is drawn as a still one. 1 is a
+    // plain uniform draw; the default leans towards GIFs, on request (2026-10-15).
+    gifBias: numberSetting(config, 'gifBias', 2),
+    largeFileBytes: typeof given.largeFileBytes === 'number' ? given.largeFileBytes : 2 * 1024 * 1024,
+    // Read through on every call so the settings page takes effect immediately.
+    probability: probabilityOf(config),
+    // How many of the most recently used ids `sticker_pick` pushes to the back
+    // of the queue. 0 restores pure random behaviour.
+    recentWindow: typeof given.recentWindow === 'number' && given.recentWindow >= 0 ? given.recentWindow : 3,
+    // How long a directory scan may be reused. New files still appear within
+    // this window; 0 makes every call re-scan.
+    scanTtlMs: typeof given.scanTtlMs === 'number' && given.scanTtlMs >= 0 ? given.scanTtlMs : 1000,
+    // Which URL form `sticker_pick` hands back: see `linkBase`. `auto` prefers
+    // this plugin's own route whenever it is listening, because that form renders
+    // while the reply is still streaming; a machine where the route is not up
+    // falls back to local paths, which always work and only appear a beat later.
+    // Neither form asks the user to name a port.
+    httpBaseUrl: linkBase(style, base),
+  }
+}
+
+/**
+ * The base URL the HTTP route should hand out, or undefined to stay on local paths.
+ *
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:886-908](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L886-L908)
+
+近期记录防抖/清理意图。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+  }
+}
+
+function flushRecent() {
+  if (recentFlushTimer !== undefined) {
+    clearTimeout(recentFlushTimer)
+    recentFlushTimer = undefined
+  }
+  if (!recentDirty || recentCache === undefined) return
+  recentDirty = false
+  writeRecent(recentCache)
+}
+
+function scheduleRecentFlush() {
+  if (recentFlushTimer !== undefined) return
+  recentFlushTimer = setTimeout(function () {
+    recentFlushTimer = undefined
+    if (!recentDirty || recentCache === undefined) return
+    recentDirty = false
+    writeRecent(recentCache)
+  }, RECENT_FLUSH_MS)
+  // Never hold the process open just to persist a hint.
+  if (typeof recentFlushTimer.unref === 'function') recentFlushTimer.unref()
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:1513-1544](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1513-L1544)
+
+装配及dispose仅flush/注销意图。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+    const tools = service(ctx, 'tools')
+    const webServer = service(ctx, 'webServer')
+    trace(`apply entered — tools=${typeof tools} webServer=${typeof webServer} ${ctxSummary(ctx)}`)
+    if (tools === undefined) {
+      trace('apply: no tools service, sticker tools NOT registered')
+    } else {
+      disposers.push(registerTool(tools, ctx, catalogTool(config)))
+      disposers.push(registerTool(tools, ctx, pickTool(config, ctx)))
+    }
+    registerRoutesWhenReady(ctx, config)
+    if ((config || {}).prompt === false) trace('prompt: disabled by config')
+    else {
+      const stopPrompt = registerPromptWhenReady(ctx, config)
+      if (typeof stopPrompt === 'function') disposers.push(stopPrompt)
+    }
+  } catch (err) {
+    trace(`apply THREW: ${(err && err.stack) || String(err)}`)
+  }
+  if (typeof ctx.on === 'function') {
+    ctx.on('dispose', function () {
+      for (const dispose of disposers) dispose()
+      flushRecent()
+    })
+  }
+  trace('apply finished')
+}
+
+module.exports = {
+  name,
+  inject,
+  apply,
+  default: { name, inject, apply },
+```
+
+</details>
+
+**依据 5 · 作者声明**：[package.json:22-43](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/package.json#L22-L43)
+
+实际分发与许可声明。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "test",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "selftest": "node test/selftest.js",
+    "perf": "node test/perf-probe.js"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 现有概率/缓存之外，是否值得做新的可验证贴图能力？
+
+**研究主题**：新假设与验证、工程质量与复用、贡献与相对优势
+
+#### 完整回答
+
+现有实现已经有宿主coin、工具第二道门禁、尺寸缓存/镜像/去重、HTTP图和.wechat副本；不能再把“缓存图/按概率发”当新方向。明确的设置准入/GET写、GIF字段、贯穿总预算、源更新/撤销属于当前正确性修补，应先完成，不包装成创新产品。把概率从变化system prompt搬到工具状态也不是自动更好：必须核不同宿主的工具调用/前缀缓存和模型遵循，不能仅按文本变化宣称已省token。
+
+剩余假设是用最小可展示主图与真实目标端结果反馈替代“返回了路径就算出图”：只提供已准备好且适用的素材，区分选择/渲染/外部发送状态，并在预算不足时立即回纯文本。它依赖宿主渲染/渠道回执能力，当前未实现/验证；recent把备选也记入，不能冒充已有使用反馈。无需默认建跨渠道素材平台，预热固定图册、手工上传、一个可显示链接或纯文本可能已满足需求。
+
+最小对照先找愿意表达偏好的真实用户，用同一小图册和授权语境比较当前、具体小修补、手工图/纯文本和最小展示反馈；测实际显示/收件、语境误用、p95回复额外等待、工具重试、模型缓存/人工及愿不愿继续用。若只增加图片数量、偏好无改善，或简单预热/手工方式已同样好，就否定独立方向；不能从源码复杂度推生产机会。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:1052-1070](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1052-L1070)
+
+现有工具门禁已存在。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    execute: async function (args, exec) {
+      // The second gate. The prompt already announced this turn's outcome; a turn
+      // that lost the toss does not get a sticker just because the model called
+      // the tool anyway. `turnDecision` reads the very decision the prompt used.
+      const caller = exec === undefined || exec === null ? undefined : exec.agent
+      if (turnDecision(caller, probabilityOf(config)) === false) {
+        return {
+          id: '',
+          label: '本轮不贴',
+          path: '',
+          markdown: '',
+          bytes: 0,
+          matched: 'turn-skipped',
+          alternatives: [],
+          notice: '本轮由宿主掷骰判定为「不贴」：这条回复不要贴表情包，也不需要重试。',
+        }
+      }
+      const read = await snapshotRemote(config)
+      const pack = read.pack
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:1129-1143](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1129-L1143)
+
+recent不是显示反馈。
 
 <details>
 <summary>查看原文（15行）</summary>
+
+```text
+      const value = {
+        id: sticker.id,
+        label: sticker.label,
+        path: sticker.path,
+        markdown: sticker.link,
+        bytes: sticker.bytes,
+        matched: result.matched,
+        alternatives: result.alternatives.map((candidate) => describe(candidate.sticker)),
+      }
+      if (sticker.when !== undefined) value.when = sticker.when
+      const used = [sticker.id].concat(value.alternatives.map((item) => item.id))
+      const ledger = rememberRecent(used)
+      const notes = []
+      if (sticker.bytes > read.largeFileBytes) {
+        notes.push(`这张 ${Math.round(sticker.bytes / 1024)} KB，偏大、加载会慢，能换就换一张。`)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:1150-1165](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1150-L1165)
+
+微信只指示外部工具，无送达回执。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
       // A WeChat-bound session sends the reply body as plain text, so neither the
@@ -1057,57 +1581,264 @@ function wechatFileCopy(sticker) {
         if (staged !== undefined) value.file = staged
         notes.push(`这个会话在微信上：正文贴图不显示。用 send_to_wechat 工具把这条路径发出去（它是个文件、不是图片——在这个通道里只有文件形式收得到）：${staged === undefined ? sticker.path : staged}`)
       }
+      if (notes.length > 0) value.notice = notes.join(' ')
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:32-47](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L32-L47)
+**依据 4 · 源码核查**：[lib/index.js:715-753](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L715-L753)
 
-作者承认手机未验。
+局部等待不是总交付预算。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
-## v0.6.1 变更（2026-10-15）
+function withDeadline(work, ms) {
+  let timer
+  return Promise.race([
+    work,
+    new Promise((resolve) => {
+      timer = setTimeout(() => resolve(DEADLINE), ms)
+    }),
+  ]).finally(() => clearTimeout(timer))
+}
 
-- **微信会话改成发文件，并且不再发动图。** v0.6.0 的做法是「让模型用 `send_to_wechat` 把图发出去」，
-  实测仍然看不到：dsh-wechat-plugin 按**文件名**决定上传类型（它自己的 `lib/media-kind.js`：
-  图片扩展名走图片消息，其余走普通文件），而**以图片消息发出去的那条在对方手机上不会出现** ——
-  它只会在 `~/.dsh/wechat/boot.log` 留下一行 `outbound: shy.png ... (图片)`，然后手机上什么都没有。
-  现在微信会话里 `sticker_pick` 会把选中的图**复制成一个 `.wechat` 结尾的副本**
-  （`shy.png` → `shy.png.wechat`，放在素材缓存同级的 `wechat-out/`），通道于是按**文件**上传
-  （日志里是 `(文件)`）；真扩展名留在中间，收件人看得出下载的到底是什么。
-- **微信会话的候选池排除 gif。** 动图在那个通道同样是发出去不显示；池子里一张静态图都不剩时，
-  才回退到全部候选（宁可有图可选，也不空手）。
-- **`sticker_pick` 在微信会话里不返回 markdown**（返回空串 + 一句说明），模型手里没有可直接粘贴的
-  链接，`send_to_wechat` 就成了唯一出路。
-- **桌面会话一个字节没改**：同样的 `sticker_pick` 仍然返回 `![sticker](C:\...\x.jpg)`。
-- 自检 **70 条断言全过**，新增 2 条覆盖「动图识别」与「`.wechat` 副本让通道按文件发送」。
-- 仍需真机验证：这条链路我只在代码与日志层面确认过，没有真正发到手机上看过。
+async function snapshotRemote(config) {
+  const settings = settingsOf(config)
+  const budgetMs = settings.deadlineMs
+  const remoteSources = await withDeadline(
+    remote.syncRemotes(settings.remotes, {
+      cacheDirectory: REMOTE_CACHE_DIRECTORY,
+      ttlMs: settings.remoteTtlMs,
+      timeoutMs: settings.remoteTimeoutMs,
+    }),
+    budgetMs,
+  )
+  const read = snapshot(config)
+  if (remoteSources === DEADLINE) {
+    trace(`remote: refresh still running after ${budgetMs}ms — answering from the mirror`)
+    read.remoteSources = settings.remotes.map((source) => ({
+      name: source.name,
+      url: source.url,
+      directory: remote.directoryOf(REMOTE_CACHE_DIRECTORY, source),
+      status: 'stale',
+      count: 0,
+      error: `等待远端超过 ${Math.round(budgetMs / 1000)} 秒，本轮先用本地镜像`,
+      skipped: [],
+    }))
+    return read
+  }
+  read.remoteSources = remoteSources
+  return read
+}
+
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:144-151](https://github.com/5V1A-afk/dsh-sticker-pack/blob/531f16a8f0a4f0ed9d9868ab0b0f8960b0322781/README.md#L144-L151)
+<a id="research-q06"></a>
 
-变动提示词缓存。
+<a id="detail-section-16"></a>
+
+### Q06 · 当前适合谁，什么时候应停止？
+
+**研究主题**：采用判断、效果与总成本
+
+#### 完整回答
+
+建议观察，优先可信图册的同机Web小样；它主要是表达偏好便利，不是高频业务问题已经验证。操作者应先修/验设置准入、图片字段和整工具预算，再用固定几张图、有限语境及明确可接受额外等待比较手工图或纯文本。首次离线、远程Web和微信都另验，不能按本地文件存在或工具notice保证渠道成功。
+
+最低验收要有主图/备选真实显示，caller缺失/轮次与概率、慢manifest后懒图总耗时、源换图/撤图/同名源、用户取消/卸载，以及微信外部账号/收件实际确认。出图不合语境、回复明显变慢、设置被误改、停止后仍下载或渠道重复尝试，都应停新工具调用，核当前inflight/已发送状态后回纯文本/手工上传；概率0不代替关闭网络和完整卸载。
+
+独立评分按当前组件实际提供的便利和证据，不以作者图片数、实现行数或“手机必收到”加分。技术是常规远端文件/规则匹配/概率与宿主工具接线，商业仍交付同类对话表情图，未有质量、使用意愿和净成本证据；未来展示反馈不计现有能力。本轮没有运行、收件或性能验收，不给持续安装承诺。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:305-315](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L305-L315)
+
+无caller判定不是强制阻止。
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
-## v0.4.0 变更（2026-10-14）
-
-- **贴图概率改由插件掷骰，不再是写给模型看的一句话**。v0.3.0 那段 system prompt 里写的是
-  「有约 60% 的概率贴一张，随机决定即可」——掷骰的是模型，插件说什么都不算数。现在每轮
-  由插件先掷一个骰子，再把**结果**当成硬指令写进那段文本：命中写「本轮要贴」，
-  没命中写「本轮不贴」。模型只执行，不随机。`0%` 和 `100%` 两个端点直接退化成恒定文本。
-- **代价写在明处**：那段文本每轮都会变，等于每轮让 system prompt 之后的前缀缓存失效。
-  想要缓存稳定，就把概率设成 `0` 或 `1`（文本恒定），或者 `prompt: false` 关掉整段。
+function turnDecision(agent, probability) {
+  if (agent === null || typeof agent !== 'object' || agent.id === undefined) return undefined
+  if (isSubagent({ agent })) return false
+  const key = String(agent.id)
+  const known = TURN_DECISIONS.get(key)
+  if (known !== undefined) return known.decision
+  const decision = Math.random() < probability
+  if (TURN_DECISIONS.size >= TURN_DECISION_LIMIT) TURN_DECISIONS.clear()
+  TURN_DECISIONS.set(key, { signal: undefined, decision })
+  return decision
+}
 ```
 
-#### 缺口
+</details>
 
-- 受保护设置、交付回执未实现。
-  **影响**：不能视作当前功能。
-  **进一步探讨**：在隔离宿主和渠道做对照。
+**依据 2 · 源码核查**：[lib/index.js:715-753](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L715-L753)
+
+需要验完整耗时及仍在途同步。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+function withDeadline(work, ms) {
+  let timer
+  return Promise.race([
+    work,
+    new Promise((resolve) => {
+      timer = setTimeout(() => resolve(DEADLINE), ms)
+    }),
+  ]).finally(() => clearTimeout(timer))
+}
+
+async function snapshotRemote(config) {
+  const settings = settingsOf(config)
+  const budgetMs = settings.deadlineMs
+  const remoteSources = await withDeadline(
+    remote.syncRemotes(settings.remotes, {
+      cacheDirectory: REMOTE_CACHE_DIRECTORY,
+      ttlMs: settings.remoteTtlMs,
+      timeoutMs: settings.remoteTimeoutMs,
+    }),
+    budgetMs,
+  )
+  const read = snapshot(config)
+  if (remoteSources === DEADLINE) {
+    trace(`remote: refresh still running after ${budgetMs}ms — answering from the mirror`)
+    read.remoteSources = settings.remotes.map((source) => ({
+      name: source.name,
+      url: source.url,
+      directory: remote.directoryOf(REMOTE_CACHE_DIRECTORY, source),
+      status: 'stale',
+      count: 0,
+      error: `等待远端超过 ${Math.round(budgetMs / 1000)} 秒，本轮先用本地镜像`,
+      skipped: [],
+    }))
+    return read
+  }
+  read.remoteSources = remoteSources
+  return read
+}
+
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/library.js:584-626](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/library.js#L584-L626)
+
+实际扩展名字段规范。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+/** A file that is present: the ordinary case. */
+function describeFile(entry, found, directory, used, nextAutoId) {
+  const size = imageSizeFor(found.path, found.stat)
+  const sticker = {
+    id: uniqueId(entry.id, used, directory, nextAutoId),
+    label: entry.label,
+    tags: entry.tags.slice(),
+    file: entry.file,
+    path: found.path,
+    directory,
+    extension: extname(entry.file).toLowerCase().replace('.', ''),
+    bytes: found.bytes,
+    mtimeMs: found.mtimeMs,
+    link: fileLink(found.path),
+  }
+  if (entry.when !== undefined) sticker.when = entry.when
+  if (entry.note !== undefined) sticker.note = entry.note
+  if (size !== undefined) {
+    sticker.width = size.width
+    sticker.height = size.height
+  }
+  return sticker
+}
+
+/**
+ * A file the manifest promises but nobody has fetched yet.
+ *
+ * `size` is deliberately absent (there is nothing to measure) and `bytes` is 0,
+ * which keeps the "this one is huge, load something else" notice quiet until the
+ * real file exists.
+ */
+function describePending(entry, directory, used) {
+  const path = join(directory, entry.file)
+  const sticker = {
+    id: uniqueId(entry.id, used, directory),
+    label: entry.label,
+    tags: entry.tags.slice(),
+    file: entry.file,
+    path,
+    directory,
+    extension: extname(entry.file).toLowerCase().replace('.', ''),
+    bytes: 0,
+    mtimeMs: 0,
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:1235-1279](https://github.com/5V1A-afk/dsh-sticker-pack/blob/92e492d0080cc651fd3f7010adc36d5f066caa63/lib/index.js#L1235-L1279)
+
+设置写入是采用前置。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+  function settingsRoute(req, res) {
+    const url = new URL(req.url || '/', 'http://x')
+    if (req.method !== 'POST') {
+      if (url.searchParams.has('probability') || url.searchParams.has('deadlineMs')) {
+        const patch = {}
+        if (url.searchParams.has('probability')) patch.probability = url.searchParams.get('probability')
+        if (url.searchParams.has('deadlineMs')) patch.deadlineMs = url.searchParams.get('deadlineMs')
+        const result = applySettingsPatch(config, patch)
+        trace(`settings: probability -> ${Math.round(result.probability * 100)}% (${result.source}) deadline -> ${result.deadlineMs}ms (${result.deadlineSource}) ok=${result.ok}`)
+        send(res, result.ok ? 200 : 400, JSON.stringify(result), json)
+        return
+      }
+      send(res, 200, JSON.stringify({ ok: true, ...settingsSnapshot(config) }), json)
+      return
+    }
+    let body = ''
+    let settled = false
+    req.on('data', (chunk) => {
+      if (settled) return
+      body += chunk
+      if (body.length > 16 * 1024) {
+        settled = true
+        send(res, 413, JSON.stringify({ ok: false, error: 'body too large' }), json)
+        req.destroy()
+      }
+    })
+    req.on('end', () => {
+      if (settled) return
+      settled = true
+      let patch
+      try {
+        patch = body.trim() === '' ? {} : JSON.parse(body)
+      } catch (err) {
+        send(res, 400, JSON.stringify({ ok: false, error: 'body is not valid JSON' }), json)
+        return
+      }
+      const result = applySettingsPatch(config, patch)
+      trace(`settings: probability -> ${Math.round(result.probability * 100)}% (${result.source}) deadline -> ${result.deadlineMs}ms (${result.deadlineSource}) ok=${result.ok}`)
+      send(res, result.ok ? 200 : 400, JSON.stringify(result), json)
+    })
+    req.on('error', () => {
+      settled = true
+    })
+  }
+
+```
+
+</details>
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

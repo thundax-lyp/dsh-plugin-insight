@@ -1,0 +1,32 @@
+{
+    "repository": "mrpulor-gh/nuphus-mcp",
+    "repository_id": 1319093879,
+    "captured_at": "2026-10-29T05:28:58.410Z",
+    "window_start": "2026-09-29T05:28:58.410Z",
+    "stars": 330,
+    "pushed_at": "2026-10-28T08:29:39Z",
+    "issues": {
+        "open": null,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Amrpulor-gh%2Fnuphus-mcp%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FF22:1675:631BDEB:8D19EE6:6AE2DB59 and timestamp 2026-10-29 05:36:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    }
+}

@@ -1,18 +1,18 @@
 # Awesome DSH Plugin
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[a7ae7b2](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/tree/a7ae7b2a1295e96b2a84268ed0443f1aead14f33)
+源码版本：[cef4c68](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/tree/cef4c68878a028cee20f00fd7ded35d3f520b3b0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 20,675](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20%2C675&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) [![npm 30d 1,048](https://img.shields.io/static/v1?label=npm+30d&message=1%2C048&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin) [![最新发布 2026-08-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin)
+[![GitHub ★ 21,335](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21%2C335&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) [![npm 30d 1,288](https://img.shields.io/static/v1?label=npm+30d&message=1%2C288&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin) [![最新发布 2026-08-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin)
 <!-- END META -->
 
-> **功能**：维护 DSH 社区插件目录，并生成多语言网站和宿主可读取的市场索引。
+> **功能**：把社区插件条目生成多语言目录、网页和官方格式市场索引，并公开工件能力披露数据，供用户查找候选后自行复核。
 
-> **亮点**：相对 README 人工复制，该项目把每个条目拆成独立 YAML，再从同一输入生成多语言页面与宿主 format-1 市场索引，减少条目提交冲突并复用官方解析器限制输出。贡献在发现和交接链路，而不是插件执行或安全保证。[Q02](#research-q02)
+> **亮点**：统一多语言条目/官方format与npm目录分发，已有静态能力披露及失败保旧机制；不按收录数计质量，见 [Q01](#research-q01) 至 [Q03](#research-q03)。
 
-> **主要限制**：市场索引只纳入已记录 npm 名、精确版本与发布时间的子集，格式通过也不证明对应包在某个宿主中可用；README 明确声明收录不是安全审查。因此“同一目录能搜索”不能推导为“全部条目均可一键安装且可信”。[Q03](#research-q03)
+> **主要限制**：--check仅验证已有索引格式；能力探测失败可保旧，但公开版本/能力字段无扫描版本绑定，且均非安装/安全通过，见 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要目录，合格交付是什么，是否是可安装插件？](#detail-section-11)
-  - [Q02 · 独立条目如何进入宿主索引，哪些是本项目增量？](#detail-section-12)
-  - [Q03 · 目录格式通过能证明多少，哪些限制影响发现贡献？](#detail-section-13)
-  - [Q04 · 启动、维护和失败恢复由谁承担，收益怎样计量？](#detail-section-14)
-  - [Q05 · 如何验证证据附着索引的假设，什么用户值得先用？](#detail-section-15)
+  - [Q01 · 这是插件、市场运行时还是候选资源入口？](#detail-section-11)
+  - [Q02 · 索引如何处理元数据缺口，验证覆盖哪一层？](#detail-section-12)
+  - [Q03 · 能力披露数据如何产生，失败保留会导致什么边界？](#detail-section-13)
+  - [Q04 · 如何采用目录而不把未知转成安装背书，下一步增量是什么？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：为寻找 DSH 扩展的用户和维护插件入口的社区提供结构化目录、网站与市场索引。合格产物是能追溯仓库及安装来源的候选集合；它不是某一业务任务的执行插件。
+> **用途**：DSH用户查候选与来源，维护者从统一条目生成可读/机器目录；它是资源入口，见 [Q01](#research-q01)。
 
-简单替代是 GitHub 列表、仓库搜索和手工安装。当前机制降低入口复制和目录多端维护，不证明目标插件质量或端到端收益。
+逐仓README/awesome列表、手工维护Host源与自行审计工件；目录统一发现不替代候选安装和授权判断。
 
 <a id="detail-section-3"></a>
 
@@ -52,69 +51,71 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 社区目录生成 | 维护独立 YAML 并输出网站与 README | 是目录工程，不是 DSH 功能插件 |
-| format-1 索引输出 | 供宿主 Discover 与 agent tool 发现候选 | 仅有已记录 npm 包、版本与发布时间的子集 |
-| 投稿检查 | 枚举仓库并检查协议入口 | 需要 GitHub Token；不等于安全审查 |
-
-<a id="dependencies-and-flow"></a>
+| 多语言资源目录 | 找候选与命令 | 简介/命令不是实际通过 |
+| format1市场索引 | Host发现npm子集 | 精确元数据/schema；非GitHub全量 |
+| 公开能力数据 | 提示工件接触面 | 静态/可保旧/缺版本传播 |
+| 发布工具 | Pages与npm目录分发 | 维护权限和外部写入需另核 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH 0.2.1+ 与市场源配置 | 宿主发现功能必需 | 读取 format-1 索引 | 可退回网页目录和逐项命令 |
-| npm 映射的包名、版本、发布时间 | 纳入市场索引必需 | 确定可表达的发布来源 | 跳过并计数，不猜测 |
-| Node 与 js-yaml、semver、官方解析器 | 自行构建必需 | 读取条目和校验索引 | 不能生成候选索引 |
-| GitHub Token | 投稿自动核查必需 | 枚举仓库文件树 | 提交检查直接失败 |
+| YAML条目/locale/npm元数据 | 生成必需 | 目录与可表达npm子集 | 缺值跳过/解析失败 |
+| 官方市场parser | 索引必需 | 按共享format验证 | 不是所有Host/安装已验 |
+| 目标Host与可读源 | 加源时 | 发现候选 | CDN/Host兼容另核 |
+| registry/GitHub/扫描器 | 维护披露时 | 工件/元数据/静态发现 | 失败可能保旧，不能当最新 |
+| Node/发布令牌与权限 | 维护时 | 生成/Pages/npm分发 | 用户查看无需拥有发布权 |
+| 候选运行时/权限 | 安装具体项时 | 真正功能 | 不由资源目录替代 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户将 README 提供的索引地址加入 Discover | 宿主获取并显示条目；超时改用可达来源 |
-| 2 | 用户根据用途选择条目并核查对应源码 | 区分 npm 索引条目与 GitHub-only 条目 |
-| 3 | 用户按目标插件自己的条件安装及验收 | 目录收录不能代替目标插件的加载和卸载验证 |
-| 维护 | 维护者更新 YAML 与 npm 映射后生成索引 | 被跳过和拒绝的条目数可见；逐行格式错误不阻断其余索引 |
-
-<a id="cost-and-value"></a>
+| 维护输入 | 维护者写条目并探测元数据 | 缺失/拒条目明确 |
+| 生成 | 共享builder/站点/scanner | 格式有效与披露来源分别核 |
+| 分发 | workflow部署/另包发布 | 声明接线不等本轮线上成功 |
+| 用户发现 | 按任务查候选/固定来源 | 版本与扫描事实对应 |
+| 采用/退出 | 独立核具体功能和撤销 | 目录/健康字段不判安装通过 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 网络与宿主资源；金额未知 | 配置索引、阅读候选来源 | 未实测连通性与首次核查时间 |
-| 持续使用 | 索引下载、目标插件各自成本 | 核查变化、维护映射与翻译 | 索引生成不包含目标插件收益核验 |
-| 失败恢复 | 重拉索引与 API 请求 | 排查来源超时、过期发布记录与安装失败 | 失败频率及恢复耗时未知 |
+| 首次使用 | 查看/加源资源低，金额未测；维护Node/API | 查候选/核来源；维护授权配置 | 候选安装另算 |
+| 持续使用 | 探测下载/runner/临时空间未知 | 版本/披露/目录适配和人工核验 | 无净节时对照 |
+| 失败恢复 | 重探/旧披露/缓存未知 | 分版本失败/格式/Host网络，防误采 | 保旧不等最新通过 |
+| 退出 | 已装候选/下载/远端副本另计 | 删源/书签；插件与令牌独立撤 | 目录不统一清理目标 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 统一发现入口 | 同一 YAML 输入导出官方市场格式 | 相比网页搜索节约多少时间 |
-| 错误隔离 | 单条格式错误捕获并计数 | 真实坏包、恶意代码与宿主冲突检出率 |
-| 降低提交冲突 | 独立文件避免共同 README 锚点 | 并发投稿合并冲突的量化变化 |
+| 候选发现 | 条目到网页/格式索引 | 当前远端可读/正确选中 |
+| 格式复用 | 单项/整文共用parser | 数据同步/全Host安装 |
+| 能力披露 | 真实扫描/失败保旧/公开字段 | 外部规则覆盖/最新版本绑定 |
+| 工程降重复 | HTML与目录共享输入 | 用户净节时/维护收益 |
 
-> **思考**：市场索引只纳入已记录 npm 名、精确版本与发布时间的子集，格式通过也不证明对应包在某个宿主中可用；README 明确声明收录不是安全审查。因此“同一目录能搜索”不能推导为“全部条目均可一键安装且可信”。[Q03](#research-q03)
+> **思考**：--check仅验证已有索引格式；能力探测失败可保旧，但公开版本/能力字段无扫描版本绑定，且均非安装/安全通过，见 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对 README 人工复制，该项目把每个条目拆成独立 YAML，再从同一输入生成多语言页面与宿主 format-1 市场索引，减少条目提交冲突并复用官方解析器限制输出。贡献在发现和交接链路，而不是插件执行或安全保证。[Q02](#research-q02)
+> **亮点**：统一多语言条目/官方format与npm目录分发，已有静态能力披露及失败保旧机制；不按收录数计质量，见 [Q01](#research-q01) 至 [Q03](#research-q03)。
 
-可借鉴的是 YAML 单条目降低冲突、逐条解析隔离坏记录和输出整体再验证。需保留缺项与拒绝计数，移植时适配官方协议与身份映射；--check 的格式有效语义应与一致性校验分开。引用见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+[Q02](#research-q02) 共享官方规则和逐项拒绝可借鉴；[Q03](#research-q03) 失败保旧必须把事实版本/状态带给消费者。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-市场索引只纳入已记录 npm 名、精确版本与发布时间的子集，格式通过也不证明对应包在某个宿主中可用；README 明确声明收录不是安全审查。因此“同一目录能搜索”不能推导为“全部条目均可一键安装且可信”。[Q03](#research-q03)
+--check仅验证已有索引格式；能力探测失败可保旧，但公开版本/能力字段无扫描版本绑定，且均非安装/安全通过，见 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合已有 DSH 环境、希望有组织地筛选扩展的用户试用索引；先确认候选包身份与目标插件自己的条件，再在不含敏感凭据的环境验收加载、核心功能和禁用。若只需要少量已知插件，直接查仓库更省维护；索引超时或版本缺项时退回人工目录，不据目录名誉免做源码核查。[Q05](#research-q05)
+作为查候选的有限入口，先核版本与工件，不把披露当安全背书；安装不合任务或版本不明即退原仓独立核，见 [Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +123,18 @@
 
 **核查状态**：已检查源码。
 
-已核查目录与索引生成机制；发现和交接贡献有源码支持，运行可用性、安全与使用收益未验证；新假设保持未验证。
+固定源码的条目→索引/HTML与能力披露生产链可核，未构建/发布/访问线上或安装候选。只建议有限发现用途。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、scripts/lib/entries.mjs、scripts/lib/market-index.mjs、scripts/build-index.mjs、scripts/check-submission.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 .github/workflows/build-site.yml、README.zh.md、package.json、scripts/build-index.mjs、scripts/build-site.mjs、scripts/check-submission.mjs、scripts/lib/capabilities.mjs、scripts/lib/entries.mjs、scripts/lib/market-index.mjs、scripts/probe-capabilities.mjs、scripts/publish-catalog.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查目录及生成器的固定版本，不审计全量被收录插件，不执行网络探针或目标代码。
-- 下一步：取固定20条记录同时核对 YAML、线上索引和宿主显示，再完成受控候选安装与禁用；分开统计发现耗时、错误选择与维护成本。
+- 边界：核四材料摘要/固定身份；读条目读入、市场builder与真实站点/工作流/发布调用、安装命令输出、能力探测的工件/失败保留/临时清理与公开字段。未运行、构建、访问线上、安装候选或审外部scanner/parser/所有工作流，不把声明测试当通过。
+- 下一步：两个版本+重扫失败复核公开绑定，目标Host固定少数候选核最小功能/授权/退出，再比较查找/复核和维护总时间。
 
 **分析版本**
 
 - **仓库**：[awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
-- **版本号**：0.1.0（[固定提交 a7ae7b2](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/tree/a7ae7b2a1295e96b2a84268ed0443f1aead14f33)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 cef4c68](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/tree/cef4c68878a028cee20f00fd7ded35d3f520b3b0)）
+- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +142,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是让每条索引附带按固定插件版本、宿主版本及验收时间绑定的最小结果证明，同时保留无证明条目。由当前格式校验与实际可用性之间的缺口推导，增量是帮助用户判断证据新鲜度而非给出安全认证。先取20个不同来源条目，对比普通索引和证据索引的选错率、核查耗时及维护时间；若核查节省不足以覆盖证明维护，或用户将证明误当安全背书，则停止扩展。[Q05](#research-q05)
+传播扫描版本与失败状态，再用少量固定候选/Host最小任务和撤销残留证据补采用门槛，测误采/工时并可否定，见 [Q04](#research-q04)。
 
-取固定20条记录同时核对 YAML、线上索引和宿主显示，再完成受控候选安装与禁用；分开统计发现耗时、错误选择与维护成本。
+两个版本+重扫失败复核公开绑定，目标Host固定少数候选核最小功能/授权/退出，再比较查找/复核和维护总时间。
 
 <a id="detail-section-9"></a>
 
@@ -152,63 +153,50 @@
 <details>
 <summary>工程统计</summary>
 
-统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：4b7d5a3dfe4d99f334212bb29c4ce25c8971905e9d058049b54588167c9bc1f4。sloc 0.3.2，TypeScript 5.9.3。
-
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 1 | 7086 | — | — | 306424 |
-| .mjs | source | 4 | 1076 | 640 | 385 | — |
+| .md | source | 8 | 16385 | — | — | 878585 |
+| .mjs | test | 8 | 623 | 503 | 93 | — |
+| .mjs | source | 32 | 6629 | 4085 | 2231 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 8](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=8&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+created%3A2026-09-26T03%3A39%3A21.784Z..2026-10-26T03%3A39%3A21.784Z) [![近30天关闭 13](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=13&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A39%3A21.784Z..2026-10-26T03%3A39%3A21.784Z)
+[![Issue 未关闭 10](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=10&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 20](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=20&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z) [![近30天关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z)
 
 
 
-统计日期：2026-10-26。
+统计日期：2026-10-29。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查社区目录如何转为宿主机器发现能力，以及覆盖、安全和维护边界是否影响采用。
+**插件研究总目标**：目录/索引与能力披露实际能支持哪些候选采用判断，哪里仍缺当前版本和安装结果证据？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要目录，合格交付是什么，是否是可安装插件？
+### Q01 · 这是插件、市场运行时还是候选资源入口？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-它服务两个角色：用户发现候选，维护者接受与发布条目。README 把自身定位为 curated list，随后给出 Discover 的索引地址；package.json 的 files 只有 README，并未声明 dsh.bundle。因此研究对象应视为目录和构建工程，不能把 npm 包自身当作功能插件。简单替代是浏览 GitHub 列表并逐个复制命令。成功判据是条目与来源可追溯、适用范围明确，以及宿主能读取索引，而非候选插件均通过验收。
+这是社区插件资源目录及其静态站/索引生成工程，不是可安装DSH bundle或市场客户端。根包0.1.0的files只有两份README，不能把安装同名npm包当取得目录内插件功能。面向DSH用户查候选、比较简介/分发入口，也供维护者从一份结构数据生成多语言列表、网页与机器索引。原始awesome列表、逐仓README和手工维护Host索引是参照；增量是统一候选数据和可消费分发，条目数量、下载/星数都不是需求或插件质量。
+
+实际readEntries按文件名排序解析data/plugins YAML，build-site取同源条目和npm映射；卡片按npm优先、否则作者Release、否则GitHub给安装命令，并写详情HTML。market-index把满足条件的npm子集转成官方format 1；构建站实际调用而非只提供helper，GitHub workflow按探测→构建→Pages部署声明接线。下游Host读取/安装及本轮远端成功未验证，网页命令是建议入口，不能等同已装或最小功能通过。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:7-13](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/README.md#L7-L13)
+**依据 1 · 源码核查**：[package.json:1-14](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/package.json#L1-L14)
 
-作者明确目录定位及宿主发现使用方式
-
-```text
-> A curated list of plugins for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
-
-DeepSeek Harness is DeepSeek's open-source agent harness — a runnable coding agent (Web and headless), built on a framework where everything is a plugin: models, tools, sandboxes, session storage, UI, even the agent loop itself. Plugins can extend the official coding agent, swap out its core parts, or assemble something entirely different.
-
-This list collects community plugins that are installable via `dsh plugin add` (each declares a `dsh.bundle` manifest). [PRs welcome](#contributing).
-
-> 📡 **This list is also a plugin market index.** On dsh 0.2.1+, open **Plugins → Discover → Index sources** and add `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`. That is this list as a format-1 index, served from npm so it loads quickly everywhere: dsh gives a source 15 seconds, and the GitHub Pages copies of the same document — `https://awesome-dsh-plugin.com/index.json` and its mirror `https://dshmarket.com/index.json` — can exceed that from some networks. The Discover tab and the `plugin_market` agent tool then search the same entries. The index covers plugins published on npm with a known version; GitHub-only entries still install with the command beside them.
-```
-
-**依据 2 · 源码核查**：[package.json:1-19](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/package.json#L1-L19)
-
-根包是列表文档包，不含 dsh.bundle
+资源包只发README，没有dsh.bundle。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
 {
@@ -225,65 +213,217 @@ This list collects community plugins that are installable via `dsh plugin add` (
     "README.md",
     "README.zh.md"
   ],
-  "keywords": [
-    "awesome",
-    "awesome-list",
-    "dsh",
-    "dsh-plugin",
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[scripts/lib/entries.mjs:77-107](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/entries.mjs#L77-L107)
+
+源文件排序读取和YAML错误。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+export function readEntries(dir = PLUGINS_DIR) {
+  if (!fs.existsSync(dir)) return []
+  const out = []
+  for (const f of fs.readdirSync(dir).sort()) {
+    if (!f.endsWith('.yml')) continue
+    const full = path.join(dir, f)
+    const text = fs.readFileSync(full, 'utf8')
+    let doc
+    try {
+      doc = yamlLoad(text)
+    } catch (e) {
+      // By far the most common way a hand-written entry breaks: a description
+      // like `en: Foo bar: baz` — an unquoted scalar containing ": " is a
+      // mapping to YAML. Say so, because the parser's own message ("bad
+      // indentation of a mapping entry") points nowhere useful.
+      const loc = LOCALE_CODES.join('|')
+      const head = new RegExp(`^\\s+(${loc}):\\s`)
+      const culprit = text
+        .split('\n')
+        .find((l) => head.test(l) && /:\s/.test(l.replace(head, '')) && !new RegExp(`^\\s+(${loc}):\\s*['"]`).test(l))
+      const hint = culprit
+        ? `\n\n  A description containing ": " must be quoted:\n` +
+          `    ${culprit.trim()}\n` +
+          `  becomes\n` +
+          `    ${culprit.trim().replace(new RegExp(`^((${loc}):\\s*)(.*)$`), (_, p, __, v) => `${p}'${v.replaceAll("'", "''")}'`)}`
+        : ''
+      throw new Error(`${full}: invalid YAML — ${e.reason ?? e.message}${hint}`)
+    }
+    out.push({ ...doc, file: toPosix(full) })
+  }
+  return out
+```
+
+</details>
+
+**依据 3 · 源码核查**：[scripts/build-site.mjs:180-192](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L180-L192)
+
+真实索引构建/写入。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+const npmMap = fs.existsSync(NPM_MAP_FILE) ? JSON.parse(fs.readFileSync(NPM_MAP_FILE, 'utf8')) : {}
+
+// The plugin market index (format 1) that hosts read as a market source.
+// Built here rather than in a second pass so the page can tell whether THIS
+// deploy actually carries one: a push build restores the probe cache, and a
+// cache from before the publish-time field existed lists nothing — in that
+// case the panel is left out instead of advertising a URL that 404s.
+const builtIndex = buildMarketIndex({ entries: readEntries(), npmMap, locales: LOCALES, origin: ORIGIN })
+const indexBuilt = builtIndex.index.plugins.length > 0
+// Minified, not pretty: the host that reads this has a fixed 15 s fetch
+// timeout (dsh 0.2.1 `fetchTimeoutMs`), and one-space indentation added 25%
+// to a document already close to that budget on slow networks.
+if (indexBuilt) fs.writeFileSync('docs/index.json', JSON.stringify(builtIndex.index) + '\n')
+```
+
+</details>
+
+**依据 4 · 源码核查**：[scripts/build-site.mjs:454-459](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L454-L459)
+
+分发来源数据。
+
+```text
+  e.npm = npmMap[e.url]?.npm ?? null
+  // Optional author-declared prebuilt release tarball (data/plugins/*.yml).
+  // Some plugins ship only a built tarball and are not installable from
+  // source at all, so `github:owner/repo` would hand users a broken command.
+  e.tarball = tarballMap[e.url] ?? null
+  e.cmdTarball = e.tarball ? `dsh plugin --profile web add "${e.tarball}"` : null
+```
+
+**依据 5 · 源码核查**：[scripts/build-site.mjs:534-535](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L534-L535)
+
+安装命令优先级。
+
+```text
+function cardCmd(e) {
+  return e.npm ? `dsh plugin --profile web add ${e.npm}` : (e.cmdTarball ?? e.cmdGit)
+```
+
+**依据 6 · 源码核查**：[scripts/build-site.mjs:558-574](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L558-L574)
+
+卡片实际输出候选与命令。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    return `    <li class="card" ${attrs}>
+      <div class="top">
+        <h3><a href="${loc.urlPath}p/${e.slug}/" translate="no"><span class="owner">${esc(e.owner)}/</span>${esc(short)}</a></h3>
+        ${e.stars != null ? `<span class="stars" translate="no">${e.stars}</span>` : ''}
+        ${e.downloads != null ? `<span class="dl" translate="no" title="${loc.strings.P_DOWNLOADS}">${fmtNum(e.downloads)}</span>` : ''}
+      </div>
+      <a class="desc-link" href="${loc.urlPath}p/${e.slug}/" tabindex="-1"><p>${esc(e.descs[loc.code])}</p></a>
+      <div class="foot">
+        <a class="tag" href="${loc.urlPath}${e.cat}/">${loc.categories[e.cat]}</a>
+        <details class="inst">
+          <summary aria-haspopup="menu">${loc.strings.INSTALL_BTN} ▾</summary>
+          <div class="menu" role="menu">
+            <button type="button" role="menuitem" data-cmd="dsh plugin --profile web add dshmarket"><b>${loc.strings.MENU_MARKET}</b><small>${loc.strings.MENU_MARKET_HINT}</small></button>
+            <div class="mi-cli">
+              <b>${loc.strings.MENU_CLI}</b>
+              <span class="cli" translate="no"><input readonly value="${esc(cmd)}" aria-label="${loc.COPY_LABEL}" spellcheck="false"><button class="copy" type="button" data-cmd="${esc(cmd)}" aria-label="${loc.COPY_LABEL}">${loc.COPY_TEXT}</button></span>
+            </div>
+```
+
+</details>
+
+**依据 7 · 源码核查**：[scripts/build-site.mjs:1067-1069](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L1067-L1069)
+
+详情HTML真正写出。
+
+```text
+    const outDir = `${loc.out.replace(/index\.html$/, '')}p/${e.slug}`
+    fs.mkdirSync(outDir, { recursive: true })
+    fs.writeFileSync(`${outDir}/index.html`, page)
+```
+
+**依据 8 · 源码核查**：[.github/workflows/build-site.yml:224-238](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/.github/workflows/build-site.yml#L224-L238)
+
+实际声明探测/构建/Pages发布。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+          node scripts/probe-screenshots.mjs
+          # Capability disclosure (#401): what each plugin touches — files,
+          # network, shell, credentials — scanned from the artifact a user
+          # would install. Runs every time, like the two probes above: it is
+          # incremental by RELEASE (a new npm version invalidates that entry's
+          # record) and by AGE for branch-sourced entries, so a normal push
+          # re-scans a handful. The scanner is pinned inside the script; it
+          # executes nothing from the scanned package and opens no sockets.
+          node scripts/probe-capabilities.mjs
+          node scripts/build-site.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+</details>
+
+#### 缺口
+
+- 未访问线上部署/下游Host或安装候选。
+  **影响**：不能把固定源码接线解释为当前CDN及时可读、源启用成功或任何候选可用。
+  **进一步探讨**：在用户目标Host核一个索引查询和一项固定版本来源，再在隔离配置核最小行为/退出，线上访问另标时间。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 独立条目如何进入宿主索引，哪些是本项目增量？
+### Q02 · 索引如何处理元数据缺口，验证覆盖哪一层？
 
-**研究主题**：功能与机制、贡献与相对优势
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-entries.mjs 从 data/plugins 读取排序后的 YAML，每项独立文件，解决共同 README 编辑锚点的冲突面。build-index 把条目、npm 映射和 locale 交给 buildMarketIndex；后者要求已知包名、精确版本和整数发布时间，设置 category 和 npm 来源，逐条及整体调用官方 parseMarketIndex。官方格式及验证归属上游库；本工程贡献是把社区策展数据接入该协议并处理局部数据缺失。这让网页清单转为机器发现输入，但没有实现新的安装执行器，也未证明优于现有市场的真实发现效率。
+build-index与build-site均用buildMarketIndex；输入是条目、npm-map和locale，不在此构建函数实时问npm。每项需要npm名、记录版本及整数发布时间，否则分别计缺失并跳过；仅GitHub条目不在该format1子集，不能把漏收录当不安全。版本行含npm source/发布时间及可解析的dsh engine，类别与多语言简介转换后先逐项交官方parseMarketIndex，失败只拒该项并给原因，末尾整文再解析。强项是共享官方规则降低自己维护schema的漂移，不能从注释“host不会拒”推所有Host版本接受或包真能安装。
+
+build-index --check虽然先计算候选结果，但最后只parse已有docs/index.json；没有与新结果逐字或语义比较，不是新源数据已同步的证明。正常build-site确从当前数据重写非空索引，空索引分支不写且隐藏索引面板，不能把独立--check替代真实生成。发布脚本把docs/plugins.json和index.json组合哈希，未变不重发，暂存目录打包为另一个dsh-plugin-catalog，npm publish确实是外部写入，不能把root0.1.0当此目录发行版本。缩短简介/压缩JSON是体积设计，15秒预算来自作者指向的Host约束，本轮未核全Host或网络时延。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[scripts/lib/entries.mjs:1-18](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/lib/entries.mjs#L1-L18)
+**依据 1 · 源码核查**：[scripts/build-index.mjs:19-29](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-index.mjs#L19-L29)
 
-逐文件真相源与翻译回退的设计动机
+真实调用共享builder。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-// Shared entry model: the data/plugins/*.yml source of truth.
-//
-// One file per entry, keyed by slug, so two submissions never touch the same
-// file — that is what removes the merge-conflict cascade the README-as-database
-// layout produced (every submission appended at the same anchor).
-import fs from 'node:fs'
-import path from 'node:path'
-import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
+import { parseMarketIndex } from '@deepseek-ai/dsh-plugin-market-index'
+import LOCALES from '../site/locales.mjs'
+import { readEntries } from './lib/entries.mjs'
+import { buildMarketIndex } from './lib/market-index.mjs'
 
-export const PLUGINS_DIR = 'data/plugins'
+const NPM_MAP_FILE = 'data/npm-map.json'
+const OUT_FILE = 'docs/index.json'
+const checkOnly = process.argv.includes('--check')
 
-// Locales the list publishes, in sync with site/locales.mjs.
-//
-// Only BASE_LOCALE is a contributor's responsibility. Asking submitters for
-// every translation just filters for bilingual authors, not for good plugins,
-// and it bounced a steady stream of otherwise-fine PRs. A missing translation
-// is maintenance work for us, not a defect in their submission — so entries
-// validate on English alone and generation falls back to it, leaving a
+const npmMap = fs.existsSync(NPM_MAP_FILE) ? JSON.parse(fs.readFileSync(NPM_MAP_FILE, 'utf8')) : {}
+const entries = readEntries()
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/lib/market-index.mjs:115-155](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/lib/market-index.mjs#L115-L155)
+**依据 2 · 源码核查**：[scripts/lib/market-index.mjs:115-140](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/market-index.mjs#L115-L140)
 
-必需数据过滤、单项与整体官方解析
+元数据条件/精确版本/来源/可选engine。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
   for (const entry of entries) {
@@ -312,7 +452,18 @@ export const PLUGINS_DIR = 'data/plugins'
         source: { type: 'npm' },
         ...(dsh === undefined ? {} : { engines: { dsh } }),
       }],
-    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[scripts/lib/market-index.mjs:142-155](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/market-index.mjs#L142-L155)
+
+逐条与整文官方parser。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
     // Validate one plugin at a time so a single bad row costs that row, not
     // the whole index; the caller sees exactly which entry and why.
     try {
@@ -331,73 +482,9 @@ export const PLUGINS_DIR = 'data/plugins'
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/build-index.mjs:28-54](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/build-index.mjs#L28-L54)
+**依据 4 · 源码核查**：[scripts/build-index.mjs:46-54](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-index.mjs#L46-L54)
 
-装配及输出链路
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-const npmMap = fs.existsSync(NPM_MAP_FILE) ? JSON.parse(fs.readFileSync(NPM_MAP_FILE, 'utf8')) : {}
-const entries = readEntries()
-const { index, skipped, refused } = buildMarketIndex({ entries, npmMap, locales: LOCALES })
-
-const listable = entries.length - skipped.noNpm - skipped.noVersion - skipped.noPublishTime - skipped.refused
-console.log(`index: ${index.plugins.length} of ${entries.length} entries listed`)
-console.log(`  no npm package: ${skipped.noNpm}`)
-console.log(`  npm but no version recorded: ${skipped.noVersion}`)
-console.log(`  npm version without a publish time yet (next probe fills it): ${skipped.noPublishTime}`)
-if (skipped.refused > 0) {
-  console.log(`  refused by the format: ${skipped.refused}`)
-  for (const line of refused.slice(0, 10)) console.log(`    ${line}`)
-  if (refused.length > 10) console.log(`    … ${refused.length - 10} more`)
-}
-if (index.plugins.length !== listable) {
-  throw new Error(`internal: listed ${index.plugins.length} but expected ${listable}`)
-}
-
-if (checkOnly) {
-  if (!fs.existsSync(OUT_FILE)) throw new Error(`${OUT_FILE} does not exist`)
-  const published = parseMarketIndex(JSON.parse(fs.readFileSync(OUT_FILE, 'utf8')), 'https://awesome-dsh-plugin.com/index.json')
-  console.log(`check: ${OUT_FILE} is a valid format-1 index (${published.plugins.length} plugins)`)
-} else {
-  // Minified: the host that reads this has a fixed 15 s fetch timeout, and
-  // indentation is pure overhead on the wire.
-  fs.writeFileSync(OUT_FILE, JSON.stringify(index) + '\n')
-  console.log(`wrote ${OUT_FILE}`)
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 目录格式通过能证明多少，哪些限制影响发现贡献？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-最强支持是单项及整体官方解析器减少格式漂移，且对缺失 npm 元数据逐类计数，不把未知拼成有效记录。关键限制有两层。其一是 GitHub-only 条目因缺提交版本映射不进入 format-1 索引，网页全量和宿主索引覆盖不同。其二是 --check 分支仅解析已有 docs/index.json，不把它与新生成对象逐字比较，故该检查表达格式有效，不独立证明与当前 YAML 同步。README 又明确安装会以用户权限执行代码，目录不是安全审查。不能将这些限制写成已发生的安装事故。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[scripts/lib/market-index.mjs:11-14](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/lib/market-index.mjs#L11-L14)
-
-GitHub-only 覆盖边界
-
-```text
- * What can be listed: an entry needs an npm package, an exact version, and
- * that version's publish time. The GitHub-only half of the list cannot be
- * expressed yet — format 1 wants a commit SHA per Git version, and this
- * repository records none.
-```
-
-**依据 2 · 源码核查**：[scripts/build-index.mjs:46-54](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/build-index.mjs#L46-L54)
-
-check 只验证既有文件格式
+check只解析现有产物不比新结果。
 
 ```text
 if (checkOnly) {
@@ -411,177 +498,594 @@ if (checkOnly) {
   console.log(`wrote ${OUT_FILE}`)
 ```
 
-**依据 3 · 作者声明**：[README.md:28-42](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/README.md#L28-L42)
+**依据 5 · 源码核查**：[scripts/build-site.mjs:182-192](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L182-L192)
 
-作者区分协议收录与安全或质量背书
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-> ℹ️ **On desktop clients.** This list is client-agnostic. A plugin is listed because it follows the official protocol — it declares a `dsh.bundle` manifest and installs with `dsh plugin add` — not because it adapts to any particular client.
->
-> Clients worth a look: [dsh-desktop](https://github.com/dataelement/dsh-desktop), [deepseek-harness-desktop](https://github.com/hairyf/deepseek-harness-desktop), and [deepseek-harness-desktop](https://github.com/anywhere-labs/deepseek-harness-desktop) by anywhere-labs — all ship dsh-market built in, so everything on this list is one click away. Any other good third-party client works too.
-
-> [!WARNING]
-> Installing a plugin runs third-party code on your machine with your own permissions — it can read your files, use your credentials, and reach the network. Tool approvals don't sandbox plugin code. Being on this list is not a security review: check the source before you install, and try unfamiliar plugins somewhere that doesn't hold your keys. See the full disclaimer at the bottom of this page.
-
-<details>
-<summary><b>What it takes to be listed here</b></summary>
-
-An entry is added when the plugin installs with `dsh plugin add`, does what its one-line description says, sits in the right category, and is maintained. Every submission is checked against its own source before merging — if a description claims "46 tools", someone counts them.
-
-That is the whole bar. **This list doesn't rank plugins or judge their quality, and we don't want to.** Plenty of good software will never appear here, and a slot here proves nothing beyond meeting those rules. They exist so that whatever you pick installs and behaves the way the line said it would.
-
-A listing isn't permanent either: entries whose repos go away, stop being maintained, or turn out to be broken get removed. Full criteria and the review checklist: [how submissions are reviewed](contributing.md#how-submissions-are-reviewed--收录如何评审).
-```
-
-</details>
-
-#### 缺口
-
-- 没有同版本宿主加载和目录同步效果测量
-  **影响**：不能确认线上索引时效或安装成功率
-  **进一步探讨**：抽样固定条目对比 YAML、发布索引与宿主显示，并分别记录加载和安装结果
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 启动、维护和失败恢复由谁承担，收益怎样计量？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-普通用户只需可达索引与满足版本的 DSH；维护者才需要 Node、依赖和 GitHub Token。check-submission 在缺 Token 时退出，并限制枚举仓库包数，说明自动维护有 API 与覆盖预算。README 给出 npm CDN 来源是为应对宿主15秒获取窗口，不能据此宣称本次已测可达。应以一次找到并验证符合任务的插件为单位计量，而不是一次索引获取。首次配置、日常核查和恢复投入如下，目标插件自己的 API、服务与权限负担另计。
-
-首次是配置索引和核对候选，持续是维护映射与复核版本，失败需要排查超时、过期记录和实际安装状态；索引的少量配置不能覆盖目标插件费用与权限负担。单位合格发现的现金和人工样本尚缺。分阶段表见[成本与效果](#cost-and-value)，来源和宿主条件见[依赖与流程](#dependencies-and-flow)。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:11-13](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/README.md#L11-L13)
-
-作者解释索引来源及获取窗口
-
-```text
-This list collects community plugins that are installable via `dsh plugin add` (each declares a `dsh.bundle` manifest). [PRs welcome](#contributing).
-
-> 📡 **This list is also a plugin market index.** On dsh 0.2.1+, open **Plugins → Discover → Index sources** and add `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`. That is this list as a format-1 index, served from npm so it loads quickly everywhere: dsh gives a source 15 seconds, and the GitHub Pages copies of the same document — `https://awesome-dsh-plugin.com/index.json` and its mirror `https://dshmarket.com/index.json` — can exceed that from some networks. The Discover tab and the `plugin_market` agent tool then search the same entries. The index covers plugins published on npm with a known version; GitHub-only entries still install with the command beside them.
-```
-
-**依据 2 · 源码核查**：[scripts/check-submission.mjs:21-32](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/check-submission.mjs#L21-L32)
-
-API 检查的资源界限
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-const MIN_AGE_DAYS = 1
-// There is deliberately no commit-count floor any more (dropped 2026-09-03,
-// #4196). The old MIN_COMMITS = 10 filtered by a number that measures
-// development HABIT, not quality: squash-merge repositories with years of
-// real changes show a short main history, while `git commit --allow-empty`
-// clears the bar in ten seconds. In practice it never rejected anything —
-// every blocked submission either padded commits or waited, so its whole
-// effect was delay plus a red X that primed the human review against clean
-// histories. The age floor stays: it is the part that actually blocks
-// hours-old throwaway repositories, and time cannot be counterfeited.
-const CONCURRENCY = 6
-const MAX_TREE_PKGS = 40
-```
-
-</details>
-
-**依据 3 · 源码核查**：[scripts/check-submission.mjs:92-97](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/check-submission.mjs#L92-L97)
-
-Token 是投稿检查必需条件
-
-```text
-const TOKEN = process.env.GITHUB_TOKEN
-if (!TOKEN) {
-  console.error('GITHUB_TOKEN is required (tree enumeration exceeds the anonymous quota)')
-  process.exit(1)
-}
-const HEADERS = { accept: 'application/vnd.github+json', authorization: `Bearer ${TOKEN}`, 'user-agent': 'awesome-dsh-plugin-ci' }
-```
-
-#### 缺口
-
-- 没有合格发现任务的时间与现金样本
-  **影响**：不能给出单位合格发现成本或 ROI
-  **进一步探讨**：用同一批需求对比直接仓库搜索与索引搜索，统计核查、修正及失败时间
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 如何验证证据附着索引的假设，什么用户值得先用？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-现有实现解决格式与发现交接，但没有让特定版本运行证据成为条目的一部分。由这个明确缺口提出证据附着索引，并非认定当前目录有安全缺陷或已存在付费需求。采用上，已有 DSH 的用户可限定一个候选集试用，记录来源可达、找到合适条目及最终加载结果；普通网页用户仍可不配置宿主。改进实验应固定20条候选、同一任务提示及允许时间，比较普通索引和带验收范围的索引。只有选错率降低且维护总时间可接受才继续；如证明被误读为安全认证，需重新设计文案并停止扩展。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:32-42](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/README.md#L32-L42)
-
-目录主动声明证据与安全边界
+正常构建实际调用与空分支。
 
 <details>
 <summary>查看原文（11行）</summary>
 
 ```text
-> [!WARNING]
-> Installing a plugin runs third-party code on your machine with your own permissions — it can read your files, use your credentials, and reach the network. Tool approvals don't sandbox plugin code. Being on this list is not a security review: check the source before you install, and try unfamiliar plugins somewhere that doesn't hold your keys. See the full disclaimer at the bottom of this page.
-
-<details>
-<summary><b>What it takes to be listed here</b></summary>
-
-An entry is added when the plugin installs with `dsh plugin add`, does what its one-line description says, sits in the right category, and is maintained. Every submission is checked against its own source before merging — if a description claims "46 tools", someone counts them.
-
-That is the whole bar. **This list doesn't rank plugins or judge their quality, and we don't want to.** Plenty of good software will never appear here, and a slot here proves nothing beyond meeting those rules. They exist so that whatever you pick installs and behaves the way the line said it would.
-
-A listing isn't permanent either: entries whose repos go away, stop being maintained, or turn out to be broken get removed. Full criteria and the review checklist: [how submissions are reviewed](contributing.md#how-submissions-are-reviewed--收录如何评审).
+// The plugin market index (format 1) that hosts read as a market source.
+// Built here rather than in a second pass so the page can tell whether THIS
+// deploy actually carries one: a push build restores the probe cache, and a
+// cache from before the publish-time field existed lists nothing — in that
+// case the panel is left out instead of advertising a URL that 404s.
+const builtIndex = buildMarketIndex({ entries: readEntries(), npmMap, locales: LOCALES, origin: ORIGIN })
+const indexBuilt = builtIndex.index.plugins.length > 0
+// Minified, not pretty: the host that reads this has a fixed 15 s fetch
+// timeout (dsh 0.2.1 `fetchTimeoutMs`), and one-space indentation added 25%
+// to a document already close to that budget on slow networks.
+if (indexBuilt) fs.writeFileSync('docs/index.json', JSON.stringify(builtIndex.index) + '\n')
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/lib/market-index.mjs:125-140](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/a7ae7b2a1295e96b2a84268ed0443f1aead14f33/scripts/lib/market-index.mjs#L125-L140)
+**依据 6 · 源码核查**：[scripts/publish-catalog.mjs:129-143](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/publish-catalog.mjs#L129-L143)
 
-当前输出字段围绕发布与分类，推导新增证明需独立协议与维护
+两产物哈希/去重/写暂存目录。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-    const plugin = {
-      name: record.npm,
-      title: entry.name,
-      ...(description === undefined ? {} : { description }),
-      homepage: `${origin}/p/${slugOf(entry.url)}/`,
-      repository: repositoryOf(entry.url),
-      // Everything the format defaults is left out: `keywords: []` and
-      // `engines: {}` cost bytes in every one of ~3,000 entries and say
-      // nothing. The parser fills both back in.
-      metadata: { category: entry.category },
-      versions: [{
-        version: record.version,
-        publishTimestamp: record.publishedAt,
-        source: { type: 'npm' },
-        ...(dsh === undefined ? {} : { engines: { dsh } }),
-      }],
+const built = fs.readFileSync(BUILT)
+const index = fs.readFileSync(INDEX_BUILT)
+// Both files, so a day that moves only the index still earns a version —
+// the hash is what tells tomorrow's run there is nothing new to publish.
+const hash = sha256(Buffer.concat([built, index]))
+if (hash === await publishedHash()) {
+  console.log(`catalog unchanged (${hash.slice(0, 12)}) — nothing to publish`)
+  process.exit(0)
+}
+
+const entries = JSON.parse(built.toString()).plugins.length
+const version = catalogVersion(new Date(), process.env.GITHUB_RUN_NUMBER ?? '0')
+const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'dsh-catalog-'))
+fs.writeFileSync(path.join(stage, 'plugins.json'), built)
+fs.writeFileSync(path.join(stage, 'index.json'), index)
+```
+
+</details>
+
+**依据 7 · 源码核查**：[scripts/publish-catalog.mjs:155-169](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/publish-catalog.mjs#L155-L169)
+
+不同目录包与真实publish副作用。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  license: 'CC0-1.0',
+  keywords: ['dsh', 'dsh-plugin', 'deepseek-harness', 'deepseek', 'catalog', 'registry'],
+  // The validator a consumer reads back on its next check, and what stops
+  // this script republishing an identical catalog tomorrow.
+  catalogSha: hash,
+  exports: { './plugins.json': './plugins.json', './index.json': './index.json' },
+  files: ['plugins.json', 'index.json'],
+}, null, 2) + '\n')
+
+console.log(`publishing ${PKG}@${version} — ${entries} entries, sha ${hash.slice(0, 12)}`)
+// `DRY_RUN=1` runs everything up to and including npm's own packing checks
+// without publishing, so the whole path can be exercised by hand.
+const args = ['publish', '--access', 'public']
+if (process.env.DRY_RUN === '1') args.push('--dry-run')
+execFileSync('npm', args, { stdio: 'inherit', cwd: stage })
 ```
 
 </details>
 
 #### 缺口
 
-- 用户核查负担和证据维护收益尚无实测
-  **影响**：新方向仍是可证伪假设，不是已确认产品需求
-  **进一步探讨**：邀请实际发现插件的用户在同条件任务中比较，并记录后续是否继续使用
+- 未检查外部parser所有规则/Host实现或运行生成与发布；源数据与线上字节是否一致未知。
+  **影响**：不能保证最新输入在当前源中可见、所有Host兼容或任何索引版本可安装。
+  **进一步探讨**：只读比较当前输入生成预期与固定产物，再以目标Host固定版本核解析/查询和安装；发布前应另审外部写入范围。
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 能力披露数据如何产生，失败保留会导致什么边界？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+当前已存在能力披露，不能把未来方向仅写成加安全扫描。workflow先probe-capabilities再build-site；scanSourceFor优先npm映射的版本工件，否则作者tarball、否则GitHub HEAD，后两种version可为null。probe下载、解压到临时目录/子目录，调用本地scanner或npx回退，解析payload并记facts；外部dsh-trust-check的具体分析规则本轮未核，不借注释宣称覆盖完整或无漏洞。
+
+事实带spec/version/scannedAt，按版本改变或无版本年龄重扫，失败保留旧record而非写空；临时扫描目录finally删除。有来源/更新时间是优点，但构建plugins.json按URL直接取capabilities/redLines/scannedAt，同时version用当前npm-map，未输出扫描spec/version或先要求与当前版本匹配。因此npm版本更新而本次扫描失败时，旧能力事实可能与当前安装入口并列，不能称当前版本已核，也不声称本轮实际线上发生。没有record时字段缺省，缺省、空发现、保留旧发现三种情况都不能读成安全通过。公开字段接线已核，不把它冒充本站每一处UI已显示。
+
+收录检查另有仓库/清单/目录条件，不等安装运行审计；依赖官方市场parser、registry/GitHub数据、外部扫描器及发布权限。披露只宜提示用户核shell/网络/凭据等表面，尚未证明最小功能、账号隔离、用户同意或卸载无残留。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[scripts/lib/capabilities.mjs:75-99](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/capabilities.mjs#L75-L99)
+
+真实工件选择优先级与无版本HEAD。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+export function scanSourceFor(entry, npmMap = {}, tarballs = {}) {
+  const mapped = npmMap[entry.url]
+  const npmName = mapped?.npm ?? (typeof entry.npm === 'string' && entry.npm !== '' ? entry.npm : null)
+  const npmVersion = mapped?.version ?? null
+  if (npmName !== null && npmName !== undefined) {
+    // The packument's own tarball URL shape; the version comes from the same
+    // map the rest of the build reads, so this costs no extra request.
+    const file = npmName.startsWith('@') ? npmName.split('/')[1] : npmName
+    return {
+      kind: 'npm',
+      url: npmVersion === null
+        ? `https://registry.npmjs.org/${npmName}`
+        : `https://registry.npmjs.org/${npmName}/-/${file}-${npmVersion}.tgz`,
+      spec: `npm:${npmName}${npmVersion === null ? '' : `@${npmVersion}`}`,
+      version: npmVersion,
+    }
+  }
+  const declared = tarballs[entry.url]
+  const tarball = typeof declared === 'string' ? declared : declared?.tarball ?? null
+  if (typeof tarball === 'string' && tarball !== '') {
+    return { kind: 'tarball', url: tarball, spec: `tarball:${entry.url}`, version: null }
+  }
+  const repo = repoOf(entry.url)
+  if (repo === null) return null
+  return { kind: 'github', url: `https://codeload.github.com/${repo}/tar.gz/HEAD`, spec: `github:${repo}`, version: null }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[scripts/lib/capabilities.mjs:114-119](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/capabilities.mjs#L114-L119)
+
+重扫规则。
+
+```text
+export function shouldRescan(stored, source, now, recheckDays) {
+  if (stored === undefined) return true
+  if (source.version !== null) return stored.version !== source.version
+  const scannedAt = Date.parse(stored.scannedAt)
+  if (!Number.isFinite(scannedAt)) return true
+  return now - scannedAt > recheckDays * 86_400_000
+```
+
+**依据 3 · 源码核查**：[scripts/probe-capabilities.mjs:53-71](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L53-L71)
+
+scanner命令与npx回退。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+ * the lockfile rather than in this string, and a bump is a reviewed diff), and
+ * the local binary is what a normal run uses. `npx` remains the fallback so a
+ * checkout without node_modules still works — it costs about a second per
+ * entry, which over four thousand entries is the difference between a nightly
+ * pass and an hour.
+ */
+function scannerCommand() {
+  if (process.env.CAPABILITY_SCANNER !== undefined && process.env.CAPABILITY_SCANNER !== '') return process.env.CAPABILITY_SCANNER
+  return fs.existsSync('node_modules/.bin/dsh-trust-check') ? 'node_modules/.bin/dsh-trust-check' : 'npx'
+}
+
+function scannerArgs(packageDir, spec) {
+  return scannerCommand() === 'npx'
+    ? ['--yes', TOOL, '--dir', packageDir, '--spec', spec, '--json']
+    : ['--dir', packageDir, '--spec', spec, '--json']
+}
+/** `npm:@scope/name@1.2.3` or `npm:name@1.2.3` → the package name. */
+function npmNameOf(spec) {
+  const raw = spec.startsWith('npm:') ? spec.slice(4) : spec
+```
+
+</details>
+
+**依据 4 · 源码核查**：[scripts/probe-capabilities.mjs:109-127](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L109-L127)
+
+next保留旧记录/flush。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+const stored = readJson(OUT_FILE)
+const npmMap = readJson(NPM_MAP_FILE)
+const tarballs = readJson(TARBALLS_FILE)
+const entries = await readEntries('data/plugins')
+const now = Date.now()
+
+const next = { ...stored }
+
+/**
+ * Persist what has been scanned so far.
+ *
+ * A full pass is hours of downloads, and it used to write the file ONLY at the
+ * end — so a runner that hit its job timeout, or a laptop that slept, threw
+ * away every scan it had paid for. Flushing periodically makes the work
+ * resumable: the next run skips whatever is already current.
+ */
+function flush() {
+  const sorted = Object.fromEntries(Object.entries(next).sort(([a], [b]) => a.localeCompare(b)))
+  fs.writeFileSync(OUT_FILE, `${JSON.stringify(sorted, null, 1)}\n`)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[scripts/probe-capabilities.mjs:146-173](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L146-L173)
+
+下载/解压/子目录/真实scanner调用。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+async function scanEntry(entry) {
+  const source = scanSourceFor(entry, npmMap, tarballs)
+  if (source === null) { skipped += 1; return }
+  if (!PROBE_ALL && !shouldRescan(stored[entry.url], source, now, RECHECK_DAYS)) { kept += 1; return }
+  const dir = fs.mkdtempSync(join(os.tmpdir(), 'dshm-cap-'))
+  try {
+    const file = join(dir, 'package.tgz')
+    await download(source.url, file)
+    const extracted = join(dir, 'x')
+    fs.mkdirSync(extracted)
+    await run('tar', ['xzf', file, '-C', extracted], { maxBuffer: 1024 * 1024 })
+    // Both npm tarballs and codeload archives wrap everything in one top-level
+    // directory; a subdirectory entry starts one level further in.
+    const top = fs.readdirSync(extracted).filter(name => !name.startsWith('.'))[0]
+    if (top === undefined) throw new Error('empty archive')
+    const sub = subdirOf(entry.url)
+    const packageDir = sub === null ? join(extracted, top) : join(extracted, top, sub)
+    if (!fs.existsSync(packageDir)) throw new Error(`no such subdirectory: ${sub}`)
+    const { stdout: raw } = await run(scannerCommand(), scannerArgs(packageDir, source.spec),
+      { encoding: 'utf8', timeout: SCAN_TIMEOUT_MS, maxBuffer: 8 * 1024 * 1024 })
+    const payload = JSON.parse(raw)
+    if (source.kind === 'npm' && source.version !== null) {
+      const provenance = await lookupProvenance(source.spec, source.version, payload)
+      if (provenance !== undefined) payload.provenance = provenance
+    }
+    const facts = rememberPrevious(stored[entry.url], factsFromScan(payload, {
+      spec: source.spec, version: source.version, tool: TOOL, now: new Date(now).toISOString(),
+    }))
+```
+
+</details>
+
+**依据 6 · 源码核查**：[scripts/probe-capabilities.mjs:174-202](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L174-L202)
+
+无事实/异常保旧与临时目录清理。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+    if (facts === null) {
+      // Say WHICH nothing this was. Most of these are a package whose entry
+      // file is a build product the repository does not ship — the scanner
+      // answers `primary entry unreadable or missing: lib/index.js`, which is
+      // exactly the case an npm-sourced scan avoids (measured: 957 of them on
+      // the first full pass, when a missing data/npm-map.json sent every entry
+      // down the GitHub branch). That sentence is the difference between a
+      // count and something a maintainer can act on.
+      const why = Array.isArray(payload.errors) && typeof payload.errors[0]?.message === 'string'
+        ? payload.errors[0].message
+        : `no plugin record (schemaVersion ${String(payload.schemaVersion)})`
+      throw new Error(why)
+    }
+    next[entry.url] = facts
+    scanned += 1
+    sinceFlush += 1
+    if (sinceFlush >= FLUSH_EVERY) {
+      sinceFlush = 0
+      // Progress, because a full pass is hours and a silent log cannot be told
+      // apart from a hung one.
+      console.log(`  … ${scanned} scanned, ${failed} failed, ${kept} current (${flush()} records)`)
+    }
+  } catch (error) {
+    failed += 1
+    const message = error instanceof Error ? error.message.slice(0, 120) : String(error)
+    failures.set(message, (failures.get(message) ?? 0) + 1)
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true })
+  }
+```
+
+</details>
+
+**依据 7 · 源码核查**：[scripts/lib/capabilities.mjs:167-182](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/lib/capabilities.mjs#L167-L182)
+
+payload形状与版本/spec/时间入库。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function factsFromScan(payload, fallback) {
+  if (payload === null || typeof payload !== 'object' || Array.isArray(payload)) return null
+  if (!READABLE_SCHEMAS.has(payload.schemaVersion)) return null
+  const plugins = Array.isArray(payload.plugins) ? payload.plugins : []
+  const first = plugins.find(plugin => plugin !== null && typeof plugin === 'object')
+  if (first === undefined) return null
+  const strings = (value) => Array.isArray(value)
+    ? [...new Set(value.filter(item => typeof item === 'string' && item !== ''))]
+    : []
+  const record = {
+    version: typeof first.version === 'string' && first.version !== '' ? first.version : fallback.version,
+    spec: typeof first.spec === 'string' && first.spec !== '' ? first.spec : fallback.spec,
+    capabilities: strings(first.capabilities),
+    redLines: dropCompareOnlyIpRedLines(strings(first.redLines), first.destinations),
+    scannedAt: fallback.now,
+    tool: fallback.tool,
+```
+
+</details>
+
+**依据 8 · 源码核查**：[scripts/build-site.mjs:1136-1165](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L1136-L1165)
+
+当前版本及能力事实发布字段，未带扫描版本绑定。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+      url: e.url,
+      page: `${ORIGIN}/p/${e.slug}/`,
+      category: e.cat,
+      description: Object.fromEntries(LOCALES.map((l) => [l.code, e.descs[l.code]])),
+      npm: e.npm,
+      // The author-declared release asset, when there is one. `install` folds
+      // it into a display string, but a consumer that only reads `npm` sees
+      // null and falls back to `github:owner/repo` — a different artifact from
+      // the one the listing tells a human to install, and for a plugin that
+      // ships no built output, one that does not install at all. Recovering it
+      // by parsing the command string is not a contract worth offering, so the
+      // field is published directly. Omitted when absent, like `screenshots`.
+      tarball: e.tarball ?? undefined,
+      // Current npm `latest` when known. null = github-only (`npm` null) or
+      // probed with no latest tag. Not the same signal as `downloads`.
+      version: e.version,
+      stars: e.stars,
+      downloads: e.downloads,
+      downloadsStart: downloadsMap[e.url]?.start ?? null,
+      downloadsEnd: downloadsMap[e.url]?.end ?? null,
+      downloadsCheckedAt: downloadsMap[e.url]?.checkedAt ?? null,
+      // Capability disclosure (#401). Omitted entirely when the entry was not
+      // scanned, so a consumer cannot read "absent" as "empty" — the market
+      // renders a missing pair as 未检出 / not checked.
+      ...(capabilitiesMap[e.url] === undefined ? {} : {
+        capabilities: capabilitiesMap[e.url].capabilities,
+        capabilityRedLines: capabilitiesMap[e.url].redLines,
+        capabilityCheckedAt: capabilitiesMap[e.url].scannedAt,
+      }),
+      install: e.npm ? `dsh plugin --profile web add ${e.npm}` : (e.cmdTarball ?? e.cmdGit),
+```
+
+</details>
+
+**依据 9 · 源码核查**：[scripts/check-submission.mjs:1-15](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/check-submission.mjs#L1-L15)
+
+仓库/清单收录门槛边界。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+// Validate the repos behind the entries a PR adds or changes:
+//
+//   1. package.json declares `dsh.bundle` (anywhere in the repo — monorepos
+//      put it in packages/, plugins/, extensions/, bundle/, npm/, ... so the
+//      whole tree is enumerated rather than a guessed list of directories)
+//   2. the repo is at least MIN_AGE_DAYS old (no commit floor — see below)
+//   3. the repo exists and isn't archived
+//   4. the repo is not DSH itself (it declares `dsh.bundle` and would pass 1-3)
+//
+// Needs GITHUB_TOKEN: the git-tree enumeration is API calls, and
+// unauthenticated (60/hr per IP) is nowhere near enough. That is
+// why this runs from pr-gate.yml via workflow_run rather than the fork-safe
+// pull_request job.
+//
+//   node scripts/check-submission.mjs --base <sha> [--pr-created <iso>] [--json out.json]
+```
+
+</details>
+
+**依据 10 · 源码核查**：[.github/workflows/build-site.yml:225-233](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/.github/workflows/build-site.yml#L225-L233)
+
+扫描真实生产接线。
+
+```text
+          # Capability disclosure (#401): what each plugin touches — files,
+          # network, shell, credentials — scanned from the artifact a user
+          # would install. Runs every time, like the two probes above: it is
+          # incremental by RELEASE (a new npm version invalidates that entry's
+          # record) and by AGE for branch-sourced entries, so a normal push
+          # re-scans a handful. The scanner is pinned inside the script; it
+          # executes nothing from the scanned package and opens no sockets.
+          node scripts/probe-capabilities.mjs
+          node scripts/build-site.mjs
+```
+
+#### 缺口
+
+- 未审外部扫描器覆盖/漏洞，未测版本更新+重扫失败的公共字段/消费端表现，也未装候选。
+  **影响**：目录可信提示不能替代当前工件审计，且消费端可能把旧发现套给最新入口，影响是否应授权或安装。
+  **进一步探讨**：用固定两版本和强制扫描失败样本比较存储/发布，核扫描版本与安装来源是否绑定；随后独立核少数候选的权限/最小行为/退出。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何采用目录而不把未知转成安装背书，下一步增量是什么？
+
+**研究主题**：效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+DSH用户可先把它作查候选的资源，用简介缩小范围后固定仓库/版本/分发物复查；是否添加源由目标Host验证，是否装某插件另作决定。首次查看/复制索引门槛低，但安装、账户、模型费用、shell权限及退出成本属于候选，不在目录控制。维护者另需Node/npm依赖、GitHub API配额/令牌、探测和Pages/npm发布权限，扫描下载/子进程/临时空间与失败重探都有费用和人工，不能以静态列表推维护免费。
+
+持续要看源更新时间和本项扫描版本，不因npm latest就默认对应能力事实；失败先撤去有问题源或回原仓核包，不反复安装覆盖已有效配置。退出查看可删除书签/索引源，已装插件、下载物和令牌/远端资料需单独核撤销，目录没有替用户统一清理的运行时。
+
+未来先把已有扫描的版本/spec及失败保留状态传播到消费者，再为少数固定候选/Host版本记录最小安装、具体功能和撤销残留证据；相对现有schema/静态披露增加可执行采用证据，不把“加字段”独立当高创新。未知项仍可发现但显示未验证。比较当前目录+人工核与证据版在错包/过期事实误用/安装残留、正确候选率及核验与维护总时间；若不能降低误采或证据维护过重，停止扩大，只保留版本绑定的局部修复。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[README.zh.md:11-14](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/README.zh.md#L11-L14)
+
+作者给具体查找/加源方式，未作本轮线上验证。
+
+```text
+本列表收录可通过 `dsh plugin add` 安装的社区插件（均声明了 `dsh.bundle` manifest）。欢迎 [PR](#贡献)。
+
+> 📡 **这份列表也可以当作插件市场索引。** dsh 0.2.1 起，打开 **插件 → 发现（Discover）→ 索引源（Index sources）**，添加 `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`。它就是这份列表的 format 1 索引，放在 npm 上分发，所以在哪里都快：dsh 给索引源的时间只有 15 秒，而同一份文档的 GitHub Pages 地址——`https://awesome-dsh-plugin.com/index.json` 及其镜像 `https://dshmarket.com/index.json`——在部分网络下会超过这个时间。官方的发现页和 `plugin_market` 智能体工具就能搜索同一份条目。索引收录在 npm 上发布、有明确版本的插件；仅 GitHub 的条目仍可用每个插件旁边的命令安装。
+
+```
+
+**依据 2 · 源码核查**：[package.json:23-30](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/package.json#L23-L30)
+
+维护依赖而非用户运行时。
+
+```text
+  "devDependencies": {
+    "@deepseek-ai/dsh-plugin-market-index": "^0.2.1-alpha.4",
+    "dsh-trust-check": "^0.2.1",
+    "js-yaml": "^5.3.0",
+    "marked": "^18.0.9",
+    "semver": "^7.8.5"
+  }
+}
+```
+
+**依据 3 · 源码核查**：[.github/workflows/build-site.yml:88-94](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/.github/workflows/build-site.yml#L88-L94)
+
+维护安装与网络失败背景。
+
+```text
+      - run: npm ci
+        env:
+          # The lockfile pins registry.npmmirror.com URLs. On GitHub runners that CDN
+          # has repeatedly returned 503/504 and hung `npm ci` for tens of minutes
+          # (2026-10-19). Fetch from npmjs in CI; local installs keep their own registry.
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_replace_registry_host: always
+```
+
+**依据 4 · 源码核查**：[.github/workflows/build-site.yml:145-149](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/.github/workflows/build-site.yml#L145-L149)
+
+探测权限条件。
+
+```text
+          restore-keys: updates-v1-
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # The nightly run is the authoritative refresh: it re-checks every
+```
+
+**依据 5 · 源码核查**：[scripts/probe-capabilities.mjs:146-165](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L146-L165)
+
+扫描资源与临时空间。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+async function scanEntry(entry) {
+  const source = scanSourceFor(entry, npmMap, tarballs)
+  if (source === null) { skipped += 1; return }
+  if (!PROBE_ALL && !shouldRescan(stored[entry.url], source, now, RECHECK_DAYS)) { kept += 1; return }
+  const dir = fs.mkdtempSync(join(os.tmpdir(), 'dshm-cap-'))
+  try {
+    const file = join(dir, 'package.tgz')
+    await download(source.url, file)
+    const extracted = join(dir, 'x')
+    fs.mkdirSync(extracted)
+    await run('tar', ['xzf', file, '-C', extracted], { maxBuffer: 1024 * 1024 })
+    // Both npm tarballs and codeload archives wrap everything in one top-level
+    // directory; a subdirectory entry starts one level further in.
+    const top = fs.readdirSync(extracted).filter(name => !name.startsWith('.'))[0]
+    if (top === undefined) throw new Error('empty archive')
+    const sub = subdirOf(entry.url)
+    const packageDir = sub === null ? join(extracted, top) : join(extracted, top, sub)
+    if (!fs.existsSync(packageDir)) throw new Error(`no such subdirectory: ${sub}`)
+    const { stdout: raw } = await run(scannerCommand(), scannerArgs(packageDir, source.spec),
+      { encoding: 'utf8', timeout: SCAN_TIMEOUT_MS, maxBuffer: 8 * 1024 * 1024 })
+```
+
+</details>
+
+**依据 6 · 源码核查**：[scripts/probe-capabilities.mjs:196-202](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/probe-capabilities.mjs#L196-L202)
+
+失败和临时目录退出。
+
+```text
+  } catch (error) {
+    failed += 1
+    const message = error instanceof Error ? error.message.slice(0, 120) : String(error)
+    failures.set(message, (failures.get(message) ?? 0) + 1)
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true })
+  }
+```
+
+**依据 7 · 源码核查**：[scripts/build-site.mjs:1136-1165](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/build-site.mjs#L1136-L1165)
+
+版本/披露传播缺口与下一步增量。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+      url: e.url,
+      page: `${ORIGIN}/p/${e.slug}/`,
+      category: e.cat,
+      description: Object.fromEntries(LOCALES.map((l) => [l.code, e.descs[l.code]])),
+      npm: e.npm,
+      // The author-declared release asset, when there is one. `install` folds
+      // it into a display string, but a consumer that only reads `npm` sees
+      // null and falls back to `github:owner/repo` — a different artifact from
+      // the one the listing tells a human to install, and for a plugin that
+      // ships no built output, one that does not install at all. Recovering it
+      // by parsing the command string is not a contract worth offering, so the
+      // field is published directly. Omitted when absent, like `screenshots`.
+      tarball: e.tarball ?? undefined,
+      // Current npm `latest` when known. null = github-only (`npm` null) or
+      // probed with no latest tag. Not the same signal as `downloads`.
+      version: e.version,
+      stars: e.stars,
+      downloads: e.downloads,
+      downloadsStart: downloadsMap[e.url]?.start ?? null,
+      downloadsEnd: downloadsMap[e.url]?.end ?? null,
+      downloadsCheckedAt: downloadsMap[e.url]?.checkedAt ?? null,
+      // Capability disclosure (#401). Omitted entirely when the entry was not
+      // scanned, so a consumer cannot read "absent" as "empty" — the market
+      // renders a missing pair as 未检出 / not checked.
+      ...(capabilitiesMap[e.url] === undefined ? {} : {
+        capabilities: capabilitiesMap[e.url].capabilities,
+        capabilityRedLines: capabilitiesMap[e.url].redLines,
+        capabilityCheckedAt: capabilitiesMap[e.url].scannedAt,
+      }),
+      install: e.npm ? `dsh plugin --profile web add ${e.npm}` : (e.cmdTarball ?? e.cmdGit),
+```
+
+</details>
+
+**依据 8 · 源码核查**：[scripts/publish-catalog.mjs:164-169](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/cef4c68878a028cee20f00fd7ded35d3f520b3b0/scripts/publish-catalog.mjs#L164-L169)
+
+维护发布外部副作用。
+
+```text
+console.log(`publishing ${PKG}@${version} — ${entries} entries, sha ${hash.slice(0, 12)}`)
+// `DRY_RUN=1` runs everything up to and including npm's own packing checks
+// without publishing, so the whole path can be exercised by hand.
+const args = ['publish', '--access', 'public']
+if (process.env.DRY_RUN === '1') args.push('--dry-run')
+execFileSync('npm', args, { stdio: 'inherit', cwd: stage })
+```
+
+#### 缺口
+
+- 没有用户查找/正确安装/退出的对照，也未测新增证据维护成本和消费端误读频率。
+  **影响**：可推荐有限发现用途，不能推荐目录内任意插件或宣称安装证据产品已验证值钱。
+  **进一步探讨**：先两版本失败样本验证绑定，再做少量固定Host候选的具体最小任务/撤销，测正确率/残留/总工时，缺收益则停。
+
+[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

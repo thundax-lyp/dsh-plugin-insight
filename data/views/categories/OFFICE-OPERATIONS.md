@@ -39,7 +39,7 @@
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [NocoBase](#plugin-306829688-root) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | 有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。 |
-| [Reactive Resume](#plugin-249995750-root) | 开源简历与求职应用，组织编辑、导出、内容检查、AI建议及投递记录。 | 先以虚构/脱敏履历试用非AI编辑、导出和检查，验收权限与PDF再接模型；不用规则分替代事实或招聘效果判断。 |
+| [Nuphus MCP](#plugin-1319093879-root) | 将桌面原生语义操作、像素与本地 OCR、可选云视觉和 Chrome CDP 暴露为 MCP 工具，并分层返回派发与局部核验状态。 | 能隔离环境的开发者只在无敏感演示应用逐工具试，未知派发先观察对账，业务完成另核；确认/权限不清则停服务，见 [Q05](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q05) 与 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。 |
 | [Windows Computer Use](#plugin-1336280167-root) | 把 Windows UIA、截图/OCR、真实输入与后台浏览器通道接入 DSH/MCP，并提供接管提示和停止控制。 | Windows隔离桌面上只试记事本/本地网页无提交动作，逐步核后条件与取消；重要业务先用稳定API或人工，见 [Q04](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q04)。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
@@ -475,21 +475,21 @@
 
 [查看完整分析](../../plugins/nocobase--nocobase/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-249995750-root"></a>
+<a id="plugin-1319093879-root"></a>
 
-## [Reactive Resume](../../plugins/reactive-resume--reactive-resume/INSIGHT.md)
+## [Nuphus MCP](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md)
 
-[![GitHub ★ 44,843](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44%2C843&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume)
+[![GitHub ★ 330](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=330&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mrpulor-gh/nuphus-mcp)
 
-> **用途**：面向反复按岗位调整履历、求职信及跟踪投递版本的用户；独立应用，MCP可供Agent连接。[Q01](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q01)
+> **用途**：能隔离测试桌面/浏览器的自动化开发者，为外部Agent提供观察/动作接口；不是DSH插件或完整自主任务循环，见 [Q01](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q01)。
 
-> **亮点**：相对Word加独立岗位表，将结构化履历、设计/检查和投递文档组织在同流程，并以Schema/JSON Patch暴露Agent接口；不证明招聘结果改善。[Q01](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q01)
+> **亮点**：统一标准工具、候选/目标绑定、派发前消费观察和未知结果不直接重放，以及连接层区分读恢复与写不确定；这些优势有明确覆盖范围，见 [Q02](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q02) 与 [Q03](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q03)。
 
-> **思考**：规则分数/关键词匹配不等跨ATS兼容或录用概率，AI分隔符封装不保证事实与指令安全，保存接口存在也不等离线恢复已验收。[Q02](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q02) [Q03](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q03)
+> **思考**：语义局部核验明确非业务完成；原始CDP/像素不共用全部策略，内部stale仍可分类重试；confirm是caller bool且默认off，截图可外发，见 [Q03](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q03) 与 [Q04](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q04)。
 
-> **建议**：未验证假设是用导出PDF文本顺序和履历事实差异作AI修改放行门，降低最终文档错误；同履历/岗位对照错误与修正时间，无改善则否定。[Q04](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q04)
+> **建议**：跨工具族绑定人类批准、具体目标与派发不确定性，再为少数业务动作核独立记录真值，未知只读对账不重放，见 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。
 
-[查看完整分析](../../plugins/reactive-resume--reactive-resume/INSIGHT.md) · [返回表格](#category-index)
+[查看完整分析](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336280167-root"></a>
 

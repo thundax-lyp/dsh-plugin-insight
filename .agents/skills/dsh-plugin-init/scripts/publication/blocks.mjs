@@ -23,6 +23,31 @@ const categoryNames = {
     other: '其他'
 };
 const categoryOrder = new Map(Object.keys(categoryNames).map((key, index) => [key, index]));
+const categoryColors = Object.freeze({
+    'personal-productivity': '2563eb',
+    'office-operations': '0f766e',
+    'research-knowledge': '7c3aed',
+    'software-delivery': '334155',
+    'content-creation': 'be185d',
+    'customer-service': 'b45309',
+    infrastructure: '4338ca',
+    other: '6b7280'
+});
+function renderCategoryBadge(entry, directory) {
+    const key = Object.hasOwn(categoryNames, entry.plugin.business_category) ? entry.plugin.business_category : 'other';
+    return template('BADGE', {
+        alt: `分类：${categoryNames[key]}`,
+        image:
+            'https://img.shields.io/static/v1?' +
+            new URLSearchParams({
+                ...BADGE_STYLE,
+                label: '',
+                message: categoryNames[key],
+                color: categoryColors[key]
+            }).toString(),
+        url: `${directory}/${key.toUpperCase()}.md`
+    });
+}
 const categoryScopes = {
     'personal-productivity': '输入、会话、快捷操作与个人工作体验',
     'office-operations': '工作记录、日程、团队用量与日常运营',
@@ -241,7 +266,7 @@ function selectRecommended(recommendations, byId, limit = 5) {
         .slice(0, limit);
     return selected;
 }
-export function renderRecommended(recommendations, byId, limit = 5) {
+export function renderRecommended(recommendations, byId, limit = 3) {
     const selected = selectRecommended(recommendations, byId, limit);
     return template('RECOMMENDED', {
         items:
@@ -294,7 +319,7 @@ export function renderColumn(key, items, date, recommendations) {
             : key === 'HOT'
               ? selectHot(items, Infinity)
               : key === 'RECOMMENDED'
-                ? selectRecommended(recommendations, byId, 50).map((recommendation) => ({
+                ? selectRecommended(recommendations, byId, 100).map((recommendation) => ({
                       ...byId.get(recommendation.plugin_id),
                       recommendation
                   }))
@@ -309,6 +334,7 @@ export function renderColumn(key, items, date, recommendations) {
             if (key === 'RECOMMENDED')
                 return template('COLUMN-RECOMMENDED-ROW', {
                     ...common,
+                    category: renderCategoryBadge(entry, '../categories'),
                     value: tableCell(
                         indexSentence(
                             readerText(entry.recommendation.summary, entry.href).replaceAll('条件试用', '试用')
@@ -372,6 +398,7 @@ export function renderColumn(key, items, date, recommendations) {
             return template('COLUMN-DETAIL', {
                 anchor: entry.anchor,
                 plugin: nameLink(entry),
+                category: key === 'RECOMMENDED' ? `${renderCategoryBadge(entry, '../categories')}\n\n` : '',
                 meta: entry.meta,
                 purpose: clean(entry.summary),
                 reason,

@@ -1,1 +1,1 @@
-| {{plugin}} | {{purpose}} | {{value}} |
+| {{plugin}}<br>{{category}} | {{purpose}} | {{value}} |

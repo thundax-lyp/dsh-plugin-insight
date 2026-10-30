@@ -21,7 +21,10 @@
 | [Awesome AI Pedia](#plugin-1321280738-root) | 中文 AI 工具指南、实践笔记与规则的 VitePress 知识库 | [Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。 |
 | [Awesome DeepSeek Harness](#plugin-1330942675-root) | 按场景分类整理 DSH 插件、工具和基础设施，并提供生成的仓库目录。 | 建议作为发现资源试用：按场景挑少量候选后固定目标版本核查；不可访问或过时条目退回原仓库及公开搜索，不批量安装。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
+| [Awesome DeepSeek Harness Plugins（imsai-sh）](#plugin-1333844474-root) | 维护社区插件目录与提交 Skill，通过可信静态审查、按目录 PR 版本合并、远端同步和双语 README 生成组织收录。 | 先在干净目录准备单项，授权外部PR前看自动合并条件；只把目录当候选，不把静态PASS或ack当功能验收，见 [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04)。 |
+| [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
 | [Awesome DeepSeek Harness（资源目录）](#plugin-1333173677-root) | 按用途汇集DSH扩展候选的双语目录，附近期、星标、精选链接和独立示例。 | 有限采用作候选发现资源，无需安装根或执行脚本，目标另行验收。 |
+| [Awesome DSH Plugin](#plugin-1333175049-root) | 把社区插件条目生成多语言目录、网页和官方格式市场索引，并公开工件能力披露数据，供用户查找候选后自行复核。 | 作为查候选的有限入口，先核版本与工件，不把披露当安全背书；安装不合任务或版本不明即退原仓独立核，见 [Q04](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q04)。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
@@ -75,6 +78,7 @@
 | [last30days-cn](#plugin-1196982492-root) | 检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。 | [Q04](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q04) 适合可接受非完整样本的线索研究，先核查每源状态与抽样链接；不适合未经补证的总体舆论比例或事实定论。 |
 | [Learn Harness Engineering](#plugin-1195243030-root) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | 适合已经遇到跨会话丢状态或提前报完成的开发者，先选一个真实失败，在项目副本上加入最少文件，并用相同任务比较前后。 |
 | [Market Research Cockpit](#plugin-1303848201-root) | 聚合股票、商品、资金流和新闻的市场看板，并通过 MCP 向 DSH 提供行情查询工具。 | 先观察，不把资金流工具的正常协议响应直接当合格数据。 |
+| [MCP-for-Stata](#plugin-956330003-root) | 让宿主Agent调用本地Stata与数据/日志工具，保存来源快照和执行审计；默认保护、真实安装确认与研究结果验收须分别核查。 | 已有合法Stata与方法能力，匿名本地副本、不用unsafe安装；确认guard、目录、资源/timeout实际配置，按已知答案核结果再扩大，见[Q04](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q04)、[Q05](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q05)。 |
 | [Memmy Agent](#plugin-1302496224-root) | 提供本地优先的跨 Agent 记忆服务、桌面与 CLI 入口，并通过适配接力项目上下文。 | 先观察并画清具体配置的数据流/退出方案，非敏感小样本核来源与纠错后再决定接入。 |
 | [MemOS](#plugin-1014729376-root) | 面向 LLM 与 Agent 的记忆管理平台，提供云、自托管及本地插件，支持长期记忆存取与管理。 | 有重复跨会话记忆需求且能审核内容的开发者，可先在独立profile、非敏感数据和固定模型路由上试用。 |
 | [MemOS Local Memory](#plugin-1014729376-apps-memos-local-plugin) | 为DSH、OpenClaw和Hermes提供本地记忆、后台采集、分层检索及可选经验演化。 | [Q08](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q08)建议已有稳定DSH和可备份本地状态的开发者先试轻量跨轮召回。 |
@@ -86,8 +90,10 @@
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 限定CLI副本库试用，不以本仓库提交当完整DSH兼容证明；错误关联或裁剪损失便回笔记。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 和其他编码 Agent 提供多引擎网页搜索、X 搜索和页面读取。 | [Q04](../../plugins/liustack--modsearch/INSIGHT.md#research-q04) 用公开小查询比较已有provider，逐条检查来源和uncertainty，不发送内部URL及秘密查询。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具 | 已有服务的用户可在非敏感单项目试用，先核对打包文件和身份，再对照手工笔记验证错误纠正、短暂断网和停用。 |
+| [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
 | [ReMe](#plugin-849121458-root) | 以可编辑Markdown保存Agent长期记忆，提供自动提炼、混合检索和多种运行时接入。 | 可供愿意维护本地知识目录和模型服务的开发者在独立workspace试用文件记忆。 |
 | [ReMe DSH集成](#plugin-849121458-integrations-dsh) | 为DSH提供长期记忆检索、会话自动归档、每日整理与状态页面。 | 适合愿意维护本地ReMe服务的人在虚构或非敏感项目上试用跨会话检索，先检查来源、队列和单调度者。 |
+| [sivtr](#plugin-1215961903-root) | 独立Rust记忆工具将终端与Agent日志统一归档并以MCP检索；已核Dsh链与完整WorkSet保存，但本地裸whole-ref的MCP默认全文缺补载。 | 先修MCP裸whole-ref全文，谨慎核已有@last/CLI路径；不强制开embedding/share/hooks，避免把未知平台/需求当已验证安装推荐，见[Q04](../../plugins/ariestar--sivtr/INSIGHT.md#research-q04)/[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。 |
 | [SkillCorpus](#plugin-1330431542-root) | 汇集、筛选和检索 Agent 技能，并提供多宿主接入与语料评估工具。 | [Q04](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q04) 建议源码构建团队先限制本地白名单和任务集，比较合格率、纠错和全部 token；不改善结果便恢复目录。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档阅读与综合问答工具 | 先禁用 ask，以受限库比较网页与插件的相同问题；要求能回到原文并识别裁剪。 |
@@ -237,6 +243,38 @@
 
 [查看完整分析](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333844474-root"></a>
+
+## [Awesome DeepSeek Harness Plugins（imsai-sh）](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md)
+
+[![GitHub ★ 332](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=332&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/awesome-deepseek-harness-plugins)
+
+> **用途**：插件作者准备结构收录，维护者发布目录，用户找候选；网站/CLI实现属姊妹仓，见 [Q01](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q01)。
+
+> **亮点**：结构化提交、可信代码与不可信数据分开、目录head守卫、同步与分页一致投影组合，见 [Q02](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q02) 至 [Q03](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03)。
+
+> **思考**：静态通过/目录PR head/HTTP ack/快照一致分别只覆盖一层；外部插件版本、npm可用、未知POST和跨仓DB恢复仍需核，见 [Q03](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03)。
+
+> **建议**：在现有目录SHA/快照校验之上绑定被审插件tree、实际npm工件与最小任务/退出证据，比较误采/重做和总工时，见 [Q05](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333167552-root"></a>
+
+## [Awesome DeepSeek Harness（libukai）](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 335](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=335&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/libukai/awesome-deepseek-harness)
+
+> **用途**：初学者/选型者建立生态地图，按对象类别找官方入口与原仓，见 [Q01](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q01)。
+
+> **亮点**：官方与社区分层、客户端/发行版/插件区别和若干采用条件说明；这是资料贡献而非可执行技术机制，见 [Q01](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q01)。
+
+> **思考**：外部CI/版本/权限陈述未独立核，代码块未钉文中基线，读者执行将产生本项目不控制的副作用，见 [Q02](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q02) 与 [Q03](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q03)。
+
+> **建议**：在现有分类/提醒之上，把目标环境/任务与固定候选原始行为/退出证据绑定的只读采用任务卡，比较误荐与总工时，可被否定，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333173677-root"></a>
 
 ## [Awesome DeepSeek Harness（资源目录）](../../plugins/dominic789654--awesome-deepseek-harness/INSIGHT.md)
@@ -252,6 +290,22 @@
 > **建议**：分层身份/版本/验证状态的选择收据，能否降低误选和总回源成本待对照。见[Q05](../../plugins/dominic789654--awesome-deepseek-harness/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/dominic789654--awesome-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333175049-root"></a>
+
+## [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 21,335](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=21%2C335&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) [![npm 30d 1,288](https://img.shields.io/static/v1?label=npm+30d&message=1%2C288&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin) [![最新发布 2026-08-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin)
+
+> **用途**：DSH用户查候选与来源，维护者从统一条目生成可读/机器目录；它是资源入口，见 [Q01](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q01)。
+
+> **亮点**：统一多语言条目/官方format与npm目录分发，已有静态能力披露及失败保旧机制；不按收录数计质量，见 [Q01](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q01) 至 [Q03](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q03)。
+
+> **思考**：--check仅验证已有索引格式；能力探测失败可保旧，但公开版本/能力字段无扫描版本绑定，且均非安装/安全通过，见 [Q03](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q03)。
+
+> **建议**：传播扫描版本与失败状态，再用少量固定候选/Host最小任务和撤销残留证据补采用门槛，测误采/工时并可否定，见 [Q04](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1154333841-root"></a>
 
@@ -1101,6 +1155,22 @@
 
 [查看完整分析](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-956330003-root"></a>
+
+## [MCP-for-Stata](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md)
+
+[![GitHub ★ 271](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=271&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SepineTam/mcp-for-stata)
+
+> **用途**：已有合法本地Stata和定量能力者，在匿名副本中让宿主Agent运行/核查do任务；需求频率/收益待独立对照，见[Q01](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q01)。
+
+> **亮点**：标准接口、路径/命令检查、真执行快照与审计链接便于结果追查；独立操作见主能力表，现有审计不等研究正确，见[Q02](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q02)。
+
+> **思考**：MCP安装ctx审批停用/API自动confirm与Skill逐次询问不一致；数据边界/URLguard及RAM监视并非默认全开，进程成功/日志/全hash不等研究成立，见[Q02](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q02)至[Q04](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q04)。
+
+> **建议**：超出现有do快照/审计，检验单次实证任务的数据/环境/规格和预设结果断言绑定；基线/指标/停止条件见[Q05](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1302496224-root"></a>
 
 ## [Memmy Agent](../../plugins/memtensor--memmy-agent/INSIGHT.md)
@@ -1277,6 +1347,22 @@
 
 [查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1309135706-root"></a>
+
+## [Polaris](../../plugins/zju-real--polaris/INSIGHT.md)
+
+[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZJU-REAL/Polaris)
+
+> **用途**：有模型和受控实验资源、能核方法的研究者管理长期实验；六阶段全链是作者说明，本轮不全验论文/评审，见[Q01](../../plugins/zju-real--polaris/INSIGHT.md#research-q01)。
+
+> **亮点**：将真实计划/代码执行/指标反思组织成持久步骤、尝试/恢复与条件人介入；主能力按独立操作展开，已有终检/来源机制边界见[Q02](../../plugins/zju-real--polaris/INSIGHT.md#research-q02)、[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。
+
+> **思考**：confirm_budget默认false且当前创建Modal不传，0小时不限时；生成脚本指标入DB不等独立测量，自检/规则/模型判定不等研究结果正确，eval_model可真实下发Key到远端，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)、[Q04](../../plugins/zju-real--polaris/INSIGHT.md#research-q04)。
+
+> **建议**：超出现有重挂/指标终检与文献manifest，验证Python-ML候选代码和固定独立评测器/数据划分的结果来源边界；反例/成本/停止条件见[Q05](../../plugins/zju-real--polaris/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/zju-real--polaris/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-849121458-root"></a>
 
 ## [ReMe](../../plugins/agentscope-ai--reme/INSIGHT.md)
@@ -1308,6 +1394,22 @@
 > **建议**：未验证假设是给每条自动记忆保留来源轮次与“未完成回答”标记，并让检索返回时突出冲突，可以减少截断回答污染长期知识。固定含纠正、截断和重复请求的会话集，对比默认归档和带标记归档的错误召回率、用户修正时间及费用；若标记不能阻止后续模型采信错误，不扩大自动写入。 依据[Q08](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1215961903-root"></a>
+
+## [sivtr](../../plugins/ariestar--sivtr/INSIGHT.md)
+
+[![GitHub ★ 253](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=253&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ariestar/sivtr)
+
+> **用途**：为需要找回既往失败输出/会话的开发者提供本地统一查找，场景明确而频率/净收益未验证，见[Q01](../../plugins/ariestar--sivtr/INSIGHT.md#research-q01)。
+
+> **亮点**：跨来源记录/派生归档、标准MCP查询和已物化WorkSet形成可复用材料组织；已核检索链不等自主工作闭环，也不等不可变裸ref或已验正确答案，见[Q01](../../plugins/ariestar--sivtr/INSIGHT.md#research-q01)/[Q02](../../plugins/ariestar--sivtr/INSIGHT.md#research-q02)。
+
+> **思考**：MCP本地裸whole-ref以Light加载后默认full直接读空parts，条件性报No content found；@last/命名完整变量、part与CLI路径需分开。可选embedding发送内容，分享脱敏/价目不等安全与账单真值，见[Q02](../../plugins/ariestar--sivtr/INSIGHT.md#research-q02)/[Q03](../../plugins/ariestar--sivtr/INSIGHT.md#research-q03)。
+
+> **建议**：先修现有全文入口；再检验历史证据与当前任务适用性的可核交接，区别于已有快照/hash/口头核文件要求。三组对照若无误引/投入改善即否定，见[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/ariestar--sivtr/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1330431542-root"></a>
 

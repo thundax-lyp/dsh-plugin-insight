@@ -1,0 +1,27 @@
+{
+    "repository": "sopaco/terrain",
+    "repository_id": 1269057665,
+    "captured_at": "2026-10-29T05:28:58.410Z",
+    "window_start": "2026-09-29T05:28:58.410Z",
+    "stars": 274,
+    "pushed_at": "2026-10-25T14:20:35Z",
+    "issues": {
+        "open": 0,
+        "closed": 9,
+        "created_30d": 0,
+        "closed_30d": 1,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    }
+}
