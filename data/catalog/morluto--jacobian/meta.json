@@ -1,0 +1,27 @@
+{
+    "repository": "morluto/jacobian",
+    "repository_id": 1309745037,
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 336,
+    "pushed_at": "2026-10-26T09:24:04Z",
+    "issues": {
+        "open": 97,
+        "closed": 1977,
+        "created_30d": 64,
+        "closed_30d": 73,
+        "updated_30d": 119
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    }
+}

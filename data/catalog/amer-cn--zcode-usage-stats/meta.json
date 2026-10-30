@@ -1,42 +1,40 @@
 {
     "repository": "Amer-CN/zcode-usage-stats",
     "repository_id": 1368192539,
-    "captured_at": "2026-10-21T08:01:43.721Z",
-    "window_start": "2026-09-21T08:01:43.721Z",
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
     "stars": 1,
-    "pushed_at": "2026-09-13T14:59:19Z",
+    "pushed_at": "2026-10-29T01:31:06Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
         "closed_30d": 0,
         "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAmer-CN%2Fzcode-usage-stats%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 96A8:27305C:6B3498:73260A:6AD8716D and timestamp 2026-10-21 08:01:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAmer-CN%2Fzcode-usage-stats%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9A98:4AA35:6EF861:76E9D6:6AD87170 and timestamp 2026-10-21 08:01:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAmer-CN%2Fzcode-usage-stats%20is%3Aissue%20created%3A2026-09-21T08%3A01%3A43.721Z..2026-10-21T08%3A01%3A43.721Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C6A:205F4D:6DAB71:75A1A1:6AD87171 and timestamp 2026-10-21 08:01:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-28T06:21:21.324Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "zcode-usage-stats",
-        "captured_at": "2026-10-21T08:01:59.088Z",
-        "window_start": "2026-09-21",
-        "window_end": "2026-10-20",
-        "downloads_30d": 157,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/zcode-usage-stats",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 137,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/zcode-usage-stats",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-13T14:58:11.403Z",
-            "captured_at": "2026-10-21T08:01:59.088Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
             "source_url": "https://registry.npmjs.org/zcode-usage-stats",
             "error": null,
             "latest_version": "0.1.0",

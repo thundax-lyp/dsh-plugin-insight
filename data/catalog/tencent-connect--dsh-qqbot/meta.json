@@ -1,0 +1,54 @@
+{
+    "repository": "tencent-connect/dsh-qqbot",
+    "repository_id": 1334237364,
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
+    "stars": 414,
+    "pushed_at": "2026-10-29T02:53:10Z",
+    "issues": {
+        "open": 19,
+        "closed": 24,
+        "created_30d": 25,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Atencent-connect%2Fdsh-qqbot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5DA:34C98E:181C9F8:19E5CB8:6AE2B7DC and timestamp 2026-10-29 03:05:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Atencent-connect%2Fdsh-qqbot%20is%3Aissue%20updated%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5E2:352105:16ECB4B:18B6182:6AE2B7DF and timestamp 2026-10-29 03:05:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-29T01:29:30.018Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
+        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
+        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@tencent-connect/dsh-qqbot",
+        "captured_at": "2026-10-29T03:03:10.741Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 30185,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/%40tencent-connect%2Fdsh-qqbot",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T13:44:51.665Z",
+            "captured_at": "2026-10-29T03:03:10.741Z",
+            "source_url": "https://registry.npmjs.org/%40tencent-connect%2Fdsh-qqbot",
+            "error": null,
+            "latest_version": "0.5.3",
+            "latest_published_at": "2026-10-27T06:53:29.646Z",
+            "latest_error": null
+        }
+    }
+}

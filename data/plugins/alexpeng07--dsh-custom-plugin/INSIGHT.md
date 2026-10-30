@@ -1,18 +1,18 @@
-# dsh-custom-plugin
+# Custom Plugin
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[8016757](https://github.com/AlexPeng07/dsh-custom-plugin/tree/8016757784f5b94d3dfc55dcba02ef7ae239c4c5)
+源码版本：[9fc50a5](https://github.com/AlexPeng07/dsh-custom-plugin/tree/9fc50a5de87da550acb70d6957bebec2ff75e1d6)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 2,235](https://img.shields.io/static/v1?label=npm+30d&message=2%2C235&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AlexPeng07/dsh-custom-plugin) [![npm 30d 3,280](https://img.shields.io/static/v1?label=npm+30d&message=3%2C280&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@alexpeng/dsh-custom-plugin)
 <!-- END META -->
 
-> **功能**：DSH Web 多功能便利套件，集外观、会话/提示词、用量预算、Mermaid 和备份于一体。
+> **功能**：在 DSH Web 集中提供外观、会话管理、提示词、Mermaid、本地用量预算及不含 API Key 字段的备份。
 
-> **亮点**：多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。
+> **亮点**：多项便利共用Host/Client与便携投影，并对初始坏状态不可保护时只读，减少接线分散，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
 
-> **主要限制**：Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。
+> **主要限制**：进程内原子保存不是跨Host事务，系统凭据失败可回JSON；本地估价含未知模型回退、非账单真值，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 套件的组合价值和宿主形态是什么？](#detail-section-11)
-  - [Q02 · 共享状态在 Web 与 Desktop 同时写入时怎样处理？](#detail-section-12)
-  - [Q03 · 敏感访问、备份和外部依赖如何限制？](#detail-section-13)
-  - [Q04 · 应怎样选择和验证此套件？](#detail-section-14)
+  - [Q01 · 便利套件为谁集中什么，真实能力在哪里？](#detail-section-11)
+  - [Q02 · 共享JSON保存和备份是否防止跨进程丢更新？](#detail-section-12)
+  - [Q03 · 来源围栏、凭据及预算的准确边界是什么？](#detail-section-13)
+  - [Q04 · 如何试用，跨Host状态及费用提示值得改进什么？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：希望在一个插件中集中管理 Web 外观、会话操作和本地用量的用户。
+> **用途**：同时需要外观、会话检索导出和本地用量视图的用户可集中操作，见 [Q01](#research-q01)。
 
-单一外观插件、手工导出/搜索和人工用量表是较窄替代；只有同时需要多个能力的用户才可能抵消广权限、共享状态和版本适配负担。
+原生操作或多个专用插件；增量是统一状态、设置、备份和查询入口，Client注册仍受真实slot/remote可得性限制，底层会话/模型能力继承宿主。
 
 <a id="detail-section-3"></a>
 
@@ -51,69 +51,68 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 外观/快捷面板 | 集中个人操作 | 需匹配slots，视觉未独立验 |
-| 搜索与导出 | 查阅会话 | 具有会话读取能力，权限需核 |
-| 备份与共享状态 | 迁移偏好与管理数据 | Key排除，跨进程仍有竞争窗口 |
-| 用量与余额 | 查看估算与门户数据 | 非正式账单，余额需有效Key |
+| 便利面板 | 设置/侧栏/会话slots接线 | 注册请求非实际视觉验收 |
+| 检索/导出 | remote.search结果与同源导出下载 | 缺服务不可用，实际文件和片段需人工核 |
+| 共享状态/备份 | 便携投影与恢复 | 无跨进程CAS；不扫prompt秘密 |
+| 凭据/余额 | Key可选查询 | OS失败可回JSON |
+| 用量预算 | 本地趋势估算 | 非真实账单，未知模型回退 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node22+与匹配DSH | 必需 | 双半区插件与路由 | 开放范围只放行，不保证所有版本接口 |
-| webServer/tools/sessionQuery | Host必需 | 状态、搜索和会话读取 | 缺少则相关功能不可用 |
-| Web slots与客户端 | GUI必需 | 面板与渲染 | 需要实际浏览器验收 |
-| API Key | 余额查询可选 | 外部服务请求 | 不配置则不用该能力 |
-| 本地Mermaid依赖 | 离线渲染必需 | 本地脚本 | 缺失可能转CDN |
-| 可写DSH_HOME | 状态必需 | 共享JSON与备份 | 多进程冲突须额外核对 |
+| 匹配DSH Host/Client与Node | 必需 | 路由/slots/session | 开放范围非未来兼容保证 |
+| 可写DSH_HOME共享状态 | 保存必需 | 外观/管理/usage | 初始不可保护可只读；并发另核 |
+| OS凭据/Key | 余额可选 | Key存储/查询 | set失败可回JSON，不是无Key落盘 |
+| Mermaid本地包/网络 | 图表必需/回退 | 渲染引擎 | 缺本地可走CDN，不保证离线 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 建立隔离profile | 用户固定宿主和本包版本 | 保留状态备份 |
-| 选择功能 | 用户只开需要的2–3项 | 核各自slots与路由 |
-| 读写核对 | 用户核搜索、导出和来源围栏 | 异源请求应拒绝，不用真实密钥试错 |
-| 备份恢复 | 用户先预览再导入 | 核Key被排除且恢复副本存在 |
-| 双宿主试用 | 用户以合成状态并发写 | 检丢更新，异常先停并保留文件 |
+| 准备 | 备份、选少数功能、合成Key | 核profile与存储状态 |
+| 加载 | 读状态、迁移、路由/Client | 读失败保护和诊断明确 |
+| 操作 | 用户查会话/改设置 | 比对实际结果及JSON |
+| 恢复 | 查副本与并发差异 | 不盲覆盖，分核凭据残留 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | Node/DSH、客户端资源和本地状态；金额未知 | 固定版本、备份和功能选择；工时未知 | 不自带业务模型或账户 |
-| 持续使用 | 会话查询、状态I/O、可选外部余额/CDN | 核估价与多功能设置 | 无同任务节时或资源测量 |
-| 失败恢复 | 恢复副本、重查/重建和可能重试资源 | 对照共享文件、找冲突和丢更新 | 原子rename不等跨进程事务 |
+| 首次使用 | 运行时/状态金额未知 | 版本、备份、权限和功能选择 | 兼容/OS凭据需核 |
+| 持续使用 | 查询I/O、可选余额/CDN未知 | 对账、设置和多Host复核 | 净节时未知 |
+| 失败恢复 | 恢复/重查资源未知 | 对照JSON、副本、Key fallback | rename非跨进程事务 |
+| 退出 | 数据/凭据保留未知 | 导出必要状态并分核残留 | 禁用不撤外部导出 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 多入口集中 | Host路由与client slots | 实际效率和浏览器视觉 |
-| 状态恢复 | 投影、预览和副本流程 | 并发压力下是否无丢失 |
-| 用量/预算 | 本地事件折叠估算 | 与真实账单及合同差异 |
+| 多入口集中 | Host与Client接线 | 实际任务/视觉效率 |
+| 状态保护 | 队列/merge/初始只读 | 跨Host无丢更新 |
+| 预算 | 本地usage与内置估算 | 真账单/当前价差 |
 
-> **思考**：Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。
+> **思考**：进程内原子保存不是跨Host事务，系统凭据失败可回JSON；本地估价含未知模型回退、非账单真值，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：多项 Web 效率功能共用一套设置、状态、备份与宿主路由。详见[Q01](#research-q01)。
+> **亮点**：多项便利共用Host/Client与便携投影，并对初始坏状态不可保护时只读，减少接线分散，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
 
-Web/Host 双半区通过同源路由联动；共享状态文件采用队列、PID 临时文件、三方合并。
+[Q02](#research-q02) 初始坏状态只读和备份投影有价值；[Q03](#research-q03) 系统凭据fallback必须让用户知道，回环围栏不能充任通用远端身份层。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同锁，极端交错仍可能覆盖；需故障注入。详见[Q02](#research-q02)。
+进程内原子保存不是跨Host事务，系统凭据失败可回JSON；本地估价含未知模型回退、非账单真值，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-隔离 profile、备份状态，先测最需要的 2-3 项，再验来源围栏、并发保存与账单对照。详见[Q04](#research-q04)。
+隔离profile备份后先测所需两三项，合成Key查存储fallback，单功能可回原生/专用插件，见 [Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +120,18 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 **核查状态**：已检查源码。
 
-组合与状态机制由源码支持，跨进程覆盖属于待复现竞争风险；作者兼容结果不作为本轮独立验收，CAS设计假设未验证。
+代表Host/状态/围栏/备份/凭据链已核，试用少数功能；未运行目标或查现行外部价。
 
-- 已检查：作者 README、包清单、源码路径 README.zh.md、package.json、src/index.ts、src/routes.ts、src/loopback.ts、src/state.ts、src/backup.ts、src/host-service.ts、src/credentials.ts、scripts/compat-canary.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、src/backup.ts、src/client/api.ts、src/client/custom.tsx、src/client/index.ts、src/host-service.ts、src/index.ts、src/loopback.ts、src/pricing.ts、src/state.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定 Host入口、路由围栏、共享状态、备份与凭据/Mermaid调用，以及兼容canary脚本；非全套UI审计，未执行插件或作者探针。
-- 下一步：按 [Q04](#research-q04) 用合成状态同时启动两个宿主，比较直接覆盖、本版三方合并与CAS原型的丢更新和恢复工时；套件净收益需同时记录单功能替代成本。
+- 边界：旧四题/11 findings/自code依赖复核；完整inventory，读Host入口、状态/合并、backup、loopback、凭据和Mermaid/价目代表链；补核Client入口、slot注册、跨会话search与当前导出到下载；未全审UI/所有操作，未跑canary。
+- 下一步：隔离双Host并发与坏读测试，合成Key审状态/备份与围栏，匿名usage核价；用真实检索/导出任务比较替代。本轮无目标运行。
 
 **分析版本**
 
 - **仓库**：[AlexPeng07/dsh-custom-plugin](https://github.com/AlexPeng07/dsh-custom-plugin)
-- **版本号**：0.9.1（[固定提交 8016757](https://github.com/AlexPeng07/dsh-custom-plugin/tree/8016757784f5b94d3dfc55dcba02ef7ae239c4c5)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.3（[固定提交 9fc50a5](https://github.com/AlexPeng07/dsh-custom-plugin/tree/9fc50a5de87da550acb70d6957bebec2ff75e1d6)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +139,9 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 <a id="innovation"></a>
 
-加入跨进程版本/CAS 协议并持续核价，可降低同步与费用误导；现版未验证。详见[Q04](#research-q04)。
+加入CAS/冲突拒绝与价格日期/回退对账标记，验证能否减少丢更新和费用误判，未实现，见 [Q04](#research-q04)。
 
-按 [Q04](#research-q04) 用合成状态同时启动两个宿主，比较直接覆盖、本版三方合并与CAS原型的丢更新和恢复工时；套件净收益需同时记录单功能替代成本。
+隔离双Host并发与坏读测试，合成Key审状态/备份与围栏，匿名usage核价；用真实检索/导出任务比较替代。本轮无目标运行。
 
 <a id="detail-section-9"></a>
 
@@ -153,248 +152,327 @@ Web/Desktop 共享状态虽有三方合并，但跨进程读合并写无共同�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 1695 | — | — | 26213 |
-| .mjs | source | 6 | 1016 | 744 | 196 | — |
-| .ts | source | 24 | 4714 | 3652 | 785 | — |
-| .tsx | source | 1 | 3051 | 2695 | 305 | — |
-| .ts | test | 26 | 3399 | 2808 | 314 | — |
+| .md | source | 5 | 1775 | — | — | 27158 |
+| .mjs | source | 7 | 1410 | 1092 | 227 | — |
+| .ts | source | 26 | 4962 | 3830 | 839 | — |
+| .tsx | source | 1 | 3068 | 2740 | 283 | — |
+| .ts | test | 27 | 3518 | 2907 | 321 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/AlexPeng07/dsh-custom-plugin/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-10-29），可前往 [GitHub Issues](https://github.com/AlexPeng07/dsh-custom-plugin/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核实多功能套件的真实模块、持久状态并发边界、敏感路由与采用成本。
+**插件研究总目标**：统一便利套件的状态/权限/凭据与预算边界能否支撑可控试用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 套件的组合价值和宿主形态是什么？
+### Q01 · 便利套件为谁集中什么，真实能力在哪里？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-作者把外观、文件夹、提示词库、会话搜索/导出、Mermaid、批量归档、用量/预算及快捷面板集中到 DSH Web。Host 注册状态、时间线、搜索、备份、余额、Mermaid 等路由和 custom_plugin_status 工具；客户端通过 slots 挂载。这降低多插件拼装成本，但也让一个包同时拥有会话读取、本地状态、凭据和外部余额查询能力。README 所列宿主活体验证为作者报告，本轮仅静态检查源码，不视为独立复现。
+@alexpeng/dsh-custom-plugin 0.9.3是Host/Client双半区原生插件，集中外观、文件夹、提示词、会话检索/导出、Mermaid和本地用量预算。适合同时需要多项界面和会话操作的DSH用户；相较多个单功能插件，统一状态、备份和面板是接入便利，不是新增模型能力或证明更高工作效率。只需一个功能时，广权限及状态迁移成本可能超过便利。
 
-当前包0.9.1，engines.dsh与tools peer采用 >=0.1.7-rc.2 的开放下限。它允许更新宿主，并不证明所有未来版本已验证。README 所列0.2.1-rc.3启动结果和canary是作者报告；scripts/compat-canary.mjs实际会固定临时DSH_HOME、选择latest/next较新版本并跑探针，但本轮没有执行或检查远端运行结果。
+Host启动读共享状态、迁移旧Key并尝试保存，监听session/event折叠用量，注册路由及custom_plugin_status，客户端入口迟后注入slots后调用installCustomPlugin，注册设置/侧栏/叠层/会话操作等组件；这些只是注册接线，不等视觉已验收。快捷面板的跨会话检索走session remote.search，服务缺失明确不可用，成功项进入remote状态；当前会话导出调同源/export，ok后downloadText并提示文件名。注册诊断自身也明确injection requests不代表宿主已经materialize全部surface；会话读取、状态写入、凭据与外部网络因此集中在同一包。兼容范围/作者canary只表示声明与脚本，不把探针存在或旧报告转为当前真实宿主通过。实际检索、视觉、模型回复和用户任务均需分别验收。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:15-35](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L15-L35)
+**依据 1 · 源码核查**：[package.json:2-17](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/package.json#L2-L17)
 
-作者描述多功能和双半区架构。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-
-DeepSeek Harness（DSH）Web GUI 的 Custom 便利套件：个性化外观、天气特效、玻璃效果、项目文件夹、增强提示词库、会话导出与会话搜索、Mermaid 渲染、引用回复、7/30/90 天用量分析、预算与无密钥本地备份，以及 Ctrl/Cmd+K 快捷面板。
-
-插件为双半区架构：宿主半区（`src/`）持有状态文档、注册 `/api/custom-plugin` 路由与 `custom_plugin_status` 智能体工具；浏览器半区（`src/client/`）通过 7 个官方 slot 的 8 处注入挂载 UI，以同源 fetch 与宿主通信。经官方 profile 机制挂载，不改 DSH 源码。
-
-<p align="center">
-  <img src="https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/overview.png" alt="dsh-custom-plugin 总览" width="100%">
-</p>
-
-## 部分界面展示
-
-<table>
-<tr>
-<td width="50%" valign="top"><b>「设置 → 个性化」整页外观配置</b><br><img src="https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/settings-appearance.png" alt="设置 → 个性化 整页外观配置" width="100%"></td>
-<td width="50%" valign="top"><b>会话头部弹出的同一套面板（浅色主题）</b><br><img src="https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/personalization-panel.png" alt="个性化弹窗面板" width="100%"></td>
-</tr>
-<tr>
-<td width="50%" valign="top"><b>液态玻璃（Custom 面板位移折射）</b><br><img src="https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/liquid-glass.png" alt="液态玻璃" width="100%"></td>
-<td width="50%" valign="top"><b>多级项目文件夹</b><br><img src="https://github.com/AlexPeng07/dsh-custom-plugin/raw/main/docs/project-folders.png" alt="项目文件夹" width="100%"></td>
-</tr>
-<tr>
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:23-63](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/index.ts#L23-L63)
-
-Host 注入 webServer/tools/sessionQuery 并初始化服务。
+版本和Host/Client出口。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-export const inject = ['webServer', 'tools', 'sessionQuery']
-
-export const apply = mountOnce('@alexpeng/dsh-custom-plugin', applyImpl)
-
-function applyImpl(ctx: Context): void {
-  const state = defaultState()
-  // Keep diagnostics truthful even before the asynchronous load resolves.
-  // `dshHome()` is a directory; the state path is its sibling file.
-  let statePath = join(dshHome(), STATE_FILE)
-  let stateLoaded = false
-  // Flipped only when the state file could be neither read nor quarantined
-  // aside: every save path funnels through `saveNow`/`saveSoon`, so gating
-  // here keeps the host from persisting never-loaded defaults over a
-  // document that may still be intact on disk.
-  let stateWritable = true
-  const sessionModels = new Map<string, string | null>()
-  const pendingUsage: Array<{ sessionId: string; usage: NonNullable<Extract<SessionEvent, { type: 'assistant/message' }>['data']['usage']>; time: number; model: string | null }> = []
-
-  const diagReports: string[] = []
-  const reportDiag = (message: string): void => {
-    diagReports.push(String(message ?? '').slice(0, 400))
-    if (diagReports.length > 20) diagReports.splice(0, diagReports.length - 20)
-  }
-
-  const saveSoon = (() => {
-    let timer: ReturnType<typeof setTimeout> | undefined
-    return (): void => {
-      if (!stateWritable) return
-      if (timer !== undefined) clearTimeout(timer)
-      timer = setTimeout(() => {
-        timer = undefined
-        void host.persistWhenIdle().catch((error) => {
-          reportDiag(`state save failed: ${String((error as Error)?.message ?? error)}`)
-        })
-      }, 500)
-    }
-  })()
-
-  const host = new CustomPluginHost({
-    sessionQuery: ctx.sessionQuery,
-    state,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/routes.ts:66-75](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L66-L75)
-
-集中构造各类 Host route。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-export function makeCustomPluginRoutes(host: CustomPluginHost, ready: Promise<void> = Promise.resolve()): WebRoute[] {
-  const stateRoute: WebRoute = {
-    kind: 'exact',
-    path: `${CUSTOM_PLUGIN_API_PREFIX}/state`,
-    handler: async (req, res): Promise<void> => {
-      if (!guard(req, res)) return
-      await ready
-      if (req.method === 'GET') {
-        json(res, 200, { ok: true, data: await host.stateView() })
-        return
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/routes.ts:320-329](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L320-L329)
-
-返回状态、搜索、导出、余额、Mermaid 等路由。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-    path: `${CUSTOM_PLUGIN_API_PREFIX}/debug`,
-    handler: (req, res): void => {
-      if (!guard(req, res)) return
-      if (!isMethod(req, 'GET', res)) return
-      void ready.then(() => host.debugInfo()).then((info) => { json(res, 200, { ok: true, ...info }) }).catch(() => { json(res, 200, { ok: false, error: '调试信息不可用' }) })
+  "name": "@alexpeng/dsh-custom-plugin",
+  "description": "Custom convenience suite for the dsh web GUI: appearance, folders, prompts, session export/search, Mermaid, quote reply, usage analytics, local budget, key-free backups, and a Ctrl/Cmd+K command palette; dual-face plugin mounted without dsh source changes.",
+  "version": "0.9.3",
+  "type": "module",
+  "icon": "./icon.svg",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
     },
-  }
-
-  return [stateRoute, timelineRoute, backupRoute, searchRoute, exportRoute, balanceRoute, usageScanRoute, mermaidFetchRoute, mermaidScriptRoute, diagRoute, debugRoute]
-}
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[scripts/compat-canary.mjs:3-17](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/scripts/compat-canary.mjs#L3-L17)
+**依据 2 · 源码核查**：[src/index.ts:71-107](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/index.ts#L71-L107)
 
-以临时profile执行兼容探针的明确边界，不等未来版本保证。
+加载/迁移/用量真实接线。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+  const stateReady = loadStateFile(state).then(async (path) => {
+    statePath = path
+    if (await host.migrateLegacyApiKey()) reportDiag('legacy API key migrated to system credentials')
+    stateLoaded = true
+    for (const item of pendingUsage.splice(0)) host.foldUsage(item.sessionId, item.usage, item.time, item.model ?? undefined)
+    try {
+      await saveStateFile(state)
+    } catch (error) {
+      // The load itself succeeded; a failed normalization save (full disk,
+      // read-only home) must not flip the host read-only — later saves retry.
+      reportDiag(`state save failed: ${String((error as Error)?.message ?? error)}`)
+    }
+  }).catch((error) => {
+    // The document could be neither read nor preserved aside. Keep the host
+    // usable but read-only: events still fold in memory, while saves are
+    // suppressed — persisting the never-loaded defaults would destroy the
+    // very file the plugin could not read.
+    reportDiag(`state file unreadable, running read-only: ${String((error as Error)?.message ?? error)}`)
+    stateWritable = false
+    stateLoaded = true
+    for (const item of pendingUsage.splice(0)) host.foldUsage(item.sessionId, item.usage, item.time, item.model ?? undefined)
+  })
+
+  // Daily token usage: fold request/context (model) + assistant/message (usage).
+  ctx.on('session/event', (session: Session, event: SessionEvent) => {
+    try {
+      if (event === undefined || event === null) return
+      const sessionId = String(session.id)
+      if (event.type === 'request/context') {
+        const model = event.data.model ?? null
+        sessionModels.set(sessionId, model)
+        host.rememberModel(sessionId, model)
+      } else if (event.type === 'assistant/message' && event.data.usage !== undefined) {
+        if (!stateLoaded) pendingUsage.push({ sessionId, usage: event.data.usage, time: event.time, model: sessionModels.get(sessionId) ?? null })
+        else {
+          host.foldUsage(sessionId, event.data.usage, event.time)
+          saveSoon()
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.ts:120-137](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/index.ts#L120-L137)
+
+路由、Mermaid预热和status工具。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  // Routes: state document, timeline, export, backup, search, balance, usage scan, Mermaid.
+  const routeDisposers: Array<() => void> = []
+  for (const route of makeCustomPluginRoutes(host, stateReady)) {
+    routeDisposers.push(ctx.webServer.register(route))
+  }
+
+  // Preheat the Mermaid engine (local dependency first, CDN fallback) so the
+  // first diagram render in the browser does not pay the load latency.
+  void host.mermaidFetch().then((result) => {
+    reportDiag(result.ok ? `mermaid engine ready (${result.bytes} bytes, ${host.mermaidLoadedSource()})` : `mermaid engine failed: ${result.error}`)
+  }).catch((error) => {
+    reportDiag(`mermaid preheat failed: ${String((error as Error)?.message ?? error)}`)
+  })
+
+  // The status tool: appearance config, today's usage, balance, timeline sample.
+  const disposeTool = ctx.tools.register(defineTool({
+    name: 'custom_plugin_status',
+    description: '查看 Custom 便利套件（dsh-custom-plugin）运行状态：外观配置、今日 token 用量（按模型）、DeepSeek 余额（如已配置 API Key）、当前会话时间线样本、Mermaid 引擎加载情况、客户端注入诊断。',
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/client/index.ts:31-47](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/client/index.ts#L31-L47)
+
+真实client入口等待slots并fail-soft安装。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+export function apply(ctx: ClientContext): void {
+  ctx.effect(() => {
+    // The slots provider (client-ui-layout) may activate after this entry on
+    // newer dsh builds — a synchronous `ctx.get('slots')` here would lose
+    // that race and silently skip every surface. `ctx.inject` re-runs the
+    // mount whenever the service (re)appears, while staying fail-soft: if the
+    // service never shows up, the GUI boots without this plugin's surfaces.
+    ctx.inject(['slots'], (slotCtx) => {
+      try {
+        return installCustomPlugin(slotCtx, apiDiagReport)
+      } catch (error) {
+        // Fail soft: a broken plugin must degrade to a diagnostic line, never
+        // fail its fiber (which would take the entire GUI boot down with it).
+        const message = `install failed: ${String((error as Error)?.message ?? error)}`
+        console.error(`[custom-plugin] ${message}`)
+        apiDiagReport(message)
+        return () => {}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/client/custom.tsx:2989-3025](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/client/custom.tsx#L2989-L3025)
+
+具体slot注册及请求非实际呈现保证。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+  const injectOne = (key: string, id: string, options: Record<string, unknown>, comp: unknown): void => {
+    try {
+      slots.inject(key, () => {
+        try {
+          const unregister = slots.register({ name: key, ...options }, comp)
+          unregisterAll.push(unregister)
+          return unregister
+        } catch (error) {
+          // `register` runs later, when the host materializes the slot, so it is
+          // outside the try below: without this guard a rejected registration
+          // (wrong slot kind, bad options) would take the surface down silently
+          // while the ring still read green.
+          reportDiag('register ' + key + ' (' + id + '): ' + String((error as Error)?.message ?? error))
+          return () => {}
+        }
+      })
+      reportDiag('ok ' + key + ' (' + id + ')')
+      injectedCount++
+      injectedKeys.add(key)
+    } catch (error) {
+      const message = 'inject ' + key + ' (' + id + '): ' + String((error as Error)?.message ?? error)
+      console.error('[custom-plugin] ' + message)
+      reportDiag(message)
+    }
+  }
+  injectOne('sidebar.footer.action', 'custom-plugin-folders', { id: 'custom-plugin-folders', order: -100, label: '项目' }, FolderSidebarButton)
+  injectOne('shell.overlay', 'custom-plugin-overlay', { id: 'custom-plugin-overlay', order: 10, label: 'Custom 便利套件' }, OverlayRoot)
+  injectOne('conversation.input.dock', 'custom-plugin-quote', { id: 'custom-plugin-quote', order: 30, label: '引用回复' }, QuoteDock)
+  injectOne('conversation.chat.turnTail', 'custom-plugin-turn-tail', { id: 'custom-plugin-turn-tail', order: 10 }, TurnTailEntry)
+  injectOne('settings.section', 'custom-plugin-appearance', { id: 'custom-plugin-appearance', order: 30, label: '个性化' }, SettingsPage)
+  injectOne('conversation.session.header.actions', 'custom-plugin-panel-open', { id: 'custom-plugin-panel-open', order: 5, label: '个性化' }, HeaderPanelButton)
+  injectOne('conversation.session.header.actions', 'custom-plugin-prompts', { id: 'custom-plugin-prompts', order: 6, label: '提示词' }, PromptQuickButton)
+  injectOne('conversation.session.header.utilities', 'custom-plugin-balance', { id: 'custom-plugin-balance', order: -5, label: '额度' }, HeaderBalance)
+  // Requests submitted, not surfaces proven: dsh defers the callback above until
+  // the slot is declared, so nothing here knows yet whether the host accepted
+  // any of them. Materialization reports itself, per slot, through the `ok` /
+  // `register` lines this one follows.
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/client/custom.tsx:2567-2589](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/client/custom.tsx#L2567-L2589)
+
+命令面板搜索真实remote与失败状态、导出入口。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+      if (!s.commandOpen || query.trim().length < 2) { setRemote([]); setRemoteStatus(''); return }
+      const controller = new AbortController()
+      const timer = setTimeout(() => {
+        const sessionSearch = sessionRemote()
+        if (sessionSearch === undefined) { setRemoteStatus(CROSS_SEARCH_UNAVAILABLE); return }
+        setRemoteStatus('跨会话搜索中…')
+        try {
+          void sessionSearch.search({ query: query.trim() }, controller.signal).then((result) => {
+            if (controller.signal.aborted) return
+            if (result.ok) { setRemote(result.value.items); setRemoteStatus('') }
+            else {
+              setRemote([]); setRemoteStatus(remoteErrorMessage(result.error, CROSS_SEARCH_UNAVAILABLE))
+            }
+          }).catch(() => { if (!controller.signal.aborted) { setRemote([]); setRemoteStatus(CROSS_SEARCH_UNAVAILABLE) } })
+        } catch { if (!controller.signal.aborted) { setRemote([]); setRemoteStatus(CROSS_SEARCH_UNAVAILABLE) } }
+      }, 250)
+      return () => { clearTimeout(timer); controller.abort() }
+    }, [query, s.commandOpen])
+    if (!s.commandOpen) return null
+    interface Command { key: string; label: string; detail: string; run: () => void; disabled?: boolean }
+    const commands: Command[] = [
+      { key: 'balance', label: '打开额度与用量', detail: '功能', run: () => setS({ commandOpen: false, panelOpen: true, panelTab: 'balance' }) },
+      { key: 'export', label: '导出当前会话', detail: S.sessionId === null ? '当前没有打开的会话' : 'Markdown', disabled: S.sessionId === null, run: () => { setS({ commandOpen: false }); runExport('markdown') } },
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/client/custom.tsx:1335-1349](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/client/custom.tsx#L1335-L1349)
+
+导出结果到下载及错误提示。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
- * Compatibility canary: install the published plugin into a scratch profile of
- * the newest dsh release, boot that host for real, and run the live probes.
- *
- * The support line is an open lower bound (`engines.dsh: >=0.1.7-rc.2`), so the
- * host no longer tells users that an untested dsh release is unsupported. This
- * canary is what notices when such a release actually breaks an API the bundle
- * still calls; it runs on a schedule in CI and opens an issue on failure.
- *
- *   node scripts/compat-canary.mjs                    # newest of npm latest/next
- *   node scripts/compat-canary.mjs 0.2.1-rc.3         # one exact version
- *   node scripts/compat-canary.mjs --plugin ./x.tgz   # test a local build
- *   node scripts/compat-canary.mjs --keep             # keep the scratch profile
- *
- * Read-only with respect to the developer's harness: every dsh command gets a
- * temporary DSH_HOME. Requires Node 22+, npm, bash and curl.
+  function runExport(format: string): void {
+    if (S.sessionId === null) { toast('当前没有打开的会话', 'error'); return }
+    setS({ exporting: true })
+    void apiExportRun(S.sessionId, format).then((result) => {
+      if (result.ok !== true) {
+        toast(result.error ?? '导出失败', 'error')
+        return
+      }
+      try {
+        downloadText(result.content, result.fileName, result.mime)
+        toast('已导出 ' + result.fileName, 'info')
+      } catch (error) {
+        toast('导出失败: ' + String((error as Error)?.message ?? error), 'error')
+      }
+    }).catch((error) => toast('导出失败: ' + String((error as Error)?.message ?? error), 'error')).finally(() => setS({ exporting: false }))
 ```
 
 </details>
 
+**依据 8 · 源码核查**：[src/client/api.ts:100-102](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/client/api.ts#L100-L102)
+
+导出请求实际post/export。
+
+```text
+export async function apiExportRun(sessionId: string, format: string): Promise<{ ok: true; content: string; fileName: string; mime: string } | { ok: false; error?: string }> {
+  return await postJson('/export', { sessionId, format })
+}
+```
+
 #### 缺口
 
-- 未在目标 DSH 运行完整套件。
-  **影响**：UI、槽位冲突和实际节省时间未知。
-  **进一步探讨**：在作者声明的三个宿主版本逐项试用核心流程，记录冲突和功能使用率。
+- 当前客户端视觉、多个Host版本和同任务效率未实测。
+  **影响**：不能由多入口或本地状态机制推导实际效率、安全及账单准确。
+  **进一步探讨**：固定目标profile，先选实际需要的两三项，以检索/导出和视觉检查核结果，再比较原生/单功能替代。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 共享状态在 Web 与 Desktop 同时写入时怎样处理？
+### Q02 · 共享JSON保存和备份是否防止跨进程丢更新？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-状态放在共享 DSH_HOME/custom-plugin-state.json，采用 per-process PID 临时文件、同进程每路径写队列和 rename 原子替换。保存前根据 mtimeMs 与 size 发现外部变化，再做三方合并；不同 section 按本地/远端变更处理，用量计数通过 theirs+ours-base 折叠。此机制比直接覆盖完善，但跨进程的“读取外部变化→合并→写入”没有共同锁；两宿主恰好交错写时仍可能丢更新。mtime/size 相同的快速改写、外部文件不可读也按源码注释回退覆盖。需竞争复现，不能宣称实际发生丢失。
+不能保证。state按路径在同进程排队，先mergeExternalChanges，再写PID临时文件并rename，成功后记mtime/size/doc基线。外部变更以mtime/size探测后做三方合并，各section与usage有特定合并策略，但“读外部→合并→写”没有共同跨进程锁/CAS，两Host可同时读同基线后相继覆盖；这是未验证竞争风险，不宣称已经实际丢失。同mtime/size跳过读取，读失败或不可解码外部文档在合并阶段直接返回，随后仍可保存本地状态。
+
+启动加载坏文档先隔离，若既不能读也不能保存旁路副本，Host设read-only，避免默认值覆盖；这是启动保护，不能泛化成并发阶段同样拒写。可移植backup投影只含cfg/folders/prompts/stars/usage、不含apiKey；导入保留当前Key，写recovery副本有rename，但不是全系统快照或跨进程事务。副本也不保证用户自己写入prompt中的秘密被扫描清除。恢复要比较共享文件、recovery和实际UI，不能仅看保存成功。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/state.ts:292-345](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L292-L345)
+**依据 1 · 源码核查**：[src/state.ts:315-339](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/state.ts#L315-L339)
 
-写队列、PID 临时文件、rename 和保存基线。
+进程内队列/临时文件/rename。
 
 <details>
-<summary>查看原文（54行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-/** In-flight save per state path: concurrent saves queue instead of racing on
- * the rename order. Two writers renaming one temp file is the Windows
- * EPERM/EBUSY source; queuing also coalesces naturally, because each turn
- * serializes the live document when it runs, not when it was requested. */
-const saveQueues = new Map<string, Promise<void>>()
-
-/**
- * Temp name for an atomic replace, qualified by the writing process.
- *
- * The queue above is per-process, but `$DSH_HOME` is not: dsh Web and dsh
- * Desktop both run hosts against one home (separate profiles, one `$DSH_HOME`),
- * so a fixed temp name would let the two hosts write and rename the same file
- * and hand each other a partially written document.
- */
-export function tempPathFor(target: string, pid: number = process.pid): string {
-  return `${target}.${pid}.tmp`
-}
-
-/** Atomically persist the state document. Saves to the same path are
- * serialized: a caller awaits its own turn's completion, a failed turn never
- * poisons the queue behind it. Before writing, another host's changes since
- * this process last loaded or saved the file are merged back in (see
- * `mergeExternalChanges`). */
 export function saveStateFile(state: CustomPluginState, home: string = dshHome()): Promise<void> {
   const statePath = join(home, STATE_FILE)
   const turn = (saveQueues.get(statePath) ?? Promise.resolve())
@@ -420,43 +498,18 @@ export function saveStateFile(state: CustomPluginState, home: string = dshHome()
   saveQueues.set(statePath, turn)
   return turn.finally(() => {
     if (saveQueues.get(statePath) === turn) saveQueues.delete(statePath)
-  })
-}
-
-/** Per-path view of the on-disk document this process last saw: its stat
- * identity and its serialized bytes. `$DSH_HOME` is shared by every dsh host
- * under it (Web + Desktop), so a save must first notice whether another host
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/state.ts:349-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L349-L386)
+**依据 2 · 源码核查**：[src/state.ts:368-383](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/state.ts#L368-L383)
 
-通过 stat 比较和三方合并，源码注明漏检及不可读回退。
+外变探测及失败直接返回。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-const syncBaselines = new Map<string, { mtimeMs: number; size: number; doc: string } | null>()
-
-/**
- * Fold another host's writes back in before this process saves over them.
- *
- * Each host holds the whole document in memory, so an unchecked save is
- * last-writer-wins and silently discards the other host's usage folds and
- * config edits. When the file's stat identity no longer matches what this
- * process last wrote or loaded, the current bytes are re-read and three-way
- * merged against the last-saved snapshot: sections this process has not
- * touched adopt the external version, the usage ledger unions arithmetically
- * (`theirs + ours − base` per counter — exact for two hosts that both
- * started from `base`), and locally-dirty sections keep the local version.
- *
- * The stat fast path misses only a same-instant, same-length rewrite by
- * another host. An unreadable or undecodable external document falls back to
- * the plain overwrite — the boot-time quarantine remains the backstop for
- * the destructive case.
- */
 async function mergeExternalChanges(state: CustomPluginState, statePath: string): Promise<void> {
   const baseline = syncBaselines.get(statePath)
   if (baseline === undefined) return
@@ -473,62 +526,100 @@ async function mergeExternalChanges(state: CustomPluginState, statePath: string)
   }
   if (theirs === null || typeof theirs !== 'object') return
   mergeThreeWay(state, baseline !== null ? safeParse(baseline.doc) : null, theirs as Record<string, unknown>)
-}
-
-function safeParse(text: string): CustomPluginState | null {
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.zh.md:176-184](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L176-L184)
+**依据 3 · 源码核查**：[src/index.ts:83-91](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/index.ts#L83-L91)
 
-作者说明 Web/Desktop 共用状态文件。
+初始加载不可保护时read-only。
 
 ```text
-   安装和更新，不想开终端就用它。
-
-外观、提示词库、项目文件夹、星标和用量都存在
-`$DSH_HOME/custom-plugin-state.json`，这个文件按设计由桌面版和 Web 共享——两
-边各自持有自己的 `profiles/<名字>`，那里面只放代码不放这个文件——所以在两者
-之间切换看到的是同一份数据。两个宿主因此可能同时写它，这就是状态替换把临时文
-件按写入进程的 pid 命名的原因。
-
-### 从 GitHub 安装（源码安装）
+  }).catch((error) => {
+    // The document could be neither read nor preserved aside. Keep the host
+    // usable but read-only: events still fold in memory, while saves are
+    // suppressed — persisting the never-loaded defaults would destroy the
+    // very file the plugin could not read.
+    reportDiag(`state file unreadable, running read-only: ${String((error as Error)?.message ?? error)}`)
+    stateWritable = false
+    stateLoaded = true
+    for (const item of pendingUsage.splice(0)) host.foldUsage(item.sessionId, item.usage, item.time, item.model ?? undefined)
 ```
+
+**依据 4 · 源码核查**：[src/backup.ts:101-109](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/backup.ts#L101-L109)
+
+投影不含apiKey。
+
+```text
+      for (const [model, rawRow] of Object.entries(models)) {
+        if (!safeKey(model)) continue
+        const row = usageRow(rawRow)
+        if (model !== '' && row !== null) clean[model] = row
+      }
+      if (Object.keys(clean).length > 0) usage[day] = clean
+    }
+  }
+  return clone({ format: BACKUP_FORMAT, version: BACKUP_VERSION, exportedAt: new Date().toISOString(), data: { cfg: normalizeCfg(state.cfg), folders, prompts, stars, usage } })
+```
+
+**依据 5 · 源码核查**：[src/backup.ts:216-231](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/backup.ts#L216-L231)
+
+导入Key保留与恢复副本。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function importedState(current: CustomPluginState, backup: CustomPluginBackupV1, mode: BackupImportMode): CustomPluginState {
+  const data = backup.data
+  if (mode === 'replace') return { cfg: clone(data.cfg), folders: clone(data.folders), prompts: clone(data.prompts), stars: clone(data.stars), usage: clone(data.usage), apiKey: current.apiKey }
+  const stars = clone(current.stars)
+  for (const [sessionId, values] of Object.entries(data.stars)) stars[sessionId] = { ...(stars[sessionId] ?? {}), ...clone(values) }
+  const usage = clone(current.usage)
+  for (const [day, models] of Object.entries(data.usage)) usage[day] = { ...(usage[day] ?? {}), ...clone(models) }
+  pruneUsage(usage)
+  return { cfg: normalizeCfg({ ...current.cfg, ...clone(data.cfg) }), folders: mergeFolders(current.folders, data.folders), prompts: mergeById(current.prompts, data.prompts), stars, usage, apiKey: current.apiKey }
+}
+
+export async function writeRecoveryBackup(path: string, state: CustomPluginState): Promise<string> {
+  const target = path + '.backup.json'
+  const temporary = tempPathFor(target)
+  await writeFile(temporary, JSON.stringify(createBackup(state), null, 2), 'utf8')
+  await rename(temporary, target)
+```
+
+</details>
 
 #### 缺口
 
-- 未做跨进程交错写/故障注入。
-  **影响**：并发风险为代码推断而非实测故障率。
-  **进一步探讨**：用两个宿主进程屏障控制同一基线并发保存，比较文件夹/提示词/用量结果和恢复副本。
+- 多Host竞争、同mtime/size、外部坏文档和恢复副本未做故障验证。
+  **影响**：不能由多入口或本地状态机制推导实际效率、安全及账单准确。
+  **进一步探讨**：两个隔离Host并发改不同section/usage，注入读失败和同尺寸快速改写，核最后状态、诊断和恢复，不以rename当事务。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 敏感访问、备份和外部依赖如何限制？
+### Q03 · 来源围栏、凭据及预算的准确边界是什么？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑、效果与总成本、工程质量与复用
 
 #### 完整回答
 
-Host 路由设回环 socket 与 Host 校验、拒 cross-site，Origin 有值时需匹配 Host；桌面转发去掉来源标记时无标记被接受，这是特定宿主信任假设。状态/备份请求分别设尺寸上限；备份显式投影排除 API Key，导入前可预览并写恢复副本。余额查询需要 Key，Mermaid 本地包优先、缺失回退多个 CDN，因此“离线可用”以本地依赖确实随安装到位为条件。外部 DeepSeek 价目/时间规则可能变化，本轮不核实时价格。
+路由用回环socket、回环Host、cross-site拒绝及Origin相同authority校验；缺Origin接受，这是Desktop转发兼容的本机信任假设，不是互联网多用户认证/授权层。应在实际代理/桌面转发下测拒绝，不建议把本地接口无条件暴露远端。
+
+Key优先系统凭据存储，但applyEdit中set失败就把原Key留state.apiKey，migrateLegacy在不可用或读取失败时保留旧值；因此不能承诺所有平台Key永不落共享JSON。便携备份无apiKey和本地状态可含Key是两件事。Mermaid先本地依赖，缺失回退CDN并在启动预热，所谓离线需要依赖真到位；外部余额需要有效Key。预算按本地事件和内置价目估算，priceOf对未知模型可回退Flash；真实价格、缓存/时段与合同未本轮查新，不把估价当账单。状态、凭据、CDN和会话范围都要在采用前明确。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/loopback.ts:43-65](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/loopback.ts#L43-L65)
+**依据 1 · 源码核查**：[src/loopback.ts:48-65](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/loopback.ts#L48-L65)
 
-本地请求、Host、cross-site/Origin 信任逻辑。
+来源围栏与Origin缺省信任。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
- * loopback socket address AND a loopback Host header, non-`cross-site` fetch
- * marker, and an Origin that is absent (trusted — the dsh Desktop forward
- * shape) or matches the Host authority. The socket address is authoritative;
- * X-Forwarded-For is never trusted.
- */
 export function isLoopbackRequest(request: IncomingMessage): boolean {
   if (!isLoopbackAddress(request.socket.remoteAddress)) return false
   const host = request.headers.host
@@ -551,120 +642,113 @@ export function isLoopbackRequest(request: IncomingMessage): boolean {
 
 </details>
 
-**依据 2 · 源码核查**：[src/routes.ts:18-55](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/routes.ts#L18-L55)
+**依据 2 · 源码核查**：[src/host-service.ts:299-307](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/host-service.ts#L299-L307)
 
-状态/备份 body 限制与路由 guard。
-
-<details>
-<summary>查看原文（38行）</summary>
+系统凭据失败回stateKey。
 
 ```text
-export const STATE_BODY_LIMIT = 1024 * 1024
-const TIMELINE_LIMIT = 64 * 1024
-// The request envelope contains JSON keys around the document. Keep a small
-// reserve so a document at the documented 5 MiB limit is not rejected solely
-// because of that envelope; the document itself is checked below as well.
-const BACKUP_REQUEST_LIMIT = BACKUP_BODY_LIMIT + 64 * 1024
-
-function json(res: ServerResponse, status: number, body: unknown): void {
-  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-  res.end(JSON.stringify(body))
-}
-
-/**
- * The request fence. Trust is decided by `isLoopbackRequest` alone: a loopback
- * socket with a loopback Host, a non-`cross-site` fetch marker, and an Origin
- * that is absent or matches the Host authority. Absent markers are *accepted*
- * — that is the exact header shape dsh Desktop's shell produces when it
- * forwards renderer requests to its own Host (it deletes `host`, `origin`,
- * `sec-fetch-site` and `cookie` first), and the same shape the platform fence
- * treats as trusted. A foreign origin, a cross-site marker, or a non-loopback
- * peer is rejected.
- */
-function guard(req: IncomingMessage, res: ServerResponse): boolean {
-  if (isLoopbackRequest(req)) return true
-  json(res, 403, { ok: false, error: 'forbidden' })
-  return false
-}
-
-async function readBody(req: IncomingMessage, limit: number): Promise<unknown> {
-  const chunks: Buffer[] = []
-  let size = 0
-  for await (const chunk of req) {
-    const buffer = chunk as Buffer
-    size += buffer.length
-    if (size > limit) throw new Error('body-too-large')
-    chunks.push(buffer)
-  }
-  if (chunks.length === 0) return {}
+    if (typeof edit.apiKey === 'string') {
+      const key = edit.apiKey.trim()
+      if (key === '') {
+        const cleared = await this.credentialStore.clear()
+        if (this.credentialStore.available && !cleared) throw new Error('系统凭据清除失败，请重试')
+        this.state.apiKey = ''
+      } else {
+        if (!/^sk-/.test(key)) throw new Error('DeepSeek API Key 必须以 sk- 开头')
+        this.state.apiKey = await this.credentialStore.set(key) ? '' : key
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/host-service.ts:354-372](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/host-service.ts#L354-L372)
 
-**依据 3 · 源码核查**：[src/backup.ts:83-111](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/backup.ts#L83-L111)
-
-备份字段显式投影。
+迁移读取失败不覆盖凭据。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-export function createBackup(state: CustomPluginState): CustomPluginBackupV1 {
-  const seen = new Set<string>()
-  const folders = (Array.isArray(state.folders) ? state.folders : []).map((item) => folder(item, seen)).filter((item): item is FolderNode => item !== null)
-  const prompts = (Array.isArray(state.prompts) ? state.prompts : []).map(normalizePrompt).filter((item): item is PromptItem => item !== null)
-  const stars: StarsMap = {}
-  if (state.stars !== null && typeof state.stars === 'object') {
-    for (const [sessionId, entries] of Object.entries(state.stars)) {
-      if (!safeKey(sessionId) || entries === null || typeof entries !== 'object' || Array.isArray(entries)) continue
-      const clean: Record<string, boolean> = {}
-      for (const [seq, value] of Object.entries(entries)) if (value === true && /^\d+$/.test(seq)) clean[seq] = true
-      if (Object.keys(clean).length > 0) stars[sessionId] = clean
+  async migrateLegacyApiKey(): Promise<boolean> {
+    this.credentialCache = null
+    const key = (this.state.apiKey ?? '').trim()
+    if (!/^sk-/.test(key) || !this.credentialStore.available) return false
+    let existing = ''
+    try {
+      existing = (await this.credentialStore.get()).trim()
+    } catch {
+      // Do not overwrite a credential that could not be read safely.
+      return false
     }
-  }
-  const usage: UsageMap = {}
-  if (state.usage !== null && typeof state.usage === 'object') {
-    for (const [day, models] of Object.entries(state.usage)) {
-      if (!validDayKey(day) || models === null || typeof models !== 'object' || Array.isArray(models)) continue
-      const clean: Record<string, UsageRow> = {}
-      for (const [model, rawRow] of Object.entries(models)) {
-        if (!safeKey(model)) continue
-        const row = usageRow(rawRow)
-        if (model !== '' && row !== null) clean[model] = row
+    if (existing !== '') {
+      if (/^sk-/.test(existing)) {
+        this.state.apiKey = ''
+        return true
       }
-      if (Object.keys(clean).length > 0) usage[day] = clean
-    }
-  }
-  return clone({ format: BACKUP_FORMAT, version: BACKUP_VERSION, exportedAt: new Date().toISOString(), data: { cfg: normalizeCfg(state.cfg), folders, prompts, stars, usage } })
-}
-
+      // Keep the legacy value as a compatibility fallback rather than
+      // overwriting an unexpected non-empty OS-store entry.
+      return false
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/host-service.ts:828-843](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/host-service.ts#L828-L843)
+**依据 4 · 源码核查**：[src/host-service.ts:680-701](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/host-service.ts#L680-L701)
 
-Mermaid 本地加载与 CDN 后备。
+Mermaid本地与CDN回退。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-function looksLikeMermaidBundle(text: string): boolean {
-  const head = text.slice(0, 64).replace(/^\uFEFF/, '').trimStart()
-  return text.length >= 1000 && !head.startsWith('<')
+  private async mermaidFetchImpl(): Promise<MermaidFetchResult> {
+    const localPath = this.localMermaidPath()
+    if (localPath !== null && localPath !== '') {
+      try {
+        // Async read: the bundled engine is ~3.5 MB, and a synchronous read
+        // here stalls every Host request behind it during boot.
+        const text = await readFile(localPath, 'utf8')
+        if (text.length > 0) {
+          this.cacheMermaid(text, 'local')
+          return { ok: true, bytes: this.mermaidBytesValue }
+        }
+      } catch {
+        // unreadable local bundle: fall through to the CDN mirrors
+      }
+    }
+    const urls = [
+      `https://cdn.jsdelivr.net/npm/mermaid@${MERMAID_CDN_VERSION}/dist/mermaid.min.js`,
+      `https://fastly.jsdelivr.net/npm/mermaid@${MERMAID_CDN_VERSION}/dist/mermaid.min.js`,
+      `https://unpkg.com/mermaid@${MERMAID_CDN_VERSION}/dist/mermaid.min.js`,
+    ]
+    let text = ''
+    let lastError = ''
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/pricing.ts:35-53](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/pricing.ts#L35-L53)
+
+内置价与未知模型回退。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+const FLASH_PRICE: DeepSeekUnitPrice = { input: 2, cacheHit: 0.04, output: 8 }
+
+/** Current official peak prices, in CNY per 1M tokens. Off-peak is exactly
+ * half of peak per the official page (weekday 9-12 / 14-18 Beijing time). */
+const PEAK_PRICES: Readonly<Record<string, DeepSeekUnitPrice>> = {
+  'deepseek-flash': FLASH_PRICE,
+  'deepseek-v4-flash': FLASH_PRICE,
+  'deepseek-v4-flash-vision-exp': FLASH_PRICE,
+  'deepseek-v4-pro': { input: 9, cacheHit: 0.3, output: 27 },
+  // Retired names remain readable for older session logs; they no longer
+  // appear on the official page and are approximated at Flash pricing.
+  'deepseek-chat': FLASH_PRICE,
+  'deepseek-reasoner': FLASH_PRICE,
 }
 
-/** Resolve `mermaid/dist/mermaid.min.js` from the package's own dependency
- * tree (works for `link:` checkouts and registry installs alike); null when
- * the dependency is absent, which falls mermaidFetch back to the CDN. */
-export function defaultLocalMermaidPath(): string | null {
-  try {
-    const require = createRequire(import.meta.url)
-    return require.resolve('mermaid/dist/mermaid.min.js')
-  } catch {
-    return null
-  }
+/** Resolve a model's peak price, falling back to Flash for unknown/legacy rows. */
+export function priceOf(model: string): DeepSeekUnitPrice {
+  return PEAK_PRICES[model] ?? FLASH_PRICE
 }
 ```
 
@@ -672,219 +756,32 @@ export function defaultLocalMermaidPath(): string | null {
 
 #### 缺口
 
-- 未验证实际桌面转发、凭据存储和第三方网络结果。
-  **影响**：无法确认目标环境安全/离线/余额表现。
-  **进一步探讨**：隔离宿主验证同源围栏、脱敏备份和本地包缺失场景；查当前官方价目。
+- 不同OS凭据fallback、代理环境围栏和真实账单差异未验证。
+  **影响**：不能由多入口或本地状态机制推导实际效率、安全及账单准确。
+  **进一步探讨**：合成Key测试存储成功/失败及备份输出，验证跨源/代理请求；用已知匿名账单核本地估算，不复用旧价目当现价。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 应怎样选择和验证此套件？
+### Q04 · 如何试用，跨Host状态及费用提示值得改进什么？
 
-**研究主题**：效果与总成本、采用判断、新假设与验证
+**研究主题**：采用判断、效果与总成本、新假设与验证
 
 #### 完整回答
 
-适合同时需要多项个性化、会话管理和本地用量视图的 DSH 用户；先在隔离 profile 的声明版本装入，导出状态备份，逐项验会话搜索/导出、Mermaid、本地用量和来源围栏，视觉与性能需人工验收。预算为本地估算而非账单真值，余额查询依赖有效 Key。若只需单一功能，广权限与状态迁移成本可能不划算。可优先增强跨进程写入的版本/CAS 或锁协议、持续校验当前价目，并把各能力的开关/权限呈现得更清楚。
+建议隔离profile、备份共享状态，仅测试最需要的两三项；先用无秘密提示词和合成Key，检查实际凭据存储状态。首次承担版本/权限/功能选择与恢复副本准备，持续有session读写、状态I/O、模型/网络和估价复核，故障要核并发保存、Key回退和恢复结果；现金/时间未知。退出前保留状态和必要数据，禁用不撤已进历史/导出数据，系统凭据与JSON残留要分别核。单功能需求可回原生或专用插件。
+
+可证伪假设是跨进程保存加入版本/CAS与明确冲突拒绝，并在费用行标明价格来源/日期、未知模型回退与未对账。相对现有merge+本地估价，这可能减少丢更新和将预算当账单的误判；新增锁/版本处理及提示成本不能忽略。两个Host故障交错对比当前/CAS，另用新匿名usage样本核价对账，比较丢字段、误合计、人工恢复和误解；若无减少或配置负担超过收益则停止。该方案未实现、不算既有可靠同步或经济收益。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.zh.md:109-139](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L109-L139)
+**依据 1 · 源码核查**：[src/state.ts:315-335](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/state.ts#L315-L335)
 
-作者描述本地估算、余额和 Key 来源。
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-
-`custom_plugin_status` 工具报告：外观配置、今日按模型用量、余额、时间线样本、Mermaid 引擎加载情况、状态文件路径与客户端诊断。插件不注入任何系统提示。
-
-## 版本对应
-
-| 插件版本 | 构建并实测过的 dsh | 状态 |
-| --- | --- | --- |
-| 0.9.x | 任何 >= 0.1.7-rc.2 的 dsh（开放式；已在 0.1.7-rc.2、0.2.0-rc.2、0.2.1-rc.2 与 0.2.1-rc.3 实测） | 本版本 |
-| 0.8.x | dsh 0.1.7-rc.2、dsh 0.2.0-rc.2 与 dsh 0.2.1-rc.2（实测窗口） | 上一版；在 dsh 0.2.1-rc.3 及以后会被拒绝 |
-| 0.7.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |
-| 0.6.x | dsh 0.1.7-rc.2 与 dsh 0.2.0-rc.2 | 上一版；在 dsh 0.2.1-rc.2 上会被拒绝 |
-| 0.5.x | dsh 0.1.7-rc.2（peer 范围 `>=0.1.7-rc.2 <0.2.0-0`） | 在 0.1.x 上没问题；任何 0.2.x 宿主都会拒绝它，dsh 桌面版也算 |
-| 0.4.2 | dsh 0.1.1-rc.1 … 0.1.6 时代 | 已被取代，在 0.1.7+ 上不要指望可用 |
-
-0.1.7 改掉了本套件依赖的插件侧契约（会话导航归 `ctx.uiWorkspace`、会话列表不再提供
-当前查看的会话、消息模型移除 `tool-result` 内容块），两个版本互不替代。dsh
-0.2.1-alpha.4 又改掉了兼容门本身：优先读 `engines.dsh`，只有它缺省时才回退到
-`@deepseek-ai/dsh-*` peer 范围。本包两处声明同一条**开放式下限**（`>=0.1.7-rc.2`），
-因此任何更新的 dsh 版本都会被放行，不必等插件发版；旧宿主读 peer，新宿主读
-`engines.dsh`，`pnpm smoke` 会在两者判定不一致时判红。实测过的版本是证据、不是闸门，
-见上表与 CHANGELOG。定时 canary 会把已发布插件装进 npm `latest`/`next` 里最新的
-dsh，真实启动并跑活体探针——真的 API 断裂会变成 issue，而不是用户眼前的“不兼容”。
-没有这道闸的更早宿主仍会加载插件，但表现为功能退化：实测
-0.1.1-rc.2 上 8 个槽位注册成 7 个，turnTail 条目被拒（该槽位自 0.1.6-alpha.2 起由
-chain 改为 list），打开会话、创建分支、跨会话搜索会提示对应服务缺失，而不是抛错。
-
-## 安装
-
-前置：Node 22+、pnpm，以及 `dsh` CLI（官方 npm 包 `@deepseek-ai/dsh`；未全局安装时，可用 `npx @deepseek-ai/dsh` 代替 `dsh`）。本版本放行**所有 >= 0.1.7-rc.2 的 dsh**：`engines.dsh` 与 `@deepseek-ai/dsh-tools` peer 都是开放式下限，所以 dsh 0.2.1-alpha.4 及更新版本（优先读 `engines.dsh`）与旧宿主（读 peer）都不会拒绝更新的 dsh。0.9.0 的构建与测试队列是 0.2.1-rc.3。产物用桌面版自带 CLI 装进隔离的 0.2.1-rc.3 profile，**没有使用任何兼容豁免**，随后真实冷启动：boot 图 71 行、五个 `dsh.client.inject` 目标齐全、客户端 bundle 200,371 字节、Mermaid 本地引擎 3,572,661 字节、state / 用量 / 备份路由、UTF-8 往返与桌面转发信任形状全部通过（16 项通过、1 项跳过；跳过的是无会话 profile 上的时间线/导出/搜索，该路径由单测覆盖）。0.8.0 的产物在 0.2.1-rc.2 上跑过同一套探针（70 行）；0.6.0 的产物在 0.2.0-rc.2（66 行）与 0.1.7-rc.2（65 行）上各跑过 19 项里的 18 项；0.7.0 的产物额外在**真实桌面安装**上过了桌面形态活体探针（见下文「在 dsh 桌面版上」）。验不到的部分和以往一样：回合内的 chips（Mermaid 渲染、LaTeX）需要一次真实的模型回复，无凭据的临时家目录跑不出来，槽位渲染也仍要在浏览器里过一遍。宿主的兼容门分不清“实测过”与“没实测过”，所以写死上界会让每个新 dsh 版本都等到插件再次发版才可用；开放式下限加定时 canary 把这段等待换成自动发现。若确实要跑低于下限的宿主，请安装对应的旧版插件（0.5.0 面向 0.1.7-rc.2）。
-
-### 从 npm 安装
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.zh.md:150-192](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/README.zh.md#L150-L192)
-
-作者给出版本兼容及冷启动测试报告。
+CAS可落在当前保存边界。
 
 <details>
-<summary>查看原文（43行）</summary>
-
-````text
-dsh 桌面版是同一套 Web 应用外面的一层 Electron 壳，截至 2026-10-23 随包携带
-**正好是 dsh 0.2.1-rc.3**——桌面发布线把壳和运行时钉成同一个版本，所以桌面端拿到
-的永远是某一个确定的 0.2.x 运行时。0.9.0 的开放式范围收 rc.3 及之后的每个桌面构建，
-安装不需要任何兼容性豁免；0.8.0 及更早用的是实测窗口，在 rc.3 上会被同一道门拒绝，
-给出的信息和 0.2.x 的 Web profile 完全一样。
-
-对 0.2.1-rc.3 的实测：boot 图里 71 行、我们那一行与五个 inject 目标都在、客户端
-bundle 以 200,371 字节服务、Mermaid 引擎本地加载，活体宿主探针 16 项通过、1 项跳过
-（跳过的是需要真实会话的会话路径）。访问围栏与官方 API 围栏同一套信任语义：回环
-套接字 + 回环 Host、非 `cross-site`、`origin` 缺省或与 Host 一致即放行。壳在把
-渲染进程的请求转发给它自己的 Host 之前会删掉 `host`、`origin`、`sec-fetch-site`、
-`cookie`，再挂上它自己的凭证——这种无标记形状因此被直接接受（0.6.0 及之前的围栏
-还额外要求同源标记，曾把这套形状全部误拒为 forbidden，0.7.0 起修复并补了围栏级
-单测）。异源与跨站请求仍然 403。**0.7.0 的产物已在真实桌面安装上按桌面转发形状
-逐路由实测过**（state / debug / backup / 用量扫描 / Mermaid 引擎预加载与脚本路由
-全部 200，异源与跨站仍 403）；0.8.0 在冷启动的 0.2.1-rc.2 宿主上复跑了同一套形状，
-0.9.0 在 rc.3 上再跑一遍。
-桌面窗口内的视觉验收（液态玻璃观感、面板布局、点阵清除）归装它的人过目。
-
-管桌面 profile 要用桌面版自带的 `dsh` 命令，不是 npm 装的那个——公开 CLI 拒绝
-保留的 `desktop` profile：
-
-1. 先启动一次桌面版让 profile 建立，然后完全退出（关窗口只是隐藏；Windows 上
-   从托盘退出）。
-2. `dsh plugin --profile desktop add @alexpeng/dsh-custom-plugin`
-3. 重新打开桌面版。应用内的插件管理器也用桌面版自带的 pnpm 在同一个 profile 上
-   安装和更新，不想开终端就用它。
-
-外观、提示词库、项目文件夹、星标和用量都存在
-`$DSH_HOME/custom-plugin-state.json`，这个文件按设计由桌面版和 Web 共享——两
-边各自持有自己的 `profiles/<名字>`，那里面只放代码不放这个文件——所以在两者
-之间切换看到的是同一份数据。两个宿主因此可能同时写它，这就是状态替换把临时文
-件按写入进程的 pid 命名的原因。
-
-### 从 GitHub 安装（源码安装）
-
-```sh
-dsh plugin --profile web add github:AlexPeng07/dsh-custom-plugin
-# 重启 dsh web
-```
-
-git 安装拉取的是源码，`prepare` 脚本会在安装端构建 `lib/`。pnpm ≥10 需要一次性授权该构建——把 pnpm 提示的确切包键复制进 profile 的 `pnpm-workspace.yaml` 的 `allowBuilds` 下，再重新执行 add。走上方 npm 路线可免去构建授权。
-
-````
-
-</details>
-
-**依据 3 · 源码核查**：[src/backup.ts:155-233](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/backup.ts#L155-L233)
-
-导入预览/合并及恢复副本实现。
-
-<details>
-<summary>查看原文（79行）</summary>
-
-```text
-export function backupPreview(current: CustomPluginState, backup: CustomPluginBackupV1): BackupImportPreview {
-  const currentFolders = folderIds(current.folders)
-  const incomingFolders = folderIds(backup.data.folders)
-  const currentPrompts = new Set(current.prompts.map((item) => item.id))
-  return {
-    folders: incomingFolders.size,
-    prompts: backup.data.prompts.length,
-    starredSessions: Object.keys(backup.data.stars).length,
-    usageDays: Object.keys(backup.data.usage).length,
-    conflicts: {
-      folders: [...incomingFolders].filter((id) => currentFolders.has(id)).length,
-      prompts: backup.data.prompts.filter((item) => currentPrompts.has(item.id)).length,
-      usageDays: Object.keys(backup.data.usage).filter((day) => current.usage[day] !== undefined).length,
-    },
-  }
-}
-
-function mergeById<T extends { id: string }>(current: readonly T[], incoming: readonly T[]): T[] {
-  const replacements = new Map(incoming.map((item) => [item.id, clone(item)]))
-  const out = current.map((item) => replacements.get(item.id) ?? item)
-  for (const item of incoming) if (!current.some((old) => old.id === item.id)) out.push(clone(item))
-  return out
-}
-
-/** Merge a folder tree by stable node id. Imported parents and sibling order
- * win for nodes present in the document; current nodes absent from it remain
- * in their existing order. This also moves a duplicate node when its parent
- * changed in the imported tree, instead of leaving a stale root copy behind. */
-function mergeFolders(current: readonly FolderNode[], incoming: readonly FolderNode[]): FolderNode[] {
-  const incomingIds = folderIds(incoming)
-  const index = new Map<string, FolderNode>()
-  const indexTree = (nodes: readonly FolderNode[]): void => {
-    for (const node of nodes) { index.set(node.id, node); indexTree(node.children) }
-  }
-  indexTree(current)
-
-  const retain = (node: FolderNode): FolderNode | null => {
-    if (incomingIds.has(node.id)) return null
-    const children = node.children.map(retain).filter((item): item is FolderNode => item !== null)
-    return { id: node.id, name: node.name, children, sessionIds: clone(node.sessionIds), workspaceIds: clone(node.workspaceIds), prompts: clone(node.prompts) }
-  }
-
-  const imported = (source: FolderNode): FolderNode => {
-    const currentNode = index.get(source.id)
-    // Unrelated current children stay before the imported sequence; all
-    // imported siblings then follow the exact order from the backup.
-    const children = (currentNode?.children ?? []).map(retain).filter((item): item is FolderNode => item !== null)
-      .concat(source.children.map(imported))
-    return { id: source.id, name: source.name, children, sessionIds: clone(source.sessionIds), workspaceIds: clone(source.workspaceIds), prompts: clone(source.prompts) }
-  }
-
-  // The imported tree owns the ordering of imported roots. Current roots that
-  // are absent from the document are appended in their existing order.
-  const out = incoming.map(imported)
-  for (const node of current) if (!incomingIds.has(node.id)) {
-    const kept = retain(node)
-    if (kept !== null) out.push(kept)
-  }
-  return out
-}
-
-export function importedState(current: CustomPluginState, backup: CustomPluginBackupV1, mode: BackupImportMode): CustomPluginState {
-  const data = backup.data
-  if (mode === 'replace') return { cfg: clone(data.cfg), folders: clone(data.folders), prompts: clone(data.prompts), stars: clone(data.stars), usage: clone(data.usage), apiKey: current.apiKey }
-  const stars = clone(current.stars)
-  for (const [sessionId, values] of Object.entries(data.stars)) stars[sessionId] = { ...(stars[sessionId] ?? {}), ...clone(values) }
-  const usage = clone(current.usage)
-  for (const [day, models] of Object.entries(data.usage)) usage[day] = { ...(usage[day] ?? {}), ...clone(models) }
-  pruneUsage(usage)
-  return { cfg: normalizeCfg({ ...current.cfg, ...clone(data.cfg) }), folders: mergeFolders(current.folders, data.folders), prompts: mergeById(current.prompts, data.prompts), stars, usage, apiKey: current.apiKey }
-}
-
-export async function writeRecoveryBackup(path: string, state: CustomPluginState): Promise<string> {
-  const target = path + '.backup.json'
-  const temporary = tempPathFor(target)
-  await writeFile(temporary, JSON.stringify(createBackup(state), null, 2), 'utf8')
-  await rename(temporary, target)
-  return target
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/state.ts:315-386](https://github.com/AlexPeng07/dsh-custom-plugin/blob/8016757784f5b94d3dfc55dcba02ef7ae239c4c5/src/state.ts#L315-L386)
-
-跨进程状态写与合并路径。
-
-<details>
-<summary>查看原文（72行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
 export function saveStateFile(state: CustomPluginState, home: string = dshHome()): Promise<void> {
@@ -908,38 +805,18 @@ export function saveStateFile(state: CustomPluginState, home: string = dshHome()
       // turn can tell its own writes from another host's.
       const st = await stat(statePath).catch(() => null)
       syncBaselines.set(statePath, st !== null ? { mtimeMs: st.mtimeMs, size: st.size, doc } : null)
-    })
-  saveQueues.set(statePath, turn)
-  return turn.finally(() => {
-    if (saveQueues.get(statePath) === turn) saveQueues.delete(statePath)
-  })
-}
+```
 
-/** Per-path view of the on-disk document this process last saw: its stat
- * identity and its serialized bytes. `$DSH_HOME` is shared by every dsh host
- * under it (Web + Desktop), so a save must first notice whether another host
- * wrote the file since. `null` marks "believed absent"; no entry at all marks
- * "never loaded through this module", where a direct save keeps the plain
- * last-writer-wins behavior. */
-const syncBaselines = new Map<string, { mtimeMs: number; size: number; doc: string } | null>()
+</details>
 
-/**
- * Fold another host's writes back in before this process saves over them.
- *
- * Each host holds the whole document in memory, so an unchecked save is
- * last-writer-wins and silently discards the other host's usage folds and
- * config edits. When the file's stat identity no longer matches what this
- * process last wrote or loaded, the current bytes are re-read and three-way
- * merged against the last-saved snapshot: sections this process has not
- * touched adopt the external version, the usage ledger unions arithmetically
- * (`theirs + ours − base` per counter — exact for two hosts that both
- * started from `base`), and locally-dirty sections keep the local version.
- *
- * The stat fast path misses only a same-instant, same-length rewrite by
- * another host. An unreadable or undecodable external document falls back to
- * the plain overwrite — the boot-time quarantine remains the backstop for
- * the destructive case.
- */
+**依据 2 · 源码核查**：[src/state.ts:368-383](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/state.ts#L368-L383)
+
+当前探测窗口。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
 async function mergeExternalChanges(state: CustomPluginState, statePath: string): Promise<void> {
   const baseline = syncBaselines.get(statePath)
   if (baseline === undefined) return
@@ -956,17 +833,61 @@ async function mergeExternalChanges(state: CustomPluginState, statePath: string)
   }
   if (theirs === null || typeof theirs !== 'object') return
   mergeThreeWay(state, baseline !== null ? safeParse(baseline.doc) : null, theirs as Record<string, unknown>)
-}
-
-function safeParse(text: string): CustomPluginState | null {
 ```
 
 </details>
 
+**依据 3 · 源码核查**：[src/pricing.ts:35-53](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/pricing.ts#L35-L53)
+
+估价/回退需要清楚标注。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+const FLASH_PRICE: DeepSeekUnitPrice = { input: 2, cacheHit: 0.04, output: 8 }
+
+/** Current official peak prices, in CNY per 1M tokens. Off-peak is exactly
+ * half of peak per the official page (weekday 9-12 / 14-18 Beijing time). */
+const PEAK_PRICES: Readonly<Record<string, DeepSeekUnitPrice>> = {
+  'deepseek-flash': FLASH_PRICE,
+  'deepseek-v4-flash': FLASH_PRICE,
+  'deepseek-v4-flash-vision-exp': FLASH_PRICE,
+  'deepseek-v4-pro': { input: 9, cacheHit: 0.3, output: 27 },
+  // Retired names remain readable for older session logs; they no longer
+  // appear on the official page and are approximated at Flash pricing.
+  'deepseek-chat': FLASH_PRICE,
+  'deepseek-reasoner': FLASH_PRICE,
+}
+
+/** Resolve a model's peak price, falling back to Flash for unknown/legacy rows. */
+export function priceOf(model: string): DeepSeekUnitPrice {
+  return PEAK_PRICES[model] ?? FLASH_PRICE
+}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.ts:83-91](https://github.com/AlexPeng07/dsh-custom-plugin/blob/9fc50a5de87da550acb70d6957bebec2ff75e1d6/src/index.ts#L83-L91)
+
+只读退路但非全部故障恢复。
+
+```text
+  }).catch((error) => {
+    // The document could be neither read nor preserved aside. Keep the host
+    // usable but read-only: events still fold in memory, while saves are
+    // suppressed — persisting the never-loaded defaults would destroy the
+    // very file the plugin could not read.
+    reportDiag(`state file unreadable, running read-only: ${String((error as Error)?.message ?? error)}`)
+    stateWritable = false
+    stateLoaded = true
+    for (const item of pendingUsage.splice(0)) host.foldUsage(item.sessionId, item.usage, item.time, item.model ?? undefined)
+```
+
 #### 缺口
 
-- 未独立验证实际时间收益、宿主版本矩阵和价格正确性。
-  **影响**：推荐只限隔离试用，不能推广为生产稳定。
-  **进一步探讨**：真实工作流记录任务耗时、功能冲突、状态并发结果和账单对照。
+- 没有CAS对照、真实采用负担与预算理解数据。
+  **影响**：不能由多入口或本地状态机制推导实际效率、安全及账单准确。
+  **进一步探讨**：新并发/账单样本比较误差和恢复时间后决定，避免仅重放旧样本宣称新效果。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

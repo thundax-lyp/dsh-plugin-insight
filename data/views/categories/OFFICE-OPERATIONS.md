@@ -13,10 +13,12 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
+| [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 先观察，匿名样本验证日期/partial/写入和启用恢复后再评真实数据范围。 |
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 浏览器自动化接入 DSH 模型工具和 Web 任务预览 | 已用DSH Web者先做只读任务和可重置表单，验收技能显露、预览与停止清理；无法识别副作用或重复动作时暂停并回CLI或人工。 |
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI 与扩展让 Agent 操作已登录的 Chrome 或 Edge | 从专用profile的只读任务试用，验收窗口、借还与停止。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DSH × Univer Office](#plugin-1335241492-root) | 在 DSH 中创建、编辑和审阅多种办公内容，并以隔离草稿管理变更与导出 | [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04) 单人简单文件副本有限试用，审核后才合并并在原Office程序核对；复杂格式和不互信多用户部署不包含在建议内。 |
+| [DSH Ego Browser](#plugin-1326394141-root) | 以宿主模型工具调用 vendored ego 浏览器运行时，提供会话目标追踪、实时观看和直接交互，并支持可选登录导入。 | 本地无账户页+独立profile先测，登录/提交另审，不因可见画面放宽动作验证，见 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03)。 |
 | [DSH Notes 对话导出](#plugin-1182135360-dsh-plugin) | 将 Agent 整理的 Markdown 写入便签服务，或经匿名渲染生成本地 PNG 长图。 | 已有可信便签服务者可用非敏感短对话试导出，回读内容/分类/实际server；类型不符、内容遗漏或超时重复时停自动流程，先核对已有ID，退回复制粘贴。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
@@ -56,6 +58,22 @@
 > **建议**：未来可探索：可将入站消息ID、身份、租户和每个副作用阶段绑定到执行日志，对未知效果禁止自动重放。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/agentconnect--dsh-awiki/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/agentconnect--dsh-awiki/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1363429979-plugin-daily-log"></a>
+
+## [@zzerx/dsh-plugin-daily-log](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md)
+
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,782](https://img.shields.io/static/v1?label=npm+30d&message=1%2C782&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) [![最新发布 2026-10-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log)
+
+> **用途**：定期整合多项目/多日志的个人工作汇报，以可回源、区分讨论和交付为目标。见[Q01](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q01)。
+
+> **亮点**：把跨源活动、按需工具和可缩放浏览接到报告草稿流程，保留模型/用户各自撰写与核验责任。见[Q01](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q01)、[Q02](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q02)。
+
+> **思考**：截断/probe/partial和日期语义不形成全链覆盖收据，确认/导出也无绑定版本前提。见[Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q03)、[Q04](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q04)。
+
+> **建议**：活动覆盖收据、事实链接和正文/导出版本确认，能否减少漏项误报及总恢复成本待验证。见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
 
@@ -120,6 +138,22 @@
 > **建议**：可以提出未验证的审核收据，把readyDraftHeadRevision、人工确认的关键公式/文本断言、截图或lint结果和导出文件摘要绑定到同一版本；任何后续改动使旧结果显式过期。相对只有ready或局部渲染检查，增量是让用户知道“审核的是哪版、导出的又是哪版”，而非再增加Office功能数量。
 
 [查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1326394141-root"></a>
+
+## [DSH Ego Browser](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md)
+
+[![GitHub ★ 343](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=343&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Fisfzy/dsh-ego-browser) [![npm 30d 12,596](https://img.shields.io/static/v1?label=npm+30d&message=12%2C596&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser)
+
+> **用途**：需要Agent处理网页且用户观看/接管的DSH用户，正确动作仍需目标/后置条件验收，见 [Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01)。
+
+> **亮点**：结构动作、session目标、观看UI与resident传输异常/冷启动分类恢复集成，见 [Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01) 与 [Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02)。
+
+> **思考**：持久profile与space隔离不同，cookie回读非正确账户；HTTP guard只检查cookie存在，传输异常/冷启动分类不等业务无执行证明，未知执行状态/脚本权限仍需核，见 [Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02)。
+
+> **建议**：动作计划和目标/副作用/结果关联，显示未发/可能执行/已验证并测错tab与重复/恢复成本，未实现，见 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1182135360-dsh-plugin"></a>
 

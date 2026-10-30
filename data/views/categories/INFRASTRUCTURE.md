@@ -29,15 +29,13 @@
 | [DSH Connect WorkBuddy](#plugin-1349641014-root) | 把本机 WorkBuddy 账号模型接入 DSH，管理双区域模型、账号池与积分读数。 | [Q04](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q04) 先给非关键任务明确额度上限，比较手工换号和池的合格回答及消耗；被拒或费用不清回官方客户端。 |
 | [DSH Desktop](#plugin-1333321333-root) | 独立社区Windows/macOS桌面客户端，将固定DeepSeek Harness运行时与窗口、配置及更新组合。 | 先在新用户数据目录/可恢复profile试用社区包，核channel/runtime及访问开关，验证启动/切换/禁用恢复后再接主数据。 |
 | [DSH Market](#plugin-1333807290-root) | 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 | 维护多个社区插件的DSH用户可先在克隆profile中试用安装和备份流程。 |
+| [DSH Plugin Hub](#plugin-1340244547-root) | 在 DSH 设置中浏览远端社区目录，并排队执行本机 dsh/npm 安装、更新和卸载，显示日志及重启状态。 | 来源/构建许可先审，再隔离profile少量固定目标；现建议观察，见 [Q03](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q03)。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集DSH插件候选、归并兼容性记录，提供分类目录、静态JSON和可浏览站点。 | [Q05](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q05)建议目录维护者先作为只读发现数据试用，固定完整提交读取并校验，缓存失败保留旧版本日期。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [DSH XD Pool](#plugin-1356951582-root) | 将自有 WorkBuddy 多账号与可选渠道接入 DSH，按额度和失败分类换号，并提供路由与网关。 | 有限试主池，使用自有账号、非敏感任务，默认关闭网关/积分/额外链路，核实际状态后再扩。 |
 | [DSH 订阅模型适配插件](#plugin-1333964468-root) | 将 ChatGPT、Claude、Grok、Copilot 与 Antigravity 订阅接为 DSH 模型供应商 | 先单账号单供应商、关闭池和额外媒体工具，非敏感任务核对流式、工具、额度与logout。 |
-| [dsh-almost-full-access](#plugin-1336031182-root) | 为 DSH 增加近全权限预设，以命令规则、子代理和用户审批门控部分 shell 执行。 | 重要环境不推荐；仅隔离虚拟机作安全研究原型，修补强制边界并经独立验证后重评。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
-| [dsh-anet](#plugin-1302597978-deploy-plugins-dist-dsh) | 通过本地anet节点把DSH接入AgentNetwork，提供MCP及委派、状态与设置Skill入口。 | 建议观察，先关闭自动安装并固定审阅节点与策略，再由操作者确定受控试用范围；具体缺口和决策见 [Q05](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md#research-q05)。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
-| [dsh-armory](#plugin-1413052822-root) | 整合DSH的MCP、Skill、专家和插件管理，提供市场入口、安装来源与工具使用账本。 | 建议隔离profile先验证非关键组件的安装、更新、卸载和重启，保留配置及技能备份；不按零调用直接禁用应急能力。 |
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
 | [dsh-commandcode-provider](#plugin-1334118559-root) | 将 Command Code 模型、账户和配额信息接入 DSH 的非官方供应商插件 | [Q04](../../plugins/mars-sea--dsh-commandcode-provider/INSIGHT.md#research-q04) 已有账户者可在独立profile先做小额对话与取消测试；失败归属不清或费用异常时停止自动重试并回官方客户端。 |
@@ -46,11 +44,10 @@
 | [dsh-deepseek-web-login](#plugin-1364181676-root) | 以网页版登录态向 DSH 提供 DeepSeek 模型，桥接流式回答、图片和提示词工具调用。 | 先观察。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。 | 仅隔离网络、低风险动作且设备端认证明确时观察；危险动作须先审共享库及设备实现。 |
 | [dsh-gov](#plugin-1336647931-root) | 为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。 | 观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。 |
-| [dsh-integration-settings](#plugin-1429103083-root) | 在 DSH 设置页管理 MCP 服务器、配置网关，并同步模型清单与声明的思考档位。 | 只在可恢复的本地单用户profile先试手动导入与同步，先停调度并保留三类文件原件。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
 | [dsh-model](#plugin-1410395082-root) | 整合模型来源、统一API中转、组合切换和每日签到，并提供DSH管理界面与命令行。 | 先在非关键任务核对单来源工具/图像兼容，再加入能力相近的combo；检查流中断和卸载残余后限定试用。 |
-| [dsh-model-auto-enricher](#plugin-1425159954-root) | 按模型名称规则批量补齐 DSH 上下文、输出、图片与推理配置并默认自动写盘。 | 默认不推荐自动模式。 |
+| [dsh-model-auto-enricher](#plugin-1425159954-root) | 按名称规则批量补齐DSH模型配置，提供预览、自动写入、备份和停用入口。 | 不推荐默认自动；只读/复制profile研究不等真实渠道可靠采用。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。 |
 | [dsh-model-info-fill](#plugin-1358816037-root) | 从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。 | 先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。 |
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | 先在隔离端口登记已有服务、保存参数并核对测速口径。 |
@@ -118,6 +115,7 @@
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。 | 只在隔离桌面试用，指定私有输出目录并手工核 PNG/残留；敏感窗口需额外授权。 |
 | [dsh-wsl-wslconfig](#plugin-1351854461-root) | 读取推断路径下的Windows.wslconfig前段并给网络/内存提示，不能据此确认实际生效模式。 | 确定目标路径/原文安全后只作线索试用，空字段先核错误。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
+| [DSHBox](#plugin-1336708336-root) | 在 Android 中集成 PRoot/Debian、Node 与 DSH 运行时、WebView、终端和文件工作区，并附浏览器与手机助手适配。 | 备用兼容设备测试资料先启动/文件/终端，再单核Browser/Pilot，不以数量代验收，见 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。 |
 | [EchoBird](#plugin-1158472225-root) | 桌面AI工具管理器，提供账号与模型配置、安装管理、本地模型和多候选路由入口。 | [Q04](../../plugins/edison7009--echobird/INSIGHT.md#research-q04)、[Q05](../../plugins/edison7009--echobird/INSIGHT.md#research-q05)建议能恢复配置的用户只用少量已知provider在非关键任务试路由，先核对协议和有状态续接。 |
 | [Enterprise Connection](#plugin-1363739656-packages-enterprise-connection) | 以固定版本捆绑企业身份与协作依赖的 WorkDSH 安装壳，安装代码后仍须后台验证企业账号权限。 | 观察为主，已有公司测试后台和对应Desktop才验证包与账号全链；不把它推荐为独立通用企业插件，见 [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03)。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
@@ -126,15 +124,16 @@
 | [mem9](#plugin-1175756746-root) | 为多 Agent 和多机器提供服务端持久记忆、混合检索及多运行时接入。 | 建议有共享需求的团队限定隔离空间、先关闭自动ingest，用少量人工确认非敏感事实试用读写更正删除；隔离或传播不明即退回项目文档。 |
 | [Mirage](#plugin-1231135337-root) | 通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。 | 构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。 | 需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。 |
+| [Open Managed Agents (OpenMA)](#plugin-1206555053-root) | 自托管 Agent 控制面与执行基础设施，组合会话持久化、模型 harness、工具、沙箱、确认和恢复，提供多种 API 与部署适配。 | 先观察并准备单组合隔离测试任务与模拟外部服务，达到权限/恢复/退出对账再扩大，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。 |
 | [opencode2dsh](#plugin-1350368388-packages-plugin) | 把 OpenCode Zen 模型注册为 DSH 原生供应商，提供目录刷新、流式适配和可选网络及本机委派。 | 先观察。 |
 | [OpenViking 上下文数据库](#plugin-1128123594-root) | 以文件系统组织 Agent 的知识、记忆和技能，并提供分层检索 | 有平台运维能力的团队限定非敏感语料试用，先验证原文追溯与关键变更，再比较简单文件搜索。 |
 | [Our Free Model](#plugin-1385896447-root) | 在 DSH 中统一多渠道模型目录、组合降级与本地兼容网关的插件 | 愿管理渠道的个人开发者在可信源码环境先单车道脱敏试用，保持LAN关闭；真实渠道/数据规则不清、重复副作用或恢复状态不明时停止并回已知官方endpoint。 |
-| [plugin-usage-billing](#plugin-1363429979-plugin-usage-billing) | 从DSH会话usage建立按日/模型/项目的估价账本，展示预算、价目来源与未计价状态。 | 先观察，先核provider口径与锁价，日志估价不用于结算/硬预算，保留快照再对账。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [SandBase Harness](#plugin-1297278222-root) | 本地优先的 Agent 运行时，管理持久会话、工具、记忆、凭据、审计与控制台 | [Q04](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q04) 建议先观察，只用可信只读输入评估会话回收与产物接口；报告不绑定固定提交或结果未知时停止并回到单次脚本加人工验收。 |
+| [Tingly Box](#plugin-1100971867-root) | 独立统一模型网关，为多客户端和团队提供协议转换、模型选路、凭据与团队 key 管理，以及请求路径和用量观察。 | 熟悉凭据/规则的管理员可localhost隔离渐进小样；身份/协议/规则不符、scope或DSH部分写不明时停扩流/自动配置，核attempt和文件、退原endpoint/副本。 |
 | [Treg](#plugin-1301657572-root) | 提供统一Agent工具目录、服务端凭据注入、API中继和调用计费管理。 | 需要多供应商API或团队凭据共享的开发者可先用非敏感只读任务和明确小预算试用Treg。 |
+| [Usage Billing](#plugin-1363429979-plugin-usage-billing) | 从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。 | 先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。 |
 | [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
-| [zcode-usage-stats](#plugin-1368192539-root) | 在 DSH 设置页展示全历史会话 Token 用量与模型/日期趋势的本地统计面板。 | 可作为本地趋势观察，财务或预算决策前必须核源事件、完整率和账单口径。 |
 | [元冰可 · 企业 AI 资源管理平台](#plugin-1416699252-root) | 以插件化控制平面统一管理企业 MCP、Skill、Agent、AI 应用、身份、审计与用量。 | 观察；有平台团队、真实匿名案件和恢复责任人后，从一种资源建立闭环，暂不全栈生产铺开。 |
 
 <a id="plugin-1428034710-root"></a>
@@ -409,6 +408,22 @@
 
 [查看完整分析](../../plugins/dsh-market--dsh-market/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1340244547-root"></a>
+
+## [DSH Plugin Hub](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md)
+
+[![GitHub ★ 386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dshplugin/dsh-plugin-hub) [![npm 30d 32,564](https://img.shields.io/static/v1?label=npm+30d&message=32%2C564&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin)
+
+> **用途**：需要在DSH内找和管理社区插件的用户，减少查目录/切终端，见 [Q01](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q01)。
+
+> **亮点**：将发现、真实任务/日志与加载/重启提示集中，见 [Q01](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q02)。
+
+> **思考**：来源flag参与开关绕过而非独立目录证明，构建限制失败会自动写allowBuilds重试；安装成功不等可信且有效，见 [Q02](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q02)。
+
+> **建议**：绑定身份/固定包版本与可见安装变更计划，服务端复算来源和构建许可，测错误/恢复时间，未实现，见 [Q03](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1323404274-root"></a>
 
 ## [DSH Plugin Radar](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md)
@@ -473,22 +488,6 @@
 
 [查看完整分析](../../plugins/v1ki--dsh-plugin-subscriptions/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1336031182-root"></a>
-
-## [dsh-almost-full-access](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 820](https://img.shields.io/static/v1?label=npm+30d&message=820&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
-
-> **用途**：想减少工作区外可逆操作审批、保留危险命令确认的 Windows DSH 用户；安全交付须覆盖所有实际执行路径。详见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)。
-
-> **亮点**：将确定性命令分析、无工具子代理审查和会话审批 UI 接成低摩擦权限原型；但这种应用层组合不能替代宿主的统一执行授权。详见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)。
-
-> **思考**：几处条件未满足时直接 next，而 preset 底层是 danger-full-access/approval never；remembered/LLM 缓存仅按 32 位命令哈希，GET queue 和 POST decide 无独立登录绑定。详见[Q02](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q02)、[Q03](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q03)。
-
-> **建议**：未验证方向是宿主统一强制授权、失败默认拒绝，强摘要+原文/会话/目录绑定审批记忆，路由绑定真实认证会话；以新工具、碰撞和服务故障夹具核未授权执行。详见[Q05](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1366089972-workspace-plugins-dsh-anatomy-panel"></a>
 
 ## [dsh-anatomy-panel](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/INSIGHT.md)
@@ -505,22 +504,6 @@
 
 [查看完整分析](../../plugins/1420079678-ctrl--agent-body--workspace-plugins-dsh-anatomy-panel/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1302597978-deploy-plugins-dist-dsh"></a>
-
-## [dsh-anet](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md)
-
-[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ANetResearch/ANet)
-
-> **用途**：适合有明确跨节点委派与验收流程的操作者，节点在线不等任务办结。CLI替代与能力归属见 [Q01](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md#research-q01)。
-
-> **亮点**：减少MCP/命令的身份和程序分歧，并避免复制运行指南；节点A2A/加密/结算贡献归节点而非bundle。见 [Q01](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md#research-q01)。
-
-> **思考**：固定bundle不固定自动下载的安装器与节点版本，提示规则不等底层支付/入站控制；公共hub加入和持久身份须单独核查。见 [Q03](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md#research-q03)。
-
-> **建议**：未验证假设为任务绑定运行时能力/二进制与策略版本证明，改善跨Agent复现；版本矩阵对照与否定条件见 [Q05](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/anetresearch--anet--deploy-plugins-dist-dsh/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1346196699-root"></a>
 
 ## [dsh-api-dashboard](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md)
@@ -536,22 +519,6 @@
 > **建议**：可研究绑定价格版本/档位/usage来源的估算收据与明确缺价，让余额/配额/成本单位分离并按账单对照。当前未验证。详见[Q06](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1413052822-root"></a>
-
-## [dsh-armory](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
-
-[![GitHub ★ 24](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/2026heshao/dsh-armory) [![npm 30d 459](https://img.shields.io/static/v1?label=npm+30d&message=459&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-armory) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-armory)
-
-> **用途**：适合已有多组件管理负担的DSH用户；管理对象正确、作用域清楚且可恢复才算合格。原生/手工基线见 [Q01](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q01)。
-
-> **亮点**：相对手改配置与分散市场，增加统一生命周期、来源识别和观测反馈；fork归属和上游管理能力须保留。见 [Q01](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q01)。
-
-> **思考**：清单摘要与零调用指标不能当可信放行；更新先删旧后换入、时间兜底和同名投影都有限制。见 [Q03](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q03)。
-
-> **建议**：未验证假设为可恢复Skill更新事务，保留旧版并显式提交状态；故障矩阵、比较指标与否定条件见 [Q05](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/2026heshao--dsh-armory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1349267122-root"></a>
 
@@ -681,22 +648,6 @@
 
 [查看完整分析](../../plugins/863683348--dsh-gov/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1429103083-root"></a>
-
-## [dsh-integration-settings](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md)
-
-
-
-> **用途**：本地DSH管理员可在设置页处理MCP与网关配置，最终仍须以正确profile可加载且代表任务成功验收。见[Q01](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q01)。
-
-> **亮点**：把MCP JSON导入和网关模型差异审阅接入设置页，提供明确的手改配置替代路径；收益取决于最终加载和恢复验收。见[Q01](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q01)至[Q03](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q03)。
-
-> **思考**：网关广告不是逐档能力验证，非空少报仍会删模型，MCP和定时任务的分步写入也不是共同事务；因此自动配置成功不能代替实际可用与可恢复。见[Q02](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q02)至[Q04](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q04)。
-
-> **建议**：可检验绑定原文件摘要、延迟模型删除与跨文件提交进度的配置计划，观察它是否降低误删和恢复成本；尚未实现或验证。见[Q06](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md#research-q06)。
-
-[查看完整分析](../../plugins/2384418321--dsh-integration-settings/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1366370702-root"></a>
 
 ## [dsh-llm-balance](../../plugins/aliengene--dsh-llm-balance-siderbar/INSIGHT.md)
@@ -749,15 +700,15 @@
 
 ## [dsh-model-auto-enricher](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/66rapper/dsh-model-auto-enricher)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/66rapper/dsh-model-auto-enricher)
 
-> **用途**：维护大量 DSH 模型渠道的用户减少逐项配置工作。
+> **用途**：维护大量渠道模型的重复配置，合格结果看真实请求和可恢复配置而非字段数。见[Q01](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q01)。
 
-> **亮点**：把重复模型字段配置和状态展示集中化，减少人工点击；仅改变本地配置，不扩展供应商实际能力。详见[Q01](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q01)、[Q02](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q02)。
+> **亮点**：集中批量diff、四字段补齐、预览/备份和状态，降低入口切换；不扩展服务端能力。见[Q01](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q01)、[Q02](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q02)。
 
-> **思考**：未知模型默认1M/图片/思考，且启动自动巡检会直接备份并覆盖 YAML；只升不降不等于安全，备份也不保护并发写。详见[Q03](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q03)。
+> **思考**：2.3.0虽加例外/白名单，未知仍1M/image且默认自动直接写，无源版本保护，值真实性和恢复未闭环。见[Q02](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q02)、[Q03](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q03)。
 
-> **建议**：默认保守、逐项可审 diff 与能力来源，配 CAS/原子替换；用真实模型/并发矩阵比较误配置与省时，现版未实现。详见[Q04](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q04)。
+> **建议**：保守未知、逐项来源批准与原件身份/版本安全发布，是否减少误赋能和总核验成本待验证。见[Q05](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/66rapper--dsh-model-auto-enricher/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1833,6 +1784,22 @@
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-zspace/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1336708336-root"></a>
+
+## [DSHBox](../../plugins/wsk-build--dshbox/INSIGHT.md)
+
+[![GitHub ★ 351](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=351&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/WSK-build/DSHBox)
+
+> **用途**：希望手机使用DSH、避免手搭Termux环境的Android用户；本地DSH不等本地模型推理，见 [Q01](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q01)。
+
+> **亮点**：集成启动、当前token刷新、分层数据和移动交互，减少环境拼接，见 [Q01](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q01)。
+
+> **思考**：PRoot/共享与Android授权非安全VM，自动化全执行链未穷核，后台/更新和真实数据恢复未验，见 [Q02](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q02) 与 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。
+
+> **建议**：分层健康+可恢复任务检查点，对照手搭测休眠/升级/撤权后资料与任务恢复，未实现，见 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/wsk-build--dshbox/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1158472225-root"></a>
 
 ## [EchoBird](../../plugins/edison7009--echobird/INSIGHT.md)
@@ -1961,6 +1928,22 @@
 
 [查看完整分析](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1206555053-root"></a>
+
+## [Open Managed Agents (OpenMA)](../../plugins/openma-ai--open-managed-agents/INSIGHT.md)
+
+[![GitHub ★ 342](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=342&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/openma-ai/open-managed-agents)
+
+> **用途**：需要自行管理Agent会话、执行环境和恢复的团队；使用范围须固定harness/部署/存储合同，见 [Q01](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q01)。
+
+> **亮点**：会话/执行环境/harness分层，真工具循环、领取续租和可配置确认成为托管执行基础，见 [Q01](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q01) 与 [Q02](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q02)。
+
+> **思考**：持久租约非外部动作exactly-once；缺省许可可allow、确认/共享sandbox/凭据隔离依配置，API与云合同不同，见 [Q02](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q02)。
+
+> **建议**：动作ID/许可/后置证据连接租约、事件与检查点，接手先对账，测故障重复/遗漏和总成本，未实现，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/openma-ai--open-managed-agents/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1350368388-packages-plugin"></a>
 
 ## [opencode2dsh](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md)
@@ -2009,22 +1992,6 @@
 
 [查看完整分析](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1363429979-plugin-usage-billing"></a>
-
-## [plugin-usage-billing](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
-
-[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,475](https://img.shields.io/static/v1?label=npm+30d&message=1%2C475&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
-
-> **用途**：维护者核对模型用量和费用估算，要求计量、提供商价格、历史与unknown可解释。
-
-> **亮点**：把usage、价格快照、历史估算与unknown分开并提供分维度视图，增量在可解释聚合而非生成真实provider账单。详见[Q01](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q01)与[Q02](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q02)。
-
-> **思考**：峰谷倍率无provider限定、同名价可跨provider兜底，当前alias重折可覆盖旧ID费用；写时锁价不等所有配置变化下历史不可变。详见[Q02](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q02)。
-
-> **建议**：可探讨provider计价契约和锁价收据，绑定usage schema/规则/FX，旧行普通重折保留，重估明确修订；维护和迁移成本未验证。详见[Q05](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1333357514-root"></a>
 
 ## [Qiushi DSH Evidence Audit](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
@@ -2057,6 +2024,22 @@
 
 [查看完整分析](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1100971867-root"></a>
+
+## [Tingly Box](../../plugins/tingly-dev--tingly-box/INSIGHT.md)
+
+[![GitHub ★ 370](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=370&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tingly-dev/tingly-box)
+
+> **用途**：为需接多个模型/客户端的个人或管理员，在统一入口管理规则、scope和用量，减少重复baseURL/key接线。见[Q01](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q01)。
+
+> **亮点**：把角色scope/分区亲和与异构failover/观察接成统一管理路径，有首chunk不混流和非global probe剥头等明确边界。见[Q02](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q02)、[Q03](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q03)。
+
+> **思考**：degrade可保不健康候选，首chunk后不重试、quota非硬财务限额、usage非全厂商扣费；DSH两文件备份直写非事务，团队全路径隔离未验。见[Q02](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q02)至[Q04](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q04)。
+
+> **建议**：未验证方向是在既有timeline/usage之上加政策版本/客户端语义核对，比较误scope/错路/消费未知和定位负担，现trace充分则否定。见[Q06](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/tingly-dev--tingly-box/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1301657572-root"></a>
 
 ## [Treg](../../plugins/superdesigndev--treg/INSIGHT.md)
@@ -2073,6 +2056,22 @@
 
 [查看完整分析](../../plugins/superdesigndev--treg/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1363429979-plugin-usage-billing"></a>
+
+## [Usage Billing](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md)
+
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/0x7A7A6572/dsh-forge-studio) [![npm 30d 1,937](https://img.shields.io/static/v1?label=npm+30d&message=1%2C937&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zzerx/dsh-plugin-usage-billing)
+
+> **用途**：维护者可看会话/项目/模型的日志用量与费用估算，合格结果需可解释计量和价差，见 [Q01](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q01)。
+
+> **亮点**：usage、snapshot、backfilled与priced分开并以稳定ID分片，方便解释历史估算和unknown，见 [Q01](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q01)。
+
+> **思考**：全局峰谷/跨provider同名兜底可能错价，当前alias重折可覆盖旧ID费用，写时快照不等历史不可变，见 [Q02](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q02)。
+
+> **建议**：提供商计量/合同/FX的不可变行收据，普通重折保旧、重估显式修订，以新夹具和授权对账证伪，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。
+
+[查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-403559729-root"></a>
 
 ## [Yao Agents](../../plugins/yaoapp--yao/INSIGHT.md)
@@ -2088,22 +2087,6 @@
 > **建议**：[Q08](../../plugins/yaoapp--yao/INSIGHT.md#research-q08)提出未验证的节点/workspace、预期产物与独立验收三联收据，分离运行结束和业务办结；用掉线、token终止及产物缺失对照误办结率和人工成本，若身份无法可信绑定或负担抵消收益则否定。
 
 [查看完整分析](../../plugins/yaoapp--yao/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1368192539-root"></a>
-
-## [zcode-usage-stats](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Amer-CN/zcode-usage-stats) [![npm 30d 157](https://img.shields.io/static/v1?label=npm+30d&message=157&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/zcode-usage-stats) [![最新发布 2026-09-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/zcode-usage-stats)
-
-> **用途**：个人/团队操作者查看模型消耗与活跃日，发现高用量时期；非账单结算。详见[Q01](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md#research-q01)。
-
-> **亮点**：把历史 Token 分布按时间和模型本地可视化，并对路由显式调用宿主信任栅栏。详见[Q01](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md#research-q01)。
-
-> **思考**：“全历史”扫描遇 deadline 可能只包含部分会话且仍 ok:true，总 sessionCount 未区分已处理数；费用与字段相加口径需核。详见[Q03](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md#research-q03)。
-
-> **建议**：未验证改进是部分统计显著标记、扫描完成数/中止、缓存 schema 指纹和账单对照。详见[Q05](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/amer-cn--zcode-usage-stats/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1416699252-root"></a>
 

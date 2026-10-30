@@ -1,18 +1,18 @@
-# dsh-message-ops
+# DSH Message Ops
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[d82f6de](https://github.com/240xu/dsh-message-ops/tree/d82f6de21683162ac7e83483536490a647f88ab5)
+源码版本：[75d798e](https://github.com/240xu/dsh-message-ops/tree/75d798ef0f015da242a721d3278430640b29b393)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/240xu/dsh-message-ops) [![npm 30d 5,171](https://img.shields.io/static/v1?label=npm+30d&message=5%2C171&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/240xu/dsh-message-ops) [![npm 30d 7,265](https://img.shields.io/static/v1?label=npm+30d&message=7%2C265&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@240xu/dsh-message-ops)
 <!-- END META -->
 
-> **功能**：为DSH Web提供消息回撤、单条遮蔽、文本恢复和会话回收站操作。
+> **功能**：为 DSH Web 提供消息级回撤、删除遮蔽和文本恢复，并提供会话回收站入口。
 
-> **亮点**：在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：按消息seq控制上下文及渐进文本恢复，保留append-only原日志；回收站是另种目录操作，不等业务补偿。见[Q01](#research-q01)。
 
-> **主要限制**：回撤不撤销现实副作用；live路径先记录全部恢复seq再逐条append，异常时可能出现进度与实际文本不一致，尚未故障注入复现。[Q03](#research-q03)
+> **主要限制**：live先在notice声明全部源seq再逐条append，中断可能进度与正文不符；回撤不撤外部动作，GET回收站列表也会永久清到期条目。见[Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,12 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 消息撤回、隐藏与恢复分别解决什么任务？](#detail-section-11)
-  - [Q02 · surface替换和恢复进度如何绑定原始事件seq？](#detail-section-12)
-  - [Q03 · 恢复是否会重放副作用，回撤是否等同业务撤销？](#detail-section-13)
-  - [Q04 · 宿主依赖、客户端流程和恢复成本如何？](#detail-section-14)
-  - [Q05 · 哪些状态设计可复用，哪些测试只证明局部？](#detail-section-15)
-  - [Q06 · 副作用收据与上下文回撤联动能否降低状态分叉，如何采用？](#detail-section-16)
+  - [Q01 · 谁需要哪种删除/恢复，实际入口和增量？](#detail-section-11)
+  - [Q02 · live/磁盘回撤与渐进恢复如何保持一致？](#detail-section-12)
+  - [Q03 · 回收站/认证/运行时有哪些边界？](#detail-section-13)
+  - [Q04 · 全周期成本、采用条件及可证伪方向？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合在长会话中控制模型可见文本并查回历史的人，操作前必须停止会话。
+> **用途**：希望控制长会话模型可见文本并按需恢复历史的人，修改前先停会话并留副本。见[Q01](#research-q01)。
 
-原生session/fork用于分支，手工复制/新会话可做简单替代；消息可见性控制与业务状态撤销是不同任务。
+复制消息到新会话/原生fork，导出与分支交宿主，不重建错误磁盘分支。见[Q01](#research-q01)。
 
 <a id="detail-section-3"></a>
 
@@ -53,64 +51,44 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 回撤/单条遮蔽 | 控制模型可见内容 | 不抹除原始日志，不撤销工具副作用 |
-| 恢复 | 追加被遮蔽消息文本 | 不重跑tool事件；需核对部分失败 |
-| 消息查询/搜索 | 查可见与被遮蔽文本 | Web鉴权和会话格式依赖 |
-| 会话回收站 | 移走/恢复会话目录 | purge为另一类永久删除操作，未完整审计 |
+| 回撤/单条删除 | 控制模型可见范围 | 追加遮蔽，原日志仍在 |
+| 文本恢复 | 按源seq渐进新append | 不解除遮蔽/不重跑工具，进度失败窗口待验 |
+| 搜索/引用 | 读历史及已遮蔽文本 | 认证/格式/日志可读 |
+| 会话回收站 | 移动/恢复目录元数据 | 7天保留，GET列表也清到期内容 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=23.5与DSH Web运行时 | 必需 | zstd日志和客户端 | 无法保证加载 |
-| 空闲会话及兼容surface格式 | 写操作必需 | seq操作与恢复 | 运行中409，协议不匹配可拒绝 |
-| BrowserAuth | 有credentials时必需 | Web访问 | 缺失/不可读401 |
+Node/宿主格式、停止会话、写目录与可重载备份必需；表见[Q04](#research-q04)。
 
-#### 启动步骤
+副本上选seq回撤/分段恢复，重载对照实际文本/进度和外部状态，关键故障先停写；步骤见[Q04](#research-q04)。
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户备份并停止会话 | 原会话可重载 |
-| 操作 | 面板选seq并确认 | 返回范围、计数与进度 |
-| 验收 | 核对重载文本与实际工作区 | 不一致则停用，保留日志副本 |
+**效果与成本**
 
-#### 成本
+日志/备份、停会话、选择和补偿负担未知，回收站期限与恢复一致性增加复核；表见[Q04](#research-q04)。
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 本地存储和备份，金额未知 | 核对Node/宿主、备份会话 | 日志格式兼容需确认 |
-| 持续 | 日志增加与索引扫描 | 停会话、选seq、核对副作用 | 无合格恢复耗时 |
-| 失败恢复 | 会话副本与重复追加 | 比较进度、文本、工作区并人工补偿 | 部分append失败一致性未测 |
+上下文控制和源seq进度有源码，不等业务撤销或已证故障恢复；效果见[Q04](#research-q04)。
 
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 上下文控制 | surface遮蔽与消息文本重放 | 目标宿主重载兼容 |
-| 恢复进度 | 原seq排除重复 | 中途失败后的真实性 |
-| 业务撤销 | 不重放工具事件 | 不提供外部副作用补偿 |
-
-> **思考**：回撤不撤销现实副作用；live路径先记录全部恢复seq再逐条append，异常时可能出现进度与实际文本不一致，尚未故障注入复现。[Q03](#research-q03)
+> **思考**：live先在notice声明全部源seq再逐条append，中断可能进度与正文不符；回撤不撤外部动作，GET回收站列表也会永久清到期条目。见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：在append-only会话上提供按seq控制上下文和渐进恢复的用户流程，避免重复实现原生分支；恢复不是解除遮蔽。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：按消息seq控制上下文及渐进文本恢复，保留append-only原日志；回收站是另种目录操作，不等业务补偿。见[Q01](#research-q01)。
 
-原seq集合比单一恢复开关更可审计，live日志补算减少落盘窗口漂移；notice先写与逐条append仍非事务，失败闭合窗口不能代替状态回滚。[Q02](#research-q02)、[Q03](#research-q03)
+源seq进度、live日志优先与合成窗口闭合可借鉴；notice先写/flush吞错、宿主格式耦合及回收站多状态需分别验收。见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-回撤不撤销现实副作用；live路径先记录全部恢复seq再逐条append，异常时可能出现进度与实际文本不一致，尚未故障注入复现。[Q03](#research-q03)
+live先在notice声明全部源seq再逐条append，中断可能进度与正文不符；回撤不撤外部动作，GET回收站列表也会永久清到期条目。见[Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先保留可重载的会话备份，验证回撤、分步恢复、中断和重载均一致，再考虑限定试用；涉及已执行工具的区间必须另外核对现实状态。[Q06](#research-q06)
+保持观察，确有需求者先在可重载副本验证渐进/中断恢复；正文缺失、重载或现实状态不符时停止追加，保留现场并从副本核对，不靠盲重试。见[Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +96,18 @@
 
 **核查状态**：已检查源码。
 
-遮蔽及文本重放机制有源码支持；部分失败后的进度一致性存在待验证风险；副作用收据与后置确认方案未验证。
+固定源码支持遮蔽/恢复、认证和回收站机制，live关键失败一致性未排除。本轮观察；未运行，确认后进度和副作用收据是假设。
 
-- 已检查：作者 README、包清单、源码路径 src/index.js、src/ops-core.js、README.md、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、README.md、cordis.patch.yml、src/index.js、src/ops-core.js、src/session-trash.js、src/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查消息恢复核心、服务端围栏、包声明和作者用法；未完整审计客户端、回收站和宿主引擎，不把消息恢复等同工具副作用回滚。
-- 下一步：可进一步对live第N次append、flush和重载故障做隔离注入，对照恢复notice的原seq集合与实际新事件。
+- 边界：复核旧六题、全部findings/证据版本与自身code依赖。当前核Host/客户端入口、surface与live/disk恢复及进度、HTTP认证、会话回收manifest/元数据/到期清理；未通读宿主引擎/全部client或执行目标。
+- 下一步：后续副本故障矩阵核第N条append/flush/write、重载和外部文件，回收另验移动/元数据失败及到期列表；普通加载留授权环境。
 
 **分析版本**
 
 - **仓库**：[240xu/dsh-message-ops](https://github.com/240xu/dsh-message-ops)
-- **版本号**：0.11.5（[固定提交 d82f6de](https://github.com/240xu/dsh-message-ops/tree/d82f6de21683162ac7e83483536490a647f88ab5)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.11.8（[固定提交 75d798e](https://github.com/240xu/dsh-message-ops/tree/75d798ef0f015da242a721d3278430640b29b393)）
+- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +115,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是回撤前生成副作用收据，并在成功append后提交恢复进度；用带外部写入及中断的会话副本检验状态分叉和重复动作。[Q06](#research-q06)
+未验证方向为成功接受/持久确认后提交逐条进度，加回撤副作用收据；用副本中断/文件写入对照分叉、漏恢复和人工时间，收益不足则否定，不当自动补偿。见[Q04](#research-q04)。
 
-可进一步对live第N次append、flush和重载故障做隔离注入，对照恢复notice的原seq集合与实际新事件。
+后续副本故障矩阵核第N条append/flush/write、重载和外部文件，回收另验移动/元数据失败及到期列表；普通加载留授权环境。
 
 <a id="detail-section-9"></a>
 
@@ -152,100 +130,383 @@
 |---|---|---:|---:|---:|---:|---:|
 | .mjs | source | 1 | 269 | 214 | 38 | — |
 | .md | source | 1 | 832 | — | — | 11226 |
-| .js | source | 5 | 6075 | 4591 | 1297 | — |
-| .js | test | 25 | 3970 | 3060 | 566 | — |
+| .js | source | 5 | 6143 | 4640 | 1316 | — |
+| .js | test | 27 | 4138 | 3203 | 572 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/240xu/dsh-message-ops/issues) 查看。
+[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/240xu/dsh-message-ops/issues?q=is%3Aissue+is%3Aopen)
+
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-10-29。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核对消息遮蔽与重放的实际语义、恢复一致性和采用边界。
+**插件研究总目标**：消息遮蔽/恢复的日志一致性、会话回收与现实副作用边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 消息撤回、隐藏与恢复分别解决什么任务？
+### Q01 · 谁需要哪种删除/恢复，实际入口和增量？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标是用户在长会话中不再把某段内容送入模型上下文，或找回被遮蔽的消息文本。回撤隐藏指定点及后续，单条删除只遮蔽一个节点；恢复追加文本副本，而非撤销遮蔽标志。相对手工重开会话或复制消息，增量是按seq定位、面板预览和恢复进度；分支与导出明确交给宿主原生能力。合格交付应同时核对模型可见内容和原始日志仍可加载，不能把UI消失当数据被彻底删除。
+这是原生DSH Web插件，Host apply注册消息和会话回收站HTTP路径，并在tools服务可用时动态注册消息操作工具；client把会话头、消息动作和输入框回撤贴条接宿主slots。工具依赖不满足只警告并保留HTTP面，不能把看见按钮当所有入口都已启用。真实entry_type为plugin。
+
+目标是长会话中希望某段内容不再送进模型、又想按需找回历史文本的人。基线是复制有用消息到新会话，或使用原生fork另开分支。增量是按seq（原日志事件序号）选回撤区间/单条、标注可见性与恢复进度，原生fork/导出继续由宿主承担，避免再造另一套边界语义。
+
+三种“删除/恢复”不能混用。消息revert/delete追加surface replace标记来遮蔽模型上下文，原日志保留且可搜索；恢复是追加user/assistant文本副本，新事件有新seq，不是解除旧遮蔽。整会话delete则把目录/元数据移回收站，purge或到期清理才永久移除副本。无论哪种都不自动撤销原工具写的文件、已发请求或现实副作用。合格结果要同时核模型可见内容、日志重载与现实状态，而非只看UI行消失。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:20-36](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/README.md#L20-L36)
+**依据 1 · 源码核查**：[package.json:21-46](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/package.json#L21-L46)
 
-作者限定补充的消息能力与原生能力分工。
+Host/client与bundle声明。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-## 官方没有、本插件提供的
-
-| 能力 | 官方 dsh 0.2.0-rc.2 | 本插件 |
-|---|---|---|
-| **消息回滚**（遮蔽该条及其后全部内容） | ❌ 没有。`SurfaceOp` 只有 `append\|replace`，**没有解除遮蔽的操作**；`undo` 仅指草稿编辑器的 Ctrl+Z | ✅ |
-| **单条删除** | ❌ 没有。官方 README 明文 *"sessions can be archived but never deleted"* | ✅ |
-| **恢复**（撤销一次回滚/删除） | ❌ 没有 | ✅ |
-
-## 为什么不重复造轮子（0.9.0 的取舍）
-
-- **分支** → 官方有完整实现：RPC `session/fork`（`atSeq` 任意）+ `SessionStore.fork()`
-  + UI 消息级按钮 + 官方埋点就叫 `branch_session_click`。
-  本插件原先还有一个磁盘实现（`applyBranch`）作为「官方失败时的回落」，但它语义是错的：
-  删掉了 `isSeeded`（官方 fork 设 `true`）、不写 `inheritedEventCount`、
-  也不补 fork closers → 产出的子会话边界可能悬空。**已删除**，失败时直接提示停止运行中的会话。
-- **Markdown 导出** → 官方 `/api/session.export` 提供 ZIP 归档（原始 JSONL + 附件，面向迁移/复现）。
-  格式确实不重叠，但本插件的导出**零 UI 入口**（实测路由可用但前端从不调用），等于死代码。**已删除**。
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./session-file": "./src/session-file.js",
+    "./package.json": "./package.json",
+    "./ops-core": "./src/ops-core.js"
+  },
+  "engines": {
+    "node": ">=23.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node --check src/client.js && node --test \"test/*.test.js\""
+  },
+  "peerDependencies": {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/ops-core.js:12-20](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L12-L20)
+**依据 2 · 源码核查**：[src/index.js:890-918](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L890-L918)
 
-源码说明append-only下的恢复语义。
+容错注册模型工具。
+
+<details>
+<summary>查看原文（29行）</summary>
 
 ```text
- * 引擎能力查证（来自安装的运行时 @deepseek-ai/dsh-session/lib/types/surface.js）：
- *   - SurfaceOp 只有 'append' 与 'replace' 两个变体，不存在「解除遮蔽」
- *     操作；surface replace 是 append-only 的永久遮蔽。
- *   - 运行时引擎的 replace 形状是 { op:'replace', startSeq, endSeq }
- *     （dsh-src 仓库较新副本已改名为 start/end；本插件面向安装的运行时，
- *     写入用 startSeq/endSeq，读取端两种拼写都兼容以便前向迁移）。
- *   - 因此「回滚恢复」只能实现为「重放」（replay）：把被遮蔽区间的
- *     user/assistant 消息文本重新 append 为新事件（0.6.0：干净文本无前缀，对齐 opencode），
- *     而不是取消遮蔽。语义差异见 README。
+function registerToolTolerantly(ctx) {
+  function tryRegister(targetCtx) {
+    const tools = targetCtx.get("tools");
+    if (!tools || typeof tools.register !== "function") return false;
+    // 动态 import：包缺失时只跳过工具，不拖垮插件的 HTTP 面。
+    import("@deepseek-ai/dsh-tools")
+      .then(({ defineTool }) => {
+        const ops = {
+          list: (c, id) => opsList(c, id),
+          revert: (c, id, seq) => opsCommit(c, "revert", id, seq),
+          delete: (c, id, seq) => opsCommit(c, "delete", id, seq),
+          restore: (c, id, seq, upToSeq) => opsRestore(c, id, seq, upToSeq),
+        };
+        tools.register(createMessageOpsTool({ defineTool, ops, ctx: targetCtx }));
+      })
+      // 0.9.0：不再静默吞错。原先 catch(() => {}) 让「工具注册成功与否」完全无从诊断
+      // （实测日志里 defineTool / ERR_MODULE_NOT_FOUND 零命中）。
+      .catch((e) => {
+        console.warn('[message-ops] defineTool 注册失败，工具不可用（其余功能不受影响）:', e && (e.code || e.message) ? (e.code || e.message) : e)
+      });
+    return true;
+  }
+  if (tryRegister(ctx)) return;
+  ctx.inject(["tools"], (sub) => { tryRegister(sub); });
+}
+
+// ---------------------------------------------------------------------------
+// 插件入口：HTTP 路由 + 容错工具注册
+// ---------------------------------------------------------------------------
 ```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.js:920-947](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L920-L947)
+
+真实HTTP入口。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+export function apply(ctx) {
+  // 诊断（0.5.4 调试）：会话状态服务解析情况
+  try {
+    const names = ["sessions", "agents", "sessionController", "sessionList", "session-manager"];
+    const parts = names.map((n) => { const v = ctx.get(n); return n + "=" + (v == null ? String(v) : typeof v); });
+    const ses = ctx.get("sessions");
+    const hasList = ses && ses.list != null;
+    const hasSnap = hasList && typeof ses.list.getSnapshot === "function";
+    console.log("[message-ops] session services: " + parts.join(" ") + " | sessions.list=" + hasList + " getSnapshot=" + hasSnap + (ses ? " keys=" + Object.keys(ses).slice(0, 12).join("|") : ""));
+  } catch (e) { console.log("[message-ops] probe failed: " + e); }
+  function registerHttp(host, targetCtx) {
+    // --- GET /api/message-ops/messages：消息列表（只读） ---------------------
+    targetCtx.effect(() => host.register({
+      kind: "exact",
+      path: "/api/message-ops/messages",
+      handler: async (req, res) => {
+        if (req.method !== "GET") return sendJson(res, 405, { ok: false, error: "method not allowed" });
+        if (!(await fence(targetCtx, req, res))) return;
+        try {
+          const url = new URL(req.url, "http://localhost");
+          return sendJson(res, 200, await opsList(targetCtx, url.searchParams.get("sessionId") || "", {
+            compact: url.searchParams.get("view") === "compact",
+          }));
+        } catch (err) {
+          return sendJson(res, err instanceof OpsError ? err.status : 500, { ok: false, error: String(err && err.message ? err.message : err) });
+        }
+      },
+    }), "dsh-message-ops: messages route");
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/client.js:3109-3147](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/client.js#L3109-L3147)
+
+宿主slot入口。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+    function apply(ctx) {
+      __sessionsSvc = ctx.get('sessions')
+      __uiWorkspace = typeof ctx.get === 'function' ? ctx.get('uiWorkspace') : null
+      if (!__uiWorkspace) {
+        try { ctx.inject(['uiWorkspace'], (sub) => { __uiWorkspace = sub.uiWorkspace || sub }) } catch { /* 0.1.x 无此服务 */ }
+      }
+      if (!__sessionsSvc) {
+        ctx.inject(['sessions'], (sub) => { __sessionsSvc = sub.sessions })
+      }
+      registerUndoSlash(ctx)
+      adoptLocale(ctx.get('locale'), ctx)
+      if (!__locale) {
+        ctx.inject(['locale'], (sub) => {
+          adoptLocale(sub.locale, ctx)
+          refreshSidebarOpsLabel()
+        })
+      }
+      ctx.on('locale/change', refreshSidebarOpsLabel)
+      if (window.__MOPS_DISABLE_HEADER !== true) ctx.slots.inject(SLOT, () => ctx.slots.register({
+        name: SLOT, id: ROW_ID, order: 31,
+        ...(__locale ? { locale: NS } : {}),
+      }, OpsButton))
+      // 0.3.0：每条 AI 消息旁的原生回撤按钮（0.1.x 无此槽，inject 自动 no-op）
+      ctx.slots.inject(CHAT_ACTIONS_SLOT, () => ctx.slots.register({
+        name: CHAT_ACTIONS_SLOT, id: CHAT_ACTIONS_ID, order: 20,
+        ...(__locale ? { locale: NS } : {}),
+      }, MsgSlotActions))
+      // 0.4.0：composer 上方回撤 dock（0.1.x 无此槽自动 no-op）
+      ctx.slots.inject(INPUT_DOCK_SLOT, () => ctx.slots.register({
+        name: INPUT_DOCK_SLOT, id: INPUT_DOCK_ID, order: 10,
+        ...(__locale ? { locale: NS } : {}),
+      }, RevertDock))
+      ctx.slots.inject(OVERLAY_SLOT, () => ctx.slots.register({
+        name: OVERLAY_SLOT, id: DIALOG_ID, order: 101,
+        ...(__locale ? { locale: NS } : {}),
+      }, window.__MOPS_LEGACY_DIALOG === true ? OpsDialog : OpsPanel))
+      installSidebarOps()
+      installUserRevertInjector()
+    }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/ops-core.js:377-417](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L377-L417)
+
+恢复只重放用户/助手文本，跳工具事件。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+  if (!Number.isSafeInteger(restoreSeq) || restoreSeq < 0) throw new OpsError("invalid seq", 400);
+  const ev = events.find((e) => e && e.seq === restoreSeq);
+  if (!ev) throw new OpsError(`restore: event seq ${restoreSeq} not found in log`, 404);
+  // 读取端拼写统一走 session-file 的 readReplaceOp（双拼写兼容的单点）。
+  const range = readReplaceOp(ev);
+  if (!range) {
+    throw new OpsError(`restore: seq ${restoreSeq} is not a revert/delete marker event (no well-formed replace surfaceOp)`, 409);
+  }
+  const { startSeq, endSeq } = range;
+  // 0.8.0 按轮步进：upToSeq 给定则只重放到该 seq（含），后续仍保持遮蔽；
+  // excludeSeqs = 已重放过（先前轮次 notice 的 restoredSourceSeqs 并集），
+  // **必须排除，否则每轮都从区间头重放 → 消息副本刷屏**（0.8.0 实测 B1）。
+  const cap = Number.isSafeInteger(upToSeq) ? Math.min(upToSeq, endSeq) : endSeq;
+  const excluded = Array.isArray(excludeSeqs) ? new Set(excludeSeqs.filter((q) => Number.isSafeInteger(q))) : null;
+  const replayable = [];
+  let skipped = 0;
+  for (const e of events) {
+    if (!e || typeof e.seq !== "number" || e.seq < startSeq || e.seq > cap) continue;
+    if (e.type === "user/message" || e.type === "assistant/message") {
+      if (excluded && excluded.has(e.seq)) continue;
+      const text = messageText(e);
+      if (!text.trim()) { skipped++; continue; }
+      replayable.push({
+        seq: e.seq,
+        type: e.type,
+        role: e.type === "user/message" ? "user" : "assistant",
+        text,
+        source: e.type === "assistant/message" && e.data && e.data.message
+          ? e.data.message.source
+          : undefined,
+      });
+    } else {
+      skipped++; // tool/call 等不可安全重放的事件：跳过并在结果里计数
+    }
+  }
+  // 0.5.6：区间无可重放消息（如只遮蔽了 tool/system 事件）不再 409 ——
+  // dock 会为这类标记常驻显示恢复按钮，409 死按钮 = 永远清不掉（实测 8 连 409）。
+  // 改为返回空计划：applyRestore 仍追加说明 notice（含 restoresSeq）→ 标记停用、
+  // dock 计数递减；语义如实：0 条重放 + 文案说明区间无 user/assistant 内容。
+  return { restoreSeq, startSeq, endSeq, upToSeq: Number.isSafeInteger(upToSeq) ? cap : endSeq, replayable, skipped };
+}
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/session-trash.js:275-306](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/session-trash.js#L275-L306)
+
+整会话不同的目录/manifest流程。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+export async function deleteSessionToTrash(ctx, sessionId, confirmTitle) {
+  if (!isSessionId(sessionId)) throw new OpsError("invalid sessionId", 400);
+  const dirs = findAllSessionDirs(sessionId);
+  if (dirs.length === 0) throw new OpsError("session not found", 404);
+  if (dirs.length > 1) throw new OpsError(`ambiguous session id: found ${dirs.length} directories`, 409);
+  if (agentRunning(ctx, sessionId)) throw new OpsError("session is running; stop it first", 409);
+
+  const meta = readMetadata(ctx, sessionId);
+  const title = titleOfRow(meta.projRow) || headerTitle(dirs[0].dir);
+  const expected = title || sessionId;
+  if (String(confirmTitle == null ? "" : confirmTitle).trim() !== expected) {
+    throw new OpsError(`title mismatch: type "${expected}" to delete`, 400);
+  }
+
+  const now = Date.now();
+  const trashId = `${now}-${randomUUID().slice(0, 8)}`;
+  const root = path.join(trashRoot(), trashId);
+  const rel = path.relative(sessionsRoot(), dirs[0].dir);
+  const dataRel = path.join("data", rel);
+  const manifest = {
+    version: 1,
+    trashId,
+    sessionId,
+    title: title || null,
+    state: "moving",
+    deletedAt: now,
+    expiresAt: now + TRASH_RETENTION_MS,
+    dirs: [{ rel, originalSlug: dirs[0].slug, originalName: dirs[0].name }],
+    ...meta,
+  };
+  writeManifest(root, manifest);
+
+```
+
+</details>
+
+#### 缺口
+
+- 目标用户的上下文控制收益与原生fork/复制对照不足
+  **影响**：有明确用途但不能称净节时或业务状态恢复
+  **进一步探讨**：用可丢弃长会话比较可见内容准确率、恢复回读与人工补偿时间。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · surface替换和恢复进度如何绑定原始事件seq？
+### Q02 · live/磁盘回撤与渐进恢复如何保持一致？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-服务端先验证sessionId/seq并拒绝运行中的会话，读取磁盘后优先使用live日志重建恢复计划。planRestore从回撤marker的replace范围筛选user/assistant消息，排除既有restoredSourceSeqs；tool/call等只计skipped，不重新执行工具。live路径在合成turn/step里append恢复notice及消息并对齐游标；store-miss磁盘路径把preamble、notice、replay和postamble作为一批追加。恢复进度由原事件seq建立，而新事件拥有新seq，因此文本接续与原始执行历史仍需区分。
+写操作先校sessionId/seq并拒绝running会话；优先acquire live session，从live日志重建计划，避免仅落盘读到旧尾。回撤按surface节点规划replace范围，使用承载system说明的合成turn/step和source/provenance字段让宿主校验，不直接改写旧日志。兼容依赖这些宿主surface/日志/turn约定，不能只因Node能读文件就认为所有宿主支持。
+
+恢复plan从原marker的replace范围取非空user/assistant文本，按upToSeq限制，并排除各notice已声明的restoredSourceSeqs。工具事件只计skipped不执行，因此恢复动作本身不重跑旧工具；但新模型看恢复文本后仍可能再次决定执行外部动作，用户需核现实状态。discard则只停用标记、不重放，不能说所有“恢复成功”都复制了原内容。
+
+live applyRestore先append notice，里面一次写计划全部源seq，后逐条append重放消息；任意中途append失败，notice已在，restoreProgress直接合并它所列源seq，可能把未实际追加的消息判已恢复。外层catch补postamble只尽力闭合窗口，既不撤notice也不逐项修进度；flush失败在applyRestore内被吞下，返回事件已接受不等于持久化已证明。这条静态失败路径仍存在，本轮没有注入错误，不能称已发生丢消息或给发生率。
+
+store-miss磁盘路径将preamble/notice/replay/postamble组成一个zstd帧追加，write后sync，写/同步报错尝试truncate回原大小，回退失败抛AggregateError。它比逐条live写有不同故障边界，但不能被称跨进程锁或断电完整事务，且两条路径都需重载核对。恢复不是业务补偿，进度也不能仅从一个“ok”判断。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.js:717-755](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/index.js#L717-L755)
+**依据 1 · 源码核查**：[src/index.js:615-643](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L615-L643)
 
-恢复计划、live日志和游标对齐主链。
+写前校验/live和surface计划。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（29行）</summary>
+
+```text
+async function opsCommit(targetCtx, mode, sessionId, seq) {
+  if (!isSessionId(sessionId)) throw new OpsError("invalid sessionId", 400);
+  if (!Number.isSafeInteger(seq) || seq < 0) throw new OpsError("invalid seq", 400);
+  if (isRunning(targetCtx, sessionId)) throw new OpsError("session is running; stop it first", 409);
+  const { logPath } = pickSessionDir(sessionId);
+  const { header, events } = await readSessionFileAsync(logPath);
+  // 0.8.2：空闲会话（实测 340/364）没有打开的 turn/step → 用自足的**合成 turn**
+  // 承载 notice，而不是拒绝。引擎 append-only 插不进已有 step，但合成一整个 turn 合法
+  //��已对官方校验闸实测：append 型 / 单节点 replace / 多节点 replace 全 PASS，遮蔽受保护头正确拒绝）。
+  // 带 reason:"message-ops"，UI 与审计可识别，不与真实模型轮次混淆。
+  let win = planNoticeWindow(events);
+  const notice = mode === "delete"
+    ? `[消息删除] 已遮蔽 seq ${seq}`
+    : null; // revert 文案含 shadowed 数量，规划后拼
+  const acq = await acquireSession(targetCtx, sessionId);
+  if (acq !== null && acq.session !== undefined) {
+    try {
+      const session = acq.session;
+      const liveEvents = sessionLogOf(session);
+      if (liveEvents) win = planNoticeWindow(liveEvents);
+      const turnStep = { turn: win.turn, step: win.step };
+      // 0.5.4（P0）：v4 准入要求 system/message 带正 turn/step——缺字段时持久层
+      // encodeEventBatch 的 SessionFormatError 未捕获会**打死整个 dsh 进程**。
+      const plan = mode === "delete" ? planDelete(session.surface, seq) : planRevert(session.surface, seq);
+      const text = mode === "delete" ? notice
+        : `[消息回滚] 已回滚到 seq ${seq}（含）之后的 ${plan.shadowedSeqs.length} 个节点`;
+      // 0.8.2：会话 store 命中时走引擎路径 —— 同样要先开合成 turn 窗口，
+      // 否则 notice 落在已关闭的 turn/step 里，加载端拒绝整份历史。
+      // 0.10.8 孤儿护栏：plan 校验（planRevert/planDelete 的 409 拒绝）本就在
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/index.js:717-762](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L717-L762)
+
+live恢复计划、append与失败闭合。
+
+<details>
+<summary>查看原文（46行）</summary>
 
 ```text
 async function opsRestore(targetCtx, sessionId, restoreSeq, upToSeq, discard) {
@@ -287,58 +548,25 @@ async function opsRestore(targetCtx, sessionId, restoreSeq, upToSeq, discard) {
       for (const post of noticeWindowPostamble(win)) acq.session.append(post.kind, post.data);
       const aligned = win.synthetic ? alignLiveTurnCursor(targetCtx, acq.session, win.turn) : false;
       return { ok: true, ...result, turnAligned: aligned, discarded: plan.discard === true, upToSeq: plan.upToSeq, restoredSourceSeqs: plan.replayable.map((i) => i.seq), range: { startSeq: plan.startSeq, endSeq: plan.endSeq } };
+    } catch (err) {
+      for (const post of noticeWindowPostamble(win)) {
+        try { acq.session.append(post.kind, post.data); } catch { /* postamble 被引擎拒：维持原错误上抛 */ }
+      }
+      throw err;
+    } finally {
+      acq.release();
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.js:765-790](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/index.js#L765-L790)
+**依据 3 · 源码核查**：[src/ops-core.js:377-417](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L377-L417)
 
-磁盘批次保存restoredSourceSeqs。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  // store-miss → 磁盘路径：说明事件 + 重放事件批量追加（一个帧）
-  let cursor = nextSeqFrom(events);
-  const baseTime = Date.now();
-  const version = (await readSessionFileAsync(logPath)).header?.version ?? 4;
-  const batch = noticeWindowPreamble(win).map((e, i) => ({
-    type: e.kind, seq: cursor++, time: baseTime + i, data: e.data,
-  }));
-  const noticeBase = baseTime + batch.length;
-  batch.push(buildRestoreNoticeEvent({
-    seq: cursor++, time: noticeBase, turnStep: plan.turnStep, version,
-    text: plan.discard
-      ? `[消息操作] 回撤标记 seq ${plan.restoreSeq} 已停用（丢弃）：区间内容保持遮蔽、未重放；日志原文仍在，可搜索`
-      : restoreNoticeText(plan),
-    restoreSeq: plan.restoreSeq,
-    discard: plan.discard === true,
-    // 0.11.4：把本轮实际重放的源 seq 落进 notice，restoreProgress 才能累计进度、
-    // 下一轮 excludeSeqs 才不会重复重放同一批消息（详见 ops-core 该函数注释）。
-    restoredSourceSeqs: plan.discard ? [] : plan.replayable.map((i) => i.seq),
-  }));
-  let offset = 0;
-  for (const item of plan.discard ? [] : plan.replayable) {
-    batch.push(buildReplayEvent({ seq: cursor++, time: noticeBase + (++offset), item, turnStep: plan.turnStep, version }));
-  }
-  let tail = noticeBase + offset + 1;
-  for (const e of noticeWindowPostamble(win)) batch.push({ type: e.kind, seq: cursor++, time: tail++, data: e.data });
-  await diskAppend(logPath, batch);
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/ops-core.js:375-410](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L375-L410)
-
-按原seq排除已恢复项并跳过工具事件。
+原范围/排除/跳工具/空计划。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
-export function planRestore(events, restoreSeq, upToSeq, excludeSeqs) {
-  if (!Array.isArray(events)) throw new OpsError("restore: events must be an array", 500);
   if (!Number.isSafeInteger(restoreSeq) || restoreSeq < 0) throw new OpsError("invalid seq", 400);
   const ev = events.find((e) => e && e.seq === restoreSeq);
   if (!ev) throw new OpsError(`restore: event seq ${restoreSeq} not found in log`, 404);
@@ -373,60 +601,23 @@ export function planRestore(events, restoreSeq, upToSeq, excludeSeqs) {
     } else {
       skipped++; // tool/call 等不可安全重放的事件：跳过并在结果里计数
     }
+  }
+  // 0.5.6：区间无可重放消息（如只遮蔽了 tool/system 事件）不再 409 ——
+  // dock 会为这类标记常驻显示恢复按钮，409 死按钮 = 永远清不掉（实测 8 连 409）。
+  // 改为返回空计划：applyRestore 仍追加说明 notice（含 restoresSeq）→ 标记停用、
+  // dock 计数递减；语义如实：0 条重放 + 文案说明区间无 user/assistant 内容。
+  return { restoreSeq, startSeq, endSeq, upToSeq: Number.isSafeInteger(upToSeq) ? cap : endSeq, replayable, skipped };
+}
 ```
 
 </details>
 
-<a id="research-q03"></a>
+**依据 4 · 源码核查**：[src/ops-core.js:435-461](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L435-L461)
 
-<a id="detail-section-13"></a>
-
-### Q03 · 恢复是否会重放副作用，回撤是否等同业务撤销？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-恢复只复制user/assistant文本而跳过tool事件，因此不会在这里直接重跑原工具；但回撤也没有撤销工具之前写的文件、发送的请求或外部状态。随后模型面对恢复文本可能再次安排动作，用户需防止现实状态与上下文分叉。另一个源码级风险是live applyRestore先写含全部计划seq的notice，再逐条append消息；若中途append失败，notice已声称全部seq恢复，后续按进度排除可能漏掉未成功追加项。外层补postamble不撤回notice；这是一条静态失败路径，未作故障注入复现。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/ops-core.js:393-410](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L393-L410)
-
-只恢复消息文本，工具跳过。
+notice先写全部seq，随后逐条append，flush吞错。
 
 <details>
-<summary>查看原文（18行）</summary>
-
-```text
-  for (const e of events) {
-    if (!e || typeof e.seq !== "number" || e.seq < startSeq || e.seq > cap) continue;
-    if (e.type === "user/message" || e.type === "assistant/message") {
-      if (excluded && excluded.has(e.seq)) continue;
-      const text = messageText(e);
-      if (!text.trim()) { skipped++; continue; }
-      replayable.push({
-        seq: e.seq,
-        type: e.type,
-        role: e.type === "user/message" ? "user" : "assistant",
-        text,
-        source: e.type === "assistant/message" && e.data && e.data.message
-          ? e.data.message.source
-          : undefined,
-      });
-    } else {
-      skipped++; // tool/call 等不可安全重放的事件：跳过并在结果里计数
-    }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/ops-core.js:435-459](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L435-L459)
-
-进度notice先于逐条append且flush失败不回滚。
-
-<details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
 export function applyRestore(session, plan, { flush } = {}) {
@@ -454,74 +645,184 @@ export function applyRestore(session, plan, { flush } = {}) {
   }
   if (flush) {
     try { flush(); } catch { /* flush 失败不回滚已接受的事件 */ }
+  }
+  return { restoredCount: plan.discard ? 0 : plan.replayable.length, skipped: plan.skipped, eventSeqs };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.js:743-762](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/index.js#L743-L762)
+**依据 5 · 源码核查**：[src/ops-core.js:475-514](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L475-L514)
 
-外层异常只补闭合事件并释放会话。
+进度直接信任notice声明集合。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-    // 0.10.8 孤儿护栏（与 opsCommit 同型）：planRestore/进度校验本就在 preamble
-    // 之前完成；applyRestore 里的引擎 append 若抛（如 replay 坐标错开），
-    // preamble 已落——闭合合成 turn 再原样抛出，不留常开孤儿窗口。
+export function restoreProgress(events, markerSeq) {
+  const list = Array.isArray(events) ? events : [];
+  const marker = list.find((e) => e && e.seq === markerSeq);
+  if (!marker) return null;
+  const range = readReplaceOp(marker);
+  if (!range) return null;
+  const { startSeq, endSeq } = range;
+  // 该区间内可重放的消息型事件
+  const candidates = [];
+  for (const e of list) {
+    if (!e || typeof e.seq !== "number" || e.seq < startSeq || e.seq > endSeq) continue;
+    if (e.type !== "user/message" && e.type !== "assistant/message") continue;
+    if (!(messageText(e) || "").trim()) continue;
+    candidates.push(e.seq);
+  }
+  // 收集针对该标记的所有恢复 notice
+  const notices = list.filter((e) => e && e.data && e.data.restoresSeq === markerSeq);
+  const restored = new Set();
+  let legacy = false;
+  let discarded = false;
+  for (const n of notices) {
+    // 0.8.1：显式丢弃（不重放内容、仅停用标记）也算完成——
+    // 用户场景"我都没回滚过，清掉测试遗留条"，2709 条重放是另一种污染。
+    if (n.data.discarded === true) { discarded = true; continue; }
+    const seqs = n.data && Array.isArray(n.data.restoredSourceSeqs) ? n.data.restoredSourceSeqs : null;
+    if (!seqs) { legacy = true; continue; }
+    for (const q of seqs) if (Number.isSafeInteger(q)) restored.add(q);
+  }
+  const pending = candidates.filter((q) => !restored.has(q));
+  return {
+    startSeq,
+    endSeq,
+    restoredSeqs: Array.from(restored).sort((a, b) => a - b),
+    pendingSeqs: pending,
+    complete: legacy || discarded ? true : pending.length === 0,
+    legacy,
+    discarded,
+  };
+}
+
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/index.js:764-799](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L764-L799)
+
+磁盘批次。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+  }
+  // store-miss → 磁盘路径：说明事件 + 重放事件批量追加（一个帧）
+  let cursor = nextSeqFrom(events);
+  const baseTime = Date.now();
+  const version = (await readSessionFileAsync(logPath)).header?.version ?? 4;
+  const batch = noticeWindowPreamble(win).map((e, i) => ({
+    type: e.kind, seq: cursor++, time: baseTime + i, data: e.data,
+  }));
+  const noticeBase = baseTime + batch.length;
+  batch.push(buildRestoreNoticeEvent({
+    seq: cursor++, time: noticeBase, turnStep: plan.turnStep, version,
+    text: plan.discard
+      ? `[消息操作] 回撤标记 seq ${plan.restoreSeq} 已停用（丢弃）：区间内容保持遮蔽、未重放；日志原文仍在，可搜索`
+      : restoreNoticeText(plan),
+    restoreSeq: plan.restoreSeq,
+    discard: plan.discard === true,
+    // 0.11.4：把本轮实际重放的源 seq 落进 notice，restoreProgress 才能累计进度、
+    // 下一轮 excludeSeqs 才不会重复重放同一批消息（详见 ops-core 该函数注释）。
+    restoredSourceSeqs: plan.discard ? [] : plan.replayable.map((i) => i.seq),
+  }));
+  let offset = 0;
+  for (const item of plan.discard ? [] : plan.replayable) {
+    batch.push(buildReplayEvent({ seq: cursor++, time: noticeBase + (++offset), item, turnStep: plan.turnStep, version }));
+  }
+  let tail = noticeBase + offset + 1;
+  for (const e of noticeWindowPostamble(win)) batch.push({ type: e.kind, seq: cursor++, time: tail++, data: e.data });
+  await diskAppend(logPath, batch);
+  return {
+    ok: true, disk: true, syntheticTurn: win.synthetic === true,
+    restoredCount: plan.replayable.length,
+    upToSeq: plan.upToSeq,
+    restoredSourceSeqs: plan.replayable.map((i) => i.seq),
+    skipped: plan.skipped,
+    eventSeqs: batch.map((e) => e.seq),
+    range: { startSeq: plan.startSeq, endSeq: plan.endSeq },
+  };
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/index.js:260-283](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L260-L283)
+
+写帧/sync与truncate恢复。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+async function diskAppend(logPath, newEvents) {
+  if (!Array.isArray(newEvents) || newEvents.length === 0) throw new OpsError("diskAppend: empty batch", 400);
+  const jsonl = newEvents.map((e) => JSON.stringify(e)).join("\n") + "\n";
+  const frame = zstdCompressSync(Buffer.from(jsonl, "utf8"));
+  const handle = await openFile(logPath, "a");
+  let closed = false;
+  const closeHandle = async () => { if (closed) return; closed = true; await handle.close(); };
+  try {
+    const { size: before } = await statFile(logPath);
     try {
-      const liveEvents = sessionLogOf(acq.session);
-      if (liveEvents) ({ win, plan } = buildPlan(liveEvents));
-      for (const pre of noticeWindowPreamble(win)) acq.session.append(pre.kind, pre.data);
-      const result = applyRestore(acq.session, plan, {
-        flush: () => { flushSessions(targetCtx, acq.session); },
-      });
-      for (const post of noticeWindowPostamble(win)) acq.session.append(post.kind, post.data);
-      const aligned = win.synthetic ? alignLiveTurnCursor(targetCtx, acq.session, win.turn) : false;
-      return { ok: true, ...result, turnAligned: aligned, discarded: plan.discard === true, upToSeq: plan.upToSeq, restoredSourceSeqs: plan.replayable.map((i) => i.seq), range: { startSeq: plan.startSeq, endSeq: plan.endSeq } };
-    } catch (err) {
-      for (const post of noticeWindowPostamble(win)) {
-        try { acq.session.append(post.kind, post.data); } catch { /* postamble 被引擎拒：维持原错误上抛 */ }
+      await handle.writeFile(frame);
+      await handle.sync();
+    } catch (error) {
+      try {
+        await closeHandle();
+        await truncateFile(logPath, before);
+      } catch (rollbackError) {
+        throw new AggregateError([error, rollbackError], `failed to roll back append to "${logPath}"`);
       }
-      throw err;
-    } finally {
-      acq.release();
+      throw error;
+    }
+  } finally {
+    await closeHandle();
+  }
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少live逐条append中途失败后进度与加载一致性的独立证据
-  **影响**：恢复可能出现文本缺口且状态显示已完成
-  **进一步探讨**：在隔离会话副本对第N条append故障注入，核对notice集合、实际新事件及下一次恢复计划
+- live中断、flush失败和磁盘回退的重载一致性未故障注入
+  **影响**：核心恢复可信度未排除，当前不推荐真实关键会话试用
+  **进一步探讨**：用会话副本在第N条append/flush/write失败后重载，对比源seq进度、实际消息和原始文件。
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 宿主依赖、客户端流程和恢复成本如何？
+### Q03 · 回收站/认证/运行时有哪些边界？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-Node>=23.5提供内建zstd，Web客户端依赖宿主运行时；消息surface和日志版本约定是效果依赖。用户需先停止会话，在面板选seq确认操作，再核对恢复内容；整会话回收站与永久purge是另一类数据操作，不能混同消息遮蔽。HTTP入口检查loopback/same-origin，存在credentials但密钥记录不可读时fail-closed，老宿主无服务则退旧围栏。此边界减小Web误访问，不证明所有宿主版本兼容或磁盘恢复事务性。
+运行需Node>=23.5的内建zstd、可写会话目录和兼容宿主事件格式/会话服务，客户端是Web表面。GET也经过Host loopback/same-origin围栏和BrowserAuth gate；存在credentials但秘密记录不可读时fail-closed，老宿主无credentials则保留旧围栏。写入口再要求application/json。它是具体防误访问边界，不等于多租户授权体系，也不保证所有版本的secret/服务契约匹配。
+
+消息HTTP body只含sessionId/seq等，强制确认主要是界面流程，不能泛称每条服务器写入都验证“用户已二次确认”；工具入口也直接调用同操作。整会话删除另外要求confirmTitle准确匹配并拒绝运行/歧义目录。试用者应看实际入口，而不是把README安全说明视为服务端统一确认令牌。
+
+回收站删除先写moving manifest，移动目录、去投影/工作区等元数据，再写trashed。失败尝试移回并恢复元数据，无法完全恢复时留manifest供人工处理。恢复拒绝覆盖现存目标，移动并恢复元数据失败尝试退回，但不是所有副作用原子撤销。7天保留也不是永久备份。
+
+更重要的是GET /session/trash会用purgeExpired:true列目录，到期直接递归删除；因此永久删除不只显式POST purge，打开回收站列表也可能触发到期清理。README“唯一destructive操作”应按这条真实路径收窄，用户不能等过期后才拿回收站当后悔药。停用插件不自动恢复已遮蔽文本/删除会话，也不清理外部工具影响。
+
+可借鉴按原seq记录进度、live日志优先和合成窗口闭合，但这些维护依赖宿主provenance/turn格式。真正恢复验收应有重载和模型可见性对照；契约测试文件/作者历史描述不当本轮运行证据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:25-48](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/package.json#L25-L48)
+**依据 1 · 源码核查**：[package.json:29-48](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/package.json#L29-L48)
 
-客户端、Node和工具peer声明。
+Node/Web依赖。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-    "./session-file": "./src/session-file.js",
-    "./package.json": "./package.json",
-    "./ops-core": "./src/ops-core.js"
-  },
   "engines": {
     "node": ">=23.5"
   },
@@ -546,12 +847,12 @@ Node>=23.5提供内建zstd，Web客户端依赖宿主运行时；消息surface�
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.js:47-70](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/index.js#L47-L70)
+**依据 2 · 源码核查**：[src/index.js:47-74](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L47-L74)
 
-HTTP信任、BrowserAuth与JSON围栏。
+HTTP通用认证和JSON写门。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
 async function fence(targetCtx, req, res) {
@@ -578,154 +879,372 @@ async function writeFence(targetCtx, req, res) {
     return false;
   }
   return true;
+}
+
+/** POST body 读取（信任围栏之后）：413/400 语义区分。 */
+async function readFencedBody(req, res) {
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:38-48](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/README.md#L38-L48)
+**依据 3 · 源码核查**：[src/ops-core.js:821-854](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L821-L854)
 
-用户入口和确认步骤。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-## 用法
-
-- **会话头部**的 `Message ops` 按钮 → 右侧 `OpsPanel` 抽屉（消息 / 回收站双 tab）；
-  旧 `OpsDialog` 仅 `window.__MOPS_LEGACY_DIALOG === true` 时回退
-- **助手消息** hover 行的 `Revert to here` / `Quote to composer`
-- **用户消息** hover 行的 `Revert to here`
-- **输入框上方的回撤贴条**：展开后可逐条 `Restore`（消息级恢复入口）
-- **侧栏会话行**的 `...` 菜单
-
-面板流程：**选一条消息 → 回滚 / 仅删除 / 分支 → 破坏性操作二次确认**；
-整会话删除在回收站 tab，需输入会话标题确认。
-```
-
-</details>
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 哪些状态设计可复用，哪些测试只证明局部？
-
-**研究主题**：效果与总成本、工程质量与复用
-
-#### 完整回答
-
-按原seq累计进度、使用live日志避免落盘延迟造成陈旧判断、恢复前校验marker范围，是可借鉴的append-only恢复设计。代价是与宿主turn/step、source、surface及压缩日志深耦合，升级需持续复核协议。一次合格操作应包括重新加载和确认上下文；没有真实耗时/失败率资料，不能声称降低维护成本。源码存在大量专门契约测试，但本轮只检查实现，不运行测试，也不把作者历史修复描述当新版本通过。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.js:168-181](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/index.js#L168-L181)
-
-live内存日志用于补算committed。
+有credentials失败关闭/旧服务降级。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
- * 用**宿主内存日志**补算 marker's committed（0.10.5 · R2 的根治）。
- *
- * 问题：宿主在 session.append 后**同步** emit api-session/activity，而落盘是
- * **异步批窗**（$B/dsh-session/lib/index.js:1406 "hot path never blocks on I/O"；
- * persistence-jsonl:187 buffered/batchTimer，批窗 200ms）。opsList 读磁盘 +
- * derivedCache 按 mtimeMs+size 失效（loadDerived:376），所以 activity 刚到时
- * 几乎必然命中旧缓存 → markCommitted 看不到刚发出的 user 消息 → committed=false
- * → dock 不清。客户端此前只能靠「延迟 350/1400ms 重拉」赌落盘已完成，
- * 实测在 82% CPU 的 Android 上最坏 2×2.2s CPU + 2×248ms 卡顿，且 >1400ms 的
- * 落盘没有第三次触发（残留缺口）。
- *
- * 根治：live Session 直接暴露内存事件日志 `this.log`
- * （$B/dsh-session/lib/index.js:516），元素与磁盘事件**同构**
- * （:1454-1459 `{type, seq, time, data, ...surfaceMetadata}`）→ 直接补算。
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/ops-core.js:375-390](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L375-L390)
-
-marker与seq集合校验。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function planRestore(events, restoreSeq, upToSeq, excludeSeqs) {
-  if (!Array.isArray(events)) throw new OpsError("restore: events must be an array", 500);
-  if (!Number.isSafeInteger(restoreSeq) || restoreSeq < 0) throw new OpsError("invalid seq", 400);
-  const ev = events.find((e) => e && e.seq === restoreSeq);
-  if (!ev) throw new OpsError(`restore: event seq ${restoreSeq} not found in log`, 404);
-  // 读取端拼写统一走 session-file 的 readReplaceOp（双拼写兼容的单点）。
-  const range = readReplaceOp(ev);
-  if (!range) {
-    throw new OpsError(`restore: seq ${restoreSeq} is not a revert/delete marker event (no well-formed replace surfaceOp)`, 409);
+ * 无 credentials 服务（老宿主）→ true = 旧围栏；有服务但记录不可读 → false（fail-closed）。
+ * @param {object|undefined} ctx 插件 ctx（get("credentials")）
+ * @param {object} req http 请求
+ */
+export async function webAuthGate(ctx, req) {
+  if (__webAuthSecret !== null) {
+    return browserAuthPayload(req, __webAuthSecret) !== undefined;
   }
-  const { startSeq, endSeq } = range;
-  // 0.8.0 按轮步进：upToSeq 给定则只重放到该 seq（含），后续仍保持遮蔽；
-  // excludeSeqs = 已重放过（先前轮次 notice 的 restoredSourceSeqs 并集），
-  // **必须排除，否则每轮都从区间头重放 → 消息副本刷屏**（0.8.0 实测 B1）。
-  const cap = Number.isSafeInteger(upToSeq) ? Math.min(upToSeq, endSeq) : endSeq;
-  const excluded = Array.isArray(excludeSeqs) ? new Set(excludeSeqs.filter((q) => Number.isSafeInteger(q))) : null;
+
+  let credentials = null;
+  try { credentials = ctx && typeof ctx.get === "function" ? ctx.get("credentials") : null; } catch { /* legacy ctx */ }
+  if (!credentials || typeof credentials.modifyRecord !== "function") return true;
+
+  const now = Date.now();
+  if (__webAuthProbe === null && now - __webAuthProbeAt >= WEB_AUTH_RETRY_MS) {
+    __webAuthProbeAt = now;
+    __webAuthProbe = loadBrowserAuthSecret(credentials)
+      .then((secret) => {
+        __webAuthSecret = secret;
+        if (secret === null && !__webAuthWarned) {
+          __webAuthWarned = true;
+          console.warn(
+            "[message-ops] BrowserAuth cookie 鉴权已启用但 `client-connection/browser-session` 记录不可读"
+            + "——GET 鉴权 fail-closed；请检查该记录是否存在",
+          );
+        }
+        return secret;
+      })
+      .finally(() => { __webAuthProbe = null; });
+  }
+
+  if (__webAuthProbe === null) return false;
+  const secret = await __webAuthProbe;
+  return secret !== null && browserAuthPayload(req, secret) !== undefined;
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:92-100](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/README.md#L92-L100)
+**依据 4 · 源码核查**：[src/index.js:1005-1045](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L1005-L1045)
 
-作者报告磁盘进度修复而非本轮独立执行。
+消息写入不带确认token。
+
+<details>
+<summary>查看原文（41行）</summary>
 
 ```text
-### 0.11.5 · restore 进度落盘 + `turnAligned` 可观测
+    // --- POST revert / delete：live-session surface replace ------------------
+    const commitHandler = (mode) => async (req, res) => {
+      if (req.method !== "POST") return sendJson(res, 405, { ok: false, error: "method not allowed" });
+      if (!(await writeFence(targetCtx, req, res))) return;
+      const body = await readFencedBody(req, res);
+      if (body === undefined) return;
+      if (!body || typeof body !== "object") return sendJson(res, 400, { ok: false, error: "invalid json" });
+      try {
+        return sendJson(res, 200, await opsCommit(targetCtx, mode, body.sessionId, body.seq));
+      } catch (err) {
+        return sendJson(res, err instanceof OpsError ? err.status : 500, { ok: false, error: String(err && err.message ? err.message : err) });
+      }
+    };
 
-- **磁盘 restore 漏写 `restoredSourceSeqs`（数据正确性）**：`buildRestoreNoticeEvent`
-  只写 `restoresSeq`，而 `restoreProgress` 靠 `restoredSourceSeqs` 累计已重放项。
-  结果每次恢复都被判 `legacy`（`complete:true` 但 `restoredSeqs` 恒空）→ 进度不可见，
-  且下一轮 `excludeSeqs` 为空 → **同一区间被反复重放**（实测 008f3759 两轮各 209 条）。
-  磁盘路径改为把 `plan.replayable.map(i => i.seq)` 落进 notice；discard 时不写。
-- `/revert` 与 `/restore` 响应新增 `turnAligned`：live 路径应为 `true`，
-  disk/store-miss 路径没有内存 agent，`false` 属正常。便于运行时确认游标对齐是否生效。
+    targetCtx.effect(() => host.register({
+      kind: "exact", path: "/api/message-ops/revert", handler: commitHandler("revert"),
+    }), "dsh-message-ops: revert route");
+
+    targetCtx.effect(() => host.register({
+      kind: "exact", path: "/api/message-ops/delete", handler: commitHandler("delete"),
+    }), "dsh-message-ops: delete route");
+
+
+    // --- POST restore：回滚恢复（重放语义，见 ops-core.js 注释） --------------
+    targetCtx.effect(() => host.register({
+      kind: "exact",
+      path: "/api/message-ops/restore",
+      handler: async (req, res) => {
+        if (req.method !== "POST") return sendJson(res, 405, { ok: false, error: "method not allowed" });
+        if (!(await writeFence(targetCtx, req, res))) return;
+        const body = await readFencedBody(req, res);
+        if (body === undefined) return;
+        if (!body || typeof body !== "object") return sendJson(res, 400, { ok: false, error: "invalid json" });
+        try {
+          // 0.8.0：body.upToSeq 存在 → 按轮步进恢复（只到该 seq）
+          return sendJson(res, 200, await opsRestore(targetCtx, body.sessionId, body.seq, body.upToSeq != null ? Number(body.upToSeq) : undefined, body.discard === true));
+        } catch (err) {
+          return sendJson(res, err instanceof OpsError ? err.status : 500, { ok: false, error: String(err && err.message ? err.message : err) });
+        }
+      },
+    }), "dsh-message-ops: restore route");
 ```
+
+</details>
+
+**依据 5 · 源码核查**：[src/session-trash.js:275-343](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/session-trash.js#L275-L343)
+
+标题/运行检查、moving/trashed与失败回退。
+
+<details>
+<summary>查看原文（69行）</summary>
+
+```text
+export async function deleteSessionToTrash(ctx, sessionId, confirmTitle) {
+  if (!isSessionId(sessionId)) throw new OpsError("invalid sessionId", 400);
+  const dirs = findAllSessionDirs(sessionId);
+  if (dirs.length === 0) throw new OpsError("session not found", 404);
+  if (dirs.length > 1) throw new OpsError(`ambiguous session id: found ${dirs.length} directories`, 409);
+  if (agentRunning(ctx, sessionId)) throw new OpsError("session is running; stop it first", 409);
+
+  const meta = readMetadata(ctx, sessionId);
+  const title = titleOfRow(meta.projRow) || headerTitle(dirs[0].dir);
+  const expected = title || sessionId;
+  if (String(confirmTitle == null ? "" : confirmTitle).trim() !== expected) {
+    throw new OpsError(`title mismatch: type "${expected}" to delete`, 400);
+  }
+
+  const now = Date.now();
+  const trashId = `${now}-${randomUUID().slice(0, 8)}`;
+  const root = path.join(trashRoot(), trashId);
+  const rel = path.relative(sessionsRoot(), dirs[0].dir);
+  const dataRel = path.join("data", rel);
+  const manifest = {
+    version: 1,
+    trashId,
+    sessionId,
+    title: title || null,
+    state: "moving",
+    deletedAt: now,
+    expiresAt: now + TRASH_RETENTION_MS,
+    dirs: [{ rel, originalSlug: dirs[0].slug, originalName: dirs[0].name }],
+    ...meta,
+  };
+  writeManifest(root, manifest);
+
+  const source = dirs[0].dir;
+  const target = path.join(root, dataRel);
+  let moved = false;
+  try {
+    moveDir(source, target);
+    moved = true;
+    if (findAllSessionDirs(sessionId).length > 0) throw new OpsError("session directory still present after move", 500);
+    await stripMetadata(ctx, sessionId, meta);
+    manifest.state = "trashed";
+    writeManifest(root, manifest);
+  } catch (err) {
+    let dataBack = !moved && fs.existsSync(source) && !fs.existsSync(target);
+    let metadataBack = dataBack;
+    if (moved) {
+      try {
+        moveDir(target, source);
+        dataBack = true;
+        await restoreMetadata(ctx, sessionId, meta);
+        metadataBack = true;
+      } catch { /* leave the manifest for manual restore */ }
+    }
+    if (dataBack && metadataBack) {
+      try { fs.rmSync(root, { recursive: true, force: true }); } catch { /* best effort */ }
+    }
+    throw err;
+  }
+
+  return {
+    ok: true,
+    trashId,
+    sessionId,
+    title: title || null,
+    expiresAt: manifest.expiresAt,
+    workspaceIds: meta.workspaceIds,
+    archived: meta.archived,
+    pinned: meta.pinned,
+  };
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/session-trash.js:346-364](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/session-trash.js#L346-L364)
+
+到期永久清理。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export async function listTrash(ctx, { purgeExpired = false, now = Date.now() } = {}) {
+  let names = [];
+  try { names = fs.readdirSync(trashRoot(), { withFileTypes: true }); } catch { return []; }
+  const entries = [];
+  for (const name of names) {
+    if (!name.isDirectory() || !TRASH_ID_RE.test(name.name)) continue;
+    let manifest;
+    try { manifest = readManifest(name.name); } catch { continue; }
+    if (purgeExpired && typeof manifest.expiresAt === "number" && manifest.expiresAt <= now) {
+      try { fs.rmSync(path.join(trashRoot(), name.name), { recursive: true, force: true }); } catch { /* retry next time */ }
+      continue;
+    }
+    entries.push({
+      trashId: name.name,
+      sessionId: manifest.sessionId,
+      title: manifest.title || null,
+      state: manifest.state || "trashed",
+      deletedAt: manifest.deletedAt || null,
+      expiresAt: manifest.expiresAt || null,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/index.js:1048-1059](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L1048-L1059)
+
+GET列表传purgeExpired。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    targetCtx.effect(() => host.register({
+      kind: "exact",
+      path: "/api/message-ops/session/trash",
+      handler: async (req, res) => {
+        if (req.method !== "GET") return sendJson(res, 405, { ok: false, error: "method not allowed" });
+        if (!(await fence(targetCtx, req, res))) return;
+        try {
+          return sendJson(res, 200, { ok: true, entries: await listTrash(targetCtx, { purgeExpired: true }) });
+        } catch (err) {
+          return sendJson(res, err instanceof OpsError ? err.status : 500, { ok: false, error: String(err && err.message ? err.message : err) });
+        }
+      },
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/session-trash.js:398-430](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/session-trash.js#L398-L430)
+
+恢复拒绝覆盖、回退及显式purge。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+export async function restoreTrash(ctx, trashId) {
+  const manifest = readManifest(trashId);
+  const { rel, target } = restoreTarget(manifest);
+  if (fs.existsSync(target)) throw new OpsError("session directory already exists; refusing to overwrite", 409);
+
+  const root = path.join(trashRoot(), trashId);
+  const source = path.join(root, "data", rel);
+  let sourceStat;
+  try { sourceStat = fs.lstatSync(source); } catch { throw new OpsError("trash payload missing", 404); }
+  if (!sourceStat.isDirectory()) throw new OpsError("trash payload is not a directory", 500);
+
+  try {
+    moveDir(source, target);
+    if (!fs.existsSync(target)) throw new OpsError("restore move failed", 500);
+    await restoreMetadata(ctx, manifest.sessionId, manifest);
+  } catch (err) {
+    try {
+      if (fs.existsSync(target) && !fs.existsSync(source)) moveDir(target, source);
+    } catch { /* leave both for manual recovery */ }
+    throw err;
+  }
+
+  try { fs.rmSync(root, { recursive: true, force: true }); } catch { /* manifest cleanup is best effort */ }
+  return { ok: true, trashId, sessionId: manifest.sessionId, title: manifest.title || null };
+}
+
+export async function purgeTrash(ctx, trashId) {
+  assertTrashId(trashId);
+  const root = path.join(trashRoot(), trashId);
+  if (!fs.existsSync(root)) throw new OpsError("trash entry not found", 404);
+  fs.rmSync(root, { recursive: true, force: true });
+  return { ok: true, trashId };
+}
+```
+
+</details>
 
 #### 缺口
 
-- 宿主升级后全量日志格式和部分失败成本未测
-  **影响**：未知是否值得长期承担深耦合维护
-  **进一步探讨**：在目标版本会话副本测回撤/分步恢复/重载，记录恢复人工时间与失败率
+- 回收站多文件/元数据失败恢复和宿主认证差异未独立核对
+  **影响**：不能将目录移动/标题确认当全周期可撤销保证
+  **进一步探讨**：临时目录模拟移动后元数据失败、已有目标和到期列表，再检查目录/投影与恢复。
 
-<a id="research-q06"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-16"></a>
+<a id="detail-section-14"></a>
 
-### Q06 · 副作用收据与上下文回撤联动能否降低状态分叉，如何采用？
+### Q04 · 全周期成本、采用条件及可证伪方向？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：效果与总成本、采用判断、新假设与验证、工程质量与复用
 
 #### 完整回答
 
-可在回撤前列出被遮蔽区间的工具副作用收据，明确哪些仅隐藏、哪些已影响工作区，并将恢复进度改为成功事件确认后再提交。前者帮助用户决定补偿，后者针对先报全部seq的失败窗口；两者都是未验证设计，不是现成功能。用带文件写入的会话副本对照“只看消息”与“副作用清单”，再注入中断验证恢复幂等；若清单遗漏或增加确认负担却不降低重复动作，则方向不成立。建议只在可备份会话上观察和验证后试用，关键恢复一致性缺口尚未排除，当前结论为观察。
+当前保持观察，原因是消息恢复进度在关键中断窗口可能先于实际文本，不能用“有备份”降低任务验收要求。确有上下文控制需求者应先在可重载副本验证回撤、渐进恢复和失败重载，再决定限定使用；重要工具副作用另行核对，不能用此插件做业务撤销。
+
+#### 启动与依赖
+
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node>=23.5与宿主日志/surface契约 | 核心必需 | 压缩追加与provenance校验 | Node支持不代表格式兼容 |
+| 停止的会话与可写目录 | 修改必需 | 按seq计划和追加 | running拒绝，写失败可能有部分状态 |
+| Web服务/BrowserAuth | HTTP必需 | 列表与写入认证 | secret不可读关闭；旧宿主降级 |
+| 可重载完整副本及现实状态记录 | 验证必需 | 故障恢复/业务补偿 | 回收站/消息遮蔽不是完整备份 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 用户备份会话并记已执行外部动作 | 能恢复原始日志/现实基线 |
+| 小样 | 停止副本会话，选明确seq确认 | 原生模型可见范围符合预期 |
+| 渐进恢复 | 对同一marker分段恢复后重载 | 实际文本与源seq进度一致 |
+| 故障 | 测中断/flush/write失败 | 不把notice声明当全部完成 |
+| 退出 | 停更多写入，核日志/现实状态 | 必要时恢复副本，过期回收站不能兜底 |
+
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次使用 | 存储/备份资源未知 | 核Node/宿主/格式并保存副本 | 普通安装未验 |
+| 持续使用 | 追加日志/索引扫描未知 | 停会话、选seq、核上下文/副作用 | 无合格恢复耗时对照 |
+| 失败恢复 | 副本与重复追加资源未知 | 比较进度/文本/重载并人工补偿 | live notice非事务 |
+| 升级退出 | 会话和回收站副本未知 | 核格式、元数据和保留期限 | 7天后列表可永久清理 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 上下文控制 | replace遮蔽与文本新append | 目标宿主重载/模型可见一致 |
+| 渐进恢复 | 源seq集合排除 | 中断后声明与实际文本吻合 |
+| 会话回收 | manifest+目录/元数据迁移 | 失败/过期后可恢复程度 |
+| 业务撤销 | 此处跳过工具事件 | 不补偿已有外部副作用 |
+
+用户遇到进度完成但正文缺失、重载失败、会话重复/元数据不符或模型要重做已完成工具动作时，应停止继续恢复/重试，保存现状并从副本对照；不要拿更多append掩盖状态未知。
+
+未来方向应分两层且均未验证。第一层在每条恢复事件被接受/持久确认后提交对应源seq进度，避免先报全部完成；第二层在回撤前列已执行工具的副作用收据，明确哪些只隐藏、哪些需现实补偿。最小验证用带文件写入的副本，并在第N条append/flush后失败，对比当前方案、确认后进度及“仅副作用清单”的错误完成数、漏恢复、重复动作与人工时间。若无法降低分叉或增加的确认负担超过收益，否定该方向；不得把收据当自动业务回滚或已有功能。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/ops-core.js:408-409](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L408-L409)
+**依据 1 · 源码核查**：[src/ops-core.js:435-461](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L435-L461)
 
-工具被跳过，副作用不在文本恢复范围。
-
-```text
-    } else {
-      skipped++; // tool/call 等不可安全重放的事件：跳过并在结果里计数
-```
-
-**依据 2 · 源码核查**：[src/ops-core.js:444-456](https://github.com/240xu/dsh-message-ops/blob/d82f6de21683162ac7e83483536490a647f88ab5/src/ops-core.js#L444-L456)
-
-逐项确认可收窄进度提交失败窗口。
+恢复进度和实际append断点。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
+export function applyRestore(session, plan, { flush } = {}) {
+  const eventSeqs = [];
+  const notice = plan.discard
+    ? `[消息操作] 回撤标记 seq ${plan.restoreSeq} 已停用（丢弃）：区间内容保持遮蔽、未重放；日志原文仍在，可搜索`
+    : restoreNoticeText(plan);
+  // 0.4.2：notice 事件携带 restoresSeq —— dock 据此把被恢复的标记从「活跃回撤」
+  // 中移除（对齐 opencode clear 语义：恢复后不再显示为待恢复项）。
+  const ts = plan.turnStep && Number.isSafeInteger(plan.turnStep.turn) && plan.turnStep.turn > 0
+    ? plan.turnStep : { turn: 1, step: 1 };
   const noticeEvent = session.append(
     "system/message",
     { turn: ts.turn, step: ts.step, message: { id: randomUUID(), role: "system", source: messageSource("system", 4), content: [{ type: "text", text: notice }] }, restoresSeq: plan.restoreSeq, restoredSourceSeqs: plan.discard ? [] : plan.replayable.map((i) => i.seq), ...(plan.discard ? { discarded: true } : {}) },
@@ -739,8 +1258,138 @@ export function planRestore(events, restoreSeq, upToSeq, excludeSeqs) {
       { surfaceOp: "append" },
     );
     if (event && event.seq != null) eventSeqs.push(event.seq);
+  }
+  if (flush) {
+    try { flush(); } catch { /* flush 失败不回滚已接受的事件 */ }
+  }
+  return { restoredCount: plan.discard ? 0 : plan.replayable.length, skipped: plan.skipped, eventSeqs };
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[src/ops-core.js:475-514](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/ops-core.js#L475-L514)
+
+按声明源seq计进度。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+export function restoreProgress(events, markerSeq) {
+  const list = Array.isArray(events) ? events : [];
+  const marker = list.find((e) => e && e.seq === markerSeq);
+  if (!marker) return null;
+  const range = readReplaceOp(marker);
+  if (!range) return null;
+  const { startSeq, endSeq } = range;
+  // 该区间内可重放的消息型事件
+  const candidates = [];
+  for (const e of list) {
+    if (!e || typeof e.seq !== "number" || e.seq < startSeq || e.seq > endSeq) continue;
+    if (e.type !== "user/message" && e.type !== "assistant/message") continue;
+    if (!(messageText(e) || "").trim()) continue;
+    candidates.push(e.seq);
+  }
+  // 收集针对该标记的所有恢复 notice
+  const notices = list.filter((e) => e && e.data && e.data.restoresSeq === markerSeq);
+  const restored = new Set();
+  let legacy = false;
+  let discarded = false;
+  for (const n of notices) {
+    // 0.8.1：显式丢弃（不重放内容、仅停用标记）也算完成——
+    // 用户场景"我都没回滚过，清掉测试遗留条"，2709 条重放是另一种污染。
+    if (n.data.discarded === true) { discarded = true; continue; }
+    const seqs = n.data && Array.isArray(n.data.restoredSourceSeqs) ? n.data.restoredSourceSeqs : null;
+    if (!seqs) { legacy = true; continue; }
+    for (const q of seqs) if (Number.isSafeInteger(q)) restored.add(q);
+  }
+  const pending = candidates.filter((q) => !restored.has(q));
+  return {
+    startSeq,
+    endSeq,
+    restoredSeqs: Array.from(restored).sort((a, b) => a - b),
+    pendingSeqs: pending,
+    complete: legacy || discarded ? true : pending.length === 0,
+    legacy,
+    discarded,
+  };
+}
+
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.js:260-283](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/index.js#L260-L283)
+
+磁盘失败恢复边界。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+async function diskAppend(logPath, newEvents) {
+  if (!Array.isArray(newEvents) || newEvents.length === 0) throw new OpsError("diskAppend: empty batch", 400);
+  const jsonl = newEvents.map((e) => JSON.stringify(e)).join("\n") + "\n";
+  const frame = zstdCompressSync(Buffer.from(jsonl, "utf8"));
+  const handle = await openFile(logPath, "a");
+  let closed = false;
+  const closeHandle = async () => { if (closed) return; closed = true; await handle.close(); };
+  try {
+    const { size: before } = await statFile(logPath);
+    try {
+      await handle.writeFile(frame);
+      await handle.sync();
+    } catch (error) {
+      try {
+        await closeHandle();
+        await truncateFile(logPath, before);
+      } catch (rollbackError) {
+        throw new AggregateError([error, rollbackError], `failed to roll back append to "${logPath}"`);
+      }
+      throw error;
+    }
+  } finally {
+    await closeHandle();
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/session-trash.js:346-364](https://github.com/240xu/dsh-message-ops/blob/75d798ef0f015da242a721d3278430640b29b393/src/session-trash.js#L346-L364)
+
+保留期与永久清理。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export async function listTrash(ctx, { purgeExpired = false, now = Date.now() } = {}) {
+  let names = [];
+  try { names = fs.readdirSync(trashRoot(), { withFileTypes: true }); } catch { return []; }
+  const entries = [];
+  for (const name of names) {
+    if (!name.isDirectory() || !TRASH_ID_RE.test(name.name)) continue;
+    let manifest;
+    try { manifest = readManifest(name.name); } catch { continue; }
+    if (purgeExpired && typeof manifest.expiresAt === "number" && manifest.expiresAt <= now) {
+      try { fs.rmSync(path.join(trashRoot(), name.name), { recursive: true, force: true }); } catch { /* retry next time */ }
+      continue;
+    }
+    entries.push({
+      trashId: name.name,
+      sessionId: manifest.sessionId,
+      title: manifest.title || null,
+      state: manifest.state || "trashed",
+      deletedAt: manifest.deletedAt || null,
+      expiresAt: manifest.expiresAt || null,
+```
+
+</details>
+
+#### 缺口
+
+- 确认后进度/副作用收据方案均未实现，效果对照不足
+  **影响**：保持观察，不将可设计的恢复方案当当前可用
+  **进一步探讨**：以副本故障矩阵与外部文件状态对照，先证明分叉和恢复负担下降。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

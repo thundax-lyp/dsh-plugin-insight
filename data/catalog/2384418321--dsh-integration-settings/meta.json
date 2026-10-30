@@ -1,8 +1,8 @@
 {
     "repository": "2384418321/dsh-integration-settings",
     "repository_id": null,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
+    "captured_at": "2026-10-29T03:03:10.741Z",
+    "window_start": "2026-09-29T03:03:10.741Z",
     "stars": null,
     "pushed_at": null,
     "issues": {
@@ -20,7 +20,7 @@
     ],
     "npm": {
         "package_name": "dsh-integration-settings",
-        "captured_at": "2026-10-29T01:33:21.476Z",
+        "captured_at": "2026-10-29T03:03:10.741Z",
         "window_start": "2026-09-29",
         "window_end": "2026-10-28",
         "downloads_30d": null,
@@ -28,7 +28,7 @@
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-29T01:33:21.476Z",
+            "captured_at": "2026-10-29T03:03:10.741Z",
             "source_url": "https://registry.npmjs.org/dsh-integration-settings",
             "error": "HTTP 404",
             "latest_version": null,

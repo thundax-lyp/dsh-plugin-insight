@@ -1,6 +1,6 @@
-# dsh-integration-settings
+# DSH Integration Settings
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
 源码版本：[b0f3e0c](https://github.com/2384418321/dsh-integration-settings/tree/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4)
 
@@ -8,11 +8,11 @@
 
 <!-- END META -->
 
-> **功能**：在 DSH 设置页管理 MCP 服务器、配置网关，并同步模型清单与声明的思考档位。
+> **功能**：为本地 DSH 管理员提供 MCP JSON 导入和网关模型、思考档位的设置页，含差异预览、受管配置及文件备份。
 
-> **亮点**：把MCP JSON导入和网关模型差异审阅接入设置页，提供明确的手改配置替代路径；收益取决于最终加载和恢复验收。见[Q01](#research-q01)至[Q03](#research-q03)。
+> **亮点**：将JSON正规化/差异预览与单文件保护接进设置页，真正收益取决目标profile加载、代表请求与恢复。见[Q01](#research-q01)、[Q02](#research-q02)。
 
-> **主要限制**：网关广告不是逐档能力验证，非空少报仍会删模型，MCP和定时任务的分步写入也不是共同事务；因此自动配置成功不能代替实际可用与可恢复。见[Q02](#research-q02)至[Q04](#research-q04)。
+> **主要限制**：广告不是逐档验证；非空少报可删模型、可选目标digest不绑原文件，MCP/网关/调度分步非共同事务。当前来源身份另有缺口。见[Q01](#research-q01)至[Q04](#research-q04)。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 两个设置页服务谁，相比手改配置增加什么？](#detail-section-11)
-  - [Q02 · MCP导入怎样从JSON写成宿主配置，失败如何恢复？](#detail-section-12)
-  - [Q03 · 思考解锁与模型同步真正在验证什么？](#detail-section-13)
-  - [Q04 · 定时任务与本地接口边界能否保障配置意图？](#detail-section-14)
-  - [Q05 · 完成可用配置的全周期成本和效果怎样？](#detail-section-15)
-  - [Q06 · 谁适合试用，什么新假设可检验？](#detail-section-16)
+  - [Q01 · 固定本地分叉实际入口、范围与手改基线？](#detail-section-11)
+  - [Q02 · MCP导入/受管块与网关保存能否共同恢复？](#detail-section-12)
+  - [Q03 · 思考解锁/模型同步及定时究竟验证何种能力？](#detail-section-13)
+  - [Q04 · 真实请求边界和写队列限制到哪？](#detail-section-14)
+  - [Q05 · 启用/退出成本、采用及可证伪修正？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：本地DSH管理员可在设置页处理MCP与网关配置，最终仍须以正确profile可加载且代表任务成功验收。见[Q01](#research-q01)。
+> **用途**：为本地 profile 管理员在设置页导入 MCP、配置网关及模型/思考档位，替代部分手改 YAML。见[Q01](#research-q01)。
 
-简单替代是备份后手改YAML并重启验收。本分叉明确保留两个界面，未固定上游差异，不把继承的整个配置管理实现归为原创。
+备份后手改profile/credentials再重启跑代表任务；未对上游做原创归因，YAML库不计自身创新。见[Q01](#research-q01)。
 
 <a id="detail-section-3"></a>
 
@@ -53,61 +52,45 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| MCP管理与JSON导入 | 管理服务并生成受管patch | 预览覆盖与失败项，重启后需实际调用验收 |
-| 网关新增及编辑 | 保存地址、模型与凭据引用 | 凭据和patch分步写，需备份；不提供删除按钮 |
-| 思考档位解锁 | 同步网关声明的reasoningEfforts | 仅读/models，不验证每档真实请求 |
-| 模型清单同步 | 审阅新增移除并更新配置 | 非空少报可能删除模型；正常UI携带目标digest |
-| 定时更新 | 重复解锁和同步 | 宿主运行且保存调度；分步写入非共同事务 |
-| 保留的Skill与人设后端 | 兼容原读写接口 | 无页面入口但接口仍存在，未完整审计这些分支 |
+| MCP导入 | JSON→权威列表/受管patch | 部分非法可与合法写并存，双文件非事务 |
+| 网关/档位 | 广告转换/手动差异审阅 | 声明非真实逐档支持，少报可删除 |
+| 预览/保存 | 目标digest重探/备份rename | expected可省，不绑原文件 |
+| 调度 | 周期解锁/模型同步 | 两步部分成功，需持久schedule |
+| 本地API | 同源/写头/body限制 | 非多用户身份，隐藏后端仍在 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH宿主webServer、sessions与设置插槽 | 加载必需 | 挂载本地API及两个配置页面 | 加载或界面不可用，兼容需实机核对 |
-| 正确profile及文件写权限 | 写入必需 | 保存patch与受管状态 | 不可写会失败，多文件可能部分完成 |
-| MCP程序或远端服务 | 具体MCP任务必需 | 宿主重启后加载并调用 | 保存配置不证明程序可用 |
-| 网关/models、凭据与支持声明 | 同步必需 | 提供模型和档位数据 | 缺失跳过或失败，少报不等于正式退役 |
-| profile备份与恢复能力 | 试用前提 | 处理分步写入与误配置 | 不具备时保留手改流程，不启自动模式 |
+先补当前来源核实，兼容Host/Node与明确profile/三原件、对应MCP/网关是使用条件；表见[Q05](#research-q05)。
 
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 管理员备份并确认目标profile，关闭调度 | 能明确恢复各文件 |
-| 加载 | 用户按README安装启用并重启 | 两页出现且目标路径正确，本轮未实测 |
-| 预览 | 用户审阅MCP覆盖、模型新增移除与档位变动 | 任何非预期删除先停止 |
-| 保存 | 插件串行处理本实例写请求 | 读回patch、状态与凭据，不只看HTTP成功 |
-| 验收 | 用户重启并调用代表MCP/模型 | 失败先恢复一致配置，定时另行验收 |
+停调度/核目录备三文件、审导入/同步差异、读回重启代表任务与恢复演练；步骤见[Q05](#research-q05)。
 
 **效果与成本**
 
-配置管理把编辑步骤自动化，也把多文件一致恢复和网关声明审阅留给管理员。对采用决策，应先评估一次误配置能否恢复，再评估日常少点几次；完整成本分阶段表见[Q05](#research-q05)。
+管理员广告/删除审阅、重启任务和逐文件恢复成本未知，自动编辑不等净省时；表见[Q05](#research-q05)。
 
-本项的直接产物是配置与差异预览，服务可用性和推理效果属于后续验收。不能用同步模型数量或新增档位数量替代任务成功；效果与证据表见[Q05](#research-q05)。
+配置产物/预览有据，实际服务/推理质量、错误率与净收益另验；效果见[Q05](#research-q05)。
 
-> **思考**：网关广告不是逐档能力验证，非空少报仍会删模型，MCP和定时任务的分步写入也不是共同事务；因此自动配置成功不能代替实际可用与可恢复。见[Q02](#research-q02)至[Q04](#research-q04)。
+> **思考**：广告不是逐档验证；非空少报可删模型、可选目标digest不绑原文件，MCP/网关/调度分步非共同事务。当前来源身份另有缺口。见[Q01](#research-q01)至[Q04](#research-q04)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把MCP JSON导入和网关模型差异审阅接入设置页，提供明确的手改配置替代路径；收益取决于最终加载和恢复验收。见[Q01](#research-q01)至[Q03](#research-q03)。
+> **亮点**：将JSON正规化/差异预览与单文件保护接进设置页，真正收益取决目标profile加载、代表请求与恢复。见[Q01](#research-q01)、[Q02](#research-q02)。
 
-受管块生成、YAML结构校验、备份与rename、客户端目标digest重探和同实例写队列值得借鉴；移植时要补外部并发基线及跨文件恢复。第三方YAML打包体积不代表原创，直接维护构建产物且没有本分叉测试源码增加维护负担。见[Q02](#research-q02)至[Q05](#research-q05)。
+正规化/完整YAML校验、备份rename/目标摘要与本实例队列可借鉴；跨文件/外部并发、隐藏API和广告边界不能被自动成功遮盖。见[Q02](#research-q02)至[Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-网关广告不是逐档能力验证，非空少报仍会删模型，MCP和定时任务的分步写入也不是共同事务；因此自动配置成功不能代替实际可用与可恢复。见[Q02](#research-q02)至[Q04](#research-q04)。
+广告不是逐档验证；非空少报可删模型、可选目标digest不绑原文件，MCP/网关/调度分步非共同事务。当前来源身份另有缺口。见[Q01](#research-q01)至[Q04](#research-q04)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-只在可恢复的本地单用户profile先试手动导入与同步，先停调度并保留三类文件原件。读回后重启，验收代表任务；意外删除、错误profile或分步写入不一致时停止并逐文件恢复。见[Q06](#research-q06)。
+来源缺口另核，固定实现仅本地可恢复管理员隔离手动小样；错误profile/意外移除/部分成功时停写停调度，逐文件恢复后重启，别盲重放。见[Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -115,12 +98,12 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持配置转换、预览与备份机制；真实宿主加载、网关能力和恢复效果未验证。跨文件计划与延迟删除是未来假设。
+仅复核WORK沿用旧固定版，本轮INPUT无身份/成员确认，不声称最新或当前可分发；固定实现可核，未运行。限可恢复本地管理员的隔离手动小样，非无人自动配置。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、README.md、cordis.patch.yml、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：定向读取lib中的profile解析、MCP受管块/导入/写入、网关探测/解锁/同步、调度与请求校验及客户端注册和调用；未审计全部捆绑YAML实现、Skill路径和完整UI，不作全库安全保证。
-- 下一步：在隔离profile验证一次MCP、代表网关档位、非空截断列表、外部并发与第二文件写失败，记录无关修改、部分成功及恢复时间；未执行这些建议。
+- 边界：旧六题/全部findings/证据和自身code依赖完整读复核。当前定向读profile路径、原子/备份写、MCP正规化导入/双写、网关保存/probe/解锁/同步、schedule/HTTP/queue及client注册/目标digest。未全审捆绑YAML、Skill路径/全部UI或运行目标；本轮SOURCE四材料可核旧固定不补当前来源缺口。
+- 下一步：后续先当前来源/身份核实，再隔离profile对非空少报/同键映射变化/外部编辑/第二写失败、无持久schedule及Host请求边界，最终代表MCP/模型请求与恢复。
 
 **分析版本**
 
@@ -134,9 +117,9 @@
 
 <a id="innovation"></a>
 
-可检验绑定原文件摘要、延迟模型删除与跨文件提交进度的配置计划，观察它是否降低误删和恢复成本；尚未实现或验证。见[Q06](#research-q06)。
+未验证方向为原文件绑定计划、延迟删除/确认与跨文件进度，故障矩阵比误删/丢修改/恢复和负担。见[Q05](#research-q05)。
 
-在隔离profile验证一次MCP、代表网关档位、非空截断列表、外部并发与第二文件写失败，记录无关修改、部分成功及恢复时间；未执行这些建议。
+后续先当前来源/身份核实，再隔离profile对非空少报/同键映射变化/外部编辑/第二写失败、无持久schedule及Host请求边界，最终代表MCP/模型请求与恢复。
 
 <a id="detail-section-9"></a>
 
@@ -160,162 +143,209 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-29），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：本地分叉把MCP与模型配置可视化后，能否可靠交付可加载的profile配置，哪些写入及能力声明边界会改变采用建议？
+**插件研究总目标**：旧固定分叉的配置写入/广告同步能否可用可恢复，本轮身份缺口如何限定？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 两个设置页服务谁，相比手改配置增加什么？
+### Q01 · 固定本地分叉实际入口、范围与手改基线？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-本地 DSH profile 管理者需要添加 MCP 服务、维护网关模型及思考档位时，可以通过两个设置页代替直接编辑 YAML。本包是真实 DSH 插件，bundle 插入宿主行，客户端最终只注册 MCP 与 providers 两个设置栏目。Skill 与全局人设的界面入口被移除，但后端读写接口仍在；不能把隐藏菜单解释为相关后端能力或权限已删除。
+这是固定旧提交b0f3e0c…的原生DSH插件dsh-integration-settings 0.2.10-dsh.5，本地分叉版。本轮INPUT没有此项，WORK沿用旧固定版本；准备材料可与该提交和本地body/digest核对，所以可以复核实现，但不能据此确认当前仓库身份/目录成员、最新远端或仍可分发。
 
-合格交付应是正确 profile 的配置可被宿主加载，目标 MCP 或模型能完成代表任务，原有配置可恢复。保存文件、看到模型名称或出现档位不构成最终验收。源码可确认 MCP JSON 预览、供应商模型差异预览与写前备份，把手改文件中的若干转换和检查交给插件。简单替代是管理员备份配置、手动改受管条目并重启，插件降低编辑门槛的路径具体，但节省工时和错误率未测。
+实际Host注入webServer/sessions，client最终只注册MCP与providers两个settings.section。README/包描述称Skill/全局人设已移除，是界面入口范围；Host仍有Skill读写/删除与persona保存API，隐藏栏目不等撤后端能力。真实用途是为本地profile管理员把MCP JSON导入、网关配置/模型和思考档位操作搬到设置页。
 
-README 自述这是本地分叉，强调思考解锁与模型清单同步分开。当前客户端确有独立按钮和接口，但本轮未固定上游提交做逐项差异归因，不能把所有配置管理机制算作分叉原创。适用人群仍须理解 profile、网关声明与回滚；它没有把这些责任完全自动化。
+基线是备份profile后手改YAML/凭据、重启、用代表任务验收。增量是正规化/差异预览、受管块和备份/单文件rename，不是新MCP协议或推理能力。未固定原上游代码做差异归因，不把捆绑YAML库/全部管理机制算分叉原创。
+
+一次合格变更是正确profile可加载、目标MCP/模型真正完成代表任务且可恢复旧配置。保存HTTP成功、模型数量或更多档位只描述配置产物，不能当服务/推理质量验收；用户仍须理解profile、网关声明和跨文件恢复。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:9-29](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/README.md#L9-L29)
+**依据 1 · 源码核查**：[package.json:1-9](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/package.json#L1-L9)
 
-作者说明分叉目标、两个页面和重启条件。
-
-<details>
-<summary>查看原文（21行）</summary>
+包身份/分叉描述。
 
 ```text
-给 DeepSeek Harness（DSH）**设置**里补上两个可视化菜单：**MCP 管理** 与 **思考解锁**。后者把平时只能手改文件的事变成点选操作——自动识别每个 OpenAI 兼容网关真正支持的思考档位并写回模型选择器，也能设成定时自动更新。
+{
+  "name": "dsh-integration-settings",
+  "version": "0.2.10-dsh.5",
+  "type": "module",
+  "description": "集成插件（本地分叉版）：设置里保留「MCP 管理 / 思考解锁」两个页面；Skill 管理与全局人设已在本分叉移除。思考解锁会自动识别各网关真正支持的思考档位；模型清单同步与思考档位解锁彻底分开，先预览差异再确认，定时更新同批生效；MCP 管理支持粘贴 mcpServers JSON 先预览再新增；界面路径与 URL 凭据脱敏",
+  "license": "MIT",
+  "author": "2384418321 (https://github.com/2384418321)",
+  "keywords": [
+    "dsh",
+```
 
-> **本仓库是本地分叉版**（版本号带 `-dsh.N` 后缀）。与上游的差别见 [LOCAL-PATCH.md](LOCAL-PATCH.md)：
-> 上游的 **Skill 管理** 与 **全局人设** 两个菜单已在本分叉移除（相关后端接口仍在，只是没有 UI 入口）；
-> **思考档位解锁** 与 **可用模型清单** 已彻底拆成两件事，分别由「思考解锁」开关和独立的「同步模型清单」按钮负责。
+**依据 2 · 源码核查**：[lib/client.js:72-74](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/client.js#L72-L74)
 
-| 设置菜单 | 管什么 | 背后落盘位置 |
-| --- | --- | --- |
-| **MCP 管理** | 增 / 删 / 改 / 启停 MCP 服务器；支持粘贴 `mcpServers` JSON 先预览再新增 | 当前 profile 的 `cordis.patch.yml`（受管区块）+ `.dsh-integration/mcp.json`（真理源） |
-| **思考解锁** | 打开即自动识别每个网关真正支持的思考档位，一键解锁写回配置；可新增/编辑网关（不提供删除） | 当前 profile 的 `cordis.patch.yml`（`llm-pi-ai` 条目的 `config.providers`）+ `$DSH_HOME/.credentials.yaml`（`refs`，只存密钥） |
-| **同步模型清单** | 独立按钮，与「思考解锁」开关语义分离：先预览「将新增 N 个 / 将移除 M 个」再确认；一次同步同时刷新思考强度等级与可用模型列表，两者同批生效；可与页面「定时更新」绑定同一调度（定时触发自动确认，并在 UI 提示上次差异摘要） | 同上（`config.providers` 的 `levels` 与 `models`）+ `$DSH_HOME/.dsh-integration/unlock-schedule.json`（定时状态与上次同步摘要） |
+仅两个最终设置栏目。
 
-> 这是社区插件，不是 DeepSeek 官方产品。安装前请自行评估，建议先备份 profile 目录。
+```text
+let xe=async s=>{if(Q){W(!0),g(null),d(null);try{let m=await T("/provider/schedule",{method:"POST",sessionId:t,body:{...Q,...s}});se(m),d(s.enabled===!1?"\u5DF2\u5173\u95ED\u5B9A\u65F6\u66F4\u65B0\uFF1B\u5DF2\u7ECF\u5230\u70B9\u7684\u90A3\u4E00\u6B21\u4E0D\u4F1A\u518D\u5199\u914D\u7F6E\u3002":`\u5B9A\u65F6\u66F4\u65B0\u5DF2\u4FDD\u5B58\uFF1A\u6BCF ${m.intervalMinutes} \u5206\u949F\uFF0C\u4EC5\u5728 DeepSeek Harness \u8FD0\u884C\u671F\u95F4\u751F\u6548\u3002`)}catch(m){g(m.message||String(m))}finally{W(!1)}}},ke=async()=>{W(!0),g(null),d(null);try{let s=await T("/provider/schedule/run",{method:"POST",sessionId:t,body:{}}),y=(s.report&&s.report.providers||[]).filter($=>$.status==="error"),I=[];s.ran?s.report?s.report.unlockedModels?I.push(`\u5DF2\u66F4\u65B0 ${s.report.unlockedModels} \u4E2A\u6A21\u578B\u7684\u601D\u8003\u6863\u4F4D`):I.push("\u5404\u7F51\u5173\u7684\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\uFF0C\u6CA1\u6709\u6539\u52A8\u6587\u4EF6"):I.push(`\u672A\u80FD\u5B8C\u6210\u89E3\u9501\uFF1A${s.error||"\u672A\u77E5\u539F\u56E0"}`):I.push("\u8FD8\u6CA1\u5230\u70B9\uFF0C\u672A\u6267\u884C\u3002"),y.length&&I.push(`\u63A2\u6D4B\u5931\u8D25\uFF1A${y.map($=>`${$.id}\uFF08${$.error}\uFF09`).join("\uFF1B")}`),s.sync&&I.push(`\u6A21\u578B\u6E05\u5355 +${(s.sync.totals||{}).added||0}/-${(s.sync.totals||{}).removed||0}`),s.report&&s.report.changed&&I.push("\u5DF2\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002"),d(I.join("\u3000")),U.reload(),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{W(!1)}},ee=N.data&&N.data.providers||[],G=s=>ee.find(m=>m.id===s)||null,Ne=(s,m)=>{let y=G(s);return y&&(y.details||[]).find(I=>I.id===m)||null},we=s=>{let m=G(s);if(!m)return null;if(m.verdict==="gateway"){let y=m.kindSource==="model-id-prefix"?"\u6309\u6A21\u578B\u547D\u540D\u7A7A\u95F4":"\u6309 /healthz";return e("span",{className:"dsi-badge dsi-badge-on"},`WorkBuddy${m.service?` \xB7 ${m.service}`:""}\uFF08${y}\uFF09`)}return m.verdict==="other"?e("span",{className:"dsi-badge dsi-badge-off"},"\u975E WorkBuddy \u7F51\u5173"):null},Ce=s=>{let m=G(s);if(!m)return null;if(m.verdict==="skipped")return e("span",{className:"dsi-badge"},"\u4E0D\u5904\u7406");if(m.verdict==="unreachable"||m.status==="error")return e("span",{className:"dsi-badge dsi-badge-off"},"\u63A2\u6D4B\u5931\u8D25");if(m.status==="missing")return e("span",{className:"dsi-badge dsi-badge-off"},"\u914D\u7F6E\u5DF2\u4E0D\u5728\u6587\u4EF6\u91CC");let y=[];return m.unlocked&&y.push(`\u5F85\u89E3\u9501 ${m.unlocked}`),m.already&&y.push(`\u5DF2\u4E00\u81F4 ${m.already}`),m.silent&&y.push(`\u7F51\u5173\u672A\u58F0\u660E ${m.silent}`),m.gone&&y.push(`\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B ${m.gone}`),e("span",{className:m.unlocked?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},y.join(" \xB7 ")||`${m.scanned} \u4E2A\u6A21\u578B`)},ae=N.data&&N.data.unlockedModels||0,B=ee.reduce((s,m)=>s.concat((m.details||[]).filter(y=>y.status==="unlocked")),[]),oe=B.filter(s=>(s.lost||[]).length),ne=ee.filter(s=>s.verdict==="skipped"||s.verdict==="other");return e(q,{title:"\u601D\u8003\u89E3\u9501",desc:"\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u4E0E\u53EF\u7528\u6A21\u578B\u6E05\u5355\u3002\u4E24\u4E2A\u52A8\u4F5C\u4E92\u76F8\u72EC\u7ACB\uFF1A\u300C\u5168\u90E8\u89E3\u9501\u300D\u53EA\u5199\u601D\u8003\u6863\u4F4D\uFF0C\u300C\u540C\u6B65\u6A21\u578B\u6E05\u5355\u300D\u53EA\u6539\u6A21\u578B\u5217\u8868\uFF08\u5148\u9884\u89C8\u518D\u786E\u8BA4\uFF09\u3002\u5199\u524D\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002",actions:e(K.default.Fragment,null,e(v,{variant:"primary",disabled:a||N.loading||!b.length,onClick:ge},ae?`\u5168\u90E8\u89E3\u9501\uFF08${ae} \u4E2A\u6A21\u578B\u5F85\u66F4\u65B0\uFF09`:"\u5168\u90E8\u89E3\u9501"),e(v,{disabled:a,onClick:()=>{w.reload(),L()}},"\u91CD\u65B0\u8BC6\u522B"),e(v,{disabled:a||syncBusy||!b.length,onClick:openSync},"\u540C\u6B65\u6A21\u578B\u6E05\u5355"),e(v,{disabled:a,onClick:fe},"\u65B0\u589E\u7F51\u5173")),footer:l?`\u914D\u7F6E\u6587\u4EF6\uFF1A${dsiMaskPath(l)}${p?`\u3000\u5BC6\u94A5\u6587\u4EF6\uFF1A${dsiMaskPath(p)}`:""}`:null},e(Z),e(P,{kind:"error"},u),e(P,{kind:"ok"},i),e(qe,{schedule:Q,busy:ve||a,loading:U.loading,error:U.error,onChange:xe,onRunNow:ke}),N.loading?e("div",{className:"dsi-hint"},"\u6B63\u5728\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u2026"):null,N.error?e(P,{kind:"error"},`\u81EA\u52A8\u8BC6\u522B\u5931\u8D25\uFF1A${N.error}`):null,N.data&&!N.data.unlockedModels&&b.length?e("div",{className:"dsi-hint"},"\u5DF2\u8BC6\u522B\u7684\u7F51\u5173\uFF0C\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\u3002"):null,B.length?e("div",{className:"dsi-hint"},`\u68C0\u6D4B\u5230 ${B.length} \u4E2A\u6A21\u578B\u7684\u6863\u4F4D\u4E0E\u7F51\u5173\u4E0D\u4E00\u81F4`+(oe.length?`\uFF08\u5176\u4E2D ${oe.length} \u4E2A\u4F1A\u51CF\u5C11\u6863\u4F4D\uFF09`:"")+"\uFF1A"+B.slice(0,3).map(s=>`${s.id}\uFF08${(s.from&&s.from.length?s.from:["\u672A\u58F0\u660E"]).join("/")} \u2192 ${s.to.join("/")}\uFF09`).join("\uFF1B")+(B.length>3?` \u7B49 ${B.length} \u4E2A`:"")):null,ne.length?e("div",{className:"dsi-hint"},`${ne.length} \u4E2A\u4F9B\u5E94\u5546\u4E0D\u53C2\u4E0E\u89E3\u9501\uFF1A`+ne.map(s=>`${s.id}\uFF08${s.reason||"\u4E0D\u9002\u7528"}\uFF09`).join("\uFF1B")):null,b.length?e("label",{className:"dsi-check",style:{marginTop:"6px"}},e("input",{type:"checkbox",checked:f,onChange:s=>O(s.target.checked)}),e("span",null,"\u53EA\u5904\u7406 WorkBuddy \u7F51\u5173\uFF08\u6309 /healthz \u670D\u52A1\u540D\u6216 cn:/global: \u547D\u540D\u7A7A\u95F4\u5224\u65AD\uFF09")):null,syncPlan?e("div",{className:"dsi-card"},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:13}},"\u540C\u6B65\u6A21\u578B\u6E05\u5355 \u00B7 \u9884\u89C8"),e("span",{className:"dsi-badge"},`\u5C06\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} \u4E2A / \u5C06\u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0} \u4E2A`)),e("div",{className:"dsi-hint"},"\u53EA\u6539\u53EF\u7528\u6A21\u578B\u5217\u8868\uFF0C\u4E0D\u6539\u601D\u8003\u6863\u4F4D\uFF1B\u5199\u5165\u524D\u81EA\u52A8\u5907\u4EFD\u3002"),(syncPlan.providers||[]).map(s=>{const m=s.summary||{};return e("div",{className:"dsi-card",key:s.id,style:{padding:"9px 11px"}},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:12}},s.id),e("span",{className:s.status==="error"||s.status==="stale"?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},s.status==="error"?"\u63A2\u6D4B\u5931\u8D25":s.status==="stale"?"\u9700\u91CD\u65B0\u9884\u89C8":s.status==="skipped"?"\u8DF3\u8FC7":`\u65B0\u589E ${m.added||0} / \u79FB\u9664 ${m.removed||0} / \u4E0D\u53D8 ${m.kept||0}`)),s.error?e("div",{className:"dsi-hint"},"\u539F\u56E0\uFF1A"+s.error):null,(m.models&&m.models.added||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u65B0\u589E\uFF1A"+m.models.added.join("\u3001")):null,(m.models&&m.models.removed||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u79FB\u9664\uFF1A"+m.models.removed.join("\u3001")):null,m.levels&&((m.levels.added||[]).length||(m.levels.removed||[]).length)?e("div",{className:"dsi-hint"},`\u601D\u8003\u6863\u4F4D\uFF1A\u65B0\u589E ${(m.levels.added||[]).join("/")||"\u65E0"}\uFF1B\u79FB\u9664 ${(m.levels.removed||[]).join("/")||"\u65E0"}${(m.levelModels||[]).length?`\uFF08\u5F71\u54CD ${m.levelModels.length} \u4E2A\u6A21\u578B\uFF09`:""}`):null)}),e("div",{className:"dsi-inline"},e(v,{variant:"primary",disabled:syncBusy,onClick:applySync},syncBusy?"\u6B63\u5728\u5199\u5165\u2026":`\u786E\u8BA4\u5199\u5165\uFF08\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} / \u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0}\uFF09`),e(v,{disabled:syncBusy,onClick:()=>setSyncPlan(null)},"\u53D6\u6D88"))):null,r?e(Je,{draft:r,setDraft:M,saving:a,probing:H,isNew:!b.some(s=>s.id===r.id),onCancel:()=>M(null),onSave:ye,onProbe:he}):null,w.loading&&!x?e(J):null,w.error?e(P,{kind:"error"},`\u8BFB\u53D6\u5931\u8D25\uFF1A${w.error}`):null,!b.length&&!w.loading?e("div",{className:"dsi-empty"},"\u8FD9\u4E2A profile \u7684 llm-pi-ai \u6761\u76EE\u4E0B\u8FD8\u6CA1\u6709\u914D\u7F6E\u4EFB\u4F55\u4F9B\u5E94\u5546\u3002"):null,b.map(s=>{let m=G(s.id),y=c===s.id;return e("div",{className:"dsi-row",key:s.id},e("div",{className:"dsi-row-main"},e("div",{className:"dsi-row-name"},s.id,e("span",{className:"dsi-badge"},`${s.modelCount} \u6A21\u578B`),we(s.id),Ce(s.id),s.apiKeyEnv?e("span",{className:s.hasCredential?"dsi-badge dsi-badge-on":"dsi-badge dsi-badge-off"},s.hasCredential?"\u5BC6\u94A5\u5DF2\u914D\u7F6E":"\u7F3A\u5C11\u5BC6\u94A5"):null),e("div",{className:"dsi-row-meta"},[dsiMaskUrl(s.baseURL)||"(\u672A\u8BBE\u7F6E baseURL)",s.apiKeyEnv||"(\u672A\u8BBE\u7F6E apiKeyEnv)",s.reasoning?`\u9ED8\u8BA4\u601D\u8003 ${s.reasoning}`:null,Ve(s.models)||null].filter(Boolean).join(" \xB7 ")),m&&m.reason?e("div",{className:"dsi-row-meta"},`${m.verdict==="skipped"||m.verdict==="other"?"\u672A\u53C2\u4E0E\u539F\u56E0":"\u63A2\u6D4B\u7ED3\u679C"}\uFF1A${m.reason}`):null),e("div",{className:"dsi-toolbar"},e(v,{disabled:a,onClick:()=>k(y?null:s.id)},y?"\u6536\u8D77\u6A21\u578B":"\u67E5\u770B\u6A21\u578B"),e(v,{disabled:a,onClick:()=>be(s)},"\u7F16\u8F91")),y?e("div",{className:"dsi-card",style:{marginTop:"8px"}},e("div",{className:"dsi-hint"},`${(s.models||[]).length} \u4E2A\u6A21\u578B\uFF08\u5F53\u524D\u5199\u5728\u914D\u7F6E\u91CC\u7684\u601D\u8003\u6863\u4F4D\uFF09`),(s.models||[]).map(I=>{let $=Ne(s.id,I.id),$e=$&&$.status==="unlocked";return e("div",{className:"dsi-row-meta",key:I.id},e("span",{className:"dsi-mono"},I.id),"\u3000",me(I)||"\u672A\u58F0\u660E\u6863\u4F4D",$e?`\u3000\u2192 \u7F51\u5173\u652F\u6301 ${$.to.join("/")}${($.lost||[]).length?`\uFF08\u4F1A\u53BB\u6389 ${$.lost.join("/")}\uFF09`:""}`:null,$&&$.status==="silent"?"\u3000\u7F51\u5173\u672A\u58F0\u660E\uFF0C\u4FDD\u6301\u539F\u6837":null,$&&$.status==="gone"?"\u3000\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B\uFF0C\u4FDD\u6301\u539F\u6837":null)})):null)}))}function en(n){let t=Le(n),a=[{id:"integration-mcp",order:61,labelKey:"mcp.title",Component:_e},{id:"integration-providers",order:64,labelKey:"providers.title",Component:Qe}];for(let o of a)n.effect(()=>n.slots.inject("settings.section",()=>n.slots.register({name:"settings.section",id:o.id,order:o.order,label:()=>t(o.labelKey),locale:z},o.Component)))}var nn=["slots","locale"],tn=z;
+return module.exports;
+} });
+```
 
-## 环境要求
+**依据 3 · 源码核查**：[lib/index.js:8841-8846](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8841-L8846)
 
-- **DSH 桌面版 0.2.0-rc.2**（本插件按该版本的 `settings.section` 槽位与 loader patch 机制开发；
-  宿主包名从此版本起为 `@deepseek-ai/*`）。
-- **Node.js `^22.19.0 || >=24`**：仅在本地构建 / 跑测试时需要；**直接安装不需要 Node**，
-  因为仓库里已提交构建产物 `lib/`。
-- 安装完成后**必须重启 DSH**：MCP 改动由 loader 在启动时读取（技能、人设改动即时生效）。
+Host依赖。
+
+```text
+var name = PLUGIN_NAME;
+var inject = ["webServer", "sessions"];
+var API_PREFIX = "/api/dsh-integration";
+var MUTATION_HEADER = "x-dsh-integration";
+var BODY_LIMIT = 4 * 1024 * 1024;
+function json(res, status, payload) {
+```
+
+**依据 4 · 源码核查**：[lib/index.js:9187-9209](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9187-L9209)
+
+实际API入口与隐藏读取。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+async function handle(ctx, req, res) {
+  const url = new URL(req.url || "/", "http://localhost");
+  const route = url.pathname.replace(/\/+$/, "").slice(API_PREFIX.length) || "/";
+  validateOrigin(ctx, req);
+  const mutation = req.method !== "GET" && req.method !== "HEAD";
+  if (mutation) validateMutation(req);
+  const body = mutation ? await readBody(req) : {};
+  switch (`${req.method} ${route}`) {
+    case "GET /state":
+      return json(res, 200, { ok: true, data: await stateResponse(ctx, req, url) });
+    case "GET /skill/list":
+      return json(res, 200, { ok: true, data: await skillListResponse(ctx, req, url) });
+    case "GET /skill/read": {
+      const env = process.env;
+      const cwd = sessionCwd(ctx, req, url);
+      const rootPath = skillRootPath(url.searchParams.get("root"), env, cwd);
+      return json(res, 200, {
+        ok: true,
+        data: await readSkill(rootPath, String(url.searchParams.get("dir") || ""))
+      });
+    }
+    case "GET /persona/backup":
+      return json(res, 200, {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[cordis.patch.yml:1-3](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/cordis.patch.yml#L1-L3)
+**依据 5 · 源码核查**：[lib/index.js:9220-9235](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9220-L9235)
 
-显式bundle插入宿主插件行。
+Skill删写及persona后端仍在。
 
-```text
-- insert:
-    - id: dsh-integration-settings
-      name: 'dsh-integration-settings'
-```
-
-**依据 3 · 源码核查**：[lib/client.js:72-72](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/client.js#L72-L72)
-
-客户端en函数最终注册integration-mcp和integration-providers两个settings.section；原文为构建压缩行。
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
-let xe=async s=>{if(Q){W(!0),g(null),d(null);try{let m=await T("/provider/schedule",{method:"POST",sessionId:t,body:{...Q,...s}});se(m),d(s.enabled===!1?"\u5DF2\u5173\u95ED\u5B9A\u65F6\u66F4\u65B0\uFF1B\u5DF2\u7ECF\u5230\u70B9\u7684\u90A3\u4E00\u6B21\u4E0D\u4F1A\u518D\u5199\u914D\u7F6E\u3002":`\u5B9A\u65F6\u66F4\u65B0\u5DF2\u4FDD\u5B58\uFF1A\u6BCF ${m.intervalMinutes} \u5206\u949F\uFF0C\u4EC5\u5728 DeepSeek Harness \u8FD0\u884C\u671F\u95F4\u751F\u6548\u3002`)}catch(m){g(m.message||String(m))}finally{W(!1)}}},ke=async()=>{W(!0),g(null),d(null);try{let s=await T("/provider/schedule/run",{method:"POST",sessionId:t,body:{}}),y=(s.report&&s.report.providers||[]).filter($=>$.status==="error"),I=[];s.ran?s.report?s.report.unlockedModels?I.push(`\u5DF2\u66F4\u65B0 ${s.report.unlockedModels} \u4E2A\u6A21\u578B\u7684\u601D\u8003\u6863\u4F4D`):I.push("\u5404\u7F51\u5173\u7684\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\uFF0C\u6CA1\u6709\u6539\u52A8\u6587\u4EF6"):I.push(`\u672A\u80FD\u5B8C\u6210\u89E3\u9501\uFF1A${s.error||"\u672A\u77E5\u539F\u56E0"}`):I.push("\u8FD8\u6CA1\u5230\u70B9\uFF0C\u672A\u6267\u884C\u3002"),y.length&&I.push(`\u63A2\u6D4B\u5931\u8D25\uFF1A${y.map($=>`${$.id}\uFF08${$.error}\uFF09`).join("\uFF1B")}`),s.sync&&I.push(`\u6A21\u578B\u6E05\u5355 +${(s.sync.totals||{}).added||0}/-${(s.sync.totals||{}).removed||0}`),s.report&&s.report.changed&&I.push("\u5DF2\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002"),d(I.join("\u3000")),U.reload(),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{W(!1)}},ee=N.data&&N.data.providers||[],G=s=>ee.find(m=>m.id===s)||null,Ne=(s,m)=>{let y=G(s);return y&&(y.details||[]).find(I=>I.id===m)||null},we=s=>{let m=G(s);if(!m)return null;if(m.verdict==="gateway"){let y=m.kindSource==="model-id-prefix"?"\u6309\u6A21\u578B\u547D\u540D\u7A7A\u95F4":"\u6309 /healthz";return e("span",{className:"dsi-badge dsi-badge-on"},`WorkBuddy${m.service?` \xB7 ${m.service}`:""}\uFF08${y}\uFF09`)}return m.verdict==="other"?e("span",{className:"dsi-badge dsi-badge-off"},"\u975E WorkBuddy \u7F51\u5173"):null},Ce=s=>{let m=G(s);if(!m)return null;if(m.verdict==="skipped")return e("span",{className:"dsi-badge"},"\u4E0D\u5904\u7406");if(m.verdict==="unreachable"||m.status==="error")return e("span",{className:"dsi-badge dsi-badge-off"},"\u63A2\u6D4B\u5931\u8D25");if(m.status==="missing")return e("span",{className:"dsi-badge dsi-badge-off"},"\u914D\u7F6E\u5DF2\u4E0D\u5728\u6587\u4EF6\u91CC");let y=[];return m.unlocked&&y.push(`\u5F85\u89E3\u9501 ${m.unlocked}`),m.already&&y.push(`\u5DF2\u4E00\u81F4 ${m.already}`),m.silent&&y.push(`\u7F51\u5173\u672A\u58F0\u660E ${m.silent}`),m.gone&&y.push(`\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B ${m.gone}`),e("span",{className:m.unlocked?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},y.join(" \xB7 ")||`${m.scanned} \u4E2A\u6A21\u578B`)},ae=N.data&&N.data.unlockedModels||0,B=ee.reduce((s,m)=>s.concat((m.details||[]).filter(y=>y.status==="unlocked")),[]),oe=B.filter(s=>(s.lost||[]).length),ne=ee.filter(s=>s.verdict==="skipped"||s.verdict==="other");return e(q,{title:"\u601D\u8003\u89E3\u9501",desc:"\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u4E0E\u53EF\u7528\u6A21\u578B\u6E05\u5355\u3002\u4E24\u4E2A\u52A8\u4F5C\u4E92\u76F8\u72EC\u7ACB\uFF1A\u300C\u5168\u90E8\u89E3\u9501\u300D\u53EA\u5199\u601D\u8003\u6863\u4F4D\uFF0C\u300C\u540C\u6B65\u6A21\u578B\u6E05\u5355\u300D\u53EA\u6539\u6A21\u578B\u5217\u8868\uFF08\u5148\u9884\u89C8\u518D\u786E\u8BA4\uFF09\u3002\u5199\u524D\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002",actions:e(K.default.Fragment,null,e(v,{variant:"primary",disabled:a||N.loading||!b.length,onClick:ge},ae?`\u5168\u90E8\u89E3\u9501\uFF08${ae} \u4E2A\u6A21\u578B\u5F85\u66F4\u65B0\uFF09`:"\u5168\u90E8\u89E3\u9501"),e(v,{disabled:a,onClick:()=>{w.reload(),L()}},"\u91CD\u65B0\u8BC6\u522B"),e(v,{disabled:a||syncBusy||!b.length,onClick:openSync},"\u540C\u6B65\u6A21\u578B\u6E05\u5355"),e(v,{disabled:a,onClick:fe},"\u65B0\u589E\u7F51\u5173")),footer:l?`\u914D\u7F6E\u6587\u4EF6\uFF1A${dsiMaskPath(l)}${p?`\u3000\u5BC6\u94A5\u6587\u4EF6\uFF1A${dsiMaskPath(p)}`:""}`:null},e(Z),e(P,{kind:"error"},u),e(P,{kind:"ok"},i),e(qe,{schedule:Q,busy:ve||a,loading:U.loading,error:U.error,onChange:xe,onRunNow:ke}),N.loading?e("div",{className:"dsi-hint"},"\u6B63\u5728\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u2026"):null,N.error?e(P,{kind:"error"},`\u81EA\u52A8\u8BC6\u522B\u5931\u8D25\uFF1A${N.error}`):null,N.data&&!N.data.unlockedModels&&b.length?e("div",{className:"dsi-hint"},"\u5DF2\u8BC6\u522B\u7684\u7F51\u5173\uFF0C\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\u3002"):null,B.length?e("div",{className:"dsi-hint"},`\u68C0\u6D4B\u5230 ${B.length} \u4E2A\u6A21\u578B\u7684\u6863\u4F4D\u4E0E\u7F51\u5173\u4E0D\u4E00\u81F4`+(oe.length?`\uFF08\u5176\u4E2D ${oe.length} \u4E2A\u4F1A\u51CF\u5C11\u6863\u4F4D\uFF09`:"")+"\uFF1A"+B.slice(0,3).map(s=>`${s.id}\uFF08${(s.from&&s.from.length?s.from:["\u672A\u58F0\u660E"]).join("/")} \u2192 ${s.to.join("/")}\uFF09`).join("\uFF1B")+(B.length>3?` \u7B49 ${B.length} \u4E2A`:"")):null,ne.length?e("div",{className:"dsi-hint"},`${ne.length} \u4E2A\u4F9B\u5E94\u5546\u4E0D\u53C2\u4E0E\u89E3\u9501\uFF1A`+ne.map(s=>`${s.id}\uFF08${s.reason||"\u4E0D\u9002\u7528"}\uFF09`).join("\uFF1B")):null,b.length?e("label",{className:"dsi-check",style:{marginTop:"6px"}},e("input",{type:"checkbox",checked:f,onChange:s=>O(s.target.checked)}),e("span",null,"\u53EA\u5904\u7406 WorkBuddy \u7F51\u5173\uFF08\u6309 /healthz \u670D\u52A1\u540D\u6216 cn:/global: \u547D\u540D\u7A7A\u95F4\u5224\u65AD\uFF09")):null,syncPlan?e("div",{className:"dsi-card"},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:13}},"\u540C\u6B65\u6A21\u578B\u6E05\u5355 \u00B7 \u9884\u89C8"),e("span",{className:"dsi-badge"},`\u5C06\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} \u4E2A / \u5C06\u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0} \u4E2A`)),e("div",{className:"dsi-hint"},"\u53EA\u6539\u53EF\u7528\u6A21\u578B\u5217\u8868\uFF0C\u4E0D\u6539\u601D\u8003\u6863\u4F4D\uFF1B\u5199\u5165\u524D\u81EA\u52A8\u5907\u4EFD\u3002"),(syncPlan.providers||[]).map(s=>{const m=s.summary||{};return e("div",{className:"dsi-card",key:s.id,style:{padding:"9px 11px"}},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:12}},s.id),e("span",{className:s.status==="error"||s.status==="stale"?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},s.status==="error"?"\u63A2\u6D4B\u5931\u8D25":s.status==="stale"?"\u9700\u91CD\u65B0\u9884\u89C8":s.status==="skipped"?"\u8DF3\u8FC7":`\u65B0\u589E ${m.added||0} / \u79FB\u9664 ${m.removed||0} / \u4E0D\u53D8 ${m.kept||0}`)),s.error?e("div",{className:"dsi-hint"},"\u539F\u56E0\uFF1A"+s.error):null,(m.models&&m.models.added||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u65B0\u589E\uFF1A"+m.models.added.join("\u3001")):null,(m.models&&m.models.removed||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u79FB\u9664\uFF1A"+m.models.removed.join("\u3001")):null,m.levels&&((m.levels.added||[]).length||(m.levels.removed||[]).length)?e("div",{className:"dsi-hint"},`\u601D\u8003\u6863\u4F4D\uFF1A\u65B0\u589E ${(m.levels.added||[]).join("/")||"\u65E0"}\uFF1B\u79FB\u9664 ${(m.levels.removed||[]).join("/")||"\u65E0"}${(m.levelModels||[]).length?`\uFF08\u5F71\u54CD ${m.levelModels.length} \u4E2A\u6A21\u578B\uFF09`:""}`):null)}),e("div",{className:"dsi-inline"},e(v,{variant:"primary",disabled:syncBusy,onClick:applySync},syncBusy?"\u6B63\u5728\u5199\u5165\u2026":`\u786E\u8BA4\u5199\u5165\uFF08\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} / \u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0}\uFF09`),e(v,{disabled:syncBusy,onClick:()=>setSyncPlan(null)},"\u53D6\u6D88"))):null,r?e(Je,{draft:r,setDraft:M,saving:a,probing:H,isNew:!b.some(s=>s.id===r.id),onCancel:()=>M(null),onSave:ye,onProbe:he}):null,w.loading&&!x?e(J):null,w.error?e(P,{kind:"error"},`\u8BFB\u53D6\u5931\u8D25\uFF1A${w.error}`):null,!b.length&&!w.loading?e("div",{className:"dsi-empty"},"\u8FD9\u4E2A profile \u7684 llm-pi-ai \u6761\u76EE\u4E0B\u8FD8\u6CA1\u6709\u914D\u7F6E\u4EFB\u4F55\u4F9B\u5E94\u5546\u3002"):null,b.map(s=>{let m=G(s.id),y=c===s.id;return e("div",{className:"dsi-row",key:s.id},e("div",{className:"dsi-row-main"},e("div",{className:"dsi-row-name"},s.id,e("span",{className:"dsi-badge"},`${s.modelCount} \u6A21\u578B`),we(s.id),Ce(s.id),s.apiKeyEnv?e("span",{className:s.hasCredential?"dsi-badge dsi-badge-on":"dsi-badge dsi-badge-off"},s.hasCredential?"\u5BC6\u94A5\u5DF2\u914D\u7F6E":"\u7F3A\u5C11\u5BC6\u94A5"):null),e("div",{className:"dsi-row-meta"},[dsiMaskUrl(s.baseURL)||"(\u672A\u8BBE\u7F6E baseURL)",s.apiKeyEnv||"(\u672A\u8BBE\u7F6E apiKeyEnv)",s.reasoning?`\u9ED8\u8BA4\u601D\u8003 ${s.reasoning}`:null,Ve(s.models)||null].filter(Boolean).join(" \xB7 ")),m&&m.reason?e("div",{className:"dsi-row-meta"},`${m.verdict==="skipped"||m.verdict==="other"?"\u672A\u53C2\u4E0E\u539F\u56E0":"\u63A2\u6D4B\u7ED3\u679C"}\uFF1A${m.reason}`):null),e("div",{className:"dsi-toolbar"},e(v,{disabled:a,onClick:()=>k(y?null:s.id)},y?"\u6536\u8D77\u6A21\u578B":"\u67E5\u770B\u6A21\u578B"),e(v,{disabled:a,onClick:()=>be(s)},"\u7F16\u8F91")),y?e("div",{className:"dsi-card",style:{marginTop:"8px"}},e("div",{className:"dsi-hint"},`${(s.models||[]).length} \u4E2A\u6A21\u578B\uFF08\u5F53\u524D\u5199\u5728\u914D\u7F6E\u91CC\u7684\u601D\u8003\u6863\u4F4D\uFF09`),(s.models||[]).map(I=>{let $=Ne(s.id,I.id),$e=$&&$.status==="unlocked";return e("div",{className:"dsi-row-meta",key:I.id},e("span",{className:"dsi-mono"},I.id),"\u3000",me(I)||"\u672A\u58F0\u660E\u6863\u4F4D",$e?`\u3000\u2192 \u7F51\u5173\u652F\u6301 ${$.to.join("/")}${($.lost||[]).length?`\uFF08\u4F1A\u53BB\u6389 ${$.lost.join("/")}\uFF09`:""}`:null,$&&$.status==="silent"?"\u3000\u7F51\u5173\u672A\u58F0\u660E\uFF0C\u4FDD\u6301\u539F\u6837":null,$&&$.status==="gone"?"\u3000\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B\uFF0C\u4FDD\u6301\u539F\u6837":null)})):null)}))}function en(n){let t=Le(n),a=[{id:"integration-mcp",order:61,labelKey:"mcp.title",Component:_e},{id:"integration-providers",order:64,labelKey:"providers.title",Component:Qe}];for(let o of a)n.effect(()=>n.slots.inject("settings.section",()=>n.slots.register({name:"settings.section",id:o.id,order:o.order,label:()=>t(o.labelKey),locale:z},o.Component)))}var nn=["slots","locale"],tn=z;
+      return json(res, 200, { ok: true, data: await importMcpServers(body) });
+    case "POST /mcp/import-json":
+      return json(res, 200, { ok: true, data: await importMcpJsonServers(body) });
+    case "POST /skill/save": {
+      const env = process.env;
+      const cwd = sessionCwd(ctx, req, url);
+      const rootPath = skillRootPath(body.root, env, cwd);
+      const saved = await writeSkill(rootPath, body);
+      return json(res, 200, { ok: true, data: saved });
+    }
+    case "POST /skill/delete": {
+      const env = process.env;
+      const cwd = sessionCwd(ctx, req, url);
+      const rootPath = skillRootPath(body.root, env, cwd);
+      return json(res, 200, { ok: true, data: await deleteSkill(rootPath, String(body.dir || "")) });
+    }
 ```
+
+</details>
 
 #### 缺口
 
-- 未固定上游版本核对分叉增量。
-  **影响**：不能把继承功能归为本分叉原创。
-  **进一步探讨**：固定上游提交对照配置、预览和调度变化。
+- 本轮INPUT无本项身份/成员，当前来源状态未确认
+  **影响**：只复核WORK旧固定版本，不声称最新或当前可分发
+  **进一步探讨**：主编排在后续可得来源重新核仓库ID/组件/目录成员/提交，不能用本地旧材料代替。
+- 配置管理节时/错误率和持续需求无对照
+  **影响**：不量化优势或推无人维护
+  **进一步探讨**：隔离profile比手改/预览写入的合格任务、恢复时间与误配置。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · MCP导入怎样从JSON写成宿主配置，失败如何恢复？
+### Q02 · MCP导入/受管块与网关保存能否共同恢复？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-MCP 的权威列表存于当前 profile 的 .dsh-integration/mcp.json，启用项生成 @deepseek-ai/dsh-mcp-client 的受管 patch 区块。导入函数逐条正规化，非法项列入 failed，其余新增或覆盖同名项；dryRun 返回增删和警告但不落盘，正式导入会重新读取当前列表再计算，因此它是预览操作而不是绑定完整原始状态的事务计划。
+resolveProfileDir依Host当前profile、显式环境、命名/已装插件目录判定；多候选无明确默认则拒，仍有fallback，必须让管理员核实际目录。MCP权威列表位profile/.dsh-integration/mcp.json，启用项生成官方MCP client受管patch块；手改受管块下次可能被权威列表覆盖。
 
-写入前校验服务器名、传输方式、必要 command/url、数字字段及重复名称，生成并校验整个 YAML。单文件写通过临时文件与 rename，patch 写入前另保留备份。这些措施降低语法和半个文件的风险，却不使两份文件共同原子提交。writeMcpServers 先写 mcp.json，再备份及写 patch；若后者失败，权威列表与宿主启动输入可能不一致。源码没有该两文件事务的提交标记或自动补偿，此处是明确失败窗口，未在本轮实际注入磁盘故障。
+JSON导入逐条normalize，非法项放failed但合法项仍可写；默认overwrite同名、overwrite:false则skip。dryRun仅返回差异，apply重新读当前列表并重算，不携完整原状态绑定的计划。要同时看updated/failed而不只added。
 
-恢复时不能只恢复 patch 后假定列表也回滚，因为下次保存会按 mcp.json 再生成受管区块。用户应同时核对两份文件与备份，避免手工修改受管块被覆盖。导入默认允许覆盖同名服务器，批内部分非法项不阻止合法项落盘；预览时必须确认 updated 和 failed，而非只看新增数量。
+writeMcpServers先校验名字/重复及整个生成YAML，随后writeFileAtomic(mcp.json)，再writeWithBackup(patch)。原子helper临时文件rename+chmod、patch保最多三备份是有用的单文件保护，却不是两文件共同事务；第二步失败可留下权威列表已新、宿主patch旧。恢复只还patch不还mcp.json，下次仍会重生成新块。
+
+saveProvider也是先读patch并校验，若给secret先备份/写credentials，再备份/写patch，途中失败可部分生效。没有跨文件commit record/自动共同回滚，也没写前比外部编辑版本；备份不是自动恢复成功。出现失败先停调度并逐文件比原件/当前/备份，别整体盲重放覆盖人手变动。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:7575-7617](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7575-L7617)
+**依据 1 · 源码核查**：[lib/index.js:7428-7459](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7428-L7459)
 
-服务器校验和启用项到受管patch的映射。
+profile选择/拒歧义及路径。
 
 <details>
-<summary>查看原文（43行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
-function validateServer(server) {
-  const problems = [];
-  if (!server || typeof server !== "object") throw httpError(400, "error.mcp.invalid", "\u7F3A\u5C11\u670D\u52A1\u5668\u5B9A\u4E49");
-  const name2 = String(server.serverName || "").trim();
-  if (!SERVER_NAME_RE.test(name2)) {
-    problems.push("serverName \u5FC5\u987B\u662F 1-32 \u4F4D\u5B57\u6BCD\u3001\u6570\u5B57\u3001\u4E0B\u5212\u7EBF\u6216\u8FDE\u5B57\u7B26");
+function resolveProfileDir(env = process.env, ctx = hostContext) {
+  const fromHost = currentHostProfileDir(ctx);
+  if (fromHost) return fromHost;
+  if (env.DSH_PROFILE_DIR) return path.resolve(env.DSH_PROFILE_DIR);
+  const profiles = path.join(resolveHome(env), "profiles");
+  const named = profileNameFromArgv() || env.DSH_PROFILE;
+  if (typeof named === "string" && PROFILE_NAME_RE.test(named)) {
+    const dir = path.join(profiles, named);
+    if (fs.existsSync(dir)) return dir;
   }
-  const rawTransport = server.transport;
-  const transport = rawTransport === void 0 || rawTransport === null || rawTransport === "" ? "stdio" : String(rawTransport);
-  if (transport !== "stdio" && transport !== "streamable-http") {
-    problems.push("transport \u5FC5\u987B\u662F stdio \u6216 streamable-http");
-  } else if (transport === "stdio") {
-    if (!String(server.command || "").trim()) problems.push("stdio \u6A21\u5F0F\u5FC5\u987B\u586B\u5199 command");
-  } else if (!String(server.url || "").trim()) {
-    problems.push("streamable-http \u6A21\u5F0F\u5FC5\u987B\u586B\u5199 url");
+  const found = profilesWithPlugin(profiles);
+  if (found.length === 1) return path.join(profiles, found[0]);
+  if (found.includes(DEFAULT_PROFILE_NAME)) return path.join(profiles, DEFAULT_PROFILE_NAME);
+  if (found.length > 1) {
+    throw httpError(
+      500,
+      "ambiguous_profile",
+      `\u5DF2\u5B89\u88C5\u672C\u63D2\u4EF6\u7684 profile \u6709\u591A\u4E2A\uFF08${found.join("\u3001")}\uFF09\uFF0C\u65E0\u6CD5\u786E\u5B9A\u8BE5\u6539\u54EA\u4E2A\u914D\u7F6E\uFF1B\u8BF7\u8BBE\u7F6E DSH_PROFILE_DIR \u540E\u91CD\u8BD5\u3002`
+    );
   }
-  for (const key of ["toolCallTimeoutMs", "maxInstructionBytes"]) {
-    const raw = server[key];
-    if (raw === void 0 || raw === null || String(raw).trim() === "") continue;
-    const num = Number(raw);
-    if (!Number.isFinite(num) || num < 0) problems.push(`${key} \u5FC5\u987B\u662F\u975E\u8D1F\u6570\u5B57`);
-  }
-  if (problems.length) throw httpError(400, "error.mcp.invalid", problems.join("\uFF1B"));
-  return { ...server, serverName: name2, transport };
+  const fallback = typeof named === "string" && PROFILE_NAME_RE.test(named) ? named : DEFAULT_PROFILE_NAME;
+  return path.join(profiles, fallback);
 }
-function renderManagedBlock(servers) {
-  const list = Array.isArray(servers) ? servers : [];
-  const rows = [];
-  for (const server of list) {
-    if (!server || !server.serverName || server.enabled === false) continue;
-    rows.push({ id: rowId(server.serverName), name: MCP_PACKAGE, config: encodeJsDeep(mcpConfig(server)) });
-  }
-  const head = [
-    START_MARK,
-    `# \u7531 ${PLUGIN_NAME} \u7EF4\u62A4\uFF1A${rows.length} \u4E2A\u542F\u7528\u7684 MCP \u670D\u52A1\u5668\u3002`,
-    "# \u76F4\u63A5\u5728\u8BBE\u7F6E\u9875\u91CC\u589E\u5220\u6539\uFF0C\u624B\u5DE5\u6539\u52A8\u672C\u533A\u5757\u4F1A\u5728\u4E0B\u6B21\u4FDD\u5B58\u65F6\u88AB\u8986\u76D6\u3002"
-  ];
-  if (rows.length) {
-    const yamlText = import_yaml.default.stringify([{ insert: rows }], { lineWidth: 0, singleQuote: true }).trimEnd();
-    head.push(decodeJsSentinels(yamlText));
-  }
-  head.push(END_MARK);
-  return head.join("\n") + "\n";
+function paths(env = process.env, ctx = hostContext) {
+  const home = resolveHome(env);
+  const profileDir = resolveProfileDir(env, ctx);
+  return {
+    home,
+    profileDir,
+    patchFile: path.join(profileDir, "cordis.patch.yml"),
+    stateDir: path.join(profileDir, ".dsh-integration"),
+    mcpFile: path.join(profileDir, ".dsh-integration", "mcp.json"),
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:7483-7506](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7483-L7506)
+**依据 2 · 源码核查**：[lib/index.js:7483-7511](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7483-L7511)
 
-单文件临时写rename与备份。
+单文件tmp/rename/chmod和备份。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
 async function writeFileAtomic(file, text, mode = 384) {
@@ -342,16 +372,21 @@ async function writeWithBackup(file, text, mode = 384, keep = 3) {
   }
   await writeFileAtomic(file, text, mode);
 }
+async function listBackups(file) {
+  const dir = path.dirname(file);
+  const base = `${path.basename(file)}.bak-`;
+  try {
+    const names = (await fsp.readdir(dir)).filter((n) => n.startsWith(base));
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:7757-7772](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7757-L7772)
+**依据 3 · 源码核查**：[lib/index.js:7757-7776](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7757-L7776)
 
-MCP列表先写，patch后写，不是共同事务。
+列表校验，mcp.json→patch顺序。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
 async function writeMcpServers(servers, env = process.env) {
@@ -370,16 +405,20 @@ async function writeMcpServers(servers, env = process.env) {
   await writeFileAtomic(p.mcpFile, JSON.stringify({ version: 1, servers: list }, null, 2) + "\n", 384);
   await writeWithBackup(p.patchFile, nextPatch, 384, 3);
   return { servers: list, patchFile: p.patchFile, mcpFile: p.mcpFile };
+}
+var SKILL_ROOTS = [
+  { id: "dsh-global", label: "DSH \u5168\u5C40", dir: (c) => path.join(c.home, "skills"), writable: true },
+  { id: "agents-global", label: "\u5171\u4EAB\u5168\u5C40 .agents", dir: (c) => path.join(c.homeDir, ".agents", "skills"), writable: true },
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:9121-9177](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9121-L9177)
+**依据 4 · 源码核查**：[lib/index.js:9121-9174](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9121-L9174)
 
-逐条导入、默认覆盖、部分失败及dryRun分支。
+导入逐条failed/overwrite/dryRun及正式写。
 
 <details>
-<summary>查看原文（57行）</summary>
+<summary>查看原文（54行）</summary>
 
 ```text
 async function importMcpJsonServers(body, env = process.env) {
@@ -436,43 +475,85 @@ async function importMcpJsonServers(body, env = process.env) {
     failed,
     warnings,
     serverCount: written.servers.length,
-    patchFile: written.patchFile,
-    mcpFile: written.mcpFile
-  };
 ```
 
 </details>
+
+**依据 5 · 源码核查**：[lib/index.js:8280-8306](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8280-L8306)
+
+credentials先于patch的provider保存。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+async function saveProvider(env = process.env, { providerId, provider, apiKey } = {}) {
+  const id = validateProviderId(providerId);
+  const p = paths(env);
+  const patchText = await readTextFile(p.patchFile, "");
+  const config = renderProviderConfig(provider);
+  const created = !Object.prototype.hasOwnProperty.call(readProvidersFromPatch(patchText).providers, id);
+  const nextPatch = mergeProviderIntoPatch(patchText, id, config);
+  validatePatchText(nextPatch);
+  let credentialsWritten = false;
+  const secret = String(apiKey ?? "").trim();
+  if (secret) {
+    const credentialsText = await readTextFile(p.credentialsFile, "version: 1\n");
+    const nextCredentials = mergeCredentialRef(credentialsText, config.apiKeyEnv, secret);
+    await writeWithBackup(p.credentialsFile, nextCredentials, 384, 3);
+    credentialsWritten = true;
+  }
+  await writeWithBackup(p.patchFile, nextPatch, 384, 3);
+  return {
+    providerId: id,
+    created,
+    modelCount: config.models.length,
+    apiKeyEnv: config.apiKeyEnv,
+    credentialsWritten,
+    patchFile: p.patchFile,
+    credentialsFile: p.credentialsFile
+  };
+}
+```
+
+</details>
+
+#### 缺口
+
+- 第二文件失败/外部编辑时真实部分状态和恢复未注入
+  **影响**：单文件保护不构成跨文件事务、不能承诺无丢更新
+  **进一步探讨**：隔离profile模拟第二写失败及外部编辑，核三类原件/备份并重启代表任务。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 思考解锁与模型同步真正在验证什么？
+### Q03 · 思考解锁/模型同步及定时究竟验证何种能力？
 
 **研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-所谓“自动识别真正支持的档位”，在本包中实际是读取网关 /models 的 reasoning_supported_efforts 等声明字段，再写成 DSH 模型配置；它不逐档发生成请求验证服务是否接受，更不测推理质量。网关身份由 /healthz 或 cn:/global: 模型名前缀判断，属于兼容筛选，不是对服务真实性的密码学认证。
+probeGateway取/models，normalize按reasoning_supported_efforts/supports_reasoning/can_disable_thinking等声明生成档位，healthz service或cn:/global:前缀筛WorkBuddy兼容类型。不是逐档生成测试，更不是密码学服务认证或推理质量验证。“真正支持”只能说配置反映网关广告，实际可接受和有效要另跑代表请求。
 
-思考解锁保留原模型集合，只对匹配ID且有声明的模型替换 reasoningEfforts；模型缺失或档位未声明时保留原值。独立模型同步则以网关返回的非空集合为目标，生成 added、kept、removed，连同档位变动预览。它拒绝空模型集合，但一个非空却不完整的列表仍可删除本地已有模型。对“网关暂时少报”和“模型正式下线”没有独立确认，定时同步因此可能把短期供给故障变为持久配置变化。
+unlockPlan保原模型集合，匹配ID且有declared efforts才替档位，缺模型/无声明保原值；独立模型sync以网关非空目标列表生成added/kept/removed，拒空集合是保护，但非空截断/临时少报仍能删除原模型。没有退役独立确认或连续观察窗口，不宜默认无人值守。
 
-正常客户端先请求预览，再把各供应商 digest 带入 confirm=true 的应用请求；后端重新探测并在摘要不符时拒绝整次同步，这是有用的陈旧预览检测。但后端仅在提供 expected 时比较，接口不是不可绕过的“必须先有预览”门禁。digest来自目标models，不绑定预览时本地patch完整字节，单实例队列也不阻止外部编辑。summary.changed 只计模型增删及档位键集合变化，单独窗口、名称或档位映射值变化不一定触发写入，故“刷新模型信息”亦有具体范围。
+正常client预览后收各provider digest，apply传confirm:true/expectedDigests；后端重探目标，expected给了且不同则标stale，任何stale拒整次最后写入，这是实在陈旧预览保护。但expected可省、confirm只是调用方字段，digest为目标models的s1摘要，不绑预览时原patch/credentials完整字节。单实例队列不防外部编辑。
+
+plan.summary.changed只据模型增删和档位键增删，单独name/context/maxTokens/input或档位同键映射值变化可能产生不同目标却被current跳过，不是所有模型信息都刷新。定时每分钟同队列先unlock再sync各自写/捕错，最后写schedule，第二项失败不会撤第一项，所谓同批不是共同事务。
+
+缺失/坏schedule时readSchedule每次normalize({},Date.now())，enabled默认true、nextRunAt变当前+interval；真实tick每次重算后not-due是可由源码推出的启动边界，非本轮计时复现。应保存持久schedule并核具体nextRunAt，先完成删除/恢复验收再开。定时结果/变更数不是模型服务可用性结论。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:7962-7981](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7962-L7981)
+**依据 1 · 源码核查**：[lib/index.js:7966-7984](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7966-L7984)
 
-模型归一仅读取广告字段，不做生成能力探测。
+只读广告字段生成档位。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-function normalizeGatewayModel(raw) {
-  const id = String(raw?.id ?? "").trim();
-  if (!id) return null;
-  const model = { id, name: String(raw?.name ?? raw?.display_name ?? "").trim() || id };
   const contextWindow = Number(raw?.context_length ?? raw?.context_window);
   if (Number.isFinite(contextWindow) && contextWindow > 0) model.contextWindow = Math.trunc(contextWindow);
   const maxTokens = Number(raw?.max_output_tokens ?? raw?.max_tokens);
@@ -489,16 +570,58 @@ function normalizeGatewayModel(raw) {
     model.reasoning = fallback;
   }
   return model;
+}
+async function probeGateway({ baseURL, apiKey } = {}, fetchImpl) {
+  const doFetch = fetchImpl ?? globalThis.fetch;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:8333-8409](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8333-L8409)
+**依据 2 · 源码核查**：[lib/index.js:7984-8010](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7984-L8010)
 
-网关识别与unlock保留缺失、静默模型。
+models探测而非逐档生成。
 
 <details>
-<summary>查看原文（77行）</summary>
+<summary>查看原文（27行）</summary>
+
+```text
+  const doFetch = fetchImpl ?? globalThis.fetch;
+  if (typeof doFetch !== "function") throw httpError(500, "error.provider.fetch", "\u5F53\u524D\u8FD0\u884C\u65F6\u4E0D\u652F\u6301 fetch");
+  const base = normalizeBaseURL(baseURL);
+  const headers = { accept: "application/json" };
+  const key = String(apiKey ?? "").trim();
+  if (key) headers.authorization = `Bearer ${key}`;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), PROBE_TIMEOUT_MS);
+  let res;
+  try {
+    res = await doFetch(`${base}/models`, { headers, signal: controller.signal, redirect: "follow" });
+  } catch (err) {
+    const reason = err?.name === "AbortError" ? `\u8D85\u8FC7 ${PROBE_TIMEOUT_MS / 1e3} \u79D2\u672A\u54CD\u5E94` : String(err?.message ?? err);
+    throw httpError(502, "error.provider.probe", `\u8FDE\u63A5\u7F51\u5173\u5931\u8D25\uFF1A${reason}`);
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!res.ok) {
+    const hint = res.status === 401 || res.status === 403 ? "\uFF08API Key \u53EF\u80FD\u4E0D\u6B63\u786E\uFF09" : "";
+    throw httpError(502, "error.provider.probe", `\u7F51\u5173 /models \u8FD4\u56DE HTTP ${res.status}${hint}`);
+  }
+  let payload;
+  try {
+    payload = await res.json();
+  } catch {
+    throw httpError(502, "error.provider.probe", "\u7F51\u5173 /models \u8FD4\u56DE\u7684\u4E0D\u662F JSON");
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:8333-8365](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8333-L8365)
+
+healthz/命名空间兼容判断。
+
+<details>
+<summary>查看原文（33行）</summary>
 
 ```text
 async function detectGatewayKind({ baseURL } = {}, fetchImpl) {
@@ -534,6 +657,18 @@ function realmNamespaced(models) {
   if (!ids.length) return false;
   return ids.every((id) => /^(cn|global):/.test(id));
 }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:8366-8410](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8366-L8410)
+
+解锁保留模型/无声明。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
 function unlockPlan(configuredModels, gatewayModels) {
   const byId = /* @__PURE__ */ new Map();
   for (const row of Array.isArray(gatewayModels) ? gatewayModels : []) {
@@ -578,18 +713,27 @@ function unlockPlan(configuredModels, gatewayModels) {
     models.push(model);
   }
   return { models, report };
+}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:8528-8603](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8528-L8603)
+**依据 5 · 源码核查**：[lib/index.js:8520-8604](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8520-L8604)
 
-模型同步集合、摘要及changed计算范围。
+s1摘要、目标模型及changed只计增删/档位键。
 
 <details>
-<summary>查看原文（76行）</summary>
+<summary>查看原文（85行）</summary>
 
 ```text
+function syncDigest(text) {
+  let h = 2166136261;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return `s1-${(h >>> 0).toString(16).padStart(8, "0")}`;
+}
 function planModelSync(raw, gatewayModels) {
   const configured = Array.isArray(raw?.models) ? raw.models : [];
   const gateway = /* @__PURE__ */ new Map();
@@ -666,16 +810,17 @@ function planModelSync(raw, gatewayModels) {
     levelModels
   };
   return { models, summary, details, digest: syncDigest(JSON.stringify(models)) };
+}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:8650-8698](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8650-L8698)
+**依据 6 · 源码核查**：[lib/index.js:8650-8703](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8650-L8703)
 
-非空检查、可选expected摘要比较及写入。
+非空保护/可选expected/stale整次拒/最终写。
 
 <details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（54行）</summary>
 
 ```text
       const plan = planModelSync(raw, probed.models);
@@ -727,19 +872,31 @@ function planModelSync(raw, gatewayModels) {
   }
   const changed = !dryRun && nextPatch !== patchText;
   if (changed) await writeWithBackup(p.patchFile, nextPatch, 384, 3);
+  const totals = {
+    added: results.reduce((sum, row) => sum + (row.summary?.added || 0), 0),
+    removed: results.reduce((sum, row) => sum + (row.summary?.removed || 0), 0),
+    kept: results.reduce((sum, row) => sum + (row.summary?.kept || 0), 0),
+    levelModels: results.reduce((sum, row) => sum + (row.summary?.levelModels?.length || 0), 0),
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:9288-9302](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9288-L9302)
+**依据 7 · 源码核查**：[lib/client.js:71-71](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/client.js#L71-L71)
 
-confirm是强制字段，expectedDigests不是强制。
-
-<details>
-<summary>查看原文（15行）</summary>
+客户端预览digest→confirm申请。
 
 ```text
-    case "POST /providers/models/sync-apply": {
+function Qe(n){let t=_(n);X("settings.section",n);let[a,o]=h(!1),[i,d]=h(null),[u,g]=h(null),[c,k]=h(null),w=F(()=>T(`/state?session=${encodeURIComponent(t||"")}&root=`,{sessionId:t}),[t]),x=w.data,C=x&&x.providers||{},b=C.providers||[],l=C.patchFile||x&&x.paths&&x.paths.patchFile||"",p=C.credentialsFile||"",E=b.map(s=>s.id).join(","),[N,R]=h({loading:!1,at:null,error:null,data:null}),[f,O]=h(!0),[r,M]=h(null),[H,te]=h(!1),L=async()=>{if(b.length){R({loading:!0,at:null,error:null,data:null});try{let s=await T("/provider/unlock",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),dryRun:!0,onlyWorkbuddy:f}});R({loading:!1,at:Date.now(),error:null,data:s})}catch(s){R({loading:!1,at:Date.now(),error:s.message||String(s),data:null})}}};D(()=>{L()},[E,t,f]);let ge=async()=>{if(b.length){o(!0),g(null),d(null);try{let s=await T("/provider/unlock",{method:"POST",sessionId:t,body:{providerIds:b.map($=>$.id),onlyWorkbuddy:f}}),y=(s.providers||[]).filter($=>$.status==="error"),I=[s.unlockedModels?`\u5DF2\u89E3\u9501 ${s.unlockedModels} \u4E2A\u6A21\u578B\uFF08${(s.unlockedProviders||[]).join("\u3001")}\uFF09`:"\u6240\u6709\u7F51\u5173\u7684\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\uFF0C\u6CA1\u6709\u6539\u52A8\u6587\u4EF6"];y.length&&I.push(`\u63A2\u6D4B\u5931\u8D25\uFF1A${y.map($=>`${$.id}\uFF08${$.error}\uFF09`).join("\uFF1B")}`),s.changed&&I.push("\u5199\u914D\u7F6E\u524D\u5DF2\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DeepSeek Harness \u540E\u751F\u6548\u3002"),d(I.join("\u3000")),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{o(!1)}}},fe=()=>{g(null),d(null),M({...Xe})},be=s=>{g(null),d(null),M({id:s.id,apiKeyEnv:s.apiKeyEnv||"",apiKey:"",baseURL:s.baseURL||"",reasoning:s.reasoning||"",models:(s.models||[]).map(m=>({...m,checked:!0}))})},he=async()=>{if(r){te(!0),g(null),d(null);try{let m=((await T("/provider/probe",{method:"POST",sessionId:t,body:{baseURL:r.baseURL,apiKey:r.apiKey}})).models||[]).map(y=>({...y,checked:!0}));M(y=>y&&{...y,models:m}),d(`\u7F51\u5173\u8FD4\u56DE ${m.length} \u4E2A\u6A21\u578B\uFF0C\u5DF2\u5168\u90E8\u52FE\u9009\u3002`)}catch(s){g(s.message||String(s))}finally{te(!1)}}},ye=async()=>{if(r){o(!0),g(null),d(null);try{let s=(r.models||[]).filter(y=>y.checked),m=await T("/provider/save",{method:"POST",sessionId:t,body:{providerId:r.id.trim(),apiKey:r.apiKey,provider:{apiKeyEnv:r.apiKeyEnv,api:"openai-completions",baseURL:r.baseURL,reasoning:r.reasoning,models:s}}});d(`${m.created?"\u5DF2\u65B0\u589E":"\u5DF2\u66F4\u65B0"}\u4F9B\u5E94\u5546 ${m.providerId}\uFF08${m.modelCount} \u4E2A\u6A21\u578B\uFF09${m.credentialsWritten?"\uFF0C\u5BC6\u94A5\u5DF2\u5199\u5165\u51ED\u636E\u6587\u4EF6":""}\u3002\u91CD\u542F DeepSeek Harness \u540E\u751F\u6548\u3002`),M(null),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{o(!1)}}},[Q,se]=h(null),[ve,W]=h(!1),U=F(()=>T(`/provider/schedule?session=${encodeURIComponent(t||"")}`,{sessionId:t}),[t]);D(()=>{se(U.data||null)},[U.data]);const[syncPlan,setSyncPlan]=h(null),[syncBusy,setSyncBusy]=h(!1),openSync=async()=>{if(!b.length)return;setSyncBusy(!0),g(null),d(null);try{const s=await T("/providers/models/sync-preview",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),onlyWorkbuddy:f}});setSyncPlan(s),s.totals&&!s.totals.changed&&d("\u6A21\u578B\u6E05\u5355\u4E0E\u7F51\u5173\u4E00\u81F4\uFF0C\u65E0\u9700\u540C\u6B65\u3002")}catch(s){g(s.message||String(s))}finally{setSyncBusy(!1)}},applySync=async()=>{if(!syncPlan)return;setSyncBusy(!0),g(null),d(null);try{const expectedDigests={};for(const m of syncPlan.providers||[])m.digest&&(expectedDigests[m.id]=m.digest);const s=await T("/providers/models/sync-apply",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),onlyWorkbuddy:f,confirm:!0,expectedDigests}}),y=s.totals||{};d(`\u5DF2\u540C\u6B65\u6A21\u578B\u6E05\u5355\uFF1A\u65B0\u589E ${y.added||0} \u4E2A\u3001\u79FB\u9664 ${y.removed||0} \u4E2A\u3001\u4FDD\u7559 ${y.kept||0} \u4E2A${y.levelModels?`\uFF0C\u540C\u65F6\u66F4\u65B0 ${y.levelModels} \u4E2A\u6A21\u578B\u7684\u601D\u8003\u6863\u4F4D`:""}\u3002\u5199\u524D\u5DF2\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002`),setSyncPlan(null),w.reload(),U.reload(),await L()}catch(s){g(s.message||String(s)),setSyncPlan(null)}finally{setSyncBusy(!1)}};
+```
+
+**依据 8 · 源码核查**：[lib/index.js:9289-9304](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9289-L9304)
+
+confirm门槛与可选expected。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
       const input = body || {};
       if (!input.confirm) {
         throw httpError(400, "error.provider.sync.confirm", "写入门禁：先预览，再用 confirm=true 二次确认");
@@ -754,49 +911,18 @@ confirm是强制字段，expectedDigests不是强制。
           defaultDigest: typeof input.digest === "string" ? input.digest : null,
           source: input.source === "schedule" ? "schedule" : "manual"
         })
+      });
+    }
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[lib/client.js:71-72](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/client.js#L71-L72)
+**依据 9 · 源码核查**：[lib/index.js:8734-8779](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8734-L8779)
 
-客户端确实先预览并传入每项digest，压缩行保留原文。
-
-```text
-function Qe(n){let t=_(n);X("settings.section",n);let[a,o]=h(!1),[i,d]=h(null),[u,g]=h(null),[c,k]=h(null),w=F(()=>T(`/state?session=${encodeURIComponent(t||"")}&root=`,{sessionId:t}),[t]),x=w.data,C=x&&x.providers||{},b=C.providers||[],l=C.patchFile||x&&x.paths&&x.paths.patchFile||"",p=C.credentialsFile||"",E=b.map(s=>s.id).join(","),[N,R]=h({loading:!1,at:null,error:null,data:null}),[f,O]=h(!0),[r,M]=h(null),[H,te]=h(!1),L=async()=>{if(b.length){R({loading:!0,at:null,error:null,data:null});try{let s=await T("/provider/unlock",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),dryRun:!0,onlyWorkbuddy:f}});R({loading:!1,at:Date.now(),error:null,data:s})}catch(s){R({loading:!1,at:Date.now(),error:s.message||String(s),data:null})}}};D(()=>{L()},[E,t,f]);let ge=async()=>{if(b.length){o(!0),g(null),d(null);try{let s=await T("/provider/unlock",{method:"POST",sessionId:t,body:{providerIds:b.map($=>$.id),onlyWorkbuddy:f}}),y=(s.providers||[]).filter($=>$.status==="error"),I=[s.unlockedModels?`\u5DF2\u89E3\u9501 ${s.unlockedModels} \u4E2A\u6A21\u578B\uFF08${(s.unlockedProviders||[]).join("\u3001")}\uFF09`:"\u6240\u6709\u7F51\u5173\u7684\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\uFF0C\u6CA1\u6709\u6539\u52A8\u6587\u4EF6"];y.length&&I.push(`\u63A2\u6D4B\u5931\u8D25\uFF1A${y.map($=>`${$.id}\uFF08${$.error}\uFF09`).join("\uFF1B")}`),s.changed&&I.push("\u5199\u914D\u7F6E\u524D\u5DF2\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DeepSeek Harness \u540E\u751F\u6548\u3002"),d(I.join("\u3000")),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{o(!1)}}},fe=()=>{g(null),d(null),M({...Xe})},be=s=>{g(null),d(null),M({id:s.id,apiKeyEnv:s.apiKeyEnv||"",apiKey:"",baseURL:s.baseURL||"",reasoning:s.reasoning||"",models:(s.models||[]).map(m=>({...m,checked:!0}))})},he=async()=>{if(r){te(!0),g(null),d(null);try{let m=((await T("/provider/probe",{method:"POST",sessionId:t,body:{baseURL:r.baseURL,apiKey:r.apiKey}})).models||[]).map(y=>({...y,checked:!0}));M(y=>y&&{...y,models:m}),d(`\u7F51\u5173\u8FD4\u56DE ${m.length} \u4E2A\u6A21\u578B\uFF0C\u5DF2\u5168\u90E8\u52FE\u9009\u3002`)}catch(s){g(s.message||String(s))}finally{te(!1)}}},ye=async()=>{if(r){o(!0),g(null),d(null);try{let s=(r.models||[]).filter(y=>y.checked),m=await T("/provider/save",{method:"POST",sessionId:t,body:{providerId:r.id.trim(),apiKey:r.apiKey,provider:{apiKeyEnv:r.apiKeyEnv,api:"openai-completions",baseURL:r.baseURL,reasoning:r.reasoning,models:s}}});d(`${m.created?"\u5DF2\u65B0\u589E":"\u5DF2\u66F4\u65B0"}\u4F9B\u5E94\u5546 ${m.providerId}\uFF08${m.modelCount} \u4E2A\u6A21\u578B\uFF09${m.credentialsWritten?"\uFF0C\u5BC6\u94A5\u5DF2\u5199\u5165\u51ED\u636E\u6587\u4EF6":""}\u3002\u91CD\u542F DeepSeek Harness \u540E\u751F\u6548\u3002`),M(null),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{o(!1)}}},[Q,se]=h(null),[ve,W]=h(!1),U=F(()=>T(`/provider/schedule?session=${encodeURIComponent(t||"")}`,{sessionId:t}),[t]);D(()=>{se(U.data||null)},[U.data]);const[syncPlan,setSyncPlan]=h(null),[syncBusy,setSyncBusy]=h(!1),openSync=async()=>{if(!b.length)return;setSyncBusy(!0),g(null),d(null);try{const s=await T("/providers/models/sync-preview",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),onlyWorkbuddy:f}});setSyncPlan(s),s.totals&&!s.totals.changed&&d("\u6A21\u578B\u6E05\u5355\u4E0E\u7F51\u5173\u4E00\u81F4\uFF0C\u65E0\u9700\u540C\u6B65\u3002")}catch(s){g(s.message||String(s))}finally{setSyncBusy(!1)}},applySync=async()=>{if(!syncPlan)return;setSyncBusy(!0),g(null),d(null);try{const expectedDigests={};for(const m of syncPlan.providers||[])m.digest&&(expectedDigests[m.id]=m.digest);const s=await T("/providers/models/sync-apply",{method:"POST",sessionId:t,body:{providerIds:b.map(m=>m.id),onlyWorkbuddy:f,confirm:!0,expectedDigests}}),y=s.totals||{};d(`\u5DF2\u540C\u6B65\u6A21\u578B\u6E05\u5355\uFF1A\u65B0\u589E ${y.added||0} \u4E2A\u3001\u79FB\u9664 ${y.removed||0} \u4E2A\u3001\u4FDD\u7559 ${y.kept||0} \u4E2A${y.levelModels?`\uFF0C\u540C\u65F6\u66F4\u65B0 ${y.levelModels} \u4E2A\u6A21\u578B\u7684\u601D\u8003\u6863\u4F4D`:""}\u3002\u5199\u524D\u5DF2\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002`),setSyncPlan(null),w.reload(),U.reload(),await L()}catch(s){g(s.message||String(s)),setSyncPlan(null)}finally{setSyncBusy(!1)}};
-let xe=async s=>{if(Q){W(!0),g(null),d(null);try{let m=await T("/provider/schedule",{method:"POST",sessionId:t,body:{...Q,...s}});se(m),d(s.enabled===!1?"\u5DF2\u5173\u95ED\u5B9A\u65F6\u66F4\u65B0\uFF1B\u5DF2\u7ECF\u5230\u70B9\u7684\u90A3\u4E00\u6B21\u4E0D\u4F1A\u518D\u5199\u914D\u7F6E\u3002":`\u5B9A\u65F6\u66F4\u65B0\u5DF2\u4FDD\u5B58\uFF1A\u6BCF ${m.intervalMinutes} \u5206\u949F\uFF0C\u4EC5\u5728 DeepSeek Harness \u8FD0\u884C\u671F\u95F4\u751F\u6548\u3002`)}catch(m){g(m.message||String(m))}finally{W(!1)}}},ke=async()=>{W(!0),g(null),d(null);try{let s=await T("/provider/schedule/run",{method:"POST",sessionId:t,body:{}}),y=(s.report&&s.report.providers||[]).filter($=>$.status==="error"),I=[];s.ran?s.report?s.report.unlockedModels?I.push(`\u5DF2\u66F4\u65B0 ${s.report.unlockedModels} \u4E2A\u6A21\u578B\u7684\u601D\u8003\u6863\u4F4D`):I.push("\u5404\u7F51\u5173\u7684\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\uFF0C\u6CA1\u6709\u6539\u52A8\u6587\u4EF6"):I.push(`\u672A\u80FD\u5B8C\u6210\u89E3\u9501\uFF1A${s.error||"\u672A\u77E5\u539F\u56E0"}`):I.push("\u8FD8\u6CA1\u5230\u70B9\uFF0C\u672A\u6267\u884C\u3002"),y.length&&I.push(`\u63A2\u6D4B\u5931\u8D25\uFF1A${y.map($=>`${$.id}\uFF08${$.error}\uFF09`).join("\uFF1B")}`),s.sync&&I.push(`\u6A21\u578B\u6E05\u5355 +${(s.sync.totals||{}).added||0}/-${(s.sync.totals||{}).removed||0}`),s.report&&s.report.changed&&I.push("\u5DF2\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002"),d(I.join("\u3000")),U.reload(),w.reload(),await L()}catch(s){g(s.message||String(s))}finally{W(!1)}},ee=N.data&&N.data.providers||[],G=s=>ee.find(m=>m.id===s)||null,Ne=(s,m)=>{let y=G(s);return y&&(y.details||[]).find(I=>I.id===m)||null},we=s=>{let m=G(s);if(!m)return null;if(m.verdict==="gateway"){let y=m.kindSource==="model-id-prefix"?"\u6309\u6A21\u578B\u547D\u540D\u7A7A\u95F4":"\u6309 /healthz";return e("span",{className:"dsi-badge dsi-badge-on"},`WorkBuddy${m.service?` \xB7 ${m.service}`:""}\uFF08${y}\uFF09`)}return m.verdict==="other"?e("span",{className:"dsi-badge dsi-badge-off"},"\u975E WorkBuddy \u7F51\u5173"):null},Ce=s=>{let m=G(s);if(!m)return null;if(m.verdict==="skipped")return e("span",{className:"dsi-badge"},"\u4E0D\u5904\u7406");if(m.verdict==="unreachable"||m.status==="error")return e("span",{className:"dsi-badge dsi-badge-off"},"\u63A2\u6D4B\u5931\u8D25");if(m.status==="missing")return e("span",{className:"dsi-badge dsi-badge-off"},"\u914D\u7F6E\u5DF2\u4E0D\u5728\u6587\u4EF6\u91CC");let y=[];return m.unlocked&&y.push(`\u5F85\u89E3\u9501 ${m.unlocked}`),m.already&&y.push(`\u5DF2\u4E00\u81F4 ${m.already}`),m.silent&&y.push(`\u7F51\u5173\u672A\u58F0\u660E ${m.silent}`),m.gone&&y.push(`\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B ${m.gone}`),e("span",{className:m.unlocked?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},y.join(" \xB7 ")||`${m.scanned} \u4E2A\u6A21\u578B`)},ae=N.data&&N.data.unlockedModels||0,B=ee.reduce((s,m)=>s.concat((m.details||[]).filter(y=>y.status==="unlocked")),[]),oe=B.filter(s=>(s.lost||[]).length),ne=ee.filter(s=>s.verdict==="skipped"||s.verdict==="other");return e(q,{title:"\u601D\u8003\u89E3\u9501",desc:"\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u4E0E\u53EF\u7528\u6A21\u578B\u6E05\u5355\u3002\u4E24\u4E2A\u52A8\u4F5C\u4E92\u76F8\u72EC\u7ACB\uFF1A\u300C\u5168\u90E8\u89E3\u9501\u300D\u53EA\u5199\u601D\u8003\u6863\u4F4D\uFF0C\u300C\u540C\u6B65\u6A21\u578B\u6E05\u5355\u300D\u53EA\u6539\u6A21\u578B\u5217\u8868\uFF08\u5148\u9884\u89C8\u518D\u786E\u8BA4\uFF09\u3002\u5199\u524D\u81EA\u52A8\u5907\u4EFD\uFF0C\u91CD\u542F DSH \u540E\u751F\u6548\u3002",actions:e(K.default.Fragment,null,e(v,{variant:"primary",disabled:a||N.loading||!b.length,onClick:ge},ae?`\u5168\u90E8\u89E3\u9501\uFF08${ae} \u4E2A\u6A21\u578B\u5F85\u66F4\u65B0\uFF09`:"\u5168\u90E8\u89E3\u9501"),e(v,{disabled:a,onClick:()=>{w.reload(),L()}},"\u91CD\u65B0\u8BC6\u522B"),e(v,{disabled:a||syncBusy||!b.length,onClick:openSync},"\u540C\u6B65\u6A21\u578B\u6E05\u5355"),e(v,{disabled:a,onClick:fe},"\u65B0\u589E\u7F51\u5173")),footer:l?`\u914D\u7F6E\u6587\u4EF6\uFF1A${dsiMaskPath(l)}${p?`\u3000\u5BC6\u94A5\u6587\u4EF6\uFF1A${dsiMaskPath(p)}`:""}`:null},e(Z),e(P,{kind:"error"},u),e(P,{kind:"ok"},i),e(qe,{schedule:Q,busy:ve||a,loading:U.loading,error:U.error,onChange:xe,onRunNow:ke}),N.loading?e("div",{className:"dsi-hint"},"\u6B63\u5728\u8BC6\u522B\u7F51\u5173\u652F\u6301\u7684\u601D\u8003\u6863\u4F4D\u2026"):null,N.error?e(P,{kind:"error"},`\u81EA\u52A8\u8BC6\u522B\u5931\u8D25\uFF1A${N.error}`):null,N.data&&!N.data.unlockedModels&&b.length?e("div",{className:"dsi-hint"},"\u5DF2\u8BC6\u522B\u7684\u7F51\u5173\uFF0C\u601D\u8003\u6863\u4F4D\u90FD\u5DF2\u662F\u6700\u65B0\u3002"):null,B.length?e("div",{className:"dsi-hint"},`\u68C0\u6D4B\u5230 ${B.length} \u4E2A\u6A21\u578B\u7684\u6863\u4F4D\u4E0E\u7F51\u5173\u4E0D\u4E00\u81F4`+(oe.length?`\uFF08\u5176\u4E2D ${oe.length} \u4E2A\u4F1A\u51CF\u5C11\u6863\u4F4D\uFF09`:"")+"\uFF1A"+B.slice(0,3).map(s=>`${s.id}\uFF08${(s.from&&s.from.length?s.from:["\u672A\u58F0\u660E"]).join("/")} \u2192 ${s.to.join("/")}\uFF09`).join("\uFF1B")+(B.length>3?` \u7B49 ${B.length} \u4E2A`:"")):null,ne.length?e("div",{className:"dsi-hint"},`${ne.length} \u4E2A\u4F9B\u5E94\u5546\u4E0D\u53C2\u4E0E\u89E3\u9501\uFF1A`+ne.map(s=>`${s.id}\uFF08${s.reason||"\u4E0D\u9002\u7528"}\uFF09`).join("\uFF1B")):null,b.length?e("label",{className:"dsi-check",style:{marginTop:"6px"}},e("input",{type:"checkbox",checked:f,onChange:s=>O(s.target.checked)}),e("span",null,"\u53EA\u5904\u7406 WorkBuddy \u7F51\u5173\uFF08\u6309 /healthz \u670D\u52A1\u540D\u6216 cn:/global: \u547D\u540D\u7A7A\u95F4\u5224\u65AD\uFF09")):null,syncPlan?e("div",{className:"dsi-card"},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:13}},"\u540C\u6B65\u6A21\u578B\u6E05\u5355 \u00B7 \u9884\u89C8"),e("span",{className:"dsi-badge"},`\u5C06\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} \u4E2A / \u5C06\u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0} \u4E2A`)),e("div",{className:"dsi-hint"},"\u53EA\u6539\u53EF\u7528\u6A21\u578B\u5217\u8868\uFF0C\u4E0D\u6539\u601D\u8003\u6863\u4F4D\uFF1B\u5199\u5165\u524D\u81EA\u52A8\u5907\u4EFD\u3002"),(syncPlan.providers||[]).map(s=>{const m=s.summary||{};return e("div",{className:"dsi-card",key:s.id,style:{padding:"9px 11px"}},e("div",{className:"dsi-inline"},e("strong",{style:{fontSize:12}},s.id),e("span",{className:s.status==="error"||s.status==="stale"?"dsi-badge dsi-badge-off":"dsi-badge dsi-badge-on"},s.status==="error"?"\u63A2\u6D4B\u5931\u8D25":s.status==="stale"?"\u9700\u91CD\u65B0\u9884\u89C8":s.status==="skipped"?"\u8DF3\u8FC7":`\u65B0\u589E ${m.added||0} / \u79FB\u9664 ${m.removed||0} / \u4E0D\u53D8 ${m.kept||0}`)),s.error?e("div",{className:"dsi-hint"},"\u539F\u56E0\uFF1A"+s.error):null,(m.models&&m.models.added||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u65B0\u589E\uFF1A"+m.models.added.join("\u3001")):null,(m.models&&m.models.removed||[]).length?e("div",{className:"dsi-hint"},"\u5C06\u79FB\u9664\uFF1A"+m.models.removed.join("\u3001")):null,m.levels&&((m.levels.added||[]).length||(m.levels.removed||[]).length)?e("div",{className:"dsi-hint"},`\u601D\u8003\u6863\u4F4D\uFF1A\u65B0\u589E ${(m.levels.added||[]).join("/")||"\u65E0"}\uFF1B\u79FB\u9664 ${(m.levels.removed||[]).join("/")||"\u65E0"}${(m.levelModels||[]).length?`\uFF08\u5F71\u54CD ${m.levelModels.length} \u4E2A\u6A21\u578B\uFF09`:""}`):null)}),e("div",{className:"dsi-inline"},e(v,{variant:"primary",disabled:syncBusy,onClick:applySync},syncBusy?"\u6B63\u5728\u5199\u5165\u2026":`\u786E\u8BA4\u5199\u5165\uFF08\u65B0\u589E ${syncPlan.totals&&syncPlan.totals.added||0} / \u79FB\u9664 ${syncPlan.totals&&syncPlan.totals.removed||0}\uFF09`),e(v,{disabled:syncBusy,onClick:()=>setSyncPlan(null)},"\u53D6\u6D88"))):null,r?e(Je,{draft:r,setDraft:M,saving:a,probing:H,isNew:!b.some(s=>s.id===r.id),onCancel:()=>M(null),onSave:ye,onProbe:he}):null,w.loading&&!x?e(J):null,w.error?e(P,{kind:"error"},`\u8BFB\u53D6\u5931\u8D25\uFF1A${w.error}`):null,!b.length&&!w.loading?e("div",{className:"dsi-empty"},"\u8FD9\u4E2A profile \u7684 llm-pi-ai \u6761\u76EE\u4E0B\u8FD8\u6CA1\u6709\u914D\u7F6E\u4EFB\u4F55\u4F9B\u5E94\u5546\u3002"):null,b.map(s=>{let m=G(s.id),y=c===s.id;return e("div",{className:"dsi-row",key:s.id},e("div",{className:"dsi-row-main"},e("div",{className:"dsi-row-name"},s.id,e("span",{className:"dsi-badge"},`${s.modelCount} \u6A21\u578B`),we(s.id),Ce(s.id),s.apiKeyEnv?e("span",{className:s.hasCredential?"dsi-badge dsi-badge-on":"dsi-badge dsi-badge-off"},s.hasCredential?"\u5BC6\u94A5\u5DF2\u914D\u7F6E":"\u7F3A\u5C11\u5BC6\u94A5"):null),e("div",{className:"dsi-row-meta"},[dsiMaskUrl(s.baseURL)||"(\u672A\u8BBE\u7F6E baseURL)",s.apiKeyEnv||"(\u672A\u8BBE\u7F6E apiKeyEnv)",s.reasoning?`\u9ED8\u8BA4\u601D\u8003 ${s.reasoning}`:null,Ve(s.models)||null].filter(Boolean).join(" \xB7 ")),m&&m.reason?e("div",{className:"dsi-row-meta"},`${m.verdict==="skipped"||m.verdict==="other"?"\u672A\u53C2\u4E0E\u539F\u56E0":"\u63A2\u6D4B\u7ED3\u679C"}\uFF1A${m.reason}`):null),e("div",{className:"dsi-toolbar"},e(v,{disabled:a,onClick:()=>k(y?null:s.id)},y?"\u6536\u8D77\u6A21\u578B":"\u67E5\u770B\u6A21\u578B"),e(v,{disabled:a,onClick:()=>be(s)},"\u7F16\u8F91")),y?e("div",{className:"dsi-card",style:{marginTop:"8px"}},e("div",{className:"dsi-hint"},`${(s.models||[]).length} \u4E2A\u6A21\u578B\uFF08\u5F53\u524D\u5199\u5728\u914D\u7F6E\u91CC\u7684\u601D\u8003\u6863\u4F4D\uFF09`),(s.models||[]).map(I=>{let $=Ne(s.id,I.id),$e=$&&$.status==="unlocked";return e("div",{className:"dsi-row-meta",key:I.id},e("span",{className:"dsi-mono"},I.id),"\u3000",me(I)||"\u672A\u58F0\u660E\u6863\u4F4D",$e?`\u3000\u2192 \u7F51\u5173\u652F\u6301 ${$.to.join("/")}${($.lost||[]).length?`\uFF08\u4F1A\u53BB\u6389 ${$.lost.join("/")}\uFF09`:""}`:null,$&&$.status==="silent"?"\u3000\u7F51\u5173\u672A\u58F0\u660E\uFF0C\u4FDD\u6301\u539F\u6837":null,$&&$.status==="gone"?"\u3000\u7F51\u5173\u5DF2\u4E0D\u63D0\u4F9B\uFF0C\u4FDD\u6301\u539F\u6837":null)})):null)}))}function en(n){let t=Le(n),a=[{id:"integration-mcp",order:61,labelKey:"mcp.title",Component:_e},{id:"integration-providers",order:64,labelKey:"providers.title",Component:Qe}];for(let o of a)n.effect(()=>n.slots.inject("settings.section",()=>n.slots.register({name:"settings.section",id:o.id,order:o.order,label:()=>t(o.labelKey),locale:z},o.Component)))}var nn=["slots","locale"],tn=z;
-```
-
-#### 缺口
-
-- 没有代表模型各档位实际请求及结果记录。
-  **影响**：声明同步不能当作真实服务能力验收。
-  **进一步探讨**：在经许可的隔离profile对代表模型分别请求声明档位并记录接受、拒绝和实际参数。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 定时任务与本地接口边界能否保障配置意图？
-
-**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
-
-#### 完整回答
-
-启动依赖 webServer、sessions 与 Web 设置插槽。宿主每分钟通过同一 Promise 队列检查调度，HTTP 写请求也进入该队列；读请求不排队。这防止同实例写请求彼此同时改 patch，但不能防另一宿主进程或人工编辑相同文件。读取到写入之间未见基线文件摘要比较，因此外部并发仍可能丢失修改。
-
-定时执行先调用解锁并可能写盘，再调用模型同步并可能再次写盘，分别捕获失败，最后写调度结果。因此“同一批次”不等于共同原子提交。若第二步失败，第一步可能已生效，后续应读回而不是整体重放。未持久保存调度文件时，readSchedule每次以当前时间归一默认调度，nextRunAt重新设为当前时间加间隔，定时检查会一直判为not-due；要使首次定时可追踪，应通过界面保存调度，确认持久文件中的具体下一次时间。这是静态推导的启动边界，未运行计时复现。
-
-HTTP层检查Host、Origin和Sec-Fetch-Site，写操作要求固定头与JSON，限制请求体；这是本地同源防护，固定头不是用户身份认证。路由仍包含Skill删除与人设写入，页面移除不等于后端禁用。是否能被非授权客户端触达还受宿主绑定与访问控制影响，本轮不据源码宣称已存在远程漏洞。只应在本人控制的本地单用户profile评估，不把它当多用户权限系统。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:8734-8784](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8734-L8784)
-
-缺调度文件时以当前时间生成nextRunAt。
+缺失schedule默认重新生成。
 
 <details>
-<summary>查看原文（51行）</summary>
+<summary>查看原文（46行）</summary>
 
 ```text
 function normalizeSchedule(raw = {}, now = Date.now()) {
@@ -845,23 +971,23 @@ async function writeSchedule(env, schedule) {
   await writeFileAtomic(p.scheduleFile, `${JSON.stringify(normalizeSchedule(schedule), null, 2)}
 `, 384);
   return normalizeSchedule(schedule);
-}
-async function runScheduledUnlock(env = process.env, { now = Date.now(), fetchImpl, force = false } = {}) {
-  const schedule = await readSchedule(env);
-  if (!force && !scheduleDue(schedule, now)) {
-    return { ran: false, reason: schedule.enabled ? "not-due" : "disabled", schedule };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:8786-8837](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8786-L8837)
+**依据 10 · 源码核查**：[lib/index.js:8781-8840](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8781-L8840)
 
-解锁、同步、调度状态是分步写入。
+定时解锁/同步分步与最后记账。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（60行）</summary>
 
 ```text
+async function runScheduledUnlock(env = process.env, { now = Date.now(), fetchImpl, force = false } = {}) {
+  const schedule = await readSchedule(env);
+  if (!force && !scheduleDue(schedule, now)) {
+    return { ran: false, reason: schedule.enabled ? "not-due" : "disabled", schedule };
+  }
   let report = null;
   let sync = null;
   let lastError = "";
@@ -914,16 +1040,89 @@ async function runScheduledUnlock(env = process.env, { now = Date.now(), fetchIm
   }, now);
   await writeSchedule(env, next);
   return { ran: true, report, sync, error: lastError || null, schedule: next };
+}
+
+// src/index.js
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:8919-8940](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8919-L8940)
+#### 缺口
 
-Host、Origin及固定写头边界。
+- 网关少报/档位声明正确性、调度启动和实际请求效果未测
+  **影响**：配置成功不等能力解锁，自动删除/调度建议受限
+  **进一步探讨**：模拟非空少报/同键值变化和无持久schedule，核diff/文件；再对每档代表请求与恢复。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 真实请求边界和写队列限制到哪？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+HTTP先validateOrigin：仅loopback或trustedHosts、拒Sec-Fetch-Site:cross-site、Origin可解析且host不同拒；mutation要求x-dsh-integration:1与application/json，readBody限4MB。应把这些本地同源防护算实际机制，不能误说毫无防护；固定头、Host/Origin和session目标定位不等用户身份/多租户授权，真实部署还依Host监听/认证。
+
+apply里的Promise queue串化所有非GET/HEAD写与每分钟scheduler，错误catch后下一项仍继续，防本实例写相撞；GET/HEAD不入队。另进程或管理员同文件编辑不受锁，无原文件CAS，多挂载的hostContext也非由队列证明隔离。不能因有队列保证全局线性一致。
+
+client栏目只隐藏Skill/persona，后端仍路由到相关保存/删除；本轮不全审其路径/符号链接/所有权限链，因此不对整个插件作安全保证，也不从接口存在直接推远程漏洞。网关probe的timer在fetch headers后finally清除，之后才res.json，完整body耗时不由该timer限定；实际超时/网络预算需按调用链分别核。effect清timer和撤路由是入口回收，不等撤已经写的配置/credentials或已发网络请求。
+
+维护上固定包直接维护lib构建产物且含第三方YAML大段，本轮git清单不见该分叉src/test；这是维护与验证范围，不能用README保留上游测试说明当本分叉测试通过。目标宿主兼容与发布字节均未运行验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:8844-8875](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8844-L8875)
+
+固定头和4MB body。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（32行）</summary>
+
+```text
+var MUTATION_HEADER = "x-dsh-integration";
+var BODY_LIMIT = 4 * 1024 * 1024;
+function json(res, status, payload) {
+  const body = JSON.stringify(payload);
+  res.writeHead(status, {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "content-length": Buffer.byteLength(body)
+  });
+  res.end(body);
+}
+function fail(res, err) {
+  const status = err && err.statusCode ? err.statusCode : 500;
+  json(res, status, {
+    ok: false,
+    code: err && err.code || "error.internal",
+    error: err && err.message || String(err)
+  });
+}
+async function readBody(req, limit = BODY_LIMIT) {
+  const chunks = [];
+  let size = 0;
+  for await (const chunk of req) {
+    size += chunk.length;
+    if (size > limit) throw httpError(413, "error.proto.bodyTooLarge", "\u8BF7\u6C42\u4F53\u8FC7\u5927");
+    chunks.push(chunk);
+  }
+  if (!chunks.length) return {};
+  const text = Buffer.concat(chunks).toString("utf8");
+  if (!text.trim()) return {};
+  try {
+    return JSON.parse(text);
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:8919-8942](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8919-L8942)
+
+Host/Origin/fetch-site与写校验。
+
+<details>
+<summary>查看原文（24行）</summary>
 
 ```text
 function validateOrigin(ctx, req) {
@@ -948,18 +1147,39 @@ function validateMutation(req) {
     throw httpError(415, "error.proto.contentType", "\u5199\u64CD\u4F5C\u5FC5\u987B\u4F7F\u7528 application/json");
   }
 }
+function sessionCwd(ctx, req, url) {
+  const id = req.headers["x-dsh-integration-session"] || url.searchParams.get("session");
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:9223-9239](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9223-L9239)
+**依据 3 · 源码核查**：[lib/index.js:9187-9195](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9187-L9195)
 
-Skill与persona写API仍存在。
-
-<details>
-<summary>查看原文（17行）</summary>
+先校验再路由。
 
 ```text
+async function handle(ctx, req, res) {
+  const url = new URL(req.url || "/", "http://localhost");
+  const route = url.pathname.replace(/\/+$/, "").slice(API_PREFIX.length) || "/";
+  validateOrigin(ctx, req);
+  const mutation = req.method !== "GET" && req.method !== "HEAD";
+  if (mutation) validateMutation(req);
+  const body = mutation ? await readBody(req) : {};
+  switch (`${req.method} ${route}`) {
+    case "GET /state":
+```
+
+**依据 4 · 源码核查**：[lib/index.js:9220-9235](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9220-L9235)
+
+隐藏后端仍可写。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+      return json(res, 200, { ok: true, data: await importMcpServers(body) });
+    case "POST /mcp/import-json":
+      return json(res, 200, { ok: true, data: await importMcpJsonServers(body) });
     case "POST /skill/save": {
       const env = process.env;
       const cwd = sessionCwd(ctx, req, url);
@@ -973,17 +1193,13 @@ Skill与persona写API仍存在。
       const rootPath = skillRootPath(body.root, env, cwd);
       return json(res, 200, { ok: true, data: await deleteSkill(rootPath, String(body.dir || "")) });
     }
-    case "POST /persona/save": {
-      const cwd = body.cwd || sessionCwd(ctx, req, url);
-      return json(res, 200, { ok: true, data: await savePersona(process.env, { ...body, cwd }) });
-    }
 ```
 
 </details>
 
 **依据 5 · 源码核查**：[lib/index.js:9321-9355](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9321-L9355)
 
-实例内串行队列、分钟调度及HTTP注册。
+单实例Promise队列/读绕开/定时与route回收。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -1028,63 +1244,174 @@ function apply(ctx) {
 
 </details>
 
+**依据 6 · 源码核查**：[lib/index.js:7984-8010](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7984-L8010)
+
+headers返回后清timer再读JSON。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  const doFetch = fetchImpl ?? globalThis.fetch;
+  if (typeof doFetch !== "function") throw httpError(500, "error.provider.fetch", "\u5F53\u524D\u8FD0\u884C\u65F6\u4E0D\u652F\u6301 fetch");
+  const base = normalizeBaseURL(baseURL);
+  const headers = { accept: "application/json" };
+  const key = String(apiKey ?? "").trim();
+  if (key) headers.authorization = `Bearer ${key}`;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), PROBE_TIMEOUT_MS);
+  let res;
+  try {
+    res = await doFetch(`${base}/models`, { headers, signal: controller.signal, redirect: "follow" });
+  } catch (err) {
+    const reason = err?.name === "AbortError" ? `\u8D85\u8FC7 ${PROBE_TIMEOUT_MS / 1e3} \u79D2\u672A\u54CD\u5E94` : String(err?.message ?? err);
+    throw httpError(502, "error.provider.probe", `\u8FDE\u63A5\u7F51\u5173\u5931\u8D25\uFF1A${reason}`);
+  } finally {
+    clearTimeout(timer);
+  }
+  if (!res.ok) {
+    const hint = res.status === 401 || res.status === 403 ? "\uFF08API Key \u53EF\u80FD\u4E0D\u6B63\u786E\uFF09" : "";
+    throw httpError(502, "error.provider.probe", `\u7F51\u5173 /models \u8FD4\u56DE HTTP ${res.status}${hint}`);
+  }
+  let payload;
+  try {
+    payload = await res.json();
+  } catch {
+    throw httpError(502, "error.provider.probe", "\u7F51\u5173 /models \u8FD4\u56DE\u7684\u4E0D\u662F JSON");
+  }
+```
+
+</details>
+
 #### 缺口
 
-- 宿主绑定地址与额外认证配置未验收。
-  **影响**：本地请求头检查不能证明多用户授权隔离。
-  **进一步探讨**：固定宿主环境核对监听地址与请求身份范围。
+- Host认证/多实例隔离、全部Skill路径与目标宿主兼容未核
+  **影响**：只供本人可恢复本地profile有限试用，不作共享权限系统背书
+  **进一步探讨**：隔离假请求/多进程编辑/慢body与宿主加载测试；隐藏能力按真实入口再专项审。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 完成可用配置的全周期成本和效果怎样？
+### Q05 · 启用/退出成本、采用及可证伪修正？
 
-**研究主题**：效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-计量单位是“一次配置变更在正确profile中加载成功，代表任务可完成且旧配置可恢复”，不能用成功HTTP响应代替。主要投入是管理员理解配置、核对网关声明、重启、验证和故障回滚。网关/models与healthz探测可能涉及请求、网络和凭据管理，但包内没有金额、实际耗时或采用反馈，不能称零成本或量化节省。
+只建议有完整profile备份、能手工核配置与逐文件恢复的本地单用户管理员有限试用固定实现；本轮当前身份/成员缺口须另核后再考虑获取部署。先停自动调度，核profile，保mcp.json、patch和credentials原件，只用无敏感测试MCP/单网关手动导入/同步，审updated/failed/removed；读回后重启并做代表请求，不按档位/模型计数验收。
+
+#### 启动与依赖
+
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| 当前来源身份/分发复核 | 当前获取前必需 | 本轮只旧固定本地材料 | 不称最新/仍可下载 |
+| 兼容DSH webServer/sessions/settings slots与Node | 加载必需 | 双设置页/本地API | 注册不等宿主可用 |
+| 明确profile/写权限及三类独立原件 | 写入前必需 | 配置与恢复 | 无法恢复则保留手改路径 |
+| MCP程序/远端及网关/models/凭据 | 对应任务必需 | 加载/探测和代表任务 | 保存/广告不等支持 |
+| 管理员懂模型/档位/删除含义 | 持续必需 | 审预览与错误 | 不开无人值守调度 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 边界准备 | 管理员核来源/profile、停调度并备三原件 | 目标目录明确、能逐文件回退 |
+| MCP手动小样 | 预览JSON的added/updated/failed再写 | 列表+patch一致，重启代表调用 |
+| 网关小样 | 预览模型/档位与removed再apply | 检查三文件、实际请求支持 |
+| 恢复演练 | 第二文件失败/非空少报用副本演练 | 部分成功可定位与旧配置可用 |
+| 调度退出 | 后启/保存schedule；停用先核文件 | 卸插件不撤已有配置和凭据 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 宿主、MCP进程或远端服务与网关资源，金额未知 | 备份profile、确认目标路径、导入预览、重启及代表任务验收 | README建议备份；本轮未安装 |
-| 持续使用 | 定时网络探测、备份文件与可能的配置写入 | 核查模型移除与档位声明，维持宿主兼容 | 频率可配置，实际流量与维护工时未知 |
-| 失败恢复 | 重新探测和备份保留 | 停调度、分别比对mcp.json、patch与凭据，恢复后重启 | 多文件状态不保证共同回滚 |
-| 退出或迁移 | 已写配置和凭据继续存在 | 停调度并决定保留或手工移除受管块、网关与密钥引用 | 卸载插件不等于撤销其配置副作用 |
+| 首次使用 | 宿主/MCP/网关/备份资源未知 | 核来源/profile、预览、重启验收 | 本轮未安装，接线耗时未知 |
+| 持续使用 | 探测网络/备份与配置写资源未知 | 审少报删除/广告/兼容及调度 | 频率可设但实际维护无对照 |
+| 失败恢复 | 重探/副本保留未知 | 停写并比mcp.json/patch/credentials | 单文件保护非共同回滚 |
+| 升级退出 | 已写配置与凭据存储未知 | 管理受管块/密钥引用/后端能力 | 卸载不撤配置副作用 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 减少手写YAML | JSON正规化、差异预览、受管块生成 | 配置错误率及节时 |
-| 思考档位展示 | 按网关广告字段写入模型配置 | 每档实际请求支持及输出效果 |
-| 失败前保护 | YAML校验、单文件rename和备份 | 外部并发、两文件中断的一致恢复 |
+| 少手写 | 正规化/预览/受管块 | 实际错误率/净节时 |
+| 档位配置 | 广告转换与保留规则 | 每档真实接受/质量 |
+| 写前保护 | YAML校验/单文件rename/备份 | 外部并发/跨文件恢复 |
+| 自动维护 | 调度/写队列/结果保存 | 少报删除和启动默认真实影响 |
 
-网关保存先可能写credentials再写patch，备份有助恢复却需要逐文件核对。本地分叉直接维护构建产物，lib还含大段第三方YAML实现；inventory数量不是原创量。README保留的上游测试清单不能算本分叉已通过测试，本轮只读材料，没有运行目标代码。
+错误profile、意外删除、部分写成功或不能确认恢复时停写/停调度，逐文件核原件与备份后恢复并重启，不盲重放；多人共享/无人值守和不能手改恢复的人不宜扩展。
+
+未验证方向是绑定原文件摘要的配置计划、模型删除的连续独立观察或明确确认、跨文件提交进度及可补偿恢复。相对现可选目标digest+逐文件备份，增量在本地并发与少报/部分成功可识别，不是声称已有事务。最小对照非空截断列表、外部编辑、第二写失败，比较误删/丢修改/恢复时间和额外操作；若只是加确认仍丢数据或延迟删除造成服务问题，否定/收窄。未实现不计评分。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:25-29](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/README.md#L25-L29)
+**依据 1 · 源码核查**：[lib/index.js:7451-7467](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7451-L7467)
 
-作者说明环境与重启条件。
-
-```text
-- **DSH 桌面版 0.2.0-rc.2**（本插件按该版本的 `settings.section` 槽位与 loader patch 机制开发；
-  宿主包名从此版本起为 `@deepseek-ai/*`）。
-- **Node.js `^22.19.0 || >=24`**：仅在本地构建 / 跑测试时需要；**直接安装不需要 Node**，
-  因为仓库里已提交构建产物 `lib/`。
-- 安装完成后**必须重启 DSH**：MCP 改动由 loader 在启动时读取（技能、人设改动即时生效）。
-```
-
-**依据 2 · 源码核查**：[lib/index.js:8280-8305](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8280-L8305)
-
-credentials与patch先后写入。
+profile三类文件位置。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（17行）</summary>
+
+```text
+function paths(env = process.env, ctx = hostContext) {
+  const home = resolveHome(env);
+  const profileDir = resolveProfileDir(env, ctx);
+  return {
+    home,
+    profileDir,
+    patchFile: path.join(profileDir, "cordis.patch.yml"),
+    stateDir: path.join(profileDir, ".dsh-integration"),
+    mcpFile: path.join(profileDir, ".dsh-integration", "mcp.json"),
+    scheduleFile: path.join(profileDir, ".dsh-integration", "unlock-schedule.json"),
+    personaFile: path.join(home, "AGENTS.md"),
+    credentialsFile: path.join(home, ".credentials.yaml")
+  };
+}
+function httpError(status, code, message) {
+  const err = new Error(message || code);
+  err.statusCode = status;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:7757-7776](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7757-L7776)
+
+MCP两步写基线。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+async function writeMcpServers(servers, env = process.env) {
+  const p = paths(env);
+  const list = (Array.isArray(servers) ? servers : []).map(validateServer);
+  const seen = /* @__PURE__ */ new Set();
+  for (const server of list) {
+    const key = server.serverName.toLowerCase();
+    if (seen.has(key)) throw httpError(400, "error.mcp.duplicate", `serverName \u91CD\u590D\uFF1A${server.serverName}`);
+    seen.add(key);
+  }
+  const patchText = await readTextFile(p.patchFile, "");
+  const nextPatch = applyManagedBlock(patchText, renderManagedBlock(list));
+  validatePatchText(nextPatch);
+  validatePatchText(patchText === nextPatch ? patchText : nextPatch);
+  await writeFileAtomic(p.mcpFile, JSON.stringify({ version: 1, servers: list }, null, 2) + "\n", 384);
+  await writeWithBackup(p.patchFile, nextPatch, 384, 3);
+  return { servers: list, patchFile: p.patchFile, mcpFile: p.mcpFile };
+}
+var SKILL_ROOTS = [
+  { id: "dsh-global", label: "DSH \u5168\u5C40", dir: (c) => path.join(c.home, "skills"), writable: true },
+  { id: "agents-global", label: "\u5171\u4EAB\u5168\u5C40 .agents", dir: (c) => path.join(c.homeDir, ".agents", "skills"), writable: true },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:8280-8306](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8280-L8306)
+
+凭据与patch顺序。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
 async function saveProvider(env = process.env, { providerId, provider, apiKey } = {}) {
@@ -1113,141 +1440,17 @@ async function saveProvider(env = process.env, { providerId, provider, apiKey } 
     patchFile: p.patchFile,
     credentialsFile: p.credentialsFile
   };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:7483-7506](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7483-L7506)
-
-备份与单文件原子写。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-async function writeFileAtomic(file, text, mode = 384) {
-  await ensureDir(path.dirname(file));
-  const tmp = `${file}.tmp-${process.pid}-${Date.now()}`;
-  await fsp.writeFile(tmp, text, { mode });
-  await fsp.rename(tmp, file);
-  try {
-    await fsp.chmod(file, mode);
-  } catch {
-  }
-}
-async function writeWithBackup(file, text, mode = 384, keep = 3) {
-  const previous = await readTextFile(file, null);
-  if (previous !== null && previous !== text) {
-    const stamp = (/* @__PURE__ */ new Date()).toISOString().replace(/[-:.]/g, "").slice(0, 17);
-    const base = `${file}.bak-${stamp}`;
-    let candidate = base;
-    for (let index = 1; await fsp.stat(candidate).catch(() => null); index += 1) {
-      candidate = `${base}-${index}`;
-    }
-    await writeFileAtomic(candidate, previous, mode);
-    await pruneBackups(file, keep);
-  }
-  await writeFileAtomic(file, text, mode);
 }
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:307-329](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/README.md#L307-L329)
+**依据 4 · 源码核查**：[lib/index.js:8650-8703](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8650-L8703)
 
-分叉没有src/test，保留上游测试清单不是本轮证据。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-````text
-## 开发
-
-> 上游把源码放在 `src/`，用 esbuild 构建到 `lib/`，并带一套 `test/` 测试；**本分叉只保留构建产物**，
-> 没有 `src/` / `scripts/` / `test/`。改代码 = 直接改 `lib/`。下面仍保留上游的测试清单供参考。
-
-```bash
-# 本分叉的"构建"就是编辑这三样：
-#   lib/index.js    服务端 ESM（路由、patch 读写、providers/思考解锁逻辑）
-#   lib/client.js   React 客户端 bundle（压缩；中文是 \uXXXX 转义，grep 前先解码）
-node --check lib/index.js       # 语法校验（package.json type=module，按 ESM 解析）
-node --check lib/client.js
-```
-
-- `test/core.test.js`：patch 区块生成/替换/幂等、`!!js` 标签往返、`[]` 空占位、服务器校验、
-  技能 CRUD（含 `../` 逃逸拒绝）、人设备份轮转与读取。
-- `test/host.test.js`：**对着构建产物**起真 HTTP 服务，覆盖 11 条路由 + 404 分支 + 三道安全栅栏。
-- `test/client.test.js`：按 `window.__ModuleLoader__.load` 的真实加载方式加载客户端包，
-  断言 `settings.section` 注册（含无 locale 服务、locale 抛异常两种降级路径）。
-- `test/client-render.test.js`：用真 React + `react-dom/server` 按 shell 的 `as()` 语义复刻
-  React 种子，断言页面都能渲染出非空 DOM。
-- `test/client-hooks.test.js`：hook 顺序与 seat hook 的白盒回归（见上一节）。
-- `test/providers.test.js`：网关判定（`judgeProvider`）与 `/models` 探测、`unlockPlan` 纯函数、
-  解锁写入与备份、`dryRun` 不落盘、跳过非网关与凭据缺失、`"off"` 引号与 `false` 声明往返。
-````
-
-</details>
-
-#### 缺口
-
-- 缺同任务手改配置的对照和真实恢复记录。
-  **影响**：不能判断全周期节时、可靠性与单位成功变更成本。
-  **进一步探讨**：比较同批配置任务，记录错误、恢复耗时及代表调用结果。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 谁适合试用，什么新假设可检验？
-
-**研究主题**：采用判断、新假设与验证
-
-#### 完整回答
-
-有完整profile备份、能手动核对与恢复配置的本地单用户管理员，可以在隔离profile试用手动MCP导入和模型同步。先关闭自动调度，确认实际目标目录，分别保留mcp.json、patch与credentials的原件；只从一个无敏感凭据的测试MCP和一个网关开始，审阅覆盖和移除项。保存后比对文件，再重启宿主，执行代表MCP操作与模型请求；出现部分成功、错误profile、意外模型删除或不可恢复配置，就停止写入并恢复各文件。此处是建议，不是本轮已执行。
-
-对于需要无人值守维护、多人共享配置、无法恢复凭据或以为“解锁”就是模型能力已验证的人，当前不宜扩大使用。插件的便利在于转换与预览，不能替代管理员对声明、权限和最终配置效果负责。定时模式尤其不能先于删除与恢复验收启用。
-
-由非空少报仍可删除、本地文件未绑定、分步写盘可部分成功，可提出未验证假设：把变更变成绑定原文件摘要的计划，并对模型删除要求连续两次独立观察或明确确认，同时保存跨文件提交进度。它相对当前可选目标digest与逐文件备份，可能降低误删和外部覆盖；代价是状态、回滚逻辑和人工确认增加。
-
-最小验证先固定一个隔离profile，注入非空截断模型清单、外部同时编辑及第二文件写失败，比较现有方案与新计划的误删、丢修改、恢复时间和人工操作。新方案必须保留无关修改、可识别部分成功，且正常单次配置负担可接受；若只是增加确认而不能降低这些错误，或延迟删除造成可观察服务问题，就推翻或收窄假设。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:7757-7772](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L7757-L7772)
-
-MCP双文件失败窗口支持逐文件备份与恢复要求。
+非空少报/摘要边界。
 
 <details>
-<summary>查看原文（16行）</summary>
-
-```text
-async function writeMcpServers(servers, env = process.env) {
-  const p = paths(env);
-  const list = (Array.isArray(servers) ? servers : []).map(validateServer);
-  const seen = /* @__PURE__ */ new Set();
-  for (const server of list) {
-    const key = server.serverName.toLowerCase();
-    if (seen.has(key)) throw httpError(400, "error.mcp.duplicate", `serverName \u91CD\u590D\uFF1A${server.serverName}`);
-    seen.add(key);
-  }
-  const patchText = await readTextFile(p.patchFile, "");
-  const nextPatch = applyManagedBlock(patchText, renderManagedBlock(list));
-  validatePatchText(nextPatch);
-  validatePatchText(patchText === nextPatch ? patchText : nextPatch);
-  await writeFileAtomic(p.mcpFile, JSON.stringify({ version: 1, servers: list }, null, 2) + "\n", 384);
-  await writeWithBackup(p.patchFile, nextPatch, 384, 3);
-  return { servers: list, patchFile: p.patchFile, mcpFile: p.mcpFile };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/index.js:8650-8698](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8650-L8698)
-
-非空集合及目标digest边界支持延迟删除与基线绑定假设。
-
-<details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（54行）</summary>
 
 ```text
       const plan = planModelSync(raw, probed.models);
@@ -1299,77 +1502,66 @@ async function writeMcpServers(servers, env = process.env) {
   }
   const changed = !dryRun && nextPatch !== patchText;
   if (changed) await writeWithBackup(p.patchFile, nextPatch, 384, 3);
+  const totals = {
+    added: results.reduce((sum, row) => sum + (row.summary?.added || 0), 0),
+    removed: results.reduce((sum, row) => sum + (row.summary?.removed || 0), 0),
+    kept: results.reduce((sum, row) => sum + (row.summary?.kept || 0), 0),
+    levelModels: results.reduce((sum, row) => sum + (row.summary?.levelModels?.length || 0), 0),
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:8781-8837](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L8781-L8837)
+**依据 5 · 源码核查**：[lib/index.js:9321-9355](https://github.com/2384418321/dsh-integration-settings/blob/b0f3e0c129a45f8431cd0db7dda9db634ff13aa4/lib/index.js#L9321-L9355)
 
-定时两步写支持先停调度及部分成功判据。
+本实例串化/调度。
 
 <details>
-<summary>查看原文（57行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-async function runScheduledUnlock(env = process.env, { now = Date.now(), fetchImpl, force = false } = {}) {
-  const schedule = await readSchedule(env);
-  if (!force && !scheduleDue(schedule, now)) {
-    return { ran: false, reason: schedule.enabled ? "not-due" : "disabled", schedule };
-  }
-  let report = null;
-  let sync = null;
-  let lastError = "";
-  try {
-    report = await unlockProviderThinking(env, { onlyWorkbuddy: schedule.onlyWorkbuddy, fetchImpl });
-  } catch (err) {
-    lastError = err?.message || String(err);
-  }
-  try {
-    sync = await syncProviderModels(env, {
-      onlyWorkbuddy: schedule.onlyWorkbuddy,
-      dryRun: false,
-      source: "schedule",
-      fetchImpl
+var SCHEDULER_TICK_MS = 6e4;
+function apply(ctx) {
+  setHostContext(ctx);
+  let queue = Promise.resolve();
+  const serialize = (task) => {
+    const next = queue.then(task, task);
+    queue = next.catch(() => {
     });
-  } catch (err) {
-    const message = err?.message || String(err);
-    lastError = lastError ? `${lastError}；${message}` : message;
-  }
-  const syncSummary = sync ? {
-    changed: !!sync.changed,
-    addedModels: sync.totals.added,
-    removedModels: sync.totals.removed,
-    keptModels: sync.totals.kept,
-    levelModels: sync.totals.levelModels,
-    syncedProviders: sync.syncedProviders,
-    addedIds: (sync.providers || []).flatMap((row) => (row.summary?.models?.added || [])).slice(0, 40),
-    removedIds: (sync.providers || []).flatMap((row) => (row.summary?.models?.removed || [])).slice(0, 40),
-    addedLevels: [...new Set((sync.providers || []).flatMap((row) => (row.summary?.levels?.added || [])))],
-    removedLevels: [...new Set((sync.providers || []).flatMap((row) => (row.summary?.levels?.removed || [])))],
-    failedProviders: sync.failedProviders
-  } : null;
-  const failed = [...new Set([
-    ...((report?.providers || []).filter((row) => row.status === "error").map((row) => row.id)),
-    ...((sync?.providers || []).filter((row) => row.status === "error").map((row) => row.id))
-  ])];
-  const next = normalizeSchedule({
-    ...schedule,
-    lastRunAt: now,
-    nextRunAt: now + schedule.intervalMinutes * 6e4,
-    lastError,
-    lastResult: report || sync ? {
-      changed: !!report?.changed || !!(sync && sync.changed),
-      unlockedModels: report?.unlockedModels || 0,
-      unlockedProviders: report?.unlockedProviders || [],
-      failedProviders: failed,
-      sync: syncSummary
-    } : null,
-    updatedAt: now
-  }, now);
-  await writeSchedule(env, next);
-  return { ran: true, report, sync, error: lastError || null, schedule: next };
+    return next;
+  };
+  const sweep = () => serialize(() => runScheduledUnlock(process.env)).catch(() => {
+  });
+  ctx.effect(
+    () => {
+      const timer = setInterval(() => {
+        sweep();
+      }, SCHEDULER_TICK_MS);
+      if (typeof timer.unref === "function") timer.unref();
+      sweep();
+      return () => clearInterval(timer);
+    },
+    `${PLUGIN_NAME}: scheduled thinking unlock`
+  );
+  ctx.effect(
+    () => ctx.webServer.register({
+      kind: "prefix",
+      path: API_PREFIX,
+      handler: (req, res) => {
+        const method = req.method || "GET";
+        const run = method === "GET" || method === "HEAD" ? handle(ctx, req, res) : serialize(() => handle(ctx, req, res));
+        Promise.resolve(run).catch((err) => fail(res, err));
+      }
+    }),
+    `${PLUGIN_NAME}: API route`
+  );
 ```
 
 </details>
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+#### 缺口
+
+- 原文件计划/延迟删除/跨文件恢复未实现、真实总成本未知
+  **影响**：限定可恢复小样而非生产自动同步，不计未来收益
+  **进一步探讨**：隔离profile故障矩阵对照原方案、手改与候选计划，记录错误和净人工。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
