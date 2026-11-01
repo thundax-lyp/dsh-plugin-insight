@@ -28,12 +28,12 @@
 | [AI Look-Up](#plugin-1401618027-root) | 监测代理重复调用、失败循环和目标漂移，并在触发时注入自检提示。 | 适合经常运行长时编码代理、能审阅提醒台账的团队先观察，不适合短任务或对中断敏感的会话。 |
 | [AI 残渣清运](#plugin-1406611614-root) | 按规则把代理副产物移入可恢复回收站，并支持项目结项归档。 | 适合副产物命名规律稳定、能先维护 ignore 且使用版本控制的项目试用；高价值数据目录或命名混乱仓库只运行 dry-run。 |
 | [ANet DSH Bundle](#plugin-1302597978-deploy-plugins-dist-dsh) | 为 DSH 操作者将本机 anet 节点接到 MCP 与 Skill，以统一可执行路径和身份发现对端、委派任务并跟踪结果。 | 观察优先，操作者先关闭自动装并固定审阅运行时/guide/身份/节点政策，才确定非敏感无消费小样；版本/政策不明或任务/worker仍未知先停扩张并核状态。 |
-| [Archify](#plugin-1211139949-root) | 通过结构化规格生成可交互图形与独立 HTML 说明页的 Agent Skill | 熟悉系统的人先对一条请求链做受控试用，以关系正确、读者理解和总人工分钟为验收；关键边无事实支持或修复负担更高时退回简单图。 |
-| [Archify DSH 适配器](#plugin-1211139949-integrations-deepseek-harness) | 为 DeepSeek Harness 提供 Archify 架构图 Skill 的可选 npm 分发包 | 观察默认根修复正式发布；若已有受支持 CLI 环境，先验证 Archify 与所有默认根正文共同加载，失败即移除并回到原安装方式。 |
-| [billion-context](#plugin-1324949198-root) | 为长会话提供模型驱动的增量分层压缩、原文恢复、上下文搜索及多客户端代理/原生通道。 | [Q05](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q05)建议长任务维护者以独立profile、原日志和固定模型比较宿主compact，先验收关键事实再看token。 |
+| [Archify](#plugin-1211139949-root) | 将结构化图形与说明页渲染为可交互 HTML，并提供交付与证据检查。 | 先用一条可核查请求链和隔离目录试用，按实际类型确认浏览器门禁，再由人核查每条关系与视觉；材料或环境不足时回到简单图。 |
+| [Archify DSH 适配器](#plugin-1211139949-integrations-deepseek-harness) | 以 DSH 文件系统 Skill provider 分发 Archify 架构图技能。 | [Q05](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q05) 先观察正式发布和宿主验收；隔离 profile 核对默认技能及实际来源。 |
+| [billion-context](#plugin-1324949198-root) | 为长会话提供分层上下文压缩、按需恢复和搜索，并通过代理或原生集成接入多个客户端。 | [Q05](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q05) 建议保留原日志并在独立 profile 试用，先检查代理流量和关键事实；出现持续直连、双压缩或无法恢复时移除整个 bundle，核对原生压缩。 |
 | [brooks-lint](#plugin-1192608669-root) | 以十二本工程经典的风险框架组织代码、架构和测试评审，提供六种 Agent Skills 模式。 | 先用小diff的review模式，保留人工评审与静态lint；不要凭健康分自动改代码或合并。 |
 | [CA 参考库](#plugin-1349267272-root) | 为Clean Architecture审查提供本地参考仓全文检索、基线清单、审查留账和观察面板。 | 建议先观察，补齐可核对的外部语料并验证过滤与健康状态后再做受控审查辅助；不能自动据基线放行项目。 |
-| [CC Safety Net](#plugin-1122873619-root) | 在编码 Agent 工具执行前检查破坏性命令和秘密文件访问，支持 DSH 等多个宿主。 | 在临时无秘密仓库受控试用，先核工具覆盖和应放/应拒语料；不执行危险命令来证明阻止。 |
+| [CC Safety Net](#plugin-1122873619-root) | 在编码 Agent 的工具调用前检查危险命令和敏感文件访问。 | [Q05](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q05) 建议保留宿主审批并用非破坏样本核查工具覆盖；误拦或未检查提示出现时停止依赖并人工复核。 |
 | [Chat Import](#plugin-1333200468-root) | 将其他编码 Agent 历史转换为 DSH 事件会话，提供预览、重导保护、路径映射及反向导出入口。 | 固定宿主和代表日志，先副本预览、少量导入及核对后续聊；源原件和附件保留，不在重要数据试purge或源删除，见 [Q03](../../plugins/nwflower--dsh-chat-import/INSIGHT.md#research-q03)。 |
 | [CI Diet](#plugin-1426954291-root) | 发现GitHub Actions资源浪费，生成可审阅的局部工作流计划，提供DSH工具、批准恢复及样本比较。 | 先用可恢复仓库离线scan并人工复核一个候选，历史、写入与测量逐段启用；质量/净资源不改善就停止该规则，冲突保留后续编辑再合并。 |
 | [CloudBase AI Toolkit](#plugin-988892963-root) | 以 MCP、场景 Skill 和 IDE 插件把 CloudBase 数据库、存储、函数与部署接入 AI 编码工具。 | 建议已有测试环境的开发者固定MCP后限定只读查询试用；未核客户端确认/IAM/环境前不生产删除，状态不明退控制台。 |
@@ -43,20 +43,22 @@
 | [Coding Tools MCP](#plugin-1245329241-root) | 通过 MCP 为编码客户端提供工作区文件、结构化修改、命令会话和 Git 工具。 | 建议缺原生工具的MCP用户在可丢弃repo以safe/stdio试用，先读再做可审单改；不可信命令需外部容器，状态不明则停并回原工具。 |
 | [DeepSec](#plugin-1295322882-root) | 结合 Shield 代码审计、Spear 授权测试、CLI/TUI 与 IDE 接入的安全工具平台 | [Q04](../../plugins/unclecheng-li--deepsec/INSIGHT.md#research-q04) 仅在自有副本试用本地Shield并人工确认finding；不可读文件或覆盖不明时停止依赖零发现结论，回原扫描和人工审阅。 |
 | [DeepSeek Harness Desktop（社区版）](#plugin-1333486649-root) | 集成官方 DSH Runtime 和 Web UI 的社区桌面客户端，提供窗口、插件及桌面操作入口。 | [Q04](../../plugins/ningbainb--deepseek-harness-desktop/INSIGHT.md#research-q04) 仅建议能核对发行来源和权限的开发者用独立profile及非关键目录探索，先确认启动、完整输出和重启保留结果；权限或恢复不清立即停止，回到官方Web。 |
+| [DeepSeek Reasonix](#plugin-1216785679-root) | 提供终端、桌面、浏览器和编辑器入口的开源编码助手，支持模型驱动的代码修改。 | [Q05](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q05) 建议能审代码的开发者在低权限隔离副本试一项可验证任务，暂不启自动委派；来源或停止后状态不明即退出并回原 IDE。 |
 | [DeepSeekGUI](#plugin-1337578630-root) | 第三方DSH Fork桌面工作台，沿用真实模型工具循环并接入可见内嵌浏览器；页面目标、有效权限、网络地址和业务完成是不同边界。 | 只读会话与复制workspace先核代码/公开网页任务，明确模型和页面数据流；不基于本轮直接授权Git/PR或真实网页写入，见[Q04](../../plugins/see-sol-lab--deepseekgui/INSIGHT.md#research-q04)、[Q05](../../plugins/see-sol-lab--deepseekgui/INSIGHT.md#research-q05)。 |
 | [DeepTide](#plugin-1230068255-root) | 提供 DeepTide 编码客户端入口、Zero CLI 命令别名、Rust实现与 Apple Silicon 本地推理引导。 | 建议先观察并固定单一形态和上游版本；本地profile不满足或自测失败时不继续切配置，保留原客户端/云API作为退路。 |
 | [deja-vu](#plugin-1300173275-root) | 本地索引多个编码 Agent 的历史会话，并向 DSH 提供检索工具和自动上下文。 | 建议个人工作机限定非敏感项目试用，召回仅当线索、原会话与当前代码共同核对；隐私跨项目或错误无匹配出现时关闭自动注入并回原日志。 |
-| [Desktop CC GUI](#plugin-1148960257-root) | 用独立桌面界面接入DSH及多个编码CLI，管理会话、工具输出和项目。 | 同时使用多个编码CLI的开发者可关注这个统一桌面客户端。 |
+| [Desktop CC GUI](#plugin-1148960257-root) | 以独立桌面界面接入 DSH 和多种编码引擎。 | 固定 host 和客户端，在隔离工作区验证会话与权限；不满足权限要求时回退原生入口。 |
 | [dock-base](#plugin-1340492184-root) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | 有多视图组合需求可试用，先核对上下文与异步关闭；逐个研究功能插件而非默认全装。 |
 | [dock-editor](#plugin-1340492335-root) | 为 dock 文件域增加同工作台的文本查看、编辑、保存与关闭提醒。 | 可对非关键小文本进行受控试用，保存后回读目标并留版本库或备份；对并发编辑和重要配置沿用有冲突检测的工具。 |
 | [dock-git](#plugin-1340492447-root) | 在 DSH Dock 中查看 Git 提交图与差异，并对会话仓库执行暂存、提交、分支和远端操作。 | 建议观察，先在隔离仓库核对钩子策略、破坏操作确认和远端失败恢复；团队质量门禁另作明确安排。 |
 | [DS Harness Remote](#plugin-1334325657-root) | 从浏览器或移动设备连接原工作电脑上的 DSH 会话、工作区和远程操作。 | [Q04](../../plugins/liguobao--ds-harness-remote/INSIGHT.md#research-q04) 使用自己的可信设备和非关键Host，先验证只读会话，确认Host用户及身份后才考虑最小写操作；终端关闭直到明确权限。 |
 | [DSH Agent Team GUI](#plugin-1334766747-root) | 为 DSH Web 保存可复用多模型团队，编排任务依赖、查看运行记录并汇总供应商报告的 Token 用量。 | 先在匹配宿主的空白项目，用一个模型与有限成员验证完整交付，给成员明确且不重叠的文件范围；逐次核对产物、测试和计量覆盖。 |
-| [DSH AgentTeams](#plugin-1332073142-root) | 让当前DSH会话组织持久子Agent团队、依赖任务、消息和协作界面。 | [Q01](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q01)、[Q04](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q04) 先用两成员只读任务确认依赖、消息、停止与恢复，再考虑互不重叠写任务；没有可分任务或复核人时继续单Agent。 |
+| [DSH AgentTeams](#plugin-1332073142-root) | 为 DSH 提供持久多成员任务、依赖调度与协作。 | [Q05](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q05) 用两成员只读任务试用并检查共享工作区，出现重复或成本超预算时暂停。 |
 | [DSH Armory](#plugin-1413052822-root) | 为 DSH 提供 MCP、Skill、专家与插件的统一管理看板、市场入口和工具使用账本。 | 已有多对象负担者可隔离profile先备份再试非关键Skill，核目录和宿主；旧目录丢失、生效不符或工具裁剪损任务时停止更多写入，从备份恢复并回原生管理。 |
-| [DSH Better Sidebar](#plugin-1326893710-root) | 为DSH提供文件编辑预览、Git、任务和侧聊工作台，并开放标签页与预览器扩展接口。 | 适合希望减少DSH与IDE切换且能核对版本的开发者，先在独立低权限宿主和可丢弃目录只试文件预览、一个文本修改及只读Git图。 |
 | [DSH Better Sidebar N23](#plugin-1352600211-root) | 为DSH提供文件编辑预览、真实终端、Git、浏览器与可扩展双面板工作台。 | 建议先观察发布源与运行产物同步、宿主范围；如自行评估，只在备份的小仓库试验文件/Git/PTY，不用它承担工作区隔离。 |
 | [DSH Codex Taskboard 侧栏集成](#plugin-1311108439-integrations-deepseek-harness) | 在DeepSeek Harness侧栏嵌入已启动的Codex Taskboard本地看板。 | [Q03](../../plugins/chuspeeism--dashi-taskboard--integrations-deepseek-harness/INSIGHT.md#research-q03) 仅建议已有Taskboard服务的人试用这一薄入口；首次接触者先确认独立浏览器看板工作，再接DSH。 |
+| [DSH GenUI](#plugin-1333128726-root) | 在 DSH 对话中按受限组件规格呈现交互界面，并把动作送回模型。 | [Q05](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q05) 建议用非敏感数据在隔离宿主先验证界面和会话动作，遇缺项或目标不明时回退文本。 |
+| [DSH Git Graph](#plugin-1331636953-packages-dsh-git-graph) | 在 DSH Web 中展示 Git 分支与提交图，并提供工作树管理入口。 | [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q05) 建议先在独立测试仓库只读观察，写操作前保留工作并核对目标；状态不明时停止并使用 Git 回读。 |
 | [DSH Graphlint](#plugin-1285824983-integrations-dsh) | 为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。 | 已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。 |
 | [DSH Harness Switch](#plugin-1414577411-root) | 在DSH原生会话中绑定模型与harness，嵌入固定Kimi Code执行核心并桥接审批与历史。 | 熟悉Kimi和DSH的开发者可在单进程隔离profile及副本工作区试用；出现pending未知结果先查日志与文件，不自动重试，要求无损迁移或完整计费者暂缓。 |
 | [DSH Integration Settings](#plugin-1429103083-root) | 为 DSH 设置增加 MCP JSON 导入、网关配置及模型清单和思考档位的预览同步。 | 有可信固定产物、熟悉 profile 且能逐文件恢复的管理员，可以先在隔离副本手动试一组 MCP 或单网关配置，保持定时关闭。 |
@@ -66,11 +68,12 @@
 | [DSH Python Env](#plugin-1335843541-root) | 管理工作区Python虚拟环境，提供发现、创建、安装、卸载和删除工具。 | 可信代码仓库的开发者可在一次性工作区试用。 |
 | [DSH Reverse Skill](#plugin-1334214605-root) | 将上游逆向与安全研究技能目录递归注册进 DSH skills 服务的适配插件。 | 保持观察。 |
 | [DSH Router Standard](#plugin-1334459444-root) | 以 Agent/Preset 和 Cordis 模块为软件任务分阶段展示、限制工具，并提供目录帮助、路由状态和交付证据清单检查。 | 先独立可回退小任务对照Standard，验FAIL/阶段分离及持久恢复，再扩大使用，见 [Q03](../../plugins/yjh051108--dsh-router-standard/INSIGHT.md#research-q03)。 |
-| [DSH Skills Manager](#plugin-1334830521-root) | 在 DSH 中浏览、启停和管理本地及项目技能，并从仓库安装、更新与恢复技能。 | 先在单个测试项目核对同名启停，再给一个有本地修改的仓库技能预览更新并验收回滚；不熟来源先停用。 |
-| [DSH Task Board](#plugin-1331636953-packages-dsh-task-board) | 在 DSH Web 界面管理任务，由 Host 执行真实会话、定时调度并记录验证与执行状态。 | 临时工作区单任务试用，分开手工列、执行终态和验证结果；先保留人工验收。 |
+| [DSH Skills Manager](#plugin-1334830521-root) | 在 DSH 中管理本地与项目 Skills，并提供仓库导入、更新和备份恢复。 | 适合在 DSH 管理多个来源且愿意审阅变更的维护者先用隔离工作区试用；来源不明、文件在预览后变化或恢复报错时停止并人工核对备份。 |
+| [DSH Task Board](#plugin-1331636953-packages-dsh-task-board) | 在 DSH 中组织任务卡片、调度宿主会话，并提供执行记录与可选验收。 | [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q05) 建议可审查结果的维护者先在临时工作区运行无外部副作用的单卡；终态或副作用不明时停止自动重跑并人工检查。 |
 | [DSH Taskboard](#plugin-1333732838-root) | 以 SQLite 权威任务状态连接 DSH Agent 执行、排他认领、自动化和人工验收入口。 | 有限试独立测试库和可丢弃目录，先手动后自动，额外控制CLI/DB及模型工具权限。 |
+| [DSH TUI](#plugin-1333111893-root) | 为 DeepSeek Harness 提供交互式终端客户端、会话投影及审批界面。 | [Q05](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q05) 建议在隔离环境小范围试用并保留原入口；出现丢行、误归属或审批来源异常时停止。 |
 | [DSH Turn Rewind](#plugin-1333100390-root) | 为DSH消息提供文件检查点、变更预览、选择恢复及会话重新开始。 | 适合经常需要撤销Agent文件修改且愿意核对路径的开发者，在可丢弃副本中先做一次“文件恢复+消息新建”，对照受管理路径内容与原会话。 |
-| [DSH Vision Router](#plugin-1333446374-root) | 为 DSH 文本模型会话提供图像工具、视觉后端回退、像素处理和会话开关。 | 建议公开截图测试会话限定试用，先明确云出站或配置local-only；敏感内容、连续错误或无法核原图则关Vision回原生/本地流程。 |
+| [DSH Vision Router](#plugin-1333446374-root) | 为 DeepSeek Harness 提供视觉模型路由和像素级图像工具。 | [Q05](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q05) 建议先用非敏感图像在固定配置试用并对照原图；出站目标或费用不明时停止并回退人工核图。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 在DSH会话中接入图像问答、OCR、定位、截图差异和视觉产物。 | 使用文字模型的DSH开发者可先拿非敏感截图做定位或差异检查。 |
 | [DSH 插件市场](#plugin-1367597810-root) | 从 DSH 侧栏浏览社区目录，查看已安装和可更新插件，并执行安装与 profile 重载。 | 建议在独立测试profile对一个可信包试用；先备份清单与锁文件，确认目标和来源，安装后核对加载；来源替换或恢复状态不清即停止并退回固定命令。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | 可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。 |
@@ -87,7 +90,7 @@
 | [dsh-capmap-viz](#plugin-1356896576-dsh-capmap-viz) | 解析 CapMap 文档并在 DSH 侧栏展示能力图、状态、前沿和校验门。 | 建议试用。 |
 | [dsh-codex-bridge](#plugin-1427331352-root) | 通过Codex CLI读取账号额度与模型建议，并以可选模型和推理强度委派独立任务。 | 单人已有账号先只读短任务，核模型/额度/结果；写任务用可恢复工作树，超时先验产物，高价/低额需真实用户接受。 |
 | [dsh-codex-guard](#plugin-1340906871-dsh) | 在 DSH 中调用 codex-guard，对 Git 变更进行提交前卫生检查。 | 建议观察；先核实际 CLI 版本、cwd 和覆盖，再对六类场景隔离验证，不能将字符串成功返回当提交放行。 |
-| [dsh-context](#plugin-1333961389-root) | 展示DSH上下文组成、请求趋势、事件与会话网络，提供诊断视图和提示前后缀配置。 | 需要排查上下文膨胀的DSH用户，可在匹配宿主上保持prompt前后缀为空，从一个已知请求核对token环、Context Browser与原始日志。 |
+| [dsh-context](#plugin-1333961389-root) | 为 DeepSeek Harness 提供上下文仪表盘与命令，查看会话组成和变化。 | [Q05](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q05) 建议在隔离 profile、空提示词前后缀下先对照单个请求；低版本降级、冷读缺失或估算无法解释时回到原始事件和供应商 usage。 |
 | [dsh-deja](#plugin-1300173275-extensions-dsh) | 在 DSH 中搜索同机其他编码 Agent 的历史，并通过工具、命令和可选自动召回提供上下文。 | 先手动精确查询，核实际CLI版本与内容，再决定是否开启自动上下文。 |
 | [dsh-dep-vuln-scan](#plugin-1344714002-root) | 读取常见项目锁文件，向OSV批量查询依赖版本公告，展示漏洞、修复候选与命令建议，并保存可重放结构化报告。 | 先观察。 |
 | [dsh-diff-approval](#plugin-1335980444-root) | 将工具改动汇入会话内待审面板，支持差异决定、批注及有条件撤销。 | 单人可备份树有限试用；发现分歧或持久错误先停动作保现场。 |
@@ -124,9 +127,9 @@
 | [dsh-multi-folder](#plugin-1334119885-root) | 为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。 | 观察，继续从无碰撞稳定身份、store不落Agent写根及明确UI能力约束着手。 |
 | [dsh-mysql](#plugin-1337916824-root) | 在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。 | 先观察。 |
 | [dsh-openai-oauth](#plugin-1335992154-root) | 为DSH接入ChatGPT OAuth的Codex模型provider，含PKCE/设备码登录、本机凭据刷新、设置页和headless命令。 | 可试用为本机独立模型provider，保护明文凭据与真实工具审批，保留替代路由；不外推远程部署/静态模型全部可用/免费。 |
-| [dsh-ops](#plugin-1409893258-root) | 为DSH提供紧凑文件、文档与PTC工具，并按需加载能力和替换部分官方工具。 | 可在备份或Git工作区内试用一个批量文件读取任务，先保持官方工具可恢复，再检查结果完整性。 |
+| [dsh-ops](#plugin-1409893258-root) | 为 DSH 提供文件、文档和 PTC 工具，以及按需发现和可配置的官方工具替换。 | [Q07](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q07) 先在可恢复副本做只读任务并检查结果完整性和回退；遇到准备失败、遗漏或状态未知先核对文件，不盲目重试。 |
 | [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 以器官模型聚合 DSH 工具，提供心跳体征、反射、代理调用和工具显影。 | 先隔离核 body_map/status 与宿主工具表，再分别启用门控和反射；保持最小权限与直接调用回退。 |
-| [dsh-ouroboros 配置桥](#plugin-1133901637-integrations-dsh-plugin) | 通过DSH的MCP客户端挂载Ouroboros访谈、规格、执行与评估工具。 | 已会配置Ouroboros且需要DSH入口的用户，可在副本profile先固定已审阅引擎版本，只试短访谈和Seed生成，确认实际后端及env。 |
+| [dsh-ouroboros 配置桥](#plugin-1133901637-integrations-dsh-plugin) | 通过 DSH MCP client 挂载 Ouroboros 工作流工具。 | 固定引擎版本、确认凭据与预算，先验证访谈及产物；故障时重载或回退 CLI。 |
 | [dsh-pentest](#plugin-1335155355-root) | 为 DSH 提供授权安全调查的目标、线索、事实、资产、漏洞图与报告视图 | [Q03](../../plugins/howmp--dsh-pentest/INSIGHT.md#research-q03) 观察旧版与自维护样本，不把归档包可下载当当前兼容。 |
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 以原生provider接入匿名Zen模型，含目录、消息/工具流适配及可选relay/IP池；根产物绑定待核。 | 观察：先核根真实包和退出恢复，再做一项可验文本/工具任务；严格出站、结果归属或共享网络未达标即停新请求并回退，见[Q06](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md#research-q06)。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。 |
@@ -160,7 +163,6 @@
 | [dsh-tianshu-tui](#plugin-1332692519-root) | 在官方 DSH 上装配终端 runner、ANSI 交互与预设/LSP接缝，并带本地审批和启动更新。 | 有限试一次性profile/可丢弃目录，先普通模式与固定版本，独立核自动更新、LSP和伴生能力。 |
 | [dsh-token-billing](#plugin-1335139860-root) | 在DSH会话中显示实时token费用，结合路由价目与政策时间线，保存跨会话账本并提供统计、余额及CSV/JSON导出。 | 先观察。 |
 | [dsh-trellis](#plugin-1335559646-root) | 为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。 | 可试用为人工复核开发任务辅助，先备份同名Skill并核自动覆盖；独立保存批准/验证与固定代码版本，不以标签或只读过滤代授权。 |
-| [dsh-TUI](#plugin-1333111893-root) | 为DSH提供交互终端界面，显示流式回答、工具、审批与会话状态。 | 偏好终端或SSH的DSH开发者可先在测试profile试用长会话界面。 |
 | [dsh-undo-plugin](#plugin-1338526178-packages-bundle-rollback) | 为DSH组合会话回退、私有Git文件快照、归档管理和回退界面。 | 观察，备份且独占的本地Git文件任务可继续探讨，勿将聊天消失当所有副作用撤销。 |
 | [dsh-update-checker](#plugin-1334836615-root) | 在DSH GUI检查主程序和第三方插件版本，提供备份更新回退与Web重启流程，Desktop主程序转原生更新。 | 当前不推荐日常安装，先修拒绝零副作用与阶段回执，再核隔离恢复；不在用户部署运行复现。 |
 | [dsh-vercel](#plugin-1425044910-root) | 通过OAuth接入Vercel官方MCP，在DSH按Agent搜索加载工具、分页长结果并按需读取随包指南。 | 可信单profile从只读工具试用，写操作核官方结果。 |
@@ -189,44 +191,43 @@
 | [dsh-wsl-workspace](#plugin-1351853812-root) | 列出 WSL 发行版并检查 Linux 工作区路径，提示避开 /mnt 性能与语义陷阱。 | 建议试用。 |
 | [easyeda-agent](#plugin-1280115203-root) | 通过 CLI、MCP 和 Skill 连接 EasyEDA Pro，读取工程并执行原理图及 PCB 操作。 | [Q04](../../plugins/zhoushoujianwork--easyeda-agent/INSIGHT.md#research-q04) 在备份工程副本中先确认health、window/project/doc和只读动作，再试小范围操作并回读。 |
 | [Embedded Workbench](#plugin-1276714299-root) | 分发嵌入式 C/C++ 开发与逐声称核查 Skills，并在 DSH 首步注入可关闭的计划核查提醒。 | 先手动选匹配Skill，在可回滚固件分支核实际编译/测试，再决定提醒开关；只有核查格式而无证据时停用结论，见 [Q03](../../plugins/amethystluna--embedded-workbench/INSIGHT.md#research-q03)。 |
-| [Git Graph](#plugin-1331636953-packages-dsh-git-graph) | DSH Git插件，在空白会话选择分支、查看提交图，并创建和管理托管worktree的新工作区会话。 | 熟悉Git并能核对真实目录和分支的DSH用户，可在无敏感数据、无并发写且可弃置的仓库手工创建一个命名worktree，保持autoIsolate与agentTool关闭。 |
 | [HarmonyOS NEXT Skills](#plugin-1179983747-root) | 通过 DSH 单技能 provider 提供离线 HarmonyOS 资料导航及 DevEco/HDC 证据脚本。 | 可先试固定版本普通参考，自动化仅在无外部副作用测试页确认before/after；版本不明、敏感采集不可控或动作状态未知时停止，回官方资料/IDE与手工读回。 |
 | [harness-github](#plugin-1343702731-root) | 为DSH提供GitHub仓库、PR、issue、CI与评审工具，通过gh或REST读取和操作，并提供工作流指引。 | 先观察，暂不依赖当前审批边界做日常写操作。 |
 | [HelloAGENTS](#plugin-1064776002-root) | 为AI编码CLI提供任务路由、质量Skill、项目知识、会话恢复和交付检查脚本。 | 有跨轮编码任务且愿维护计划的用户可在单宿主副本试用，先备份配置并核对真实验证日志；与项目规则冲突或只增加填表负担时退回原有AGENTS和CI。 |
 | [Helm D](#plugin-1334304098-packages-helmd) | 在 DSH 中组织安全分析案例、工具输出证据、引用结论与资料路由，并组合多层提示策略。 | 观察为主，先审提示/脚本及health默认写策略，确认独立原patch备份与重启退路，再决定离线验证证据层；不接重要交付，见 [Q04](../../plugins/adwmc--helm-d--packages-helmd/INSIGHT.md#research-q04)。 |
 | [helm-d](#plugin-1334304098-root) | 为 DSH 提供领域参考、分析工具和带编号证据的安全分析案卷 | 采用单位是一份可由他人复核的授权样本案卷，不是一次工具输出或一条 finding。 |
-| [Hindsight 编码 Agent 记忆集成](#plugin-1086419061-hindsight-integrations-coding-agents) | 为编码 Agent 提供 Hindsight 长期记忆、自动摄取和按需知识工具 | 在独立非敏感bank试用，先验收启动目录工具可见、fork切片和停止后服务端确认；出现串扰、无法确认保存或错误决策即停用并回到人工摘要。 |
-| [iPolloWork](#plugin-1044010907-root) | 独立桌面工作台，连接多种Agent运行时、项目任务与可编辑创作产物。 | 需要多Agent项目与可编辑创作工作台的用户可关注iPolloWork。 |
+| [Hindsight 编码 Agent 记忆集成](#plugin-1086419061-hindsight-integrations-coding-agents) | 为 DSH 编码会话自动召回并后台保存项目记忆。 | [Q05](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q05) 用独立 bank 和虚构项目试用，写回未确认或项目不符时暂停并手工核查。 |
+| [iPolloWork](#plugin-1044010907-root) | 提供多 Agent 运行时、项目任务和可编辑创作产物的独立工作台。 | [Q04](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q04) 先在副本观察一项只读 DSH 会话与原生产物；权限、终态或来源不明时停止并回原生引擎核对。 |
 | [J-Space Cognition Suite](#plugin-1308234922-root) | 用可选Skill模块与Python控制器维护长任务状态、源码映射和证据检查。 | [Q04](../../plugins/tiger3807861189--j-space-cognition-suite/INSIGHT.md#research-q04) 先在单个非关键长任务验证证据变化会被拒绝，再看维护负担是否换来少返工；短直接任务用轻量级别，不强行跑完整控制循环。 |
 | [Ledger Memory](#plugin-1412857520-root) | 为 DSH 项目保存活跃台账、经验卡与交接资料，自动注入记忆并提供压缩胶囊和会话文本指针回读。 | 可备份V3非关键项目先核拒写/授权/stage和压缩回读，定期人工比对真实工作区；缺口出现暂停自动依赖，见 [Q04](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md#research-q04)。 |
 | [LogicProbe](#plugin-1331586818-root) | 为 DSH 开发者提供状态机、数据模型、结构图与并发声称检查工具和 Skill，返回模型判决、反例、回归及覆盖边界。 | 能核对源码模型的小型协议/状态机可有限试用；先保full/预算/版本，模型不可核、持续未决或仅单一pass验收时停自动链，回普通测试/专用检查。 |
-| [LoopX for DSH](#plugin-1255217938-packages-dsh-loopx-plugin) | 在DSH接入LoopX技能、同会话续轮Driver和GoalBar，展示权威目标状态并控制后续推进。 | 建议已使用LoopX的DSH开发者在可回滚工作区试用一个短目标，先核对唯一绑定、quota与回执，再允许续轮。 |
+| [LoopX for DSH](#plugin-1255217938-packages-dsh-loopx-plugin) | 为 DSH 接入 LoopX 同会话续轮与 GoalBar。 | 以独立项目核验绑定与 quota，用非敏感任务试验暂停前后状态；异常时检查当前轮并回退手工。 |
 | [Matt Skills Deck](#plugin-1336488925-root) | 在 DSH 中分发工程 Skills，并提供任务板、后端票据读写、关系核对和开发流程入口。 | 先只读观察任务与环境，待测试仓库验证目标、权限、超时、部分写入及回读后再考虑写流程。 |
 | [MC Mods Dev Bridge](#plugin-1426070939-root) | 驱动真实 Minecraft 服务端与客户端运行场景 JSON，采集探针证据并覆盖 Fabric、Forge、NeoForge。 | 适合维护 MC 26.3 多 loader 模组、已有合法实例且能承担真实进程成本的团队观察；先只做 preflight 和一个 smoke 场景，验收 teardown、证据目录、/mods 双侧一致与端口恢复。 |
+| [MemOS Local Plugin](#plugin-1014729376-apps-memos-local-plugin) | 为 Agent 提供本地分层记忆、召回和反馈的多宿主插件。 | [Q05](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q05) 建议在固定宿主和非敏感项目试用并备份；发现纠正缺失或数据边界不明时暂停并回到项目笔记。 |
 | [Minke](#plugin-1334714311-root) | 基于 DeepSeek Harness 的本地桌面工作区，整合会话、文件、终端与共享浏览器。 | 首次成本比小插件更大：下载匹配OS架构的完整客户端，迁移或配置模型凭据、工作区和插件，确认其内嵌DSH版本；源码开发还需pnpm、Electron及多workspace产品包构建。 |
 | [MisakaNet](#plugin-1224734286-root) | 通过 Git 管理的故障教训与 MCP 检索，为 Agent 提供失败修复线索和反馈流程 | [Q04](../../plugins/ikalus1988--misakanet/INSIGHT.md#research-q04) 仅脱敏公开故障搜索回读试用，不自动运行社区修复。 |
 | [model-usage-plugin](#plugin-1334569518-root) | 在DSH Web设置中展示模型token、估算费用、工具指标、使用趋势与DeepSeek账户余额，并从会话日志补充历史日账。 | 先观察。 |
 | [Oh-DSH](#plugin-1330531961-root) | 围绕同一 DSH runtime 提供 Desktop、Web、TUI 发行表面及带预览/恢复的插件市场。 | 保持观察；熟悉DSH且有跨端需要者可主动用独立根做临时工程验证。 |
 | [oh-my-dsh](#plugin-1379204512-root) | 为DSH提供角色技能、任务编排协议、团队状态与代码智能工具。 | 本次建议观察，尚不建议把团队编排交给该账本。 |
 | [OMA for DeepSeek Harness](#plugin-1145914675-integrations-dsh) | 将OMA项目Skill与验证钩子接入DSH，支持自动项目准备、工具前后检查及有限停止跟进。 | [Q04](../../plugins/first-fluke--oh-my-agent--integrations-dsh/INSIGHT.md#research-q04)建议规则维护者在项目副本固定版本，先用允许与拒绝两个工具检查，必要时先关autoSetup手工审查模板。 |
-| [OpenBitFun Agent 工作区](#plugin-1147866277-root) | 提供多模式Agent工作区、跨设备远程控制和可定制Mini App能力。 | [Q04](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q04) 当前观察；两设备独立测试区先确认观察关闭不取消、显式停止有效、主机重启与未知结果可识别；不直接迁移唯一旧数据。 |
+| [OpenBitFun Agent 工作区](#plugin-1147866277-root) | 独立 Agent 工作区，支持跨设备控制和可选 DSH 客户端。 | [Q05](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q05) 建议先以隔离账号和可回滚任务验证；Relay 端点、身份、数据迁移或未知副作用不能核实时停止。 |
 | [OrcaReplay](#plugin-1350419329-root) | 外置 CLI 调试工具，记录 Agent 请求、工具和文件变化，支持模型响应回放、检查点分叉与模型比较。 | 先用可丢弃、无真实秘密的项目做严格回放，只把匹配视为协议重现；分叉需另看真实任务质量与费用。 |
 | [orchd项目任务面板](#plugin-1422240642-root) | 在DSH右侧栏只读查看当前项目的orchd任务、依赖图、想法和审查时间线。 | 观察；先验收来源/会话权限和引擎零写，受信本地项目再决定试用。 |
-| [Ouroboros 规格先行引擎](#plugin-1133901637-root) | 通过访谈、固定Seed、执行与多阶段评估组织AI软件开发任务，提供CLI和MCP接口。 | 适合愿意写明确验收且已有模型runtime的开发者，在可丢弃项目先只完成访谈→Seed→一个可自动检查的小改动，独立核对产物与检查覆盖。 |
+| [Ouroboros 规格先行引擎](#plugin-1133901637-root) | 通过访谈、固定规格、执行与多阶段评估组织 AI 软件开发任务。 | [Q05](../../plugins/q00--ouroboros/INSIGHT.md#research-q05) 仅在可丢弃副本试小任务并检查命令与各项验收；无有效证据或状态不明时暂停并回人工核对。 |
 | [Perfect Web Clone](#plugin-1128708803-root) | 以Skill驱动宿主编码Agent，配套网页采集、分区和量化工具；root提供DSH shim，但分进程CLI活动工作区与综合门控是采用前必须核实的断点。 | 先观察。 |
 | [phi](#plugin-1321152436-root) | 提供多模型、技能、子 Agent、权限控制与渐进 MCP 工具访问的终端编码客户端。 | [Q04](../../plugins/pulseaiclub--phi/INSIGHT.md#research-q04) 只读任务中对照试用，核对全部工具调用、任务正确性及额外发现费用；失配则回原客户端。 |
 | [Pilot Harness](#plugin-1336793734-root) | 将 DSH 底座组合为 Electron 桌面客户端与独立界面插件，提供模型配置和工作区 Files 侧栏，真实文件操作需另核目标与并发边界。 | 复制workspace、独立资料目录先只读浏览和插入草稿路径；写操作/模型权限另核，界面目标或写结果不清先停，见 [Q05](../../plugins/op7418--pilot-harness/INSIGHT.md#research-q05)。 |
 | [Plan Lattice](#plugin-1334504487-root) | 在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。 | 先用作者公开稳定包/候选在相同 DSH 版本隔离试点，重点比较替换后权威保真和门禁对合法写入的影响；无需把 rc.8 或机制比例当生产收益，详见[Q03](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q03)。 |
-| [REA](#plugin-1209966933-root) | 通过 CLI 与 MCP 统一提供应用工件、JavaScript/Electron 和多种后端的分析操作，返回带来源、推断性质与限制的证据。 | 只在匹配环境已知静态样本上试，主张不可回指或关键行为缺失则停用结论回直接解析，见 [Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)。 |
-| [Reasonix](#plugin-1216785679-root) | 独立开源编码 Agent，提供终端、Studio、浏览器和 ACP 入口，读取代码、修改文件并执行命令与测试。 | 能验代码的开发者仅在独立OS副本、无敏感资料和可观察模型额度下人工普通任务试用；先不启DSH自动委派，超资源阈值/来源或停止后状态不明即停并回退原办法。 |
-| [Ruflo](#plugin-995029641-root) | 独立CLI/MCP工具平台，用项目内任务、Agent/模型登记、provider调用与状态记录辅助多Agent开发协调。 | 先观察，已有明确协调需求者最多在后续独立账户/隔离非敏感副本、匹配实际dist、私有受控stdio中核一项代表操作，并显式model/provider、小正有限输出和零fallback，不全开mods/neural/federation。 |
+| [REA](#plugin-1209966933-root) | 通过命令行和 MCP 提供应用与二进制逆向分析工具。 | 有逆向经验且具备目标检查权限的用户可在匹配 Node 的隔离环境中用已知样本试用；关键来源缺失或推断不可回查时停止使用结论，改看原始材料。 |
+| [Ruflo](#plugin-995029641-root) | 提供 CLI 和 MCP 工具以登记 Agent、组织任务并调用模型服务。 | [Q05](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q05) 建议先观察；确有需要时在隔离副本及私有受控 stdio 只测一个明确模型请求，分别核查状态、返回和独立产物。 |
 | [SkillHub for DSH](#plugin-1178833585-plugins-dsh) | 在DSH搜索和查看SkillHub技能，管理用户或项目级安装、升级、卸载及当前可用性。 | 可供技能维护频繁且能核对宿主依赖的用户在独立账户或容器里试用公开测试技能的固定版本安装。 |
 | [Terrain](#plugin-1269057665-root) | 独立桌面与CLI将仓库知识、Agent工具和Git漂移组织到一起；文档完整、资料同步和回答正确是不同判据，Ask还可自动准备并写知识资产。 | 复制允许处理的仓库，先生成少量知识并核源码定位/更新；明确接受Ask准备写入及模型路由，环境安装另按选择评估，见[Q04](../../plugins/sopaco--terrain/INSIGHT.md#research-q04)、[Q05](../../plugins/sopaco--terrain/INSIGHT.md#research-q05)。 |
-| [VibeSkills](#plugin-1164005541-root) | 通过本地Skill发现、任务分解、阶段控制和验收组织复杂工作流。 | 拥有大量本地Skill并组织多交付物任务的用户可关注VibeSkills。 |
+| [VibeSkills](#plugin-1164005541-root) | 通过候选 Skill 审计、分阶段需求计划与执行验收组织复杂任务。 | [Q04](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q04) 先确认目标宿主、任务和授权边界；轻任务直接使用原生 Skill。 |
 | [WeSight](#plugin-1232030145-root) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多CLI需求的开发者可先用一个已有引擎在副本仓库试用，核对权限、文件与中断状态；若配置资源负担高于切换便利，或要求各引擎同等审批而未证实，就退回原CLI与编辑器。 |
 | [Witness（dsh-verify）](#plugin-1335843750-root) | 用可复跑 JSON 浏览器断言检查网页行为，并输出逐步报告与截图 | 已有明确标准的开发者先在localhost用正确/故意错误断言试用，回读实际URL和报告；未审spec或基线不能放行，Host阻塞或目标不符退回CLI/手写Playwright。 |
 | [working-activity](#plugin-1309769324-root) | 为 pi 与 DSH 提供实时工具活动、模型自述、耗时和收尾统计的工作状态行。 | [Q04](../../plugins/ccch1mneyyy--working-activity/INSIGHT.md#research-q04) 先仅事件模式，以工具日志为事实核对；若增加干扰或误导，回宿主原状态。 |
-| [无限五代 IG5](#plugin-1335211378-root) | 在DSH中整合二进制静态分析、原生调试、网络采集与证据工作台。 | 熟悉逆向工具的DSH用户可先在克隆profile与可丢弃授权样本上试静态分析链。 |
+| [无限五代 IG5](#plugin-1335211378-root) | 在 DSH 工作台中集成二进制静态分析、调试、流量与证据管理。 | [Q05](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q05) 用隔离 profile 和授权副本先验证代表性路径，不明副作用时暂停并人工核查。 |
 | [模型接力](#plugin-1415863200-root) | 把候选队列包装成模型，提交前切换并按会话/模板隔离，另有全局自动继续；停止与终态需核。 | 观察：先修/验失败终态和关闭/等待语义，限定可回滚任务与候选，再对照正确产物、人工和全成本；发生越过停止/重复/账实不符即查未决后回退，见[Q06](../../plugins/airisey--dsh-model-failover/INSIGHT.md#research-q06)。 |
 
 <a id="plugin-1377185339-root"></a>
@@ -489,15 +490,15 @@
 
 ## [Archify](../../plugins/tt-a1i--archify/INSIGHT.md)
 
-[![GitHub ★ 90,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=90%2C283&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify)
+[![GitHub ★ 92,198](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=92%2C198&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify)
 
-> **用途**：熟悉系统的开发者与知识工作者将复杂关系交给协作者理解。
+> **用途**：需要把系统或问题解释给他人的开发者与知识工作者，可以构造图表或说明页并逐项核对来源；根仓是 Skill 而非 DSH 原生插件。[Q01](../../plugins/tt-a1i--archify/INSIGHT.md#research-q01)
 
-> **亮点**：将结构化创作、交互 HTML 和绑定实际字节的阶段验收串联，使“文件曾通过”和“当前文件被检验”有可检查区别；图形语义仍需人工。[Q01](../../plugins/tt-a1i--archify/INSIGHT.md#research-q01) [Q02](../../plugins/tt-a1i--archify/INSIGHT.md#research-q02)
+> **亮点**：相对手工组织图形与检查，Skill 将结构化候选、交互 HTML 和绑定实际字节的阶段收据组合；不将模型、源码事实或浏览器本身算作其原创。[Q01](../../plugins/tt-a1i--archify/INSIGHT.md#research-q01) [Q02](../../plugins/tt-a1i--archify/INSIGHT.md#research-q02)
 
-> **思考**：自动验收约束产物和展示机制，不能保证引用解释、关系方向或读者理解；节点引用并不独立约束每一条关系。感知视觉复核也不包含在普通通过中。[Q03](../../plugins/tt-a1i--archify/INSIGHT.md#research-q03)
+> **思考**：有效来源位置和通过收据能否避免错误关系及误导视觉？关系无独立 sources，自动浏览器检查也不是人眼审阅，explainer 默认不运行该检查。[Q03](../../plugins/tt-a1i--archify/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设是增加逐关系事实性质与调用位置映射，和现有节点引用作错误注入对照，检验是否减少假边而不过度增加作者负担；无改善即停止。[Q05](../../plugins/tt-a1i--archify/INSIGHT.md#research-q05)
+> **建议**：假设对关键关系独立记录调用位置、事实性质和人工核对状态，可减少图中假边；与现有节点引用和人工核对比较误报、漏检及耗时，不能改善时放弃。[Q05](../../plugins/tt-a1i--archify/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tt-a1i--archify/INSIGHT.md) · [返回表格](#category-index)
 
@@ -505,15 +506,15 @@
 
 ## [Archify DSH 适配器](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md)
 
-[![GitHub ★ 90,283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=90%2C283&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) [![npm 30d 36,510](https://img.shields.io/static/v1?label=npm+30d&message=36%2C510&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh)
+[![GitHub ★ 92,197](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=92%2C197&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) [![npm 30d 40,336](https://img.shields.io/static/v1?label=npm+30d&message=40%2C336&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh)
 
-> **用途**：已经使用 DSH、希望按 profile 管理 Archify 架构图 Skill 的开发者。
+> **用途**：[Q01](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q01) 希望在 DSH 中调用 Archify 生成架构图的开发者需要加载正确技能及工作区产物。
 
-> **亮点**：本包把固定 Skill 版本、profile bundle 和 npm 移除路径串为分发契约；实际入口是 patch 的 filesystem provider。默认根共存验收检查正文与路径，超过仅发现名称的检查，但不证明图本身正确。[Q01](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q01) [Q03](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q03)
+> **亮点**：[Q02](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q02) 用包和 profile 管理固定 Skill 来源，相对手工复制增加受版本控制的发现路径。
 
-> **思考**：源码修复不等于公开安装已修复：当前 patch 保留默认根，而 README 明示公开 1.0.0 仍不保留默认根；新 Desktop 尚缺原生验收。这使新用户无法靠文档安装命令取得本轮研究的修复。[Q02](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q02)
+> **思考**：[Q03](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q03) 文档称已发布 1.0.0 可能隐藏默认 Skill，源码修复仍是候选；同名 Skill 也可能遮蔽包内版本。
 
-> **建议**：未验证假设是将适配器、内嵌 Skill、宿主与默认根正文身份组成发布收据，比仅检查名称更早发现分发回归。用默认 provider 开启／关闭、干净安装／同 profile 升级四格对照注入错根和旧正文，记录检出率、误报及排查分钟；不能提前发现问题或维护成本超过手工清单时停止扩展。[Q05](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q05)
+> **建议**：[Q04](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q04) 展示有效 Skill 来源与同名遮蔽可减少升级诊断时间，需在隔离配置验证。
 
 [查看完整分析](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
@@ -521,15 +522,15 @@
 
 ## [billion-context](../../plugins/ranxianglei--billion-context/INSIGHT.md)
 
-[![GitHub ★ 2,923](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C923&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ranxianglei/billion-context) [![npm 30d 2,010,311](https://img.shields.io/static/v1?label=npm+30d&message=2%2C010%2C311&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
+[![GitHub ★ 3,521](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C521&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ranxianglei/billion-context) [![npm 30d 2,315,214](https://img.shields.io/static/v1?label=npm+30d&message=2%2C315%2C214&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
 
-> **用途**：它服务长时间编码会话，试图在有限模型窗口内持续携带决策、错误和代码引用。合格交付是长任务仍能正确利用关键历史，需要精确细节时找回原文，而非只是累计请求很多token或没有超过窗口。名称和README累计B级token不是单次上下文容量扩成十亿，也不是本研究对质量的实测。
+> **用途**：维护长期编码任务的人需要在窗口限制下继续使用关键决策和原始细节；合格结果是正确完成任务而不是累计 token 数。[Q01](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q01)、[Q02](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q02)识别的贡献是让模型按范围增量折叠、按需恢复，而非只在达到阈值时全量总结；DSH工具准备与session归属控制把代理状态接到宿主请求。[Q03](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q03)支持状态可恢复，不证明所有摘要保真；kernel与vendored机制来源保留，不宣称全新原创。
+> **亮点**：[Q02](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q02) 显示 DSH 代理工具与范围块、按需恢复相结合，提供相对整段压缩更细的操作；方法包含 kernel 既有贡献，不能据此断言原创或效果提升。
 
-> **思考**：[Q03](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q03)指出summary长度/边界合格不等关键事实保留，可恢复也不等模型会知道何时恢复。若遗漏的否定或纠错不被意识到，窗口正常仍可任务失败；[Q04](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q04)还要求区分wire-mode、双压缩及原生compact恢复。不能以宣传token倍数覆盖这些条件。
+> **思考**：[Q03](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q03) 显示启动失败可直连且作者报告部分传输可能绕开代理；[Q02](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q02) 的恢复路径在缓存和原消息缺失时可能退回摘要，不能视为无条件原文恢复。
 
-> **建议**：[Q06](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q06)提出未验证的关键事实索引与决策前原文回查。用否定、跨代纠错和文件重命名长任务对照同总预算的宿主compact/原方案，统计合格率、恢复、额外token和人工时间；无净改善就停止，不计现有创新。
+> **建议**：[Q04](../../plugins/ranxianglei--billion-context/INSIGHT.md#research-q04) 提出在关键事实输出前展示对应原文引用供确认，可能减少摘要误用；同任务对照、全成本与否定条件尚待验证，不是现有能力。
 
 [查看完整分析](../../plugins/ranxianglei--billion-context/INSIGHT.md) · [返回表格](#category-index)
 
@@ -569,15 +570,15 @@
 
 ## [CC Safety Net](../../plugins/kenryu42--cc-safety-net/INSIGHT.md)
 
-[![GitHub ★ 1,792](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C792&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kenryu42/cc-safety-net) [![npm 30d 67,218](https://img.shields.io/static/v1?label=npm+30d&message=67%2C218&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net)
+[![GitHub ★ 1,877](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C877&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kenryu42/cc-safety-net) [![npm 30d 89,094](https://img.shields.io/static/v1?label=npm+30d&message=89%2C094&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net)
 
-> **用途**：让Agent在本地仓库操作的开发者可增加执行前命令/秘密访问检查，保留原生权限控制。
+> **用途**：[Q01](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q01) 面向希望减少编码 Agent 误执行危险命令的用户，合格结果须兼顾阻断与正常工作。
 
-> **亮点**：相对提示词约束，DSH工具guard形成执行前拒绝；多CLI复用裁决而分别提取输入，增量属于策略适配。见[Q01](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q01)。
+> **亮点**：[Q02](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q02) 将可配置命令和敏感路径检查接入 DSH 执行前 guard，相对仅依赖提示词提供一个可解释的判断点；它不是进程隔离。
 
-> **思考**：未声明自定义命令工具可能先执行再收到未检查提示，且它不隔离进程或网络；不能当唯一安全边界。见[Q03](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q03) 中标准模式允许部分动态形式，未知工具的提醒在执行后；覆盖遗漏不能由异常拒绝机制消除。
 
-> **建议**：未验证方向是首次执行前给出工具覆盖矩阵，将本机/远端和cwd解释显式化；若误标或配置负担超过发现收益就不推广。见[Q05](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q04) 假设安装后提供待审阅的工具覆盖清单可减少首次不受检调用，需用安全样本对照覆盖与误声明，尚未验证。
 
 [查看完整分析](../../plugins/kenryu42--cc-safety-net/INSIGHT.md) · [返回表格](#category-index)
 
@@ -725,6 +726,22 @@
 
 [查看完整分析](../../plugins/ningbainb--deepseek-harness-desktop/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1216785679-root"></a>
+
+## [DeepSeek Reasonix](../../plugins/esengine--deepseek-reasonix/INSIGHT.md)
+
+[![GitHub ★ 36,014](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C014&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/esengine/DeepSeek-Reasonix)
+
+> **用途**：能审代码的开发者在可恢复项目中描述任务，由编码助手读文件、修改和运行验证；仍须人工验收。
+
+> **亮点**：[Q01](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q01) 和 [Q02](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q02) 显示实际模型、工具、配对结果和多入口的集成，相比人工复制建议可改变操作流程；不证明算法原创或实测省时。
+
+> **思考**：[Q03](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q03) 表明普通 Gate 不覆盖显式 shell 分支，本轮 DSH caller 与 Reasonix 配置锁定版本不同；自动委派前必须确认来源、能力检查和实际双方版本。
+
+> **建议**：[Q06](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q06) 提出区分人类直输和委派输入的未验证授权适配；若简单禁用 bash 与隔离已满足条件，增加协议不值得。
+
+[查看完整分析](../../plugins/esengine--deepseek-reasonix/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1337578630-root"></a>
 
 ## [DeepSeekGUI](../../plugins/see-sol-lab--deepseekgui/INSIGHT.md)
@@ -777,15 +794,15 @@
 
 ## [Desktop CC GUI](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md)
 
-[![GitHub ★ 4,520](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C520&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
+[![GitHub ★ 4,553](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C553&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhukunpenglinyutong/desktop-cc-gui)
 
-> **用途**：适合同时使用多个编码CLI且希望统一项目、会话和工具输出的开发者。合格结果是DSH会话正确恢复、输出和工具状态不重复，并保留各引擎自身边界；原办法是多个终端或DSH Web。它是独立Tauri应用而不是可直接add的DSH插件，安装整个客户端的负担要与统一入口收益一起判断。仅使用DSH一个引擎时，原生Web通常已覆盖主要需求。
+> **用途**：同时使用多种编码引擎并希望统一项目、会话和输出的开发者；单引擎可比较原生入口。[Q01](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q01)
 
-> **亮点**：[Q02](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q02)DSH适配通过持久host session流而非终端抓屏，能保留结构化工具输出和恢复语义；多引擎统一界面有条件增量，不是DSH原生插件。
+> **亮点**：持久 host session 与结构化流接入多引擎桌面，而非终端截屏或 DSH 原生插件。[Q01](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q01) [Q02](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q02)
 
-> **思考**：[Q03](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q03)DSH审批请求自动allowed-once，plan并非只读沙箱；对需要人工放行的用户，统一界面不能抹平权限差异。
+> **思考**：普通 DSH 工具审批自动 allowed-once；计划评审是独立流程且软约束，不是只读沙箱。[Q03](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q03)
 
-> **建议**：[Q05](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q05)提出引擎权限契约显式展示与人工卡片的未验证假设，比较用户误判和误批准。
+> **建议**：未验证假设：发送前按引擎与实测 host 能力分别展示工具审批、计划评审与沙箱状态，可降低误解；须验证过期和误导。[Q05](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/zhukunpenglinyutong--desktop-cc-gui/INSIGHT.md) · [返回表格](#category-index)
 
@@ -873,15 +890,15 @@
 
 ## [DSH AgentTeams](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md)
 
-[![GitHub ★ 2,455](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C455&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NanmiCoder/dsh-agent-teams) [![npm 30d 46,019](https://img.shields.io/static/v1?label=npm+30d&message=46%2C019&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams)
+[![GitHub ★ 2,619](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C619&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NanmiCoder/dsh-agent-teams) [![npm 30d 48,673](https://img.shields.io/static/v1?label=npm+30d&message=48%2C673&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nanmicoder/dsh-agent-teams)
 
-> **用途**：能拆分任务和验收的负责人在当前会话分派独立工作并汇总为同一目标交付。
+> **用途**：[Q01](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q01) 能拆分工作并复核整合的 DSH 用户希望让多个成员按依赖协作。
 
-> **亮点**：[Q02](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q02)、[Q03](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q03) 可靠性增量在持久任务图、attempt归属与区分idle/冷恢复的调度，而非角色数量；清空旧结果避免重试直接继承已失效证据。
+> **亮点**：[Q02](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q02) 为可续聊子 Agent 增加持久任务图、归属与自动调度，相比手工跟踪减少协调步骤。
 
-> **思考**：[Q03](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q03) 旧attempt状态更新被撤销不代表外部文件副作用已撤销，质量gate是完成审计而非写入拦截；调度记录不能替代产物与验证的独立复核。
+> **思考**：[Q03](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q03) attempt 只限制团队任务更新，不能撤销已发生的文件或外部副作用；范围门禁是完成时审计。
 
-> **建议**：[Q05](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q05) 未验证假设是按attempt隔离工作区并只接纳当前快照，以中断重派对照过期产物污染与恢复成本；收益不足或迁移成本更高即停止。
+> **建议**：[Q04](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md#research-q04) 假设在宿主实际写入前核对成员 attempt 与声明范围并阻止越界，可能减少未声明文件并行修改；现有实现已在建任务时拒绝部分已声明范围重叠，不能把该检查当成新增功能。需对照冲突、误拦与延迟。
 
 [查看完整分析](../../plugins/nanmicoder--dsh-agent-teams/INSIGHT.md) · [返回表格](#category-index)
 
@@ -900,22 +917,6 @@
 > **建议**：未验证方向是可恢复Skill更新/发现回读与明确提交，用故障矩阵对比旧版保留和恢复时间；备份已足够或维护更重则不扩复杂事务平台。见[Q05](../../plugins/2026heshao--dsh-armory/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/2026heshao--dsh-armory/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1326893710-root"></a>
-
-## [DSH Better Sidebar](../../plugins/omdsh-dev--dsh-better-sidebar/INSIGHT.md)
-
-[![GitHub ★ 4,528](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C528&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/DSH-better-sidebar) [![npm 30d 182,354](https://img.shields.io/static/v1?label=npm+30d&message=182%2C354&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar)
-
-> **用途**：面向以DSH Web进行软件修改并频繁在聊天、编辑器、Git终端之间切换的开发者。合格结果是在正确会话目录核对改动、预览/编辑文件并明确提交动作，而非仅打开面板。原办法是IDE和终端；插件提供双工作台与会话作用域入口，但成熟IDE用户可能无须替换。README的终端能力明确由宿主提供，不能把插件界面当独立PTY实现。
-
-> **亮点**：[Q03](../../plugins/omdsh-dev--dsh-better-sidebar/INSIGHT.md#research-q03)识别出把会话目录、编辑和Git入口结合的工作流贡献，以及内外部页面共用的注册契约。相对IDE不是能力普遍领先，只有频繁在DSH会话中核对修改时同上下文整合才有增量。
-
-> **思考**：[Q04](../../plugins/omdsh-dev--dsh-better-sidebar/INSIGHT.md#research-q04)核实workspace围栏已移除，路由准入不能收窄已准入用户的文件权限。当前版本又要求明确宿主版本，不能将会话作用域或latest安装命令理解成隔离或兼容保证。
-
-> **建议**：[Q08](../../plugins/omdsh-dev--dsh-better-sidebar/INSIGHT.md#research-q08)提出未验证的路径能力边界，以真实目标与symlink一致校验减小误操作范围，需用合法跨目录任务和越界拒绝的取舍对照证伪。
-
-[查看完整分析](../../plugins/omdsh-dev--dsh-better-sidebar/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1352600211-root"></a>
 
@@ -948,6 +949,38 @@
 > **建议**：[Q04](../../plugins/chuspeeism--dashi-taskboard--integrations-deepseek-harness/INSIGHT.md#research-q04) 未验证假设是在受限本地健康探测下区分描述符故障，以故障注入比较定位时间；无改善或出现额外误报即停止。
 
 [查看完整分析](../../plugins/chuspeeism--dashi-taskboard--integrations-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333128726-root"></a>
+
+## [DSH GenUI](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md)
+
+[![GitHub ★ 832](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=832&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-genui) [![npm 30d 44,380](https://img.shields.io/static/v1?label=npm+30d&message=44%2C380&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@changfenhuang/dsh-genui) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@changfenhuang/dsh-genui)
+
+> **用途**：面向需要在对话中查看图表、表单和结构化内容的用户。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q01) 与 [Q02](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q02) 显示将受限组件树嵌入会话，便于在不单独开发应用的情况下呈现交互；效果尚未实测。
+
+> **思考**：[Q03](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q03) 和 [Q04](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q04) 显示动作是后续消息且可能丢失，具体防护不证明所有生成内容安全。
+
+> **建议**：[Q06](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q06) 提出用隔离假会话对照动作投递与会话身份，仍需验证。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1331636953-packages-dsh-git-graph"></a>
+
+## [DSH Git Graph](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md)
+
+[![GitHub ★ 9,896](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C896&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 104,603](https://img.shields.io/static/v1?label=npm+30d&message=104%2C603&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
+
+> **用途**：[Q01](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q01) 面向需要在 DSH 工作区查看分支及历史的 Git 用户；合格操作需要保留工作并确认磁盘状态。
+
+> **亮点**：[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q02) 把 Git 状态和分支操作接入 DSH 界面，并对工作区和分支执行前置检查；仓库数据与 Git 语义仍由上游决定。
+
+> **思考**：[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q03) 显示部分守卫判断未检查探测退出码，分支删除结果也未核；界面成功不能代替回读实际仓库。
+
+> **建议**：[Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q04) 假设展示受影响会话并在操作后回读状态可减少错目标和伪成功，须以隔离仓库比较错误和时间，尚未验证。
+
+[查看完整分析](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1285824983-integrations-dsh"></a>
 
@@ -1097,15 +1130,15 @@
 
 ## [DSH Skills Manager](../../plugins/michengai--dsh-skills-manager/INSIGHT.md)
 
-[![GitHub ★ 386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-skills-manager) [![npm 30d 138,355](https://img.shields.io/static/v1?label=npm+30d&message=138%2C355&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager)
+[![GitHub ★ 426](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=426&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-skills-manager) [![npm 30d 142,851](https://img.shields.io/static/v1?label=npm+30d&message=142%2C851&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager)
 
-> **用途**：维护多个助手和项目技能目录的人可统一查找副本并管理更新，合格结果应是目标会话调用正确正文且可恢复。见[Q01](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q01)。
+> **用途**：在 DSH 使用多个本地和项目 Skill 来源的维护者，可以在界面统一查看与配置；重复需求和效率尚无独立用户材料。[Q01](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q01)
 
-> **亮点**：它把外部技能实际接入DSH调用链，并让同名选择、启停和可追溯仓库更新共享管理入口，超出单纯文件列表；收益仍以实际任务为准。见[Q01](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q01)至[Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03)。
+> **亮点**：插件将多个来源的候选、启停策略及仓库更新流程接入 DSH，并用预览令牌和本地复验限制部分过期覆盖；相对于手工记录提供可核查的组织机制，不证明净节时或内容安全。[Q02](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q02) [Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03)
 
-> **思考**：只读来源保护原文件，却仍能把正文送入模型调用；名称合法和文件摘要不证明指令可信。更新恢复设计也未独立证明任意硬中断和外部竞态下无损。见[Q02](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q02)与[Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03)。
+> **思考**：更新失败可能留下文件已安装但来源状态未确认，回退也可能失败；旧 webServer 回退的实际认证及接收阶段大小限制尚未确认，不能把界面上的备份和路由检查视为完整安全保障。[Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03) [Q04](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q04)
 
-> **建议**：可研究首次启用和内容变更时绑定技能摘要的适用确认，分清文件管理与指令信任；须比较误启用与审阅负担，尚未验证。见[Q06](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q06)。
+> **建议**：未验证假设：预览时将权限敏感指令与来源信任说明并列，可能帮助维护者发现不适合安装的 Skill，但会增加审阅成本；对照普通文件差异测发现率、误报和时间，若无改善或负担不可接受则否定。[Q05](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/michengai--dsh-skills-manager/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1113,15 +1146,15 @@
 
 ## [DSH Task Board](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md)
 
-[![GitHub ★ 9,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C562&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 110,197](https://img.shields.io/static/v1?label=npm+30d&message=110%2C197&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board)
+[![GitHub ★ 9,896](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C896&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 120,209](https://img.shields.io/static/v1?label=npm+30d&message=120%2C209&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board)
 
-> **用途**：已有DSH的维护者可管理可回查的巡检/评审任务和子任务。
+> **用途**：需要组织周期性巡检或代码任务的 DSH 维护者可按卡片查看执行与结果；仍需对业务结果负责。
 
-> **亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q01)。
+> **亮点**：[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q02) 显示任务、持久台账和宿主会话的连接；[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q03) 对启用验收的完成声明增加通过记录要求。相对人工看板是可回查流程，不证明业务结果一定合格。
 
-> **思考**：卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q03) 显示手工 Done、普通单轮与通过验收的 goal 运行并不相同；把卡片列当完成证据会掩盖未执行或未验收。
 
-> **建议**：未验证方向是默认区分手工声明、Host执行和证据验收及副作用状态；固定卡片理解测试无减误信则不推广。见[Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q04)。
+> **建议**：[Q06](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md#research-q06) 提出同时展示手工声明、执行、证据及副作用的未验证假设；若固定卡片理解实验未减少误信则不推广。
 
 [查看完整分析](../../plugins/zhu1090093659--dsh-web--packages-dsh-task-board/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1140,6 +1173,22 @@
 > **建议**：把任务revision、产物摘要与真实验证结果绑定为可复核验收包，验证是否降低误接受且不增加过多审核成本。见[Q06](../../plugins/shengsheng90--dsh-taskboard/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/shengsheng90--dsh-taskboard/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333111893-root"></a>
+
+## [DSH TUI](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md)
+
+[![GitHub ★ 6,458](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C458&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ccch1mneyyy/dsh-TUI) [![npm 30d 53,368](https://img.shields.io/static/v1?label=npm+30d&message=53%2C368&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui)
+
+> **用途**：面向希望在终端内处理 DSH 会话和状态的用户。
+
+> **亮点**：[Q01](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q01) 与 [Q02](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q02) 显示终端入口组合宿主 channel 与 UI，提供集中状态视图；用户效率未测。
+
+> **思考**：[Q03](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q03) 和 [Q04](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q04) 显示恢复与实时存在有意差异，救援 profile 仍共享 home 与环境；不能视为完全等价或安全沙箱。
+
+> **建议**：[Q06](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q06) 提议比较同一事件序列的最终稳定行，以检验恢复一致性；这仍是假设。
+
+[查看完整分析](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333100390-root"></a>
 
@@ -1161,15 +1210,15 @@
 
 ## [DSH Vision Router](../../plugins/ysr666--dsh-vision-router/INSIGHT.md)
 
-[![GitHub ★ 1,180](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C180&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ysr666/dsh-vision-router) [![npm 30d 34,951](https://img.shields.io/static/v1?label=npm+30d&message=34%2C951&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router)
+[![GitHub ★ 1,202](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C202&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ysr666/dsh-vision-router) [![npm 30d 38,122](https://img.shields.io/static/v1?label=npm+30d&message=38%2C122&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router)
 
-> **用途**：以文本模型为主但需问截图和局部定位的DSH用户；已有合格原生视觉可比较后选择。[Q01](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q01)
+> **用途**：面向需要在 DSH 任务中读取截图、识别图片和核对视觉内容的用户。
 
-> **亮点**：把文本主模型与视觉工具分工接入DSH，结合失败分层回退和像素核对；不把模型视觉能力和演示差异归为独立效果证明。[Q01](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q01) [Q02](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q01) 与 [Q02](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q02) 显示将图片入口、后端与工具组合接入 DSH；模型视觉能力和任务收益不能归为插件自身证明。
 
-> **思考**：免Key云回退默认开启，图片会出站；本地过滤存在不等全路径隐私验收，供应商失败也不能随意绕适配再请求。[Q03](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q03) 的窄桥不能保证全部调用不重复；[Q04](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q04) 默认可向远端发送图像，本地视觉开关也不能让远程聊天模型离线。
 
-> **建议**：未验证方向是无敏感内容的逐尝试账本，记录出站和预算以验证隐私/重复费用并减少排障。[Q05](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q05)
+> **建议**：[Q06](../../plugins/ysr666--dsh-vision-router/INSIGHT.md#research-q06) 假设可见的脱敏尝试收据与出站前确认能改善隐私和费用判断；既有失败列表与日志是直接对照，方案尚未验证。
 
 [查看完整分析](../../plugins/ysr666--dsh-vision-router/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1433,15 +1482,15 @@
 
 ## [dsh-context](../../plugins/bowenliang123--dsh-context/INSIGHT.md)
 
-[![GitHub ★ 3,566](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C566&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 145,261](https://img.shields.io/static/v1?label=npm+30d&message=145%2C261&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
+[![GitHub ★ 3,940](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C940&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 255,407](https://img.shields.io/static/v1?label=npm+30d&message=255%2C407&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
 
-> **用途**：面向长会话、多工具和子Agent较多、需要知道上下文为何膨胀或压缩的DSH开发者。合格结果是能定位某请求的组成、注入、文件/命令活动与相关会话，再决定精简什么；不是图表本身越多越好。简单办法是看宿主token环和原始日志；插件把总量和逐请求来源连起来，但诊断并不自动改善模型回答或降低账单。
+> **用途**：[Q01](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q01) 面向需要定位长会话上下文膨胀来源的 DSH 用户；合格结果是能够解释请求构成并核对来源。
 
-> **亮点**：[Q03](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q03)识别出从总量环到逐请求来源定位的可观察性贡献，头/明细分离把重集合按需读取。相对手查日志改善定位组织，不把宿主投影或估算规则当原创，也不宣称自动提高模型效果。
+> **亮点**：[Q02](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q02) 将已有宿主事件和估算组织成按请求分类与详情导航，相比只看总量提供可检查的线索；这不是独立网络抓包或已证实的节时。
 
-> **思考**：[Q04](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q04)说明密度估算、有界保留与冷读跳过会收窄“完整”含义，全局prompt设置又可改变被观察对象；诊断试用应先保持空前后缀并明确数据来源。
+> **思考**：[Q03](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q03) 中估算公式、低版本零值降级和冷读门控会改变数值含义或让详情缺失；[Q02](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q02) 因而不能保证完整精确账单。
 
-> **建议**：[Q08](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q08)提出未验证的来源覆盖条，把精确值、估算、裁剪与跳过分开，按用户识别缺数据正确率和提示负担检验，不能将该假设计为本版能力。
+> **建议**：[Q04](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q04) 假设将估算、usage 和缺失状态并列显示可减少误判，须以相同请求测正确率和人工时间；尚未验证且不是已实现贡献。
 
 [查看完整分析](../../plugins/bowenliang123--dsh-context/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2025,15 +2074,15 @@
 
 ## [dsh-ops](../../plugins/t-auto--dsh-ops/INSIGHT.md)
 
-[![GitHub ★ 4,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 31,257](https://img.shields.io/static/v1?label=npm+30d&message=31%2C257&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
+[![GitHub ★ 4,935](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C935&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 97,591](https://img.shields.io/static/v1?label=npm+30d&message=97%2C591&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
 
-> **用途**：面向反复读写大量文件或文档的DSH编码用户，目标是在可核对交付不变时减少冗长工具结果和模型往返。原办法是原生工具及模型自行写PTC脚本；合格结果必须同时保留完整文件修改、可追溯行号和错误，而不是单看输出token变少。README称其减少token是目标及作者实验，本轮不继承为已验证收益。
+> **用途**：面向能复核文件结果、反复进行代码和文档操作的 DSH 用户；合格结果是修改正确、范围完整且成本可接受。
 
-> **亮点**：相对把全部工具schema常驻，渐进发现让常用面较小；相对只有字符串截断，结构化结果与session生命周期提供更明确的使用边界。具体贡献是紧凑工具面和替代准备检查的组合，而非工具数量多。是否少调用还取决于模型能否正确发现能力及紧凑结果是否保留足够信息。 依据[Q03](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q03)。
+> **亮点**：[Q01](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q01) 与 [Q02](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q02) 表明它将 worker 文件能力、预设与动态发布组合进宿主；[Q03](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q03) 的归属检查降低错误替换表面的风险，但不证明节省或语义等价。
 
-> **思考**：核心质疑是减少工具描述与结果内容会否增加漏读、重试或错误修改。源码的readiness只证明替代定义与归属可见，不证明与每个官方工具语义等价；结果缓存物理清理失败会留下临时文件，源码仅警告且不自动重试。安装dry-run同样只作静态路径检查，不能替代实际宿主兼容。 依据[Q04](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q04)。
+> **思考**：[Q03](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q03) 和 [Q04](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q04) 的核心问题是隐藏原生工具及压缩输出是否导致漏读或错误修改；准备检查不是语义对照，中断和缓存清理也不能保证没有残留。
 
-> **建议**：未验证假设是为渐进工具加载加入“任务完整性优先”的回退：一旦紧凑结果缺少所需区域就回原生完整读取，可能减少节省token却多次返工的问题。固定文件/文档语料和模型，对比原生、OPS以及带回退策略，记录合格交付率、总token、重读和人工修复。若总成本无下降或漏改更多，则不应隐藏原生工具。 依据[Q08](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q08)。
+> **建议**：[Q06](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q06) 假设以宿主观察对账任务目标文件与实际结果，可暴露局部完整但任务不完整；现有截断与分页提示是反证，收益、误报和成本未测。
 
 [查看完整分析](../../plugins/t-auto--dsh-ops/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2057,15 +2106,15 @@
 
 ## [dsh-ouroboros 配置桥](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md)
 
-[![GitHub ★ 6,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
+[![GitHub ★ 6,299](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C299&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
 
-> **用途**：面向已决定使用Ouroboros规格先行流程、希望从DSH对话调用而非切到独立CLI的开发者。合格结果不是工具列表出现，而是访谈生成Seed并能交给执行/评估流程。简单替代是在profile手写MCP stdio配置，或直接用Ouroboros CLI。这个组件只是配置bundle，不把上游引擎贡献算作桥接原创。
+> **用途**：已使用 Ouroboros、希望在 DSH 对话调用的开发者；替代为手写 MCP 配置或直接 CLI。[Q01](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q01)
 
-> **亮点**：[Q03](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q03)说明这是可安装的MCP配置桥，增量是合理默认值与显式凭据边界，核心规格/执行算法归上游。相对手写等效配置便利有限，不能把整套引擎能力当此组件原创。
+> **亮点**：可安装的默认配置减少手工接线；上游访谈和执行能力不属于桥自身。[Q01](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q01)
 
-> **思考**：[Q04](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q04)揭示工具列出不等于访谈可用，且uvx不固定引擎版本，使本轮固定配置证据无法完整约束实际执行。应先解决版本锁与后端可调用性，再讨论长任务采用。
+> **思考**：工具可见不等于后端可调用；动态解析使固定配置不能固定实际执行的引擎版本。[Q02](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q02) [Q03](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q03)
 
-> **建议**：[Q08](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q08)提出未验证的配置锁与分段能力预检，在缺uv、缺后端和部分可用三类环境测错误定位和放行率，反证是预检漂移或维护负担超出收益。
+> **建议**：未验证假设：显示实际引擎版本及后端预检可减少首个访谈失败，须对照现有文档测误报和泄露。[Q05](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/q00--ouroboros--integrations-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2597,22 +2646,6 @@
 
 [查看完整分析](../../plugins/1264459640--dsh-trellis/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1333111893-root"></a>
-
-## [dsh-TUI](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md)
-
-[![GitHub ★ 5,735](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C735&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ccch1mneyyy/dsh-TUI) [![npm 30d 44,529](https://img.shields.io/static/v1?label=npm+30d&message=44%2C529&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepseek-harness-tui/dsh-tui)
-
-> **用途**：适合长期在终端/SSH里使用DSH、希望查看流式回答、工具卡与会话状态的开发者。合格结果是输入、审批、历史恢复与当前Agent状态对应，原办法为DSH原生CLI或Web。该项目既有plugin入口也有独立启动与composition root，不是修改DSH核心代码；对主要在浏览器工作的人，换成终端未必更方便。丰富显示改善可见性，但不是代码正确性或任务办结率证据。
-
-> **亮点**：[Q02](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q02)将宿主适配、共享事件投影与终端显示分离，live/replay同路和生命周期接线比日志抓取更可核对；不是提升模型能力。
-
-> **思考**：[Q03](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q03)全局与profile副本、终端协议及shared home会影响兼容和恢复；safe profile不代表与当前环境完全隔离。
-
-> **建议**：[Q05](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q05)提出固定事件轨迹的实时/重放状态等价检验，假设未验证，以工具行和审批一致性作为否定条件。
-
-[查看完整分析](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1338526178-packages-bundle-rollback"></a>
 
 ## [dsh-undo-plugin](../../plugins/23swccp--dsh-undo--packages-bundle-rollback/INSIGHT.md)
@@ -3061,22 +3094,6 @@
 
 [查看完整分析](../../plugins/amethystluna--embedded-workbench/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1331636953-packages-dsh-git-graph"></a>
-
-## [Git Graph](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md)
-
-[![GitHub ★ 9,728](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C728&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 103,703](https://img.shields.io/static/v1?label=npm+30d&message=103%2C703&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-git-graph)
-
-> **用途**：为在DSH Git仓库开编码会话的人集中选择分支和创建另一检出；验收看Git、登记和session cwd。见[Q01](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q01)。
-
-> **亮点**：空会话上下文、托管路径和真实Git/新会话接线有源码；默认关闭自动化及有限删除保护可复用。见[Q01](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q01)、[Q02](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q02)。
-
-> **思考**：已有部分补偿却未核清理Result；自动隔离失败回原workspace，工具/删除链仍有分段状态，开关和清理日志不是隔离/恢复证明。见[Q03](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q03)。
-
-> **建议**：候选是按操作阶段读回Git/登记/session cwd并报告ready或未知；先比简单提示/人工清单，补丁够用就否定独立插件。见[Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/zhu1090093659--dsh-web--packages-dsh-git-graph/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1179983747-root"></a>
 
 ## [HarmonyOS NEXT Skills](../../plugins/linhay--harmony-next.skills/INSIGHT.md)
@@ -3161,15 +3178,15 @@
 
 ## [Hindsight 编码 Agent 记忆集成](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md)
 
-[![GitHub ★ 54,364](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=54%2C364&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) [![npm 30d 61,353](https://img.shields.io/static/v1?label=npm+30d&message=61%2C353&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)
+[![GitHub ★ 57,033](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=57%2C033&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) [![npm 30d 62,152](https://img.shields.io/static/v1?label=npm+30d&message=62%2C152&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)
 
-> **用途**：面向长期维护同一项目的开发者，在 DSH 中召回历史决策并自动写回完成的交流。
+> **用途**：[Q01](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q01) 长期维护同一项目的编码用户希望跨会话召回正确的历史决策。
 
-> **亮点**：按会话工作区绑定 RuntimeCore、fork 切片和历史注入去重组成具体适配增量，避免把进程工作目录或继承对话当作当前项目新输入。[Q01](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q01) [Q02](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q02)
+> **亮点**：[Q02](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q02) 自动把相关历史带入新一轮并写回对话，减少手工搬运；异步触发不代表记忆已保存。
 
-> **思考**：停止边界不代表异步 retain 已确认；提前推进长度和只记诊断可能让静态会话尾部缺失。启动目录禁用和重构 decision 也限制多工作区及扩展组合。[Q03](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q03) cwd 回退、失败开放与后台写回要求核对实际 bank 和服务状态，不能推断写回必然成功。
 
-> **建议**：未验证假设是以服务确认推进写回水位，并将待确认和失败状态暴露给用户，以减少静态会话尾部漏写。先核实文档幂等契约，再对照当前游标与确认游标，注入断网、超时后重启和 fork；记录漏写、重复提炼、恢复时长和敏感数据残留。重复与存储负担抵消漏写改善时否定方案。[Q05](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q05)
+> **建议**：[Q04](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q04) 展示 bank 与来源时间并允许停用单条可能降低旧决策误用，需对照验证。
 
 [查看完整分析](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3177,15 +3194,15 @@
 
 ## [iPolloWork](../../plugins/devin-axis--ipollowork/INSIGHT.md)
 
-[![GitHub ★ 7,286](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C286&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/iPolloWork)
+[![GitHub ★ 7,326](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C326&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/iPolloWork)
 
-> **用途**：iPolloWork根项目是独立桌面工作台，默认OpenCode、可接Codex和DSH；Design/PPT/Video另有可在DSH Web装入的子产品，不能用子插件安装命令代表根应用。目标是多人或多Agent项目将任务、会话与可编辑产物集中管理，原办法为多个运行时界面加文件编辑器。合格结果应是任务与实际产物保持对应、可继续编辑和核对，而非只在一个窗内出现多个引擎名称。本轮聚焦DSH适配切面，尚不足支持全套团队创作闭环收益。
+> **用途**：面向需要在项目中组织多个 Agent 会话和可编辑产物、并能独立验收结果的用户。
 
-> **亮点**：[Q02](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q02)DSH接入采用认证mux和显式pending交互回复，较终端嵌入有协议层增量；根工作台的可编辑产物闭环尚未由这段适配证明。
+> **亮点**：[Q01](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q01) 与 [Q02](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q02) 表明独立工作台提供项目与 DSH 会话适配；上游引擎、模型和 DSH 子插件不归因于根应用。
 
-> **思考**：[Q03](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q03)流关闭不证明后台turn停止，统一界面也不能代替跨引擎权限和产物恢复验收；当前研究范围不足支撑迁移生产任务。
+> **思考**：[Q03](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q03) 订阅关闭、执行终态和产物验收是不同事实；已有媒体检查也不覆盖视觉和全部引擎。
 
-> **建议**：[Q05](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q05)提出以单项真实交付和可编辑修订闭环验证统一价值的未验证假设，对照原DSH Web加编辑器检查搬运和保真。
+> **建议**：[Q05](../../plugins/devin-axis--ipollowork/INSIGHT.md#research-q05) 假设跨引擎显示原生终态、产物版本和未知范围可降低误认完成；需对照已有媒体回执及人工方式，效果未验证。
 
 [查看完整分析](../../plugins/devin-axis--ipollowork/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3241,15 +3258,15 @@
 
 ## [LoopX for DSH](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md)
 
-[![GitHub ★ 6,421](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C421&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/loopx-project/loopx)
+[![GitHub ★ 6,516](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C516&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/loopx-project/loopx)
 
-> **用途**：面向已用LoopX管理长期目标、希望在DSH同一会话持续推进任务的用户。原办法是在终端手工读取quota和heartbeat再把任务贴回对话；合格结果应是唯一目标/Agent绑定、被允许的下一轮和可核对任务产物。此项只研究packages/dsh-loopx-plugin桥接，不把整仓LoopX所有能力归于插件。
+> **用途**：已有 LoopX 目标且希望在同一 DSH 会话持续推进的用户；原办法为人工查询 heartbeat 并复制任务。[Q01](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q01)
 
-> **亮点**：相对手工搬运heartbeat，增量是把LoopX权威准入与DSH活会话关联，而不再维护第二份Goal/Todo状态。绑定与quota回执核对比简单定时“继续”更能收窄误续轮范围。GoalBar的状态显示和Start/Pause减少界面切换，但安装不等于激活、模型任务质量仍非Driver保证。 依据[Q03](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q03)。
+> **亮点**：把 LoopX 权威准入接到 DSH 会话和 GoalBar，不把整仓目标引擎归于桥接包。[Q01](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q01) [Q02](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q02)
 
-> **思考**：关键质疑是暂停和自动准入是否被用户误读成停止当前工作。README明确Pause只撤销未来queued/scheduled续轮，不中断已claimed/running turn；不能拿GoalBar暂停按钮当紧急撤销。跨CLI权威读取、队列提交和模型执行并非单个事务，代码的会话fence和typed回执能减少错绑，却不能单独证明业务动作exactly-once。 依据[Q04](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q04)。
+> **思考**：Pause 撤销待处理工作，但保留已 claimed/admitted 预约；界面停止状态不能证明当前轮或外部副作用停止。[Q03](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设是给GoalBar同时显示“当前轮仍运行”和“未来续轮已暂停”的两种收据，能降低暂停含义误判。以相同长任务分别在queued、claimed、running时暂停，比较显示与实际续轮、重复动作和用户理解；若界面仍把未结束工作呈现为已停止，或只能靠重复点按钮确认，不应扩大自动推进。 依据[Q08](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q08)。
+> **建议**：未验证假设：在 Pause 后明确显示剩余当前轮与已撤销的预约，可能减少用户误判；须对照已有 UI 验证延迟和错误。[Q05](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3284,6 +3301,22 @@
 > **建议**：未验证假设是为场景 DSL 加入“人类观察检查点”，在自动 probe 通过后只抽取无法数据化的声音/动画/UI 手感步骤，可显著压缩人工验收。最小实验选 20 个模组功能，对纯人工、纯 probe、混合检查点比较缺陷发现、人工分钟、假阳性与遗漏；混合组漏掉任何高严重度体验缺陷即削弱假设。 详见[Q08](../../plugins/7starsseeker--mcmodsdevbridge/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/7starsseeker--mcmodsdevbridge/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1014729376-apps-memos-local-plugin"></a>
+
+## [MemOS Local Plugin](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md)
+
+[![GitHub ★ 12,203](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C203&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS) [![npm 30d 8,572](https://img.shields.io/static/v1?label=npm+30d&message=8%2C572&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
+
+> **用途**：面向在 DSH 中反复处理项目并希望复用历史上下文的用户。
+
+> **亮点**：[Q01](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q01) 至 [Q03](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q03) 显示将记忆召回与捕获接入 DSH 生命周期，提供有界失败回退和后台处理；并非已证明准确或节省时间。
+
+> **思考**：[Q03](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q03) 的后台采集不保证下一轮可见；[Q04](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q04) 的基础轻量配置及数据流限制不能等同完整自动演化或绝对本地保密。
+
+> **建议**：[Q06](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q06) 假设持久回合收据配合有界纠错等待，可减少过期记忆误引用；现有队列与 flush 不算新增，该方案尚未验证。
+
+[查看完整分析](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334714311-root"></a>
 
@@ -3385,15 +3418,15 @@
 
 ## [OpenBitFun Agent 工作区](../../plugins/gcwing--openbitfun/INSIGHT.md)
 
-[![GitHub ★ 3,263](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C263&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GCWing/OpenBitFun)
+[![GitHub ★ 3,423](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C423&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GCWing/OpenBitFun)
 
-> **用途**：需要跨电脑/手机观察长任务的个人开发者，在选定主机执行并验收成果。
+> **用途**：开发者希望在选定主机运行长任务，从电脑或手机查看状态与处理审批。
 
-> **亮点**：[Q02](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q02)、[Q03](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q03) 运行时拥有状态投影而非前端拥有执行，使切控制端不必重发任务即可补看当前状态；集成贡献限所查路径，不以作者基准分或模式数量推导。
+> **亮点**：[Q01](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q01) 与 [Q02](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q02) 将多设备控制与主机事件投影组合；实际节时及恢复成功率未验证。
 
-> **思考**：[Q03](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q03) 可重连的记录不等于主机故障后继续，更不等于副作用一次且仅一次；未知结果时先回读实际状态，不能重发掩盖观察缺口。
+> **思考**：[Q03](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q03) 未知写入不能自动视为失败，[Q05](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q05) 文档对 Relay 部署存在冲突。
 
-> **建议**：[Q05](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q05) 未验证假设是按控制端/网络/Relay/主机/工具结果建立恢复合同，以故障注入比较重复执行、错误完成判断和恢复时间；无改善即停止。
+> **建议**：[Q06](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q06) 假设可回读的持久操作收据能减少误判和重复写入，尚未实现或验证。
 
 [查看完整分析](../../plugins/gcwing--openbitfun/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3433,15 +3466,15 @@
 
 ## [Ouroboros 规格先行引擎](../../plugins/q00--ouroboros/INSIGHT.md)
 
-[![GitHub ★ 6,272](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C272&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
+[![GitHub ★ 6,299](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C299&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
 
-> **用途**：根项目是Python规格先行开发引擎，不是根路径可直接安装的DSH插件。面向需求含糊、需要把访谈结论变成固定验收标准再交给编码运行时的开发者。合格结果必须包含Seed、实现产物和实际可追溯验证，模型讨论或ambiguous分数下降都不等于工作代码。简单基线是人工写验收清单、让单Agent实现并运行测试；本项目增加事件化执行和多阶段评估，需求与最终效益仍需独立任务验证。
+> **用途**：面向任务目标较模糊、可以写出可执行验收条件并审查结果的软件开发者。
 
-> **亮点**：[Q03](../../plugins/q00--ouroboros/INSIGHT.md#research-q03)识别的贡献是不可变目标、执行迭代和证据门槛的组合，相对人工清单+单Agent提供统一事件化编排；并非规格、CI或MCP概念原创。价值成立于验收可执行且命令覆盖实际目标，简单任务可能无需该层。
+> **亮点**：[Q02](../../plugins/q00--ouroboros/INSIGHT.md#research-q02) 与 [Q03](../../plugins/q00--ouroboros/INSIGHT.md#research-q03) 展示评分门槛、规格和已执行证据的组合；不是验收、测试或模型审阅概念原创，也不保证需求正确。
 
-> **思考**：[Q04](../../plugins/q00--ouroboros/INSIGHT.md#research-q04)说明实际执行绿灯仍不证明业务覆盖；跨验收项共享Stage1依赖严格不变量，模型意见不得提升证据但也不能填补错误验收。根仓库审阅只是关键路径，不等于全运行时审计。
+> **思考**：[Q04](../../plugins/q00--ouroboros/INSIGHT.md#research-q04) 的共享项目检查需要验收项无关的不变量；实际执行和模型审阅仍无法证明检查覆盖全部业务承诺。
 
-> **建议**：[Q08](../../plugins/q00--ouroboros/INSIGHT.md#research-q08)提出未验证的逐验收项检查覆盖映射，用测试绿但业务错、产物缺失等反例测误放行率和维护负担，反证可直接否定增加这一层的价值。
+> **建议**：[Q06](../../plugins/q00--ouroboros/INSIGHT.md#research-q06) 提议以预先定义的隔离负样本检验检查对所选违例的区分力；现有逐项证据与模型对抗审阅是反证，覆盖收益和成本未验证。
 
 [查看完整分析](../../plugins/q00--ouroboros/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3513,47 +3546,31 @@
 
 ## [REA](../../plugins/morluto--rea/INSIGHT.md)
 
-[![GitHub ★ 402,720](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=402%2C720&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 954,223](https://img.shields.io/static/v1?label=npm+30d&message=954%2C223&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+[![GitHub ★ 413,586](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=413%2C586&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 1,172,617](https://img.shields.io/static/v1?label=npm+30d&message=1%2C172%2C617&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
 
-> **用途**：有逆向经验的开发者理解许可内应用构建物，本轮限工件与JS/Electron静态代表路径，见 [Q01](../../plugins/morluto--rea/INSIGHT.md#research-q01)。
+> **用途**：具备逆向经验的开发者对有权检查的应用构建物开展分析，可以通过 CLI 或 MCP 请求工具；真实任务频率和收益仍缺材料。[Q01](../../plugins/morluto--rea/INSIGHT.md#research-q01)
 
-> **亮点**：统一分析接口、带性质/限制的来源证据与保留视图，便于追溯而不把推断伪装运行事实，见 [Q02](../../plugins/morluto--rea/INSIGHT.md#research-q02)。
+> **亮点**：固定版本将来源身份、静态分析结果、覆盖和限制放入同一证据结构，并提供可保留的摘要视图；这是相对手工记录的机制增量，不证明解释正确。[Q02](../../plugins/morluto--rea/INSIGHT.md#research-q02) [Q03](../../plugins/morluto--rea/INSIGHT.md#research-q03)
 
-> **思考**：身份哈希/结构/响应预算不证明语义正确或全程资源有界；抽取有写入与清理，后端可用依配置，见 [Q02](../../plugins/morluto--rea/INSIGHT.md#research-q02) 与 [Q03](../../plugins/morluto--rea/INSIGHT.md#research-q03)。
+> **思考**：证据哈希绑定输入与结果，无法证明对功能的推断正确；未选文件、动态路径和环境状态可改变结论，使用者仍须回查来源并进行必要对照。[Q03](../../plugins/morluto--rea/INSIGHT.md#research-q03)
 
-> **建议**：在现有Evidence之上加功能主张覆盖/反证与原行为对照门槛，测错误重实现和复核总成本，未实现，见 [Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)。
+> **建议**：未验证假设：在现有 Evidence 上增加功能主张的来源、未覆盖输入和反证清单，可能减少错误重实现，但会增加复核成本；同一批已知行为样本上比较正确率与总时间，若无改善或成本抵消则否定。[Q05](../../plugins/morluto--rea/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/morluto--rea/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1216785679-root"></a>
-
-## [Reasonix](../../plugins/esengine--deepseek-reasonix/INSIGHT.md)
-
-[![GitHub ★ 35,992](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C992&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/esengine/DeepSeek-Reasonix)
-
-> **用途**：为能审代码的开发者执行仓库阅读、可逆修改和验证，根组件是独立编码工具而非DSH插件。见[Q01](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q01)。
-
-> **亮点**：真实编码工具闭环、干净采样提交、权限/结果证据与条件性恢复接线；多前端和ACP方便整合，未证明新模型算法或净节时。见[Q01](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q01)、[Q02](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q02)。
-
-> **思考**：普通权限卡不覆盖ACP显式shell输入，远端文本不能因标User就当人类授权；非正轮数不设cap、费用检查有条件，rewind不撤shell/外部动作。所核Host源码与bundle pin亦不同，非默认部署漏洞实证。见[Q02](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q02)至[Q04](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q04)。
-
-> **建议**：未验证方向是自动委派与人类命令分开授权的ACP入口适配；对照现reject/前置分流/禁bash/OS隔离，测误授权、误拦及人工，简单上游修正足够即否定独立插件。见[Q06](../../plugins/esengine--deepseek-reasonix/INSIGHT.md#research-q06)。
-
-[查看完整分析](../../plugins/esengine--deepseek-reasonix/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-995029641-root"></a>
 
 ## [Ruflo](../../plugins/ruvnet--ruflo/INSIGHT.md)
 
-[![GitHub ★ 79,980](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=79%2C980&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 56,659](https://img.shields.io/static/v1?label=npm+30d&message=56%2C659&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
+[![GitHub ★ 80,349](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=80%2C349&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 52,361](https://img.shields.io/static/v1?label=npm+30d&message=52%2C361&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
 
-> **用途**：为已有协调需求的开发者统一角色/模型、任务和调用结果记录；根为CLI/MCP工具，非DSH插件，登记不是自主工作。见[Q01](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q01)。
+> **用途**：已有协调需求的开发者可以登记角色并组织模型调用；产物审查和业务验收仍由使用者负责。
 
-> **亮点**：统一协调操作和单次模型调用/观测，具局部重读、孤儿/锁及中央policy接线；不以角色数/演示/弱标签算自主交付或学习收益。见[Q01](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q01)至[Q04](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q04)。
+> **亮点**：[Q02](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q02) 显示统一登记、模型调用与结果归档，以及中央策略接线；相对原生任务的净收益未知，登记不是已启动工作者。
 
-> **思考**：本路径agent_execute是单次文本API而非工具结果回灌循环；task completed/API success不能验代码。多JSON/状态stop非事务/物理退出，schema剪裁只管广告；policy legacy/observe与enforce分开。见[Q02](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q02)至[Q04](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q04)。
+> **思考**：[Q03](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q03) 显示 task 完成和终止是状态操作；[Q04](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q04) 的 schema 过滤也不是授权。不能把 API 成功、隐藏 schema 或状态终止当成产物验收和物理退出。
 
-> **建议**：先复用/检查现有quality hook，以独立产物验收分开API弱反馈，并把登记/请求/工作退出分层；简单原生Task/人工清单或小修够用就否定新编排产品。见[Q06](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q06)。
+> **建议**：[Q06](../../plugins/ruvnet--ruflo/INSIGHT.md#research-q06) 提出分别保存登记、响应、工作者停止和独立验收收据的未验证假设；若人工清单或原工具小修足够则不增加新系统。
 
 [查看完整分析](../../plugins/ruvnet--ruflo/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3593,15 +3610,15 @@
 
 ## [VibeSkills](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md)
 
-[![GitHub ★ 3,768](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C768&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
+[![GitHub ★ 3,786](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C786&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/foryourhealth111-pixel/Vibe-Skills)
 
-> **用途**：VibeSkills针对已有很多本地Skill、需要多种专业交付物的用户，目标把需求冻结、模块分解、Skill选择和验收连成流程。合格结果是实际交付物满足任务标准，不是生成计划与proof文件。原办法由用户手选Skill并维护计划；作者给出195个Skill池的SkillsBench对照，但这是作者报告，不能代表当前提交在DSH上的效果。简单问答或单命令任务不应承担完整治理流程，SKILL入口也明确允许不进入vibe。
+> **用途**：面向拥有多个本地 Skill 并需组织多步骤、多交付物的 Agent 用户。
 
-> **亮点**：[Q02](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q02)相对只写计划，把原任务、模块选择、阶段重入和验收记录接入可核查runtime；贡献在组织与治理，bundled第三方Skills本身不计原创。
+> **亮点**：[Q02](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q02) 将任务原文、阶段和受限重入接入核心，[Q03](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q03) 将 Skill 候选与执行证明分开；组织机制不代表捆绑 Skill 内容原创。
 
-> **思考**：[Q03](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q03)、[Q04](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q04)proof链不能替代专业交付验收，作者OpenHands评测也不能直接证明当前DSH收益；部署和多次确认负担必须计入。
+> **思考**：[Q03](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q03) 的选择与启动证明不能替代真实模块交付验收；[Q05](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q05) 作者测评不能直接外推至当前版本和 DSH。
 
-> **建议**：[Q05](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q05)提出按风险缩减proof与阶段开销的未验证假设，用完整流程和手选Skill作对照检验合格率及人工时间。
+> **建议**：[Q06](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md#research-q06) 在用户授权、保留验收条件下合并低风险非必要确认，需对照现有轻任务例外验证遗漏决策和成本。
 
 [查看完整分析](../../plugins/foryourhealth111-pixel--vibe-skills/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3657,15 +3674,15 @@
 
 ## [无限五代 IG5](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md)
 
-[![GitHub ★ 3,459](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C459&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Minglink/dsh-infinite-gen-5)
+[![GitHub ★ 3,759](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C759&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Minglink/dsh-infinite-gen-5)
 
-> **用途**：面向处理自有或获授权二进制的逆向分析人员，将静态函数检视、调试、网络采集和证据报告连到DSH。合格交付物应绑定样本哈希、数据库修订和实际观察，区分反编译/仿真推断与执行证据。原办法是独立Ghidra、调试器和人工报告；需要跨引擎来回复核的任务才可能受益，偶发查看字符串不必承担整个工作台。作者说明Core8/Full40是暴露配置，不把工具数量当业务收益。
+> **用途**：面向分析自有或获授权二进制、需要跨工具整理证据的逆向工程人员。
 
-> **亮点**：[Q02](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q02)把样本稳定身份、多引擎worker、宿主审批与报告归属连成流程，减少地址/样本错配；底层反编译和调试能力归属原引擎。
+> **亮点**：[Q02](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q02) 将会话、目标证据和审批接入宿主工作流；原生反编译、仿真和调试仍依赖各引擎。
 
-> **思考**：[Q03](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q03)审批不等于sandbox或完全Undo，事后审计写失败还可能无日志；静态推断不能替代真实执行证据。
+> **思考**：[Q03](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q03) 事后审计写入可能失败而操作仍保留，审批和有限 Undo 不保证隔离或完全撤销；[Q04](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q04) 非审批静态入口也可能写文件。
 
-> **建议**：[Q05](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q05)提出关键修改意图与结果双记录的未验证假设，用磁盘故障和worker退出对照结果可判定性。
+> **建议**：[Q06](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q06) 提出操作前预留持久请求记录，故障时保留未知状态并人工对照；不可假定跨外部动作原子性，收益需故障注入验证。
 
 [查看完整分析](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3689,4 +3706,4 @@
 
 ## 更新时间
 
-2026-10-29
+2026-11-01
