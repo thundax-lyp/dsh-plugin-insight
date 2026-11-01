@@ -1,44 +1,39 @@
 {
     "repository": "zhu1090093659/dsh-web",
     "repository_id": 1331636953,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 9728,
-    "pushed_at": "2026-10-29T00:14:27Z",
+    "captured_at": "2026-11-01T06:31:34.186Z",
+    "window_start": "2026-10-02T06:31:34.186Z",
+    "stars": 9896,
+    "pushed_at": "2026-11-01T03:18:41Z",
     "issues": {
-        "open": 3,
-        "closed": 1238,
-        "created_30d": 183,
-        "closed_30d": 182,
-        "updated_30d": 188
+        "open": null,
+        "closed": 1258,
+        "created_30d": 170,
+        "closed_30d": 173,
+        "updated_30d": 178
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6AB0:2A673:2AB40:2F8C4:6AE6DDF2 and timestamp 2026-11-01 06:36:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@linxin666/dsh-client-ui-git-graph",
-        "captured_at": "2026-10-27T15:24:06.392Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 103703,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40linxin666%2Fdsh-client-ui-git-graph",
+        "captured_at": "2026-10-31T05:50:28.596Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 104603,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/%40linxin666%2Fdsh-client-ui-git-graph",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T15:05:43.719Z",
-            "captured_at": "2026-10-27T15:24:06.392Z",
+            "captured_at": "2026-10-31T05:50:28.596Z",
             "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-client-ui-git-graph",
             "error": null,
-            "latest_version": "0.4.11",
-            "latest_published_at": "2026-10-27T00:45:40.346Z",
+            "latest_version": "0.4.12",
+            "latest_published_at": "2026-10-29T00:24:58.895Z",
             "latest_error": null
         }
     }

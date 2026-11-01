@@ -2,39 +2,36 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[edea1ec](https://github.com/GCWing/OpenBitFun/tree/edea1ec7f268a2d13f343b699abb86e415670ff0)
+源码版本：[2644c2e](https://github.com/GCWing/OpenBitFun/tree/2644c2ed3c5d0701341d22a14018c12f62c1115e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,263](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C263&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GCWing/OpenBitFun)
+[![GitHub ★ 3,423](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C423&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GCWing/OpenBitFun)
 <!-- END META -->
 
-> **功能**：提供多模式Agent工作区、跨设备远程控制和可定制Mini App能力。
+> **功能**：独立 Agent 工作区，支持跨设备控制和可选 DSH 客户端。
 
-> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 运行时拥有状态投影而非前端拥有执行，使切控制端不必重发任务即可补看当前状态；集成贡献限所查路径，不以作者基准分或模式数量推导。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将多设备控制与主机事件投影组合；实际节时及恢复成功率未验证。
 
-> **主要限制**：[Q03](#research-q03) 可重连的记录不等于主机故障后继续，更不等于副作用一次且仅一次；未知结果时先回读实际状态，不能重发掩盖观察缺口。
+> **主要限制**：[Q03](#research-q03) 未知写入不能自动视为失败，[Q05](#research-q05) 文档对 Relay 部署存在冲突。
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 启动与依赖](#detail-section-4)
-  - [1.4 启动步骤](#detail-section-5)
-  - [1.5 成本](#detail-section-6)
-  - [1.6 效果](#detail-section-7)
-  - [1.7 工程亮点](#detail-section-8)
-  - [1.8 主要限制](#detail-section-9)
-  - [1.9 使用建议](#detail-section-10)
-  - [1.10 核查说明与分析版本](#detail-section-11)
-- [2 未来设计假设（未验证）](#detail-section-12)
-- [3 辅助信息](#detail-section-13)
-- [4 研究问题与完整回答](#detail-section-14)
-  - [Q01 · 根产品是什么，跨设备持续任务服务谁？](#detail-section-15)
-  - [Q02 · 观察订阅、运行事件与恢复怎样分离？](#detail-section-16)
-  - [Q03 · 持续运行和状态恢复增加什么，关键反例是什么？](#detail-section-17)
-  - [Q04 · Relay、模型和迁移的总负担支持什么采用？](#detail-section-18)
-  - [Q05 · 故障矩阵能否把持续运行承诺变成可验收合同？](#detail-section-19)
+  - [1.3 工程亮点](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 跨设备的长任务工作区满足什么需求，替代是什么？](#detail-section-11)
+  - [Q02 · 控制端切换后如何跟进主机流，旧游标或断线如何处理？](#detail-section-12)
+  - [Q03 · 未知结果的远端文件操作是否可以直接重试？](#detail-section-13)
+  - [Q04 · DSH 如何作为可选客户端接入，版本声明的边界是什么？](#detail-section-14)
+  - [Q05 · Relay、身份及迁移有哪些采用边界？](#detail-section-15)
+  - [Q06 · 如何在断线后减少未知写入被重复执行或误判完成？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -44,178 +41,164 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要跨电脑/手机观察长任务的个人开发者，在选定主机执行并验收成果。
+> **用途**：开发者希望在选定主机运行长任务，从电脑或手机查看状态与处理审批。
 
-远程桌面、SSH和本地主机Agent为简单参照；不采用作者DeepSWE成绩作为本轮独立任务收益。
+SSH、终端复用器和日志也可远程观察长任务，需同任务比较。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
+| 能力 | 用途 | 条件与边界 |
 |---|---|---|
-| 远程控制端 | 跨设备观察与批准 | 执行仍在在线主机 |
-| 事件投影 | cursor/快照补看运行状态 | 可选store不等于全故障续跑 |
-| 根工作区 | 提供独立Agent环境 | 非DSH插件，本轮不全量审计 |
+| 会话观察 | 订阅主机事件 | 在线主机、身份和设备 RPC |
+| 投影回填 | 连续时读取尾部 | gap 需快照，重启不复活任务 |
+| DSH 客户端 | 可选启动 ACP profile | 依赖安装与版本条件 |
 
 **流程与依赖**
 
-<a id="detail-section-4"></a>
+| 条件 | 是否必需 | 用途 | 失败处理 |
+|---|---|---|---|
+| 主机和工作区 | 任务执行需要 | 执行与保存任务 | 主机离线不能远程读取 |
+| Relay 与同账号身份 | 跨设备模式按文档需要 | 发现设备与 RPC | 身份不可用需核实部署模式 |
+| DSH 及构建 profile | 仅 DSH 客户端需要 | 启动可选 ACP 桥 | 切换其他客户端或停止 |
+| Node、pnpm、Rust、Tauri | 从源码构建时需要 | 构建桌面工作区 | 构建可能失败 |
 
-### 1.3 启动与依赖
-
-| 条件 | 用途 | 退路 |
+| 步骤 | 动作 | 检查与退路 |
 |---|---|---|
-| 在线执行主机与模型 | 真正运行任务 | 回主机核对状态 |
-| 设备身份/Relay或独立SSH | 远程控制与目标环境 | 按具体路径确认，别混为一类 |
-| 兼容数据版本和备份 | 迁移与退出 | 旧数据先副本迁移 |
-
-<a id="detail-section-5"></a>
-
-### 1.4 启动步骤
-
-| 步骤 | 执行者与判据 | 失败处理 |
-|---|---|---|
-| 独立区配置主机模型 | 用户确认目标环境 | 不带生产凭据 |
-| 连接控制端并运行标记任务 | 用户核对host归属 | 目标不清先停 |
-| 断观察后重连/显式停止 | 用户分别核对执行与记录 | 未知先查副作用不重发 |
+| 准备 | 使用隔离账号和非敏感工作区 | 核实主机和 Relay 连接路径 |
+| 执行 | 启动低风险可回滚任务 | 记录任务、主机和预期结果 |
+| 观察 | 断开后重新连接查看游标和状态 | gap 或未知状态需回读 |
+| 恢复 | 核实目标文件再决定后续操作 | 不能确认则暂停，不盲目重发 |
 
 **效果与成本**
 
+| 阶段 | 资源与现金 | 人工成本 | 未知 |
+|---|---|---|---|
+| 首次 | 主机、身份、构建和网络成本 | 配置设备和模型 | 费用与文档冲突待核实 |
+| 持续 | 主机在线、网络与模型费用 | 审批和结果核对 | 可靠性与节时未测 |
+| 恢复 | 持久存储与可能的回读成本 | 判断未知副作用 | 回滚和恢复时长未知 |
+
+| 效果 | 已查支持 | 未证实 |
+|---|---|---|
+| 远程观察 | 主机 RPC 分页与订阅 | 离线主机也可恢复 |
+| 重连 | 连续回填与缺口处理 | 原任务自动继续或恰好一次 |
+| DSH | 可选 profile 客户端 | 其他 DSH 版本实际兼容 |
+
+> **思考**：[Q03](#research-q03) 未知写入不能自动视为失败，[Q05](#research-q05) 文档对 Relay 部署存在冲突。
+
+<a id="detail-section-4"></a>
+
+### 1.3 工程亮点
+
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将多设备控制与主机事件投影组合；实际节时及恢复成功率未验证。
+
+[Q02](#research-q02) 区分观察关闭与任务取消，[Q03](#research-q03) 不将日志恢复等同副作用去重。
+
+<a id="detail-section-5"></a>
+
+### 1.4 主要限制
+
+[Q03](#research-q03) 未知写入不能自动视为失败，[Q05](#research-q05) 文档对 Relay 部署存在冲突。
+
 <a id="detail-section-6"></a>
 
-### 1.5 成本
+### 1.5 使用建议
 
-| 阶段 | 现金／资源 | 人工／时间 |
-|---|---|---|
-| 首次 | 主机/模型/可选Relay，未知 | 配对、权限、工作区与版本配置，未知 |
-| 持续 | 模型、主机、网络与存储，未知 | 连接/凭证维护与成果验收，未知 |
-| 失败恢复 | 重连/迁移/备份资源，未知 | 日志与副作用对账、主机接管，未知 |
+[Q05](#research-q05) 建议先以隔离账号和可回滚任务验证；Relay 端点、身份、数据迁移或未知副作用不能核实时停止。
 
 <a id="detail-section-7"></a>
 
-### 1.6 效果
-
-| 任务 | 源码支持 | 缺口 |
-|---|---|---|
-| 跨端补看状态 | 订阅关闭和runtime事件快照 | 两端实际重连兼容 |
-| 持续/恢复任务 | 条件持久日志与记录重建 | 主机恢复、全工具幂等和业务正确性 |
-
-> **思考**：[Q03](#research-q03) 可重连的记录不等于主机故障后继续，更不等于副作用一次且仅一次；未知结果时先回读实际状态，不能重发掩盖观察缺口。
-
-<a id="detail-section-8"></a>
-
-### 1.7 工程亮点
-
-> **亮点**：[Q02](#research-q02)、[Q03](#research-q03) 运行时拥有状态投影而非前端拥有执行，使切控制端不必重发任务即可补看当前状态；集成贡献限所查路径，不以作者基准分或模式数量推导。
-
-可借鉴观察订阅与执行所有权分离、stream身份不跨进程误比较及SFTP晚到句柄清理；移植必须核对store装配和外部副作用，不把事件回放当执行重放。
-
-<a id="detail-section-9"></a>
-
-### 1.8 主要限制
-
-[Q03](#research-q03) 可重连的记录不等于主机故障后继续，更不等于副作用一次且仅一次；未知结果时先回读实际状态，不能重发掩盖观察缺口。
-
-<a id="detail-section-10"></a>
-
-### 1.9 使用建议
-
-[Q04](#research-q04) 当前观察；两设备独立测试区先确认观察关闭不取消、显式停止有效、主机重启与未知结果可识别；不直接迁移唯一旧数据。
-
-<a id="detail-section-11"></a>
-
-### 1.10 核查说明与分析版本
+### 1.6 核查说明与分析版本
 
 **核查状态**：已检查源码。
 
-已核查订阅关闭、事件记录/恢复和一条SFTP未知结果路径；未运行或全工具审计，故障合同是假设。
+固定版本的代表性源码与文档已查；未运行跨设备、DSH、Relay 或恢复流程。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/apps/relay-server/README.md、src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs、src/crates/execution/agent-runtime/src/session_event_journal.rs、src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs、src/crates/execution/agent-runtime/src/session_event_journal.rs、src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs、src/crates/interfaces/acp/src/client/builtin_clients.rs、src/crates/interfaces/acp/src/client/dsh_profile.rs、packages/dsh-acp/scripts/build-profile.mjs、packages/dsh-acp/package.json、src/apps/relay-server/README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根独立Rust/Tauri应用；聚焦跨设备订阅/事件投影与代表SFTP路径，未审计四模式、MiniApp、全工具、加密或作者DeepSWE基准，未运行。
-- 下一步：两设备执行有标记文件与长任务，分别注入控制端/Relay/host中断与结果丢失，记录重复副作用和恢复分钟；尚未执行。
+- 边界：只读固定提交根 README、版本清单、控制端事件订阅、会话日志、SFTP 清理、可选 DSH 客户端及 Relay 文档；未执行目标代码，未穷尽四模式、工具、权限、加密实现或迁移。清单采用扩展名范围，排除项需单独复核，不能代表全仓代码。
+- 下一步：在隔离双设备和 SSH 对照下测试连接、主机重启、游标 gap、结果丢失与 SFTP 回读，并依 [Q06](#research-q06) 测量重复写入和误判。
 
 **分析版本**
 
 - **仓库**：[GCWing/OpenBitFun](https://github.com/GCWing/OpenBitFun)
-- **版本号**：1.0.7（[固定提交 edea1ec](https://github.com/GCWing/OpenBitFun/tree/edea1ec7f268a2d13f343b699abb86e415670ff0)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.0.8（[固定提交 2644c2e](https://github.com/GCWing/OpenBitFun/tree/2644c2ed3c5d0701341d22a14018c12f62c1115e)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-12"></a>
+<a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 未验证假设是按控制端/网络/Relay/主机/工具结果建立恢复合同，以故障注入比较重复执行、错误完成判断和恢复时间；无改善即停止。
+[Q06](#research-q06) 假设可回读的持久操作收据能减少误判和重复写入，尚未实现或验证。
 
-两设备执行有标记文件与长任务，分别注入控制端/Relay/host中断与结果丢失，记录重复副作用和恢复分钟；尚未执行。
+在隔离双设备和 SSH 对照下测试连接、主机重启、游标 gap、结果丢失与 SFTP 回读，并依 [Q06](#research-q06) 测量重复写入和误判。
 
-<a id="detail-section-13"></a>
+<a id="detail-section-9"></a>
 
 ## 3 辅助信息
 
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 413 | 66936 | — | — | 795303 |
-| .tsx | source | 828 | 229039 | 207943 | 6083 | — |
-| .ts | source | 2027 | 248141 | 208731 | 16098 | — |
-| .mjs | source | 137 | 57490 | 53669 | 1210 | — |
-| .mjs | test | 180 | 43079 | 38753 | 1275 | — |
-| .js | source | 98 | 36095 | 32724 | 1495 | — |
+| .md | source | 419 | 69079 | — | — | 824266 |
+| .tsx | source | 867 | 232799 | 211528 | 6180 | — |
+| .ts | source | 2087 | 253407 | 213242 | 16527 | — |
+| .mjs | source | 138 | 57446 | 53616 | 1219 | — |
+| .mjs | test | 183 | 43575 | 39229 | 1281 | — |
+| .js | source | 98 | 36170 | 32781 | 1508 | — |
 | .cjs | source | 16 | 2956 | 2449 | 151 | — |
-| .cjs | test | 46 | 7645 | 6600 | 563 | — |
-| .tsx | test | 402 | 103171 | 92511 | 1580 | — |
-| .ts | test | 828 | 144235 | 127603 | 2521 | — |
-| .js | example | 30 | 9567 | 8570 | 380 | — |
+| .cjs | test | 47 | 7712 | 6660 | 563 | — |
+| .tsx | test | 435 | 111548 | 100400 | 1666 | — |
+| .ts | test | 861 | 148349 | 131269 | 2631 | — |
+| .js | example | 30 | 9646 | 8633 | 390 | — |
 | .mjs | example | 3 | 141 | 126 | 0 | — |
 | .ts | example | 5 | 214 | 200 | 3 | — |
-| .md | example | 11 | 751 | — | — | 5288 |
+| .md | example | 11 | 760 | — | — | 5417 |
 | .tsx | example | 4 | 281 | 272 | 6 | — |
-| .md | test | 7 | 1809 | — | — | 8762 |
+| .md | test | 7 | 1843 | — | — | 9015 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 96](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=96&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=60&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+created%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z) [![近30天关闭 28](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=28&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A08%3A43.210Z..2026-10-27T02%3A08%3A43.210Z)
+[![Issue 未关闭 104](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=104&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 66](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=66&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 35](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=35&color=737b86&logo=github)](https://github.com/GCWing/OpenBitFun/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-01。
 
-<a id="detail-section-14"></a>
+<a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：聚焦独立Agent工作区的跨设备观察/执行分离、恢复记录及未知结果边界。
+**插件研究总目标**：核查跨设备会话观察、写入不确定性、DSH 可选接入及采用边界。
 
 <a id="research-q01"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-11"></a>
 
-### Q01 · 根产品是什么，跨设备持续任务服务谁？
+### Q01 · 跨设备的长任务工作区满足什么需求，替代是什么？
 
-**研究主题**：场景与需求、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-这是Rust运行时、Tauri桌面与多控制端组成的独立Agent workspace，根private包1.0.7用于工程构建，不是DSH可装插件。这里聚焦需要在电脑/手机切换并查看长任务进度的个人开发者，合格结果是目标主机上的可验证成果与可重连的当前状态；不按模式、工具或MiniApp数量算任务成功。原办法是远程桌面/SSH加本地Agent进程或一直守在电脑旁。作者承诺手机只是控制器、切视图或控制端断开不停止主机任务，这应与主机断电、进程重启、网络工具失联分开。目标主机、模型、工作区权限及必要Relay/SSH连接都要先确定，不把“远程控制”当任务自动可靠办结。
+README:54-58 描述开发者在电脑、手机或浏览器查看选定主机的会话并处理审批，任务在主机执行；这是作者的产品陈述。与 SSH 加终端复用器、手工重新查看日志的基线相比，它尝试把远程会话、文件和任务状态放进同一界面，价值取决于跨设备恢复是否节省人工且不误判；没有同任务对照。它是独立的 Agent 工作区，不是必须加载到 DSH 的插件；DSH 是可选客户端之一。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:54-69](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/README.md#L54-L69)
+**依据 1 · 作者声明**：[README.md:54-58](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/README.md#L54-L58)
 
-作者明确控制端/执行主机与远程路径。
-
-<details>
-<summary>查看原文（16行）</summary>
+作者描述多设备观察与任务执行。
 
 ```text
 ## Switch computers. Control from your phone.
@@ -223,129 +206,158 @@
 **Switch the device, switch the entire workspace.** Choose another connected computer in the desktop app, and the interface switches to that device's sessions, workspaces, files, and task status. Move between your home computer, office computer, and server from the same app.
 
 **Your phone is a remote controller.** Send instructions, check progress, and respond to approval requests from your phone or browser. Tasks run on the selected host and keep going when you switch views or disconnect the controller.
-
-**On mobile, switch between layouts for one, two, or three screens.** Focus on the conversation with a single screen, then unfold your phone to view conversations and files side by side. The interface adapts as the screen layout changes.
-
-![Switching between connected computers and remotely controlling the selected device from a phone](./png/openbitfun-multi-device.png)
-
-<details>
-<summary>Connection and deployment details</summary>
-
-Use SSH to work on a remote host, through a jump host, or inside a container, with files, commands, and agent execution in the target environment. The desktop app and CLI share core execution capabilities; mobile clients and messaging bots offer more ways to control tasks.
-
-Account login, synchronization, and control between devices on the same account run through a [Relay server you deploy](./src/apps/relay-server/README.md). See [Remote Connect](./docs/interactive-capabilities/capabilities/feature.remote-connect.md) and [remote workspaces](./docs/features/remote-workspaces.md) for connection options.
 ```
 
-</details>
+**依据 2 · 源码核查**：[package.json:1-7](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/package.json#L1-L7)
 
-**依据 2 · 源码核查**：[package.json:1-8](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/package.json#L1-L8)
-
-独立根工程身份与Node构建版本。
+独立项目包名与版本。
 
 ```text
 {
   "name": "OpenBitFun",
   "private": true,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
-  },
 ```
 
-**依据 3 · 作者声明**：[README.md:129-135](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/README.md#L129-L135)
+#### 缺口
 
-源构建与旧数据迁移条件。
-
-```text
-Get the Windows, macOS, or Linux package from the [official download page](https://openbitfun.com/download). Install it, configure a model, and open a workspace to get started. See the [user guide](https://playbook.openbitfun.com) for usage instructions and [download verification](./docs/verify-downloads.md) for package signature checks.
-
-**Migration note:** OpenBitFun 1.0.0 is not data-compatible with legacy 0.2.x releases. To migrate legacy data,
-use the [OpenBitFun Data Tools](src/apps/data-tools/README.md), currently available
-for stable releases 0.2.17–0.2.19.
-
-To run from source, install [Node.js](https://nodejs.org/) 22.12+, [pnpm](https://pnpm.io/) 10.15.0, the [Rust toolchain](https://rustup.rs/), and the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/). Clone the repository, then run:
-```
+- 未验证跨设备任务、SSH 基线和收益
+  **影响**：无法量化节时、完成率或误判断
+  **进一步探讨**：固定任务比较 SSH 终端复用和工作区。
 
 <a id="research-q02"></a>
 
-<a id="detail-section-16"></a>
+<a id="detail-section-12"></a>
 
-### Q02 · 观察订阅、运行事件与恢复怎样分离？
+### Q02 · 控制端切换后如何跟进主机流，旧游标或断线如何处理？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-controller端HostStreamSubscriber只经设备RPC read_stream/unsubscribe_stream读取在线host，close中止自己的worker并退订，没有在这条close路径调用运行取消；因此关闭观察与停止执行被分为两种责任。Runtime SessionEventJournal给事件附stream_id/cursor，保留有限tail并提供快照，客户端错过广播可按主机状态重建。record在配置store时对未终止turn追加，terminal时discard；snapshot内存无该会话时尝试load再用相同apply_event物化，未配置或无日志返回空快照。它支持重连可见性与条件性持久恢复，不能仅凭这个接口保证具体产品装配了耐故障store或进程重启自动续跑。代码注释明确持久Session把执行turn存为idle以免重启复活工作。
+host_stream_subscriber.rs:1-3、145-188 由在线主机经设备 RPC 读取分页、使用 cursor 增量同步；195-229 发现 epoch 改变发出 gap，并从最新页面重新读。368-372 关闭订阅中止观察 worker 并发 unsubscribe，不能由此推定取消执行。session_event_journal.rs:109-136 对连续尾部回填，否则拒绝推断；146-159 规定无法连续或进程换代时需快照，174-201 的持久 store 可选，重启不复活运行中任务。不可把客户端接回、事件留存或 Rust 接口当作运行时持久化一定生效和任务执行一次的保证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:1-7](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L1-L7)
+**依据 1 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:1-3](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L1-L3)
 
-controller reader与在线主机责任边界。
+控制端只观察在线主机。
 
 ```text
 //! Controller-side reader of one host stream. No cache and no runtime work
 //! live here: every page is fetched from the online host over encrypted device
 //! RPC, and closing the subscriber only stops observing that host.
-use super::{
-    account::{AccountClient, AccountSession, StreamHint},
-    host_stream::{StreamPage, StreamReadRequest},
-};
 ```
 
-**依据 2 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:50-82](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L50-L82)
+**依据 2 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:145-188](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L145-L188)
 
-read/unsubscribe设备RPC。
+分页 cursor 与增量读取。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
-#[async_trait::async_trait]
-impl StreamTransport for DeviceRpcTransport {
-    async fn read_stream(&self, request: StreamReadRequest) -> Result<StreamPage> {
-        let command = serde_json::json!({
-            "cmd": "read_stream",
-            "stream_id": request.stream_id,
-            "after": request.after,
-            "before": request.before,
-            "epoch": request.epoch,
-            "limit": request.limit,
-            "subscribe": request.subscribe,
-        });
-        let response = AccountClient::new()
-            .device_rpc(
-                &self.relay,
-                &self.account,
-                &self.target,
-                &command.to_string(),
-            )
+    /// Latest page first, like opening a chat at its bottom.
+    async fn resync(&mut self) -> Result<()> {
+        let page = self
+            .read(StreamReadRequest {
+                stream_id: self.session_id.clone(),
+                subscribe: true,
+                ..Default::default()
+            })
             .await?;
-        parse_stream_page(&response)
+        self.epoch = page.epoch;
+        self.cursor = page.cursor;
+        self.oldest = page
+            .events
+            .first()
+            .map(|event| event.seq)
+            .unwrap_or(page.cursor + 1);
+        self.has_more = page.has_more;
+        self.emit_page(&page)?;
+        self.emit_ready()
     }
 
-    async fn unsubscribe_stream(&self, stream_id: &str) -> Result<()> {
-        let command = serde_json::json!({"cmd":"unsubscribe_stream","stream_id":stream_id});
-        AccountClient::new()
-            .device_rpc(
-                &self.relay,
-                &self.account,
-                &self.target,
-                &command.to_string(),
-            )
-            .await?;
+    /// Returns false when the host restarted the stream and a resync is needed.
+    async fn catch_up(&mut self) -> Result<bool> {
+        loop {
+            let page = self
+                .read(StreamReadRequest {
+                    stream_id: self.session_id.clone(),
+                    after: Some(self.cursor),
+                    epoch: Some(self.epoch),
+                    subscribe: true,
+                    ..Default::default()
+                })
+                .await?;
+            if page.epoch != self.epoch {
+                return Ok(false);
+            }
+            self.emit_page(&page)?;
+            if let Some(last) = page.events.last() {
+                self.cursor = self.cursor.max(last.seq);
+            }
+            if !page.has_more {
+                // The host's newest sequence may belong to an evicted control
+                // event; adopt it so the next hint compares against it.
+                self.cursor = self.cursor.max(page.cursor);
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:368-379](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L368-L379)
+**依据 3 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:195-229](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L195-L229)
 
-close只abort订阅worker和退订。
+更换 epoch 与 gap。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（35行）</summary>
+
+```text
+    /// restarted the stream is announced as a gap and replayed from its latest page.
+    async fn refresh(&mut self) -> Result<()> {
+        if self.catch_up().await? {
+            return Ok(());
+        }
+        self.gap("host stream restarted")?;
+        self.resync().await
+    }
+
+    async fn load_older(&mut self) -> Result<bool> {
+        if !self.has_more {
+            return Ok(true);
+        }
+        let page = self
+            .read(StreamReadRequest {
+                stream_id: self.session_id.clone(),
+                before: Some(self.oldest),
+                epoch: Some(self.epoch),
+                subscribe: true,
+                ..Default::default()
+            })
+            .await?;
+        if page.epoch != self.epoch {
+            return Ok(false);
+        }
+        self.emit_page(&page)?;
+        if let Some(first) = page.events.first() {
+            self.oldest = first.seq;
+        }
+        self.has_more = page.has_more;
+        self.emit_ready()?;
+        Ok(true)
+    }
+
+    fn gap(&self, reason: &str) -> Result<()> {
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:368-372](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L368-L372)
+
+关闭本地观察与退订。
 
 ```text
     pub fn close(&mut self) {
@@ -353,20 +365,77 @@ close只abort订阅worker和退订。
         if let Some(unsubscribe) = self.unsubscribe.take() {
             unsubscribe();
         }
-    }
-}
+```
 
-impl Drop for HostStreamSubscriber {
-    fn drop(&mut self) {
-        self.close();
+**依据 5 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:109-136](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L109-L136)
+
+连续尾部才可增量回填。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+        while self.tail.len() > MAX_REPLAYABLE_TAIL_EVENTS {
+            self.tail.pop_front();
+        }
     }
+
+    /// Events after `cursor`, or `None` when the retained tail cannot prove it
+    /// is contiguous with what the client already applied.
+    fn tail_since(&self, cursor: u64) -> Option<Vec<AgenticEvent>> {
+        if cursor > self.cursor {
+            // A cursor ahead of this stream's own progress is not a gap this
+            // journal can reason about.
+            return None;
+        }
+        if cursor == self.cursor {
+            return Some(Vec::new());
+        }
+        // The client's next expected event must still be retained; if the
+        // oldest entry is newer than that, the events between were dropped.
+        match self.tail.front() {
+            Some(oldest) if oldest.cursor <= cursor.saturating_add(1) => Some(
+                self.tail
+                    .iter()
+                    .filter(|entry| entry.cursor > cursor)
+                    .map(|entry| entry.event.clone())
+                    .collect(),
+            ),
+            _ => None,
+        }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:174-201](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L174-L201)
+**依据 6 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:146-159](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L146-L159)
 
-在途日志契约与重启不自动复活工作。
+不能连续则要求快照。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+/// Everything a client missed after a cursor it already applied.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", tag = "kind")]
+pub enum SessionEventBackfill {
+    /// Contiguous with the client's cursor: apply these in order and it is
+    /// caught up, with no snapshot and no projection rebuild.
+    Delta {
+        stream_id: String,
+        cursor: u64,
+        events: Vec<AgenticEvent>,
+    },
+    /// The client's cursor predates the retained tail, or belongs to an older
+    /// Runtime process. Only a full snapshot can restore it.
+    SnapshotRequired,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:174-201](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L174-L201)
+
+运行中事件日志与可选 store。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -404,164 +473,32 @@ pub struct SessionEventJournal {
 
 </details>
 
-**依据 5 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:281-299](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L281-L299)
-
-可选store追加/终止清理。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-        if materialized {
-            if let Some(store) = self.store.as_ref() {
-                let session_id = event.session_id().unwrap_or_default().to_string();
-                let terminal = state
-                    .sessions
-                    .get(&session_id)
-                    .is_some_and(|projection| projection.terminal);
-                // Release the lock before touching the store: an append must
-                // never stall the delivery stream it is recording.
-                drop(state);
-                if terminal {
-                    store.discard(&session_id);
-                } else {
-                    store.append(&session_id, &stream_id, cursor, event);
-                }
-                return Some(SessionEventCursor { stream_id, cursor });
-            }
-        }
-        materialized.then_some(SessionEventCursor { stream_id, cursor })
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:333-360](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L333-L360)
-
-缺内存时load、空结果与相同物化。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-    pub fn snapshot(&self, session_id: &str) -> SessionEventProjectionSnapshot {
-        let state = lock_state(&self.state);
-        if state.sessions.contains_key(session_id) {
-            return projection_snapshot(&state, session_id);
-        }
-        let live_stream_id = state.stream_id.clone();
-        drop(state);
-
-        // Nothing in memory: either this Session never ran here, or this Host
-        // restarted while its Turn was executing. Replay the log through the
-        // same materialization used live, so a restored projection cannot
-        // disagree with one built from events as they arrived. The stored
-        // stream_id is preserved, so a client reads it as a different Runtime
-        // process and replays it instead of comparing cursors across processes.
-        let Some(stored) = self.store.as_ref().and_then(|store| store.load(session_id)) else {
-            return SessionEventProjectionSnapshot {
-                session_id: session_id.to_string(),
-                stream_id: live_stream_id,
-                cursor: 0,
-                active_turn_id: None,
-                events: Vec::new(),
-            };
-        };
-
-        let mut projection = SessionProjection::default();
-        for event in &stored.events {
-            if apply_event(&mut projection, event) {
-                projection.cursor = projection.cursor.saturating_add(1);
-```
-
-</details>
-
 #### 缺口
 
-- 未追完产品持久store具体装配及所有断开/取消入口
-  **影响**：不能把局部reader行为推广成全部终端和故障恢复保证
-  **进一步探讨**：选定桌面host/手机控制端，追踪store绑定及显式停止/意外断线/重启三条链并故障注入
+- 未演练控制端断线、主机崩溃与存储丢失
+  **影响**：无法断言全链恢复和副作用是否重复
+  **进一步探讨**：隔离主机故障注入并核对任务和实际文件。
 
 <a id="research-q03"></a>
 
-<a id="detail-section-17"></a>
+<a id="detail-section-13"></a>
 
-### Q03 · 持续运行和状态恢复增加什么，关键反例是什么？
+### Q03 · 未知结果的远端文件操作是否可以直接重试？
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-相对仅在前端缓存进度，运行时拥有事件投影、stream身份和cursor，使控制端切换时不必重新发任务来补看结果；这是持续工作的具体集成贡献，成熟事件日志与远程RPC不当原创算法。关键反例是主机已经执行文件/外部动作但结果事件未到客户端，控制端看到旧画面便重发，可能重复副作用。journal恢复的是观察记录，不证明每个工具幂等、任务可自动重开或最终结果正确。远程SFTP的open_owned专门保留已发OPEN等回复并清理晚到句柄，注释明确不重放CREATE，说明作者在该子路径识别未知结果；不能把这处保护外推为所有工具都有一次且仅一次执行保证。断开控制器与主机故障须采用不同恢复动作。
+sftp_file.rs:62-106 将 OPEN 保持到应答，调用者离开时仍处理迟到句柄；CREATE 不重放，超时或异常时退役该 SFTP channel 以回收可能的未知句柄。132-141 析构时异步 shutdown，失败则退役会话。这是代表性资源清理与不重放保护，不证明任何远端 CREATE 一定失败，也不证明整个任务的副作用恰好一次；用户应先回读目标状态再决定重试，不能以事件流重连当做写入成功。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:1-23](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L1-L23)
+**依据 1 · 源码核查**：[src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs:62-106](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs#L62-L106)
 
-runtime投影和有限tail/快照的增量。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-//! Runtime-owned, materialized event projection for reconnecting Session clients.
-//!
-//! Live broadcasts are intentionally bounded and ephemeral. A GUI, TUI, or
-//! remote controller can therefore miss events while it is detached without
-//! affecting the Dialog Turn that continues to run. This journal keeps the
-//! smallest reconstructable projection of the current Turn, independently of
-//! any client subscription or client-written persistence checkpoint.
-
-use openbitfun_events::{AgenticEvent, ToolEventData};
-use serde::{Deserialize, Serialize};
-use std::collections::{HashMap, VecDeque};
-use std::sync::{Arc, Mutex, MutexGuard};
-
-const MAX_PROJECTED_EVENTS_PER_SESSION: usize = 2048;
-const MAX_RETAINED_TERMINAL_SESSION_PROJECTIONS: usize = 64;
-
-/// How many raw materialized events stay individually replayable per Session.
-///
-/// This is the incremental catch-up window, deliberately separate from the
-/// compacted projection above it. It only has to cover an ordinary delivery
-/// gap — a network blip, a device switch, a backgrounded window — not an
-/// arbitrarily long detachment; anything older is answered with a snapshot.
-const MAX_REPLAYABLE_TAIL_EVENTS: usize = 1024;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:174-187](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L174-L187)
-
-恢复记录不等于自动复活执行。
+OPEN 所有权、禁止 CREATE 重放与超时退役。
 
 <details>
-<summary>查看原文（14行）</summary>
-
-```text
-/// Durable, append-only log of the executing Turn.
-///
-/// This log is the authority for work in flight. Everything else durable lags
-/// it: client persistence is debounced into coalescing windows, and the
-/// persisted Session view deliberately stores an executing Turn as idle so a
-/// restart never revives work. Without this log the only complete record of a
-/// running Turn dies with the Host process, and a returning client is served a
-/// Turn frozen at the last checkpoint.
-///
-/// `append` is called for each event as it enters the ordered delivery stream —
-/// one atomic event, written when it happens, not a periodic snapshot. Reload
-/// replays the log through the same materialization used live, so a restored
-/// projection and a live one are produced by one implementation rather than
-/// two that can disagree.
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs:62-90](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs#L62-L90)
-
-SFTP晚到结果所有权与不重放CREATE的具体机制。
-
-<details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（45行）</summary>
 
 ```text
     async fn open_owned(self: &Arc<Self>, path: &str, mode: u8) -> Result<ManagedSftpFile, Error> {
@@ -593,33 +530,292 @@ SFTP晚到结果所有权与不重放CREATE的具体机制。
                 Err(Error::Timeout
                     | Error::IO(_)
                     | Error::UnexpectedBehavior(_)
+                    | Error::UnexpectedPacket)
+            ) {
+                // A timed-out OPEN may have succeeded remotely without a known
+                // handle; retire only this SFTP channel to reclaim that handle.
+                session.retire().await;
+            }
+            let result = result.map(|file| ManagedSftpFile {
+                file: Some(file),
+                session,
+                runtime: tokio::runtime::Handle::current(),
+            });
+            let _ = send.send(result);
+        });
+        receive
+            .await
+            .map_err(|_| Error::UnexpectedBehavior("SFTP open owner stopped".into()))?
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs:132-141](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs#L132-L141)
+
+延迟关闭失败时退役 SFTP 会话。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+impl Drop for ManagedSftpFile {
+    fn drop(&mut self) {
+        if let Some(mut file) = self.file.take() {
+            let session = self.session.clone();
+            self.runtime.spawn(async move {
+                if let Err(error) = file.shutdown().await {
+                    log::warn!("SFTP file cleanup failed; retiring subsystem: {}", error);
+                    session.retire().await;
+                }
+            });
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:174-181](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L174-L181)
+
+会话恢复不复活运行中任务。
+
+```text
+/// Durable, append-only log of the executing Turn.
+///
+/// This log is the authority for work in flight. Everything else durable lags
+/// it: client persistence is debounced into coalescing windows, and the
+/// persisted Session view deliberately stores an executing Turn as idle so a
+/// restart never revives work. Without this log the only complete record of a
+/// running Turn dies with the Host process, and a returning client is served a
+/// Turn frozen at the last checkpoint.
+```
+
+#### 缺口
+
+- 未实际模拟 CREATE 成功但响应丢失
+  **影响**：无法证实实际文件状态及重复副作用
+  **进一步探讨**：模拟响应丢失，检查远端文件与句柄。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · DSH 如何作为可选客户端接入，版本声明的边界是什么？
+
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+
+#### 完整回答
+
+builtin_clients.rs:45-57 注册 dsh 与 --profile openbitfun-acp；dsh_profile.rs:1-11 描述将打包 bridge 拷入用户已有 DSH 安装并复用其配置，65-83 按 stamp 和最小版本校验。build-profile.mjs:37-56 声明最低 0.1.0-rc.6，ACP SDK 0.25.1 和 spine rc.6 固定；独立 bridge 的 package.json:34-45 声明 Node ^22.19 或 >=24。dsh_profile.rs:123-138、164-174 对无法探测或解析的 DSH 版本放行，因此最小版本检查不是兼容证明，最低版本也不构成所有后续版本的兼容保证。只研究本仓库的接入代码，未引用外部 DSH 实现。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/crates/interfaces/acp/src/client/builtin_clients.rs:45-57](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/interfaces/acp/src/client/builtin_clients.rs#L45-L57)
+
+内置 DSH 命令和 profile。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+    // so OpenBitFun ships one as a dsh PROFILE (packages/dsh-acp) and launches it
+    // through the user's own installation. The model and the API key stay in
+    // dsh, where the user configured them; OpenBitFun stores neither. Installable
+    // from npm like codex, hence install_package; native ACP, hence no adapter.
+    BuiltinAcpClientPreset {
+        id: "dsh",
+        command: "dsh",
+        args: &["--profile", DSH_BUNDLED_PROFILE],
+        tool_command: "dsh",
+        install_package: Some("@deepseek-ai/dsh"),
+        adapter_package: None,
+        adapter_bin: None,
+        bundled_profile: Some(DSH_BUNDLED_PROFILE),
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/crates/interfaces/acp/src/client/dsh_profile.rs:1-11](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/interfaces/acp/src/client/dsh_profile.rs#L1-L11)
+
+复用已有 DSH 的 profile 机制。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+//! Materialize the bundled DeepSeek Harness bridge into the user's dsh install.
+//!
+//! OpenBitFun ships a compiled ACP bridge, but it does not ship a harness: `dsh` is
+//! a profile launcher, and a profile is just a directory under
+//! `$DSH_HOME/profiles/`. So instead of publishing the bridge to a registry, we
+//! copy the built profile next to the harness the user already installed and
+//! launch it with `dsh --profile openbitfun-acp`. Every `@deepseek-ai/dsh-*` row in
+//! that profile resolves out of the user's own installation through the flat
+//! `profiles/node_modules` fallback the launcher maintains, so nothing here
+//! installs a second harness, and the user's model and credentials — which live
+//! in dsh, not in OpenBitFun — apply unchanged.
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/crates/interfaces/acp/src/client/dsh_profile.rs:65-83](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/interfaces/acp/src/client/dsh_profile.rs#L65-L83)
+
+按 stamp 和最低版本检查。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+/// Copy the bundled profile into the user's dsh install if it is not there yet.
+///
+/// Returns the profile directory the launcher will boot. Errors are the ones
+/// worth stopping for: no bundled profile to copy, a dsh too old to run it, or
+/// a filesystem that refused the write — each of which would otherwise surface
+/// as `dsh` complaining about a profile that does not exist, or as a pile of
+/// module resolution failures with no hint about the cause.
+pub(crate) async fn ensure_bundled_profile(profile: &str) -> OpenBitFunResult<PathBuf> {
+    let (source, stamp) = bundled_build(profile)?;
+
+    // Checked on every launch, not just when copying: the pairing can break
+    // later by the user downgrading dsh under a profile that is already current.
+    require_supported_dsh(&stamp.min_dsh_version).await?;
+
+    let destination = dsh_profiles_directory()?.join(profile);
+    if read_stamp(&destination)
+        .ok()
+        .flatten()
+        .is_some_and(|installed| installed.content == stamp.content)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-acp/scripts/build-profile.mjs:37-56](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/packages/dsh-acp/scripts/build-profile.mjs#L37-L56)
+
+最低 DSH 和桥依赖版本。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+/** The profile directory OpenBitFun materializes this build into. */
+export const PROFILE_NAME = 'openbitfun-acp'
+
+/**
+ * The oldest `@deepseek-ai/dsh` this build is known to boot against. The bridge
+ * compiles against harness APIs; an older installation resolves the closure to
+ * packages this code predates, and the failure would otherwise surface as a
+ * module or service error with no hint about the cause.
+ */
+const MIN_DSH_VERSION = '0.1.0-rc.6'
+
+/**
+ * The only two runtime packages the harness installation does NOT already
+ * expose: the ACP wire SDK (not a harness dependency at all) and the agent
+ * spine, which ships as an examples package outside the `dsh` closure. Pinned,
+ * because they must agree with the harness train named above.
+ */
+const VENDORED = {
+  '@agentclientprotocol/sdk': '0.25.1',
+  '@deepseek-ai/dsh-agent-spine-demo': '0.1.0-rc.6',
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-acp/package.json:34-45](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/packages/dsh-acp/package.json#L34-L45)
+
+bridge Node 与依赖声明。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "scripts": {
+    "link:dsh": "node scripts/link-local-dsh.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node --import tsx src/bin.ts --config ./cordis.yml",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@agentclientprotocol/sdk": "0.25.1",
+    "@deepseek-ai/dsh-agent-spine-demo": "0.1.0-rc.6"
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/crates/interfaces/acp/src/client/dsh_profile.rs:123-138](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/interfaces/acp/src/client/dsh_profile.rs#L123-L138)
+
+缺失版本探测时不阻断。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+/// Fail with an actionable message when the installed dsh predates this build.
+///
+/// A dsh we cannot find, or whose version we cannot parse, is not treated as a
+/// failure here: a missing `dsh` already surfaces as an install prompt in the
+/// agent list, and guessing about an unrecognized version string would block a
+/// launch that may well work.
+async fn require_supported_dsh(minimum: &str) -> OpenBitFunResult<()> {
+    let Some(installed) = probe_executable("dsh").await.version else {
+        return Ok(());
+    };
+    if version_is_supported(&installed, minimum) {
+        return Ok(());
+    }
+    Err(OpenBitFunError::service(format!(
+        "DeepSeek Harness {installed} is older than {minimum}, which this OpenBitFun build requires. \
+         Update it with `npm install -g @deepseek-ai/dsh`."
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/crates/interfaces/acp/src/client/dsh_profile.rs:164-174](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/interfaces/acp/src/client/dsh_profile.rs#L164-L174)
+
+解析失败视为通过。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+/// Whether `installed` is new enough for a build that needs `minimum`.
+///
+/// Unparsable on either side means "assume yes" — see the caller.
+fn version_is_supported(installed: &str, minimum: &str) -> bool {
+    let Ok(minimum) = semver::Version::parse(minimum.trim_start_matches('v')) else {
+        return true;
+    };
+    let Ok(installed) = semver::Version::parse(installed.trim().trim_start_matches('v')) else {
+        return true;
+    };
+    installed >= minimum
 ```
 
 </details>
 
 #### 缺口
 
-- 未审计全部工具的未知结果/幂等策略
-  **影响**：不能承诺全任务exactly-once或断电后继续
-  **进一步探讨**：用可回读标记的非幂等动作注入结果丢失，先检查实际副作用再决定是否重试
+- 未在 rc.6 或其他 DSH 版本及远程主机实测
+  **影响**：不能断言新旧 DSH 兼容、桥打包和远程会话正常
+  **进一步探讨**：固定 DSH 和 Node 版本验证 profile 解析、会话及升级。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-18"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · Relay、模型和迁移的总负担支持什么采用？
+### Q05 · Relay、身份及迁移有哪些采用边界？
 
 **研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-首次普通包需模型和工作区；源码构建还需Node22.12+、pnpm、Rust/Tauri环境。跨设备还需账户/设备配对与主机在线，SSH/Docker另有权限和运行环境。固定README写“你部署的Relay”，但更具体relay文档说官方端点用户不需部署，局域模式仍经官方GitHub身份核验，自托管私有端点需匹配客户端构建；因此部署要求存在文档口径差异，不能给读者承诺任意URL即插即用或完全离线。持续成本是模型调用、主机/Relay资源、网络、凭证和成果验收；恢复需核对日志、目标文件及工具副作用。旧0.2.x与1.0数据不兼容，指定稳定版本有独立迁移工具，不能直接原地覆盖。费用、等待和恢复分钟未测，当前观察，先独立测试工作区验证重连/停止/备份，再考虑主环境。
+根 README:67-69 说同账号设备控制需用户部署 Relay；而同提交 relay-server/README.md:3-29 说官方模式不必用户部署，提供固定官方端点和同网内建 Relay，两种登录仍依赖互联网 GitHub 身份；同文件 34-60 又指出私有 Relay 需匹配客户端构建。两份文档冲突，静态检查不判定运行默认路径或生产配置。README:129-135 声明 1.0.0 不与旧 0.2.x 数据兼容，并给 Node、pnpm、Rust 与 Tauri 构建条件；未验证迁移、Relay 隐私或部署。作者加密陈述不构成密码审计。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:67-69](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/README.md#L67-L69)
+**依据 1 · 作者声明**：[README.md:67-69](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/README.md#L67-L69)
 
-根部署概述。
+根文档声称自部署 Relay。
 
 ```text
 Use SSH to work on a remote host, through a jump host, or inside a container, with files, commands, and agent execution in the target environment. The desktop app and CLI share core execution capabilities; mobile clients and messaging bots offer more ways to control tasks.
@@ -627,12 +823,12 @@ Use SSH to work on a remote host, through a jump host, or inside a container, wi
 Account login, synchronization, and control between devices on the same account run through a [Relay server you deploy](./src/apps/relay-server/README.md). See [Remote Connect](./docs/interactive-capabilities/capabilities/feature.remote-connect.md) and [remote workspaces](./docs/features/remote-workspaces.md) for connection options.
 ```
 
-**依据 2 · 作者声明**：[src/apps/relay-server/README.md:3-16](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/apps/relay-server/README.md#L3-L16)
+**依据 2 · 作者声明**：[src/apps/relay-server/README.md:3-29](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/apps/relay-server/README.md#L3-L29)
 
-具体Relay官方端点与在线主机说明。
+Relay 文档的官方、同网和身份陈述。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
 The official Relay connects devices signed in to the same GitHub identity.
@@ -649,37 +845,65 @@ verification. Peers obtain public keys through the authenticated same-account
 directory and derive an AES-GCM key with X25519 and HKDF-SHA256. The Relay does
 not receive device private keys or upload copies of settings and sessions.
 Sessions and files are read from the owning online device on demand.
-```
 
-</details>
+Selecting **Same network** starts the same Relay implementation inside the
+Desktop host at `http://<LAN-IP>:9700`. Its SQLite database is local to that
+host (`<product-home>/relay-v1.0.0/local-server/relay.db`), separate from the
+official server database. Login, device registration, device discovery,
+public-key lookup, RPC and presence all use the selected Relay endpoint.
+The two modes differ only in endpoint and host startup; no device traffic is
+forwarded from the local Relay to the official Relay.
 
-**依据 3 · 作者声明**：[src/apps/relay-server/README.md:26-37](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/apps/relay-server/README.md#L26-L37)
-
-身份联网、自托管需要匹配构建。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
 Both modes verify GitHub identity through `auth.openbitfun.com`, so signing in
 requires internet access. An invitation contains only the selected endpoint
 and device id (`/#/pair?did=<device-id>`); scanning it grants no authority.
 The controller must sign in and resolve that id in its same-account directory.
-Anonymous room pairing and tunnel-provider startup have been removed.
-
-SSH and Docker workspace connections remain independent of Relay login.
-
-## For community developers and forks
-
-Self-hosting is supported through source and deployment scripts. The public mode uses a fixed official endpoint; it has no deployment wizard or editable
-Relay URL. A private Relay therefore needs a matching client build.
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:129-135](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/README.md#L129-L135)
+**依据 3 · 作者声明**：[src/apps/relay-server/README.md:34-60](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/apps/relay-server/README.md#L34-L60)
 
-构建与迁移限制。
+自建需匹配客户端与身份配置。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+## For community developers and forks
+
+Self-hosting is supported through source and deployment scripts. The public mode uses a fixed official endpoint; it has no deployment wizard or editable
+Relay URL. A private Relay therefore needs a matching client build.
+
+1. Fork this workspace and read `CONTRIBUTING.md`. Build the Relay and mobile
+   controller from the same revision. Keep your fork's changes in source control.
+2. Select your HTTPS endpoint in `product-domains/src/account.rs`, then align
+   the frontend constants in `src/web-ui/src/infrastructure/remote-connect/remoteConnectionState.ts`
+   and `src/mobile-web/src/services/pairingLink.ts`. Native clients have
+   matching constants in KMP `core-transport/AccountDeviceLink.kt` and HarmonyOS
+   `services/AccountDeviceLink.ets`; update the HarmonyOS account-link parser too.
+   Search for `https://remote.openbitfun.com/v/1.0.2` to verify every runtime
+   reference and corresponding test before building your distribution.
+3. Decide who owns identity. You can retain the official GitHub identity
+   authority, or run the [shared identity service](../../../deploy/miniapp-market/README.md)
+   with your own GitHub OAuth application. For an independent authority, change
+   `IDENTITY_ME_URL` in `relay-service/src/identity.rs` and
+   `DEFAULT_ACCOUNT_API_URL` in `services-integrations/src/account_identity/mod.rs`
+   together, and adapt the market sign-in links and callback/completion host.
+   `OPENBITFUN_ACCOUNT_API_URL` overrides the desktop/CLI identity API for
+   development; the previous `OPENBITFUN_MINIAPP_MARKET_API_URL` alias remains
+   readable. Relay never accepts an identity authority from a client request.
+4. Use separate persistent data and asset directories, configure exact browser
+   CORS origins, then put the service behind your own TLS reverse proxy. Build
+   and exercise two devices using the same GitHub identity before distributing
+   your fork. The public web controller must come from that matching build.
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:129-135](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/README.md#L129-L135)
+
+迁移和构建条件。
 
 ```text
 Get the Windows, macOS, or Linux package from the [official download page](https://openbitfun.com/download). Install it, configure a model, and open a workspace to get started. See the [user guide](https://playbook.openbitfun.com) for usage instructions and [download verification](./docs/verify-downloads.md) for package signature checks.
@@ -691,90 +915,113 @@ for stable releases 0.2.17–0.2.19.
 To run from source, install [Node.js](https://nodejs.org/) 22.12+, [pnpm](https://pnpm.io/) 10.15.0, the [Rust toolchain](https://rustup.rs/), and the [Tauri prerequisites](https://v2.tauri.app/start/prerequisites/). Clone the repository, then run:
 ```
 
-<a id="research-q05"></a>
+**依据 5 · 源码核查**：[package.json:1-8](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/package.json#L1-L8)
 
-<a id="detail-section-19"></a>
+根包 Node 条件。
 
-### Q05 · 故障矩阵能否把持续运行承诺变成可验收合同？
+```text
+{
+  "name": "OpenBitFun",
+  "private": true,
+  "version": "1.0.8",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+```
 
-**研究主题**：新假设与验证
+#### 缺口
+
+- 部署默认模式、迁移与费用未核实
+  **影响**：不能判断离线可用性、隐私或实际迁移成本
+  **进一步探讨**：隔离账号双设备核验端点并备份演练迁移。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 如何在断线后减少未知写入被重复执行或误判完成？
+
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-未验证假设是为控制端关闭、网络断开、Relay重启、host进程重启和工具结果丢失分别记录“执行是否继续/能否观察/是否允许重试”，在重连时显示明确未知结果并提供副作用回读入口。推导来自Q02的观察/执行分离与Q03未知结果保护差异；增量是用户可以选择正确恢复，而不是增加一个远程通道。最小验证同一有标记文件动作和可取消长任务，逐类注入故障，对比现界面和合同说明的重复执行、错误完成判断、恢复分钟。无误判减少或增加不可维护状态便停止；不把假设计为已有可靠性或市场需求。
+现有日志以 stream/cursor 区分连续回填与快照，SFTP 对 CREATE 不重放并管理迟到句柄；因此再加事件游标或记录关闭不是增量。未实现假设：对具备可查询外部状态的写工具，为每次意图建立持久操作 ID、目标与预期变更摘要，记录已发出、已确认、结果未知三态；恢复时先对目标回读并由用户确认不确定结果，不能查询或状态冲突时保持 unknown、不自动重发。以现有 journal 加 SFTP 清理为对照，注入调用前中断、对端成功但响应丢失、进程重启、回读超时、并发修改和权限撤销；比较重复写入、误判完成、恢复时间及记录敏感数据风险。若将未知当成功或失败、并发变更被误认、重复副作用不降、泄露敏感内容或开销不可接受，则否定该方案；这不是跨任意工具或系统的 exactly-once 协议。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:368-379](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L368-L379)
+**依据 1 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:109-136](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L109-L136)
 
-观察关闭接口是矩阵中的一个明确故障类别。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    pub fn close(&mut self) {
-        self.worker.abort();
-        if let Some(unsubscribe) = self.unsubscribe.take() {
-            unsubscribe();
-        }
-    }
-}
-
-impl Drop for HostStreamSubscriber {
-    fn drop(&mut self) {
-        self.close();
-    }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:333-360](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/execution/agent-runtime/src/session_event_journal.rs#L333-L360)
-
-恢复/空快照分支需要给用户可解释语义。
+现有连续游标判断。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-    pub fn snapshot(&self, session_id: &str) -> SessionEventProjectionSnapshot {
-        let state = lock_state(&self.state);
-        if state.sessions.contains_key(session_id) {
-            return projection_snapshot(&state, session_id);
+        while self.tail.len() > MAX_REPLAYABLE_TAIL_EVENTS {
+            self.tail.pop_front();
         }
-        let live_stream_id = state.stream_id.clone();
-        drop(state);
+    }
 
-        // Nothing in memory: either this Session never ran here, or this Host
-        // restarted while its Turn was executing. Replay the log through the
-        // same materialization used live, so a restored projection cannot
-        // disagree with one built from events as they arrived. The stored
-        // stream_id is preserved, so a client reads it as a different Runtime
-        // process and replays it instead of comparing cursors across processes.
-        let Some(stored) = self.store.as_ref().and_then(|store| store.load(session_id)) else {
-            return SessionEventProjectionSnapshot {
-                session_id: session_id.to_string(),
-                stream_id: live_stream_id,
-                cursor: 0,
-                active_turn_id: None,
-                events: Vec::new(),
-            };
-        };
-
-        let mut projection = SessionProjection::default();
-        for event in &stored.events {
-            if apply_event(&mut projection, event) {
-                projection.cursor = projection.cursor.saturating_add(1);
+    /// Events after `cursor`, or `None` when the retained tail cannot prove it
+    /// is contiguous with what the client already applied.
+    fn tail_since(&self, cursor: u64) -> Option<Vec<AgenticEvent>> {
+        if cursor > self.cursor {
+            // A cursor ahead of this stream's own progress is not a gap this
+            // journal can reason about.
+            return None;
+        }
+        if cursor == self.cursor {
+            return Some(Vec::new());
+        }
+        // The client's next expected event must still be retained; if the
+        // oldest entry is newer than that, the events between were dropped.
+        match self.tail.front() {
+            Some(oldest) if oldest.cursor <= cursor.saturating_add(1) => Some(
+                self.tail
+                    .iter()
+                    .filter(|entry| entry.cursor > cursor)
+                    .map(|entry| entry.event.clone())
+                    .collect(),
+            ),
+            _ => None,
+        }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs:62-90](https://github.com/GCWing/OpenBitFun/blob/edea1ec7f268a2d13f343b699abb86e415670ff0/src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs#L62-L90)
+**依据 2 · 源码核查**：[src/crates/execution/agent-runtime/src/session_event_journal.rs:146-159](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/execution/agent-runtime/src/session_event_journal.rs#L146-L159)
 
-未知CREATE结果不重放可作具体恢复对照。
+现有快照边界。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（14行）</summary>
+
+```text
+/// Everything a client missed after a cursor it already applied.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", tag = "kind")]
+pub enum SessionEventBackfill {
+    /// Contiguous with the client's cursor: apply these in order and it is
+    /// caught up, with no snapshot and no projection rebuild.
+    Delta {
+        stream_id: String,
+        cursor: u64,
+        events: Vec<AgenticEvent>,
+    },
+    /// The client's cursor predates the retained tail, or belongs to an older
+    /// Runtime process. Only a full snapshot can restore it.
+    SnapshotRequired,
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs:62-106](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_ssh/sftp_file.rs#L62-L106)
+
+现有不重放 CREATE 和未知句柄处理。
+
+<details>
+<summary>查看原文（45行）</summary>
 
 ```text
     async fn open_owned(self: &Arc<Self>, path: &str, mode: u8) -> Result<ManagedSftpFile, Error> {
@@ -806,8 +1053,77 @@ impl Drop for HostStreamSubscriber {
                 Err(Error::Timeout
                     | Error::IO(_)
                     | Error::UnexpectedBehavior(_)
+                    | Error::UnexpectedPacket)
+            ) {
+                // A timed-out OPEN may have succeeded remotely without a known
+                // handle; retire only this SFTP channel to reclaim that handle.
+                session.retire().await;
+            }
+            let result = result.map(|file| ManagedSftpFile {
+                file: Some(file),
+                session,
+                runtime: tokio::runtime::Handle::current(),
+            });
+            let _ = send.send(result);
+        });
+        receive
+            .await
+            .map_err(|_| Error::UnexpectedBehavior("SFTP open owner stopped".into()))?
 ```
 
 </details>
+
+**依据 4 · 源码核查**：[src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs:195-229](https://github.com/GCWing/OpenBitFun/blob/2644c2ed3c5d0701341d22a14018c12f62c1115e/src/crates/services/services-integrations/src/remote_connect/host_stream_subscriber.rs#L195-L229)
+
+现有 epoch gap 机制。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+    /// restarted the stream is announced as a gap and replayed from its latest page.
+    async fn refresh(&mut self) -> Result<()> {
+        if self.catch_up().await? {
+            return Ok(());
+        }
+        self.gap("host stream restarted")?;
+        self.resync().await
+    }
+
+    async fn load_older(&mut self) -> Result<bool> {
+        if !self.has_more {
+            return Ok(true);
+        }
+        let page = self
+            .read(StreamReadRequest {
+                stream_id: self.session_id.clone(),
+                before: Some(self.oldest),
+                epoch: Some(self.epoch),
+                subscribe: true,
+                ..Default::default()
+            })
+            .await?;
+        if page.epoch != self.epoch {
+            return Ok(false);
+        }
+        self.emit_page(&page)?;
+        if let Some(first) = page.events.first() {
+            self.oldest = first.seq;
+        }
+        self.has_more = page.has_more;
+        self.emit_ready()?;
+        Ok(true)
+    }
+
+    fn gap(&self, reason: &str) -> Result<()> {
+```
+
+</details>
+
+#### 缺口
+
+- 没有操作收据原型、通用回读接口或故障注入结果
+  **影响**：无法证明收益和安全性
+  **进一步探讨**：先在隔离 SFTP 沙箱实现原型和对照。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

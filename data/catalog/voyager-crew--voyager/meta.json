@@ -1,40 +1,61 @@
 {
     "repository": "voyager-crew/voyager",
     "repository_id": 1069943001,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 20482,
-    "pushed_at": "2026-10-28T20:58:48Z",
+    "captured_at": "2026-11-01T08:13:08.475Z",
+    "window_start": "2026-10-02T08:13:08.475Z",
+    "stars": 20508,
+    "pushed_at": "2026-10-31T04:07:51Z",
     "issues": {
-        "open": 8,
-        "closed": 609,
-        "created_30d": 9,
-        "closed_30d": 16,
-        "updated_30d": 25
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Avoyager-crew%2Fvoyager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0F38:105057:104A6D:11F417:6AE6F589 and timestamp 2026-11-01 08:17:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Avoyager-crew%2Fvoyager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0F66:C424B:FAEEC:1156AD:6AE6F58A and timestamp 2026-11-01 08:17:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avoyager-crew%2Fvoyager%20is%3Aissue%20created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0F9A:3A3B1A:E0935:FB329:6AE6F58B and timestamp 2026-11-01 08:17:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avoyager-crew%2Fvoyager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0FF4:10CA1C:F7157:111BCA:6AE6F58C and timestamp 2026-11-01 08:17:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avoyager-crew%2Fvoyager%20is%3Aissue%20updated%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 105E:26E9CC:E19AA:FC2FA:6AE6F58F and timestamp 2026-11-01 08:17:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-29T01:29:30.018Z",
+        "captured_at": "2026-10-31T09:58:25.350Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "voyager",
-        "captured_at": "2026-10-28T13:01:56.368Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 1630,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/voyager",
+        "captured_at": "2026-11-01T00:10:01.346Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1508,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/voyager",
         "error": null,
         "publication": {
             "first_published_at": "2013-10-18T22:11:38.720Z",
-            "captured_at": "2026-10-28T13:01:56.368Z",
+            "captured_at": "2026-11-01T00:10:01.346Z",
             "source_url": "https://registry.npmjs.org/voyager",
             "error": null,
             "latest_version": "0.4.13",
