@@ -1,27 +1,27 @@
 {
     "repository": "esengine/DeepSeek-Reasonix",
     "repository_id": 1216785679,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 35992,
-    "pushed_at": "2026-10-29T05:21:59Z",
+    "captured_at": "2026-11-01T06:31:34.186Z",
+    "window_start": "2026-10-02T06:31:34.186Z",
+    "stars": 36014,
+    "pushed_at": "2026-11-01T06:33:56Z",
     "issues": {
-        "open": 545,
-        "closed": 5602,
-        "created_30d": 1221,
-        "closed_30d": 796,
-        "updated_30d": 1315
+        "open": 591,
+        "closed": 5630,
+        "created_30d": 1166,
+        "closed_30d": 767,
+        "updated_30d": 1319
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-29T01:29:30.018Z",
+        "captured_at": "2026-10-31T09:58:25.350Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "commit_sha": "11681f42b65a3872f5f2cd5c29cd4733d24592f4",
+        "blob_sha": "8dc907fcd2ec9326c363c8561ecdac288f8d1c1d",
+        "errors_blob_sha": "cf662c0dfeb8948098a54b2f4fdd2e5f6b816ae9",
         "latest_error": null
     }
 }

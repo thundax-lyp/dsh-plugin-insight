@@ -1,44 +1,34 @@
 {
     "repository": "omdsh-dev/dsh-mnemon",
     "repository_id": 1329424520,
-    "captured_at": "2026-10-27T04:59:15.812Z",
-    "window_start": "2026-09-27T04:59:15.812Z",
-    "stars": 719,
-    "pushed_at": "2026-10-26T15:21:19Z",
+    "captured_at": "2026-11-01T06:31:34.186Z",
+    "window_start": "2026-10-02T06:31:34.186Z",
+    "stars": 815,
+    "pushed_at": "2026-10-31T17:10:42Z",
     "issues": {
-        "open": 18,
-        "closed": 156,
-        "created_30d": 63,
-        "closed_30d": 49,
-        "updated_30d": 64
+        "open": 22,
+        "closed": 163,
+        "created_30d": 69,
+        "closed_30d": 51,
+        "updated_30d": 70
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-mnemon",
-        "captured_at": "2026-10-27T04:59:15.812Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 55434,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-mnemon",
+        "captured_at": "2026-10-31T12:39:32.524Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 69103,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-mnemon",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T19:28:45.151Z",
-            "captured_at": "2026-10-26T20:32:35.909Z",
+            "captured_at": "2026-10-31T12:39:32.524Z",
             "source_url": "https://registry.npmjs.org/dsh-mnemon",
             "error": null,
-            "latest_version": "0.5.36",
-            "latest_published_at": "2026-10-26T15:20:29.543Z",
+            "latest_version": "0.5.37",
+            "latest_published_at": "2026-10-29T10:39:14.206Z",
             "latest_error": null
         }
     }

@@ -1,27 +1,27 @@
 {
     "repository": "Devin-AXIS/iPolloWork",
     "repository_id": 1044010907,
-    "captured_at": "2026-10-26T09:32:03.449Z",
-    "window_start": "2026-09-26T09:32:03.449Z",
-    "stars": 7286,
-    "pushed_at": "2026-10-26T09:30:54Z",
+    "captured_at": "2026-11-01T08:13:08.475Z",
+    "window_start": "2026-10-02T08:13:08.475Z",
+    "stars": 7326,
+    "pushed_at": "2026-10-31T08:25:11Z",
     "issues": {
         "open": 60,
         "closed": 19,
-        "created_30d": 3,
+        "created_30d": 2,
         "closed_30d": 0,
-        "updated_30d": 3
+        "updated_30d": 2
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-25T16:57:05.909Z",
+        "captured_at": "2026-10-31T09:58:25.350Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
-        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }
