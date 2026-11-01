@@ -1,0 +1,54 @@
+{
+    "repository": "ECNU/EduWork",
+    "repository_id": 1369398336,
+    "captured_at": "2026-11-01T12:37:53.293Z",
+    "window_start": "2026-10-02T12:37:53.293Z",
+    "stars": 264,
+    "pushed_at": "2026-10-31T17:34:33Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 28,
+        "closed_30d": 13,
+        "updated_30d": 30
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DC8A:3A2F2:2D3ED9:326789:6AE732E2 and timestamp 2026-11-01 12:38:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DCB6:25FC08:323575:37647F:6AE732E3 and timestamp 2026-11-01 12:38:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T17:22:18.721Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a59a721f29c65cab2b86b3b951a73c4296ee1c29",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@eduwork/dsh-memory",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1251,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40eduwork%2Fdsh-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-06T09:29:30.896Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/%40eduwork%2Fdsh-memory",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-10-18T17:54:53.487Z",
+            "latest_error": null
+        }
+    }
+}

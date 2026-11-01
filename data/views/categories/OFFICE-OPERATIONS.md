@@ -34,6 +34,8 @@
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
+| [EduWork DSH Mail](#plugin-1369398336-packages-dsh-mail) | 为 DSH 提供邮件读取、附件保存与受控 SMTP 发送工具。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q04) 隔离账户先验证权限并由用户核对；外发需明确授权，异常先查询。 |
+| [EduWork OIDC](#plugin-1369398336-packages-dsh-oidc) | 为 DSH 提供机构身份登录与授权模型接入。 | 先用隔离身份测试登录、模型类型及撤销失败，状态不明由管理员核查。 |
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
@@ -393,6 +395,38 @@
 > **建议**：把白名单与最小权限设为默认 fail-closed，并验证各平台身份/附件/权限矩阵后再开放真实 bot；现版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-im/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1369398336-packages-dsh-mail"></a>
+
+## [EduWork DSH Mail](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md)
+
+[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 2,110](https://img.shields.io/static/v1?label=npm+30d&message=2%2C110&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-mail) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-mail)
+
+> **用途**：需要在 DSH 工作中查看邮件或按用户授权发送回复的用户。
+
+> **亮点**：[Q02](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q02) 把邮箱能力接入 Agent 并区分发送开关与审批策略。
+
+> **思考**：[Q03](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q03) Full Access 不增加逐次审批；SMTP accepted 或其他错误不能证明最终投递状态。
+
+> **建议**：[Q05](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q05) 对照现有 Message-ID 和手工查询提示，验证辅助核对能否降低重复。
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1369398336-packages-dsh-oidc"></a>
+
+## [EduWork OIDC](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md)
+
+[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 1,987](https://img.shields.io/static/v1?label=npm+30d&message=1%2C987&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-oidc) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-oidc)
+
+> **用途**：希望通过机构身份访问 DSH 的用户；基线是独立管理身份及模型凭据。[Q01](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md#research-q01)
+
+> **亮点**：把机构认证、会话和授权模型目录接入宿主。[Q01](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md#research-q01)
+
+> **思考**：本地凭据清除不证明远端 access token 已失效；不同网关协议需分别验收。[Q03](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设：明确展示本地清理与远端撤销的确认状态可减少用户误解，须对照现有清理和日志。[Q05](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-oidc/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1170373459-dsh-invoice-downloader"></a>
 
