@@ -1,18 +1,18 @@
-# Config Manager
+# DSH Config Manager
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[f1fb06b](https://github.com/xiajiajun516/dsh-config-manager/tree/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73)
+源码版本：[63d3ee9](https://github.com/xiajiajun516/dsh-config-manager/tree/63d3ee956e20c0dd8520c41498cb473da91328ce)
 
 <!-- BEGIN META -->
-[![GitHub ★ 265](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=265&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xiajiajun516/dsh-config-manager) [![npm 30d 19,037](https://img.shields.io/static/v1?label=npm+30d&message=19%2C037&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-config-manager) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-config-manager)
+[![GitHub ★ 280](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=280&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xiajiajun516/dsh-config-manager) [![npm 30d 18,656](https://img.shields.io/static/v1?label=npm+30d&message=18%2C656&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-config-manager) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-config-manager)
 <!-- END META -->
 
-> **功能**：将 DSH 配置和部分会话整理为可预览迁移包，提供逐项计划、快照恢复、可选凭据加密及同步入口。
+> **功能**：备份、恢复、迁移和同步 DeepSeek Harness 配置。
 
-> **亮点**：计划/执行分离、写前快照绑定、外部项不明与结构化secret处理形成迁移控制面，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把分区、计划和恢复快照组织成迁移流程；不能证明所有依赖或结果自动恢复。
 
-> **主要限制**：默认逐项失败不触发全局回滚，文件类secret只告警不脱敏，redactedHits可含未改写命中；安全远端上传和可逆迁移不能由名字/流程推导，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 文件命中仅告警而非剥值，[Q04](#research-q04) 远端状态未知时仍可能继续上传；[Q02](#research-q02) 单项失败默认不保证整批回滚。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 迁移对象与产品范围，哪些是实际增量？](#detail-section-11)
-  - [Q02 · 预览、确认、快照、执行和回滚是否等同全局事务？](#detail-section-12)
-  - [Q03 · 默认排除密钥、凭据加密与文件内容安全怎么区分？](#detail-section-13)
-  - [Q04 · 采用条件、成本与可证伪方向是什么？](#detail-section-14)
+  - [Q01 · 哪些用户迁移或备份 DSH 配置，与手工复制文件有何差别？](#detail-section-11)
+  - [Q02 · 导入如何分析、计划、确认并执行，部分失败是否回滚？](#detail-section-12)
+  - [Q03 · 导出所谓脱敏、加密与文件扫描保护了哪些数据？](#detail-section-13)
+  - [Q04 · 同步、账户、文件、宿主和恢复各有哪些前提与成本？](#detail-section-14)
+  - [Q05 · 能否让作者识别未剥值的文件命中与部分导入状态？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,77 +40,76 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：迁机与多环境维护者可审阅分区配置和路径映射，任务合格要再核外部依赖及重启结果，见 [Q01](#research-q01)。
+> **用途**：DSH 用户需要备份配置、迁机或同步多个环境。
 
-手工复制目录和重装工具。插件增量在标准分区包、冲突计划、映射与恢复记录；系统进程、完整机器和所有外部工具状态不随配置自动恢复。
+用户可手工备份配置文件并逐项核对和恢复外部依赖。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 标准包 | 分区导出与校验 | 非整机镜像 |
-| 导入计划 | 冲突、路径和逐项执行 | 默认失败不整体回滚 |
-| 安全处理 | 结构剥值与凭据可选加密 | 文件原样只告警 |
-| 恢复 | 快照/journal/重启提示 | 外部副作用非全局事务 |
+| 分区导出 | 打包配置与文件 | 文件扫描命中只告警 |
+| 导入计划 | 核查分区和路径 | 必须确认，单项失败可部分应用 |
+| 恢复快照 | 保存变更前状态 | 外部系统恢复未证明 |
+| 远端同步 | 上传或合并快照 | 远端检查未知时可能继续 |
 
-**流程与依赖**
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| Node 与兼容 DSH | 宿主插件需要 | 启动与接口 | 无法加载或未验证 |
+| 本地配置与写权限 | 导入导出需要 | 读取分区和创建快照 | 操作失败或部分完成 |
+| 加密提供者与密码 | 导出凭据需要 | 保护密钥载荷 | 缺失时拒绝相应操作 |
+| 远端账号与网络 | 仅远端同步需要 | 上传或下载快照 | 失败或状态未知 |
 
-| 条件 | 用途 | 边界 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 匹配DSH/Node与文件权限 | Host API、分区和落盘 | 插件/CLI入口不等兼容实证 |
-| 外部插件/MCP/路径/模型 | 目标环境运行 | 包配置不恢复所有外部状态 |
-| Snapshot/Journal/锁适配 | 计划执行与恢复 | 外部副作用仍需人工核 |
-| 强化scanner/密码 | 脱敏告警与可选加密 | 文件只告警，空密码拒绝非强度保证 |
-| 远端账号与网络 | 同步通道 | 本轮未完整核载荷与权限 |
+| 准备 | 用户备份当前配置并选择目标分区 | 单独记录 profile 与外部依赖 |
+| 导出 | 审查结构化剥值与文件告警 | 秘密可能仍在文件时停止上传 |
+| 计划 | 检查路径映射、外部项和导入差异 | 未确认不执行 |
+| 执行 | 逐项核对日志、快照与重启结果 | 部分失败按实际状态恢复 |
 
-| 阶段 | 动作 | 判据 |
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次 | 本地存储与可选远端费用未知 | 配置导出、密码和备份 | 未测迁机完整性 |
+| 持续 | 定期上传和存储费用未知 | 审核文件、分区和冲突 | 远端时效与权限未知 |
+| 恢复 | 快照与重试资源未知 | 检查部分结果与回滚 | 跨外部系统不能保证原子 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 导出 | 选分区和安全选项 | 审真实文件、告警及加密范围 |
-| 计划 | 分析冲突、路径、依赖 | 用户逐项核目标 |
-| 执行 | confirm后先快照再应用 | 结果含failed/warning/部分保留 |
-| 恢复 | 按策略/取消和journal处理 | 不假定外部效果原子撤销 |
-| 验收 | 重启并跑实际任务 | 格式可读不是迁移合格 |
+| 导入 | 确认、快照和逐项执行 | 全批原子及所有依赖恢复 |
+| 密钥处理 | 结构化剥值与可选加密 | 文件内容已脱敏或无泄露 |
+| 同步 | 已知远端推进时报告冲突 | 远端不可读时一致性 |
 
-**效果与成本**
-
-| 阶段 | 现金与资源 | 人工与时间 |
-|---|---|---|
-| 首次 | 备份/密码保管成本未知 | 选择分区、路径、依赖与安全审阅 |
-| 持续 | ZIP/快照/vault/远端存储未知 | 保留策略、多适配器与宿主升级 |
-| 故障 | 部分写与外部包资源未知 | 逐项核journal、盘面、回滚和重启 |
-| 退出 | 远端副本另管 | 已改配置/包不随卸载撤销 |
-
-| 项目 | 已支持机制 | 未知 |
-|---|---|---|
-| 可审阅迁移 | 计划、确认与写前快照 | 全部适配器任务合格率 |
-| 密钥处理 | 结构剥值/文件告警/可选密文 | 明文漏报与完整远端安全 |
-| 恢复 | journal及部分保留状态 | 全局外部撤销、节时节费 |
-
-> **思考**：默认逐项失败不触发全局回滚，文件类secret只告警不脱敏，redactedHits可含未改写命中；安全远端上传和可逆迁移不能由名字/流程推导，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 文件命中仅告警而非剥值，[Q04](#research-q04) 远端状态未知时仍可能继续上传；[Q02](#research-q02) 单项失败默认不保证整批回滚。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：计划/执行分离、写前快照绑定、外部项不明与结构化secret处理形成迁移控制面，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把分区、计划和恢复快照组织成迁移流程；不能证明所有依赖或结果自动恢复。
 
-[Q02](#research-q02) 写前绑定、外部needs-attention值得借鉴；[Q03](#research-q03) 扫描与剥值计数需对读者明确，不能以redacted命名掩盖原样文件。
+[Q02](#research-q02) 快照与可选绑定支持恢复，[Q03](#research-q03) 区分剥值与仅扫描，[Q04](#research-q04) 远端未知有继续分支。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-默认逐项失败不触发全局回滚，文件类secret只告警不脱敏，redactedHits可含未改写命中；安全远端上传和可逆迁移不能由名字/流程推导，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+[Q03](#research-q03) 文件命中仅告警而非剥值，[Q04](#research-q04) 远端状态未知时仍可能继续上传；[Q02](#research-q02) 单项失败默认不保证整批回滚。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-观察为主，只在无真实秘密的本机副本先核导出/计划，全部安全与恢复边界清楚后再决定重要配置和远端试验，见 [Q04](#research-q04)。
+[Q04](#research-q04) 先用隔离配置和本地备份验证分区，确认文件内容后再导入；远端状态或秘密处理不明时停止上传。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-代表导出/计划/执行与加密源码已核，建议观察及合成副本验证；未执行迁移、修复、同步或加密实验。
+固定源码的代表性导出、导入、加密和同步分支已查；未运行插件或远端。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/core/analyzer.ts、src/core/exporter.ts、src/core/importer.ts、src/index.ts、src/security/encryption.ts、src/sync/sync-engine.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/core/analyzer.ts、src/index.ts、src/core/exporter.ts、src/security/encryption.ts、src/sync/sync-engine.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整根统计，抽读public入口、Importer/Analyzer核心、Exporter、生产scanner来源、凭据加密与同步禁止明文条件；未全审所有适配器、远端通道、foreign/rewind/修复/路由安全。
-- 下一步：合成秘密与副本核默认/加密/文件告警及vault，导入故障注入快照、逐项、取消、重启和外部命令；核盘面/journal与真实任务结果。本轮无运行证据。
+- 边界：只读根清单、README、导出、分析、加密与同步代表分支；未运行宿主、远端或故障实验，未穷尽扫描规则、各适配器和外部服务。
+- 下一步：用合成秘密、超大文件、不可读远端及分区失败验证报告、实际归档、快照和部分回滚；按 [Q05](#research-q05) 衡量误判。
 
 **分析版本**
 
 - **仓库**：[xiajiajun516/dsh-config-manager](https://github.com/xiajiajun516/dsh-config-manager)
-- **版本号**：0.2.0（[固定提交 f1fb06b](https://github.com/xiajiajun516/dsh-config-manager/tree/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73)）
-- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.3（[固定提交 63d3ee9](https://github.com/xiajiajun516/dsh-config-manager/tree/63d3ee956e20c0dd8520c41498cb473da91328ce)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +136,9 @@
 
 <a id="innovation"></a>
 
-分开真实剥值/文件命中并标每项快照与外部不明，验证能否减少安全及恢复误判；未实现需求未知，见 [Q04](#research-q04)。
+[Q05](#research-q05) 假设按分区区分已剥值、仅告警和未扫描，并关联导入结果可减少误判；尚未验证。
 
-合成秘密与副本核默认/加密/文件告警及vault，导入故障注入快照、逐项、取消、重启和外部命令；核盘面/journal与真实任务结果。本轮无运行证据。
+用合成秘密、超大文件、不可读远端及分区失败验证报告、实际归档、快照和部分回滚；按 [Q05](#research-q05) 衡量误判。
 
 <a id="detail-section-9"></a>
 
@@ -147,109 +147,54 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 60 | 17559 | — | — | 398239 |
+| .md | source | 60 | 17637 | — | — | 400375 |
 | .mjs | source | 7 | 933 | 710 | 174 | — |
 | .md | test | 7 | 2927 | — | — | 53520 |
-| .ts | test | 464 | 125039 | 100878 | 13893 | — |
-| .ts | source | 419 | 144871 | 96892 | 39495 | — |
-| .tsx | source | 79 | 24882 | 18895 | 5423 | — |
+| .ts | test | 464 | 125263 | 101066 | 13922 | — |
+| .ts | source | 420 | 145042 | 96979 | 39570 | — |
+| .tsx | source | 79 | 24883 | 18895 | 5426 | — |
 | .md | example | 26 | 181 | — | — | 2065 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/xiajiajun516/dsh-config-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 40](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=40&color=737b86&logo=github)](https://github.com/xiajiajun516/dsh-config-manager/issues?q=is%3Aissue+created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z) [![近30天关闭 40](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=40&color=737b86&logo=github)](https://github.com/xiajiajun516/dsh-config-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z)
-
-
-
-统计日期：2026-10-29。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/xiajiajun516/dsh-config-manager/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核配置迁移审阅/执行/恢复与密钥处理的代表链，避免把一键迁移或扫描计数当完整安全与可逆保证。
+**插件研究总目标**：核查配置导出、凭据、导入与远端同步边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 迁移对象与产品范围，哪些是实际增量？
+### Q01 · 哪些用户迁移或备份 DSH 配置，与手工复制文件有何差别？
 
-**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-dsh-config-manager 0.2.0是原生DSH插件，也提供dcm CLI及core/schema导出。面向迁机或维护多环境的DSH用户，将设置、插件、MCP、Skills和部分会话/工作区整理为标准包，再在目标环境预览冲突和映射路径。相较直接复制DSH目录或手工重装，增量是适配器分区、内容校验、可审阅计划、快照/恢复和迁移记录；插件功能与工具权限仍由宿主/外部依赖提供。README的多来源、市场、同步、rewind属于宽产品主张，本轮重点核公共配置导出/导入，不以数量证明全覆盖。
-
-配置包不是整台机器镜像。README明确启动栈profile不属普通备份，profile管理是另入口；跨机路径映射不安装外部命令/恢复进程，也不证明所有插件运行效果。需要匹配Node、DSH宿主API与文件权限，目标插件/MCP依赖、模型凭据、系统路径要单独核。包可读只证明格式，只有重启后对应任务合格才算迁移成功。
+README:46-62 将场景描述为用户备份、迁机或在多设备同步设置、插件及相关内容；package.json:1-5 是作者对备份和迁移的定位。与人工复制文件相比，工具提供分区、路径映射、导入计划和写前快照；这些可帮助用户检查动作，但不能仅凭一键宣传证明每项外部依赖、凭据或新宿主均能恢复。README:48-50 明示 DSH profile 本身不包含在备份中；完整迁机还需要逐项核实。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-5](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/package.json#L2-L5)
+**依据 1 · 作者声明**：[README.md:46-62](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/README.md#L46-L62)
 
-版本与功能定位。
-
-```text
-  "name": "dsh-config-manager",
-  "version": "0.2.0",
-  "license": "MIT",
-  "description": "Backup, restore, export, import, migrate and sync your DeepSeek Harness (DSH) configuration: settings, plugins, MCP servers, skills, agent presets and workspaces. One-click migration to another machine. DSH 配置一键备份、恢复、导出、导入、迁移与同步插件。",
-```
-
-**依据 2 · 源码核查**：[package.json:32-61](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/package.json#L32-L61)
-
-Node、CLI/core/schema/client出口。
+作者描述备份迁移及排除 profile。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-    "node": "^22.19.0 || >=24.0.0"
-  },
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "bin": {
-    "dsh-config-manager": "./lib/cli/index.js",
-    "dcm": "./lib/cli/index.js"
-  },
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js"
-    },
-    "./core": {
-      "types": "./lib/core/index.d.ts",
-      "default": "./lib/core/index.js"
-    },
-    "./schema": {
-      "types": "./lib/schema/index.d.ts",
-      "default": "./lib/schema/index.js"
-    },
-    "./client": {
-      "types": "./lib/client.d.ts",
-      "default": "./lib/client.js"
-    },
-    "./package.json": "./package.json",
-    "./locale/*.json": "./locale/*.json"
-  },
-  "dsh": {
-    "bundle": {
-```
+## 🎯 Use Cases
 
-</details>
-
-**依据 3 · 源码核查**：[README.md:48-62](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/README.md#L48-L62)
-
-配置包/宿主profile与路径/同步主张。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
 ### Backup DeepSeek Harness configuration
 
 Create a portable backup of your DSH settings, model providers, plugins, MCP servers, skills, agent presets and workspace — one ZIP file, no secret values included by default. (DSH's own profiles — `$DSH_HOME/profiles/<name>`, i.e. which plugin stack to boot — are machine-local and are **not** part of the backup; the **Environment → Profiles** view manages them instead — list / create / rename / delete, plus launching or stopping an independent instance for one.)
@@ -269,144 +214,27 @@ Keep portable configuration synchronized between machines through a private Git 
 
 </details>
 
-**依据 4 · 源码核查**：[src/core/importer.ts:1-17](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/importer.ts#L1-L17)
+**依据 2 · 源码核查**：[package.json:1-5](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/package.json#L1-L5)
 
-标准导入分段门面。
-
-<details>
-<summary>查看原文（17行）</summary>
+包版本与功能描述。
 
 ```text
-/**
- * Importer 门面：封装导入 14 步流程（规范 §9），委托 Analyzer 三段式。
- *
- *  1 选 ZIP → 2 校验 ZIP → 3 读 manifest → 4 完整性 → 5 schema → 6 兼容
- *  → 7 扫描 → 8 ImportPlan → 9 Preview(Dry Run) → 10 用户确认
- *  → 11 快照 → 12 执行 → 13 校验 → 14 结果（失败则回滚）
- *
- * 安全阀：executeImportPlan 必须显式 confirm，否则拒绝（ImportNotConfirmedError）。
- * Dry Run：analyzeImport / createImportPlan 零写入（ZIP 全程内存解析，不进磁盘）。
- */
-import type { ZipArchive, ZipSafetyLimits } from '../utils/zip.ts';
-import type { MsgFunc } from './messages.ts';
-import { Analyzer } from './analyzer.ts';
-import type { PlanItemProgress } from './analyzer.ts';
-import type { BootSafetyReport } from './boot-safety.ts';
-import type {
-  ConfigAdapter, HostContext, ImportAnalysis, ImportDecisions, ImportPlan,
+{
+  "name": "dsh-config-manager",
+  "version": "0.2.3",
+  "license": "MIT",
+  "description": "Backup, restore, export, import, migrate and sync your DeepSeek Harness (DSH) configuration: settings, plugins, MCP servers, skills, agent presets and workspaces. One-click migration to another machine. DSH 配置一键备份、恢复、导出、导入、迁移与同步插件。",
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/core/analyzer.ts:889-904](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L889-L904)
 
-#### 缺口
-
-- 未逐分区、迁移来源和宿主版本验收。
-  **影响**：不由代表源码推导所有适配器、远端通道或恢复结果。
-  **进一步探讨**：选最小本机副本和另一测试目标，核配置差异、外部依赖与重启后任务，不用市场/分区数量验收。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 预览、确认、快照、执行和回滚是否等同全局事务？
-
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
-
-#### 完整回答
-
-Importer把分析、createImportPlan和execute分开；门面声明前两者内存解析不落盘，执行会重新加载归档，再要求confirm===true。Analyzer在首项副作用前创建目标快照，若生产宿主提供snapshotBinding则绑定journal再markApplying；文件项登记指纹，外部项按不可证明处理needs-attention。这是真正的可审阅迁移与恢复工程，不是简单解压覆盖。
-
-但不是全局事务：ExecuteOptions.rollbackOnError默认false，单项失败如实记录后继续；finalize也能产生warning、failed和needsRestart。取消只在安全边界处理，可选择保留部分，缺省/异常走回滚；保留分支保有快照供手工回滚。源码存在快照和回滚不证明外部安装、远端写或所有适配器副作用都能原子撤销。UI/API的confirm布尔只是一道执行门，不等于证明每项意图正确，用户仍须审阅目标、冲突和路径。失败、部分保留、待重启和恢复不明必须分别核对，不能把流程结束当环境恢复成功。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/core/importer.ts:35-58](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/importer.ts#L35-L58)
-
-显式confirm、默认非整体回滚、边界取消。
+确认和加密备份导入条件。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-}
-
-export interface ExecuteOptions {
-  /** 用户确认（UI 收集）；非 true 一律拒绝执行 */
-  confirm: boolean;
-  /** 用户补录的秘密值（仅内存） */
-  secretInputs?: Record<string, string>;
-  /** 加密备份解密结果（仅内存；解密必须经 m4 encryption provider） */
-  decryptedCredentials?: Map<string, string>;
-  /** 任一项失败立即整体回滚（默认 false：单项失败如实记录并继续其余项） */
-  rollbackOnError?: boolean;
-  /** m1：每完成一个计划项的进度回调（透传给 Analyzer；不传则无埋点） */
-  onItem?: (info: PlanItemProgress) => void;
-  /** m1：每开始一个计划项的进度回调（供 UI 显示「正在执行项 X」/ 判定跳过按钮；不传则无埋点） */
-  onItemStart?: (info: { adapter: SectionId; index: number; total: number; detail: string }) => void;
-  /** 执行日志回调（逐计划项操作 + 子进程命令行，仅非敏感文本；透传给 Analyzer → ImportContext） */
-  onLog?: (line: string) => void;
-  /** Phase 4 生产 journal↔snapshot 绑定（deferred；透传给 Analyzer；不传 = 无 journal 绑定） */
-  snapshotBinding?: TransactionSnapshotContext;
-  /** 用户终止信号（透传给 Analyzer；只在计划项边界生效，见 analyzer.executeImportPlan） */
-  cancelSignal?: AbortSignal;
-  /** 安全点询问用户如何处置已应用部分（透传；缺省/抛错一律按 rollback 安全侧） */
-  onCancelDecision?: () => Promise<'rollback' | 'keep'>;
-  /** 「保留已应用项」分支的启动自洽审计（透传；不传 = 未审计，结果里如实标注） */
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/core/importer.ts:73-106](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/importer.ts#L73-L106)
-
-分析/计划/execute门面接线。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-   */
-  analyzeImport(
-    zipPath: string,
-    opts: { decryptedCredentials?: Map<string, string> } = {},
-  ): Promise<ImportAnalysis> {
-    return this.analyzer.analyzeImport(zipPath, opts);
-  }
-
-  /**
-   * 步骤 9：Dry Run / Preview —— 合并用户冲突决策与路径映射，输出最终可执行计划（零写入）。
-   * `opts.decryptedCredentials`（仅内存）= 宿主已用备份密码解开的凭据：**参与计划生成**，
-   * 让「归档里有值」的凭据都进计划（否则它们永远不会被写回，见 Analyzer.createImportPlan）。
-   */
-  createImportPlan(
-    zipPath: string,
-    decisions: ImportDecisions,
-    opts: { decryptedCredentials?: Map<string, string> } = {},
-  ): Promise<ImportPlan> {
-    return this.analyzer.createImportPlan(zipPath, decisions, opts);
-  }
-
-  /** 步骤 10-14：确认 → 快照 → 执行 → 校验 → 结果；失败可整体回滚并如实报告 */
-  executeImportPlan(zipPath: string, plan: ImportPlan, opts: ExecuteOptions): Promise<ImportResult> {
-    return this.analyzer.executeImportPlan(zipPath, plan, {
-      confirm: opts.confirm,
-      secretInputs: opts.secretInputs,
-      decryptedCredentials: opts.decryptedCredentials,
-      rollbackOnError: opts.rollbackOnError,
-      onItem: opts.onItem,
-      onItemStart: opts.onItemStart,
-      onLog: opts.onLog,
-      snapshotBinding: opts.snapshotBinding,
-      cancelSignal: opts.cancelSignal,
-      onCancelDecision: opts.onCancelDecision,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/core/analyzer.ts:890-898](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L890-L898)
-
-执行重读和确认门。
-
-```text
+    // 写盘入口一律 refresh：**不复用**跨请求缓存，绝不能拿「几分钟前校验过」的结果去改用户数据
     // （校验通过之后、真正写盘之前归档被换掉，是这条路径必须自己关掉的窗口）。
     const bundle = await this.loadBundle(zipPath, 'refresh');
     const analyzed = await this.analyzeBundle(bundle);
@@ -416,14 +244,70 @@ export interface ExecuteOptions {
     if (opts.confirm !== true) {
       throw new ImportNotConfirmedError(this.msg);
     }
+
+    // 10b. 加密不变量：加密备份必须已成功解密（decryptedCredentials 由宿主用备份密码
+    // 解开 security/secrets.enc 后注入）。未解密（undefined）一律拒绝执行——
+    // 不允许把加密凭据静默降级为「缺凭据照常导入」，否则加密备份与普通备份无区别。
+    if (bundle.manifest.security.encrypted && opts.decryptedCredentials === undefined) {
+      throw new Error(this.msg('import.encryptedPasswordRequired'));
 ```
 
-**依据 4 · 源码核查**：[src/core/analyzer.ts:921-945](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L921-L945)
+</details>
 
-快照先行、journal绑定、外部不可证明。
+#### 缺口
+
+- 未在真实两机测试依赖恢复、重启及人工耗时
+  **影响**：无法声称完整迁机或节时
+  **进一步探讨**：隔离环境比较手工复制与导出导入并逐项核对。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 导入如何分析、计划、确认并执行，部分失败是否回滚？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+analyzer.ts:889-904 在写入前重新加载和分析 bundle，必须 confirm，且加密包要求已解密凭据；921-938 写前创建快照并在宿主提供 binding 时关联 journal。1068-1083 记录逐项结果，仅 rollbackOnError 开启时因单项失败中断；1144-1155 的取消分支可尝试回滚。默认单项失败不会自动整批回滚，单项成功、失败、警告及重启要求要逐项检查；快照和 journal 为恢复提供材料，不证明所有外部系统或中断均可逆。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/core/analyzer.ts:889-904](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L889-L904)
+
+重新加载、确认和凭据条件。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（16行）</summary>
+
+```text
+    // 写盘入口一律 refresh：**不复用**跨请求缓存，绝不能拿「几分钟前校验过」的结果去改用户数据
+    // （校验通过之后、真正写盘之前归档被换掉，是这条路径必须自己关掉的窗口）。
+    const bundle = await this.loadBundle(zipPath, 'refresh');
+    const analyzed = await this.analyzeBundle(bundle);
+    applyMappingsToSections(analyzed.sections, plan.pathMappings, this.fileCollectionIds());
+
+    // 10. 用户确认（安全阀：不确认绝不动数据）
+    if (opts.confirm !== true) {
+      throw new ImportNotConfirmedError(this.msg);
+    }
+
+    // 10b. 加密不变量：加密备份必须已成功解密（decryptedCredentials 由宿主用备份密码
+    // 解开 security/secrets.enc 后注入）。未解密（undefined）一律拒绝执行——
+    // 不允许把加密凭据静默降级为「缺凭据照常导入」，否则加密备份与普通备份无区别。
+    if (bundle.manifest.security.encrypted && opts.decryptedCredentials === undefined) {
+      throw new Error(this.msg('import.encryptedPasswordRequired'));
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/core/analyzer.ts:921-938](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L921-L938)
+
+写前快照及可选 journal 绑定。
+
+<details>
+<summary>查看原文（18行）</summary>
 
 ```text
     // 11. 快照（强制：导入前必须先备份将被修改的目标）。
@@ -444,152 +328,193 @@ export interface ExecuteOptions {
       await opts.snapshotBinding.bindSnapshot(snapshot.id);
       // 首个 destructive side effect 前：SNAPSHOT_CREATED→APPLYING（在首个 applyOne 之前调 markApplying）
       await opts.snapshotBinding.markApplying();
-    }
-
-    // P2-B（Phase 8）：逐计划项 WAL 预登记。将产生真实 side effect 的项在 apply 之前
-    // 记为 planned（文件类带 beforeFp），使 crash 中途可按「仍 planned ⇒ 未应用」保守判定；
-    // 非文件项 external=true（不可证明 → reconcile 恒 needs-attention，安全边界不放宽）。
-    const sb = opts.snapshotBinding;
-    const beforeFpByItem = new Map<string, string | null>();
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/core/analyzer.ts:1033-1051](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L1033-L1051)
+**依据 3 · 源码核查**：[src/core/analyzer.ts:1068-1083](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L1068-L1083)
 
-逐项应用和journal状态。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-        const outcome = await this.applyOne(adapter, item, importCtx);
-        importCtx.signal = undefined;
-        // m1 埋点：每完成一个计划项上报（真实进度；onItem 抛错不得中断导入）
-        itemIndex += 1;
-        try {
-          opts.onItem?.({
-            adapter: item.adapter,
-            index: itemIndex,
-            total: totalItems,
-            status: outcome.executed.status,
-            detail: item.id,
-          });
-        } catch {
-          // 埋点回调失败不影响导入执行（进度是尽力而为）
-        }
-        executed.push(outcome.executed);
-        // P2-B（Phase 8）：逐项更新 journal step。文件类成功 → done + afterFp（reconcile 可判
-        // recovered）；失败/warning/跳过 → 无不可靠 afterFp（attention/skipped → 保守 needs-attention）。
-        if (sb?.recordStep !== undefined && beforeFpByItem.has(item.id)) {
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/core/analyzer.ts:1097-1112](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L1097-L1112)
-
-收尾结果和重启提示。
+逐项失败与可选中断。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-        for (const result of finalized) {
-          const status: ExecutedItem['status'] = result.ok ? 'ok' : result.warning === true ? 'warning' : 'failed';
-          executed.push({
-            itemId: `${adapterId}:finalize`,
-            status,
-            ...(result.message !== undefined ? { message: result.message } : {}),
+                ? 'done'
+                : outcome.executed.status === 'skipped'
+                  ? 'skipped'
+                  : 'attention',
+            beforeFp: beforeFpByItem.get(item.id) ?? null,
+            afterFp,
+            message: outcome.executed.message ?? null,
           });
-          if (status === 'failed') anyFailed = true;
-          // 分区收尾也能宣布「需要重启」（会话写入即属此类：DSH 的会话列表在启动期读取，
-          // 不重启就看不到新导入的对话）。此前该字段只在逐项结果里被消费，收尾结果里的
-          // needsRestart 会被静默丢掉 —— 用户拿不到这条必需提示。
-          if (result.needsRestart === true) needsRestart = true;
-          if (status !== 'ok' && result.message !== undefined) warnings.push(result.message);
         }
+        // 仅硬失败计入 anyFailed（warning 属非致命：目标不可达等，不触发回滚，§34.17）
+        if (outcome.executed.status === 'failed') anyFailed = true;
+        if (outcome.needsRestart) needsRestart = true;
+        if (outcome.warning) warnings.push(outcome.warning);
+        if (opts.rollbackOnError && outcome.executed.status === 'failed') break;
       }
-      if ((cancelled && cancelDecision === 'rollback') || (opts.rollbackOnError && anyFailed)) break;
+      // 分区收尾（issue #45 ④）：会话位置护栏等必须等本分区全部写完才做的动作。
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/core/analyzer.ts:1162-1187](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L1162-L1187)
+**依据 4 · 源码核查**：[src/core/analyzer.ts:1144-1155](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L1144-L1155)
 
-部分保留与未执行项标记。
+取消时回滚分支。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-     * 快照**保持可用**（不标 done / 不标 rolled-back）——这是「保留」的可撤销承诺：
-     * 用户随时可以在「备份」页用这笔导入前快照手动回滚。
-     * 本分支**绝不允许抛错**：调用方处于正常返回路径上，抛错会把「已知结论：部分保留」换成
-     * 异常 → runJournaled 记 NEEDS_ATTENTION + SAFE MODE，正好是本功能要避免的结局。
-     */
-    if (cancelled && cancelDecision === 'keep') {
-      keptPartial = true;
-      const executedIds = new Set(executed.map((e) => e.itemId));
-      let abandoned = 0;
-      if (sb?.recordStep !== undefined) {
-        for (const item of plan.items) {
-          if (!beforeFpByItem.has(item.id) || executedIds.has(item.id)) continue;
-          abandoned += 1;
-          try {
-            const rel = Analyzer.fileRelFor(item, importCtx.target.profile);
-            await sb.recordStep({
-              id: item.id,
-              adapter: item.adapter,
-              kind: item.kind,
-              ref: rel !== null ? resolveFileTarget(importCtx.target, item.adapter, item.target?.ref ?? '') : '',
-              external: rel === null,
-              status: 'skipped',
-              beforeFp: beforeFpByItem.get(item.id) ?? null,
-              afterFp: null,
-              message: this.msg('import.cancelKeptSkippedItem'),
-            });
+    }
+
+    // 用户终止 + 选择「回滚」：与「失败整体回滚」复用同一条补偿路径（绝不新造第二份回滚）
+    if (cancelled && cancelDecision === 'rollback') {
+      const rolledBack = await this.rollbackApplied(snapshot, executed, warnings, plan, opts.snapshotBinding, 'cancelled')
+      return { ...rolledBack, cancelled: true, keptPartial: false }
+    }
+
+    /**
+     * 用户终止 + 选择「保留已应用项」：在安全点停下之后必须补齐三件事，否则「保留」就退化成
+     * 「把半成品丢给用户、DSH 起不来再让用户自己猜」：
+     *  ① 分区收尾（上方 finalizeApply / finalizeImport 已按条件跑完）；
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/index.ts:4121-4132](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/index.ts#L4121-L4132)
+
+模型工具接入同一核心与扫描器。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  // Agent 可调用的模型工具（P0-1）：复用 src/core 引擎与同一 makeSyncEngine 来源。
+  // 不依赖 webServer：host 侧能力在无 Web 部署时仍可用；tools 服务未组合时内部守卫跳过。
+  registerModelTools(ctx, {
+    host,
+    adapters,
+    exportsDir,
+    snapshotsDir,
+    syncDir,
+    makeSyncEngine,
+    exporterVersion: PLUGIN_VERSION,
+    // M1：与 HTTP 导出路由同一个 scanner（G-09 文件类分区凭据告警在两条路径上一致）。
+    scanner: secretScanner,
 ```
 
 </details>
 
 #### 缺口
 
-- 未故障注入崩溃/磁盘/外部包命令，也未验全部回滚适配器。
-  **影响**：不由代表源码推导所有适配器、远端通道或恢复结果。
-  **进一步探讨**：在目标副本注入快照失败、逐项失败、收尾失败、取消keep/rollback和重启，核文件与外部效果、journal和快照一致。
+- 未注入分区失败、进程崩溃及宿主重启
+  **影响**：不能保证全批原子或恢复成功
+  **进一步探讨**：在隔离配置模拟部分失败、取消与重启并比对快照。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 默认排除密钥、凭据加密与文件内容安全怎么区分？
+### Q03 · 导出所谓脱敏、加密与文件扫描保护了哪些数据？
 
-**研究主题**：功能与机制、缺陷与关键质疑、效果与总成本
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
-Exporter在includeSecrets且无EncryptionProvider时拒绝；结构化分区经scanAndRedact剥值，文件类分区（Skills、预设、指令、pluginFiles、sessions等）却只scanText并告警，不改内容。其报告redactedHits也计入未改写的文件命中，不能从字段名理解成所有值已经清除；未知形状秘密更无法语义保证。默认scanner还可能无scanText，但生产index明确构建强化scanner并意图共用于HTTP、工具和定时导出，生产接线的每一路仍需验收。因此“默认不含secret”应限定设计的结构化凭据路径，不能当所有文件安全上传保证。
-
-显式includeSecrets时读取.credentials.yaml原文并写security/secrets.enc；scrypt随机salt、AES-256-GCM随机iv，空密码拒绝但不强制复杂度。整体加密容器是另层，加密秘密块并不自动等于ZIP全部内容加密。同步引擎会拒includeSecrets而encrypt=false，但外部通道权限、凭据存储、元数据/日志和上传载荷未完整审计，本轮不能承诺“远端只见密文”对所有路径成立。导出还会尽力刷新本机敏感文件vault，异常只warning，所以本地备份也有磁盘副作用/保留成本；密钥密码必须用户独立保管，丢失不应推测可恢复。
+exporter.ts:70-102 的默认扫描器对结构化对象的敏感字段剥值，二进制原样跳过；107-116、133-139 限定文件扫描字节预算并说明只报告不改写。345-357 实际将文件命中也放入名为 redactedHits 的统计，但文件内容未被剥离，因此计数不是全部已脱敏证明。encryption.ts:72-93 对显式导出的凭据用 scrypt 派生并以 AES-256-GCM 加密，代码不强制密码强度；加密也不等于任意文件分区在所有配置下已被保护。README:42、50 的“默认无秘密”应按上述更窄边界理解，上传前仍需核原文和收件方。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/exporter.ts:264-266](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/exporter.ts#L264-L266)
+**依据 1 · 源码核查**：[src/core/exporter.ts:70-102](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L70-L102)
 
-无加密provider不能导密钥。
-
-```text
-    const { includeSecrets, only } = options;
-    if (includeSecrets && !this.encryption) {
-      throw new Error(this.msg('export.encryptionRequired'));
-```
-
-**依据 2 · 源码核查**：[src/core/exporter.ts:345-381](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/exporter.ts#L345-L381)
-
-文件只告警不改，redactedHits非必然已脱敏。
+结构化字段剥值和二进制跳过。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（33行）</summary>
+
+```text
+/** 缺省 SecretScanner：递归黑名单字段剥离（字段名大小写不敏感；二进制/Uint8Array 原样跳过） */
+export function defaultSecretScanner(): SecretScanner {
+  const SENSITIVE_FIELDS = [
+    'password', 'passwd', 'token', 'accesstoken', 'refreshtoken', 'apikey',
+    'secret', 'credential', 'authorization', 'cookie', 'privatekey', 'clientsecret',
+  ];
+  /** 仅存「引用名」而非值的字段（如 apiKeyEnv=DEEPSEEK_API_KEY 是环境变量名，不是秘密） */
+  const REFERENCE_FIELDS = new Set([
+    'apikeyenv', 'api_key_env', 'apikeyname', 'tokenenv', 'accesstokenenv',
+    'refreshtokenenv', 'clientsecretenv', 'passwordenv',
+  ]);
+  return {
+    scanAndRedact(data: unknown): { sanitized: unknown; hits: SensitiveHit[] } {
+      const hits: SensitiveHit[] = [];
+      const walk = (v: unknown, p: string): unknown => {
+        if (v === null || typeof v !== 'object') return v;
+        if (v instanceof Uint8Array) return v; // 二进制内容不按字段展开
+        if (Array.isArray(v)) return v.map((item, i) => walk(item, `${p}[${i}]`));
+        const out: Record<string, unknown> = {};
+        for (const [k, val] of Object.entries(v as Record<string, unknown>)) {
+          const lower = k.toLowerCase().replace(/[^a-z0-9]/g, '');
+          const isRefName = REFERENCE_FIELDS.has(lower);
+          const sensitive = !isRefName && SENSITIVE_FIELDS.some((f) => lower.includes(f));
+          if (sensitive && typeof val === 'string' && val !== '') {
+            hits.push({ path: p === '' ? k : `${p}.${k}`, field: k });
+            out[k] = ''; // 值剥离为空串（保留字段名与位置，供「需补录」提示）
+            continue;
+          }
+          out[k] = walk(val, p === '' ? k : `${p}.${k}`);
+        }
+        return out;
+      };
+      return { sanitized: walk(data, ''), hits };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/core/exporter.ts:107-116](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L107-L116)
+
+文件扫描预算及只报告。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+/* ---------------- G-09：文件类分区文本级扫描（只报告，绝不改写） ---------------- */
+
+/**
+ * 单文件扫描字节上限（1 MiB）。超大文件只扫描前 1 MiB：
+ * 凭据通常出现在配置/脚本的头部；超过上限的剩余部分放弃扫描，避免单个巨型文件拖垮导出。
+ */
+export const FILE_SECTION_SCAN_MAX_BYTES = 1024 * 1024;
+
+/** 一次导出中所有文件类分区的累计扫描字节上限（16 MiB），防「成千上万小文件」拖慢导出 */
+export const FILE_SECTION_SCAN_TOTAL_BUDGET_BYTES = 16 * 1024 * 1024;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/core/exporter.ts:133-139](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L133-L139)
+
+文件扫描不改写。
+
+```text
+/**
+ * 文件类分区内容扫描（G-09）：
+ *  - 走注入 scanner 的 `scanText`（只报告不改写；`scanAndRedact` 会剥离值，**不得**用于用户文件）；
+ *  - 扫描档位与 `src/market/prepare.ts` 的导出侧扫描保持一致：默认保守档 +
+ *    值形状启发式（`valuePatterns` 默认开），**不启用** `highEntropy`（默认关，误报率高）；
+ *  - 二进制文件（含 NUL）跳过：文本扫描对它无意义且必然误报；
+ *  - 单文件上限 `FILE_SECTION_SCAN_MAX_BYTES`、累计上限 `FILE_SECTION_SCAN_TOTAL_BUDGET_BYTES`：
+```
+
+**依据 4 · 源码核查**：[src/core/exporter.ts:345-357](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L345-L357)
+
+结构化剥值与文件命中统计差异。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
       // 3. Secret 过滤：结构化数据逐一过 scanner（剥离值）；
@@ -605,105 +530,28 @@ Exporter在includeSecrets且无EncryptionProvider时拒绝；结构化分区经s
         if (fileHits.length > 0) {
           // redactedHits 是**报告统计**通道（非告警通道）：仍计入全量命中（含同一文件的多行/多形态命中）。
           redactedHits.push(...fileHits);
-          // 告警按**文件**去重（G-09/H1）：同一路径只告警一次。
-          // 修复前按 hit 计数，同一行同时命中「字段名」与「值形状」会产出两条同路径告警，
-          // 使少数文件就吃满上限，导致含真实明文凭据的其它文件被静默淹没（实测 redactedHits=8 而 5 条告警全属一个文件）。
-          const hitPaths: string[] = [];
-          const seenPaths = new Set<string>();
-          for (const hit of fileHits) {
-            if (seenPaths.has(hit.path)) continue;
-            seenPaths.add(hit.path);
-            hitPaths.push(hit.path);
-          }
-          // 上限语义 = 不同**文件**数 ≤ MAX_FILE_SECTION_WARNINGS_PER_SECTION（避免大分区刷屏）
-          const warnedPaths = hitPaths.slice(0, MAX_FILE_SECTION_WARNINGS_PER_SECTION);
-          for (const hitPath of warnedPaths) {
-            warnings.push(this.msg('export.fileSectionSecrets', { section: adapter.id, path: hitPath }));
-          }
-          // 被截断的文件数必须**显式**汇总告警，否则截断本身又变成静默丢失。
-          // 文案在 t4 域目录（src/core/messages-core.ts）：不再借用 export.fileSectionSecrets 传中文 path 值。
-          const truncatedCount = hitPaths.length - warnedPaths.length;
-          if (truncatedCount > 0) {
-            warnings.push(engineMsg('core.exporter.fileSectionSecretsTruncated', { section: adapter.id, count: truncatedCount }));
-          }
-        }
-      }
-      sections.push({ ...section, data: sanitized });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/core/exporter.ts:429-450](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/exporter.ts#L429-L450)
+**依据 5 · 源码核查**：[src/security/encryption.ts:72-93](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/security/encryption.ts#L72-L93)
 
-credentials原文单独加密块。
+凭据加密与密码强度条件。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
-    // secrets.enc：有加密提供者即生成。includeSecrets=true 时加密真实的凭据原文；
-    // 只勾选加密（不导出密钥）时加密空内容占位，备份仍标记 encrypted（导入需密码），
-    // 但绝不把凭据值放进去（containsSecrets 保持 false；安全不变量不破）。
-    if (this.encryption) {
-      const credentialsFile = path.join(this.ctx.homeDir, '.credentials.yaml');
-      let plaintext: string;
-      if (includeSecrets) {
-        try {
-          const raw = await this.ctx.fs.readFile(credentialsFile);
-          plaintext = Buffer.from(raw).toString('utf8');
-        } catch (err) {
-          warnings.push(this.msg('export.credentialsReadFailed', { reason: err instanceof Error ? err.message : String(err) }));
-          plaintext = '';
-        }
-      } else {
-        plaintext = '';
-      }
-      const result = await this.encryption.encrypt(plaintext);
-      entries.push({ name: 'security/secrets.enc', data: result.blob });
-      encryption = result.info;
-      containsSecrets = includeSecrets && plaintext !== '';
-      encrypted = true;
-```
+/** 派生密钥（scrypt，参数可来自 manifest；默认常量） */
+export async function deriveKey(
+  password: string,
+  salt: Uint8Array,
+  params: EncryptionInfo['kdfParams'] = SCRYPT_PARAMS,
+): Promise<Buffer> {
+  return scryptAsync(password, salt, params.keyLength, { N: params.N, r: params.r, p: params.p });
+}
 
-</details>
-
-**依据 4 · 源码核查**：[src/core/exporter.ts:453-469](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/exporter.ts#L453-L469)
-
-默认导出刷新本地vault并尽力处理。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-    // 4b. 文件级 vault（includeSecrets=false：敏感文件明文不进归档 → 镜像到本机 vault）。
-    //     尽力而为：任何失败仅记警告，不中断导出。includeSecrets=true 时秘密已加密进归档，
-    //     无需镜像（vault 只服务于「明文不进备份」的本机留存场景）。
-    let vaultRefreshed = 0;
-    if (!includeSecrets) {
-      try {
-        const vault = await refreshVault(this.ctx.fs, this.vaultDataDir, this.ctx.homeDir, DEFAULT_SENSITIVE_RELS);
-        vaultRefreshed = vault.mirrored.length;
-        if (vault.mirrored.length > 0) {
-          warnings.push(this.msg('export.vaultRefreshed', { count: vault.mirrored.length }));
-        }
-        for (const s of vault.skipped) {
-          warnings.push(this.msg('export.vaultRefreshSkipped', { rel: s.rel, reason: s.reason }));
-        }
-      } catch (err) {
-        warnings.push(this.msg('export.vaultRefreshFailed', { reason: err instanceof Error ? err.message : String(err) }));
-      }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/security/encryption.ts:82-105](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/security/encryption.ts#L82-L105)
-
-空密码拒绝、随机salt/iv及GCM。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
+/** 加密 .credentials.yaml 原文 → { blob, info }（info 直接进 manifest.security.encryption） */
 export async function encryptCredentials(
   plaintext: string,
   password: string,
@@ -716,88 +564,219 @@ export async function encryptCredentials(
   const key = await deriveKey(password, salt);
   const cipher = crypto.createCipheriv('aes-256-gcm', key, iv);
   const encrypted = Buffer.concat([cipher.update(plaintext, 'utf8'), cipher.final()]);
-  const authTag = cipher.getAuthTag();
-
-  const header = Buffer.alloc(HEADER_LENGTH);
-  header.write(SCHEMA_MAGIC, 0, 'ascii');
-  header[4] = SCHEMA_VERSION;
-  salt.copy(header, 5);
-  iv.copy(header, 5 + SALT_LENGTH);
-  authTag.copy(header, 5 + SALT_LENGTH + IV_LENGTH);
-
-  const info: EncryptionInfo = {
-    algorithm: 'aes-256-gcm',
-    kdf: 'scrypt',
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/index.ts:4071-4087](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/index.ts#L4071-L4087)
+**依据 6 · 作者声明**：[README.md:42-50](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/README.md#L42-L50)
 
-生产强化scanner统一来源。
-
-<details>
-<summary>查看原文（17行）</summary>
+作者默认无秘密的宣传。
 
 ```text
-  // M1（G-09 接线）：secret 扫描器**单一实例**来源 —— 三条全量导出路径必须共用同一个实例，
-  // 否则扫描档位漂移：HTTP 导出路由（makeRoutes）、Agent 模型工具 config_backup
-  // （registerModelTools）、定时自动备份（BackupScheduler）。三处都在下方同步构造，故此声明
-  // 必须早于三者（对象字面量中的 scanner 是即时求值，声明放在后面会 TDZ ReferenceError）。
-  const secretScanner = createConfiguredSecretScanner(config?.personalPatterns)
-  const runs = new RunRegistry({ msg: host.msg })
-  const backupScheduler = new BackupScheduler({
-    syncDir,
-    exportsDir,
-    host,
-    adapters,
-    runs,
-    msg: host.msg,
-    exporterVersion: PLUGIN_VERSION,
-    // M1（G-09 接线）：与 HTTP 导出路由 / config_backup 同一 scanner 实例 —— 定时备份是
-    // 无人值守路径，文件类分区的凭据告警与 redactedHits 统计必须与手动导出完全一致
-    // （缺省不传 = Exporter 落回无 scanText 的 defaultSecretScanner，文件类分区静默不扫描）。
-```
+> ⚠️ **Security first**: no secrets (API Key / Token / Password) are exported by default. See [Security](#-security).
 
-</details>
+---
 
-**依据 7 · 源码核查**：[src/sync/sync-engine.ts:869-870](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/sync/sync-engine.ts#L869-L870)
+## 🎯 Use Cases
 
-显式秘密要求加密。
+### Backup DeepSeek Harness configuration
 
-```text
-    if (includeSecrets && !encrypt) {
-      throw new Error(this.msg('sync.includeSecretsRequiresEncryption'));
+Create a portable backup of your DSH settings, model providers, plugins, MCP servers, skills, agent presets and workspace — one ZIP file, no secret values included by default. (DSH's own profiles — `$DSH_HOME/profiles/<name>`, i.e. which plugin stack to boot — are machine-local and are **not** part of the backup; the **Environment → Profiles** view manages them instead — list / create / rename / delete, plus launching or stopping an independent instance for one.)
 ```
 
 #### 缺口
 
-- 未全审远端载荷、文件secret漏报、vault保护和加密配置每条生产路径。
-  **影响**：不由代表源码推导所有适配器、远端通道或恢复结果。
-  **进一步探讨**：使用合成秘密和用户文件副本审ZIP/密文/日志/vault，核默认与includeSecrets/整体加密差别，先证明无明文再允许远端试验。
+- 未实测扫描规则、所有归档内容和不同同步通道
+  **影响**：无法证明没有未发现或未改写的秘密
+  **进一步探讨**：用合成敏感值检查结构化、文本和大文件的实际导出。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 采用条件、成本与可证伪方向是什么？
+### Q04 · 同步、账户、文件、宿主和恢复各有哪些前提与成本？
 
-**研究主题**：采用判断、效果与总成本、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-建议观察，先用不含真实凭据的本机副本验证最小导出/预览，不对重要配置直接执行导入、修复、rewind或远端同步。首次需明确源/目标profile、路径、插件/MCP命令、模型凭据和保护范围；持续有ZIP/快照/vault/保留策略、网络、外部包与多适配器升级成本，金额/时间未测。故障恢复需逐项核状态和外部命令副作用，退出也要处理已写配置、已装包与远端副本，卸载插件不是反向事务。README“一键迁移”不能省去这些验收。
-
-工程假设是让计划/结果显式标注每项“已脱敏/只扫描告警/原样文件/加密块”、写前快照覆盖、可撤销/外部不明及重启验收；尤其把redactedHits拆为真正剥值和仅文件命中，可减少误以为安全上传。当前已具扫描、计划、journal和快照，增量应验证理解及恢复效果，而不新造备份系统。用合成秘密+部分失败任务比较当前界面与标注后的漏判明文、错选导入、恢复时间；若无改善或确认负担更大就停止。真实付费需求与经济收益未知。
+sync-engine.ts:864-873 要求导出凭据时加密并提供非空密码；875-891 对已确认远端推进返回冲突，但读取远端列表失败时仅警告并继续，不能将同步理解为未知状态下必定阻断。975 附近调用 transport 上传，数据外发和远端配置均由用户负责。package.json:31-32、60-70、98-105 声明 Node 版本、Web 依赖与 DSH peer；作者文档列多种远端但本次未核每一通道。需要迁机的用户可先导出隔离测试包、确认命中和备份，导入后逐项检查；远端状态、明文文件或密钥无法确认时停止上传并用本机离线备份。成本、远端行为和重启兼容未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core/exporter.ts:345-381](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/exporter.ts#L345-L381)
+**依据 1 · 源码核查**：[src/sync/sync-engine.ts:864-891](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/sync/sync-engine.ts#L864-L891)
 
-安全分类的具体歧义。
+加密条件、远端推进及未知继续。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（28行）</summary>
+
+```text
+  async push(opts: SyncPushOptions = {}): Promise<SyncPushReport> {
+    const warnings: string[] = [];
+    const includeSecrets = opts.includeSecrets ?? false;
+    const encrypt = opts.encrypt ?? false;
+    // 安全不变量：导出密钥必须加密；加密必须给密码（密码绝不落盘）
+    if (includeSecrets && !encrypt) {
+      throw new Error(this.msg('sync.includeSecretsRequiresEncryption'));
+    }
+    if (encrypt && (opts.password === undefined || opts.password === '')) {
+      throw new Error(this.msg('sync.encryptRequiresPassword'));
+    }
+    // 远端推进检测：不一致 = 远端被别的设备推过（或本机基线已被裁剪）。
+    // 此时推上去会覆盖/架空别人的改动 → 直接返回冲突（**不抛错**、不 upload、不记基线、不改 sync-state）。
+    if (opts.force !== true) {
+      const check = await this.remoteAdvancedCheck();
+      if (check.reason !== undefined) {
+        // 读不到远端列表 ⇒ 无法判定。按原样继续（上传本身会再暴露通道问题），但如实说明。
+        warnings.push(this.msg('sync.pushAdvanceCheckFailed', { reason: check.reason }));
+      } else if (check.blocked) {
+        return {
+          ok: false,
+          snapshotId: '',
+          sections: [],
+          warnings,
+          conflict: true,
+          message: this.msg('sync.pushRemoteAdvanced', { remote: check.latest, base: check.base }),
+        };
+      }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/sync/sync-engine.ts:964-979](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/sync/sync-engine.ts#L964-L979)
+
+上传及后续状态。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+      },
+      sections,
+      ...(credentials !== undefined ? { credentials } : {}),
+    };
+
+    // ① 本地散文件快照副本（审计；复用 t2 layout，不写 ZIP）。
+    //    加密快照不写本地散文件副本（磁盘不落任何密文/明文载荷；远端已存密文）。
+    if (this.localSnapshotsDir !== undefined && !encrypted) {
+      await writeSnapshotToDir(snapshot, joinFs(this.localSnapshotsDir, id), this.fsx);
+    }
+    // ② 上传远端（传输通道负责散文件落盘 + 提交推送）
+    await this.transport.upload(snapshot);
+    // ②·1 裁剪远端快照：保留最新 MAX_REMOTE_SNAPSHOTS 个（含刚 push 的）。
+    //      删除失败只告警（进 warnings），不上抛 —— 不阻断 push 主流程。
+    //      放在 upload 之后（保证新快照已推送成功）与 recordBaseline 之前（先管好远端再记基线）。
+    await this.pruneRemoteSnapshots(id, warnings);
+```
+
+</details>
+
+**依据 3 · 源码核查**：[package.json:31-32](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/package.json#L31-L32)
+
+Node 声明。
+
+```text
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+```
+
+**依据 4 · 源码核查**：[package.json:60-70](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/package.json#L60-L70)
+
+Web 客户端依赖声明。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+```
+
+</details>
+
+**依据 5 · 源码核查**：[package.json:98-105](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/package.json#L98-L105)
+
+DSH peer 声明。
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/dsh-agent-presets": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-connection": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-locale": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-runtime": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-settings": ">=0.1.0-rc.6 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.1.0-rc.6 <0.3.0-0",
+```
+
+**依据 6 · 作者声明**：[README.md:60-62](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/README.md#L60-L62)
+
+作者描述同步通道。
+
+```text
+### Sync DSH configuration across machines
+
+Keep portable configuration synchronized between machines through a private Git repository, WebDAV, an S3-compatible object store (AWS S3 / Alibaba OSS / Tencent COS / MinIO / Qiniu Kodo) or GitHub Gist — secrets do not sync by default (the payload is run through the SecretScanner); check "Export secrets" with an encryption password and `~/.dsh/.credentials.yaml` travels as scrypt + AES-256-GCM ciphertext inside the encrypted snapshot, so another machine can restore the credentials while the remote (Git host / WebDAV / object store / Gist) only ever sees ciphertext.
+```
+
+#### 缺口
+
+- 未运行远端故障、传输配置、两端导入与卸载
+  **影响**：不能保证隐私、远端一致或回滚成本
+  **进一步探讨**：用假远端断连及隔离 profile 验证告警、冲突和恢复。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 能否让作者识别未剥值的文件命中与部分导入状态？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+现有导出已经报告 redactedHits 和文件警告，导入已有快照、journal 和可选 rollbackOnError，故再显示单一命中数或简单增加备份不是增量。未验证设想是在导出/上传前给每个分区显示“结构化已剥值、文件命中仅告警、未扫描/超限”三类可核实状态，并允许用户排除文件或取消；导入结果按每项关联快照、已应用、失败、外部状态未知及回滚结果，未知不标成功。依赖扫描器提供覆盖范围与明确动作，不能把未扫描解释为无密钥。对照现有 warning、redactedHits 和 journal，用合成秘密覆盖结构化字段、文件命中、超限文件及未知远端，并注入中途分区失败；比较误以为已脱敏/全回滚次数、人工检查时间、遗漏与敏感泄露。若未扫描显示安全、外部状态不明当完成、泄露内容或误判无下降且负担过高，则否定；尚未实现或验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/core/exporter.ts:107-116](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L107-L116)
+
+已有文件扫描上限。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+/* ---------------- G-09：文件类分区文本级扫描（只报告，绝不改写） ---------------- */
+
+/**
+ * 单文件扫描字节上限（1 MiB）。超大文件只扫描前 1 MiB：
+ * 凭据通常出现在配置/脚本的头部；超过上限的剩余部分放弃扫描，避免单个巨型文件拖垮导出。
+ */
+export const FILE_SECTION_SCAN_MAX_BYTES = 1024 * 1024;
+
+/** 一次导出中所有文件类分区的累计扫描字节上限（16 MiB），防「成千上万小文件」拖慢导出 */
+export const FILE_SECTION_SCAN_TOTAL_BUDGET_BYTES = 16 * 1024 * 1024;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/core/exporter.ts:345-357](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/exporter.ts#L345-L357)
+
+命中既有报告和未改写文件。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
       // 3. Secret 过滤：结构化数据逐一过 scanner（剥离值）；
@@ -813,40 +792,16 @@ export async function encryptCredentials(
         if (fileHits.length > 0) {
           // redactedHits 是**报告统计**通道（非告警通道）：仍计入全量命中（含同一文件的多行/多形态命中）。
           redactedHits.push(...fileHits);
-          // 告警按**文件**去重（G-09/H1）：同一路径只告警一次。
-          // 修复前按 hit 计数，同一行同时命中「字段名」与「值形状」会产出两条同路径告警，
-          // 使少数文件就吃满上限，导致含真实明文凭据的其它文件被静默淹没（实测 redactedHits=8 而 5 条告警全属一个文件）。
-          const hitPaths: string[] = [];
-          const seenPaths = new Set<string>();
-          for (const hit of fileHits) {
-            if (seenPaths.has(hit.path)) continue;
-            seenPaths.add(hit.path);
-            hitPaths.push(hit.path);
-          }
-          // 上限语义 = 不同**文件**数 ≤ MAX_FILE_SECTION_WARNINGS_PER_SECTION（避免大分区刷屏）
-          const warnedPaths = hitPaths.slice(0, MAX_FILE_SECTION_WARNINGS_PER_SECTION);
-          for (const hitPath of warnedPaths) {
-            warnings.push(this.msg('export.fileSectionSecrets', { section: adapter.id, path: hitPath }));
-          }
-          // 被截断的文件数必须**显式**汇总告警，否则截断本身又变成静默丢失。
-          // 文案在 t4 域目录（src/core/messages-core.ts）：不再借用 export.fileSectionSecrets 传中文 path 值。
-          const truncatedCount = hitPaths.length - warnedPaths.length;
-          if (truncatedCount > 0) {
-            warnings.push(engineMsg('core.exporter.fileSectionSecretsTruncated', { section: adapter.id, count: truncatedCount }));
-          }
-        }
-      }
-      sections.push({ ...section, data: sanitized });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/core/analyzer.ts:921-945](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/analyzer.ts#L921-L945)
+**依据 3 · 源码核查**：[src/core/analyzer.ts:921-938](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L921-L938)
 
-恢复覆盖及外部不明。
+写前快照与 journal。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
     // 11. 快照（强制：导入前必须先备份将被修改的目标）。
@@ -867,82 +822,71 @@ export async function encryptCredentials(
       await opts.snapshotBinding.bindSnapshot(snapshot.id);
       // 首个 destructive side effect 前：SNAPSHOT_CREATED→APPLYING（在首个 applyOne 之前调 markApplying）
       await opts.snapshotBinding.markApplying();
-    }
-
-    // P2-B（Phase 8）：逐计划项 WAL 预登记。将产生真实 side effect 的项在 apply 之前
-    // 记为 planned（文件类带 beforeFp），使 crash 中途可按「仍 planned ⇒ 未应用」保守判定；
-    // 非文件项 external=true（不可证明 → reconcile 恒 needs-attention，安全边界不放宽）。
-    const sb = opts.snapshotBinding;
-    const beforeFpByItem = new Map<string, string | null>();
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/core/importer.ts:43-58](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/src/core/importer.ts#L43-L58)
+**依据 4 · 源码核查**：[src/core/analyzer.ts:1068-1083](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/core/analyzer.ts#L1068-L1083)
 
-部分失败/取消需要明确语义。
+单项失败与可选回滚。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-  decryptedCredentials?: Map<string, string>;
-  /** 任一项失败立即整体回滚（默认 false：单项失败如实记录并继续其余项） */
-  rollbackOnError?: boolean;
-  /** m1：每完成一个计划项的进度回调（透传给 Analyzer；不传则无埋点） */
-  onItem?: (info: PlanItemProgress) => void;
-  /** m1：每开始一个计划项的进度回调（供 UI 显示「正在执行项 X」/ 判定跳过按钮；不传则无埋点） */
-  onItemStart?: (info: { adapter: SectionId; index: number; total: number; detail: string }) => void;
-  /** 执行日志回调（逐计划项操作 + 子进程命令行，仅非敏感文本；透传给 Analyzer → ImportContext） */
-  onLog?: (line: string) => void;
-  /** Phase 4 生产 journal↔snapshot 绑定（deferred；透传给 Analyzer；不传 = 无 journal 绑定） */
-  snapshotBinding?: TransactionSnapshotContext;
-  /** 用户终止信号（透传给 Analyzer；只在计划项边界生效，见 analyzer.executeImportPlan） */
-  cancelSignal?: AbortSignal;
-  /** 安全点询问用户如何处置已应用部分（透传；缺省/抛错一律按 rollback 安全侧） */
-  onCancelDecision?: () => Promise<'rollback' | 'keep'>;
-  /** 「保留已应用项」分支的启动自洽审计（透传；不传 = 未审计，结果里如实标注） */
+                ? 'done'
+                : outcome.executed.status === 'skipped'
+                  ? 'skipped'
+                  : 'attention',
+            beforeFp: beforeFpByItem.get(item.id) ?? null,
+            afterFp,
+            message: outcome.executed.message ?? null,
+          });
+        }
+        // 仅硬失败计入 anyFailed（warning 属非致命：目标不可达等，不触发回滚，§34.17）
+        if (outcome.executed.status === 'failed') anyFailed = true;
+        if (outcome.needsRestart) needsRestart = true;
+        if (outcome.warning) warnings.push(outcome.warning);
+        if (opts.rollbackOnError && outcome.executed.status === 'failed') break;
+      }
+      // 分区收尾（issue #45 ④）：会话位置护栏等必须等本分区全部写完才做的动作。
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[README.md:54-74](https://github.com/xiajiajun516/dsh-config-manager/blob/f1fb06b3560a0ed4fe79a6be39372ddff5ce6f73/README.md#L54-L74)
+**依据 5 · 源码核查**：[src/sync/sync-engine.ts:875-891](https://github.com/xiajiajun516/dsh-config-manager/blob/63d3ee956e20c0dd8520c41498cb473da91328ce/src/sync/sync-engine.ts#L875-L891)
 
-一键迁移和同步作者主张须有边界。
+远端未知仅警告。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-Export your current DSH environment as a single ZIP and import it on a new Windows, macOS or Linux machine. One click brings back settings, plugins, MCP servers, skills and global instructions (AGENTS.md).
-
-### Migrate DSH configuration to a new computer
-
-Move your complete DeepSeek Harness setup without manually reinstalling plugins, MCP servers and skills. Dead absolute paths are detected and remapped automatically (batch prefix mapping supported).
-
-### Sync DSH configuration across machines
-
-Keep portable configuration synchronized between machines through a private Git repository, WebDAV, an S3-compatible object store (AWS S3 / Alibaba OSS / Tencent COS / MinIO / Qiniu Kodo) or GitHub Gist — secrets do not sync by default (the payload is run through the SecretScanner); check "Export secrets" with an encryption password and `~/.dsh/.credentials.yaml` travels as scrypt + AES-256-GCM ciphertext inside the encrypted snapshot, so another machine can restore the credentials while the remote (Git host / WebDAV / object store / Gist) only ever sees ciphertext.
-
-### Schedule automatic full backups
-
-Turn on scheduled backups in the **Home → Scheduled backup** card (6h / 12h / 24h / 7d — or a **custom weekly weekday & time**) and DSH quietly keeps a fresh full backup of your configuration in the background — secrets are never included, so it stays safe on disk without a password. How many are kept is decided by the **retention policy** in the same card (last N + one per month + one per year), and consecutive failures are highlighted in red.
-
-### Discover & install configurations from the marketplace
-
-Browse the built-in official market for ready-made configurations (model providers, plugins, MCP servers, skills, agent presets…), preview what would be imported (dry-run), and install with one click — supply-chain warnings are always shown and every section must be explicitly approved before anything is written.
-
-### Import from another AI agent (Claude Code, Cursor, Codex, …)
-
-Your setup — and your chat history — already live in another AI coding agent on this machine? Pick the source and DSH Config Manager **translates it into a standard bundle** (MCP servers, skills, global instructions, conversations and the workspaces they belong to) and hands it to the same review-first import flow: preview → per-item conflict decisions → automatic snapshot → apply → rollback. 30 sources are recognized and 29 of them can migrate **chat history** too. Secret **values** are never read — only the key names, so the import plan can ask you to re-enter them.
+    // 远端推进检测：不一致 = 远端被别的设备推过（或本机基线已被裁剪）。
+    // 此时推上去会覆盖/架空别人的改动 → 直接返回冲突（**不抛错**、不 upload、不记基线、不改 sync-state）。
+    if (opts.force !== true) {
+      const check = await this.remoteAdvancedCheck();
+      if (check.reason !== undefined) {
+        // 读不到远端列表 ⇒ 无法判定。按原样继续（上传本身会再暴露通道问题），但如实说明。
+        warnings.push(this.msg('sync.pushAdvanceCheckFailed', { reason: check.reason }));
+      } else if (check.blocked) {
+        return {
+          ok: false,
+          snapshotId: '',
+          sections: [],
+          warnings,
+          conflict: true,
+          message: this.msg('sync.pushRemoteAdvanced', { remote: check.latest, base: check.base }),
+        };
+      }
 ```
 
 </details>
 
 #### 缺口
 
-- 没有运行接受度、迁移合格率、误判安全和恢复时间数据。
-  **影响**：不由代表源码推导所有适配器、远端通道或恢复结果。
-  **进一步探讨**：新副本最小链验证后再用户对照，重点测错误、重做、人工/费用，不把旧样本兼容当新效果。
+- 没有统一状态原型、完整扫描覆盖信息和人工验证
+  **影响**：无法证明降低误判或维护成本可接受
+  **进一步探讨**：先核各 scanner 覆盖元数据，再做合成数据与故障对照。
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

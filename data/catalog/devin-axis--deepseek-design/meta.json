@@ -1,27 +1,48 @@
 {
     "repository": "Devin-AXIS/deepseek-design",
     "repository_id": 1335095892,
-    "captured_at": "2026-10-27T01:50:27.819Z",
-    "window_start": "2026-09-27T01:50:27.819Z",
-    "stars": 1604,
-    "pushed_at": "2026-10-08T09:24:13Z",
+    "captured_at": "2026-11-01T09:18:30.076Z",
+    "window_start": "2026-10-02T09:18:30.076Z",
+    "stars": 1661,
+    "pushed_at": "2026-10-30T09:20:44Z",
     "issues": {
-        "open": 5,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CE90:26E9CC:14CA6B:1748F5:6AE7040D and timestamp 2026-11-01 09:19:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CEB8:2A673:15C4D5:1841C8:6AE7040E and timestamp 2026-11-01 09:19:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CF08:2B1F0:178751:1A0534:6AE7040F and timestamp 2026-11-01 09:19:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CF64:260E8E:163FE1:18BF69:6AE70410 and timestamp 2026-11-01 09:19:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20updated%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFA8:FA119:159ACF:1817B7:6AE70412 and timestamp 2026-11-01 09:19:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }

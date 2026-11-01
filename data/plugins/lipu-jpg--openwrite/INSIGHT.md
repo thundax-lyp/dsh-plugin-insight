@@ -1,18 +1,18 @@
-# OpenWrite
+# dsh-Openwrite
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[8c5297d](https://github.com/LiPu-jpg/Openwrite/tree/8c5297da5726f35895f86b6e457da40b7e544ea4)
+源码版本：[a8b9e78](https://github.com/LiPu-jpg/Openwrite/tree/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 884](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=884&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 6,332](https://img.shields.io/static/v1?label=npm+30d&message=6%2C332&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
+[![GitHub ★ 906](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=906&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 8,040](https://img.shields.io/static/v1?label=npm+30d&message=8%2C040&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
 <!-- END META -->
 
-> **功能**：在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。
+> **功能**：在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示贡献在于把本地小说领域后端、可信作品上下文和DSH对话/工作台组织为持续创作流程。桥层不把上游Core与DSH能力算为自身算法原创；相对手工文件管理有机制上的交接改善，写作质量与节时未知。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示套件整合 DSH、工作区及小说 Core；原生能力和领域算法分别归其提供者。
 
-> **主要限制**：[Q03](#research-q03) 补查Core确认已有项目锁、revision校验、恢复前checkpoint和drafted run续接，不能再把恢复能力写成缺失。关键质疑收窄为模型响应、正文替换和任务结算之间的跨步骤中断一致性；源码可见保护不等于全故障点无重复或无丢稿保证。
+> **主要限制**：[Q04](#research-q04) 已有锁和检查点仍不能证明模型、正文和任务结算跨步骤一致；[Q05](#research-q05) 历史验收不可套用当前包。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 小说作者为何使用领域工作台而非通用对话？](#detail-section-11)
-  - [Q02 · 请求怎样绑定作品与写操作权限？](#detail-section-12)
-  - [Q03 · 环境恢复等于写作任务安全恢复吗？](#detail-section-13)
-  - [Q04 · 怎样限定作者试用成本与退出？](#detail-section-14)
-  - [Q05 · 任务重试前核对稿件版本是否值得增加？](#detail-section-15)
+  - [Q01 · 长篇作者为什么需要 DSH 写作工作台，手工文件有何替代？](#detail-section-11)
+  - [Q02 · 工作区与授权如何到达 Core 具体操作？](#detail-section-12)
+  - [Q03 · 托管 Core 如何固定和校验，哪些失败仍不可恢复？](#detail-section-13)
+  - [Q04 · 章节任务跨模型、落盘与后续操作中断时有什么保护？](#detail-section-14)
+  - [Q05 · 模型、部署、隐私、工作量及回退条件是什么？](#detail-section-15)
+  - [Q06 · 能否让作者在恢复前辨明最后真实状态及安全下一步？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要持续管理设定、大纲和正文的长篇作者，可在作品副本上试做完整章节流程。
+> **用途**：长篇作者需要组织设定、章节和审稿，并在受控作品中持续写作。
 
-通用DSH对话加人工Markdown管理无需领域后端，但作品资料、审稿与导出由作者接线。OpenWrite Core是领域能力来源，桥层贡献按集成评估，未证明优于所有写作工具。
+作者可用普通编辑器、文件和模型对话手工管理章节。
 
 <a id="detail-section-3"></a>
 
@@ -51,68 +52,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 创作预设 | 建立小说领域会话入口 | 依赖匹配DSH；历史别名不代表新模型 |
-| 作品桥接 | 绑定工作区并调用Studio领域动作 | 权限与Core契约必需 |
-| 托管运行时 | 准备固定环境、检查健康及清理子进程 | 环境恢复不等同任务恢复 |
+|---|---|---|
+| 小说工具 | 调用 Core 的写作与资料功能 | 需工作区、策略和可用后端 |
+| 工作区隔离 | 解析浏览器选择的作品 | ID 或注册服务缺失时拒绝 |
+| 托管运行时 | 验证并启动 Core | 平台、下载、Python 条件未实测 |
+| 恢复路径 | 定稿历史恢复与任务续接 | 各步骤存在保护，跨步骤未验证 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 精确兼容DSH与Node>=22.19 | 是 | 会话、工具和工作台 | 按发布兼容表回退 |
-| managed运行时或外部Studio | 是 | 小说领域动作 | 停止写入，重试准备 |
-| 模型配置 | 生成/评审必需 | 生成文本及评审 | 只能检查环境与管理素材 |
-| 作品副本与备份 | 试用必需 | 隔离错误与回退 | 不在唯一原稿试写 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| 兼容 DSH、Node 与工作区注册 | 插件运行需要 | 注入工具和选择作品 | 可能无法加载或请求被拒 |
+| Core 5.8.22 或匹配外部服务 | 领域功能需要 | 工作流与稿件操作 | 后端不可用或版本不符 |
+| Python、uv、锁定依赖 | 托管环境需要 | 运行 Core | 下载或安装失败 |
+| 配置模型 | 生成和审稿需要 | 处理作品上下文 | 费用、外发及可用性依配置而异 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户备份并选择匹配发行 | 不自动升级宿主 |
-| 启动 | 工作台准备运行时并选作品副本 | 健康与版本匹配 |
-| 创作 | 配模型预算并试做一章 | 作者可核查和编辑 |
-| 恢复 | 核对任务与已有稿后显式重试 | 状态不清则停止回退 |
+|---|---|---|
+| 准备 | 作者备份并选择隔离作品 | 确认可信 workspace 和模型目标 |
+| 环境 | 准备托管环境或外部 Core | 摘要、健康与版本匹配才继续 |
+| 创作 | 作者生成单章并检查设定和原稿 | 质量由作者验收 |
+| 恢复 | 对照稿件、checkpoint 和任务状态 | 不一致或未知先暂停并备份 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 下载固定uv、Python与依赖，资源量未知 | 备份、匹配宿主和配置模型，耗时未知 | 需要联网与磁盘 |
-| 持续 | 聊天、生成和评审API费用未知 | 维护设定并校稿，时间未知 | 不同模型分别计费 |
-| 恢复与退出 | 重复生成可能再计费 | 核对任务、稿件与备份 | 环境恢复不会自动续跑写作 |
+|---|---|---|---|
+| 首次 | 运行时下载、存储、模型费用未知 | 配置宿主、模型和备份 | 跨平台安装未验收 |
+| 持续 | 模型调用和算力支出未知 | 审稿和一致性核对 | 文学收益未对照 |
+| 恢复 | 备份和可能的重试费用未知 | 核对版本、稿件和状态 | 故障点重复消费未测 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 作品接线 | 可信工作区和请求上下文 | 全部生成handler及中断点是否一致 |
-| 环境恢复 | 代际环境、稿件checkpoint与任务续接 | 真实平台故障恢复表现 |
-| 创作产出 | 领域操作与工作台集成 | 质量、连续性、节时和单位成本 |
+|---|---|---|
+| 工作区 | 解析 ID 并拒绝未知工作区 | 所有宿主权限配置 |
+| 运行时 | 清单摘要和健康版本检查 | 各平台真实安装 |
+| 恢复 | Core 有锁、revision 与检查点 | 全链跨故障点一致性 |
 
-> **思考**：[Q03](#research-q03) 补查Core确认已有项目锁、revision校验、恢复前checkpoint和drafted run续接，不能再把恢复能力写成缺失。关键质疑收窄为模型响应、正文替换和任务结算之间的跨步骤中断一致性；源码可见保护不等于全故障点无重复或无丢稿保证。
+> **思考**：[Q04](#research-q04) 已有锁和检查点仍不能证明模型、正文和任务结算跨步骤一致；[Q05](#research-q05) 历史验收不可套用当前包。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示贡献在于把本地小说领域后端、可信作品上下文和DSH对话/工作台组织为持续创作流程。桥层不把上游Core与DSH能力算为自身算法原创；相对手工文件管理有机制上的交接改善，写作质量与节时未知。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示套件整合 DSH、工作区及小说 Core；原生能力和领域算法分别归其提供者。
 
-[Q03](#research-q03)代际环境、锁、完成标记与健康版本校验值得复用，根preset摘要拒绝覆盖用户修改也有明确所有权。移植需兼容宿主生命周期、Core契约和多平台进程停止；不能只搬运下载器便承诺任务恢复。 Core额外核查见[Q03](#research-q03)：显式确认、版本冲突、恢复前checkpoint和任务重试携带已完成状态可复用；移植还需保证各生成handler遵循这些状态，不能只复用存储器。
+[Q02](#research-q02) 明确宿主身份与工具策略，[Q03](#research-q03) 对 artifacts 校验；[Q04](#research-q04) 区分 Core 既有恢复与未证实的跨步骤一致性。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 补查Core确认已有项目锁、revision校验、恢复前checkpoint和drafted run续接，不能再把恢复能力写成缺失。关键质疑收窄为模型响应、正文替换和任务结算之间的跨步骤中断一致性；源码可见保护不等于全故障点无重复或无丢稿保证。
+[Q04](#research-q04) 已有锁和检查点仍不能证明模型、正文和任务结算跨步骤一致；[Q05](#research-q05) 历史验收不可套用当前包。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。恢复后先核对已保存正文与任务状态；无法辨认写入范围、发生串作品或预算失控时停止并使用备份。只建议有试用，不把作者的旧版验收当成本轮宿主验证。
-
-采用建议：[Q04](#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。恢复后先核对已保存正文与任务状态；无法辨认写入范围、发生串作品或预算失控时停止并使用备份。只建议有试用，不把作者的旧版验收当成本轮宿主验证。
+[Q05](#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-已核查DSH桥、工作区接线、工具策略、托管运行时，并从固定Git wheel只读解包核对Core请求路由、稿件版本恢复与任务续接。未执行目标代码或故障实验；当前0.2.28为未发布候选。
+固定提交桥接及 Core wheel 代表性源码已查；未运行宿主、模型和故障恢复。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、plugin.mjs、packages/openwrite-bridge/src/index.ts、packages/openwrite-bridge/src/client.ts、packages/openwrite-bridge/src/tool-policy.ts、packages/openwrite-bridge/src/managed-runtime.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、packages/openwrite-bridge/src/preset-tools.ts、packages/openwrite-bridge/src/index.ts、packages/openwrite-bridge/src/domain.ts、packages/openwrite-bridge/src/tool-policy.ts、packages/openwrite-bridge/src/client.ts、release/runtime-manifest.json、packages/openwrite-bridge/src/managed-runtime.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交的DSH集成、桥层、托管运行时及固定Core wheel内请求上下文、正文恢复与任务续接源码；只读解包，未执行插件、模型、目标测试或故障实验。
-- 下一步：对同一作品副本固定模型和预算记录完整章节流程，检查稿件版本、失败重试及成本；恢复核对假设以重复/覆盖错误和人工时间为判断，不安排本轮执行。
+- 边界：固定提交 README、包清单、DSH 工具桥、workspace 校验、托管运行时代码以及 Core 5.8.22 wheel 的六个成员只读核查；未运行目标、宿主、模型或故障实验，不代表所有 UI、模型和后端路径已审计。
+- 下一步：固定宿主和模型对照隔离作品，故障注入生成、写入与状态结算之间的中断，并按 [Q06](#research-q06) 记录恢复决策。
 
 **分析版本**
 
 - **仓库**：[LiPu-jpg/Openwrite](https://github.com/LiPu-jpg/Openwrite)
-- **版本号**：0.2.28（[固定提交 8c5297d](https://github.com/LiPu-jpg/Openwrite/tree/8c5297da5726f35895f86b6e457da40b7e544ea4)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.29（[固定提交 a8b9e78](https://github.com/LiPu-jpg/Openwrite/tree/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +137,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 将未来假设收窄为权威续接状态的一致性预览，复用Core已有drafted run和completed清单，不把续接本身当新功能。先排除现有界面已等价展示，再比较作者在故障场景下的错误重试及额外确认；无改善则否定。
+[Q06](#research-q06) 假设读取式一致性预览可帮助作者选择恢复动作；尚未排除现有 UI 等价能力或验证。
 
-对同一作品副本固定模型和预算记录完整章节流程，检查稿件版本、失败重试及成本；恢复核对假设以重复/覆盖错误和人工时间为判断，不安排本轮执行。
+固定宿主和模型对照隔离作品，故障注入生成、写入与状态结算之间的中断，并按 [Q06](#research-q06) 记录恢复决策。
 
 <a id="detail-section-9"></a>
 
@@ -150,144 +148,112 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 104 | 10227 | — | — | 157440 |
-| .mjs | source | 32 | 4652 | 4189 | 266 | — |
-| .mjs | test | 12 | 3218 | 2538 | 563 | — |
-| .ts | source | 37 | 14806 | 13511 | 695 | — |
-| .ts | test | 15 | 1491 | 1308 | 93 | — |
-| .tsx | test | 22 | 6734 | 6045 | 148 | — |
-| .tsx | source | 27 | 13278 | 12198 | 481 | — |
+| .md | source | 108 | 10572 | — | — | 164594 |
+| .mjs | source | 34 | 5090 | 4546 | 352 | — |
+| .mjs | test | 13 | 3467 | 2769 | 570 | — |
+| .ts | source | 39 | 14937 | 13625 | 710 | — |
+| .ts | test | 16 | 1566 | 1378 | 93 | — |
+| .tsx | test | 23 | 6884 | 6184 | 148 | — |
+| .tsx | source | 28 | 13398 | 12309 | 485 | — |
 | .js | source | 5 | 170 | 150 | 5 | — |
 
 </details>
 
 **活跃度**
 
-[![近30天新建 53](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=53&color=737b86&logo=github)](https://github.com/LiPu-jpg/Openwrite/issues?q=is%3Aissue+created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z) [![近30天关闭 52](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=52&color=737b86&logo=github)](https://github.com/LiPu-jpg/Openwrite/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z)
-
-暂未获取：Issue 未关闭。
-
-统计日期：2026-10-27。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/LiPu-jpg/Openwrite/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：DSH中的本地小说工作台怎样组合领域后端、作品上下文和恢复机制，能否支持作者有限试用？
+**插件研究总目标**：核查 DSH 长篇工作台、Core 托管和章节恢复边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 小说作者为何使用领域工作台而非通用对话？
+### Q01 · 长篇作者为什么需要 DSH 写作工作台，手工文件有何替代？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-作者需要持续管理人物、设定、大纲、正文、审稿与导出；合格结果是自己复核过且可以继续编辑的本地作品，而不是一次模型回复。README把DSH定义为Agent与界面提供者，OpenWrite Core负责领域逻辑，bridge明确是HTTP薄桥。相对聊天加手工Markdown管理，项目把作品目录、专用操作与工作台放在同一流程，能减少跨工具搬运的结构性摩擦；没有作者任务对照，不能说小说质量或速度已经改善。当前源码包版本0.2.28而README明确未发布，因此不能把候选源码研究说成已发布0.2.27包的独立验收。
+README:9-10 和 package.json:1-4 将本套件定位为在 DSH 中规划、写作、审稿与管理长篇；用户也可以在编辑器中管理设定、章节和模型对话。套件的可归因增量是把预设、界面、工作区约束与小说领域后端组织到 DSH；会话来自宿主、领域逻辑来自 Core，不能把这些分别归给桥的算法原创。是否真正提高文学质量或节省核对时间仍无同任务对照。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:27-38](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/README.md#L27-L38)
+**依据 1 · 作者声明**：[README.md:9-10](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/README.md#L9-L10)
 
-明确产品分工以及候选/发布边界。
+作者描述长篇任务。
+
+```text
+<h1 align="center">dsh-Openwrite</h1>
+<p align="center">在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。</p>
+```
+
+**依据 2 · 源码核查**：[package.json:1-4](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/package.json#L1-L4)
+
+项目描述及版本。
+
+```text
+{
+  "name": "dsh-openwrite",
+  "version": "0.2.29",
+  "description": "OpenWrite 长篇小说领域后端接入 DeepSeek Harness：统一创作 Agent 预设 + 原生创作工作台",
+```
+
+**依据 3 · 源码核查**：[packages/openwrite-bridge/src/preset-tools.ts:9-20](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/preset-tools.ts#L9-L20)
+
+注册领域工具与政策。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-这是 [OpenWrite](https://github.com/LiPu-jpg/Openwrite/tree/native-core) 的 dsh 插件版本。
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 提供 Agent 与交互界面，OpenWrite Core 提供小说领域能力；人物、设定、大纲、正文和评审保存在本地作品目录。
+export const name = '@dsh-novel/openwrite-tools'
+export const inject = ['novelDomain', 'tools']
 
-## 开发中：0.2.28（未发布）
+export const Config = z.object({ presentation: z.union(['native', 'ptc', 'both']).default('native') })
 
-Core 5.8.19 候选补修已合并，22 项 CI 全部通过；修复 CRLF/emoji 选区坐标，以及中断升级恢复和损坏安装包缓存重试，见 [选区与升级补修](docs/SELECTION_UPGRADE_REPAIRS.md)。前轮修复及 #123 的 Windows 回执见 [回复补修记录](docs/ISSUE_123_FOLLOWUP.md)。剩余宿主正式发布与 Android/Termux 实机两项继续跟踪，本轮不发布；下面的 npm/GitHub 安装入口仍为已发布的 0.2.27。
-
-## 0.2.27
-
-工作台新增 OpenCode Go Console 认证，捆绑 Core 5.8.16，自动读取本机官方 CLI 的有效凭据和工作区信息；不必手工复制会过期的 Console 令牌。评审首次调用遵守模型输出预算，补充旧会话永久别名和跨平台回归。真实工作台连接测试、流式写作及 Go 安全评审已通过。见 [OpenCode Go 接入](docs/OPENCODE_GO.md) 和 [旧报告复核与待办](docs/CLOSED_ISSUE_FOLLOWUPS.md)。正式发行状态、各平台验收和安装包校验值见 [发布验收](docs/RELEASE_ACCEPTANCE.md)。
-
-[GitHub 0.2.27](https://github.com/LiPu-jpg/Openwrite/releases/tag/v0.2.27) 与 [npm 0.2.27](https://www.npmjs.com/package/dsh-openwrite/v/0.2.27) 均已发布，`@latest` 已更新到 0.2.27。两处公开下载包均与 CI 验收包逐字节一致，可使用下方安装命令获取本次修复。
+/** This row belongs in an Agent preset, never in the host bundle. */
+export function apply(ctx: Context, config: { presentation?: 'native' | 'ptc' | 'both' } = {}): void {
+  if (config.presentation && config.presentation !== 'native') ctx.effect(() => ctx.tools.presentAs(config.presentation!), 'openwrite: tool presentation')
+  ctx.effect(() => ctx.tools.guard(execution => novelPolicyDenial(ctx, execution)), 'openwrite: execution policy')
+  registerNovelTools(ctx, ctx.novelDomain.clientFactory(), {
+    timeoutMs: ctx.novelDomain.toolOptions.timeoutMs,
+    outputDir: ctx.novelDomain.toolOptions.outputDir ?? join(tmpdir(), 'openwrite-exports'),
 ```
 
 </details>
-
-**依据 2 · 作者声明**：[README.md:118-140](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/README.md#L118-L140)
-
-实际使用入口、领域操作及模型配置。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-## 开始使用
-
-1. 执行 `dsh web`，打开它给出的浏览器地址，点击侧栏 **OpenWrite**。等待环境就绪后，选择作品目录。
-2. 入口自动建立 **OpenWrite 创作** 会话；点击 **创作** 即可打开工作台，无需先发消息。对话模型在 dsh 中配置；小说生成与评审模型在「任务 → 模型」配置。
-3. 和 Agent 讨论题材、人物与大纲，确认后再开始写章。已有旧稿可通过「任务 → 导入与导出」接入。
-
-| 日常操作 | 入口 |
-|---|---|
-| 看进度、继续写作 | `/progress`、`/write-next` |
-| 审稿、修改选段 | `/review-chapter`、`/revise-span` |
-| 查伏笔、设定与写法记忆 | `/foreshadow`、`/canon`、`/learn` |
-| 导出成稿 | `/export-book` 或「任务 → 导入与导出」 |
-
-已有会话不会自动切换预设。详细操作与工作区规则见 [使用流程](docs/WORKFLOWS.md)。
-
-**界面语言**：面板已内置中文与英文词典，跟随 dsh 语言设置。切换方法：Settings → General → Language → English（选择后存为 `locale.preference`）。Agent 的 persona 和所有技能入口要求用作者的对话语言回复；运行环境与任务状态提供英文，Studio 报错附带英文说明和稳定错误码。已有作品内容不会自动翻译，正文按作者指定的语言生成。
-
-## 配置模型
-
-安装和环境健康检查不需要模型 API Key，也不会调用写作模型。与 Agent 对话、生成章节和审稿需要可用的模型配置；使用收费服务商时会产生 API 费用。
-
-- **对话模型**：在 dsh 宿主中配置，用于 OpenWrite 创作会话。
-- **小说生成、评审与测试模型**：在「任务 → 模型」添加服务商，按服务商提供的信息填写模型名、接口地址和 API Key。不要把密钥粘贴到对话、作品正文或 Git 仓库。
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/openwrite-bridge/src/index.ts:2-6](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/index.ts#L2-L6)
-
-桥层不拥有小说领域核心实现。
-
-```text
-/**
- * `@dsh-novel/openwrite-bridge`: a dsh plugin registering `novel_*` tools that
- * call the local OpenWrite Studio HTTP action surface. dsh owns agent
- * orchestration; OpenWrite owns the novel domain logic; this package is a thin
- * bridge over the HTTP contract only.
-```
 
 #### 缺口
 
-- 小说质量及作者持续使用反馈未独立核查
-  **影响**：不能以功能齐全推导写作收益
-  **进一步探讨**：用同一大纲和章节任务比较通用对话与工作台的修订量、交接和可继续编辑性
+- 无作者任务、普通编辑器与 DSH 工作流对照
+  **影响**：不能量化文学效果或人工节时
+  **进一步探讨**：固定长篇设定与章节，盲评作品和作者耗时。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 请求怎样绑定作品与写操作权限？
+### Q02 · 工作区与授权如何到达 Core 具体操作？
 
 **研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-bridge根据每次请求懒读取宿主workspaceRegistry，把可信工作区ID解析为路径；注册表不可用时返回null交给domain拒绝。HTTP入口先经过宿主connection的requestRejection，未有连接服务则503。client的WorkspaceContext以规范化绝对路径为身份，ID与epoch仅为诊断；因此多个工作区不应靠浏览器自报路径切换。工具策略将只读、生成、写入分类，未知操作按写处理，计划模式与只读沙箱阻止变更。由此可以支持“先讨论再修改”的接线设计，但不能把这段策略直接等同Core所有写入路径已穷尽审计。标准bundle使用managed运行时，external模式需要自行维护Studio及token。
+index.ts:52-60 从宿主 workspaceRegistry 按 ID 解析根目录；domain.ts:329-348 对缺失、无 registry 或未知工作区拒绝，355-359 可通过宿主授权回调检查浏览器请求。preset-tools.ts:9-20 注入 novelDomain 与 tools，安装执行 guard 后注册工具；tool-policy.ts:36-43 将未知和部分预览默认视作写入，按具体 effect 交由策略。client.ts:164-175 为请求派生工作区范围客户端，243-250 在调用时合并调用者取消、超时与连接 token。可见桥接与保护的设计，但未跑真实宿主，且授权服务、外部 Core 配置及每个工具的完整路径未穷尽。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/openwrite-bridge/src/index.ts:46-89](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/index.ts#L46-L89)
+**依据 1 · 源码核查**：[packages/openwrite-bridge/src/index.ts:52-60](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/index.ts#L52-L60)
 
-宿主注册表解析、身份拒绝、managed/external选择及控制路由。
-
-<details>
-<summary>查看原文（44行）</summary>
+从宿主工作区登记解析。
 
 ```text
 export function apply(ctx: Context, config: Config) {
@@ -299,85 +265,82 @@ export function apply(ctx: Context, config: Config) {
     const registry = ctx.get('workspaceRegistry')
     if (registry === undefined) return null
     return registry.get(workspaceId as WorkspaceId)?.path
-  }
-  // A supplied legacy baseUrl remains external; the standard bundle selects managed explicitly.
-  const runtime = config.mode === 'managed' ? new ManagedRuntime(
-    config.runtimeRoot ?? join(process.env['DSH_HOME']?.trim() || join(homedir(), '.dsh'), 'openwrite'),
-    config.artifacts ?? fileURLToPath(new URL('../../../release/', import.meta.url)),
-  ) : undefined
-  const authorizeRequest = (headers: Record<string, string | string[] | undefined>): number | undefined => {
-    const connection = ctx.get('connection')
-    return connection ? connection.requestRejection({ headers }) : 503
-  }
-  const domain = new NovelDomainService(ctx, { authorizeRequest, baseUrl: config.baseUrl, timeoutMs: config.timeoutMs, outputDir: config.outputDir, resolveWorkspace,
-    ...(runtime ? { connect: () => runtime.ensure() }
-      : config.authToken ? { connect: async () => ({ baseUrl: config.baseUrl, token: config.authToken }) } : {}),
-  })
-  ctx.effect(() => () => runtime?.dispose(), 'openwrite: owned runtime cleanup')
-  ctx.inject(['webServer'], webCtx => webCtx.effect(() => webCtx.webServer.register({
-    kind: 'exact', path: '/studio-panel/runtime', handler: async (req, res) => {
-      const respond = (code: number, data: unknown) => { res.writeHead(code, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(data)) }
-      const rejection = authorizeRequest(req.headers)
-      if (rejection !== undefined) { respond(rejection, { error: 'dsh browser authentication required', message: 'dsh browser authentication required', code: 'AUTHENTICATION_REQUIRED' }); return }
-      if (req.method === 'GET') { respond(200, runtime?.status() ?? { phase: 'ready', message: 'Using an external writing environment' }); return }
-      if (req.method !== 'POST' || req.headers['x-openwrite-studio'] !== '1') { respond(405, { error: 'Method not allowed', message: 'Method not allowed', code: 'METHOD_NOT_ALLOWED' }); return }
-      const chunks: Buffer[] = []
-      let size = 0
-      for await (const chunk of req) { size += chunk.length; if (size > 1024) { respond(413, { error: 'Request too large', message: 'Request too large', code: 'REQUEST_TOO_LARGE' }); return }; chunks.push(Buffer.from(chunk)) }
-      try {
-        const action = JSON.parse(Buffer.concat(chunks).toString()).action
-        if (action === 'cancel') await runtime?.cancel()
-        else if (action === 'prepare' || action === 'retry') void runtime?.ensure().catch(() => {})
-        else { respond(400, { error: 'Unknown action', message: 'Unknown action', code: 'INVALID_ACTION' }); return }
-        respond(202, runtime?.status() ?? { phase: 'ready' })
-      } catch { respond(400, { error: 'Invalid request', message: 'Invalid request', code: 'INVALID_INPUT' }) }
-    },
-  }), 'openwrite: runtime controls'))
-  ctx.inject(['webServer'], webCtx => domain.registerWebRoutes(webCtx))
 ```
 
-</details>
+**依据 2 · 源码核查**：[packages/openwrite-bridge/src/domain.ts:329-348](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/domain.ts#L329-L348)
 
-**依据 2 · 源码核查**：[packages/openwrite-bridge/src/client.ts:35-56](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/client.ts#L35-L56)
-
-工作区路径编码与请求级身份契约。
+浏览器工作区缺失或不认识时拒绝。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-/** HTTP header values are bytes, so Unicode paths need explicit wire encoding.
- * Plain ASCII retains the old contract, including literal percent characters. */
-export function workspaceRootHeaders(root: string, lowercase = false): Record<string, string> {
-  const name = lowercase ? 'x-openwrite-workspace-root' : 'X-OpenWrite-Workspace-Root'
-  return /[^\x20-\x7e]/.test(root)
-    ? { [name]: encodeURIComponent(root), [name + (lowercase ? '-encoding' : '-Encoding')]: 'uri' }
-    : { [name]: root }
-}
-
-/**
- * Request-scoped Workspace identity, per docs/WORKSPACE_CONTEXT_CONTRACT.md §3.
- * `workspaceRoot` is the canonical (realpath'd) absolute path — the only root
- * identity; the id/epoch fields are audit/diagnostic metadata.
- */
-export interface WorkspaceContext {
-  workspaceRoot: string
-  workspaceId?: string
-  sessionId?: string
-  contextEpoch?: number
-  toolCallId?: string
-  rootCallId?: string
-  toolName?: string
+  /**
+   * Resolve a browser-supplied workspace id through the host registry, failing
+   * closed per the contract: missing id → 400 WORKSPACE_CONTEXT_MISSING, no
+   * registry → 503 WORKSPACE_REGISTRY_UNAVAILABLE, unknown id → 400 WORKSPACE_UNKNOWN.
+   */
+  private resolveBrowserWorkspace(id: string | undefined): { root: string, id: string } | { rejection: WorkspaceRejection } {
+    if (id === undefined) {
+      return { rejection: { status: 400, code: 'WORKSPACE_CONTEXT_MISSING', message: 'missing workspace id (x-dsh-workspace-id header or ?workspace= param)' } }
+    }
+    if (this.resolveWorkspace === undefined) {
+      return { rejection: { status: 503, code: 'WORKSPACE_REGISTRY_UNAVAILABLE', message: 'host workspaceRegistry service is not available' } }
+    }
+    const root = this.resolveWorkspace(id)
+    if (root === null) {
+      return { rejection: { status: 503, code: 'WORKSPACE_REGISTRY_UNAVAILABLE', message: 'host workspaceRegistry service is not available' } }
+    }
+    if (root === undefined) {
+      return { rejection: { status: 400, code: 'WORKSPACE_UNKNOWN', message: `workspace id is not registered: ${id}` } }
+    }
+    return { root, id }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/openwrite-bridge/src/tool-policy.ts:36-59](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/tool-policy.ts#L36-L59)
+**依据 3 · 源码核查**：[packages/openwrite-bridge/src/domain.ts:355-359](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/domain.ts#L355-L359)
 
-未知操作保守分类，计划模式及沙箱写入拒绝。
+浏览器请求授权回调。
+
+```text
+  registerWebRoutes(ctx: Context): void {
+    const register: typeof ctx.webServer.register = route => ctx.webServer.register({ ...route, handler: (req, res) => {
+      const rejection = this.authorizeRequest?.(req.headers)
+      if (rejection !== undefined) { sendJson(res, rejection, { error: 'dsh browser authentication required' }); return }
+      return route.handler(req, res)
+```
+
+**依据 4 · 源码核查**：[packages/openwrite-bridge/src/preset-tools.ts:9-20](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/preset-tools.ts#L9-L20)
+
+工具服务注册与 guard。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（12行）</summary>
+
+```text
+export const name = '@dsh-novel/openwrite-tools'
+export const inject = ['novelDomain', 'tools']
+
+export const Config = z.object({ presentation: z.union(['native', 'ptc', 'both']).default('native') })
+
+/** This row belongs in an Agent preset, never in the host bundle. */
+export function apply(ctx: Context, config: { presentation?: 'native' | 'ptc' | 'both' } = {}): void {
+  if (config.presentation && config.presentation !== 'native') ctx.effect(() => ctx.tools.presentAs(config.presentation!), 'openwrite: tool presentation')
+  ctx.effect(() => ctx.tools.guard(execution => novelPolicyDenial(ctx, execution)), 'openwrite: execution policy')
+  registerNovelTools(ctx, ctx.novelDomain.clientFactory(), {
+    timeoutMs: ctx.novelDomain.toolOptions.timeoutMs,
+    outputDir: ctx.novelDomain.toolOptions.outputDir ?? join(tmpdir(), 'openwrite-exports'),
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/openwrite-bridge/src/tool-policy.ts:36-48](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/tool-policy.ts#L36-L48)
+
+操作效果分类与保守默认。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
 /** Unknown and preview operations fail closed: previews can persist confirmation records. */
@@ -393,36 +356,194 @@ export function novelEffect(name: string, args: unknown): NovelEffect {
 export function novelPolicyDenial(ctx: Context, execution: Readonly<ToolExecution>): string | undefined {
   if (!execution.name.startsWith('novel_')) return
   const effect = novelEffect(execution.name, execution.arguments)
-  if (effect === 'read') return
-  const agent = execution.agent
-  if (!agent) return 'OPENWRITE_POLICY_REQUIRED: writing requires an Agent session'
-  // Plan state can live in the preset realm; consult the executing Agent.
-  const plan = agent.ctx.get('planMode')
-  if (plan?.get(agent).active) return 'OPENWRITE_PLAN_MODE: plan mode cannot generate or persist changes'
-  const policy = ctx.get('sandboxPolicy')
-  if (!policy || policy.resolve({ session: agent.session }).mode === 'read-only') {
-    return 'OPENWRITE_READ_ONLY: the session does not permit writing'
-  }
-  return
 ```
 
 </details>
+
+**依据 6 · 源码核查**：[packages/openwrite-bridge/src/client.ts:164-175](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/client.ts#L164-L175)
+
+按工作区派生客户端。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+   * Derive a lightweight request-scoped client sharing baseUrl/timeout/onMutation.
+   * Every request it makes carries the §3 context headers, and mutation
+   * notifications report this context so invalidation stays per-root.
+   */
+  scoped(context: WorkspaceContext): StudioClient {
+    return new StudioClient({ connect: this.connect, baseUrl: this.baseUrl, timeoutMs: this.timeoutMs, onMutation: this.onMutation, context })
+  }
+
+  /** §3 context headers; empty for a legacy (unscoped) client. */
+  private contextHeaders(): Record<string, string> {
+    const context = this.context
+    if (context === undefined) return {}
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/openwrite-bridge/src/client.ts:243-250](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/client.ts#L243-L250)
+
+请求 timeout、取消及 token。
+
+```text
+  /** One fetch honoring both the caller's abort signal and the configured timeout. */
+  private async request(url: URL, init: RequestInit, signal: AbortSignal | undefined): Promise<Response> {
+    const signals = [AbortSignal.timeout(this.timeoutMs)]
+    if (signal !== undefined) signals.push(signal)
+    try {
+      const connection = await this.connect?.()
+      const target = connection ? new URL(url.pathname + url.search, connection.baseUrl) : url
+      const headers = connection?.token ? { ...(init.headers as Record<string, string>), Authorization: `Bearer ${connection.token}` } : init.headers
+```
+
+#### 缺口
+
+- 未运行宿主及所有工具策略
+  **影响**：无法证明用户权限、错误和模型链实际行为
+  **进一步探讨**：用隔离 workspace、无权限和未知 ID 做请求对照。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 环境恢复等于写作任务安全恢复吗？
+### Q03 · 托管 Core 如何固定和校验，哪些失败仍不可恢复？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-环境恢复和任务恢复需要分别判断，但Core并非没有续接保护。只读解包固定Git blob中的Core 5.8.19后，studio_http 299—311行显示请求头解析后选择每个root对应的app；manuscript_editing 181—227行的历史恢复必须显式确认，在项目写锁内校验当前revision，先保留恢复前checkpoint，再原子替换正文并把旧审稿标为过期。task_runner 186—220行只允许失败、取消、中断或部分失败任务重试，章节写作复用drafted run，连写保留_resume_runs、_already_completed和_already_used，避免无条件从头生成。task_store 376—410行拒绝把别的工作区running记录当本作品恢复。这些源码提供具体状态与写入保障，不能再以未解包为缺口。
+runtime-manifest.json:1-7、58-64 固定 Core 5.8.22、合约 1、Python 版本及 wheel/锁文件摘要；managed-runtime.ts:545-558 在准备时比对 wheel、requirements 与平台依赖 SHA-256，600-610 安装后检查运行接口，686-694 对健康响应版本和协议再校验。固定 Git 对象中的 Core wheel 经只读提取实际 SHA-256 与 manifest 匹配，成员原文及各自摘要保存在 CORE-WHEEL-INSPECTION.json；这证明所读包对应清单，不能证明下载渠道、目标环境安全、模型可用或生成写作无误。作者说明首次可能下载运行环境，网络与平台受限时仍可能失败。
 
-托管层仍负责代际环境、依赖校验和健康版本匹配，ready仅表示后端可服务，任务是否重试仍由作者决定。当前最关键未知是模型返回与稿件落盘、任务结果更新之间发生进程终止时，整条链是否在各中断点保持一致；恢复函数和重试参数不能独自证明所有生成handler都遵循幂等语义。本轮没有执行故障试验，不能承诺无丢稿或重复计费。
+#### 证据与依据
 
-[固定Core wheel](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/release/openwrite-5.8.19-py3-none-any.whl) 内 `tools/manuscript_editing.py` 第190—211行
+**依据 1 · 源码核查**：[release/runtime-manifest.json:1-7](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/release/runtime-manifest.json#L1-L7)
+
+固定 Core 与协议版本。
+
+```text
+{
+  "schema": 1,
+  "dsh": "0.1.2-rc.1",
+  "uv_version": "0.11.19",
+  "python_version": "3.12.13",
+  "core_version": "5.8.22",
+  "contract_version": 1,
+```
+
+**依据 2 · 源码核查**：[release/runtime-manifest.json:58-64](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/release/runtime-manifest.json#L58-L64)
+
+wheel 和依赖锁摘要。
+
+```text
+  "wheel": {
+    "file": "openwrite-5.8.22-py3-none-any.whl",
+    "sha256": "13d48e14f95d61de3e4e503121326cb3be7d00b9eff874a2b0931a41aa2f5bc0"
+  },
+  "requirements": {
+    "file": "requirements.lock",
+    "sha256": "322d28b184dc3bf00a3a05986ac7d60a9cc1bcf61d3ffea0ace6e0906f474973"
+```
+
+**依据 3 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:545-558](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/managed-runtime.ts#L545-L558)
+
+准备时验证 artifacts 摘要。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+    const manifest = JSON.parse(await readFile(join(this.artifacts, 'runtime-manifest.json'), 'utf8')) as RuntimeManifest
+    const platform = manifest.platforms[`${process.platform}-${process.arch}`]
+    if (this.pythonPath && !isAbsolute(this.pythonPath)) throw new Error('pythonPath / OPENWRITE_PYTHON must be an absolute path to a Python executable, without command-line arguments')
+    if (this.pythonModulePaths.length && !this.pythonPath) throw new Error('pythonModulePaths requires pythonPath or OPENWRITE_PYTHON')
+    if (this.pythonModulePaths.some(path => !isAbsolute(path))) throw new Error('pythonModulePaths must contain absolute dependency directory paths')
+    if (!this.pythonPath && !platform) throw new UnsupportedRuntimePlatformError(`${process.platform}/${process.arch}`)
+    if (!manifest.wheel || !manifest.requirements) throw new Error('The package is missing Core or dependency checksums')
+    const wheel = join(this.artifacts, manifest.wheel.file)
+    const requirements = join(this.artifacts, manifest.requirements.file)
+    if (await sha256(wheel) !== manifest.wheel.sha256 || await sha256(requirements) !== manifest.requirements.sha256) {
+      throw new Error('Package verification failed; reinstall OpenWrite')
+    }
+    for (const artifact of manifest.dependency_wheels ?? []) {
+      if (await sha256(join(this.artifacts, artifact.file)) !== artifact.sha256) throw new Error('Platform dependency verification failed; reinstall OpenWrite')
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:600-610](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/managed-runtime.ts#L600-L610)
+
+依赖安装及 API 检查。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+        if (await readFile(join(destination, '.complete'), 'utf8').catch(() => '') !== generation) {
+          const uv = await this.extract(platform.uv, signal)
+          const basePython = await this.extract(platform.python, signal)
+          this.update('installing', 'Installing isolated dependencies; first use may take several minutes')
+          await rm(destination, { recursive: true, force: true })
+          try {
+            await this.command(uv, ['venv', '--python', basePython, destination], signal)
+            await this.command(uv, ['pip', 'sync', '--python', python, '--require-hashes', '--only-binary', ':all:',
+              ...(manifest.dependency_wheels?.length ? ['--find-links', join(this.artifacts, 'wheels')] : []), requirements], signal)
+            await this.command(uv, ['pip', 'install', '--python', python, '--no-deps', wheel], signal)
+            await this.command(python, ['-I', '-c', 'from tools.studio_http import health_payload; from tools.studio import create_server; assert health_payload()["contract_version"] == 1'], signal)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:686-694](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/managed-runtime.ts#L686-L694)
+
+健康结果检查版本和协议。
+
+```text
+      const connection = { baseUrl: `http://127.0.0.1:${port}`, token }
+      const health = await fetch(connection.baseUrl + '/api/health', {
+        headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.any([signal, AbortSignal.timeout(10_000)]),
+      })
+      const result = await health.json() as Record<string, unknown>
+      if (!health.ok || result.core_version !== manifest.core_version || result.contract_version !== manifest.contract_version) {
+        throw new Error('Writing backend version or API mismatch; reinstall OpenWrite')
+      }
+      this.connection = connection
+```
+
+**依据 6 · 作者声明**：[README.md:85-88](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/README.md#L85-L88)
+
+作者描述运行时下载与成本。
+
+````text
+不要调用写作模型做安装检查，不要自动升级宿主或放宽 pnpm 构建授权。
+```
+
+首次使用会下载固定版本的 uv、Python 3.12 和锁定依赖，保存在当前 dsh 的专属目录。无需预装 Python，也无需克隆两个分支。目标平台为 macOS arm64/x64、Linux x64、Windows x64；各平台通过情况以发布验收报告为准。模型费用另计。
+````
+
+#### 缺口
+
+- 未运行下载、安装、外部模式或模型
+  **影响**：不能断言跨平台部署成功或全流程安全
+  **进一步探讨**：固定平台用隔离目录验证摘要不匹配、下载中断和健康失败。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 章节任务跨模型、落盘与后续操作中断时有什么保护？
+
+**研究主题**：功能与机制、缺陷与关键质疑
+
+#### 完整回答
+
+固定 Core 5.8.22 wheel 内 tools/manuscript_editing.py:181-211 的恢复路径要求显式确认、项目写锁和当前 revision 匹配，先保存恢复前 checkpoint，再原子替换正文；tools/task_runner.py:190-220 的任务重试保留已有 drafted run 和 completed_chapters；tools/chapter_run_v2.py:181-191 拒绝缺失或过期 revision。这些直接检查同一 wheel 内成员，完整成员与哈希由附加原件 CORE-WHEEL-INSPECTION.json 保全。保护的存在不证明模型生成、正文替换、后续状态结算跨步骤原子，也不证明所有故障点不会重复模型调用或丢失其他状态；必须按当前真实状态回读，不能简单重试。
+
+固定 wheel 的关键原文如下，成员行号对应自包含补充原件中的源码：
+
+`tools/manuscript_editing.py:190-211`：
 
 ```python
         if not confirm:
@@ -449,27 +570,9 @@ export function novelPolicyDenial(ctx: Context, execution: Readonly<ToolExecutio
                 self._atomic_text(path, content)
 ```
 
-[固定Core wheel](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/release/openwrite-5.8.19-py3-none-any.whl) 内 `tools/task_runner.py` 第186—220行
+`tools/task_runner.py:204-218`：
 
 ```python
-    def retry(self, task_id: str) -> dict[str, Any]:
-        previous = self.store.load(task_id)
-        if previous is None:
-            raise TaskStoreError("Task not found")
-        if not previous.get("retryable"):
-            raise TaskStoreError("Task is not retryable")
-        result = self.store.materialize_result(previous)
-        partial_failure = previous.get("status") == "completed" and bool(
-            result.get("failed_chapters")
-        )
-        if (
-            previous.get("status") not in {"failed", "cancelled", "interrupted"}
-            and not partial_failure
-        ):
-            raise TaskStoreError("Only failed, cancelled or interrupted tasks can be retried")
-        payload = self.store.materialize_input(previous)
-        result = self.store.materialize_result(previous)
-        from tools.chapter_run_v2 import ChapterRunV2Store
 
         runs = ChapterRunV2Store(self.project_root, self.novel_id)
         if previous.get("type") == "chapter_write":
@@ -485,364 +588,226 @@ export function novelPolicyDenial(ctx: Context, execution: Readonly<ToolExecutio
             }
         if result.get("completed_chapters"):
             payload["_already_completed"] = list(result["completed_chapters"])
-        if result.get("usage"):
-            payload["_already_used"] = dict(result["usage"])
 ```
 
-[固定Core wheel](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/release/openwrite-5.8.19-py3-none-any.whl) 内 `tools/task_store.py` 第376—406行
+`tools/chapter_run_v2.py:181-191`：
 
 ```python
-    def record_root_mismatch(self, task: dict[str, Any]) -> bool:
-        """Whether a persisted record was pinned to a different workspace root."""
-        recorded = str(task.get("workspace_root") or "").strip()
-        if not recorded:
-            return False
-        return os.path.realpath(recorded) != os.path.realpath(self.project_root)
-
-    def recover_interrupted(self) -> list[dict[str, Any]]:
-        recovered: list[dict[str, Any]] = []
-        for task in self.list(statuses={"running"}, limit=500):
-            if self.record_root_mismatch(task):
-                # A record pinned to another root must never be recovered here.
-                recovered.append(
-                    self.transition(
-                        str(task["task_id"]),
-                        status="failed",
-                        updates={
-                            "error": {
-                                "code": "WORKSPACE_CONTEXT_MISMATCH",
-                                "message": "任务工作区与当前工作区不一致",
-                                "recoverable": False,
-                            }
-                        },
-                        event="task_failed",
-                    )
-                )
-                continue
-            recovered.append(
-                self.transition(
-                    str(task["task_id"]),
-                    status="interrupted",
+    def require_revision(self, manifest: ChapterRunV2Manifest, expected_revision: str) -> None:
+        expected = str(expected_revision or "").strip()
+        if not expected:
+            raise ChapterRunV2Error(
+                "修改 Chapter Run V2 前必须提供 revision",
+                code="REVISION_REQUIRED",
+            )
+        if expected != self.revision(manifest):
+            raise ChapterRunV2Error(
+                "Chapter Run V2 已变化，请重新读取后再操作",
+                code="STALE_REVISION",
 ```
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:513-576](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/managed-runtime.ts#L513-L576)
+**依据 1 · 源码核查**：[release/runtime-manifest.json:1-7](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/release/runtime-manifest.json#L1-L7)
 
-锁、代际环境、校验与完成标记构成可恢复安装。
-
-<details>
-<summary>查看原文（64行）</summary>
+固定所检查 Core 版本。
 
 ```text
-  private async lock(signal: AbortSignal): Promise<() => Promise<void>> {
-    for (;;) {
-      signal.throwIfAborted()
-      try {
-        return await acquireLock(this.root, {
-          realpath: false, stale: 30_000, update: 5_000, retries: 0,
-          onCompromised: () => this.controller?.abort(),
-        })
-      } catch (error) {
-        if ((error as NodeJS.ErrnoException).code !== 'ELOCKED') throw error
-        this.update('waiting', 'Another OpenWrite instance is preparing the environment; waiting')
-        await this.wait(250, undefined, { signal })
-      }
-    }
-  }
+{
+  "schema": 1,
+  "dsh": "0.1.2-rc.1",
+  "uv_version": "0.11.19",
+  "python_version": "3.12.13",
+  "core_version": "5.8.22",
+  "contract_version": 1,
+```
 
-  private async prepare(signal: AbortSignal): Promise<BackendConnection> {
+**依据 2 · 源码核查**：[release/runtime-manifest.json:58-60](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/release/runtime-manifest.json#L58-L60)
+
+固定 wheel 名称及摘要。
+
+```text
+  "wheel": {
+    "file": "openwrite-5.8.22-py3-none-any.whl",
+    "sha256": "13d48e14f95d61de3e4e503121326cb3be7d00b9eff874a2b0931a41aa2f5bc0"
+```
+
+**依据 3 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:545-555](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/managed-runtime.ts#L545-L555)
+
+托管路径验证 wheel 与锁文件摘要。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
     const manifest = JSON.parse(await readFile(join(this.artifacts, 'runtime-manifest.json'), 'utf8')) as RuntimeManifest
     const platform = manifest.platforms[`${process.platform}-${process.arch}`]
-    if (!platform) throw new UnsupportedRuntimePlatformError(`${process.platform}/${process.arch}`)
+    if (this.pythonPath && !isAbsolute(this.pythonPath)) throw new Error('pythonPath / OPENWRITE_PYTHON must be an absolute path to a Python executable, without command-line arguments')
+    if (this.pythonModulePaths.length && !this.pythonPath) throw new Error('pythonModulePaths requires pythonPath or OPENWRITE_PYTHON')
+    if (this.pythonModulePaths.some(path => !isAbsolute(path))) throw new Error('pythonModulePaths must contain absolute dependency directory paths')
+    if (!this.pythonPath && !platform) throw new UnsupportedRuntimePlatformError(`${process.platform}/${process.arch}`)
     if (!manifest.wheel || !manifest.requirements) throw new Error('The package is missing Core or dependency checksums')
     const wheel = join(this.artifacts, manifest.wheel.file)
     const requirements = join(this.artifacts, manifest.requirements.file)
     if (await sha256(wheel) !== manifest.wheel.sha256 || await sha256(requirements) !== manifest.requirements.sha256) {
       throw new Error('Package verification failed; reinstall OpenWrite')
-    }
-    for (const artifact of manifest.dependency_wheels ?? []) {
-      if (await sha256(join(this.artifacts, artifact.file)) !== artifact.sha256) throw new Error('Platform dependency verification failed; reinstall OpenWrite')
-    }
-    await mkdir(this.root, { recursive: true, mode: 0o700 })
-    const unlock = await this.lock(signal)
-    let python: string
-    try {
-      const generation = createHash('sha256').update(JSON.stringify(manifest)).digest('hex').slice(0, 24)
-      const destination = join(this.root, 'environments', generation)
-      python = join(destination, process.platform === 'win32' ? 'Scripts/python.exe' : 'bin/python')
-      if (await readFile(join(destination, '.complete'), 'utf8').catch(() => '') !== generation) {
-        const uv = await this.extract(platform.uv, signal)
-        const basePython = await this.extract(platform.python, signal)
-        this.update('installing', 'Installing isolated dependencies; first use may take several minutes')
-        await rm(destination, { recursive: true, force: true })
-        try {
-          await this.command(uv, ['venv', '--python', basePython, destination], signal)
-          await this.command(uv, ['pip', 'sync', '--python', python, '--require-hashes', '--only-binary', ':all:',
-            ...(manifest.dependency_wheels?.length ? ['--find-links', join(this.artifacts, 'wheels')] : []), requirements], signal)
-          await this.command(uv, ['pip', 'install', '--python', python, '--no-deps', wheel], signal)
-          await this.command(python, ['-I', '-c', 'from tools.studio_http import health_payload; from tools.studio import create_server; assert health_payload()["contract_version"] == 1'], signal)
-          await writeFile(join(destination, '.complete'), generation)
-        } catch (error) { await rm(destination, { recursive: true, force: true }); throw error }
-      }
-      signal.throwIfAborted()
-      this.update(this.recovered ? 'recovering' : 'starting', this.recovered ? 'Recovering the writing environment' : 'Starting the writing environment')
-      const connection = await this.start(python, manifest, signal)
-      const pending = join(this.root, 'active.' + randomUUID() + '.json')
-      try {
-        await writeFile(pending, JSON.stringify({ generation, coreVersion: manifest.core_version }))
-        await rename(pending, join(this.root, 'active.json'))
-      } catch (error) {
-        this.connection = undefined
-        if (this.child) await stopOwnedProcess(this.child)
-        throw error
-      } finally { await rm(pending, { force: true }) }
-      return connection
-    } finally { await unlock() }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:632-644](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/managed-runtime.ts#L632-L644)
-
-版本健康校验后明确在途任务仍需显式重试。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-      const health = await fetch(connection.baseUrl + '/api/health', {
-        headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.any([signal, AbortSignal.timeout(10_000)]),
-      })
-      const result = await health.json() as Record<string, unknown>
-      if (!health.ok || result.core_version !== manifest.core_version || result.contract_version !== manifest.contract_version) {
-        throw new Error('Writing backend version or API mismatch; reinstall OpenWrite')
-      }
-      this.connection = connection
-      started = true
-      if (!this.recovered) this.restartAttempts = 0
-      this.update('ready', this.recovered
-        ? 'The writing environment recovered; in-progress writing and review tasks require an explicit retry'
-        : 'The writing environment is ready')
-```
-
-</details>
-
-**依据 3 · 源码核查**：[plugin.mjs:42-75](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/plugin.mjs#L42-L75)
-
-摘要标记保护自定义内容，清理只回收已知租约。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-  const expected = await digestTree(source)
-  const marker = join(destination, '.openwrite-managed.json')
-  await withLock(async () => {
-    const existing = await readFile(marker, 'utf8').then(JSON.parse).catch(() => null)
-    if (existing && (existing.source !== expected || existing.tree !== await digestTree(destination))) {
-      throw new Error(`OpenWrite preset ${id} was modified; copy it to a custom preset before reinstalling this version`)
-    }
-    if (!existing) {
-      if (await lstat(destination).then(() => true).catch(error => { if (error.code === 'ENOENT') return false; throw error })) {
-        throw new Error(`OpenWrite preset ${id} already exists without an ownership marker; preserve it under a custom preset name first`)
-      }
-      const staging = join(managedRoot, 'preset-' + randomUUID())
-      await mkdir(staging, { recursive: true })
-      try {
-        await cp(source, staging, { recursive: true })
-        await writeFile(join(staging, '.openwrite-managed.json'), JSON.stringify({ source: expected, tree: expected, version }))
-        await rename(staging, destination)
-      } finally { await rm(staging, { recursive: true, force: true }) }
-    }
-    await writeFile(lease, JSON.stringify({ pid: process.pid }), { mode: 0o600 })
-  })
-  // 0.1 resolves session identities through these directories. They must outlive
-  // a host and a plugin upgrade; removing them strands historical sessions.
-  ctx.effect(() => async () => withLock(async () => {
-    await rm(lease, { force: true })
-    for (const entry of await readdir(leases)) {
-      const file = join(leases, entry)
-      try {
-        const record = JSON.parse(await readFile(file, 'utf8'))
-        try { process.kill(record.pid, 0) }
-        catch (error) { if (error.code === 'ESRCH') await rm(file, { force: true }) }
-      } catch { /* unknown files never grant deletion authority */ }
-    }
-  }))
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.md:30-32](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/README.md#L30-L32)
-
-作者明确保留候选状态和平台未验收范围。
-
-```text
-## 开发中：0.2.28（未发布）
-
-Core 5.8.19 候选补修已合并，22 项 CI 全部通过；修复 CRLF/emoji 选区坐标，以及中断升级恢复和损坏安装包缓存重试，见 [选区与升级补修](docs/SELECTION_UPGRADE_REPAIRS.md)。前轮修复及 #123 的 Windows 回执见 [回复补修记录](docs/ISSUE_123_FOLLOWUP.md)。剩余宿主正式发布与 Android/Termux 实机两项继续跟踪，本轮不发布；下面的 npm/GitHub 安装入口仍为已发布的 0.2.27。
-```
-
-#### 缺口
-
-- 模型调用、稿件落盘与任务结果之间所有中断点的一致性未执行核验
-  **影响**：现有checkpoint与重试续接源码不能升级为全链无丢稿/无重复保证
-  **进一步探讨**：针对模型返回前后、稿件替换前后、任务完成记录前后分别终止进程，核对稿件版本、run_id、completed清单及重复计费
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 怎样限定作者试用成本与退出？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-适合愿意备份作品、能配置模型并复核生成文本的长篇作者，先在作品副本上完成一章规划、生成、修订和导出。初次运行需要下载uv、Python和锁定依赖，占用网络磁盘及准备时间；聊天、生成与评审模型分别配置，计费不能只算一次写章。持续成本包括维护设定、校对连续性、多个评审/生成调用及版本升级。失败后先核对既有稿件和任务状态，再决定重试；退出应保留作品、预设和凭据，按文档回退匹配宿主版本。若出现作品串用、旧稿被覆盖、恢复状态无法辨认或成本无法预测，停止在原作上写入并改回备份编辑。源码说明的可恢复环境为有限试用提供基础，但没有本轮实际安装证据，不给值得长期安装结论。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:65-80](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/README.md#L65-L80)
-
-版本固定、升级停止宿主、初次运行环境下载及备份迁移要求。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-````text
-`@latest` 在执行安装或升级命令时选择 npm 最新发布版本，不会自动替换正在运行的服务。无需在安装时编译源码。升级前停止 dsh，并核对目标版本的宿主兼容说明。需要复现或回退时，使用 `dsh-openwrite@0.2.8` 等精确版本；对应版本的 [npm 包](https://www.npmjs.com/package/dsh-openwrite)与 [Release 预编译包](https://github.com/LiPu-jpg/Openwrite/releases) 为同一份已验收产物。
-
-也可把这段话交给有终端权限的 Agent：
-
-```text
-请按 https://github.com/LiPu-jpg/Openwrite 的 README 和对应 Release 安装 OpenWrite。
-先核对 Release 验收结果和精确 dsh 版本，再用 dsh plugin --profile web add -w dsh-openwrite@latest 安装。
-如宿主不兼容，安装最后一个匹配且已验收的精确版本，不自动升级宿主。
-已有本地安装先备份并迁移，保留作品、自定义预设、凭据和其他插件。
-启动 dsh web，指导我点击 OpenWrite、准备环境并选择自己的作品。
-不要调用写作模型做安装检查，不要自动升级宿主或放宽 pnpm 构建授权。
-```
-
-首次使用会下载固定版本的 uv、Python 3.12 和锁定依赖，保存在当前 dsh 的专属目录。无需预装 Python，也无需克隆两个分支。目标平台为 macOS arm64/x64、Linux x64、Windows x64；各平台通过情况以发布验收报告为准。模型费用另计。
-
-具体的源码安装、升级、迁移和卸载见 [安装指南](docs/INSTALL.md)。
-````
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:120-140](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/README.md#L120-L140)
-
-生成与评审模型分开配置并计费。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-1. 执行 `dsh web`，打开它给出的浏览器地址，点击侧栏 **OpenWrite**。等待环境就绪后，选择作品目录。
-2. 入口自动建立 **OpenWrite 创作** 会话；点击 **创作** 即可打开工作台，无需先发消息。对话模型在 dsh 中配置；小说生成与评审模型在「任务 → 模型」配置。
-3. 和 Agent 讨论题材、人物与大纲，确认后再开始写章。已有旧稿可通过「任务 → 导入与导出」接入。
-
-| 日常操作 | 入口 |
-|---|---|
-| 看进度、继续写作 | `/progress`、`/write-next` |
-| 审稿、修改选段 | `/review-chapter`、`/revise-span` |
-| 查伏笔、设定与写法记忆 | `/foreshadow`、`/canon`、`/learn` |
-| 导出成稿 | `/export-book` 或「任务 → 导入与导出」 |
-
-已有会话不会自动切换预设。详细操作与工作区规则见 [使用流程](docs/WORKFLOWS.md)。
-
-**界面语言**：面板已内置中文与英文词典，跟随 dsh 语言设置。切换方法：Settings → General → Language → English（选择后存为 `locale.preference`）。Agent 的 persona 和所有技能入口要求用作者的对话语言回复；运行环境与任务状态提供英文，Studio 报错附带英文说明和稳定错误码。已有作品内容不会自动翻译，正文按作者指定的语言生成。
-
-## 配置模型
-
-安装和环境健康检查不需要模型 API Key，也不会调用写作模型。与 Agent 对话、生成章节和审稿需要可用的模型配置；使用收费服务商时会产生 API 费用。
-
-- **对话模型**：在 dsh 宿主中配置，用于 OpenWrite 创作会话。
-- **小说生成、评审与测试模型**：在「任务 → 模型」添加服务商，按服务商提供的信息填写模型名、接口地址和 API Key。不要把密钥粘贴到对话、作品正文或 Git 仓库。
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:632-644](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/managed-runtime.ts#L632-L644)
-
-环境恢复不自动重试写作任务。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-      const health = await fetch(connection.baseUrl + '/api/health', {
-        headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.any([signal, AbortSignal.timeout(10_000)]),
-      })
-      const result = await health.json() as Record<string, unknown>
-      if (!health.ok || result.core_version !== manifest.core_version || result.contract_version !== manifest.contract_version) {
-        throw new Error('Writing backend version or API mismatch; reinstall OpenWrite')
-      }
-      this.connection = connection
-      started = true
-      if (!this.recovered) this.restartAttempts = 0
-      this.update('ready', this.recovered
-        ? 'The writing environment recovered; in-progress writing and review tasks require an explicit retry'
-        : 'The writing environment is ready')
 ```
 
 </details>
 
 #### 缺口
 
-- 单位章节账单、人工修订量与迁移耗时未知
-  **影响**：无法给出节时或单位合格稿件成本
-  **进一步探讨**：固定作品与模型预算记录完整生成评审账单、失败重试及作者校对时间
+- 未做模型响应、原子替换和任务结算之间的崩溃注入
+  **影响**：无法证明端到端一致性或不重复消费
+  **进一步探讨**：在隔离作品逐故障点注入并核对正文、任务和实际模型调用。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 任务重试前核对稿件版本是否值得增加？
+### Q05 · 模型、部署、隐私、工作量及回退条件是什么？
 
-**研究主题**：新假设与验证
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-补查Core后，简单增加“续接已有草稿”不再是新的方向：task_runner已有drafted run复用与已完成章节清单。更窄的未验证假设是将这些权威状态连同当前稿件revision组成重试前一致性预览，明确区分“可接续草稿”“已完成不重做”“需人工确认冲突”，且不靠界面日志猜测。价值只可能在作者理解和决策层，不能重复宣称后端缺少恢复能力。先核对Studio现有恢复界面是否已表达这些状态；若已有等价交互，本次不另造创新。若仍有读者理解缺口，在作品副本故障点上盲评原界面与预览，记录重复请求、错误覆盖、恢复时间和额外确认次数；没有改善就否定。
-
-[固定Core wheel](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/release/openwrite-5.8.19-py3-none-any.whl) 内 `tools/task_runner.py` 第201—220行
-
-```python
-        payload = self.store.materialize_input(previous)
-        result = self.store.materialize_result(previous)
-        from tools.chapter_run_v2 import ChapterRunV2Store
-
-        runs = ChapterRunV2Store(self.project_root, self.novel_id)
-        if previous.get("type") == "chapter_write":
-            latest = runs.latest_for_chapter(
-                str(previous.get("chapter_id") or payload.get("chapter_id") or "")
-            )
-            if latest and latest.status == "drafted":
-                payload["run_id_v2"] = latest.run_id
-        if previous.get("type") == "continuous_write":
-            payload["_resume_runs"] = {
-                run.chapter_id: run.run_id
-                for run in reversed(runs.list(statuses={"drafted"}, limit=200))
-            }
-        if result.get("completed_chapters"):
-            payload["_already_completed"] = list(result["completed_chapters"])
-        if result.get("usage"):
-            payload["_already_used"] = dict(result["usage"])
-```
+package.json:1-4、34-35、55-70 声明 suite 0.2.29、Node >=22.19 和精确 DSH 版本列表；这只是清单，README:57-61 的验收声明针对 0.2.28，不能转写为当前提交 0.2.29 通过。README:85-88 描述首次获取固定 Python、uv 和依赖以及模型另计；index.ts:40-49 允许 managed/external、外部地址、密钥和 600 秒工具预算。模型可向所配服务发送作品上下文，确切出站和保留政策取决于配置，未审计所有路径。适合愿意维护备份的作者先用隔离作品和非敏感数据试单章，核对正文、任务状态与成本；安装、模型输出或恢复不明时暂停并以备份和手工编辑回退。现金、人工校订和恢复时间未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:632-644](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/managed-runtime.ts#L632-L644)
+**依据 1 · 源码核查**：[package.json:1-4](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/package.json#L1-L4)
 
-ready提示明确仍要显式重试，是核对设计的推导起点。
-
-<details>
-<summary>查看原文（13行）</summary>
+固定包版本。
 
 ```text
+{
+  "name": "dsh-openwrite",
+  "version": "0.2.29",
+  "description": "OpenWrite 长篇小说领域后端接入 DeepSeek Harness：统一创作 Agent 预设 + 原生创作工作台",
+```
+
+**依据 2 · 源码核查**：[package.json:34-35](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/package.json#L34-L35)
+
+Node 版本。
+
+```text
+  "engines": {
+    "node": ">=22.19.0"
+```
+
+**依据 3 · 源码核查**：[package.json:55-70](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/package.json#L55-L70)
+
+宿主兼容声明。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    "displayName": "小说创作（OpenWrite）",
+    "pluginType": "suite",
+    "compatibility": {
+      "dsh": "0.1.2-rc.1 || 0.1.5-alpha.1 || 0.2.0-rc.2 || 0.2.1-rc.2 || 0.2.1-rc.3",
+      "profiles": [
+        "web",
+        "desktop"
+      ],
+      "dshReleases": {
+        "0.1.2-rc.1": "compatible",
+        "0.1.3-alpha.1": "unknown",
+        "0.1.3-alpha.2": "unknown",
+        "0.1.5-alpha.1": "compatible",
+        "0.2.0-rc.2": "compatible",
+        "0.2.1-rc.2": "compatible",
+        "0.2.1-rc.3": "compatible"
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:57-61](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/README.md#L57-L61)
+
+历史发行版本验收声明。
+
+```text
+## 快速安装
+
+**0.2.28 标准插件包**兼容精确 dsh 版本 **0.1.2-rc.1 / 0.1.5-alpha.1 / 0.2.0-rc.2 / 0.2.1-rc.2 / 0.2.1-rc.3**。五个版本均已完成 Web 工作台渲染与 DoG 数据读取验证；三系统原生安装和 Electron 回归通过，报告者也补齐了 Windows 历史会话恢复实测。可下载版本、各平台验收结果和 SHA-256 以 [GitHub Release](https://github.com/LiPu-jpg/Openwrite/releases/latest) 附件为准；验收方法见 [发布验收](docs/RELEASE_ACCEPTANCE.md)。商城所需的精确预览版兼容性、验证范围和安装限制见 [DSH STORE 接入](docs/DSH_STORE.md)。
+
+正式发行状态以 [npm 版本列表](https://www.npmjs.com/package/dsh-openwrite?activeTab=versions) 和 [GitHub Release](https://github.com/LiPu-jpg/Openwrite/releases/latest) 为准。以下是 0.2.28 精确版本的安装命令；发布时两处使用同一份验收产物：
+```
+
+**依据 5 · 作者声明**：[README.md:85-88](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/README.md#L85-L88)
+
+运行时与费用声明。
+
+````text
+不要调用写作模型做安装检查，不要自动升级宿主或放宽 pnpm 构建授权。
+```
+
+首次使用会下载固定版本的 uv、Python 3.12 和锁定依赖，保存在当前 dsh 的专属目录。无需预装 Python，也无需克隆两个分支。目标平台为 macOS arm64/x64、Linux x64、Windows x64；各平台通过情况以发布验收报告为准。模型费用另计。
+````
+
+**依据 6 · 源码核查**：[packages/openwrite-bridge/src/index.ts:40-49](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/index.ts#L40-L49)
+
+运行模式、外部地址与 timeout 配置。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export const Config: Schema<Config> = Schema.object({
+  mode: Schema.union(['managed', 'external']),
+  runtimeRoot: Schema.string(),
+  artifacts: Schema.string(),
+  pythonPath: Schema.string(),
+  pythonModulePaths: Schema.array(Schema.string()),
+  baseUrl: Schema.string().default('http://127.0.0.1:4567'),
+  authToken: Schema.string().role('secret'),
+  timeoutMs: Schema.number().default(600000),
+  outputDir: Schema.string().default(join(tmpdir(), 'openwrite-exports')),
+```
+
+</details>
+
+#### 缺口
+
+- 未验证各宿主、模型出站、备份和真实写作
+  **影响**：不能保证发布包兼容、隐私或单位任务成本
+  **进一步探讨**：隔离工作区先核模型目标与文件备份，再人工验收单章。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 能否让作者在恢复前辨明最后真实状态及安全下一步？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+Core 已有写锁、revision、恢复前 checkpoint、drafted run 和 completed_chapters，不能把继续任务本身当新功能。未验证设想：为作者提供一次读取式恢复一致性预览，关联当前正文章节 hash、最后 checkpoint、run 的阶段与完成清单，显示冲突或未知，并在用户确认前阻止可能重复写入的恢复；预览期间任一 revision 改变必须重新读取，读取不到则显示 unknown。此设想依赖 Core 暴露可靠一致的版本证据，尚未穷尽界面是否已有等价展示，不能声称尚不存在。对照现有任务恢复和作者手动核对，在隔离作品注入模型响应后、替换前/后、run 标记前中断及并发改稿，衡量错误重试、重复模型调用、漏稿、误拦截和作者耗时；若旧状态被当最新、未知被自动覆盖、误拦截过多或无改善则否定。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[release/runtime-manifest.json:1-7](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/release/runtime-manifest.json#L1-L7)
+
+固定受检 Core 版本。
+
+```text
+{
+  "schema": 1,
+  "dsh": "0.1.2-rc.1",
+  "uv_version": "0.11.19",
+  "python_version": "3.12.13",
+  "core_version": "5.8.22",
+  "contract_version": 1,
+```
+
+**依据 2 · 源码核查**：[packages/openwrite-bridge/src/managed-runtime.ts:686-694](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/managed-runtime.ts#L686-L694)
+
+服务健康和版本检查。
+
+```text
+      const connection = { baseUrl: `http://127.0.0.1:${port}`, token }
       const health = await fetch(connection.baseUrl + '/api/health', {
         headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.any([signal, AbortSignal.timeout(10_000)]),
       })
@@ -851,43 +816,41 @@ ready提示明确仍要显式重试，是核对设计的推导起点。
         throw new Error('Writing backend version or API mismatch; reinstall OpenWrite')
       }
       this.connection = connection
-      started = true
-      if (!this.recovered) this.restartAttempts = 0
-      this.update('ready', this.recovered
-        ? 'The writing environment recovered; in-progress writing and review tasks require an explicit retry'
-        : 'The writing environment is ready')
 ```
 
-</details>
+**依据 3 · 源码核查**：[packages/openwrite-bridge/src/tool-policy.ts:36-43](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/tool-policy.ts#L36-L43)
 
-**依据 2 · 源码核查**：[packages/openwrite-bridge/src/client.ts:45-56](https://github.com/LiPu-jpg/Openwrite/blob/8c5297da5726f35895f86b6e457da40b7e544ea4/packages/openwrite-bridge/src/client.ts#L45-L56)
-
-已有请求上下文和任务相关诊断标识可作为接线基础但非完成证明。
-
-<details>
-<summary>查看原文（12行）</summary>
+写/读操作效果分类。
 
 ```text
- * Request-scoped Workspace identity, per docs/WORKSPACE_CONTEXT_CONTRACT.md §3.
- * `workspaceRoot` is the canonical (realpath'd) absolute path — the only root
- * identity; the id/epoch fields are audit/diagnostic metadata.
- */
-export interface WorkspaceContext {
-  workspaceRoot: string
-  workspaceId?: string
-  sessionId?: string
-  contextEpoch?: number
-  toolCallId?: string
-  rootCallId?: string
-  toolName?: string
+/** Unknown and preview operations fail closed: previews can persist confirmation records. */
+export function novelEffect(name: string, args: unknown): NovelEffect {
+  if (reads.has(name)) return 'read'
+  const values = args && typeof args === 'object' ? args as Record<string, unknown> : {}
+  if (name === 'novel_write_chapter' && values.dry_run === true) return 'read'
+  if (readActions[name]?.includes(String(values.action))) return 'read'
+  if (name === 'novel_model_benchmark' && values.action === 'run') return 'generate'
+  return generates.has(name) ? 'generate' : 'write'
 ```
 
-</details>
+**依据 4 · 源码核查**：[packages/openwrite-bridge/src/preset-tools.ts:14-20](https://github.com/LiPu-jpg/Openwrite/blob/a8b9e782a9d27c50edbea1e9beb36b8d45d47f5b/packages/openwrite-bridge/src/preset-tools.ts#L14-L20)
+
+工具 guard 与注册。
+
+```text
+/** This row belongs in an Agent preset, never in the host bundle. */
+export function apply(ctx: Context, config: { presentation?: 'native' | 'ptc' | 'both' } = {}): void {
+  if (config.presentation && config.presentation !== 'native') ctx.effect(() => ctx.tools.presentAs(config.presentation!), 'openwrite: tool presentation')
+  ctx.effect(() => ctx.tools.guard(execution => novelPolicyDenial(ctx, execution)), 'openwrite: execution policy')
+  registerNovelTools(ctx, ctx.novelDomain.clientFactory(), {
+    timeoutMs: ctx.novelDomain.toolOptions.timeoutMs,
+    outputDir: ctx.novelDomain.toolOptions.outputDir ?? join(tmpdir(), 'openwrite-exports'),
+```
 
 #### 缺口
 
-- 现有工作台是否已完整呈现权威续接状态及作者是否误解尚未知
-  **影响**：不能判断新增预览是否有实际增量
-  **进一步探讨**：先核查现有任务详情交互和作者恢复案例，再做同状态两种呈现的盲评
+- 界面是否已有等价一致性预览尚未全面核查，且没有原型或故障实验
+  **影响**：不能确认方案增量及收益
+  **进一步探讨**：先追踪任务恢复 UI，再以隔离作品做故障注入对照。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
