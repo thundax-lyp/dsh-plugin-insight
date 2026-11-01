@@ -15,6 +15,7 @@
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [Adult Tension](#plugin-1339714338-root) | 把中文互动叙事交给宿主模型，并以本地 Python 引擎维护角色、时间、事实、事件与存档的 Skill。 | 中性多角色短局先核保存/重试/撤销/退出，才扩长局；只需短篇可用纯聊天，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。 |
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。 | [Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 当前观察；已有用户备份含数据库sidecars后才操作，部分失败先回读，不把Git提交或本地form草稿当保存。 |
+| [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。 | [Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 根入口观察并用于选包；真正试用请进入具体子包范围，不把根源码可见当可安装或无限商用。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) 适合许可范围内的副本项目试用；重要改动先保存版本，冲突后重载重选，不把force当默认恢复。 |
@@ -22,11 +23,11 @@
 | [DSH × Blender](#plugin-1368569221-root) | 将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 当前观察；先用一次性.blend场景验证GUI连接、暂停、headless和响应中断后状态，未核清前不直接接生产资产。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
-| [dsh-image-gen](#plugin-1336998801-root) | 为DSH提供对话生图、编辑、画布、批量生成和图库，并接入云端Provider与本地ComfyUI。 | 已有DSH图像任务者可先用单Provider、非敏感图片和小预算试用；核对附件、落盘和分项失败，保存故障不重新生成；不能管理通道差异与账单时退回供应商界面或固定ComfyUI。 |
+| [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
-| [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠动作提示词、视频抠像、姿态归一化及透明播放素材转码流程，插件位于子目录。 | 当前建议有透明视频制作经验的素材作者先观察并核对工具路径和质量检查，避免按“全流程可复现”直接批量生成。 |
+| [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 通过 Postiz MCP 在 DSH 中连接社交账号、读取平台规则并准备草稿或安排发布 | [Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) 先观察并以只读账号规则查验为入口；草稿与发布必须回读远端，无法确认时停止DSH写操作回Postiz界面。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
@@ -43,8 +44,8 @@
 | [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 中提供小说、短剧、游戏改编与视频解说的创作 Skills 和文件工作台 | [Q04](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q04) 先用已有文本项目试用一次改稿和冲突恢复；不将未核查付费媒体链纳入推荐。 |
-| [Open Design](#plugin-1223170290-root) | 独立本地设计应用，把编码Agent、设计资产、项目制品、预览和反馈组织在同一工作区，内含DSH stdio companion。 | 已有编码Agent/设计系统经验者，仅在独立OS账户或隔离环境的非敏感项目副本，匹配实际CLI/profile/companion且先不启云同步/分享/公网，验证一项本地HTML任务。 |
-| [OpenPencil](#plugin-1159938129-root) | 提供可编辑矢量画布，并通过MCP让Agent读取、创建和修改设计文档。 | 需要继续编辑AI设计草稿的开发者可先用可丢弃.op文档试用MCP。 |
+| [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
+| [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
 | [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
@@ -53,7 +54,7 @@
 | [Superdesign Skill](#plugin-1139329853-root) | 为编码Agent提供UI、演示稿和图形设计流程，并通过CLI连接Superdesign画布。 | 有设计迭代需求者可先用可公开UI片段试用，核对发送文件、费用和目标草稿后再生成；私密源码或确定性小修优先本地直接修改，不把缓存状态当持续上传许可。 |
 | [TongFlow](#plugin-1204369117-root) | 以模态和能力组织多媒体节点，提供可视化工作流及多种模型插件的执行入口。 | 已有多阶段媒体任务者可在本地副本先试一个slot和最少插件，限制账户额度并记录远端任务状态；若单次生成已足够，或不能承担持久卷和失败对账，继续现有供应商界面。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
-| [书童 Pagekin 桌面写作应用](#plugin-1275436512-root) | 本地优先小说桌面软件，将设定、蓝图、写稿、审改与定稿组织成逐章流程。 | [Q04](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q04) 用短篇副本试一章，先明确合格稿标准、费用和人工预算；定稿响应未知先查committed及finalizationId，不重新创建提交。 |
+| [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
 | [开源版锤子便签（根应用）](#plugin-1182135360-root) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 先以单人、单活动编辑端和非敏感稿件试用，保留Markdown原稿，核对主题、图片和全文后再分享；多端并发编辑暂缓。 |
 
 <a id="plugin-1352959121-root"></a>
@@ -103,6 +104,22 @@
 > **建议**：[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 未验证假设是用逐项接受包暴露权威revision与重试范围，以部分失败任务比较误判和重复操作；无改善或操作更重即停止。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1401476500-root"></a>
+
+## [Answer me with HTML](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md)
+
+[![GitHub ★ 4,962](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C962&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
+
+> **用途**：面向需要解释流程、架构或多维比较并交付单页的读者及 Agent。
+
+> **亮点**：[Q02](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q02) 将语义草稿与页面布局分离，提供图形和写作检查；不是发明 HTML、Markdown 或可视化。作者小样本效果不代表所有任务。
+
+> **思考**：[Q03](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q03) 中写作检查、原始 HTML 清理与 CSP 不能验证图关系或事实；页面可读性、跨浏览器防护和完整离线性尚未证实。
+
+> **建议**：[Q06](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q06) 提出图关系附来源或人工推断标记的未验证方案，须与现有代码行引用和语法检查对照并衡量错误发现率及成本。
+
+[查看完整分析](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1220744720-root"></a>
 
@@ -220,15 +237,15 @@
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
 
-[![GitHub ★ 716](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=716&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 32,724](https://img.shields.io/static/v1?label=npm+30d&message=32%2C724&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
+[![GitHub ★ 1,036](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C036&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 44,547](https://img.shields.io/static/v1?label=npm+30d&message=44%2C547&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
 
-> **用途**：供已用DSH且持续制作与编辑内容配图的创作者使用。
+> **用途**：[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) DSH 内容创作者希望生成合要求的配图并核对附件和文件保存。
 
-> **亮点**：把对话、画布、Studio与图库中的图像生成和资产复用接到宿主，贡献在流程及Provider适配而非图像模型原创。[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01)
+> **亮点**：[Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) 把对话生成与附件及可选工作区保存相连，减少手动搬运，但不保证输出质量或文件保存。
 
-> **思考**：远端生成、附件与工作区保存是不同成功阶段；批量部分失败或saveError不能用整批重跑处理，订阅免Key也不等于无费用或所有模型等价。[Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) [Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03) 生成附件、工作区保存与批量每项结果是不同状态，须分别核对。
 
-> **建议**：用请求ID、附件ID和完整摘要跟踪分阶段状态，保存失败仅重试落盘，结果未知先对账；以故障点比较重复计费和旧资产影响，尚未验证。[Q04](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q04)
+> **建议**：[Q04](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q04) 生成前显示按渠道和张数估价或可降低预算意外，需对照账单验证。
 
 [查看完整分析](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md) · [返回表格](#category-index)
 
@@ -284,15 +301,15 @@
 
 ## [dsh-pet 素材制作工程](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md)
 
-[![GitHub ★ 4,043](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C043&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
+[![GitHub ★ 5,154](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C154&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
 
-> **用途**：根仓库除dsh-pet子包外，主要提供角色动作提示词、源视频到透明动画的制作链及发布说明。面向愿意自己生成新角色/动作的桌宠素材作者，合格交付是一组尺寸/脚底对齐、循环衔接和透明通道正确的播放素材及pet pack配置。简单替代是人工视频编辑再放进现有桌宠。普通只想显示宠物的人应看子包，不需要运行这套生成链；仓库根没有package.json，不能把root当另一份npm插件。
+> **用途**：为 DSH 桌宠制作新角色或动作的素材作者；替代为人工视频编辑与转码。[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01)
 
-> **亮点**：[Q03](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q03)识别出提示约束、人工/自动统一中间格式、脚底对齐和播放变体的工程组合。相对逐片手工转码，它组织了可重做阶段；标准视频算法不视为原创，全部动作人工PR的作者说明限制了自动量产主张。
+> **亮点**：把提示约束、两种抠像输入、站姿对齐和播放变体组织为可重做流程；HSV、VP9 等是通用技术。[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01) [Q02](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q02)
 
-> **思考**：[Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04)核实Windows工具硬路径与源片范围不一致，更发现alpha抽帧失败被return True并计入成功。当前检查绿灯不能承担素材放行，因而应观察根制作链，而不是把可安装子插件的演示当制作链验收。
+> **思考**：alpha 检查抽帧失败返回 True 并计为成功，不能把检查绿灯当作素材放行。[Q03](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q03)
 
-> **建议**：[Q08](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q08)提出未验证的每动作质量manifest，用坏视频、无alpha、超宽动作等反例对照误放行与补检人时；若额外扫描不改善交付或成本过高，否定整套方案。
+> **建议**：未验证假设：失败即拒绝并结合多帧透明、脚底、循环与目标端播放复核，可能减少漏检；须测误报与人工成本。[Q05](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md) · [返回表格](#category-index)
 
@@ -554,17 +571,17 @@
 
 <a id="plugin-1223170290-root"></a>
 
-## [Open Design](../../plugins/nexu-io--open-design/INSIGHT.md)
+## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
 
-[![GitHub ★ 104,652](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104%2C652&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
+[![GitHub ★ 105,115](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=105%2C115&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
 
-> **用途**：为已有编码Agent的设计开发者，把非敏感brief、生成制品、预览和反馈放回同项目接续；根是独立应用，不是DSH根插件。见[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)。
+> **用途**：需要从 brief 生成并迭代原型的设计开发者与团队，可在项目中使用编码 Agent 和查看反馈；实际协作收益尚无同条件对照。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
 
-> **亮点**：把设计资产/Agent接线、可预览制品及反馈传输组织成同项目交接；身份/缺终态、局部制品门和持久评论修订ACK有实际caller。见[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)至[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)。
+> **亮点**：将 DSH 适配、制品写入和评论队列组织到设计项目，提供会话身份、manifest 和 revision 确认等明确接缝；它们支持追踪，不证明设计正确或远端已落地。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03) [Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
 
-> **思考**：协议completed含max-tokens且不是设计合格；marker/stub局部有限，正文/manifest非原子写。严格批回执不在所核单条drain，Vela单条空输出/缺数字seq可折0而被调用成功ACK，不能推出云落地或意见已落实。见[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02)至[Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)。
+> **思考**：max-tokens 也映射 completed，正文与 manifest 分次写；单条 Vela 返回缺 seq 时回落 0 后仍会被队列确认。协议、文件和远端回执均不能代替设计合格和云端读回。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03) [Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
 
-> **建议**：先修单条回执shape/未知结果读回，再验证评论到制品版本的具体改动证据和人工验收；已有版本/witness/队列不当新量，简单原应用修复/清单够用就否定新插件。见[Q06](../../plugins/nexu-io--open-design/INSIGHT.md#research-q06)。
+> **建议**：未验证假设：验证单条评论回执并提供远端读回，再将反馈关联具体制品版本及人工验收，可能减少遗漏；需与原流程加清单对比错误确认、遗漏及总时间，若额外负担抵消收益则否定。[Q06](../../plugins/nexu-io--open-design/INSIGHT.md#research-q06)
 
 [查看完整分析](../../plugins/nexu-io--open-design/INSIGHT.md) · [返回表格](#category-index)
 
@@ -572,15 +589,15 @@
 
 ## [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md)
 
-[![GitHub ★ 6,654](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C654&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
+[![GitHub ★ 6,991](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C991&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
 
-> **用途**：适合希望Agent生成界面草稿后继续选择、修改和导出设计的开发者/设计者。合格结果是结构化可编辑.op文档且节点、页面和布局可核对，不是只得到一张截图。原办法是人工矢量编辑器、图片生成后重画或在代码中修改UI；编辑文档与Agent工具共享状态有机会减少重做。根项目是独立设计应用与MCP服务，不是DSH bundle，DSH通过MCP桥连接。作者“first”和多Agent更快不作为独立效果证据。
+> **用途**：面向需要生成后继续编辑和导出设计稿的设计者及开发者。
 
-> **亮点**：[Q02](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q02)Agent工具直接修改编辑器文档模型，较生成平面图片保留结构化编辑增量；根项目是独立应用和MCP服务，DSH只是接入端之一。
+> **亮点**：[Q01](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q01) 与 [Q02](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q02) 显示 Agent 工具可操作可序列化编辑状态，较平面图保留节点级编辑的潜力；任务效果仍需验收。
 
-> **思考**：[Q03](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q03)DSH配置改动跨profile，且修改内存后保存失败存在需核对的状态窗口；可编辑草稿不等于生产设计合格。
+> **思考**：[Q03](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q03) 的主路径先修改内存再保存，失败后该片段未显示回滚；[Q04](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q04) 的 DSH 配置位于 home 层，真实宿主配置生效范围尚待核实。
 
-> **建议**：[Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05)提出小批revision与快照验收的未验证假设，用并发和保存故障比较误覆盖与恢复。
+> **建议**：[Q06](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q06) 假设持久文件摘要比对、跨进程互斥与暂存发布可降低误覆盖和失败分叉；已有 revision 和临时替换并非新增，方案未验证。
 
 [查看完整分析](../../plugins/zseven-w--openpencil/INSIGHT.md) · [返回表格](#category-index)
 
@@ -714,17 +731,17 @@
 
 <a id="plugin-1275436512-root"></a>
 
-## [书童 Pagekin 桌面写作应用](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
+## [书童 Pagekin（AI Novel Writer）](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
+[![GitHub ★ 2,172](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C172&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
 
-> **用途**：长篇与连载作者在本地作品中组织章节、资料和人工审改，模型由自己配置。
+> **用途**：面向需要组织长篇设定、分章起草和审改的小说作者。
 
-> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02)、[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 用版本绑定和committed/pending分离把聊天起草转为可追溯、可恢复的章节交付；不把流程完整当文学质量保证。
+> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02) 与 [Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 为章节选择和定稿提供可追溯边界；模型文学质量及净收益未知。
 
-> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 上下文快照固定了选择但不保证充分，早期设定被省略时生成与自审可共同漏检，需原定稿对照而非只信摘要。
+> **思考**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02) 可选材料仍可能省略，审稿与起草可能共同漏掉设定；[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 已提交不等于文件已发布。
 
-> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 未验证假设是将高影响省略约束变为审稿定向回查，以跨章冲突案例对照漏检、误报和作者时间；无改善或成本过高就停止。
+> **建议**：[Q06](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
@@ -748,4 +765,4 @@
 
 ## 更新时间
 
-2026-10-29
+2026-11-01

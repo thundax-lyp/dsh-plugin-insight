@@ -282,16 +282,133 @@ export function gitFiles(root, ref, component = '') {
         .split('\0')
         .filter(Boolean);
     const files = {},
-        omitted = [];
+        omitted = [],
+        selected = [];
     for (const entry of tree) {
-        const [info, path] = entry.split('\t');
+        const separator = entry.indexOf('\t');
+        if (separator < 0) throw Error('invalid Git tree entry');
+        const info = entry.slice(0, separator),
+            path = entry.slice(separator + 1);
         if (!info.startsWith('100')) {
             omitted.push(path);
             continue;
         }
         const ext = extname(path).toLowerCase();
-        if (!SKIP.test(path) && (ext === '.md' || CODE.has(ext))) files[path] = git(['show', `${revision}:${path}`]);
-        else if (SKIP.test(path)) files[path] = '';
+        if (!SKIP.test(path) && (ext === '.md' || CODE.has(ext))) {
+            const parts = info.split(' ');
+            if (parts[1] !== 'blob' || !/^[a-f0-9]{40,64}$/.test(parts[2])) throw Error(`invalid blob: ${path}`);
+            selected.push({ path, oid: parts[2] });
+        } else if (SKIP.test(path)) files[path] = '';
+    }
+    // Disable per-object lazy fetching while finding missing blobs. A promisor checkout can
+    // then request all missing tree objects in one fetch instead of one network round trip each.
+    const oids = [...new Set(selected.map((item) => item.oid))];
+    const objectInput = oids.join('\n') + (oids.length ? '\n' : '');
+    const noLazyFetch = { ...process.env, GIT_NO_LAZY_FETCH: '1' };
+    const inspectObjects = () => {
+        if (!oids.length) return [];
+        return execFileSync('git', ['-C', root, 'cat-file', '--batch-check'], {
+            input: objectInput,
+            encoding: 'utf8',
+            env: noLazyFetch,
+            maxBuffer: 32 * 1024 * 1024,
+            timeout: 60000
+        })
+            .trimEnd()
+            .split('\n');
+    };
+    let info = inspectObjects();
+    let missing = info.filter((line) => line.endsWith(' missing')).map((line) => line.split(' ')[0]);
+    if (missing.length) {
+        let config = '';
+        try {
+            config = git(['config', '--get-regexp', '^remote\\..*\\.promisor$']);
+        } catch (error) {
+            if (error.status !== 1) throw error;
+        }
+        const remotes = config.split('\n').flatMap((line) => {
+            const match = /^remote\.(.+)\.promisor\s+true$/i.exec(line.trim());
+            return match ? [match[1]] : [];
+        });
+        if (!remotes.length) throw Error(`missing ${missing.length} Git blobs and no promisor remote`);
+        let fetchError;
+        for (const remote of remotes) {
+            try {
+                execFileSync(
+                    'git',
+                    [
+                        '-C',
+                        root,
+                        'fetch',
+                        '--no-tags',
+                        '--no-write-fetch-head',
+                        '--filter=blob:none',
+                        remote,
+                        '--stdin'
+                    ],
+                    {
+                        input: missing.join('\n') + '\n',
+                        env: noLazyFetch,
+                        maxBuffer: 32 * 1024 * 1024,
+                        timeout: 180000
+                    }
+                );
+            } catch (error) {
+                fetchError = error;
+            }
+            info = inspectObjects();
+            missing = info.filter((line) => line.endsWith(' missing')).map((line) => line.split(' ')[0]);
+            if (!missing.length) break;
+        }
+        if (missing.length)
+            throw Error(
+                `failed to fetch ${missing.length} Git blobs: ${fetchError?.message ?? 'not supplied by promisor'}`
+            );
+    }
+    const sizes = new Map();
+    if (info.length !== oids.length) throw Error('invalid Git object inventory');
+    for (let i = 0; i < info.length; i++) {
+        const parts = info[i].split(' '),
+            size = Number(parts[2]);
+        if (parts[0] !== oids[i] || parts[1] !== 'blob' || !Number.isSafeInteger(size) || size < 0)
+            throw Error(`invalid Git object metadata: ${oids[i]}`);
+        // The previous per-file git show used this maximum buffer; do not silently truncate large blobs.
+        if (size > 64 * 1024 * 1024) throw Error(`Git blob exceeds 64 MiB: ${oids[i]}`);
+        sizes.set(oids[i], size);
+    }
+    // Read exact tree blob IDs in size-bounded batches, preserving git show's UTF-8 decoding.
+    for (let offset = 0; offset < selected.length;) {
+        const batch = [];
+        let bytes = 0;
+        while (offset < selected.length && batch.length < 256) {
+            const item = selected[offset],
+                size = sizes.get(item.oid);
+            if (batch.length && bytes + size > 16 * 1024 * 1024) break;
+            batch.push(item);
+            bytes += size;
+            offset++;
+        }
+        const output = execFileSync('git', ['-C', root, 'cat-file', '--batch'], {
+            input: batch.map((item) => item.oid).join('\n') + '\n',
+            env: noLazyFetch,
+            maxBuffer: 65 * 1024 * 1024,
+            timeout: 60000
+        });
+        let cursor = 0;
+        for (const item of batch) {
+            const newline = output.indexOf(10, cursor);
+            if (newline < 0) throw Error(`missing Git blob header: ${item.path}`);
+            const header = output.subarray(cursor, newline).toString('ascii').split(' ');
+            const size = Number(header[2]);
+            if (header[0] !== item.oid || header[1] !== 'blob' || size !== sizes.get(item.oid))
+                throw Error(`invalid Git blob response: ${item.path}`);
+            const start = newline + 1,
+                end = start + size;
+            if (end >= output.length || output[end] !== 10) throw Error(`truncated Git blob: ${item.path}`);
+            files[item.path] = output.subarray(start, end).toString('utf8');
+            cursor = end + 1;
+        }
+        if (cursor !== output.length) throw Error('unexpected trailing Git blob data');
     }
     return {
         files,

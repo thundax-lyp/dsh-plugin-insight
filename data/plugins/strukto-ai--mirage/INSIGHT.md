@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[62c160c](https://github.com/strukto-ai/mirage/tree/62c160c6f47d455cf1bb604ed55c419f8ed254c2)
+源码版本：[a94290f](https://github.com/strukto-ai/mirage/tree/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage)
+[![GitHub ★ 3,759](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C759&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage)
 <!-- END META -->
 
-> **功能**：通过虚拟文件系统、命令和可配置运行时，为Agent提供统一终端接口。
+> **功能**：用虚拟文件系统、命令及运行时为 Agent 组合统一终端。
 
-> **亮点**：[Q02](#research-q02)将命令生命周期、挂载权限和session上下文统一，适合跨数据源管道；相对多SDK有实质组合增量，但不宣称文件语义消除外部系统差异。
+> **亮点**：组合多源虚拟路径、命令、session 和权限，DSH 是可选接入入口，本项不研究其实现。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：[Q03](#research-q03)权限依赖VFS正确声明effect，跨源写入和runtime隔离也需分别核对；统一接口不能当通用事务或沙箱保证。
+> **主要限制**：VFS 写入复查依赖 effect 声明；外部授权、runtime 隔离和跨源部分失败不能由统一路径自动保证。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 虚拟终端对跨数据源Agent的具体任务价值是什么？](#detail-section-11)
-  - [Q02 · 统一工作区如何把命令、运行时与存储权限连起来？](#detail-section-12)
-  - [Q03 · 统一语义和权限边界在哪些情况下不能保证？](#detail-section-13)
-  - [Q04 · 统一接口是否降低总接入成本？](#detail-section-14)
-  - [Q05 · 如何检验统一终端是不是更好的接口？](#detail-section-15)
+  - [Q01 · 谁需要统一虚拟终端，根项目与 DSH 适配是什么关系？](#detail-section-11)
+  - [Q02 · 统一工作区如何组织命令和权限？](#detail-section-12)
+  - [Q03 · 权限和统一路径在哪些情况下不足以保证隔离？](#detail-section-13)
+  - [Q04 · 实际接入的成本和停止条件是什么？](#detail-section-14)
+  - [Q05 · 如何检验统一终端是否值得采用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,7 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：目标是Agent平台开发者将多个数据源挂成一个受控工作区，让Agent用ls/grep等熟悉操作读取材料并写出结果。合格结果是在正确权限下找到来源、产生可核对交付物，不能把统一路径当所有服务语义等价。原办法是各服务SDK/MCP或本地同步脚本；跨源管道较多时统一接口有价值，单源任务则直接API更简单。根项目是Python/TypeScript SDK与虚拟终端平台，DSH可加载适配另在typescript/packages/dsh，不能将根目录直接当宿主插件。
+> **用途**：需要跨数据源管道的 Agent 平台开发者；单源任务可比较专用 API。[Q01](#research-q01)
+
+分别接入 SDK/MCP 或维护本地同步脚本。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -49,63 +51,61 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 虚拟工作区 | 组合多个数据源 | SDK平台而非根目录DSH插件 |
-| 统一shell | 用管道执行读写 | 依赖所选runtime和命令支持 |
-| 挂载权限 | session收窄访问 | VFS需正确声明effect |
+| --- | --- | --- |
+| 多源 mount | 在统一路径访问服务 | 需授权和正确 effect |
+| session shell | 跨源命令与管道 | backend 语义可能不同 |
+| runtime 路由 | 选择执行环境 | 隔离取决于具体实现 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Python或TypeScript SDK | 必需 | 工作区 | 无统一终端 |
-| mount与runtime配置 | 必需 | 存储和执行 | 任务无法运行 |
-| 数据源凭据 | 外部源必需 | 授权访问 | 对应挂载失败 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| Mirage SDK | 必需 | 工作区与 shell | 无统一接口 |
+| 数据源凭据与授权 | 对应源必需 | 访问服务 | 调用失败 |
+| 可信 runtime 与正确 effect | 写入和隔离必需 | 控制副作用 | 不接真实写账户 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 平台方创建RAM/只读挂载 | 路径可读 |
-| 2 | 配置session权限执行同任务 | 结果来源正确 |
-| 3 | 验证拒绝越界与关闭 | 失败退直接SDK |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+| --- | --- | --- |
+| 配置 | 用假源和只读 profile | 核对可见性 |
+| 调用 | 运行同任务查询 | 比较 SDK 正确性 |
+| 放开写入 | 逐项核验 effect 和恢复 | 不确定则停止 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | SDK及runtime | 连接器和权限配置 | 人时未知 |
-| 持续 | API、执行与缓存 | 语义映射维护 | token收益未测 |
-| 失败恢复 | 重试与状态核对 | 跨源补偿 | 无统一业务事务保证 |
+| --- | --- | --- | --- |
+| 首次 | 服务与 runtime 成本未知 | 集成凭据和挂载 | 内存数字是作者主张 |
+| 持续 | 外部服务与执行费用 | 权限及后端维护 | token 节省未测 |
+| 恢复 | 部分写入可能有成本 | 逐源对账 | 不保证跨源事务 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 接口组合 | shell与mount核心 | 对不同源的正确性 |
-| 权限收窄 | session与effect检查 | 每个VFS声明完整性 |
+| --- | --- | --- |
+| 统一入口 | mount 与 session shell 组合 | 所有服务语义一致 |
+| 写权限 | 对声明 effect 复查 | 外部和未声明副作用安全 |
 
-> **思考**：[Q03](#research-q03)权限依赖VFS正确声明effect，跨源写入和runtime隔离也需分别核对；统一接口不能当通用事务或沙箱保证。
+> **思考**：VFS 写入复查依赖 effect 声明；外部授权、runtime 隔离和跨源部分失败不能由统一路径自动保证。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02)将命令生命周期、挂载权限和session上下文统一，适合跨数据源管道；相对多SDK有实质组合增量，但不宣称文件语义消除外部系统差异。
+> **亮点**：组合多源虚拟路径、命令、session 和权限，DSH 是可选接入入口，本项不研究其实现。[Q01](#research-q01) [Q02](#research-q02)
 
-可借鉴配置上限与session收窄权限的分层；复用需保留effect声明和外部源语义。根仓全量统计不等于本轮已全审计；Python核心与连接器不纳入JS/TS代码总量。
+写入前重查路径和子树，用户 handler 另有隐藏及只读限制；未声明 effect 的函数不走该写入检查。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03)权限依赖VFS正确声明effect，跨源写入和runtime隔离也需分别核对；统一接口不能当通用事务或沙箱保证。
+VFS 写入复查依赖 effect 声明；外部授权、runtime 隔离和跨源部分失败不能由统一路径自动保证。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-构建跨数据源Agent的平台开发者可先用RAM和只读测试源试验Mirage。相比分别维护多种工具接口，它把读取和管道组织到同一工作区，但节省token与维护成本尚未独立验证。若数据源语义或权限effect不能核清，就停止接入真实写账户并退回专用SDK。 依据 [Q01](#research-q01)、[Q03](#research-q03)、[Q04](#research-q04)。
+先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -113,18 +113,18 @@
 
 **核查状态**：已检查源码。
 
-已有实现为固定源码检查支持；用户收益未实测；未来设计假设未验证。
+固定 TypeScript 代码支持写入复查和用户 handler 拒绝；未运行 runtime、数据源或宿主。
 
-- 已检查：作者 README、包清单、源码路径 README.md、typescript/packages/core/src/workspace/workspace/workspace.ts、typescript/packages/core/src/workspace/mount/mount.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、typescript/packages/core/src/workspace/mount/mount.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：本轮只读固定提交，未执行目标代码或宿主验收；效果、人工耗时及持续采用情况未知。
-- 下一步：以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+- 边界：固定根 inventory 4343 个指定扩展名文件、排除 35、解析错误 0；静态核查 TypeScript 代表路径和作者示例，不运行外部服务。
+- 下一步：固定 SDK/runtime，以只读假源和隔离账户比较授权、写入、跨源错误与成本。
 
 **分析版本**
 
 - **仓库**：[strukto-ai/mirage](https://github.com/strukto-ai/mirage)
-- **版本号**：未声明（[固定提交 62c160c](https://github.com/strukto-ai/mirage/tree/62c160c6f47d455cf1bb604ed55c419f8ed254c2)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 a94290f](https://github.com/strukto-ai/mirage/tree/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -132,9 +132,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)提出先只读、保留来源版本再逐步放行effect的未验证方向，与独立SDK对照合格交付和维护成本。
+未验证假设：显示后端、声明 effect 和部分失败恢复信息可减少误判；对照 SDK 测正确率与成本。[Q05](#research-q05)
 
-以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+固定 SDK/runtime，以只读假源和隔离账户比较授权、写入、跨源错误与成本。
 
 <a id="detail-section-9"></a>
 
@@ -143,287 +143,114 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 62 | 7394 | — | — | 93316 |
+| .md | source | 62 | 8825 | — | — | 102083 |
 | .jsx | source | 1 | 45 | 45 | 0 | — |
-| .md | example | 22 | 1026 | — | — | 5911 |
-| .ts | example | 246 | 32631 | 24405 | 4505 | — |
-| .mjs | example | 7 | 513 | 434 | 47 | — |
-| .ts | source | 2390 | 402416 | 282921 | 97193 | — |
+| .md | example | 24 | 1109 | — | — | 6338 |
+| .ts | example | 256 | 33559 | 25081 | 4674 | — |
+| .mjs | example | 8 | 646 | 519 | 84 | — |
+| .ts | source | 2404 | 408033 | 287172 | 98389 | — |
 | .js | source | 3 | 489 | 279 | 200 | — |
 | .js | example | 4 | 46 | 43 | 0 | — |
-| .mjs | source | 11 | 330 | 228 | 88 | — |
-| .ts | test | 1551 | 325032 | 261052 | 40455 | — |
+| .mjs | source | 10 | 317 | 220 | 84 | — |
+| .ts | test | 1571 | 342778 | 276531 | 42035 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 24](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=24&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 73](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=73&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+created%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z) [![近30天关闭 109](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=109&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A07%3A10.506Z..2026-10-26T09%3A07%3A10.506Z)
+[![Issue 未关闭 21](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=21&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 53](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=53&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 88](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=88&color=737b86&logo=github)](https://github.com/strukto-ai/mirage/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
 
 
 
-统计日期：2026-10-26。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查Mirage的具体任务增量、关键失败条件与可控采用路径。
+**插件研究总目标**：Mirage 统一虚拟终端如何组合多源与权限，成本和隔离边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 虚拟终端对跨数据源Agent的具体任务价值是什么？
+### Q01 · 谁需要统一虚拟终端，根项目与 DSH 适配是什么关系？
 
-**研究主题**：场景与需求、采用判断
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-目标是Agent平台开发者将多个数据源挂成一个受控工作区，让Agent用ls/grep等熟悉操作读取材料并写出结果。合格结果是在正确权限下找到来源、产生可核对交付物，不能把统一路径当所有服务语义等价。原办法是各服务SDK/MCP或本地同步脚本；跨源管道较多时统一接口有价值，单源任务则直接API更简单。根项目是Python/TypeScript SDK与虚拟终端平台，DSH可加载适配另在typescript/packages/dsh，不能将根目录直接当宿主插件。
+Mirage 面向要让 Agent 跨数据源用统一命令和管道处理材料的平台开发者；替代为分别接 SDK/MCP 或本地同步脚本，单源任务直接 API 更简单。根项目是 Python/TypeScript 虚拟终端平台，DSH 是可选接入入口，本项不归因其实现，也不把根目录当可直接加载的 DSH 插件。README 的内存和成本数字是作者主张，未独立验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:55-86](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/README.md#L55-L86)
+**依据 1 · 源码核查**：[README.md:55-55](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L55-L55)
 
-作者场景、挂载和虚拟CLI示例
+作者描述虚拟终端及资源主张。
+
+```text
+Mirage is **a Virtual Terminal for AI Agents**: one shell over data, CLIs and runtimes. Unix tools reach every service, and `grep` runs on each service's own search, such as Gmail's or Slack's. Mirage routes each command to the runtime that fits it, so most lines run in-process and only heavy work reaches a sandbox, which cuts infrastructure cost and tokens. The terminal itself is light: a workspace takes **about 100 KB** of memory and each new session **about 10 KB**, so one process serves many agents at once. Profiles decide what an agent can run and even what it can see, and scriptable policies refuse anything those rules cannot express.
+```
+
+**依据 2 · 源码核查**：[README.md:64-80](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L64-L80)
+
+作者示例多源和 profile。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（17行）</summary>
 
 ````text
-Mirage is **a Virtual Terminal for AI Agents**. The virtual filesystem delivers broad data context, virtualized CLIs give an agent more flexibility on tool use, dynamic runtimes save underlying infrastructure cost and are more token efficient, and fine-grained control over an agent's actions and even over what it can see gives the best security. Together these parts form one virtualized terminal, giving the best agent performance, cost efficiency and security.
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/mirage-arch-dark.svg">
-    <img src="assets/mirage-arch-light.svg" alt="Mirage architecture: agents and harness reach profiles and the Mirage shell, which resolve Unix-like commands, virtual CLIs and programming languages onto runtimes and the virtual filesystem, with authentication, the policy engine and notifications alongside" width="100%">
-  </picture>
-</p>
-
 Here is an example of launching Mirage inside an application:
 
 ```python
 ws = Workspace(
     {
-        "/tmp":   (RAMVFS(), MountMode.EXEC),
-        "/redis": (RedisVFS(url=redis_url), MountMode.WRITE),
+        "/s3":    (S3VFS(S3Config(bucket="my-bucket")), MountMode.WRITE),
         "/slack": (SlackVFS(SlackConfig(token=slack_bot_token)), MountMode.EXEC),
+        "/gmail": (GmailVFS(GmailConfig(**google_credentials)), MountMode.READ),
     },
-    # monty captures python, so scripts run sandboxed inside the workspace
-    runtimes=[MontyRuntime(captures=["python", "python3"]), "workspace"],
-)
-
-# one grep sweeps every source
-await ws.shell("grep -rln session /redis /tmp")
-
-# run a script that lives in Slack, file the report into Redis
-await ws.shell("python3 /slack/channels/general_.../files/example__F....py > /redis/report.txt")
-
-# install a typed CLI under a head word: dispatched by name, not by path,
-# and discoverable through `man`, `type` and `which` like any other program
-ws.register_cli("slack", SLACK, {"token": slack_bot_token})
-await ws.shell('slack send-message --channel general --text "report is up"')
+    # Install the Slack CLI, run by name and listed by `man` and `which` like any program
+    clis={"slack": (SLACK, {"token": slack_bot_token})},
+    # the analyst profile hides /s3/secrets and denies posting to Slack and curl
+    profiles={
+        "analyst": {
+            "paths": {"hide": ["/s3/secrets"]},
+            "commands": {"deny": ["slack send-message", "curl"]},
+        },
 ````
 
 </details>
 
 #### 缺口
 
-- 真实跨源任务的频率和端到端收益没有独立对照。
-  **影响**：缺少跨源真实任务的重复需求，平台价值可能只适合少数部署。
-  **进一步探讨**：收集同一批跨源查询与报告任务，对照独立SDK工具核对来源遗漏、配置量及合格交付。
+- 未运行运行时、外部数据源或 DSH 宿主
+  **影响**：无法证明隔离、跨源语义和成本收益
+  **进一步探讨**：固定版本并用只读模拟源比较接口与权限
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 统一工作区如何把命令、运行时与存储权限连起来？
+### Q02 · 统一工作区如何组织命令和权限？
 
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-Workspace.shell建立ShellExecution，处理stream与sink互斥、shutdown拒绝，并把runShell结果收集或流式返回。Mount.effectiveMode使用配置模式为上限再由session收窄；requireWritable按被声明的操作effect、路径和subtree检查写权限。由此可见统一终端不只是给SDK换命令名，而是把调用上下文、挂载权限和流式生命周期放在同一层。相对为每服务写一套工具，接口组合有实质增量，但本轮只抽读TypeScript核心片段，不推断每个VFS实现都正确。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[typescript/packages/core/src/workspace/workspace/workspace.ts:1717-1754](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/workspace/workspace.ts#L1717-L1754)
-
-shell生命周期和流式执行
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-  shell(command: string, options: ExecuteOptions & { stream: true }): Promise<ShellExecution>
-  shell(command: string, options?: ExecuteOptions & { stream?: false }): Promise<ExecuteResult>
-  shell(command: string, options: ExecuteOptions): Promise<ExecuteResult | ShellExecution>
-  async shell(
-    command: string,
-    options: ExecuteOptions = {},
-  ): Promise<ExecuteResult | ShellExecution> {
-    if (options.stream && options.sink !== undefined)
-      throw new Error('stream and sink are mutually exclusive')
-    if (
-      !options.stream &&
-      (options.sink !== undefined ||
-        options.evaluation !== undefined ||
-        options.executionScope !== undefined)
-    )
-      return this.runShell(command, options)
-    if (this.isShuttingDown()) throw new Error('Workspace is closed')
-    const execution = new ShellExecution(
-      (sink, signal, executionScope) =>
-        this.runShell(command, {
-          ...options,
-          stream: false,
-          sink,
-          signal,
-          executionScope,
-        }),
-      options.executionScope ?? new ExecutionScope(undefined, newExecutionId(this.ids)),
-      options.signal,
-      this.io.bufferBytes,
-    )
-    if (options.stream) {
-      this.shellExecutions.add(execution)
-      execution.onSettled(() => {
-        this.shellExecutions.delete(execution)
-      })
-      return execution
-    }
-    return execution.collect()
-```
-
-</details>
-
-**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:569-575](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/mount/mount.ts#L569-L575)
-
-会话权限只能收窄
-
-```text
-  /**
-   * This mount's mode narrowed by the owner's cap, or the live sessions'
-   * when no owner is supplied. The configured mode is the ceiling; a
-   * session's mode can only weaken it.
-   */
-  effectiveMode(access?: SessionAccess): MountMode {
-    return effectiveMountMode(this.prefix, this.mode, access)
-```
-
-**依据 3 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:718-733](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/mount/mount.ts#L718-L733)
-
-基于effect和路径的写权限检查
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  requireWritable(
-    name: string,
-    path: PathSpec,
-    values: readonly unknown[],
-    access?: SessionAccess,
-  ): void {
-    const mark = declared(this.vfs.constructor, name)
-    if (mark === null || !WRITE_EFFECTS.includes(mark.effect)) return
-    const others = values.filter((value): value is PathSpec => value instanceof PathSpec)
-    requirePathsWritable(
-      mark.effect === Effect.COPY ? others : [path, ...others],
-      this.prefix,
-      this.mode,
-      mark.subtree,
-      access,
-    )
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 统一语义和权限边界在哪些情况下不能保证？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-requireWritable依赖VFS方法正确声明write effect；mark为null或非写effect会返回，因此扩展VFS需正确标记副作用。跨服务写入不自动构成事务，Slack发送和数据库写入的失败恢复仍是业务问题。runtime可配置为不同执行环境，不能把“虚拟终端”直接称操作系统隔离。数据源凭据、限流、分页和一致性会决定合格结果，挂载同一根目录不能抹平这些差异。
+作者示例配置不同 mount 模式、profile 的隐藏路径和命令拒绝，再按命令选择运行时；同一 session 运行 shell。TypeScript mount 在执行写入时再次读取有效权限，处理子树及复制目标；对用户 handler 的隐藏 mount 或只读写命令有前置拒绝。源码支持具体协议，不保证任何外部数据源一致性或每个 runtime 都是沙箱。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:718-733](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/mount/mount.ts#L718-L733)
+**依据 1 · 源码核查**：[README.md:64-100](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L64-L100)
 
-权限校验依赖effect元数据
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  requireWritable(
-    name: string,
-    path: PathSpec,
-    values: readonly unknown[],
-    access?: SessionAccess,
-  ): void {
-    const mark = declared(this.vfs.constructor, name)
-    if (mark === null || !WRITE_EFFECTS.includes(mark.effect)) return
-    const others = values.filter((value): value is PathSpec => value instanceof PathSpec)
-    requirePathsWritable(
-      mark.effect === Effect.COPY ? others : [path, ...others],
-      this.prefix,
-      this.mode,
-      mark.subtree,
-      access,
-    )
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:89-95](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/README.md#L89-L95)
-
-作者统一接口与动态runtime边界
-
-```text
-## About
-
-- **Unified virtual terminal interface, not N SDKs and M MCPs.** Every backend speaks the same filesystem semantics, so pipelines compose across services.
-- **A virtual filesystem over every source.** S3, Google Drive, Slack, Gmail, Redis and the rest mount side by side under one root, so an agent reaches all of them through a unified interface with the unix tools it already knows, like `ls`, `grep`, `find` and `jq`.
-- **Virtual command line tools (CLIs).** `git`, `slack` and `ntn` are answered by Mirage itself, so an agent drives the service with nothing installed, across different runtimes and machines, and one tool can be virtualized into two or more, each under its own name with its own credentials.
-- **Routed, dynamic runtimes.** Python, JavaScript and any other command can be sent to a configured runtime, in process, sandboxed or remote, which decouples computation from storage and lets either change without touching the other.
-- **The virtualized Mirage shell.** It binds the filesystem, the CLIs and the runtimes into one command line, so pipes, redirection, variables, jobs and history work across all three.
-```
-
-#### 缺口
-
-- 各VFS副作用声明、分页/一致性和具体runtime隔离范围尚未逐一审计。
-  **影响**：effect漏标或后端语义不一可能使权限与结果外推失效。
-  **进一步探讨**：按目标VFS逐方法核对effect声明和写权限，检查分页、一致性、失败补偿以及runtime的native/remote边界。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 统一接口是否降低总接入成本？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-首次平台方需安装SDK、配置mount/runtime和各数据源权限，持续仍需维护连接器及API费用。统一命令可减少Agent学习多个接口的成本，但平台方承担映射、缓存和服务故障处理；并未测token、合格率和维护人时。可以从RAM或只读测试数据源验证跨源读取，失败时回到直接SDK，不应先接真实可写账户。替换整个生产工具层的迁移和回滚成本尚高。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:64-86](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/README.md#L64-L86)
-
-挂载与runtime需显式配置
+多 mount、profile、runtime 路由和 session。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（37行）</summary>
 
 ````text
 Here is an example of launching Mirage inside an application:
@@ -431,94 +258,130 @@ Here is an example of launching Mirage inside an application:
 ```python
 ws = Workspace(
     {
-        "/tmp":   (RAMVFS(), MountMode.EXEC),
-        "/redis": (RedisVFS(url=redis_url), MountMode.WRITE),
+        "/s3":    (S3VFS(S3Config(bucket="my-bucket")), MountMode.WRITE),
         "/slack": (SlackVFS(SlackConfig(token=slack_bot_token)), MountMode.EXEC),
+        "/gmail": (GmailVFS(GmailConfig(**google_credentials)), MountMode.READ),
     },
-    # monty captures python, so scripts run sandboxed inside the workspace
-    runtimes=[MontyRuntime(captures=["python", "python3"]), "workspace"],
+    # Install the Slack CLI, run by name and listed by `man` and `which` like any program
+    clis={"slack": (SLACK, {"token": slack_bot_token})},
+    # the analyst profile hides /s3/secrets and denies posting to Slack and curl
+    profiles={
+        "analyst": {
+            "paths": {"hide": ["/s3/secrets"]},
+            "commands": {"deny": ["slack send-message", "curl"]},
+        },
+    },
+    runtimes=[
+        MontyRuntime(captures=["python", "python3"]),
+        E2BRuntime(
+            captures=["python", "python3"],
+            config={"sandbox_id": sandbox_id, "mount_type": "ssh"},
+        ),
+    ],
+    # route the underlying computation: numpy lines run in the e2b sandbox, the rest on monty
+    route_policy=lambda ctx: "e2b" if "numpy" in ctx.line else None,
 )
 
-# one grep sweeps every source
-await ws.shell("grep -rln session /redis /tmp")
+# Add an agent using the analyst profile
+alice = await ws.session("alice", profile="analyst")
 
-# run a script that lives in Slack, file the report into Redis
-await ws.shell("python3 /slack/channels/general_.../files/example__F....py > /redis/report.txt")
+# one grep sweeps S3, Slack and Gmail, on each service's own search where it has one
+await alice.shell("grep -rlw invoice /s3 /slack /gmail")
 
-# install a typed CLI under a head word: dispatched by name, not by path,
-# and discoverable through `man`, `type` and `which` like any other program
-ws.register_cli("slack", SLACK, {"token": slack_bot_token})
-await ws.shell('slack send-message --channel general --text "report is up"')
+# run a script that lives in Slack on monty, file the report into S3
+await alice.shell("python3 /slack/channels/general__C0123/2026-10-21/files/report__F0456.py > /s3/report.txt")
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/workspace/workspace.ts:1724-1754](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/workspace/workspace.ts#L1724-L1754)
+**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:745-770](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L745-L770)
 
-执行选项与生命周期
+执行写入前再次检查目标权限。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-    if (options.stream && options.sink !== undefined)
-      throw new Error('stream and sink are mutually exclusive')
-    if (
-      !options.stream &&
-      (options.sink !== undefined ||
-        options.evaluation !== undefined ||
-        options.executionScope !== undefined)
+  /** Whether the VFS declares the function `name` a write. */
+  /**
+   * Refuse a write the mount's mode no longer grants at any path. Admission
+   * judged the mode before the call waited for the mount and for its write
+   * lock; `setMountMode` can make the mount read-only in between, so the mode
+   * is read again as the backend call starts. A call that reaches a subtree
+   * (a rename, a tree removal or copy) is refused by a read-only region
+   * anywhere below its paths, and a copy only reads its source. Mirrors
+   * Python's `require_writable`.
+   */
+  requireWritable(
+    name: string,
+    path: PathSpec,
+    values: readonly unknown[],
+    access?: SessionAccess,
+  ): void {
+    const mark = declared(this.vfs.constructor, name)
+    if (mark === null || !WRITE_EFFECTS.includes(mark.effect)) return
+    const others = values.filter((value): value is PathSpec => value instanceof PathSpec)
+    requirePathsWritable(
+      mark.effect === Effect.COPY ? others : [path, ...others],
+      this.prefix,
+      this.mode,
+      mark.subtree,
+      access,
     )
-      return this.runShell(command, options)
-    if (this.isShuttingDown()) throw new Error('Workspace is closed')
-    const execution = new ShellExecution(
-      (sink, signal, executionScope) =>
-        this.runShell(command, {
-          ...options,
-          stream: false,
-          sink,
-          signal,
-          executionScope,
-        }),
-      options.executionScope ?? new ExecutionScope(undefined, newExecutionId(this.ids)),
-      options.signal,
-      this.io.bufferBytes,
-    )
-    if (options.stream) {
-      this.shellExecutions.add(execution)
-      execution.onSettled(() => {
-        this.shellExecutions.delete(execution)
-      })
-      return execution
-    }
-    return execution.collect()
+```
+
+</details>
+
+**依据 3 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:2043-2057](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L2043-L2057)
+
+用户 handler 与内建命令的不同限制点。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+   * Refuse a user handler on a hidden mount, or a writer on a read-only one.
+   *
+   * A user handler can reach its accessor directly, so a hidden mount's
+   * handler must never run, even when an explicit operand or cwd selected it.
+   * It answers an unknown command without revealing the hidden mount's name.
+   *
+   * Mirage's own commands write through the dispatcher, which refuses each
+   * write in the command's own GNU voice, because only the write knows
+   * whether a line writes: `gzip -c`, `tar -t` and `split -n 1/2` read a
+   * read-only mount like any reader, and `gzip f` is refused at the write of
+   * `f.gz`. A user command (`isUserCommand`) may reach its service some other
+   * way, which no gate would see, so one that writes is refused here, before
+   * it runs. strongestModeUnder, not effectiveMode: a mount whose only
+   * writable region is a show entry still runs it. Only wrapper-owned
+   * responses (an injected help or version) bypass it: a handler that
 ```
 
 </details>
 
 #### 缺口
 
-- 跨源任务预算和连接器长期维护成本未量化。
-  **影响**：平台方维护与迁移成本可能抵消接口统一收益。
-  **进一步探讨**：记录每个connector配置/升级人时、API费用及一次合格跨源任务的失败重试与补偿。
+- 未运行运行时、外部数据源或 DSH 宿主
+  **影响**：无法证明隔离、跨源语义和成本收益
+  **进一步探讨**：固定版本并用只读模拟源比较接口与权限
 
-<a id="research-q05"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-13"></a>
 
-### Q05 · 如何检验统一终端是不是更好的接口？
+### Q03 · 权限和统一路径在哪些情况下不足以保证隔离？
 
-**研究主题**：新假设与验证
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-由统一权限与effect声明推导未验证假设：先提供只读多源视图，并为每个输出保留服务来源和版本，再逐步开放少量明确effect操作，可能在减少接口数的同时保留可追溯性。对照同数据的独立SDK工具与虚拟终端，观察来源遗漏、权限拒绝、合格结果和维护配置量；若统一路径增加语义误读或不能减少任务总成本，则限制为特定数据域。该假设不把所有外部系统都假装为本地强一致文件系统。
+requireWritable 只检查 VFS 已声明的 write effect：声明为空或非写效应时直接返回，因此自定义 VFS 漏报副作用可能绕过此项检查；不能将其外推为全部策略失效，因为用户命令还有单独前置限制。不同后端的授权、排序、搜索、写入副作用及 runtime 隔离仍需逐项验证；跨源管道不是通用跨系统事务，部分写入后的恢复也需设计。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:718-733](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/core/src/workspace/mount/mount.ts#L718-L733)
+**依据 1 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:755-770](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L755-L770)
 
-effect和路径校验提供逐步开放边界
+未声明或非写 effect 时该检查直接返回。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -543,5 +406,272 @@ effect和路径校验提供逐步开放边界
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:2043-2057](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L2043-L2057)
+
+用户 handler 另有前置拒绝。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+   * Refuse a user handler on a hidden mount, or a writer on a read-only one.
+   *
+   * A user handler can reach its accessor directly, so a hidden mount's
+   * handler must never run, even when an explicit operand or cwd selected it.
+   * It answers an unknown command without revealing the hidden mount's name.
+   *
+   * Mirage's own commands write through the dispatcher, which refuses each
+   * write in the command's own GNU voice, because only the write knows
+   * whether a line writes: `gzip -c`, `tar -t` and `split -n 1/2` read a
+   * read-only mount like any reader, and `gzip f` is refused at the write of
+   * `f.gz`. A user command (`isUserCommand`) may reach its service some other
+   * way, which no gate would see, so one that writes is refused here, before
+   * it runs. strongestModeUnder, not effectiveMode: a mount whose only
+   * writable region is a show entry still runs it. Only wrapper-owned
+   * responses (an injected help or version) bypass it: a handler that
+```
+
+</details>
+
+**依据 3 · 源码核查**：[README.md:82-100](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L82-L100)
+
+示例使用不同运行时和跨源读写。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    runtimes=[
+        MontyRuntime(captures=["python", "python3"]),
+        E2BRuntime(
+            captures=["python", "python3"],
+            config={"sandbox_id": sandbox_id, "mount_type": "ssh"},
+        ),
+    ],
+    # route the underlying computation: numpy lines run in the e2b sandbox, the rest on monty
+    route_policy=lambda ctx: "e2b" if "numpy" in ctx.line else None,
+)
+
+# Add an agent using the analyst profile
+alice = await ws.session("alice", profile="analyst")
+
+# one grep sweeps S3, Slack and Gmail, on each service's own search where it has one
+await alice.shell("grep -rlw invoice /s3 /slack /gmail")
+
+# run a script that lives in Slack on monty, file the report into S3
+await alice.shell("python3 /slack/channels/general__C0123/2026-10-21/files/report__F0456.py > /s3/report.txt")
+```
+
+</details>
+
+#### 缺口
+
+- 未运行运行时、外部数据源或 DSH 宿主
+  **影响**：无法证明隔离、跨源语义和成本收益
+  **进一步探讨**：固定版本并用只读模拟源比较接口与权限
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 实际接入的成本和停止条件是什么？
+
+**研究主题**：效果与总成本、采用判断、依赖、兼容与流程
+
+#### 完整回答
+
+跨源采用需要配置各服务认证、挂载、权限、命令和适合的执行 runtime，并维护后端行为变化；统一接口不会消除供应商费用、凭据管理、网络以及审计成本。先用内存或只读假源、低权限服务账户验证搜索、隐藏、写拒绝与恢复；不能核实 effect 或隔离、或产生未预期写入就停止真实凭据接入并回退专用 SDK。尚无同任务成本或 token 对照。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[README.md:64-90](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L64-L90)
+
+多源凭据、profile 与 runtime 配置。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+````text
+Here is an example of launching Mirage inside an application:
+
+```python
+ws = Workspace(
+    {
+        "/s3":    (S3VFS(S3Config(bucket="my-bucket")), MountMode.WRITE),
+        "/slack": (SlackVFS(SlackConfig(token=slack_bot_token)), MountMode.EXEC),
+        "/gmail": (GmailVFS(GmailConfig(**google_credentials)), MountMode.READ),
+    },
+    # Install the Slack CLI, run by name and listed by `man` and `which` like any program
+    clis={"slack": (SLACK, {"token": slack_bot_token})},
+    # the analyst profile hides /s3/secrets and denies posting to Slack and curl
+    profiles={
+        "analyst": {
+            "paths": {"hide": ["/s3/secrets"]},
+            "commands": {"deny": ["slack send-message", "curl"]},
+        },
+    },
+    runtimes=[
+        MontyRuntime(captures=["python", "python3"]),
+        E2BRuntime(
+            captures=["python", "python3"],
+            config={"sandbox_id": sandbox_id, "mount_type": "ssh"},
+        ),
+    ],
+    # route the underlying computation: numpy lines run in the e2b sandbox, the rest on monty
+    route_policy=lambda ctx: "e2b" if "numpy" in ctx.line else None,
+````
+
+</details>
+
+**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:755-770](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L755-L770)
+
+写入权限取决于 effect。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  requireWritable(
+    name: string,
+    path: PathSpec,
+    values: readonly unknown[],
+    access?: SessionAccess,
+  ): void {
+    const mark = declared(this.vfs.constructor, name)
+    if (mark === null || !WRITE_EFFECTS.includes(mark.effect)) return
+    const others = values.filter((value): value is PathSpec => value instanceof PathSpec)
+    requirePathsWritable(
+      mark.effect === Effect.COPY ? others : [path, ...others],
+      this.prefix,
+      this.mode,
+      mark.subtree,
+      access,
+    )
+```
+
+</details>
+
+**依据 3 · 源码核查**：[README.md:55-55](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L55-L55)
+
+作者资源和成本主张。
+
+```text
+Mirage is **a Virtual Terminal for AI Agents**: one shell over data, CLIs and runtimes. Unix tools reach every service, and `grep` runs on each service's own search, such as Gmail's or Slack's. Mirage routes each command to the runtime that fits it, so most lines run in-process and only heavy work reaches a sandbox, which cuts infrastructure cost and tokens. The terminal itself is light: a workspace takes **about 100 KB** of memory and each new session **about 10 KB**, so one process serves many agents at once. Profiles decide what an agent can run and even what it can see, and scriptable policies refuse anything those rules cannot express.
+```
+
+#### 缺口
+
+- 未运行运行时、外部数据源或 DSH 宿主
+  **影响**：无法证明隔离、跨源语义和成本收益
+  **进一步探讨**：固定版本并用只读模拟源比较接口与权限
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何检验统一终端是否值得采用？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+未验证假设：对每次跨源执行展示实际后端、声明 effect 和部分失败恢复线索，可能减少来源误判与非预期写入；现有写权限重查和用户 handler 拒绝是反证，不是现有系统没有控制。对照 SDK/MCP 执行相同只读和受控写任务，测结果正确率、授权误拒漏拒、部分失败恢复时间、成本与 token；外部授权、真实隔离或收益无法测清时不推广。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:745-770](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L745-L770)
+
+现有后端写入前复查。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  /** Whether the VFS declares the function `name` a write. */
+  /**
+   * Refuse a write the mount's mode no longer grants at any path. Admission
+   * judged the mode before the call waited for the mount and for its write
+   * lock; `setMountMode` can make the mount read-only in between, so the mode
+   * is read again as the backend call starts. A call that reaches a subtree
+   * (a rename, a tree removal or copy) is refused by a read-only region
+   * anywhere below its paths, and a copy only reads its source. Mirrors
+   * Python's `require_writable`.
+   */
+  requireWritable(
+    name: string,
+    path: PathSpec,
+    values: readonly unknown[],
+    access?: SessionAccess,
+  ): void {
+    const mark = declared(this.vfs.constructor, name)
+    if (mark === null || !WRITE_EFFECTS.includes(mark.effect)) return
+    const others = values.filter((value): value is PathSpec => value instanceof PathSpec)
+    requirePathsWritable(
+      mark.effect === Effect.COPY ? others : [path, ...others],
+      this.prefix,
+      this.mode,
+      mark.subtree,
+      access,
+    )
+```
+
+</details>
+
+**依据 2 · 源码核查**：[typescript/packages/core/src/workspace/mount/mount.ts:2043-2057](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/typescript/packages/core/src/workspace/mount/mount.ts#L2043-L2057)
+
+现有用户 handler 前置控制。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+   * Refuse a user handler on a hidden mount, or a writer on a read-only one.
+   *
+   * A user handler can reach its accessor directly, so a hidden mount's
+   * handler must never run, even when an explicit operand or cwd selected it.
+   * It answers an unknown command without revealing the hidden mount's name.
+   *
+   * Mirage's own commands write through the dispatcher, which refuses each
+   * write in the command's own GNU voice, because only the write knows
+   * whether a line writes: `gzip -c`, `tar -t` and `split -n 1/2` read a
+   * read-only mount like any reader, and `gzip f` is refused at the write of
+   * `f.gz`. A user command (`isUserCommand`) may reach its service some other
+   * way, which no gate would see, so one that writes is refused here, before
+   * it runs. strongestModeUnder, not effectiveMode: a mount whose only
+   * writable region is a show entry still runs it. Only wrapper-owned
+   * responses (an injected help or version) bypass it: a handler that
+```
+
+</details>
+
+**依据 3 · 源码核查**：[README.md:93-103](https://github.com/strukto-ai/mirage/blob/a94290f5f3cd8086e9a945bbfe6c56e6db231fcb/README.md#L93-L103)
+
+作者跨源管道例子。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+# Add an agent using the analyst profile
+alice = await ws.session("alice", profile="analyst")
+
+# one grep sweeps S3, Slack and Gmail, on each service's own search where it has one
+await alice.shell("grep -rlw invoice /s3 /slack /gmail")
+
+# run a script that lives in Slack on monty, file the report into S3
+await alice.shell("python3 /slack/channels/general__C0123/2026-10-21/files/report__F0456.py > /s3/report.txt")
+
+# numpy is not in monty, so the route policy sends this line to e2b
+await alice.shell("python3 -c 'import numpy; print(numpy.arange(10).sum())'")
+```
+
+</details>
+
+#### 缺口
+
+- 未运行运行时、外部数据源或 DSH 宿主
+  **影响**：无法证明隔离、跨源语义和成本收益
+  **进一步探讨**：固定版本并用只读模拟源比较接口与权限
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

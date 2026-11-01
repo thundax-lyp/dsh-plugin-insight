@@ -14,17 +14,15 @@
 | --- | --- | --- |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 先观察，匿名样本验证日期/partial/写入和启用恢复后再评真实数据范围。 |
-| [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 浏览器自动化接入 DSH 模型工具和 Web 任务预览 | 已用DSH Web者先做只读任务和可重置表单，验收技能显露、预览与停止清理；无法识别副作用或重复动作时暂停并回CLI或人工。 |
-| [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI 与扩展让 Agent 操作已登录的 Chrome 或 Edge | 从专用profile的只读任务试用，验收窗口、借还与停止。 |
+| [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 的浏览器操作接入 DSH 模型工具并提供会话观察。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 先用测试账号、显式会话和只读网页；操作结果或目标不明时停止并核对页面与本机保存文件。 |
+| [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
-| [DSH × Univer Office](#plugin-1335241492-root) | 在 DSH 中创建、编辑和审阅多种办公内容，并以隔离草稿管理变更与导出 | [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04) 单人简单文件副本有限试用，审核后才合并并在原Office程序核对；复杂格式和不互信多用户部署不包含在建议内。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 以宿主模型工具调用 vendored ego 浏览器运行时，提供会话目标追踪、实时观看和直接交互，并支持可选登录导入。 | 本地无账户页+独立profile先测，登录/提交另审，不因可见画面放宽动作验证，见 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03)。 |
 | [DSH Notes 对话导出](#plugin-1182135360-dsh-plugin) | 将 Agent 整理的 Markdown 写入便签服务，或经匿名渲染生成本地 PNG 长图。 | 已有可信便签服务者可用非敏感短对话试导出，回读内容/分类/实际server；类型不符、内容遗漏或超时重复时停自动流程，先核对已有ID，退回复制粘贴。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
-| [dsh-genui](#plugin-1333128726-root) | 把 DSH 助手回复中的声明式组件渲染为交互表格、图表、表单和会话面板。 | [Q04](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q04) 先用已知正确公开小表试排序/筛选，保留原数据和文本退路；不收集密码、key等秘密，不把本地状态作唯一记录。 |
-| [dsh-im](#plugin-1334561781-root) | 把微信、飞书等 IM 渠道与多机器人接入 DSH，并提供会话同步和主动投递。 | 一个非敏感私聊、一个固定工作区、明确收件目标可受控试用；不将Matrix实验加密用于敏感内容。 |
+| [dsh-im](#plugin-1334561781-root) | 把即时通讯机器人与本机 DSH 会话和工作区连接。 | [Q05](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q05) 在非敏感私聊和固定工作区试用，结果未知时暂停并对账。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。 | 远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q02)、[Q03](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q03)。 |
@@ -38,8 +36,9 @@
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
-| [NocoBase](#plugin-306829688-root) | AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。 | 有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。 |
+| [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
 | [Nuphus MCP](#plugin-1319093879-root) | 将桌面原生语义操作、像素与本地 OCR、可选云视觉和 Chrome CDP 暴露为 MCP 工具，并分层返回派发与局部核验状态。 | 能隔离环境的开发者只在无敏感演示应用逐工具试，未知派发先观察对账，业务完成另核；确认/权限不清则停服务，见 [Q05](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q05) 与 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。 |
+| [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
 | [Windows Computer Use](#plugin-1336280167-root) | 把 Windows UIA、截图/OCR、真实输入与后台浏览器通道接入 DSH/MCP，并提供接管提示和停止控制。 | Windows隔离桌面上只试记事本/本地网页无提交动作，逐步核后条件与取消；重要业务先用稳定API或人工，见 [Q04](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q04)。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
@@ -79,15 +78,15 @@
 
 ## [BrowserSkill DSH 插件](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md)
 
-[![GitHub ★ 9,680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 32,486](https://img.shields.io/static/v1?label=npm+30d&message=32%2C486&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
+[![GitHub ★ 9,857](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C857&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 32,326](https://img.shields.io/static/v1?label=npm+30d&message=32%2C326&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
 
-> **用途**：面向 DSH Web 用户，把 BrowserSkill 浏览器操作接为原生工具，并呈现可接管的任务进度。
+> **用途**：面向已有 BrowserSkill CLI 和浏览器扩展、希望从 DSH 会话操作网页并查看进度的用户。
 
-> **亮点**：将域工具、按需技能、观察状态和启动清理统一接入DSH，并保留操作级队列与取消语义，提供超出shell拼接的管理机制。[Q01](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q01) [Q02](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q02) 说明该插件将已有 bsk 能力映射为模型工具和可见会话，并管理注册与清理；不归因上游浏览器引擎。
 
-> **思考**：三层版本与技能显露都影响真正可用性，FIFO和取消不回滚网页提交，进程级工具显露也不是权限隔离。[Q03](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q03) 的插件级当前会话不是对话隔离证明；[Q04](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q04) 的取消和 Web 请求检查也不等于撤销网站操作或完整认证。
 
-> **建议**：未验证假设是域工具与按需技能减少初始上下文而不损害选择正确性。以同模型同任务比较全量操作schema和六域接口，记录首轮token、非法action、合格率与接管次数；错误抵消收益即推翻。[Q04](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q04)
+> **建议**：[Q06](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q06) 在可信宿主会话身份存在时对默认及显式浏览器会话做归属检查，并保留合法共享；收益与误拒均未验证。
 
 [查看完整分析](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) · [返回表格](#category-index)
 
@@ -95,15 +94,15 @@
 
 ## [BrowserSkill 浏览器连接工具](../../plugins/tencent--browserskill/INSIGHT.md)
 
-[![GitHub ★ 9,680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
+[![GitHub ★ 9,857](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C857&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
 
-> **用途**：面向需要既有网页登录态的用户，让 shell 型 Agent 在可见任务窗口中读网页、填表并交给人接管。
+> **用途**：面向需要使用既有网页登录态，并能观察和核对动作的 Agent 用户。
 
-> **亮点**：把现有profile操作组织成有会话所有权、可见窗口和显式归还的跨宿主连接层，资源预留与自有tab身份约束使人机交接可解释。[Q01](../../plugins/tencent--browserskill/INSIGHT.md#research-q01) [Q02](../../plugins/tencent--browserskill/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/tencent--browserskill/INSIGHT.md#research-q01) 与 [Q02](../../plugins/tencent--browserskill/INSIGHT.md#research-q02) 表明根工具把登录态、可见窗口和跨宿主 CLI 接到浏览器；未测净节时和业务正确性。
 
-> **思考**：窗口组织不等于账号隔离，低干扰不是无弹窗，归还失败需要保留窗口并由用户继续收敛；停止不回滚网页业务副作用。[Q03](../../plugins/tencent--browserskill/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/tencent--browserskill/INSIGHT.md#research-q03) 与 [Q04](../../plugins/tencent--browserskill/INSIGHT.md#research-q04) 显示停止不会回滚网页动作，本地来源检查不绑定具体扩展身份，且登录态和保存副本有各自边界。
 
-> **建议**：未验证假设是会话窗口与明确归还较普通自动化窗口降低干扰同时保留恢复能力；同站点同任务比较焦点变化、误关用户页、合格率和接管/清理时间，若弹窗或清理负担抵消收益则推翻。[Q04](../../plugins/tencent--browserskill/INSIGHT.md#research-q04)
+> **建议**：[Q06](../../plugins/tencent--browserskill/INSIGHT.md#research-q06) 探索可撤销的本地连接方身份绑定；不能只 pin 可伪造的 Origin，安全收益、兼容及操作负担尚未测试。
 
 [查看完整分析](../../plugins/tencent--browserskill/INSIGHT.md) · [返回表格](#category-index)
 
@@ -122,22 +121,6 @@
 > **建议**：以稳定会话复合键和持久去重索引提升准确度，并将 token 导入限定到明确授权流程且不向浏览器返回原值；待验证，详见[Q02](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q02)、[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。
 
 [查看完整分析](../../plugins/534119219--chicheng-stats/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1335241492-root"></a>
-
-## [DSH × Univer Office](../../plugins/dream-num--dsh-univer-office/INSIGHT.md)
-
-[![GitHub ★ 612](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=612&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream-num/dsh-univer-office) [![npm 30d 44,919](https://img.shields.io/static/v1?label=npm+30d&message=44%2C919&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office)
-
-> **用途**：可信单人环境下，希望在覆盖正式办公结果前预览、确认或丢弃AI变更的DSH用户。
-
-> **亮点**：[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01) 将Univer内容运行时接入DSH审阅流程；[Q02](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q02) 草稿状态、merge审批与ready revision材料约束提供可审核变更增量。办公计算/渲染归Univer，审批执行归宿主。
-
-> **思考**：[Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) 草稿并非租户隔离，认证浏览器后的/uf请求不重复workspace范围校验；结构和截图不代表公式语义及Office保真。
-
-> **建议**：可以提出未验证的审核收据，把readyDraftHeadRevision、人工确认的关键公式/文本断言、截图或lint结果和导出文件摘要绑定到同一版本；任何后续改动使旧结果显式过期。相对只有ready或局部渲染检查，增量是让用户知道“审核的是哪版、导出的又是哪版”，而非再增加Office功能数量。
-
-[查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1326394141-root"></a>
 
@@ -219,35 +202,19 @@
 
 [查看完整分析](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1333128726-root"></a>
-
-## [dsh-genui](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md)
-
-[![GitHub ★ 785](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=785&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-genui) [![npm 30d 39,865](https://img.shields.io/static/v1?label=npm+30d&message=39%2C865&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@changfenhuang/dsh-genui) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@changfenhuang/dsh-genui)
-
-> **用途**：需要对公开或脱敏数据做本地筛选、参数探索和测验的DSH用户，可比较组件与普通Markdown。
-
-> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q01) 与 [Q02](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q02)显示声明式组件将部分视图变化留在浏览器，并复用会话动作形成交互回路；图形引擎与预置样式不是数据正确性或业务完成的证明。
-
-> **思考**：[Q03](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q03)显示localStorage可失败和被LRU淘汰，send失败也不必让控件停用。能交互不代表动作已接收，浏览器状态不是业务账本，秘密字段保护也不能被泛化成全路径保证。
-
-> **建议**：[Q05](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md#research-q05) 提出区分发送、入队与失败的可见动作状态假设，先核对现组件和宿主结果语义，再用busy/gone/断网比较重复请求；入队不能称业务完成。
-
-[查看完整分析](../../plugins/omdsh-dev--dsh-genui/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1334561781-root"></a>
 
 ## [dsh-im](../../plugins/xmanrui--dsh-im/INSIGHT.md)
 
-[![GitHub ★ 2,599](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C599&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xmanrui/dsh-im) [![npm 30d 66,600](https://img.shields.io/static/v1?label=npm+30d&message=66%2C600&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im)
+[![GitHub ★ 3,023](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C023&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xmanrui/dsh-im) [![npm 30d 79,244](https://img.shields.io/static/v1?label=npm+30d&message=79%2C244&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im)
 
-> **用途**：有机器人维护经验的用户可在IM私聊调用固定DSH工作区并接收结果。
+> **用途**：[Q01](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q01) 用户希望从授权 IM 私聊操作本机 DSH，并把结果回到正确会话。
 
-> **亮点**：相对独立机器人脚本，把多渠道身份、DSH会话和主动投递组织到同Host服务；增量在交付编排与共享路由。见[Q01](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q01)。
+> **亮点**：[Q02](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q02) 把 IM 消息映射到 DSH 工作区会话并回传，减少单独搭桥工作；不保证所有渠道具备相同能力。
 
-> **思考**：unknown停止重试有明确保护，但发送成功到pending删除之间仍有崩溃窗口；多渠道权限与宿主认证不能由统一UI代替。见[Q02](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q03) 部分交付、未知结果及文件读取范围使目标、权限与平台记录核验必要。
 
-> **建议**：未验证方向是将延迟交付attempt与已有receipt关联，重启先按幂等键和平台messageId对账；断响应/杀进程对照无改善则停止。见[Q05](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q04) 会话发送前展示目标和文件范围或能减少误投；需要对照实验，尚未验证。
 
 [查看完整分析](../../plugins/xmanrui--dsh-im/INSIGHT.md) · [返回表格](#category-index)
 
@@ -463,15 +430,15 @@
 
 ## [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md)
 
-[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
+[![GitHub ★ 24,798](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C798&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
 
-> **用途**：面向反复构建内部CRUD/审批系统的业务团队；完整平台基础设施，非DSH插件。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01)
+> **用途**：需要反复建设内部数据录入和审批系统的业务及技术团队可用平台组合数据、页面和流程；它是独立平台，不是 DSH 插件。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01)
 
-> **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02)
+> **亮点**：相对逐项手写业务 CRUD 与模型接口，平台将数据与角色权限、可视化配置和 AI 工作流工具纳入同一业务底座；模型和底层数据库并非本项目原创。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01) [Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02) [Q03](../../plugins/nocobase--nocobase/INSIGHT.md#research-q03)
 
-> **思考**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](../../plugins/nocobase--nocobase/INSIGHT.md#research-q03)
+> **思考**：ACL 入口和调用状态不能证明所有 AI 路径同权限，也不能保证外部动作可撤销；同用户缓存和以 get 命名推断自动调用需在真实配置下核验。[Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02) [Q04](../../plugins/nocobase--nocobase/INSIGHT.md#research-q04)
 
-> **建议**：未验证假设是绑定权限上下文版本、流程ID和外部收据并按权限变更失效缓存，减少陈旧授权和重复动作；跨角色/撤销/中断对照，无错误与恢复改善则否定。[Q05](../../plugins/nocobase--nocobase/INSIGHT.md#research-q05)
+> **建议**：未验证假设：可信权限上下文版本驱动用户连接失效，并将业务操作 ID 与远端收据用于恢复对账；以现有 TTL、配置清理和调用状态为对照，测授权、重复写、误拒及恢复成本。[Q06](../../plugins/nocobase--nocobase/INSIGHT.md#research-q06)
 
 [查看完整分析](../../plugins/nocobase--nocobase/INSIGHT.md) · [返回表格](#category-index)
 
@@ -490,6 +457,22 @@
 > **建议**：跨工具族绑定人类批准、具体目标与派发不确定性，再为少数业务动作核独立记录真值，未知只读对账不重放，见 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335241492-root"></a>
+
+## [Univer Office](../../plugins/dream-num--dsh-univer-office/INSIGHT.md)
+
+[![GitHub ★ 650](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=650&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream-num/dsh-univer-office) [![npm 30d 46,073](https://img.shields.io/static/v1?label=npm+30d&message=46%2C073&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office)
+
+> **用途**：DSH 用户希望在会话里生成、修改并审阅办公文件，按需交付常见格式。[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01)
+
+> **亮点**：连接 DSH 工具、Univer 协作进程与审阅视图，集中编辑与发布路径；引擎和文件格式能力由上游提供。[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01) [Q02](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q02)
+
+> **思考**：多进程草稿、导出和权限是否在真实宿主中可靠，收益能否超过格式保真和运维成本？[Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04)
+
+> **建议**：假设审批卡展示导出结构差异及抽样渲染可减少格式损失漏检；以固定文件集和审阅人比较漏检、误报及时间，若收益不足则否定。[Q05](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336280167-root"></a>
 
@@ -527,4 +510,4 @@
 
 ## 更新时间
 
-2026-10-29
+2026-11-01

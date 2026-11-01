@@ -1,44 +1,34 @@
 {
     "repository": "ranxianglei/billion-context",
     "repository_id": 1324949198,
-    "captured_at": "2026-10-27T02:07:15.984Z",
-    "window_start": "2026-09-27T02:07:15.984Z",
-    "stars": 2923,
-    "pushed_at": "2026-10-27T02:03:44Z",
+    "captured_at": "2026-11-01T06:31:34.186Z",
+    "window_start": "2026-10-02T06:31:34.186Z",
+    "stars": 3521,
+    "pushed_at": "2026-11-01T06:23:05Z",
     "issues": {
-        "open": 289,
-        "closed": 1946,
-        "created_30d": 1677,
-        "closed_30d": 1420,
-        "updated_30d": 1718
+        "open": 386,
+        "closed": 2110,
+        "created_30d": 1742,
+        "closed_30d": 1406,
+        "updated_30d": 1800
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "billion-context",
-        "captured_at": "2026-10-27T02:07:15.984Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 2010311,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/billion-context",
+        "captured_at": "2026-10-31T05:50:28.596Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 2315214,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/billion-context",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-05T13:40:30.646Z",
-            "captured_at": "2026-10-26T13:10:34.281Z",
+            "captured_at": "2026-10-31T05:50:28.596Z",
             "source_url": "https://registry.npmjs.org/billion-context",
             "error": null,
-            "latest_version": "0.1.208",
-            "latest_published_at": "2026-10-25T13:17:05.885Z",
+            "latest_version": "0.1.209",
+            "latest_published_at": "2026-10-28T15:24:32.406Z",
             "latest_error": null
         }
     }

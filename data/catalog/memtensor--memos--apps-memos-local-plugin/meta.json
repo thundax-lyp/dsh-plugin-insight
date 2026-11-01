@@ -1,44 +1,57 @@
 {
     "repository": "MemTensor/MemOS",
     "repository_id": 1014729376,
-    "captured_at": "2026-10-27T01:50:27.819Z",
-    "window_start": "2026-09-27T01:50:27.819Z",
-    "stars": 12110,
-    "pushed_at": "2026-10-26T14:41:43Z",
+    "captured_at": "2026-11-01T08:13:08.475Z",
+    "window_start": "2026-10-02T08:13:08.475Z",
+    "stars": 12203,
+    "pushed_at": "2026-10-29T11:26:35Z",
     "issues": {
-        "open": 65,
-        "closed": 497,
-        "created_30d": 47,
-        "closed_30d": 29,
-        "updated_30d": 93
+        "open": 62,
+        "closed": 506,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMemTensor%2FMemOS%20is%3Aissue%20created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5036:15F1:D60993:135D83A:6AE6F506 and timestamp 2026-11-01 08:15:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMemTensor%2FMemOS%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 51B0:15F1:D60CBE:135DCCC:6AE6F50E and timestamp 2026-11-01 08:15:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMemTensor%2FMemOS%20is%3Aissue%20updated%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 51DE:15F1:D61053:135E224:6AE6F50F and timestamp 2026-11-01 08:15:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T20:57:32.907Z",
+        "captured_at": "2026-10-31T09:58:25.350Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "@memtensor/memos-local-plugin",
-        "captured_at": "2026-10-27T01:50:27.819Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 8367,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/%40memtensor%2Fmemos-local-plugin",
+        "captured_at": "2026-11-01T00:10:01.346Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 8572,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40memtensor%2Fmemos-local-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-04-27T11:33:26.672Z",
-            "captured_at": "2026-10-27T01:50:27.819Z",
+            "captured_at": "2026-11-01T00:10:01.346Z",
             "source_url": "https://registry.npmjs.org/%40memtensor%2Fmemos-local-plugin",
             "error": null,
-            "latest_version": "2.0.20",
-            "latest_published_at": "2026-09-21T11:34:42.779Z",
+            "latest_version": "2.0.21",
+            "latest_published_at": "2026-10-29T09:14:19.839Z",
             "latest_error": null
         }
     }

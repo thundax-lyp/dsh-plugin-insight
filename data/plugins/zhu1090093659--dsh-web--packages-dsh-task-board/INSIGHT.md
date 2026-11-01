@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[dbf0248](https://github.com/zhu1090093659/dsh-web/tree/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board)
+源码版本：[68a78d0](https://github.com/zhu1090093659/dsh-web/tree/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board)
 
 <!-- BEGIN META -->
-[![GitHub ★ 9,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C562&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 110,197](https://img.shields.io/static/v1?label=npm+30d&message=110%2C197&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board)
+[![GitHub ★ 9,896](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C896&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 120,209](https://img.shields.io/static/v1?label=npm+30d&message=120%2C209&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-task-board)
 <!-- END META -->
 
-> **功能**：在 DSH Web 界面管理任务，由 Host 执行真实会话、定时调度并记录验证与执行状态。
+> **功能**：在 DSH 中组织任务卡片、调度宿主会话，并提供执行记录与可选验收。
 
-> **亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
+> **亮点**：[Q02](#research-q02) 显示任务、持久台账和宿主会话的连接；[Q03](#research-q03) 对启用验收的完成声明增加通过记录要求。相对人工看板是可回查流程，不证明业务结果一定合格。
 
-> **主要限制**：卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](#research-q02)。
+> **主要限制**：[Q03](#research-q03) 显示手工 Done、普通单轮与通过验收的 goal 运行并不相同；把卡片列当完成证据会掩盖未执行或未验收。
 
 **本文目录**
 
@@ -26,10 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 任务板为谁交付什么，较会话列表或清单增加什么？](#detail-section-11)
-  - [Q02 · Host如何拥有状态并阻止未通过的goal完成？](#detail-section-12)
-  - [Q03 · 调度、权限和故障恢复依赖什么？](#detail-section-13)
-  - [Q04 · 哪些任务值得试用，怎样检验验收闭环？](#detail-section-14)
+  - [Q01 · 谁需要任务板及后台会话，人工看板能否替代？](#detail-section-11)
+  - [Q02 · 卡片如何持久化并启动真实会话？](#detail-section-12)
+  - [Q03 · 完成 gate 是否覆盖手动列及所有执行？](#detail-section-13)
+  - [Q04 · 依赖、权限和失败恢复成本是什么？](#detail-section-14)
+  - [Q05 · 什么条件值得试用，何时停止？](#detail-section-15)
+  - [Q06 · 明确区分状态能否减少完成误信？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：已有DSH的维护者可管理可回查的巡检/评审任务和子任务。
+> **用途**：需要组织周期性巡检或代码任务的 DSH 维护者可按卡片查看执行与结果；仍需对业务结果负责。
 
-外部清单加原生DSH会话/人工验收为基线；不把卡片或裁判分数当独立业务效果。
+人工看板配合普通 DSH 会话可记录任务；该组件增加宿主侧调度、会话绑定与可选验收，不代表已证实节省人时。
 
 <a id="detail-section-3"></a>
 
@@ -50,67 +52,66 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 任务与执行记录 | 追踪真实Host工作 | 手工列移动不同于执行完成 |
-| cron/一次性调度 | 后台启动任务 | Host在线、模型及权限已配 |
-| goal完成门槛 | 要求验收证据通过 | 仅识别的goal路径，LLM语义可能误判 |
-| Agent任务工具 | 对话管理同一看板 | 真实配额与权限限制仍适用 |
+|---|---|---|
+| 卡片与台账 | 组织任务并保存状态 | 手工移动列不等于执行 |
+| 宿主执行 | 将卡片任务发送到会话 | 需工作区、模型及权限 |
+| 目标验收 | 适用 goal 完成前检查记录 | 双开关和适用性决定是否启用，裁判可能误判 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH>=0.2.1-rc.3及会话服务 | 必需 | 真实执行与UI | 不能据卡片出现认定执行可用 |
-| 模型与裁判路线 | 对应执行/验收必需 | 任务及质量裁决 | 异常应保持非质量判定 |
-| Host持续运行 | 后台必需 | cron与监测 | 浏览器可关不等于Host可停 |
-| 权限确认与HTTP信任 | 必需 | 限执行和管理范围 | 不放宽到任意公网 |
+|---|---|---|---|
+| 兼容 DSH 与网关、工作区 | 启动和执行需要 | 挂载台账及会话 | 缺工作区时拒绝创建会话 |
+| 模型服务 | Agent 执行和裁判需要 | 生成工作与可选验收 | 不可用时运行或验收无法正常完成 |
+| Host 持续运行 | 后台调度需要 | 启动和追踪执行 | 机器休眠或断电时效果未验证 |
+| 文件与网络权限 | 对应任务需要 | 工作区和外部操作 | 影响按实际权限及任务判断 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户备份ledger/工作区，核模型和权限 | 任务范围无外部写入 |
-| 执行 | Host开启卡片会话 | session/工作区与卡片一致 |
-| 验收 | 裁判给证据，用户核真实差异 | 不以Done列单独证明完成 |
-| 恢复 | 停调度，核终态/预算与副作用 | 结果未知先人工对账 |
+|---|---|---|
+| 准备 | 用户选工作区和权限 | 可恢复且范围明确 |
+| 启动 | Host 打开 execution 并向会话发送任务 | session 与 execution 绑定 |
+| 结算 | Host 检查会话，适用时检查验收记录 | 无通过记录时不能认作已验收成功 |
+| 复核 | 用户检查产物和外部副作用 | 状态或副作用不明时停止重跑 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 插件/Host和模型资源；金额未知 | 备份ledger、选工作区与权限 | 不启外部副作用 |
-| 持续使用 | 会话、裁判token、轮询、防休眠 | 复核任务与验收证据 | 总消耗和节时未知 |
-| 失败恢复 | 重试会话/裁判与日志 | 核终态、异常预算、锁和文件变化 | 不盲重跑结果未知任务 |
+|---|---|---|---|
+| 首次 | 宿主与模型资源未知 | 配置工作区和权限，时间未知 | 需要兼容版本 |
+| 持续 | 会话、裁判和后台调度成本未知 | 复核任务与验收，时间未知 | 可选 goal 和裁判消耗资源 |
+| 失败恢复 | 重试和存储成本未知 | 检查状态、日志及外部副作用 | 中断恢复未经实测 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| Host执行 | ledger与会话接线 | 重启并发端到端效果 |
-| 完成门槛 | goal complete前裁判与异常分预算 | 业务合格率、裁判误放/误拒 |
-| 后台调度 | Host独立于浏览器 | 机器休眠/断电及副作用恢复 |
+|---|---|---|
+| 宿主执行 | 卡片绑定会话并持久化记录 | 长期调度和恢复成功率 |
+| 完成门槛 | 适用 goal 执行要求匹配通过记录 | 裁判误判及真实业务合格率 |
+| 手工状态 | 无执行时可移动卡片 | 读者能否正确辨识验收状态 |
 
-> **思考**：卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](#research-q02)。
+> **思考**：[Q03](#research-q03) 显示手工 Done、普通单轮与通过验收的 goal 运行并不相同；把卡片列当完成证据会掩盖未执行或未验收。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把任务、Host调度、会话和验证记录串成可回查执行流程，增量在状态所有权和完成门槛。见[Q01](#research-q01)。
+> **亮点**：[Q02](#research-q02) 显示任务、持久台账和宿主会话的连接；[Q03](#research-q03) 对启用验收的完成声明增加通过记录要求。相对人工看板是可回查流程，不证明业务结果一定合格。
 
-权威ledger、fsync/rename与请求指纹，以及质量/异常/无效验收分预算值得复用；移植需持久会话、工具生命周期和权限服务，见[Q02](#research-q02)。
+[Q02](#research-q02) 的 execution 绑定和 ledger 临时写入、fsync、rename 可支持恢复设计；[Q03](#research-q03) 的契约冻结和匹配验收约束有明确适用范围，不能外推到手工列。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-卡片列可人工声明，gate只拦识别的goal完成；裁判仍可能语义误判，不能将Done或No False Completion当通用验收。见[Q02](#research-q02)。
+[Q03](#research-q03) 显示手工 Done、普通单轮与通过验收的 goal 运行并不相同；把卡片列当完成证据会掩盖未执行或未验收。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-临时工作区单任务试用，分开手工列、执行终态和验证结果；先保留人工验收。见[Q04](#research-q04)。
+[Q05](#research-q05) 建议可审查结果的维护者先在临时工作区运行无外部副作用的单卡；终态或副作用不明时停止自动重跑并人工检查。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-权威状态和goal完成门槛有源码支持；LLM裁判正确性、重启恢复与外部副作用未验，证据范围摘要为未验证假设。
+固定源码支持所查状态与执行机制；裁判准确率、长期恢复和业务效果未经验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-task-board/README.md、packages/dsh-task-board/package.json、packages/dsh-task-board/src/index.ts、packages/dsh-task-board/src/host-ledger.ts、packages/dsh-task-board/src/host/verification-gate.ts、packages/dsh-task-board/src/host-routes.ts 及固定范围 inventory；组件：packages/dsh-task-board。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-task-board/README.md、packages/dsh-task-board/package.json、packages/dsh-task-board/src/index.ts、packages/dsh-task-board/src/host-ledger.ts、packages/dsh-task-board/src/host-service.ts、packages/dsh-task-board/src/host-runner.ts、packages/dsh-task-board/src/host/verification-gate.ts、packages/dsh-task-board/src/core/tasks.ts、packages/dsh-task-board/src/host-routes.ts 及固定范围 inventory；组件：packages/dsh-task-board。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读任务板组件核心状态、goal门槛与HTTP信任；未执行目标代码或宿主，不验GitHub扩展及所有远程/团队路径。
-- 下一步：固定无外部写入任务并注入实现错误、裁判异常和Host重启，核误放/误拒、一次执行记录与人工恢复成本。
+- 边界：只读固定子包的宿主台账、会话启动、目标验收和请求准入；未运行插件、宿主、裁判或真实调度，也未全面检查 GitHub 扩展和团队路径。
+- 下一步：在隔离宿主固定版本，分别测试手工 Done、普通单轮、goal 启用且通过／失败／无记录，以及断连重启；核对会话、报告、文件与模型费用。
 
 **分析版本**
 
 - **仓库**：[zhu1090093659/dsh-web](https://github.com/zhu1090093659/dsh-web)
-- **版本号**：0.4.11（[固定提交 dbf0248](https://github.com/zhu1090093659/dsh-web/tree/dbf0248fd8b2a77a3aeb44ae9688d936ba143303)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.13（[固定提交 68a78d0](https://github.com/zhu1090093659/dsh-web/tree/68a78d05a6c8c27305671cfc42c30cbbec8014f5)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +138,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是默认区分手工声明、Host执行和证据验收及副作用状态；固定卡片理解测试无减误信则不推广。见[Q04](#research-q04)。
+[Q06](#research-q06) 提出同时展示手工声明、执行、证据及副作用的未验证假设；若固定卡片理解实验未减少误信则不推广。
 
-固定无外部写入任务并注入实现错误、裁判异常和Host重启，核误放/误拒、一次执行记录与人工恢复成本。
+在隔离宿主固定版本，分别测试手工 Done、普通单轮、goal 启用且通过／失败／无记录，以及断连重启；核对会话、报告、文件与模型费用。
 
 <a id="detail-section-9"></a>
 
@@ -150,47 +151,54 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 3 | 503 | — | — | 27326 |
-| .ts | source | 72 | 21296 | 12961 | 7143 | — |
-| .tsx | source | 23 | 6783 | 5289 | 1244 | — |
-| .ts | test | 80 | 22615 | 16254 | 3913 | — |
-| .tsx | test | 29 | 7325 | 5177 | 1242 | — |
+| .md | source | 3 | 541 | — | — | 31968 |
+| .ts | source | 77 | 23658 | 14277 | 8084 | — |
+| .tsx | source | 24 | 7546 | 5842 | 1426 | — |
+| .ts | test | 88 | 25317 | 18241 | 4388 | — |
+| .tsx | test | 32 | 8491 | 6067 | 1413 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 192](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=192&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-09-27T02%3A07%3A21.762Z..2026-10-27T02%3A07%3A21.762Z) [![近30天关闭 195](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=195&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T02%3A07%3A21.762Z..2026-10-27T02%3A07%3A21.762Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 170](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=170&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 173](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=173&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查Host权威任务板怎样把卡片推进为真实会话执行和验收
+**插件研究总目标**：核查任务卡片如何持久化、调度会话及限制完成声明，并区分手工状态和验收结果。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 任务板为谁交付什么，较会话列表或清单增加什么？
+### Q01 · 谁需要任务板及后台会话，人工看板能否替代？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标用户是已经在DSH反复执行巡检、评审或多子任务工作的开发者。合格交付不是卡片进Done，而是指定工作区真实会话执行、可定位的结果与所需验证。相对外部清单加手工会话，Host权威ledger把任务、调度、会话和执行记录关联，关闭浏览器后流程仍由Host管理；父卡运行一个会话，子任务交给该会话按依赖分派，不能把卡片数当Host自动打开的会话数。源码级可识别贡献在状态所有权和交付门槛集成，非看板外观。人工move-done仍可只改列，作者也标识列与执行不一致，故界面完成不能成为业务完成证明。
+DSH 用户可把巡检或代码任务以卡片组织、启动宿主会话并查看结果。子包 README.md:14-23 的后台调度和独立裁判是作者主张；相对人工任务板和普通对话，源码接入实际会话、记录执行以及可选验收，有可追踪的流程增量。合格结果仍取决于任务目标和外部验收，图形列不等于业务完成。未获取同任务的人时、合格率或用户反馈，不能从功能数量推断减少成本。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-task-board/README.md:18-23](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/README.md#L18-L23)
+**依据 1 · 作者声明**：[packages/dsh-task-board/README.md:14-23](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/README.md#L14-L23)
 
-作者描述Host任务执行、父卡分派和验证主张
+作者描述任务板、调度与验收。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
+  <strong>Autonomous Kanban Task Board & Cron Scheduling for DeepSeek Harness (DSH)</strong><br>
+  <em>Host-Authoritative Ledger · Parent-Card Subtask Dispatch · Double-Blind Verification · Sleep Inhibition · GitHub Issue-to-PR</em>
+</p>
+
 A hot-pluggable DeepSeek Harness (DSH) Web GUI and official desktop client task automation plugin with a Host-authoritative task ledger, real DSH agent session execution, cron background scheduling, cross-platform idle-sleep protection, parent-card subtask dispatch, and automated verification quality gates. It executes unattended background workflows including automated code reviews, routine health checks, and scheduled pipelines without requiring an open browser window. It mounts cleanly via `cordis.patch.yml` and profiles without modifying DSH core code.
 
 - Host-authoritative architecture and offline background execution: The browser is merely an asynchronous view; closing tabs or dropping connections will not interrupt Host scheduling, session execution, or atomic ledger settlement. Built-in cross-platform sleep inhibition (macOS, Windows, Linux) allows screens to power down while preventing system idle sleep for reliable unattended automation.
@@ -199,62 +207,98 @@ A hot-pluggable DeepSeek Harness (DSH) Web GUI and official desktop client task 
 - Automated GitHub loop, freeze handover, and agent tool surface: Real-time bidirectional GitHub Issues sync automates agent bug fixing and PR creation; supports `<<<FREEZE` session context snapshots with handover packages; exposes 8 native model tools for autonomous planning and external execution registration.
 ```
 
-**依据 2 · 作者声明**：[packages/dsh-task-board/README.md:55-56](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/README.md#L55-L56)
+</details>
 
-工具与external outcome/人工列移动区别
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/index.ts:713-742](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/index.ts#L713-L742)
+
+宿主服务与调度启动。
+
+<details>
+<summary>查看原文（30行）</summary>
 
 ```text
-- **Agent tools**: every session gets eight model-facing tools (`task_board_list`, `task_board_get`, `task_board_create`, `task_board_update`, `task_board_set_parent`, `task_board_run`, `task_board_manage`, `task_board_schedule`) that drive the same Host ledger the browser drives, so an agent can list the board, create subtasks, link or detach them, start a run, move a card to any column (declaring it done, failed, or in progress without a run), archive/restore/delete it, settle a card the board can no longer observe, and arm its cron schedule from the conversation.
-- **External outcomes (issue #1826)**: work that is not executed by this Host — an agent outside DSH such as Codex or Claude Code, running its own model — can be recorded as a real run rather than a bare column edit. `task_board_manage(action: 'record-external-outcome', result: 'succeeded'|'failed', initiatedBy: <who>)` appends an execution record carrying the verdict, the caller and an optional summary, and the terminal column is derived from that same record by the same rule a Host settlement uses (`core/tasks.ts` `settledStatus`). The record is marked `external`, never carries a session, and is refused while the card still has an open execution (while this Host is running the card it stays the only authority) and on an archived card. `running` and `cancelled` cannot be recorded this way: those stay Host-only. A manual `move-done`/`move-failed` remains available and still writes only the column — the difference is that this one leaves a record behind, so the column and the run history can never disagree.
+  // The 0.2.1 gateway requires every request to name the peer it speaks for:
+  // the board calls as the host-local owner, so its peer is minted on this
+  // fiber and aborts with it (see createOwnerPeer).
+  const ownerPeer = createOwnerPeer(ctx)
+  const host = new TaskBoardHostService(ctx.typertGateway, {
+    workspaceRegistry: ctx.workspaceRegistry,
+    ownerPeer,
+    sessionDefaultPermission,
+    maxSubtaskDepth: maxSubtaskDepth(),
+    goalRunEnabled,
+    runLaunchWidth,
+    spendBudgetTokens,
+    cardDefaults,
+    verificationSettings,
+    verificationCatalog,
+    attachments: () => resolveAttachmentStore(ctx),
+    modelInfo: () => resolveModelInfoReader(ctx),
+    timers: resolveHostTimers(ctx),
+    commandDispatcher: {
+      async execute(sessionId, line, signal) {
+        const agent = await resolveExecutionAgent(ctx, sessionId)
+        return (await ctx.commands.execute(agent, line, [], signal))?.result
+      },
+    },
+  })
+  hostForCatalog = host
+  // Configuration before start(): a disabled row must not take the first
+  // scheduler tick, which would roll schedules the board is not running.
+  host.setConfiguration(enabled(), preventIdleSleep(), sessionPollSeconds())
+  host.start()
 ```
+
+</details>
+
+#### 缺口
+
+- 没有同任务用户对照
+  **影响**：不能推断节时及需求强度
+  **进一步探讨**：对比同批卡片的人工看板与宿主执行的人工投入和合格率。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · Host如何拥有状态并阻止未通过的goal完成？
+### Q02 · 卡片如何持久化并启动真实会话？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-ledger文档含revision、tasks、scheduler和近期request指纹，落盘用同目录临时文件、fsync后rename；配合独占锁与进程身份检查限制同时写入。浏览器被设计为异步视图，确认状态来自Host。验证门槛确实在tool pre-execute识别update_goal(action=complete)，异常fail-closed；它将质量失败、模型/环境异常、无效验收分别记预算，防止超时直接当质量失败。gate只覆盖被识别的goal完成调用，普通卡片移动和外部结果记录是不同语义；“No False Completion”不能从一个拦截点扩大成所有交付均正确。LLM裁判仍需有效证据、适用模型和工作区变化输入，结构校验比提示单独强，但不能消除语义误判。
+src/index.ts:713-742 创建 Host 服务并启动调度；src/host-ledger.ts:1420-1432 对任务创建 execution 并提交 ledger。src/host-service.ts:815-861 在启动前冻结配置，调用 runner.launch 并在会话提示前将 sessionId 与 execution 绑定。src/host-runner.ts:581-596 在没有 workspace 时拒绝，否则调用 session.create，然后 pinAndPrompt；783-792 将任务内容排入 session.prompt，随后尝试启用 goal。ledger.ts:1852-1869 通过临时文件、fsync 和 rename 保存。结果轮询后按 execution 状态结算；写入和恢复实现的存在不证明机器断电、休眠或外部副作用都能完整恢复。代码未在目标宿主运行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:38-55](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host-ledger.ts#L38-L55)
+**依据 1 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1420-1432](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-ledger.ts#L1420-L1432)
 
-状态文档含请求指纹与revision
+打开 execution 并提交台账。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-  importedSources?: string[]
-}
-
-interface PersistedRequest {
-  requestId: string
-  fingerprint: string
-}
-
-/** On-disk document of any schema generation (schemaVersion untyped until the load branches decide). */
-type ParsedLedgerDocument = Omit<Partial<LedgerDocument>, 'schemaVersion'> & { schemaVersion?: unknown }
-
-interface LedgerDocument {
-  schemaVersion: typeof TASK_BOARD_SCHEMA_VERSION
-  revision: number
-  tasks: TaskRecord[]
-  scheduler: PersistedScheduler
-  recentRequests: PersistedRequest[]
-}
+  private startRun(root: TaskRecord, now: number, initiator?: string, rerun = false, progress?: ScheduleProgress, rework?: ExecutionRework): OpenedRun[] {
+    const before = this.document.tasks
+    const [participant] = cascadeTargets(before, root.id)
+    if (participant === undefined || participant.archivedAt !== undefined) return []
+    if (hasOpenExecution(participant)) return []
+    const groupId = crypto.randomUUID()
+    const base = rerun ? withStatus(participant, 'todo', now) : participant
+    const opened = startExecution(base, now, crypto.randomUUID(), initiator, groupId, rework)
+    let tasks: readonly TaskRecord[] = before.map(task => task.id === participant.id ? opened.task : task)
+    if (progress !== undefined) tasks = applyScheduleProgress(tasks, root.id, progress, now)
+    this.document.tasks = [...tasks]
+    this.commit()
+    return [{ task: resolveExecutionTargets(opened.task, before, this.maxSubtaskDepth), execution: opened.execution }]
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1824-1841](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host-ledger.ts#L1824-L1841)
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1852-1869](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-ledger.ts#L1852-L1869)
 
-临时文件fsync/rename提交
+临时文件、fsync 与 rename。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -282,44 +326,221 @@ interface LedgerDocument {
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-task-board/src/host/verification-gate.ts:13-32](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host/verification-gate.ts#L13-L32)
+**依据 3 · 源码核查**：[packages/dsh-task-board/src/host-service.ts:815-861](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-service.ts#L815-L861)
 
-分开质量/异常/无效验收预算
+冻结契约、调用 runner、绑定 session。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
- * - one acceptance cycle per EXECUTION, spent at most twice: the first failure
- *   returns its findings to the fixing agent, the second ends the cycle;
- * - a repeated completion call during a repair, a new automatic goal round, a
- *   plugin reload and a Host restart all reuse the same cycle rather than
- *   resetting it (the budget is persisted on the execution record);
- * - an anomaly (timeout, authentication, unparseable answer, an unusable judge
- *   route) is recorded separately from a quality verdict and is never treated
- *   as one;
- * - exhausting the anomaly budget does NOT judge the card: an environment that
- *   cannot answer is not the work failing, so the cycle is held open with no
- *   judge call until a user clears the recorded anomalies (issue #1828);
- * - an attempt the time budget ends before any verdict is recorded as its own
- *   stage and charged to no budget at all (issue #1828);
- * - an INVALID acceptance (a veto whose required evidence is missing,
- *   unlocatable, or aimed at the empty-work baseline) is recorded in its own
- *   stage, spends its OWN bounded budget, and never consumes a quality attempt
- *   or fails the card; when that budget is spent the cycle is held for a human
- *   exactly like a spent anomaly budget;
- * - concurrent completion calls for one execution share one acceptance.
-
+      const { settings, globalGoalEnabled, catalog } = await (freezeContract ?? (() => this.freezeRunContract()))()
+      // The GLOBAL native-/goal switch is read ONCE per run group and carried by
+      // value for the whole execution: a settings edit after this point can only
+      // affect executions that start later.
+      // The card must ASK for the goal run: the option is off by default, so an
+      // absent value is a plain turn exactly like an explicit false.
+      const goalEnabled = globalGoalEnabled && opened.task.goalRun === true
+      // The card's opt-out is a DISTINCT reason, not the board switch: the
+      // report must be able to say which of the two turned the gate off.
+      const skippedBy: ExecutionVerification['applicability'] = opened.task.skipVerification === true ? 'skipped' : 'disabled'
+      const contract = resolveContract(
+        { ...settings, enabled: settings.enabled && opened.task.skipVerification !== true },
+        catalog,
+      )
+      // An execution that will not become a goal run can never fire the
+      // completion gate, so it is marked with the reason that actually applied:
+      // the global switch being off is its OWN reason, distinct from this run
+      // simply not becoming a goal run (the card never opted in, or a refused or
+      // unavailable /goal command), and it must never read as an accepted run.
+      // The reason names which switch withheld the goal: the GLOBAL master
+      // switch (this board never arms /goal) is a different fact from the card's
+      // own goal option staying off — which is the default, so it is what an
+      // untouched card gets.
+      const notArmed: ExecutionVerification['applicability'] = globalGoalEnabled ? 'goal-unavailable' : 'goal-disabled'
+      const initial: ExecutionVerification = {
+        contract,
+        attempts: [],
+        applicability: !contract.enabled ? skippedBy : notArmed,
+      }
+      this.ledger.setVerification(opened.task.id, opened.execution.id, initial)
+      const sessionId = await this.runner.launch(opened.task, {
+        ...(reuseSessionId === undefined ? {} : { reuseSessionId }),
+        ...(forcedPreset === undefined ? {} : { agentPreset: forcedPreset }),
+        ...(promptContext === undefined ? {} : { promptContext }),
+        // The frozen global switch travels with the launch, so the runner's
+        // arming decision is exactly the one made above.
+        goalEnabled,
+        // The same catalog snapshot the acceptance contract was frozen from.
+        catalog,
+        // Bind the session to the execution before the prompt is queued, so the
+        // completion gate can never observe the agent without its binding.
+        onSession: (id) => {
+          attached = id
+          this.ledger.attachSession(opened.task.id, opened.execution.id, id)
+        },
+        onGoalArmed: (armed) => {
+          this.setApplicability(opened.task.id, opened.execution.id, !contract.enabled ? skippedBy : armed ? 'enforced' : notArmed)
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-task-board/src/host/verification-gate.ts:450-467](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host/verification-gate.ts#L450-L467)
+**依据 4 · 源码核查**：[packages/dsh-task-board/src/host-runner.ts:581-596](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-runner.ts#L581-L596)
 
-仅拦update_goal完成并异常拒绝
+检查工作区并创建会话。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（16行）</summary>
+
+```text
+    // Nothing names a workspace and the deployment has none to resolve to, so
+    // there is no place this run may legitimately start: `session.create` would
+    // quietly land it in the Host process working directory (the desktop app's
+    // profile directory). Refuse before the session exists, with the reason the
+    // board settles the card with and the browser renders in the user's
+    // language, so the fix (pick a workspace on the card) is what the user reads.
+    if (workspaceId === undefined) throw new Error(MISSING_WORKSPACE_REASON)
+    const created = await this.invoke('session', 'create', {
+      workspaceId,
+      ...(mode === undefined ? {} : { agentPreset: mode }),
+    }) as { sessionId: ExecutionSessionId }
+    const sessionId = created.sessionId
+    options.onSession?.(sessionId)
+    try {
+      await this.invoke('session', 'rename', { sessionId, title: task.title })
+      await this.pinAndPrompt(sessionId, task, permission, options.promptContext, options.onGoalArmed, options.goalEnabled === true, options.catalog)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-task-board/src/host-runner.ts:778-793](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-runner.ts#L778-L793)
+
+排入 prompt 并尝试启动 goal。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    // The attachments are resolved AFTER the preflight and BEFORE the prompt:
+    // an image becomes an image part of the prompt (after the text part), and
+    // a file becomes a readable path in a preamble section of its own.
+    const resolved = await this.resolveAttachments(attachments)
+    const promptContext: PromptContext = resolved.files.length === 0 ? context : { ...context, files: resolved.files }
+    await this.invoke('session', 'prompt', {
+      sessionId,
+      requestId: 'task-board-' + crypto.randomUUID(),
+      mode: 'queue' as const,
+      content: [
+        { type: 'text' as const, text: promptText(task, promptContext) },
+        ...resolved.images,
+      ],
+    })
+    const armed = await this.armGoal(sessionId, task, promptContext, goalEnabled)
+    onGoalArmed?.(armed)
+```
+
+</details>
+
+#### 缺口
+
+- 未执行断电和多进程恢复
+  **影响**：不能推断持久性涵盖全部中断
+  **进一步探讨**：隔离宿主验证调度、会话重启与外部副作用。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 完成 gate 是否覆盖手动列及所有执行？
+
+**研究主题**：缺陷与关键质疑、功能与机制
+
+#### 完整回答
+
+src/index.ts:815-850 将 gate 接到 tools/pre-execute；host/verification-gate.ts:391-404 只对能绑定本板 execution、契约启用且 applicability 为 enforced 的对象工作，450-465 只拦 update_goal(action=complete) 并在 gate 异常时拒绝该完成声明。host-service.ts:1063-1088 对需要验收的成功结果要求匹配 pass，否则按不同原因标记失败；这比仅检查最终文本更严格，但裁判正确率没有验证。host-runner.ts:830-875 要全局 goal 与卡片 goalRun 两开关，缺命令或拒绝时继续普通单轮；跳过和非 goal 执行不应被称为通过了相同验收。host-ledger.ts:1152-1161 允许没有 open execution 的卡片手工改列，core/tasks.ts:706、729-740 的合法目标含 done；手动 Done 不等于执行或通过。README.md:27 说明客户端会区分列与最新执行不一致。需实际对照卡片、执行及验收记录，而不是只看列。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-task-board/src/index.ts:815-850](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/index.ts#L815-L850)
+
+注册 pre-execute gate。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+  ctx.effect(() => {
+    const disposers: Array<() => void> = []
+    try {
+      // The goal acceptance gate: the OFFICIAL tool pre-execution lifecycle,
+      // installed before the tool body runs, so a completion claim cannot take
+      // effect without a matching acceptance pass record.
+      const gate = createGoalVerificationGate({
+        ledger: host.ledger,
+        llm: () => resolveLlmRuntime(ctx),
+        goals: () => {
+          try {
+            return ctx.get('goals') as GoalFace | undefined
+          } catch {
+            return undefined
+          }
+        },
+        // The host's own observation of what a turn changed on disk, when this
+        // deployment records it; the acceptance degrades to the trajectory alone
+        // when it does not.
+        workspaceChanges: () => probeWorkspaceChanges(ctx),
+        callTimeoutMs: verificationCallTimeoutMsLive,
+        budgetMs: verificationBudgetMsLive,
+        logger: {
+          warn: (message: string, ...rest: unknown[]) => {
+            const logger = (ctx as { logger?: { warn?: (...args: unknown[]) => void } }).logger
+            if (typeof logger?.warn === 'function') logger.warn(message, ...rest)
+            else console.warn(message, ...rest)
+          },
+        },
+      })
+      // A capture-only context may implement no listener registry (it returns
+      // no disposer), so the handle is pushed only when it really is one.
+      const offGate = ctx.on('tools/pre-execute', async (exec, next) => {
+        const decision = await gate({ name: exec.name, arguments: exec.arguments, agent: exec.agent, signal: exec.signal })
+        return decision ?? next()
+      })
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/host/verification-gate.ts:391-404](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host/verification-gate.ts#L391-L404)
+
+限定本板 execution 和验收适用性。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  /** Evaluate one tool call; undefined means "not this gate's business". */
+  const evaluate = async (exec: GateExecution): Promise<PreToolDecision | undefined> => {
+    const binding = (() => {
+      const agent = exec.agent as { id?: unknown } | undefined
+      const sessionId = agent?.id === undefined ? '' : String(agent.id)
+      return sessionId === '' ? undefined : deps.ledger.findOpenExecutionBySession(sessionId)
+    })()
+    if (binding === undefined) return undefined
+    const verification = binding.execution.verification
+    if (verification === undefined || verification.contract.enabled === false) return undefined
+    // Only a goal run of the board's own execution is gated: a teammate
+    // execution is certified through its Lead's aggregated evidence.
+    if (verification.applicability !== 'enforced') return undefined
+    if (passedAttempt(verification) !== undefined) return { kind: 'allow' }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-task-board/src/host/verification-gate.ts:450-465](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host/verification-gate.ts#L450-L465)
+
+只拦目标完成调用且异常拒绝。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
   return async (exec: GateExecution): Promise<PreToolDecision | undefined> => {
@@ -338,59 +559,224 @@ interface LedgerDocument {
         'TASK_BOARD_VERIFICATION_ANOMALY',
         error instanceof Error ? error.message : String(error),
       )
-    }
-  }
 ```
 
 </details>
 
+**依据 4 · 源码核查**：[packages/dsh-task-board/src/host-service.ts:1063-1088](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-service.ts#L1063-L1088)
+
+需要验收的成功结果须有匹配 pass。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+        // Forced acceptance: the old fallback paths — a completed turn, a
+        // paused goal, an unreadable projection, a manual settle — must never
+        // be mistaken for a verified success. Only a matching pass record
+        // settles this execution as succeeded.
+        if (result.outcome === 'succeeded' && verificationRequired(verification) && passedAttempt(verification) === undefined) {
+          // Two different failures share this branch, and they send the reader
+          // in opposite directions: attempts on record mean the judge ran and
+          // the work did not pass, while zero attempts mean the gate never
+          // opened at all (issue #1837) — the session narrated completion
+          // instead of calling `update_goal(action: complete)`.
+          this.settleAndNotify(
+            execution.taskId,
+            execution.executionId,
+            'failed',
+            verificationNeverInvoked(verification)
+              ? NEVER_INVOKED_VERIFICATION_REASON
+              : verificationOnlyInvalid(verification)
+                ? INVALID_ONLY_VERIFICATION_REASON
+                : NO_MATCHING_PASS_VERIFICATION_REASON,
+            result.summary,
+          )
+          continue
+        }
+        // The run's closing text rides whichever verdict it earned: a failed
+        // execution still leaves what it managed to say.
+        this.settleAndNotify(execution.taskId, execution.executionId, result.outcome, 'error' in result ? result.error : undefined, result.summary)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-task-board/src/host-runner.ts:830-875](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-runner.ts#L830-L875)
+
+双开关及普通轮退化。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+   * Arm dsh's built-in goal on the session. The task prompt is queued FIRST, so
+   * the session's first turn carries the instruction verbatim; `/goal
+   * <objective>` then turns the same text into a persistent objective, and
+   * dsh's goal-round driver keeps starting continuation rounds until the agent
+   * marks it complete (see {@link goalVerdict} for how the run settles).
+   *
+   * Two switches gate the arming, and BOTH must ask for it:
+   * - the GLOBAL native-/goal switch (`goalEnabled`, default OFF), frozen when
+   *   this execution started; and
+   * - the task's own `goalRun` (absent means off, only an explicit true opts
+   *   the card into a goal run).
+   *
+   * A refusal (no command dispatcher, no `/goal` command in this cohort, an
+   * objective the command rejects) is reported and the run continues as a plain
+   * turn: the task was asked to run, and a missing goal mode must not lose the
+   * work.
+   * @param sessionId - the session to arm in.
+   * @param task - the task being run.
+   * @param context - the run's prompt context.
+   * @param goalEnabled - the GLOBAL switch, frozen for this execution.
+   * @returns whether `/goal` was really armed.
+   */
+  private async armGoal(sessionId: ExecutionSessionId, task: TaskRecord, context: PromptContext, goalEnabled: boolean): Promise<boolean> {
+    if (!goalEnabled) return false
+    if (task.goalRun !== true) return false
+    if (this.commands === undefined) {
+      console.warn('[dsh-task-board] no command dispatcher is available; task ' + task.id + ' runs without /goal')
+      return false
+    }
+    try {
+      const command = await this.commands.execute(
+        sessionId,
+        '/goal ' + goalObjective(promptText(task, context)),
+        AbortSignal.timeout(30_000),
+      )
+      if (command === undefined) {
+        console.warn('[dsh-task-board] /goal was not acknowledged for session ' + sessionId + '; the run continues as a plain turn')
+        return false
+      }
+      if (command.kind !== 'success') {
+        console.warn('[dsh-task-board] /goal was refused for session ' + sessionId + ': ' + (command.text ?? 'no reason reported') + '; the run continues as a plain turn')
+        return false
+      }
+      return true
+    } catch (error) {
+      console.warn('[dsh-task-board] could not arm /goal on session ' + sessionId + '; the run continues as a plain turn', error)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1152-1161](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-ledger.ts#L1152-L1161)
+
+无执行时人工移动。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+      case 'move': {
+        const task = this.document.tasks.find(item => item.id === action.taskId)
+        if (task === undefined) throw new Error('task not found')
+        if (task.archivedAt !== undefined) throw new Error('archived task is read-only')
+        // The lock belongs to an open execution, not to the column: a card
+        // parked in 'running' by hand has no session and stays movable, while
+        // a card the runner is executing cannot be moved out from under it.
+        if (hasOpenExecution(task)) throw new Error('running task cannot be moved')
+        if (!canMoveManually(task.status, action.status)) throw new Error('invalid manual status')
+        this.document.tasks = this.document.tasks.map(item => item.id === action.taskId ? withStatus(item, action.status, now) : item)
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/dsh-task-board/src/core/tasks.ts:706-706](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/core/tasks.ts#L706-L706)
+
+人工合法列包含 done。
+
+```text
+export const MANUAL_STATUSES: readonly TaskStatus[] = ['backlog', 'todo', 'running', 'done', 'failed']
+```
+
 #### 缺口
 
-- 裁判与真实合格交付的一致性、重启并发恢复未实测
-  **影响**：不能确认错误完成率或端到端唯一执行
-  **进一步探讨**：固定含错误实现和真实异常的任务集，分别核裁判误放/误拒、重启后的预算和执行记录
+- 未测裁判误判和所有宿主异常
+  **影响**：验收并不证明业务合格
+  **进一步探讨**：对同一卡片分别核对手工、执行及验收记录并采用独立测试。
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 调度、权限和故障恢复依赖什么？
+### Q04 · 依赖、权限和失败恢复成本是什么？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-启动依赖DSH>=0.2.1-rc.3及Session/Workspace等宿主服务，后台cron需要Host进程持续运行，防休眠只阻止idle sleep不等于机器断电或系统更新时持续服务。高于宿主默认权限的卡片需人类确认，cron拒未确认权限；模型工具也能管理看板，必须区分任务文本授权与外部副作用权限。HTTP先采用宿主connection的签名浏览器会话裁决，否则经同源标记和loopback/显式代理规则；trustForwardedProxy放宽转发形态，不能当任意公网安全保证。首次需备份ledger并配置模型/工作区/权限，持续有真实会话与裁判调用、轮询和防休眠资源；失败需核Host会话终态、异常预算、锁及部分文件副作用，不能只拖回todo重跑。现金/token、人工恢复和重复副作用概率未知。
+package.json:1-42 声明 DSH >=0.2.1-rc.3、Host 和 web 客户端；index.ts:57 注入系统提示、网关、工作区、webServer、agents 和 commands。host-routes.ts:227-240 优先使用宿主 connection 准入，随后有浏览器同源与回环等回退条件，不能将之解释为任何部署均安全。任务需要可用 workspace、模型和实际权限，host-runner.ts:581-591 在无 workspace 时拒绝启动。裁判模型、会话、轮询和可选休眠抑制会消耗资源；安装与持续使用要复核调度、权限和结果，失败后还须检查外部动作与 ledger。现金金额、时间、断电恢复和长期无人值守效果均未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-task-board/package.json:24-27](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/package.json#L24-L27)
+**依据 1 · 源码核查**：[packages/dsh-task-board/package.json:1-42](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/package.json#L1-L42)
 
-DSH版本声明
+包与 DSH 版本声明。
+
+<details>
+<summary>查看原文（42行）</summary>
 
 ```text
+{
+  "name": "@linxin666/dsh-client-ui-task-board",
+  "description": "Host-authoritative task board for the DSH Web GUI with real session execution, Host cron scheduling, and optional cross-platform idle-sleep protection; mounted without DSH source changes.",
+  "version": "0.4.13",
+  "icon": "icon.svg",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.1-rc.3"
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
 ```
 
-**依据 2 · 作者声明**：[packages/dsh-task-board/README.md:81-83](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/README.md#L81-L83)
+</details>
 
-运行消耗真实配额及权限确认
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/index.ts:57-57](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/index.ts#L57-L57)
+
+宿主服务注入。
 
 ```text
-- `task_board_run` runs a card now (optionally re-running a settled one) and nothing else: the card gets its own session, the Host opens none for its subtasks, and a card with unfinished subtasks is told which of them its session must dispatch; it consumes real API quota and refuses an unconfirmed above-default permission with `confirmation-required`.
-- `task_board_manage` moves a card to any column — the move writes the column and never an execution record, so backlog/todo plan, done/failed declare work that finished outside a tracked run and running parks work that is under way without a session, while a card with an open execution refuses the move until it settles — archives or restores it, deletes it, or settles a running card the board can no longer observe (recording a cancelled verdict with the caller as the reason and returning the card to todo), with the Host's running-task and subtask guards.
-- `task_board_schedule` arms, changes, or disarms a card's schedule — a recurring cron rule (optionally capped by `maxRuns`; `0` clears the cap back to unlimited) or a one-shot at an epoch-millisecond `at` — including its IANA time zone (an empty `timeZone` clears it back to the Host zone).
+export const inject = ['systemPrompt', 'typertGateway', 'workspaceRegistry', 'webServer', 'agents', 'commands']
 ```
 
-**依据 3 · 源码核查**：[packages/dsh-task-board/src/host-routes.ts:203-223](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host-routes.ts#L203-L223)
+**依据 3 · 源码核查**：[packages/dsh-task-board/src/host-routes.ts:227-240](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-routes.ts#L227-L240)
 
-Host认证与显式代理回退规则
+宿主准入和回退判定。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
 export function isTrustedTaskBoardRequest(req: IncomingMessage, access: ResolvedRouteAccess): boolean {
@@ -407,108 +793,286 @@ export function isTrustedTaskBoardRequest(req: IncomingMessage, access: Resolved
     && req.headers['sec-fetch-site'] !== 'cross-site'
     && isForwardedLoopbackRequest(req)) return true
   if (!isLoopbackAddress(req.socket.remoteAddress)) return false
-  const host = req.headers.host
-  if (typeof host !== 'string') return false
-  const parsed = parseAuthority(host)
-  if (parsed === undefined || parsed.canonical !== host.toLowerCase()) return false
-  if (!access.trustedProxyHosts.has(parsed.canonical) || !sameAuthority(req, parsed.url)) return false
-  return matchesToken(req.headers[TASK_BOARD_PROXY_TOKEN_HEADER], access.proxyToken)
-}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1876-1890](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host-ledger.ts#L1876-L1890)
+**依据 4 · 源码核查**：[packages/dsh-task-board/src/host-runner.ts:581-591](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-runner.ts#L581-L591)
 
-损坏锁新鲜时拒绝，人工核无Host后处理
+缺 workspace 拒绝创建。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-          const owner = JSON.parse(readFileSync(this.lockFile, 'utf8')) as { pid?: unknown; startedAt?: unknown; probe?: unknown }
-          if (typeof owner.pid === 'number') pid = owner.pid
-          if (typeof owner.startedAt === 'number') ownerStartedAt = owner.startedAt
-          ownerExact = owner.probe === 'exact'
-        } catch {
-          // A power-loss mid-write can leave an empty or truncated lock. Such a
-          // lock still fails closed while it is fresh (a live owner may be
-          // mid-write); once it is older than the grace window nothing can be
-          // writing it, so the leftover is reclaimed instead of blocking every
-          // later start until someone deletes it by hand (issue #1528).
-          const age = (() => {
-            try { return this.now() - statSync(this.lockFile).mtimeMs } catch { return Number.POSITIVE_INFINITY }
-          })()
-          if (age < UNREADABLE_LOCK_GRACE_MS) {
-            throw new Error(`task-board ledger lock is unreadable: ${this.lockFile}; if this is a leftover from an unclean shutdown and no other DSH host is running, remove it manually and retry`)
+    // Nothing names a workspace and the deployment has none to resolve to, so
+    // there is no place this run may legitimately start: `session.create` would
+    // quietly land it in the Host process working directory (the desktop app's
+    // profile directory). Refuse before the session exists, with the reason the
+    // board settles the card with and the browser renders in the user's
+    // language, so the fix (pick a workspace on the card) is what the user reads.
+    if (workspaceId === undefined) throw new Error(MISSING_WORKSPACE_REASON)
+    const created = await this.invoke('session', 'create', {
+      workspaceId,
+      ...(mode === undefined ? {} : { agentPreset: mode }),
+    }) as { sessionId: ExecutionSessionId }
 ```
 
 </details>
 
 #### 缺口
 
-- 外部写入任务中断后的副作用与重试去重未全面核查
-  **影响**：不适合直接据调度状态放行无人监督部署
-  **进一步探讨**：从无外部写入的单任务开始，人工核终态与工作区差异，明确恢复手册后再扩副作用
+- 费用、时间及长期中断恢复未经测量
+  **影响**：不能推断资源成本或无人值守效果
+  **进一步探讨**：在隔离环境记录模型消耗、权限和恢复结果。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 哪些任务值得试用，怎样检验验收闭环？
+### Q05 · 什么条件值得试用，何时停止？
 
-**研究主题**：采用判断、新假设与验证
+**研究主题**：贡献与相对优势、采用判断
 
 #### 完整回答
 
-有宿主和模型配置经验的维护者可在备份临时工作区试用一个无外部写入的巡检/评审任务。相对外部清单，它把卡片、真实会话、调度和验证记录连在Host中；成功标准是能回查一次真实执行并解释裁判结论，而不是卡片绿色。若会话或工作区不符、裁判证据不可定位、异常被当质量失败或结果不明，应停调度并在原生会话人工核差异。由手工列状态与真实执行分离可推导未验证方向：把验收证据的适用范围和外部副作用状态作为默认卡片摘要，明确展示“手工声明、Host已执行、证据已验”三者。最小验证让用户判断一批包含手工Done、失败裁判和unknown会话的卡片，比较误信完成率与判断时间；若标签不减少误信反而变成新分数，就不要推广。
+能够检查会话和代码的维护者可在临时工作区先运行一张无外部副作用的卡片，将手工列、execution 终态和验收报告分开检查。相对人工看板，此组件将任务挂到宿主会话并记录状态，goal 运行还可拦完成声明；它没有证明模型裁判的业务合格率，也不保证所有任务启用验收。若 workspace、执行终态或真实副作用不清楚，应停止自动重跑并回到人工检查。模型费用、额外裁判调用与人工复核是否低于原流程未经测量。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-task-board/README.md:27-29](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/README.md#L27-L29)
+**依据 1 · 源码核查**：[packages/dsh-task-board/src/host-service.ts:815-861](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-service.ts#L815-L861)
 
-列与最新执行不一致会标注，提供推导基线
-
-```text
-Cards keep multi-line title and description previews with visible metadata. Previews strip Markdown formatting; task details render description and prompt as safe Markdown without raw HTML or automatic remote images, and content taller than about eight rendered lines is clamped to a fixed height with a fade hint and a "Show more" toggle that expands and collapses it, while shorter content renders untouched with no toggle. Stored task text is unchanged. A bracketed title prefix such as `[Bug]:` renders as a type badge, and the description preview skips issue-form boilerplate (checkbox lists, section headings, empty-field placeholders), preferring a summary section when one exists. A left stripe shows the latest run (running, succeeded, failed, cancelled); a card whose column disagrees with that run is labelled as set by hand. Each column shows the time its cards differ by — created in Backlog/To Do, started while running, settled in Done/Failed — read in the Host time zone. The latest execution session opens straight from the card. Every column header toggles compact single-line cards (Done starts compact, the choice is stored in the browser); Done, Failed and the archive group cards into Today / Last 7 days / Earlier and fold the oldest group once a column holds more than 30 cards, unless a search is active.
-
-- **Task board UI**: the board is the shell's own center-column panel — like the desktop application's Plugins page, it contributes a row to the shell's official sidebar panel list and a page to the layout's center-column seat, so row geometry, the active highlight, the collapsed rail, the label, and language switching are the shell's to own; the board provides five kanban columns, search, task details, archive/restore, execution history, and links to execution transcripts. Every column is reachable by hand, by dragging a card or from the detail view's move menu: the move writes the column and no execution record, so Done or Failed declares work that finished (or failed) outside a tracked run and Running parks work that is under way without a session, while a card the runner is actually executing refuses every move until it settles. Archived tasks are read-only except for restore, delete, and transcript viewing, and cannot run manually or on schedule until restored.
-```
-
-**依据 2 · 源码核查**：[packages/dsh-task-board/src/host/verification-gate.ts:450-467](https://github.com/zhu1090093659/dsh-web/blob/dbf0248fd8b2a77a3aeb44ae9688d936ba143303/packages/dsh-task-board/src/host/verification-gate.ts#L450-L467)
-
-门槛的真实覆盖范围
+执行绑定及验收契约。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
-  return async (exec: GateExecution): Promise<PreToolDecision | undefined> => {
-    if (exec.name !== 'update_goal') return undefined
-    if (actionOf(exec.arguments) !== 'complete') return undefined
-    if (exec.agent === undefined) return undefined
-    // A call the caller already cancelled is not a policy refusal: let the host
-    // produce its own cancellation result.
-    if (exec.signal.aborted) return undefined
-    try {
-      return await evaluate(exec)
-    } catch (error) {
-      deps.logger.warn('[dsh-task-board] goal acceptance gate failed; the completion claim is refused (fail closed)', error)
-      return deny(
-        bounded('[任务看板 · 验收异常] 验收流程自身出错，本次完成声明已被拒绝：' + (error instanceof Error ? error.message : String(error))),
-        'TASK_BOARD_VERIFICATION_ANOMALY',
-        error instanceof Error ? error.message : String(error),
+      const { settings, globalGoalEnabled, catalog } = await (freezeContract ?? (() => this.freezeRunContract()))()
+      // The GLOBAL native-/goal switch is read ONCE per run group and carried by
+      // value for the whole execution: a settings edit after this point can only
+      // affect executions that start later.
+      // The card must ASK for the goal run: the option is off by default, so an
+      // absent value is a plain turn exactly like an explicit false.
+      const goalEnabled = globalGoalEnabled && opened.task.goalRun === true
+      // The card's opt-out is a DISTINCT reason, not the board switch: the
+      // report must be able to say which of the two turned the gate off.
+      const skippedBy: ExecutionVerification['applicability'] = opened.task.skipVerification === true ? 'skipped' : 'disabled'
+      const contract = resolveContract(
+        { ...settings, enabled: settings.enabled && opened.task.skipVerification !== true },
+        catalog,
       )
+      // An execution that will not become a goal run can never fire the
+      // completion gate, so it is marked with the reason that actually applied:
+      // the global switch being off is its OWN reason, distinct from this run
+      // simply not becoming a goal run (the card never opted in, or a refused or
+      // unavailable /goal command), and it must never read as an accepted run.
+      // The reason names which switch withheld the goal: the GLOBAL master
+      // switch (this board never arms /goal) is a different fact from the card's
+      // own goal option staying off — which is the default, so it is what an
+      // untouched card gets.
+      const notArmed: ExecutionVerification['applicability'] = globalGoalEnabled ? 'goal-unavailable' : 'goal-disabled'
+      const initial: ExecutionVerification = {
+        contract,
+        attempts: [],
+        applicability: !contract.enabled ? skippedBy : notArmed,
+      }
+      this.ledger.setVerification(opened.task.id, opened.execution.id, initial)
+      const sessionId = await this.runner.launch(opened.task, {
+        ...(reuseSessionId === undefined ? {} : { reuseSessionId }),
+        ...(forcedPreset === undefined ? {} : { agentPreset: forcedPreset }),
+        ...(promptContext === undefined ? {} : { promptContext }),
+        // The frozen global switch travels with the launch, so the runner's
+        // arming decision is exactly the one made above.
+        goalEnabled,
+        // The same catalog snapshot the acceptance contract was frozen from.
+        catalog,
+        // Bind the session to the execution before the prompt is queued, so the
+        // completion gate can never observe the agent without its binding.
+        onSession: (id) => {
+          attached = id
+          this.ledger.attachSession(opened.task.id, opened.execution.id, id)
+        },
+        onGoalArmed: (armed) => {
+          this.setApplicability(opened.task.id, opened.execution.id, !contract.enabled ? skippedBy : armed ? 'enforced' : notArmed)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/host-runner.ts:830-875](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-runner.ts#L830-L875)
+
+goal 实际启用及回退。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+   * Arm dsh's built-in goal on the session. The task prompt is queued FIRST, so
+   * the session's first turn carries the instruction verbatim; `/goal
+   * <objective>` then turns the same text into a persistent objective, and
+   * dsh's goal-round driver keeps starting continuation rounds until the agent
+   * marks it complete (see {@link goalVerdict} for how the run settles).
+   *
+   * Two switches gate the arming, and BOTH must ask for it:
+   * - the GLOBAL native-/goal switch (`goalEnabled`, default OFF), frozen when
+   *   this execution started; and
+   * - the task's own `goalRun` (absent means off, only an explicit true opts
+   *   the card into a goal run).
+   *
+   * A refusal (no command dispatcher, no `/goal` command in this cohort, an
+   * objective the command rejects) is reported and the run continues as a plain
+   * turn: the task was asked to run, and a missing goal mode must not lose the
+   * work.
+   * @param sessionId - the session to arm in.
+   * @param task - the task being run.
+   * @param context - the run's prompt context.
+   * @param goalEnabled - the GLOBAL switch, frozen for this execution.
+   * @returns whether `/goal` was really armed.
+   */
+  private async armGoal(sessionId: ExecutionSessionId, task: TaskRecord, context: PromptContext, goalEnabled: boolean): Promise<boolean> {
+    if (!goalEnabled) return false
+    if (task.goalRun !== true) return false
+    if (this.commands === undefined) {
+      console.warn('[dsh-task-board] no command dispatcher is available; task ' + task.id + ' runs without /goal')
+      return false
     }
-  }
+    try {
+      const command = await this.commands.execute(
+        sessionId,
+        '/goal ' + goalObjective(promptText(task, context)),
+        AbortSignal.timeout(30_000),
+      )
+      if (command === undefined) {
+        console.warn('[dsh-task-board] /goal was not acknowledged for session ' + sessionId + '; the run continues as a plain turn')
+        return false
+      }
+      if (command.kind !== 'success') {
+        console.warn('[dsh-task-board] /goal was refused for session ' + sessionId + ': ' + (command.text ?? 'no reason reported') + '; the run continues as a plain turn')
+        return false
+      }
+      return true
+    } catch (error) {
+      console.warn('[dsh-task-board] could not arm /goal on session ' + sessionId + '; the run continues as a plain turn', error)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1152-1161](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-ledger.ts#L1152-L1161)
+
+人工列与执行独立。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+      case 'move': {
+        const task = this.document.tasks.find(item => item.id === action.taskId)
+        if (task === undefined) throw new Error('task not found')
+        if (task.archivedAt !== undefined) throw new Error('archived task is read-only')
+        // The lock belongs to an open execution, not to the column: a card
+        // parked in 'running' by hand has no session and stays movable, while
+        // a card the runner is executing cannot be moved out from under it.
+        if (hasOpenExecution(task)) throw new Error('running task cannot be moved')
+        if (!canMoveManually(task.status, action.status)) throw new Error('invalid manual status')
+        this.document.tasks = this.document.tasks.map(item => item.id === action.taskId ? withStatus(item, action.status, now) : item)
 ```
 
 </details>
 
 #### 缺口
 
-- 状态标签能否减少用户误信未知
-  **影响**：只能作为未验证设计，不能计当前收益
-  **进一步探讨**：用相同卡片集做理解测试，记录误判和人工时间
+- 真实业务结果与裁判正确率未知
+  **影响**：不能将试用升级为持续无人值守
+  **进一步探讨**：用一张无外部副作用的卡片核对三类状态并人工验收。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 明确区分状态能否减少完成误信？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+基于手动列、执行记录和 gate 的不同作用，可提出未验证假设：将“手工声明”“宿主执行结果”“证据验收”以及外部副作用状态默认并排展示，能降低维护者把 Done 当作已验收的误判。源码 README.md:27 已有列与最新执行不一致提示，因此新意仅是扩展到证据和副作用的明确呈现，不能宣称整套状态展示尚不存在。对照当前 UI 与新展示给维护者看固定卡片集，测完成状态识别、误信和阅读时间；若没有减少误信或阅读负担上升，则不推广。尚无原型和验证数据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-task-board/src/host-ledger.ts:1152-1161](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-ledger.ts#L1152-L1161)
+
+手工移动卡片。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+      case 'move': {
+        const task = this.document.tasks.find(item => item.id === action.taskId)
+        if (task === undefined) throw new Error('task not found')
+        if (task.archivedAt !== undefined) throw new Error('archived task is read-only')
+        // The lock belongs to an open execution, not to the column: a card
+        // parked in 'running' by hand has no session and stays movable, while
+        // a card the runner is executing cannot be moved out from under it.
+        if (hasOpenExecution(task)) throw new Error('running task cannot be moved')
+        if (!canMoveManually(task.status, action.status)) throw new Error('invalid manual status')
+        this.document.tasks = this.document.tasks.map(item => item.id === action.taskId ? withStatus(item, action.status, now) : item)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-task-board/src/host-service.ts:1063-1088](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/src/host-service.ts#L1063-L1088)
+
+需要验收的执行结算。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+        // Forced acceptance: the old fallback paths — a completed turn, a
+        // paused goal, an unreadable projection, a manual settle — must never
+        // be mistaken for a verified success. Only a matching pass record
+        // settles this execution as succeeded.
+        if (result.outcome === 'succeeded' && verificationRequired(verification) && passedAttempt(verification) === undefined) {
+          // Two different failures share this branch, and they send the reader
+          // in opposite directions: attempts on record mean the judge ran and
+          // the work did not pass, while zero attempts mean the gate never
+          // opened at all (issue #1837) — the session narrated completion
+          // instead of calling `update_goal(action: complete)`.
+          this.settleAndNotify(
+            execution.taskId,
+            execution.executionId,
+            'failed',
+            verificationNeverInvoked(verification)
+              ? NEVER_INVOKED_VERIFICATION_REASON
+              : verificationOnlyInvalid(verification)
+                ? INVALID_ONLY_VERIFICATION_REASON
+                : NO_MATCHING_PASS_VERIFICATION_REASON,
+            result.summary,
+          )
+          continue
+        }
+        // The run's closing text rides whichever verdict it earned: a failed
+        // execution still leaves what it managed to say.
+        this.settleAndNotify(execution.taskId, execution.executionId, result.outcome, 'error' in result ? result.error : undefined, result.summary)
+```
+
+</details>
+
+**依据 3 · 作者声明**：[packages/dsh-task-board/README.md:25-27](https://github.com/zhu1090093659/dsh-web/blob/68a78d05a6c8c27305671cfc42c30cbbec8014f5/packages/dsh-task-board/README.md#L25-L27)
+
+作者说明列与最新执行不一致标签。
+
+```text
+## Features
+
+Cards keep multi-line title and description previews with visible metadata. Previews strip Markdown formatting; task details render description and prompt as safe Markdown without raw HTML or automatic remote images, and content taller than about eight rendered lines is clamped to a fixed height with a fade hint and a "Show more" toggle that expands and collapses it, while shorter content renders untouched with no toggle. Stored task text is unchanged. A bracketed title prefix such as `[Bug]:` renders as a type badge, and the description preview skips issue-form boilerplate (checkbox lists, section headings, empty-field placeholders), preferring a summary section when one exists. A left stripe shows the latest run (running, succeeded, failed, cancelled); a card whose column disagrees with that run is labelled as set by hand. Each column shows the time its cards differ by — created in Backlog/To Do, started while running, settled in Done/Failed — read in the Host time zone. The latest execution session opens straight from the card. Every column header toggles compact single-line cards (Done starts compact, the choice is stored in the browser). All five columns and the archive first group cards by provider source — full `owner/repository` labels for GitHub — with unclaimed cards in Local tasks; source groups sort by label and their fold choices persist per browser. Done source groups start collapsed while the other columns and the archive start expanded, and search always reveals matching groups. Done, Failed and the archive nest Today / Last 7 days / Earlier within each source group and fold the oldest group once that source holds more than 30 cards, unless a search is active.
+```
+
+#### 缺口
+
+- 新呈现尚无原型或用户实验
+  **影响**：不能声称降低误信
+  **进一步探讨**：对照当前界面测固定卡片的识别正确率和阅读负担。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

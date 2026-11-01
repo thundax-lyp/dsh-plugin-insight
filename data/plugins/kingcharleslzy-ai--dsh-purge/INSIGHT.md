@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[27919a3](https://github.com/kingcharleslzy-ai/dsh-purge/tree/27919a326b6615b1968661a3e749760cec3a2e07)
+源码版本：[84c7f61](https://github.com/kingcharleslzy-ai/dsh-purge/tree/84c7f61a42944cda4dac70c95d6f1233318996e4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,938](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C938&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kingcharleslzy-ai/dsh-purge)
+[![GitHub ★ 3,840](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C840&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kingcharleslzy-ai/dsh-purge)
 <!-- END META -->
 
-> **功能**：集中管理 DSH 提示注入、宿主补丁、状态自检与备份回滚的社区插件
+> **功能**：集中管理 DSH 提示注入、宿主补丁、自检与备份回滚。
 
-> **亮点**：将宿主定位、补丁/提示状态、备份与迁移集中，降低手动多文件维护的分散；社区维护和原始作者归属明确，不能把更多连续执行等同更好任务质量。[Q01](#research-q01) [Q03](#research-q03)
+> **亮点**：将状态、配置与多宿主变更组织到统一入口；减少确认不证明模型任务质量提升。[Q01](#research-q01)
 
-> **主要限制**：核心增益涉及改写原审批/沙箱语义，不仅减少点击；profile快照失败仍继续逐文件应用，工具“完成”文字不等全成功，禁插件也不自动撤已写Host字节。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：补丁会改写文件写限制和默认沙箱语义；profile 快照失败仍继续且应用结果可能部分成功。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 社区版实际改变什么，贡献在哪里？](#detail-section-11)
-  - [Q02 · 减少确认是更好决策还是移除约束？](#detail-section-12)
-  - [Q03 · 快照、应用与回滚是否形成全事务？](#detail-section-13)
-  - [Q04 · 分发、平台和操作负担是什么？](#detail-section-14)
-  - [Q05 · 日常采用与隔离研究分别如何决策？](#detail-section-15)
-  - [Q06 · 更可信状态放行应如何检验？](#detail-section-16)
+  - [Q01 · 社区插件集中提供什么，适合谁？](#detail-section-11)
+  - [Q02 · 补丁如何改变权限边界？](#detail-section-12)
+  - [Q03 · 快照、应用与回滚是否原子？](#detail-section-13)
+  - [Q04 · 分发、解析错误与日常使用有什么成本？](#detail-section-14)
+  - [Q05 · 怎样检验更可信的变更状态放行？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：自有或获授权隔离环境中研究宿主行为、提示与恢复机制的人；日常工程需另审控制改变。
+> **用途**：有权管理 DSH 宿主、研究提示和控制行为的用户；基线是原生权限配置和手动备份。[Q01](#research-q01)
 
-原生权限/审批配置和明确授予可逆工具，手动保留官方Host副本；手动多文件修改是工程便利参照，不是默认移除约束依据。
+使用原生权限和审批配置并保留官方宿主副本。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,67 +51,61 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 状态与维护 | 查看Host、补丁和备份 | 不以绿灯替代字节/运行核验 |
-| Host补丁 | 改变提示与执行控制行为 | 全局字节改变，不是预设排除即撤回 |
-| 备份/回滚 | 保存与恢复安装状态 | profile快照非硬门，允许部分错误 |
+| --- | --- | --- |
+| 宿主补丁 | 修改提示与权限行为 | 授权隔离实例，核对差异 |
+| 快照恢复 | 保存与恢复变更 | 非跨宿主单事务 |
+| 状态 | 报告补丁及审计 | 完成摘要不证明全成功 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 精确DSH安装/Host/profile身份 | 任何变更必需 | 找到真实运行字节 | 错host不能当应用成功 |
-| systemPrompt/tools及平台文件权限 | 插件/对应操作必需 | 注入、状态与写入 | 只读/asar/占用可部分失败 |
-| 可核原件和独立恢复副本 | 可靠实验必需 | 避免回滚不可得 | profile快照失败代码仍继续，不能自行假定备份足够 |
-| 可信社区Release与命令所有者 | 安装必需 | 固定身份 | 裸npm名/另一Host命令不可替代 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| 有授权隔离 DSH 实例 | 研究必需 | 宿主修改 | 不应用 |
+| 正确 profile 与宿主路径 | 必需 | 定位修改目标 | 停止并核对 |
+| 可验证备份 | 变更必需 | 恢复 | 不继续 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 维护者只读核Host/profile与变更范围 | 不能说明控制变化则不进入实验 |
-| 2 | 维护者核独立官方副本/备份 | 不用warning后的继续当恢复保证 |
-| 3 | 隔离实验逐项回读完整report和字节 | partial/read/write错误不算完成 |
-| 4 | 独立核重启后状态与恢复 | 任意rollback error停实验，恢复可信官方副本 |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 核对实例并制作备份 | 确认可恢复 |
+| 检查 | 查看补丁与权限差异 | 不接受变化则停止 |
+| 验证 | 查看逐项状态与回滚 | 失败不视为完成 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 本机/备份空间资源未知 | 核安装身份、全部控制变化与恢复副本 | patch数不等采用价值 |
-| 持续使用 | 额外模型重试和存储资源未知 | 升级后重验锚点/权限与任务正确 | 少确认不等总节时 |
-| 失败恢复 | 停机/复制/重启资源未知 | 部分应用与回滚逐字节核对 | snapshot失败仍继续，恢复可部分失败 |
-| 退出 | Host重建/数据迁移未知 | 禁插件之外另恢复已写字节 | 原生权限要独立确认 |
+| --- | --- | --- | --- |
+| 首次 | 隔离实例与磁盘 | 阅读权限变更 | 不同安装路径保障不同 |
+| 持续 | 备份与维护 | 对照锚点和状态 | 不能证明任务质量 |
+| 恢复 | 保存备份资源 | 检查宿主和 profile | 非单一事务 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 集中维护 | 状态/补丁/备份/迁移接口 | 全平台和全部patch可靠 |
-| 连续执行 | 会改变部分原控制语义 | 授权、正确率和净收益 |
-| 可恢复 | 逐文件bak、profile快照与回滚路径 | 部分失败后的实际完整恢复 |
+| --- | --- | --- |
+| 集中管理 | 可查看及应用补丁 | 实际收益 |
+| 备份 | host 备份失败会中止该宿主写入 | 全局原子恢复 |
 
-> **思考**：核心增益涉及改写原审批/沙箱语义，不仅减少点击；profile快照失败仍继续逐文件应用，工具“完成”文字不等全成功，禁插件也不自动撤已写Host字节。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
+> **思考**：补丁会改写文件写限制和默认沙箱语义；profile 快照失败仍继续且应用结果可能部分成功。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将宿主定位、补丁/提示状态、备份与迁移集中，降低手动多文件维护的分散；社区维护和原始作者归属明确，不能把更多连续执行等同更好任务质量。[Q01](#research-q01) [Q03](#research-q03)
+> **亮点**：将状态、配置与多宿主变更组织到统一入口；减少确认不证明模型任务质量提升。[Q01](#research-q01)
 
-集中状态和维护、取消转发、迁移身份/并发核对有借鉴价值；但逐文件patch并非全事务、恢复文字与细report不等价，控制语义改变增加长期审计成本。[Q02](#research-q02) [Q03](#research-q03)
+每宿主先备份，profile 快照失败仅警告；逐项状态及审计存在，但工具完成摘要不列失败。[Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-核心增益涉及改写原审批/沙箱语义，不仅减少点击；profile快照失败仍继续逐文件应用，工具“完成”文字不等全成功，禁插件也不自动撤已写Host字节。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
+补丁会改写文件写限制和默认沙箱语义；profile 快照失败仍继续且应用结果可能部分成功。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-一般工程任务不推荐默认应用全套Host补丁；保留原生权限。只读研究或获授权隔离实验需先核Host/原件/完整结果，任何备份不可核或回滚error即停止并恢复可信官方副本。[Q05](#research-q05)
+只在授权隔离实例核对补丁、完整状态和回滚；依赖原生控制的日常环境保留原配置。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +113,18 @@
 
 **核查状态**：已检查源码。
 
-主入口、逐文件应用、旁路语义和快照非硬门为固定源码事实；全80patch/平台与运行效果未验。状态收据为未来假设，日常默认采用不推荐。
+固定源码支持权限改写、宿主备份和逐项报告；未执行目标，清单有两条解析错误。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、lib/index.js、lib/core.js、lib/hooks-deny.js、lib/refusal-retry.js、lib/community.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/core.js、lib/index.js、scripts/export-engagement-report.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根337个tracked文件统计；深审main/defaults/apply/revert、core applyPatches、hooks-deny与拒绝stream，未审全80补丁/全部redteam/ASAR/更新链。未运行目标、安装、修改Host或发模型请求。 本轮重新读取固定入口、旁路配置、重试、逐patch部分写入和维护锁，不执行补丁。
-- 下一步：仅在授权隔离官方Host副本注入快照失败、单文件只读、锚点漂移和回滚失败；核状态解释与字节恢复，再对同授权任务与原生策略比较正确、误执行和全成本。
+- 边界：固定 inventory 364 个指定扩展名文件、排除 1；scripts/export-engagement-report.mjs 有两条解析错误（非首位 shebang），未执行目标。
+- 下一步：在可丢弃实例验证宿主备份失败、profile 快照失败、锚点漂移、逐项报告和恢复。
 
 **分析版本**
 
 - **仓库**：[kingcharleslzy-ai/dsh-purge](https://github.com/kingcharleslzy-ai/dsh-purge)
-- **版本号**：1.6.60（[固定提交 27919a3](https://github.com/kingcharleslzy-ai/dsh-purge/tree/27919a326b6615b1968661a3e749760cec3a2e07)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.6.67（[固定提交 84c7f61](https://github.com/kingcharleslzy-ai/dsh-purge/tree/84c7f61a42944cda4dac70c95d6f1233318996e4)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +132,9 @@
 
 <a id="innovation"></a>
 
-未验证操作收据分开backup_failed/partial/restart_pending/rollback_partial，绑定精确Host、原字节和独立备份；故障注入盲评误判与恢复，任何部分状态被误认完成即否定，不把收据等同约束改变的收益证明。[Q06](#research-q06)
+未验证假设：统一显示备份、逐目标差异及重启回读的状态凭据，可减少误认全成功；须对照现有审计测误报和恢复。[Q05](#research-q05)
 
-仅在授权隔离官方Host副本注入快照失败、单文件只读、锚点漂移和回滚失败；核状态解释与字节恢复，再对同授权任务与原生策略比较正确、误执行和全成本。
+在可丢弃实例验证宿主备份失败、profile 快照失败、锚点漂移、逐项报告和恢复。
 
 <a id="detail-section-9"></a>
 
@@ -150,59 +143,49 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 97 | 8893 | — | — | 148386 |
-| .js | source | 123 | 80660 | 73959 | 4847 | — |
-| .mjs | source | 38 | 3381 | 3101 | 216 | — |
-| .mjs | test | 70 | 7415 | 6972 | 271 | — |
-| .cjs | test | 9 | 1910 | 1896 | 14 | — |
+| .md | source | 112 | 9539 | — | — | 161771 |
+| .js | source | 126 | 82234 | 75436 | 4968 | — |
+| .mjs | source | 41 | 3438 | 3154 | 221 | — |
+| .mjs | test | 76 | 8273 | 7745 | 331 | — |
+| .cjs | test | 9 | 1981 | 1965 | 17 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 18](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=18&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 48](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=48&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 30](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=30&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+[![Issue 未关闭 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=19&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=60&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 41](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=41&color=737b86&logo=github)](https://github.com/kingcharleslzy-ai/dsh-purge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
 
 
 
-统计日期：2026-10-28。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：减少打断来自什么控制变化，宿主字节应用/回滚状态是否足以支撑可恢复实验？
+**插件研究总目标**：社区插件如何修改 DSH 控制边界，快照、写入和回滚有何限制？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 社区版实际改变什么，贡献在哪里？
+### Q01 · 社区插件集中提供什么，适合谁？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-真实DSH插件包dsh-purge-community1.6.60，源自YuJunZhiXue项目的社区维护版；不是原作者官方发行。目标用户是自有本机做学习/实验、希望集中查看/修改提示和宿主状态的人。主入口依赖systemPrompt/tools，提供status/apply/revert及面板，core实际修改宿主JS/YAML/启动shim等字节；不是单纯提示词Skill，也不改变模型训练。相对手动修改多个安装文件，集中定位、补丁状态、备份和迁移有工程便利。作者80patch/25层自检是范围声明而非质量或实验成功证明；合格结果应含明确改变的约束、当前宿主字节、可恢复状态和实际任务结果。
+此社区版将 DSH 提示词、规则、宿主补丁、状态自检及备份回滚集中，面向有权管理自己宿主并理解控制变化的研究者。原生权限设置及手动保留官方宿主副本是基线；集中操作减少多文件维护，但减少确认不能证明任务质量或安全改善。作者称一次设置减少打断，实际代码明确包含审批与沙箱改写，应按实际控制变化评估。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:12-16](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/README.md#L12-L16)
+**依据 1 · 源码核查**：[README.md:37-48](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/README.md#L37-L48)
 
-社区身份和作者平台声明。
-
-```text
-当前版本 **1.6.60** · 适配 **DSH Desktop 0.2.1-rc.3**（rc.1 / rc.2 同样通过） · [English](docs/README.en.md)
-
-1.6.56 改善状态页卡顿，避免缓存旧宿主证据；读取失败不再误报未安装，并修复深色主题按钮对比度。[发行说明](docs/releases/1.6.56.md) · [市场安装与迁移指南](docs/MARKET-MIGRATION.md)。
-
-**原项目与作者**：基于 [小杨 / YuJunZhiXue 的 dsh-purge](https://github.com/YuJunZhiXue/dsh-purge) 独立维护。原仓库已恢复；保留原作者署名、版权与 MIT 许可证。社区版由本仓库维护，并非原作者官方发行。
-```
-
-**依据 2 · 源码核查**：[README.md:37-48](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/README.md#L37-L48)
-
-减少确认与状态/回滚的目标。
+作者描述目标与便利。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -224,51 +207,9 @@ dsh-purge Community 是一个跑在你自己机器上的 Harness 附加组件。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:52-78](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L52-L78)
+**依据 2 · 源码核查**：[lib/index.js:1741-1747](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/index.js#L1741-L1747)
 
-真实入口服务与默认配置。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-export const name = "dsh-purge-community";
-
-// 不要把 pluginPackages 写进 inject：Cordis 会对 map 里每一个 key 空等。
-// 便携拷贝 / Hub 残装经常没有这项服务，一写进去就是 pending → 宿主退出码 1。
-export const inject = ["systemPrompt", "tools"];
-
-let bootFullQuit = false;
-
-const DEFAULTS = {
-  enabled: true,
-  excludePresets: [],
-  autoApplyOnStart: false,
-  autoUpdateOnStart: false,
-  autoRevertOnMissing: false,
-  injectOnce: false,
-  stripMnemon: true,
-  postPrompt: "",
-  postPromptOrder: 5100,
-  verbose: false,
-  autoRetry: true,
-  retryMax: 3,
-  autoContinue: false,
-  continueMax: 3,
-  continueText: "继续",
-  // Codex 风格：教模型主动发现 skill / MCP；不改官方注册与工具面。
-  capabilityProtocol: true,
-  hooksDenyBypass: true,
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1739-1772](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1739-L1772)
-
-apply工具实际触发多host/ shim变更。
-
-<details>
-<summary>查看原文（34行）</summary>
+注册应用工具并明示审批/沙箱绕过。
 
 ```text
     ctx.tools.register({
@@ -278,166 +219,92 @@ apply工具实际触发多host/ shim变更。
         type: "object",
         additionalProperties: false,
         properties: {},
-      },
-      output: {
-        schema: {
-          type: "object",
-          additionalProperties: false,
-          properties: { text: { type: "string" } },
-        },
-        render: (_args, value) => [{ type: "text", text: String(value?.text ?? "") }],
-      },
-      async execute() {
-        core.applyRuntimeEnv();
-        const scrubbed = core.sanitizeDesktopCommandRuntimes();
-        const state = await core.gatherState();
-        if (!state.ai_base) return { text: "ERROR: " + core.missingAiBaseMessage() };
-        const blocked = rejectIfNeedPrompt(state.dsh_home);
-        if (blocked) return { text: "ERROR: " + blocked.error };
-        const toolMulti = await core.applyPatchesAllHosts(core.ALL_PATCHES, {
-          preserveClientBundles: false,
-          forApply: true,
-        });
-        await core.patchAllShims();
-        const flash = core.silenceCmdFlash(toolMulti.hosts[0]?.aiBase || state.ai_base);
-        const report = toolMulti.report;
-        const applied = report.filter((r) => r.status === "applied").length;
-        const already = report.filter((r) => r.status === "already").length;
-        const scrubNote = scrubbed.length ? ` desktop_scrub=${scrubbed.length}` : "";
-        return { text: `清洗完成 / applied=${applied}, already=${already}.${scrubNote} phase-1=${flash.phase1} 重启 dsh 生效.` };
 ```
 
-</details>
+**依据 3 · 源码核查**：[package.json:1-7](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/package.json#L1-L7)
+
+社区包身份与入口。
+
+```text
+{
+  "name": "dsh-purge-community",
+  "version": "1.6.67",
+  "description": "让 AI 更专注地辅助学习与动手实验：DSH 附加组件，提供状态自检、提示词与规则管理、本机备份与回滚。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+```
+
+#### 缺口
+
+- 未运行目标、宿主或补丁；清单一文件有两条解析错误
+  **影响**：无法证明应用、恢复及所列其他功能可用
+  **进一步探讨**：只在有授权的隔离实例核验差异、备份与回滚
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 减少确认是更好决策还是移除约束？
+### Q02 · 补丁如何改变权限边界？
 
-**研究主题**：缺陷与关键质疑、功能与机制
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-所查hooks-deny模块明确管理四条hook deny/ask旁路及反向恢复，默认hooksDenyBypass=true；这改变原宿主控制语义，不是证明原审批多余。excludePresets只排提示注入，README明说不撤全局宿主补丁，所以排除某预设不意味着它回到原权限边界。可选refusalRetry默认关，真实llm/stream挂点只有tuning启用且注入范围允许才接管；它以短文本模式猜拒绝，取消首流后重新请求，不能保证区分合理限制、技术讨论与无效拒绝。减少拒绝/确认次数本身既不证明任务正确，也不证明操作授权；原生权限配置/明确授予可逆工具更容易审定边界。
+固定源码的代码补丁将 sandbox-local 中 deny file-write 替换成 allow file-write，将默认 workspace-write 改为 danger-full-access（注释指出 UI/环境仍可覆盖）；注册工具也说明引擎级审批和沙箱绕过。实际生效依赖宿主布局、匹配、配置和重启，不能仅凭安装或插件禁用推断修改已生效或撤销。它改变原控制语义，而不只是跳过提示。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/hooks-deny.js:1-16](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/hooks-deny.js#L1-L16)
+**依据 1 · 源码核查**：[lib/core.js:2794-2814](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L2794-L2814)
 
-四补丁共同开关与默认旁路。
+文件写限制和默认模式替换。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-// #80：hooks deny / ask 旁路的开关、反向写回官方形态、状态标注。
-// 本模块不 import core.js（core 在需要时回调本模块，避免循环依赖）。
-import fs from "node:fs";
-import path from "node:path";
-
-/** #80 产品语义：这四条永远同开关，不拆开。 */
-export const HOOK_DENY_PATCH_IDS = Object.freeze([30, 31, 64, 65]);
-
-const DEFAULT_SETTINGS = Object.freeze({ hooksDenyBypass: true });
-const SETTINGS_FILE = "hooks-deny.json";
-
-/** 补丁 30/31 写出的死字符串；它出现即代表「旁路还开着」。 */
-const DISABLED_SENTINEL = "__dsh_purge_deny_disabled__";
-
-const MARKER_STOP = "[dsh-purge] Stop hook steer disabled";
-const MARKER_SUBMIT = "[dsh-purge] UserPromptSubmit deny→allow";
+const CODE_PATCHES = [
+  {
+    id: 6, name: "SANDBOX_DENY_FILE_WRITE", layer: "代码", layer_en: "Code",
+    desc: "沙箱 deny file-write / sandbox deny",
+    file: "sandbox-local",
+    rel: ["lib", "index.js"],
+    patterns: ['"(deny file-write*)"'],
+    replace: '"(allow file-write*)"',
+    marker: "(allow file-write*)",
+  },
+  {
+    // 只改 YAML 默认值，不写 DSH_PERMISSION_MODE，避免锁死设置页。
+    id: 7, name: "SANDBOX_MODE_DEFAULT", layer: "代码", layer_en: "Code",
+    desc: "沙箱默认 danger-full-access（可被 UI 切换，不写死 env） / soft default only",
+    file: "base",
+    rel: ["cordis.patch.yml"],
+    patterns: [
+      "mode: !!js process.env.DSH_PERMISSION_MODE ?? 'workspace-write'",
+    ],
+    replace: "mode: !!js process.env.DSH_PERMISSION_MODE ?? 'danger-full-access'",
+    marker: "mode: !!js process.env.DSH_PERMISSION_MODE ?? 'danger-full-access'",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1529-1540](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1529-L1540)
+**依据 2 · 源码核查**：[lib/index.js:1741-1747](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/index.js#L1741-L1747)
 
-拒绝重试真实opt-in挂载。
-
-<details>
-<summary>查看原文（12行）</summary>
+工具描述审批/沙箱绕过。
 
 ```text
-export function apply(ctx, config) {
-  const cfg = { ...DEFAULTS, ...(config || {}) };
-  // 拒绝检测 + 单次重试：默认关闭，只有 tuning.refusalRetry === true 才接管。
-  ctx.on("llm/stream", (options, next) => {
-    let on = false;
-    try {
-      on = readTuning().refusalRetry === true;
-    } catch {
-      on = false;
-    }
-    if (!on || !injectAllowedNow(cfg, requestInjectionContext(ctx, options))) return next();
-    return streamWithRefusalRetry((opts) => next(opts), options);
+    ctx.tools.register({
+      name: "purge_apply",
+      description: `应用 dsh 指令权威性清洗：${core.ALL_PATCHES.length} patch（提示词层+代码默认+引擎级审批/沙箱绕过）+ shim 注入 + override 文件。需重启 dsh 完全生效。`,
+      parameters: {
+        type: "object",
+        additionalProperties: false,
+        properties: {},
 ```
 
-</details>
+**依据 3 · 源码核查**：[README.md:54-56](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/README.md#L54-L56)
 
-**依据 3 · 源码核查**：[lib/refusal-retry.js:28-38](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/refusal-retry.js#L28-L38)
-
-文本启发式判断，并非授权判断。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-/** 返回命中的规则下标（-1 = 不命中），用于审计定位误判。 */
-export function refusalMatchIndex(text = "") {
-  const raw = String(text);
-  const head = raw.slice(0, 600);
-  const meta = /提示词注入|越狱|指令注入|prompt[ _-]?injection|jailbreak/i.test(head);
-  if (meta && raw.trim().length > 280) return -1;
-  return REFUSAL_PATTERNS.findIndex((re) => re.test(head));
-}
-
-export function looksLikeRefusal(text = "") {
-  return refusalMatchIndex(text) >= 0;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/refusal-retry.js:96-120](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/refusal-retry.js#L96-L120)
-
-首流取消和重试/审计，取消转发。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-    const refused = looksLikeRefusal(text);
-    if (refused) {
-      await close();
-      try {
-        onRetry?.({ chars: text.length });
-        // 记下命中的规则下标，事后能定位误判（例如"讨论拒绝"被当成拒绝）。
-        logAudit("refusal_retry", { chars: text.length, head: text.slice(0, 80), match: refusalMatchIndex(text) });
-      } catch {
-        /* 审计失败不影响主流程 */
-      }
-      yield* observeStream(() => streamFactory(withNudge(options, nudge)), {
-        report: (data) => logAudit("refusal_retry_outcome", data),
-      });
-      return;
-    }
-
-    for (const chunk of buffered) yield chunk;
-    while (true) {
-      const step = await iterator.next();
-      if (step.done) return;
-      yield step.value;
-    }
-  } finally {
-    // Forward cancellation to the upstream iterator; do not leave a request running.
-    await close();
-```
-
-</details>
-
-**依据 5 · 源码核查**：[README.md:54-56](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/README.md#L54-L56)
-
-预设排除不撤全局补丁。
+作者说明预设排除不撤全局宿主补丁。
 
 ```text
 ### 让不同预设保留自己的提示词
@@ -447,32 +314,65 @@ export function looksLikeRefusal(text = "") {
 
 #### 缺口
 
-- 80条补丁对精确Host所有审批/沙箱/工具路径的影响和合格任务收益未全面验证。
-  **影响**：不能把“少问”当安全可靠或默认日常采用价值。
-  **进一步探讨**：只在获授权隔离副本逐项比较原生策略，记录真实越界/误执行/正确率，日常任务先保留原生权限。
+- 未运行目标、宿主或补丁；清单一文件有两条解析错误
+  **影响**：无法证明应用、恢复及所列其他功能可用
+  **进一步探讨**：只在有授权的隔离实例核验差异、备份与回滚
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 快照、应用与回滚是否形成全事务？
+### Q03 · 快照、应用与回滚是否原子？
 
 **研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-applyPatches先尝试profile快照，但失败只记录warning继续，理由是逐文件bak仍在。随后按patch/target逐个读取、替换、save，单文件写失败记lastError并继续；最终有rollup状态与audit failed_ids。这能暴露部分结果，但不是全批原子应用。purge_apply工具返回主要统计applied/already并称完成，未在文本列出failed数；revert返回reverted/errors但仍称回滚完成且要重启。因此UI一句完成不能代替完整report、快照/逐文件备份及运行验收。Maintenance具备独立lock、包身份和并发配置核对，说明安装/迁移路径比逐文件patch有更多事务保护，不能把一种路径的保证套到另一种。可借鉴状态/备份与读失败不冒充未装，需区分本轮未审全selfcheck。
+多宿主应用对每个宿主先执行 host 备份，备份错误会抛错并取消该宿主后续补丁写入；这是重要反证，不能说所有备份失败都继续。另在逐补丁应用内，profile 快照异常只记录并继续；每条 patch 可能出现 missing、notFound、write_error，结果逐项汇总。工具返回“完成”只数 applied/already，不能证明所有项目成功；跨宿主也不是单一全局事务，操作后须读完整状态并核实回滚。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/core.js:7061-7080](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7061-L7080)
+**依据 1 · 源码核查**：[lib/core.js:1925-1944](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L1925-L1944)
 
-snapshot失败不阻断，进入逐patch应用。
+每宿主备份失败取消后续该宿主写入。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
+  for (const raw of enumeratePatchAiBases({ discover: options.forApply === true || options.discover === true })) {
+    const aiBase = await resolveAiBaseForApply(raw, options);
+    if (!aiBase) continue;
+    const key = path.normalize(aiBase).replace(/\\/g, "/").toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const backups = await backupAll(aiBase);
+    if (backups.errors.length) {
+      const readOnlyLinux = process.platform === "linux" && backups.errors.some(([, error]) => /EACCES|EPERM|EROFS/.test(String(error)));
+      const remedy = readOnlyLinux
+        ? " Linux 宿主目录不可写。请重新运行 Linux 安装脚本创建用户可写副本，退出当前 DSH，再用 ~/.local/bin/dsh web 启动后应用。无需修改 /usr 权限。"
+        : " Check permissions and retry.";
+      throw new Error(`Host backup failed (${backups.errors.length} files); patch writes cancelled.${remedy}`);
+    }
+    if (settings.hooksDenyBypass === false) {
+      const restored = await restoreHookDenyForBases([aiBase]);
+      hookDenyRestoreFailed.push(...restored.failed);
+      hookDenyRestoreChanged.push(...restored.changed);
+    }
+    const report = await applyPatches(aiBase, selected, options);
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/core.js:7195-7210](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L7195-L7210)
+
+profile 快照失败记录后继续。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+
 export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) {
   // 每次整份写入前先做一次 profile 级快照。快照失败不阻断：逐文件 .dshpurge.bak 仍在，
   // 但要在日志里留痕，方便事后确认"这次没有 profile 快照"。
@@ -488,27 +388,18 @@ export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) 
   }
   restoreMissingOriginalsFromBak(aiBase);
   refreshStaleBaksForUpgrade(aiBase);
-  const files = targetFiles(aiBase);
-  const report = [];
-  const preserveClientBundles = options.preserveClientBundles === true;
-  await repairPluginCordisYaml();
-  for (const p of patches) {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/core.js:7131-7158](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7131-L7158)
+**依据 3 · 源码核查**：[lib/core.js:7280-7306](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L7280-L7306)
 
-逐文件失败记录与汇总，不自动全回滚。
+逐项写错误及状态。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
-        if (changed) {
-          try {
-            const wrote = await saveText(fp, textOut);
-            if (wrote) applied += 1;
             else already += 1;
           } catch (e) {
             lastError = `write_error:${e}`;
@@ -533,44 +424,16 @@ export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) 
       status,
       path: paths[0] || files[keys[0]],
       applied,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/core.js:7163-7181](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7163-L7181)
-
-audit含failed与snapshot，report返回。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  {
-    const summary = summarizeApplyReport(report);
-    logAudit("apply", {
-      host: aiBase,
-      host_version: (() => {
-        try {
-          return JSON.parse(fs.readFileSync(path.join(aiBase, "dsh-agent-loop", "package.json"), "utf8")).version;
-        } catch {
-          return "unknown";
-        }
-      })(),
-      applied: summary.applied,
-      already: summary.already,
-      failed: summary.failed.length,
-      failed_ids: summary.failed.map((r) => r.patch_id),
-      snapshot,
+      already,
+      missing,
     });
-  }
-  return report;
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:1762-1772](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1762-L1772)
+**依据 4 · 源码核查**：[lib/index.js:1764-1774](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/index.js#L1764-L1774)
 
-工具完成文字只突出applied/already。
+工具输出统计 applied/already。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -591,363 +454,140 @@ audit含failed与snapshot，report返回。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:1791-1800](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1791-L1800)
-
-回滚errors与完成文字并存。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-      async execute() {
-        const state = await core.gatherState();
-        const lines = [];
-        if (state.ai_base) {
-          const { reverted, errors } = await core.revertAll(state.ai_base);
-          lines.push(`reverted=${reverted.length}${errors.length ? ` errors=${errors.length}` : ""}`);
-        }
-        const shimRevert = await core.revertAllShims();
-        lines.push(`shim_dirs=${Object.keys(shimRevert).length}`);
-        return { text: `回滚完成 / ${lines.join(", ")}. 重启 dsh 恢复.` };
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/community.js:295-307](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/community.js#L295-L307)
-
-维护路径单独持有并检查锁，不能把此路径保证套用逐文件patch。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  async locked(fn) {
-    fs.mkdirSync(this.base, { recursive: true, mode: 0o700 });
-    fs.chmodSync(this.base, 0o700);
-    const guard = acquireMaintenanceLock(this.base);
-    this.beat = guard.check;
-    try {
-      const result = await fn();
-      guard.check();
-      return result;
-    } finally {
-      this.beat = null;
-      guard.release();
-    }
-```
-
-</details>
-
 #### 缺口
 
-- 目标FS上部分应用、备份缺失、版本升级与重启后的实际恢复未执行。
-  **影响**：不能承诺随时一键回原，当前完成提示不足以验收。
-  **进一步探讨**：隔离副本注入快照失败/一文件只读/旧锚点/回滚失败，核完整状态与字节，失败不进入日常Host。
+- 未运行目标、宿主或补丁；清单一文件有两条解析错误
+  **影响**：无法证明应用、恢复及所列其他功能可用
+  **进一步探讨**：只在有授权的隔离实例核验差异、备份与回滚
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 分发、平台和操作负担是什么？
+### Q04 · 分发、解析错误与日常使用有什么成本？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：效果与总成本、采用判断、依赖、兼容与流程
 
 #### 完整回答
 
-作者声明适配Desktop0.2.1-rc.3并报告rc.1/rc.2，固定源码不能证明所有平台。CLI/Web与Desktop命令所有者、DSH_HOME/profile、包版本和安装字节需要分别确认；README区分安装插件、应用补丁、手动重启三个动作。官方CLI安装固定GitHub tarball不额外做社区安装器的Release SHA/迁移快照；同名裸npm不能替代可信源。成本含停任务/备份/重启、定位多host和asar/启动shim、升级后重验锚点及回滚；模型重试还增加请求量，不能把本机逻辑当全部任务零费用。禁插件也不自动恢复已写宿主字节，需单独验证撤回路径。
+需要对应 DSH host、实例/profile、写入权限以及可验证的宿主备份；作者说明社区安装器迁移前备份，但官方 CLI 安装不提供相同的校验与快照。固定 inventory 364 个指定扩展名文件、排除 1，两个解析错误均位于 scripts/export-engagement-report.mjs，文件将 shebang 放在 import 后，故不能声称该报告脚本可用或清单全部解析。未执行任何脚本；日常需要原权限控制的用户应保留原生配置，研究只在隔离副本、验证完整差异和回滚后进行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:75-95](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/README.md#L75-L95)
+**依据 1 · 源码核查**：[README.md:90-97](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/README.md#L90-L97)
 
-安装所有者、固定release与三动作分离。
-
-<details>
-<summary>查看原文（21行）</summary>
+官方 CLI 和社区安装器保障不同。
 
 ````text
-## 安装
-
-**DSH 官方入口负责安装插件；下面的社区安装器由本仓库维护，不是 DeepSeek 官方脚本。** 首次安装可用官方界面或 CLI；已经装过 `dsh-purge` / 旧独立面板时，用社区安装器原地迁移，不要先卸载。安装、应用宿主补丁、手动重启是独立动作。
-
-### 方式一：DSH 官方界面（首次安装）
-
-1. 先打开 DSH 完成初始化。按当前官方文档，进入「插件」，点击「实验性插件」旁的「更多」，启用「自定义插件市场」；然后进入「发现 → 添加索引源」。
-2. 本项目的**社区索引**：`https://kingcharleslzy-ai.github.io/dsh-purge/index.json`。
-3. 选择 dsh-purge Community，核对来源为 `kingcharleslzy-ai/dsh-purge`、包名为 `dsh-purge-community`，确认后安装。
-
-界面和安装协议由 DSH 提供，索引与插件由社区维护。不同 DSH 版本的入口文字可能不同；第三方 `dsh-market` 也可能有额外的筛选与迁移限制。已有旧包时请使用方式三。[官方市场说明](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/plugin-market.zh.md)
-
-### 方式二：DSH 官方 CLI（首次安装）
-
-下面命令适用于**已经安装 `dsh` 命令、且使用 `web` profile 的 CLI/Web 用户**，在 macOS/Linux 终端或 Windows PowerShell 中运行。桌面版用户优先用上面的界面；不要为了安装插件再用 `npx` 下载另一套宿主。
 
 ```sh
-dsh plugin --profile web add "https://github.com/kingcharleslzy-ai/dsh-purge/releases/download/v1.6.60/dsh-purge-community-1.6.60.tgz"
+dsh plugin --profile web add "https://github.com/kingcharleslzy-ai/dsh-purge/releases/download/v1.6.67/dsh-purge-community-1.6.67.tgz"
 ```
 
 `web` 必须与实际启动的 profile 一致；自定义数据目录需要沿用该实例的 `DSH_HOME`。命令使用本次发行的固定版本 URL；不是 `npm install -g`，也不是安装裸 npm 包名。本项目通过 GitHub 发行，**不要替换成 `add dsh-purge` 或 `add dsh-purge-community`**。官方 CLI 的安装不会额外运行我们安装器的 Release SHA256 比对及迁移快照；需要这些功能时选方式三。[官方 CLI 安装说明](https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/develop/basic/publish.zh.md)
+
+### 方式三：社区安装器（备份、旧版迁移、恢复）
 ````
 
-</details>
+**依据 2 · 源码核查**：[README.md:151-156](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/README.md#L151-L156)
 
-**依据 2 · 源码核查**：[lib/core.js:7061-7079](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7061-L7079)
-
-快照与修配置的实际副作用。
-
-<details>
-<summary>查看原文（19行）</summary>
+安装器边界、校验和恢复建议。
 
 ```text
-export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) {
-  // 每次整份写入前先做一次 profile 级快照。快照失败不阻断：逐文件 .dshpurge.bak 仍在，
-  // 但要在日志里留痕，方便事后确认"这次没有 profile 快照"。
-  let snapshot = "skipped";
-  try {
-    const home = findDshHome();
-    if (home) {
-      snapshot = (await new Maintenance({ home, aiBase }).backup("before-host-patches"))?.id || "done";
-    }
-  } catch (e) {
-    snapshot = `error:${e && e.message ? e.message : e}`;
-    console.warn("[dsh-purge] profile snapshot before apply failed:", snapshot);
-  }
-  restoreMissingOriginalsFromBak(aiBase);
-  refreshStaleBaksForUpgrade(aiBase);
-  const files = targetFiles(aiBase);
-  const report = [];
-  const preserveClientBundles = options.preserveClientBundles === true;
-  await repairPluginCordisYaml();
+- 社区安装器在迁移前备份，调用当前实例的官方 `dsh plugin --profile … add …`，再核对安装版本和入口；保留提示词、规则、更新偏好及其他插件设置。
+- **不是“完全不碰宿主目录”**：解包桌面布局缺失/损坏 `app/runtime` 链接时，会保留旧链接并修复到该安装的 runtime；冲突则停止。Linux 系统宿主只读时可能创建用户副本，并在成功后切换用户启动器。详见[安装指南](docs/INSTALLATION.md)。
+- 插件加载前若市场安装失败（issue #7），插件本身尚未运行；先读脱敏错误、核对依赖来源，不能承诺安装器能修复所有市场或网络错误。
+- 不自动应用宿主补丁、不自动重启、不改代理、不修改全局 npm 源或清空缓存。脚本和 bootstrap 从本仓库 `master` 下载；Release 包另做 SHA256 校验，这不是对下载脚本的独立签名验证。
+- 命令退出码非零就视为失败。安装成功后记录 `backup_id`，核对磁盘版本；运行中的 DSH 仍可能显示旧版，待用户方便时手动退出重开。`dry-run` 成功、备份存在或市场卡片出现都不能替代安装成功证据。
+- 回滚优先用「Purge → 状态 → 本机备份」，选择本次安装前的备份；无界面时按[安装指南中的 CLI 回滚](docs/INSTALLATION.md#cli-rollback)执行。不要假设 `purge-community` 已加入系统 PATH。
 ```
 
-</details>
+**依据 3 · 源码核查**：[scripts/export-engagement-report.mjs:1-4](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/scripts/export-engagement-report.mjs#L1-L4)
 
-**依据 3 · 源码核查**：[lib/index.js:1740-1772](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1740-L1772)
-
-应用包含多host/shim且需重启。
-
-<details>
-<summary>查看原文（33行）</summary>
+shebang 出现在 import 之后，与解析诊断一致。
 
 ```text
-      name: "purge_apply",
-      description: `应用 dsh 指令权威性清洗：${core.ALL_PATCHES.length} patch（提示词层+代码默认+引擎级审批/沙箱绕过）+ shim 注入 + override 文件。需重启 dsh 完全生效。`,
-      parameters: {
-        type: "object",
-        additionalProperties: false,
-        properties: {},
-      },
-      output: {
-        schema: {
-          type: "object",
-          additionalProperties: false,
-          properties: { text: { type: "string" } },
-        },
-        render: (_args, value) => [{ type: "text", text: String(value?.text ?? "") }],
-      },
-      async execute() {
-        core.applyRuntimeEnv();
-        const scrubbed = core.sanitizeDesktopCommandRuntimes();
-        const state = await core.gatherState();
-        if (!state.ai_base) return { text: "ERROR: " + core.missingAiBaseMessage() };
-        const blocked = rejectIfNeedPrompt(state.dsh_home);
-        if (blocked) return { text: "ERROR: " + blocked.error };
-        const toolMulti = await core.applyPatchesAllHosts(core.ALL_PATCHES, {
-          preserveClientBundles: false,
-          forApply: true,
-        });
-        await core.patchAllShims();
-        const flash = core.silenceCmdFlash(toolMulti.hosts[0]?.aiBase || state.ai_base);
-        const report = toolMulti.report;
-        const applied = report.filter((r) => r.status === "applied").length;
-        const already = report.filter((r) => r.status === "already").length;
-        const scrubNote = scrubbed.length ? ` desktop_scrub=${scrubbed.length}` : "";
-        return { text: `清洗完成 / applied=${applied}, already=${already}.${scrubNote} phase-1=${flash.phase1} 重启 dsh 生效.` };
+import { removeTreeNoFollowSync } from "../lib/remove-tree.js";
+#!/usr/bin/env node
+/**
+ * 把一个靶标的得分报告导出成可移动的交付包：`<outDir>/<靶标>-红队成果复现报告.md` + `<outDir>/shots/`。
 ```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1791-1800](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1791-L1800)
-
-回滚仍需重启且可能errors。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-      async execute() {
-        const state = await core.gatherState();
-        const lines = [];
-        if (state.ai_base) {
-          const { reverted, errors } = await core.revertAll(state.ai_base);
-          lines.push(`reverted=${reverted.length}${errors.length ? ` errors=${errors.length}` : ""}`);
-        }
-        const shimRevert = await core.revertAllShims();
-        lines.push(`shim_dirs=${Object.keys(shimRevert).length}`);
-        return { text: `回滚完成 / ${lines.join(", ")}. 重启 dsh 恢复.` };
-```
-
-</details>
 
 #### 缺口
 
-- 首次/持续/失败全人工时间、停机成本、模型重试费用未知。
-  **影响**：不能用确认减少次数或patch数估算净效率/ROI。
-  **进一步探讨**：对同一授权低风险任务对照原生权限，计所有重试、停机、恢复与正确交付，不优则停。
+- 未运行目标、宿主或补丁；清单一文件有两条解析错误
+  **影响**：无法证明应用、恢复及所列其他功能可用
+  **进一步探讨**：只在有授权的隔离实例核验差异、备份与回滚
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 日常采用与隔离研究分别如何决策？
+### Q05 · 怎样检验更可信的变更状态放行？
 
-**研究主题**：采用判断
-
-#### 完整回答
-
-对一般个人工程任务当前不推荐默认应用全套宿主补丁：主要承诺通过改变约束取得更连续执行，而审批/沙箱边界更难审定，且profile快照失败仍继续、部分状态文字可能误导恢复。此判断针对常规采用，不否认它作为隔离副本研究样本的价值。需要学习实现的人可只读status/源和快照机制，不等于建议调用apply；实际实验应逐项有界、留原始宿主副本与独立字节清单。若无法说明改了哪些执行边界、完整备份不可核或任何回滚error，停止实验，恢复可信官方Host副本及原生权限配置；不要以重试更多来替代授权与验收。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1740-1772](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1740-L1772)
-
-全套apply的范围而非精细任务授权。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-      name: "purge_apply",
-      description: `应用 dsh 指令权威性清洗：${core.ALL_PATCHES.length} patch（提示词层+代码默认+引擎级审批/沙箱绕过）+ shim 注入 + override 文件。需重启 dsh 完全生效。`,
-      parameters: {
-        type: "object",
-        additionalProperties: false,
-        properties: {},
-      },
-      output: {
-        schema: {
-          type: "object",
-          additionalProperties: false,
-          properties: { text: { type: "string" } },
-        },
-        render: (_args, value) => [{ type: "text", text: String(value?.text ?? "") }],
-      },
-      async execute() {
-        core.applyRuntimeEnv();
-        const scrubbed = core.sanitizeDesktopCommandRuntimes();
-        const state = await core.gatherState();
-        if (!state.ai_base) return { text: "ERROR: " + core.missingAiBaseMessage() };
-        const blocked = rejectIfNeedPrompt(state.dsh_home);
-        if (blocked) return { text: "ERROR: " + blocked.error };
-        const toolMulti = await core.applyPatchesAllHosts(core.ALL_PATCHES, {
-          preserveClientBundles: false,
-          forApply: true,
-        });
-        await core.patchAllShims();
-        const flash = core.silenceCmdFlash(toolMulti.hosts[0]?.aiBase || state.ai_base);
-        const report = toolMulti.report;
-        const applied = report.filter((r) => r.status === "applied").length;
-        const already = report.filter((r) => r.status === "already").length;
-        const scrubNote = scrubbed.length ? ` desktop_scrub=${scrubbed.length}` : "";
-        return { text: `清洗完成 / applied=${applied}, already=${already}.${scrubNote} phase-1=${flash.phase1} 重启 dsh 生效.` };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/core.js:7061-7073](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7061-L7073)
-
-快照非硬前提影响恢复成本。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) {
-  // 每次整份写入前先做一次 profile 级快照。快照失败不阻断：逐文件 .dshpurge.bak 仍在，
-  // 但要在日志里留痕，方便事后确认"这次没有 profile 快照"。
-  let snapshot = "skipped";
-  try {
-    const home = findDshHome();
-    if (home) {
-      snapshot = (await new Maintenance({ home, aiBase }).backup("before-host-patches"))?.id || "done";
-    }
-  } catch (e) {
-    snapshot = `error:${e && e.message ? e.message : e}`;
-    console.warn("[dsh-purge] profile snapshot before apply failed:", snapshot);
-  }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:1791-1800](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1791-L1800)
-
-回滚error必须作为停止条件。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-      async execute() {
-        const state = await core.gatherState();
-        const lines = [];
-        if (state.ai_base) {
-          const { reverted, errors } = await core.revertAll(state.ai_base);
-          lines.push(`reverted=${reverted.length}${errors.length ? ` errors=${errors.length}` : ""}`);
-        }
-        const shimRevert = await core.revertAllShims();
-        lines.push(`shim_dirs=${Object.keys(shimRevert).length}`);
-        return { text: `回滚完成 / ${lines.join(", ")}. 重启 dsh 恢复.` };
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 更可信状态放行应如何检验？
-
-**研究主题**：新假设与验证、工程质量与复用
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-未验证假设是将精确Host身份、原字节、独立备份核验、逐patch结果和重启后探针写入同一操作收据，并把backup_failed、partially_applied、restart_pending、rollback_partial分别呈现；只有所有必要条件满足才显示已完成。它改善状态诚实性而不证明移除原控制有价值。最小验证注入快照失败、部分写失败、锚点漂移、错误host与回滚失败，让不看源码的维护者判断是否能继续；任何部分状态被读成可放心使用或备份不可恢复即否定实现。同时比较记录维护成本，不以更多字段当更安全。
+未验证假设：将 profile/host 备份、每个目标摘要、补丁结果及重启后回读组成明确完成凭据，任何失败呈部分或失败而非只展示完成，可能减少误以为已完全生效或可回滚。现有每宿主备份中止、逐项报告和审计是反证，并非从零建立；状态本身不能证明模型遵守新提示。用可丢弃 host 模拟权限不足、锚点漂移、中途写入失败及旧进程，测漏报、恢复成功、时间与隐私暴露；无改进或误报过高则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/core.js:7061-7073](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7061-L7073)
+**依据 1 · 源码核查**：[lib/core.js:1925-1944](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L1925-L1944)
 
-profile快照非硬前提需要独立状态。
+已有 host 备份门槛。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) {
-  // 每次整份写入前先做一次 profile 级快照。快照失败不阻断：逐文件 .dshpurge.bak 仍在，
-  // 但要在日志里留痕，方便事后确认"这次没有 profile 快照"。
-  let snapshot = "skipped";
-  try {
-    const home = findDshHome();
-    if (home) {
-      snapshot = (await new Maintenance({ home, aiBase }).backup("before-host-patches"))?.id || "done";
+  for (const raw of enumeratePatchAiBases({ discover: options.forApply === true || options.discover === true })) {
+    const aiBase = await resolveAiBaseForApply(raw, options);
+    if (!aiBase) continue;
+    const key = path.normalize(aiBase).replace(/\\/g, "/").toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const backups = await backupAll(aiBase);
+    if (backups.errors.length) {
+      const readOnlyLinux = process.platform === "linux" && backups.errors.some(([, error]) => /EACCES|EPERM|EROFS/.test(String(error)));
+      const remedy = readOnlyLinux
+        ? " Linux 宿主目录不可写。请重新运行 Linux 安装脚本创建用户可写副本，退出当前 DSH，再用 ~/.local/bin/dsh web 启动后应用。无需修改 /usr 权限。"
+        : " Check permissions and retry.";
+      throw new Error(`Host backup failed (${backups.errors.length} files); patch writes cancelled.${remedy}`);
     }
-  } catch (e) {
-    snapshot = `error:${e && e.message ? e.message : e}`;
-    console.warn("[dsh-purge] profile snapshot before apply failed:", snapshot);
-  }
+    if (settings.hooksDenyBypass === false) {
+      const restored = await restoreHookDenyForBases([aiBase]);
+      hookDenyRestoreFailed.push(...restored.failed);
+      hookDenyRestoreChanged.push(...restored.changed);
+    }
+    const report = await applyPatches(aiBase, selected, options);
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/core.js:7163-7181](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/core.js#L7163-L7181)
+**依据 2 · 源码核查**：[lib/core.js:7293-7326](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/core.js#L7293-L7326)
 
-已有细report/audit可作为收据来源。
+已有逐项报告与审计。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
+    const status = rollupPatchStatus({
+      applied, already, missing, notFound, lastError, keyCount: keys.length,
+      layoutSoft: isLayoutSoftPatch(p),
+      strictFiles: !!p.strictFiles,
+    });
+    report.push({
+      patch_id: p.id,
+      name: p.name,
+      status,
+      path: paths[0] || files[keys[0]],
+      applied,
+      already,
+      missing,
+    });
+  }
   {
     const summary = summarizeApplyReport(report);
     logAudit("apply", {
@@ -971,11 +611,20 @@ export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) 
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1768-1772](https://github.com/kingcharleslzy-ai/dsh-purge/blob/27919a326b6615b1968661a3e749760cec3a2e07/lib/index.js#L1768-L1772)
+**依据 3 · 源码核查**：[lib/index.js:1764-1774](https://github.com/kingcharleslzy-ai/dsh-purge/blob/84c7f61a42944cda4dac70c95d6f1233318996e4/lib/index.js#L1764-L1774)
 
-当前完成文字丢失失败细节为反例。
+工具摘要未列失败。
+
+<details>
+<summary>查看原文（11行）</summary>
 
 ```text
+        const toolMulti = await core.applyPatchesAllHosts(core.ALL_PATCHES, {
+          preserveClientBundles: false,
+          forApply: true,
+        });
+        await core.patchAllShims();
+        const flash = core.silenceCmdFlash(toolMulti.hosts[0]?.aiBase || state.ai_base);
         const report = toolMulti.report;
         const applied = report.filter((r) => r.status === "applied").length;
         const already = report.filter((r) => r.status === "already").length;
@@ -983,10 +632,12 @@ export async function applyPatches(aiBase, patches = ALL_PATCHES, options = {}) 
         return { text: `清洗完成 / applied=${applied}, already=${already}.${scrubNote} phase-1=${flash.phase1} 重启 dsh 生效.` };
 ```
 
+</details>
+
 #### 缺口
 
-- 收据对误判/恢复和维护负担的改善未知。
-  **影响**：是假设，不是已确认安全或产品机会。
-  **进一步探讨**：故障矩阵盲评状态判断与字节恢复，误判不降就不用新收据替代人工验收。
+- 未运行目标、宿主或补丁；清单一文件有两条解析错误
+  **影响**：无法证明应用、恢复及所列其他功能可用
+  **进一步探讨**：只在有授权的隔离实例核验差异、备份与回滚
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -10,14 +10,6 @@
 
 > 看看插件能解决什么问题，以及试用前需要确认什么。
 
-- **[Answer me with HTML](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md)** ｜ 将Agent撰写的扩展Markdown转换为含图表的单文件HTML页面，并提供可选视频输出。
-
-    **推荐理由**：需要交付协议解释或多维比较页面的Agent用户可用已核实短稿试生成单文件HTML。相比手写HTML，源码支持将布局和图坐标交给CLI，作者节时结果尚未在当前任务复现。若图形误导、渲染反复失败或纠错慢于Markdown，应关闭自动附页并退回原草稿。
-
-    **试用条件**：需要在协议或方案比较中交付单页材料的用户，可先选一份已有答案的短稿试渲染，并逐个核对图形关系与原文。若组件错误、图形误导或纠错时间超过直接Markdown，停止自动附页并回到原草稿；敏感文件不因可内联就自动加入输出。视频仅在明确请求且成本可接受时另试。 依据 [Q09](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q09)。
-
-    [查看完整分析](data/plugins/qingyuna--answer-me-with-html/INSIGHT.md)
-
 - **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)** ｜ 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
 
     **推荐理由**：适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。
@@ -34,33 +26,41 @@
 
     [查看完整分析](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)
 
+- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)** ｜ 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
+
+    **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
+
+    **试用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见[Q09](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q09)。
+
+    [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
+
 ## [最近发布](data/views/columns/LATEST.md)
 
 > 查看最近发布的版本，了解用途和使用条件。
 
-- [feiyu-memory](data/plugins/airpineapplea--feiyu-memory/INSIGHT.md) · 为个人陪伴保存事件日记，以摘要、近期提示和主动召回延续叙事记忆。 · [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/feiyu-memory)
-- [DSH Dream Skin](data/plugins/revolutionla--dsh-dream-skin/INSIGHT.md) · 原生 Web 主题、壁纸和主题包定制，配 Host 状态文件支持跨浏览器 origin 保存。 · [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-dream-skin)
-- [dsh-meme](data/plugins/yyh-001--dsh-meme/INSIGHT.md) · 在 DSH 中检索和发送表情图，并用视觉模型收录图片、维护多图库与元数据。 · [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-meme)
+- [DSH Connect WorkBuddy](data/plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md) · 将本机 WorkBuddy 账号和模型接入 DeepSeek Harness。 · [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy)
+- [Ruflo](data/plugins/ruvnet--ruflo/INSIGHT.md) · 提供 CLI 和 MCP 工具以登记 Agent、组织任务并调用模型服务。 · [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
+- [灵枢 dsh-memory](data/plugins/furongjun-1999--dsh-memory/INSIGHT.md) · 将 Markdown 认知图和自动召回接入 DSH 长期记忆。 · [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@furongjun1999/dsh-memory)
 
 ## [下载热门](data/views/columns/HOT.md)
 
 > 从近期下载较多的插件中，寻找适合自己任务的工具。
 
-- [billion-context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 为长会话提供模型驱动的增量分层压缩、原文恢复、上下文搜索及多客户端代理/原生通道。 · [![npm 30d 2,010,311](https://img.shields.io/static/v1?label=npm+30d&message=2%2C010%2C311&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
-- [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过 CLI 与 MCP 统一提供应用工件、JavaScript/Electron 和多种后端的分析操作，返回带来源、推断性质与限制的证据。 · [![npm 30d 954,223](https://img.shields.io/static/v1?label=npm+30d&message=954%2C223&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
-- [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在DSH内浏览社区插件，管理安装、更新、分组、备份与诊断。 · [![npm 30d 538,384](https://img.shields.io/static/v1?label=npm+30d&message=538%2C384&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+- [billion-context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 为长会话提供分层上下文压缩、按需恢复和搜索，并通过代理或原生集成接入多个客户端。 · [![npm 30d 2,315,214](https://img.shields.io/static/v1?label=npm+30d&message=2%2C315%2C214&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
+- [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过命令行和 MCP 提供应用与二进制逆向分析工具。 · [![npm 30d 1,172,617](https://img.shields.io/static/v1?label=npm+30d&message=1%2C172%2C617&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+- [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在 DeepSeek Harness 中浏览社区插件，并管理安装、更新和配置。 · [![npm 30d 776,009](https://img.shields.io/static/v1?label=npm+30d&message=776%2C009&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
 ## 按场景查找
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
 | [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 231 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 30 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 86 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 216 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 43 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 29 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 84 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 217 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 44 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 123 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 124 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 [浏览全部分类](data/views/categories/INDEX.md)
@@ -76,4 +76,4 @@
 
 ## 更新时间
 
-2026-10-29
+2026-11-01

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[22ddee3](https://github.com/deepseek-ai/deepseek-harness/tree/22ddee3792402c3e70ec5f86a63c3e3e895a2f60)
+源码版本：[ce7073d](https://github.com/deepseek-ai/deepseek-harness/tree/ce7073d51254c26cd63b22a60835b8f948deb447)
 
 <!-- BEGIN META -->
-[![GitHub ★ 261,276](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=261%2C276&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
+[![GitHub ★ 267,009](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=267%2C009&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 <!-- END META -->
 
-> **功能**：基于Cordis插件组合的开源Agent运行宿主，提供会话、工具与多应用入口。
+> **功能**：基于插件组合提供 Agent 运行、工具调用、会话和交互的开源宿主。
 
-> **亮点**：相对SDK脚本或fork核心，将模型、工具、会话及loop组织为可替换配置树，复用Cordis可逆effect和事件机制；不证明同模型任务更准确。[Q01](#research-q01)
+> **亮点**：宿主将插件配置、作用域工具分派和会话事件组织为可组合接缝；Cordis 基础来自上游，实际采用收益仍需任务对照。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：可逆注册和持久事件不等于外部副作用可回滚，声明兼容不保证运行兼容；预览软件安全边界须依赖隔离环境。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 它是什么类型，插件化对谁有什么增量？](#detail-section-11)
-  - [Q02 · 组合、工具执行和会话事实怎样衔接？](#detail-section-12)
-  - [Q03 · 可组合是否降低了实际权限和恢复负担？](#detail-section-13)
-  - [Q04 · 如何验证“可替换”真的减少定制成本？](#detail-section-14)
+  - [Q01 · 谁需要它，它和直接编写 Agent 程序有什么区别？](#detail-section-11)
+  - [Q02 · 模型工具调用从循环到审批和执行如何接线？](#detail-section-12)
+  - [Q03 · profile 和版本准入能保证运行兼容吗？](#detail-section-13)
+  - [Q04 · 会话事件和取消对恢复意味着什么？](#detail-section-14)
+  - [Q05 · 如何进行有边界的试用，有什么可证伪假设？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合需要替换Agent模型、工具与交互面的开发者；这是宿主基础设施，非DSH第三方插件。[Q01](#research-q01)
+> **用途**：需要组装模型、工具和交互面的开发者可使用该 Agent 宿主；对既有 SDK 方案的实际收益尚无同条件对照。[Q01](#research-q01)
 
-直接模型SDK加少量工具脚本，或fork宿主修改。可比较定制成本，不能用不同模型/工具预算比较任务质量。
+直接使用模型 SDK 编写循环与工具调用是参照；该宿主提供组合和会话接缝，也引入版本、配置和维护成本。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -49,68 +50,67 @@
 
 #### 能力
 
-|能力|主要用途|使用条件与边界|
-|---|---|---|
-|插件组合宿主|按配置替换Agent子系统|开发预览、兼容需验收|
-|作用域工具|准入、审批与调用|取决实际策略插件|
-|会话事件|事实记录与观察|非外部副作用事务|
+| 能力 | 主要用途 | 使用条件与边界 |
+| --- | --- | --- |
+| Profile 与 bundle 组合 | 将插件补丁组成宿主配置 | 不兼容项可跳过；版本通过不证明行为兼容 |
+| Native 工具执行 | 对模型工具调用应用策略并分派 | 具体配置和其他执行器需分别验证 |
+| Session 事件持久化 | 将会话事件交给配置的后端并刷新 | 内存提交不是耐久屏障，外部副作用不会自动回滚 |
 
 #### 启动与依赖
 
-|依赖或条件|是否必需|用途|缺失或不满足时|
-|---|---|---|---|
-|兼容Node与应用profile|必需|启动宿主|按发布入口核对|
-|模型连接与凭据|模型任务必需|推理调用|仅检查配置或使用隔离模型|
-|可信插件及隔离权限|试用必需|限制代码/文件副作用|不用敏感主环境|
-|pnpm与构建|源码运行必需|生成产物|使用已发布入口|
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| Node 与安装成品 | 必需 | 启动宿主 | 版本或产物不符时不能假定启动 |
+| 模型与凭据 | 模型任务需要 | 模型推理 | 权限、费用和可用性由配置决定 |
+| 存储后端与 flush | 耐久会话需要 | 持久化事件 | 未配置或失败不能假定事件已落盘 |
+| 审批服务 | 需要询问的工具调用需要 | 路由审批 | 不存在或无 Agent 时拒绝 |
 
 #### 启动步骤
 
-|步骤|执行者与成功判据|失败处理|
-|---|---|---|
-|选隔离profile与最少权限|开发者核对配置树|恢复空profile|
-|连接模型并跑基线任务|开发者确认交付|核对凭据和预算|
-|替换插件、取消并重启|开发者检查清理及持久|核对副作用后回滚配置|
-
-**效果与成本**
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 开发者选择隔离配置和模型 | 依赖或权限不明确时停止 |
+| 组装 | 用户检查 profile 和插件版本 | 被跳过的 bundle 必须单独检查 |
+| 执行 | Agent 在 native 执行器路径发起工具并经过策略与审批 | 该路径拒绝或缺审批时不执行工具体；其他执行器另行核查 |
+| 恢复 | 用户检查事件和外部目标 | 不一致时停止重复执行并核对 |
 
 #### 成本
 
-|阶段|现金与资源|人工与时间|未知|
-|---|---|---|---|
-|首次|Node、模型和隔离资源|profile/权限/凭据配置|配置工时|
-|持续|模型调用、插件与存储|兼容维护和备份|单位任务总成本|
-|失败恢复|重启、日志和重复调用|核对外部副作用及恢复|恢复率和人工时间|
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次使用 | Node、存储及模型费用未知 | profile、权限与凭据配置耗时未知 | 开发预览需要自行验收 |
+| 持续使用 | 模型、计算和存储开销未知 | 插件兼容和任务复核 | 无同条件节时数据 |
+| 失败恢复 | 重试与外部副作用代价未知 | 核对日志、目标及备份 | 取消并不撤销已完成写入 |
 
 #### 效果
 
-|效果项|抽读支持|未知|
-|---|---|---|
-|配置替换|profile层与作用域服务|实际迁移节时|
-|调用约束|审批缺失deny和准入|所有工具实际边界|
-|事实观察|append-only session契约|后端崩溃恢复及外部副作用|
+| 效果项 | 当前证据支持 | 尚不能确定 |
+| --- | --- | --- |
+| 可组合宿主 | profile 与作用域工具机制存在 | 插件实际互换成本 |
+| 受控执行 | native 路径有策略、询问和守卫 | 所有部署和工具的权限正确性 |
+| 会话存储 | 内存事件、后端路由与 flush 契约存在 | 崩溃恢复率和外部副作用 |
 
-> **思考**：可逆注册和持久事件不等于外部副作用可回滚，声明兼容不保证运行兼容；预览软件安全边界须依赖隔离环境。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对SDK脚本或fork核心，将模型、工具、会话及loop组织为可替换配置树，复用Cordis可逆effect和事件机制；不证明同模型任务更准确。[Q01](#research-q01)
+> **亮点**：宿主将插件配置、作用域工具分派和会话事件组织为可组合接缝；Cordis 基础来自上游，实际采用收益仍需任务对照。[Q01](#research-q01) [Q02](#research-q02)
 
-将持久session事实和瞬态Agent事件分域，统一作用域工具准入值得借鉴；复用需承担生命周期、存储及宿主兼容的整套契约。[Q02](#research-q02)
+profile 显式记录跳过的 bundle；工具按作用域选择执行器，native 管线有审批与取消分支；JSONL 将事件排队并由 flush 建立耐久边界。这些接缝不能替代真实宿主与故障测试。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-可逆注册和持久事件不等于外部副作用可回滚，声明兼容不保证运行兼容；预览软件安全边界须依赖隔离环境。[Q02](#research-q02) [Q03](#research-q03)
+版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有Agent扩展需求的开发者可在隔离profile以同模型小任务试用，先验收权限、取消及重启，不以架构或semver替代实际功能验收。[Q04](#research-q04)
+适合有 Agent 扩展需求的开发者先在隔离 profile、固定模型和小任务上验收；服务缺失、非预期写入或重启不一致时停止并回到已知配置。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-抽读支持组合与执行接缝的存在；互换收益、崩溃恢复与安全隔离未验证；契约验收假设未验证。
+固定源码支持所列代表链路的机制解释，未运行宿主、插件或任务；未来设计为假设。
 
-- 已检查：作者 README、包清单、源码路径 docs/architecture.md、SAFETY.md、packages/boot/app-boot/src/plugin-compatibility.ts、packages/core/tools/src/index.ts、packages/core/tools/src/pipeline.ts、packages/core/session/src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、packages/boot/app-boot/src/profile.ts、packages/core/tools/src/index.ts、packages/core/agent-loop/src/agent.ts、packages/bundle/base/cordis.patch.yml、packages/core/tool-executor-native/src/index.ts、packages/core/tools/src/pipeline.ts、packages/boot/app-boot/src/plugin-compatibility.ts、package.json、SAFETY.md、packages/core/session/src/index.ts、packages/session/session-persistence-jsonl/src/storage.ts、packages/session/session-persistence/src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：partial clone固定提交抽读README、架构、安全说明、兼容判定、tools及session关键源码；inventory仅选读文件，不是全宿主LOC，未运行。
-- 下一步：隔离profile对照SDK脚本，同模型同任务记录替换改动、完成率、缺审批、取消/卸载、重启和重复副作用。
+- 边界：完整 monorepo 固定提交的 profile、native 工具执行及 session/JSONL 代表链路；未逐一审计 11888 个文件、其他执行器、宿主部署或插件，未执行目标。
+- 下一步：用隔离 profile 和固定模型分别验证插件加载、审批缺失、工具取消与持久化屏障；对照目标文件及重启结果，记录失败点。
 
 **分析版本**
 
 - **仓库**：[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
-- **版本号**：0.2.1-rc.3（[固定提交 22ddee3](https://github.com/deepseek-ai/deepseek-harness/tree/22ddee3792402c3e70ec5f86a63c3e3e895a2f60)）
-- **版本日期**：2026-10-23（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.2-alpha.2（[固定提交 ce7073d](https://github.com/deepseek-ai/deepseek-harness/tree/ce7073d51254c26cd63b22a60835b8f948deb447)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +137,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是以作用域、持久事件、取消/清理的接缝验收预测插件互换成本，优于仅semver；同任务对照修改量与恢复，成本不降则否定。[Q04](#research-q04)
+未验证假设：在插件升级中增加作用域可见性、审批、取消和持久化接缝测试，可能比只检查版本范围发现更多真实不兼容；应比较故障检出、误报和维护时间，若额外收益不足以覆盖成本则否定。[Q05](#research-q05)
 
-隔离profile对照SDK脚本，同模型同任务记录替换改动、完成率、缺审批、取消/卸载、重启和重复副作用。
+用隔离 profile 和固定模型分别验证插件加载、审批缺失、工具取消与持久化屏障；对照目标文件及重启结果，记录失败点。
 
 <a id="detail-section-9"></a>
 
@@ -148,49 +148,58 @@
 <details>
 <summary>工程统计</summary>
 
-统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：5e7837e7f09b2c1b31808b8af50d25a564ee03882330eb600a71c000fc4fa57b。sloc 0.3.2，TypeScript 5.9.3。
-
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 3 | 273 | — | — | 3167 |
-| .ts | source | 4 | 2775 | 1816 | 780 | — |
+| .md | source | 4583 | 445208 | — | — | 6503882 |
+| .mjs | source | 116 | 9859 | 7700 | 1601 | — |
+| .mjs | test | 12 | 3394 | 3209 | 83 | — |
+| .ts | source | 3050 | 538389 | 385921 | 120301 | — |
+| .ts | test | 2756 | 731803 | 641602 | 37895 | — |
+| .mjs | example | 68 | 4664 | 4141 | 324 | — |
+| .ts | example | 117 | 5587 | 4541 | 585 | — |
+| .md | test | 298 | 6745 | — | — | 57974 |
+| .js | source | 10 | 342 | 319 | 20 | — |
+| .tsx | source | 430 | 70015 | 55241 | 11384 | — |
+| .cjs | example | 3 | 32 | 30 | 2 | — |
+| .tsx | test | 391 | 127122 | 111849 | 6162 | — |
+| .md | example | 18 | 397 | — | — | 3644 |
+| .js | example | 26 | 504 | 439 | 50 | — |
+| .js | test | 5 | 977 | 851 | 44 | — |
+| .cjs | source | 5 | 129 | 76 | 37 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+created%3A2026-09-26T03%3A38%3A09.835Z..2026-10-26T03%3A38%3A09.835Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T03%3A38%3A09.835Z..2026-10-26T03%3A38%3A09.835Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
 
 
 
-统计日期：2026-10-26。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：插件化运行宿主如何组织替换、持久与准入，是否能减少定制恢复负担？
+**插件研究总目标**：评估 Agent 宿主的插件组合、工具调用控制与兼容边界，以及试用成本。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 它是什么类型，插件化对谁有什么增量？
+### Q01 · 谁需要它，它和直接编写 Agent 程序有什么区别？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-DeepSeek Harness是开源Agent运行宿主/基础设施，而非可安装到另一个DSH的单插件。对象是需要替换模型、工具、持久化或交互面的开发者，合格结果是可复现的配置化Agent应用。architecture描述Cordis共享context、typed events和可逆effects，profile/bundle/patch按层装配；相对直接模型SDK脚本，增量是统一生命周期与扩展接缝，相对fork宿主改核心减少源码分叉需求。Cordis机制明确归上游，项目增量是将工具、会话与loop等产品子系统应用到该组合模型，不据此宣称Agent任务质量更高。开发预览已明确兼容性破坏，长期稳定性是另一个问题。
+DeepSeek Harness 是提供 Agent 运行和扩展机制的宿主基础设施，而不是第三方 DSH 插件。面向需要组装模型、工具与交互面的开发者，作者描述以插件组合的架构；代码中 profile 加载 bundle 补丁层，工具执行器按作用域注册。相对直接使用模型 SDK 编写循环，这把组合和工具接缝纳入统一宿主；同时也引入 profile、插件版本和生命周期维护。Cordis 的组合基础来自其上游，不能将其原理全部归功于本仓库。源码说明机制，尚无相同任务、同模型的人力和质量对照。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-15](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/README.md#L5-L15)
+**依据 1 · 作者声明**：[README.md:5-13](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/README.md#L5-L13)
 
-作者定位及预览状态
-
-<details>
-<summary>查看原文（11行）</summary>
+作者说明 Agent harness、Cordis 和开发预览。
 
 ```text
 DeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).
@@ -202,98 +211,457 @@ Documentation: [https://deepseek-harness.github.io/deepseek-harness/](https://de
 ## Developer preview
 
 DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**
+```
 
-Review the [safety notice](SAFETY.md) before running the project.
+**依据 2 · 源码核查**：[packages/boot/app-boot/src/profile.ts:678-712](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/profile.ts#L678-L712)
+
+按 profile 列表解析 bundle、版本检查和补丁层。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+export function loadProfileDirectory(
+  binName: string,
+  dir: string,
+  installAnchor: string,
+  options: { userLayer?: boolean } = {},
+): Profile {
+  const manifest = dropRetiredBundles(dir, readProfileManifest(binName, dir))
+  const bundles = manifest.dsh?.profile?.bundles ?? []
+  const layers: ProfileLayer[] = []
+  const skippedBundles: SkippedBundle[] = []
+  const exemptions = bundles.length === 0 ? {} : readProfileVersionExemptions(dir)
+  for (const packageName of bundles) {
+    try {
+      const packageDir = resolveBundleDir(binName, packageName, installAnchor, dir)
+      const bundleManifest = readProfileManifest(binName, packageDir)
+      const bundle = bundleManifest.dsh?.bundle
+      if (bundle === undefined) {
+        throw new Error(`${binName}: profile bundle ${JSON.stringify(packageName)} declares no dsh.bundle in its package.json`)
+      }
+      assertBundlePlatform(bundle.platforms, process.platform)
+      // A bundle is not a plugin row, so row admission never reads its own dsh requirements.
+      const issue = evaluatePluginCompatibility(bundleManifest, exemptions)
+      if (issue !== undefined && !issue.exempted) throw new Error(pluginCompatibilityWarning(issue))
+      const patchPaths = bundlePatchPaths(packageDir, bundle)
+      const patches = patchPaths.flatMap(patchPath => loadOverlayPatches(binName, patchPath))
+      layers.push({ packageName, packageDir, patchPaths, patches })
+    } catch (error) {
+      skippedBundles.push({ packageName, reason: String(error) })
+    }
+  }
+  const patchPath = join(dir, PROFILE_PATCH_FILENAME)
+  const patches = options.userLayer !== false && existsSync(patchPath)
+    ? loadOverlayPatches(binName, patchPath)
+    : []
+  return { name: basename(dir), dir, layers, patchPath, patches, skippedBundles }
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[docs/architecture.md:7-27](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md#L7-L27)
+**依据 3 · 源码核查**：[packages/core/tools/src/index.ts:320-349](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L320-L349)
 
-插件树、上游和有序配置层
+作用域内设置和卸载工具执行器。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-## Cordis
-
-[Cordis](cordis-primer.md) is the framework under dsh: plugins contribute services, typed events, and reversible effects to a shared context. Every part of the product is a plugin, including the model adapter, the tool registry, the session log, and the agent loop itself, so each is replaceable from configuration.
-
-There is no privileged core to patch: you extend dsh by mounting a plugin beside the others, and registrations are effects that unwind when their plugin unloads.
-
-## Profiles and bundles
-
-A running `dsh` is a plugin tree composed at boot from ordered layers.
-
-A **profile** is a named composition stored in the Harness home. It lists the bundles it stacks, holds any out-of-tree plugins it installs, and keeps the user's own `cordis.patch.yml`. `web`, `headless`, `sdk`, `sdk-minimal`, and `acp` ship as templates.
-
-A **bundle** is a distribution format for Cordis config rows and the code they mount, so whatever it inserts stays patchable by the layers above it.
-
-Each declares itself in its own `package.json` under a `dsh` field: `dsh.profile` lists a profile's bundles, and `dsh.bundle` points at a bundle's patch file.
-
-[`dsh-base`](../packages/bundle/base/README.md) is the shared first layer of the `web`, `headless`, `sdk`, and `acp` profiles: model adapters, tools, persistence, sandbox and approval policy, settings, credentials, telemetry. [`dsh-web-app`](../packages/bundle/web-app/README.md) adds the browser application, [`dsh-headless`](../packages/bundle/headless/README.md) adds a one-shot runner with no server, [`dsh-sdk-app`](../packages/bundle/sdk-app/README.md) adds the SDK JSON-RPC server, and [`dsh-acp-app`](../packages/bundle/acp-app/README.md) adds the automation-only ACP server. [`dsh-sdk-minimal`](../packages/bundle/sdk-minimal/README.md) is the deliberate exception: one bundle owns its complete explicit SDK tree and does not apply `dsh-base`.
-
-Layers apply to an empty entry list: the profile's ordered bundles, its `cordis.patch.yml`, the home patch, then `--patch` overlays. A patch targets a row by id and replaces its whole config, or inserts new rows. A `preset` patch applies these operations inside that declaration’s `config.plugins`, with the same layer precedence.
-
-YAML controls HMR: base enables config-only `dsh-hmr`; headless, SDK and ACP disable it; `sdk-minimal` omits it. Profile patches override these defaults. HMR coordinates watching and reloads; the launcher provides profile data and readiness.
+   * Provide the executor for the calling scope; an unscoped contribution is the deployment default.
+   * Rendering any executor-owned section requires the viewing scope's selection to remain available.
+   * @param executor - initialized provider owned by the contributing plugin.
+   * @returns the effect disposer. Unloading leaves the selection unavailable until it is replaced.
+   */
+  setExecutor(executor: ToolExecutor): () => void {
+    const scope = scopeOf(this.ctx)
+    const existing = scope === undefined ? this.root : this.scoped.get(scope)
+    if (existing?.executor !== undefined) throw new Error('Only one tool executor may be registered in each scope')
+    const record: Registration = { executor }
+    // oxlint-disable-next-line typescript/no-misused-promises -- synchronous cleanup; preserve the Cordis disposer identity
+    return this.ctx.effect(function* (this: ToolsService) {
+      for (const section of executor.sections ?? []) {
+        yield this.ctx.systemPrompt.section({
+          name: section.name,
+          order: section.order,
+          ...section.interpolate === undefined ? {} : { interpolate: section.interpolate },
+          text: ({ scope, toolSet }) => {
+            if (this.selectExecutor(scope) !== executor) return ''
+            return typeof section.text === 'function' ? section.text(this.definitions(scope, toolSet)) : section.text
+          },
+        })
+      }
+      if (scope === undefined) this.root = record
+      else this.scoped.set(scope, record)
+      yield () => {
+        // Keep an unavailable selection so a program cannot fall through to a different executor.
+        record.executor = undefined
+      }
+    }.bind(this), 'tools.setExecutor()')
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少同任务定制/升级的实际成本对照
-  **影响**：不能确认端到端正确性或定制收益
-  **进一步探讨**：以隔离profile和同模型固定任务对照最小SDK脚本，记录完成率、修改量、恢复人工时间
+- 没有同任务同模型 SDK 实现的结果对照
+  **影响**：不能声称更准确、更快或更省维护
+  **进一步探讨**：固定任务和模型，对比配置、代码改动、恢复步骤和结果质量。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 组合、工具执行和会话事实怎样衔接？
+### Q02 · 模型工具调用从循环到审批和执行如何接线？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-profile列bundle再依次应用本地/home/命令patch，意味着同名配置覆盖有固定顺序，而不是任意插件并列无冲突。compatibility读取engines.dsh优先，否则检查DSH peers，显式预发布参与并支持精确版本豁免；这是声明兼容准入，不能证明运行兼容。ToolsService把定义和restriction放入作用域层，ToolExecutionPipeline对调用保留step admission、取消和审批通道语义，缺审批通道的ask降为deny。会话模块明确append-only事件日志并在跨边界验证/冻结；这些机制把瞬态Agent事件与持久事实分开，适合可观察扩展，但存储后端落盘、崩溃恢复和工具外部副作用并非只靠内存日志即可原子化。本项未审计整个loop，不能从接缝存在推出exactly-once任务执行。
+Agent 循环从模型消息提取工具调用并把 Agent、取消信号和步骤日志传给 tools.execute。工具服务按作用域选择执行器；base bundle 包含 native executor，其实现使用公共 pipeline 与批处理。pipeline 先运行 pre-execute 策略，需要询问时走审批，允许后检查守卫再分派工具；审批服务不存在或缺少 Agent 时将询问降级为拒绝。取消在执行前会跳过工具，已经开始的工具 promise 会等其结束后再形成取消结果；这不保证工具本身可中断或撤销外部写入。其他执行器与特定部署仍需分别核实。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[docs/architecture.md:15-27](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md#L15-L27)
+**依据 1 · 源码核查**：[packages/core/agent-loop/src/agent.ts:584-603](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent-loop/src/agent.ts#L584-L603)
 
-配置层次
+Agent 循环把工具调用及作用域、信号传入工具服务。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-A running `dsh` is a plugin tree composed at boot from ordered layers.
+        if (finish.kind === 'max-tokens') return { kind: 'max-tokens' }
 
-A **profile** is a named composition stored in the Harness home. It lists the bundles it stacks, holds any out-of-tree plugins it installs, and keeps the user's own `cordis.patch.yml`. `web`, `headless`, `sdk`, `sdk-minimal`, and `acp` ship as templates.
-
-A **bundle** is a distribution format for Cordis config rows and the code they mount, so whatever it inserts stays patchable by the layers above it.
-
-Each declares itself in its own `package.json` under a `dsh` field: `dsh.profile` lists a profile's bundles, and `dsh.bundle` points at a bundle's patch file.
-
-[`dsh-base`](../packages/bundle/base/README.md) is the shared first layer of the `web`, `headless`, `sdk`, and `acp` profiles: model adapters, tools, persistence, sandbox and approval policy, settings, credentials, telemetry. [`dsh-web-app`](../packages/bundle/web-app/README.md) adds the browser application, [`dsh-headless`](../packages/bundle/headless/README.md) adds a one-shot runner with no server, [`dsh-sdk-app`](../packages/bundle/sdk-app/README.md) adds the SDK JSON-RPC server, and [`dsh-acp-app`](../packages/bundle/acp-app/README.md) adds the automation-only ACP server. [`dsh-sdk-minimal`](../packages/bundle/sdk-minimal/README.md) is the deliberate exception: one bundle owns its complete explicit SDK tree and does not apply `dsh-base`.
-
-Layers apply to an empty entry list: the profile's ordered bundles, its `cordis.patch.yml`, the home patch, then `--patch` overlays. A patch targets a row by id and replaces its whole config, or inserts new rows. A `preset` patch applies these operations inside that declaration’s `config.plugins`, with the same layer precedence.
-
-YAML controls HMR: base enables config-only `dsh-hmr`; headless, SDK and ACP disable it; `sdk-minimal` omits it. Profile patches override these defaults. HMR coordinates watching and reloads; the launcher provides profile data and readiness.
+        const toolCalls = message.content.filter(block => block.type === 'tool-call')
+        if (toolCalls.length === 0) return { kind: 'completed' }
+        const maxParallelToolCalls = this.loopCtx.agentLoop.config.maxParallelToolCalls.get()
+        try {
+          const result = await this.loopCtx.tools.execute({
+            calls: toolCalls, signal, agent: this, log: { turn, step },
+            maxParallelToolCalls, toolSet: decision.toolSet,
+          })
+          for (const context of result.additionalContexts) {
+            this.inbox.splice('next-step', this.inbox.nextStep.length, 0, [context])
+          }
+          return result.concluded ? { kind: 'completed' } : null
+        } catch (error: unknown) {
+          if (!(error instanceof ToolBatchExecutionError)) throw error
+          for (const context of error.partial.additionalContexts) {
+            this.inbox.splice('next-step', this.inbox.nextStep.length, 0, [context])
+          }
+          throw error.cause
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:54-85](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/boot/app-boot/src/plugin-compatibility.ts#L54-L85)
+**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:353-376](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L376)
 
-兼容判定
+按作用域选择执行器并分派。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
+   * Resolve the nearest scoped provider, or the deployment default.
+   * @param scope - Agent or preset scope; omitted selects only the root contribution.
+   * @returns the selected executor; throws when it is missing or unloaded.
+   */
+  private selectExecutor(scope?: ScopeKey): ToolExecutor {
+    let record: Registration | undefined
+    for (const key of scopeChainOf(scope)) {
+      record = this.scoped.get(key)
+      if (record !== undefined) break
+    }
+    record ??= this.root
+    const executor = record?.executor
+    if (executor === undefined) throw new ToolExecutorUnavailableError()
+    return executor
+  }
+
+  /**
+   * Delegate a raw call batch to its Agent's provider or the deployment default.
+   * Select at dispatch; accepted batches settle through that provider even if it unloads.
+   * @param input - original calls, optional owning Agent, and optional logging step.
+   * @returns the selected executor's settled batch; unavailable selections reject.
+   */
+  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
+    return this.selectExecutor(input.agent).execute(input)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/bundle/base/cordis.patch.yml:494-505](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/bundle/base/cordis.patch.yml#L494-L505)
+
+base bundle 声明 native 与默认禁用的另一执行器。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    # ── rows every mode mounts, whose values each overlay may state ──────────────
+
+    # Shared tool definitions and the deployment’s native executor.
+    - id: tools
+      name: '@deepseek-ai/dsh-tools'
+
+    - id: tool-executor-native
+      name: '@deepseek-ai/dsh-tool-executor-native'
+
+    - id: tool-executor-ptc
+      name: '@deepseek-ai/dsh-tool-executor-ptc'
+      disabled: true
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/core/tool-executor-native/src/index.ts:7-20](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tool-executor-native/src/index.ts#L7-L20)
+
+native 执行器使用公共 pipeline 和批处理。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+/** Executes visible capabilities directly and owns their complete batch settlement. */
+export class NativeToolExecutor implements ToolExecutor {
+  private readonly pipeline: ToolExecutionPipeline
+
+  constructor(ctx: Context, private readonly maxParallel: () => number = () => 10) {
+    this.pipeline = new ToolExecutionPipeline(ctx)
+  }
+
+  describe(tools: readonly ToolDefinition[]): ToolModelInput {
+    return { schemas: tools.map(definition => projectToolSchema(definition, false)) }
+  }
+
+  execute(input: ToolBatchInput): Promise<ToolBatchResult> {
+    return executeToolBatch(input, this.pipeline, this.maxParallel)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/core/tools/src/pipeline.ts:190-231](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L190-L231)
+
+执行前策略、审批及守卫决定是否分派。
+
+<details>
+<summary>查看原文（42行）</summary>
+
+```text
+  async prepare(input: ToolExecutionInput): Promise<ScheduledToolPreparation> {
+    const created = this.createExecution(input)
+    if (created.kind !== 'ready') return created
+    const exec = created.exec
+    if (this.callerCancelled(exec)) {
+      return { kind: 'final-result', exec, result: toolAbortedBeforeDispatchResult() }
+    }
+    try {
+      const carrier = scopeTarget(this.tools, exec.agent)
+      const gate = await this.ctx.waterfall(
+        carrier, 'tools/pre-execute', exec,
+        () => Promise.resolve<PreToolDecision>({ kind: 'allow' }),
+      )
+      const askResolution = gate.kind === 'ask'
+        ? await this.serviceAsk(exec, gate)
+        : { decision: gate, approvalCancelled: false }
+      const { decision } = askResolution
+      if (this.callerCancelled(exec) && askResolution.approvalCancelled) {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      if (decision.kind === 'cancel') {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      const denialReason = decision.kind === 'allow' ? this.tools.checkGuards(exec) : decision.reason
+      const denialInfo = decision.kind === 'deny' ? decision.info : undefined
+      if (denialReason !== undefined) {
+        return {
+          kind: 'post-result',
+          exec,
+          result: this.materializeFinalResult({
+            content: [{ type: 'text', text: `Error: ${denialReason}` }],
+            isError: true,
+            error: { message: denialReason, ...denialInfo === undefined ? {} : { info: denialInfo } },
+          }),
+        }
+      }
+      if (this.callerCancelled(exec)) {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      return { kind: 'dispatch', exec }
+    } catch (error: unknown) {
+      return { kind: 'final-result', exec, result: toolErrorResult(error) }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/core/tools/src/pipeline.ts:432-469](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L432-L469)
+
+审批缺失、拒绝、取消和不可用的分支。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+  private async serviceAsk(
+    exec: ToolExecution,
+    ask: Extract<PreToolDecision, { kind: 'ask' }>,
+  ): Promise<ToolAskResolution> {
+    const approval = this.ctx.get('approval')
+    if (approval === undefined) {
+      return {
+        decision: { kind: 'deny', reason: ask.reason ?? `tool "${exec.name}" requires approval (not yet supported)` },
+        approvalCancelled: false,
+      }
+    }
+    if (exec.agent === undefined) {
+      return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but the call has no agent to route it through` },
+        approvalCancelled: false,
+      }
+    }
+    const outcome = await approval.request({
+      agent: exec.agent,
+      toolName: exec.name,
+      callId: exec.callId,
+      ...ask.reason !== undefined ? { reason: ask.reason } : {},
+      ...ask.displayReason !== undefined ? { displayReason: ask.displayReason } : {},
+      signal: exec.signal,
+    })
+    switch (outcome) {
+      case 'allowed-once': return { decision: { kind: 'allow' }, approvalCancelled: false }
+      case 'rejected': return {
+        decision: { kind: 'deny', reason: `the user rejected tool "${exec.name}"` },
+        approvalCancelled: false,
+      }
+      case 'cancelled': return {
+        decision: { kind: 'deny', reason: `approval for tool "${exec.name}" was cancelled` },
+        approvalCancelled: true,
+      }
+      case 'unavailable': return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
+        approvalCancelled: false,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/core/tools/src/pipeline.ts:253-280](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L253-L280)
+
+已开始工具等待完成，取消结果不说明副作用回滚。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  /**
+   * Dispatch the registered body with the original caller signal fused back
+   * into any around-wrapper replacement. Cancellation never abandons the body:
+   * a started promise reaches quiescence before its outcome becomes `ABORTED`.
+   */
+  private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {
+    const state = this.cancellationStates.get(exec)
+    /* v8 ignore next -- only registry-minted executions reach the staged scheduler methods */
+    if (state === undefined) throw new Error('tool registry scheduler invariant violated: missing cancellation state')
+    const wrapperSignal = exec.signal
+    const fused = fuseToolSignals(state.callerSignal, wrapperSignal)
+    const signal = fused.signal
+
+    if (isAborted(signal)) {
+      fused.dispose()
+      return toolAbortedBeforeDispatchResult()
+    }
+    exec.signal = signal
+    try {
+      const tool = this.resolveExecution(exec.name, exec.agent, exec.parent !== undefined, exec.toolSet)
+      if (!tool) throw new ToolNotFoundError(exec.name)
+      state.bodyInvoked = true
+      const returned = await tool.execute(exec.arguments, exec)
+      const result = this.createSuccessResult(exec, tool, returned)
+      return isAborted(signal)
+        ? toolAbortedResult(result)
+        : result
+    } catch (error: unknown) {
+```
+
+</details>
+
+#### 缺口
+
+- 未在实际宿主验证具体插件与权限配置
+  **影响**：不能声称所有工具或自定义执行器均受同一实际策略保护
+  **进一步探讨**：以匹配 profile 测允许、拒绝、无审批、取消与工具已产生副作用的路径。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · profile 和版本准入能保证运行兼容吗？
+
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+
+#### 完整回答
+
+profile 解析已列出的 bundle，读取其 manifest 和补丁，检查平台及版本；无法读取、不支持的平台或不兼容项被收集到 skippedBundles，而用户补丁仍单独加载。版本规则优先使用 engines.dsh，否则检查 DSH peer 依赖，允许精确版本豁免；匹配只表明版本声明通过该检查，不保证服务注入、数据格式或行为相容。根包是 private monorepo、声明 Node 24.9 以上；作者标注开发预览且明确提示安全能力不能保证隔离。运行者需要按实际任务配置模型、凭据、权限和受控环境，当前未做宿主兼容或安全验收。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/boot/app-boot/src/profile.ts:678-712](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/profile.ts#L678-L712)
+
+bundle 解析、兼容检查、跳过与用户层。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+export function loadProfileDirectory(
+  binName: string,
+  dir: string,
+  installAnchor: string,
+  options: { userLayer?: boolean } = {},
+): Profile {
+  const manifest = dropRetiredBundles(dir, readProfileManifest(binName, dir))
+  const bundles = manifest.dsh?.profile?.bundles ?? []
+  const layers: ProfileLayer[] = []
+  const skippedBundles: SkippedBundle[] = []
+  const exemptions = bundles.length === 0 ? {} : readProfileVersionExemptions(dir)
+  for (const packageName of bundles) {
+    try {
+      const packageDir = resolveBundleDir(binName, packageName, installAnchor, dir)
+      const bundleManifest = readProfileManifest(binName, packageDir)
+      const bundle = bundleManifest.dsh?.bundle
+      if (bundle === undefined) {
+        throw new Error(`${binName}: profile bundle ${JSON.stringify(packageName)} declares no dsh.bundle in its package.json`)
+      }
+      assertBundlePlatform(bundle.platforms, process.platform)
+      // A bundle is not a plugin row, so row admission never reads its own dsh requirements.
+      const issue = evaluatePluginCompatibility(bundleManifest, exemptions)
+      if (issue !== undefined && !issue.exempted) throw new Error(pluginCompatibilityWarning(issue))
+      const patchPaths = bundlePatchPaths(packageDir, bundle)
+      const patches = patchPaths.flatMap(patchPath => loadOverlayPatches(binName, patchPath))
+      layers.push({ packageName, packageDir, patchPaths, patches })
+    } catch (error) {
+      skippedBundles.push({ packageName, reason: String(error) })
+    }
+  }
+  const patchPath = join(dir, PROFILE_PATCH_FILENAME)
+  const patches = options.userLayer !== false && existsSync(patchPath)
+    ? loadOverlayPatches(binName, patchPath)
+    : []
+  return { name: basename(dir), dir, layers, patchPath, patches, skippedBundles }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:51-73](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L51-L73)
+
+版本检查优先级和 DSH peers 的处理。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+function satisfies(runtimeVersion: string, range: string): boolean {
+  return range.trim() !== '' && semver.satisfies(runtimeVersion, range, { includePrerelease: true })
+}
 
 function unmetRequirements(fields: Record<string, unknown>, runtimeVersion: string): Record<string, string> {
   const engines = Object.hasOwn(fields, 'engines') ? objectOf(fields.engines, 'Plugin manifest engines') : {}
@@ -314,197 +682,65 @@ function unmetRequirements(fields: Record<string, unknown>, runtimeVersion: stri
     if (!satisfies(runtimeVersion, requirement)) unmet[name] = range
   }
   return unmet
-}
-
-/**
- * Check the plugin's dsh requirements against the runtime. An own `engines.dsh` range decides alone and
- * peerDependencies are ignored; otherwise every @deepseek-ai/dsh or @deepseek-ai/dsh-* peer must match.
- * Prereleases participate in ranges. For peers only, workspace:^, workspace:~, and workspace:* refer to
- * the current runtime; other empty or invalid ranges, including any workspace: `engines.dsh`, are unmet.
- * @param manifest - parsed plugin package.json; inherited fields are ignored.
- * @param exemptions - exact plugin name@version keys mapped to exact runtime versions.
- * @param runtimeVersion - running dsh version, defaulting to this app-boot package.
- * @returns unmet requirements and exemption status, or undefined when every requirement is met.
- * @throws for malformed manifest engines or peer fields, invalid runtime versions, or missing identity on a mismatch.
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/core/tools/src/index.ts:38-87](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/core/tools/src/index.ts#L38-L87)
+**依据 3 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:87-101](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L87-L101)
 
-作用域工具限制
+不匹配和精确豁免结果。
 
 <details>
-<summary>查看原文（50行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-/** One restriction compiled at registration for repeated live-global lookup. */
-interface CompiledToolRestriction {
-  readonly allow?: ReadonlySet<string>
-  readonly deny?: ReadonlySet<string>
-}
-
-/** One registered definition and its step-time activation condition. */
-interface ToolRegistration {
-  readonly definition: ToolDefinition
-  readonly when: ToolRegistrationOptions['when']
-}
-
-/** One scope's complete registry view, derived in a single layer traversal. */
-interface ToolView {
-  /** Visible definitions after restrictions, scoped shadowing, and inherited restrictions. */
-  readonly visible: ReadonlyMap<string, ToolDefinition>
-  /** Registrations behind {@link visible}, keyed by the same names. */
-  readonly registrations: ReadonlyMap<string, ToolRegistration>
-  /** Pre-restriction capability names used by prompt-order validation. */
-  readonly knownNames: ReadonlySet<string>
-  /** Current global names that a scoped restriction may name. */
-  readonly restrictableNames: ReadonlySet<string>
-}
-
-/** One scope's complete tool-registry contribution. */
-class ToolLayer implements ScopeLayer {
-  readonly tools: NamedEntries<ToolRegistration>
-  readonly restrictions = new AnonymousEntries<CompiledToolRestriction>()
-
-  constructor(scope: ScopeKey | undefined) {
-    this.tools = new NamedEntries(name => new Error(scope === undefined
-      ? `tool "${name}" is already registered (for a per-agent variant, register through that agent's \`agent.ctx\` instead)`
-      : `tool "${name}" is already registered in this scope`))
-  }
-
-  /** Whether every contribution table in this aggregate layer is empty. */
-  isEmpty(): boolean {
-    return this.tools.isEmpty() && this.restrictions.isEmpty()
-  }
-
-  /** Whether every compiled restriction in this layer admits a global tool name. */
-  admits(name: string): boolean {
-    for (const filter of this.restrictions.values()) {
-      if ((filter.allow !== undefined && !filter.allow.has(name))
-        || (filter.deny !== undefined && filter.deny.has(name))) return false
-    }
-    return true
-  }
-
-}
+export function evaluatePluginCompatibility(
+  manifest: object,
+  exemptions: Readonly<Record<string, readonly string[]>> = {},
+  runtimeVersion = getDshRuntimeVersion(),
+): PluginCompatibility | undefined {
+  runtimeVersionOf(runtimeVersion)
+  const fields = objectOf(manifest, 'Plugin manifest')
+  const requirements = unmetRequirements(fields, runtimeVersion)
+  if (Object.keys(requirements).length === 0) return undefined
+  const name = identityField(fields, 'name')
+  const version = identityField(fields, 'version')
+  const key = `${name}@${version}`
+  const exemptedVersions = Object.hasOwn(exemptions, key) ? exemptions[key] : undefined
+  const exempted = exemptedVersions?.includes(runtimeVersion) === true
+  return { name, version, runtimeVersion, requirements, exempted }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/core/tools/src/pipeline.ts:422-468](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/core/tools/src/pipeline.ts#L422-L468)
+**依据 4 · 源码核查**：[package.json:1-10](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/package.json#L1-L10)
 
-审批通道缺失降级
+根包身份、版本和 Node 要求。
 
 <details>
-<summary>查看原文（47行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-   * Resolve an `ask` decision to allow/deny through the approval seam. The
-   * seam is consumed opportunistically with `ctx.get('approval')` — a
-   * deployment that composes no ApprovalService keeps the historical degrade
-   * to deny, and an unmount mid-session degrades the same way on the next ask.
-   * An agent-less execution also degrades: without an agent there is no
-   * session to audit to and no UI to route to. Otherwise the outcome maps
-   * one-to-one — `allowed-once` proceeds; the three non-grants deny with
-   * distinct reasons so the model can tell a human "no" from an absent
-   * approval channel.
-   */
-  private async serviceAsk(
-    exec: ToolExecution,
-    ask: Extract<PreToolDecision, { kind: 'ask' }>,
-  ): Promise<ToolAskResolution> {
-    const approval = this.ctx.get('approval')
-    if (approval === undefined) {
-      return {
-        decision: { kind: 'deny', reason: ask.reason ?? `tool "${exec.name}" requires approval (not yet supported)` },
-        approvalCancelled: false,
-      }
-    }
-    if (exec.agent === undefined) {
-      return {
-        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but the call has no agent to route it through` },
-        approvalCancelled: false,
-      }
-    }
-    const outcome = await approval.request({
-      agent: exec.agent,
-      toolName: exec.name,
-      callId: exec.callId,
-      ...ask.reason !== undefined ? { reason: ask.reason } : {},
-      ...ask.displayReason !== undefined ? { displayReason: ask.displayReason } : {},
-      signal: exec.signal,
-    })
-    switch (outcome) {
-      case 'allowed-once': return { decision: { kind: 'allow' }, approvalCancelled: false }
-      case 'rejected': return {
-        decision: { kind: 'deny', reason: `the user rejected tool "${exec.name}"` },
-        approvalCancelled: false,
-      }
-      case 'cancelled': return {
-        decision: { kind: 'deny', reason: `approval for tool "${exec.name}" was cancelled` },
-        approvalCancelled: true,
-      }
-      case 'unavailable': return {
-        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
+{
+  "name": "@deepseek-ai/dsh-root",
+  "version": "0.2.2-alpha.2",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.5",
+  "engines": {
+    "node": ">=24.9.0"
+  },
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/core/session/src/index.ts:150-171](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/core/session/src/index.ts#L150-L171)
+**依据 5 · 作者声明**：[SAFETY.md:5-15](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/SAFETY.md#L5-L15)
 
-跨边界快照与事件校验
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-/** Detach, validate, and freeze the creation metadata published by a session. */
-function snapshotSessionHeader(id: SessionId, source?: SessionHeader): SessionHeader {
-  const input: unknown = source === undefined
-    ? { version: SESSION_FORMAT_VERSION, id, createdAt: Date.now(), isSeeded: false }
-    : source
-  const snapshot = snapshotJsonValue(input)
-  if (snapshot === undefined) throw new Error('session header is not losslessly JSON-serializable')
-  return validateSessionHeader(id, snapshot)
-}
-
-/**
- * Validate an exclusively owned event and deeply freeze its identified message
- * without copying the event. The caller transfers an object graph that no
- * producer retains and that shares no mutable children with another event.
- * Use {@link snapshotSessionEvent} when exclusive ownership is not guaranteed.
- * @param event - exclusively owned event imported across a trusted boundary.
- * @returns the same event object with a validated, deeply frozen message.
- * @throws when event-local surface metadata, request-header fields, or message invariants are invalid; history relations are not checked.
- */
-export function adoptSessionEvent<T extends SessionEvent>(event: T): T {
-  validateSessionEventData(event, `session event at seq ${event.seq}`)
-  validateSurfaceMetadata(event)
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 可组合是否降低了实际权限和恢复负担？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-不自动降低。SAFETY明示尚未安全审计，能访问代码执行、文件、网络和凭据，沙箱/审批不是唯一隔离。安装需要Node与选定profile及模型连接，源码构建还需pnpm/build；不同profile和desktop的包/锁文件/激活归属有区别，不能盲用外部CLI修改桌面。首次投入是选择配置和权限、模型凭据、理解patch覆盖；持续成本是模型调用、插件兼容和数据备份；失败恢复还需核对已执行外部工具，日志回放不代表副作用回滚。可逆effects有利于卸载注册，但不能撤销已发送请求或已写业务文件。金额、工时、崩溃恢复成功率都未实测，因此配置可替换只构成减负机制假设。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[SAFETY.md:5-23](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/SAFETY.md#L5-L23)
-
-作者明确权限及安全边界
+作者的预览状态和隔离限制说明。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
 ## Experimental status
@@ -518,186 +754,428 @@ The project can execute model-generated code and commands, load third-party plug
 Sandboxing, approval prompts, and permission controls can reduce risk, but they do not guarantee isolation or prevent damage. Even correctly enforced restrictions cannot protect resources that the project is allowed to access.
 
 Do not rely on DeepSeek Harness as the sole security control for untrusted workloads.
-
-## Responsible use
-
-- Run the project with the least privileges and access required.
-- Prefer a disposable virtual machine, container, or dedicated environment.
-- Keep backups of files that the project can access.
-- Do not expose sensitive credentials or data unless you accept the risk.
-- Review plugins, configuration, and proposed commands before allowing them to run.
 ```
-
-</details>
-
-**依据 2 · 作者声明**：[docs/architecture.md:49-53](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md#L49-L53)
-
-desktop运行包和profile归属
-
-```text
-## Desktop application
-
-The [Electron desktop application](../apps/desktop/README.md) ships its exact dsh production runtime in signed resources and owns the reserved `$DSH_HOME/profiles/desktop`. Shared helpers initialize profile files, reconcile bundles, and resolve installation and bundle dependencies without replacing pnpm-owned packages. Desktop and npm CLI share product data but keep packages, activation, and lockfiles separate. Desktop’s bundled CLI manages its initialized plugins.
-
-Electron starts the private Desktop Host in Electron Node mode. The Host invokes the shared CLI profile runner and complete Web application. The window immediately loads packaged Web assets and waits for boot injections before activating client plugins in the same document. Web owns RPC and streams; the desktop carrier connects the local page to the authenticated Host. Node IPC carries boot injections, readiness, fatal errors, and shutdown. Desktop listens on an OS-assigned port by default; profile configuration can override it. Shell-owned UI runs plugin transactions through bundled pnpm with normal user and profile configuration.
-```
-
-**依据 3 · 作者声明**：[README.md:19-41](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/README.md#L19-L41)
-
-npm及源码启动路径
-
-<details>
-<summary>查看原文（23行）</summary>
-
-````text
-### Run from `npm`
-
-Install `Node.js`, then run:
-
-```sh
-npx @deepseek-ai/dsh web
-```
-
-The command starts the Web UI at `http://127.0.0.1:3080` by default and opens it in the default browser for a local launch. An SSH launch only prints the host URL because the SSH client or editor owns the local forwarded address. Pass `--no-open` to run the server without opening a browser. See [Web UI guide](docs/user/guide/index.md).
-
-### Run from source
-
-To run from a repository checkout:
-
-```sh
-git clone https://github.com/deepseek-ai/deepseek-harness.git
-cd deepseek-harness
-pnpm install
-pnpm run build
-pnpm dsh web
-```
-
-`pnpm run build` prepares the repository artifacts. `pnpm dsh web` uses those built artifacts without rebuilding.
-````
 
 </details>
 
 #### 缺口
 
-- 迁移、兼容和副作用失败恢复的工时与完成率未知
-  **影响**：不能确认端到端正确性或定制收益
-  **进一步探讨**：以隔离profile和同模型固定任务对照最小SDK脚本，记录完成率、修改量、恢复人工时间
+- 没有选定插件的实际安装、加载和功能结果
+  **影响**：无法从声明范围推断互换成功或完整安全边界
+  **进一步探讨**：在隔离 profile 对目标插件逐项测试加载、作用域服务、状态迁移及权限。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 如何验证“可替换”真的减少定制成本？
+### Q04 · 会话事件和取消对恢复意味着什么？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：功能与机制、缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
-建议需要做Agent扩展的开发者在隔离profile试用，不将其当生产安全承诺或全部第三方插件兼容证明。先以同模型单任务建立直接SDK脚本基线，再只替换模型adapter或工具策略，并模拟调用中取消、插件卸载、缺审批通道和宿主重启。未验证假设是把插件声明兼容升级为少量“接缝契约验收”——对作用域、持久事件和清理行为分别验证——比仅semver更能预测互换成本。最小对照检查两种实现交付率、改动行/配置、遗留注册、重复外部副作用及人工恢复。若标准接缝仍需大量跨模块修改或恢复时间不降，否定可替换减负主张；契约验收本身也增加维护负担，不能由架构优雅直接推出需求。
+会话提交先验证候选，写入进程内事件日志再通知监听者；JSONL 持久化实现为活跃 writer 监听事件并排队，flush 则排空并调用持久化屏障。持久化服务契约区分尽力 append 和 flush 屏障，未物化的会话在崩溃前可能不曾对其他进程存在。因此内存中看见事件不等于已经耐久落盘；未配置后端、写失败或崩溃点都可能改变恢复结果。工具取消等待已启动工作结束也不撤销工具已经产生的外部副作用。恢复者需要检查日志、目标文件与外部系统，不能盲目重试。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:76-85](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/boot/app-boot/src/plugin-compatibility.ts#L76-L85)
+**依据 1 · 源码核查**：[packages/core/session/src/index.ts:886-910](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/session/src/index.ts#L886-L910)
 
-声明兼容与实际契约存在区别
+提交内存日志并通知监听者。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-/**
- * Check the plugin's dsh requirements against the runtime. An own `engines.dsh` range decides alone and
- * peerDependencies are ignored; otherwise every @deepseek-ai/dsh or @deepseek-ai/dsh-* peer must match.
- * Prereleases participate in ranges. For peers only, workspace:^, workspace:~, and workspace:* refer to
- * the current runtime; other empty or invalid ranges, including any workspace: `engines.dsh`, are unmet.
- * @param manifest - parsed plugin package.json; inherited fields are ignored.
- * @param exemptions - exact plugin name@version keys mapped to exact runtime versions.
- * @param runtimeVersion - running dsh version, defaulting to this app-boot package.
- * @returns unmet requirements and exemption status, or undefined when every requirement is met.
- * @throws for malformed manifest engines or peer fields, invalid runtime versions, or missing identity on a mismatch.
+  /**
+   * Accept one frozen candidate at the next sequence number, enter it into the
+   * log, and notify `session/event` observers with per-listener containment.
+   * @param event - the candidate built at the current log length.
+   * @param entry - the attachment read before the candidate was built.
+   */
+  private commit(event: SessionEvent, entry: SessionEntry | undefined): void {
+    this.surfaceManager.validateNext(event)
+
+    if (entry !== undefined) entry.appending = true
+    try {
+      const callbackArgs: unknown[] = [this, event]
+      const callbacks = entry === undefined
+        ? undefined
+        : collectSessionCallbacks(entry.emitCtx, [entry.carrier, 'session/event', ...callbackArgs])
+      this.log.push(event)
+      this.eventsSnapshot = undefined
+      if (entry !== undefined && callbacks !== undefined) {
+        invokeContainedSessionObservers(entry.emitCtx, 'session/event', entry.id, callbackArgs, callbacks)
+      }
+    } finally {
+      if (entry !== undefined) {
+        entry.appending = false
+        if (entry.detachRequested && entry.announcement !== 'dispatching') entry.detach()
+      }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/core/tools/src/pipeline.ts:422-468](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/packages/core/tools/src/pipeline.ts#L422-L468)
+**依据 2 · 源码核查**：[packages/session/session-persistence-jsonl/src/storage.ts:525-560](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/session/session-persistence-jsonl/src/storage.ts#L525-L560)
 
-可用来形成审批/卸载反例
+JSONL 后端监听 session 事件并在 flush 排空。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+  /**
+   * Install the backend's live session routing and teardown. Persistence
+   * enforces one active write handle per id, so the listeners route published
+   * sessions' events by id; the teardown effect closes every open handle —
+   * close drains the routed buffer — and aggregates failures. This provider
+   * owns no separate storage connection, so closing handles is the complete
+   * teardown. The returned effect removes listeners before closing handles.
+   * @param ctx - the backend's resource-owning context.
+   * @returns the disposer to run after persistence consumers finish unloading.
+   */
+  install(ctx: Context): () => Promise<void> {
+    const { writers, openHandles, name } = this
+    return ctx.effect(function* () {
+      yield async () => {
+        const errors: unknown[] = []
+        for (const handle of [...openHandles]) {
+          try {
+            await handle.close()
+          } catch (error: unknown) {
+            errors.push(error)
+          }
+        }
+        if (errors.length > 0) throw new AggregateError(errors, `${name} dispose failed`)
+      }
+      yield ctx.on('session/event', (session: Session, event) => {
+        writers.get(session.id)?.enqueueLive(event, (error) => {
+          ctx.logger.warn(`session-persistence: background write for session "${session.id}" failed (buffered events retained): ${String(error)}`)
+        })
+      })
+      yield ctx.on('session/flush', (session: Session) => {
+        const writer = writers.get(session.id)
+        if (writer === null || writer === undefined) return undefined
+        return (async () => {
+          await writer.drainLive()
+          await writer.flush()
+        })()
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/session/session-persistence/src/index.ts:124-142](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/session/session-persistence/src/index.ts#L124-L142)
+
+存储契约区分尽力追加、flush 与物化。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+/**
+ * Durable append-only session storage addressed through per-session handles.
+ *
+ * Storage semantics shared by every backend: events are contiguous from seq 0
+ * and never rewritten; a torn physical tail is never returned to a reader and
+ * is truncated by the write path before its first append; reads validate
+ * current-format records only and refuse unknown vocabulary fail-closed.
+ * `append` persists best-effort; `flush` — per handle or service-wide — is
+ * the durability barrier.
+ *
+ * Visibility: a created session is observable through `stat`/`list`/`open`
+ * in this process from the moment `create` resolves, even while a backend
+ * defers physical materialization (a pure optimization); other processes see
+ * the session only once it materializes, and a session that never
+ * materialized before a crash never existed. `SessionHandle.flush` forces
+ * materialization.
+ *
+ * Freshness: once an `append` or `flush` resolves, reads started afterwards
+ * on this backend instance observe at least that prefix.
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/core/tools/src/pipeline.ts:253-280](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L253-L280)
+
+等待已开始工作并返回取消结果。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  /**
+   * Dispatch the registered body with the original caller signal fused back
+   * into any around-wrapper replacement. Cancellation never abandons the body:
+   * a started promise reaches quiescence before its outcome becomes `ABORTED`.
+   */
+  private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {
+    const state = this.cancellationStates.get(exec)
+    /* v8 ignore next -- only registry-minted executions reach the staged scheduler methods */
+    if (state === undefined) throw new Error('tool registry scheduler invariant violated: missing cancellation state')
+    const wrapperSignal = exec.signal
+    const fused = fuseToolSignals(state.callerSignal, wrapperSignal)
+    const signal = fused.signal
+
+    if (isAborted(signal)) {
+      fused.dispose()
+      return toolAbortedBeforeDispatchResult()
+    }
+    exec.signal = signal
+    try {
+      const tool = this.resolveExecution(exec.name, exec.agent, exec.parent !== undefined, exec.toolSet)
+      if (!tool) throw new ToolNotFoundError(exec.name)
+      state.bodyInvoked = true
+      const returned = await tool.execute(exec.arguments, exec)
+      const result = this.createSuccessResult(exec, tool, returned)
+      return isAborted(signal)
+        ? toolAbortedResult(result)
+        : result
+    } catch (error: unknown) {
+```
+
+</details>
+
+#### 缺口
+
+- 未进行崩溃、重启和外部副作用故障注入
+  **影响**：不能推断实际部署的恢复率或恰好一次语义
+  **进一步探讨**：在隔离 profile 在不同 flush 和工具写入边界终止进程并核对记录和目标。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何进行有边界的试用，有什么可证伪假设？
+
+**研究主题**：采用判断、新假设与验证、工程质量与复用
+
+#### 完整回答
+
+工具服务按作用域选择执行器；所核查的 native 执行器通过公共 pipeline 应用策略和守卫，自定义 ToolExecutor 可自行实现执行，不保证经过该 pipeline。持久化使用明确 flush 边界，这些是构造替换测试的可借鉴接缝；代价是扩展必须遵守作用域、生命周期和数据契约。未验证假设是，在升级插件时同时测试作用域工具可见性、执行前审批、取消和持久化屏障，比只检查 semver 更能发现真实不兼容；这需要维护场景和故障注入，可能增加验收成本。可用同一批插件升级样本比较版本声明检查与接缝测试发现的真实故障、误报及人工时间；若未多发现关键故障或维护成本高于收益则否定。建议有扩展需求的开发者先在隔离 profile 用固定模型和小任务核验调用、审批及重启；出现未预期写入、服务缺失或恢复不一致时停止并回到已知配置。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/core/tools/src/index.ts:353-376](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L376)
+
+工具服务选择执行器后直接委派其 execute；自定义执行器不自动经过 native pipeline。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+   * Resolve the nearest scoped provider, or the deployment default.
+   * @param scope - Agent or preset scope; omitted selects only the root contribution.
+   * @returns the selected executor; throws when it is missing or unloaded.
+   */
+  private selectExecutor(scope?: ScopeKey): ToolExecutor {
+    let record: Registration | undefined
+    for (const key of scopeChainOf(scope)) {
+      record = this.scoped.get(key)
+      if (record !== undefined) break
+    }
+    record ??= this.root
+    const executor = record?.executor
+    if (executor === undefined) throw new ToolExecutorUnavailableError()
+    return executor
+  }
+
+  /**
+   * Delegate a raw call batch to its Agent's provider or the deployment default.
+   * Select at dispatch; accepted batches settle through that provider even if it unloads.
+   * @param input - original calls, optional owning Agent, and optional logging step.
+   * @returns the selected executor's settled batch; unavailable selections reject.
+   */
+  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
+    return this.selectExecutor(input.agent).execute(input)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:353-399](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L399)
+
+作用域执行器和守卫。
 
 <details>
 <summary>查看原文（47行）</summary>
 
 ```text
-   * Resolve an `ask` decision to allow/deny through the approval seam. The
-   * seam is consumed opportunistically with `ctx.get('approval')` — a
-   * deployment that composes no ApprovalService keeps the historical degrade
-   * to deny, and an unmount mid-session degrades the same way on the next ask.
-   * An agent-less execution also degrades: without an agent there is no
-   * session to audit to and no UI to route to. Otherwise the outcome maps
-   * one-to-one — `allowed-once` proceeds; the three non-grants deny with
-   * distinct reasons so the model can tell a human "no" from an absent
-   * approval channel.
+   * Resolve the nearest scoped provider, or the deployment default.
+   * @param scope - Agent or preset scope; omitted selects only the root contribution.
+   * @returns the selected executor; throws when it is missing or unloaded.
    */
-  private async serviceAsk(
-    exec: ToolExecution,
-    ask: Extract<PreToolDecision, { kind: 'ask' }>,
-  ): Promise<ToolAskResolution> {
-    const approval = this.ctx.get('approval')
-    if (approval === undefined) {
-      return {
-        decision: { kind: 'deny', reason: ask.reason ?? `tool "${exec.name}" requires approval (not yet supported)` },
-        approvalCancelled: false,
+  private selectExecutor(scope?: ScopeKey): ToolExecutor {
+    let record: Registration | undefined
+    for (const key of scopeChainOf(scope)) {
+      record = this.scoped.get(key)
+      if (record !== undefined) break
+    }
+    record ??= this.root
+    const executor = record?.executor
+    if (executor === undefined) throw new ToolExecutorUnavailableError()
+    return executor
+  }
+
+  /**
+   * Delegate a raw call batch to its Agent's provider or the deployment default.
+   * Select at dispatch; accepted batches settle through that provider even if it unloads.
+   * @param input - original calls, optional owning Agent, and optional logging step.
+   * @returns the selected executor's settled batch; unavailable selections reject.
+   */
+  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
+    return this.selectExecutor(input.agent).execute(input)
+  }
+
+  /**
+   * Register a monotonic denial in the calling scope.
+   * @param guard - evaluated after extensible pre-execute policy by the shared pipeline.
+   * @returns the effect disposer that removes this guard.
+   */
+  guard(guard: ToolGuard): () => void {
+    return this.guards.effect(this.ctx, layer => layer.guards.append(guard), { label: 'tools.guard()' })
+  }
+
+  /**
+   * Check global and inherited guards after pre-execute policy and approval resolve.
+   * @param exec - invocation whose guards are checked before dispatch.
+   * @returns the first denial reason, or undefined when no guard denies.
+   */
+  checkGuards(exec: ToolExecution): string | undefined {
+    for (const layer of [this.guards.global, ...this.guards.chainLayers(exec.agent)]) {
+      for (const guard of layer.guards.values()) {
+        const reason = guard(exec)
+        if (reason !== undefined) return reason
       }
     }
-    if (exec.agent === undefined) {
-      return {
-        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but the call has no agent to route it through` },
-        approvalCancelled: false,
-      }
-    }
-    const outcome = await approval.request({
-      agent: exec.agent,
-      toolName: exec.name,
-      callId: exec.callId,
-      ...ask.reason !== undefined ? { reason: ask.reason } : {},
-      ...ask.displayReason !== undefined ? { displayReason: ask.displayReason } : {},
-      signal: exec.signal,
-    })
-    switch (outcome) {
-      case 'allowed-once': return { decision: { kind: 'allow' }, approvalCancelled: false }
-      case 'rejected': return {
-        decision: { kind: 'deny', reason: `the user rejected tool "${exec.name}"` },
-        approvalCancelled: false,
-      }
-      case 'cancelled': return {
-        decision: { kind: 'deny', reason: `approval for tool "${exec.name}" was cancelled` },
-        approvalCancelled: true,
-      }
-      case 'unavailable': return {
-        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[docs/architecture.md:67-75](https://github.com/deepseek-ai/deepseek-harness/blob/22ddee3792402c3e70ec5f86a63c3e3e895a2f60/docs/architecture.md#L67-L75)
+**依据 3 · 源码核查**：[packages/core/tools/src/pipeline.ts:190-231](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L190-L231)
 
-持久与瞬态事件区分
+所查 native pipeline 在分派前执行策略和审批。
+
+<details>
+<summary>查看原文（42行）</summary>
 
 ```text
-## Events
-
-Events are the extension points, and picking the right domain is the first decision in most changes.
-
-- **Session events** are durable facts appended to the log and broadcast through `session/event`. Use one when the fact must survive a reload.
-- **Agent events** (`agent/*`) carry a live `Agent`: inbox, step, status, request, validation, continuation. Use one to observe or intercept work in flight.
-- **Capability events** attach policy and adapters to a seam (`fs/*`, `tools/*`, `telemetry/*`) without importing the loop.
-
-AgentLoop initializes Agents with rollback and awaits serial `agent/created` before queued work. Unload retains resources through Agent teardown; [agent-loop](../packages/core/agent-loop/README.md#understand-the-implementation) defines ordering.
+  async prepare(input: ToolExecutionInput): Promise<ScheduledToolPreparation> {
+    const created = this.createExecution(input)
+    if (created.kind !== 'ready') return created
+    const exec = created.exec
+    if (this.callerCancelled(exec)) {
+      return { kind: 'final-result', exec, result: toolAbortedBeforeDispatchResult() }
+    }
+    try {
+      const carrier = scopeTarget(this.tools, exec.agent)
+      const gate = await this.ctx.waterfall(
+        carrier, 'tools/pre-execute', exec,
+        () => Promise.resolve<PreToolDecision>({ kind: 'allow' }),
+      )
+      const askResolution = gate.kind === 'ask'
+        ? await this.serviceAsk(exec, gate)
+        : { decision: gate, approvalCancelled: false }
+      const { decision } = askResolution
+      if (this.callerCancelled(exec) && askResolution.approvalCancelled) {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      if (decision.kind === 'cancel') {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      const denialReason = decision.kind === 'allow' ? this.tools.checkGuards(exec) : decision.reason
+      const denialInfo = decision.kind === 'deny' ? decision.info : undefined
+      if (denialReason !== undefined) {
+        return {
+          kind: 'post-result',
+          exec,
+          result: this.materializeFinalResult({
+            content: [{ type: 'text', text: `Error: ${denialReason}` }],
+            isError: true,
+            error: { message: denialReason, ...denialInfo === undefined ? {} : { info: denialInfo } },
+          }),
+        }
+      }
+      if (this.callerCancelled(exec)) {
+        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
+      }
+      return { kind: 'dispatch', exec }
+    } catch (error: unknown) {
+      return { kind: 'final-result', exec, result: toolErrorResult(error) }
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/core/session/src/index.ts:1329-1358](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/session/src/index.ts#L1329-L1358)
+
+flush 等待所有监听并传播失败。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  /**
+   * Dispatch the awaited `session/flush` durability checkpoint for `session`,
+   * with the carrier captured at {@link enter}. THE flush entry point: the
+   * store owns the carrier, so callers (the checkpoint policy's per-request
+   * barrier, goal-round-driver's idle checkpoint, teardown drains, and consumers
+   * that flush themselves before reading storage) must come through here
+   * rather than dispatch a raw `ctx.parallel('session/flush', …)` — one owner
+   * and one spelling.
+   * @param session - the session whose buffered events must reach durable storage.
+   * @returns whether at least one durability listener participated, after every
+   *   listener has settled successfully.
+   * @throws the first registered listener failure after every listener settles.
+   */
+  async flush(session: Session): Promise<boolean> {
+    const { carrier } = this.liveEntryFor(session)
+    const callbackArgs: unknown[] = [session]
+    const callbacks = collectSessionCallbacks(this.ctx, [carrier, 'session/flush', session])
+    const results = await Promise.allSettled(callbacks.map((callback) => {
+      try {
+        return callback(...callbackArgs)
+      } catch (error: unknown) {
+        // Preserve the listener's exact rejection value; flush is a caller-owned
+        // failure boundary, and Cordis listeners may throw arbitrary values.
+        // oxlint-disable-next-line typescript/prefer-promise-reject-errors
+        return Promise.reject(error)
+      }
+    }))
+    const failure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected')
+    if (failure !== undefined) throw failure.reason
+    return callbacks.length > 0
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:87-101](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L87-L101)
+
+版本准入只给出要求与豁免结果。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+export function evaluatePluginCompatibility(
+  manifest: object,
+  exemptions: Readonly<Record<string, readonly string[]>> = {},
+  runtimeVersion = getDshRuntimeVersion(),
+): PluginCompatibility | undefined {
+  runtimeVersionOf(runtimeVersion)
+  const fields = objectOf(manifest, 'Plugin manifest')
+  const requirements = unmetRequirements(fields, runtimeVersion)
+  if (Object.keys(requirements).length === 0) return undefined
+  const name = identityField(fields, 'name')
+  const version = identityField(fields, 'version')
+  const key = `${name}@${version}`
+  const exemptedVersions = Object.hasOwn(exemptions, key) ? exemptions[key] : undefined
+  const exempted = exemptedVersions?.includes(runtimeVersion) === true
+  return { name, version, runtimeVersion, requirements, exempted }
+```
+
+</details>
 
 #### 缺口
 
-- 接缝验收预测互换成本的实验没有结果
-  **影响**：不能确认端到端正确性或定制收益
-  **进一步探讨**：以隔离profile和同模型固定任务对照最小SDK脚本，记录完成率、修改量、恢复人工时间
+- 接缝验收假设无对照试验
+  **影响**：不能断言其预测能力或总成本更优
+  **进一步探讨**：记录真实插件升级故障、两种方法检出率与维护时间。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

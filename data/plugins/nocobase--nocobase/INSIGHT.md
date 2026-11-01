@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[9d752bb](https://github.com/nocobase/nocobase/tree/9d752bb60d8eca5883e4357eefbff46d56c941d1)
+源码版本：[af4889f](https://github.com/nocobase/nocobase/tree/af4889f67b619d0dd1a039e45bbc5dd871d225f8)
 
 <!-- BEGIN META -->
-[![GitHub ★ 24,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C708&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
+[![GitHub ★ 24,798](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C798&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
 <!-- END META -->
 
-> **功能**：AI与可视化无代码业务平台，将数据模型、页面、权限、工作流及Agent工具组合。
+> **功能**：以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。
 
-> **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
+> **亮点**：相对逐项手写业务 CRUD 与模型接口，平台将数据与角色权限、可视化配置和 AI 工作流工具纳入同一业务底座；模型和底层数据库并非本项目原创。[Q01](#research-q01) [Q02](#research-q02) [Q03](#research-q03)
 
-> **主要限制**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](#research-q03)
+> **主要限制**：ACL 入口和调用状态不能证明所有 AI 路径同权限，也不能保证外部动作可撤销；同用户缓存和以 get 命名推断自动调用需在真实配置下核验。[Q02](#research-q02) [Q04](#research-q04)
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要数据建模与无代码业务交付，既有办法和合格产物是什么？](#detail-section-11)
-  - [Q02 · AI、数据权限与操作流怎样接线，具体增量来自哪里？](#detail-section-12)
-  - [Q03 · 可配置是否转化为可控业务流程？](#detail-section-13)
-  - [Q04 · 启动、持续使用和失败恢复分别依赖什么，由谁承担成本？](#detail-section-14)
-  - [Q05 · 由机制与限制可提出什么改进，什么人值得试用？](#detail-section-15)
+  - [Q01 · 谁需要该平台，与简单 CRUD、表格及自建服务相比交付什么？](#detail-section-11)
+  - [Q02 · 请求授权如何从入口连接角色和数据范围？](#detail-section-12)
+  - [Q03 · AI 如何调用工作流，审批和结果如何关联？](#detail-section-13)
+  - [Q04 · MCP 用户连接缓存、工具权限及工作流失败有哪些边界？](#detail-section-14)
+  - [Q05 · 运行、配置和恢复有哪些依赖与成本，何时试用或退出？](#detail-section-15)
+  - [Q06 · 能否以权限版本及副作用收据改善不确定性？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向反复构建内部CRUD/审批系统的业务团队；完整平台基础设施，非DSH插件。[Q01](#research-q01)
+> **用途**：需要反复建设内部数据录入和审批系统的业务及技术团队可用平台组合数据、页面和流程；它是独立平台，不是 DSH 插件。[Q01](#research-q01)
 
-简单CRUD或现有表格/人工审批流程；同业务数据、角色与任务比较办结率、错误、恢复与总人工，不以页面生成速度替代。
+简单表格、人工审批或自建 CRUD 可以处理部分场景；平台提供可组合的配置和业务工具接线，未实测整体效果或节时。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -50,68 +51,66 @@
 
 #### 能力
 
-|能力|主要用途|使用条件与边界|
-|---|---|---|
-|业务平台|模型/页面/角色组织|需治理和部署，未全审计|
-|AI工作流工具|从模型调用既有流程|权限/副作用逐入口验收|
-|用户MCP|按用户渲染连接|仅ID缓存需核撤销失效|
+| 能力 | 主要用途 | 使用条件与边界 |
+| --- | --- | --- |
+| 资源授权 | 基于角色及资源动作解析权限参数 | 不证明所有 AI 入口自动经过相同路径 |
+| AI 工作流 | 将启用的 AI 员工流程注册为工具 | 中断取决于调用策略，输出不等同业务验收 |
+| 用户 MCP | 按用户上下文建立并缓存外部工具 | 用户 ID 缓存和远端授权需要核查 |
 
 #### 启动与依赖
 
-|依赖或条件|是否必需|用途|缺失或不满足时|
-|---|---|---|---|
-|Node>=22/部署环境及数据库|必需|应用、模型和持久|先隔离部署验证|
-|清楚的数据模型/角色|业务必需|字段动作边界|不接真实数据|
-|模型及MCP服务/凭据|AI路径必需|推理和外部工具|先人工无代码基线|
-|备份、权限验收及许可核对|试用必需|恢复与部署约束|暂缓真实上线|
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| Node 及受支持的数据源 | 平台部署需要 | 运行服务与持久化 | 先核对目标发行物和环境 |
+| 用户、角色与数据模型 | 实际业务需要 | 定义行列与动作授权 | 不接入真实业务数据 |
+| 模型服务或 MCP 凭据 | 对应 AI／外部工具路径需要 | 推理和工具调用 | 回退人工业务流程 |
+| 备份和恢复方案 | 业务试点需要 | 恢复数据并对账外部动作 | 暂缓有副作用操作 |
 
 #### 启动步骤
 
-|步骤|执行者与成功判据|失败处理|
-|---|---|---|
-|建立匿名模型和两角色|管理员核准读写字段|修正规则|
-|人工与AI/MCP/workflow同任务|管理员核对拒绝/审计一致|停相关工具|
-|模拟撤销/中断/恢复|管理员对账作业和外部动作|恢复备份，先核远端状态|
-
-**效果与成本**
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 管理员创建隔离实例和匿名数据 | 验证备份、角色与可用环境 |
+| 建模 | 管理员配置数据模型、页面和两个角色 | 按动作与字段检查授权 |
+| 验证 | 在人工、AI、MCP 和 workflow 入口测试允许、拒绝及撤权 | 任一入口不一致则停止自动化 |
+| 恢复 | 模拟远端成功后本地失败并核对记录 | 状态不明先对账，不盲目重试 |
 
 #### 成本
 
-|阶段|现金与资源|人工与时间|未知|
-|---|---|---|---|
-|首次|部署、数据库及适用插件许可|建模、角色和最小流程配置|许可范围与工时|
-|持续|模型/MCP、存储及运维|人工审批、复核和规则维护|每办结任务总成本|
-|失败恢复|备份、作业和外部接口重试|权限对账、状态/副作用核对|恢复率和人工时间|
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次 | 数据库、部署及适用许可费用未知 | 建模、角色配置和隔离 | 版本与许可需核验 |
+| 持续 | 模型、MCP、计算与存储费用未知 | 审批、复核和规则维护 | 效果与工时未对照 |
+| 恢复 | 备份、重放及服务资源未知 | 状态、外部结果和权限对账 | 未知能否回滚或幂等 |
 
 #### 效果
 
-|效果项|抽读支持|未知|
-|---|---|---|
-|业务工具化|workflow结构schema与AI调用|真实办结/节时|
-|权限基础|角色动作ACL与用户MCP上下文|全AI路径及撤销新鲜度|
-|恢复结构|中断、状态及事务scope|远端副作用补偿和总成本|
+| 效果项 | 当前证据支持 | 尚不能确定 |
+| --- | --- | --- |
+| 业务工作流调用 | 启用流程可被注册并触发 | 任务成功率和节时 |
+| 权限与用户连接 | 资源 ACL、工具权限及上下文缓存存在 | 所有入口一致性与撤权时效 |
 
-> **思考**：有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](#research-q03)
+> **思考**：ACL 入口和调用状态不能证明所有 AI 路径同权限，也不能保证外部动作可撤销；同用户缓存和以 get 命名推断自动调用需在真实配置下核验。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对任意LLM脚本写库或手工CRUD，把Agent接到已有数据、动作权限和业务工作流中，与人共同配置同一底座；核心增量是业务集成，非新模型算法。[Q02](#research-q02)
+> **亮点**：相对逐项手写业务 CRUD 与模型接口，平台将数据与角色权限、可视化配置和 AI 工作流工具纳入同一业务底座；模型和底层数据库并非本项目原创。[Q01](#research-q01) [Q02](#research-q02) [Q03](#research-q03)
 
-分离AI管理器、审批/状态middleware与工作流工具桥，并对用户MCP连接设TTL/容量值得借鉴；复用必须补具体ACL链、撤销失效和外部副作用收据。[Q03](#research-q03)
+启用时 ACL 将资源权限与参数解析接入认证后路径；AI 将工具审批决策和持久状态拆开，但动态 MCP 连接按用户 ID 缓存、工具默认权限部分依名称，需验证真实授权边界。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-有ACL和user-context连接不等每个AI路径已验证同权限；仅用户ID的MCP缓存、done状态和数据库事务不能独立保证角色撤销及时生效或外部动作exactly-once。[Q03](#research-q03)
+ACL 入口和调用状态不能证明所有 AI 路径同权限，也不能保证外部动作可撤销；同用户缓存和以 get 命名推断自动调用需在真实配置下核验。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有明确内部数据/审批场景及数据库治理能力的团队可在匿名隔离应用试用最小流程；先验两个角色所有入口权限及恢复，再接真实数据和外部写动作。[Q05](#research-q05)
+先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-抽读支持工具/工作流与角色基础接线；全部AI权限、异步恢复和业务收益未验证；权限上下文/收据假设未验证。
+固定源码支持资源 ACL、AI 工作流调用及部分 MCP 缓存路径；未运行目标、数据库、模型、外部服务或权限撤销实验。
 
-- 已检查：作者 README、包清单、源码路径 packages/core/ai/src/ai-manager.ts、packages/core/ai/src/mcp-manager/user-context-client-manager.ts、packages/core/ai/src/mcp-manager/options-renderer.ts、packages/core/acl/src/acl.ts、packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts、packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts、packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts、packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、packages/core/server/src/main-data-source.ts、packages/core/acl/src/acl.ts、packages/core/ai/src/mcp-manager/user-context-client-manager.ts、packages/core/ai/src/mcp-manager/options-renderer.ts、packages/core/ai/src/mcp-manager/index.ts、packages/plugins/@nocobase/plugin-ai/src/server/plugin.ts、packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts、packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts、packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts、packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：partial clone固定版本抽读AI管理、用户MCP模板/缓存、ACL动作、工具审批/状态、workflow caller/Processor；inventory仅9个MD/TS文件子集，未审计全部插件/模型/ACL路径/部署或商用许可，未运行。
-- 下一步：匿名隔离应用按角色/字段跨人工、AI、MCP和workflow验证，注入权限撤销、换token、超时和远端成功本地失败，对账并记录总成本。
+- 边界：固定根仓库的 22686 个入选文件按指定 Markdown 与 JS/TS 口径统计；492 项由路径启发式排除，其中包括 packages/core/build/src 下的真实源码，故不代表全语言或全部源码规模。源码定向抽读 ACL、AI 工作流和 MCP 用户上下文代表链，未审计全部插件、模型或部署；未执行目标。
+- 下一步：在隔离宿主按角色和字段覆盖人工、AI、MCP 和 workflow，模拟权限撤销、换 token、远端成功后中断，记录对账结果和成本。
 
 **分析版本**
 
 - **仓库**：[nocobase/nocobase](https://github.com/nocobase/nocobase)
-- **版本号**：未声明（[固定提交 9d752bb](https://github.com/nocobase/nocobase/tree/9d752bb60d8eca5883e4357eefbff46d56c941d1)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 af4889f](https://github.com/nocobase/nocobase/tree/af4889f67b619d0dd1a039e45bbc5dd871d225f8)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +137,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是绑定权限上下文版本、流程ID和外部收据并按权限变更失效缓存，减少陈旧授权和重复动作；跨角色/撤销/中断对照，无错误与恢复改善则否定。[Q05](#research-q05)
+未验证假设：可信权限上下文版本驱动用户连接失效，并将业务操作 ID 与远端收据用于恢复对账；以现有 TTL、配置清理和调用状态为对照，测授权、重复写、误拒及恢复成本。[Q06](#research-q06)
 
-匿名隔离应用按角色/字段跨人工、AI、MCP和workflow验证，注入权限撤销、换token、超时和远端成功本地失败，对账并记录总成本。
+在隔离宿主按角色和字段覆盖人工、AI、MCP 和 workflow，模拟权限撤销、换 token、远端成功后中断，记录对账结果和成本。
 
 <a id="detail-section-9"></a>
 
@@ -149,55 +148,73 @@
 <details>
 <summary>工程统计</summary>
 
-统计范围：partial inspected snapshot; not whole-plugin LOC；组件：根；内容摘要：c4d20cd10f1b083dc611f916724998e21cfb1b8ddbdad200f5fd22903def5388。sloc 0.3.2，TypeScript 5.9.3。
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .ts | source | 8 | 4656 | 4003 | 182 | — |
-| .md | source | 1 | 161 | — | — | 933 |
+| .md | source | 11375 | 1064927 | — | — | 6400815 |
+| .ts | source | 4182 | 606029 | 510181 | 50699 | — |
+| .js | source | 458 | 12266 | 10057 | 1300 | — |
+| .md | example | 163 | 19673 | — | — | 98455 |
+| .tsx | source | 3848 | 491597 | 415792 | 38299 | — |
+| .mjs | source | 14 | 1791 | 1419 | 177 | — |
+| .ts | example | 52 | 9075 | 8340 | 505 | — |
+| .ts | test | 1848 | 532686 | 456898 | 26680 | — |
+| .md | test | 10 | 181 | — | — | 1167 |
+| .js | test | 20 | 759 | 550 | 116 | — |
+| .tsx | test | 569 | 118394 | 98430 | 6083 | — |
+| .tsx | example | 142 | 14198 | 12399 | 788 | — |
+| .mts | source | 2 | 6 | 4 | 0 | — |
+| .js | example | 1 | 13 | 4 | 8 | — |
+| .mjs | test | 2 | 879 | 674 | 161 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/nocobase/nocobase/issues) 查看。
+[![Issue 未关闭 121](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=121&color=737b86&logo=github)](https://github.com/nocobase/nocobase/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 23](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=23&color=737b86&logo=github)](https://github.com/nocobase/nocobase/issues?q=is%3Aissue+created%3A2026-10-02T07%3A48%3A06.617Z..2026-11-01T07%3A48%3A06.617Z) [![近30天关闭 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=17&color=737b86&logo=github)](https://github.com/nocobase/nocobase/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T07%3A48%3A06.617Z..2026-11-01T07%3A48%3A06.617Z)
+
+
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：数据模型与AI工具/工作流组合能否形成可控业务交付，权限与恢复边界是什么？
+**插件研究总目标**：数据模型、AI 工具及工作流能否组成可控业务交付，权限、恢复与采用条件是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要数据建模与无代码业务交付，既有办法和合格产物是什么？
+### Q01 · 谁需要该平台，与简单 CRUD、表格及自建服务相比交付什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-对象是要把业务数据、表单、页面、角色和审批/自动化做成可维护系统的团队，尤其是规则重复而需求持续变化的内部运营任务。根项目是完整AI+no-code平台/基础设施，不是装入DSH的第三方插件；外部Agent可通过CLI/接口协作是另一接入面。合格产物必须按角色正确读写数据、按业务条件推进并能恢复，不是生成了页面或AI返回一段解释。README提出人可视化配置、Agent用CLI/skills共同修改同一数据模型；相对纯手写CRUD，潜在增量是复用数据/权限/工作流底座；相对表格加人工交接，代价是部署、建模和治理。生产可靠、几分钟交付是作者主张，本项没有真实客户系统或同条件时间证据，不外推“任何业务都更便宜”。
+NocoBase 仓库根是独立的 AI 与无代码业务应用平台，并非 DSH 原生插件。需要重复构建内部数据录入、角色权限和审批的业务与技术团队，可通过可视化配置数据、页面和流程，并在需要时接入 AI；合格成果应包括经角色验证的业务数据和可追踪流程，而不只是生成界面。README 是作者对协作及效果的主张；相对表格和手工 CRUD，它提供可组合的模型、权限与流程基础，但数据库、模型和底层技术来自依赖。任务正确率、迁移和总工时没有同条件对照，不能以功能数量证明经济收益。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:17-19](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/README.md#L17-L19)
+**依据 1 · 作者声明**：[README.md:17-20](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/README.md#L17-L20)
 
-作者平台定位
+作者描述 AI 与无代码业务平台。
 
 ```text
 ## What is NocoBase
 
 NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability.
+
 ```
 
-**依据 2 · 作者声明**：[README.md:61-90](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/README.md#L61-L90)
+**依据 2 · 作者声明**：[README.md:61-79](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/README.md#L61-L79)
 
-人和Agent协作流程
+作者说明 AI、可视化配置和业务建模。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
 ### 1. Collaborative: AI and people build together
@@ -219,142 +236,323 @@ People can build and modify visually in a WYSIWYG interface, even without AI.
 
 - Switch between usage mode and configuration mode with one click
 - Review and configure data models, pages, workflows, and permissions visually
-- Designed for regular users, not just developers
-
-![wysiwyg](https://static-docs.nocobase.com/wysiwyg.gif)
-
-#### Mix AI development and manual building however you need
-
-Split the work as needed: people can refine what AI builds, and AI can continue from human configuration.
-
-- AI can quickly create data models, pages, and workflows
-- People can quickly refine the UI and interactions
-- Collaborate as needed and keep iterating
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:128-149](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/README.md#L128-L149)
+**依据 3 · 源码核查**：[package.json:1-11](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/package.json#L1-L11)
 
-作者基础设施与数据模型主张
+根包、工作区和运行环境。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-### 3. Reliable: ready infrastructure for real business
-
-Data models, permissions, and workflows are complex and error-sensitive.  
-NocoBase provides them as built-in infrastructure, tested and proven in production.
-
-#### Complete infrastructure, without starting from scratch
-
-Dozens of built-in modules cover the most common business needs.
-
-- Data models, permissions, workflows, and audit logs work out of the box
-- Proven in production, instead of regenerated as black-box code each time
-- Built-in guardrails keep AI output aligned with the system architecture
-
-![core](https://static-docs.nocobase.com/f-core.png)
-
-#### Data-model driven, with data decoupled from UI
-
-Business data stays in standard relational structures, separate from the UI.
-
-- Use the main database, external databases, and third-party APIs as data sources
-- AI and people work on the same data model, so results stay transparent
-- Your data always stays in your own database, without platform lock-in
+{
+  "name": "nocobase",
+  "private": true,
+  "workspaces": [
+    "packages/*/*",
+    "packages/*/*/*"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
 ```
 
 </details>
 
 #### 缺口
 
-- 没有真实匿名业务任务、交付验收和手工/CRUD基线数据
-  **影响**：不能确认业务办结、全路径权限或净交付收益
-  **进一步探讨**：以匿名业务数据的隔离应用，对照简单CRUD/人工流程，记录权限拒绝、重复执行、正确率和总人工时间
+- 实际使用者、重复业务需求及对照结果未核验
+  **影响**：不能证明节时或相对现有系统更合适
+  **进一步探讨**：以同一匿名审批流程比较合格率、人工和资源成本
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · AI、数据权限与操作流怎样接线，具体增量来自哪里？
+### Q02 · 请求授权如何从入口连接角色和数据范围？
 
-**研究主题**：功能与机制、贡献与相对优势
+**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
 
 #### 完整回答
 
-core AIManager将document、tools、skills、employee、MCP manager组合到app。AI middleware根据工具和employee配置决定human-in-loop中断，允许approve/reject/edit；执行状态写pending/done并向前端流出，GraphInterrupt保留中断而不是写done。workflow-caller把启用且type=ai-employee的工作流转换成Zod参数schema工具，invoke触发workflow并返回output或最后job结果，形成自然语言工具调用到既有业务自动化的桥。core ACL middleware从currentRoles/currentRole建立ctx.can并解析操作权限，缺权限在resolvePermissionParams拒绝，说明平台有统一动作授权基础。相对LLM生成任意脚本直接写库，贡献是把Agent接入既有工具/工作流和角色基础，复用LangChain、MCP adapter及Sequelize等上游，非新推理算法。当前只证明这些接缝存在，未逐个审计每个AI工具都强制经过ACL，不能把“每个动作同等细粒度权限”当独立验证完成。
+main-data-source 在 useACL 未设为 false 时，为资源管理器在 auth 之后挂载 ACL 中间件；ACL 从请求上下文读取角色，按资源和动作得到权限并交给核心中间件解析参数。缺少权限导致 NoPermissionError 时返回 403，允许的参数可合并到资源动作；多角色按源码合并授权参数，root 有特殊分支。这个链条说明受该数据源资源入口约束的请求怎样进入权限解析，不证明任意 AI、MCP 或 workflow 内部调用都自动走该入口，也不证明业务配置正确。需要独立测试每种入口、字段、行过滤及角色组合。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/core/ai/src/ai-manager.ts:17-33](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/ai-manager.ts#L17-L33)
+**依据 1 · 源码核查**：[packages/core/server/src/main-data-source.ts:22-38](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/server/src/main-data-source.ts#L22-L38)
 
-AI基础管理器组合
+useACL 未禁用时在认证后挂载资源 ACL。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
-export class AIManager {
-  documentManager: DocumentManager;
-  toolsManager: ToolsManager;
-  skillsManager: SkillsManager;
-  employeeManager: AIEmployeeManager;
-  mcpManager: MCPManager;
-  mcpToolsManager: McpToolsManager;
+    this.acl = acl;
+    this.resourceManager = resourceManager;
 
-  constructor(protected readonly app: any) {
-    this.documentManager = new DocumentManager();
-    this.toolsManager = new DefaultToolsManager();
-    this.skillsManager = new DefaultSkillsManager(app);
-    this.employeeManager = new DefaultAIEmployeeManager(app);
-    this.mcpManager = new DefaultMCPManager(app);
-    this.mcpToolsManager = new McpToolsManager();
+    this.collectionManager = this.createCollectionManager({
+      collectionManager: {
+        database,
+        collectionsFilter: (collection) => {
+          return collection.options.loadedFromCollectionManager;
+        },
+      },
+    });
+
+    if (options.useACL !== false) {
+      this.resourceManager.use(this.acl.middleware(), { group: 'acl', after: 'auth' });
+    }
   }
-}
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:16-35](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L16-L35)
+**依据 2 · 源码核查**：[packages/core/acl/src/acl.ts:237-267](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/acl/src/acl.ts#L237-L267)
 
-工具交互审批
+多角色授权结果合并。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-export const toolInteractionMiddleware = (aiEmployee: AIEmployee, tools: ToolsEntry[]) => {
-  const interruptOn = {};
-  for (const tool of tools) {
-    interruptOn[tool.definition.name] = aiEmployee.shouldInterruptToolCall(tool)
-      ? {
-          allowedDecisions: ['approve', 'reject', 'edit'],
-          description: (toolCall) =>
-            JSON.stringify({
-              sessionId: aiEmployee.sessionId,
-              from: aiEmployee.from,
-              username: aiEmployee.employee.username,
-              toolCallId: toolCall.id,
-              toolCallName: toolCall.name,
-            }),
-        }
-      : false;
+  can(options: CanArgs): CanResult | null {
+    if (options.role) {
+      return lodash.cloneDeep(this.getCanByRole(options));
+    }
+    if (options.roles?.length) {
+      if (options.roles.includes('root')) {
+        options.roles = ['root'];
+      }
+      return lodash.cloneDeep(this.getCanByRoles(options));
+    }
+
+    return null;
   }
-  return humanInTheLoopMiddleware({
-    interruptOn,
-  });
+
+  private getCanByRoles(options: CanArgs) {
+    let canResult: CanResult | null = null;
+
+    for (const role of options.roles) {
+      const result = this.getCanByRole({
+        role,
+        ...options,
+      });
+      if (!canResult) {
+        canResult = result;
+        canResult && removeEmptyParams(canResult.params);
+      } else if (canResult && result) {
+        canResult.params = mergeAclActionParams(canResult.params, result.params);
+      }
+    }
+
+    return canResult;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts:87-129](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-ai/src/server/tools/workflow-caller.ts#L87-L129)
+**依据 3 · 源码核查**：[packages/core/acl/src/acl.ts:387-412](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/acl/src/acl.ts#L387-L412)
 
-工具与工作流调用桥
+按当前角色、资源和动作计算权限。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  middleware() {
+    const acl = this;
+
+    return async function ACLMiddleware(ctx, next) {
+      ctx.acl = acl;
+
+      const roleName = ctx.state.currentRole || 'anonymous';
+      const { resourceName: rawResourceName, actionName } = ctx.action;
+      const resourceName = resolveResourceName(ctx, rawResourceName, true);
+
+      ctx.can = (options: Omit<CanArgs, 'role'>) => {
+        const roles = ctx.state.currentRoles || [roleName];
+        const can = acl.can({ roles, ...options });
+        if (!can) {
+          return null;
+        }
+        return can;
+      };
+
+      ctx.permission = {
+        can: ctx.can({ resource: resourceName, action: actionName, rawResourceName }),
+        resourceName,
+        actionName,
+      };
+
+      return await compose(acl.middlewares.nodes)(ctx, next);
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/core/acl/src/acl.ts:474-516](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/acl/src/acl.ts#L474-L516)
+
+核心处理中权限参数和 403 分支。
 
 <details>
 <summary>查看原文（43行）</summary>
+
+```text
+  protected addCoreMiddleware() {
+    const acl = this;
+
+    this.middlewares.add(
+      async (ctx, next) => {
+        const resourcerAction: Action = ctx.action;
+        const { resourceName, actionName } = ctx.permission;
+        const permission = ctx.permission;
+
+        ctx.log?.debug && ctx.log.debug('ctx permission', permission);
+
+        if (['firstOrCreate', 'updateOrCreate'].includes(actionName)) {
+          permission.deferred = true;
+          await next();
+          return;
+        }
+
+        try {
+          const result = await acl.resolvePermissionParams(ctx, {
+            actionName,
+            can: permission.can,
+            params: resourcerAction.params,
+            rawResourceName: ctx.action.resourceName,
+            resourceName,
+            skip: permission.skip,
+          });
+
+          if (result.parsedParams && resourcerAction.mergeParams) {
+            ctx.permission.parsedParams = result.parsedParams;
+            ctx.log?.debug && ctx.log.debug('acl parsedParams', result.parsedParams);
+            ctx.permission.rawParams = result.rawParams;
+            resourcerAction.params = result.mergedParams;
+            ctx.permission.mergedParams = lodash.cloneDeep(resourcerAction.params);
+          }
+        } catch (e) {
+          if (e instanceof NoPermissionError) {
+            ctx.throw(403, 'No permissions');
+            return;
+          }
+
+          throw e;
+        }
+
+```
+
+</details>
+
+#### 缺口
+
+- 所有数据源和 AI 工作流入口没有逐一贯通或运行
+  **影响**：不能推广为所有路径均具有一致的行列授权
+  **进一步探讨**：隔离环境按角色逐入口测试允许和拒绝及结果字段
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · AI 如何调用工作流，审批和结果如何关联？
+
+**研究主题**：功能与机制、贡献与相对优势
+
+#### 完整回答
+
+AI 插件注册动态 workflowCaller；提供器从已启用缓存选择 ai-employee 类型流程，按配置构造 Zod 参数，注册后调用 workflow.trigger，仅将工具参数作为流程上下文传给 trigger（并未直接把调用时的 ctx 作为该参数），并从 execution.output 或最后 job 的 result 取输出；空内容和负状态返回错误，其余输出截断后返回。工具调用中间件会根据执行位置或自动调用权限决定是否进入人机中断，状态中间件先标 pending，执行 handler 后写 done 与结果，异常记录 error，GraphInterrupt 不走正常完成。批准是条件性的，不是所有工具都必须人工批准；这一链把模型请求接到既有业务流程，不能据此证明成功结果满足业务验收或任意权限自动继承。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/plugin.ts:194-203](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/plugin.ts#L194-L203)
+
+AI 插件注册动态工作流及 MCP 工具。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+  registerTools() {
+    const toolsManager = this.ai.toolsManager;
+
+    toolsManager.registerTools([createDocsSearchTool(this)]);
+
+    toolsManager.registerDynamicTools(getWorkflowCallers(this, 'workflowCaller'));
+    toolsManager.registerDynamicTools(getWorkflowTasks(this));
+
+    // Register MCP tools dynamically
+    toolsManager.registerDynamicTools(this.ai.mcpManager.getMCPToolsProvider());
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts:40-84](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/tools/workflow-caller.ts#L40-L84)
+
+配置转为参数 Schema。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+const buildSchema = (config: ToolConfig): z.ZodObject<any> => {
+  const schemaProperties: Record<string, z.ZodTypeAny> = {};
+  if (config.parameters?.length) {
+    config.parameters.forEach((item) => {
+      let fieldSchema: z.ZodTypeAny;
+
+      switch (item.type) {
+        case 'string':
+          fieldSchema = z.string();
+          break;
+        case 'number':
+          fieldSchema = z.number();
+          break;
+        case 'boolean':
+          fieldSchema = z.boolean();
+          break;
+        case 'enum':
+          if (item.options && item.options.length > 0) {
+            const enumValues = item.options.map((option) => option.value);
+            if (typeof enumValues[0] === 'number') {
+              const values = enumValues.map(String) as [string, ...string[]];
+              fieldSchema = z.enum(values).transform((v) => Number(v));
+            } else {
+              fieldSchema = z.enum(enumValues as [string, ...string[]]);
+            }
+          } else {
+            fieldSchema = z.string();
+          }
+          break;
+        default:
+          fieldSchema = z.any();
+      }
+
+      if (item.description) {
+        fieldSchema = fieldSchema.describe(item.description);
+      }
+      if (!item.required) {
+        fieldSchema = fieldSchema.optional();
+      }
+      schemaProperties[item.name] = fieldSchema;
+    });
+  }
+
+  const schema = z.object(schemaProperties);
+  return schema.describe(config.description || '');
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts:87-127](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/tools/workflow-caller.ts#L87-L127)
+
+注册启用流程并触发和处理输出。
+
+<details>
+<summary>查看原文（41行）</summary>
 
 ```text
 const invoke = async (ctx: Context, workflow: Workflow, args: Record<string, any>) => {
@@ -398,106 +596,177 @@ export const getWorkflowCallers = (plugin: Plugin, prefix?: string) => async (re
       },
       invoke: async (ctx: Context, args: Record<string, any>) => invoke(ctx, workflow, args),
     });
-  }
-};
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/core/acl/src/acl.ts:387-412](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/acl/src/acl.ts#L387-L412)
+**依据 4 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts:1604-1619](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts#L1604-L1619)
 
-按当前角色建立动作权限
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  middleware() {
-    const acl = this;
-
-    return async function ACLMiddleware(ctx, next) {
-      ctx.acl = acl;
-
-      const roleName = ctx.state.currentRole || 'anonymous';
-      const { resourceName: rawResourceName, actionName } = ctx.action;
-      const resourceName = resolveResourceName(ctx, rawResourceName, true);
-
-      ctx.can = (options: Omit<CanArgs, 'role'>) => {
-        const roles = ctx.state.currentRoles || [roleName];
-        const can = acl.can({ roles, ...options });
-        if (!can) {
-          return null;
-        }
-        return can;
-      };
-
-      ctx.permission = {
-        can: ctx.can({ resource: resourceName, action: actionName, rawResourceName }),
-        resourceName,
-        actionName,
-      };
-
-      return await compose(acl.middlewares.nodes)(ctx, next);
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/core/acl/src/acl.ts:524-545](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/acl/src/acl.ts#L524-L545)
-
-缺操作权限拒绝
+前端与自动调用策略决定是否中断。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
+  shouldInterruptToolCall(tools: ToolsEntry): boolean {
+    return tools?.execution === 'frontend' || !this.isAutoCall(tools);
   }
 
-  private async resolvePermissionParams(
-    ctx,
-    options: {
-      actionName: string;
-      can: CanResult | null;
-      params?: any;
-      rawResourceName: string;
-      resourceName: string;
-      skip?: boolean;
-    },
-  ): Promise<ResolvedActionParams> {
-    const { actionName, can, rawResourceName, resourceName } = options;
-    const rawParams = lodash.cloneDeep(options.params || {});
-
-    if ((!can || typeof can !== 'object') && !options.skip) {
-      throw new NoPermissionError('No permissions');
+  isAutoCall(tools: ToolsEntry): boolean {
+    if (!tools) {
+      return false;
     }
-
-    const params = can?.params || this.fixedParamsManager.getParams(resourceName, actionName);
-    ctx.log?.debug && ctx.log.debug('acl params', params);
+    const isAutoCall = tools.defaultPermission === 'ALLOW';
+    if (tools.scope !== 'CUSTOM') {
+      return isAutoCall;
+    }
+    const employeeTools = this.employee.skillSettings?.tools ?? [];
+    const presetTools = employeeTools.find((s) => s.name === tools.definition.name);
+    return presetTools ? presetTools.autoCall : isAutoCall;
+  }
 ```
 
 </details>
 
-<a id="research-q03"></a>
+**依据 5 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:16-35](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L16-L35)
 
-<a id="detail-section-13"></a>
+中断时允许 approve、reject、edit。
 
-### Q03 · 可配置是否转化为可控业务流程？
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+export const toolInteractionMiddleware = (aiEmployee: AIEmployee, tools: ToolsEntry[]) => {
+  const interruptOn = {};
+  for (const tool of tools) {
+    interruptOn[tool.definition.name] = aiEmployee.shouldInterruptToolCall(tool)
+      ? {
+          allowedDecisions: ['approve', 'reject', 'edit'],
+          description: (toolCall) =>
+            JSON.stringify({
+              sessionId: aiEmployee.sessionId,
+              from: aiEmployee.from,
+              username: aiEmployee.employee.username,
+              toolCallId: toolCall.id,
+              toolCallName: toolCall.name,
+            }),
+        }
+      : false;
+  }
+  return humanInTheLoopMiddleware({
+    interruptOn,
+  });
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:55-75](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L55-L75)
+
+读取结果并置 pending。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+      const tm = await aiEmployee.getToolCallResult(messageId, request.toolCall.id);
+      if (!tm) {
+        throw new Error(`Tool call result not found for messageId=${messageId}, toolCallId=${request.toolCall.id}`);
+      }
+      if (tm.status === 'error') {
+        runtime.writer?.({
+          action: 'afterToolCall',
+          body: { toolCall, toolCallResult: tm },
+          currentConversation,
+        });
+        return new ToolMessage({
+          tool_call_id: request.toolCall.id,
+          status: 'error',
+          content: tm.content,
+          metadata: {
+            messageId,
+          },
+        });
+      }
+
+      await aiEmployee.updateToolCallPending(messageId, request.toolCall.id);
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:98-128](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L98-L128)
+
+异常及非中断完成分支。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+        return toolMessage;
+      } catch (e) {
+        if (e.name === 'GraphInterrupt') {
+          interrupted = true;
+          throw e;
+        }
+        aiEmployee.logger.error(e);
+        result = { status: 'error', content: e.message };
+        runtime.writer?.({
+          action: 'afterToolCallError',
+          body: { toolCall, error: e },
+          currentConversation,
+        });
+        return new ToolMessage({
+          tool_call_id: request.toolCall.id,
+          status: 'error',
+          content: e.message,
+          metadata: {
+            messageId,
+          },
+        });
+      } finally {
+        if (!interrupted) {
+          await aiEmployee.updateToolCallDone(messageId, request.toolCall.id, result);
+          const toolCallResult = await aiEmployee.getToolCallResult(messageId, request.toolCall.id);
+          runtime.writer?.({
+            action: 'afterToolCall',
+            body: { toolCall, toolCallResult },
+            currentConversation,
+          });
+        }
+```
+
+</details>
+
+#### 缺口
+
+- 真实模型、流程类型和宿主上下文尚未运行
+  **影响**：不能断言端到端审批、授权或业务结果
+  **进一步探讨**：以隔离假数据测试不同自动调用配置、拒绝与流程结果
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · MCP 用户连接缓存、工具权限及工作流失败有哪些边界？
 
 **研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-有积极支持，但不能等同全链保证。user-context MCP manager要求当前用户ID、只对useUserContext且非stdio条目渲染连接，按用户ID缓存5分钟/最多100并关闭过期客户端；renderer把currentUser与请求token/headers作为模板变量，减少所有人共用单一连接的风险。关键缺口是缓存key只有用户ID，角色/当前token等请求上下文变化不直接进入key，是否有外部清cache和远端实时授权需再核；不能称已复现越权。tool status finally对非GraphInterrupt写done，done只代表本次handler返回，不证明业务正确或外部副作用exactly-once。workflow Processor显式区分pending/resolved/error/aborted等，并维护事务scope和超时取消，开放事务中pending会标错；这些是恢复设计，不是所有外部接口可回滚。workflow caller直接trigger的权限主体与每个节点的数据过滤未在本项全追踪，因此权限撤销、跨角色缓存、异步挂起与重试是最影响核心价值的验证，而非以“有ACL模块”作安全结论。
+用户上下文 MCP 仅选择启用、非 stdio 且 useUserContext 的连接，以当前用户 ID 为缓存键；默认 TTL 五分钟、最大 100 条，失效或超量会关闭连接，初始化失败则记录警告并返回空工具。选项渲染可使用当前用户、请求头和 bearer token，但命中缓存直接返回旧 toolsMap；源码也在 MCP 客户端配置增删改提交后清空缓存，这是重要反证。所检查的缓存键没有角色或 token 版本，因此相同用户的上下文变动能否即时生效取决于缓存失效、服务端再次鉴权和实际配置；不能仅凭此断言已发生越权。MCP 默认权限按工具名是否以 get 开头分 ALLOW/ASK，名称前缀并不能证明远端动作只读。workflow 的数据库 scope 清理可提交或回滚已有事务，但不能由此推断外部 MCP 或流程动作已撤销。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:36-97](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L36-L97)
+**依据 1 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:33-76](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L33-L76)
 
-用户绑定MCP与仅ID缓存/TTL
+用户 ID 键、TTL 和上下文渲染。
 
 <details>
-<summary>查看原文（62行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
+export class UserContextMCPClientManager {
+  private readonly cache = new Map<string, CacheEntry>();
+  private readonly ttlMs: number;
   private readonly maxSize: number;
 
   constructor(private readonly options: UserContextMCPClientManagerOptions) {
@@ -539,8 +808,18 @@ export const getWorkflowCallers = (plugin: Plugin, prefix?: string) => async (re
       for (const entry of entries) {
         const rendered = await renderMCPOptions(entry, this.options.app, ctx);
         connections[entry.name] = this.options.buildConnection(rendered);
-      }
+```
 
+</details>
+
+**依据 2 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:79-108](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L79-L108)
+
+缓存工具及初始化失败返回空。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
       client = new MultiServerMCPClient(connections);
       const initializedToolsMap = await client.initializeConnections();
       const toolsMap = Object.fromEntries(
@@ -560,226 +839,243 @@ export const getWorkflowCallers = (plugin: Plugin, prefix?: string) => async (re
       await this.evictOversized();
 
       return toolsMap;
+    } catch (error) {
+      if (client) {
+        await this.closeEntry({
+          client,
+          toolsMap: {},
+          expiresAt: 0,
+          lastAccessedAt: 0,
+        });
+      }
+      this.options.app?.log?.warn?.('fail to get user-bound mcp tools', error);
+      return {};
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/core/ai/src/mcp-manager/options-renderer.ts:88-132](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/mcp-manager/options-renderer.ts#L88-L132)
+**依据 3 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:112-147](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L112-L147)
 
-请求token和用户模板
+清理过期与容量及关闭连接。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
+  async clear() {
+    const entries = [...this.cache.values()];
+    this.cache.clear();
+    await Promise.all(entries.map((entry) => this.closeEntry(entry)));
+  }
+
+  private evictExpired() {
+    const now = Date.now();
+    for (const [key, entry] of this.cache.entries()) {
+      if (entry.expiresAt <= now) {
+        this.cache.delete(key);
+        this.closeEntry(entry).catch((error) => {
+          this.options.app?.log?.warn?.('fail to close expired user-bound mcp client', error);
+        });
+      }
+    }
+  }
+
+  private async evictOversized() {
+    while (this.cache.size > this.maxSize) {
+      const oldest = [...this.cache.entries()].sort(
+        ([, left], [, right]) => left.lastAccessedAt - right.lastAccessedAt,
+      )[0];
+      if (!oldest) {
+        return;
+      }
+      this.cache.delete(oldest[0]);
+      await this.closeEntry(oldest[1]);
+    }
+  }
+
+  private async closeEntry(entry: CacheEntry) {
+    try {
+      await entry.client.close();
+    } catch (error) {
+      this.options.app?.log?.warn?.('fail to close user-bound mcp client', error);
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/core/ai/src/mcp-manager/options-renderer.ts:87-90](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/options-renderer.ts#L87-L90)
+
+请求头和 token 可作为变量。
+
+```text
+const getRequestVariables = (ctx?: Context) => ({
   headers: ctx?.request?.headers ?? {},
   token: ctx?.getBearerToken?.() ?? '',
 });
+```
 
-const emptyRequestVariables = {
-  headers: {},
-  token: '',
-};
+**依据 5 · 源码核查**：[packages/core/ai/src/mcp-manager/index.ts:157-197](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/index.ts#L157-L197)
 
-export const normalizeMCPOptions = (options: MCPOptions): MCPOptions => {
-  const normalized: MCPOptions = {
-    ...options,
-    args: stringifyArray(options.args),
-    env: stringifyRecord(options.env),
-    headers: stringifyRecord(options.headers),
-    useUserContext: options.transport === 'stdio' ? false : options.useUserContext === true,
-  };
+注册工具、转发调用和基于名称的默认权限。
 
-  if (normalized.transport === 'stdio') {
-    normalized.url = undefined;
-    normalized.headers = {};
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+  private registerToolsFromMap(
+    register: ToolsRegistration,
+    serverName: string,
+    tools: StructuredToolInterface[],
+  ): void {
+    for (const tool of tools) {
+      const toolName = `mcp-${serverName}-${tool.name}`;
+      this.ensureToolPermission(toolName, tool.name);
+      const toolOptions: ToolsOptions = {
+        scope: 'GENERAL',
+        from: 'mcp',
+        defaultPermission: this.toolsPermissionMap[toolName],
+        introduction: {
+          title: tool.name,
+          about: tool.description,
+        },
+        definition: {
+          name: toolName,
+          description: tool.description || `MCP tool: ${tool.name} from ${serverName}`,
+          schema: tool.schema,
+        },
+        invoke: async (_ctx: Context, args: any) => {
+          try {
+            const result = await tool.invoke(args);
+            return result;
+          } catch (error: any) {
+            return {
+              status: 'error' as const,
+              content: error?.message || 'Tool invocation failed',
+            };
+          }
+        },
+      };
+      register.registerTools(toolOptions);
+    }
   }
-  return normalized;
-};
 
-export async function renderMCPOptions(
-  options: MCPOptions,
-  app: { environment?: { getVariables?: () => Record<string, unknown> } },
-  ctx?: Context,
-): Promise<MCPOptions> {
-  const currentUser = options.useUserContext ? await getCurrentUser(ctx, options) : undefined;
-  const request = options.useUserContext ? getRequestVariables(ctx) : emptyRequestVariables;
-  const variables = {
-    $env: app.environment?.getVariables?.() ?? {},
-    currentUser,
-    $user: currentUser,
-    request,
-    ctx: {
-      currentUser,
-      request,
-    },
-  };
-
-  return normalizeMCPOptions(parse(options)(variables) as MCPOptions);
-}
+  private ensureToolPermission(toolName: string, rawToolName: string) {
+    if (!(toolName in this.toolsPermissionMap)) {
+      this.toolsPermissionMap[toolName] = rawToolName.startsWith('get') ? 'ALLOW' : 'ASK';
+    }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:108-132](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L108-L132)
+**依据 6 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/plugin.ts:251-283](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/plugin.ts#L251-L283)
 
-中断和完成状态处理
+客户端配置变更后清缓存的反证。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
-          body: { toolCall, error: e },
-          currentConversation,
-        });
-        return new ToolMessage({
-          tool_call_id: request.toolCall.id,
-          status: 'error',
-          content: e.message,
-          metadata: {
-            messageId,
-          },
+  registerMcpClientEvents() {
+    this.db.on('aiMcpClients.afterCreate', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+
+    this.db.on('aiMcpClients.afterUpdate', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true || model.previous('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+
+    this.db.on('aiMcpClients.afterDestroy', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+  }
+
+  private clearMcpUserContextCacheAfterCommit(transaction?: Transaction) {
+    const clearCache = () => {
+      this.ai.mcpManager.clearUserContextCache().catch((error) => {
+        this.app.log.warn('fail to clear user-bound mcp client cache', error);
+      });
+    };
+
+    if (transaction) {
+      transaction.afterCommit(clearCache);
+      return;
+    }
+
+    clearCache();
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:721-747](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L721-L747)
+
+未关闭的数据库事务清理。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  private async cleanupScopeTransactions({ allowCommit = false } = {}) {
+    if (!this.scopeTransactions.size) {
+      return;
+    }
+    for (const [key, { transaction, dataSource, closing }] of Array.from(this.scopeTransactions.entries()).reverse()) {
+      const tx = transaction as TransactionWithFinished;
+      if (tx.finished) {
+        this.scopeTransactions.delete(key);
+        continue;
+      }
+      const action = closing === 'commit' && allowCommit ? 'commit' : 'rollback';
+      const actionText = action === 'commit' ? 'committing' : 'rolling back';
+      this.logger.warn(
+        `scope transaction (${key}) on data source "${dataSource}" was not closed before exit, ${actionText}`,
+        {
+          workflowId: this.execution.workflowId,
+        },
+      );
+      try {
+        await tx[action]();
+      } catch (error) {
+        this.logger.error(`scope transaction (${key}) fallback ${action} failed`, {
+          error,
+          workflowId: this.execution.workflowId,
         });
       } finally {
-        if (!interrupted) {
-          await aiEmployee.updateToolCallDone(messageId, request.toolCall.id, result);
-          const toolCallResult = await aiEmployee.getToolCallResult(messageId, request.toolCall.id);
-          runtime.writer?.({
-            action: 'afterToolCall',
-            body: { toolCall, toolCallResult },
-            currentConversation,
-          });
-        }
-      }
-    },
-  });
-};
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:66-101](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L66-L101)
-
-状态和事务scope
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-    [JOB_STATUS.PENDING]: EXECUTION_STATUS.STARTED,
-    [JOB_STATUS.RESOLVED]: EXECUTION_STATUS.RESOLVED,
-    [JOB_STATUS.FAILED]: EXECUTION_STATUS.FAILED,
-    [JOB_STATUS.ERROR]: EXECUTION_STATUS.ERROR,
-    [JOB_STATUS.ABORTED]: EXECUTION_STATUS.ABORTED,
-    [JOB_STATUS.CANCELED]: EXECUTION_STATUS.CANCELED,
-    [JOB_STATUS.REJECTED]: EXECUTION_STATUS.REJECTED,
-    [JOB_STATUS.RETRY_NEEDED]: EXECUTION_STATUS.RETRY_NEEDED,
-  };
-
-  logger: Logger;
-
-  /**
-   * @experimental
-   */
-  transaction?: Transaction | null = null;
-
-  /**
-   * @experimental
-   */
-  nodes: FlowNodeModel[] = [];
-
-  /**
-   * @experimental
-   */
-  nodesMap = new Map<number | string, FlowNodeModel>();
-
-  private jobsMapByNodeKey: { [key: string]: JobModel } = {};
-  private jobResultsMapByNodeKey: { [key: string]: any } = {};
-  private jobsToSave: Map<string, JobModel> = new Map();
-  private scopeTransactions = new Map<string, ScopeTransaction>();
-  private rerunContext: RerunContext | null = null;
-
-  /**
-   * @experimental
-   */
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:683-718](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L683-L718)
-
-开放事务与pending作业处理
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-  private hasOpenScopeTransactions() {
-    for (const { transaction } of this.scopeTransactions.values()) {
-      if (!(transaction as TransactionWithFinished).finished) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  private markOpenScopePendingJobsAsError(message: string) {
-    const pendingJobs = new Set<JobModel>();
-    for (const job of this.jobsToSave.values()) {
-      if (job.status === JOB_STATUS.PENDING) {
-        pendingJobs.add(job);
-      }
-    }
-    for (const job of Object.values(this.jobsMapByNodeKey)) {
-      if (job.status === JOB_STATUS.PENDING) {
-        pendingJobs.add(job);
-      }
-    }
-    for (const key of this.scopeTransactions.keys()) {
-      const job = this.jobsMapByNodeKey[key];
-      if (job?.status === JOB_STATUS.PENDING) {
-        pendingJobs.add(job);
-      }
-    }
-    for (const job of pendingJobs) {
-      job.set({
-        status: JOB_STATUS.ERROR,
-        result: {
-          message,
-        },
-      });
-      this.saveJob(job);
-    }
+        this.scopeTransactions.delete(key);
 ```
 
 </details>
 
 #### 缺口
 
-- 未追踪全部AI工具ACL、缓存失效、权限撤销与外部副作用恢复
-  **影响**：不能确认业务办结、全路径权限或净交付收益
-  **进一步探讨**：以匿名业务数据的隔离应用，对照简单CRUD/人工流程，记录权限拒绝、重复执行、正确率和总人工时间
+- 角色撤销、换 token、远端授权及恢复未做对抗或真实执行
+  **影响**：不能确定缓存造成实际权限失效窗口或副作用重复
+  **进一步探讨**：固定版本隔离服务记录权限变更、客户端配置变更和远端成功后本地失败
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 启动、持续使用和失败恢复分别依赖什么，由谁承担成本？
+### Q05 · 运行、配置和恢复有哪些依赖与成本，何时试用或退出？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-首次需Node>=22或对应部署环境、数据库和应用配置，以及管理员完成数据模型/角色/页面/工作流；AI还需provider凭据和合适模型，MCP需要服务端、网络/stdio依赖及用户上下文授权。持续成本不仅模型token，还有数据库/文件存储、插件升级、流程规则维护、人工审批和输出复核。失败恢复包括备份还原、事务/作业状态核对、MCP缓存关闭和外部动作对账；不能把数据库事务误当邮件、支付或远端API补偿。根package写Apache-2.0，而抽读core/AI/workflow文件头明确AGPL-3.0与商业双许可，部署与扩展前须逐包核对许可范围；本项只报告固定文件内容，不推断商业条款或当前价格。无真实业务量、人工单价与失败样本，不能填0或承诺ROI。
+根工程声明 Node >=22 和工作区，作者提供 CLI 安装说明；业务应用还需实际配置兼容的数据源、用户和角色，AI 或 MCP 路径分别依赖模型服务或远端服务及凭据。源码头部和根包存在不同许可声明，具体目录、分发及商业使用应分别核对，不能从根包许可证概括所有插件。首次成本包括部署、建模和权限配置；持续成本包括服务、模型或外部调用、规则维护和人工审核；失败恢复需要备份、状态及外部副作用对账，金额与耗时未测。具备治理能力的团队可用匿名数据、小规模角色和只读或可撤销操作试用；若授权不一致、恢复状态不明或总成本不可接受，停止相关 AI/自动化入口并回到受控人工流程。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-18](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/package.json#L1-L18)
+**依据 1 · 源码核查**：[package.json:1-11](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/package.json#L1-L11)
 
-根包身份和Node声明
+根工程和 Node 要求。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
 {
@@ -793,20 +1089,43 @@ export async function renderMCPOptions(
   "engines": {
     "node": ">=22"
   },
-  "licenses": [
-    {
-      "type": "Apache-2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ],
-  "scripts": {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/core/ai/src/ai-manager.ts:1-8](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/ai-manager.ts#L1-L8)
+**依据 2 · 作者声明**：[README.md:36-53](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/README.md#L36-L53)
 
-所读源码许可声明
+作者安装和接入说明。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+````text
+## Quick Start
+
+```bash
+# Install NocoBase CLI
+npm install -g @nocobase/cli
+nb --version
+
+# Install a NocoBase app
+nb init --ui
+
+# Optional: build together with an AI Agent
+codex # claude, opencode
+```
+
+Detailed steps:
+
+- <a target="_blank" href="https://docs.nocobase.com/ai/install-nocobase-app">Install a NocoBase app</a>
+- <a target="_blank" href="https://docs.nocobase.com/ai/quick-start">AI Agent Integration Guide</a>
+````
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/tools/workflow-caller.ts:1-7](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/tools/workflow-caller.ts#L1-L7)
+
+该子目录源码声明双许可证，不能以根包代表。
 
 ```text
 /**
@@ -816,106 +1135,33 @@ export async function renderMCPOptions(
  *
  * This project is dual-licensed under AGPL-3.0 and NocoBase Commercial License.
  * For more information, please refer to: https://www.nocobase.com/agreement.
- */
 ```
 
-**依据 3 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:36-40](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L36-L40)
+**依据 4 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:43-76](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L43-L76)
 
-连接资源配置
-
-```text
-  private readonly maxSize: number;
-
-  constructor(private readonly options: UserContextMCPClientManagerOptions) {
-    this.ttlMs = options.ttlMs ?? 5 * 60 * 1000;
-    this.maxSize = options.maxSize ?? 100;
-```
-
-**依据 4 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:91-135](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L91-L135)
-
-状态、事务和超时恢复资源
+特定 MCP 连接配置与用户上下文。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
-  nodesMap = new Map<number | string, FlowNodeModel>();
-
-  private jobsMapByNodeKey: { [key: string]: JobModel } = {};
-  private jobResultsMapByNodeKey: { [key: string]: any } = {};
-  private jobsToSave: Map<string, JobModel> = new Map();
-  private scopeTransactions = new Map<string, ScopeTransaction>();
-  private rerunContext: RerunContext | null = null;
-
-  /**
-   * @experimental
-   */
-  lastSavedJob: JobModel | null = null;
-  abortController = new AbortController();
-  timeoutGuard: NodeJS.Timeout | null = null;
-  private runningRegistered = false;
-  private unregisterRunningExecution?: () => void;
-  private abortReason: string | null = null;
-  private aborted = false;
-
-  constructor(
-    public execution: ExecutionModel,
-    public options: ProcessorOptions,
-  ) {
-    this.logger = options.plugin.getLogger(execution.workflowId);
-    this.transaction = options.transaction;
-  }
-
-  get abortSignal() {
-    return this.abortController.signal;
-  }
-
-  setTimeoutGuard(ms: number) {
-    if (this.timeoutGuard) {
-      clearTimeout(this.timeoutGuard);
+  async getToolsMap(ctx: Context): Promise<Record<string, StructuredToolInterface[]>> {
+    const currentUser = ctx?.state?.currentUser ?? ctx?.auth?.user;
+    if (!currentUser?.id) {
+      return {};
     }
-    this.timeoutGuard = setTimeout(() => {
-      this.abortExecution(EXECUTION_REASON.TIMEOUT);
-    }, ms);
-  }
 
-  abortExecution(reason?: string) {
-    this.aborted = true;
-    this.abortReason = reason ?? null;
-    if (!this.abortController.signal.aborted) {
-      this.abortController.abort(
-```
+    let client: MultiServerMCPClient | null = null;
+    try {
+      this.evictExpired();
 
-</details>
+      const entries = (await this.options.listEntries())
+        .filter((entry) => entry.enabled !== false && entry.useUserContext === true && entry.transport !== 'stdio')
+        .sort((left, right) => left.name.localeCompare(right.name));
+      if (!entries.length) {
+        return {};
+      }
 
-#### 缺口
-
-- 部署/商业插件条件、业务量及总拥有/恢复成本未逐项核实
-  **影响**：不能确认业务办结、全路径权限或净交付收益
-  **进一步探讨**：以匿名业务数据的隔离应用，对照简单CRUD/人工流程，记录权限拒绝、重复执行、正确率和总人工时间
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 由机制与限制可提出什么改进，什么人值得试用？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-建议有明确内部CRUD/审批场景且能维护数据库、权限和备份的团队，在隔离应用用匿名记录试用最小流程，先不开真实外部写动作。以两个角色和字段级权限验收人工、内置AI工具、MCP、workflow入口的同一任务，确认拒绝与审计一致，再考虑真实数据。未验证假设是把权限上下文版本、流程执行ID和外部副作用收据绑定到AI调用，权限变更时使用户MCP缓存失效，可减少“配置看似同权限但执行上下文已陈旧”的错误。依据是用户ID缓存和请求变量、状态/事务边界；新增负担是上下文版本维护、远端幂等和收据存储。最小验证含同用户角色撤销/换token、跨角色读写、工具中断、workflow超时及远端成功后本地失败，对照现有配置和简单人工流程，记录越权/漏拒、重复动作、办结率、人工恢复及模型/运维费用。若只增复杂度而无错误/恢复改善，否定。没有实际团队与案例前，不将其升级为新的商业插件机会。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:60-97](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L60-L97)
-
-缓存身份与新鲜度
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
       const cacheKey = String(currentUser.id);
       const cached = this.cache.get(cacheKey);
       const now = Date.now();
@@ -933,129 +1179,258 @@ export async function renderMCPOptions(
       for (const entry of entries) {
         const rendered = await renderMCPOptions(entry, this.options.app, ctx);
         connections[entry.name] = this.options.buildConnection(rendered);
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:721-747](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L721-L747)
+
+范围事务的恢复边界。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  private async cleanupScopeTransactions({ allowCommit = false } = {}) {
+    if (!this.scopeTransactions.size) {
+      return;
+    }
+    for (const [key, { transaction, dataSource, closing }] of Array.from(this.scopeTransactions.entries()).reverse()) {
+      const tx = transaction as TransactionWithFinished;
+      if (tx.finished) {
+        this.scopeTransactions.delete(key);
+        continue;
       }
-
-      client = new MultiServerMCPClient(connections);
-      const initializedToolsMap = await client.initializeConnections();
-      const toolsMap = Object.fromEntries(
-        Object.entries(initializedToolsMap).map(([serverName, tools]) => [
-          serverName,
-          tools as StructuredToolInterface[],
-        ]),
+      const action = closing === 'commit' && allowCommit ? 'commit' : 'rollback';
+      const actionText = action === 'commit' ? 'committing' : 'rolling back';
+      this.logger.warn(
+        `scope transaction (${key}) on data source "${dataSource}" was not closed before exit, ${actionText}`,
+        {
+          workflowId: this.execution.workflowId,
+        },
       );
-
-      this.cache.set(cacheKey, {
-        client,
-        toolsMap,
-        expiresAt: now + this.ttlMs,
-        lastAccessedAt: now,
-      });
-      client = null;
-      await this.evictOversized();
-
-      return toolsMap;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/core/ai/src/mcp-manager/options-renderer.ts:88-132](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/core/ai/src/mcp-manager/options-renderer.ts#L88-L132)
-
-动态请求授权变量
-
-<details>
-<summary>查看原文（45行）</summary>
-
-```text
-  headers: ctx?.request?.headers ?? {},
-  token: ctx?.getBearerToken?.() ?? '',
-});
-
-const emptyRequestVariables = {
-  headers: {},
-  token: '',
-};
-
-export const normalizeMCPOptions = (options: MCPOptions): MCPOptions => {
-  const normalized: MCPOptions = {
-    ...options,
-    args: stringifyArray(options.args),
-    env: stringifyRecord(options.env),
-    headers: stringifyRecord(options.headers),
-    useUserContext: options.transport === 'stdio' ? false : options.useUserContext === true,
-  };
-
-  if (normalized.transport === 'stdio') {
-    normalized.url = undefined;
-    normalized.headers = {};
-  }
-  return normalized;
-};
-
-export async function renderMCPOptions(
-  options: MCPOptions,
-  app: { environment?: { getVariables?: () => Record<string, unknown> } },
-  ctx?: Context,
-): Promise<MCPOptions> {
-  const currentUser = options.useUserContext ? await getCurrentUser(ctx, options) : undefined;
-  const request = options.useUserContext ? getRequestVariables(ctx) : emptyRequestVariables;
-  const variables = {
-    $env: app.environment?.getVariables?.() ?? {},
-    currentUser,
-    $user: currentUser,
-    request,
-    ctx: {
-      currentUser,
-      request,
-    },
-  };
-
-  return normalizeMCPOptions(parse(options)(variables) as MCPOptions);
-}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts:108-132](https://github.com/nocobase/nocobase/blob/9d752bb60d8eca5883e4357eefbff46d56c941d1/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/middleware/tools.ts#L108-L132)
-
-中断与done边界
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-          body: { toolCall, error: e },
-          currentConversation,
-        });
-        return new ToolMessage({
-          tool_call_id: request.toolCall.id,
-          status: 'error',
-          content: e.message,
-          metadata: {
-            messageId,
-          },
+      try {
+        await tx[action]();
+      } catch (error) {
+        this.logger.error(`scope transaction (${key}) fallback ${action} failed`, {
+          error,
+          workflowId: this.execution.workflowId,
         });
       } finally {
-        if (!interrupted) {
-          await aiEmployee.updateToolCallDone(messageId, request.toolCall.id, result);
-          const toolCallResult = await aiEmployee.getToolCallResult(messageId, request.toolCall.id);
-          runtime.writer?.({
-            action: 'afterToolCall',
-            body: { toolCall, toolCallResult },
-            currentConversation,
-          });
-        }
-      }
-    },
-  });
-};
+        this.scopeTransactions.delete(key);
 ```
 
 </details>
 
 #### 缺口
 
-- 权限上下文版本/收据改进没有同任务对照或真实需求证据
-  **影响**：不能确认业务办结、全路径权限或净交付收益
-  **进一步探讨**：以匿名业务数据的隔离应用，对照简单CRUD/人工流程，记录权限拒绝、重复执行、正确率和总人工时间
+- 目标配置兼容性、授权许可、账单和人工时间未验证
+  **影响**：无法估算部署可行性与单位合格任务成本
+  **进一步探讨**：确认实际发行物与许可，在隔离副本计量全流程并测试备份恢复
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 能否以权限版本及副作用收据改善不确定性？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+基于 Q04 的用户 ID 缓存、配置变更清理和事务边界，提出未验证假设：由可信身份提供者向连接缓存传递可验证的权限上下文版本，在令牌/角色变化时只失效相关用户连接；对外部写动作关联业务操作 ID、远端收据及可重试状态，恢复时先对账再决定是否重放。现有 TTL、MCP 配置修改后全量清缓存、调用状态和数据库事务分别解决部分问题，提议不能被描述为当前已有的端到端方案，也不保证外部系统支持幂等。隔离环境以角色撤销、同用户换 token、连接配置更改、远端成功后进程中断为固定样本，对照现状，记录错误授权、重复写、误拒、延迟与人工恢复成本；若无改善、来源版本不可信或远端无查询/幂等能力使成本过高，则否定或收窄。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/core/ai/src/mcp-manager/user-context-client-manager.ts:38-76](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/core/ai/src/mcp-manager/user-context-client-manager.ts#L38-L76)
+
+现有 TTL、用户键和上下文渲染。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+  constructor(private readonly options: UserContextMCPClientManagerOptions) {
+    this.ttlMs = options.ttlMs ?? 5 * 60 * 1000;
+    this.maxSize = options.maxSize ?? 100;
+  }
+
+  async getToolsMap(ctx: Context): Promise<Record<string, StructuredToolInterface[]>> {
+    const currentUser = ctx?.state?.currentUser ?? ctx?.auth?.user;
+    if (!currentUser?.id) {
+      return {};
+    }
+
+    let client: MultiServerMCPClient | null = null;
+    try {
+      this.evictExpired();
+
+      const entries = (await this.options.listEntries())
+        .filter((entry) => entry.enabled !== false && entry.useUserContext === true && entry.transport !== 'stdio')
+        .sort((left, right) => left.name.localeCompare(right.name));
+      if (!entries.length) {
+        return {};
+      }
+
+      const cacheKey = String(currentUser.id);
+      const cached = this.cache.get(cacheKey);
+      const now = Date.now();
+      if (cached && cached.expiresAt > now) {
+        cached.lastAccessedAt = now;
+        return cached.toolsMap;
+      }
+
+      if (cached) {
+        await this.closeEntry(cached);
+        this.cache.delete(cacheKey);
+      }
+
+      const connections: Record<string, MCPConnection> = {};
+      for (const entry of entries) {
+        const rendered = await renderMCPOptions(entry, this.options.app, ctx);
+        connections[entry.name] = this.options.buildConnection(rendered);
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/plugin.ts:251-283](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/plugin.ts#L251-L283)
+
+现有配置变更后的清理。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+  registerMcpClientEvents() {
+    this.db.on('aiMcpClients.afterCreate', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+
+    this.db.on('aiMcpClients.afterUpdate', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true || model.previous('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+
+    this.db.on('aiMcpClients.afterDestroy', (model: MCPClientModel, { transaction }: TransactionOptions = {}) => {
+      if (model.get('useUserContext') === true) {
+        this.clearMcpUserContextCacheAfterCommit(transaction);
+      }
+    });
+  }
+
+  private clearMcpUserContextCacheAfterCommit(transaction?: Transaction) {
+    const clearCache = () => {
+      this.ai.mcpManager.clearUserContextCache().catch((error) => {
+        this.app.log.warn('fail to clear user-bound mcp client cache', error);
+      });
+    };
+
+    if (transaction) {
+      transaction.afterCommit(clearCache);
+      return;
+    }
+
+    clearCache();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/plugins/@nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts:1377-1414](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-ai/src/server/ai-employees/ai-employee.ts#L1377-L1414)
+
+现有调用 pending/done 状态。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+  async updateToolCallPending(messageId: string, toolCallId: string) {
+    const [updated] = await this.aiToolMessagesModel.update(
+      {
+        invokeStatus: 'pending',
+        invokeStartTime: new Date(),
+      },
+      {
+        where: {
+          sessionId: this.sessionId,
+          messageId,
+          toolCallId,
+          invokeStatus: {
+            [Op.in]: ['init', 'waiting'],
+          },
+        },
+      },
+    );
+    return updated;
+  }
+
+  async updateToolCallDone(messageId: string, toolCallId: string, result: any) {
+    const [updated] = await this.aiToolMessagesModel.update(
+      {
+        invokeStatus: 'done',
+        invokeEndTime: new Date(),
+        status: result?.status ?? 'success',
+        content: result?.content ?? result,
+      },
+      {
+        where: {
+          sessionId: this.sessionId,
+          messageId,
+          toolCallId,
+          invokeStatus: 'pending',
+        },
+      },
+    );
+    return updated;
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/plugins/@nocobase/plugin-workflow/src/server/Processor.ts:721-747](https://github.com/nocobase/nocobase/blob/af4889f67b619d0dd1a039e45bbc5dd871d225f8/packages/plugins/%40nocobase/plugin-workflow/src/server/Processor.ts#L721-L747)
+
+现有数据库事务清理。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  private async cleanupScopeTransactions({ allowCommit = false } = {}) {
+    if (!this.scopeTransactions.size) {
+      return;
+    }
+    for (const [key, { transaction, dataSource, closing }] of Array.from(this.scopeTransactions.entries()).reverse()) {
+      const tx = transaction as TransactionWithFinished;
+      if (tx.finished) {
+        this.scopeTransactions.delete(key);
+        continue;
+      }
+      const action = closing === 'commit' && allowCommit ? 'commit' : 'rollback';
+      const actionText = action === 'commit' ? 'committing' : 'rolling back';
+      this.logger.warn(
+        `scope transaction (${key}) on data source "${dataSource}" was not closed before exit, ${actionText}`,
+        {
+          workflowId: this.execution.workflowId,
+        },
+      );
+      try {
+        await tx[action]();
+      } catch (error) {
+        this.logger.error(`scope transaction (${key}) fallback ${action} failed`, {
+          error,
+          workflowId: this.execution.workflowId,
+        });
+      } finally {
+        this.scopeTransactions.delete(key);
+```
+
+</details>
+
+#### 缺口
+
+- 没有原型、可信版本来源或外部服务对账实验
+  **影响**：无法证明方案有效、兼容或具备净收益
+  **进一步探讨**：固定模拟身份和远端接口后对照现状测错误、延迟和恢复成本
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

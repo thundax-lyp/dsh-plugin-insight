@@ -1,27 +1,27 @@
 {
     "repository": "GCWing/OpenBitFun",
     "repository_id": 1147866277,
-    "captured_at": "2026-10-27T02:08:43.210Z",
-    "window_start": "2026-09-27T02:08:43.210Z",
-    "stars": 3263,
-    "pushed_at": "2026-10-26T17:01:59Z",
+    "captured_at": "2026-11-01T08:13:08.475Z",
+    "window_start": "2026-10-02T08:13:08.475Z",
+    "stars": 3423,
+    "pushed_at": "2026-10-31T18:24:14Z",
     "issues": {
-        "open": 96,
-        "closed": 325,
-        "created_30d": 60,
-        "closed_30d": 28,
-        "updated_30d": 72
+        "open": 104,
+        "closed": 332,
+        "created_30d": 66,
+        "closed_30d": 35,
+        "updated_30d": 83
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T20:57:32.907Z",
+        "captured_at": "2026-10-31T09:58:25.350Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }

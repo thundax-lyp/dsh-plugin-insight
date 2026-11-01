@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[fba619f](https://github.com/superdesigndev/treg/tree/fba619fd7bd63837d464214a1e22449b16bd83d4)
+源码版本：[2fd1bb4](https://github.com/superdesigndev/treg/tree/2fd1bb46626b84c9180e7ca96271b105789e212c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,040](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C040&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
+[![GitHub ★ 6,887](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C887&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
 <!-- END META -->
 
-> **功能**：提供统一Agent工具目录、服务端凭据注入、API中继和调用计费管理。
+> **功能**：为 Agent 提供工具目录、凭据注入代理和调用计费。
 
-> **亮点**：[Q02](#research-q02)相对逐Agent分发供应商密钥，集中凭据binding与组织级幂等隔离有明确集成价值；DSH仅是Skill/MCP入口，不将全部平台贡献归于插件壳。
+> **亮点**：将目录、服务端密钥代理、费用与有限幂等结合；DSH Skill/MCP 是入口，服务主体属于根项目。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：[Q03](#research-q03)网关仍处理敏感数据与secret，调用失败也可能已计费；unknown outcome需对账，不能换key盲重试。
+> **主要限制**：客户端需主动提供 key 且保护有期限；未知结果可能已到达供应商，新 key 可能再次付费。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 统一工具目录替用户免去什么工作，哪些费用不能忽略？](#detail-section-11)
-  - [Q02 · Agent调用如何走到上游而不拿到真实供应商凭据？](#detail-section-12)
-  - [Q03 · 凭据不离开服务端是否等于请求安全且失败免费？](#detail-section-13)
-  - [Q04 · 统一账户是否减少成本还是转移了维护责任？](#detail-section-14)
-  - [Q05 · 怎样检验统一工具路由产生的增量？](#detail-section-15)
+  - [Q01 · 谁需要统一工具网关，与直连和 DSH 入口有何区别？](#detail-section-11)
+  - [Q02 · 请求怎样注入凭据，上游隔离依赖什么？](#detail-section-12)
+  - [Q03 · 幂等、未知结果和计费能保证什么？](#detail-section-13)
+  - [Q04 · 采用需要什么依赖、成本和退出条件？](#detail-section-14)
+  - [Q05 · 如何检验统一工具路由产生的增量？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,7 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Treg根项目是工具网关与凭据/计费平台，DSH子入口只提供Skill和MCP连接。目标是偶尔使用多供应商API、或团队需共享受控凭据的Agent开发者；合格结果是拿到目标provider实际响应并核清调用费用，原办法为逐家账号、密钥和工具接线。按需目录和服务端注入可降低接线摩擦，但作者宣传的价格、赠额与供应商订阅对比是固定README声明，不是本轮验证的现价或节省。单一已有API账户的用户，直连通常更简单。
+> **用途**：需要偶尔访问多供应商工具、或团队共享受控凭据的 Agent 开发者；直连单一供应商是基线。[Q01](#research-q01)
+
+逐家配置账号、API 和密钥；单一稳定供应商直连更简单。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -49,63 +51,61 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 工具发现 | 选择供应商端点 | 目录收录不保证可用 |
-| 凭据中继 | 服务端注入多binding | 需信任网关与上游 |
-| 调用对账 | 幂等和未知结果状态 | 新key可能再次收费 |
+| --- | --- | --- |
+| 目录发现 | 选择供应商工具 | 不保证可用 |
+| 凭据中继 | 服务端注入 binding | 须信任服务与上游 |
+| 结果对账 | 重放与未知结果 | 需客户端 key 和核对账单 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Treg服务和team token | 调用必需 | 统一鉴权 | DSH MCP禁用 |
-| provider账户/平台额度 | 相应端点必需 | 实际上游服务 | 拒绝或限流 |
-| 显式预算和数据许可 | 试用条件 | 控制费用与中转 | 不调用敏感/付费任务 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| Treg 服务与团队 token | 调用必需 | 鉴权和代理 | 无法调用 |
+| 上游权限及余额 | 相应端点必需 | 外部服务 | 可能拒绝或收费 |
+| 预算与数据许可 | 试用条件 | 管理费用与中转 | 不发送敏感任务 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 配team/token及明确预算 | MCP可发现 |
-| 2 | 选非敏感只读端点核对输入 | 返回可验证响应 |
-| 3 | 回读call_id费用和结果 | unknown先对账 |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 确定预算与凭据 | 配置 token |
+| 调用 | 用非敏感只读任务 | 核对实际结果 |
+| 恢复 | 查询 call_id 和账单 | 未知结果不盲换 key |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 账户/自托管环境 | key和预算配置 | 实际价格未核实 |
-| 持续 | 平台或原供应商收费 | 结果和费用核对 | 不将网关不meter当免费 |
-| 失败恢复 | 可能已付费的调用 | 查询call_id与重试决策 | 响应丢失不代表未执行 |
+| --- | --- | --- | --- |
+| 首次 | 服务、供应商费用未知 | 权限及预算配置 | 作者价格未核验 |
+| 持续 | 上游及平台可能收费 | 账单和结果核对 | 节约未对照 |
+| 恢复 | 调用可能已收费 | 查询状态并对账 | 超时不代表未执行 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 密钥集中 | binding与header过滤 | 全租户安全审计 |
-| 减少重复收费 | 同key unknown不重放 | 所有供应商结算覆盖 |
+| --- | --- | --- |
+| 凭据接线 | 服务端 binding 注入 | 实际安全性 |
+| 重复调用 | 有效期内的标签复用 | 所有场景恰好一次 |
 
-> **思考**：[Q03](#research-q03)网关仍处理敏感数据与secret，调用失败也可能已计费；unknown outcome需对账，不能换key盲重试。
+> **思考**：客户端需主动提供 key 且保护有期限；未知结果可能已到达供应商，新 key 可能再次付费。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02)相对逐Agent分发供应商密钥，集中凭据binding与组织级幂等隔离有明确集成价值；DSH仅是Skill/MCP入口，不将全部平台贡献归于插件壳。
+> **亮点**：将目录、服务端密钥代理、费用与有限幂等结合；DSH Skill/MCP 是入口，服务主体属于根项目。[Q01](#research-q01) [Q02](#research-q02)
 
-共享上游幂等按org隔离及未知结果不重放有借鉴价值，适合有外部副作用的工具网关。Python核心超出JS/TS LOC；目录数量和作者价格不能代替结果质量与费用核对。
+本地 key 结合 membership、primary tag 和 pin 分区；共享上游 key 额外按 org 与 pin 隔离；过期和无 key 不享受永久去重。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03)网关仍处理敏感数据与secret，调用失败也可能已计费；unknown outcome需对账，不能换key盲重试。
+客户端需主动提供 key 且保护有期限；未知结果可能已到达供应商，新 key 可能再次付费。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-需要多供应商API或团队凭据共享的开发者可先用非敏感只读任务和明确小预算试用Treg。相比逐家接线，它统一发现与服务端鉴权，但实际支出和任务收益未独立验证。若无法接受数据中转或不能核清未知调用费用，就停止重试并改用自有专用API。 依据 [Q01](#research-q01)、[Q03](#research-q03)、[Q04](#research-q04)。
+选择受控只读任务、核对账单及费用上限，异常时撤销 token 并回退直连。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -113,18 +113,18 @@
 
 **核查状态**：已检查源码。
 
-已有实现为固定源码检查支持；用户收益未实测；未来设计假设未验证。
+固定源码支持注入、标签分区和过期租约处理；未运行目标、核验部署、账单或安全性。
 
-- 已检查：作者 README、包清单、源码路径 README.md、dsh/index.js、dsh/cordis.patch.yml、src/treg/infra/upstream/relay.py、src/treg/application/call/reserve.py、src/treg/application/call/idempotency.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、pyproject.toml、package.json、dsh/index.js、dsh/cordis.patch.yml、src/treg/infra/upstream/relay.py、src/treg/application/call/idempotency.py、src/treg/application/call/settle.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：本轮只读固定提交，未执行目标代码或宿主验收；效果、人工耗时及持续采用情况未知。
-- 下一步：以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+- 边界：固定根 inventory 311 个指定扩展名文件、排除 3、解析错误 0；静态追踪 HTTP relay 和幂等代表路径，不覆盖全部供应商或运行时。
+- 下一步：隔离账户核对服务版本、上游账单、同 key 重试、过期、响应丢失和退出。
 
 **分析版本**
 
 - **仓库**：[superdesigndev/treg](https://github.com/superdesigndev/treg)
-- **版本号**：0.27.0（[固定提交 fba619f](https://github.com/superdesigndev/treg/tree/fba619fd7bd63837d464214a1e22449b16bd83d4)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.28.0（[固定提交 2fd1bb4](https://github.com/superdesigndev/treg/tree/2fd1bb46626b84c9180e7ca96271b105789e212c)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -132,9 +132,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)提出把候选价格、请求预览和失败对账纳入工具选择的未验证假设，对照直连API核对配置、费用和误重试。
+未验证假设：在工具选择中连接费用上限、幂等和对账入口，比较现有状态和直连下的误重试、成本与隐私代价。[Q05](#research-q05)
 
-以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+隔离账户核对服务版本、上游账单、同 key 重试、过期、响应丢失和退出。
 
 <a id="detail-section-9"></a>
 
@@ -143,16 +143,18 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 153 | 39473 | — | — | 404697 |
-| .js | source | 75 | 8362 | 7026 | 1390 | — |
+| .md | source | 165 | 42221 | — | — | 435862 |
+| .js | source | 75 | 8364 | 7025 | 1392 | — |
 | .mjs | example | 1 | 342 | 289 | 21 | — |
 | .md | example | 9 | 367 | — | — | 2805 |
 | .ts | example | 2 | 344 | 304 | 13 | — |
 | .js | example | 7 | 1075 | 853 | 173 | — |
-| .ts | test | 30 | 2852 | 2541 | 143 | — |
-| .ts | source | 19 | 1227 | 943 | 186 | — |
+| .ts | test | 31 | 2901 | 2586 | 143 | — |
+| .ts | source | 19 | 1265 | 971 | 194 | — |
 | .mjs | source | 1 | 15 | 13 | 2 | — |
 | .md | test | 1 | 90 | — | — | 2000 |
 
@@ -160,35 +162,35 @@
 
 **活跃度**
 
-[![Issue 未关闭 21](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=21&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+created%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-26T09%3A39%3A31.930Z..2026-10-26T09%3A39%3A31.930Z)
+[![Issue 未关闭 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=26&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=19&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
 
 
 
-统计日期：2026-10-26。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查Treg的具体任务增量、关键失败条件与可控采用路径。
+**插件研究总目标**：固定 Treg 根项目的网关价值、凭据注入、幂等和计费恢复边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 统一工具目录替用户免去什么工作，哪些费用不能忽略？
+### Q01 · 谁需要统一工具网关，与直连和 DSH 入口有何区别？
 
-**研究主题**：场景与需求、采用判断
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-Treg根项目是工具网关与凭据/计费平台，DSH子入口只提供Skill和MCP连接。目标是偶尔使用多供应商API、或团队需共享受控凭据的Agent开发者；合格结果是拿到目标provider实际响应并核清调用费用，原办法为逐家账号、密钥和工具接线。按需目录和服务端注入可降低接线摩擦，但作者宣传的价格、赠额与供应商订阅对比是固定README声明，不是本轮验证的现价或节省。单一已有API账户的用户，直连通常更简单。
+Treg 面向需要偶尔使用多个外部 API、或共享已有供应商凭据的 Agent 团队；它提供目录、代理、组织凭据和费用路径。相对逐家登录、手工集成和分发密钥，集中入口可能降低重复接线；单一稳定 API 直连更简单。README 的供应商订阅价格、赠额和节省是作者声明而非本轮核验现价。DSH 入口只发布 Skill 并配置 MCP，不能把网关服务贡献归于插件壳。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-15](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/README.md#L5-L15)
+**依据 1 · 源码核查**：[README.md:5-15](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/README.md#L5-L15)
 
-作者统一入口与自托管定位
+作者描述工具目录和目标。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -209,9 +211,9 @@ Built for the Superdesign team, live at [treg.to](https://treg.to) — anyone ca
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:24-44](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/README.md#L24-L44)
+**依据 2 · 源码核查**：[README.md:24-44](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/README.md#L24-L44)
 
-自有key与平台key区别
+作者区分目录与自有凭据。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -242,83 +244,44 @@ The vocabulary for the second half:
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[dsh/index.js:1-18](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/dsh/index.js#L1-L18)
 
-- 真实跨供应商需求强度与总支出对照没有独立数据。
-  **影响**：不能将多供应商目录推成普遍需求或已省钱。
-  **进一步探讨**：选有实际多供应商任务的团队，用相同只读API任务比较账号接线和总费用，不引用README现价作估算。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · Agent调用如何走到上游而不拿到真实供应商凭据？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-DSH代码注册读取随包Skill的provider；patch另挂MCP，只有TREG_TOKEN非空才启用，Skill安装不等于所有工具可调用。网关relay剥离自己的控制头和cookie，对binding指定的header/query/JSON字段注入服务端解密的secret；共享账号的Idempotency-Key按org和pin重域，避免不同团队撞到同一上游作业。相对每个Agent保存多个API key，增量是将凭据与供应商账户集中在服务端并提供统一发现/调用；仍需信任网关处理请求和密钥。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[dsh/index.js:66-100](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/dsh/index.js#L66-L100)
-
-Skill provider读取和内容返回
+DSH Skill 和 MCP 为独立行。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-async function loadSkill(signal) {
-  const content = await readFile(SKILL_BODY_URL, { encoding: 'utf8', signal })
-  const description = readDescription(content)
-  if (description === undefined) return undefined
-  return { description, content }
-}
-
-const provider = {
-  name: PROVIDER_NAME,
-  async list(options = {}) {
-    const skill = await loadSkill(options.signal)
-    if (skill === undefined) return []
-    return [{
-      name: SKILL_NAME,
-      description: skill.description,
-      invocation: INVOCATION,
-      provider: PROVIDER_NAME,
-      source: 'bundled',
-      resourceBase: RESOURCE_BASE,
-      rank: BUNDLED_SKILL_RANK,
-      locator: SKILL_BODY_URL,
-    }]
-  },
-  async get(_candidate, options = {}) {
-    const skill = await loadSkill(options.signal)
-    if (skill === undefined) return undefined
-    return {
-      name: SKILL_NAME,
-      description: skill.description,
-      invocation: INVOCATION,
-      provider: PROVIDER_NAME,
-      source: 'bundled',
-      resourceBase: RESOURCE_BASE,
-      content: skill.content,
-    }
+/**
+ * treg as a DeepSeek Harness (dsh) plugin.
+ *
+ * Registers one `ctx.skills` provider that publishes the generated
+ * `dsh/skills/treg/SKILL.md`. The MCP connector is NOT here: it is a separate
+ * row in `cordis.patch.yml`, disabled until `TREG_TOKEN` exists, so the skill
+ * still installs and reads with no token at all.
+ *
+ * Two constraints on this file, both load-bearing:
+ *
+ * - **Plain ESM, no build step.** `dsh plugin add github:...` fetches sources
+ *   rather than build output, and pnpm refuses to run a git dependency's
+ *   `prepare` script until the user allowlists it - so a compiled bundle would
+ *   fail every first install.
+ * - **No `@deepseek-ai/*` dependency.** An out-of-tree bundle depending on an
+ *   in-box package installs a second copy that drifts from the host's. The
+ *   provider's `list`/`get` contract is the stable seam, so it is implemented
+ *   directly here - the shape `dsh-skill-badge` uses for its own skill.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/cordis.patch.yml:19-34](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/dsh/cordis.patch.yml#L19-L34)
+**依据 4 · 源码核查**：[dsh/cordis.patch.yml:21-34](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/dsh/cordis.patch.yml#L21-L34)
 
-token门控MCP
+Token 缺失禁用 MCP。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-- insert:
-    - id: treg-skill
       name: treg-dsh
 
     # The expression may NOT begin with `!`: YAML reads a second `!` after the
@@ -337,23 +300,32 @@ token门控MCP
 
 </details>
 
-**依据 3 · 源码核查**：[src/treg/infra/upstream/relay.py:73-76](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/infra/upstream/relay.py#L73-L76)
+#### 缺口
 
-控制头过滤
+- 尚未运行服务、DSH 或真实计费请求
+  **影响**：不能证明线上可用、准确收费或任务收益
+  **进一步探讨**：用非敏感隔离账户对照直连并核对供应商账单
 
-```text
-def _is_dropped_request_header(name: str, extra: frozenset[str]) -> bool:
-    """Whether a caller header is ours/hop-by-hop and must not reach the upstream."""
-    return (name in _DROP_REQUEST or name in extra or name.startswith(_TREG_PREFIX)
-            or name == get_settings().client_ip_header.strip().lower())
-```
+<a id="research-q02"></a>
 
-**依据 4 · 源码核查**：[src/treg/infra/upstream/relay.py:99-116](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/infra/upstream/relay.py#L99-L116)
+<a id="detail-section-12"></a>
 
-共享key幂等隔离
+### Q02 · 请求怎样注入凭据，上游隔离依赖什么？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+对 HTTP relay，服务端按 binding 选择 secret，解密后向请求头、参数或 JSON 注入；绑定异常中止。上游共享凭据的 idempotency key 按组织与 pin 改写，以避免上游将不同租户相同标签合并；本地请求还按 membership、primary tag 和 pin 限定，fingerprint 包含方法、路径、查询和 body。请求内容与真实密钥仍经过服务和上游；这是信任转移而非隐私或安全认证，也不覆盖所有 CLI 本地执行路径。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/treg/infra/upstream/relay.py:99-125](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/infra/upstream/relay.py#L99-L125)
+
+共享上游 key 按组织和 pin 分区。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
 def scope_shared_idempotency_key(
@@ -374,36 +346,27 @@ def scope_shared_idempotency_key(
         (k, hashlib.sha256(scope + v).hexdigest().encode())
         if k.lower() == _IDEMPOTENCY_HEADER else (k, v)
         for k, v in raw_headers
+    )
+_DROP_RESPONSE = _HOP_BY_HOP
+_TREG_COOKIES = frozenset({"treg_session", "treg_oauth_state"})  # our cookies, scrubbed from Cookie
+
+
+def _scrub_treg_cookies(headers: httpx.Headers) -> None:
+    """Drop treg's own cookies from the forwarded Cookie header so a dashboard `credentials:'include'`
+    call never leaks our session token upstream. Other caller cookies are kept; an emptied header is removed."""
+    cookie = headers.get("cookie")
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/treg/infra/upstream/relay.py:176-216](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/infra/upstream/relay.py#L176-L216)
+**依据 2 · 源码核查**：[src/treg/infra/upstream/relay.py:195-223](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/infra/upstream/relay.py#L195-L223)
 
-绑定凭据注入
+binding 选取、解密、注入和失败处理。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-    json_bindings = any(binding.get("location") == "json" for binding in tool.bindings)
-    json_body: dict[str, object] | None = None
-    if json_bindings:
-        if not request.has_body or request.body_read is None:
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires a readable request body")
-        try:
-            parsed = json.loads(await request.body_read(), object_pairs_hook=_unique_json_object)
-        except ValueError as exc:
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires valid JSON with unique object keys") from exc
-        if not isinstance(parsed, dict):
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires a JSON object request body")
-        json_body = parsed
 
     # Apply every binding (a request may need several credentials at once).
     for binding in tool.bindings:
@@ -427,113 +390,178 @@ def scope_shared_idempotency_key(
             continue
         secret = secrets[binding["secret_id"]]
         raw = crypto.decrypt(secret.value)
+        try:
+            injectors.inject(headers, params, binding, raw, json_body=json_body)
+        except ValueError as exc:
+            raise GatewayFailed(
+                "injection_failed", status_code=502,
+                detail=f"credential injection failed: {exc}") from exc
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:55-80](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L55-L80)
+
+本地标签按 primary tag 和 pin 分区。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+def _scoped_idempotency_key(
+    key: str, meta: CallMeta, *, pinned_tags: dict | None = None,
+) -> str:
+    """The caller's label, PARTITIONED by the primary tag.
+
+    A reselling builder runs every one of their users through one token, so two of them will both
+    reach for `retry-1` — and `IdempotentCall` is unique on (membership_id, key), which would serve
+    the second user the FIRST one's stored response body. That is the cross-tenant leak the table was
+    built to prevent, reappearing one level down.
+
+    Folding the value into the stored key partitions retries exactly as widening the unique constraint
+    would, with no migration: `uq_idem_caller_key` is declared in `__table_args__`, so SQLAlchemy emits
+    it as a table CONSTRAINT inside CREATE TABLE — Postgres could drop it, sqlite could not without
+    rebuilding the table. Every access site keeps querying by (membership_id, key) and simply receives
+    this value.
+
+    The primary caller-asserted dimension still partitions unpinned callers. An enforced pin is
+    additionally part of the namespace: changing any pin must not expose an earlier cached body.
+    """
+    if not key:
+        return key
+    scoped = f"{meta.primary_val}{_IDEM_SCOPE_SEP}{key}" if meta.primary_val else key
+    if pinned_tags:
+        pins = json.dumps(pinned_tags, sort_keys=True, separators=(",", ":"))
+        return f"pins:{pins}{_IDEM_SCOPE_SEP}{scoped}"
+    return scoped
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/treg/application/call/idempotency.py:88-108](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L88-L108)
+
+指纹包含 method、path、query、body。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+def _request_fingerprint(method: str, rest: str, body: bytes, query: str = "") -> str:
+    """What the label was used FOR, so reusing it on a different request can be caught.
+
+    A client that reuses one label for two different requests has a bug. Quietly returning the first
+    answer would hide it, and the caller would be left wondering why their second call returned
+    somebody else's data. Refusing loudly is the useful behaviour, and it is what Stripe does.
+
+    The QUERY STRING is part of the request. It was missing here at first, and since most catalog
+    calls are GETs that carry all their arguments in the query, that made the check almost inert: two
+    genuinely different lookups under one label matched, and the second was answered with the first
+    one's data instead of the 422 this function exists to raise.
+    """
+    h = hashlib.sha256()
+    h.update(method.upper().encode())
+    h.update(b"\0")
+    h.update(rest.encode())
+    h.update(b"\0")
+    h.update((query or "").encode())
+    h.update(b"\0")
+    h.update(body or b"")
+    return h.hexdigest()
+```
+
+</details>
+
+#### 缺口
+
+- 尚未运行服务、DSH 或真实计费请求
+  **影响**：不能证明线上可用、准确收费或任务收益
+  **进一步探讨**：用非敏感隔离账户对照直连并核对供应商账单
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 凭据不离开服务端是否等于请求安全且失败免费？
+### Q03 · 幂等、未知结果和计费能保证什么？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、工程质量与复用
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-不是。数据仍经网关及上游，服务端secret解密和请求内容需被信任；JSON注入会解析和重序列化对象，不能视为原字节透明中继。平台调用有reserve与spend cap，trial quota依据异步audit计数可短暂滞后，不能当严格每次即时上限。幂等表对已付费但响应丢失返回明确lost/unknown而不重新执行同key，这是避免重复收费的良好边界，但换新key仍可能再次执行。不能从HTTP失败推断未执行或未计费。
+客户端未发 Idempotency-Key 就不启用本地记录；有效期内匹配的结果可重放避免重复打上游，不同请求复用返回 422，进行中返回 409。过期后标签重新可用。过期租约若无进行中的 hold 或任务，服务记录 410：有账证是 response_lost，否则 outcome_unknown，可能已到供应商；新 key 会再次调用。故超时不等于没发生或免费，应先查 call_id、平台及供应商账单，不能把窗口内保护外推成永久一次执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/treg/infra/upstream/relay.py:176-216](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/infra/upstream/relay.py#L176-L216)
+**依据 1 · 源码核查**：[src/treg/application/call/idempotency.py:42-49](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L42-L49)
 
-JSON重序列化和secret解析
-
-<details>
-<summary>查看原文（41行）</summary>
+标签由调用方提供，无标签不存储。
 
 ```text
-    json_bindings = any(binding.get("location") == "json" for binding in tool.bindings)
-    json_body: dict[str, object] | None = None
-    if json_bindings:
-        if not request.has_body or request.body_read is None:
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires a readable request body")
-        try:
-            parsed = json.loads(await request.body_read(), object_pairs_hook=_unique_json_object)
-        except ValueError as exc:
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires valid JSON with unique object keys") from exc
-        if not isinstance(parsed, dict):
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail="JSON credential injection requires a JSON object request body")
-        json_body = parsed
+def _idempotency_key(raw_header: str | None) -> str:
+    """The caller's label for this request, or "" when they sent none.
 
-    # Apply every binding (a request may need several credentials at once).
-    for binding in tool.bindings:
-        # A PLATFORM binding injects one of treg's own credentials (Google Ads' developer token),
-        # read from settings rather than an org secret. Keeping it out of the org's secret store
-        # matters: it's treg's credential, not the tenant's, so it must not be readable by them or
-        # extractable through a local run.
-        setting = binding.get("platform_setting")
-        if setting:
-            value = get_settings().platform_credential(setting, binding.get("account"))
-            if not value:
-                raise GatewayFailed(
-                    "injection_failed", status_code=502,
-                    detail=f"this server has no {setting} configured")
-            try:
-                injectors.inject(headers, params, binding, value, json_body=json_body)
-            except ValueError as exc:
-                raise GatewayFailed(
-                    "injection_failed", status_code=502,
-                    detail=f"credential injection failed: {exc}") from exc
-            continue
-        secret = secrets[binding["secret_id"]]
-        raw = crypto.decrypt(secret.value)
+    Only ever the client's. A server-invented key — hashing the URL and body, say — would silently
+    collapse two calls a caller genuinely MEANT to make twice, and "do this again" is a legitimate
+    thing to ask of an API. No header means today's behaviour exactly: no lookup, no storage.
+    """
+    return (raw_header or "").strip()[:_IDEM_MAX_KEY]
+```
+
+**依据 2 · 源码核查**：[src/treg/application/call/idempotency.py:111-145](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L111-L145)
+
+过期、指纹冲突、进行中和重放。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+async def _replay_idempotent(key: str, fingerprint: str, caller: Caller,
+                             db: AsyncSession) -> IdempotentReplay | None:
+    """The stored answer for this caller's label, or None if there is nothing to replay.
+
+    Returns a real response, so the provider is never reached and no money moves. That is the whole
+    point: merely skipping the second CHARGE would still make the second upstream call, which means
+    still paying the provider and simply absorbing the double cost ourselves.
+    """
+    row = (await db.execute(select(IdempotentCall).where(
+        IdempotentCall.membership_id == caller.membership.id,
+        IdempotentCall.key == key))).scalar_one_or_none()
+    if row is None:
+        return None
+    if row.expires_at < datetime.now(timezone.utc).replace(tzinfo=None):
+        # Past its window: the label is free again, and the call proceeds normally.
+        await db.delete(row)
+        await db.commit()
+        return None
+    if row.request_fingerprint and row.request_fingerprint != fingerprint:
+        raise IdempotencyFailed(
+            "idempotency_mismatch", status_code=422,
+            detail=(f"Idempotency-Key {_idem_display(key)!r} was already used for a different request. Use a new key, or "
+                    f"repeat the original request exactly."))
+    if (row.status != "done" and row.call_ref
+            and row.created_at < _utcnow() - timedelta(seconds=IDEMPOTENCY_STALE_PENDING_S)):
+        resolved = await _resolve_stale_claim(row, caller, db)
+        if resolved is not None:
+            return resolved
+    if row.status != "done" or row.response_status is None:
+        # Still in flight. The first call is talking to the provider right now; telling the caller to
+        # retry is honest and cheap, and it is what stops the second one duplicating the spend.
+        raise IdempotencyFailed(
+            "idempotency_in_progress", status_code=409,
+            detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
+                    "is still in progress — retry shortly"))
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/treg/application/call/reserve.py:57-72](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/application/call/reserve.py#L57-L72)
+**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:200-228](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L200-L228)
 
-trial计数的异步滞后
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-async def _enforce_trial_allowance(caller: Caller, provider: str, endpoint_id: str,
-                                   db: AsyncSession) -> None:
-    """Per-team, per-UTC-day call allowance for TRIAL-POOL providers (fx.yaml `kind: treg_trial`).
-
-    A trial provider is served on treg's own FREE-tier key at a $0 price, so the price gives no
-    brake at all — one looping agent would drain the shared vendor quota for every team at once.
-    The allowance is the brake, and it lives in the same fx entry as the zero (catalog.trial_pools).
-
-    Counted from audit rows: successful (2xx) platform calls whose catalog cost is not `free`.
-    A free discovery call consumes no vendor credit, so it neither checks nor consumes this paid-call
-    allowance. The audit is written fire-and-forget, so the count can lag a call or two under load;
-    for a free trial that slack is acceptable and bounded. Own-key (tier 2) calls never reach this
-    check — a team with its own key is never throttled by the trial it does not use.
-
-    FAIL-CLOSED like the platform cap: the quota being protected is the shared vendor key, and
-    serving blind when the count cannot be read is how the pool dies for everyone."""
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:200-227](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/application/call/idempotency.py#L200-L227)
-
-未知结果与响应丢失不重放
+陈旧租约的 410 与未知结果。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+async def _resolve_stale_claim(row: IdempotentCall, caller: Caller, db: AsyncSession):
     """Close an abandoned lease with a stored terminal answer; never run the key again.
 
     An open hold or a pending async task means the owner or its worker is not done: 409 (None
@@ -566,29 +594,59 @@ async def _enforce_trial_allowance(caller: Caller, provider: str, endpoint_id: s
 
 </details>
 
+**依据 4 · 源码核查**：[src/treg/application/call/settle.py:73-90](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/settle.py#L73-L90)
+
+费用处理随上游状态及报告而变化。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+
+
+def _platform_billable(status_code: int, cost_type: str) -> bool:
+    """MAY a response with this status cost us money? (plan §2.2) — the status gate only.
+      2xx                        → yes, the provider served it.
+      4xx                        → only under `per_call`, and only when the rejection is about the
+                                   CALLER'S INPUT (400/404/422 …). Even then the hold settles only
+                                   when the provider REPORTS a charge for it (`_platform_settle`):
+                                   no vendor has been seen billing a schema rejection. A
+                                   credential/quota refusal
+                                   (`_NOT_THE_CALLERS_FAULT`) is on us and is never billed — a 405
+                                   rejects the method OUR catalog selected, while a 429 on a
+                                   SHARED-plan key is treg's own saturation. Billing either would
+                                   charge teams for our metadata or congestion. Under
+                                   `per_result`/`per_success` a rejected request produced nothing.
+      5xx / 3xx / network error  → no. An upstream failure is never billed to the caller.
+    """
+    # 204 carries no result. For success-priced tools it is the provider's standard free-miss
+```
+
+</details>
+
 #### 缺口
 
-- 租户鉴权、密钥轮换与全部计费结算/异步供应商路径未完整安全审计。
-  **影响**：托管凭据和计费安全未全审计，限制可接入数据和写操作范围。
-  **进一步探讨**：跟踪Caller授权、secret访问/轮换、reserve到settle与异步作业结算，构造跨租户及未知结果对账案例。
+- 尚未运行服务、DSH 或真实计费请求
+  **影响**：不能证明线上可用、准确收费或任务收益
+  **进一步探讨**：用非敏感隔离账户对照直连并核对供应商账单
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 统一账户是否减少成本还是转移了维护责任？
+### Q04 · 采用需要什么依赖、成本和退出条件？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断、依赖、兼容与流程
 
 #### 完整回答
 
-首次使用托管服务需注册team/token并理解余额、预算和provider授权；自托管另承担数据库、secret加密与供应商运维。持续平台key按调用结算、自有key仍由原供应商计费，即使README说网关不meter也不代表上游免费。失败要用call_id查已收费用和结果，同key幂等无法恢复丢失响应时应先核对而非换key重跑。可先用非敏感只读测试源和显式低预算试验；不接受中转数据或无法对账的任务应直连专用API。
+使用网关需选择托管或自建、团队 token、供应商权限和预算；DSH 的 skill 可加载而 MCP 在缺 TREG_TOKEN 时禁用。README 说自有 key 的调用平台不计量，但供应商本身仍可能收费；目录平台计费、流量、运维及异常对账也有成本。先以非敏感只读任务、明确预算核验结果和账单；出现异常费用、不可接受的中转或对账失败时停止调用并撤销 token，回退既有直连。未实测部署、价格或节约。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:24-32](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/README.md#L24-L32)
+**依据 1 · 源码核查**：[README.md:24-32](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/README.md#L24-L32)
 
-作者计费边界
+README 区分平台与自有 key 计费声明。
 
 ```text
 ## Two kinds of tool, one token
@@ -602,71 +660,144 @@ async def _enforce_trial_allowance(caller: Caller, provider: str, endpoint_id: s
   metered.**
 ```
 
-**依据 2 · 源码核查**：[src/treg/application/call/reserve.py:111-118](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/application/call/reserve.py#L111-L118)
+**依据 2 · 源码核查**：[pyproject.toml:21-44](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/pyproject.toml#L21-L44)
 
-平台日上限与余额关系
-
-```text
-async def _enforce_platform_daily_cap(caller: Caller, add_micro: int, db: AsyncSession) -> None:
-    """Per-org, per-UTC-day ceiling on tier-4 spend. FAIL-CLOSED, unlike `_enforce_daily_cap`: that one
-    meters calls and may let a few extra through under load, this one meters OUR money, so a query that
-    cannot answer refuses the call. The cap is the blast radius of a runaway agent (and of a pricing
-    mistake in the catalog) — the balance alone is not enough, because auto-top-up can refill it."""
-    cap = budget_policy._effective_daily_cap(caller.org)
-    if cap <= 0:  # no limit applies: the balance (and the auto-top-up monthly cap) is the bound
-        return
-```
-
-**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:218-227](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/application/call/idempotency.py#L218-L227)
-
-查询已付费或未知调用
+CLI 与 server 依赖不同。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-    if charged:
-        detail = {"error": "idempotency_response_lost", "call_id": owner, "charged_micro": charged,
-                  "message": (f"the call with Idempotency-Key {label!r} completed and was charged, but "
-                              f"its response was not retained. GET /calls/{owner}/result may still "
-                              "have it; send a new key to call again.")}
-    else:
-        detail = {"error": "idempotency_outcome_unknown", "call_id": owner,
-                  "message": (f"the call with Idempotency-Key {label!r} stopped before its outcome was "
-                              f"recorded and may have reached the provider. GET /calls/{owner} shows "
-                              "what it cost; send a new key to call again.")}
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+# Base install = just the CLI. Light + pure-Python, so `pip install tools-registry` (and Homebrew) are
+# fast. Everything needed to RUN a registry server lives in the `[server]` extra below.
+dependencies = [
+    "httpx>=0.27,<1",
+    "posthog>=7.47.3",
+    "questionary>=2.0",
+    "toon-format==1.2.0",
+]
+
+[project.optional-dependencies]
+# The registry SERVER — host your own. The FastAPI app, the DB drivers, and encryption. Not needed to
+# USE the CLI against a hosted registry, only to RUN one. Install with: pip install "tools-registry[server]"
+server = [
+    "alembic>=1.16.5",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "sqlmodel>=0.0.22,<0.0.45",
+    "sqlalchemy[asyncio]>=2.0.42",
+    "aiosqlite>=0.20",
+    "asyncpg>=0.30",
+```
+
+</details>
+
+**依据 3 · 源码核查**：[dsh/cordis.patch.yml:21-34](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/dsh/cordis.patch.yml#L21-L34)
+
+MCP token 和 hosted URL。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+      name: treg-dsh
+
+    # The expression may NOT begin with `!`: YAML reads a second `!` after the
+    # `!!js` tag as another tag property and the whole file fails to parse
+    # ("duplication of a tag property"), taking the profile down with it.
+    - id: treg-mcp
+      name: '@deepseek-ai/dsh-mcp-client'
+      disabled: !!js (process.env.TREG_TOKEN ?? '') === ''
+      config:
+        serverName: treg
+        transport: streamable-http
+        url: https://treg.to/mcp/
+        headers:
+          Authorization: !!js '`Bearer ${process.env.TREG_TOKEN}`'
 ```
 
 </details>
 
 #### 缺口
 
-- 当前价格、预算实际覆盖、secret维护与单位合格任务费用未量化。
-  **影响**：费用、预算与恢复责任未量化，尚不能认定经济上划算。
-  **进一步探讨**：回读所选端点实际报价及预算规则，用明确小预算记录成功/失败/未知调用和对应账单。
+- 尚未运行服务、DSH 或真实计费请求
+  **影响**：不能证明线上可用、准确收费或任务收益
+  **进一步探讨**：用非敏感隔离账户对照直连并核对供应商账单
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 怎样检验统一工具路由产生的增量？
+### Q05 · 如何检验统一工具路由产生的增量？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-由统一relay和明确unknown outcome推导未验证假设：把每次工具选择附上候选价格、预计请求与失败对账入口，可能比仅展示工具数量更利于控制Agent调用。对同一只读数据任务比较直连API与Treg，记录发现/配置时间、合格响应、总计费与未知结果后误重试；如果便利不足覆盖网关信任和延迟，则只作为团队凭据入口。该假设不把供应商数量当质量或可用性保证。
+未验证假设：在工具选择界面合并供应商费用上限、幂等标签与未知结果的对账入口，可能减少多供应商任务中误重试和人工核查。它必须区分可获得的价格、估计和未知，并保留用户授权；现有 call_id、已收费及 result 查询、状态 409/410 已提供反证，新增界面未必改善。用相同任务分别对照现有网关及直接 API，在模拟延迟与响应丢失时测重复调用、账单偏差、查证时间、误报和敏感数据暴露；若无改进或成本高则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/treg/application/call/idempotency.py:200-227](https://github.com/superdesigndev/treg/blob/fba619fd7bd63837d464214a1e22449b16bd83d4/src/treg/application/call/idempotency.py#L200-L227)
+**依据 1 · 源码核查**：[src/treg/application/call/idempotency.py:111-145](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L111-L145)
 
-对账与未知结果语义支持决策可见性
+现有 409 和复用。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
+async def _replay_idempotent(key: str, fingerprint: str, caller: Caller,
+                             db: AsyncSession) -> IdempotentReplay | None:
+    """The stored answer for this caller's label, or None if there is nothing to replay.
+
+    Returns a real response, so the provider is never reached and no money moves. That is the whole
+    point: merely skipping the second CHARGE would still make the second upstream call, which means
+    still paying the provider and simply absorbing the double cost ourselves.
+    """
+    row = (await db.execute(select(IdempotentCall).where(
+        IdempotentCall.membership_id == caller.membership.id,
+        IdempotentCall.key == key))).scalar_one_or_none()
+    if row is None:
+        return None
+    if row.expires_at < datetime.now(timezone.utc).replace(tzinfo=None):
+        # Past its window: the label is free again, and the call proceeds normally.
+        await db.delete(row)
+        await db.commit()
+        return None
+    if row.request_fingerprint and row.request_fingerprint != fingerprint:
+        raise IdempotencyFailed(
+            "idempotency_mismatch", status_code=422,
+            detail=(f"Idempotency-Key {_idem_display(key)!r} was already used for a different request. Use a new key, or "
+                    f"repeat the original request exactly."))
+    if (row.status != "done" and row.call_ref
+            and row.created_at < _utcnow() - timedelta(seconds=IDEMPOTENCY_STALE_PENDING_S)):
+        resolved = await _resolve_stale_claim(row, caller, db)
+        if resolved is not None:
+            return resolved
+    if row.status != "done" or row.response_status is None:
+        # Still in flight. The first call is talking to the provider right now; telling the caller to
+        # retry is honest and cheap, and it is what stops the second one duplicating the spend.
+        raise IdempotencyFailed(
+            "idempotency_in_progress", status_code=409,
+            detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
+                    "is still in progress — retry shortly"))
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/treg/application/call/idempotency.py:200-228](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/src/treg/application/call/idempotency.py#L200-L228)
+
+现有 call_id、收费和查询入口。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+async def _resolve_stale_claim(row: IdempotentCall, caller: Caller, db: AsyncSession):
     """Close an abandoned lease with a stored terminal answer; never run the key again.
 
     An open hold or a pending async task means the owner or its worker is not done: 409 (None
@@ -698,5 +829,20 @@ async def _enforce_platform_daily_cap(caller: Caller, add_micro: int, db: AsyncS
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[README.md:12-13](https://github.com/superdesigndev/treg/blob/2fd1bb46626b84c9180e7ca96271b105789e212c/README.md#L12-L13)
+
+作者建议搜索任务、读价格再调用。
+
+```text
+**Ask for the task, not the tool.** You do not need to know which vendor sells backlink data, or to
+hold an account with them. Search for what you want to do, read the price, call it.
+```
+
+#### 缺口
+
+- 尚未运行服务、DSH 或真实计费请求
+  **影响**：不能证明线上可用、准确收费或任务收益
+  **进一步探讨**：用非敏感隔离账户对照直连并核对供应商账单
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
