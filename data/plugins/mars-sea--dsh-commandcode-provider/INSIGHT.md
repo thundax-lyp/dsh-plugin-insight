@@ -1,18 +1,18 @@
-# dsh-commandcode-provider
+# DSH Command Code Provider
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[d08ede5](https://github.com/Mars-Sea/dsh-commandcode-provider/tree/d08ede5874e4bee2827cf438c971d3649f23d7c0)
+源码版本：[5c5a0db](https://github.com/Mars-Sea/dsh-commandcode-provider/tree/5c5a0db24d5797d8a40cd873133ef7814ca2540a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 441](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=441&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Mars-Sea/dsh-commandcode-provider) [![npm 30d 13,618](https://img.shields.io/static/v1?label=npm+30d&message=13%2C618&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mars-sea/dsh-commandcode-provider) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mars-sea/dsh-commandcode-provider)
+[![GitHub ★ 447](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=447&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Mars-Sea/dsh-commandcode-provider) [![npm 30d 13,208](https://img.shields.io/static/v1?label=npm+30d&message=13%2C208&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mars-sea/dsh-commandcode-provider) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mars-sea/dsh-commandcode-provider)
 <!-- END META -->
 
-> **功能**：将 Command Code 模型、账户和配额信息接入 DSH 的非官方供应商插件
+> **功能**：在 DeepSeek Harness 中接入 Command Code 模型与账户。
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 在上游移植基础上组合DSH账户路由和有界错误处理，增量是集成而非新模型。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 将上游模型和账户整合到 DSH；模型质量与可用性属于上游。
 
-> **主要限制**：[Q03](#research-q03) 有界重试只限制部分失败，逆向协议依赖外部稳定性，ZDR请求和估计成本不能证明服务端留存或账单。
+> **主要限制**：[Q03](#research-q03) 分层重试不能证明远端未执行，[Q04](#research-q04) 本地 ZDR 请求头与价格估算不能证明留存政策或账单。
 
 **本文目录**
 
@@ -26,10 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要它，已有能力与新增贡献怎样区分？](#detail-section-11)
-  - [Q02 · 注册如何连到换账号和流式结果？](#detail-section-12)
-  - [Q03 · 有界重试能保证什么，哪些承诺不能推出？](#detail-section-13)
-  - [Q04 · 什么人可试用，怎样验证恢复值得复杂性？](#detail-section-14)
+  - [Q01 · 哪类已有账户用户通过插件做什么，与直接使用服务或原生模型供应商相比有何增量？](#detail-section-11)
+  - [Q02 · 请求如何选择账户、建立流并转成宿主消息？](#detail-section-12)
+  - [Q03 · 失败重试何时切账户，哪些请求或费用可能重复？](#detail-section-13)
+  - [Q04 · 凭据、上下文和费用边界是什么？](#detail-section-14)
+  - [Q05 · 用户需要什么依赖、如何试用并回退？](#detail-section-15)
+  - [Q06 · 能否让用户准确识别失败层次和不可知费用？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已有Command Code账户的DSH用户，把供应商模型与账户信息接入当前profile。
+> **用途**：已有 Command Code 账户的 DSH 用户希望在当前宿主调用其模型。
 
-Command Code官方客户端或手工供应商适配；模型质量与套餐能力不归插件。
+可直接使用 Command Code 或切回 DSH 已有供应商；模型能力由上游提供。
 
 <a id="detail-section-3"></a>
 
@@ -51,63 +53,64 @@ Command Code官方客户端或手工供应商适配；模型质量与套餐能�
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 供应商接入 | 使用已有Command Code账户 | 非官方协议；需要自有账户与网络 |
-| 账户轮换 | 恢复流前账户拒绝 | 不是流中无缝恢复保证 |
+| 模型供应商 | 在 DSH 路由聊天请求 | 需要账户、密钥和服务 |
+| 账户轮换 | 处理特定前流拒绝 | 不保证上游未处理请求 |
+| 传输预算 | 限制特定 transport 重试 | 其他层还有独立分支 |
+| ZDR 请求选项 | 请求零留存路由 | 默认关闭，实际承诺需向上游核验 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
 |---|---|---|---|
-| 匹配的DSH profile | 必需 | 注册供应商 | 先核准入范围，版本外暂停 |
-| 自有Command Code账户与密钥 | 必需 | 鉴权/套餐模型 | 不发送请求，回官方客户端 |
-| 可达API与网络 | 必需 | 连接和流式返回 | 预算耗尽后人工排查 |
-| 多个账户 | 可选 | 流前轮换 | 单账户仍可使用，但无轮换收益 |
+| Node >=24.9 与兼容 DSH | 插件需要 | 装载 provider 和客户端 | 启动或兼容失败 |
+| Command Code 账户与密钥 | 模型调用需要 | 身份认证 | 请求被拒 |
+| 外部服务和网络 | 请求需要 | 接收模型流 | 失败并受预算约束 |
+| 多账户 | 可选 | 特定拒绝时切换 | 无替代账户时直接失败 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户核宿主版本并装独立profile | 模型卡和路由出现 |
-| 2 | 用户配置自有密钥并发小额对话 | 实际模型/账户/结果可核对 |
-| 3 | 用户验证取消和拒绝恢复 | 无重复无效切key；异常停用路由 |
+| 准备 | 用户核实账户、宿主及允许发送的内容 | 数据不允许外发时停止 |
+| 配置 | 提供凭据并选择模型与隐私选项 | 密钥不出现在报告中 |
+| 调用 | 先发单个非敏感请求 | 检查流是否完整 |
+| 恢复 | 核查错误、请求历史和账单 | 状态未知时暂停重发并切回原供应商 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 账户与本地环境 | 凭据/网络/宿主配置 | 当前套餐金额未查询 |
-| 持续 | 供应商模型费用 | 核对配额和请求 | 估计不等于账单 |
-| 失败恢复 | 重试可能产生请求成本 | 等待、切模型/账户及排障 | 总尝试成本未测 |
-| 退出 | 原账户继续由用户管理 | 移除路由与清理凭据 | 官方客户端可作退路 |
+| 首次 | 账户、网络费用未知 | 配置密钥和宿主 | 版本兼容未测 |
+| 持续 | 模型实际计费未知 | 核对输出和账户用量 | ZDR 与目录价可能不同 |
+| 恢复 | 重试可能产生未知费用 | 核查错误与账单 | 是否收到上游请求未知 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| DSH接入 | adapter注册与流式链路 | 当前服务/宿主实机可用 |
-| 恢复边界 | 流前tried集合和传输预算 | 任务成功率、总费用与时间 |
+| 模型接入 | provider 注册与请求构造 | 服务可用与质量 |
+| 账户轮换 | 特定前流拒绝切换候选 | 远端恰好一次 |
+| 隐私选项 | 按配置发送 ZDR 头 | 上游真实留存和训练策略 |
 
-> **思考**：[Q03](#research-q03) 有界重试只限制部分失败，逆向协议依赖外部稳定性，ZDR请求和估计成本不能证明服务端留存或账单。
+> **思考**：[Q03](#research-q03) 分层重试不能证明远端未执行，[Q04](#research-q04) 本地 ZDR 请求头与价格估算不能证明留存政策或账单。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 在上游移植基础上组合DSH账户路由和有界错误处理，增量是集成而非新模型。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 将上游模型和账户整合到 DSH；模型质量与可用性属于上游。
 
-[Q02](#research-q02)、[Q03](#research-q03) 将模型级失效、账户级拒绝与传输预算区分，值得借鉴；外部逆向协议需持续维护。
+[Q02](#research-q02) 请求按账户和协议发送，[Q03](#research-q03) 的 transport 与账户轮换预算分层，不能当统一幂等保证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 有界重试只限制部分失败，逆向协议依赖外部稳定性，ZDR请求和估计成本不能证明服务端留存或账单。
+[Q03](#research-q03) 分层重试不能证明远端未执行，[Q04](#research-q04) 本地 ZDR 请求头与价格估算不能证明留存政策或账单。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 已有账户者可在独立profile先做小额对话与取消测试；失败归属不清或费用异常时停止自动重试并回官方客户端。
+[Q05](#research-q05) 已有账户的用户可先用非敏感单轮核对模型输出与账单；目标、留存或请求结果不明时暂停并退回原供应商。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +118,18 @@ Command Code官方客户端或手工供应商适配；模型质量与套餐能�
 
 **核查状态**：已检查源码。
 
-供应商注册和部分故障分支有源码支持；服务可用、账单、留存及诊断收益未验证。
+固定版本供应商注册、请求与部分错误分支已查；未运行宿主或外部服务。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/adapter.ts、src/transport-retry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.ts、src/adapter.ts、src/transport-retry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查根说明、供应商入口、adapter连接/轮换/收束接线及重试预算；未全面审计账户池、UI、隐私或服务端。
-- 下一步：同模型和账户任务对比单账户手工切换与插件路径，注入断连/取消/拒绝，核对定位时间、总尝试和实际费用；收益不足即否定诊断假设。
+- 边界：只读固定提交 README、清单、provider 入口、adapter、账户轮换、传输重试及隐私请求代表分支；未运行宿主、模型、上游或网络，未穷尽 UI、账户池和所有搜索路径。
+- 下一步：用假服务区分请求前、响应丢失、账户拒绝及流中断；按 [Q06](#research-q06) 核对收据、实际尝试及服务商账单。
 
 **分析版本**
 
 - **仓库**：[Mars-Sea/dsh-commandcode-provider](https://github.com/Mars-Sea/dsh-commandcode-provider)
-- **版本号**：0.15.5（[固定提交 d08ede5](https://github.com/Mars-Sea/dsh-commandcode-provider/tree/d08ede5874e4bee2827cf438c971d3649f23d7c0)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.16.3（[固定提交 5c5a0db](https://github.com/Mars-Sea/dsh-commandcode-provider/tree/5c5a0db24d5797d8a40cd873133ef7814ca2540a)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +137,9 @@ Command Code官方客户端或手工供应商适配；模型质量与套餐能�
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 从分层拒绝机制推导失败归属/剩余预算可见性假设，对照定位时间、无效切key和总尝试；无改善或成本升高则推翻。
+[Q06](#research-q06) 假设脱敏逐次收据和未知状态可改善失败与费用判断；尚未实现或验证。
 
-同模型和账户任务对比单账户手工切换与插件路径，注入断连/取消/拒绝，核对定位时间、总尝试和实际费用；收益不足即否定诊断假设。
+用假服务区分请求前、响应丢失、账户拒绝及流中断；按 [Q06](#research-q06) 核对收据、实际尝试及服务商账单。
 
 <a id="detail-section-9"></a>
 
@@ -145,215 +148,311 @@ Command Code官方客户端或手工供应商适配；模型质量与套餐能�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 29 | 6184 | — | — | 219968 |
-| .mjs | source | 18 | 4547 | 3368 | 986 | — |
-| .mjs | test | 3 | 200 | 140 | 38 | — |
-| .js | source | 2 | 23650 | 18982 | 5371 | — |
-| .ts | source | 71 | 23255 | 14142 | 7960 | — |
-| .tsx | source | 6 | 3909 | 3017 | 765 | — |
-| .ts | test | 50 | 23749 | 19171 | 3091 | — |
+| .md | source | 29 | 6367 | — | — | 236175 |
+| .mjs | source | 18 | 4664 | 3457 | 1010 | — |
+| .mjs | test | 3 | 214 | 152 | 39 | — |
+| .js | source | 2 | 24017 | 19215 | 5534 | — |
+| .ts | source | 72 | 23533 | 14261 | 8110 | — |
+| .tsx | source | 6 | 3988 | 3081 | 781 | — |
+| .ts | test | 52 | 24139 | 19462 | 3152 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 8](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=8&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 24](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=24&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z) [![近30天关闭 22](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=22&color=737b86&logo=github)](https://github.com/Mars-Sea/dsh-commandcode-provider/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z)
 
-暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-10-28。
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：非官方供应商适配如何兼顾账户切换和有界故障恢复？
+**插件研究总目标**：核查账户模型路由、重试、数据及费用边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要它，已有能力与新增贡献怎样区分？
+### Q01 · 哪类已有账户用户通过插件做什么，与直接使用服务或原生模型供应商相比有何增量？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标是已有Command Code账户、希望在DSH profile内使用对应模型的人。README明确非官方集成，移植自MIT许可pi-commandcode-provider；模型能力、套餐和服务可用性归供应商。相较切换到Command Code客户端或自行写适配，本插件把模型路由、账户状态与宿主设置组合进DSH，贡献在集成与故障处理。合格任务应完成同一模型对话/工具调用且能解释实际使用账户，不能把模型数量当业务收益。
+README:13-15 将本项描述为社区维护的非官方 Command Code 供应商移植，需要用户自己的账户和密钥；package.json:1-4 声明 DSH 模型卡和动态模型目录。index.ts:642-647 将 provider 与 adapter 注册到宿主。与直接使用 Command Code 或 DSH 已有供应商相比，具体增量是把既有服务接到 DSH 模型选择、消息协议和账户设置；模型能力、价格与服务可用性属于上游，不能以适配层推断其质量或净收益。未做同任务对照。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:13-40](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/README.md#L13-L40)
+**依据 1 · 作者声明**：[README.md:13-15](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L13-L15)
 
-上游归属、账户前提及目标功能
-
-<details>
-<summary>查看原文（28行）</summary>
+作者说明移植、身份和账户要求。
 
 ```text
 Unofficial [DeepSeek Harness](https://deepseek-harness.github.io/deepseek-harness/) LLM provider plugin for **Command Code**, ported from [pi-commandcode-provider](https://github.com/patlux/pi-commandcode-provider) (MIT).
 
 > Community integration. You need your own Command Code account, API key or subscription, and Command Code's terms apply. Not affiliated with Command Code, Inc.
-
-## Quick start
-
-| | |
-|---|---|
-| Verified engines | dsh `>=0.2.1-rc.2 <0.2.2-0` (every `0.2.1` RC from `0.2.1-rc.2` on) |
-| Install — web | `dsh plugin --profile web add @mars-sea/dsh-commandcode-provider@latest` |
-| Install — terminal | `dsh plugin --profile dsh-tui add @mars-sea/dsh-commandcode-provider@latest` |
-| Config file | `$DSH_HOME/settings.yaml` → `llm-commandcode:` |
-| API key env | `COMMANDCODE_API_KEY` |
-| Usage dashboard | `/commandcode` |
-
-## Features
-
-- **Plugin bundle** — one `dsh plugin add` installs a `commandcode` provider route with the live model catalog.
-- **Settings page** — accounts (keys, browser sign-in, live quota, dedicated models), model visibility, privacy switches, connection options.
-- **Annotated catalog** — plan tier, deal/`FREE` badge, peak/off-peak, image support and context window in the picker; free models first.
-- **Multi-account rotation** — an exhausted account hands over to the next one; pin a preferred account or route models to dedicated ones.
-- **Browser sign-in** — run the official authorization flow from the settings page; the approved key lands in the local credential store.
-- **Plans & quota panel** — optional sidebar card with the serving account's plan, 5-hour and weekly windows, balances and reset times.
-- **Session cost estimate** — published-rate estimates (`≈`) beside the composer token counter, priced per request from durable session history.
-- **Model analysis** — tokens, estimated cost, response timing and failures by session or date range. [Scope](docs/模型成本与性能分析.md).
-- **Web search** — the dsh `web_search` tool is served by Command Code (`/alpha/web-search`) with the same key and endpoint as chat.
-- **Zero data retention** — optional ZDR routing (`x-cmd-zdr: 1`), off by default.
-- **Context & output limits** — override the metered context window globally or per model, and cap or omit the per-turn `max_tokens`.
 ```
 
-</details>
+**依据 2 · 源码核查**：[package.json:1-4](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/package.json#L1-L4)
 
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 注册如何连到换账号和流式结果？
-
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-index构造adapter时提供resolveApiKey和rotateApiKey，再注册为commandcode供应商。拒绝原因按账户健康或模型暂不可用区分，tried集合避免同一key反复轮换。adapter把请求序列化后connectGenerate，未流式输出前的账户拒绝才考虑换key；连接成功后交给settleStreamResponse处理流、取消与清理。实现支持模型级失效与密钥级失效分开，不应把某个模型无额度永久视作整把key无效。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:577-625](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L577-L625)
-
-账户/模型分层标记及tried集合
-
-<details>
-<summary>查看原文（49行）</summary>
+包的功能描述与版本。
 
 ```text
-  const adapter: CommandCodeAdapter<HostCommandCodeOptions> = new CommandCodeAdapter({
-    options,
-    resolveApiKey,
-    // Pre-stream account-scoped rejection: mark the rejected key when the
-    // reason warrants it and hand the adapter the next account's key. When
-    // every account is unusable the pool's own RATE_LIMIT / INVALID_CREDENTIAL
-    // error is what the caller sees, not the raw provider rejection.
-    rotateApiKey: async (
-      rejectedKey: string,
-      rejection: AccountRotationReason,
-      connection: HostCommandCodeOptions,
-      model?: string,
-      rotation?: { tried: readonly string[]; resetAtMs?: number },
-    ): Promise<string | undefined> => {
-      // Only the two account-health reasons become account marks: an
-      // `unavailable` rejection (no credits, a model outside this account's
-      // plan) says nothing durable about the KEY — a `:free` model is still
-      // served by a credits-empty account. It does say something about this
-      // account ON THIS MODEL, though, and forgetting that made every later
-      // request pick the same doomed account first (issue #51's remaining
-      // half). It therefore lands as a model-scoped, short-lived PREFERENCE
-      // demotion: the same model skips the account for a few minutes, while
-      // other models and `:free` models keep serving it. `rate-limit` and
-      // `throttled` both mark but with different causes, so the pool's own
-      // diagnosis never reports a plain throttle as an exhausted usage window
-      // (issue #54).
-      const accounts = scopedPool(connection)
-      if (rejection !== 'unavailable') {
-        accounts.markRejected(rejectedKey, rejection, rotation?.resetAtMs)
-      } else if (model !== undefined) {
-        accounts.markModelUnavailable(rejectedKey, model)
-      }
-      // The whole tried set, not just the rejected key, reaches the pool: a
-      // rejection that does not mark the key would otherwise be re-offered on
-      // every attempt and a four-account pool could never reach the accounts
-      // behind it. The model rides along so model-routing rules pick the next
-      // account for the same model. An EMPTY set must not be forwarded — the
-      // pool reads it as "nothing was tried" and drops the filter this set
-      // exists for.
-      const tried = rotation?.tried?.length ? rotation.tried : [rejectedKey]
-      const resolved = await accounts.resolveKey(
-        model === undefined ? { tried } : { tried, model },
-      )
-      // Normalize like the initial resolution does: the pool keys its state
-      // by the resolved key, so the adapter must send (and report back) the
-      // same normalized form or the marks would miss.
-      return resolved === undefined
-        ? undefined
-        : assertUsableApiKey(resolved.key, 'llm-commandcode', resolved.slot.ref ?? `${resolved.slot.label} (config.apiKey)`)
+{
+  "name": "@mars-sea/dsh-commandcode-provider",
+  "version": "0.16.3",
+  "description": "Unofficial DeepSeek Harness LLM provider plugin for Command Code, ported from pi-commandcode-provider (MIT). Registers the 'commandcode' provider route with a Models-page card and live model catalog.",
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/index.ts:642-647](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L642-L647)
 
-**依据 2 · 源码核查**：[src/index.ts:644-647](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L644-L647)
-
-真实供应商注册
+宿主注册 provider 与 adapter。
 
 ```text
+  // The Models page card. An empty `settingsPath` means the whole
+  // `llm-commandcode` section configures this provider.
   ctx.llm.registerConfigurableProviders([
     { provider: PROVIDER, displayName: 'Command Code', settingsNs: NS, settingsPath: [] },
   ])
   ctx.llm.registerAdapter([PROVIDER], adapter)
 ```
 
-**依据 3 · 源码核查**：[src/adapter.ts:3557-3563](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/adapter.ts#L3557-L3563)
+#### 缺口
 
-轮换明确限制在流前
+- 无直接 API、其他宿主供应商和真实任务对照
+  **影响**：无法量化质量、成本或节时
+  **进一步探讨**：固定模型、提示和预算对照服务直连与 DSH 路径。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 请求如何选择账户、建立流并转成宿主消息？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+index.ts:642-647 注册 adapter；adapter.ts:1580-1604 的依赖契约描述按连接配置和模型解析密钥，前流阶段的账户拒绝可询问下一个账户，已尝试集合防止重复提供。2357-2394 将序列化消息和 Bearer 密钥通过选定协议 POST；2422-2437 把非成功响应转为状态、错误和可选 retry-after。adapter.ts:3784-3798 将成功 response 交给流收束器；实际模型目录、格式转换和服务器是否正确处理需另测。源码中的账户范围判定不证明供应商端尚未处理或计费。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/index.ts:642-647](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L642-L647)
+
+注册宿主供应商。
 
 ```text
-    // Account rotation loop: the first attempt uses the pool's active key; a
-    // pre-stream 429/401 rotates to the next account (at most one attempt per
-    // distinct key, hard-capped so a misbehaving hook cannot loop forever).
-    // requestTimeoutMs bounds the headers wait of EACH attempt (see
-    // connectGenerate); the body is account-independent, nothing has
-    // streamed yet, so the switch is invisible to the caller.
-    const tried = new Set<string>()
+  // The Models page card. An empty `settingsPath` means the whole
+  // `llm-commandcode` section configures this provider.
+  ctx.llm.registerConfigurableProviders([
+    { provider: PROVIDER, displayName: 'Command Code', settingsNs: NS, settingsPath: [] },
+  ])
+  ctx.llm.registerAdapter([PROVIDER], adapter)
 ```
 
-**依据 4 · 源码核查**：[src/adapter.ts:3616-3626](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/adapter.ts#L3616-L3626)
+**依据 2 · 源码核查**：[src/adapter.ts:1580-1604](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L1580-L1604)
 
-序列化与连接
+密钥解析与前流切换契约。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-          try {
-            serialized = JSON.stringify(body, (_key, value: unknown) => sanitizeSurrogates(value))
-          } finally { finishSerialization() }
-          serializedBodies.set(body, serialized)
-        }
-        const attempt = await connectGenerate(connectDeps, apiKey, protocol, serialized)
-        if ('response' in attempt) {
-          connected = attempt
-          break
-        }
-        const providerError = parseProviderError(attempt.errText)
+  /** Resolve the current connection facts (fresh per request, settings-aware). */
+  options: () => C
+  /**
+   * Resolve a usable API key for the given connection facts and the request's
+   * model id, or throw `MISSING_CREDENTIAL`. The model is optional: hosts
+   * without model-aware routing ignore it.
+   */
+  resolveApiKey: (connection: C, model?: string) => Promise<string>
+  /**
+   * Multi-account rotation hook: the request sent with `rejectedKey` was
+   * refused before any response body streamed, for an account-scoped reason
+   * (see {@link AccountRotationReason}). The host marks that key when the
+   * reason warrants it and returns the next account's key to retry with, or
+   * `undefined` to surface the failure. Only pre-stream rejections rotate — a
+   * mid-stream failure never replays a partially consumed generation against
+   * another account.
+   *
+   * `rotation.tried` lists every key this request has already used (the
+   * just-rejected one included). The host must not offer one of them again:
+   * with several accounts a rejection that does not mark the key (a plan or
+   * balance rejection is model-specific, not account-fatal) would otherwise
+   * re-offer the same account on every attempt and the pool could never reach
+   * the accounts behind it. `rotation.resetAtMs` carries the provider's own
+   * reset time when the rejection body published one, so the host can hold the
+   * key out until then instead of waiting for a billing probe to learn the
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/adapter.ts:3681-3703](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/adapter.ts#L3681-L3703)
+**依据 3 · 源码核查**：[src/adapter.ts:2357-2394](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L2357-L2394)
 
-拒绝分类、取消及换账号
+请求头、正文与 POST。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（38行）</summary>
+
+```text
+  let response: Response
+  // Enforce ZDR on every chat request when selected. The provider is the
+  // routing authority: an unsupported model (or unavailable ZDR capacity)
+  // fails with 422 rather than sending the prompt through a retaining upstream.
+  // Never omit the header based on a client-side capability snapshot.
+  const zdr = connection.zdr === true
+  const sharedHeaders = {
+    'Content-Type': 'application/json',
+    ...IDENTITY_ENCODING_HEADER,
+    Authorization: `Bearer ${key}`,
+    ...(zdr ? { 'x-cmd-zdr': '1' } : {}),
+    ...attributionHeaders(),
+  }
+  const headers = protocol === 'cli'
+    ? {
+        ...sharedHeaders,
+        'x-command-code-version': COMMAND_CODE_CLI_VERSION,
+        'x-cli-environment': 'production',
+        'x-project-slug': projectSlugFromPath(connection.workingDir),
+        'x-taste-learning': 'false',
+        'x-co-flag': 'false',
+      }
+    : {
+        ...sharedHeaders,
+        Accept: 'text/event-stream',
+        // Deliberately no x-command-code-version / x-cli-environment on either
+        // documented Provider API surface: those identify the CLI transport,
+        // not a public API client. ZDR is the one business header both share.
+      }
+  // 请求体由调用层缓存，同协议换账号只替换请求头，不重复序列化历史。
+  const finishHeaders = deps.timing.attempt(protocol, Buffer.byteLength(serializedBody))
+  try {
+    response = await fetchImpl(endpoint, {
+      method: 'POST',
+      headers,
+      body: serializedBody,
+      signal: connectAbort.signal,
+    })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/adapter.ts:2422-2437](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L2422-L2437)
+
+拒绝响应与 retry-after。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  deps.onResponse(response)
+  if (!response.ok) {
+    let errText: string
+    try {
+      errText = await readGenerateErrorBody(response, connectAbort, connection.requestTimeoutMs)
+      if (options.signal?.aborted) throw options.signal.reason ?? new DOMException('已取消请求', 'AbortError')
+    } finally {
+      cleanup()
+    }
+    const retryAfterMs = parseRetryAfterMs(response.headers.get('retry-after'))
+    // exactOptionalPropertyTypes: the key must be absent, not undefined.
+    return retryAfterMs === undefined
+      ? { status: response.status, errText }
+      : { status: response.status, errText, retryAfterMs }
+  }
+  return { response, cleanup }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/adapter.ts:3784-3798](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L3784-L3798)
+
+成功响应交由流处理。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+      )
+    }
+    if (connected === undefined) {
+      // Unreachable: the loop only exits via `break` or `throw`. The guard
+      // keeps the narrowing explicit.
+      throw new LlmError('Command Code API connection failed without a response', 'TRANSPORT')
+    }
+    const { response, cleanup } = connected
+    yield* settleStreamResponse(response, {
+      protocol, signal: options.signal, maxTokens,
+      apiBase: connection.apiBase, streamIdleTimeoutMs: connection.streamIdleTimeoutMs,
+      cleanup, trace, timing, responseMetadata,
+    })
+  }
+}
+```
+
+</details>
+
+#### 缺口
+
+- 未运行账户、消息格式、流解析或上游服务
+  **影响**：无法证明真实兼容、输出质量及账单
+  **进一步探讨**：以隔离测试账户和假服务覆盖成功、拒绝与中断。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 失败重试何时切账户，哪些请求或费用可能重复？
+
+**研究主题**：缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+adapter.ts:3700-3730 只对分类为账户级的前流拒绝，在未取消、未超账户轮换上限且存在新账户时重试；1589-1595 明确已开始的流不会为切换账户而重放。与此同时，index.ts:649-664、677-697 为 transport 错误配置独立预算，transport-retry.ts:21-28、46-55 默认最多 5 次、上限 50；step/start 重置预算。不同层还可能因协议转换或 413 处理有其他请求，故单个切账户规则不能推出每个逻辑请求恰好一次。响应丢失或 transport 失败时不能据此断定远端未收到或没有费用，实际请求及计费未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/adapter.ts:1589-1604](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L1589-L1604)
+
+流中不因账户切换重放。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+   * Multi-account rotation hook: the request sent with `rejectedKey` was
+   * refused before any response body streamed, for an account-scoped reason
+   * (see {@link AccountRotationReason}). The host marks that key when the
+   * reason warrants it and returns the next account's key to retry with, or
+   * `undefined` to surface the failure. Only pre-stream rejections rotate — a
+   * mid-stream failure never replays a partially consumed generation against
+   * another account.
+   *
+   * `rotation.tried` lists every key this request has already used (the
+   * just-rejected one included). The host must not offer one of them again:
+   * with several accounts a rejection that does not mark the key (a plan or
+   * balance rejection is model-specific, not account-fatal) would otherwise
+   * re-offer the same account on every attempt and the pool could never reach
+   * the accounts behind it. `rotation.resetAtMs` carries the provider's own
+   * reset time when the rejection body published one, so the host can hold the
+   * key out until then instead of waiting for a billing probe to learn the
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/adapter.ts:3700-3730](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L3700-L3730)
+
+账户拒绝、轮换与去重。
+
+<details>
+<summary>查看原文（31行）</summary>
 
 ```text
         const rotate = this.deps.rotateApiKey
@@ -379,40 +478,86 @@ index构造adapter时提供resolveApiKey和rotateApiKey，再注册为commandcod
             messagesPermissionRejection = undefined
             const nextProtocol = this.resolveProtocol(connection, apiKey, options.model, modelEntry)
             if (nextProtocol !== protocol) {
+              protocol = nextProtocol
+              requestOptions = withSurfaceOffload(
+                options, this.surfaceOffload, REQUEST_IMAGE_BUDGETS[0]!,
+                connection.offloadSeenImagesForCache === true && protocol === 'cli' ? options.model : undefined,
+              )
+              body = await buildBody(protocol)
+            }
+            continue
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/adapter.ts:3772-3777](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/adapter.ts#L3772-L3777)
+**依据 3 · 源码核查**：[src/transport-retry.ts:21-28](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/transport-retry.ts#L21-L28)
 
-连接后交给流式收束
+transport 默认及最大预算。
 
 ```text
-    const { response, cleanup } = connected
-    yield* settleStreamResponse(response, {
-      protocol, signal: options.signal, maxTokens,
-      apiBase: connection.apiBase, streamIdleTimeoutMs: connection.streamIdleTimeoutMs,
-      cleanup, trace, timing, responseMetadata,
-    })
+/** Failure code this budget covers. */
+export const TRANSPORT_FAILURE_CODE = 'TRANSPORT'
+
+/** Transport failures to absorb before the failure surfaces (default 5: ~15 s of blip cover on the route cadence). */
+export const DEFAULT_TRANSPORT_MAX_RETRIES = 5
+
+/** Ceiling for the setting above (plausibility bound, not a recommendation; mirrored in `Config`'s schema and pinned by tests). */
+export const MAX_TRANSPORT_MAX_RETRIES = 50
 ```
 
-<a id="research-q03"></a>
+**依据 4 · 源码核查**：[src/transport-retry.ts:46-55](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/transport-retry.ts#L46-L55)
 
-<a id="detail-section-13"></a>
+只对目标错误计数。
 
-### Q03 · 有界重试能保证什么，哪些承诺不能推出？
+<details>
+<summary>查看原文（10行）</summary>
 
-**研究主题**：缺陷与关键质疑
+```text
+export function absorbTransportFailure(
+  agent: object,
+  failureCode: string,
+  maxRetries: number,
+): TransportRetryDecision {
+  if (failureCode !== TRANSPORT_FAILURE_CODE) return 'ignored'
+  const used = counts.get(agent) ?? 0
+  if (used >= maxRetries) return 'exhausted'
+  counts.set(agent, used + 1)
+  return 'retry'
+```
 
-#### 完整回答
+</details>
 
-TRANSPORT失败计数按逻辑请求限制，取消先于预算处理，耗尽抛出诊断；服务明确要求重试的窗口与普通传输错误采用不同规则。这能限制特定连接失败长时间挂住，但不能保证供应商成功，也不能将流前换账号扩展为流中无缝恢复。adapter说明协议来自逆向核对，外部通道变化会带来持续适配负担。ZDR是可选路由请求，README声明默认关闭；本轮不能验证服务端留存行为或真实账单。 预算并非仅由弱映射天然按请求隔离：index监听session/event，transportResetAction把step/start映射为reset后清计数；idle亦清理。该接线是“每逻辑请求预算”的源码依据，真实宿主是否按此时序发事件仍未执行验证。
+**依据 5 · 源码核查**：[src/index.ts:649-664](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L649-L664)
 
-#### 证据与依据
+独立 transport 预算及等待责任。
 
-**依据 1 · 源码核查**：[src/index.ts:677-697](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L677-L697)
+<details>
+<summary>查看原文（16行）</summary>
 
-取消、瞬态与传输预算的实际分支
+```text
+  // Bounded retry for TRANSPORT failures (issue #39). The route policy allows
+  // long recovery for a confirmed usage window; ordinary 520s now have their
+  // own three-retry cap. A connection that cannot be established needs its
+  // separate budget, or the shared cadence
+  // turned a 10-second connect timeout into an ~8-minute stall, so the first
+  // few transport failures are absorbed here and the rest surface with a
+  // diagnosis. `dsh-llm-retry` still owns the wait between allowed attempts.
+  //
+  // The failure is surfaced by THROWING out of the waterfall: the agent loop
+  // wraps the rejection into the turn's error, so the retry chain stops here.
+  // The failure's own message is carried in the thrown message, and the
+  // diagnostic also goes to the log, which nothing can rewrite.
+  const transportMaxRetries = (): number => {
+    const value = current().transportMaxRetries
+    if (typeof value !== 'number' || !Number.isFinite(value) || value < 0) return DEFAULT_TRANSPORT_MAX_RETRIES
+    return Math.min(Math.trunc(value), MAX_TRANSPORT_MAX_RETRIES)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/index.ts:677-697](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L677-L697)
+
+失败预算和停止。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -443,100 +588,15 @@ TRANSPORT失败计数按逻辑请求限制，取消先于预算处理，耗尽�
 
 </details>
 
-**依据 2 · 源码核查**：[src/transport-retry.ts:22-55](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/transport-retry.ts#L22-L55)
+**依据 7 · 源码核查**：[src/index.ts:698-712](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L698-L712)
 
-默认预算和计数
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-export const TRANSPORT_FAILURE_CODE = 'TRANSPORT'
-
-/** Transport failures to absorb before the failure surfaces (default 5: ~15 s of blip cover on the route cadence). */
-export const DEFAULT_TRANSPORT_MAX_RETRIES = 5
-
-/** Ceiling for the setting above (plausibility bound, not a recommendation; mirrored in `Config`'s schema and pinned by tests). */
-export const MAX_TRANSPORT_MAX_RETRIES = 50
-
-/** Why {@link absorbTransportFailure} answered the way it did. */
-export type TransportRetryDecision = 'retry' | 'exhausted' | 'ignored'
-
-/** One agent's live transport-failure count, keyed weakly so a dropped agent cannot leak. */
-const counts = new WeakMap<object, number>()
-
-/**
- * Count one attempt's outcome against the transport budget.
- *
- * @param agent - the identity the budget is scoped to (the agent object).
- * @param failureCode - the failed attempt's `LlmFailure.code`.
- * @param maxRetries - transport retries to absorb before the failure surfaces.
- * @returns `'ignored'` for any non-transport code (the route policy decides
- *   those, unchanged), `'retry'` while the budget has room, `'exhausted'` once
- *   it does not.
- */
-export function absorbTransportFailure(
-  agent: object,
-  failureCode: string,
-  maxRetries: number,
-): TransportRetryDecision {
-  if (failureCode !== TRANSPORT_FAILURE_CODE) return 'ignored'
-  const used = counts.get(agent) ?? 0
-  if (used >= maxRetries) return 'exhausted'
-  counts.set(agent, used + 1)
-  return 'retry'
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/adapter.ts:4-18](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/adapter.ts#L4-L18)
-
-移植及逆向协议边界
+预算 reset 作用域。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
- * Ported from pi-commandcode-provider@0.5.1 (MIT). This is an unofficial,
- * community-maintained integration; you need your own Command Code account
- * and API key or subscription, and Command Code's terms apply.
- *
- * Owns the three chat transports (`/alpha/generate`, `/provider/v1/chat/completions`,
- * `/provider/v1/messages`),
- * message conversion and the pre-stream account rotation loop. 目录、发布与
- * 上限事实由 ./gateway-facts.ts 持有，本适配器只消费单次调用的独立快照。 已连接响应的读取与收束由 ./stream-response.ts 负责。
- * The wire protocol is
- * reverse-engineered (command-code@1.28.4, re-verified through 1.73.0);
- * docs/agent-reference/adapter-protocol.md holds the full protocol record.
- *
- * The adapter is deliberately free of cordis/schemastery: it receives a
- * per-request options thunk and an API-key resolver from the plugin entry
- * (src/index.ts), so a settings change reaches the very next request.
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.md:35-40](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/README.md#L35-L40)
-
-费用估计和可选ZDR的作者声明
-
-```text
-- **Plans & quota panel** — optional sidebar card with the serving account's plan, 5-hour and weekly windows, balances and reset times.
-- **Session cost estimate** — published-rate estimates (`≈`) beside the composer token counter, priced per request from durable session history.
-- **Model analysis** — tokens, estimated cost, response timing and failures by session or date range. [Scope](docs/模型成本与性能分析.md).
-- **Web search** — the dsh `web_search` tool is served by Command Code (`/alpha/web-search`) with the same key and endpoint as chat.
-- **Zero data retention** — optional ZDR routing (`x-cmd-zdr: 1`), off by default.
-- **Context & output limits** — override the metered context window globally or per model, and cap or omit the per-turn `max_tokens`.
-```
-
-**依据 5 · 源码核查**：[src/index.ts:699-728](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L699-L728)
-
-真实session/event监听按reset动作清除当前agent预算，idle另清理。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
+  })
   // Reset the budget at each new STEP — one step is exactly one model request
   // (`step/start` is appended immediately before the call), so this is what
   // makes the cap "per logical request" and gives the next step of the same
@@ -551,182 +611,405 @@ export function absorbTransportFailure(
   // and the WeakMap drops a finished session on its own.
   ctx.on('session/event', (session, event) => {
     const action = transportResetAction(event.type)
-    if (action === 'forget') {
-      sessionAgents.delete(session)
-      return
-    }
-    if (action !== 'reset') return
-    const agent = sessionAgents.get(session)
-    if (agent !== undefined) {
-      resetTransportFailures(agent)
-      resetTransientFailures(agent)
-    }
-  })
-  ctx.on('agent/status', ({ agent, status }) => {
-    if (status === 'idle') {
-      resetTransportFailures(agent)
-      resetTransientFailures(agent)
-    }
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/transport-retry.ts:59-82](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/transport-retry.ts#L59-L82)
+**依据 8 · 源码核查**：[src/adapter.ts:3670-3698](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L3670-L3698)
 
-重置映射明确step/start清计数；只看WeakMap计数函数不足以推出按请求重置。
+协议与 413 的独立处理。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-export function resetTransportFailures(agent: object): void {
-  counts.delete(agent)
-}
-
-/**
- * What one session event means for the transport budget.
- *
- * Pure and exported on purpose: the choice of event is the part of this design
- * that is easy to get plausibly wrong (see the module comment), so it is stated
- * once, where a test can pin it.
- *
- * @param type - the appended session event's type.
- * @returns `'reset'` for a new step, `'forget'` when the turn ended (the
- *   session → agent mapping is no longer needed), otherwise `'none'`.
- */
-export function transportResetAction(type: string): 'reset' | 'forget' | 'none' {
-  if (type === 'step/start') return 'reset'
-  if (type === 'turn/end') return 'forget'
-  return 'none'
-}
-
-/**
- * The diagnosis a capped turn ends with. Bilingual, because the harness renders
- * a failed turn's message verbatim and this plugin's other user-facing failures
+        ) {
+          const wasMessages = protocol === 'messages'
+          if (messagesPermissionDenied) {
+            messagesPermissionRejection = providerError.code ?? providerError.type
+          }
+          protocol = 'cli'
+          if (!wasMessages) this.rememberProtocol(connection.apiBase, apiKey, 'cli')
+          requestOptions = withSurfaceOffload(
+            options, this.surfaceOffload, REQUEST_IMAGE_BUDGETS[0]!,
+            connection.offloadSeenImagesForCache === true ? options.model : undefined,
+          )
+          body = await buildBody('cli')
+          continue
+        }
+        // Request too large (issue #37): the standing budget is only an
+        // estimate — the cap also covers text and tool bytes — so one 413 steps
+        // the image budget down and asks for another offload, as a durable
+        // surface mutation rather than a local edit, so the extra omissions
+        // survive the retry. Zero missing means the images are already gone and
+        // the body is simply too big: fall through to the 413 diagnosis instead
+        // of asking for an offload that cannot happen, which is also what keeps
+        // the branch from looping.
+        if (attempt.status === 413 && REQUEST_IMAGE_BUDGETS.length > 1) {
+          const missing = this.surfaceOffload.requiredImageOffload(
+            requestOptions.messages,
+            coreBudget(REQUEST_IMAGE_BUDGETS[1]!),
+            imageVersionBytes,
+          )
+          if (missing > 0) throw imageOffloadRequired(missing)
 ```
 
 </details>
 
 #### 缺口
 
-- 实际供应商协议、留存和计费行为未独立核验
-  **影响**：不能将请求选项/估计当隐私保证或真实成本
-  **进一步探讨**：用获授权账户核对返回、账单和服务条件，记录固定环境
+- 未测服务收到请求后丢响应、各层重试和账单
+  **影响**：不能断言上游一次执行或费用为零
+  **进一步探讨**：假服务计数并让真实隔离账户按服务商账单对账。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么人可试用，怎样验证恢复值得复杂性？
+### Q04 · 凭据、上下文和费用边界是什么？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
-可供已有账户且能接受非官方协议适配的用户在单独profile试用，先核宿主范围与凭据，再做小额对话及取消/拒绝路径。首次配置账户和网络，持续支付服务与模型费用，失败还需等待/切换并核对请求是否产生费用；退出改回原供应商或官方客户端。由模型级拒绝标记与tried集合推导未验证假设：呈现每次失败归属和剩余预算，比仅显示最终错误更能减少错误更换密钥。相同拒绝/断连任务对比人工定位时间、无效换key和总尝试；若诊断没有改善或额外重试提高成本，则否定。
+index.ts:397-399 默认 zdr=false；adapter.ts:2357-2394 在配置开启时将 x-cmd-zdr: 1 连同 Bearer 密钥及序列化消息发给服务。README:221-229 称该选项要求零留存上游，不满足会 422，并指出 ZDR 实际价格可能不同于普通目录估算；这是作者对外部服务及计费的说明，源码只能证明本地发送头，不能证明上游真实留存、训练或账单。README:239-246 还称卸载保留凭据，清理必须另行核对。发送模型上下文前应确认配置、授权与目的地；本次未审计所有账户和搜索链路。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:21-25](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/README.md#L21-L25)
+**依据 1 · 源码核查**：[src/index.ts:397-399](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L397-L399)
 
-宿主范围、profile和凭据前提
-
-```text
-| Verified engines | dsh `>=0.2.1-rc.2 <0.2.2-0` (every `0.2.1` RC from `0.2.1-rc.2` on) |
-| Install — web | `dsh plugin --profile web add @mars-sea/dsh-commandcode-provider@latest` |
-| Install — terminal | `dsh plugin --profile dsh-tui add @mars-sea/dsh-commandcode-provider@latest` |
-| Config file | `$DSH_HOME/settings.yaml` → `llm-commandcode:` |
-| API key env | `COMMANDCODE_API_KEY` |
-```
-
-**依据 2 · 作者声明**：[README.md:64-68](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/README.md#L64-L68)
-
-准入与已验证边界分开
+ZDR 默认关闭。
 
 ```text
-This build admits **dsh `>=0.2.1-rc.2 <0.2.2-0`** — every RC of the `0.2.1` channel from `0.2.1-rc.2` onward. `0.2.1-rc.2` is what npm `latest` runs and `0.2.1-rc.4` ships on `next`; `0.2.1-rc.2`, `0.2.1-rc.3` and `0.2.1-rc.4` are all covered by the full engine matrix (`npm run test:engine`, `npm run test:install`). A later `0.2.1-rc.5` is admitted without a plugin update, but stays unverified until a record is added to `dsh.compatibility.dshReleases`. The next minor is deliberately excluded, `0.2.2-rc.*` included — the upper bound is written `<0.2.2-0` for exactly that reason. A profile on `0.2.0-rc.2`, `0.2.1-alpha.5` or older must upgrade its engine first. Compatibility details — the `engines.dsh` admission rule, package pairings, evidence — live in [engine compatibility](docs/agent-reference/engine-compatibility.md).
-
-**Older dsh releases** are no longer supported: the last plugin release for dsh 0.1.7 is `0.11.17`, for 0.1.2–0.1.6 it is `0.11.11`, and for the 0.5.0-era line `0.9.1` — all installed by exact version, none maintained.
-
-> **pnpm 11 holds back new releases.** `minimumReleaseAge` defaults to 1440 minutes, so a version published less than a day ago is skipped and `@latest` resolves to the *previous* release — silently, with a success exit code. To install a release from the last 24 hours, name it exactly: `@mars-sea/dsh-commandcode-provider@0.11.15`. This applies to every profile, including the terminal UI below.
+  // Off by default: turning it on changes which upstream serves the request
+  // (and usually what it costs), so nobody gets ZDR routing by accident.
+  zdr: z.boolean().default(false),
 ```
 
-**依据 3 · 源码核查**：[src/index.ts:591-625](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/index.ts#L591-L625)
+**依据 2 · 源码核查**：[src/adapter.ts:2357-2394](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L2357-L2394)
 
-模型级/账户级拒绝依据
+鉴权、可选 ZDR 头和请求正文。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
-      // Only the two account-health reasons become account marks: an
-      // `unavailable` rejection (no credits, a model outside this account's
-      // plan) says nothing durable about the KEY — a `:free` model is still
-      // served by a credits-empty account. It does say something about this
-      // account ON THIS MODEL, though, and forgetting that made every later
-      // request pick the same doomed account first (issue #51's remaining
-      // half). It therefore lands as a model-scoped, short-lived PREFERENCE
-      // demotion: the same model skips the account for a few minutes, while
-      // other models and `:free` models keep serving it. `rate-limit` and
-      // `throttled` both mark but with different causes, so the pool's own
-      // diagnosis never reports a plain throttle as an exhausted usage window
-      // (issue #54).
-      const accounts = scopedPool(connection)
-      if (rejection !== 'unavailable') {
-        accounts.markRejected(rejectedKey, rejection, rotation?.resetAtMs)
-      } else if (model !== undefined) {
-        accounts.markModelUnavailable(rejectedKey, model)
+  let response: Response
+  // Enforce ZDR on every chat request when selected. The provider is the
+  // routing authority: an unsupported model (or unavailable ZDR capacity)
+  // fails with 422 rather than sending the prompt through a retaining upstream.
+  // Never omit the header based on a client-side capability snapshot.
+  const zdr = connection.zdr === true
+  const sharedHeaders = {
+    'Content-Type': 'application/json',
+    ...IDENTITY_ENCODING_HEADER,
+    Authorization: `Bearer ${key}`,
+    ...(zdr ? { 'x-cmd-zdr': '1' } : {}),
+    ...attributionHeaders(),
+  }
+  const headers = protocol === 'cli'
+    ? {
+        ...sharedHeaders,
+        'x-command-code-version': COMMAND_CODE_CLI_VERSION,
+        'x-cli-environment': 'production',
+        'x-project-slug': projectSlugFromPath(connection.workingDir),
+        'x-taste-learning': 'false',
+        'x-co-flag': 'false',
       }
-      // The whole tried set, not just the rejected key, reaches the pool: a
-      // rejection that does not mark the key would otherwise be re-offered on
-      // every attempt and a four-account pool could never reach the accounts
-      // behind it. The model rides along so model-routing rules pick the next
-      // account for the same model. An EMPTY set must not be forwarded — the
-      // pool reads it as "nothing was tried" and drops the filter this set
-      // exists for.
-      const tried = rotation?.tried?.length ? rotation.tried : [rejectedKey]
-      const resolved = await accounts.resolveKey(
-        model === undefined ? { tried } : { tried, model },
-      )
-      // Normalize like the initial resolution does: the pool keys its state
-      // by the resolved key, so the adapter must send (and report back) the
-      // same normalized form or the marks would miss.
-      return resolved === undefined
-        ? undefined
-        : assertUsableApiKey(resolved.key, 'llm-commandcode', resolved.slot.ref ?? `${resolved.slot.label} (config.apiKey)`)
+    : {
+        ...sharedHeaders,
+        Accept: 'text/event-stream',
+        // Deliberately no x-command-code-version / x-cli-environment on either
+        // documented Provider API surface: those identify the CLI transport,
+        // not a public API client. ZDR is the one business header both share.
+      }
+  // 请求体由调用层缓存，同协议换账号只替换请求头，不重复序列化历史。
+  const finishHeaders = deps.timing.attempt(protocol, Buffer.byteLength(serializedBody))
+  try {
+    response = await fetchImpl(endpoint, {
+      method: 'POST',
+      headers,
+      body: serializedBody,
+      signal: connectAbort.signal,
+    })
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/transport-retry.ts:86-98](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/d08ede5874e4bee2827cf438c971d3649f23d7c0/src/transport-retry.ts#L86-L98)
+**依据 3 · 作者声明**：[README.md:221-229](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L221-L229)
 
-预算耗尽诊断
-
-<details>
-<summary>查看原文（13行）</summary>
+作者描述服务端 ZDR 与价格条件。
 
 ```text
-export function transportBudgetMessage(failureMessage: string, maxRetries: number): string {
-  return `${failureMessage}`
-    + '；Command Code API 连接在连续重试后仍失败——已停止重试以免整轮卡死。'
-    + `插件已自动重试 ${maxRetries} 次。通常说明当前网络到 api.commandcode.ai 的连接不通，`
-    + '常见原因是代理未生效：DSH 只读取环境变量 HTTPS_PROXY/HTTP_PROXY（系统代理/PAC 不会被读取），'
-    + '请确认启动 DSH 的终端里已导出代理，或先关闭代理直连后重试。网络恢复后直接重发即可'
-    + ` — Command Code API transport still failed after ${maxRetries} automatic retries, which were`
-    + ' stopped so the turn could not stall for minutes. This is a connectivity problem between this'
-    + ' machine and api.commandcode.ai, not a context-window or request-size rejection. Common cause:'
-    + ' the proxy is not reaching the harness — DSH reads HTTPS_PROXY/HTTP_PROXY from the environment'
-    + ' only (a Windows system proxy/PAC setting is not consulted), so export it in the launching'
-    + ' shell, or turn the proxy off and retry. Resend when the network recovers; the budget is per'
-    + ' request and has been reset'
+## Zero data retention (ZDR)
+
+Command Code can serve a request only through upstreams that retain no prompts or completions and never train on them — the same opt-in the official CLI exposes as `CMD_ZDR=1`, and the `x-cmd-zdr: 1` header on the Provider API ([official docs](https://commandcode.ai/docs/resources/zdr)).
+
+**Off by default.** Turn it on with the *"Zero data retention (ZDR)"* toggle (`zdr`) in the Privacy & security card, or in your profile config.
+
+- The header is sent on **every chat request** while ZDR is on. A model without an available ZDR upstream fails with `422 cmd_zdr_no_providers`; the request is never retried without the header.
+- If a refusal still happens (coverage churn, or no spare ZDR capacity at that moment), the error names the cause and how to turn ZDR off instead of surfacing as a bare HTTP 422.
+- **ZDR usually costs more**: capacity is limited and billed at each upstream's pass-through rates, and which upstream serves a request can change per request. The session-cost readout keeps quoting the ordinary catalog rates; the real per-request price shows in Command Code's Studio usage page.
+```
+
+**依据 4 · 作者声明**：[README.md:239-246](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L239-L246)
+
+作者描述网络、凭据及卸载。
+
+```text
+## Permissions & privacy
+
+The plugin only communicates between your local dsh profile and your Command Code account: locally it touches only the credential store and the models cache (plus `~/.commandcode/auth.json` as a last-resort fallback); on the network it calls only the Command Code API. No telemetry. With **zero data retention** on, chat requests require a ZDR upstream; models without one fail instead of running without the protection.
+
+## Disabling / uninstalling
+
+- **Disable** without removing: edit your profile's `cordis.patch.yml` and comment out (or remove) the `llm-commandcode` row, or set `disabled: true`, then restart.
+- **Uninstall** completely: `dsh plugin --profile web remove @mars-sea/dsh-commandcode-provider`. Your API key in the dsh credential store and `~/.commandcode/auth.json` are left untouched.
+```
+
+#### 缺口
+
+- 未独立验证服务端数据政策、搜索、账单和凭据删除
+  **影响**：不能保证零留存或估算等于实付
+  **进一步探讨**：合成数据检查请求与关闭方式，按上游账单及协议独立核验。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 用户需要什么依赖、如何试用并回退？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+package.json:1-4、24-32、65-67 声明插件 0.16.3、Node >=24.9 和 DSH 精确范围；README:13-15 指用户需 Command Code 账户和密钥。这些声明不是当前宿主验收，套餐、服务网络和认证故障均影响效果。首次需配置凭据和宿主，持续需支付上游实际费用并核使用量，失败时查账户拒绝、传输预算和流结果；退出可停用插件切回既有模型路由，卸载后凭据仍需单独处理。API 实际价格、人工排障时间和故障重试费用未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:1-4](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/package.json#L1-L4)
+
+包名与版本。
+
+```text
+{
+  "name": "@mars-sea/dsh-commandcode-provider",
+  "version": "0.16.3",
+  "description": "Unofficial DeepSeek Harness LLM provider plugin for Command Code, ported from pi-commandcode-provider (MIT). Registers the 'commandcode' provider route with a Models-page card and live model catalog.",
+```
+
+**依据 2 · 源码核查**：[package.json:24-32](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/package.json#L24-L32)
+
+DSH 兼容声明。
+
+```text
+    "compatibility": {
+      "dshReleases": {
+        "0.2.1-rc.2": "compatible",
+        "0.2.1-rc.3": "compatible",
+        "0.2.1-rc.4": "compatible",
+        "0.2.1-rc.5": "compatible",
+        "0.2.2-alpha.2": "compatible"
+      },
+      "dsh": ">=0.2.1-rc.2 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0"
+```
+
+**依据 3 · 源码核查**：[package.json:65-67](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/package.json#L65-L67)
+
+Node 与 DSH 引擎声明。
+
+```text
+  "engines": {
+    "node": ">=24.9",
+    "dsh": ">=0.2.1-rc.2 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0"
+```
+
+**依据 4 · 作者声明**：[README.md:13-15](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L13-L15)
+
+作者要求账户与密钥。
+
+```text
+Unofficial [DeepSeek Harness](https://deepseek-harness.github.io/deepseek-harness/) LLM provider plugin for **Command Code**, ported from [pi-commandcode-provider](https://github.com/patlux/pi-commandcode-provider) (MIT).
+
+> Community integration. You need your own Command Code account, API key or subscription, and Command Code's terms apply. Not affiliated with Command Code, Inc.
+```
+
+**依据 5 · 作者声明**：[README.md:243-246](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L243-L246)
+
+作者说明停用及凭据保留。
+
+```text
+## Disabling / uninstalling
+
+- **Disable** without removing: edit your profile's `cordis.patch.yml` and comment out (or remove) the `llm-commandcode` row, or set `disabled: true`, then restart.
+- **Uninstall** completely: `dsh plugin --profile web remove @mars-sea/dsh-commandcode-provider`. Your API key in the dsh credential store and `~/.commandcode/auth.json` are left untouched.
+```
+
+**依据 6 · 源码核查**：[src/index.ts:677-697](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L677-L697)
+
+错误预算与失败路径。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  ctx.on('agent/request-error', async ({ agent, provider, failure, signal }, next) => {
+    // Checked BEFORE the budget: a cancelled turn is the user's own stop, so it
+    // must neither be answered with a retry nor consume the slot a later live
+    // failure needs.
+    if (signal.aborted || provider !== PROVIDER) return next()
+    const session: unknown = Reflect.get(agent, 'session')
+    if (typeof session === 'object' && session !== null) sessionAgents.set(session, agent)
+    const transient = absorbTransientFailure(agent, failure.code)
+    if (transient === 'exhausted') throw new Error(transientBudgetMessage(failure.code, failure.message))
+    // 只约束次数；仍由官方重试器决定退避和 Retry-After，避免即时重发。
+    if (transient === 'retry') return next()
+    const decision = absorbTransportFailure(agent, failure.code, transportMaxRetries())
+    if (decision === 'ignored') return next()
+    // The literal is spelled as the event's own decision type; the union this
+    // handler returns (`RequestErrorAction | Promise<RequestErrorAction>`) is
+    // what the waterfall accepts, and `{ kind: 'retry' }` alone widens to
+    // `string` and stops matching it.
+    if (decision === 'retry') return { kind: 'retry' } satisfies RequestErrorAction
+    const message = transportBudgetMessage(failure.message, transportMaxRetries())
+    ctx.logger.warn(`llm-commandcode: transport retry budget exhausted for ${PROVIDER} (${TRANSPORT_FAILURE_CODE})`)
+    throw new Error(message)
 ```
 
 </details>
 
 #### 缺口
 
-- 同任务恢复时间、总尝试费用和诊断效果未测
-  **影响**：无法证明多账户机制改善端到端成本
-  **进一步探讨**：比较单账户手动切换与插件路径，含取消、断连、拒绝和账单核对
+- 未核实固定宿主、账号与实际账单
+  **影响**：不能保证兼容、低成本或恢复时间
+  **进一步探讨**：非敏感单回合试用，核对输出、状态和账单。
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 能否让用户准确识别失败层次和不可知费用？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+现有实现已有账户拒绝分类、已尝试集合、transport 重试预算与诊断，adapter.ts:2386-2395 还记录请求尝试计时，因此再加泛用错误日志不构成增量。未验证设想是在用户可见的单次任务收据中汇总每次尝试的脱敏账户别名、协议、失败层次、共享/分层剩余预算和仅本地拒绝/交给 transport/未知的证据状态；收费仅列服务端确认的金额，否则为 unknown，不保存密钥或提示内容。以现有错误/诊断为对照，构造无效密钥、账户额度拒绝、429、建连前失败、请求已发但响应丢失、流中断和取消，比较错误切换账户、重复发出次数、未知误判、恢复时间与隐私泄露。若把未知写成未发送或零费用、暴露敏感数据、误切账户不降或新增成本过高则否定；需宿主及客户端暴露可靠边界，尚未实现。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/adapter.ts:3700-3730](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L3700-L3730)
+
+现有账户分类与已试集合。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+        const rotate = this.deps.rotateApiKey
+        // Account-scoped rejection (429/RATE_LIMITED, 401, or "this account
+        // cannot serve"): retry the same body with another account when the host
+        // has one. The tried set travels along so a rejection that does not mark
+        // the key cannot make the pool re-offer it forever.
+        const rejection = classifyAccountRejection(attempt.status, attempt.errText, providerError)
+        if (
+          rejection !== undefined
+          && rotate !== undefined
+          && options.signal?.aborted !== true
+          && tried.size < MAX_ACCOUNT_ROTATIONS
+        ) {
+          const next = await rotate(apiKey, rejection.reason, connection, options.model, {
+            tried: [...tried],
+            ...(rejection.resetAtMs !== undefined && { resetAtMs: rejection.resetAtMs }),
+          })
+          if (next !== undefined && !tried.has(next)) {
+            apiKey = next
+            // 降级只描述上一账号；新账号必须按自己的套餐/缓存重新选择通道。
+            // 权限拒绝同理：它属于刚被换下的那把密钥，不能跟着新账号继续报。
+            messagesPermissionRejection = undefined
+            const nextProtocol = this.resolveProtocol(connection, apiKey, options.model, modelEntry)
+            if (nextProtocol !== protocol) {
+              protocol = nextProtocol
+              requestOptions = withSurfaceOffload(
+                options, this.surfaceOffload, REQUEST_IMAGE_BUDGETS[0]!,
+                connection.offloadSeenImagesForCache === true && protocol === 'cli' ? options.model : undefined,
+              )
+              body = await buildBody(protocol)
+            }
+            continue
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/index.ts:677-697](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/index.ts#L677-L697)
+
+现有传输预算和诊断。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  ctx.on('agent/request-error', async ({ agent, provider, failure, signal }, next) => {
+    // Checked BEFORE the budget: a cancelled turn is the user's own stop, so it
+    // must neither be answered with a retry nor consume the slot a later live
+    // failure needs.
+    if (signal.aborted || provider !== PROVIDER) return next()
+    const session: unknown = Reflect.get(agent, 'session')
+    if (typeof session === 'object' && session !== null) sessionAgents.set(session, agent)
+    const transient = absorbTransientFailure(agent, failure.code)
+    if (transient === 'exhausted') throw new Error(transientBudgetMessage(failure.code, failure.message))
+    // 只约束次数；仍由官方重试器决定退避和 Retry-After，避免即时重发。
+    if (transient === 'retry') return next()
+    const decision = absorbTransportFailure(agent, failure.code, transportMaxRetries())
+    if (decision === 'ignored') return next()
+    // The literal is spelled as the event's own decision type; the union this
+    // handler returns (`RequestErrorAction | Promise<RequestErrorAction>`) is
+    // what the waterfall accepts, and `{ kind: 'retry' }` alone widens to
+    // `string` and stops matching it.
+    if (decision === 'retry') return { kind: 'retry' } satisfies RequestErrorAction
+    const message = transportBudgetMessage(failure.message, transportMaxRetries())
+    ctx.logger.warn(`llm-commandcode: transport retry budget exhausted for ${PROVIDER} (${TRANSPORT_FAILURE_CODE})`)
+    throw new Error(message)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/adapter.ts:2386-2395](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/src/adapter.ts#L2386-L2395)
+
+现有传输尝试计时。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+  // 请求体由调用层缓存，同协议换账号只替换请求头，不重复序列化历史。
+  const finishHeaders = deps.timing.attempt(protocol, Buffer.byteLength(serializedBody))
+  try {
+    response = await fetchImpl(endpoint, {
+      method: 'POST',
+      headers,
+      body: serializedBody,
+      signal: connectAbort.signal,
+    })
+    finishHeaders(response.status)
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:227-229](https://github.com/Mars-Sea/dsh-commandcode-provider/blob/5c5a0db24d5797d8a40cd873133ef7814ca2540a/README.md#L227-L229)
+
+作者说明 ZDR 与估算账单限制。
+
+```text
+- The header is sent on **every chat request** while ZDR is on. A model without an available ZDR upstream fails with `422 cmd_zdr_no_providers`; the request is never retried without the header.
+- If a refusal still happens (coverage churn, or no spare ZDR capacity at that moment), the error names the cause and how to turn ZDR off instead of surfacing as a bare HTTP 422.
+- **ZDR usually costs more**: capacity is limited and billed at each upstream's pass-through rates, and which upstream serves a request can change per request. The session-cost readout keeps quoting the ordinary catalog rates; the real per-request price shows in Command Code's Studio usage page.
+```
+
+#### 缺口
+
+- 没有用户收据原型、可信发送边界或对账结果
+  **影响**：无法证明降低错误重试和成本误判
+  **进一步探讨**：以假服务逐阶段计数并对账隔离账户。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

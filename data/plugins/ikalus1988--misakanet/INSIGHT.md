@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[68fb694](https://github.com/Ikalus1988/MisakaNet/tree/68fb694e6627ae8ce3a2a071548eef9ce00e814d)
+源码版本：[b38ef5b](https://github.com/Ikalus1988/MisakaNet/tree/b38ef5bf0304212ec2eb4c0c46d16c42672d551e)
 
 <!-- BEGIN META -->
-[![GitHub ★ 543](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=543&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ikalus1988/MisakaNet) [![npm 30d 7,216](https://img.shields.io/static/v1?label=npm+30d&message=7%2C216&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/misakanet) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/misakanet)
+[![GitHub ★ 549](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=549&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ikalus1988/MisakaNet) [![npm 30d 6,970](https://img.shields.io/static/v1?label=npm+30d&message=6%2C970&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/misakanet) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/misakanet)
 <!-- END META -->
 
-> **功能**：通过 Git 管理的故障教训与 MCP 检索，为 Agent 提供失败修复线索和反馈流程
+> **功能**：为 AI Agent 提供带证据等级的故障经验检索与记录。
 
-> **亮点**：[Q01](#research-q01) 将问题、修复和来源组织为Git教训；[Q02](#research-q02) 默认MCP接入及渐进披露使Agent能按需回读，推理与实际修复仍由使用者完成。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把结构化故障经验检索接入 Agent，仍需用户依据当前环境验证。
 
-> **主要限制**：[Q03](#research-q03) 匹配与证据等级不能证明本环境适用，服务器脱敏也不能阻止查询已外发；[Q02](#research-q02) 服务可启动不等于工具已挂载。
+> **主要限制**：[Q03](#research-q03) 语义回退和 CJK 融合依配置与数据，[Q04](#research-q04) 服务端脱敏发生在请求到达后。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 相比搜索网页或本地笔记，失败记忆多交付什么？](#detail-section-11)
-  - [Q02 · DSH默认连接何处，搜索如何返回和降级？](#detail-section-12)
-  - [Q03 · 匹配、证据等级与脱敏能否保证安全复用？](#detail-section-13)
-  - [Q04 · 什么场景值得试用，成本及退出怎么核对？](#detail-section-14)
-  - [Q05 · 可否给教训增加环境匹配与应用回执？](#detail-section-15)
+  - [Q01 · 开发者为什么检索已有故障经验，与手工搜索有什么差别？](#detail-section-11)
+  - [Q02 · 默认 DSH 安装如何接公共 MCP，失败时可用性如何？](#detail-section-12)
+  - [Q03 · 搜索如何限流、脱敏、排序和回退？](#detail-section-13)
+  - [Q04 · 凭据、故障文本与远端服务的隐私和费用条件是什么？](#detail-section-14)
+  - [Q05 · 能否让检索结果附加当前环境验证结果？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：开发者反复遇到工程错误，希望把教训供后续Agent检索，而不是重复从零排障。
+> **用途**：开发者遇到工程错误时希望查找可核验的既有经验。
 
-官方文档/网页搜索加本地故障笔记，按当前环境验证后应用修复。
+用户可手工检索日志、文档和公开 issue。
 
 <a id="detail-section-3"></a>
 
@@ -51,69 +51,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 教训检索 | 找相似工程失败 | 匹配不等于本环境有效 |
-| 渐进回读 | 先摘要后完整材料 | 不能跳过适用条件 |
-| 反馈/缺口 | 保存结果与缺结果线索 | 查询会涉及远端处理 |
+|---|---|---|
+| MCP 接入 | 挂载远端故障经验工具 | 客户端缺失时默认不阻断宿主 |
+| 故障检索 | 查找相关 lesson | 排名不证明当前修复有效 |
+| 语义与 CJK | 在条件成立时扩展候选 | 依配置和服务可用性 |
+| 本地模式 | 使用自选 Python 服务 | 不等于 npm 默认路径 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH官方MCP客户端 | 默认接入需 | 动态挂载HTTP工具 | 只有Skill/面板不证明工具就绪 |
-| 公共服务网络和配额 | 默认检索需 | 检索/回读远端语料 | 无结果或限流回官方资料 |
-| Python与完整仓库/索引 | 本地stdio才需 | 不同本地检索路径 | npm包不等于有本地server |
-| 查询前脱敏与环境核对 | 复用必需 | 防敏感外发和错误修复 | 不满足则停远端/不运行命令 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| DSH MCP 客户端 | 默认宿主接入需要 | 挂载工具 | 默认警告并不挂载 |
+| 公共 MCP 与网络 | 默认远端搜索需要 | 查询经验 | 端点不可达则无结果 |
+| 本地 Python/语料 | 仅自选本地路径需要 | 本地检索 | 对应模式不可用 |
+| 人工环境核验 | 应用建议需要 | 避免错误修复 | 不应直接执行未知命令 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 开发者脱敏公开故障 | 无秘密与内部业务字段 |
-| 搜索 | Agent检查真实工具并查询 | 核对返回source与no_match |
-| 回读 | 开发者读完整教训与来源 | 环境和版本适用 |
-| 验证 | 用户在授权可恢复范围确认修复 | 不符回官方文档，不能凭命中执行 |
+|---|---|---|
+| 准备 | 用户确认端点及内容授权 | 不能外发时使用本地资料 |
+| 检索 | 输入非敏感故障条件 | 确认 MCP 已连接和结果来源 |
+| 核验 | 查看 lesson 与当前版本环境 | 条件不符或证据不足则不套用 |
+| 恢复 | 运行用户批准的隔离检查 | 失败时回原始日志与手工调查 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | MCP网络或本地索引资源，金额未知 | 接入、脱敏与首次回读 | 公共部署未验 |
-| 持续使用 | 查询/补读与模型调用 | 适用性和来源复核 | compact不代表总token节省 |
-| 失败恢复 | 错用修复可能增加成本 | 回原配置与官方依据 | 无端到端修复实验 |
-| 退出 | 保留本地故障笔记 | 禁用远端接入 | 敏感内容不应先发送后补救 |
+|---|---|---|---|
+| 首次 | 网络和宿主资源未知 | 配置端点及核授权 | 兼容未测 |
+| 持续 | 服务及语义调用费用未知 | 检查经验和环境 | 检索准确率未测 |
+| 恢复 | 诊断和隔离试验资源未知 | 验证修复及回滚 | 错误套用成本未知 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 教训组织 | Git文件、问题/修复/来源 | 当前环境修复效果 |
-| 检索 | 词法与空结果语义降级 | 线上索引和召回时效 |
-| 脱敏 | Worker入口处理查询 | 不能消除原文网络发送 |
+|---|---|---|
+| DSH 接线 | 默认 MCP 挂载及降级 | 远端在线和工具可用 |
+| 检索 | 脱敏、回退和 CJK 融合分支 | 排名准确性与修复成功率 |
+| 经验溯源 | 作者描述 lesson 等级及反馈 | 当前环境修复已验证 |
 
-> **思考**：[Q03](#research-q03) 匹配与证据等级不能证明本环境适用，服务器脱敏也不能阻止查询已外发；[Q02](#research-q02) 服务可启动不等于工具已挂载。
+> **思考**：[Q03](#research-q03) 语义回退和 CJK 融合依配置与数据，[Q04](#research-q04) 服务端脱敏发生在请求到达后。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 将问题、修复和来源组织为Git教训；[Q02](#research-q02) 默认MCP接入及渐进披露使Agent能按需回读，推理与实际修复仍由使用者完成。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把结构化故障经验检索接入 Agent，仍需用户依据当前环境验证。
 
-[Q02](#research-q02)缺客户端时有警告并降级，空结果和紧凑回读分开；[Q03](#research-q03)查询统计与脱敏位于服务端，需明确发送前责任。本轮样本证明格式而非全库质量。
+[Q02](#research-q02) 启动降级保住宿主，[Q03](#research-q03) 区分零命中语义后备及 CJK 融合。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 匹配与证据等级不能证明本环境适用，服务器脱敏也不能阻止查询已外发；[Q02](#research-q02) 服务可启动不等于工具已挂载。
+[Q03](#research-q03) 语义回退和 CJK 融合依配置与数据，[Q04](#research-q04) 服务端脱敏发生在请求到达后。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 仅脱敏公开故障搜索回读试用，不自动运行社区修复。敏感、环境不符或服务不可用时回本地记录和官方文档。
-
-最小验证选五个错误文本相似但原因或版本不同的故障，比较当前搜索+全文与环境收据的误用率、修复成功率和人工成本。须先核查现有反馈和preflight已覆盖多少，不能宣称完全空白；如果收据收集更多敏感信息、用户维护负担大于减少的误用，或现有版本说明已足够，则停止独立扩展。该假设未实现也不计创新分。 见 [Q05](#research-q05)。
+[Q04](#research-q04) 先以合成故障搜索并阅读完整 lesson，环境不符或不能外发时停止，回本地日志。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-固定接入与检索源路径可查；公共部署、教训真实修复和成本未验证。环境收据为未验证假设。
+固定版本接线与代表 Worker 分支已查；未运行宿主或远端服务。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、SKILL.md、cordis.patch.yml、index.js、scripts/mcp_server.py、misakanet/server/handlers/search.py、workers/register-proxy-sw.js、lessons/en/wsl2-memory-leak-fix.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、cordis.patch.yml、workers/register-proxy-sw.js、misakanet/server/handlers/search.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定68fb694e6627ae8ce3a2a071548eef9ce00e814d，检查README/Skill、DSH入口patch、Worker搜索段、本地handler和一条教训；未审全站、全部教训或部署配置。
-- 下一步：仅固定源码与样例检查，未连接公共MCP、执行修复或运行目标测试；不采信宣传耗时为本轮结果。
+- 边界：只读 README、package、bundle、MCP wrapper、Worker 搜索和本地 Python fallback 代表路径；未运行代码、服务或宿主，未审计完整语料、脱敏规则及所有反馈路径。
+- 下一步：用假服务和固定故障集合验证挂载、限流、CJK 及语义失败，再按 [Q05](#research-q05) 比较错误套用和人工成本。
 
 **分析版本**
 
 - **仓库**：[Ikalus1988/MisakaNet](https://github.com/Ikalus1988/MisakaNet)
-- **版本号**：2.50.1（[固定提交 68fb694](https://github.com/Ikalus1988/MisakaNet/tree/68fb694e6627ae8ce3a2a071548eef9ce00e814d)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：3.2.0（[固定提交 b38ef5b](https://github.com/Ikalus1988/MisakaNet/tree/b38ef5bf0304212ec2eb4c0c46d16c42672d551e)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,11 +136,9 @@
 
 <a id="innovation"></a>
 
-可以提出未验证的环境匹配收据，查询时只携带脱敏软件版本与可公开条件，返回支持/不适用/未知边界及原证据；应用后把真实环境、验证动作和结果作为独立回执，不用检索分数替代修复通过。相对已有搜索与反馈，增量是将“找到相似错误”推进到“本环境已验证或明确不适用”，避免跨机器直接套用。
+[Q05](#research-q05) 假设本机环境验证收据能减少错误套用；须先核现有功能，尚未验证。
 
-最小验证选五个错误文本相似但原因或版本不同的故障，比较当前搜索+全文与环境收据的误用率、修复成功率和人工成本。须先核查现有反馈和preflight已覆盖多少，不能宣称完全空白；如果收据收集更多敏感信息、用户维护负担大于减少的误用，或现有版本说明已足够，则停止独立扩展。该假设未实现也不计创新分。 见 [Q05](#research-q05)。
-
-仅固定源码与样例检查，未连接公共MCP、执行修复或运行目标测试；不采信宣传耗时为本轮结果。
+用假服务和固定故障集合验证挂载、限流、CJK 及语义失败，再按 [Q05](#research-q05) 比较错误套用和人工成本。
 
 <a id="detail-section-9"></a>
 
@@ -153,172 +147,110 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 1129 | 139822 | — | — | 1142578 |
+| .md | source | 1246 | 147674 | — | — | 1239718 |
 | .md | example | 7 | 225 | — | — | 576 |
-| .js | source | 18 | 14988 | 9409 | 4795 | — |
+| .js | source | 18 | 15571 | 9698 | 5074 | — |
 | .ts | source | 3 | 432 | 310 | 64 | — |
-| .mjs | source | 12 | 6784 | 4227 | 2237 | — |
-| .js | test | 15 | 1767 | 1305 | 293 | — |
-| .cjs | test | 1 | 645 | 442 | 168 | — |
-| .mjs | test | 98 | 22037 | 16246 | 4163 | — |
+| .mjs | source | 12 | 6912 | 4301 | 2284 | — |
+| .js | test | 16 | 1855 | 1359 | 322 | — |
+| .cjs | test | 1 | 708 | 495 | 176 | — |
+| .mjs | test | 106 | 23046 | 16983 | 4361 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 281](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=281&color=737b86&logo=github)](https://github.com/Ikalus1988/MisakaNet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 587](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=587&color=737b86&logo=github)](https://github.com/Ikalus1988/MisakaNet/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 414](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=414&color=737b86&logo=github)](https://github.com/Ikalus1988/MisakaNet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
-
-
-
-统计日期：2026-10-27。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/Ikalus1988/MisakaNet/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：失败记忆检索与证据等级能支持什么，远端/本地及安全复用边界在哪里？
+**插件研究总目标**：核查故障经验检索、DSH 接线与远端边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 相比搜索网页或本地笔记，失败记忆多交付什么？
+### Q01 · 开发者为什么检索已有故障经验，与手工搜索有什么差别？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-对象是重复遇到环境、依赖、CI或工具错误的开发者。基线是搜索报错网页或自己维护故障笔记；MisakaNet把问题、原因、修复和来源放入Git管理的Markdown，并通过Agent接口检索和回读。它的增量是让下一个Agent能按故障线索找到可追溯的教训，而不是每次从聊天猜解决办法。
-
-样例WSL教训包含状态、翻译来源、provenance和配置步骤，但这种元数据不是本轮复现实验。不同机器、版本和任务的相似错误可能原因不同；“下一Agent不再失败”是作者愿景，不能由一条已发布教训推导。模型仍需检查修复与当前环境相符，尤其不能为提高命中率自动运行社区命令。
+README:98-106 描述 Git 维护的故障经验、证据等级和 BM25 检索；面向反复排查相似工程错误的开发者，基线是搜索日志、文档和 issue。它将历史经验及检索工具接入 Agent，而不是保证相似错误同因或修复在当前环境有效。README:91-96 建议读完整 lesson 并区分证据等级；实际修复率和节时未与人工搜索对照。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:11-22](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/README.md#L11-L22)
+**依据 1 · 作者声明**：[README.md:91-106](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/README.md#L91-L106)
 
-作者以重复故障为目标并提供多Agent接口。
+作者描述故障记忆、证据与检索。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-> **The same failure, paid for twice.**
->
-> A `pip install` times out behind a corporate proxy. An agent finds the fix. Days later the same
-> timeout appears on another machine, under another model — and is debugged from scratch, because the
-> fix was never written down anywhere the next agent looks.
->
-> MisakaNet is that place: a git-backed **failure memory**. Every lesson is a Markdown file in this
-> repository — graded by evidence, reviewed like code, retrieved by an agent instead of guessed at.
-> You fail once; the next agent does not.
+**2. Read what came back.** A hit returns the lesson, its `evidence_level`, and its path — open the
+file and read the fix before running any command in it. A miss returns `no_match` plus a ready-to-call
+intake: the corpus saying it does not know this one yet.
 
-Agent-native interfaces: [MCP server](https://misakanet.org/mcp) (8 tools), WebMCP, `llms.txt`,
-A2A discovery via `.well-known/agent-card.json`.
+**3. Check the trust signal, not the tone.** `E0`–`E3` say how far a lesson was verified; `E4` is the
+one nobody can write or vote into.
+
+## What is MisakaNet?
+
+**Git-backed failure memory for AI coding agents.** An error shows up → the agent searches → it
+applies a fix somebody already verified → if nothing matches, the miss becomes an intake, and the
+intake becomes a lesson for the next agent.
+
+Every lesson is a Markdown file: reviewed like code, graded by evidence, retrieved with BM25 over the
+Python standard library. The hosted MCP endpoint adds an **optional semantic fallback** (bge-m3 +
+Vectorize) only when BM25 returns no match; `MISAKANET_SEMANTIC=0` disables it. No vector database is
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lessons/en/wsl2-memory-leak-fix.md:1-29](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/lessons/en/wsl2-memory-leak-fix.md#L1-L29)
+**依据 2 · 源码核查**：[package.json:1-5](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/package.json#L1-L5)
 
-样例状态与来源，内容是教训而非本轮独立验证。
-
-<details>
-<summary>查看原文（29行）</summary>
+包说明与默认 MCP 服务。
 
 ```text
----
 {
-  "title": "WSL2 memory leak — runaway host memory usage",
-  "domain": "devops",
-  "tags": ["wsl", "memory", "leak", "performance", "windows"],
-  "status": "published",
-  "lang": "en",
-  "source": "uncledad96-glitch",
-  "translated_from": "lessons/contrib/wsl2-memory-leak-fix.md",
-  "created": "2026-08-02",
-  "updated": "2026-08-02",
-  "confidence": "0.9"
-}
-provenance:
-  source: "external"
-  contributor: "Unknown"
-  merged_at: "2026-08-23"
-  evidence: "post-publication"
----
-
-# WSL2 memory leak — runaway host memory usage
-
-## Problem
-
-After a few days, WSL2 consumes 8 GB+ of host RAM and Windows becomes sluggish. `free -h` inside WSL shows almost all memory in use, and `htop` reveals no single process holding the memory.
-
-## Root Cause
-
-WSL2 uses dynamic memory allocation and does not aggressively release memory back to Windows by default. Long-running processes (Python services, vector databases, Docker, Jupyter) allocate memory that is not returned to the host when the process exits. This is documented in the [WSL release notes](https://docs.microsoft.com/en-us/windows/wsl/faq#how-do-i-configure-wsl-to-use-less-memory).
+  "name": "misakanet",
+  "version": "3.2.0",
+  "license": "Apache-2.0",
+  "description": "MisakaNet failure-memory skill — evidence-rated failure lessons for AI agents. DSH bundle: registers the MCP tools as mcp__misakanet__* (misakanet_search/get_lesson/…), served by the public Streamable HTTP endpoint https://misakanet.org/mcp — live tools from an npm install, in any profile, with no local python. A profile that prefers the repo's own stdio server can override the bundle row.",
 ```
 
-</details>
+#### 缺口
 
-**依据 3 · 源码核查**：[SKILL.md:12-35](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/SKILL.md#L12-L35)
-
-适用故障范围与搜索/应用/反馈流程。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-````text
-Use MisakaNet when you encounter:
-
-- **Errors**: `ModuleNotFoundError`, `ConnectionRefusedError`, `TimeoutError`
-- **Exceptions**: uncaught exceptions, unhandled rejections, segfaults
-- **CI failures**: DCO sign-off, lint errors, test failures, build failures
-- **Tool failures**: MCP server crashes, API timeouts, auth errors
-- **Regression**: something that worked before now fails
-
-Do NOT use MisakaNet for:
-
-- Normal code completion or refactoring
-- Questions about how to use a library (use documentation instead)
-- Feature requests or design discussions
-- Anything that isn't a failure or error
-
-## Recovery flow
-
-```
-1. Hit an error
-   ↓
-2. Search MisakaNet for matching lessons
-   ↓
-3. If found → apply the documented fix
-   If not found → capture a redacted failure report
-````
-
-</details>
+- 未做同环境故障任务对照
+  **影响**：不能推断修复成功率或节时
+  **进一步探讨**：固定错误及环境比较手工搜索与检索后人工验收。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · DSH默认连接何处，搜索如何返回和降级？
+### Q02 · 默认 DSH 安装如何接公共 MCP，失败时可用性如何？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-默认npm bundle让本包动态加载宿主官方MCP客户端，连接公共https endpoint，设60秒超时和非致命启动失败；本地Python不是npm默认路径。官方client缺失或加载失败时记录警告并返回，DSH能启动不代表工具已挂载。
-
-固定Worker搜索先对query脱敏、消费匿名突发配额、加载lessons/BM25索引，按可用后端取候选并补回正文元数据；空结果且允许semantic时再尝试语义降级，失败仍保留no_match路径。Python本地handler也有SAG/BM25/fallback、草稿过滤和compact/summary/full渐进披露，但不能将本地实现当作公共部署正在运行的字节。公共服务的实际部署、索引时间与依赖环境本轮未查询。
+index.js:54-60 默认使用公共 streamable-http MCP、60 秒工具 timeout、failOnStartupError=false；75-109 与 118-134 动态导入宿主 MCP 客户端并挂载，缺失或失败时默认记录警告而不阻断 wrapper。cordis.patch.yml:52-62 实际传入相同地址和设置；本地 Python 是可配置另一路径，不能把其行为说成 npm 默认路径。宿主能启动不等于工具已挂载或远端可达；作者声明兼容范围不代替宿主验收。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:53-60](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/index.js#L53-L60)
+**依据 1 · 源码核查**：[index.js:54-60](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/index.js#L54-L60)
 
-默认公共HTTP与超时配置。
+默认公共端点与启动条件。
 
 ```text
- */
 export const DEFAULT_MCP_CONFIG = Object.freeze({
   transport: 'streamable-http',
   serverName: 'misakanet',
@@ -328,28 +260,61 @@ export const DEFAULT_MCP_CONFIG = Object.freeze({
   failOnStartupError: false,
 ```
 
-**依据 2 · 源码核查**：[index.js:104-134](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/index.js#L104-L134)
+**依据 2 · 源码核查**：[index.js:75-109](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/index.js#L75-L109)
 
-动态官方client挂载与降级警告。
+子插件入口和缺失处理。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
+export async function apply(ctx, config = {}) {
+  const options = { ...DEFAULT_MCP_CONFIG, ...config };
+
+  // NOTHING BELOW MAY THROW OUT OF THIS FUNCTION.
+  //
+  // A throw here is a failed activation, and a failed activation inside a profile
+  // bundle can take the whole host down: `dsh: startup failed: N required plugins
+  // did not activate` — the entire `dsh web` refuses to start, not just this
+  // server. That is a catastrophic outcome for a feature whose worst case should
+  // be "the tools are missing": the skill (SKILL.md) and every other plugin in
+  // the profile are unrelated to whether MisakaNet's MCP client mounted.
+  //
+  // So the whole body is guarded and reports through the host logger instead.
+  // `failOnStartupError` still works as documented — it asks the *MCP client* to
+  // treat a failed initial connection or tool sync as fatal (that is a config
+  // field of the client, `dsh-mcp-client/lib/index.js`), and when it is set the
+  // client's own fiber fails where the host can attribute it. What it must never
+  // do is make *our* wrapper the reason a profile will not boot.
+  try {
+    if (typeof ctx?.plugin !== 'function') {
+      // A host that cannot mount child plugins: the skill still works, so say so and stop. This used to
+      // throw unconditionally — before the try — which is exactly the failure mode above. The explicit
+      // opt-in still gets its error, because that is what an opt-in is for.
+      const message = 'misakanet: cordis context has no plugin(); MCP tools not mounted';
+      if (options.failOnStartupError) throw new Error(message);
+      ctx?.logger?.warn?.(message);
+      return;
+    }
+
     let client;
     try {
       // Dynamic import: the client is ESM and only exists inside a DSH install.
       client = await import('@deepseek-ai/dsh-mcp-client');
     } catch (error) {
       if (options.failOnStartupError) throw error;
-      // Expected on npm skill-only installs: the skill (SKILL.md) is the payload,
-      // and a missing client must not take the whole profile down with it.
-      //
-      // Returning quietly is right for **boot** and wrong for **diagnosis**. `lib/client.js`
-      // mounts the browser half either way, so the observable result is a rendered MisakaNet
-      // panel whose tools never reach the agent — intake #2759 reported exactly that ("the
-      // sidebar is decorative", zero requests to misakanet.org) with nothing in the host log
-      // to separate "this profile never installed the client" from "this profile is broken".
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:118-134](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/index.js#L118-L134)
+
+导入失败警告与挂载。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
       // The other two guarded paths already log; this one was the only silent branch, and it is
       // the branch that runs most often. Measured 2026-10-08 with the client unresolvable:
       // `apply()` returned and `logger.warn` was called 0 times.
@@ -371,14 +336,101 @@ export const DEFAULT_MCP_CONFIG = Object.freeze({
 
 </details>
 
-**依据 3 · 源码核查**：[workers/register-proxy-sw.js:4028-4079](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4028-L4079)
+**依据 4 · 源码核查**：[cordis.patch.yml:52-62](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/cordis.patch.yml#L52-L62)
 
-公共Worker脱敏、配额、索引加载与词法检索主链。
+bundle 默认配置。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
+- insert:
+    - id: misakanet-mcp
+      name: 'misakanet'
+      config:
+        transport: streamable-http
+        serverName: misakanet
+        url: https://misakanet.org/mcp
+        headers:
+          Origin: https://misakanet.org
+        toolCallTimeoutMs: 60000
+        failOnStartupError: false
+```
+
+</details>
+
+**依据 5 · 源码核查**：[package.json:60-73](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/package.json#L60-L73)
+
+可选宿主 peer 和 Node 版本。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/dsh-mcp-client": ">=0.1.0-rc.8 <0.2.0 || >=0.1.5-rc.1 <0.2.0 || >=0.1.7-rc.1 <0.2.0 || >=0.2.0-rc.1 <0.3.0",
+    "@deepseek-ai/schemastery": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-mcp-client": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+```
+
+</details>
+
+#### 缺口
+
+- 未运行宿主、MCP 连接或本地 Python
+  **影响**：无法证明工具挂载、网络和兼容
+  **进一步探讨**：隔离宿主验证客户端缺失、端点超时和成功搜索。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 搜索如何限流、脱敏、排序和回退？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+Worker 的 4297-4315 先对收到的搜索文本使用 redactIntake，再参与检索和记录；4317-4325 显示匿名读取使用突发窗口，不能凭旧注释推断每日额度。4368-4391 在无命中时可请求语义回退并捕获失败；4394-4422 对含中文等 CJK 查询另有词法与语义融合路径，因此不能笼统说语义仅用于零命中。独立本地 Python handler 包含自己的 fallback 路径，不能把它等同默认远端生产配置。源码只能证明分支，线上索引内容、排名及成功率未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[workers/register-proxy-sw.js:4297-4325](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/workers/register-proxy-sw.js#L4297-L4325)
+
+服务端查询脱敏与匿名突发窗口。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+  if (toolName === "misakanet_search") {
+    if (!args.query) return { error: "query is required" };
+
+    // #3692: the query is the one thing that carries the caller's machine into our storage.
+    // Today the raw text reached five places — `search_signals.query` (80 chars), `lesson_usage.query`
+    // (200 chars), the knowledge-gap KV entry, the gap counter's bucket key, and (through the same
+    // path) the analytics panel that publishes failed queries. The trial user's words were exact:
+    // "报错片段会作为查询关键词发到该服务器——这意味着内部表名、路径等可能随查询外发".
+    //
+    // So the query is redacted ONCE, here, before anything reads it. Everything downstream — the
+    // scoring, the gap log, the usage rows, the signal row — then works on the redacted text, and
+    // there is no second place to forget. The scoring input changes with it, and that is deliberate:
+    // a path or an address is not a search term, and the corpus is indexed by error text.
+    //
+    // The redaction is the same rule set the client hook applies (integrations/agent-autostart/
+    // checkpoint_reminder.mjs), so the text that reaches the server is already redacted on the
+    // hook's path — this is the half that covers the agent's OWN search call, which the client
+    // cannot intercept.
     args = { ...args, query: redactIntake(String(args.query)) };
 
     // Rate limit: 5 free reads/day per IP for remote HTTP (shared across
@@ -390,59 +442,24 @@ export const DEFAULT_MCP_CONFIG = Object.freeze({
       const ip = clientIp || "unknown";
       // Burst window, not a daily cap (2026-09-18): reuse the same D1 counter with a minute key, so
       // this needs no new storage and stays atomic across isolates.
-      const refusal = await consumeQuota(env, {
-        scope: "rate_read", bucket: ip, period: readBurstPeriod(), limit: READ_BURST_LIMIT,
-        message: READ_BURST_MESSAGE,
-        hint: `retry after up to ${READ_BURST_WINDOW_SECONDS}s; no registration needed`,
-      });
-      if (refusal) return { ...refusal, voice: "failure-warning" };
-    }
-
-    let lessons;
-    try {
-      lessons = await loadLessons(env);
-    } catch (e) {
-      return { error: `Failed to load lessons: ${e.message}` };
-    }
-
-    // Try BM25 search first (if index available), fall back to naive search
-    let results;
-    let source = "worker-search";
-    // Alias expansion (issue #1780) happens here — on the query, before any scoring —
-    // and only on this path: the gap-cleanup cron scores raw gap strings through
-    // `searchLessonsBM25` directly. `args.query` stays the query of record for the gap
-    // log, the analytics events, the kind detector, the no-match text and the FAQ
-    // matcher; only the scorer sees the expansion.
-    const scoringQuery = scoringQueryFor(args.query, env);
-    if (scoringQuery !== args.query) {
-      debugLog(env, 2, "query alias expansion", {
-        query: args.query, scored: scoringQuery, aliasVersion: QUERY_ALIAS_VERSION,
-      });
-    }
-    const bm25Index = await loadBM25Index(env);
-    if (bm25Index) {
-      // `args.query` is also passed as the floor query: the expansion may add score, but
-      // the relevance floor keeps judging what the user typed (see searchLessonsBM25).
-      results = searchLessonsBM25(bm25Index, scoringQuery, args.domain, args.top || 5, args.query);
-      source = "worker-bm25";
-      noteSearchBackend(env, "bm25");
-      debugLog(env, 2, "BM25 search", { query: scoringQuery, results: results.length });
-    } else {
-      results = searchLessons(lessons, scoringQuery, args.domain, args.top || 5, args.query);
-      noteSearchBackend(env, "fallback");
-      debugLog(env, 2, "Fallback search", { query: scoringQuery, results: results.length });
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[workers/register-proxy-sw.js:4087-4104](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4087-L4104)
+**依据 2 · 源码核查**：[workers/register-proxy-sw.js:4368-4391](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/workers/register-proxy-sw.js#L4368-L4391)
 
-无词法结果才语义降级，失败不扩大为正常命中。
+语义回退与错误分支。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
+
+    // Both matchers project a narrow shape (BM25 from the index, the naive one from
+    // the record), so re-attach the loaded records once here: the injection scan
+    // below then sees real bodies instead of a title, and the progressive-disclosure
+    // formatters get `problem`/`fix`/`tags`/`freshness` instead of empty strings
+    // (issue #1675).
     results = enrichSearchHits(results, lessons);
 
 
@@ -465,86 +482,108 @@ export const DEFAULT_MCP_CONFIG = Object.freeze({
 
 </details>
 
-**依据 5 · 源码核查**：[misakanet/server/handlers/search.py:475-512](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/misakanet/server/handlers/search.py#L475-L512)
+**依据 3 · 源码核查**：[workers/register-proxy-sw.js:4394-4422](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/workers/register-proxy-sw.js#L4394-L4422)
 
-本地草稿排除与渐进披露，空结果明示。
+CJK 融合的独立路径。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-
-    # ── Draft exclusion (docs/mcp.md search scope) ──
-    # Applied before kind/detail transforms so every detail level and every
-    # backend honours the same published-only contract. Truncate back to the
-    # requested count afterwards, since the backends were asked for extra.
-    if results:
-        results = _exclude_drafts(results)
-        if isinstance(top, int) and top > 0:
-            results = results[:top]
-
-    # ── Kind filtering (Issue #1441) ──
-    if results and kind != "all":
-        results = _filter_by_kind(results, kind)
-
-    # ── Progressive disclosure: transform by detail level ──
-
-    if results and detail in ("compact", "summary"):
-        results = _apply_detail_level(results, detail)
-
-    # ── Gap analysis: log zero-result queries (Issue #1164) ──
-    if not results:
-        _log_search_gap(query, source)
-
-    # Tag each result with its kind
-    for r in results:
-        if "kind" not in r:
-            r["kind"] = kind if kind != "all" else _classify_result_kind(r)
-
-    voice = "lesson-found" if results else "failure-warning"
-    response = {
-        "results": results,
-        "source": source,
-        "detail": detail,
-        "kind": kind,
-        "voice": voice,
+    // CJK fusion (2026-10-28): the fallback above only fires on an EMPTY result, so a confident-but-
+    // wrong lexical hit suppresses the vector path entirely. For queries that carry CJK characters
+    // the vector path is fused in instead of gated. Scoped to CJK on purpose: English already clears
+    // its floor (measured 15/20 against 16) and this experiment measured no English arm; widening it
+    // would spend the whole gain on an unmeasured risk.
+    // `MISAKANET_CJK_FUSE=0` disables it without a code revert, the same switch shape as
+    // `MISAKANET_SEMANTIC=0`.
+    if (results && results.length > 0 && env.MISAKANET_CJK_FUSE !== "0" && CJK_CHAR.test(String(args.query || ""))) {
+      try {
+        // 0.45 rather than the 0.62 no_match floor: fusion asks "is this plausibly the same
+        // subject", where a near-miss is still useful as a second opinion, not "is this the answer".
+        const vectorHits = await semanticFallbackHits(env, args.query, Math.max(args.top || 5, 10), 0.45);
+        if (vectorHits.length) {
+          const fused = rrfFuse(results, enrichSearchHits(vectorHits, lessons), args.top || 5);
+          if (fused.length) {
+            results = fused;
+            source = "worker-bm25+cjk-fuse";
+            noteSearchBackend(env, "semantic");
+          }
+        }
+      } catch (e) {
+        // A fusion failure must leave the lexical answer alone — same rule as the fallback above.
+        debugLog(env, 1, "cjk fusion failed", { error: String((e && e.message) || e) });
+      }
     }
-    if not results:
-        response.update(_no_match_feedback(query))
+
+    // Gap analysis: log zero-result queries (Issue #1164)
+    if ((!results || results.length === 0) && args.query) {
+      // Track the gap write with the runtime instead of letting it float: a
 ```
 
 </details>
 
+**依据 4 · 源码核查**：[misakanet/server/handlers/search.py:98-106](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/misakanet/server/handlers/search.py#L98-L106)
+
+本地 fallback 查询入口。
+
+```text
+def _fallback_search(query: str, domain: str = None, top: int = 5) -> list | None:
+    """Lightweight keyword search from lessons.json — stdlib-only.
+
+    Used when SAG-Lite and BM25 are both unavailable (e.g. Glama sandbox).
+    Returns None if lessons.json is not found (caller should show error).
+    Returns [] if lessons.json exists but no matches (caller should show empty results).
+    """
+    # Try multiple locations for lessons.json
+    candidates = [
+```
+
 #### 缺口
 
-- 公网服务部署版本、索引和语义后端是否与固定源码相同未知。
-  **影响**：不能把源码能力写成实际在线可用或检索耗时保证。
-  **进一步探讨**：只用脱敏公开故障做首次搜索，核对返回source、版本/路径与原始教训。
+- 未运行线上 Worker、当前索引和真实查询
+  **影响**：不能断言检索效果、配额或线上配置
+  **进一步探讨**：用固定语料对照 CJK、零命中、关闭语义和回退失败。
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 匹配、证据等级与脱敏能否保证安全复用？
+### Q04 · 凭据、故障文本与远端服务的隐私和费用条件是什么？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、效果与总成本、采用判断
 
 #### 完整回答
 
-不能。检索分数用于相关性排序，证据等级或published只描述材料来源与流程状态，不是对当前机器的通过证明。已检查样例含具体WSL配置和重启步骤，是否适合当前环境必须另外确认；本轮未执行这些命令。公共搜索的query先到远端Worker，服务器再脱敏并用于日志/usage，所以服务器脱敏不能阻止原始查询已经外发。调用者应在发送前去掉秘密、内部路径、账号和业务内容，敏感场景可考虑本地stdio但需完整仓库/Python与索引。
-
-源码确有缺结果记录和usage跟踪，未命中也不是本地无副作用的纯查询。渐进披露减少默认返回正文量，却可能遗漏适用条件，必须回读完整教训；不能将紧凑结果中的一句fix直接当执行指令。
+默认 MCP 地址指向公共服务，搜索文本先经网络到服务端，再由 Worker 中的 redactIntake 处理；服务端脱敏不能证明敏感内容没有出本机，也不能保证所有秘密形式被识别。README:58-68 声称匿名读取可用，具体实时额度与外部托管政策未核；需要写入、反馈或使用其他端点时依其身份与数据约定。用户应先用合成错误、检查来源与版本并人工确认修复，避免直接执行外部建议；若故障文本不能外发，应停止远端调用并转到本地日志或自托管路径。运行费用、人工核验和服务可用性未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[workers/register-proxy-sw.js:4013-4028](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4013-L4028)
+**依据 1 · 源码核查**：[index.js:54-60](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/index.js#L54-L60)
 
-脱敏发生在服务器handler入口，无法消除网络发送本身。
-
-<details>
-<summary>查看原文（16行）</summary>
+默认公共 MCP 目标。
 
 ```text
+export const DEFAULT_MCP_CONFIG = Object.freeze({
+  transport: 'streamable-http',
+  serverName: 'misakanet',
+  url: 'https://misakanet.org/mcp',
+  headers: { Origin: 'https://misakanet.org' },
+  toolCallTimeoutMs: 60000,
+  failOnStartupError: false,
+```
+
+**依据 2 · 源码核查**：[workers/register-proxy-sw.js:4297-4315](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/workers/register-proxy-sw.js#L4297-L4315)
+
+脱敏发生在 Worker 搜索分支。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+  if (toolName === "misakanet_search") {
+    if (!args.query) return { error: "query is required" };
+
     // #3692: the query is the one thing that carries the caller's machine into our storage.
     // Today the raw text reached five places — `search_signals.query` (80 chars), `lesson_usage.query`
     // (200 chars), the knowledge-gap KV entry, the gap counter's bucket key, and (through the same
@@ -565,125 +604,14 @@ export const DEFAULT_MCP_CONFIG = Object.freeze({
 
 </details>
 
-**依据 2 · 源码核查**：[workers/register-proxy-sw.js:4107-4119](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4107-L4119)
+**依据 3 · 作者声明**：[README.md:58-69](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/README.md#L58-L69)
 
-查询和缺口进入服务端分析路径。
+作者声明匿名入口及本地库。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-    // Gap analysis: log zero-result queries (Issue #1164)
-    if ((!results || results.length === 0) && args.query) {
-      // Track the gap write with the runtime instead of letting it float: a
-      // fire-and-forget promise can be dropped when the isolate finishes the
-      // response (today's gap records were only "eventually" written by luck), and
-      // `waitUntil` also makes the work awaitable in tests, which is how a latent
-      // race in the gap test surfaced on 2026-09-12.
-      const gapWork = logSearchGap(env, args.query, source).catch(() => {});
-      if (ctx && typeof ctx.waitUntil === "function") ctx.waitUntil(gapWork);
-      // PRD ④ #1357: record knowledge-gap events for analytics.
-      if (ctx) ctx.waitUntil(trackUsage(env, ctx, "no_match", { query: args.query }));
-    } else if (results && results.length > 0) {
-      if (ctx) ctx.waitUntil(trackUsage(env, ctx, "search", { query: args.query }));
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lessons/en/wsl2-memory-leak-fix.md:46-61](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/lessons/en/wsl2-memory-leak-fix.md#L46-L61)
-
-教训包含环境配置和重启，适用性必须另验。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-````text
-### 2. Cap WSL2 memory (Windows-side)
-
-Create or edit `C:\Users\<username>\.wslconfig`:
-
-```ini
-[wsl2]
-memory=4GB
-swap=2GB
-localhostForwarding=true
-```
-
-Then restart WSL from PowerShell:
-
-```powershell
-wsl --shutdown
-wsl
-````
-
-</details>
-
-**依据 4 · 源码核查**：[misakanet/server/handlers/search.py:489-512](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/misakanet/server/handlers/search.py#L489-L512)
-
-默认可紧凑返回且缺结果有独立路径。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-    # ── Progressive disclosure: transform by detail level ──
-
-    if results and detail in ("compact", "summary"):
-        results = _apply_detail_level(results, detail)
-
-    # ── Gap analysis: log zero-result queries (Issue #1164) ──
-    if not results:
-        _log_search_gap(query, source)
-
-    # Tag each result with its kind
-    for r in results:
-        if "kind" not in r:
-            r["kind"] = kind if kind != "all" else _classify_result_kind(r)
-
-    voice = "lesson-found" if results else "failure-warning"
-    response = {
-        "results": results,
-        "source": source,
-        "detail": detail,
-        "kind": kind,
-        "voice": voice,
-    }
-    if not results:
-        response.update(_no_match_feedback(query))
-```
-
-</details>
-
-#### 缺口
-
-- 各教训证据链、当前环境适用性和前置客户端脱敏覆盖未全面核查。
-  **影响**：不能承诺修复安全、秘密不外发或全部教训可靠。
-  **进一步探讨**：发查询前人工脱敏，命中后读原文和官方依据，再用可恢复样例核对环境。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 什么场景值得试用，成本及退出怎么核对？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-建议已有重复工程故障且可用公开脱敏文本描述的开发者有限试用一次搜索和回读，不将自动运行修复纳入建议。成功标准是找到与当前版本/环境匹配、原文和来源可核查的解释，并完成自己授权的验证；不是返回命中或面板出现。官方client缺失、公共服务失败、配额或无结果时回官方文档和本地故障笔记。
-
-初次成本是接入正确profile、验证真实工具和查询内容脱敏；持续成本是读全文、适用性判断及反馈，应用修复仍可能有模型调用和重试。公共匿名读不需账号是作者声明，不能转成持续免费或不受配额限制承诺；本轮没有价格、总token或修复时间实测。默认compact可能降低传回文字，但加上补读、误匹配和验证，端到端是否节省未知。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[README.md:58-90](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/README.md#L58-L90)
-
-首次成功搜索而非安装作为作者验收入口。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-````text
 ## Install (30 seconds)
 
 The point of an install is a first **successful search**, not the install. None of these needs an
@@ -693,191 +621,114 @@ account or a token.
 |---|---|
 | **DeepSeek Harness** | `dsh plugin --profile web add misakanet` — or type `misakanet` in **Add plugin** |
 | **Claude Code** | `/plugin marketplace add Ikalus1988/MisakaNet` then `/plugin install misakanet@misakanet` |
-| Installer-managed | Claude Code · Codex · Hermes · OpenClaw · codewhale · Cursor · Gemini CLI · Copilot CLI · OpenCode · Kiro · MiniMax Code |
+| Installer-managed | Claude Code · Codex · Hermes · OpenClaw · codewhale · Cursor · Gemini CLI · Copilot CLI · OpenCode · Kiro · MiniMax Code · DeepSeek Harness |
 | **Any other MCP client** | point it at `https://misakanet.org/mcp` — public endpoint, anonymous reads |
 | **Your own code** | `pip install misakanet-core` (library) · `pip install misakanet` (stdio server) |
-
-The installer-managed row is what `npx @misaka-net/misakanet-setup` writes into each host's config.
-
-Updates: `dsh plugin --profile web update misakanet@latest`.
-Installer updates: `npx @misaka-net/misakanet-setup@latest`.
-Full prerequisites and the two-package trap: [How to use it](#how-to-use-it).
-
-## Your first five minutes
-
-**1. Ask it something you have actually broken.** No client installed? This `curl` is the whole interface:
-
-```bash
-curl -sS https://misakanet.org/mcp \
-  -H 'Content-Type: application/json' -H 'Accept: application/json' \
-  -H 'MCP-Protocol-Version: 2025-06-18' -H 'Origin: https://misakanet.org' \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call",
-       "params":{"name":"misakanet_search","arguments":{"query":"database is locked","top":3}}}'
 ```
 
+</details>
+
+**依据 4 · 作者声明**：[README.md:91-96](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/README.md#L91-L96)
+
+作者提醒查看完整经验和证据。
+
+```text
 **2. Read what came back.** A hit returns the lesson, its `evidence_level`, and its path — open the
 file and read the fix before running any command in it. A miss returns `no_match` plus a ready-to-call
-````
+intake: the corpus saying it does not know this one yet.
 
-</details>
-
-**依据 2 · 源码核查**：[index.js:104-134](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/index.js#L104-L134)
-
-缺client工具降级路径。
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-    let client;
-    try {
-      // Dynamic import: the client is ESM and only exists inside a DSH install.
-      client = await import('@deepseek-ai/dsh-mcp-client');
-    } catch (error) {
-      if (options.failOnStartupError) throw error;
-      // Expected on npm skill-only installs: the skill (SKILL.md) is the payload,
-      // and a missing client must not take the whole profile down with it.
-      //
-      // Returning quietly is right for **boot** and wrong for **diagnosis**. `lib/client.js`
-      // mounts the browser half either way, so the observable result is a rendered MisakaNet
-      // panel whose tools never reach the agent — intake #2759 reported exactly that ("the
-      // sidebar is decorative", zero requests to misakanet.org) with nothing in the host log
-      // to separate "this profile never installed the client" from "this profile is broken".
-      // The other two guarded paths already log; this one was the only silent branch, and it is
-      // the branch that runs most often. Measured 2026-10-08 with the client unresolvable:
-      // `apply()` returned and `logger.warn` was called 0 times.
-      ctx?.logger?.warn?.(
-        'misakanet: @deepseek-ai/dsh-mcp-client is not resolvable, so the MCP tools are not '
-        + `mounted (the skill still works): ${error?.message ?? error}`,
-      );
-      return;
-    }
-
-    // The Loader normalizes ESM/CJS/default export shapes before applying a plugin.
-    const component = ctx?.loader?.unwrapExports ? ctx.loader.unwrapExports(client) : client;
-    ctx.plugin(component, options);
-  } catch (error) {
-    if (options.failOnStartupError) throw error;
-    ctx?.logger?.warn?.(`misakanet: MCP client not mounted: ${error?.message ?? error}`);
-  }
+**3. Check the trust signal, not the tone.** `E0`–`E3` say how far a lesson was verified; `E4` is the
+one nobody can write or vote into.
 ```
-
-</details>
-
-**依据 3 · 源码核查**：[workers/register-proxy-sw.js:4030-4051](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4030-L4051)
-
-配额和加载失败边界。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    // Rate limit: 5 free reads/day per IP for remote HTTP (shared across
-    // search + get_lesson). Local stdio MCP is unlimited (user has the code).
-    // Authenticated callers (any valid token) are exempt — the token proves
-    // they registered, so they get the registered quota instead. Anonymous
-    // callers have an empty token here (auth failures never reach this point).
-    if (!authToken) {
-      const ip = clientIp || "unknown";
-      // Burst window, not a daily cap (2026-09-18): reuse the same D1 counter with a minute key, so
-      // this needs no new storage and stays atomic across isolates.
-      const refusal = await consumeQuota(env, {
-        scope: "rate_read", bucket: ip, period: readBurstPeriod(), limit: READ_BURST_LIMIT,
-        message: READ_BURST_MESSAGE,
-        hint: `retry after up to ${READ_BURST_WINDOW_SECONDS}s; no registration needed`,
-      });
-      if (refusal) return { ...refusal, voice: "failure-warning" };
-    }
-
-    let lessons;
-    try {
-      lessons = await loadLessons(env);
-    } catch (e) {
-      return { error: `Failed to load lessons: ${e.message}` };
-```
-
-</details>
 
 #### 缺口
 
-- 当前任务真实修复率、脱敏后召回和总成本未知。
-  **影响**：不能将宣传0.02秒或命中率当任务收益。
-  **进一步探讨**：对五个已知故障比较官方搜索与本工具，记录完整修复时间、错用和全部模型token。
+- 未审计完整脱敏规则、远端数据处理与实际计费
+  **影响**：不能保证无敏感出站或免费服务持续
+  **进一步探讨**：使用合成标记核对客户端请求和服务端日志策略。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 可否给教训增加环境匹配与应用回执？
+### Q05 · 能否让检索结果附加当前环境验证结果？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-可以提出未验证的环境匹配收据，查询时只携带脱敏软件版本与可公开条件，返回支持/不适用/未知边界及原证据；应用后把真实环境、验证动作和结果作为独立回执，不用检索分数替代修复通过。相对已有搜索与反馈，增量是将“找到相似错误”推进到“本环境已验证或明确不适用”，避免跨机器直接套用。
-
-最小验证选五个错误文本相似但原因或版本不同的故障，比较当前搜索+全文与环境收据的误用率、修复成功率和人工成本。须先核查现有反馈和preflight已覆盖多少，不能宣称完全空白；如果收据收集更多敏感信息、用户维护负担大于减少的误用，或现有版本说明已足够，则停止独立扩展。该假设未实现也不计创新分。
+现有 lesson 已有证据级、来源及反馈，README:239-246 还描述反馈和来源收据；再次展示相似度或投票不是新增验证。未验证设想是在用户本机为所选建议生成单独的环境验证收据：明确软件版本、前置条件、用户批准运行的检查、结果和不可观察项，不上传原始日志或密钥；没有检查或结果未知时不可称为验证成功。先核查现有反馈、preflight 是否已覆盖等价行为。用五类错误文本相似但原因或版本不同的案例，对照当前搜索加全文与收据，盲测错误套用、任务成功、人工时间与敏感信息暴露；若无改善、未经授权执行、泄露或维护负担过高则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lessons/en/wsl2-memory-leak-fix.md:1-29](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/lessons/en/wsl2-memory-leak-fix.md#L1-L29)
+**依据 1 · 作者声明**：[README.md:91-96](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/README.md#L91-L96)
 
-教训来源与当前运行环境分离。
-
-<details>
-<summary>查看原文（29行）</summary>
+已有 lesson 等级与原文提示。
 
 ```text
----
-{
-  "title": "WSL2 memory leak — runaway host memory usage",
-  "domain": "devops",
-  "tags": ["wsl", "memory", "leak", "performance", "windows"],
-  "status": "published",
-  "lang": "en",
-  "source": "uncledad96-glitch",
-  "translated_from": "lessons/contrib/wsl2-memory-leak-fix.md",
-  "created": "2026-08-02",
-  "updated": "2026-08-02",
-  "confidence": "0.9"
-}
-provenance:
-  source: "external"
-  contributor: "Unknown"
-  merged_at: "2026-08-23"
-  evidence: "post-publication"
----
+**2. Read what came back.** A hit returns the lesson, its `evidence_level`, and its path — open the
+file and read the fix before running any command in it. A miss returns `no_match` plus a ready-to-call
+intake: the corpus saying it does not know this one yet.
 
-# WSL2 memory leak — runaway host memory usage
-
-## Problem
-
-After a few days, WSL2 consumes 8 GB+ of host RAM and Windows becomes sluggish. `free -h` inside WSL shows almost all memory in use, and `htop` reveals no single process holding the memory.
-
-## Root Cause
-
-WSL2 uses dynamic memory allocation and does not aggressively release memory back to Windows by default. Long-running processes (Python services, vector databases, Docker, Jupyter) allocate memory that is not returned to the host when the process exits. This is documented in the [WSL release notes](https://docs.microsoft.com/en-us/windows/wsl/faq#how-do-i-configure-wsl-to-use-less-memory).
+**3. Check the trust signal, not the tone.** `E0`–`E3` say how far a lesson was verified; `E4` is the
+one nobody can write or vote into.
 ```
 
-</details>
+**依据 2 · 作者声明**：[README.md:239-246](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/README.md#L239-L246)
 
-**依据 2 · 源码核查**：[workers/register-proxy-sw.js:4082-4087](https://github.com/Ikalus1988/MisakaNet/blob/68fb694e6627ae8ce3a2a071548eef9ce00e814d/workers/register-proxy-sw.js#L4082-L4087)
-
-检索补回元数据不等于验证应用效果。
+已有反馈和来源收据。
 
 ```text
+**1. Report a failure the corpus does not have.** Search first, then call `misakanet_submit_intake` —
+no account, no email, no token, a five-line report is enough. It becomes a tracked issue.
+
+**2. Reuse a lesson and leave the trace.** A "this helped" vote is recorded as an `E3` hint, not as
+proof. The proof is quieter: your retrieval is counted, anonymously, as one more distinct client.
+
+**What you get back: attribution.** A lesson cites the intake that produced it (`source:`,
+`provenance.issue:`), and the pipeline can emit a receipt naming the lesson and its evidence level.
+```
+
+**依据 3 · 源码核查**：[workers/register-proxy-sw.js:4368-4391](https://github.com/Ikalus1988/MisakaNet/blob/b38ef5bf0304212ec2eb4c0c46d16c42672d551e/workers/register-proxy-sw.js#L4368-L4391)
+
+现有语义后备结果。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+
     // Both matchers project a narrow shape (BM25 from the index, the naive one from
     // the record), so re-attach the loaded records once here: the injection scan
     // below then sees real bodies instead of a title, and the progressive-disclosure
     // formatters get `problem`/`fix`/`tags`/`freshness` instead of empty strings
     // (issue #1675).
     results = enrichSearchHits(results, lessons);
+
+
+    // Semantic fallback (2026-10-26): BM25's floor returns no_match on paraphrases that name the
+    // symptom instead of the error text. Only an empty BM25 result reaches this branch; a hit is
+    // never re-ranked, so the lexical path keeps its behavior. Failure is swallowed into the
+    // existing no_match answer — the fallback must not turn a working search into an error.
+    if ((!results || results.length === 0) && env.MISAKANET_SEMANTIC !== "0") {
+      try {
+        const semanticHits = await semanticFallbackHits(env, args.query, args.top || 5);
+        if (semanticHits.length) {
+          results = enrichSearchHits(semanticHits, lessons);
+          source = bm25Index ? "worker-bm25+semantic" : "semantic";
+          noteSearchBackend(env, "semantic");
+        }
+      } catch (e) {
+        debugLog(env, 1, "semantic fallback failed", { error: String((e && e.message) || e) });
+      }
 ```
+
+</details>
 
 #### 缺口
 
-- 既有preflight/反馈对环境验证的完整覆盖及用户负担。
-  **影响**：不能将收据设想计为现有差异或市场需求。
-  **进一步探讨**：先核现有工具契约，再用同故障对照测试是否减少误用。
+- 未穷尽现有反馈及 preflight 实现，也无收据原型
+  **影响**：无法证明新方案有增量或降低误用
+  **进一步探讨**：先比对现有功能，再用固定错误与环境盲评。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
