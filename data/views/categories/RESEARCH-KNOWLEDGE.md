@@ -29,6 +29,7 @@
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
+| [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
@@ -47,7 +48,6 @@
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
-| [dsh-sciwork](#plugin-1416950630-root) | 提供科研Agent、文件资料库、文献期刊档案、绘图适配和投稿工作台。 | 先用副本课题验收导入、计划确认和回执，组织功能限定试用；投稿包逐文件及逐引文复核，遇写超时先查实际状态。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | 适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。 |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
 | [dsh-source-deck](#plugin-1422910686-root) | 在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。 | 在明确支持的RC环境用非敏感选型任务试用，先检查搜索/抓页/spawn可用，再核实候选URL和关键许可。 |
@@ -65,6 +65,7 @@
 | [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
 | [dshfind](#plugin-1333082908-root) | 聚合 DSH 生态条目、安装线索、代理评分和文档课程的发现网站，结合 GitHub 同步、数据库与页面快照。 | 作为发现入口，以少量真实任务候选回原来源核查并独立试用，不以rank/verified直接授权，见 [Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03)。 |
+| [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [EduWork 选段引用与批注](#plugin-1369398336-packages-dsh-annotation) | 为 DSH 已完成回复添加编号批注，用原生引用草稿组合摘录、评论与问题，并从消息恢复显示。 | 在兼容客户端先用不含敏感内容的长回复试几处批注，核对来源、撤销、刷新和发送后历史，再纳入日常追问。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
 | [Fact Check](#plugin-1380181057-root) | 为 DSH 提供公开资料核查 Skill、关键词取证路由与可选 Jev 判断，组织原文、来源关系和不确定结论。 | 少量公开原始资料事实点先人工核查试用，确认正文链再用；Jev仅额外线索，不无人值守发布，见 [Q03](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q03)。 |
@@ -368,6 +369,22 @@
 
 [查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1416950630-root"></a>
+
+## [DSH SciWork](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/58catmiao/dsh-sciwork)
+
+> **用途**：需要跨文献、图稿与投稿材料组织的研究者；基线是手工维护文件和逐项核对。[Q01](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q01)
+
+> **亮点**：统一课题动作、计划和可审查回执，并生成投稿包。[Q01](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q01) [Q02](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q02)
+
+> **思考**：旧动作可隐式代签；超时不取消底层写，投稿检查失败仍可导出，科学内容需人工复核。[Q03](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q03) [Q04](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q04) [Q05](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q05)
+
+> **建议**：未验证假设：持久操作状态与完成后回读可帮助区分超时后的未知写入，须对照已有成功幂等与回执。[Q06](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1337467566-root"></a>
 
 ## [dsh-anchored-monitor](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md)
@@ -656,22 +673,6 @@
 
 [查看完整分析](../../plugins/2672243194--dsh-read-url/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1416950630-root"></a>
-
-## [dsh-sciwork](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/58catmiao/dsh-sciwork)
-
-> **用途**：给研究者组织文献、图、稿和投稿材料，科学与引用真实性需人工逐项复核。
-
-> **亮点**：普通文件真相与同一动作清单连接面板、agent和CLI，新动作有参数/root绑定确认；Origin能力归上游，不等科学正确认证。[Q01](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q01)、[Q02](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q02)
-
-> **思考**：legacy路径隐式代签；Promise.race超时不取消底层写，回执尽力落盘；格式fail仍可导出，先hash后重读不保证并发快照一致。[Q03](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q03)、[Q04](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q04)
-
-> **建议**：未验证方向是冻结导出字节、分离机械与语义放行，以及operationId回读未知结果后重试；故障矩阵检验一致摘要和不重复执行。[Q06](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q06)
-
-[查看完整分析](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1334269686-root"></a>
 
 ## [dsh-scrape-webpage](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md)
@@ -943,6 +944,22 @@
 > **建议**：需求到固定候选/权限/真实验收证据卡，测无效命令与试用完成率，未实现，见 [Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03)。
 
 [查看完整分析](../../plugins/hikariming--dshfind/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1369398336-packages-dsh-literature"></a>
+
+## [EduWork Literature](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md)
+
+[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 2,338](https://img.shields.io/static/v1?label=npm+30d&message=2%2C338&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-literature) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-literature)
+
+> **用途**：需要在 DSH 查找和引用论文的研究者；基线是分别查询文献来源并手工整理。[Q01](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md#research-q01)
+
+> **亮点**：在宿主内统一多来源检索、引用和公开全文处理。[Q01](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md#research-q01)
+
+> **思考**：部分来源失败仍可能成功返回且未列失败来源；全文写入按文件进行，不保证取消回滚。[Q02](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md#research-q02) [Q03](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设：在已有部分成功结果中增加来源状态可减少覆盖误判，需测失败和限流场景。[Q05](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1369398336-packages-dsh-annotation"></a>
 

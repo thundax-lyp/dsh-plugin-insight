@@ -24,7 +24,8 @@ function assemble(base, work, root = ROOT) {
         selection?.retry_ids ?? [],
         selection?.metadata_only_ids !== undefined,
         selection?.cooldown_ids !== undefined ? work.session.checked_at : null,
-        selection?.heat ?? null
+        selection?.heat ?? null,
+        selection?.quotas ?? null
     );
     if (selection && digest(selection) !== digest(expectedSelection))
         throw Error('incremental selection baseline differs from snapshot');

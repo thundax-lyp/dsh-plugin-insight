@@ -12,6 +12,7 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [@eduwork/dsh-memory](#plugin-1369398336-packages-dsh-memory) | 为 DSH 提供本地记忆管理与跨会话检索。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md#research-q04) 先用隔离 profile 和合成事实检查策略、引用与删除；误命中或敏感数据时停用并核原会话。 |
 | [@luziyang2026/dsh-question-nav](#plugin-1341946801-root) | 在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。 | 个人匹配SDK长会话试用；单文本之外不保证完整卡片，重要上下文保留手工回看，切会话避免连点旧任务。 |
 | [@tencent-connect/dsh-qqbot](#plugin-1334237364-root) | 将 QQ 私聊与群聊连接 DSH Agent 会话。 | 先用测试账号、allowlist 与低权限工作区核对身份、审批和回执。 |
 | [@zzerx/dsh-plugin-memory](#plugin-1363429979-plugin-memory) | 保存跨会话偏好与项目约定，结合模型提炼、作用域召回、原文审计和关系管理。 | 先观察，重要约定留指引；限定维护者无敏感独立库研究，非直接迁入长期记忆。 |
@@ -37,6 +38,7 @@
 | [DSH Boot Animation（lxj5820）](#plugin-1400104434-root) | 预框架启动短片覆盖层，带 client 交接、设置、失败提示和可选媒体 faststart 优化。 | 可在信任本地Web用非私人素材、sound=false/clickToEnter=true有限试用，核键盘和一次点击放行；无效、状态误读或媒体结果未知时停用刷新回原生，先查backup而非重复优化。 |
 | [dsh Browser Control](#plugin-1324996099-root) | 通过Chrome或Firefox扩展和DSH侧栏，使用结构化文本读取并操作已有登录网页。 | 有重复登录网页任务且接受页面文本发送模型的DSH用户可先在测试站点试用；保持明确共享与审批设置，检查换页和取消；画布任务或敏感正文无法发送时退回人工或隔离自动化。 |
 | [DSH Calendar](#plugin-1376880747-root) | 在DSH侧栏展示Obsidian日记、月历、时间块与待办，并将局部编辑写回Markdown。 | 备份小vault中可先只读试用，再核对每次局部写回的整文件差异；存在频繁外部编辑或无恢复能力时先观察。 |
+| [DSH Codex UI](#plugin-1334346564-root) | 为 DSH 提供输入历史、设置皮肤、主题和侧栏等界面增强。 | [Q04](../../plugins/michengai--dsh-codex-ui/INSIGHT.md#research-q04) 隔离 profile 验证并核对本地历史，敏感输入不适用时停用。 |
 | [DSH Computer Use](#plugin-1333116579-root) | 为 DSH 提供面向应用的桌面观察与操作工具。 | [Q04](../../plugins/anionex--dsh-computer-use/INSIGHT.md#research-q04) 从隔离可逆任务开始，敏感操作显式授权并复核。 |
 | [DSH Config Manager](#plugin-1334434081-root) | 备份、恢复、迁移和同步 DeepSeek Harness 配置。 | [Q04](../../plugins/xiajiajun516--dsh-config-manager/INSIGHT.md#research-q04) 先用隔离配置和本地备份验证分区，确认文件内容后再导入；远端状态或秘密处理不明时停止上传。 |
 | [DSH Cost Tracker](#plugin-1338230382-root) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 只建议需要会话级费用线索且能准备可丢弃宿主副本的用户，先在该副本仅启本地账本，对正常、缓存、取消三类调用与厂商账单核对。 |
@@ -174,6 +176,7 @@
 | [dsh-speak](#plugin-1334493734-root) | 通过系统语音播报 DSH 最终回复、审批和提问，提供重播与播放控制 | 观察；先用单会话非敏感内容核手动重播和停止，不能以声音作为唯一审批/完成判断。 |
 | [dsh-spotlight](#plugin-1333136466-root) | 在DSH Web用一个快捷键面板搜索会话、slash命令、可见界面动作与插件设置入口。 | 兼容Web可有限试用，先备份/清空草稿并试无副作用导航，目标/回执未知就停止。 |
 | [dsh-starter-zh](#plugin-1336658798-root) | 在会话中提供欢迎、五阶段入门路线、四组固定插件建议和十项自查清单。 | 先观察，资料可读参考但先修profile断链和版本/推荐来源，再评估安装必要性。 |
+| [dsh-startup-screen](#plugin-1380798383-root) | 为 DSH 提供可配置的交互式启动动画。 | [Q04](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q04) 在测试 profile 使用非敏感文案并保留跳过，检查键盘与声音；无法进入时禁用并核原界面。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 自定义 DSH 等待文案、渐变、打字机与弹幕，并保存设置及更新词库。 | 独立profile、关闭远端/动画开始；不是安装效果验收。 |
 | [dsh-stock-quotes](#plugin-1425208683-root) | 在 DSH 中展示股票观察列表和行情，并向模型提供 stock_quote 查询工具。 | 可当公开行情参考面板试用，优先使用明确市场代码。 |
 | [dsh-study-coach](#plugin-1400498179-root) | 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。 | 先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。 |
@@ -202,9 +205,9 @@
 | [dsh-worktable](#plugin-1336092482-01-content) | 在 DSH 侧栏提供项目容器、分栏工作区和会话绑定的工作台插件 | Windows 个人用户在精确支持版本从两个低风险项目试用，先验绑定和文件、再验预览及终端；错挂、旧结果复活或权限撤销不符要求时停止并回到原生会话和独立窗口。 |
 | [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 适合频繁从 WSL 打开文档或本地服务、且只需要“打开”而非抓取/交互的用户试用。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。 |
-| [dsh-wsl-clipboard](#plugin-1350378372-root) | 在WSL内通过PowerShell读取或设置Windows文本剪贴板，带字符裁剪与结构化结果。 | 明确授权非敏感短文本可试用，保留原内容并核Windows实际文本，异常未知先停。 |
+| [dsh-wsl-clipboard](#plugin-1350378372-root) | 让 WSL 中的 DSH Agent 读写 Windows 文本剪贴板。 | [Q04](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q04) 明确授权后，先备份并用非敏感短文本试读写；失败或结果未知时手动核对恢复。 |
 | [dsh-wsl-download](#plugin-1351854499-root) | 在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。 | 先 list、核源路径与目标目录，在空目录试单文件；大分片用有校验和断点机制的工具；详见[Q03](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q03)。 |
-| [dsh-wsl-launch](#plugin-1350378498-root) | 从 WSL 通过受配置名单约束的 win_launch 工具启动 Windows 应用。 | 仅在需要 WSL 启动固定 Windows 应用时试用；先用精确名称/路径并审各应用 args，详见[Q03](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q03)。 |
+| [dsh-wsl-gpu](#plugin-1350378777-root) | 在 WSL 中汇总 NVIDIA GPU 与本地推理端口线索。 | [Q04](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q04) 将其作为排障线索并核原始设备、服务协议和进程；归属不明时不据建议停止服务。 |
 | [dsh-wsl-notify](#plugin-1350379268-root) | 从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。 | 明确授权非敏感短消息可试用，接受阻塞/fallback并保留原UI，不当唯一可靠通道。 |
 | [dsh-wsl-open](#plugin-1347958944-root) | 让 DSH 网页聊天中的 WSL Linux 路径可点击，并用 Windows 默认应用或 Explorer 打开。 | 建议个人本地WSL用户限定试用可信办公文件，验收以正确窗口实际显示为准；复杂路径误点、权限不清或不明应用启动时停止。 |
 | [dsh-wsl-shot](#plugin-1351854253-root) | 将 Windows 剪贴板图片经 PowerShell 临时 PNG 复制为 WSL 文件，供后续多模态使用。 | 仅用非敏感图片在隔离 WSL 试用，先核 Public 权限、失败清理、输出目录和后续多模态接续；详见[Q03](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q03)。 |
@@ -248,6 +251,22 @@
 | [滑动变祖](#plugin-1334246540-root) | 在 DSH 中用人物与配色滑块预览外观，并按当前模型的真实推理档位提交选择。 | 在一个非关键会话先核原生ID，再检验拖动、31停点和纯视觉模式；误选、遮挡或不适时关闭并回原生菜单。 |
 | [灵枢 dsh-memory](#plugin-1334211162-root) | 将 Markdown 认知图和自动召回接入 DSH 长期记忆。 | 隔离项目验证凭据、回执、文件和会话召回；错误或串扰时停止自动注入。 |
 | [鱼的记忆](#plugin-1379834969-root) | 为 DSH 会话保存带时间的长期记忆，按词面证据与鲜活度召回，并提供事实更新和召回轨迹。 | 先观察。 |
+
+<a id="plugin-1369398336-packages-dsh-memory"></a>
+
+## [@eduwork/dsh-memory](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md)
+
+[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 1,251](https://img.shields.io/static/v1?label=npm+30d&message=1%2C251&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-memory) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-memory)
+
+> **用途**：用户希望在 DSH 多次任务间复用背景及查找过去对话。
+
+> **亮点**：[Q01](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md#research-q01) 整合本地记忆与历史检索，[Q02](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md#research-q02) 将受策略控制的召回接入模型上下文。
+
+> **思考**：[Q03](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md#research-q03) 正则脱敏与词法遗忘均有覆盖缺口，删除记忆不等于删除原会话。
+
+> **建议**：[Q05](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md#research-q05) 假设展示实际注入回执可减少错误引用；未验证。
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1341946801-root"></a>
 
@@ -648,6 +667,22 @@
 > **建议**：未验证假设是强制原文/版本前置条件并协调外部编辑，降低静默覆盖；单加mtime仍有竞态。以同一行/其他行/缺expect的受控竞写检验冲突可见性和恢复成本。[Q04](../../plugins/alonefu--dsh-calendar-plugin/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/alonefu--dsh-calendar-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334346564-root"></a>
+
+## [DSH Codex UI](../../plugins/michengai--dsh-codex-ui/INSIGHT.md)
+
+[![GitHub ★ 255](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=255&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-codex-ui) [![npm 30d 117,030](https://img.shields.io/static/v1?label=npm+30d&message=117%2C030&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-codex-ui) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-codex-ui)
+
+> **用途**：需要频繁召回输入或调整 DSH Web 界面的用户。
+
+> **亮点**：[Q02](../../plugins/michengai--dsh-codex-ui/INSIGHT.md#research-q02) 在宿主输入状态上增加按范围召回与有限持久历史。
+
+> **思考**：[Q03](../../plugins/michengai--dsh-codex-ui/INSIGHT.md#research-q03) 同 cwd 会话共享历史，localStorage 保存文本且停用后删除未证。
+
+> **建议**：[Q05](../../plugins/michengai--dsh-codex-ui/INSIGHT.md#research-q05) 对照既有容量和回退机制，验证用户选择仅内存保存的效果。
+
+[查看完整分析](../../plugins/michengai--dsh-codex-ui/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333116579-root"></a>
 
@@ -2841,6 +2876,22 @@
 
 [查看完整分析](../../plugins/863683348--dsh-starter-zh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1380798383-root"></a>
+
+## [dsh-startup-screen](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md)
+
+[![GitHub ★ 666](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=666&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/6shenhonghong9/dsh-startup-screen)
+
+> **用途**：用户希望自定义 DSH 打开时的视觉与声音体验。
+
+> **亮点**：[Q01](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q01) 提供可配置开场，[Q02](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q02) 接入宿主首屏与设置。
+
+> **思考**：[Q03](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q03) 默认交互和声音可能增加负担，信任检查缺失时该层放行，兜底不等于覆盖所有卡死。
+
+> **建议**：[Q05](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q05) 假设展示启动负担与未知可帮助用户选择；未验证。
+
+[查看完整分析](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333328839-root"></a>
 
 ## [dsh-status-rotator](../../plugins/01virex--dsh-status-rotator/INSIGHT.md)
@@ -3295,13 +3346,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-clipboard)
 
-> **用途**：明确授权复制非敏感短路径/命令/片段到Windows应用，或读取指定共享剪贴板文本。
+> **用途**：用户授权 Agent 在 WSL 与 Windows 应用间传递短文本。
 
-> **亮点**：把常见跨WSL脚本接线变为工具，base64分离数据与脚本，非新剪贴板隔离技术。详见[Q01](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q01)与[Q02](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q01) 提供模型可调用的跨环境文本入口，[Q02](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q02) 将其接到 Windows Forms。
 
-> **思考**：进程成功非剪贴板回读，PowerShell非终止错误/stderr未核；set截断展示不明，base64 argv不保密且全局状态无CAS。详见[Q02](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q03) 超长写入先截断并覆盖，读取内容进入工具结果；秘密提示并非过滤。
 
-> **建议**：可探讨stdin/安全通道和错误/编码协议、写后hash收据与显式截断，跨interop/隐私成本未验证。详见[Q05](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q05) 假设超长写入前拒绝并请求用户决定可避免静默覆盖；未验证。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3321,21 +3372,21 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-download/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1350378498-root"></a>
+<a id="plugin-1350378777-root"></a>
 
-## [dsh-wsl-launch](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md)
+## [dsh-wsl-gpu](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md)
 
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-launch)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-gpu)
 
-> **用途**：让 DSH Agent 从 WSL 启动 VS Code、Explorer 或浏览器等 Windows 应用。
+> **用途**：WSL 用户在本地推理或 CUDA 配置前检查 GPU 与服务。
 
-> **亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q01) 集中设备与端口线索，[Q02](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q02) 将结果输出给模型。
 
-> **思考**：allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q03) 顶层 ok 只看设备列表命令，端口不证明进程、协议或 GPU 独占。
 
-> **建议**：绝对路径与逐应用参数策略可能收窄启动授权，但需兼容验证；详见[Q03](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q03)。
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q05) 假设逐层显示协议和 GPU 归属有助减少误诊；未验证。
 
-[查看完整分析](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md) · [返回表格](#category-index)
+[查看完整分析](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1350379268-root"></a>
 

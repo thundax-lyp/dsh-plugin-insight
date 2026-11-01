@@ -66,6 +66,13 @@ export function validateSession(session, root = ROOT, embeddedArtifacts = null) 
     };
     if (!check(session)) throw new Error(ajv.errorsText(check.errors));
     if (session.selection) {
+        const quotas = session.selection.quotas;
+        if (
+            quotas &&
+            (!Number.isSafeInteger(quotas.additions + quotas.updates) ||
+                quotas.additions + quotas.updates !== session.research_limit)
+        )
+            throw Error('research quotas must sum to research_limit');
         const suppressed = new Set(session.selection.suppressed_ids ?? []);
         const retries = new Set(session.selection.retry_ids ?? []);
         const candidates = new Set(session.items.map((item) => item.id));

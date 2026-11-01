@@ -90,6 +90,7 @@
 | [dsh-approval-explainer](#plugin-1417137113-root) | 为 DSH 真实审批弹窗生成操作、意图、风险和选项含义的 AI 注释，并提供历史与诊断视图。 | 先观察并确认同意把审批参数和近期上下文交给所选模型，在低风险可撤销样本中核对目标、权限和选项含义。 |
 | [dsh-ark-coding-provider](#plugin-1421741516-root) | 为DSH注册Ark Coding Plan模型路由，适配流式和工具消息，管理API Key/CLI多账户，并展示官方目录与套餐额度。 | 有条件试用，已有订阅用户先可信本机单API Key小请求，确需额度/多账号再核CLI HOME/取消与身份。 |
 | [dsh-asciinema](#plugin-1344714509-root) | 把DSH会话工具结果文字缓冲为自有cast对象文件，提供会话录制/标记、HTML回看与纯文本转换。 | 观察，先修模板路径/时间与保存pending恢复，非秘密小样也须核采集/分享范围。 |
+| [dsh-auto-review](#plugin-1333482618-root) | 为 DSH 审批请求提供可配置的第二模型审核。 | [Q04](../../plugins/perrylink--dsh-auto-review/INSIGHT.md#research-q04) 先在隔离 profile 用合成样例核策略、默认拒绝、非默认 allow-once 放行一次及 delegate 转交；转交不等于批准，取消为 cancelled。 |
 | [dsh-auto-reviewer](#plugin-1336185734-root) | 为 DSH 增加 auto-review 权限预设，按规则与可选 LLM 裁决提权并显示通知。 | 先在可恢复的宿主副本用无副作用样本比较决策，特别检查旧确认、新目标和参数缺失。 |
 | [dsh-cache-bricks](#plugin-1386463441-root) | 用缓存棋盘展示 DSH 模型请求活动，并提供请求详情、对比、对话定位和历史回看。 | 建议本地单用户维护者用不敏感会话试用，先核对attempt、usage和访问边界；主链延迟、字段错位、UI干扰或权限不清时停止，回到宿主日志。 |
 | [dsh-capmap-viz](#plugin-1356896576-dsh-capmap-viz) | 解析 CapMap 文档并在 DSH 侧栏展示能力图、状态、前沿和校验门。 | 建议试用。 |
@@ -175,7 +176,7 @@
 | [dsh-workflow-templates](#plugin-1344715132-root) | 12 个预置 JS workflow 编排脚本目录，提供列出、搜索、渲染调用起点和静态校验四工具。 | 先 list/search，审模板代码及来源；补真实 args 和数据接入，只有明确需要多 Agent 时调用官方 workflow；详见[Q03](../../plugins/988hj7tczd-oss--dsh-workflow-templates/INSIGHT.md#research-q03)。 |
 | [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | 仅建议隔离项目观察试用。 |
 | [dsh-wsl-cred](#plugin-1350379113-root) | 汇总Git helper配置、Windows GCM候选路径与origin类型，但原样helper输出存在敏感配置外发边界。 | 先观察，补最小化输出/明确目标再评估。 |
-| [dsh-wsl-distro](#plugin-1350379001-root) | 查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。 | 有条件试用，可信本机WSL常规英文列表先看raw/ok并核路径身份；本地化/远端身份/严格治理先观察。 |
+| [dsh-wsl-distro](#plugin-1350379001-root) | 查询 WSL 当前发行版与已安装发行版，并提示路径身份差异。 | [Q04](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q04) 重要路径操作前核对系统原始输出和实际文件。 |
 | [dsh-wsl-dns](#plugin-1351854118-root) | 在WSL内比较指定域名的WSL与Windows IPv4解析集合，展示首个nameserver及差异/排查提示。 | 观察，先补两侧错误/来源/时间和总预算，mismatch仅现象不作自动修DNS依据。 |
 | [dsh-wsl-editor](#plugin-1351854212-root) | 将WSL路径转换后在Windows编辑器打开，支持Code/Cursor行列定位和命令存在查询。 | 显式绝对路径试用并人工确认文档，重试核现状。 |
 | [dsh-wsl-encoding](#plugin-1351854402-root) | WSL 编码诊断工具，读取 Windows PowerShell/chcp 状态并可选检查脚本开头的 CRLF。 | 只在可信小脚本路径上附加 path；结合具体乱码/CRLF 命令复核三端编码，不把未采样当成功。 |
@@ -185,9 +186,11 @@
 | [dsh-wsl-glab](#plugin-1381859919-root) | 将glab认证概览、MR/issue单页列表和CI文本接入模型工具，脱敏与错误展示仍有缺口。 | 先观察，补输出和状态契约再重评。 |
 | [dsh-wsl-jev](#plugin-1381389698-root) | 向 DSH 注册四个 Jev 工具，经 OpenRouter 或 TypeSafe System One 获取 typed 判断。 | 仅低敏任务试点并保存人工标签；check 仍须外部证据或人工确认。 |
 | [dsh-wsl-k8s](#plugin-1381726881-root) | 将 kubectl 状态、上下文、get、describe 与日志读取封装为 DSH 工具。 | 建议观察。 |
+| [dsh-wsl-launch](#plugin-1350378498-root) | 在 WSL 中通过 DSH 工具启动匹配白名单的 Windows 应用。 | 先核实程序来源和参数；失败或超时后检查实际进程再决定。 |
 | [dsh-wsl-net](#plugin-1338965593-root) | 诊断WSL与DSH代理环境、代理TCP端口及HTTP可达性，并生成修复提示和可选子进程代理注入。 | 个人维护环境先禁用注入，有凭据环境先清理报告；不自动执行fix，不把HTTP ok当业务成功。 |
-| [dsh-wsl-path](#plugin-1350378631-root) | 在WSL中的DSH提供Linux盘符挂载和Windows/WSL UNC路径文本转换，并附文件系统使用提示。 | 有条件试用，仅默认挂载/同distro/常规绝对路径先人工核身份；多distro或特殊名先观察。 |
+| [dsh-wsl-path](#plugin-1350378631-root) | 在 WSL 中转换 Linux 与 Windows 路径文本并给出文件系统提示。 | [Q04](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q04) 对涉及写入或跨发行版的路径先独立核对文件身份。 |
 | [dsh-wsl-pkg](#plugin-1381861315-root) | 将 npm、pip、cargo 查询接为 DSH 工具，给出有限长度的依赖摘要。 | 配置 allowRoots 后作为快速导航；Python 环境与锁文件/原命令另核，不能用有限摘要做全量结论。 |
+| [dsh-wsl-port](#plugin-1350378913-root) | 为 WSL 服务提供本地端口监听线索和 Windows 访问建议。 | 把结果作为 WSL 本地线索，命令失败或 Windows 不通时分层验证。 |
 | [dsh-wsl-search](#plugin-1381725987-root) | 把ripgrep、fd与ast-grep接成DSH模型搜索工具，检查起始根白名单并限制返回条目和文本长度。 | 可信单用户最小项目根可试用，结果只作线索。 |
 | [dsh-wsl-ssh-agent](#plugin-1351854356-root) | 检查WSL宿主SSH_AUTH_SOCK路径、ssh-add身份数量与常见密钥文件名/npiperelay存在，提供转发和认证排查提示。 | 有条件试用，可信个人WSL只读提示，明确存在/身份不等认证；共享桥授权/强治理先观察。 |
 | [dsh-wsl-tmux](#plugin-1381833652-root) | 提供tmux状态、会话列表和pane文字捕获模型工具，不发送按键或终止会话。 | 明确server/pane、无敏感内容的可控范围试用，真实任务结果另核。 |
@@ -1481,6 +1484,22 @@
 > **建议**：可探索统一时间语义与范围/模板版本/保存pending收据，字面嵌入与失败可恢复，比较完整率/资源；未实现。详见[Q07](../../plugins/988hj7tczd-oss--dsh-asciinema/INSIGHT.md#research-q07)。
 
 [查看完整分析](../../plugins/988hj7tczd-oss--dsh-asciinema/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333482618-root"></a>
+
+## [dsh-auto-review](../../plugins/perrylink--dsh-auto-review/INSIGHT.md)
+
+[![GitHub ★ 245](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=245&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-auto-review) [![npm 30d 6,911](https://img.shields.io/static/v1?label=npm+30d&message=6%2C911&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-auto-review) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-auto-review)
+
+> **用途**：用户希望对部分需要审批的操作增加自动风险判断。
+
+> **亮点**：[Q01](../../plugins/perrylink--dsh-auto-review/INSIGHT.md#research-q01) 引入第二模型审核入口，[Q02](../../plugins/perrylink--dsh-auto-review/INSIGHT.md#research-q02) 按策略连接审核与后续审批。
+
+> **思考**：[Q03](../../plugins/perrylink--dsh-auto-review/INSIGHT.md#research-q03) 审核失败默认拒绝，非默认 allow-once 可放行一次，delegate 仅转交；取消为 cancelled，脱敏和结构校验不证明零漏判。
+
+> **建议**：[Q05](../../plugins/perrylink--dsh-auto-review/INSIGHT.md#research-q05) 假设合成样例分层评测可帮助用户选择人工策略；尚未验证。
+
+[查看完整分析](../../plugins/perrylink--dsh-auto-review/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336185734-root"></a>
 
@@ -2848,13 +2867,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-distro)
 
-> **用途**：面向DSH host在WSL里、Windows默认发行版与当前进程所在发行版可能不同的用户。distro_info展示当前env名称、os-release、wsl.exe -l -v结构列表/默认星号并提示UNC不要跨发行版猜/home。
+> **用途**：需要在 WSL 内辨认当前和 Windows 默认发行版的 DSH 用户。
 
-> **亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q02)。
+> **亮点**：[Q02](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q02) 把多来源身份和路径提醒汇集到工具结果。
 
-> **思考**：current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q03) 部分行可静默略过，工具层超时未传入内部固定子进程超时。
 
-> **建议**：可探索来源/时点/partial与编码明确的环境收据，统一宿主进程signal/预算，比较误判与采集开销；未实现。详见[Q05](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md#research-q05) 对照已有 raw 与差异提示，验证未解析行提示能否减少误选。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-distro/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3002,6 +3021,22 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1350378498-root"></a>
+
+## [dsh-wsl-launch](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-launch)
+
+> **用途**：使用 WSL DSH 并需启动 Windows 应用的用户；基线为手工在 Windows 启动。[Q01](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q01)
+
+> **亮点**：将受名称规则约束的 Windows 应用启动接入 DSH 工具。[Q01](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q01)
+
+> **思考**：名称匹配不验证程序身份；参数不受限且成功输出包含参数。[Q03](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设：绝对路径身份核验与脱敏预览可减少同名程序与敏感参数风险，须对照现有规则。[Q05](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-launch/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1338965593-root"></a>
 
 ## [dsh-wsl-net](../../plugins/173787247--dsh-wsl-net/INSIGHT.md)
@@ -3024,13 +3059,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-path)
 
-> **用途**：面向DSH实际运行在WSL、频繁把/mnt/c或Linux home路径交给Windows程序的用户。path_convert双向生成文本路径并给drvfs/Linux提示，不打开、不复制、不执行目标，不检查文件存在或权限。
+> **用途**：需要在 WSL 与 Windows 之间交接路径的 DSH 用户。
 
-> **亮点**：将盘符/WSL UNC文字映射、WSL识别和词法FS提示接到并发安全的小工具，减少手改分隔符。详见[Q02](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q02)。
+> **亮点**：[Q02](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q02) 将常见驱动器及 WSL UNC 文本转换与说明接入 DSH 工具。
 
-> **思考**：UNC发行版被helper解析后在工具输出丢弃，默认/mnt与字面WSL假设/盘符相对路径和特殊名不保真；ok非存在/权限保证，raw注册需核宿主。详见[Q03](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q03) 工具保留原 UNC 的 input，但未单列解析出的发行版，也不验证 output 是否与当前发行版中的文件相同。
 
-> **建议**：可探索保发行版/卷映射来源与可表示状态的转换收据，拒绝身份歧义，比较误转与探测代价；未实现。详见[Q05](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-path/INSIGHT.md#research-q05) 对照已有原 UNC input、标签和 advice，验证单列发行版及差异提示能否减少错误目标。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-path/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3049,6 +3084,22 @@
 > **建议**：绑定项目根、解释器/包管理器路径、退出码和完整性标签，可能减少多环境错配；双 venv 对照验证，尚未实现。详见[Q05](../../plugins/173787247--dsh-wsl-pkg/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-pkg/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1350378913-root"></a>
+
+## [dsh-wsl-port](../../plugins/173787247--dsh-wsl-port/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-port)
+
+> **用途**：Windows 无法访问 WSL 服务时需要初步诊断的用户；基线为手工查询本地网络。[Q01](../../plugins/173787247--dsh-wsl-port/INSIGHT.md#research-q01)
+
+> **亮点**：将本地监听线索和 DSH relay 操作建议集中到工具。[Q01](../../plugins/173787247--dsh-wsl-port/INSIGHT.md#research-q01)
+
+> **思考**：WSL 本地 ss 匹配不证明 Windows relay、HTTP 或 token 登录成功。[Q03](../../plugins/173787247--dsh-wsl-port/INSIGHT.md#research-q03)
+
+> **建议**：未验证假设：经用户同意分层检查 WSL 与 Windows relay，可补充现有本地 ss 和健康脚本建议。[Q05](../../plugins/173787247--dsh-wsl-port/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-port/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381725987-root"></a>
 

@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "ade9d579b13dd6182b425bb832f5e3a5ca516b1db85dd5d244edd79b70189ee3",
-    "index_sha256": "af3b83747afbb5bc31bffccd03f2c12f290cfb6ea042183d85b8cc612a3c5658",
+    "snapshot_digest": "405d232dd3845b5dfd7f7489cc2c8281a72e450d3059d4d416fd76a094e67368",
+    "index_sha256": "393a8893832497e4d9bdd85323ea1724c49047291ac7a95999664daddaef56bc",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-01T11:01:32.160Z",
+        "checked_at": "2026-11-01T12:33:51.703Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 40，完成 39，受阻 1；已知同版本受阻跳过 6；频繁更新窗口内跳过 87；当前发布 733",
+            "scope": "本轮所选 15，完成 15，受阻 0；已知同版本受阻跳过 7；频繁更新窗口内跳过 92；当前发布 740",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-01T11:01:32.160Z"
+            "checked_at": "2026-11-01T12:33:51.703Z"
         },
         "registry": {},
         "discovery": {
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-01-05",
-            "work_digest": "093465577f76e4bcf1ed5c52d0143202a69db1da70c414c85508bd44b56fad3d"
+            "id": "2026-11-01-07",
+            "work_digest": "73f3b9d992acd13bc3ea28ca16745de6e54b31e911d4acd604e3aa65e8869fef"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -547,6 +547,7 @@
             "github:1333440937:root",
             "github:1333446374:root",
             "github:1333463381:root",
+            "github:1333482618:root",
             "github:1333486649:root",
             "github:1333528857:root",
             "github:1333629201:root",
@@ -586,6 +587,7 @@
             "github:1334305310:root",
             "github:1334318461:root",
             "github:1334325657:root",
+            "github:1334346564:root",
             "github:1334384058:root",
             "github:1334395883:root",
             "github:1334428397:root",
@@ -877,6 +879,10 @@
             "github:1369301269:root",
             "github:1369398336:packages-dsh-annotation",
             "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
             "github:1370460115:root",
             "github:1372976273:root",
             "github:1372993989:root",
@@ -899,6 +905,7 @@
             "github:1379204512:root",
             "github:1379834969:root",
             "github:1380181057:root",
+            "github:1380798383:root",
             "github:1380817560:root",
             "github:1381221232:root",
             "github:1381389698:root",
@@ -1840,7 +1847,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -2575,7 +2589,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -3310,7 +3331,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -4045,7 +4073,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -4780,7 +4815,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "registry": [
             "github:1339316901:root",
@@ -5515,7 +5557,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "reports": [
             "github:1339316901:root",
@@ -6250,7 +6299,14 @@
             "github:956330003:root",
             "github:1309135706:root",
             "github:1215961903:root",
-            "github:1369398336:packages-dsh-knowledge-studio"
+            "github:1369398336:packages-dsh-knowledge-studio",
+            "github:1380798383:root",
+            "github:1369398336:packages-dsh-literature",
+            "github:1369398336:packages-dsh-mail",
+            "github:1369398336:packages-dsh-memory",
+            "github:1369398336:packages-dsh-oidc",
+            "github:1334346564:root",
+            "github:1333482618:root"
         ],
         "retained_documents": []
     },
@@ -6987,7 +7043,14 @@
         "github:956330003:root",
         "github:1309135706:root",
         "github:1215961903:root",
-        "github:1369398336:packages-dsh-knowledge-studio"
+        "github:1369398336:packages-dsh-knowledge-studio",
+        "github:1380798383:root",
+        "github:1369398336:packages-dsh-literature",
+        "github:1369398336:packages-dsh-mail",
+        "github:1369398336:packages-dsh-memory",
+        "github:1369398336:packages-dsh-oidc",
+        "github:1334346564:root",
+        "github:1333482618:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-26-01/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
@@ -7042,17 +7105,14 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-device-bridge/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-mac-companion/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-repeat-stop/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-tool-budget/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-browser/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-cal/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-clock/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-compose/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-cred/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-db/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-db/OFFICIAL-SQL-SEMANTICS.json",
         "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-distro/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-dns/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-docker/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-download/REVIEWED-SOURCE.json",
@@ -7064,13 +7124,11 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-git/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-github/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-glab/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-gpu/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-helm/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-hostsvc/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-im/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-jev/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-k8s/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-launch/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-llamacpp/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-mail/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-media/REVIEWED-SOURCE.json",
@@ -7081,12 +7139,10 @@
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-obsidian/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-ollama/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-open/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-perf/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-picker/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-pkg/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-playwright/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-port/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-power/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-rclone/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/173787247--dsh-wsl-registry/REVIEWED-SOURCE.json",
@@ -7186,7 +7242,6 @@
         "data/runs/2026-10-22-02/snapshots/54xkeee--dsh-youreyes/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/566001--dsh-wrapup-guard/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-01/571242--dsh-armor-switch/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-26-01/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-01/58fly--dsh-language-guard/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/598829314--oil-dsh-title/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/609476965--dsh-lorebookmd/REVIEWED-SOURCE.json",
@@ -7734,6 +7789,21 @@
         "data/runs/2026-11-01-05/173787247--dsh-wsl-tray/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-05/778672151--dsh-session-turn-eta/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-05/173787247--dsh-remote-ssh/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-05/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-01-05/air-pixel--air-pixel-liquid-glass/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-tool-budget/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/58catmiao--dsh-sciwork/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-clipboard/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-launch/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-path/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-gpu/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-port/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/173787247--dsh-wsl-distro/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/6shenhonghong9--dsh-startup-screen/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/ecnu--eduwork--packages-dsh-literature/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/ecnu--eduwork--packages-dsh-mail/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/ecnu--eduwork--packages-dsh-memory/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/ecnu--eduwork--packages-dsh-oidc/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/michengai--dsh-codex-ui/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-01-07/perrylink--dsh-auto-review/REVIEWED-SOURCE.json"
     ]
 }

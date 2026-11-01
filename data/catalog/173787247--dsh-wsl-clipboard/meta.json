@@ -1,10 +1,10 @@
 {
     "repository": "173787247/dsh-wsl-clipboard",
     "repository_id": 1350378372,
-    "captured_at": "2026-10-22T07:38:59.771Z",
-    "window_start": "2026-09-22T07:38:59.771Z",
+    "captured_at": "2026-11-01T12:37:53.293Z",
+    "window_start": "2026-10-02T12:37:53.293Z",
     "stars": 1,
-    "pushed_at": "2026-09-29T15:03:39Z",
+    "pushed_at": "2026-10-30T04:50:17Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -13,17 +13,28 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T17:22:18.721Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a59a721f29c65cab2b86b3b951a73c4296ee1c29",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-wsl-clipboard",
-        "captured_at": "2026-10-22T07:39:08.417Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-11-01T12:37:53.293Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-clipboard",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-wsl-clipboard",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T07:39:08.417Z",
+            "captured_at": "2026-11-01T12:37:53.293Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-clipboard",
             "error": "HTTP 404",
             "latest_version": null,

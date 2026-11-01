@@ -1,18 +1,18 @@
 # dsh-wsl-port
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[7846224](https://github.com/173787247/dsh-wsl-port/tree/7846224bc8959b5588011846142af8c8a9c308b1)
+源码版本：[6456c9e](https://github.com/173787247/dsh-wsl-port/tree/6456c9e33dda8ef9203754d7b8ae9d039c03337c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-port)
 <!-- END META -->
 
-> **功能**：读取WSL IP和ss监听文本，返回指定端口线索及3080/3081套件连接排查建议。
+> **功能**：为 WSL 服务提供本地端口监听线索和 Windows 访问建议。
 
-> **亮点**：把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：将本地监听线索和 DSH relay 操作建议集中到工具。[Q01](#research-q01)
 
-> **主要限制**：整表端口子串可混IPv6地址，未解析绑定地址/PID或探Windows；IP失败静默、静态relay指引未核部署。详见[Q02](#research-q02)。
+> **主要限制**：WSL 本地 ss 匹配不证明 Windows relay、HTTP 或 token 登录成功。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 面向谁，只读诊断链提供什么？](#detail-section-11)
-  - [Q02 · 贡献和解析/端到端范围限制是什么？](#detail-section-12)
-  - [Q03 · 依赖、隐私和读者流程是什么？](#detail-section-13)
-  - [Q04 · 三阶段成本效果怎么评价？](#detail-section-14)
-  - [Q05 · 工程点、分段诊断收据假设和采用结论？](#detail-section-15)
+  - [Q01 · 端口诊断面向什么问题，与手动查看有什么区别？](#detail-section-11)
+  - [Q02 · 监听判断如何产生，出错如何表示？](#detail-section-12)
+  - [Q03 · 3081 显示监听即可证明 Windows 浏览器登录成功吗？](#detail-section-13)
+  - [Q04 · 该如何低风险诊断和恢复？](#detail-section-14)
+  - [Q05 · 现有本地监听判断之外如何缩小跨系统不确定性？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Windows访问WSL失败时做本地只读初筛，端到端/认证另核。
+> **用途**：Windows 无法访问 WSL 服务时需要初步诊断的用户；基线为手工查询本地网络。[Q01](#research-q01)
 
-直接hostname/ss与分段网络排查可替代；工具集中手册也可能引入静态部署假设。
+人工执行 hostname、ss 并分别检查 Windows 侧网络。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -51,70 +51,63 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| IP线索 | hostname -I | 失败空数组/无网卡身份 |
-| 监听线索 | ss文本匹配 | 无结构地址/PID，不证Windows |
-| UI手册 | kit3080/3081建议 | 未检查脚本/版本/认证 |
-| 只读诊断 | 报告与错误 | 不自动修复/暴露网络 |
+| --- | --- | --- |
+| IP | 读取 WSL 地址 | 失败返回空 |
+| 监听 | 检索本地端口线索 | 不保证目标进程 |
+| 建议 | 提供 relay 排查步骤 | 不实际执行 |
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=18/匹配DSH tools/systemPrompt | 必需 | port_doctor注册/提示 | schema需真实宿主兼容 |
-| WSL环境 | 必需 | 本地Linux诊断 | 非WSL返回明确错误 |
-| hostname -I/ss -ltn | 必需 | IP/监听整表 | 缺命令/权限/超时不代表无监听 |
-| kit脚本/Windows relay配置 | 作者修复路径可选 | 3080/3081操作手册 | 本包不含/不调用，不证明目标已配置 |
-| Windows侧连接/HTTP认证证据 | 端到端判断必需 | 分离转发/防火墙/应用问题 | 本工具没有执行 |
-
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| DSH 与 WSL | 必需 | 工具和本地环境 | 手工诊断 |
+| hostname 与 ss | 对应检查需要 | IP 与监听线索 | 结果空或错误 |
+| Windows 侧验证 | 确认端到端需要 | relay 和认证 | 保持未知 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 定义 | 明确目标端口/协议/两端位置 | 不混WSL监听与Windows relay |
-| 盘点 | 只读port_doctor看IP/ss状态 | 失败保unknown，核结构端点而非一句listening |
-| 分段核对 | Windows侧明确探TCP/HTTP/认证 | 正常监听不等浏览器可用 |
-| 修复 | 对照实际kit/配置后再决定重启/规则 | 静态建议不自动授权shutdown/暴露服务 |
+| --- | --- | --- |
+| 准备 | 用户确认要查的服务和端口 | 目标不明停止 |
+| 初筛 | 查看 WSL IP 与 ss 结果 | 命令失败标未知 |
+| 验证 | 用户在 Windows 核对 relay 与登录 | 不通再分层排查 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 匹配WSL/系统工具，金额未知 | 明确网络拓扑/端口和kit版本 | 不自动配置转发 |
-| 持续使用 | 两次顺序execFile，各5秒上限 | 人工核Windows侧/协议层 | 本地枚举结果非修复完成 |
-| 失败恢复 | 缺工具/超时/拓扑重查 | 保留错误/端点并按分层处理 | 不盲restart/shutdown，避免中断别的任务 |
-
+| --- | --- | --- | --- |
+| 首次 | WSL 及命令 | 确认端口 | 环境未测 |
+| 持续 | 本地查询资源 | 解读结果 | 准确率未知 |
+| 恢复 | 其他工具或操作 | 人工确认 | 建议不代表已修复 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 本地监听提示 | ss文本匹配端口 | 精确地址/进程/Windows可达性 |
-| 网络指引 | kit/UI静态playbook | 当前部署采用同relay/认证 |
-| 诊断辅助 | 只读IP/错误/建议结构 | 真实定位正确率或故障恢复时间 |
+| --- | --- | --- |
+| 本地 | IP 与 ss 查询 | 目标进程和协议 |
+| 跨系统 | 提供 relay 检查建议 | Windows 访问及认证 |
 
-> **思考**：整表端口子串可混IPv6地址，未解析绑定地址/PID或探Windows；IP失败静默、静态relay指引未核部署。详见[Q02](#research-q02)。
+> **思考**：WSL 本地 ss 匹配不证明 Windows relay、HTTP 或 token 登录成功。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把常见命令/套件指引集中，减少接线，但不是进程归属或Windows端到端健康检查。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：将本地监听线索和 DSH relay 操作建议集中到工具。[Q01](#research-q01)
 
-纯建议/格式与execFile分离、端口整数范围校验、无shell参数拼接、5秒限制和ss错误保留值得复用。只读诊断不应该包装成更强的健康检查。
+ss 使用整段文本端口匹配；hostname 失败返回空数组，ss 失败返回错误。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-整表端口子串可混IPv6地址，未解析绑定地址/PID或探Windows；IP失败静默、静态relay指引未核部署。详见[Q02](#research-q02)。
+WSL 本地 ss 匹配不证明 Windows relay、HTTP 或 token 登录成功。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-本地只读线索可试用，先核结构端点/部署，不当Windows连通或进程归属结论。详见[Q05](#research-q05)。
+把结果作为 WSL 本地线索，命令失败或 Windows 不通时分层验证。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持WSL IP和ss监听文本的只读初筛及套件手册输出；整表子串未证明精确端点、进程归属或Windows可达。WSL/Windows/relay/认证分段诊断收据仍为未验证假设。
+固定源码支持本地命令与错误分支；未运行跨系统诊断。
 
-- 已检查：作者 README、包清单、源码路径 index.js、lib/port.js、README.md、package.json、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/port.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定index/port全部分支，wsl-host检测核与已读同hash副本；未枚举真实网络/进程或执行目标/kit测试。
-- 下一步：进一步探讨先用IPv6/失败/relay/401夹具核结构和层次，再测受控服务的实际定位与恢复人时。
+- 边界：固定 inventory 9 文件、无排除和解析错误；静态核查命令及建议，未运行目标。
+- 下一步：隔离 WSL 与 Windows 对照本地监听、relay 和认证结果。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-port](https://github.com/173787247/dsh-wsl-port)
-- **版本号**：0.2.2（[固定提交 7846224](https://github.com/173787247/dsh-wsl-port/tree/7846224bc8959b5588011846142af8c8a9c308b1)）
-- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.2（[固定提交 6456c9e](https://github.com/173787247/dsh-wsl-port/tree/6456c9e33dda8ef9203754d7b8ae9d039c03337c)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +134,9 @@
 
 <a id="innovation"></a>
 
-可探讨精确端点与WSL/Windows/relay/HTTP认证分段收据，unknown保留且绑定kit版本，维护成本未验证。详见[Q05](#research-q05)。
+未验证假设：经用户同意分层检查 WSL 与 Windows relay，可补充现有本地 ss 和健康脚本建议。[Q05](#research-q05)
 
-进一步探讨先用IPv6/失败/relay/401夹具核结构和层次，再测受控服务的实际定位与恢复人时。
+隔离 WSL 与 Windows 对照本地监听、relay 和认证结果。
 
 <a id="detail-section-9"></a>
 
@@ -151,6 +144,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,47 +157,37 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+created%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A42%3A46.150Z..2026-10-22T07%3A42%3A46.150Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-port/issues?q=is%3Aissue+created%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z)
 
+暂未获取：近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核WSL本地端口线索与Windows可达性区别，检查ss解析、错误、静态kit手册和读者恢复成本。
+**插件研究总目标**：WSL 端口诊断观测了什么，是否足以证明 Windows 端到端可用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 面向谁，只读诊断链提供什么？
+### Q01 · 端口诊断面向什么问题，与手动查看有什么区别？
 
-**研究主题**：场景与需求、功能与机制
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向Windows访问WSL服务失败时先排查Linux是否监听、拿IP并看操作指引的人。输入port默认3080，输出WSL标记、IP数组、listen对象和advice/uiPlaybook。合格诊断需分别确认WSL目标、Windows转发/防火墙及HTTP/认证，不是listeningtrue就能使用服务。
-
-加载detectWsl后注册工具/提示。执行先hostname -I再ss -ltn，各5秒timeout；port限制整数1–65535，整个ss输出找冒号端口子串。3080/3081给kit静态手册，其他端口给localhost/首IP尝试建议。没有修复命令执行、主动Windows连接或PID归属。README说诊断哪个进程占端口，比实际无-p的监听检查更强。
+Windows 用户无法访问 WSL 服务时可由 DSH 工具汇总 WSL IP、端口监听线索和操作建议；基线是手工运行 hostname 和 ss 并理解网络拓扑。它减少查询组织成本，但不执行 Windows 端到端访问或验证认证；简单场景直接检查也足够。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:13-24](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L13-L24)
+**依据 1 · 源码核查**：[index.js:18-26](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/index.js#L18-L26)
 
-环境/注册。
-
-<details>
-<summary>查看原文（12行）</summary>
+工具用途和提示。
 
 ```text
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const defaultPort = positive(config.defaultPort, 3080);
-  const wsl = detectWsl();
-
   ctx.systemPrompt.section({
     name: "tool:port_doctor",
     order: 121,
@@ -210,13 +195,61 @@ export function apply(ctx, config = {}) {
   });
 
   ctx.tools.register({
+    name: "port_doctor",
+    description: "Report WSL IPs and whether a TCP port is listening; advise on Windows localhost forwarding.",
+```
+
+**依据 2 · 作者声明**：[README.md:37-52](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/README.md#L37-L52)
+
+作者区分 WSL 服务和 Windows relay。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+**Scope:** `port_doctor` for listen state + Windows localhost tips. For dsh UI use **3080** (WSL) and relay **3081** (Windows) with launch `?token=` (dsh ≥0.1.2). Do not bind `dsh web --host 0.0.0.0`.
+
+## Why
+
+A server bound in WSL may be reachable as `http://127.0.0.1:<port>` from Windows—or may need the WSL eth IP / a firewall fix / `wsl --shutdown`. This tool checks `hostname -I` and `ss` listen state.
+
+Default port: **3080** (common `dsh web` port). Override with the `port` argument.
+
+### dsh UI ports (3080 vs 3081)
+
+| Port | Where | Role |
+|------|-------|------|
+| **3080** | WSL `127.0.0.1` | `dsh web` itself — do not open from Windows unless mirrored |
+| **3081** | Windows relay | Browser entry; needs `?token=` on dsh ≥0.1.2 |
+
+Ask for `port_doctor` on **both** when the UI is blank / `ERR_CONNECTION_*`. Prefer kit `restart-dsh-web.sh` + [`check-dsh-health.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-dsh-health.sh) before inventing `netsh` rules. For LAN exposure see [dsh-wsl-expose](https://github.com/173787247/dsh-wsl-expose) — not for local chat UI.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:55-73](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L55-L73)
+#### 缺口
 
-顺序执行。
+- 未运行 WSL、ss、Windows relay 或浏览器
+  **影响**：不能确认本机监听、跨系统连通或认证
+  **进一步探讨**：隔离环境比对 WSL ss、Windows 连接和带认证的 UI
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 监听判断如何产生，出错如何表示？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+工具先判断 WSL，调用 hostname -I 和 ss -ltn；后者验证端口范围后在完整文本中查找端口片段。hostname 出错返回空数组，ss 出错返回 ok=false 和 error，不能把探测失败当未监听；文本匹配没有结构化绑定地址或进程身份，也不能证明目标协议可用。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:55-73](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/index.js#L55-L73)
+
+非 WSL 和执行流程。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -245,12 +278,12 @@ export function apply(ctx, config = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/port.js:6-37](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L6-L37)
+**依据 2 · 源码核查**：[lib/port.js:6-15](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L6-L15)
 
-IP/ss检查。
+IP 查询失败回空数组。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
 export async function hostnameIps({ execFileFn = execFileAsync } = {}) {
@@ -263,8 +296,18 @@ export async function hostnameIps({ execFileFn = execFileAsync } = {}) {
   } catch {
     return [];
   }
-}
+```
 
+</details>
+
+**依据 3 · 源码核查**：[lib/port.js:18-36](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L18-L36)
+
+范围、ss 字符串匹配与失败。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
 export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) {
   const p = Number(port);
   if (!Number.isInteger(p) || p < 1 || p > 65535) {
@@ -284,105 +327,33 @@ export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) 
       port: p,
       error: err instanceof Error ? err.message : String(err),
     };
-  }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/port.js:40-88](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L40-L88)
+#### 缺口
 
-静态指引。
+- 未运行 WSL、ss、Windows relay 或浏览器
+  **影响**：不能确认本机监听、跨系统连通或认证
+  **进一步探讨**：隔离环境比对 WSL ss、Windows 连接和带认证的 UI
 
-<details>
-<summary>查看原文（49行）</summary>
+<a id="research-q03"></a>
 
-```text
-export function buildUiPlaybook(port) {
-  const p = Number(port);
-  if (p !== 3080 && p !== 3081) return [];
-  return [
-    "1) bash …/dsh-wsl-kit/scripts/check-dsh-health.sh (3080/3081 + NODE_USE_ENV_PROXY).",
-    "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
-    "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
-    "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
-  ];
-}
+<a id="detail-section-13"></a>
 
-export function buildPortAdvice({ ips, listen, port }) {
-  const tips = [];
-  const p = Number(port);
-  const uiPlaybook = buildUiPlaybook(p);
+### Q03 · 3081 显示监听即可证明 Windows 浏览器登录成功吗？
 
-  if (p === 3080 || p === 3081) {
-    tips.push(
-      "dsh web binds 127.0.0.1:3080 only (no --host 0.0.0.0). From Windows prefer http://127.0.0.1:3081/ via kit scripts/restart-dsh-web.sh relay.",
-    );
-    tips.push(...uiPlaybook);
-    if (p === 3080) {
-      tips.push("If 3080 works in Windows browser, WSL mirrored networking is likely on; 3081 remains the safer default.");
-    }
-    if (p === 3081) {
-      tips.push("3081 is the Python dual-stack relay — if closed, re-run restart-dsh-web.sh (not portproxy for local UI).");
-    }
-    tips.push("For LAN exposure of non-dsh services use wsl_expose; do not publish dsh without auth.");
-  } else {
-    tips.push(
-      "WSL2 localhost forwarding: Windows localhost:<port> often reaches Linux listeners on 0.0.0.0 or 127.0.0.1 (especially with networkingMode=mirrored).",
-    );
-    tips.push("If Windows cannot connect: try WSL eth IP, check firewall, wslconfig_hint, or wsl --shutdown.");
-  }
-
-  if (ips.length) tips.push(`Current WSL IPs: ${ips.join(", ")}`);
-  if (listen?.ok && listen.listening) {
-    tips.push(`Port ${port} appears listening inside WSL (ss).`);
-    if (p !== 3080 && p !== 3081) {
-      tips.push(`From Windows try http://127.0.0.1:${port}/ and http://${ips[0] || "<wsl-ip>"}:${port}/`);
-    } else if (p === 3080) {
-      tips.push("From Windows: http://127.0.0.1:3080/ (mirrored) or http://127.0.0.1:3081/ (relay).");
-    } else {
-      tips.push("From Windows: http://127.0.0.1:3081/");
-    }
-  } else if (listen?.ok) {
-    tips.push(`Port ${port} does not appear to be listening inside WSL yet.`);
-  }
-  return tips;
-```
-
-</details>
-
-**依据 5 · 作者声明**：[README.md:11-13](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/README.md#L11-L13)
-
-作者进程诊断描述。
-
-```text
-## Where it sits
-
-Diagnoses which process owns a WSL port. The Windows chat URL is :3081/?token=, not bare :3080.
-```
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 贡献和解析/端到端范围限制是什么？
-
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-价值是把两条常见WSL命令和套件UI手册做成结构结果，降低新手接线/忘记认证URL成本；未自动改防火墙/暴露端口是清楚低副作用边界。核心诊断能力仍是静态文本启发式。
-
-ss匹配在整表做/includes或:port\b正则，不解析local endpoint字段、地址族和列，IPv6地址内部若含同一十六进制数字段可误报该端口，例如包含:3080:的地址即满足冒号数字后词边界；这是静态字符串条件，未运行网络反例。也不返回绑定127.0.0.1/0.0.0.0/IPv6或PID，所以不能判断Windows可达性/真正进程。检查3081仍发生在WSL ss，不证明Windows relay监听。
-
-hostname失败变空数组而不记录原因；ss失败保error是正向，但顶层error仍空字符串容易误解。配置defaultPort仅positive不限定整数/65535，子检查拒绝但报告仍用该值，输出integer可能不合；参数非整数静默用default。tooltimeout不传exec.signal，两子命令固定5秒，与config.timeoutMs不是同一总取消协议。
-
-建议里kit脚本以省略路径表示，未检查是否安装/同版本；3081裸URL和需要token手册同时出现，不能当可直接登录链接。建议重启/WSL shutdown有业务影响，不能由只读诊断自动决定。
+不能。代码只在 WSL 内运行 ss 并做文本匹配，3081 的 Windows relay 位于另一侧；即使 WSL 中某端口匹配，也不能证明目标进程、Windows 转发、HTTP、token 或浏览器成功。内建 playbook 是建议，不是已经完成的检查；需要在目标 Windows 浏览器及授权会话独立验证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/port.js:18-30](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L18-L30)
+**依据 1 · 源码核查**：[lib/port.js:18-30](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L18-L30)
 
-整表文本匹配。
+只读取本地 ss 输出。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -405,9 +376,90 @@ export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) 
 
 </details>
 
-**依据 2 · 源码核查**：[lib/port.js:6-15](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L6-L15)
+**依据 2 · 源码核查**：[lib/port.js:40-47](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L40-L47)
 
-IP失败静默。
+针对 3080/3081 给出外部脚本建议。
+
+```text
+export function buildUiPlaybook(port) {
+  const p = Number(port);
+  if (p !== 3080 && p !== 3081) return [];
+  return [
+    "1) bash …/dsh-wsl-kit/scripts/check-dsh-health.sh (3080/3081 + NODE_USE_ENV_PROXY).",
+    "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
+    "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
+    "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
+```
+
+**依据 3 · 作者声明**：[README.md:45-52](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/README.md#L45-L52)
+
+作者区分 Windows relay 和 WSL 服务。
+
+```text
+### dsh UI ports (3080 vs 3081)
+
+| Port | Where | Role |
+|------|-------|------|
+| **3080** | WSL `127.0.0.1` | `dsh web` itself — do not open from Windows unless mirrored |
+| **3081** | Windows relay | Browser entry; needs `?token=` on dsh ≥0.1.2 |
+
+Ask for `port_doctor` on **both** when the UI is blank / `ERR_CONNECTION_*`. Prefer kit `restart-dsh-web.sh` + [`check-dsh-health.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-dsh-health.sh) before inventing `netsh` rules. For LAN exposure see [dsh-wsl-expose](https://github.com/173787247/dsh-wsl-expose) — not for local chat UI.
+```
+
+#### 缺口
+
+- 未运行 WSL、ss、Windows relay 或浏览器
+  **影响**：不能确认本机监听、跨系统连通或认证
+  **进一步探讨**：隔离环境比对 WSL ss、Windows 连接和带认证的 UI
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 该如何低风险诊断和恢复？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+依赖 WSL 环境、hostname 和 ss；工具只给建议，不修改防火墙或运行 kit 恢复脚本。先核实查询是否成功并定位 WSL 端口，再由用户在 Windows 检查 relay 和认证；执行任何重启或网络规则前确认影响与授权。日志、端口号和 IP 也可能是内部信息，分享前应核查。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:55-73](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/index.js#L55-L73)
+
+获取 IP、监听和建议。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    async execute(args) {
+      if (!wsl) {
+        return {
+          wsl: false,
+          port: defaultPort,
+          error: "not running in WSL",
+          advice: [],
+          uiPlaybook: [],
+          ips: [],
+          listen: { ok: false, error: "not_wsl", listening: false, port: defaultPort },
+        };
+      }
+      const port = Number.isInteger(args?.port) ? args.port : defaultPort;
+      const ips = await hostnameIps();
+      const listen = await checkLocalPort(port);
+      const uiPlaybook = buildUiPlaybook(port);
+      const report = { wsl: true, port, ips, listen, uiPlaybook, error: "" };
+      report.advice = buildPortAdvice(report);
+      return report;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/port.js:6-15](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L6-L15)
+
+hostname 不可用的回退。
 
 <details>
 <summary>查看原文（10行）</summary>
@@ -427,325 +479,12 @@ export async function hostnameIps({ execFileFn = execFileAsync } = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:67-73](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L67-L73)
+**依据 3 · 源码核查**：[lib/port.js:18-36](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L18-L36)
 
-顶层error空。
-
-```text
-      const port = Number.isInteger(args?.port) ? args.port : defaultPort;
-      const ips = await hostnameIps();
-      const listen = await checkLocalPort(port);
-      const uiPlaybook = buildUiPlaybook(port);
-      const report = { wsl: true, port, ips, listen, uiPlaybook, error: "" };
-      report.advice = buildPortAdvice(report);
-      return report;
-```
-
-**依据 4 · 源码核查**：[index.js:84-86](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L84-L86)
-
-配置仅正数。
-
-```text
-function positive(value, fallback) {
-  const n = Number(value);
-  return Number.isFinite(n) && n > 0 ? n : fallback;
-```
-
-**依据 5 · 源码核查**：[lib/port.js:40-47](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L40-L47)
-
-路径/token手册。
-
-```text
-export function buildUiPlaybook(port) {
-  const p = Number(port);
-  if (p !== 3080 && p !== 3081) return [];
-  return [
-    "1) bash …/dsh-wsl-kit/scripts/check-dsh-health.sh (3080/3081 + NODE_USE_ENV_PROXY).",
-    "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
-    "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
-    "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
-```
-
-**依据 6 · 源码核查**：[lib/port.js:72-83](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L72-L83)
-
-shutdown和裸URL。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    tips.push("If Windows cannot connect: try WSL eth IP, check firewall, wslconfig_hint, or wsl --shutdown.");
-  }
-
-  if (ips.length) tips.push(`Current WSL IPs: ${ips.join(", ")}`);
-  if (listen?.ok && listen.listening) {
-    tips.push(`Port ${port} appears listening inside WSL (ss).`);
-    if (p !== 3080 && p !== 3081) {
-      tips.push(`From Windows try http://127.0.0.1:${port}/ and http://${ips[0] || "<wsl-ip>"}:${port}/`);
-    } else if (p === 3080) {
-      tips.push("From Windows: http://127.0.0.1:3080/ (mirrored) or http://127.0.0.1:3081/ (relay).");
-    } else {
-      tips.push("From Windows: http://127.0.0.1:3081/");
-```
-
-</details>
-
-**依据 7 · 源码核查**：[index.js:53-69](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L53-L69)
-
-无exec.signal传播。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      if (!wsl) {
-        return {
-          wsl: false,
-          port: defaultPort,
-          error: "not running in WSL",
-          advice: [],
-          uiPlaybook: [],
-          ips: [],
-          listen: { ok: false, error: "not_wsl", listening: false, port: defaultPort },
-        };
-      }
-      const port = Number.isInteger(args?.port) ? args.port : defaultPort;
-      const ips = await hostnameIps();
-      const listen = await checkLocalPort(port);
-```
-
-</details>
-
-#### 缺口
-
-- Windows relay/转发/防火墙、地址族与HTTP/认证真实状态未检查。
-  **影响**：监听提示不能作为服务可用或修复完成。
-  **进一步探讨**：可先按精确端点核WSL，再在用户授权的Windows侧分TCP/HTTP/认证收据核对，不改变网络设置。
-- kit脚本/默认端口指引是否对应当前部署未由工具核实。
-  **影响**：静态playbook可能引导不适用的重启/URL。
-  **进一步探讨**：可固定kit/宿主版本与当前启动配置后匹配指引，找不到不补造路径/认证token。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 依赖、隐私和读者流程是什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-包0.2.2/Node>=18，WSL检测为env或osrelease启发式，真实工具还依hostname/ss。公共wsl-host文件与上一项clipboard固定副本SHA256相同，已核其detectWsl逻辑；不因套件声明兼容就保证当前Windows网络拓扑。
-
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=18/匹配DSH tools/systemPrompt | 必需 | port_doctor注册/提示 | schema需真实宿主兼容 |
-| WSL环境 | 必需 | 本地Linux诊断 | 非WSL返回明确错误 |
-| hostname -I/ss -ltn | 必需 | IP/监听整表 | 缺命令/权限/超时不代表无监听 |
-| kit脚本/Windows relay配置 | 作者修复路径可选 | 3080/3081操作手册 | 本包不含/不调用，不证明目标已配置 |
-| Windows侧连接/HTTP认证证据 | 端到端判断必需 | 分离转发/防火墙/应用问题 | 本工具没有执行 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 定义 | 明确目标端口/协议/两端位置 | 不混WSL监听与Windows relay |
-| 盘点 | 只读port_doctor看IP/ss状态 | 失败保unknown，核结构端点而非一句listening |
-| 分段核对 | Windows侧明确探TCP/HTTP/认证 | 正常监听不等浏览器可用 |
-| 修复 | 对照实际kit/配置后再决定重启/规则 | 静态建议不自动授权shutdown/暴露服务 |
-
-输出本机IP会进入模型上下文，虽未上传第三方API也应限需要的诊断。静态指引不执行shutdown、kit或netsh；这些后续变更需用户明确目标和影响。本轮不运行枚举、连接或修复。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-4](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/package.json#L1-L4)
-
-版本。
-
-```text
-{
-  "name": "dsh-wsl-port",
-  "version": "0.2.2",
-  "description": "WSL port doctor; dsh ≥0.1.2 uiPlaybook uses :3081/?token= (bare :3081 is 401).",
-```
-
-**依据 2 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/wsl-host.js#L21-L27)
-
-环境判定。
-
-```text
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-```
-
-**依据 3 · 源码核查**：[lib/port.js:6-24](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L6-L24)
-
-系统命令依赖。
+ss 失败显式返回。
 
 <details>
 <summary>查看原文（19行）</summary>
-
-```text
-export async function hostnameIps({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("hostname", ["-I"], { encoding: "utf8", timeout: 5_000 });
-    return String(stdout || "")
-      .trim()
-      .split(/\s+/)
-      .filter(Boolean);
-  } catch {
-    return [];
-  }
-}
-
-export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) {
-  const p = Number(port);
-  if (!Number.isInteger(p) || p < 1 || p > 65535) {
-    return { ok: false, error: "invalid port" };
-  }
-  try {
-    const { stdout } = await execFileFn("ss", ["-ltn"], { encoding: "utf8", timeout: 5_000 });
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/port.js:40-47](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L40-L47)
-
-kit另配。
-
-```text
-export function buildUiPlaybook(port) {
-  const p = Number(port);
-  if (p !== 3080 && p !== 3081) return [];
-  return [
-    "1) bash …/dsh-wsl-kit/scripts/check-dsh-health.sh (3080/3081 + NODE_USE_ENV_PROXY).",
-    "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
-    "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
-    "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
-```
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 三阶段成本效果怎么评价？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-相对直接hostname -I与ss，工具集中结构/建议但每次有两进程和模型回合；没有LLM网络生成阶段，不等无token或运维人时。
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 匹配WSL/系统工具，金额未知 | 明确网络拓扑/端口和kit版本 | 不自动配置转发 |
-| 持续使用 | 两次顺序execFile，各5秒上限 | 人工核Windows侧/协议层 | 本地枚举结果非修复完成 |
-| 失败恢复 | 缺工具/超时/拓扑重查 | 保留错误/端点并按分层处理 | 不盲restart/shutdown，避免中断别的任务 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 本地监听提示 | ss文本匹配端口 | 精确地址/进程/Windows可达性 |
-| 网络指引 | kit/UI静态playbook | 当前部署采用同relay/认证 |
-| 诊断辅助 | 只读IP/错误/建议结构 | 真实定位正确率或故障恢复时间 |
-
-render先独立输出uiPlaybook，再advice里再次包含同playbook，冗余增加阅读成本。真实收益应是定位层次正确、避免错误暴露/不必要重启、减少总恢复时间，而非只返回listening布尔。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:67-72](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L67-L72)
-
-两命令。
-
-```text
-      const port = Number.isInteger(args?.port) ? args.port : defaultPort;
-      const ips = await hostnameIps();
-      const listen = await checkLocalPort(port);
-      const uiPlaybook = buildUiPlaybook(port);
-      const report = { wsl: true, port, ips, listen, uiPlaybook, error: "" };
-      report.advice = buildPortAdvice(report);
-```
-
-**依据 2 · 源码核查**：[lib/port.js:54-60](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L54-L60)
-
-advice含playbook。
-
-```text
-  const uiPlaybook = buildUiPlaybook(p);
-
-  if (p === 3080 || p === 3081) {
-    tips.push(
-      "dsh web binds 127.0.0.1:3080 only (no --host 0.0.0.0). From Windows prefer http://127.0.0.1:3081/ via kit scripts/restart-dsh-web.sh relay.",
-    );
-    tips.push(...uiPlaybook);
-```
-
-**依据 3 · 源码核查**：[lib/port.js:91-101](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L91-L101)
-
-再次渲染playbook。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-export function formatPortReport(report) {
-  const lines = ["port_doctor", `port: ${report.port}`];
-  if (report.ips?.length) lines.push(`wsl_ips: ${report.ips.join(", ")}`);
-  if (report.listen?.ok) lines.push(`listening: ${report.listen.listening}`);
-  else if (report.listen?.error) lines.push(`ss: ${report.listen.error}`);
-  if (report.uiPlaybook?.length) {
-    lines.push("uiPlaybook:");
-    for (const step of report.uiPlaybook) lines.push(`  ${step}`);
-  }
-  for (const tip of report.advice || []) lines.push(`- ${tip}`);
-  return lines.join("\n");
-```
-
-</details>
-
-#### 缺口
-
-- 无多拓扑/IPv6/relay场景诊断准确率和相较手工命令恢复时间对照。
-  **影响**：不能承诺能定位所有Windows连接问题。
-  **进一步探讨**：可用固定ss输出/拓扑材料先测字段正确，再以受控服务分段对照和计人工恢复成本。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 工程点、分段诊断收据假设和采用结论？
-
-**研究主题**：工程质量与复用、新假设与验证、采用判断
-
-#### 完整回答
-
-纯建议/格式与execFile分离、端口整数范围校验、无shell参数拼接、5秒限制和ss错误保留值得复用。只读诊断不应该包装成更强的健康检查。
-
-可探讨未验证的“分段诊断收据”。解析ss结构local地址/端口/协议并保留失败和来源；Windows TCP探测、relay身份、HTTP状态/认证各列observed/unknown，不用本地listen替代远端可用性。IP按网卡/地址族标识、IPv6 URL括号、按实装kit版本给路径；若需要PID再明确使用授权枚举。所有取消/超时保unknown，参数非法直接拒绝。代价是跨平台探测/隐私和kit版本维护。可用IPv6地址含端口字样、只IPv6监听、Windows独立relay、hostname失败/无ss和认证401夹具研究，不能为得绿灯改安全配置。
-
-推荐trial，限WSL本地只读线索/手册辅助；先用匹配部署和精确端点核，不把它当Windows连通/进程归属工具。继续从ss结构/错误/端到端收据和文案一致性入手。遇地址不符、relay侧不明、脚本缺失或建议要广泛暴露/中断其他任务，停止自动修复并核配置，本轮不操作系统状态。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/port.js:18-37](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L18-L37)
-
-解析/错误起点。
-
-<details>
-<summary>查看原文（20行）</summary>
 
 ```text
 export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) {
@@ -767,17 +506,13 @@ export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) 
       port: p,
       error: err instanceof Error ? err.message : String(err),
     };
-  }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/port.js:40-88](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/lib/port.js#L40-L88)
+**依据 4 · 源码核查**：[lib/port.js:40-47](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L40-L47)
 
-手册适配起点。
-
-<details>
-<summary>查看原文（49行）</summary>
+仅生成 playbook 文本。
 
 ```text
 export function buildUiPlaybook(port) {
@@ -788,80 +523,72 @@ export function buildUiPlaybook(port) {
     "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
     "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
     "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
-  ];
-}
-
-export function buildPortAdvice({ ips, listen, port }) {
-  const tips = [];
-  const p = Number(port);
-  const uiPlaybook = buildUiPlaybook(p);
-
-  if (p === 3080 || p === 3081) {
-    tips.push(
-      "dsh web binds 127.0.0.1:3080 only (no --host 0.0.0.0). From Windows prefer http://127.0.0.1:3081/ via kit scripts/restart-dsh-web.sh relay.",
-    );
-    tips.push(...uiPlaybook);
-    if (p === 3080) {
-      tips.push("If 3080 works in Windows browser, WSL mirrored networking is likely on; 3081 remains the safer default.");
-    }
-    if (p === 3081) {
-      tips.push("3081 is the Python dual-stack relay — if closed, re-run restart-dsh-web.sh (not portproxy for local UI).");
-    }
-    tips.push("For LAN exposure of non-dsh services use wsl_expose; do not publish dsh without auth.");
-  } else {
-    tips.push(
-      "WSL2 localhost forwarding: Windows localhost:<port> often reaches Linux listeners on 0.0.0.0 or 127.0.0.1 (especially with networkingMode=mirrored).",
-    );
-    tips.push("If Windows cannot connect: try WSL eth IP, check firewall, wslconfig_hint, or wsl --shutdown.");
-  }
-
-  if (ips.length) tips.push(`Current WSL IPs: ${ips.join(", ")}`);
-  if (listen?.ok && listen.listening) {
-    tips.push(`Port ${port} appears listening inside WSL (ss).`);
-    if (p !== 3080 && p !== 3081) {
-      tips.push(`From Windows try http://127.0.0.1:${port}/ and http://${ips[0] || "<wsl-ip>"}:${port}/`);
-    } else if (p === 3080) {
-      tips.push("From Windows: http://127.0.0.1:3080/ (mirrored) or http://127.0.0.1:3081/ (relay).");
-    } else {
-      tips.push("From Windows: http://127.0.0.1:3081/");
-    }
-  } else if (listen?.ok) {
-    tips.push(`Port ${port} does not appear to be listening inside WSL yet.`);
-  }
-  return tips;
 ```
 
-</details>
+#### 缺口
 
-**依据 3 · 源码核查**：[index.js:55-73](https://github.com/173787247/dsh-wsl-port/blob/7846224bc8959b5588011846142af8c8a9c308b1/index.js#L55-L73)
+- 未运行 WSL、ss、Windows relay 或浏览器
+  **影响**：不能确认本机监听、跨系统连通或认证
+  **进一步探讨**：隔离环境比对 WSL ss、Windows 连接和带认证的 UI
 
-只读工具边界。
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 现有本地监听判断之外如何缩小跨系统不确定性？
+
+**研究主题**：新假设与验证、工程质量与复用
+
+#### 完整回答
+
+未验证假设：经用户明确选择后分别执行结构化 WSL 本地检查、Windows relay 连接与不含 token 的 HTTP 状态检查，并分别展示未知项，可能缩短定位。已有本地 ss 和健康脚本建议，不能把它们当新功能；未穷尽 kit 或宿主已有等价探针，探测本身也不能证明登录成功。对照当前诊断测试监听、错误进程、relay 缺失和认证失败，测定位正确率与额外耗时，无改善或泄露凭据则否定。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/port.js:18-30](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L18-L30)
+
+已有本地监听文本匹配。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-    async execute(args) {
-      if (!wsl) {
-        return {
-          wsl: false,
-          port: defaultPort,
-          error: "not running in WSL",
-          advice: [],
-          uiPlaybook: [],
-          ips: [],
-          listen: { ok: false, error: "not_wsl", listening: false, port: defaultPort },
-        };
-      }
-      const port = Number.isInteger(args?.port) ? args.port : defaultPort;
-      const ips = await hostnameIps();
-      const listen = await checkLocalPort(port);
-      const uiPlaybook = buildUiPlaybook(port);
-      const report = { wsl: true, port, ips, listen, uiPlaybook, error: "" };
-      report.advice = buildPortAdvice(report);
-      return report;
+export async function checkLocalPort(port, { execFileFn = execFileAsync } = {}) {
+  const p = Number(port);
+  if (!Number.isInteger(p) || p < 1 || p > 65535) {
+    return { ok: false, error: "invalid port" };
+  }
+  try {
+    const { stdout } = await execFileFn("ss", ["-ltn"], { encoding: "utf8", timeout: 5_000 });
+    const text = String(stdout || "");
+    const listening =
+      text.includes(`:${p} `) ||
+      text.includes(`:${p}\n`) ||
+      new RegExp(`:${p}\\b`).test(text);
+    return { ok: true, listening, port: p };
 ```
 
 </details>
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+**依据 2 · 源码核查**：[lib/port.js:40-47](https://github.com/173787247/dsh-wsl-port/blob/6456c9e33dda8ef9203754d7b8ae9d039c03337c/lib/port.js#L40-L47)
+
+已有健康脚本与 relay 建议。
+
+```text
+export function buildUiPlaybook(port) {
+  const p = Number(port);
+  if (p !== 3080 && p !== 3081) return [];
+  return [
+    "1) bash …/dsh-wsl-kit/scripts/check-dsh-health.sh (3080/3081 + NODE_USE_ENV_PROXY).",
+    "2) In Windows open the URL printed by restart-dsh-web.sh (http://127.0.0.1:3081/?token=… on dsh ≥0.1.2). Bare :3081 is 401. Not :3000 and not bare :3080 unless mirrored is confirmed.",
+    "3) If unhealthy: bash …/dsh-wsl-kit/scripts/restart-dsh-web.sh then new browser tab.",
+    "4) Local UI must not use netsh portproxy. Use wsl_expose only for LAN / non-dsh services.",
+```
+
+#### 缺口
+
+- 未运行 WSL、ss、Windows relay 或浏览器
+  **影响**：不能确认本机监听、跨系统连通或认证
+  **进一步探讨**：隔离环境比对 WSL ss、Windows 连接和带认证的 UI
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

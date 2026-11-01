@@ -1,18 +1,18 @@
 # dsh-wsl-launch
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)
+源码版本：[0c6d72f](https://github.com/173787247/dsh-wsl-launch/tree/0c6d72fcfe46d7619745eb74ec38323566a0603b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-launch)
 <!-- END META -->
 
-> **功能**：从 WSL 通过受配置名单约束的 win_launch 工具启动 Windows 应用。
+> **功能**：在 WSL 中通过 DSH 工具启动匹配白名单的 Windows 应用。
 
-> **亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
+> **亮点**：将受名称规则约束的 Windows 应用启动接入 DSH 工具。[Q01](#research-q01)
 
-> **主要限制**：allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](#research-q02)。
+> **主要限制**：名称匹配不验证程序身份；参数不受限且成功输出包含参数。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,9 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · win_launch 如何从 WSL 启动 Windows 应用？](#detail-section-11)
-  - [Q02 · allowlist 限制的是可执行文件还是启动行为？](#detail-section-12)
-  - [Q03 · 怎样采用并衡量启动可靠性与额外成本？](#detail-section-13)
+  - [Q01 · 何时需要跨 WSL 启动 Windows 应用？](#detail-section-11)
+  - [Q02 · 白名单怎样匹配和执行？](#detail-section-12)
+  - [Q03 · 目标名称白名单能否保证安全、不会泄露参数？](#detail-section-13)
+  - [Q04 · 如何在受控环境试用并处理失败？](#detail-section-14)
+  - [Q05 · 已有名称匹配之外如何降低同名程序与参数风险？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -38,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：让 DSH Agent 从 WSL 启动 VS Code、Explorer 或浏览器等 Windows 应用。
+> **用途**：使用 WSL DSH 并需启动 Windows 应用的用户；基线为手工在 Windows 启动。[Q01](#research-q01)
 
-手工从 WSL 运行 PowerShell 或 wsl interop 启动 Windows 应用。
+用户手工启动 Windows 编辑器或浏览器。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -50,64 +52,61 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| win_launch | 启动名单内 Windows 应用 | WSL/PowerShell；只限制 target，未限制 args |
-| 默认 allowlist | 拒绝名单外 target 字符串 | 后缀/前缀匹配不保证最终应用行为 |
+| 匹配 | 限制目标名称 | 不核验二进制身份 |
+| 启动 | 调 Windows 程序 | 参数可能输出 |
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
 | --- | --- | --- | --- |
-| WSL 与 Windows PowerShell | 必需 | 跨系统启动进程 | 返回 not running in WSL 或调用失败 |
-| DSH tools/systemPrompt | 必需 | 注册工具与提示 | 工具不可用 |
-| 允许的 Windows 应用 | 每次任务必需 | 真正执行目标 | PATH/文件缺失则失败 |
-| dsh-wsl-kit | 可选套件 | 组合其他 WSL 工具 | 单插件仍可研究 |
+| DSH 与 WSL | 必需 | 工具注册及执行 | 手工启动 |
+| Windows PowerShell 与目标程序 | 必需 | 启动应用 | 返回错误 |
+| 可信目标及无敏感参数 | 试用必需 | 控制风险 | 不调用 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 管理员核 WSL/PowerShell/目标 app 路径及 args | 只允许必要目标 |
-| 加载 | 管理员安装插件、设置精确 allowlist | win_launch 可见 |
-| 任务 | 用户授权启动，Agent 传 target/args | PowerShell 返回；仍需观察 GUI |
-| 验收/恢复 | 用户核应用实际打开 | 若未就绪排查 PATH/参数/超时 |
+| 准备 | 用户检查目标来源及白名单 | 身份不明停止 |
+| 启动 | 传无秘密参数调用工具 | 失败先检查进程 |
+| 核查 | 用户检查实际窗口与结果 | 异常手工处理 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | WSL/Windows 与目标应用、DSH；授权/许可费用未知 | 安装、配置精准 allowlist 并审参数；耗时未知 | Windows 应用需可用 |
-| 持续使用 | 每次跨境调用 PowerShell/GUI 进程资源；量值未知 | 核目标是否真正打开，维护名单；耗时未知 | ok 不代表 GUI 就绪 |
-| 失败恢复 | 超时、路径/应用错误后的重试可能增加资源；金额未知 | 排查 PATH/WSL/目标进程并人工重开；耗时未知 | 真实失败率未测 |
+| 首次 | Windows 与 WSL | 核查目标身份 | 实机未测 |
+| 持续 | 被启动程序资源 | 审查参数与结果 | 提效未知 |
+| 恢复 | 可能已有进程 | 核查并关闭 | 超时不证明未启动 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 目标名校验 | 源码有默认名单与匹配（Q02） | PATH 解析到的实际程序 |
-| 启动调用 | 源码 PowerShell Start-Process（Q01） | GUI 是否成功打开/可用 |
-| 参数传递 | JSON 列表和转义（Q02） | 被启动应用的参数副作用 |
+| 启动 | 名称匹配与进程调用 | 程序身份及窗口成功 |
+| 输出 | 展示目标与参数 | 不保证秘密脱敏 |
 
-> **思考**：allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](#research-q02)。
+> **思考**：名称匹配不验证程序身份；参数不受限且成功输出包含参数。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把 Windows 应用启动封装成 DSH 工具，并对目标名设默认 allowlist；详见[Q01](#research-q01)。
+> **亮点**：将受名称规则约束的 Windows 应用启动接入 DSH 工具。[Q01](#research-q01)
 
-execFile 不经 shell 调 powershell.exe；单引号转义及 JSON 参数列表；工具调用标记非并发安全。 包装器只等待PowerShell，无exec.signal或目标PID/GUI就绪回执，目标进程生命周期不由局部超时统一管理。
+白名单匹配名称/路径后缀或前缀，成功结果会输出参数。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通配扩大范围；详见[Q02](#research-q02)。
+名称匹配不验证程序身份；参数不受限且成功输出包含参数。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-仅在需要 WSL 启动固定 Windows 应用时试用；先用精确名称/路径并审各应用 args，详见[Q03](#research-q03)。
+先核实程序来源和参数；失败或超时后检查实际进程再决定。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +114,18 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 **核查状态**：已检查源码。
 
-已检查源码。目标文本名单与PowerShell接线成立，实际二进制、应用args和目标进程/GUI就绪不在名单/超时保证内。
+固定源码支持匹配及调用路径；未运行 Windows 或 WSL。
 
-- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、package.json、index.js、lib/launch.js、lib/wsl-host.js、test/launch.test.js、SECURITY.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、SECURITY.md、index.js、lib/launch.js、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交静态审阅；未从 WSL 启动 Windows 程序或执行目标测试。
-- 下一步：在隔离 WSL 核真实路径、允许/拒绝目标、参数矩阵、目标 GUI 就绪与错误恢复。
+- 边界：固定 inventory 9 文件、无排除和解析错误；静态检查启动与输出，未运行目标。
+- 下一步：隔离 Windows/WSL 核验同名程序、参数输出与超时结果。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-launch](https://github.com/173787247/dsh-wsl-launch)
-- **版本号**：0.1.0（[固定提交 2090dc0](https://github.com/173787247/dsh-wsl-launch/tree/2090dc095654c22ccf93b26d0a2ff0050bc4e380)）
-- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 0c6d72f](https://github.com/173787247/dsh-wsl-launch/tree/0c6d72fcfe46d7619745eb74ec38323566a0603b)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +133,9 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 <a id="innovation"></a>
 
-绝对路径与逐应用参数策略可能收窄启动授权，但需兼容验证；详见[Q03](#research-q03)。
+未验证假设：绝对路径身份核验与脱敏预览可减少同名程序与敏感参数风险，须对照现有规则。[Q05](#research-q05)
 
-在隔离 WSL 核真实路径、允许/拒绝目标、参数矩阵、目标 GUI 就绪与错误恢复。
+隔离 Windows/WSL 核验同名程序、参数输出与超时结果。
 
 <a id="detail-section-9"></a>
 
@@ -144,6 +143,8 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,160 +156,35 @@ allowlist 只核 target 字符串，args 与最终应用行为未限，前缀通
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+created%3A2026-09-22T08%3A06%3A22.399Z..2026-10-22T08%3A06%3A22.399Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T08%3A06%3A22.399Z..2026-10-22T08%3A06%3A22.399Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+created%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-launch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核实 WSL Windows 启动工具的 allowlist 边界、脚本执行与运营成本。
+**插件研究总目标**：WSL 中启动 Windows 应用的白名单、参数和结果边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · win_launch 如何从 WSL 启动 Windows 应用？
+### Q01 · 何时需要跨 WSL 启动 Windows 应用？
 
-**研究主题**：场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-Host 注册 win_launch，接 target 与可选 args；启动时检测 WSL，工具调用时归一化 target、按 allowlist 校验，再用 PowerShell -NoProfile -NonInteractive -Command 执行 Start-Process。结果只表示 PowerShell 脚本返回，没有目标 GUI 已可见/就绪的确认。该包面向启动应用，打开 Linux 文件由套件另一个插件负责。
+在 WSL 中使用 DSH 且需要启动 Windows 编辑器、浏览器或终端的用户，可通过工具触发目标。相比手工切换 Windows 启动程序，它把调用纳入代理工作流，但需要 WSL、Windows 和用户对目标与参数的信任；偶发启动可直接手工完成。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:10-89](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/index.js#L10-L89)
+**依据 1 · 作者声明**：[README.md:37-52](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/README.md#L37-L52)
 
-注册工具、WSL 检查、allowlist 与结果。
-
-<details>
-<summary>查看原文（80行）</summary>
-
-```text
-export const name = "dsh-wsl-launch";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 20_000);
-  const allowlist = Array.isArray(config.allowlist) && config.allowlist.length
-    ? config.allowlist.map(String)
-    : DEFAULT_ALLOWLIST;
-  const wsl = detectWsl();
-
-  ctx.systemPrompt.section({
-    name: "tool:win_launch",
-    order: 118,
-    text: [
-      "Use win_launch to start an allowlisted Windows app (code, explorer.exe, browsers, etc.).",
-      "Do not invent executables outside the allowlist; ask the user to extend config.allowlist if needed.",
-      "Prefer dsh-wsl-open for opening Linux file paths; use win_launch for apps and Windows-native targets.",
-    ].join(" "),
-  });
-
-  ctx.tools.register({
-    name: "win_launch",
-    description: "Start an allowlisted Windows executable or shell command name from WSL.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["target"],
-      properties: {
-        target: {
-          type: "string",
-          description: "Executable name or path on Windows PATH / absolute Windows path (must match allowlist).",
-        },
-        args: {
-          type: "array",
-          items: { type: "string" },
-          description: "Optional argument list.",
-        },
-      },
-    },
-    output: {
-      schema: {
-        type: "object",
-        additionalProperties: false,
-        properties: {
-          ok: { type: "boolean" },
-          target: { type: "string" },
-          args: { type: "array", items: { type: "string" } },
-          error: { type: "string" },
-        },
-      },
-      render: (_args, value) => [{ type: "text", text: formatLaunchResult(value) }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!wsl) return { ok: false, error: "not running in WSL" };
-      const target = normalizeTarget(args?.target);
-      const launchArgs = Array.isArray(args?.args) ? args.args.map(String) : [];
-      if (!target) return { ok: false, error: "missing target" };
-      if (!matchesAllowlist(target, allowlist)) {
-        return { ok: false, target, args: launchArgs, error: `target not allowlisted: ${target}` };
-      }
-      try {
-        await runPowerShell(buildLaunchScript(target, launchArgs), { timeoutMs });
-        return { ok: true, target, args: launchArgs };
-      } catch (err) {
-        return {
-          ok: false,
-          target,
-          args: launchArgs,
-          error: err instanceof Error ? err.message : String(err),
-        };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "Windows launch" }),
-    presentResult: (_args, result) => (
-      result.isError
-        ? { card: "generic", title: "Windows launch failed", content: result.content }
-        : { card: "generic", title: "Windows launch", content: result.content }
-    ),
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/wsl-host.js:21-41](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/lib/wsl-host.js#L21-L41)
-
-WSL 探测、powershell execFile。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-}
-
-export function distroName({ env = process.env } = {}) {
-  return env.WSL_DISTRO_NAME || "WSL";
-}
-
-export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
-  const bin = windowsBin("powershell.exe");
-  const { stdout, stderr } = await execFileAsync(
-    bin,
-    ["-NoProfile", "-NonInteractive", "-Command", script],
-    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
-  );
-  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:37-52](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/README.md#L37-L52)
-
-app 启动定位和默认 allowlist。
+作者说明用途与默认白名单。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -334,26 +210,48 @@ Extend via `config.allowlist` (exact name, path suffix, or `prefix*`).
 
 </details>
 
+**依据 2 · 源码核查**：[index.js:10-18](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/index.js#L10-L18)
+
+工具宿主与环境检测。
+
+```text
+export const name = "dsh-wsl-launch";
+export const inject = ["tools", "systemPrompt"];
+
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 20_000);
+  const allowlist = Array.isArray(config.allowlist) && config.allowlist.length
+    ? config.allowlist.map(String)
+    : DEFAULT_ALLOWLIST;
+  const wsl = detectWsl();
+```
+
+#### 缺口
+
+- 未运行 WSL、PowerShell 或 Windows 应用
+  **影响**：不能确认实际程序身份、启动与参数行为
+  **进一步探讨**：隔离环境验证路径、参数、超时和目标进程
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · allowlist 限制的是可执行文件还是启动行为？
+### Q02 · 白名单怎样匹配和执行？
 
-**研究主题**：工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-匹配大小写不敏感，可用精确名、Windows/Unix 路径后缀，或末尾 * 前缀；只检查 target 字符串。args 每项转字符串后进入 PowerShell JSON/Start-Process，没有业务参数 allowlist；扩展配置若写 msedge* 之类前缀会扩大可启动目标，PATH 名称也由 Windows 端解析。脚本把单引号加倍并用 JSON 包参数，可阻断直接 PowerShell 单引号逃逸的常见形式，但不能等同于被启动应用的参数/文件权限隔离。
+目标被转成字符串去空格并小写，条目可精确匹配、路径末尾匹配或以 * 结尾的前缀匹配；参数转换为字符串数组并编码进 PowerShell 的 JSON。execute 在 WSL 且目标匹配时调用 PowerShell Start-Process，否则返回错误；进程调用成功不证明应用正常打开或动作已完成。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/launch.js:1-39](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/lib/launch.js#L1-L39)
+**依据 1 · 源码核查**：[lib/launch.js:1-15](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L1-L15)
 
-目标匹配、通配与 PowerShell 构造。
+目标及白名单匹配。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
 /** Allowlist matching for Windows launch targets. */
@@ -371,20 +269,18 @@ export function matchesAllowlist(target, allowlist) {
     if (e.endsWith("*")) return t.startsWith(e.slice(0, -1));
     return t === e || t.endsWith(`\\${e}`) || t.endsWith(`/${e}`);
   });
-}
+```
 
-export const DEFAULT_ALLOWLIST = [
-  "code",
-  "code.cmd",
-  "explorer.exe",
-  "notepad.exe",
-  "wt.exe",
-  "windows terminal",
-  "msedge.exe",
-  "chrome.exe",
-  "firefox.exe",
-];
+</details>
 
+**依据 2 · 源码核查**：[lib/launch.js:30-39](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L30-L39)
+
+参数编码与 Start-Process。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
 export function buildLaunchScript(target, args) {
   const t = normalizeTarget(target).replace(/'/g, "''");
   const argList = Array.isArray(args) ? args.map((a) => String(a)) : [];
@@ -399,218 +295,12 @@ export function buildLaunchScript(target, args) {
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:64-74](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/index.js#L64-L74)
+**依据 3 · 源码核查**：[index.js:62-82](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/index.js#L62-L82)
 
-allowlist 仅校验 target，args 原样传脚本。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-    async execute(args) {
-      if (!wsl) return { ok: false, error: "not running in WSL" };
-      const target = normalizeTarget(args?.target);
-      const launchArgs = Array.isArray(args?.args) ? args.args.map(String) : [];
-      if (!target) return { ok: false, error: "missing target" };
-      if (!matchesAllowlist(target, allowlist)) {
-        return { ok: false, target, args: launchArgs, error: `target not allowlisted: ${target}` };
-      }
-      try {
-        await runPowerShell(buildLaunchScript(target, launchArgs), { timeoutMs });
-        return { ok: true, target, args: launchArgs };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[test/launch.test.js:5-18](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/test/launch.test.js#L5-L18)
-
-仅覆盖名称/后缀/通配和脚本文字。
+WSL、匹配及执行错误分支。
 
 <details>
-<summary>查看原文（14行）</summary>
-
-```text
-describe("win_launch allowlist", () => {
-  it("allows default names and paths ending with them", () => {
-    assert.equal(matchesAllowlist("code", DEFAULT_ALLOWLIST), true);
-    assert.equal(matchesAllowlist("C:\\\\Program Files\\\\Microsoft VS Code\\\\Code.exe", ["code.exe"]), true);
-    assert.equal(matchesAllowlist("evil.exe", DEFAULT_ALLOWLIST), false);
-  });
-
-  it("supports trailing wildcards", () => {
-    assert.equal(matchesAllowlist("msedge.exe", ["msedge*"]), true);
-  });
-
-  it("builds Start-Process script", () => {
-    assert.match(buildLaunchScript("notepad.exe", ["a.txt"]), /Start-Process/);
-  });
-```
-
-</details>
-
-#### 缺口
-
-- 未测不同目标应用对 args 的解析和 Windows PATH 劫持
-  **影响**：allowlist 不能证明启动后的动作受限
-  **进一步探讨**：按实际允许应用审参数与解析后的可执行文件路径
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 怎样采用并衡量启动可靠性与额外成本？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-需要WSL/可访问powershell.exe、DSH tools/systemPrompt和目标Windows应用。先核目标可执行来源与逐应用参数，精确名仍可匹配任意目录中的同名后缀，不是对二进制hash/签名授权。
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | WSL/Windows 与目标应用、DSH；授权/许可费用未知 | 安装、配置精准 allowlist 并审参数；耗时未知 | Windows 应用需可用 |
-| 持续使用 | 每次跨境调用 PowerShell/GUI 进程资源；量值未知 | 核目标是否真正打开，维护名单；耗时未知 | ok 不代表 GUI 就绪 |
-| 失败恢复 | 超时、路径/应用错误后的重试可能增加资源；金额未知 | 排查 PATH/WSL/目标进程并人工重开；耗时未知 | 真实失败率未测 |
-
-局部timeout限制PowerShell调用等待，代码不接exec.signal，也不追踪目标PID/GUI就绪；Start-Process后启动的应用不因工具取消/超时自动停止。包装器不检查目标画面或业务结果，重试前须先判断原应用是否已开，避免重复窗口或副作用。真实启动失败率、GUI资源和人工恢复量未知。
-
-相对当前只校target文本，可探索先解析并授权绝对二进制路径/身份、逐应用参数schema和明确启动状态回执；不能把参数JSON转义当应用授权。代价是各主机安装路径、版本/签名与参数变化维护，PID存在仍非业务ready。最小反例包括同名不同路径、前缀通配、危险args、PowerShell等待超时但应用已开和重复重试。若仍非授权路径/参数启动，或失败回执诱导重复副作用，则假设失败；若误拒/维护负担抵消便利也不支持采用收益。未实现/未验证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:13-18](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/index.js#L13-L18)
-
-配置默认值与 WSL 检查。
-
-```text
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 20_000);
-  const allowlist = Array.isArray(config.allowlist) && config.allowlist.length
-    ? config.allowlist.map(String)
-    : DEFAULT_ALLOWLIST;
-  const wsl = detectWsl();
-```
-
-**依据 2 · 源码核查**：[lib/wsl-host.js:8-41](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/lib/wsl-host.js#L8-L41)
-
-PowerShell 解析与等待预算。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-const WINDOWS_BINS = {
-  "powershell.exe": ["/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"],
-  "cmd.exe": ["/mnt/c/Windows/System32/cmd.exe"],
-  "explorer.exe": ["/mnt/c/Windows/explorer.exe"],
-};
-
-export function windowsBin(name, { exists = existsSync } = {}) {
-  for (const p of WINDOWS_BINS[name] || []) {
-    if (exists(p)) return p;
-  }
-  return name;
-}
-
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-}
-
-export function distroName({ env = process.env } = {}) {
-  return env.WSL_DISTRO_NAME || "WSL";
-}
-
-export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
-  const bin = windowsBin("powershell.exe");
-  const { stdout, stderr } = await execFileAsync(
-    bin,
-    ["-NoProfile", "-NonInteractive", "-Command", script],
-    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
-  );
-  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:23-76](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/README.md#L23-L76)
-
-兼容、安装、配置和测试说明。
-
-<details>
-<summary>查看原文（54行）</summary>
-
-````text
----
-## Compatibility
-
-| Field | Value |
-|-------|-------|
-| **Plugin** | `dsh-wsl-launch` **0.1.0** |
-| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |
-| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |
-| **Kit set** | `daily` (also in `github` / `full`; fetch+net also in `llm`) |
-| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |
-| **Agent Teams** | Upstream experimental; not required here |
-
-Suite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).
-
-## Why
-
-Opening a **file** belongs to [dsh-wsl-open](https://github.com/173787247/dsh-wsl-open). Starting **VS Code / Edge / Explorer** as an app needs a controlled launcher so the agent cannot run arbitrary `.exe`.
-
-## Tool
-
-| Arg | Required | Meaning |
-|-----|----------|---------|
-| `target` | yes | Executable name or Windows path (must match allowlist) |
-| `args` | no | String argument list |
-
-## Default allowlist
-
-`code`, `code.cmd`, `explorer.exe`, `notepad.exe`, `wt.exe`, `windows terminal`, `msedge.exe`, `chrome.exe`, `firefox.exe`
-
-Extend via `config.allowlist` (exact name, path suffix, or `prefix*`).
-
-## Install
-
-```sh
-dsh plugin --profile web add github:173787247/dsh-wsl-launch
-```
-
-## Config
-
-```yaml
-- id: dsh-wsl-launch
-  name: dsh-wsl-launch
-  config:
-    timeoutMs: 20000
-    # allowlist: ["code", "explorer.exe", "msedge*"]
-```
-
-If `allowlist` is omitted or empty, defaults apply.
-
-## Test
-
-```sh
-npm test
-```
-````
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:62-83](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/index.js#L62-L83)
-
-包装器仅await PowerShell完成，无exec.signal/PID/GUI回执。
-
-<details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
     timeoutMs,
@@ -634,17 +324,58 @@ npm test
           error: err instanceof Error ? err.message : String(err),
         };
       }
-    },
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/launch.js:30-39](https://github.com/173787247/dsh-wsl-launch/blob/2090dc095654c22ccf93b26d0a2ff0050bc4e380/lib/launch.js#L30-L39)
+#### 缺口
 
-构造Start-Process后常量ok，未取应用就绪信息。
+- 未运行 WSL、PowerShell 或 Windows 应用
+  **影响**：不能确认实际程序身份、启动与参数行为
+  **进一步探讨**：隔离环境验证路径、参数、超时和目标进程
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 目标名称白名单能否保证安全、不会泄露参数？
+
+**研究主题**：缺陷与关键质疑、功能与机制
+
+#### 完整回答
+
+不能。匹配路径后缀或前缀不检查二进制签名或真实路径身份；允许程序的参数也未受内容约束，可能触发程序自身能力。成功结果格式化会拼出参数，与 SECURITY 不打印秘密的声明存在冲突；用户不应在参数中放令牌，并需审查应用来源和动作。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/launch.js:6-15](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L6-L15)
+
+后缀和前缀匹配。
 
 <details>
 <summary>查看原文（10行）</summary>
+
+```text
+export function matchesAllowlist(target, allowlist) {
+  const t = normalizeTarget(target).toLowerCase();
+  if (!t) return false;
+  const list = Array.isArray(allowlist) ? allowlist : [];
+  return list.some((entry) => {
+    const e = String(entry ?? "").trim().toLowerCase();
+    if (!e) return false;
+    if (e.endsWith("*")) return t.startsWith(e.slice(0, -1));
+    return t === e || t.endsWith(`\\${e}`) || t.endsWith(`/${e}`);
+  });
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/launch.js:30-46](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L30-L46)
+
+参数传递与成功输出。
+
+<details>
+<summary>查看原文（17行）</summary>
 
 ```text
 export function buildLaunchScript(target, args) {
@@ -657,14 +388,183 @@ export function buildLaunchScript(target, args) {
     "if ($args.Count -gt 0) { Start-Process -FilePath $target -ArgumentList $args } else { Start-Process -FilePath $target }",
     "'ok'",
   ].join("; ");
+}
+
+export function formatLaunchResult(value) {
+  if (!value.ok) return `win_launch failed: ${value.error || "denied"}`;
+  const args = (value.args || []).join(" ");
+  return `launched: ${value.target}${args ? ` ${args}` : ""}`;
+}
+```
+
+</details>
+
+**依据 3 · 作者声明**：[SECURITY.md:1-3](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/SECURITY.md#L1-L3)
+
+作者声明不输出秘密。
+
+```text
+# Security
+
+`dsh-wsl-launch` must not log, print, or return secrets (tokens, passwords, PEM keys).
+```
+
+#### 缺口
+
+- 未运行 WSL、PowerShell 或 Windows 应用
+  **影响**：不能确认实际程序身份、启动与参数行为
+  **进一步探讨**：隔离环境验证路径、参数、超时和目标进程
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何在受控环境试用并处理失败？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+依赖 WSL、Windows PowerShell、允许的目标和可用 GUI；默认白名单包含编辑器、浏览器和终端，空配置会回到默认而非拒绝全部。先使用可信程序与无秘密参数，在隔离环境确认可执行文件身份并观察实际窗口；拒绝或超时后先检查是否已有进程，避免盲目重复启动。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:13-18](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/index.js#L13-L18)
+
+白名单空配置回退默认。
+
+```text
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 20_000);
+  const allowlist = Array.isArray(config.allowlist) && config.allowlist.length
+    ? config.allowlist.map(String)
+    : DEFAULT_ALLOWLIST;
+  const wsl = detectWsl();
+```
+
+**依据 2 · 源码核查**：[index.js:62-82](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/index.js#L62-L82)
+
+执行与错误返回。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    timeoutMs,
+    isConcurrencySafe: () => false,
+    async execute(args) {
+      if (!wsl) return { ok: false, error: "not running in WSL" };
+      const target = normalizeTarget(args?.target);
+      const launchArgs = Array.isArray(args?.args) ? args.args.map(String) : [];
+      if (!target) return { ok: false, error: "missing target" };
+      if (!matchesAllowlist(target, allowlist)) {
+        return { ok: false, target, args: launchArgs, error: `target not allowlisted: ${target}` };
+      }
+      try {
+        await runPowerShell(buildLaunchScript(target, launchArgs), { timeoutMs });
+        return { ok: true, target, args: launchArgs };
+      } catch (err) {
+        return {
+          ok: false,
+          target,
+          args: launchArgs,
+          error: err instanceof Error ? err.message : String(err),
+        };
+      }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/wsl-host.js:34-41](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/wsl-host.js#L34-L41)
+
+PowerShell 调用及超时。
+
+```text
+export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
+  const bin = windowsBin("powershell.exe");
+  const { stdout, stderr } = await execFileAsync(
+    bin,
+    ["-NoProfile", "-NonInteractive", "-Command", script],
+    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
+  );
+  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
+```
+
+#### 缺口
+
+- 未运行 WSL、PowerShell 或 Windows 应用
+  **影响**：不能确认实际程序身份、启动与参数行为
+  **进一步探讨**：隔离环境验证路径、参数、超时和目标进程
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 已有名称匹配之外如何降低同名程序与参数风险？
+
+**研究主题**：新假设与验证、工程质量与复用
+
+#### 完整回答
+
+未验证假设：用户显式选择绝对路径、校验程序身份并在启动前预览脱敏参数，可能减少同名替换和敏感参数暴露。已有名称白名单和 PowerShell 字符串转义，不应重复当作新机制；未穷尽宿主或操作系统外部保护，签名检查也不能限制已允许程序的全部功能。对照现有规则，在同名不同路径、特殊参数与正常应用上测误放、误拒与可用性，无改善则否定。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/launch.js:6-15](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L6-L15)
+
+已有名称匹配。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export function matchesAllowlist(target, allowlist) {
+  const t = normalizeTarget(target).toLowerCase();
+  if (!t) return false;
+  const list = Array.isArray(allowlist) ? allowlist : [];
+  return list.some((entry) => {
+    const e = String(entry ?? "").trim().toLowerCase();
+    if (!e) return false;
+    if (e.endsWith("*")) return t.startsWith(e.slice(0, -1));
+    return t === e || t.endsWith(`\\${e}`) || t.endsWith(`/${e}`);
+  });
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/launch.js:30-46](https://github.com/173787247/dsh-wsl-launch/blob/0c6d72fcfe46d7619745eb74ec38323566a0603b/lib/launch.js#L30-L46)
+
+已有参数编码及结果输出。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+export function buildLaunchScript(target, args) {
+  const t = normalizeTarget(target).replace(/'/g, "''");
+  const argList = Array.isArray(args) ? args.map((a) => String(a)) : [];
+  const argJson = JSON.stringify(argList).replace(/'/g, "''");
+  return [
+    `$target = '${t}'`,
+    `$args = ConvertFrom-Json '${argJson}'`,
+    "if ($args.Count -gt 0) { Start-Process -FilePath $target -ArgumentList $args } else { Start-Process -FilePath $target }",
+    "'ok'",
+  ].join("; ");
+}
+
+export function formatLaunchResult(value) {
+  if (!value.ok) return `win_launch failed: ${value.error || "denied"}`;
+  const args = (value.args || []).join(" ");
+  return `launched: ${value.target}${args ? ` ${args}` : ""}`;
+}
 ```
 
 </details>
 
 #### 缺口
 
-- 无真实 WSL 启动与单位调用时耗/资源样本
-  **影响**：可靠性、资源与维护成本未知
-  **进一步探讨**：记录测试目标应用启动/失败和人工恢复时间
+- 未运行 WSL、PowerShell 或 Windows 应用
+  **影响**：不能确认实际程序身份、启动与参数行为
+  **进一步探讨**：隔离环境验证路径、参数、超时和目标进程
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

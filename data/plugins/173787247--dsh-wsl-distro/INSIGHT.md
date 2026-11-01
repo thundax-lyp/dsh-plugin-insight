@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)
+源码版本：[92bb411](https://github.com/173787247/dsh-wsl-distro/tree/92bb411eb4ec1e9d08c38fc618c766db04853a22)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-distro)
 <!-- END META -->
 
-> **功能**：查询WSL宿主当前发行版与os-release，解析Windows默认/已安装发行版列表，并提示跨发行版路径身份差异。
+> **功能**：查询 WSL 当前发行版与已安装发行版，并提示路径身份差异。
 
-> **亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
+> **亮点**：[Q02](#research-q02) 把多来源身份和路径提醒汇集到工具结果。
 
-> **主要限制**：current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 部分行可静默略过，工具层超时未传入内部固定子进程超时。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 为什么需要发行版信息，结果不能替代什么？](#detail-section-11)
-  - [Q02 · 信息采集、解析与提示如何组合？](#detail-section-12)
-  - [Q03 · 本地化、进程与失败边界有哪些缺口？](#detail-section-13)
-  - [Q04 · 如何启动使用并衡量成本？](#detail-section-14)
-  - [Q05 · 推荐与可继续探讨入口是什么？](#detail-section-15)
+  - [Q01 · 当前与默认发行版差异为何值得查看？](#detail-section-11)
+  - [Q02 · 身份、列表和提示从何而来？](#detail-section-12)
+  - [Q03 · 解析成功是否等于列表完整或可按配置取消？](#detail-section-13)
+  - [Q04 · 什么情况下结果可用于路径判断？](#detail-section-14)
+  - [Q05 · 如何帮助用户识别列表可能不完整？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,97 +40,77 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向DSH host在WSL里、Windows默认发行版与当前进程所在发行版可能不同的用户。distro_info展示当前env名称、os-release、wsl.exe -l -v结构列表/默认星号并提示UNC不要跨发行版猜/home。
+> **用途**：需要在 WSL 内辨认当前和 Windows 默认发行版的 DSH 用户。
 
-合格结果是明确host当前与Windows默认身份、采集时点/失败/解析未知，避免把另一发行版文件误当当前。不是切换/安装/终止发行版，不查用户home映射、不验证路径权限或Windows UNC实际可用。基线手查env、os-release与wsl列表，增量是统一结构化工具和提前提示。
-
-手动env/os/wsl -l -v查信息，插件统一呈现但未证明完整率/省时。
+手工查看环境变量、os-release 与 wsl.exe 原始输出。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| current/os | host环境身份 | apply缓存非远端Agent身份 |
-| list/default | Windows发行版列表 | 编码/单token/partial限制 |
-| 差异提示 | 避免猜/home/UNC | 不检查存在/权限 |
-| 查询进程 | 固定wsl -l -v | 直接exec 10s，不接signal |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 当前身份 | 识别当前发行版 | 加载时环境快照 |
+| 列表解析 | 查看安装与默认 | 特定单词表格格式，可能部分漏行 |
+| 路径建议 | 提醒跨发行版差异 | 不检查文件身份 |
+| 原文回退 | 诊断零匹配 | 部分匹配时格式化不显示其余 raw |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| Node>=18和DSH tools/systemPrompt | ESM/工具/提示 | 包无精确host peer锁定 |
-| 可信WSL env和/etc/os-release | 当前host身份 | apply缓存，失败空未说明原因 |
-| Windows互操作/PATH内wsl.exe | 每次列表 | 固定只读argv，直接子进程非host治理 |
-| 环境元数据披露许可 | 展示/模型上下文 | 不读文件内容不等无隐私 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| 兼容 DSH tools 和 systemPrompt | 必需 | 注册查询及提示 | 无法正常接入 |
+| WSL 和可用 wsl.exe | 列表必需 | 查询 Windows 发行版 | 返回非 WSL 或子进程错误 |
+| 可解析的输出格式 | 结构列表必需 | 提取名称、状态和版本 | 可漏行，需核对 raw |
 
+#### 启动步骤
 
-
-#### 使用流程
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 固定安装 | 核WSL/互操作/注册契约 | 无需模型账号/Agent Teams |
-| 调用 | 看current与default，核list.ok/raw | 不将空结构当无发行版 |
-| 路径决策 | 先确认目标distro/用户/路径 | 信息工具不验证UNC/权限 |
-| 故障 | 核编码/本地化/PATH/10s预算 | 重试前核是否仍有进程 |
-| 更新 | env/os变更后重载或重新采集 | 输出当前缓存未必新鲜 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 用户确认宿主和 WSL | 环境不满足时回系统查询 |
+| 查询 | Agent 调用 distro_info | 检查 current、list 和错误 |
+| 核对 | 用户比对原始列表和目标路径 | 部分解析或名称异常时停止假定 |
+| 使用 | 用户确认发行版后继续操作 | 路径仍需验证实际文件 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 复用WSL/小包与系统元数据 | 核互操作/宿主服务/PATH | 工时/金额未知 |
-| 持续使用 | 每调用wsl.exe进程/列表IO和工具上下文 | 阅读发行版身份/默认差异 | 无独立网络/模型调用不等总token费0，实际时延未知 |
-| 失败恢复 | 重试进程/重载缓存 | 排编码/超时/互操作与手核raw | 无写操作故无发行版回滚，恢复时间未知 |
-
-
+|---|---|---|---|
+| 首次使用 | 软件及系统资源费用未知 | 配置兼容性时间未知 | 需 WSL 和 DSH |
+| 持续使用 | 子进程资源消耗未知 | 比对原文和路径时间未知 | 每次工具调用查询列表 |
+| 失败恢复 | 重试资源费用未知 | 排查编码、进程与手工查询时间未知 | 内部固定 10 秒 |
 
 #### 效果
 
-| 目标 | 增量 | 边界 |
-| --- | --- | --- |
-| 避免跨distro猜路径 | 当前/默认并列与提示 | 不验证实际home/UNC |
-| 少手查信息 | 结构列表/回退raw | 编码/partial可漏 |
-| 副作用小 | 固定只读-list argv | 非host进程治理/全局预算 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 身份提醒 | 源码比较当前与默认名称 | 实机误选率 |
+| 结构列表 | 正则解析符合格式的行 | 部分和本地化输出完整性 |
+| 失败提示 | 子进程异常返回错误，零匹配可显示 raw | 用户是否识别部分解析 |
 
-作者测试是英文列表/差异建议/格式化正例，缺真实OS/本地化/取消验证设计；本轮只读不执行测试/系统查询。
-
-> **思考**：current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 部分行可静默略过，工具层超时未传入内部固定子进程超时。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把env/os与固定wsl列表结构化并提醒当前/默认不同，减少跨发行版路径猜测和手查。详见[Q02](#research-q02)。
+> **亮点**：[Q02](#research-q02) 把多来源身份和路径提醒汇集到工具结果。
 
-parser只接受name/state各一个非空白token和数字version，未识别列本地化/多词状态/空格名称等结构；非匹配行静默忽略。Running提示只查英文/running/i，其他语言同等状态不出running摘要。stdout按utf8解码后删NUL能恢复部分ASCII形状，但不是完整UTF16解码，非ASCII发行版名称/状态不保证正确。部分行解析成功时render不再展示raw，漏行不显式标partial；空列表ok不证明无发行版。
-
-实际子进程是node child_process.execFile，不走宿主subprocess/sandboxPolicy；固定wsl.exe从PATH查找，依可信宿主环境，不自证明二进制身份。内层固定10s、工具timeoutMs配置默认15s但未传listDistros也不接exec.signal，所以改变外层不改变真实exec预算，取消未必立即停进程。无自定义maxBuffer依Node默认，超限走错误而非部分列表；并发安全标true会允许多个列表进程，非全局请求预算。
-
-读取/结果包含os字段、发行版名和raw错误，不持久写、不直接网络/模型，但进入宿主上下文仍是环境元数据披露。current/os读取失败退空未保存原因；检测WSL只env/release，不验证互操作wsl.exe可用。raw注册和无精确peer声明需核目标host工具契约，不能把套件外部矩阵当本轮加载结论。
+[Q03](#research-q03) 静态与动态来源时点不同，部分行略过且两层超时未接线。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单token/英文状态可能漏；直接exec内10s不接外timeout/signal，ok不证明完整/路径可用。详见[Q03](#research-q03)。
+[Q03](#research-q03) 部分行可静默略过，工具层超时未传入内部固定子进程超时。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有试用，可信本机WSL常规英文列表先看raw/ok并核路径身份；本地化/远端身份/严格治理先观察。详见[Q05](#research-q05)。
-
-合格结果是明确host当前与Windows默认身份、采集时点/失败/解析未知，避免把另一发行版文件误当当前。不是切换/安装/终止发行版，不查用户home映射、不验证路径权限或Windows UNC实际可用。基线手查env、os-release与wsl列表，增量是统一结构化工具和提前提示。
-
-采用建议：有试用，可信本机WSL常规英文列表先看raw/ok并核路径身份；本地化/远端身份/严格治理先观察。详见[Q05](#research-q05)。
+[Q04](#research-q04) 重要路径操作前核对系统原始输出和实际文件。
 
 <a id="detail-section-7"></a>
 
@@ -138,18 +118,18 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 **核查状态**：已检查源码。
 
-已检查源码。只读发行版差异提示明确，列表完整性/编码与host身份时点、进程预算需核。
+固定源码静态核查；未运行 DSH、wsl.exe 或不同语言系统，假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/distro.js、lib/wsl-host.js、test/distro.test.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/distro.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：三运行JS与包/英文测试设计完整读取；不运行wsl.exe/PowerShell/目标测试或改发行版配置。
-- 下一步：可继续用固定编码/本地化/缺行与延迟exec mock核partial/时点/取消及目标身份，不运行系统查询。
+- 边界：固定根源码静态核查；未运行 WSL、目标程序或本地测试。
+- 下一步：在隔离 WSL 对照原始字节、语言、部分解析、超时及取消后的子进程。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-distro](https://github.com/173787247/dsh-wsl-distro)
-- **版本号**：0.2.0（[固定提交 5a6f710](https://github.com/173787247/dsh-wsl-distro/tree/5a6f71031271a53d6e16abd267c59fbc69685a92)）
-- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.0（[固定提交 92bb411](https://github.com/173787247/dsh-wsl-distro/tree/92bb411eb4ec1e9d08c38fc618c766db04853a22)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -157,9 +137,9 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 <a id="innovation"></a>
 
-可探索来源/时点/partial与编码明确的环境收据，统一宿主进程signal/预算，比较误判与采集开销；未实现。详见[Q05](#research-q05)。
+[Q05](#research-q05) 对照已有 raw 与差异提示，验证未解析行提示能否减少误选。
 
-可继续用固定编码/本地化/缺行与延迟exec mock核partial/时点/取消及目标身份，不运行系统查询。
+在隔离 WSL 对照原始字节、语言、部分解析、超时及取消后的子进程。
 
 <a id="detail-section-9"></a>
 
@@ -167,6 +147,8 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -178,201 +160,48 @@ current/os缓存与实时list无时点，UTF8去NUL非完整编码处理、单to
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+created%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A27%3A39.719Z..2026-10-22T09%3A27%3A39.719Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-distro/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核host当前与默认区别、实时/缓存来源、列表编码与完整性、固定只读子进程预算、成本与采用。
+**插件研究总目标**：核查当前与默认发行版来源、列表完整性和超时边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 为什么需要发行版信息，结果不能替代什么？
+### Q01 · 当前与默认发行版差异为何值得查看？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向DSH host在WSL里、Windows默认发行版与当前进程所在发行版可能不同的用户。distro_info展示当前env名称、os-release、wsl.exe -l -v结构列表/默认星号并提示UNC不要跨发行版猜/home。
-
-合格结果是明确host当前与Windows默认身份、采集时点/失败/解析未知，避免把另一发行版文件误当当前。不是切换/安装/终止发行版，不查用户home映射、不验证路径权限或Windows UNC实际可用。基线手查env、os-release与wsl列表，增量是统一结构化工具和提前提示。
+在 WSL 中执行任务且要构造 Windows UNC 或切换发行版的用户，需要知道当前进程环境与 Windows 默认发行版可能不同；系统 wsl.exe 和 os-release 手动查询也是替代。插件整合环境、系统信息和列表并给出路径提醒，合格判断仍须以实际发行版和文件身份核实；使用频率与错误降低未测。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:17-29](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/README.md#L17-L29)
+**依据 1 · 源码核查**：[README.md:26-28](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/README.md#L26-L28)
 
-作者信息/跨发行版定位。
+作者说明使用场景。
 
-<details>
-<summary>查看原文（13行）</summary>
-
-````text
-**`distro_info`**: current distro, os-release, structured `wsl -l -v` (default vs session).
-
-```sh
-dsh plugin --profile web add github:173787247/dsh-wsl-distro
-npm test
-```
-
-MIT
-
+```text
 ## Where it sits
 
 Reports wsl -l -v: default distro vs the one the agent is in, plus UNC path safety.
-
-````
-
-</details>
-
-**依据 2 · 源码核查**：[index.js:50-54](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L50-L54)
-
-实际只列/建议。
-
-```text
-    async execute() {
-      const list = wsl ? await listDistros() : { ok: false, error: "not WSL", distros: [], defaultName: "", raw: "" };
-      const info = { wsl, current, os, list };
-      info.advice = buildDistroAdvice(info);
-      return info;
 ```
 
-<a id="research-q02"></a>
+**依据 2 · 源码核查**：[lib/distro.js:70-87](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L70-L87)
 
-<a id="detail-section-12"></a>
-
-### Q02 · 信息采集、解析与提示如何组合？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-apply缓存detectWsl/currentDistro/readOsReleaseFields，current只取WSL_DISTRO_NAME、os同步读/etc/os-release按大写KEY=VALUE取去双引号值。systemPrompt启动就写host发行版/os。每次工具若wsl=true才实际execFile wsl.exe固定[-l,-v]，输出去NUL、按四列正则提默认星号、name、state、version。
-
-列表新采集而current/os是apply时旧值，输出没有分别时间/来源，不能称同一时点全新探测。会话执行参数未参与current识别，描述This agent实际为宿主进程环境，不保证远端工作区/代理运行环境身份。
-
-固定argv无用户命令插值，读失败list.ok=false并给error/raw，parser无匹配但命令0仍ok=true，render可在无结构行时显raw，是有用的人工回退。贡献是成熟系统信息查询加结构/默认差异提示，不是发行版隔离/路径修复机制。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:13-28](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L13-L28)
-
-apply缓存和提示。
+当前和默认不同时的提醒。
 
 <details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const wsl = detectWsl();
-  const current = currentDistro();
-  const os = readOsReleaseFields();
-
-  ctx.systemPrompt.section({
-    name: "wsl-distro",
-    order: 14,
-    text: [
-      current
-        ? `You are running inside WSL distro "${current}"${os.PRETTY_NAME ? ` (${os.PRETTY_NAME})` : ""}.`
-        : "WSL distro name is unknown; verify before writing \\\\wsl$\\ paths.",
-      "Other installed distros may have different users and home directories. Use distro_info when unsure.",
-    ].join(" "),
-  });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/distro.js:7-23](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L7-L23)
-
-env/os读取。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-export function currentDistro({ env = process.env } = {}) {
-  return env.WSL_DISTRO_NAME || "";
-}
-
-export function readOsReleaseFields({ readFile = readFileSync } = {}) {
-  try {
-    const text = readFile("/etc/os-release", "utf8");
-    const out = {};
-    for (const line of text.split("\n")) {
-      const m = line.match(/^([A-Z_]+)=(.*)$/);
-      if (!m) continue;
-      out[m[1]] = m[2].replace(/^"|"$/g, "");
-    }
-    return out;
-  } catch {
-    return {};
-  }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/distro.js:30-66](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L30-L66)
-
-表解析/固定argv/错误。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-export function parseWslListVerbose(raw) {
-  const text = String(raw || "").replace(/\0/g, "");
-  const distros = [];
-  let defaultName = "";
-  for (const line of text.split(/\r?\n/)) {
-    const trimmed = line.trim();
-    if (!trimmed || /^NAME\b/i.test(trimmed) || /^-+$/.test(trimmed)) continue;
-    const m = trimmed.match(/^(\*)?\s*(\S+)\s+(\S+)\s+(\d+)\s*$/);
-    if (!m) continue;
-    const isDefault = Boolean(m[1]);
-    const name = m[2];
-    const state = m[3];
-    const version = Number(m[4]);
-    if (isDefault) defaultName = name;
-    distros.push({ name, state, version, isDefault });
-  }
-  return { distros, defaultName };
-}
-
-export async function listDistros({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("wsl.exe", ["-l", "-v"], {
-      encoding: "utf8",
-      timeout: 10_000,
-      windowsHide: true,
-    });
-    const raw = String(stdout || "").replace(/\0/g, "");
-    const parsed = parseWslListVerbose(raw);
-    return { ok: true, raw, ...parsed };
-  } catch (err) {
-    return {
-      ok: false,
-      error: err instanceof Error ? err.message : String(err),
-      distros: [],
-      defaultName: "",
-      raw: "",
-    };
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/distro.js:70-111](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L70-L111)
-
-建议和raw回退。
-
-<details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
 export function buildDistroAdvice(info) {
@@ -393,55 +222,87 @@ export function buildDistroAdvice(info) {
   tips.push(
     `Windows UNC must use this distro: \\\\wsl$\\${info.current || "<distro>"}\\… — verify with path_convert / wsl_workspace.`,
   );
-  if (info.os?.PRETTY_NAME) tips.push(`os-release: ${info.os.PRETTY_NAME}`);
-  const running = (info.list?.distros || []).filter((d) => /running/i.test(d.state));
-  if (running.length) tips.push(`Running: ${running.map((d) => d.name).join(", ")}`);
-  return tips;
-}
-
-export function formatDistroReport(info) {
-  const lines = ["distro_info", `current: ${info.current || "(unknown)"}`];
-  if (info.os?.PRETTY_NAME) lines.push(`os: ${info.os.PRETTY_NAME}`);
-  if (info.list?.defaultName) lines.push(`default: ${info.list.defaultName}`);
-  if (info.list?.distros?.length) {
-    lines.push("distros:");
-    for (const d of info.list.distros) {
-      lines.push(
-        `  ${d.isDefault ? "*" : " "} ${d.name}  ${d.state}  WSL${d.version}`,
-      );
-    }
-  } else if (info.list?.ok && info.list.raw) {
-    lines.push("--- wsl -l -v ---");
-    lines.push(info.list.raw.trim());
-  } else if (info.list?.error) {
-    lines.push(`wsl -l: ${info.list.error}`);
-  }
-  for (const tip of info.advice || []) lines.push(`- ${tip}`);
 ```
 
 </details>
 
-<a id="research-q03"></a>
+#### 缺口
 
-<a id="detail-section-13"></a>
+- 缺少真实使用频率和替代对照
+  **影响**：不能证明收益大小
+  **进一步探讨**：比较系统命令和插件的识别时间及错误目标。
 
-### Q03 · 本地化、进程与失败边界有哪些缺口？
+<a id="research-q02"></a>
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+<a id="detail-section-12"></a>
+
+### Q02 · 身份、列表和提示从何而来？
+
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-parser只接受name/state各一个非空白token和数字version，未识别列本地化/多词状态/空格名称等结构；非匹配行静默忽略。Running提示只查英文/running/i，其他语言同等状态不出running摘要。stdout按utf8解码后删NUL能恢复部分ASCII形状，但不是完整UTF16解码，非ASCII发行版名称/状态不保证正确。部分行解析成功时render不再展示raw，漏行不显式标partial；空列表ok不证明无发行版。
-
-实际子进程是node child_process.execFile，不走宿主subprocess/sandboxPolicy；固定wsl.exe从PATH查找，依可信宿主环境，不自证明二进制身份。内层固定10s、工具timeoutMs配置默认15s但未传listDistros也不接exec.signal，所以改变外层不改变真实exec预算，取消未必立即停进程。无自定义maxBuffer依Node默认，超限走错误而非部分列表；并发安全标true会允许多个列表进程，非全局请求预算。
-
-读取/结果包含os字段、发行版名和raw错误，不持久写、不直接网络/模型，但进入宿主上下文仍是环境元数据披露。current/os读取失败退空未保存原因；检测WSL只env/release，不验证互操作wsl.exe可用。raw注册和无精确peer声明需核目标host工具契约，不能把套件外部矩阵当本轮加载结论。
+apply 时一次性探测 WSL、读取 WSL_DISTRO_NAME 和 /etc/os-release；每次 distro_info 若检测到 WSL 则调用 wsl.exe -l -v，UTF-8 解码后删除 NUL，以行正则解析名称、状态、版本和默认标记。列表调用异常返回 ok:false；格式化只在没有解析出任何发行版但有 raw 时显示原文。当前身份与 os-release 是加载时快照，列表是每次调用，不保证同一时点。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/distro.js:30-58](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L30-L58)
+**依据 1 · 源码核查**：[index.js:13-17](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/index.js#L13-L17)
 
-单token/utf8/去NUL/10s。
+加载时捕获环境和系统信息。
+
+```text
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 15_000);
+  const wsl = detectWsl();
+  const current = currentDistro();
+  const os = readOsReleaseFields();
+```
+
+**依据 2 · 源码核查**：[index.js:48-54](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/index.js#L48-L54)
+
+工具执行请求列表并生成建议。
+
+```text
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute() {
+      const list = wsl ? await listDistros() : { ok: false, error: "not WSL", distros: [], defaultName: "", raw: "" };
+      const info = { wsl, current, os, list };
+      info.advice = buildDistroAdvice(info);
+      return info;
+```
+
+**依据 3 · 源码核查**：[lib/distro.js:7-22](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L7-L22)
+
+身份与 os-release 读取。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function currentDistro({ env = process.env } = {}) {
+  return env.WSL_DISTRO_NAME || "";
+}
+
+export function readOsReleaseFields({ readFile = readFileSync } = {}) {
+  try {
+    const text = readFile("/etc/os-release", "utf8");
+    const out = {};
+    for (const line of text.split("\n")) {
+      const m = line.match(/^([A-Z_]+)=(.*)$/);
+      if (!m) continue;
+      out[m[1]] = m[2].replace(/^"|"$/g, "");
+    }
+    return out;
+  } catch {
+    return {};
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/distro.js:30-58](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L30-L58)
+
+正则解析和外部进程。
 
 <details>
 <summary>查看原文（29行）</summary>
@@ -480,19 +341,14 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/distro.js:89-111](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L89-L111)
+**依据 5 · 源码核查**：[lib/distro.js:94-110](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L94-L110)
 
-英文状态/raw显示。
+列表、raw 或错误展示。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-  const running = (info.list?.distros || []).filter((d) => /running/i.test(d.state));
-  if (running.length) tips.push(`Running: ${running.map((d) => d.name).join(", ")}`);
-  return tips;
-}
-
 export function formatDistroReport(info) {
   const lines = ["distro_info", `current: ${info.current || "(unknown)"}`];
   if (info.os?.PRETTY_NAME) lines.push(`os: ${info.os.PRETTY_NAME}`);
@@ -510,258 +366,36 @@ export function formatDistroReport(info) {
   } else if (info.list?.error) {
     lines.push(`wsl -l: ${info.list.error}`);
   }
-  for (const tip of info.advice || []) lines.push(`- ${tip}`);
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:14-17](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L14-L17)
-
-配置与缓存。
-
-```text
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const wsl = detectWsl();
-  const current = currentDistro();
-  const os = readOsReleaseFields();
-```
-
-**依据 4 · 源码核查**：[index.js:48-54](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L48-L54)
-
-外timeout不传/无exec signal。
-
-```text
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute() {
-      const list = wsl ? await listDistros() : { ok: false, error: "not WSL", distros: [], defaultName: "", raw: "" };
-      const info = { wsl, current, os, list };
-      info.advice = buildDistroAdvice(info);
-      return info;
-```
-
-**依据 5 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/wsl-host.js#L21-L27)
-
-WSL弱判定。
-
-```text
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-```
-
-#### 缺口
-
-- 真实本地化/非ASCII列表、取消/外层超时与不同host注册契约未矩阵核对。
-  **影响**：不保证全语言/完整列表或立刻取消。
-  **进一步探讨**：用固定UTF16/UTF8与多词/局部坏行mock及延迟exec核partial/身份/预算，不运行wsl命令。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 如何启动使用并衡量成本？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-#### 启动与依赖
-
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| Node>=18和DSH tools/systemPrompt | ESM/工具/提示 | 包无精确host peer锁定 |
-| 可信WSL env和/etc/os-release | 当前host身份 | apply缓存，失败空未说明原因 |
-| Windows互操作/PATH内wsl.exe | 每次列表 | 固定只读argv，直接子进程非host治理 |
-| 环境元数据披露许可 | 展示/模型上下文 | 不读文件内容不等无隐私 |
-
-#### 使用流程
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 固定安装 | 核WSL/互操作/注册契约 | 无需模型账号/Agent Teams |
-| 调用 | 看current与default，核list.ok/raw | 不将空结构当无发行版 |
-| 路径决策 | 先确认目标distro/用户/路径 | 信息工具不验证UNC/权限 |
-| 故障 | 核编码/本地化/PATH/10s预算 | 重试前核是否仍有进程 |
-| 更新 | env/os变更后重载或重新采集 | 输出当前缓存未必新鲜 |
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 复用WSL/小包与系统元数据 | 核互操作/宿主服务/PATH | 工时/金额未知 |
-| 持续使用 | 每调用wsl.exe进程/列表IO和工具上下文 | 阅读发行版身份/默认差异 | 无独立网络/模型调用不等总token费0，实际时延未知 |
-| 失败恢复 | 重试进程/重载缓存 | 排编码/超时/互操作与手核raw | 无写操作故无发行版回滚，恢复时间未知 |
-
-#### 效果
-
-| 目标 | 增量 | 边界 |
-| --- | --- | --- |
-| 避免跨distro猜路径 | 当前/默认并列与提示 | 不验证实际home/UNC |
-| 少手查信息 | 结构列表/回退raw | 编码/partial可漏 |
-| 副作用小 | 固定只读-list argv | 非host进程治理/全局预算 |
-
-作者测试是英文列表/差异建议/格式化正例，缺真实OS/本地化/取消验证设计；本轮只读不执行测试/系统查询。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:14-22](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/package.json#L14-L22)
-
-Node/包。
-
-```text
-  "type": "module",
-  "main": "index.js",
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test test/distro.test.js" },
-  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.zh.md", "LICENSE",
-    "CHANGELOG.md",
-    "CONTRIBUTING.md"],
-  "keywords": ["dsh-plugin", "deepseek-harness", "wsl", "distro"],
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
-```
-
-**依据 2 · 源码核查**：[test/distro.test.js:9-21](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/test/distro.test.js#L9-L21)
-
-作者英文解析正例。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-describe("parseWslListVerbose", () => {
-  it("parses default star and versions", () => {
-    const sample = `
-  NAME              STATE           VERSION
-* Ubuntu-24.04      Running         2
-  docker-desktop    Stopped         2
-`;
-    const { distros, defaultName } = parseWslListVerbose(sample);
-    assert.equal(defaultName, "Ubuntu-24.04");
-    assert.equal(distros.length, 2);
-    assert.equal(distros[0].isDefault, true);
-    assert.equal(distros[0].version, 2);
-    assert.equal(distros[1].name, "docker-desktop");
-```
-
-</details>
-
-**依据 3 · 源码核查**：[test/distro.test.js:25-39](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/test/distro.test.js#L25-L39)
-
-差异提示正例。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-describe("buildDistroAdvice", () => {
-  it("warns current vs default mismatch", () => {
-    const tips = buildDistroAdvice({
-      current: "Ubuntu-24.04",
-      os: { PRETTY_NAME: "Ubuntu 24.04" },
-      list: {
-        defaultName: "docker-desktop",
-        distros: [
-          { name: "Ubuntu-24.04", state: "Running", version: 2, isDefault: false },
-          { name: "docker-desktop", state: "Stopped", version: 2, isDefault: true },
-        ],
-      },
-    });
-    assert.ok(tips.some((t) => /Default distro is "docker-desktop"/i.test(t)));
-    assert.ok(tips.some((t) => /wsl\$\\Ubuntu-24.04/i.test(t)));
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/distro.js:49-66](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L49-L66)
-
-实际资源/失败。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export async function listDistros({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("wsl.exe", ["-l", "-v"], {
-      encoding: "utf8",
-      timeout: 10_000,
-      windowsHide: true,
-    });
-    const raw = String(stdout || "").replace(/\0/g, "");
-    const parsed = parseWslListVerbose(raw);
-    return { ok: true, raw, ...parsed };
-  } catch (err) {
-    return {
-      ok: false,
-      error: err instanceof Error ? err.message : String(err),
-      distros: [],
-      defaultName: "",
-      raw: "",
-    };
 ```
 
 </details>
 
 #### 缺口
 
-- 与手动查询相比的错发行版率/响应时间/总上下文没有对照。
-  **影响**：不量化省时或错误减少。
-  **进一步探讨**：固定多发行版任务与mock列表，让人工判目标，比较误判/缺项/阅读成本。
+- 未运行 WSL 和本地化输出
+  **影响**：不能确认输出编码或实际识别范围
+  **进一步探讨**：隔离环境记录不同语言和非 ASCII 发行版名的原始输出。
 
-<a id="research-q05"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-13"></a>
 
-### Q05 · 推荐与可继续探讨入口是什么？
+### Q03 · 解析成功是否等于列表完整或可按配置取消？
 
-**研究主题**：采用判断、新假设与验证
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-有条件试用。可信个人WSL/正常英文ASCII列表可快速核当前与默认，固定查询不改发行版；先看raw/list.ok并独立核目标路径。多语言/非ASCII、远端Agent身份或严格取消/权限治理场景先观察，不能把列表当文件访问保证。
-
-由host缓存与实时list混用、无partial解析与预算脱节，可推导“带采集来源/时间/解析完整性的环境收据”。每次区分host env/os与Windows列表的时点，明确unknown/partial和原始编码；保数字状态与本地化映射，无法解析不宣无发行版。经宿主subprocess传signal和同一timeout，记录受理/退出/取消。
-
-未实现。反例是host进程环境不代表远程任务目标，即使完全新采集也不能推远端身份；方案应要求显式target而非假装推断。最小对照含UTF16非ASCII、多词/局部坏行、env缺失、default改变、outertimeout<10s/取消与非零退出。若仍把partial当完整、身份时点混淆或取消后进程留存却报完成，核心假设被反证；比较新增采集延迟/披露量与误判减少，不以更多字段等同更安全。
+解析器只接受名称、状态都为单个非空白词且末尾为数字的行，不匹配行静默略过；只要至少一行匹配，格式化就显示结构行，不显示剩余 raw，因此部分解析可能被误认为完整。listDistros 把子进程 timeout 固定为 10000ms，工具层 timeoutMs 由配置设置但调用未向 listDistros 传递该值或取消信号；无法由工具声明推断底层子进程按相同预算或随宿主取消立即停止。UTF-8 读取后去 NUL 不保证所有非 ASCII UTF-16 输出可正确解码。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:14-17](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L14-L17)
+**依据 1 · 源码核查**：[lib/distro.js:30-58](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L30-L58)
 
-缓存时点基线。
-
-```text
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const wsl = detectWsl();
-  const current = currentDistro();
-  const os = readOsReleaseFields();
-```
-
-**依据 2 · 源码核查**：[index.js:48-54](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/index.js#L48-L54)
-
-预算基线。
-
-```text
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute() {
-      const list = wsl ? await listDistros() : { ok: false, error: "not WSL", distros: [], defaultName: "", raw: "" };
-      const info = { wsl, current, os, list };
-      info.advice = buildDistroAdvice(info);
-      return info;
-```
-
-**依据 3 · 源码核查**：[lib/distro.js:30-66](https://github.com/173787247/dsh-wsl-distro/blob/5a6f71031271a53d6e16abd267c59fbc69685a92/lib/distro.js#L30-L66)
-
-解析/退出基线。
+行匹配、UTF-8 与进程固定超时。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
 export function parseWslListVerbose(raw) {
@@ -793,6 +427,145 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
     const raw = String(stdout || "").replace(/\0/g, "");
     const parsed = parseWslListVerbose(raw);
     return { ok: true, raw, ...parsed };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/distro.js:94-110](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L94-L110)
+
+只有零匹配时展示 raw。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+export function formatDistroReport(info) {
+  const lines = ["distro_info", `current: ${info.current || "(unknown)"}`];
+  if (info.os?.PRETTY_NAME) lines.push(`os: ${info.os.PRETTY_NAME}`);
+  if (info.list?.defaultName) lines.push(`default: ${info.list.defaultName}`);
+  if (info.list?.distros?.length) {
+    lines.push("distros:");
+    for (const d of info.list.distros) {
+      lines.push(
+        `  ${d.isDefault ? "*" : " "} ${d.name}  ${d.state}  WSL${d.version}`,
+      );
+    }
+  } else if (info.list?.ok && info.list.raw) {
+    lines.push("--- wsl -l -v ---");
+    lines.push(info.list.raw.trim());
+  } else if (info.list?.error) {
+    lines.push(`wsl -l: ${info.list.error}`);
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:13-16](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/index.js#L13-L16)
+
+外层超时配置。
+
+```text
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 15_000);
+  const wsl = detectWsl();
+  const current = currentDistro();
+```
+
+**依据 4 · 源码核查**：[index.js:48-54](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/index.js#L48-L54)
+
+不传入 timeout 或 signal 的实际调用。
+
+```text
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute() {
+      const list = wsl ? await listDistros() : { ok: false, error: "not WSL", distros: [], defaultName: "", raw: "" };
+      const info = { wsl, current, os, list };
+      info.advice = buildDistroAdvice(info);
+      return info;
+```
+
+#### 缺口
+
+- 未在真实本地化 WSL 中验证编码和取消
+  **影响**：不能量化漏行或确认宿主对超时的具体处理
+  **进一步探讨**：使用受控输出含部分匹配、多词状态和非 ASCII 名称并在隔离宿主检查进程退出。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 什么情况下结果可用于路径判断？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+需兼容 DSH tools/systemPrompt、WSL 及可调用的 wsl.exe；当前名取环境变量，缺失时提示未知，系统文件读取失败返回空对象。用户应先对照原始系统列表及目标文件，特别是部分或本地化解析；外层超时和内部固定 10 秒应分别理解，不能将结果当作路径可访问性验证。费用与人工核查时间未知，失败时可回到系统工具手动查询。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:10-17](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/index.js#L10-L17)
+
+宿主依赖与捕获。
+
+```text
+export const name = "dsh-wsl-distro";
+export const inject = ["tools", "systemPrompt"];
+
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 15_000);
+  const wsl = detectWsl();
+  const current = currentDistro();
+  const os = readOsReleaseFields();
+```
+
+**依据 2 · 源码核查**：[lib/distro.js:7-22](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L7-L22)
+
+缺失名称与系统信息回退。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function currentDistro({ env = process.env } = {}) {
+  return env.WSL_DISTRO_NAME || "";
+}
+
+export function readOsReleaseFields({ readFile = readFileSync } = {}) {
+  try {
+    const text = readFile("/etc/os-release", "utf8");
+    const out = {};
+    for (const line of text.split("\n")) {
+      const m = line.match(/^([A-Z_]+)=(.*)$/);
+      if (!m) continue;
+      out[m[1]] = m[2].replace(/^"|"$/g, "");
+    }
+    return out;
+  } catch {
+    return {};
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/distro.js:49-67](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L49-L67)
+
+子进程及失败返回。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export async function listDistros({ execFileFn = execFileAsync } = {}) {
+  try {
+    const { stdout } = await execFileFn("wsl.exe", ["-l", "-v"], {
+      encoding: "utf8",
+      timeout: 10_000,
+      windowsHide: true,
+    });
+    const raw = String(stdout || "").replace(/\0/g, "");
+    const parsed = parseWslListVerbose(raw);
+    return { ok: true, raw, ...parsed };
   } catch (err) {
     return {
       ok: false,
@@ -801,14 +574,114 @@ export async function listDistros({ execFileFn = execFileAsync } = {}) {
       defaultName: "",
       raw: "",
     };
+  }
 ```
 
 </details>
 
 #### 缺口
 
-- 新环境收据/宿主进程预算方案未实现。
-  **影响**：不计当前完整性/治理优势。
-  **进一步探讨**：固定mock编码/身份/进程时序对照误判与资源，不调用Windows命令。
+- 未测试宿主、系统命令或目标文件
+  **影响**：不能保证兼容、时效和恢复负担
+  **进一步探讨**：隔离 WSL 比较插件与系统原始输出及实际路径。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何帮助用户识别列表可能不完整？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+已有零匹配时 raw 回退和当前/默认差异提醒，是直接反证；假设同时显示解析行数、未解析非表头行数以及可查看原文，帮助用户决定可否据列表选择发行版或需回系统命令核对。对照现有格式，在全部匹配、部分匹配、编码异常及命令失败条件下测错误发行版选择、漏报、人工核对时间和敏感输出暴露；若误选不降、误报或额外负担抵消收益则否定。当前原始输出本来已在结构结果中，提议是更明确暴露不完整性而非声称数据不存在。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/distro.js:30-45](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L30-L45)
+
+不匹配行直接略过。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function parseWslListVerbose(raw) {
+  const text = String(raw || "").replace(/\0/g, "");
+  const distros = [];
+  let defaultName = "";
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || /^NAME\b/i.test(trimmed) || /^-+$/.test(trimmed)) continue;
+    const m = trimmed.match(/^(\*)?\s*(\S+)\s+(\S+)\s+(\d+)\s*$/);
+    if (!m) continue;
+    const isDefault = Boolean(m[1]);
+    const name = m[2];
+    const state = m[3];
+    const version = Number(m[4]);
+    if (isDefault) defaultName = name;
+    distros.push({ name, state, version, isDefault });
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/distro.js:49-58](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L49-L58)
+
+结构结果包含 raw。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export async function listDistros({ execFileFn = execFileAsync } = {}) {
+  try {
+    const { stdout } = await execFileFn("wsl.exe", ["-l", "-v"], {
+      encoding: "utf8",
+      timeout: 10_000,
+      windowsHide: true,
+    });
+    const raw = String(stdout || "").replace(/\0/g, "");
+    const parsed = parseWslListVerbose(raw);
+    return { ok: true, raw, ...parsed };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/distro.js:94-110](https://github.com/173787247/dsh-wsl-distro/blob/92bb411eb4ec1e9d08c38fc618c766db04853a22/lib/distro.js#L94-L110)
+
+零匹配才在文本格式显示 raw。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+export function formatDistroReport(info) {
+  const lines = ["distro_info", `current: ${info.current || "(unknown)"}`];
+  if (info.os?.PRETTY_NAME) lines.push(`os: ${info.os.PRETTY_NAME}`);
+  if (info.list?.defaultName) lines.push(`default: ${info.list.defaultName}`);
+  if (info.list?.distros?.length) {
+    lines.push("distros:");
+    for (const d of info.list.distros) {
+      lines.push(
+        `  ${d.isDefault ? "*" : " "} ${d.name}  ${d.state}  WSL${d.version}`,
+      );
+    }
+  } else if (info.list?.ok && info.list.raw) {
+    lines.push("--- wsl -l -v ---");
+    lines.push(info.list.raw.trim());
+  } else if (info.list?.error) {
+    lines.push(`wsl -l: ${info.list.error}`);
+  }
+```
+
+</details>
+
+#### 缺口
+
+- 未测试用户和输出类型分布
+  **影响**：不能断言提示增益或隐私代价
+  **进一步探讨**：用匿名合成表格及真实许可样本对照两种展示。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

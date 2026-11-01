@@ -17,6 +17,7 @@ import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { captureHeat } from '../../_shared/scripts/research-metrics.mjs';
 import { buildResearchInput } from './build-research-input.mjs';
 import { readSnapshot, validateWork } from './snapshot-state.mjs';
+import { resolveResearchCounts } from './research-selection.mjs';
 import { startWork } from './research-work.mjs';
 import { selectedItems } from './session-state.mjs';
 import { prepareSelected } from './prepare-selected.mjs';
@@ -41,7 +42,19 @@ export async function prepareResearch(input, context = {}) {
 }
 
 async function prepareResearchUnlocked(
-    { workPath, inputPath, sources, id, checkedAt, limit, retryIds = [], pluginIds = null, materialsOnly = false },
+    {
+        workPath,
+        inputPath,
+        sources,
+        id,
+        checkedAt,
+        limit,
+        newLimit,
+        updateLimit,
+        retryIds = [],
+        pluginIds = null,
+        materialsOnly = false
+    },
     { root = ROOT, buildInput = buildResearchInput, metrics = captureHeat, prepare = prepareSelected } = {}
 ) {
     const workFile = resolve(root, workPath);
@@ -50,7 +63,17 @@ async function prepareResearchUnlocked(
     const resume = existsSync(workFile),
         folder = dirname(workFile);
     if (!resume && (materialsOnly || pluginIds)) throw Error('materials require an existing fixed WORK');
-    if (resume && (inputPath || sources || id || checkedAt || limit !== undefined || retryIds.length))
+    if (
+        resume &&
+        (inputPath ||
+            sources ||
+            id ||
+            checkedAt ||
+            limit !== undefined ||
+            newLimit !== undefined ||
+            updateLimit !== undefined ||
+            retryIds.length)
+    )
         throw Error('resume accepts the fixed WORK only; do not replace its input or selection');
     const inputFile = resolve(folder, 'INPUT.json'),
         problemsFile = resolve(folder, 'INPUT-PROBLEMS.json');
@@ -62,8 +85,7 @@ async function prepareResearchUnlocked(
         if (work.base_digest !== digest(snapshot)) throw Error('snapshot baseline changed; resolve before resuming');
     } else {
         if (inputPath && (sources || id || checkedAt)) throw Error('INPUT already binds sources, id and checked-at');
-        if (limit !== undefined && (!Number.isSafeInteger(limit) || limit <= 0))
-            throw Error('limit must be a positive integer');
+        resolveResearchCounts({ limit, newLimit, updateLimit });
         const snapshot = readSnapshot(root);
         let input;
         if (inputPath) input = read(resolve(root, inputPath));
@@ -93,7 +115,7 @@ async function prepareResearchUnlocked(
             ...(await metrics({ items, metadata: snapshot.metadata, checked_at: input.checked_at })),
             base_digest: digest(snapshot)
         };
-        work = startWork(input, workFile, limit ?? 40, root, retryIds, heat);
+        work = startWork(input, workFile, limit, root, retryIds, heat, { newLimit, updateLimit });
     }
     const requested = selectedItems(work.session).filter((item) => !pluginIds || pluginIds.includes(item.id));
     if (
@@ -136,6 +158,15 @@ async function prepareResearchUnlocked(
         selection_summary: {
             listed: work.session.items.length,
             selected: work.session.selected_ids.length,
+            research_limit: work.session.research_limit ?? null,
+            quotas: work.session.selection?.quotas ?? null,
+            selected_updates: selectedItems(work.session).filter((item) =>
+                work.session.selection?.researched_ids.includes(item.id)
+            ).length,
+            selected_additions: selectedItems(work.session).filter(
+                (item) => !work.session.selection?.researched_ids.includes(item.id)
+            ).length,
+            update_adjusted: !resume && resolveResearchCounts({ limit, newLimit, updateLimit }).update_adjusted,
             suppressed: work.session.selection?.suppressed_ids?.length ?? 0,
             cooldown_skipped:
                 work.session.selection?.cooldown_ids?.filter(
@@ -185,6 +216,8 @@ if (
                 'materials-only': { type: 'boolean', default: false },
                 'checked-at': { type: 'string' },
                 limit: { type: 'string' },
+                'new-limit': { type: 'string' },
+                'update-limit': { type: 'string' },
                 'source-awesome': { type: 'string' },
                 'source-harness': { type: 'string' },
                 'complete-awesome': { type: 'boolean', default: false },
@@ -201,6 +234,8 @@ if (
             id: v.id,
             checkedAt: v['checked-at'],
             limit: v.limit === undefined ? undefined : Number(v.limit),
+            newLimit: v['new-limit'] === undefined ? undefined : Number(v['new-limit']),
+            updateLimit: v['update-limit'] === undefined ? undefined : Number(v['update-limit']),
             retryIds: v['retry-plugin'] ?? [],
             pluginIds: v.plugin ?? null,
             materialsOnly: v['materials-only'],

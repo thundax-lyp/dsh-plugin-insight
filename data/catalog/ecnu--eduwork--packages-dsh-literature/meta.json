@@ -1,0 +1,66 @@
+{
+    "repository": "ECNU/EduWork",
+    "repository_id": 1369398336,
+    "captured_at": "2026-11-01T12:37:53.293Z",
+    "window_start": "2026-10-02T12:37:53.293Z",
+    "stars": 264,
+    "pushed_at": "2026-10-31T17:34:33Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D92C:356AC:2E90C8:33BE47:6AE732CA and timestamp 2026-11-01 12:38:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D958:29322:2F50DC:348394:6AE732CC and timestamp 2026-11-01 12:38:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20created%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D9B4:279E33:2FE732:351B0B:6AE732CD and timestamp 2026-11-01 12:38:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D9E6:2571BD:2F41AF:346F69:6AE732CE and timestamp 2026-11-01 12:38:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20updated%3A2026-10-02T12%3A37%3A53.293Z..2026-11-01T12%3A37%3A53.293Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DA22:25D288:2CA66B:31D4B6:6AE732D0 and timestamp 2026-11-01 12:38:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T17:22:18.721Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a59a721f29c65cab2b86b3b951a73c4296ee1c29",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@eduwork/dsh-literature",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 2338,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40eduwork%2Fdsh-literature",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-28T16:56:00.125Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/%40eduwork%2Fdsh-literature",
+            "error": null,
+            "latest_version": "0.1.4",
+            "latest_published_at": "2026-10-24T11:29:29.556Z",
+            "latest_error": null
+        }
+    }
+}
