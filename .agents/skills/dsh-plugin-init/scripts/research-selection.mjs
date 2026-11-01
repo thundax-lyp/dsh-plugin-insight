@@ -68,7 +68,7 @@ export function cooldownIds(base, items, checkedAt) {
                 !item.changes.some((change) => ['unknown', 'moved', 'removed_from_source'].includes(change)) &&
                 Number.isFinite(age) &&
                 age >= 0 &&
-                age < 3 * 24 * 60 * 60 * 1000
+                age < 5 * 24 * 60 * 60 * 1000
             );
         })
         .map((item) => item.id);
