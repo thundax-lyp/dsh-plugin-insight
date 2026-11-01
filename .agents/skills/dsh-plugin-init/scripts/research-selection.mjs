@@ -1,4 +1,21 @@
 import { sortByHeat } from '../../_shared/scripts/heat-score.mjs';
+// Resolve explicit inputs before defaults; updates never have an independent default.
+export function resolveResearchCounts({ limit, newLimit, updateLimit } = {}) {
+    for (const [name, value] of Object.entries({ limit, newLimit, updateLimit }))
+        if (value !== undefined && (!Number.isSafeInteger(value) || value < (name === 'limit' ? 1 : 0)))
+            throw Error(`${name} must be a ${name === 'limit' ? 'positive' : 'non-negative'} safe integer`);
+    const total = limit ?? (newLimit !== undefined && updateLimit !== undefined ? newLimit + updateLimit : 40);
+    const additions = newLimit ?? (updateLimit !== undefined ? total - updateLimit : Math.floor(total / 2));
+    const updates = total - additions;
+    if (!Number.isSafeInteger(total) || total < 1 || additions < 0 || updates < 0)
+        throw Error('research counts must have a positive safe total and non-negative quotas');
+    return {
+        total,
+        additions,
+        updates,
+        update_adjusted: updateLimit !== undefined && updateLimit !== updates
+    };
+}
 const conclusionDependencies = (base) =>
     base.catalog.plugins.flatMap((plugin) => [
         ...plugin.findings.flatMap((finding) => finding.dependencies),
@@ -79,7 +96,8 @@ export function snapshotSelection(
     retryIds = [],
     metadataPolicy = true,
     cooldownCheckedAt = null,
-    heat = null
+    heat = null,
+    quotas = null
 ) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
@@ -109,6 +127,7 @@ export function snapshotSelection(
     }
     return {
         mode: 'incremental',
+        ...(quotas ? { quotas } : {}),
         ...(heat ? { heat } : {}),
         ...blockedSelection,
         ...(metadataPolicy ? { metadata_only_ids: metadataOnlyIds(base, items ?? []) } : {}),
@@ -127,8 +146,7 @@ export function snapshotSelection(
     };
 }
 
-// Discovery membership is not completed research. Recheck researched objects first,
-// then spend the remaining budget on objects without a current research record.
+// Discovery membership is not completed research; quotas classify against completed research.
 export function incrementalSelection(session) {
     const researched = new Set(session.selection.researched_ids);
     const required = new Set(session.selection.review_required_ids);
@@ -142,11 +160,29 @@ export function incrementalSelection(session) {
     const updates = eligible.filter(
         (item) =>
             researched.has(item.id) &&
-            (required.has(item.id) ||
+            (retries.has(item.id) ||
+                required.has(item.id) ||
                 (!metadataOnly.has(item.id) && item.changes.some((change) => change !== 'unchanged')))
     );
     const additions = eligible.filter((item) => !researched.has(item.id));
     const priority = eligible.filter((item) => retries.has(item.id));
+    if (session.selection.quotas) {
+        const { additions: newLimit, updates: updateLimit } = session.selection.quotas;
+        const pick = (items, count) =>
+            [
+                ...priority.filter((item) => items.some((candidate) => candidate.id === item.id)),
+                ...sortByHeat(
+                    items.filter((item) => !retries.has(item.id)),
+                    session.selection.heat
+                )
+            ].slice(0, count);
+        const selected = [...pick(updates, updateLimit), ...pick(additions, newLimit)];
+        return [
+            ...priority.filter((item) => selected.includes(item)),
+            ...selected.filter((item) => !retries.has(item.id))
+        ].map((item) => item.id);
+    }
+    // Historical WORK without quotas retains its original update-first selection.
     return [
         ...priority,
         ...sortByHeat(

@@ -1,4 +1,4 @@
-import { snapshotSelection, incrementalSelection } from './research-selection.mjs';
+import { snapshotSelection, incrementalSelection, resolveResearchCounts } from './research-selection.mjs';
 import { subsetHeat } from '../../_shared/scripts/heat-score.mjs';
 import { heatFromCaches } from '../../_shared/scripts/research-metrics.mjs';
 import { validateDisplay } from '../../_shared/scripts/publication-validation.mjs';
@@ -10,19 +10,19 @@ import { startSession, validateSession, completeItem, selectedItems } from './se
 
 import { readSnapshot, validateWork, local, hash } from './snapshot-state.mjs';
 import { assemble } from './snapshot-merge.mjs';
-export function startWork(input, path, limit = 40, root = ROOT, retryIds = [], heat = null) {
+export function startWork(input, path, limit = undefined, root = ROOT, retryIds = [], heat = null, counts = {}) {
     mkdirSync(dirname(path), { recursive: true });
     const lock = path + '.lock',
         fd = openSync(lock, 'wx', 0o600);
     try {
         if (existsSync(resolve(dirname(path), 'SESSION.json.lock'))) throw Error('active session lock');
-        return startWorkUnlocked(input, path, limit, root, retryIds, heat);
+        return startWorkUnlocked(input, path, limit, root, retryIds, heat, counts);
     } finally {
         closeSync(fd);
         unlinkSync(lock);
     }
 }
-function startWorkUnlocked(input, path, limit, root, retryIds, heat) {
+function startWorkUnlocked(input, path, limit, root, retryIds, heat, counts) {
     if (existsSync(path)) throw Error('work already exists; resume it');
     const rel = relative(root, resolve(path)).split('\\').join('/');
     if (!/^data\/runs\/\d{4}-\d{2}-\d{2}-\d{2,}\/WORK\.json$/.test(rel))
@@ -30,7 +30,8 @@ function startWorkUnlocked(input, path, limit, root, retryIds, heat) {
     const base = readSnapshot(root);
     if (Date.parse(input.checked_at) <= Date.parse(base.checked_at))
         throw Error('new work cutoff must be later than current snapshot');
-    const session = startSession(input, null, limit);
+    const resolved = resolveResearchCounts({ ...counts, limit });
+    const session = startSession(input, null, resolved.total);
     const known = new Map(
         base.catalog.plugins.map((p) => [
             p.id,
@@ -121,7 +122,10 @@ function startWorkUnlocked(input, path, limit, root, retryIds, heat) {
         heat ?? { ...heatFromCaches(session.items, base.metadata, session.checked_at), base_digest: digest(base) },
         session.items
     );
-    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at, fixedHeat);
+    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at, fixedHeat, {
+        additions: resolved.additions,
+        updates: resolved.updates
+    });
     session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {
