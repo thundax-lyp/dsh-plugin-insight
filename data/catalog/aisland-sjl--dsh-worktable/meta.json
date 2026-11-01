@@ -1,10 +1,10 @@
 {
     "repository": "Aisland-SJL/dsh-worktable",
     "repository_id": 1336092482,
-    "captured_at": "2026-10-27T04:59:15.812Z",
-    "window_start": "2026-09-27T04:59:15.812Z",
-    "stars": 800,
-    "pushed_at": "2026-10-03T05:03:23Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 823,
+    "pushed_at": "2026-10-31T09:06:12Z",
     "issues": {
         "open": 9,
         "closed": 0,
@@ -15,13 +15,13 @@
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }
