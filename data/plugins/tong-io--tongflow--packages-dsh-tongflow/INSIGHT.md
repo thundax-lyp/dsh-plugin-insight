@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[0087122](https://github.com/tong-io/tongflow/tree/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow)
+源码版本：[07037ea](https://github.com/tong-io/tongflow/tree/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,046](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C046&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow) [![npm 30d 2,027](https://img.shields.io/static/v1?label=npm+30d&message=2%2C027&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow)
+[![GitHub ★ 1,049](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C049&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow) [![npm 30d 1,981](https://img.shields.io/static/v1?label=npm+30d&message=1%2C981&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow)
 <!-- END META -->
 
-> **功能**：将TongFlow媒体工作流、项目树和画布接入DSH会话，支持资产生成与审阅。
+> **功能**：将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。
 
-> **亮点**：将DSH会话、附件和后台任务接入共用媒体工作流，让人和Agent编辑同一资产生成文件；增益在多轮协作与追溯，核心引擎贡献归TongFlow而非适配层。[Q01](#research-q01) [Q04](#research-q04)
+> **亮点**：为 Studio 注入适配宿主服务、技能与界面，不等同 TongFlow 根执行引擎。[Q01](#research-q01)
 
-> **主要限制**：付费确认依赖Agent提交布尔值，未见绑定用户交互与工作流摘要的许可校验，因此不能作为强预算隔离；首次自动下载及外部插件权限也需用户承担。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：异步初始化可能失败；付费确认仅为作者声明，未核验依赖实现。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 工作流与资产并置解决谁的什么问题，贡献属于哪一层？](#detail-section-11)
-  - [Q02 · 首消息激活与付费确认能约束到什么程度？](#detail-section-12)
-  - [Q03 · 首次接入、持续制作和失败恢复各付出什么？](#detail-section-13)
-  - [Q04 · 哪些适配设计可复用，维护代价是什么？](#detail-section-14)
-  - [Q05 · 怎样让逐次付费确认更可靠，而不增加每节点确认？](#detail-section-15)
-  - [Q06 · 谁值得试用，什么条件下应退回简单工具？](#detail-section-16)
+  - [Q01 · Studio 模式面向谁，较普通聊天多什么？](#detail-section-11)
+  - [Q02 · 会话如何决定加载工具，客户端与 Host 是否相同？](#detail-section-12)
+  - [Q03 · 加载插件就能保证 Studio 和付费保护有效吗？](#detail-section-13)
+  - [Q04 · 依赖、费用和安全试用如何处理？](#detail-section-14)
+  - [Q05 · 两端模式判断不一致如何减少误导？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合需要反复制作角色图、配音和分镜的DSH用户，以工作流、产物及生成记录作为交付物。
+> **用途**：在 DSH 中组织多模态项目和生成流程的用户；基线是普通聊天或自行切换 Studio。[Q01](#research-q01)
 
-简单替代为单一媒体API或供应商界面加文件整理。一次性生成不一定需要保存图结构；多阶段复用才更可能体现价值。
+普通 DSH 会话或手动使用独立媒体工具。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,73 +51,62 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 工作流创建、修改与运行 | 保存资产生成过程并反复编辑 | 依赖Studio及具体生成插件 |
-| 项目与运行状态 | 查询文件与长任务 | 先核对现有运行再重试 |
-| 图片与媒体审阅 | 附件展示或调用描述插件 | 非视觉模型可能额外调用付费服务 |
-| 会话局部工具 | 普通会话避免加载媒体工具组 | 首消息需触发Studio模式 |
+| --- | --- | --- |
+| 激活 | 首消息触发工具 | 一次决定 |
+| 适配 | 挂接宿主会话服务 | 缺服务时能力受限 |
+| Studio | 展示制作界面 | 客户端判断独立 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 匹配peer范围的DSH、Node ≥22.19、Python ≥3.10 | 启动必需 | 宿主加载和SDK虚拟环境 | 不匹配版本可能拒载，本文未实测 |
-| Git、PyPI及插件来源可达 | 首次准备必需 | 安装SDK和官方插件 | 准备失败需排查网络 |
-| 模型密钥或Modal账户 | 相应生成必需 | 执行选定工作流 | 不能完成对应节点 |
-| ffmpeg、视觉模型 | 特定审阅操作 | 视频联系表、图像检查 | 使用替代感知链路或人工审阅 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| DSH tools 与 agents | 必需 | 会话级工具 | 无法装载 |
+| tongflow-studio 和 Python | 必需 | Studio 执行 | 初始化失败 |
+| jobs、附件、webServer | 对应功能需要 | 后台、图片与界面 | 能力受限 |
+| 供应商凭据和预算 | 对应付费任务需要 | 生成 | 停止运行 |
 
-
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 用户核对宿主范围后加载插件 | 可见Studio入口，加载失败先查版本 |
-| 2 | 用户以@tongflow发起新会话并配置插件 | 工具与项目树出现，密钥不在聊天粘贴 |
-| 3 | Agent保存并检查工作流，用户确认付费执行 | 保存编号产物并人工审阅 |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+| --- | --- | --- |
+| 开始 | 首消息以 @tongflow 触发 | 确认工具出现 |
+| 试用 | 使用免费非敏感样例 | 核查界面和输出 |
+| 运行 | 核对计费与预算 | 不明则停止 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | SDK和插件下载、磁盘 | Python/Git配置、密钥管理 | 耗时及安装成功率未测 |
-| 持续使用 | 模型API或GPU、资产存储 | 逐轮确认和媒体复核 | 无合格任务单位成本 |
-| 失败恢复 | 可能重复计费 | 查运行记录、确认已产出后再决定重跑 | 不覆盖编号输出不等于远端任务幂等 |
-| 退出 | 保留本地文件 | 备份项目并禁用插件，按需撤销密钥 | 完整卸载未实测 |
-
-普通项目文件有利于保留已有成果，但密钥写在studioRoot/env.json，0600权限只是本机文件限制，不是隔离外部插件代码。共享运行工具保留后台runId，因此用户应先查询运行状态，再决定是否重试，不能把一次超时当作未发生调用。
+| --- | --- | --- | --- |
+| 首次 | Python 与插件环境 | 配置及权限核查 | 自动安装需审阅 |
+| 持续 | API 或 GPU 费用 | 检查输出和账单 | 金额未测 |
+| 恢复 | 任务可能已计费 | 核实供应商回执 | 不假定退款 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 人与Agent共用工作流 | 文件与画布共用的设计及工具接线 | 实际编辑成功率 |
-| 多轮产物追溯 | 编号输出和运行记录规范 | 远端重试幂等性 |
-| 制作效率 | 减少手工关联工作流与资产的可能 | 同条件节时和费用 |
+| --- | --- | --- |
+| 会话集成 | scoped 激活与工具适配 | 宿主运行效果 |
+| 费用控制 | 作者声明确认 | 实际保护与节费 |
 
-> **思考**：付费确认依赖Agent提交布尔值，未见绑定用户交互与工作流摘要的许可校验，因此不能作为强预算隔离；首次自动下载及外部插件权限也需用户承担。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：异步初始化可能失败；付费确认仅为作者声明，未核验依赖实现。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将DSH会话、附件和后台任务接入共用媒体工作流，让人和Agent编辑同一资产生成文件；增益在多轮协作与追溯，核心引擎贡献归TongFlow而非适配层。[Q01](#research-q01) [Q04](#research-q04)
+> **亮点**：为 Studio 注入适配宿主服务、技能与界面，不等同 TongFlow 根执行引擎。[Q01](#research-q01)
 
-中立 allTools(env) 转换成宿主 defineTool，将附件显示与后台jobs放入ToolCall，而不是把DSH类型散布到每个媒体工具。scope effect随着Agent释放，首消息决策用WeakSet防止重复注册，适用于仅部分会话启用的大工具组。
-
-代价是宿主API兼容逻辑需维护。backgroundJobSpec按jobs是否暴露events区分两个接口，输出同时填result和output；模型模态查询异常默认接受图像，以免自动描述重复触发付费运行。这些是明确取舍，不足以证明所有预发布宿主都兼容。Studio初始化失败仅告警，工具后续是否能给出良好错误仍需运行检查。
+首次消息决定 Host 会话激活；客户端独立依据记忆、首消息或标题判断，可能状态不一致。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-付费确认依赖Agent提交布尔值，未见绑定用户交互与工作流摘要的许可校验，因此不能作为强预算隔离；首次自动下载及外部插件权限也需用户承担。[Q02](#research-q02) [Q03](#research-q03)
+异步初始化可能失败；付费确认仅为作者声明，未核验依赖实现。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有多轮媒体资产任务的DSH用户可在副本项目限制额度试用；先核对宿主版本、Python与外部插件权限，人工审阅每轮产物；若需要强预算隔离或只偶发出图，退回供应商界面或简单脚本。[Q06](#research-q06)
+从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -126,18 +114,18 @@
 
 **核查状态**：已检查源码。
 
-适配和确认分支有源码支持；节时、兼容及生成质量未实测；许可绑定属于未验证假设。
+固定子组件源码支持首次激活和服务适配；未运行宿主或依赖。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-tongflow/README.md、packages/dsh-tongflow/src/activation.ts、packages/dsh-tongflow/src/tools.ts、packages/dsh-tongflow/src/index.ts、packages/tongflow-studio/src/tools/run-tools.ts、packages/tongflow-studio/src/api.ts、packages/dsh-tongflow/src/config.ts 及固定范围 inventory；组件：packages/dsh-tongflow。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-tongflow/src/index.ts、packages/dsh-tongflow/src/activation.ts、packages/dsh-tongflow/src/tools.ts、packages/dsh-tongflow/src/config.ts、packages/dsh-tongflow/src/client/studio/StudioModeWatcher.tsx、packages/dsh-tongflow/README.md 及固定范围 inventory；组件：packages/dsh-tongflow。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查DSH适配器及共享运行工具的确认链路，未完整审计所有媒体插件、供应商与HTTP路由。
-- 下一步：先以低价值副本项目比较完整交付时间和重跑费用；另核对确认后换参和重复提交，不能以正常路径出图证明授权安全。
+- 边界：固定子组件 inventory 21 文件、无排除或解析错误；不引用根及依赖实现，不运行宿主。
+- 下一步：固定宿主和 Studio 依赖，隔离测试触发、恢复、未确认付费任务及回退。
 
 **分析版本**
 
 - **仓库**：[tong-io/tongflow](https://github.com/tong-io/tongflow)
-- **版本号**：0.8.4（[固定提交 0087122](https://github.com/tong-io/tongflow/tree/0087122f5900073dfbdb0e7a1e2ff497245e1f21)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.8.4（[固定提交 07037ea](https://github.com/tong-io/tongflow/tree/07037ea1a65cd1546114b86c8dbf43b4703688be)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -145,9 +133,9 @@
 
 <a id="innovation"></a>
 
-可尝试一次性许可绑定工作流摘要、模型和预算，比较换参及重放的误执行率与确认负担；当前尚未实现或验证。[Q05](#research-q05)
+未验证假设：共享 Host 激活状态可降低 UI 和工具状态不一致，需对照恢复与延迟场景。[Q05](#research-q05)
 
-先以低价值副本项目比较完整交付时间和重跑费用；另核对确认后换参和重复提交，不能以正常路径出图证明授权安全。
+固定宿主和 Studio 依赖，隔离测试触发、恢复、未确认付费任务及回退。
 
 <a id="detail-section-9"></a>
 
@@ -155,6 +143,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -167,91 +157,270 @@
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z)
+[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/tong-io/tongflow/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本的DSH适配器能否支持可复查媒体资产制作，确认与恢复负担是否支持小范围试用？
+**插件研究总目标**：DSH Studio 模式如何激活并接入 TongFlow 工具，执行与计费有哪些证据边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 工作流与资产并置解决谁的什么问题，贡献属于哪一层？
+### Q01 · Studio 模式面向谁，较普通聊天多什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向已使用 DSH、需要反复制作角色图、分镜及配音的创作者。合格产物不是一张临时预览，而是资产文件、能重新编辑的工作流和每轮生成记录。相较聊天中直接调用图像 API，再手工整理文件，此方案将每个资产的生成步骤保存成旁边的 .tongflow.json，允许人从同一画布修改后再次运行。
-
-适配器的贡献是把项目树、画布、附件及后台任务接入 DSH；节点语法、引擎与多模态插件来自同仓库 tongflow-studio 和 TongFlow，不能算作适配器新算法。一次性出图可继续使用单一生成工具，保存图结构反而增加准备步骤。
+想在 DSH 会话中组织多模态项目和工作流的用户可使用 Studio 界面及工具。相对普通聊天，子组件按会话注入项目/工作流工具、技能和提示；执行核心来自 tongflow-studio，不能将整套引擎归因于 DSH 适配器。无需多模态流程时普通聊天更直接。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-tongflow/README.md:5-15](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L5-L15)
+**依据 1 · 源码核查**：[packages/dsh-tongflow/src/index.ts:1-7](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/index.ts#L1-L7)
 
-作者明确区分宿主、Agent和引擎所有权，并说明工作流文件与画布共用。
-
-<details>
-<summary>查看原文（11行）</summary>
+Host 接入职责。
 
 ```text
-Three layers, never mixed up:
-
-| Layer | Owns |
-|---|---|
-| **dsh** | the harness: sessions, model routing, tools, jobs, web UI |
-| **the agent** | creativity: the plan, the folder structure, briefs, scripts, prompts, review notes — plain files |
-| **TongFlow** | deterministic generation: every image / voice / music / video / 3D asset is produced by **running a saved workflow file** (`<name>.tongflow.json`) through the TongFlow engine and its plugins |
-
-The studio itself is host-neutral — [`tongflow-studio`](../tongflow-studio) holds the projects, the engine runner and the `tongflow_*` tools, and serves the same tools as an MCP server (and a [Claude Code plugin](../../claude-plugin/tongflow)). This package is the dsh adapter: it adds the Studio panel and the embedded canvas.
-
-There is deliberately no "generate an image" tool and no project template. The agent studies what the user wants to make (with web research when useful), proposes a folder structure, writes it down, and then — for every asset — creates a workflow file where that asset belongs, runs it, reviews the result, and builds the next stage on it. Users open the same `.tongflow.json` on the embedded canvas, tweak it, and re-run; they can also reorganize the folders by hand at any time.
+/**
+ * dsh-tongflow — host (Node) half.
+ *
+ * A Cordis plugin mounted by the dsh Loader. It stands up the Studio (paths,
+ * python bootstrap, plugin registry, run manager) and registers, as effects:
+ * the tongflow_* agent tools, packaged skills, a short system-prompt section
+ * and the HTTP routes the embedded canvas / studio UI talk to.
 ```
 
-</details>
+**依据 2 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:60-86](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/activation.ts#L60-L86)
 
-**依据 2 · 作者声明**：[packages/dsh-tongflow/README.md:58-73](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L58-L73)
-
-项目规范记录了工作流、编号输出和来源记录。
+激活后注册会话级工具、提示、技能。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（27行）</summary>
 
-````text
-**The one rule:** every AI-generated asset comes from a workflow file that sits next to its outputs.
+```text
+export function installActivation(
+    ctx: Context,
+    options: ActivationOptions,
+): void {
+    const activated = new WeakSet<Agent>();
+    const decided = new WeakSet<Agent>();
 
+    const activate = (agent: Agent) => {
+        if (activated.has(agent)) return;
+        activated.add(agent);
+        const actx = agent.ctx;
+        registerTools(actx, options.env);
+        actx.inject(["systemPrompt"], (pctx) => {
+            pctx.effect(
+                () =>
+                    pctx.systemPrompt.section({
+                        name: "tool:tongflow",
+                        order: 150,
+                        text: options.systemSection,
+                    }),
+                "dsh-tongflow: system prompt section (agent scope)",
+            );
+        });
+        actx.inject(["skills"], (sctx) => registerSkills(sctx));
+        options.studio.log(
+            `dsh-tongflow: studio mode on for session ${agent.id}`,
+        );
 ```
-characters/mei/
-  mei.md                    what the agent wrote about her
-  mei_ref.tongflow.json     the workflow that renders her reference sheet
-  mei_ref.01.png            run 1
-  mei_ref.02.png            run 2  (a run never overwrites — fix the workflow, run again)
-  mei_ref.runs.json         provenance of every run: inputs, plugins, note, timing
-```
-
-- Multi-output runs keep the workflow's output names: `mei_ref.03.image.png` + `mei_ref.03.caption.txt`; text outputs are written as `.txt` too.
-- Workflows reference project files by **path**: `./mei_ref.02.png` / `../style/palette.png` (relative to the workflow file) or `characters/mei/mei_ref.02.png` (relative to the project root); URLs pass through.
-- Text files can be **included** in prompts: `{{../style.md}} {{./mei.md}} full-body sheet` — expanded at run time, so a shared style note is written once.
-- **Compose**: `tongflow_workflow_compose({ folder })` merges the small workflows of a folder (or an explicit list) into one `<folder>_all.tongflow.json` — a data node that references another part's output file (`./ref.01.png`) becomes an edge from that part's producing node, parts are ordered by those dependencies, every stage stays an output labelled after its part (`shot_all.01.i2v.mp4` via `meta.outputLabels`), the parts are untouched.
-- The Studio tree nests a workflow's outputs under it; the user may rename / move / delete anything by hand and **upload files** (header button → the selected folder, or drag & drop onto a folder view; default `uploads/`) — the agent re-reads the tree (`tongflow_project_status`) before acting.
-````
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-tongflow/src/index.ts:35-58](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/index.ts#L35-L58)
+**依据 3 · 作者声明**：[packages/dsh-tongflow/README.md:83-87](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/README.md#L83-L87)
 
-适配器创建共享Studio并委托会话激活。
+作者列举工具及方法。
+
+```text
+## Agent tools
+
+`tongflow_project_create / _open / _list / _status` · `tongflow_workflow_new / _patch / _read / _list / _validate / _run / _compose` · `tongflow_node_catalog / _describe` · `tongflow_look` (images / video contact sheets, returned as an image block — or described through a slot when the session's model takes no images) · `tongflow_perceive` (video/audio/image understanding via TongFlow slots; billing plugins need `user_confirmed`) · `tongflow_plugins_list / _install / _uninstall` · `tongflow_run_status`. Folder structure and text files are made with dsh's ordinary file tools. Long runs go through dsh background jobs (`run_in_background`).
+
+Skill shipped: `tongflow-studio` (the working method: research → propose a structure → one workflow per asset next to its outputs → run → review → next stage), with four method references under [`skills/references/`](skills/references/) that the agent loads only when the step needs them:
+```
+
+#### 缺口
+
+- 未运行 DSH、Studio 或模型服务
+  **影响**：不能确认工具调用、支付确认或实际输出
+  **进一步探讨**：固定宿主和依赖，以隔离免费与付费样例核验激活及确认
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 会话如何决定加载工具，客户端与 Host 是否相同？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+Host 在首次 agent pre-step 检查历史第一条用户文字或首条输入，以忽略前导空格、不区分大小写的 @tongflow 前缀决定；已有非触发首消息时该会话固定普通模式。激活后工具和技能注入 agent scoped context。浏览器注册 Studio 视图及 watcher，自有记忆、首消息或标题判断；两端判断并非完全相同，注释提 cwd 不等于 Host 判断代码包含 cwd。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:16-22](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/activation.ts#L16-L22)
+
+触发前缀。
+
+```text
+export const TRIGGER = "@tongflow";
+
+export function isTriggerText(text: string | undefined): boolean {
+    return (
+        typeof text === "string" &&
+        text.trimStart().toLowerCase().startsWith(TRIGGER)
+    );
+```
+
+**依据 2 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:89-119](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/activation.ts#L89-L119)
+
+首次决定和历史优先。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+    const isStudioSession = (
+        agent: Agent,
+        incoming: readonly { content?: readonly unknown[] }[],
+    ): boolean => {
+        const logged = firstLoggedUserText(agent);
+        if (logged !== undefined) return isTriggerText(logged);
+        return isTriggerText(firstText(incoming[0]?.content));
+    };
+
+    // Decide once, on the first step of an agent (before the model request assembles tools).
+    ctx.on("agent/pre-step", async (payload, next) => {
+        const agent = payload.agent;
+        if (!decided.has(agent)) {
+            let studio = false;
+            try {
+                studio = isStudioSession(agent, payload.messages);
+            } catch {
+                studio = false;
+            }
+            if (studio) {
+                decided.add(agent);
+                activate(agent);
+            } else if (
+                payload.messages.length > 0 ||
+                firstLoggedUserText(agent) !== undefined
+            ) {
+                // A first message exists and did not trigger: this session stays plain.
+                decided.add(agent);
+            }
+        }
+        return next();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:60-83](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/activation.ts#L60-L83)
+
+会话范围注册。
 
 <details>
 <summary>查看原文（24行）</summary>
+
+```text
+export function installActivation(
+    ctx: Context,
+    options: ActivationOptions,
+): void {
+    const activated = new WeakSet<Agent>();
+    const decided = new WeakSet<Agent>();
+
+    const activate = (agent: Agent) => {
+        if (activated.has(agent)) return;
+        activated.add(agent);
+        const actx = agent.ctx;
+        registerTools(actx, options.env);
+        actx.inject(["systemPrompt"], (pctx) => {
+            pctx.effect(
+                () =>
+                    pctx.systemPrompt.section({
+                        name: "tool:tongflow",
+                        order: 150,
+                        text: options.systemSection,
+                    }),
+                "dsh-tongflow: system prompt section (agent scope)",
+            );
+        });
+        actx.inject(["skills"], (sctx) => registerSkills(sctx));
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-tongflow/src/client/studio/StudioModeWatcher.tsx:55-76](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/client/studio/StudioModeWatcher.tsx#L55-L76)
+
+客户端使用记忆、首消息和标题。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+const LS_PREFIX = "dsh-tongflow:studio-session:";
+
+export function StudioModeWatcher({
+    useChat,
+    useSessions,
+    sessionId,
+}: StudioModeWatcherProps) {
+    // The loaded history window may not reach the first message of a long
+    // session; the session title (derived from it) and a per-session memo cover that.
+    const firstText = useChat((s) => firstUserText(s.legacy.nodes));
+    const title = useSessions(
+        (s) => s.byId[sessionId]?.title ?? s.byId[sessionId]?.displayTitle,
+    );
+    const remembered =
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem(LS_PREFIX + sessionId) === "1";
+    const studioMode =
+        remembered || isStudioText(firstText) || isStudioText(title);
+    useEffect(() => {
+        if (studioMode && !remembered)
+            localStorage.setItem(LS_PREFIX + sessionId, "1");
+    }, [studioMode, remembered, sessionId]);
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、Studio 或模型服务
+  **影响**：不能确认工具调用、支付确认或实际输出
+  **进一步探讨**：固定宿主和依赖，以隔离免费与付费样例核验激活及确认
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 加载插件就能保证 Studio 和付费保护有效吗？
+
+**研究主题**：缺陷与关键质疑、功能与机制
+
+#### 完整回答
+
+不能。Host 创建 Studio 后异步 init，失败只记录警告；web 路由在 webServer 注入时注册；适配器把调用交给中立工具实现。README 声称付费运行需要每次显式确认，但本项未追踪独立依赖中计费实现或运行它，不能声称该保护在当前宿主已验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-tongflow/src/index.ts:35-75](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/index.ts#L35-L75)
+
+异步初始化与条件 web 路由。
+
+<details>
+<summary>查看原文（41行）</summary>
 
 ```text
 export function apply(ctx: Context, config: Config): void {
@@ -278,108 +447,114 @@ export function apply(ctx: Context, config: Config): void {
         env: { studio, api },
         systemSection: SYSTEM_SECTION,
     });
-```
 
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 首消息激活与付费确认能约束到什么程度？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-agent/pre-step 在首次用户消息上检查 @tongflow，决定后保持普通或 Studio 会话；激活通过 agent 自己的 context 注册工具、提示和 Skill。工具执行把宿主会话、cwd、附件和 jobs 接给共享工具。
-
-付费运行确有未确认时返回 needs_confirmation 的分支，但确认字段是模型可提交的 user_confirmed 布尔值，未在这条调用链中看到绑定用户交互、工作流摘要或一次性票据的校验。其作用是在遵守指令的 Agent 中提醒逐次确认，不能据此保证模型绝不会越权消费。计费分类也按 needsDeploy 和必填环境变量推断，不是供应商报价或费用上限；本地分类不证明资源无成本。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:67-95](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/activation.ts#L67-L95)
-
-工具按Agent作用域激活，读取首条持久化消息。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-    const activate = (agent: Agent) => {
-        if (activated.has(agent)) return;
-        activated.add(agent);
-        const actx = agent.ctx;
-        registerTools(actx, options.env);
-        actx.inject(["systemPrompt"], (pctx) => {
-            pctx.effect(
-                () =>
-                    pctx.systemPrompt.section({
-                        name: "tool:tongflow",
-                        order: 150,
-                        text: options.systemSection,
-                    }),
-                "dsh-tongflow: system prompt section (agent scope)",
-            );
+    ctx.inject(["webServer"], (webCtx) => {
+        const handler = createRouteHandler({
+            studio,
+            api,
+            prefix: config.httpPrefix,
         });
-        actx.inject(["skills"], (sctx) => registerSkills(sctx));
-        options.studio.log(
-            `dsh-tongflow: studio mode on for session ${agent.id}`,
+        webCtx.effect(
+            () =>
+                webCtx.webServer.register({
+                    kind: "prefix",
+                    path: routePrefix(config.httpPrefix),
+                    handler,
+                }),
+            "dsh-tongflow: http routes",
         );
-    };
-
-    const isStudioSession = (
-        agent: Agent,
-        incoming: readonly { content?: readonly unknown[] }[],
-    ): boolean => {
-        const logged = firstLoggedUserText(agent);
-        if (logged !== undefined) return isTriggerText(logged);
-        return isTriggerText(firstText(incoming[0]?.content));
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:98-120](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/activation.ts#L98-L120)
-
-首消息决定后不因后来消息重复改变。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-    // Decide once, on the first step of an agent (before the model request assembles tools).
-    ctx.on("agent/pre-step", async (payload, next) => {
-        const agent = payload.agent;
-        if (!decided.has(agent)) {
-            let studio = false;
-            try {
-                studio = isStudioSession(agent, payload.messages);
-            } catch {
-                studio = false;
-            }
-            if (studio) {
-                decided.add(agent);
-                activate(agent);
-            } else if (
-                payload.messages.length > 0 ||
-                firstLoggedUserText(agent) !== undefined
-            ) {
-                // A first message exists and did not trigger: this session stays plain.
-                decided.add(agent);
-            }
-        }
-        return next();
     });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:114-151](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/tools.ts#L114-L151)
+**依据 2 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:168-195](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/tools.ts#L168-L195)
 
-宿主能力通过中立ToolCall传入。
+适配工具并委托 spec.execute。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（28行）</summary>
+
+```text
+    const val = value as {
+        attachment?: ImageAttachmentRef;
+        summary?: string;
+    } | null;
+    if (!val || typeof val !== "object" || !val.attachment) return text(value);
+    return [
+        ...text(val.summary ?? JSON.stringify(value)),
+        { type: "image", attachment: val.attachment },
+    ];
+}
+
+function dshTool(ctx: Context, spec: ToolSpec): ToolDefinition {
+    return defineTool({
+        name: spec.name,
+        description: spec.description,
+        parameters: spec.parameters as ParameterSchemaSpec,
+        output: {
+            schema: { type: spec.returns === "string" ? "string" : "json" },
+            render,
+        },
+        execute: (args, exec) =>
+            spec.execute(args as never, toolCall(ctx, exec)) as Promise<never>,
+    });
+}
+
+/** Register every tongflow_* tool on ctx.tools; registrations are effects (disposed on unload). */
+export function registerTools(ctx: Context, env: ToolEnv): void {
+    for (const spec of allTools(env)) {
+```
+
+</details>
+
+**依据 3 · 作者声明**：[packages/dsh-tongflow/README.md:75-77](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/README.md#L75-L77)
+
+作者声明付费确认。
+
+```text
+### Billing checkpoint
+
+A run that uses a paid plugin spends the user's money — a paid API key, or GPU seconds on their Modal account (a Modal plugin also deploys on first use). So `tongflow_workflow_run` without `user_confirmed: true` does not run: it returns `needs_confirmation` with the plugins involved, how each is billed (`api` / `modal`), whether its API keys are set, the models it offers and installed alternatives. The agent puts that to the user and calls again with `user_confirmed` only after an explicit yes — **for every paid run**; nothing is remembered. Runs that use only local plugins are free and start directly. The Studio's own **Run** drawer shows the same notice and a **Confirm & run** button.
+```
+
+#### 缺口
+
+- 未运行 DSH、Studio 或模型服务
+  **影响**：不能确认工具调用、支付确认或实际输出
+  **进一步探讨**：固定宿主和依赖，以隔离免费与付费样例核验激活及确认
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 依赖、费用和安全试用如何处理？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+Host 强依赖 tools 和 agents，Studio 还依赖 Python、SDK、插件和供应商；后台 jobs、附件等在适配层按服务是否存在提供。付费 API 与 GPU 可能计费，需由用户核对每次运行提示、账户预算和服务商账单；先以免费非敏感样例验证，不明调用或无法确认时停止。自动安装配置默认开启须事先检查部署设置。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-tongflow/src/index.ts:27-30](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/index.ts#L27-L30)
+
+强依赖服务。
+
+```text
+export const name = "dsh-tongflow";
+
+/** The tool registry and agent registry are the hard requirements; other seams attach when they mount. */
+export const inject = ["tools", "agents"];
+```
+
+**依据 2 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:114-140](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/tools.ts#L114-L140)
+
+按存在性传递附件和后台服务。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
 /** One dsh execution as the neutral tools see it; absent services stay absent so the tools degrade. */
@@ -409,497 +584,144 @@ function toolCall(ctx: Context, exec: ToolRunContext): ToolCall {
                   startBackground: (workflow, record) =>
                       String(
                           jobs.start(
-                              backgroundJobSpec(
-                                  jobs,
-                                  exec.agent,
-                                  workflow,
-                                  record,
-                              ),
-                          ),
-                      ),
-              }
-            : {}),
-    };
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/tongflow-studio/src/tools/run-tools.ts:215-241](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/tongflow-studio/src/tools/run-tools.ts#L215-L241)
+**依据 3 · 源码核查**：[packages/dsh-tongflow/src/config.ts:20-30](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/config.ts#L20-L30)
 
-确认仅由调用参数决定，true直接进入startRun。
+Python、SDK、并发及自动安装配置。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-                user_confirmed: {
-                    type: "boolean",
-                    description:
-                        "Set to true ONLY after the user explicitly agreed, in this conversation, to this run and its billing (the plugins / models listed in the needs_confirmation answer). Required whenever the workflow uses a paid plugin.",
-                },
-            },
-            async execute(args, call) {
-                const pid = await resolveProjectId(env, call, args.project);
-                if (!args.user_confirmed) {
-                    const paid = await api.paidPlugins(pid, args.workflow);
-                    if (paid.length > 0) {
-                        return compact({
-                            ok: false,
-                            needs_confirmation: true,
-                            plugins: paid,
-                            hint: "This run costs money. Tell the user which plugin(s) / model(s) will run and how they are billed (mention alternatives when there are any, and missing API keys), ask whether to go ahead, and only after they say yes call again with user_confirmed=true. Ask every time; do not assume a previous yes still holds.",
-                        });
-                    }
-                }
-                const record = await api.startRun({
-                    projectId: pid,
-                    workflowKey: args.workflow,
-                    ...(args.inputs
-                        ? { inputs: args.inputs as Record<string, unknown> }
-                        : {}),
-                    ...(args.note ? { note: args.note } : {}),
-                });
+export const Config: z<Config> = z.object({
+    studioRoot: z.string(),
+    pythonPath: z.string(),
+    sdkSpec: z.string().default(`tongflow==${DEFAULT_TONGFLOW_SDK_VERSION}`),
+    pluginOrg: z.string().default(OFFICIAL_ORG),
+    pluginGitUrls: z.dict(z.string()).default({}),
+    env: z.dict(z.string()).default({}),
+    maxConcurrentRuns: z.number().default(2),
+    httpPrefix: z.string().default("/tongflow"),
+    locale: z.string().default("en"),
+    autoInstallOfficial: z.boolean().default(true),
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/tongflow-studio/src/api.ts:388-415](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/tongflow-studio/src/api.ts#L388-L415)
+**依据 4 · 作者声明**：[packages/dsh-tongflow/README.md:75-77](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/README.md#L75-L77)
 
-付费分类来自部署标识和必填环境变量。
-
-<details>
-<summary>查看原文（28行）</summary>
+作者声明计费类型与确认。
 
 ```text
-    /** How a plugin is billed, from what the registry knows about it. */
-    async pluginBilling(
-        pluginId: string,
-    ): Promise<{ billing: PluginBilling; note: string }> {
-        const { registry, meta } = await this.studio.registry.get();
-        const plugin = registry.plugins[pluginId] as
-            | { needsDeploy?: boolean }
-            | undefined;
-        const env = meta[pluginId]?.env ?? [];
-        if (plugin?.needsDeploy) {
-            return {
-                billing: "modal",
-                note: "Runs on your Modal account: GPU time is billed per second while it runs (plus a cold start); the first run deploys the app, which can take minutes.",
-            };
-        }
-        if (env.some((e) => e.required)) {
-            return {
-                billing: "api",
-                note: `Calls a paid API with your own key (${env
-                    .filter((e) => e.required)
-                    .map((e) => e.key)
-                    .join(", ")}); every run is billed by that provider.`,
-            };
-        }
-        return {
-            billing: "local",
-            note: "Runs locally / free of charge as far as the studio knows.",
-        };
-```
+### Billing checkpoint
 
-</details>
+A run that uses a paid plugin spends the user's money — a paid API key, or GPU seconds on their Modal account (a Modal plugin also deploys on first use). So `tongflow_workflow_run` without `user_confirmed: true` does not run: it returns `needs_confirmation` with the plugins involved, how each is billed (`api` / `modal`), whether its API keys are set, the models it offers and installed alternatives. The agent puts that to the user and calls again with `user_confirmed` only after an explicit yes — **for every paid run**; nothing is remembered. Runs that use only local plugins are free and start directly. The Studio's own **Run** drawer shows the same notice and a **Confirm & run** button.
+```
 
 #### 缺口
 
-- 未见确认票据及费用额度绑定；是否由宿主外围实现另有约束未核实。
-  **影响**：不能把逐次确认提示当成强制预算隔离。
-  **进一步探讨**：比较用户拒绝后模型提交true、确认后修改工作流两种路径，核对是否拒绝执行。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 首次接入、持续制作和失败恢复各付出什么？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 匹配peer范围的DSH、Node ≥22.19、Python ≥3.10 | 启动必需 | 宿主加载和SDK虚拟环境 | 不匹配版本可能拒载，本文未实测 |
-| Git、PyPI及插件来源可达 | 首次准备必需 | 安装SDK和官方插件 | 准备失败需排查网络 |
-| 模型密钥或Modal账户 | 相应生成必需 | 执行选定工作流 | 不能完成对应节点 |
-| ffmpeg、视觉模型 | 特定审阅操作 | 视频联系表、图像检查 | 使用替代感知链路或人工审阅 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 用户核对宿主范围后加载插件 | 可见Studio入口，加载失败先查版本 |
-| 2 | 用户以@tongflow发起新会话并配置插件 | 工具与项目树出现，密钥不在聊天粘贴 |
-| 3 | Agent保存并检查工作流，用户确认付费执行 | 保存编号产物并人工审阅 |
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | SDK和插件下载、磁盘 | Python/Git配置、密钥管理 | 耗时及安装成功率未测 |
-| 持续使用 | 模型API或GPU、资产存储 | 逐轮确认和媒体复核 | 无合格任务单位成本 |
-| 失败恢复 | 可能重复计费 | 查运行记录、确认已产出后再决定重跑 | 不覆盖编号输出不等于远端任务幂等 |
-| 退出 | 保留本地文件 | 备份项目并禁用插件，按需撤销密钥 | 完整卸载未实测 |
-
-普通项目文件有利于保留已有成果，但密钥写在studioRoot/env.json，0600权限只是本机文件限制，不是隔离外部插件代码。共享运行工具保留后台runId，因此用户应先查询运行状态，再决定是否重试，不能把一次超时当作未发生调用。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[packages/dsh-tongflow/README.md:25-27](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L25-L27)
-
-作者列出宿主版本、首次自动下载及会话入口。
-
-```text
-Requirements: dsh ≥ 0.1.2-rc.1 — the 0.1.2-rc, 0.1.3-alpha, 0.1.5, 0.1.7, 0.2.0 and 0.2.1-alpha lines are supported (`engines.dsh`; verified releases are listed in `dsh.compatibility.dshReleases`); 0.1.1-rc and older are not (the client `Runtime` package they build on was removed upstream, so upgrade dsh rather than pinning an old plugin). Because npm only matches a prerelease when a range clause carries its exact `major.minor.patch`, each new dsh prerelease line needs its own clause in `peerDependencies`. From 0.2.0 on dsh checks those ranges itself and **does not load** a plugin whose `@deepseek-ai/dsh-*` peers exclude the running version (unless you grant `dsh plugin allow-version`), so a host on a line newer than the ones listed needs a newer plugin. Also Node ≥ 22.19, **Python ≥ 3.10** on `PATH` (or `pythonPath` in the plugin config), `git`, and `ffmpeg` for video contact sheets. On first use the plugin creates `~/.dsh/tongflow/venv` with the `tongflow` SDK and shallow-clones every official TongFlow plugin into `~/.dsh/tongflow/plugins` (the live list from `config/official-plugins.json`; set `autoInstallOfficial: false` to install by hand), so the canvas offers the same node/plugin catalog as the hosted app. Keys and Modal deploys are only needed when something runs.
-
-Start a session whose **first message begins with `@tongflow`** — that session becomes a studio session: the conversation view turns into the Studio (chat column · the project's folder tree · preview / editor / canvas · a runs drawer, all in the UI language of your browser), and the agent gets the `tongflow_*` tools and skill. Any other session is untouched dsh. In the Studio: create a project (a title and a brief — what you want to make), install TongFlow plugins and paste API keys under **Plugins & keys**, then talk to the agent — or click any file to preview / edit it, click a workflow to open it on the canvas.
-```
-
-**依据 2 · 作者声明**：[packages/dsh-tongflow/README.md:98-105](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L98-L105)
-
-作者披露文件权限、明文密钥和子进程网络。
-
-```text
-## Permissions and external services
-
-The plugin runs with the dsh process's permissions and needs all of these to work:
-
-- **Files:** reads and writes project folders and `studioRoot` (`<DSH_HOME>/tongflow`: projects, venv, cloned plugins, run data). API keys pasted under **Plugins & keys** are stored in plain text in `studioRoot/env.json` (mode 0600) and handed to plugin processes as environment variables.
-- **Commands:** `python` (creates the venv, `pip install`s the `tongflow` SDK and plugin requirements, runs plugin processes), `git` (shallow-clones plugins), `ffmpeg` (video contact sheets). A plugin process runs that plugin's own code.
-- **Network:** GitHub (`raw.githubusercontent.com` for the official plugin list, `github.com/tong-io/*` clones), PyPI, and whatever service a plugin calls when a workflow runs — model APIs, or your own Modal account for GPU plugins. Paid runs ask the user first (see *Billing checkpoint*).
-- **Runtime dependencies:** `tongflow` (the workflow core, same repo) and `@deepseek-ai/schemastery`.
-```
-
-**依据 3 · 源码核查**：[packages/tongflow-studio/src/tools/run-tools.ts:234-255](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/tongflow-studio/src/tools/run-tools.ts#L234-L255)
-
-后台调用返回运行ID，用户可查询现有运行。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-                const record = await api.startRun({
-                    projectId: pid,
-                    workflowKey: args.workflow,
-                    ...(args.inputs
-                        ? { inputs: args.inputs as Record<string, unknown> }
-                        : {}),
-                    ...(args.note ? { note: args.note } : {}),
-                });
-                if (args.run_in_background) {
-                    const runId = record.summary.runId;
-                    if (call.startBackground)
-                        return compact({
-                            kind: "background",
-                            jobId: call.startBackground(args.workflow, record),
-                            runId,
-                            hint: "poll with job_output or wait for the completion notice; then tongflow_look the new file",
-                        });
-                    return compact({
-                        kind: "background",
-                        runId,
-                        hint: `poll with tongflow_run_status({ runId: "${runId}" }) until it is no longer running; then tongflow_look the new file`,
-                    });
-```
-
-</details>
-
-#### 缺口
-
-- 未测供应商失败或断连后的收费与重复执行行为。
-  **影响**：不能确认重试会保留预算或复用远端结果。
-  **进一步探讨**：对同一低价值任务记录远端任务ID和运行ID，故障后先对账再重试。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 哪些适配设计可复用，维护代价是什么？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-中立 allTools(env) 转换成宿主 defineTool，将附件显示与后台jobs放入ToolCall，而不是把DSH类型散布到每个媒体工具。scope effect随着Agent释放，首消息决策用WeakSet防止重复注册，适用于仅部分会话启用的大工具组。
-
-代价是宿主API兼容逻辑需维护。backgroundJobSpec按jobs是否暴露events区分两个接口，输出同时填result和output；模型模态查询异常默认接受图像，以免自动描述重复触发付费运行。这些是明确取舍，不足以证明所有预发布宿主都兼容。Studio初始化失败仅告警，工具后续是否能给出良好错误仍需运行检查。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:63-111](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/tools.ts#L63-L111)
-
-后台任务适配兼容两个jobsAPI并转发取消。
-
-<details>
-<summary>查看原文（49行）</summary>
-
-```text
-/**
- * Background job spec for a workflow run, valid on both job APIs we support.
- * dsh >= 0.1.7 keys ownership by session id, passes a JobHandle to `run` for
- * streaming output, and returns the final value as `result`. dsh 0.1.5 took
- * the live Agent as owner, pulled `readOutput()`, and read `output`. The newer
- * registry is the one exposing `events` (0.1.5 had `onJobDone`).
- */
-function backgroundJobSpec(
-    jobs: JobRegistry,
-    agent: ToolRunContext["agent"],
-    workflow: string,
-    record: RunRecord,
-): JobSpec {
-    const modern = "events" in jobs;
-    const owner = agent ? { owner: modern ? agent.id : agent } : {};
-    return {
-        kind: "tongflow",
-        label: `tongflow ${workflow}`,
-        ...owner,
-        run: (job?: JobHandle) => {
-            let stop = () => {};
-            if (job) {
-                const append = (text: string) => {
-                    if (text) job.append(`${text}\n`);
-                };
-                append(record.readOutput());
-                stop = record.subscribe((event) => append(formatEvent(event)));
-            }
-            return {
-                cancel: (reason?: string) => record.cancel(reason),
-                done: record.done.then((r) => {
-                    stop();
-                    const final = JSON.stringify(runResult(r), null, 2);
-                    return {
-                        status:
-                            r.summary.status === "completed"
-                                ? ("completed" as const)
-                                : r.summary.status === "cancelled"
-                                  ? ("killed" as const)
-                                  : ("failed" as const),
-                        ...(r.error ? { detail: r.error } : {}),
-                        result: final,
-                        output: final,
-                    };
-                }),
-                readOutput: () => record.readOutput(),
-            };
-        },
-    } as JobSpec;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:179-201](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/tools.ts#L179-L201)
-
-共享工具经单一适配器注册，effect负责释放。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-function dshTool(ctx: Context, spec: ToolSpec): ToolDefinition {
-    return defineTool({
-        name: spec.name,
-        description: spec.description,
-        parameters: spec.parameters as ParameterSchemaSpec,
-        output: {
-            schema: { type: spec.returns === "string" ? "string" : "json" },
-            render,
-        },
-        execute: (args, exec) =>
-            spec.execute(args as never, toolCall(ctx, exec)) as Promise<never>,
-    });
-}
-
-/** Register every tongflow_* tool on ctx.tools; registrations are effects (disposed on unload). */
-export function registerTools(ctx: Context, env: ToolEnv): void {
-    for (const spec of allTools(env)) {
-        const tool = dshTool(ctx, spec);
-        ctx.effect(
-            () => ctx.tools.register(tool),
-            `dsh-tongflow: tool ${tool.name}`,
-        );
-    }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/dsh-tongflow/src/tools.ts:45-60](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/tools.ts#L45-L60)
-
-模型信息失败默认允许图像。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export async function modelTakesImages(
-    ctx: Context,
-    exec: ToolRunContext,
-): Promise<boolean> {
-    const llm = ctx.get("llm") as LlmRuntime | undefined;
-    const { provider, model } = exec.agent?.options ?? {};
-    if (!llm || !provider || !model) return true;
-    try {
-        const info = await llm.resolveModelInfo(provider, model, exec.signal);
-        return (
-            info.inputModalities === undefined ||
-            info.inputModalities.includes("image")
-        );
-    } catch {
-        return true;
-    }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/dsh-tongflow/src/index.ts:45-50](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/src/index.ts#L45-L50)
-
-异步初始化错误仅记录日志。
-
-```text
-    const api = new StudioApi(studio);
-    void studio.init().catch((error: unknown) => {
-        ctx.logger?.warn?.(
-            `dsh-tongflow: studio init failed: ${error instanceof Error ? error.message : String(error)}`,
-        );
-    });
-```
+- 未运行 DSH、Studio 或模型服务
+  **影响**：不能确认工具调用、支付确认或实际输出
+  **进一步探讨**：固定宿主和依赖，以隔离免费与付费样例核验激活及确认
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 怎样让逐次付费确认更可靠，而不增加每节点确认？
+### Q05 · 两端模式判断不一致如何减少误导？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、工程质量与复用
 
 #### 完整回答
 
-未验证假设是把付费确认从可自由传入的布尔值改为一次性执行许可。许可绑定工作流内容摘要、所用插件与模型、输入和预算范围；由用户界面确认后签发，启动运行时原子消费。任一内容变更都要求重新确认，同时一次工作流内不再逐节点打扰用户。
-
-推导来自Q02中确认提示完整但参数未绑定的差距。这是已有确认思路的强化，不能称为本插件已实现能力。最小对照包含当前布尔接口与许可接口，检查拒绝后直接传true、确认后换模型、同许可重放及正常取消。若强约束没有减少误执行，或常见编辑造成高频重复确认而抵消收益，应缩小绑定字段或停止方案。
+未验证假设：由 Host 暴露会话激活状态并让客户端显示工具可用性，可能避免 Studio 界面出现但实际工具未启用。当前客户端以记忆、首消息或标题判断，而 Host 只按首个用户消息决定，故已有各自判断是重要反证：集中状态需处理异步、恢复与服务缺失。用普通和触发会话、恢复记录及服务延迟对照测误匹配和恢复时间，收益不足则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/tongflow-studio/src/tools/run-tools.ts:215-241](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/tongflow-studio/src/tools/run-tools.ts#L215-L241)
+**依据 1 · 源码核查**：[packages/dsh-tongflow/src/activation.ts:89-119](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/activation.ts#L89-L119)
 
-当前确认参数与startRun之间没有票据校验。
+Host 首消息判定。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-                user_confirmed: {
-                    type: "boolean",
-                    description:
-                        "Set to true ONLY after the user explicitly agreed, in this conversation, to this run and its billing (the plugins / models listed in the needs_confirmation answer). Required whenever the workflow uses a paid plugin.",
-                },
-            },
-            async execute(args, call) {
-                const pid = await resolveProjectId(env, call, args.project);
-                if (!args.user_confirmed) {
-                    const paid = await api.paidPlugins(pid, args.workflow);
-                    if (paid.length > 0) {
-                        return compact({
-                            ok: false,
-                            needs_confirmation: true,
-                            plugins: paid,
-                            hint: "This run costs money. Tell the user which plugin(s) / model(s) will run and how they are billed (mention alternatives when there are any, and missing API keys), ask whether to go ahead, and only after they say yes call again with user_confirmed=true. Ask every time; do not assume a previous yes still holds.",
-                        });
-                    }
-                }
-                const record = await api.startRun({
-                    projectId: pid,
-                    workflowKey: args.workflow,
-                    ...(args.inputs
-                        ? { inputs: args.inputs as Record<string, unknown> }
-                        : {}),
-                    ...(args.note ? { note: args.note } : {}),
-                });
+    const isStudioSession = (
+        agent: Agent,
+        incoming: readonly { content?: readonly unknown[] }[],
+    ): boolean => {
+        const logged = firstLoggedUserText(agent);
+        if (logged !== undefined) return isTriggerText(logged);
+        return isTriggerText(firstText(incoming[0]?.content));
+    };
+
+    // Decide once, on the first step of an agent (before the model request assembles tools).
+    ctx.on("agent/pre-step", async (payload, next) => {
+        const agent = payload.agent;
+        if (!decided.has(agent)) {
+            let studio = false;
+            try {
+                studio = isStudioSession(agent, payload.messages);
+            } catch {
+                studio = false;
+            }
+            if (studio) {
+                decided.add(agent);
+                activate(agent);
+            } else if (
+                payload.messages.length > 0 ||
+                firstLoggedUserText(agent) !== undefined
+            ) {
+                // A first message exists and did not trigger: this session stays plain.
+                decided.add(agent);
+            }
+        }
+        return next();
 ```
 
 </details>
 
-<a id="research-q06"></a>
+**依据 2 · 源码核查**：[packages/dsh-tongflow/src/client/studio/StudioModeWatcher.tsx:55-76](https://github.com/tong-io/tongflow/blob/07037ea1a65cd1546114b86c8dbf43b4703688be/packages/dsh-tongflow/src/client/studio/StudioModeWatcher.tsx#L55-L76)
 
-<a id="detail-section-16"></a>
-
-### Q06 · 谁值得试用，什么条件下应退回简单工具？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议有多轮媒体资产制作任务且熟悉DSH与Python环境的用户，在副本项目中先试一个工作流。比较同一资产从提示调整到人工验收所需时间、失败重跑费用和文件整理负担，而不是比较单次生成速度。
-
-试用应限制所接插件和账户额度，保留人工确认与运行状态核对。若只做偶发图片、不能维护Python环境，或需要强预算授权而只有模型自报确认，则继续使用单一供应商界面或已有脚本。仅完成源码核查，不建议写成值得持续安装。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[packages/dsh-tongflow/README.md:13-15](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L13-L15)
-
-作者描述资产工作流和共用画布。
-
-```text
-The studio itself is host-neutral — [`tongflow-studio`](../tongflow-studio) holds the projects, the engine runner and the `tongflow_*` tools, and serves the same tools as an MCP server (and a [Claude Code plugin](../../claude-plugin/tongflow)). This package is the dsh adapter: it adds the Studio panel and the embedded canvas.
-
-There is deliberately no "generate an image" tool and no project template. The agent studies what the user wants to make (with web research when useful), proposes a folder structure, writes it down, and then — for every asset — creates a workflow file where that asset belongs, runs it, reviews the result, and builds the next stage on it. Users open the same `.tongflow.json` on the embedded canvas, tweak it, and re-run; they can also reorganize the folders by hand at any time.
-```
-
-**依据 2 · 作者声明**：[packages/dsh-tongflow/README.md:98-105](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/dsh-tongflow/README.md#L98-L105)
-
-环境及权限负担明确。
-
-```text
-## Permissions and external services
-
-The plugin runs with the dsh process's permissions and needs all of these to work:
-
-- **Files:** reads and writes project folders and `studioRoot` (`<DSH_HOME>/tongflow`: projects, venv, cloned plugins, run data). API keys pasted under **Plugins & keys** are stored in plain text in `studioRoot/env.json` (mode 0600) and handed to plugin processes as environment variables.
-- **Commands:** `python` (creates the venv, `pip install`s the `tongflow` SDK and plugin requirements, runs plugin processes), `git` (shallow-clones plugins), `ffmpeg` (video contact sheets). A plugin process runs that plugin's own code.
-- **Network:** GitHub (`raw.githubusercontent.com` for the official plugin list, `github.com/tong-io/*` clones), PyPI, and whatever service a plugin calls when a workflow runs — model APIs, or your own Modal account for GPU plugins. Paid runs ask the user first (see *Billing checkpoint*).
-- **Runtime dependencies:** `tongflow` (the workflow core, same repo) and `@deepseek-ai/schemastery`.
-```
-
-**依据 3 · 源码核查**：[packages/tongflow-studio/src/tools/run-tools.ts:215-241](https://github.com/tong-io/tongflow/blob/0087122f5900073dfbdb0e7a1e2ff497245e1f21/packages/tongflow-studio/src/tools/run-tools.ts#L215-L241)
-
-确认约束不足影响试用范围。
+客户端独立判断。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-                user_confirmed: {
-                    type: "boolean",
-                    description:
-                        "Set to true ONLY after the user explicitly agreed, in this conversation, to this run and its billing (the plugins / models listed in the needs_confirmation answer). Required whenever the workflow uses a paid plugin.",
-                },
-            },
-            async execute(args, call) {
-                const pid = await resolveProjectId(env, call, args.project);
-                if (!args.user_confirmed) {
-                    const paid = await api.paidPlugins(pid, args.workflow);
-                    if (paid.length > 0) {
-                        return compact({
-                            ok: false,
-                            needs_confirmation: true,
-                            plugins: paid,
-                            hint: "This run costs money. Tell the user which plugin(s) / model(s) will run and how they are billed (mention alternatives when there are any, and missing API keys), ask whether to go ahead, and only after they say yes call again with user_confirmed=true. Ask every time; do not assume a previous yes still holds.",
-                        });
-                    }
-                }
-                const record = await api.startRun({
-                    projectId: pid,
-                    workflowKey: args.workflow,
-                    ...(args.inputs
-                        ? { inputs: args.inputs as Record<string, unknown> }
-                        : {}),
-                    ...(args.note ? { note: args.note } : {}),
-                });
+const LS_PREFIX = "dsh-tongflow:studio-session:";
+
+export function StudioModeWatcher({
+    useChat,
+    useSessions,
+    sessionId,
+}: StudioModeWatcherProps) {
+    // The loaded history window may not reach the first message of a long
+    // session; the session title (derived from it) and a per-session memo cover that.
+    const firstText = useChat((s) => firstUserText(s.legacy.nodes));
+    const title = useSessions(
+        (s) => s.byId[sessionId]?.title ?? s.byId[sessionId]?.displayTitle,
+    );
+    const remembered =
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem(LS_PREFIX + sessionId) === "1";
+    const studioMode =
+        remembered || isStudioText(firstText) || isStudioText(title);
+    useEffect(() => {
+        if (studioMode && !remembered)
+            localStorage.setItem(LS_PREFIX + sessionId, "1");
+    }, [studioMode, remembered, sessionId]);
 ```
 
 </details>
+
+#### 缺口
+
+- 未运行 DSH、Studio 或模型服务
+  **影响**：不能确认工具调用、支付确认或实际输出
+  **进一步探讨**：固定宿主和依赖，以隔离免费与付费样例核验激活及确认
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

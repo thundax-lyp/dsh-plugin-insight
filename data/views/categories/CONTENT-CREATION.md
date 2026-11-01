@@ -14,19 +14,20 @@
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [Adult Tension](#plugin-1339714338-root) | 把中文互动叙事交给宿主模型，并以本地 Python 引擎维护角色、时间、事实、事件与存档的 Skill。 | 中性多角色短局先核保存/重试/撤销/退出，才扩长局；只需短篇可用纯聊天，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。 |
-| [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 为DSH Web提供独立本地小说工作台，以人工审查的Proposal应用规划与章节修改。 | [Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 当前观察；已有用户备份含数据库sidecars后才操作，部分失败先回读，不把Git提交或本地form草稿当保存。 |
+| [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
-| [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 面向DSH分发Design、PPT和Video三个独立可编辑Studio插件。 | [Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 根入口观察并用于选包；真正试用请进入具体子包范围，不把根源码可见当可安装或无限商用。 |
-| [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在DSH中加入可视化Design视图，编辑本地HTML/CSS并把选区修改交给AI草稿。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) 适合许可范围内的副本项目试用；重要改动先保存版本，冲突后重载重选，不把force当默认恢复。 |
+| [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
+| [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [DeepSeek iVideo](#plugin-1335095892-packages-deepseek-ivideo) | 在DSH中加入HyperFrames视频时间线，编辑本地项目、预览并提供受限自动校验。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) 在许可范围内短片副本试用，先确定导出验收和人工全片责任；模型validate只作有限检查，不能当最终发布门槛。 |
-| [DSH × Blender](#plugin-1368569221-root) | 将DSH连接到Blender GUI或持久无头会话，执行建模、取帧、检查和导出。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 当前观察；先用一次性.blend场景验证GUI连接、暂停、headless和响应中断后状态，未核清前不直接接生产资产。 |
+| [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
+| [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 通过 Postiz MCP 在 DSH 中连接社交账号、读取平台规则并准备草稿或安排发布 | [Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) 先观察并以只读账号规则查验为入口；草稿与发布必须回读远端，无法确认时停止DSH写操作回Postiz界面。 |
@@ -34,7 +35,7 @@
 | [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tavern](#plugin-1335944000-root) | 高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。 | [Q04](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q04)仅建议能管理备份和变量的角色卡用户用独立档案试用，固定卡片与模型先验收状态再看速度。 |
-| [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将TongFlow媒体工作流、项目树和画布接入DSH会话，支持资产生成与审阅。 | 有多轮媒体资产任务的DSH用户可在副本项目限制额度试用；先核对宿主版本、Python与外部插件权限，人工审阅每轮产物；若需要强预算隔离或只偶发出图，退回供应商界面或简单脚本。 |
+| [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
@@ -47,12 +48,11 @@
 | [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
 | [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
-| [OpenWrite](#plugin-1171186947-root) | 在 DSH 中规划、写作、审稿和管理长篇小说，作品保存在本地目录。 | [Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 先备份作品，在副本完成单章从规划到导出，分别设定聊天、生成和评审预算。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
 | [PPT Design Skill](#plugin-1294612352-root) | 为演示作者提供需求、视觉方向和主题锁定到 PPTX 生成、逐页 PNG 审阅返工及交付记录的方法，生成依赖外部 pptx-designer。 | 观察优先；熟悉Python/审稿者可隔离repo/venv先核安装schema/库/字体/render，再小样，缺环境/模板冲突/MUST不达停止正式交付，保旧版和源稿修后重渲染。 |
 | [Superdesign Skill](#plugin-1139329853-root) | 为编码Agent提供UI、演示稿和图形设计流程，并通过CLI连接Superdesign画布。 | 有设计迭代需求者可先用可公开UI片段试用，核对发送文件、费用和目标草稿后再生成；私密源码或确定性小修优先本地直接修改，不把缓存状态当持续上传许可。 |
-| [TongFlow](#plugin-1204369117-root) | 以模态和能力组织多媒体节点，提供可视化工作流及多种模型插件的执行入口。 | 已有多阶段媒体任务者可在本地副本先试一个slot和最少插件，限制账户额度并记录远端任务状态；若单次生成已足够，或不能承担持久卷和失败对账，继续现有供应商界面。 |
+| [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
 | [开源版锤子便签（根应用）](#plugin-1182135360-root) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 先以单人、单活动编辑端和非敏感稿件试用，保留Markdown原稿，核对主题、图片和全文后再分享；多端并发编辑暂缓。 |
@@ -93,15 +93,15 @@
 
 ## [AI Novel Writer DSH 插件预览](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 1,859](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C859&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,518](https://img.shields.io/static/v1?label=npm+30d&message=1%2C518&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
+[![GitHub ★ 2,172](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C172&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,545](https://img.shields.io/static/v1?label=npm+30d&message=1%2C545&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
 
-> **用途**：现有DSH小说工作台用户逐章生成建议并人工确认保存到独立本地项目。
+> **用途**：面向在 DSH 中逐章写作并愿意人工审阅提案的作者。
 
-> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q02) 用Host身份、持久proposal与逐项receipt把生成和权威保存分开，相对聊天复制增加可追踪交接；不证明文学质量。
+> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q02) 将模型建议与人工应用分离，[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 已记录逐项和 partial；不是自动文学质量保证。
 
-> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 一项成功不代表整包保存，数据库又不随Git备份；维护冻结和不互通桌面限制新采用，部分失败必须先回读状态。
+> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 部分应用不能视为整包成功，Git 不备份数据库；[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 本轮没有资格测试。
 
-> **建议**：[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 未验证假设是用逐项接受包暴露权威revision与重试范围，以部分失败任务比较误判和重复操作；无改善或操作更重即停止。
+> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q05) 对角色和时间线引用展示可复核差异；现有逐项处理是反证，效果未验证。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
@@ -141,15 +141,15 @@
 
 ## [DeepSeek Design 分发与贡献入口](../../plugins/devin-axis--deepseek-design/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design)
+[![GitHub ★ 1,661](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C661&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design)
 
-> **用途**：需要选择可编辑设计能力的创作者通过根入口了解独立包与工作区交接。
+> **用途**：需要在 DSH 对话和视觉界面之间交接设计文件的创作者及贡献者。[Q01](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q01)、[Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 贡献在同一上游契约的独立任务分发与本地可编辑交付，而非根再提供一个引擎；不重复计子包模板与工具数量。
+> **亮点**：根仓整合三个包的发现、来源和贡献路径；具体交互能力归各子组件，待分别验收。[Q01](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q01) [Q02](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q02)
 
-> **思考**：[Q02](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q02)、[Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03) 文件可编辑、保存原子性和有限校验不等于业务成果合格，根镜像可读也不能证明全部构建对应；需选定子包和实际验收范围。
+> **思考**：作者描述的可编辑与导出流程尚未在子包及宿主验证，source-available 许可也限制部分使用范围。[Q03](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q03)
 
-> **建议**：[Q04](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q04) 未验证假设是以目标摘要、选区和验收标准绑定跨AI/手动交接，用并发变更对照错误覆盖和人工分钟；无改善则停止。
+> **建议**：未验证假设：AI 与人工交接时展示受影响文件和基线，可减少覆盖；须对照已有选区与撤销功能验证。[Q05](../../plugins/devin-axis--deepseek-design/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/devin-axis--deepseek-design/INSIGHT.md) · [返回表格](#category-index)
 
@@ -157,15 +157,15 @@
 
 ## [DeepSeek iDesign](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,130](https://img.shields.io/static/v1?label=npm+30d&message=2%2C130&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign)
+[![GitHub ★ 1,661](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C661&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 2,432](https://img.shields.io/static/v1?label=npm+30d&message=2%2C432&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-idesign)
 
-> **用途**：需要可继续编辑的原型、海报或信息卡的用户，在本地文件和视觉画布间迭代。
+> **用途**：需要在 DSH 对话旁手动精调设计的用户；基线是直接改文件或独立工具。[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q01)、[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) iPolloWork Studio适配把真实文件、手动精调和选区草稿接入同一会话，减少定位转述；不是另创设计引擎。
+> **亮点**：将选区编辑和对话草稿接到 DSH；PPT/Video 属其他包。[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q01) [Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q02)
 
-> **思考**：[Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q02)、[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03) mtime冲突仅在带基线且非force时检查，原子替换不保证多编辑者事务；旧选区草稿也可能在文件变动后误指对象。
+> **思考**：冲突检查依赖非 force、基线与现存文件，不能保证所有并发写入不覆盖。[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q03)
 
-> **建议**：[Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q04) 未验证假设是随选区绑定内容摘要和元素指纹，DOM变动任务比较误改与重选成本；无改善或负担过高则停止。
+> **建议**：未验证假设：显示文件基线和选区影响可减少误覆盖；须对照现有保护与实际保存。[Q05](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/devin-axis--deepseek-design--packages-deepseek-idesign/INSIGHT.md) · [返回表格](#category-index)
 
@@ -189,15 +189,15 @@
 
 ## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
 
-[![GitHub ★ 1,329](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C329&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+[![GitHub ★ 1,498](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C498&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
 
-> **用途**：具备Blender验收能力的创作者在持久场景中迭代建模并核对视觉与几何交付。
+> **用途**：面向能够人工验收场景的 3D 创作者。
 
-> **亮点**：[Q01](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q01)、[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 将持久Python、实时取帧与不把skipped/degraded当pass的验收语义连接，增量是可见迭代和明确交付边界，未证明任务质量或速度胜出。
+> **亮点**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) 将执行和观察接入宿主，[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 明确未检查不能视作通过；底层 Blender 能力不属插件原创。
 
-> **思考**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) /act请求异常后的worker fallback不能证明GUI未执行，也不能保证两个场景等价；在响应未知时必须先对账，持久修改可能已发生。
+> **思考**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) 取消只停止等待，服务端可能继续；[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) gate 不覆盖全部视觉及业务验收。
 
-> **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 未验证假设是场景revision与请求票据绑定、超时先查状态后重试，用响应丢失实验比较重复修改、错配和恢复成本；成本过高或无改善即停止。
+> **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 提议操作票据与状态核对，须对照已有 job、txn 和 gate 做故障实验。
 
 [查看完整分析](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -296,6 +296,22 @@
 > **建议**：未验证假设是把“文本投影恒等”做成基于属性的编辑序列测试，可在宿主升级时自动发现光标/撤销/字节漂移。最小生成1000条含IME、粘贴、列表退格和围栏的操作序列，比较插件前后最终纯文本、selection与undo；任一字节差异即否定安全启用。 详见[Q08](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1171186947-root"></a>
+
+## [dsh-Openwrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
+
+[![GitHub ★ 906](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=906&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 8,040](https://img.shields.io/static/v1?label=npm+30d&message=8%2C040&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
+
+> **用途**：长篇作者需要组织设定、章节和审稿，并在受控作品中持续写作。
+
+> **亮点**：[Q01](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q01) 与 [Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 显示套件整合 DSH、工作区及小说 Core；原生能力和领域算法分别归其提供者。
+
+> **思考**：[Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 已有锁和检查点仍不能证明模型、正文和任务结算跨步骤一致；[Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 历史验收不可套用当前包。
+
+> **建议**：[Q06](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q06) 假设读取式一致性预览可帮助作者选择恢复动作；尚未排除现有 UI 等价能力或验证。
+
+[查看完整分析](../../plugins/lipu-jpg--openwrite/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333652151-root"></a>
 
@@ -413,15 +429,15 @@
 
 ## [dsh-tongflow](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md)
 
-[![GitHub ★ 1,046](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C046&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow) [![npm 30d 2,027](https://img.shields.io/static/v1?label=npm+30d&message=2%2C027&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow)
+[![GitHub ★ 1,049](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C049&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow) [![npm 30d 1,981](https://img.shields.io/static/v1?label=npm+30d&message=1%2C981&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tongflow)
 
-> **用途**：适合需要反复制作角色图、配音和分镜的DSH用户，以工作流、产物及生成记录作为交付物。
+> **用途**：在 DSH 中组织多模态项目和生成流程的用户；基线是普通聊天或自行切换 Studio。[Q01](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q01)
 
-> **亮点**：将DSH会话、附件和后台任务接入共用媒体工作流，让人和Agent编辑同一资产生成文件；增益在多轮协作与追溯，核心引擎贡献归TongFlow而非适配层。[Q01](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q01) [Q04](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q04)
+> **亮点**：为 Studio 注入适配宿主服务、技能与界面，不等同 TongFlow 根执行引擎。[Q01](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q01)
 
-> **思考**：付费确认依赖Agent提交布尔值，未见绑定用户交互与工作流摘要的许可校验，因此不能作为强预算隔离；首次自动下载及外部插件权限也需用户承担。[Q02](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q02) [Q03](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q03)
+> **思考**：异步初始化可能失败；付费确认仅为作者声明，未核验依赖实现。[Q03](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q03)
 
-> **建议**：可尝试一次性许可绑定工作流摘要、模型和预算，比较换参及重放的误执行率与确认负担；当前尚未实现或验证。[Q05](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q05)
+> **建议**：未验证假设：共享 Host 激活状态可降低 UI 和工具状态不一致，需对照恢复与延迟场景。[Q05](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md) · [返回表格](#category-index)
 
@@ -617,22 +633,6 @@
 
 [查看完整分析](../../plugins/zju-llms--openstory/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1171186947-root"></a>
-
-## [OpenWrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
-
-[![GitHub ★ 884](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=884&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 6,332](https://img.shields.io/static/v1?label=npm+30d&message=6%2C332&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
-
-> **用途**：需要持续管理设定、大纲和正文的长篇作者，可在作品副本上试做完整章节流程。
-
-> **亮点**：[Q01](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q01) 与 [Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 显示贡献在于把本地小说领域后端、可信作品上下文和DSH对话/工作台组织为持续创作流程。桥层不把上游Core与DSH能力算为自身算法原创；相对手工文件管理有机制上的交接改善，写作质量与节时未知。
-
-> **思考**：[Q03](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q03) 补查Core确认已有项目锁、revision校验、恢复前checkpoint和drafted run续接，不能再把恢复能力写成缺失。关键质疑收窄为模型响应、正文替换和任务结算之间的跨步骤中断一致性；源码可见保护不等于全故障点无重复或无丢稿保证。
-
-> **建议**：[Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 将未来假设收窄为权威续接状态的一致性预览，复用Core已有drafted run和completed清单，不把续接本身当新功能。先排除现有界面已等价展示，再比较作者在故障场景下的错误重试及额外确认；无改善则否定。
-
-[查看完整分析](../../plugins/lipu-jpg--openwrite/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-113965016-root"></a>
 
 ## [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md)
@@ -701,15 +701,15 @@
 
 ## [TongFlow](../../plugins/tong-io--tongflow/INSIGHT.md)
 
-[![GitHub ★ 1,046](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C046&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow)
+[![GitHub ★ 1,049](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C049&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tong-io/tongflow)
 
-> **用途**：适合把图像、音频和视频分阶段组合的创作者，交付可编辑工作流及媒体资产。
+> **用途**：制作多阶段媒体的创作者；基线是分别调用供应商并手工传递素材。[Q01](../../plugins/tong-io--tongflow/INSIGHT.md#research-q01)
 
-> **亮点**：将材料、能力与供应商分开，使周围工作流有机会在替换插件后继续使用，并统一资产落位；属于多模态工作流集成贡献，未证首创。[Q01](../../plugins/tong-io--tongflow/INSIGHT.md#research-q01) [Q04](../../plugins/tong-io--tongflow/INSIGHT.md#research-q04)
+> **亮点**：组织多模态素材与统一执行接口；DSH 接入属于独立子组件。[Q01](../../plugins/tong-io--tongflow/INSIGHT.md#research-q01) [Q02](../../plugins/tong-io--tongflow/INSIGHT.md#research-q02)
 
-> **思考**：合法图不代表外部任务可成功或可撤销；本地取消未证明远端终止，重复重跑可能增加费用。[Q02](../../plugins/tong-io--tongflow/INSIGHT.md#research-q02)
+> **思考**：slot 可映射不保证外部供应商成功、费用或幂等；未知结果需对账。[Q03](../../plugins/tong-io--tongflow/INSIGHT.md#research-q03)
 
-> **建议**：在slot选择中加入同输入的凭据、报价与恢复能力预检，检验是否降低配置失败和重复账单；尚未实现或验证。[Q05](../../plugins/tong-io--tongflow/INSIGHT.md#research-q05)
+> **建议**：未验证假设：展示节点供应商、估价和失败补偿边界可减少费用误判；需对照现有元数据。[Q05](../../plugins/tong-io--tongflow/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tong-io--tongflow/INSIGHT.md) · [返回表格](#category-index)
 

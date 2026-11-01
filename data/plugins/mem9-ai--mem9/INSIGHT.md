@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[fd63ae8](https://github.com/mem9-ai/mem9/tree/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2)
+源码版本：[b41458d](https://github.com/mem9-ai/mem9/tree/b41458d6f3d516a9a26c3547f06d960dcd785ac4)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,227](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C227&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mem9-ai/mem9)
+[![GitHub ★ 1,233](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C233&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mem9-ai/mem9)
 <!-- END META -->
 
-> **功能**：为多 Agent 和多机器提供服务端持久记忆、混合检索及多运行时接入。
+> **功能**：为 AI Agent 提供跨会话、跨设备的持久共享记忆和检索。
 
-> **亮点**：把跨机器多runtime记忆状态集中到统一API并提供混合召回，减少各客户端分别维护存储；数据库向量能力归上游，不能把召回相关性当事实正确。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将多客户端持久状态接到统一服务；向量能力归底层，相关性不等于事实正确。
 
-> **主要限制**：自动记忆默认出站，共享空间中agentId不等独立身份；排序不验证事实新鲜度，断线幂等及更正/删除传播仍需检查。[Q03](#research-q03)
+> **主要限制**：[Q03](#research-q03) 部分搜索分支清空 source/session 条件，[Q04](#research-q04) 默认自动出站且异步写入不保证崩溃后送达。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 共享记忆服务相对本地笔记解决什么任务？](#detail-section-11)
-  - [Q02 · 检索如何组合关键词和向量，数据边界由什么决定？](#detail-section-12)
-  - [Q03 · 自动写入和共享空间最容易产生什么采用误解？](#detail-section-13)
-  - [Q04 · 什么团队可试用，首次与持续负担怎样控制？](#detail-section-14)
-  - [Q05 · 更正传播验证能否比召回率更接近共享记忆价值？](#detail-section-15)
+  - [Q01 · 多助手需要什么持久记忆，现有本地笔记怎样替代？](#detail-section-11)
+  - [Q02 · API 密钥、租户与记忆读写如何关联？](#detail-section-12)
+  - [Q03 · 检索如何选语义/关键词，排序和过滤证明什么？](#detail-section-13)
+  - [Q04 · DSH 自动召回与写入何时发生，有哪些外发与丢失边界？](#detail-section-14)
+  - [Q05 · 部署、密钥、成本及退出需要什么？](#detail-section-15)
+  - [Q06 · 能否在共享空间中减少错误记忆跨助手传播？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：多机器或多Agent需要共享可更正事实的团队；仅单人笔记可继续本地文档。[Q01](#research-q01)
+> **用途**：多助手和多设备用户需要保留、召回及更正长期事实。
 
-共享Markdown、各宿主本地记忆或直接数据库API；服务化改善统一接口，但增加网络、数据与运维责任。[Q01](#research-q01)
+本地文件或笔记可手工保存并核对事实。
 
 <a id="detail-section-3"></a>
 
@@ -51,66 +52,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 记忆API | 多runtime事实共享 | tenant key与数据库 |
-| 混合查询 | 向量关键词召回 | embedding可用不等事实真值 |
-| DSH自动接线 | 召回与有界会话写入 | 可出站数据，默认开启需审 |
+|---|---|---|
+| 空间认证 | 按 key 解析租户或 chain | 不等于 agent 身份隔离 |
+| 记忆读写 | 保存、查询、更正、删除 | 各端传播未验证 |
+| 条件性检索 | 混合、全文或关键词 | 路由与过滤行为依分支而异 |
+| DSH 自动接入 | 首步召回、完成后写入 | 默认开启，可向配置服务出站 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| mem9端点与空间key | 必需 | 存储检索授权 | 停止远程写入 |
-| 匹配数据库schema | 自托管必需 | tenant和记忆持久化 | 不可直接运行 |
-| embedding/抽取服务 | 对应模式必需 | 语义检索与整理 | 失败可能使查询错误 |
-| 数据出站及保留许可 | 远程使用必需 | 会话内容存储 | 限定非敏感或本地替代 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| mem9 服务与 API key | 客户端读写需要 | 空间认证与记忆访问 | 请求失败 |
+| 数据库与存储 | 服务需要 | 持久化记忆 | 无法读写或受配置影响 |
+| embedding 服务 | 对应混合分支需要 | 向量检索 | 该分支可能报错 |
+| DSH 宿主 | DSH 接入需要 | 工具及自动 hook | 不能在该宿主自动运行 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 建空间 | 用户固定端点和key | 与其他空间隔离 |
-| 收窄 | 用户关闭自动ingest | 只写人工确认事实 |
-| 核对 | 两Agent读写更正删除 | 无跨空间、旧事实不再生效 |
-| 回退 | 用户停止自动使用并导出 | 继续人工项目文档 |
+|---|---|---|
+| 准备 | 用户选择隔离空间和数据目的地 | 不允许外发时关闭自动读写 |
+| 写入 | 手动保存合成事实 | 核对服务返回和所属空间 |
+| 召回 | 多助手查询并核对来源 | 无法确认事实时回原文 |
+| 恢复 | 检查失败队列、修改及删除 | 状态不明时暂停共享 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 托管空间或Go/数据库；金额未知 | 配schema、密钥、数据政策 | 自托管需运维 |
-| 持续使用 | 存储、embedding、抽取和网络 | 更正事实及监控配额 | 价格/任务用量未知 |
-| 失败恢复 | 重试、备份及导出资源 | 核对重复写入、删除和密钥 | 一致性未验收 |
+|---|---|---|---|
+| 首次 | 服务、数据库及网络费用未知 | 配置空间与密钥 | 隔离需验证 |
+| 持续 | 存储、检索和 embedding 费用未知 | 核验事实及纠错 | 模型准确率未测 |
+| 恢复 | 重试、备份和删除成本未知 | 查验跨客户端传播 | 崩溃后队列与幂等未知 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 多runtime共享 | 服务API与薄接入 | 团队最终任务改善 |
-| 混合召回 | 向量/关键词RRF融合 | 事实正确、新鲜与成本 |
-| 自动记忆 | 完成turn队列和边界 | 抽取质量、删除传播 |
+|---|---|---|
+| 共享记忆 | API 认证及读写接口 | 多 agent 安全隔离 |
+| 检索 | 混合/全文/关键词分支 | 正确性与全部过滤语义 |
+| 自动接入 | 首步召回、完成后排队写入 | 崩溃后送达及撤销传播 |
 
-> **思考**：自动记忆默认出站，共享空间中agentId不等独立身份；排序不验证事实新鲜度，断线幂等及更正/删除传播仍需检查。[Q03](#research-q03)
+> **思考**：[Q03](#research-q03) 部分搜索分支清空 source/session 条件，[Q04](#research-q04) 默认自动出站且异步写入不保证崩溃后送达。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把跨机器多runtime记忆状态集中到统一API并提供混合召回，减少各客户端分别维护存储；数据库向量能力归上游，不能把召回相关性当事实正确。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将多客户端持久状态接到统一服务；向量能力归底层，相关性不等于事实正确。
 
-状态与客户端分离、融合路径和有界队列可借鉴；需额外验证key隔离、重发幂等和事实撤回，不能只检查字段。[Q02](#research-q02)
+[Q02](#research-q02) 普通密钥解析租户而 chain 走不同分支；[Q03](#research-q03) 条件性清空过滤器和 [Q04](#research-q04) 异步队列须分别验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-自动记忆默认出站，共享空间中agentId不等独立身份；排序不验证事实新鲜度，断线幂等及更正/删除传播仍需检查。[Q03](#research-q03)
+[Q03](#research-q03) 部分搜索分支清空 source/session 条件，[Q04](#research-q04) 默认自动出站且异步写入不保证崩溃后送达。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议有共享需求的团队限定隔离空间、先关闭自动ingest，用少量人工确认非敏感事实试用读写更正删除；隔离或传播不明即退回项目文档。[Q04](#research-q04)
+[Q05](#research-q05) 先关闭自动写入，在隔离空间用合成事实验证读取、更正和删除；数据授权或传播不明时回本地笔记。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-服务端检索、tenant认证与DSH自动接线有固定源码支持；隔离全链、自动事实质量和删除传播未执行验证。候选事实确认是未验证假设。
+固定源码代表性认证、搜索与 DSH 接线已查；未运行服务、宿主或网络。
 
-- 已检查：作者 README、包清单、源码路径 README.md、server/internal/middleware/auth.go、server/internal/service/memory.go、dsh-plugin/src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、server/internal/middleware/auth.go、dsh-plugin/src/index.ts、server/internal/service/memory.go、server/internal/handler/memory.go 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读根README、Go认证/记忆服务和DSH接线；未完整审计所有仓储、路由、客户端与托管部署，未运行服务/测试/API。Go不计JS/TS LOC。
-- 下一步：固定两Agent空间做已知事实、错误更正、删除、断线重发和导出，测全部费用及最终答案；本轮未执行。[Q05](#research-q05)
+- 边界：只读根 README、服务 API key 认证、代表性搜索和 DSH 自动 hook；未运行服务、宿主、模型或外部网络，未审计全部 chain、数据库、删除和部署。
+- 下一步：以隔离空间和假服务测试不同查询分支、两 agent、更正删除及超时；按 [Q06](#research-q06) 比较错误传播。
 
 **分析版本**
 
 - **仓库**：[mem9-ai/mem9](https://github.com/mem9-ai/mem9)
-- **版本号**：未声明（[固定提交 fd63ae8](https://github.com/mem9-ai/mem9/tree/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 b41458d](https://github.com/mem9-ai/mem9/tree/b41458d6f3d516a9a26c3547f06d960dcd785ac4)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +137,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是自动写入先作为待确认事实，以两Agent更正/删除后的读取一致性和人工负担检验共享价值。[Q05](#research-q05)
+[Q06](#research-q06) 假设待确认及版本化撤销可减少共享错误事实传播，须先核现有功能且尚未验证。
 
-固定两Agent空间做已知事实、错误更正、删除、断线重发和导出，测全部费用及最终答案；本轮未执行。[Q05](#research-q05)
+以隔离空间和假服务测试不同查询分支、两 agent、更正删除及超时；按 [Q06](#research-q06) 比较错误传播。
 
 <a id="detail-section-9"></a>
 
@@ -148,10 +148,12 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 94 | 19353 | — | — | 113827 |
-| .ts | source | 133 | 48701 | 44821 | 415 | — |
+| .md | source | 94 | 19400 | — | — | 115009 |
+| .ts | source | 133 | 48835 | 44954 | 415 | — |
 | .mjs | source | 33 | 9942 | 7591 | 1180 | — |
 | .mjs | test | 16 | 7146 | 6410 | 209 | — |
 | .ts | test | 55 | 11503 | 10364 | 105 | — |
@@ -163,36 +165,55 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/mem9-ai/mem9/issues) 查看。
+[![Issue 未关闭 54](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=54&color=737b86&logo=github)](https://github.com/mem9-ai/mem9/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/mem9-ai/mem9/issues?q=is%3Aissue+created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/mem9-ai/mem9/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z)
+
+
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：共享记忆服务如何存取和隔离事实，自动写入与混合召回是否足以支持团队采用？
+**插件研究总目标**：核查记忆服务租户、检索、DSH 自动读写及数据边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 共享记忆服务相对本地笔记解决什么任务？
+### Q01 · 多助手需要什么持久记忆，现有本地笔记怎样替代？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-多机器或多Agent协作团队需要共享可更正事实和历史，而本地笔记与单宿主记忆分散。mem9提供独立HTTP存储/检索服务、多runtime薄接入及可视化管理；合格结果是被授权的Agent找回正确当前事实并能纠正或删除。相对共享Markdown，它增加统一API与混合召回；相对单插件本地库，它把状态所有权移到服务端。关键业务增量是共享和迁移接口，而非保证记忆真实或任务完成。README托管便利与TiDB能力是作者说明，不能当本轮服务可用性或效果验收。
+README:4-6 描述跨会话、跨机器和多助手共享记忆；24-45 给出托管或自托管服务和多种客户端。手工文件或笔记也可保存事实，但需各助手自行查找和更正；服务将读写集中到一个 API 并提供检索，数据真实性和实际节时尚未对照。它是独立记忆服务及客户端集合，不是仅有 DSH 插件；底层向量索引或模型能力归对应依赖，不归为项目首创。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:29-70](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/README.md#L29-L70)
+**依据 1 · 作者声明**：[README.md:4-6](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L4-L6)
 
-作者提供托管/自托管和凭据步骤。
+作者描述跨会话与共享场景。
+
+```text
+<p align="center">
+  <strong>Persistent Memory for AI Agents.</strong><br/>
+  Your agents forget everything between sessions. mem9 fixes that with persistent memory across sessions and machines, shared memory for multi-agent workflows, and hybrid recall with a visual dashboard.
+```
+
+**依据 2 · 作者声明**：[README.md:24-45](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L24-L45)
+
+作者说明服务部署与接入。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（22行）</summary>
 
 ````text
+## Quick Start
+
+1. Choose your mem9 endpoint.
+
+   - Hosted API: `https://api.mem9.ai`
    - Self-hosted: apply the matching control-plane schema, then start `mnemo-server`:
 
      ```bash
@@ -210,91 +231,209 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
    - [OpenCode](opencode-plugin/README.md)
    - [Codex](codex-plugin/README.md)
    - [DeepSeek Harness](dsh-plugin/README.md)
-   - [Dify](https://github.com/mem9-ai/mem9-dify-plugin#readme)
-   - [Any HTTP client / custom runtime](#api-reference)
-
-3. Set your credentials.
-
-   ```bash
-   # Hosted API
-   export MEM9_API_URL="https://api.mem9.ai"
-   export MEM9_API_KEY="<mem9-api-key>"
-
-   # Self-hosted
-   export MEM9_API_URL="http://localhost:8080"
-   export MEM9_API_KEY="<mem9-api-key>"
-   ```
-
-   For self-hosted deployments, use your server URL and the mem9 API key returned or configured by your provisioning flow.
-
-## Why mem9
-
-mem9 gives coding agents one shared memory layer instead of separate local notebooks and one-off prompt files.
-
-| What mem9 gives you | Why it matters |
-|---|---|
-| Persistent memory across sessions and machines | Your context survives restarts, laptop switches, and long-running projects |
-| Shared memory across agents and workflow platforms | OpenClaw, Hermes Agent, Claude Code, OpenCode, Codex, DeepSeek Harness, Dify apps, and custom clients can recall the same facts |
 ````
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:75-101](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/README.md#L75-L101)
+**依据 3 · 作者声明**：[README.md:118-126](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L118-L126)
 
-共享状态和多runtime说明。
-
-<details>
-<summary>查看原文（27行）</summary>
+作者描述记忆读写 API。
 
 ```text
+### Preferred API (`v1alpha2`)
 
-| Platform | Integration shape | Install / docs |
-|---|---|---|
-| OpenClaw | `kind: "memory"` plugin for server-backed shared memory | [OpenClaw / ClawHub install guide](https://mem9.ai/openclaw-memory) |
-| Hermes Agent | Memory provider plugin with setup and activation flow | [mem9-hermes-plugin README](https://github.com/mem9-ai/mem9-hermes-plugin#readme) |
-| Claude Code | Marketplace plugin with hooks and skills | [`claude-plugin/README.md`](claude-plugin/README.md) |
-| OpenCode | Plugin SDK integration loaded from `opencode.json` | [`opencode-plugin/README.md`](opencode-plugin/README.md) |
-| Codex | Marketplace plugin with managed hooks and project overrides | [`codex-plugin/README.md`](codex-plugin/README.md) |
-| DeepSeek Harness | Native DSH/Cordis bundle with recall, smart ingest, and memory tools | [`dsh-plugin/README.md`](dsh-plugin/README.md) |
-| Dify | Tool plugin for Dify Agent apps and Workflow apps, with single-space and multi-space authorization | [mem9-dify-plugin README](https://github.com/mem9-ai/mem9-dify-plugin#readme) |
-| Any HTTP client / custom runtime | Direct REST API integration | [API Reference](#api-reference) |
-
-All supported runtimes and platform integrations expose the same core memory flow: store, search, get, update, and delete against the mem9 server API.
-
-## Why the Hosted API
-
-The hosted mem9 API is the fastest way to put persistent memory behind an agent fleet while keeping the option to self-host later.
-
-| Hosted API capability | Why teams start here |
-|---|---|
-| Hosted mem9 API with instant space provisioning | You can install an agent integration first and skip standing up infrastructure on day one |
-| Shared memory across runtimes and platforms | One space can serve OpenClaw, Hermes Agent, Claude Code, OpenCode, Codex, DeepSeek Harness, Dify apps, and custom clients together |
-| Managed search and storage | Hybrid recall works out of the box without a separate vector stack or sync layer |
-| TiDB Cloud Starter foundation | The hosted path benefits from instant provisioning, native vector search, full-text search, server-side auto-embedding, hybrid search, and MySQL-compatible operational semantics |
-| Same API contract as self-hosted mem9 | Moving to your own deployment is a base-URL and credential change, not a plugin rewrite |
-| Visual dashboard and product onboarding | Teams can inspect and manage memory without building internal tooling first |
-
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/v1alpha2/mem9s/memories` | Preferred unified write endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories` | Preferred search endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories/{id}` | Preferred get-by-id endpoint. Requires `X-API-Key` header |
+| `PUT` | `/v1alpha2/mem9s/memories/{id}` | Preferred update endpoint. Requires `X-API-Key` header |
+| `DELETE` | `/v1alpha2/mem9s/memories/{id}` | Preferred delete endpoint. Requires `X-API-Key` header |
 ```
 
-</details>
+#### 缺口
+
+- 无实际多助手任务与本地笔记对照
+  **影响**：不能推断记忆质量、节时或真实需求
+  **进一步探讨**：固定任务比较共享服务与人工查写笔记。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 检索如何组合关键词和向量，数据边界由什么决定？
+### Q02 · API 密钥、租户与记忆读写如何关联？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-服务Search遇空query转List，有query时清掉SessionID和Source再选autoHybrid、显式embedder、FTS或LIKE；这是跨会话记忆检索设计，不能把会话字段当隔离边界。显式hybrid先生成query向量，取得向量与关键词候选，用RRF融合再加类型权重和分页。embed失败会返回错误，不是自动无损回落纯关键词；因此模型服务也是可用性依赖。认证中间件用X-API-Key查tenant并获取tenant DB，Agent标识来自另一个请求头；后者是来源标签，不等于独立认证用户。可借鉴服务与薄适配分离、可观察融合路径，但完整隔离需沿路由、仓储和数据库权限验收，不能只凭TenantID字段。
+auth.go:352-389 读取 X-API-Key，缺失拒绝；chain_ 前缀走 Space Chain 的单独解析。438-465 的普通密钥路径按凭据解析 tenant，拒绝不存在/已删除/非活动租户，解密数据库凭据并取得对应连接。README:118-126 描述记忆的增查改删接口，DSH index.ts:208-229 在请求中发送密钥和 agentId。后者是请求所附标签，不凭此推定单独的租户认证或各 agent 隔离；链身份、共享密钥、服务配置及各仓储隔离仍需端到端核验。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[server/internal/service/memory.go:223-243](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/service/memory.go#L223-L243)
+**依据 1 · 源码核查**：[server/internal/middleware/auth.go:352-389](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/middleware/auth.go#L352-L389)
 
-检索清除会话/来源过滤，按后端能力选择路径。
+缺失密钥与 chain key 路径。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+func ResolveApiKey(
+	tenantRepo repository.TenantRepo,
+	pool tenantDBGetter,
+	enc encrypt.Encryptor,
+	clusterBlacklist map[string]struct{},
+	opts ...authOption,
+) func(http.Handler) http.Handler {
+	state := authConfig{}
+	for _, opt := range opts {
+		if opt != nil {
+			opt(&state)
+		}
+	}
+	_ = state
+
+	return func(next http.Handler) http.Handler {
+		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			authStart := time.Now()
+			apiKey := strings.TrimSpace(r.Header.Get(APIKeyHeader))
+			if apiKey == "" {
+				writeError(w, http.StatusBadRequest, "missing API key")
+				return
+			}
+
+			if strings.HasPrefix(apiKey, domain.ChainKeyPrefix) {
+				if state.spaceChains == nil {
+					writeError(w, http.StatusServiceUnavailable, "space chain auth unavailable")
+					return
+				}
+				chainLookupStart := time.Now()
+				chain, err := state.spaceChains.GetByKey(r.Context(), apiKey)
+				chainLookupDuration := time.Since(chainLookupStart)
+				if err != nil {
+					writeError(w, http.StatusBadRequest, "invalid API key")
+					return
+				}
+				if len(chain.Nodes) == 0 {
+					writeError(w, http.StatusBadRequest, "Space Chain has no nodes.")
+```
+
+</details>
+
+**依据 2 · 源码核查**：[server/internal/middleware/auth.go:438-465](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/middleware/auth.go#L438-L465)
+
+普通密钥解析租户及连接。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+			lookupStart := time.Now()
+			t, err := lookupCredentialTenant(r.Context(), tenantRepo, apiKey, state.credentials)
+			lookupDuration := time.Since(lookupStart)
+			if err != nil {
+				if state.credentials != nil && !errors.Is(err, domain.ErrNotFound) {
+					writeError(w, http.StatusServiceUnavailable, "auth backend unavailable; retry request")
+					return
+				}
+				writeError(w, http.StatusBadRequest, "invalid API key")
+				return
+			}
+			if t.DeletedAt != nil || t.Status != domain.TenantActive {
+				writeError(w, http.StatusBadRequest, "invalid API key")
+				return
+			}
+
+			// Decrypt password before using
+			decryptStart := time.Now()
+			decryptedPassword, err := enc.Decrypt(r.Context(), t.DBPassword)
+			decryptDuration := time.Since(decryptStart)
+			if err != nil {
+				writeError(w, http.StatusInternalServerError, "failed to decrypt tenant credentials")
+				return
+			}
+			t.DBPassword = decryptedPassword
+
+			poolStart := time.Now()
+			db, err := pool.Get(r.Context(), t.ID, t.DSNForBackend(pool.Backend()))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[dsh-plugin/src/index.ts:208-229](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L208-L229)
+
+DSH 请求的认证和 agent 标签。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  private async request(
+    method: string,
+    path: string,
+    body: JsonValue | undefined,
+    callerSignal: AbortSignal,
+    timeoutMs: number,
+  ): Promise<Record<string, JsonValue>> {
+    const credential = await this.ctx.credentials.resolve(this.config.apiKeyRef);
+    if (credential === undefined) throw new Error(`mem9 credential ${this.config.apiKeyRef} is not configured`);
+    const timeoutSignal = AbortSignal.timeout(timeoutMs);
+    const signal = AbortSignal.any([callerSignal, timeoutSignal]);
+    const response = await fetch(`${this.config.apiUrl}${path}`, {
+      method,
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": credential.value,
+        "x-mnemo-agent-id": this.config.agentId,
+        "user-agent": "@mem9/dsh-plugin/0.1.0",
+      },
+      body: body === undefined ? undefined : JSON.stringify(body),
+      signal,
+    });
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:118-126](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L118-L126)
+
+作者列出的记忆 API。
+
+```text
+### Preferred API (`v1alpha2`)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/v1alpha2/mem9s/memories` | Preferred unified write endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories` | Preferred search endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories/{id}` | Preferred get-by-id endpoint. Requires `X-API-Key` header |
+| `PUT` | `/v1alpha2/mem9s/memories/{id}` | Preferred update endpoint. Requires `X-API-Key` header |
+| `DELETE` | `/v1alpha2/mem9s/memories/{id}` | Preferred delete endpoint. Requires `X-API-Key` header |
+```
+
+#### 缺口
+
+- 未核全部 chain 权限、部署与数据库隔离
+  **影响**：不能证明共享密钥下不同 agent 是独立安全主体
+  **进一步探讨**：隔离两租户及多 agent 验证认证、越权和撤销。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 检索如何选语义/关键词，排序和过滤证明什么？
+
+**研究主题**：功能与机制、缺陷与关键质疑
+
+#### 完整回答
+
+service/memory.go:223-243 对空查询调用 List；非空查询复制过滤器并清空 SessionID 和 Source，再依据 autoModel、embedder、FTS 可用性选择混合、全文或关键词路径。547-566 的混合分支先调用 embedding，再查向量；embedding 或向量报错会返回错误，而不是在此分支保证关键词成功。handler/memory.go:801-808 构造 source、session 等字段，925-947 中存在分发到 memory.Search 的分支，但同处理器还有其他特化查询和 chain 分支，因此此处只说明该服务分支，不推断所有请求相同。DSH 工具声明 source 筛选，实际语义须在所用路由上验证；相似度和可检索也不能证明事实正确或最新。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[server/internal/service/memory.go:223-243](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/service/memory.go#L223-L243)
+
+非空 memory.Search 清空两个字段及选路。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -325,9 +464,9 @@ func (s *MemoryService) Search(ctx context.Context, filter domain.MemoryFilter) 
 
 </details>
 
-**依据 2 · 源码核查**：[server/internal/service/memory.go:547-566](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/service/memory.go#L547-L566)
+**依据 2 · 源码核查**：[server/internal/service/memory.go:547-566](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/service/memory.go#L547-L566)
 
-embed失败直接返回错误。
+混合分支 embedding 和向量错误。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -357,118 +496,111 @@ func (s *MemoryService) hybridSearch(ctx context.Context, filter domain.MemoryFi
 
 </details>
 
-**依据 3 · 源码核查**：[server/internal/service/memory.go:583-614](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/service/memory.go#L583-L614)
+**依据 3 · 源码核查**：[server/internal/handler/memory.go:801-808](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/handler/memory.go#L801-L808)
 
-关键词、向量与RRF融合。
-
-<details>
-<summary>查看原文（32行）</summary>
+HTTP 参数构造过滤器。
 
 ```text
-	var kwResults []domain.Memory
-	if s.memories.FTSAvailable() {
-		var kwErr error
-		kwResults, kwErr = s.repositoryFTSSearch(ctx, filter.Query, filter, fetchLimit)
-		if kwErr != nil {
-			return nil, 0, fmt.Errorf("FTS search: %w", kwErr)
+	filter := domain.MemoryFilter{
+		Query:      query,
+		Tags:       tags,
+		Source:     q.Get("source"),
+		State:      q.Get("state"),
+		MemoryType: q.Get("memory_type"),
+		AgentID:    q.Get("agent_id"),
+		SessionID:  q.Get("session_id"),
+```
+
+**依据 4 · 源码核查**：[server/internal/handler/memory.go:925-947](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/handler/memory.go#L925-L947)
+
+handler 的不同查询分支。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+			memories, total, err = s.listChainMemoriesContentKeyword(listCtx, auth, filter)
+		} else {
+			memories, total, err = s.listChainMemories(listCtx, auth, filter)
 		}
 	} else {
-		var kwErr error
-		kwResults, kwErr = s.memories.KeywordSearch(ctx, filter.Query, filter, fetchLimit)
-		if kwErr != nil {
-			return nil, 0, fmt.Errorf("keyword search: %w", kwErr)
-		}
-	}
-
-	if len(kwResults) == 0 && (len(vecResults) == 0 || !s.memories.FTSAvailable()) && shouldRunLooseKeywordFallback(filter.Query) {
-		fallbackResults, fallbackErr := s.looseTokenKeywordSearch(ctx, filter, fetchLimit)
-		if fallbackErr != nil {
-			return nil, 0, fallbackErr
-		}
-		kwResults = fallbackResults
-	}
-
-	slog.Info("hybrid search completed", "query_len", len(filter.Query), "vec_results", len(vecResults), "kw_results", len(kwResults))
-
-	scores := rrfMerge(kwResults, vecResults)
-	mems := collectMems(kwResults, vecResults)
-	applyTypeWeights(mems, scores)
-	merged := sortByScore(mems, scores)
-
-	page, total := s.paginate(merged, offset, limit)
-	return finalizeSearchResults(setScores(page, scores), filter.Query), total, nil
+		svc := s.resolveServices(auth)
+		switch {
+		case filter.Query == "" && filter.MemoryType == "":
+			memories, total, err = svc.memory.ListAllTypes(listCtx, filter)
+		case filter.Query != "" && contentKeywordSearch:
+			memories, total, err = s.listLocalMemoriesContentKeyword(listCtx, svc, filter)
+		case filter.Query != "" && filter.ScanAll:
+			memories, total, err = s.listLocalMemoriesScanAll(listCtx, svc, filter)
+		case filter.Query != "" && filter.MemoryType == "":
+			memories, total, err = s.defaultConfidenceRecallSearch(listCtx, auth, svc, filter)
+		case filter.Query != "" && (filter.MemoryType == string(domain.TypeSession) ||
+			filter.MemoryType == string(domain.TypePinned) ||
+			filter.MemoryType == string(domain.TypeInsight)):
+			memories, total, err = s.singlePoolConfidenceRecallSearch(listCtx, auth, svc, filter)
+		case onlySession:
+			memories, total, err = svc.session.List(listCtx, filter)
+		case !onlySession:
+			memories, total, err = svc.memory.Search(listCtx, filter)
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[server/internal/middleware/auth.go:415-424](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/middleware/auth.go#L415-L424)
+**依据 5 · 源码核查**：[dsh-plugin/src/index.ts:419-425](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L419-L425)
 
-API key查找tenant并检查状态。
-
-<details>
-<summary>查看原文（10行）</summary>
+DSH 工具声明 source 查询参数。
 
 ```text
-			lookupStart := time.Now()
-			t, err := tenantRepo.GetByID(r.Context(), apiKey)
-			lookupDuration := time.Since(lookupStart)
-			if err != nil {
-				writeError(w, http.StatusBadRequest, "invalid API key")
-				return
-			}
-			if t.DeletedAt != nil || t.Status != domain.TenantActive {
-				writeError(w, http.StatusBadRequest, "invalid API key")
-				return
+const searchParameters = {
+  q: { type: "string", description: "Search query" },
+  tags: { type: "string", description: "Comma-separated tags to filter by (AND)" },
+  source: { type: "string", description: "Filter by source agent" },
+  limit: { type: "integer", description: "Max results (default 20, max 200)" },
+  offset: { type: "integer", description: "Pagination offset" },
+  memory_type: { type: "string", description: "Comma-separated memory types" },
 ```
 
-</details>
+#### 缺口
 
-**依据 5 · 源码核查**：[server/internal/middleware/auth.go:502-513](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/middleware/auth.go#L502-L513)
+- 未运行 DSH 查询实际所走的专用分支、全部后端及过滤
+  **影响**：不能声称所有 API 忽略 source 或具备同等隔离
+  **进一步探讨**：对普通、chain、session 和 content 搜索逐支插入多来源记录验证。
 
-tenant绑定及可自报AgentName。
+<a id="research-q04"></a>
 
-<details>
-<summary>查看原文（12行）</summary>
+<a id="detail-section-14"></a>
 
-```text
-			info := &domain.AuthInfo{
-				TenantID:      t.ID,
-				TenantDB:      db,
-				ClusterID:     t.ClusterID,
-				APIKeySubject: apiKey,
-			}
-			if agentID := r.Header.Get(AgentIDHeader); agentID != "" {
-				info.AgentName = agentID
-			}
+### Q04 · DSH 自动召回与写入何时发生，有哪些外发与丢失边界？
 
-			ctx := context.WithValue(r.Context(), authInfoKey, info)
-			next.ServeHTTP(w, r.WithContext(ctx))
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 自动写入和共享空间最容易产生什么采用误解？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-DSH接入默认开启recall和ingest，首步查询远程记忆，完整turn结束后把有界消息排入每session队列，关闭时排空或中止。这减少手工复制，但也使聊天进入远端存储；用户必须明确空间、密钥、保留和删除政策，不能把“记忆”理解为只保存在当前机器。共享key对应空间内共享访问，agentId只是来源标记；自动抽取可能把临时猜测写成事实，混合检索高相关不证明当前有效。源码可见队列和限字节降低无界写入风险，却没有在本轮证明断线重试幂等、跨用户隔离或删除已召回上下文的传播。
+dsh-plugin/index.ts:20-24、53-70 默认托管 URL，recall 和 ingest 默认开启；553-574 在 next 后仅首步、合格且满足最小字符时查询并将记忆加为用户消息，失败保留原决策。584-616 在正常 completed turn 后截取有界消息，按 session 链式排队调用 smart ingest，失败仅告警；622-632 卸载时等待队列并设置超时后中止。208-229 将 API key 和消息发送到配置 URL；默认可能向外部服务发送对话。内存队列、去重和卸载等待不证明崩溃后持久送达、无重复或召回事实可信。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-plugin/src/index.ts:54-71](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/dsh-plugin/src/index.ts#L54-L71)
+**依据 1 · 源码核查**：[dsh-plugin/src/index.ts:20-24](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L20-L24)
 
-自动recall和ingest默认开启并有边界。
+默认服务与 timeout 常量。
+
+```text
+const DEFAULT_API_URL = "https://api.mem9.ai";
+const DEFAULT_API_KEY_ENV = "MEM9_API_KEY";
+const DEFAULT_AGENT_ID = "deepseek-harness";
+const DEFAULT_TIMEOUT_MS = 8_000;
+const DEFAULT_SEARCH_TIMEOUT_MS = 15_000;
+```
+
+**依据 2 · 源码核查**：[dsh-plugin/src/index.ts:53-70](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L53-L70)
+
+召回和写入默认及大小限制。
 
 <details>
 <summary>查看原文（18行）</summary>
 
 ```text
+/** Loader configuration schema. */
 export const Config: z<Config> = z.object({
   apiUrl: z.string().default(DEFAULT_API_URL),
   apiKeyEnv: z.string().default(DEFAULT_API_KEY_ENV),
@@ -486,17 +618,50 @@ export const Config: z<Config> = z.object({
     enabled: z.boolean().default(true),
     maxMessages: z.number().default(20),
     maxBytes: z.number().default(204_800),
-  }),
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-plugin/src/index.ts:553-580](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/dsh-plugin/src/index.ts#L553-L580)
+**依据 3 · 源码核查**：[dsh-plugin/src/index.ts:208-229](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L208-L229)
 
-首步远程检索注入与错误日志。
+请求与凭据发送。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（22行）</summary>
+
+```text
+  private async request(
+    method: string,
+    path: string,
+    body: JsonValue | undefined,
+    callerSignal: AbortSignal,
+    timeoutMs: number,
+  ): Promise<Record<string, JsonValue>> {
+    const credential = await this.ctx.credentials.resolve(this.config.apiKeyRef);
+    if (credential === undefined) throw new Error(`mem9 credential ${this.config.apiKeyRef} is not configured`);
+    const timeoutSignal = AbortSignal.timeout(timeoutMs);
+    const signal = AbortSignal.any([callerSignal, timeoutSignal]);
+    const response = await fetch(`${this.config.apiUrl}${path}`, {
+      method,
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": credential.value,
+        "x-mnemo-agent-id": this.config.agentId,
+        "user-agent": "@mem9/dsh-plugin/0.1.0",
+      },
+      body: body === undefined ? undefined : JSON.stringify(body),
+      signal,
+    });
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh-plugin/src/index.ts:553-581](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L553-L581)
+
+首步召回和失败退回。
+
+<details>
+<summary>查看原文（29行）</summary>
 
 ```text
   ctx.on("agent/pre-step", async ({ agent, step, signal }, next): Promise<PreStepDecision> => {
@@ -527,13 +692,14 @@ export const Config: z<Config> = z.object({
         return { kind: "enter", messages: [...decision.messages, notice] };
       }
       ctx.logger.warn(`mem9: automatic recall failed: ${error instanceof Error ? error.message : String(error)}`);
+      return decision;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[dsh-plugin/src/index.ts:584-616](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/dsh-plugin/src/index.ts#L584-L616)
+**依据 5 · 源码核查**：[dsh-plugin/src/index.ts:584-616](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L584-L616)
 
-完成turn后有界消息排队发送。
+完成后排队写入与失败告警。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -576,34 +742,62 @@ export const Config: z<Config> = z.object({
 
 </details>
 
+**依据 6 · 源码核查**：[dsh-plugin/src/index.ts:622-632](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L622-L632)
+
+卸载 drain 与中止。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  ctx.effect(() => async () => {
+    closing = true;
+    const drain = Promise.allSettled([...ingestQueues.values()]);
+    const timeout = setTimeout(() => ingestAbort.abort(new Error("mem9 ingest drain timed out")), resolved.defaultTimeoutMs);
+    try {
+      await drain;
+    } finally {
+      clearTimeout(timeout);
+      ingestAbort.abort(new Error("mem9 plugin unloaded"));
+    }
+    ingestQueues.clear();
+```
+
+</details>
+
 #### 缺口
 
-- 自动抽取正确率、断线写入去重及删除传播未核实。
-  **影响**：共享错误事实可能放大，不能保证自动记忆可靠。
-  **进一步探讨**：固定两Agent空间模拟错误事实、更正、删除和断线重发，检查所有读者。
+- 未测试崩溃、超时、重复请求或实际外发
+  **影响**：不能保证持久送达、幂等或隐私
+  **进一步探讨**：隔离本地服务按故障点计数并检查实际请求体。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 什么团队可试用，首次与持续负担怎样控制？
+### Q05 · 部署、密钥、成本及退出需要什么？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-已有明确共享知识场景、能接受服务端存储的团队可用隔离测试空间试用人工确认事实，先关闭自动ingest，只写少量非敏感记录，再做读、更正和删除。自托管需要Go服务、匹配数据库schema、备份与运维；托管省部署但引入账号、配额和服务策略。持续检索可能调用embedding，写入含抽取与存储，费用、延迟及质量未知，不能把底座额度当免费保证。失败恢复需要处理不可用服务、部分写入、密钥轮换、导出和回退本地文档。若混入另一空间、旧事实更正不生效或无法确认数据删除，应停止自动使用并回到人工维护的项目文档；只读源码不支持持续安装结论。
+README:24-36 提供托管与自托管两种路径，后者需要准备服务和数据库；118-126 指明 API 认证。DSH 默认启用自动读写，采用者需要可信服务、隔离空间和凭据、可用网络及人工更正流程；服务模型、索引存储及人工审核会有尚未量化的现金/资源成本。用户可先关闭自动 ingest、使用隔离空间和合成事实手动试读写，再核对删除；若授权、数据位置或删除传播不明，停止自动共享并回本地笔记。没有运行或核对托管服务价格，不能推断免费或实时一致。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:29-70](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/README.md#L29-L70)
+**依据 1 · 作者声明**：[README.md:24-36](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L24-L36)
 
-托管/自托管条件及密钥。
+托管与自托管部署。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（13行）</summary>
 
 ````text
+## Quick Start
+
+1. Choose your mem9 endpoint.
+
+   - Hosted API: `https://api.mem9.ai`
    - Self-hosted: apply the matching control-plane schema, then start `mnemo-server`:
 
      ```bash
@@ -612,84 +806,35 @@ export const Config: z<Config> = z.object({
      ```
 
      See [Self-Hosting](#self-hosting) for backend-specific setup details, and [API Reference](#api-reference) for provisioning.
-
-2. Pick your integration guide.
-
-   - [OpenClaw / ClawHub](https://mem9.ai/openclaw-memory)
-   - [Hermes Agent](https://github.com/mem9-ai/mem9-hermes-plugin#readme)
-   - [Claude Code](claude-plugin/README.md)
-   - [OpenCode](opencode-plugin/README.md)
-   - [Codex](codex-plugin/README.md)
-   - [DeepSeek Harness](dsh-plugin/README.md)
-   - [Dify](https://github.com/mem9-ai/mem9-dify-plugin#readme)
-   - [Any HTTP client / custom runtime](#api-reference)
-
-3. Set your credentials.
-
-   ```bash
-   # Hosted API
-   export MEM9_API_URL="https://api.mem9.ai"
-   export MEM9_API_KEY="<mem9-api-key>"
-
-   # Self-hosted
-   export MEM9_API_URL="http://localhost:8080"
-   export MEM9_API_KEY="<mem9-api-key>"
-   ```
-
-   For self-hosted deployments, use your server URL and the mem9 API key returned or configured by your provisioning flow.
-
-## Why mem9
-
-mem9 gives coding agents one shared memory layer instead of separate local notebooks and one-off prompt files.
-
-| What mem9 gives you | Why it matters |
-|---|---|
-| Persistent memory across sessions and machines | Your context survives restarts, laptop switches, and long-running projects |
-| Shared memory across agents and workflow platforms | OpenClaw, Hermes Agent, Claude Code, OpenCode, Codex, DeepSeek Harness, Dify apps, and custom clients can recall the same facts |
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[server/internal/service/memory.go:547-566](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/service/memory.go#L547-L566)
+**依据 2 · 作者声明**：[README.md:118-126](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L118-L126)
 
-检索embedding是实际持续依赖。
-
-<details>
-<summary>查看原文（20行）</summary>
+作者列出的增查改删。
 
 ```text
-func (s *MemoryService) hybridSearch(ctx context.Context, filter domain.MemoryFilter) ([]domain.Memory, int, error) {
-	limit := filter.Limit
-	if limit <= 0 || limit > 200 {
-		limit = 10
-	}
-	offset := filter.Offset
-	if offset < 0 {
-		offset = 0
-	}
-	fetchLimit := limit * 3
+### Preferred API (`v1alpha2`)
 
-	queryVec, err := s.embedder.Embed(ctx, filter.Query)
-	observeRecallEmbeddingRequest(s.embedder, err)
-	if err != nil {
-		return nil, 0, fmt.Errorf("embed query for search: %w", err)
-	}
-
-	vecResults, vecErr := s.memories.VectorSearch(ctx, queryVec, filter, fetchLimit)
-	if vecErr != nil {
-		return nil, 0, fmt.Errorf("vector search: %w", vecErr)
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/v1alpha2/mem9s/memories` | Preferred unified write endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories` | Preferred search endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories/{id}` | Preferred get-by-id endpoint. Requires `X-API-Key` header |
+| `PUT` | `/v1alpha2/mem9s/memories/{id}` | Preferred update endpoint. Requires `X-API-Key` header |
+| `DELETE` | `/v1alpha2/mem9s/memories/{id}` | Preferred delete endpoint. Requires `X-API-Key` header |
 ```
 
-</details>
+**依据 3 · 源码核查**：[dsh-plugin/src/index.ts:53-70](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L53-L70)
 
-**依据 3 · 源码核查**：[dsh-plugin/src/index.ts:54-71](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/dsh-plugin/src/index.ts#L54-L71)
-
-可配置关闭自动写入，适合收窄试验。
+自动功能默认及限制。
 
 <details>
 <summary>查看原文（18行）</summary>
 
 ```text
+/** Loader configuration schema. */
 export const Config: z<Config> = z.object({
   apiUrl: z.string().default(DEFAULT_API_URL),
   apiKeyEnv: z.string().default(DEFAULT_API_KEY_ENV),
@@ -707,34 +852,83 @@ export const Config: z<Config> = z.object({
     enabled: z.boolean().default(true),
     maxMessages: z.number().default(20),
     maxBytes: z.number().default(204_800),
-  }),
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh-plugin/src/index.ts:208-229](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L208-L229)
+
+服务 URL、认证和请求。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  private async request(
+    method: string,
+    path: string,
+    body: JsonValue | undefined,
+    callerSignal: AbortSignal,
+    timeoutMs: number,
+  ): Promise<Record<string, JsonValue>> {
+    const credential = await this.ctx.credentials.resolve(this.config.apiKeyRef);
+    if (credential === undefined) throw new Error(`mem9 credential ${this.config.apiKeyRef} is not configured`);
+    const timeoutSignal = AbortSignal.timeout(timeoutMs);
+    const signal = AbortSignal.any([callerSignal, timeoutSignal]);
+    const response = await fetch(`${this.config.apiUrl}${path}`, {
+      method,
+      headers: {
+        "content-type": "application/json",
+        "x-api-key": credential.value,
+        "x-mnemo-agent-id": this.config.agentId,
+        "user-agent": "@mem9/dsh-plugin/0.1.0",
+      },
+      body: body === undefined ? undefined : JSON.stringify(body),
+      signal,
+    });
 ```
 
 </details>
 
 #### 缺口
 
-- 无当前服务价格、测试空间运维量与效果任务数据。
-  **影响**：无法估算单位合格记忆成本。
-  **进一步探讨**：记录一组固定非敏感事实的全部写入/查询费用、延迟和人工更正时间。
+- 未验证实际托管费用、删除传播及恢复
+  **影响**：无法估计总成本或承诺删除后彻底清理
+  **进一步探讨**：隔离空间记录账单、备份与删除后各客户端表现。
 
-<a id="research-q05"></a>
+<a id="research-q06"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-16"></a>
 
-### Q05 · 更正传播验证能否比召回率更接近共享记忆价值？
+### Q06 · 能否在共享空间中减少错误记忆跨助手传播？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-未验证假设是将自动写入先变为候选事实，再把更正/删除后的跨Agent读取作为验收单元。由Q03的多读者与自动抽取风险推导，创新点在治理交接而不是新增向量数据库。最小验证固定两Agent、同一隔离空间及已知真值，分别写入正确、临时和错误记录后更正/删除；比较现流程与候选确认原型的错误事实进入率、更正传播时间、人工操作数及最终任务答案。若确认步骤没有减少错误或传播仍不一致，就否定原型价值；不把这一设想写为现有服务已实现。
+当前 API 已有更新、删除和多 agent 输入，DSH 也自动写入并检索；简单增加共享存储或删除按钮不构成增量。未验证设想是自动提取结果先进入隔离的待确认区，并为共享事实绑定来源、版本和撤销状态；明确用户确认后才向其他 agent 公开，修订或删除后先传播撤销，无法确认同步时返回 unknown 而非旧事实。该方案依赖服务提供可靠的版本、授权和撤销传播，不能把 agentId 标签当独立身份。对照当前自动写入，用两个 agent、矛盾事实、离线后重连、用户拒绝、更正和删除测错误事实传播、漏召回、确认耗时、滞后和敏感数据泄露；若已撤销仍被当现行、确认负担过大或错误传播不降则否定。尚未实现，也未穷尽核心是否有等价待审功能。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-plugin/src/index.ts:584-616](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/dsh-plugin/src/index.ts#L584-L616)
+**依据 1 · 作者声明**：[README.md:118-126](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/README.md#L118-L126)
 
-自动完结后写入形成候选确认的具体动因。
+现有增查改删。
+
+```text
+### Preferred API (`v1alpha2`)
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/v1alpha2/mem9s/memories` | Preferred unified write endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories` | Preferred search endpoint. Requires `X-API-Key` header |
+| `GET` | `/v1alpha2/mem9s/memories/{id}` | Preferred get-by-id endpoint. Requires `X-API-Key` header |
+| `PUT` | `/v1alpha2/mem9s/memories/{id}` | Preferred update endpoint. Requires `X-API-Key` header |
+| `DELETE` | `/v1alpha2/mem9s/memories/{id}` | Preferred delete endpoint. Requires `X-API-Key` header |
+```
+
+**依据 2 · 源码核查**：[dsh-plugin/src/index.ts:584-616](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/dsh-plugin/src/index.ts#L584-L616)
+
+当前自动完成后写入。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -777,24 +971,83 @@ export const Config: z<Config> = z.object({
 
 </details>
 
-**依据 2 · 源码核查**：[server/internal/service/memory.go:608-614](https://github.com/mem9-ai/mem9/blob/fd63ae82ae2f1d5a65c4123f4125e4b78f750ff2/server/internal/service/memory.go#L608-L614)
+**依据 3 · 源码核查**：[server/internal/service/memory.go:223-243](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/service/memory.go#L223-L243)
 
-召回排序并不检查事实真值。
+检索路径及过滤边界。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
-	scores := rrfMerge(kwResults, vecResults)
-	mems := collectMems(kwResults, vecResults)
-	applyTypeWeights(mems, scores)
-	merged := sortByScore(mems, scores)
+func (s *MemoryService) Search(ctx context.Context, filter domain.MemoryFilter) ([]domain.Memory, int, error) {
+	if filter.Query == "" {
+		return s.List(ctx, filter)
+	}
+	searchFilter := filter
+	searchFilter.SessionID = ""
+	searchFilter.Source = ""
 
-	page, total := s.paginate(merged, offset, limit)
-	return finalizeSearchResults(setScores(page, scores), filter.Query), total, nil
+	slog.Info("memory search", "query_len", len(filter.Query), "auto_model", s.autoModel, "fts", s.memories.FTSAvailable())
+	if s.autoModel != "" {
+		return s.autoHybridSearch(ctx, searchFilter)
+	}
+	if s.embedder != nil {
+		return s.hybridSearch(ctx, searchFilter)
+	}
+	if s.memories.FTSAvailable() {
+		return s.ftsOnlySearch(ctx, searchFilter)
+	}
+	// FTS probe still running (cold start) — fall back to LIKE-based keyword search.
+	slog.Warn("search: FTS not yet available, falling back to keyword search")
+	return s.keywordOnlySearch(ctx, searchFilter)
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[server/internal/middleware/auth.go:438-465](https://github.com/mem9-ai/mem9/blob/b41458d6f3d516a9a26c3547f06d960dcd785ac4/server/internal/middleware/auth.go#L438-L465)
+
+当前普通密钥按租户解析。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+			lookupStart := time.Now()
+			t, err := lookupCredentialTenant(r.Context(), tenantRepo, apiKey, state.credentials)
+			lookupDuration := time.Since(lookupStart)
+			if err != nil {
+				if state.credentials != nil && !errors.Is(err, domain.ErrNotFound) {
+					writeError(w, http.StatusServiceUnavailable, "auth backend unavailable; retry request")
+					return
+				}
+				writeError(w, http.StatusBadRequest, "invalid API key")
+				return
+			}
+			if t.DeletedAt != nil || t.Status != domain.TenantActive {
+				writeError(w, http.StatusBadRequest, "invalid API key")
+				return
+			}
+
+			// Decrypt password before using
+			decryptStart := time.Now()
+			decryptedPassword, err := enc.Decrypt(r.Context(), t.DBPassword)
+			decryptDuration := time.Since(decryptStart)
+			if err != nil {
+				writeError(w, http.StatusInternalServerError, "failed to decrypt tenant credentials")
+				return
+			}
+			t.DBPassword = decryptedPassword
+
+			poolStart := time.Now()
+			db, err := pool.Get(r.Context(), t.ID, t.DSNForBackend(pool.Backend()))
+```
+
+</details>
 
 #### 缺口
 
-- 人工确认与更正传播机制的净收益未实测。
-  **影响**：仍是研究方向而非成熟功能。
-  **进一步探讨**：按同一空间两Agent更正/删除任务做对照。
+- 未核所有版本协议及待审机制，也无双 agent 原型
+  **影响**：无法证明方案增量与撤销传播收益
+  **进一步探讨**：先核现有空间权限及机制，再做受控双 agent 对照。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

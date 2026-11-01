@@ -1,49 +1,57 @@
 {
     "repository": "Phant0Meow/dsh-meow-memory",
     "repository_id": 1333986968,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
-    "stars": 326,
-    "pushed_at": "2026-10-26T14:26:15Z",
+    "captured_at": "2026-11-01T09:18:30.076Z",
+    "window_start": "2026-10-02T09:18:30.076Z",
+    "stars": 342,
+    "pushed_at": "2026-11-01T06:36:58Z",
     "issues": {
         "open": null,
-        "closed": 47,
-        "created_30d": 39,
-        "closed_30d": 33,
-        "updated_30d": 46
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": 37,
+        "updated_30d": 52
     },
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A204:1AF9A8:58EE710:7ED8682:6AE2A2AA and timestamp 2026-10-29 01:34:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2FE:FE8BB:16C440:194461:6AE70425 and timestamp 2026-11-01 09:19:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D338:25FC08:184E49:1ACCD7:6AE70426 and timestamp 2026-11-01 09:19:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-memory%20is%3Aissue%20created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D378:268345:161390:189394:6AE70428 and timestamp 2026-11-01 09:19:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "meow-memory",
-        "captured_at": "2026-10-29T01:00:45.095Z",
-        "window_start": "2026-09-29",
-        "window_end": "2026-10-28",
-        "downloads_30d": 18516,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/meow-memory",
+        "captured_at": "2026-10-31T19:20:26.627Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 20717,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/meow-memory",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-15T06:02:58.745Z",
-            "captured_at": "2026-10-29T01:00:45.095Z",
+            "captured_at": "2026-10-31T19:20:26.627Z",
             "source_url": "https://registry.npmjs.org/meow-memory",
             "error": null,
-            "latest_version": "0.32.1",
-            "latest_published_at": "2026-10-26T14:27:49.927Z",
+            "latest_version": "0.32.3",
+            "latest_published_at": "2026-10-31T13:36:38.450Z",
             "latest_error": null
         }
     }

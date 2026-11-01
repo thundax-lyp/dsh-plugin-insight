@@ -1,27 +1,48 @@
 {
     "repository": "vshulcz/deja-vu",
     "repository_id": 1300173275,
-    "captured_at": "2026-10-27T04:59:15.812Z",
-    "window_start": "2026-09-27T04:59:15.812Z",
-    "stars": 1310,
-    "pushed_at": "2026-10-26T23:27:21Z",
+    "captured_at": "2026-11-01T09:18:30.076Z",
+    "window_start": "2026-10-02T09:18:30.076Z",
+    "stars": 1343,
+    "pushed_at": "2026-11-01T09:41:32Z",
     "issues": {
-        "open": 29,
-        "closed": 2561,
-        "created_30d": 935,
-        "closed_30d": 917,
-        "updated_30d": 985
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Avshulcz%2Fdeja-vu%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CF58:286DD:15C977:184992:6AE70410 and timestamp 2026-11-01 09:19:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Avshulcz%2Fdeja-vu%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFAE:25FC08:184357:1AC0D8:6AE70412 and timestamp 2026-11-01 09:19:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avshulcz%2Fdeja-vu%20is%3Aissue%20created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CFF0:29175:155AA2:17D838:6AE70413 and timestamp 2026-11-01 09:19:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avshulcz%2Fdeja-vu%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D040:26E1E2:17900B:1A0F05:6AE70414 and timestamp 2026-11-01 09:19:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Avshulcz%2Fdeja-vu%20is%3Aissue%20updated%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D072:260E8E:16421A:18C1DB:6AE70415 and timestamp 2026-11-01 09:19:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[62c160c](https://github.com/strukto-ai/mirage/tree/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh)
+源码版本：[de31179](https://github.com/strukto-ai/mirage/tree/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,724](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C724&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage) [![npm 30d 1,080](https://img.shields.io/static/v1?label=npm+30d&message=1%2C080&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@struktoai/mirage-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@struktoai/mirage-dsh)
+[![GitHub ★ 3,759](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C759&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage) [![npm 30d 1,152](https://img.shields.io/static/v1?label=npm+30d&message=1%2C152&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@struktoai/mirage-dsh) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@struktoai/mirage-dsh)
 <!-- END META -->
 
-> **功能**：将DSH文件、Shell、子进程和溢出输出接口接到Mirage虚拟工作区。
+> **功能**：为 DSH 的文件和 shell provider 接入 Mirage 工作区。
 
-> **亮点**：[Q02](#research-q02)相对独立SDK工具，本组件保留DSH接口并统一fs、shell与spill世界，workspace所有权和session绑定有明确适配增量。
+> **亮点**：把两个 DSH provider 接到同一虚拟路径空间；Mirage 平台功能不归子组件。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：[Q03](#research-q03)无版本backend让陈旧写保护降级，替换provider还改变host搜索/cwd语义；能加载不能等同完整兼容。
+> **主要限制**：单次 VFS 操作不能在内部取消，spill 可能失败；无 approver 保持待决而不是自动通过。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · DSH适配组件与Mirage根平台各自负责什么？](#detail-section-11)
-  - [Q02 · 如何避免文件、shell和大输出落在不同世界？](#detail-section-12)
-  - [Q03 · 换provider后哪些原生行为发生变化？](#detail-section-13)
-  - [Q04 · 接入和退出是否可在现有profile上安全尝试？](#detail-section-14)
-  - [Q05 · 能否在加载时验证整个虚拟世界的一致性？](#detail-section-15)
+  - [Q01 · DSH 适配器相比原生文件和 shell 提供什么？](#detail-section-11)
+  - [Q02 · 文件、shell 和大输出如何保持同一世界？](#detail-section-12)
+  - [Q03 · 权限和审批是否与原生行为完全相同？](#detail-section-13)
+  - [Q04 · 怎样安全试用和退出？](#detail-section-14)
+  - [Q05 · 如何验证虚拟世界一致性？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,7 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：本组件@struktoai/mirage-dsh是可加载DSH bundle，负责把DSH文件和shell接口接到Mirage挂载工作区；根项目的虚拟终端、数据源和runtime由其他包提供。目标是需要让Agent只见一组受控数据源的平台开发者，合格结果是DSH文件工具、bash和溢出结果在同一个虚拟世界读取，而不是意外回到host磁盘。原办法保留DSH默认fs/bash加外部数据工具；仅做本地编码不需要替换整套provider。
+> **用途**：希望 DSH 操作 Mirage 挂载工作区的平台开发者；基线为原生文件和 shell。[Q01](#research-q01)
+
+使用 DSH 原生文件系统、shell 和宿主审批。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -49,63 +51,61 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 文件后端 | 把文件操作导向mount | 版本token依backend |
-| Shell后端 | 同工作区执行命令 | host cwd和工具有差异 |
-| 输出存储 | spill留在虚拟世界 | 需配置可访问目录 |
+| --- | --- | --- |
+| 虚拟文件 | 接入工作区 | 单次 VFS 取消有限 |
+| 虚拟 shell | 同一路径执行命令 | 默认临时 session |
+| 审批与 spill | 对接授权与长输出 | 缺 approver 待决 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 匹配DSH/Node与Mirage包 | 必需 | provider接线 | 加载失败 |
-| workspace或mounts恰一 | 必需 | 世界所有权 | 明确拒绝配置 |
-| approval | ask规则时必需 | 人工许可 | 保持pending |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| 兼容 DSH 和 Node | 必需 | provider 宿主 | 不加载 |
+| Mirage workspace | 必需 | 虚拟文件与 shell | 停止配置 |
+| 正确挂载及审批 | 真实数据需要 | 权限与操作 | 不接真实数据 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 克隆profile装bundle | 默认provider已替换 |
-| 2 | 配RAM/只读mount | 文件与shell同源 |
-| 3 | 核对版本拒绝和spill | 异常恢复原profile |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 独立 profile 配置假源 | 确认路径 |
+| 核查 | 用 fs 与 shell 操作同样本 | 一致后继续 |
+| 退出 | 移除 provider | 恢复原生行为 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | SDK、runtime和mount | provider/权限配置 | 迁移时间未知 |
-| 持续 | backend API与job | 版本兼容维护 | 金额未知 |
-| 失败恢复 | job与spill核对 | 恢复profile和存储 | RAM持久性不可假定 |
+| --- | --- | --- | --- |
+| 首次 | workspace 与 runtime 资源 | 挂载配置 | 宿主未测 |
+| 持续 | 后端调用费用未知 | 审查权限与路径 | 效率未测 |
+| 恢复 | spill 和远端资源 | 处理取消与不一致 | 单次 VFS 可能继续 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 同世界provider | service与session配置 | 全任务兼容 |
-| 并发保护 | 有版本时token | 无版本backend降级影响 |
+| --- | --- | --- |
+| 同一路径 | fs 与 shell 接 workspace | 所有后端一致 |
+| 审批 | 未提供 approver 保持待决 | 实际宿主交互 |
 
-> **思考**：[Q03](#research-q03)无版本backend让陈旧写保护降级，替换provider还改变host搜索/cwd语义；能加载不能等同完整兼容。
+> **思考**：单次 VFS 操作不能在内部取消，spill 可能失败；无 approver 保持待决而不是自动通过。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02)相对独立SDK工具，本组件保留DSH接口并统一fs、shell与spill世界，workspace所有权和session绑定有明确适配增量。
+> **亮点**：把两个 DSH provider 接到同一虚拟路径空间；Mirage 平台功能不归子组件。[Q01](#research-q01) [Q02](#research-q02)
 
-owned/adopted workspace拒绝无效参数、ready错误保持可见，值得复用。移植需共同保持fs版本、shell会话、approval与spill语义；本组件统计不应包含核心平台作为自身规模。
+单次 VFS 操作的取消仅边界检查；缺 approver 保持待决，spill 写入失败可能不可恢复。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03)无版本backend让陈旧写保护降级，替换provider还改变host搜索/cwd语义；能加载不能等同完整兼容。
+单次 VFS 操作不能在内部取消，spill 可能失败；无 approver 保持待决而不是自动通过。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-需要让DSH仅访问受控挂载的平台开发者可在克隆profile里试用该适配。相比另加SDK工具，它把文件、shell和大输出统一到同一虚拟工作区，但真实任务兼容尚未验收。若backend版本保护或原有工具替换影响当前任务，就停止迁移并恢复原profile。 依据 [Q01](#research-q01)、[Q03](#research-q03)、[Q04](#research-q04)。
+先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -113,18 +113,18 @@ owned/adopted workspace拒绝无效参数、ready错误保持可见，值得复�
 
 **核查状态**：已检查源码。
 
-已有实现为固定源码检查支持；用户收益未实测；未来设计假设未验证。
+固定子组件源码支持共享 workspace 与审批映射；未运行宿主或根平台。
 
-- 已检查：作者 README、包清单、源码路径 typescript/packages/dsh/README.md、typescript/packages/dsh/package.json、typescript/packages/dsh/cordis.patch.yml、typescript/packages/dsh/src/service.ts、typescript/packages/dsh/src/fs.ts、typescript/packages/dsh/src/shell.ts、typescript/packages/dsh/src/approval.ts 及固定范围 inventory；组件：typescript/packages/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 typescript/packages/dsh/package.json、typescript/packages/dsh/src/fs.ts、typescript/packages/dsh/src/shell.ts、typescript/packages/dsh/src/spill.ts、typescript/packages/dsh/src/approval.ts 及固定范围 inventory；组件：typescript/packages/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：本轮只读固定提交，未执行目标代码或宿主验收；效果、人工耗时及持续采用情况未知。
-- 下一步：以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+- 边界：固定子组件 inventory 27 个指定扩展名文件、无排除或解析错误；仅核查子组件源码，未运行或引用根实现。
+- 下一步：固定宿主与平台，以只读样本核验路径、spill、取消和审批。
 
 **分析版本**
 
 - **仓库**：[strukto-ai/mirage](https://github.com/strukto-ai/mirage)
-- **版本号**：0.0.8-alpha.2（[固定提交 62c160c](https://github.com/strukto-ai/mirage/tree/62c160c6f47d455cf1bb604ed55c419f8ed254c2)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.0.8-alpha.2（[固定提交 de31179](https://github.com/strukto-ai/mirage/tree/de311792e60fe6f7edb6e18cb5411a843b4849db)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -132,9 +132,9 @@ owned/adopted workspace拒绝无效参数、ready错误保持可见，值得复�
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)提出fs/shell/spill一致性探针的未验证假设，用版本缺失与并发任务检验预测价值。
+未验证假设：非破坏性检查 fs、shell、spill 和审批的一致性可减少错配；须对照现有共享分发验证。[Q05](#research-q05)
 
-以原办法为对照执行同一合格任务，记录错误、人工干预和退出恢复；涉及真实副作用前先在可丢弃数据上验证。
+固定宿主与平台，以只读样本核验路径、spill、取消和审批。
 
 <a id="detail-section-9"></a>
 
@@ -143,44 +143,43 @@ owned/adopted workspace拒绝无效参数、ready错误保持可见，值得复�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 1 | 254 | — | — | 3996 |
-| .ts | test | 10 | 3593 | 3027 | 260 | — |
-| .ts | source | 16 | 3232 | 1906 | 1145 | — |
+| .md | source | 1 | 338 | — | — | 4484 |
+| .ts | test | 10 | 3618 | 3051 | 260 | — |
+| .ts | source | 16 | 3262 | 1934 | 1145 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/strukto-ai/mirage/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/strukto-ai/mirage/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查Mirage DSH Providers的具体任务增量、关键失败条件与可控采用路径。
+**插件研究总目标**：Mirage DSH provider 如何连接文件、shell 和审批，其隔离与取消边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · DSH适配组件与Mirage根平台各自负责什么？
+### Q01 · DSH 适配器相比原生文件和 shell 提供什么？
 
-**研究主题**：场景与需求、采用判断
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-本组件@struktoai/mirage-dsh是可加载DSH bundle，负责把DSH文件和shell接口接到Mirage挂载工作区；根项目的虚拟终端、数据源和runtime由其他包提供。目标是需要让Agent只见一组受控数据源的平台开发者，合格结果是DSH文件工具、bash和溢出结果在同一个虚拟世界读取，而不是意外回到host磁盘。原办法保留DSH默认fs/bash加外部数据工具；仅做本地编码不需要替换整套provider。
+希望 DSH 使用 Mirage 挂载工作区的开发者可通过该子包替换 ctx.fs 与 ctx.shell；相对原生文件系统和 shell，增量是让两者走同一虚拟路径空间。Mirage 工作区和后端能力来自独立平台，不能归为适配器新增算法；单一普通本地项目可能无需替换。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/dsh/package.json:1-12](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/package.json#L1-L12)
+**依据 1 · 源码核查**：[typescript/packages/dsh/package.json:1-5](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/package.json#L1-L5)
 
-组件身份与仓库子路径
-
-<details>
-<summary>查看原文（12行）</summary>
+子包身份与 provider 描述。
 
 ```text
 {
@@ -188,325 +187,285 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [Gi
   "version": "0.0.8-alpha.2",
   "description": "DeepSeek Harness (dsh) providers backed by a mirage workspace: ctx.fs and ctx.shell over mounts",
   "homepage": "https://github.com/strukto-ai/mirage#readme",
-  "bugs": {
-    "url": "https://github.com/strukto-ai/mirage/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/strukto-ai/mirage.git",
-    "directory": "typescript/packages/dsh"
 ```
 
-</details>
+**依据 2 · 源码核查**：[typescript/packages/dsh/src/fs.ts:165-171](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L165-L171)
 
-**依据 2 · 源码核查**：[typescript/packages/dsh/cordis.patch.yml:1-9](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/cordis.patch.yml#L1-L9)
-
-替换provider而非独立根平台
+文件系统与 shell 共用虚拟工作区。
 
 ```text
-# The mirage bundle patch. Applied over dsh-base by `dsh --profile <name>`
-# after `dsh plugin --profile <name> add @struktoai/mirage-dsh`: it swaps
-# the filesystem and shell providers for mirage-backed ones, so dsh's file
-# tools and bash tool operate on a workspace of mounted VFS instead
-# of the host disk.
-#
-# Override the `mirage` row's config in the profile's own cordis.patch.yml
-# to mount real VFS (the block form is `vfs` registry name,
-# `mode`, and the VFS's `config`; `!!js` expressions resolve env vars
+/**
+ * Mirage-backed implementation of `ctx.fs`. Targets are canonical virtual
+ * paths (namespace symlinks followed), every operation walks the workspace
+ * dispatcher — session grants, admission policies, cache read-through and
+ * post-write invalidation all fire exactly as they do for a shell command —
+ * and `processPath` answers in the same virtual path space the mirage shell
+ * executes in, so the two providers share one execution world.
 ```
 
 #### 缺口
 
-- 没有目标DSH部署的完整任务验收。
-  **影响**：缺少实际DSH部署验收，不能把provider加载视为任务通过。
-  **进一步探讨**：在克隆profile针对fs、bash、spill执行同一可丢弃文件任务并核对来源一致性。
+- 未运行 DSH、Mirage 或外部数据源
+  **影响**：无法证明路径一致、审批和运行时隔离
+  **进一步探讨**：隔离 profile 验证 fs、shell、spill 和审批
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 如何避免文件、shell和大输出落在不同世界？
+### Q02 · 文件、shell 和大输出如何保持同一世界？
 
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-bundle关闭host subprocess/fs/bash/PowerShell/search及spill-local，插入mirage service、fs、subprocess、shell和spill-store。service要求workspace或mounts恰一来源，owned workspace可配profiles并将ask接到宿主approval；adopted workspace不接受被忽略的构造参数且生命周期仍归embedder。shell有sessionId绑定契约，默认每命令临时fork，绑定后cd/export可持续；fs也可绑定同名session。相对直接用SDK工具，增量是保留DSH原生工具接口同时统一工作区、权限与输出存储，不把核心VFS贡献重复算到adapter。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[typescript/packages/dsh/cordis.patch.yml:1-9](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/cordis.patch.yml#L1-L9)
-
-替换目的
-
-```text
-# The mirage bundle patch. Applied over dsh-base by `dsh --profile <name>`
-# after `dsh plugin --profile <name> add @struktoai/mirage-dsh`: it swaps
-# the filesystem and shell providers for mirage-backed ones, so dsh's file
-# tools and bash tool operate on a workspace of mounted VFS instead
-# of the host disk.
-#
-# Override the `mirage` row's config in the profile's own cordis.patch.yml
-# to mount real VFS (the block form is `vfs` registry name,
-# `mode`, and the VFS's `config`; `!!js` expressions resolve env vars
-```
-
-**依据 2 · 源码核查**：[typescript/packages/dsh/src/service.ts:177-206](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/service.ts#L177-L206)
-
-owned/adopted配置边界
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-  constructor(ctx: Context, config: MirageConfig = {}) {
-    super(ctx, 'mirage')
-    if (config.workspace !== undefined && config.mounts !== undefined) {
-      throw new Error('mirage: pass either workspace or mounts, not both')
-    }
-    if (config.workspace !== undefined) {
-      // An adopted workspace is already built, so runtimes and constructor
-      // options can no longer reach it. Saying so beats accepting a config
-      // whose runtimes silently never load, which is what the workspace and
-      // mounts pair above already refuses to do.
-      // `profiles` and `profile` join them for the same reason, and one
-      // more: an adopted workspace's roles and its `onAsk` are the
-      // embedder's own, so silently re-answering its asks through
-      // `ctx.approval` would take over a seam it may already have filled.
-      if (
-        config.runtimes !== undefined ||
-        config.workspaceOptions !== undefined ||
-        config.profiles !== undefined ||
-        config.profile !== undefined
-      ) {
-        throw new Error(
-          'mirage: runtimes, profiles, profile and workspaceOptions configure a service-owned workspace, not an adopted workspace',
-        )
-      }
-      this.built = config.workspace
-      this.ready = Promise.resolve(config.workspace)
-      return
-    }
-    if (config.mounts === undefined) {
-      throw new Error('mirage: one of workspace or mounts is required')
-```
-
-</details>
-
-**依据 3 · 源码核查**：[typescript/packages/dsh/src/service.ts:215-245](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/service.ts#L215-L245)
-
-profile解析、approval和异步ready
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-    if (config.profiles !== undefined) {
-      if (options.profiles !== undefined) {
-        throw new Error('mirage: pass profiles or workspaceOptions.profiles, not both')
-      }
-      options.profiles = parseProfiles(config.profiles)
-    }
-    if (config.profile !== undefined) {
-      if (options.profile !== undefined) {
-        throw new Error('mirage: pass profile or workspaceOptions.profile, not both')
-      }
-      options.profile = config.profile
-    }
-    // How an asked line gets answered. Installed for every service-owned
-    // workspace rather than only under a composed `ctx.approval`, because
-    // the two are one answer to mirage (an unset `onAsk` and a handler
-    // returning null both leave the ask pending) and installing always is
-    // what finds an approver composed after this plugin. An explicit
-    // `workspaceOptions.onAsk` is the embedder's decision and stands.
-    options.onAsk ??= askThroughApproval(ctx)
-    this.plannedRuntimes = options.runtimes?.map(builtEntry)
-    if (this.plannedRuntimes !== undefined) options.runtimes = [...this.plannedRuntimes]
-    const blocks = Object.values(config.mounts).some(isMountBlock)
-    if (blocks) {
-      this.ready = this.open(config.mounts, options)
-      // A declarative mount resolves asynchronously and nothing awaits
-      // `ready` until a provider's first call, so a failure here would
-      // reach the process as an unhandled rejection and take the whole
-      // harness down over a typo in a patch file. This only marks the
-      // rejection observed; `ready` still rejects for every real caller,
-      // and the disposer below still sees it.
-      void this.ready.catch(() => undefined)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[typescript/packages/dsh/src/shell.ts:91-113](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/shell.ts#L91-L113)
-
-持续session与临时fork语义
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-  /**
-   * Bind every command to this named workspace session. By default each
-   * command runs in an ephemeral fork of the workspace's default session,
-   * so nothing persists between calls, which is the one-shot contract of
-   * dsh's bash tool. With a session bound, `cd`, `export`, and function
-   * definitions persist across calls, the persistent-shell contract. The
-   * session is created on first use if the workspace does not have it; an
-   * existing session is adopted as is. While one command still runs in the
-   * session (one left running in the background), the next runs on a copy
-   * of the session beside it rather than waiting for it to end, so its
-   * `cd` and `export` last for that command alone.
-   *
-   * A spec carrying an explicit `env`, or a `workdir` that names a real
-   * directory in this world, still runs as a one-call subshell of the
-   * bound session, per mirage's `ExecuteOptions` semantics: both say
-   * "just for this command". The two things dsh injects on every call
-   * are deliberately not read that way, since neither carries that
-   * intent and either would fork every command and leave the binding
-   * with nothing to persist. A workdir resolved on the harness's own
-   * machine names nothing here and is dropped; the managed `DSH_*`
-   * snapshot is seeded into the session instead.
-   */
-  sessionId?: string
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 换provider后哪些原生行为发生变化？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-host目录cwd在虚拟世界可能没有意义，bundle因此说明忽略host工作目录；PowerShell和host ripgrep搜索被禁用，用户必须用虚拟shell能力替代。fs版本token优先fingerprint/revision，若后端连modified/size也不提供则返回unversioned，陈旧写保护降级为always-fresh，不能当严格并发保护。ask桥在调用时寻找live approver，缺approval保持pending而非自动允许。完整权限边界仍依赖Mirage配置与backend，不能只凭read-only字样断言隔离。
+文件 provider 将操作交给 workspace dispatcher 并解析虚拟路径；shell 默认每个命令使用临时 fork，配置具名 session 才保持 cwd 和环境。大输出可写到同一 workspace 的 spill 文件，但配置目录不可写时可能无法恢复完整输出；取消信号只在适配边界检查，单次远端 VFS 操作内部不能中断。该源码体现适配，不证明每个后端语义一致。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/dsh/src/fs.ts:70-80](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/fs.ts#L70-L80)
+**依据 1 · 源码核查**：[typescript/packages/dsh/src/fs.ts:165-177](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L165-L177)
 
-版本保护降级条件
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-// The freshness token behind FsVersion. Backends that report a fingerprint
-// or revision get a content-derived token; the rest fall back to metadata
-// (modified + size), and a backend reporting neither yields a constant, so
-// stale guards degrade to always-fresh there instead of always-stale.
-function versionOf(stat: FileStat): FsVersion {
-  if (stat.fingerprint !== null) return FsVersion(`fp:${stat.fingerprint}`)
-  if (stat.revision !== null) return FsVersion(`rev:${stat.revision}`)
-  if (stat.modified !== null || stat.size !== null) {
-    return FsVersion(`meta:${stat.modified ?? ''}:${String(stat.size ?? '')}`)
-  }
-  return FsVersion('unversioned')
-```
-
-</details>
-
-**依据 2 · 源码核查**：[typescript/packages/dsh/src/approval.ts:56-84](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/approval.ts#L56-L84)
-
-动态发现approver及缺失语义
+共享路径及单次操作取消边界。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
 /**
- * dsh's approval channel, or null when the composition has none.
+ * Mirage-backed implementation of `ctx.fs`. Targets are canonical virtual
+ * paths (namespace symlinks followed), every operation walks the workspace
+ * dispatcher — session grants, admission policies, cache read-through and
+ * post-write invalidation all fire exactly as they do for a shell command —
+ * and `processPath` answers in the same virtual path space the mirage shell
+ * executes in, so the two providers share one execution world.
  *
- * Read through `ctx.get`, not as `ctx.approval`. A plain property read
- * of a service this plugin does not `inject` does not answer undefined,
- * it throws (`cannot get property "approval" without inject`), so
- * probing that way would turn every ask in a composition without an
- * approver into a thrown error instead of a pending one. `ctx.get` is
- * cordis's documented read "without the inject requirement", and its
- * default strictness answers only a provider whose fiber is live, so an
- * unloaded approval plugin reads as absent rather than as a stale
- * channel nobody is listening on.
- *
- * Declaring `inject` instead would be wrong in the other direction: it
- * would make an approval channel a load requirement, and a headless
- * composition that legitimately has none would fail to compose at all.
- *
- * Read at ask time rather than captured when the plugin loads, because
- * cordis composes plugins in whatever order the profile lists them and a
- * snapshot taken at load would miss an approver registered after this.
- *
- * @param ctx the cordis context to read.
- * @returns the approver, or null when nothing provides one.
- */
-export function approverOf(ctx: Context): Approver | null {
-  const held: unknown = ctx.get('approval')
-  if (held === null || typeof held !== 'object') return null
-  const { request } = held as { request?: unknown }
-  return typeof request === 'function' ? (held as Approver) : null
+ * One limit worth stating: mirage's `ws.vfs` takes no `AbortSignal`, so
+ * cancellation is honored at this adapter's own boundaries (before a
+ * dispatch, between listing entries) and not inside a single op. A long
+ * read from a remote backend therefore runs to completion after the
+ * signal fires, and the caller learns of the abort when it returns.
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[typescript/packages/dsh/src/shell.ts:91-113](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/shell.ts#L91-L113)
+**依据 2 · 源码核查**：[typescript/packages/dsh/src/shell.ts:484-493](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/shell.ts#L484-L493)
 
-cwd和并发session限制
+默认 fork 与具名 session。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-  /**
-   * Bind every command to this named workspace session. By default each
-   * command runs in an ephemeral fork of the workspace's default session,
-   * so nothing persists between calls, which is the one-shot contract of
-   * dsh's bash tool. With a session bound, `cd`, `export`, and function
-   * definitions persist across calls, the persistent-shell contract. The
-   * session is created on first use if the workspace does not have it; an
-   * existing session is adopted as is. While one command still runs in the
-   * session (one left running in the background), the next runs on a copy
-   * of the session beside it rather than waiting for it to end, so its
-   * `cd` and `export` last for that command alone.
-   *
-   * A spec carrying an explicit `env`, or a `workdir` that names a real
-   * directory in this world, still runs as a one-call subshell of the
-   * bound session, per mirage's `ExecuteOptions` semantics: both say
-   * "just for this command". The two things dsh injects on every call
-   * are deliberately not read that way, since neither carries that
-   * intent and either would fork every command and leave the binding
-   * with nothing to persist. A workdir resolved on the harness's own
-   * machine names nothing here and is dropped; the managed `DSH_*`
-   * snapshot is seeded into the session instead.
-   */
-  sessionId?: string
+ * CLIs, the policy layer) against the shared `ctx.mirage` workspace, so a
+ * path from `ctx.fs` means the same file here. There is no OS process
+ * behind a command: `signal` in results is a compatibility value for kills,
+ * and abort/timeout act cooperatively at the executor's own boundaries.
+ *
+ * Every command runs in an ephemeral fork of the workspace's default
+ * session, so no shell state survives from one call to the next, matching
+ * the one-shot contract of dsh's bash tool. Configuring a `sessionId`
+ * binds all commands to one named session instead, whose cwd, exports,
+ * and functions persist across calls.
+```
+
+</details>
+
+**依据 3 · 源码核查**：[typescript/packages/dsh/src/shell.ts:550-574](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/shell.ts#L550-L574)
+
+spill 使用 workspace 与失败日志。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+
+  // A spill sink for one background command, or null when no spill
+  // directory is configured. The target reaches the live workspace so
+  // the full stream lands on a mount the agent can read back.
+  private newSpill(): SpillSink | null {
+    const dir = this.spillDir
+    if (dir === undefined) return null
+    const target: SpillTarget = {
+      ensureDir: async (d) => {
+        const ws = await this.workspace()
+        await ensureDirPath({ exists: (p) => ws.vfs.exists(p), mkdir: (p) => ws.vfs.mkdir(p) }, d)
+      },
+      write: async (p, bytes) => {
+        const ws = await this.workspace()
+        await ws.vfs.write(p, bytes)
+      },
+      append: async (p, bytes) => {
+        const ws = await this.workspace()
+        await ws.vfs.append(p, bytes)
+      },
+    }
+    spillCounter += 1
+    const log = this.ctx.logger('mirage-dsh')
+    return new SpillSink(target, dir, `mirage-shell-${spillCounter.toString()}`, (err: unknown) => {
+      log.debug('spill to %s failed, output will not be recoverable: %o', dir, err)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[typescript/packages/dsh/src/spill.ts:63-74](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/spill.ts#L63-L74)
+
+大输出落盘意图和写入失败。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+/**
+ * Keeps the full, uncapped stdout and stderr of one command in workspace
+ * files so a reader can recover output the delta budget dropped.
+ *
+ * Memory stays bounded: each channel buffers in memory only until the
+ * delivered delta first overruns its budget, at which point `begin()`
+ * flushes both buffers to their files and every later chunk appends
+ * straight to the file. A write failure (no writable mount at the
+ * configured path) disables the sink and leaves the paths undefined, the
+ * honest "no safe path available" answer, so the process still streams,
+ * just without a spill to point at.
+ */
 ```
 
 </details>
 
 #### 缺口
 
-- 不同后端并发写、审批缺失恢复及完整bundle切换尚未验收。
-  **影响**：无版本backend可能静默降低陈旧写保护，影响并发修改正确性。
-  **进一步探讨**：对无fingerprint/revision/metadata后端注入并发写，检查保护退化；同时检查approval缺失后的pending处理。
+- 未运行 DSH、Mirage 或外部数据源
+  **影响**：无法证明路径一致、审批和运行时隔离
+  **进一步探讨**：隔离 profile 验证 fs、shell、spill 和审批
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 权限和审批是否与原生行为完全相同？
+
+**研究主题**：缺陷与关键质疑、功能与机制
+
+#### 完整回答
+
+只有 vfsOnly 时文件 provider 声明 workspace-write，否则不宣称该约束；目录无效时可能回退配置的虚拟 cwd。审批桥区分拒绝、取消、不可用与没有 approver：前几种拒绝，没有 approver 返回 null 保持待决，而非自动批准。虚拟挂载和 runtime 本身仍需正确配置；统一 provider 不证明外部源隔离或取消即时生效。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[typescript/packages/dsh/src/fs.ts:232-243](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L232-L243)
+
+vfsOnly 约束声明。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+
+  /**
+   * The same confinement claim `MirageShellExecutor` makes, off the same
+   * fact and for the same reason: with every runtime reaching only the
+   * vfs, a mutation cannot land anywhere but a mount, under its mode.
+   *
+   * The two seams sit over one world, so answering differently here
+   * would let dsh fence a bash write and wave an identical `ctx.fs`
+   * write straight through.
+   */
+  override get sandboxMode(): FileSystem['sandboxMode'] {
+    return this.ctx.mirage.vfsOnly ? 'workspace-write' : undefined
+```
+
+</details>
+
+**依据 2 · 源码核查**：[typescript/packages/dsh/src/fs.ts:270-285](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L270-L285)
+
+不在虚拟世界的 cwd 回退。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+   * dsh hands `ctx.fs` either the calling session's cwd or the sandbox
+   * policy's workspace root, and both are directories on the harness's
+   * own machine that name nothing here. Resolving `notes.txt` against
+   * one yields `/Users/.../notes.txt`, which every read then reports as
+   * absent. So a base that is not a directory in this world falls back
+   * to the configured one, the same rule the shell executor applies to
+   * a workdir.
+   *
+   * An absolute path ignores its base, so it never pays for the probe.
+   *
+   * @param path the path being resolved.
+   * @param cwd the caller's base, if any.
+   * @returns the base to resolve against.
+   */
+  private async resolveBase(path: string, cwd: string | undefined): Promise<string> {
+    if (cwd === undefined || posix.isAbsolute(path)) return this.cwd
+```
+
+</details>
+
+**依据 3 · 源码核查**：[typescript/packages/dsh/src/approval.ts:124-151](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/approval.ts#L124-L151)
+
+审批拒绝与缺 approver 的待决区别。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+ *     nod into a standing grant is the one thing the human did not
+ *     consent to; a host that wants SESSION answers writes them to the
+ *     ledger itself (`ws.decisions.answer`), the surface built for it.
+ *   * `rejected` is an explicit refusal.
+ *   * `cancelled` is a refusal too: the human was shown the prompt and
+ *     dismissed it, which is an answer rather than the absence of one.
+ *     Leaving it pending would re-prompt them, since a retry reuses the
+ *     waiting record and would call `request` again.
+ *   * `unavailable` is a permission check that could not run, so it
+ *     fails closed. Pending here would be fail-open-into-retry.
+ *
+ * The three refusals match what dsh does with the same vocabulary for
+ * its own escalations, where `approveEscalation` throws on a rejection,
+ * a cancellation and an unanswerable ask alike.
+ *
+ * The run's own signal rides along, so a prompt raised for a line whose
+ * run is then killed or times out is dismissed with it rather than left
+ * on somebody's screen for a command that no longer exists. The ledger
+ * stops waiting either way — it bounds the wait by the same signal — but
+ * only the channel can take its prompt down.
+ *
+ * With no approver on the context the handler answers null, which is
+ * mirage's "nobody has answered yet": the ask stays pending in the
+ * ledger. That is deliberate, and it is why the service installs this
+ * unconditionally rather than only under a composed approver — the two
+ * are the same answer to mirage (`onAsk` unset and a null return both
+ * render pending), and installing always is what lets an approver
+ * composed after this plugin still be found.
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、Mirage 或外部数据源
+  **影响**：无法证明路径一致、审批和运行时隔离
+  **进一步探讨**：隔离 profile 验证 fs、shell、spill 和审批
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 接入和退出是否可在现有profile上安全尝试？
+### Q04 · 怎样安全试用和退出？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-首次不仅安装包，还需配置mount、凭据、runtime与session profile；bundle明确替换原有fs/shell等provider，不能把它当加一个小工具。持续要维护DSH peers与Mirage backend语义；失败需核对虚拟存储里的文件和后台job，再恢复原profile。默认RAM/tmp适合隔离试验，但重启后持久性不能假定。建议只在克隆profile和测试挂载试用，暂不迁移唯一工作profile。
+需要兼容 DSH、Node 和已配置的 Mirage workspace、挂载与 runtime；切换 provider 会改变路径、审批和取消语义。先在独立 profile 用内存/只读挂载验证同一文件的 fs 与 shell 读写、长输出与审批，再逐项接入真实后端；路径不一致或权限不清时停止并回原生 provider。部署和数据源费用、兼容性与效果未测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/dsh/package.json:19-21](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/package.json#L19-L21)
+**依据 1 · 源码核查**：[typescript/packages/dsh/package.json:19-21](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/package.json#L19-L21)
 
-Node版本条件
+Node 版本范围。
 
 ```text
   "type": "module",
@@ -514,148 +473,181 @@ Node版本条件
     "node": "^22.20 || ^24.12 || >=25"
 ```
 
-**依据 2 · 源码核查**：[typescript/packages/dsh/cordis.patch.yml:1-9](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/cordis.patch.yml#L1-L9)
+**依据 2 · 源码核查**：[typescript/packages/dsh/src/fs.ts:165-177](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L165-L177)
 
-整套provider替换
-
-```text
-# The mirage bundle patch. Applied over dsh-base by `dsh --profile <name>`
-# after `dsh plugin --profile <name> add @struktoai/mirage-dsh`: it swaps
-# the filesystem and shell providers for mirage-backed ones, so dsh's file
-# tools and bash tool operate on a workspace of mounted VFS instead
-# of the host disk.
-#
-# Override the `mirage` row's config in the profile's own cordis.patch.yml
-# to mount real VFS (the block form is `vfs` registry name,
-# `mode`, and the VFS's `config`; `!!js` expressions resolve env vars
-```
-
-**依据 3 · 源码核查**：[typescript/packages/dsh/src/service.ts:177-206](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/service.ts#L177-L206)
-
-工作区所有权
+共享工作区和取消限制。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-  constructor(ctx: Context, config: MirageConfig = {}) {
-    super(ctx, 'mirage')
-    if (config.workspace !== undefined && config.mounts !== undefined) {
-      throw new Error('mirage: pass either workspace or mounts, not both')
-    }
-    if (config.workspace !== undefined) {
-      // An adopted workspace is already built, so runtimes and constructor
-      // options can no longer reach it. Saying so beats accepting a config
-      // whose runtimes silently never load, which is what the workspace and
-      // mounts pair above already refuses to do.
-      // `profiles` and `profile` join them for the same reason, and one
-      // more: an adopted workspace's roles and its `onAsk` are the
-      // embedder's own, so silently re-answering its asks through
-      // `ctx.approval` would take over a seam it may already have filled.
-      if (
-        config.runtimes !== undefined ||
-        config.workspaceOptions !== undefined ||
-        config.profiles !== undefined ||
-        config.profile !== undefined
-      ) {
-        throw new Error(
-          'mirage: runtimes, profiles, profile and workspaceOptions configure a service-owned workspace, not an adopted workspace',
-        )
-      }
-      this.built = config.workspace
-      this.ready = Promise.resolve(config.workspace)
-      return
-    }
-    if (config.mounts === undefined) {
-      throw new Error('mirage: one of workspace or mounts is required')
+/**
+ * Mirage-backed implementation of `ctx.fs`. Targets are canonical virtual
+ * paths (namespace symlinks followed), every operation walks the workspace
+ * dispatcher — session grants, admission policies, cache read-through and
+ * post-write invalidation all fire exactly as they do for a shell command —
+ * and `processPath` answers in the same virtual path space the mirage shell
+ * executes in, so the two providers share one execution world.
+ *
+ * One limit worth stating: mirage's `ws.vfs` takes no `AbortSignal`, so
+ * cancellation is honored at this adapter's own boundaries (before a
+ * dispatch, between listing entries) and not inside a single op. A long
+ * read from a remote backend therefore runs to completion after the
+ * signal fires, and the caller learns of the abort when it returns.
+```
+
+</details>
+
+**依据 3 · 源码核查**：[typescript/packages/dsh/src/approval.ts:132-151](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/approval.ts#L132-L151)
+
+审批缺失时的状态。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+ *   * `unavailable` is a permission check that could not run, so it
+ *     fails closed. Pending here would be fail-open-into-retry.
+ *
+ * The three refusals match what dsh does with the same vocabulary for
+ * its own escalations, where `approveEscalation` throws on a rejection,
+ * a cancellation and an unanswerable ask alike.
+ *
+ * The run's own signal rides along, so a prompt raised for a line whose
+ * run is then killed or times out is dismissed with it rather than left
+ * on somebody's screen for a command that no longer exists. The ledger
+ * stops waiting either way — it bounds the wait by the same signal — but
+ * only the channel can take its prompt down.
+ *
+ * With no approver on the context the handler answers null, which is
+ * mirage's "nobody has answered yet": the ask stays pending in the
+ * ledger. That is deliberate, and it is why the service installs this
+ * unconditionally rather than only under a composed approver — the two
+ * are the same answer to mirage (`onAsk` unset and a null return both
+ * render pending), and installing always is what lets an approver
+ * composed after this plugin still be found.
 ```
 
 </details>
 
 #### 缺口
 
-- 退出时job、spill和持久mount状态的清理成本未测。
-  **影响**：退出时虚拟文件和job状态可能仍需人工核对。
-  **进一步探讨**：检查service.dispose及subprocess/spill清理，再在克隆profile演练恢复默认providers与持久挂载数据核对。
+- 未运行 DSH、Mirage 或外部数据源
+  **影响**：无法证明路径一致、审批和运行时隔离
+  **进一步探讨**：隔离 profile 验证 fs、shell、spill 和审批
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 能否在加载时验证整个虚拟世界的一致性？
+### Q05 · 如何验证虚拟世界一致性？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、工程质量与复用
 
 #### 完整回答
 
-由fs版本降级和shell绑定差异推导未验证假设：在启用bundle前给部署者一个固定只读探针，核对fs与shell对同文件的可见性、版本token、只读拒绝与spill定位，可提前发现“能加载但不同世界”的配置。增量是provider之间的语义验收而非再加一个连接器。对RAM与无版本backend分别运行小文件读写和并发冲突对照，若探针无法预测真实任务失败或误报过多，则收窄为明确后端组合。
+未验证假设：加载时用非破坏性探针对同一路径验证 fs、shell、spill 和授权路径，并暴露不一致状态，可能减少配置错位。现有共享 dispatcher、cwd 回退和审批待决是反证，不是没有控制；一次探针不能覆盖所有后端或未来权限变化。对照手工配置，用挂载缺失、不可写 spill、缺 approver 和远端取消样本测发现率、误报和成本；不能改善则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[typescript/packages/dsh/src/fs.ts:70-80](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/fs.ts#L70-L80)
+**依据 1 · 源码核查**：[typescript/packages/dsh/src/fs.ts:165-177](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/fs.ts#L165-L177)
 
-版本语义差异
+已有共享 dispatcher。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-// The freshness token behind FsVersion. Backends that report a fingerprint
-// or revision get a content-derived token; the rest fall back to metadata
-// (modified + size), and a backend reporting neither yields a constant, so
-// stale guards degrade to always-fresh there instead of always-stale.
-function versionOf(stat: FileStat): FsVersion {
-  if (stat.fingerprint !== null) return FsVersion(`fp:${stat.fingerprint}`)
-  if (stat.revision !== null) return FsVersion(`rev:${stat.revision}`)
-  if (stat.modified !== null || stat.size !== null) {
-    return FsVersion(`meta:${stat.modified ?? ''}:${String(stat.size ?? '')}`)
-  }
-  return FsVersion('unversioned')
+/**
+ * Mirage-backed implementation of `ctx.fs`. Targets are canonical virtual
+ * paths (namespace symlinks followed), every operation walks the workspace
+ * dispatcher — session grants, admission policies, cache read-through and
+ * post-write invalidation all fire exactly as they do for a shell command —
+ * and `processPath` answers in the same virtual path space the mirage shell
+ * executes in, so the two providers share one execution world.
+ *
+ * One limit worth stating: mirage's `ws.vfs` takes no `AbortSignal`, so
+ * cancellation is honored at this adapter's own boundaries (before a
+ * dispatch, between listing entries) and not inside a single op. A long
+ * read from a remote backend therefore runs to completion after the
+ * signal fires, and the caller learns of the abort when it returns.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[typescript/packages/dsh/src/service.ts:215-245](https://github.com/strukto-ai/mirage/blob/62c160c6f47d455cf1bb604ed55c419f8ed254c2/typescript/packages/dsh/src/service.ts#L215-L245)
+**依据 2 · 源码核查**：[typescript/packages/dsh/src/shell.ts:550-574](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/shell.ts#L550-L574)
 
-集中workspace和profile配置可承载探针
+已有 spill 路径与失败处理。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-    if (config.profiles !== undefined) {
-      if (options.profiles !== undefined) {
-        throw new Error('mirage: pass profiles or workspaceOptions.profiles, not both')
-      }
-      options.profiles = parseProfiles(config.profiles)
+
+  // A spill sink for one background command, or null when no spill
+  // directory is configured. The target reaches the live workspace so
+  // the full stream lands on a mount the agent can read back.
+  private newSpill(): SpillSink | null {
+    const dir = this.spillDir
+    if (dir === undefined) return null
+    const target: SpillTarget = {
+      ensureDir: async (d) => {
+        const ws = await this.workspace()
+        await ensureDirPath({ exists: (p) => ws.vfs.exists(p), mkdir: (p) => ws.vfs.mkdir(p) }, d)
+      },
+      write: async (p, bytes) => {
+        const ws = await this.workspace()
+        await ws.vfs.write(p, bytes)
+      },
+      append: async (p, bytes) => {
+        const ws = await this.workspace()
+        await ws.vfs.append(p, bytes)
+      },
     }
-    if (config.profile !== undefined) {
-      if (options.profile !== undefined) {
-        throw new Error('mirage: pass profile or workspaceOptions.profile, not both')
-      }
-      options.profile = config.profile
-    }
-    // How an asked line gets answered. Installed for every service-owned
-    // workspace rather than only under a composed `ctx.approval`, because
-    // the two are one answer to mirage (an unset `onAsk` and a handler
-    // returning null both leave the ask pending) and installing always is
-    // what finds an approver composed after this plugin. An explicit
-    // `workspaceOptions.onAsk` is the embedder's decision and stands.
-    options.onAsk ??= askThroughApproval(ctx)
-    this.plannedRuntimes = options.runtimes?.map(builtEntry)
-    if (this.plannedRuntimes !== undefined) options.runtimes = [...this.plannedRuntimes]
-    const blocks = Object.values(config.mounts).some(isMountBlock)
-    if (blocks) {
-      this.ready = this.open(config.mounts, options)
-      // A declarative mount resolves asynchronously and nothing awaits
-      // `ready` until a provider's first call, so a failure here would
-      // reach the process as an unhandled rejection and take the whole
-      // harness down over a typo in a patch file. This only marks the
-      // rejection observed; `ready` still rejects for every real caller,
-      // and the disposer below still sees it.
-      void this.ready.catch(() => undefined)
+    spillCounter += 1
+    const log = this.ctx.logger('mirage-dsh')
+    return new SpillSink(target, dir, `mirage-shell-${spillCounter.toString()}`, (err: unknown) => {
+      log.debug('spill to %s failed, output will not be recoverable: %o', dir, err)
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[typescript/packages/dsh/src/approval.ts:132-151](https://github.com/strukto-ai/mirage/blob/de311792e60fe6f7edb6e18cb5411a843b4849db/typescript/packages/dsh/src/approval.ts#L132-L151)
+
+已有审批结果语义。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+ *   * `unavailable` is a permission check that could not run, so it
+ *     fails closed. Pending here would be fail-open-into-retry.
+ *
+ * The three refusals match what dsh does with the same vocabulary for
+ * its own escalations, where `approveEscalation` throws on a rejection,
+ * a cancellation and an unanswerable ask alike.
+ *
+ * The run's own signal rides along, so a prompt raised for a line whose
+ * run is then killed or times out is dismissed with it rather than left
+ * on somebody's screen for a command that no longer exists. The ledger
+ * stops waiting either way — it bounds the wait by the same signal — but
+ * only the channel can take its prompt down.
+ *
+ * With no approver on the context the handler answers null, which is
+ * mirage's "nobody has answered yet": the ask stays pending in the
+ * ledger. That is deliberate, and it is why the service installs this
+ * unconditionally rather than only under a composed approver — the two
+ * are the same answer to mirage (`onAsk` unset and a null return both
+ * render pending), and installing always is what lets an approver
+ * composed after this plugin still be found.
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、Mirage 或外部数据源
+  **影响**：无法证明路径一致、审批和运行时隔离
+  **进一步探讨**：隔离 profile 验证 fs、shell、spill 和审批
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

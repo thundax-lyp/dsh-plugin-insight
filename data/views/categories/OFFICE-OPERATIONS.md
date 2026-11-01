@@ -17,7 +17,7 @@
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 的浏览器操作接入 DSH 模型工具并提供会话观察。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 先用测试账号、显式会话和只读网页；操作结果或目标不明时停止并核对页面与本机保存文件。 |
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
-| [DSH Ego Browser](#plugin-1326394141-root) | 以宿主模型工具调用 vendored ego 浏览器运行时，提供会话目标追踪、实时观看和直接交互，并支持可选登录导入。 | 本地无账户页+独立profile先测，登录/提交另审，不因可见画面放宽动作验证，见 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03)。 |
+| [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
 | [DSH Notes 对话导出](#plugin-1182135360-dsh-plugin) | 将 Agent 整理的 Markdown 写入便签服务，或经匿名渲染生成本地 PNG 长图。 | 已有可信便签服务者可用非敏感短对话试导出，回读内容/分类/实际server；类型不符、内容遗漏或超时重复时停自动流程，先核对已有ID，退回复制粘贴。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
@@ -126,15 +126,15 @@
 
 ## [DSH Ego Browser](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md)
 
-[![GitHub ★ 343](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=343&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Fisfzy/dsh-ego-browser) [![npm 30d 12,596](https://img.shields.io/static/v1?label=npm+30d&message=12%2C596&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser)
+[![GitHub ★ 361](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=361&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Fisfzy/dsh-ego-browser) [![npm 30d 14,386](https://img.shields.io/static/v1?label=npm+30d&message=14%2C386&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser)
 
-> **用途**：需要Agent处理网页且用户观看/接管的DSH用户，正确动作仍需目标/后置条件验收，见 [Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01)。
+> **用途**：面向需要 Agent 操作网页且愿意监督和核对外部结果的用户。
 
-> **亮点**：结构动作、session目标、观看UI与resident传输异常/冷启动分类恢复集成，见 [Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01) 与 [Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01) 与 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 将浏览器动作及分类重试接入 DSH；是否避免重复仍需核查，页面和浏览器不属插件原创。
 
-> **思考**：持久profile与space隔离不同，cookie回读非正确账户；HTTP guard只检查cookie存在，传输异常/冷启动分类不等业务无执行证明，未知执行状态/脚本权限仍需核，见 [Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02)。
+> **思考**：[Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02) 空间 ID 截取可能碰撞；[Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 冷启动签名可触发回退，其确实无副作用未独立证明。
 
-> **建议**：动作计划和目标/副作用/结果关联，显示未发/可能执行/已验证并测错tab与重复/恢复成本，未实现，见 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03)。
+> **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
 
 [查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
 

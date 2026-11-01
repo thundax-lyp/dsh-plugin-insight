@@ -1,18 +1,18 @@
-# Chat Import
+# DSH Chat Import
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[dae686f](https://github.com/Nwflower/dsh-chat-import/tree/dae686faadb44bbd1e5a71f9fd618c2d2e926cee)
+源码版本：[080dc99](https://github.com/Nwflower/dsh-chat-import/tree/080dc99c64630a628d3a744983e1856d0600d478)
 
 <!-- BEGIN META -->
-[![GitHub ★ 264](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=264&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Nwflower/dsh-chat-import) [![npm 30d 14,913](https://img.shields.io/static/v1?label=npm+30d&message=14%2C913&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-chat-import) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-chat-import)
+[![GitHub ★ 273](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=273&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Nwflower/dsh-chat-import) [![npm 30d 13,577](https://img.shields.io/static/v1?label=npm+30d&message=13%2C577&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-chat-import) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-chat-import)
 <!-- END META -->
 
-> **功能**：将其他编码 Agent 历史转换为 DSH 事件会话，提供预览、重导保护、路径映射及反向导出入口。
+> **功能**：把其他 AI 编码助手的会话历史导入 DeepSeek Harness 并继续对话。
 
-> **亮点**：来源解析到宿主代次适配、缺结果显式结构闭合、降级计数公开和续聊后重导保护构成可核查工程增量；原Agent推理方法不归此插件，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将外部会话转换为宿主记录并接入工作区；不转移原运行环境。
 
-> **主要限制**：工具结果空补、图片占位、子Agent跳过及部分落盘都限制“保留完整”主张；registry最后记账而非全局事务，异常须核实际对象，见 [Q02](#research-q02)。
+> **主要限制**：[Q03](#research-q03) 创建、挂接和记账不是已证明的单一事务；[Q04](#research-q04) 空结果补齐与图片占位限制无损主张。
 
 **本文目录**
 
@@ -26,9 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 导入对象是什么，和复制聊天摘要相比改变什么？](#detail-section-11)
-  - [Q02 · 代表转换怎样落盘，哪些“保留”包含结构修补？](#detail-section-12)
-  - [Q03 · 如何试用，撤回、源删除和保真报告如何界定？](#detail-section-13)
+  - [Q01 · 迁入用户为何需要导入旧会话，与保留原始日志相比增加什么？](#detail-section-11)
+  - [Q02 · 来源如何转换成宿主事件并挂入工作区？](#detail-section-12)
+  - [Q03 · 重复导入和续聊后重导如何处理，失败能否整体撤销？](#detail-section-13)
+  - [Q04 · 哪些内容会修补、跳过或占位，隐私与采用成本是什么？](#detail-section-14)
+  - [Q05 · 能否让用户逐项核对迁移保真与未知？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -38,77 +40,76 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：迁入DSH的编码用户可从代表Codex/Claude历史保留结构上下文继续工作；必须另核cwd、环境和工具，不等于搬迁原运行状态，见 [Q01](#research-q01)。
+> **用途**：迁入 DSH 的开发者需要查询并接续已有编码会话。
 
-复制摘要或手工重建会话；插件保留更多结构与来源信息并暴露降级，但公共修补和占位不能当字节无损或完整Agent快照。
+保留并手工检索原始日志无需转换，但不能直接在宿主中续聊。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 事件转换 | 代表外部历史转DSH | 工具缺结果空补、图片可占位 |
-| 重导 | 按源/持久化基线保护续聊 | 非实时双向同步 |
-| 预览与回执 | 发现降级和缺损 | 可打开不等于迁移合格 |
-| 反向导出入口 | 另存其他格式 | 本轮未验往返保真 |
+| 会话转换 | 适配外部记录 | 格式差异可能需补齐或占位 |
+| 宿主写入 | 创建或追加 DSH 会话 | 需要会话持久化 |
+| 预览 | 导入前查看内容 | 不能证明全部附件保真 |
+| 重导决策 | 避免重复并处理续聊 | registry 损坏时基线可能缺失 |
 
-**流程与依赖**
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| DSH 与会话持久化 | 导入需要 | 创建及追加会话 | 报错或需刷新 |
+| 可读取的原会话 | 转换需要 | 提取消息和工具事件 | 跳过或降级 |
+| 工作区与文件权限 | 挂接需要 | 放置目标会话 | 可能未分组 |
+| 原始备份 | 核对与恢复需要 | 比较缺失内容 | 无法确认保真 |
 
-| 条件 | 用途 | 缺失或边界 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| Node与匹配DSH/dsh-tools | 0.26.3插件及CLI执行 | 声明不是全代次实测 |
-| fs/tools/sessionPersistence | 解析、模型工具与落盘 | 硬依赖，无服务不能导入 |
-| 来源日志及附件权限 | 代表内容恢复 | 缺记录/图片只能降级或跳过 |
-| 本机cwd/工具/模型 | 真正续聊执行 | 日志不恢复外部状态 |
-| 原始副本与registry | 审核和重导/恢复 | 损坏后须比对实际目标 |
+| 准备 | 用户备份并选非敏感来源 | 确认目标 DSH 和工作区 |
+| 预览 | 查看解析结果和可见缺失 | 来源不支持则停止 |
+| 导入 | 创建或追加宿主会话 | 核对实际日志与 registry |
+| 验收 | 对照原消息、附件及工具结果 | 不一致时回原日志 |
 
-| 阶段 | 操作 | 成功与恢复判据 |
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次 | 存储与安装资源未知 | 备份、选择和预览 | 兼容未知 |
+| 持续 | 续聊模型费用未知 | 对照原始信息 | 保真率未知 |
+| 恢复 | 副本及备份资源未知 | 核对部分结果和去重 | 中断恢复未测 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 预备 | 保留源、固定宿主与路径 | 核附件权限和敏感内容 |
-| 预览 | 代表来源只读转换 | 检查降级和关键上下文 |
-| 少量导入 | 创建目标并挂工作区 | 核事件、cwd、工具配对及registry |
-| 续聊 | 先无副作用核上下文 | 可加载不等于任务恢复 |
-| 重导/退出 | 核基线和副本再清理 | 异常先查目标，区分源删除与purge |
+| 会话导入 | 事件转换和宿主写入 | 全格式无损 |
+| 去重 | 持久长度及 registry 决策 | 跨步骤中断无重复 |
+| 续聊 | 生成宿主会话 | 原工具与模型状态自动恢复 |
 
-**效果与成本**
-
-| 阶段 | 现金与资源 | 人工与时间 |
-|---|---|---|
-| 首次 | 原件和副本存储未知 | 定位来源、映射路径、脱敏和事件核对 |
-| 持续 | 扫描、附件及长历史模型费未知 | 来源更新、格式升级和副本身份维护 |
-| 故障 | 部分会话/附件占用未知 | registry、事件、目标状态与缺损核对 |
-| 退出 | 源与目标不自动互撤 | 保留原件，确认清理范围再删除 |
-
-| 效果项 | 静态支持 | 未知 |
-|---|---|---|
-| 历史结构 | 角色/工具/检查点事件 | 逐来源无损与往返语义 |
-| 续聊保护 | DSH增长后重导新副本 | 实际任务质量和环境一致 |
-| 审核 | 降级计数可见 | 人工节时、节费及漏报率 |
-
-> **思考**：工具结果空补、图片占位、子Agent跳过及部分落盘都限制“保留完整”主张；registry最后记账而非全局事务，异常须核实际对象，见 [Q02](#research-q02)。
+> **思考**：[Q03](#research-q03) 创建、挂接和记账不是已证明的单一事务；[Q04](#research-q04) 空结果补齐与图片占位限制无损主张。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：来源解析到宿主代次适配、缺结果显式结构闭合、降级计数公开和续聊后重导保护构成可核查工程增量；原Agent推理方法不归此插件，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将外部会话转换为宿主记录并接入工作区；不转移原运行环境。
 
-[Q02](#research-q02) 结构适配、降级回执和DSH续聊基线保护值得借鉴；要保留空补结果不是真实工具证据、registry失败不代表没有落盘的语义。
+[Q02](#research-q02) 显式修补与宿主代次写入，[Q03](#research-q03) 区分部分落盘和最终 registry。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-工具结果空补、图片占位、子Agent跳过及部分落盘都限制“保留完整”主张；registry最后记账而非全局事务，异常须核实际对象，见 [Q02](#research-q02)。
+[Q03](#research-q03) 创建、挂接和记账不是已证明的单一事务；[Q04](#research-q04) 空结果补齐与图片占位限制无损主张。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-固定宿主和代表日志，先副本预览、少量导入及核对后续聊；源原件和附件保留，不在重要数据试purge或源删除，见 [Q03](#research-q03)。
+[Q04](#research-q04) 先备份和预览非敏感单个来源，再核对原文与目标会话；缺项或状态不明时暂停重导。
 
 <a id="detail-section-7"></a>
 
@@ -116,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-代表Codex和公共导入/重导链已静态核查，试用少量副本；未运行转换、真实续聊、全部来源或反向导出。
+固定版本代表转换、宿主写入与 registry 分支已查；未运行宿主或全部格式。
 
-- 已检查：作者 README、包清单、源码路径 README.md、lib/convert/codex.mjs、lib/convert/events.mjs、lib/host-session.mjs、lib/import-core.mjs、lib/imports.mjs、lib/index.mjs、lib/purge.mjs、lib/session-actions.mjs、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、README.md、lib/host-session.mjs、lib/import-core.mjs、lib/convert/events.mjs、lib/imports.mjs、lib/convert/codex.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整根统计，抽读插件接线、代表Codex转换、公共事件合成、导入决策/宿主适配/注册表、源动作和purge边界；未全审全部来源、Web鉴权和反向导出，不运行目标。
-- 下一步：新代表日志覆盖缺/重工具结果、图片不可达、压缩、子Agent、源增长/截短及DSH已续聊，再注入registry失败；与原件逐事件比对并测试无副作用续聊。当前无运行证据。
+- 边界：只读 README、清单、代表 Codex 转换、事件合成、宿主写入和 registry；未运行宿主或目标，未穷尽所有解析器、附件和隐私路径。
+- 下一步：以隔离宿主注入缺图、缺结果、重导、registry 损坏及中断，按 [Q05](#research-q05) 比较错误保真判断。
 
 **分析版本**
 
 - **仓库**：[Nwflower/dsh-chat-import](https://github.com/Nwflower/dsh-chat-import)
-- **版本号**：0.26.3（[固定提交 dae686f](https://github.com/Nwflower/dsh-chat-import/tree/dae686faadb44bbd1e5a71f9fd618c2d2e926cee)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.26.3（[固定提交 080dc99](https://github.com/Nwflower/dsh-chat-import/tree/080dc99c64630a628d3a744983e1856d0600d478)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,9 +136,9 @@
 
 <a id="innovation"></a>
 
-用逐对象迁移验收单显式分清原样、修补、占位、跳过和未验，验证能否减少误判无损与续聊纠错；未实现且需求未知，见 [Q03](#research-q03)。
+[Q05](#research-q05) 假设逐对象迁移清单可降低无损误判；需先核现有界面且未验证。
 
-新代表日志覆盖缺/重工具结果、图片不可达、压缩、子Agent、源增长/截短及DSH已续聊，再注入registry失败；与原件逐事件比对并测试无副作用续聊。当前无运行证据。
+以隔离宿主注入缺图、缺结果、重导、registry 损坏及中断，按 [Q05](#research-q05) 比较错误保真判断。
 
 <a id="detail-section-9"></a>
 
@@ -146,242 +147,206 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 17 | 3848 | — | — | 97621 |
-| .mjs | source | 164 | 35464 | 26065 | 7512 | — |
+| .md | source | 17 | 3860 | — | — | 98839 |
+| .mjs | source | 164 | 35520 | 26090 | 7542 | — |
 | .js | source | 16 | 9408 | 7560 | 1680 | — |
-| .mjs | test | 164 | 37386 | 31701 | 3173 | — |
+| .mjs | test | 165 | 37605 | 31878 | 3194 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 14](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=14&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z) [![近30天关闭 11](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=11&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z)
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 12](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=12&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z) [![近30天关闭 10](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=10&color=737b86&logo=github)](https://github.com/Nwflower/dsh-chat-import/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z)
 
 
 
-统计日期：2026-10-29。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：区分历史事件转换、宿主可加载与原Agent状态恢复，并核查代表迁移链和降级恢复。
+**插件研究总目标**：核查会话转换、导入去重、保真及隐私边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 导入对象是什么，和复制聊天摘要相比改变什么？
+### Q01 · 迁入用户为何需要导入旧会话，与保留原始日志相比增加什么？
 
-**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-这是dsh-chat-import 0.26.3原生插件，同时提供CLI bin与反向导出入口；不是独立Agent运行时。面向从Codex/Claude等编码Agent迁入DSH的用户，目标是把已有记录变成可加载的宿主事件会话，再由DSH继续当前任务。README“25+来源”是作者覆盖主张，本轮只深入代表Codex及公共事件链，不以适配器数量当成功效果。相较复制一段总结，保留角色、工具调用/结果关系、reasoning、压缩检查点及来源信息有可核查增量；跨Agent的真实工具权限、运行进程、工作文件与环境并不会由历史日志自动迁移。
-
-插件硬依赖sessionPersistence/fs/tools，Web、commands、skills等可选延迟挂载，缺Web仍可走工具；Node>=22.13、宿主>=0.1.5-rc.1和dsh-tools<0.3.0等由package声明。实际能否继续还取决于宿主事件代次、路由/模型、工具与cwd；跨机器路径可映射，缺cwd时兜底可能有损。只证明导入格式不等于恢复原Agent完整执行状态。
+package.json:1-4 描述将其他编码助手对话导入 DSH 续聊；README:89-97 提供预览、选择与工作区目标。用户也可保留原始日志手动查找，但不能直接在 DSH 中接着同一段记录。插件将代表格式转换为宿主事件并建立会话，提供接续的入口；原工具、凭据、工作目录和模型状态不会因历史导入自动恢复。作者宣称 25+ 来源和内容保留，未穷尽解析器，也未对照真实迁移效果。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-24](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/package.json#L2-L24)
+**依据 1 · 作者声明**：[package.json:1-4](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/package.json#L1-L4)
 
-版本、CLI、宿主和导出入口。
-
-<details>
-<summary>查看原文（23行）</summary>
+作者描述来源与目标。
 
 ```text
+{
   "name": "dsh-chat-import",
   "description": "Import conversation history from 25+ AI coding agents into DeepSeek Harness as resumable sessions — tool calls, reasoning and results kept intact, with reverse export. | 把 25+ AI 编程 Agent 的聊天记录导入 DeepSeek Harness 继续对话，保留工具调用、推理与结果，支持反向导出。",
   "version": "0.26.3",
-  "type": "module",
-  "main": "./lib/index.mjs",
-  "types": "./lib/index.d.ts",
-  "icon": "assets/import.svg",
-  "bin": {
-    "dsh-chat-import": "bin/dsh-chat-import.mjs"
-  },
-  "exports": {
-    ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.mjs"
-    },
-    "./client": {
-      "default": "./lib/client.js"
-    },
-    "./export.mjs": "./lib/export/index.mjs",
-    "./CHANGELOG.md": "./CHANGELOG.md",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
 ```
 
-</details>
+**依据 2 · 作者声明**：[README.md:89-97](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/README.md#L89-L97)
 
-**依据 2 · 源码核查**：[lib/index.mjs:45-71](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/index.mjs#L45-L71)
+作者描述预览和导入。
 
-硬依赖与可选服务接线。
+```text
+## Usage
+
+1. Import conversations from the GUI
+
+  Click the **Import sessions** button at the bottom of the left sidebar to open the import window. With the DSH Claude Style theme, that button lives in the account menu at the bottom left. Pick the conversations you want and import them in one click.
+
+  Rows carry their own tools: **double-click** a row to preview the conversation (a read-only dry-run — plugin injections skipped, tool calls folded into one line), switch the search box to **In content** to search message bodies instead of titles, **hide** a row reversibly, move a single-session source file to the Recycle Bin, or **drag the row onto a workspace** in the left sidebar to import it there with its timestamps shifted so it sorts to the top. The exact rules are in [docs/USAGE.md](docs/USAGE.md).
+
+  If the file came from somewhere else — a web-app export, a script you wrote, a tool this plugin does not list — use **Import from file** at the top of the same window. Type a local path and press Enter, or press **Choose…** to pick files. When the path is a directory, it asks whether to search subfolders. Check the preview, then import. If detection fails, it lists why each candidate parser gave up and points you at the skill that converts the format.
+```
+
+**依据 3 · 源码核查**：[lib/host-session.mjs:479-505](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/host-session.mjs#L479-L505)
+
+写入宿主持久会话。
 
 <details>
 <summary>查看原文（27行）</summary>
 
 ```text
-import { registerChatImportService } from './chat-import-service.mjs'
-
-const name = 'import-claude'
-// 硬依赖只有这三项：webServer / skills / commands / settings 都是可选服务（headless / 无 Web
-// 的 profile 不挂载），放进 inject 会让插件在 CI headless 冒烟与 CLI 会话里整体无法激活，
-// 连导入工具都用不了。可选服务一律在 apply 内经 ctx.inject 按需注册。
-const inject = ['sessionPersistence', 'fs', 'tools']
-
-// config 是宿主解析后的条目配置：条目模型（DSH 0.1.7+）下 volatile 字段是带 .get() 的实时引用
-//（宿主在设置写入时原地更新），registerImportPrefs 据此读初值——apply 期 fiber 还是 state 1，
-// settings.describe() 会跳过本条目，只能从 config 读。
-function apply(ctx, config) {
-  // imports registry 目录：$DSH_HOME/dsh-chat-import（$DSH_HOME 缺省 ~/.dsh）
-  const registryDir = resolveRegistryDir()
-  // registerTools 先构建工具定义（makeImportChatTool 同时把 IMPORT_SPECS 落进
-  // lib/toolkit.mjs，面板/命令依赖它），再默认全量注入并返回 reconcile——settings
-  // 就绪 / injectTools 变化时由 registerImportPrefs 驱动按档位对账（'off' 不注入省
-  // 上下文、'minimal' 仅注入 import_chat 入口、'full' 全量；GUI 面板任何档位都可转换）。
-  const reconcileTools = registerTools(ctx, registryDir)
-  // Public host service for third-party plugins. It delegates to the same specs
-  // and state machine as import_chat.
-  registerChatImportService(ctx)
-  // 面板路由：webServer 是可选且晚挂载的 host 服务——web 组合的服务插件在本插件 apply 之后
-  // 才发布它，apply 时 ctx.get('webServer') 为空。ctx.inject(['webServer'], …) 在服务可用时
-  // 再注册路由（dsh 各包处理晚挂载依赖的标准姿势）：headless / CI 冒烟时回调永不执行，
-  // 工具照常可用，apply 不因缺服务失败。
-  ctx.inject(['webServer'], (webCtx) => {
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/import-core.mjs:46-59](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L46-L59)
-
-cwd权威映射与有损兜底。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-// 转换层无 cwd 记录时输出 cwdHint（Claude 项目 slug 目录名）——这里消费：
-// ~/.claude.json projects 权威映射（resolveClaudeCwd）失败再 ASCII slug 解码回退
-// （decodeClaudeSlug，有损兜底）。只在转换输出真正缺 cwd 时触发（不读 claude.json
-// 于每个文件）；解码结果可能不存在（跨机器）→ attachToWorkspace 回退源目录。
-async function applyCwdHint(ctx, out, sourcePath) {
-  if (!out || !out.meta || typeof out.meta.cwd === 'string' || !out.cwdHint) return out
-  const mapped = await resolveClaudeCwd(ctx, out.cwdHint, sourcePath)
-  if (mapped) {
-    out.meta.cwd = mapped
-  } else {
-    const decoded = decodeClaudeSlug(out.cwdHint)
-    if (decoded) out.meta.cwd = decoded
+ * 新宿主 create(header) 返回写句柄，事件经 handle.append(events) 落盘、flush 建持久化
+ * 屏障，最后关句柄释放写租约；旧宿主 create(header) 无返回值，续写走 append(id, events)。 */
+export async function writeSession(ctx, header, events) {
+  const sp = ctx.get('sessionPersistence')
+  if (!sp || typeof sp.create !== 'function') throw new Error('sessionPersistence 不可用（缺少 create）')
+  const handle = await sp.create(header)
+  if (handle && typeof handle.append === 'function') {
+    try {
+      await handle.append(events)
+      if (typeof handle.flush === 'function') await handle.flush()
+    } finally {
+      if (typeof handle.close === 'function') {
+        try {
+          await handle.close()
+        } catch (err) {
+          // 数据已 flush；关句柄失败只影响写租约释放，上报而不改判导入结果
+          console.error('会话写句柄关闭失败（' + header.id + '）: ' + String((err && err.message) || err))
+        }
+      }
+    }
+    return
   }
-  delete out.cwdHint
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/import-core.mjs:95-106](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L95-L106)
-
-跨机cwdRemap边界。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-// cwd 重映射：跨机器迁移时，把源机的 cwd 前缀映射到本机等价路径。
-//
-// 背景：宿主用平台相关的 isAbsolute 校验 header.cwd（dsh-session/lib/index.js:786），
-// 所以源机路径（如 Windows 的 D:\demo\proj 在 POSIX 上）在 prepareHostMeta 处被剔除，
-// 会话退化为未分组。那个取舍是刻意的（绝不因 cwd 拒绝整次导入），本选项不推翻它——
-// 只是给用户一个把源前缀改写成**本机**前缀的机会，改写结果仍要过同一道绝对性校验。
-//
-// 默认不启用：args.cwdRemap 缺失或为空数组时，本函数完全不碰 meta，既有行为不变。
-// 规则按 from 长度降序匹配，长前缀优先，避免 '/a' 抢先命中 '/a/b'。
-//
-// 参数是模型/用户给的，因此按「失败要大声」严格校验：cwdRemap 不是数组、或某条规则
-// 缺 from/to，直接抛错——静默忽略会让用户以为已经重映射了。
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/convert/codex.mjs:361-376](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/convert/codex.mjs#L361-L376)
-
-子Agent跳过与主会话转换。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  // 子代理 rollout（thread_source='subagent' / source.subagent）不是独立会话：跳过并给
-  // 原因（对齐 claude/qoder 的「辅助 transcript 跳过」语义），避免目录模式导入出碎片会话。
-  if (subagent) {
-    return skipResult('Codex subagent rollout (' + subagent + '); only the main session rollout becomes a session', { records: recs.length })
+  if (typeof sp.append === 'function') {
+    await sp.append(header.id, events)
+    return
   }
-
-  const sessionId = args.sessionId || mintSessionId(sourceId)
-  const meta = { version: SESSION_FORMAT_VERSION, id: sessionId, createdAt: createdAt ?? Date.now() }
-  if (sourceId) meta.sourceId = sourceId
-  if (cwd) meta.cwd = cwd
-
-  // 标题兜底：Codex 无显式标题源（无 ai-title/custom-title）→ 首问兜底。压缩只切正文，
-  // 标题仍取全量记录里的第一条提问（会话级属性，与发现层面板取首问同口径）。
-  // 只回填 out.title，不钉 session/title 事件（DSH 自动回退首条 user 文本，见 claude.mjs）。
-  const finalTitle = normalizeTitle(titleTopic || (turns.length > 0 ? turns[0].prompt : ''))
-  return finishSession(turns, args.budget, { meta, provider: 'codex', model, skipped, records: recs.length, skippedLines, secrets, systemPrompt }, {
+  throw new Error('sessionPersistence 写入面不可用（create 未返回写句柄，且没有 append(id, events)）')
 ```
 
 </details>
 
 #### 缺口
 
-- 未逐来源和宿主代次实测，也未迁移外部工具环境。
-  **影响**：不能由代表源码推导全部来源保真或任务恢复成功。
-  **进一步探讨**：固定代表日志与宿主，先预览和加载，再核对工作目录/工具/权限及一条无副作用续聊。
+- 未验证全部来源和实际续聊效果
+  **影响**：不能保证无损迁移或节时
+  **进一步探讨**：固定两种来源和宿主，逐轮与原始日志对照。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 代表转换怎样落盘，哪些“保留”包含结构修补？
+### Q02 · 来源如何转换成宿主事件并挂入工作区？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-Codex解析rollout后经公共synthesizeSession生成DSH事件，子Agent rollout明确跳过，fork另当独立会话。公共层配对工具结果、重复结果保留首个，对没有结果的调用补空tool-result使宿主/API结构闭合；这不是实际工具执行结果，也不是原始记录逐字无损。图片缺字节/服务或目标代次不支持时可降为占位，计数会透到公开回执；畸形行、注入丢弃、工具缺入/缺出等也有降级字段。关键贡献是语义形状适配和可见降级，而不是“完整无损”保证。
-
-runDecision材料化附件、规划cwd/工作区后create，再做结构校验、挂接和缓存预热，最后rememberImport写注册表。宿主create优先agents.create种seed、代次不匹配等回持久化。此序列不是跨附件/会话/registry全局事务，若最后记账失败必须核实际会话，不能以异常推断没导入。重导有registry与持久化事件数基线：源增长且DSH已续聊则另铸副本，未知长度保守跳过，源内部改变也可跳过，不会强行覆盖已经续聊的日志；force是显式新副本路径，不可宣传成跨端双向实时同步。
+import-core.mjs:320-335 将转换事件中的图片材料化、规划工作区，再调用宿主创建；host-session.mjs:479-505 对新式持久化句柄 append、可用时 flush 并关闭，旧式使用 append(id, events)。events.mjs:310-335 对缺失工具结果补空以满足事件配对，不能把补齐当原始输出。导入成功表示该路径完成，不证明原系统工具、环境及附件均可重现；不同宿主版本及所有格式未运行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/convert/events.mjs:171-177](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/convert/events.mjs#L171-L177)
+**依据 1 · 源码核查**：[lib/import-core.mjs:320-335](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/import-core.mjs#L320-L335)
 
-工具结果去重。
-
-```text
-  let duplicateToolResults = 0
-  for (const t of turns) {
-    for (const s of t.steps) {
-      for (const tc of s.toolCalls) if (!callById.has(tc.id)) callById.set(tc.id, tc)
-      for (const tr of s.toolResults) {
-        if (resultByCallId.has(tr.toolCallId)) { duplicateToolResults++; continue }
-        resultByCallId.set(tr.toolCallId, tr)
-```
-
-**依据 2 · 源码核查**：[lib/convert/events.mjs:309-361](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/convert/events.mjs#L309-L361)
-
-缺失结果补空以闭合结构。
+材料化、规划和创建调用。
 
 <details>
-<summary>查看原文（53行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-        for (const tc of step.toolCalls) {
+  // 一条会话的完整落盘序列（create / replace / multi 两圈的共用实现）：图片材料化 →
+  // 落点规划（写进 header.cwd）→ create（幽灵 id 撞车时另铸后缀 id 重试一次）→ 结构校验
+  // → 挂接工作区 → 预热投影缓存，并把**实测**日志长度写回该条记录（D13 的重导基线）。
+  //   retryGhost=false 用于 replace：同 id 覆盖重导前已清掉目标工件，不存在宿主内存索引残留；
+  //   onGhost(previous, current) 由调用方把新 id 同步回决策载荷（单会话改 decision，多会话
+  //   改父记录子表与 results 条目）——同步口径是各路径唯一的差异，故留在调用方。
+  const writeOneSession = async ({ events, meta, record, replace = false, retryGhost = true, onGhost }) => {
+    await materialize(events)
+    const prepared = await prepareGrouping(meta)
+    let target = prepared.meta
+    if (replace) await clearSessionArtifactsForReplace(ctx, target.id)
+    try {
+      await createSession(ctx, target, events)
+    } catch (err) {
+      // 宿主内存索引残留同名会话（幽灵，list 未暴露但 create 拒绝）：另铸后缀新 id 重试
+      // 一次，registry 记录 / 决策载荷由 onGhost 同步到新 id；其它 create 错误（meta 非法
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/host-session.mjs:479-505](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/host-session.mjs#L479-L505)
+
+新旧宿主写入路径。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+ * 新宿主 create(header) 返回写句柄，事件经 handle.append(events) 落盘、flush 建持久化
+ * 屏障，最后关句柄释放写租约；旧宿主 create(header) 无返回值，续写走 append(id, events)。 */
+export async function writeSession(ctx, header, events) {
+  const sp = ctx.get('sessionPersistence')
+  if (!sp || typeof sp.create !== 'function') throw new Error('sessionPersistence 不可用（缺少 create）')
+  const handle = await sp.create(header)
+  if (handle && typeof handle.append === 'function') {
+    try {
+      await handle.append(events)
+      if (typeof handle.flush === 'function') await handle.flush()
+    } finally {
+      if (typeof handle.close === 'function') {
+        try {
+          await handle.close()
+        } catch (err) {
+          // 数据已 flush；关句柄失败只影响写租约释放，上报而不改判导入结果
+          console.error('会话写句柄关闭失败（' + header.id + '）: ' + String((err && err.message) || err))
+        }
+      }
+    }
+    return
+  }
+  if (typeof sp.append === 'function') {
+    await sp.append(header.id, events)
+    return
+  }
+  throw new Error('sessionPersistence 写入面不可用（create 未返回写句柄，且没有 append(id, events)）')
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/convert/events.mjs:310-335](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/convert/events.mjs#L310-L335)
+
+缺失工具结果补齐。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
           const ev = push('tool/call', {
             turn,
             step: stepNum,
@@ -408,158 +373,82 @@ runDecision材料化附件、规划cwd/工作区后create，再做结构校验�
             if (ci === undefined || seenCall.has(tr.toolCallId)) continue
             seenCall.add(tr.toolCallId)
             orderedCallIndexes.push(ci)
-          }
-          for (let ci = 0; ci < step.toolCalls.length; ci++) {
-            if (!seenCall.has(step.toolCalls[ci].id)) orderedCallIndexes.push(ci)
-          }
-        } else {
-          for (let ci = 0; ci < step.toolCalls.length; ci++) orderedCallIndexes.push(ci)
-        }
-        for (const ci of orderedCallIndexes) {
-          const tc = step.toolCalls[ci]
-          const tr = resultByCallId.get(tc.id)
-          advance(tr?.time)
-          pushConversation('tool/result', {
-            turn,
-            step: stepNum,
-            message: {
-              id: 'import:' + meta.id + ':t' + turn + ':' + stepNum + ':' + tc.id,
-              role: 'user',
-              content: [{
-                type: 'tool-result',
-                toolCallId: tc.id,
-                content: tr ? tr.content : [],
-                ...(tr && tr.isError ? { isError: true } : {}),
-              }],
-              source: { kind: 'tool', callId: tc.id },
-            },
-          }, [callSeqs[ci]])
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/import-core.mjs:63-90](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L63-L90)
+#### 缺口
 
-保真降级计数对外透传。
+- 未运行宿主各代与全部来源格式
+  **影响**：不能保证所有消息或工具执行环境可恢复
+  **进一步探讨**：隔离宿主导入两类记录并比较原文和事件。
 
-<details>
-<summary>查看原文（28行）</summary>
+<a id="research-q03"></a>
 
-```text
-// 把转换层的畸形行明细 / secrets 位置 / permission 计数 / 工具结果丢弃计数附加到
-// 公开结果。decideItem（lib/imports.mjs）只透传固定字段，这些字段在此补透；非空才
-// 附加（schema 均为可选字段，空值不占键）。
-export function attachConversionDetails(out, res) {
-  if (out.skippedLines && out.skippedLines.length > 0) res.skippedLines = out.skippedLines
-  if (out.secrets && out.secrets.length > 0) res.secrets = out.secrets
-  if (out.permissionCount && out.permissionCount > 0) res.permissionCount = out.permissionCount
-  if (out.cwdRemap) res.cwdRemap = out.cwdRemap
-  if (out.orphanToolResults) res.orphanToolResults = out.orphanToolResults
-  if (out.duplicateToolResults) res.duplicateToolResults = out.duplicateToolResults
-  // 转换层保真 / 降级计数（>0 才附加；schema 均为可选字段）：isMeta 记录数、
-  // 后端工具调用数、无法映射的结果块数、未知输出块数、畸形工具参数数；Copilot CLI 的
-  // 未知事件 / 未导入附件 / 无声明的工具调用 / 无调用的执行结果。
-  // 失败要大声：这些计数原本只停在转换器返回值，工具结果里看不到。
-  for (const k of ['metaMessages', 'toolUseResultsMerged', 'backendToolCalls', 'droppedToolResultBlocks', 'droppedMalformedOutputs', 'droppedMalformedArgs', 'missingToolInputs', 'missingToolOutputs', 'droppedInjected', 'resetBoundaries', 'unknownEvents', 'droppedAttachments', 'unannouncedToolCalls', 'orphanResults']) {
-    if (typeof out[k] === 'number' && out[k] > 0) res[k] = out[k]
-  }
-  // imagesDegraded 两个来源同口径相加：宿主层（runDecision 附件落地失败 / storeImages 关）
-  // 已写进 res，转换层（拿不到字节）在 out 上。images 只由宿主层计数（落成附件的张数）。
-  if (typeof out.imagesDegraded === 'number' && out.imagesDegraded > 0) {
-    res.imagesDegraded = (typeof res.imagesDegraded === 'number' ? res.imagesDegraded : 0) + out.imagesDegraded
-  }
-  // 展平信封还原计数（整对象 >0 才附加）：Codex Desktop 外部导入的 rollout 里，工具调用被
-  // 展平成正文文本信封，转换层还原成 tool-call/tool-result（见 lib/convert/codex.mjs）。
-  // orphanResults / malformed 是降级项（结果保留为正文、载荷退化为原文），必须可见。
-  if (out.externalAgent && (out.externalAgent.calls > 0 || out.externalAgent.results > 0
-    || out.externalAgent.orphanResults > 0 || out.externalAgent.malformed > 0)) {
-    res.externalAgent = out.externalAgent
-```
+<a id="detail-section-13"></a>
 
-</details>
+### Q03 · 重复导入和续聊后重导如何处理，失败能否整体撤销？
 
-**依据 4 · 源码核查**：[lib/import-core.mjs:257-281](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L257-L281)
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
-附件降级与结构校验。
+#### 完整回答
+
+imports.mjs:453-526 在已知目标、归档、持久会话长度等条件下选择替换、新副本或已导入，未知已存长度会跳过追加；import-core.mjs:350-358、378-390 对尾部追加调用宿主，410-428 在后续挂接处理后写 registry。registry 读损坏时 imports.mjs:58-71 告警并视为空，可能失去去重基线。创建、工作区挂接和最终记账跨多个步骤，不能据此认定全局原子；异常或中断后应核实际会话、原文及 registry，避免盲目重导。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/imports.mjs:453-526](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/imports.mjs#L453-L526)
+
+目标、持久长度和重导条件。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（74行）</summary>
 
 ```text
-export async function runDecision(ctx, decision, registryDir, sourcePath, persisted, options = {}) {
-  const validation = { ok: true, problems: [] }
-  // 图片落地：写盘前把 IR 图片块的字节经 ctx.attachments 落成宿主附件（引用进日志），
-  // 拿不到服务/不能落地的降级为 [image] 占位并计数。见 lib/attachments.mjs。
-  const imageTally = { stored: 0, degraded: 0 }
-  const materialize = async (events, targetId) => {
-    // 目标代次（只认**权威**来源，不用推断值）：续写看目标会话自己的 header 代次；
-    // 新建/替换看面板是否显式指定了代次（formatVersionOverrides）。两者都没有时传
-    // undefined —— 宿主代次未知/为当前代次，按支持附件引用处理，绝不因为「推断不出来」
-    // 就把图片降级。V3 目标不支持附件引用，见 docs/architecture.md D14。
-    const targetVersion = typeof targetId === 'string' && targetId
-      ? await targetSessionFormatVersion(ctx, targetId)
-      : formatVersionOverride(ctx)
-    const r = await materializeImages(ctx, events, { storeImages: options.storeImages !== false, targetVersion })
-    imageTally.stored += r.stored
-    imageTally.degraded += r.degraded
-    return r.events
+  if (known && (!persisted.has(known.dshId) || archived.has(known.dshId))) {
+    if (!persisted.has(known.dshId) && typeof known.dshId === 'string') {
+      base.staleRegistry = { previous: known.dshId, reason: 'session-log-missing' }
+    }
+    known = null
   }
-  const check = (events) => {
-    if (!Array.isArray(events) || events.length === 0) return
-    const r = validateSessionEvents(events)
-    if (!r.ok) {
-      validation.ok = false
-      const room = 20 - validation.problems.length
-      if (room > 0) validation.problems.push(...r.problems.slice(0, room))
-```
 
-</details>
+  // 已知记录且为可续写形态（有 dshId + turns）时走增量状态机；缺 turns 的
+  // legacy/残缺记录（unwrapRecord 解出的旧 string 记录只有 dshId）被挡在此守卫外，
+  // 落进下方「无记录」分支做 legacy 回填。
+  if (known && typeof known.dshId === 'string' && typeof known.turns === 'number') {
+    const targetId = known.dshId
+    // replace：同 id 删工件后全量重导（面板「刷新已导入」）；不新建副本。
+    if (args.replace === true) {
+      return {
+        ...base,
+        sessionId: targetId,
+        status: 'replaced',
+        __action: 'replace',
+        __meta: { ...meta, id: targetId },
+        __events: events,
+        __itemRecord: itemRecord(targetId, turns.length, events.length, importFormat, { copies: known.copies }),
+      }
+    }
+    // 显式 sessionId 变更（或源 sessionId 变更）→ 副本语义；「targetId 由避让产生
+    // 且显式 id 是其前缀」视为同一会话（撞 id 后的后缀避让），不重复建副本
+    const explicitChanged = isSessionIdChange(args, targetId)
+    if (explicitChanged || args.force === true) {
+      const baseId = explicitChanged ? args.sessionId : targetId
+      const newId = persisted.has(baseId) ? mintForceSessionId(persisted, baseId) : baseId
+      return {
+        ...base,
+        sessionId: newId,
+        status: 'imported',
+        __action: 'create',
+        __meta: { ...meta, id: newId },
+        __events: events,
+        __itemRecord: itemRecord(newId, turns.length, events.length, importFormat, { copies: supersededEntry(known) }),
+        reimported: { previous: targetId, current: newId, reason: explicitChanged ? 'session-id-changed' : 'forced' },
+      }
+    }
 
-**依据 5 · 源码核查**：[lib/import-core.mjs:320-332](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L320-L332)
-
-落盘顺序。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  // 一条会话的完整落盘序列（create / replace / multi 两圈的共用实现）：图片材料化 →
-  // 落点规划（写进 header.cwd）→ create（幽灵 id 撞车时另铸后缀 id 重试一次）→ 结构校验
-  // → 挂接工作区 → 预热投影缓存，并把**实测**日志长度写回该条记录（D13 的重导基线）。
-  //   retryGhost=false 用于 replace：同 id 覆盖重导前已清掉目标工件，不存在宿主内存索引残留；
-  //   onGhost(previous, current) 由调用方把新 id 同步回决策载荷（单会话改 decision，多会话
-  //   改父记录子表与 results 条目）——同步口径是各路径唯一的差异，故留在调用方。
-  const writeOneSession = async ({ events, meta, record, replace = false, retryGhost = true, onGhost }) => {
-    await materialize(events)
-    const prepared = await prepareGrouping(meta)
-    let target = prepared.meta
-    if (replace) await clearSessionArtifactsForReplace(ctx, target.id)
-    try {
-      await createSession(ctx, target, events)
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/import-core.mjs:428-432](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L428-L432)
-
-会话落地后才写registry。
-
-```text
-  if (decision.__record) await rememberImport(registryDir, sourcePath, decision.__record)
-  const pub = {}
-  for (const [k, v] of Object.entries(decision)) {
-    if (!k.startsWith('__')) pub[k] = v
-  }
-```
-
-**依据 7 · 源码核查**：[lib/imports.mjs:495-513](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/imports.mjs#L495-L513)
-
-基线保护和另铸副本。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
+    // 源增长：判据是「DSH 侧这条会话还是不是我们上次写完的样子」——storedEvents 是上次落盘
+    // 后实测的日志长度（缺它 = 无基线）：相等 → 纯镜像，续写尾部；大于 → 用户已在 DSH 续聊，
     // 追加会污染他自己的对话 → 另铸副本；小于 → 日志被外部截短 → 不写、跳过上报；无基线 →
     // 不可判定 → 保守另铸副本一次并回填基线。用户心智：重复导入 = 要一份新副本。
     if (turns.length > known.turns) {
@@ -579,177 +468,101 @@ export async function runDecision(ctx, decision, registryDir, sourcePath, persis
           __action: 'create',
           __meta: { ...meta, id: newId },
           __events: events,
-```
-
-</details>
-
-**依据 8 · 源码核查**：[lib/imports.mjs:557-564](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/imports.mjs#L557-L564)
-
-同轮内部变化不能append改旧事件。
-
-```text
-    // 轮数相等：事件数也相等 = 内容未变（文件变了但转换结果一致，如新增畸形行）；
-    // 事件数不同 = 既有轮次内变化，append-only 无法改写 → changedInPlace 跳过
-    const eventsChanged = typeof known.events !== 'number' || events.length !== known.events
-    if (eventsChanged) {
-      return {
-        ...base,
-        sessionId: targetId,
-        status: 'already-imported',
-```
-
-**依据 9 · 源码核查**：[lib/host-session.mjs:328-351](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/host-session.mjs#L328-L351)
-
-目标代次及agents.create seed。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-  // agents.create 只按宿主**原生**代次种会话，所以只有「目标代次 = 原生代次」时才走它
-  // （代次不等时只能 sessionPersistence.create 直写，它按 header.version 选文件名）。
-  // 相等时走 agents.create 还有一层必要副作用：它会 enter + announce 会话 → 宿主
-  // api-session-controller 转发 api-session/added → 客户端会话列表即时出现新会话；
-  // sessionPersistence.create 只落盘、不进内存会话表，导入后必须刷新页面才看得到。
-  const override = formatVersionOverrides.get(ctx)
-  const useAgents = agents && typeof agents.create === 'function'
-    && (override === undefined || override === nativeVersion)
-  if (useAgents) {
-    let presetId
-    try {
-      const ap = ctx.get('agentPresets')
-      if (ap && typeof ap.resolve === 'function') {
-        const preset = await ap.resolve()
-        if (preset && typeof preset.id === 'string' && preset.id) presetId = preset.id
+          __itemRecord: itemRecord(newId, turns.length, events.length, importFormat, { copies: supersededEntry(known) }),
+          reimported: { previous: targetId, current: newId, reason },
+        }
       }
-    } catch {
-      // 无默认 preset / roster 未配置：不落盘 preset 身份，其余照旧
+      if (fromSeq < baseline) {
+        return { ...base, sessionId: targetId, status: 'already-imported', alreadyImported: true, storedShrunk: true }
+      }
+      const tail = tailSessionEvents(converted, { fromTurn: known.turns + 1, fromSeq })
+      if (tail.events.length === 0) {
+        // 轮数增加但没有可截取事件（理论不可达）：保守跳过
+        return { ...base, sessionId: targetId, status: 'already-imported', alreadyImported: true }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/import-core.mjs:350-358](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/import-core.mjs#L350-L358)
+
+尾部材料化与追加。
+
+```text
+    await stampStoredEvents(ctx, record, target.id, stored)
+    return target.id
+  }
+  // 续写一段尾部（单会话 append 与多会话 appends 同口径）：图片按目标会话代次落地 →
+  // 宿主 append → 结构校验。
+  const appendTail = async (targetId, events) => {
+    await materialize(events, targetId)
+    await appendHostEvents(ctx, targetId, events)
+    check(events)
+```
+
+**依据 3 · 源码核查**：[lib/import-core.mjs:378-390](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/import-core.mjs#L378-L390)
+
+按决策写入或追加。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+      record: decision.__record,
+      replace: true,
+      retryGhost: false,
+    })
+  } else if (decision.__action === 'append') {
+    await appendTail(decision.__targetId, decision.__tailEvents)
+  } else if (decision.__action === 'multi') {
+    for (const r of decision.__replaces || []) {
+      const sub = decision.__record && r.subTable ? decision.__record[r.subTable] : null
+      await writeOneSession({
+        events: r.events,
+        meta: r.meta,
+        record: sub && sub[r.key],
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/import-core.mjs:410-428](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/import-core.mjs#L410-L428)
+
+后续工作区处理与最后记账。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+            }
+          }
+        },
+      })
     }
-    try {
-      await agents.create({
-        sessionId: hostMeta.id,
-        meta: { ...hostMeta, ...(presetId ? { agentPreset: presetId } : {}) },
-        seed: hostEvents,
+    for (const a of decision.__appends) await appendTail(a.targetId, a.events)
+  }
+  // 被删工作区出现新会话：解除工作区忽略（旧会话的 'workspace-deleted' 墓碑保留，
+  // 不会把已删除的源带回来）；失败只告警，不影响本次导入结果。
+  if (Array.isArray(decision.__restoreWorkspaces)) {
+    for (const cwd of decision.__restoreWorkspaces) {
+      try {
+        await forgetWorkspaceIgnore(registryDir, cwd)
+      } catch (err) {
+        console.warn('[dsh-chat-import] 恢复工作区忽略失败（' + cwd + '）：' + String((err && err.message) || err))
+      }
+    }
+  }
+  if (decision.__record) await rememberImport(registryDir, sourcePath, decision.__record)
 ```
 
 </details>
 
-#### 缺口
+**依据 5 · 源码核查**：[lib/imports.mjs:58-71](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/imports.mjs#L58-L71)
 
-- 未故障注入附件/落盘/registry部分成功，也没验证具体端点接收修补历史。
-  **影响**：不能由代表源码推导全部来源保真或任务恢复成功。
-  **进一步探讨**：对副本注入源截短、缺工具结果、重复结果、图片不可达、DSH续聊、registry写失败，逐事件及实际持久化比对。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 如何试用，撤回、源删除和保真报告如何界定？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-建议保留源日志，以副本先预览再少量导入，核对用户/助手原文、工具配对、压缩上下文、图片、时间和cwd后才续聊；不要将目标可打开当迁移合格。首次有来源定位、格式代次、权限、路径映射和脱敏审阅成本，持续有扫描/转换/附件存储与长上下文模型费，金额耗时未知；源更新或DSH续聊后可能生成副本，用户需接受额外存储和身份核对。检测secrets位置不是所有敏感内容已清除的证明。反向导出存在独立入口，本轮未深入各目标语义，不能保证来回无损。
-
-隐藏源、删除源、撤回导入和purge不是一个动作。源码将源删除限定为扫描发现的单会话文件并要求confirm，送回收站或插件trash；批量purge也需confirm:true且不可逆，不等于源文件已安全备份。卸载不会撤销已经写入宿主的会话/附件，失败要先核registry与实际会话再决定清理，保留原件才能退出。
-
-可证伪方向是将现有降级计数升级为逐对象可定位的迁移验收单，明确原样、结构修补、占位、跳过、未验证；用户确认能否续聊所需上下文，再开目标会话。相对已有计数应降低遗漏关键工具结果和误判无损，代价是报告阅读/存储；以匿名损坏日志对照当前回执，测错误识别、人工审阅和续聊纠错，若无减少或负担过大则停止。该方向未实现、需求未知，不算当前保真能力。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[README.md:93-97](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/README.md#L93-L97)
-
-预览与文件导入流程主张。
-
-```text
-  Click the **Import sessions** button at the bottom of the left sidebar to open the import window. With the DSH Claude Style theme, that button lives in the account menu at the bottom left. Pick the conversations you want and import them in one click.
-
-  Rows carry their own tools: **double-click** a row to preview the conversation (a read-only dry-run — plugin injections skipped, tool calls folded into one line), switch the search box to **In content** to search message bodies instead of titles, **hide** a row reversibly, move a single-session source file to the Recycle Bin, or **drag the row onto a workspace** in the left sidebar to import it there with its timestamps shifted so it sorts to the top. The exact rules are in [docs/USAGE.md](docs/USAGE.md).
-
-  If the file came from somewhere else — a web-app export, a script you wrote, a tool this plugin does not list — use **Import from file** at the top of the same window. Type a local path and press Enter, or press **Choose…** to pick files. When the path is a directory, it asks whether to search subfolders. Check the preview, then import. If detection fails, it lists why each candidate parser gave up and points you at the skill that converts the format.
-```
-
-**依据 2 · 源码核查**：[lib/import-core.mjs:63-90](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/import-core.mjs#L63-L90)
-
-已有降级字段。
+损坏 registry 警告及空回退。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-// 把转换层的畸形行明细 / secrets 位置 / permission 计数 / 工具结果丢弃计数附加到
-// 公开结果。decideItem（lib/imports.mjs）只透传固定字段，这些字段在此补透；非空才
-// 附加（schema 均为可选字段，空值不占键）。
-export function attachConversionDetails(out, res) {
-  if (out.skippedLines && out.skippedLines.length > 0) res.skippedLines = out.skippedLines
-  if (out.secrets && out.secrets.length > 0) res.secrets = out.secrets
-  if (out.permissionCount && out.permissionCount > 0) res.permissionCount = out.permissionCount
-  if (out.cwdRemap) res.cwdRemap = out.cwdRemap
-  if (out.orphanToolResults) res.orphanToolResults = out.orphanToolResults
-  if (out.duplicateToolResults) res.duplicateToolResults = out.duplicateToolResults
-  // 转换层保真 / 降级计数（>0 才附加；schema 均为可选字段）：isMeta 记录数、
-  // 后端工具调用数、无法映射的结果块数、未知输出块数、畸形工具参数数；Copilot CLI 的
-  // 未知事件 / 未导入附件 / 无声明的工具调用 / 无调用的执行结果。
-  // 失败要大声：这些计数原本只停在转换器返回值，工具结果里看不到。
-  for (const k of ['metaMessages', 'toolUseResultsMerged', 'backendToolCalls', 'droppedToolResultBlocks', 'droppedMalformedOutputs', 'droppedMalformedArgs', 'missingToolInputs', 'missingToolOutputs', 'droppedInjected', 'resetBoundaries', 'unknownEvents', 'droppedAttachments', 'unannouncedToolCalls', 'orphanResults']) {
-    if (typeof out[k] === 'number' && out[k] > 0) res[k] = out[k]
-  }
-  // imagesDegraded 两个来源同口径相加：宿主层（runDecision 附件落地失败 / storeImages 关）
-  // 已写进 res，转换层（拿不到字节）在 out 上。images 只由宿主层计数（落成附件的张数）。
-  if (typeof out.imagesDegraded === 'number' && out.imagesDegraded > 0) {
-    res.imagesDegraded = (typeof res.imagesDegraded === 'number' ? res.imagesDegraded : 0) + out.imagesDegraded
-  }
-  // 展平信封还原计数（整对象 >0 才附加）：Codex Desktop 外部导入的 rollout 里，工具调用被
-  // 展平成正文文本信封，转换层还原成 tool-call/tool-result（见 lib/convert/codex.mjs）。
-  // orphanResults / malformed 是降级项（结果保留为正文、载荷退化为原文），必须可见。
-  if (out.externalAgent && (out.externalAgent.calls > 0 || out.externalAgent.results > 0
-    || out.externalAgent.orphanResults > 0 || out.externalAgent.malformed > 0)) {
-    res.externalAgent = out.externalAgent
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/session-actions.mjs:1-9](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/session-actions.mjs#L1-L9)
-
-源删除与隐藏、回收站/trash区分。
-
-```text
-// lib/session-actions.mjs — per-row panel actions on discovered (not yet imported) sessions:
-// hide / unhide, delete the source file, and resolving a sidebar workspace for drag-and-drop.
-//
-// Hide is a 'hidden' entry in the ignore table (lib/ignore.mjs): the panel list filters it and
-// rescans / /import-all skip it, Undo removes the entry. Deleting the source is the only
-// destructive action in the panel, so the route layer only offers it for paths a default-root
-// scan discovered, never for one-file-many-sessions sources, and only with confirm:true; the
-// file goes to the OS Recycle Bin (Windows) or a plugin-owned trash folder (elsewhere) — never
-// an unlink.
-```
-
-**依据 4 · 源码核查**：[lib/purge.mjs:299-302](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/purge.mjs#L299-L302)
-
-批量清理明确confirm及不可逆。
-
-```text
-/** 批量删除 registry 中全部导入会话；需 confirm:true。 */
-export async function purgeAllImports(ctx, registryDir, { confirm } = {}) {
-  if (confirm !== true) {
-    throw new Error('批量删除需要 confirm:true（不可逆，仅删除本插件导入的会话）')
-```
-
-**依据 5 · 源码核查**：[lib/imports.mjs:53-73](https://github.com/Nwflower/dsh-chat-import/blob/dae686faadb44bbd1e5a71f9fd618c2d2e926cee/lib/imports.mjs#L53-L73)
-
-registry损坏按空处理并警告，需核实实际目标。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-// 直接读盘（调用方须已处于写串行链内）：缺失返回空 registry，损坏告警后按空处理。
-// 同时维护进程内快照 lastRegistrySnapshot：导入决策链（decideItem）没有 registryDir
-// 上下文，sessionOwnerPath 的 dshId 反查借用同流程内必然先行发生的本次读取结果。
-let lastRegistrySnapshot = { imports: {} }
-
 async function readRegistry(registryDir) {
   try {
     const parsed = JSON.parse(await readFile(join(registryDir, 'imports.json'), 'utf8'))
@@ -764,16 +577,243 @@ async function readRegistry(registryDir) {
     }
   }
   const empty = { version: REGISTRY_VERSION, imports: {} }
-  lastRegistrySnapshot = empty
-  return empty
 ```
 
 </details>
 
 #### 缺口
 
-- 没有真实用户迁移验收、收益和完整导出往返验证。
-  **影响**：不能由代表源码推导全部来源保真或任务恢复成功。
-  **进一步探讨**：新代表日志与保留原件做受控比较，核对事件遗漏、人工纠错和续聊合格，而不重复旧样本声称新效果。
+- 未注入创建、挂接和记账间断电
+  **影响**：不能保证无重复和完整回滚
+  **进一步探讨**：隔离宿主逐阶段中断并核对会话与 registry。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 哪些内容会修补、跳过或占位，隐私与采用成本是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+events.mjs:310-335 对无配对结果的工具调用合成空结果；codex.mjs:381-382 报告不可获取图片的占位降级，属于代表来源而非所有格式。package.json:57-63 声明 DSH 及工具依赖，README:77-79 给出最低版本；导入意味着本机来源对话进入目标宿主持久化与备份，后续发送给模型的范围依用户操作和宿主而定，不能当作原运行环境复现。适合先备份非敏感副本、预览并核工作区及关键消息；缺图片、来源或工具结果时回原日志查验。运行、存储、续聊费用与人工复核时间未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/convert/events.mjs:310-335](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/convert/events.mjs#L310-L335)
+
+合成缺失工具结果。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+          const ev = push('tool/call', {
+            turn,
+            step: stepNum,
+            callId: tc.id,
+            name: tc.name,
+            arguments: tc.arguments,
+          })
+          callSeqs.push(ev.seq)
+        }
+        // 配对不变量：每个 tool/call 在其广告的同一 step 内闭合——真实结果（预扫描
+        // 已按调用归位）优先，全程无结果的调用（Cursor 无 tool_result、Claude/Codex/
+        // Reasonix/Gemini 中断）补发空 result；content 用空数组：不虚构文本，wire
+        // 适配器会把空内容归一为 "(no output)"（dsh-llm-deepseek / dsh-llm-pi-ai 的
+        // serialize 均 `|| "(no output)"`）。不闭合则 resume 时模型 API 拒绝
+        // （assistant 带 tool_calls 但缺 tool 消息），V4 迁移也在 step/end 拒载。
+        // 结果的发射顺序：默认按 toolCalls 声明顺序；resultOrder='source' 时同一步内
+        // 按源记录里结果的到达顺序（Kimi 并行工具），未收到结果的调用仍在末尾补空。
+        const callIndex = new Map(step.toolCalls.map((tc, i) => [tc.id, i]))
+        const orderedCallIndexes = []
+        if (resultOrder === 'source') {
+          const seenCall = new Set()
+          for (const tr of step.toolResults) {
+            const ci = callIndex.get(tr.toolCallId)
+            if (ci === undefined || seenCall.has(tr.toolCallId)) continue
+            seenCall.add(tr.toolCallId)
+            orderedCallIndexes.push(ci)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/convert/codex.mjs:375-382](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/convert/codex.mjs#L375-L382)
+
+图片退化计数。
+
+```text
+  const finalTitle = normalizeTitle(titleTopic || (turns.length > 0 ? turns[0].prompt : ''))
+  return finishSession(turns, args.budget, { meta, provider: 'codex', model, skipped, records: recs.length, skippedLines, secrets, systemPrompt }, {
+    title: finalTitle,
+    droppedMalformedArgs,
+    // 工具输出块数组中的未知块类型个数（>0 才占键；失败要大声）
+    ...(droppedMalformedOutputs > 0 ? { droppedMalformedOutputs } : {}),
+    // 图片降级数（>0 才占键）：拿不到字节、以 [image] 文本占位导入的图片张数
+    ...(imagesDegraded > 0 ? { imagesDegraded } : {}),
+```
+
+**依据 3 · 源码核查**：[package.json:57-63](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/package.json#L57-L63)
+
+宿主依赖声明。
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh": ">=0.1.5-rc.1",
+    "@deepseek-ai/dsh-client-locale": ">=0.1.0-rc.6",
+    "@deepseek-ai/dsh-tools": ">=0.1.0-rc.6 <0.3.0",
+    "@deepseek-ai/schemastery": ">=3.0.0",
+    "react": ">=18.0.0"
+```
+
+**依据 4 · 作者声明**：[README.md:77-79](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/README.md#L77-L79)
+
+作者宿主版本说明。
+
+```text
+## Install
+
+> Requires dsh 0.1.5-rc.1 or newer. Verified on the 0.1.x line and on the 0.2.x line; dsh-tools must satisfy `>=0.1.0-rc.6 <0.3.0`.
+```
+
+**依据 5 · 作者声明**：[README.md:91-97](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/README.md#L91-L97)
+
+作者描述预览和选择。
+
+```text
+1. Import conversations from the GUI
+
+  Click the **Import sessions** button at the bottom of the left sidebar to open the import window. With the DSH Claude Style theme, that button lives in the account menu at the bottom left. Pick the conversations you want and import them in one click.
+
+  Rows carry their own tools: **double-click** a row to preview the conversation (a read-only dry-run — plugin injections skipped, tool calls folded into one line), switch the search box to **In content** to search message bodies instead of titles, **hide** a row reversibly, move a single-session source file to the Recycle Bin, or **drag the row onto a workspace** in the left sidebar to import it there with its timestamps shifted so it sorts to the top. The exact rules are in [docs/USAGE.md](docs/USAGE.md).
+
+  If the file came from somewhere else — a web-app export, a script you wrote, a tool this plugin does not list — use **Import from file** at the top of the same window. Type a local path and press Enter, or press **Choose…** to pick files. When the path is a directory, it asks whether to search subfolders. Check the preview, then import. If detection fails, it lists why each candidate parser gave up and points you at the skill that converts the format.
+```
+
+#### 缺口
+
+- 未核所有格式、真实图片与隐私路径
+  **影响**：不能声称无损、脱敏或兼容全部宿主
+  **进一步探讨**：以合成会话核对附件、权限和后续模型请求。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 能否让用户逐项核对迁移保真与未知？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+已有预览、事件配对修补、图片降级计数及导入历史，简单展示导入数量不构成增量。未验证设想是在每次导入后生成用户可查的逐对象清单，区分原样转写、合成空结果、图片占位、来源跳过和未核验，并绑定原文件位置与目标会话序列；缺少原文或读取失败标 unknown，用户显式确认后再续聊。依赖各解析器保留来源映射，不应记录敏感正文；先核所有 UI 是否已有等价报告。以现有预览/计数为对照，使用含断裂工具对、损坏图片、重复导入和截断文件的合成数据，比较无损误判、核对时间和泄露；若缺项被标原样、隐私泄露或收益不足抵人工负担则否定。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:91-97](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/README.md#L91-L97)
+
+已有预览和来源选择。
+
+```text
+1. Import conversations from the GUI
+
+  Click the **Import sessions** button at the bottom of the left sidebar to open the import window. With the DSH Claude Style theme, that button lives in the account menu at the bottom left. Pick the conversations you want and import them in one click.
+
+  Rows carry their own tools: **double-click** a row to preview the conversation (a read-only dry-run — plugin injections skipped, tool calls folded into one line), switch the search box to **In content** to search message bodies instead of titles, **hide** a row reversibly, move a single-session source file to the Recycle Bin, or **drag the row onto a workspace** in the left sidebar to import it there with its timestamps shifted so it sorts to the top. The exact rules are in [docs/USAGE.md](docs/USAGE.md).
+
+  If the file came from somewhere else — a web-app export, a script you wrote, a tool this plugin does not list — use **Import from file** at the top of the same window. Type a local path and press Enter, or press **Choose…** to pick files. When the path is a directory, it asks whether to search subfolders. Check the preview, then import. If detection fails, it lists why each candidate parser gave up and points you at the skill that converts the format.
+```
+
+**依据 2 · 源码核查**：[lib/convert/events.mjs:310-335](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/convert/events.mjs#L310-L335)
+
+已有补齐行为。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+          const ev = push('tool/call', {
+            turn,
+            step: stepNum,
+            callId: tc.id,
+            name: tc.name,
+            arguments: tc.arguments,
+          })
+          callSeqs.push(ev.seq)
+        }
+        // 配对不变量：每个 tool/call 在其广告的同一 step 内闭合——真实结果（预扫描
+        // 已按调用归位）优先，全程无结果的调用（Cursor 无 tool_result、Claude/Codex/
+        // Reasonix/Gemini 中断）补发空 result；content 用空数组：不虚构文本，wire
+        // 适配器会把空内容归一为 "(no output)"（dsh-llm-deepseek / dsh-llm-pi-ai 的
+        // serialize 均 `|| "(no output)"`）。不闭合则 resume 时模型 API 拒绝
+        // （assistant 带 tool_calls 但缺 tool 消息），V4 迁移也在 step/end 拒载。
+        // 结果的发射顺序：默认按 toolCalls 声明顺序；resultOrder='source' 时同一步内
+        // 按源记录里结果的到达顺序（Kimi 并行工具），未收到结果的调用仍在末尾补空。
+        const callIndex = new Map(step.toolCalls.map((tc, i) => [tc.id, i]))
+        const orderedCallIndexes = []
+        if (resultOrder === 'source') {
+          const seenCall = new Set()
+          for (const tr of step.toolResults) {
+            const ci = callIndex.get(tr.toolCallId)
+            if (ci === undefined || seenCall.has(tr.toolCallId)) continue
+            seenCall.add(tr.toolCallId)
+            orderedCallIndexes.push(ci)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/convert/codex.mjs:375-382](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/convert/codex.mjs#L375-L382)
+
+已有图片降级计数。
+
+```text
+  const finalTitle = normalizeTitle(titleTopic || (turns.length > 0 ? turns[0].prompt : ''))
+  return finishSession(turns, args.budget, { meta, provider: 'codex', model, skipped, records: recs.length, skippedLines, secrets, systemPrompt }, {
+    title: finalTitle,
+    droppedMalformedArgs,
+    // 工具输出块数组中的未知块类型个数（>0 才占键；失败要大声）
+    ...(droppedMalformedOutputs > 0 ? { droppedMalformedOutputs } : {}),
+    // 图片降级数（>0 才占键）：拿不到字节、以 [image] 文本占位导入的图片张数
+    ...(imagesDegraded > 0 ? { imagesDegraded } : {}),
+```
+
+**依据 4 · 源码核查**：[lib/import-core.mjs:410-428](https://github.com/Nwflower/dsh-chat-import/blob/080dc99c64630a628d3a744983e1856d0600d478/lib/import-core.mjs#L410-L428)
+
+导入后记账。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+            }
+          }
+        },
+      })
+    }
+    for (const a of decision.__appends) await appendTail(a.targetId, a.events)
+  }
+  // 被删工作区出现新会话：解除工作区忽略（旧会话的 'workspace-deleted' 墓碑保留，
+  // 不会把已删除的源带回来）；失败只告警，不影响本次导入结果。
+  if (Array.isArray(decision.__restoreWorkspaces)) {
+    for (const cwd of decision.__restoreWorkspaces) {
+      try {
+        await forgetWorkspaceIgnore(registryDir, cwd)
+      } catch (err) {
+        console.warn('[dsh-chat-import] 恢复工作区忽略失败（' + cwd + '）：' + String((err && err.message) || err))
+      }
+    }
+  }
+  if (decision.__record) await rememberImport(registryDir, sourcePath, decision.__record)
+```
+
+</details>
+
+#### 缺口
+
+- 未穷尽已有 UI 与来源映射，也没有原型
+  **影响**：不能证明方案增量和用户收益
+  **进一步探讨**：先核现有报告，再用合成记录盲评。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

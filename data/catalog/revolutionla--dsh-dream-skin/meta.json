@@ -1,53 +1,44 @@
 {
     "repository": "RevolutionLA/dsh-dream-skin",
     "repository_id": 1334737435,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
-    "stars": 293,
-    "pushed_at": "2026-10-28T18:40:38Z",
+    "captured_at": "2026-11-01T09:18:30.076Z",
+    "window_start": "2026-10-02T09:18:30.076Z",
+    "stars": 298,
+    "pushed_at": "2026-11-01T09:29:58Z",
     "issues": {
-        "open": 3,
-        "closed": 79,
-        "created_30d": 52,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 4,
+        "closed": 80,
+        "created_30d": 53,
+        "closed_30d": 49,
+        "updated_30d": 53
     },
-    "errors": [
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ARevolutionLA%2Fdsh-dream-skin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7296:110F0C:1618DFE:17CF9B0:6AE2A30B and timestamp 2026-10-29 01:36:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ARevolutionLA%2Fdsh-dream-skin%20is%3Aissue%20updated%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 72A6:129847:159B57E:1752077:6AE2A30C and timestamp 2026-10-29 01:36:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-dream-skin",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 39105,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-dream-skin",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 38072,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-dream-skin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-15T02:53:11.518Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
             "source_url": "https://registry.npmjs.org/dsh-dream-skin",
             "error": null,
-            "latest_version": "10.29.0",
-            "latest_published_at": "2026-10-28T18:35:15.616Z",
+            "latest_version": "11.1.0",
+            "latest_published_at": "2026-10-31T19:21:17.291Z",
             "latest_error": null
         }
     }

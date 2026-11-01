@@ -1,44 +1,65 @@
 {
     "repository": "iflytek/skillhub",
     "repository_id": 1178833585,
-    "captured_at": "2026-10-26T09:38:01.975Z",
-    "window_start": "2026-09-26T09:38:01.975Z",
-    "stars": 5292,
-    "pushed_at": "2026-10-26T09:20:50Z",
+    "captured_at": "2026-11-01T09:18:30.076Z",
+    "window_start": "2026-10-02T09:18:30.076Z",
+    "stars": 5347,
+    "pushed_at": "2026-10-31T11:59:43Z",
     "issues": {
-        "open": 26,
-        "closed": 281,
-        "created_30d": 32,
-        "closed_30d": 29,
-        "updated_30d": 44
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aiflytek%2Fskillhub%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D27A:199D83:155A1A:17D987:6AE70422 and timestamp 2026-11-01 09:19:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aiflytek%2Fskillhub%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2CE:15069:17E468:1A6461:6AE70424 and timestamp 2026-11-01 09:19:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aiflytek%2Fskillhub%20is%3Aissue%20created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D30A:3AA56:148485:16F66A:6AE70425 and timestamp 2026-11-01 09:19:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aiflytek%2Fskillhub%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D344:3135B:160A73:188958:6AE70427 and timestamp 2026-11-01 09:19:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aiflytek%2Fskillhub%20is%3Aissue%20updated%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D39A:3A58EC:168EF0:190F65:6AE70429 and timestamp 2026-11-01 09:19:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T05:21:30.323Z",
+        "captured_at": "2026-10-31T21:53:23.003Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "005b1c3fe1d42185e599d5374f02dfb449c63588",
-        "blob_sha": "b9960a88c063268debfeeacebb071e6ed0ae1583",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "@astron-team/skillhub-dsh",
-        "captured_at": "2026-10-26T04:53:39.056Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
-        "downloads_30d": 257,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40astron-team%2Fskillhub-dsh",
+        "captured_at": "2026-11-01T00:10:01.346Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1055,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40astron-team%2Fskillhub-dsh",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-16T11:58:16.741Z",
-            "captured_at": "2026-10-26T04:53:39.056Z",
+            "captured_at": "2026-11-01T00:10:01.346Z",
             "source_url": "https://registry.npmjs.org/%40astron-team%2Fskillhub-dsh",
             "error": null,
-            "latest_version": "0.3.1",
-            "latest_published_at": "2026-10-21T06:49:53.708Z",
+            "latest_version": "0.6.1",
+            "latest_published_at": "2026-10-30T07:48:46.386Z",
             "latest_error": null
         }
     }
