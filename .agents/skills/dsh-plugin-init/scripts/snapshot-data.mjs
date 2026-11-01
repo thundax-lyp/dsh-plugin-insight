@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { resolveResearchCounts } from './research-selection.mjs';
 import { heatScores } from '../../_shared/scripts/heat-score.mjs';
 import { captureHeat } from '../../_shared/scripts/research-metrics.mjs';
 import {
@@ -33,7 +34,20 @@ export async function main(args = process.argv.slice(2)) {
     const { values: v } = parseArgs({
         args: rest,
         options: Object.fromEntries(
-            ['input', 'work', 'limit', 'plugin', 'observations', 'report', 'display', 'out', 'plan', 'backup']
+            [
+                'input',
+                'work',
+                'limit',
+                'new-limit',
+                'update-limit',
+                'plugin',
+                'observations',
+                'report',
+                'display',
+                'out',
+                'plan',
+                'backup'
+            ]
                 .map((k) => [k, { type: 'string' }])
                 .concat([
                     ['apply', { type: 'boolean', default: false }],
@@ -81,6 +95,11 @@ export async function main(args = process.argv.slice(2)) {
         renderSnapshot();
     } else if (command === 'start') {
         const n = v.limit === undefined ? undefined : Number(v.limit);
+        const counts = {
+            newLimit: v['new-limit'] === undefined ? undefined : Number(v['new-limit']),
+            updateLimit: v['update-limit'] === undefined ? undefined : Number(v['update-limit'])
+        };
+        const resolvedCounts = resolveResearchCounts({ limit: n, ...counts });
         const input = read(need('input'));
         if (existsSync(need('work'))) throw Error('work already exists; resume it');
         const baseline = readSnapshot(ROOT);
@@ -91,10 +110,13 @@ export async function main(args = process.argv.slice(2)) {
             ...(await captureHeat({ items, metadata: baseline.metadata, checked_at: input.checked_at })),
             base_digest: digest(baseline)
         };
-        const w = startWork(input, need('work'), n, ROOT, v['retry-plugin'] ?? [], heat);
+        const w = startWork(input, need('work'), n, ROOT, v['retry-plugin'] ?? [], heat, counts);
         const scores = heatScores(w.session.selection.heat);
         console.log(
             JSON.stringify({
+                research_limit: w.session.research_limit,
+                quotas: w.session.selection.quotas,
+                update_adjusted: resolvedCounts.update_adjusted,
                 selected: selectedItems(w.session).length,
                 listed: w.session.items.length,
                 suppressed: w.session.selection.suppressed_ids.length,
