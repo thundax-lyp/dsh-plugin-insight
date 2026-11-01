@@ -1,53 +1,61 @@
 {
     "repository": "Tencent/BrowserSkill",
     "repository_id": 1276665883,
-    "captured_at": "2026-10-28T03:54:21.981Z",
-    "window_start": "2026-09-28T03:54:21.981Z",
-    "stars": 9680,
-    "pushed_at": "2026-10-28T03:52:06Z",
+    "captured_at": "2026-11-01T08:13:08.475Z",
+    "window_start": "2026-10-02T08:13:08.475Z",
+    "stars": 9857,
+    "pushed_at": "2026-10-31T13:02:05Z",
     "issues": {
-        "open": 48,
-        "closed": 115,
-        "created_30d": 47,
+        "open": null,
+        "closed": null,
+        "created_30d": null,
         "closed_30d": null,
-        "updated_30d": null
+        "updated_30d": 64
     },
     "errors": [
         {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2AF2:1119D7:80A71F:8A7705:6AE1721A and timestamp 2026-10-28 03:55:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EB2A:269CB2:DD96D:F77EA:6AE6F4D2 and timestamp 2026-11-01 08:14:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BD8:1D859C:81ED8C:8BBAFE:6AE1721B and timestamp 2026-10-28 03:55:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EB94:25DC38:F311D:10D0BF:6AE6F4D4 and timestamp 2026-11-01 08:14:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EBE4:10E342:E6606:FFD7C:6AE6F4D6 and timestamp 2026-11-01 08:14:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID EC2A:26E9CC:DC3B3:F6285:6AE6F4D8 and timestamp 2026-11-01 08:14:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-27T15:55:27.864Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "688271768dbbe559667c686a7c337053b4805674",
-        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
-        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "@wxg-prc-cpg/browser-skill-dsh-plugin",
-        "captured_at": "2026-10-28T03:54:21.981Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 32486,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 32326,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T11:43:40.257Z",
-            "captured_at": "2026-10-27T15:24:06.392Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
             "source_url": "https://registry.npmjs.org/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
             "error": null,
-            "latest_version": "0.3.3",
-            "latest_published_at": "2026-10-15T02:53:49.469Z",
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-10-30T03:09:36.242Z",
             "latest_error": null
         }
     }

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[d157560](https://github.com/morluto/rea/tree/d157560d402fbd1b54069ff59039dcde73e4a7e1)
+源码版本：[e18594b](https://github.com/morluto/rea/tree/e18594b24754ab95ebd119311cc32a1d1ad6fa13)
 
 <!-- BEGIN META -->
-[![GitHub ★ 402,720](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=402%2C720&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 954,223](https://img.shields.io/static/v1?label=npm+30d&message=954%2C223&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+[![GitHub ★ 413,586](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=413%2C586&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 1,172,617](https://img.shields.io/static/v1?label=npm+30d&message=1%2C172%2C617&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
 <!-- END META -->
 
-> **功能**：通过 CLI 与 MCP 统一提供应用工件、JavaScript/Electron 和多种后端的分析操作，返回带来源、推断性质与限制的证据。
+> **功能**：通过命令行和 MCP 提供应用与二进制逆向分析工具。
 
-> **亮点**：统一分析接口、带性质/限制的来源证据与保留视图，便于追溯而不把推断伪装运行事实，见 [Q02](#research-q02)。
+> **亮点**：固定版本将来源身份、静态分析结果、覆盖和限制放入同一证据结构，并提供可保留的摘要视图；这是相对手工记录的机制增量，不证明解释正确。[Q02](#research-q02) [Q03](#research-q03)
 
-> **主要限制**：身份哈希/结构/响应预算不证明语义正确或全程资源有界；抽取有写入与清理，后端可用依配置，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **主要限制**：证据哈希绑定输入与结果，无法证明对功能的推断正确；未选文件、动态路径和环境状态可改变结论，使用者仍须回查来源并进行必要对照。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · REA实际交付什么，工具入口到结果是否闭合？](#detail-section-11)
-  - [Q02 · 目标哈希、结构校验和摘要能证明分析结论吗？](#detail-section-12)
-  - [Q03 · 环境、可选后端和退出成本如何限制采用？](#detail-section-13)
-  - [Q04 · 谁先有限试用，未来增量相对现有证据层是什么？](#detail-section-14)
+  - [Q01 · REA 的类型、目标人群和启动条件是什么？](#detail-section-11)
+  - [Q02 · JavaScript 静态分析怎样从 MCP 请求形成证据？](#detail-section-12)
+  - [Q03 · 分析结果如何表达覆盖，能证明什么？](#detail-section-13)
+  - [Q04 · 调用失败、取消和退出需要付出什么？](#detail-section-14)
+  - [Q05 · 哪些机制值得复用，后续能提出什么可证伪假设？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：有逆向经验的开发者理解许可内应用构建物，本轮限工件与JS/Electron静态代表路径，见 [Q01](#research-q01)。
+> **用途**：具备逆向经验的开发者对有权检查的应用构建物开展分析，可以通过 CLI 或 MCP 请求工具；真实任务频率和收益仍缺材料。[Q01](#research-q01)
 
-直接解析器/反编译器与人工记录来源，模型在外部选择和解释；REA统一契约和交付而非自动证明应用行为。
+手工解包、查阅源码并自行记录证据是简单替代；它不需要该工具链，但需用户自行组织来源和覆盖信息。[Q03](#research-q03)
 
 <a id="detail-section-3"></a>
 
@@ -50,70 +51,63 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 工件/JS静态分析 | 结构与功能理解素材 | 推断/限制不是运行事实 |
-| Evidence/摘要 | 来源回查与交付 | 保留能力/预算非全程限 |
-| 抽取 | 临时目录物化工件 | 有写入，失败清理另验 |
-| 多后端 | 按目标扩展分析 | 本轮未全验，不按数量采用 |
+| --- | --- | --- |
+| JavaScript 应用静态分析 | 将 ASAR 或目录分析成带来源的图 | 只分析选择范围；静态路由不证明运行可达 |
+| 分析摘要 | 投影保留的完整 Evidence | 留存不可用时摘要请求先失败 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 满足声明的Node/编译成品 | 必需 | CLI/MCP启动 | 当前研究Node不满足，缺dist拒启动 |
-| MCP宿主/外部Agent | Agent采用必需 | 选择/解释/继续调用 | 本次已核静态链不自带模型循环 |
-| 当前分析provider/目标支持 | 按任务 | 静态或可选动态后端 | tool存在不等可用 |
-| 外部引擎/许可/设备 | 部分操作 | 反编译/观察 | 额外环境与权限另核 |
-| 证据保留/查回与临时目录 | 摘要/抽取需要 | 完整资料和物化 | 不满足先拒或恢复需核 |
+| --- | --- | --- | --- |
+| 声明范围内的 Node 和编译成品 | 必需 | 启动 CLI/MCP | 缺编译入口时程序报错退出 |
+| MCP 客户端 | Agent 集成需要 | 发现和调用工具 | 可使用 CLI，具体支持另核 |
+| 外部逆向后端 | 特定操作需要 | 执行相应分析 | 缺失时不能假定相关能力可用 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户核固定成品/Node/测试样本 | 不启动未知后端 |
-| 分析 | Agent调契约工具/provider | 实际来源/限制/推断可读 |
-| 复核 | 人工对已知源码/行为 | 结构成功不当结论通过 |
-| 恢复 | 查取消/部分证据/写目录 | 不无条件重做变更操作 |
-| 退出 | 关会话/后端，保管资料 | 临时/保留文件分别核 |
+| --- | --- | --- |
+| 准备 | 用户检查权限、运行时与输入 | 条件不符时不启动 |
+| 调用 | 用户或 Agent 选择目标及分析范围 | 请求返回结果或分类错误 |
+| 验收 | 用户检查来源、覆盖与未知项 | 关键文件缺失则回原始材料 |
+| 退出 | 用户停止工具并检查工作目录 | 不能假定所有临时数据自动清除 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | Node/包/可选引擎许可未知 | MCP配置/样本备份/路径 | 未装固定成品 |
-| 持续使用 | 解析/证据空间/模型token未知 | 解释/反证/版本维护 | 无净节时实证 |
-| 失败恢复 | 部分结果/后端/抽取未知 | 分目标变化/取消/预算 | 响应预算非全程资源限 |
-| 退出 | 会话/临时/证据留存未知 | 停后端/核资料清理 | 关Agent不等全清 |
+| --- | --- | --- | --- |
+| 首次使用 | Node、存储及可选后端许可成本未知 | 配置和版本核对耗时未知 | 固定发布包未验证 |
+| 持续使用 | worker、存储与模型费用未知 | 结果核对及复现耗时未知 | 随输入与模型配置变化 |
+| 失败恢复 | 重试与残留资源未知 | 核对部分结果和清理耗时未知 | 仅部分取消阶段有保留逻辑 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 统一入口 | 契约/取消/provider活动链 | 成品/所有后端兼容 |
-| 可追溯 | inferred/links/限制/摘要保留 | 功能理解正确/完整 |
-| 交付控制 | 双表示响应预算 | 计算峰值/业务净收益 |
+| --- | --- | --- |
+| 静态结果 | 工件盘点、选择、分析图与 Evidence 路径存在 | 功能理解准确率和实际运行结果 |
+| 摘要投影 | 需要留存能力并投影已有证据 | 客户端可用性与总体资源成本 |
 
-> **思考**：身份哈希/结构/响应预算不证明语义正确或全程资源有界；抽取有写入与清理，后端可用依配置，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **思考**：证据哈希绑定输入与结果，无法证明对功能的推断正确；未选文件、动态路径和环境状态可改变结论，使用者仍须回查来源并进行必要对照。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：统一分析接口、带性质/限制的来源证据与保留视图，便于追溯而不把推断伪装运行事实，见 [Q02](#research-q02)。
+> **亮点**：固定版本将来源身份、静态分析结果、覆盖和限制放入同一证据结构，并提供可保留的摘要视图；这是相对手工记录的机制增量，不证明解释正确。[Q02](#research-q02) [Q03](#research-q03)
 
-[Q02](#research-q02) 代表准入/来源记录/保留摘要与限制分层可借鉴，不能只复制Evidence外形或把记录数当成果。
+工件读取和 worker 拥有清理路径，部分中断可携带已完成 Evidence；带哈希的结果保留覆盖与限制，摘要依赖留存。真实执行和异常覆盖仍需验证。[Q02](#research-q02) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-身份哈希/结构/响应预算不证明语义正确或全程资源有界；抽取有写入与清理，后端可用依配置，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+证据哈希绑定输入与结果，无法证明对功能的推断正确；未选文件、动态路径和环境状态可改变结论，使用者仍须回查来源并进行必要对照。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-只在匹配环境已知静态样本上试，主张不可回指或关键行为缺失则停用结论回直接解析，见 [Q04](#research-q04)。
+有逆向经验且具备目标检查权限的用户可在匹配 Node 的隔离环境中用已知样本试用；关键来源缺失或推断不可回查时停止使用结论，改看原始材料。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码的工件与JS静态核心链可核，未安装或运行，建议匹配环境已知样本的有限试用，不外推全后端。
+已有机制依据固定版本源码，效果与未来假设均未验证。
 
-- 已检查：作者 README、包清单、源码路径 package.json、scripts/rea.mjs、src/application/artifacts/ArtifactExtractionDestination.ts、src/application/binary/BinarySession.ts、src/application/binary/BinarySessionComposition.ts、src/application/binary/CompositeProvider.ts、src/application/binary/LazyAnalysisProvider.ts、src/application/binary/SessionProviderRouter.ts、src/application/javascript/JavaScriptApplicationService.ts、src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts、src/artifacts/ArtifactProvider.ts、src/composition/auxiliaryAnalysisProviders.ts、src/composition/binary.ts、src/main.ts、src/main/deferredRuntime.ts、src/main/eagerRuntime.ts、src/main/transport.ts、src/providers/DeferredAnalysisClient.ts、src/server/createServer.ts、src/server/registerArtifactTools.ts、src/server/registerElectronTools.ts、src/server/registerEvidenceTools.ts、src/server/retainedSummaryDelivery.ts、src/server/sessionAvailabilityPolicy.ts、src/server/toolResultEncoding.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、scripts/rea.mjs、src/server/registerElectronTools.ts、src/application/javascript/JavaScriptApplicationService.ts、src/application/javascript/JavaScriptArtifactReconstruction.ts、src/application/javascript/JavaScriptApplicationEvidence.ts、src/contracts/javascript/electronToolContracts.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：读固定bin/MCP延迟初始化/会话注入、按操作路由及Artifact公开execute→inventory与响应，并核当前JS工具注册→服务/推断证据、保留摘要、预算与可用策略。固定git不含dist，未核发布成品，未穷审原生/动态/全部格式、其他模型调用及完整清理；不执行目标。
-- 下一步：符合Node后以已知源码构建物验证MCP/工件/JS推断/回查、取消/大结果/抽取中断/退出，再比直接解析的质量和总人工费用。
+- 边界：仅检查固定版本 CLI/MCP 启动和 JavaScript/Electron 静态分析代表路径；不声称检查所有 6440 个文件或所有动态与原生后端，未执行插件、发布包或目标。
+- 下一步：在满足 Node 的隔离环境中，对已知行为样本记录 MCP 请求、来源、取消和临时文件，并与人工检查相同任务对照。
 
 **分析版本**
 
 - **仓库**：[morluto/rea](https://github.com/morluto/rea)
-- **版本号**：6.8.0（[固定提交 d157560](https://github.com/morluto/rea/tree/d157560d402fbd1b54069ff59039dcde73e4a7e1)）
-- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：6.8.0（[固定提交 e18594b](https://github.com/morluto/rea/tree/e18594b24754ab95ebd119311cc32a1d1ad6fa13)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +134,9 @@
 
 <a id="innovation"></a>
 
-在现有Evidence之上加功能主张覆盖/反证与原行为对照门槛，测错误重实现和复核总成本，未实现，见 [Q04](#research-q04)。
+未验证假设：在现有 Evidence 上增加功能主张的来源、未覆盖输入和反证清单，可能减少错误重实现，但会增加复核成本；同一批已知行为样本上比较正确率与总时间，若无改善或成本抵消则否定。[Q05](#research-q05)
 
-符合Node后以已知源码构建物验证MCP/工件/JS推断/回查、取消/大结果/抽取中断/退出，再比直接解析的质量和总人工费用。
+在满足 Node 的隔离环境中，对已知行为样本记录 MCP 请求、来源、取消和临时文件，并与人工检查相同任务对照。
 
 <a id="detail-section-9"></a>
 
@@ -153,17 +147,17 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 315 | 66303 | — | — | 629660 |
-| .mjs | source | 374 | 78709 | 75134 | 1733 | — |
-| .ts | source | 2271 | 536880 | 491842 | 24349 | — |
+| .md | source | 333 | 69929 | — | — | 663348 |
+| .mjs | source | 383 | 80761 | 77033 | 1829 | — |
+| .ts | source | 2416 | 563694 | 515494 | 26357 | — |
 | .cjs | source | 2 | 1744 | 1626 | 68 | — |
-| .mjs | example | 69 | 5843 | 5539 | 147 | — |
+| .mjs | example | 69 | 5962 | 5653 | 150 | — |
 | .mts | source | 11 | 1680 | 1510 | 60 | — |
-| .mjs | test | 34 | 8223 | 7868 | 207 | — |
-| .ts | test | 2866 | 881299 | 838104 | 9580 | — |
-| .md | test | 3 | 143 | — | — | 1257 |
+| .mjs | test | 35 | 8918 | 8479 | 269 | — |
+| .ts | test | 3008 | 925634 | 880345 | 10271 | — |
+| .md | test | 3 | 151 | — | — | 1346 |
 | .js | test | 5 | 96 | 91 | 1 | — |
-| .ts | example | 147 | 21189 | 19417 | 1076 | — |
+| .ts | example | 152 | 22158 | 20300 | 1118 | — |
 | .md | example | 9 | 518 | — | — | 3946 |
 | .js | source | 9 | 853 | 784 | 16 | — |
 | .js | example | 5 | 70 | 64 | 0 | — |
@@ -172,53 +166,85 @@
 
 **活跃度**
 
-[![Issue 未关闭 702](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=702&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3,342](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3%2C342&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z) [![近30天关闭 2,685](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2%2C685&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z)
+[![Issue 未关闭 815](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=815&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3,529](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3%2C529&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 2,765](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2%2C765&color=737b86&logo=github)](https://github.com/morluto/rea/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
 
 
 
-统计日期：2026-10-29。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：当前CLI/MCP静态分析的证据和清理是否足以支持可核功能理解，哪些边界影响采用？
+**插件研究总目标**：判断开发者如何用 REA 分析 JavaScript／Electron 构建物及其证据和采用边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · REA实际交付什么，工具入口到结果是否闭合？
+### Q01 · REA 的类型、目标人群和启动条件是什么？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、依赖、兼容与流程
 
 #### 完整回答
 
-固定rea-agents6.8.0是CLI/MCP分析工具，不是DSH插件，本轮已核静态工具链由外部Agent选择操作和解释结果，未穷审全部功能是否存在其他模型调用。场景是开发者在自有或许可内应用构建物中理解结构、功能和运行行为；本轮聚焦静态工件与JavaScript/Electron代表路径。相对分散解析器/反编译器脚本，增量是统一契约、目标/证据和错误表达；本次已核链中，外部Agent选工具、解释并决定下一步，不能把上游算法或支持工具数量算独创。
-
-package bin指scripts/rea.mjs，实际检查compiled runtime后将MCP路由到dist/mcp/main.js；固定git未跟踪dist，源码与发布成品应分开。src/main以stdio或HTTP服务，deferred runtime在使用时创建真实server/providers。以inspect_artifact为例，createServer注册artifact工具，统一注册器解析输入/准入后analysis.execute、接取消信号，再生成/记录Evidence并返回CallToolResult；ArtifactProvider调用真实inventory后带limitations/sourceEvidence返回。这证明活动接口而非仅类型声明，不证明本机安装或任意格式分析成功。
-
-正常延迟初始化调用runEager创建BinarySession，transport将{kind:session,session}注入createServer，其analysis取该会话；composition/binary将含Artifact声明的lazy辅助provider交给SessionProviderRouter，CompositeProvider按操作表选择client。打开目标时route.createClient建立会话client，execute通过active.client分派；LazyAnalysisProvider首次加载ArtifactProvider并createClient，DeferredAnalysisClient转发到ArtifactClient公开execute，inspect_artifact分支才调用私有inspectArtifact。未打开/不支持目标、无能力、已关闭client或初始化失败都可先返回错误，不能把任意注册工具当必有可执行结果。
+REA 是独立 CLI 与 MCP 工具，而不是 DSH 原生插件。它面向具备逆向分析能力、需要理解有权限检查的构建物的开发者；用户可以让兼容 MCP 的 Agent 调用工具，或通过终端操作。根 README 描述多类目标，但本次仅沿 JavaScript／Electron 静态路径核查。相较手工读取解包源码，它集中提供分析调用和来源记录；这不证明它自动正确理解功能，也不替代目标授权和人的判断。包定义两个命令并要求特定 Node 版本；入口发现编译产物不存在时明确报错而不是自动构建。本研究环境的 Node 24.19.0 低于声明的 24.22.1 下限，未运行成品。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-5](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/package.json#L2-L5)
+**依据 1 · 作者声明**：[README.md:61-65](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/README.md#L61-L65)
 
-包身份/版本。
+作者描述目标、工具和可选后端。
 
 ```text
+See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
+
+REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
+
+Setup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, IDA or Kuna installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.
+```
+
+**依据 2 · 源码核查**：[package.json:1-5](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/package.json#L1-L5)
+
+包名和版本表明独立 CLI/MCP 产品。
+
+```text
+{
   "name": "rea-agents",
   "mcpName": "io.github.morluto/rea",
   "version": "6.8.0",
   "description": "Reverse engineer anything from your terminal or agent with one CLI and MCP server.",
 ```
 
-**依据 2 · 源码核查**：[scripts/rea.mjs:45-68](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/scripts/rea.mjs#L45-L68)
+**依据 3 · 源码核查**：[package.json:36-46](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/package.json#L36-L46)
 
-真实bin检查及MCP compiled路由。
+两个命令入口与 Node 版本条件。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（11行）</summary>
+
+```text
+  "type": "module",
+  "imports": {
+    "#javascript-analysis-worker": "./dist/composition/javascriptAnalysisWorkerProcess.js",
+    "#web-bundle-analysis-worker": "./dist/composition/webBundleAnalysisWorkerProcess.js"
+  },
+  "bin": {
+    "rea": "scripts/rea.mjs",
+    "rea-agents": "scripts/rea.mjs"
+  },
+  "engines": {
+    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
+```
+
+</details>
+
+**依据 4 · 源码核查**：[scripts/rea.mjs:45-65](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/scripts/rea.mjs#L45-L65)
+
+缺少编译运行时的报错与 MCP 启动分支。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
 const runtimeFiles = [
@@ -242,952 +268,36 @@ if (!(await compiledRuntimeExists(runtimeFiles))) {
 } else if (isMcpMode) {
   const { runEntrypoint } = await import("../dist/mcp/main.js");
   await runEntrypoint();
-} else if (isMcpHttpMode) {
-  const { runMcpHttpEntrypoint } = await import("../dist/mcp/main.js");
-  await runMcpHttpEntrypoint(args.slice(1));
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/main.ts:30-39](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/main.ts#L30-L39)
-
-stdio依赖。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-const runtimeDependencies = (): RuntimeDependencies => ({
-  env: process.env,
-  stdin: process.stdin,
-  serve: serveStdio,
-  writeStderr: (text) => process.stderr.write(text),
-  setExitCode: (code) => {
-    process.exitCode = code;
-  },
-  registerShutdown: registerProcessShutdown,
-});
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/main/deferredRuntime.ts:76-95](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/main/deferredRuntime.ts#L76-L95)
-
-使用时创建server/会话清理接线。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  const [{ runEager }, { createServer }] = await Promise.all([
-    import("./eagerRuntime.js"),
-    import("../server/createServer.js"),
-  ]);
-  const result = await runEager(
-    {
-      ...dependencies,
-      // The outer SDK transport already owns and frames this stream. Eager
-      // materialization owns providers only, never another copy of raw input.
-      stdin: undefined,
-      registerShutdown: () => () => undefined,
-      captureShutdown: (close) => {
-        shutdown = close;
-      },
-      createServer: (source, options) => {
-        if (source.kind === "session")
-          closeSession = async () => {
-            const result = await source.session.close({
-              retainProviderDocuments: true,
-            });
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/server/createServer.ts:1267-1271](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/createServer.ts#L1267-L1271)
-
-真实artifact注册。
-
-```text
-  };
-  registerNativeTools(server, { ...evidenceOptions, evidenceById });
-  registerArtifactTools(server, { ...evidenceOptions, evidenceById });
-  registerManagedTools(server, { ...evidenceOptions, evidenceById });
-  if (session !== undefined)
-```
-
-**依据 6 · 源码核查**：[src/server/registerArtifactTools.ts:9-19](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/registerArtifactTools.ts#L9-L19)
-
-统一注册器及抽取目的地改写。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-export const registerArtifactTools = (
-  server: EvidenceMcpServer,
-  options: EvidenceToolFamilyOptions,
-): void => {
-  registerEvidenceTools(server, ARTIFACT_TOOL_CONTRACTS, {
-    ...options,
-    parametersForExecution: (operation, parameters) =>
-      operation === "extract_artifact"
-        ? { ...parameters, output_root: createArtifactExtractionDestination() }
-        : parameters,
-  });
-```
-
-</details>
-
-**依据 7 · 源码核查**：[src/server/registerEvidenceTools.ts:80-118](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/registerEvidenceTools.ts#L80-L118)
-
-analysis执行/取消/来源/记录/响应。
-
-<details>
-<summary>查看原文（39行）</summary>
-
-```text
-            const execution = await logToolExecution(
-              options.logger,
-              contract.name,
-              () =>
-                analysis.execute(contract.name, executionParameters, {
-                  signal: context.mcpReq.signal,
-                  progress,
-                }),
-            );
-            await reportOperationEnd(progress, contract.name, execution.ok);
-            if (!execution.ok)
-              return server.delivery.toCallToolResult(execution, contract);
-            const sourceEvidence = execution.value.sourceEvidence ?? [];
-            const evidence = createAnalysisExecutionEvidence(
-              contract.name,
-              contract.retainedSummary?.evidenceParameters === "omit-detail"
-                ? providerParameters
-                : parameters,
-              {
-                ...execution.value,
-                subject:
-                  execution.value.subject === undefined
-                    ? (options.activeTarget?.() ?? null)
-                    : execution.value.subject,
-              },
-              "observed",
-            );
-            const sourceRecorded = recordEvidenceSources(
-              options.recordEvidence,
-              sourceEvidence,
-            );
-            if (!sourceRecorded.ok)
-              return server.delivery.toCallToolResult(sourceRecorded, contract);
-            const projected =
-              delivery?.projectEvidence(parameters, evidence) ?? ok(evidence);
-            if (!projected.ok)
-              return server.delivery.toCallToolResult(projected, contract);
-            const recorded = options.recordEvidence?.(projected.value);
-            return server.delivery.toEvidenceToolResult(
-```
-
-</details>
-
-**依据 8 · 源码核查**：[src/artifacts/ArtifactProvider.ts:474-520](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L474-L520)
-
-真实inventory→Evidence与limitations。
-
-<details>
-<summary>查看原文（47行）</summary>
-
-```text
-  private async inspectArtifact(
-    parameters: Readonly<Record<string, JsonValue>>,
-    options?: ExecutionOptions,
-  ) {
-    const parsed = artifactInventoryInputSchema.parse(parameters);
-    const inventoryParameters = {
-      integrity_policy: parsed.integrity_policy,
-    };
-    await options?.progress?.report({
-      phase: "inspect_artifact.inventory",
-      completed: 0,
-      total: 1,
-      message: "inventory substep started",
-    });
-    // The freshly parsed inventory is exclusively owned here. Sealing it lets
-    // the nested Evidence share it instead of cloning and re-digesting it.
-    const inventory = freezeJsonSnapshot(
-      await this.inventory(inventoryParameters, options),
-    );
-    const subject = subjectFor(
-      artifactTargetSelectedPath(this.target),
-      inventory.manifest,
-    );
-    const inventoryEvidence = createEvidence(subject, ARTIFACT_GRAPH_PROVIDER, {
-      operation: "inventory_artifact",
-      parameters: inventoryParameters,
-      result: inventory,
-      rawResult: null,
-      limitations: inventory.limitations,
-      // The nested inventory already names every occurrence's logical path.
-      locations: [],
-    });
-    // The returned execution and its Evidence then reuse this owned report.
-    const result = freezeJsonSnapshot(
-      createArtifactInspection(inventoryEvidence),
-    );
-    await options?.progress?.report({
-      phase: "inspect_artifact.inventory",
-      completed: 1,
-      total: 1,
-      message: "inventory substep completed",
-    });
-    return ok(
-      createAnalysisExecution(result, ARTIFACT_GRAPH_PROVIDER, {
-        rawResult: null,
-        limitations: result.limitations,
-        sourceEvidence: artifactInspectionSources(result),
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/main/eagerRuntime.ts:40-46](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/main/eagerRuntime.ts#L40-L46)
-
-正常创建BinarySession。
-
-```text
-  const logger = createLogger("mcp", config.value.logLevel);
-  const serverLogger = logger.child({ layer: "server" });
-  const analysisSettings = new AnalysisSettings(environment);
-  const session = createBinarySession(
-    config.value,
-    logger,
-    environment,
-```
-
-**依据 10 · 源码核查**：[src/main/transport.ts:137-145](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/main/transport.ts#L137-L145)
-
-真实session注入server。
-
-```text
-          const server = (dependencies.createServer ?? createServer)(
-            { kind: "session", session },
-            {
-              ...(serverContext.analysisSettings === undefined
-                ? {}
-                : { analysisSettings: serverContext.analysisSettings }),
-              logger: serverContext.logger,
-              environment: serverContext.environment,
-              delivery: serverContext.delivery,
-```
-
-**依据 11 · 源码核查**：[src/server/createServer.ts:444-450](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/createServer.ts#L444-L450)
-
-analysis选择session。
-
-```text
-export const createServer = (
-  source: ServerAnalysisSource,
-  options: CreateServerOptions = {},
-): EvidenceMcpServer => {
-  const session = source.kind === "session" ? source.session : undefined;
-  const analysis = source.kind === "session" ? source.session : source.analysis;
-  const environment = snapshotEnvironment(options.environment ?? process.env);
-```
-
-**依据 12 · 源码核查**：[src/composition/binary.ts:70-92](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/composition/binary.ts#L70-L92)
-
-lazy辅助provider装配到正常会话。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-  const auxiliaryDeclarations = auxiliaryAnalysisProviderDeclarations(
-    environment,
-    process.platform,
-    settings,
-  );
-  const nativeInspectionAvailable =
-    inspection !== undefined &&
-    auxiliaryDeclarations.some(({ capabilities }) =>
-      capabilities.some(
-        ({ operation, available }) => operation === inspection && available,
-      ),
-    );
-  return composeBinarySession(
-    new AnalysisProviderRegistry(
-      [hopper, ghidra, ida, kuna],
-      config.analysisProvider,
-      nativeInspectionAvailable ? isAppleDispatchMetadataTarget : undefined,
-    ),
-    auxiliaryDeclarations.map(
-      (declaration) => new LazyAnalysisProvider(declaration),
-    ),
-    createBundleResourceFactory(environment, process.platform, settings),
-  );
-```
-
-</details>
-
-**依据 13 · 源码核查**：[src/composition/auxiliaryAnalysisProviders.ts:20-34](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/composition/auxiliaryAnalysisProviders.ts#L20-L34)
-
-真实ArtifactProvider加载声明。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export const auxiliaryAnalysisProviderDeclarations = (
-  selectedEnvironment: Readonly<NodeJS.ProcessEnv>,
-  platform: NodeJS.Platform = process.platform,
-  settings?: AnalysisSettingsReader,
-): readonly AuxiliaryProviderDeclaration[] => {
-  const environment = snapshotEnvironment(selectedEnvironment, platform);
-  return [
-    {
-      identity: ARTIFACT_GRAPH_PROVIDER,
-      capabilities: artifactCapabilities(platform),
-      load: async () => {
-        const { ArtifactProvider } =
-          await import("../artifacts/ArtifactProvider.js");
-        return new ArtifactProvider(environment, platform, settings);
-      },
-```
-
-</details>
-
-**依据 14 · 源码核查**：[src/application/binary/BinarySessionComposition.ts:12-21](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/BinarySessionComposition.ts#L12-L21)
-
-会话路由构造。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-export const composeBinarySession = (
-  registry: AnalysisProviderRegistry,
-  auxiliaryProviders: readonly AnalysisProvider[] = [],
-  bundleResourceFactory?: BundleResourceClientFactory,
-): BinarySession =>
-  new BinarySession(
-    SessionProviderRouter.selectable(registry, auxiliaryProviders),
-    new InvestigationRecords(),
-    bundleResourceFactory,
-  );
-```
-
-</details>
-
-**依据 15 · 源码核查**：[src/application/binary/SessionProviderRouter.ts:129-164](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/SessionProviderRouter.ts#L129-L164)
-
-组合路由与createClient。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-const selectableRoute = (
-  auxiliaryProviders: readonly AnalysisProvider[],
-  selection: AnalysisProviderSelection | undefined,
-): SessionProviderRoute => {
-  const binding = selection?.binding ?? null;
-  const providers = [
-    ...auxiliaryProviders,
-    ...(binding === null ? [] : [binding.provider]),
-  ];
-  const provider =
-    binding === null && providers.length === 1
-      ? providers[0]
-      : providers.length === 0
-        ? undefined
-        : new CompositeProvider(
-            providers,
-            binding?.createClient === undefined
-              ? new Map()
-              : new Map([[binding.identity.id, binding.createClient]]),
-          );
-  const identity = provider?.identity() ?? emptyProviderIdentity();
-  // The binding attributes deep-provider capabilities to the resolved version.
-  const capabilities = capabilityMap([
-    ...auxiliaryProviders.flatMap((auxiliary) => auxiliary.capabilities()),
-    ...(binding?.capabilities ?? []),
-  ]);
-  return {
-    identity,
-    capabilities,
-    profile: binding?.profile ?? null,
-    binding,
-    selection,
-    createClient: (target, context) =>
-      provider?.createClient(target, binding?.profile, context) ??
-      emptyClient(identity),
-  };
-```
-
-</details>
-
-**依据 16 · 源码核查**：[src/application/binary/CompositeProvider.ts:150-165](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/CompositeProvider.ts#L150-L165)
-
-操作到provider分派表。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-        providers.map((provider) => provider.identity()),
-      ),
-    );
-    const routes = new Map<string, AnalysisProvider>();
-    const capabilities: CapabilityDescriptor[] = [];
-    for (const provider of providers) {
-      for (const descriptor of provider.capabilities()) {
-        if (routes.has(descriptor.operation))
-          throw new TypeError(
-            `Multiple providers declare operation ${descriptor.operation}`,
-          );
-        routes.set(descriptor.operation, provider);
-        capabilities.push(descriptor);
-      }
-    }
-    this.#providerByOperation = routes;
-```
-
-</details>
-
-**依据 17 · 源码核查**：[src/application/binary/CompositeProvider.ts:183-239](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/CompositeProvider.ts#L183-L239)
-
-client创建/关闭/操作分派。
-
-<details>
-<summary>查看原文（57行）</summary>
-
-```text
-  createClient(
-    target: BinaryTarget,
-    profile?: AnalysisProfileCommitment,
-    context?: AnalysisClientContext,
-  ): AnalysisClient {
-    const clients = new Map<AnalysisProvider, AnalysisClient>();
-    const clientFor = (provider: AnalysisProvider): AnalysisClient => {
-      const existing = clients.get(provider);
-      if (existing !== undefined) return existing;
-      const providerProfile =
-        profile?.provider.id === provider.identity().id ? profile : undefined;
-      const factory = this.#boundClientFactories.get(provider.identity().id);
-      const created =
-        factory !== undefined && providerProfile !== undefined
-          ? factory(target, providerProfile, context)
-          : provider.createClient(target, providerProfile, context);
-      clients.set(provider, created);
-      return created;
-    };
-    let closed = false;
-    const closeClients = closeCompositeClients(this.#identity, clients);
-    const close: AnalysisClient["close"] = (options) => {
-      closed = true;
-      return closeClients(options);
-    };
-    return {
-      executeIfReady: (operation, parameters, options) => {
-        const provider = this.#providerByOperation.get(operation);
-        const client =
-          provider === undefined || closed ? undefined : clients.get(provider);
-        return (
-          client?.executeIfReady?.(operation, parameters, options) ??
-          Promise.resolve(undefined)
-        );
-      },
-      execute: async (operation, parameters, options) => {
-        if (closed)
-          return err(
-            new ProviderAdapterError(this.#identity.id, operation, {
-              diagnostics: { reason: "client_closed" },
-            }),
-          );
-        if (operation === "health")
-          return executeCompositeHealth(this.#identity, clients, options);
-        const provider = this.#providerByOperation.get(operation);
-        return provider === undefined
-          ? Promise.resolve(
-              err(
-                new AnalysisCapabilityUnavailableError(
-                  this.#identity.id,
-                  operation,
-                  "operation is not declared by this provider set",
-                ),
-              ),
-            )
-          : clientFor(provider).execute(operation, parameters, options);
-      },
-```
-
-</details>
-
-**依据 18 · 源码核查**：[src/application/binary/BinarySession.ts:635-642](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/BinarySession.ts#L635-L642)
-
-打开目标建立活动client并健康检查。
-
-```text
-    const runId = randomUUID();
-    const client = route.createClient(target, {
-      runId,
-    });
-    const run: SessionRun = { client, route, runId };
-    const started = await client.execute("health", {}, options);
-    if (!started.ok) {
-      return err(await this.#failedOpen(run, previous, started.error));
-```
-
-**依据 19 · 源码核查**：[src/application/binary/BinarySession.ts:1204-1225](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/BinarySession.ts#L1204-L1225)
-
-正常会话execute实际调用active.client。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    const prepared = prepareSessionExecution({
-      active: this.#active,
-      operation: name,
-      parameters: arguments_,
-      nativeSourceAdmitted: this.#active?.nativeSourceAdmitted === true,
-      unboundOperationError: (operation, route) =>
-        this.#providerRouter.unboundOperationError(operation, route),
-      lookupSnapshot: (target, profile, operation, parameters) =>
-        this.lookupSnapshot(target, profile, operation, parameters),
-    });
-    if (!prepared.ok) return prepared;
-    const { active, capability, profile, cacheable, cached } = prepared.value;
-    if (cached !== undefined) return ok(cached);
-    // A failed reply cannot prove that a dispatched metadata write rolled back.
-    // Stop replay before dispatch, including reads overlapping the write.
-    if (capability.effects.mutatesArtifact) this.invalidateSnapshot();
-    const call = active.client.execute(name, arguments_, options);
-    const result = unrecordedExecution(await call);
-    const profiled = bindExecutionTarget(
-      commitExecutionProfile(name, result, profile),
-      name,
-      active.target,
-```
-
-</details>
-
-**依据 20 · 源码核查**：[src/application/binary/LazyAnalysisProvider.ts:46-61](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/binary/LazyAnalysisProvider.ts#L46-L61)
-
-lazy client加载真实provider。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  createClient(
-    target: BinaryTarget,
-    profile?: AnalysisProfileCommitment,
-    context?: AnalysisClientContext,
-  ): AnalysisClient {
-    return new DeferredAnalysisClient(async (signal) => {
-      const provider = await this.#load();
-      if (signal.aborted)
-        throw new AnalysisCancelledError("create_analysis_client", {
-          cause: signal.reason,
-        });
-      return provider.createClient(target, profile, context);
-    }, this.#providerIdentity.id);
-  }
-
-  async #load(): Promise<AnalysisProvider> {
-```
-
-</details>
-
-**依据 21 · 源码核查**：[src/providers/DeferredAnalysisClient.ts:40-54](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/providers/DeferredAnalysisClient.ts#L40-L54)
-
-实际client加载后执行转发。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-  execute: AnalysisClient["execute"] = async (
-    operation,
-    parameters,
-    options,
-  ) => {
-    try {
-      const loaded = await this.#creation.acquire(operation, options?.signal);
-      if (!loaded.ok) return loaded;
-      if (this.#creation.readyClient !== loaded.value)
-        return err(
-          new ProviderAdapterError(this.#providerId, operation, {
-            diagnostics: { reason: "client_closed" },
-          }),
-        );
-      return await loaded.value.execute(operation, parameters, options);
-```
-
-</details>
-
-**依据 22 · 源码核查**：[src/artifacts/ArtifactProvider.ts:84-90](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L84-L90)
-
-公开工厂建立ArtifactClient。
-
-```text
-  createClient(target: BinaryTarget): AnalysisClient {
-    return new ArtifactClient(
-      target,
-      this.environment,
-      this.#platform,
-      this.settings,
-    );
-```
-
-**依据 23 · 源码核查**：[src/artifacts/ArtifactProvider.ts:221-242](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L221-L242)
-
-公开execute识别inspect_artifact后调用私有方法。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-  async execute(
-    operation: AnalysisOperation,
-    parameters: Readonly<Record<string, JsonValue>>,
-    options?: ExecutionOptions,
-  ) {
-    if (operation === "health")
-      return ok(createAnalysisExecution(null, ARTIFACT_GRAPH_PROVIDER));
-    if (!isArtifactOperation(operation))
-      return err(
-        new AnalysisCapabilityUnavailableError(
-          ARTIFACT_GRAPH_PROVIDER.id,
-          operation,
-          "Operation is not implemented by artifact graph provider.",
-        ),
-      );
-    try {
-      const targetRefusal = artifactTargetRefusal(operation, this.target);
-      if (targetRefusal !== undefined)
-        throw this.unsupportedTarget(operation, targetRefusal.reason);
-      if (operation === "inspect_artifact") {
-        const inspected = await this.inspectArtifact(parameters, options);
-        return inspected;
 ```
 
 </details>
 
 #### 缺口
 
-- 未检查已发布dist内容、实际MCP启动或分析任务。
-  **影响**：源码链不能承诺安装成品等价、Host兼容或分析正确率。
-  **进一步探讨**：核固定发布成品与源码对应，在符合引擎环境用已知样本验证发现、调用、证据返回和退出。
+- 没有独立用户任务和采用材料
+  **影响**：无法确认需求频率或实际生产收益
+  **进一步探讨**：在有权检查的固定样本上与人工分析同题比较。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 目标哈希、结构校验和摘要能证明分析结论吗？
+### Q02 · JavaScript 静态分析怎样从 MCP 请求形成证据？
 
-**研究主题**：工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-当前JavaScript服务先验证输入/ASAR限制，重建工件图，再校跨图元数据并创建哈希Evidence；feature和semantic trace仍明确inferred/analyst-inference、limitations和evidenceLinks。这是可追溯推断，不是实测功能或完整控制流证明，动态加载/环境差异仍需反证。
-
-本轮补核工件路径：inventory传所选路径与expectedRootSha256，inspect结果保留limitations与sourceEvidence；抽取则把服务端选择的临时UUID目录传执行器，具有实际文件物化副作用。摘要模式在没有保留/查回证据能力时先拒绝，detail只影响交付投影，不改变底层分析；输出编码按文本及结构表示预算拒超量，不能推整个分析CPU/内存均有该上限。标记目标内容不可信依赖Agent遵守，不是阻断提示注入的保证。操作成功、哈希一致与unknown数量都不替代功能解释验收。
-
-工件检查接线的正常路径是会话注入、组合provider按operation选择、延迟ArtifactClient公开execute到inspectArtifact；并非从抽象analysis.execute直接假定任意私有方法可达，完整原件接线见Q01。
+MCP 注册器把 analyze_javascript_application 连接到统一处理器，再将参数传给已验证服务；请求 summary 时先检查证据留存能力，然后在分析成功后投影摘要。服务解析 ASAR 头部准入设置、调用重建、校验结果并生成 Evidence。重建先盘点目标，读取选定源码，然后调用受控 worker 并构造应用图和语义图；Evidence 记录对象路径、哈希、参数、结果和限制，并标为 derived。工具输出是推导出的静态证据，不等于运行行为。源码链路存在不证明实际发布包、MCP 客户端或每种目标均可工作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/application/javascript/JavaScriptApplicationService.ts:48-58](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/javascript/JavaScriptApplicationService.ts#L48-L58)
+**依据 1 · 源码核查**：[src/server/registerElectronTools.ts:94-129](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/server/registerElectronTools.ts#L94-L129)
 
-当前输入验证。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-export const analyzeJavaScriptApplication = async (
-  rawInput: unknown,
-  scope: ArtifactResourceScope,
-  options: JavaScriptApplicationOptions = {},
-): Promise<Result<Evidence, AnalysisError>> => {
-  const parsed = analyzeJavaScriptApplicationInputSchema.safeParse(rawInput);
-  if (!parsed.success)
-    return err(
-      analysisInputErrorFromIssues(OPERATION, parsed.error.issues, rawInput),
-    );
-  return analyzeJavaScriptApplicationValidated(parsed.data, scope, options);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/application/javascript/JavaScriptApplicationService.ts:89-126](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/javascript/JavaScriptApplicationService.ts#L89-L126)
-
-重建/跨图/哈希接线。
+注册工具后调用服务并在 summary 模式保留与投影。
 
 <details>
-<summary>查看原文（38行）</summary>
-
-```text
-    await checkpointJavaScriptAnalysis(options.signal);
-    reconstructed = await reconstructJavaScriptArtifact(
-      input,
-      scope,
-      options.signal,
-      options.progress,
-      acceptedAdmission,
-      overrides,
-    );
-    const { electron_summary: summary, ...application } = reconstructed;
-    await options.progress?.report({
-      phase: "validate_javascript_application_result",
-      completed: 0,
-      total: 1,
-      message: "Validating result metadata and cross-graph bindings",
-    });
-    await checkpointJavaScriptAnalysis(options.signal);
-    result = await completeJavaScriptAnalysisSteps(
-      parseOwnedJavaScriptApplicationAnalysisSteps({
-        ...application,
-        summary,
-        limitations: reconstructed.graph.limitations,
-      }),
-      options.signal,
-    );
-    await options.progress?.report({
-      phase: "create_javascript_application_evidence",
-      completed: 0,
-      total: 1,
-      message: "Creating and hashing application analysis Evidence",
-    });
-    await checkpointJavaScriptAnalysis(options.signal);
-    evidence = await createOwnedJavaScriptApplicationEvidenceCooperatively(
-      input,
-      result,
-      options.signal,
-      options.progress,
-    );
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts:18-46](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts#L18-L46)
-
-当前两类推断证据的明确性质与链接。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-  createEvidence(undefined, JAVASCRIPT_APPLICATION_WORKFLOW_PROVIDER, {
-    predicateType: "rea.application-feature-trace",
-    operation: "trace_application_feature",
-    parameters,
-    result,
-    rawResult: null,
-    confidence: "inferred",
-    authority: "analyst-inference",
-    environment: null,
-    limitations: result.limitations,
-    evidenceLinks: result.evidence_links,
-  });
-
-/** Create derived Evidence for one bounded JavaScript semantic trace. */
-export const createJavaScriptSemanticTraceEvidence = (
-  parameters: EvidenceObservation["parameters"],
-  result: JavaScriptSemanticTraceResult,
-): Evidence =>
-  createEvidence(undefined, JAVASCRIPT_APPLICATION_WORKFLOW_PROVIDER, {
-    predicateType: "rea.javascript-semantic-trace",
-    operation: "trace_javascript_semantics",
-    parameters,
-    result,
-    rawResult: null,
-    confidence: "inferred",
-    authority: "analyst-inference",
-    environment: null,
-    limitations: result.limitations,
-    evidenceLinks: result.evidence_links,
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/artifacts/ArtifactProvider.ts:529-547](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L529-L547)
-
-inventory真实路径/根身份/取消参数。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-      readonly integrity_policy: "fail" | "record-and-continue";
-    },
-    options?: ExecutionOptions,
-  ) {
-    return inventoryArtifact(this.target.sourcePath ?? this.target.path, {
-      expectedRootSha256:
-        this.target.bundleInfoPlist === undefined
-          ? this.target.sha256
-          : undefined,
-      selectedPath: this.target.artifactSelectedPath,
-      resourceScope: this.#resourceScope,
-      environment: this.environment,
-      asarHeaderAdmission: runtimeAsarHeaderAdmission(
-        this.environment,
-        this.settings,
-      ),
-      ...(options?.signal === undefined ? {} : { signal: options.signal }),
-      integrity: parsed.integrity_policy,
-    });
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/artifacts/ArtifactProvider.ts:324-345](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L324-L345)
-
-extract实际写入参数。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-      if (operation === "extract_artifact") {
-        const parsed = artifactExtractionExecutionSchema.parse(parameters);
-        const result = await extractArtifact(
-          {
-            inputPath: this.target.sourcePath ?? this.target.path,
-            expectedRootSha256:
-              this.target.bundleInfoPlist === undefined
-                ? this.target.sha256
-                : undefined,
-            selectedPath: this.target.artifactSelectedPath,
-            inputFormat: this.target.format,
-            outputRoot: parsed.output_root,
-            environment: this.environment,
-            asarHeaderAdmission: runtimeAsarHeaderAdmission(
-              this.environment,
-              this.settings,
-            ),
-            integrityPolicy: parsed.integrity_policy,
-            resourceScope: this.#resourceScope,
-          },
-          options?.signal,
-        );
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/application/artifacts/ArtifactExtractionDestination.ts:1-7](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/artifacts/ArtifactExtractionDestination.ts#L1-L7)
-
-服务端临时UUID目录。
-
-```text
-import { randomUUID } from "node:crypto";
-import { tmpdir } from "node:os";
-import { absoluteCallerPath } from "../../filesystem/callerPath.js";
-
-/** Choose a fresh temporary destination for an artifact extraction. */
-export const createArtifactExtractionDestination = (): string =>
-  absoluteCallerPath(`${tmpdir()}/rea-extracted-${randomUUID()}`);
-```
-
-**依据 7 · 源码核查**：[src/server/retainedSummaryDelivery.ts:29-47](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/retainedSummaryDelivery.ts#L29-L47)
-
-无retention先拒摘要，投影不改分析。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export const retainedSummaryDelivery = (
-  operation: string,
-  options: Pick<EvidenceToolFamilyOptions, "recordEvidence" | "evidenceById">,
-) => {
-  const retention = {
-    recordEvidence: options.recordEvidence,
-    evidenceById: options.evidenceById,
-  };
-  const selected = (parameters: Parameters): boolean =>
-    parameters.detail === "summary";
-  return {
-    preflight: (parameters: Parameters) =>
-      selected(parameters)
-        ? requireAnalysisViewRetention(operation, retention)
-        : ok(null),
-    projectEvidence: (parameters: Parameters, evidence: Evidence) =>
-      selected(parameters)
-        ? summarizeRetainedAnalysis(evidence, retention)
-        : ok(evidence),
-```
-
-</details>
-
-**依据 8 · 源码核查**：[src/server/toolResultEncoding.ts:94-126](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/toolResultEncoding.ts#L94-L126)
-
-响应双表示预算非全计算资源预算。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-/** Account for the delivered JSON representations before allocating the complete text. */
-export const encodeToolResult = (
-  value: JsonValue,
-  budgetBytes: number,
-  representations: ToolResultRepresentations = "structured-and-text",
-  targetContent = false,
-): ToolResultEncoding => {
-  const structured = representations === "structured-and-text";
-  const parts: string[] = [];
-  let bytes =
-    (structured ? RESULT_ENVELOPE_BYTES : ERROR_RESULT_ENVELOPE_BYTES) +
-    (targetContent ? TARGET_CONTENT_META_BYTES : 0);
-  let codeUnits = bytes;
-  for (const part of bufferedJsonParts(jsonParts(value))) {
-    const escapedPart = JSON.stringify(part);
-    bytes +=
-      (structured ? Buffer.byteLength(part) : 0) +
-      Buffer.byteLength(escapedPart) -
-      2;
-    codeUnits += (structured ? part.length : 0) + escapedPart.length - 2;
-    if (bytes > budgetBytes || codeUnits > MCP_RESULT_STRING_LIMIT)
-      return {
-        ok: false,
-        bytesAtLeast: bytes,
-        codeUnitsAtLeast: codeUnits,
-        constraint:
-          codeUnits > MCP_RESULT_STRING_LIMIT
-            ? "string-length"
-            : "receive-buffer",
-      };
-    parts.push(part);
-  }
-  return { ok: true, text: parts.join(""), bytes };
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/server/createServer.ts:1307-1315](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/createServer.ts#L1307-L1315)
-
-当前真实Electron/JS工具注册。
-
-```text
-  registerElectronTools(server, {
-    ...common,
-    artifactResources,
-    environment,
-    evidenceById,
-    electron: options.electronObservation,
-    electronActive: options.electronActiveObservation,
-    electronFuses,
-    observationLoadFailure:
-```
-
-**依据 10 · 源码核查**：[src/server/registerElectronTools.ts:93-130](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/registerElectronTools.ts#L93-L130)
-
-工具调用JS服务并在摘要时预检保留再投影。
-
-<details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
   server.registerTool(
@@ -1226,290 +336,712 @@ export const encodeToolResult = (
                 view ?? { kind: "summary" },
               )
             : analyzed;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/application/javascript/JavaScriptApplicationService.ts:61-97](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationService.ts#L61-L97)
+
+验证准入并调用重建。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+/** Analyze input already parsed by a trusted adapter boundary. */
+export const analyzeJavaScriptApplicationValidated = async (
+  input: z.output<typeof analyzeJavaScriptApplicationInputSchema>,
+  scope: ArtifactResourceScope,
+  options: JavaScriptApplicationOptions = {},
+): Promise<Result<Evidence, AnalysisError>> => {
+  // An invalid setting is refused before analysis, never replaced by the default.
+  const asarHeaderAdmission = parseAsarHeaderAdmission(
+    options.environment?.[ASAR_HEADER_ADMISSION_SETTING],
+  );
+  if (!asarHeaderAdmission.ok) return asarHeaderAdmission;
+  const overrides = options.settings?.().overrides;
+  const header = overrides?.["asar.max_header_bytes"];
+  const acceptedAdmission =
+    header === undefined
+      ? asarHeaderAdmission.value
+      : { maximumBytes: header, source: "runtime" as const };
+  let reconstructed: JavaScriptArtifactReconstructionResult | undefined;
+  let result: JavaScriptApplicationAnalysisResult | undefined;
+  let evidence: Evidence | undefined;
+  try {
+    assertJavaScriptAnalysisActive(options.signal);
+    await options.progress?.report({
+      phase: "analyze_javascript_application",
+      completed: 0,
+      total: 1,
+      message: "Inventorying and parsing application artifacts",
+    });
+    await checkpointJavaScriptAnalysis(options.signal);
+    reconstructed = await reconstructJavaScriptArtifact(
+      input,
+      scope,
+      options.signal,
+      options.progress,
+      acceptedAdmission,
+      overrides,
+    );
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:106-120](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L106-L120)
+
+解析输入并盘点工件。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+    abortIfNeeded(signal);
+    const selectedPath = absoluteCallerPath(input.input_path);
+    const { path, metadata } = await resolveSelectedInput(selectedPath);
+    const format = resolveFormat(path, metadata, input, selectedPath);
+    const snapshot = await scanCanonicalArtifactInventoryInScope(
+      path,
+      {
+        resourceScope: scope,
+        signal,
+        integrity: input.integrity_policy,
+        asarHeaderAdmission,
+      },
+      undefined,
+      selectedPath,
+    );
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:145-156](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L145-L156)
+
+按所选路径读取工件。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+      await reportPhase(
+        "read_javascript_artifacts",
+        "Reading inventoried JavaScript application sources",
+      );
+      const files = await readJavaScriptArtifactFiles(
+        reader,
+        snapshot,
+        scope,
+        signal,
+        input.source_paths,
+        asarHeaderAdmission,
+      );
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:183-205](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L183-L205)
+
+构建受控 worker 并分析文件。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+      const worker = await createJavaScriptSourceAnalysis(
+        {
+          heapMb:
+            input.max_heap_mb ??
+            overrides?.["javascript.max_heap_mb"] ??
+            JAVASCRIPT_ANALYSIS_RESOURCE_DEFAULTS.heapMb,
+          timeoutMs:
+            input.analysis_timeout_ms ??
+            overrides?.["javascript.analysis_timeout_ms"] ??
+            JAVASCRIPT_ANALYSIS_RESOURCE_DEFAULTS.timeoutMs,
         },
-      ),
+        files.files.filter(
+          (file) => file.kind === "javascript" && file.text.included,
+        ).length,
+        { scope },
+      );
+      let outcome;
+      let cleanupFailure: AnalysisError | undefined;
+      try {
+        outcome = await analyzeAndAdoptJavaScriptArtifactFiles(
+          files,
+          worker,
+          semanticProjection,
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/application/javascript/JavaScriptApplicationEvidence.ts:43-56](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationEvidence.ts#L43-L56)
+
+生成哈希证据并关联分析图。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  await reportEvidencePhase(
+    progress,
+    "hash_javascript_application_evidence",
+    "Hashing the complete application analysis Evidence",
+  );
+  const evidence = await completeJavaScriptAnalysisSteps(
+    createImmutableEvidenceSteps(
+      applicationSubject(snapshot),
+      JAVASCRIPT_APPLICATION_PROVIDER,
+      applicationObservation(input, snapshot),
+    ),
+    signal,
+  );
+  return rememberOwnedApplicationGraphEvidence(evidence, snapshot);
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/application/javascript/JavaScriptApplicationEvidence.ts:67-86](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationEvidence.ts#L67-L86)
+
+证据记录对象、推导性质和限制。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+const applicationSubject = (result: JavaScriptApplicationAnalysisResult) => ({
+  path: result.input_path,
+  sha256: result.root_artifact_sha256,
+  format: result.format,
+});
+
+const applicationObservation = (
+  input: AnalyzeJavaScriptApplicationInput,
+  result: JavaScriptApplicationAnalysisResult,
+): EvidenceObservation => ({
+  predicateType: "rea.javascript-application-analysis",
+  operation: "analyze_javascript_application",
+  parameters: parameters(input),
+  result,
+  rawResult: null,
+  confidence: "derived",
+  authority: "shipped-artifact",
+  environment: null,
+  limitations: result.limitations,
+  locations: [{ kind: "artifact-path", path: "artifact-root" }],
 ```
 
 </details>
 
 #### 缺口
 
-- 未以真实已知源码样本核重建/推断完整性、所有抽取失败清理或资源峰值。
-  **影响**：不能把可追溯结构、摘要可查回或响应有界升级为逆向结论正确、全程资源/恢复保障。
-  **进一步探讨**：对已知源码构建物逐条回指推断，制造内容变化/取消/大输出/抽取中断，核临时目录和保留证据完整性。
+- 未运行固定版本 MCP 请求
+  **影响**：不能断言客户端可见结果或安装成功
+  **进一步探讨**：在匹配 Node 及隔离客户端中用已知 ASAR 校验输入、输出与来源。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 环境、可选后端和退出成本如何限制采用？
+### Q03 · 分析结果如何表达覆盖，能证明什么？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：缺陷与关键质疑、贡献与相对优势
 
 #### 完整回答
 
-Node声明^22.23.4或^24.22.1或>=26.12.1；本研究宿主Node24.19.0不满足目标引擎，因此只读不能升级运行验证。静态JS与工件检查不同于原生动态分析；Hopper/Ghidra/IDA/JADX等按任务另配，许可、运行时、宿主/设备权限不能由MCP目录替代。availability默认关闭多类可选观察/恢复，已配置仍受主机支持限制，工具名字存在不是当前可调。
-
-首次需符合Node、取得/核对编译包、备份MCP配置和静态样本，持续有解析/保留工件/证据空间、模型解释token与人工反证；动态或专有后端再算许可/进程/设备成本，金额与耗时未知。失败要分目标改变、解析不支持、取消/结果预算、部分保留与抽取目录；MCP服务/会话/外部引擎和抽取文件要分别清理，退出不等只关Agent。源码清理所有权设计不等全部失败路径已验，不能把静态建议外推全部provider。
+重建结果带根工件哈希、盘点摘要、完整性矛盾、选择范围、应用图及分析限制；逐文件路由目录对不可读、解析失败或部分恢复分别记录状态。契约说明选择 source_paths 不会自动分析依赖，静态路由也不能证明可达或完整。相比手工记笔记，这种将来源、覆盖与推断性质放进结果的结构有利于复查；反例是哈希只能绑定字节，不能验证对语义的解释，未选或动态生成的代码可能改变真实行为。此判断不覆盖二进制和其他全部分析后端。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:43-49](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/package.json#L43-L49)
+**依据 1 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:56-81](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L56-L81)
 
-严格Node引擎。
-
-```text
-    "rea-agents": "scripts/rea.mjs"
-  },
-  "engines": {
-    "node": "^22.23.4 || ^24.22.1 || >=26.12.1"
-  },
-  "packageManager": "npm@11.16.0",
-  "files": [
-```
-
-**依据 2 · 源码核查**：[scripts/rea.mjs:58-65](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/scripts/rea.mjs#L58-L65)
-
-缺compiled明确失败，不静默运行另一实现。
-
-```text
-if (!(await compiledRuntimeExists(runtimeFiles))) {
-  process.stderr.write(
-    `REA's compiled runtime is missing. Run \`npm ci && npm run build:cached\` in ${packageRoot} to install dependencies and build REA, then restart it. If this is an installed package, reinstall rea-agents.\n`,
-  );
-  process.exitCode = 1;
-} else if (isMcpMode) {
-  const { runEntrypoint } = await import("../dist/mcp/main.js");
-  await runEntrypoint();
-```
-
-**依据 3 · 源码核查**：[src/server/sessionAvailabilityPolicy.ts:46-87](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/sessionAvailabilityPolicy.ts#L46-L87)
-
-可选能力默认与主机支持边界。
+结果包含工件身份、范围和限制。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-/** Select configured availability reporting or the target-free defaults. */
-export const sessionAvailabilityPolicy = (
-  configured: (() => AvailabilityPolicy) | undefined,
-  defaults: SessionAvailabilityDefaults,
-): (() => AvailabilityPolicy) => {
-  const policy =
-    configured ??
-    (() => ({
-      packetCaptureEnabled:
-        defaults.optionalFeatures?.packetCaptureEnabled ?? false,
-      signalRecordingEnabled:
-        defaults.optionalFeatures?.signalRecordingEnabled ?? false,
-      wasmArtifactEnabled:
-        defaults.optionalFeatures?.wasmArtifactEnabled ?? false,
-      evmInterfaceEnabled:
-        defaults.optionalFeatures?.evmInterfaceEnabled ?? false,
-      processCaptureEnabled: platform !== "win32",
-      recordedCrashEnabled:
-        defaults.optionalFeatures?.recordedCrashEnabled ?? false,
-      binaryLayoutEnabled:
-        defaults.optionalFeatures?.binaryLayoutEnabled ?? false,
-      firmwareInspectionEnabled:
-        defaults.optionalFeatures?.firmwareInspectionEnabled ?? false,
-      firmwareExtractionEnabled:
-        defaults.optionalFeatures?.firmwareExtractionEnabled ?? false,
-      javascriptRecoveryEnabled:
-        defaults.optionalFeatures?.javascriptRecoveryEnabled ?? false,
-      webModuleResolutionEnabled:
-        defaults.optionalFeatures?.webModuleResolutionEnabled ?? false,
-      browserObservationEnabled:
-        defaults.optionalFeatures?.browserObservationEnabled ?? false,
-      browserScenarioEnabled:
-        defaults.optionalFeatures?.browserScenarioEnabled ?? false,
-      electronObservationEnabled:
-        defaults.optionalFeatures?.electronObservationEnabled ?? false,
-      electronAutomationEnabled:
-        defaults.optionalFeatures?.electronAutomationEnabled ?? false,
-      v8InspectorObservationEnabled:
-        defaults.optionalFeatures?.v8InspectorObservationEnabled ?? false,
-    }));
-  // Observed host support also bounds a configured policy: no policy lets the
-  // default providers pass their execution host checks.
+/** Application-layer result retaining local diagnostics outside the canonical graph. */
+export interface JavaScriptArtifactReconstructionResult {
+  readonly route_inventory?: JavaScriptRouteInventory;
+  readonly input_path: string;
+  readonly format: "asar" | "directory";
+  readonly root_artifact_sha256: string;
+  readonly inventory_manifest_id: string;
+  readonly inventory_graph_sha256: string;
+  readonly integrity_contradictions: ArtifactInventorySnapshot["integrity_contradictions"];
+  readonly source_selection?: JavaScriptSourceSelection;
+  readonly graph: JavaScriptApplicationGraph;
+  readonly semantic_graph: JavaScriptSemanticGraph;
+  readonly electron_summary: ElectronBoundarySummary;
+  readonly statistics: {
+    readonly relevant_files: number;
+    readonly nested_asar_containers: number;
+    readonly text_bytes_read: number;
+    readonly invalid_utf8_files: number;
+    readonly parsed_javascript_files: number;
+    readonly skipped_javascript_files: number;
+    readonly visited_ast_nodes: number;
+    readonly findings: number;
+    readonly modules: number;
+    readonly parse_failures: number;
+  };
+  readonly limitations: readonly string[];
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/main/deferredRuntime.ts:59-74](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/main/deferredRuntime.ts#L59-L74)
+**依据 2 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:313-353](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L313-L353)
 
-启动阶段清理与失败聚合。
+逐文件区分解析和不可用状态。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
-  server.ownRuntimeCleanup(async () => {
-    if (shutdown !== undefined) return shutdown();
-    const results = await Promise.allSettled([
-      server.closePartialRuntime(),
-      (async () => {
-        if (!sessionClosed && closeSession !== undefined) {
-          await closeSession();
-          sessionClosed = true;
-        }
-      })(),
-    ]);
-    const failures = results.flatMap((result) =>
-      result.status === "rejected" ? [result.reason] : [],
-    );
-    if (failures.length > 0)
-      throw new AggregateError(failures, "MCP startup cleanup failed");
+        route_inventory: await completeJavaScriptAnalysisSteps(
+          buildJavaScriptRouteInventorySteps([
+            ...analysis.files
+              .filter(({ file }) => file.kind === "javascript")
+              .map(({ file, javascript, analysis_failure }) => ({
+                key: file.path,
+                next_app_context: nextAppContext(file),
+                path: file.path,
+                url: null,
+                sha256: file.sha256,
+                container_sha256: file.container_sha256,
+                status:
+                  javascript === null || javascript.parse_status === "failed"
+                    ? ("unavailable" as const)
+                    : javascript.parse_error_count > 0
+                      ? ("partial" as const)
+                      : ("complete" as const),
+                reason: !file.text.included
+                  ? file.text.reason
+                  : (analysis_failure?.reason ??
+                    (javascript === null
+                      ? "Source analysis is unavailable"
+                      : javascript.parse_status === "failed"
+                        ? "Script parsing failed"
+                        : javascript.parse_error_count > 0
+                          ? "Script parsing recovered from errors"
+                          : null)),
+                facts: javascript?.routes ?? null,
+              })),
+            ...files.unavailable_relevant_files
+              .filter((file) => file.kind === "javascript")
+              .map((file) => ({
+                key: file.path,
+                next_app_context: nextAppContext(file),
+                path: file.path,
+                url: null,
+                sha256: file.sha256,
+                container_sha256: file.container_sha256,
+                status: "unavailable" as const,
+                reason: "Inventoried JavaScript source bytes are unavailable",
+                facts: null,
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/server/registerArtifactTools.ts:15-18](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/registerArtifactTools.ts#L15-L18)
+**依据 3 · 作者声明**：[src/contracts/javascript/electronToolContracts.ts:110-117](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/contracts/javascript/electronToolContracts.ts#L110-L117)
 
-抽取分配额外写入资源。
+作者声明选定源码、覆盖、静态路由及完整性边界。
 
 ```text
-    parametersForExecution: (operation, parameters) =>
-      operation === "extract_artifact"
-        ? { ...parameters, output_root: createArtifactExtractionDestination() }
-        : parameters,
+  {
+    name: "analyze_javascript_application",
+    ...toolContractMetadata("analyze_javascript_application"),
+    description:
+      "Reconstruct one local ASAR or extracted JavaScript application as an inline application graph without executing it. Returns recovered graph nodes, edges, semantic relations, integrity contradictions, limitations, and coverage. Select source_paths to acquire and analyze only exact inventoried file paths; the complete artifact inventory and identity remain intact, and unselected sources remain explicit unknowns. Dependencies are not implicitly analyzed. Select detail summary to retain the complete analysis Evidence in this session and receive only its summary view, then inspect selected modules or pages with inspect_analysis_view. Select a javascript-routes view with summary detail to query deduplicated static patterns, source-linked occurrences, source status or interpretation gaps with filters, fields and paging. Static routes do not establish reachability or the full application route set. Summary detail reduces delivery, whereas source_paths bounds source analysis. Integrity mismatches fail by default; record-and-continue retains observed bytes as untrusted and marks graph coverage partial. Timeout recovery: returned provider_timeout uses the per-source analysis_timeout_ms budget. A host-only 'timed out awaiting tools/call' needs a longer client tool deadline, not a larger analysis_timeout_ms. Never repeat the unchanged call to test whether that timeout persists; report the host setting if configuration is not editable (Codex: mcp_servers.<server>.tool_timeout_sec, seconds).",
+    kind: "electron-provider",
+    inputSchema: analyzeJavaScriptApplicationRequestSchema,
+    outputSchema: applicationOutputSchema,
 ```
+
+**依据 4 · 源码核查**：[src/application/javascript/JavaScriptApplicationEvidence.ts:73-86](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationEvidence.ts#L73-L86)
+
+Evidence 将分析结果明确标为 derived。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+const applicationObservation = (
+  input: AnalyzeJavaScriptApplicationInput,
+  result: JavaScriptApplicationAnalysisResult,
+): EvidenceObservation => ({
+  predicateType: "rea.javascript-application-analysis",
+  operation: "analyze_javascript_application",
+  parameters: parameters(input),
+  result,
+  rawResult: null,
+  confidence: "derived",
+  authority: "shipped-artifact",
+  environment: null,
+  limitations: result.limitations,
+  locations: [{ kind: "artifact-path", path: "artifact-root" }],
+```
+
+</details>
 
 #### 缺口
 
-- 各平台/后端启动、取消/清理和单位正确分析总成本未测。
-  **影响**：不能将统一CLI理解为免环境配置，也不能给出准确资源、许可或恢复费用。
-  **进一步探讨**：符合引擎的隔离环境仅启所需静态路径，测样本/大文件/取消/退出及证据和临时文件，再决定新增后端。
+- 缺少同一构建物的运行行为与人工对照
+  **影响**：不能衡量真实行为覆盖率或结论正确率
+  **进一步探讨**：选择包含动态路由的固定样本对照运行观察和源码推断。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 谁先有限试用，未来增量相对现有证据层是什么？
+### Q04 · 调用失败、取消和退出需要付出什么？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-建议有逆向经验且运行时匹配的开发者，在已知源码的非敏感JS/Electron构建物或小归档上有限试用静态路径；普通只查一项字符串时直接解析器更简单。证据可追溯仍不是语义正确；摘要保留和抽取写入也不等全工具已经验收。
-
-未来方向应在已有inferred/links/limitations和保留视图之上，把每项准备重实现的功能主张绑定覆盖范围、反证样本和原行为对照；当前Evidence标签只是基础，不能重复包装成新贡献。用同一已知源码构建物比较直接分析器、当前REA、主张对照门槛版的虚构边/动态遗漏/错误重实现、复核总时间与模型成本；若只多结构材料而不降错，或维护负担高于收益，则否定。未实现；查不回证据、关键路径缺失或清理不完整时停止使用该结论并回原解析/源码映射人工核。
+首次使用需要满足 Node 和编译成品条件，Agent 使用还需配置 MCP；使用外部反编译引擎的路径另需相应后端和许可。静态路径建立工件盘点与 worker，解析资源及时间取决于输入大小；模型调用和人工验证成本取决于使用者配置，当前没有金额和耗时数据。已读源码在读取后释放 reader，worker 在 finally 中释放；重建完成后遇到中断或清理失败时，代码尝试把已完成结果包装为部分 Evidence 并返回错误，这不代表任意中断阶段都能恢复全部成果。若输出缺关键文件、范围或来源，用户应停下结论并直接查目标或更换分析路径。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts:18-46](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/application/javascript/JavaScriptApplicationWorkflowEvidence.ts#L18-L46)
+**依据 1 · 作者声明**：[README.md:76-89](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/README.md#L76-L89)
 
-现有推断和limitations基础。
+作者说明配置 Agent、审批和重启步骤。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（14行）</summary>
+
+````text
+### Set up your agent
+
+With Node.js and npm installed, run:
+
+```bash
+npx rea-agents setup
+```
+
+Choose your agents, review the proposed changes, and approve them. Setup adds
+REA's MCP server and matching workflow instructions, with backups of existing
+configuration. Restart your agent afterward. Setup records the selected runtime and REA
+entry script directly. If acquired through a package runner, keep its cache entry
+available. Run package acquisition from a trusted directory outside the target
+project. Installation and recovery details are in the setup guide below.
+````
+
+</details>
+
+**依据 2 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:145-164](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L145-L164)
+
+读取后释放 reader，失败则报告清理问题。
+
+<details>
+<summary>查看原文（20行）</summary>
 
 ```text
-  createEvidence(undefined, JAVASCRIPT_APPLICATION_WORKFLOW_PROVIDER, {
-    predicateType: "rea.application-feature-trace",
-    operation: "trace_application_feature",
-    parameters,
-    result,
-    rawResult: null,
-    confidence: "inferred",
-    authority: "analyst-inference",
-    environment: null,
-    limitations: result.limitations,
-    evidenceLinks: result.evidence_links,
-  });
-
-/** Create derived Evidence for one bounded JavaScript semantic trace. */
-export const createJavaScriptSemanticTraceEvidence = (
-  parameters: EvidenceObservation["parameters"],
-  result: JavaScriptSemanticTraceResult,
-): Evidence =>
-  createEvidence(undefined, JAVASCRIPT_APPLICATION_WORKFLOW_PROVIDER, {
-    predicateType: "rea.javascript-semantic-trace",
-    operation: "trace_javascript_semantics",
-    parameters,
-    result,
-    rawResult: null,
-    confidence: "inferred",
-    authority: "analyst-inference",
-    environment: null,
-    limitations: result.limitations,
-    evidenceLinks: result.evidence_links,
+      await reportPhase(
+        "read_javascript_artifacts",
+        "Reading inventoried JavaScript application sources",
+      );
+      const files = await readJavaScriptArtifactFiles(
+        reader,
+        snapshot,
+        scope,
+        signal,
+        input.source_paths,
+        asarHeaderAdmission,
+      );
+      // Release acquisition before analysis consumes these owned file facts.
+      const earlyCleanup = await scope.release(readerOwner);
+      readerOpen = false;
+      if (earlyCleanup.kind === "failed")
+        throw scope.cleanupFailure({ kind: "completed" }, [earlyCleanup], {
+          kind: "artifact-inventory",
+          inventory: snapshot,
+        });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/server/retainedSummaryDelivery.ts:29-47](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/server/retainedSummaryDelivery.ts#L29-L47)
+**依据 3 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:199-245](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L199-L245)
 
-当前摘要依保留证据，不应重复算新功能。
+worker 在 finally 中释放。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
-export const retainedSummaryDelivery = (
-  operation: string,
-  options: Pick<EvidenceToolFamilyOptions, "recordEvidence" | "evidenceById">,
-) => {
-  const retention = {
-    recordEvidence: options.recordEvidence,
-    evidenceById: options.evidenceById,
-  };
-  const selected = (parameters: Parameters): boolean =>
-    parameters.detail === "summary";
-  return {
-    preflight: (parameters: Parameters) =>
-      selected(parameters)
-        ? requireAnalysisViewRetention(operation, retention)
-        : ok(null),
-    projectEvidence: (parameters: Parameters, evidence: Evidence) =>
-      selected(parameters)
-        ? summarizeRetainedAnalysis(evidence, retention)
-        : ok(evidence),
+      let outcome;
+      let cleanupFailure: AnalysisError | undefined;
+      try {
+        outcome = await analyzeAndAdoptJavaScriptArtifactFiles(
+          files,
+          worker,
+          semanticProjection,
+          async (file, completed, total) => {
+            abortIfNeeded(signal);
+            const ast =
+              javascriptArtifactAnalysisScopes[file.kind]?.authority ===
+              "ast-static-analysis";
+            await progress?.report({
+              phase: ast
+                ? "parse_javascript_source"
+                : "process_javascript_artifact_metadata",
+              completed: 0,
+              total: 1,
+              message: `${ast ? "Parsing and projecting" : "Processing metadata for"} ${file.path} (${String(completed + 1)}/${String(total)})`,
+            });
+            abortIfNeeded(signal);
+          },
+          signal,
+          async (file, phase) => {
+            abortIfNeeded(signal);
+            await progress?.report({
+              phase: `javascript_worker_${phase}`,
+              completed: 0,
+              total: 1,
+              message: `JavaScript worker ${phase}: ${file.path}`,
+            });
+            abortIfNeeded(signal);
+          },
+        );
+      } finally {
+        try {
+          const cleanup = await scope.release({
+            kind: "javascript-source-analysis",
+            analysis: worker,
+            resource: `JavaScript source analyzer for ${path}`,
+          });
+          if (cleanup.kind === "failed") throw cleanup.cause;
+        } catch (cause: unknown) {
+          if (!(cause instanceof AnalysisError)) throw cause;
+          cleanupFailure = cause;
+        }
+      }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/artifacts/ArtifactProvider.ts:497-520](https://github.com/morluto/rea/blob/d157560d402fbd1b54069ff59039dcde73e4a7e1/src/artifacts/ArtifactProvider.ts#L497-L520)
+**依据 4 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:388-413](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L388-L413)
 
-当前工件来源/限制证据基础。
+已完成部分结果可随失败保留为 Evidence。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-    const inventoryEvidence = createEvidence(subject, ARTIFACT_GRAPH_PROVIDER, {
-      operation: "inventory_artifact",
-      parameters: inventoryParameters,
-      result: inventory,
-      rawResult: null,
-      limitations: inventory.limitations,
-      // The nested inventory already names every occurrence's logical path.
-      locations: [],
-    });
-    // The returned execution and its Evidence then reuse this owned report.
-    const result = freezeJsonSnapshot(
-      createArtifactInspection(inventoryEvidence),
-    );
-    await options?.progress?.report({
-      phase: "inspect_artifact.inventory",
-      completed: 1,
-      total: 1,
-      message: "inventory substep completed",
-    });
-    return ok(
-      createAnalysisExecution(result, ARTIFACT_GRAPH_PROVIDER, {
-        rawResult: null,
-        limitations: result.limitations,
-        sourceEvidence: artifactInspectionSources(result),
+      await checkpointCompletedAnalysis();
+      const failure =
+        cleanupFailure === undefined
+          ? interruption
+          : interruption === null
+            ? cleanupFailure
+            : analysisErrorWithCleanupFailure(
+                interruption,
+                cleanupFailure,
+                OPERATION,
+              ).bindCleanupDependencies([interruption, cleanupFailure]);
+      if (failure !== null) {
+        const { electron_summary: summary, ...application } = completed;
+        const partial = await completeJavaScriptAnalysisSteps(
+          parseOwnedJavaScriptApplicationAnalysisSteps({
+            ...application,
+            summary,
+            limitations: completed.graph.limitations,
+          }),
+        );
+        const evidence =
+          await createOwnedJavaScriptApplicationEvidenceCooperatively(
+            input,
+            partial,
+          );
+        throw failure.retainPartialObservation(evidence);
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/application/javascript/JavaScriptApplicationService.ts:137-169](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationService.ts#L137-L169)
+
+特定取消阶段尝试保留部分观察及其失败边界。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+  } catch (cause: unknown) {
+    if (
+      cause instanceof ArtifactReaderFailure &&
+      cause.reason === "cancelled" &&
+      reconstructed !== undefined
+    ) {
+      try {
+        if (result === undefined) {
+          const { electron_summary: summary, ...application } = reconstructed;
+          result = await completeJavaScriptAnalysisSteps(
+            parseOwnedJavaScriptApplicationAnalysisSteps({
+              ...application,
+              summary,
+              limitations: reconstructed.graph.limitations,
+            }),
+          );
+        }
+        evidence ??=
+          await createOwnedJavaScriptApplicationEvidenceCooperatively(
+            input,
+            result,
+          );
+        return err(
+          translateArtifactFailure(OPERATION, cause).retainPartialObservation(
+            evidence,
+          ),
+        );
+      } catch (completionCause: unknown) {
+        // A validation or Evidence failure while finishing the partial result
+        // remains the primary failure instead of being hidden by cancellation.
+        cause = completionCause;
+      }
+    }
 ```
 
 </details>
 
 #### 缺口
 
-- 没有新任务对照/真实用户需求强度或主张门槛收益样本。
-  **影响**：不能把未来证据覆盖门槛计当前贡献，也不能声称工具结构已改善重实现质量或节时。
-  **进一步探讨**：盲核许可内已知源码样本的功能主张与反证，记录错误、遗漏、回查/清理和总人工成本，达不到对照则止。
+- 未测安装、运行、清理后的资源与数据残留
+  **影响**：不能估算单位任务成本或保证退出后无残留
+  **进一步探讨**：隔离环境记录首次与重复任务、取消、临时文件及人工复核时间。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 哪些机制值得复用，后续能提出什么可证伪假设？
+
+**研究主题**：工程质量与复用、新假设与验证、采用判断
+
+#### 完整回答
+
+可借鉴的机制是把盘点身份、静态分析结果、覆盖与限制绑定为可回查的 Evidence，并让摘要投影以前先检查留存能力。用户仍需核对每个结论是否由相关原件支持；记录本身不能保证语义正确。未验证假设是在现有证据基础上要求每个功能主张列出支持来源、未覆盖输入和反证，会降低错误重实现；它增加人工标注成本且依赖来源能完整回读。最小验证应使用同一批有已知行为的构建物，让两组分别采用原摘要和主张清单，比较错误率、遗漏和包含复核在内的总时间；若错误率无改善或成本抵消收益，则放弃。建议有逆向经验的用户对一个有权检查的已知样本先试静态路径，发现关键文件缺失或推断无法回指时停止并回到原始材料。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/application/javascript/JavaScriptApplicationEvidence.ts:67-86](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptApplicationEvidence.ts#L67-L86)
+
+证据记录对象、推断性质、参数和限制。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+const applicationSubject = (result: JavaScriptApplicationAnalysisResult) => ({
+  path: result.input_path,
+  sha256: result.root_artifact_sha256,
+  format: result.format,
+});
+
+const applicationObservation = (
+  input: AnalyzeJavaScriptApplicationInput,
+  result: JavaScriptApplicationAnalysisResult,
+): EvidenceObservation => ({
+  predicateType: "rea.javascript-application-analysis",
+  operation: "analyze_javascript_application",
+  parameters: parameters(input),
+  result,
+  rawResult: null,
+  confidence: "derived",
+  authority: "shipped-artifact",
+  environment: null,
+  limitations: result.limitations,
+  locations: [{ kind: "artifact-path", path: "artifact-root" }],
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/server/registerElectronTools.ts:103-129](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/server/registerElectronTools.ts#L103-L129)
+
+摘要依赖留存并投影。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+        async ({ detail, view, ...request }, { signal, progress }) => {
+          if (detail === "summary") {
+            const ready = requireAnalysisViewRetention(
+              analyzeContract.name,
+              options,
+            );
+            if (!ready.ok) return ready;
+          }
+          const analyzed = await analyzeJavaScriptApplicationValidated(
+            request,
+            options.artifactResources,
+            {
+              signal,
+              progress,
+              environment: options.environment,
+              ...(server.analysisSettings === undefined
+                ? {}
+                : { settings: server.analysisSettings.read }),
+            },
+          );
+          return detail === "summary" && analyzed.ok
+            ? projectRetainedAnalysis(
+                analyzed.value,
+                options,
+                view ?? { kind: "summary" },
+              )
+            : analyzed;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/application/javascript/JavaScriptArtifactReconstruction.ts:357-386](https://github.com/morluto/rea/blob/e18594b24754ab95ebd119311cc32a1d1ad6fa13/src/application/javascript/JavaScriptArtifactReconstruction.ts#L357-L386)
+
+输出工件摘要、图和统计。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+        input_path: path,
+        format,
+        root_artifact_sha256: snapshot.manifest.root_sha256,
+        inventory_manifest_id: snapshot.manifest.manifest_id,
+        inventory_graph_sha256: snapshot.manifest.graph_sha256,
+        integrity_contradictions: snapshot.integrity_contradictions,
+        ...(files.source_selection === undefined
+          ? {}
+          : { source_selection: files.source_selection }),
+        graph,
+        semantic_graph: semanticGraph,
+        electron_summary: electronSummary,
+        statistics: {
+          relevant_files:
+            files.files.length + files.unavailable_relevant_files.length,
+          nested_asar_containers: files.containers.length,
+          text_bytes_read: files.text_bytes_read,
+          invalid_utf8_files: files.invalid_utf8_files,
+          parsed_javascript_files: analysis.files.filter(
+            ({ javascript }) => javascript !== null,
+          ).length,
+          skipped_javascript_files: analysis.files.filter(
+            isSkippedJavaScriptAnalysis,
+          ).length,
+          visited_ast_nodes: analysis.visited_ast_nodes,
+          findings: analysis.findings,
+          modules: analysis.modules,
+          parse_failures: analysis.parse_failures,
+        },
+        limitations: analysis.limitations,
+```
+
+</details>
+
+#### 缺口
+
+- 主张清单和对照效果没有实验
+  **影响**：不能声称提高准确性或节省时间
+  **进一步探讨**：用相同已知行为样本开展盲评并记录额外复核成本。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[ed76f87](https://github.com/MichengAI/dsh-skills-manager/tree/ed76f87992ece26d2dd95e5e555deec94876d242)
+源码版本：[09510fe](https://github.com/MichengAI/dsh-skills-manager/tree/09510fe0bdb56d32ae62238ebde30368b2f56046)
 
 <!-- BEGIN META -->
-[![GitHub ★ 386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-skills-manager) [![npm 30d 138,355](https://img.shields.io/static/v1?label=npm+30d&message=138%2C355&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager)
+[![GitHub ★ 426](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=426&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-skills-manager) [![npm 30d 142,851](https://img.shields.io/static/v1?label=npm+30d&message=142%2C851&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager)
 <!-- END META -->
 
-> **功能**：在 DSH 中浏览、启停和管理本地及项目技能，并从仓库安装、更新与恢复技能。
+> **功能**：在 DSH 中管理本地与项目 Skills，并提供仓库导入、更新和备份恢复。
 
-> **亮点**：它把外部技能实际接入DSH调用链，并让同名选择、启停和可追溯仓库更新共享管理入口，超出单纯文件列表；收益仍以实际任务为准。见[Q01](#research-q01)至[Q03](#research-q03)。
+> **亮点**：插件将多个来源的候选、启停策略及仓库更新流程接入 DSH，并用预览令牌和本地复验限制部分过期覆盖；相对于手工记录提供可核查的组织机制，不证明净节时或内容安全。[Q02](#research-q02) [Q03](#research-q03)
 
-> **主要限制**：只读来源保护原文件，却仍能把正文送入模型调用；名称合法和文件摘要不证明指令可信。更新恢复设计也未独立证明任意硬中断和外部竞态下无损。见[Q02](#research-q02)与[Q03](#research-q03)。
+> **主要限制**：更新失败可能留下文件已安装但来源状态未确认，回退也可能失败；旧 webServer 回退的实际认证及接收阶段大小限制尚未确认，不能把界面上的备份和路由检查视为完整安全保障。[Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 多来源技能管理解决谁的什么问题？](#detail-section-11)
-  - [Q02 · 来源、重名与启停怎样进入实际调用？](#detail-section-12)
-  - [Q03 · 仓库安装更新如何保护本地修改和恢复？](#detail-section-13)
-  - [Q04 · 创建、删除与可写范围的边界是什么？](#detail-section-14)
-  - [Q05 · 全周期成本与效果支持到哪？](#detail-section-15)
-  - [Q06 · 哪些人值得试，怎样验证新的信任假设？](#detail-section-16)
+  - [Q01 · 用户要管理什么，插件相对原有办法增加了什么？](#detail-section-11)
+  - [Q02 · 设置页、provider 和状态如何连接？](#detail-section-12)
+  - [Q03 · 仓库安装与更新如何检查内容、冲突和回退？](#detail-section-13)
+  - [Q04 · 依赖、安全准入与恢复负担有哪些边界？](#detail-section-14)
+  - [Q05 · 如何试用，什么改进值得验证？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：维护多个助手和项目技能目录的人可统一查找副本并管理更新，合格结果应是目标会话调用正确正文且可恢复。见[Q01](#research-q01)。
+> **用途**：在 DSH 使用多个本地和项目 Skill 来源的维护者，可以在界面统一查看与配置；重复需求和效率尚无独立用户材料。[Q01](#research-q01)
 
-简单替代为宿主原生技能目录、手工复制和版本管理。插件集成发现、策略覆盖与更新恢复，不把第三方技能内容或宿主加载机制计作本插件原创。
+用户可手工查看 Skill 文件并通过宿主原生机制管理；原生 provider 已提供其根目录的技能，插件提供额外策略与界面而非独占加载能力。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,62 +51,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 多来源技能调用 | 把外部与项目技能接入DSH provider | 来源默认启用；只读文件不等于可信指令 |
-| 来源与单项启停 | 控制同名副本及调用候选 | 依赖宿主provider契约，需实际核对 |
-| 仓库安装与更新 | 固定内容、比较本地修改并替换 | 目标限DSH/Shared Agent/登记项目，归档受限 |
-| 回滚与回收站 | 恢复上一版或软删除内容 | 自动恢复失败保留备份，永久删除另有入口 |
-| 创建技能工具 | 生成合法SKILL.md | ask是宿主确认请求，正文内容仍需审阅 |
-| 插件自身更新 | 调用profile包管理器安装npm版本 | 与技能文件更新不同，有真实子进程副作用 |
+| --- | --- | --- |
+| 来源管理与启停 | 管理本地、项目 Skill 的调用策略 | 原生 provider 与作用域优先级仍需宿主验证 |
+| 仓库安装与预览 | 安装已选 Skill 并比较更新 | 依赖目标登记与来源可访问，内容仍需审阅 |
+| 更新与回滚 | 校验预览并备份旧目录 | 失败恢复可能失败，需要人工检查备份 |
+| create_skill | 创建本地 DSH Skill | 源码注册执行前询问，真实宿主行为未验证 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH skills、webServer与Web设置服务 | 核心必需 | provider、管理API和界面 | 兼容不满足时不能按源码推定可用 |
-| 可读技能目录及合法SKILL声明 | 发现调用必需 | 名称、正文及资源定位 | 不可读或非法条目缺席或诊断，扫描也会触限 |
-| DSH/Shared Agent可写根或登记项目 | 文件管理必需 | 创建、安装、更新与回收 | 外部助手目录只读，未知目标拒绝 |
-| 公共GitHub与磁盘空间 | 仓库功能必需 | 下载归档、stage、备份 | 网络或大小限额失败应保留当前文件 |
-| 内容审阅与文件恢复能力 | 采用前提 | 判断技能适用并处理失败 | 不能由只读标签或目录合法性替代 |
-
+| --- | --- | --- | --- |
+| 兼容 DSH、Node 和宿主服务 | 必需 | 加载 provider、路由和设置页 | 未满足时不能假定插件可用 |
+| 注册工作区 | 项目写入需要 | 限定项目目标 | 未登记则拒绝目标 |
+| GitHub 与网络 | 仓库功能需要 | 获取与刷新 Skill | 访问失败需保留现有文件并检查错误 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户备份技能和管理状态，审阅来源 | 不熟来源先停用 |
-| 加载 | 安装bundle后重启/刷新并打开Skills | 本轮未安装验收，先确认目标宿主 |
-| 调用核对 | 用户以同名测试技能检验项目和来源策略 | 实际正文和启停应符合意图 |
-| 变更 | 用户预览仓库更新，明确本地修改覆盖 | 摘要变化应重预览，未授权不覆盖 |
-| 恢复 | 用户验证回滚与回收站 | 报自动恢复失败时保留备份，不重复操作 |
+| --- | --- | --- |
+| 准备 | 维护者核对宿主版本和目标范围 | 条件不符先停止 |
+| 查看 | 用户在设置页检查来源与策略 | 与实际目录对照 |
+| 更新 | 用户预览差异并确认替换 | 本地文件或版本变化则重新预览 |
+| 恢复 | 用户检查结果和备份 | 恢复报错时停止重复操作并人工检查 |
 
-**效果与成本**
+#### 成本
 
-采用成本主要取决于需要审阅多少来源、更新频率和失败时能否恢复，而不是面板点选次数。跨助手技能带来的指令适用审查仍由用户承担，完整阶段成本表见[Q05](#research-q05)。
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次使用 | 安装、网络与磁盘成本未知 | 配置来源及宿主耗时未知 | 兼容性未实测 |
+| 持续使用 | 仓库访问和备份空间未知 | 审阅来源及变更时间未知 | 内容安全由用户判断 |
+| 失败恢复 | 备份与重试资源未知 | 检查文件和来源状态 | 自动恢复可能失败 |
 
-应把“技能已列出”“正确正文可调用”“任务完成”分别记录，管理界面的规模不能代替调用质量。当前机制支持及尚缺结果在[Q05](#research-q05)效果表逐项列明。
+#### 效果
 
-> **思考**：只读来源保护原文件，却仍能把正文送入模型调用；名称合法和文件摘要不证明指令可信。更新恢复设计也未独立证明任意硬中断和外部竞态下无损。见[Q02](#research-q02)与[Q03](#research-q03)。
+| 效果项 | 当前证据支持 | 尚不能确定 |
+| --- | --- | --- |
+| 多来源管理 | provider、策略和设置页有接线 | 真实宿主可用性与用户节时 |
+| 仓库更新 | 预览令牌、复验与备份分支存在 | 所有失败情况下可恢复或内容可信 |
+
+> **思考**：更新失败可能留下文件已安装但来源状态未确认，回退也可能失败；旧 webServer 回退的实际认证及接收阶段大小限制尚未确认，不能把界面上的备份和路由检查视为完整安全保障。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：它把外部技能实际接入DSH调用链，并让同名选择、启停和可追溯仓库更新共享管理入口，超出单纯文件列表；收益仍以实际任务为准。见[Q01](#research-q01)至[Q03](#research-q03)。
+> **亮点**：插件将多个来源的候选、启停策略及仓库更新流程接入 DSH，并用预览令牌和本地复验限制部分过期覆盖；相对于手工记录提供可核查的组织机制，不证明净节时或内容安全。[Q02](#research-q02) [Q03](#research-q03)
 
-可复用设计是agent层策略覆盖、真实路径复核、完整文件摘要预览与写前二次复验，以及明确保留备份的恢复失败分支。它们分别处理调用选择和文件替换，不应混成内容安全保证。检查了关键TS与对应lib接线，未重建以证明整包完全一致。
+provider 与 Agent 生命周期对应，更新令牌绑定当前与目标内容，替换失败尝试恢复并报告未恢复状态。回退 HTTP 路由和缓存刷新仍有独立宿主与运行边界。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-只读来源保护原文件，却仍能把正文送入模型调用；名称合法和文件摘要不证明指令可信。更新恢复设计也未独立证明任意硬中断和外部竞态下无损。见[Q02](#research-q02)与[Q03](#research-q03)。
+更新失败可能留下文件已安装但来源状态未确认，回退也可能失败；旧 webServer 回退的实际认证及接收阶段大小限制尚未确认，不能把界面上的备份和路由检查视为完整安全保障。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先在单个测试项目核对同名启停，再给一个有本地修改的仓库技能预览更新并验收回滚；不熟来源先停用。出现错误副本、未授权覆盖或恢复失败即停止并保留文件，见[Q06](#research-q06)。
+适合在 DSH 管理多个来源且愿意审阅变更的维护者先用隔离工作区试用；来源不明、文件在预览后变化或恢复报错时停止并人工核对备份。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码确认provider、工具、文件管理及更新门禁；未验证真实宿主调用、并发硬中断恢复及任务收益。技能内容版本确认仅是未来假设。
+已有机制基于固定源码解释；尚未进行真实宿主或效果验证，未来设计仅为假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、src/index.ts、src/core.ts、src/readonly-discovery.ts、src/repositories.ts、src/repository-updates.ts、src/plugin-updater.ts、src/client.ts、lib/index.js、lib/core.js、lib/repository-updates.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/index.ts、src/core.ts、src/client.ts、src/repositories.ts、src/repository-updates.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：定向核查provider注册与list/get、来源默认策略、仓库安装/更新/回滚、创建工具、可写根和删除路由，以及运行时lib对应关键接线；未全审市场目录、全部UI、第三方代码或所有恢复分支。
-- 下一步：用隔离同名技能、不同来源、策略切换、本地修改和各目录切换中断做真实宿主对照，记录错误副本与恢复时间；本轮未运行。
+- 边界：固定版本检查宿主 provider、设置页、仓库更新及路由代表路径；未对所有 96 个文件做安全审计，未执行插件、第三方仓库、真实宿主或失败注入。
+- 下一步：在隔离 profile 检查同名 Skill 覆盖与禁用，验证 connection 和回退路由准入，并用本地编辑、写入故障和备份恢复逐步对照磁盘。
 
 **分析版本**
 
 - **仓库**：[MichengAI/dsh-skills-manager](https://github.com/MichengAI/dsh-skills-manager)
-- **版本号**：1.2.21（[固定提交 ed76f87](https://github.com/MichengAI/dsh-skills-manager/tree/ed76f87992ece26d2dd95e5e555deec94876d242)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.2.26（[固定提交 09510fe](https://github.com/MichengAI/dsh-skills-manager/tree/09510fe0bdb56d32ae62238ebde30368b2f56046)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +136,9 @@
 
 <a id="innovation"></a>
 
-可研究首次启用和内容变更时绑定技能摘要的适用确认，分清文件管理与指令信任；须比较误启用与审阅负担，尚未验证。见[Q06](#research-q06)。
+未验证假设：预览时将权限敏感指令与来源信任说明并列，可能帮助维护者发现不适合安装的 Skill，但会增加审阅成本；对照普通文件差异测发现率、误报和时间，若无改善或负担不可接受则否定。[Q05](#research-q05)
 
-用隔离同名技能、不同来源、策略切换、本地修改和各目录切换中断做真实宿主对照，记录错误副本与恢复时间；本轮未运行。
+在隔离 profile 检查同名 Skill 覆盖与禁用，验证 connection 和回退路由准入，并用本地编辑、写入故障和备份恢复逐步对照磁盘。
 
 <a id="detail-section-9"></a>
 
@@ -147,11 +149,11 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4 | 1186 | — | — | 19050 |
-| .js | source | 10 | 6362 | 6354 | 79 | — |
+| .md | source | 4 | 1276 | — | — | 20563 |
+| .js | source | 11 | 7201 | 7193 | 89 | — |
 | .mjs | source | 9 | 941 | 884 | 22 | — |
-| .ts | source | 24 | 11147 | 10300 | 492 | — |
-| .mjs | test | 40 | 13578 | 12725 | 380 | — |
+| .ts | source | 25 | 12235 | 11342 | 486 | — |
+| .mjs | test | 44 | 14175 | 13195 | 453 | — |
 | .mjs | example | 1 | 61 | 59 | 1 | — |
 | .ts | test | 2 | 89 | 76 | 9 | — |
 
@@ -159,44 +161,43 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/MichengAI/dsh-skills-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 41](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=41&color=737b86&logo=github)](https://github.com/MichengAI/dsh-skills-manager/issues?q=is%3Aissue+created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/MichengAI/dsh-skills-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 43](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=43&color=737b86&logo=github)](https://github.com/MichengAI/dsh-skills-manager/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 43](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=43&color=737b86&logo=github)](https://github.com/MichengAI/dsh-skills-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
 
-暂未获取：近30天关闭。
 
-统计日期：2026-10-29。
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Skills Manager能否把多来源技能整理成实际可调用且可恢复管理的DSH目录，读取外部技能与仓库更新有哪些成立条件？
+**插件研究总目标**：核查 DSH 用户管理本地与仓库 Skills 的实际接线、安全边界及恢复成本。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 多来源技能管理解决谁的什么问题？
+### Q01 · 用户要管理什么，插件相对原有办法增加了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-同时使用 DSH、Shared Agent 与其他编码助手的人，经常需要查找同名技能、确定实际加载的副本，并把仓库技能装到明确的用户或项目目录。合格结果是正确技能正文在目标会话可调用，启停策略符合用户意图，原文件与本地修改可追溯恢复，而不是列表数增加。
-
-本包通过设置页、项目视图、来源分组、仓库订阅与回收站整理这套流程。相对手动复制文件和逐目录查找，它额外把外部技能注册进 DSH 的 provider，并把来源、重名选择和启停策略纳入同一候选链；这不是只有文件浏览的管理器。bundle与默认lib导出确认其真实类型为原生插件。
-
-插件继承宿主的技能加载和调用体系，不提供新的模型推理算法，目录里的第三方技能也不是本插件创作的能力。单一目录、技能很少或只需宿主原生加载的人，手动维护可能更简单。作者展示广泛目录支持和界面，不等于独立证明用户需求、检索准确率或工作效率。
+需要在 DSH 中使用多个本地 Agent Skill 来源的个人或维护者，可以在统一面板查看、启停及导入；作者还描述仓库发现与更新。以手工查看目录、修改宿主配置为基线，插件源码通过宿主 provider 加载候选、以本地策略决定调用状态，并注册设置页；这使管理和来源选择集中在界面中，但不证明使用者无需理解来源优先级或因此节省时间。原生 provider 本身提供原生根的技能，代码也在无须覆盖时让其继续工作；不能将宿主原本加载能力归给插件。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:23-34](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/README.md#L23-L34)
+**依据 1 · 作者声明**：[README.md:20-31](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/README.md#L20-L31)
 
-作者列出多来源、项目、仓库与回收站场景。
+作者描述管理、导入、仓库和回收站。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
+> DSH Skills Manager is a community-maintained DeepSeek Harness (DSH) plugin, not an official DeepSeek AI product.
+
+This README describes **1.2.26**. Released changes are in the [changelog](CHANGELOG.md).
 
 ## Features
 
@@ -206,16 +207,13 @@ Bring skills from your computer and projects into DSH without switching between 
 - **Broad ecosystem support**: Full coverage for 20+ tools and CLI environments including DSH, Shared Agent, Codex, Claude Code, Copilot, Cursor, Google Antigravity, Windsurf, Qoder, and Trae without touching third-party files.
 - **Categorization and drag & drop**: Create category folders inside sources, drag skill rows (`⋮⋮`) to organize and order them, batch assign skills, and toggle entire categories with a single switch. Category metadata is saved without moving files.
 - **Public markets & repositories**: Integrated Discover hub to explore trending skills from ClawHub and skills.sh, or subscribe to public GitHub repositories with incremental diff inspection and backups.
-- **Create and flexible import**: Create skills or import ZIP archives, folders, and `SKILL.md` files directly into your global user root or a registered workspace.
-- **Wide reading experience**: 760px responsive detail modal with monospace syntax styling, vertical resizing, and a one-click "Copy body" action.
-- **Trash & safe rollback**: Soft delete protects skills from accidental loss, allowing complete restoration with provenance and update history preserved.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.ts:303-314](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/index.ts#L303-L314)
+**依据 2 · 源码核查**：[src/index.ts:232-243](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L232-L243)
 
-外部provider实际绑定list与get。
+provider 的 list/get 调用项目自身扫描与读取函数。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -237,69 +235,99 @@ function externalSkillProvider(control: ProviderControl, invalidators: Set<() =>
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:410-415](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/index.ts#L410-L415)
+**依据 3 · 源码核查**：[src/index.ts:322-334](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L322-L334)
 
-全局与agent层provider实际注册。
+宿主注册全局和 Agent 作用域 provider。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
+  const providerInvalidators = new Set<() => void>();
+  const invalidateSkills = () => {
+    for (const invalidate of providerInvalidators) invalidate();
+  };
+  const afterWrite = () => notifyChatCatalog(ctx, invalidateSkills);
+  let mutationQueue: Promise<unknown> = Promise.resolve();
+  const enqueueMutation: Serialize = (task) => {
+    const queued = mutationQueue.then(task, task);
+    mutationQueue = queued.catch(() => undefined);
+    return queued;
+  };
   ctx.effect(() => ctx.skills.registerProvider((control) => externalSkillProvider(control, providerInvalidators)), "skills-manager global external skills provider");
   ctx.effect(() => registerAgentSkillProviders(ctx, providerInvalidators), "skills-manager agent-scoped external skills providers");
-
-  if (ctx.tools && typeof ctx.tools.register === "function") {
-    ctx.effect(() => ctx.tools!.register({
-      name: "create_skill",
 ```
 
-**依据 4 · 源码核查**：[cordis.patch.yml:1-7](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/cordis.patch.yml#L1-L7)
+</details>
 
-bundle挂载插件。
+**依据 4 · 源码核查**：[src/core.ts:4024-4040](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/core.ts#L4024-L4040)
+
+原生根不需要覆盖时让宿主 provider 继续提供。
+
+<details>
+<summary>查看原文（17行）</summary>
 
 ```text
-# dsh-skills-manager bundle patch
-#
-# 供 `dsh plugin --profile web add <路径>` 自动挂载（Loader bundle 层）；
-# 手动挂载的用户也可在 profiles/web/cordis.patch.yml 自行添加 insert 条目。
-- insert:
-    - id: skills-manager
-      name: '@michengai/dsh-skills-manager'
+    const project = root.scope === "project";
+    // Shared Agent 继续由 manager 提供递归发现与链接副本，不因开放文件管理而丢失调用候选。
+    const policyOnly = root.mutable && root.key !== "agents";
+    // 回退副本也必须覆盖组内更高优先级的原生条目，防止宿主重新选中已停用副本。
+    const overlayRank = group.length > 1
+      ? Math.min(...group.map((item) => Math.min(item.root.rank, item.entry.providerRank ?? item.root.rank))) - 1
+      : undefined;
+    // 原生根由宿主自己的 provider 提供；来源停用必须发布覆盖层，否则停用不生效。
+    const needsOverlay =
+      !policyOnly ||
+      group.length > 1 ||
+      policy.override !== undefined ||
+      !entry.invocationPolicyValid ||
+      policyResult.writable === false ||
+      !policy.sourceEnabled;
+    if (!needsOverlay) continue;
+    const candidateName = canonicalSkillName({ root, entry, policy });
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/client.ts:1346-1349](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/client.ts#L1346-L1349)
+
+注册设置页。
+
+```text
+      }, "skills-manager: plugin update ui");
+      installSettingsNavIcon(ctx, function () { return ctx.locale.bind(NS)("title"); });
+      ctx.slots.inject("settings.section", function () { return ctx.slots.register({ name: "settings.section", id: "skills-manager", order: 25, label: function () { return ctx.locale.bind(NS)("title"); }, icon: "skill", locale: NS }, SkillManagerSection); });
+      sidebarController = setupSidebarEntry(ctx, {
 ```
 
 #### 缺口
 
-- 没有真实用户的同任务手工维护对照。
-  **影响**：只能解释流程增量，不能量化需求频率和净节时。
-  **进一步探讨**：记录重复查找、选错副本和恢复任务，对比人工时间及错误。
+- 没有独立用户任务、频率或操作对照
+  **影响**：不能确定持续需求或净节时
+  **进一步探讨**：使用同一组本地与项目 Skill，比较面板和宿主原有操作并记录正确结果及人工操作。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 来源、重名与启停怎样进入实际调用？
+### Q02 · 设置页、provider 和状态如何连接？
 
-**研究主题**：功能与机制、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-全局provider与各存活agent层provider共同提供外部候选，后者避免更近的原生provider绕开禁用策略。候选生成先扫描用户与当前cwd项目来源，按声明名分组选择优先副本，再根据来源与单项策略决定是否覆盖原生候选；不是把所有同名条目简单拼接。get阶段重新解析真实路径与正文，核对定位、可加载性及调用名，再把正文作为技能内容返回。
-
-只读外部来源意味着管理器不改那些文件，不意味着它们只是供人查看。默认策略把用户来源启用，候选正文可能进入DSH的技能调用链。项目、第三方仓库或其他助手目录里的指令内容必须由使用者决定是否信任；路径校验、名称合法与只读标签都不证明指令适合当前任务，也不证明其附属脚本安全。不能把“安全管理文件”扩展为“技能内容已通过安全审查”。
-
-扫描预算、路径变化、同名优先级和宿主provider契约仍可能影响可见与可调用性。只读发现器设深度6、目录2000和条目20000上限，遇到不可读目录会继续，触限标truncated；因此目录很多时不能从列表缺席推断技能不存在。源码显示了避免路径替换和策略绕过的设计，但本轮没有运行多个宿主与真实会话，不把源码注册当作兼容验收。
+宿主 apply 把 provider 注册到全局和活跃 Agent 作用域，并通过 Agent 创建和销毁事件管理作用域注册。provider 列举用户根和当前工作目录相关项目根，按名称分组、优先级及管理策略决定是否提供覆盖候选；get 时重新解析路径并比较此前记录的真实路径，以减少读取与选择对象发生变化时的混淆。客户端通过设置插槽注册面板，callApi 将响应解析后用于界面；状态路由调用 state 并附安装来源。停用操作写管理策略而不是直接修改第三方文件。缓存失效或通知失败被捕获，不撤销已经完成的文件操作，因此界面或宿主菜单何时刷新仍需核查。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:318-348](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/index.ts#L318-L348)
+**依据 1 · 源码核查**：[src/index.ts:251-287](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L251-L287)
 
-agent层注册防止禁用落回更近原生provider。
+Agent provider 伴随创建与销毁注册及释放。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
- * Agent presets register their filesystem provider in a nearer, preset-scoped
- * skill layer. Register the manager policy once more in each live agent's own
- * layer so disabled shared skills cannot fall through to that native provider.
- */
 function registerAgentSkillProviders(ctx: HostContext, invalidators: Set<() => void>) {
   if (typeof ctx.on !== "function") return () => {};
   const registrations = new Map<string, () => void>();
@@ -327,39 +355,26 @@ function registerAgentSkillProviders(ctx: HostContext, invalidators: Set<() => v
   const agents = typeof ctx.get === "function" ? ctx.get("agents") : undefined;
   if (agents && typeof agents.list === "function") {
     for (const agent of agents.list()) install(agent);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/core.ts:2039-2049](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L2039-L2049)
-
-默认来源开启。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-
-function defaultManagerState(): ManagerState {
-  const sources: ManagerState["sources"] = Object.create(null);
-  const disabledSkills: ManagerState["disabledSkills"] = Object.create(null);
-  const enabledSkills: ManagerState["enabledSkills"] = Object.create(null);
-  for (const root of userRoots()) {
-    sources[root.key] = true;
-    disabledSkills[root.key] = [];
-    enabledSkills[root.key] = [];
   }
-  return { version: 1, sources, disabledSkills, enabledSkills, sidebarEntry: false, onlineUpdate: true, categories: Object.create(null), categoryMembers: Object.create(null), categoryOrder: Object.create(null) };
+
+  return () => {
+    if (typeof stopCreated === "function") stopCreated();
+    if (typeof stopDisposed === "function") stopDisposed();
+    for (const dispose of registrations.values()) {
+      if (typeof dispose === "function") dispose();
+    }
+    registrations.clear();
+  };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/core.ts:3888-3968](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L3888-L3968)
+**依据 2 · 源码核查**：[src/core.ts:4000-4040](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/core.ts#L4000-L4040)
 
-扫描、同名选择、覆盖及候选来源。
+候选扫描、优先级与是否覆盖宿主原生项。
 
 <details>
-<summary>查看原文（81行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
 export async function listProviderCandidates(options: ScopeOptions = {}) {
@@ -403,56 +418,16 @@ export async function listProviderCandidates(options: ScopeOptions = {}) {
       !policy.sourceEnabled;
     if (!needsOverlay) continue;
     const candidateName = canonicalSkillName({ root, entry, policy });
-    if (!KEBAB_RE.test(candidateName)) continue;
-    candidates.push({
-      name: candidateName,
-      description: entry.description,
-      invocation: {
-        modelInvocable: policy.modelInvocable,
-        userInvocable: policy.userInvocable,
-      },
-      provider: "dsh-skills-manager-external",
-      source: project
-        ? root.kind
-        : root.key === "dsh"
-          ? "user-dsh"
-          : `agent-${root.key}`,
-      rank: overlayRank ?? (project
-        ? root.rank - 1
-        : root.key === "dsh"
-          ? USER_DSH_POLICY_RANK
-          : (entry.providerRank ?? root.rank)),
-      locator: {
-        rootKey: root.key,
-        entryName: entry.name,
-        path: entry.docPath,
-        realEntryPath: entry.realEntryPath,
-        realDocPath: entry.realDocPath,
-      },
-      resourceBase: {
-        kind: "directory",
-        path: entry.kind === "bundle" ? entry.realEntryPath : root.path,
-      },
-      path: entry.docPath,
-      metadata: {
-        dshSkillsManager: {
-          root: root.key,
-          readOnly: !root.mutable || entry.linked === true,
-          sourceReadOnly: !root.mutable || entry.linked === true,
-          policyOnly,
-        },
-      },
-    });
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/core.ts:3973-4024](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L3973-L4024)
+**依据 3 · 源码核查**：[src/core.ts:4085-4117](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/core.ts#L4085-L4117)
 
-get重新核定位和正文，不审查语义安全。
+读取前复核定位与真实路径。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
 export async function getProviderSkill(candidate: ProviderCandidate, options: ScopeOptions = {}) {
@@ -488,161 +463,136 @@ export async function getProviderSkill(candidate: ProviderCandidate, options: Sc
       return undefined;
     const doc = parseSkillDoc(
       await fs.readFile(entry.realDocPath || entry.docPath, "utf8"),
-    );
-    const summary = entryOf(locator.entryName, entry.kind, entry.docPath, doc);
-    if (!summary.loadable) return undefined;
-    const invocationName = KEBAB_RE.test(summary.declaredName) ? summary.declaredName : toKebab(summary.declaredName);
-    if (invocationName !== candidate.name && summary.declaredName !== candidate.name) return undefined;
-    return {
-      name: candidate.name,
-      description: candidate.description,
-      invocation: candidate.invocation,
-      provider: candidate.provider,
-      source: candidate.source,
-      resourceBase: candidate.resourceBase,
-      path: candidate.path,
-      metadata: candidate.metadata,
-      content: doc.body.trim(),
-    };
-  } catch {
-    return undefined;
-  }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/readonly-discovery.ts:7-11](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/readonly-discovery.ts#L7-L11)
+**依据 4 · 源码核查**：[src/index.ts:386-396](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L386-L396)
 
-明确扫描预算。
-
-```text
-const MAX_DEPTH = 6;
-const MAX_DIRECTORIES = 2000;
-const MAX_ENTRIES = 20000;
-const identity = (path: string) =>
-  process.platform === "win32" ? path.toLowerCase() : path;
-```
-
-**依据 6 · 源码核查**：[lib/index.js:255-275](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/lib/index.js#L255-L275)
-
-运行时lib存在对应agent注册，非只读TS接口。
+状态附加来源信息。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-function registerAgentSkillProviders(ctx, invalidators) {
-  if (typeof ctx.on !== "function") return () => {
+  const attachSources = async <T extends { roots: RootView[]; warnings: Diagnostic[] }>(snapshot: T) => {
+    try {
+      const sources = await repositories.sources();
+      for (const root of snapshot.roots) {
+        const realRoot = await realpath(root.path).catch(() => root.path);
+        for (const skill of root.skills || []) skill.installSource = sources[installationSourceKey(realRoot, skill.name)] ?? null;
+      }
+    } catch (caught) { const error = caught as CodedError; snapshot.warnings.push({ code: "error.repo.state", error: error.message }); }
+    return snapshot;
   };
-  const registrations = /* @__PURE__ */ new Map();
-  const install = (agent) => {
-    if (!agent || registrations.has(agent.id)) return;
-    const agentCtx = agent.ctx;
-    const skills = agentCtx && typeof agentCtx.get === "function" ? agentCtx.get("skills") : agentCtx && agentCtx.skills;
-    if (!skills || typeof skills.registerProvider !== "function") return;
-    const dispose = skills.registerProvider((control) => externalSkillProvider(control, invalidators));
-    registrations.set(agent.id, dispose);
-  };
-  const uninstall = (agent) => {
-    if (!agent) return;
-    const dispose = registrations.get(agent.id);
-    registrations.delete(agent.id);
-    if (typeof dispose === "function") dispose();
-  };
-  const stopCreated = ctx.on("agent/created", ({ agent }) => install(agent));
-  const stopDisposed = ctx.on("agent/disposed", ({ agent }) => uninstall(agent));
-  const agents = typeof ctx.get === "function" ? ctx.get("agents") : void 0;
+  const stateWithSources = async (req: Request) => attachSources(await state(projectOptions(req.headers.get("x-dsh-skills-session"))));
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/index.ts:437-442](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L437-L442)
+
+状态端点实际调用 state。
+
+```text
+  const routes: ApiFetchRoute[] = [
+    {
+      path: `${API_PREFIX}/state`,
+      methods: ["GET", "HEAD"],
+      fetch: (req) => runFetch(() => stateWithSources(req), undefined, req.method === "HEAD"),
+    },
+```
+
+**依据 6 · 源码核查**：[src/client.ts:230-231](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/client.ts#L230-L231)
+
+客户端请求并解析响应。
+
+```text
+    function parseApiResponse<T = unknown>(response: Response): Promise<T> { return response.json().catch(function () { var error: CodedError = new Error("non-json response"); error.code = "error.proto.nonJson"; error.params = { status: response.status }; throw error; }).then(function (value: unknown) { const payload = value as {ok?: boolean; data: T}; if (!response.ok || payload.ok === false) throw payload; return payload.data; }); }
+    function callApi<K extends keyof ApiRoutes>(path: K, options?: RequestInit): Promise<ApiRoutes[K]> { return fetch(resolveApiUrl("/api/michengai/dsh-skills-manager" + path), options).then(parseApiResponse<ApiRoutes[K]>); }
+```
+
+**依据 7 · 源码核查**：[src/core.ts:2590-2609](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/core.ts#L2590-L2609)
+
+启停写管理状态并保留源文件。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  if (definition && definition.ok === false) return definition;
+  if (!definition) return readonlyError("toggle");
+  const current = await readManagerState();
+  if (current.writable === false) return invalidManagerStateWrite();
+  const result = await applyPolicySkillEnabled(definition, name, enabled, current.state);
+  if (result && result.ok === false) return result;
+  await writeManagerState(current.state);
+  if (log)
+    log(
+      enabled ? "policy-enable" : "policy-disable",
+      `${enabled ? "启用" : "停用"} ${definition.key}/${name}（本地策略，源文件不变）`,
+    );
+  return result;
+}
+
+// ── 启用 / 停用（同时控制模型与 / 手动调用，非破坏）──────────────────────────
+
+/** enabled=true 恢复模型与 / 手动调用；false 同时停用两种调用入口。 */
+export async function setSkillEnabled(root: RootInput, name: string, enabled: boolean, log?: Log) {
+  return setPolicySkillEnabled(root, name, enabled, log);
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/index.ts:174-184](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L174-L184)
+
+刷新失败不阻止已完成写入。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+/** 文件写入后刷新宿主技能目录，并通知 Web 端重拉 `/` 菜单缓存。 */
+function notifyChatCatalog(ctx: HostContext, invalidateSkills?: () => void) {
+  try {
+    if (typeof invalidateSkills === "function") invalidateSkills();
+  } catch {
+    /* 目录缓存失效失败不影响已完成的文件操作 */
+  }
+  try {
+    if (typeof ctx.emit === "function") ctx.emit("commands/change");
+  } catch {
+    /* 命令目录刷新失败不影响已完成的文件操作 */
 ```
 
 </details>
 
 #### 缺口
 
-- 真实宿主多provider优先级与策略失效传播未运行核对。
-  **影响**：不能保证各宿主版本中的启停和同名行为完全一致。
-  **进一步探讨**：固定宿主用相同名的全局、项目和外部副本测试启停与切换。
+- 未在真实 DSH 宿主验证 provider 优先级、生命周期与刷新
+  **影响**：不能保证被禁用技能在所有版本或作用域都不可调用
+  **进一步探讨**：用同名全局和项目技能，在匹配宿主中切换状态并分别检查候选和手动调用。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 仓库安装更新如何保护本地修改和恢复？
+### Q03 · 仓库安装与更新如何检查内容、冲突和回退？
 
-**研究主题**：工程质量与复用、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-仓库安装只开放DSH、Shared Agent及登记工作区的项目DSH目标；外部助手根不作为安装目标。归档有32MiB压缩、64MiB解压和路径/数量限制，下载子目录仍取得整仓归档。安装核对SKILL.md摘要，先写未完成来源记录，再复制与启用，最后确认complete；中间失败有撤销记录与删除已复制目录的处理，最终状态未确认时明确报错，不直接宣称成功。
-
-更新与回滚比只确认远端版本更严格。预览token绑定仓库、路径、根、工作区、提交及本地/目标完整文件摘要；替换前重新下载核对目标摘要，再核本地树未变化，本地修改另需overwrite明确确认。它先暂存新文件，把原目录移到备份，再切入新目录并写状态，捕获失败会尝试恢复原目录。备份回滚还核对备份内容摘要，防止把变过的备份当原版。
-
-这些机制可解释为何比盲目覆盖更可控，但仍不是对任意进程崩溃或并发编辑的完整事务证明。最后一次本地复验与rename之间仍有时间窗，其他进程可能修改目录；多步目录切换与状态写入遇到硬中断的全部恢复尚未独立验证。自动恢复失败时明确保留备份并要求不要重复操作，这比静默重试好，也意味着用户必须有人工恢复能力。
+安装先确认目标工作区来自登记列表，检查同名冲突，再下载并比较 SKILL.md 的哈希；写入未完成安装记录后导入并启用，成功后标记完成。中间失败会尝试撤销记录和已复制目录；若最终写状态失败，代码明确报告文件已装而来源状态未确认，需人工检查。更新预览使用当前文件、目标版本和来源信息计算令牌；执行重新准备并比对令牌及本地改动，下载内容也与预览摘要比对，替换前再读一次本地文件。它将旧目录移到备份并替换，失败尝试恢复；恢复失败报告备份保留且不应盲目重复。目录扫描拒绝符号链接并限制大小，但这些措施不证明下载内容可信或并发文件系统变化完全无风险。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/repositories.ts:99-143](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repositories.ts#L99-L143)
+**依据 1 · 源码核查**：[src/repositories.ts:862-885](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repositories.ts#L862-L885)
 
-归档与下载预算、路径校验。
-
-<details>
-<summary>查看原文（45行）</summary>
-
-```text
-/** 解压前检查声明大小，解压后再检查实际大小和大小写路径冲突。 */
-export function decodeRepositoryArchive(bytes: Uint8Array) {
-  if (bytes.byteLength > LIMIT) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-  let total = 0, count = 0;
-  const seen = new Set();
-  const archive = unzipSync(new Uint8Array(bytes), { filter(entry) {
-    safePath(entry.name.replace(/\/$/, ""));
-    const key = entry.name.toLowerCase().replace(/\/$/, "");
-    if (seen.has(key)) throw failure("仓库存在重复路径");
-    seen.add(key);
-    total += entry.originalSize;
-    if (++count > 10000 || entry.originalSize > LIMIT || total > 64 << 20) throw failure("仓库解压大小或文件数量超限");
-    return !entry.name.endsWith("/");
-  } });
-  const result: Archive = Object.create(null);
-  let root;
-  for (const [path, data] of Object.entries(archive)) {
-    const slash = path.indexOf("/");
-    if (slash < 1) throw failure("仓库归档路径无效");
-    const prefix = path.slice(0, slash);
-    if (root && root !== prefix) throw failure("仓库归档根目录不唯一");
-    root = prefix;
-    const relative = safePath(path.slice(slash + 1));
-    if (data.byteLength > LIMIT) throw failure("仓库文件过大");
-    result[relative] = data;
-  }
-  return result;
-}
-
-async function readResponse(response: Response, limit: number) {
-  if (!response.ok) throw Object.assign(failure(`仓库访问失败（HTTP ${response.status}），请稍后重试`, "error.repo.network"), { httpStatus: response.status });
-  if (Number(response.headers.get("content-length")) > limit) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-  const reader = response.body?.getReader();
-  if (!reader) throw failure("仓库响应为空", "error.repo.network");
-  const chunks = []; let length = 0;
-  try {
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      length += value.length;
-      if (length > limit) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-      chunks.push(value);
-    }
-  } finally { await reader.cancel(); }
-  return Buffer.concat(chunks, length);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/repositories.ts:667-716](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repositories.ts#L667-L716)
-
-目标校验、摘要、pending安装与完成确认。
+目标、重名与下载内容的安装前核对。
 
 <details>
-<summary>查看原文（50行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
     install: ({ id, path, root: requestedRoot, workspace }: SkillRequest, registered?: string[]) => serialize(async () => {
@@ -664,15 +614,24 @@ async function readResponse(response: Response, limit: number) {
       const lowered = skill.name.toLowerCase();
       const sameTarget = (await state({ projectCwds: workspaceRoot ? [workspaceRoot] : [] })).roots.filter(item => workspaceRoot ? item.projectRoot === workspaceRoot && item.kind === "project-dsh" : item.scope !== "project");
       if (sameTarget.some(item => (item.skills || []).some(entry => entry.name.toLowerCase() === lowered || entry.declaredName?.toLowerCase() === lowered))) throw failure("同名技能已存在，不会覆盖本地文件", "error.repo.conflict");
-      const archive = await download(repo), prefix = path ? `${path}/` : "";
+      const archive = await download(repo, path), prefix = path ? `${path}/` : "";
       const document = archive[prefix + "SKILL.md"];
       if (!document || hash(document) !== skill.documentHash) throw failure("仓库技能内容与扫描版本不一致，请重新刷新");
       const entries = Object.entries(archive).filter(([p]) => p.startsWith(prefix)).map(([p, bytes]) => ({ path: p.slice(prefix.length), data: Buffer.from(bytes).toString("base64") }));
       if (!entries.some((e) => e.path === "SKILL.md")) throw failure("仓库技能内容已失效");
-      // 同名记录只替换同一位置：用户级按 root 区分 DSH 与 Shared Agent，工作区按项目根区分。
-            // 另一处的安装或回收记录必须保留，否则恢复时会丢失仓库来源。
-            data.installs = data.installs.filter((i) => !(i.name === skill.name && (i.workspace ?? null) === (workspaceRoot ?? null) && (i.root || "dsh") === (workspaceRoot ? "dsh" : root.key)));
-      const record: InstallRecord = { id, path, root: workspaceRoot ? "dsh" : root.key, ...(workspaceRoot ? { workspace: workspaceRoot } : {}), source: { owner: repo.owner, name: repo.name, ref: repo.ref, subdirectory: repo.subdirectory }, name: skill.name, commit: repo.commit, complete: false, files: entries.map((e) => ({ path: e.path, hash: hash(Buffer.from(e.data, "base64")) })) };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/repositories.ts:889-911](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repositories.ts#L889-L911)
+
+安装记录、复制、启用及失败和最终写入分支。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+      const record: InstallRecord = { id, path, root: workspaceRoot ? "dsh" : root.key, ...(workspaceRoot ? { workspace: workspaceRoot } : {}), source: { owner: repo.owner, name: repo.name, ref: repo.ref, subdirectory: repo.subdirectory, ...(repo.url ? { url: repo.url } : {}) }, name: skill.name, commit: repo.commit, complete: false, files: entries.map((e) => ({ path: e.path, hash: hash(Buffer.from(e.data, "base64")) })) };
       data.installs.push(record);
       await write(data);
       let copied = false;
@@ -699,12 +658,51 @@ async function readResponse(response: Response, limit: number) {
 
 </details>
 
-**依据 3 · 源码核查**：[src/repository-updates.ts:90-149](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repository-updates.ts#L90-L149)
+**依据 3 · 源码核查**：[src/repository-updates.ts:54-80](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repository-updates.ts#L54-L80)
 
-完整token、覆盖确认、写前复验、备份与恢复。
+路径、符号链接和大小限制。
 
 <details>
-<summary>查看原文（60行）</summary>
+<summary>查看原文（27行）</summary>
+
+```text
+function safePath(path: string) {
+  if (typeof path !== "string" || !path || path.length > 512 || path.split("/").length > 64 || path.split("/").some(p => !p || p === "." || p === ".." || /[\\:<>"|?*\x00-\x1f]/.test(p) || /[. ]$/.test(p) || /^(con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(p))) throw failure("技能文件路径无效");
+}
+async function safeDirectory(root: string) {
+  for (let p = root; ; p = dirname(p)) {
+    const info = await fs.lstat(p);
+    if (info.isSymbolicLink() || !info.isDirectory()) throw failure("技能或备份目录包含链接");
+    if (dirname(p) === p) break;
+  }
+}
+/** 完整读取目录，新增文件参与冲突检测，禁止跟随链接。 */
+export async function readSkillTree(root: string) {
+  await safeDirectory(root);
+  const result: Archive = Object.create(null); let size = 0, count = 0;
+  async function walk(dir: string, prefix = "") {
+    for (const entry of await fs.readdir(dir)) {
+      const path = prefix + entry; safePath(path);
+      if (++count > 2000) throw failure("技能目录数量超限");
+      const target = join(dir, entry), info = await fs.lstat(target);
+      if (info.isSymbolicLink()) throw failure("技能包含链接，拒绝更新");
+      if (info.isDirectory()) await walk(target, path + "/");
+      else {
+        if (!info.isFile() || info.size > 32 << 20 || (size += info.size) > 64 << 20 || Object.keys(result).length >= 1000) throw failure("技能文件数量或大小超限");
+        result[path] = await fs.readFile(target);
+      }
+    }
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/repository-updates.ts:90-119](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repository-updates.ts#L90-L119)
+
+预览令牌、备份有效性及本地修改门槛。
+
+<details>
+<summary>查看原文（30行）</summary>
 
 ```text
   async function prepare(input: SkillRequest, includeArchive = false) {
@@ -725,7 +723,7 @@ async function readResponse(response: Response, limit: number) {
       if (repo.error || !skill?.valid || skill.name !== record.name || !skill.files) throw failure("请先成功检查更新；技能改名或已移除时不能直接替换");
       next = skill.files; commit = repo.commit;
       if (includeArchive) {
-        const archive = await download(repo), prefix = path ? path + "/" : "";
+        const archive = await download(repo, path), prefix = path ? path + "/" : "";
         entries = Object.fromEntries(Object.entries(archive).filter(([p]) => p.startsWith(prefix)).map(([p, bytes]) => [p.slice(prefix.length), bytes]));
         if (signature(fileIndex(entries)) !== signature(next)) throw failure("下载内容与预览版本不同，请重新检查更新");
       }
@@ -737,470 +735,18 @@ async function readResponse(response: Response, limit: number) {
     const plan = await prepare({ ...input, rollback }, true);
     if (typeof input.token !== "string" || input.token !== plan.token) throw failure("文件或版本已变化，请重新预览");
     if (plan.localModified && input.overwrite !== true) throw failure("存在本地修改，请确认备份后替换", "error.repo.modified");
-    const { data, record, target, entries } = plan;
-    const backupRoot = join(managerHomePath(), "repository-backups");
-    await fs.mkdir(backupRoot, { recursive: true }); await safeDirectory(backupRoot);
-    const key = randomUUID(), backup = join(backupRoot, key), stage = join(backupRoot, randomUUID());
-    await fs.mkdir(stage);
-    let moved = false, replaced = false, recoveryFailed = false;
-    try {
-      for (const [path, bytes] of Object.entries(entries!)) {
-        safePath(path); const file = join(stage, ...path.split("/"));
-        await fs.mkdir(dirname(file), { recursive: true }); await fs.writeFile(file, bytes, { flag: "wx" });
-      }
-      // 下载期间仍可能编辑文件，替换前复验，避免覆盖预览之后的修改。
-      if (signature(fileIndex(await readSkillTree(target))) !== signature(plan.current)) throw failure("本地文件已变化，请重新预览");
-      const previous = { ...record }; delete previous.backup;
-      const nextRecord = rollback ? { ...record.backup!.record } : { ...previous, commit: plan.commit, files: plan.next };
-      nextRecord.backup = { key, fingerprint: signature(plan.current), record: previous };
-      // 跨卷或文件锁导致重命名失败时直接终止，不降级为覆盖复制。
-      await renameWithRetry(target, backup); moved = true;
-      await renameWithRetry(stage, target); replaced = true;
-      data.installs[data.installs.indexOf(record)] = nextRecord;
-      await write(data);
-    } catch (caught) { const error = caught as CodedError;
-      if (moved) {
-        try {
-          if (replaced) await renameWithRetry(target, stage);
-          await renameWithRetry(backup, target);
-        } catch { recoveryFailed = true; throw failure("自动恢复失败，原文件保留在备份目录，请勿重复操作", "error.repo.state"); }
-      }
-      throw error;
-    } finally { if (!recoveryFailed) await fs.rm(stage, { recursive: true, force: true }); }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/repository-updates.js:105-144](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/lib/repository-updates.js#L105-L144)
+**依据 5 · 源码核查**：[src/repository-updates.ts:120-150](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repository-updates.ts#L120-L150)
 
-运行时构建包含相同摘要门禁与目录切换。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-    }
-    const token = hash(JSON.stringify({ id, path, root: record.root || "dsh", workspace: record.workspace ?? null, commit, current, next, rollback: input.rollback === true }));
-    return { data, record, target, entries, next, current, token, commit, localModified: signature(current) !== signature(record.files), changes: changesBetween(current, next) };
-  }
-  async function replace(input, rollback = false) {
-    const plan = await prepare({ ...input, rollback }, true);
-    if (typeof input.token !== "string" || input.token !== plan.token) throw failure("\u6587\u4EF6\u6216\u7248\u672C\u5DF2\u53D8\u5316\uFF0C\u8BF7\u91CD\u65B0\u9884\u89C8");
-    if (plan.localModified && input.overwrite !== true) throw failure("\u5B58\u5728\u672C\u5730\u4FEE\u6539\uFF0C\u8BF7\u786E\u8BA4\u5907\u4EFD\u540E\u66FF\u6362", "error.repo.modified");
-    const { data, record, target, entries } = plan;
-    const backupRoot = join(managerHomePath(), "repository-backups");
-    await fs.mkdir(backupRoot, { recursive: true });
-    await safeDirectory(backupRoot);
-    const key = randomUUID(), backup = join(backupRoot, key), stage = join(backupRoot, randomUUID());
-    await fs.mkdir(stage);
-    let moved = false, replaced = false, recoveryFailed = false;
-    try {
-      for (const [path, bytes] of Object.entries(entries)) {
-        safePath(path);
-        const file = join(stage, ...path.split("/"));
-        await fs.mkdir(dirname(file), { recursive: true });
-        await fs.writeFile(file, bytes, { flag: "wx" });
-      }
-      if (signature(fileIndex(await readSkillTree(target))) !== signature(plan.current)) throw failure("\u672C\u5730\u6587\u4EF6\u5DF2\u53D8\u5316\uFF0C\u8BF7\u91CD\u65B0\u9884\u89C8");
-      const previous = { ...record };
-      delete previous.backup;
-      const nextRecord = rollback ? { ...record.backup.record } : { ...previous, commit: plan.commit, files: plan.next };
-      nextRecord.backup = { key, fingerprint: signature(plan.current), record: previous };
-      await renameWithRetry(target, backup);
-      moved = true;
-      await renameWithRetry(stage, target);
-      replaced = true;
-      data.installs[data.installs.indexOf(record)] = nextRecord;
-      await write(data);
-    } catch (caught) {
-      const error = caught;
-      if (moved) {
-        try {
-          if (replaced) await renameWithRetry(target, stage);
-          await renameWithRetry(backup, target);
-        } catch {
-```
-
-</details>
-
-#### 缺口
-
-- 硬中断及外部并发的恢复结果未运行验证。
-  **影响**：不能承诺任意失败下无损回滚。
-  **进一步探讨**：在隔离目录按暂存、旧目录移走、新目录切入和状态写入阶段中断并核对恢复。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 创建、删除与可写范围的边界是什么？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-create_skill工具不是仅有名称：宿主注册了name、description、body参数，execute进入写队列调用createSkill，成功后使技能目录失效重读；pre-execute对该工具返回ask，要求宿主确认。createSkill校验名称、简介、正文、长度和同名冲突，把SKILL.md写到暂存目录后rename发布。它能防一部分无效文件或覆盖，却不检验正文指令的可信度；用户仍须读内容。
-
-普通创建和删除都从checkedWritableRootDefinition校验目标。项目写入拒绝与用户根重叠及.dsh/skills符号链接重定向，外部只读根不能据请求任意改成可写。删除走回收站而非直接永久删除，保留源信息，失败会尝试移动回原位置；另有永久删除接口，最终移除后不能依赖同一回收站恢复。
-
-来源开关和分类是保存在DSH侧的策略，而不是移动或删除外部原文件。卸载管理器可能让这些覆盖策略不再生效、原生加载重新显露；退出时要分别清点“保留的文件”和“被插件抑制的调用”。本轮未验收真实宿主确认UI，ask只是源码请求，不能当作已经发生人工同意。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:413-445](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/index.ts#L413-L445)
-
-工具参数、执行队列与ask确认钩子。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-  if (ctx.tools && typeof ctx.tools.register === "function") {
-    ctx.effect(() => ctx.tools!.register({
-      name: "create_skill",
-      description: "Create a new local DSH skill in DSH_HOME/skills. Use only when the user explicitly asks to create or save a reusable skill.",
-      parameters: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Skill name; it will be normalized to kebab-case." },
-          description: { type: "string", description: "A concise routing description for when to use the skill." },
-          body: { type: "string", description: "Markdown instructions that form the skill body." },
-        },
-        required: ["name", "description", "body"],
-        additionalProperties: false,
-      },
-      output: {
-        schema: { type: "object" },
-        render: (_args, value) => [{ type: "text", text: value && value.ok === false ? `Skill creation failed${typeof value.code === "string" ? ` (${value.code})` : ""}.` : `Created DSH skill ${value.name} at ${value.path}` }],
-      },
-      async execute(args) {
-        return enqueueMutation(async () => {
-          const result = await createSkill(args, log);
-          if (!result || result.ok !== false) afterWrite();
-          return result;
-        });
-      },
-      presentCall(args) {
-        return { card: "generic", title: "Create DSH skill", kind: "edit", rawInput: args && args.name ? String(args.name) : undefined };
-      },
-    }), "skills-manager create_skill tool");
-    if (typeof ctx.on === "function") ctx.on("tools/pre-execute", (exec, next) => {
-      if (exec && exec.name === "create_skill") return Promise.resolve({ kind: "ask", reason: "Create a new skill under DSH_HOME/skills" });
-      return next();
-    });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/core.ts:3780-3835](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L3780-L3835)
-
-创建内容校验、冲突拒绝与stage发布。
-
-<details>
-<summary>查看原文（56行）</summary>
-
-```text
-export async function createSkill(input: CreateInput, log?: Log, options: MutationOptions = {}) {
-  const requestedRoot = Object.prototype.hasOwnProperty.call(options, "root")
-    ? options.root
-    : rootByKey("dsh");
-  const definition = await checkedWritableRootDefinition(requestedRoot);
-  if (definition && definition.ok === false) return definition;
-  if (!definition) return readonlyError("create");
-  const root = definition.path;
-  const requestedName = String((input && input.name) || "").trim();
-  const name = toKebab(requestedName);
-  const description = String((input && input.description) || "").trim();
-  const body = String((input && input.body) || "").trim();
-  if (!name || !KEBAB_RE.test(name) || entryPath(root, name) === null)
-    return {
-      ok: false,
-      error: `无法生成合法 kebab-case 名称（原始名: ${requestedName}）`,
-      code: "error.import.invalidName",
-      params: { name: requestedName },
-    };
-  if (!description)
-    return {
-      ok: false,
-      error: "技能简介不能为空",
-      code: "error.create.descriptionRequired",
-    };
-  if (!body)
-    return {
-      ok: false,
-      error: "技能正文不能为空",
-      code: "error.create.bodyRequired",
-    };
-  if (description.length > 500 || body.length > 1 << 18)
-    return { ok: false, error: "技能内容过长", code: "error.create.tooLarge" };
-  if (
-    await safeExistingEntryPaths(root, name).then((items) => items.length > 0)
-  )
-    return {
-      ok: false,
-      error: `同名技能已存在: ${name}`,
-      code: "error.create.conflict",
-      params: { name },
-    };
-  await fs.mkdir(root, { recursive: true });
-  const target = entryPath(root, name)!;
-  const stage = temporaryPath(target, "create");
-  try {
-    await fs.mkdir(stage);
-    const content = `---\nname: ${name}\ndescription: ${yamlString(description)}\n---\n\n${body}\n`;
-    await fs.writeFile(join(stage, "SKILL.md"), content, "utf8");
-    await renameWithRetry(stage, target);
-  } catch (caught) { const error = caught as CodedError;
-    await fs.rm(stage, { recursive: true, force: true }).catch(() => undefined);
-    throw error;
-  }
-  if (log) log("create", `创建 ${join(target, "SKILL.md")}`);
-  return { name, path: join(target, "SKILL.md"), root: definition.key };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/core.ts:1329-1353](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L1329-L1353)
-
-项目根重叠及链接拒绝。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-async function checkedWritableRootDefinition(root: RootInput): Promise<SkillRoot | OperationError | null | undefined> {
-  const definition = writableRootDefinition(root);
-  if (definition?.key === "agents") return checkedUserRootAncestors(definition);
-  if (!definition || definition.scope !== "project") return definition;
-  if (await overlapsUserSkillRoot(definition.path)) {
-    return {
-      ok: false,
-      error: `项目技能目录与用户技能目录重叠，拒绝写入: ${definition.path}`,
-      code: "error.root.unsafe",
-      params: { path: definition.path },
-    };
-  }
-  // 项目仓库内容不可信；拒绝通过 .dsh 或 skills 链接把写入重定向到项目之外。
-  for (const path of [join(definition.projectRoot!, ".dsh"), definition.path]) {
-    const st = await lstatOrNull(path);
-    if (st && (!st.isDirectory() || st.isSymbolicLink())) {
-      return {
-        ok: false,
-        error: `项目技能目录不安全，拒绝写入: ${path}`,
-        code: "error.root.unsafe",
-        params: { path },
-      };
-    }
-  }
-  return definition;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/core.ts:2855-2877](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L2855-L2877)
-
-删除先核可写根与链接。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-export async function deleteSkill(root: RootInput, name: string, log?: Log, options: MutationOptions = {}) {
-  const definition = await checkedWritableRootDefinition(root);
-  if (definition && definition.ok === false) return definition;
-  if (!definition) return readonlyError("delete");
-  const resolved = await resolveEntry(definition, name);
-  if (resolved === null && !options.repositoryEntryOnly)
-    return {
-      ok: false,
-      error: `技能不存在: ${name}`,
-      code: "error.skill.notFound",
-      params: { name },
-    };
-  const targets = (await safeExistingEntryPaths(definition.path, name))
-    .filter(target => !options.repositoryEntryOnly || target.fileName === name);
-  if (!targets.length) return { ok: false, error: `技能不存在: ${name}`, code: "error.skill.notFound", params: { name } };
-  if (definition.key === "agents") {
-    for (const target of targets) {
-      if ((await lstatOrNull(target.path))?.isSymbolicLink())
-        return { ok: false, error: `技能目录不安全，拒绝写入: ${target.path}`, code: "error.root.unsafe", params: { path: target.path } };
-    }
-  } else {
-    const bundle = entryPath(definition.path, name);
-    if (bundle && (await isDirectoryLink(bundle))) return linkedWriteError(bundle);
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/index.ts:644-655](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/index.ts#L644-L655)
-
-删除路由接回收站并区分永久删除。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-            case "/api/michengai/dsh-skills-manager/delete":
-                          return run(res, () => withScope(body, async (scope) => {
-                            const target = await workspaceTarget(body);
-                            if (target && "ok" in target && target.ok === false) return target;
-                            const root = target ? (target as { root: SkillRoot }).root : await requestRoot(String(body.root || "dsh"), scope?.projectCwds);
-                            return repositories.trashSkill(root, String(body.name || ""));
-                          }), afterWrite);
-            case "/api/michengai/dsh-skills-manager/trash-restore":
-              return run(res, () => withScope(body, (scope) => repositories.restoreTrash(String(body.id || ""), { ...(scope ?? {}), registeredWorkspaces: registeredWorkspacePaths(ctx) })), afterWrite);
-            case "/api/michengai/dsh-skills-manager/trash-delete":
-              return run(res, () => repositories.permanentlyDeleteTrash(String(body.id || "")));
-            case "/api/michengai/dsh-skills-manager/detail":
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/index.js:330-360](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/lib/index.js#L330-L360)
-
-运行时工具与确认钩子存在。
+替换前复验、备份和失败恢复。
 
 <details>
 <summary>查看原文（31行）</summary>
 
 ```text
-      name: "create_skill",
-      description: "Create a new local DSH skill in DSH_HOME/skills. Use only when the user explicitly asks to create or save a reusable skill.",
-      parameters: {
-        type: "object",
-        properties: {
-          name: { type: "string", description: "Skill name; it will be normalized to kebab-case." },
-          description: { type: "string", description: "A concise routing description for when to use the skill." },
-          body: { type: "string", description: "Markdown instructions that form the skill body." }
-        },
-        required: ["name", "description", "body"],
-        additionalProperties: false
-      },
-      output: {
-        schema: { type: "object" },
-        render: (_args, value) => [{ type: "text", text: value && value.ok === false ? `Skill creation failed${typeof value.code === "string" ? ` (${value.code})` : ""}.` : `Created DSH skill ${value.name} at ${value.path}` }]
-      },
-      async execute(args) {
-        return enqueueMutation(async () => {
-          const result = await createSkill(args, log);
-          if (!result || result.ok !== false) afterWrite();
-          return result;
-        });
-      },
-      presentCall(args) {
-        return { card: "generic", title: "Create DSH skill", kind: "edit", rawInput: args && args.name ? String(args.name) : void 0 };
-      }
-    }), "skills-manager create_skill tool");
-    if (typeof ctx.on === "function") ctx.on("tools/pre-execute", (exec, next) => {
-      if (exec && exec.name === "create_skill") return Promise.resolve({ kind: "ask", reason: "Create a new skill under DSH_HOME/skills" });
-      return next();
-    });
-```
-
-</details>
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 全周期成本与效果支持到哪？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-一次合格任务应包含找到正确技能、在目标会话调用、确认正文与资源路径、必要时更新或恢复。插件把复制、目录查找和冲突检查集中起来，但并不省去技能内容审查、宿主适配及真实任务验收。扫描和归档限额控制资源上界，也会使大目录或大仓库无法按预期导入，用户需分拆或改用人工流程。
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 宿主、磁盘扫描与可选仓库下载；金额未知 | 备份策略和技能目录，审阅各来源、同名副本与内容 | 来源默认启用；实际扫描延迟未知 |
-| 持续使用 | 仓库归档下载、扫描和备份磁盘 | 审阅更新差异、本地修改、模型是否选对技能 | 目录/归档有预算，净节时与调用质量未知 |
-| 失败恢复 | stage与备份目录占用 | 分清未完成安装、文件替换和来源状态，按错误保留材料恢复 | 自动恢复失败需人工接管 |
-| 退出 | 已安装技能、策略及备份继续留存 | 清点原生与外部候选，恢复需要的调用策略 | 移除插件不等于删除已写技能 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 统一发现与启停 | 全局和agent层provider连接同一策略 | 宿主组合中的实际调用与提示选择质量 |
-| 防止陈旧预览覆盖 | token绑定完整本地/目标摘要并写前复验 | 外部进程竞态与硬中断完整恢复 |
-| 减少误删损失 | 回收站、备份、回滚摘要检查 | 真实恢复成功率和管理员总投入 |
-
-插件自身在线更新与仓库技能更新不同：前者会调用profile包管理器安装npm版本，后者下载技能文件并不执行其代码。安装技能不运行脚本不等于以后模型使用技能也没有执行副作用，需分别审查。本轮未安装、未运行测试，也不把README列出的兼容矩阵当独立验证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/repositories.ts:99-143](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repositories.ts#L99-L143)
-
-下载资源预算。
-
-<details>
-<summary>查看原文（45行）</summary>
-
-```text
-/** 解压前检查声明大小，解压后再检查实际大小和大小写路径冲突。 */
-export function decodeRepositoryArchive(bytes: Uint8Array) {
-  if (bytes.byteLength > LIMIT) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-  let total = 0, count = 0;
-  const seen = new Set();
-  const archive = unzipSync(new Uint8Array(bytes), { filter(entry) {
-    safePath(entry.name.replace(/\/$/, ""));
-    const key = entry.name.toLowerCase().replace(/\/$/, "");
-    if (seen.has(key)) throw failure("仓库存在重复路径");
-    seen.add(key);
-    total += entry.originalSize;
-    if (++count > 10000 || entry.originalSize > LIMIT || total > 64 << 20) throw failure("仓库解压大小或文件数量超限");
-    return !entry.name.endsWith("/");
-  } });
-  const result: Archive = Object.create(null);
-  let root;
-  for (const [path, data] of Object.entries(archive)) {
-    const slash = path.indexOf("/");
-    if (slash < 1) throw failure("仓库归档路径无效");
-    const prefix = path.slice(0, slash);
-    if (root && root !== prefix) throw failure("仓库归档根目录不唯一");
-    root = prefix;
-    const relative = safePath(path.slice(slash + 1));
-    if (data.byteLength > LIMIT) throw failure("仓库文件过大");
-    result[relative] = data;
-  }
-  return result;
-}
-
-async function readResponse(response: Response, limit: number) {
-  if (!response.ok) throw Object.assign(failure(`仓库访问失败（HTTP ${response.status}），请稍后重试`, "error.repo.network"), { httpStatus: response.status });
-  if (Number(response.headers.get("content-length")) > limit) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-  const reader = response.body?.getReader();
-  if (!reader) throw failure("仓库响应为空", "error.repo.network");
-  const chunks = []; let length = 0;
-  try {
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      length += value.length;
-      if (length > limit) throw failure("仓库归档超过 32 MiB", "error.repo.tooLarge");
-      chunks.push(value);
-    }
-  } finally { await reader.cancel(); }
-  return Buffer.concat(chunks, length);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/repository-updates.ts:116-149](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repository-updates.ts#L116-L149)
-
-stage、备份及人工恢复责任。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-  async function replace(input: SkillRequest, rollback = false) {
-    const plan = await prepare({ ...input, rollback }, true);
-    if (typeof input.token !== "string" || input.token !== plan.token) throw failure("文件或版本已变化，请重新预览");
-    if (plan.localModified && input.overwrite !== true) throw failure("存在本地修改，请确认备份后替换", "error.repo.modified");
     const { data, record, target, entries } = plan;
     const backupRoot = join(managerHomePath(), "repository-backups");
     await fs.mkdir(backupRoot, { recursive: true }); await safeDirectory(backupRoot);
@@ -1231,169 +777,276 @@ stage、备份及人工恢复责任。
       }
       throw error;
     } finally { if (!recoveryFailed) await fs.rm(stage, { recursive: true, force: true }); }
+    return { name: record.name, commit: plan.commit };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/plugin-updater.ts:398-423](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/plugin-updater.ts#L398-L423)
+**依据 6 · 源码核查**：[src/index.ts:570-592](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L570-L592)
 
-插件自身更新确实启动包管理器，与技能归档导入不同。
+实际注册安装、预览、更新和回滚路由。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-async function install(target: UpdateTarget, packageSpec: string) {
-  if (target.desktopPnpm !== void 0) {
-    await guardReleaseAgeExclude(target.profileDir, packageSpec);
-    const handle = target.desktopPnpm.runPlugin(["add", "--config.minimumReleaseAge=0", packageSpec, "--registry=https://registry.npmjs.org/"], target.profileDir);
-    const result = await handle.done;
-    if (result.exitCode !== 0) throw new Error(`更新进程退出码 ${String(result.exitCode)}。`);
-    await recordReleaseAgeExclude(target.profileDir, packageSpec);
-    return;
-  }
-  if (target.packageManager !== void 0) {
-    await guardReleaseAgeExclude(target.profileDir, packageSpec);
-    const manager = target.packageManager;
-    await new Promise<void>((resolvePromise, reject) => {
-      const child = spawn(manager.command, [...manager.args, "add", "--config.minimumReleaseAge=0", packageSpec, "--registry=https://registry.npmjs.org/"], {
-        cwd: target.profileDir, windowsHide: true, stdio: ["ignore", "pipe", "pipe"], env: { ...process.env, ...manager.env, NO_COLOR: "1" },
-      });
-      let detail = "";
-      child.stdout?.on("data", (chunk) => { detail = (detail + String(chunk)).slice(-4e3); });
-      child.stderr?.on("data", (chunk) => { detail = (detail + String(chunk)).slice(-4e3); });
-      const timer = setTimeout(() => { child.kill(); reject(new Error("更新超时，请改用手工更新。")); }, 10 * 6e4);
-      child.once("error", (error) => { clearTimeout(timer); reject(error); });
-      child.once("exit", (code) => { clearTimeout(timer); if (code === 0) resolvePromise(); else reject(new Error(detail.trim() || `更新进程退出码 ${String(code)}`)); });
-    });
-    await recordReleaseAgeExclude(target.profileDir, packageSpec);
-    return;
-  }
+      path: `${API_PREFIX}/repositories/install`,
+      methods: ["POST"],
+      fetch: (req) => handlePost(req, (b) => repositories.install(b, registeredWorkspacePaths(ctx)), { isRepo: true, afterSuccess: afterWrite }),
+    },
+    {
+      path: `${API_PREFIX}/repositories/uninstall`,
+      methods: ["POST"],
+      fetch: (req) => handlePost(req, (b) => repositories.uninstall(b), { isRepo: true, afterSuccess: afterWrite }),
+    },
+    {
+      path: `${API_PREFIX}/repositories/preview`,
+      methods: ["POST"],
+      fetch: (req) => handlePost(req, (b) => repositories.preview(b), { isRepo: true }),
+    },
+    {
+      path: `${API_PREFIX}/repositories/update`,
+      methods: ["POST"],
+      fetch: (req) => handlePost(req, (b) => repositories.update(b), { isRepo: true, afterSuccess: afterWrite }),
+    },
+    {
+      path: `${API_PREFIX}/repositories/rollback`,
+      methods: ["POST"],
+      fetch: (req) => handlePost(req, (b) => repositories.rollback(b), { isRepo: true, afterSuccess: afterWrite }),
 ```
 
 </details>
 
 #### 缺口
 
-- 缺相同技能任务的检索、调用、更新和恢复对照。
-  **影响**：不能量化节时、正确率和净采用成本。
-  **进一步探讨**：用固定来源与真实任务对比人工维护，记录选错副本、遗漏和恢复时间。
+- 未在真实文件系统及仓库验证中断、跨卷和恢复
+  **影响**：不能承诺自动回退在所有失败条件下成功
+  **进一步探讨**：使用隔离临时目录构造本地编辑、下载变更和写入故障，逐步核对文件及记录。
 
-<a id="research-q06"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-16"></a>
+<a id="detail-section-14"></a>
 
-### Q06 · 哪些人值得试，怎样验证新的信任假设？
+### Q04 · 依赖、安全准入与恢复负担有哪些边界？
 
-**研究主题**：采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、缺陷与关键质疑
 
 #### 完整回答
 
-有多个技能目录、经常更新公共技能且能恢复本地文件的人，可先在一个已登记测试项目试用。安装前保留技能与管理策略原件，审阅外部来源，先关闭不需要的来源；放入两份内容有区别的同名测试技能，核对项目覆盖、禁用和重新启用后实际调用的正文。随后只给一个可追溯仓库技能制造本地修改，预览更新并确认是否拒绝未授权覆盖，最后验收回滚与回收站恢复。
-
-若只能看到条目而不能调用、禁用后仍加载错误副本、预览后本地修改被覆盖，或恢复提示指向保留备份，就停止更新，保留该目录和状态并回到人工维护。只读外部目录不等于可信输入，对来源不明确或会执行高影响脚本的技能不应因安装方便而启用。仅有少量原生技能的人可继续使用原生目录，不必增加管理状态。
-
-可提出未验证的“技能内容信任与版本确认”假设。现有策略主要围绕来源与名称，更新以文件摘要保护修改，但技能正文仍直接交给调用链。可尝试在首次启用与内容摘要改变时呈现变化和所需资源，由用户确认该版本适用范围；确认记录绑定正文摘要而不是仅绑定名称，若版本变更则回到待确认。它可能把文件管理保证推进到更清楚的指令引入意图，但不能自动证明语义安全，还增加审阅负担。
-
-最小验证用同名不同正文、合法但危险指令、附属脚本变更与无害文档更新对比当前开关和摘要确认，记录误启用、审阅耗时、拒绝率与任务完成率。若没有减少误引入、却让正常更新频繁被无意义阻断，应否定或收窄该假设；不能把它计为本插件已有安全能力。
+包声明 Node ^22.19 或 24 以上及 DSH 0.2 线对等依赖；宿主必须提供技能、会话、工具与连接服务，客户端需 slots 和 locale。作者声明的测试兼容范围不是本次宿主验收。写路由要求自定义头、JSON，并在存在 Origin 时比对 host；源码注释将登录与跨站准入交给宿主 connection。代码还存在旧 webServer 回退，所读回退实现先缓冲请求体再交给路由，路由上限在读取 Request 文本后检查；因此不能仅凭限制值宣称回退链在接收时有界，也不能假定回退具备相同宿主认证。安装、外部 GitHub 访问、审阅差异、备份、回收与异常恢复会消耗用户时间、网络和磁盘；金额和耗时没有实测，Skill 内容也需使用者审阅。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/core.ts:2039-2049](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L2039-L2049)
+**依据 1 · 源码核查**：[package.json:61-77](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/package.json#L61-L77)
 
-来源默认启用构成首次审阅前提。
+DSH 对等依赖。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-
-function defaultManagerState(): ManagerState {
-  const sources: ManagerState["sources"] = Object.create(null);
-  const disabledSkills: ManagerState["disabledSkills"] = Object.create(null);
-  const enabledSkills: ManagerState["enabledSkills"] = Object.create(null);
-  for (const root of userRoots()) {
-    sources[root.key] = true;
-    disabledSkills[root.key] = [];
-    enabledSkills[root.key] = [];
-  }
-  return { version: 1, sources, disabledSkills, enabledSkills, sidebarEntry: false, onlineUpdate: true, categories: Object.create(null), categoryMembers: Object.create(null), categoryOrder: Object.create(null) };
+    "@deepseek-ai/dsh-client-ui-primitives": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-host-webserver": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-session": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-skill": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-web-app": ">=0.2.0-rc.1 <0.3.0-0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.5",
+    "@deepseek-ai/dsh-client-locale": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-host-webserver": "0.2.1-rc.3",
+    "@deepseek-ai/dsh-scope": "0.2.1-rc.3",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/core.ts:3973-4024](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/core.ts#L3973-L4024)
+**依据 2 · 源码核查**：[package.json:91-94](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/package.json#L91-L94)
 
-正文进入provider，缺内容信任确认。
-
-<details>
-<summary>查看原文（52行）</summary>
+Node 与 DSH 范围。
 
 ```text
-export async function getProviderSkill(candidate: ProviderCandidate, options: ScopeOptions = {}) {
-  const locator = candidate && candidate.locator;
-  if (
-    !locator ||
-    typeof locator.path !== "string" ||
-    typeof locator.rootKey !== "string" ||
-    typeof locator.realEntryPath !== "string" ||
-    typeof locator.realDocPath !== "string"
-  )
-    return undefined;
-  let root = rootByKey(locator.rootKey);
-  if (
-    !root &&
-    PROJECT_ROOT_KEY_RE.test(locator.rootKey) &&
-    typeof options.cwd === "string"
-  ) {
-    root = (await projectRoots([options.cwd])).find(
-      (item) => item.key === locator.rootKey,
-    );
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+```
+
+**依据 3 · 源码核查**：[src/index.ts:102-120](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L102-L120)
+
+写请求标记、Origin 和内容类型检查。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+/** 写接口额外要求自定义头与 JSON；跨站与未登录由官方宿主 connection.admit / owner 门禁负责。 */
+function validateMutationRequest(req: Request) {
+  const marker = req.headers.get(CLIENT_MARKER_HEADER) || req.headers.get("x-michengai-client");
+  if (marker !== "1") return { statusCode: 403, code: "error.proto.forbidden", error: "forbidden mutation request" };
+  const origin = req.headers.get("origin");
+  if (origin) {
+    try {
+      const originHost = new URL(origin).host;
+      const reqHost = req.headers.get("host") || new URL(req.url).host;
+      if (originHost !== reqHost) {
+        return { statusCode: 403, code: "error.proto.forbidden", error: "forbidden cross-origin mutation request" };
+      }
+    } catch {
+      return { statusCode: 403, code: "error.proto.forbidden", error: "forbidden origin" };
+    }
   }
-  if (!root) return undefined;
-  try {
-    const entry = await resolveEntry(root, String(locator.entryName || ""));
-    if (!entry || resolve(entry.docPath) !== resolve(locator.path))
-      return undefined;
-    if (
-      pathIdentity(entry.realEntryPath) !== pathIdentity(locator.realEntryPath)
-    )
-      return undefined;
-    if (pathIdentity(entry.realDocPath) !== pathIdentity(locator.realDocPath))
-      return undefined;
-    const doc = parseSkillDoc(
-      await fs.readFile(entry.realDocPath || entry.docPath, "utf8"),
-    );
-    const summary = entryOf(locator.entryName, entry.kind, entry.docPath, doc);
-    if (!summary.loadable) return undefined;
-    const invocationName = KEBAB_RE.test(summary.declaredName) ? summary.declaredName : toKebab(summary.declaredName);
-    if (invocationName !== candidate.name && summary.declaredName !== candidate.name) return undefined;
-    return {
-      name: candidate.name,
-      description: candidate.description,
-      invocation: candidate.invocation,
-      provider: candidate.provider,
-      source: candidate.source,
-      resourceBase: candidate.resourceBase,
-      path: candidate.path,
-      metadata: candidate.metadata,
-      content: doc.body.trim(),
-    };
-  } catch {
-    return undefined;
-  }
+  const contentType = String(req.headers.get("content-type") || "").split(";", 1)[0].trim().toLowerCase();
+  if (contentType !== "application/json") return { statusCode: 415, code: "error.proto.contentType", error: "content-type must be application/json" };
+  return null;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/repository-updates.ts:113-149](https://github.com/MichengAI/dsh-skills-manager/blob/ed76f87992ece26d2dd95e5e555deec94876d242/src/repository-updates.ts#L113-L149)
+**依据 4 · 源码核查**：[src/index.ts:752-760](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L752-L760)
 
-已有摘要更新门禁可作新假设的参照。
-
-<details>
-<summary>查看原文（37行）</summary>
+优先注册宿主 connection 路由。
 
 ```text
+  ctx.effect(() => {
+    // 方案 A：优先官方标准 connection.fetch.register
+    if (ctx.connection?.fetch?.register) {
+      const disposers = routes.map((route) =>
+        ctx.connection!.fetch.register({
+          path: route.path,
+          methods: route.methods,
+          requestBody: route.requestBody ?? "buffered",
+          fetch: route.fetch,
+```
+
+**依据 5 · 源码核查**：[src/index.ts:773-820](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L773-L820)
+
+旧 webServer 回退及完整缓冲请求体。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+    // 兜底：无 connection 时自动通过 webServer 桥接 Fetch 路由（兼顾老测试和纯 webServer 环境）
+    let webServer: HostContext["webServer"] | undefined;
+    try {
+      webServer = ctx.webServer;
+    } catch {
+      // 真实 Cordis Context Proxy 在未 inject 且无该服务时抛错，安全捕获忽略
+    }
+    if (webServer?.register) {
+      const routeMap = new Map<string, ApiFetchRoute>();
+      for (const r of routes) routeMap.set(r.path, r);
+      return webServer.register({
+        kind: "prefix",
+        path: API_PREFIX,
+        handler: async (req, res) => {
+          const u = new URL(req.url!, "http://localhost");
+          const path = u.pathname.replace(/\/+$/, "");
+          const route = routeMap.get(path);
+          if (!route) {
+            json(res, 404, { ok: false, code: "error.proto.unknownAction", error: `unknown action: ${path}` });
+            return;
+          }
+          if (!route.methods.includes(req.method!)) {
+            json(res, 405, { ok: false, code: "error.proto.method", error: `method not allowed: ${req.method}` });
+            return;
+          }
+          const headers = new Headers();
+          for (const [k, v] of Object.entries(req.headers)) {
+            if (v !== undefined) {
+              if (Array.isArray(v)) for (const item of v) headers.append(k, item);
+              else headers.set(k, v);
+            }
+          }
+          try {
+            let bodyBuffer: Buffer | null = null;
+            if (req.method !== "GET" && req.method !== "HEAD") {
+              bodyBuffer = await new Promise<Buffer>((resolve, reject) => {
+                const chunks: Buffer[] = [];
+                req.on("data", (c) => chunks.push(c));
+                req.on("end", () => resolve(Buffer.concat(chunks)));
+                req.on("error", reject);
+              });
+            }
+            const fetchReq = new Request(u.toString(), {
+              method: req.method,
+              headers,
+              body: bodyBuffer && bodyBuffer.length > 0 ? new Uint8Array(bodyBuffer) : undefined,
+            });
+            const response = await route.fetch(fetchReq);
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/index.ts:82-88](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/index.ts#L82-L88)
+
+业务层读完请求文本后核对大小。
+
+```text
+async function readJsonBody(request: Request, limit = 1 << 20): Promise<RequestBody> {
+  const text = await request.text();
+  if (Buffer.byteLength(text) > limit) {
+    const error: CodedError = new Error("body too large");
+    error.statusCode = 413;
+    error.code = "error.proto.bodyTooLarge";
+    throw error;
+```
+
+**依据 7 · 作者声明**：[README.md:75-78](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/README.md#L75-L78)
+
+作者声明版本测试和范围。
+
+```text
+Restart DSH, refresh the page, and open **Settings → Skills**. To update, select **Check for updates** or run the installation command again.
+
+- Plugin `1.2.26` is tested with DeepSeek Harness `0.2.0-rc.1`, `0.2.0-rc.2`, `0.2.1-rc.1`, `0.2.1-rc.2`, `0.2.1-rc.3`.
+- Host compatibility: Full DeepSeek Harness `0.2.x` line (`>=0.2.0-rc.1 <0.3.0-0`), forwards-compatible with subsequent `0.2.x` releases, alphas, and RCs without requiring routine plugin version bumps. Legacy versions and breaking changes in the `0.3.0` generation are rejected by the version gate. If you still use a `0.1.x` host, install plugin `1.1.23` instead of `@latest`.
+```
+
+#### 缺口
+
+- 两种宿主路由的认证、代理部署和请求限制没有实测
+  **影响**：不能将写接口本地检查当作完整访问控制或安全审计
+  **进一步探讨**：在匹配宿主中检查实际准入链，隔离测试匿名、跨站和大请求。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何试用，什么改进值得验证？
+
+**研究主题**：工程质量与复用、新假设与验证、采用判断
+
+#### 完整回答
+
+预览令牌同时绑定目标版本、本地文件和下一版本文件；更新前重新读取本地数据，能将一部分预览后的变化变成显式冲突，而不静默覆盖。这是可借鉴的并发保护设计，不代表消除了所有文件系统竞态。未验证假设是在预览中同时展示更新前后权限敏感指令和来源信任说明，可帮助维护者更早发现不适合安装的 Skill；它增加审阅负担，也不能由文本差异判定内容安全。应在相同一组包含正常及风险指令的 Skill 上比较普通文件差异和该说明，记录发现率、误报与审阅时间；若发现率未改善或负担不可接受则否定。建议维护者在隔离工作区用已核实来源小范围试用，预览后发现本地变化、来源不可确认或恢复报错就停止写入，核对备份并回到手工管理。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/repository-updates.ts:103-119](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repository-updates.ts#L103-L119)
+
+预览绑定内容和令牌及本地修改门槛。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    } else {
+      const repo = repository(data, id), skill = repo.skills.find(s => s.path === path);
+      if (repo.error || !skill?.valid || skill.name !== record.name || !skill.files) throw failure("请先成功检查更新；技能改名或已移除时不能直接替换");
+      next = skill.files; commit = repo.commit;
+      if (includeArchive) {
+        const archive = await download(repo, path), prefix = path ? path + "/" : "";
+        entries = Object.fromEntries(Object.entries(archive).filter(([p]) => p.startsWith(prefix)).map(([p, bytes]) => [p.slice(prefix.length), bytes]));
+        if (signature(fileIndex(entries)) !== signature(next)) throw failure("下载内容与预览版本不同，请重新检查更新");
+      }
+    }
     const token = hash(JSON.stringify({ id, path, root: record.root || "dsh", workspace: record.workspace ?? null, commit, current, next, rollback: input.rollback === true }));
     return { data, record, target, entries, next, current, token, commit, localModified: signature(current) !== signature(record.files), changes: changesBetween(current, next) };
   }
@@ -1401,13 +1054,18 @@ export async function getProviderSkill(candidate: ProviderCandidate, options: Sc
     const plan = await prepare({ ...input, rollback }, true);
     if (typeof input.token !== "string" || input.token !== plan.token) throw failure("文件或版本已变化，请重新预览");
     if (plan.localModified && input.overwrite !== true) throw failure("存在本地修改，请确认备份后替换", "error.repo.modified");
-    const { data, record, target, entries } = plan;
-    const backupRoot = join(managerHomePath(), "repository-backups");
-    await fs.mkdir(backupRoot, { recursive: true }); await safeDirectory(backupRoot);
-    const key = randomUUID(), backup = join(backupRoot, key), stage = join(backupRoot, randomUUID());
-    await fs.mkdir(stage);
-    let moved = false, replaced = false, recoveryFailed = false;
-    try {
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/repository-updates.ts:127-150](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repository-updates.ts#L127-L150)
+
+再次复验并在异常时尝试恢复。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
       for (const [path, bytes] of Object.entries(entries!)) {
         safePath(path); const file = join(stage, ...path.split("/"));
         await fs.mkdir(dirname(file), { recursive: true }); await fs.writeFile(file, bytes, { flag: "wx" });
@@ -1431,8 +1089,49 @@ export async function getProviderSkill(candidate: ProviderCandidate, options: Sc
       }
       throw error;
     } finally { if (!recoveryFailed) await fs.rm(stage, { recursive: true, force: true }); }
+    return { name: record.name, commit: plan.commit };
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[src/repositories.ts:889-910](https://github.com/MichengAI/dsh-skills-manager/blob/09510fe0bdb56d32ae62238ebde30368b2f56046/src/repositories.ts#L889-L910)
+
+安装可能留下文件已写但记录未确认状态。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+      const record: InstallRecord = { id, path, root: workspaceRoot ? "dsh" : root.key, ...(workspaceRoot ? { workspace: workspaceRoot } : {}), source: { owner: repo.owner, name: repo.name, ref: repo.ref, subdirectory: repo.subdirectory, ...(repo.url ? { url: repo.url } : {}) }, name: skill.name, commit: repo.commit, complete: false, files: entries.map((e) => ({ path: e.path, hash: hash(Buffer.from(e.data, "base64")) })) };
+      data.installs.push(record);
+      await write(data);
+      let copied = false;
+      try {
+        await recordInstallRoot({ root: requestedRoot, workspace: workspaceRoot }, registered);
+        const result = await importUploadedSkill({ name: skill.name, entries }, log, { conflict: "skip", root });
+        if (result.ok === false || !result.imported?.length) throw failure(result.error || "技能安装失败或遇到同名冲突", typeof result.code === "string" ? result.code : "error.repo.conflict", result.params);
+        copied = true;
+        // 界面默认显示已启用，安装完成后走策略初始化，确保不在禁用列表中。
+        const enabled = await setSkillEnabled(root, skill.name, true, log);
+        if (enabled && typeof enabled === "object" && "ok" in enabled && enabled.ok === false) throw failure(enabled.error || "技能启用状态无法写入", typeof enabled.code === "string" ? enabled.code : "error.repo.enableState", enabled.params);
+      } catch (caught) { const error = caught as CodedError;
+        data.installs = data.installs.filter(item => item !== record);
+        try { await write(data); }
+        catch { throw failure("安装未完成且来源记录无法撤销，请恢复磁盘写入后检查技能目录", "error.repo.installState"); }
+        if (copied) await fs.rm(join(root.path, skill.name), { recursive: true, force: true }).catch(() => undefined);
+        throw error;
+      }
+      record.complete = true;
+      try { await write(data); }
+      catch { throw failure("技能文件已安装但来源状态未确认，请恢复磁盘写入后重新打开仓库页", "error.repo.installState"); }
+```
+
+</details>
+
+#### 缺口
+
+- 敏感指令审阅方案没有用户实验且安全定义依任务变化
+  **影响**：不能声称降低实际安全事件或提效
+  **进一步探讨**：预先定义风险样本和成功指标，使用相同材料做盲评。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
