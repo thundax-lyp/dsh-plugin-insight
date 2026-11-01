@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[840ff04](https://github.com/1344738825/ai-look-up/tree/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b)
+源码版本：[1dbc46d](https://github.com/1344738825/ai-look-up/tree/1dbc46d9d66aaed1ec2dc55c012977533f204fa4)
 
 <!-- BEGIN META -->
 [![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1344738825/ai-look-up)
 <!-- END META -->
 
-> **功能**：监测代理重复调用、失败循环和目标漂移，并在触发时注入自检提示。
+> **功能**：观察代理工具行为并在长任务中注入自审提醒与时间锚点。
 
-> **亮点**：相对人工盯守日志，它把行为节奏检测、独立审查和提示注入放进宿主事件链，并保留静态降级；增量在持续监督接线和多种漂移信号组合。 [Q03](#research-q03)
+> **亮点**：将节奏检测、目标漂移审查和提醒接入宿主事件。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：触发阈值与“生产性工具”名单会把探索性工作误判为漂移，独立审查还增加调用成本；尚无对照数据证明提醒减少返工而不增加打断。 [Q04](#research-q04)
+> **主要限制**：关闭 llmReview 不等于关闭 driftCheck；审查材料包含目标和工具摘要，需核对数据与费用。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？](#detail-section-11)
-  - [Q02 · 能力如何从入口、注册、调用到状态变化实现？](#detail-section-12)
-  - [Q03 · 相对原生能力或简单替代，固定版本增加了什么？](#detail-section-13)
-  - [Q04 · 什么前提最可能使核心价值不成立？](#detail-section-14)
-  - [Q05 · 启动、持续生效和失败恢复分别依赖什么？](#detail-section-15)
-  - [Q06 · 首次、持续与失败恢复成本及效果证据如何？](#detail-section-16)
-  - [Q07 · 实现有哪些可靠性取舍和可复用设计？](#detail-section-17)
-  - [Q08 · 由贡献和限制能推导什么未验证方向？](#detail-section-18)
-  - [Q09 · 对什么人值得观察或试用，成功与停止条件是什么？](#detail-section-19)
+  - [Q01 · 谁需要中途自审，和手动检查相比如何？](#detail-section-11)
+  - [Q02 · DSH 的审查材料和失败回退怎样工作？](#detail-section-12)
+  - [Q03 · 关掉 llmReview 就能保证没有额外模型审查吗？](#detail-section-13)
+  - [Q04 · 如何试用并处理误报或不可用？](#detail-section-14)
+  - [Q05 · 已有独立 watcher 时效闸之外，如何防止直接审查旧结论干扰新目标？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向长时间运行编码代理的用户，在重复命令、无产出密集调用或目标漂移时获得可见的收束提醒。 [Q01](#research-q01)
+> **用途**：长编码任务中需要发现重复失败或无产出的用户；基线是人工观察工具日志。[Q01](#research-q01)
 
-基线是用户手工观察日志或仅设超时；插件能更早提示重复与漂移，但阈值误报和额外评审调用必须计入。
+用户人工查看代理行为并提出收束提醒。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -55,66 +51,63 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 行为节奏监测 | 识别重复、失败循环、无编辑长跑和目标漂移候选。 | 仅由固定版本源码确认；运行效果未验证 |
-| 自检注入 | 把静态或模型审查建议送回代理上下文。 | 仅由固定版本源码确认；运行效果未验证 |
-| 自适应记录 | 保存提醒效果与经验线索供后续会话使用。 | 仅由固定版本源码确认；运行效果未验证 |
+| --- | --- | --- |
+| 检测 | 重复或无产出提醒 | 误报未测 |
+| 审查 | 模型分析行为摘要 | 数据与费用需确认 |
+| 时效 | watcher 丢弃旧结果 | 直接审查为不同路径 |
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| tools/result、session/event、agent.inject | 必需 | 采集节奏并注入提醒 | 核心监督链路失效 |
-| 可选 llm 服务 | 可选 | 独立 JSON 审查 | 超时或失败退回静态清单 |
-| watcher API Key 与额度 | deliverReview 时必需 | 外部独立复核 | 默认关闭，不能静默耗费额度 |
-| 阈值与冷却配置 | 必需 | 控制误报和提醒风暴 | 配置不当会打断正常探索 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| --- | --- | --- | --- |
+| DSH 事件与注入 | 必需 | 行为检测与提醒 | 手工监控 |
+| llm 服务 | 模型审查需要 | 生成独立建议 | 静态清单或无漂移审查 |
+| 用户数据与预算许可 | 模型路径需要 | 发送摘要 | 关闭相关通道 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 定标 | 用户按任务长度设置阈值、冷却和 reviewer 开关 | 预算和最大提醒数明确 |
-| 观察 | 插件统计重复、失败、无编辑和漂移信号 | 不阻断正常工具执行 |
-| 审查与注入 | 可选 reviewer 判定，失败退静态提示 | 单次触发只形成一次可解释提醒 |
-| 复盘 | 用户核对提醒后是否产生有效进展 | 误报持续则增大冷却或停用通道 |
+| --- | --- | --- |
+| 配置 | 用户核对各审查开关与数据范围 | 不接受外发则停用 |
+| 试用 | 使用非敏感任务观察提醒 | 比较真实工具日志 |
+| 处理 | 人工核查建议 | 误报或旧目标时忽略并调整 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 本地日志；可选 reviewer API | 调阈值与选择通道 | 不同任务的合理阈值未知 |
-| 持续使用 | 每触发一次可追加一次 LLM 调用 | 阅读/忽略提醒并复核台账 | 每有效提醒 token 与分钟未知 |
-| 失败恢复 | reviewer 超时消耗延迟后退静态清单 | 排查误报、重置状态或关闭 watcher | 提醒风暴概率未测 |
+| --- | --- | --- | --- |
+| 首次 | 宿主配置 | 审阅多通道开关 | 数据范围需确认 |
+| 持续 | 额外审查模型用量 | 核对提醒 | 节时和误报未测 |
+| 恢复 | 重试可能计费 | 停用或调整 | 时效保护按通道不同 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 停滞检测 | 重复、失败、无编辑和漂移信号存在 | 真阳性与误报率 |
-| 审查降级 | 模型失败可退静态提示 | 降级提示是否仍有用 |
-| 行为改善 | 能把提醒送入下一步上下文 | 是否减少返工并提高合格率 |
+| --- | --- | --- |
+| 提醒 | 行为材料和失败回退 | 真实任务收益 |
+| 时效 | watcher 结果三道闸 | 直接异步通道效果 |
 
-> **思考**：触发阈值与“生产性工具”名单会把探索性工作误判为漂移，独立审查还增加调用成本；尚无对照数据证明提醒减少返工而不增加打断。 [Q04](#research-q04)
+> **思考**：关闭 llmReview 不等于关闭 driftCheck；审查材料包含目标和工具摘要，需核对数据与费用。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对人工盯守日志，它把行为节奏检测、独立审查和提示注入放进宿主事件链，并保留静态降级；增量在持续监督接线和多种漂移信号组合。 [Q03](#research-q03)
+> **亮点**：将节奏检测、目标漂移审查和提醒接入宿主事件。[Q01](#research-q01) [Q02](#research-q02)
 
-共享 spec 和静态降级降低双端漂移，事件入口和配置面明确；但启发式、持久日志与可选外部 watcher 形成较多状态，需以误报率和完成率共同验收。
+llmReview 和 driftCheck 分别控制不同审查路径；watcher 才有结果时效三道闸。[Q02](#research-q02) [Q03](#research-q03) [Q05](#research-q05)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-触发阈值与“生产性工具”名单会把探索性工作误判为漂移，独立审查还增加调用成本；尚无对照数据证明提醒减少返工而不增加打断。 [Q04](#research-q04)
+关闭 llmReview 不等于关闭 driftCheck；审查材料包含目标和工具摘要，需核对数据与费用。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合经常运行长时编码代理、能审阅提醒台账的团队先观察，不适合短任务或对中断敏感的会话。只有当提醒后的有效编辑率显著高于未提醒窗口、误报和 reviewer 预算低于预设上限时才试用；若静态提醒反复打断正常探索或独立 reviewer 成为主要成本，应关闭对应通道。 [Q09](#research-q09)
+先审查各通道、数据和预算；非敏感任务试用并人工复核提醒。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。
+固定源码支持默认配置、材料与审查分支；未运行模型或宿主。
 
 - 已检查：作者 README、包清单、源码路径 README.md、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。
-- 下一步：在关闭/开启插件的配对长任务中记录触发标签、reviewer token、注入延迟、后续十次调用的有效编辑和最终验收；以每个有效提醒的额外 token 与节省返工分钟为单位。精确率低或开启后合格率不升且中断增加，就推翻常驻监督价值。
+- 边界：固定 inventory 13 文件、无排除和解析错误；重点静态核查 DSH 主入口，不运行目标。
+- 下一步：隔离任务检查关闭各审查通道、数据外发、延迟返回和失败回退。
 
 **分析版本**
 
 - **仓库**：[1344738825/ai-look-up](https://github.com/1344738825/ai-look-up)
-- **版本号**：0.8.3（[固定提交 840ff04](https://github.com/1344738825/ai-look-up/tree/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.8.3（[固定提交 1dbc46d](https://github.com/1344738825/ai-look-up/tree/1dbc46d9d66aaed1ec2dc55c012977533f204fa4)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +134,9 @@
 
 <a id="innovation"></a>
 
-可把提醒升级为可归因实验，每次随机延迟一小部分提醒并比较后续有效编辑、任务完成与人工接管，从而学习不同任务的阈值。 [Q08](#research-q08)
+未验证假设：将 watcher 已有场景/时效/步数校验用于直接异步审查，可减少旧结论误导。[Q05](#research-q05)
 
-在关闭/开启插件的配对长任务中记录触发标签、reviewer token、注入延迟、后续十次调用的有效编辑和最终验收；以每个有效提醒的额外 token 与节省返工分钟为单位。精确率低或开启后合格率不升且中断增加，就推翻常驻监督价值。
+隔离任务检查关闭各审查通道、数据外发、延迟返回和失败回退。
 
 <a id="detail-section-9"></a>
 
@@ -152,9 +145,11 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 8 | 512 | — | — | 7299 |
+| .md | source | 9 | 643 | — | — | 8571 |
 | .js | source | 2 | 1122 | 886 | 181 | — |
 | .mjs | test | 2 | 1072 | 900 | 111 | — |
 
@@ -162,598 +157,661 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/1344738825/ai-look-up/issues) 查看。
+[![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1344738825/ai-look-up/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z)
+
+暂未获取：Issue 未关闭、近30天新建。
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：研究 AI Look-Up 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。
+**插件研究总目标**：自审提醒如何触发并使用审查模型，延迟结论、隐私及成本边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？
+### Q01 · 谁需要中途自审，和手动检查相比如何？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向长时间运行编码代理的用户，在重复命令、无产出密集调用或目标漂移时获得可见的收束提醒。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是用户手工观察日志或仅设超时；插件能更早提示重复与漂移，但阈值误报和额外评审调用必须计入。
+运行长编码任务并可能重复失败或无产出的代理，可获得行为节奏提醒和本地时间锚点。相对用户手工盯进度，它自动汇总近期工具行为并提示复核；误报或额外模型调用也会打断任务，短任务未必受益。作者跨宿主适配及收益声明均未在本轮运行。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-20](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/README.md#L1-L20)
+**依据 1 · 源码核查**：[index.js:1-20](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L1-L20)
 
-作者材料说明目标用户、安装方式、主要能力和已知边界。
+入口描述行为检测、时间与审查路径。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
-# AI 抬头 (ai-look-up)
-
-[![ci](https://github.com/1344738825/ai-look-up/actions/workflows/ci.yml/badge.svg)](https://github.com/1344738825/ai-look-up/actions/workflows/ci.yml)
-
-让 AI 在长时间空跑时**中途自我审查**的 ZCode 插件。
-
-AI 在长任务里最常见的浪费是**空跑**。表现是:同一个探针脚本换个名字反复跑(`_peek2.py`、`_peek3.py`、`_peek4.py`…),失败的命令原样重试,一两个小时里一次文件都没改。本插件用会话钩子盯着这些行为,命中就让 AI 停一下:对照最初目标,看最近几步有没有带来新东西,然后决定继续、换方法还是汇报。
-
-## 安装
-
-**方式一:插件市场(ZCode / DeepSeek Harness 等)**
-
-把本仓库克隆或下载解压,在客户端中打开 **插件市场 → 添加 → 添加插件市场**,选择仓库目录(根目录即市场清单 `marketplace.json` 所在),然后在 **个人 → ai-look-up-market** 中安装「AI 抬头」。
-
-**方式二:Git 仓库直装(DeepSeek Harness)**
-
-DeepSeek Harness 的插件页支持直接粘贴 Git 仓库地址安装——本仓库同时是一个 **cordis bundle**(`package.json` 声明 `dsh.bundle.patch`),会以 Host 插件形式安装,通过 `tools/result` / `session/event` 事件观察行为节奏,经 `agent.inject()` 注入提醒,无需 Python。
-
-**要求:** ZCode 安装方式需要系统可用 `python` 命令(3.8+),若可执行名不同,修改 `hooks/hooks.json` 中的 4 处 `python` 即可;dsh 安装方式无此要求(纯 JS)。
-
+/**
+ * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
+ *
+ * Watches the agent's behavioral rhythm and injects a self-review nudge when
+ * aimless grinding is detected: the exact same command repeated, variant
+ * commands that normalize to the same shape, long runs with zero file edits,
+ * dense calls with zero output, and failure loops. Also anchors the agent's
+ * unreliable sense of time by injecting the real local clock periodically.
+ *
+ * v0.4: when a trigger fires and the `llm` service is present, an independent
+ * reviewer LLM call (same provider/model route as the main agent, temperature
+ * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
+ * instead of the static checklist. Any reviewer failure falls back to the
+ * static checklist, so the plugin degrades gracefully.
+ *
+ * Extension points (see the cordis-plugin-development skill):
+ * - `tools/result`      observe final tool outcomes
+ * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
+ * - `agent.inject()`    mid-run context, enters the next admitted step
+ * - `llm` (optional)    independent reviewer calls
 ```
 
 </details>
+
+**依据 2 · 作者声明**：[README.md:5-9](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/README.md#L5-L9)
+
+作者说明场景。
+
+```text
+让 AI 在长时间空跑时**中途自我审查**的会话钩子。ZCode 原生支持,DeepSeek Harness 走 cordis
+bundle,WorkBuddy / CodeBuddy CLI 经 `adapters/workbuddy/` 接入;Claude Code / OpenCode /
+Gemini CLI 有实验性适配。
+
+AI 在长任务里最常见的浪费是**空跑**。表现是:同一个探针脚本换个名字反复跑(`_peek2.py`、`_peek3.py`、`_peek4.py`…),失败的命令原样重试,一两个小时里一次文件都没改。本插件用会话钩子盯着这些行为,命中就让 AI 停一下:对照最初目标,看最近几步有没有带来新东西,然后决定继续、换方法还是汇报。
+```
+
+#### 缺口
+
+- 未运行 DSH、工具事件或审查模型
+  **影响**：无法确认提醒有效性、数据流和成本
+  **进一步探讨**：在隔离任务验证触发、失败回退、场景切换和用量
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 能力如何从入口、注册、调用到状态变化实现？
+### Q02 · DSH 的审查材料和失败回退怎样工作？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-插件监听 tools/result 与 session/event，维护回合统计和冷却状态；触发后可调用独立审查模型生成 JSON 判断，失败则退回静态检查表。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。
+构造材料时按连续工具段折叠最近调用，截取首尾简述，并包含目标、统计和触发细节。默认 llmReview 开启，服务可用时以会话 provider/model 发起独立审查，失败回退静态清单；独立 watcher 的 deliverReview 默认关闭且需 key。此路径可能把任务与工具摘要交给模型并增加用量，截断不是已验证的敏感信息脱敏。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
+**依据 1 · 源码核查**：[index.js:105-124](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L105-L124)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+两个审查通道默认值。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
+  // independent reviewer (v0.4): one LLM call per trigger, strict JSON verdict
+  llmReview: true,
+  llmTimeoutMs: 20000,
+  reviewLogSize: 12,
+  // fold-back edit detection (v0.5): file content returning to a seen state
+  editFoldback: true,
+  foldbackWindow: 5,
+  // adaptive reminder effectiveness (v0.5): effective reminders fire more often
+  adaptive: true,
+  // goal-drift patrol (v0.5): every N calls the reviewer checks goal alignment
+  driftCheck: true,
+  driftCheckCalls: 30,
+  driftCooldownSec: 900,
+  // lesson ledger (v0.5): failures register pitfalls, new agents get the top ones
+  lessons: true,
+  // ── 第三通道:投递请求 + 独立 watcher（v0.7）──
+  // deliverReview 默认关:它要花用户自己的 API 额度,只有显式开启才投递。
+  deliverReview: false,
+  // watcher 用的自有 key(投递前置条件之一);空则永不投递。
+  llmApiKey: '',
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[index.js:472-504](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L472-L504)
+
+审查材料组成及截取。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+function buildReviewMaterial(state, cfg, now, kind, detail) {
+  const log = state.recentLog;
+  // 先按"连续同工具段"折叠、再取最近 N 段:关键旧证据不因新同形刷屏被挤出窗口
+  const runs = [];
+  for (const e of log) {
+    if (runs.length && runs[runs.length - 1][0].tool === e.tool) runs[runs.length - 1].push(e);
+    else runs.push([e]);
+  }
+  const kept = runs.slice(-cfg.reviewLogSize);
+  const logLines = kept.map((run) => {
+    const t = run[0].tool ?? '?';
+    const fails = run.filter((e) => !e.ok).length;
+    const head = (run[0].brief || '无').slice(0, 40);
+    const tail = (run[run.length - 1].brief || '').slice(0, 40);
+    if (run.length > 1) {
+      const mark = fails ? '✗' + fails + '/' + run.length + ', ' : '';
+      return t + '×' + run.length + '(' + mark + head + ' … ' + tail + ')';
+    }
+    return '[' + t + (fails ? ' ✗' : '') + '] ' + head;
+  });
+  const dist = [...Object.entries(state.byTool)].sort((a, b) => b[1] - a[1]).slice(0, 4)
+    .map(([k, v]) => k + '×' + v).join(', ');
+  return [
+    '【审查材料】触发: ' + kind,
+    '【任务】' + clipGoal(state.goal),
+    '【统计】' + minutesSince(state, now).toFixed(0) + ' 分钟/' + state.toolCalls
+      + ' 次调用/修改 ' + state.edits + ',连败 ' + state.failStreak + ',累计败 '
+      + state.totalFailures + '。',
+    '【分布】' + (dist || '无'),
+    '【最近调用(旧→新)】',
+    ...logLines,
+    detail ? '【细节】' + detail : '',
+  ].filter(Boolean).join('\n');
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:709-735](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L709-L735)
+
+读取会话路由并调用模型。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+    async review(agent, material, signal, system = REVIEW_SYSTEM) {
+      const header = agent?.session?.requestHeader?.();
+      const provider = header?.config?.provider ?? '';
+      const model = header?.config?.model ?? '';
+      if (llm === null || typeof llm.stream !== 'function') throw new Error('llm service unavailable');
+      if (!provider || !model) throw new Error('no request-header route on this session');
+      const options = {
+        provider, model,
+        system,
+        messages: [{ role: 'user', content: [{ type: 'text', text: material }] }],
+        temperature: 0,
+        signal,
+      };
+      let text = '';
+      for await (const chunk of llm.stream(options)) {
+        if (chunk?.type === 'text' && typeof chunk.text === 'string') text += chunk.text;
+        if (chunk?.type === 'finish') {
+          const kind = chunk.reason?.kind;
+          if (kind === 'error' || kind === 'aborted') {
+            throw new Error('reviewer stream ended with ' + kind
+              + ': ' + (chunk.reason?.failure?.message ?? ''));
+          }
+        }
+      }
+      if (!text.trim()) throw new Error('reviewer returned no text');
+      return text;
+    },
+```
+
+</details>
+
+**依据 4 · 源码核查**：[index.js:763-793](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L763-L793)
+
+异步审查与失败回退。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+  const deliverOrReview = (agent, st, kind, detail, fallbackText, system = REVIEW_SYSTEM) => {
+    const now = Date.now();
+    // 第三通道投递:只在升级阶梯末档(提醒了还不改)才投——把作弊面从
+    // "内容可篡改"压到"行为可跳过",且成本受控(多数会话到不了这一档)。
+    if (st.reminders >= cfg.escalateAfterReminders) {
+      deliverReviewRequest(cfg, st, now, kind, detail);
+    }
+    if (cfg.llmReview && reviewer.ready && !st.reviewInFlight) {
+      st.reviewInFlight = true;
+      const material = buildReviewMaterial(st, cfg, now, kind, detail);
+      const signal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+        ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+      reviewer.review(agent, material, signal, system).then((raw) => {
+        st.reviewInFlight = false;
+        const verdict = parseVerdict(raw);
+        if (!verdict) { deliver(agent, ctx, fallbackText); return; }
+        if (verdict.verdict === 'on-track') {
+          // 机械证据型忽略 on-track(触发条件本身即"非正轨"证据),模糊型用短确认
+          deliver(agent, ctx, FUZZY_KINDS.has(kind) ? verdictText(verdict) : fallbackText);
+          return;
+        }
+        // 非 on-track:机械证据型保留完整静态清单并附判定(与 ZCode 对齐);模糊型整体替换
+        deliver(agent, ctx, FUZZY_KINDS.has(kind)
+          ? verdictText(verdict)
+          : fallbackText + '\n' + verdictText(verdict));
+      }).catch((error) => {
+        st.reviewInFlight = false;
+        ctx?.logger?.warn?.('[ai-look-up] reviewer fell back to static checklist: %o', error);
+        deliver(agent, ctx, fallbackText);
+      });
+      return;
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、工具事件或审查模型
+  **影响**：无法确认提醒有效性、数据流和成本
+  **进一步探讨**：在隔离任务验证触发、失败回退、场景切换和用量
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相对原生能力或简单替代，固定版本增加了什么？
+### Q03 · 关掉 llmReview 就能保证没有额外模型审查吗？
 
-**研究主题**：贡献与相对优势
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-相对人工盯守日志，它把行为节奏检测、独立审查和提示注入放进宿主事件链，并保留静态降级；增量在持续监督接线和多种漂移信号组合。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。
+不能从这个开关单独得出。提醒审查由 llmReview 控制，目标漂移分支另检查 driftCheck 和 reviewer.ready 后调用 reviewer；独立 watcher 则有另一开关和 key 条件。若需限制数据外发和费用，应检查所有通道及实际模型服务配置；结论仅为建议，不证明识别正确。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
+**依据 1 · 源码核查**：[index.js:105-124](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L105-L124)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+默认 llmReview、driftCheck 和独立通道。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
+  // independent reviewer (v0.4): one LLM call per trigger, strict JSON verdict
+  llmReview: true,
+  llmTimeoutMs: 20000,
+  reviewLogSize: 12,
+  // fold-back edit detection (v0.5): file content returning to a seen state
+  editFoldback: true,
+  foldbackWindow: 5,
+  // adaptive reminder effectiveness (v0.5): effective reminders fire more often
+  adaptive: true,
+  // goal-drift patrol (v0.5): every N calls the reviewer checks goal alignment
+  driftCheck: true,
+  driftCheckCalls: 30,
+  driftCooldownSec: 900,
+  // lesson ledger (v0.5): failures register pitfalls, new agents get the top ones
+  lessons: true,
+  // ── 第三通道:投递请求 + 独立 watcher（v0.7）──
+  // deliverReview 默认关:它要花用户自己的 API 额度,只有显式开启才投递。
+  deliverReview: false,
+  // watcher 用的自有 key(投递前置条件之一);空则永不投递。
+  llmApiKey: '',
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[index.js:763-772](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L763-L772)
+
+提醒审查受 llmReview 控制。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+  const deliverOrReview = (agent, st, kind, detail, fallbackText, system = REVIEW_SYSTEM) => {
+    const now = Date.now();
+    // 第三通道投递:只在升级阶梯末档(提醒了还不改)才投——把作弊面从
+    // "内容可篡改"压到"行为可跳过",且成本受控(多数会话到不了这一档)。
+    if (st.reminders >= cfg.escalateAfterReminders) {
+      deliverReviewRequest(cfg, st, now, kind, detail);
+    }
+    if (cfg.llmReview && reviewer.ready && !st.reviewInFlight) {
+      st.reviewInFlight = true;
+      const material = buildReviewMaterial(st, cfg, now, kind, detail);
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:1002-1023](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L1002-L1023)
+
+漂移分支单独按 driftCheck 与 reviewer.ready 触发。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+      // goal-drift patrol (v0.5): every N calls, the reviewer checks whether
+      // current behavior still serves the original goal; silent when on-track
+      if (cfg.driftCheck && reviewer.ready
+          && st.toolCalls - st.callsAtLastDrift >= cfg.driftCheckCalls
+          && now - st.lastDriftAt >= cfg.driftCooldownSec * 1000) {
+        st.lastDriftAt = now;
+        st.callsAtLastDrift = st.toolCalls;
+        st.driftChecks += 1;
+        const material = buildReviewMaterial(st, cfg, now, 'goal-drift', '巡检:目标对齐');
+        const driftSignal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+          ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+        reviewer.review(agent, material, driftSignal, REVIEW_DRIFT_SYSTEM).then((raw) => {
+          const verdict = parseVerdict(raw);
+          if (verdict && verdict.verdict !== 'on-track') {
+            deliver(agent, ctx, '🎯 【AI 抬头 · 目标漂移巡检】判定: ' + (DRIFT_LABEL[verdict.verdict] ?? verdict.verdict)
+              + '\n漂移表现: ' + (verdict.reason || '(未给出)')
+              + '\n收束建议: ' + (verdict.suggestion || '(未给出)')
+              + '\n请对照最初任务,决定:把当前子任务收敛回主线 / 明确其为目标之一并告知用户 / 放弃。');
+          }
+        }).catch((error) => {
+          ctx?.logger?.warn?.('[ai-look-up] drift patrol failed: %o', error);
+        });
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、工具事件或审查模型
+  **影响**：无法确认提醒有效性、数据流和成本
+  **进一步探讨**：在隔离任务验证触发、失败回退、场景切换和用量
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么前提最可能使核心价值不成立？
+### Q04 · 如何试用并处理误报或不可用？
 
-**研究主题**：缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：触发阈值与“生产性工具”名单会把探索性工作误判为漂移，独立审查还增加调用成本；尚无对照数据证明提醒减少返工而不增加打断。 这会直接收窄采用范围，而不是否定所有能力。
+需要 DSH 事件与注入通道；可选 llm 审查产生模型费用并接收任务与近期工具摘要。先用非敏感短任务审阅配置，确认 llmReview、driftCheck 与独立通道，再对照工具日志判断提醒；误报、超时或不愿发送摘要时关闭相关路径或停用插件。不能把模型意见当完成验收，宿主兼容和延迟未测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
+**依据 1 · 源码核查**：[index.js:105-124](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L105-L124)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+审查开关及默认值。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
+  // independent reviewer (v0.4): one LLM call per trigger, strict JSON verdict
+  llmReview: true,
+  llmTimeoutMs: 20000,
+  reviewLogSize: 12,
+  // fold-back edit detection (v0.5): file content returning to a seen state
+  editFoldback: true,
+  foldbackWindow: 5,
+  // adaptive reminder effectiveness (v0.5): effective reminders fire more often
+  adaptive: true,
+  // goal-drift patrol (v0.5): every N calls the reviewer checks goal alignment
+  driftCheck: true,
+  driftCheckCalls: 30,
+  driftCooldownSec: 900,
+  // lesson ledger (v0.5): failures register pitfalls, new agents get the top ones
+  lessons: true,
+  // ── 第三通道:投递请求 + 独立 watcher（v0.7）──
+  // deliverReview 默认关:它要花用户自己的 API 额度,只有显式开启才投递。
+  deliverReview: false,
+  // watcher 用的自有 key(投递前置条件之一);空则永不投递。
+  llmApiKey: '',
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[index.js:472-504](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L472-L504)
+
+发送材料。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+function buildReviewMaterial(state, cfg, now, kind, detail) {
+  const log = state.recentLog;
+  // 先按"连续同工具段"折叠、再取最近 N 段:关键旧证据不因新同形刷屏被挤出窗口
+  const runs = [];
+  for (const e of log) {
+    if (runs.length && runs[runs.length - 1][0].tool === e.tool) runs[runs.length - 1].push(e);
+    else runs.push([e]);
+  }
+  const kept = runs.slice(-cfg.reviewLogSize);
+  const logLines = kept.map((run) => {
+    const t = run[0].tool ?? '?';
+    const fails = run.filter((e) => !e.ok).length;
+    const head = (run[0].brief || '无').slice(0, 40);
+    const tail = (run[run.length - 1].brief || '').slice(0, 40);
+    if (run.length > 1) {
+      const mark = fails ? '✗' + fails + '/' + run.length + ', ' : '';
+      return t + '×' + run.length + '(' + mark + head + ' … ' + tail + ')';
+    }
+    return '[' + t + (fails ? ' ✗' : '') + '] ' + head;
+  });
+  const dist = [...Object.entries(state.byTool)].sort((a, b) => b[1] - a[1]).slice(0, 4)
+    .map(([k, v]) => k + '×' + v).join(', ');
+  return [
+    '【审查材料】触发: ' + kind,
+    '【任务】' + clipGoal(state.goal),
+    '【统计】' + minutesSince(state, now).toFixed(0) + ' 分钟/' + state.toolCalls
+      + ' 次调用/修改 ' + state.edits + ',连败 ' + state.failStreak + ',累计败 '
+      + state.totalFailures + '。',
+    '【分布】' + (dist || '无'),
+    '【最近调用(旧→新)】',
+    ...logLines,
+    detail ? '【细节】' + detail : '',
+  ].filter(Boolean).join('\n');
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:763-793](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L763-L793)
+
+失败回退。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+  const deliverOrReview = (agent, st, kind, detail, fallbackText, system = REVIEW_SYSTEM) => {
+    const now = Date.now();
+    // 第三通道投递:只在升级阶梯末档(提醒了还不改)才投——把作弊面从
+    // "内容可篡改"压到"行为可跳过",且成本受控(多数会话到不了这一档)。
+    if (st.reminders >= cfg.escalateAfterReminders) {
+      deliverReviewRequest(cfg, st, now, kind, detail);
+    }
+    if (cfg.llmReview && reviewer.ready && !st.reviewInFlight) {
+      st.reviewInFlight = true;
+      const material = buildReviewMaterial(st, cfg, now, kind, detail);
+      const signal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+        ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+      reviewer.review(agent, material, signal, system).then((raw) => {
+        st.reviewInFlight = false;
+        const verdict = parseVerdict(raw);
+        if (!verdict) { deliver(agent, ctx, fallbackText); return; }
+        if (verdict.verdict === 'on-track') {
+          // 机械证据型忽略 on-track(触发条件本身即"非正轨"证据),模糊型用短确认
+          deliver(agent, ctx, FUZZY_KINDS.has(kind) ? verdictText(verdict) : fallbackText);
+          return;
+        }
+        // 非 on-track:机械证据型保留完整静态清单并附判定(与 ZCode 对齐);模糊型整体替换
+        deliver(agent, ctx, FUZZY_KINDS.has(kind)
+          ? verdictText(verdict)
+          : fallbackText + '\n' + verdictText(verdict));
+      }).catch((error) => {
+        st.reviewInFlight = false;
+        ctx?.logger?.warn?.('[ai-look-up] reviewer fell back to static checklist: %o', error);
+        deliver(agent, ctx, fallbackText);
+      });
+      return;
+```
+
+</details>
+
+**依据 4 · 源码核查**：[index.js:1002-1013](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L1002-L1013)
+
+独立漂移调用条件。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+      // goal-drift patrol (v0.5): every N calls, the reviewer checks whether
+      // current behavior still serves the original goal; silent when on-track
+      if (cfg.driftCheck && reviewer.ready
+          && st.toolCalls - st.callsAtLastDrift >= cfg.driftCheckCalls
+          && now - st.lastDriftAt >= cfg.driftCooldownSec * 1000) {
+        st.lastDriftAt = now;
+        st.callsAtLastDrift = st.toolCalls;
+        st.driftChecks += 1;
+        const material = buildReviewMaterial(st, cfg, now, 'goal-drift', '巡检:目标对齐');
+        const driftSignal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+          ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+        reviewer.review(agent, material, driftSignal, REVIEW_DRIFT_SYSTEM).then((raw) => {
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、工具事件或审查模型
+  **影响**：无法确认提醒有效性、数据流和成本
+  **进一步探讨**：在隔离任务验证触发、失败回退、场景切换和用量
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 启动、持续生效和失败恢复分别依赖什么？
+### Q05 · 已有独立 watcher 时效闸之外，如何防止直接审查旧结论干扰新目标？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：新假设与验证、工程质量与复用
 
 #### 完整回答
 
-依赖 DSH 会话与工具事件、agent.inject；独立评审依赖可用 llm 服务，外部 watcher 还需显式密钥和额度；失败可退回静态检查。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。
+未验证假设：直接 llm 审查返回时也对会话目标版本、时间与步数做校验，过期则丢弃或标注，可能减少切换任务后的误导。现有 watcher 结果已有场景重置、TTL 和步数闸，故不是从零引入时效；直接异步回调与 watcher 分支不同，其他等价保护未穷尽。对照现有路径模拟等待期间换目标、快速推进与正常返回，测过期注入率、误丢和延迟；无改善或误丢过高则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
+**依据 1 · 源码核查**：[index.js:648-671](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L648-L671)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+已有 watcher 三道时效闸。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
+function takeReviewResults(st, cfg, now) {
+  const texts = [];
+  let names;
+  try { names = readdirSync(reviewDir()); } catch { return texts; }
+  const sid = st.sessionId || 'default';
+  for (const name of names) {
+    if (!name.startsWith('res_') || !name.endsWith('.json')) continue;
+    const p = join(reviewDir(), name);
+    let res;
+    try { res = JSON.parse(readFileSync(p, 'utf8')); } catch { safeUnlink(p); continue; }
+    if (!res || typeof res !== 'object') { safeUnlink(p); continue; }
+    // 不属于本会话的结论不要碰(可能是另一个会话的)
+    if (res.session_id && String(res.session_id) !== String(sid)) continue;
+    // 闸1: 场景指纹——用户换过指令则结论作废
+    if ((res.prompt_resets ?? 0) !== (st.promptResets ?? 0)) { safeUnlink(p); continue; }
+    // 闸2: 过期。finished_at 缺失或非数值一律作废——不可验证时效的结论不注入。
+    // (Number('abc') 为 NaN,NaN > ttl 恒为 false,会把坏数据放过去,故显式判 finite。)
+    const finishedAt = Number(res.finished_at);
+    if (!Number.isFinite(finishedAt) || now / 1000 - finishedAt > cfg.resultTtlSec) { safeUnlink(p); continue; }
+    // 闸3: 步数——结论对应几十步前的现场,AI 已走远
+    const stepsBack = st.toolCalls - Number(res.tool_calls ?? 0);
+    if (stepsBack > cfg.resultSettleCalls) { safeUnlink(p); continue; }
+    if (res.verdict === 'error') { safeUnlink(p); continue; }  // 失败不注入,静默丢弃
+    texts.push(formatReviewResult(res, Math.max(0, stepsBack)));
 ```
 
 </details>
 
-<a id="research-q06"></a>
+**依据 2 · 源码核查**：[index.js:763-793](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L763-L793)
 
-<a id="detail-section-16"></a>
-
-### Q06 · 首次、持续与失败恢复成本及效果证据如何？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次使用要选择重复窗口、失败阈值、冷却和是否启用 LLM reviewer/watcher；持续成本包括监听每次工具结果、保存行为台账，以及每次触发时最多一次额外模型审查；失败恢复是 reviewer 超时后退回静态清单并避免提醒风暴。合格单位应是一次“提醒后任务重新产生有效进展且未造成无谓打断”的触发。当前没有触发总数、真阳性、触发后有效编辑率、额外模型 token 和人工忽略时间。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+直接审查异步回调。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
+  const deliverOrReview = (agent, st, kind, detail, fallbackText, system = REVIEW_SYSTEM) => {
+    const now = Date.now();
+    // 第三通道投递:只在升级阶梯末档(提醒了还不改)才投——把作弊面从
+    // "内容可篡改"压到"行为可跳过",且成本受控(多数会话到不了这一档)。
+    if (st.reminders >= cfg.escalateAfterReminders) {
+      deliverReviewRequest(cfg, st, now, kind, detail);
+    }
+    if (cfg.llmReview && reviewer.ready && !st.reviewInFlight) {
+      st.reviewInFlight = true;
+      const material = buildReviewMaterial(st, cfg, now, kind, detail);
+      const signal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+        ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+      reviewer.review(agent, material, signal, system).then((raw) => {
+        st.reviewInFlight = false;
+        const verdict = parseVerdict(raw);
+        if (!verdict) { deliver(agent, ctx, fallbackText); return; }
+        if (verdict.verdict === 'on-track') {
+          // 机械证据型忽略 on-track(触发条件本身即"非正轨"证据),模糊型用短确认
+          deliver(agent, ctx, FUZZY_KINDS.has(kind) ? verdictText(verdict) : fallbackText);
+          return;
+        }
+        // 非 on-track:机械证据型保留完整静态清单并附判定(与 ZCode 对齐);模糊型整体替换
+        deliver(agent, ctx, FUZZY_KINDS.has(kind)
+          ? verdictText(verdict)
+          : fallbackText + '\n' + verdictText(verdict));
+      }).catch((error) => {
+        st.reviewInFlight = false;
+        ctx?.logger?.warn?.('[ai-look-up] reviewer fell back to static checklist: %o', error);
+        deliver(agent, ctx, fallbackText);
+      });
+      return;
+```
 
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
+</details>
 
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
+**依据 3 · 源码核查**：[index.js:1002-1020](https://github.com/1344738825/ai-look-up/blob/1dbc46d9d66aaed1ec2dc55c012977533f204fa4/index.js#L1002-L1020)
 
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+漂移审查异步返回与注入。
 
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+      // goal-drift patrol (v0.5): every N calls, the reviewer checks whether
+      // current behavior still serves the original goal; silent when on-track
+      if (cfg.driftCheck && reviewer.ready
+          && st.toolCalls - st.callsAtLastDrift >= cfg.driftCheckCalls
+          && now - st.lastDriftAt >= cfg.driftCooldownSec * 1000) {
+        st.lastDriftAt = now;
+        st.callsAtLastDrift = st.toolCalls;
+        st.driftChecks += 1;
+        const material = buildReviewMaterial(st, cfg, now, 'goal-drift', '巡检:目标对齐');
+        const driftSignal = typeof AbortSignal !== 'undefined' && AbortSignal.timeout
+          ? AbortSignal.timeout(cfg.llmTimeoutMs) : undefined;
+        reviewer.review(agent, material, driftSignal, REVIEW_DRIFT_SYSTEM).then((raw) => {
+          const verdict = parseVerdict(raw);
+          if (verdict && verdict.verdict !== 'on-track') {
+            deliver(agent, ctx, '🎯 【AI 抬头 · 目标漂移巡检】判定: ' + (DRIFT_LABEL[verdict.verdict] ?? verdict.verdict)
+              + '\n漂移表现: ' + (verdict.reason || '(未给出)')
+              + '\n收束建议: ' + (verdict.suggestion || '(未给出)')
+              + '\n请对照最初任务,决定:把当前子任务收敛回主线 / 明确其为目标之一并告知用户 / 放弃。');
+          }
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少提醒真阳性率、触发后有效编辑率、额外 reviewer token/延迟及用户忽略时间。
-  **影响**：无法判断监督减少的返工是否超过误报与额外模型调用。
-  **进一步探讨**：对真实长任务记录每次触发、审查结论、后续十次调用是否产生有效编辑、人工接受/忽略及额外 token，并与关闭插件的任务比较。
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 实现有哪些可靠性取舍和可复用设计？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-共享 spec 和静态降级降低双端漂移，事件入口和配置面明确；但启发式、持久日志与可选外部 watcher 形成较多状态，需以误报率和完成率共同验收。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
-```
-
-</details>
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 由贡献和限制能推导什么未验证方向？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-从已确认机制与关键限制可推导：可把提醒升级为可归因实验，每次随机延迟一小部分提醒并比较后续有效编辑、任务完成与人工接管，从而学习不同任务的阈值。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
-```
-
-</details>
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-适合经常运行长时编码代理、能审阅提醒台账的团队先观察，不适合短任务或对中断敏感的会话。只有当提醒后的有效编辑率显著高于未提醒窗口、误报和 reviewer 预算低于预设上限时才试用；若静态提醒反复打断正常探索或独立 reviewer 成为主要成本，应关闭对应通道。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/1344738825/ai-look-up/blob/840ff04c25bf3e6d6b5cacfd94b4c28444d0419b/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-/**
- * AI Look-Up — Host plugin for the DeepSeek Harness (cordis bundle).
- *
- * Watches the agent's behavioral rhythm and injects a self-review nudge when
- * aimless grinding is detected: the exact same command repeated, variant
- * commands that normalize to the same shape, long runs with zero file edits,
- * dense calls with zero output, and failure loops. Also anchors the agent's
- * unreliable sense of time by injecting the real local clock periodically.
- *
- * v0.4: when a trigger fires and the `llm` service is present, an independent
- * reviewer LLM call (same provider/model route as the main agent, temperature
- * 0, strict JSON verdict) judges the recent behavior; its verdict is injected
- * instead of the static checklist. Any reviewer failure falls back to the
- * static checklist, so the plugin degrades gracefully.
- *
- * Extension points (see the cordis-plugin-development skill):
- * - `tools/result`      observe final tool outcomes
- * - `session/event`     reset per-turn state on `user/message`, wrap-up check on `turn/end`
- * - `agent.inject()`    mid-run context, enters the next admitted step
- * - `llm` (optional)    independent reviewer calls
- */
-
-import { randomUUID, createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, rmSync, renameSync } from 'node:fs';
-import { tmpdir } from 'node:os';
-
-const PRODUCTIVE_TOOLS = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'ApplyPatch']);
-
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
-// ---- spec.json: single source of truth shared with the Python hook ----
-const KEY_MAP = {
-  call_nudge_interval: 'callNudgeInterval',
-  repeat_window: 'repeatWindow',
-  repeat_cmd_count: 'repeatCmdCount',
-  repeat_min_calls: 'repeatMinCalls',
-  max_recent_cmds: 'maxRecentCmds',
-  fail_streak_threshold: 'failStreakThreshold',
-  long_run_minutes: 'longRunMinutes',
-```
-
-</details>
-
-#### 缺口
-
-- 触发阈值尚未用真实长任务标注真阳性和误报。
-  **影响**：采用可能把监督负担从人工盯守转为频繁提醒与额外 LLM 调用。
-  **进一步探讨**：在多类长任务中盲标“确实停滞/正常探索”，计算触发精确率、提醒后进展率和每个有效提醒的 token 成本。
+- 未运行 DSH、工具事件或审查模型
+  **影响**：无法确认提醒有效性、数据流和成本
+  **进一步探讨**：在隔离任务验证触发、失败回退、场景切换和用量
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
