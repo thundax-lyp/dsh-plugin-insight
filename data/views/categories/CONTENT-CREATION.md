@@ -19,7 +19,7 @@
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
-| [DeepSeek iVideo](#plugin-1335095892-packages-deepseek-ivideo) | 在DSH中加入HyperFrames视频时间线，编辑本地项目、预览并提供受限自动校验。 | [Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) 在许可范围内短片副本试用，先确定导出验收和人工全片责任；模型validate只作有限检查，不能当最终发布门槛。 |
+| [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
@@ -30,11 +30,10 @@
 | [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
-| [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 通过 Postiz MCP 在 DSH 中连接社交账号、读取平台规则并准备草稿或安排发布 | [Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) 先观察并以只读账号规则查验为入口；草稿与发布必须回读远端，无法确认时停止DSH写操作回Postiz界面。 |
+| [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 连接 Postiz MCP，辅助 DSH 创建、排期和发布社媒内容。 | [Q04](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q04) 优先隔离账号和草稿，提交前核对目标、内容、时间及授权。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
-| [dsh-tavern](#plugin-1335944000-root) | 高度定制的DSH酒馆Profile，以前台叙事、后台状态结算和角色卡资源支持连续剧情互动。 | [Q04](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q04)仅建议能管理备份和变量的角色卡用户用独立档案试用，固定卡片与模型先验收状态再看速度。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
@@ -171,17 +170,17 @@
 
 <a id="plugin-1335095892-packages-deepseek-ivideo"></a>
 
-## [DeepSeek iVideo](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md)
+## [deepseek-ivideo](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md)
 
-[![GitHub ★ 1,604](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C604&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 994](https://img.shields.io/static/v1?label=npm+30d&message=994&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo)
+[![GitHub ★ 1,661](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C661&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Devin-AXIS/deepseek-design) [![npm 30d 1,023](https://img.shields.io/static/v1?label=npm+30d&message=1%2C023&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo) [![最新发布 2026-08-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-ivideo)
 
-> **用途**：能人工验收短视频的用户，在对话与时间线间迭代产品演示和动态信息项目。
+> **用途**：DSH 用户希望在对话和视频时间线之间迭代短视频。
 
-> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q01)、[Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q02) 将上游HyperFrames作为同会话本地视频工作流，增加预览资源归属与受限校验交接；编辑器引擎贡献归上游。
+> **亮点**：[Q01](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q01) 会话中提供视频视图；[Q02](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q02) 工作区绑定和模型校验为可解释接线，编辑渲染继承打包运行时。
 
-> **思考**：[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) validate采用5样本并限40问题，退出码0不等于整段视频和业务内容验收；短时缺陷与最终导出仍需检查。
+> **思考**：[Q03](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q03) 失败回滚是尽力操作，[Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 0.2.x 超出 peer 上界；视频效果未验收。
 
-> **建议**：[Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 未验证假设是公开时间覆盖并风险驱动加样，以已知短时缺陷比较漏检和渲染/人工成本；无改善即停止。
+> **建议**：[Q05](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q05) 假设将检查范围、项目和成片绑定为收据帮助决定是否审片；尚未验证。
 
 [查看完整分析](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md) · [返回表格](#category-index)
 
@@ -349,15 +348,15 @@
 
 ## [dsh-postiz](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md)
 
-[![GitHub ★ 550](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=550&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/gitroomhq/postiz-agent) [![npm 30d 963](https://img.shields.io/static/v1?label=npm+30d&message=963&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz)
+[![GitHub ★ 562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=562&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/gitroomhq/postiz-agent) [![npm 30d 1,009](https://img.shields.io/static/v1?label=npm+30d&message=1%2C009&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-postiz)
 
-> **用途**：已使用Postiz的运营人员希望在DSH编写内容并查账号/平台规则；本地组件负责接入和工作流提示。
+> **用途**：需要在 DSH 中准备和排期多渠道内容的社媒运营者。
 
-> **亮点**：[Q01](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q01) 将环境凭据、MCP连接与平台工作流Skill包装为bundle，减少手工接线；不是自己实现社交平台发布引擎。
+> **亮点**：[Q02](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q02) 将连接配置和平台工作流整合进 DSH。
 
-> **思考**：[Q02](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q02) Skill中的draft/now要求不是硬门禁，连接重试不保证业务幂等；本地未保存发布收据，未知结果必须回远端对账。
+> **思考**：[Q03](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q03) skill 中的授权与草稿指示不是插件内强制执行。
 
-> **建议**：可推导未验证的发布收据适配层。先把内容、账号、时间和附件摘要作为待确认对象，确认后绑定远端草稿/任务ID；超时先查该ID，内容变化则要求新的决定。这比Skill中的“明确要求now”多了可核对的状态绑定，且重连不再被误当自动重提依据。
+> **建议**：[Q05](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q05) 在已有草稿和列表外对照提交前明细，验证误发布和重复率。
 
 [查看完整分析](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md) · [返回表格](#category-index)
 
@@ -408,22 +407,6 @@
 > **建议**：未验证假设是显式标注单位与算法覆盖，并将统计移入可取消worker，减少误验及界面阻塞；对照自交/单位错误/大网格任务，若误判或总成本不改善则否定。[Q05](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1335944000-root"></a>
-
-## [dsh-tavern](../../plugins/flizzywine--dsh-tavern/INSIGHT.md)
-
-[![GitHub ★ 1,314](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C314&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/flizzywine/dsh-tavern) [![npm 30d 1,273](https://img.shields.io/static/v1?label=npm+30d&message=1%2C273&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-tavern)
-
-> **用途**：面向用角色卡、世界书和变量设定进行连续剧情的人，合格结果同时包括可读正文、可回溯分支以及与剧情一致的角色/变量状态。普通提示词加手工记账或既有酒馆中的脚本是直接基线，不因界面或功能表更长就认定替代品不能完成任务。
-
-> **亮点**：[Q01](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q01)、[Q02](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q02)识别的具体贡献是把正文成功与派生结算成功解耦：后台失败保留正文，旧revision结果被拒绝。[Q05](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q05)的隔离effect与身份守卫降低直接旧草稿覆盖当前状态的风险。角色卡、脚本和酒馆基本形态有既有基线，不将全部生态包装成原创；正文可用性收益尚需实际任务度量。
-
-> **思考**：[Q03](../../plugins/flizzywine--dsh-tavern/INSIGHT.md#research-q03)指出正文先提交且下一轮不阻塞会让变量落后剧情。版本守卫拒绝旧结果，却不证明新变量语义正确，也不能回滚脚本外部动作；外部副作用后的禁重试正说明边界。若状态密集任务持续用旧值决策，保住正文不足以认定合格交付。
-
-> **建议**：未验证假设是为正文和派生状态分别显示revision水位，仅当用户下一步显式依赖未结算变量时暂停该动作或先确认旧状态；普通阅读/无状态对话继续。它来自Q03中“不阻塞下一轮”与旧值风险的张力，不是现有已实现能力。
-
-[查看完整分析](../../plugins/flizzywine--dsh-tavern/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1204369117-packages-dsh-tongflow"></a>
 
