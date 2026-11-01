@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[f4e57a7](https://github.com/121212165/dsh-plugin-ide-hub/tree/f4e57a76bb8ac36867d237d148352ec15dfc0bc3)
+源码版本：[a1fd8af](https://github.com/121212165/dsh-plugin-ide-hub/tree/a1fd8af301675b41e9115e22f837d9f466c2d351)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/121212165/dsh-plugin-ide-hub) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-ide-hub)
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/121212165/dsh-plugin-ide-hub) [![npm 30d 554](https://img.shields.io/static/v1?label=npm+30d&message=554&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-ide-hub) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-ide-hub)
 <!-- END META -->
 
-> **功能**：汇总多IDE本地会话、用量和规则，生成规则指针、配额计划与Obsidian快照。
+> **功能**：在 DSH 汇总本地编码工具的会话、用量和项目规则。
 
-> **亮点**：把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 集中本地盘点，[Q02](#research-q02) 提供恢复命令与规则初始化。
 
-> **主要限制**：运行导入依赖只列为devDependencies，扫描用stat跟随链接，计量字段依赖私有格式，批量写无事务；静态风险尚未等同真实失败。[Q03](#research-q03)、[Q04](#research-q04)
+> **主要限制**：[Q03](#research-q03) 移除直接删除 STRUCTURE.json，标记外空白也可能规范；扫描失败可被跳过。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 多IDE盘点与规则同步改变什么交接流程？](#detail-section-11)
-  - [Q02 · 日志、SQLite、额度与规则如何解析和聚合？](#detail-section-12)
-  - [Q03 · 计量与路径扫描是否可靠，批写是否有一致性保证？](#detail-section-13)
-  - [Q04 · 依赖闭合、初始化和导出步骤与失败成本怎样？](#detail-section-14)
-  - [Q05 · 解析纯函数和回执可复用性及收益边界如何？](#detail-section-15)
-  - [Q06 · 版本化适配器加计量可信度能否改善建议，适合谁试用？](#detail-section-16)
+  - [Q01 · IDE Hub 相对手动检查各工具解决什么？](#detail-section-11)
+  - [Q02 · 盘点、会话恢复和规则初始化如何工作？](#detail-section-12)
+  - [Q03 · 规则写入和移除如何保护或删除用户数据？](#detail-section-13)
+  - [Q04 · 隐私、依赖及安全采用是什么？](#detail-section-14)
+  - [Q05 · 如何让用户决定是否信任扫描及规则变更？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：给多IDE用户定位旧任务、维护共享规则和查看本地记录，不能直接迁移厂商额度。
+> **用途**：在多个编码工具间查看会话并维护项目规则。
 
-手工查IDE目录、维护AGENTS和普通vault导出可替代；未比较同条件恢复成功率。
+用户手工查看各 IDE 目录并维护规则文件。
 
 <a id="detail-section-3"></a>
 
@@ -53,65 +52,63 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 会话/用量盘点 | 汇总本地记录 | 私有格式覆盖不等完整计量 |
-| hub-init | 一份规则本体与多IDE指针 | 建议先dry-run，批写非事务 |
-| hub-migrate/today | 排序任务和额度计划 | 依赖手填或兄弟插件文件 |
-| hub-export | 导出vault快照 | 写逐文件快照，需管理隐私 |
+| 盘点 | 汇总本地工具数据 | 目录读取失败可能跳过 |
+| 恢复命令 | 提示支持工具的 CLI | 不等于执行成功 |
+| 规则初始化 | 写入主体与指针 | 先 dry-run 与备份 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
 |---|---|---|---|
-| Node>=22.18及DSH命令服务 | 必需 | 插件加载 | 无法使用命令 |
-| kit/schemastery可解析 | 必需 | 写文件及配置 | 导入失败风险 |
-| 本地IDE记录/手填额度 | 对应功能必需 | 盘点与计划 | 覆盖不足或建议无依据 |
-| 可写项目/vault | 写功能必需 | 指针和导出 | 可能部分写后失败 |
+| DSH 与命令服务 | 必需 | 注册命令 | 无法使用 |
+| 可读 IDE 数据目录 | 盘点需要 | 会话与用量 | 跳过或不完整 |
+| @dsh-family/kit | 包依赖 | 写入辅助 | 无法加载 |
+| 项目备份 | 写入前重要 | 保障恢复 | 误删难恢复 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 核对依赖并只读盘点 | 正确识别已知会话 |
-| 预览 | 副本hub-init dry-run | 路径与改动均可解释 |
-| 验收 | 检查规则真正生效及用量口径 | 不一致则回备份并停用建议 |
+| 准备 | 备份复制项目并核数据授权 | 不明则停止 |
+| 盘点 | 用户查看命令输出 | 对照原始 IDE 数据 |
+| 预览 | 对副本运行 dry-run | 核规则与路径 |
+| 修改 | 确认后人工核差异 | 异常停止并从备份恢复 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 本地存储，金额未知 | 依赖核对、目录与规则预览 | 干净加载未确认 |
-| 持续 | 日志扫描和vault副本 | 手填额度、核对格式/规则 | 无净节时数据 |
-| 失败恢复 | 备份和部分新文件 | 比对指针、恢复旧规则 | 多文件非事务 |
+| 准备 | 备份存储未知 | 授权和路径核查 | 可能含敏感会话 |
+| 盘点 | 本地扫描成本未知 | 核遗漏与恢复命令 | 部分读取失败被跳过 |
+| 维护 | 规则文件存储未知 | 人工复核与恢复 | 多文件事务未证 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 统一盘点 | 适配本地状态并呈现 | 八种IDE当前覆盖完整性 |
-| 用量/额度建议 | 字段解析与手填计划 | 厂商语义一致与成本正确性 |
-| 规则共享 | 标记指针保留本体 | 各IDE实际加载与整组一致性 |
+| 盘点 | 本地有限扫描 | 全部会话完整 |
+| 恢复 | 生成部分 CLI 命令 | 自动恢复成功 |
+| 规则 | 管理标记及正文模板 | 故障回滚无损 |
 
-> **思考**：运行导入依赖只列为devDependencies，扫描用stat跟随链接，计量字段依赖私有格式，批量写无事务；静态风险尚未等同真实失败。[Q03](#research-q03)、[Q04](#research-q04)
+> **思考**：[Q03](#research-q03) 移除直接删除 STRUCTURE.json，标记外空白也可能规范；扫描失败可被跳过。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把分散会话/规则与手填额度计划放到同一交接入口，保留用户规则本体；价值主要是适配和流程组织。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 集中本地盘点，[Q02](#research-q02) 提供恢复命令与规则初始化。
 
-适配器分层和内容幂等写值得借鉴；运行依赖与多文件事务边界未闭合，stat扫描与“不跟链接”的注释不符。[Q03](#research-q03)、[Q05](#research-q05)
+[Q03](#research-q03) 移除时直接删 STRUCTURE.json，标记处理会规范部分空白。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-运行导入依赖只列为devDependencies，扫描用stat跟随链接，计量字段依赖私有格式，批量写无事务；静态风险尚未等同真实失败。[Q03](#research-q03)、[Q04](#research-q04)
+[Q03](#research-q03) 移除直接删除 STRUCTURE.json，标记外空白也可能规范；扫描失败可被跳过。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先验证包在隔离profile可加载，再用项目副本dry-run检查扫描范围和指针；计量对齐真实账单后才依赖预算建议。[Q06](#research-q06)
+[Q04](#research-q04) 对复制项目先备份、dry-run 并核差异；不完整或删除风险不明时停止。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-盘点/指针与本地计量机制可查；运行依赖闭合、私有格式计量和越界扫描待验证，先观察；可信度适配器方案未验证。
+静态核查盘点、恢复命令及规则写入删除代表路径；未运行目标或外部依赖。
 
-- 已检查：作者 README、包清单、源码路径 src/plugin.ts、src/hub/usage-reader.ts、src/hub/obsidian.ts、README.md、package.json、lib/plugin.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/plugin.ts、src/hub/inventory.ts、src/hub/usage-reader.ts、package.json、src/hub/pointers.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：读取入口/发布导入、规则初始化、用量适配与Obsidian写入；未核对全部八种IDE当前二进制或真实账单。
-- 下一步：可进一步在隔离profile核对依赖，使用含外链的项目副本与真实日志做计量和写失败矩阵。
+- 边界：只读固定 README、命令入口、盘点、恢复映射和规则指针；未运行宿主、IDE 或外部 kit。
+- 下一步：[Q05](#research-q05) 核现有输出后做权限、截断和中途失败对照。
 
 **分析版本**
 
 - **仓库**：[121212165/dsh-plugin-ide-hub](https://github.com/121212165/dsh-plugin-ide-hub)
-- **版本号**：0.7.0（[固定提交 f4e57a7](https://github.com/121212165/dsh-plugin-ide-hub/tree/f4e57a76bb8ac36867d237d148352ec15dfc0bc3)）
-- **版本日期**：2026-10-24（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.7.0（[固定提交 a1fd8af](https://github.com/121212165/dsh-plugin-ide-hub/tree/a1fd8af301675b41e9115e22f837d9f466c2d351)）
+- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +135,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是版本化适配器输出覆盖与计量可信度，加内容摘要清单确认批写；用跨版本日志和中断样本衡量错误暴露与恢复质量。[Q06](#research-q06)
+[Q05](#research-q05) 假设结合覆盖、删除与备份的计划可减少误判；未验证。
 
-可进一步在隔离profile核对依赖，使用含外链的项目副本与真实日志做计量和写失败矩阵。
+[Q05](#research-q05) 核现有输出后做权限、截断和中途失败对照。
 
 <a id="detail-section-9"></a>
 
@@ -148,6 +145,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -160,633 +159,645 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/121212165/dsh-plugin-ide-hub/issues) 查看。
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/121212165/dsh-plugin-ide-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/121212165/dsh-plugin-ide-hub/issues?q=is%3Aissue+created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/121212165/dsh-plugin-ide-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z)
+
+
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核对多IDE本地统一入口的增量、计量/路径与分发边界。
+**插件研究总目标**：核查 IDE 盘点、恢复命令及规则写入删除边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 多IDE盘点与规则同步改变什么交接流程？
+### Q01 · IDE Hub 相对手动检查各工具解决什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向同时使用多个编码IDE的人，把分散的本地会话、规则、用量和配额计划放在同一命令入口，并用一份.hub规则本体给各IDE写指针。相对逐个翻目录和手工复制规则，贡献在本地读取适配与交接组织；它不实际迁移厂商额度，也不证明各IDE会读取相同指针。合格交付应是用户能定位会话、恢复正确任务并核对规则实际生效，而不是看见“8个适配器”就当所有格式都完整覆盖。
+README:17-19 描述从本地多个编码工具读取会话、用量和规则，集中在 DSH 命令中。相对手工查各目录，其增量是汇总入口和规则指针；工具本身记录、模型或官方同步不是该插件贡献。作者明确 Trae 聊天读取尚未接入会话命令；未测跨工具覆盖、时间节省及实际用户需求。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:17-30](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/README.md#L17-L30)
+**依据 1 · 作者声明**：[README.md:17-19](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/README.md#L17-L19)
 
-作者列出本地盘点、配额计划和指针的范围。
-
-<details>
-<summary>查看原文（14行）</summary>
+作者描述用途及 Trae 限制。
 
 ```text
 **EN** · One hub over the coding IDEs you actually run — dsh, Claude Code, Codex, ZCode, Qoder, CatPaw, Trae, OpenCode. It reads each tool's own on-disk state (sessions, usage, prompt-rule files) instead of calling any API, then gives you an inventory (`/ide-hub`), a quota-runway migration plan (`/hub-migrate`), usage breakdowns (`/hub-usage`), resumable sessions (`/hub-sessions`), a ranked "what should I do first" over the sibling plugins (`/today`) and an Obsidian export (`/hub-export`) — and, since `/hub-init`, writes back exactly one thing: a `.hub/` rule body plus a marker-delimited pointer in each tool's project rule file. · 45 `node --test` green · reads real local data on this machine · v0.4's Trae chat reader is **not yet wired into `/hub-sessions`** — see 已知边界.
 
 DeepSeek Harness (dsh) 插件：跨 IDE 统一管理器。各家编码 IDE 都把会话、用量、提示词规则写在自己的磁盘目录里，本插件直接读这些文件（不调任何厂商 API），在 dsh 里出六个命令。读之外只有一处写：`/hub-init` 往**你自己指定的项目目录**里装 `.hub/` 规则本体与各 IDE 的指针段。
-
-## 功能
-
-- **`/ide-hub`**：8 个适配器的在装盘点（`N/8 在装，其中国产 M`）+ 每个工具的提示词规则文件发现（CLAUDE.md / AGENTS.md / .cursorrules 一类）。
-- **`/hub-init [目录] [--dry-run] [--only …] [--remove]`**：指针生成器。建 `.hub/AGENTS.md`（规则本体，一份正文多处生效）+ `.hub/PROJECT_NOTES.md` + `.hub/STRUCTURE.json`（深度 2 的结构快照），再放 `hub-pointer` 标记段：**8 个工具全覆盖**——项目根 `AGENTS.md` 一份服务 codex / opencode / zcode / dsh / **qoder / catpaw**，`CLAUDE.md` 服务 Claude Code，Trae 因为它的「项目根 AGENTS.md」是设置里的开关（"Include AGENTS.md in the context"），单独写 `.trae/rules/project_rules.md` **和** `.trae-cn/rules/project_rules.md`（本机装的 TRAE SOLO CN 两条路径都在用）。
-- 这些路径不是从文档抄的：2026-10-02 用 grep 从本机安装的厂商二进制里读出来（Trae 的 `ai-modules-chat/dist/index.mjs` 设置文案、Qoder 的 `qoder-worker-runtime.obf.mjs` 里 `AGENTS.override.md → AGENTS.md` 与 `projectConfigName=.qoder/.qoder-cn`、CatPaw 的 `catpaw-cli.exe` 里 `loadProjectRules(.catpaw/rules)` 与 `loadAgentMdFiles`）。**CatPaw 的 `.catpaw` 目录名可被 `CATPAW_DIR` 覆盖，所以指针挂 `AGENTS.md` 而不是它。**
-- **`/hub-usage`**：用量。zcode 走本地 `model_usage` 库，出总量、轮数、缓存命中率、非完成态与工具错误数，并按 `provider/model` 逐行拆；claude-code / codex 走各自转录统计。
-- **`/hub-sessions`**：最近会话列表 + 一键恢复命令（`claude --resume …` / `codex resume …` / `dsh --profile … --resume …`）。
-- **`/today`**：**今天第一件事**。把四个兄弟插件写在磁盘上的事实汇成一个排序结论——quota 的 `summary.json`（预算与下步预估）、cost-ledger 的当月台账、task-forge 的 `ledger.jsonl`（谁卡在等谁）、tool-trace 的调用记录（连败=系统性故障）。规则表在 `src/hub/today.ts`，是纯函数、逐条有测试；读不到哪个文件就在输出里点名「看不到的部分」，不假装全知。
-- **`/hub-migrate`**：配额迁移计划。按你配的 `remainingMajor` / `dailyMajor` / `priority` 算每个工具的耗尽倒计时，并给出该把活优先挪给谁。
-- **`/hub-export`**：把盘点结果与规则文件导出成 Obsidian 笔记（`IDE-Hub/` 子树），未变化的文件跳过。
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/plugin.ts:340-349](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L340-L349)
 
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 日志、SQLite、额度与规则如何解析和聚合？
-
-**研究主题**：功能与机制
-
-#### 完整回答
-
-入口按registry对本地目录盘点，再由对应适配器解析日志/数据库；配额建议来自用户配置remainingMajor/dailyMajor，不是厂商实时查询。hub-init保留已有规则本体与备忘，更新结构快照并逐目标mergePointer；hub-export生成Obsidian快照，内容相同跳过写入。Codex读取total_token_usage，output字段直接把output_tokens与reasoning_output_tokens相加；若上游字段语义是包含关系，会高估。仅源码可说明公式，不能从fixture自洽证明各版本计量正确。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/plugin.ts:70-87](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L70-L87)
-
-配额与兄弟插件路径由配置供给。
+注册盘点命令。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-export const Config = Schema.object({
-  enabled: Schema.boolean().default(true),
-  vaultDir: Schema.string(),
-  quotas: Schema.array(
-    Schema.object({
-      tool: Schema.string().required(),
-      remainingMajor: Schema.number().required(),
-      dailyMajor: Schema.number().default(0),
-      priority: Schema.union([Schema.const('work'), Schema.const('batch'), Schema.const('learning')]).default('work'),
-    }),
-  ).default([]),
-  quotaSummaryPath: Schema.string().default(TODAY_DEFAULTS.quotaSummaryPath),
-  costLedgerDir: Schema.string().default(TODAY_DEFAULTS.costLedgerDir),
-  taskForgeLedger: Schema.string().default(TODAY_DEFAULTS.taskForgeLedger),
-  toolTraceDir: Schema.string().default(TODAY_DEFAULTS.toolTraceDir),
-  sessionInsightsDir: Schema.string().default(TODAY_DEFAULTS.sessionInsightsDir),
-  forecastPath: Schema.string().default(TODAY_DEFAULTS.forecastPath),
-  todayWindowDays: Schema.natural().default(TODAY_DEFAULTS.todayWindowDays),
+  ctx.commands.register({
+    name: 'ide-hub',
+    description: '跨 IDE 数据盘点：Trae/Qoder/ZCode/CatPaw/Codex/Claude Code/OpenCode/dsh 的会话与规则文件',
+    handler: () => {
+      const inventories = registry.map(inventory);
+      const rules: RuleFileInfo[] = discoverRules(registry);
+      const lines = [renderInventory(inventories), '', `提示词规则文件 ${rules.length} 份:`, ...rules.map((rule) => `  [${rule.tool}] ${rule.path}`)];
+      return { kind: 'success', text: lines.join('\n') };
+    },
+  });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/plugin.ts:285-314](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L285-L314)
+**依据 3 · 源码核查**：[src/hub/inventory.ts:94-105](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/inventory.ts#L94-L105)
 
-规则本体保留、结构和逐目标指针写入。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-  const bodyPath = join(root, HUB_BODY);
-  if (readIf(bodyPath) !== null) {
-    changes.push({ file: rel(bodyPath), outcome: 'kept', detail: '规则本体已存在，里面是项目自己的内容，未覆盖' });
-  } else {
-    changes.push(write(bodyPath, rel(bodyPath), renderHubAgents(project), '按模板新建，去填目标/命令/禁忌'));
-  }
-
-  const notesPath = join(root, '.hub', 'PROJECT_NOTES.md');
-  if (readIf(notesPath) !== null) {
-    changes.push({ file: rel(notesPath), outcome: 'kept', detail: '备忘已存在，未覆盖' });
-  } else {
-    changes.push(write(notesPath, rel(notesPath), renderProjectNotes(project), '按模板新建'));
-  }
-
-  const scan = scanTree(root);
-  const structurePath = join(root, '.hub', 'STRUCTURE.json');
-  changes.push(write(structurePath, rel(structurePath), renderStructureJson(project, scan.entries, now), `结构快照 ${scan.entries.length} 个条目（深度 2，跳过 .git 与 node_modules 等）`));
-
-  const block = pointerBlock();
-  for (const target of targets) {
-    const file = join(root, target.path);
-    const merged = mergePointer(readIf(file), block);
-    if (merged.action === 'noop') {
-      changes.push({ file: target.path, outcome: 'unchanged', detail: `指针段已在（${target.tools.join('/')}）` });
-      continue;
-    }
-    const how = merged.action === 'create' ? '新建' : merged.action === 'append' ? '在已有内容后追加' : '重写';
-    changes.push(write(file, target.path, merged.content, `${how}指针段 → ${target.tools.join('/')}（${target.notes[0] ?? '路径未核实'}）`));
-  }
-  return { project, root, changes, manual: manual.map((spec) => ({ tool: spec.tool, note: spec.note })), truncated: scan.truncated };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/hub/usage-reader.ts:95-112](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/usage-reader.ts#L95-L112)
-
-Codex总量字段和输出相加的具体公式。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export function codexRecord(line: CodexLine): UsageRecord | null {
-  if (line.type !== 'event_msg') return null;
-  const payload = line.payload;
-  const total = payload?.info?.total_token_usage;
-  if (payload?.type !== 'token_count' || !total || !line.timestamp) return null;
-  const input = num(total.input_tokens);
-  const output = num(total.output_tokens) + num(total.reasoning_output_tokens);
-  const cacheRead = num(total.cached_input_tokens);
-  return {
-    tool: 'codex',
-    sessionId: payload.session_id ?? 'unknown',
-    at: line.timestamp,
-    day: dayOf(line.timestamp),
-    inputTokens: input,
-    outputTokens: output,
-    cacheReadTokens: cacheRead,
-    cacheWriteTokens: 0,
-  };
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/hub/obsidian.ts:80-93](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/obsidian.ts#L80-L93)
-
-导出逐文件写入与相同内容跳过。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/** Idempotent write: identical content skips, changed content overwrites. */
-export function writeNotes(vaultDir: string, notes: ObsidianNote[]): { written: string[]; skipped: number } {
-  const written: string[] = [];
-  let skipped = 0;
-  for (const note of notes) {
-    const file = join(vaultDir, note.path);
-    if (existsSync(file) && readFileSync(file, 'utf8') === note.content) {
-      skipped++;
-      continue;
-    }
-    writeFileAtomic(file, note.content);
-    written.push(note.path);
-  }
-  return { written, skipped };
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 计量与路径扫描是否可靠，批写是否有一致性保证？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-结构扫描虽然声称不跟符号链接，实际先丢弃Dirent类型再statSync，遇到指向外部目录的链接会按目录进入，深度/数量上限仅限制范围，不能替代根目录围栏。用量解析依赖厂商私有格式，total累计记录的聚合及输出包含关系需独立核查；本轮不把潜在重复计量写成已确认账单错误。指针与Obsidian写入均逐文件完成，没有整组提交或回滚，失败可能留下部分新规则/旧快照。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/plugin.ts:115-150](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L115-L150)
-
-statSync跟随链接且递归。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-export function scanTree(root: string, limit = 300, depth = 2): TreeScan {
-  const entries: TreeEntry[] = [];
-  let truncated = false;
-  const walk = (dir: string, level: number): void => {
-    if (truncated || level > depth) return;
-    let names: string[];
-    try {
-      names = readdirSync(dir, { withFileTypes: true })
-        .filter((entry) => !entry.name.startsWith('.') && !SKIP_DIRS.has(entry.name))
-        .map((entry) => entry.name)
-        .sort();
-    } catch {
-      return;
-    }
-    for (const name of names) {
-      if (entries.length >= limit) {
-        truncated = true;
-        return;
-      }
-      const full = join(dir, name);
-      const rel = relative(root, full).replace(/\\/g, '/');
-      let stat;
-      try {
-        stat = statSync(full);
-      } catch {
-        continue;
-      }
-      if (stat.isDirectory()) {
-        entries.push({ path: `${rel}/`, kind: 'dir' });
-        walk(full, level + 1);
-      } else if (stat.isFile()) {
-        entries.push({ path: rel, kind: 'file', size: stat.size });
-      }
-    }
-  };
-  walk(root, 1);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/hub/usage-reader.ts:95-112](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/usage-reader.ts#L95-L112)
-
-计量假设由源码明确可见。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export function codexRecord(line: CodexLine): UsageRecord | null {
-  if (line.type !== 'event_msg') return null;
-  const payload = line.payload;
-  const total = payload?.info?.total_token_usage;
-  if (payload?.type !== 'token_count' || !total || !line.timestamp) return null;
-  const input = num(total.input_tokens);
-  const output = num(total.output_tokens) + num(total.reasoning_output_tokens);
-  const cacheRead = num(total.cached_input_tokens);
-  return {
-    tool: 'codex',
-    sessionId: payload.session_id ?? 'unknown',
-    at: line.timestamp,
-    day: dayOf(line.timestamp),
-    inputTokens: input,
-    outputTokens: output,
-    cacheReadTokens: cacheRead,
-    cacheWriteTokens: 0,
-  };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/hub/obsidian.ts:80-93](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/obsidian.ts#L80-L93)
-
-逐笔写不构成多文件事务。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/** Idempotent write: identical content skips, changed content overwrites. */
-export function writeNotes(vaultDir: string, notes: ObsidianNote[]): { written: string[]; skipped: number } {
-  const written: string[] = [];
-  let skipped = 0;
-  for (const note of notes) {
-    const file = join(vaultDir, note.path);
-    if (existsSync(file) && readFileSync(file, 'utf8') === note.content) {
-      skipped++;
-      continue;
-    }
-    writeFileAtomic(file, note.content);
-    written.push(note.path);
-  }
-  return { written, skipped };
-```
-
-</details>
-
-#### 缺口
-
-- 真实IDE版本字段定义、累计去重和符号链接目录样本未独立验证
-  **影响**：盘点范围及用量建议可能偏离实际
-  **进一步探讨**：与厂商账单/原始记录对齐，并在目录副本加入外链和中途写失败
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 依赖闭合、初始化和导出步骤与失败成本怎样？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-源码和发布lib都在运行时导入@dsh-family/kit与schemastery，但包清单把它们放在devDependencies，peer仅声明cordis。由此不能证明干净消费者环境会解析到这些包；有宿主或工作区偶然提供时可能可用，不能据静态清单断言必定无法加载。用户先确认Node>=22.18、宿主依赖及只读盘点，再对项目副本运行dry-run，审阅指针目标和vault范围后才写。未知依赖闭合影响当前可控试用路径，因此先观察，不以作者历史干净房报告替代本固定版本安装。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/plugin.ts:6-12](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L6-L12)
-
-运行时导入schemastery和kit。
-
-```text
-import type { Context } from '@deepseek-ai/cordis';
-import Schema from '@deepseek-ai/schemastery';
-import type {} from '@deepseek-ai/dsh-commands';
-import { existsSync, readFileSync, readdirSync, rmdirSync, rmSync, statSync } from 'node:fs';
-import { basename, dirname, join, relative, resolve } from 'node:path';
-
-import { writeFileAtomic } from '@dsh-family/kit';
-```
-
-**依据 2 · 源码核查**：[lib/plugin.js:1-8](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/lib/plugin.js#L1-L8)
-
-发布产物仍含外部运行时导入。
-
-```text
-import Schema from '@deepseek-ai/schemastery';
-import { existsSync, readFileSync, readdirSync, rmdirSync, rmSync, statSync } from 'node:fs';
-import { basename, dirname, join, relative, resolve } from 'node:path';
-import { writeFileAtomic } from '@dsh-family/kit';
-import { defaultRegistry } from './hub/registry.js';
-import { inventory, expandPath } from './hub/inventory.js';
-import { HUB_BODY, POINTER_SPECS, mergePointer, pointerBlock, pointerTargets, renderHubAgents, renderProjectNotes, renderStructureJson, unmergePointer, } from './hub/pointers.js';
-import { planMigration, renderPlan } from './hub/migrate.js';
-```
-
-**依据 3 · 源码核查**：[package.json:57-69](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/package.json#L57-L69)
-
-这些包位于开发依赖，peer只列cordis。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  },
-  "sideEffects": false,
-  "devDependencies": {
-    "@deepseek-ai/cordis": "4.0.2",
-    "@deepseek-ai/dsh-base": "^0.1.2-alpha.4",
-    "@deepseek-ai/schemastery": "3.18.2",
-    "@deepseek-ai/dsh-tools": "^0.1.2-alpha.4",
-    "@types/node": "26.6.2",
-    "typescript": "7.0.2",
-    "@dsh-family/kit": "github:121212165/dsh-plugin-kit#v0.1.0"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": ">=4.0.0"
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.md:32-46](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/README.md#L32-L46)
-
-作者安装流程和历史环境。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-````text
-## 安装
-
-三步，2026-10-03 在**全新 `DSH_HOME`** 上按本文档重跑通过（`@deepseek-ai/dsh@0.2.0-rc.2` + `pnpm 10.20.0`）：
-
-```sh
-# ① 装进 profile：dsh plugin 把参数原样转发给 pnpm，git 包会自动跑 prepare 构建 lib/
-dsh plugin --profile web add github:121212165/dsh-plugin-ide-hub
-```
-
-② 把本仓库根目录 `cordis.patch.yml` 的内容**并进** `$DSH_HOME/profiles/web/cordis.patch.yml`。
-该文件默认是 `[]`，所以要么整份替换，要么把 insert 条目并进同一个数组；**不要直接追加**——
-追加会形成两个 YAML 文档，启动即报
-`failed to parse overlay ... end of the stream or a document separator is expected`（本机实测踩过）。
-
-③ 重启 dsh。配置层与 client 半都要重启才生效（客户端按 boot 时算出的内容 rev 下发，硬刷新浏览器没用）。
-````
-
-</details>
-
-#### 缺口
-
-- 固定版本独立消费者依赖解析尚无证据
-  **影响**：无法确认可按文档直接加载
-  **进一步探讨**：在隔离profile只安装发布包核对导入解析与禁用退出，保留依赖树
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 解析纯函数和回执可复用性及收益边界如何？
-
-**研究主题**：效果与总成本、工程质量与复用
-
-#### 完整回答
-
-可借鉴适配器、纯聚合与命令层分离，规则merge保留用户正文并返回每文件结果，导出按内容跳过减少重复写。移植成本主要是各IDE私有路径/SQLite schema变动和计量语义维护；原子单文件写依赖外部kit，不应把它算作本项目原创。以一次“定位旧任务并用正确规则恢复”为合格单位，首次配置目录/额度与依赖，持续需手填额度和复核建议，失败需恢复部分写入文件。无真实节时/差错率数据，不能将零API等同零成本。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/plugin.ts:285-314](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L285-L314)
-
-本体保留、逐项结果与指针合并。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-  const bodyPath = join(root, HUB_BODY);
-  if (readIf(bodyPath) !== null) {
-    changes.push({ file: rel(bodyPath), outcome: 'kept', detail: '规则本体已存在，里面是项目自己的内容，未覆盖' });
-  } else {
-    changes.push(write(bodyPath, rel(bodyPath), renderHubAgents(project), '按模板新建，去填目标/命令/禁忌'));
-  }
-
-  const notesPath = join(root, '.hub', 'PROJECT_NOTES.md');
-  if (readIf(notesPath) !== null) {
-    changes.push({ file: rel(notesPath), outcome: 'kept', detail: '备忘已存在，未覆盖' });
-  } else {
-    changes.push(write(notesPath, rel(notesPath), renderProjectNotes(project), '按模板新建'));
-  }
-
-  const scan = scanTree(root);
-  const structurePath = join(root, '.hub', 'STRUCTURE.json');
-  changes.push(write(structurePath, rel(structurePath), renderStructureJson(project, scan.entries, now), `结构快照 ${scan.entries.length} 个条目（深度 2，跳过 .git 与 node_modules 等）`));
-
-  const block = pointerBlock();
-  for (const target of targets) {
-    const file = join(root, target.path);
-    const merged = mergePointer(readIf(file), block);
-    if (merged.action === 'noop') {
-      changes.push({ file: target.path, outcome: 'unchanged', detail: `指针段已在（${target.tools.join('/')}）` });
-      continue;
-    }
-    const how = merged.action === 'create' ? '新建' : merged.action === 'append' ? '在已有内容后追加' : '重写';
-    changes.push(write(file, target.path, merged.content, `${how}指针段 → ${target.tools.join('/')}（${target.notes[0] ?? '路径未核实'}）`));
-  }
-  return { project, root, changes, manual: manual.map((spec) => ({ tool: spec.tool, note: spec.note })), truncated: scan.truncated };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/hub/obsidian.ts:80-93](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/obsidian.ts#L80-L93)
-
-内容幂等写与外部kit依赖。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/** Idempotent write: identical content skips, changed content overwrites. */
-export function writeNotes(vaultDir: string, notes: ObsidianNote[]): { written: string[]; skipped: number } {
-  const written: string[] = [];
-  let skipped = 0;
-  for (const note of notes) {
-    const file = join(vaultDir, note.path);
-    if (existsSync(file) && readFileSync(file, 'utf8') === note.content) {
-      skipped++;
-      continue;
-    }
-    writeFileAtomic(file, note.content);
-    written.push(note.path);
-  }
-  return { written, skipped };
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:28-30](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/README.md#L28-L30)
-
-today信息和额度计划输入来源。
-
-```text
-- **`/today`**：**今天第一件事**。把四个兄弟插件写在磁盘上的事实汇成一个排序结论——quota 的 `summary.json`（预算与下步预估）、cost-ledger 的当月台账、task-forge 的 `ledger.jsonl`（谁卡在等谁）、tool-trace 的调用记录（连败=系统性故障）。规则表在 `src/hub/today.ts`，是纯函数、逐条有测试；读不到哪个文件就在输出里点名「看不到的部分」，不假装全知。
-- **`/hub-migrate`**：配额迁移计划。按你配的 `remainingMajor` / `dailyMajor` / `priority` 算每个工具的耗尽倒计时，并给出该把活优先挪给谁。
-- **`/hub-export`**：把盘点结果与规则文件导出成 Obsidian 笔记（`IDE-Hub/` 子树），未变化的文件跳过。
-```
-
-#### 缺口
-
-- 合格会话恢复和规则生效的独立成功率缺失
-  **影响**：未知统一入口是否抵消适配维护负担
-  **进一步探讨**：用同一多IDE任务比较手动与hub流程，计入规则核验和格式修正时间
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 版本化适配器加计量可信度能否改善建议，适合谁试用？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-未验证方向是让每个适配器返回格式版本、覆盖范围、字段语义与去重口径，无法核实时只给原始计数而不输出确定预算建议；规则批写再以预览清单和内容摘要作统一确认。它由私有格式与多文件写入边界推导，相对增加适配器数量更强调可信度，代价是维护版本矩阵及显式未知状态。先用跨版本真实日志和中断写入样本检验错误计量、越界扫描及部分更新是否被暴露；若不能改善用户恢复正确率则否定。当前先观察，依赖闭合及扫描边界确认后才对副本试用。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/hub/usage-reader.ts:95-112](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/hub/usage-reader.ts#L95-L112)
-
-字段语义需版本化。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export function codexRecord(line: CodexLine): UsageRecord | null {
-  if (line.type !== 'event_msg') return null;
-  const payload = line.payload;
-  const total = payload?.info?.total_token_usage;
-  if (payload?.type !== 'token_count' || !total || !line.timestamp) return null;
-  const input = num(total.input_tokens);
-  const output = num(total.output_tokens) + num(total.reasoning_output_tokens);
-  const cacheRead = num(total.cached_input_tokens);
-  return {
-    tool: 'codex',
-    sessionId: payload.session_id ?? 'unknown',
-    at: line.timestamp,
-    day: dayOf(line.timestamp),
-    inputTokens: input,
-    outputTokens: output,
-    cacheReadTokens: cacheRead,
-    cacheWriteTokens: 0,
-  };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/plugin.ts:115-150](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L115-L150)
-
-扫描边界需要显式覆盖证明。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-export function scanTree(root: string, limit = 300, depth = 2): TreeScan {
-  const entries: TreeEntry[] = [];
-  let truncated = false;
-  const walk = (dir: string, level: number): void => {
-    if (truncated || level > depth) return;
-    let names: string[];
-    try {
-      names = readdirSync(dir, { withFileTypes: true })
-        .filter((entry) => !entry.name.startsWith('.') && !SKIP_DIRS.has(entry.name))
-        .map((entry) => entry.name)
-        .sort();
-    } catch {
-      return;
-    }
-    for (const name of names) {
-      if (entries.length >= limit) {
-        truncated = true;
-        return;
-      }
-      const full = join(dir, name);
-      const rel = relative(root, full).replace(/\\/g, '/');
-      let stat;
-      try {
-        stat = statSync(full);
-      } catch {
-        continue;
-      }
-      if (stat.isDirectory()) {
-        entries.push({ path: `${rel}/`, kind: 'dir' });
-        walk(full, level + 1);
-      } else if (stat.isFile()) {
-        entries.push({ path: rel, kind: 'file', size: stat.size });
-      }
-    }
-  };
-  walk(root, 1);
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/plugin.ts:303-314](https://github.com/121212165/dsh-plugin-ide-hub/blob/f4e57a76bb8ac36867d237d148352ec15dfc0bc3/src/plugin.ts#L303-L314)
-
-逐文件写可由清单化确认改造。
+遍历各配置根目录。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-  const block = pointerBlock();
-  for (const target of targets) {
-    const file = join(root, target.path);
-    const merged = mergePointer(readIf(file), block);
-    if (merged.action === 'noop') {
-      changes.push({ file: target.path, outcome: 'unchanged', detail: `指针段已在（${target.tools.join('/')}）` });
+export function inventory(spec: IdeSpec): IdeInventory {
+  const roots: IdeInventory['roots'] = [];
+  for (const raw of spec.dataRoots) {
+    const root = expandPath(raw);
+    if (!existsSync(root)) {
+      roots.push({ root, present: false, sessions: 0, bytes: 0, lastActive: null });
       continue;
     }
-    const how = merged.action === 'create' ? '新建' : merged.action === 'append' ? '在已有内容后追加' : '重写';
-    changes.push(write(file, target.path, merged.content, `${how}指针段 → ${target.tools.join('/')}（${target.notes[0] ?? '路径未核实'}）`));
+    const state: WalkStat = { sessions: 0, bytes: 0, lastActive: null };
+    walk(root, spec, 0, state);
+    roots.push({ root, present: true, sessions: state.sessions, bytes: state.bytes, lastActive: state.lastActive ? new Date(state.lastActive).toISOString() : null });
   }
-  return { project, root, changes, manual: manual.map((spec) => ({ tool: spec.tool, note: spec.note })), truncated: scan.truncated };
 ```
 
 </details>
+
+#### 缺口
+
+- 未测真实工具或覆盖率
+  **影响**：不能保证所有会话完整
+  **进一步探讨**：对照各工具原始数据进行盘点。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 盘点、会话恢复和规则初始化如何工作？
+
+**研究主题**：功能与机制、依赖、兼容与流程
+
+#### 完整回答
+
+plugin.ts:340-349 注册 /ide-hub 并调用 registry.map(inventory)；inventory.ts:31-37、94-105 限深扫描，读目录失败直接返回，不能将计数作为完整事实。usage-reader.ts:117-132 对支持的工具生成恢复命令字符串，不等于自动执行或成功恢复。plugin.ts:351-382 注册 /hub-init 并解析目录及 dry-run，实际规则文件写入由 runHubInit 路径负责；@dsh-family/kit 的写入实现不在本仓库，不能自行断言其底层原子性。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/plugin.ts:340-382](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L340-L382)
+
+注册盘点和初始化命令。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+  ctx.commands.register({
+    name: 'ide-hub',
+    description: '跨 IDE 数据盘点：Trae/Qoder/ZCode/CatPaw/Codex/Claude Code/OpenCode/dsh 的会话与规则文件',
+    handler: () => {
+      const inventories = registry.map(inventory);
+      const rules: RuleFileInfo[] = discoverRules(registry);
+      const lines = [renderInventory(inventories), '', `提示词规则文件 ${rules.length} 份:`, ...rules.map((rule) => `  [${rule.tool}] ${rule.path}`)];
+      return { kind: 'success', text: lines.join('\n') };
+    },
+  });
+
+  ctx.commands.register({
+    name: 'hub-init',
+    description: '给项目装 .hub/ 规则本体并给各 IDE 的项目级规则文件挂指针：/hub-init [目录] [--dry-run] [--only codex,claude-code] [--remove]',
+    input: { hint: '[目录] [--dry-run] [--only 工具,…] [--remove]' },
+    handler: ({ rawInput }) => {
+      const raw = String(rawInput ?? '').trim();
+      const remove = /(^|\s)--remove(\s|$)/.test(raw);
+      const dryRun = /(^|\s)--dry-run(\s|$)/.test(raw);
+      const onlyMatch = /(?:^|\s)--only[\s=]+(\S+)/.exec(raw);
+      const known = POINTER_SPECS.map((spec) => spec.tool);
+      const only = onlyMatch?.[1] ? onlyMatch[1].split(',').map((tool) => tool.trim().toLowerCase()).filter(Boolean) : undefined;
+      if (only) {
+        const unknown = only.filter((tool) => !known.includes(tool));
+        if (unknown.length) return { kind: 'error', text: `不认识的工具：${unknown.join(', ')}。可选：${known.join(' / ')}。` };
+      }
+      const withoutFlags = raw.replace(/--remove|--dry-run/g, '').replace(/--only[\s=]+\S+/g, '').trim();
+      const dirArg = withoutFlags.split(/\s+/)[0] ?? '';
+      const root = resolve(expandPath(dirArg || process.cwd()));
+      if (!existsSync(root) || !statSync(root).isDirectory()) {
+        return { kind: 'error', text: `目录不存在或不是目录：${root}。用法：/hub-init [项目目录]，不给目录就用当前工作目录。` };
+      }
+      const result = runHubInit(root, { remove, dryRun, only });
+      const lines = [`${dryRun ? '[dry-run] ' : ''}${remove ? '卸载' : '安装'} ${result.project} · ${root}`];
+      for (const change of result.changes) lines.push(`  ${OUTCOME_MARK[change.outcome]} ${change.file} — ${change.detail}`);
+      if (!result.changes.length) lines.push('  （没有任何本插件写过的东西）');
+      if (!remove && result.manual.length) {
+        lines.push('', '这几家的项目级规则路径本机未核实，指针没有替你写（写错文件比不写更糟）：', ...result.manual.map((item) => `  · ${item.tool}：${item.note}`));
+      }
+      if (result.truncated) lines.push('', '⚠ 结构快照到达条目上限被截断。');
+      if (!remove) lines.push('', `下一步：填 ${HUB_BODY}（目标/命令/约定/禁忌），跨窗口无损交接用 task-forge 的 /forge --to ide:<工具名>。`);
+      return { kind: 'success', text: lines.join('\n') };
+    },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/hub/inventory.ts:31-37](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/inventory.ts#L31-L37)
+
+扫描深度和读目录失败。
+
+```text
+function walk(root: string, spec: IdeSpec, depth: number, state: WalkStat): void {
+  if (depth > 4 || !existsSync(root)) return;
+  let entries: string[];
+  try {
+    entries = readdirSync(root);
+  } catch {
+    return;
+```
+
+**依据 3 · 源码核查**：[src/hub/inventory.ts:94-105](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/inventory.ts#L94-L105)
+
+按数据根盘点。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+export function inventory(spec: IdeSpec): IdeInventory {
+  const roots: IdeInventory['roots'] = [];
+  for (const raw of spec.dataRoots) {
+    const root = expandPath(raw);
+    if (!existsSync(root)) {
+      roots.push({ root, present: false, sessions: 0, bytes: 0, lastActive: null });
+      continue;
+    }
+    const state: WalkStat = { sessions: 0, bytes: 0, lastActive: null };
+    walk(root, spec, 0, state);
+    roots.push({ root, present: true, sessions: state.sessions, bytes: state.bytes, lastActive: state.lastActive ? new Date(state.lastActive).toISOString() : null });
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/hub/usage-reader.ts:117-132](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/usage-reader.ts#L117-L132)
+
+按工具构造恢复命令。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function resumeCommand(tool: string, sessionId: string, sessionPath?: string): string | null {
+  switch (tool) {
+    case 'claude-code':
+      return `claude --resume ${sessionId}`;
+    case 'codex':
+      return `codex resume ${sessionId}`;
+    case 'dsh':
+      return `dsh --resume ${sessionId}`;
+    case 'zcode':
+      return `zcode --resume ${sessionId}`;
+    case 'opencode':
+      return sessionPath ? `opencode --session ${sessionPath}` : null;
+    case 'pi':
+      return sessionPath ? `pi --session ${sessionPath}` : null;
+    default:
+      return null; // private formats: no public resume flag known yet
+```
+
+</details>
+
+**依据 5 · 源码核查**：[package.json:83-85](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/package.json#L83-L85)
+
+固定 kit 依赖。
+
+```text
+  "dependencies": {
+    "@dsh-family/kit": "github:121212165/dsh-plugin-kit#v0.2.1"
+  }
+```
+
+#### 缺口
+
+- 未运行命令或外部 kit
+  **影响**：无法证明会话恢复和写入效果
+  **进一步探讨**：隔离项目逐项核输出和文件变更。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 规则写入和移除如何保护或删除用户数据？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+plugin.ts:278-301 中 dry-run 不写，已有 .hub/AGENTS.md 与 PROJECT_NOTES 保留，STRUCTURE.json 按扫描重生成；移除时 254-270 直接删除 STRUCTURE.json，但规则正文和备忘仅在与模板完全相同时删除，否则保留。pointers.ts:61-98 根据标记抽取管理块，删除后会规范部分周围空白，并非字节完全不变。不能仅凭注释声称无残留或跨多文件事务：中途失败和外部 kit 行为未验。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/plugin.ts:254-270](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L254-L270)
+
+结构文件直接删除，已编辑模板保留。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    const structure = join(root, '.hub', 'STRUCTURE.json');
+    if (readIf(structure) !== null) {
+      if (!options.dryRun) rmSync(structure, { force: true });
+      changes.push({ file: '.hub/STRUCTURE.json', outcome: 'removed', detail: '生成物，直接删' });
+    }
+    for (const [file, template] of [
+      [join(root, HUB_BODY), renderHubAgents(project)],
+      [join(root, '.hub', 'PROJECT_NOTES.md'), renderProjectNotes(project)],
+    ] as const) {
+      const existing = readIf(file);
+      const path = rel(file);
+      if (existing === null) continue;
+      if (existing === template) {
+        if (!options.dryRun) rmSync(file, { force: true });
+        changes.push({ file: path, outcome: 'removed', detail: '仍是未改动的模板，已删除' });
+      } else {
+        changes.push({ file: path, outcome: 'kept', detail: '里面有你自己写的内容，没删——确认后手工删除' });
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/plugin.ts:278-301](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L278-L301)
+
+dry-run 与现有文件的处理。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  const write = (absolute: string, display: string, content: string, detail: string): InitChange => {
+    if (options.dryRun) {
+      return { file: display, outcome: readIf(absolute) === null ? 'created' : 'updated', detail: `${detail}（dry-run，未写盘）` };
+    }
+    return { file: display, outcome: writeIfChanged(absolute, content), detail };
+  };
+
+  const bodyPath = join(root, HUB_BODY);
+  if (readIf(bodyPath) !== null) {
+    changes.push({ file: rel(bodyPath), outcome: 'kept', detail: '规则本体已存在，里面是项目自己的内容，未覆盖' });
+  } else {
+    changes.push(write(bodyPath, rel(bodyPath), renderHubAgents(project), '按模板新建，去填目标/命令/禁忌'));
+  }
+
+  const notesPath = join(root, '.hub', 'PROJECT_NOTES.md');
+  if (readIf(notesPath) !== null) {
+    changes.push({ file: rel(notesPath), outcome: 'kept', detail: '备忘已存在，未覆盖' });
+  } else {
+    changes.push(write(notesPath, rel(notesPath), renderProjectNotes(project), '按模板新建'));
+  }
+
+  const scan = scanTree(root);
+  const structurePath = join(root, '.hub', 'STRUCTURE.json');
+  changes.push(write(structurePath, rel(structurePath), renderStructureJson(project, scan.entries, now), `结构快照 ${scan.entries.length} 个条目（深度 2，跳过 .git 与 node_modules 等）`));
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/hub/pointers.ts:61-98](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/pointers.ts#L61-L98)
+
+标记块移除、合并和空白处理。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+/** Everything outside the managed block, with the blank line the block was
+ * separated by taken back too — so an uninstall leaves no trailing scar. */
+export function stripPointer(content: string): string {
+  const begin = content.indexOf(POINTER_BEGIN);
+  const end = content.indexOf(POINTER_END);
+  if (begin === -1 || end === -1 || end < begin) return content;
+  const head = content.slice(0, begin).replace(/\s+$/, '');
+  const tail = content.slice(end + POINTER_END.length).replace(/^\s*\n+/, '');
+  if (!head && !tail.trim()) return '';
+  if (!head) return tail.trimStart();
+  return tail ? `${head}\n\n${tail.replace(/\s+$/, '')}\n` : `${head}\n`;
+}
+
+export type MergeAction = 'noop' | 'rewrite' | 'append' | 'create';
+
+export interface MergeResult {
+  action: MergeAction;
+  content: string;
+}
+
+/** Idempotent attach: never duplicate the block, never drop the user's own text.
+ * `existing === null` means the file does not exist yet. */
+export function mergePointer(existing: string | null, block = pointerBlock()): MergeResult {
+  if (existing === null) return { action: 'create', content: `${block}\n` };
+  if (hasPointer(existing)) {
+    const stripped = stripPointer(existing);
+    const body = stripped.trim() === '' ? '' : `${stripped.replace(/\s+$/, '')}\n\n`;
+    const content = `${body}${block}\n`;
+    return { action: content === existing ? 'noop' : 'rewrite', content };
+  }
+  if (existing.trim() === '') return { action: 'rewrite', content: `${block}\n` };
+  return { action: 'append', content: `${existing.replace(/\s+$/, '')}\n\n${block}\n` };
+}
+
+/** Remove our block; a file that had nothing else in it should be deleted. */
+export function unmergePointer(existing: string): { content: string; deleteFile: boolean } {
+  const left = stripPointer(existing);
+  return { content: left, deleteFile: left.trim() === '' };
+```
+
+</details>
+
+#### 缺口
+
+- 未测试中途失败或链接目录
+  **影响**：不能保证完整回滚和逐字保留
+  **进一步探讨**：备份后用隔离项目注入失败及对比文件。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 隐私、依赖及安全采用是什么？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+README:17-19 描述读取本地 IDE 会话和用量；package.json:83-85 依赖单独的 kit。会话数据、项目路径和规则可能敏感，扫描范围受本地权限、深度和文件布局限制；模型之外还需要人工处理规则、迁移及备份，实际耗时未知。先在复制项目运行 dry-run，核根路径、预览与现有规则；若扫描不完整、项目敏感或删除结果不清楚则停止，保留原始备份并人工比对。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:17-19](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/README.md#L17-L19)
+
+作者描述读取数据及规则写入。
+
+```text
+**EN** · One hub over the coding IDEs you actually run — dsh, Claude Code, Codex, ZCode, Qoder, CatPaw, Trae, OpenCode. It reads each tool's own on-disk state (sessions, usage, prompt-rule files) instead of calling any API, then gives you an inventory (`/ide-hub`), a quota-runway migration plan (`/hub-migrate`), usage breakdowns (`/hub-usage`), resumable sessions (`/hub-sessions`), a ranked "what should I do first" over the sibling plugins (`/today`) and an Obsidian export (`/hub-export`) — and, since `/hub-init`, writes back exactly one thing: a `.hub/` rule body plus a marker-delimited pointer in each tool's project rule file. · 45 `node --test` green · reads real local data on this machine · v0.4's Trae chat reader is **not yet wired into `/hub-sessions`** — see 已知边界.
+
+DeepSeek Harness (dsh) 插件：跨 IDE 统一管理器。各家编码 IDE 都把会话、用量、提示词规则写在自己的磁盘目录里，本插件直接读这些文件（不调任何厂商 API），在 dsh 里出六个命令。读之外只有一处写：`/hub-init` 往**你自己指定的项目目录**里装 `.hub/` 规则本体与各 IDE 的指针段。
+```
+
+**依据 2 · 源码核查**：[package.json:83-85](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/package.json#L83-L85)
+
+外部 kit 固定标签依赖。
+
+```text
+  "dependencies": {
+    "@dsh-family/kit": "github:121212165/dsh-plugin-kit#v0.2.1"
+  }
+```
+
+**依据 3 · 源码核查**：[src/hub/inventory.ts:31-37](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/inventory.ts#L31-L37)
+
+有限扫描和跳过错误。
+
+```text
+function walk(root: string, spec: IdeSpec, depth: number, state: WalkStat): void {
+  if (depth > 4 || !existsSync(root)) return;
+  let entries: string[];
+  try {
+    entries = readdirSync(root);
+  } catch {
+    return;
+```
+
+**依据 4 · 源码核查**：[src/plugin.ts:254-270](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L254-L270)
+
+移除边界。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    const structure = join(root, '.hub', 'STRUCTURE.json');
+    if (readIf(structure) !== null) {
+      if (!options.dryRun) rmSync(structure, { force: true });
+      changes.push({ file: '.hub/STRUCTURE.json', outcome: 'removed', detail: '生成物，直接删' });
+    }
+    for (const [file, template] of [
+      [join(root, HUB_BODY), renderHubAgents(project)],
+      [join(root, '.hub', 'PROJECT_NOTES.md'), renderProjectNotes(project)],
+    ] as const) {
+      const existing = readIf(file);
+      const path = rel(file);
+      if (existing === null) continue;
+      if (existing === template) {
+        if (!options.dryRun) rmSync(file, { force: true });
+        changes.push({ file: path, outcome: 'removed', detail: '仍是未改动的模板，已删除' });
+      } else {
+        changes.push({ file: path, outcome: 'kept', detail: '里面有你自己写的内容，没删——确认后手工删除' });
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/plugin.ts:278-301](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L278-L301)
+
+dry-run 与现有规则处理。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  const write = (absolute: string, display: string, content: string, detail: string): InitChange => {
+    if (options.dryRun) {
+      return { file: display, outcome: readIf(absolute) === null ? 'created' : 'updated', detail: `${detail}（dry-run，未写盘）` };
+    }
+    return { file: display, outcome: writeIfChanged(absolute, content), detail };
+  };
+
+  const bodyPath = join(root, HUB_BODY);
+  if (readIf(bodyPath) !== null) {
+    changes.push({ file: rel(bodyPath), outcome: 'kept', detail: '规则本体已存在，里面是项目自己的内容，未覆盖' });
+  } else {
+    changes.push(write(bodyPath, rel(bodyPath), renderHubAgents(project), '按模板新建，去填目标/命令/禁忌'));
+  }
+
+  const notesPath = join(root, '.hub', 'PROJECT_NOTES.md');
+  if (readIf(notesPath) !== null) {
+    changes.push({ file: rel(notesPath), outcome: 'kept', detail: '备忘已存在，未覆盖' });
+  } else {
+    changes.push(write(notesPath, rel(notesPath), renderProjectNotes(project), '按模板新建'));
+  }
+
+  const scan = scanTree(root);
+  const structurePath = join(root, '.hub', 'STRUCTURE.json');
+  changes.push(write(structurePath, rel(structurePath), renderStructureJson(project, scan.entries, now), `结构快照 ${scan.entries.length} 个条目（深度 2，跳过 .git 与 node_modules 等）`));
+```
+
+</details>
+
+#### 缺口
+
+- 未测兼容、数据敏感度和实际成本
+  **影响**：不能推断汇总完整或恢复无损
+  **进一步探讨**：隔离备份并检查 dry-run。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何让用户决定是否信任扫描及规则变更？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+现有 dry-run 已列预期文件，扫描结果也有截断状态；重复增加 dry-run 或计数不构成增量。设想在一次初始化计划中列出各 IDE 根的可读性、跳过原因、将覆盖/删除的现有文件和可恢复备份，提示用户决定继续、补查或取消；不上传路径和会话。对照现有 dry-run 和盘点，在不可读目录、截断、改过的 STRUCTURE.json、缺规则文件及中途失败下测遗漏、误判和复核时间；若不能可靠发现跳过或预测删除、备份不可恢复则否定。先核现有输出是否已有等价明细。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/hub/inventory.ts:31-37](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/hub/inventory.ts#L31-L37)
+
+现有读错误被跳过。
+
+```text
+function walk(root: string, spec: IdeSpec, depth: number, state: WalkStat): void {
+  if (depth > 4 || !existsSync(root)) return;
+  let entries: string[];
+  try {
+    entries = readdirSync(root);
+  } catch {
+    return;
+```
+
+**依据 2 · 源码核查**：[src/plugin.ts:254-270](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L254-L270)
+
+移除 STRUCTURE.json 与保留模板分支。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    const structure = join(root, '.hub', 'STRUCTURE.json');
+    if (readIf(structure) !== null) {
+      if (!options.dryRun) rmSync(structure, { force: true });
+      changes.push({ file: '.hub/STRUCTURE.json', outcome: 'removed', detail: '生成物，直接删' });
+    }
+    for (const [file, template] of [
+      [join(root, HUB_BODY), renderHubAgents(project)],
+      [join(root, '.hub', 'PROJECT_NOTES.md'), renderProjectNotes(project)],
+    ] as const) {
+      const existing = readIf(file);
+      const path = rel(file);
+      if (existing === null) continue;
+      if (existing === template) {
+        if (!options.dryRun) rmSync(file, { force: true });
+        changes.push({ file: path, outcome: 'removed', detail: '仍是未改动的模板，已删除' });
+      } else {
+        changes.push({ file: path, outcome: 'kept', detail: '里面有你自己写的内容，没删——确认后手工删除' });
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/plugin.ts:278-301](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L278-L301)
+
+已有 dry-run。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  const write = (absolute: string, display: string, content: string, detail: string): InitChange => {
+    if (options.dryRun) {
+      return { file: display, outcome: readIf(absolute) === null ? 'created' : 'updated', detail: `${detail}（dry-run，未写盘）` };
+    }
+    return { file: display, outcome: writeIfChanged(absolute, content), detail };
+  };
+
+  const bodyPath = join(root, HUB_BODY);
+  if (readIf(bodyPath) !== null) {
+    changes.push({ file: rel(bodyPath), outcome: 'kept', detail: '规则本体已存在，里面是项目自己的内容，未覆盖' });
+  } else {
+    changes.push(write(bodyPath, rel(bodyPath), renderHubAgents(project), '按模板新建，去填目标/命令/禁忌'));
+  }
+
+  const notesPath = join(root, '.hub', 'PROJECT_NOTES.md');
+  if (readIf(notesPath) !== null) {
+    changes.push({ file: rel(notesPath), outcome: 'kept', detail: '备忘已存在，未覆盖' });
+  } else {
+    changes.push(write(notesPath, rel(notesPath), renderProjectNotes(project), '按模板新建'));
+  }
+
+  const scan = scanTree(root);
+  const structurePath = join(root, '.hub', 'STRUCTURE.json');
+  changes.push(write(structurePath, rel(structurePath), renderStructureJson(project, scan.entries, now), `结构快照 ${scan.entries.length} 个条目（深度 2，跳过 .git 与 node_modules 等）`));
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/plugin.ts:115-151](https://github.com/121212165/dsh-plugin-ide-hub/blob/a1fd8af301675b41e9115e22f837d9f466c2d351/src/plugin.ts#L115-L151)
+
+扫描限制与截断。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+export function scanTree(root: string, limit = 300, depth = 2): TreeScan {
+  const entries: TreeEntry[] = [];
+  let truncated = false;
+  const walk = (dir: string, level: number): void => {
+    if (truncated || level > depth) return;
+    let names: string[];
+    try {
+      names = readdirSync(dir, { withFileTypes: true })
+        .filter((entry) => !entry.name.startsWith('.') && !SKIP_DIRS.has(entry.name))
+        .map((entry) => entry.name)
+        .sort();
+    } catch {
+      return;
+    }
+    for (const name of names) {
+      if (entries.length >= limit) {
+        truncated = true;
+        return;
+      }
+      const full = join(dir, name);
+      const rel = relative(root, full).replace(/\\/g, '/');
+      let stat;
+      try {
+        stat = statSync(full);
+      } catch {
+        continue;
+      }
+      if (stat.isDirectory()) {
+        entries.push({ path: `${rel}/`, kind: 'dir' });
+        walk(full, level + 1);
+      } else if (stat.isFile()) {
+        entries.push({ path: rel, kind: 'file', size: stat.size });
+      }
+    }
+  };
+  walk(root, 1);
+  return { entries, truncated };
+```
+
+</details>
+
+#### 缺口
+
+- 未穷尽全部命令输出和无原型
+  **影响**：增量与收益未证
+  **进一步探讨**：先核输出，再在复制项目故障对照。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

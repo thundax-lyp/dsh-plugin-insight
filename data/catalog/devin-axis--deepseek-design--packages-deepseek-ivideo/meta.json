@@ -1,45 +1,40 @@
 {
     "repository": "Devin-AXIS/deepseek-design",
     "repository_id": 1335095892,
-    "captured_at": "2026-10-27T01:50:27.819Z",
-    "window_start": "2026-09-27T01:50:27.819Z",
-    "stars": 1604,
-    "pushed_at": "2026-10-08T09:24:13Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 1661,
+    "pushed_at": "2026-10-30T09:20:44Z",
     "issues": {
-        "open": null,
+        "open": 5,
         "closed": 0,
         "created_30d": 0,
         "closed_30d": 0,
         "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3ADevin-AXIS%2Fdeepseek-design%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E708:2BA272:2E87D8:3229F3:6AE0066F and timestamp 2026-10-27 02:03:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "deepseek-ivideo",
-        "captured_at": "2026-10-27T01:50:27.819Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 994,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/deepseek-ivideo",
+        "captured_at": "2026-11-01T00:10:01.346Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1023,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/deepseek-ivideo",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-15T18:45:55.796Z",
-            "captured_at": "2026-10-27T01:50:27.819Z",
+            "captured_at": "2026-11-01T00:10:01.346Z",
             "source_url": "https://registry.npmjs.org/deepseek-ivideo",
             "error": null,
             "latest_version": "0.1.0",

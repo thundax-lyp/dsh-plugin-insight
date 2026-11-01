@@ -1,49 +1,53 @@
 {
     "repository": "gitroomhq/postiz-agent",
     "repository_id": 1157659618,
-    "captured_at": "2026-10-27T08:34:14.025Z",
-    "window_start": "2026-09-27T08:34:14.025Z",
-    "stars": 550,
-    "pushed_at": "2026-10-22T17:25:17Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 562,
+    "pushed_at": "2026-10-30T09:47:39Z",
     "issues": {
         "open": 6,
         "closed": 0,
-        "created_30d": 1,
+        "created_30d": null,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Agitroomhq%2Fpostiz-agent%20is%3Aissue%20created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A726:FF0B2:23F878:27EB1C:6AE71D21 and timestamp 2026-11-01 11:06:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Agitroomhq%2Fpostiz-agent%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BEE4:1774D4:1BA8E0:1E583C:6AE06389 and timestamp 2026-10-27 08:40:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Agitroomhq%2Fpostiz-agent%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A808:25E714:2248C1:263A55:6AE71D22 and timestamp 2026-11-01 11:06:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Agitroomhq%2Fpostiz-agent%20is%3Aissue%20updated%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BEE6:B1DC0:255167:28029F:6AE0638A and timestamp 2026-10-27 08:40:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Agitroomhq%2Fpostiz-agent%20is%3Aissue%20updated%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A896:25FC08:2527C0:291644:6AE71D24 and timestamp 2026-11-01 11:06:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-postiz",
-        "captured_at": "2026-10-27T08:34:14.025Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 963,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-postiz",
+        "captured_at": "2026-10-31T12:39:32.524Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 1009,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-postiz",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-11T04:42:32.942Z",
-            "captured_at": "2026-10-27T08:34:14.025Z",
+            "captured_at": "2026-10-31T12:39:32.524Z",
             "source_url": "https://registry.npmjs.org/dsh-postiz",
             "error": null,
             "latest_version": "0.1.0",

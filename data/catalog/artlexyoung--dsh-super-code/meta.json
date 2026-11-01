@@ -1,10 +1,10 @@
 {
     "repository": "ArtlexYoung/dsh-super-code",
     "repository_id": 1367482095,
-    "captured_at": "2026-10-27T08:34:14.025Z",
-    "window_start": "2026-09-27T08:34:14.025Z",
-    "stars": 16,
-    "pushed_at": "2026-10-26T11:22:32Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 21,
+    "pushed_at": "2026-10-28T14:44:22Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -15,30 +15,30 @@
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-27T00:51:31.108Z",
+        "captured_at": "2026-10-31T17:22:18.721Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-super-code",
-        "captured_at": "2026-10-27T08:34:14.025Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 2783,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-super-code",
+        "captured_at": "2026-10-30T10:07:14.090Z",
+        "window_start": "2026-09-30",
+        "window_end": "2026-10-29",
+        "downloads_30d": 3311,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-30:2026-10-29/dsh-super-code",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-20T16:10:57.888Z",
-            "captured_at": "2026-10-27T08:34:14.025Z",
+            "captured_at": "2026-10-30T10:07:14.090Z",
             "source_url": "https://registry.npmjs.org/dsh-super-code",
             "error": null,
-            "latest_version": "0.3.8",
-            "latest_published_at": "2026-10-26T11:33:37.755Z",
+            "latest_version": "0.3.9",
+            "latest_published_at": "2026-10-28T14:58:31.274Z",
             "latest_error": null
         }
     }

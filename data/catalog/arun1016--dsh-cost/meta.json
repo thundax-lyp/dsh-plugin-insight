@@ -1,54 +1,53 @@
 {
     "repository": "Arun1016/dsh-cost",
     "repository_id": 1411748656,
-    "captured_at": "2026-10-24T05:56:52.802Z",
-    "window_start": "2026-09-24T05:56:52.802Z",
-    "stars": 0,
-    "pushed_at": "2026-10-18T11:11:20Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 1,
+    "pushed_at": "2026-10-30T17:23:02Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4B94:320049:7B0B3D:8549DE:6ADC48A8 and timestamp 2026-10-24 05:56:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4C52:24C48F:7C716B:86AB4D:6ADC48AA and timestamp 2026-10-24 05:56:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20created%3A2026-09-24T05%3A56%3A52.802Z..2026-10-24T05%3A56%3A52.802Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4CF8:31F37F:7D9A75:87CF42:6ADC48AB and timestamp 2026-10-24 05:56:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-24T05%3A56%3A52.802Z..2026-10-24T05%3A56%3A52.802Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4DA2:899F9:7B1674:854FA2:6ADC48AC and timestamp 2026-10-24 05:57:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BB8E:259AEC:223CFF:263522:6AE71D92 and timestamp 2026-11-01 11:08:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20updated%3A2026-09-24T05%3A56%3A52.802Z..2026-10-24T05%3A56%3A52.802Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E48:31CDC9:830042:8D38B1:6ADC48AD and timestamp 2026-10-24 05:57:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AArun1016%2Fdsh-cost%20is%3Aissue%20updated%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BBFE:3135B:22BA2E:26AF52:6AE71D95 and timestamp 2026-11-01 11:08:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T21:53:23.003Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-cost-pill",
-        "captured_at": "2026-10-24T05:56:59.427Z",
-        "window_start": "2026-09-24",
-        "window_end": "2026-10-23",
-        "downloads_30d": 378,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-24:2026-10-23/dsh-cost-pill",
+        "captured_at": "2026-10-31T05:50:28.596Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 806,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-cost-pill",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-18T11:10:59.356Z",
-            "captured_at": "2026-10-24T05:56:59.427Z",
+            "captured_at": "2026-10-31T05:50:28.596Z",
             "source_url": "https://registry.npmjs.org/dsh-cost-pill",
             "error": null,
-            "latest_version": "1.0.2",
-            "latest_published_at": "2026-10-18T11:11:55.904Z",
+            "latest_version": "1.3.1",
+            "latest_published_at": "2026-10-30T17:27:49.557Z",
             "latest_error": null
         }
     }

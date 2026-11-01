@@ -1,18 +1,18 @@
-# DSH 插件市场
+# @99galaxy/dsh-plugin-market
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[52d44fb](https://github.com/99galaxy/dsh-plugin-market/tree/52d44fba2b12453fa1b22a1453f9287fa3b33821)
+源码版本：[2ecee1e](https://github.com/99galaxy/dsh-plugin-market/tree/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b)
 
 <!-- BEGIN META -->
-[![npm 30d 1,557](https://img.shields.io/static/v1?label=npm+30d&message=1%2C557&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-09-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
+[![npm 30d 1,771](https://img.shields.io/static/v1?label=npm+30d&message=1%2C771&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@99galaxy/dsh-plugin-market)
 <!-- END META -->
 
-> **功能**：从 DSH 侧栏浏览社区目录，查看已安装和可更新插件，并执行安装与 profile 重载。
+> **功能**：在 DSH 侧栏浏览社区插件目录并安装插件。
 
-> **亮点**：将浏览目录、核对已装版本和执行安装集中到同一宿主页面；目录内容和包管理由上游提供，贡献是profile感知的接线与状态整理，而非新包管理技术。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 集中发现与版本展示，[Q02](#research-q02) 将选择的规格接到包管理器。
 
-> **主要限制**：安装退出成功不等于原来源被保留或新插件已加载；目录命令可能把固定Git来源变为npm，恢复也未形成完整事务。[Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：[Q03](#research-q03) 格式和跨站检查不证明包安全；忽略脚本重试也不证明宿主加载成功。
 
 **本文目录**
 
@@ -26,13 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 对哪个用户任务，相比复制目录安装命令增加了什么？](#detail-section-11)
-  - [Q02 · 目录、当前profile和安装状态如何串成实际调用链？](#detail-section-12)
-  - [Q03 · 同源拦截和安全参数是否足以保证更新符合用户意图？](#detail-section-13)
-  - [Q04 · 首次、日常和失败恢复需要由谁承担什么成本？](#detail-section-14)
-  - [Q05 · 哪些设计可借鉴，哪些不能当可靠性保证？](#detail-section-15)
-  - [Q06 · 如何验证带来源审阅与结果核对的安装事务是否更有用？](#detail-section-16)
-  - [Q07 · 当前值得谁在什么范围试用，何时退出？](#detail-section-17)
+  - [Q01 · 插件市场相对官方插件管理与手工安装改变什么？](#detail-section-11)
+  - [Q02 · 目录与安装请求如何到包管理器？](#detail-section-12)
+  - [Q03 · 跨站、重试和安装状态有哪些边界？](#detail-section-13)
+  - [Q04 · 依赖、来源和采用退路是什么？](#detail-section-14)
+  - [Q05 · 如何帮助用户决定安装后是否可启用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -42,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：供已有 DSH profile 的个人用户集中发现、安装及管理扩展；固定来源或少量偶发安装仍可保留手工命令。[Q01](#research-q01)
+> **用途**：DSH 用户需要发现、安装和更新社区插件。
 
-基线是读社区目录、查看profile依赖并手工执行固定包命令；无需为偶发安装引入市场。没有开展同条件耗时对照。[Q01](#research-q01)
+手工查目录、审查仓库并运行宿主管理命令。
 
 <a id="detail-section-3"></a>
 
@@ -53,68 +51,64 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 市场页 | 搜索分类与已装状态 | 依赖目录和profile映射 |
-| 安装 | 调用包管理器并补bundle | 可写profile；不保证加载 |
-| 重载 | 调用宿主HMR | 缺失或pending时需重启 |
+|---|---|---|
+| 目录 | 浏览搜索社区条目 | 外部来源不等于安全 |
+| 安装 | 调用包管理器 | 修改 profile |
+| 更新 | 比对版本与固定规格 | 仍需检查加载 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH及Node声明范围 | 启动必需 | 加载bundle和client | 兼容未知需核对 |
-| webServer与slots | 启动必需 | 路由与市场页 | 无页面或接口 |
-| 可写profile及包管理器 | 安装必需 | 改依赖和bundles | 停止安装 |
-| HMR | 可选 | 重载profile | 重启DSH |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| 兼容 DSH Web 与 Node | 必需 | 提供市场 | 无法使用 |
+| 目录网络或缓存 | 浏览需要 | 搜索版本 | 数据可能过时 |
+| 包管理器 | 安装需要 | 修改 profile | 安装失败 |
+| 审查过的插件来源 | 采用前重要 | 限制供应链风险 | 不应安装 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户备份profile并加市场bundle | profile目标明确 |
-| 选择 | 用户搜索并核对来源 | spec符合预期 |
-| 安装 | host调用包管理器 | 失败检查日志与清单 |
-| 验收 | 用户重载或重启后检查功能 | 来源、profile、加载一致 |
+|---|---|---|
+| 准备 | 备份并隔离 profile | 核版本与来源 |
+| 选择 | 审查仓库、版本与权限 | 来源不明停止 |
+| 安装 | 安装一项并查日志 | 忽略脚本时核依赖 |
+| 验证 | 核宿主加载与功能 | 状态异常恢复备份 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 宿主、包管理器和网络；金额未知 | 配置bundle与核对profile；耗时未知 | 需可写profile |
-| 持续使用 | 目录访问和目标包依赖；用量未知 | 审阅来源、确认加载 | 缓存不证明目录可信 |
-| 失败恢复 | 重试和备份空间；金额未知 | 对照清单、锁文件及进程；耗时未知 | 没有完整自动回滚 |
-
-以正确来源安装并加载为合格任务，不以按钮成功计数。[Q04](#research-q04)
+|---|---|---|---|
+| 发现 | 网络与存储未知 | 审查来源 | 目录可信度未知 |
+| 安装 | 下载与依赖成本未知 | 检查日志 | 可能忽略构建 |
+| 恢复 | 备份成本未知 | 回退与复核 | 状态一致性未测 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 发现与状态对照 | 市场页及已装/更新/未知分类 | 实际节时和目录质量 |
-| 安装到当前profile | 宿主环境继承、包管理器调用 | 各发行版兼容和加载效果 |
-| 故障恢复 | 日志与旧目录降级 | 部分安装原子恢复 |
+|---|---|---|
+| 目录 | 多源获取和形状检查 | 项目安全 |
+| 安装 | argv 调用包管理器 | 宿主加载成功 |
+| 状态 | 成功后刷新 | 所有缓存一致 |
 
-> **思考**：安装退出成功不等于原来源被保留或新插件已加载；目录命令可能把固定Git来源变为npm，恢复也未形成完整事务。[Q03](#research-q03) [Q04](#research-q04)
+> **思考**：[Q03](#research-q03) 格式和跨站检查不证明包安全；忽略脚本重试也不证明宿主加载成功。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将浏览目录、核对已装版本和执行安装集中到同一宿主页面；目录内容和包管理由上游提供，贡献是profile感知的接线与状态整理，而非新包管理技术。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 集中发现与版本展示，[Q02](#research-q02) 将选择的规格接到包管理器。
 
-环境继承、未知状态显式化、HMR事务值得复用；需同时适配宿主API及包管理器。模块级互斥不是跨进程锁，统计中生成helper不能另算原创。[Q05](#research-q05)
+[Q03](#research-q03) 缺 Origin 不被该检查拒绝，忽略脚本重试不证明依赖正常。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-安装退出成功不等于原来源被保留或新插件已加载；目录命令可能把固定Git来源变为npm，恢复也未形成完整事务。[Q03](#research-q03) [Q04](#research-q04)
+[Q03](#research-q03) 格式和跨站检查不证明包安全；忽略脚本重试也不证明宿主加载成功。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议在独立测试profile对一个可信包试用；先备份清单与锁文件，确认目标和来源，安装后核对加载；来源替换或恢复状态不清即停止并退回固定命令。[Q07](#research-q07)
+[Q04](#research-q04) 备份隔离 profile，先审查固定来源，再安装一项并核宿主加载。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-目录发现与状态对照机制有固定源码支持；安装加载、跨发行版兼容与故障恢复未执行验证。安装事务属于未验证假设。
+已静态核查目录、安装、输入和重试代表路径；未运行网络或安装。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、client/client.js、market-core.mjs、tools/market-core.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、market-core.mjs、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交只读检查 README、host、helper源与生成物、client、包声明和统计；未执行第三方代码、安装、测试或宿主验收。
-- 下一步：未来经授权在可丢弃profile测试单一可信包，记录来源变化、断网后清单与进程状态、加载和退出；不将计划写为通过。[Q06](#research-q06)
+- 边界：只读固定 README、清单、目录、路由及 helper 代表路径；未运行宿主、网络或包管理器。
+- 下一步：[Q05](#research-q05) 先核现有页面，再对照脚本忽略及加载失败。
 
 **分析版本**
 
 - **仓库**：[99galaxy/dsh-plugin-market](https://github.com/99galaxy/dsh-plugin-market)
-- **版本号**：1.2.0（[固定提交 52d44fb](https://github.com/99galaxy/dsh-plugin-market/tree/52d44fba2b12453fa1b22a1453f9287fa3b33821)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.2.1（[固定提交 2ecee1e](https://github.com/99galaxy/dsh-plugin-market/tree/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +135,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是加入来源审阅、依赖快照与安装后加载核对；用来源替换、断网和需重启三类故障检验是否减少误改和恢复负担。[Q06](#research-q06)
+[Q05](#research-q05) 假设安装到加载的分层收据可降低错误启用；未验证。
 
-未来经授权在可丢弃profile测试单一可信包，记录来源变化、断网后清单与进程状态、加载和退出；不将计划写为通过。[Q06](#research-q06)
+[Q05](#research-q05) 先核现有页面，再对照脚本忽略及加载失败。
 
 <a id="detail-section-9"></a>
 
@@ -152,50 +146,68 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 1364 | 1101 | 180 | — |
-| .md | source | 3 | 210 | — | — | 2174 |
-| .mjs | source | 21 | 3411 | 2670 | 503 | — |
+| .js | source | 2 | 1428 | 1154 | 187 | — |
+| .md | source | 4 | 231 | — | — | 2680 |
+| .mjs | source | 22 | 3546 | 2802 | 505 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/99galaxy/dsh-plugin-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/99galaxy/dsh-plugin-market/issues?q=is%3Aissue+created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/99galaxy/dsh-plugin-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/99galaxy/dsh-plugin-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/99galaxy/dsh-plugin-market/issues?q=is%3Aissue+created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z)
 
+暂未获取：近30天关闭。
 
-
-统计日期：2026-10-27。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本中的插件市场能否把目录发现、安装与更新整理成可控流程，哪些安全和恢复条件限制采用？
+**插件研究总目标**：核对目录获取、安装执行与供应链边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 对哪个用户任务，相比复制目录安装命令增加了什么？
+### Q01 · 插件市场相对官方插件管理与手工安装改变什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-已有 DSH profile、需要反复寻找和管理扩展的个人用户，是本插件的明确对象。作者把分类搜索、已装列表和可更新列表放在一个市场页面；客户端确实注册 sidebar.panellist 与 main，合格结果应是选定来源安装到正在使用的 profile，并确认扩展加载。与手工浏览目录、查本地依赖和运行包管理器相比，增量是将发现及状态对照集中在宿主页面，而不是新增目录数据或包管理能力。目录维护者提供描述和版本，pnpm 完成依赖安装；不能把这两者计为插件原创。只有偶尔安装且固定 Git 提交的用户，直接查看来源并执行命令可能更透明，市场不必然降低总负担。
+README:3-10、14-29 面向想发现和更新 DSH 插件的用户，集中目录、搜索、版本和安装；相对手工查目录并运行命令，入口更集中。目录和插件来源由外部提供，市场不等于插件维护者或安全审计；目录数量与热度不证明可靠性，未测节时或安装成功率。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:15-37](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/README.md#L15-L37)
+**依据 1 · 作者声明**：[README.md:3-10](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/README.md#L3-L10)
 
-作者列出三标签、安装与更新语义；目录规模属于作者声明。
+作者描述目录与入口。
+
+```text
+**从 DeepSeek Harness 的左侧栏打开插件市场，一键安装。**
+
+> A sidebar plugin-market page for DeepSeek Harness: browse the community catalog,
+> see what you already have on its own tab, and install with one click.
+
+数据来自 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) 维护的
+官方目录 `plugins.json` —— 约 **4,400+ 个插件、23 个双语分类**，带 Star 数、下载量、收录日期，
+以及每个条目的官方安装命令。
+```
+
+**依据 2 · 作者声明**：[README.md:14-29](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/README.md#L14-L29)
+
+作者描述安装和更新。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（16行）</summary>
 
-````text
+```text
+## 它做什么
 
 左侧栏新增 **「插件市场」** 入口，点击后在主区域打开独立页面。**页面内**有三个标签：
 
@@ -209,204 +221,116 @@
 - **安装状态**：已安装的条目带绿色徽章；若目录名与你实际装的包名不同，会标出真实包名
 - **更新检测**：拿目录里的 `version` 和 profile 里实际装的版本比对，有更新的挂橙色徽章
   「可更新 1.47.0（当前 1.46.1）」，按钮从「重新安装」变成「更新」
-- **中英切换**：简介可切中文/英文
-- **本地缓存**：目录存到本地，**1 小时内直接复用**；要最新的点「强制重新获取」
-- **一键重载 profile**：装完插件点「重载 profile」，通过 DSH 的 HMR 重新组合当前 profile，不必重启；没有 HMR 的 profile 会提示你重启
-- **四级降级**：官方域名 → 镜像 → CDN → npm，任一条通即可
-
-## 安装
-
-这是一个 **DSH bundle**：装进 profile 后**重启 DSH 自动加载**。
-
-```bash
-````
-
-</details>
-
-**依据 2 · 源码核查**：[client/client.js:496-508](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/client/client.js#L496-L508)
-
-源码注册一对市场侧栏入口和主页面。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-    function apply (ctx) {
-      ctx.effect(() => insertCss(), '@99galaxy/dsh-plugin-market: styles')
-      // The host selects main views by the matching sidebar entry id / view key.
-      ctx.slots.inject('main', () => ctx.slots.register({
-        name: 'main',
-        key: 'dsh-plugin-market',
-      }, MarketView))
-      ctx.slots.inject('sidebar.panellist', () => ctx.slots.register({
-        name: 'sidebar.panellist',
-        id: 'dsh-plugin-market',
-        order: 25,
-        label: '插件市场',
-      }, MarketIcon))
+- **精确更新**：更新 npm 插件时直接安装目录中的目标版本，不会因为旧的 `^` 范围而误报
+  「已是最新」；Git 来源更新则强制重新解析来源
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[package.json:1-5](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/package.json#L1-L5)
+
+包与功能描述。
+
+```text
+{
+  "name": "@99galaxy/dsh-plugin-market",
+  "version": "1.2.1",
+  "type": "module",
+  "description": "DSH 插件市场：从左侧栏浏览 awesome-dsh-plugin 目录并一键安装。Browse the awesome-dsh-plugin catalog from the sidebar and install plugins.",
+```
+
+#### 缺口
+
+- 未运行市场或用户对照
+  **影响**：不能证明目录可信与效率
+  **进一步探讨**：隔离 profile 比较手工安装。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 目录、当前profile和安装状态如何串成实际调用链？
+### Q02 · 目录与安装请求如何到包管理器？
 
 **研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-浏览器调用本插件 HTTP 路由，host 在 webServer 出现后注册列表、安装及重载接口；列表取得缓存目录，刷新当前 profile 的依赖快照，再按包名或仓库映射形成已装与可更新状态。configureRuntime 从 profileContext 取 profile 名和宿主包管理器，不再可以将目标概括成固定 web。目录缓存一小时、已装快照短期缓存，更新判定依赖目录版本与本地版本可比较。未知版本单列 unknownTotal，不能读作已是最新。依赖 webServer、slots、可写 profile、Node 以及可用包管理器；只有重载要求 HMR，缺失时明确要求重启。源码链完整但没有证明所有桌面发行版均提供兼容的 profileContext。
+market-core.mjs:73-103 从配置地址及镜像、CDN、npm 依次取目录并检查数据形状；index.js:759-785 的安装路由要求 POST、JSON 和可解析安装命令。safeSpec:398-408 提取单个规格、拒绝前导破折号和 ..；market-core.mjs:327-356 以 argv 调 pnpm add。安装分支对普通安装未见目录成员校验；更新分支 790-799 才查匹配目录及版本。格式和来源判断不等于审查实际包及其依赖。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:53-81](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L53-L81)
+**依据 1 · 源码核查**：[market-core.mjs:73-103](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L73-L103)
 
-从宿主上下文继承 profile 和包管理器。
+目录多源与形状检查。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-function configureRuntime (ctx) {
-  const profileContext = typeof ctx.get === 'function' ? ctx.get('profileContext') : null
-  if (!profileContext || typeof profileContext !== 'object') return
-  if (typeof profileContext.name === 'string' && profileContext.name !== '') runtime.profile = profileContext.name
-  const manager = profileContext.packageManager
-  if (manager && typeof manager === 'object' && typeof manager.command === 'string' && manager.command !== '') {
-    runtime.packageManager = {
-      command: manager.command,
-      args: Array.isArray(manager.args) ? manager.args.slice() : [],
-      env: manager.env && typeof manager.env === 'object' ? Object.assign({}, manager.env) : {},
-    }
-  }
-}
+async function fetchCatalog() {
+  const custom = flags.url === undefined ? '' : String(flags.url).trim()
+  const requested = custom !== '' ? custom : CATALOG_URL
 
-const profileName = () => runtime.profile
+  const attempts = [{ name: 'official', url: requested }]
+  if (MIRROR !== '') attempts.push({ name: 'mirror', url: MIRROR + requested })
+  if (CDN !== '') attempts.push({ name: 'cdn', url: CDN })
+  attempts.push({ name: 'npm', url: 'npm:' + NPM_META })
 
-function helperEnvironment () {
-  const env = Object.assign({}, process.env, { DSH_PROFILE: profileName() })
-  const manager = runtime.packageManager
-  if (manager) {
-    env.DSH_PACKAGE_MANAGER_COMMAND = manager.command
-    env.DSH_PACKAGE_MANAGER_ARGS = JSON.stringify(manager.args)
-    env.DSH_PACKAGE_MANAGER_ENV = JSON.stringify(manager.env)
-  } else {
-    delete env.DSH_PACKAGE_MANAGER_COMMAND
-    delete env.DSH_PACKAGE_MANAGER_ARGS
-    delete env.DSH_PACKAGE_MANAGER_ENV
-  }
-  return env
+  const tried = []
+  for (const attempt of attempts) {
+    try {
+      let data = null
+      let version = ''
+      if (attempt.url.slice(0, 4) === 'npm:') {
+        const meta = await getJson(attempt.url.slice(4))
+        if (!meta.ok) { tried.push(attempt.name + '=' + meta.why); continue }
+        const latest = meta.data['dist-tags'] && meta.data['dist-tags'].latest
+        if (!latest) { tried.push(attempt.name + '=no-latest'); continue }
+        const raw = 'https://cdn.jsdelivr.net/npm/dsh-plugin-catalog@' + latest + '/plugins.json'
+        const file = await getJson(raw)
+        if (!file.ok) { tried.push(attempt.name + '=' + file.why); continue }
+        data = file.data
+        version = latest
+      } else {
+        const got = await getJson(attempt.url)
+        if (!got.ok) { tried.push(attempt.name + '=' + got.why); continue }
+        data = got.data
+        version = (data && data.updated) || ''
+      }
+      if (!data || !Array.isArray(data.plugins)) { tried.push(attempt.name + '=bad-shape'); continue }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:628-667](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L628-L667)
+**依据 2 · 源码核查**：[index.js:398-408](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L398-L408)
 
-状态映射、版本未知与未收录bundle计数。
+提取单一安装规格。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-            // Refresh the inventory so the installed badges are current.
-            await refreshInstalled(bypass)
-            const snapshot = readInstalled()
-            const maps = installedMaps(snapshot)
-            const versions = snapshot && snapshot.versions ? snapshot.versions : {}
-
-            const catalog = readCatalog()
-            if (catalog.ok !== true) {
-              sendJson(response, 500, { ok: false, message: catalog.message })
-              return
-            }
-            const prepared = preparedCatalog(catalog.data, catalog.key)
-            const all = prepared.rows
-
-            // 'unknown' is its own answer, not a silent "up to date": a plugin the
-            // catalog does not carry a version for cannot be judged either way.
-            const verdictOf = (row) => {
-              const owner = installedOwner(row, maps)
-              if (owner === '') return { owner, state: '' }
-              return { owner, state: updateState(textOf(versions[owner]), row.version) }
-            }
-
-            let installedTotal = 0
-            let updatableTotal = 0
-            let unknownTotal = 0
-            const claimed = new Set()
-            for (const row of all) {
-              const v = verdictOf(row)
-              if (v.owner === '') continue
-              claimed.add(v.owner.toLowerCase())
-              installedTotal += 1
-              if (v.state === 'update') updatableTotal += 1
-              else if (v.state === 'unknown') unknownTotal += 1
-            }
-            // Unlisted bundles are also unknown. Other profile dependencies are not
-            // necessarily plugins, so they must not inflate this count.
-            const bundles = snapshot && Array.isArray(snapshot.bundles) ? snapshot.bundles : []
-            for (const name of bundles) {
-              if (!claimed.has(textOf(name).toLowerCase())) unknownTotal += 1
-            }
+function safeSpec (install) {
+  const m = /^dsh\s+plugin(?:\s+--profile\s+[A-Za-z0-9._-]+)?\s+add\s+([^\s].{0,299})$/.exec(textOf(install).trim())
+  if (m === null) return null
+  const spec = m[1].trim()
+  if (spec === '' || spec.length > 300 || spec.indexOf('..') >= 0) return null
+  // The spec is handed to pnpm as ONE argv element, never through a shell — so the
+  // injection to refuse here is not shell metacharacters but a leading dash, which
+  // pnpm would read as an OPTION (--global, --config.*, -C, --dir …). The catalog is
+  // remote data; nothing in it has any business starting with '-'.
+  if (spec.slice(0, 1) === '-') return null
+  return spec
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:812-831](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L812-L831)
+**依据 3 · 源码核查**：[index.js:759-799](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L759-L799)
 
-HMR专用事务与需重启结果。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-            // HMR is the supported way to apply a newly installed bundle without a
-            // restart: it reads the same profile patches the launcher booted, replaces
-            // changed modules, and reconciles new entries. Headless profiles disable
-            // it; there the caller must restart DSH instead.
-            const hmr = typeof host.get === 'function' ? host.get('hmr') : null
-            if (!hmr || typeof hmr.runExclusive !== 'function' || typeof hmr.reconcileProfile !== 'function') {
-              sendJson(response, 503, { ok: false, message: '当前 profile 未启用 HMR，无法一键重载；请重启 DSH。' })
-              return
-            }
-            reloadInProgress = true
-            try {
-              // reconcileProfile throws unless it runs inside runExclusive: HMR uses
-              // that transaction to serialize module replacement with its file watches.
-              const result = await hmr.runExclusive(() => hmr.reconcileProfile())
-              invalidateInstalled()
-              sendJson(response, 200, {
-                ok: true,
-                warnings: result && Array.isArray(result.warnings) ? result.warnings : [],
-                pending: result && Array.isArray(result.pending) ? result.pending : [],
-                restartReason: result && result.restartReason ? String(result.restartReason) : '',
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 同源拦截和安全参数是否足以保证更新符合用户意图？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-不足。安装入口检验同源、JSON、可接受 spec 并以 argv 调用 helper，减少浏览器跨站及 shell 字符串注入风险；安装和重载互斥也避免正常页面内的交叉操作。但这些措施不证明来源可信或更新保持原来来源。作者明确说明更新仍执行目录安装命令，Git 安装可能换为 npm；固定 commit 用户因此应停用更新按钮并保留手工流程。包管理器退出成功后 host 返回成功，并未在同一链中验证新插件真实加载、任务合格或可回滚。安装可能改变 profile 依赖与 bundles，浏览器同源也不是多用户授权证明。最关键质疑是用户把“更新成功”理解为原来源的安全升级，而实现只证明安装过程退出成功。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:719-764](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L719-L764)
-
-路由检查与安装成功只依据helper退出结果。
+路由校验与更新目录匹配。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
       disposes.push(host.webServer.register({
@@ -432,518 +356,363 @@ HMR专用事务与需重启结果。
             const raw = await readBody(request)
             let body = {}
             try { body = raw === '' ? {} : JSON.parse(raw) } catch (e) { body = {} }
-            const spec = safeSpec(body.install)
-            if (spec === null) {
+            const requestedSpec = safeSpec(body.install)
+            if (requestedSpec === null) {
               sendJson(response, 400, { ok: false, message: '安装命令无法解析或不安全，已拒绝执行' })
               return
             }
-            if (installInProgress) {
-              sendJson(response, 409, { ok: false, message: '已有插件正在安装，请等待完成后重试' })
-              return
-            }
-            if (reloadInProgress) {
-              sendJson(response, 409, { ok: false, message: '正在重载 profile，完成后再安装插件' })
-              return
-            }
-            installInProgress = true
-            try {
-              const started = Date.now()
-              const result = await runHelper(['install', spec, '--profile', profileName()], 900000)
-              const took = Math.round((Date.now() - started) / 1000)
-              // `install` prints no result marker, so the exit code is the verdict.
-              if (result.ok === true || result.exitCode === 0) {
-                // The badge must not stay stale for the TTL after a successful install.
-                invalidateInstalled()
-                sendJson(response, 200, { ok: true, spec, seconds: took, log: textOf(result.stdout).slice(-4000) })
+            let spec = requestedSpec
+            const update = body.update === true
+            let forceUpdate = false
+            if (update) {
+              const catalog = readCatalog()
+              const row = catalog.ok === true
+                ? preparedCatalog(catalog.data, catalog.key).rows.find(candidate => candidate.install === body.install)
+                : null
+              if (row === null || row === undefined || versionParts(row.version) === null) {
+                sendJson(response, 400, { ok: false, message: '目录中没有可用于更新的版本信息，请先重新获取目录' })
+                return
+              }
+              spec = pinnedUpdateSpec(requestedSpec, row.version)
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:89-101](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/README.md#L89-L101)
+**依据 4 · 源码核查**：[market-core.mjs:327-356](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L327-L356)
 
-作者披露更新来源替换与版本不可判断。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-````text
-```
-┌─ 浏览器半边 ────────────────────────────────────────────────┐
-│  window.__ModuleLoader__.load({ id, factory(require) })     │
-│  require('react')；槽位服务由 ctx 注入                       │
-│  sidebar.panellist → 左侧栏「插件市场」入口                  │
-│  main → 独立的「DSH 插件市场」页面                          │
-│      页面内三个标签：全部插件 / 已安装 / 可更新              │
-│  筛选、排序、分页、更新比对全部在宿主侧完成                  │
-└───────────────┬─────────────────────────────────────────────┘
-                │ fetch()  ← 不是动态插件的私有 RPC，也不是 ctx.remote
-┌───────────────▼─────────────────────────────────────────────┐
-│  宿主半边  index.js                                          │
-│  ctx.inject(['webServer']) →                                │
-````
-
-</details>
-
-**依据 3 · 源码核查**：[tools/market-core.mjs:457-478](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/tools/market-core.mjs#L457-L478)
-
-安装后写入bundle清单，未在该段进行运行验收。
+参数化调用包管理器。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-  const after = JSON.parse(readFileSync(manifestPath, 'utf8'))
-  const bundles = (after.dsh && after.dsh.profile && after.dsh.profile.bundles) || []
-  let changed = false
-  for (const name of installTargetNames(spec, before, after)) {
-    let isBundle = false
+  const baseArgs = ['add', spec, '-w', '--dir', profileDir]
+  const updateArgs = forceUpdate ? ['--force'] : []
+
+  function runPnpm (extraArgs) {
+    if (!ensureDir()) return { status: 1, error: null, output: '无法创建状态目录' }
+    const runDir = join(STATE_DIR, '.runs')
+    let ofd = 0
+    let efd = 0
+    const tag = 'install-' + Date.now() + '-' + process.pid
+    const outPath = join(runDir, tag + '.out')
+    const errPath = join(runDir, tag + '.err')
     try {
-      const m = JSON.parse(readFileSync(join(profileDir, 'node_modules', name, 'package.json'), 'utf8'))
-      isBundle = !!(m.dsh && m.dsh.bundle)
+      mkdirSync(runDir, { recursive: true })
+      ofd = openSync(outPath, 'w')
+      efd = openSync(errPath, 'w')
     } catch (e) {
-      isBundle = false
+      if (ofd !== 0) closeSync(ofd)
+      if (efd !== 0) closeSync(efd)
+      return { status: 1, error: null, output: '无法创建运行目录：' + (e && e.message) }
     }
-    if (isBundle && bundles.indexOf(name) < 0) {
-      bundles.push(name)
-      changed = true
-    }
-  }
-  if (changed) {
-    after.dsh = Object.assign({}, after.dsh, {
-      profile: Object.assign({}, after.dsh && after.dsh.profile, { bundles }),
-    })
-    writeFileSync(manifestPath, JSON.stringify(after, null, 2) + '\n')
-    console.log('market: updated dsh.profile.bundles')
+    let r
+    try {
+
+      const commandArgs = manager.npmCli
+        ? manager.args.concat(['--package=' + pnpmSpec, '--', 'pnpm'])
+        : manager.args
+      r = spawnSync(
+        manager.command,
+        commandArgs.concat(baseArgs).concat(extraArgs || []),
+        { cwd: profileDir, stdio: ['ignore', ofd, efd], env: Object.assign({}, env, manager.env) },
 ```
 
 </details>
 
 #### 缺口
 
-- 未核定目标包安装脚本及宿主加载后的副作用。
-  **影响**：无法保证市场安装的第三方包安全或功能通过。
-  **进一步探讨**：选单一可信包，以来源、修改清单和加载结果共同核对。
+- 未运行包管理或网络
+  **影响**：无法证明目标包安全和安装成功
+  **进一步探讨**：在隔离 profile 核目标和实际安装。
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 首次、日常和失败恢复需要由谁承担什么成本？
+### Q03 · 跨站、重试和安装状态有哪些边界？
 
-**研究主题**：效果与总成本
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-以一次“装入正确 profile 且加载确认的扩展”为合格任务，不能以安装按钮返回成功计数。首次投入包括加载市场 bundle、核对 profile 与包管理器、审阅目标包；持续使用会访问远端目录并修改本地依赖，需要用户确认来源。helper 将目录抓取失败降级到旧缓存并给出 note，避免把暂时网络失败等同没有目录。安装失败则需要核对 package.json、锁文件与已安装内容；源码展示日志但没有覆盖所有部分完成的原子恢复。host 超时只调用 child.kill，不能据此证明包管理器后代均终止。现金、时间、合格率均未实测，现有材料只支持负担路径而不能计算节时或单位成本。
+index.js:375-395 拒绝明确 cross-site、比较 Origin/Host 并要求 JSON，但缺 Origin 时该检查放行，不能据此宣称身份鉴权或包安全。market-core.mjs:369-377 在 ERR_PNPM_IGNORED_BUILDS 时用 --ignore-scripts 重试，可能安装未构建依赖；index.js:823-827 根据退出状态报告成功并刷新本地安装状态，不能证明插件加载或功能正常。格式校验与脚本限制降低部分风险，供应链、依赖和运行效果仍需核查。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[tools/market-core.mjs:160-193](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/tools/market-core.mjs#L160-L193)
+**依据 1 · 源码核查**：[index.js:375-395](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L375-L395)
 
-旧缓存降级并提示数据年龄。
+跨站和 JSON 条件。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-async function doCatalog() {
-  const force = String(flags.force || '') === '1'
-  let cache = loadCache()
-  const ageMs = cache ? Date.now() - (cache.fetchedAt || 0) : Infinity
-  const isFresh = cache && !force && ageMs < CACHE_MS
-  let note = ''
-  let source = 'local'
-  let tried = []
-  let bytes = 0
+function foreignCaller (request) {
+  const headers = request.headers === undefined ? {} : request.headers
+  if (textOf(headers['sec-fetch-site']) === 'cross-site') return 'Sec-Fetch-Site: cross-site'
+  const origin = textOf(headers.origin)
+  if (origin === '') return ''
+  let host = ''
+  try {
+    host = new URL(origin).host
+  } catch (e) {
+    return 'Origin 无法解析：' + origin
+  }
+  const self = textOf(headers.host)
+  if (self !== '' && host !== self) return 'Origin ' + host + ' 与本机 ' + self + ' 不符'
+  return ''
+}
 
-  if (!isFresh) {
-    const got = await fetchCatalog()
-    tried = got.tried || []
-    if (got.ok) {
-      source = got.source
-      bytes = got.bytes
-      cache = loadCache()
-    } else if (cache) {
-      // Re-fetch failed but there is still usable data: keep serving it, and say so.
-      source = 'local'
-      note = '目录重新获取失败，继续使用本地目录（已保存 ' + Math.round(ageMs / 60000) + ' 分钟；' + tried.join(' | ') + '）'
-    } else {
-      return { ok: false, message: '无法获取插件目录：' + tried.join(' | ') }
-    }
-  }
-  if (!cache) cache = loadCache()
-  if (!cache) return { ok: false, message: '目录缓存不可读' }
-  try { bytes = statSync(CATALOG_PATH).size } catch (e) { bytes = 0 }
-  return {
-    ok: true, source, tried, fromCache: !!isFresh, version: cache.version || '',
-    updated: cache.updated || '', fetchedAt: cache.fetchedAt || 0,
-    ageMs: isFinite(ageMs) ? ageMs : 0, count: (cache.plugins || []).length,
-    path: CATALOG_PATH, bytes, note,
-  }
+/** The install route accepts JSON only. A cross-origin page cannot send this
+ *  content type without a preflight, and this server answers no preflight. */
+function isJsonRequest (request) {
+  const headers = request.headers === undefined ? {} : request.headers
+  return textOf(headers['content-type']).toLowerCase().indexOf('application/json') === 0
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:201-215](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L201-L215)
+**依据 2 · 源码核查**：[index.js:398-408](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L398-L408)
 
-超时终止直接child并清理输出文件。
+规格校验边界。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-    let settled = false
-    const finish = (value) => {
-      if (settled) return
-      settled = true
-      clearTimeout(timer)
-      cleanup()
-      resolve(value)
-    }
-    const timer = setTimeout(() => {
-      try { child.kill() } catch (e) { /* already gone */ }
-      finish({
-        ok: false,
-        message: '辅助脚本超时（' + Math.round(timeoutMs / 1000) + ' 秒）',
-        stderr: readFile(errPath).slice(-2000),
-      })
+function safeSpec (install) {
+  const m = /^dsh\s+plugin(?:\s+--profile\s+[A-Za-z0-9._-]+)?\s+add\s+([^\s].{0,299})$/.exec(textOf(install).trim())
+  if (m === null) return null
+  const spec = m[1].trim()
+  if (spec === '' || spec.length > 300 || spec.indexOf('..') >= 0) return null
+  // The spec is handed to pnpm as ONE argv element, never through a shell — so the
+  // injection to refuse here is not shell metacharacters but a leading dash, which
+  // pnpm would read as an OPTION (--global, --config.*, -C, --dir …). The catalog is
+  // remote data; nothing in it has any business starting with '-'.
+  if (spec.slice(0, 1) === '-') return null
+  return spec
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[tools/market-core.mjs:428-455](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/tools/market-core.mjs#L428-L455)
+**依据 3 · 源码核查**：[market-core.mjs:369-377](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L369-L377)
 
-仅在忽略构建脚本错误时重试，仍可能要求人工处理构建。
-
-<details>
-<summary>查看原文（28行）</summary>
+忽略脚本重试。
 
 ```text
-  let result = runPnpm([])
+  let result = runPnpm(updateArgs)
 
-  // strictDepBuilds defaults to true, so pnpm EXITS NON-ZERO when any dependency has
-  // an unreviewed build script (ERR_PNPM_IGNORED_BUILDS) — a profile that merely
-  // contains such a package (node-pty, say) would then fail EVERY market install.
-  //
-  // pnpm 12 does not honour --config.strict-dep-builds / npm_config_strict_dep_builds
-  // for this, so the fallback is --ignore-scripts. That is only reached when pnpm
-  // would otherwise refuse: an install whose builds ARE approved still runs them,
-  // because the first attempt succeeds. And it approves nothing — the scripts stay
-  // unrun, which is the same posture pnpm already enforces for unapproved packages.
   if (result.error === null || result.error === undefined) {
     if (result.status !== 0 && result.output.includes('ERR_PNPM_IGNORED_BUILDS')) {
       console.log('market: pnpm refused because a dependency has an unreviewed build script.')
       console.log('market: retrying with --ignore-scripts (nothing gets built, nothing is approved).')
       console.log('market: to build such a package deliberately, run `pnpm approve-builds` in the profile.')
-      const retry = runPnpm(['--ignore-scripts'])
+      const retry = runPnpm(updateArgs.concat(['--ignore-scripts']))
       result = { status: retry.status, error: retry.error, output: result.output + '\n' + retry.output }
-    }
-  }
-
-  // Surface the full log either way: the host returns it as the job's output.
-  if (result.output !== '') console.log(result.output)
-  if (result.error) {
-    console.error('market: spawn failed: ' + result.error.message)
-    process.exit(1)
-  }
-  if (result.status !== 0) process.exit(result.status === null ? 1 : result.status)
 ```
 
-</details>
+**依据 4 · 源码核查**：[index.js:823-827](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L823-L827)
+
+成功响应及刷新状态。
+
+```text
+              if (result.ok === true || result.exitCode === 0) {
+                // The badge must not stay stale for the TTL after a successful install.
+                const refreshed = await refreshInstalled(true)
+                if (refreshed.ok !== true) invalidateInstalled()
+                sendJson(response, 200, { ok: true, spec, seconds: took, log: textOf(result.stdout).slice(-4000) })
+```
 
 #### 缺口
 
-- 缺少部分安装、网络中断与后代进程存活的实际状态记录。
-  **影响**：恢复耗时和并发修改风险未知。
-  **进一步探讨**：在可丢弃profile中中断一次安装，对照进程树、依赖及锁文件。
+- 未做请求安全和安装故障测试
+  **影响**：无法保证授权、包安全或实际运行
+  **进一步探讨**：审查包并验证完整加载状态。
 
-<a id="research-q05"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-14"></a>
 
-### Q05 · 哪些设计可借鉴，哪些不能当可靠性保证？
+### Q04 · 依赖、来源和采用退路是什么？
 
-**研究主题**：工程质量与复用
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-值得借鉴的是继承宿主 profile 与包管理器而非重猜环境、把已安装未知状态与最新分开、用 HMR 的 runExclusive/reconcileProfile 完成宿主层重组。它们分别约束目标环境、避免误报最新，并减少与热更新监听的竞争。实现有 host/helper/client 分层，helper生成物和 tools 源码重复纳入统计，代码规模不能当原创规模。副作用链尚缺安装前后清单快照与明确回滚，两个模块级互斥布尔值也只约束当前进程；不能推广为跨进程锁。迁移该设计需要宿主提供 profileContext、webServer 和 HMR接口，并替换平台相关包管理器发现逻辑；复用代价主要是环境适配和故障路径验证。
+package.json:28-39 声明 DSH、Node 与 Web 入口；目录联网及包管理会修改当前 profile，远端包的代码和依赖需要自行审查。下载量、缓存及目录版本不证明安全，运行资源、维护与恢复时间未知。先在隔离 profile 查看目标仓库、固定版本和权限，再安装一项并核对宿主加载；来源不明、重试忽略脚本或状态不一致时停止继续，按宿主管理流程恢复备份。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:53-81](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L53-L81)
+**依据 1 · 源码核查**：[package.json:28-39](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/package.json#L28-L39)
 
-环境由宿主注入。
+宿主和 Node 要求。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-function configureRuntime (ctx) {
-  const profileContext = typeof ctx.get === 'function' ? ctx.get('profileContext') : null
-  if (!profileContext || typeof profileContext !== 'object') return
-  if (typeof profileContext.name === 'string' && profileContext.name !== '') runtime.profile = profileContext.name
-  const manager = profileContext.packageManager
-  if (manager && typeof manager === 'object' && typeof manager.command === 'string' && manager.command !== '') {
-    runtime.packageManager = {
-      command: manager.command,
-      args: Array.isArray(manager.args) ? manager.args.slice() : [],
-      env: manager.env && typeof manager.env === 'object' ? Object.assign({}, manager.env) : {},
+  "engines": {
+    "dsh": ">=0.1.5-rc.1 <0.3.0",
+    "node": ">=22.19"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
     }
-  }
-}
-
-const profileName = () => runtime.profile
-
-function helperEnvironment () {
-  const env = Object.assign({}, process.env, { DSH_PROFILE: profileName() })
-  const manager = runtime.packageManager
-  if (manager) {
-    env.DSH_PACKAGE_MANAGER_COMMAND = manager.command
-    env.DSH_PACKAGE_MANAGER_ARGS = JSON.stringify(manager.args)
-    env.DSH_PACKAGE_MANAGER_ENV = JSON.stringify(manager.env)
-  } else {
-    delete env.DSH_PACKAGE_MANAGER_COMMAND
-    delete env.DSH_PACKAGE_MANAGER_ARGS
-    delete env.DSH_PACKAGE_MANAGER_ENV
-  }
-  return env
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:747-777](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L747-L777)
+**依据 2 · 源码核查**：[market-core.mjs:73-103](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L73-L103)
 
-互斥位于当前模块进程。
+目录获取与回退。
 
 <details>
 <summary>查看原文（31行）</summary>
 
 ```text
-            if (installInProgress) {
-              sendJson(response, 409, { ok: false, message: '已有插件正在安装，请等待完成后重试' })
-              return
-            }
-            if (reloadInProgress) {
-              sendJson(response, 409, { ok: false, message: '正在重载 profile，完成后再安装插件' })
-              return
-            }
-            installInProgress = true
-            try {
-              const started = Date.now()
-              const result = await runHelper(['install', spec, '--profile', profileName()], 900000)
-              const took = Math.round((Date.now() - started) / 1000)
-              // `install` prints no result marker, so the exit code is the verdict.
-              if (result.ok === true || result.exitCode === 0) {
-                // The badge must not stay stale for the TTL after a successful install.
-                invalidateInstalled()
-                sendJson(response, 200, { ok: true, spec, seconds: took, log: textOf(result.stdout).slice(-4000) })
-                return
-              }
-              const code = typeof result.exitCode === 'number' ? result.exitCode : null
-              sendJson(response, 500, {
-                ok: false,
-                spec,
-                seconds: took,
-                message: code === null ? (result.message || '安装失败') : ('安装失败：pnpm 退出码 ' + String(code)),
-                log: (textOf(result.stderr) + '\n' + textOf(result.stdout)).slice(-4000),
-              })
-            } finally {
-              installInProgress = false
-            }
+async function fetchCatalog() {
+  const custom = flags.url === undefined ? '' : String(flags.url).trim()
+  const requested = custom !== '' ? custom : CATALOG_URL
+
+  const attempts = [{ name: 'official', url: requested }]
+  if (MIRROR !== '') attempts.push({ name: 'mirror', url: MIRROR + requested })
+  if (CDN !== '') attempts.push({ name: 'cdn', url: CDN })
+  attempts.push({ name: 'npm', url: 'npm:' + NPM_META })
+
+  const tried = []
+  for (const attempt of attempts) {
+    try {
+      let data = null
+      let version = ''
+      if (attempt.url.slice(0, 4) === 'npm:') {
+        const meta = await getJson(attempt.url.slice(4))
+        if (!meta.ok) { tried.push(attempt.name + '=' + meta.why); continue }
+        const latest = meta.data['dist-tags'] && meta.data['dist-tags'].latest
+        if (!latest) { tried.push(attempt.name + '=no-latest'); continue }
+        const raw = 'https://cdn.jsdelivr.net/npm/dsh-plugin-catalog@' + latest + '/plugins.json'
+        const file = await getJson(raw)
+        if (!file.ok) { tried.push(attempt.name + '=' + file.why); continue }
+        data = file.data
+        version = latest
+      } else {
+        const got = await getJson(attempt.url)
+        if (!got.ok) { tried.push(attempt.name + '=' + got.why); continue }
+        data = got.data
+        version = (data && data.updated) || ''
+      }
+      if (!data || !Array.isArray(data.plugins)) { tried.push(attempt.name + '=bad-shape'); continue }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:812-835](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L812-L835)
+**依据 3 · 源码核查**：[market-core.mjs:369-377](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L369-L377)
 
-重载串行化使用宿主API。
-
-<details>
-<summary>查看原文（24行）</summary>
+忽略构建脚本重试。
 
 ```text
-            // HMR is the supported way to apply a newly installed bundle without a
-            // restart: it reads the same profile patches the launcher booted, replaces
-            // changed modules, and reconciles new entries. Headless profiles disable
-            // it; there the caller must restart DSH instead.
-            const hmr = typeof host.get === 'function' ? host.get('hmr') : null
-            if (!hmr || typeof hmr.runExclusive !== 'function' || typeof hmr.reconcileProfile !== 'function') {
-              sendJson(response, 503, { ok: false, message: '当前 profile 未启用 HMR，无法一键重载；请重启 DSH。' })
-              return
-            }
-            reloadInProgress = true
-            try {
-              // reconcileProfile throws unless it runs inside runExclusive: HMR uses
-              // that transaction to serialize module replacement with its file watches.
-              const result = await hmr.runExclusive(() => hmr.reconcileProfile())
-              invalidateInstalled()
-              sendJson(response, 200, {
-                ok: true,
-                warnings: result && Array.isArray(result.warnings) ? result.warnings : [],
-                pending: result && Array.isArray(result.pending) ? result.pending : [],
-                restartReason: result && result.restartReason ? String(result.restartReason) : '',
-              })
-            } finally {
-              reloadInProgress = false
-            }
+  let result = runPnpm(updateArgs)
+
+  if (result.error === null || result.error === undefined) {
+    if (result.status !== 0 && result.output.includes('ERR_PNPM_IGNORED_BUILDS')) {
+      console.log('market: pnpm refused because a dependency has an unreviewed build script.')
+      console.log('market: retrying with --ignore-scripts (nothing gets built, nothing is approved).')
+      console.log('market: to build such a package deliberately, run `pnpm approve-builds` in the profile.')
+      const retry = runPnpm(updateArgs.concat(['--ignore-scripts']))
+      result = { status: retry.status, error: retry.error, output: result.output + '\n' + retry.output }
 ```
 
-</details>
+**依据 4 · 源码核查**：[index.js:823-827](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L823-L827)
 
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 如何验证带来源审阅与结果核对的安装事务是否更有用？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证的设计假设是把安装改为“展示旧来源与新来源、保存依赖快照、执行、核对实际加载”四阶段，尤其在 Git 固定来源被目录 npm 命令覆盖前要求用户明确选择。由 Q03 的来源变化与 Q04 的部分安装状态缺口推导，该设计可能减少误升级及故障后的人工重建，而不是提高目录数量。最小实验选同一个可丢弃 profile，比较现流程与事务原型，分别注入来源替换、网络中断及需重启模块；记录未被识别的来源改变、人工恢复步骤、耗时和最终加载正确性。只有错误改变被提前拦住且恢复更少人工才支持假设；若仍发生无提示替换或快照无法恢复，就否定当前事务实现。尚无真实需求、收益或付费验证，不把它称为已实现功能。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:89-94](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/README.md#L89-L94)
-
-来源转换是作者明确披露的真实条件。
-
-````text
-```
-┌─ 浏览器半边 ────────────────────────────────────────────────┐
-│  window.__ModuleLoader__.load({ id, factory(require) })     │
-│  require('react')；槽位服务由 ctx 注入                       │
-│  sidebar.panellist → 左侧栏「插件市场」入口                  │
-│  main → 独立的「DSH 插件市场」页面                          │
-````
-
-**依据 2 · 源码核查**：[index.js:758-764](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L758-L764)
-
-当前成功判定与真实加载之间存在可解释缺口。
+安装响应与状态刷新。
 
 ```text
-              const result = await runHelper(['install', spec, '--profile', profileName()], 900000)
-              const took = Math.round((Date.now() - started) / 1000)
-              // `install` prints no result marker, so the exit code is the verdict.
               if (result.ok === true || result.exitCode === 0) {
                 // The badge must not stay stale for the TTL after a successful install.
-                invalidateInstalled()
+                const refreshed = await refreshInstalled(true)
+                if (refreshed.ok !== true) invalidateInstalled()
                 sendJson(response, 200, { ok: true, spec, seconds: took, log: textOf(result.stdout).slice(-4000) })
 ```
 
 #### 缺口
 
-- 事务审阅能否减少误升级尚无对照结果。
-  **影响**：只能作为待验证设计方向。
-  **进一步探讨**：按所列三类故障与同一目标包进行对照。
+- 未验证包、安全和宿主
+  **影响**：无法保证兼容及恢复成本
+  **进一步探讨**：隔离 profile 审查固定目标后试用。
 
-<a id="research-q07"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-17"></a>
+<a id="detail-section-15"></a>
 
-### Q07 · 当前值得谁在什么范围试用，何时退出？
+### Q05 · 如何帮助用户决定安装后是否可启用？
 
-**研究主题**：采用判断
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-有独立测试 profile、理解目录与包来源区别的 DSH 用户可对一个可信扩展试用市场的发现和状态整理。先备份 profile 清单与锁文件，确认市场识别正确 profile，再装单一包；安装后使用重载结果判断是否还需重启，并到真实功能入口确认加载。相对复制命令，优势是搜索与已装状态集中而非效果已经证明。若来源将从 Git 转 npm、目标profile不符、安装日志不清或重载仍需重启而用户不能安排，应停止并回到固定命令与备份恢复。仅源码检查不能给持续安装结论；采用为有限 trial，成功标准是来源、目标profile和实际加载三者一致，不以Star或安装退出码代替。
+已有安装日志、更新徽章和退出码，增加成功提示并无新增。设想以一次安装为单位展示用户核验过的来源及版本、是否忽略脚本、包管理退出、宿主加载结果和未知项，并明确由用户决定启用或回退；不将安装退出码当加载证明。对照现有日志与徽章，测试脚本被忽略、包解析成功但宿主加载失败、缓存过期和版本改变，测错误启用及恢复时间；若来源无法可靠绑定、未知被显示成功或增加误判则否定。先核现有 UI 是否已有等价逐层摘要。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:80-101](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/README.md#L80-L101)
+**依据 1 · 源码核查**：[market-core.mjs:369-377](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/market-core.mjs#L369-L377)
 
-操作流程与更新边界。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-````text
-> 一个用 `github:` 装的插件，如果目录对应的条目是 npm 包名，更新后会变成 npm 包。
-> 想留在固定 commit 上就别点更新。
->
-> **判断不了的插件**：目录里没有 `version`、或目录根本没收录的插件，无法判断有没有更新。
-> 它们不会出现在「可更新」标签里，但标签内会单独说明有多少个 ——
-> 免得把「判断不了」误读成「已经是最新」。
-
-## 架构
-
-```
-┌─ 浏览器半边 ────────────────────────────────────────────────┐
-│  window.__ModuleLoader__.load({ id, factory(require) })     │
-│  require('react')；槽位服务由 ctx 注入                       │
-│  sidebar.panellist → 左侧栏「插件市场」入口                  │
-│  main → 独立的「DSH 插件市场」页面                          │
-│      页面内三个标签：全部插件 / 已安装 / 可更新              │
-│  筛选、排序、分页、更新比对全部在宿主侧完成                  │
-└───────────────┬─────────────────────────────────────────────┘
-                │ fetch()  ← 不是动态插件的私有 RPC，也不是 ctx.remote
-┌───────────────▼─────────────────────────────────────────────┐
-│  宿主半边  index.js                                          │
-│  ctx.inject(['webServer']) →                                │
-````
-
-</details>
-
-**依据 2 · 源码核查**：[index.js:758-777](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L758-L777)
-
-安装响应及失败日志。
-
-<details>
-<summary>查看原文（20行）</summary>
+已有脚本忽略和重试日志。
 
 ```text
-              const result = await runHelper(['install', spec, '--profile', profileName()], 900000)
-              const took = Math.round((Date.now() - started) / 1000)
-              // `install` prints no result marker, so the exit code is the verdict.
+  let result = runPnpm(updateArgs)
+
+  if (result.error === null || result.error === undefined) {
+    if (result.status !== 0 && result.output.includes('ERR_PNPM_IGNORED_BUILDS')) {
+      console.log('market: pnpm refused because a dependency has an unreviewed build script.')
+      console.log('market: retrying with --ignore-scripts (nothing gets built, nothing is approved).')
+      console.log('market: to build such a package deliberately, run `pnpm approve-builds` in the profile.')
+      const retry = runPnpm(updateArgs.concat(['--ignore-scripts']))
+      result = { status: retry.status, error: retry.error, output: result.output + '\n' + retry.output }
+```
+
+**依据 2 · 源码核查**：[index.js:823-827](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/index.js#L823-L827)
+
+已有退出状态及刷新。
+
+```text
               if (result.ok === true || result.exitCode === 0) {
                 // The badge must not stay stale for the TTL after a successful install.
-                invalidateInstalled()
+                const refreshed = await refreshInstalled(true)
+                if (refreshed.ok !== true) invalidateInstalled()
                 sendJson(response, 200, { ok: true, spec, seconds: took, log: textOf(result.stdout).slice(-4000) })
-                return
-              }
-              const code = typeof result.exitCode === 'number' ? result.exitCode : null
-              sendJson(response, 500, {
-                ok: false,
-                spec,
-                seconds: took,
-                message: code === null ? (result.message || '安装失败') : ('安装失败：pnpm 退出码 ' + String(code)),
-                log: (textOf(result.stderr) + '\n' + textOf(result.stdout)).slice(-4000),
-              })
-            } finally {
-              installInProgress = false
-            }
 ```
 
-</details>
+**依据 3 · 作者声明**：[README.md:24-33](https://github.com/99galaxy/dsh-plugin-market/blob/2ecee1e3b32e83c2fcfba4bfcf873135ee8c961b/README.md#L24-L33)
 
-**依据 3 · 源码核查**：[index.js:816-831](https://github.com/99galaxy/dsh-plugin-market/blob/52d44fba2b12453fa1b22a1453f9287fa3b33821/index.js#L816-L831)
-
-重载成功仍可能存在pending或restartReason。
+作者描述已有版本和重载提示。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-            const hmr = typeof host.get === 'function' ? host.get('hmr') : null
-            if (!hmr || typeof hmr.runExclusive !== 'function' || typeof hmr.reconcileProfile !== 'function') {
-              sendJson(response, 503, { ok: false, message: '当前 profile 未启用 HMR，无法一键重载；请重启 DSH。' })
-              return
-            }
-            reloadInProgress = true
-            try {
-              // reconcileProfile throws unless it runs inside runExclusive: HMR uses
-              // that transaction to serialize module replacement with its file watches.
-              const result = await hmr.runExclusive(() => hmr.reconcileProfile())
-              invalidateInstalled()
-              sendJson(response, 200, {
-                ok: true,
-                warnings: result && Array.isArray(result.warnings) ? result.warnings : [],
-                pending: result && Array.isArray(result.pending) ? result.pending : [],
-                restartReason: result && result.restartReason ? String(result.restartReason) : '',
+- **一键安装**：点「安装」即执行该条目的官方安装命令，装到当前 profile
+- **安装状态**：已安装的条目带绿色徽章；若目录名与你实际装的包名不同，会标出真实包名
+- **更新检测**：拿目录里的 `version` 和 profile 里实际装的版本比对，有更新的挂橙色徽章
+  「可更新 1.47.0（当前 1.46.1）」，按钮从「重新安装」变成「更新」
+- **精确更新**：更新 npm 插件时直接安装目录中的目标版本，不会因为旧的 `^` 范围而误报
+  「已是最新」；Git 来源更新则强制重新解析来源
+- **中英切换**：简介可切中文/英文
+- **本地缓存**：目录存到本地，**1 小时内直接复用**；过期时先显示本地内容并在后台更新，
+  不再用下载阻塞首屏；要立即等待最新版可点「强制重新获取」
+- **一键重载 profile**：装完插件点「重载 profile」，通过 DSH 的 HMR 重新组合当前 profile，不必重启；没有 HMR 的 profile 会提示你重启
 ```
 
 </details>
+
+#### 缺口
+
+- 未穷尽 UI 和无原型
+  **影响**：无法确认新增性及收益
+  **进一步探讨**：先核现有显示再对照故障样例。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

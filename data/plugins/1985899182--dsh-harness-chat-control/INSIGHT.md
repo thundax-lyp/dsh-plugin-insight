@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[a6aee9c](https://github.com/1985899182/dsh-harness-chat-control/tree/a6aee9c6107d6e7438a449e31393d6a12fde563f)
+源码版本：[841f42f](https://github.com/1985899182/dsh-harness-chat-control/tree/841f42f66d30cd86131d1c7c1553a0775e6a280a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1985899182/dsh-harness-chat-control)
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1985899182/dsh-harness-chat-control) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-harness-chat-control)
 <!-- END META -->
 
-> **功能**：为 DSH 对话提供原生引用胶囊、侧栏追问、原位编辑和侧栏标签批量关闭。
+> **功能**：在 DSH Desktop 中引用回答并创建侧边追问会话。
 
-> **亮点**：相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
+> **亮点**：[Q02](#research-q02) 将引用与独立侧聊接入现有宿主。
 
-> **主要限制**：最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。 参见[Q04](#research-q04)。
+> **主要限制**：[Q03](#research-q03) 快照不是已证明的实时同步，取消不撤销外部副作用。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 引用、侧栏追问和原位编辑解决什么重复任务？](#detail-section-11)
-  - [Q02 · 当前版本如何把引用、侧会话与宿主会话能力接起来？](#detail-section-12)
-  - [Q03 · dsh-harness-chat-control 相对简单替代的独立增量是什么？](#detail-section-13)
-  - [Q04 · 上下文继承、身份校验和内部接口耦合会怎样削弱价值？](#detail-section-14)
-  - [Q05 · dsh-harness-chat-control 启动、持续使用与失败恢复依赖什么？](#detail-section-15)
-  - [Q06 · 减少复制操作是否足以抵消侧会话上下文和维护成本？](#detail-section-16)
-  - [Q07 · 失败封闭、意图绑定和资源清理是否可靠？](#detail-section-17)
-  - [Q08 · 怎样用能力句柄和显式继承选择降低误操作风险？](#detail-section-18)
-  - [Q09 · dsh-harness-chat-control 适合观察、试用还是安装，停止条件是什么？](#detail-section-19)
+  - [Q01 · 引用追问和侧聊比直接追问多什么？](#detail-section-11)
+  - [Q02 · 侧聊如何继承主会话，如何发送和取消？](#detail-section-12)
+  - [Q03 · 侧聊是实时同步还是启动时的快照？](#detail-section-13)
+  - [Q04 · 适合什么条件，失败怎样处理？](#detail-section-14)
+  - [Q05 · 如何让用户决定是否刷新上下文或继续追问？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,82 +40,77 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向在 DSH Desktop 长对话里频繁引用局部回答、另开支线追问或修正已发问题的用户。输入是选中文本、整条回答或待编辑消息；合格结果是引用仍为可删除胶囊、侧栏标签互不串线、发送由用户确认、编辑只改变目标可见分支。简单替代是复制文本到主对话或新会话，但要人工补上下文并管理窗口。
+> **用途**：希望引用回答并在侧边继续追问的 DSH 用户。
 
-参见[Q01](#research-q01)。
-
-基线是复制文本到主对话或新会话并手工补上下文；它更透明但操作多，且没有原生胶囊、分支 surface 与批量标签管理。
+复制选文到主会话或手工开新会话。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 主对话引用 | 把片段或整回答加入原生注释胶囊 | 插入失败不降级为普通标记 |
-| 侧栏追问 | 创建带父历史的独立侧会话 | 继承上下文与权限，不是沙箱 |
-| 原位编辑 | 在同会话 surface 替换可见分支 | 不删除历史事件或撤销副作用 |
-| 标签批量关闭 | 关闭左侧、右侧或其他侧栏标签 | 只清界面实例 |
+| 能力 | 用途 | 边界 |
+|---|---|---|
+| 引用 | 在侧聊中带入上下文 | 注意敏感信息 |
+| 侧聊 | 独立追问 | 继承为创建时快照 |
+| 取消 | 请求停止子 agent | 不保证撤销外部副作用 |
+| 失败提示 | 显示错误 | 实际发送状态需核查 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH Desktop 0.12.1 / Harness 0.2.1-rc.2 | 必需 | 提供内部 slot、会话和路由服务 | 版本漂移可能导致入口或状态链失效 |
-| Better Sidebar 0.28.0 内置实现 | 必需 | 提供侧栏布局与转录 | 内置版本需随宿主升级复核 |
-| 模型、权限与父会话历史 | 特定操作必需 | 完成侧栏追问并继承上下文 | 缺失时只能保留引用或空会话 |
-| 用户核对目标与继承范围 | 效果必需 | 避免错标签和敏感历史扩散 | 插件未提供硬权限隔离 |
+|---|---|---|---|
+| 兼容 DSH Desktop | 必需 | UI 和会话服务 | 插件功能不可用 |
+| 模型服务 | 生成回答必需 | 子会话回答 | 无法生成 |
+| 用户确认引用内容 | 敏感场景必需 | 避免不当复制 | 应停止发送 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 退出 Desktop，固定版本安装并重启 | 引用与侧栏入口出现；否则核 profile 与 bundle |
-| 引用 | 用户选片段或整回答，选择主对话或侧栏 | 胶囊可见且可删除，未确认前不发送 |
-| 追问/编辑 | 选择模型后发送，或编辑原消息重发 | 响应落到目标标签/分支；错目标立即停止 |
-| 收尾 | 检查副作用后关闭单个或批量标签 | 标签清理不等于撤销工具动作 |
+|---|---|---|
+| 准备 | 用户核对兼容宿主和模型 | 不兼容则使用普通会话 |
+| 引用 | 用户选文并打开侧聊 | 检查内容和目标 |
+| 追问 | 用户发送或取消 | 失败先核对是否已发送 |
+| 验收 | 用户核对答案与主上下文 | 快照过时则重新引用 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 固定宿主、Sidebar 和多 peer 依赖；金额未知 | 安装、重启并核 slot/路由；耗时未知 | 精确兼容范围窄 |
-| 持续使用 | 继承历史 token、模型与工具调用；金额未知 | 管理引用、模型和多个标签 | 只选片段仍可能携带父历史 |
-| 失败恢复 | 外部工具副作用可能已发生 | 核对会话、surface、注册恢复并人工补救 | 关闭标签不能回滚副作用 |
+|---|---|---|---|
+| 首次使用 | 宿主与模型费用未知 | 安装和兼容配置时间未知 | 需匹配版本 |
+| 持续使用 | 子会话模型和存储消耗未知 | 选文和核对时间未知 | 复制上下文可能含敏感内容 |
+| 失败恢复 | 重试模型费用未知 | 查发送状态与恢复时间未知 | 取消外部效果未测 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 减少复制与找消息 | 原生胶囊和主/侧入口已接线 | 未测端到端节时 |
-| 并行支线阅读 | 多实例侧栏与批量标签关闭可见 | 不等于权限或数据隔离 |
-| 原位修正 | surface 替换保留来源链 | 并发同文消息错配率未知 |
+|---|---|---|
+| 引用侧聊 | 源码创建子会话并发送 | 节时与回答质量 |
+| 上下文 | 复制已完成事件，未完成作快照 | 后续自动同步和模型遵循 |
+| 取消 | 向子 agent 请求 cancel | 外部动作撤销 |
 
-> **思考**：最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。 参见[Q04](#research-q04)。
+> **思考**：[Q03](#research-q03) 快照不是已证明的实时同步，取消不撤销外部副作用。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。 参见[Q03](#research-q03)。
+> **亮点**：[Q02](#research-q02) 将引用与独立侧聊接入现有宿主。
 
-Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己持有时恢复，体现了失败封闭。编辑链会校验 seq/文本并重算 surfaceRange，但关联仍缺贯穿 UI 意图与发送的 nonce；共享 definition.multiple 与内置私有实现增加升级维护面。可借鉴的是引用插入失败不降级成污染正文的 token，以及先建空侧会话、等用户确认再发送。 参见[Q07](#research-q07)。
+[Q02](#research-q02) 未完成轮次以快照传递；[Q03](#research-q03) 不是实时同步证明。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。 参见[Q04](#research-q04)。
+[Q03](#research-q03) 快照不是已证明的实时同步，取消不撤销外部副作用。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察。长对话引用价值明确，但应先在无敏感工具的固定版本环境核对所有路由的父子身份、继承范围与编辑并发；若出现错目标、继承内容超预期或宿主升级后 slot 失配就停止。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。
-
-参见[Q01](#research-q01)。
+[Q04](#research-q04) 核对引用与目标，断连后先查发送状态。
 
 <a id="detail-section-7"></a>
 
@@ -127,18 +118,18 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 
 **核查状态**：已检查源码。
 
-固定源码已支持引用胶囊、侧会话路由、原位编辑和标签管理的接线判断；父子会话身份一致性、继承 token 与错编辑恢复尚未在 Desktop/Harness 实测，能力句柄假设仍待证伪，见[Q08](#research-q08)。
+固定源码静态核查；未运行 Desktop、模型或侧聊。
 
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查 README、package、Host/Client 关键路由、引用、编辑、Sidebar 接线与清理分支；不做全量 vendored Sidebar 审计。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。
-- 下一步：用两个父会话、三个侧栏标签和同文消息构造交叉矩阵，逐项记录路由拒绝、引用完整率、token、错目标、标签清理与工具副作用；任一跨父请求被接受或错编辑即否定安全采用。
+- 边界：固定源码静态检查；未运行宿主、模型或远端工具。
+- 下一步：隔离宿主测试主会话变化、侧聊取消、断连与恢复。
 
 **分析版本**
 
 - **仓库**：[1985899182/dsh-harness-chat-control](https://github.com/1985899182/dsh-harness-chat-control)
-- **版本号**：0.3.5（[固定提交 a6aee9c](https://github.com/1985899182/dsh-harness-chat-control/tree/a6aee9c6107d6e7438a449e31393d6a12fde563f)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.10（[固定提交 841f42f](https://github.com/1985899182/dsh-harness-chat-control/tree/841f42f66d30cd86131d1c7c1553a0775e6a280a)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -146,9 +137,9 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 
 <a id="innovation"></a>
 
-可探索给每个父子会话发放带父 ID、能力范围和过期时间的句柄，同时让用户显式选择继承“片段／本轮／全部历史”；编辑再携带意图 nonce 与预期 surface 版本。它可能同时降低越界请求、上下文泄露和错编辑，但会增加一次选择和兼容层。 参见[Q08](#research-q08)。
+[Q05](#research-q05) 对照已有引用和快照，验证新鲜度提示的决策收益。
 
-用两个父会话、三个侧栏标签和同文消息构造交叉矩阵，逐项记录路由拒绝、引用完整率、token、错目标、标签清理与工具副作用；任一跨父请求被接受或错编辑即否定安全采用。
+隔离宿主测试主会话变化、侧聊取消、断连与恢复。
 
 <a id="detail-section-9"></a>
 
@@ -157,357 +148,560 @@ Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 2 | 6377 | 5168 | 1024 | — |
-| .md | source | 5 | 477 | — | — | 7121 |
-| .mjs | source | 2 | 1373 | 1251 | 71 | — |
+| .md | source | 6 | 453 | — | — | 6619 |
+| .js | source | 2 | 6489 | 5238 | 1066 | — |
+| .mjs | source | 3 | 1484 | 1334 | 92 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1985899182/dsh-harness-chat-control/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A08.519Z..2026-10-22T16%3A02%3A08.519Z)
-
-
-
-统计日期：2026-10-23。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/1985899182/dsh-harness-chat-control/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 a6aee9c6107d6e7438a449e31393d6a12fde563f 上判断 dsh-harness-chat-control 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。
+**插件研究总目标**：核查选文侧聊、上下文继承和取消的证据边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 引用、侧栏追问和原位编辑解决什么重复任务？
+### Q01 · 引用追问和侧聊比直接追问多什么？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向在 DSH Desktop 长对话里频繁引用局部回答、另开支线追问或修正已发问题的用户。输入是选中文本、整条回答或待编辑消息；合格结果是引用仍为可删除胶囊、侧栏标签互不串线、发送由用户确认、编辑只改变目标可见分支。简单替代是复制文本到主对话或新会话，但要人工补上下文并管理窗口。
+DSH 用户可选择回答片段并在侧边继续问，主会话不必被新问题占用；直接复制选文到主会话或手工开新会话也可完成部分工作。是否更快及回答质量未测。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
+**依据 1 · 源码核查**：[README.md:1-14](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/README.md#L1-L14)
 
-作者列出引用、侧栏、编辑与停止能力。
+作者描述选文及侧聊。
+
+<details>
+<summary>查看原文（14行）</summary>
 
 ```text
-## 功能
+# dsh-harness-chat-control
 
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
+在 DSH Desktop 里加入「引用式追问」：划选回答中的任意文字即可引用，带到主对话或独立的侧边对话继续问；答案生成到一半想改问题，也能随时停下就地改。
+
+[English](README_EN.md) · [日本語](README_JA.md) · [한국어](README_KO.md)
+
+## 功能截图
+
+**选中即引用**——在回答里划选一段文字，浮出的工具条提供「添加到对话 / 更多详情 / 在侧边聊天中提问」。
+
+![选中文字工具条](docs/screenshots/selection-toolbar.png)
+
+**侧边对话**——引用带到右侧独立会话，主对话不被打断，引用以注释胶囊挂在输入框上。
+
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/client.js:4653-4666](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/client.js#L4653-L4666)
+
+侧聊发送及清空输入。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+			const handleSend = async () => {
+				const text = composer.trim();
+				if (text === "" || threadId === void 0 || busy !== null) return;
+				setBusy("sending");
+				setError(null);
+				try {
+					const wireText = typeof draftStore?.format === "function" ? draftStore.format(threadId, text) : text;
+					await api.sidechatPrompt(threadId, wireText);
+					draftStore?.clear?.(threadId);
+					setReferenceText("");
+					setComposer("");
+					const field = composerRef.current;
+					if (field !== null) field.style.height = "";
+					fetchThread(threadId);
+```
+
+</details>
+
+#### 缺口
+
+- 未与手工流程对照
+  **影响**：无法量化收益
+  **进一步探讨**：相同问题比较操作时间和引用正确性。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 当前版本如何把引用、侧会话与宿主会话能力接起来？
+### Q02 · 侧聊如何继承主会话，如何发送和取消？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-客户端在回答动作、输入 dock、侧栏入口、标签菜单和 overlay 注册界面；Host 注册侧会话创建、历史、模型、发送/取消和编辑路由。创建侧会话会复制父会话历史与配置，首轮把引用边界作为注入内容，再由用户问题触发 follow-up。当前版本内置 Better Sidebar 0.28.0，并增加左右/其他标签批量关闭。
+创建侧聊时复制已结束轮次，进行中轮次则生成引用快照，不把未完成轮次当作子会话原始事件。创建使用父配置和 Agent 服务，后续发消息到子会话；客户端取消调用 sidechatCancel，宿主对已找到的 agent 调 cancel 并保留 inbox。取消请求不是外部工具副作用回滚证明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1469-1472](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/index.js#L1469-L1472)
+**依据 1 · 源码核查**：[lib/index.js:368-392](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L368-L392)
 
-Host 入口取得服务并注册路由。
+区分已完成事件与未完成快照。
 
-```text
-export function apply(ctx) {
-  const registerRoute = () => {
-    const webServer = ctx?.webServer || getService(ctx, 'webServer')
-    if (typeof webServer?.register !== 'function') {
-```
-
-**依据 2 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
+* Build the side-thread inheritance for one parent log: every COMPLETED turn
+* up to the click moment.
+*
+* The parent's open turn is never inherited as log events.  It holds the
+* question the user just asked the MAIN conversation plus the assistant
+* output still streaming for it; copying those events into the child would
+* make the child's own log claim the main question as one of its user
+* messages, so the side panel would show the main conversation's question
+* and the side model could answer it instead of the side question.  The open
+* turn is handed over as a fenced, reference-only snapshot instead (see
+* buildOpenTurnSnapshot), which rides the boundary injection.
+*/
+function buildSidechatInheritance(events) {
+	if (events.length === 0) return {
+		seed: [],
+		snapshot: null
+	};
+	const boundary = lastTurnBoundary(events);
+	if (boundary < 0 || events[boundary]?.type === "turn/end") return {
+		seed: copyEvents(events),
+		snapshot: null
+	};
+	return {
+		seed: copyEvents(events.slice(0, boundary)),
+		snapshot: buildOpenTurnSnapshot(events)
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:685-701](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L685-L701)
+
+子 agent 创建和失败。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+					delegationDepth: (parentSession.header.delegationDepth ?? 0) + 1,
+					...agentPreset === void 0 ? {} : { agentPreset }
+				},
+				seed,
+				agentOptions: { ...parent.options },
+				setup,
+				signal: AbortSignal.timeout(CREATE_TIMEOUT_MS)
+			};
+			const agents = ctx.get("agents");
+			if (agents?.create === void 0) throw new SidechatModelError("sidechat-error", "the agents service is unavailable", 503);
+			let handle;
+			try {
+				handle = await agents.create(options);
+			} catch (error) {
+				throw new SidechatModelError("sidechat-error", `thread creation failed: ${error instanceof Error ? error.message : String(error)}`, 500);
+			}
+			threadDisposers.set(childId, () => handle.dispose());
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:720-764](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L720-L764)
+
+侧聊消息及取消。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+		"sidechat.prompt": async (payload) => {
+			const childId = requireSidechatString(payload, "childId");
+			const rawText = payload?.text;
+			if (typeof rawText !== "string") throw new SidechatModelError("bad-request", "missing or invalid \"text\"");
+			const text = rawText.trim();
+			const imageBlocks = sideImageBlocks(payload?.images);
+			if (text === "" && imageBlocks.length === 0) throw new SidechatModelError("bad-request", "text or images are required");
+			// A user message made only of image blocks does not wake the driver
+			// and renders as an empty row in the side transcript, so an
+			// image-only question carries a neutral text part.
+			const question = text === "" ? SIDE_IMAGE_PROMPT : text;
+			let agent = liveThreadAgent(ctx, childId);
+			if (agent === void 0) {
+				const agents = ctx.get("agents");
+				if (agents?.resume === void 0) throw new SidechatModelError("sidechat-error", "the agents service is unavailable", 503);
+				const setup = await composePersistedSetup(ctx, childId);
+				try {
+					const handle = await agents.resume({
+						resumeSessionId: childId,
+						setup
+					});
+					threadDisposers.set(childId, () => handle.dispose());
+					agent = handle.agent;
+				} catch (error) {
+					throw new SidechatModelError("sidechat-error", `thread resume failed: ${error instanceof Error ? error.message : String(error)}`, 500);
+				}
+			}
+			const blocks = [...imageBlocks, ...textPrompt(question)];
+			if (boundaryDelivered(sessionLogEvents(agent.session) ?? [])) admitFollowup(agent, blocks);
+			else {
+				const parts = [SIDE_BOUNDARY_PROMPT];
+				const snapshot = pendingSnapshots.get(childId);
+				pendingSnapshots.delete(childId);
+				if (snapshot !== void 0) parts.push(snapshot);
+				admitFirstContact(agent, parts.join("\n\n"), question, blocks);
+				const titles = ctx.get("sessionTitle");
+				if (titles !== void 0) try {
+					titles.rename(agent.session, sideLabel(question));
+				} catch {}
+			}
+			return { accepted: true };
+		},
+		"sidechat.cancel": async (payload) => {
+			const agent = liveThreadAgent(ctx, requireSidechatString(payload, "childId"));
+			if (agent !== void 0) agent.cancel({ kind: "user" }, { keepInbox: true });
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/client.js:4653-4679](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/client.js#L4653-L4679)
+
+发送与取消 UI。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+			const handleSend = async () => {
+				const text = composer.trim();
+				if (text === "" || threadId === void 0 || busy !== null) return;
+				setBusy("sending");
+				setError(null);
+				try {
+					const wireText = typeof draftStore?.format === "function" ? draftStore.format(threadId, text) : text;
+					await api.sidechatPrompt(threadId, wireText);
+					draftStore?.clear?.(threadId);
+					setReferenceText("");
+					setComposer("");
+					const field = composerRef.current;
+					if (field !== null) field.style.height = "";
+					fetchThread(threadId);
+					fetchInfo(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+				} finally {
+					setBusy(null);
+				}
+			};
+			const handleCancel = async () => {
+				if (threadId === void 0 || busy !== null) return;
+				try {
+					await api.sidechatCancel(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+```
+
+</details>
+
+#### 缺口
+
+- 未运行宿主和外部工具
+  **影响**：不能证明取消完全停止或撤销副作用
+  **进一步探讨**：隔离宿主验证流式、排队工具和取消后真实状态。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · dsh-harness-chat-control 相对简单替代的独立增量是什么？
+### Q03 · 侧聊是实时同步还是启动时的快照？
 
-**研究主题**：贡献与相对优势
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-相对手工复制，它把原生注释、用户确认发送、带历史的独立侧栏和 surface 替换放进同一交互，并复用宿主模型、停止与权限 UI。增量主要是会话与界面接线，不是新的模型推理能力；标签批量关闭改善多支线收尾，但不撤销已经发生的工具副作用。
+继承在创建时读取父事件，未完成轮次只以当时快照作为参考；后续主会话变化不能由该路径推断自动同步。边界文字声明内容为参考，但模型是否遵循仍需验证；引用来源可能含敏感内容，跨会话复制前应审查。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:1469-1472](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/index.js#L1469-L1472)
+**依据 1 · 源码核查**：[lib/index.js:368-392](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L368-L392)
 
-Host 入口取得服务并注册路由。
+以创建时事件构造 seed 和快照。
 
-```text
-export function apply(ctx) {
-  const registerRoute = () => {
-    const webServer = ctx?.webServer || getService(ctx, 'webServer')
-    if (typeof webServer?.register !== 'function') {
-```
-
-**依据 2 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
+* Build the side-thread inheritance for one parent log: every COMPLETED turn
+* up to the click moment.
+*
+* The parent's open turn is never inherited as log events.  It holds the
+* question the user just asked the MAIN conversation plus the assistant
+* output still streaming for it; copying those events into the child would
+* make the child's own log claim the main question as one of its user
+* messages, so the side panel would show the main conversation's question
+* and the side model could answer it instead of the side question.  The open
+* turn is handed over as a fenced, reference-only snapshot instead (see
+* buildOpenTurnSnapshot), which rides the boundary injection.
+*/
+function buildSidechatInheritance(events) {
+	if (events.length === 0) return {
+		seed: [],
+		snapshot: null
+	};
+	const boundary = lastTurnBoundary(events);
+	if (boundary < 0 || events[boundary]?.type === "turn/end") return {
+		seed: copyEvents(events),
+		snapshot: null
+	};
+	return {
+		seed: copyEvents(events.slice(0, boundary)),
+		snapshot: buildOpenTurnSnapshot(events)
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:512-524](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L512-L524)
+
+边界与子会话描述。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+}
+
+
+/**
+* Side Chat routes of the /sidebar JSON API ('sidechat.start' /
+* 'sidechat.prompt' / 'sidechat.cancel' / 'sidechat.dispose').
+*
+* A side thread is a child session the plugin creates ITSELF with a custom
+* seed — the parent's COMPLETED turns up to the click moment; the parent's
+* open turn (when it is still running) rides the boundary injection as
+* reference-only text instead of being copied into the child log, so a side
+* thread never inherits the main conversation's in-flight question as its
+* own user message (see buildSidechatInheritance). The child is marked
+```
+
+</details>
+
+#### 缺口
+
+- 未验证后续父事件同步或模型行为
+  **影响**：不能保证引用新鲜或遵循提示
+  **进一步探讨**：固定主会话继续变化并比较侧聊可见上下文。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 上下文继承、身份校验和内部接口耦合会怎样削弱价值？
+### Q04 · 适合什么条件，失败怎样处理？
 
-**研究主题**：缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-最关键前提是“侧栏独立”容易被误解为权限或数据隔离。源码仍复制父历史、cwd 与 options，自然语言边界不能限制工具；多条 Host 路由对目标身份的核验若不一致，知道会话 ID 的请求可能越过预期父子关系。内置 Sidebar 和多个内部 slot 还把兼容性绑定在精确宿主版本。
+需要与插件 peer 版本匹配的 DSH Desktop、会话及模型服务；子会话和复制上下文会产生模型与存储成本。发送失败留错误，用户应检查目标会话、引用和实际已发送状态，再决定重试；对外部动作先人工核实，不把取消当撤销。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
+**依据 1 · 源码核查**：[package.json:20-40](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/package.json#L20-L40)
 
-客户端注册侧栏标签菜单等界面入口。
+依赖及版本声明。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
+    "lib",
+    "scripts",
+    "vendor",
+    "cordis.patch.yml",
+    "README.md",
+    "README_EN.md",
+    "README_JA.md",
+    "README_KO.md",
+    "MILESTONE.md",
+    "docs",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node ./scripts/validate.mjs && node ./scripts/compat-check.mjs",
+    "compat": "node ./scripts/compat-check.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
 ```
 
-**依据 2 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
+</details>
 
-作者列出引用、侧栏、编辑与停止能力。
+**依据 2 · 源码核查**：[lib/client.js:4653-4679](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/client.js#L4653-L4679)
+
+发送成功清理与失败处理、取消。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
-## 功能
+			const handleSend = async () => {
+				const text = composer.trim();
+				if (text === "" || threadId === void 0 || busy !== null) return;
+				setBusy("sending");
+				setError(null);
+				try {
+					const wireText = typeof draftStore?.format === "function" ? draftStore.format(threadId, text) : text;
+					await api.sidechatPrompt(threadId, wireText);
+					draftStore?.clear?.(threadId);
+					setReferenceText("");
+					setComposer("");
+					const field = composerRef.current;
+					if (field !== null) field.style.height = "";
+					fetchThread(threadId);
+					fetchInfo(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+				} finally {
+					setBusy(null);
+				}
+			};
+			const handleCancel = async () => {
+				if (threadId === void 0 || busy !== null) return;
+				try {
+					await api.sidechatCancel(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+```
 
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:760-764](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L760-L764)
+
+取消调用。
+
+```text
+			return { accepted: true };
+		},
+		"sidechat.cancel": async (payload) => {
+			const agent = liveThreadAgent(ctx, requireSidechatString(payload, "childId"));
+			if (agent !== void 0) agent.cancel({ kind: "user" }, { keepInbox: true });
 ```
 
 #### 缺口
 
-- 所有侧会话路由是否在真实 Host 中执行一致的父子身份与授权校验
-  **影响**：若不一致，侧栏的独立展示不能支撑安全隔离或可信编辑
-  **进一步探讨**：在两个父会话与三个侧栏标签间交叉使用创建、history、model、prompt、cancel 和 edit，记录错误 ID、跨父 ID 与并发编辑的拒绝矩阵
+- 未测试兼容宿主、模型计费或失败重试
+  **影响**：无法估算成本及重复发送风险
+  **进一步探讨**：隔离模型环境测试断连与发送完成后响应丢失。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · dsh-harness-chat-control 启动、持续使用与失败恢复依赖什么？
+### Q05 · 如何让用户决定是否刷新上下文或继续追问？
 
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-启动依赖 DSH Desktop 0.12.1、Harness 0.2.1-rc.2、固定 Sidebar 0.28.0、多项客户端服务与重启；使用价值依赖用户理解继承范围、宿主授权和模型选择。失败恢复要检查错标签、目标会话、编辑 surface 及共享注册恢复，关闭标签只能清 UI，不能回滚外部动作。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1469-1472](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/index.js#L1469-L1472)
-
-Host 入口取得服务并注册路由。
-
-```text
-export function apply(ctx) {
-  const registerRoute = () => {
-    const webServer = ctx?.webServer || getService(ctx, 'webServer')
-    if (typeof webServer?.register !== 'function') {
-```
-
-**依据 2 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
-
-作者列出引用、侧栏、编辑与停止能力。
-
-```text
-## 功能
-
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
-```
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 减少复制操作是否足以抵消侧会话上下文和维护成本？
-
-**研究主题**：效果与总成本
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-合格任务可定义为一次引用追问落到正确会话且无串线。首次要固定 Desktop/Harness/Sidebar 并核对 slot；持续成本包括继承历史的 token、并行侧会话模型调用和标签管理；失败恢复要核对主侧会话、已发生工具动作及编辑目标。源码没有同任务复制基线的耗时、token 或错误率对照。
+已有选文引用、进行中轮次快照和取消控件，是直接反证；假设在侧聊显示父会话快照时间及父会话是否已继续变化，辅助用户决定继续或新开侧聊。对照现有界面，在父会话不变、继续输出、切换会话和断连条件下测过期引用导致误答、误报、判断时间和提示负担；无改善、误导或成本抵消收益则否定。尚未穷尽客户端已有新鲜度提示。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
+**依据 1 · 源码核查**：[lib/index.js:368-392](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/index.js#L368-L392)
 
-作者列出引用、侧栏、编辑与停止能力。
+创建时继承和快照。
 
-```text
-## 功能
-
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
-```
-
-**依据 2 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
+* Build the side-thread inheritance for one parent log: every COMPLETED turn
+* up to the click moment.
+*
+* The parent's open turn is never inherited as log events.  It holds the
+* question the user just asked the MAIN conversation plus the assistant
+* output still streaming for it; copying those events into the child would
+* make the child's own log claim the main question as one of its user
+* messages, so the side panel would show the main conversation's question
+* and the side model could answer it instead of the side question.  The open
+* turn is handed over as a fenced, reference-only snapshot instead (see
+* buildOpenTurnSnapshot), which rides the boundary injection.
+*/
+function buildSidechatInheritance(events) {
+	if (events.length === 0) return {
+		seed: [],
+		snapshot: null
+	};
+	const boundary = lastTurnBoundary(events);
+	if (boundary < 0 || events[boundary]?.type === "turn/end") return {
+		seed: copyEvents(events),
+		snapshot: null
+	};
+	return {
+		seed: copyEvents(events.slice(0, boundary)),
+		snapshot: buildOpenTurnSnapshot(events)
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/client.js:4653-4679](https://github.com/1985899182/dsh-harness-chat-control/blob/841f42f66d30cd86131d1c7c1553a0775e6a280a/lib/client.js#L4653-L4679)
+
+已有发送与取消。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+			const handleSend = async () => {
+				const text = composer.trim();
+				if (text === "" || threadId === void 0 || busy !== null) return;
+				setBusy("sending");
+				setError(null);
+				try {
+					const wireText = typeof draftStore?.format === "function" ? draftStore.format(threadId, text) : text;
+					await api.sidechatPrompt(threadId, wireText);
+					draftStore?.clear?.(threadId);
+					setReferenceText("");
+					setComposer("");
+					const field = composerRef.current;
+					if (field !== null) field.style.height = "";
+					fetchThread(threadId);
+					fetchInfo(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+				} finally {
+					setBusy(null);
+				}
+			};
+			const handleCancel = async () => {
+				if (threadId === void 0 || busy !== null) return;
+				try {
+					await api.sidechatCancel(threadId);
+				} catch (cause) {
+					setError(cause instanceof Error ? cause.message : String(cause));
+```
+
+</details>
 
 #### 缺口
 
-- 同长度对话下复制基线与插件路径的端到端耗时、继承 token、错目标率和人工恢复时间
-  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI
-  **进一步探讨**：固定十组引用任务，分别走手工复制与插件路径，统计正确会话完成率、总 token、点击数、恢复分钟数和已发生副作用
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 失败封闭、意图绑定和资源清理是否可靠？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-Host 在路由注册失败时逐项清理，客户端 wrapper 只在仍由自己持有时恢复，体现了失败封闭。编辑链会校验 seq/文本并重算 surfaceRange，但关联仍缺贯穿 UI 意图与发送的 nonce；共享 definition.multiple 与内置私有实现增加升级维护面。可借鉴的是引用插入失败不降级成污染正文的 token，以及先建空侧会话、等用户确认再发送。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1469-1472](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/index.js#L1469-L1472)
-
-Host 入口取得服务并注册路由。
-
-```text
-export function apply(ctx) {
-  const registerRoute = () => {
-    const webServer = ctx?.webServer || getService(ctx, 'webServer')
-    if (typeof webServer?.register !== 'function') {
-```
-
-**依据 2 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
-
-```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
-```
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 怎样用能力句柄和显式继承选择降低误操作风险？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-可探索给每个父子会话发放带父 ID、能力范围和过期时间的句柄，同时让用户显式选择继承“片段／本轮／全部历史”；编辑再携带意图 nonce 与预期 surface 版本。它可能同时降低越界请求、上下文泄露和错编辑，但会增加一次选择和兼容层。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
-
-```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
-```
-
-**依据 2 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
-
-作者列出引用、侧栏、编辑与停止能力。
-
-```text
-## 功能
-
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
-```
-
-#### 缺口
-
-- 能力句柄、分级历史继承和编辑 nonce 的组合是否值得额外交互
-  **影响**：新方向仍是推演，不能计入插件当前贡献或效果
-  **进一步探讨**：做只含片段/本轮/全部历史三档的原型，要求跨父会话请求全部拒绝、错编辑为零，且中位操作时间不比现状增加 20%
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · dsh-harness-chat-control 适合观察、试用还是安装，停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议观察。长对话引用价值明确，但应先在无敏感工具的固定版本环境核对所有路由的父子身份、继承范围与编辑并发；若出现错目标、继承内容超预期或宿主升级后 slot 失配就停止。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:26-29](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/README.md#L26-L29)
-
-作者列出引用、侧栏、编辑与停止能力。
-
-```text
-## 功能
-
-- **主对话引用**：引用整条回答或选中的片段；不会把 Markdown 标记（如 `>`、`---`）污染到正文。
-- **原生注释胶囊**：引用在输入框中显示为 `1 条注释` 胶囊，用户可先编辑问题、移除引用，再决定是否发送。
-```
-
-**依据 2 · 源码核查**：[lib/client.js:3139-3142](https://github.com/1985899182/dsh-harness-chat-control/blob/a6aee9c6107d6e7438a449e31393d6a12fde563f/lib/client.js#L3139-L3142)
-
-客户端注册侧栏标签菜单等界面入口。
-
-```text
-     * `sidebar.right.tab.menu.item` list, so these batch entries land right
-     * below it.  The slot receives no ordered tab list, so the strip's DOM is
-     * the source of truth: `data-dockkit-tab` elements sit in the order the
-     * user sees, which is exactly what "left" and "right" mean here.
-```
+- 未穷尽所有 UI 提示和事件订阅
+  **影响**：不能证明展示缺失或收益
+  **进一步探讨**：在固定任务对照已有与原型，检查用户选择。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

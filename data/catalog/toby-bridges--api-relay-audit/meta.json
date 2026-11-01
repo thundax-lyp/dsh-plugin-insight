@@ -1,10 +1,10 @@
 {
     "repository": "toby-bridges/api-relay-audit",
     "repository_id": 1195794651,
-    "captured_at": "2026-10-27T04:59:15.812Z",
-    "window_start": "2026-09-27T04:59:15.812Z",
-    "stars": 895,
-    "pushed_at": "2026-10-26T07:10:24Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 902,
+    "pushed_at": "2026-10-27T18:13:30Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,47 +15,47 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85EE:2C852B:496503:4F6BE0:6AE03060 and timestamp 2026-10-27 05:02:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A6C8:356AC:22888A:2676FB:6AE71D20 and timestamp 2026-11-01 11:06:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B6C:3FB742:4D7F6D:538620:6AE03064 and timestamp 2026-10-27 05:02:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7B4:2C4E7:202569:2416D2:6AE71D21 and timestamp 2026-11-01 11:06:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B78:74A5D:4A70D2:507753:6AE03065 and timestamp 2026-10-27 05:02:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A82C:2701A5:213730:25228C:6AE71D22 and timestamp 2026-11-01 11:06:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B88:2467CC:49E452:4FEC0F:6AE03068 and timestamp 2026-10-27 05:02:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8EE:286DD:214D96:253FEC:6AE71D24 and timestamp 2026-11-01 11:06:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20updated%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B9C:2DB611:52600D:5868A6:6AE03069 and timestamp 2026-10-27 05:02:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Atoby-bridges%2Fapi-relay-audit%20is%3Aissue%20updated%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA22:2DCE9:261EC1:2A0D9F:6AE71D28 and timestamp 2026-11-01 11:06:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "945fc842b9db9619ac4cd91244a7d9f02f5ffb27",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-api-relay-audit",
-        "captured_at": "2026-10-27T04:59:15.812Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 281,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-api-relay-audit",
+        "captured_at": "2026-10-30T22:25:49.661Z",
+        "window_start": "2026-09-30",
+        "window_end": "2026-10-29",
+        "downloads_30d": 513,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-30:2026-10-29/dsh-api-relay-audit",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-25T14:29:49.925Z",
-            "captured_at": "2026-10-27T04:59:15.812Z",
+            "captured_at": "2026-10-30T22:25:49.661Z",
             "source_url": "https://registry.npmjs.org/dsh-api-relay-audit",
             "error": null,
             "latest_version": "2.5.0",

@@ -1,27 +1,36 @@
 {
     "repository": "AppliedYuu/dsh-WallpaperAndCost",
     "repository_id": 1338425616,
-    "captured_at": "2026-10-27T08:34:14.025Z",
-    "window_start": "2026-09-27T08:34:14.025Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
     "stars": 4,
-    "pushed_at": "2026-10-27T08:20:48Z",
+    "pushed_at": "2026-10-28T02:58:16Z",
     "issues": {
-        "open": 1,
-        "closed": 0,
-        "created_30d": 1,
+        "open": null,
+        "closed": null,
+        "created_30d": 0,
         "closed_30d": 0,
-        "updated_30d": 1
+        "updated_30d": 0
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C07C:26E127:2123A1:25161E:6AE71DB0 and timestamp 2026-11-01 11:08:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAppliedYuu%2Fdsh-WallpaperAndCost%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C0C0:25D288:20FE8A:24F5B0:6AE71DB2 and timestamp 2026-11-01 11:08:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-26T13:46:09.196Z",
+        "captured_at": "2026-11-01T06:52:54.214Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
         "latest_error": null
     }
 }

@@ -1,10 +1,10 @@
 {
     "repository": "Aliww2468/dsh-client-ui-aqua-patched",
     "repository_id": 1378742722,
-    "captured_at": "2026-10-22T06:15:20.003Z",
-    "window_start": "2026-09-22T06:15:20.003Z",
-    "stars": 2,
-    "pushed_at": "2026-09-20T20:37:19Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
+    "stars": 3,
+    "pushed_at": "2026-10-30T15:35:47Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -12,5 +12,34 @@
         "closed_30d": 0,
         "updated_30d": 0
     },
-    "errors": []
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T17:22:18.721Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-client-ui-aqua",
+        "captured_at": "2026-11-01T11:05:20.882Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1096,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-client-ui-aqua",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T10:18:50.583Z",
+            "captured_at": "2026-11-01T11:05:20.882Z",
+            "source_url": "https://registry.npmjs.org/dsh-client-ui-aqua",
+            "error": null,
+            "latest_version": "1.3.1",
+            "latest_published_at": "2026-08-17T10:37:20.515Z",
+            "latest_error": null
+        }
+    }
 }

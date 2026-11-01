@@ -1,10 +1,10 @@
 {
     "repository": "2768651338/dsh-effort-slider",
     "repository_id": 1335766616,
-    "captured_at": "2026-10-22T06:49:58.749Z",
-    "window_start": "2026-09-22T06:49:58.749Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
     "stars": 20,
-    "pushed_at": "2026-10-20T14:21:40Z",
+    "pushed_at": "2026-11-01T09:03:41Z",
     "issues": {
         "open": 0,
         "closed": 2,
@@ -13,17 +13,28 @@
         "updated_30d": 2
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@txc2768651338/dsh-effort-slider",
-        "captured_at": "2026-10-22T06:50:07.817Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 1403,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/%40txc2768651338%2Fdsh-effort-slider",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 2207,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40txc2768651338%2Fdsh-effort-slider",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-01T08:03:51.076Z",
-            "captured_at": "2026-10-22T06:50:07.817Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
             "source_url": "https://registry.npmjs.org/%40txc2768651338%2Fdsh-effort-slider",
             "error": null,
             "latest_version": "0.5.1",

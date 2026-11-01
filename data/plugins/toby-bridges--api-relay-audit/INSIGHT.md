@@ -1,18 +1,18 @@
 # API Relay Audit
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[d261bcc](https://github.com/toby-bridges/api-relay-audit/tree/d261bcc196c43dfd072ae24210dd57870399437b)
+源码版本：[3af7126](https://github.com/toby-bridges/api-relay-audit/tree/3af7126a34d099f65031c6e3af63b302a843fe59)
 
 <!-- BEGIN META -->
-[![GitHub ★ 895](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=895&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/toby-bridges/api-relay-audit) [![npm 30d 281](https://img.shields.io/static/v1?label=npm+30d&message=281&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit)
+[![GitHub ★ 902](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=902&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/toby-bridges/api-relay-audit) [![npm 30d 513](https://img.shields.io/static/v1?label=npm+30d&message=513&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-api-relay-audit)
 <!-- END META -->
 
-> **功能**：在本地检查 AI API 中转行为，生成逐步证据和风险报告，并提供 DSH 命令入口。
+> **功能**：本地探测 AI API 中转行为并生成审计报告。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持的已有贡献是把多类中转探针组织为保留未知项的本地报告，再用宿主凭据和当前线路减少手工接线。检测语义来自项目已有 Python 实现，DSH 适配不另创检测算法；没有同条件准确率或节时证据。
+> **亮点**：[Q01](#research-q01) 集中可重复的中转行为探测与报告，[Q02](#research-q02) 提供 DSH 凭据和命令接入。
 
-> **主要限制**：[Q03](#research-q03) 显示 MEDIUM 同时表示未知和异常，SSE 异常也能升为 HIGH。报告保留原因值得肯定，但网络和协议问题不能直接归因为恶意中转，评级不能代替生产信任决定。
+> **主要限制**：[Q03](#research-q03) curl -k 不验证 TLS 证书；报告与诊断脱敏范围不同，[Q01](#research-q01) 信号不等于安全证明。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 本地审计为谁提供什么结果，安全认证是否成立？](#detail-section-11)
-  - [Q02 · 命令如何从当前线路走到本地报告？](#detail-section-12)
-  - [Q03 · 中断和异常是否被误当成安全或攻击证明？](#detail-section-13)
-  - [Q04 · 什么范围值得试用，成本和退出如何控制？](#detail-section-14)
-  - [Q05 · 双轴输出能否减少把网络故障当攻击的误判？](#detail-section-15)
+  - [Q01 · 谁需要中转审计，相对手工探测有什么增量？](#detail-section-11)
+  - [Q02 · DSH 命令如何选择目标、凭据及报告？](#detail-section-12)
+  - [Q03 · 密钥、TLS 和取消失败的真实边界是什么？](#detail-section-13)
+  - [Q04 · 运行前需满足哪些条件、成本与停止条件？](#detail-section-14)
+  - [Q05 · 如何支持用户判断哪些结果值得复核？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：使用第三方中转的开发者可在发送敏感任务前生成可复查报告，但不能据此认定线路安全。
+> **用途**：使用第三方 AI 中转前需要了解其请求和响应行为。
 
-直接使用同仓库 audit.py 可取得相同检测语义；手工 curl 是更简单的连通性基线，不能等同多类异常审计。DSH包价值主要在凭据、目标与报告管理。
+使用者手工构造请求并复核供应商行为。
 
 <a id="detail-section-3"></a>
 
@@ -51,65 +51,64 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| DSH审计命令 | 复用当前线路及凭据，输出本地报告 | 声明Claude线路及兼容服务；不提供安全认证 |
-| Python探针报告 | 汇集提示、响应与流异常及未知项 | 需要网络与模型费用，结果需人工归因 |
+|---|---|---|
+| relay-audit 命令 | 选择 provider 并启动本地探测 | 模型基线与宿主版本受限 |
+| 报告 | 组织探测证据 | 不等于安全认证或公开脱敏 |
+| 传输 | 发送受限时间的请求 | curl -k 不验证证书 |
 
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| Node与匹配DSH服务 | 是 | commands、credentials、llm等接线 | 无法加载或解析目标 |
-| Python与curl | 是 | 本地探针及HTTP | 审计无法完成 |
-| Claude声明线路与凭据 | DSH操作必需 | 当前检测基线 | 拒绝或报告未知 |
-| 人工归因与预算 | 是 | 不将评级当认证 | 暂缓扩大流量 |
+| 依赖或条件 | 是否必需 | 用途 | 不满足时 |
+|---|---|---|---|
+| 兼容 DSH 和 Node | DSH 模式需要 | 解析 provider 与命令 | 无法启动命令 |
+| Python 和 curl | 必需 | 运行探测和 HTTP | 无法运行 |
+| 被授权中转及测试凭据 | 必需 | 探测目标 | 不应发出请求 |
+| 受控可信网络 | 采用前重要 | 降低 -k 证书不验证的风险 | 不使用生产凭据 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户固定版本并配置宿主凭据 | 不将密钥写入命令 |
-| 接线 | 先进行连通性检查 | 确认目标；失败停止 |
-| 审计 | 在有限预算内运行选定探针 | 报告生成且未知可辨认 |
-| 审阅 | 用户逐项判断证据和协议影响 | 不确定则回退手工调查 |
+|---|---|---|
+| 准备 | 确认目标授权、版本与隔离环境 | 身份不明停止 |
+| 配置 | 以低权限临时凭据设置 DSH | 缺凭据拒绝运行 |
+| 探测 | 明确费用后启动命令 | 取消或失败核对部分报告 |
+| 复核 | 查看原始证据及未知项 | 不把信号当证明，撤销测试凭据 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | Python与DSH环境，金额未知 | 配置线路及凭据，时间未知 | 兼容宿主版本必需 |
-| 持续使用 | 中转模型调用与上下文，费用未知 | 审阅探针与归因，时间未知 | 默认完整审计可能较贵 |
-| 失败恢复 | 重试请求可能再次计费 | 查部分报告、区分网络与异常 | 已发送内容不可撤回 |
+|---|---|---|---|
+| 准备 | 测试环境成本未知 | 核授权、凭据和网络 | TLS 证书未验证 |
+| 探测 | API 请求费用未知 | 等待与记录 | 运行时间未知 |
+| 恢复 | 报告保管成本未知 | 脱敏、撤销凭据和复核 | 报告可能敏感 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 接线 | 复用当前线路、凭据引用和本地报告路径 | 现场兼容及配置耗时 |
-| 异常处理 | 探针崩溃保留未知，取消保留部分报告 | 误报漏报与真实攻击覆盖 |
-| 审计收益 | 多类检查集中输出 | 合格率、节时与单位成本 |
+|---|---|---|
+| DSH 命令 | 注入凭据、调用脚本并输出文件 | 实际宿主兼容 |
+| 传输 | curl 发请求且限时 | 目标证书真实性 |
+| 报告 | 作者描述多查询族和未知 | 检测准确率、安全认证 |
 
-> **思考**：[Q03](#research-q03) 显示 MEDIUM 同时表示未知和异常，SSE 异常也能升为 HIGH。报告保留原因值得肯定，但网络和协议问题不能直接归因为恶意中转，评级不能代替生产信任决定。
+> **思考**：[Q03](#research-q03) curl -k 不验证 TLS 证书；报告与诊断脱敏范围不同，[Q01](#research-q01) 信号不等于安全证明。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持的已有贡献是把多类中转探针组织为保留未知项的本地报告，再用宿主凭据和当前线路减少手工接线。检测语义来自项目已有 Python 实现，DSH 适配不另创检测算法；没有同条件准确率或节时证据。
+> **亮点**：[Q01](#research-q01) 集中可重复的中转行为探测与报告，[Q02](#research-q02) 提供 DSH 凭据和命令接入。
 
-[Q02](#research-q02)适配层明确分发与检测职责，无shell argv与环境传钥值得借鉴；[Q03](#research-q03)部分报告及诊断有利于恢复。迁移需宿主凭据、子进程取消和工作区路径语义，不能只复制命令注册；路径预检也不是对恶意并发文件系统的完整保护。
+[Q02](#research-q02) 原始密钥不接受作命令参数，[Q03](#research-q03) curl -k 跳过证书校验。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 显示 MEDIUM 同时表示未知和异常，SSE 异常也能升为 HIGH。报告保留原因值得肯定，但网络和协议问题不能直接归因为恶意中转，评级不能代替生产信任决定。
+[Q03](#research-q03) curl -k 不验证 TLS 证书；报告与诊断脱敏范围不同，[Q01](#research-q01) 信号不等于安全证明。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 建议有技术能力的线路使用者先做连通性检查，再在不含真实业务秘密的有限请求上试用，逐项读原因而非只看评级。持续未知、预算失控或敏感报告无法妥善保管时停止，改用手工HTTP调查；本次不支持长期安装验收结论。
+[Q04](#research-q04) 仅在授权的隔离环境使用低权限临时凭据；审查敏感报告并撤销凭据。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-已核查源码中的适配链路与风险聚合。检测效果与现场兼容未执行验证；双轴报告仅为未验证假设。
+已静态核查命令入口、传输与报告边界；未发请求或测探针质量。
 
 - 已检查：作者 README、包清单、源码路径 README.md、package.json、dsh/index.js、audit.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查固定提交中的README、包清单、DSH适配器及Python风险汇总；未运行目标代码，不据此判断实际中转安全。
-- 下一步：未执行实验。进一步研究可用透明、故障、篡改代理记录原始响应和每步覆盖，比较归因错误、模型账单与人工审阅时间；双轴呈现若不优于原报告则放弃。
+- 边界：只读固定根 README、清单、DSH 命令和独立脚本的传输代表路径；未运行目标、网络探测、DSH 或真实报告。
+- 下一步：[Q05](#research-q05) 先核已有报告字段，再用已知行为及失败样本对照。
 
 **分析版本**
 
 - **仓库**：[toby-bridges/api-relay-audit](https://github.com/toby-bridges/api-relay-audit)
-- **版本号**：2.5.0（[固定提交 d261bcc](https://github.com/toby-bridges/api-relay-audit/tree/d261bcc196c43dfd072ae24210dd57870399437b)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.5.0（[固定提交 3af7126](https://github.com/toby-bridges/api-relay-audit/tree/3af7126a34d099f65031c6e3af63b302a843fe59)）
+- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +135,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 推导出未验证的“完成覆盖与异常证据分列”假设。用透明、故障和篡改代理同样本盲评归因；正确率不改善或审阅负担上升则停止。
+[Q05](#research-q05) 假设按结论显示覆盖和可回溯证据帮助人工复核；未验证。
 
-未执行实验。进一步研究可用透明、故障、篡改代理记录原始响应和每步覆盖，比较归因错误、模型账单与人工审阅时间；双轴呈现若不优于原报告则放弃。
+[Q05](#research-q05) 先核已有报告字段，再用已知行为及失败样本对照。
 
 <a id="detail-section-9"></a>
 
@@ -147,9 +146,11 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 40 | 6697 | — | — | 62932 |
+| .md | source | 40 | 6710 | — | — | 63052 |
 | .mjs | source | 9 | 1050 | 983 | 43 | — |
 | .md | example | 1 | 81 | — | — | 570 |
 | .js | source | 1 | 486 | 419 | 18 | — |
@@ -160,34 +161,34 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/toby-bridges/api-relay-audit/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/toby-bridges/api-relay-audit/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本的DSH适配能否帮助中转API使用者获得可追溯行为审计材料，其风险标签可以支撑什么采用决定？
+**插件研究总目标**：核查 DSH 入口、探测调用、凭据及判断限制。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 本地审计为谁提供什么结果，安全认证是否成立？
+### Q01 · 谁需要中转审计，相对手工探测有什么增量？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-使用第三方中转的开发者在发送生产、编码或钱包敏感流量前，需要检查请求和响应有没有可观察异常。合格交付是逐步证据与不确定项保留的本地报告，而非证明供应商诚实。相比手动 curl 只检查连通性，项目把提示、工具文本、错误泄漏及流事件检查组织为同一次审计；相比直接运行同仓库 audit.py，DSH 包增加当前线路和凭据的接线，不能把 Python 检测器归为适配层原创。作者明确拒绝安全认证，模型自称和延迟也不足以证明换模，因此报告适合筛查与后续调查，不应作为自动放行依据。
+README:82-101 面向第三方 AI API 中转使用者，描述探测提示注入、上下文和模型替换信号。相对手写请求或只依赖供应商宣传，本项目包装成重复的本地审计报告及 DSH 命令；不同探针的检测效果、误报和节省时间都未独立测量。README 同时明确报告不是安全认证，自报身份和延迟不是模型替换的单独证明。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:82-102](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/README.md#L82-L102)
+**依据 1 · 作者声明**：[README.md:82-101](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L82-L101)
 
-定位目标场景并明确非认证及各探针族的证据限制。
+作者给出场景、查询族和限制。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
 ## When to Use It
@@ -210,50 +211,58 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
 | API relay audit | Audit a third-party relay, mirror, gateway, LLM proxy, or resale API before trusting traffic. | `general` by default; `full` for every probe | Produces a local report, not a safety certificate. |
 | Prompt injection audit | Detect hidden prompt injection, prompt leakage, instruction override, and extraction behavior. | `general`; Steps 3-6 | Records prompt evidence without publishing private prompts or secrets. |
 | Model substitution signals | Collect model identity, stream, latency, and upstream channel signals. | `general`; Steps 5, 10, 13, 14 | Self-ID, latency, and channel fingerprints are signals, not standalone proof of provider substitution. |
-| Web3 relay audit | Check wallet-sensitive relay behavior before agent workflows touch signing or transactions. | `web3` or `full`; Step 11 | Profile-gated; general relay audits do not imply wallet safety. |
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/index.js:1-6](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L1-L6)
+**依据 2 · 源码核查**：[package.json:1-10](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/package.json#L1-L10)
 
-适配器主动限定自身只拥有分发、目标与凭据接线，检测语义保留Python。
+DSH 包与本地脚本入口。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
-/**
- * DeepSeek Harness adapter for the generated standalone API Relay Audit.
- *
- * This module deliberately owns only distribution concerns: resolve one DSH
- * provider target, resolve one credential, launch the existing audit.py, and
- * return its report path. Detection semantics remain entirely in Python.
+{
+  "name": "dsh-api-relay-audit",
+  "version": "2.5.0",
+  "description": "DeepSeek Harness bundle for running API Relay Audit locally",
+  "type": "module",
+  "main": "./dsh/index.js",
+  "exports": {
+    ".": "./dsh/index.js",
+    "./audit.py": "./audit.py",
+    "./cordis.patch.yml": "./dsh/cordis.patch.yml"
 ```
+
+</details>
 
 #### 缺口
 
-- 缺少同条件手工审计对照与误报漏报数据
-  **影响**：不能认定更准确或更省时间
-  **进一步探讨**：对可控透明代理与已知篡改代理重复同组请求，记录原始事件、误报、漏报和人工复核时间
+- 未验证探针有效率或真实使用价值
+  **影响**：不能将报告当安全认证
+  **进一步探讨**：以受控的已知行为对照人工探测。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 命令如何从当前线路走到本地报告？
+### Q02 · DSH 命令如何选择目标、凭据及报告？
 
 **研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-用户调用 relay-audit 后，适配器无 shell 地拆分参数，拒绝原始 key 与 key-env 及受控参数缩写。它从当前 agent 与 settings 读取 URL、模型和凭据引用，先检查 URL 和声明的 Claude 家族，再向 Credentials 取值。Python 以 argv 启动，密钥放入子进程环境，报告路径要求位于工作区并检查已有符号链接祖先。子进程结束后必须发现报告文件才返回成功。这个成功只证明进程和文件条件，不证明报告所评线路可信。必须有兼容 commands、credentials、subprocess、llm、settings 服务、Python 及联网线路；根包要求 Node 22.19 或24及以上相应范围。Claude 标签是适用性筛选，不是供应商真实性证明。
+dsh/index.js:125-150 拒绝原始 --key 与 --key-env 并接收其他参数；243-275 从当前 provider 或覆盖值解析 URL、模型和凭据引用，检查声明的 Claude 基线。382-445 要求绝对工作区、验证输出路径、解析凭据并用环境变量注入 Python 子进程；477-485 注册 /relay-audit 且 recordInput=false。audit.py:651-682 用 curl 发 JSON、stdin 提供头并设置超时。未运行网络，无法确认对端身份、费用或报告真实性。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh/index.js:125-173](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L125-L173)
+**依据 1 · 源码核查**：[dsh/index.js:125-150](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L125-L150)
 
-拒绝密钥和缩写，提取适配器拥有的参数。
+拒绝调用方传入原始密钥。
 
 <details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
 /** Parse DSH-owned options and leave existing audit.py options untouched. */
@@ -282,36 +291,13 @@ export function parseCommandInput(rawInput) {
     if (!OWNED_OPTIONS.has(name)) {
       passthrough.push(token)
       continue
-    }
-    if (values.has(name)) throw new Error(`${name} may be specified only once`)
-
-    let value = optionInlineValue(token)
-    if (value === undefined) {
-      index += 1
-      value = tokens[index]
-    }
-    if (value === undefined || value.length === 0 || value.startsWith('--')) {
-      throw new Error(`${name} requires a value`)
-    }
-    values.set(name, value)
-  }
-
-  return Object.freeze({
-    help,
-    url: values.get('--url'),
-    model: values.get('--model'),
-    credentialRef: values.get('--credential-ref'),
-    output: values.get('--output'),
-    transparentLog: values.get('--transparent-log'),
-    passthrough: Object.freeze(passthrough),
-  })
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/index.js:243-275](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L243-L275)
+**依据 2 · 源码核查**：[dsh/index.js:243-275](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L243-L275)
 
-目标字段与Claude标签校验。
+目标解析和 Claude 基线限制。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -354,15 +340,14 @@ export async function resolveTarget(ctx, agent, parsed, signal) {
 
 </details>
 
-**依据 3 · 源码核查**：[dsh/index.js:381-470](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L381-L470)
+**依据 3 · 源码核查**：[dsh/index.js:382-405](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L382-L405)
 
-凭据解析、Python argv/env、结果及报告文件检查。
+工作区和目标解析。
 
 <details>
-<summary>查看原文（90行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-/** Execute one human-command invocation against the existing audit.py CLI. */
 export async function executeAuditCommand(invocation, ctx, options = {}) {
   let secret = ''
   try {
@@ -386,6 +371,19 @@ export async function executeAuditCommand(invocation, ctx, options = {}) {
       await assertWorkspacePathContained(workspace, transparentLogPath)
     }
 
+    const credential = await ctx.credentials.resolve(target.credentialRef)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh/index.js:405-445](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L405-L445)
+
+凭据及子进程参数。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
     const credential = await ctx.credentials.resolve(target.credentialRef)
     if (credential === undefined || typeof credential.value !== 'string' || credential.value.length === 0) {
       throw new Error(`DSH Credential ${target.credentialRef} is missing or empty`)
@@ -427,285 +425,150 @@ export async function executeAuditCommand(invocation, ctx, options = {}) {
       graceMs: PROCESS_GRACE_MS,
       signal: invocation.signal,
       env: { [CHILD_KEY_ENV]: secret },
-    })
-    const outcome = await handle.done
-    const reportExists = await fileExists(reportPath)
-
-    if (invocation.signal.aborted) {
-      return {
-        kind: 'error',
-        text: reportExists
-          ? `Audit canceled. Partial report: ${reportPath}`
-          : 'Audit canceled; no report was generated.',
-      }
-    }
-    if (outcome.exitCode !== 0) {
-      const diagnostic = diagnosticTail(handle, secret)
-      const report = reportExists ? `\nReport: ${reportPath}` : ''
-      const detail = diagnostic.length > 0 ? `\n${diagnostic}` : ''
-      return {
-        kind: 'error',
-        text: `Audit process exited with code ${String(outcome.exitCode)}.${report}${detail}`,
-      }
-    }
-    if (!reportExists) {
-      throw new Error('audit.py exited successfully but did not create its report')
-    }
-    return { kind: 'success', text: `Report: ${reportPath}` }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[dsh/index.js:285-316](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L285-L316)
+**依据 5 · 源码核查**：[dsh/index.js:477-485](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L477-L485)
 
-词法路径与真实已有祖先约束。
+注册命令与关闭输入记录。
+
+```text
+/** Register the command globally for every DSH command-compatible surface. */
+export function apply(ctx) {
+  ctx.commands.register({
+    name: 'relay-audit',
+    description: 'run the local API relay security audit',
+    input: { hint: '[audit.py options]' },
+    recordInput: false,
+    handler: invocation => executeAuditCommand(invocation, ctx),
+  })
+```
+
+**依据 6 · 源码核查**：[audit.py:651-682](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/audit.py#L651-L682)
+
+curl POST 和超时。
 
 <details>
 <summary>查看原文（32行）</summary>
 
 ```text
-/** Resolve an optional user path and require that it remains in the workspace. */
-export function resolveWorkspacePath(workspace, input, fallback) {
-  const candidate = input === undefined ? fallback : resolve(workspace, input)
-  if (candidate === workspace || isOutsideWorkspace(workspace, candidate)) {
-    throw new Error('output paths must resolve to a file inside the current workspace')
-  }
-  return candidate
-}
+def curl_post_json(url: str, headers: dict, body: dict, timeout: int,
+                   subprocess_module=subprocess) -> dict:
+    """POST JSON through curl while keeping headers out of argv.
 
-async function nearestExistingRealPath(candidate) {
-  let current = candidate
-  for (;;) {
-    try {
-      return await realpath(current)
-    } catch (error) {
-      if (error?.code !== 'ENOENT' && error?.code !== 'ENOTDIR') throw error
-      const parent = dirname(current)
-      if (parent === current) throw error
-      current = parent
-    }
-  }
-}
+    Headers are passed through ``--config -`` so credentials do not show up
+    in process listings. The JSON body is written to a short-lived file and
+    sent via ``--data-binary @file`` so very large prompts do not hit Windows'
+    32 KB command-line limit.
+    """
+    body_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w", encoding="utf-8", delete=False, prefix="api-relay-body-", suffix=".json"
+        ) as tmp:
+            json.dump(body, tmp)
+            body_path = tmp.name
 
-/** Reject existing symlinks that would make an output escape the workspace. */
-export async function assertWorkspacePathContained(workspace, candidate) {
-  const canonicalWorkspace = await realpath(workspace)
-  const canonicalAncestor = await nearestExistingRealPath(candidate)
-  if (canonicalAncestor !== canonicalWorkspace
-    && isOutsideWorkspace(canonicalWorkspace, canonicalAncestor)) {
-    throw new Error('output paths must not escape the current workspace through a symlink')
-  }
-  return candidate
+        cmd = ["curl", "-sk", *curl_loopback_no_proxy_args(url), "-X", "POST", url,
+               "--max-time", str(timeout), "--config", "-", "--data-binary", f"@{body_path}"]
+        config = curl_header_config(headers)
+        r = subprocess_module.run(cmd, capture_output=True, text=True, input=config,
+                                  timeout=timeout + 10)
+    finally:
+        if body_path:
+            try:
+                os.unlink(body_path)
+            except OSError:
+                pass
+
+    if r.returncode != 0:
+        raise RuntimeError(f"curl failed: {r.stderr[:200]}")
+    return json.loads(r.stdout)
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[package.json:30-39](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/package.json#L30-L39)
+#### 缺口
 
-Node与宿主peer版本范围。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-  "engines": {
-    "node": "^22.19.0 || >=24.0.0"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-commands": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
-    "@deepseek-ai/dsh-credentials": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
-    "@deepseek-ai/dsh-llm": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
-    "@deepseek-ai/dsh-settings": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
-    "@deepseek-ai/dsh-subprocess": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
-```
-
-</details>
+- 未运行网络或实际报告
+  **影响**：无法证明完整审计或兼容
+  **进一步探讨**：用测试代理核调用及报告。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 中断和异常是否被误当成安全或攻击证明？
+### Q03 · 密钥、TLS 和取消失败的真实边界是什么？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-实现的优点是探针异常不会丢掉所有前序输出，_run_step 写黄旗、保留异常名并返回未知默认值，聚合将任一步崩溃或维度未知提升到 MEDIUM。DSH 取消后返回部分报告路径，非零退出带脱敏诊断，适合人工继续调查。限制在于 MEDIUM 同时容纳无法完成和较弱异常，HIGH 中也有仅为协议结构异常的分支；协议适配差异、网络失败与恶意行为不是同一因果。不能把评级直接当恶意运营者判定。路径检查到实际打开之间仍存在时间间隔，静态祖先校验不等于防御并发恶意修改文件系统；本轮未复现这种攻击。凭据环境与诊断替换减少命令行暴露，不证明报告全文或子进程环境对本地同权限主体保密。
+dsh/index.js:405-445 将凭据放入子进程环境而非命令参数，360-369 和 458-473 仅对错误诊断做密钥字符串替换；这不是报告全量脱敏或所有子进程和系统观测面的秘密隔离。audit.py:668-672 的 curl 使用 -sk，其中 -k 跳过 TLS 证书校验；因此即使 URL 为 HTTPS，该调用也不验证服务端证书，不能依靠此审计保护凭据对抗中间人。450-470 对取消、非零退出和缺报告返回错误，但部分报告可能存在；用户需隔离敏感文件并自行核结果。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[audit.py:6564-6594](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/audit.py#L6564-L6594)
+**依据 1 · 源码核查**：[dsh/index.js:360-369](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L360-L369)
 
-探针异常保留报告并转为未知，避免整轮丢失。
+诊断输出中的密钥字符串替换。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-def _run_step(name, reporter, step_fn, *args, default=None, crashes=None):
-    """Run ``step_fn(*args)`` with fail-open exception handling.
+export function redactSecret(text, secret) {
+  if (secret.length === 0) return text
+  return text.split(secret).join('[REDACTED]')
+}
 
-    If ``crashes`` is a list, the step name is appended to it on
-    failure so the risk-matrix section can add a catch-all MEDIUM
-    escalation for ANY step crash — not just the dimension-bearing
-    steps that have their own d1i..d6i flags.
-    """
-    try:
-        return step_fn(*args)
-    except KeyboardInterrupt:
-        raise
-    except Exception as e:
-        import traceback
-        exc_type = type(e).__name__
-        print(
-            f"\n[{name}] CRASHED: {exc_type}: {e}",
-            file=sys.stderr,
-        )
-        traceback.print_exc(file=sys.stderr)
-        if crashes is not None:
-            crashes.append(name)
-        try:
-            reporter.flag(
-                "yellow",
-                f"{name} crashed mid-step: {exc_type}: {e} "
-                f"(continued with inconclusive default)",
-            )
-        except Exception:
-            pass  # Reporter itself is broken; stderr already has the trace
-        return default
+function diagnosticTail(handle, secret) {
+  const combined = [collectedText(handle, 'stdout'), collectedText(handle, 'stderr')]
+    .filter(Boolean)
+    .join('\n')
+  return redactSecret(combined, secret).slice(-4_096).trim()
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[audit.py:6826-6864](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/audit.py#L6826-L6864)
+**依据 2 · 源码核查**：[dsh/index.js:405-445](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L405-L445)
 
-未知与已知风险共用三档评级，HIGH包括SSE异常。
-
-<details>
-<summary>查看原文（39行）</summary>
-
-```text
-    # Overall rating
-    # Dimensions (v3, post-v1.7.5):
-    #   D1  = hidden system-prompt injection > 100 tokens   (Step 3)
-    #   D1i = Step 3 crashed / inconclusive                 (Step 3)
-    #   D2  = caller system instruction not followed        (Step 5)
-    #   D2i = Step 5 crashed / inconclusive                 (Step 5)
-    #   D3  = tool-call package substitution detected       (Step 8)
-    #   D3i = Step 8 inconclusive (all probes errored)      (Step 8)
-    #   D4  = error response leakage (critical or high)     (Step 9)
-    #   D4m = error response leakage (medium only)          (Step 9)
-    #   D4i = Step 9 inconclusive                           (Step 9)
-    #   D5  = stream integrity anomaly detected             (Step 10)
-    #   D5i = Step 10 inconclusive (non-Anthropic / broken) (Step 10)
-    #   D6  = Web3 prompt injection detected                (Step 11, profile=web3|full)
-    #   D6i = Step 11 inconclusive                          (Step 11, profile=web3|full)
-    # Rules (first match wins):
-    #   d3 or d4 or d5 or d6                        -> HIGH
-    #   d1 and d2                                   -> HIGH
-    #   d1                                          -> MEDIUM
-    #   d2                                          -> MEDIUM
-    #   d1i or d2i or d3i or d4i or d4m or d5i or d6i or any_crashed -> MEDIUM
-    #   else                                        -> LOW
-    report.h2("14. Overall Rating")
-    any_step_crashed = bool(step_crashes)
-    d1 = injection is not None and injection > 100
-    d1i = injection is None
-    d2 = overridden is not None and overridden
-    d2i = overridden is None
-    d3 = substitution_detected
-    d3i = substitution_inconclusive
-    d4 = err_severity in ("critical", "high")
-    d4m = err_severity == "medium"
-    d4i = err_inconclusive
-    d5 = stream_verdict == "anomaly"
-    d5i = stream_inconclusive
-    d6 = web3_inj_verdict == "anomaly"
-    d6i = web3_inj_inconclusive
-    if d3 or d4 or d5 or d6:
-        risk_level = "HIGH"
-```
-
-</details>
-
-**依据 3 · 源码核查**：[audit.py:6920-6975](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/audit.py#L6920-L6975)
-
-MEDIUM原因明确列出崩溃及协议不兼容。
+凭据通过环境变量传子进程。
 
 <details>
-<summary>查看原文（56行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
-        report.p("### MEDIUM RISK\n")
-        medium_reasons = []
-        if any_step_crashed:
-            crashed_names = ", ".join(step_crashes)
-            medium_reasons.append(
-                f"One or more audit steps **crashed** ({crashed_names}): "
-                "the audit is incomplete and should be re-run to get "
-                "a definitive verdict."
-            )
-        if d1i:
-            medium_reasons.append(
-                "Token injection test (Step 3) **crashed or was inconclusive**: "
-                "the relay's injection behavior could not be verified."
-            )
-        if d2i:
-            medium_reasons.append(
-                "Instruction override test (Step 5) **crashed or was inconclusive**: "
-                "whether the relay respects user system prompts could not be verified."
-            )
-        if d3i:
-            medium_reasons.append(
-                "Tool-call substitution test (Step 8) was **inconclusive**: "
-                "every probe errored, so the relay's AC-1.a behavior could not "
-                "be verified -- a relay that blocks plaintext echo is itself a red flag."
-            )
-        if d4m:
-            medium_reasons.append(
-                "Error response leaks filesystem paths or stack traces. "
-                "Information disclosure is present but not directly credential-exposing."
-            )
-        if d4i:
-            medium_reasons.append(
-                "Error leakage test (Step 9) was **inconclusive**: every probe "
-                "returned HTTP 200 or failed with a transport error, so no error "
-                "surface could be inspected."
-            )
-        if d5i:
-            medium_reasons.append(
-                "Stream integrity test (Step 10) was **inconclusive**: the relay "
-                "did not speak Anthropic SSE cleanly, so the event-layer invariants "
-                "could not be verified. A relay that cannot return a standard "
-                "Anthropic stream is itself a suspicious signal."
-            )
-        if d6i:
-            medium_reasons.append(
-                "Web3 prompt injection test (Step 11) was **inconclusive**: all "
-                "three Web3 probes errored or produced ambiguous responses, so "
-                "Web3 safety behavior could not be verified."
-            )
-        report.p(" ".join(medium_reasons))
-    else:
-        risk_level = "LOW"
-        report.p("### LOW RISK\n")
-        report.p("No significant injection, instruction override, tool-call "
-                 "substitution, error response leakage, stream integrity "
-                 "anomaly, or Web3 injection detected.")
-```
+    const credential = await ctx.credentials.resolve(target.credentialRef)
+    if (credential === undefined || typeof credential.value !== 'string' || credential.value.length === 0) {
+      throw new Error(`DSH Credential ${target.credentialRef} is missing or empty`)
+    }
+    secret = credential.value
 
-</details>
+    const python = await resolvePython(
+      ctx,
+      invocation.signal,
+      options.platform ?? process.platform,
+    )
 
-**依据 4 · 源码核查**：[dsh/index.js:435-473](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L435-L473)
+    const argv = [
+      python.executable,
+      ...python.prefix,
+      options.auditScript ?? AUDIT_SCRIPT,
+      '--key-env',
+      CHILD_KEY_ENV,
+      '--url',
+      target.url,
+      '--model',
+      target.model,
+      '--output',
+      reportPath,
+      ...parsed.transparentLog === undefined
+        ? []
+        : ['--transparent-log', transparentLogPath],
+      ...parsed.passthrough,
+    ]
 
-中断返回部分报告，非零退出脱敏但不验证报告安全结论。
-
-<details>
-<summary>查看原文（39行）</summary>
-
-```text
     const handle = ctx.subprocess.spawn({
       argv,
       cwd: workspace,
@@ -717,10 +580,45 @@ MEDIUM原因明确列出崩溃及协议不兼容。
       graceMs: PROCESS_GRACE_MS,
       signal: invocation.signal,
       env: { [CHILD_KEY_ENV]: secret },
-    })
-    const outcome = await handle.done
-    const reportExists = await fileExists(reportPath)
+```
 
+</details>
+
+**依据 3 · 源码核查**：[audit.py:668-682](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/audit.py#L668-L682)
+
+curl -sk、超时和错误处理。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+        cmd = ["curl", "-sk", *curl_loopback_no_proxy_args(url), "-X", "POST", url,
+               "--max-time", str(timeout), "--config", "-", "--data-binary", f"@{body_path}"]
+        config = curl_header_config(headers)
+        r = subprocess_module.run(cmd, capture_output=True, text=True, input=config,
+                                  timeout=timeout + 10)
+    finally:
+        if body_path:
+            try:
+                os.unlink(body_path)
+            except OSError:
+                pass
+
+    if r.returncode != 0:
+        raise RuntimeError(f"curl failed: {r.stderr[:200]}")
+    return json.loads(r.stdout)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh/index.js:450-473](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L450-L473)
+
+取消、退出码和报告文件处理。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
     if (invocation.signal.aborted) {
       return {
         kind: 'error',
@@ -749,58 +647,189 @@ MEDIUM原因明确列出崩溃及协议不兼容。
 
 </details>
 
+**依据 5 · 作者声明**：[README.md:69-80](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L69-L80)
+
+JSON 报告不自动适合公开分享。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+````text
+## JSON Reports
+
+v2.5.0 supports `--format json` for local automation:
+
+```bash
+python audit.py --key-env API_RELAY_AUDIT_KEY --url <BASE_URL> --format json --output report.json
+```
+
+Without `--output`, stdout contains one JSON document and progress goes to
+stderr. JSON preserves the existing final risk rating and full Markdown
+evidence; it does not sanitize the report for public sharing. See the
+[JSON schema and coverage boundaries](./docs/json-report.md).
+````
+
+</details>
+
 #### 缺口
 
-- 协议异常与恶意行为的区分准确率未知
-  **影响**：若用评级自动禁用线路可能误封
-  **进一步探讨**：使用可控延迟、断流、协议转换和真实篡改分别标注原因，统计同类误报
+- 未做渗透测试及报告脱敏审计
+  **影响**：无法保证端点身份、秘密或报告安全
+  **进一步探讨**：采用隔离测试凭据并核对报告内容。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么范围值得试用，成本和退出如何控制？
+### Q04 · 运行前需满足哪些条件、成本与停止条件？
 
 **研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-适合已能配置 DSH 线路且愿意逐项审阅证据的开发者做上线前筛查。先用低成本连通检查确认接线，再决定是否运行计费探针；完整审计需要承担模型调用、长上下文、网络重试及人工归因成本，仓库没有可用的同条件成本实测。报告是本地输出，退出可停止命令、保留部分报告并回到独立脚本或手动 HTTP 检查；已发送给中转的内容不能撤回。只有报告成功生成、未知项可辨认且没有真实秘密进入测试内容时，才继续小范围审阅。持续出现无法判断、敏感报告无法控制或预算无法预测时，应停止扩大流量，不能因 LOW 就信任生产。
+package.json:30-39 限定 Node 与 DSH peer，README:43-44 指明 Python 标准库及 curl；固定源码的 curl -k 使生产凭据不适合在不可信网络上使用。审计会向所选中转发请求并可能产生供应商费用；报告和提示词可能敏感，费用、运行时间和探测覆盖率未测。优先使用受控测试环境与低权限临时凭据，在明确授权、网络隔离且能核对接收端的前提下检查报告；端点身份不确定、输出含敏感内容或探测失败则停止，撤销测试凭据并人工复核。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh/index.js:32-48](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L32-L48)
+**依据 1 · 源码核查**：[package.json:30-39](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/package.json#L30-L39)
 
-默认完整审计可能计费，提供连通性检查及路径选项。
+Node 和宿主版本。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-const USAGE = `Usage: /relay-audit [audit options]
-
-Uses the current DSH provider/model. This DSH adapter currently accepts only
-routes declaring a Claude model; other routes are refused before any probe.
-No options runs the full audit and may consume metered tokens.
-Use --connectivity first for the lower-cost connectivity check.
-
-Target overrides:
-  --url <URL>
-  --model <claude-model>
-  --credential-ref <DSH_CREDENTIAL_REF>
-
-Output paths:
-  --output <workspace path>
-  --transparent-log <workspace path>
-
-Raw --key and caller-supplied --key-env are not accepted.`
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-commands": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+    "@deepseek-ai/dsh-credentials": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+    "@deepseek-ai/dsh-settings": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2",
+    "@deepseek-ai/dsh-subprocess": "0.1.0-rc.6 || 0.1.7-rc.2 || 0.2.0-rc.2"
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/index.js:450-470](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/dsh/index.js#L450-L470)
+**依据 2 · 作者声明**：[README.md:43-44](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L43-L44)
 
-取消保留部分报告并区分进程成功。
+Python、curl 和目标端点。
+
+```text
+The standalone script uses Python's standard library plus `curl`. Your API key
+is sent only to the relay URL you choose.
+```
+
+**依据 3 · 源码核查**：[audit.py:668-672](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/audit.py#L668-L672)
+
+传输跳过证书校验。
+
+```text
+        cmd = ["curl", "-sk", *curl_loopback_no_proxy_args(url), "-X", "POST", url,
+               "--max-time", str(timeout), "--config", "-", "--data-binary", f"@{body_path}"]
+        config = curl_header_config(headers)
+        r = subprocess_module.run(cmd, capture_output=True, text=True, input=config,
+                                  timeout=timeout + 10)
+```
+
+**依据 4 · 作者声明**：[README.md:69-80](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L69-L80)
+
+报告可能含私密证据。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+````text
+## JSON Reports
+
+v2.5.0 supports `--format json` for local automation:
+
+```bash
+python audit.py --key-env API_RELAY_AUDIT_KEY --url <BASE_URL> --format json --output report.json
+```
+
+Without `--output`, stdout contains one JSON document and progress goes to
+stderr. JSON preserves the existing final risk rating and full Markdown
+evidence; it does not sanitize the report for public sharing. See the
+[JSON schema and coverage boundaries](./docs/json-report.md).
+````
+
+</details>
+
+#### 缺口
+
+- 未实测费用、环境或端点安全
+  **影响**：无法量化采用成本及安全性
+  **进一步探讨**：隔离环境与临时凭据，核报告再决定。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何支持用户判断哪些结果值得复核？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+现有 JSON 报告已保留风险、证据和 inconclusive；简单重排风险标签不构成新增。未验证设想是按每个结论展示可追踪探针覆盖、失败/未运行原因、原始证据位置和明确的下一次人工核查动作，使用户能决定放行、补测或停止；应先核现有 JSON 是否已有等价映射。以现有报告为对照，测试超时、被阻断、模型自报不一致和已知替换样本，比较漏看未知、误把信号当证明和审查时间；若覆盖无法可靠回溯、误判不降或人工负担显著增加则否定。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:69-80](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L69-L80)
+
+JSON 保留风险与完整证据。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+````text
+## JSON Reports
+
+v2.5.0 supports `--format json` for local automation:
+
+```bash
+python audit.py --key-env API_RELAY_AUDIT_KEY --url <BASE_URL> --format json --output report.json
+```
+
+Without `--output`, stdout contains one JSON document and progress goes to
+stderr. JSON preserves the existing final risk rating and full Markdown
+evidence; it does not sanitize the report for public sharing. See the
+[JSON schema and coverage boundaries](./docs/json-report.md).
+````
+
+</details>
+
+**依据 2 · 作者声明**：[README.md:89-101](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/README.md#L89-L101)
+
+已有 inconclusive 和信号边界。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+## What It Does Not Claim
+
+- It does not certify that a relay is safe.
+- It does not replace manual security review or operational monitoring.
+- It does not treat `inconclusive` as `clean`; blocked probes and ambiguous responses stay visible in the report.
+
+## Query Family Boundaries
+
+| Query family | User intent | Profile / steps | Evidence boundary |
+|---|---|---|---|
+| API relay audit | Audit a third-party relay, mirror, gateway, LLM proxy, or resale API before trusting traffic. | `general` by default; `full` for every probe | Produces a local report, not a safety certificate. |
+| Prompt injection audit | Detect hidden prompt injection, prompt leakage, instruction override, and extraction behavior. | `general`; Steps 3-6 | Records prompt evidence without publishing private prompts or secrets. |
+| Model substitution signals | Collect model identity, stream, latency, and upstream channel signals. | `general`; Steps 5, 10, 13, 14 | Self-ID, latency, and channel fingerprints are signals, not standalone proof of provider substitution. |
+```
+
+</details>
+
+**依据 3 · 源码核查**：[dsh/index.js:450-470](https://github.com/toby-bridges/api-relay-audit/blob/3af7126a34d099f65031c6e3af63b302a843fe59/dsh/index.js#L450-L470)
+
+命令报告进程状态。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -831,133 +860,10 @@ Raw --key and caller-supplied --key-env are not accepted.`
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:77-93](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/README.md#L77-L93)
-
-JSON不会自动脱敏，且审计不提供安全认证。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-Without `--output`, stdout contains one JSON document and progress goes to
-stderr. JSON preserves the existing final risk rating and full Markdown
-evidence; it does not sanitize the report for public sharing. See the
-[JSON schema and coverage boundaries](./docs/json-report.md).
-
-## When to Use It
-
-- You use a third-party AI API relay, mirror, gateway, or LLM proxy.
-- You want to check whether a Claude-compatible or OpenAI-compatible proxy injects prompts, swaps models, truncates context, or rewrites tool output.
-- You are testing relay behavior before production traffic, coding-agent automation, package-install suggestions, or wallet-related actions.
-- You need a local, repeatable audit report instead of a web tool that asks for your API key.
-
-## What It Does Not Claim
-
-- It does not certify that a relay is safe.
-- It does not replace manual security review or operational monitoring.
-- It does not treat `inconclusive` as `clean`; blocked probes and ambiguous responses stay visible in the report.
-```
-
-</details>
-
 #### 缺口
 
-- 缺少任务调用量、现金账单和人工审阅时间
-  **影响**：无法计算单位合格报告成本
-  **进一步探讨**：对固定代理和固定探针组合记录账单、失败尝试和审阅时间，报告现金与时间分列
+- 未穷尽报告字段及缺少原型
+  **影响**：新增性及收益未知
+  **进一步探讨**：检查现有 JSON 再做已知样本对照。
 
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 双轴输出能否减少把网络故障当攻击的误判？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-从未知和攻击共用评级的事实，可以提出未验证的双轴报告假设：分别呈现“完成覆盖”与“异常证据”，保留原有风险摘要作为兼容输出。用户可先判断探针是否有效，再决定是否将异常归因于攻击。最小验证是在同一批透明代理、受控断流代理及已知篡改代理上，对比原报告和双轴报告，盲评正确归因率、未知识别率及审阅时间。若双轴没有改善归因或显著增加阅读负担，否定本次设计；不能把这个研究者假设计入当前插件创新。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[audit.py:6841-6847](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/audit.py#L6841-L6847)
-
-单评级把未知与多类检测维度合并，提供设计推导起点。
-
-```text
-    # Rules (first match wins):
-    #   d3 or d4 or d5 or d6                        -> HIGH
-    #   d1 and d2                                   -> HIGH
-    #   d1                                          -> MEDIUM
-    #   d2                                          -> MEDIUM
-    #   d1i or d2i or d3i or d4i or d4m or d5i or d6i or any_crashed -> MEDIUM
-    #   else                                        -> LOW
-```
-
-**依据 2 · 源码核查**：[audit.py:6920-6967](https://github.com/toby-bridges/api-relay-audit/blob/d261bcc196c43dfd072ae24210dd57870399437b/audit.py#L6920-L6967)
-
-详细原因已有数据，可作为双轴材料来源。
-
-<details>
-<summary>查看原文（48行）</summary>
-
-```text
-        report.p("### MEDIUM RISK\n")
-        medium_reasons = []
-        if any_step_crashed:
-            crashed_names = ", ".join(step_crashes)
-            medium_reasons.append(
-                f"One or more audit steps **crashed** ({crashed_names}): "
-                "the audit is incomplete and should be re-run to get "
-                "a definitive verdict."
-            )
-        if d1i:
-            medium_reasons.append(
-                "Token injection test (Step 3) **crashed or was inconclusive**: "
-                "the relay's injection behavior could not be verified."
-            )
-        if d2i:
-            medium_reasons.append(
-                "Instruction override test (Step 5) **crashed or was inconclusive**: "
-                "whether the relay respects user system prompts could not be verified."
-            )
-        if d3i:
-            medium_reasons.append(
-                "Tool-call substitution test (Step 8) was **inconclusive**: "
-                "every probe errored, so the relay's AC-1.a behavior could not "
-                "be verified -- a relay that blocks plaintext echo is itself a red flag."
-            )
-        if d4m:
-            medium_reasons.append(
-                "Error response leaks filesystem paths or stack traces. "
-                "Information disclosure is present but not directly credential-exposing."
-            )
-        if d4i:
-            medium_reasons.append(
-                "Error leakage test (Step 9) was **inconclusive**: every probe "
-                "returned HTTP 200 or failed with a transport error, so no error "
-                "surface could be inspected."
-            )
-        if d5i:
-            medium_reasons.append(
-                "Stream integrity test (Step 10) was **inconclusive**: the relay "
-                "did not speak Anthropic SSE cleanly, so the event-layer invariants "
-                "could not be verified. A relay that cannot return a standard "
-                "Anthropic stream is itself a suspicious signal."
-            )
-        if d6i:
-            medium_reasons.append(
-                "Web3 prompt injection test (Step 11) was **inconclusive**: all "
-                "three Web3 probes errored or produced ambiguous responses, so "
-                "Web3 safety behavior could not be verified."
-```
-
-</details>
-
-#### 缺口
-
-- 尚无使用者归因实验
-  **影响**：不能宣称双轴更易用
-  **进一步探讨**：准备同数据不同呈现的匿名报告进行盲评并记录错误类型
-
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
