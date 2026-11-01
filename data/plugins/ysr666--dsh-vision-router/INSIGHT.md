@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[79ddbb8](https://github.com/ysr666/dsh-vision-router/tree/79ddbb8377b7319e68dba8e6570b98d3b87a01fc)
+源码版本：[ae9bac8](https://github.com/ysr666/dsh-vision-router/tree/ae9bac8b1028cad26c78f1532a559dd2e6517577)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,180](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C180&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ysr666/dsh-vision-router) [![npm 30d 34,951](https://img.shields.io/static/v1?label=npm+30d&message=34%2C951&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router)
+[![GitHub ★ 1,202](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C202&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ysr666/dsh-vision-router) [![npm 30d 38,122](https://img.shields.io/static/v1?label=npm+30d&message=38%2C122&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router)
 <!-- END META -->
 
-> **功能**：为 DSH 文本模型会话提供图像工具、视觉后端回退、像素处理和会话开关。
+> **功能**：为 DeepSeek Harness 提供视觉模型路由和像素级图像工具。
 
-> **亮点**：把文本主模型与视觉工具分工接入DSH，结合失败分层回退和像素核对；不把模型视觉能力和演示差异归为独立效果证明。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示将图片入口、后端与工具组合接入 DSH；模型视觉能力和任务收益不能归为插件自身证明。
 
-> **主要限制**：免Key云回退默认开启，图片会出站；本地过滤存在不等全路径隐私验收，供应商失败也不能随意绕适配再请求。[Q03](#research-q03)
+> **主要限制**：[Q03](#research-q03) 的窄桥不能保证全部调用不重复；[Q04](#research-q04) 默认可向远端发送图像，本地视觉开关也不能让远程聊天模型离线。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 保留文本主模型的图像工具相对切换模型有什么价值？](#detail-section-11)
-  - [Q02 · 失败回退和缓存如何避免双请求与资源失控？](#detail-section-12)
-  - [Q03 · 免Key与本地开关是否意味着图片不出站？](#detail-section-13)
-  - [Q04 · 什么低风险试用能判断它比原生视觉值得？](#detail-section-14)
-  - [Q05 · 怎样验证回退既保隐私又不重复花费？](#detail-section-15)
+  - [Q01 · 文本主模型的用户为何需要视觉路由，原生视觉有什么替代？](#detail-section-11)
+  - [Q02 · 图片与附件如何进入视觉请求并受预算约束？](#detail-section-12)
+  - [Q03 · 何时允许跨 transport 兼容桥，能否避免所有重复请求？](#detail-section-13)
+  - [Q04 · 默认本地与免费配置是否意味着图片不出站？](#detail-section-14)
+  - [Q05 · 采用成本、后端依赖和退出条件是什么？](#detail-section-15)
+  - [Q06 · 能否让用户核对每次尝试的出站与费用不确定性？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：以文本模型为主但需问截图和局部定位的DSH用户；已有合格原生视觉可比较后选择。[Q01](#research-q01)
+> **用途**：面向需要在 DSH 任务中读取截图、识别图片和核对视觉内容的用户。
 
-切换原生多模态模型或独立看图工具；新增DSH接线和回退并非普遍更便宜更准。[Q01](#research-q01)
+原生多模态模型和人工核图也能完成图像理解；插件的价值取决于是否需要分工及额外控制。
 
 <a id="detail-section-3"></a>
 
@@ -51,66 +52,66 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 图像问答 | 文本模型借视觉后端看图 | 默认云出站，需原图复核 |
-| 后端回退 | 分类失败与预算分配 | 不保证服务可用 |
-| local-only | 限定本地视觉端点 | 需有效本地后端，未全链验收 |
+|---|---|---|
+| 图像理解 | 通过视觉后端回答图片问题 | 附件服务和视觉后端必需 |
+| 分级回退 | 在失败时选择后备并保护窄桥 | 不保证全部请求恰好一次 |
+| 本地策略 | 限制插件视觉调用目标 | 不覆盖远程聊天模型及全部宿主流量 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 声明兼容DSH与Node | 启动必需 | 工具和会话状态 | 核实发行版 |
-| 视觉后端或云回退 | 模型看图必需 | 解释图片 | local-only无本地后端会失败 |
-| sharp/浏览器 | 对应像素/截图功能 | 处理与渲染 | 限制相关工具 |
-| 出站许可 | 云端看图必需 | 上传图像提示 | 敏感改本地 |
+|---|---|---|---|
+| Node ^22.19 或 >=24 与兼容 DSH | 插件运行需要 | 加载宿主与工具 | 可能无法启动 |
+| 宿主附件服务 | vision_describe 必需 | 读取与保存图像 | 工具直接报错 |
+| 视觉后端或 HTTP fallback | 图像理解需要 | 处理图像和提示 | 返回不可用或回退 |
+| sharp、浏览器或 OCR 工具 | 对应像素/截图/OCR 功能按需 | 特定本地处理 | 对应功能受限 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户核宿主和数据政策 | 选云或严格本地 |
-| 开关 | 用户测试会话开Vision | 工具可见且范围正确 |
-| 核对 | Agent问公开图，用户看原图 | 文字坐标对应任务 |
-| 退出 | 用户关Vision | 连续错误不重复刷 |
+|---|---|---|
+| 准备 | 用户确定宿主、图像权限和出站目标 | 敏感内容无许可时停止 |
+| 输入 | 用户提供非敏感图片与具体问题 | 工具可读取附件且后端可用 |
+| 检查 | 用户核对原图、模型答案及不确定性 | 不一致时人工核图或重选后端 |
+| 恢复 | 用户检查失败与缓存状态 | 持续失败停止重复调用并回退 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 宿主、可选sharp/浏览器/本地模型 | 配后端、隐私和开关 | 配置耗时未知 |
-| 持续使用 | 图像请求、回退和模型；金额未知 | 对照原图与错误 | 免费入口不等零总成本 |
-| 失败恢复 | 尝试额度与诊断 | 分清已出站和本地拒绝 | 不反复改问法刷请求 |
+|---|---|---|---|
+| 首次 | 安装、图像处理和后端费用未知 | 核对宿主、后端与出站目标 | 免费 fallback 不等于离线 |
+| 持续 | 多次视觉调用和网络资源未知 | 对照原图并处理错误 | 图片准确率与节时未测 |
+| 恢复 | 回退、重试可能产生额外费用 | 检查预算、缓存和部分输出 | 上游收费与重复率未知 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 文本会话读图 | describe与后端链 | 准确率和净节时 |
-| 回退控制 | 窄桥策略与预算 | 所有供应商分类正确性 |
-| 本地-only | 后端与HTTP过滤 | 全路径零出站 |
+|---|---|---|
+| 视觉工具 | 读取附件并调用可配置后端 | 实际识别质量 |
+| 有界任务 | 共用 deadline 和缓存约束 | 所有提供方按时停止 |
+| local-only | 代表调用点过滤远端 | 全宿主网络边界 |
 
-> **思考**：免Key云回退默认开启，图片会出站；本地过滤存在不等全路径隐私验收，供应商失败也不能随意绕适配再请求。[Q03](#research-q03)
+> **思考**：[Q03](#research-q03) 的窄桥不能保证全部调用不重复；[Q04](#research-q04) 默认可向远端发送图像，本地视觉开关也不能让远程聊天模型离线。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把文本主模型与视觉工具分工接入DSH，结合失败分层回退和像素核对；不把模型视觉能力和演示差异归为独立效果证明。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示将图片入口、后端与工具组合接入 DSH；模型视觉能力和任务收益不能归为插件自身证明。
 
-区分pre-wire与远端失败、任务预算预留、字节TTL缓存值得借鉴；移植需宿主错误协议与权限/附件边界核查。[Q02](#research-q02)
+[Q02](#research-q02) 的共享期限和有界缓存控制部分资源，[Q03](#research-q03) 对兼容桥实施精确错误判据；不同后备和代理仍需端到端验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-免Key云回退默认开启，图片会出站；本地过滤存在不等全路径隐私验收，供应商失败也不能随意绕适配再请求。[Q03](#research-q03)
+[Q03](#research-q03) 的窄桥不能保证全部调用不重复；[Q04](#research-q04) 默认可向远端发送图像，本地视觉开关也不能让远程聊天模型离线。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议公开截图测试会话限定试用，先明确云出站或配置local-only；敏感内容、连续错误或无法核原图则关Vision回原生/本地流程。[Q04](#research-q04)
+[Q05](#research-q05) 建议先用非敏感图像在固定配置试用并对照原图；出站目标或费用不明时停止并回退人工核图。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-路由策略、local-only过滤和缓存上限有源码支持；完整出站及供应商/像素效果未独立执行。尝试账本为未验证假设。
+固定版本工具、回退与部分数据边界源码已检查；真实宿主、出站和视觉质量未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.js、src/lib/vision-execution-policy.js、src/lib/vision-backend-runtime-policy.js、src/lib/runtime-reliability.js、src/lib/vision-tool-runtime-boundary.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、README.md、src/index.js、src/lib/runtime-reliability.js、src/lib/vision-execution-policy.js、src/lib/vision-backend-runtime-policy.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定README、包、describe分支、桥策略、预算和缓存模块；未审所有14工具、附件/远程设置全路径，未执行模型、测试或宿主。
-- 下一步：假后端四类故障计出站与重复调用，固定截图对照原生视觉并记录全成本；本轮未执行。[Q05](#research-q05)
+- 边界：只读固定提交包清单、README、vision_describe、缓存、兼容桥及 local-only 代表分支；未运行插件、宿主、模型或网络，未审计全部图像工具、代理与附件路径。
+- 下一步：固定 DSH、受控附件与假后端，核查输入数量、缓存、共享期限、各类失败和 local-only 网络路径；按 [Q06](#research-q06) 对照诊断与收据原型。
 
 **分析版本**
 
 - **仓库**：[ysr666/dsh-vision-router](https://github.com/ysr666/dsh-vision-router)
-- **版本号**：3.1.0（[固定提交 79ddbb8](https://github.com/ysr666/dsh-vision-router/tree/79ddbb8377b7319e68dba8e6570b98d3b87a01fc)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：3.1.1（[固定提交 ae9bac8](https://github.com/ysr666/dsh-vision-router/tree/ae9bac8b1028cad26c78f1532a559dd2e6517577)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +138,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是无敏感内容的逐尝试账本，记录出站和预算以验证隐私/重复费用并减少排障。[Q05](#research-q05)
+[Q06](#research-q06) 假设可见的脱敏尝试收据与出站前确认能改善隐私和费用判断；既有失败列表与日志是直接对照，方案尚未验证。
 
-假后端四类故障计出站与重复调用，固定截图对照原生视觉并记录全成本；本轮未执行。[Q05](#research-q05)
+固定 DSH、受控附件与假后端，核查输入数量、缓存、共享期限、各类失败和 local-only 网络路径；按 [Q06](#research-q06) 对照诊断与收据原型。
 
 <a id="detail-section-9"></a>
 
@@ -148,13 +149,15 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 87 | 10006 | — | — | 130676 |
-| .mjs | source | 40 | 7815 | 6842 | 407 | — |
-| .js | source | 143 | 50688 | 42850 | 4983 | — |
-| .ts | source | 39 | 6049 | 4962 | 460 | — |
-| .js | test | 225 | 61111 | 55450 | 1798 | — |
+| .md | source | 88 | 10057 | — | — | 132116 |
+| .mjs | source | 41 | 8014 | 7017 | 419 | — |
+| .js | source | 143 | 50692 | 42852 | 4985 | — |
+| .ts | source | 39 | 6058 | 4963 | 467 | — |
+| .js | test | 225 | 61158 | 55497 | 1798 | — |
 | .mjs | example | 4 | 60 | 40 | 15 | — |
 | .mjs | test | 4 | 962 | 860 | 27 | — |
 | .ts | test | 31 | 975 | 776 | 59 | — |
@@ -163,69 +166,54 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/ysr666/dsh-vision-router/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ysr666/dsh-vision-router/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=26&color=737b86&logo=github)](https://github.com/ysr666/dsh-vision-router/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 31](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=31&color=737b86&logo=github)](https://github.com/ysr666/dsh-vision-router/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
+
+
+
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：视觉工具和后端回退怎样改善文本模型任务，默认云端出站与兼容桥策略有哪些限制？
+**插件研究总目标**：核查视觉工具的附件、后端回退、隐私与采用边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 保留文本主模型的图像工具相对切换模型有什么价值？
+### Q01 · 文本主模型的用户为何需要视觉路由，原生视觉有什么替代？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标是DSH中平时使用文本模型、偶尔需要截图文字和视觉定位的用户。当前README将主模型推理与视觉工具分工，提供会话Vision开关和图像工具；相对整段会话切到视觉模型，可在同一任务按需请求图像解释并继续其他工具。截图重建还可用pixel diff检查像素变化，而不是只凭模型说像。贡献是DSH会话接线、后端路由和结果/像素工具组合；图像推理由上游模型完成，“14工具”和演示2.54%差异不证明所有UI任务有效。src/index头注释仍描述旧式整turn切模型，研究以当前工具调用实际分支和README语义为准，不从过时注释概括现产品。
+目标用户是在 DSH 使用文本模型时偶尔需要看截图、读取图片或定位界面元素的开发者；已有兼容视觉模型的用户也可直接使用宿主原生图像能力。package.json:1-4 将本组件描述为视觉链与像素工具；src/index.js:2612-2624 将 vision_describe 描述为文本会话的看图桥，也可在原生多模态会话中作为补充。它的可归因增量是宿主工具、后端选择及像素操作的组合，图像理解由实际视觉模型提供；相对直接切视觉模型或人工看图是否提高完成质量、节时和减少费用未对照。README 的历史审计标记明确只对应 2.0.1，不能认证本轮 3.1.1。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:121-141](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/README.md#L121-L141)
+**依据 1 · 作者声明**：[package.json:1-4](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/package.json#L1-L4)
 
-主模型/视觉分工及工具可见条件。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-````text
-| `vision_present` | Publish a generated or edited local image as a durable chat attachment so the user can see it | image attachment |
-| `vision_pixel_diff` | Per-pixel comparison: diff ratio + worst 8×8-grid regions | red heatmap PNG + JSON report |
-| `vision_colors` | Dominant colors (hex + share) | — |
-| `vision_ocr` | Text transcription: configurable default engine (`auto` / local Tesseract / vision model); an explicit per-call engine still wins | — |
-| `vision_trace` | SVG vectorization (potrace posterization; icons/logos) | SVG |
-| `vision_extract_foreground` | Cutout via border flood fill (uniform backgrounds) | transparent PNG |
-| `vision_html_screenshot` | Screenshot a local HTML file (headless system Chrome); `fullPage: true` captures the whole page and reports `pageHeight` | PNG |
-| `vision_screenshot` | **Disabled by default; explicit opt-in required.** Capture the Windows virtual screen, macOS main display, or Linux root display. Windows uses PowerShell CopyFromScreen, macOS uses `screencapture`, and Linux requires ImageMagick `import` or `scrot`; optional `identify=true` tries enabled local recognition backends in order and returns the description with the path | PNG / + description |
-| `vision_long_screenshot_ocr` | Long-screenshot transcription: overlapping chunks, tesseract first / vision model fallback, stitched Markdown | chunk PNGs + Markdown + manifest |
-
-Formats are sniffed from magic bytes, so extensionless content-addressed attachment files work everywhere (no `.png` renaming needed).
-
-**Common workflows**
+作者描述文本模型视觉与数据外发。
 
 ```text
-vision_ground image="ref.png" target="the send button"
-vision_detect image="page.png" target="input fields"
-vision_crop   image="ref.png" region="1067,841,1108,881"
-vision_present path="rebuilt.png"
-vision_describe paths=["ref.png","impl.png"] question="list the differences" json=true
-vision_pixel_diff original="ref.png" rebuilt="screenshot.png"
-````
+{
+  "name": "dsh-vision-router",
+  "version": "3.1.1",
+  "description": "Eyes for text-only DeepSeek Harness agents: built-in free vision chain + pixel-level tools. Remote vision providers, including the default free fallback, receive image content unless strict local-only use is configured.",
+```
 
-</details>
+**依据 2 · 源码核查**：[src/index.js:2612-2624](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2612-L2624)
 
-**依据 2 · 源码核查**：[src/index.js:2615-2631](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L2615-L2631)
-
-describe工具说明当前调用语义。
+工具区分文本会话与原生多模态补充。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+  if (toolEnabled()) {
+    const deepToolDefs = []
+    const visionDescribeTool = {
       name: 'vision_describe',
       description:
         'Look at images with the configured vision chain and answer a focused question about them. ' +
@@ -236,132 +224,230 @@ describe工具说明当前调用语义。
         '`attachmentIds` (ids of images the user uploaded in this conversation), 1-4 images in ' +
         'total. `question` is the question to answer; be specific. Set `json: true` to require a ' +
         'single valid JSON object as the answer. ' +
-        'FAILURE SEMANTICS: if the result is JSON with ok:false and a code like VISION_AUTH_FAILED, ' +
-        'VISION_RATE_LIMITED, VISION_TIMEOUT, VISION_BACKEND_UNAVAILABLE or VISION_BACKEND_UNAVAILABLE_THIS_TURN, ' +
-        'the vision backends are unavailable this turn. Do NOT call vision_describe again with a reworded ' +
-        'question — rephrasing cannot fix an auth, rate-limit or outage problem. Answer from the information ' +
-        'you already have and continue the text task, telling the user vision is temporarily unavailable. ' +
-        'Only content-level uncertainty in a SUCCESSFUL answer justifies a second look (vision_crop, ' +
-        'vision_ground or another vision_describe). If infrastructure failure leaves a file_path-only OCR/parser as the fallback, ' +
 ```
 
 </details>
+
+**依据 3 · 作者声明**：[README.md:14-17](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/README.md#L14-L17)
+
+审计标记仅指历史版本。
+
+```text
+  <a href="https://github.com/SoberReport-AI/DeepGuard/blob/main/reports/dsh-vision-router/2.0.1/39c8f2b2d69aa398418fd6c8ab40b691a92a1a3d.json"><img src="https://img.shields.io/badge/DeepGuard-audit%20clean-2EA44F?style=flat-square" alt="DeepGuard audit clean" /></a>
+</p>
+
+<p align="center"><sub>DeepGuard badge links to a historical v2.0.1 audit; it does not certify current releases.</sub></p>
+```
+
+#### 缺口
+
+- 无同任务原生视觉和人工核图对照
+  **影响**：无法推定准确率、延迟或净收益
+  **进一步探讨**：固定图片、主模型与预算，比较原生视觉、插件及人工验收。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 失败回退和缓存如何避免双请求与资源失控？
+### Q02 · 图片与附件如何进入视觉请求并受预算约束？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-describe先读图/附件并按配置顺序尝试适配后端和HTTP回退，每个分支受任务deadline。执行策略只对精确的本地pre-wire图片能力拒绝开放兼容桥；provider/network/auth失败不应再绕第二条transport重试同请求，避免重复费用和改变认证语义。后端预算为fallback预留时间，结果缓存有条数、字节和TTL上限，错误代码结果不缓存。可借鉴的是区分“请求尚未出站”与“远端失败”再决定回退，而不是泛化任何错误都换传输。其正确性仍依赖宿主错误码与消息协议，不能保证所有供应商准确分类。
+vision_describe 的 src/index.js:2664-2680 先检查工具开关和附件服务，限定 paths 与 attachmentIds 合计 1 至 4 张；2693-2703 读取输入，2713-2721 将图像保存到宿主附件服务。2797-2806 先按后端、内容、问题等查询缓存；2826-2833 创建任务共享 deadline 并把图像块及提示组织为消息，2846-2889 按后端过滤、剩余预算和熔断状态调用。2947-2957 的 JSON 纠错失败会抛错，而非空文本与空结果提示都可缓存；runtime-reliability.js:37-44、59-77 以 TTL、容量和单项大小限制缓存。缓存与超时是条件机制，不保证视觉正确或所有底层提供方按时停止；未运行真实附件和模型。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/lib/vision-execution-policy.js:67-114](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/vision-execution-policy.js#L67-L114)
+**依据 1 · 源码核查**：[src/index.js:2664-2680](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2664-L2680)
 
-窄范围pre-wire失败和trusted unknown model策略。
+检查工具、附件服务与输入数量。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-/**
- * Exact DSH/pi-ai pre-wire admission rejection that proves the provider was
- * never contacted. Keep this intentionally narrow: another UNSUPPORTED_CONTENT
- * error (for example missing durable attachment support) is not evidence that
- * bypassing the adapter is safe.
- */
-export function isLocalImageCapabilityAdmissionFailure(failure) {
-  if (!failure || typeof failure !== 'object') return false
-  if (failure.code !== 'UNSUPPORTED_CONTENT') return false
-  if (failure.status !== undefined) return false
-  const message = typeof failure.message === 'string' ? failure.message.trim() : ''
-  return /^pi-ai model "[^"]+" does not support image input$/.test(message)
-}
+      async execute(args, exec) {
+        if (!toolEnabled()) {
+          throw new Error('vision_describe: the vision tool is disabled in the vision-router settings')
+        }
+        const attachments = ctx.get('attachments')
+        if (attachments === undefined) {
+          throw new Error(
+            'vision_describe: the durable attachment service is not available in this deployment',
+          )
+        }
+        const blocks = []
+        const contentIds = []
 
-/** Exact pi-ai catalog miss: also pre-wire, but safe only with trusted evidence. */
-export function isLocalUnknownModelFailure(failure, provider, model) {
-  if (!failure || typeof failure !== 'object') return false
-  if (failure.code !== 'UNKNOWN_MODEL' || failure.status !== undefined) return false
-  const message = typeof failure.message === 'string' ? failure.message.trim() : ''
-  return message === `pi-ai provider "${provider}" has no configured model "${model}"`
-}
-
-/**
- * Classify a provider/local failure for compatibility-bridge policy.
- * `allow` means a direct bridge is safe to attempt; `deny` means the adapter
- * reached any other failure class and the original failure must propagate.
- */
-export function bridgeDispositionForFailure(failure) {
-  return isLocalImageCapabilityAdmissionFailure(failure) ? 'allow' : 'deny'
-}
-
-/**
- * Apply the same narrow bridge policy to both structured terminal chunks and
- * errors thrown directly by an adapter's async iterator. DSH pi-ai throws its
- * exact pre-wire UNKNOWN_MODEL from modelOf() before yielding a chunk, so a
- * trusted/live model omitted from DSH's static catalog must not be converted
- * into a blanket deny merely because the failure arrived through `throw`.
- */
-export function bridgeDispositionForObservedFailure(failure, provider, model, hasBridgeEvidence = () => false) {
-  let evidence = false
-  if (isLocalUnknownModelFailure(failure, provider, model)) {
-    try {
-      evidence = hasBridgeEvidence(provider, model) === true
-    } catch {
-      evidence = false
-    }
-  }
-  return evidence ? 'allow' : bridgeDispositionForFailure(failure)
+        const paths = Array.isArray(args.paths) ? args.paths : []
+        const attachmentIds = Array.isArray(args.attachmentIds) ? args.attachmentIds : []
+        if (paths.length + attachmentIds.length === 0 || paths.length + attachmentIds.length > 4) {
+          throw new Error('vision_describe: provide 1-4 images via paths and/or attachmentIds')
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/lib/vision-backend-runtime-policy.js:54-61](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/vision-backend-runtime-policy.js#L54-L61)
+**依据 2 · 源码核查**：[src/index.js:2693-2703](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2693-L2703)
 
-总任务预算给回退预留时间。
-
-```text
-export function adapterAttemptBudgetMs(config = {}, provider = '') {
-  const requestBudget = positiveMs(config.timeoutMs, DEFAULT_REQUEST_TIMEOUT_MS)
-  const taskBudget = positiveMs(config.visionTaskTimeoutMs, DEFAULT_TASK_TIMEOUT_MS)
-  const pairs = configuredPairKeys(config)
-  const hasFallback = config.freeFallback !== false || pairs.size > 1
-  if (!hasFallback || provider === 'vision-http') return requestBudget
-  const reserve = Math.max(1_000, Math.floor(taskBudget * FALLBACK_RESERVE_FRACTION))
-  return Math.max(1_000, Math.min(requestBudget, taskBudget - reserve))
-```
-
-**依据 3 · 源码核查**：[src/lib/runtime-reliability.js:19-45](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/runtime-reliability.js#L19-L45)
-
-字节和TTL约束缓存。
+读取路径或附件输入。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-/** Live, byte-bounded LRU for vision_describe results. */
-export class LiveDescribeCache {
-  constructor(options = {}) {
-    this.entries = new Map()
-    this.totalBytes = 0
-    this.maxBytes = positiveInteger(options.maxBytes, DEFAULT_DESCRIBE_CACHE_MAX_BYTES)
-    this.maxEntryBytes = positiveInteger(options.maxEntryBytes, DEFAULT_DESCRIBE_CACHE_MAX_ENTRY_BYTES)
-    this.maxEntries = positiveInteger(options.maxEntries, DEFAULT_DESCRIBE_CACHE_ENTRIES)
-    this.ttlMs = positiveInteger(options.ttlMs, DEFAULT_DESCRIBE_CACHE_TTL_MS)
-  }
+        for (const path of paths) {
+          let bytes
+          let mediaType
+          try {
+            // readImageBytes accepts both filesystem paths and attachment ids
+            // ("sha256:..."), so a model that passes an uploaded image's id as
+            // a path gets the right pixels instead of a not-found error.
+            ;({ bytes, mediaType } = await readImageBytes(exec, path, resolvedAttachmentRefs))
+          } catch (error) {
+            throw new Error(
+              `vision_describe: failed to read ${path} (${error && error.message ? error.message : String(error)})`,
+```
 
-  _delete(key) {
-    const entry = this.entries.get(key)
-    if (!entry) return
-    this.entries.delete(key)
-    this.totalBytes = Math.max(0, this.totalBytes - entry.bytes)
-  }
+</details>
 
+**依据 3 · 源码核查**：[src/index.js:2713-2721](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2713-L2721)
+
+保存图像到宿主附件。
+
+```text
+          let ref
+          try {
+            ref = await attachments.saveImage({
+              data: bytes,
+              mediaType,
+              ...(isAttachmentIdInput(path) || basenameOf(path) === undefined
+                ? {}
+                : { name: basenameOf(path) }),
+            })
+```
+
+**依据 4 · 源码核查**：[src/index.js:2797-2806](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2797-L2806)
+
+缓存键与命中返回。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+        const key = cacheKeyFor({
+          pairs: usablePairs,
+          httpProviders: httpFallbacks,
+          contentIds,
+          wantJson,
+          question,
+        })
+        if (cacheEnabled()) {
+          const hit = cache.get(key)
+          if (hit !== undefined) return hit
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/index.js:2826-2856](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2826-L2856)
+
+任务 deadline、消息和本地策略过滤。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+        // One shared deadline for the WHOLE task: every provider, fallback and
+        // the JSON-correction retry draws from this single budget.
+        const deadline = createDeadline(visionTaskTimeoutMs())
+        const baseMessages = [
+          {
+            role: 'user',
+            content: [...blocks, { type: 'text', text: promptText }],
+            source: { kind: 'plugin', plugin: 'dsh-vision-router' },
+          },
+        ]
+        const errors = [...rejectedPairs]
+        const attempted = []
+        const primaryWeight = DEFAULT_HTTP_PROVIDERS.length
+        let remainingWeight =
+          usablePairs.length * primaryWeight +
+          httpFallbacks.reduce(
+            (sum, provider) => sum + httpProviderFallbackWeight(provider),
+            0,
+          )
+
+        for (const pair of usablePairs) {
+          if (localOnlyVisionEnabled(current()) && !isLocalBackendPair(pair)) {
+            errors.push(`${pair.provider}/${pair.model}: skipped (local-only vision policy)`)
+            continue
+          }
+          const candidateWeight = primaryWeight
+          const weightAtStart = Math.max(candidateWeight, remainingWeight)
+          remainingWeight = Math.max(0, remainingWeight - candidateWeight)
+          if (deadline.expired()) {
+            errors.push('deadline: the vision task budget was exhausted before this backend ran')
+            break
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/index.js:2880-2895](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2880-L2895)
+
+组合 deadline 信号并调用视觉后端。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+                  weightAtStart,
+                )
+              : timeoutMs()
+            const signal = combineSignals(
+              currentVisionTurnBudgetSignal(),
+              deadline.signal(),
+              AbortSignal.timeout(attemptBudgetMs),
+            )
+            const capability = await resolveVisionBackendCapability(pair.provider, pair.model)
+            let text = await callVisionPairWithOptionalBridge(pair, messages, {
+              maxTokens: 4096,
+              signal,
+              sessionId,
+              capability,
+              bridgeBlocks: blocks,
+              bridgeInstruction: promptText,
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/index.js:2947-2957](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2947-L2957)
+
+纠错失败与文本/空提示缓存。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+              const invalidJson = new Error('vision_describe backend did not produce valid JSON after one correction retry')
+              invalidJson.code = 'INVALID_REQUEST'
+              throw invalidJson
+            }
+            if (text !== '') {
+              if (cacheEnabled()) cache.set(key, text)
+              return text
+            }
+            const empty = '(the vision model returned empty content)'
+            if (cacheEnabled()) cache.set(key, empty)
+            return empty
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/lib/runtime-reliability.js:37-44](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/runtime-reliability.js#L37-L44)
+
+缓存按 TTL 和容量裁剪。
+
+```text
   _prune(now = Date.now()) {
     for (const [key, entry] of this.entries) {
       if (now - entry.storedAt >= this.ttlMs) this._delete(key)
@@ -370,202 +456,65 @@ export class LiveDescribeCache {
       const oldest = this.entries.keys().next().value
       if (oldest === undefined) break
       this._delete(oldest)
-    }
 ```
 
-</details>
+**依据 9 · 源码核查**：[src/lib/runtime-reliability.js:59-77](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/runtime-reliability.js#L59-L77)
 
-**依据 4 · 源码核查**：[src/lib/vision-tool-runtime-boundary.js:33-43](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/vision-tool-runtime-boundary.js#L33-L43)
-
-已分类失败结果不缓存。
+命中、过期与单条大小处理。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-function cacheableVisionDescribeResult(value) {
-  let parsed = value
-  if (typeof value === 'string') {
-    try {
-      parsed = JSON.parse(value)
-    } catch {
-      return true
+  get(key, now = Date.now()) {
+    const entry = this.entries.get(key)
+    if (!entry) return undefined
+    if (now - entry.storedAt >= this.ttlMs) {
+      this._delete(key)
+      return undefined
     }
+    this.entries.delete(key)
+    this.entries.set(key, entry)
+    return entry.value
   }
-  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return true
-  return !(parsed.ok === false && VISION_FAILURE_RESULT_CODES.has(parsed.code))
+
+  set(key, value, now = Date.now()) {
+    const bytes = valueBytes(value)
+    if (!Number.isFinite(bytes) || bytes > this.maxEntryBytes) return false
+    this._delete(key)
+    this.entries.set(key, { value, bytes, storedAt: now })
+    this.totalBytes += bytes
+    this._prune(now)
 ```
 
 </details>
+
+#### 缺口
+
+- 未执行真实附件、缓存命中及后端调用
+  **影响**：无法证明宿主兼容、时延与输出准确性
+  **进一步探讨**：固定宿主和隔离图片测试附件、空结果、超时和缓存失效。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 免Key与本地开关是否意味着图片不出站？
+### Q03 · 何时允许跨 transport 兼容桥，能否避免所有重复请求？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-默认不意味着。本地策略默认false，freeFallback默认true，未配置视觉服务也可走匿名云端；包描述及README已明确图片和提示会出站。“免费”是作者服务入口主张，不是离线或长期可用性保证。开启localOnlyVision后适配后端跳非local，HTTP回退跳非loopback，提供可检查的限制点，但没有执行全流量抓取，不能宣称所有边缘路径都已验证不出站。原生视觉、宿主附件持久化、sharp和浏览器等按功能提供，缺少其一会限制相关工具。模型看图仍可能漏字误定位，历史audit badge只覆盖旧2.0.1，不认证3.1.0。
+vision-execution-policy.js:67-95 仅将特定无 HTTP status 的本地图像能力拒绝识别为可桥接；105-114 对精确本地 UNKNOWN_MODEL 另要求可信能力证据。执行包装在 293-315 也处理异步迭代器抛出的错误，其他网络、鉴权或提供方失败不能仅凭该规则改走同一后端的兼容 transport。反证是 src/index.js:2958-2983 在常规后端失败后仍可走下一后端或 HTTP fallback；JSON 纠错也可能额外请求。因此窄桥减少某类重复路径，并非全任务恰好一次、零重复费用或对每个供应商的错误分类证明。未实测发送前/后边界。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.js:248-260](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L248-L260)
+**依据 1 · 源码核查**：[src/lib/vision-execution-policy.js:67-95](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-execution-policy.js#L67-L95)
 
-local-only和免费回退默认值。
+精确本地图像能力拒绝的桥接判据。
 
 <details>
-<summary>查看原文（13行）</summary>
-
-```text
-  allowRemoteSettings: z.boolean().default(false),
-  // Privacy policy switch: when enabled, Vision Router executes image-model
-  // requests only against loopback visual endpoints (Ollama, LM Studio, or
-  // custom local HTTP). Saved cloud
-  // rows remain intact but inactive, so disabling the policy restores the
-  // previous routing chain without destructive settings rewrites.
-  localOnlyVision: z.boolean().default(false),
-  freeFallback: z.boolean().default(true),
-  // 云端免费优先：开启后，云端后端先尝试内置 OVH 免费模型（免注册、免
-  // API Key），付费 httpProviders 仅在免费模型全部失败后作为兜底，尽量把
-  // 云端识别成本降到零。默认关闭 = 保持既有顺序（用户配置在前、内置免费
-  // 补全在后），关闭时行为与 current main 逐字节一致。
-  freeCloudFirst: z.boolean().default(false),
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.js:2846-2850](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L2846-L2850)
-
-适配后端local-only跳过。
-
-```text
-        for (const pair of usablePairs) {
-          if (localOnlyVisionEnabled(current()) && !isLocalBackendPair(pair)) {
-            errors.push(`${pair.provider}/${pair.model}: skipped (local-only vision policy)`)
-            continue
-          }
-```
-
-**依据 3 · 源码核查**：[src/index.js:2979-2985](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L2979-L2985)
-
-HTTP回退local-only过滤。
-
-```text
-        // Direct HTTP providers (built-in keyless OVHcloud by default) are the
-        // final fallbacks: they bypass the harness llm service entirely, so the
-        // anonymous free endpoint works without any credential.
-        for (const provider of httpFallbacks) {
-          if (localOnlyVisionEnabled(current()) && !isLoopbackVisionBaseURL(provider?.baseURL)) {
-            errors.push(`http:${provider?.name}/${provider?.model}: skipped (local-only vision policy)`)
-            continue
-```
-
-**依据 4 · 作者声明**：[README.md:17-23](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/README.md#L17-L23)
-
-历史审计不认证当前版及默认出站声明。
-
-```text
-<p align="center"><sub>DeepGuard badge links to a historical v2.0.1 audit; it does not certify current releases.</sub></p>
-
-<p align="center">English · <a href="README.zh.md">中文</a></p>
-
-> [!CAUTION]
-> **Data leaves your machine by default.** When a cloud vision model is used, Vision Router sends the image (or a derived crop), the vision prompt and related request metadata to that provider. A fresh install has an anonymous OVHcloud vision fallback enabled, so "free" and "no key" do **not** mean offline. Do not use the cloud chain for confidential, regulated or classified material. See [Data flow and strict local-only use](#data-flow-and-strict-local-only-use).
-
-```
-
-#### 缺口
-
-- 严格local-only全路径出站、真实供应商可用性与坐标质量未测。
-  **影响**：不能给隐私保证或所有网站/图片可用结论。
-  **进一步探讨**：固定本地端点与假云端，捕获完整DNS/HTTP并做已知文字和坐标真值任务。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 什么低风险试用能判断它比原生视觉值得？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-已有兼容DSH、以文本模型为主且截图可公开的用户，可在一个测试会话试图像问答与局部裁剪，明确接受出站或先配置本地-only。首次需匹配Node/DSH和所选后端，像素工具可能要sharp，HTML截图需可用浏览器；持续投入包含模型、图片上传、后端尝试和人工复核，匿名服务不等总成本为零。失败恢复要检查具体错误与预算，不反复改问法刷请求；敏感图片、连续错误或答案无法回原图核对时关闭Vision并退回原生模型或本地人工处理。源码支持有条件trial，不能因旧认证badge升级install。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:41-45](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/package.json#L41-L45)
-
-Node和DSH声明范围。
-
-```text
-  "packageManager": "pnpm@11.20.0",
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "vision",
-```
-
-**依据 2 · 源码核查**：[src/index.js:2623-2631](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L2623-L2631)
-
-失败后不改写问题重复刷调用的工具指导。
-
-```text
-        'total. `question` is the question to answer; be specific. Set `json: true` to require a ' +
-        'single valid JSON object as the answer. ' +
-        'FAILURE SEMANTICS: if the result is JSON with ok:false and a code like VISION_AUTH_FAILED, ' +
-        'VISION_RATE_LIMITED, VISION_TIMEOUT, VISION_BACKEND_UNAVAILABLE or VISION_BACKEND_UNAVAILABLE_THIS_TURN, ' +
-        'the vision backends are unavailable this turn. Do NOT call vision_describe again with a reworded ' +
-        'question — rephrasing cannot fix an auth, rate-limit or outage problem. Answer from the information ' +
-        'you already have and continue the text task, telling the user vision is temporarily unavailable. ' +
-        'Only content-level uncertainty in a SUCCESSFUL answer justifies a second look (vision_crop, ' +
-        'vision_ground or another vision_describe). If infrastructure failure leaves a file_path-only OCR/parser as the fallback, ' +
-```
-
-**依据 3 · 源码核查**：[src/lib/vision-backend-runtime-policy.js:54-61](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/vision-backend-runtime-policy.js#L54-L61)
-
-多后端任务预算是总成本条件。
-
-```text
-export function adapterAttemptBudgetMs(config = {}, provider = '') {
-  const requestBudget = positiveMs(config.timeoutMs, DEFAULT_REQUEST_TIMEOUT_MS)
-  const taskBudget = positiveMs(config.visionTaskTimeoutMs, DEFAULT_TASK_TIMEOUT_MS)
-  const pairs = configuredPairKeys(config)
-  const hasFallback = config.freeFallback !== false || pairs.size > 1
-  if (!hasFallback || provider === 'vision-http') return requestBudget
-  const reserve = Math.max(1_000, Math.floor(taskBudget * FALLBACK_RESERVE_FRACTION))
-  return Math.max(1_000, Math.min(requestBudget, taskBudget - reserve))
-```
-
-#### 缺口
-
-- 实际端到端延迟、总调用金额与修图质量无本轮记录。
-  **影响**：不能估算净收益或持续采用。
-  **进一步探讨**：固定公开截图与原生视觉对照，计全部请求和人工修正时间。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 怎样验证回退既保隐私又不重复花费？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是为每次图像任务输出可审尝试账本，记录后端、pre-wire/已出站、预算和隐私策略，但不保存密钥或原图。它由Q02的窄桥策略和Q03默认云回退推导；相对只有最终答案，能解释图片去哪、哪里失败及为何不重发。最小实验固定本地拒绝、远端401、429和响应丢失四种情形，比较现实现与带账本原型的远端请求数、违规出站、未知结果和人工排查时间。应仅对明确未出站情况搭桥且local-only不碰假云端；若重复请求或泄露仍存在，否定原型保证。尚未做实验，不能称目前已完成可审账本。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/lib/vision-execution-policy.js:67-114](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/lib/vision-execution-policy.js#L67-L114)
-
-pre-wire分类是账本和重复控制依据。
-
-<details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
 /**
@@ -597,8 +546,18 @@ export function isLocalUnknownModelFailure(failure, provider, model) {
  */
 export function bridgeDispositionForFailure(failure) {
   return isLocalImageCapabilityAdmissionFailure(failure) ? 'allow' : 'deny'
-}
+```
 
+</details>
+
+**依据 2 · 源码核查**：[src/lib/vision-execution-policy.js:98-114](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-execution-policy.js#L98-L114)
+
+UNKNOWN_MODEL 另需可信能力证据。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
 /**
  * Apply the same narrow bridge policy to both structured terminal chunks and
  * errors thrown directly by an adapter's async iterator. DSH pi-ai throws its
@@ -620,9 +579,137 @@ export function bridgeDispositionForObservedFailure(failure, provider, model, ha
 
 </details>
 
-**依据 2 · 源码核查**：[src/index.js:2979-2985](https://github.com/ysr666/dsh-vision-router/blob/79ddbb8377b7319e68dba8e6570b98d3b87a01fc/src/index.js#L2979-L2985)
+**依据 3 · 源码核查**：[src/lib/vision-execution-policy.js:293-315](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-execution-policy.js#L293-L315)
 
-HTTP隐私过滤是验证检查点。
+包装异步流中的终止错误。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+            async *[Symbol.asyncIterator]() {
+              let sawTerminalFailure = false
+              try {
+                // Construct the iterable inside the guarded section too. Most
+                // adapters throw lazily during iteration, but a synchronous
+                // pre-wire refusal must receive the identical classification.
+                const iterable = stream.call(target, optionsForCall)
+                for await (const chunk of iterable) {
+                  const failure = failureFromChunk(chunk)
+                  if (failure !== undefined) {
+                    sawTerminalFailure = true
+                    recordObservedFailure(scope, options, hasBridgeEvidence, provider, model, failure)
+                  }
+                  yield chunk
+                }
+              } catch (error) {
+                // PiAiAdapter throws UNKNOWN_MODEL and local image-admission
+                // failures directly from the async iterator before any chunk.
+                // Classify that exact pre-wire shape just like a terminal
+                // failure chunk; every provider/network/auth error still denies.
+                sawTerminalFailure = true
+                recordObservedFailure(scope, options, hasBridgeEvidence, provider, model, error)
+                throw error
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.js:2958-2983](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2958-L2983)
+
+记录后端失败后进入 HTTP 后备。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+          } catch (error) {
+            const classification = classifyVisionFailure(error)
+            visionBreaker.record(backendKey, fingerprint, classification, scope)
+            visionTurnMemory.record(scope, backendKey, classification.kind)
+            attempted.push({
+              backend: backendKey,
+              kind: classification.kind,
+              error: error && error.message ? error.message : String(error),
+            })
+            const message = error && error.message ? error.message : String(error)
+            errors.push(`${backendKey}: ${message}`)
+            ctx.logger?.warn(
+              'vision-router: vision_describe fallback [%s] (%s, %d ms): %s',
+              backendKey,
+              classification.kind,
+              Date.now() - attemptStarted,
+              message,
+            )
+          }
+        }
+
+        // Direct HTTP providers (built-in keyless OVHcloud by default) are the
+        // final fallbacks: they bypass the harness llm service entirely, so the
+        // anonymous free endpoint works without any credential.
+        for (const provider of httpFallbacks) {
+          if (localOnlyVisionEnabled(current()) && !isLoopbackVisionBaseURL(provider?.baseURL)) {
+```
+
+</details>
+
+#### 缺口
+
+- 未运行各提供方错误与丢响应场景
+  **影响**：不知道真实出站次数和分类正确率
+  **进一步探讨**：用假后端记录每次请求、桥接和已发送状态并核对账单。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 默认本地与免费配置是否意味着图片不出站？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+不意味着。src/index.js:249-255 的基础配置为 localOnlyVision=false、freeFallback=true；README.md:20-22 明确作者说明默认匿名云端视觉服务会接收图片或裁剪、提示及元数据。工具调用在 index.js:2846-2849 跳过 local-only 下的非本地适配器，2979-2986 对直接 HTTP 后备检查 loopback；vision-backend-runtime-policy.js:198-204 对另一请求路径也限制为指定本地提供方。它们是本插件视觉调用的具体限制点，不证明 DNS、代理、宿主附件、日志或其他工具完全无外发；README.md:229-235 也指出本地视觉结果文本仍返回当前聊天模型。实际网络边界、模型保留政策和配置覆盖均未验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/index.js:249-255](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L249-L255)
+
+基础默认非 local-only 且启用免费 fallback。
+
+```text
+  // Privacy policy switch: when enabled, Vision Router executes image-model
+  // requests only against loopback visual endpoints (Ollama, LM Studio, or
+  // custom local HTTP). Saved cloud
+  // rows remain intact but inactive, so disabling the policy restores the
+  // previous routing chain without destructive settings rewrites.
+  localOnlyVision: z.boolean().default(false),
+  freeFallback: z.boolean().default(true),
+```
+
+**依据 2 · 作者声明**：[README.md:20-22](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/README.md#L20-L22)
+
+作者说明默认云端接收图片与提示。
+
+```text
+
+> [!CAUTION]
+> **Data leaves your machine by default.** When a cloud vision model is used, Vision Router sends the image (or a derived crop), the vision prompt and related request metadata to that provider. A fresh install has an anonymous OVHcloud vision fallback enabled, so "free" and "no key" do **not** mean offline. Do not use the cloud chain for confidential, regulated or classified material. See [Data flow and strict local-only use](#data-flow-and-strict-local-only-use).
+```
+
+**依据 3 · 源码核查**：[src/index.js:2846-2849](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2846-L2849)
+
+local-only 过滤非本地适配器。
+
+```text
+        for (const pair of usablePairs) {
+          if (localOnlyVisionEnabled(current()) && !isLocalBackendPair(pair)) {
+            errors.push(`${pair.provider}/${pair.model}: skipped (local-only vision policy)`)
+            continue
+```
+
+**依据 4 · 源码核查**：[src/index.js:2979-2986](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2979-L2986)
+
+local-only 过滤非 loopback HTTP 后备。
 
 ```text
         // Direct HTTP providers (built-in keyless OVHcloud by default) are the
@@ -632,12 +719,261 @@ HTTP隐私过滤是验证检查点。
           if (localOnlyVisionEnabled(current()) && !isLoopbackVisionBaseURL(provider?.baseURL)) {
             errors.push(`http:${provider?.name}/${provider?.model}: skipped (local-only vision policy)`)
             continue
+          }
+```
+
+**依据 5 · 源码核查**：[src/lib/vision-backend-runtime-policy.js:198-204](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-backend-runtime-policy.js#L198-L204)
+
+另一视觉请求路径的本地限制。
+
+```text
+export function localOnlyVisionCallAllowed(core, config, provider, model) {
+  if (config?.localOnlyVision !== true) return true
+  if (provider !== 'vision-http') return false
+  const allowed = []
+  try { allowed.push(...(core?.localProvidersOf?.(config) ?? [])) } catch {}
+  try { allowed.push(...(core?.httpProvidersOf?.(config) ?? [])) } catch {}
+  return allowed.some((entry) => `${entry?.name}/${entry?.model}` === model)
+```
+
+**依据 6 · 作者声明**：[README.md:229-235](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/README.md#L229-L235)
+
+作者区分本地视觉和可能远程的聊天模型。
+
+```text
+| `vision_ocr` with Tesseract | Processed on the DSH machine. With the default `auto` engine, an unavailable or empty local OCR result may fall back to a vision model. |
+| Image-turn routing and vision-model tools such as describe, detect, ground or vision OCR | The image or derived crop, prompt and relevant context are sent to the selected vision provider. |
+| Built-in free fallback | Sent anonymously (no API key) to OVHcloud AI Endpoints at `oai.endpoints.kepler.ai.cloud.ovh.net`; the service still receives the request payload and network metadata such as the source IP. |
+| User-configured cloud model / HTTP provider | Sent to that provider's configured endpoint under its own retention and privacy terms. |
+| Local Ollama / LM Studio | Image pixels are sent to the configured local endpoint. The resulting text still returns to the current chat model, which may itself be remote. |
+
+To stop **Vision Router itself** from sending image data to remote vision endpoints, enable **Settings → Vision Router → General → Local-only vision**. This is a runtime policy, not a destructive rewrite: saved cloud rows and `freeFallback` stay configured but cannot execute while the switch is on. Only loopback visual endpoints (`localhost`, `127.0.0.0/8`, `::1`) are eligible, including Ollama, LM Studio, and custom local HTTP backends. For a **strict local-only workflow**, also use a local chat model because vision result text still returns to the current chat model. Test the final network boundary in your own environment; Vision Router cannot make a remote chat model, proxy or Host integration local.
 ```
 
 #### 缺口
 
-- 尝试账本对排障和重复成本的改善无数据。
-  **影响**：仅设计方向。
-  **进一步探讨**：按四类故障记录请求计数与排查时间并固定模型版本。
+- 未做网络抓包、代理和跨宿主验证
+  **影响**：无法保证所有路径或结果文本不出站
+  **进一步探讨**：以隔离图像和受控网络观察 local-only、代理与聊天模型完整路径。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 采用成本、后端依赖和退出条件是什么？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+package.json:37-39 要求 Node ^22.19 或 >=24 并声明支持的 DSH 版本范围；54-75 列出运行依赖及可选 sharp peer，能安装或声明兼容不等于实际宿主和图像功能通过。src/index.js:2664-2672 的视觉工具需要宿主附件服务，后端、模型、网络与图像授权视配置而定；免费入口不能推断网络、人工复核或其他提供方费用为零。有兼容宿主且图像允许按所选路线处理的用户可先用非敏感图片试单次问答并核对原图，比较原生视觉；若出站目标、敏感数据、错误或费用不明，应停止并回退本地图像处理或人工核图。处理时延、模型消费和审阅成本未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:37-39](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/package.json#L37-L39)
+
+Node 和 DSH 版本范围声明。
+
+```text
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0"
+```
+
+**依据 2 · 源码核查**：[package.json:54-75](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/package.json#L54-L75)
+
+依赖与可选图像 peer。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  "dependencies": {
+    "@deepseek-ai/schemastery": ">=3.18.0",
+    "potrace": "^2.1.8",
+    "puppeteer-core": "^25.16.0",
+    "undici": "^7.30.1",
+    "zod": "^4.6.6"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-anonymous-user-id": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-llm-deepseek": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0",
+    "sharp": ">=0.35.3 <1",
+    "@deepseek-ai/dsh-storage-domain": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.2 <0.3.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-anonymous-user-id": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-llm-deepseek": {
+      "optional": true
+    },
+    "sharp": {
+      "optional": true
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.js:2664-2672](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2664-L2672)
+
+视觉工具依赖附件服务。
+
+```text
+      async execute(args, exec) {
+        if (!toolEnabled()) {
+          throw new Error('vision_describe: the vision tool is disabled in the vision-router settings')
+        }
+        const attachments = ctx.get('attachments')
+        if (attachments === undefined) {
+          throw new Error(
+            'vision_describe: the durable attachment service is not available in this deployment',
+          )
+```
+
+**依据 4 · 作者声明**：[README.md:229-235](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/README.md#L229-L235)
+
+作者说明不同数据路径及结果文本边界。
+
+```text
+| `vision_ocr` with Tesseract | Processed on the DSH machine. With the default `auto` engine, an unavailable or empty local OCR result may fall back to a vision model. |
+| Image-turn routing and vision-model tools such as describe, detect, ground or vision OCR | The image or derived crop, prompt and relevant context are sent to the selected vision provider. |
+| Built-in free fallback | Sent anonymously (no API key) to OVHcloud AI Endpoints at `oai.endpoints.kepler.ai.cloud.ovh.net`; the service still receives the request payload and network metadata such as the source IP. |
+| User-configured cloud model / HTTP provider | Sent to that provider's configured endpoint under its own retention and privacy terms. |
+| Local Ollama / LM Studio | Image pixels are sent to the configured local endpoint. The resulting text still returns to the current chat model, which may itself be remote. |
+
+To stop **Vision Router itself** from sending image data to remote vision endpoints, enable **Settings → Vision Router → General → Local-only vision**. This is a runtime policy, not a destructive rewrite: saved cloud rows and `freeFallback` stay configured but cannot execute while the switch is on. Only loopback visual endpoints (`localhost`, `127.0.0.0/8`, `::1`) are eligible, including Ollama, LM Studio, and custom local HTTP backends. For a **strict local-only workflow**, also use a local chat model because vision result text still returns to the current chat model. Test the final network boundary in your own environment; Vision Router cannot make a remote chat model, proxy or Host integration local.
+```
+
+#### 缺口
+
+- 未测固定宿主、网络服务、模型和用户任务
+  **影响**：无法量化兼容率、费用和时间收益
+  **进一步探讨**：非敏感样本对照原生视觉，记录响应、人工核对和实际账单。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 能否让用户核对每次尝试的出站与费用不确定性？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+现有 src/index.js:2958-2975 已记录失败分类、attempted 和日志，vision-execution-policy.js:480-485 也说明执行范围内的来源诊断；因此简单添加失败日志不是新方案。未验证方案是为一次视觉任务生成用户可见、短期保留的脱敏尝试收据：每次记录候选、隐私模式、仅本地拒绝/已交 transport/未知等证据状态、预算消耗和已确认费用；不存原图、提示或凭据，无法证明远端是否收到或计费时必须标 unknown。运行前以最终路由展示是否可能向远端发送，并允许用户取消；这依赖宿主提供可靠的传输边界、用户确认与权限，代理或底层 SDK 若不可观察则不能声称零出站。以同一假后端对照现有失败 attempted/日志与收据原型，覆盖本地能力拒绝、可信 UNKNOWN_MODEL、远端 401/429、响应丢失、缓存命中和 local-only；记录错误出站判断、未知数、重复请求、隐私泄露与排查时间。若误把 unknown 当未出站或零费用、泄露图像/密钥、local-only 仍向受控远端发出请求、或没有降低错误判断而增加不可接受负担，应否定方案；尚未实现或运行。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/index.js:2958-2975](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2958-L2975)
+
+现有失败分类、attempted 及日志。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+          } catch (error) {
+            const classification = classifyVisionFailure(error)
+            visionBreaker.record(backendKey, fingerprint, classification, scope)
+            visionTurnMemory.record(scope, backendKey, classification.kind)
+            attempted.push({
+              backend: backendKey,
+              kind: classification.kind,
+              error: error && error.message ? error.message : String(error),
+            })
+            const message = error && error.message ? error.message : String(error)
+            errors.push(`${backendKey}: ${message}`)
+            ctx.logger?.warn(
+              'vision-router: vision_describe fallback [%s] (%s, %d ms): %s',
+              backendKey,
+              classification.kind,
+              Date.now() - attemptStarted,
+              message,
+            )
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/lib/vision-execution-policy.js:480-485](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-execution-policy.js#L480-L485)
+
+现有执行范围来源诊断。
+
+```text
+ * is bridge-eligible only when the Host's private registry has trusted evidence
+ * for that exact provider/model (current live discovery or an endpoint-scoped
+ * trusted hint), which solves static-catalog lag without making arbitrary model
+ * ids a direct-request capability. The same scope records backend provenance so
+ * bug reports can show which model was attempted, whether the direct bridge was
+ * entered, and which adapter/bridge path actually completed.
+```
+
+**依据 3 · 源码核查**：[src/lib/vision-execution-policy.js:67-95](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/lib/vision-execution-policy.js#L67-L95)
+
+既有本地 pre-wire 判据。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+/**
+ * Exact DSH/pi-ai pre-wire admission rejection that proves the provider was
+ * never contacted. Keep this intentionally narrow: another UNSUPPORTED_CONTENT
+ * error (for example missing durable attachment support) is not evidence that
+ * bypassing the adapter is safe.
+ */
+export function isLocalImageCapabilityAdmissionFailure(failure) {
+  if (!failure || typeof failure !== 'object') return false
+  if (failure.code !== 'UNSUPPORTED_CONTENT') return false
+  if (failure.status !== undefined) return false
+  const message = typeof failure.message === 'string' ? failure.message.trim() : ''
+  return /^pi-ai model "[^"]+" does not support image input$/.test(message)
+}
+
+/** Exact pi-ai catalog miss: also pre-wire, but safe only with trusted evidence. */
+export function isLocalUnknownModelFailure(failure, provider, model) {
+  if (!failure || typeof failure !== 'object') return false
+  if (failure.code !== 'UNKNOWN_MODEL' || failure.status !== undefined) return false
+  const message = typeof failure.message === 'string' ? failure.message.trim() : ''
+  return message === `pi-ai provider "${provider}" has no configured model "${model}"`
+}
+
+/**
+ * Classify a provider/local failure for compatibility-bridge policy.
+ * `allow` means a direct bridge is safe to attempt; `deny` means the adapter
+ * reached any other failure class and the original failure must propagate.
+ */
+export function bridgeDispositionForFailure(failure) {
+  return isLocalImageCapabilityAdmissionFailure(failure) ? 'allow' : 'deny'
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.js:2797-2806](https://github.com/ysr666/dsh-vision-router/blob/ae9bac8b1028cad26c78f1532a559dd2e6517577/src/index.js#L2797-L2806)
+
+缓存命中不应虚构上游尝试。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+        const key = cacheKeyFor({
+          pairs: usablePairs,
+          httpProviders: httpFallbacks,
+          contentIds,
+          wantJson,
+          question,
+        })
+        if (cacheEnabled()) {
+          const hit = cache.get(key)
+          if (hit !== undefined) return hit
+```
+
+</details>
+
+#### 缺口
+
+- 没有端到端可观察传输边界或收据原型
+  **影响**：无法证明出站/计费归因或用户决策收益
+  **进一步探讨**：使用假后端、代理和缓存进行对照并保留 unknown。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -1,44 +1,34 @@
 {
     "repository": "zhu1090093659/dsh-web",
     "repository_id": 1331636953,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 9728,
-    "pushed_at": "2026-10-29T00:14:27Z",
+    "captured_at": "2026-11-01T06:31:34.186Z",
+    "window_start": "2026-10-02T06:31:34.186Z",
+    "stars": 9896,
+    "pushed_at": "2026-11-01T03:18:41Z",
     "issues": {
-        "open": 3,
-        "closed": 1238,
-        "created_30d": 183,
-        "closed_30d": 182,
-        "updated_30d": 188
+        "open": 2,
+        "closed": 1258,
+        "created_30d": 170,
+        "closed_30d": 173,
+        "updated_30d": 178
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@linxin666/dsh-remote-web-ui",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 120480,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40linxin666%2Fdsh-remote-web-ui",
+        "captured_at": "2026-10-31T05:50:28.596Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 111911,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/%40linxin666%2Fdsh-remote-web-ui",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T15:05:51.781Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-10-31T05:50:28.596Z",
             "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-remote-web-ui",
             "error": null,
-            "latest_version": "0.4.11",
-            "latest_published_at": "2026-10-27T00:46:44.484Z",
+            "latest_version": "0.4.12",
+            "latest_published_at": "2026-10-29T00:25:53.679Z",
             "latest_error": null
         }
     }

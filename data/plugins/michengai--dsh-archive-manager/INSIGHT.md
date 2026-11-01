@@ -1,18 +1,18 @@
-# Archive Manager
+# DSH Archive Manager
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[6b8babc](https://github.com/MichengAI/dsh-archive-manager/tree/6b8babc7b7f8da44466c7bd611ad29e66408623c)
+源码版本：[866fd95](https://github.com/MichengAI/dsh-archive-manager/tree/866fd95c157a6c943e697d58f589826a6cbf97e0)
 
 <!-- BEGIN META -->
-[![GitHub ★ 262](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=262&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-archive-manager) [![npm 30d 70,634](https://img.shields.io/static/v1?label=npm+30d&message=70%2C634&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-archive-manager) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
+[![GitHub ★ 273](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=273&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-archive-manager) [![npm 30d 71,052](https://img.shields.io/static/v1?label=npm+30d&message=71%2C052&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-archive-manager) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-archive-manager)
 <!-- END META -->
 
-> **功能**：集中归档、恢复、收藏和搜索 DSH 会话，提供缓存重建、跨工作区移动及永久物理清理入口。
+> **功能**：管理 DSH 会话归档，支持恢复、收藏、检索和永久删除。
 
-> **亮点**：冷会话只读查询、官方投影重建身份复核与回读，以及删除物理成功后记账是明确工程增量；减少用户为查会话而恢复实例的步骤，见 [Q01](#research-q01) 和 [Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示不用激活冷会话即可筛选用户与助手文本，相对打开完整会话减少一个操作步骤；不证明覆盖全部事件或节时。
 
-> **主要限制**：父删除成功可能掩盖子Agent清理失败；移动临时备份成功即删除，flush失败部分被吞，无法承诺全局事务或永久恢复点。物理操作须分层验证，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 显示子代理清理失败只记录警告，父级结果可能继续成功；[Q04](#research-q04) 的临时移动备份成功后清理，不能当永久恢复点。
 
 **本文目录**
 
@@ -26,10 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 相对原生归档，用户多了什么，搜索查到什么？](#detail-section-11)
-  - [Q02 · 永久删除是否可以当成全有或全无的清理？](#detail-section-12)
-  - [Q03 · 缓存重建和跨工作区移动分别写什么？](#detail-section-13)
-  - [Q04 · 如何分层采用，下一步值得验证什么？](#detail-section-14)
+  - [Q01 · 用户通过会话检索获得什么，原生归档是否足够？](#detail-section-11)
+  - [Q02 · 只读预览和搜索如何接入存储？](#detail-section-12)
+  - [Q03 · 删除父项是否证明所有子项和工件均清除？](#detail-section-13)
+  - [Q04 · 缓存重建和移动的事务与恢复边界是什么？](#detail-section-14)
+  - [Q05 · 依赖、使用负担及停止条件是什么？](#detail-section-15)
+  - [Q06 · 对象级清理收据能否降低误判？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -39,76 +41,77 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：大量DSH会话用户可通过只读预览/检索找回对话并组织归档，物理清理另行验收；正文不是全部工具和附件内容，见 [Q01](#research-q01)。
+> **用途**：需要查找和整理大量 DSH 会话的用户可先检索对话文本，必要时恢复；物理清理仍需逐对象核实。
 
-原生会话归档恢复与手工日志/存储操作。插件贡献是集中组织、非激活预览、批量操作及恢复反馈，核心生命周期和缓存能力继承宿主，不能当新备份系统。
+原生归档和打开完整会话可完成部分工作；此插件提供冷会话只读检索和批量管理，未比较真实时间。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 文本查询 | 冷会话用户/助手正文定位 | 无工具/附件完整检索，无持久全文索引 |
-| 缓存重建 | 恢复官方投影可见性 | 不修转录内容，超时不取消 |
-| 永久删除 | 清父工件、子代理及记账 | 子错误仅日志，非全有全无 |
-| 移动 | 改cwd、工件位置和工作区 | 临时备份不是永久恢复点 |
+| 冷会话检索 | 搜索并预览对话文本 | 工具输出、附件和推理不包含在正文 |
+| 会话清理 | 删除归档会话及相关工件 | 子代理失败可能只写警告，需重扫 |
+| 移动与缓存重建 | 迁移会话并确认缓存 | 暂存备份不等于长期备份，超时不取消写入 |
 
-**流程与依赖**
+#### 启动与依赖
 
-| 依赖 | 用途与条件 | 不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| 匹配 DSH 宿主 | 启动需要 | Workspace 和客户端集成 | 版本不符时不能假定加载 |
+| session persistence | 冷读取需要 | 只读打开会话 | 不支持时提示打开完整会话 |
+| 投影缓存和存储服务 | 相应管理功能需要 | 缓存重建与状态保存 | 缺失时相应操作失败 |
+| 独立数据备份 | 物理操作前需要 | 故障后恢复 | 临时移动备份不是长期备份 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 匹配DSH 0.2 RC profile | 原生Session/Workspace/Client组合 | peer范围不代表完整运行验证 |
-| Persistence只读/open/locate | 检索与物理定位 | 不支持只读提示开完整会话；未知布局只删工件 |
-| ProjectionCache/StorageDomain/Typert | 重建、收藏与远程方法 | 服务缺失对应功能失败 |
-| 独立数据副本/备份 | 验证删除和移动的恢复 | 临时移动备份不等于长期备份 |
+| 准备 | 用户确认宿主、profile 并复制数据 | 备份可独立读取 |
+| 查询 | 用户搜索并只读预览 | 核对失败项和不覆盖的内容类型 |
+| 管理 | 用户先在副本试恢复或收藏 | 不对重要数据直接永久删除 |
+| 核验 | 用户检查父子对象、投影与备份 | 状态不明时停止重试并调查 |
 
-| 阶段 | 操作 | 成功与失败处理 |
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+|---|---|---|---|
+| 首次 | 独立备份空间未知 | 版本与数据副本核对，时间未知 | 需兼容宿主 |
+| 持续 | 读取日志及投影 I/O 未知 | 过滤搜索结果与失败项 | 大量会话性能未知 |
+| 失败恢复 | 备份与残留空间未知 | 核对父子、文件和记账 | 永久删除不可靠卸载撤销 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 查询 | 先按项目日期缩小范围 | 查文本与失败项，不激活冷会话 |
-| 组织 | 收藏、归档或恢复 | 比对宿主集合与实际可打开 |
-| 重建 | 确认候选并逐对象重建 | 回读持久投影；超时保留未知 |
-| 移动 | 仅副本检查cwd、路径和记账 | 核回滚/备份，不以缓存预热当成功 |
-| 清理 | 独立确认父与子及残留 | 不把父成功当级联完整 |
+| 搜索和预览 | 冷读取并抽取对话文本 | 全事件查全率和大规模耗时 |
+| 清理 | 父目标结果和物理操作路径 | 子项残留、所有存储的清理效果 |
+| 移动 | 暂存和尽力回滚 | 断电后的完整事务与恢复 |
 
-**效果与成本**
-
-| 阶段 | 现金与资源 | 人工与时间 |
-|---|---|---|
-| 首次 | 备份存储空间未知 | profile/版本、数据副本和会话核对 |
-| 持续 | 扫日志I/O与投影写盘未知 | 大量日志过滤和宿主升级适配 |
-| 异常 | 残留与备份空间未知 | 逐文件/子会话/记账核对恢复 |
-| 退出 | 删除无法靠卸载撤销 | 保留独立备份、已改cwd须另恢复 |
-
-| 效果项 | 源码支持 | 未知 |
-|---|---|---|
-| 找会话 | 不激活冷会话读用户/助手文本 | 大量日志耗时与查全率 |
-| 缓存可见性 | 官方回读与身份复核 | 实际宿主队列和迟到写一致性 |
-| 清空间 | 有物理删路径 | 子失败可能残留，不能凭父回执保证 |
-
-> **思考**：父删除成功可能掩盖子Agent清理失败；移动临时备份成功即删除，flush失败部分被吞，无法承诺全局事务或永久恢复点。物理操作须分层验证，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 显示子代理清理失败只记录警告，父级结果可能继续成功；[Q04](#research-q04) 的临时移动备份成功后清理，不能当永久恢复点。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：冷会话只读查询、官方投影重建身份复核与回读，以及删除物理成功后记账是明确工程增量；减少用户为查会话而恢复实例的步骤，见 [Q01](#research-q01) 和 [Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示不用激活冷会话即可筛选用户与助手文本，相对打开完整会话减少一个操作步骤；不证明覆盖全部事件或节时。
 
-[Q03](#research-q03) 身份复核、官方投影回读和生命周期排队值得借鉴；[Q02](#research-q02) 子级失败仅日志说明对象结果须传播到父UI。永久清理和移动都不应以“原子”名称代替跨对象证据。
+[Q02](#research-q02) 的只读 handle 生命周期及 [Q04](#research-q04) 的身份复核、缓存回读有明确条件；[Q03](#research-q03) 的子项错误未随父结果传播，不能由父成功推断完整清理。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-父删除成功可能掩盖子Agent清理失败；移动临时备份成功即删除，flush失败部分被吞，无法承诺全局事务或永久恢复点。物理操作须分层验证，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+[Q03](#research-q03) 显示子代理清理失败只记录警告，父级结果可能继续成功；[Q04](#research-q04) 的临时移动备份成功后清理，不能当永久恢复点。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-匹配宿主且有独立副本可先试用查询/收藏和归档恢复；移动、永久删除单独验证，重要数据不直接清理。失败核实际对象而不是盲重试，见 [Q04](#research-q04)。
+[Q05](#research-q05) 建议已有独立备份的用户先在副本试检索和恢复；删除或移动结果不明时停止并逐对象核查。
 
 <a id="detail-section-7"></a>
 
@@ -116,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-代表生命周期链静态核查完成。建议只读/可逆功能试用，物理移动删除不在重要数据直接采用；没有运行清理或故障恢复实验。
+固定源码支持所查读取和物理操作分支；宿主兼容、恢复与实际性能未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.zh-CN.md、package.json、src/archive-discovery.ts、src/cache-rebuild.ts、src/client.ts、src/session-move.ts、src/workspace.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/workspace.ts、src/archive-discovery.ts、src/cache-rebuild.ts、src/session-move.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整根统计，抽读发布入口、Workspace远程方法、只读发现/预览、代表物理删除、投影重建及移动事务恢复；未审计在线更新、安全路由全链、全部UI及所有格式，不运行目标。
-- 下一步：在备份副本比较检索耗时/查全与原生办法，故障注入子删除、枚举、flush、磁盘、记账和迟到缓存，逐文件/索引/子会话检查。该实验未发生，本轮仅源码。
+- 边界：只读固定提交的 Workspace 远程接口、会话读取、物理删除、缓存重建和移动路径；未运行插件、宿主或真实删除，未审全部更新、安全路由和存储格式。
+- 下一步：固定宿主版本，在可丢弃副本测试冷读取、子项删除失败、缓存回读超时、移动中断及从独立备份恢复；分别核验文件、子会话与状态。
 
 **分析版本**
 
 - **仓库**：[MichengAI/dsh-archive-manager](https://github.com/MichengAI/dsh-archive-manager)
-- **版本号**：1.1.18（[固定提交 6b8babc](https://github.com/MichengAI/dsh-archive-manager/tree/6b8babc7b7f8da44466c7bd611ad29e66408623c)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.1.22（[固定提交 866fd95](https://github.com/MichengAI/dsh-archive-manager/tree/866fd95c157a6c943e697d58f589826a6cbf97e0)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,9 +138,9 @@
 
 <a id="innovation"></a>
 
-按父/子/spill/缓存/记账返回对象级清理证据并重扫确认，可能减少把父成功误当彻底删除；未实现且需求未知，见 [Q04](#research-q04)。
+[Q06](#research-q06) 提出对象级清理及重扫收据的未验证假设；若不能覆盖真实存储或增加负担过高则不推广。
 
-在备份副本比较检索耗时/查全与原生办法，故障注入子删除、枚举、flush、磁盘、记账和迟到缓存，逐文件/索引/子会话检查。该实验未发生，本轮仅源码。
+固定宿主版本，在可丢弃副本测试冷读取、子项删除失败、缓存回读超时、移动中断及从独立备份恢复；分别核验文件、子会话与状态。
 
 <a id="detail-section-9"></a>
 
@@ -148,11 +151,11 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 5 | 1952 | — | — | 33610 |
-| .js | source | 20 | 3574 | 3499 | 94 | — |
+| .md | source | 5 | 2000 | — | — | 34438 |
+| .js | source | 20 | 3738 | 3663 | 94 | — |
 | .mjs | source | 8 | 600 | 533 | 26 | — |
-| .ts | source | 32 | 10232 | 9252 | 673 | — |
-| .mjs | test | 39 | 8667 | 7795 | 299 | — |
+| .ts | source | 32 | 9792 | 8910 | 563 | — |
+| .mjs | test | 41 | 8956 | 8030 | 322 | — |
 | .mjs | example | 4 | 605 | 573 | 18 | — |
 | .ts | test | 1 | 30 | 19 | 9 | — |
 
@@ -160,117 +163,112 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/MichengAI/dsh-archive-manager/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=60&color=737b86&logo=github)](https://github.com/MichengAI/dsh-archive-manager/issues?q=is%3Aissue+created%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z) [![近30天关闭 60](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=60&color=737b86&logo=github)](https://github.com/MichengAI/dsh-archive-manager/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T01%3A33%3A21.476Z..2026-10-29T01%3A33%3A21.476Z)
-
-
-
-统计日期：2026-10-29。
+Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/MichengAI/dsh-archive-manager/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：区分可逆会话组织与物理数据变更，核查删除、缓存重建和移动的成功及恢复边界。
+**插件研究总目标**：核查只读会话检索、删除及移动的实际接线与恢复边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 相对原生归档，用户多了什么，搜索查到什么？
+### Q01 · 用户通过会话检索获得什么，原生归档是否足够？
 
-**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-这是DSH原生插件@michengai/dsh-archive-manager 1.1.18，不是独立会话备份服务。README中文仍描述1.1.17，版本以固定package为准。目标是积累大量开发会话的个人用户，集中归档、恢复、收藏、搜索、预览和管理工作区；相较原生逐条归档及手工读日志，增量在组织界面与冷会话可见性，底层会话生命周期仍借宿主能力。
-
-只读检索不调用prepare/enter来激活冷会话，已运行实例取snapshotEvents，冷会话用persistence.open(read)读事件并关闭。extractConversation只接受user/message和assistant/message，过滤非用户source和非text块，因而不是工具输出、附件、推理或所有上下文的完整全文索引。搜索逐会话处理并返回失败项；预览限附近/最近八条、每条2000 UTF-16码元。README也承认没有持久化全文索引，大量日志需要时间，故价值是无需恢复即可定位部分对话文本，不是零成本全量知识检索。依赖宿主Workspace、Session、Persistence、ProjectionCache、StorageDomain、Typert与Web界面版本一致，广范围peer声明不能当实测兼容。
+需要从大量 DSH 会话找回对话的用户可按标题和正文筛选、只读预览再决定是否恢复；原生归档和打开完整会话是替代。README.md:56-62 说明搜索按批次读取并排除工具、附件、推理、系统消息和插件注入；src/archive-discovery.ts:80-95 只抽取用户/助手消息中的文本。因此未命中不证明会话里没有有关工具输出或附件。源码提供不用激活冷会话而找文本的条件性增量，真实查全率、大量日志耗时和节省操作未测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-20](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/package.json#L2-L20)
+**依据 1 · 作者声明**：[README.md:56-62](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/README.md#L56-L62)
 
-版本、范围、入口。
-
-<details>
-<summary>查看原文（19行）</summary>
+作者说明搜索及正文范围。
 
 ```text
-  "name": "@michengai/dsh-archive-manager",
-  "version": "1.1.18",
-  "description": "归档、恢复、收藏和永久删除会话，并诊断损坏的会话日志。 · Archive, restore, favorite, and permanently delete sessions, and diagnose damaged session logs.",
-  "type": "module",
-  "packageManager": "pnpm@11.22.0",
-  "engines": {
-    "node": "^22.19.0 || >=24.0.0",
-    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
-  },
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./workspace": "./lib/workspace.js",
-    "./projcache": "./lib/projcache.js",
-    "./host": "./lib/host-install.js",
-    "./client": "./lib/client.js",
-    "./package.json": "./package.json",
-    "./locale/*.json": "./locale/*.json"
-  },
+## Search and preview
+
+- Archived and Unarchived share title/content search, project, favorites, updated-date filters, and creation-time sorting. Star or unstar conversations on either tab.
+- Search automatically covers both conversation titles and body history (including user and assistant messages) by default. Date filters include the entire local end date and combine with project and favorites.
+- Matches show snippets and highlights. On Archived, click a snippet or **More → Quick preview** to inspect context without restoring. On Unarchived, a snippet opens the full conversation.
+- Preview renders Markdown tables, quotes, and code blocks with role labels; switch to source text for highlights. It shows up to eight recent messages, or context around the first match. Each message is limited to 2,000 UTF-16 code units without splitting Unicode characters.
+- Search accepts up to 200 query characters and reads batches of at most 20 sessions, sequentially within each batch. Tools, attachments, reasoning, system messages, and plugin injections are excluded. Read failures remain visible and can be retried. Stored text is not the model's current context.
+```
+
+**依据 2 · 源码核查**：[src/archive-discovery.ts:80-95](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/archive-discovery.ts#L80-L95)
+
+事件正文的实际筛选。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+/** 读取持久化事件的原始对话文本，不把工具输出、推理或插件注入当作正文。 */
+export function extractConversation(events: readonly unknown[]) {
+  if (!Array.isArray(events)) throw new TypeError("会话日志无效");
+  const messages: TextMessage[] = [];
+  for (const event of events.map(record)) {
+    if (event.type !== "user/message" && event.type !== "assistant/message") continue;
+    const data = event.data && typeof event.data === "object" ? record(event.data) : {};
+    const message = data.message && typeof data.message === "object" ? record(data.message) : data;
+    const role = event.type === "user/message" ? "user" : "assistant";
+    const source = message.source && typeof message.source === "object" ? record(message.source) : {};
+    if (role === "user" && source.kind && source.kind !== "user") continue;
+    const content = message?.content;
+    const text = typeof content === "string" ? content : Array.isArray(content) ? content.filter(block => block?.type === "text" && typeof block.text === "string").map(block => block.text).join("\n") : "";
+    if (text.trim()) messages.push({ seq: sequence(event.seq), role, text });
+  }
+  return messages;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[README.zh-CN.md:22-42](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/README.zh-CN.md#L22-L42)
+#### 缺口
 
-版本滞后及组织/删除能力主张。
+- 无真实用户和同任务对照
+  **影响**：查全率与节时未知
+  **进一步探讨**：在相同会话集比较原生打开方式与只读搜索。
 
-<details>
-<summary>查看原文（21行）</summary>
+<a id="research-q02"></a>
 
-```text
-本文描述 **1.1.17**。已发布变更见[更新日志](CHANGELOG.zh-CN.md)。
+<a id="detail-section-12"></a>
 
-## 功能概览
+### Q02 · 只读预览和搜索如何接入存储？
 
-把暂时不用的会话收起来，需要时再找回，让日常任务列表更清爽。
+**研究主题**：功能与机制、工程质量与复用
 
-- **多视图与侧栏直达**：支持开启主侧边栏直接导航入口，在主工作区以 **960px 居中版心** 展开「已归档」与「未归档」完整大面板，告别狭窄弹窗。
-- **全生命周期管理**：支持单条会话归档、全工作区一键归档、跨项目批量归档、单条/批量恢复并打开会话。
-- **侧栏全行右键操作**：支持直接右键点击侧栏工作区行或会话行空白处唤起专属操作菜单；未分组工作区行与空白未落盘会话行优雅放行系统原生右键菜单，杜绝误触新建或星标。
-- **侧栏星标对齐与状态点共存（#90, #92）**：收藏星标对齐 16×16px 宿主标准尺寸，通过绝对定位精确复用前导插槽位置，消除侧栏会话标题左右微小抖动；当会话处于运行中或等待交互时，原生状态指示点保持 100% 可见，星标自适应转为右下角 10px 金色角标，实现状态与收藏完美共存，保护原生选择器与第三方皮肤插件兼容性。
-- **工作区快捷操作菜单**：侧栏工作区提供快速「复制目录」、「打开目录」（在系统文件管理器 Windows Explorer / macOS Finder 中直接打开）及一键「归档会话」。
-- **会话跨工作区移动**：会话操作菜单支持级联悬停子菜单直接跨工作区迁移会话，采用进程锁静默停靠与原子级改写校验，投影缓存即时预热彻底消除临时“未命名”，安全兼容含冒号的 IM 会话。
-- **一体化抽屉与 40px 超紧凑列表**：工作区分组采用与技能管理同款的一体化卡片抽屉设计，折叠顶栏（高 38px）与下方列表融为一体；会话列表项行高超紧凑化至 40px，信息密度显著提升。
-- **暗黑模式原生复选框规范**：复选框严格回归宿主原生原语 Checkbox 规范，使用原生 `accent-color` 完美适配深色模式（深暗底色与品牌蓝选中态），根除白底白勾刺眼方块 bug。
-- **模态弹窗防穿透与本地化无障碍**：宽版预览弹窗直挂 body 根节点消除局部包含块限制，配合实色底与毛玻璃高斯模糊彻底杜绝文字穿透重叠；全量弹窗右上角 X 关闭按钮完整支持三语本地化无障碍标签（`common.close`）。
-- **纯净自适应单行工具栏**：采用宿主原生 `Input` 原语，内置官方放大镜图标与绿色呼吸聚焦边框，自适应弹性撑满；控件按「输入框、查询条件、所有项目、时间选择」极简单行排列，锁死盒模型杜绝溢出重叠。
-- **全文联合检索与 Codex 复合菜单**：默认自动联合搜索标题与正文历史（用户与助手消息）；将会话筛选（全部/只看收藏）与排序收归为 Codex 风格两段式复合菜单，完全采用宿主原生对勾原语。
-- **轻量单字段日期胶囊与日历浮层**：彻底告别原生日期选择器的暗黑模式反白与失焦缺陷（#74），单行展示时间范围；浮层支持快捷预设、中英俄三语原生排版，以及完备的 WAI-ARIA 键盘无障碍漫游（上下左右键、Home/End、PageUp/Down 及月末夹紧）与高亮区间实时拉伸预览。
-- **智能闲置会话整理**：自定义闲置天数，自动分析并排除正在运行、等待交互及已收藏的关键会话，支持预览候选后确认归档，并提供误操作撤回机制。
-- **永久彻底清理**：确认后永久删除不再需要的会话，彻底清除物理日志、索引与缓存，支持错误项独立重试。
-- **无主孤儿子代理检测与物理清理**：自动探测母会话已被外部物理删除的残留子代理，在会话整理中直观展示空间占用并支持一键物理释放。
-```
+#### 完整回答
 
-</details>
+src/workspace.ts:519-531 扩展宿主 Workspace Registry 并注册远程方法；533-549 对已归档会话前后检查身份，已加载对象取事件快照，冷会话通过 persistence 只读打开；792-803 完成读取后关闭 handle。552-581 对每个目标独立返回命中或失败和预览。extractConversation 只保留 user/assistant 的文本，且排除非用户来源；该功能不会覆盖所有事件。缺只读 persistence 时明确要求打开完整会话。源码支持该路径，不证明当前宿主安装、存储格式及性能均通过。
 
-**依据 3 · 源码核查**：[README.zh-CN.md:64-67](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/README.zh-CN.md#L64-L67)
+#### 证据与依据
 
-预览限制和无全文索引声明。
+**依据 1 · 源码核查**：[src/workspace.ts:519-549](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L519-L549)
 
-```text
-- 正文命中显示片段和关键词高亮；已归档页点击片段或「更多 → 快速预览」查看上下文，不恢复会话；未归档页点击片段打开完整会话。没有关键词时预览最近八条消息，有关键词时定位首个命中附近。
-- 检索逐批读取，每批最多 20 条会话，批内逐条读取；关键词最多 200 字符。预览每条最多 2000 个 UTF-16 码元，截断保留完整 Unicode 字符，较长内容请打开完整会话。
-- 搜索与预览不包含工具输出、附件、推理、系统或插件注入消息；读取失败会显示详情并支持重试。检索的是持久化原始文本，不等同于模型当前上下文。
-- 未建立持久化全文索引，大量或超长会话可能需要较久，建议先缩小项目、日期或收藏范围；尚无可承诺的会话数量上限或响应时延；更改条件会停止后续批次，正在读取的单批仍会完成，但旧结果不会覆盖新筛选。
-```
-
-**依据 4 · 源码核查**：[src/workspace.ts:533-549](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L533-L549)
-
-只读冷会话接线。
+宿主注入及只读来源。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
+	static inject = [
+		"storageDomain",
+		"sessionPersistence",
+		"sessionProjectionCache",
+		"typert",
+	];
+	declare typertRemote: TypertGatewayBinding<this>;
+	declare favoriteDomainPromise: Promise<Domain<typeof favoriteDomainSpec>> | undefined;
+	constructor(ctx: Context) {
+		super(ctx);
+		this.typertRemote = bindTypertRemote(this, this.name);
+		for (const method of ARCHIVE_REMOTE_METHODS) markRemoteMethod(this, method);
+		registerHostRemote(this.ctx);
+	}
 	/** 只读取归档日志；已有实时实例读取快照，不调用 prepare、enter 或恢复接口。 */
 	async readArchivedConversation(sessionId: string) {
 		const ensureArchived = () => {
@@ -292,12 +290,12 @@
 
 </details>
 
-**依据 5 · 源码核查**：[src/workspace.ts:552-578](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L552-L578)
+**依据 2 · 源码核查**：[src/workspace.ts:552-581](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L552-L581)
 
-按会话搜索和失败项。
+逐会话搜索、失败与预览。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
     async searchSessionContent(input: unknown) {
@@ -327,13 +325,40 @@
 		return { items, failures };
 	}
 	/** 返回最近八条对话或关键词附近的八条，单条最多 2000 字，不写入宿主数据。 */
+	async previewArchivedSession(input: unknown) {
+		const { sessionId, query } = previewInputSchema.parse(input);
+		return { sessionId, ...previewConversation(await this.readArchivedConversation(sessionId), query) };
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/archive-discovery.ts:80-95](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/archive-discovery.ts#L80-L95)
+**依据 3 · 源码核查**：[src/workspace.ts:792-803](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L792-L803)
 
-实际正文提取白名单。
+读取后关闭 handle。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+	async readStoredProjectionSource(persistence: PersistenceCompat, sessionId: string) {
+		const handle = await persistence.open(sessionId, "read");
+		try {
+			const { events } = await handle.read(0);
+			return {
+				meta: handle.header,
+				inheritedEventCount: handle.inheritedEventCount,
+				events,
+			};
+		} finally {
+			await handle.close();
+		}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/archive-discovery.ts:80-95](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/archive-discovery.ts#L80-L95)
+
+只抽取对话文本。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -361,44 +386,27 @@ export function extractConversation(events: readonly unknown[]) {
 
 #### 缺口
 
-- 未运行大量日志检索及宿主兼容矩阵。
-  **影响**：不能由源码直接保证真实存储和宿主数据操作结果。
-  **进一步探讨**：用副本比较原生查找与插件搜索的准确率、延迟和占用，核对工具内容漏查预期。
+- 未运行目标宿主和所有格式
+  **影响**：不能证明兼容性与性能
+  **进一步探讨**：在隔离副本测试冷会话、格式差异和读取失败。
 
-<a id="research-q02"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-13"></a>
 
-### Q02 · 永久删除是否可以当成全有或全无的清理？
+### Q03 · 删除父项是否证明所有子项和工件均清除？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-不能。UI提供永久删除确认，批量入口在enqueueOperation中逐目标执行，分别返回成功/已消失/失败；删除核心先flush并detach实时会话、删投影缓存、处理子Agent和spill、删物理转录，之后清父会话归档/工作区记账及索引。已知JSONL目录验证所有权并拒绝项目/会话符号链接，其他后端退到仅工件删除；lstat到rm并非跨进程原子防护。物理删除失败会保留父记账供重试，但不能恢复此前已删缓存或子对象。
-
-更关键的反证是deleteDescendants对每个子会话删除失败及枚举失败只记录warn，不抛回父核心；父仍继续删自身并可返回deleted:true。级联只认origin=subagent，fork不会跟删，这是合理独立会话边界；但“所有子Agent和记录彻底清除”的UI文案不能作为已完成证明。子Agent可能变成孤儿，存在后续孤儿检测入口不等于本次级联已完整完成。永久删除没有撤回，普通归档恢复与物理清理必须分层采用，不能把清理成功条数当释放全量空间或无残留证据。
+src/workspace.ts:814-843 批量删除逐目标收集成功、跳过与失败；893-896 的单项接口在核心函数返回后报告 deleted。900-945 先尝试 flush/脱离实时会话，再删投影、子代理、spill 与 transcript，物理工件删除成功后才清归档记账。1080-1122 仅级联 origin=subagent 的子项，并在子项删除或枚举失败时记录警告而继续，因此父项成功不能证明所有子工件均已删除。实时 flush/detach 失败也仅警告。调用方应单独重扫子会话、文件与记账，永久删除不可由卸载撤销；本轮未执行任何删除。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/client.ts:1565-1572](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/client.ts#L1565-L1572)
+**依据 1 · 源码核查**：[src/workspace.ts:814-843](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L814-L843)
 
-永久删除确认按钮。
-
-```text
-                }), (0, react_jsx_runtime.jsx)(SettingsModal, {
-					t,
-					open: deleteTarget !== null,
-					onClose: closeDelete,
-					title: deleteDialogTitle,
-					...deleteDialogDescription === void 0 ? {} : { description: deleteDialogDescription },
-					footer: (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [modalFooterButton({ disabled: busy, onClick: closeDelete, children: t("cancel") }), modalFooterButton({ danger: true, disabled: busy, onClick: confirmDelete, children: deleteConfirmLabel })] }),
-					children: (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
-```
-
-**依据 2 · 源码核查**：[src/workspace.ts:814-843](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L814-L843)
-
-批量成功/跳过/失败分开。
+批量目标分别收集结果。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -438,12 +446,12 @@ export function extractConversation(events: readonly unknown[]) {
 
 </details>
 
-**依据 3 · 源码核查**：[src/workspace.ts:893-937](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L893-L937)
+**依据 2 · 源码核查**：[src/workspace.ts:893-903](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L893-L903)
 
-删除顺序和成功后记账。
+单项入口与未知项处理。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
 	async deleteSession(sessionId: string) {
@@ -457,17 +465,43 @@ export function extractConversation(events: readonly unknown[]) {
 		if (!(await this.sessionKnown(sessionId))) {
 			await this.cleanupUnknownArchivedSession(sessionId);
 			return { deleted: true, skipped: true };
-		}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/workspace.ts:905-945](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L905-L945)
+
+删除顺序与物理成功后记账。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
 		const sessions = this.ctx.get("sessions");
 		const live = sessions?.get(sessionId);
 		if (live !== void 0) {
-			// 持久化屏障先行：不能有未落盘的转录写入与目录删除竞争
-			//（持久化后端按批关闭句柄，flush 过的会话不再持有打开的文件）。
-			await sessions.flush(live);
+			if (live.header !== void 0) {
+				this.headers?.set(sessionId, live.header);
+			}
+			// 持久化屏障先行：尽力而为排空未落盘的转录写入
+			//（若会话转录损坏导致 flush 失败，仅记录警告，不阻断后续分离与物理清理）。
+			try {
+				await sessions.flush(live);
+			} catch (error) {
+				this.ctx.logger.warn(
+					`archive-manager: could not flush live session "${sessionId}" before deletion: ${String(error)}`,
+				);
+			}
 			// 从存储分离；`session/disposed` 同步触发，驱动浏览器端的
 			// `host/session-removed` 帧并启动投影缓存的最终写后落盘。
-			const entry = sessions.liveEntryFor(live);
-			sessions.detachEntered(entry);
+			try {
+				const entry = sessions.liveEntryFor(live);
+				sessions.detachEntered(entry);
+			} catch (error) {
+				this.ctx.logger.warn(
+					`archive-manager: could not detach live session "${sessionId}" before deletion: ${String(error)}`,
+				);
+			}
 		} else if (sessions !== void 0)
 			await this.publishColdSessionRemoval(sessionId, sessions);
 		const projCache = this.ctx.get("sessionProjectionCache");
@@ -484,81 +518,21 @@ export function extractConversation(events: readonly unknown[]) {
 				archivedSessionIds: state.archivedSessionIds.filter(
 					(id) => id !== sessionId,
 				),
-			});
-		}
-		await this.removeFromWorkspaceAccounts(sessionId);
-		// 物理删除已成功：此时再清父类索引。后续记账失败时保留索引，便于重试。
-		this.forgetIndexedSession(sessionId);
-		this.publishDeletedSession(sessionId);
-		return { deleted: true };
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/workspace.ts:992-1035](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L992-L1035)
+**依据 4 · 源码核查**：[src/workspace.ts:1080-1122](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L1080-L1122)
 
-目录所有权、链接检查和删除自证。
-
-<details>
-<summary>查看原文（44行）</summary>
-
-```text
-		let target = { path: location.path, kind: "transcript artifact" };
-		try {
-			const directory = jsonlSessionDirectory(persistence, header, location);
-			if (directory !== void 0) {
-				target = { path: directory, kind: "session directory" };
-				// The configured storage root may itself be an intentional alias, but
-				// project/session links must not redirect recursive deletion elsewhere.
-				// These checks assume trusted, stable storage ancestors; lstat + rm
-				// is not an atomic defense against another process swapping directories.
-				for (const path of [dirname(directory), directory]) {
-					let stat;
-					try {
-						stat = await lstat(path);
-					} catch (error) {
-						if (errorCode(error) === "ENOENT") continue; // Already removed on an earlier attempt.
-						throw error;
-					}
-					if (stat.isSymbolicLink())
-						throw new Error(`refusing to delete through symbolic link "${path}"`);
-					if (!stat.isDirectory())
-						throw new Error(`expected session storage directory "${path}"`);
-				}
-			} else if (persistence.name === "session-persistence-jsonl") {
-				this.ctx.logger.warn(
-					`archive-manager: session "${sessionId}": JSONL directory ownership could not be verified; falling back to artifact-only deletion at "${location.path}" (parent directory retained)`,
-				);
-			}
-			const existed = await pathExists(target.path);
-			await rm(target.path, { recursive: true, force: true });
-			// stat 不读日志。它抛错只说明无法自证，不能当成已经删掉。
-			// 只有删除前目标确实存在、删除后该路径已消失，才接受这次校验失败。
-			if (typeof persistence.stat === "function") {
-				try {
-					const postStat = await persistence.stat(sessionId);
-					if (postStat !== void 0) {
-						throw new PersistenceStillPresentError(sessionId);
-					}
-				} catch (error) {
-					if (error instanceof PersistenceStillPresentError) throw error;
-					const gone = !(await pathExists(target.path));
-					if (!existed || !gone) {
-						throw new Error(
-							`cannot verify removal of session "${sessionId}": stat failed and "${target.path}" was not a present artifact removed by this deletion`,
-						);
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/workspace.ts:1068-1108](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L1068-L1108)
-
-只级联subagent但子失败仅日志，父继续。
+子代理筛选与失败只记录警告。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
+	/** 尽力而为的级联删除：删除 `sessionId` 的 SUBAGENT 子会话。
+	 * 仅头部标记 `origin: "subagent"` 的会话参与：单凭 `parentSession` 有歧义
+	 *（fork 分支也携带它），而 fork 分支是独立的用户会话，绝不能被级联删除。 */
 	async deleteDescendants(sessionId: string, storedHeaders?: Header[]) {
 		try {
 			const descendants = [];
@@ -599,73 +573,36 @@ export function extractConversation(events: readonly unknown[]) {
 			this.ctx.logger.warn(
 				`archive-manager: descendant enumeration for deleted session "${sessionId}" failed: ${String(error)}`,
 			);
-		}
 ```
 
 </details>
-
-**依据 6 · 源码核查**：[src/client.ts:3025-3026](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/client.ts#L3025-L3026)
-
-UI称清全部子代理和记录，不可撤回。
-
-```text
-			"deleteSession.confirmTitle": "Delete session?",
-			"deleteSession.desc": "This permanently deletes session “{name}”, its child agents (including any that are still running), and all of its records (conversation, stats, cache). This cannot be undone.",
-```
 
 #### 缺口
 
-- 真实删除、跨进程竞争和孤儿重扫未验证。
-  **影响**：不能由源码直接保证真实存储和宿主数据操作结果。
-  **进一步探讨**：只在完整备份副本注入子删除/枚举失败，核对父返回、剩余文件、孤儿检测和重试，不在重要会话试错。
+- 未验证所有存储与实际删除
+  **影响**：父回执不保证没有子对象残留
+  **进一步探讨**：在副本制造子项失败后重扫文件、spill、投影与记账。
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 缓存重建和跨工作区移动分别写什么？
+### Q04 · 缓存重建和移动的事务与恢复边界是什么？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：工程质量与复用、依赖、兼容与流程
 
 #### 完整回答
 
-缓存重建不是修复转录内容。诊断从头部和官方投影看冷会话候选，实际重建逐目标进入官方操作队列，读前后复核header identity与资格，open(read)完整日志产生coldSnapshot，再通过cachedSnapshot深比较确认；超时只代表未确认，不取消已入队写。与删除排队是避免迟到缓存复活的关键条件，不能把关页面当停止服务端。
-
-跨工作区移动则会改转录cwd并改变物理位置与记账，不只是界面分组。入口排队且检查运行状态，空闲实时对象会释放所有权；但flush、cancel和detach部分错误被吞，因此未实测不能称绝对安全。目标同名拒绝覆盖，源目录移到备份、stage写目标再rename，失败尝试回滚，回滚失败报备份地址。成功后备份主动删除，缓存预热失败仅warn；这份临时备份不能当永久恢复点。README声称“原子级改写”不能推导跨文件、索引和进程的全局事务。
+workspace.ts:765-787 将缓存重建入工作区操作队列，写前再读头并比对身份；cache-rebuild.ts:9-26 对官方缓存快照进行回读比较，超时代表未确认而不是取消写。workspace.ts:1257-1271 将移动纳入相同操作链；session-move.ts:192-199 拒绝运行中会话，但 202-228 对取消、flush 和 detach 某些异常忽略。335-372 使用备份目录、重写及暂存文件；427-465 失败时尽力回滚，源恢复失败则报告备份路径，成功后清理临时备份。多个文件、缓存及工作区记录不因此构成经故障实测的全局事务，临时备份也不是长期恢复点。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/workspace.ts:742-754](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L742-L754)
+**依据 1 · 源码核查**：[src/workspace.ts:765-787](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L765-L787)
 
-官方缓存诊断。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-	async diagnoseSessionCaches(): Promise<CacheDiagnosis> {
-		const cache = this.ctx.get("sessionProjectionCache");
-		if (!cache) throw new Error("Official session projection cache is unavailable");
-		const items = [];
-		const headers = (this as unknown as { headers?: Map<string, Header> }).headers?.size
-			? Array.from((this as unknown as { headers: Map<string, Header> }).headers.values())
-			: await this.listStoredHeaders();
-		for (const header of headers) {
-			if (await this.cacheRebuildEligible(header) && !this.usableSessionListCache(header)) {
-				items.push({ sessionId: header.id, identity: cacheIdentity(header) });
-			}
-		}
-		return { count: items.length, items };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/workspace.ts:765-803](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L765-L803)
-
-入队、身份复核、只读源和确认。
+排队与身份复核。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
 	/** 与删除共用官方工作区队列；冷写入会同步加入官方域写入链，
@@ -691,29 +628,13 @@ UI称清全部子代理和记录，不可撤回。
 					await confirmColdCacheWrite(cache, source);
 					result.rebuiltSessionIds.push(item.sessionId);
 				} catch (error) { result.failures.push({ sessionId: item.sessionId, message: (error instanceof Error ? error.message : String(error)).slice(0, 500) }); }
-			});
-		}
-		return result;
-	}
-	async readStoredProjectionSource(persistence: PersistenceCompat, sessionId: string) {
-		const handle = await persistence.open(sessionId, "read");
-		try {
-			const { events } = await handle.read(0);
-			return {
-				meta: handle.header,
-				inheritedEventCount: handle.inheritedEventCount,
-				events,
-			};
-		} finally {
-			await handle.close();
-		}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/cache-rebuild.ts:9-26](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/cache-rebuild.ts#L9-L26)
+**依据 2 · 源码核查**：[src/cache-rebuild.ts:9-26](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/cache-rebuild.ts#L9-L26)
 
-写后深比较，超时不等于取消。
+回读确认和超时语义。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -741,9 +662,9 @@ export async function confirmColdCacheWrite<Meta, Events>(
 
 </details>
 
-**依据 4 · 源码核查**：[src/workspace.ts:1242-1256](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L1242-L1256)
+**依据 3 · 源码核查**：[src/workspace.ts:1257-1271](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L1257-L1271)
 
-移动进入操作链。
+移动进入操作队列。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -768,21 +689,14 @@ export async function confirmColdCacheWrite<Meta, Events>(
 
 </details>
 
-**依据 5 · 源码核查**：[src/session-move.ts:185-229](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/session-move.ts#L185-L229)
+**依据 4 · 源码核查**：[src/session-move.ts:192-228](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/session-move.ts#L192-L228)
 
-拒运行，但flush/cancel/detach错误吞掉。
+运行检查和尽力释放。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
-	const liveSession = ctx.sessions?.get?.(cleanSessionId) as {
-		running?: boolean;
-		status?: string;
-	} | undefined;
-
-	const agent = ctx.agents?.get?.(cleanSessionId);
-
 	const isExecuting = liveSession?.running === true ||
 		liveSession?.status === "running" ||
 		liveSession?.status === "ongoing" ||
@@ -820,24 +734,18 @@ export async function confirmColdCacheWrite<Meta, Events>(
 			try {
 				originalEntry.detach();
 			} catch {}
-		}
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/session-move.ts:330-377](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/session-move.ts#L330-L377)
+**依据 5 · 源码核查**：[src/session-move.ts:335-372](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/session-move.ts#L335-L372)
 
-目标冲突、临时备份、改cwd和stage落盘。
+备份与暂存落盘。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
-		targetOccupied = true;
-	} catch {}
-	if (targetOccupied) {
-		throw new Error(`目标工作区已存在同名会话工件，拒绝覆盖: ${targetLogPath}`);
-	}
 
 	const persistenceRoot = persistence.root ?? persistence.config?.root;
 	const backupRoot = persistenceRoot
@@ -876,54 +784,18 @@ export async function confirmColdCacheWrite<Meta, Events>(
 		stageFile = join(targetSessionDir, `.stage-${process.pid}-${Date.now()}`);
 		await writeFile(stageFile, newBytes);
 		await rename(stageFile, targetLogPath);
-		stageFile = null;
-
-		// c. 读回校验
-		const readbackBytes = await readFile(targetLogPath);
-		if (readbackBytes.length === 0) throw new Error("目标写入工件为空");
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/session-move.ts:396-465](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/session-move.ts#L396-L465)
+**依据 6 · 源码核查**：[src/session-move.ts:427-465](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/session-move.ts#L427-L465)
 
-缓存预热降级、回滚和成功清备份。
+失败恢复及成功删除备份。
 
 <details>
-<summary>查看原文（70行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
-		// e. 宿主记账同步
-		for (const ws of sourceWorkspaces) {
-			await ws.detachSession(cleanSessionId);
-			detachedWorkspaces.push(ws);
-		}
-		await targetWorkspace.attachSession(cleanSessionId);
-		targetAttached = true;
-
-		if (ctx.sessionProjectionCache && typeof ctx.sessionProjectionCache.coldSnapshot === "function") {
-			try {
-				if (ctx.sessionProjectionCache.coldSnapshot.length === 1) {
-					await ctx.sessionProjectionCache.coldSnapshot(cleanSessionId);
-				} else if (persistence && typeof persistence.open === "function") {
-					const readHandle = await persistence.open(cleanSessionId, "read");
-					try {
-						const { events } = typeof readHandle.read === "function" ? await readHandle.read(0) : { events: [] };
-						const coldMeta = readHandle.header ?? targetHeader;
-						const inherited = (readHandle as unknown as { inheritedEventCount?: number }).inheritedEventCount ?? 0;
-						await (ctx.sessionProjectionCache.coldSnapshot as unknown as (m: unknown, c: number, ev: unknown[]) => Promise<unknown>)(
-							coldMeta,
-							inherited,
-							events ?? []
-						);
-					} finally {
-						await readHandle.close();
-					}
-				}
-			} catch (err) {
-				ctx.logger?.warn?.(`archive-manager: post-move coldSnapshot failed: ${String(err)}`);
-			}
-		}
 	} catch (error) {
 		// 回滚内存映射
 		if (header) {
@@ -969,86 +841,138 @@ export async function confirmColdCacheWrite<Meta, Events>(
 
 #### 缺口
 
-- 未审计所有格式、压缩解码和宿主缓存队列内部，也未做移动中断验证。
-  **影响**：不能由源码直接保证真实存储和宿主数据操作结果。
-  **进一步探讨**：使用副本模拟flush失败、磁盘满、记账失败、写后读失败和迟到缓存，核对原日志、cwd、目标、记账和备份能否恢复。
+- 未进行中断和并发故障试验
+  **影响**：不能保证全局事务或永久恢复
+  **进一步探讨**：隔离副本测试 flush 失败、中断和独立备份还原。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 如何分层采用，下一步值得验证什么？
+### Q05 · 依赖、使用负担及停止条件是什么？
 
-**研究主题**：效果与总成本、采用判断、新假设与验证
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-建议先试用只读搜索、预览和收藏，再在副本检查归档恢复；永久删除与移动留在独立验收后。首次成本是对应profile安装、版本匹配、会话存储备份和数据核对，现金/耗时未测；持续有批量日志读取I/O、缓存重建写盘和兼容升级。故障恢复可能要逐对象核文件、子会话和记账，不能只点重试；卸载插件不撤销物理删除或cwd重写，源数据独立备份是退出方案，非插件自动能力。
-
-可推导“分对象清理证据收据”：将父、子Agent、spill、缓存、记账各目标的已删除/失败/未知返回UI，直到重扫确认无残留才称彻底删除，避免父成功掩盖子warn。相对现有批量父对象结果，这是具体工程增量，尚未实现，不计成已解决。最小验证在副本注入子删除和枚举失败，比较当前UI与对象收据的漏报残留、误报完整、恢复时间；若展示负担超过减少的误判或无真实残留问题则停止。受众是否会为此采用独立插件尚无证据。
+package.json:1-18、45-66 声明宿主、Node 和 session、persistence、projection 与客户端相关依赖；workspace.ts:519-531 对所需服务做注入。首次需核对 profile、宿主版本并建立独立会话数据副本；持续查询要读取日志与人工筛选；删除或移动失败需核查文件、子项、spill、投影与 workspace 记账。建议匹配宿主且已有独立备份的用户先对副本试检索、收藏及归档恢复；永久删除和跨工作区移动必须另做逐对象验证。若失败或状态不明，停止重复操作并检查备份及实际对象。空间、人工和性能未测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/workspace.ts:831-843](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L831-L843)
+**依据 1 · 源码核查**：[package.json:1-18](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/package.json#L1-L18)
 
-当前按父对象返回批量状态。
+包及运行范围。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-					const result = await this.deleteSessionCore(sessionId, descendantHeaders);
-					if (result?.skipped) skippedSessionIds.push(sessionId);
-					else deletedSessionIds.push(sessionId);
-				} catch (error) {
-					failures.push({ sessionId, message: deletionFailureMessage(error) });
-				}
-			}
-			return {
-				requestedSessionIds,
-				deletedSessionIds,
-				skippedSessionIds,
-				failures,
-			};
+{
+  "name": "@michengai/dsh-archive-manager",
+  "version": "1.1.22",
+  "description": "归档、恢复、收藏和永久删除会话，并诊断损坏的会话日志。 · Archive, restore, favorite, and permanently delete sessions, and diagnose damaged session logs.",
+  "type": "module",
+  "packageManager": "pnpm@11.22.0",
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./workspace": "./lib/workspace.js",
+    "./projcache": "./lib/projcache.js",
+    "./host": "./lib/host-install.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/workspace.ts:1094-1108](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/workspace.ts#L1094-L1108)
+**依据 2 · 源码核查**：[package.json:45-66](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/package.json#L45-L66)
 
-子对象错误降级形成收据缺口。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-			for (const childId of descendants) {
-				try {
-					if (!(await this.sessionKnown(childId))) continue;
-					await this.deleteSessionCore(childId, storedHeaders);
-				} catch (error) {
-					this.ctx.logger.warn(
-						`archive-manager: cascade delete of subagent session "${childId}" (child of "${sessionId}") failed: ${String(error)}`,
-					);
-				}
-			}
-		} catch (error) {
-			this.ctx.logger.warn(
-				`archive-manager: descendant enumeration for deleted session "${sessionId}" failed: ${String(error)}`,
-			);
-		}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/session-move.ts:444-465](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/src/session-move.ts#L444-L465)
-
-移动备份生命周期不是用户永久备份。
+宿主 peer 依赖。
 
 <details>
 <summary>查看原文（22行）</summary>
 
 ```text
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.1 <5.0.0",
+    "@deepseek-ai/dsh-client-connection": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-locale": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-primitives": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-sidebar": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-workspace": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-host-webserver": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-session": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-session-format-catalog": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-session-projection-cache": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-spill-local": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-storage-domain": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-typert-protocol": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-typert-registry": ">=0.2.0-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-workspace": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-session-format-catalog": {
+      "optional": true
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/workspace.ts:519-531](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L519-L531)
+
+宿主服务注入。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+	static inject = [
+		"storageDomain",
+		"sessionPersistence",
+		"sessionProjectionCache",
+		"typert",
+	];
+	declare typertRemote: TypertGatewayBinding<this>;
+	declare favoriteDomainPromise: Promise<Domain<typeof favoriteDomainSpec>> | undefined;
+	constructor(ctx: Context) {
+		super(ctx);
+		this.typertRemote = bindTypertRemote(this, this.name);
+		for (const method of ARCHIVE_REMOTE_METHODS) markRemoteMethod(this, method);
+		registerHostRemote(this.ctx);
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/session-move.ts:427-465](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/session-move.ts#L427-L465)
+
+移动回滚与备份边界。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+	} catch (error) {
+		// 回滚内存映射
+		if (header) {
+			registry.headers?.set(cleanSessionId, header);
+			if (header.cwd) registry.sessionPaths?.set(cleanSessionId, header.cwd);
+		}
+		if (liveSession !== undefined && header) {
+			try {
+				if ("header" in liveSession && (liveSession as unknown as { header?: { cwd?: string } }).header) {
+					(liveSession as unknown as { header: { cwd?: string } }).header.cwd = header.cwd;
+				}
+				if ("cwd" in liveSession && header.cwd) {
+					(liveSession as unknown as { cwd?: string }).cwd = header.cwd;
+				}
+			} catch {}
+		}
+
 		// 回滚链路
 		if (stageFile) await rm(stageFile, { force: true }).catch(() => {});
 		await rm(targetSessionDir, { recursive: true, force: true }).catch(() => {});
@@ -1075,20 +999,98 @@ export async function confirmColdCacheWrite<Meta, Events>(
 
 </details>
 
-**依据 4 · 源码核查**：[README.zh-CN.md:65-67](https://github.com/MichengAI/dsh-archive-manager/blob/6b8babc7b7f8da44466c7bd611ad29e66408623c/README.zh-CN.md#L65-L67)
+#### 缺口
 
-批量读取成本与未知性能。
+- 空间、耗时和失败恢复未经测量
+  **影响**：不能推断总成本或成熟度
+  **进一步探讨**：在独立数据副本中测只读和恢复，再单独核实物理操作。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 对象级清理收据能否降低误判？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+根据 Q03 中父级成功可掩盖子项失败，可提出未验证假设：返回逐个父会话、子代理、spill、投影及记账对象的清理结果，并在独立重扫后明确“已确认／未确认／失败”，可能减少把父项成功误认为完全删除。相对现有父目标级结果会增加扫描和用户复核成本；在隔离副本故意制造子对象失败，比较现有返回与对象级收据的残留识别、耗时及误报；若独立重扫不能可靠覆盖宿主存储或负担超过收益则不推广。该方案尚未实现或验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/workspace.ts:814-843](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L814-L843)
+
+父目标级结果。
+
+<details>
+<summary>查看原文（30行）</summary>
 
 ```text
-- 检索逐批读取，每批最多 20 条会话，批内逐条读取；关键词最多 200 字符。预览每条最多 2000 个 UTF-16 码元，截断保留完整 Unicode 字符，较长内容请打开完整会话。
-- 搜索与预览不包含工具输出、附件、推理、系统或插件注入消息；读取失败会显示详情并支持重试。检索的是持久化原始文本，不等同于模型当前上下文。
-- 未建立持久化全文索引，大量或超长会话可能需要较久，建议先缩小项目、日期或收藏范围；尚无可承诺的会话数量上限或响应时延；更改条件会停止后续批次，正在读取的单批仍会完成，但旧结果不会覆盖新筛选。
+	async deleteArchivedSessions(target: unknown) {
+		return this.enqueueOperation(async () => {
+			const requestedSessionIds = this.archivedSessionIdsForTarget(target);
+			const deletedSessionIds = [];
+			const skippedSessionIds = [];
+			const failures = [];
+			// 只给本批级联枚举复用，避免每个目标重复读取存储列表。
+			let descendantHeaders: Header[] | undefined;
+			try {
+				descendantHeaders = await this.listStoredHeaders();
+			} catch (error) {
+				this.ctx.logger.warn(
+					`archive-manager: batch descendant listing failed; each cascade will retry: ${String(error)}`,
+				);
+			}
+			for (const sessionId of requestedSessionIds) {
+				try {
+					const result = await this.deleteSessionCore(sessionId, descendantHeaders);
+					if (result?.skipped) skippedSessionIds.push(sessionId);
+					else deletedSessionIds.push(sessionId);
+				} catch (error) {
+					failures.push({ sessionId, message: deletionFailureMessage(error) });
+				}
+			}
+			return {
+				requestedSessionIds,
+				deletedSessionIds,
+				skippedSessionIds,
+				failures,
+			};
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[src/workspace.ts:1109-1122](https://github.com/MichengAI/dsh-archive-manager/blob/866fd95c157a6c943e697d58f589826a6cbf97e0/src/workspace.ts#L1109-L1122)
+
+子项失败不传播。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+			for (const childId of descendants) {
+				try {
+					if (!(await this.sessionKnown(childId))) continue;
+					await this.deleteSessionCore(childId, storedHeaders);
+				} catch (error) {
+					this.ctx.logger.warn(
+						`archive-manager: cascade delete of subagent session "${childId}" (child of "${sessionId}") failed: ${String(error)}`,
+					);
+				}
+			}
+		} catch (error) {
+			this.ctx.logger.warn(
+				`archive-manager: descendant enumeration for deleted session "${sessionId}" failed: ${String(error)}`,
+			);
+```
+
+</details>
 
 #### 缺口
 
-- 没有真实用户恢复成本、清理误判及采用对照。
-  **影响**：不能由源码直接保证真实存储和宿主数据操作结果。
-  **进一步探讨**：先收集匿名失败案例和副本故障测试，用对象收据对照现有返回再决定实现。
+- 没有原型和对照实验
+  **影响**：不能证明改进效果
+  **进一步探讨**：对照现有结果和对象级重扫测残留识别及人工时间。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
