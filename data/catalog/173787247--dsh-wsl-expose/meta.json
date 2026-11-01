@@ -1,34 +1,66 @@
 {
     "repository": "173787247/dsh-wsl-expose",
     "repository_id": 1351853956,
-    "captured_at": "2026-10-22T07:29:14.499Z",
-    "window_start": "2026-09-22T07:29:14.499Z",
+    "captured_at": "2026-11-01T11:05:20.882Z",
+    "window_start": "2026-10-02T11:05:20.882Z",
     "stars": 1,
-    "pushed_at": "2026-10-09T09:01:00Z",
+    "pushed_at": "2026-10-30T04:51:06Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-expose%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BC36:2777CB:21C416:25BD3F:6AE71D97 and timestamp 2026-11-01 11:08:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-expose%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BC6C:234CA:237EBB:27763D:6AE71D98 and timestamp 2026-11-01 11:08:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-expose%20is%3Aissue%20created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BCA2:199D83:212D38:2524C4:6AE71D99 and timestamp 2026-11-01 11:08:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-expose%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BCD6:25DFFC:244DC0:284247:6AE71D9A and timestamp 2026-11-01 11:08:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-expose%20is%3Aissue%20updated%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BD2A:1074BF:210203:24F7C8:6AE71D9C and timestamp 2026-11-01 11:08:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-10-31T17:22:18.721Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a87eb6578dd848aaff9e2afbdb08e525e3d5bf74",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
     "npm": {
-        "package_name": "dsh-wsl-expose",
-        "captured_at": "2026-10-22T07:29:23.060Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 674,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-expose",
-        "error": null,
+        "package_name": "dsh-wsl-portproxy",
+        "captured_at": "2026-11-01T11:05:20.882Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-wsl-portproxy",
+        "error": "HTTP 404",
         "publication": {
-            "first_published_at": "2026-08-18T05:13:25.044Z",
-            "captured_at": "2026-10-22T07:29:23.060Z",
-            "source_url": "https://registry.npmjs.org/dsh-wsl-expose",
-            "error": null,
-            "latest_version": "1.7.0",
-            "latest_published_at": "2026-08-20T11:17:30.267Z",
-            "latest_error": null
+            "first_published_at": null,
+            "captured_at": "2026-11-01T11:05:20.882Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-portproxy",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
         }
     }
 }

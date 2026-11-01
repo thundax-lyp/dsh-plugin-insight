@@ -1,18 +1,18 @@
-# CloudBase DSH 插件
+# CloudBase DSH Plugin
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[c4ab728](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/tree/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin)
+源码版本：[c195450](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/tree/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,150](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C150&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) [![npm 30d 2,254](https://img.shields.io/static/v1?label=npm+30d&message=2%2C254&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cloudbase/dsh-plugin) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cloudbase/dsh-plugin)
+[![GitHub ★ 1,153](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C153&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit) [![npm 30d 1,529](https://img.shields.io/static/v1?label=npm+30d&message=1%2C529&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cloudbase/dsh-plugin) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cloudbase/dsh-plugin)
 <!-- END META -->
 
-> **功能**：把 CloudBase MCP、包内 Skill 和数据库/部署结果卡片接入 DSH 会话。
+> **功能**：将 CloudBase MCP 工具与结果面板接入 DSH。
 
-> **亮点**：减少会话与CloudBase控制台间切换，统一展示数据库和部署结果，云后端能力归上游；不是从一句话到可用应用的效果证明。[Q01](#research-q01)
+> **亮点**：把云工具及可视结果接入会话，而非实现云基础服务。[Q01](#research-q01)
 
-> **主要限制**：插件固定SHA不固定cached/latest MCP；两条bridge环境语义不同，面板set_env与调用未作为所读路径中的原子事务，不应先用于生产写入。[Q03](#research-q03)
+> **主要限制**：超时不证明云侧无副作用，目标环境与宿主审批须实际验证。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · CloudBase后端搬进DSH真正减少哪一步？](#detail-section-11)
-  - [Q02 · 工具、面板写入和Skill如何接入宿主？](#detail-section-12)
-  - [Q03 · 固定插件版本能否保证MCP工具和目标环境固定？](#detail-section-13)
-  - [Q04 · 当前应怎样控制云端写入和安装维护投入？](#detail-section-14)
-  - [Q05 · 怎样把会话环境选择变成可核对的请求约束？](#detail-section-15)
+  - [Q01 · 谁使用这个插件，相比手动云控制台多什么？](#detail-section-11)
+  - [Q02 · MCP 如何启动与处理失败？](#detail-section-12)
+  - [Q03 · 环境绑定和 UI 提示能保证正确执行吗？](#detail-section-13)
+  - [Q04 · 登录、运行版本和云费用如何控制？](#detail-section-14)
+  - [Q05 · 如何减少超时后重复云写入？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：已有CloudBase环境的DSH开发者从代码继续管理后端与部署；合格结果在正确环境可验证。[Q01](#research-q01)
+> **用途**：需要在 DSH 管理 CloudBase 数据和部署的开发者；基线是聊天与云控制台切换。[Q01](#research-q01)
 
-CloudBase控制台或直接MCP工具；子插件增加DSH卡片与Skill，非原创数据库/部署能力。[Q01](#research-q01)
+使用 DSH 聊天并在云控制台手动查询或部署。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,65 +52,60 @@ CloudBase控制台或直接MCP工具；子插件增加DSH卡片与Skill，非原
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| MCP桥 | 云数据库/存储/部署入口 | 动态MCP、登录和环境 |
-| 面板卡片 | 展示数据和写意图 | append不等执行已通过 |
-| Skill | CloudBase应用流程指导 | 需实际资源验证 |
+| MCP 桥 | 云工具接入 | MCP 版本可能漂移 |
+| 环境 | 绑定目标与广播 | 不保证云端写入结果 |
+| 面板 | 展示数据与预览 | 宿主和网络依赖 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
 | --- | --- | --- | --- |
-| DSH/Node及服务 | 必需 | MCP/会话/界面 | 核版本与Web构建 |
-| MCP可执行包 | 必需 | 真实云工具 | 固定并记录actual版本 |
-| CloudBase登录和测试环境 | 云操作必需 | 授权与目标 | 不明则只读核查 |
-| 备份和费用边界 | 写入前必需 | 恢复与资源成本 | 不做生产变更 |
+| DSH 与 CloudBase MCP | 必需 | 工具桥接 | 使用控制台 |
+| 云账号、环境及权限 | 必需 | 查询或部署 | 不执行 |
+| 网络及预算 | 云操作需要 | API 与资源 | 停止并核对 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| 步骤 | 执行者与动作 | 判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 用户审安装和固定MCP | 实际版本明确 |
-| 授权 | 用户device-code并选测试环境 | status与目标对应 |
-| 核查 | 单会话只读查询 | 环境数据一致 |
-| 扩展前 | 用户核审批和恢复 | 未通过则回控制台 |
+| 准备 | 选择账号、隔离环境和预算 | 核对身份 |
+| 试用 | 执行只读查询 | 确认目标 |
+| 写入 | 核对审批和结果 | 超时先查询云端 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | DSH、MCP拉包及云测试环境 | 登录选环境、Web重建、安装脚本审阅 | 耗时未知 |
-| 持续使用 | 模型、数据库、存储和托管 | 版本/环境/审批核查 | 云费用未知 |
-| 失败恢复 | 备份、资源回滚及额外调用 | 查正确环境与实际写入 | 未验恢复与退出 |
+| 首次 | 拉包和网络 | 登录与权限配置 | 缓存版本可变 |
+| 持续 | 云资源费用未知 | 审批及核对结果 | 无账单对照 |
+| 恢复 | 可能已发生写入或计费 | 对账与回滚 | 不保证幂等 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 会话后端入口 | MCP/面板/Skill接线 | 端到端应用质量 |
-| 写意图分离 | UI只append消息 | 所有路径approval执行 |
-| 环境选择 | session cache与set_env | 并发请求目标一致性 |
+| 会话集成 | stdio 接线与环境广播 | 云服务完成情况 |
+| 故障 | 进程退出和超时反馈 | 云侧是否写入 |
 
-> **思考**：插件固定SHA不固定cached/latest MCP；两条bridge环境语义不同，面板set_env与调用未作为所读路径中的原子事务，不应先用于生产写入。[Q03](#research-q03)
+> **思考**：超时不证明云侧无副作用，目标环境与宿主审批须实际验证。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：减少会话与CloudBase控制台间切换，统一展示数据库和部署结果，云后端能力归上游；不是从一句话到可用应用的效果证明。[Q01](#research-q01)
+> **亮点**：把云工具及可视结果接入会话，而非实现云基础服务。[Q01](#research-q01)
 
-UI意图与执行分开、bundled Skill provider可借鉴；需核动态MCP身份和环境事务，不能把UI卡片当权限或交付证明。[Q02](#research-q02)
+MCP 可由缓存或 latest 启动；请求超时与进程退出清理 pending。[Q02](#research-q02)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-插件固定SHA不固定cached/latest MCP；两条bridge环境语义不同，面板set_env与调用未作为所读路径中的原子事务，不应先用于生产写入。[Q03](#research-q03)
+超时不证明云侧无副作用，目标环境与宿主审批须实际验证。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察，先固定MCP并做单会话测试环境只读核查；环境/审批未清前不删除或发布，失败退回控制台核对原资源。[Q04](#research-q04)
+隔离环境先只读，写操作核对环境与审批；超时查云端再决定。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +113,18 @@ UI意图与执行分开、bundled Skill provider可借鉴；需核动态MCP身�
 
 **核查状态**：已检查源码。
 
-DSH接线与写意图分离有源码支持；双会话环境一致性、实际MCP版本、approval及云资源恢复未验证。请求级目标绑定是未验证假设。
+固定适配器源码支持启动、环境同步与超时处理；未运行 MCP 或云服务。
 
-- 已检查：作者 README、包清单、源码路径 dsh-plugin/README.md、dsh-plugin/package.json、dsh-plugin/cordis.patch.yml、dsh-plugin/scripts/mcp-launch.mjs、dsh-plugin/src/server/index.ts、dsh-plugin/src/server/mcp-bridge.ts、dsh-plugin/src/server/mcp-client.ts、dsh-plugin/src/server/skill-provider.ts、dsh-plugin/src/client/components/WriteOpToolCard.tsx 及固定范围 inventory；组件：dsh-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 dsh-plugin/README.md、dsh-plugin/src/server/mcp-bridge.ts、dsh-plugin/scripts/mcp-launch.mjs、dsh-plugin/src/server/mcp-client.ts 及固定范围 inventory；组件：dsh-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读dsh-plugin子目录的manifest/README/patch/launcher/host/bridge/写卡片/Skill provider；不把根MCP源码等同实际latest版本，未运行宿主或云资源。
-- 下一步：固定MCP版本，在双会话双测试环境交错只读与取消预览，核目标/审批/恢复；本轮未执行。[Q05](#research-q05)
+- 边界：固定子组件 inventory 97 文件、2 排除、零解析错误；仅引用子组件文件，未执行目标及云服务。
+- 下一步：固定 MCP 与宿主版本，在隔离账号验证登录、权限、目标环境和超时后的云状态。
 
 **分析版本**
 
 - **仓库**：[TencentCloudBase/CloudBase-AI-Toolkit](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit)
-- **版本号**：0.2.3（[固定提交 c4ab728](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/tree/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.3（[固定提交 c195450](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/tree/c195450084358a555c3feef0db866dabb3a48383)）
+- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +132,9 @@ DSH接线与写意图分离有源码支持；双会话环境一致性、实际MC
 
 <a id="innovation"></a>
 
-未验证方向是请求绑定session/env/MCP版本和资源，原子选择环境与调用，两会话交错测试错环境和取消副作用。[Q05](#research-q05)
+未验证假设：目标环境、幂等键与超时后状态查询可减少重复写入；须对照现有超时与审批。[Q05](#research-q05)
 
-固定MCP版本，在双会话双测试环境交错只读与取消预览，核目标/审批/恢复；本轮未执行。[Q05](#research-q05)
+固定 MCP 与宿主版本，在隔离账号验证登录、权限、目标环境和超时后的云状态。
 
 <a id="detail-section-9"></a>
 
@@ -148,12 +143,14 @@ DSH接线与写意图分离有源码支持；双会话环境一致性、实际MC
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 4 | 268 | — | — | 2536 |
 | .mjs | source | 5 | 447 | 373 | 36 | — |
 | .cjs | source | 1 | 93 | 84 | 2 | — |
-| .tsx | source | 37 | 3115 | 2830 | 107 | — |
+| .tsx | source | 37 | 3123 | 2835 | 110 | — |
 | .ts | source | 30 | 6869 | 6034 | 326 | — |
 | .ts | example | 1 | 166 | 155 | 12 | — |
 | .ts | test | 19 | 2060 | 1875 | 48 | — |
@@ -162,260 +159,361 @@ DSH接线与写意图分离有源码支持；双会话环境一致性、实际MC
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+created%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z) [![近30天关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T04%3A59%3A15.812Z..2026-10-27T04%3A59%3A15.812Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+created%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z) [![近30天关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T11%3A05%3A20.882Z..2026-11-01T11%3A05%3A20.882Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-01。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：DSH后端桥是否把正确环境和审批贯穿到云资源操作，动态MCP依赖有哪些限制？
+**插件研究总目标**：DSH CloudBase 适配怎样连接 MCP 和云环境，在哪些情况下不可推断写入成功？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · CloudBase后端搬进DSH真正减少哪一步？
+### Q01 · 谁使用这个插件，相比手动云控制台多什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标是使用CloudBase且在DSH开发全栈原型的开发者，需要从生成代码继续建数据结构、传文件和部署。子插件把CloudBase MCP经宿主桥接、Skill与数据/部署卡片放在会话，减少切控制台及手工解释工具结果；合格结果是正确环境中资源可访问且应用行为通过核查，不是卡片出现域名。数据库、身份、存储与托管由CloudBase上游提供，本插件贡献为DSH集成和呈现。独立MCP已够用或不使用CloudBase的用户，未必需要这个Web半和重建前端负担。
+在 DSH 中管理 CloudBase 数据、存储与部署的开发者可通过 MCP 工具和面板组织操作。作者描述数据库结果表格、部署预览与工具入口；相比聊天与云控制台来回切换，它把结果带入会话，但服务功能实际由独立 MCP 和云服务提供，不能归因于适配器；单次简单查询可直接用控制台。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[dsh-plugin/README.md:3-15](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/README.md#L3-L15)
+**依据 1 · 作者声明**：[dsh-plugin/README.md:52-62](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/README.md#L52-L62)
 
-作者定位全栈应用与上游后端。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-> **在 DeepSeek Harness 里，从一句话到可用的全栈应用。**
->
-> 你在 DSH 里 vibecoding 时，最烦的事是什么？模型很聪明，但写完代码没地方跑——数据库要开控制台建、文件要自己传、部署要切去另一个网站。**一离开对话，心流就断了。**
->
-> `@cloudbase/dsh-plugin` 把 CloudBase 后端搬进 DSH：
->
-> - **数据库**：文档库和 PostgreSQL，对话里建表和查询
-> - **存储与认证**：上传文件，配置登录
-> - **前后端部署**：前端托管和后端部署，拿到可访问地址
->
-> 你的模型（DeepSeek / Claude / 随便换）、你的后端（自己的 CloudBase 环境）、你的数据（本地会话 + 自己数据库）。
-
-CloudBase backend for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). Compatible with **DSH `>=0.1.0-rc.6 <0.3.0`** (verified on `0.2.0-rc.2`) · Node `>=18` · MCP tools follow `@cloudbase/cloudbase-mcp@latest`.
-```
-
-</details>
-
-**依据 2 · 作者声明**：[dsh-plugin/README.md:58-69](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/README.md#L58-L69)
-
-MCP桥、表格、预览与写操作说明。
+作者声明桥接能力与写操作路径。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
+## 功能
+
+| 能力 | 说明 |
+|---|---|
+| MCP 桥 | 注册 `mcp__cloudbase__*`（与 `@cloudbase/cloudbase-mcp` 工具集一致，当前 38 个） |
+| DataTableCard | `queryPgDatabase` / `queryMysqlDatabase` / `readNoSqlDatabaseContent` 结果表格：分页、排序、复制 JSON、导出 CSV |
 | DeployPreviewCard | `manageHosting` upload 后 iframe 预览真实域名 + 打开按钮 |
 | 交付物行 | 会话尾部展示产物路径 + 域名 |
 | Sites skill | downloadTemplate(react) → Vite → 建表 → manageHosting → 域名 |
 
 写操作（SQL / 上传 / 删行）一律注入会话，由模型按 DSH approval 执行，插件 UI 不绕过权限模型。
-
-## 注意事项
-
-1. **pnpm v9+ 默认禁止依赖 install 脚本**：必须 `enable-scripts=true` 后再 `pnpm install`（一键脚本已包含此步）。
-2. **Web UI 插件要重建 DSH web 前端**：装完看不到卡片时，从 DSH 安装目录执行 `pnpm run build:web` 再重启；Headless 不需要。
-3. **首次 npx 拉包可能 10–90s**：headless 首轮工具列表可能为空，重试即可。
-4. **不要给插件配置 `CLOUDBASE_API_KEY`**：无效 Key 会挡住 device-code 登录。登录与环境选择全部走 `mcp__cloudbase__auth`。
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[dsh-plugin/src/server/mcp-bridge.ts:110-119](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-bridge.ts#L110-L119)
+
+提供 stdio MCP 配置。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export function buildMcpClientConfig(
+  _env: NodeJS.ProcessEnv = process.env,
+): McpClientPatchConfig {
+  return {
+    serverName: "cloudbase",
+    transport: "stdio",
+    command: "node",
+    args: [mcpLaunchScriptPath()],
+    env: {},
+  };
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 DSH、MCP、云账号或写操作
+  **影响**：无法确认权限、隔离、线上操作和真实成本
+  **进一步探讨**：固定 MCP 与宿主版本，在隔离云环境验证授权、目标环境和失败恢复
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 工具、面板写入和Skill如何接入宿主？
+### Q02 · MCP 如何启动与处理失败？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-cordis.patch插入dsh-mcp-client并让node运行mcp-launch，宿主管MCP framing和公开工具注册。另一个host apply创建CloudBaseMcpBridge给面板数据服务，Typert注册远程服务，并注册包内cloudbase Skill provider而非覆盖用户Skill目录。WriteOpToolCard点击run只append构造的用户消息，表示交由会话模型/宿主工具继续执行，不是卡片自己直接写SQL；但这也不证明最终宿主approval在全部路径不可绕过。可借鉴的是把UI写意图和真正工具执行分开、用provider登记bundled Skill；移植依赖systemPrompt、sessions、typert、skills和客户端服务。
+适配器配置 node 启动包装脚本，脚本优先显式命令、再选最新缓存、最后 npx latest；清除 API key 和代理后启动子进程。另一桥接客户端处理初始化、请求及响应；调用超时设 90 秒，进程异常退出会拒绝 pending，dispose 终止子进程。固定本插件源码不固定缓存或 latest MCP 版本，连接或超时不能说明云侧操作未发生。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-plugin/cordis.patch.yml:8-20](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/cordis.patch.yml#L8-L20)
+**依据 1 · 源码核查**：[dsh-plugin/src/server/mcp-bridge.ts:106-119](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-bridge.ts#L106-L119)
 
-宿主MCP客户端与本插件同时插入。
+stdio 启动配置。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-- insert:
-    - id: mcp-cloudbase
-      name: '@deepseek-ai/dsh-mcp-client'
-      config:
-        serverName: cloudbase
-        transport: stdio
-        command: node
-        # fileURLToPath is unavailable in the !!js evaluator; replicate it safely.
-        # On Windows URL#pathname yields "/C:/..." (leading slash), which node
-        # then resolves as "C:\C:\..." → MODULE_NOT_FOUND. Strip it on win32.
-        args: [!!js '(() => { const raw = new URL("node_modules/@cloudbase/dsh-plugin/scripts/mcp-launch.mjs", baseUrl).pathname; let p = raw; try { p = decodeURIComponent(raw); } catch (e) { p = raw; } return /^\/[A-Za-z]:/.test(p) ? p.slice(1) : p; })()']
-        env: {}
-    - id: cloudbase-dsh-plugin
+export function mcpLaunchScriptPath(): string {
+  return join(PACKAGE_ROOT, "scripts", "mcp-launch.mjs");
+}
+
+export function buildMcpClientConfig(
+  _env: NodeJS.ProcessEnv = process.env,
+): McpClientPatchConfig {
+  return {
+    serverName: "cloudbase",
+    transport: "stdio",
+    command: "node",
+    args: [mcpLaunchScriptPath()],
+    env: {},
+  };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-plugin/src/server/index.ts:49-85](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/index.ts#L49-L85)
+**依据 2 · 源码核查**：[dsh-plugin/scripts/mcp-launch.mjs:13-13](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/scripts/mcp-launch.mjs#L13-L13)
 
-独立面板bridge/远程服务与Skill注册。
-
-<details>
-<summary>查看原文（37行）</summary>
+默认 latest。
 
 ```text
-export function apply(ctx: PluginContext): void {
-  const sessionEnvCache = new SessionEnvCache();
-  const bridge = new CloudBaseMcpBridge({
-    sessionEnvCache,
-    getSessionId: () => resolveCurrentSessionId(ctx),
-  });
-  const data: CloudBaseData = createCloudBaseDataService(
-    bridge,
-    createAppend(ctx),
-    (sessionId) => {
-      // 显式 sessionId 优先（RPC 从面板传入）；否则回退当前会话上下文。
-      if (sessionId) return ctx.sessions?.get?.(sessionId);
-      return ctx.sessions?.current?.();
-    },
-    sessionEnvCache,
-    () => resolveCurrentSessionId(ctx),
-  );
-  // TypertRemoteService 构造器自动把实例注册为 Cordis service（serviceKey="cloudbaseData"）。
-  // 同时把 endpoints 注册进 typert local 注册表：api-gateway 的 claimsEndpoint 优先命中
-  // local（不依赖 fiber state；srcClaims 的 strict ctx.get 在 apply 期间收集不到导致 404）。
-  new CloudBaseRemoteService(ctx as never, data);
-  try {
-    ctx.typert?.register?.(buildCloudBaseTypertContribution());
-  } catch (error) {
-    ctx.logger?.warn?.(
-      `[cloudbase] typert register skipped: ${error instanceof Error ? error.message : String(error)}`,
-    );
+const MCP_PACKAGE = "@cloudbase/cloudbase-mcp@latest";
+```
+
+**依据 3 · 源码核查**：[dsh-plugin/scripts/mcp-launch.mjs:44-73](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/scripts/mcp-launch.mjs#L44-L73)
+
+命令、缓存、npx 与环境清理。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+function resolveLaunch() {
+  if (process.env.CLOUDBASE_MCP_COMMAND) {
+    return {
+      command: process.env.CLOUDBASE_MCP_COMMAND,
+      args: process.env.CLOUDBASE_MCP_ARGS
+        ? process.env.CLOUDBASE_MCP_ARGS.split(",").map((part) => part.trim()).filter(Boolean)
+        : ["-y", MCP_PACKAGE],
+      shell: false,
+    };
   }
+  const cached = findCachedBin();
+  if (cached) {
+    const entry = findCachedEntry(cached);
+    if (entry) return { command: process.execPath, args: [entry], shell: false };
+    if (process.platform !== "win32") return { command: cached, args: [], shell: false };
+  }
+  return { command: "npx", args: ["-y", MCP_PACKAGE], shell: process.platform === "win32" };
+}
 
-  ctx.effect?.(() => () => bridge.dispose());
+function childEnv() {
+  const env = { ...process.env, CLOUDBASE_MCP_DISABLE_LOG_FILE: "true" };
+  delete env.CLOUDBASE_API_KEY;
+  for (const key of Object.keys(env)) {
+    if (/^https?_proxy$/i.test(key) || key.toLowerCase() === "all_proxy") delete env[key];
+  }
+  return env;
+}
 
-  try {
-    registerBundledSkill(ctx.skills);
-  } catch (error) {
-    ctx.logger?.warn?.(
-      `[cloudbase] skill register skipped: ${error instanceof Error ? error.message : String(error)}`,
-    );
+const { command, args, shell } = resolveLaunch();
+const child = spawn(command, args, { env: childEnv(), stdio: "inherit", shell });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[dsh-plugin/src/client/components/WriteOpToolCard.tsx:55-60](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/client/components/WriteOpToolCard.tsx#L55-L60)
+**依据 4 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:201-209](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L201-L209)
 
-按钮只append用户消息，不直接执行写。
+释放 pending 与进程。
 
 ```text
-  const skip = () => setDecision("skipped");
-
-  const run = () => {
-    void appendUserMessage(props.cloudbaseData, buildRunQueryMessage(op)).then(() => {
-      setDecision("confirmed");
-    });
+  dispose(): void {
+    for (const item of this.pending.values()) {
+      item.reject(new Error("MCP bridge disposed"));
+    }
+    this.pending.clear();
+    this.child?.kill();
+    this.child = null;
+    this.ready = null;
+  }
 ```
 
-**依据 4 · 源码核查**：[dsh-plugin/src/server/skill-provider.ts:51-63](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/skill-provider.ts#L51-L63)
+**依据 5 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:255-278](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L255-L278)
 
-Skill provider不覆用户根。
+子进程失败与初始化。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-/**
- * Register the packaged CloudBase skill on `ctx.skills`.
- *
- * DSH discovers filesystem skills one level under `~/.dsh/skills`. Copying the
- * bundle there either hides it (no parent `SKILL.md`) or overwrites whatever
- * the user already installed. The host's own bundled skills register a
- * provider instead (`dsh-skill-badge`). This does the same: one candidate,
- * body and `references/` read from the package, nothing written to the user
- * skill root.
- */
-export function registerBundledSkill(skills: SkillRegistry | undefined): void {
-  const provider = createBundledSkillProvider();
-  skills?.registerProvider?.(() => provider);
+    });
+    child.on("error", (err) => {
+      this.child = null;
+      this.ready = null;
+      for (const item of this.pending.values()) {
+        item.reject(err);
+      }
+      this.pending.clear();
+    });
+    child.on("exit", () => {
+      this.child = null;
+      this.ready = null;
+      for (const item of this.pending.values()) {
+        item.reject(new Error("MCP server exited"));
+      }
+      this.pending.clear();
+    });
+
+    await this.request("initialize", {
+      protocolVersion: "2024-11-05",
+      capabilities: {},
+      clientInfo: { name: "@cloudbase/dsh-plugin", version: "0.1.0" },
+    });
+    this.notify("notifications/initialized", {});
 ```
 
 </details>
+
+**依据 6 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:303-311](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L303-L311)
+
+90 秒超时清理 pending。
+
+```text
+  private request(method: string, params: Record<string, unknown>): Promise<JsonRpcResponse> {
+    const id = this.nextId++;
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        if (this.pending.has(id)) {
+          this.pending.delete(id);
+          reject(new Error(`${method} timed out`));
+        }
+      }, MCP_REQUEST_TIMEOUT_MS);
+```
+
+#### 缺口
+
+- 未运行 DSH、MCP、云账号或写操作
+  **影响**：无法确认权限、隔离、线上操作和真实成本
+  **进一步探讨**：固定 MCP 与宿主版本，在隔离云环境验证授权、目标环境和失败恢复
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 固定插件版本能否保证MCP工具和目标环境固定？
+### Q03 · 环境绑定和 UI 提示能保证正确执行吗？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、功能与机制
 
 #### 完整回答
 
-不能。launcher优先环境覆盖/缓存再npx latest，cached按mtime挑已有安装，固定插件SHA不固定实际MCP二进制版本和工具数。无API Key转交不意味着无需认证：实际复用本机登录态或device-code并选CloudBase环境。README说不随会话自动改环境，但面板bridge源码ensureSessionEnv会按session cache必要时set_env，再发实际工具请求；这是两条接线不同语义，不能只照README宣称全局环境稳定。set_env与工具调用分开await、共享lastInjectedEnvId，所读路径未见完整原子串行约束，跨会话切换应视为待验证竞态而非已复现错库。
+不能。桥接客户端 set_env 仅成功后更新缓存与广播，后续调用可先按会话尝试重新绑定；写操作权限由宿主和服务端共同决定。作者称 UI 写操作注入会话交宿主审批，这是声明而非本轮端到端验证。发生超时应先在目标云环境查询实际结果，不能盲目重试写入。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-plugin/scripts/mcp-launch.mjs:13-60](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/scripts/mcp-launch.mjs#L13-L60)
+**依据 1 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:185-198](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L185-L198)
 
-缓存mtime优先和latest回退。
+成功后同步环境、执行前重绑。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-const MCP_PACKAGE = "@cloudbase/cloudbase-mcp@latest";
-
-function findCachedBin() {
-  const npxRoot = join(homedir(), ".npm", "_npx");
-  if (!existsSync(npxRoot)) return undefined;
-  let best;
-  let entries;
-  try {
-    entries = readdirSync(npxRoot);
-  } catch {
-    return undefined;
-  }
-  for (const name of entries) {
-    const bin = join(npxRoot, name, "node_modules", ".bin", "cloudbase-mcp");
-    if (!existsSync(bin)) continue;
-    let mtime = 0;
-    try {
-      mtime = statSync(bin).mtimeMs;
-    } catch {
-      continue;
+  async callTool(name: string, args: Record<string, unknown>): Promise<unknown> {
+    await this.ensureReady();
+    if (name === "auth" && args.action === "set_env" && typeof args.envId === "string") {
+      const response = await this.request("tools/call", { name, arguments: args });
+      const payload = this.unwrapResponse(response, name);
+      // 成功后才记录注入态并广播：失败时保留旧绑定，避免观察者误同步
+      this.lastInjectedEnvId = args.envId;
+      this.notifyEnvChanged(args.envId);
+      return payload;
     }
-    if (!best || mtime > best.mtime) best = { path: bin, mtime };
-  }
-  return best?.path;
-}
+    const rebound = await this.ensureSessionEnv(name, args);
+    if (rebound) this.notifyEnvChanged(rebound);
+    const response = await this.request("tools/call", { name, arguments: args });
+    return this.unwrapResponse(response, name);
+```
 
-function findCachedEntry(bin) {
-  const entry = join(dirname(dirname(bin)), "@cloudbase", "cloudbase-mcp", "dist", "cli.cjs");
-  return existsSync(entry) ? entry : undefined;
-}
+</details>
 
+**依据 2 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:303-311](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L303-L311)
+
+调用超时。
+
+```text
+  private request(method: string, params: Record<string, unknown>): Promise<JsonRpcResponse> {
+    const id = this.nextId++;
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        if (this.pending.has(id)) {
+          this.pending.delete(id);
+          reject(new Error(`${method} timed out`));
+        }
+      }, MCP_REQUEST_TIMEOUT_MS);
+```
+
+**依据 3 · 作者声明**：[dsh-plugin/README.md:54-62](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/README.md#L54-L62)
+
+作者声明写操作经宿主审批。
+
+```text
+| 能力 | 说明 |
+|---|---|
+| MCP 桥 | 注册 `mcp__cloudbase__*`（与 `@cloudbase/cloudbase-mcp` 工具集一致，当前 38 个） |
+| DataTableCard | `queryPgDatabase` / `queryMysqlDatabase` / `readNoSqlDatabaseContent` 结果表格：分页、排序、复制 JSON、导出 CSV |
+| DeployPreviewCard | `manageHosting` upload 后 iframe 预览真实域名 + 打开按钮 |
+| 交付物行 | 会话尾部展示产物路径 + 域名 |
+| Sites skill | downloadTemplate(react) → Vite → 建表 → manageHosting → 域名 |
+
+写操作（SQL / 上传 / 删行）一律注入会话，由模型按 DSH approval 执行，插件 UI 不绕过权限模型。
+```
+
+#### 缺口
+
+- 未运行 DSH、MCP、云账号或写操作
+  **影响**：无法确认权限、隔离、线上操作和真实成本
+  **进一步探讨**：固定 MCP 与宿主版本，在隔离云环境验证授权、目标环境和失败恢复
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 登录、运行版本和云费用如何控制？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+需要 DSH、CloudBase MCP、账号/环境以及云网络；作者描述 device-code 登录和选环境。启动器可读取本机缓存或拉 latest，版本漂移与首次拉包耗时会影响可复现，云数据库、存储和部署可能计费。先在隔离环境确认身份、目标环境、权限与预算，先只读再审批写入；错误或目标不明即停止并核对云端。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[dsh-plugin/README.md:44-50](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/README.md#L44-L50)
+
+作者说明设备码和环境选择。
+
+```text
+## 登录（device-code，无需 API Key）
+
+插件不传任何 CloudBase env、不传 API Key，登录走 cloudbase-mcp 自身的 device-code 流程（本机已有 `tcb login` 登录态时直接复用）。无登录态时，对模型说：
+
+> 调用 `mcp__cloudbase__auth`，`action=start_auth`，`authMode=device`，把 verification URL 给我。
+
+浏览器授权一次后登录态持久化。再用 `mcp__cloudbase__auth`（`action=set_env`）选择环境，后续工具自动使用该环境。
+```
+
+**依据 2 · 源码核查**：[dsh-plugin/scripts/mcp-launch.mjs:44-60](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/scripts/mcp-launch.mjs#L44-L60)
+
+显式命令、缓存或 npx latest。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
 function resolveLaunch() {
   if (process.env.CLOUDBASE_MCP_COMMAND) {
     return {
@@ -437,185 +535,43 @@ function resolveLaunch() {
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:185-198](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/mcp-client.ts#L185-L198)
+**依据 3 · 作者声明**：[dsh-plugin/README.md:64-70](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/README.md#L64-L70)
 
-set_env与调用分开。
-
-<details>
-<summary>查看原文（14行）</summary>
+作者说明首次拉包及环境选择。
 
 ```text
-  async callTool(name: string, args: Record<string, unknown>): Promise<unknown> {
-    await this.ensureReady();
-    if (name === "auth" && args.action === "set_env" && typeof args.envId === "string") {
-      const response = await this.request("tools/call", { name, arguments: args });
-      const payload = this.unwrapResponse(response, name);
-      // 成功后才记录注入态并广播：失败时保留旧绑定，避免观察者误同步
-      this.lastInjectedEnvId = args.envId;
-      this.notifyEnvChanged(args.envId);
-      return payload;
-    }
-    const rebound = await this.ensureSessionEnv(name, args);
-    if (rebound) this.notifyEnvChanged(rebound);
-    const response = await this.request("tools/call", { name, arguments: args });
-    return this.unwrapResponse(response, name);
-```
+## 注意事项
 
-</details>
-
-**依据 3 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:353-364](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/mcp-client.ts#L353-L364)
-
-面板bridge按会话缓存隐式重绑。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  private async ensureSessionEnv(name: string, args: Record<string, unknown>): Promise<string | undefined> {
-    if (!this.sessionEnvCache || !cloudbaseToolNeedsEnv(name, args)) return undefined;
-    const sessionId = this.getSessionId?.();
-    if (!sessionId) return undefined;
-    const bound = this.sessionEnvCache.get(sessionId);
-    if (!bound?.envId || bound.envId === this.lastInjectedEnvId) return undefined;
-    await this.request("tools/call", {
-      name: "auth",
-      arguments: { action: "set_env", envId: bound.envId },
-    });
-    this.lastInjectedEnvId = bound.envId;
-    return bound.envId;
-```
-
-</details>
-
-**依据 4 · 作者声明**：[dsh-plugin/README.md:47-55](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/README.md#L47-L55)
-
-作者登录与环境说明。
-
-```text
-
-> 调用 `mcp__cloudbase__auth`，`action=start_auth`，`authMode=device`，把 verification URL 给我。
-
-浏览器授权一次后登录态持久化。再用 `mcp__cloudbase__auth`（`action=set_env`）选择环境，后续工具自动使用该环境。
-
-## 功能
-
-| 能力 | 说明 |
-|---|---|
+1. **pnpm v9+ 默认禁止依赖 install 脚本**：必须 `enable-scripts=true` 后再 `pnpm install`（一键脚本已包含此步）。
+2. **Web UI 插件要重建 DSH web 前端**：装完看不到卡片时，从 DSH 安装目录执行 `pnpm run build:web` 再重启；Headless 不需要。
+3. **首次 npx 拉包可能 10–90s**：headless 首轮工具列表可能为空，重试即可。
+4. **不要给插件配置 `CLOUDBASE_API_KEY`**：无效 Key 会挡住 device-code 登录。登录与环境选择全部走 `mcp__cloudbase__auth`。
+5. **技能由插件注册，不拷进 `~/.dsh/skills`**。环境用 `auth` 的 `set_env` 绑定，用 `action=status` 查看。插件不会按会话自动改环境。
 ```
 
 #### 缺口
 
-- 双会话并发环境切换与独立MCP进程状态是否一致未验证。
-  **影响**：数据库/部署目标存在重要采用不确定性。
-  **进一步探讨**：两个隔离环境并发只读带标识查询，捕获set_env与实际请求，禁止生产写入。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 当前应怎样控制云端写入和安装维护投入？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-建议观察，先由已有CloudBase测试环境的开发者做单会话只读核查，再决定是否扩大。首次需兼容DSH/Node、正确登录环境、拉MCP包，Web模式还可能重建宿主前端；README要求enable-scripts=true会扩大profile安装脚本执行，不应把它视作没有成本的固定步骤。持续投入包含云数据库/存储/托管、模型及MCP升级维护，金额和端到端时间未知；错误写入和部署可能产生资源费用或数据损失。未核环境稳定前不做删除/发布，先保存导出和原部署，失败回控制台只读核对并停止自动操作。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[dsh-plugin/README.md:25-42](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/README.md#L25-L42)
-
-安装脚本、允许依赖脚本与Web构建条件。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-````text
-或手动：
-
-```bash
-dsh plugin --profile web add @cloudbase/dsh-plugin
-# pnpm ≥9 默认禁止依赖 install 脚本（protobufjs 会失败）
-echo "enable-scripts=true" >> ~/.dsh/profiles/web/.npmrc
-(cd ~/.dsh/profiles/web && pnpm install)
-# UI 插件需要重建 DSH web 前端
-pnpm --dir "$(dirname "$(dirname "$(command -v dsh)")")" run build:web || true
-dsh --profile web
-```
-
-**Headless（只要 MCP 工具，不要前端构建）：**
-
-```bash
-dsh plugin --profile headless add @cloudbase/dsh-plugin
-dsh --profile headless "列出所有 mcp__cloudbase__ 工具"
-```
-````
-
-</details>
-
-**依据 2 · 作者声明**：[dsh-plugin/README.md:71-77](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/README.md#L71-L77)
-
-首次npx、环境与Skill限制。
-
-```text
-
-## 隐私
-
-凭据只存本机（tcb 登录态或 `~/.dsh/.credentials.yaml`，权限 600），插件不上传密钥，读操作只访问你自己的 CloudBase 环境。
-
-## 开发
-
-```
-
-**依据 3 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:185-198](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/mcp-client.ts#L185-L198)
-
-环境与请求关系决定采用前提。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-  async callTool(name: string, args: Record<string, unknown>): Promise<unknown> {
-    await this.ensureReady();
-    if (name === "auth" && args.action === "set_env" && typeof args.envId === "string") {
-      const response = await this.request("tools/call", { name, arguments: args });
-      const payload = this.unwrapResponse(response, name);
-      // 成功后才记录注入态并广播：失败时保留旧绑定，避免观察者误同步
-      this.lastInjectedEnvId = args.envId;
-      this.notifyEnvChanged(args.envId);
-      return payload;
-    }
-    const rebound = await this.ensureSessionEnv(name, args);
-    if (rebound) this.notifyEnvChanged(rebound);
-    const response = await this.request("tools/call", { name, arguments: args });
-    return this.unwrapResponse(response, name);
-```
-
-</details>
-
-#### 缺口
-
-- 本机宿主approval、云费用、资源回滚和退出无同版验收。
-  **影响**：不能推荐生产数据库写入或持续安装。
-  **进一步探讨**：固定MCP版本，在测试环境验目标、审批、读写恢复和卸载。
+- 未运行 DSH、MCP、云账号或写操作
+  **影响**：无法确认权限、隔离、线上操作和真实成本
+  **进一步探讨**：固定 MCP 与宿主版本，在隔离云环境验证授权、目标环境和失败恢复
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 怎样把会话环境选择变成可核对的请求约束？
+### Q05 · 如何减少超时后重复云写入？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、工程质量与复用
 
 #### 完整回答
 
-未验证假设是在每次有副作用调用中显式绑定session、envId、实际MCP版本和目标资源，再原子执行环境选择与工具请求；若上游支持直接env参数应优先使用，避免共享全局set_env。由Q03双桥与分开await推导，相对缓存提示多了请求级目标确认，但增加适配和兼容成本。最小实验两会话各绑不同测试环境，交错只读查询再模拟写预览/取消，比较现流程与原型的错环境数、拒绝/重试与延迟。任何错环境或取消后写入都否定原型保证；没有运行则保持假设，不宣称已确认现实现错库。
+未验证假设：在调用前为支持的写操作显示目标环境和幂等键，并在超时后提供云侧状态查询，可能减少错误重试。反证是已有每次调用超时处理、环境变更广播和作者声明的审批，不应把它们当作新设计；不同云 API 未必支持幂等或查询，未穷尽已有等价实现。用隔离环境比较正常、超时已成功和失败场景，测重复写入率、误报和人工时间；无改善或误导则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:185-198](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/mcp-client.ts#L185-L198)
+**依据 1 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:185-198](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L185-L198)
 
-请求级环境选择和操作分离。
+已有绑定与广播。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -639,34 +595,36 @@ dsh --profile headless "列出所有 mcp__cloudbase__ 工具"
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:353-364](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c4ab728d2a7dd6b3d7af9dc1a197b22836c0fb92/dsh-plugin/src/server/mcp-client.ts#L353-L364)
+**依据 2 · 源码核查**：[dsh-plugin/src/server/mcp-client.ts:303-311](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/src/server/mcp-client.ts#L303-L311)
 
-共享注入态提供并发实验动因。
-
-<details>
-<summary>查看原文（12行）</summary>
+已有超时。
 
 ```text
-  private async ensureSessionEnv(name: string, args: Record<string, unknown>): Promise<string | undefined> {
-    if (!this.sessionEnvCache || !cloudbaseToolNeedsEnv(name, args)) return undefined;
-    const sessionId = this.getSessionId?.();
-    if (!sessionId) return undefined;
-    const bound = this.sessionEnvCache.get(sessionId);
-    if (!bound?.envId || bound.envId === this.lastInjectedEnvId) return undefined;
-    await this.request("tools/call", {
-      name: "auth",
-      arguments: { action: "set_env", envId: bound.envId },
-    });
-    this.lastInjectedEnvId = bound.envId;
-    return bound.envId;
+  private request(method: string, params: Record<string, unknown>): Promise<JsonRpcResponse> {
+    const id = this.nextId++;
+    return new Promise((resolve, reject) => {
+      const timer = setTimeout(() => {
+        if (this.pending.has(id)) {
+          this.pending.delete(id);
+          reject(new Error(`${method} timed out`));
+        }
+      }, MCP_REQUEST_TIMEOUT_MS);
 ```
 
-</details>
+**依据 3 · 作者声明**：[dsh-plugin/README.md:60-62](https://github.com/TencentCloudBase/CloudBase-AI-Toolkit/blob/c195450084358a555c3feef0db866dabb3a48383/dsh-plugin/README.md#L60-L62)
+
+作者声明写入审批。
+
+```text
+| Sites skill | downloadTemplate(react) → Vite → 建表 → manageHosting → 域名 |
+
+写操作（SQL / 上传 / 删行）一律注入会话，由模型按 DSH approval 执行，插件 UI 不绕过权限模型。
+```
 
 #### 缺口
 
-- 请求级目标绑定是否获得上游支持及净收益未知。
-  **影响**：仅设计方向。
-  **进一步探讨**：固定两会话两环境与MCP版本做可重复交错对照。
+- 未运行 DSH、MCP、云账号或写操作
+  **影响**：无法确认权限、隔离、线上操作和真实成本
+  **进一步探讨**：固定 MCP 与宿主版本，在隔离云环境验证授权、目标环境和失败恢复
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
