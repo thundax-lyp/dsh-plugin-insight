@@ -1,16 +1,35 @@
 {
     "repository": "0imzero/dsh-workspace-menu",
     "repository_id": 1339803365,
-    "captured_at": "2026-10-22T05:29:18.788Z",
-    "window_start": "2026-09-22T05:29:18.788Z",
-    "stars": 4,
-    "pushed_at": "2026-08-24T17:02:43Z",
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 3,
+    "pushed_at": "2026-10-31T12:58:17Z",
     "issues": {
-        "open": 1,
-        "closed": 0,
+        "open": 0,
+        "closed": 1,
         "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "closed_30d": 1,
+        "updated_30d": 1
     },
-    "errors": []
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "@dsh-external/dsh-workspace-menu",
+        "captured_at": "2026-11-02T02:08:50.948Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40dsh-external%2Fdsh-workspace-menu",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-02T02:08:50.948Z",
+            "source_url": "https://registry.npmjs.org/%40dsh-external%2Fdsh-workspace-menu",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
 }

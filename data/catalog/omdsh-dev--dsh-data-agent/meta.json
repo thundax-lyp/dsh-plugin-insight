@@ -1,0 +1,45 @@
+{
+    "repository": "omdsh-dev/dsh-data-agent",
+    "repository_id": 1331112087,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 215,
+    "pushed_at": "2026-11-01T04:18:28Z",
+    "issues": {
+        "open": 14,
+        "closed": 10,
+        "created_30d": 4,
+        "closed_30d": 2,
+        "updated_30d": 5
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@yejiming/dsh-data-agent",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 2246,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40yejiming%2Fdsh-data-agent",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T07:25:19.259Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/%40yejiming%2Fdsh-data-agent",
+            "error": null,
+            "latest_version": "0.2.2",
+            "latest_published_at": "2026-09-29T11:53:55.385Z",
+            "latest_error": null
+        }
+    }
+}

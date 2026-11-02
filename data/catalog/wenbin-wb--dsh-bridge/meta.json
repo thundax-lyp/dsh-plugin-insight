@@ -1,0 +1,45 @@
+{
+    "repository": "wenbin-wb/dsh-bridge",
+    "repository_id": 1337930857,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 235,
+    "pushed_at": "2026-11-02T01:54:54Z",
+    "issues": {
+        "open": 4,
+        "closed": 52,
+        "created_30d": 19,
+        "closed_30d": 39,
+        "updated_30d": 43
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@wenbin_wb/dsh-bridge",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 12177,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40wenbin_wb%2Fdsh-bridge",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T10:32:03.879Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/%40wenbin_wb%2Fdsh-bridge",
+            "error": null,
+            "latest_version": "2.17.5",
+            "latest_published_at": "2026-10-24T05:39:26.843Z",
+            "latest_error": null
+        }
+    }
+}

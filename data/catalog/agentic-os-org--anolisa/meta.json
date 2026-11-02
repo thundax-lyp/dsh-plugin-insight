@@ -1,27 +1,38 @@
 {
     "repository": "agentic-os-org/ANOLISA",
     "repository_id": 1195873793,
-    "captured_at": "2026-10-27T08:34:14.025Z",
-    "window_start": "2026-09-27T08:34:14.025Z",
-    "stars": 641,
-    "pushed_at": "2026-10-27T08:19:02Z",
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 650,
+    "pushed_at": "2026-11-02T01:56:45Z",
     "issues": {
-        "open": 771,
-        "closed": 2755,
-        "created_30d": 2364,
-        "closed_30d": 1636,
-        "updated_30d": 2400
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-26T20:57:32.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5d89498ac9cd9ceec479314332b873f4a4ed73dc",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
-        "latest_error": null
-    }
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aagentic-os-org%2FANOLISA%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 33F4:BDCFE:2D001:31451:6AE7F175 and timestamp 2026-11-02 02:12:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aagentic-os-org%2FANOLISA%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3420:30C40D:41BE4:460D5:6AE7F176 and timestamp 2026-11-02 02:12:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aagentic-os-org%2FANOLISA%20is%3Aissue%20created%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3446:2F13A0:2EE77:3334B:6AE7F177 and timestamp 2026-11-02 02:12:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aagentic-os-org%2FANOLISA%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 346C:300E54:2F4C4:33A5E:6AE7F178 and timestamp 2026-11-02 02:12:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aagentic-os-org%2FANOLISA%20is%3Aissue%20updated%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 348C:220EF8:30C9F:351C6:6AE7F179 and timestamp 2026-11-02 02:12:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
 }
