@@ -30,8 +30,10 @@
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
+| [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
+| [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
@@ -87,7 +89,7 @@
 | [MemSearch](#plugin-1153190876-root) | 面向 Markdown 知识库提供增量索引和语义加关键词混合搜索。 | [Q05](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q05) 在隔离 collection 先验报告并对照 grep；有失败或不能核对来源时回原文件。 |
 | [MemSearch DSH](#plugin-1153190876-plugins-dsh) | 为 DSH 提供会话摘要日记、按需召回 Skill 与候选评审入口。 | [Q05](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q05) 先在隔离项目核查日记、索引和原会话，失败时回原文。 |
 | [meow-memory](#plugin-1333986968-root) | 为 DSH 提供跨会话项目记忆、召回和自动整理。 | 隔离项目核验首轮、压缩和外部库；错误时停用并回人工笔记。 |
-| [Mimir](#plugin-1340749561-root) | 在 DSH 中组织文献、论文 LaTeX、实验、图表、组会与远程任务的研究工作台 | [Q04](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q04) 从本地论文副本编译试用，不自动启用全生命周期。 |
+| [Mimir](#plugin-1340749561-root) | 在DSH中组织文献、论文编译、实验和研究记录，提供工具与工作台，编译或任务状态不替代研究结果核验。 | [Q04](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q04) 现有DSH用户从本地论文副本编译诊断试用，核实际PDF与源修改；远端unknown不自动重提。 |
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 先在非敏感副本库试用 Memory CLI，明确指定库并保留笔记备份。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | [Q05](../../plugins/liustack--modsearch/INSIGHT.md#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。 |
@@ -98,6 +100,7 @@
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
 | [sivtr](#plugin-1215961903-root) | 独立Rust记忆工具将终端与Agent日志统一归档并以MCP检索；已核Dsh链与完整WorkSet保存，但本地裸whole-ref的MCP默认全文缺补载。 | 先修MCP裸whole-ref全文，谨慎核已有@last/CLI路径；不强制开embedding/share/hooks，避免把未知平台/需求当已验证安装推荐，见[Q04](../../plugins/ariestar--sivtr/INSIGHT.md#research-q04)/[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
+| [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
 
@@ -389,6 +392,22 @@
 
 [查看完整分析](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1339669759-root"></a>
+
+## [DSH Industry Research](../../plugins/perrylink--dsh-industry-research/INSIGHT.md)
+
+[![GitHub ★ 216](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=216&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-industry-research) [![npm 30d 4,124](https://img.shields.io/static/v1?label=npm+30d&message=4%2C124&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-industry-research) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-industry-research)
+
+> **用途**：研究者反复维护产业链/公司/动态并产可回溯研究稿。
+
+> **亮点**：[Q01](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q01)、[Q02](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q02) 将领域数据、缺口、版本和报告组织起来，降低反复整理负担。
+
+> **思考**：[Q03](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q03) sourceRef/hash/结构门不证数值真实，E证据常为生成artifact；[Q02](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q02)红方/正反方job是确定性note非独立模型研究。
+
+> **建议**：[Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 绑定原文段落/日期/单位与抓取状态的领域证据契约；若手工/现有引擎等效或误配更多即否定。
+
+[查看完整分析](../../plugins/perrylink--dsh-industry-research/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1390103795-root"></a>
 
 ## [DSH Local Memory](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md)
@@ -420,6 +439,22 @@
 > **建议**：未验证假设是用PDF内容摘要、页码、完整bbox及DPI作为缓存键，并让每个问题共享总图像预算，能减少误用旧图与过量裁剪。它从当前缓存冲突及逐区域独立预算推导，不是本版已有能力。最小验证用同basename两PDF、同起点不同bbox及图表密集页，对比现版和新缓存策略，检查路径唯一性、读图正确率、总图像token和人工复核；若只有磁盘增量而无错误或总成本改善，否定其采用优势。 [Q08](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md#research-q08)
 
 [查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339655720-root"></a>
+
+## [DSH Research Report](../../plugins/perrylink--dsh-research-report/INSIGHT.md)
+
+[![GitHub ★ 213](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=213&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-research-report) [![npm 30d 5,581](https://img.shields.io/static/v1?label=npm+30d&message=5%2C581&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-research-report) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-research-report)
+
+> **用途**：研究者和上游插件需要可移交/复算的材料与claim核验日志。
+
+> **亮点**：[Q01](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q01)、[Q02](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q02) 将快照/claim/字节判据/反证与报告seal串联，提供可回查工程交付。
+
+> **思考**：[Q03](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q03) substring verified非事实支持且段落可不绑定；核心ok不合claimChecks而CLI信封合；[Q04](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q04)后台killed不证明封存停写。
+
+> **建议**：[Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 分开完整性/覆盖/语义/最终状态收据，若文案/手工等效或负担更大即否定。
+
+[查看完整分析](../../plugins/perrylink--dsh-research-report/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1416950630-root"></a>
 
@@ -1305,15 +1340,15 @@
 
 ## [Mimir](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md)
 
-[![GitHub ★ 547](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=547&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1692775560/dsh-Mimir-Academic-research)
+[![GitHub ★ 550](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=550&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1692775560/dsh-Mimir-Academic-research)
 
-> **用途**：已有DSH且习惯源码/实验文件的研究者，希望在一个会话组织编译、诊断和结果线索。
+> **用途**：已有DSH且反复改稿、查实验日志的研究者，用统一项目入口组织编译与结果线索；交付仍需核原件、引用和数据。
 
-> **亮点**：[Q01](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q01)将研究工具和状态组织到DSH；[Q02](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q02)提供有界日志诊断；[Q03](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q03)区分远程结果unknown和本地失败，有利于避免错误重提。外部编译、模型与服务器能力分别归原依赖。
+> **亮点**：[Q01](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q01)、[Q02](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q02) 集中研究工具、编译诊断和源快照；[Q03](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q03) 精细job状态披露观察丢失。便利成立于DSH与原件可核，外部引擎/模型贡献分开。
 
-> **思考**：[Q02](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q02)编译success不绑定论文语义和PDF新鲜度；[Q03](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q03)实验failed可能只是远端结果未知，不能据界面状态重跑或写论文结论。
+> **思考**：[Q02](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q02) success、PDF时间与后置源快照不是同次输入/产物摘要绑定；[Q03](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q03) 实验failed可含unknown，取消不保证远端停，需查真实结果而非盲重提。
 
-> **建议**：可提出未验证的研究交付收据，将当前论文/数据版本、模型生成或人工修改来源、编译产物摘要、实验job精确终态和人工结论验收绑定。相对工作台里分别显示编译success与实验failed，它能指出哪些图表和文字仍依赖旧PDF、未知远端任务或未核对数据。它不会把程序运行成功提升为科学主张正确。
+> **建议**：[Q05](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q05) 未验证假设是补交付时跨源、PDF/图表、精确job和人工验收绑定；先检查已有snapshot/ledger，只有减少误验收且负担可接受才扩展。
 
 [查看完整分析](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1476,6 +1511,22 @@
 > **建议**：未验证方向是以延迟复测及未见迁移题推进学习进度，在同教材预算下比最终学习质量及全成本。[Q05](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/miaotofu01--study-mate/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1274335260-root"></a>
+
+## [Tydora](../../plugins/zuorn--tydora/INSIGHT.md)
+
+[![GitHub ★ 227](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=227&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zuorn/Tydora)
+
+> **用途**：本地Markdown写作者希望在一个桌面中编辑、组织和导出笔记；基线是文本编辑器或Typora/Obsidian及发布工具。合格交付是可读正文/元数据/链接与正确导出，试用限定复制小库单writer。
+
+> **亮点**：[Q01](../../plugins/zuorn--tydora/INSIGHT.md#research-q01) 将Markdown编辑、关系视图和CLI/MCP文件入口组合到本地库；[Q02](../../plugins/zuorn--tydora/INSIGHT.md#research-q02)提供可限只读的命令接口及GUI外部更新监听。主要增量是工作流整合，不把上游编辑器能力算原创，也不把DSH骨架当已注册工具。
+
+> **思考**：[Q02](../../plugins/zuorn--tydora/INSIGHT.md#research-q02) dirty GUI缓冲忽略外部更新，随后直接写盘无expected版本，CLI原子rename不解决多writer覆盖。[Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03)简化YAML、独立GUI/CLI逻辑与发布范围未知也限制迁移，不能因本地文件和badge承诺无损协作。
+
+> **建议**：[Q04](../../plugins/zuorn--tydora/INSIGHT.md#research-q04)从dirty watcher与无版本save推导三版本冲突提示和保存前digest校验，可能降低GUI/Agent丢更新。复制文件三组反例计丢更新、误阻断、格式diff及恢复时间；无改善或总投入更高就否定，尚未实现不计贡献。
+
+[查看完整分析](../../plugins/zuorn--tydora/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1024118326-packages-dsh-weknora"></a>
 

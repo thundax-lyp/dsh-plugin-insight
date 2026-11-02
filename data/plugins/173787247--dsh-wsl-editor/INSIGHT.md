@@ -1,18 +1,18 @@
 # dsh-wsl-editor
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[0bc7619](https://github.com/173787247/dsh-wsl-editor/tree/0bc7619da7b473a622ae9e498d19fd0360162261)
+源码版本：[5e087d7](https://github.com/173787247/dsh-wsl-editor/tree/5e087d7cf57fe6bf8c15da89f95504251003fda3)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-editor)
 <!-- END META -->
 
-> **功能**：将WSL路径转换后在Windows编辑器打开，支持Code/Cursor行列定位和命令存在查询。
+> **功能**：在 Windows Cursor、VS Code 或 Notepad 中打开 WSL 路径并支持可选行列。
 
-> **亮点**：减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 减少路径转换和goto命令手填步骤，原生DSH双工具入口成立。
 
-> **主要限制**：启动完成不等文档验收，相对路径非session cwd，逐重试超时未与宿主取消联动。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) launcher成功非文档验收；status和.exe启动不对称，相对path非session cwd，逐次预算/取消未贯通。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 从WSL打开Windows编辑器有什么价值？](#detail-section-11)
-  - [Q02 · 路径和程序如何解析，启动依赖是什么？](#detail-section-12)
-  - [Q03 · ok和超时是否代表文件已正确打开？](#detail-section-13)
-  - [Q04 · 测试与使用成本有哪些证据？](#detail-section-14)
-  - [Q05 · 采用建议和继续探讨方向？](#detail-section-15)
+  - [Q01 · 跨OS编辑器入口为谁省什么？](#detail-section-11)
+  - [Q02 · 打开成功和状态可用究竟证明什么？](#detail-section-12)
+  - [Q03 · 启动、持续使用和恢复有什么隐含负担？](#detail-section-13)
+  - [Q04 · 试用边界和下一步可检验方向？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,80 +39,79 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：WSL开发者在Windows桌面查看源码/日志。详见[Q01](#research-q01)。
+> **用途**：在WSL完成任务后到Windows桌面查看源码/日志。
 
-手工wslpath和Windows编辑器CLI；插件是启动桥而非文档同步。
+手工wslpath和code/cursor命令；插件不提供编辑器或远程开发。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| 路径转换/打开 | 桌面查看文件 | 非文档验收 |
-| goto | Code/Cursor行列 | Notepad忽略 |
-| 命令状态 | 查询可解析名 | 非可读/可写证明 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| 编辑器启动 | Windows查看WSL文档 | 进程接受非文档验收 |
+| 行列goto | Code/Cursor定位 | Notepad忽略，最终argv未验 |
+| 状态探测 | Get-Command可用性 | 不等实际.exe/文件可打开 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| Node>=18/tools | 模型入口 | ABI匹配 |
-| WSL/wslpath | 路径转换 | 非WSL拒绝 |
-| PowerShell/编辑器.exe | 启动 | PATH/shim差异 |
-| GUI与目标权限 | 文档可见 | 启动ok不保证 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node>=18/WSL/DSH | 必需 | 工具运行 | 版本声明未验 |
+| wslpath/PowerShell/interop | 必需 | 转换与启动 | status不保证完整链 |
+| Windows编辑器/桌面/PATH | 必需 | 真实查看 | .cmd与.exe可能不同 |
+| 可信显式path | 试用前提 | 避免错文件/敏感打开 | 无工作区根限制 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 查编辑器状态 | 用户 | 实际.exe可用 |
-| 明确绝对路径/程序 | 用户 | 真实目标正确 |
-| 发打开请求 | 工具 | 返回只表示启动链 |
-| 观察文档/行列 | 用户 | 重试前核结果 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 用户核PATH和绝对path | 可信样例可手动打开 |
+| 启动 | Agent转换并调用 | 人工核文档/行列 |
+| 异常 | 用户查迟到/重复窗口 | 不盲重试 |
+| 退出 | 保存文档/关闭应用和工具 | 插件不撤销外部编辑 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | WSL/编辑器PATH | 核目标路径/程序 | 依Windows PATH/WSL访问；准备耗时未知 |
-| 持续使用 | wslpath/PowerShell/GUI | 桌面资源与定位确认 | 无独立模型调用；窗口/进程资源和定位延迟未计量 |
-| 失败恢复 | 可能迟到/重复窗口，无插件文件写入 | 先核窗口与外部文档，再决定重试 | 先查迟到窗口再重试；外部文档恢复时间未知 |
-
+|---|---|---|---|
+| 首次 | 既有编辑器/宿主 | PATH/桌面核对 | 工时未知 |
+| 持续 | 转换/进程/GUI内存 | 确认文档 | 时延/资源未测 |
+| 失败恢复 | 迟到/重复窗口 | 查状态与保存文档 | 无外部编辑回滚 |
+| 退出 | 外部进程可能仍在 | 保存后关闭 | 关工具不等关应用 |
 
 #### 效果
 
-| 目标 | 支持 | 边界 |
-| --- | --- | --- |
-| 跨路径打开 | realpath/wslpath | 相对路径进程cwd |
-| 行列定位 | Code/Cursor -g | 非窗口结果验收 |
-| 可用性查询 | Get-Command | 与实际.exe启动不同 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 转换 | realpath/wslpath | 实际UNC/空格行为 |
+| 打开 | Start-Process返回 | 文档/行列被接受 |
+| 可用性 | Get-Command | 最终.exe及GUI可用 |
+| 效率 | 统一模型入口 | 节时/错误率 |
 
-> **思考**：启动完成不等文档验收，相对路径非session cwd，逐重试超时未与宿主取消联动。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) launcher成功非文档验收；status和.exe启动不对称，相对path非session cwd，逐次预算/取消未贯通。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：减少跨系统路径转换和编辑器goto命令步骤。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 减少路径转换和goto命令手填步骤，原生DSH双工具入口成立。
 
-固定参数与单引号处理可查，测试仅格式，需最终argv/取消和错误分层。详见[Q04](#research-q04)。
+[Q02](#research-q02) realpath/单引号处理可查，最终argv与GUI完成分离，避免把启动成功写成用户结果。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-启动完成不等文档验收，相对路径非session cwd，逐重试超时未与宿主取消联动。详见[Q03](#research-q03)。
+[Q02](#research-q02) launcher成功非文档验收；status和.exe启动不对称，相对path非session cwd，逐次预算/取消未贯通。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-显式绝对路径试用并人工确认文档，重试核现状。详见[Q05](#research-q05)。
+[Q04](#research-q04) 显式绝对路径/可信样例试用，人工确认文档；取消或失败先核窗口再重试。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-固定启动链可查，接受相对进程cwd路径且ok不证明文档/行列实际打开。
+静态核全部运行JS，未启动编辑器/目标；可控显式路径试用，完成收据仍是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/editor.js、lib/wsl-host.js、test/editor.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/editor.js、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整65行入口/173行编辑器/57行wsl-host/23行测试及README/package；不启动编辑器或执行目标。
-- 下一步：从多会话相对路径/UNC空格/非exe shim和迟到窗口继续核。
+- 边界：完整读README/清单/65行入口/173行editor/57行host；复核全部旧findings，不执行目标、测试或外部编辑器。
+- 下一步：受控空格/UNC/单引号与不同cwd、code.cmd-only、慢启动取消，核最终文档/行列和重复窗口。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-editor](https://github.com/173787247/dsh-wsl-editor)
-- **版本号**：0.1.1（[固定提交 0bc7619](https://github.com/173787247/dsh-wsl-editor/tree/0bc7619da7b473a622ae9e498d19fd0360162261)）
-- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 5e087d7](https://github.com/173787247/dsh-wsl-editor/tree/5e087d7cf57fe6bf8c15da89f95504251003fda3)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +138,9 @@
 
 <a id="innovation"></a>
 
-研究会话目标解析/分层启动状态与统一取消，比较错文件和重复窗口，尚未验证。详见[Q05](#research-q05)。
+[Q04](#research-q04) 会话目标与分层收据/统一deadline可降低错文件和重复窗口，若不优于手工即否定。
 
-从多会话相对路径/UNC空格/非exe shim和迟到窗口继续核。
+受控空格/UNC/单引号与不同cwd、code.cmd-only、慢启动取消，核最终文档/行列和重复窗口。
 
 <a id="detail-section-9"></a>
 
@@ -150,6 +148,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,250 +161,72 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+created%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-editor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A17%3A46.963Z..2026-10-22T07%3A17%3A46.963Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-editor/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Linux到Windows编辑器启动如何发生，路径归属、定位与启动成功的边界是什么？
+**插件研究总目标**：核查跨OS打开链与真实文档验收、进程/取消边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 从WSL打开Windows编辑器有什么价值？
+### Q01 · 跨OS编辑器入口为谁省什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向工具跑WSL、人在Windows桌面看文件的开发者，win_editor将Linux路径交wslpath转Windows路径，再启动Cursor/Code/Notepad；win_editor_status探Windows命令存在。比手工转路径、切终端、写goto参数少几步，尤其日志和源码定位有用。它不编辑或保存文件、不同步工作区，也不证明目标窗口已打开正确文档；编辑器后续访问/修改由该程序和用户承担。
+WSL中的DSH用户需要在Windows桌面查看刚生成的源码/日志并定位行列时，win_editor封装路径转换与Cursor/Code/Notepad启动，win_editor_status检查命令可用性。相对手工wslpath和编辑器命令，多的是模型工具内可用的统一参数和回退选择，不是新的编辑器或远程开发协议。合格结果应是正确文档/行列出现在预期桌面，进程成功不是完整验收。
 
-Cursor/Code用-g支持行列，Notepad忽略定位；auto顺序cursor→code→notepad。贡献是跨系统路径和桌面启动接线，不是新的编辑器协作协议或远程文件系统。默认执行是模型工具动作，会产生桌面窗口，使用者应明确要打开的路径。
+原生入口确实注册两工具和提示，用户需重启DSH/新会话。只偶尔打开文件或已有code命令顺手者，插件未必优于原方法；没有任务对照不能声称已节时。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:46-50](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/README.md#L46-L50)
+**依据 1 · 源码核查**：[README.md:36-49](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/README.md#L36-L49)
 
-作者工具说明。
+安装及两个工具声明。
 
-```text
+<details>
+<summary>查看原文（14行）</summary>
+
+````text
+## Install
+
+```sh
+dsh plugin --profile web add github:173787247/dsh-wsl-editor
+# or local:
+dsh plugin --profile web add /absolute/path/to/dsh-wsl-editor
+```
+
+Restart `dsh web` and open a **new** session. Tools: `win_editor`, `win_editor_status`.
+
 | Tool | Args | Notes |
 |------|------|-------|
 | `win_editor` | `path`, optional `editor`, `line`, `column` | Cursor/Code use `-g file:line:column`; notepad ignores line/column |
 | `win_editor_status` | (none) | Reports which of cursor / code / notepad are on the Windows PATH |
-
-```
-
-**依据 2 · 源码核查**：[lib/editor.js:95-141](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L95-L141)
-
-实际启动和返回。
-
-<details>
-<summary>查看原文（47行）</summary>
-
-```text
-  if (!raw) return { ok: false, error: "missing path" };
-  const abs = raw.startsWith("~/") ? `${homedir()}${raw.slice(1)}` : resolve(raw);
-  if (!abs.startsWith("/")) return { ok: false, path: abs, error: "Linux absolute path required" };
-  if (!existsSync(abs)) return { ok: false, path: abs, error: "path not found" };
-  const win = await toWindows(realpathSync(abs));
-  if (!win) return { ok: false, path: abs, error: "wslpath failed" };
-
-  const line = args?.line;
-  const column = args?.column;
-  const pref = args?.editor || "auto";
-  const order = pref === "auto" ? ["cursor", "code", "notepad"] : [pref];
-  const target = gotoTarget(win, line, column);
-  const hasGoto = target !== win;
-
-  for (const editor of order) {
-    try {
-      if (editor === "notepad") {
-        // Notepad has no reliable line/column goto; open file only.
-        await runPowerShell(
-          `Start-Process notepad.exe -ArgumentList @('${escapePsSingle(win)}')`,
-          { timeoutMs: 15_000 },
-        );
-      } else {
-        const argsList = hasGoto
-          ? `@('-g', '${escapePsSingle(target)}')`
-          : `@('${escapePsSingle(win)}')`;
-        await runPowerShell(
-          `Start-Process '${editor}.exe' -ArgumentList ${argsList}`,
-          { timeoutMs: 15_000 },
-        );
-      }
-      const out = { ok: true, path: abs, windowsPath: win, editor };
-      if (hasGoto && editor !== "notepad") {
-        const l = Number(line);
-        if (Number.isFinite(l) && l >= 1) out.line = Math.trunc(l);
-        const c = Number(column);
-        if (Number.isFinite(c) && c >= 1) out.column = Math.trunc(c);
-      }
-      return out;
-    } catch {
-      // try next
-    }
-  }
-  return { ok: false, path: abs, windowsPath: win, error: "no editor launched" };
-}
-
-export async function executeStatus() {
-```
+````
 
 </details>
 
-<a id="research-q02"></a>
+**依据 2 · 源码核查**：[index.js:17-51](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/index.js#L17-L51)
 
-<a id="detail-section-12"></a>
-
-### Q02 · 路径和程序如何解析，启动依赖是什么？
-
-**研究主题**：功能与机制、依赖、兼容与流程
-
-#### 完整回答
-
-入口apply时detectWsl，两个工具非WSL返回not running；检测信任变量或kernel含microsoft。参数说明要求绝对Linux路径，但execute对相对值直接resolve，结果自然以/开头，因此实际上接受相对宿主进程cwd路径，未绑定agent session cwd。~/用宿主homedir展开，exists后realpath追链接，再固定execFile wslpath -w。
-
-PowerShell脚本把路径单引号翻倍，程序是有限枚举，避免直接插入用户shell；wsl-host优先固定C盘powershell路径再PATH，参数-NoProfile/-NonInteractive/-Command。Windows编辑器必须在Windows可解析命令路径，状态Get-Command先.exe再裸名；启动仅使用.exe，因此状态可见裸命令不等实际启动可用。Node>=18、WSL互操作/wslpath/Windows PowerShell和GUI会话均为依赖，插件自己不安装编辑器。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/editor.js:14-35](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L14-L35)
-
-参数描述。
+两个实际注册入口。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-export function parameters() {
-  return {
-    type: "object",
-    additionalProperties: false,
-    required: ["path"],
-    properties: {
-      path: { type: "string", description: "Absolute Linux path (or ~/…) to open." },
-      editor: {
-        type: "string",
-        enum: ["auto", "cursor", "code", "notepad"],
-        description: "Editor preference (default auto: cursor → code → notepad).",
-      },
-      line: {
-        type: "integer",
-        description: "1-based line to open (Cursor/VS Code only; notepad ignores).",
-      },
-      column: {
-        type: "integer",
-        description: "1-based column (Cursor/VS Code only; requires line).",
-      },
+  ctx.tools.register({
+    name: "win_editor",
+    description: "Open a WSL Linux path in Windows Cursor/VS Code/Notepad. Optional line/column for Cursor/Code (-g file:line:column).",
+    parameters: core.parameters(config),
+    output: {
+      schema: core.outputSchema(),
+      render: (_args, value) => [{ type: "text", text: core.format(value) }],
     },
-  };
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/editor.js:80-113](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L80-L113)
-
-转换/实际相对路径。
-
-<details>
-<summary>查看原文（34行）</summary>
-
-```text
-async function toWindows(abs) {
-  try {
-    const { stdout } = await execFileAsync("wslpath", ["-w", abs], { timeout: 5000, encoding: "utf8" });
-    return String(stdout).trim();
-  } catch {
-    return "";
-  }
-}
-
-function escapePsSingle(s) {
-  return String(s).replace(/'/g, "''");
-}
-
-export async function execute(args) {
-  const raw = typeof args?.path === "string" ? args.path.trim() : "";
-  if (!raw) return { ok: false, error: "missing path" };
-  const abs = raw.startsWith("~/") ? `${homedir()}${raw.slice(1)}` : resolve(raw);
-  if (!abs.startsWith("/")) return { ok: false, path: abs, error: "Linux absolute path required" };
-  if (!existsSync(abs)) return { ok: false, path: abs, error: "path not found" };
-  const win = await toWindows(realpathSync(abs));
-  if (!win) return { ok: false, path: abs, error: "wslpath failed" };
-
-  const line = args?.line;
-  const column = args?.column;
-  const pref = args?.editor || "auto";
-  const order = pref === "auto" ? ["cursor", "code", "notepad"] : [pref];
-  const target = gotoTarget(win, line, column);
-  const hasGoto = target !== win;
-
-  for (const editor of order) {
-    try {
-      if (editor === "notepad") {
-        // Notepad has no reliable line/column goto; open file only.
-        await runPowerShell(
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/editor.js:145-173](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L145-L173)
-
-状态裸名回退。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-foreach ($n in $names) {
-  $cmd = Get-Command ($n + '.exe') -ErrorAction SilentlyContinue;
-  if (-not $cmd) { $cmd = Get-Command $n -ErrorAction SilentlyContinue };
-  $result[$n] = [bool]$cmd;
-}
-($result | ConvertTo-Json -Compress)
-`;
-  try {
-    const { stdout } = await runPowerShell(ps, { timeoutMs: 15_000 });
-    const raw = String(stdout || "").trim();
-    const jsonLine = raw.split(/\r?\n/).filter(Boolean).pop() || "{}";
-    let parsed = {};
-    try {
-      parsed = JSON.parse(jsonLine);
-    } catch {
-      return { ok: false, error: "failed to parse Get-Command result", raw };
-    }
-    return {
-      ok: true,
-      editors: {
-        cursor: Boolean(parsed.cursor),
-        code: Boolean(parsed.code),
-        notepad: Boolean(parsed.notepad),
-      },
-    };
-  } catch (err) {
-    return { ok: false, error: err instanceof Error ? err.message : String(err) };
-  }
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:25-47](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/index.js#L25-L47)
-
-WSL门与两工具。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
     timeoutMs,
     isConcurrencySafe: () => true,
     async execute(args) {
@@ -428,87 +250,69 @@ WSL门与两工具。
       render: (_args, value) => [{ type: "text", text: core.formatStatus(value) }],
     },
     timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute() {
+      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
+      return core.executeStatus();
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/wsl-host.js:14-40](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/wsl-host.js#L14-L40)
+#### 缺口
 
-PowerShell解析。
+- 用户桌面任务/手工命令对照缺失。
+  **影响**：便利未证明为净效率。
+  **进一步探讨**：记录打开正确文档/行列和人工窗口定位时间。
 
-<details>
-<summary>查看原文（27行）</summary>
+<a id="research-q02"></a>
 
-```text
-export function windowsBin(name, { exists = existsSync } = {}) {
-  for (const p of WINDOWS_BINS[name] || []) {
-    if (exists(p)) return p;
-  }
-  return name;
-}
+<a id="detail-section-12"></a>
 
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-}
+### Q02 · 打开成功和状态可用究竟证明什么？
 
-export function distroName({ env = process.env } = {}) {
-  return env.WSL_DISTRO_NAME || "WSL";
-}
-
-export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
-  const bin = windowsBin("powershell.exe");
-  const { stdout, stderr } = await execFileAsync(
-    bin,
-    ["-NoProfile", "-NonInteractive", "-Command", script],
-    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
-  );
-```
-
-</details>
-
-**依据 6 · 源码核查**：[package.json:14-18](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/package.json#L14-L18)
-
-Node。
-
-```text
-  "type": "module",
-  "main": "index.js",
-  "engines": {
-    "node": ">=18"
-  },
-```
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · ok和超时是否代表文件已正确打开？
-
-**研究主题**：缺陷与关键质疑
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-execute只等待PowerShell命令结束，之后立即ok，不检查新窗口、目标文件或行列；Start-Process也不带-PassThru/Wait和显式失败对象。auto仅在runPowerShell抛错时切下一个，具体非终止错误是否导致进程非零仍取决PowerShell行为，不能把“没有抛异常”当编辑器文档打开验收。路径含空格、引号、UNC和行列等最终argv语义需实际目标程序契约，脚本层单引号转义不等所有程序参数端到端一致。
+path先trim、~或resolve展开、existsSync后realpath，再wslpath -w；未限定工作区根，权限依运行用户。相对路径虽然schema说绝对但仍被resolve接受，基于进程cwd而非session，可能打开错文件；realpath与exists分开也有竞态，异常未在这一层归类。
 
-状态报告只是Get-Command存在，不测编辑器能读WSL路径。exists与realpath之间有文件变化窗口，realpath异常没本地catch会让工具抛错；任意可见路径/符号链接目标都可被打开，没有工作区允许范围，它本来是广域打开器而非隔离保护。使用时应展示真实目标、避免把相对路径当会话目录。
-
-wslpath局部5秒，逐编辑器PowerShell各15秒，auto最多三轮，外层默认15秒且无取消signal透传，宿主返回超时后窗口仍可能被迟后拉起。isConcurrencySafe表示无插件共享写状态，不能推桌面操作不会重叠或重复。
+auto按cursor/code/notepad逐个Start-Process，路径单引号双写、editor由schema枚举；有行列则Cursor/Code用-g，不应虚构路径导致任意命令注入。但PowerShell Start-Process -ArgumentList仍需最终Windows argv核实，含空格等路径的实际定位未运行。返回ok仅PowerShell调用没抛，不证明窗口/文件/行列被应用接受。status用Get-Command先.exe再无后缀，而启动固定.exe，status available不保证启动可行。每候选15秒，另wslpath5秒，外层默认15秒及signal未贯通；失败回退可能打开重复/迟到窗口，工具isConcurrencySafe不阻止多次GUI启动。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/editor.js:95-142](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L95-L142)
+**依据 1 · 源码核查**：[lib/editor.js:70-138](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/editor.js#L70-L138)
 
-异常/回退/ok时机。
+路径/goto/逐候选启动与返回。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（69行）</summary>
 
 ```text
+/** Build Cursor/VS Code goto target: file, file:line, or file:line:column. */
+export function gotoTarget(windowsPath, line, column) {
+  const win = String(windowsPath || "");
+  const l = Number(line);
+  if (!Number.isFinite(l) || l < 1) return win;
+  const c = Number(column);
+  if (Number.isFinite(c) && c >= 1) return `${win}:${Math.trunc(l)}:${Math.trunc(c)}`;
+  return `${win}:${Math.trunc(l)}`;
+}
+
+async function toWindows(abs) {
+  try {
+    const { stdout } = await execFileAsync("wslpath", ["-w", abs], { timeout: 5000, encoding: "utf8" });
+    return String(stdout).trim();
+  } catch {
+    return "";
+  }
+}
+
+function escapePsSingle(s) {
+  return String(s).replace(/'/g, "''");
+}
+
+export async function execute(args) {
+  const raw = typeof args?.path === "string" ? args.path.trim() : "";
   if (!raw) return { ok: false, error: "missing path" };
   const abs = raw.startsWith("~/") ? `${homedir()}${raw.slice(1)}` : resolve(raw);
   if (!abs.startsWith("/")) return { ok: false, path: abs, error: "Linux absolute path required" };
@@ -553,72 +357,22 @@ wslpath局部5秒，逐编辑器PowerShell各15秒，auto最多三轮，外层�
     }
   }
   return { ok: false, path: abs, windowsPath: win, error: "no editor launched" };
-}
+```
 
+</details>
+
+**依据 2 · 源码核查**：[lib/editor.js:141-171](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/editor.js#L141-L171)
+
+status与.exe启动不对称。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
 export async function executeStatus() {
   const ps = `
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/editor.js:80-88](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L80-L88)
-
-wslpath超时。
-
-```text
-async function toWindows(abs) {
-  try {
-    const { stdout } = await execFileAsync("wslpath", ["-w", abs], { timeout: 5000, encoding: "utf8" });
-    return String(stdout).trim();
-  } catch {
-    return "";
-  }
-}
-
-```
-
-**依据 3 · 源码核查**：[index.js:8-29](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/index.js#L8-L29)
-
-外层超时/无signal。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const wsl = detectWsl();
-
-  ctx.systemPrompt.section({
-    name: "tool:win_editor",
-    order: 118,
-    text: "Use win_editor to open a WSL Linux path in Windows Cursor/VS Code/Notepad (optional line/column for Cursor/Code). Use win_editor_status to see which editors are on PATH.",
-  });
-
-  ctx.tools.register({
-    name: "win_editor",
-    description: "Open a WSL Linux path in Windows Cursor/VS Code/Notepad. Optional line/column for Cursor/Code (-g file:line:column).",
-    parameters: core.parameters(config),
-    output: {
-      schema: core.outputSchema(),
-      render: (_args, value) => [{ type: "text", text: core.format(value) }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
-      return core.execute(args, config);
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/editor.js:145-173](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L145-L173)
-
-状态仅命令存在。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
+$names = @('cursor','code','notepad');
+$result = @{};
 foreach ($n in $names) {
   $cmd = Get-Command ($n + '.exe') -ErrorAction SilentlyContinue;
   if (-not $cmd) { $cmd = Get-Command $n -ErrorAction SilentlyContinue };
@@ -646,75 +400,127 @@ foreach ($n in $names) {
     };
   } catch (err) {
     return { ok: false, error: err instanceof Error ? err.message : String(err) };
-  }
-}
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[index.js:25-30](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/index.js#L25-L30)
+
+未传signal。
+
+```text
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
+      return core.execute(args, config);
+    },
+```
+
+**依据 4 · 源码核查**：[lib/wsl-host.js:34-41](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/wsl-host.js#L34-L41)
+
+实际PowerShell argv。
+
+```text
+export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
+  const bin = windowsBin("powershell.exe");
+  const { stdout, stderr } = await execFileAsync(
+    bin,
+    ["-NoProfile", "-NonInteractive", "-Command", script],
+    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
+  );
+  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
+```
 
 #### 缺口
 
-- PowerShell Start-Process最终argv/非终止错误与目标编辑器窗口结果
-  **影响**：工具ok不足以证明空格/UNC路径和定位正确，auto失败语义可能偏弱
-  **进一步探讨**：以固定PowerShell/编辑器版本契约核启动参数和退出码，并设计空格/引号/无程序反例
+- 最终Windows argv、真实文档和取消后窗口未验。
+  **影响**：不能承诺空格/UNC/行列正确或失败无副作用。
+  **进一步探讨**：用可控文件核空格/单引号/UNC路径、慢启动/取消和最终窗口数量。
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 测试与使用成本有哪些证据？
+### Q03 · 启动、持续使用和恢复有什么隐含负担？
 
-**研究主题**：效果与总成本、工程质量与复用
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-23行测试直接导入format/formatStatus/gotoTarget，覆盖正常行列与0行退化，未测试execute的路径/cwd、realpath变化、PowerShell最终参数、auto错误或取消。优点是wslpath走execFile固定参数，PowerShell单引号转义明确，WSL门和Notepad忽略行列如实表达；但不能用格式测试证明窗口行为。wsl-host通用辅助含runCmd，本插件实际不调用。
+需要Node>=18、匹配DSH、WSL/interop、wslpath/PowerShell及Windows桌面编辑器/PATH；探测到WSL不等这些都可用，作者套件兼容声明不等本轮验收。打开文件可能触发编辑器扩展/工作区信任与用户手工保存，插件不直接写文件但也不能把外部应用副作用当没有。路径信息进入工具上下文，敏感文件应先核授权。
 
-首次核Windows PATH和WSL文件访问，显式绝对路径更可控；持续每次一wslpath与一个或多个PowerShell进程，打开GUI有资源/焦点成本，无独立模型API但参数/返回路径进宿主上下文。失败后先看是否已打开再重试，避免迟到/重复窗口；插件不写数据，无持久状态撤销，编辑器外部改动/未保存文档由读者管理。没有节时或错误率对照。
+首次安装/PATH与目标桌面核对，持续有进程/GUI内存和窗口管理时间，现金/延迟未知。失败先找迟到窗口/已打开文档，不能直接重试制造重复；不提供撤销外部编辑。退出先处理编辑器未保存文档，再关插件/窗口，移除工具并不关闭所有外部进程。没有实际运行成本/恢复记录，只能限定可控文件试用。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[test/editor.test.js:1-23](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/test/editor.test.js#L1-L23)
+**依据 1 · 源码核查**：[package.json:14-28](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/package.json#L14-L28)
 
-仅格式/goto测试。
+运行和分发条件。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-import assert from "node:assert/strict";
-import { describe, it } from "node:test";
-import { format, formatStatus, gotoTarget } from "../lib/editor.js";
-
-describe("win_editor", () => {
-  it("formats", () => {
-    assert.match(format({ ok: true }), /ok/i);
-  });
-
-  it("builds goto target file:line:column", () => {
-    assert.equal(gotoTarget("C:\\a.ts", 10, 5), "C:\\a.ts:10:5");
-    assert.equal(gotoTarget("C:\\a.ts", 10), "C:\\a.ts:10");
-    assert.equal(gotoTarget("C:\\a.ts"), "C:\\a.ts");
-    assert.equal(gotoTarget("C:\\a.ts", 0, 1), "C:\\a.ts");
-  });
-
-  it("formats status", () => {
-    assert.match(
-      formatStatus({ ok: true, editors: { cursor: true, code: false, notepad: true } }),
-      /cursor: available/,
-    );
-  });
-});
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/editor.js:80-142](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L80-L142)
+**依据 2 · 源码核查**：[README.md:23-44](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/README.md#L23-L44)
 
-启动资源和参数。
+作者兼容/新会话要求。
 
 <details>
-<summary>查看原文（63行）</summary>
+<summary>查看原文（22行）</summary>
+
+````text
+## Compatibility
+
+| Field | Value |
+|-------|-------|
+| **Plugin** | `dsh-wsl-editor` **0.1.1** |
+| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |
+| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.1-rc.5`**) — single source of truth for the suite |
+| **Kit set** | `full` or install alone |
+| **Cloud Flash** | Use model id **`deepseek-flash`** (V4.1 Flash) in `~/.dsh/settings.yaml` / `llm-deepseek` — not configured by this plugin |
+| **Agent Teams** | Upstream experimental; not required here |
+
+Suite floor versions: kit [`check-plugin-versions.sh`](https://github.com/173787247/dsh-wsl-kit/blob/master/scripts/check-plugin-versions.sh). Fault tree: [TROUBLESHOOTING.md](https://github.com/173787247/dsh-wsl-kit/blob/master/docs/TROUBLESHOOTING.md).
+
+## Install
+
+```sh
+dsh plugin --profile web add github:173787247/dsh-wsl-editor
+# or local:
+dsh plugin --profile web add /absolute/path/to/dsh-wsl-editor
+```
+
+Restart `dsh web` and open a **new** session. Tools: `win_editor`, `win_editor_status`.
+````
+
+</details>
+
+**依据 3 · 源码核查**：[lib/editor.js:80-138](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/editor.js#L80-L138)
+
+外部进程依赖与副作用。
+
+<details>
+<summary>查看原文（59行）</summary>
 
 ```text
 async function toWindows(abs) {
@@ -776,70 +582,42 @@ export async function execute(args) {
     }
   }
   return { ok: false, path: abs, windowsPath: win, error: "no editor launched" };
-}
-
-export async function executeStatus() {
-  const ps = `
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/wsl-host.js:34-53](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/wsl-host.js#L34-L53)
+#### 缺口
 
-PowerShell/cmd辅助区分。
+- 宿主兼容、编辑器扩展行为及资源未知。
+  **影响**：真实成本与权限可能超出打开文件便利。
+  **进一步探讨**：用不含敏感内容的独立profile先核启动、退出和文档保存行为。
 
-<details>
-<summary>查看原文（20行）</summary>
+<a id="research-q04"></a>
 
-```text
-export async function runPowerShell(script, { timeoutMs = 15_000 } = {}) {
-  const bin = windowsBin("powershell.exe");
-  const { stdout, stderr } = await execFileAsync(
-    bin,
-    ["-NoProfile", "-NonInteractive", "-Command", script],
-    { timeout: timeoutMs, windowsHide: true, encoding: "utf8", maxBuffer: 4 * 1024 * 1024 },
-  );
-  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
-}
+<a id="detail-section-14"></a>
 
-export async function runCmd(args, { timeoutMs = 15_000 } = {}) {
-  const bin = windowsBin("cmd.exe");
-  const { stdout, stderr } = await execFileAsync(bin, args, {
-    timeout: timeoutMs,
-    windowsHide: true,
-    encoding: "utf8",
-    maxBuffer: 4 * 1024 * 1024,
-  });
-  return { stdout: String(stdout ?? ""), stderr: String(stderr ?? "") };
-}
-```
+### Q04 · 试用边界和下一步可检验方向？
 
-</details>
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 采用建议和继续探讨方向？
-
-**研究主题**：新假设与验证、采用判断
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
-标准WSL/Windows开发者可按显式绝对路径试用，先win_editor_status，再指定编辑器并人工看文档和定位；tool ok只当启动请求已提交，不作文件成功打开/可写证明。重要或敏感文件先确认真实realpath，自动重试前核窗口现状。特殊挂载、非exe shim或必须严格会话cwd者需先解决契约。
+可用显式绝对路径、可信非敏感样例试用，并人工确认文档/行列；status只作线索，失败/取消先看窗口再重试。若目标不符或出现重复窗口，回手工wslpath/code并停止自动回退，保存外部文档。
 
-可继续研究以会话cwd明确解析、返回解析后真实路径/目标程序及启动状态，把“命令存在/进程启动/文档定位”分层；统一deadline和取消并标未知结果避免重复启动。基线为当前进程cwd和PowerShell完成即ok，反例为A/B会话相对路径、含空格UNC、裸code但无code.exe、wslpath失败、迟到窗口与auto多次启动。比较错文件率、重复窗口、定位准确度与人工步骤，尚未验证。
+可探索会话目标解析与分层启动收据：区分解析、launcher接受、用户确认文档三个状态，统一deadline/取消与回退策略。现有realpath、windowsPath和status已提供部分信息，增量是避免进程成功冒认文档验收及重复窗口。最小对照用不同session cwd、带空格UNC、仅code.cmd存在、慢启动取消，比较错文件/重复窗口、人工确认与额外等待。若收据无法观察最终应用状态或用户确认比手工更繁琐，否定；未实现且不把GUI启动取消当可撤销。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/editor.js:95-142](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L95-L142)
+**依据 1 · 源码核查**：[lib/editor.js:93-138](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/editor.js#L93-L138)
 
-基线。
+目标和启动状态基线。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（46行）</summary>
 
 ```text
+export async function execute(args) {
+  const raw = typeof args?.path === "string" ? args.path.trim() : "";
   if (!raw) return { ok: false, error: "missing path" };
   const abs = raw.startsWith("~/") ? `${homedir()}${raw.slice(1)}` : resolve(raw);
   if (!abs.startsWith("/")) return { ok: false, path: abs, error: "Linux absolute path required" };
@@ -884,22 +662,22 @@ export async function runCmd(args, { timeoutMs = 15_000 } = {}) {
     }
   }
   return { ok: false, path: abs, windowsPath: win, error: "no editor launched" };
-}
-
-export async function executeStatus() {
-  const ps = `
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/editor.js:145-173](https://github.com/173787247/dsh-wsl-editor/blob/0bc7619da7b473a622ae9e498d19fd0360162261/lib/editor.js#L145-L173)
+**依据 2 · 源码核查**：[lib/editor.js:141-168](https://github.com/173787247/dsh-wsl-editor/blob/5e087d7cf57fe6bf8c15da89f95504251003fda3/lib/editor.js#L141-L168)
 
-命令状态基线。
+现有status非完成证明。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
+export async function executeStatus() {
+  const ps = `
+$names = @('cursor','code','notepad');
+$result = @{};
 foreach ($n in $names) {
   $cmd = Get-Command ($n + '.exe') -ErrorAction SilentlyContinue;
   if (-not $cmd) { $cmd = Get-Command $n -ErrorAction SilentlyContinue };
@@ -924,13 +702,14 @@ foreach ($n in $names) {
         code: Boolean(parsed.code),
         notepad: Boolean(parsed.notepad),
       },
-    };
-  } catch (err) {
-    return { ok: false, error: err instanceof Error ? err.message : String(err) };
-  }
-}
 ```
 
 </details>
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+#### 缺口
+
+- 会话收据/取消方案未实现。
+  **影响**：不能计为已改善跨OS可靠性。
+  **进一步探讨**：先比较手工打开和仅完善错误说明的简单替代。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

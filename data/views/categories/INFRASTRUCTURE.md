@@ -81,27 +81,28 @@
 | [dsh-web-lan-access](#plugin-1334255288-root) | 通过替换 WebServer 让 DSH Web 监听所有接口、自动信任接口 IP 并给远程浏览器 Host 能力。 | 默认不推荐。 |
 | [dsh-web-restart](#plugin-1335060007-root) | Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。 | 暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。 |
 | [dsh-workspace-tools](#plugin-1363511446-root) | 按已注册工作区为新根会话自动选择 Agent 与权限预设的设置页和事件监听器。 | 先在低权限工作区限定试用；全权限规则和大小写敏感环境先验证匹配及首 turn 顺序。 |
-| [dsh-wsl-clock](#plugin-1351854066-root) | 提供 clock_doctor 工具，诊断 WSL 与 Windows UTC 时间偏移。 | 只在 WSL/Windows 开发环境试用，交叉对照时间与 TLS/JWT 现象，不自动执行重启。 |
+| [dsh-wsl-clock](#plugin-1351854066-root) | 提供 clock_doctor 工具，诊断 WSL 与 Windows UTC 时间偏移。 | [Q04](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q04) 只读试用并手工交叉核对，不自动重启；不一致回原诊断。 |
 | [dsh-wsl-compose](#plugin-1381842592-root) | 为 DSH 提供 Docker Compose 状态、容器列表、日志与可选 up/down 的本机运维工具。 | 默认只读并限制项目根；变更前后用宿主人工审批和 ps 对账，超时不盲重试。 |
 | [dsh-wsl-db](#plugin-1381859591-root) | 经 psql/redis-cli 为 DSH Agent 提供 PostgreSQL 与 Redis 连通性和查询工具。 | 仅隔离测试库、最小权限账号试用；生产库不直接采用。 |
 | [dsh-wsl-defender](#plugin-1391141174-root) | 从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。 | 仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。 |
+| [dsh-wsl-dns](#plugin-1351854118-root) | 提供 dns_doctor，对照 WSL 与 Windows 的 DNS IPv4 解析和 resolv.conf。 | [Q04](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q04) 观察并先补错误和预算，不以ok/mismatch自动修DNS；回原生查询核实。 |
 | [dsh-wsl-docker](#plugin-1351854301-root) | 在WSL查询Docker CLI/context/daemon、推理相关容器与GPU线索，并探固定8000端口的models状态。 | 先观察，修404/GPU/端口/吞错误谓词和分层收据后再评估受控试用。 |
+| [dsh-wsl-editor](#plugin-1351854212-root) | 在 Windows Cursor、VS Code 或 Notepad 中打开 WSL 路径并支持可选行列。 | [Q04](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q04) 显式绝对路径/可信样例试用，人工确认文档；取消或失败先核窗口再重试。 |
 | [dsh-wsl-eventlog](#plugin-1391143266-root) | 从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。 | 只作本机日志初筛；空结果和 full 消息需与事件查看器复核。 |
 | [dsh-wsl-fetch](#plugin-1362694736-root) | 为 DSH WSL 的官方 web_fetch 提供进程内 HTTP(S) 代理传输 provider。 | 可信代理与公开站点小范围试用；含敏感内网的环境先验证代理目的地址控制。 |
 | [dsh-wsl-helm](#plugin-1381843528-root) | 将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。 | 建议观察，先用显式 context 的只读账号在测试集群对照原生 Helm；不要把 allowedContexts 或状态文本单独当自动决策依据。 |
-| [dsh-wsl-hostsvc](#plugin-1351854010-root) | 从WSL探测Windows侧本地模型服务，输出可达地址、模型API状态、上下文提示和配置片段。 | 适合有WSL到Windows本地模型连接问题且能手工检查设置的人试用，先限单服务，YAML当草稿；API或容量不符、探测取消失控就停止依赖建议。 |
 | [dsh-wsl-llamacpp](#plugin-1381832318-root) | 给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。 | 先核 /v1/models，再以固定 prompt 对照服务端原生结果与资源；不要只看 status.ok。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过本机 Himalaya 与 notmuch CLI 向 DSH 提供信封列表、未读概况和邮件搜索。 | 先核 mail_status 与未读语义，Himalaya fallback 仅视近期样本，敏感邮箱限制 Agent 访问。 |
-| [dsh-wsl-mnt](#plugin-1351854159-root) | 按 WSL 路径规则判断 /mnt 工作区并给出 Linux home 迁移建议。 | 观察。 |
+| [dsh-wsl-mnt](#plugin-1351854159-root) | 提供 mnt_doctor，按路径分类 Windows 挂载工作区并给出 Linux home 建议。 | [Q04](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q04) 显式path并核挂载/基准，不按ok自动迁移，冲突或误判回原检查。 |
 | [dsh-wsl-net](#plugin-1338965593-root) | 为 WSL 中的 DeepSeek Harness 诊断代理环境、宿主进程、端口监听与 HTTPS 可达性，并生成修复建议。 | [Q03](../../plugins/173787247--dsh-wsl-net/INSIGHT.md#research-q03) 个人无凭据测试环境先关闭注入并核对PID，只把报告作为排障线索。 |
 | [dsh-wsl-ollama](#plugin-1381724774-root) | 为 DSH 在 WSL 或本机调用现有 Ollama 守护进程提供状态、模型列表、聊天和嵌入工具。 | 仅在已确认 reachable、模型和地址的环境小范围试用；长 messages 与向量返回需核宿主负担。 |
 | [dsh-wsl-perf](#plugin-1391142601-root) | 从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。 | 低频初筛，0 值先核 CIM；CPU 热点另用实时进程采样。 |
-| [dsh-wsl-picker](#plugin-1351853863-root) | 给 DSH Agent 浏览 WSL 与 Windows 挂载盘目录名称的只读工具。 | 个人 WSL 路径定位观察；敏感机器先核工具授权和目录暴露边界，大目录须确认截断。 |
 | [dsh-wsl-power](#plugin-1391140034-root) | 从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。 | 先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。 |
 | [dsh-wsl-rclone](#plugin-1381859181-root) | 把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。 | 只读凭据加显式 allowedRemotes，小路径先验；勿把 count 当总量或把 ok 当健康。 |
 | [dsh-wsl-registry](#plugin-1391142974-root) | 为 WSL 内 DSH 提供受路径列表约束的 Windows 注册表读取工具。 | 建议观察并限非敏感诊断；在隔离测试键验证路径与长值边界、再评估是否允许真实注册表查询。 |
 | [dsh-wsl-secret](#plugin-1381733290-root) | 为 DSH 提供 pass/age 名单读取、预览和进程环境变量转交。 | 受信任单租户进程先用假密钥验名单与输出，保持 reveal=false；高敏/多插件隔离需求优先正式范围化凭据服务。 |
 | [dsh-wsl-service](#plugin-1391140376-root) | 给 WSL 中的 DSH Agent 提供 Windows 服务列表与单服务详情只读工具。 | 个人本机 WSL 排障可观察试用；共享环境先核工具授权和详情字段。 |
+| [dsh-wsl-shot](#plugin-1351854253-root) | 将 Windows 剪贴板图片保存为 WSL 文件，供后续多模态会话引用。 | [Q04](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q04) 非敏感样图/独立目录先核Public权限/失败残留与后续接图；异常回手工。 |
 | [dsh-wsl-struct](#plugin-1381832935-root) | 为DSH封装jq、yq与readonly SQLite查询，提供主文件allowRoots检查及输出截断标记。 | 先观察，固定CLI/缩小root并接宿主进程治理后再试，敏感配置先不用。 |
 | [dsh-wsl-systemd](#plugin-1381843201-root) | 为DSH提供用户systemd可用性探测、服务列表、单位属性与近期日志的只读工具，不启动或停止服务。 | 有条件试用，先核用户bus/日志脱敏和失败截断；严格取消/内存边界场景先观察。 |
 | [dsh-wsl-terraform](#plugin-1381843937-root) | 在DSH中检查Terraform/OpenTofu状态、验证配置、解析plan变更数量和列出state资源地址，不提供apply或destroy工具。 | 先观察，先假CLI验证exit/截断收据和明确批准根/最小权限，不直接在生产云项目启用。 |
@@ -121,6 +122,7 @@
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
 | [Open Managed Agents (OpenMA)](#plugin-1206555053-root) | 自托管 Agent 控制面与执行基础设施，组合会话持久化、模型 harness、工具、沙箱、确认和恢复，提供多种 API 与部署适配。 | 先观察并准备单组合隔离测试任务与模拟外部服务，达到权限/恢复/退出对账再扩大，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。 |
 | [opencode2dsh](#plugin-1350368388-packages-plugin) | 为 DSH 提供 OpenCode Zen 匿名模型适配与可选本地委派。 | 非敏感任务核对实际来源、输出与网络资格；不明结果先对账。 |
+| [OpenGuardrails](#plugin-1081166515-root) | 以本地规则、模型裁决、秘密替换、网关和 sandbox 为 AI Agent 提供安全检查与行为记录。 | [Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 仅在一次性工作区以合成秘密评本地规则，保留宿主审批，明确 observe/enforce 差异。 |
 | [OpenViking](#plugin-1128123594-root) | 为 AI Agent 组织知识、记忆与技能的上下文数据库。 | [Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05) 建议先对非敏感可回滚语料逐步试用并核验原文；数据外发、来源或权限不明时暂停并使用原文件搜索。 |
 | [Our Free Model](#plugin-1385896447-root) | 为 DSH 提供免费模型、账户渠道和自带密钥提供者的统一模型接入。 | [Q05](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q05) 建议在确认供应商政策后以脱敏内容试单车道；数据去向不明、限额或工具异常时停止并切回已知官方端点。 |
 | [pi2dsh](#plugin-1333452358-root) | 在 DSH 中提供 Pi 扩展兼容层，发现已安装 Pi 包并映射工具、命令、会话和界面能力。 | [Q04](../../plugins/weijiafu14--pi2dsh/INSIGHT.md#research-q04) 已有Pi任务的用户可在独立profile逐包试用，固定宿主/surface/扩展，先inspect再对照真实关键任务。 |
@@ -1244,13 +1246,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-clock)
 
-> **用途**：WSL 笔记本休眠后 TLS/JWT 失败时查看两侧时钟差。
+> **用途**：WSL笔记本睡眠后出现TLS/JWT失败时，开发者需要先核双时钟。
 
-> **亮点**：把 WSL/Windows 双时钟排查封装为只读模型工具，并提示睡眠后使用；实现简单，适合故障定位而非自动修复。详见[Q01](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q01)、[Q02](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q01) 把双时钟只读比较接入模型工具和提示，复用系统读数，不是自动校时。
 
-> **思考**：顺序采样的耗时会误记为时钟偏移，空输出经 Number 转换为 0 也未识别为无效时间；应避免将一次读数当成精确诊断。详见[Q03](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q02) 顺序采样混入命令延迟，空输出Number为0未拒绝；一次fail不等时钟根因。
 
-> **建议**：可探索前后WSL时刻中点/RTT及Windows时间有效性检查；仅在采样窗时钟线性且未中途校时等条件下讨论，成本/误警反例见[Q05](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q05)，未实现。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q04) 可探索采样窗/不确定区间与有效性校验，若误警不降或中途校时使结论误导即否定。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1302,6 +1304,22 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-defender/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1351854118-root"></a>
+
+## [dsh-wsl-dns](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-dns)
+
+> **用途**：WSL访问模型/GitHub/npm异常时需要比较两侧解析现象。
+
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q01) 两侧查询/配置片段汇为模型工具减少手查，复用既有系统解析能力。
+
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q02) 错误折叠为空、ok只看WSL，两侧不同非劫持证明；总预算/取消未贯通。
+
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q04) 比较收据保留来源/时间/错误与统一deadline；误改配置不降或额外披露不值得即否定。
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1351854301-root"></a>
 
 ## [dsh-wsl-docker](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md)
@@ -1317,6 +1335,22 @@
 > **建议**：可探讨context/映射结构解析与daemon/设备/HTTP协议分级收据、总deadline，反例仍假绿灯则证伪实现。详见[Q05](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-docker/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1351854212-root"></a>
+
+## [dsh-wsl-editor](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-editor)
+
+> **用途**：在WSL完成任务后到Windows桌面查看源码/日志。
+
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q01) 减少路径转换和goto命令手填步骤，原生DSH双工具入口成立。
+
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q02) launcher成功非文档验收；status和.exe启动不对称，相对path非session cwd，逐次预算/取消未贯通。
+
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q04) 会话目标与分层收据/统一deadline可降低错文件和重复窗口，若不优于手工即否定。
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1391143266-root"></a>
 
@@ -1366,22 +1400,6 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1351854010-root"></a>
-
-## [dsh-wsl-hostsvc](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-hostsvc)
-
-> **用途**：帮助在WSL连接Windows本地模型的开发者集中排查IP、端口和API问题，交付诊断线索与配置草稿而非自动修复。
-
-> **亮点**：把WSL宿主发现、常见服务探测、HTTP模型状态和配置草稿合在DSH工具中，较手工nc/curl减少切换，并区分TCP开放与models API状态。集成价值不等于新探测算法。详见[Q02](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md#research-q02)。
-
-> **思考**：主ok、建议URL和模板仍可由TCP开放触发，apiReady不代表生成可用；固定模板容量、元数据回退和未传播取消信号限制诊断可信度，均为静态判断未复现。详见[Q02](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md#research-q02)和[Q04](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md#research-q04)。
-
-> **建议**：可探索分层诊断收据，仅按已完成的TCP、API、认证和授权生成检查给相应强度建议，并统一预算和取消；新增请求与GPU负担，尚未验证。详见[Q05](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-hostsvc/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1381832318-root"></a>
 
 ## [dsh-wsl-llamacpp](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md)
@@ -1420,13 +1438,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-mnt)
 
-> **用途**：WSL 中 git/npm 在 Windows 挂载路径可能偏慢时的初步排查。
+> **用途**：WSL git/npm慢时先检查是否使用Windows目录。
 
-> **亮点**：把常见 WSL 工作区位置问题变成模型可调用的路径提醒，减少人工定位。详见[Q01](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q01)、[Q02](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q01) 将常见工作区位置提醒放入模型工具，减少路径信息手抄。
 
-> **思考**：所有 /mnt 路径统一判为不佳、非 /mnt 判为 ok，未核文件系统/符号链接或测速；建议路径可能与现有项目冲突。详见[Q03](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q02) ok仅非/mnt，未核挂载/symlink/会话cwd，建议目标未预检。
 
-> **建议**：结合 realpath、mountinfo、目标冲突预检及同机工作负载基准，使迁移建议由当前机器证据支持；本版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q04)。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q04) 可探索挂载证据/冲突预检/同机负载，若误迁移和成本不改善即否定。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1477,22 +1495,6 @@
 > **建议**：未验证改进为每字段状态、采样时间和进程 CPU 差分。详见[Q05](../../plugins/173787247--dsh-wsl-perf/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-perf/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1351853863-root"></a>
-
-## [dsh-wsl-picker](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-picker)
-
-> **用途**：WSL 用户在 /、/mnt 和 IM 工作区快捷入口中定位目录；并不登记工作区。详见[Q01](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md#research-q01)。
-
-> **亮点**：将 WSL/Windows 路径浏览和 IM 快捷入口暴露给 Agent，结果结构含 parent/chips/truncated。详见[Q01](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md#research-q01)。
-
-> **思考**：任意绝对路径和软链接可遍历目录名称；15 秒工具超时对同步文件系统调用的约束未经验证。详见[Q03](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md#research-q03)与[Q04](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md#research-q04)。
-
-> **建议**：未验证方向为可配置浏览根、敏感路径策略、分页与异步限时枚举；先测大目录和宿主权限。详见[Q05](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-picker/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1391140034-root"></a>
 
@@ -1573,6 +1575,22 @@
 > **建议**：未验证改进为按名服务端查询、分页/时间戳和敏感字段按需返回。详见[Q05](../../plugins/173787247--dsh-wsl-service/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-service/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1351854253-root"></a>
+
+## [dsh-wsl-shot](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-shot)
+
+> **用途**：用户已复制Windows图片，希望在WSL的DSH会话中引用。
+
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q01) 封装剪贴板图片跨OS落盘并返回路径，减少搬移步骤。
+
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q02) Public临时图失败可残留，时间戳/固定目标可撞或覆盖，取消不等落盘停止。
+
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q04) 独占临时协议/不覆盖和清理状态可减少错图残留；若误回收或负担更高即否定。
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381832935-root"></a>
 
@@ -1877,6 +1895,22 @@
 > **建议**：未验证假设：分开展示目录、出口探测和实际中断状态可减少误判；须与现有机制对照。[Q05](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1081166515-root"></a>
+
+## [OpenGuardrails](../../plugins/openguardrails--openguardrails/INSIGHT.md)
+
+[![GitHub ★ 361](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=361&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/openguardrails/openguardrails)
+
+> **用途**：根项目面向维护本机编码 Agent 的开发者：重复工具调用中，希望让明确只读或工作区内普通操作少打断，同时对危险动作提供拒绝原因和审计线索。合格结果不是“无人打断”，而是允许动作可继续、拒绝动作未交给工具、未知明确留给原宿主处理。简单基线是宿主逐次审批加 OS 权限；已有 sandbox 提供进程限制。该项目把本地规则、模型通道的秘密替换、工具调用裁决与进程观测组合为一个 CLI／本地服务，根真实类型为 infrastructure，DSH 适配子包不是根项目的原生导出。
+
+> **亮点**：[Q01](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q01) 与 [Q02](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q02) 表明根项目将模型通道秘密替换、规则先行和工具拒绝反馈统一到本地网关，适合避免为每个 harness 单独改写调用链。重要增量是组合与责任分层；Seatbelt／bubblewrap 及规则方法来自成熟先例，不能归为新隔离算法。
+
+> **思考**：[Q02](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q02) 无模型与额度耗尽的未知调用仍前进，failMode=closed 也不代表所有未决都拒绝；[Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 识别范围和默认网络 observe 又限制安全承诺。必须保留宿主权限检查，并把未决、绕过与秘密规则遗漏纳入验收，不能据日志沉默判断安全。
+
+> **建议**：[Q04](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q04) 从明确 unjudged 语义推导任务级未知汇总与人工接管清单，可能减少未知被误当通过；它尚未实现或验证。用同任务双组比较未知遗漏、人工核对和完成率；若遗漏不降或总时间增则否定。
+
+[查看完整分析](../../plugins/openguardrails--openguardrails/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-root"></a>
 
