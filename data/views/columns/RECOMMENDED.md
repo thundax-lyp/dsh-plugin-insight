@@ -17,7 +17,6 @@
 | [dsh-markdown-live](#plugin-1426477683-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。 |
 | [dsh-wsl-browser](#plugin-1350379388-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 频繁从 WSL 打开网页的用户可试用；把浏览器页面可见而非 PowerShell 返回作为验收。 |
 | [dsh-wsl-cal](#plugin-1381860995-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 已稳定使用 khal 且只需只读日程的 WSL 用户可试用；必须验证时区和同步陈旧边界。 |
-| [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 以自然语言运行Web、Android和iOS测试旅程，保存步骤观察、条件判断与知识材料。 | 有QA能力的团队可在测试副本用它补充探索回归。 |
 | [dsh Browser Control](#plugin-1324996099-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 通过Chrome或Firefox扩展和DSH侧栏，使用结构化文本读取并操作已有登录网页。 | 有重复登录网页任务的DSH用户可先用非敏感测试站点试用。 |
 | [dsh-stock-market](#plugin-1331846104-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在DSH会话中接入图像问答、OCR、定位、截图差异和视觉产物。 | 使用文字模型的DSH开发者可先拿非敏感截图做定位或差异检查。 |
@@ -75,7 +74,6 @@
 | [dsh-archived-conversations](#plugin-1335060115-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH设置页列归档会话并只读预览最近六条用户/助手文本，不切换或恢复会话。 | 可信本地HTTP单用户辨认归档可试用，知晓不能恢复/全文且快切要核标题正文。 |
 | [dsh-recipe](#plugin-1336583700-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 适合作场景清单与命令草案，逐组件检查并补profile、版本和配置后使用；不能按一行命令假定整套可靠。 |
 | [dsh-plugin-education](#plugin-1336663611-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。 | 适合教师审阅下做模板、转换和常规算表，先校数值域与知识答案；正式成绩和能力定级不宜直接自动发布。 |
-| [dsh-wsl-env](#plugin-1338530482-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 检测WSL并给系统提示补发行版、路径映射和跨Windows操作指导，减少环境背景重复说明。 | 标准WSL挂载下可试用，检查新会话事实和配套工具；自定义挂载需修提示，不把软规则当执行隔离。 |
 | [dock-base](#plugin-1340492184-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为DSH web提供统一布局、视图实例、命令和设置注册服务，供功能插件按需组合。 | 基座职责和复用接口清楚，适合多视图组合；异步关闭/业务缓冲由功能方共同保证，仍需限范围核对。 |
 | [@luziyang2026/dsh-question-nav](#plugin-1341946801-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH会话侧边以圆点和悬停卡片索引用户提问，点击按需加载历史并跳转到对应轮次。 | 匹配stable SDK的个人长会话可试用，留意敏感悬停文字、多块缺失与并发跳转，保留手工回看路径。 |
 | [dsh-wsl-workspace](#plugin-1351853812-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 列出 WSL 发行版并检查 Linux 工作区路径，提示避开 /mnt 性能与语义陷阱。 | 只读、窄范围且失败边界清楚，适合把它作为 WSL 工作区准备提示，但不能自动迁移或把路径标签当性能结论。 |
@@ -89,7 +87,6 @@
 | [dsh-pick](#plugin-1423941835-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。 | 去噪与候选对照适合辅助选型，需独立核查适用性和安装权限。 |
 | [dsh-language-guard](#plugin-1424475406-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。 | 频繁语言漂移用户可从B/C小范围试用，按可见答复验收，临时命令不作多会话隔离保证。 |
 | [dsh-my-plugins](#plugin-1429766953-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。 | 适合明确profile的多插件用户作清单阅读辅助，先逐项核对包与描述来源；不要将数量和版本fallback当运行激活证明。 |
-| [easyeda-agent](#plugin-1280115203-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过 CLI、MCP 和 Skill 连接 EasyEDA Pro，读取工程并执行原理图及 PCB 操作。 | 熟悉 EasyEDA Pro 并能复核电路的工程师，可以在工程副本先试读取、诊断和小范围丝印操作。 |
 | [dsh-trellis](#plugin-1335559646-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为DSH提供功能、缺陷和重构三轨任务产物、步骤状态、会话恢复提示及Web看板。 | 任务/会话恢复适配有实际价值，可在人工复核下试用；须审同名Skill覆盖，不把自填验证与名单过滤当强授权。 |
 | [dsh-ultramath](#plugin-1337487779-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 仅在隔离 profile/备份同名目录后用于辅助建模试点；结果必须人工独立核。 |
 | [DSH Cost Tracker](#plugin-1338230382-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 需要会话费用线索且能准备可丢弃宿主副本的用户，可在副本仅试本地账本。 |
@@ -109,9 +106,12 @@
 | [Graph Memory](#plugin-1178312395-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | 长会话的个人 DSH 用户可以在副本数据库和非敏感任务中试用 Graph Memory。 |
 | [HarmonyOS NEXT Skills](#plugin-1179983747-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过 DSH 单技能 provider 提供离线 HarmonyOS 资料导航及 DevEco/HDC 证据脚本。 | 固定版本资料检索和无外部副作用设备测试页有清晰小样本入口，值得有HarmonyOS环境的开发者有限试用。 |
 | [开源版锤子便签（根应用）](#plugin-1182135360-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 以单人和单活动编辑端为主的 Markdown 作者可保留原稿后试用主题便签图片导出。 |
+| [ANOLISA](#plugin-1195873793-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | 已经维护 DSH 环境且能保留原文的开发者，可以在任务副本中试用 Tokenless 输出优化这一链路。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 先作为资源用授权素材手工单模板试用，固定参数核验质量，安装须备份范围，商业和模型比较不作保证。 |
 | [Aegis Method Pack](#plugin-1225840521-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。 | 能恢复profile且有项目规则的开发者可在一个非敏感中等修改任务试用Aegis的基线与完成证据流程。 |
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
+| [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。 | 已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。 |
+| [Embedded Workbench](#plugin-1276714299-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 分发嵌入式 C/C++ 开发与逐声称核查 Skills，并在 DSH 首步注入可关闭的计划核查提醒。 | 有明确固件现场的 DSH 开发者可先手动试用 Embedded Workbench 的一个匹配领域 Skill。 |
 
 <a id="plugin-1418493685-root"></a>
 
@@ -220,28 +220,6 @@
 **试用条件**：适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。成功标准是 status 能暴露配置问题、today/list 与 khal 在事件数和时间上一致、陈旧同步被用户识别；出现时区偏移或遗漏时应停止将输出用于自动计划。 [Q09](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md#research-q09)
 
 [查看完整分析 →](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1232322871-root"></a>
-
-## [agent-qa](../../plugins/vostride--agent-qa/INSIGHT.md)
-
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
-
-[![GitHub ★ 896](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=896&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vostride/agent-qa)
-
-**主要用途**：以自然语言运行Web、Android和iOS测试旅程，保存步骤观察、条件判断与知识材料。
-
-**建议**：试用
-
-**推荐理由**：有QA能力的团队可在测试副本用它补充探索回归。相比Agent自报完成，它把步骤条件、屏幕依据和运行器判断连起来，方便复查失败。若后台状态无法独立核验或假通过频繁，就缩小范围并保留原有确定性放行测试。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：有QA能力团队可在测试副本把它作为补充探索回归，保留确定性断言并审阅失败证据；关键后台状态或模型误判频繁时缩小范围，不替代既有放行检查。[Q03](../../plugins/vostride--agent-qa/INSIGHT.md#research-q03)
-
-[查看完整分析 →](../../plugins/vostride--agent-qa/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1499,28 +1477,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1338530482-root"></a>
-
-## [dsh-wsl-env](../../plugins/173787247--dsh-wsl-env/INSIGHT.md)
-
-[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
-
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-env)
-
-**主要用途**：检测WSL并给系统提示补发行版、路径映射和跨Windows操作指导，减少环境背景重复说明。
-
-**建议**：试用
-
-**推荐理由**：标准WSL挂载下可试用，检查新会话事实和配套工具；自定义挂载需修提示，不把软规则当执行隔离。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：标准WSL用户核提示后试用，特殊挂载明确纠正。详见[Q05](../../plugins/173787247--dsh-wsl-env/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/173787247--dsh-wsl-env/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1340492184-root"></a>
 
 ## [dock-base](../../plugins/aks1st--dock/INSIGHT.md)
@@ -1804,28 +1760,6 @@
 **试用条件**：明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md#research-q04)
 
 [查看完整分析 →](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1280115203-root"></a>
-
-## [easyeda-agent](../../plugins/zhoushoujianwork--easyeda-agent/INSIGHT.md)
-
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
-
-[![GitHub ★ 837](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=837&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhoushoujianwork/easyeda-agent)
-
-**主要用途**：通过 CLI、MCP 和 Skill 连接 EasyEDA Pro，读取工程并执行原理图及 PCB 操作。
-
-**建议**：试用
-
-**推荐理由**：熟悉 EasyEDA Pro 并能复核电路的工程师，可以在工程副本先试读取、诊断和小范围丝印操作。相比让 Agent 凭截图点击，它提供类型化动作、目标身份和回读线索，但未证明无人值守出板可行。如果工程目标不匹配、写操作超时或引脚映射不一致，应停止写入并回到人工回读及备份恢复。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：[Q04](../../plugins/zhoushoujianwork--easyeda-agent/INSIGHT.md#research-q04) 在备份工程副本中先确认health、window/project/doc和只读动作，再试小范围操作并回读。ACTION_ABANDONED或引脚/保存状态不清立即停写，等待并人工核对；不靠重复执行解决未知结果，不将局部检查当生产许可。
-
-[查看完整分析 →](../../plugins/zhoushoujianwork--easyeda-agent/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2247,6 +2181,28 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1195873793-root"></a>
+
+## [ANOLISA](../../plugins/agentic-os-org--anolisa/INSIGHT.md)
+
+[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
+
+[![GitHub ★ 650](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=650&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentic-os-org/ANOLISA)
+
+**主要用途**：为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。
+
+**建议**：试用
+
+**推荐理由**：已经维护 DSH 环境且能保留原文的开发者，可以在任务副本中试用 Tokenless 输出优化这一链路。相比手工裁剪，它统一处理工具结果并为部分压缩保留取回条件，但尚未证明真实任务更省钱。用户若发现关键内容丢失、原文取回失败或全周期负担上升，应关闭压缩并回到原结果。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。
+
+[查看完整分析 →](../../plugins/agentic-os-org--anolisa/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1220744720-root"></a>
 
 ## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
@@ -2313,8 +2269,52 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1232322871-root"></a>
+
+## [agent-qa](../../plugins/vostride--agent-qa/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 915](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=915&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vostride/agent-qa)
+
+**主要用途**：用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。
+
+**建议**：试用
+
+**推荐理由**：已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。相比仅由执行模型自报完成，它把条件与引用交给运行器核查，但真实检出率和记忆收益尚未验证。若关键后台状态无法独立确认或模型误判与恢复成本持续增加，团队应缩小试用范围并保留原有确定性放行检查。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q03](../../plugins/vostride--agent-qa/INSIGHT.md#research-q03) 先选可重置且不影响生产的少量旅程，把它作为探索补充并保留确定性断言。重要结果只能由后台证明时另查原有验收；误判频繁或恢复对账过重便缩小范围。
+
+[查看完整分析 →](../../plugins/vostride--agent-qa/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1276714299-root"></a>
+
+## [Embedded Workbench](../../plugins/amethystluna--embedded-workbench/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 25](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=25&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AmethystLuna/embedded-workbench) [![npm 30d 3,501](https://img.shields.io/static/v1?label=npm+30d&message=3%2C501&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-embedded-workbench) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-embedded-workbench)
+
+**主要用途**：分发嵌入式 C/C++ 开发与逐声称核查 Skills，并在 DSH 首步注入可关闭的计划核查提醒。
+
+**建议**：试用
+
+**推荐理由**：有明确固件现场的 DSH 开发者可先手动试用 Embedded Workbench 的一个匹配领域 Skill。源码支持按需方法与首步提醒的去重，但 Gate 不核验计划，静态 fact-check 也不能代替编译、行为验证和硬件测试。只在可回滚分支以真实结果验修复，出现无依据的已核查宣称或过度流程负担时，关闭提醒并回原工具链与人工检查。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：先手动选匹配Skill，在可回滚固件分支核实际编译/测试，再决定提醒开关；只有核查格式而无证据时停用结论，见 [Q03](../../plugins/amethystluna--embedded-workbench/INSIGHT.md#research-q03)。
+
+[查看完整分析 →](../../plugins/amethystluna--embedded-workbench/INSIGHT.md)
+
+[返回表格](#column-index)
+
 [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-01
+2026-11-02

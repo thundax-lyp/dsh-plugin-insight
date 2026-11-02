@@ -1,0 +1,45 @@
+{
+    "repository": "taxueseek/argo",
+    "repository_id": 1304997851,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 220,
+    "pushed_at": "2026-11-01T16:15:17Z",
+    "issues": {
+        "open": 0,
+        "closed": 16,
+        "created_30d": 11,
+        "closed_30d": 12,
+        "updated_30d": 12
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@taxueseek/argo-dsh",
+        "captured_at": "2026-11-02T02:08:50.948Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 1896,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40taxueseek%2Fargo-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-21T08:58:30.444Z",
+            "captured_at": "2026-11-02T02:08:50.948Z",
+            "source_url": "https://registry.npmjs.org/%40taxueseek%2Fargo-dsh",
+            "error": null,
+            "latest_version": "2.10.1",
+            "latest_published_at": "2026-10-29T09:11:27.134Z",
+            "latest_error": null
+        }
+    }
+}

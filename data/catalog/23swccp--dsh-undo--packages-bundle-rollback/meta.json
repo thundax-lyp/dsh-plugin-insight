@@ -1,29 +1,34 @@
 {
     "repository": "23swccp/dsh-undo",
-    "repository_id": 1338526178,
-    "captured_at": "2026-10-22T10:24:04.476Z",
-    "window_start": "2026-09-22T10:24:04.476Z",
-    "stars": 4,
-    "pushed_at": "2026-08-24T13:40:27Z",
+    "repository_id": null,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": null,
+    "pushed_at": null,
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "23swccp/dsh-undo",
+            "message": "GitHub request failed for repositories/1338526178: gh: Not Found (HTTP 404)"
+        }
+    ],
     "npm": {
         "package_name": "dsh-undo-plugin",
-        "captured_at": "2026-10-22T10:24:18.118Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 955,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-undo-plugin",
+        "captured_at": "2026-10-31T12:39:32.524Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 1186,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-undo-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-20T09:33:58.814Z",
-            "captured_at": "2026-10-22T10:24:18.118Z",
+            "captured_at": "2026-10-31T12:39:32.524Z",
             "source_url": "https://registry.npmjs.org/dsh-undo-plugin",
             "error": null,
             "latest_version": "0.1.0-rc.8",

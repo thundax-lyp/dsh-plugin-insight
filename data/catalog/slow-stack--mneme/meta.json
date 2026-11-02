@@ -1,0 +1,27 @@
+{
+    "repository": "slow-stack/mneme",
+    "repository_id": 1333254657,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 204,
+    "pushed_at": "2026-11-02T02:12:08Z",
+    "issues": {
+        "open": 16,
+        "closed": 134,
+        "created_30d": 45,
+        "closed_30d": 43,
+        "updated_30d": 59
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    }
+}

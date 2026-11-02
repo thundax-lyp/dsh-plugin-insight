@@ -1,0 +1,45 @@
+{
+    "repository": "zh667/TokenLedger",
+    "repository_id": 1333969047,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 202,
+    "pushed_at": "2026-09-15T06:42:08Z",
+    "issues": {
+        "open": 5,
+        "closed": 28,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-tokenledger",
+        "captured_at": "2026-10-30T10:07:14.090Z",
+        "window_start": "2026-09-30",
+        "window_end": "2026-10-29",
+        "downloads_30d": 1709,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-30:2026-10-29/dsh-tokenledger",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T12:58:18.452Z",
+            "captured_at": "2026-10-30T10:07:14.090Z",
+            "source_url": "https://registry.npmjs.org/dsh-tokenledger",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-15T12:58:18.689Z",
+            "latest_error": null
+        }
+    }
+}

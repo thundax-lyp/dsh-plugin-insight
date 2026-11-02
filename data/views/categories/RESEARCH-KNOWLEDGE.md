@@ -16,6 +16,8 @@
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
 | [AgentKey](#plugin-1218688296-root) | 提供统一外部数据服务的 Agent Skill、安装脚本与托管 MCP 接入配置。 | [Q04](../../plugins/chainbase-labs--agentkey/INSIGHT.md#research-q04) 先固定外部CLI和宿主，在隔离profile验证完整调用与费用；当前保持观察。 |
 | [AnySearch for DSH](#plugin-1333247282-root) | 在 DSH 原生网页搜索与抓取接口接入 AnySearch，并提供垂直检索和有限并发批量搜索。 | [Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 非敏感问题先比原provider与批量结果，以有效引用而非命中数决定继续；限流或缺证回人工。 |
+| [Argo](#plugin-1304997851-root) | 为 Agent 提供多源搜索、网页取证和本地资料检索，并以 CLI、Skill 与 MCP 接口交付结果。 | [Q03](../../plugins/taxueseek--argo/INSIGHT.md#research-q03) 先固定少量公开源并关闭本地并入，保留原文和失败诊断，用同任务核对正确率与全部投入。 |
+| [Argo DSH](#plugin-1304997851-packages-dsh-plugin) | 把 Argo 检索、抓取、原生 Web provider 和多轨道研究编排接入 DSH。 | [Q05](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q05) 观察自动研究报告采用；公开低后果样例先核实际工具和每条原文，发现依赖/引用缺口则退回单Agent或人工。 |
 | [Awesome AI Pedia](#plugin-1321280738-root) | 中文 AI 工具指南、实践笔记与规则的 VitePress 知识库 | [Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。 |
 | [Awesome DeepSeek Harness](#plugin-1330942675-root) | 按场景分类整理 DSH 插件、工具和基础设施，并提供生成的仓库目录。 | 建议作为发现资源试用：按场景挑少量候选后固定目标版本核查；不可访问或过时条目退回原仓库及公开搜索，不批量安装。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
@@ -27,6 +29,7 @@
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
+| [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
@@ -38,6 +41,7 @@
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
 | [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。 |
+| [dsh-mneme](#plugin-1333254657-dsh-mneme) | 在DSH中以SQLite与Markdown维护跨会话记忆，提供检索、自动注入和摘要整理，隔离与内容门控有明确限制。 | [Q04](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q04) 非敏感单项目备份后试核心记忆，保持actionRun关闭并明确自动工作开关；验证任务结果和持久状态，串用/误记/超预算则关闭自动工作退手工文档，退出单独处理持久库。 |
 | [dsh-mnemon](#plugin-1329424520-root) | 为 DSH 提供可组合的分层记忆视图、读取与写入。 | [Q05](../../plugins/omdsh-dev--dsh-mnemon/INSIGHT.md#research-q05) 用虚构项目和本地独立存储试用；串项目或旧错误持续出现时停用并核查数据。 |
 | [dsh-moli](#plugin-1415767842-root) | 将本地 Moli 无头浏览器接入 DSH，提供渲染抓取、选择器读取、截图、PDF与引擎探测。 | 建议观察；先在隔离宿主准备已审引擎并设严格TLS，核对公开页面与退出；敏感登录、共享宿主和高可信取证应暂缓。 |
 | [dsh-obsidian-board](#plugin-1415116420-root) | 在DSH三栏面板以本地BM25检索Obsidian笔记，复用宿主模型流式回答、点引用读源并保存回答。 | 先观察，非敏感可信个人库和限定模型通道对照。 |
@@ -85,14 +89,14 @@
 | [meow-memory](#plugin-1333986968-root) | 为 DSH 提供跨会话项目记忆、召回和自动整理。 | 隔离项目核验首轮、压缩和外部库；错误时停用并回人工笔记。 |
 | [Mimir](#plugin-1340749561-root) | 在 DSH 中组织文献、论文 LaTeX、实验、图表、组会与远程任务的研究工作台 | [Q04](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q04) 从本地论文副本编译试用，不自动启用全生命周期。 |
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
-| [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 限定CLI副本库试用，不以本仓库提交当完整DSH兼容证明；错误关联或裁剪损失便回笔记。 |
+| [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 先在非敏感副本库试用 Memory CLI，明确指定库并保留笔记备份。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | [Q05](../../plugins/liustack--modsearch/INSIGHT.md#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具。 | 以非敏感独立项目核验 peer、召回、短断网及停用后队列；出现串扰或缺失时停止相关进程并回退人工笔记。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
 | [ReMe](#plugin-849121458-root) | 以文件记忆、搜索与模型演化为 Agent 提供可读长期记忆。 | [Q05](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q05) 以少量可纠正资料试默认检索和回读；冲突或回执不明时暂停演化。 |
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
+| [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
 | [sivtr](#plugin-1215961903-root) | 独立Rust记忆工具将终端与Agent日志统一归档并以MCP检索；已核Dsh链与完整WorkSet保存，但本地裸whole-ref的MCP默认全文缺补载。 | 先修MCP裸whole-ref全文，谨慎核已有@last/CLI路径；不强制开embedding/share/hooks，避免把未知平台/需求当已验证安装推荐，见[Q04](../../plugins/ariestar--sivtr/INSIGHT.md#research-q04)/[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。 |
-| [SkillCorpus](#plugin-1330431542-root) | 汇集、筛选和检索 Agent 技能，并提供多宿主接入与语料评估工具。 | [Q04](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q04) 建议源码构建团队先限制本地白名单和任务集，比较合格率、纠错和全部 token；不改善结果便恢复目录。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
@@ -160,6 +164,38 @@
 > **建议**：[Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 提出按来源独立性和可引用性汇合批结果并呈现缺证，尚未验证；若只增加重复结果或人工核对则否定。
 
 [查看完整分析](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1304997851-root"></a>
+
+## [Argo](../../plugins/taxueseek--argo/INSIGHT.md)
+
+[![GitHub ★ 220](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=220&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/taxueseek/argo) [![npm 30d 1,572](https://img.shields.io/static/v1?label=npm+30d&message=1%2C572&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/argo-search) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/argo-search)
+
+> **用途**：需要跨领域/语言查证公开信息的Agent开发者可以统一收集搜索结果和原文线索，再自行完成事实判断。
+
+> **亮点**：[Q01](../../plugins/taxueseek--argo/INSIGHT.md#research-q01)、[Q02](../../plugins/taxueseek--argo/INSIGHT.md#research-q02) 把多源调度、失败分类、口径分组排名与Agent消费接口组合，减少调用侧分别接源的工作；成熟RRF与作者覆盖数不等原创算法或实际研究收益。
+
+> **思考**：[Q02](../../plugins/taxueseek--argo/INSIGHT.md#research-q02)、[Q03](../../plugins/taxueseek--argo/INSIGHT.md#research-q03) 引擎共识不等独立证据，质量guard可降级，缺日期的时间窗可能未过滤。超时返回不保证尾部远端请求停止，默认本地并入也要求明确数据范围。
+
+> **建议**：[Q04](../../plugins/taxueseek--argo/INSIGHT.md#research-q04) 可比较引擎共识与独立发布者/原文覆盖的分离说明，检验转载镜像是否导致错误共识，并计核验成本；未审计全仓账本也不声称全新来源机制。
+
+[查看完整分析](../../plugins/taxueseek--argo/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1304997851-packages-dsh-plugin"></a>
+
+## [Argo DSH](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 220](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=220&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/taxueseek/argo) [![npm 30d 1,896](https://img.shields.io/static/v1?label=npm+30d&message=1%2C896&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@taxueseek/argo-dsh) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@taxueseek/argo-dsh)
+
+> **用途**：需要在现有DSH任务中检索和比较多视角证据的用户，可调用原生工具和研究编排。
+
+> **亮点**：[Q01](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q01) 支持将多种检索通道与受限多轨道组织接入原生DSH；[Q02](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q02) 的阶段和账本是集成增量，不等依赖内容/引用绑定已完整。
+
+> **思考**：[Q02](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q02) 核实阶段未传前序结果、轨道sourceKeys从未赋key的对象读取；[Q03](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q03) 闸门在综合后启发式计算，新宿主分支也不能据本地guard推全部工具白名单。
+
+> **建议**：[Q05](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q05) 提议将前序证据显式传入依赖轨道，并在综合前检查轨道结论到S编号映射；如质量不升或上下文/盲从成本抵消收益，就否定，尚未实现。
+
+[查看完整分析](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1321280738-root"></a>
 
@@ -337,6 +373,22 @@
 
 [查看完整分析](../../plugins/titanwings--distilly/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1331112087-root"></a>
+
+## [DSH Data Agent](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md)
+
+[![GitHub ★ 215](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=215&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-data-agent) [![npm 30d 2,246](https://img.shields.io/static/v1?label=npm+30d&message=2%2C246&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yejiming/dsh-data-agent) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yejiming/dsh-data-agent)
+
+> **用途**：能合法访问数据库并愿意核SQL和业务口径的分析者，可在DSH中查询与生成报告。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q01) 与 [Q03](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q03) 支持把连接、结构化查询、候选/审核口径和报告整合；版本冲突与needs_review让业务解释可追溯，但不证明分析建议正确。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q02) 核实readonly默认false且连接级优先，SQL词法分类不是数据库权限边界；[Q03](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q03) 查询rows回模型，“本地执行”不等数据永不出域。
+
+> **建议**：[Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 提议把已有Catalog版本、SQL与截断状态绑定到可回读交付收据；先核等价字段，再比较过时/错误口径发现与全部开销，无增益即否定。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1390103795-root"></a>
 
 ## [DSH Local Memory](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md)
@@ -512,6 +564,22 @@
 > **建议**：若真实独立验证器仅接证明正文，错误证明通过率或可下降；需盲测并核入参，详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。
 
 [查看完整分析](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333254657-dsh-mneme"></a>
+
+## [dsh-mneme](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md)
+
+[![GitHub ★ 204](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=204&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/slow-stack/mneme) [![npm 30d 9,770](https://img.shields.io/static/v1?label=npm+30d&message=9%2C770&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@modusensus/dsh-mneme) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@modusensus/dsh-mneme)
+
+> **用途**：持续使用DSH并愿意管理持久知识的个人用户，减少重复解释项目与偏好；敏感或跨租户资料不适合直接混入默认全局库。
+
+> **亮点**：[Q01](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q01)、[Q02](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q02) 子包将持久库、可读镜像、工具和宿主上下文接线，并保留同步债务与部分失败状态，便于跨会话复用知识；不将根合集和作者实验算本包实测收益。
+
+> **思考**：[Q03](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q03) 自动scope不是硬隔离，门控默认关闭且可降级放行；可选actionRun在truthy命令disposer路径提前访问const disposers，源码推导存在启动错误。[Q02](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q02) DB与镜像非共同原子提交。
+
+> **建议**：[Q05](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q05) 未验证假设是把召回与下游正确完成分开归因，以过时纠正和跨项目误用对照验证净价值；已有召回评估和门控不能重复算创新。
+
+[查看完整分析](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1329424520-root"></a>
 
@@ -1269,15 +1337,15 @@
 
 ## [Mnemon](../../plugins/mnemon-dev--mnemon/INSIGHT.md)
 
-[![GitHub ★ 661](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=661&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mnemon-dev/mnemon)
+[![GitHub ★ 680](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=680&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mnemon-dev/mnemon)
 
-> **用途**：Agent用户跨会话保存项目事实与决策，需可检索和可纠错的长期记忆。
+> **用途**：Agent 使用者可跨会话保存项目事实、偏好与决策，并用图关系和意图召回找回相关上下文。
 
-> **亮点**：[Q01](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q01) 和 [Q02](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q02) 把语义监督与确定性存储分开，精确重复跳过但语义候选仅提示，避免相似度直接吞掉不同事实。
+> **亮点**：[Q01](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q01) 和 [Q02](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q02) 将模型的关系判断与本地确定性存储分开，相似候选只作提示，字节相同才跳过写入。图检索有明确既有方法参照，贡献是 CLI、监督流程与事务边界的组合，不宣称算法首创。
 
-> **思考**：[Q03](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q03) 根DSH转接依赖latest外部插件，固定提交不能锁住完整运行链；监督、冲突与裁剪仍需有效判断和备份。
+> **思考**：[Q03](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q03) 持久保存不保证事实正确，关系仍需模型复核；容量策略虽有保护期、关闭选项和裁剪回执，完整关系恢复尚未核实。根 DSH bundle 另依赖外部 latest 包，不能把本提交当完整 DSH 验证。
 
-> **建议**：[Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 提出为语义变更决定保存来源回执，未来方向未验证；若无法降低错误记忆和纠错投入则否定。
+> **建议**：[Q05](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q05) 提出固定副本的只读回放评估假设，区分检索质量与访问计数对保留策略的反馈。现有只读和裁剪回执已存在，增量是组合为评估协议，尚未验证能否减少采用误判。
 
 [查看完整分析](../../plugins/mnemon-dev--mnemon/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1361,6 +1429,22 @@
 
 [查看完整分析](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1315919904-root"></a>
+
+## [SandBase Skills](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md)
+
+[![GitHub ★ 206](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=206&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sandbaseai/sandbase-skills)
+
+> **用途**：需要复用研究工作流的Agent用户可按具体任务选择Skill；本次聚焦multi-source-search，不把目录数量当全部能力或质量证明。
+
+> **亮点**：[Q01](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q01)、[Q02](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q02) 规范Skill源与多端包装分离，样本将有限检索、共同来源溯源与账本校验集成，便于复用研究流程。仅样本与分发机制已核查，不从245条声明推全库效果。
+
+> **思考**：[Q03](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q03) validator只核声明与内部关系，不验证网页真实性、共同origin或引文支持；不同URL与自报独立数仍可语义失真。[Q02](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q02) force先删旧目录再复制，remove删全目录，不保证本地修改恢复。
+
+> **建议**：[Q05](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q05) 未验证假设是对账本抽样做独立语义回源，记录引用支持和origin错误，比较现有流程的漏判与新增成本；已有溯源提示不能重复算新贡献。
+
+[查看完整分析](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1215961903-root"></a>
 
 ## [sivtr](../../plugins/ariestar--sivtr/INSIGHT.md)
@@ -1376,22 +1460,6 @@
 > **建议**：先修现有全文入口；再检验历史证据与当前任务适用性的可核交接，区别于已有快照/hash/口头核文件要求。三组对照若无误引/投入改善即否定，见[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/ariestar--sivtr/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1330431542-root"></a>
-
-## [SkillCorpus](../../plugins/evermind-ai--skillcorpus/INSIGHT.md)
-
-[![GitHub ★ 692](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=692&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EverMind-AI/SkillCorpus)
-
-> **用途**：维护大量技能的 Agent 团队可按任务查询技能，合格结果应是任务办结而非仅找到文档。
-
-> **亮点**：[Q01](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q01) 与 [Q02](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q02) 表明，贡献在于把多源检索、环境过滤和技能送达连到宿主入口；这使用户不必先知道技能名，尚不能证明 DSH 任务成功率提升。
-
-> **思考**：[Q03](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q03) 的关键限制是依赖源码工作区接入，且没有门控时排名命中不等于适用；远端第三方正文与辅助模型开销会改变收益。
-
-> **建议**：由 [Q04](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q04) 推导，可把是否检索和技能选择绑定到合格任务反馈；这是未验证方向，若同条件下仅增加 token 与纠错而未改善办结率则否定。
-
-[查看完整分析](../../plugins/evermind-ai--skillcorpus/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1374986657-root"></a>
 
@@ -1445,4 +1513,4 @@
 
 ## 更新时间
 
-2026-11-01
+2026-11-02

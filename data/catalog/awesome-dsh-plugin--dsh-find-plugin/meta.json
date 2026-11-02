@@ -1,0 +1,66 @@
+{
+    "repository": "awesome-dsh-plugin/dsh-find-plugin",
+    "repository_id": 1333689922,
+    "captured_at": "2026-11-02T02:08:50.948Z",
+    "window_start": "2026-10-03T02:08:50.948Z",
+    "stars": 214,
+    "pushed_at": "2026-09-25T14:58:33Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aawesome-dsh-plugin%2Fdsh-find-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 31F4:2F4447:2B928:2FCDE:6AE7F16A and timestamp 2026-11-02 02:11:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aawesome-dsh-plugin%2Fdsh-find-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3234:2FC398:2C030:303B3:6AE7F16B and timestamp 2026-11-02 02:11:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aawesome-dsh-plugin%2Fdsh-find-plugin%20is%3Aissue%20created%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 325E:C5F10:2FE4E:341EC:6AE7F16C and timestamp 2026-11-02 02:11:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aawesome-dsh-plugin%2Fdsh-find-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 329A:2EEDB4:2911F:2D407:6AE7F16D and timestamp 2026-11-02 02:11:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aawesome-dsh-plugin%2Fdsh-find-plugin%20is%3Aissue%20updated%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32E0:304AE4:36618:3AAE5:6AE7F16F and timestamp 2026-11-02 02:11:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
+        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
+        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-find-plugin",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 17029,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-find-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T01:49:39.374Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/dsh-find-plugin",
+            "error": null,
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-09-25T14:59:44.271Z",
+            "latest_error": null
+        }
+    }
+}
