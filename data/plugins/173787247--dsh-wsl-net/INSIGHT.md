@@ -1,18 +1,18 @@
 # dsh-wsl-net
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[c3f0f1c](https://github.com/173787247/dsh-wsl-net/tree/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f)
+源码版本：[34fe43a](https://github.com/173787247/dsh-wsl-net/tree/34fe43ad0d3146d7a93265af142c9288e5c1d690)
 
 <!-- BEGIN META -->
 [![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-net)
 <!-- END META -->
 
-> **功能**：诊断WSL与DSH代理环境、代理TCP端口及HTTP可达性，并生成修复提示和可选子进程代理注入。
+> **功能**：为 WSL 中的 DeepSeek Harness 诊断代理环境、宿主进程、端口监听与 HTTPS 可达性，并生成修复建议。
 
-> **亮点**：把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将进程差异、代理监听与HTTP响应组织成Agent可读报告，减少线索拼接。价值仍取决于PID正确和对探测语义的理解，未测节时。
 
-> **主要限制**：HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装也缺显式卸载还原。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) HTTP<500只是收到响应，不能证明业务成功；修复脚本会插入未脱敏代理值，默认共享subprocess包装没有显式还原路径。带凭据代理和共享宿主不适合直接采用。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 网络医生解决哪个故障，贡献来自哪里？](#detail-section-11)
-  - [Q02 · 诊断和代理注入实际如何执行？](#detail-section-12)
-  - [Q03 · 结果和修复内容有哪些容易误判的边界？](#detail-section-13)
-  - [Q04 · 工程材料能证明什么，使用与恢复付出什么？](#detail-section-14)
-  - [Q05 · 什么条件可试用，值得继续讨论的改进是什么？](#detail-section-15)
+  - [Q01 · 谁用诊断工具，相对手工排查增加什么？](#detail-section-11)
+  - [Q02 · 报告与代理注入怎样实际接线，失败如何判断？](#detail-section-12)
+  - [Q03 · 依赖、成本与退出能否支持试用？](#detail-section-13)
+  - [Q04 · 如何避免把探测成功当业务成功？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,80 +39,79 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：WSL/Windows网络环境不一致时辅助维护者定位故障层次。详见[Q01](#research-q01)。
+> **用途**：WSL维护者可把工具进程、宿主进程、代理监听和HTTP响应集中查看，辅助排查Windows能联网而Agent失败。
 
-读环境、/proc、TCP与curl/Node探测和人工脚本是简单替代，插件集中交接而不改变故障判据。
+[Q01](#research-q01) 相对手工查看env、PID、TCP和HTTP，主要增量是诊断归集与交接；不替代实际业务请求验证，也不等于外部kit所有能力。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| 环境诊断 | 工具/宿主代理差异 | PID需确认 |
-| HTTP/TCP检查 | 收窄网络层故障 | 不等业务成功 |
-| 修复建议与注入 | 维护交接 | 秘密/路径/生命周期需控制 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| net_doctor | 获取进程/代理/HTTP排障线索 | PID与状态须人工判读，非业务验收 |
+| 修复建议脚本 | 交接环境修复步骤 | 不自动执行；原始代理可能进入输出 |
+| 子进程代理包装 | 补代理别名和Node开关 | 默认开启，调用者env可覆盖；停用后需核对并重启 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| tools/systemPrompt/subprocess | 注册/提示/注入 | 宿主API需匹配 |
-| fetch/AbortSignal.any | HTTP诊断 | 运行版需支持 |
-| Linux /proc与pgrep | 宿主环境定位 | 权限/PID匹配影响结果 |
-| 真实代理和可审阅脚本 | 修复 | 模板不能原样运行 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH tools/systemPrompt/subprocess | 加载必需 | 工具与代理包装 | 服务不满足不能按本链工作 |
+| 兼容Node版本 | 必需 | fetch/AbortSignal等API | manifest>=18不证明全部小版本兼容 |
+| /proc与pgrep权限 | 宿主env检查必需 | 找PID并读环境 | 返回缺失/错误，不代表无故障 |
+| 正确代理与端口 | 代理路径必需 | 子进程路由和TCP探测 | open也不证明服务成功 |
+| 无凭据测试环境 | 本研究试用条件 | 避免秘密进入脚本输出 | 带凭据环境暂缓采用 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 关闭注入并确认环境 | 维护者 | 代理/Node/PID明确 |
-| 选target诊断 | Agent | 区分TCP/HTTP/业务层 |
-| 去秘密审阅fix | 维护者 | 路径/代理适配 |
-| 修复并复核任务 | 维护者 | 真实目标任务成功 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 维护者确认PID、Node和无凭据代理，关闭injectChildProxy | 独立测试宿主；本轮未安装 |
+| 诊断 | Agent选择target调用net_doctor | 分读env/TCP/HTTP，核对宿主身份 |
+| 修复 | 人工审查脚本与本机路径后自行执行 | 本工具未自动修复；不可复制秘密到聊天 |
+| 验收 | 维护者运行原业务的只读检查 | HTTP响应不替代业务结果 |
+| 退出 | 停用配置，曾注入则重启宿主 | 核对原子进程环境后回手工诊断 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 现有WSL/DSH/代理 | 确认Node、PID与安全脚本 | 默认可改变子进程环境；Node/PID/脚本核查工时未知 |
-| 持续使用 | 串行HTTP/TCP探测 | 去秘密与判读，节时未知 | 串行HTTP/TCP和上下文成本未计量；无节时对照 |
-| 失败恢复 | 原启动环境/重启 | 撤错误代理与恢复子进程行为 | 撤代理/重启目标进程的金额、工时与恢复率未知 |
-
+|---|---|---|---|
+| 首次使用 | 现有WSL/DSH与代理 | 版本、PID、配置和脚本审阅 | 金额与工时未知 |
+| 持续使用 | 串行HTTP/TCP探测和报告上下文 | 判读层次、去敏与验证 | 未测相对手工节时 |
+| 失败恢复 | 宿主重启和原环境 | 撤回错误代理，对账子进程行为 | 热禁用未见还原接线，恢复率未知 |
 
 #### 效果
 
-| 目标 | 源码支持 | 边界 |
-| --- | --- | --- |
-| 进程差异 | tool/host env分列 | 最新PID可能非当前宿主 |
-| 可达定位 | TCP和HTTP响应 | 不证明业务任务 |
-| 修复交接 | 脚本建议 | 凭据/路径需人工审阅 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 定位线索 | 分列工具/宿主env与监听 | 最新PID是否属于当前宿主 |
+| HTTP响应 | <500判为可达 | 认证、下载和实际业务成功 |
+| 修复交接 | 返回建议和脚本 | 脚本安全性、路径适用与恢复收益 |
 
-> **思考**：HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装也缺显式卸载还原。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) HTTP<500只是收到响应，不能证明业务成功；修复脚本会插入未脱敏代理值，默认共享subprocess包装没有显式还原路径。带凭据代理和共享宿主不适合直接采用。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把环境、宿主PID、代理监听和服务响应集中为Agent诊断报告，减少手工信息拼接。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将进程差异、代理监听与HTTP响应组织成Agent可读报告，减少线索拼接。价值仍取决于PID正确和对探测语义的理解，未测节时。
 
-函数分层且可注入测试依赖；需补修复输出脱敏和包装生命周期。详见[Q04](#research-q04)。
+[Q02](#research-q02) 诊断函数与入口分离，spec.env覆盖默认代理且显式0保留，便于定向复用；脱敏未覆盖修复脚本，包装未接还原生命周期，移植前应先解决这两项。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装也缺显式卸载还原。详见[Q03](#research-q03)。
+[Q02](#research-q02) HTTP<500只是收到响应，不能证明业务成功；修复脚本会插入未脱敏代理值，默认共享subprocess包装没有显式还原路径。带凭据代理和共享宿主不适合直接采用。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-个人维护环境先禁用注入，有凭据环境先清理报告；不自动执行fix，不把HTTP ok当业务成功。详见[Q05](#research-q05)。
+[Q03](#research-q03) 个人无凭据测试环境先关闭注入并核对PID，只把报告作为排障线索。发现脚本秘密或身份不明便停用；曾开启包装时重启宿主再核对原环境，不自动执行fix。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +119,18 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 
 **核查状态**：已检查源码。
 
-诊断接线有源码支持，HTTP ok仅响应层，修复脚本脱敏和包装生命周期存在边界；分层安全修复为未验证方向。
+已检查工具注册、完整诊断/修复与包装路径；确认源码存在凭据进入脚本的路径，未用真实凭据运行复现。兼容与效果未知，未来设计分开。
 
-- 已检查：作者 README、包清单、源码路径 README.md、README.zh.md、package.json、index.js、lib/net.js、test/net.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/net.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：阅读固定提交入口、全部lib诊断函数、manifest和函数测试；未运行目标代码。
-- 下一步：进一步从401/429、错误PID、凭据代理及卸载包装边界探讨，比较误诊、秘密输出和恢复步骤。
+- 边界：检查index.js、lib/net.js、README和package的固定版本；未运行任何网络诊断、目标测试、fix脚本或外部kit，不将作者Node描述当全版本验证。
+- 下一步：按[Q04](#research-q04)在隔离环境用无敏感合成值比较分层判读、脚本回显与注入退出，计定位/恢复与总工时；若误诊或残留不降则否定。本轮未执行。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-net](https://github.com/173787247/dsh-wsl-net)
-- **版本号**：0.5.2（[固定提交 c3f0f1c](https://github.com/173787247/dsh-wsl-net/tree/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.2（[固定提交 34fe43a](https://github.com/173787247/dsh-wsl-net/tree/34fe43ad0d3146d7a93265af142c9288e5c1d690)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +138,9 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 
 <a id="innovation"></a>
 
-可研究分层可达性判据、无凭据回显的修复计划与可恢复注入，以固定反例比较误诊和恢复成本。当前未验证。详见[Q05](#research-q05)。
+[Q04](#research-q04) 可研究分层结果、只引用变量的无凭据修复计划和可还原注入，用固定故障比较误诊、回显及恢复成本；目前未实现或验证。
 
-进一步从401/429、错误PID、凭据代理及卸载包装边界探讨，比较误诊、秘密输出和恢复步骤。
+按[Q04](#research-q04)在隔离环境用无敏感合成值比较分层判读、脚本回显与注入退出，计定位/恢复与总工时；若误诊或残留不降则否定。本轮未执行。
 
 <a id="detail-section-9"></a>
 
@@ -150,6 +148,8 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,37 +161,37 @@ HTTP<500不等业务成功，fix脚本使用未脱敏代理，默认全局包装
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+created%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A21%3A02.153Z..2026-10-22T05%3A21%3A02.153Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+created%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-net/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-02。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本WSL网络诊断能区分哪些失败层次，代理注入和修复输出如何影响采用？
+**插件研究总目标**：WSL诊断如何定位网络层次，代理注入与修复输出何时妨碍采用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 网络医生解决哪个故障，贡献来自哪里？
+### Q01 · 谁用诊断工具，相对手工排查增加什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向Windows浏览器能访问HTTPS而WSL中的DSH/Node请求失败的维护者，合格产物是能区分工具进程与宿主进程代理环境、代理端口监听和目标HTTP响应层次的诊断报告，而不是业务API调用成功证明。README把进程内web_fetch转交配套插件，本插件既不配置模型也不提供网页抓取。
+WSL上的DSH维护者遇到Windows浏览器能访问而Agent/API/npm失败时，可以用net_doctor归集故障线索。合格结果是定位究竟为当前工具进程、宿主进程、代理监听还是HTTP响应问题，并据此验证一项安全修复；不是仅看到绿色ok。手工基线是分开查看环境、找PID、测试TCP和HTTP，插件把这些输出与建议组成一次可供Agent阅读的报告，减少手工拼接。它并非通用网页获取器，README明确不修复进程内web_fetch；外部kit脚本和环境配置能力不能全部归于本插件。
 
-简单替代是手动读环境、检查/proc、TCP连接和curl/Node探测。插件将这些收集动作和修复提示装成net_doctor，减少跨进程信息拼接；贡献主要是故障工作流组合与Agent可调用入口。没有新代理协议或新的网络诊断算法，外部套件脚本的维护能力不能算本插件独立实现。
+适用人群是已有WSL/代理维护能力者。对不使用代理、没有Linux/proc或有多个DSH宿主的环境，部分线索可能不适用。作者围绕Node24环境变量解释动机，这是固定版本的声明，不是本轮对所有Node小版本和代理类型的兼容验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-13](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/README.md#L5-L13)
+**依据 1 · 作者声明**：[README.md:5-13](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/README.md#L5-L13)
 
-工具诊断与抓页范围分界。
+作者限定WSL诊断用途，与进程内fetch分开。
 
 ```text
 DeepSeek Harness **tool** plugin: `net_doctor` diagnoses why HTTPS works in the Windows browser but fails from the WSL agent—and returns **copy-paste fix scripts**.
@@ -205,14 +205,41 @@ Pairs with [dsh-wsl-env](https://github.com/173787247/dsh-wsl-env). Part of **[d
 Diagnoses why the Windows browser can reach HTTPS while the WSL agent cannot. In-process page fetch is dsh-wsl-fetch, not this plugin.
 ```
 
-**依据 2 · 源码核查**：[index.js:129-152](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L129-L152)
+**依据 2 · 作者声明**：[README.md:37-50](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/README.md#L37-L50)
 
-分别返回env、probes、proxyListen与dshWeb。
+作者解释当前/宿主/监听/HTTP各层以及工具范围。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+**Scope:** diagnoses proxy / Node 24 / DeepSeek+npm reachability for the agent process and child shells. It does **not** fix in-process `web_fetch` (use [dsh-wsl-fetch](https://github.com/173787247/dsh-wsl-fetch)). Prefer kit `restart-dsh-web.sh` so the **dsh main process** gets `NODE_USE_ENV_PROXY=1` and loopback-only `NO_PROXY`.
+
+## Why
+
+Clash / V2Ray often runs on Windows with `HTTP_PROXY=http://127.0.0.1:…`. Node **24** `fetch` ignores proxy env vars unless `NODE_USE_ENV_PROXY=1`. The browser can look fine while the agent cannot reach DeepSeek or npm.
+
+## What it does
+
+- Reports `HTTP_PROXY` / `HTTPS_PROXY` / `ALL_PROXY` / `NO_PROXY` (userinfo redacted), `NODE_USE_ENV_PROXY`, optional npm registry
+- Also inspects the **running `dsh web` process** env (`dshWeb`) so you can tell tool-process vs host-process proxy flags apart
+- TCP-probes the configured proxy port (`proxyListen`)
+- Probes DeepSeek API and the npm registry (HTTP status &lt; 500 counts as reachable, including 401)
+- Returns `advice` plus `fix.steps` / `fix.scripts` (reuses current proxy when set; otherwise a `127.0.0.1:7890` template you must edit)
+- Optionally injects `NODE_USE_ENV_PROXY=1` and lowercase `http_proxy` aliases into bash/npm **child** processes (`injectChildProxy`)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:128-151](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L128-L151)
+
+报告真实聚合当前env、HTTP探测、监听和宿主env。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
+    async execute(args, exec) {
       const target = typeof args?.target === "string" ? args.target : "all";
       const allowed = new Set(["all", "env", "deepseek", "npm", "registry", "modelscope", "huggingface"]);
       const selected = allowed.has(target) ? target : "all";
@@ -236,7 +263,6 @@ Diagnoses why the Windows browser can reach HTTPS while the WSL agent cannot. In
         probes,
         proxyListen,
         dshWeb: dshWebOut,
-      };
 ```
 
 </details>
@@ -245,29 +271,28 @@ Diagnoses why the Windows browser can reach HTTPS while the WSL agent cannot. In
 
 <a id="detail-section-12"></a>
 
-### Q02 · 诊断和代理注入实际如何执行？
+### Q02 · 报告与代理注入怎样实际接线，失败如何判断？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-apply注入tools、systemPrompt和subprocess；默认injectChildProxy开启后直接包装subprocess.spawn及spawnTerminal，给后续调用补充代理大小写别名与NODE_USE_ENV_PROXY，spec.env最后覆盖，父进程明确0也保留。注册工具读取当前process.env，按target顺序GET固定服务或配置的npm registry，再检测一个代理地址TCP端口；另用pgrep选最新匹配node.*/dsh web的PID并读/proc/<pid>/environ。
+apply注册net_doctor并提供系统提示；execute按target串行HTTP探测，再检查代理TCP和最新匹配dsh web PID的/proc环境。宿主PID由pgrep -n -f模式选取，未与当前会话建立强绑定，多个宿主时可能选错。HTTP探测把0<status<500标为ok，包含401/403/404以及手工重定向返回；它证明收到某类响应而非认证成功、下载成功或业务办结，500也不能直接等同网络不通。TCP open仅证明端口接受连接。
 
-工具本身不执行fix脚本，也不能通过对子进程注入修复已经运行的宿主fetch。Linux/WSL的/proc和pgrep、宿主subprocess对象可包装性、Node的fetch及AbortSignal.any是直接条件。package声明Node>=18，但并未按运行版本检测any和代理变量支持，不宜将这一下限等同完整功能兼容。多实例/多个profile时最新PID不保证是调用者宿主，需要读者确认PID对应关系。
+默认injectChildProxy=true会直接包装共享subprocess.spawn/spawnTerminal，向子进程补代理大小写别名和NODE_USE_ENV_PROXY；spec.env后覆盖新增值，调用者仍可指定自己的值，且显式0被保留。Symbol避免重复包装，但源码没有恢复original或dispose接线，禁用后不能推断旧共享服务立刻恢复。
+
+环境字段对代理userinfo做脱敏，这是已实现保护；但execute把原始env交给buildFix，后者把原代理写入shell脚本，formatReport逐行输出script.code而未再次脱敏。有userinfo凭据的代理因此存在被带入工具返回/聊天的源码确认路径，未在本轮用真实凭据复现。脚本还含特定kit位置和示例端口，不能无检查直接执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:13-36](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L13-L36)
+**依据 1 · 源码核查**：[index.js:16-39](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L16-L39)
 
-服务注入和默认全局子进程包装。
+默认注入及工具注册。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
-export const name = "dsh-wsl-net";
-export const inject = ["tools", "systemPrompt", "subprocess"];
-
 export function apply(ctx, config = {}) {
   const timeoutMs = positive(config.timeoutMs, 20_000);
   const probeTimeoutMs = positive(config.probeTimeoutMs, 5_000);
@@ -289,16 +314,55 @@ export function apply(ctx, config = {}) {
         : "Child bash/npm processes may still need NODE_USE_ENV_PROXY=1 even when this dsh process has it.",
       "Prefer dsh-wsl-kit scripts/restart-dsh-web.sh after fixing proxy. Do not guess proxy URLs; read advice and fix.scripts.",
     ].join(" "),
+  });
+
+  ctx.tools.register({
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:163-191](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L163-L191)
+**依据 2 · 源码核查**：[index.js:128-151](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L128-L151)
 
-Symbol防重复、方法替换及AbortSignal.any。
+原始env进入buildFix，报告env另脱敏。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（24行）</summary>
+
+```text
+    async execute(args, exec) {
+      const target = typeof args?.target === "string" ? args.target : "all";
+      const allowed = new Set(["all", "env", "deepseek", "npm", "registry", "modelscope", "huggingface"]);
+      const selected = allowed.has(target) ? target : "all";
+      const env = readEnv();
+      const probes = [];
+      if (selected === "all" || selected === "deepseek") {
+        probes.push(await probe("deepseek", "https://api.deepseek.com/", exec.signal, probeTimeoutMs));
+      }
+      for (const spec of registryProbeList(env, selected)) {
+        probes.push(await probe(spec.name, spec.url, exec.signal, probeTimeoutMs));
+      }
+      const proxyListen = await probeProxyListen(env, { timeoutMs: Math.min(probeTimeoutMs, 2000) });
+      const dshWeb = inspectDshWebEnv();
+      const dshWebOut = dshWeb.env
+        ? { ok: dshWeb.ok, pid: dshWeb.pid, error: dshWeb.error || "", env: redactEnv(dshWeb.env) }
+        : { ok: dshWeb.ok, pid: dshWeb.pid, error: dshWeb.error || "", env: null };
+      return {
+        advice: buildAdvice(env, probes, selected, injectChildProxy, proxyListen, dshWeb),
+        fix: buildFix(env, probes, injectChildProxy),
+        env: redactEnv(env),
+        probes,
+        proxyListen,
+        dshWeb: dshWebOut,
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:163-177](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L163-L177)
+
+共享subprocess包装且无还原路径。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
 const PATCHED = Symbol.for("dsh-wsl-net.subprocess-patched");
@@ -316,13 +380,18 @@ function wrapSpawn(subprocess, method) {
   subprocess[method] = function patchedSpawn(spec, ...rest) {
     return original.call(this, withChildProxyEnv(spec), ...rest);
   };
-}
+```
 
-function positive(value, fallback) {
-  const n = Number(value);
-  return Number.isFinite(n) && n > 0 ? n : fallback;
-}
+</details>
 
+**依据 4 · 源码核查**：[index.js:185-212](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L185-L212)
+
+HTTP状态规则和异常报告。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
 async function probe(name, url, callerSignal, probeTimeoutMs) {
   const started = Date.now();
   try {
@@ -330,13 +399,34 @@ async function probe(name, url, callerSignal, probeTimeoutMs) {
       callerSignal,
       AbortSignal.timeout(probeTimeoutMs),
     ]);
+    const res = await fetch(url, {
+      method: "GET",
+      redirect: "manual",
+      signal,
+    });
+    return {
+      name,
+      url,
+      ok: res.status > 0 && res.status < 500,
+      status: res.status,
+      ms: Date.now() - started,
+    };
+  } catch (err) {
+    const error = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+    return {
+      name,
+      url,
+      ok: false,
+      error,
+      ms: Date.now() - started,
+    };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/net.js:46-80](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L46-L80)
+**依据 5 · 源码核查**：[lib/net.js:46-80](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L46-L80)
 
-代理env合并优先级。
+子环境默认值与调用者覆盖顺序。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -381,9 +471,9 @@ export function withChildProxyEnv(spec, env = process.env) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/net.js:154-175](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L154-L175)
+**依据 6 · 源码核查**：[lib/net.js:154-175](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L154-L175)
 
-按最新匹配PID检查宿主。
+最新匹配PID而非当前会话绑定。
 
 <details>
 <summary>查看原文（22行）</summary>
@@ -415,39 +505,173 @@ export function inspectDshWebEnv(deps = {}) {
 
 </details>
 
-**依据 5 · 源码核查**：[package.json:16-19](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/package.json#L16-L19)
+**依据 7 · 源码核查**：[lib/net.js:330-350](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L330-L350)
 
-声明Node>=18。
+修复脚本插入原始代理值及固定位置。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
+export function buildFix(env, probes, injectChildProxy) {
+  const steps = [];
+  const scripts = [];
+  const failed = probes.filter((p) => !p.ok);
+  const proxyUrl = env.HTTP_PROXY || env.HTTPS_PROXY || env.ALL_PROXY || "";
+
+  if (proxyOn(env) && !proxyHonored(env)) {
+    steps.push(
+      "Restart the dsh process with NODE_USE_ENV_PROXY=1 so Node 24 fetch (DeepSeek Search / API) honors HTTP(S)_PROXY.",
+    );
+    scripts.push({
+      title: "restart-dsh-with-node-proxy",
+      shell: "bash",
+      code: [
+        `export HTTP_PROXY=${shellQuote(proxyUrl)}`,
+        `export HTTPS_PROXY=${shellQuote(env.HTTPS_PROXY || proxyUrl)}`,
+        "export NODE_USE_ENV_PROXY=1",
+        "# Preferred: kit script also starts the :3081 relay",
+        "bash /mnt/c/Users/$USER/Desktop/AIFullStackDevelopment/dsh-wsl-kit/scripts/restart-dsh-web.sh",
+        "# Or: dsh web --no-open --port 3080",
+      ].join("\n"),
 ```
+
+</details>
+
+**依据 8 · 源码核查**：[lib/net.js:405-416](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L405-L416)
+
+修复脚本直接输出，未再做URL脱敏。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  const fix = value.fix || { steps: [], scripts: [] };
+  const fixLines = [
+    "fix:",
+    ...fix.steps.map((s) => `  - ${s}`),
+  ];
+  if (fix.scripts.length > 0) {
+    fixLines.push("  scripts:");
+    for (const script of fix.scripts) {
+      fixLines.push(`    # ${script.title} (${script.shell})`);
+      for (const line of String(script.code).split("\n")) {
+        fixLines.push(`    ${line}`);
+      }
+```
+
+</details>
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 结果和修复内容有哪些容易误判的边界？
+### Q03 · 依赖、成本与退出能否支持试用？
 
-**研究主题**：缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-HTTP探测使用GET且redirect manual，将任何大于0小于500的状态标为ok，因此401、403、404、429或重定向说明收到响应，不证明API权限、额度、模型或npm包下载成功。TCP open也只代表该地址接受连接，不证明代理协议、认证或转发可用；只选HTTP_PROXY优先的单一地址，不能代表HTTPS_PROXY各自健康。
+只建议熟悉个人WSL环境、使用无凭据代理且能隔离测试宿主的维护者，先以injectChildProxy=false试读诊断；不把它用于共享凭据环境或自动执行修复。依赖DSH的tools/systemPrompt/subprocess服务；宿主环境读取另需Linux/proc访问和pgrep，读取失败只返回缺失原因。package声明Node>=18，但实现使用AbortSignal.any等API与特定代理行为，本次未核各小版本，不能从engines宣称全范围兼容。
 
-环境输出仅对HTTP/HTTPS/ALL代理字段的URL userinfo脱敏；buildFix使用原始proxyUrl生成export脚本，再由formatReport直接打印，没有再次脱敏，因此有凭据的代理可能经fix.scripts暴露。npm_config_registry和probe URL也原样返回。不能依据README“不打印API keys”扩大为报告无秘密保证。重启脚本硬编码作者Windows桌面目录，未配置时还给7890示例，必须编辑并确认，不能直接自动执行。默认包装没有dispose还原，在共享subprocess服务上的实际影响生命周期需明确。
+首次要确认实际PID、代理端口和配置；持续调用包含串行网络探测和报告上下文成本。未测费用、延迟、定位正确率和相对手工节时。无凭据条件和关闭注入把试用限制为可检查的诊断，但不消除报告中的私有地址/路径信息，分享前仍需复核。停止时移除插件配置；若曾开启注入，应重启受影响宿主恢复原服务对象，并核对原代理环境，再使用原手工排查。若无法确认PID、报告把认证错误当业务成功、修复脚本出现凭据或默认注入改变了任务行为，就停止使用而不是继续试修。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:185-203](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L185-L203)
+**依据 1 · 源码核查**：[index.js:13-23](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L13-L23)
 
-manual重定向与<500状态判定。
+服务前提与可关闭默认注入。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（11行）</summary>
+
+```text
+export const name = "dsh-wsl-net";
+export const inject = ["tools", "systemPrompt", "subprocess"];
+
+export function apply(ctx, config = {}) {
+  const timeoutMs = positive(config.timeoutMs, 20_000);
+  const probeTimeoutMs = positive(config.probeTimeoutMs, 5_000);
+  const injectChildProxy = config.injectChildProxy !== false;
+
+  if (injectChildProxy) {
+    installChildProxy(ctx.subprocess);
+    console.log("[dsh-wsl-net] injecting NODE_USE_ENV_PROXY into subprocess env");
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/net.js:137-175](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L137-L175)
+
+/proc/pgrep依赖与失败结果。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+export function readProcEnv(pid, { readFileSyncFn = readFileSync, keys = PROXY_ENV_KEYS } = {}) {
+  const n = Number(pid);
+  if (!Number.isFinite(n) || n <= 0) return { ok: false, pid: 0, error: "invalid_pid", env: null };
+  try {
+    const raw = readFileSyncFn(`/proc/${n}/environ`);
+    const parsed = parseProcEnviron(raw, keys);
+    return { ok: true, pid: n, error: "", env: readEnv(parsed) };
+  } catch (err) {
+    return {
+      ok: false,
+      pid: n,
+      error: err instanceof Error ? err.message : String(err),
+      env: null,
+    };
+  }
+}
+
+/** Find newest `dsh web` node pid via injectable pgrepFn(stdout lines). */
+export function findDshWebPid({ pgrepFn } = {}) {
+  try {
+    const out =
+      typeof pgrepFn === "function"
+        ? String(pgrepFn() || "")
+        : execFileSync("pgrep", ["-n", "-f", "node.*/dsh web"], {
+            encoding: "utf8",
+            timeout: 3000,
+          });
+    const line = String(out).trim().split(/\r?\n/).map((s) => s.trim()).find(Boolean);
+    const pid = Number(line);
+    return Number.isFinite(pid) && pid > 0 ? pid : 0;
+  } catch {
+    return 0;
+  }
+}
+
+export function inspectDshWebEnv(deps = {}) {
+  const pid = deps.pid ?? findDshWebPid(deps);
+  if (!pid) return { ok: false, pid: 0, error: "dsh_web_not_found", env: null };
+  return readProcEnv(pid, deps);
+```
+
+</details>
+
+**依据 3 · 源码核查**：[package.json:14-20](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/package.json#L14-L20)
+
+Node声明仅为清单条件，不是本次兼容验收。
+
+```text
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/net.test.js"
+```
+
+**依据 4 · 源码核查**：[index.js:185-200](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L185-L200)
+
+实际使用AbortSignal.any与timeout。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
 async function probe(name, url, callerSignal, probeTimeoutMs) {
@@ -466,78 +690,16 @@ async function probe(name, url, callerSignal, probeTimeoutMs) {
       name,
       url,
       ok: res.status > 0 && res.status < 500,
-      status: res.status,
-      ms: Date.now() - started,
-    };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/net.js:18-23](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L18-L23)
+**依据 5 · 源码核查**：[lib/net.js:330-350](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L330-L350)
 
-仅三个代理env字段脱敏。
-
-```text
-export function redactEnv(env) {
-  const next = { ...env };
-  for (const key of ["HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY"]) {
-    if (next[key]) next[key] = redactSecretUrl(next[key]);
-  }
-  return next;
-```
-
-**依据 3 · 源码核查**：[lib/net.js:202-235](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L202-L235)
-
-单地址TCP检查。
+凭据与固定路径使修复需人工核查。
 
 <details>
-<summary>查看原文（34行）</summary>
-
-```text
-export async function probeProxyListen(env, { probeFn, timeoutMs = 1500 } = {}) {
-  const url = env.HTTP_PROXY || env.HTTPS_PROXY || env.ALL_PROXY || "";
-  const endpoint = parseProxyEndpoint(url);
-  if (!endpoint) {
-    return { configured: false, open: false, url: "", host: "", port: 0, error: "no_proxy_url" };
-  }
-  const probe =
-    probeFn ||
-    ((host, port) =>
-      new Promise((resolve) => {
-        const sock = createConnection({ host, port });
-        const done = (open, error) => {
-          try {
-            sock.destroy();
-          } catch {
-            /* ignore */
-          }
-          const row = { open };
-          if (error) row.error = String(error);
-          resolve(row);
-        };
-        sock.setTimeout(timeoutMs);
-        sock.on("connect", () => done(true));
-        sock.on("timeout", () => done(false, "timeout"));
-        sock.on("error", (err) => done(false, err.message));
-      }));
-  const result = await probe(endpoint.host, endpoint.port);
-  return {
-    configured: true,
-    open: Boolean(result.open),
-    url: url.replace(/\/\/([^/@]+)@/, "//***@"),
-    host: endpoint.host,
-    port: endpoint.port,
-    error: result.error || "",
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/net.js:330-369](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L330-L369)
-
-原始代理写入脚本及硬编码目录。
-
-<details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
 export function buildFix(env, probes, injectChildProxy) {
@@ -561,50 +723,83 @@ export function buildFix(env, probes, injectChildProxy) {
         "bash /mnt/c/Users/$USER/Desktop/AIFullStackDevelopment/dsh-wsl-kit/scripts/restart-dsh-web.sh",
         "# Or: dsh web --no-open --port 3080",
       ].join("\n"),
-    });
-    if (injectChildProxy) {
-      steps.push("Child bash/npm already get NODE_USE_ENV_PROXY=1 from this plugin; the dsh host process itself still needs the restart above.");
-    }
-  }
-
-  if (!proxyOn(env) && failed.length > 0) {
-    steps.push("Set HTTP_PROXY/HTTPS_PROXY to your Windows Clash/V2Ray mixed port (typical http://127.0.0.1:7890), then restart dsh with NODE_USE_ENV_PROXY=1.");
-    scripts.push({
-      title: "template-set-proxy-then-start-dsh",
-      shell: "bash",
-      code: [
-        "# Replace 7890 with your Clash/V2Ray mixed port from the Windows tray app.",
-        "export HTTP_PROXY=http://127.0.0.1:7890",
-        "export HTTPS_PROXY=http://127.0.0.1:7890",
-        "export NODE_USE_ENV_PROXY=1",
-        "dsh web",
-      ].join("\n"),
-    });
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/net.js:410-417](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L410-L417)
+#### 缺口
 
-脚本内容直接展示。
+- 没有真实宿主小版本、代理类型和禁用后服务恢复验证。
+  **影响**：不能承诺广泛兼容或热禁用立即还原。
+  **进一步探讨**：在独立测试宿主核对版本、进程身份、禁用/重启前后子环境与实际任务。
+- 没有同故障手工诊断的成功率、时长与恢复成本。
+  **影响**：无法量化节时或单位任务成本。
+  **进一步探讨**：用无敏感值的固定故障集比较定位和恢复，全计失败尝试。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何避免把探测成功当业务成功？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+本插件已经把env、proxyListen和probes分列，不能声称缺少分层信息；可推导的改进假设是把易误读的ok进一步明确为传输响应、认证/服务状态和用户指定只读业务检查三层，并让修复计划只引用本地变量名而不回显代理凭据，再为注入保留可恢复生命周期。增量在于将已有诊断线索转成不夸大结果且可撤销的交接，而非增加更多探测数量。
+
+用隔离宿主和合成无秘密值构造TCP可连但HTTP失败、401、404、500、多宿主PID、无代理、显式子环境覆盖等情形，对照当前与改进报告。观察维护者定位正确率、误执行脚本次数、敏感字段回显、恢复后环境一致性和总耗时。若分层仍被误读、恢复不能还原，或额外配置时间超过定位收益，则否定相应假设。本轮没有实现或运行这些改进，不能把其结果计入已有贡献。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:145-151](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L145-L151)
+
+已有分层报告是改进基线。
 
 ```text
-  if (fix.scripts.length > 0) {
-    fixLines.push("  scripts:");
-    for (const script of fix.scripts) {
-      fixLines.push(`    # ${script.title} (${script.shell})`);
-      for (const line of String(script.code).split("\n")) {
-        fixLines.push(`    ${line}`);
-      }
-      fixLines.push("");
+      return {
+        advice: buildAdvice(env, probes, selected, injectChildProxy, proxyListen, dshWeb),
+        fix: buildFix(env, probes, injectChildProxy),
+        env: redactEnv(env),
+        probes,
+        proxyListen,
+        dshWeb: dshWebOut,
 ```
 
-**依据 6 · 源码核查**：[index.js:163-178](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L163-L178)
+**依据 2 · 源码核查**：[index.js:197-202](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L197-L202)
 
-包装无本地撤销处理。
+ok当前取HTTP状态阈值，支持误读问题的机制推导。
+
+```text
+    return {
+      name,
+      url,
+      ok: res.status > 0 && res.status < 500,
+      status: res.status,
+      ms: Date.now() - started,
+```
+
+**依据 3 · 源码核查**：[lib/net.js:343-350](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/lib/net.js#L343-L350)
+
+修复目前直接写入值，支持不回显设计方向。
+
+```text
+      code: [
+        `export HTTP_PROXY=${shellQuote(proxyUrl)}`,
+        `export HTTPS_PROXY=${shellQuote(env.HTTPS_PROXY || proxyUrl)}`,
+        "export NODE_USE_ENV_PROXY=1",
+        "# Preferred: kit script also starts the :3081 relay",
+        "bash /mnt/c/Users/$USER/Desktop/AIFullStackDevelopment/dsh-wsl-kit/scripts/restart-dsh-web.sh",
+        "# Or: dsh web --no-open --port 3080",
+      ].join("\n"),
+```
+
+**依据 4 · 源码核查**：[index.js:163-177](https://github.com/173787247/dsh-wsl-net/blob/34fe43ad0d3146d7a93265af142c9288e5c1d690/index.js#L163-L177)
+
+包装生命周期是恢复实验的针对点。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
 const PATCHED = Symbol.for("dsh-wsl-net.subprocess-patched");
@@ -622,320 +817,14 @@ function wrapSpawn(subprocess, method) {
   subprocess[method] = function patchedSpawn(spec, ...rest) {
     return original.call(this, withChildProxyEnv(spec), ...rest);
   };
-}
 ```
 
 </details>
 
 #### 缺口
 
-- 宿主subprocess服务的作用域和卸载重建策略未在插件内定义
-  **影响**：无法断言卸载会撤销包装，或不同profile完全隔离
-  **进一步探讨**：阅读对应宿主版本服务生命周期，区分进程重启和热卸载
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 工程材料能证明什么，使用与恢复付出什么？
-
-**研究主题**：工程质量与复用、效果与总成本
-
-#### 完整回答
-
-lib/net.js把env、诊断建议和展示拆成函数，并为/proc读取、pgrep与TCP探测提供可注入依赖；测试检查env大小写、覆盖优先级、userinfo脱敏、脚本字符串、端口关闭及宿主环境建议。它们支撑这些分支的可检查性，但没有覆盖fix脚本凭据泄露、HTTP状态业务语义或包装卸载。测试文本被阅读，没有执行。
-
-初次要确认真实代理、Node版本、目标宿主PID和可用重启脚本；默认包装会改变后续子进程环境，应先关闭注入只读诊断，再决定是否接受这项全局行为。持续成本主要是每次多目标串行请求、诊断提示上下文和人工判读，target=env也仍检查TCP与宿主。默认四个HTTP探测各5秒再加TCP及同步pgrep，20秒工具预算并非充裕保证，pgrep同步执行可占主线程至3秒。失败恢复要清除错误代理、恢复启动环境并重启正确进程；总节时、实际请求费和故障恢复率没有量化数据。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[test/net.test.js:41-78](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/test/net.test.js#L41-L78)
-
-子环境覆盖与registry测试。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-describe("childProxyEnv", () => {
-  it("mirrors lowercase aliases and sets NODE_USE_ENV_PROXY=1", () => {
-    const extra = childProxyEnv({ HTTP_PROXY: "http://127.0.0.1:7890", ALL_PROXY: "socks5://127.0.0.1:7891" });
-    assert.equal(extra.HTTP_PROXY, "http://127.0.0.1:7890");
-    assert.equal(extra.http_proxy, "http://127.0.0.1:7890");
-    assert.equal(extra.ALL_PROXY, "socks5://127.0.0.1:7891");
-    assert.equal(extra.all_proxy, "socks5://127.0.0.1:7891");
-    assert.equal(extra.NODE_USE_ENV_PROXY, "1");
-  });
-
-  it("keeps NODE_USE_ENV_PROXY=0 when the parent opted out", () => {
-    const extra = childProxyEnv({ NODE_USE_ENV_PROXY: "0" });
-    assert.equal(extra.NODE_USE_ENV_PROXY, "0");
-  });
-});
-
-describe("withChildProxyEnv", () => {
-  it("lets the spawn spec override inherited proxy env", () => {
-    const spec = withChildProxyEnv(
-      { command: "node", env: { NODE_USE_ENV_PROXY: "0" } },
-      { HTTP_PROXY: "http://127.0.0.1:7890" },
-    );
-    assert.equal(spec.env.NODE_USE_ENV_PROXY, "0");
-    assert.equal(spec.env.HTTP_PROXY, "http://127.0.0.1:7890");
-  });
-
-  it("returns non-objects unchanged", () => {
-    assert.equal(withChildProxyEnv(null), null);
-    assert.equal(withChildProxyEnv("bash"), "bash");
-  });
-});
-
-describe("registryProbeList", () => {
-  it("includes npm and modelscope for registry target", () => {
-    const list = registryProbeList({ npm_config_registry: "https://registry.npmmirror.com/" }, "registry");
-    assert.ok(list.some((p) => p.name === "npm"));
-    assert.ok(list.some((p) => p.name === "modelscope"));
-  });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[test/net.test.js:156-218](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/test/net.test.js#L156-L218)
-
-脱敏、代理TCP与/proc注入测试。
-
-<details>
-<summary>查看原文（63行）</summary>
-
-```text
-describe("redactSecretUrl", () => {
-  it("strips userinfo from proxy URLs", () => {
-    assert.equal(redactSecretUrl("http://user:pass@127.0.0.1:7890"), "http://***@127.0.0.1:7890/");
-    assert.equal(redactSecretUrl("http://127.0.0.1:7890"), "http://127.0.0.1:7890");
-  });
-});
-
-describe("redactEnv", () => {
-  it("redacts proxy fields and leaves other keys", () => {
-    const env = redactEnv({
-      HTTP_PROXY: "http://user:secret@127.0.0.1:7890",
-      NODE_USE_ENV_PROXY: "1",
-    });
-    assert.equal(env.HTTP_PROXY, "http://***@127.0.0.1:7890/");
-    assert.equal(env.NODE_USE_ENV_PROXY, "1");
-  });
-});
-
-describe("parseProxyEndpoint / probeProxyListen", () => {
-  it("parses host and port", () => {
-    assert.deepEqual(parseProxyEndpoint("http://127.0.0.1:16006"), {
-      host: "127.0.0.1",
-      port: 16006,
-      protocol: "http",
-    });
-  });
-
-  it("reports closed proxy port via injectable probe", async () => {
-    const listen = await probeProxyListen(
-      { HTTP_PROXY: "http://127.0.0.1:16006" },
-      { probeFn: async () => ({ open: false, error: "timeout" }) },
-    );
-    assert.equal(listen.configured, true);
-    assert.equal(listen.open, false);
-    assert.equal(listen.port, 16006);
-  });
-
-  it("mentions closed proxy in advice", () => {
-    const advice = buildAdvice(
-      { HTTP_PROXY: "http://127.0.0.1:16006", NODE_USE_ENV_PROXY: "1", WSL_DISTRO_NAME: "" },
-      [{ ok: false, name: "deepseek", error: "TypeError: fetch failed" }],
-      "all",
-      true,
-      { configured: true, open: false, host: "127.0.0.1", port: 16006, error: "timeout" },
-    );
-    assert.match(advice, /not accepting TCP/);
-    assert.match(advice, /fetch failed/);
-  });
-});
-
-describe("dsh web process env", () => {
-  it("parses /proc environ and finds pid via injection", () => {
-    const raw = Buffer.from("NODE_USE_ENV_PROXY=1\0HTTP_PROXY=http://127.0.0.1:9\0OTHER=x\0");
-    const parsed = parseProcEnviron(raw);
-    assert.equal(parsed.NODE_USE_ENV_PROXY, "1");
-    assert.equal(parsed.HTTP_PROXY, "http://127.0.0.1:9");
-    assert.equal(findDshWebPid({ pgrepFn: () => "4242\n" }), 4242);
-    const got = readProcEnv(4242, {
-      readFileSyncFn: () => raw,
-    });
-    assert.equal(got.ok, true);
-    assert.equal(got.env.NODE_USE_ENV_PROXY, "1");
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:16-19](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L16-L19)
-
-20秒总预算和5秒单探测默认。
-
-```text
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 20_000);
-  const probeTimeoutMs = positive(config.probeTimeoutMs, 5_000);
-  const injectChildProxy = config.injectChildProxy !== false;
-```
-
-**依据 4 · 源码核查**：[index.js:129-141](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L129-L141)
-
-顺序HTTP后仍做TCP和宿主检查。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-      const target = typeof args?.target === "string" ? args.target : "all";
-      const allowed = new Set(["all", "env", "deepseek", "npm", "registry", "modelscope", "huggingface"]);
-      const selected = allowed.has(target) ? target : "all";
-      const env = readEnv();
-      const probes = [];
-      if (selected === "all" || selected === "deepseek") {
-        probes.push(await probe("deepseek", "https://api.deepseek.com/", exec.signal, probeTimeoutMs));
-      }
-      for (const spec of registryProbeList(env, selected)) {
-        probes.push(await probe(spec.name, spec.url, exec.signal, probeTimeoutMs));
-      }
-      const proxyListen = await probeProxyListen(env, { timeoutMs: Math.min(probeTimeoutMs, 2000) });
-      const dshWeb = inspectDshWebEnv();
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/net.js:154-163](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L154-L163)
-
-同步pgrep最多3秒。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-/** Find newest `dsh web` node pid via injectable pgrepFn(stdout lines). */
-export function findDshWebPid({ pgrepFn } = {}) {
-  try {
-    const out =
-      typeof pgrepFn === "function"
-        ? String(pgrepFn() || "")
-        : execFileSync("pgrep", ["-n", "-f", "node.*/dsh web"], {
-            encoding: "utf8",
-            timeout: 3000,
-          });
-```
-
-</details>
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 什么条件可试用，值得继续讨论的改进是什么？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-建议在个人WSL维护环境有条件试用，优先injectChildProxy=false，只提交去秘密后的报告；确认返回PID与真实宿主对应，并把HTTP ok解释为响应层可达。不得让Agent自动执行修复脚本，也不要把更改NO_PROXY为仅回环当所有企业内网都正确的处方。含代理或registry凭据的环境暂不原样回传，修复脚本也应人工去秘密。源码显示默认包装与敏感脚本输出的组合，限制其作为无感全局常驻诊断工具的适用性。
-
-可继续讨论一个分层诊断与安全修复计划，明确区分TCP、HTTP响应、认证和业务任务，并让修复计划引用本地凭据而非回显，注入以可恢复开关管理。现有基线是手工分层诊断和人工编辑脚本；验证方向是401/429/重定向、双代理、凭据URL、错误PID与卸载场景的固定输入，比较误报、秘密暴露与人工恢复步数。它是研究假设，尚无效果数据，不当作现成功能。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:19-23](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/index.js#L19-L23)
-
-注入默认开启且可禁用。
-
-```text
-  const injectChildProxy = config.injectChildProxy !== false;
-
-  if (injectChildProxy) {
-    installChildProxy(ctx.subprocess);
-    console.log("[dsh-wsl-net] injecting NODE_USE_ENV_PROXY into subprocess env");
-```
-
-**依据 2 · 源码核查**：[lib/net.js:293-306](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L293-L306)
-
-NO_PROXY启发建议与fetch failed归因。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-  if (proxyOn(env) && riskyNoProxy(noProxyVal)) {
-    lines.push(
-      `NO_PROXY looks like Clash RFC1918/wildcards (${redactSecretUrl(noProxyVal) || "set"}) — Node may bypass the proxy incorrectly. Prefer kit restart-dsh-web.sh which sets NO_PROXY=127.0.0.1,localhost only.`,
-    );
-  }
-  if (!proxyOn(env) && failed.length > 0) {
-    lines.push("No HTTP_PROXY/HTTPS_PROXY in this process. If Clash/V2Ray runs on Windows, WSL often needs http://127.0.0.1:<mixed-port> (localhost forwards to Windows).");
-  }
-  if (proxyOn(env) && proxyHonored(env) && failed.length > 0) {
-    lines.push("Proxy env is set and Node should honor it, but a probe still failed. Check that the proxy port is listening and allows api.deepseek.com / the npm registry.");
-  }
-  if (failed.some((p) => /fetch failed|TypeError/i.test(p.error || ""))) {
-    lines.push(
-      "Saw fetch failed / TypeError on a probe — classic Node-24-without-proxy symptom. Prefer restart-dsh-web.sh over guessing VPN toggles.",
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/net.js:330-369](https://github.com/173787247/dsh-wsl-net/blob/c3f0f1cafaa4ee667146cc5bb2f99d3d18fdc47f/lib/net.js#L330-L369)
-
-修复脚本需要人工审阅。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-export function buildFix(env, probes, injectChildProxy) {
-  const steps = [];
-  const scripts = [];
-  const failed = probes.filter((p) => !p.ok);
-  const proxyUrl = env.HTTP_PROXY || env.HTTPS_PROXY || env.ALL_PROXY || "";
-
-  if (proxyOn(env) && !proxyHonored(env)) {
-    steps.push(
-      "Restart the dsh process with NODE_USE_ENV_PROXY=1 so Node 24 fetch (DeepSeek Search / API) honors HTTP(S)_PROXY.",
-    );
-    scripts.push({
-      title: "restart-dsh-with-node-proxy",
-      shell: "bash",
-      code: [
-        `export HTTP_PROXY=${shellQuote(proxyUrl)}`,
-        `export HTTPS_PROXY=${shellQuote(env.HTTPS_PROXY || proxyUrl)}`,
-        "export NODE_USE_ENV_PROXY=1",
-        "# Preferred: kit script also starts the :3081 relay",
-        "bash /mnt/c/Users/$USER/Desktop/AIFullStackDevelopment/dsh-wsl-kit/scripts/restart-dsh-web.sh",
-        "# Or: dsh web --no-open --port 3080",
-      ].join("\n"),
-    });
-    if (injectChildProxy) {
-      steps.push("Child bash/npm already get NODE_USE_ENV_PROXY=1 from this plugin; the dsh host process itself still needs the restart above.");
-    }
-  }
-
-  if (!proxyOn(env) && failed.length > 0) {
-    steps.push("Set HTTP_PROXY/HTTPS_PROXY to your Windows Clash/V2Ray mixed port (typical http://127.0.0.1:7890), then restart dsh with NODE_USE_ENV_PROXY=1.");
-    scripts.push({
-      title: "template-set-proxy-then-start-dsh",
-      shell: "bash",
-      code: [
-        "# Replace 7890 with your Clash/V2Ray mixed port from the Windows tray app.",
-        "export HTTP_PROXY=http://127.0.0.1:7890",
-        "export HTTPS_PROXY=http://127.0.0.1:7890",
-        "export NODE_USE_ENV_PROXY=1",
-        "dsh web",
-      ].join("\n"),
-    });
-```
-
-</details>
-
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+- 分层报告、无凭据计划和还原设计的用户效果未测。
+  **影响**：不能认定改进会降低误诊或恢复成本。
+  **进一步探讨**：按固定故障对照定位/回显/还原结果，失败时分别否定设计。
+
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

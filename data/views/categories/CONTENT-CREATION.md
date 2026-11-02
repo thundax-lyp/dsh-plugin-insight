@@ -21,6 +21,7 @@
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
+| [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
@@ -43,7 +44,7 @@
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
-| [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 中提供小说、短剧、游戏改编与视频解说的创作 Skills 和文件工作台 | [Q04](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q04) 先用已有文本项目试用一次改稿和冲突恢复；不将未核查付费媒体链纳入推荐。 |
+| [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
 | [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
@@ -199,6 +200,22 @@
 > **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 提议操作票据与状态核对，须对照已有 job、txn 和 gate 做故障实验。
 
 [查看完整分析](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1332212466-root"></a>
+
+## [DSH OpenPencil](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md)
+
+[![GitHub ★ 204](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=204&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/dsh-openpencil) [![npm 30d 2,827](https://img.shields.io/static/v1?label=npm+30d&message=2%2C827&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zseven-w/dsh-openpencil) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zseven-w/dsh-openpencil)
+
+> **用途**：需要在DSH对话里生成并继续人工修改设计稿的团队，可以交付.op文档及对应预览。
+
+> **亮点**：[Q01](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q01)、[Q02](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q02) 将可编辑画布、对话预览和owner隔离草稿串成可核查交付链，版本与预览绑定避免把旧截图当当前结果。尚不能证明设计任务质量或工时改善。
+
+> **思考**：[Q02](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q02) exact代表渲染/文档一致，不代表设计符合需求；模型自审收到有界结构digest而非该通道的PNG像素，再finish可接受发布。结构gate和受控修正不能等同用户视觉验收。
+
+> **建议**：[Q04](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q04) 可把brief中的可观察验收项绑定最终图像/节点，经独立审阅与当前digest自审做同预算对照，计误发布和人工修改；这项收益未验证。
+
+[查看完整分析](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1427791087-root"></a>
 
@@ -556,15 +573,15 @@
 
 ## [Oh Story DSH](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md)
 
-[![GitHub ★ 615](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=615&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zenstory-ai/oh-story-dsh)
+[![GitHub ★ 665](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=665&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zenstory-ai/oh-story-dsh)
 
-> **用途**：已有DSH和文件创作习惯的作者，可在同一会话编辑项目、调用上游创作Skill并查看工作台投影。
+> **用途**：已有DSH和文件创作习惯的作者，可在会话旁编辑项目、运行随包上游Skill并查看产物。
 
-> **亮点**：[Q01](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q01) 将上游Skills的脚本资源与DSH原生服务接通；[Q02](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q02) 用版本条件写和冲突选择连接人工编辑与Agent写入。贡献在适配和交互，创作方法及模型运行分别归上游与DSH。
+> **亮点**：[Q01](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q01) 与 [Q02](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q02) 支持把上游资源接入原生服务，并以版本条件保存和冲突交互连接人工/Agent写入；未将上游内容或宿主原子写计作本插件原创。
 
-> **思考**：[Q03](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q03) 的生产工具只产生界面意图，不生成媒体也不算确认；本轮未审全付费适配器，不能把任务板状态或提示词当作计费安全保证。
+> **思考**：[Q03](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q03) 核实任务板成功只代表发现关联输出，生产工具不构成付费确认；脚本虽有精确内容闸门和句柄恢复，仍不能独立证明人类授权、供应商状态或最终质量。
 
-> **建议**：可以提出未验证的文件版本收据。把当前编辑器baseVersion思想推广到剧本、分镜、提示词和最终媒体，产物保存来源文件摘要；源文件改变时先展示哪些后续产物基于旧输入，而不直接再次调用付费生成。这比单看任务板“有文件”更能区分当前可用与过时结果，且保留文件为事实、不引入平行数据库。
+> **建议**：[Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 提议把已有run/fingerprint/句柄与任务板投影并列，帮助区分有文件、可收集、输入过时和已验收；先排查同等能力，若错误决策或追查成本不降就否定。
 
 [查看完整分析](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md) · [返回表格](#category-index)
 
@@ -748,4 +765,4 @@
 
 ## 更新时间
 
-2026-11-01
+2026-11-02

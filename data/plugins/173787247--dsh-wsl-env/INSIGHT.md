@@ -1,18 +1,18 @@
 # dsh-wsl-env
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)
+源码版本：[eb306d3](https://github.com/173787247/dsh-wsl-env/tree/eb306d3c6c2d34050daebee4485c2a390b4bf530)
 
 <!-- BEGIN META -->
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-env)
 <!-- END META -->
 
-> **功能**：检测WSL并给系统提示补发行版、路径映射和跨Windows操作指导，减少环境背景重复说明。
+> **功能**：把 WSL、Windows 路径和 shell 环境说明注入 DSH 系统提示。
 
-> **亮点**：把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 支持自动填充局部环境事实并整合重复说明，降低每个会话手工组织背景的动作；这是提示集成，不是路径转换或安全隔离。
 
-> **主要限制**：固定/mnt/c和always强制可误述环境，排障工具未核存在，工作区提示不等隔离。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) 中always仍写WSL肯定句、路径固定/mnt/c且建议未探测的套件工具，可能让建议被误认成事实；自然语言不能约束真实工具参数。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 什么场景需要环境提示，能改变执行环境吗？](#detail-section-11)
-  - [Q02 · 如何识别环境和用户，启动依赖有哪些？](#detail-section-12)
-  - [Q03 · 哪些提示可能不准确或超出本插件能力？](#detail-section-13)
-  - [Q04 · 测试和运行成本怎样评估？](#detail-section-14)
-  - [Q05 · 采用建议与可验证方向是什么？](#detail-section-15)
+  - [Q01 · 谁用它，较手写提示增加什么？](#detail-section-11)
+  - [Q02 · 检测、账户映射到prompt如何接线，什么会误导？](#detail-section-12)
+  - [Q03 · 依赖、会话更新与全周期成本是什么？](#detail-section-13)
+  - [Q04 · 采用边界与新假设如何验证？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,80 +39,81 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：浏览器在Windows、工具跑WSL的混合工作流。详见[Q01](#research-q01)。
+> **用途**：浏览器在Windows、工具在WSL的DSH用户，可在新会话获得本地发行版和路径背景。
 
-手工环境说明/宿主事实段，本文只评价自动填充。
+手写准确的项目提示是直接替代；已有宿主背景充分或特殊挂载环境不一定从固定建议获益。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| 环境事实段 | WSL/Windows背景 | 不是模型工具 |
-| 路径示例 | 减少盘符误用 | 固定/mnt/c规则 |
-| 套件建议 | 排障顺序 | 不安装或检查工具 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| WSL检测 | 决定默认是否注入 | 信环境变量或kernel，强制模式绕过 |
+| 局部环境填充 | 发行版、Linux用户与Windows账户示例 | 固定/mnt/c布局，不动态刷新 |
+| 系统提示注册 | 给模型shell/路径建议 | 是自然语言，不是执行约束 |
+| 操作员补充 | extraNotes追加自定义说明 | 由用户维护，配置覆盖需核对 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| Node>=18/ESM | 入口 | 版本兼容 |
-| systemPrompt | 注册事实段 | 宿主契约 |
-| WSL变量/内核/目录 | 探测 | 固定规则误差 |
-| 可选套件工具 | 排障建议 | 本插件不检查安装 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| Node>=18与DSH systemPrompt | 启动必需 | ESM加载与段注册 | 当前宿主兼容未验收 |
+| WSL环境信号 | 默认注入必需 | 环境/内核检测 | 非WSL跳过，always会强制描述WSL |
+| /mnt/c/Users布局 | 具体账户示例前提 | 检查候选目录 | 特殊挂载不能自动正确推导 |
+| 套件排障工具 | 只对相应建议必需 | host_reach等排障 | 本插件未安装或探测它们 |
+| 新会话与人工核对 | 背景更新必需 | 确认SYSTEM和实际环境一致 | 旧会话可能保留旧背景 |
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 安装/配置when | 用户 | 实际WSL |
-| 新会话查SYSTEM | 用户 | 用户/映射正确 |
-| 修特殊挂载提示 | 用户 | 与真实路径一致 |
-| 执行仍核命令 | 用户/模型 | 提示无强制性 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 配置 | 用户核when/order/extraNotes | 避免误用always，层覆盖保留必要键 |
+| 加载 | 宿主apply读取环境并注册段 | 默认非WSL跳过 |
+| 使用 | 用户重启并新建会话核SYSTEM | 路径、发行版和实际工具相符 |
+| 退出纠正 | 用户停用或更正并开新会话 | 已发生动作另行恢复，不凭停用回滚 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | Node/宿主 | 核新会话事实 | 需核SYSTEM事实和实际挂载；安装工时未知 |
-| 持续使用 | 固定提示token | 挂载/工具变化维护 | 无网络/后台任务；固定提示增加模型上下文，费用未知 |
-| 失败恢复 | 无插件文件写入；新会话仍使用宿主 | 停用/改提示并新建会话 | 新会话/改配置的人工时间未知；无插件文件回滚 |
-
+|---|---|---|---|
+| 首次使用 | Node与宿主资源 | 配置并核实际路径/SYSTEM | 金额与耗时未知 |
+| 持续使用 | 固定系统提示token | 跟随挂载/工具变化维护 | 无净费用对照，不以本地运行当0 |
+| 失败恢复 | 新会话与已有操作恢复资源 | 停用/纠正提示，核实际环境 | 插件没有文件或外部动作回滚 |
+| 退出 | 会话记录留存 | 移除配置并开新会话 | 已有会话背景需另核 |
 
 #### 效果
 
-| 目标 | 支持 | 边界 |
-| --- | --- | --- |
-| 环境识别 | 变量/kernel | 可继承误报 |
-| 路径指导 | 目录存在后示例 | 固定/mnt/c |
-| 少误操作 | 自然语言提醒 | 无参数/权限约束 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 环境识别 | 环境变量或kernel判断 | 继承信号误报与实际任务效果 |
+| 账户示例 | 检查候选/mnt/c目录 | 自定义挂载自动映射 |
+| shell引导 | 文本偏好Linux工具 | 模型遵守和误操作降低 |
+| 排障说明 | 注入套件工具建议 | 工具是否安装、服务是否可用 |
 
-> **思考**：固定/mnt/c和always强制可误述环境，排障工具未核存在，工作区提示不等隔离。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) 中always仍写WSL肯定句、路径固定/mnt/c且建议未探测的套件工具，可能让建议被误认成事实；自然语言不能约束真实工具参数。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把局部环境事实和常见WSL指导自动填入模型背景。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 支持自动填充局部环境事实并整合重复说明，降低每个会话手工组织背景的动作；这是提示集成，不是路径转换或安全隔离。
 
-依赖注入纯函数易审计，未接网络模式与apply生命周期需区分。详见[Q04](#research-q04)。
+[Q02](#research-q02) 小型纯函数支持注入env/文件读取/目录判断，便于定向核查；入口未使用网络模式函数，移植时应按实际调用而非函数存在判断能力。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-固定/mnt/c和always强制可误述环境，排障工具未核存在，工作区提示不等隔离。详见[Q03](#research-q03)。
+[Q02](#research-q02) 中always仍写WSL肯定句、路径固定/mnt/c且建议未探测的套件工具，可能让建议被误认成事实；自然语言不能约束真实工具参数。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-标准WSL用户核提示后试用，特殊挂载明确纠正。详见[Q05](#research-q05)。
+[Q04](#research-q04) 标准WSL布局用户核SYSTEM后，可在只读路径任务试用；发现环境/路径不符或工具不存在，就纠正或停用并新建会话。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +121,18 @@
 
 **核查状态**：已检查源码。
 
-检测/文本链可查，挂载固定与套件工具未检查，提示不是执行约束。
+已检查全部生产JS、patch与代表测试源码，未运行目标或真实宿主。标准WSL且背景核对一致时可试用；特殊挂载和强制模式需谨慎收窄。新方案为未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/wsl.js、test/wsl.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、index.js、lib/wsl.js、test/wsl.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整入口/环境函数/77行测试及README/package；不扩展研究套件链接或验证外部工具功能。
-- 下一步：对假变量/自定义挂载和缺工具进行事实段误差对照。
+- 边界：全读index.js与lib/wsl.js、bundle和包声明，阅读代表测试设计但未执行。未扩展成整个WSL工具套件或验证代理/本地模型服务；提示中的Node/服务建议只按源文本记录，不作为本轮环境验证。
+- 下一步：对标准/特殊挂载、缺套件和强制非WSL四组，比手写准确提示与现有注入，记录错误路径/工具调用、合格率和检测/token全负担。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-env](https://github.com/173787247/dsh-wsl-env)
-- **版本号**：0.3.0（[固定提交 a674c70](https://github.com/173787247/dsh-wsl-env/tree/a674c704757b733503f224ce2e3cf6ac5d1b6c8a)）
-- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.0（[固定提交 eb306d3](https://github.com/173787247/dsh-wsl-env/tree/eb306d3c6c2d34050daebee4485c2a390b4bf530)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +140,9 @@
 
 <a id="innovation"></a>
 
-分离事实与可选建议，实测挂载/工具存在并比较错误路径率和提示成本，尚未验证。详见[Q05](#research-q05)。
+[Q04](#research-q04) 提议分开已读事实与可选建议，并只在有挂载/工具依据时展示具体引导；若任务误导不降或额外成本抵消收益，则否定，尚未验证。
 
-对假变量/自定义挂载和缺工具进行事实段误差对照。
+对标准/特殊挂载、缺套件和强制非WSL四组，比手写准确提示与现有注入，记录错误路径/工具调用、合格率和检测/token全负担。
 
 <a id="detail-section-9"></a>
 
@@ -150,6 +150,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,74 +163,64 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+created%3A2026-09-22T07%3A05%3A59.283Z..2026-10-22T07%3A05%3A59.283Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A05%3A59.283Z..2026-10-22T07%3A05%3A59.283Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+created%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-env/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-03T02%3A08%3A50.948Z..2026-11-02T02%3A08%3A50.948Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-02。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：WSL提示事实如何生成，软指导/实际探测/执行权限如何区分？
+**插件研究总目标**：检验自动环境提示较手写说明的增量及其误导边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 什么场景需要环境提示，能改变执行环境吗？
+### Q01 · 谁用它，较手写提示增加什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-DSH实际跑WSL而浏览器在Windows时，模型可能错用PowerShell或盘符路径。此插件在systemPrompt增加发行版、Linux用户名、/mnt/c映射、工作区优先和代理/本地模型排障提示，减少每次手工重复背景。它不改shell、不转换工具参数、不挂载路径、不修DNS，也不限制工具权限；“不扫整个Windows目录”只是给模型的自然语言要求。
+它给浏览器在Windows而Agent工具在WSL运行的DSH用户注入环境背景，不提供模型可调用工具。用户反复遇到的具体摩擦是模型把Windows盘符、PowerShell与Linux工具混用。合格结果不是SYSTEM出现一段文字，而是目标文件路径、shell和工作目录在后续任务中正确；没有路径之外的副作用，也不能把系统提示当授权。
 
-基线是用户手工系统提示或宿主自身环境说明，贡献是用局部探测自动填充并统一WSL套件指导。只读源码可确认提示生成，不能由此推出模型遵循率或任务成功提升。对原生Windows/普通Linux默认跳过，适用面聚焦混合WSL用户。
+相对在每个新会话手写WSL说明，插件在apply时获取发行版、Linux用户名并选择可见的Windows用户目录，统一加入路径和shell指导。这是局部事实自动填充与重复提示整合，非路径转换器、命令拦截器或环境沙箱。手工维护一段准确的项目提示仍是直接替代；环境简单且已有宿主背景充分时增量可能只是少写几行。README的“模型经常误认”是作者问题描述，本轮没有独立用户频率或模型对照，不能量化避免误操作的收益。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:39-51](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/README.md#L39-L51)
+**依据 1 · 作者声明**：[README.md:11-20](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/README.md#L11-L20)
 
-作者问题与注入内容。
+作者将其定位为system prompt而非工具。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（10行）</summary>
 
-```text
-The model often assumes a Windows shell (`C:\`, PowerShell) even when the agent runs in Linux/WSL. This plugin adds a short system-prompt section so it prefers Linux paths, understands `/mnt/c`, and knows about Node 24 proxy quirks.
+````text
+## Where it sits
 
-## What gets injected
+Injects WSL and Windows path facts into the system prompt. It is not a tool the model calls.
 
-Kept short on purpose:
-
-- Distro name and Linux user
-- Linux path mapping (`C:\Users\...` → `/mnt/c/Users/...`)
-- CRLF / git caveats on `/mnt/c`
-- Prefer Linux home over the Windows mount for day-to-day work
-- `NODE_USE_ENV_PROXY=1` when Node 24 must use `HTTP(S)_PROXY`
-
-## Install
+```mermaid
+flowchart LR
+  facts["WSL and Windows facts"] --> env["dsh-wsl-env"] --> prompt["system prompt"]
 ```
+
+Suite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.3.0** (daily; also in llm). Do not copy that matrix into this README.
+````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:11-40](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L11-L40)
+**依据 2 · 源码核查**：[index.js:18-32](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L18-L32)
 
-跳过规则及提示文本。
+局部事实、路径与shell指导的实际文本构造。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  const wsl = detectWsl();
-
-  if (when === "wsl" && !wsl) {
-    console.log("[dsh-wsl-env] not running in WSL; skipping prompt injection");
-    return;
-  }
-
   const distro = distroName();
   const linuxUser = os.userInfo().username;
   const windowsUser = resolveWindowsUser(linuxUser);
@@ -244,40 +236,95 @@ Kept short on purpose:
     "- Files under /mnt/c often have CRLF endings. Strip carriage returns before running a script with bash.",
     "- Prefer the current session working directory and /home for git and new files. Do not treat /mnt/c as the daily working tree unless asked.",
     "- Node 24 fetch ignores HTTP_PROXY/HTTPS_PROXY unless NODE_USE_ENV_PROXY=1. Set that when a Node script must use the proxy.",
-    "",
-    "Local LLM on Windows (Ollama / LM Studio / vLLM / Unsloth Desktop):",
-    "- dsh runs in WSL; the inference server often runs on Windows. Use host_reach to find a reachable baseURL (127.0.0.1 vs Windows host IP depends on WSL networking mode).",
-    "- Paste host_reach providerSnippets into ~/.dsh/settings.yaml under llm-pi-ai.providers; export the matching *_API_KEY dummy env vars before dsh web.",
-    "- Ollama: align settings contextWindow with the model's real n_ctx (OLLAMA_NUM_CTX / Modelfile). A settings value of 131072 when Ollama n_ctx=8192 causes API errors.",
-    "- Unsloth Desktop (llama-server, often :8080) is separate from Unsloth Studio; Flash-Next multi-shard GGUF may not load in plain Ollama.",
-    "",
-    "When connectivity fails, run tools in order: host_reach (local LLM) → net_doctor (HTTPS/proxy) → wsl_dns → wsl_clock. See dsh-wsl-kit docs/TROUBLESHOOTING.zh.md.",
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[index.js:47-51](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L47-L51)
+
+真实systemPrompt注册点。
+
+```text
+  ctx.systemPrompt.section({
+    name: "runtime:wsl-windows",
+    order,
+    text,
+  });
+```
+
+#### 缺口
+
+- 没有相同任务在已有宿主提示、手写提示与插件下的错误率资料。
+  **影响**：只能确认整合机制，不能证明降低误操作或节时。
+  **进一步探讨**：固定模型与路径任务，记录错误shell/路径、人工纠正和提示token总量。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 如何识别环境和用户，启动依赖有哪些？
+### Q02 · 检测、账户映射到prompt如何接线，什么会误导？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-detectWsl信任WSL_DISTRO_NAME或WSL_INTEROP任一非空，否则读/proc/sys/kernel/osrelease匹配microsoft；异常返回false。发行版优先WSL_DISTRO_NAME，再取/etc/os-release PRETTY_NAME。Windows用户名从USERPROFILE解析/Users/名，先查该/mnt/c/Users目录，再查Linux同名目录，否则回传profile候选；最终windowsPathRule再查目录，不存在则给泛化name例子。未枚举Windows家目录，不启动子进程。
+package的bundle patch插入dsh-wsl-env，入口注入systemPrompt。when只有精确always会强制，其余按wsl处理；detectWsl先信WSL_DISTRO_NAME/WSL_INTEROP，再读kernel osrelease含microsoft，失败返回false。默认非WSL直接跳过。apply随后读发行版和os.userInfo用户名，优先检查USERPROFILE解析的名字，再查Linux用户名是否有对应/mnt/c/Users目录；路径示例只有目录存在时才带真实名字，否则输出通用name示例。这比盲猜账户有边界，且生产代码没有网络、子进程或文件写入。
 
-Node>=18 ESM，宿主只需systemPrompt服务，没有模型工具、Skill或命令注册。when仅always会强制，其他值皆归wsl；order有限数字否则15，extraNotes转字符串。环境读取发生apply一次，已有会话的实际提示取决宿主提示快照，README建议新会话。when=always在非WSL也会写“运行在WSL”句子，不能将其作准确自动检测保证。
+关键限制是事实与建议混在同一段肯定语气文本。always即使不在WSL也会写“You are running inside Windows Subsystem for Linux”；环境变量继承也可能误报。路径规则固定/mnt/c/Users，不解析实际自动挂载配置，因此自定义挂载不能由它完整识别。额外lib函数readWslNetworkingMode存在但入口没有调用，不能据函数名说已检测网络模式。提示里的host_reach/net_doctor/wsl_dns/wsl_clock来自其他组件，本插件既未注册也未探测；若用户未装套件，模型会收到不可用工具建议。
+
+所有shell偏好和“不扫描整个Windows home”的句子都是自然语言规则，没有检查实际工具参数或权限；它也不会替用户设置代理变量、修复CRLF、配置模型或恢复文件。lib测试以可注入env/读文件/exists验证若干纯函数场景，未覆盖整个apply在真实宿主的新会话行为，本轮只读测试源码而未执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/wsl.js:4-48](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/lib/wsl.js#L4-L48)
+**依据 1 · 源码核查**：[cordis.patch.yml:1-7](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/cordis.patch.yml#L1-L7)
 
-检测/发行版/目录映射。
+bundle默认配置。
+
+```text
+- insert:
+    - id: dsh-wsl-env
+      name: dsh-wsl-env
+      config:
+        when: wsl
+        order: 15
+        extraNotes: ""
+```
+
+**依据 2 · 源码核查**：[index.js:4-20](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L4-L20)
+
+注入声明、默认跳过和apply时事实采集。
 
 <details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（17行）</summary>
+
+```text
+export const name = "dsh-wsl-env";
+export const inject = ["systemPrompt"];
+
+export function apply(ctx, config = {}) {
+  const when = config.when === "always" ? "always" : "wsl";
+  const extra = String(config.extraNotes ?? "").trim();
+  const order = Number.isFinite(config.order) ? config.order : 15;
+  const wsl = detectWsl();
+
+  if (when === "wsl" && !wsl) {
+    console.log("[dsh-wsl-env] not running in WSL; skipping prompt injection");
+    return;
+  }
+
+  const distro = distroName();
+  const linuxUser = os.userInfo().username;
+  const windowsUser = resolveWindowsUser(linuxUser);
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/wsl.js:4-36](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/lib/wsl.js#L4-L36)
+
+检测和固定挂载映射的完整边界。
+
+<details>
+<summary>查看原文（33行）</summary>
 
 ```text
 export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
@@ -313,8 +360,18 @@ export function windowsPathRule(user, { exists = existsSync } = {}) {
     return `A Windows path such as C:\\Users\\${user}\\project is ${linuxHome}/project in this environment.`;
   }
   return "A Windows path such as C:\\Users\\name\\project is /mnt/c/Users/name/project in this environment.";
-}
+```
 
+</details>
+
+**依据 4 · 源码核查**：[lib/wsl.js:39-60](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/lib/wsl.js#L39-L60)
+
+发行版回退与未由入口调用的网络模式函数。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
 export function distroName({ env = process.env, readOsReleaseFile = readEtcOsRelease } = {}) {
   if (env.WSL_DISTRO_NAME) return env.WSL_DISTRO_NAME;
   try {
@@ -325,146 +382,30 @@ export function distroName({ env = process.env, readOsReleaseFile = readEtcOsRel
     // /etc/os-release is missing on some test hosts
   }
   return "WSL";
-```
-
-</details>
-
-**依据 2 · 源码核查**：[index.js:4-20](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L4-L20)
-
-注入服务/配置。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-export const name = "dsh-wsl-env";
-export const inject = ["systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  const when = config.when === "always" ? "always" : "wsl";
-  const extra = String(config.extraNotes ?? "").trim();
-  const order = Number.isFinite(config.order) ? config.order : 15;
-  const wsl = detectWsl();
-
-  if (when === "wsl" && !wsl) {
-    console.log("[dsh-wsl-env] not running in WSL; skipping prompt injection");
-    return;
-  }
-
-  const distro = distroName();
-  const linuxUser = os.userInfo().username;
-  const windowsUser = resolveWindowsUser(linuxUser);
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:47-52](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L47-L52)
-
-固定section提交。
-
-```text
-  ctx.systemPrompt.section({
-    name: "runtime:wsl-windows",
-    order,
-    text,
-  });
 }
-```
 
-**依据 4 · 源码核查**：[package.json:14-18](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/package.json#L14-L18)
-
-运行入口与Node。
-
-```text
-  "type": "module",
-  "main": "index.js",
-  "engines": {
-    "node": ">=18"
-  },
-```
-
-**依据 5 · 作者声明**：[README.md:65-67](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/README.md#L65-L67)
-
-新会话说明。
-
-```text
-3. Search for `Windows Subsystem for Linux`.
-
-You should see the distro name and path mapping. The UI concatenates sections, so the internal id `runtime:wsl-windows` may not appear as a heading.
-```
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 哪些提示可能不准确或超出本插件能力？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-环境变量是提示启发式，继承错误WSL变量可误报，when=always会主动略过实际判断。映射固定/mnt/c，不能反映自定义automount root或不同系统盘；目录存在只说明该路径可见，不证明它对应当前Windows登录者。Linux用户名由os.userInfo获取，失效无局部catch可能阻止apply，其他读取大多有降级。
-
-Node24 fetch代理、本地模型上下文和Unsloth等内容是固定指导，不是运行期探测；建议host_reach/net_doctor/wsl_dns/wsl_clock但不检查这些工具是否安装。没有配套工具时提示会指向不可用能力。不得把这段指导当已经核过网络/模型，亦不得把软性的工作区要求当隔离。额外notes及用户名/发行版直接进系统提示，操作者应可信；用户和宿主仍负责工具执行权限与敏感路径。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/wsl.js:4-12](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/lib/wsl.js#L4-L12)
-
-环境变量信任。
-
-```text
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) {
-    return true;
-  }
+/** Reads networkingMode from /etc/wsl.conf when present (mirrored | nat | unknown). */
+export function readWslNetworkingMode({ readFile = readFileSync } = {}) {
   try {
-    return /microsoft/i.test(readRelease());
+    const text = readFile("/etc/wsl.conf", "utf8");
+    const m = text.match(/^\s*networkingMode\s*=\s*(\w+)/im);
+    if (m) return m[1].toLowerCase();
   } catch {
-    return false;
+    /* ignore */
   }
-```
-
-**依据 2 · 源码核查**：[lib/wsl.js:22-37](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/lib/wsl.js#L22-L37)
-
-固定挂载规则。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function resolveWindowsUser(linuxUser, { env = process.env, exists = existsSync } = {}) {
-  const fromProfile = userFromWindowsHome(env.USERPROFILE);
-  const names = [...new Set([fromProfile, linuxUser].filter(Boolean))];
-  for (const name of names) {
-    if (exists(`/mnt/c/Users/${name}`)) return name;
-  }
-  return fromProfile || "";
-}
-
-export function windowsPathRule(user, { exists = existsSync } = {}) {
-  const linuxHome = user ? `/mnt/c/Users/${user}` : "";
-  if (user && exists(linuxHome)) {
-    return `A Windows path such as C:\\Users\\${user}\\project is ${linuxHome}/project in this environment.`;
-  }
-  return "A Windows path such as C:\\Users\\name\\project is /mnt/c/Users/name/project in this environment.";
-}
+  return "unknown";
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:18-40](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L18-L40)
+**依据 5 · 源码核查**：[index.js:22-40](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L22-L40)
 
-用户读取与固定指导。
+始终WSL句子与套件工具建议。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-  const distro = distroName();
-  const linuxUser = os.userInfo().username;
-  const windowsUser = resolveWindowsUser(linuxUser);
-  let text = [
     `You are running inside Windows Subsystem for Linux (${distro}) as ${linuxUser}.`,
     "The browser may be on Windows, but tools and the shell run in Linux.",
     "",
@@ -488,34 +429,14 @@ export function windowsPathRule(user, { exists = existsSync } = {}) {
 
 </details>
 
-<a id="research-q04"></a>
+**依据 6 · 源码核查**：[test/wsl.test.js:5-35](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/test/wsl.test.js#L5-L35)
 
-<a id="detail-section-14"></a>
-
-### Q04 · 测试和运行成本怎样评估？
-
-**研究主题**：效果与总成本、工程质量与复用
-
-#### 完整回答
-
-测试直接导入生产检测/映射函数，用注入env、读文件和exists覆盖变量优先、kernel匹配、缺文件降级、用户候选和泛化映射，结构轻便且不依赖宿主。未覆盖实际apply注册/清理、非WSL强制文本、自定义挂载或模型遵循。readWslNetworkingMode虽提供却未被index使用，不能声称本插件探测后动态选NAT/mirrored路径。本次不执行测试。
-
-首次安装并检查新会话SYSTEM段，按本地挂载/配套工具修extraNotes；持续为少量同步环境文件检查和固定系统提示token，没有网络/后台任务，也无独立模型调用费用。每次模型请求携带该段可能增加上下文token，未给可量化节省。失败恢复改配置或停用并新建会话，无本插件文件写入回滚；宿主section生命周期由宿主负责，apply未显式保存disposer。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[test/wsl.test.js:1-77](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/test/wsl.test.js#L1-L77)
-
-生产函数依赖注入测试。
+已有纯函数断言是测试设计，不是本轮运行结果。
 
 <details>
-<summary>查看原文（77行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-import assert from "node:assert/strict";
-import { describe, it } from "node:test";
-import { detectWsl, distroName, resolveWindowsUser, userFromWindowsHome, windowsPathRule } from "../lib/wsl.js";
-
 describe("detectWsl", () => {
   it("trusts WSL_DISTRO_NAME", () => {
     assert.equal(detectWsl({ env: { WSL_DISTRO_NAME: "Ubuntu-24.04" }, readRelease: () => { throw new Error("unused"); } }), true);
@@ -547,113 +468,200 @@ describe("windowsPathRule", () => {
     assert.match(text, /C:\\Users\\name\\project/);
     assert.match(text, /\/mnt\/c\/Users\/name\/project/);
   });
-});
-
-describe("userFromWindowsHome", () => {
-  it("reads the Windows username from USERPROFILE", () => {
-    assert.equal(userFromWindowsHome("C:\\Users\\alice"), "alice");
-    assert.equal(userFromWindowsHome("/mnt/c/Users/alice"), "alice");
-    assert.equal(userFromWindowsHome(""), "");
-  });
-});
-
-describe("resolveWindowsUser", () => {
-  it("prefers USERPROFILE when that Windows home is mounted", () => {
-    const name = resolveWindowsUser("linuxuser", {
-      env: { USERPROFILE: "C:\\Users\\alice" },
-      exists: (p) => p === "/mnt/c/Users/alice",
-    });
-    assert.equal(name, "alice");
-  });
-
-  it("falls back to the Linux username when that home is mounted", () => {
-    const name = resolveWindowsUser("alice", {
-      env: {},
-      exists: (p) => p === "/mnt/c/Users/alice",
-    });
-    assert.equal(name, "alice");
-  });
-});
-
-describe("distroName", () => {
-  it("prefers WSL_DISTRO_NAME", () => {
-    assert.equal(distroName({ env: { WSL_DISTRO_NAME: "Ubuntu-24.04" }, readOsReleaseFile: () => { throw new Error("unused"); } }), "Ubuntu-24.04");
-  });
-
-  it("reads PRETTY_NAME from os-release when the env var is missing", () => {
-    const text = 'NAME="Ubuntu"\nPRETTY_NAME="Ubuntu 24.04.3 LTS"\n';
-    assert.equal(distroName({ env: {}, readOsReleaseFile: () => text }), "Ubuntu 24.04.3 LTS");
-  });
-
-  it("falls back to WSL when os-release is missing", () => {
-    assert.equal(distroName({ env: {}, readOsReleaseFile: () => { throw new Error("ENOENT"); } }), "WSL");
-  });
-});
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/wsl.js:50-60](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/lib/wsl.js#L50-L60)
+#### 缺口
 
-网络模式函数未接入口。
+- 自定义挂载、继承环境和缺套件时的真实模型行为未知。
+  **影响**：自然语言可能被模型当成已探测事实，影响命令选择。
+  **进一步探讨**：用标准WSL、非WSL强制、自定义挂载和仅单装插件四种环境，对照实际SYSTEM文本与工具可用性。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 依赖、会话更新与全周期成本是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+启动依赖Node>=18的ESM和宿主systemPrompt接口，具体DSH最低版本/最新验证是README作者兼容说明，不是本轮宿主验收。默认只在WSL注入，extraNotes会直接追加操作员说明；配置层若整对象替换，需按README重述保留键，不能以漏字段猜测覆盖效果。文本在apply时构造，没有事件监听或定时刷新；README要求重启dsh web并开新会话，已有会话保留旧prompt。因此挂载、用户名、模型服务或工具变化后，操作者要重新核对当前会话实际背景，而不是认为每次工具调用会重新探测。
+
+首次负担是安装配置、核SYSTEM背景和实际挂载；持续负担是固定提示占用上下文和同步环境变化，文本包含本地模型及排障建议，单装用户也会承担不适用说明的token。没有API金额、对照任务或测量，不把本地读取和MIT许可证解释为零总成本。失败退路是停用/更正配置并开新会话，再人工核实际环境；插件不执行回滚，已按错误提示发生的文件或远端副作用仍由用户恢复。退出前保留会话和用户文件，对提示配置作可逆变更即可，不能把关闭插件当撤销既有命令。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:13-19](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/package.json#L13-L19)
+
+ESM入口与Node版本声明。
+
+```text
+  "homepage": "https://github.com/173787247/dsh-wsl-env#readme",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+```
+
+**依据 2 · 源码核查**：[index.js:7-20](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L7-L20)
+
+只在apply计算事实。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
+export function apply(ctx, config = {}) {
+  const when = config.when === "always" ? "always" : "wsl";
+  const extra = String(config.extraNotes ?? "").trim();
+  const order = Number.isFinite(config.order) ? config.order : 15;
+  const wsl = detectWsl();
 
-/** Reads networkingMode from /etc/wsl.conf when present (mirrored | nat | unknown). */
-export function readWslNetworkingMode({ readFile = readFileSync } = {}) {
-  try {
-    const text = readFile("/etc/wsl.conf", "utf8");
-    const m = text.match(/^\s*networkingMode\s*=\s*(\w+)/im);
-    if (m) return m[1].toLowerCase();
-  } catch {
-    /* ignore */
+  if (when === "wsl" && !wsl) {
+    console.log("[dsh-wsl-env] not running in WSL; skipping prompt injection");
+    return;
   }
-  return "unknown";
+
+  const distro = distroName();
+  const linuxUser = os.userInfo().username;
+  const windowsUser = resolveWindowsUser(linuxUser);
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:47-52](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L47-L52)
+**依据 3 · 源码核查**：[index.js:43-51](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L43-L51)
 
-直接注册section。
+extraNotes直接追加并注册静态段。
 
 ```text
+  if (extra) {
+    text += `\n\nAdditional operator notes:\n${extra}`;
+  }
+
   ctx.systemPrompt.section({
     name: "runtime:wsl-windows",
     order,
     text,
   });
-}
 ```
 
-<a id="research-q05"></a>
+**依据 4 · 作者声明**：[README.md:53-67](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/README.md#L53-L67)
 
-<a id="detail-section-15"></a>
+作者安装后重启、新会话及SYSTEM核查说明。
 
-### Q05 · 采用建议与可验证方向是什么？
+<details>
+<summary>查看原文（15行）</summary>
 
-**研究主题**：新假设与验证、采用判断
+````text
+```sh
+dsh plugin --profile web add github:173787247/dsh-wsl-env
+# or:
+dsh plugin --profile web add /absolute/path/to/dsh-wsl-env
+```
+
+Restart `dsh web`. Open a **new** session (existing sessions keep the old prompt).
+
+## Verify
+
+1. Send any message.
+2. Trajectory → **SYSTEM** → **System Prompt** (not the Tools tab).
+3. Search for `Windows Subsystem for Linux`.
+
+You should see the distro name and path mapping. The UI concatenates sections, so the internal id `runtime:wsl-windows` may not appear as a heading.
+````
+
+</details>
+
+**依据 5 · 作者声明**：[README.md:73-88](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/README.md#L73-L88)
+
+配置整对象替换提醒与选项。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+````text
+Later profile layers that set `config` **replace the whole object**—restate every key you keep:
+
+```yaml
+- id: dsh-wsl-env
+  name: dsh-wsl-env
+  config:
+    when: wsl          # or: always
+    order: 15
+    extraNotes: "Prefer /home over /mnt/c for new files."
+```
+
+| Key | Default | Meaning |
+|-----|---------|---------|
+| `when` | `wsl` | Inject only in WSL, or `always` |
+| `order` | `15` | Prompt section order |
+| `extraNotes` | `""` | Extra operator notes appended to the section |
+````
+
+</details>
+
+#### 缺口
+
+- 缺少提示新增token、用户维护时间和错误命令恢复投入。
+  **影响**：无法计算单位合格任务成本或证明配置负担更小。
+  **进一步探讨**：按相同任务记录首次配置、持续上下文和失败纠正总投入；先核新旧会话差异。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 采用边界与新假设如何验证？
+
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
-标准/mnt/c的WSL用户可试用这段轻量提示，核发行版/用户例子与实际工作目录，确认提到的工具已装；自定义挂载在extraNotes明确替代，非WSL不要用always伪造环境。它适合少重复解释环境，不承担路径安全或网络修复。
+标准/mnt/c布局的WSL用户，在确认SYSTEM与实际环境一致后可小范围试用，先做无副作用的路径读取与shell选择任务。仅需要一段固定说明或使用自定义挂载的人，可先继续维护手写项目提示；always不应被当作探测开关，它是强制注入。发现发行版/路径不符或模型反复调用未安装套件工具，就停用或纠正说明并开新会话，实际操作仍按当前工作区授权。
 
-可进一步研究“事实段”和“可选套件建议”分离，挂载信息实测而非固定路径、工具存在时才加排障链，并给事实来源和版本。基线为当前固定段，反例包括继承假WSL变量、重映射盘、自定义用户名、缺套件工具以及环境变化后的旧会话。比较错误shell/路径调用率、提示token和人工纠正次数；尚无对照，创新在可核实上下文维护而非新的WSL机制。
+可验证假设是把“已经读取的事实”和“可选工作建议”分开，只在挂载或工具存在性有依据时附具体路径和排障步骤。推导来自Q02的固定挂载、always肯定句与不可用工具提示，不能说现有代码没有目录存在检查；真正增量是发现实际挂载和工具范围，并显式输出未知。最小对照用标准WSL、自定义挂载、仅安装本插件与非WSL强制四组，固定模型和路径任务，比较当前提示、人工准确提示和事实/建议分离版本。观察错误路径/不可用工具次数、任务合格率、额外检测延迟与token、维护负担。若分离版本没有减少误导或动态探测成本超过收益，就否定其价值；这个方案尚未实现，不能计为现有贡献。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:21-40](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/index.js#L21-L40)
+**依据 1 · 源码核查**：[lib/wsl.js:22-36](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/lib/wsl.js#L22-L36)
 
-事实和建议混合基线。
+已存在目录检查，假设需在此基线上增加实际挂载范围。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  let text = [
+export function resolveWindowsUser(linuxUser, { env = process.env, exists = existsSync } = {}) {
+  const fromProfile = userFromWindowsHome(env.USERPROFILE);
+  const names = [...new Set([fromProfile, linuxUser].filter(Boolean))];
+  for (const name of names) {
+    if (exists(`/mnt/c/Users/${name}`)) return name;
+  }
+  return fromProfile || "";
+}
+
+export function windowsPathRule(user, { exists = existsSync } = {}) {
+  const linuxHome = user ? `/mnt/c/Users/${user}` : "";
+  if (user && exists(linuxHome)) {
+    return `A Windows path such as C:\\Users\\${user}\\project is ${linuxHome}/project in this environment.`;
+  }
+  return "A Windows path such as C:\\Users\\name\\project is /mnt/c/Users/name/project in this environment.";
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:22-40](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L22-L40)
+
+肯定WSL文本与工具建议是具体问题来源。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
     `You are running inside Windows Subsystem for Linux (${distro}) as ${linuxUser}.`,
     "The browser may be on Windows, but tools and the shell run in Linux.",
     "",
@@ -677,32 +685,22 @@ export function readWslNetworkingMode({ readFile = readFileSync } = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/wsl.js:22-37](https://github.com/173787247/dsh-wsl-env/blob/a674c704757b733503f224ce2e3cf6ac5d1b6c8a/lib/wsl.js#L22-L37)
+**依据 3 · 源码核查**：[index.js:47-51](https://github.com/173787247/dsh-wsl-env/blob/eb306d3c6c2d34050daebee4485c2a390b4bf530/index.js#L47-L51)
 
-映射基线。
-
-<details>
-<summary>查看原文（16行）</summary>
+当前一个段的组织方式。
 
 ```text
-export function resolveWindowsUser(linuxUser, { env = process.env, exists = existsSync } = {}) {
-  const fromProfile = userFromWindowsHome(env.USERPROFILE);
-  const names = [...new Set([fromProfile, linuxUser].filter(Boolean))];
-  for (const name of names) {
-    if (exists(`/mnt/c/Users/${name}`)) return name;
-  }
-  return fromProfile || "";
-}
-
-export function windowsPathRule(user, { exists = existsSync } = {}) {
-  const linuxHome = user ? `/mnt/c/Users/${user}` : "";
-  if (user && exists(linuxHome)) {
-    return `A Windows path such as C:\\Users\\${user}\\project is ${linuxHome}/project in this environment.`;
-  }
-  return "A Windows path such as C:\\Users\\name\\project is /mnt/c/Users/name/project in this environment.";
-}
+  ctx.systemPrompt.section({
+    name: "runtime:wsl-windows",
+    order,
+    text,
+  });
 ```
 
-</details>
+#### 缺口
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+- 事实/建议分离方案未实现，尚无用户结果。
+  **影响**：不能预先保证动态探测或额外文本有净收益。
+  **进一步探讨**：先以准确人工提示作上界对照，再比较改动与现有方案的任务结果和全部开销。
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

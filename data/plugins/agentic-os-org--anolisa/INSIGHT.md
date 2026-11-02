@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[6f04450](https://github.com/agentic-os-org/ANOLISA/tree/6f0445082738b8206f0aad37cf0af92b58bd7a15)
+源码版本：[c60fe30](https://github.com/agentic-os-org/ANOLISA/tree/c60fe3047ed8d7623f82de67d8d65a2e7615b332)
 
 <!-- BEGIN META -->
-[![GitHub ★ 641](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=641&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentic-os-org/ANOLISA)
+[![GitHub ★ 650](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=650&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/agentic-os-org/ANOLISA)
 <!-- END META -->
 
-> **功能**：基于既有操作系统，为 Agent 提供上下文、技能、工作区恢复、安全与观测组件的软件栈。
+> **功能**：为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把选择性压缩、恢复能力和宿主工具结果生命周期接合，给系统优化明确失败退路；不将根栈全部主张算成已核实现。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持将工具生命周期、来源分类和可恢复压缩接合的贡献；根项目负责系统能力组合，压缩器和宿主原能力归属分别保留。
 
-> **主要限制**：[Q03](#research-q03) 压缩率不能代替合格任务净费用，marker恢复依赖同一CLI与状态；所查AgentSight仅status，不能据active声称完整轨迹或安全约束已启用。
+> **主要限制**：[Q02](#research-q02) 的格式与节省仲裁不能证明任务敏感信息保持，取回还依赖CLI与状态存续；[Q03](#research-q03) 因而不能从压缩率推净费用，更不能从status推全栈安全或轨迹已工作。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 根项目是什么，系统栈贡献如何限定？](#detail-section-11)
-  - [Q02 · Tokenless怎样压缩工具结果并保留恢复退路？](#detail-section-12)
-  - [Q03 · 观测、安全及总成本有哪些不能扩大解释的边界？](#detail-section-13)
-  - [Q04 · 谁值得试用哪个子能力，怎样证伪净收益？](#detail-section-14)
+  - [Q01 · 根项目是什么，DSH 适配提供哪项相对增量？](#detail-section-11)
+  - [Q02 · 工具结果怎样进入压缩，失败后保留什么？](#detail-section-12)
+  - [Q03 · 如何接入并维持可恢复，成本与效果怎样判断？](#detail-section-13)
+  - [Q04 · 采用边界和可证伪的新方向是什么？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Agent平台开发者希望在保留现有宿主时接入底层输出优化等能力，本轮以DSH工具输出为具体任务。
+> **用途**：维护 Agent 运行环境的开发者可保留原宿主，并按任务接入系统能力；本次具体检查 DSH 大工具输出的选择性压缩。
 
-保留原工具全文或手工截短；DSH适配不等同完整OS栈和所有治理组件。
+原文模式和手工裁剪是本次直接基线；没有同任务效果对照，不把系统栈的全部宣传当作相对优势。
 
 <a id="detail-section-3"></a>
 
@@ -50,65 +50,72 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| Tokenless结果适配 | 选择性压缩成功单文本输出 | 需本地CLI，失败保留原文 |
-| 恢复条件检查 | 确保marker命令匹配压缩CLI | 不证明端到端恢复已验 |
-| AgentSight状态 | 查询插件版本和active | 仅status，不证明轨迹采集 |
+|---|---|---|
+| 工具结果后处理 | 把适用的成功单文本交Core | 尊重宿主策略，子工具与不支持形状旁路 |
+| 选择性压缩 | 对受支持输出生成较短候选 | 仲裁不证明任务语义保持 |
+| 原文恢复条件映射 | 让CLI与shell共享状态位置 | 需同一CLI与可用stash，未实测取回 |
+| 配置接入driver | 委托DSH CLI处理显式profile | detect仅检查CLI存在 |
+| AgentSight状态 | 报告子插件版本与active | capabilities仅status，不等于完整轨迹 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| DSH工具钩子与shellEnv | 适配必需 | 截获并替换结果 | 无法介入 |
-| Tokenless CLI与可写状态 | 压缩必需 | 运行格式管线与stash | 失败放行原结果 |
-| 同文件retrieve命令 | marker恢复必需 | 模型取回原文 | 不应启用不可恢复marker |
+|---|---|---|---|
+| DSH tools/shellEnv接口 | 适配必需 | 后置事件与恢复环境 | CLI被发现不等于接口可用 |
+| Tokenless可执行CLI及协议2 | 压缩必需 | 本地Core处理 | 进程/协议失败保原文 |
+| 可写状态目录与同一CLI身份 | 可恢复策略必需 | stash与后续retrieve | 未验证实际取回时不视为可恢复 |
+| 明确profile配置 | 接入必需 | 宿主CLI管理加载范围 | 不猜默认profile，核收据 |
+| 真实任务与原文对照 | 评估必需 | 判断语义与净费用 | 不凭压缩率宣称增效 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 开发者隔离profile并固定CLI | 压缩与retrieve身份一致 |
-| 工具完成 | 适配只处理合格成功文本 | 其他结果原样放行 |
-| 压缩恢复 | CLI返回applied才替换 | 需要时精确取回原文 |
-| 验收退出 | 用户核答案与总成本 | 不合格关闭压缩 |
+|---|---|---|
+| 配对 | 开发者固定宿主、CLI和状态目录 | 核CLI身份、权限和目标profile |
+| 接入 | 系统driver委托宿主CLI加载选择的bundle | 核实际配置与事件，status不够 |
+| 处理 | 适配在工具后发送协议，Core选择性压缩 | applied才替换，失败保原decision |
+| 验收 | 用户比较答案、原文取回与完整费用 | 有内容损失或无净收益则关闭 |
+| 退出 | 用户移除所选适配，先保留需要的stash | 不先删除唯一原文再尝试恢复 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 系统CLI与本地stash | 版本、权限和profile配置 | 耗时未知 |
-| 持续使用 | 工具后子进程、存储及模型token | 核格式和任务正确性 | 实际净费用未知 |
-| 失败恢复 | retrieve和重复推理资源 | 检查marker及保留原文 | 完整恢复未实测 |
+|---|---|---|---|
+| 首次使用 | CLI与本地状态存储 | 固定版本、profile与权限 | 金额/耗时未知 |
+| 持续使用 | 工具后进程、stash、必要取回和模型重试 | 核最终任务正确性和容量 | 净模型费用与存储增长未知 |
+| 失败恢复 | 保留原文、诊断与重复任务 | 判断旁路、恢复marker与状态位置 | 失败耗时和恢复成功率未测 |
+| 退出 | 历史stash存储 | 核配置范围与历史原文需求 | 清理与恢复保留周期未验证 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 选择性压缩 | 文件/错误/小输入等可放行 | 各格式任务语义保持 |
-| 恢复条件 | CLI身份检查及stash接口 | 真实原文取回与全成本 |
-| 观测适配 | agentsight_status可报告active | 完整轨迹和安全效果 |
+|---|---|---|
+| 选择性压缩 | 状态/来源/能力检查与节省仲裁 | 任务语义保持和合格率 |
+| 故障退路 | CLI/协议失败保原结果 | 每类系统异常与资源残留 |
+| 原文恢复前提 | 同CLI身份和状态环境映射 | 实际shell权限和长期取回 |
+| 观测入口 | agentsight_status报告status | 完整轨迹、安全治理或全栈启用 |
 
-> **思考**：[Q03](#research-q03) 压缩率不能代替合格任务净费用，marker恢复依赖同一CLI与状态；所查AgentSight仅status，不能据active声称完整轨迹或安全约束已启用。
+> **思考**：[Q02](#research-q02) 的格式与节省仲裁不能证明任务敏感信息保持，取回还依赖CLI与状态存续；[Q03](#research-q03) 因而不能从压缩率推净费用，更不能从status推全栈安全或轨迹已工作。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持把选择性压缩、恢复能力和宿主工具结果生命周期接合，给系统优化明确失败退路；不将根栈全部主张算成已核实现。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持将工具生命周期、来源分类和可恢复压缩接合的贡献；根项目负责系统能力组合，压缩器和宿主原能力归属分别保留。
 
-[Q02](#research-q02) 先尊重后续策略decision、协议校验失败保原文和压缩/恢复CLI身份匹配值得借鉴；移植要保持工具来源、进程和状态边界。
+[Q02](#research-q02) 先尊重waterfall决定、传输失败保原文、压缩与恢复CLI身份配对值得借鉴；移植时须重核宿主的来源分类、取消、shell权限和状态所有权。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 压缩率不能代替合格任务净费用，marker恢复依赖同一CLI与状态；所查AgentSight仅status，不能据active声称完整轨迹或安全约束已启用。
+[Q02](#research-q02) 的格式与节省仲裁不能证明任务敏感信息保持，取回还依赖CLI与状态存续；[Q03](#research-q03) 因而不能从压缩率推净费用，更不能从status推全栈安全或轨迹已工作。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 限Tokenless隔离试用，完整恢复与任务费用都合格才继续，不据status启用全栈治理。
+[Q04](#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。
 
 <a id="detail-section-7"></a>
 
@@ -116,18 +123,18 @@
 
 **核查状态**：已检查源码。
 
-Tokenless DSH钩子到CLI运行时有源码支持；各格式语义、完整恢复和系统栈其他能力未验。
+固定源码支持DSH Tokenless有界机制判断与试用，未运行目标或真实宿主；其余根栈组件未全面审计。任务回执是未实现、未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/tokenless/adapters/tokenless/dsh/dist/index.js、src/tokenless/crates/tokenless-cli/src/main.rs、src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs、src/agentsight/dsh-plugin/src/index.ts、src/agentsight/dsh-plugin/README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/tokenless/adapters/tokenless/dsh/dist/index.js、src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs、src/tokenless/crates/tokenless-runtime/src/post_tool/arbitration.rs、src/agentsight/dsh-plugin/src/index.ts、distribution/anolisa/crates/anolisa-core/src/adapter/dsh.rs、src/tokenless/adapters/tokenless/dsh/cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根基础设施限定核DSH Tokenless钩子、CLI入口、部分Rust pipeline和AgentSight status；其他安全/快照/技能组件未核。
-- 下一步：比较同工具结果压缩关/开，核字段依赖、原文恢复、失败放行及全部模型/进程成本；未执行。
+- 边界：根inventory保留全组件范围与排除项；本轮定向核DSH Tokenless、Rust Core关键pipeline/仲裁、driver及AgentSight status，不代表安全、记忆、快照等全部组件已核查。dist入口虽被统计启发式排除，实际为当前适配交付路径，已单独读取并保存固定正文。
+- 下一步：同任务比较原文、当前策略和带任务回执策略，记录完整合格率、取回与净费用，并插入CLI/状态变化反例；此处是后续方案，未执行。
 
 **分析版本**
 
 - **仓库**：[agentic-os-org/ANOLISA](https://github.com/agentic-os-org/ANOLISA)
-- **版本号**：未声明（[固定提交 6f04450](https://github.com/agentic-os-org/ANOLISA/tree/6f0445082738b8206f0aad37cf0af92b58bd7a15)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 c60fe30](https://github.com/agentic-os-org/ANOLISA/tree/c60fe3047ed8d7623f82de67d8d65a2e7615b332)）
+- **版本日期**：2026-11-02（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,9 +142,9 @@ Tokenless DSH钩子到CLI运行时有源码支持；各格式语义、完整恢�
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提出任务敏感字段和恢复可用性的压缩回执，未验证；如果不能保持正确性与净费用，则否定相应压缩策略。
+[Q04](#research-q04) 的任务字段与实际恢复探针回执是待验证增量；与已有仲裁对照，只有同时改善合格任务质量且总负担可接受才成立。
 
-比较同工具结果压缩关/开，核字段依赖、原文恢复、失败放行及全部模型/进程成本；未执行。
+同任务比较原文、当前策略和带任务回执策略，记录完整合格率、取回与净费用，并插入CLI/状态变化反例；此处是后续方案，未执行。
 
 <a id="detail-section-9"></a>
 
@@ -146,56 +153,56 @@ Tokenless DSH钩子到CLI运行时有源码支持；各格式语义、完整恢�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 684 | 157831 | — | — | 1414593 |
-| .js | source | 45 | 11402 | 9185 | 1425 | — |
-| .js | test | 6 | 2193 | 2027 | 40 | — |
-| .ts | test | 421 | 162077 | 133721 | 9095 | — |
-| .ts | source | 635 | 147941 | 110656 | 23231 | — |
+| .md | source | 728 | 157993 | — | — | 1409641 |
+| .js | source | 50 | 11781 | 9529 | 1434 | — |
+| .js | test | 8 | 2832 | 2631 | 47 | — |
+| .ts | test | 423 | 162457 | 134069 | 9103 | — |
+| .ts | source | 635 | 147991 | 110700 | 23229 | — |
 | .tsx | test | 60 | 24618 | 20041 | 1824 | — |
-| .tsx | source | 193 | 46320 | 40094 | 3347 | — |
+| .tsx | source | 193 | 46374 | 40148 | 3347 | — |
 | .md | example | 26 | 1961 | — | — | 212281 |
 | .ts | example | 1 | 60 | 50 | 6 | — |
-| .mjs | test | 22 | 7256 | 6701 | 191 | — |
+| .mjs | test | 22 | 7307 | 6750 | 191 | — |
 | .md | test | 8 | 1531 | — | — | 16862 |
-| .mjs | example | 42 | 5592 | 5351 | 71 | — |
-| .cjs | test | 33 | 8216 | 6908 | 674 | — |
-| .mjs | source | 32 | 4482 | 4110 | 144 | — |
+| .mjs | example | 60 | 8949 | 8517 | 102 | — |
+| .cjs | test | 33 | 8441 | 7120 | 674 | — |
+| .mjs | source | 37 | 5715 | 5188 | 248 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 771](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=771&color=737b86&logo=github)](https://github.com/agentic-os-org/ANOLISA/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2,364](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2%2C364&color=737b86&logo=github)](https://github.com/agentic-os-org/ANOLISA/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 1,636](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C636&color=737b86&logo=github)](https://github.com/agentic-os-org/ANOLISA/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
-
-
-
-统计日期：2026-10-27。
+Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [GitHub Issues](https://github.com/agentic-os-org/ANOLISA/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：系统优化怎样接入DSH且保持工具结果可恢复和能力边界？
+**插件研究总目标**：核查多组件系统栈通过 DSH 接入的工具输出优化路径及可恢复、采用边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 根项目是什么，系统栈贡献如何限定？
+### Q01 · 根项目是什么，DSH 适配提供哪项相对增量？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-ANOLISA是建立在既有OS上的多组件基础设施，面向运行Agent的开发者和平台团队，提供上下文、技能、工作区恢复、安全和观测等组合方向；不是一个可以凭根目录安装就全部启用的DSH插件。本轮限定研究DSH的Tokenless工具输出适配与AgentSight状态工具，其他系统组件只记作者范围。相对手工压缩长工具输出、分别配置底层工具，贡献可追到系统CLI与宿主生命周期的接合；不能把安全徽章、镜像目录或“OS”名称当完整运行隔离和全部能力验收。
+ANOLISA 根项目是面向 Agent 工作负载的多组件基础设施，不是一个直接加载就能启用全栈能力的原生 DSH 插件。README 声明上下文、技能、工作区恢复、安全和观测等组件，DSH 只是可接入的宿主之一。本轮把“保留 DSH 的工具和模型工作流，对大量成功工具输出作选择性压缩并保留取回路径”作为具体研究任务。目标用户是维护 Agent 运行环境的平台或开发者；合格结果必须是最终任务正确、需要的原文能取回、故障保留可解释退路，不能只看文本变短。
+
+相对让模型自己概括工具输出或用户手工裁剪，源码适配在工具完成后统一传递状态、来源和可替换/恢复能力给本地 Tokenless CLI，并只在 Core 接受时替换单文本结果。这是生命周期接合与失败退路的具体增量，不证明它优于所有宿主原生压缩。保留原文是最简单基线，输出本来很短或依赖完整源码时也可能更合适。压缩算法归属 Rust Core 与专用压缩器，不把依赖和根栈所有声明算作 DSH 插件自身的新贡献。用户的真实重复频率、人工裁剪代价和端到端收益没有直接数据。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:34-47](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/README.md#L34-L47)
+**依据 1 · 作者声明**：[README.md:34-47](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/README.md#L34-L47)
 
-作者定义系统栈和既有OS归属。
+根项目自己将其定义为多组件系统栈。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -219,127 +226,169 @@ by integrating their own system software optimized for Agent workloads into ANOL
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:100-129](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/README.md#L100-L129)
+**依据 2 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:343-386](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L343-L386)
 
-通过适配启用系统能力的任务。
+宿主适配发送状态、来源、替换与恢复能力。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
-### 1.3 Enable ANOLISA for an existing Agent
-
-If you want to keep using an existing Agent application, framework, or harness,
-you can enable ANOLISA's headless system capabilities in its runtime environment
-through adapters and plugins. You can continue using the Agent's interface,
-model account, and workflow.
-
-For the currently available workflow, see [installation and adapter integration](https://agentic-os.sh/docs/user-guide/getting-started/installation/).
-
-<a id="why-anolisa"></a>
-
-## 2. Why ANOLISA?
-
-**ANOLISA is a system software stack that enhances Agent applications,
-frameworks, and harnesses without replacing them.**
-
-When Agents plan tasks and call tools, they also need their runtime environments
-to provide context management, Skill discovery, action constraints, and execution
-records. ANOLISA improves an Agent's working environment in the following ways:
-
-- **Keep context for useful information.** Tool output compression shortens
-  lengthy results. Persistent memory lets Agents retrieve and reuse information
-  across sessions, reducing repeated reads.
-- **Find system Skills for the task.** Agents can consult OS instructions and
-  discover and read the Skills they need for a task.
-- **Constrain actions and recover workspace changes.** Security policies and
-  underlying isolation mechanisms constrain Agent actions. Workspace snapshots
-  let users inspect file changes and roll them back when needed.
-- **Understand how a task ran.** You can inspect an Agent's model and tool calls,
-  trajectories, and Token usage to investigate task failures and analyze runtime
+/** Build one operation request from the DSH execution boundary. */
+function postToolRequest(
+  exec,
+  config,
+  content,
+  status,
+  origin,
+  replaceOutput,
+  resultKind,
+  retrievalAvailable,
+) {
+  const attribution = {
+    agent_id: String(valueOr(config, 'agentId', DEFAULT_AGENT_ID)),
+  }
+  if (typeof exec.agent?.id === 'string' && exec.agent.id.length > 0) {
+    attribution.session_id = exec.agent.id
+  }
+  if (typeof exec.callId === 'string' && exec.callId.length > 0) {
+    attribution.tool_use_id = exec.callId
+  }
+  const input = {
+    result_kind: resultKind,
+    tool_name: exec.name,
+    content,
+    status,
+    content_origin: origin,
+    output_optimization: 'none',
+    capabilities: {
+      replace_output: replaceOutput,
+      recovery: { kind: retrievalAvailable ? "shell" : "none" },
+      replace_with_text: replaceOutput,
+    },
+  }
+  // Core reports a plain file print (`cat page.html`) as file_read from the
+  // command line, so the page stays verbatim while data still compresses.
+  if (origin === 'command_output' && typeof exec.arguments?.command === 'string') {
+    input.command = exec.arguments.command
+  }
+  return {
+    protocol_version: 2,
+    operation: 'post_tool',
+    attribution,
+    input,
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:1-8](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L1-L8)
+**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:445-468](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L445-L468)
 
-DSH适配依赖本地Tokenless CLI。
+成功单文本且 Core 明确 applied 才替换。
 
-```text
-/**
- * Native Tokenless plugin for DeepSeek Harness (dsh).
- *
- * This entry intentionally has no dsh runtime imports. DSH supplies the
- * Cordis event types at runtime, while the only process boundary is the
- * installed Tokenless CLI. Keeping the entry dependency-free lets ANOLISA
- * install one self-contained bundle without running npm in $DSH_HOME.
- */
-```
-
-**依据 4 · 源码核查**：[src/agentsight/dsh-plugin/src/index.ts:44-50](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/agentsight/dsh-plugin/src/index.ts#L44-L50)
-
-所查AgentSight适配仅返回status。
+<details>
+<summary>查看原文（24行）</summary>
 
 ```text
-    async execute() {
+    if (status === 'success') {
+      if (!compressionEnabled || exec.parent !== undefined) return decision
+      const effectiveContent = decision.content ?? result.content
+      const content = singleText(effectiveContent)
+      if (content === undefined) return decision
+      const retrieveResult = isTokenlessRetrieveCommand(exec.name, exec.arguments)
+      const request = postToolRequest(
+        exec,
+        config,
+        content,
+        status,
+        contentOrigin(exec.name),
+        true,
+        retrieveResult ? 'retrieve' : 'tool',
+        !retrieveResult && tokenlessRetrieveCommandAvailable(config),
+      )
+      const response = await runPostTool(request, exec, config)
+      if (response?.disposition !== 'applied' || typeof response.output !== 'string') {
+        return decision
+      }
       return {
-        plugin: 'agentsight',
-        version: pkg.version as string,
-        active: true,
-        capabilities: ['status'],
+        ...decision,
+        content: [{ type: 'text', text: response.output }],
       }
 ```
+
+</details>
+
+#### 缺口
+
+- 缺少具体平台用户反复遇到的大输出任务与基线费用数据。
+  **影响**：场景和机制明确，但需求强度与增效不能由根栈规模推出。
+  **进一步探讨**：保留固定任务与原文，比较不压缩、手工裁剪和适配策略的合格任务结果及全费用。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · Tokenless怎样压缩工具结果并保留恢复退路？
+### Q02 · 工具结果怎样进入压缩，失败后保留什么？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-DSH tools/post-execute waterfall先取得其他策略decision，只在accept、未中止且单文本成功结果时压缩，嵌套工具与已替换成功值跳过，避免覆盖其他策略。适配经execFile调用tokenless compress，传协议v2 JSON，默认3秒与缓冲上限，执行或响应校验失败返回undefined，继续原decision；只有disposition=applied才替换给模型的正文。CLI解析请求并分派Rust运行时，pipeline把文件内容、错误、小输入和不支持内容原样放行。恢复能力开启前检查compress所选CLI和PATH上retrieve是同一文件，减少给模型一个无法取回的marker。这里核实的是选择性输出替换和进程失败退路，不是所有压缩语义等价或恢复已运行通过。
+真实入口是 tools/post-execute 事件。适配先 await next，尊重后续策略的拒绝和 signal 取消；若其他策略替换了 value，正常结果不再压缩，失败值只附加诊断。成功路径只接受恰好一个文本块，跳过子工具，向 tokenless compress 以 JSON stdin 发送协议版本2的 post_tool 请求。默认进程时限3000ms、输出缓冲2MiB，解析异常、协议或操作不匹配都返回 undefined，调用方保留原 decision；返回 applied 且 output 为字符串才替换内容。这支持“传输和协议失败保原结果”，不能外推为“任何压缩都语义无损”。
+
+Core 在输入超限、错误输出、文件内容、小输入或无可用内容策略时直接放行原文；最终仲裁要求字符和估计 token 都减少，并在 require_reversibility 开启时拒绝不可恢复候选。可恢复策略需要宿主提供 recovery 能力和 stash。适配比较压缩 CLI 与 PATH 中 tokenless 的文件 dev/ino 是否相同，防止压缩和后续取回调用不同文件；它还将工作区本地状态路径传给 CLI 和 shell 环境。这个检查提供有力防护，但不等于未来 shell 权限、状态存续和实际 retrieve 都已经验证。
+
+最影响贡献成立的是“模型拿到更短文本后仍能完成同一合格任务”。结构化校验和 token 估计都没有判断任务所需字段是否被保留；因此高压缩率不能单独证明价值。另一个边界是所查 AgentSight DSH 工具仅返回 active=true 和 capabilities=[status]，这只证明状态入口被调用，不能借此宣称完整调用轨迹或安全约束已经启用，也不否认根栈其他独立组件可能有这些能力。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:156-173](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L156-L173)
+**依据 1 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:409-437](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L409-L437)
 
-压缩与恢复CLI身份匹配。
+先尊重 waterfall 决定，value替换时不覆盖正常结果。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-/** Require compression and Marker recovery to invoke the same CLI file. */
-function tokenlessRetrieveCommandAvailable(config) {
-  const markerBinary = executableOnPath('tokenless')
-  if (markerBinary === undefined) return false
-  const selected = tokenlessBinary(config)
-  const selectedBinary = isAbsolute(selected)
-    ? selected
-    : (selected.includes('/') ? resolve(selected) : executableOnPath(selected))
-  if (selectedBinary === undefined) return false
-  try {
-    accessSync(selectedBinary, constants.X_OK)
-    const markerStat = statSync(markerBinary)
-    const selectedStat = statSync(selectedBinary)
-    return selectedStat.isFile()
-      && markerStat.dev === selectedStat.dev
-      && markerStat.ino === selectedStat.ino
-  } catch {
-    return false
+  ctx.on('tools/post-execute', async (exec, result, next) => {
+    // DSH post-execute is a waterfall; later policies own the final projection.
+    const decision = await next()
+    if (decision.kind !== 'accept' || exec.signal?.aborted) return decision
+
+    const toolName = exec.name.toLowerCase()
+    const isCommand = COMMAND_TOOLS.has(toolName)
+    const replacesValue = Object.prototype.hasOwnProperty.call(decision, 'value')
+    const effectiveValue = replacesValue ? decision.value : result.value
+    const structuredFailure = isCommand && commandFailed(effectiveValue)
+
+    if (replacesValue) {
+      if (!structuredFailure) return decision
+      const content = failureText(undefined, effectiveValue)
+      const request = postToolRequest(
+        exec,
+        config,
+        content,
+        'error',
+        'command_output',
+        false,
+        'tool',
+        false,
+      )
+      const response = await runPostTool(request, exec, config)
+      const diagnostic = response?.disposition === 'tool_error'
+        ? response.additional_context
+        : undefined
+      return withDiagnostic(decision, diagnostic)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:297-339](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L297-L339)
+**依据 2 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:297-340](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L297-L340)
 
-子进程边界、时限与协议校验。
+子进程、时限、输出上限和协议失败退路。
 
 <details>
-<summary>查看原文（43行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
 /** Execute a child process with bounded output and explicit stdin. */
@@ -385,54 +434,19 @@ async function runPostTool(request, exec, config) {
     return result
   } catch {
     return undefined
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:409-468](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L409-L468)
+**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:445-468](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L445-L468)
 
-真实钩子、跳过条件和输出替换。
+成功替换的严格条件。
 
 <details>
-<summary>查看原文（60行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-  ctx.on('tools/post-execute', async (exec, result, next) => {
-    // DSH post-execute is a waterfall; later policies own the final projection.
-    const decision = await next()
-    if (decision.kind !== 'accept' || exec.signal?.aborted) return decision
-
-    const toolName = exec.name.toLowerCase()
-    const isCommand = COMMAND_TOOLS.has(toolName)
-    const replacesValue = Object.prototype.hasOwnProperty.call(decision, 'value')
-    const effectiveValue = replacesValue ? decision.value : result.value
-    const structuredFailure = isCommand && commandFailed(effectiveValue)
-
-    if (replacesValue) {
-      if (!structuredFailure) return decision
-      const content = failureText(undefined, effectiveValue)
-      const request = postToolRequest(
-        exec,
-        config,
-        content,
-        'error',
-        'command_output',
-        false,
-        'tool',
-        false,
-      )
-      const response = await runPostTool(request, exec, config)
-      const diagnostic = response?.disposition === 'tool_error'
-        ? response.additional_context
-        : undefined
-      return withDiagnostic(decision, diagnostic)
-    }
-
-    const abortCode = result?.isError === true ? result.error?.info?.code : undefined
-    const interrupted = INTERRUPTED_CODES.has(abortCode)
-    const failed = result?.isError === true || structuredFailure
-    const status = interrupted ? 'interrupted' : (failed ? 'error' : 'success')
-
     if (status === 'success') {
       if (!compressionEnabled || exec.parent !== undefined) return decision
       const effectiveContent = decision.content ?? result.content
@@ -461,103 +475,45 @@ async function runPostTool(request, exec, config) {
 
 </details>
 
-**依据 4 · 源码核查**：[src/tokenless/crates/tokenless-cli/src/main.rs:647-677](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/crates/tokenless-cli/src/main.rs#L647-L677)
+**依据 4 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:156-174](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L156-L174)
 
-CLI请求解析及stash开启条件。
+CLI文件身份一致性检查。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-fn run_command(command: Commands) -> Result<(), (String, i32)> {
-    match command {
-        Commands::Compress { file, stash_db } => {
-            let input = read_input(&file).map_err(|e| (e, 2))?;
-            // Undecodable or version-mismatched requests carry no content to
-            // echo, so no fail-open response can be built: exit 2.
-            let request = RequestEnvelope::from_json(&input).map_err(|e| (e.to_string(), 2))?;
-
-            // PostTool dry-runs still open the configured store to verify that
-            // recovery is available. The pipeline substitutes an in-memory
-            // store for candidate generation, so the persistent store receives
-            // no Stash entries while the original result is emitted.
-            let config = TokenlessConfig::load();
-            let database_paths = DatabasePathResolver::default();
-            let compression_on = config.is_compression_enabled();
-            let needs_stash = match &request.request {
-                Request::BeforeModel(value) => {
-                    compression_on
-                        && matches!(
-                            value.capabilities.recovery,
-                            tokenless_protocol::RecoveryMethod::Tool { .. }
-                        )
-                }
-                Request::PostTool(value) => value.capabilities.recovery.is_available(),
-                Request::Retrieve(_) => true,
-                Request::PreTool(_) => false,
-            };
-            let stash = needs_stash
-                .then(|| open_stash_store_or_err_with(&database_paths, stash_db.as_deref()))
-                .transpose()
-                .map_err(|error| (error, 1))?;
+/** Require compression and Marker recovery to invoke the same CLI file. */
+function tokenlessRetrieveCommandAvailable(config) {
+  const markerBinary = executableOnPath('tokenless')
+  if (markerBinary === undefined) return false
+  const selected = tokenlessBinary(config)
+  const selectedBinary = isAbsolute(selected)
+    ? selected
+    : (selected.includes('/') ? resolve(selected) : executableOnPath(selected))
+  if (selectedBinary === undefined) return false
+  try {
+    accessSync(selectedBinary, constants.X_OK)
+    const markerStat = statSync(markerBinary)
+    const selectedStat = statSync(selectedBinary)
+    return selectedStat.isFile()
+      && markerStat.dev === selectedStat.dev
+      && markerStat.ino === selectedStat.ino
+  } catch {
+    return false
+  }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/tokenless/crates/tokenless-cli/src/main.rs:709-734](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/crates/tokenless-cli/src/main.rs#L709-L734)
+**依据 5 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs:63-82](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs#L63-L82)
 
-实际dispatch及无节省说明。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-            let outcome = dispatch_with_store(
-                &request,
-                &EntryOptions {
-                    compression_enabled: compression_on,
-                    search_path_sharing_enabled: env_flag(
-                        "TOKENLESS_SEARCH_PATH_SHARING_ENABLED",
-                        true,
-                    ),
-                    diff_compression_enabled: env_flag("TOKENLESS_DIFF_COMPRESSION_ENABLED", false),
-                    html_extraction_enabled: env_flag("TOKENLESS_HTML_EXTRACTION_ENABLED", true),
-                    stash_enabled: true,
-                    rtk_path,
-                    rtk_data_dir,
-                },
-                stash.as_ref(),
-                recorder.as_ref(),
-            )
-            .map_err(|error| (error.to_string(), 1))?;
-            if let Response::PostTool(response) = &outcome.response.response
-                && response.disposition == Disposition::NoSavings
-            {
-                warn_soft("tokenless: compression did not reduce size, outputting original");
-            }
-
-            let response_json = outcome.response.to_json().map_err(|e| (e.to_string(), 1))?;
-            write_stdout(&response_json)?;
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs:55-81](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs#L55-L81)
-
-原样放行文件、错误和小输入。
+输入、错误、文件内容与短结果的原文旁路。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-impl PostToolPipeline {
-    pub(crate) fn run(
-        request: &PostToolRequest,
-        config: &PostToolPipelineConfig,
-        stash_store: Option<&Arc<dyn StashStore>>,
-    ) -> PostToolRun {
-        let started = Instant::now();
-
         if request.content.len() > config.max_input_bytes {
             let mut run = passthrough(
                 request,
@@ -577,72 +533,146 @@ impl PostToolPipeline {
             || request.content.chars().count() < config.min_input_chars
         {
             return passthrough(request, before_tokens, content_type);
+        }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs:129-150](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs#L129-L150)
+**依据 6 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/arbitration.rs:26-48](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/crates/tokenless-runtime/src/post_tool/arbitration.rs#L26-L48)
 
-不适配内容不压缩及恢复存储选择。
+最终仲裁核节省、可逆策略和超时，但并不验任务语义。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-        if !diff_candidate
-            && !html_candidate
-            && !json_candidate
-            && !build_log_candidate
-            && !tabular_candidate
-            && !search_candidate
-        {
-            return passthrough(request, before_tokens, content_type);
-        }
-
-        let dry_run_store = (!config.compression_enabled
-            && config.stash_enabled
-            && request.capabilities.recovery.is_available()
-            && stash_store.is_some())
-        .then(InMemoryStore::new);
-        let attached_store: Option<&dyn StashStore> =
-            if config.stash_enabled && request.capabilities.recovery.is_available() {
-                if config.compression_enabled {
-                    stash_store.map(AsRef::as_ref)
-                } else {
-                    dry_run_store.as_ref().map(|store| store as &dyn StashStore)
-                }
+pub(super) fn decide(input: &ArbitrationInput<'_>) -> Verdict {
+    if input.timed_out {
+        return Verdict::Reject(Disposition::Timeout);
+    }
+    if !input.has_operations {
+        return Verdict::Reject(Disposition::NoSavings);
+    }
+    if input.require_reversibility && input.recoverability == Recoverability::Unrecoverable {
+        return Verdict::Reject(Disposition::RecoverabilityUnavailable);
+    }
+    let saves_chars = input.candidate.chars().count() < input.original.chars().count();
+    let original_tokens = estimate_tokens(input.original);
+    let candidate_tokens = estimate_tokens(input.candidate);
+    let saves_tokens = candidate_tokens < original_tokens
+        && original_tokens - candidate_tokens >= input.min_token_savings;
+    if !(saves_chars && saves_tokens) {
+        return Verdict::Reject(Disposition::NoSavings);
+    }
+    if input.dry_run {
+        Verdict::DryRun
+    } else {
+        Verdict::Apply
+    }
 ```
 
 </details>
+
+**依据 7 · 源码核查**：[src/agentsight/dsh-plugin/src/index.ts:44-50](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/agentsight/dsh-plugin/src/index.ts#L44-L50)
+
+观测工具仅报告status，不能等同完整轨迹。
+
+```text
+    async execute() {
+      return {
+        plugin: 'agentsight',
+        version: pkg.version as string,
+        active: true,
+        capabilities: ['status'],
+      }
+```
 
 #### 缺口
 
-- 各格式压缩的语义保持与完整取回未逐一验证
-  **影响**：不能以字节减少当任务正确率不变
-  **进一步探讨**：固定CLI与宿主，用需要被裁掉字段的任务检验retrieve和最终答案
+- 没有任务敏感字段保留、真实取回或宿主加载结果。
+  **影响**：只能支持有条件的压缩机制分析，不能证明合格率和恢复成功。
+  **进一步探讨**：固定CLI与状态目录，在失败、权限变化和需要原文的任务中记录实际取回及最终答案正确性。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 观测、安全及总成本有哪些不能扩大解释的边界？
+### Q03 · 如何接入并维持可恢复，成本与效果怎样判断？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、工程质量与复用
 
 #### 完整回答
 
-压缩需要本地Tokenless CLI和DSH shellEnv/post-execute接口，恢复还需同一CLI、可写stash及模型能执行精确retrieve。适配默认在工作区.tokenless写状态和忽略文件，因此不只是无状态显示优化，仍要维护本地数据与备份。模型上下文可能变短，但每次工具结束增加子进程、token估计、存储及可能的恢复调用，不能用字节或估计token直接计算实际账单下降。AgentSight当前所查DSH插件只注册agentsight_status并返回active=true、capabilities=[status]；这证明插件工具面，不证明采集模型/工具轨迹或有效安全约束，完整AgentSight服务与安全组件未核。
+系统接入不应绕过宿主配置所有权。当前 Rust DSH driver 把 bundle 当包清单与 patch 数据，注释明确所有 profile 变更委托 DSH CLI，并用收据记录显式选择的 profile。detect 只检查 PATH 中 DSH CLI，不能把 detected 解释为所有 Tokenless、权限或安全组件已工作。压缩适配自身无 DSH 运行时 import，但依赖宿主提供 tools 与 shellEnv 事件接口、本地可执行 tokenless、正确协议以及可写状态目录。默认 .tokenless 位于会话 cwd 或进程工作目录，下发状态与数据库覆盖字段，创建目录和 .gitignore；无权限时保原结果而非完成压缩。
+
+首次成本是安装与版本配对、profile 选择、CLI身份和存储权限核对；持续成本是每次适用工具后的进程、压缩计算、stash和统计存储，以及模型必要时取回原文产生的额外调用。原文保存也带来敏感工具输出的本地存储责任，不能把 .gitignore 当访问控制或自动清理承诺。适配传入 signal 与时限，但未测进程、数据库和任务中断后的全部状态；失败诊断可能增加上下文，压缩失败保原文仍有进程时间开销。
+
+合格任务成本必须包含原工具执行、压缩、取回、重试和人工排错，按相同任务质量分母比较。当前只有静态节省判据和旁路，不具备足够运行数据计算净费用、节时率或ROI。退出应先关闭压缩/移除已选择 profile 中的适配并保存需要的 stash；先删原文库会让历史 marker失去恢复基础。现有状态收据有助于确定配置范围，但具体 disable 和历史恢复操作本轮未运行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:82-120](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L82-L120)
+**依据 1 · 源码核查**：[distribution/anolisa/crates/anolisa-core/src/adapter/dsh.rs:1-7](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/distribution/anolisa/crates/anolisa-core/src/adapter/dsh.rs#L1-L7)
 
-工作区状态目录和gitignore写入。
-
-<details>
-<summary>查看原文（39行）</summary>
+接入生命周期与收据范围的设计依据。
 
 ```text
+//! DeepSeek Harness (`dsh`) native plugin driver.
+//!
+//! dsh owns profile configuration and plugin registration. ANOLISA therefore
+//! treats a bundle as immutable package data (`package.json` plus the
+//! `dsh.bundle.patch` file) and delegates every profile mutation to the dsh
+//! plugin CLI. A single receipt records all explicitly selected profiles so
+//! disable and status never guess an implicit profile.
+```
+
+**依据 2 · 源码核查**：[distribution/anolisa/crates/anolisa-core/src/adapter/dsh.rs:107-127](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/distribution/anolisa/crates/anolisa-core/src/adapter/dsh.rs#L107-L127)
+
+detect只检查CLI及配置读取范围。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    fn probe_bundle(&self, resource_root: &Path, _declared_entry: Option<&str>) -> bool {
+        read_dsh_bundle(resource_root).is_ok()
+    }
+
+    fn detect(&self, _env: &HostEnv) -> DetectResult {
+        match dsh_program_path() {
+            Some(path) => DetectResult {
+                detected: true,
+                reason: format!("dsh CLI found at {}", path.display()),
+            },
+            None => DetectResult {
+                detected: false,
+                reason: "dsh CLI not found on PATH".to_string(),
+            },
+        }
+    }
+
+    fn allowed_external_roots(&self, ctx: &DriverCtx) -> Vec<PathBuf> {
+        // Profile manifests are read for status and idempotent cleanup, while
+        // all profile mutations remain delegated to the dsh CLI.
+        dsh_home(ctx.user_home.as_deref()).into_iter().collect()
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:75-120](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L75-L120)
+
+CLI选择、默认工作区状态目录与ignore创建。
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+/** Resolve the executable without installing or mutating a DSH profile. */
+function tokenlessBinary(config) {
+  const configured = valueOr(config, 'tokenlessBin', undefined)
+  if (typeof configured === 'string' && configured.length > 0) return configured
+  return process.env.TOKENLESS_BIN || 'tokenless'
+}
+
 /** Keep Core and DSH's sandboxed shell on the same writable state directory. */
 function tokenlessDataDir(exec) {
   const configured = process.env.TOKENLESS_DATA_DIR
@@ -686,12 +716,37 @@ function prepareTokenlessDataDir(exec) {
 
 </details>
 
-**依据 2 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:318-339](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L318-L339)
+**依据 4 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:123-135](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L123-L135)
 
-子进程限制及失败放行。
+向恢复shell发布状态覆盖字段。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（13行）</summary>
+
+```text
+/** Publish the state overrides that DSH strips from model shell commands. */
+function tokenlessShellEnvironment(exec) {
+  const environment = {
+    [DSH_TOKENLESS_DATA_DIR]: tokenlessDataDir(exec),
+  }
+  for (const [source, target] of [
+    ['TOKENLESS_STATS_DB', DSH_TOKENLESS_STATS_DB],
+    ['TOKENLESS_STASH_DB', DSH_TOKENLESS_STASH_DB],
+  ]) {
+    const value = process.env[source]
+    if (typeof value === 'string' && value.length > 0) environment[target] = value
+  }
+  return environment
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:318-340](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L318-L340)
+
+故障旁路仍会付出进程执行时间。
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
 /** Run one PostTool operation and reject malformed transport responses. */
@@ -716,148 +771,158 @@ async function runPostTool(request, exec, config) {
     return result
   } catch {
     return undefined
+  }
 ```
 
 </details>
-
-**依据 3 · 源码核查**：[src/agentsight/dsh-plugin/src/index.ts:14-50](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/agentsight/dsh-plugin/src/index.ts#L14-L50)
-
-DSH观测工具只有状态响应。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-export function apply(ctx: Context) {
-  ctx.tools.register({
-    name: 'agentsight_status',
-    description:
-      'Report AgentSight observability plugin status. Call this to confirm the plugin is active and get version info.',
-    parameters: {
-      type: 'object',
-      properties: {},
-      required: [],
-    },
-    output: {
-      schema: {
-        type: 'object',
-        properties: {
-          plugin: { type: 'string' },
-          version: { type: 'string' },
-          active: { type: 'boolean' },
-          capabilities: { type: 'array', items: { type: 'string' } },
-        },
-        required: ['plugin', 'version', 'active', 'capabilities'],
-      },
-      render: (_args, value) => {
-        // The host validates this value against output.schema before rendering.
-        const result = value as { version: string; active: boolean }
-        return [{
-          type: 'text',
-          text: `AgentSight v${result.version} — ${result.active ? 'active' : 'inactive'}`,
-        }]
-      },
-    },
-    async execute() {
-      return {
-        plugin: 'agentsight',
-        version: pkg.version as string,
-        active: true,
-        capabilities: ['status'],
-      }
-```
-
-</details>
-
-**依据 4 · 作者声明**：[src/agentsight/dsh-plugin/README.md:21-25](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/agentsight/dsh-plugin/README.md#L21-L25)
-
-作者也只列status能力。
-
-```text
-## Capabilities
-
-| Tool | Description |
-|------|-------------|
-| `agentsight_status` | Report plugin status and version |
-```
 
 #### 缺口
 
-- 净模型账单、进程延迟及存储生命周期未知
-  **影响**：不能承诺净省token或更低端到端成本
-  **进一步探讨**：计算含恢复与失败的全部模型调用、CPU和人工修正
-- 完整安全与轨迹服务未覆盖
-  **影响**：不能把根栈主张当本轮已实现证据
-  **进一步探讨**：按所需组件另固定入口、策略执行与轨迹落盘链
+- 没有任务级压缩/取回总费用、存储增长和恢复耗时记录。
+  **影响**：不能断言省钱、低成本或退出无损。
+  **进一步探讨**：以相同工具结果和任务，记录进程时延、原文命中、模型重试与存储增长，并演练禁用后历史原文取回。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 谁值得试用哪个子能力，怎样证伪净收益？
+### Q04 · 采用边界和可证伪的新方向是什么？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：采用判断、新假设与验证
 
 #### 完整回答
 
-能固定DSH与Tokenless二进制、管理本地stash的开发者，可在隔离profile中只试工具输出压缩，不把整个栈投入生产治理。未验证方向是把压缩候选、恢复可用性与任务所需字段一起放进结果回执，按合格任务净费用而非压缩率决定启用；现有选择性放行与恢复身份检查提供基础，但任务敏感字段判据尚无证明。固定同模型和工具结果比较压缩关闭/开启，包含失败日志、文件内容、小输入、marker恢复和原文故障，验收答案正确及精确取回，并计全部调用与时延。若字段损失、marker取不回或净成本上升，关闭压缩并保留原始工具结果；不因status active便开启未核安全组件。
+对已维护 DSH 运行环境、能固定 CLI 和保存原文的开发者，Tokenless 这一有界链路可以在可恢复任务副本中试用；根栈不能作为一个“全组件已验收”的整体直接采用。先选日志或结构化大输出任务，以原文模式为对照，人工检查最终答案以及模型需要时能否取回同一原文。若关键字段丢失、取回失败、超时旁路频发或完整费用不降，应关闭压缩并回到原结果，不继续以压缩率辩护。没有独立恢复条件的敏感或关键决策任务不适合先压再赌模型能补回。
+
+可推导的未验证方向是给每次 applied 输出附带“本任务所依赖字段与实际恢复探针”的回执。现有 Core 已有节省、可逆性和时限仲裁，适配也验证CLI身份，所以不能说它没有质量和恢复控制；增量在于由任务验收约束补足通用压缩检查，并在状态目录或CLI环境变化时确认取回能力。回执本身增加 token、本地调用和维护量，需要一并测量。最小实验用同一任务集，对照现有策略、原文和加入回执的策略，插入stash缺失、CLI变更、文件/命令分类差异与模型需追问原文的反例。观察最终合格率、错误判断、取回次数、端到端费用和人工复核时间；若回执不能改善任务结果或开销抵消节省，则否定该方案。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:445-468](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/adapters/tokenless/dsh/dist/index.js#L445-L468)
+**依据 1 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/arbitration.rs:26-48](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/crates/tokenless-runtime/src/post_tool/arbitration.rs#L26-L48)
 
-可开关压缩且只替换已应用结果。
+已有仲裁是新假设的明确基线，不是完全缺控制。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-    if (status === 'success') {
-      if (!compressionEnabled || exec.parent !== undefined) return decision
-      const effectiveContent = decision.content ?? result.content
-      const content = singleText(effectiveContent)
-      if (content === undefined) return decision
-      const retrieveResult = isTokenlessRetrieveCommand(exec.name, exec.arguments)
-      const request = postToolRequest(
-        exec,
-        config,
-        content,
-        status,
-        contentOrigin(exec.name),
-        true,
-        retrieveResult ? 'retrieve' : 'tool',
-        !retrieveResult && tokenlessRetrieveCommandAvailable(config),
-      )
-      const response = await runPostTool(request, exec, config)
-      if (response?.disposition !== 'applied' || typeof response.output !== 'string') {
-        return decision
-      }
-      return {
-        ...decision,
-        content: [{ type: 'text', text: response.output }],
-      }
+pub(super) fn decide(input: &ArbitrationInput<'_>) -> Verdict {
+    if input.timed_out {
+        return Verdict::Reject(Disposition::Timeout);
+    }
+    if !input.has_operations {
+        return Verdict::Reject(Disposition::NoSavings);
+    }
+    if input.require_reversibility && input.recoverability == Recoverability::Unrecoverable {
+        return Verdict::Reject(Disposition::RecoverabilityUnavailable);
+    }
+    let saves_chars = input.candidate.chars().count() < input.original.chars().count();
+    let original_tokens = estimate_tokens(input.original);
+    let candidate_tokens = estimate_tokens(input.candidate);
+    let saves_tokens = candidate_tokens < original_tokens
+        && original_tokens - candidate_tokens >= input.min_token_savings;
+    if !(saves_chars && saves_tokens) {
+        return Verdict::Reject(Disposition::NoSavings);
+    }
+    if input.dry_run {
+        Verdict::DryRun
+    } else {
+        Verdict::Apply
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs:74-81](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/tokenless/crates/tokenless-runtime/src/post_tool/pipeline.rs#L74-L81)
+**依据 2 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:156-174](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L156-L174)
 
-明确放行规则支持同条件对照。
+CLI一致性防护已存在。
+
+<details>
+<summary>查看原文（19行）</summary>
 
 ```text
-        if request.status == ToolResultStatus::Error {
-            return passthrough(request, before_tokens, content_type);
-        }
-        if !request.capabilities.replace_output
-            || request.content_origin == ContentOrigin::FileContent
-            || request.content.chars().count() < config.min_input_chars
-        {
-            return passthrough(request, before_tokens, content_type);
+/** Require compression and Marker recovery to invoke the same CLI file. */
+function tokenlessRetrieveCommandAvailable(config) {
+  const markerBinary = executableOnPath('tokenless')
+  if (markerBinary === undefined) return false
+  const selected = tokenlessBinary(config)
+  const selectedBinary = isAbsolute(selected)
+    ? selected
+    : (selected.includes('/') ? resolve(selected) : executableOnPath(selected))
+  if (selectedBinary === undefined) return false
+  try {
+    accessSync(selectedBinary, constants.X_OK)
+    const markerStat = statSync(markerBinary)
+    const selectedStat = statSync(selectedBinary)
+    return selectedStat.isFile()
+      && markerStat.dev === selectedStat.dev
+      && markerStat.ino === selectedStat.ino
+  } catch {
+    return false
+  }
 ```
 
-**依据 3 · 源码核查**：[src/agentsight/dsh-plugin/src/index.ts:44-50](https://github.com/agentic-os-org/ANOLISA/blob/6f0445082738b8206f0aad37cf0af92b58bd7a15/src/agentsight/dsh-plugin/src/index.ts#L44-L50)
+</details>
 
-状态不能代表整个观测链。
+**依据 3 · 源码核查**：[src/tokenless/adapters/tokenless/dsh/dist/index.js:343-386](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/tokenless/adapters/tokenless/dsh/dist/index.js#L343-L386)
+
+已有归属与能力字段可承载有边界的结果解释。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+/** Build one operation request from the DSH execution boundary. */
+function postToolRequest(
+  exec,
+  config,
+  content,
+  status,
+  origin,
+  replaceOutput,
+  resultKind,
+  retrievalAvailable,
+) {
+  const attribution = {
+    agent_id: String(valueOr(config, 'agentId', DEFAULT_AGENT_ID)),
+  }
+  if (typeof exec.agent?.id === 'string' && exec.agent.id.length > 0) {
+    attribution.session_id = exec.agent.id
+  }
+  if (typeof exec.callId === 'string' && exec.callId.length > 0) {
+    attribution.tool_use_id = exec.callId
+  }
+  const input = {
+    result_kind: resultKind,
+    tool_name: exec.name,
+    content,
+    status,
+    content_origin: origin,
+    output_optimization: 'none',
+    capabilities: {
+      replace_output: replaceOutput,
+      recovery: { kind: retrievalAvailable ? "shell" : "none" },
+      replace_with_text: replaceOutput,
+    },
+  }
+  // Core reports a plain file print (`cat page.html`) as file_read from the
+  // command line, so the page stays verbatim while data still compresses.
+  if (origin === 'command_output' && typeof exec.arguments?.command === 'string') {
+    input.command = exec.arguments.command
+  }
+  return {
+    protocol_version: 2,
+    operation: 'post_tool',
+    attribution,
+    input,
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/agentsight/dsh-plugin/src/index.ts:44-50](https://github.com/agentic-os-org/ANOLISA/blob/c60fe3047ed8d7623f82de67d8d65a2e7615b332/src/agentsight/dsh-plugin/src/index.ts#L44-L50)
+
+状态输出不足以支持根栈全面启用建议。
 
 ```text
     async execute() {
@@ -871,8 +936,8 @@ export function apply(ctx: Context) {
 
 #### 缺口
 
-- 任务敏感压缩回执的效果未知
-  **影响**：仍是新设计假设
-  **进一步探讨**：在字段依赖明确的任务比较质量与全成本
+- 任务回执尚未实现，未证明比现有仲裁和原文更好。
+  **影响**：设计假设不能计入当前组件的已实现创新或收益。
+  **进一步探讨**：在固定任务/模型/预算下比较完整质量与费用，预先写明可接受损失与停止条件。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
