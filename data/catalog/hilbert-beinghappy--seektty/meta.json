@@ -1,0 +1,45 @@
+{
+    "repository": "Hilbert-beinghappy/seektty",
+    "repository_id": 1334096871,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 194,
+    "pushed_at": "2026-10-13T06:04:40Z",
+    "issues": {
+        "open": 8,
+        "closed": 21,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "seektty",
+        "captured_at": "2026-10-31T19:20:26.627Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 1248,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/seektty",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-30T03:28:25.921Z",
+            "captured_at": "2026-10-31T19:20:26.627Z",
+            "source_url": "https://registry.npmjs.org/seektty",
+            "error": null,
+            "latest_version": "1.3.0",
+            "latest_published_at": "2026-10-13T06:10:31.520Z",
+            "latest_error": null
+        }
+    }
+}

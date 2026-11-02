@@ -1,0 +1,36 @@
+{
+    "repository": "tinqiao-oss/engramory",
+    "repository_id": 1268424426,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 198,
+    "pushed_at": "2026-11-02T02:36:32Z",
+    "issues": {
+        "open": 0,
+        "closed": 9,
+        "created_30d": 2,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Atinqiao-oss%2Fengramory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8714:305D28:1DD75B:209BAD:6AE81D09 and timestamp 2026-11-02 05:18:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Atinqiao-oss%2Fengramory%20is%3Aissue%20updated%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8764:300520:1D5F60:202670:6AE81D0A and timestamp 2026-11-02 05:18:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    }
+}

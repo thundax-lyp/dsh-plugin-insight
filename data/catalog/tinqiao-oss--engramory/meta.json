@@ -1,0 +1,36 @@
+{
+    "repository": "tinqiao-oss/engramory",
+    "repository_id": 1268424426,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 198,
+    "pushed_at": "2026-11-02T02:36:32Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 2,
+        "closed_30d": 3,
+        "updated_30d": 3
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Atinqiao-oss%2Fengramory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8D06:13FDC9:208F26:235826:6AE81D21 and timestamp 2026-11-02 05:18:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Atinqiao-oss%2Fengramory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8DC4:1964B6:1DF819:20BF1B:6AE81D25 and timestamp 2026-11-02 05:18:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    }
+}

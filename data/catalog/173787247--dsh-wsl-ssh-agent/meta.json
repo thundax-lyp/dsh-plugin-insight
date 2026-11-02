@@ -1,29 +1,51 @@
 {
     "repository": "173787247/dsh-wsl-ssh-agent",
     "repository_id": 1351854356,
-    "captured_at": "2026-10-22T09:34:55.208Z",
-    "window_start": "2026-09-22T09:34:55.208Z",
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
     "stars": 1,
-    "pushed_at": "2026-09-30T03:22:46Z",
+    "pushed_at": "2026-10-30T04:53:21Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5674:209739:203892:22FDBB:6AE81CDF and timestamp 2026-11-02 05:17:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 56BA:164220:1C3554:1EF865:6AE81CE0 and timestamp 2026-11-02 05:17:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20created%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 56F0:2F4447:1E4B81:210FEF:6AE81CE1 and timestamp 2026-11-02 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 573C:2F6E39:1FA7F5:226A8C:6AE81CE3 and timestamp 2026-11-02 05:17:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-ssh-agent%20is%3Aissue%20updated%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5796:2EEDB4:1CC30C:1F8442:6AE81CE4 and timestamp 2026-11-02 05:17:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-wsl-ssh-agent",
-        "captured_at": "2026-10-22T09:35:03.165Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-11-02T05:16:13.796Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-ssh-agent",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-wsl-ssh-agent",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T09:35:03.165Z",
+            "captured_at": "2026-11-02T05:16:13.796Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-ssh-agent",
             "error": "HTTP 404",
             "latest_version": null,

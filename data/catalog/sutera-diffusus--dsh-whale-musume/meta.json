@@ -1,0 +1,45 @@
+{
+    "repository": "Sutera-Diffusus/dsh-whale-musume",
+    "repository_id": 1335238049,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 194,
+    "pushed_at": "2026-11-01T10:22:42Z",
+    "issues": {
+        "open": 3,
+        "closed": 13,
+        "created_30d": 7,
+        "closed_30d": 5,
+        "updated_30d": 8
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-musume",
+        "captured_at": "2026-10-29T01:00:45.095Z",
+        "window_start": "2026-09-29",
+        "window_end": "2026-10-28",
+        "downloads_30d": 3967,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-whale-musume",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-22T08:52:11.884Z",
+            "captured_at": "2026-10-29T01:00:45.095Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-musume",
+            "error": null,
+            "latest_version": "2.5.0",
+            "latest_published_at": "2026-10-22T08:58:28.170Z",
+            "latest_error": null
+        }
+    }
+}
