@@ -1,0 +1,45 @@
+{
+    "repository": "h4dex/opc-nexus",
+    "repository_id": 1318562243,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 239,
+    "pushed_at": "2026-09-03T16:58:08Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "aibox-control-center",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/aibox-control-center",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-02T03:37:58.572Z",
+            "source_url": "https://registry.npmjs.org/aibox-control-center",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

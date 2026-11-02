@@ -1,10 +1,10 @@
 {
     "repository": "173787247/dsh-wsl-cred",
     "repository_id": 1350379113,
-    "captured_at": "2026-10-22T07:15:35.391Z",
-    "window_start": "2026-09-22T07:15:35.391Z",
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
     "stars": 1,
-    "pushed_at": "2026-09-29T15:04:02Z",
+    "pushed_at": "2026-10-30T04:50:28Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -13,17 +13,18 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
     "npm": {
         "package_name": "dsh-wsl-cred",
-        "captured_at": "2026-10-22T07:15:43.958Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-cred",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-wsl-cred",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T07:15:43.958Z",
+            "captured_at": "2026-11-02T03:37:58.572Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-cred",
             "error": "HTTP 404",
             "latest_version": null,

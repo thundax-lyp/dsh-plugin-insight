@@ -1,0 +1,45 @@
+{
+    "repository": "oil-oil/dsh-oil-creator",
+    "repository_id": 1339110580,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 207,
+    "pushed_at": "2026-10-10T03:19:51Z",
+    "issues": {
+        "open": 5,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-oil-creator",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-oil-creator",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-02T03:37:58.572Z",
+            "source_url": "https://registry.npmjs.org/dsh-oil-creator",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

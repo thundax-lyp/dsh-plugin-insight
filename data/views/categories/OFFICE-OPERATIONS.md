@@ -40,6 +40,7 @@
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
 | [Nuphus MCP](#plugin-1319093879-root) | 将桌面原生语义操作、像素与本地 OCR、可选云视觉和 Chrome CDP 暴露为 MCP 工具，并分层返回派发与局部核验状态。 | 能隔离环境的开发者只在无敏感演示应用逐工具试，未知派发先观察对账，业务完成另核；确认/权限不清则停服务，见 [Q05](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q05) 与 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。 |
+| [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
 | [Windows Computer Use](#plugin-1336280167-root) | 把 Windows UIA、截图/OCR、真实输入与后台浏览器通道接入 DSH/MCP，并提供接管提示和停止控制。 | Windows隔离桌面上只试记事本/本地网页无提交动作，逐步核后条件与取消；重要业务先用稳定API或人工，见 [Q04](../../plugins/yu-tao-li--dsh-computer-use-win/INSIGHT.md#research-q04)。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
@@ -491,6 +492,22 @@
 > **建议**：跨工具族绑定人类批准、具体目标与派发不确定性，再为少数业务动作核独立记录真值，未知只读对账不重放，见 [Q06](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/mrpulor-gh--nuphus-mcp/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1203725733-root"></a>
+
+## [Tencent Meeting CLI](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md)
+
+[![GitHub ★ 248](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=248&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/TencentCloud/tencentmeeting-cli) [![npm 30d 10,141](https://img.shields.io/static/v1?label=npm+30d&message=10%2C141&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tencentcloud/tmeet) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tencentcloud/tmeet)
+
+> **用途**：授权会议用户/Agent需用结构化命令查会议内容与报告。
+
+> **亮点**：[Q01](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q01) 会议API命令化与配套范围/确认指引降低对接负担，独立tool非原生DSH插件。
+
+> **思考**：[Q02](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q02) 远程写重试/取消不等未发生，设备/Agent元数据会随请求发出；Skill护栏不等服务端权限与幂等。
+
+> **建议**：[Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 连接trace/目标/分页/最终状态收据，若现有JSON等价或隐私负担更高即否定。
+
+[查看完整分析](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335241492-root"></a>
 

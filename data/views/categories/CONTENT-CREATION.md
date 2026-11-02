@@ -28,6 +28,7 @@
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
+| [dsh-oil-creator](#plugin-1339110580-root) | 为 DSH Desktop 提供本地内容工作台，组织选题脚本、录屏工程、字幕封面、视觉审查与发布状态。 | [Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03)复制小库仅核心片库/脚本/自有会话trial，先预览不批量整理。 |
 | [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
@@ -43,6 +44,7 @@
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
+| [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
@@ -313,6 +315,22 @@
 
 [查看完整分析](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1339110580-root"></a>
+
+## [dsh-oil-creator](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md)
+
+[![GitHub ★ 207](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=207&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/oil-oil/dsh-oil-creator)
+
+> **用途**：重复制作录屏短视频的创作者希望在一内容目录中跟进脚本、视频、字幕、封面与发布状态。原办法普通目录+剪辑软件+独立Skill；合格结果需材料可核、下一步明确且最终表达／发布由人确认。
+
+> **亮点**：[Q01](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q01) 与 [Q02](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q02) 把开放本地文件、Desktop自有会话、Harness jobs和三图附件审查放进同一内容上下文，减少跨工具找材料的组织摩擦。上游媒体Skill与宿主会话能力不归插件原创，最终剪辑／视觉／发表仍人工负责。
+
+> **思考**：[Q02](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q02) 文件存在驱动阶段不等质量，save review不核prepare/真实看图/图片版本，job killed不证进程树停止；[Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03) apply确认依赖调用方且整理回退非全事务，目录丢失还有作者明确宿主恢复失败。不能把片库完整性外观当无人值守内容验收。
+
+> **建议**：[Q04](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q04)由附件与保存脱节推导三图digest+prepare receipt并在重生成后标stale，可能减少旧PASS沿用。四类复制素材对照陈旧通过、误阻断和复核投入；无改善或成本过高即否定，尚未实现不计贡献。
+
+[查看完整分析](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1171186947-root"></a>
 
 ## [dsh-Openwrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
@@ -552,6 +570,22 @@
 > **建议**：[Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 提出可回退差异与会话共同提交的封存方式，尚未实现验证；若不能减少错误记忆和恢复投入则否定。
 
 [查看完整分析](../../plugins/yejiming--museai/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-953521037-packages-dsh-plugin"></a>
+
+## [Next AI Draw.io DSH](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 36,548](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C548&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@next-ai-drawio/dsh)
+
+> **用途**：DSH用户让Agent读仓库画架构图并在人机共同画布修订。
+
+> **亮点**：[Q01](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q01) 原生bundle的默认接线成立；并发编辑/版本由复用MCP提供，不能归为bundle新算法。
+
+> **思考**：[Q03](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q03) latest使固定bundle不锁实际server；[Q02](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q02)内存提交/自动存档/业务图正确性是不同结果，不能互代。
+
+> **建议**：[Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 绑定实际server版本和画布/磁盘/导出阶段收据；若已有导出流程等价或提示误导即否定。
+
+[查看完整分析](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418493685-root"></a>
 

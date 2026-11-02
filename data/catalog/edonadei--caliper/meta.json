@@ -1,0 +1,27 @@
+{
+    "repository": "edonadei/caliper",
+    "repository_id": 1237259189,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 229,
+    "pushed_at": "2026-11-01T21:31:01Z",
+    "issues": {
+        "open": 16,
+        "closed": 98,
+        "created_30d": 15,
+        "closed_30d": 18,
+        "updated_30d": 30
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    }
+}

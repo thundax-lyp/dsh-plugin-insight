@@ -1,10 +1,10 @@
 {
     "repository": "173787247/dsh-wsl-open",
     "repository_id": 1347958944,
-    "captured_at": "2026-10-22T04:47:29.611Z",
-    "window_start": "2026-09-22T04:47:29.611Z",
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
     "stars": 3,
-    "pushed_at": "2026-09-30T03:25:32Z",
+    "pushed_at": "2026-10-30T04:52:25Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -13,17 +13,28 @@
         "updated_30d": 0
     },
     "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-wsl-open",
-        "captured_at": "2026-10-22T04:47:38.363Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-open",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-wsl-open",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-22T04:47:38.363Z",
+            "captured_at": "2026-11-02T03:37:58.572Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-open",
             "error": "HTTP 404",
             "latest_version": null,

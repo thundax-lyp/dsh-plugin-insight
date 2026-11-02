@@ -1,16 +1,56 @@
 {
     "repository": "173787247/dsh-wsl-mnt",
     "repository_id": 1351854159,
-    "captured_at": "2026-10-22T05:29:07.002Z",
-    "window_start": "2026-09-22T05:29:07.002Z",
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
     "stars": 1,
-    "pushed_at": "2026-09-30T00:50:03Z",
+    "pushed_at": "2026-10-30T04:52:03Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": []
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mnt%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 31CA:2F13A0:F9188:10FEE7:6AE805CC and timestamp 2026-11-02 03:38:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mnt%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3222:210BEE:FF650:1163E7:6AE805CD and timestamp 2026-11-02 03:38:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mnt%20is%3Aissue%20created%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 327A:3ADB8:F771F:10E563:6AE805CE and timestamp 2026-11-02 03:38:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mnt%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32D6:C6264:F2500:108FF9:6AE805CF and timestamp 2026-11-02 03:38:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-mnt%20is%3Aissue%20updated%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3324:2F1BE6:1050CB:11BE9F:6AE805D0 and timestamp 2026-11-02 03:38:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-wsl-mnt",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-wsl-mnt",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-02T03:37:58.572Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-mnt",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
 }

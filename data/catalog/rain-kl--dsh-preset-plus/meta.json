@@ -1,0 +1,62 @@
+{
+    "repository": "Rain-kl/dsh-preset-plus",
+    "repository_id": 1344413474,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 222,
+    "pushed_at": "2026-11-01T13:18:18Z",
+    "issues": {
+        "open": 3,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ARain-kl%2Fdsh-preset-plus%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4534:209739:10B5F7:122904:6AE8060E and timestamp 2026-11-02 03:39:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARain-kl%2Fdsh-preset-plus%20is%3Aissue%20created%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4572:2F1BE6:107A32:11EB7C:6AE8060F and timestamp 2026-11-02 03:39:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARain-kl%2Fdsh-preset-plus%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 45B0:2F4447:FD796:114A42:6AE80610 and timestamp 2026-11-02 03:40:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARain-kl%2Fdsh-preset-plus%20is%3Aissue%20updated%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 45F6:2EEDB4:F021C:107240:6AE80611 and timestamp 2026-11-02 03:40:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@rain-kl/dsh-preset-plus",
+        "captured_at": "2026-11-02T03:37:58.572Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 945,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40rain-kl%2Fdsh-preset-plus",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-24T05:15:23.211Z",
+            "captured_at": "2026-11-02T03:37:58.572Z",
+            "source_url": "https://registry.npmjs.org/%40rain-kl%2Fdsh-preset-plus",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-11-01T13:19:36.999Z",
+            "latest_error": null
+        }
+    }
+}

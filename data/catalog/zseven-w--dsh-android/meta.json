@@ -1,0 +1,66 @@
+{
+    "repository": "ZSeven-W/dsh-android",
+    "repository_id": 1341805689,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 213,
+    "pushed_at": "2026-10-08T09:30:51Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AZSeven-W%2Fdsh-android%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 49A0:C118E:F7C2B:10EF0C:6AE8061F and timestamp 2026-11-02 03:40:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AZSeven-W%2Fdsh-android%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4A12:164220:ED610:1048E0:6AE80620 and timestamp 2026-11-02 03:40:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AZSeven-W%2Fdsh-android%20is%3Aissue%20created%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4A82:CA359:106F20:11E194:6AE80621 and timestamp 2026-11-02 03:40:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AZSeven-W%2Fdsh-android%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4AD2:305D28:F5CC3:10CED4:6AE80622 and timestamp 2026-11-02 03:40:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AZSeven-W%2Fdsh-android%20is%3Aissue%20updated%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4B3A:BDCFE:FC511:11381C:6AE80623 and timestamp 2026-11-02 03:40:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@zseven-w/dsh-android",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 3219,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40zseven-w%2Fdsh-android",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T14:30:26.390Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
+            "source_url": "https://registry.npmjs.org/%40zseven-w%2Fdsh-android",
+            "error": null,
+            "latest_version": "0.1.0-rc.12",
+            "latest_published_at": "2026-10-08T09:35:47.507Z",
+            "latest_error": null
+        }
+    }
+}

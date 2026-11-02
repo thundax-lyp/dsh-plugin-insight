@@ -53,6 +53,7 @@
 | [DSH Mobile](#plugin-1334817483-root) | 让手机浏览器或 Android App 通过局域网或远程通道继续使用电脑中的 DSH。 | 可信局域网先验证同会话和撤销；发生不明断线时回电脑核对再决定是否重试。 |
 | [DSH Mobile APK](#plugin-1333629201-root) | 把 DSH 与设备控制交互带到 Android 手机。 | [Q04](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q04) 在隔离设备先验证权限、会话恢复并备份，保留桌面退路。 |
 | [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | [Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。 |
+| [DSH Preset Plus](#plugin-1344413474-root) | 提供可编辑的 system、user、assistant 预设条目、导入导出和请求预填充。 | [Q04](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md#research-q04) 独立profile无害预设先核有效输入/作用域与备份恢复，异常停用回原生预设。 |
 | [DSH Remote Web UI](#plugin-1331636953-packages-dsh-remote-web-ui) | 通过设备配对为 DSH Web 界面提供手机和电脑远程访问，并支持网络入口管理。 | 只对自有设备和无敏感数据的隔离实例评估受控 LAN；加载前关闭不需要的 relay、自动隧道与 ingress，检查撤销后的旧连接；不能确认时停宿主并断网。 |
 | [DSH Skin Market](#plugin-1335912966-root) | 在 DeepSeek Harness 中浏览、安装和管理社区皮肤。 | [Q04](../../plugins/kingofsoysauce--dsh-skin-market/INSIGHT.md#research-q04) 先在隔离 profile 试一款已审查皮肤，确认真实界面；加载未知或视觉异常时停用并回原主题。 |
 | [DSH Synapse](#plugin-1336228384-root) | 把 DeepSeek Harness 的会话、追问与分支组织为可视地图。 | [Q04](../../plugins/liangmianya--dsh-synapse/INSIGHT.md#research-q04) 已有多分支的用户可先在隔离会话试地图并核对原生日志；地图缺项或多实例冲突时暂停并回原生列表。 |
@@ -204,14 +205,12 @@
 | [dsh-whale-girl-live2d](#plugin-1387205322-root) | 将 Live2D 桌宠注入 DSH Web/桌面界面，借 SSE 展示会话事件并支持输入、控制和钱包 HUD。 | 个人非关键娱乐可观察；在开放敏感会话/余额前先验证并修正路由信任栅栏，商业复用须单独核素材授权。 |
 | [dsh-whale-tools](#plugin-1365163847-root) | 为鲸鱼挂件提供上传图片抠图换装、当前图片服务、浏览器心跳及会话头部重启入口。 | 已有鲸鱼挂件者可备份原图后先用白底单主体试用，验收主体完整、透明边缘和重载显示；主体被裁或副图丢失就停止并用外部编辑。 |
 | [dsh-worktable](#plugin-1336092482-01-content) | 在 DSH 侧栏提供项目容器、分栏工作区和会话绑定的工作台插件 | Windows 个人用户在精确支持版本从两个低风险项目试用，先验绑定和文件、再验预览及终端；错挂、旧结果复活或权限撤销不符要求时停止并回到原生会话和独立窗口。 |
-| [dsh-wsl-browser](#plugin-1350379388-root) | 从 WSL 调用 Windows 默认浏览器打开经过协议校验的网页地址。 | 适合频繁从 WSL 打开文档或本地服务、且只需要“打开”而非抓取/交互的用户试用。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。 |
 | [dsh-wsl-clipboard](#plugin-1350378372-root) | 让 WSL 中的 DSH Agent 读写 Windows 文本剪贴板。 | [Q04](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q04) 明确授权后，先备份并用非敏感短文本试读写；失败或结果未知时手动核对恢复。 |
 | [dsh-wsl-download](#plugin-1351854499-root) | 在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。 | 先 list、核源路径与目标目录，在空目录试单文件；大分片用有校验和断点机制的工具；详见[Q03](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q03)。 |
 | [dsh-wsl-gpu](#plugin-1350378777-root) | 在 WSL 中汇总 NVIDIA GPU 与本地推理端口线索。 | [Q04](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q04) 将其作为排障线索并核原始设备、服务协议和进程；归属不明时不据建议停止服务。 |
-| [dsh-wsl-notify](#plugin-1350379268-root) | 从WSL调用Windows MessageBox或NotifyIcon气泡显示短文本，气泡抛错时回退阻塞消息框。 | 明确授权非敏感短消息可试用，接受阻塞/fallback并保留原UI，不当唯一可靠通道。 |
-| [dsh-wsl-open](#plugin-1347958944-root) | 让 DSH 网页聊天中的 WSL Linux 路径可点击，并用 Windows 默认应用或 Explorer 打开。 | 建议个人本地WSL用户限定试用可信办公文件，验收以正确窗口实际显示为准；复杂路径误点、权限不清或不明应用启动时停止。 |
-| [dsh-wsl-shot](#plugin-1351854253-root) | 将 Windows 剪贴板图片经 PowerShell 临时 PNG 复制为 WSL 文件，供后续多模态使用。 | 仅用非敏感图片在隔离 WSL 试用，先核 Public 权限、失败清理、输出目录和后续多模态接续；详见[Q03](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q03)。 |
+| [dsh-wsl-notify](#plugin-1350379268-root) | 提供WSL到Windows短消息工具，支持阻塞MessageBox和BalloonTip回退，不自动验证任务完成或用户已读。 | [Q04](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q04) 明确授权非敏感短提醒可试，接受阻塞与fallback，保留原日志；显示不符、重复打扰或等待超预算即停用回原界面。 |
+| [dsh-wsl-open](#plugin-1347958944-root) | 将聊天中的Linux文件路径接到Windows默认应用或Explorer，检查真实路径范围并支持路径转换回退。 | [Q04](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q04) 已有个人WSL环境先试可信办公文件，实际看见正确文件才验收；复杂路径误点、异常应用或权限不清则停用，回手工转换与打开。 |
 | [dsh-wsl-tray](#plugin-1351853903-root) | 为 WSL 中的 DSH web 生成 Windows 启动脚本、快捷方式及可选托盘。 | 先检查 status、kit 和文件归属，确认接受 token 暴露再决定是否安装。 |
 | [dsh-wsl-uia](#plugin-1391141792-root) | 从WSL读取Windows顶层窗口和UI Automation控件树，提供过滤查找、按名等待和祖先路径，并给元素标注观测内句柄。 | 先观察，可用无敏感测试窗口纯观察，先解决目标/预算/隐私与动作消费者契约，不直接当安全自动操作基础。 |
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。 | 建议观察。 |
@@ -221,6 +220,7 @@
 | [DSH小鲸鱼记账挂件](#plugin-1337920628-root) | 在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。 | 可给希望少切控制台的个人用户试用常驻余额和当轮提示，先确认账户范围与部分数据标签。 |
 | [feiyu-memory](#plugin-1415822787-root) | 为个人陪伴保存事件日记，以摘要、近期提示和主动召回延续叙事记忆。 | 观察，不迁办公/敏感/多人资料；无敏感独立样本先查出站和耐久。 |
 | [Flowix](#plugin-1248774202-root) | 本地 Markdown 笔记客户端，通过 CLI 与 MCP 向 Agent 提供持续上下文 | [Q04](../../plugins/text2future--flowix/INSIGHT.md#research-q04) 在副本笔记本验证人工修改、检索和写回；出现过期覆盖或无法解释的搜索结果时停止Agent写入，核对原Markdown与备份。 |
+| [gal-view](#plugin-1333708305-root) | 为DSH会话提供Galgame风格舞台、台词阅读与场景编辑，本地保存素材和进度，原对话仍需核重要信息。 | [Q04](../../plugins/ayase34--gal-view/INSIGHT.md#research-q04) 视觉偏好用户限可信预设/小自制场景试，导出并刷新核恢复，自定义字体先视为不可靠持久，保留原对话/轨迹；未知场景、存储失败或关键信息缺失停用回原视图。 |
 | [harness-memory](#plugin-1333716755-plugins-harness-memory) | 通过 DSH 存储域保存、删除长期记忆，并按标签注入后续会话系统提示。 | 可在单项目或隔离profile保存少量非敏感偏好试用。 |
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
 | [ikun-theme-skin](#plugin-1335144603-root) | 给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。 | 个人隔离试用，需能关闭音效并核原外观偏好；共享环境先经用户选择。 |
@@ -910,6 +910,22 @@
 > **建议**：[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)推导未验证的只读手机入口：服务端及WS白名单配独立限时token，写操作临时升权并限制会话。比较查看、审批、提交与重连/过期/重启，若减少误授权且负担可接受才继续；稳定白名单无法成立或额外操作抵消便利则停止。
 
 [查看完整分析](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1344413474-root"></a>
+
+## [DSH Preset Plus](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md)
+
+[![GitHub ★ 222](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=222&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Rain-kl/dsh-preset-plus) [![npm 30d 945](https://img.shields.io/static/v1?label=npm+30d&message=945&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@rain-kl/dsh-preset-plus) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@rain-kl/dsh-preset-plus)
+
+> **用途**：DSH用户反复维护/切换/分享提示编排，需知道实际模型输入。
+
+> **亮点**：[Q01](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md#research-q01) 将条目编辑/共享和请求编排整合，贡献是配置便利而非已验证破限质量。
+
+> **思考**：[Q02](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md#research-q02) fake有scope门但system section无相同门待宿主核；auto逐请求、全局直接写档/坏态重置与轨迹缺输入影响可靠性。
+
+> **建议**：[Q04](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md#research-q04) expectedVersion快照/原子存档与有效输入收据可探索；若原生等效或泄露/负担加重即否定。
+
+[查看完整分析](../../plugins/rain-kl--dsh-preset-plus/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1331636953-packages-dsh-remote-web-ui"></a>
 
@@ -3327,22 +3343,6 @@
 
 [查看完整分析](../../plugins/aisland-sjl--dsh-worktable--01-content/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1350379388-root"></a>
-
-## [dsh-wsl-browser](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-browser)
-
-> **用途**：面向在 WSL 中运行 DSH、但日常使用 Windows 浏览器的开发者，快速打开本地服务或文档链接。 [Q01](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md#research-q01)
-
-> **亮点**：相对手工复制 URL，它提供模型可调用、带协议限制和失败提示的 WSL→Windows 桥接，贡献小而明确。 [Q03](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md#research-q03)
-
-> **思考**：工具只发起打开动作，不确认浏览器是否可达或页面是否正确加载；localhost 提示也不能替代端口转发诊断。 [Q04](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md#research-q04)
-
-> **建议**：可增加只读可达性预检与回执，把“进程已启动”和“Windows 侧页面可访问”分开报告，但不应扩大到任意 URI。 [Q08](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md#research-q08)
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-browser/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1381860995-root"></a>
 
 ## [dsh-wsl-cal](../../plugins/173787247--dsh-wsl-cal/INSIGHT.md)
@@ -3413,13 +3413,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-notify)
 
-> **用途**：明确允许在Windows桌面显示非敏感任务提示，真实业务状态另核。
+> **用途**：个人用户明确允许在Windows桌面接收长任务非敏感短提醒，真实业务完成与用户已读另核。
 
-> **亮点**：把跨WSL桌面脚本接成工具/两分支，非自动事件通知或可靠投递。详见[Q01](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q01)与[Q02](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q01)、[Q02](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q02) 把桌面脚本变为统一工具与两分支，并处理Unicode/固定参数；Windows显示能力属于Forms和交互桌面，不计可靠投递创新。
 
-> **思考**：进程ok非实际显示，非终止错误可能不fallback；默认阻塞与分支总等待/取消未统一，裁剪不明且argv不保密。详见[Q02](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q03) 进程ok不证明显示/已读，非终止错误可能不fallback；默认阻塞、无统一deadline/取消、静默裁剪和可解argv限制内容与采用。
 
-> **建议**：可探讨明确通知状态/稳定ID与总deadline、错误/取消协议和截断说明，仍不证明人已阅读。详见[Q05](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q04) 未验证方向为稳定ID、共享deadline/取消及明确requested/失败未知和截断说明；以错误成功/重复打扰验证，不把它当已读确认。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3429,31 +3429,15 @@
 
 [![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-open)
 
-> **用途**：WSL中的Agent生成办公文件后，用户需要在Windows阅读编辑；快捷打开应以正确文件真正显示为合格结果。详见[Q01](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q01)。
+> **用途**：个人WSL用户生成办公交付物后需在Windows查看编辑，合格结果是正确文件在预期应用实际显示。
 
-> **亮点**：把手工复制路径、wslpath转换和默认应用打开接成聊天点击流程，并以CSS Highlight避免替换React文本DOM；已有价值是跨系统工作流集成。详见[Q01](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q01)、[Q02](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q02) 将复制转换启动接成点击流程，Range不改React文本，后端realpath范围再验；跨系统组织而非新应用或安全隔离。
 
-> **思考**：API成功不等于正确窗口显示，Explorer数字退出码会被接受；来源规则也只限定localhost主机而不严格比较端口，实际权限依赖宿主。均为静态核查边界，未做漏洞或故障复现。详见[Q03](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q03) localhost来源规则不严格比较端口，授权依赖宿主；Explorer任意数字退出码可接受，API成功不证正确窗口显示，错误仅console。
 
-> **建议**：可研究把点击范围限定为消息交付物，并展示真实路径及可见失败状态，再以长会话和复杂路径对照漏检、误点与正确显示结果。当前未验证。详见[Q05](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q05) 未验证方向是限定消息交付物扫描和展示真实路径/请求失败状态，以长会话复杂路径比较误打开、漏检和正确显示，不重复计算既有Range/SKIP。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-open/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1351854253-root"></a>
-
-## [dsh-wsl-shot](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-shot)
-
-> **用途**：在 WSL 中把 Windows 截图/复制的图片存成本地文件以便后续引用。
-
-> **亮点**：提供 win_shot 工具完成跨 Windows/WSL 剪贴板图片落盘；详见[Q01](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q01)。
-
-> **思考**：Public 临时图片在失败分支可能残留，时间戳命名与并发标记有碰撞风险；详见[Q02](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q02)。
-
-> **建议**：独占临时目录、唯一命名和 finally 清理或可减少碰撞/残留；需隔离测试，详见[Q03](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q03)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1351853903-root"></a>
 
@@ -3598,6 +3582,22 @@
 > **建议**：[Q04](../../plugins/text2future--flowix/INSIGHT.md#research-q04) 从正文/索引分离和写入基线推导版本与追平状态合同，比较交错编辑的覆盖错误和修复时间；无改善或总负担上升则推翻。
 
 [查看完整分析](../../plugins/text2future--flowix/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333708305-root"></a>
+
+## [gal-view](../../plugins/ayase34--gal-view/INSIGHT.md)
+
+[![GitHub ★ 212](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=212&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ayase34/gal-view)
+
+> **用途**：偏好角色化视觉阅读/展示的个人DSH用户，场景编辑不等模型能力或工具结果验收，需能回原视图。
+
+> **亮点**：[Q01](../../plugins/ayase34--gal-view/INSIGHT.md#research-q01)、[Q02](../../plugins/ayase34--gal-view/INSIGHT.md#research-q02) 真前端插件用宿主槽和输入机复用会话，分离视觉场景/素材/进度并可导出；不是静态资源包，不把宿主会话智能算自身创新。
+
+> **思考**：[Q03](../../plugins/ayase34--gal-view/INSIGHT.md#research-q03) 台词有损且隐藏工具结果，不能代替轨迹；存储失败静默、同DB版本1各建单store可使新库字体仅内存、IDB请求成功非事务提交，导入字体family直接拼CSS且JSON资源无同文件大小限制，需可信场景和备份。
+
+> **建议**：[Q04](../../plugins/ayase34--gal-view/INSIGHT.md#research-q04) 未验证保存/导入收据与关键事件回原视图标记，参照已有导出/history/错误行，比较恢复完整性与漏判和额外负担。
+
+[查看完整分析](../../plugins/ayase34--gal-view/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333716755-plugins-harness-memory"></a>
 
