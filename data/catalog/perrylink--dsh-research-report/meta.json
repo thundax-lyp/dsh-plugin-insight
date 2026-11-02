@@ -1,0 +1,66 @@
+{
+    "repository": "PerryLink/dsh-research-report",
+    "repository_id": 1339655720,
+    "captured_at": "2026-11-02T03:37:58.572Z",
+    "window_start": "2026-10-03T03:37:58.572Z",
+    "stars": 213,
+    "pushed_at": "2026-11-01T09:23:24Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-research-report%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4860:3028F0:FD7AB:11488B:6AE8061A and timestamp 2026-11-02 03:40:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-research-report%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 489E:197397:117433:12E88A:6AE8061B and timestamp 2026-11-02 03:40:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-research-report%20is%3Aissue%20created%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 48EA:234FA1:10FAD0:126D6F:6AE8061C and timestamp 2026-11-02 03:40:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-research-report%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4938:2FE561:FCF6C:114006:6AE8061D and timestamp 2026-11-02 03:40:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-research-report%20is%3Aissue%20updated%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 498A:2F1091:10812E:11F53A:6AE8061E and timestamp 2026-11-02 03:40:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-research-report",
+        "captured_at": "2026-11-01T13:36:01.328Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 5581,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-research-report",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T14:23:22.578Z",
+            "captured_at": "2026-11-01T13:36:01.328Z",
+            "source_url": "https://registry.npmjs.org/dsh-research-report",
+            "error": null,
+            "latest_version": "0.3.30",
+            "latest_published_at": "2026-10-22T13:55:45.613Z",
+            "latest_error": null
+        }
+    }
+}
