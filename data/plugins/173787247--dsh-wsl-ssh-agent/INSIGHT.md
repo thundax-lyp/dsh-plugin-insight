@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[9971638](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)
+源码版本：[b1c2cca](https://github.com/173787247/dsh-wsl-ssh-agent/tree/b1c2cca9e63657086d6539671969b56097a37a8c)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ssh-agent)
 <!-- END META -->
 
-> **功能**：检查WSL宿主SSH_AUTH_SOCK路径、ssh-add身份数量与常见密钥文件名/npiperelay存在，提供转发和认证排查提示。
+> **功能**：只读汇总WSL进程socket、agent身份数量及常见桥线索，不读私钥正文、不建桥或验证远程认证。
 
-> **亮点**：将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 元数据减量诊断与SSH/HTTPS分工，成功不返key全文/指纹注释，不启动桥或读私钥内容。
 
-> **主要限制**：sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且render漏detail，易把错误当无身份；直接exec不接signal/config，ok非目标授权。详见[Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) sockAlive只是exists、私钥只是名字；查询失败归0并在文本漏detail，ok不等目标授权，配置/取消未接内部命令。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 适合什么SSH故障，ok能证明Git认证吗？](#detail-section-11)
-  - [Q02 · 检查范围和隐私减量如何实现？](#detail-section-12)
-  - [Q03 · 诊断状态、错误与进程治理有何不足？](#detail-section-13)
-  - [Q04 · 启动流程和首次持续恢复成本是什么？](#detail-section-14)
-  - [Q05 · 推荐与继续探讨入口是什么？](#detail-section-15)
+  - [Q01 · agent元数据能回答哪些SSH认证问题？](#detail-section-11)
+  - [Q02 · env、文件名、桥与命令怎样生成结果？](#detail-section-12)
+  - [Q03 · live socket、private keys与无身份建议可能误导吗？](#detail-section-13)
+  - [Q04 · 个人试用和分层收据怎样限定？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,98 +39,77 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向WSL内DSH做Git SSH失败、需要知道当前host进程有无SSH_AUTH_SOCK、agent身份数量和常见Windows桥安装痕迹的用户。ssh_agent_hint是诊断/文字建议，不启动agent/桥、不加载私钥、不执行ssh -T或Git推送，也不读密钥文件正文。
+> **用途**：WSL Git SSH排障的个人用户需分socket/可通信/身份/目标授权，报告不是认证完成。
 
-合格结果需分清socket路径存在、agent可通信、有身份、目标仓库授权四层。ok只sockAlive && keyCount>0，不证明GitHub接受该key、目标repo权限或实际SSH网络成功。基线手查env/ssh-add/目录名，增量聚合小范围元数据和“不粘贴私钥”提醒。
-
-人工env/ssh-add/目录排查，插件省汇总但非真实连接/授权证明。
+手查env/目录与ssh-add；聚合线索非新转发/密钥管理机制。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
-| --- | --- | --- |
-| socket检查 | env路径存在 | 非isSocket/活连接 |
-| 身份计数 | ssh-add -l行数 | 错误0非无key，非目标授权 |
-| key/桥痕迹 | 常见文件名/exists | 非内容/格式/权限验证 |
-| 转发建议 | SSH/HTTPS路径引导 | 不建立桥/不加载key |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+|---|---|---|
+| socket/key数量 | 认证初筛 | exists非通信，失败可能归0 |
+| key/桥痕迹 | 路径提示 | 名字/存在非权限格式可执行 |
+| 文字建议 | 分SSH/HTTPS | 非自动执行/签名授权 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| WSL/Node>=18与DSH tools/systemPrompt | 启用工具/指引 | apply环境缓存，包无精确host peer |
-| 可信PATH内ssh-add与当前agent env | 查询身份数量 | 不证明目标host授权，不接远端workspace环境 |
-| .ssh目录可列名 | 名称启发式 | 不读正文/不保证所有key发现 |
-| npiperelay/Windows agent | 可选转发建议 | 仅查存在，未创建桥 |
-| 元数据披露许可 | 路径/数量/错误入上下文 | 不粘私钥不等无隐私 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH tools/prompt、Node>=18/WSL | 必需 | 注册只读报告 | 兼容另验 |
+| Host agent env/ssh-add | 查询必需 | socket/身份数量 | 失败不当无身份 |
+| 可列home/.ssh | 名线索按需 | 常用key存在性 | 不读正文，名字非真实私钥 |
+| 共享桥权限审查 | 用桥前提 | Windows签名可访问者 | 插件仅建议不授权建桥 |
 
+#### 启动步骤
 
-
-#### 使用流程
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 固定安装 | 核WSL/服务/PATH | 不先更改agent/添加key |
-| 查看 | 分别看socket存在/数量/桥 | live只是exists，0不一定无身份 |
-| 追因 | 查结构错误/实际权限与进程 | 当前render漏detail，需更细状态 |
-| 决策 | 必要时读者审核转发/授权范围 | 提示文本不等用户授权建立桥 |
-| 维护 | env/socket变化重新核当前host | 不把cachedWSL/本机home当所有会话 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 预检 | 个人环境/元数据可外发 | 不用共享桥自动化 |
+| 初筛 | 报socket/数量/桥痕迹 | 本地核query错误/目标环境 |
+| 验证 | 目标认证另授权独立查 | ok不等远端权限 |
+| 停止 | 错归空/隐私不清停工具 | 回原生ssh-add/权限核验 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 本地包/既有SSH工具，桥如需另装 | 核互操作/PATH/agent与元数据范围 | 工时/费用未知 |
-| 持续使用 | 每次列名/exists与ssh-add进程、工具结果上下文 | 解释状态与审权限 | 无独立网络/模型调用不等总token费0，实际延迟未知 |
-| 失败恢复 | 重试查询、清失效socket/桥属后续动作 | 排权限/无工具/超时与误无身份建议 | 插件不修改密钥故无自有回滚；读者后续授权恢复成本未知 |
-
-
+|---|---|---|---|
+| 首次 | 宿主/SSH，桥按需另装 | 环境/元数据权限 | 工时/金额未知 |
+| 持续 | 列名/exists/ssh-add/结果token | 分错误与身份/认证 | 无独立API非总token费0 |
+| 失败恢复 | 重查/桥排障属后续 | 查权限/工具/超时 | 插件无自有写，用户变更另还原 |
 
 #### 效果
 
-| 目标 | 增量 | 限制 |
-| --- | --- | --- |
-| 聚合排查 | socket/数量/常见桥一处 | 存在不等可用，失败混淆 |
-| 减key内容披露 | 成功不回ssh-add完整stdout，不读私钥 | 路径/存在/异常仍敏感 |
-| 引导SSH/HTTPS分工 | 明文提示 | 非认证/权限验收 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 聚合线索 | socket/数量/桥一处 | 查询错误根因/目标身份 |
+| 减量披露 | 正常不回ssh-add全文/不读私钥 | 路径/异常元数据可否进入模型 |
+| 分工建议 | SSH与HTTPS区别 | 桥/远端认证真实成功 |
 
-源码没有替用户加载key/转发/SSH登录，不把建议当执行；真实诊断准确率和省时未对照。本轮不调用ssh-add、私钥目录或Windows桥。
-
-> **思考**：sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且render漏detail，易把错误当无身份；直接exec不接signal/config，ok非目标授权。详见[Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) sockAlive只是exists、私钥只是名字；查询失败归0并在文本漏detail，ok不等目标授权，配置/取消未接内部命令。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将socket/身份数量和常见桥痕迹聚合为只读提示，正常结果不回key指纹正文、不读私钥内容，区分SSH/HTTPS。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 元数据减量诊断与SSH/HTTPS分工，成功不返key全文/指纹注释，不启动桥或读私钥内容。
 
-sockAlive只是exists(sock)，未stat.isSocket/连接验证；普通文件、失效socket节点也可被说成live socket。hasPrivateKeys仅文件名模式，不读格式/类型/权限，名匹配目录也可能true，自定义key文件名会漏；目录不可读catch false，不能等同确无私钥。桥exists也不证明可执行/版本/Windows服务可用。
-
-ssh-add失败或超时统一keyCount0，execute丢list.ok/code，仅保detail；buildAdvice遇sockAlive+0就说“shows no identities”并建议ssh-add，实际可能是权限/工具不存在/超时。formatter不展示sshAddDetail或顶层error，读者更难看见失败原因。ok=false既可能无agent也可能未授权查询，不能做根因结论。
-
-命令经child_process直接运行而非host subprocess/sandboxPolicy，按PATH找ssh-add并继承当前环境。配置timeoutMs默认15s只作用外工具，core_config未用，内层固定5s且无exec.signal；取消/配置更短不保证同步停进程。无并发总上限，工具标并发安全意味着多个查询可同时发生。指导中的socat桥能让WSL利用Windows agent签名能力，但本插件没有建立/授权该桥，读者应另审可访问者而非盲复制。
+[Q02](#research-q02) 固定参数和注入deps、成功数量减量可复用；[Q03](#research-q03) 存在/通信/授权分层，最终format保真错误，timeout声明非取消链。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且render漏detail，易把错误当无身份；直接exec不接signal/config，ok非目标授权。详见[Q03](#research-q03)。
+[Q03](#research-q03) sockAlive只是exists、私钥只是名字；查询失败归0并在文本漏detail，ok不等目标授权，配置/取消未接内部命令。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-有试用，可信个人WSL只读提示，明确存在/身份不等认证；共享桥授权/强治理先观察。详见[Q05](#research-q05)。
-
-合格结果需分清socket路径存在、agent可通信、有身份、目标仓库授权四层。ok只sockAlive && keyCount>0，不证明GitHub接受该key、目标repo权限或实际SSH网络成功。基线手查env/ssh-add/目录名，增量聚合小范围元数据和“不粘贴私钥”提醒。
-
-采用建议：有试用，可信个人WSL只读提示，明确存在/身份不等认证；共享桥授权/强治理先观察。详见[Q05](#research-q05)。
+[Q04](#research-q04) 可信个人WSL可只读初筛但核原生命令；共享桥/强治理先观察，错误或隐私不清停用，不自动加载key或建桥。
 
 <a id="detail-section-7"></a>
 
@@ -139,18 +117,18 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 **核查状态**：已检查源码。
 
-已检查源码。只读元数据与正常输出减量明确，live/empty/认证语义必须分开，错误可见/进程治理需核。
+重核完整入口/146行ssh-agent、检测与全部正式findings；未调用agent/读取真实.ssh/私钥或执行目标/网络测试。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/ssh-agent.js、lib/wsl-host.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 index.js、lib/ssh-agent.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：三运行JS/包，重点真实读取与ssh-add路径；不调用agent/列真实.ssh/读取私钥/建立桥或运行目标测试。
-- 下一步：可继续合成socket类型/退出码/失败/取消mock核分层标签和建议，避免触碰真实凭据或agent。
+- 边界：固定完整入口/core及WSL检测/包，未读真实agent或私钥目录、不建立桥/运行目标测试。
+- 下一步：[Q04](#research-q04) 假socket/退出/身份/桥矩阵核误建议/披露与预算，目标认证独立授权，本轮未执行。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-ssh-agent](https://github.com/173787247/dsh-wsl-ssh-agent)
-- **版本号**：0.2.0（[固定提交 9971638](https://github.com/173787247/dsh-wsl-ssh-agent/tree/99716388c9fa204b53bb6e931a239810d4524a0b)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.0（[固定提交 b1c2cca](https://github.com/173787247/dsh-wsl-ssh-agent/tree/b1c2cca9e63657086d6539671969b56097a37a8c)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -158,9 +136,9 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 <a id="innovation"></a>
 
-可探索分层socket/查询退出/身份与时点收据，最小化内容并统一host预算，比较误建议/披露；未实现。详见[Q05](#research-q05)。
+[Q04](#research-q04) 未验证socket/查询退出/身份/时点分层与统一预算，最小化输出下比较误建议/披露/等待，非新私钥读取。
 
-可继续合成socket类型/退出码/失败/取消mock核分层标签和建议，避免触碰真实凭据或agent。
+[Q04](#research-q04) 假socket/退出/身份/桥矩阵核误建议/披露与预算，目标认证独立授权，本轮未执行。
 
 <a id="detail-section-9"></a>
 
@@ -168,6 +146,8 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -179,56 +159,95 @@ sockAlive仅exists、key文件仅名字，ssh-add失败变0并丢ok/code且rende
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+created%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-ssh-agent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T09%3A34%3A55.208Z..2026-10-22T09%3A34%3A55.208Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-ssh-agent/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核socket/身份/认证四层区别、密钥减量/真实读取、失败/进程预算与转发授权、成本及采用。
+**插件研究总目标**：SSH agent状态线索能支持什么认证建议，如何保真错误与元数据范围？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 适合什么SSH故障，ok能证明Git认证吗？
+### Q01 · agent元数据能回答哪些SSH认证问题？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向WSL内DSH做Git SSH失败、需要知道当前host进程有无SSH_AUTH_SOCK、agent身份数量和常见Windows桥安装痕迹的用户。ssh_agent_hint是诊断/文字建议，不启动agent/桥、不加载私钥、不执行ssh -T或Git推送，也不读密钥文件正文。
+ssh_agent_hint给WSL的DSH用户在Git SSH失败时集中查当前Host进程SSH_AUTH_SOCK、ssh-add身份数量、常见私钥文件名与npiperelay存在。基线是本地手查env/ssh-add和路径，增量为模型可读提示与SSH/HTTPS分工。它不启动agent/桥、不加载key、不读取私钥正文、不执行ssh -T或git push。
 
-合格结果需分清socket路径存在、agent可通信、有身份、目标仓库授权四层。ok只sockAlive && keyCount>0，不证明GitHub接受该key、目标repo权限或实际SSH网络成功。基线手查env/ssh-add/目录名，增量聚合小范围元数据和“不粘贴私钥”提醒。
+合格结果必须分路径存在、agent能通信、有身份、目标仓库授权四层；ok只sockAlive&&keyCount>0，不证明GitHub接受key、网络可达或repo权限。成功ssh-add输出减成数量不回指纹/注释是具体披露收缩，仍有用户名路径/存在性/异常detail元数据，不叫无敏感面。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-13](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/README.md#L5-L13)
+**依据 1 · 源码核查**：[index.js:11-29](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/index.js#L11-L29)
 
-作者提示/无key正文定位。
-
-```text
-DeepSeek Harness plugin: Hint how to forward the Windows OpenSSH agent into WSL without dumping secrets.
-
-Part of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.
-
-[中文说明 → README.zh.md](./README.zh.md)
-
-## Where it sits
-
-Diagnoses the WSL SSH agent socket and the npiperelay bridge. It does not print key material.
-```
-
-**依据 2 · 源码核查**：[lib/ssh-agent.js:114-144](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L114-L144)
-
-实际汇总/ok。
+注册与工具范围。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（19行）</summary>
+
+```text
+  ctx.systemPrompt.section({
+    name: "tool:ssh_agent_hint",
+    order: 121,
+    text: "Use ssh_agent_hint when git SSH / github.com auth fails: checks SSH_AUTH_SOCK, ssh-add -l, ~/.ssh keys (names only), npiperelay. Never paste private keys. HTTPS push → cred_hint.",
+  });
+
+  ctx.tools.register({
+    name: "ssh_agent_hint",
+    description:
+      "Diagnose WSL SSH agent socket, loaded keys, and Windows OpenSSH/npiperelay bridge (never returns key material).",
+    parameters: core.parameters(config),
+    output: {
+      schema: core.outputSchema(),
+      render: (_args, value) => [{ type: "text", text: core.format(value) }],
+    },
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/ssh-agent.js:59-74](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L59-L74)
+
+固定只读命令和成功输出减量。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export async function sshAddList({ execFileFn = execFileAsync } = {}) {
+  try {
+    const { stdout } = await execFileFn("ssh-add", ["-l"], {
+      encoding: "utf8",
+      timeout: 5_000,
+    });
+    const text = String(stdout || "").trim();
+    if (/no identities/i.test(text)) return { ok: true, keyCount: 0, detail: text };
+    const lines = text ? text.split(/\r?\n/).filter(Boolean) : [];
+    return { ok: true, keyCount: lines.length, detail: lines.length ? `${lines.length} identities` : text };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    // exit 1 often = no agent / no identities
+    const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
+    return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/ssh-agent.js:114-145](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L114-L145)
+
+最终报告与ok判据。
+
+<details>
+<summary>查看原文（32行）</summary>
 
 ```text
 export async function execute(_args, _config = {}, deps = {}) {
@@ -262,6 +281,7 @@ export async function execute(_args, _config = {}, deps = {}) {
     npiperelay: npiperelay || "",
     sshAddDetail: list.detail || "",
     advice,
+  };
 ```
 
 </details>
@@ -270,23 +290,147 @@ export async function execute(_args, _config = {}, deps = {}) {
 
 <a id="detail-section-12"></a>
 
-### Q02 · 检查范围和隐私减量如何实现？
+### Q02 · env、文件名、桥与命令怎样生成结果？
 
-**研究主题**：功能与机制、贡献与相对优势
+**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-apply一次detectWsl，非WSL返回错误；执行读取当前process.env的socket路径，exists检查，再从homedir/.ssh列名字，匹配id_ed25519/id_rsa/id_ecdsa或.pem判hasPrivateKeys。候选npiperelay来自NPIPERELAY、两固定路径及PATH推用户scoop/go路径，仅exists不启动它。
+入口启动时detectWsl，非WSL直接失败；core无参数，读process.env和home，sockAlive仅exists(sock)。.ssh若存在列名字，匹配id_ed25519/id_rsa/id_ecdsa或.pem就hasPrivateKeys；npiperelay从env、两固定路径及PATH推断用户scoop/go路径，均仅exists不执行。
 
-唯一活动命令是node execFile ssh-add固定[-l]，5秒超时，成功stdout计非空行数，常规结果只保存“n identities”而不返回指纹/注释全文。建议按sock/数量/桥路径输出，并区分HTTPS认证另查cred_hint。无网络认证请求/文件写/模型API，静态命令建议不是实际自动执行。
-
-贡献是元数据减量的聚合诊断/提示和宿主入口，非新的SSH转发/密钥管理技术。路径/用户名/密钥存在布尔与异常detail仍是身份元数据，会进宿主模型上下文，不能称没有敏感面。
+唯一活动命令直接execFile PATH ssh-add [-l]，固定5秒，不经宿主subprocess策略。成功数非空行并回n identities，失败记录ok/code/detail；core把keyCount||0带建议却丢ok/code，format也不显示sshAddDetail和顶层error。入口timeoutMs默认15秒只宿主声明，core_config不用/未传exec.signal；与内层5秒取消非一链。模块/注入deps和固定参数值得复用，但query错误必须在最终文本保真。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:7-30](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/index.js#L7-L30)
+**依据 1 · 源码核查**：[lib/ssh-agent.js:30-56](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L30-L56)
 
-环境门/入口。
+候选桥与只列名字。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+export function detectNpiperelay({ env = process.env, exists = existsSync } = {}) {
+  const candidates = [
+    env.NPIPERELAY,
+    "/usr/local/bin/npiperelay.exe",
+    "/mnt/c/Users/Public/npiperelay.exe",
+  ].filter(Boolean);
+  // common scoop/user path via /mnt/c/Users/<from PATH>
+  const m = (env.PATH || "").match(/\/mnt\/c\/Users\/([^/\\]+)/);
+  if (m) {
+    candidates.push(`/mnt/c/Users/${m[1]}/scoop/shims/npiperelay.exe`);
+    candidates.push(`/mnt/c/Users/${m[1]}/go/bin/npiperelay.exe`);
+  }
+  for (const p of candidates) {
+    if (p && exists(p)) return p;
+  }
+  return "";
+}
+
+export function hasSshPrivateKeys({ home = homedir(), exists = existsSync, readdir = readdirSync } = {}) {
+  const dir = `${home}/.ssh`.replace(/\\/g, "/");
+  if (!exists(dir)) return false;
+  try {
+    const names = readdir(dir);
+    return names.some((n) => n === "id_ed25519" || n === "id_rsa" || n === "id_ecdsa" || /\.pem$/i.test(n));
+  } catch {
+    return false;
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/ssh-agent.js:59-74](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L59-L74)
+
+exec超时与错误对象。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export async function sshAddList({ execFileFn = execFileAsync } = {}) {
+  try {
+    const { stdout } = await execFileFn("ssh-add", ["-l"], {
+      encoding: "utf8",
+      timeout: 5_000,
+    });
+    const text = String(stdout || "").trim();
+    if (/no identities/i.test(text)) return { ok: true, keyCount: 0, detail: text };
+    const lines = text ? text.split(/\r?\n/).filter(Boolean) : [];
+    return { ok: true, keyCount: lines.length, detail: lines.length ? `${lines.length} identities` : text };
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    // exit 1 often = no agent / no identities
+    const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
+    return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/ssh-agent.js:114-145](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L114-L145)
+
+core丢查询状态。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+export async function execute(_args, _config = {}, deps = {}) {
+  const env = deps.env || process.env;
+  const exists = deps.exists || existsSync;
+  const sock = env.SSH_AUTH_SOCK || "";
+  const sockAlive = Boolean(sock && exists(sock));
+  const npiperelay = detectNpiperelay({ env, exists });
+  const hasPrivateKeys = hasSshPrivateKeys({
+    home: deps.home || homedir(),
+    exists,
+    readdir: deps.readdir || readdirSync,
+  });
+  const list = deps.sshAddList
+    ? await deps.sshAddList()
+    : await sshAddList({ execFileFn: deps.execFileFn || execFileAsync });
+  const keyCount = list.keyCount || 0;
+  const advice = buildSshAgentAdvice({
+    sock,
+    sockAlive,
+    keyCount,
+    hasPrivateKeys,
+    npiperelay,
+  });
+  return {
+    ok: sockAlive && keyCount > 0,
+    sock,
+    sockAlive,
+    keyCount,
+    hasPrivateKeys,
+    npiperelay: npiperelay || "",
+    sshAddDetail: list.detail || "",
+    advice,
+  };
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/ssh-agent.js:20-27](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L20-L27)
+
+render丢detail/error。
+
+```text
+export function format(v) {
+  const lines = [`ssh_agent_hint ok=${v.ok} SSH_AUTH_SOCK=${v.sock || "(unset)"}`];
+  if (v.sockAlive != null) lines.push(`sockAlive: ${v.sockAlive}`);
+  if (v.keyCount != null) lines.push(`sshAddKeys: ${v.keyCount}`);
+  if (v.hasPrivateKeys != null) lines.push(`hasPrivateKeysInHome: ${v.hasPrivateKeys}`);
+  if (v.npiperelay != null) lines.push(`npiperelay: ${v.npiperelay}`);
+  for (const a of v.advice || []) lines.push(`- ${a}`);
+  return lines.join("\n");
+```
+
+**依据 5 · 源码核查**：[index.js:7-30](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/index.js#L7-L30)
+
+WSL/timeout/执行接口。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -320,32 +464,27 @@ export function apply(ctx, config = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/ssh-agent.js:30-55](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L30-L55)
+<a id="research-q03"></a>
 
-桥候选/文件名扫描。
+<a id="detail-section-13"></a>
 
-<details>
-<summary>查看原文（26行）</summary>
+### Q03 · live socket、private keys与无身份建议可能误导吗？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+sockAlive只exists，不检查socket类型或连接，普通文件/失效socket节点也可叫live；私钥只文件名不stat类型/权限/格式，匹配目录可true、定制命名会漏、不可读catch false不等确无key。npiperelay存在不证可执行/版本或Windows服务正常。
+
+ssh-add权限/未安装/超时与真无身份都keyCount0，若路径exists建议统一“shows no identities，run ssh-add”，会把查询失败当状态结论；实际query detail虽在JSON却文本不见。故报告只能初筛，不能据它自动加载密钥或扩大Windows agent桥访问。socat建议能扩大谁可调用签名能力，但本插件没建立/授权桥，必须独立审共享权限。未调用真实agent/列真实.ssh，不声称发生泄密或已错误加载。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/ssh-agent.js:48-56](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L48-L56)
+
+私钥名启发式和吞错。
 
 ```text
-export function detectNpiperelay({ env = process.env, exists = existsSync } = {}) {
-  const candidates = [
-    env.NPIPERELAY,
-    "/usr/local/bin/npiperelay.exe",
-    "/mnt/c/Users/Public/npiperelay.exe",
-  ].filter(Boolean);
-  // common scoop/user path via /mnt/c/Users/<from PATH>
-  const m = (env.PATH || "").match(/\/mnt\/c\/Users\/([^/\\]+)/);
-  if (m) {
-    candidates.push(`/mnt/c/Users/${m[1]}/scoop/shims/npiperelay.exe`);
-    candidates.push(`/mnt/c/Users/${m[1]}/go/bin/npiperelay.exe`);
-  }
-  for (const p of candidates) {
-    if (p && exists(p)) return p;
-  }
-  return "";
-}
-
 export function hasSshPrivateKeys({ home = homedir(), exists = existsSync, readdir = readdirSync } = {}) {
   const dir = `${home}/.ssh`.replace(/\\/g, "/");
   if (!exists(dir)) return false;
@@ -354,48 +493,17 @@ export function hasSshPrivateKeys({ home = homedir(), exists = existsSync, readd
     return names.some((n) => n === "id_ed25519" || n === "id_rsa" || n === "id_ecdsa" || /\.pem$/i.test(n));
   } catch {
     return false;
+  }
 ```
 
-</details>
+**依据 2 · 源码核查**：[lib/ssh-agent.js:87-110](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L87-L110)
 
-**依据 3 · 源码核查**：[lib/ssh-agent.js:59-73](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L59-L73)
-
-固定ssh-add与成功减量。
+live/no identities与桥静态建议。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-export async function sshAddList({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("ssh-add", ["-l"], {
-      encoding: "utf8",
-      timeout: 5_000,
-    });
-    const text = String(stdout || "").trim();
-    if (/no identities/i.test(text)) return { ok: true, keyCount: 0, detail: text };
-    const lines = text ? text.split(/\r?\n/).filter(Boolean) : [];
-    return { ok: true, keyCount: lines.length, detail: lines.length ? `${lines.length} identities` : text };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    // exit 1 often = no agent / no identities
-    const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
-    return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/ssh-agent.js:84-110](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L84-L110)
-
-仅建议文字。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  const tips = [
-    "Do not paste private keys into chat.",
-  ];
   if (!sock) {
     tips.push("SSH_AUTH_SOCK is unset — no agent socket in this process.");
   } else if (!sockAlive) {
@@ -424,109 +532,14 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
 
 </details>
 
-<a id="research-q03"></a>
+**依据 3 · 源码核查**：[lib/ssh-agent.js:117-128](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L117-L128)
 
-<a id="detail-section-13"></a>
-
-### Q03 · 诊断状态、错误与进程治理有何不足？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-sockAlive只是exists(sock)，未stat.isSocket/连接验证；普通文件、失效socket节点也可被说成live socket。hasPrivateKeys仅文件名模式，不读格式/类型/权限，名匹配目录也可能true，自定义key文件名会漏；目录不可读catch false，不能等同确无私钥。桥exists也不证明可执行/版本/Windows服务可用。
-
-ssh-add失败或超时统一keyCount0，execute丢list.ok/code，仅保detail；buildAdvice遇sockAlive+0就说“shows no identities”并建议ssh-add，实际可能是权限/工具不存在/超时。formatter不展示sshAddDetail或顶层error，读者更难看见失败原因。ok=false既可能无agent也可能未授权查询，不能做根因结论。
-
-命令经child_process直接运行而非host subprocess/sandboxPolicy，按PATH找ssh-add并继承当前环境。配置timeoutMs默认15s只作用外工具，core_config未用，内层固定5s且无exec.signal；取消/配置更短不保证同步停进程。无并发总上限，工具标并发安全意味着多个查询可同时发生。指导中的socat桥能让WSL利用Windows agent签名能力，但本插件没有建立/授权该桥，读者应另审可访问者而非盲复制。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/ssh-agent.js:48-55](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L48-L55)
-
-文件名/失败混淆。
-
-```text
-export function hasSshPrivateKeys({ home = homedir(), exists = existsSync, readdir = readdirSync } = {}) {
-  const dir = `${home}/.ssh`.replace(/\\/g, "/");
-  if (!exists(dir)) return false;
-  try {
-    const names = readdir(dir);
-    return names.some((n) => n === "id_ed25519" || n === "id_rsa" || n === "id_ecdsa" || /\.pem$/i.test(n));
-  } catch {
-    return false;
-```
-
-**依据 2 · 源码核查**：[lib/ssh-agent.js:59-73](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L59-L73)
-
-错误/code/固定预算。
+exists与查询失败归0。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-export async function sshAddList({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("ssh-add", ["-l"], {
-      encoding: "utf8",
-      timeout: 5_000,
-    });
-    const text = String(stdout || "").trim();
-    if (/no identities/i.test(text)) return { ok: true, keyCount: 0, detail: text };
-    const lines = text ? text.split(/\r?\n/).filter(Boolean) : [];
-    return { ok: true, keyCount: lines.length, detail: lines.length ? `${lines.length} identities` : text };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    // exit 1 often = no agent / no identities
-    const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
-    return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/ssh-agent.js:87-106](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L87-L106)
-
-live/noidentity/桥建议。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  if (!sock) {
-    tips.push("SSH_AUTH_SOCK is unset — no agent socket in this process.");
-  } else if (!sockAlive) {
-    tips.push(`SSH_AUTH_SOCK=${sock} is set but the socket path is missing (stale agent).`);
-  } else {
-    tips.push("SSH_AUTH_SOCK points at a live socket.");
-  }
-  if (keyCount === 0 && sockAlive) {
-    tips.push("ssh-add -l shows no identities — run ssh-add ~/.ssh/id_ed25519 (or forward Windows agent).");
-  } else if (keyCount > 0) {
-    tips.push(`Agent reports ${keyCount} loaded key(s).`);
-  }
-  if (hasPrivateKeys && !sockAlive) {
-    tips.push("~/.ssh has private key files but no live agent — start ssh-agent or forward Windows OpenSSH agent.");
-  }
-  if (npiperelay) {
-    tips.push(`Found npiperelay at ${npiperelay} — you can bridge \\\\.\\pipe\\openssh-ssh-agent into WSL.`);
-  } else {
-    tips.push(
-      "Windows OpenSSH agent bridge: install npiperelay, then socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:\"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent\",nofork",
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/ssh-agent.js:114-143](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L114-L143)
-
-exists与丢list.ok/code。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-export async function execute(_args, _config = {}, deps = {}) {
-  const env = deps.env || process.env;
-  const exists = deps.exists || existsSync;
   const sock = env.SSH_AUTH_SOCK || "";
   const sockAlive = Boolean(sock && exists(sock));
   const npiperelay = detectNpiperelay({ env, exists });
@@ -539,28 +552,13 @@ export async function execute(_args, _config = {}, deps = {}) {
     ? await deps.sshAddList()
     : await sshAddList({ execFileFn: deps.execFileFn || execFileAsync });
   const keyCount = list.keyCount || 0;
-  const advice = buildSshAgentAdvice({
-    sock,
-    sockAlive,
-    keyCount,
-    hasPrivateKeys,
-    npiperelay,
-  });
-  return {
-    ok: sockAlive && keyCount > 0,
-    sock,
-    sockAlive,
-    keyCount,
-    hasPrivateKeys,
-    npiperelay: npiperelay || "",
-    sshAddDetail: list.detail || "",
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/ssh-agent.js:20-26](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L20-L26)
+**依据 4 · 源码核查**：[lib/ssh-agent.js:20-27](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L20-L27)
 
-formatter漏detail/error。
+最终可见信息差异。
 
 ```text
 export function format(v) {
@@ -570,98 +568,31 @@ export function format(v) {
   if (v.hasPrivateKeys != null) lines.push(`hasPrivateKeysInHome: ${v.hasPrivateKeys}`);
   if (v.npiperelay != null) lines.push(`npiperelay: ${v.npiperelay}`);
   for (const a of v.advice || []) lines.push(`- ${a}`);
+  return lines.join("\n");
 ```
-
-**依据 6 · 源码核查**：[index.js:26-30](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/index.js#L26-L30)
-
-外预算无signal。
-
-```text
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
-      return core.execute(args, config);
-```
-
-#### 缺口
-
-- socket存在但不可通信、ssh-add各退出状态和取消后的进程/诊断表现未模拟。
-  **影响**：不保证live/noidentity标签准确或总预算/即时取消。
-  **进一步探讨**：mock文件类型与退出码/超时/无工具，区分missing/existing/unreachable/empty/loaded，核signal传递，不读真实SSH目录或调用agent。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 启动流程和首次持续恢复成本是什么？
+### Q04 · 个人试用和分层收据怎样限定？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-#### 启动与依赖
+可信个人WSL可限定只读提示小试，先审元数据是否可进模型，核Host环境不是假定会话/Windows其他终端环境相同；不用它证明远程授权，不自动照建议加载key/建桥。共享agent或治理要求强的环境先观察，需核桥签名权限/宿主工具授权。首次核interop/PATH/socket与元数据，持续每次exists/列名/ssh-add及结果token和人工复核，金额/延迟未知；无插件网络/写入不等模型费用零。失败回本地原生ssh-add错误与独立授权验收，停工具无自有写回滚，但后续桥/密钥加载由用户另处理。
 
-| 条件 | 用途 | 边界 |
-| --- | --- | --- |
-| WSL/Node>=18与DSH tools/systemPrompt | 启用工具/指引 | apply环境缓存，包无精确host peer |
-| 可信PATH内ssh-add与当前agent env | 查询身份数量 | 不证明目标host授权，不接远端workspace环境 |
-| .ssh目录可列名 | 名称启发式 | 不读正文/不保证所有key发现 |
-| npiperelay/Windows agent | 可选转发建议 | 仅查存在，未创建桥 |
-| 元数据披露许可 | 路径/数量/错误入上下文 | 不粘私钥不等无隐私 |
-
-#### 使用流程
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 固定安装 | 核WSL/服务/PATH | 不先更改agent/添加key |
-| 查看 | 分别看socket存在/数量/桥 | live只是exists，0不一定无身份 |
-| 追因 | 查结构错误/实际权限与进程 | 当前render漏detail，需更细状态 |
-| 决策 | 必要时读者审核转发/授权范围 | 提示文本不等用户授权建立桥 |
-| 维护 | env/socket变化重新核当前host | 不把cachedWSL/本机home当所有会话 |
-
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次 | 本地包/既有SSH工具，桥如需另装 | 核互操作/PATH/agent与元数据范围 | 工时/费用未知 |
-| 持续使用 | 每次列名/exists与ssh-add进程、工具结果上下文 | 解释状态与审权限 | 无独立网络/模型调用不等总token费0，实际延迟未知 |
-| 失败恢复 | 重试查询、清失效socket/桥属后续动作 | 排权限/无工具/超时与误无身份建议 | 插件不修改密钥故无自有回滚；读者后续授权恢复成本未知 |
-
-#### 效果
-
-| 目标 | 增量 | 限制 |
-| --- | --- | --- |
-| 聚合排查 | socket/数量/常见桥一处 | 存在不等可用，失败混淆 |
-| 减key内容披露 | 成功不回ssh-add完整stdout，不读私钥 | 路径/存在/异常仍敏感 |
-| 引导SSH/HTTPS分工 | 明文提示 | 非认证/权限验收 |
-
-源码没有替用户加载key/转发/SSH登录，不把建议当执行；真实诊断准确率和省时未对照。本轮不调用ssh-add、私钥目录或Windows桥。
+未验证假设是路径存在/类型、查询退出/超时、身份数与观测时点分开，保留最小化报告、统一预算/取消；已有成功输出减量不能重复计新贡献。以假socket普通文件、权限拒绝/无ssh-add/timeout、0与N身份、匹配名目录/定制名和桥不可执行夹具比较误建议/披露/总等待。若现有提示足够或检测增加不必要接触/维护成本，则不扩展；不读取真实私钥、不自动做SSH联网测试。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:14-22](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/package.json#L14-L22)
+**依据 1 · 源码核查**：[lib/ssh-agent.js:59-74](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L59-L74)
 
-Node/包。
-
-```text
-  "type": "module",
-  "main": "index.js",
-  "engines": {
-    "node": ">=18"
-  },
-  "scripts": {
-    "test": "node --test test/*.test.js"
-  },
-  "files": [
-```
-
-**依据 2 · 源码核查**：[lib/ssh-agent.js:59-73](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L59-L73)
-
-进程/减量。
+查询分类实验源。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
 export async function sshAddList({ execFileFn = execFileAsync } = {}) {
@@ -679,64 +610,17 @@ export async function sshAddList({ execFileFn = execFileAsync } = {}) {
     // exit 1 often = no agent / no identities
     const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
     return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/ssh-agent.js:99-110](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L99-L110)
+**依据 2 · 源码核查**：[lib/ssh-agent.js:114-145](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/lib/ssh-agent.js#L114-L145)
 
-后续建议非动作。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  if (hasPrivateKeys && !sockAlive) {
-    tips.push("~/.ssh has private key files but no live agent — start ssh-agent or forward Windows OpenSSH agent.");
-  }
-  if (npiperelay) {
-    tips.push(`Found npiperelay at ${npiperelay} — you can bridge \\\\.\\pipe\\openssh-ssh-agent into WSL.`);
-  } else {
-    tips.push(
-      "Windows OpenSSH agent bridge: install npiperelay, then socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:\"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent\",nofork",
-    );
-  }
-  tips.push("HTTPS git push is separate — use cred_hint / Git Credential Manager; SSH remotes need this agent.");
-  tips.push("Verify: ssh-add -l && ssh -T git@github.com");
-```
-
-</details>
-
-#### 缺口
-
-- 与人工排查的正确归因率/时间/上下文披露成本没有比较。
-  **影响**：不能量化更安全或省时。
-  **进一步探讨**：用合成socket/目录/进程stub矩阵标真实状态，对照误建议和人工步骤，不访问真实凭据。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 推荐与继续探讨入口是什么？
-
-**研究主题**：采用判断、新假设与验证
-
-#### 完整回答
-
-有条件试用。可信个人WSL下当只读元数据提示有用，不读key正文/不建立桥，常规成功身份数量也做减量；先了解live/hasPrivateKeys只是词法/存在启发。需强诊断、共享主机转发授权或严格取消治理先观察，不因ok就认为SSH/Git权限验收。
-
-由exists当live、失败0当无身份推导“分层agent状态收据”。分别标路径不存在/非socket/存在未连接、查询退出码/错误/超时、empty/loaded与检查时点；不回指纹/注释，必要信息最小化。query通过host seam统一signal/预算，建议只在已知状态给动作，Windows桥权限另列需读者决定。
-
-未实现。反例是agent列出key不证明目标repo接受，或硬件key需交互才可签名；即使新收据loaded仍不能升格authenticated。最小对照含普通文件socket路径、过期节点、目录不可读/自定义key、ssh-add退出1/2/超时、PATH无工具、取消/多并发。若仍错标live/empty或把失败隐藏成操作建议，假设被反证；若增加查询/披露而不降误建议，收益不成立。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/ssh-agent.js:114-143](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L114-L143)
-
-分层状态基线。
+报告层级和时点缺口。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
 export async function execute(_args, _config = {}, deps = {}) {
@@ -769,73 +653,46 @@ export async function execute(_args, _config = {}, deps = {}) {
     hasPrivateKeys,
     npiperelay: npiperelay || "",
     sshAddDetail: list.detail || "",
+    advice,
+  };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/ssh-agent.js:59-73](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L59-L73)
+**依据 3 · 源码核查**：[package.json:1-18](https://github.com/173787247/dsh-wsl-ssh-agent/blob/b1c2cca9e63657086d6539671969b56097a37a8c/package.json#L1-L18)
 
-错误与预算基线。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export async function sshAddList({ execFileFn = execFileAsync } = {}) {
-  try {
-    const { stdout } = await execFileFn("ssh-add", ["-l"], {
-      encoding: "utf8",
-      timeout: 5_000,
-    });
-    const text = String(stdout || "").trim();
-    if (/no identities/i.test(text)) return { ok: true, keyCount: 0, detail: text };
-    const lines = text ? text.split(/\r?\n/).filter(Boolean) : [];
-    return { ok: true, keyCount: lines.length, detail: lines.length ? `${lines.length} identities` : text };
-  } catch (err) {
-    const msg = err instanceof Error ? err.message : String(err);
-    // exit 1 often = no agent / no identities
-    const code = err && typeof err === "object" && "code" in err ? err.code : undefined;
-    return { ok: false, keyCount: 0, detail: msg, code: code == null ? "" : String(code) };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/ssh-agent.js:87-106](https://github.com/173787247/dsh-wsl-ssh-agent/blob/99716388c9fa204b53bb6e931a239810d4524a0b/lib/ssh-agent.js#L87-L106)
-
-条件建议基线。
+固定包/Node。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-  if (!sock) {
-    tips.push("SSH_AUTH_SOCK is unset — no agent socket in this process.");
-  } else if (!sockAlive) {
-    tips.push(`SSH_AUTH_SOCK=${sock} is set but the socket path is missing (stale agent).`);
-  } else {
-    tips.push("SSH_AUTH_SOCK points at a live socket.");
-  }
-  if (keyCount === 0 && sockAlive) {
-    tips.push("ssh-add -l shows no identities — run ssh-add ~/.ssh/id_ed25519 (or forward Windows agent).");
-  } else if (keyCount > 0) {
-    tips.push(`Agent reports ${keyCount} loaded key(s).`);
-  }
-  if (hasPrivateKeys && !sockAlive) {
-    tips.push("~/.ssh has private key files but no live agent — start ssh-agent or forward Windows OpenSSH agent.");
-  }
-  if (npiperelay) {
-    tips.push(`Found npiperelay at ${npiperelay} — you can bridge \\\\.\\pipe\\openssh-ssh-agent into WSL.`);
-  } else {
-    tips.push(
-      "Windows OpenSSH agent bridge: install npiperelay, then socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:\"npiperelay.exe -ei -s //./pipe/openssh-ssh-agent\",nofork",
+{
+  "name": "dsh-wsl-ssh-agent",
+  "version": "0.2.0",
+  "description": "Diagnose WSL SSH agent socket, ssh-add keys, npiperelay bridge (no key material).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/173787247/dsh-wsl-ssh-agent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/173787247/dsh-wsl-ssh-agent/issues"
+  },
+  "homepage": "https://github.com/173787247/dsh-wsl-ssh-agent#readme",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
 ```
 
 </details>
 
 #### 缺口
 
-- 分层agent状态与宿主预算方案未实现。
-  **影响**：不计当前准确/治理优势。
-  **进一步探讨**：合成最小文件/进程stub对照标签/错误可见和披露，不接真实agent或加载key。
+- 未真实Host/agent/桥及分层版本测试、成本与元数据权限核验
+  **影响**：不能保证诊断准确或目标认证通过/净节时
+  **进一步探讨**：先假依赖矩阵测误归空与披露，再个人非敏感环境核原生结果，记录全成本。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

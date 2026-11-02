@@ -1,18 +1,18 @@
 # dsh-wsl-docker
 
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[89b19c3](https://github.com/173787247/dsh-wsl-docker/tree/89b19c3428df8dffa4c6771050e774bf1f1eb22b)
+源码版本：[84df8ba](https://github.com/173787247/dsh-wsl-docker/tree/84df8ba469b506b682d35054fdfcd21929d1bf7e)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-docker)
 <!-- END META -->
 
-> **功能**：在WSL查询Docker CLI/context/daemon、推理相关容器与GPU线索，并探固定8000端口的models状态。
+> **功能**：集中Docker context、daemon和推理容器线索，给端口/GPU建议；当前health等启发判断不等模型API就绪。
 
-> **亮点**：集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 聚合daemon与容器线索、focus和可注入run/fetch减少接线，非新探测算法，关键布尔仍需修正。
 
-> **主要限制**：404也health ok且遮蔽专门错误提示，空DeviceRequests可判GPU，内部8000暴露/远程context与固定本机探测错配。详见[Q02](#research-q02)。
+> **主要限制**：[Q03](#research-q03) 404/401也health ok遮专门404提示，空DeviceRequests可判GPU，仅expose可判publish，远程daemon与固定localhost错配；[Q02](#research-q02)吞错/无总取消。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 面向谁，daemon到推理候选诊断如何走？](#detail-section-11)
-  - [Q02 · 贡献和404/GPU/端口关键误判是什么？](#detail-section-12)
-  - [Q03 · 依赖、读取范围与读者流程是什么？](#detail-section-13)
-  - [Q04 · 三阶段成本和效果如何评价？](#detail-section-14)
-  - [Q05 · 工程点、分级就绪收据假设与采用结论？](#detail-section-15)
+  - [Q01 · Docker诊断集中什么任务，和真实模型验收有何区别？](#detail-section-11)
+  - [Q02 · 命令、focus和HTTP如何接线，错误是否保真？](#detail-section-12)
+  - [Q03 · 404、GPU和publish布尔是否可能假阳性？](#detail-section-13)
+  - [Q04 · 成本与采用怎样限定，怎样检验分层修正？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Docker Desktop/WSL/推理容器混淆时做初筛，实际context/端点/模型就绪另核。
+> **用途**：Docker Desktop/WSL/推理容器混淆时初筛，真实daemon/端点/GPU与模型就绪另核。
 
-手动Docker CLI/结构inspect与HTTP协议检查可替代；整合方便但当前假绿灯可增加排障成本。
+手工Docker context/version/ps/inspect与curl；集成非GPU/API完整验收。
 
 <a id="detail-section-3"></a>
 
@@ -52,69 +51,65 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| daemon初筛 | context/serverVersion | 总ok只版本非空 |
-| 容器线索 | ps/名称/端口 | 内部exposed不等hostpublished |
-| GPU线索 | inspect正则/最多3个 | 字段存在不等设备配置/可用 |
-| HTTP | 固定127.0.0.1:8000/models | 404也ok，非协议/模型就绪 |
+| daemon focus | 查CLI/context/version | 吞错/目标endpoint需核 |
+| vllm候选 | 容器名/端口/GPU提示 | 正则非设备/服务身份 |
+| HTTP health | 固定localhost状态 | 404/401也ok，不证API |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=18/DSH tools/systemPrompt | 必需 | doctor工具/指引 | 注册不等实际Docker链可用 |
-| WSL/bash/Docker CLI | 必需 | context/version/ps/info/inspect | 错误变空串，需另核原因 |
-| 目标Docker daemon/context权限 | 必需 | 元数据盘点 | 可远程context，localhost探测不一定同目标 |
-| 原生fetch与本地/vLLM实际地址 | HTTP分支必需 | GET /v1/models | 固定127.0.0.1:8000，不跟映射/认证走 |
-| 上游host_reach/gpu_doctor | 建议可选 | 深入核API/显存 | 本工具不执行/不包含它们 |
-
+| DSH tools/prompt、Node>=18/WSL | 必需 | 诊断工具 | 兼容未验/非WSL拒绝 |
+| Docker CLI/权限/context | 必需 | 当前daemon查询 | 错误归空非无容器证明 |
+| 明确daemon endpoint/端口 | 采用前提 | 归属核验 | 固定localhost未必同一服务 |
+| 可信非敏感报告 | 采用前提 | 避免元数据外发 | 无完整inspect输出非零隐私风险 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 定义 | 明确CLI context/daemon位置及目标容器 | 不混Desktop/WSL/远程daemon |
-| 盘点 | 先focusdaemon，再看容器字段 | 空串可能失败，不当无容器 |
-| 核证 | 对照inspect结构/真实端口映射和API协议 | 404/DeviceRequests字段存在非就绪 |
-| 恢复 | 按具体失败点查日志/权限/配置 | 未确认不另起推理栈/改GPU/运行示例 |
+| 初筛 | 明确context与预期端点 | 不按ok改环境 |
+| 修正 | 先核404/GPU/publish谓词 | 空/错与ready分开 |
+| 对照 | 单daemon原生命令/模型协议 | 正确归属和就绪层级 |
+| 退出 | 停工具回CLI/日志 | 手改环境另恢复备份 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | WSL/Docker环境，金额未知 | context/权限/端点定位 | 不自动安装/启动容器 |
-| 持续使用 | 顺序最多多次15秒CLI与2.5秒HTTP | 阅读候选/对照真实GPU/模型协议 | 外层默认15秒不覆盖最坏总链 |
-| 失败恢复 | 重查daemon/容器日志/端点 | 区分CLI错误/空结果/API错误 | 不据空串/health ok盲改环境 |
-
+| 首次 | WSL/Docker/宿主 | context/权限/端点核 | 费用/工时未知 |
+| 持续 | 多15秒CLI与2.5秒HTTP/结果token | GPU/映射/API复核 | 总链可超外层15秒 |
+| 失败恢复 | 重探/服务日志 | 区分空结果/错daemon/协议 | 不按假绿灯盲改环境 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| daemon初筛 | CLI路径/context/serverVersion | 每条命令真实错误与目标身份 |
-| 推理候选 | 名称/镜像/端口启发式 | 实际vLLM/模型/GPU工作状态 |
-| API线索 | 固定地址HTTP状态 | OpenAI协议/认证/模型加载/完整任务 |
+| daemon初筛 | CLI/context/serverVersion | 错误类别与目标endpoint |
+| 推理候选 | 名称/镜像/端口正则 | GPU实际工作/发布映射 |
+| HTTP线索 | 状态值可见 | health ok非OpenAI/认证/生成 |
 
-> **思考**：404也health ok且遮蔽专门错误提示，空DeviceRequests可判GPU，内部8000暴露/远程context与固定本机探测错配。详见[Q02](#research-q02)。
+> **思考**：[Q03](#research-q03) 404/401也health ok遮专门404提示，空DeviceRequests可判GPU，仅expose可判publish，远程daemon与固定localhost错配；[Q02](#research-q02)吞错/无总取消。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：集中Docker上下文与推理线索减少手工接线，不是GPU或API完整验收。详见[Q01](#research-q01)与[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 聚合daemon与容器线索、focus和可注入run/fetch减少接线，非新探测算法，关键布尔仍需修正。
 
-纯core/Host注册分离、focus缩小读取、execFile固定参数、依赖注入run/fetch便于受控材料核查、只读建议分开，均可复用。问题在一组强命名布尔压平了错误与就绪层级。
+[Q02](#research-q02) core/Host分离、focus、固定argv/run注入可借鉴；[Q03](#research-q03) 强命名布尔应分层，字符串正则不能替结构化设备/端口身份。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-404也health ok且遮蔽专门错误提示，空DeviceRequests可判GPU，内部8000暴露/远程context与固定本机探测错配。详见[Q02](#research-q02)。
+[Q03](#research-q03) 404/401也health ok遮专门404提示，空DeviceRequests可判GPU，仅expose可判publish，远程daemon与固定localhost错配；[Q02](#research-q02)吞错/无总取消。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先观察，修404/GPU/端口/吞错误谓词和分层收据后再评估受控试用。详见[Q05](#research-q05)。
+[Q04](#research-q04) 先观察、修布尔/吞错/归属后评小试；当前只能人工核线索，假绿灯或端点不符停用回原生命令与日志，不自动改环境。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持Docker上下文、容器与推理端点线索的集中查询；404、空GPU请求字段和内部端口可能被误判为健康条件，不能证明推理就绪。结构化映射和分级就绪收据尚未验证。
+完整重新核固定43行入口/230行docker主逻辑、检测与全部正式findings；未执行目标/CLI/HTTP/测试或真实daemon，逻辑缺陷未运行复现。
 
-- 已检查：作者 README、包清单、源码路径 index.js、lib/docker.js、package.json、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/docker.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定index/docker完整主逻辑与同hashwsl-host检测；未运行Docker/HTTP/目标测试，不证明真实daemon/模型协议。
-- 下一步：进一步探讨用空设备/404/401/200HTML/端口映射/remotecontext/命令失败慢响应夹具核谓词，再对照完整受控诊断。
+- 边界：固定docker完整主逻辑/入口与WSL检测/README/package；不审实际daemon、GPU驱动、套件关联工具或执行测试。
+- 下一步：[Q04](#research-q04) 404/空设备/仅expose/远程context/超时矩阵测误绿灯、归属和总成本，未执行。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-docker](https://github.com/173787247/dsh-wsl-docker)
-- **版本号**：0.2.2（[固定提交 89b19c3](https://github.com/173787247/dsh-wsl-docker/tree/89b19c3428df8dffa4c6771050e774bf1f1eb22b)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.2（[固定提交 84df8ba](https://github.com/173787247/dsh-wsl-docker/tree/84df8ba469b506b682d35054fdfcd21929d1bf7e)）
+- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +136,9 @@
 
 <a id="innovation"></a>
 
-可探讨context/映射结构解析与daemon/设备/HTTP协议分级收据、总deadline，反例仍假绿灯则证伪实现。详见[Q05](#research-q05)。
+[Q04](#research-q04) 待验证结构解析endpoint/映射/设备与分层收据/总deadline，反例仍绿灯即否定，生成测试不自动运行。
 
-进一步探讨用空设备/404/401/200HTML/端口映射/remotecontext/命令失败慢响应夹具核谓词，再对照完整受控诊断。
+[Q04](#research-q04) 404/空设备/仅expose/远程context/超时矩阵测误绿灯、归属和总成本，未执行。
 
 <a id="detail-section-9"></a>
 
@@ -151,6 +146,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,46 +159,64 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+created%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-docker/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A59%3A44.342Z..2026-10-22T07%3A59%3A44.342Z)
-
-
-
-统计日期：2026-10-22。
+Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-docker/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核Docker上下文/容器/GPU/API诊断真实谓词，分离只读线索、daemon可达和推理就绪。
+**插件研究总目标**：Docker/WSL诊断能否正确分daemon/设备/HTTP与模型状态？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 面向谁，daemon到推理候选诊断如何走？
+### Q01 · Docker诊断集中什么任务，和真实模型验收有何区别？
 
-**研究主题**：场景与需求、功能与机制
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向WSL里混淆Docker Desktop/Engine context、或排查vLLM/OpenAI容器的人。输入focus all/daemon/vllm，输出CLI路径/context/serverVersion、运行容器/GPU线索和固定端口health/建议。成功诊断需先锁定实际daemon/容器/映射，再确认API语义与模型可用；daemon版本非推理服务就绪。
+面向WSL里的Docker Desktop/原生daemon混淆及vLLM/OpenAI容器连接排障。相对手工which/context/version/ps/info/inspect/curl，它给结构化线索和静态建议，不安装Docker、不启动/修复容器、不跑GPU计算或模型生成。合格结果是正确daemon/端点归属和错误分层，而非有一个health字段为true。
 
-WSL检测后工具调用core.execute，顺序command -v docker、context show、version；serverVersion非空为daemonOk。非daemon模式docker ps/info，按名字/镜像/8000字样筛候选，最多inspect3个作GPU正则；候选或focusvllm时GET127.0.0.1:8000/v1/models。结果顶层ok只daemonOk，format/hints提示另配host_reach/gpu_doctor，不实际修复。
+它可减少手工拼信息，但名称/镜像/端口启发式仅候选；宿主模型/GPU工具和host_reach是其他组件，不计本包能力。已有熟练CLI与明确context者不一定值得新增模型报告。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:7-29](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/index.js#L7-L29)
+**依据 1 · 作者声明**：[README.md:5-18](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/README.md#L5-L18)
 
-工具注册/分发。
+作者定位和套件分工。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（14行）</summary>
+
+````text
+DeepSeek Harness plugin: Docker Desktop vs WSL engine doctor, plus **vLLM / OpenAI :8000** container hints.
+
+[中文说明 → README.zh.md](./README.zh.md)
+
+## Where it sits
+
+Checks Docker Desktop versus the WSL context, and whether a local inference port is actually an API.
+
+```mermaid
+flowchart LR
+  agent["dsh agent"] --> tool["docker_doctor"] --> docker["Docker context and local API"]
+```
+
+Suite diagram and version snapshot: [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit#how-the-pieces-fit). This plugin is **0.2.2** (full; also in llm). Do not copy that matrix into this README.
+````
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:11-29](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/index.js#L11-L29)
+
+工具注册/调用。
+
+<details>
+<summary>查看原文（19行）</summary>
 
 ```text
-export function apply(ctx, config = {}) {
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const wsl = detectWsl();
-
   ctx.systemPrompt.section({
     name: "tool:docker_doctor",
     order: 120,
@@ -225,12 +240,84 @@ export function apply(ctx, config = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/docker.js:148-188](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L148-L188)
+**依据 3 · 源码核查**：[lib/docker.js:148-168](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L148-L168)
 
-CLI/daemon/容器。
+CLI发现和daemon判断。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（21行）</summary>
+
+```text
+export async function execute(args = {}, deps = {}) {
+  const focus = ["all", "daemon", "vllm"].includes(args?.focus) ? args.focus : "all";
+  const runFn = deps.run || run;
+  const which = await runFn("bash", ["-lc", "command -v docker || true"]);
+  if (!which) {
+    return {
+      ok: false,
+      error: "docker CLI not found in WSL",
+      containers: [],
+      vllmHints: buildVllmHints([], { daemonOk: false }),
+      portHealth: null,
+      advice: [
+        "Install Docker Engine in WSL, or install Docker Desktop and enable WSL integration.",
+        "For local LLM ports without Docker, use host_reach (Ollama/LM Studio/llama-server).",
+      ],
+    };
+  }
+
+  const context = await runFn("docker", ["context", "show"]);
+  const serverVersion = await runFn("docker", ["version", "--format", "{{.Server.Version}}"]);
+  const daemonOk = Boolean(serverVersion);
+```
+
+</details>
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 命令、focus和HTTP如何接线，错误是否保真？
+
+**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用
+
+#### 完整回答
+
+WSL入口门控，focus=daemon只查CLI/context/serverVersion，其他再ps、info和最多3个疑似容器inspect；实际用当前Docker CLI context/环境。run固定execFile参数、15秒/2MiB，异常一律空字符串，权限拒绝/timeout/不存在与无结果混淆。which用固定bash -lc脚本，非模型任意shell输入，但执行环境仍依宿主。
+
+daemonOk仅serverVersion非空；容器按tab格式和正则，HTTP固定127.0.0.1:8000/v1/models独立2.5秒timeout，与当前daemon远程context/端口映射未绑定。入口tool15秒不传signal给core，顺序多次内部15秒可超过外层且无法据外层返回断言停止。core/注册分离、run/fetch依赖注入和只读动作适合复用，错误类别和总预算应保留。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/docker.js:51-61](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L51-L61)
+
+固定进程与吞错。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+async function run(cmd, args) {
+  try {
+    const { stdout } = await execFileAsync(cmd, args, {
+      timeout: 15_000,
+      encoding: "utf8",
+      maxBuffer: 2 * 1024 * 1024,
+    });
+    return String(stdout).trim();
+  } catch {
+    return "";
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/docker.js:148-208](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L148-L208)
+
+focus/命令/目标HTTP。
+
+<details>
+<summary>查看原文（61行）</summary>
 
 ```text
 export async function execute(args = {}, deps = {}) {
@@ -274,18 +361,7 @@ export async function execute(args = {}, deps = {}) {
     const runtime = await runFn("docker", ["info", "--format", "{{.Runtimes}}"]);
     if (/nvidia/i.test(runtime)) gpuHint = "nvidia runtime present";
     else gpuHint = "nvidia runtime not obvious — check Docker Desktop GPU / nvidia-container-toolkit";
-```
 
-</details>
-
-**依据 3 · 源码核查**：[lib/docker.js:190-229](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L190-L229)
-
-inspect/HTTP/总结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
     const hits = containers.filter(looksLikeVllm);
     if (hits.length) {
       let anyGpu = false;
@@ -305,131 +381,46 @@ inspect/HTTP/总结果。
       portHealth = await probeHttpHealth("http://127.0.0.1:8000/v1/models", {
         fetchFn: deps.fetchFn,
       });
-    }
-  }
-
-  const vllmHints = focus === "daemon" ? [] : buildVllmHints(containers, { daemonOk, portHealth, gpuOnHits });
-  if (daemonOk && focus !== "daemon") {
-    advice.push("Cross-check OpenAI port with host_reach (profile=vllm or all) from a dsh session.");
-    advice.push("If GPU VRAM looks exhausted, run gpu_doctor before starting another inference stack.");
-  }
-
-  return {
-    ok: daemonOk,
-    which,
-    context,
-    serverVersion,
-    gpuHint,
-    gpuOnHits,
-    containers: focus === "daemon" ? [] : containers,
-    portHealth,
-    vllmHints,
-    advice,
-  };
 ```
 
 </details>
 
-<a id="research-q02"></a>
+**依据 3 · 源码核查**：[index.js:25-29](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/index.js#L25-L29)
 
-<a id="detail-section-12"></a>
+timeout未传取消。
 
-### Q02 · 贡献和404/GPU/端口关键误判是什么？
+```text
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
+      return core.execute(args, config);
+```
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 404、GPU和publish布尔是否可能假阳性？
+
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-贡献是把Docker上下文与推理相关线索集中，帮助发现“有CLI不等daemon可达”，且不执行安装/启动/删除。底层仍是命令/字符串启发式，不是服务健康验收。
+是。probeHttpHealth将任何1..499状态记ok，包括404/401；buildVllmHints先if ok，专门else if404分支因此对本helper产物不可达。它不解析models JSON或身份认证，HTTP有响应不同于API ready，与作者包描述404≠ready冲突；不是所有网络成功都坏，确认的是布尔压层。
 
-probeHttpHealth把所有>0且<500状态算ok，包括401/404，buildVllmHints先if ok，后面的404专门提示分支在生产probe结果下不可到达；与包描述404不等APIready的意图冲突。只等response头，不读models JSON/认证/模型列表，HTTP200错误页面也ok。顶层ok只daemonVersion非空，即API失败仍可整条ok。
+containerHasGpuRuntime对原始inspect文本搜DeviceRequests等，空DeviceRequests字段也能匹配，不能证明有GPU请求/设备实际工作。publishes8000正则接受仅8000/tcp（暴露未发布）与部分8000->映射，未结构解析host port/daemon endpoint；远程daemon或9000:8000时固定本机8000可探错服务。名称/镜像含llm/vllm也非服务身份。
 
-containerHasGpuRuntime只正则匹配DeviceRequests字段字样，空数组/null也可true，不解析非空device/capabilities；最多3候选anyGpu为true不代表每个候选或实际CUDA可用。parseContainers把8000/tcp内部暴露也叫publishes8000，不要求宿主发布；实际映射18000->8000或远程context仍只探本机8000，可能探错服务。名字含openai/llm也仅候选。
-
-run把全部CLI异常吞为空串，不保退出码/stderr/timeout，空列表可来自权限/失败而非无容器。每条命令固定15秒且顺序多次，外层工具timeout默认15秒，执行未传exec.signal；Host取消/总deadline不能保证终止剩余诊断。
+正常输出不返完整inspect/环境，是隐私收缩优点；仍返回容器名、镜像和context/错误元数据进入模型，按权限/敏感性决定。Docker socket实际访问是高权限环境，插件只调用查询不代表凭据权限被沙箱收窄。未执行Docker/HTTP，以上是静态缺陷/启发式限制，不写真实事故。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/docker.js:87-98](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L87-L98)
+**依据 1 · 源码核查**：[lib/docker.js:64-90](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L64-L90)
 
-HTTP小于500全ok。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-export async function probeHttpHealth(url, { timeoutMs = 2500, fetchFn = fetch } = {}) {
-  try {
-    const res = await fetchFn(url, { signal: AbortSignal.timeout(timeoutMs) });
-    return { ok: res.status > 0 && res.status < 500, status: res.status, error: "", url };
-  } catch (err) {
-    return {
-      ok: false,
-      status: 0,
-      error: err instanceof Error ? err.message : String(err),
-      url,
-    };
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/docker.js:118-129](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L118-L129)
-
-404分支被ok遮蔽。
+port/GPU正则和health404归ok。
 
 <details>
-<summary>查看原文（12行）</summary>
-
-```text
-  if (portHealth) {
-    if (portHealth.ok) {
-      hints.unshift(`HTTP health ${portHealth.url} → status ${portHealth.status}.`);
-    } else if (Number(portHealth.status) === 404) {
-      hints.unshift(
-        `HTTP ${portHealth.url} → 404: TCP/publish open but /v1/models not ready (wrong image, still loading, or non-OpenAI listener). Align with host_reach apiReady=false; check logs then host_reach profile=vllm.`,
-      );
-    } else {
-      hints.unshift(
-        `HTTP health ${portHealth.url} failed (${portHealth.error || portHealth.status}). Port publish ≠ API ready — check logs; then host_reach profile=vllm.`,
-      );
-    }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/docker.js:218-226](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L218-L226)
-
-总ok仅daemon。
-
-```text
-  return {
-    ok: daemonOk,
-    which,
-    context,
-    serverVersion,
-    gpuHint,
-    gpuOnHits,
-    containers: focus === "daemon" ? [] : containers,
-    portHealth,
-```
-
-**依据 4 · 源码核查**：[lib/docker.js:82-84](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L82-L84)
-
-GPU仅字段正则。
-
-```text
-export function containerHasGpuRuntime(inspectJson) {
-  const text = typeof inspectJson === "string" ? inspectJson : JSON.stringify(inspectJson || {});
-  return /HostConfig.*?Runtime.*?nvidia|"Runtime"\s*:\s*"nvidia"|DeviceRequests|nvidia.com\/gpu/i.test(text);
-```
-
-**依据 5 · 源码核查**：[lib/docker.js:64-79](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L64-L79)
-
-端口/名称启发式。
-
-<details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
 function parseContainers(psOut) {
@@ -448,13 +439,53 @@ function parseContainers(psOut) {
 function looksLikeVllm(c) {
   const blob = `${c.name} ${c.image} ${c.ports}`.toLowerCase();
   return /vllm|openai|8000|llm/.test(blob) && /8000|vllm|openai/.test(blob);
+}
+
+export function containerHasGpuRuntime(inspectJson) {
+  const text = typeof inspectJson === "string" ? inspectJson : JSON.stringify(inspectJson || {});
+  return /HostConfig.*?Runtime.*?nvidia|"Runtime"\s*:\s*"nvidia"|DeviceRequests|nvidia.com\/gpu/i.test(text);
+}
+
+export async function probeHttpHealth(url, { timeoutMs = 2500, fetchFn = fetch } = {}) {
+  try {
+    const res = await fetchFn(url, { signal: AbortSignal.timeout(timeoutMs) });
+    return { ok: res.status > 0 && res.status < 500, status: res.status, error: "", url };
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[lib/docker.js:190-208](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L190-L208)
+**依据 2 · 源码核查**：[lib/docker.js:118-134](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L118-L134)
 
-前三anyGPU/固定地址。
+404提示被先ok遮蔽。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  if (portHealth) {
+    if (portHealth.ok) {
+      hints.unshift(`HTTP health ${portHealth.url} → status ${portHealth.status}.`);
+    } else if (Number(portHealth.status) === 404) {
+      hints.unshift(
+        `HTTP ${portHealth.url} → 404: TCP/publish open but /v1/models not ready (wrong image, still loading, or non-OpenAI listener). Align with host_reach apiReady=false; check logs then host_reach profile=vllm.`,
+      );
+    } else {
+      hints.unshift(
+        `HTTP health ${portHealth.url} failed (${portHealth.error || portHealth.status}). Port publish ≠ API ready — check logs; then host_reach profile=vllm.`,
+      );
+    }
+  }
+  if (gpuOnHits === false) {
+    hints.unshift("vLLM-related container(s) do not show an nvidia/GPU runtime — expect CPU-only or failed CUDA init; fix Docker GPU then gpu_doctor.");
+  } else if (gpuOnHits === true) {
+    hints.unshift("vLLM-related container appears to request nvidia/GPU runtime.");
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/docker.js:190-208](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L190-L208)
+
+GPU判断和固定localhost。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -483,228 +514,53 @@ function looksLikeVllm(c) {
 
 </details>
 
-**依据 7 · 源码核查**：[lib/docker.js:51-61](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L51-L61)
+**依据 4 · 源码核查**：[lib/docker.js:218-230](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L218-L230)
 
-吞命令错误。
+输出为精选字段。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-async function run(cmd, args) {
-  try {
-    const { stdout } = await execFileAsync(cmd, args, {
-      timeout: 15_000,
-      encoding: "utf8",
-      maxBuffer: 2 * 1024 * 1024,
-    });
-    return String(stdout).trim();
-  } catch {
-    return "";
-  }
+  return {
+    ok: daemonOk,
+    which,
+    context,
+    serverVersion,
+    gpuHint,
+    gpuOnHits,
+    containers: focus === "daemon" ? [] : containers,
+    portHealth,
+    vllmHints,
+    advice,
+  };
+}
 ```
 
 </details>
-
-**依据 8 · 源码核查**：[index.js:25-29](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/index.js#L25-L29)
-
-无signal分发。
-
-```text
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      if (!wsl) return core.notWsl ? core.notWsl() : { ok: false, error: "not running in WSL" };
-      return core.execute(args, config);
-```
-
-#### 缺口
-
-- 当前context到被探HTTP端点的身份、完整OpenAI响应和实际GPU/模型可用性未核。
-  **影响**：不能据health/GPU true判断能推理。
-  **进一步探讨**：可先结构解析context/inspect映射与DeviceRequests，再核目标models/认证/受控完整请求，不探无关服务。
-- 命令失败的真实退出码/权限/超时被折叠。
-  **影响**：空结果不能定位根因。
-  **进一步探讨**：可从每命令observed/error/unknown收据与总deadline取消入手，避免把错误误记为不存在。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 依赖、读取范围与读者流程是什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-包0.2.2/Node>=18依WSL、bash、Docker CLI/daemon和对应权限；检测只env/内核，不证明Docker integration。公共wsl-host副本hash与已读一致，当前只用detectWsl。原生execFile和fetch不走Host受管subprocess/网络策略，Docker context可指远程daemon，查询可能跨本机边界。
-
-#### 启动与依赖
-
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=18/DSH tools/systemPrompt | 必需 | doctor工具/指引 | 注册不等实际Docker链可用 |
-| WSL/bash/Docker CLI | 必需 | context/version/ps/info/inspect | 错误变空串，需另核原因 |
-| 目标Docker daemon/context权限 | 必需 | 元数据盘点 | 可远程context，localhost探测不一定同目标 |
-| 原生fetch与本地/vLLM实际地址 | HTTP分支必需 | GET /v1/models | 固定127.0.0.1:8000，不跟映射/认证走 |
-| 上游host_reach/gpu_doctor | 建议可选 | 深入核API/显存 | 本工具不执行/不包含它们 |
-
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 定义 | 明确CLI context/daemon位置及目标容器 | 不混Desktop/WSL/远程daemon |
-| 盘点 | 先focusdaemon，再看容器字段 | 空串可能失败，不当无容器 |
-| 核证 | 对照inspect结构/真实端口映射和API协议 | 404/DeviceRequests字段存在非就绪 |
-| 恢复 | 按具体失败点查日志/权限/配置 | 未确认不另起推理栈/改GPU/运行示例 |
-
-容器名/镜像/端口输出进入模型，inspect全文虽然仅正则后丢弃仍被进程读取；不要为了盘点直接提权。代码给docker run示例只是文字，不代表授权启动下载镜像或占显存；本轮不运行任何命令/HTTP。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-4](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/package.json#L1-L4)
-
-版本。
-
-```text
-{
-  "name": "dsh-wsl-docker",
-  "version": "0.2.2",
-  "description": "Docker Desktop vs WSL context doctor; vLLM :8000 health with HTTP 404 ≠ API ready.",
-```
-
-**依据 2 · 源码核查**：[package.json:16-18](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/package.json#L16-L18)
-
-Node。
-
-```text
-  "engines": {
-    "node": ">=18"
-  },
-```
-
-**依据 3 · 源码核查**：[lib/wsl-host.js:21-27](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/wsl-host.js#L21-L27)
-
-检测。
-
-```text
-export function detectWsl({ env = process.env, readRelease = readOsRelease } = {}) {
-  if (env.WSL_DISTRO_NAME || env.WSL_INTEROP) return true;
-  try {
-    return /microsoft/i.test(readRelease());
-  } catch {
-    return false;
-  }
-```
-
-**依据 4 · 源码核查**：[lib/docker.js:151-167](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L151-L167)
-
-原生CLIcontext。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-  const which = await runFn("bash", ["-lc", "command -v docker || true"]);
-  if (!which) {
-    return {
-      ok: false,
-      error: "docker CLI not found in WSL",
-      containers: [],
-      vllmHints: buildVllmHints([], { daemonOk: false }),
-      portHealth: null,
-      advice: [
-        "Install Docker Engine in WSL, or install Docker Desktop and enable WSL integration.",
-        "For local LLM ports without Docker, use host_reach (Ollama/LM Studio/llama-server).",
-      ],
-    };
-  }
-
-  const context = await runFn("docker", ["context", "show"]);
-  const serverVersion = await runFn("docker", ["version", "--format", "{{.Server.Version}}"]);
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/docker.js:194-208](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L194-L208)
-
-inspect/HTTP。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-      for (const c of hits.slice(0, 3)) {
-        const raw = await runFn("docker", ["inspect", c.name]);
-        if (raw) {
-          inspected = true;
-          if (containerHasGpuRuntime(raw)) anyGpu = true;
-        }
-      }
-      if (inspected) gpuOnHits = anyGpu;
-    }
-
-    const publish8000 = containers.some((c) => c.publishes8000) || focus === "vllm";
-    if (publish8000 || hits.length) {
-      portHealth = await probeHttpHealth("http://127.0.0.1:8000/v1/models", {
-        fetchFn: deps.fetchFn,
-      });
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/docker.js:136-142](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L136-L142)
-
-示例仅hints。
-
-```text
-  if (!hits.length) {
-    hints.unshift(
-      "No obvious vLLM/OpenAI container on :8000. Example: docker run --gpus all -p 8000:8000 vllm/vllm-openai:latest --model <HF_ID>",
-    );
-  } else {
-    hints.unshift(
-      `Possible vLLM-related container(s): ${hits.map((c) => c.name).join(", ")}. Confirm /v1 with host_reach (profile=vllm).`,
-```
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 三阶段成本和效果如何评价？
+### Q04 · 成本与采用怎样限定，怎样检验分层修正？
 
-**研究主题**：效果与总成本
+**研究主题**：效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-代码只查询而不启动GPU/容器，所以本轮诊断不必产生模型推理费；仍有多个Docker CLI进程、daemon查询/可能远程延迟、inspect输出与模型阅读。每条命令2MiB缓冲、15秒timeout有局部上限，但最多多次串行不是总15秒。
+建议先观察，修health/GPU/publish谓词与错误保真再评小试。当前仅当手工初筛线索，用明确单daemon核context/端点与原命令；不要按ok改GPU/网络/容器环境。首先有WSL/Docker/宿主安装权限，持续多CLI/HTTP、结果token与人工核对，失败查daemon日志/端点而非把空串当无容器；费用/延迟未知，无额外账户不等零总成本。停止工具回原生命令，无插件写入要回滚，但照建议手改环境需备份并单独恢复。
 
-#### 成本
-
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | WSL/Docker环境，金额未知 | context/权限/端点定位 | 不自动安装/启动容器 |
-| 持续使用 | 顺序最多多次15秒CLI与2.5秒HTTP | 阅读候选/对照真实GPU/模型协议 | 外层默认15秒不覆盖最坏总链 |
-| 失败恢复 | 重查daemon/容器日志/端点 | 区分CLI错误/空结果/API错误 | 不据空串/health ok盲改环境 |
-
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| daemon初筛 | CLI路径/context/serverVersion | 每条命令真实错误与目标身份 |
-| 推理候选 | 名称/镜像/端口启发式 | 实际vLLM/模型/GPU工作状态 |
-| API线索 | 固定地址HTTP状态 | OpenAI协议/认证/模型加载/完整任务 |
-
-相较手动context/version/ps/inspect，统一入口可能省接线，但误把404/GPU字段/内部端口当就绪可浪费后续排障或另起栈成本。效益要计正确定位率和避免错误修复的人时，不能只统计doctor ok。
+未验证方向是结构解析context endpoint/Ports/DeviceRequests，分daemon可达、设备请求、HTTP状态、OpenAI协议与生成就绪，并共享deadline/取消。不是简单增加已有404提示字符串。用404/401、空DeviceRequests、8000仅expose、9000映射/远端context、CLI超时夹具对照误绿灯/归属与总人工；若仍给ready或复杂度增大而无净改善即否定。生成探测需额外同意/资源，当前未执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/docker.js:51-61](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L51-L61)
+**依据 1 · 源码核查**：[lib/docker.js:51-90](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L51-L90)
 
-局部timeout/buffer。
+吞错/错误谓词提供验证源。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
 async function run(cmd, args) {
@@ -718,13 +574,42 @@ async function run(cmd, args) {
   } catch {
     return "";
   }
+}
+
+function parseContainers(psOut) {
+  if (!psOut) return [];
+  return psOut
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const [name = "", image = "", ports = ""] = line.split("\t");
+      const publishes8000 = /(?:^|[\s,])(?:0\.0\.0\.0:|:::|127\.0\.0\.1:)?8000->|\b8000\/tcp\b/.test(ports);
+      return { name, image, ports, publishes8000 };
+    });
+}
+
+function looksLikeVllm(c) {
+  const blob = `${c.name} ${c.image} ${c.ports}`.toLowerCase();
+  return /vllm|openai|8000|llm/.test(blob) && /8000|vllm|openai/.test(blob);
+}
+
+export function containerHasGpuRuntime(inspectJson) {
+  const text = typeof inspectJson === "string" ? inspectJson : JSON.stringify(inspectJson || {});
+  return /HostConfig.*?Runtime.*?nvidia|"Runtime"\s*:\s*"nvidia"|DeviceRequests|nvidia.com\/gpu/i.test(text);
+}
+
+export async function probeHttpHealth(url, { timeoutMs = 2500, fetchFn = fetch } = {}) {
+  try {
+    const res = await fetchFn(url, { signal: AbortSignal.timeout(timeoutMs) });
+    return { ok: res.status > 0 && res.status < 500, status: res.status, error: "", url };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/docker.js:166-208](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L166-L208)
+**依据 2 · 源码核查**：[lib/docker.js:166-208](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/lib/docker.js#L166-L208)
 
-串行诊断链。
+context/映射与单机HTTP分叉。
 
 <details>
 <summary>查看原文（43行）</summary>
@@ -777,150 +662,40 @@ async function run(cmd, args) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/docker.js:218-229](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L218-L229)
+**依据 3 · 源码核查**：[package.json:1-18](https://github.com/173787247/dsh-wsl-docker/blob/84df8ba469b506b682d35054fdfcd21929d1bf7e/package.json#L1-L18)
 
-总ok语义。
+固定包和Node要求。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-  return {
-    ok: daemonOk,
-    which,
-    context,
-    serverVersion,
-    gpuHint,
-    gpuOnHits,
-    containers: focus === "daemon" ? [] : containers,
-    portHealth,
-    vllmHints,
-    advice,
-  };
+{
+  "name": "dsh-wsl-docker",
+  "version": "0.2.2",
+  "description": "Docker Desktop vs WSL context doctor; vLLM :8000 health with HTTP 404 ≠ API ready.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/173787247/dsh-wsl-docker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/173787247/dsh-wsl-docker/issues"
+  },
+  "homepage": "https://github.com/173787247/dsh-wsl-docker#readme",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
 ```
 
 </details>
 
 #### 缺口
 
-- 无daemon拓扑/映射/错误场景的误判率、总延迟与手工诊断人时对照。
-  **影响**：不能承诺快速定位或准确健康结论。
-  **进一步探讨**：可用固定命令响应/404/空GPU/remotecontext夹具核状态，再测受控只读诊断总资源和恢复人时。
+- 无真实daemon/context/GPU/API或修正对照、耗时与恢复验收
+  **影响**：不支持当前可靠诊断/常规采用或省时承诺
+  **进一步探讨**：隔离假命令/HTTP先修分层，单daemon原生核对，测假绿灯/错误归属及全周期成本。
 
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 工程点、分级就绪收据假设与采用结论？
-
-**研究主题**：工程质量与复用、新假设与验证、采用判断
-
-#### 完整回答
-
-纯core/Host注册分离、focus缩小读取、execFile固定参数、依赖注入run/fetch便于受控材料核查、只读建议分开，均可复用。问题在一组强命名布尔压平了错误与就绪层级。
-
-可探讨未验证的“daemon/容器/GPU/API分级收据”。每条命令保退出码/错误/时间与目标context；解析inspect JSON实际非空设备请求/PortBindings，区分内部exposed与宿主published，选择同daemon实际映射地址。HTTP区分可达/鉴权/协议正确/models存在/受控推理，各有unknown/不自动升级；404应明确非APIready，200需schema，不把anyGPU泛化所有容器。加总deadline和signal。相对当前正则/固定端口，可减少错服务和假绿灯；代价是Docker/平台版本解析、权限与受控验证开销。用DeviceRequests空/null、404/401/200HTML、18000映射、远程context、ps失败及慢命令反例研究；任一仍称API/GPU就绪则否证该收据实现，先修谓词。
-
-推荐observe。只读盘点整合有价值，但HTTP404、GPU/端口误判与吞错误需先修，现有ok不能用于判断推理栈可用。继续从结构解析/分层状态/目标映射入手，再评估受控试用；错目标、异常当空、API非协议却ok或超时未停止即停，不据此启动新容器/改GPU或填生产baseURL。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/docker.js:148-150](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L148-L150)
-
-依赖注入。
-
-```text
-export async function execute(args = {}, deps = {}) {
-  const focus = ["all", "daemon", "vllm"].includes(args?.focus) ? args.focus : "all";
-  const runFn = deps.run || run;
-```
-
-**依据 2 · 源码核查**：[lib/docker.js:87-98](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L87-L98)
-
-就绪谓词起点。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-export async function probeHttpHealth(url, { timeoutMs = 2500, fetchFn = fetch } = {}) {
-  try {
-    const res = await fetchFn(url, { signal: AbortSignal.timeout(timeoutMs) });
-    return { ok: res.status > 0 && res.status < 500, status: res.status, error: "", url };
-  } catch (err) {
-    return {
-      ok: false,
-      status: 0,
-      error: err instanceof Error ? err.message : String(err),
-      url,
-    };
-  }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/docker.js:64-84](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L64-L84)
-
-结构解析起点。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-function parseContainers(psOut) {
-  if (!psOut) return [];
-  return psOut
-    .split(/\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .map((line) => {
-      const [name = "", image = "", ports = ""] = line.split("\t");
-      const publishes8000 = /(?:^|[\s,])(?:0\.0\.0\.0:|:::|127\.0\.0\.1:)?8000->|\b8000\/tcp\b/.test(ports);
-      return { name, image, ports, publishes8000 };
-    });
-}
-
-function looksLikeVllm(c) {
-  const blob = `${c.name} ${c.image} ${c.ports}`.toLowerCase();
-  return /vllm|openai|8000|llm/.test(blob) && /8000|vllm|openai/.test(blob);
-}
-
-export function containerHasGpuRuntime(inspectJson) {
-  const text = typeof inspectJson === "string" ? inspectJson : JSON.stringify(inspectJson || {});
-  return /HostConfig.*?Runtime.*?nvidia|"Runtime"\s*:\s*"nvidia"|DeviceRequests|nvidia.com\/gpu/i.test(text);
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/docker.js:190-208](https://github.com/173787247/dsh-wsl-docker/blob/89b19c3428df8dffa4c6771050e774bf1f1eb22b/lib/docker.js#L190-L208)
-
-目标/层级起点。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-    const hits = containers.filter(looksLikeVllm);
-    if (hits.length) {
-      let anyGpu = false;
-      let inspected = false;
-      for (const c of hits.slice(0, 3)) {
-        const raw = await runFn("docker", ["inspect", c.name]);
-        if (raw) {
-          inspected = true;
-          if (containerHasGpuRuntime(raw)) anyGpu = true;
-        }
-      }
-      if (inspected) gpuOnHits = anyGpu;
-    }
-
-    const publish8000 = containers.some((c) => c.publishes8000) || focus === "vllm";
-    if (publish8000 || hits.length) {
-      portHealth = await probeHttpHealth("http://127.0.0.1:8000/v1/models", {
-        fetchFn: deps.fetchFn,
-      });
-```
-
-</details>
-
-[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

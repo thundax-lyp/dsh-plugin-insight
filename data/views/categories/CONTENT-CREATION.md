@@ -54,6 +54,7 @@
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
 | [PPT Design Skill](#plugin-1294612352-root) | 为演示作者提供需求、视觉方向和主题锁定到 PPTX 生成、逐页 PNG 审阅返工及交付记录的方法，生成依赖外部 pptx-designer。 | 观察优先；熟悉Python/审稿者可隔离repo/venv先核安装schema/库/字体/render，再小样，缺环境/模板冲突/MUST不达停止正式交付，保旧版和源稿修后重渲染。 |
 | [Superdesign Skill](#plugin-1139329853-root) | 为编码Agent提供UI、演示稿和图形设计流程，并通过CLI连接Superdesign画布。 | 有设计迭代需求者可先用可公开UI片段试用，核对发送文件、费用和目标草稿后再生成；私密源码或确定性小修优先本地直接修改，不把缓存状态当持续上传许可。 |
+| [TavernWeave X DSH](#plugin-1308599537-host-adapters-dsh-plugin) | 把 TavernWeave Skill、角色卡工程预设与世界书管理面板打包接入 DSH。 | [Q04](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q04)非商业独立profile/副本小改，核备份与重开；异常停写回编辑器。 |
 | [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
@@ -730,6 +731,22 @@
 > **建议**：比较依赖感知的定向刷新与全量发现，检查共享视觉依赖变化时陈旧草稿和人工修正；先核对现有规则，尚未验证。[Q04](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/superdesigndev--superdesign-skill/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1308599537-host-adapters-dsh-plugin"></a>
+
+## [TavernWeave X DSH](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 201](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=201&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiarMTTT/TavernWeave)
+
+> **用途**：DSH用户维护SillyTavern角色卡、世界书和前端资料。
+
+> **亮点**：[Q01](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q01)以同包资源基址、前门路由、preset和面板减少多处安装维护。
+
+> **思考**：[Q02](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q02)备份/atomic不防旧读覆盖且根非会话绑定；[Q03](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q03)静态MVU不是运行验证，未挂接函数不算能力。
+
+> **建议**：[Q04](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q04)save绑定读hash/选根generation可探索，对照现有备份/单窗口，误拒负担抵消即否定。
+
+[查看完整分析](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1204369117-root"></a>
 

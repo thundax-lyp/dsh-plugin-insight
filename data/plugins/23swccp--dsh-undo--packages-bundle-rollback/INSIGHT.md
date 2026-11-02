@@ -8,11 +8,11 @@
 [![npm 30d 1,186](https://img.shields.io/static/v1?label=npm+30d&message=1%2C186&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-undo-plugin) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-undo-plugin)
 <!-- END META -->
 
-> **功能**：以DSH配置组合消息级文件回退、会话分叉和归档界面，私有Git与对话历史协同恢复但不撤销外部副作用。
+> **功能**：组合DSH消息级私有文件树恢复、会话分叉和归档，固定版本可研究，来源当前身份和失败恢复仍有限制。
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 声明组合减少文件与消息目标手工对齐；私有索引、actual-tree校验和会话切分贡献归内部包，不能将组合当新快照算法。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将文件树/会话/归档集中同一入口，私有索引与实际态复核归内部包；不将配置入口算独立算法。
 
-> **主要限制**：[Q03](#research-q03) 补偿失败仍可成功写ready，启动默认跳过实际状态核对；[Q04](#research-q04) 当前来源身份未知且归档接管/退出未验，不能把回退回执当全部副作用撤销。
+> **主要限制**：[Q03](#research-q03) 补偿失败后仍可持久ready而启动跳过强制实际复核；[Q04](#research-q04) 来源当前身份未知，归档接管/退出未验，不作无损撤销保证。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 组合入口比手工恢复文件与聊天增加什么？](#detail-section-11)
-  - [Q02 · 私有文件树、子会话与归档怎样组成操作？](#detail-section-12)
-  - [Q03 · 补偿失败后是否仍保留强制恢复阶段？](#detail-section-13)
-  - [Q04 · 身份未知与失败窗口下值得怎样采用？](#detail-section-14)
-  - [Q05 · 恢复收据怎样在已有journal之上形成可验证增量？](#detail-section-15)
+  - [Q01 · bundle给什么任务提供何种组合贡献？](#detail-section-11)
+  - [Q02 · 文件/会话正常对齐依赖哪些准入和状态？](#detail-section-12)
+  - [Q03 · 补偿失败会否把恢复义务降成普通ready？](#detail-section-13)
+  - [Q04 · 当前应怎样采用，并验证恢复阶段补强？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：DSH编程用户需要同时回退消息点的本地文件与模型上下文，单文件Git恢复或删聊天不对齐两者。
+> **用途**：需要同步恢复本地文件与模型历史的编程用户，外部动作和共享写者另核。
 
-手工Git恢复并新建对话、归档原聊天；bundle集中入口，内部包实现算法，远端写入/数据库副作用不在范围。
+手工Git恢复加新会话/归档；bundle减少组合接线，非快照算法新发明。
 
 <a id="detail-section-3"></a>
 
@@ -52,70 +51,70 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 消息级回退组合 | 同时回本地树和模型历史 | 七包，非外部副作用撤销 |
-| 私有Git | 不动用户索引的树恢复 | 支持Git库及容量，其他写者有风险 |
-| 归档接管 | 源会话隐藏与恢复 | 禁原生服务，退出需核 |
-| journal恢复 | 部分中间态实际核对 | catch降ready缺陷影响继续安全 |
+| 回退组合 | 文件/模型历史同目标 | 外部副作用不回滚 |
+| 私有Git | 不动用户索引 | 支持库/容量/独立备份 |
+| 归档接管 | 源隐藏/恢复 | 原生服务禁用，退出另验 |
+| phase恢复 | 部分中间态实际核验 | 补偿catch降ready绕过 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH rc.6+作者条件/七包 | 必需 | 分叉、归档、回退及客户端 | 实际包解析/宿主未验 |
-| web-app | 浏览器按需 | 回退按钮和设置 | headless去客户端行 |
-| Git非bare无submodule | 回退必需 | 私有树 | 拒绝不支持目录 |
-| 私有目录权限/容量 | 必需 | 树、journal | 失败需停写核实际态 |
-| 独立备份/独占写入 | 采用前提 | 防竞态与保留恢复路 | 不用于唯一数据保障 |
+| DSH作者rc.6+和七包 | 必需 | fork/archive/undo与客户端 | 发布/宿主兼容未验 |
+| web-app | 客户端按需 | 按钮/归档设置 | headless去四行 |
+| Git非bare无submodule | 回退必需 | 私有树 | 不支持目录拒绝 |
+| 独立备份/私有目录容量 | 安全前提 | 恢复/对象历史 | 不能唯一恢复保障 |
+| 来源ID与固定发布核验 | 采用前提 | 安装溯源 | 当前default branch unknown |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 核来源 | 确认仓库ID/包字节/宿主 | 当前未知不能跳过 |
-| 副本 | 一次性Git库和虚构会话 | 独立备份可回读 |
-| 故障矩阵 | 注入fork/restore/archive/补偿失败 | 实际树/会话/归档一致，非只ready |
-| 失败 | 停写保留私有树与日志 | 核状态后人工恢复 |
-| 退出 | 备份后移patch核原生归档 | 不直接删唯一恢复材料 |
+| 核身份 | 来源/包字节/宿主 | 固定缓存不当最新 |
+| 副本 | 一次性Git/虚构会话与备份 | 不测唯一目录 |
+| 矩阵 | fork/restore/archive/补偿故障 | 实际三资源/重启状态一致 |
+| 错误 | 停写保树/日志 | 不信ready直接继续 |
+| 退出 | 移patch核原生归档 | 不删唯一恢复材料 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 宿主七包与备份磁盘 | 版本/归档所有权核对 | 来源当前未知 |
-| 持续 | 私有对象/journal/分叉历史 | 文件对话及范围外效果复核 | 容量/重做模型费未知 |
-| 失败恢复 | 备份/树/日志保留 | 停写核文件会话归档 | 补偿失败人工量未测 |
-| 退出 | 恢复材料占用 | 原生归档接管核验 | 未验自动清理 |
+| 首次 | 七包/宿主/备份磁盘 | 版本与归档接管核验 | 来源当前未知 |
+| 持续 | 私有对象/journal/分叉历史 | 文件/聊天/范围外动作复核 | 容量/重做模型费未知 |
+| 失败恢复 | 独立备份与保留树 | 停写查实际三资源 | 补偿失败人工量未知 |
+| 退出 | 历史/恢复材料占用 | 原生归档恢复核验 | 无自动清理验收 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 消息级回退 | 文件树/消息前缀/归档组合 | 故障与竞态无损性 |
-| 撤回保护 | workspace-diverged拒绝 | 跨平台实际损失避免 |
-| 恢复可见性 | 部分阶段actual校验 | ready降级后状态安全 |
-| 安装组合 | 七包patch与归档接管 | 当前身份/发布字节/宿主兼容 |
+| 同步回退 | beforeTree/切会话/归档 | 故障/竞态真实无损 |
+| 撤回保护 | verifyMatches拒diverged | 跨平台损失避免 |
+| 恢复 | restoring实际态核验 | ready降级残余安全 |
+| 分发组合 | 七包/原生归档替换 | 当前身份/发布字节/兼容 |
 
-> **思考**：[Q03](#research-q03) 补偿失败仍可成功写ready，启动默认跳过实际状态核对；[Q04](#research-q04) 当前来源身份未知且归档接管/退出未验，不能把回退回执当全部副作用撤销。
+> **思考**：[Q03](#research-q03) 补偿失败后仍可持久ready而启动跳过强制实际复核；[Q04](#research-q04) 来源当前身份未知，归档接管/退出未验，不作无损撤销保证。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 声明组合减少文件与消息目标手工对齐；私有索引、actual-tree校验和会话切分贡献归内部包，不能将组合当新快照算法。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 将文件树/会话/归档集中同一入口，私有索引与实际态复核归内部包；不将配置入口算独立算法。
 
-[Q02](#research-q02) 私有索引和actual-tree复核可迁移；[Q03](#research-q03) 补偿错误不能抹掉恢复义务，组合不是原子事务；[Q01](#research-q01) 归档所有权切换是部署/退出成本。
+[Q02](#research-q02) 私有索引/实际态验证可借鉴；[Q03](#research-q03) 补偿失败不能降级普通阶段，文件/会话/归档非共同事务，接管退出另验。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 补偿失败仍可成功写ready，启动默认跳过实际状态核对；[Q04](#research-q04) 当前来源身份未知且归档接管/退出未验，不能把回退回执当全部副作用撤销。
+[Q03](#research-q03) 补偿失败后仍可持久ready而启动跳过强制实际复核；[Q04](#research-q04) 来源当前身份未知，归档接管/退出未验，不作无损撤销保证。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 先观察；来源、宿主与故障矩阵在一次性副本核实并修复恢复阶段后再决定试用，不把本地树回退当外部副作用撤销或唯一安全保障。
+[Q04](#research-q04) 观察，核来源和一次性故障矩阵并保恢复义务后再评试用；错误停写回独立备份/人工，不把本地回退当外部副作用撤销。
 
 <a id="detail-section-7"></a>
 
@@ -123,12 +122,12 @@
 
 **核查状态**：已检查源码。
 
-对固定缓存源码重新核查全部旧findings并沿内部依赖复核；未运行目标，当前仓库身份/默认分支仍未知，补偿缺陷未故障复现。
+相同固定提交重新核完整正式findings与准入/补偿/启动关键源；可复用版本匹配证据但非继承结论，未执行目标/故障矩阵，来源当前未知。
 
 - 已检查：作者 README、包清单、源码路径 packages/bundle-rollback/README.md、packages/bundle-rollback/cordis.patch.yml、packages/bundle-rollback/package.json、packages/rollback-undo/src/index.ts、packages/rollback-undo/src/shadow-git.ts 及固定范围 inventory；组件：packages/bundle-rollback。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：bundle统计只覆盖自身；定向复核同提交undo/shadow-git及fork/archive接线，不表示全仓审计，来源扫描失败边界保留。
-- 下一步：[Q05](#research-q05) 核故障矩阵、实际状态与错误继续，修复前不以ready为安全证明；另外核来源身份、发布字节和卸载归档恢复。
+- 边界：bundle组件统计范围，仅定向内部undo/shadowGit/fork/archive调用和恢复；不全仓审计，不称当前源码远端可取得或最新发布已验。
+- 下一步：[Q04](#research-q04) 来源映射+隔离故障矩阵测重启实际态/错误继续/总人工与磁盘，均未执行。
 
 **分析版本**
 
@@ -142,9 +141,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 待验证的是不可降级恢复阶段与实际树/会话/归档核对收据，参照已有recoverRestoring减少错误继续而非再造journal。
+[Q04](#research-q04) 未验证不可降级恢复阶段与三资源收据，参照已有recoverRestoring，用补偿失败/重启矩阵检错继续和恢复负担，未计现有能力。
 
-[Q05](#research-q05) 核故障矩阵、实际状态与错误继续，修复前不以ready为安全证明；另外核来源身份、发布字节和卸载归档恢复。
+[Q04](#research-q04) 来源映射+隔离故障矩阵测重启实际态/错误继续/总人工与磁盘，均未执行。
 
 <a id="detail-section-9"></a>
 
@@ -170,55 +169,27 @@ Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [Gi
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：文件与会话组合回退是否在失败后保留安全恢复条件？
+**插件研究总目标**：组合回退正常/补偿失败状态是否保留安全恢复义务？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 组合入口比手工恢复文件与聊天增加什么？
+### Q01 · bundle给什么任务提供何种组合贡献？
 
 **研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-bundle面向希望在消息点同时恢复本地工作区并让模型从回退前对话继续的DSH编程用户。单做Git restore不改变模型历史，单删聊天不还原文件；组合以私有树、切分会话与源会话归档减少手工对齐。实际package仅发布cordis.patch.yml并依赖七包，patch配置三个后端及四个浏览器包，算法归rollback-undo/fork/archive，不是bundle发明新的快照机制。
+这是dsh-undo-plugin配置bundle，固定声明0.1.0-rc.8/MIT，只分发patch并依赖三个后端、四个浏览器包。它为编程用户把消息点的本地文件恢复、模型历史切分和源会话归档串起来；手工Git restore只恢复文件，删聊天不还原工作树，组合价值是减少错位对齐。算法属于undo/fork/archive内部包，不算bundle自创Git快照。
 
-patch还禁用原生ui-settings-archive及session-archive，让本包接管同名归档服务，不是只添加一个按钮。浏览器四包需要web-app，headless作者允许去掉。固定package声明0.1.0-rc.8/MIT；当前源码可读和包内repository声明不证明当前GitHub身份/默认分支可用，亦不证明npm发布字节与固定提交相同。对外写入、数据库或已经发送的消息不在本地树与会话回退范围。
+patch禁原生ui-settings-archive与session-archive，接管归档命名空间，退出需确认原生接回；web-app只对四客户端必要，headless须按作者说明去客户端项。外部数据库、远端发布、已发送消息及其他写者不在本地树/会话撤销范围。包内repository/目录与固定缓存身份一致，不证明本轮当前仓库可取得或默认分支最新；来源失败边界保留。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/bundle-rollback/README.md:3-18](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/README.md#L3-L18)
+**依据 1 · 源码核查**：[packages/bundle-rollback/package.json:1-39](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/package.json#L1-L39)
 
-作者回退目标和宿主条件。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-````text
-Conversation undo/rollback plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
-
-- **Message-level rollback** — the enter-key icon under a sent prompt, the session-header rollback button, the `/undo` command, or the composer strip: restores the file tree from a plugin-private Shadow Git snapshot (never touches your `.git`) and forks the conversation, so the model never sees the reverted prompt, reply, or tool calls
-- **`/undo` node axis** — exact `/undo` opens a lineage timeline: choose a rollback point or hand the selected turn to dsh's native Trajectory view, where the full selected turn is marked
-- **Archive tasks** — list, restore, and hide archived sessions from Settings
-- **Tool cards** — per-tool colored cards and the reasoning-and-actions fold in the dsh web conversation trail
-
-## Install
-
-```sh
-dsh plugin --profile web add dsh-undo-plugin
-```
-
-Requires `dsh` 0.1.0-rc.6 or newer. Restart `dsh web` after installing.
-
-Full documentation: [中文](https://github.com/23swccp/dsh-undo#readme) | [English](https://github.com/23swccp/dsh-undo/blob/HEAD/README.en.md)
-````
-
-</details>
-
-**依据 2 · 源码核查**：[packages/bundle-rollback/package.json:1-39](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/package.json#L1-L39)
-
-固定发布单元、版本和七依赖。
+真实配置bundle与版本/依赖。
 
 <details>
 <summary>查看原文（39行）</summary>
@@ -267,9 +238,9 @@ Full documentation: [中文](https://github.com/23swccp/dsh-undo#readme) | [Engl
 
 </details>
 
-**依据 3 · 源码核查**：[packages/bundle-rollback/cordis.patch.yml:1-44](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/cordis.patch.yml#L1-L44)
+**依据 2 · 源码核查**：[packages/bundle-rollback/cordis.patch.yml:1-44](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/cordis.patch.yml#L1-L44)
 
-实际组合与原生归档禁用。
+组合和原生归档接管。
 
 <details>
 <summary>查看原文（44行）</summary>
@@ -323,27 +294,53 @@ Full documentation: [中文](https://github.com/23swccp/dsh-undo#readme) | [Engl
 
 </details>
 
+**依据 3 · 作者声明**：[packages/bundle-rollback/README.md:3-18](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/README.md#L3-L18)
+
+作者任务/宿主条件。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+````text
+Conversation undo/rollback plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`).
+
+- **Message-level rollback** — the enter-key icon under a sent prompt, the session-header rollback button, the `/undo` command, or the composer strip: restores the file tree from a plugin-private Shadow Git snapshot (never touches your `.git`) and forks the conversation, so the model never sees the reverted prompt, reply, or tool calls
+- **`/undo` node axis** — exact `/undo` opens a lineage timeline: choose a rollback point or hand the selected turn to dsh's native Trajectory view, where the full selected turn is marked
+- **Archive tasks** — list, restore, and hide archived sessions from Settings
+- **Tool cards** — per-tool colored cards and the reasoning-and-actions fold in the dsh web conversation trail
+
+## Install
+
+```sh
+dsh plugin --profile web add dsh-undo-plugin
+```
+
+Requires `dsh` 0.1.0-rc.6 or newer. Restart `dsh web` after installing.
+
+Full documentation: [中文](https://github.com/23swccp/dsh-undo#readme) | [English](https://github.com/23swccp/dsh-undo/blob/HEAD/README.en.md)
+````
+
+</details>
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 私有文件树、子会话与归档怎样组成操作？
+### Q02 · 文件/会话正常对齐依赖哪些准入和状态？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-undo先要求最新消息及armed/ready状态、同工作区不在回退，并quiesce源Agent及后代。写restoring journal含redoTree和预定子会话ID后并行启动fork与文件恢复；fork按before-user-message切掉选中用户消息及之后历史，恢复用私有Git索引树，不改用户.git索引。成功后归档源、向子发布前驱点，持久complete才返回子会话。
+undo检查最近消息和armed/ready，并按工作区排它、quiesce源及后代；先存含redoTree/预定子ID的restoring journal，再并行fork before-user-message与恢复beforeTree。成功归档原源、把前驱点发布给子会话并写complete，模型从被回退用户消息前继续。
 
-ShadowGit用专有GIT_DIR/GIT_INDEX_FILE配合工作树，恢复差异中仅删from有而target无的捕获路径，再read-tree/checkout改变路径，拒绝bare/submodule工作区。撤销回退前verifyMatches目标树，否则workspace-diverged，保护用户后续修改。这些保护是具体贡献，但不是与会话归档共同原子事务，其他写者/范围外副作用不能靠私有Git解决。
-
-启动restoring恢复会检查源/子归档归属、子存在和实际树；匹配才complete或ready，否则recovery-required。这比仅信journal标签强，可借鉴实际状态复核，仍须同时检查失败路径是否保住该阶段。
+ShadowGit独立GIT_DIR和GIT_INDEX_FILE，差异恢复只删除from捕获而target无的路径；拒bare/submodule工作区，撤回回退前verifyMatches避免覆盖之后新改动。启动restoring检查归档成员/子存在/实际树，安全才complete或ready，不确定recovery-required。这些保护比仅信记录强，但文件、会话和归档仍不同资源，不是跨资源原子事务；文件系统/宿主兼容未运行验。
 
 #### 证据与依据
 
 **依据 1 · 源码核查**：[packages/rollback-undo/src/index.ts:675-706](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L675-L706)
 
-准入、quiesce和工作区排它。
+准入/排它与静止。
 
 <details>
 <summary>查看原文（32行）</summary>
@@ -387,7 +384,7 @@ ShadowGit用专有GIT_DIR/GIT_INDEX_FILE配合工作树，恢复差异中仅删f
 
 **依据 2 · 源码核查**：[packages/rollback-undo/src/index.ts:715-773](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L715-L773)
 
-restoring、并行fork/restore与归档发布。
+restoring到fork/restore/archive/发布。
 
 <details>
 <summary>查看原文（59行）</summary>
@@ -458,7 +455,7 @@ restoring、并行fork/restore与归档发布。
 
 **依据 3 · 源码核查**：[packages/rollback-undo/src/shadow-git.ts:22-39](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/shadow-git.ts#L22-L39)
 
-私有索引环境。
+私有Git索引。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -488,7 +485,7 @@ restoring、并行fork/restore与归档发布。
 
 **依据 4 · 源码核查**：[packages/rollback-undo/src/shadow-git.ts:67-91](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/shadow-git.ts#L67-L91)
 
-工作区限制。
+工作区支持范围。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -525,7 +522,7 @@ export async function assertSupportedWorkspace(workspace: string): Promise<void>
 
 **依据 5 · 源码核查**：[packages/rollback-undo/src/shadow-git.ts:110-144](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/shadow-git.ts#L110-L144)
 
-捕获路径差异恢复。
+精确捕获差异恢复。
 
 <details>
 <summary>查看原文（35行）</summary>
@@ -572,7 +569,7 @@ export async function assertSupportedWorkspace(workspace: string): Promise<void>
 
 **依据 6 · 源码核查**：[packages/rollback-undo/src/index.ts:537-550](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L537-L550)
 
-撤回前实际树保护。
+撤回树核对。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -598,7 +595,7 @@ export async function assertSupportedWorkspace(workspace: string): Promise<void>
 
 **依据 7 · 源码核查**：[packages/rollback-undo/src/index.ts:973-1000](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L973-L1000)
 
-启动actual状态校验。
+启动实际状态检查。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -640,23 +637,21 @@ export async function assertSupportedWorkspace(workspace: string): Promise<void>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 补偿失败后是否仍保留强制恢复阶段？
+### Q03 · 补偿失败会否把恢复义务降成普通ready？
 
 **研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-没有在所有已读分支保住。recoverable在副作用前被定义为旧journal加phase:ready；fork失败且文件restore已开始时，会等restore结算再尝试恢复redoTree，补偿失败抛AggregateError。归档失败也尝试恢复redoTree，失败同样抛；外层catch无论是否含补偿错误，均尝试写recoverable并抛错，child.dispose失败仅加入错误列表。
+会在特定已核控制流发生：recoverable在副作用前固定为旧journal+ready；fork失败后尝试恢复redoTree，或archive失败后恢复redoTree，二次恢复失败抛AggregateError。外catch即使拿到补偿错误/child.dispose错误，也仍尝试writeJournal(recoverable)，成功则持久ready。后续recoverJournals对ready走default，不执行recoverRestoring的真实树/归档核对。
 
-若补偿失败而随后writeJournal成功，持久相位成为ready，不是restoring/recovery-required。启动恢复switch只对restoring/revoking等做实际状态校验，ready默认跳过，故可能将残余文件/会话状态排除在该次启动强制复核之外。此为固定控制流确认的错误风险，不声称已故障复现或每次必然损坏；具体取决于文件补偿/归档/child失败和写journal成功的组合。
-
-已有recoverRestoring与verifyMatches不能反驳此绕过，因为它们依赖保留相应阶段。用户看见回退报错后应停写、核实际树与会话/归档，而不是把ready当安全继续或聊天消失当全部副作用撤回。
+条件是副作用/补偿失败而最后journal写成功，不是所有回退都损坏；它能让残余状态失去重启时强制复核，源码支持缺陷路径，未注入故障复现或推断真实损失次数。已有verifyMatches与recovery-required是反证但依赖阶段仍在，不能覆盖外catch抹阶段。看到错误必须停写查实际树/会话/归档，不将ready或聊天已隐藏当撤销完毕。
 
 #### 证据与依据
 
 **依据 1 · 源码核查**：[packages/rollback-undo/src/index.ts:684-690](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L684-L690)
 
-recoverable预设ready。
+recoverable预置ready。
 
 ```text
       }
@@ -670,7 +665,7 @@ recoverable预设ready。
 
 **依据 2 · 源码核查**：[packages/rollback-undo/src/index.ts:738-764](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L738-L764)
 
-两类补偿失败AggregateError。
+补偿二次错误。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -709,7 +704,7 @@ recoverable预设ready。
 
 **依据 3 · 源码核查**：[packages/rollback-undo/src/index.ts:803-820](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L803-L820)
 
-外catch仍写ready recoverable。
+外catch写recoverable不看残态。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -739,7 +734,7 @@ recoverable预设ready。
 
 **依据 4 · 源码核查**：[packages/rollback-undo/src/index.ts:925-949](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L925-L949)
 
-启动对ready默认不检查。
+启动按phase分派且ready跳过。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -774,40 +769,65 @@ recoverable预设ready。
 
 </details>
 
+**依据 5 · 源码核查**：[packages/rollback-undo/src/index.ts:973-1000](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L973-L1000)
+
+安全复核反证与适用前提。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  private async recoverRestoring(journal: ConversationUndoJournal): Promise<void> {
+    if (journal.rollbackSessionId === undefined || journal.redoTree === undefined) {
+      await this.requireRecovery(journal, 'manifest has no rollback Session or redo tree')
+      return
+    }
+    try {
+      await this.assertWorkspace(journal.workspace)
+      const shadow = new ShadowGit(journal.workspace, this.shadowDirectory(journal))
+      const sourceArchived = this.ctx.workspaceRegistry.archivedSessionIds.includes(journal.sourceSessionId)
+      const rollbackArchived = this.ctx.workspaceRegistry.archivedSessionIds.includes(journal.rollbackSessionId ?? ('' as SessionId))
+      const rollbackExists = await this.sessionExists(journal.rollbackSessionId ?? ('' as SessionId))
+      if (sourceArchived && !rollbackArchived && rollbackExists && await shadow.verifyMatches(rollbackTargetTree(journal))) {
+        await this.publishRetainedLayerToChild(journal, journal.rollbackSessionId)
+        await this.writeJournal({ ...journal, phase: 'complete' })
+        return
+      }
+      if (!sourceArchived && await shadow.verifyMatches(journal.redoTree ?? journal.beforeTree)) {
+        if (rollbackExists) await this.hideUnpublishedChild(journal.rollbackSessionId ?? ('' as SessionId))
+        await this.writeJournal({ ...journal, phase: 'ready' })
+        return
+      }
+      await this.requireRecovery(journal, 'archive membership or private Shadow Git tree does not describe a safe publication state')
+    } catch (error) {
+      await this.requireRecovery(journal, error instanceof Error ? error.message : String(error))
+    }
+  }
+
+  /** Determine whether a rollback child is present in either live or durable session ownership. */
+```
+
+</details>
+
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 身份未知与失败窗口下值得怎样采用？
+### Q04 · 当前应怎样采用，并验证恢复阶段补强？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-建议观察，不在唯一工作目录或有外部副作用任务上依赖它安全撤销。来源扫描本轮报告repository identity/default branch unavailable；固定checkout HEAD、origin与包repository指向队列给定版本，能支持对此源码的机制判断，但不是当前仓库身份与最新版本的独立验证。不能把上轮相同代码的报告直接当新观察，亦不能因可读缓存升级availability。
+建议观察，不用在唯一工作目录/外部副作用任务上提供“安全撤销”保障。当前轮INPUT-PROBLEMS仍记录仓库身份或default branch unavailable；固定clean checkout与包声明足以研究这份源码，不能补成当前可安装/最新发布字节已验。首次需核宿主、七包、私有Git目录容量及归档接管；持续有对象/journal/分叉会话增长与范围外动作人工判断，失败停写保树/日志/独立备份核三资源，模型重做与恢复工时未知。退出备份后移patch并核原生归档，不直接删唯一恢复材料。
 
-首次有DSH服务、七包及浏览器依赖、Git与私有目录准备；持续有私有对象/journal/分叉会话磁盘与对齐检查，回退会丢弃模型可见历史但未逆转外部效果。失败补偿需用户停止写入、保留树和日志，从独立备份核工作区及归档归属；时间/容量/重做模型费用未知。退出要备份恢复材料后移除patch并核原生归档重新接管，不假定卸载会清对象或恢复所有被归档会话。
-
-若做后续验证，应在一次性仓库与虚构会话注入fork、restore、archive和补偿失败，验实际文件/会话而非ready；先修保留恢复阶段与确认来源/宿主，再判断小范围试用，不能把验证建议当已成功。
+若后续做验证，先一次性仓库/虚构会话注入fork/restore/archive及其补偿失败，确认实际树/会话/归档和重启阶段；修复前不升级试用。未验证假设是副作用后失败保留不可降级recovery-required及可见三资源核对收据，参照已有recoverRestoring，而非重新造journal。若已有路径达同不变量、收据漂移或阻塞/人工负担比减少错误继续更大，则不扩展；本轮未执行任何目标代码。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/bundle-rollback/package.json:8-13](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/package.json#L8-L13)
+**依据 1 · 源码核查**：[packages/bundle-rollback/cordis.patch.yml:34-44](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/cordis.patch.yml#L34-L44)
 
-包内来源与组件路径，只证明自述。
-
-```text
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/23swccp/dsh-undo.git",
-    "directory": "packages/bundle-rollback"
-  },
-```
-
-**依据 2 · 源码核查**：[packages/bundle-rollback/cordis.patch.yml:34-44](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/bundle-rollback/cordis.patch.yml#L34-L44)
-
-原生归档所有权变更，退出需核。
+退出归档所有权。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -828,64 +848,9 @@ recoverable预设ready。
 
 </details>
 
-**依据 3 · 源码核查**：[packages/rollback-undo/src/index.ts:803-820](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L803-L820)
+**依据 2 · 源码核查**：[packages/rollback-undo/src/index.ts:803-820](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L803-L820)
 
-恢复人工负担的具体来源。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-        } catch (error) {
-          const recoveries: unknown[] = [error]
-          if (child !== undefined) {
-            try {
-              await child.dispose()
-            } catch (disposeError) {
-              recoveries.push(disposeError)
-            }
-          }
-          try {
-            await this.writeJournal(recoverable)
-          } catch (journalError) {
-            recoveries.push(journalError)
-          }
-          throw recoveries.length === 1
-            ? error
-            : new AggregateError(recoveries, 'rollback undo could not recover the failed rollback')
-        }
-```
-
-</details>
-
-#### 缺口
-
-- 本轮源扫描当前身份/默认分支未知且未核发布字节
-  **影响**：不能证明最新可安装版本/维护状态
-  **进一步探讨**：父流程补核仓库ID、默认分支与包产物；保留固定缓存分析边界。
-- 未执行宿主及故障矩阵/退出恢复
-  **影响**：不能证明无损回退和全周期成本
-  **进一步探讨**：一次性副本验七包解析、故障后树/会话与归档接管，记录人工及存储。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 恢复收据怎样在已有journal之上形成可验证增量？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证方向是在副作用后失败时保留不可降级的恢复要求，并展示实际文件树、源/子会话和归档归属核对收据，只有显式完成检查才允许继续。不是从零加journal：已有restoring实际状态验证与recovery-required；增量是避免外catch抹掉需复核阶段，并让用户知道还未对齐什么。
-
-对照当前控制流，在隔离材料让fork/restore/archive和补偿各自失败，尤其补偿失败但journal可写的组合；测重启后能否拦错误继续、真实状态是否被识别、修复工作量与等待成本。若已有路径能保同样不变量、收据自身漂移或只增加阻塞不降低误继续，则否定该设计扩展。未运行此实验，不把新状态机制计入当前bundle贡献。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/rollback-undo/src/index.ts:803-820](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L803-L820)
-
-实际阶段降级线索。
+恢复与假设的具体线索。
 
 <details>
 <summary>查看原文（18行）</summary>
@@ -913,9 +878,9 @@ recoverable预设ready。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/rollback-undo/src/index.ts:973-1000](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L973-L1000)
+**依据 3 · 源码核查**：[packages/rollback-undo/src/index.ts:973-1000](https://github.com/23swccp/dsh-undo/blob/bc8edbe47de17d91f9b8a06e0f82e0be7d9d9b67/packages/rollback-undo/src/index.ts#L973-L1000)
 
-已有独立校验构成参照，不重复发明。
+已有实际核对作为基线。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -955,8 +920,8 @@ recoverable预设ready。
 
 #### 缺口
 
-- 未故障复现与测恢复收益
-  **影响**：不能声称新机制避免真实损失
-  **进一步探讨**：一次性项目对照重启后错误继续与人工恢复成本。
+- 来源当前身份/default branch未知且发布字节/宿主与故障恢复未验
+  **影响**：不能当前取得/无损恢复/持续采用保证
+  **进一步探讨**：父流程核来源与发布映射，再一次性故障矩阵核三资源；记录对象/人工/退出成本。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
