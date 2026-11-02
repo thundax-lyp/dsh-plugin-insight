@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[6eedce8](https://github.com/AskTheWay/dsh-jev-interceptor/tree/6eedce85014b7f237c4a4f6bc513b8239103bef2)
+源码版本：[2ba7b8c](https://github.com/AskTheWay/dsh-jev-interceptor/tree/2ba7b8c9fce9dfc364ba057099a4b459edc9e760)
 
 <!-- BEGIN META -->
-[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 2,815](https://img.shields.io/static/v1?label=npm+30d&message=2%2C815&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor)
+[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AskTheWay/dsh-jev-interceptor) [![npm 30d 3,180](https://img.shields.io/static/v1?label=npm+30d&message=3%2C180&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-jev-interceptor)
 <!-- END META -->
 
-> **功能**：将 Jev typed 决策接入 DSH 工具风险分流、证据门控预批及上下文保留
+> **功能**：将typed分类接入DSH工具风险、预批和引用保留，支持shadow观测；可选图像卸载存在模式门遗漏。
 
-> **亮点**：typed fan-out接多宿主决策点，并用next委托、空白名单、session/call/tool新鲜参数证据与字节预算限制部分权限和信息损失；贡献在编排，不等分类准确或最终任务收益。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) typed多决策点与next/有界新鲜证据限制部分授权风险；[Q04](#research-q04) 引用反事实、缓存/预算可复用，不等准确或省钱实测。
 
-> **主要限制**：确认逻辑缺陷：opt-in图像卸载在shadow也可直接落盘image/offload，违反只记录承诺；默认关闭收窄触发面但不消除缺陷。其他挂点有mode门，不能泛化。[Q03](#research-q03)
+> **主要限制**：[Q03](#research-q03) enabled且图像opt-in时shadow也可append image/offload，默认关闭收窄而非修复；[Q04](#research-q04) 遥测best-effort非动作前置，resolver退出要整bundle。
 
 **本文目录**
 
@@ -26,12 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 真实接入哪些决策，目标结果是什么？](#detail-section-11)
-  - [Q02 · guard和预批如何避免模型扩大权限？](#detail-section-12)
-  - [Q03 · 全局shadow只记录承诺是否成立？](#detail-section-13)
-  - [Q04 · 外部分类和遥测是否能证明净收益？](#detail-section-14)
-  - [Q05 · 怎样小范围试用和退出？](#detail-section-15)
-  - [Q06 · 统一副作用门是否值得验证？](#detail-section-16)
+  - [Q01 · typed分类编排给谁增加什么？](#detail-section-11)
+  - [Q02 · guard和预批的证据、mode及next怎样接线？](#detail-section-12)
+  - [Q03 · shadow能保证所有动作只记录吗？](#detail-section-13)
+  - [Q04 · 引用替换、缓存与遥测如何影响恢复和成本？](#detail-section-14)
+  - [Q05 · 怎样限定隔离试用与退出？](#detail-section-15)
+  - [Q06 · 统一effect gate有何可证伪增量？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：频繁工具调用且愿校准遥测的DSH开发者，以可控风险分流和任务正确为目标。
+> **用途**：频繁工具调用且愿校准遥测的开发者，需任务正确/权限不扩和可追全成本，不凭分类响应算成功。
 
-原生人工/规则审批与静态FIFO保留，Jev模型是外部依赖，非插件原创；未作同任务运行比较。
+原生审批/生成式复核与FIFO引用；本包编排分类服务，不是Jev模型算法原创或授权替代。
 
 <a id="detail-section-3"></a>
 
@@ -53,70 +53,69 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| guard/预批 | 风险分流与有证据allowed-once | 空白名单、mode、同call证据；准确率未证 |
-| session保留 | 评分替代FIFO | 有字节预算，shadow走upstream |
-| 可选图像卸载 | 压力下减少图上下文 | 默认关；shadow遗漏可直接落盘 |
-| 遥测/校准 | 回看分类与建议阈值 | 写失败可吞，不是审计事务 |
+| guard | 风险ask/deny/原生委托 | 分类非授权保证，shadow有门 |
+| 预批 | 有证据白名单allowed-once | 仅enforce，空名单起步 |
+| 引用评分 | 字节预算内保有价值信息 | shadow原生、退出整bundle |
+| 图像卸载 | 压力时牺牲候选图 | 默认关闭，shadow缺门不可逆 |
+| 遥测 | 决策/成本线索 | 可丢非完整账单/安全事务 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| 相容DSH alpha事件/审批/resolver API | 启动与对应挂点必需 | 多决策接线 | 不同版本须重验，不用空inject推断全兼容 |
-| Jev provider、key、endpoint/model | 分类必需 | typed判断 | 无key/超时/cooldown多数回原生，不是全拒绝 |
-| 可发送的有界参数/摘要 | 分类效果必需 | 提供任务证据 | 截短非匿名，不能外发则不适用 |
-| 可写遥测目录与人工校准 | 效果评估必需 | 日志/阈值 | 日志失败可吞掉，非零动作证明 |
+| 同版DSH事件/alpha resolver | 必需 | 决策与引用接线 | 兼容/退出另验 |
+| provider/key/网络 | 分类必需 | typed判定 | 缺失/预算失败回原生 |
+| 空白名单/图像关闭 | 本次试用前提 | 避免未验授权与不可逆变化 | 不扩自动授权 |
+| JSONL与人工审阅 | 可解释采用前提 | 错判/阈值核对 | 日志可丢，非安全事务 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户在隔离profile核key与数据目的地 | 不把作者dogfood当本地账单 |
-| 2 | 主row shadow，图像卸载false，白名单空 | 所有挂点零状态变化，故障回原生 |
-| 3 | 用户仅对可逆工具逐项试enforce | 同session/call/tool证据正确且可复核 |
-| 4 | 禁整个bundle恢复session-reference | 不单关替代row；缺resolver立即停止 |
+| 备份 | 隔离profile/原resolver与资料 | 审provider输入 |
+| 起步 | shadow、图像关/白名单空 | 核同调用参数/mode/实际结果 |
+| 比较 | 与原生同任务核错误/成本 | 分类不等任务成功 |
+| 停止 | shadow副作用/无日志动作停bundle | 核原resolver与持久事件，非自动逆转 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | provider/key与本地资源，费用未知 | 装隔离profile、审参数与配置 | 价格/政策未独立验证 |
-| 持续使用 | 分类调用与JSONL资源未知 | 处理误判、ask/deny与阈值校准 | cache不重计usage，非完整账单 |
-| 失败恢复 | 重试/cooldown与原生审批资源 | 查丢日志、mode和resolver | telemetry非事务前提 |
-| 升级/退出 | 兼容与迁移资源未知 | 禁bundle并核原resolver，重验alpha API | 单关row可能留功能空缺 |
+| 首次 | provider/key/本地环境 | 参数/隐私/alpha核验 | 当前价格/政策未知 |
+| 持续 | 分类/引用评分/JSONL | 错判/ask/deny/阈值校准 | cache usage非完整账单 |
+| 失败恢复 | 重试/cooldown | 查丢日志/模式/resolver | telemetry非提交前提 |
+| 退出 | profile迁移 | 禁整bundle恢复原行 | 单禁替换行留空缺 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 风险分流 | typed问答到ask/deny/next | 准确率、漏拦和任务正确 |
-| 预批 | 白名单和新鲜参数证据门 | 作者0/0无误预批样本，净点击收益未知 |
-| 信息保留 | enforce评分、shadow upstream | 最终质量是否胜FIFO |
-| shadow安全 | 多数挂点有门 | 图像opt-in已见模式遗漏 |
+| 风险分流 | typed→ask/deny/next | 准确/漏拦与业务正确 |
+| 预批约束 | 白名单/新鲜参数身份 | 同任务净点击/成本收益 |
+| 引用保留 | enforce评分/shadow原字节 | 比FIFO最终质量 |
+| shadow边界 | 多数门控 | 图像opt-in已见遗漏，未运行 |
 
-> **思考**：确认逻辑缺陷：opt-in图像卸载在shadow也可直接落盘image/offload，违反只记录承诺；默认关闭收窄触发面但不消除缺陷。其他挂点有mode门，不能泛化。[Q03](#research-q03)
+> **思考**：[Q03](#research-q03) enabled且图像opt-in时shadow也可append image/offload，默认关闭收窄而非修复；[Q04](#research-q04) 遥测best-effort非动作前置，resolver退出要整bundle。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：typed fan-out接多宿主决策点，并用next委托、空白名单、session/call/tool新鲜参数证据与字节预算限制部分权限和信息损失；贡献在编排，不等分类准确或最终任务收益。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) typed多决策点与next/有界新鲜证据限制部分授权风险；[Q04](#research-q04) 引用反事实、缓存/预算可复用，不等准确或省钱实测。
 
-typed矩阵、next委托、单次session/call/tool证据、cache不重复计费及并发冷却可复用；分散effect门、best-effort遥测和alpha resolver耦合是主要代价，复制分类器不等权限保证。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
+[Q02](#research-q02)、[Q04](#research-q04) typed矩阵/next、单次身份证据、缓存不重复usage与有界降级可借鉴；[Q03](#research-q03) 分散mode门与best-effort日志不等安全提交。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-确认逻辑缺陷：opt-in图像卸载在shadow也可直接落盘image/offload，违反只记录承诺；默认关闭收窄触发面但不消除缺陷。其他挂点有mode门，不能泛化。[Q03](#research-q03)
+[Q03](#research-q03) enabled且图像opt-in时shadow也可append image/offload，默认关闭收窄而非修复；[Q04](#research-q04) 遥测best-effort非动作前置，resolver退出要整bundle。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-隔离profile试用：图像卸载保持关闭、白名单空并从shadow审起；任何shadow状态变化、无遥测有效动作或resolver缺失即停用整个bundle回原生。[Q05](#research-q05)
-
-采用建议：隔离profile试用：图像卸载保持关闭、白名单空并从shadow审起；任何shadow状态变化、无遥测有效动作或resolver缺失即停用整个bundle回原生。[Q05](#research-q05)
+[Q05](#research-q05) 隔离profile从shadow审起，图像关/白名单空；缺遥测动作、shadow变化或resolver异常停整个bundle回原生，核持久状态与provider输入。
 
 <a id="detail-section-7"></a>
 
@@ -124,18 +123,18 @@ typed矩阵、next委托、单次session/call/tool证据、cache不重复计费�
 
 **核查状态**：已检查源码。
 
-挂点、证据门与图像shadow遗漏为固定源码支持，后者为条件明确逻辑缺陷；dogfood是作者报告，本轮未运行provider。效果和统一gate假设未验证。
+完整复核正式findings，定向读固定guard/preapprove/image/resolver/client预算遥测关键链；未执行目标/provider/宿主或发布lib字节验收。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、cordis.patch.yml、src/index.ts、src/config.ts、src/guard.ts、src/preapprove.ts、src/image-offload.ts、src/session-reference.ts、src/jev.ts、src/telemetry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、src/config.ts、src/guard.ts、src/image-offload.ts、src/index.ts、src/jev.ts、src/preapprove.ts、src/session-reference.ts、src/stagnation.ts、src/telemetry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根49个tracked文件统计；重点index、guard/preapprove、image、session-reference、client resilience/telemetry/config及patch。源码不是已发布lib字节验收；未运行目标/provider或真实Host。 本轮重新读取固定版本的核心入口、状态提交、权限与故障恢复路径，源码机制不充当实际服务可用性证据。
-- 下一步：合成参数在五挂点shadow/enforce/disabled矩阵中注入超时/半响应/日志失败/取消，检查零shadow副作用与整体bundle恢复；同任务比较原生的误判、最终正确、总费用和人工分钟。
+- 边界：固定index/guard/preapprove/image/session-reference/jev预算与telemetry/config/patch；未全审客户端/校准或发布产物与上游真实宿主。
+- 下一步：[Q06](#research-q06) 五挂点mode/失败/取消矩阵核零shadow变化，再与原生任务正确/误批和全成本比，均未执行。
 
 **分析版本**
 
 - **仓库**：[AskTheWay/dsh-jev-interceptor](https://github.com/AskTheWay/dsh-jev-interceptor)
-- **版本号**：0.6.1（[固定提交 6eedce8](https://github.com/AskTheWay/dsh-jev-interceptor/tree/6eedce85014b7f237c4a4f6bc513b8239103bef2)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.2（[固定提交 2ba7b8c](https://github.com/AskTheWay/dsh-jev-interceptor/tree/2ba7b8c9fce9dfc364ba057099a4b459edc9e760)）
+- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,9 +142,9 @@ typed矩阵、next委托、单次session/call/tool证据、cache不重复计费�
 
 <a id="innovation"></a>
 
-未验证统一effect gate让所有动作携带mode/provenance/证据/可逆性，单一提交边界强制shadow只建议；跨五类挂点矩阵中任意shadow状态变化即否定，再与原生比误判和全成本。[Q06](#research-q06)
+[Q06](#research-q06) 待验证统一effect gate携mode/provenance/证据/可逆性，shadow零状态变化与原生任务/全成本矩阵；不能重复算已有模式门。
 
-合成参数在五挂点shadow/enforce/disabled矩阵中注入超时/半响应/日志失败/取消，检查零shadow副作用与整体bundle恢复；同任务比较原生的误判、最终正确、总费用和人工分钟。
+[Q06](#research-q06) 五挂点mode/失败/取消矩阵核零shadow变化，再与原生任务正确/误批和全成本比，均未执行。
 
 <a id="detail-section-9"></a>
 
@@ -154,51 +153,80 @@ typed矩阵、next委托、单次session/call/tool证据、cache不重复计费�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 6 | 656 | — | — | 9394 |
 | .mjs | source | 4 | 357 | 317 | 27 | — |
-| .ts | source | 22 | 5911 | 4153 | 1416 | — |
+| .ts | source | 22 | 5950 | 4177 | 1429 | — |
 | .js | source | 1 | 219 | 158 | 36 | — |
-| .tsx | source | 2 | 1489 | 1339 | 66 | — |
-| .ts | test | 14 | 2354 | 2070 | 94 | — |
+| .tsx | source | 2 | 1499 | 1347 | 68 | — |
+| .ts | test | 15 | 2375 | 2088 | 94 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+created%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/AskTheWay/dsh-jev-interceptor/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z)
 
 
 
-统计日期：2026-10-28。
+统计日期：2026-11-02。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：typed决策集成能否保持权限、shadow与信息损失边界，并提供可核查净收益？
+**插件研究总目标**：分类编排怎样约束权限/上下文动作，shadow与故障边界支持怎样试用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 真实接入哪些决策，目标结果是什么？
+### Q01 · typed分类编排给谁增加什么？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标人群是在隔离DSH profile频繁调用工具、愿意审遥测和校准阈值的开发者；合格结果不仅是分类响应，而是风险/权限选择不越界且任务办结、成本可追踪。index真实挂tools/pre-execute、approval/request，另有opt-in agent/pre-step图像卸载及停滞检测，session事件记录审批循环。bundle新增主row并以子类resolver替代session-reference，评分决定丢弃顺序而保留上游预算/发现能力。贡献是typed decision fan-out与宿主多决策点的集成及有界证据，不是Jev模型原创；相对原生审批/静态FIFO是否更好仍要同任务验证，不能照作者生态首个或毫秒宣传判定。
+目标是频繁调用工具、愿校准遥测的DSH开发者，在隔离profile把风险/可逆性/任务契合/注入可疑度的typed问答接入工具执行和预批，并按任务价值保留被引用会话。相对原生审批和FIFO截断，增量是有界证据到多决策点的编排，不是Jev模型原创，也不能据“System1/毫秒/更省”宣传推断最终正确性。
+
+合格结果是权限选择不越界、任务办结且信息未误丢，并把分类服务调用/人工纠错全成本算入。作者README给过价格/延迟示例，只是固定文档作者报告，不是当前报价或本轮实测；本包不替代服务端授权和宿主既有限制。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:281-335](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/index.ts#L281-L335)
+**依据 1 · 作者声明**：[README.md:26-38](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/README.md#L26-L38)
 
-guard、preapprove和图像挂点真实接线。
+作者能力/价格/延迟为固定版本主张。
 
 <details>
-<summary>查看原文（55行）</summary>
+<summary>查看原文（13行）</summary>
+
+```text
+> The Web panel (sidebar ⚡ → Jev 决策): live KPIs and net-benefit card, a filterable decision log with full evidence per row, shadow-data threshold advice that tracks whether you adopted it, and one-click connection test. Every screenshot above is the real plugin running real decisions.
+
+**What it does, in one breath:** before a tool call runs, Jev classifies its risk, irreversibility, task-fit, and injection-suspicion in one ~$0.00002 request — confident high-risk calls get denied, medium ones escalate to a human, and clearly-granted reversible ones stop wasting your clicks on approval dialogs. And when an `@session` snapshot gets injected, Jev scores every message's value for the citing task so the **error traceback survives the byte budget instead of the oldest small talk**. Every doubt, every timeout, every missing key degrades to stock dsh behavior. Nothing to configure away, nothing that can widen a permission.
+
+## Why this exists
+
+dsh ships **zero per-call risk classification** — the pre-execute waterfall's default is a bare `allow`. Its only built-in precedent, `experimental/auto-review`, does the classification with a *generative* LLM: one full model request per tool call, temperature 0, hand-rolled JSON text protocol, self-described as slow, expensive, and experimental. That's a System-2 scribe doing a System-1 reflex's job:
+
+| | auto-review (generative LLM) | dsh-jev-interceptor (Jev) |
+|---|---|---|
+| Decision shape | emits JSON token-by-token, then parses it and prays | typed `choice`/`noul` answers — type errors are structurally impossible |
+| Cost per call | one **full LLM request** | **~$0.00002** (measured: 501 input tokens) |
+| Latency | seconds | ~100ms provider-side (TypeSafe-reported p50); ~1s end-to-end from outside US-West |
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/index.ts:301-341](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/index.ts#L301-L341)
+
+实际guard/preapproval挂点。
+
+<details>
+<summary>查看原文（41行）</summary>
 
 ```text
   if (settings.guardEnabled) {
@@ -242,27 +270,13 @@ guard、preapprove和图像挂点真实接线。
       trace: approvalTrace,
     }), { prepend: true })
   }
-
-  // Image-offload pre-planning: fills the gap dsh's README admits —
-  // "nothing plans an offload before dispatch". Opt-in (default off) because
-  // image/offload events are irreversible on disk; only high-confidence
-  // sacrificial images are offloaded before the request dispatches.
-  if (config.imageOffloadEnabled === true) {
-    ctx.on('agent/pre-step', createImageOffloadListener({
-      live,
-      pressureThreshold: config.imageOffloadPressureThreshold ?? 0.75,
-      minCandidates: config.imageOffloadMinCandidates ?? 3,
-      sacrificeScoreMax: config.imageOffloadSacrificeScoreMax ?? 0.33,
-      sacrificeProbMin: config.imageOffloadSacrificeProbMin ?? 0.8,
-      jev,
-      telemetry,
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[cordis.patch.yml:1-25](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/cordis.patch.yml#L1-L25)
+**依据 3 · 源码核查**：[cordis.patch.yml:1-25](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/cordis.patch.yml#L1-L25)
 
-替代resolver与整体禁用边界。
+resolver替换是部署范围。
 
 <details>
 <summary>查看原文（25行）</summary>
@@ -297,64 +311,131 @@ guard、preapprove和图像挂点真实接线。
 
 </details>
 
-**依据 3 · 源码核查**：[src/session-reference.ts:395-415](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/session-reference.ts#L395-L415)
+#### 缺口
 
-enforce选择与shadow保持upstream分开。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-      const scored = retainScoredSession(source.snapshot, source.input.label, maxReferenceBytes, scores, { protectAbove })
-      if (scored === undefined) {
-        // Scoring cannot resize past what FIFO could; upstream raises the same error.
-        rendered.push(...upstream([source], maxReferenceBytes))
-        continue
-      }
-      // The FIFO counterfactual is computed once per source and shared with
-      // the comparison record; when it cannot fit, the comparison is simply
-      // skipped (upstream would raise the same budget error anyway).
-      const fifo = retainScoredSession(source.snapshot, source.input.label, maxReferenceBytes, null)
-      if (this.scoring.mode === 'enforce') {
-        if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
-        rendered.push({ ...scored, capturedFormatVersion: source.snapshot.session.version })
-        continue
-      }
-      // Shadow: the real render stays the upstream bytes; the scored selection
-      // is only the recorded counterfactual.
-      const upstreamRendered = upstream([source], maxReferenceBytes)
-      if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
-      rendered.push(...upstreamRendered)
-    }
-```
-
-</details>
+- 未同任务比较分类准确、漏拦/误拦与业务结果
+  **影响**：不能保证更安全/更便宜或真实净收益
+  **进一步探讨**：隔离profile对照原生审批/FIFO，记错误决策、任务正确与全成本。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · guard和预批如何避免模型扩大权限？
+### Q02 · guard和预批的证据、mode及next怎样接线？
 
-**研究主题**：功能与机制、缺陷与关键质疑
+**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-guard对不确定/失败返回next，shadow也next；enforce仅ask/deny，不自行allow，因此下游仍可否决，不能把delegate说成拒绝执行。预批先要求enabled、非jev-guard自发人类请求、tool白名单，再评估；allowed-once只在enforce和auto-approve时返回。evaluate还要求callId，PendingAsks按session+callId取且立即消费，核tool和新鲜度，没有捕获参数证据不靠模型reason直接预批。空白名单默认阻断所有自动预批，这是明确权限收窄。但这些结构不证明分类准确或口头授权理解正确，且“fail-closed”实质多数是回原生路径，不是阻断全部危险动作。
+默认enabled=false/mode shadow，预批白名单空。guard评估失败或无意见委托next，shadow同样next；enforce才返回ask或deny，不用分类成功直接放行越过后续决策。PendingAsks按sessionId+callId定界、上限64且10分钟新鲜，take即消耗并核tool匹配。预批要白名单、callId及捕获参数，自己的jev-guard升级明确委托人类，不对仅模型理由自动批准。
+
+预批评估失败保next，只有enforce且auto-approve才allowed-once；next自身异常不当成分类失败吞掉。typed矩阵和证据约束有具体权限收窄价值，但阈值仍需校准、分类器可误判，next表示回原生而不是“所有失败皆deny”。依赖DSH alpha/宿主事件语义、provider/key与网络，源码未证明具体宿主或服务当前可用。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/guard.ts:188-211](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/guard.ts#L188-L211)
+**依据 1 · 源码核查**：[src/config.ts:122-147](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/config.ts#L122-L147)
 
-真实guard只next/ask/deny，shadow不变更。
+默认关闭/shadow/白名单。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
+  enabled: false,
+  mode: 'shadow' as const,
+  provider: 'typesafe' as const,
+  apiKeyEnv: 'TYPESAFE_API_KEY',
+  timeoutMs: 1500,
+  /** OpenRouter 的 decisions 端点实测 2-3s（本机 p95 ~3s），显式配置可覆盖。 */
+  openrouterTimeoutMs: 3000,
+  cooldownMs: 60_000,
+  failureThreshold: 3,
+  maxConcurrency: 4,
+  cacheSize: 512,
+  recentMessages: 6,
+  preapproveRecentMessages: 3,
+  recentMessageChars: 300,
+  argsHeadChars: 2048,
+  argsTailChars: 512,
+  guardEnabled: true,
+  guardReadOnlyTools: [...DEFAULT_READ_ONLY_TOOLS],
+  guardExcludeTools: [] as string[],
+  guardConfidenceMin: 0.6,
+  guardDenyConfidence: 0.85,
+  guardIrreversibleCeiling: 0.2,
+  guardIrreversibleDenyFloor: 0.5,
+  guardInjectionAskThreshold: 0.8,
+  preapproveEnabled: true,
+  preapproveToolAllowlist: [] as string[],
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/guard.ts:40-84](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/guard.ts#L40-L84)
+
+有界新鲜单次证据与身份。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+/** Entries older than this bound are stale on sight; a hygiene constant, not a deployment tunable. */
+const PENDING_ASK_STALE_MS = 10 * 60_000
+
+/**
+ * Bounded store of guard escalations keyed by `sessionId:callId` — provider
+ * call ids are NOT unique across concurrent sessions (they can collide as
+ * `call_0` in parallel subagent loops), so the session id must disambiguate.
+ * The pre-approval answerer consumes an entry only when it is fresh and its
+ * tool matches the request, so a stale or mismatched entry never supplies the
+ * argument evidence for an auto-approval.
  */
-export function createGuardListener(
-  deps: GuardDeps,
+export class PendingAsks {
+  private readonly asks = new Map<string, PendingAsk>()
+
+  /**
+   * Record one escalation.
+   * @param sessionId - session that owns the escalated call.
+   * @param callId - the escalated tool call.
+   * @param ask - bounded context for the pre-approval question.
+   */
+  set(sessionId: string, callId: string, ask: Omit<PendingAsk, 'createdAt'>): void {
+    if (this.asks.size >= 64) {
+      const oldest = this.asks.keys().next()
+      if (oldest.done !== true) this.asks.delete(oldest.value)
+    }
+    this.asks.set(`${sessionId}\0${callId}`, { ...ask, createdAt: Date.now() })
+  }
+
+  /**
+   * Take (remove) the context recorded for one call, but only when it is
+   * fresh and belongs to the asking tool.
+   * @param sessionId - session that owns the approval request.
+   * @param callId - the call being approved.
+   * @param toolName - the tool the approval question names.
+   * @returns the matching fresh context, or `undefined` (the entry is
+   *   dropped either way — a miss must never be retried against stale data).
+   */
+  take(sessionId: string, callId: string, toolName: string): PendingAsk | undefined {
+    const key = `${sessionId}\0${callId}`
+    const ask = this.asks.get(key)
+    this.asks.delete(key)
+    if (ask === undefined) return undefined
+    if (ask.tool !== toolName) return undefined
+    if (Date.now() - ask.createdAt > PENDING_ASK_STALE_MS) return undefined
+    return ask
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/guard.ts:191-213](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/guard.ts#L191-L213)
+
+失败/影子委托与enforce动作。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
 ): (exec: ToolExecution, next: () => Promise<PreToolDecision>) => Promise<PreToolDecision> {
   return async (exec, next) => {
     const live = deps.live()
@@ -376,33 +457,21 @@ export function createGuardListener(
     // info.reason 是上游 ToolErrorInfo 专设的用户可见通道（durable 投影保留、
     // model-facing content 不含）：把同一份拦截理由送进审计与面板回放。
     return { kind: 'deny', reason: action.reason, info: { ...GUARD_DENY_INFO, reason: action.reason } }
+  }
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/guard.ts:77-84](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/guard.ts#L77-L84)
+**依据 4 · 源码核查**：[src/preapprove.ts:94-139](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/preapprove.ts#L94-L139)
 
-pending证据单次消费、同tool和新鲜度。
-
-```text
-  take(sessionId: string, callId: string, toolName: string): PendingAsk | undefined {
-    const key = `${sessionId}\0${callId}`
-    const ask = this.asks.get(key)
-    this.asks.delete(key)
-    if (ask === undefined) return undefined
-    if (ask.tool !== toolName) return undefined
-    if (Date.now() - ask.createdAt > PENDING_ASK_STALE_MS) return undefined
-    return ask
-```
-
-**依据 3 · 源码核查**：[src/preapprove.ts:95-116](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/preapprove.ts#L95-L116)
-
-allowlist、enforce和allowed-once。
+白名单/自己升级/证据与模式门。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（46行）</summary>
 
 ```text
+): (req: ApprovalRequestEvent, next: () => Promise<ApprovalOutcome>) => Promise<ApprovalOutcome> {
   return async (req, next) => {
     const live = deps.live()
     if (!live.enabled) return next()
@@ -425,18 +494,14 @@ allowlist、enforce和allowed-once。
     if (verdict === undefined) return next()
     if (live.mode === 'enforce' && verdict.kind === 'auto-approve') return 'allowed-once'
     return next()
-```
+  }
+}
 
-</details>
-
-**依据 4 · 源码核查**：[src/preapprove.ts:125-153](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/preapprove.ts#L125-L153)
-
-callId和捕获参数是模型分类的先决条件。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
+/**
+ * Run every pre-approval stage that must not swallow `next()` failures.
+ * Returns `undefined` for delegation — most importantly whenever argument
+ * evidence is missing, stale, or mismatched.
+ */
 async function evaluatePreapprove(
   deps: PreapproveDeps,
   live: LiveSettings,
@@ -452,50 +517,32 @@ async function evaluatePreapprove(
   const state = {
     tool: req.toolName,
     ask_reason: req.reason ?? '',
-    args_preview: pending.argsPreview,
-    recent: digestRecent(session.deriveMessages(), deps.recentMessages, deps.recentMessageChars),
-    cwd: session.header.cwd ?? '',
-  }
-
-  const result = await deps.jev.classify({
-    tag: 'preapprove',
-    mode: live.mode,
-    tool: req.toolName,
-    sessionId: session.id,
-    callId: req.callId === undefined ? undefined : String(req.callId),
-    state,
-    questions: PREAPPROVE_QUESTIONS,
-    signal: req.signal,
 ```
 
 </details>
-
-#### 缺口
-
-- 分类漏拦、误拦与真实预批授权匹配未测。
-  **影响**：结构门不能作为实际安全准确率，尤其0/0预批没有效果样本。
-  **进一步探讨**：用脱敏同工具/不同目标、过期callId和注入reason矩阵与原生人工审批对照，任何越权即停预批。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 全局shadow只记录承诺是否成立？
+### Q03 · shadow能保证所有动作只记录吗？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-不完全成立。session-reference在shadow明确调用upstream并只记录反事实，guard和预批也有mode门；但imageOffload listener只检查enabled，压力、候选和分类条件满足后直接session.append image/offload，没有shadow/enforce判断。index在imageOffloadEnabled=true时真实注册此分支，注释明确落盘不可逆，故这是条件明确的源码确认逻辑缺陷：默认关闭时不触发，开启后可违反shadow“只记录”。不能泛化为其他挂点都越权，也不能把默认off当无缺陷。信息保留评分还只根据周边文本，不直接证明被丢图可重建；状态改变与价值预测须分开验。
+不能覆盖已读图像路径。index只在imageOffloadEnabled=true时挂agent/pre-step，默认关闭且注释承认image/offload落盘不可逆。listener只检查live.enabled、token压力、图片数和分类结果，高置信“可牺牲”时直接session.append(image/offload)，未检查live.mode是否enforce；mode只传分类和遥测。因此enabled+shadow+图像opt-in+阈值满足仍可改变持久会话。
+
+这是固定控制流缺门，不是将所有shadow挂点泛化坏：guard/preapprove有明确模式门，引用保留shadow也回upstream，停滞提醒只enforce注入。默认关图像避免通常触发，不修复opt-in对只记录承诺的违反。分类图像只用周围文本与age，没有直接图像视觉理解证据，误选后信息价值仍需检验。未运行/故障复现，不称已丢用户图片。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:323-335](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/index.ts#L323-L335)
+**依据 1 · 源码核查**：[src/index.ts:343-358](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/index.ts#L343-L358)
 
-opt-in真实挂载及不可逆落盘声明。
+默认关闭/不可逆注释与挂载。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
   // Image-offload pre-planning: fills the gap dsh's README admits —
@@ -511,18 +558,24 @@ opt-in真实挂载及不可逆落盘声明。
       sacrificeProbMin: config.imageOffloadSacrificeProbMin ?? 0.8,
       jev,
       telemetry,
+    }))
+  }
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/image-offload.ts:76-93](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/image-offload.ts#L76-L93)
+**依据 2 · 源码核查**：[src/image-offload.ts:73-92](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/image-offload.ts#L73-L92)
 
-仅enabled/压力/候选门，无mode。
+仅enabled/压力/候选门。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
+export function createImageOffloadListener(
+  deps: ImageOffloadDeps,
+): (payload: { agent: Agent; messages: unknown[]; turn: number; step: number; signal: AbortSignal }, next: () => Promise<PreStepDecision>) => Promise<PreStepDecision> {
   return async (payload, next) => {
     const live = deps.live()
     if (!live.enabled) return next()
@@ -540,14 +593,13 @@ opt-in真实挂载及不可逆落盘声明。
     // L2: candidate gate — need enough unoffloaded images to be worth a Jev call.
     const candidates = collectImageCandidates(session)
     const imageCount = candidates.reduce((sum, c) => sum + c.imageIndexes.length, 0)
-    if (imageCount < deps.minCandidates) return next()
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/image-offload.ts:120-164](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/image-offload.ts#L120-L164)
+**依据 3 · 源码核查**：[src/image-offload.ts:120-164](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/image-offload.ts#L120-L164)
 
-分类后选择并直接append事件，遥测标skipped不阻止写入。
+mode未阻落盘事件。
 
 <details>
 <summary>查看原文（45行）</summary>
@@ -602,14 +654,16 @@ opt-in真实挂载及不可逆落盘声明。
 
 </details>
 
-**依据 4 · 源码核查**：[src/session-reference.ts:405-414](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/session-reference.ts#L405-L414)
+**依据 4 · 源码核查**：[src/session-reference.ts:403-415](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/session-reference.ts#L403-L415)
 
-对照分支确有shadow返回upstream。
+引用shadow确实upstream反证。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+      // skipped (upstream would raise the same budget error anyway).
+      const fifo = retainScoredSession(source.snapshot, source.input.label, maxReferenceBytes, null)
       if (this.scoring.mode === 'enforce') {
         if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
         rendered.push({ ...scored, capturedFormatVersion: source.snapshot.session.version })
@@ -620,6 +674,30 @@ opt-in真实挂载及不可逆落盘声明。
       const upstreamRendered = upstream([source], maxReferenceBytes)
       if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
       rendered.push(...upstreamRendered)
+    }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/stagnation.ts:303-313](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/stagnation.ts#L303-L313)
+
+停滞模式门反证。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+      const downstream = await next()
+      try {
+        const judged = await observed.probe
+        if (judged === undefined || !judged.alerted) return downstream
+        // shadow 模式只记遥测不注入（照 guard/preapprove 的 would-have 语义）。
+        if (observed.mode === 'enforce') {
+          deps.tracker.noteAlert(observed.target.agent, observed.target.tool, now())
+          return prependContext(downstream, buildReminder(observed.target.tool, observed.target.attempts, judged.confidence))
+        }
+        return downstream
+      } catch {
 ```
 
 </details>
@@ -628,58 +706,91 @@ opt-in真实挂载及不可逆落盘声明。
 
 <a id="detail-section-14"></a>
 
-### Q04 · 外部分类和遥测是否能证明净收益？
+### Q04 · 引用替换、缓存与遥测如何影响恢复和成本？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：功能与机制、工程质量与复用、效果与总成本
 
 #### 完整回答
 
-Jev请求需要key/endpoint/model，发送有界工具参数和最近消息摘要；截短不是匿名化，敏感参数仍可能在head/tail。client无key/cooldown返回null，有并发semaphore、LRU与超时/重试约束；cache命中只复用answers不重记usage，避免费用虚增。telemetry串行append但写失败被吞掉，决策已提交不依赖日志，所以无记录不等没有动作。README dogfood的272决策/费用/延迟是作者窗口，预批明确0/0无样本；不能以它证明本机账单、全场景漏拦或净效益。人工作业还含审ask/deny、误判复核和阈值校准；未测合格任务全尝试不能算单位成本。
+bundle覆盖原session-reference行并装子类，继承发现/预算/溢出等上游能力；enforce用scored结果，shadow实际回upstream只记反事实，评分不完整不该驱动选择。它改变丢弃策略不是无限上下文，也不证明错误线索一定比FIFO保得好。退出必须禁整个bundle恢复原行，单禁替换行会留下原行disabled。
+
+Jev客户端缓存key含model/state/questions，命中只复用answers不重计usage/latency，避免遥测重复账单；限并发、剩余预算重试/cooldown是有界降级策略，失败回宿主路径仍需实际任务验证。telemetry异步串行append，异常吞掉，不是有效动作前置事务；缓存与日志用量也不是provider完整账单。
+
+现金有分类API/模型结果费，资源有JSONL/缓存/引用评分，人工需看错判、ask/deny、阈值/alpha升级与resolver恢复。首次provider配置、持续分类、故障重试/丢日志和退出都不能据作者单次例价估ROI；本轮不核当前外部价格，保持未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/config.ts:34-55](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/config.ts#L34-L55)
+**依据 1 · 源码核查**：[cordis.patch.yml:1-25](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/cordis.patch.yml#L1-L25)
 
-时间、并发、cache与参数/消息截短配置。
+替换/整bundle退出。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-  /** Wall-clock budget per decision attempt in milliseconds (default 1500). */
-  timeoutMs?: number
-  /** Cooldown after consecutive failures in milliseconds (default 60000). */
-  cooldownMs?: number
-  /** Consecutive failures that open the cooldown (default 3). */
-  failureThreshold?: number
-  /** Maximum in-flight Jev requests (default 4; the provider rate-limits near 8). */
-  maxConcurrency?: number
-  /** Decision input cache capacity (default 512). */
-  cacheSize?: number
-  /** Directory for `telemetry.jsonl` (default `~/.dsh-jev-interceptor`). */
-  telemetryDir?: string
-  /** Trailing messages digested into the guard state (default 6). */
-  recentMessages?: number
-  /** Trailing messages digested into the pre-approval state (default 3). */
-  preapproveRecentMessages?: number
-  /** Per-message text bound in the state, characters (default 300). */
-  recentMessageChars?: number
-  /** Head characters kept from tool arguments in the state (default 2048). */
-  argsHeadChars?: number
-  /** Tail characters kept from tool arguments in the state (default 512). */
-  argsTailChars?: number
+# The dsh-jev-interceptor bundle layer.
+#
+# Row 1 (jev-interceptor): the tools/pre-execute guard and approval/request
+# pre-approver. Inert until `enabled: true` in config.
+#
+# Rows 2-3 take over the upstream session-reference row by subclassing its
+# resolver: the replacement inherits @-mention discovery, the remote
+# candidates face, budgets, spill, and cancellation unchanged, and
+# `sessionReferenceEnabled: false` (default) renders byte-for-byte like the
+# upstream resolver. Correct way to remove this takeover: disable the whole
+# bundle layer (setBundleEnabled false), which restores the original row —
+# disabling only the jev-session-reference row would leave the original row
+# overridden and no session-reference plugin active.
+#
+# The session-reference override only matches in profiles that stack the
+# web-app layer (where the upstream row lives), such as the web and demo
+# profiles.
+- insert:
+    - id: jev-interceptor
+      name: dsh-jev-interceptor
+    - id: jev-session-reference
+      name: dsh-jev-interceptor/session-reference
+
+- id: session-reference
+  disabled: true
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/jev.ts:164-209](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/jev.ts#L164-L209)
+**依据 2 · 源码核查**：[src/session-reference.ts:403-415](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/session-reference.ts#L403-L415)
 
-key/cooldown、cache费用与semaphore释放。
+实际enforce/shadow选择。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+      // skipped (upstream would raise the same budget error anyway).
+      const fifo = retainScoredSession(source.snapshot, source.input.label, maxReferenceBytes, null)
+      if (this.scoring.mode === 'enforce') {
+        if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
+        rendered.push({ ...scored, capturedFormatVersion: source.snapshot.session.version })
+        continue
+      }
+      // Shadow: the real render stays the upstream bytes; the scored selection
+      // is only the recorded counterfactual.
+      const upstreamRendered = upstream([source], maxReferenceBytes)
+      if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
+      rendered.push(...upstreamRendered)
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/jev.ts:166-215](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/jev.ts#L166-L215)
+
+cache命中不重计与预算/降级。
+
+<details>
+<summary>查看原文（50行）</summary>
+
+```text
+
     const key = await this.resolveKey()
     if (key === undefined || key.length === 0) return degrade('no-key')
     if (this.gate.open()) return degrade('cooldown')
@@ -726,20 +837,21 @@ key/cooldown、cache费用与semaphore释放。
       return result
     } finally {
       this.semaphore.release()
+    }
+  }
+
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/telemetry.ts:106-118](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/telemetry.ts#L106-L118)
+**依据 4 · 源码核查**：[src/telemetry.ts:108-120](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/telemetry.ts#L108-L120)
 
-写失败best-effort，记录不是事务前提。
+best-effort日志。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
-  /**
-   * Append one record. Never throws: a telemetry failure is swallowed because
    * the decision path already committed. Writes are chained so records land in
    * the log in the order they were recorded.
    * @param entry - the record to persist.
@@ -751,67 +863,95 @@ key/cooldown、cache费用与semaphore释放。
       .catch(() => {
         // Telemetry is best-effort; nothing downstream depends on it.
       })
+  }
+
 ```
 
 </details>
-
-**依据 4 · 源码核查**：[README.md:95-106](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/README.md#L95-L106)
-
-作者窗口与0/0，失败回原生不是拒绝。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-Five weeks of dogfooding (2026-09-22 → 10-27, 15 active days, 7 sessions, 272 decisions — `/jev-impact` renders this from your own telemetry any time):
-
-- the pre-approve path never fired, so the mis-approval metric has **no samples yet** (0/0, honestly rendered as "无样本" rather than "0") — what *was* exercised: 6 uncertain calls escalated to the human, 0 high-risk calls missed
-- total decision cost: **$0.0068** (162,425 input tokens across 143 billed decisions; p50 1110ms, p95 1503ms — the screenshots above are this same window)
-- 128 decisions degraded to stock behavior (no key for most of the window, 9 timeouts) at **zero behavioral cost** — the fail-closed posture doing exactly what it promises
-
-Calibration closes its own loop: every `/jev-calibrate` run snapshots the report; the next run tells you which of its previous suggestions you adopted (`✓ 已采纳`), ignored, or manually overrode (`↔`), and how the agreement buckets moved since.
-
-## Safety model (the part you should actually read)
-
-- **Never `allow`.** "No objection" is expressed as `next()`, so downstream listeners (external hooks, auto-review) keep their veto.
-- **Fail-closed everywhere.** No key / provider cooldown / timeout / parse mismatch / internal error → delegate to stock behavior. The approval service's `never` policy is enforced upstream of every listener, so this plugin structurally cannot relax it.
-```
-
-</details>
-
-#### 缺口
-
-- provider当前价格/政策、脱敏程度、真实任务质量与总费用未验证。
-  **影响**：不能给固定节省或安全收益，关键参数不宜直接发外部。
-  **进一步探讨**：先核数据发送目的地，用合成参数对照原生审批，记录账单、误判、人工分钟和最终正确率。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 怎样小范围试用和退出？
+### Q05 · 怎样限定隔离试用与退出？
 
-**研究主题**：采用判断、依赖、兼容与流程
+**研究主题**：采用判断
 
 #### 完整回答
 
-可控试用必须从隔离profile开始，imageOffloadEnabled保持false、白名单空、主row shadow；验证所有挂点零状态变化、provider故障回原生，然后只对可逆/可重建工具逐项扩大。需要纯人工确认所有外部写入或禁止发送参数摘要的人不适合。session-reference原row被patch disabled，不能只关替代row，否则没有resolver；退出须禁整个bundle层恢复原row并核发现/加载，而不只把enabled=false当全卸载。其维护成本包括多项alpha API、resolver子类和权限preset行为；未运行不能推荐持续安装。
+可在愿审日志的隔离profile条件试用：enabled后从shadow观测起，图像卸载保持关闭、预批白名单保持空，不马上自动授权；核同一工具调用的捕获参数、mode/decision和宿主实际结果。确认原resolver、备份profile和引用材料，provider输入可能含工具参数/近期文本，敏感任务先审数据流而非只说日志脱敏。
+
+合格标准是权限不扩、shadow无状态变化、每项有效动作可解释且任务正确；原生行为不能靠单插件自报保证。误拦/误批、缺遥测的动作、shadow副作用或resolver缺失即停整个bundle回原生并核实际会话事件，已落盘图像卸载不当自动可逆。持续采用需同版宿主和基线总成本验收，本次无。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[cordis.patch.yml:1-25](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/cordis.patch.yml#L1-L25)
+**依据 1 · 源码核查**：[src/config.ts:122-147](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/config.ts#L122-L147)
 
-整体bundle禁用才恢复original row。
+保守默认可限定路径。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-# The dsh-jev-interceptor bundle layer.
-#
-# Row 1 (jev-interceptor): the tools/pre-execute guard and approval/request
-# pre-approver. Inert until `enabled: true` in config.
-#
+  enabled: false,
+  mode: 'shadow' as const,
+  provider: 'typesafe' as const,
+  apiKeyEnv: 'TYPESAFE_API_KEY',
+  timeoutMs: 1500,
+  /** OpenRouter 的 decisions 端点实测 2-3s（本机 p95 ~3s），显式配置可覆盖。 */
+  openrouterTimeoutMs: 3000,
+  cooldownMs: 60_000,
+  failureThreshold: 3,
+  maxConcurrency: 4,
+  cacheSize: 512,
+  recentMessages: 6,
+  preapproveRecentMessages: 3,
+  recentMessageChars: 300,
+  argsHeadChars: 2048,
+  argsTailChars: 512,
+  guardEnabled: true,
+  guardReadOnlyTools: [...DEFAULT_READ_ONLY_TOOLS],
+  guardExcludeTools: [] as string[],
+  guardConfidenceMin: 0.6,
+  guardDenyConfidence: 0.85,
+  guardIrreversibleCeiling: 0.2,
+  guardIrreversibleDenyFloor: 0.5,
+  guardInjectionAskThreshold: 0.8,
+  preapproveEnabled: true,
+  preapproveToolAllowlist: [] as string[],
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/preapprove.ts:134-145](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/preapprove.ts#L134-L145)
+
+参数/近期文本外发判定输入。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  const pending = deps.pendingAsks.take(session.id, req.callId, req.toolName)
+  if (pending === undefined) return undefined
+
+  const state = {
+    tool: req.toolName,
+    ask_reason: req.reason ?? '',
+    args_preview: pending.argsPreview,
+    recent: digestRecent(session.deriveMessages(), deps.recentMessages, deps.recentMessageChars),
+    cwd: session.header.cwd ?? '',
+  }
+
+  const result = await deps.jev.classify({
+```
+
+</details>
+
+**依据 3 · 源码核查**：[cordis.patch.yml:6-12](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/cordis.patch.yml#L6-L12)
+
+完整退出约束。
+
+```text
 # Rows 2-3 take over the upstream session-reference row by subclassing its
 # resolver: the replacement inherits @-mention discovery, the remote
 # candidates face, budgets, spill, and cancellation unchanged, and
@@ -819,111 +959,38 @@ Calibration closes its own loop: every `/jev-calibrate` run snapshots the report
 # upstream resolver. Correct way to remove this takeover: disable the whole
 # bundle layer (setBundleEnabled false), which restores the original row —
 # disabling only the jev-session-reference row would leave the original row
-# overridden and no session-reference plugin active.
-#
-# The session-reference override only matches in profiles that stack the
-# web-app layer (where the upstream row lives), such as the web and demo
-# profiles.
-- insert:
-    - id: jev-interceptor
-      name: dsh-jev-interceptor
-    - id: jev-session-reference
-      name: dsh-jev-interceptor/session-reference
-
-- id: session-reference
-  disabled: true
 ```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:323-335](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/index.ts#L323-L335)
-
-图像opt-in需保持关闭。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  // Image-offload pre-planning: fills the gap dsh's README admits —
-  // "nothing plans an offload before dispatch". Opt-in (default off) because
-  // image/offload events are irreversible on disk; only high-confidence
-  // sacrificial images are offloaded before the request dispatches.
-  if (config.imageOffloadEnabled === true) {
-    ctx.on('agent/pre-step', createImageOffloadListener({
-      live,
-      pressureThreshold: config.imageOffloadPressureThreshold ?? 0.75,
-      minCandidates: config.imageOffloadMinCandidates ?? 3,
-      sacrificeScoreMax: config.imageOffloadSacrificeScoreMax ?? 0.33,
-      sacrificeProbMin: config.imageOffloadSacrificeProbMin ?? 0.8,
-      jev,
-      telemetry,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/preapprove.ts:95-116](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/preapprove.ts#L95-L116)
-
-白名单空和shadow为受控起点。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-  return async (req, next) => {
-    const live = deps.live()
-    if (!live.enabled) return next()
-    // Our guard's escalation is a request FOR the human; auto-approving it would defeat the guard.
-    if (req.reason !== undefined && req.reason.startsWith('jev-guard:')) return next()
-    if (!deps.allowlist.has(req.toolName)) return next()
-
-    let verdict: PreapproveVerdict | undefined
-    try {
-      verdict = await evaluatePreapprove(deps, live, req)
-    } catch {
-      // Our own failure must land on the human answerer; next() errors are not ours to swallow.
-      verdict = undefined
-    }
-    deps.trace?.noteVerdict(
-      req.agent.session.id,
-      req.callId === undefined ? undefined : String(req.callId),
-      verdict === undefined ? 'not-evaluated' : verdict.kind,
-    )
-    if (verdict === undefined) return next()
-    if (live.mode === 'enforce' && verdict.kind === 'auto-approve') return 'allowed-once'
-    return next()
-```
-
-</details>
 
 #### 缺口
 
-- 精确Host上的零副作用shadow、bundle恢复和卸载未动态验收。
-  **影响**：仅条件试用，不能install或称alpha全兼容。
-  **进一步探讨**：隔离profile做无key/超时/错误响应、禁bundle恢复resolver和会话继续，出现缺resolver或无日志动作即停止。
+- 未同版宿主/目标provider及退出/故障验收
+  **影响**：只支持隔离条件探索，不支持持续采用和安全承诺
+  **进一步探讨**：不敏感profile比原生，核权限/状态/日志/恢复及provider输入，记录完整成本。
 
 <a id="research-q06"></a>
 
 <a id="detail-section-16"></a>
 
-### Q06 · 统一副作用门是否值得验证？
+### Q06 · 统一effect gate有何可证伪增量？
 
-**研究主题**：新假设与验证、工程质量与复用
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-从分散mode门漏掉image-offload可推导未验证假设：统一effect gate要求每个建议动作携带mode、来源证据、可逆性和对应session/call，将日志与副作用分离，并在单一提交边界强制shadow仅产建议。它不能靠再加一处if就证明所有未来挂点安全，也不能让分类替代宿主权限。最小验证跨guard/preapprove/retention/image/stagnation的shadow/enforce/disabled动作矩阵，注入超时、半响应、日志写失败和取消；shadow任何session.append、预批或保留结果变化都否定实现，再比较误判、任务正确率和全成本是否优于原生。
+未验证方向是所有有效动作携mode/provenance/所用证据/可逆性，在单一提交门强制shadow只能产建议；不重复计算已有guard/preapprove模式门、引用反事实或遥测。图像分支缺门说明分散检查会漏，但不证明集中提交必然更可靠。
+
+用工具deny/ask、预批、引用裁剪、停滞提醒、图像卸载五类挂点及provider失败/丢日志/取消矩阵比当前实现；任一shadow持久变化即失败，再比原生权限错误、任务质量和API/人工总成本。若统一门漏别的状态、增加维护耦合或已有局部门足够，则否定独立扩展。实验未执行，不纳已有创新分。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/image-offload.ts:148-164](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/image-offload.ts#L148-L164)
+**依据 1 · 源码核查**：[src/image-offload.ts:149-164](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/image-offload.ts#L149-L164)
 
-mode门遗漏的实质副作用。
+无统一mode gate的实际线索。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-    if (toOffload.length > 0) {
       // L5: land image/offload events in the exact upstream format.
       for (const target of toOffload) {
         ;(session as unknown as { append: (type: string, data: unknown) => void }).append('image/offload', { targets: [target] })
@@ -944,42 +1011,45 @@ mode门遗漏的实质副作用。
 
 </details>
 
-**依据 2 · 源码核查**：[src/preapprove.ts:114-116](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/preapprove.ts#L114-L116)
+**依据 2 · 源码核查**：[src/guard.ts:203-212](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/guard.ts#L203-L212)
 
-现有显式effect门对照。
-
-```text
-    if (verdict === undefined) return next()
-    if (live.mode === 'enforce' && verdict.kind === 'auto-approve') return 'allowed-once'
-    return next()
-```
-
-**依据 3 · 源码核查**：[src/session-reference.ts:405-414](https://github.com/AskTheWay/dsh-jev-interceptor/blob/6eedce85014b7f237c4a4f6bc513b8239103bef2/src/session-reference.ts#L405-L414)
-
-保留结果的另一显式effect门。
+既有局部门是基线。
 
 <details>
 <summary>查看原文（10行）</summary>
 
 ```text
-      if (this.scoring.mode === 'enforce') {
-        if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
-        rendered.push({ ...scored, capturedFormatVersion: source.snapshot.session.version })
-        continue
-      }
-      // Shadow: the real render stays the upstream bytes; the scored selection
-      // is only the recorded counterfactual.
-      const upstreamRendered = upstream([source], maxReferenceBytes)
-      if (fifo !== undefined) this.recordComparison(source, scored, fifo, scores)
-      rendered.push(...upstreamRendered)
+    if (action === undefined || action.kind === 'delegate') return next()
+    if (live.mode === 'shadow') return next()
+    if (action.kind === 'ask') {
+      // evaluateGuard already recorded the bounded preview for the pre-approval question.
+      return { kind: 'ask', reason: action.reason }
+    }
+    // info.reason 是上游 ToolErrorInfo 专设的用户可见通道（durable 投影保留、
+    // model-facing content 不含）：把同一份拦截理由送进审计与面板回放。
+    return { kind: 'deny', reason: action.reason, info: { ...GUARD_DENY_INFO, reason: action.reason } }
+  }
 ```
 
 </details>
 
+**依据 3 · 源码核查**：[src/preapprove.ts:111-116](https://github.com/AskTheWay/dsh-jev-interceptor/blob/2ba7b8c9fce9dfc364ba057099a4b459edc9e760/src/preapprove.ts#L111-L116)
+
+既有预批门是基线。
+
+```text
+      req.callId === undefined ? undefined : String(req.callId),
+      verdict === undefined ? 'not-evaluated' : verdict.kind,
+    )
+    if (verdict === undefined) return next()
+    if (live.mode === 'enforce' && verdict.kind === 'auto-approve') return 'allowed-once'
+    return next()
+```
+
 #### 缺口
 
-- 统一gate能否覆盖所有future hook且不增加错误成本未知。
-  **影响**：设计仍未验证，不计创新分或已确认需求。
-  **进一步探讨**：按矩阵零副作用与故障回退为硬门，再以同任务质量/全成本比较；不优于基线则不扩展。
+- 未实施统一门或跨挂点故障矩阵
+  **影响**：不能声称解决shadow副作用或净收益
+  **进一步探讨**：隔离矩阵逐动作查状态/权限与基线全成本，无净改善不做。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

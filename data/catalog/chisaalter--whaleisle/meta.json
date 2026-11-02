@@ -1,0 +1,27 @@
+{
+    "repository": "ChisaAlter/WhaleIsle",
+    "repository_id": 1333141598,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 200,
+    "pushed_at": "2026-11-02T01:31:20Z",
+    "issues": {
+        "open": 0,
+        "closed": 53,
+        "created_30d": 33,
+        "closed_30d": 35,
+        "updated_30d": 35
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    }
+}

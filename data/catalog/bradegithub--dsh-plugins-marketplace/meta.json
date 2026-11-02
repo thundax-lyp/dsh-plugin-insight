@@ -1,0 +1,45 @@
+{
+    "repository": "bradeGithub/DSH-Plugins-Marketplace",
+    "repository_id": 1333295863,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 197,
+    "pushed_at": "2026-11-02T02:11:43Z",
+    "issues": {
+        "open": 17,
+        "closed": 263,
+        "created_30d": 63,
+        "closed_30d": 86,
+        "updated_30d": 103
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-marketplace",
+        "captured_at": "2026-10-31T12:39:32.524Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 11597,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-plugin-marketplace",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T16:21:15.434Z",
+            "captured_at": "2026-10-31T12:39:32.524Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-marketplace",
+            "error": null,
+            "latest_version": "0.5.7",
+            "latest_published_at": "2026-10-31T02:16:43.974Z",
+            "latest_error": null
+        }
+    }
+}

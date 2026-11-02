@@ -1,0 +1,45 @@
+{
+    "repository": "ZSeven-W/dsh-crew",
+    "repository_id": 1336068061,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 192,
+    "pushed_at": "2026-10-08T11:14:30Z",
+    "issues": {
+        "open": 0,
+        "closed": 10,
+        "created_30d": 1,
+        "closed_30d": 3,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-01T06:52:54.214Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@zseven-w/dsh-crew",
+        "captured_at": "2026-10-31T05:50:28.596Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 2150,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/%40zseven-w%2Fdsh-crew",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T17:14:39.264Z",
+            "captured_at": "2026-10-31T05:50:28.596Z",
+            "source_url": "https://registry.npmjs.org/%40zseven-w%2Fdsh-crew",
+            "error": null,
+            "latest_version": "0.1.0-rc.14",
+            "latest_published_at": "2026-10-08T11:17:29.065Z",
+            "latest_error": null
+        }
+    }
+}

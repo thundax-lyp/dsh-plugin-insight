@@ -1,0 +1,66 @@
+{
+    "repository": "shanliuling/skills-link",
+    "repository_id": 1208725464,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 197,
+    "pushed_at": "2026-05-14T06:44:10Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fskills-link%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8986:209739:2058CB:232103:6AE81D14 and timestamp 2026-11-02 05:18:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fskills-link%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A08:2F5995:1E1F55:20E4C9:6AE81D16 and timestamp 2026-11-02 05:18:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fskills-link%20is%3Aissue%20created%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A38:2F13A0:1DD3B6:209ACD:6AE81D17 and timestamp 2026-11-02 05:18:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fskills-link%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B0C:DDCBD:1DA92D:20714A:6AE81D1B and timestamp 2026-11-02 05:18:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fskills-link%20is%3Aissue%20updated%3A2026-10-03T05%3A16%3A13.796Z..2026-11-02T05%3A16%3A13.796Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B6A:30F6BA:1D7CF9:204436:6AE81D1D and timestamp 2026-11-02 05:18:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "skills-link",
+        "captured_at": "2026-11-02T05:16:13.796Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 78,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/skills-link",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-04-14T11:10:13.521Z",
+            "captured_at": "2026-11-02T05:16:13.796Z",
+            "source_url": "https://registry.npmjs.org/skills-link",
+            "error": null,
+            "latest_version": "1.3.0",
+            "latest_published_at": "2026-04-26T04:14:19.904Z",
+            "latest_error": null
+        }
+    }
+}

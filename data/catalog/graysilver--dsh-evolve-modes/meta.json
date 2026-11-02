@@ -1,0 +1,45 @@
+{
+    "repository": "GraySilver/dsh-evolve-modes",
+    "repository_id": 1335877752,
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 201,
+    "pushed_at": "2026-09-14T16:24:57Z",
+    "issues": {
+        "open": 3,
+        "closed": 2,
+        "created_30d": 3,
+        "closed_30d": 1,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-02T02:44:34.386Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "26339b8a33e90cc4c8f1696507809b10176bd9a6",
+        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
+        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@graysilver/dsh-evolve-modes",
+        "captured_at": "2026-11-02T05:16:13.796Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 317,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40graysilver%2Fdsh-evolve-modes",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T14:52:42.158Z",
+            "captured_at": "2026-11-02T05:16:13.796Z",
+            "source_url": "https://registry.npmjs.org/%40graysilver%2Fdsh-evolve-modes",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2026-09-14T16:33:53.797Z",
+            "latest_error": null
+        }
+    }
+}

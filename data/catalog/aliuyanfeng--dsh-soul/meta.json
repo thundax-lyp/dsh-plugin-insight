@@ -1,14 +1,14 @@
 {
     "repository": "Aliuyanfeng/dsh-soul",
     "repository_id": 1352089397,
-    "captured_at": "2026-10-28T03:54:21.981Z",
-    "window_start": "2026-09-28T03:54:21.981Z",
-    "stars": 7,
-    "pushed_at": "2026-10-28T03:45:32Z",
+    "captured_at": "2026-11-02T05:16:13.796Z",
+    "window_start": "2026-10-03T05:16:13.796Z",
+    "stars": 9,
+    "pushed_at": "2026-11-02T03:44:02Z",
     "issues": {
         "open": 0,
         "closed": 2,
-        "created_30d": 1,
+        "created_30d": 0,
         "closed_30d": 2,
         "updated_30d": 2
     },
@@ -16,19 +16,19 @@
     "archived": false,
     "npm": {
         "package_name": "dsh-soul",
-        "captured_at": "2026-10-28T03:54:21.981Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 3422,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-soul",
+        "captured_at": "2026-10-31T12:39:32.524Z",
+        "window_start": "2026-10-01",
+        "window_end": "2026-10-30",
+        "downloads_30d": 4466,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-soul",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-29T09:07:00.318Z",
-            "captured_at": "2026-10-27T22:18:54.889Z",
+            "captured_at": "2026-10-31T12:39:32.524Z",
             "source_url": "https://registry.npmjs.org/dsh-soul",
             "error": null,
-            "latest_version": "0.8.0",
-            "latest_published_at": "2026-10-19T06:53:21.245Z",
+            "latest_version": "0.9.0",
+            "latest_published_at": "2026-10-29T03:39:17.282Z",
             "latest_error": null
         }
     }

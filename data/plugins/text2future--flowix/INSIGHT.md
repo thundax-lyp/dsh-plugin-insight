@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[825c1c5](https://github.com/text2future/flowix/tree/825c1c58d37daa36be3ed56572407273c1908552)
+源码版本：[a48d45c](https://github.com/text2future/flowix/tree/a48d45ca42cdfb252f80c0c2db5d213bf904546d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/text2future/flowix)
+[![GitHub ★ 493](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=493&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/text2future/flowix)
 <!-- END META -->
 
-> **功能**：本地 Markdown 笔记客户端，通过 CLI 与 MCP 向 Agent 提供持续上下文
+> **功能**：本地 Markdown 笔记客户端，让人工写作与多个 Agent 共用可持续读写的上下文。
 
-> **亮点**：[Q02](#research-q02) 以人可读Markdown为共同交付物连接人工和Agent，减少另建记忆存储与重复传递；检索与写入效果仍需任务验证。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 以同一可读Markdown连接人工与Agent，并协调版本/冲突，减少双份记忆维护。
 
-> **主要限制**：[Q03](#research-q03) 保存成功不等于索引已追平，CLI全文写入也未携带Agent最初读时基线，共享文件不能自动消除语义覆盖。
+> **主要限制**：[Q02](#research-q02)正文Saved非索引追平；[Q03](#research-q03)CLI当次基线非Agent旧读版本，文件共用不等语义一致或全结构可迁移。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁用什么产物，根对象是什么类型？](#detail-section-11)
-  - [Q02 · 不同入口怎样保存到同一笔记？](#detail-section-12)
-  - [Q03 · 正文保存、搜索可见和并发无冲突是否同一件事？](#detail-section-13)
-  - [Q04 · 什么条件下试用，如何验证共享笔记的收益？](#detail-section-14)
+  - [Q01 · 根客户端如何让笔记成为Agent上下文？](#detail-section-11)
+  - [Q02 · 人工保存、冲突与索引怎样接线？](#detail-section-12)
+  - [Q03 · 共同文件怎样仍会失效，代价在哪里？](#detail-section-13)
+  - [Q04 · 采用条件与下一步假设？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向以Markdown保存项目知识的个人与小团队，把同一笔记用于人工阅读和Agent上下文。
+> **用途**：维护长期项目知识的个人/小团队希望人工与Agent共用笔记。
 
-普通Markdown编辑器加手动复制上下文及回填结果；本产品整合笔记客户端、CLI和Agent接口。
+Markdown编辑器加独立Agent/脚本；普通文件不是本项目独有。
 
 <a id="detail-section-3"></a>
 
@@ -51,63 +51,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| Markdown笔记 | 人和Agent共享可读资料 | 内容质量与写回需复核 |
-| 冲突/索引状态 | 分开正文与派生数据 | Saved不保证搜索已追平 |
+| 共同Markdown | 人工/Agent可读写交付 | 不等语义一致/完全本地计算 |
+| 编辑保存协调 | buffer CAS/merge/冲突 | CLI旧读语义另核 |
+| 派生索引 | 检索与视图 | 正文Saved非全部追平 |
+| Agent接入 | 按笔记继续任务 | 各桥/模型/披露未全审 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Flowix客户端或CLI | 必需 | 编辑/操作笔记 | 可用普通编辑器保留原文 |
-| 注册笔记本与权限 | 必需 | 定位和写回 | 拒绝未注册路径，先修配置 |
-| 模型或外部Agent | AI任务必需 | 理解和生成 | 保留人工编辑 |
-| 独立备份/同步策略 | 写入重要数据必需 | 恢复与迁移 | 先副本试用 |
+| Flowix客户端/CLI/正确binary | 必需 | 编辑与Agent访问 | 发布等价未验 |
+| 笔记目录/索引/备份 | 必需 | 原文与派生视图 | Saved/pending分开 |
+| 选定Agent/模型/同步 | 对应功能需要 | 上下文/外部工作 | 披露/价格另核 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户注册副本笔记本并写背景 | 普通编辑器可打开 |
-| 2 | 用户/Agent读取并小范围修改 | 磁盘正文与预期相符 |
-| 3 | 用户核对搜索与冲突恢复 | 索引延迟分开处理，冲突不盲目覆盖 |
+| 准备 | 用户副本导入/备份 | 原文/附属结构可读 |
+| 协作 | 人工编辑并选择Agent上下文 | 核实际输入与版本 |
+| 写回 | Agent授权目标小改 | 核disk/index/重开 |
+| 异常退出 | 停写/对账/导出 | 回原编辑器和备份 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 客户端/CLI与备份空间 | 迁入笔记并配置Agent | 费用/耗时未测 |
-| 持续 | 模型与同步资源 | 维护上下文和复核写回 | 合格任务成本未知 |
-| 失败恢复 | 备份和重试 | 核对磁盘、索引及覆盖 | 恢复正确率未测 |
-| 退出 | 普通Markdown存储 | 导出并回原编辑器 | 附加结构迁移未全面审计 |
+| 首次 | 客户端/CLI/副本空间 | 迁入/模型配置 | 费用耗时未测 |
+| 持续 | 索引/模型/同步 | 上下文和写回复核 | 净收益未知 |
+| 失败恢复 | 原文/索引/同步副本 | 分清正文和派生结果 | 真实恢复未测 |
+| 退出 | Markdown与附属结构 | 导出重开/停连接 | 全结构迁移未审 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 共同上下文 | 桌面/CLI共享笔记服务 | 同任务节时与质量 |
-| 写入可解释 | Saved/Conflict与索引pending分开 | 真实并发、语义过期覆盖率 |
+| 共同上下文 | Markdown/客户端/CLI | 同任务质量节时 |
+| 保存保护 | 版本/CAS/merge/atomic | 语义合理与全端竞争 |
+| 检索 | index pending/重建边界 | 真实追平时延/召回 |
+| 退出 | 普通文件可读 | 附件/任务/同步全迁移 |
 
-> **思考**：[Q03](#research-q03) 保存成功不等于索引已追平，CLI全文写入也未携带Agent最初读时基线，共享文件不能自动消除语义覆盖。
+> **思考**：[Q02](#research-q02)正文Saved非索引追平；[Q03](#research-q03)CLI当次基线非Agent旧读版本，文件共用不等语义一致或全结构可迁移。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 以人可读Markdown为共同交付物连接人工和Agent，减少另建记忆存储与重复传递；检索与写入效果仍需任务验证。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02) 以同一可读Markdown连接人工与Agent，并协调版本/冲突，减少双份记忆维护。
 
-[Q03](#research-q03) 正文与索引失败分离值得借鉴；跨进程及语义版本仍需独立任务验收，不能从API存在推定完成。
+[Q02](#research-q02) buffer版本、受锁条件写/三方merge、atomic与index pending真实存在；不推成全客户端事务保证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 保存成功不等于索引已追平，CLI全文写入也未携带Agent最初读时基线，共享文件不能自动消除语义覆盖。
+[Q02](#research-q02)正文Saved非索引追平；[Q03](#research-q03)CLI当次基线非Agent旧读版本，文件共用不等语义一致或全结构可迁移。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 在副本笔记本验证人工修改、检索和写回；出现过期覆盖或无法解释的搜索结果时停止Agent写入，核对原Markdown与备份。
+[Q04](#research-q04) 副本核人工编辑/检索/小范围写回/重开，异常停Agent写并回原文/备份。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-共同笔记模型、内容冲突和索引pending机制有源码支持；协作正确率、办结效率及新状态合同未验证。
+根客户端保存/索引与CLI关键链源码核查，未运行桌面/Agent/同步；限定副本笔记本试用。
 
-- 已检查：作者 README、包清单、源码路径 README.md、app/flowix-web/platform/tauri/client/notes.ts、app/flowix-desktop/src/commands/memo/reads.rs、app/flowix-cli/src/path_store.rs、app/flowix-core/src/service.rs、app/flowix-core/src/memo_file/note_index.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、app/flowix-web/features/document/store/save-queue.ts、app/flowix-web/features/document/use-cases/local-document-operations.ts、app/flowix-desktop/src/commands/external_document.rs、app/flowix-core/src/memo_file/file_io.rs、app/flowix-core/src/memo_file/note_index.rs、app/flowix-core/src/service.rs、app/flowix-cli/src/path_store.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查根产品说明、桌面/CLI写入路径、共享服务与索引刷新；未全面审计所有Agent、同步服务或UI。
-- 下一步：同一笔记任务对比编辑器复制、现有Flowix及带读时版本/索引状态合同方案，交错编辑并测覆盖错误、修复时间和总体办结时间。
+- 边界：根声明及前端save-queue/write adapter、Desktop external document IPC、core file_io/note_index/service和CLI path_store关键段；复核旧findings。未全面审多Agent桥/云同步/所有附件结构/模板，不执行目标。
+- 下一步：双编辑器+CLI交错/语义merge/索引故障与重启、全结构导出重开对照，计有效模型输入与恢复成本。
 
 **分析版本**
 
 - **仓库**：[text2future/flowix](https://github.com/text2future/flowix)
-- **版本号**：1.5.14（[固定提交 825c1c5](https://github.com/text2future/flowix/tree/825c1c58d37daa36be3ed56572407273c1908552)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.5.16（[固定提交 a48d45c](https://github.com/text2future/flowix/tree/a48d45ca42cdfb252f80c0c2db5d213bf904546d)）
+- **版本日期**：2026-11-02（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +138,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 从正文/索引分离和写入基线推导版本与追平状态合同，比较交错编辑的覆盖错误和修复时间；无改善或总负担上升则推翻。
+[Q04](#research-q04) 跨端正文版本/索引追平合同可探索，若现有CAS/pending等效或负担更高即否定。
 
-同一笔记任务对比编辑器复制、现有Flowix及带读时版本/索引状态合同方案，交错编辑并测覆盖错误、修复时间和总体办结时间。
+双编辑器+CLI交错/语义merge/索引故障与重启、全结构导出重开对照，计有效模型输入与恢复成本。
 
 <a id="detail-section-9"></a>
 
@@ -145,15 +149,17 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 932 | 29447 | — | — | 407868 |
-| .js | source | 67 | 7032 | 6110 | 498 | — |
-| .ts | source | 794 | 102126 | 86907 | 7524 | — |
-| .ts | test | 314 | 48946 | 43788 | 770 | — |
-| .tsx | source | 289 | 68583 | 62029 | 2694 | — |
-| .tsx | test | 103 | 15566 | 14143 | 137 | — |
-| .mjs | source | 47 | 5253 | 4459 | 385 | — |
+| .md | source | 934 | 29838 | — | — | 412343 |
+| .js | source | 67 | 7814 | 6749 | 590 | — |
+| .ts | source | 879 | 110348 | 93396 | 8755 | — |
+| .ts | test | 333 | 50703 | 45297 | 828 | — |
+| .tsx | source | 327 | 70743 | 63122 | 3675 | — |
+| .tsx | test | 124 | 18926 | 17042 | 240 | — |
+| .mjs | source | 49 | 5866 | 4926 | 489 | — |
 | .mjs | test | 13 | 1175 | 939 | 103 | — |
 | .md | example | 1 | 10 | — | — | 55 |
 | .js | example | 7 | 853 | 740 | 58 | — |
@@ -162,44 +168,33 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-28），可前往 [GitHub Issues](https://github.com/text2future/flowix/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-11-02），可前往 [GitHub Issues](https://github.com/text2future/flowix/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：共享Markdown上下文能否兼顾人工编辑、Agent写回和可恢复状态？
+**插件研究总目标**：核查根客户端共同Markdown的正文版本/索引边界与采用代价。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁用什么产物，根对象是什么类型？
+### Q01 · 根客户端如何让笔记成为Agent上下文？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-Flowix根组件是本地笔记客户端，而非单个记忆插件。README针对产品、开发、研究及个人知识提出同篇笔记反复保存背景、交给Agent处理并写回的场景。合格交付应是人可打开、来源和改动可核对的Markdown；多Agent使用同一份资料不等于彼此已安全协调。普通Markdown编辑器加手动复制上下文是基线，主要增量是减少资料传递和结果回填的接线。
+Flowix根是本地Markdown笔记客户端，连接人工写作、任务/对话和外部Agent，DSH MCP接入另在dsh-flowix-memory子包；不能把根再算一份原生插件。面向长期维护项目背景、决策和研究资料的个人/小团队，它用同一普通Markdown做人工可读交付和Agent读写对象，比另建隐形记忆库少一份同步；与编辑器+独立CLI相比，价值是同一界面/身份协调而非Markdown本身创新。合格结果是正确版本被Agent使用，人工仍可改、写回可解释和下次可检索。
+
+本轮聚焦正文保存/派生索引这一核心主张，未把大量场景模板当真实用户案例，也不全面承诺所有多Agent桥/同步服务。作者说只交主动选择内容，实际具体Agent/模型权限仍须逐接线核，文件本地并不证明后续上下文不出网。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:9-14](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/README.md#L9-L14)
+**依据 1 · 源码核查**：[README.md:27-52](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/README.md#L27-L52)
 
-作者定义本地笔记产品
-
-```text
-<h1 align="center">你的笔记，<br />AI 的记忆。</h1>
-
-<p align="center"><strong>本地 Markdown 笔记本，让你的写作无缝成为 Agent 可以持续使用的上下文。</strong></p>
-
-<p align="center">
-  Markdown · 开源 · 多 Agent · MCP 与 CLI
-```
-
-**依据 2 · 作者声明**：[README.md:27-52](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/README.md#L27-L52)
-
-共享上下文及场景
+作者同笔记/多Agent场景。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -235,299 +230,389 @@ Flowix根组件是本地笔记客户端，而非单个记忆插件。README针�
 
 </details>
 
-<a id="research-q02"></a>
+**依据 2 · 源码核查**：[README.md:66-76](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/README.md#L66-L76)
 
-<a id="detail-section-12"></a>
+独立DSH子包。
 
-### Q02 · 不同入口怎样保存到同一笔记？
+<details>
+<summary>查看原文（11行）</summary>
 
-**研究主题**：功能与机制、贡献与相对优势
+````text
+## dsh-flowix-memory 插件
 
-#### 完整回答
+[dsh-flowix-memory](dsh-flowix-memory/README.md) 是一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 插件，通过捆绑的 `flowix-cli` MCP server 把任何 Harness Agent 连接到你的**本地 Flowix 笔记**：安装后 Agent 获得 `mcp__flowix__memo` 工具，可搜索、读取、创建和编辑 Flowix 笔记（包括思维导图）。
 
-前端notes.writeDocument通过Tauri文档变更入口发送路径、正文及expectedContent；桌面端要求绝对路径且属于注册笔记本，并检查预期内容。CLI路径解析支持notebook::relative和已注册本下的绝对路径，拒绝空段/点段。CLI write读当前正文并调用NoteService.save；service把写文件结果映射为Saved或Conflict，再构造用户可见文档。贡献是把桌面与CLI围绕共享笔记模型组织，而非让每个Agent维护独立记忆库。 桌面后续同样调用 NoteService.save，并把当次正文作为预期值；仅在 Saved 时发 path-note-changed 事件并返回保存后的正文，冲突返回 None。这使前端完成状态确实来自共享服务结果，不能仅以IPC调用已发送算成功。
+从 flowix-main checkout 安装到 `flowix` Harness profile（尚未发布到 npm）。对于其他 DSH 客户端，`flowix` 只是一个普通的自定义 profile 名称：
 
-#### 证据与依据
+```sh
+dsh plugin --profile flowix add ./dsh-flowix-memory
+```
 
-**依据 1 · 源码核查**：[app/flowix-web/platform/tauri/client/notes.ts:101-110](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-web/platform/tauri/client/notes.ts#L101-L110)
+需要 `flowix` CLI 位于 `PATH`（或设置 `FLOWIX_CLI_PATH`），并可访问你的笔记数据（`~/.flowix`）。详见[插件 README](dsh-flowix-memory/README.md)。
+````
 
-前端IPC写入接线
+</details>
+
+**依据 3 · 源码核查**：[README.md:98-104](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/README.md#L98-L104)
+
+本地Markdown/主动选内容声明。
+
+```text
+## 笔记留在本地，由你掌控
+
+Flowix 将笔记保存为本地 Markdown 文件。你决定 Agent 能看到什么，也可以自由选择同步和备份方式。
+
+- **保存在本地** — 笔记是普通 Markdown 文件，可以用其他应用打开和编辑。
+- **按需连接 Agent** — 使用 Codex、Claude Code、OpenCode 等 Agent 时，只提供你主动选择的内容。
+- **自由同步和备份** — 继续使用你熟悉的同步、备份或版本管理工具。
+```
+
+**依据 4 · 源码核查**：[package.json:1-10](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/package.json#L1-L10)
+
+私有根客户端版本/许可。
 
 <details>
 <summary>查看原文（10行）</summary>
 
 ```text
-/** Path-identified Markdown operations. Existing IPC command names remain adapters. */
-export const notes = {
-  resolveLocation: (filePath: string) =>
-    invoke<MarkdownLocation>('resolve_markdown_location', { filePath }),
-  readDocument: (filePath: string) => invoke<string | null>('read_document', { filePath }),
-  writeDocument: (params: { filePath: string; content: string; expectedContent?: string }) =>
-    invokeDocumentMutation<({ path: string; content: string } & NoteContentCommit) | null>('write_document', {
-      filePath: params.filePath,
-      content: params.content,
-      expectedContent: params.expectedContent,
+{
+  "name": "flowix",
+  "private": true,
+  "version": "1.5.16",
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "packageManager": "npm@10.8.2",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && node scripts/check-web-bundle.mjs",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[app/flowix-desktop/src/commands/memo/reads.rs:281-305](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-desktop/src/commands/memo/reads.rs#L281-L305)
+#### 缺口
 
-桌面写入进入operation流程
+- 实际用户任务、选择内容边界和多Agent全部接线未验。
+  **影响**：不能从界面/模板证明协作效果或全数据最小化。
+  **进一步探讨**：副本笔记本做人工→Agent→人工完整任务，记录有效上下文和合格结果。
 
-<details>
-<summary>查看原文（25行）</summary>
+<a id="research-q02"></a>
 
-```text
-pub async fn write_document(
-    operation_id: Option<String>,
-    filePath: String,
-    content: String,
-    expectedContent: Option<String>,
-    app: AppHandle,
-    window: tauri::WebviewWindow,
-) -> Result<Option<WriteDocumentResult>, String> {
-    let origin_window_label = window.label().to_owned();
-    crate::commands::document_operations::run(
-        "save",
-        operation_id,
-        origin_window_label.clone(),
-        move || {
-            let state = app.state::<AppState>();
-            write_document_internal(
-                &filePath,
-                &content,
-                expectedContent.as_deref(),
-                &state,
-                &app,
-                &origin_window_label,
-            )
-        },
-    )
-```
+<a id="detail-section-12"></a>
 
-</details>
+### Q02 · 人工保存、冲突与索引怎样接线？
 
-**依据 3 · 源码核查**：[app/flowix-desktop/src/commands/memo/reads.rs:318-332](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-desktop/src/commands/memo/reads.rs#L318-L332)
-
-注册笔记边界和expectedContent判断
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-    if !Path::new(file_path).is_absolute() {
-        return Err("absolute document path required".into());
-    }
-    let requested_path = Path::new(file_path);
-    let (notebook_id, relative_path) =
-        notebook_note_address(&read_lock(&state.memo_file, "memo_file"), requested_path)?
-            .ok_or_else(|| {
-                "document is not a Markdown note inside a registered notebook".to_string()
-            })?;
-
-    let current_content = fs::read_to_string(requested_path).map_err(|error| error.to_string())?;
-    if expected_content
-        .is_some_and(|expected| !cas_content_matches(&current_content, expected, content))
-    {
-        return Ok(None);
-```
-
-</details>
-
-**依据 4 · 源码核查**：[app/flowix-cli/src/path_store.rs:9-49](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L9-L49)
-
-CLI地址解析
-
-<details>
-<summary>查看原文（41行）</summary>
-
-```text
-) -> Result<(flowix_core::memo_file::MemoFile, NotebookConfig, String), CliError> {
-    let mf = store::open()?;
-    let configs = mf.read_notebook_configs()?;
-    let (notebook, relative) = if let Some((key, relative)) = raw.split_once("::") {
-        let notebook = store::find_notebook(&configs, key)
-            .ok_or_else(|| CliError::NotFound(format!("notebook not found: {key}")))?;
-        (notebook, relative.replace('\\', "/"))
-    } else if Path::new(raw).is_absolute() {
-        let absolute = std::fs::canonicalize(raw)?;
-        let notebook = configs
-            .iter()
-            .filter_map(|config| {
-                let root = std::fs::canonicalize(&config.path).ok()?;
-                absolute
-                    .strip_prefix(&root)
-                    .ok()
-                    .map(|relative| (config, relative.to_path_buf(), root.components().count()))
-            })
-            .max_by_key(|(_, _, depth)| *depth)
-            .ok_or_else(|| {
-                CliError::NotFound(format!("note is outside configured notebooks: {raw}"))
-            })?;
-        (notebook.0, notebook.1.to_string_lossy().replace('\\', "/"))
-    } else {
-        let key = store::resolve_notebook_key(None)?;
-        let notebook = store::find_notebook(&configs, &key)
-            .ok_or_else(|| CliError::NotFound(format!("notebook not found: {key}")))?;
-        (notebook, raw.replace('\\', "/"))
-    };
-    if relative.is_empty()
-        || relative.starts_with('/')
-        || relative
-            .split('/')
-            .any(|part| part.is_empty() || part == "." || part == "..")
-    {
-        return Err(CliError::Usage(
-            "note address must be a notebook-relative Markdown path".into(),
-        ));
-    }
-    let notebook = notebook.clone();
-    Ok((mf, notebook, relative))
-```
-
-</details>
-
-**依据 5 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L134-L148)
-
-CLI写入与冲突结果
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
-    if content.trim().is_empty() {
-        return Err(CliError::Usage("write: content is empty".into()));
-    }
-    let (mf, notebook, relative) = address(raw)?;
-    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
-    let saved =
-        NoteService::new(&mf).save(&notebook.id, &relative, content, Some(&current.body))?;
-    match saved {
-        flowix_core::service::NoteSaveOutcome::Saved(document) => {
-            Ok(json!({"ok": true, "action": "written", "note": document_json(&document)}))
-        }
-        flowix_core::service::NoteSaveOutcome::Conflict { .. } => Err(CliError::Conflict(
-            "note changed on disk; write was not applied".into(),
-        )),
-```
-
-</details>
-
-**依据 6 · 源码核查**：[app/flowix-core/src/service.rs:375-411](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-core/src/service.rs#L375-L411)
-
-服务写入与用户结果
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-    pub(crate) fn save_note_by_path(
-        &mut self,
-        notebook_key: &str,
-        relative_path: &str,
-        content: &str,
-        expected_content: Option<&str>,
-    ) -> Result<NoteSaveOutcome, FlowixError> {
-        let notebook = self.resolve_notebook(notebook_key)?;
-        match self.memo_file.write_note_by_path_with_result(
-            &notebook.id,
-            relative_path,
-            content,
-            expected_content,
-        )? {
-            NoteWriteResult::Conflict { disk_content } => {
-                Ok(NoteSaveOutcome::Conflict { disk_content })
-            }
-            NoteWriteResult::Saved {
-                content,
-                index_entry,
-            } => {
-                let entry = match index_entry {
-                    Some(entry) => entry,
-                    None => self
-                        .memo_file
-                        .derive_note_entry_from_disk(&notebook.id, relative_path)?,
-                };
-                let path = notebook_path_from_relative(
-                    &PathBuf::from(&notebook.path),
-                    &entry.relative_path,
-                )
-                .map_err(FlowixError::InvalidInput)?;
-                Ok(NoteSaveOutcome::Saved(NoteDocument {
-                    entry,
-                    notebook,
-                    path,
-                    body: content,
-```
-
-</details>
-
-**依据 7 · 源码核查**：[app/flowix-desktop/src/commands/memo/reads.rs:335-366](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-desktop/src/commands/memo/reads.rs#L335-L366)
-
-桌面入口真实调用共享save，冲突返回None，成功后发事件与返回正文。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-    let (saved_path, saved_content, entry) = {
-        let memo_file = read_lock(&state.memo_file, "memo_file");
-        let mut service = NoteService::new(&memo_file);
-        mark_self_write_for(app, requested_path);
-        match service.save(
-            &notebook_id,
-            &relative_path,
-            content,
-            Some(&current_content),
-        ) {
-            Ok(NoteSaveOutcome::Saved(document)) => {
-                (document.path, document.body, document.entry)
-            }
-            Ok(NoteSaveOutcome::Conflict { .. }) => return Ok(None),
-            Err(error) => return Err(error.to_string()),
-        }
-    };
-
-    mark_self_write_for(app, &saved_path);
-    let _ = app.emit("flowix:path-note-changed", serde_json::json!({
-        "changeId": uuid::Uuid::new_v4().to_string(),
-        "notebookId": notebook_id,
-        "relativePath": relative_path,
-        "entry": entry,
-        "originWindowLabel": origin_window_label,
-    }));
-
-    Ok(Some(WriteDocumentResult {
-        path: saved_path.display().to_string(),
-        content: saved_content,
-        commit: None,
-    }))
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 正文保存、搜索可见和并发无冲突是否同一件事？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-不是。note_index先写正文，再尝试刷新派生索引；刷新失败会标记pending并记录警告，仍返回Saved。这样避免把索引故障伪装成正文未保存，但意味着后续搜索可能暂未看到最新内容。CLI write在调用时读取当前正文作为expected值，可防读后写期间冲突，却不能检测Agent早先读到旧内容后生成全文覆盖的语义过期；调用前的旧基线不在该write参数里。局部edit则要求唯一匹配并把当次读取正文用于保存。需区分磁盘提交、索引追平和语义冲突，不能由共享文件直接推出多Agent一致性。
+前端save queue按文档身份串行、执行前读expected baseline、成功回调按buffer revision记账，编辑期间变化会再排保存；调用localDocumentOperations→externalDocuments.write。Rust write_external_document接operation id、window、scope/expectedContent并先解析授权路径；Markdown走merge条件写，非Markdown走CAS。底层锁内读disk，旧base不同尝试三方Markdown merge，冲突/不支持拒绝；NamedTempFile/sync/persist原子换文件，不能说没有并发/原子防护。
+
+正文成功后刷新metadata/列表/同步事件有独立错误处理；共享NoteService路径写也在正文Saved后尝试刷新index，失败标pending并warn，返回Saved含可空index，service必要时从磁盘派生document。因此保存结果应分正文与派生索引，不应因搜索暂未命中重写正文，也不能把Saved当所有索引/视图已追平。CLI全文write同服务但caller未传早先show基线，只有CLI当次get后短窗口保护，与桌面buffer CAS不同。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:351-394](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-core/src/memo_file/note_index.rs#L351-L394)
+**依据 1 · 源码核查**：[app/flowix-web/features/document/store/save-queue.ts:48-108](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-web/features/document/store/save-queue.ts#L48-L108)
 
-保存与索引刷新分开，失败置pending
+前端串行/版本和CAS回调。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（61行）</summary>
+
+```text
+export function scheduleSave(ctx: SaveContext, content: string): Promise<boolean> {
+  return enqueueDocumentCommit(ctx.queueKey, 'body', async () => {
+    if (ctx.isBlocked?.()) return false;
+    const snapshot = ctx.latest?.() ?? { content, revision: ctx.revision };
+    // Keep the in-flight revision aligned even when equivalent bytes only
+    // need acknowledgement; onSaved must be able to clear that revision.
+    ctx.onStarted?.(snapshot.revision);
+    let savedContent: string | null;
+    if (!ctx.force && snapshot.content === ctx.readExpected()) {
+      // A previous job may have saved these bytes while this intent waited.
+      // Acknowledge the newer equivalent revision without sending a second IPC.
+      const displayId = ctx.queueKey.startsWith('md:') ? ctx.queueKey.slice(3) : null;
+      const path = displayId ? findFileDisplayPath(displayId) ?? ctx.path : ctx.path;
+      ctx.onSaved(path, snapshot.content, snapshot.revision, snapshot.content, false);
+      savedContent = snapshot.content;
+    } else {
+      savedContent = await runOne({ ...ctx, revision: snapshot.revision }, snapshot.content);
+    }
+    const latest = ctx.latest?.();
+    if (savedContent !== null && latest && latest.content !== savedContent && !ctx.isBlocked?.()) {
+      void scheduleSave(ctx, latest.content);
+    }
+    return savedContent !== null && !ctx.isBlocked?.();
+  });
+}
+
+async function runOne(ctx: SaveContext, content: string): Promise<string | null> {
+  const expected = ctx.readExpected();
+  try {
+    const displayId = ctx.queueKey.startsWith('md:') ? ctx.queueKey.slice(3) : null;
+    const path = displayId ? findFileDisplayPath(displayId) ?? ctx.path : ctx.path;
+    const write = (target: string) => localDocumentOperations.write({
+      path: target, scopePath: ctx.scopePath, content, expectedContent: expected,
+    });
+    let attemptedPath = path;
+    let result = await write(attemptedPath);
+    const rebasedPath = displayId ? findFileDisplayPath(displayId) : null;
+    if ((result.status === 'refused' || result.status === 'missing') && rebasedPath && rebasedPath !== attemptedPath) {
+      // Only a confirmed runtime rebase may redirect an old in-flight request.
+      attemptedPath = rebasedPath;
+      result = await write(attemptedPath);
+    }
+    if (result.status === 'saved') {
+      const latestPath = displayId ? findFileDisplayPath(displayId) : null;
+      const writtenPath = canonicalPath(result.path) === canonicalPath(attemptedPath) && latestPath ? latestPath : result.path;
+      ctx.onSaved(writtenPath, result.content, ctx.revision, content, result.merged === true);
+      return result.content;
+    }
+    if (result.status === 'conflict' || result.status === 'refused') {
+      ctx.onCasRefused(content, ctx.revision);
+      return null;
+    }
+    const message = result.status === 'missing'
+      ? `External document is unavailable: ${ctx.path}`
+      : result.message;
+    ctx.onError(content, ctx.revision, new Error(message));
+    return null;
+  } catch (err) {
+    logger.error('IPC threw', { path: ctx.path, err });
+    ctx.onError(content, ctx.revision, err);
+    return null;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[app/flowix-web/features/document/use-cases/local-document-operations.ts:16-23](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-web/features/document/use-cases/local-document-operations.ts#L16-L23)
+
+前端write适配。
+
+```text
+  read: ({ path, scopePath }) => externalDocuments.read(path, scopePath),
+  write: async ({ path, content, expectedContent, scopePath }) => {
+    const result = await externalDocuments.write({
+      filePath: path,
+      content,
+      expectedContent,
+      scopePath,
+    });
+```
+
+**依据 3 · 源码核查**：[app/flowix-desktop/src/commands/external_document.rs:279-354](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-desktop/src/commands/external_document.rs#L279-L354)
+
+IPC授权路径、条件写与保存后刷新。
+
+<details>
+<summary>查看原文（76行）</summary>
+
+```text
+pub async fn write_external_document(
+    window: tauri::WebviewWindow,
+    operation_id: Option<String>,
+    file_path: String,
+    content: String,
+    expectedContent: Option<String>,
+    scopePath: Option<String>,
+    app: tauri::AppHandle,
+) -> ExternalDocumentWriteOutcome {
+    crate::commands::document_operations::run(
+        "save_external",
+        operation_id,
+        window.label().to_owned(),
+        move || {
+            Ok((|| {
+                let state = app.state::<AppState>();
+                let watches = app.state::<ExternalDocumentWatchState>();
+                let path = match exact_existing_external_path(
+                    &file_path,
+                    scopePath.as_deref(),
+                    window.label(),
+                    &state,
+                ) {
+                    Ok(path) => path,
+                    Err(_) if !Path::new(&file_path).is_file() => {
+                        return ExternalDocumentWriteOutcome::Missing
+                    }
+                    Err(message) => return ExternalDocumentWriteOutcome::Error { message },
+                };
+
+                let memo_file = read_lock(&state.memo_file, "memo_file");
+                let notebook_ids = match memo_file.notebook_ids_for_paths(&[&path]) {
+                    Ok(ids) => ids,
+                    Err(error) => return ExternalDocumentWriteOutcome::Error { message: error.to_string() },
+                };
+                // Capture membership independently of which pages the UI has loaded.
+                let previous_favorited = notebook_note_address(&memo_file, &path).ok().flatten()
+                    .and_then(|(notebook_id, relative_path)| memo_file
+                        .read_indexed_note_entry_by_path(&notebook_id, &relative_path).ok().flatten())
+                    .map(|entry| entry.favorited);
+                watches.begin_window_write(&app, &path);
+                let outcome = if is_markdown_document_path(&path) {
+                    match notebook_ids.as_slice() {
+                        [notebook_id] => memo_file.write_markdown_merging_for_notebook(notebook_id, &path, &content, expectedContent.as_deref()),
+                        [] => memo_file.write_markdown_merging(&path, &content, expectedContent.as_deref()),
+                        _ => memo_file.write_markdown_merging_for_registered_path(&path, &content, expectedContent.as_deref()),
+                    }
+                } else {
+                    match notebook_ids.as_slice() {
+                        [notebook_id] => memo_file.write_file_if_matches_for_notebook(notebook_id, &path, &content, expectedContent.as_deref()),
+                        [] => memo_file.write_file_if_matches(&path, &content, expectedContent.as_deref()),
+                        _ => memo_file.write_file_if_matches_for_registered_path(&path, &content, expectedContent.as_deref()),
+                    }
+                        .map(|outcome| match outcome {
+                            FileWriteOutcome::Saved => MergedFileWriteOutcome::Saved {
+                                content: content.clone(), merged: false,
+                            },
+                            FileWriteOutcome::Conflict { disk_content } => {
+                                MergedFileWriteOutcome::Conflict { disk_content }
+                            }
+                        })
+                };
+                let saved_content = match &outcome {
+                    Ok(MergedFileWriteOutcome::Saved { content, .. }) => Some(content.as_str()),
+                    _ => None,
+                };
+                watches.finish_window_write(
+                    &app, window.label(), &path,
+                    saved_content,
+                );
+                let (saved_content, merged) = match outcome {
+                    Ok(MergedFileWriteOutcome::Saved { content, merged }) => {
+                        match refresh_saved_notebook_note(&memo_file, &path, window.label(), previous_favorited) {
+                            Ok(Some(change)) => change.emit(&app),
+                            Ok(None) => {},
+                            Err(error) => tracing::warn!(path = %path.display(), "saved note metadata notification failed: {error}"),
+```
+
+</details>
+
+**依据 4 · 源码核查**：[app/flowix-core/src/memo_file/file_io.rs:19-37](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/file_io.rs#L19-L37)
+
+临时文件sync/persist。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+pub fn atomic_write_bytes(path: &Path, content: &[u8]) -> io::Result<()> {
+    let path = dunce::canonicalize(path).unwrap_or_else(|_| path.to_path_buf());
+    let parent = path
+        .parent()
+        .ok_or_else(|| io::Error::other("file has no parent"))?;
+    fs::create_dir_all(parent)?;
+    let permissions = match fs::metadata(&path) {
+        Ok(metadata) => Some(metadata.permissions()),
+        Err(error) if error.kind() == io::ErrorKind::NotFound => None,
+        Err(error) => return Err(error),
+    };
+    let mut temporary = tempfile::NamedTempFile::new_in(parent)?;
+    temporary.write_all(content)?;
+    if let Some(permissions) = permissions {
+        temporary.as_file().set_permissions(permissions)?;
+    }
+    temporary.as_file().sync_all()?;
+    temporary.persist(&path).map_err(|error| error.error)?;
+    Ok(())
+```
+
+</details>
+
+**依据 5 · 源码核查**：[app/flowix-core/src/memo_file/file_io.rs:125-154](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/file_io.rs#L125-L154)
+
+受锁写入口。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+    pub fn write_file_if_matches_for_notebook(
+        &self,
+        notebook_id: &str,
+        path: &Path,
+        content: &str,
+        expected: Option<&str>,
+    ) -> io::Result<FileWriteOutcome> {
+        self.with_file_write(notebook_id, path, FileLockIntent::Existing, "write_file_if_matches", |path| {
+            write_file_if_matches_locked(path, content, expected)
+        })
+    }
+
+    pub fn write_file_if_matches_for_registered_path(
+        &self, path: &Path, content: &str, expected: Option<&str>,
+    ) -> io::Result<FileWriteOutcome> {
+        self.with_registered_path_change(&[path], "write_file_nested_notebooks", || {
+            write_file_if_matches_locked(path, content, expected)
+        })
+    }
+
+    pub fn write_markdown_merging_for_notebook(
+        &self,
+        notebook_id: &str,
+        path: &Path,
+        content: &str,
+        expected: Option<&str>,
+    ) -> io::Result<MergedFileWriteOutcome> {
+        self.with_file_write(notebook_id, path, FileLockIntent::Existing, "write_markdown_merging", |path| {
+            write_markdown_merging_locked(path, content, expected)
+        })
+```
+
+</details>
+
+**依据 6 · 源码核查**：[app/flowix-core/src/memo_file/file_io.rs:208-242](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/file_io.rs#L208-L242)
+
+CAS/三方merge/冲突。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+fn write_file_if_matches_locked(path: &Path, content: &str, expected: Option<&str>) -> io::Result<FileWriteOutcome> {
+    let disk_content = fs::read_to_string(path)?;
+    if expected.is_some_and(|expected| expected != disk_content) {
+        return Ok(FileWriteOutcome::Conflict { disk_content });
+    }
+    atomic_write_bytes(path, content.as_bytes())?;
+    Ok(FileWriteOutcome::Saved)
+}
+
+fn write_markdown_merging_locked(
+    path: &Path,
+    content: &str,
+    expected: Option<&str>,
+) -> io::Result<MergedFileWriteOutcome> {
+        let disk_content = fs::read_to_string(path)?;
+        let (content, merged) = match expected {
+            Some(base) if base != disk_content => {
+                match crate::text_merge::merge_markdown(
+                    base.as_bytes(),
+                    content.as_bytes(),
+                    disk_content.as_bytes(),
+                ) {
+                    crate::text_merge::MergeOutcome::Merged(bytes) => {
+                        (String::from_utf8(bytes).map_err(io::Error::other)?, true)
+                    }
+                    crate::text_merge::MergeOutcome::Conflict
+                    | crate::text_merge::MergeOutcome::Unsupported => {
+                        return Ok(MergedFileWriteOutcome::Conflict { disk_content });
+                    }
+                }
+            }
+            _ => (content.to_owned(), false),
+        };
+        atomic_write_bytes(path, content.as_bytes())?;
+        Ok(MergedFileWriteOutcome::Saved { content, merged })
+```
+
+</details>
+
+**依据 7 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:351-395](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/note_index.rs#L351-L395)
+
+正文Saved后索引pending。
+
+<details>
+<summary>查看原文（45行）</summary>
 
 ```text
     pub(crate) fn write_note_by_path_with_result(
@@ -574,57 +659,64 @@ pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
                     content: content.to_string(),
                     index_entry,
                 })
+            }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[app/flowix-cli/src/path_store.rs:99-130](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L99-L130)
+**依据 8 · 源码核查**：[app/flowix-core/src/service.rs:375-412](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/service.rs#L375-L412)
 
-唯一匹配局部编辑
+文档派生。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
-pub(crate) fn edit(
-    raw: &str,
-    old: &str,
-    replacement: &str,
-    dry_run: bool,
-) -> Result<Value, CliError> {
-    if old.is_empty() {
-        return Err(CliError::Usage("edit: --old cannot be empty".into()));
-    }
-    let (mf, notebook, relative) = address(raw)?;
-    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
-    let matches = current.body.match_indices(old).count();
-    if matches != 1 {
-        return Err(CliError::Usage(format!(
-            "edit: expected exactly one match, found {matches}"
-        )));
-    }
-    let next = current.body.replacen(old, replacement, 1);
-    if !dry_run {
-        match NoteService::new(&mf).save(&notebook.id, &relative, &next, Some(&current.body))? {
-            flowix_core::service::NoteSaveOutcome::Saved(_) => {}
-            flowix_core::service::NoteSaveOutcome::Conflict { .. } => {
-                return Err(CliError::Conflict(
-                    "note changed on disk; edit was not applied".into(),
-                ))
+    pub(crate) fn save_note_by_path(
+        &mut self,
+        notebook_key: &str,
+        relative_path: &str,
+        content: &str,
+        expected_content: Option<&str>,
+    ) -> Result<NoteSaveOutcome, FlowixError> {
+        let notebook = self.resolve_notebook(notebook_key)?;
+        match self.memo_file.write_note_by_path_with_result(
+            &notebook.id,
+            relative_path,
+            content,
+            expected_content,
+        )? {
+            NoteWriteResult::Conflict { disk_content } => {
+                Ok(NoteSaveOutcome::Conflict { disk_content })
             }
-        }
-    }
-    Ok(
-        json!({"ok": true, "action": if dry_run {"edit_preview"} else {"edited"},
-        "notebookId": notebook.id, "relativePath": relative, "address": locator(&notebook.id, &relative),
-        "path": current.path, "oldBytes": old.len(), "newBytes": replacement.len(), "wrote": !dry_run}),
+            NoteWriteResult::Saved {
+                content,
+                index_entry,
+            } => {
+                let entry = match index_entry {
+                    Some(entry) => entry,
+                    None => self
+                        .memo_file
+                        .derive_note_entry_from_disk(&notebook.id, relative_path)?,
+                };
+                let path = notebook_path_from_relative(
+                    &PathBuf::from(&notebook.path),
+                    &entry.relative_path,
+                )
+                .map_err(FlowixError::InvalidInput)?;
+                Ok(NoteSaveOutcome::Saved(NoteDocument {
+                    entry,
+                    notebook,
+                    path,
+                    body: content,
+                }))
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L134-L148)
+**依据 9 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-cli/src/path_store.rs#L134-L148)
 
-全文写入只传当次读取基线
+CLI内部新读基线。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -651,54 +743,56 @@ pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
 
 #### 缺口
 
-- 外部同步、多进程写入与索引恢复效果未测
-  **影响**：无法保证实际并发与搜索最终可见时间
-  **进一步探讨**：用独立笔记本交错写入、注入索引刷新失败并核对磁盘和搜索
+- 真实跨进程/merge语义正确率与pending恢复未验。
+  **影响**：不能保证不冲突或所有视图最终一致。
+  **进一步探讨**：两个编辑器+CLI交错写、索引故障/重启核disk/base/视图与数据保全。
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 什么条件下试用，如何验证共享笔记的收益？
+### Q03 · 共同文件怎样仍会失效，代价在哪里？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-已使用Markdown且愿意维护资料的个人或小团队可用非敏感笔记副本试用，先验证人工修改、CLI检索和Agent写回三者一致。首次有客户端/CLI和笔记本配置，持续有模型费用与内容审阅，失败要核对磁盘及索引，退出可保留普通Markdown。由Saved与索引pending分离推导未验证假设：显示文档版本与索引追平状态，并要求Agent带读时版本写回，可减少过期覆盖和“保存后搜不到”的误判。与普通编辑器+复制流程、现有Flowix各做同一组交错编辑任务，记录覆盖错误、人工修复和办结时间；若额外状态管理未减少错误或总体更慢，就否定。
+共享Markdown减少复制，不消除语义过时：旧Agent全文可按刚读磁盘版本覆盖人工新意图；三方文本merge也不等语义合理。正文已写但派生失败必须先查原文，不把错误一律当无改动。笔记链接/附件、表格集合、身份/任务状态不是只导出正文就完整迁移，本轮未全面审这些结构及云同步，不承诺全客户端安全/可逆。
+
+需客户端/CLI与匹配Agent运行时、可读写笔记目录、索引和备份；模型/同步选择有网络、隐私和现金条件，价格/可用性未核。首次迁入/配置/备份，持续维护上下文、人工审写回、索引/模型资源；免费开源和普通文件不能算经济创新/0成本。失败分正文、索引、Agent调用和同步结果核对，先停Agent写；退出保留原Markdown并导出附属结构验证重开，停客户端不撤销已发生Agent/同步行为。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:98-104](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/README.md#L98-L104)
+**依据 1 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-cli/src/path_store.rs#L134-L148)
 
-本地Markdown与自主备份的作者声明
+CLI旧Agent语义窗口。
 
-```text
-## 笔记留在本地，由你掌控
-
-Flowix 将笔记保存为本地 Markdown 文件。你决定 Agent 能看到什么，也可以自由选择同步和备份方式。
-
-- **保存在本地** — 笔记是普通 Markdown 文件，可以用其他应用打开和编辑。
-- **按需连接 Agent** — 使用 Codex、Claude Code、OpenCode 等 Agent 时，只提供你主动选择的内容。
-- **自由同步和备份** — 继续使用你熟悉的同步、备份或版本管理工具。
-```
-
-**依据 2 · 作者声明**：[README.md:118-123](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/README.md#L118-L123)
-
-初始笔记本操作
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
-## 快速开始
-
-1. 从 [官网](https://flowix-memo.com/) 下载并安装 Flowix。
-2. 新建一个本地文件夹，或将已有文件夹注册为笔记本。
-3. 创建一篇文档，记录任务背景、参考资料、目标与约束。
-4. 在文档内调用 Agent，或继续用标签与属性组织内容。
+pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
+    if content.trim().is_empty() {
+        return Err(CliError::Usage("write: content is empty".into()));
+    }
+    let (mf, notebook, relative) = address(raw)?;
+    let current = NoteService::new(&mf).get(&notebook.id, &relative)?;
+    let saved =
+        NoteService::new(&mf).save(&notebook.id, &relative, content, Some(&current.body))?;
+    match saved {
+        flowix_core::service::NoteSaveOutcome::Saved(document) => {
+            Ok(json!({"ok": true, "action": "written", "note": document_json(&document)}))
+        }
+        flowix_core::service::NoteSaveOutcome::Conflict { .. } => Err(CliError::Conflict(
+            "note changed on disk; write was not applied".into(),
+        )),
 ```
 
-**依据 3 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:371-394](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-core/src/memo_file/note_index.rs#L371-L394)
+</details>
 
-索引pending为假设依据
+**依据 2 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:371-394](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/note_index.rs#L371-L394)
+
+正文/index失败分离。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -732,9 +826,177 @@ Flowix 将笔记保存为本地 Markdown 文件。你决定 Agent 能看到什�
 
 </details>
 
-**依据 4 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/825c1c58d37daa36be3ed56572407273c1908552/app/flowix-cli/src/path_store.rs#L134-L148)
+**依据 3 · 源码核查**：[app/flowix-desktop/src/commands/external_document.rs:349-374](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-desktop/src/commands/external_document.rs#L349-L374)
 
-读时版本缺口为假设依据
+保存后通知/同步独立路径。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+                let (saved_content, merged) = match outcome {
+                    Ok(MergedFileWriteOutcome::Saved { content, merged }) => {
+                        match refresh_saved_notebook_note(&memo_file, &path, window.label(), previous_favorited) {
+                            Ok(Some(change)) => change.emit(&app),
+                            Ok(None) => {},
+                            Err(error) => tracing::warn!(path = %path.display(), "saved note metadata notification failed: {error}"),
+                        }
+                        crate::commands::document_list::refresh_view_document_path(&memo_file, &path);
+                        if is_markdown_document_path(&path) {
+                            if let Ok(notebooks) = memo_file.read_notebook_configs() {
+                                for notebook in notebooks {
+                                    let root = Path::new(&notebook.path);
+                                    if let Ok(relative) = path.strip_prefix(root) {
+                                        let relative_path = relative.to_string_lossy().replace('\\', "/");
+                                        crate::watcher::processor::record_cloud_path_change(
+                                            &app,
+                                            &crate::watcher::processor::NotebookWatchContext {
+                                                notebook_id: notebook.id,
+                                                root: root.to_path_buf(),
+                                            },
+                                            &relative_path,
+                                            false,
+                                        );
+                                    }
+                                }
+                            }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[README.md:78-104](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/README.md#L78-L104)
+
+编码/文件/Agent和同步由用户选择。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+````text
+## 通过 CLI 传递 Markdown
+
+向 `create` 和 `write` 传递 Markdown 正文时，推荐使用 UTF-8 文件，尤其是在 Windows PowerShell 5.1 中。这样可以避免 stdin 管道编码导致中文内容损坏。支持带 BOM 和不带 BOM 的 UTF-8 文件。
+
+```powershell
+flowix create <notebook> --file body.md --json
+flowix write <id> --file body.md --json
+```
+
+在 Windows 上，未指定输入方式时 CLI 会拒绝隐式读取 stdin，以避免 PowerShell 5.1 的 `$OutputEncoding` 损坏中文；已确认 stdin 为 UTF-8 时请显式加 `--stdin`：
+
+```powershell
+$OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+Get-Content -Raw -Encoding UTF8 body.md | flowix create <notebook> --stdin --json
+```
+
+`--file` 与 `--stdin` 互斥。`--file` 会直接按 UTF-8 读取；文件不存在、无法读取或不是有效 UTF-8 时，CLI 会返回错误。使用 `--json` 时错误也会以 `{ok:false,error:{code,message}}` 输出。
+
+---
+
+## 笔记留在本地，由你掌控
+
+Flowix 将笔记保存为本地 Markdown 文件。你决定 Agent 能看到什么，也可以自由选择同步和备份方式。
+
+- **保存在本地** — 笔记是普通 Markdown 文件，可以用其他应用打开和编辑。
+- **按需连接 Agent** — 使用 Codex、Claude Code、OpenCode 等 Agent 时，只提供你主动选择的内容。
+- **自由同步和备份** — 继续使用你熟悉的同步、备份或版本管理工具。
+````
+
+</details>
+
+#### 缺口
+
+- 全部同步/附件结构、模型真实披露和恢复成本未审。
+  **影响**：无法承诺零锁定/零泄露或净效率。
+  **进一步探讨**：独立笔记本导入/导出附件与结构，记录模型输入/索引追平和人工恢复工时。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 采用条件与下一步假设？
+
+**研究主题**：采用判断、新假设与验证
+
+#### 完整回答
+
+建议副本笔记本试用，以明确内容选择做人工编辑→检索→Agent小范围edit→重开任务；保留桌面expectedContent/merge保护，不用全文write替代必要的旧读校验。出现过时覆盖、索引pending无法解释或同步冲突时，停止Agent写，核原Markdown和备份，回原编辑器/CLI。
+
+可探索跨桌面/CLI的版本与索引追平合同：将正文版本/hash、caller读基线、保存后索引revision/pending明确区分并可查询。现有buffer CAS、锁/atomic、Saved/pending都已存在，增量是端到端可对账而不是再造锁。用交错外改、非重叠merge、语义冲突、索引失败和重启五组，与现有状态/手工核原文比较覆盖错误、误认已检索、恢复时间与额外I/O。若现有UI已同效或合同提示误导/维护更重就否定；未实现。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[app/flowix-web/features/document/store/save-queue.ts:23-43](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-web/features/document/store/save-queue.ts#L23-L43)
+
+已有buffer基线/回调。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+   * Read the current expectedContent (CAS expected value) just before the
+   * IPC fires. Returning a fresh value here is what makes coalescing
+   * safe: the chain re-reads the expected value before every IPC, so a
+   * pending save always sends the latest expected version.
+   */
+  readExpected: () => string;
+  latest?: () => { content: string; revision: number };
+  isBlocked?: () => boolean;
+  onStarted?: (revision: number) => void;
+  /**
+   * Called after a successful write. Caller is responsible for updating
+   * `lastSavedContent` (and `pendingContent` if appropriate) here.
+   * `writtenPath` 是磁盘上最终物理路径 ── rename 后可能跟 caller
+   * 传的 path 不同, 前端需要据此切 buf / 更新 closure。
+   */
+  onSaved: (writtenPath: string, writtenContent: string, revision: number,
+    submittedContent: string, merged: boolean) => void;
+  /** Called on CAS refusal (write returned false). */
+  onCasRefused: (writtenContent: string, revision: number) => void;
+  /** Called on transport / IPC error. */
+  onError: (writtenContent: string, revision: number, err: unknown) => void;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[app/flowix-core/src/memo_file/note_index.rs:371-394](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-core/src/memo_file/note_index.rs#L371-L394)
+
+已有pending信号。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+            super::FileWriteOutcome::Saved => {
+                let index_entry = match self.refresh_note_path_with_content(
+                    notebook_id,
+                    relative_path,
+                    content,
+                ) {
+                    Ok(()) => self
+                        .read_indexed_note_entry_by_path(notebook_id, relative_path)
+                        .ok()
+                        .flatten(),
+                    Err(error) => {
+                        mark_note_index_refresh_pending_logged(&root, notebook_id, relative_path);
+                        tracing::warn!(
+                            notebook_id,
+                            relative_path,
+                            "note saved but path index refresh failed: {error}"
+                        );
+                        None
+                    }
+                };
+                Ok(NoteWriteResult::Saved {
+                    content: content.to_string(),
+                    index_entry,
+                })
+```
+
+</details>
+
+**依据 3 · 源码核查**：[app/flowix-cli/src/path_store.rs:134-148](https://github.com/text2future/flowix/blob/a48d45ca42cdfb252f80c0c2db5d213bf904546d/app/flowix-cli/src/path_store.rs#L134-L148)
+
+跨CLIcaller基线缺口。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -761,8 +1023,8 @@ pub(crate) fn write(raw: &str, content: &str) -> Result<Value, CliError> {
 
 #### 缺口
 
-- 共享上下文节时、语义覆盖率与全周期成本未测
-  **影响**：不能把文件共用当已兑现的协作收益
-  **进一步探讨**：在同任务中计入失败重做和审阅，比较原编辑器/CLI流程
+- 跨端版本/追平合同尚未实现与对照。
+  **影响**：不能计为已有可靠性收益。
+  **进一步探讨**：先比较现有CAS/pending与人工核原文，确定最小信息增量。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
