@@ -1,0 +1,26 @@
+{
+    "repository": "kuangre123/iosdev",
+    "repository_id": 1005356138,
+    "captured_at": "2026-11-03T02:00:13.357Z",
+    "window_start": "2026-10-04T02:00:13.357Z",
+    "stars": 28,
+    "pushed_at": "2026-01-09T06:03:17Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Akuangre123%2Fiosdev%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2764:2B560D:1B5449E:597CCA8:6AE9423A and timestamp 2026-11-03 02:08:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Akuangre123%2Fiosdev%20is%3Aissue%20updated%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2838:21E530:18FEC:51479:6AE9423B and timestamp 2026-11-03 02:09:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
+}

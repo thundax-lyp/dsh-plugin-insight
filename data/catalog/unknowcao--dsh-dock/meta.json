@@ -1,0 +1,35 @@
+{
+    "repository": "UnknowCao/dsh-dock",
+    "repository_id": 1092940076,
+    "captured_at": "2026-11-03T02:00:13.357Z",
+    "window_start": "2026-10-04T02:00:13.357Z",
+    "stars": 4,
+    "pushed_at": "2026-09-14T10:55:21Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-dock",
+        "captured_at": "2026-11-03T02:00:13.357Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2366,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-dock",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T16:23:20.823Z",
+            "captured_at": "2026-11-03T02:00:13.357Z",
+            "source_url": "https://registry.npmjs.org/dsh-dock",
+            "error": null,
+            "latest_version": "0.19.0",
+            "latest_published_at": "2026-11-01T09:55:30.296Z",
+            "latest_error": null
+        }
+    }
+}

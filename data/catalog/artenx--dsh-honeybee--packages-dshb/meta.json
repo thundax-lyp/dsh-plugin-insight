@@ -1,10 +1,10 @@
 {
     "repository": "Artenx/dsh-honeybee",
     "repository_id": 1355618827,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
+    "captured_at": "2026-11-03T02:00:13.357Z",
+    "window_start": "2026-10-04T02:00:13.357Z",
     "stars": 0,
-    "pushed_at": "2026-10-28T15:03:22Z",
+    "pushed_at": "2026-11-02T16:34:08Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -14,31 +14,21 @@
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T06:21:21.324Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@artenx/dshb",
-        "captured_at": "2026-10-26T13:10:34.281Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
-        "downloads_30d": 1319,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40artenx%2Fdshb",
+        "captured_at": "2026-11-01T06:14:40.848Z",
+        "window_start": "2026-10-02",
+        "window_end": "2026-10-31",
+        "downloads_30d": 1500,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/%40artenx%2Fdshb",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-07T02:46:31.066Z",
-            "captured_at": "2026-10-26T13:10:34.281Z",
+            "captured_at": "2026-11-01T06:14:40.848Z",
             "source_url": "https://registry.npmjs.org/%40artenx%2Fdshb",
             "error": null,
-            "latest_version": "0.1.18",
-            "latest_published_at": "2026-10-26T02:12:49.055Z",
+            "latest_version": "0.1.30",
+            "latest_published_at": "2026-11-01T05:41:27.082Z",
             "latest_error": null
         }
     }
