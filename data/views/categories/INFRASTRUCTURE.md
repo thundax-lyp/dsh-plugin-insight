@@ -13,6 +13,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
+| [AI Infrastructure Agent Skills](#plugin-1129378320-root) | 面向 AI 基础设施工程师的 Skill 集合，涵盖 GPU 开发、显存估算、训练指导和技术图表。 | [Q03](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q03) 先观察，按一项已知结果任务筛选并固定独立环境。 |
 | [Almost Full Access](#plugin-1336031182-root) | 在DSH完全访问预设上，为部分命名shell工具加入确定性/子代理审查、人工审批面板和命令记忆。 | 日常安全权限用途不推荐；只保留无敏感权限的隔离研究边界。 |
 | [ANOLISA](#plugin-1195873793-root) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | [Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。 |
 | [Awesome DSH Plugins](#plugin-1333144072-root) | 提供 DSH 插件分类目录与可订阅到官方发现页的安装目标索引。 | [Q04](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md#research-q04) 独立profile只试单个任务候选，上游核权限/版本，不批装；不清回原仓库。 |
@@ -29,13 +30,14 @@
 | [DSH Cost Meter](#plugin-1333235870-root) | 统计 DSH 会话模型用量及估算费用，并提供预算、历史与额度信息。 | [Q06](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q06) 建议先对照少量已知调用，遇到缺记录或未知价格即停止将本地金额作为费用依据，回看供应商账单。 |
 | [DSH Crew](#plugin-1336068061-root) | 把DSH Agent作为Claude Code、Codex等编排器可分派的子任务worker并展示进度。 | [Q03](../../plugins/zseven-w--dsh-crew/INSIGHT.md#research-q03)正式写任务observe；仅丢弃目录单进程只读评估，固定强制hub、禁CLI与升级，任何未知状态先人工核查。 |
 | [DSH Desktop](#plugin-1333321333-root) | 将 DeepSeek Harness 的本地 Web 界面、Host 和插件系统集成到原生桌面应用。 | [Q05](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md#research-q05) 建议使用隔离账户与数据根试单项任务，检查网络范围和退出；数据归属或恢复不明确时保留原备份并回到现有 CLI 或 Web。 |
+| [DSH HoneyBee / DSHB](#plugin-1355618827-packages-dshb) | 在 DSH 中管理 SSH/Docker 节点并路由文件、命令与终端，提供工作区指令和多实例会话同步。 | [Q03](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q03) 保持观察。 |
 | [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览社区插件，并管理安装、更新和配置。 | [Q06](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q06) 建议维护多个插件且已备份 profile 的用户先在隔离副本试装；发现取消后状态不清或无法恢复时停止并退回宿主 Discover 与 CLI。 |
 | [DSH Plugin Manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页面检查更新与兼容声明，并提供更新和重启入口。 | 熟悉 profile 的维护者先在备份过的可弃置环境试更新一个可信非关键包；版本、目标或恢复不明时停下并人工核对，再用官方固定版本命令和回归。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集 DSH 插件候选，归并兼容性记录并发布可浏览目录与机器可读数据。 | [Q04](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q04) 先按固定提交读取少量候选，再回原仓核对版本和权限；数据日期或逐条证据不明时停止自动安装并人工查找。 |
 | [DSH Plugins Marketplace](#plugin-1333295863-root) | 在 DSH 设置页浏览第三方插件与 Skill 索引，识别安装形态并组织材料、确认、安装和版本状态。 | [Q03](../../plugins/bradegithub--dsh-plugins-marketplace/INSIGHT.md#research-q03)正式管理observe，先修并在丢弃profile验multi-skill只删所属项。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [DSH SSH](#plugin-1331636953-packages-dsh-ssh) | 在 DSH 中管理 SSH 主机，并提供远端命令、终端、文件传输与隧道。 | [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md#research-q05) 建议熟悉 SSH 的用户只在隔离测试机和独立 home 试用人工审核的只读命令；要求 host key pin 时使用现有 SSH 方案。 |
-| [DSH XD Pool](#plugin-1356951582-root) | 将自有 WorkBuddy 多账号与可选渠道接入 DSH，按额度和失败分类换号，并提供路由与网关。 | 有限试主池，使用自有账号、非敏感任务，默认关闭网关/积分/额外链路，核实际状态后再扩。 |
+| [DSH XD Pool](#plugin-1356951582-root) | 将自有 WorkBuddy 多账号接成 DSH 模型池，提供渠道接入、用量、路由、网关与可选积分自动化。 | [Q03](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q03) 备份profile并核凭据目录，主池只用自有账号和非敏感任务，保持额外lane、网关与积分自动化关闭；核所有尝试与最终回答。 |
 | [DSH 订阅模型适配插件](#plugin-1333964468-root) | 将多个订阅 provider 的账号与可选候选池接入 DSH。 | [Q04](../../plugins/v1ki--dsh-plugin-subscriptions/INSIGHT.md#research-q04) 先限定候选可接收数据范围，状态不明则停池回直连。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
@@ -154,6 +156,22 @@
 > **建议**：未验证假设是版本/候选/profile摘要绑定的确认计划，漂移后重新确认而非自动换集合；故障对照核计划外安装。参见[Q04](../../plugins/1708994293-hue--dsh-auto-update/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/1708994293-hue--dsh-auto-update/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1129378320-root"></a>
+
+## [AI Infrastructure Agent Skills](../../plugins/yzlnew--infra-skills/INSIGHT.md)
+
+[![GitHub ★ 157](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=157&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yzlnew/infra-skills)
+
+> **用途**：已有GPU/训练或技术表达经验的工程师，可按任务选Skill资源；本集合不提供统一DSH运行时或自动生产验收。
+
+> **亮点**：[Q01](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q01) 将领域知识、示例、调试和具体产物路线组织成任务入口；[Q02](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q02) 存在输入校验与数值对照代码，不是纯文档列表，底层框架和公式归上游。
+
+> **思考**：[Q02](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q02) 估算不等训练峰值，测试可能跳过且只覆盖样例；--json前仍打印加载文字会影响直接解析。 [Q03](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q03) 环境与版本负担、作者未严格校对警告，使集合不宜整包作生产默认。
+
+> **建议**：[Q04](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q04) 提出每示例附输入、框架/硬件、执行状态与对照结果的最小复核记录，检验是否减少错误推广；现有测试不自动等于目标环境通过。
+
+[查看完整分析](../../plugins/yzlnew--infra-skills/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336031182-root"></a>
 
@@ -411,6 +429,22 @@
 
 [查看完整分析](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1355618827-packages-dshb"></a>
+
+## [DSH HoneyBee / DSHB](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md)
+
+[![npm 30d 1,500](https://img.shields.io/static/v1?label=npm+30d&message=1%2C500&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@artenx/dshb)
+
+> **用途**：[Q01](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q01) 已有多节点开发环境的维护者希望统一操作入口，合格结果须明确目标并能解释中断后的远端状态。
+
+> **亮点**：[Q01](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q01)、[Q02](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q02) 将工作区绑定统一用于文件/命令/终端，配合摘要和事件前缀校验的会话导入，属于可核查的组合设计，不证明远端隔离与恢复完成。
+
+> **思考**：[Q01](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q01) 绑定读取异常变空并可回本机；[Q02](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q02) 普通SSH kill无终止动作、执行连接未接hostVerifier，上游认证被替代，透明便利必须先满足目标与中断可信。
+
+> **建议**：[Q03](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q03) 未验证的显式执行凭据记录节点、绑定版本、路径与取消能力，将损坏绑定变拒绝态；用两端哨兵与中断矩阵对照，错误目标未减少或负担过高即否定。
+
+[查看完整分析](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333807290-root"></a>
 
 ## [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md)
@@ -511,15 +545,15 @@
 
 ## [DSH XD Pool](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md)
 
-[![GitHub ★ 311](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=311&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/XDTrees/dsh-xdpool) [![npm 30d 4,679](https://img.shields.io/static/v1?label=npm+30d&message=4%2C679&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-xdpool) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-xdpool)
+[![GitHub ★ 392](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=392&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/XDTrees/dsh-xdpool) [![npm 30d 5,806](https://img.shields.io/static/v1?label=npm+30d&message=5%2C806&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-xdpool) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-xdpool)
 
-> **用途**：面向多自有账号、希望减少手工换号的DSH用户，合格结果是明确路由和成本下完成同一任务。见[Q01](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q01)。
+> **用途**：[Q01](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q01) 面向多自有账号、希望减少手工换号的本地DSH用户，验收单位是同一任务的合格结果与可解释总调用。
 
-> **亮点**：以多账号作为默认选择面，把凭据、冷却、目录、路由和DSH provider统一接线；主增量是拒绝容错和可观测，不是厂商模型或免费额度。见[Q01](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q01)、[Q02](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q01) 把多账号当统一选择面，连接可用性、模型级冷却、拒绝原因和宿主provider；同一请求标识覆盖物理尝试，减少把尝试数误当用户任务数。
 
-> **思考**：流已接受后并非透明换号续接，overrun恢复可能新增摘要并截断历史；集中JSON凭据、HTTP共享网关与积分写动作扩大维护范围。当前源码积分默认关闭，与README全自动文案分开。见[Q02](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q02)、[Q03](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q02) 集中JSON凭据、可选HTTP共享网关和积分远端动作扩大责任；[Q01](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q01) 流接受不代表完整任务，切号与摘要不保证净节省。
 
-> **建议**：请求级恢复账同时记录物理尝试、部分输出、摘要截断和费用来源，检验是否减少误重试/损失而不过度增加日志与核对负担。见[Q06](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q06)。
+> **建议**：[Q03](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md#research-q03) 在已有turnId与面板上比较恢复账的解释增量，区分拒绝、部分流、摘要改变与费用来源；以错误重试和人工复核对照，无改善或隐私负担过大即否定。
 
 [查看完整分析](../../plugins/xdtrees--dsh-xdpool/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2159,4 +2193,4 @@
 
 ## 更新时间
 
-2026-11-02
+2026-11-03

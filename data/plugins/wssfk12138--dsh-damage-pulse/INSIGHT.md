@@ -1,18 +1,18 @@
-# DSH Damage Pulse
+# dsh-damage-pulse
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[d51989d](https://github.com/wssfk12138/dsh-damage-pulse/tree/d51989d7ee378db9d2da9aef43f5161c34680dee)
+源码版本：[26e8d5c](https://github.com/wssfk12138/dsh-damage-pulse/tree/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf)
 
 <!-- BEGIN META -->
-[![GitHub ★ 278](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=278&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wssfk12138/dsh-damage-pulse) [![npm 30d 8,852](https://img.shields.io/static/v1?label=npm+30d&message=8%2C852&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-damage-pulse) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-damage-pulse)
+[![GitHub ★ 283](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=283&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wssfk12138/dsh-damage-pulse) [![npm 30d 6,438](https://img.shields.io/static/v1?label=npm+30d&message=6%2C438&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-damage-pulse) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-damage-pulse)
 <!-- END META -->
 
-> **功能**：在 DSH 中记录 Token 用量与本地估价，查询供应商余额，并以明细、提醒和鲸鱼桌宠呈现消费变化。
+> **功能**：为 DeepSeek Harness 提供用量、费用与余额监控，并以鲸鱼娘动画反馈 Token 消耗。
 
-> **亮点**：固定计费快照、原始用量与选装估价分离，加上受限余额描述符及凭据轮换后的旧结果抑制，把个人成本观察集中到宿主中；这是集成贡献，未证明节省费用，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 的固定计费快照和原始用量分离，加上 [Q02](#research-q02) 的受限描述符和凭据轮换迟到结果检查，构成可解释的消费观察集成；动画和汇总未证明节省费用。
 
-> **主要限制**：看见扣费动画不代表该记录耐久保存或与供应商实际扣账相等。账本先更新内存再写JSONL，失败仅警告仍触发后续回调；金额还依赖本地规则及来源覆盖，见 [Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 显示内存更新成功后才尝试写JSONL，落盘失败仍返回并继续回调；消费动画不证明记录耐久保存。本地规则、usage覆盖与供应商实际扣账仍有边界。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 收费用量如何从宿主事件进入账本和可视化？](#detail-section-11)
-  - [Q02 · 自定义余额适配怎样处理凭据、网络和过期结果？](#detail-section-12)
-  - [Q03 · 模块卸载、历史与失败恢复如何影响总负担？](#detail-section-13)
-  - [Q04 · 什么人值得试，如何验证价值及新方向？](#detail-section-14)
+  - [Q01 · 消费反馈服务谁，采集与估价怎样分工？](#detail-section-11)
+  - [Q02 · 余额脚本和凭据轮换如何隔离旧结果？](#detail-section-12)
+  - [Q03 · 本地账本与模块生命周期能否支撑耐久历史？](#detail-section-13)
+  - [Q04 · 什么条件下值得试，怎样核成本与退出？](#detail-section-14)
+  - [Q05 · 如何减少金额与耐久状态的误读？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：经常在DSH查看个人用量的用户可把请求分量与估价放在对话旁观察，不宜作为财务对账，见 [Q01](#research-q01)。
+> **用途**：[Q01](#research-q01) 面向反复观察个人 DSH 用量的用户，合格结果是记录可追溯且未知不冒充零费用；不直接用于财务对账。
 
-参照供应商控制台、宿主原用量和人工整理日志。本地估价、余额快照和真实扣账是不同材料，桌宠动画没有提供节费因果证据。
+原办法是读宿主usage和供应商记录，再人工对应模型/缓存/规则。本包集中观察与反馈，供应商实际扣款仍是独立依据，未完成效率对照。
 
 <a id="detail-section-3"></a>
 
@@ -51,70 +52,82 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 原始用量采集 | 保存Token与缓存分量 | 依赖live model usage，不含所有未知请求 |
-| 本地估价 | 用冻结规则生成金额分量 | 规则需核对，不等于供应商扣账 |
-| 余额查询 | 取得provider账户快照 | Host私有凭据、批准目标和网络约束 |
-| 脚本适配 | 描述请求并解析JSON | QuickJS限时限内存，不直接持key |
-| 模块管理 | 启停与移除选装功能 | tombstone/pending需核对，不自动等于删完 |
+| live用量采集 | 观察模型和缓存分量 | 仅有usage的model事件，来源覆盖有限 |
+| 可选计费 | 按固定规则估价 | unpriced不等于免费，非供应商结算 |
+| 本地历史 | 回读请求明细 | JSONL写失败不阻断内存反馈 |
+| 供应商余额 | 同屏查看当前身份余额 | 需合法脚本/凭据，真实服务未验收 |
+| 预算与缓存提醒 | 提示消费变化 | 不阻断请求 |
+| 模块生命周期 | 按需启停与保留数据 | 需完整载荷与明确删除选择 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| 匹配DSH服务与完整打包runtime | 启动必需 | Host、Client和模块加载 | 未构建源码缺manifest会拒绝启动 |
-| 宿主model usage事件 | 用量采集必需 | 记录请求Token分量 | 无usage不产生同类记录，不能算完整账单 |
-| billing模块和已核对规则 | 估价必需 | 本地金额计算 | 可仅保留unpriced原始用量 |
-| 供应商身份与批准请求 | 对应余额查询必需 | Host带凭据访问endpoint | 未批准/无身份暂停，不能猜用别的key |
-| 可写本地存储 | 历史必需 | usage.jsonl与配置 | 写盘失败可只剩内存观测 |
+| 匹配DSH host/client、Node及完整runtime包 | 启动必需 | 加载manifest与模块/客户端 | 不完整源码包拒绝启动；作者兼容声明未独立复现 |
+| sessions、credentials、settings | 核心必需 | 采集、设置与身份接缝 | 必选注入未就绪不可据欢迎页判断成功 |
+| live model usage | 采集必需 | 原始量与sourceEventSeq | 没有usage不能据此生成完整账单 |
+| billing模块与已核规则 | 估价必需 | 本地费用决策 | 可仅留unpriced原始量，不把0当免费 |
+| 当前provider凭据与脚本 | 特定余额查询必需 | Host请求与响应解析 | 无身份/非法脚本暂停，不借别的key |
+| 可写本地账本目录 | 耐久历史必需 | JSONL保存和回读 | 写失败可能只剩内存反馈 |
+| 微信与其他通知服务 | 可选 | 发送提醒 | 不作为基础采集必需，预算不阻断请求 |
+
+细节与边界见 [Q02](#research-q02) 至 [Q04](#research-q04)。
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 用户固定宿主并装完整发布包 | 模块清单与Host/Client正常加载 |
-| 核对 | 用户核对provider、规则及显示状态 | usage、估价和真实余额分开解释 |
-| 使用 | core采集，billing估价，界面观察 | 抽样对照供应商，不把动画当扣账凭证 |
-| 扩展 | 用户确有需要才配置余额脚本/批准目标 | 受控请求和身份轮换结果可解释 |
-| 退出 | 用户选择保留数据并检查模块pending | 等待停止/清理完成，保留必要账本副本 |
+| 准备 | 用户备份并匹配profile/发布包 | 完整runtime与宿主兼容，拒用未构建源码冒充发布包 |
+| 加载 | 宿主验证载荷并启动core/选装模块 | 用已知请求核实际采集，而非截图 |
+| 观察 | 用户查provider/model、usage与规则 | 未定价明确，估价与真实账单分开 |
+| 恢复 | 用户查落盘/余额身份、暂停异常模块 | 保留JSONL和日志核对，不盲目删历史 |
+| 退出 | 用户选择保留历史后卸载/停用 | 采集停止、原数据可追溯；删除另按选择 |
+
+[Q03](#research-q03) 区分模块事务与账本耐久，不能相互替代。
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 宿主/存储等资源金额未知 | 发布包、规则、模块核对耗时未知 | 非只加载根源码即可 |
-| 持续使用 | 日志、轮询、动画资源未知 | 规则/账单抽样复核 | 没有节费测量 |
-| 故障恢复 | 缺失记录与重试资源未知 | 检查写盘、身份、pending和外部状态 | fail-soft不等于耐久成功 |
-| 退出升级 | 备份与包文件资源未知 | 选择数据保留、核对清理 | 不删除宿主凭据/会话的范围需保持 |
+| 首次使用 | 依赖与存储金额未知 | 包/profile、规则和来源核对耗时未知 | 完整runtime必需 |
+| 持续使用 | 日志、轮询、UI与模型调用，资源量未知 | 持续规则/账单抽查 | 无节费数据 |
+| 失败恢复 | 重试/缺记录资源未知 | 对账内存/JSONL/身份，耗时未知 | 写盘fail-soft仍有缺口 |
+| 升级退出 | 备份和包文件量未知 | 选择数据保留并核模块状态 | 不以清空账本修启动 |
+
+以完成一组来源可追溯请求为比较单位，无总尝试/合格数不算单位成本。
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 用量观察 | live usage与缓存分量记录 | 覆盖完整性与持久化完整性 |
-| 余额查询 | 描述符、批准、Host网络及旧结果抑制 | 所有供应商语义与实际可用性 |
-| 成本反馈 | 本地规则估价及charge事件 | 真实扣账一致、预算行为和节费 |
+| 用量记录 | live事件、sourceEventSeq去重与原始量 | 覆盖与落盘完整性 |
+| 金额反馈 | 冻结规则接缝及unpriced状态 | 真实扣账一致和行为节费 |
+| 余额 | 当前身份与迟到结果复核 | 全部provider语义/可用性 |
+| 预算提醒 | 阈值后发布通知 | 不取消请求，未测决策效果 |
 
-> **思考**：看见扣费动画不代表该记录耐久保存或与供应商实际扣账相等。账本先更新内存再写JSONL，失败仅警告仍触发后续回调；金额还依赖本地规则及来源覆盖，见 [Q03](#research-q03)。
+[Q04](#research-q04) 的采用条件以个人观察为限。
+
+> **思考**：[Q03](#research-q03) 显示内存更新成功后才尝试写JSONL，落盘失败仍返回并继续回调；消费动画不证明记录耐久保存。本地规则、usage覆盖与供应商实际扣账仍有边界。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：固定计费快照、原始用量与选装估价分离，加上受限余额描述符及凭据轮换后的旧结果抑制，把个人成本观察集中到宿主中；这是集成贡献，未证明节省费用，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 的固定计费快照和原始用量分离，加上 [Q02](#research-q02) 的受限描述符和凭据轮换迟到结果检查，构成可解释的消费观察集成；动画和汇总未证明节省费用。
 
-[Q02](#research-q02) 将脚本限制为无key请求描述符、Host掌握网络和凭据，以及迟到结果复核，值得复用；[Q03](#research-q03) 先落tombstone再停服务可解释模块退出。移植需要匹配宿主生命周期/凭据和文件锁，账本fail-soft必须在产品中保留缺口而非声称精确持久账。
+[Q02](#research-q02) 无key脚本、Host凭据和响应后身份复核值得借鉴，复制时需连同网络策略和scope生命周期；[Q03](#research-q03) 载荷验证、lease与tombstone解释模块退出，但账本耐久仍需独立状态，不能仅按回调名判成功。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-看见扣费动画不代表该记录耐久保存或与供应商实际扣账相等。账本先更新内存再写JSONL，失败仅警告仍触发后续回调；金额还依赖本地规则及来源覆盖，见 [Q03](#research-q03)。
+[Q03](#research-q03) 显示内存更新成功后才尝试写JSONL，落盘失败仍返回并继续回调；消费动画不证明记录耐久保存。本地规则、usage覆盖与供应商实际扣账仍有边界。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先只开个人用量明细与可视化，用几条明确请求核对来源、规则和账单；需要时才启用自定义脚本或通知。未定价、落盘或身份异常时停用相关功能并回供应商记录，不据动画结算费用，见 [Q04](#research-q04)。
+[Q04](#research-q04) 先只观察用量与明细，以已知请求核来源、规则、写盘和供应商记录；有需要再开脚本/通知。未定价、落盘或身份异常就暂停相关模块并保留记录回供应商核对，不把动画当结算。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +135,18 @@
 
 **核查状态**：已检查源码。
 
-已检查固定版本的实际collector-core、估价、余额脚本/网络与模块生命周期源码。建议个人用量观察的有限试用，不作财务账单；未执行插件、余额请求、通知或故障实验，未来状态标志未验证。
+已核根组件采集、估价接缝、余额隔离、账本与模块生命周期源码；未运行目标宿主、外部供应商或通知。可信状态摘要为未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、plugins/dsh-token-monitor/src/balance-api.ts、plugins/dsh-token-monitor/src/balance-config.ts、plugins/dsh-token-monitor/src/balance-network.ts、plugins/dsh-token-monitor/src/balance-registry.ts、plugins/dsh-token-monitor/src/balance-script.ts、plugins/dsh-token-monitor/src/collector-core.ts、plugins/dsh-token-monitor/src/features/billing.ts、plugins/dsh-token-monitor/src/index.ts、plugins/dsh-token-monitor/src/module-bootstrap.ts、plugins/dsh-token-monitor/src/module-manager.ts、plugins/dsh-token-monitor/src/pricing.ts、plugins/dsh-token-monitor/src/runtime-core.ts、plugins/dsh-token-monitor/src/runtime-host.ts、plugins/dsh-token-monitor/src/storage.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、plugins/dsh-token-monitor/src/balance-provider.ts、plugins/dsh-token-monitor/src/balance-registry.ts、plugins/dsh-token-monitor/src/balance-script.ts、plugins/dsh-token-monitor/src/collector-core.ts、plugins/dsh-token-monitor/src/index.ts、plugins/dsh-token-monitor/src/module-bootstrap.ts、plugins/dsh-token-monitor/src/provider-notifications.ts、plugins/dsh-token-monitor/src/runtime-core.ts、plugins/dsh-token-monitor/src/runtime-host.ts、plugins/dsh-token-monitor/src/storage.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整根组件inventory为统计范围，人工抽读实际core接线、collector-core、估价、余额脚本/网络/registry、模块退出与存储；未完整审计UI动画、微信投递、发布更新全链路及全部内置供应商适配。
-- 下一步：后续在独立profile核对同批usage、规则快照、供应商账单和写盘状态，注入脚本变更/凭据轮换/迟到响应与卸载中断；再比较用户误判和人工复核成本。本轮未执行目标、测试或网络查询。
+- 边界：根组件完整inventory，人工定向核入口/core、live采集、估价接缝、存储、余额脚本/身份/registry与模块生命周期；未全审UI、所有provider、通知、更新和网络安全面。
+- 下一步：未执行目标代码、安装、测试、宿主、模型或外部服务；作者截图含合成/接口替身说明，不当本地验证。后续按已知请求、写盘失败与凭据轮换核可追溯性和用户误读。
 
 **分析版本**
 
 - **仓库**：[wssfk12138/dsh-damage-pulse](https://github.com/wssfk12138/dsh-damage-pulse)
-- **版本号**：4.3.0（[固定提交 d51989d](https://github.com/wssfk12138/dsh-damage-pulse/tree/d51989d7ee378db9d2da9aef43f5161c34680dee)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：4.3.2（[固定提交 26e8d5c](https://github.com/wssfk12138/dsh-damage-pulse/tree/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf)）
+- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +154,9 @@
 
 <a id="innovation"></a>
 
-可探索在charge和汇总中显示报告来源、估价状态、耐久保存状态及余额时间，减少把界面金额当完整账单的误读。该方案未实现，模拟缺口任务若不改善识别或只增加干扰则否定，见 [Q04](#research-q04)。
+[Q05](#research-q05) 探索在反馈旁显示来源覆盖、估价、耐久和余额时间；现有billingStatus与updatedAt已存在，需先核UI，再对照故障任务检验是否减少误读。
 
-后续在独立profile核对同批usage、规则快照、供应商账单和写盘状态，注入脚本变更/凭据轮换/迟到响应与卸载中断；再比较用户误判和人工复核成本。本轮未执行目标、测试或网络查询。
+未执行目标代码、安装、测试、宿主、模型或外部服务；作者截图含合成/接口替身说明，不当本地验证。后续按已知请求、写盘失败与凭据轮换核可追溯性和用户误读。
 
 <a id="detail-section-9"></a>
 
@@ -152,14 +165,16 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 17 | 1638 | — | — | 30452 |
+| .md | source | 19 | 1378 | — | — | 22144 |
 | .js | source | 2 | 72221 | 62612 | 10538 | — |
 | .ts | source | 125 | 14608 | 11700 | 1919 | — |
 | .tsx | source | 20 | 5575 | 4864 | 454 | — |
 | .tsx | test | 25 | 5035 | 4429 | 211 | — |
-| .ts | test | 99 | 10351 | 9333 | 301 | — |
+| .ts | test | 99 | 10354 | 9335 | 301 | — |
 | .mjs | source | 5 | 547 | 498 | 44 | — |
 | .ts | example | 2 | 105 | 102 | 1 | — |
 
@@ -167,57 +182,52 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-29），可前往 [GitHub Issues](https://github.com/wssfk12138/dsh-damage-pulse/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/wssfk12138/dsh-damage-pulse/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/wssfk12138/dsh-damage-pulse/issues?q=is%3Aissue+created%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z) [![近30天关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/wssfk12138/dsh-damage-pulse/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z)
+
+
+
+统计日期：2026-11-03。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：余额与Token可视化如何区分用量、估价和账户余额，自定义请求与生命周期有什么可核查边界？
+**插件研究总目标**：个人用户能否用消费反馈准确理解来源、估价和余额，而不把界面金额误当完整耐久账单？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 收费用量如何从宿主事件进入账本和可视化？
+### Q01 · 消费反馈服务谁，采集与估价怎样分工？
 
 **研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-Damage Pulse是原生DSH bundle，面向想在对话时看用量、估价和账户余额的用户。相较切换供应商控制台或自己整理日志，它把请求用量、缓存命中分量、历史和鲸鱼动画放入宿主界面；合格结果应是来源与缺失可辨、估价能追溯规则，而不是动画像账单。组合patch加载Host，根入口bootModules启动模块和常驻core，core实际使用collector-core而非旧collector。
+经常在 DSH 做个人编程/研究任务、希望随调用观察 Token 分量与估计费用的用户是直接对象。原办法是读供应商账单或宿主 usage，再人工核模型、缓存和时间；本包把明细、历史、余额和动画放到会话旁。合格结果应能追溯单次记录的 provider/model、Token 与规则，发现没有定价或来源缺失；桌宠的伤害数字不是合格账单标准。
 
-collector-core在stream start冻结计费快照，监听新的assistant/message且只接受model来源和usage，已有历史事件不重记；记录先为unpriced，选装billing模块priceRecord用规则或本地价表估计，成功后标priced并发出charge。billing模块未装仍可采原始用量。缓存未命中输入和cacheWrite与缓存读取区别处理，为可视反馈提供数据，但不是供应商实际扣账证明；余额另走查询。根组件包含多个工作区包，不能把每个模块都说成独立已运行插件。历史打开不按今天规则重算有助于解释过去，但内置价格版本是否吻合今天供应商价目未外部核验，本文不把具体价当当前官方事实。
+真实入口 bootModules 加载模块 runtime，core 再注册 collector。collector 只接 live assistant/message 中 model 来源且有 usage 的记录，保存 sourceEventSeq，开始流时冻结可用计费快照，然后调用选装 billing 计价。无 billing 时保留 unpriced 原始量，不能把金额字段0解释成免费请求。runtime-core 的回调把记录交给 billing/观察者，另由兼容 writer写会话行；源码体现原始采集与估价的责任分离。
+
+这一集成能减少人工拼分量和规则的步骤，但本地计价并非供应商实际扣款，覆盖范围仍受宿主事件和模型 usage 限制。重复源事件去重和计费快照有具体依据，真实费用节省、动画是否改善预算决策则没有同条件结果。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[cordis.patch.yml:1-5](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/cordis.patch.yml#L1-L5)
+**依据 1 · 作者声明**：[README.md:15-15](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/README.md#L15-L15)
 
-原生Host组合。
+作者的用量、费用、余额定位。
 
 ```text
-# Standard DSH profile bundle. The patch loads the Host half; package.json's
-# dsh.client declaration makes DSH discover lib/client.js for the Web UI.
-- insert:
-    - id: dsh-token-monitor
-      name: dsh-damage-pulse
+为 DeepSeek Harness 提供用量、费用与余额监控：查看单次调用、会话累计和历史统计，让鲸鱼娘陪你观察每次 Token 消耗。
 ```
 
-**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/index.ts:16-34](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/index.ts#L16-L34)
+**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/index.ts:23-34](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/index.ts#L23-L34)
 
-入口到模块boot。
+入口实际加载模块。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-export const name = 'dsh-token-monitor'
-export { Config } from './config-base.ts'
-export const inject = ['sessions', 'credentials', 'settings']
-
-/** Start the installed release; a whole-plugin tombstone leaves this loader inert.
- * @param ctx Host-owned plugin lifetime.
- */
 export async function apply(ctx: Context, config: TokenMonitorUserConfig): Promise<void> {
   registerUserSettings(ctx, config)
   const pluginRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -234,9 +244,9 @@ export async function apply(ctx: Context, config: TokenMonitorUserConfig): Promi
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/runtime-core.ts:50-70](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/runtime-core.ts#L50-L70)
+**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/runtime-core.ts:50-70](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/runtime-core.ts#L50-L70)
 
-实际接线collector-core与billing回调。
+真实 core注册与collector接线。
 
 <details>
 <summary>查看原文（21行）</summary>
@@ -267,9 +277,9 @@ export function apply(ctx: Context, services: ModuleServices, installed: (id: st
 
 </details>
 
-**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/collector-core.ts:18-50](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/collector-core.ts#L18-L50)
+**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/collector-core.ts:18-50](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/collector-core.ts#L18-L50)
 
-live usage、冻结快照与unpriced。
+live usage、冻结快照、unpriced及后续回调。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -312,121 +322,43 @@ export function attachUsageCollector(ctx: Context, storage: UsageStorage, option
 
 </details>
 
-**依据 5 · 源码核查**：[plugins/dsh-token-monitor/src/features/billing.ts:22-42](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/features/billing.ts#L22-L42)
-
-估价和charge事件的真实接线。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-export function apply(ctx: Context, services: ModuleServices): void {
-  const billing: NonNullable<ModuleServices['billing']> = {
-    readSnapshot: () => readBillingSnapshot(services.store, services.settings),
-    priceRecord: (record, frozen) => {
-      const { inputTokens, cacheReadTokens, cacheWriteTokens, outputTokens } = record
-      const decision = frozen ? billUsage(frozen, { inputTokens, cacheReadTokens, cacheWriteTokens, outputTokens }, record.provider, record.model, record.timestamp) : undefined
-      const cost = decision ?? priceUsage(record.inputTokens, record.cacheReadTokens, record.cacheWriteTokens, record.outputTokens, record.provider, record.model, record.timestamp, services.priceTable())
-      return cost ? { ...record, ...cost, billingStatus: 'priced', ...decision } : record
-    },
-    onPersistedRecord: (record, kind) => {
-      if (record.billingStatus !== 'priced') return
-      recordCharge(record.cost, record.timestamp, kind, {
-        cacheHit: { tokens: record.cacheReadTokens, cost: record.costCacheRead },
-        cacheMiss: { tokens: record.inputTokens + record.cacheWriteTokens, cost: record.costInput + record.costCacheWrite },
-        output: { tokens: record.outputTokens, cost: record.costOutput },
-      }, { sessionId: record.sessionId, sourceEventSeq: record.sourceEventSeq!, provider: record.provider, model: record.model })
-    },
-  }
-  ctx.effect(() => {
-    services.billing = billing
-    return () => { if (services.billing === billing) delete services.billing; resetCharges() }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[plugins/dsh-token-monitor/src/pricing.ts:101-106](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/pricing.ts#L101-L106)
-
-固定代码按历史时间选价表。
-
-```text
-/** 默认价格按历史生效时间选择；显式自定义表保留原覆盖行为。 */
-export function selectPriceTable(ts: number, table: PricingTable = PRICE_TABLE): PricingTable {
-  if (ts < PEAK_PRICING_START) return LEGACY_PRICE_TABLE
-  if (table !== PRICE_TABLE) return table
-  if (ts < FLASH_PRICING_START) return PRE_FLASH_PRICE_TABLE
-  return table
-```
-
-**依据 7 · 作者声明**：[README.md:68-73](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/README.md#L68-L73)
-
-余额校准和界面用途为作者说明。
-
-```text
-- 查询 DeepSeek 官方余额并每 60 秒校准；扣费事件到达时先逐笔更新显示余额，充值后以绿色反馈恢复金额。
-- 余额查询失败或缺少 API Key 时显示明确状态；本地账本统计的今日消费不依赖余额接口成功。
-- 使用 TUN / Fake-IP 代理时无需任何额外设置：代理把域名解析到 `198.18.0.0/15` 时，插件照常查询余额，并在核对该地址的 TLS 证书身份后才发送密钥。代理通过 IPv6 或 IPv4-mapped 形式返回的 Fake-IP 答复暂不支持，表现与查询失败相同——卡片回到无余额显示，不出现错误码或错误文案。
-- 峰谷标识每 30 秒刷新，峰时使用红色、谷时使用绿色提示。
-- 悬浮卡支持鼠标拖动、键盘移动、视口边界限制和位置记忆；右键可隐藏鲸鱼娘或打开详细设置。
-- 右键菜单提供「显示鲸鱼娘」「显示用量概览」「用量明细」「通知设置」「计费规则」和「卸载与更新」六个入口。
-```
-
 #### 缺口
 
-- 没有供应商账单和宿主用量对照。
-  **影响**：不能确定估价误差、覆盖率或节费效果。
-  **进一步探讨**：选明确provider/model逐条核对usage、规则版本、账单与余额变化，单列未定价及缺usage请求。
+- 没有用户任务与供应商账单的同条件独立对照。
+  **影响**：不能证明反馈正确性覆盖全部请求，也不能声称节费。
+  **进一步探讨**：在固定版本记录一组已知请求、总尝试和账单，逐条核 provider/model、usage、规则与金额。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 自定义余额适配怎样处理凭据、网络和过期结果？
+### Q02 · 余额脚本和凭据轮换如何隔离旧结果？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
 
 #### 完整回答
 
-该功能不是让脚本直接持有API key并任意fetch。billing模块把脚本配置、凭据身份解析和Host网络函数接到BalanceRegistry；脚本在QuickJS运行，只输出request描述符或解析响应，限制32KiB源码、8MiB内存、100ms及输出大小，不支持异步。Host验证相对path、方法和auth类型，再用私有endpoint和当前key发请求；自定义请求与批准endpoint不匹配会停在unapproved，UI端有单独批准入口。这里确认的是接线和限制，不是把QuickJS名称当安全证明。
+余额脚本在受限 QuickJS 上下文返回请求描述符或解析 JSON，代码设置32KiB脚本、8MiB内存、栈和100ms中断限制，没有向 VM 注入 Node、环境或网络。Host 按当前 provider 的显式 credential reference 读取 key 与 endpoint，再执行请求，脚本本身不接触 key。这种职责分离比让用户脚本直接拿密钥发任意请求更便于审阅，但本研究没有穷尽网络地址、所有请求解析和解释器逃逸边界。
 
-网络要求精确HTTPS来源、禁止异常端口/认证URL，DNS全部答案须是允许的公网或限定Fake-IP，实际连接固定检查后的地址且保持TLS域名，10秒时限、256KiB响应上限，非2xx不跟随重定向；解析结果还要验证。registry在返回缓存前核对脚本和凭据身份，新key或脚本revision会invalidate；异步结果结束再核对两者，避免旧凭据余额回流。DeepSeek账号源单独处理，不落到无关API key。仍需用户确认endpoint确实是只读余额语义，POST本身不是只读保证，审批是授权目标不是远端业务效果验证；也未逐个测试供应商返回语义。
+registry 在请求前读脚本与身份，变化时 invalidate 并换 generation；响应到达后再次读取 revision/key/baseURL，检查停止、abort及当前entry相同才缓存结果。因此凭据轮换或脚本修改后，不应仅靠旧 Promise 完成就回填新身份余额。失败删除缓存并退避，带 updatedAt 和 credentialGeneration 输出；这是源码机制而非真实供应商连接已成功。
+
+实际用途仍依赖供应商响应语义、批准脚本和当前凭据。余额、credits 和套餐窗口不应被混成同一货币；没有身份或无合法脚本时暂停比借用另一provider key更合理。复用这套设计需同时保留 Host 请求约束、身份复核和生命周期，而不能只复制一个 QuickJS 超时。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/features/billing.ts:48-61](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/features/billing.ts#L48-L61)
+**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/balance-script.ts:69-103](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/balance-script.ts#L69-L103)
 
-脚本、身份和网络的真实组合。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-    settingsCtx.inject(['llm'], balanceCtx => {
-      const scripts = new BalanceScriptConfig(services.store, async provider => {
-        if (provider === 'deepseek-account') return undefined
-        const identity = await resolveBalanceIdentity(balanceCtx, provider, services.store.get().balanceProviders?.[provider])
-        return identity === undefined ? undefined : builtInBalanceAdapter(identity.baseURL)
-      })
-      const registry = new BalanceRegistry({ readScript: provider => scripts.read(provider),
-        resolveIdentity: provider => resolveBalanceIdentity(balanceCtx, provider, services.store.get().balanceProviders?.[provider]), request: requestBalanceJson,
-        // Fixed-message diagnostics only; host, path, address and credentials never reach the log.
-        warn: message => balanceCtx.logger.warn(message) })
-      attachAccountBalance(balanceCtx, source => registry.setAccountSource(source))
-      balanceCtx.effect(() => () => registry.stop(), 'token-monitor: balance requests')
-      balanceCtx.inject(['webServer', 'connection'], web => registerBalanceApi(web, scripts, registry))
-      balanceCtx.inject(['tools'], tools => registerBalanceTools(tools, scripts, registry))
-```
-
-</details>
-
-**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/balance-script.ts:74-103](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-script.ts#L74-L103)
-
-QuickJS资源限制与无异步。
+VM 限制与只复制 JSON 的脚本边界。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
+/** Run one adapter phase with no Node, environment, module loader, timers or network globals.
+ * @param script Complete expression returning { request, parse(response) }.
+ * @param response JSON response for parsing; omitted when inspecting the request.
+ * @returns JSON copied out of the isolated interpreter.
+ */
 export async function evaluateBalanceScript(script: string, response?: unknown): Promise<unknown> {
   if (Buffer.byteLength(script, 'utf8') > MAX_BALANCE_SCRIPT_BYTES) throw new Error('Balance script exceeds 32 KiB')
   const quickjs = await getQuickJS()
@@ -461,181 +393,55 @@ export async function evaluateBalanceScript(script: string, response?: unknown):
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/balance-script.ts:110-117](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-script.ts#L110-L117)
+**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/balance-provider.ts:30-58](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/balance-provider.ts#L30-L58)
 
-请求描述符验证。
-
-```text
-export function validateBalanceRequest(value: unknown): BalanceRequest {
-  const item = object(value)
-  if (Object.keys(item).some(key => !['path', 'method', 'auth', 'body'].includes(key))) throw new Error('Unsupported balance request field')
-  const path = validateBalancePath(item.path)
-  if (item.method !== 'GET' && item.method !== 'POST') throw new Error('Balance request must use GET or POST')
-  if (item.auth !== 'bearer' && item.auth !== 'x-api-key') throw new Error('Unsupported balance authentication')
-  if (item.body !== undefined && (typeof item.body !== 'string' || Buffer.byteLength(item.body) > 8192 || item.method !== 'POST')) throw new Error('Invalid balance request body')
-  return { path, method: item.method, auth: item.auth, ...(item.body === undefined ? {} : { body: item.body as string }) }
-```
-
-**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/balance-config.ts:74-99](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-config.ts#L74-L99)
-
-批准目标与脚本状态决定查询资格。
+按当前provider解析凭据和endpoint。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-  private async readScript(provider: string): Promise<BalanceScriptSnapshot> {
-    const saved = this.store.get().balanceScripts?.[provider]
-    // A saved script is the owner's explicit choice and always wins; only a
-    // provider that never saved one can fall back to a Host-shipped adapter.
-    const adapter = saved === undefined ? await this.resolveAdapter(provider) : undefined
-    const entry = saved ?? { revision: 0, script: adapter?.script ?? (isOfficialProvider(provider) ? OFFICIAL_BALANCE_SCRIPT : '') }
-    const key = adapter === undefined ? 'saved' : 'built-in'
-    const cached = this.validations.get(provider)
-    if (cached?.key === key && cached.script === entry.script) {
-      return { ...(await cached.value), revision: entry.revision }
-    }
-    const value = (async (): Promise<BalanceScriptSnapshot> => {
-      if (!entry.script.trim()) return { provider, ...entry, status: 'unconfigured' }
-      const refused = refuseScriptLiteral(entry.script)
-      // Refused source is hidden rather than returned, so a pasted secret cannot
-      // ride an editor response or a model tool result.
-      if (refused !== undefined) return { provider, revision: entry.revision, script: '', status: 'invalid', error: refusedError(refused) }
-      try {
-        const request = validateBalanceRequest(await evaluateBalanceScript(entry.script))
-        if (!this.approvedEndpoints(provider, adapter).some(endpoint => endpointKey(endpoint) === endpointKey(request))) {
-          return { provider, ...entry, status: 'unapproved', request, error: UNAPPROVED_SCRIPT_ERROR }
-        }
-        return {
-          provider, ...entry, status: 'valid', request,
-          ...(adapter === undefined ? {} : { source: 'built-in' as const, adapter: adapter.label }),
-        }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[plugins/dsh-token-monitor/src/balance-api.ts:89-111](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-api.ts#L89-L111)
-
-独立endpoint批准路由。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-  ctx.effect(() => ctx.webServer.register({ kind: 'exact', path: '/api/token-monitor/balance-endpoint', handler: async (req, res) => {
-    if (!guard(req, res)) return
-    if (req.method !== 'PUT') { send(res, 405, { error: { code: 'METHOD_NOT_ALLOWED' } }); return }
-    if (req.headers['content-type']?.split(';')[0]?.trim() !== 'application/json') { send(res, 415, { error: { code: 'UNSUPPORTED_MEDIA_TYPE' } }); return }
-    const provider = new URL(req.url ?? '/', 'http://localhost').searchParams.get('provider') ?? ''
-    try { assertProvider(ctx, provider) } catch { send(res, 400, { error: { code: 'UNKNOWN_PROVIDER' } }); return }
-    let endpoint: unknown
-    try {
-      const chunks: Buffer[] = []; let size = 0
-      for await (const chunk of req) {
-        const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)
-        size += buffer.length
-        if (size > 4_096) { req.resume(); send(res, 413, { error: { code: 'PAYLOAD_TOO_LARGE' } }); return }
-        chunks.push(buffer)
-      }
-      endpoint = validateBalanceEndpoint(JSON.parse(Buffer.concat(chunks).toString('utf8')))
-    } catch { send(res, 400, { error: { code: 'INVALID_REQUEST' } }); return }
-    try {
-      send(res, 200, await scripts.approve(provider, endpoint))
-      registry.invalidate(provider)
-    } catch (error) {
-      const mismatch = error instanceof BalanceEndpointMismatchError
-      send(res, mismatch ? 400 : 500, { error: { code: mismatch ? 'ENDPOINT_NOT_REQUESTED' : 'WRITE_FAILED' } })
-```
-
-</details>
-
-**依据 6 · 源码核查**：[plugins/dsh-token-monitor/src/balance-network.ts:79-142](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-network.ts#L79-L142)
-
-HTTPS、DNS固定、认证与响应约束。
-
-<details>
-<summary>查看原文（64行）</summary>
-
-```text
-export async function requestBalanceJson(descriptor: BalanceRequest, baseURL: string, apiKey: string, signal: AbortSignal): Promise<unknown> {
-  const allowed = validateBalanceRequest(descriptor)
-  const base = new URL(baseURL)
-  if (base.protocol !== 'https:' || base.username || base.password || base.search || base.hash
-    || (base.port !== '' && base.port !== '443') || base.hostname.endsWith('.')) {
-    throw new Error('Balance provider endpoint must be exact HTTPS')
+export async function resolveBalanceIdentity(
+  ctx: Context,
+  provider: string,
+  balanceProvider?: BalanceProviderEntry,
+): Promise<BalanceIdentity | undefined> {
+  if (balanceProvider !== undefined) {
+    const resolved = await ctx.credentials.resolve(credentialRef(balanceProvider.apiKeyEnv))
+    if (!resolved?.value) return undefined
+    return { apiKey: resolved.value, baseURL: balanceProvider.baseURL }
   }
-  const url = new URL(allowed.path, base.origin)
-  // Fake-IP substitution applies only to a domain target; literal addresses keep the original rule.
-  const domainTarget = !ipaddr.isValid(url.hostname.replace(/^\[|\]$/g, ''))
-  const boundedSignal = AbortSignal.any([signal, AbortSignal.timeout(10_000)])
-  let cancelLookup: (() => void) | undefined
-  const records = await Promise.race([lookup(url.hostname.replace(/^\[|\]$/g, ''), { all: true, verbatim: true }),
-    new Promise<never>((_, reject) => {
-      cancelLookup = () => reject(new Error('Balance request cancelled'))
-      if (boundedSignal.aborted) cancelLookup()
-      else boundedSignal.addEventListener('abort', cancelLookup, { once: true })
-    })]).finally(() => { if (cancelLookup) boundedSignal.removeEventListener('abort', cancelLookup) })
-  boundedSignal.throwIfAborted()
-  // A TUN proxy answers ordinary domains with its Fake-IP range; any other non-public answer stays refused.
-  const acceptable = (address: string): boolean => publicBalanceAddress(address)
-    || (domainTarget && fakeIpBalanceAddress(address))
-  if (records.length === 0 || records.some(record => !acceptable(record.address))) throw new BalanceNetworkError('blocked', 'Balance destination must resolve to public or supported Fake-IP addresses')
-  const pinned = records[0]!
-  return new Promise((resolve, reject) => {
-    const req = httpsRequest(url, {
-      method: allowed.method, agent: false, signal: boundedSignal,
-      // Keep original hostname for TLS validation; the socket uses this exact checked address.
-      lookup: (_hostname, options, callback) => {
-        // Answer on a later tick on purpose: node starts connecting inside this callback, and a
-        // connect errno raised there destroys the socket before the request has attached its
-        // listeners. That error then reaches the process as an unhandled 'error' event and ends
-        // the host, so the pinned answer is never handed over in node's own connect stack.
-        setImmediate(() => {
-          if (options.all) callback(null, [pinned])
-          else callback(null, pinned.address, pinned.family)
-        })
-      },
-      headers: { Accept: 'application/json', 'Accept-Encoding': 'identity',
-        ...(allowed.auth === 'bearer' ? { Authorization: `Bearer ${apiKey}` } : { 'x-api-key': apiKey }),
-        ...(allowed.body === undefined ? {} : { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(allowed.body) }) },
-    }, res => {
-      const status = res.statusCode ?? 0
-      if (status < 200 || status >= 300) {
-        res.destroy()
-        // A 429 keeps the provider's own wait so the query never polls harder than requested.
-        const wait = status === 429 ? retryAfterMs(res.headers) : undefined
-        reject(wait === undefined ? new BalanceHttpError(status) : new BalanceNetworkError('rate-limited', `Balance HTTP ${status}`, wait))
-        return
-      }
-      if (res.headers['content-encoding'] && res.headers['content-encoding'] !== 'identity') {
-        res.destroy(); reject(new Error('Compressed balance responses are unsupported')); return
-      }
-      let size = 0
-      const chunks: Buffer[] = []
-      res.on('data', (chunk: Buffer) => {
-        size += chunk.length
-        if (size > MAX_BALANCE_RESPONSE_BYTES) { res.destroy(); reject(new Error('Balance response exceeds 256 KiB')); return }
-        chunks.push(chunk)
-      })
-      res.on('error', () => reject(new Error('Balance response interrupted')))
-      res.on('end', () => {
-        try { resolve(JSON.parse(Buffer.concat(chunks).toString('utf8')) as unknown) }
-        catch { reject(new Error('Balance response is not JSON')) }
+  const descriptor = ctx.llm.listConfigurableProviders().find(item => item.provider === provider)
+  if (!descriptor || descriptor.error) return undefined
+  // 活配置里没有该 namespace 的描述符时视为不可解析。
+  let profile: unknown = ctx.settings.describe().find(item => item.ns === descriptor.settingsNs)?.value
+  for (const key of descriptor.settingsPath) {
+    if (!profile || typeof profile !== 'object') return undefined
+    profile = (profile as Record<string, unknown>)[key]
+  }
+  if (!profile || typeof profile !== 'object') return undefined
+  const fields = profile as Record<string, unknown>
+  const official = isOfficialProvider(provider)
+    && (descriptor.settingsNs === 'llm-deepseek' || descriptor.settingsNs === 'llm-deepseek-account')
+  const ref = fields.apiKeyEnv ?? (official ? 'DEEPSEEK_API_KEY' : undefined)
+  const baseURL = fields.baseURL ?? (official ? launchEnvironmentOf(ctx).get('DEEPSEEK_BASE_URL')?.value ?? 'https://api.deepseek.com' : undefined)
+    ?? PROVIDER_BASE_URL_FALLBACKS[provider]
+  if (typeof ref !== 'string' || !ref || typeof baseURL !== 'string') return undefined
+  const resolved = await ctx.credentials.resolve(credentialRef(ref))
+  if (!resolved?.value) return undefined
+  return { apiKey: resolved.value, baseURL }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[plugins/dsh-token-monitor/src/balance-registry.ts:75-104](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-registry.ts#L75-L104)
+**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/balance-registry.ts:78-119](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/balance-registry.ts#L78-L119)
 
-身份变更和旧结果抑制。
+请求前后身份/revision检查与失败缓存处理。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（42行）</summary>
 
 ```text
-  private async prepare(provider: string): Promise<{ result?: ProviderBalance | Promise<ProviderBalance | undefined> }> {
-    if (this.stopped) return {}
-    const generation = this.generations.get(provider) ?? 0
     const [script, identity] = await Promise.all([this.dependencies.readScript(provider), this.dependencies.resolveIdentity(provider)])
     if (this.stopped || generation !== (this.generations.get(provider) ?? 0)) return {}
     if (script.status !== 'valid' || !script.request || !identity) { this.invalidate(provider); return {} }
@@ -663,172 +469,58 @@ export async function requestBalanceJson(descriptor: BalanceRequest, baseURL: st
         current.lastFailure = undefined
         current.nextAttempt = now() + 15_000
         return current.value
+      } catch (error) {
+        // No upstream exception or response content is exposed to logs or clients.
+        delete current.value
+        current.failures++
+        // Recovery stays fast: an ordinary transport failure waits one poll interval instead of
+        // growing exponentially, so a restarted proxy is picked up by the next scheduled read.
+        // An upstream 429 keeps the wait it asked for; a policy refusal keeps the same short
+        // interval because the address rule is recorded rather than the exemption widened.
+        const requested = error instanceof BalanceNetworkError ? error.retryAfterMs : undefined
+        current.nextAttempt = now() + (requested ?? 15_000)
+        // One diagnostic per failure streak or classification change; never per retry.
+        const kind = error instanceof BalanceNetworkError ? error.kind : 'transport'
+        if (current.failures === 1 || current.lastFailure !== kind) this.dependencies.warn?.('dsh-token-monitor: balance query failed (' + kind + ')')
+        current.lastFailure = kind
+        return undefined
 ```
 
 </details>
 
 #### 缺口
 
-- 供应商余额接口、DNS/TLS防护及脚本逃逸未运行验证。
-  **影响**：不能承诺任意自定义接口安全或正确。
-  **进一步探讨**：先用受控接口与测试凭据验证路径审批、凭据轮换、迟到响应和非公开地址拒绝。
+- 未穷尽balance-network和各供应商响应语义、真实网络效果。
+  **影响**：不能把受限脚本等同于完整安全证明或所有余额正确。
+  **进一步探讨**：固定provider和脚本后定向核网络策略、身份轮换、迟到结果及真实余额语义。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 模块卸载、历史与失败恢复如何影响总负担？
+### Q03 · 本地账本与模块生命周期能否支撑耐久历史？
 
-**研究主题**：工程质量与复用、效果与总成本、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-模块化退出有比“隐藏动画”更具体的实现。runtime为每个feature创建Cordis子生命周期并等待启动，stop先排空设置写入再dispose。uninstall在停止服务和删除前持久化tombstone，保存expectedRevision并把pending及cleanupErrors带回快照；全插件移除先停采集core，单模块移除按选项清配置或历史，并保留已移除状态防自动复装。这些设计支持中断后继续清理，但pending-delete不是已经删除成功。发布包runtime清单由打包生成，未构建源码安装可能根本没有payload，入口会明确要求改用发布包；因此仓库有lib不等于安装完整。
+最影响“消费记录可靠”的限制是内存累计成功不等于明细耐久保存。UsageStorage.add 先 fold并加入records/dailySpend，再 append usage.jsonl；写失败只 warn仍返回next。collector据返回继续 onPersistedRecord，名称不能证明落盘成功；源事件去重集合也在写盘前标记。因此当前进程可继续显示和提醒，重启后却可能缺这一行。冷启动对缺失/损坏行采取 fail-soft，进一步要求读者不要把汇总当财务对账。
 
-历史可靠性也有边界。UsageStorage.add先更新内存，再appendFileSync，写盘失败只warn仍返回成功；core回调名叫onPersistedRecord却不意味着该事件已耐久落盘。UI和动画可能当时看到用量，重启后JSONL缺失；加载历史对损坏行fail-soft跳过，不能把显示总额当完整审计账。持续成本是日志增长、余额轮询、更新模块和校验规则，现金/人工量未知。退出前应保留所需历史、确认pending清理结束，并用供应商账单作为最终依据；不能把删本插件数据当删宿主凭据或会话。
+同时应保留有力反证。sourceEventSeq与sessionId去重能抑制同一live源重复，读取历史也经过验证；模块 bootstrap 在运行前核manifest和core artifact并恢复事务，state置于profile外于包载荷，有独占lease、tombstone与重启恢复。这些是清晰的生命周期工程，不应因账本写失败就称全包没有恢复设计。
+
+安装完整性与数据完整性是不同保证。根包要求打包 runtime/manifest；直接源码或不完整tgz可能无法启动。模块start/stop由Cordis子scope承接，停止core可停止采集，保留数据与删除数据需要用户明确选择。发布说明中的实际桌面截图和测试属于作者材料，本次没有运行复现，未将其当本地证据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/runtime-host.ts:42-68](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/runtime-host.ts#L42-L68)
+**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:139-163](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/storage.ts#L139-L163)
 
-生命周期等待、排空设置和停止。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  const lifecycle: ModuleLifecycle = {
-    async start(id) {
-      if (children.has(id)) return
-      const feature: RuntimeFeature = options.loadFeature ? await options.loadFeature(id) : await import(pathToFileURL(resolve(roots.host, `${id}.mjs`)).href + `?v=${manifest.version}`)
-      const child = ctx.plugin({ name: `token-monitor-${id}`, apply: (scope: Context) => feature.apply(scope, services) })
-      children.set(id, child)
-      try { await child.await() } catch (error) { await child.dispose(); children.delete(id); throw error }
-    },
-    async stop(id) {
-      await coreRuntime?.drainSettings()
-      const child = children.get(id)
-      if (child) { await child.dispose(); children.delete(id) }
-    },
-    async startCore() {
-      if (coreChild) return
-      coreChild = ctx.plugin({ name: 'token-monitor-background-core', apply(scope: Context) { coreRuntime = core.apply(scope, services, id => manager.isInstalled(id)) } })
-      await coreChild.await()
-    },
-    async stopCore() {
-      if (coreChild) { await coreChild.dispose(); coreChild = undefined; coreRuntime = undefined }
-    },
-    async eraseData(id, selection = { configuration: true, history: true }) {
-      const resume = !!coreChild && id !== 'plugin'
-      if (selection.history) await lifecycle.stopCore()
-      try { await core.eraseData(ctx, services, id, selection) }
-      finally { if (selection.history && resume) await lifecycle.startCore() }
-    },
-```
-
-</details>
-
-**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/module-manager.ts:145-193](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/module-manager.ts#L145-L193)
-
-先写tombstone、停止、选择清理与pending。
+先更新内存/去重再写盘，异常不阻止返回。
 
 <details>
-<summary>查看原文（49行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-  async uninstall(request: ModuleUninstallRequest): Promise<ModuleSnapshot> {
-    return this.exclusive(request.expectedRevision, async () => {
-      if (this.state.wholePlugin && !request.wholePlugin) throw new ModuleOperationError('PLUGIN_REMOVED')
-      if (this.state.restartRequired) throw new ModuleOperationError('PLUGIN_RESTART_REQUIRED')
-      if (typeof request.preserveData !== 'boolean' || [request.preserveConfig, request.preserveHistory, request.wholePlugin].some(value => value !== undefined && typeof value !== 'boolean') || !Array.isArray(request.ids) || request.ids.length > 64
-        || request.ids.some(id => !this.manifest.modules.some(m => m.id === id)) || (!request.wholePlugin && !request.ids.length)) throw new ModuleOperationError('INVALID_MODULE_REQUEST', 400)
-      const ids = request.wholePlugin ? this.manifest.modules.map(m => m.id) : [...new Set(request.ids)]
-      if (!request.wholePlugin && ids.some(id => this.state.removed[id] && !this.state.removed[id]!.pending)) throw new ModuleOperationError('MODULE_ALREADY_REMOVED')
-      // Persist tombstones BEFORE teardown so a crash can never enable the module again.
-      const previous = structuredClone(this.state)
-      const record = { preserveData: request.preserveData, preserveConfig: request.preserveConfig ?? request.preserveData, preserveHistory: request.preserveHistory ?? request.preserveData, pending: true }
-      for (const id of ids) this.state.removed[id] ??= { ...record }
-      if (request.wholePlugin) this.state.wholePlugin ??= { ...record }
-      this.state.revision++
-      try { await this.save() } catch (error) { this.state = previous; throw error }
-      if (request.wholePlugin) {
-        try { await this.lifecycle.stopCore() }
-        catch { this.cleanupErrors.set('plugin', 'PLUGIN_STOP_FAILED'); return this.snapshot() }
-      }
-      for (const id of ids) await this.finishRemoval(id)
-      if (request.wholePlugin) await this.finishRemoval('plugin')
-      return this.snapshot()
-    })
-  }
-
-  private async finishRemoval(id: string): Promise<void> {
-    const record = id === 'plugin' ? this.state.wholePlugin : this.state.removed[id]
-    if (!record) return
-    // Completed whole removal is one-shot; keep newly installed bytes available for recovery.
-    if (this.state.wholePlugin && !record.pending) return
-    const files = id === 'plugin' ? this.manifest.core : this.manifest.modules.find(m => m.id === id)?.files ?? []
-    record.pending = true
-    this.cleanupErrors.delete(id)
-    try {
-      if (id === 'plugin' && Object.values(this.state.removed).some(item => item.pending)) return
-      // Whole removal stops capture before reaching any feature or core files.
-      if (id !== 'plugin') await this.lifecycle.stop(id)
-      const configuration = !(record.preserveConfig ?? record.preserveData), history = !(record.preserveHistory ?? record.preserveData)
-      if (!record.erased) {
-        if (configuration || history) await this.lifecycle.eraseData(id, { configuration, history })
-        record.erased = true
-        await this.save()
-      }
-      let failed = false
-      for (const file of files) { try { await removeArtifact(this.roots, file) } catch { failed = true } }
-      if (failed) this.cleanupErrors.set(id, `${id.toUpperCase()}_FILE_DELETE_PENDING`)
-      record.pending = failed
-    } catch { this.cleanupErrors.set(id, `${id.toUpperCase()}_CLEANUP_PENDING`) }
-    await this.save()
-```
-
-</details>
-
-**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/module-bootstrap.ts:16-35](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/module-bootstrap.ts#L16-L35)
-
-未打包源码缺payload的实际拒绝。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-/**
- * runtime/ is generated by the packaging step and is not tracked, so a source
- * install that never ran it ships no payload. Check it before anything else so
- * the loader reports the remedy instead of a bare ENOENT on the manifest path,
- * and name the source-address case plus the uninstall-then-reinstall step that
- * actually clears it (a same-version reinstall is refused while the broken copy
- * is still listed as installed).
- */
-async function assertInstalledPayload(runtime: string): Promise<void> {
-  try { await access(resolve(runtime, 'manifest.json')) }
-  catch (error) {
-    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error
-    throw new Error('dsh-damage-pulse: the installed payload is incomplete: runtime/manifest.json is '
-      + 'missing, so the plugin cannot start. The most common cause is installing from a source address '
-      + '(a repository URL, a `github:` spec, a source archive, or an unpacked source tree that was never '
-      + 'built), which ships no payload because only the packaging step generates it; a damaged or partly '
-      + 'extracted install looks the same. Install the published package for the profile you actually use: '
-      + '`dsh plugin --profile <profile> add dsh-damage-pulse`, or the .tgz from the GitHub Release. If the '
-      + 'target profile still lists a broken copy of the same version, uninstall it first and install '
-      + 'again; unbuilt source can build the payload before mounting it.')
-```
-
-</details>
-
-**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:140-155](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/storage.ts#L140-L155)
-
-内存先更新、append失败仍返回成功。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
+  /** 把一条单次记录累加到对应会话，并追加持久化明细。 */
   add(record: UsageRecord): SessionSummary | undefined {
     if (!isValidUsageRecord(record)) return undefined
     if (this.isDuplicateSourceEvent(record)) return undefined
@@ -845,16 +537,24 @@ async function assertInstalledPayload(runtime: string): Promise<void> {
     }
 
     return next
+  }
+
+  private isDuplicateSourceEvent(record: UsageRecord): boolean {
+    if (record.sourceEventSeq === undefined) return false
+    const key = JSON.stringify([record.sessionId, record.sourceEventSeq])
+    if (this.seenSourceEvents.has(key)) return true
+    this.seenSourceEvents.add(key)
+    return false
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:65-93](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/storage.ts#L65-L93)
+**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:65-94](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/storage.ts#L65-L94)
 
-历史加载容错和排除边界。
+历史fail-soft，坏行和读取失败边界。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
   /** 冷启动回读历史明细（fail-soft：文件缺失/损坏行静默跳过）。 */
@@ -886,35 +586,264 @@ async function assertInstalledPayload(runtime: string): Promise<void> {
       }
     } catch {
       // 首次运行无文件，静默
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/collector-core.ts:43-50](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/collector-core.ts#L43-L50)
+
+storage成功返回后仍发后续回调。
+
+```text
+    const record = options.priceRecord?.(raw, frozen) ?? raw
+    if (!isValidUsageRecord(record) || storage.add(record) === undefined) return
+    const kind = record.inputTokens > 0 || record.cacheWriteTokens > 0 ? 'miss' : 'normal'
+    options.onPersistedRecord?.(record, kind)
+    queueMicrotask(() => {
+      if (!active) return
+      options.appendUsageRecord?.(session, record)
+    })
+```
+
+**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/module-bootstrap.ts:47-85](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/module-bootstrap.ts#L47-L85)
+
+独占lease、状态、事务恢复和载荷验证。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+export async function bootModules(ctx: Context, pluginRoot: string, clientRoot: string): Promise<void> {
+  const runtime = resolve(pluginRoot, 'runtime')
+  await assertInstalledPayload(runtime)
+  // Package managers replace node_modules during upgrades. Keep tombstones and
+  // the transaction journal in the profile, outside the installed payload.
+  const stateFile = resolve(pluginRoot, '..', '..', '.dsh-damage-pulse', 'module-state.json')
+  const legacyStateFile = resolve(runtime, 'state.json')
+  const roots: ArtifactRoots = { host: resolve(runtime, 'host'), assets: resolve(runtime, 'assets'), client: clientRoot }
+  await mkdir(dirname(stateFile), { recursive: true })
+  const releaseLease = await acquireModuleLease(stateFile)
+  ctx.effect(() => releaseLease, 'token-monitor: exclusive installed runtime')
+  await recoverModuleLock(stateFile)
+  const { manifest, removed } = await withFileLock(stateFile, async () => {
+    try { await readFile(stateFile, 'utf8') }
+    catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error
+      // In-place installations can migrate the old package-local state.
+      // A legacy transaction needs recovery with its original package first.
+      try {
+        await readFile(legacyStateFile + '.transaction.json', 'utf8')
+        throw new Error('LEGACY_MODULE_RECOVERY_REQUIRED')
+      } catch (journalError) {
+        if ((journalError as NodeJS.ErrnoException).code !== 'ENOENT') throw journalError
+      }
+      try { await atomicJson(stateFile, JSON.parse(await readFile(legacyStateFile, 'utf8'))) }
+      catch (legacyError) { if ((legacyError as NodeJS.ErrnoException).code !== 'ENOENT') throw legacyError }
+    }
+    await recoverModuleTransaction(stateFile, roots)
+    let state: { manifest?: unknown; wholePlugin?: { pending?: boolean }; removed?: Record<string, { pending?: boolean }> } | undefined
+    try { state = JSON.parse(await readFile(stateFile, 'utf8')) }
+    catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error }
+    const packaged = JSON.parse(await readFile(resolve(runtime, 'manifest.json'), 'utf8'))
+    // Pending deletion still owns the previous release's paths. Only a completed
+    // whole removal can evaluate a replacement package for reinstatement.
+    const pending = state?.wholePlugin?.pending || Object.values(state?.removed ?? {}).some(record => record.pending)
+    const manifest = state?.wholePlugin && pending && state.manifest
+      ? validateManifest(state.manifest) : selectBootManifest(packaged, state?.wholePlugin ? undefined : state?.manifest)
+    if (!state?.wholePlugin) for (const file of manifest.core) await verifyArtifact(roots, file)
+    return { manifest, removed: !!state?.wholePlugin }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[plugins/dsh-token-monitor/src/runtime-host.ts:42-61](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/runtime-host.ts#L42-L61)
+
+模块和core子scope启动/停止。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  const lifecycle: ModuleLifecycle = {
+    async start(id) {
+      if (children.has(id)) return
+      const feature: RuntimeFeature = options.loadFeature ? await options.loadFeature(id) : await import(pathToFileURL(resolve(roots.host, `${id}.mjs`)).href + `?v=${manifest.version}`)
+      const child = ctx.plugin({ name: `token-monitor-${id}`, apply: (scope: Context) => feature.apply(scope, services) })
+      children.set(id, child)
+      try { await child.await() } catch (error) { await child.dispose(); children.delete(id); throw error }
+    },
+    async stop(id) {
+      await coreRuntime?.drainSettings()
+      const child = children.get(id)
+      if (child) { await child.dispose(); children.delete(id) }
+    },
+    async startCore() {
+      if (coreChild) return
+      coreChild = ctx.plugin({ name: 'token-monitor-background-core', apply(scope: Context) { coreRuntime = core.apply(scope, services, id => manager.isInstalled(id)) } })
+      await coreChild.await()
+    },
+    async stopCore() {
+      if (coreChild) { await coreChild.dispose(); coreChild = undefined; coreRuntime = undefined }
+```
+
+</details>
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 什么条件下值得试，怎样核成本与退出？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+适合把它当个人消费观察器，先只开用量和明细，用少量有明确usage的请求核来源、缓存、规则和供应商记录；没有余额凭据也能观察原始量。只有账单精确结算、硬预算拦截或合规耐久账本需求的人，不宜直接依赖它。预算检测代码发布通知，没有取消请求控制；提醒之后用户仍需自己停止或调整任务。
+
+首次需匹配宿主客户端和完整发布载荷，必要的sessions/credentials/settings与客户端注入面；持续付出JSONL增长、轮询、UI与可选脚本/通知服务成本，并人工复核规则。所有资源量、配置耗时和节省金额均未知，不因作者赞助或可安装就写免费。微信/更新模块未全审，应在确认需要、权限和退路后另开，而不是把它们当核心采集启动条件。
+
+停止条件是明细无法与来源对应、出现unpriced却被误认成零费、写盘告警或余额身份不符。此时暂停相关可选功能，保留原始账本与宿主日志，回到供应商记录核对；卸载前选择保留配置和历史，不能清空账本来掩盖故障。若日常复核负担大于同屏观察的便利，应退出试用。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/index.ts:16-18](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/index.ts#L16-L18)
+
+核心必选服务。
+
+```text
+export const name = 'dsh-token-monitor'
+export { Config } from './config-base.ts'
+export const inject = ['sessions', 'credentials', 'settings']
+```
+
+**依据 2 · 作者声明**：[README.md:24-35](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/README.md#L24-L35)
+
+作者安装完整包、profile与凭据说明。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+````text
+**当前源码版本：4.3.2，适配 DeepSeek Harness 0.2.1-rc.1 至 rc.5。** 4.3.0 与 4.3.1 缺少 `0.2.1-rc.4` 的兼容声明，会被该宿主的兼容检查跳过。4.3.2 刚发布时会受包管理器约 24 小时的新版本等待期影响；需要立即安装时请指定版本，或使用 Release 里完整的 `.tgz`。
+
+在桌面版「插件」页添加包名 `dsh-damage-pulse`，或下载 Release 中完整的 `.tgz` 后添加其文件路径。也可用 CLI 安装 npm 当前发布版：
+
+```powershell
+dsh plugin --profile desktop add dsh-damage-pulse
+```
+
+将 `desktop` 换成实际使用的 profile 名。安装后**完整退出桌面程序（含托盘）再启动**，在悬浮卡右键的「卸载与更新」核对版本。
+
+- 需要指定版本时，使用对应 Release 的预编译 `.tgz`；不要直接安装仓库 URL、`github:` 地址、`Source code` 压缩包或未打包的源码目录，它们缺少运行载荷。
+- 页面提示已安装时，先移除再添加完整包；保留配置和历史数据，不用清空账本解决启动问题。
+````
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:118-137](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/README.md#L118-L137)
+
+作者明确预算不阻断和模块保留数据。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+### 提醒与微信通知
+
+可设置每日预算、峰谷切换和连续缓存命中异常提醒，通过鲸鱼娘气泡或 ClawBot 微信发送。预算提醒不会阻止或取消请求。业务通知默认关闭，测试消息可独立发送；设置面板提供扫码登录、连接状态、刷新、重连与断开操作。
+
+<p align="center"><img src="docs/assets/readme/settings-dialog.png" alt="提醒规则、通知渠道与微信连接" width="720"></p>
+
+<details>
+<summary>查看提醒规则与微信示例</summary>
+
+<p align="center"><img src="docs/assets/readme/notification-settings.png" alt="预算、峰谷与缓存异常提醒" width="520"></p>
+
+<p align="center"><img src="docs/assets/readme/dsh-damage-pulse-wechat-live.jpg" alt="微信通知示例" width="520"></p>
+
+</details>
+
+### 模块管理与更新
+
+桌宠、数据概览、通知、计费规则和微信渠道五个模块可独立卸载，状态在重启与升级后保留。默认保留配置和历史；取消保留选项会清除对应模块的数据。整体卸载会停止用量采集。
+
+「卸载与更新」可检查 GitHub Release，并在校验版本、下载来源与 SHA-256 后安装。正常升级保留设置、账本和已卸载模块状态。
+```
+
+</details>
+
+**依据 4 · 源码核查**：[plugins/dsh-token-monitor/src/provider-notifications.ts:55-62](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/provider-notifications.ts#L55-L62)
+
+预算阈值实际发布通知。
+
+```text
+    const anomaly = detector.observe(record)
+    if (anomaly) publish(record.provider, createCacheHitAnomalyNotification(anomaly, record), formatCacheHitAnomalyMessage(anomaly))
+    if ((record.billingStatus !== undefined && record.billingStatus !== 'priced') || beijingDateKey(record.timestamp) !== beijingDateKey(timestamp)) return
+    const state = budgetFor(record.provider, timestamp)
+    const date = beijingDateKey(timestamp)
+    state.total = { ...state.total, date, cost: (state.total.date === date ? state.total.cost : 0) + record.cost, updatedAt: timestamp }
+    const crossing = state.tracker.observe(state.total, config.dailyBudgetCny, config.dailyBudgetEnabled)
+    if (crossing && config.budgetExceededNotificationEnabled) publish(record.provider, createBudgetThresholdNotification(crossing, timestamp, record.provider), formatBudgetThresholdMessage(crossing))
+```
+
+**依据 5 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:139-155](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/storage.ts#L139-L155)
+
+耐久失败需要用户对账的实际负担。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  /** 把一条单次记录累加到对应会话，并追加持久化明细。 */
+  add(record: UsageRecord): SessionSummary | undefined {
+    if (!isValidUsageRecord(record)) return undefined
+    if (this.isDuplicateSourceEvent(record)) return undefined
+    const next = this.fold(record)
+    this.summaries.set(record.sessionId, next)
+
+    // 明细：内存缓存 + JSONL 追加（fail-soft，落盘失败不影响运行时）。
+    this.records.push(record)
+    this.addToDailySpend(record)
+    try {
+      appendFileSync(join(this.dataDir, 'usage.jsonl'), `${JSON.stringify(record)}\n`, 'utf8')
+    } catch (error) {
+      console.warn(`[dsh-token-monitor] 明细落盘失败: ${String(error)}`)
+    }
+
+    return next
 ```
 
 </details>
 
 #### 缺口
 
-- 没有模块升级、删除中断及落盘失败的运行记录。
-  **影响**：不能断言退出和账本恢复均已通过。
-  **进一步探讨**：用独立profile注入只读存储及中途退出，核对tombstone、pending、文件、运行服务和重启历史。
+- 无资源基准、工作量记录与预算行为效果对照。
+  **影响**：不能推算ROI、节费率或单位合格任务成本。
+  **进一步探讨**：固定任务与规则，比较原账单流程和插件流程，记录全部复核时间、存储/CPU、错误及总费用。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 什么人值得试，如何验证价值及新方向？
+### Q05 · 如何减少金额与耐久状态的误读？
 
-**研究主题**：采用判断、新假设与验证、贡献与相对优势、效果与总成本
+**研究主题**：新假设与验证、贡献与相对优势
 
 #### 完整回答
 
-建议经常查看DSH用量、能接受本地估价而非财务账单的个人用户先试基础用量与界面，不急于添加自定义余额脚本或微信通知。相较反复打开控制台，它把缓存分量和当前任务用量放到对话旁，提供观察机会；是否改变预算行为或减少成本没有用户实验。团队财务核算、付款对账或需要证明每笔持久化的场景不宜依赖本地动画和汇总。
+假设可在现有金额和charge反馈旁持续提供来源覆盖、priced/unpriced、耐久保存和余额采集时间四类可追溯状态，让用户先判断这笔数能否用于决策。推导来自Q01的本地规则估价、Q03的内存/磁盘分离以及Q02的余额更新时间；拟议增量是解释可信度，不能让估价自动成为供应商扣款。
 
-首次要固定宿主、完整发布包、模型/供应商规则与所需模块；持续检查规则、磁盘、余额状态和权限，选装通知会增加配置和外部数据流。失败恢复需对账本缺口、provider迟到结果和模块pending分别核对，不能用重新安装一笔带过；未记录金额与耗时。可推导未验证方向是为每条charge附带“供应商报告、估价、已耐久保存、仅内存、余额采集时间”的可见标志，并在汇总处显示覆盖，而非只给总数。它可能减少把动画/估价当已扣账的误读，增加UI负担；用模拟落盘失败和规则未知的任务比较用户能否识别缺口、纠错时间与干扰。若识别率不提高或打断更多而无决策改善，就停止该方向。
+反证是记录已带billingStatus、sourceEventSeq，余额已带updatedAt和generation，且已有失败告警，因此不能说系统完全没有状态。需要先核产品哪些位置已呈现，再只补真正遗漏的信息，防止把同一数据重复成噪声。
+
+最小实验在同一桌面版本安排正常计价、未知模型、磁盘不可写、凭据轮换/迟到结果几类合成演练，比较现有UI和状态摘要原型。观察用户能否发现不完整、是否错误把金额用于结算、核对耗时和打断负担；若已有UI同样清楚、摘要滞后或干扰更多则否定。未得到这种用户证据前，它只是未验证设计，不是已确认需求或本包已有贡献。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/collector-core.ts:33-46](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/collector-core.ts#L33-L46)
+**依据 1 · 源码核查**：[plugins/dsh-token-monitor/src/collector-core.ts:33-46](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/collector-core.ts#L33-L46)
 
-用量与估价状态可分层。
+现有原始来源和unpriced字段。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -938,20 +867,14 @@ async function assertInstalledPayload(runtime: string): Promise<void> {
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:140-155](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/storage.ts#L140-L155)
+**依据 2 · 源码核查**：[plugins/dsh-token-monitor/src/storage.ts:146-155](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/storage.ts#L146-L155)
 
-耐久保存状态是新假设的具体缺口。
+落盘失败与内存回传分离。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-  add(record: UsageRecord): SessionSummary | undefined {
-    if (!isValidUsageRecord(record)) return undefined
-    if (this.isDuplicateSourceEvent(record)) return undefined
-    const next = this.fold(record)
-    this.summaries.set(record.sessionId, next)
-
     // 明细：内存缓存 + JSONL 追加（fail-soft，落盘失败不影响运行时）。
     this.records.push(record)
     this.addToDailySpend(record)
@@ -966,9 +889,9 @@ async function assertInstalledPayload(runtime: string): Promise<void> {
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/balance-registry.ts:94-104](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/plugins/dsh-token-monitor/src/balance-registry.ts#L94-L104)
+**依据 3 · 源码核查**：[plugins/dsh-token-monitor/src/balance-registry.ts:94-104](https://github.com/wssfk12138/dsh-damage-pulse/blob/26e8d5ce3689f6bb4b053b14a6e953adc37d8fdf/plugins/dsh-token-monitor/src/balance-registry.ts#L94-L104)
 
-余额有独立更新时间和身份。
+余额身份检查和updatedAt已存在。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -989,25 +912,10 @@ async function assertInstalledPayload(runtime: string): Promise<void> {
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:87-94](https://github.com/wssfk12138/dsh-damage-pulse/blob/d51989d7ee378db9d2da9aef43f5161c34680dee/README.md#L87-L94)
-
-作者模块配置与退出说明。
-
-```text
-## 模块化管理
-
-插件把能力拆成五个可以单独卸载的功能模块：**桌宠功能区**（鲸鱼娘动画、拖动与桌宠资源）、**数据概览功能区**（数据概览、用量明细与历史查询）、**通知功能区**（预算、异常、峰谷提醒与桌宠气泡）、**计费规则功能区**（官方/第三方计费规则、余额查询与扣费动画）、**微信通知渠道**（微信登录、连接、测试消息与投递）。
-
-- 在「卸载与更新」面板可以看到当前插件版本、每个模块的安装状态，单独卸载某个模块，或者一次性卸载整个插件。
-- 已卸载的模块会记住状态并禁止自动重装。卸载默认勾选保留配置与历史数据；取消对应选项会清除该插件或模块拥有的配置、用量账本与历史，不会清除宿主凭据。
-- 「检查更新」读取项目主页的 GitHub Release，比较版本后提供「安装更新」；安装前会校验版本、资产名称、下载来源与 SHA-256，只有识别到可安装的 profile 时才执行安装。
-- 用量采集属于常驻基础能力：卸载整个插件时会一并停止采集，重启仍保持卸载状态。恢复时，在桌面版「插件」页移除仍列出的插件，再添加完整的发布包或打包后的 `.tgz`，重启当前 profile；新包的全部文件通过校验后恢复。缺失或损坏的包不会自动恢复，启动日志会提示重新安装。
-```
-
 #### 缺口
 
-- 没有预算行为、误读与使用干扰的用户对照。
-  **影响**：不能宣称桌宠导致节费或新状态标志更好。
-  **进一步探讨**：用同一批带缺口记录让用户分别解释总额，记录误判和修复时间。
+- 未完整核全部UI状态呈现，也无用户误读和原型对照。
+  **影响**：不能确认新增摘要的必要性或净收益。
+  **进一步探讨**：先读当前具体展示，再按故障演练交叉对照，保留否定结果。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

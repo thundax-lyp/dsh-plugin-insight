@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[51868ae](https://github.com/1na-ko/dsh-hdc-bridge/tree/51868ae19c9114ea1f7d148f708928c0c0d00e59)
+源码版本：[61b3e6d](https://github.com/1na-ko/dsh-hdc-bridge/tree/61b3e6d827e644c96fdfb527114ef9e5e3b17e06)
 
 <!-- BEGIN META -->
-[![GitHub ★ 19](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=19&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1na-ko/dsh-hdc-bridge) [![npm 30d 1,689](https://img.shields.io/static/v1?label=npm+30d&message=1%2C689&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge) [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge)
+[![GitHub ★ 20](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=20&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1na-ko/dsh-hdc-bridge) [![npm 30d 1,874](https://img.shields.io/static/v1?label=npm+30d&message=1%2C874&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge) [![最新发布 2026-10-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hdc-bridge)
 <!-- END META -->
 
-> **功能**：为 DSH 集成鸿蒙设备调试、截图/UI操作、官方知识查询及可选 DevEco 构建签名流程。
+> **功能**：在 DSH 中连接鸿蒙设备调试、版本化 API 知识、工程构建和部署，并提供设备面板。
 
-> **亮点**：把成熟hdc和官方工具链/知识接入DSH原生结果、图片和工程流程，减少手工材料交接；不将协议、官方文档与上游编译能力记为原创。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把成熟hdc、官方工具链和知识接入原生工具、图片与工程流程，结构化失败/产物核验减少只看命令成功的误判；不把上游协议/文档算原创。
 
-> **主要限制**：工具层和面板不是同一执行权限通道，preferred设备单值也需宿主实例作用域才能兑现会话隔离；多设备自动选择可能偏离意图。这些静态边界尚未运行复现。详见[Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 的preferred设备单值需要宿主实例作用域才能兑现会话隔离，工具Shell和面板直接进程也不是同一权限通道。已有Host/Origin等请求栅栏，但多会话设备语义仍未运行验收。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要原生鸿蒙闭环，相对直接hdc有何贡献？](#detail-section-11)
-  - [Q02 · 设备选择、Shell调用和错误如何流动？](#detail-section-12)
-  - [Q03 · 面板与工具层是否共享权限及目标边界？](#detail-section-13)
-  - [Q04 · 工具链和知识可信度依赖什么？](#detail-section-14)
-  - [Q05 · 工程和三阶段成本怎样？](#detail-section-15)
-  - [Q06 · 可推导何种改进，当前如何采用？](#detail-section-16)
+  - [Q01 · 本包比直接 hdc 或官方 CLI 增加什么？](#detail-section-11)
+  - [Q02 · 工具如何从会话走到设备与业务结果？](#detail-section-12)
+  - [Q03 · 会话设备记忆和面板权限能否视为同一保证？](#detail-section-13)
+  - [Q04 · 采用负担与受控探索应如何安排？](#detail-section-14)
+  - [Q05 · 执行收据是否能减少目标混淆？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：鸿蒙开发者需要在DSH内观察设备、改码、部署再验证，合格结果绑定正确设备和真实产物，不只是命令exit0。详见[Q01](#research-q01)。
+> **用途**：[Q01](#research-q01) 为在 DSH 内反复改码、部署和看设备的鸿蒙开发者减少手动材料交接；合格结果是正确设备的真实行为，而非exit0。
 
-直接hdc、DevEco CLI与文档/截图人工交接，或已有MCP能力层；插件重点在DSH闭环而非重写基础协议。
+直接hdc/官方CLI、SDK文档与人工图片/日志回传是基线。本包继承协议和编译知识，新增原生接缝，未做同条件效果排名。
 
 <a id="detail-section-3"></a>
 
@@ -52,70 +51,78 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 设备调试/UI | 观察和操作鸿蒙目标 | 明确target，含修改动作 |
-| 工具链/知识 | 构建、签名、API与文档 | 本机版本及许可来源需对应 |
-| 会话编译 | 维护工程根和部署 | 工程目录不等权限边界 |
-| 设备面板 | 只读状态/截图与目标选择 | 直接进程和路由权限另核对 |
-
-**流程与依赖**
+|---|---|---|
+| 设备列表/目标选择 | 确认连接设备 | 默认记忆作用域需核，多设备显式target |
+| 安装与设备验证 | 部署hap并看UI/日志 | 有外部副作用，ok不替代真实验收 |
+| Shell执行适配 | 通过宿主策略调用hdc | execute/result或旧run契约 |
+| 构建产物检查 | 结合hap字段判断构建 | 存在不证明签名/新旧/业务正确 |
+| 设备面板 | 同屏看设备状态 | 直接进程通道，有请求围栏非每会话授权 |
+| 工程目录记忆 | 编译工具选工程 | sessionID内存Map，非耐久配置 |
 
 #### 启动与依赖
 
-| 条件 | 用途 | 失效影响 |
-| --- | --- | --- |
-| DSH shell/tools与策略 | 工具执行 | seam/策略不匹配拒绝 |
-| hdc/授权设备 | 调试与部署 | 未连接不能闭环 |
-| Studio或CLT、SDK/Java | 特定构建/签名/API查询 | 操作可用范围收窄 |
-| skills及webServer可选 | 指引和面板 | 缺服务不等全部工具失败 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+|---|---|---|---|
+| DSH Shell/tools 与匹配API | 工具必需 | 策略解析、执行和注册 | 双seam均无则明确不兼容 |
+| 本机hdc和调试授权设备 | 设备操作必需 | 连接/截图/安装/日志 | 无设备降级；多设备显式target |
+| SDK、Studio或CLT、签名配置 | 构建部署按任务必需 | 编译/检查/签名 | 回退和错误提示不保证产物可装 |
+| 图像模型 | 看截图时必需 | 理解设备图像 | 可改用UI dump文本但语义仍需核验 |
+| Web客户端/服务与信任主机 | 面板必需 | 状态和截图路由 | headless不等于核心工具失败；围栏非会话授权 |
+| 本地知识与目标API条件 | 知识任务必需 | 版本化查阅 | 文档存在不证明工程支持 |
+
+[Q03](#research-q03) 的实例作用域需先确认，不能用依赖安装替代。
 
 #### 启动步骤
 
-| 步骤 | 执行者 | 判断标准 |
-| --- | --- | --- |
-| 准备工具链和设备 | 开发者 | 发现正确目标及API |
-| 显式设target/工程 | 用户/Agent | 与预期设备和目录一致 |
-| 观察改码构建部署 | Agent/开发者 | 业务ok与真实产物 |
-| 再截图/日志验证 | 开发者 | 合格任务结果，不只exit0 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+|---|---|---|
+| 准备 | 用户隔离样例工程/无真实数据设备，固定目标和工具链 | 版本/权限/target明确 |
+| 核作用域 | 用户在两会话切换显式/默认设备并检查面板 | 接收设备与意图相同，否则停止部署 |
+| 构建 | 模型调用工具，用户核ok和hap字段 | 不只读文字成功，旧产物人工核对 |
+| 部署验证 | 用户明确target，工具安装并读UI/日志 | 正确设备实际行为合格 |
+| 失败退出 | 停用工具/面板并回直接CLI | 核部分文件/设备变化，不假定回滚 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | SDK/Studio/CLT、设备和存储 | 连接、签名、API版本及策略核对 | SDK/设备/签名与策略依环境；初始金额和耗时未知 |
-| 持续使用 | 编译、截图日志和模型调用 | 观察/部署/验证，收益未测 | 编译/截图日志与后续模型费依任务；净收益未知 |
-| 失败恢复 | 重编译、安装和部分状态 | 核对旧产物、设备数据、签名与权限 | 重编/安装与旧产物/设备数据核对工时未知 |
+|---|---|---|---|
+| 首次 | 工具链/设备/存储和模型费用未知 | 连接/签名/API/作用域核对耗时未知 | npm零依赖不等于零环境负担 |
+| 持续 | 构建/截图/日志与模型资源未知 | 复核目标、产物和真实行为 | 无节时对照 |
+| 失败恢复 | 重编/重装资源未知 | 旧hap、设备数据、签名与权限核对 | 失败不证明副作用回滚 |
+| 退出 | 备份/残留文件量未知 | 停用后回直接CLI，保留样例证据 | 设备操作的外部副作用需另查 |
 
+以正确设备上一项合格应用行为为单位，缺尝试/合格数不算单位成本。
 
 #### 效果
 
-| 目标 | 源码支持 | 边界 |
-| --- | --- | --- |
-| 设备闭环 | 列表/截图/安装与结果包装 | 正确业务仍需后续验证 |
-| 知识版本化 | SDK/官方优先技能纪律 | 文档存在不保证工程可用 |
-| 构建成功识别 | 输出及产物额外判据 | 旧产物/目标和签名需核对 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
+|---|---|---|
+| 原生设备闭环 | 工具注册、结果包装与图片/日志交接 | 目标设备正确性及用户效率 |
+| 构建成功判断 | 输出和hap存在额外核查 | 产物新旧/签名与真实行为 |
+| 面板请求限制 | Host/Origin/peer等独立栅栏 | 真实部署会话/设备授权 |
+| 版本知识 | 接入SDK/官方材料声明 | 工程兑现与业务正确性 |
 
-> **思考**：工具层和面板不是同一执行权限通道，preferred设备单值也需宿主实例作用域才能兑现会话隔离；多设备自动选择可能偏离意图。这些静态边界尚未运行复现。详见[Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 的preferred设备单值需要宿主实例作用域才能兑现会话隔离，工具Shell和面板直接进程也不是同一权限通道。已有Host/Origin等请求栅栏，但多会话设备语义仍未运行验收。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把成熟hdc和官方工具链/知识接入DSH原生结果、图片和工程流程，减少手工材料交接；不将协议、官方文档与上游编译能力记为原创。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把成熟hdc、官方工具链和知识接入原生工具、图片与工程流程，结构化失败/产物核验减少只看命令成功的误判；不把上游协议/文档算原创。
 
-core抽离、业务失败、保留输出状态可借鉴；面板直接进程与工具Shell策略不同，mock测试只证明包装。详见[Q05](#research-q05)。
+[Q02](#research-q02) core抽离、Shell双契约适配和业务失败包装可借鉴；[Q03](#research-q03) 独立请求围栏值得复用但需匹配反向代理，设备单值状态不可直接当多会话设计。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-工具层和面板不是同一执行权限通道，preferred设备单值也需宿主实例作用域才能兑现会话隔离；多设备自动选择可能偏离意图。这些静态边界尚未运行复现。详见[Q03](#research-q03)。
+[Q03](#research-q03) 的preferred设备单值需要宿主实例作用域才能兑现会话隔离，工具Shell和面板直接进程也不是同一权限通道。已有Host/Origin等请求栅栏，但多会话设备语义仍未运行验收。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察，先核对core作用域和面板权限；显式target与工程、使用无真实数据设备，确认状态绑定后再决定受控试用。详见[Q06](#research-q06)。
+[Q04](#research-q04) 先观察作用域，在无真实数据设备上以显式target做列表/诊断，确认实例隔离和面板可达范围后再决定受控部署。目标、策略或产物不明确就停止自动化，回直接CLI逐步核对。
 
 <a id="detail-section-7"></a>
 
@@ -123,18 +130,18 @@ core抽离、业务失败、保留输出状态可借鉴；面板直接进程与�
 
 **核查状态**：已检查源码。
 
-工具链编排和结构化结果有源码支持；多会话目标作用域及面板权限待核对。显式设备/产物收据为未验证方向。
+已检查原生工具、Shell接线、设备选择、面板围栏与产物判据；宿主实例作用域及目标设备运行未验收。收据方案待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/host.js、lib/hdc-core.mjs、lib/panel.mjs、lib/skills.mjs、lib/compile-output.mjs、lib/compile-session-cwd.mjs、scripts/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/compile-session-cwd.mjs、lib/hdc-core.mjs、lib/host.js、lib/http-guard.mjs、lib/panel.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交核心工具接线、设备core、面板路由与进程、运行时技能、工程目录和mock测试；未全量审计25工具和各平台，不将作者真机声明当本轮验收。
-- 下一步：进一步探讨可从双会话双设备状态、面板认证、旧HAP和签名/沙箱失败四类反例入手，再对照人工流程衡量正确部署和恢复成本。
+- 边界：人工定向核根组件host入口、Shell/工具包装、core设备、面板直接进程与http guard、工程cwd和构建产物；未全审全部工具、知识、签名/升级路线与各平台。
+- 下一步：未运行目标代码、作者smoke、宿主或设备测试；作者矩阵保留为声明。下一步优先真实实例作用域与双设备/工程序列，随后核部署结果和恢复成本。
 
 **分析版本**
 
 - **仓库**：[1na-ko/dsh-hdc-bridge](https://github.com/1na-ko/dsh-hdc-bridge)
-- **版本号**：0.10.2（[固定提交 51868ae](https://github.com/1na-ko/dsh-hdc-bridge/tree/51868ae19c9114ea1f7d148f708928c0c0d00e59)）
-- **版本日期**：2026-10-20（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.10.3（[固定提交 61b3e6d](https://github.com/1na-ko/dsh-hdc-bridge/tree/61b3e6d827e644c96fdfb527114ef9e5e3b17e06)）
+- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -142,9 +149,9 @@ core抽离、业务失败、保留输出状态可借鉴；面板直接进程与�
 
 <a id="innovation"></a>
 
-可研究显式会话/设备/工程/产物收据，以双设备双工程和连接切换序列比较误投目标及人工负担，当前未验证。详见[Q06](#research-q06)。
+[Q05](#research-q05) 用会话/工程/设备/产物收据连接已有状态，检验双设备双工程下的误投与确认负担；当前为未验证假设。
 
-进一步探讨可从双会话双设备状态、面板认证、旧HAP和签名/沙箱失败四类反例入手，再对照人工流程衡量正确部署和恢复成本。
+未运行目标代码、作者smoke、宿主或设备测试；作者矩阵保留为声明。下一步优先真实实例作用域与双设备/工程序列，随后核部署结果和恢复成本。
 
 <a id="detail-section-9"></a>
 
@@ -153,55 +160,57 @@ core抽离、业务失败、保留输出状态可借鉴；面板直接进程与�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 47 | 41131 | — | — | 270128 |
+| .md | source | 48 | 41172 | — | — | 271633 |
 | .cjs | source | 1 | 458 | 361 | 36 | — |
-| .js | source | 2 | 3281 | 2860 | 324 | — |
-| .mjs | source | 17 | 3453 | 2904 | 377 | — |
+| .mjs | source | 19 | 4021 | 3332 | 487 | — |
+| .js | source | 2 | 3328 | 2895 | 335 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+created%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z) [![近30天关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A01%3A00.154Z..2026-10-22T05%3A01%3A00.154Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+created%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z) [![近30天关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/1na-ko/dsh-hdc-bridge/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-03。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本如何组织鸿蒙设备调试与知识/编译闭环，其目标、权限和成功判据是否足以支持采用？
+**插件研究总目标**：设备闭环是否把调用会话、工程、设备和产物保持一致，代价与权限边界是否可核对？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要原生鸿蒙闭环，相对直接hdc有何贡献？
+### Q01 · 本包比直接 hdc 或官方 CLI 增加什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向已有鸿蒙工程、真机或模拟器和本机工具链的开发者，让DSH Agent完成观察设备、截图/布局、改码、构建部署再验证。合格结果不仅是命令exit0，还需要正确目标设备、有效HAP与实际界面/运行状态符合任务。简单替代是人工执行hdc、DevEco和文档查询，再把截图与日志交给模型；MCP工具也已覆盖hdc层，因此不能把复用hdc协议记为原创。
+在 DSH 内修改 HarmonyOS 工程、反复观察设备、安装和验证应用的开发者，是本包的具体对象。原办法是模型说明与手动 hdc/DevEco CLI 之间复制命令、截图、日志和知识；本包把这些交接变成原生模型工具、图片结果、运行时技能和 Web 面板。合格交付应是目标工程构建产物被安装到预期设备，并用真实界面或日志核验行为，而不只是返回exit0。
 
-插件增量在DSH原生工具结果、图片读取路径、会话工程目录、知识优先级和可解释失败的组合。skills明确先确定API版本、读本机SDK声明再查官方材料，编译能力移植也在源码声明上游归属。这些把分散操作组织成闭环，但不保证模型改代码正确或界面任务已达成。设备控制、签名与清数据等需要开发者实际掌握目标权限，不能只按工具数量评价值。
+入口以Cordis apply挂 tools，package声明bundle和Web client，属于原生DSH插件。它复用本机hdc协议、官方编译器/文档与SDK，增量是原生接缝、版本化知识检索及统一失败包装，不是重写设备协议或新编译算法。作者列出的真机测试矩阵属于作者报告，本轮不据此声称运行通过；也没有与直接CLI同任务耗时对照。
+
+如果开发者已有成熟CLI脚本且很少把设备结果交给模型，新增工具面不一定值得。更值得核查的是任务身份是否贯穿会话、工程、设备和产物，避免自动化让错误目标执行得更快。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-12](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/README.md#L1-L12)
+**依据 1 · 作者声明**：[README.md:3-14](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/README.md#L3-L14)
 
-作者自述不重写hdc协议，价值是DSH闭环。
+作者定位、原方案与原生接缝。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-# dsh-hdc-bridge
-
 > DSH 原生鸿蒙开发助手：`hdc` 设备闭环调试（看设备 → 截图 → 看图 → 改码 → 装包 → 验证）＋ 官方优先版本化知识层（离线 Tier-1 随包 + SDK 机读 + 官方文档检索）＋ 可选官方 DevEco CLI 构建/签名通道。
 > A DSH-native HarmonyOS dev assistant: the hdc device loop (inspect → screenshot → view → fix → install → verify), an official-first version-classified knowledge layer (offline Tier-1 bundled + SDK-accurate reads + official docs search), and an optional official DevEco CLI build/sign backend.
 
@@ -212,126 +221,24 @@ core抽离、业务失败、保留输出状态可借鉴；面板直接进程与�
 - 会话内工具卡片与 `read_image` 原生闭环
 - 按调用会话解析沙箱策略（与 `pwsh` 工具同款路线），截图写入 `<workspace>/.dsh-hdc/screenshots/`
 - 结构化的失败上报（hdc 传输层退出码不可靠，插件用输出标记 + 落盘校验兜底）
+- v0.7 起面板按官方 client 插件形态集成（边栏入口 + 浮动面板 + 官方主题），v0.9 补齐会话级编译、静态检查、部署与日志工具（switch_cwd / build_project / arkts_check / start_app / hdc_log）
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/skills.mjs:65-84](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/skills.mjs#L65-L84)
+**依据 2 · 源码核查**：[lib/host.js:19-20](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L19-L20)
 
-知识优先级与版本纪律是已有指导设计。
-
-<details>
-<summary>查看原文（20行）</summary>
+原生插件名与服务注入。
 
 ```text
-    name: 'harmonyos-knowledge',
-    description: '鸿蒙开发知识层使用纪律：官方优先、按 API 版本分类、许可合规（hms_knowledge / hms_api / hms_docs / hms_api_change / hms_lint）。',
-    whenToUse: '回答任何 ArkTS / ArkUI / API 能力、版本兼容性、废弃 API、lint 规范问题之前；或需要判断某 API 在目标版本是否可用时。',
-    content: [
-      '# 鸿蒙知识层使用纪律（官方优先、版本化、许可合规）',
-      '',
-      '## 数据源层级（严格按序，上层优先）',
-      '**Tier 0 官方一手（本机运行时读取，随用户工具链版本，零再分发）**',
-      '- hms_api：本机 SDK .d.ts，每条 API 带 @since/@deprecated/@syscap，精确到 API 版本 —— 回答"某 API 何时有/何时废弃"的首选',
-      '- hms_docs：devecocli 官方本地文档库（开发指南/API 参考）',
-      '- hms_api_change：官方跨版本破坏性变更扫描（check compat）',
-      '- hms_lint rules：本机 DevEco 内置官方 lint 规则（Apache-2.0，本地读取）',
-      '**Tier 1 随包内置（离线可用，无需 Studio/SDK/网络）**',
-      '- hms_knowledge：OpenHarmony 官方文档逐字节选（CC-BY-4.0 已署名）—— 28 篇高频官方文档：API 模块（promptAction/router/notification/vibrator/http/ws/preferences/util/uiAbility/权限/context/hilog/abilityManager…）、窗口 window/Window 类、导航组件 Navigation、应用模型与 ArkTS 状态管理指南。catalog 列题 → read 先看目录再按小节读 → search 按关键词找题/小节',
-      '- deveco-cli 技能（官方 SKILL.md 改写，MIT 已声明）',
-      '**Tier 2 用户自装（仅指路，绝不随包）**：harmony-next.skills 等社区包（无 LICENSE，不可再分发）；官方 web 文档 developer.huawei.com（在线检索时优先官方站）',
-      '',
-      '## 查询速查',
-      '- 概念/用法/示例（人读文档）：先 hms_knowledge（离线随包，秒回）；全量官方库走 hms_docs（需 devecocli）',
-      '- 签名/版本/废弃判定（机读精确）：hms_api 的 @since/@deprecated/@syscap',
+export const name = 'hdc-bridge'
+export const inject = ['shell', 'tools']
 ```
 
-</details>
+**依据 3 · 源码核查**：[lib/host.js:652-668](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L652-L668)
 
-**依据 3 · 源码核查**：[lib/compile-session-cwd.mjs:1-8](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/compile-session-cwd.mjs#L1-L8)
-
-会话编译目录能力明确上游归属。
-
-```text
-// Session-scoped HarmonyOS project root for the compile-assistance tools
-// (switch_cwd stores it; build_project / start_app / arkts_check / hdc_log
-// resolve it). In-process Map keyed by session id, mirroring the DevEco Code
-// session-cwd helper:
-//   gitcode.com/openharmony-sig/deveco-code
-//   packages/opencode/src/tool/lib/session-cwd.ts
-//   packages/opencode/src/tool/switch-cwd.ts
-// Copyright (c) 2026 Huawei Device Co., Ltd. — Apache-2.0 (see notices.json).
-```
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 设备选择、Shell调用和错误如何流动？
-
-**研究主题**：功能与机制
-
-#### 完整回答
-
-host注入shell/tools，按调用agent.session解析sandboxPolicy，再把command、timeout、输出上限、策略和workdir交给shell.resolve。适配新execute/result与旧run表面，core负责发现hdc、探测版本和构造目标命令。runHdc以退出码、timedOut与aborted给基础结果，具体安装/构建等再解释输出和产物。注册器统一捕获异常转为ok:false/error/hint，让模型看业务结果而非只依赖工具层异常。
-
-设备请求显式target先写preferred，未给target优先复用仍Connected的preferred，否则选第一个Connected，再退到首条记录。这方便单设备调用，却不是多设备下的主动确认。截图工具落盘后提供给read_image；构建路径还有HAP检查，实际设备业务结果仍需后续观察。所谓闭环应由模型或人继续验证，而不是API返回ok就自动宣告任务完成。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/host.js:104-116](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L104-L116)
-
-按调用会话解析策略。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  // Resolve the per-call sandbox policy like the official pwsh tool does:
-  // the calling session's immutable cwd is the workspace boundary. Without a
-  // session, fall back to the deployment policy (the executor's own default).
-  function resolvePolicyFor(exec) {
-    if (!sandboxPolicy || typeof sandboxPolicy.resolve !== 'function') return undefined
-    try {
-      if (exec && exec.agent && exec.agent.session) return sandboxPolicy.resolve({ session: exec.agent.session })
-      const session = realmSession()
-      if (session) return sandboxPolicy.resolve({ session })
-      return sandboxPolicy.resolve({})
-    } catch {
-      return undefined
-    }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/host.js:160-172](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L160-L172)
-
-Shell请求与版本seam接线。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  async function runShellRaw(command, timeoutMs, stdoutMaxBytes, policy, workdir) {
-    const request = { command, timeoutMs, stdoutMaxBytes }
-    const root = policyRoot(policy)
-    if (policy !== undefined) request.sandboxPolicy = policy
-    if (workdir) request.workdir = workdir
-    else if (root) request.workdir = root
-    const spec = shell.resolve(request)
-    // DSH 0.2.0-rc.2 replaced ShellExecutor.run() with execute(spec) → a process
-    // handle whose result() resolves to the same ShellRunResult — exitCode,
-    // signal, timedOut, aborted, timeoutMs, stdout.text, stderr.text — that
-    // every runShellRaw caller already consumes, so the new seam is the primary
-    // path. Hosts on the older line (0.0.1-rc.5 through 0.1.5-rc.3, still what
-    // npm's latest tag points at for the seam packages) expose run() instead:
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host.js:648-664](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L648-L664)
-
-异常转结构化业务失败。
+真实工具注册与业务失败包装。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -358,437 +265,129 @@ Shell请求与版本seam接线。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/hdc-core.mjs:99-124](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L99-L124)
-
-基础执行结果和超时/取消判据。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  async function runHdc(argv, opts, policy) {
-    opts = opts || {}
-    if (!hdcPath) return { ok: false, exitCode: null, stdout: '', stderr: hdcError, timedOut: false, aborted: false }
-    const full = []
-    if (opts.target) {
-      if (!TARGET_RE.test(opts.target)) return { ok: false, exitCode: null, stdout: '', stderr: 'invalid target id', timedOut: false, aborted: false }
-      full.push('-t', psQuote(opts.target))
-    }
-    full.push(...argv)
-    let result
-    try {
-      result = await runShellRaw(buildCommand(full), opts.timeoutMs || 30000, opts.stdoutMaxBytes || 262144, policy)
-    } catch (e) {
-      return { ok: false, exitCode: null, stdout: '', stderr: String(e && e.message ? e.message : e), timedOut: false, aborted: false }
-    }
-    const out = (result.stdout && result.stdout.text) || ''
-    const err = (result.stderr && result.stderr.text) || ''
-    return {
-      ok: result.exitCode === 0 && !result.timedOut && !result.aborted,
-      exitCode: result.exitCode,
-      timedOut: result.timedOut === true,
-      aborted: result.aborted === true,
-      stdout: out,
-      stderr: err,
-      stdoutTruncated: (result.stdout && result.stdout.truncated) === true,
-    }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/hdc-core.mjs:156-181](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L156-L181)
-
-preferred与自动选择实际实现。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  function pickTarget(list, requested) {
-    if (requested) return requested
-    const connected = list.find((t) => /connected/i.test(t.state))
-    return connected ? connected.id : (list[0] ? list[0].id : '')
-  }
-
-  // Session-scoped device memory: the last explicitly used or panel-
-  // selected target, reused by every tool call that omits `target`.
-  let preferredTarget = ''
-
-  async function currentTarget(requested, policy) {
-    const list = await listTargets(policy)
-    const clean = requested ? String(requested).trim() : ''
-    if (clean) {
-      preferredTarget = clean
-      return { target: clean, error: '' }
-    }
-    if (preferredTarget && list.targets.some((t) => t.id === preferredTarget && /connected/i.test(t.state))) {
-      return { target: preferredTarget, error: '' }
-    }
-    const target = pickTarget(list.targets, '')
-    if (!target) {
-      return { target: '', error: 'No HarmonyOS device/emulator connected. Connect one (hdc_connect 127.0.0.1:5555 for an emulator) or start a DevEco emulator.' }
-    }
-    preferredTarget = target
-    return { target, error: '' }
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 面板与工具层是否共享权限及目标边界？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-不能将全插件概括为所有执行都经过同一会话沙箱。工具层明确传sandboxPolicy给宿主Shell，面板模块则以固定只读命令直接execFile，另有超时和缓存；面板REST路由返回设备状态和截图，还能改变preferred选择。所读路由片段只做HTTP method和目标是否Connected的检查，没有本地独立认证/来源判断，是否受宿主路由政策保护需另行确定。固定只读命令减少参数面，但截图与日志仍可能敏感。
-
-设备preferred在createHdcCore闭包里是单个字符串，而编译cwd另用sessionID Map。源码注释称设备“session-scoped”，能否成立取决于宿主是否为每个会话隔离插件core实例，不能仅凭注释确认多会话互不干扰。自动选择第一个Connected也可能把未显式target的修改动作落到非预期设备。建议在多设备/多会话环境明确target并核对连接列表；本轮没有运行复现串扰或越权。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/panel.mjs:1-8](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/panel.mjs#L1-L8)
-
-面板明确采用直接hdc spawns。
-
-```text
-// Host half of the floating dev panel (web hosts only; headless profiles
-// never fire the webServer inject, so they stay unchanged).
-//
-// The panel shows the WHOLE plugin, not just hdc: device detail (model,
-// brand, OS, battery), system stats (memory/storage/display), hilog tail,
-// per-device screenshots, and the plugin's own toolchain + knowledge state.
-// Data comes from direct hdc spawns (fixed read-only command set, hard
-// timeouts, watchdog) plus a toolchain bridge from the plugin services.
-```
-
-**依据 2 · 源码核查**：[lib/panel.mjs:30-42](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/panel.mjs#L30-L42)
-
-直接execFile及固定超时。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-function defaultProbe() {
-  return {
-    accessOk(p) { try { accessSync(p, constants.X_OK); return true } catch (e) { return false } },
-    run(file, args, timeoutMs, maxBuffer) {
-      return new Promise((resolve) => {
-        try {
-          execFile(file, args, { timeout: timeoutMs || 12000, maxBuffer: maxBuffer || 65536, windowsHide: true }, (error, stdout, stderr) => {
-            resolve({ ok: !error, stdout: String(stdout || ''), stderr: String(stderr || (error && error.message) || '') })
-          })
-        } catch (e) {
-          // Restricted sandboxes throw EPERM synchronously — degrade like runHdc does.
-          resolve({ ok: false, stdout: '', stderr: String(e && e.message ? e.message : e) })
-        }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/panel.mjs:300-331](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/panel.mjs#L300-L331)
-
-状态、刷新、选择和截图路由的本地校验。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-  if (typeof ctx.inject === 'function') {
-    ctx.inject(['webServer'], (webCtx) => {
-      const ws = webCtx.webServer
-      if (!ws || typeof ws.register !== 'function') return
-      const register = (kind, path, handler) => webCtx.effect(() => ws.register({ kind, path, handler }), 'hdc-bridge panel: ' + path)
-      register('exact', '/api2/hdc-bridge/panel-state', async (req, res) => {
-        if (req.method !== 'GET' && req.method !== 'HEAD') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
-        if (!cache.state || Date.now() - cache.at > STATE_TTL) await refreshWithWatchdog(false, '')
-        sendJson(res, 200, cache.state)
-      })
-      register('exact', '/api2/hdc-bridge/refresh', async (req, res) => {
-        if (req.method !== 'POST') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
-        const body = await readBody(req)
-        await refreshWithWatchdog(!body || body.shot !== false, body && typeof body.target === 'string' ? body.target.trim() : '')
-        sendJson(res, 200, cache.state)
-      })
-      register('exact', '/api2/hdc-bridge/select', async (req, res) => {
-        if (req.method !== 'POST') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
-        const body = await readBody(req)
-        const target = body && typeof body.target === 'string' ? body.target.trim() : ''
-        if (!target) return sendJson(res, 400, { ok: false, error: 'target is required' })
-        const list = await listTargets()
-        const hit = (list.targets || []).find((d) => d.id === target && /connected/i.test(d.state))
-        if (!hit) return sendJson(res, 400, { ok: false, error: 'target is not connected: ' + target })
-        if (bridge.setPreferred) bridge.setPreferred(target)
-        await refreshWithWatchdog(false, '')
-        sendJson(res, 200, cache.state)
-      })
-      register('exact', '/api2/hdc-bridge/screenshot.jpeg', (req, res) => {
-        if (!cache.shotBytes) return sendJson(res, 404, { ok: false, error: 'no screenshot yet; POST /api2/hdc-bridge/refresh with {shot:true} first' })
-        res.writeHead(200, { 'content-type': 'image/jpeg', 'cache-control': 'no-store' })
-        res.end(cache.shotBytes)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/hdc-core.mjs:162-181](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L162-L181)
-
-preferred是core闭包单值。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  // Session-scoped device memory: the last explicitly used or panel-
-  // selected target, reused by every tool call that omits `target`.
-  let preferredTarget = ''
-
-  async function currentTarget(requested, policy) {
-    const list = await listTargets(policy)
-    const clean = requested ? String(requested).trim() : ''
-    if (clean) {
-      preferredTarget = clean
-      return { target: clean, error: '' }
-    }
-    if (preferredTarget && list.targets.some((t) => t.id === preferredTarget && /connected/i.test(t.state))) {
-      return { target: preferredTarget, error: '' }
-    }
-    const target = pickTarget(list.targets, '')
-    if (!target) {
-      return { target: '', error: 'No HarmonyOS device/emulator connected. Connect one (hdc_connect 127.0.0.1:5555 for an emulator) or start a DevEco emulator.' }
-    }
-    preferredTarget = target
-    return { target, error: '' }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/compile-session-cwd.mjs:13-32](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/compile-session-cwd.mjs#L13-L32)
-
-工程cwd确实按sessionID存储，不能混同。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-const sessionCwd = new Map()
-
-export function setSessionCwd(sessionID, cwd) {
-  const id = String(sessionID || '').trim()
-  const dir = String(cwd || '').trim()
-  if (!id || !dir) return
-  sessionCwd.set(id, dir)
-}
-
-export function getSessionCwd(sessionID) {
-  if (!sessionID) return undefined
-  return sessionCwd.get(sessionID)
-}
-
-export function clearSessionCwd(sessionID) {
-  if (!sessionID) {
-    sessionCwd.clear()
-    return
-  }
-  sessionCwd.delete(sessionID)
-```
-
-</details>
-
 #### 缺口
 
-- 宿主插件实例作用域与/api2自定义路由权限未固定。
-  **影响**：影响多会话目标隔离和设备截图访问边界。
-  **进一步探讨**：读取部署DSH固定提交的插件realm/路由注册策略，确认core每会话实例及REST认证，再判断共享部署范围。
+- 缺少与直接CLI的同条件任务效果和交接时间对照。
+  **影响**：不能把原生集成直接称提高成功率或效率。
+  **进一步探讨**：固定工程、设备、模型和任务，对比正确部署、人工交接与复核耗时。
 
-<a id="research-q04"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-12"></a>
 
-### Q04 · 工具链和知识可信度依赖什么？
+### Q02 · 工具如何从会话走到设备与业务结果？
 
-**研究主题**：依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-实际操作依赖本机hdc、设备连接/授权、DevEco Studio或独立CLT、SDK、JBR/Java与项目签名条件；离线知识读取则不需要完整工具链。skills把原始SDK机读与官方节选分层，避免把旧文档当新API事实。随包知识和技能引用有上游许可说明，是内容来源管理，不等于每个API在当前工程都可用。
+工具execute接exec，经policyFor解析调用会话策略，再由runShellRaw把策略/workdir交给宿主shell.resolve；优先execute(spec)并等handle.result，旧宿主回退run。hdc-core负责发现本机二进制、列目标与命令参数，具体工具再解释业务输出。registerTool统一捕获异常返回ok:false/error/hint，因此模型和调用者必须读业务值，不以没有抛异常当成功。
 
-签名需要用户先完成devecocli auth login，源码会检查auth status输出，空输出或受限mojo通道不当成功。受限宿主策略可能阻断CLI和构建，回退到hvigor/hdc仍要核对产物，不能把“fallback执行了”当正确构建。编译目录可由switch_cwd改变但独立于immutable工作区策略，维护者需要知道工程根和权限边界不一定相同。目标API也可能由工程、设备、SDK不同来源给出，缺失或冲突应保留为条件而非自动选最新。
+以安装为例，先currentTarget，再校验hapPath，hdc install默认替换，并把stdout/stderr的error/failed标记纳入成功判据；成功提示仍要求截图或UI dump验证。这比只看hdc退出码多一层，但字符串标记可能受CLI版本/语言影响，不能证明业务正确。构建路径还检查hap存在并暴露artifactVerified/hapBefore/hapAfter，仍需确认签名和真实设备行为。
+
+工程上抽出core、结构化失败和双shell seam值得借鉴；移植需保持宿主权限/取消、输出上限与设备语义。进程超时、取消或构建失败后，设备/文件可能已有部分变化，不能仅凭本次ok:false假设已回滚。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/skills.mjs:20-64](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/skills.mjs#L20-L64)
+**依据 1 · 源码核查**：[lib/host.js:105-119](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L105-L119)
 
-官方CLI适配、平台条件及签名人工前提。
-
-<details>
-<summary>查看原文（45行）</summary>
-
-```text
-    name: 'deveco-cli',
-    description: '华为官方 DevEco CLI（devecocli）构建/签名/lint/文档通道：hms_build、hms_lint、hms_docs、hms_api_change 的底层命令与约束。',
-    whenToUse: '需要用官方工具链构建/签名/运行鸿蒙应用、跑官方 lint、查官方本地文档、扫描跨版本破坏性 API 变更时；或用户提到 devecocli/DevEco CLI。',
-    content: [
-      '# DevEco CLI（devecocli）技能',
-      '',
-      '> 本技能改写自华为官方仓库 SKILL.md（翻译摘要，非逐字复制）。',
-      '> Copyright (c) 2026 Huawei Device Co., Ltd. — MIT License.',
-      '> 官方原文：https://gitcode.com/openharmony-sig/deveco-cli/blob/develop/SKILL.md',
-      '',
-      '## 入口（本插件工具，优先用它们，参数已校验）',
-      '- hms_build：status / build / run / sign / clean（CLI 缺失时自动回退本机 hvigorw）',
-      '- hms_lint：rules（本机 57+ 官方规则索引）/ read-rule / check（devecocli check lint）',
-      '- hms_docs：search / read / catalog（devecocli docs，官方本地文档库）',
-      '- hms_api_change：versions / diff（devecocli check compat，官方跨版本破坏性变更扫描）',
-      '',
-      '## 安装与工具链形态（二选一）',
-      '- A｜Studio 路线：npm i -g @deveco/deveco-cli（macOS/Windows，Node ≥18），本机装 DevEco Studio ≥6.0。',
-      '- B｜独立 Command Line Tools（CLT）：华为官方 zip 发行版（codelinter/hvigorw/ohpm/emulator/内嵌 SDK），≥26.0.0，**Linux 仅此形态**。解压后把 <clt>/bin 加入 PATH，并设 DEVECO_CLI_CLT_PATH=<解压目录>（deveco-cli 不自动发现 CLT）。下载：developer.huawei.com/consumer/cn/download/command-line-tools-for-hmos。',
-      '- 本插件会自动探测两种形态并把对应根注入环境变量；hms_setup 一眼可查当前 toolchainKind。',
-      '',
-      '## 直接命令速查',
-      '- `build`：编译打包。`--modules <m1> <m2>@<target>` 指定模块；`--product <name>` 打整包；`build clean` 清理。',
-      '- `run`：构建+安装+启动。`--module`、`--device <name|serial>`（多设备必填）、`--uninstall`（先卸载，解决签名 key 变更）、`--skip-build`、`--apply <file>` 增量快速部署（Studio ≥6.1.1）。',
-      '- `check lint [path]`：官方 ArkTS lint。`--fix`、`--format json`（需 Studio ≥6.1.0）、`--limit <n>`。',
-      '- `check compat`：扫描两个 SDK 版本间的破坏性 API 变更。`versions` 列可用版本；`--source-version X --target-version Y --format json --output-path <dir>`；必须 target > source。',
-      '- `signature generate`：自动生成签名材料并写入 build-profile.json5。前置：`auth login` + 项目目录 + 已连接设备。',
-      '- `auth login/status/logout`：华为开发者账号 OAuth（浏览器人工步骤）。',
-      '- `docs search <kw>` / `docs read <id>` / `docs catalog`：官方本地文档检索。',
-      '- `emulator list/start/stop`、`ui layout/screenshot/click/text`、`log --crash --bundle-name X`、`create --app-name X --api-level N`、`skills list/add`。',
-      '',
-      '## 硬性约束',
-      '- Node ≥18；构建/签名/lint 需本机工具链：DevEco Studio ≥6.0（lint 默认，`--format json` 需 ≥6.1.0，`--apply` 需 ≥6.1.1）或独立 Command Line Tools ≥26.0.0（CLT 无内嵌 JDK，CI 场景另配 JAVA_HOME）。',
-      '- 官方标注 [Outside sandbox]：build / run / signature generate / update / check compat —— 在受限沙箱中运行时提示用户放宽策略或人工执行。',
-      '- 签名前置 `auth login` 是浏览器 OAuth，Agent 无法代办；未登录时给用户命令，不重试。',
-      '',
-      '## 错误速查',
-      '- `Not logged in` → devecocli auth login',
-      '- `error:install sign info inconsistent` → devecocli run --uninstall 或 signature generate --force',
-      '- `Provision number exceeds limit` → AGC 控制台删旧测试 profile',
-      '- `Product / Build mode not found` → 检查 build-profile.json5',
-      '- `Multiple entry modules` → build 加 --modules，run 加 --module',
-    ].join('\n'),
-  }),
-  skill({
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/skills.mjs:65-84](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/skills.mjs#L65-L84)
-
-SDK/官方知识层级。
+按调用会话解析策略的入口。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-    name: 'harmonyos-knowledge',
-    description: '鸿蒙开发知识层使用纪律：官方优先、按 API 版本分类、许可合规（hms_knowledge / hms_api / hms_docs / hms_api_change / hms_lint）。',
-    whenToUse: '回答任何 ArkTS / ArkUI / API 能力、版本兼容性、废弃 API、lint 规范问题之前；或需要判断某 API 在目标版本是否可用时。',
-    content: [
-      '# 鸿蒙知识层使用纪律（官方优先、版本化、许可合规）',
-      '',
-      '## 数据源层级（严格按序，上层优先）',
-      '**Tier 0 官方一手（本机运行时读取，随用户工具链版本，零再分发）**',
-      '- hms_api：本机 SDK .d.ts，每条 API 带 @since/@deprecated/@syscap，精确到 API 版本 —— 回答"某 API 何时有/何时废弃"的首选',
-      '- hms_docs：devecocli 官方本地文档库（开发指南/API 参考）',
-      '- hms_api_change：官方跨版本破坏性变更扫描（check compat）',
-      '- hms_lint rules：本机 DevEco 内置官方 lint 规则（Apache-2.0，本地读取）',
-      '**Tier 1 随包内置（离线可用，无需 Studio/SDK/网络）**',
-      '- hms_knowledge：OpenHarmony 官方文档逐字节选（CC-BY-4.0 已署名）—— 28 篇高频官方文档：API 模块（promptAction/router/notification/vibrator/http/ws/preferences/util/uiAbility/权限/context/hilog/abilityManager…）、窗口 window/Window 类、导航组件 Navigation、应用模型与 ArkTS 状态管理指南。catalog 列题 → read 先看目录再按小节读 → search 按关键词找题/小节',
-      '- deveco-cli 技能（官方 SKILL.md 改写，MIT 已声明）',
-      '**Tier 2 用户自装（仅指路，绝不随包）**：harmony-next.skills 等社区包（无 LICENSE，不可再分发）；官方 web 文档 developer.huawei.com（在线检索时优先官方站）',
-      '',
-      '## 查询速查',
-      '- 概念/用法/示例（人读文档）：先 hms_knowledge（离线随包，秒回）；全量官方库走 hms_docs（需 devecocli）',
-      '- 签名/版本/废弃判定（机读精确）：hms_api 的 @since/@deprecated/@syscap',
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host.js:1956-1966](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L1956-L1966)
-
-签名auth输出和受限通道检查。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-        const status = await runCli(cli, ['auth', 'status'], { timeoutMs: 30000, stdoutMaxBytes: 16384, workdir: base }, policy)
-        if (mojoFatal(status)) {
-          return { ...outside, backend: 'devecocli', ok: false, stage: 'auth', error: 'devecocli mojo platform channel blocked in this sandbox (0x5) — sign needs [Outside sandbox] execution' }
-        }
-        const authOut = (status.stdout + status.stderr).trim()
-        if (!authOut) {
-          return { ...outside, backend: 'devecocli', ok: false, stage: 'auth', emptyOutput: true, error: 'devecocli auth status returned no output — the mojo channel is blocked in this sandbox, so the login state cannot be verified and signature generation would silently do nothing. Run devecocli auth login in a host terminal, or sign in DevEco Studio (Project Structure > Signing Configs).' }
-        }
-        const loggedIn = status.ok && !/not logged|未登录|not log in/i.test(authOut)
-        if (!loggedIn) {
-          return { ...outside, backend: 'devecocli', ok: false, stage: 'auth', error: 'Not logged in. Run once in a terminal: devecocli auth login (browser OAuth), then retry. A connected device is also required for device registration.' }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/compile-session-cwd.mjs:39-49](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/compile-session-cwd.mjs#L39-L49)
-
-项目根识别仅检查结构文件。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-export function isHarmonyApplicationRoot(dir) {
-  const isFile = (file) => {
+  // Resolve the per-call sandbox policy like the official pwsh tool does:
+  // the calling session's immutable cwd is the workspace boundary. Without a
+  // session, fall back to the deployment policy (the executor's own default).
+  function resolvePolicyFor(exec) {
+    if (!sandboxPolicy || typeof sandboxPolicy.resolve !== 'function') return undefined
     try {
-      return statSync(file).isFile()
+      if (exec && exec.agent && exec.agent.session) return sandboxPolicy.resolve({ session: exec.agent.session })
+      const session = realmSession()
+      if (session) return sandboxPolicy.resolve({ session })
+      return sandboxPolicy.resolve({})
     } catch {
-      return false
+      return undefined
     }
   }
-  if (isFile(join(dir, 'AppScope', 'app.json5'))) return true
-  if (!isFile(join(dir, 'build-profile.json5'))) return false
-  return isFile(join(dir, 'oh-package.json5')) || isFile(join(dir, 'oh-package.json'))
+
 ```
 
 </details>
 
-<a id="research-q05"></a>
+**依据 2 · 源码核查**：[lib/host.js:164-186](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L164-L186)
 
-<a id="detail-section-15"></a>
-
-### Q05 · 工程和三阶段成本怎样？
-
-**研究主题**：工程质量与复用、效果与总成本
-
-#### 完整回答
-
-可借鉴的是core抽离发现与目标漏斗、业务ok/error/hint统一、构建stdout/stderr清ANSI并保留尾部状态，以及对CLI不可靠成功信号再看实际产物。它们降低模型误把传输成功当业务成功的机会；但错误hint中“改用danger-full-access”只是插件建议，不能变成自动放宽权限授权。smoke源码以fake Shell驱动，未匹配命令默认空成功，能检查包装规则但不能证明设备/工具链真兼容，本轮也未执行。
-
-首次成本是安装SDK/Studio或CLT、连接设备、签名与本地知识版本核对；持续成本包括编译资源、包安装、截图日志文件和面板轮询，设备操作可能修改应用数据。失败恢复要核对构建产物是否旧、安装部分状态、目标设备以及签名/权限问题，不应盲目clean或重装。没有任务耗时、API费或正确修复率的本轮实测，不能从工具集成推导节省比例；现金依工具链/设备和模型环境，人工学习与调试需单列。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/host.js:638-664](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/host.js#L638-L664)
-
-错误hint与统一失败契约。
+shell真实resolve/execute/result及旧run回退。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-  // here so the { ok: false, error, hint } contract holds for all 25 tools.
-  function throwHint(message) {
-    if (isEnvFailure(message)) {
-      return 'The host could not run this command: ' + (policyBlockedReason(undefined) === 'no usable sandbox policy for this call'
-        ? 'no usable sandbox backend for the requested policy.'
-        : policyBlockedReason(undefined)) + ' Restart DSH from a directory outside the OS temp tree (on Windows, not %USERPROFILE%), or re-run the session with danger-full-access.'
+  async function runShellRaw(command, timeoutMs, stdoutMaxBytes, policy, workdir) {
+    const request = { command, timeoutMs, stdoutMaxBytes }
+    const root = policyRoot(policy)
+    if (policy !== undefined) request.sandboxPolicy = policy
+    if (workdir) request.workdir = workdir
+    else if (root) request.workdir = root
+    const spec = shell.resolve(request)
+    // DSH 0.2.0-rc.2 replaced ShellExecutor.run() with execute(spec) → a process
+    // handle whose result() resolves to the same ShellRunResult — exitCode,
+    // signal, timedOut, aborted, timeoutMs, stdout.text, stderr.text — that
+    // every runShellRaw caller already consumes, so the new seam is the primary
+    // path. Hosts on the older line (0.0.1-rc.5 through 0.1.5-rc.3, still what
+    // npm's latest tag points at for the seam packages) expose run() instead:
+    // fall back to it rather than failing the whole plugin (issue #8).
+    if (typeof shell.execute === 'function') {
+      const handle = await shell.execute(spec)
+      return handle && typeof handle.result === 'function' ? await handle.result() : handle
     }
-    return 'Unexpected host error; run hdc_diag for the resolved shell flavor, hdc path and sandbox policy.'
-  }
+    if (typeof shell.run === 'function') return shell.run(spec)
+    // Neither seam exists: report the host mismatch honestly instead of letting
+    // the failure surface as a bogus "hdc not found" (the misleading mode
+    // reported in issue #8).
+    throw new Error('Unsupported DSH shell seam: ctx.shell exposes neither execute() (DSH 0.1.7-rc.2+) nor run() (DSH up to 0.1.5). Upgrade @deepseek-ai/dsh.')
+```
 
+</details>
+
+**依据 3 · 源码核查**：[lib/host.js:334-350](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L334-L350)
+
+安装目标、参数、输出标记和后续验证。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  async function install(args, policy) {
+    args = args || {}
+    const cur = await currentTarget(args.target, policy)
+    if (cur.error) return { ok: false, error: cur.error }
+    if (typeof args.hapPath !== 'string' || !args.hapPath.trim()) return { ok: false, error: 'hapPath is required (path to a built .hap file)' }
+    const argv = ['install']
+    if (args.replace !== false) argv.push('-r')
+    // Windows hdc resolves forward-slash absolute paths against the cwd and
+    // double-joins them; normalize to backslashes on the pwsh host dialect.
+    const hapRaw = args.hapPath.trim()
+    const hap = (typeof process !== 'undefined' && process.platform === 'win32') ? hapRaw.replace(/\//g, '\\') : hapRaw
+    argv.push(psQuote(hap))
+    const r = await runHdc(argv, { target: cur.target, timeoutMs: 180000, stdoutMaxBytes: 262144 }, policy)
+    const text = r.stdout + '\n' + r.stderr
+    const ok = r.ok && !/error|failed|fail/i.test(text)
+    const hint = ok ? 'Installed. Run hdc_screenshot or hdc_ui_dump to verify the UI.' : errorHint(text)
+    return { ok, exitCode: r.exitCode, stdout: tailText(r.stdout, 4000), stderr: tailText(r.stderr, 2000), timedOut: r.timedOut, hint }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/host.js:652-668](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L652-L668)
+
+异常统一业务失败。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
   function registerTool(definition) {
     const execute = definition && definition.execute
     if (typeof execute === 'function') {
@@ -810,137 +409,88 @@ export function isHarmonyApplicationRoot(dir) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/compile-output.mjs:62-105](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/compile-output.mjs#L62-L105)
+**依据 5 · 源码核查**：[lib/host.js:1915-1932](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L1915-L1932)
 
-尾部截断和状态保留。
+构建额外核产物，仍保留后端信息。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-export function formatBuildProjectOutput(opts) {
-  const maxLines = opts.maxLines ?? MAX_OUTPUT_LINES
-  const out = stripAnsi(opts.stdout)
-  const err = stripAnsi(opts.stderr)
-  const fullBody = formatStdoutStderr(opts.stdout, opts.stderr)
-  const status = formatBuildStatusLine(opts.exitCode)
-  const full = fullBody ? `${fullBody}\n${status}` : status
-
-  const outLines = splitLines(out)
-  const errLines = splitLines(err)
-  const total = outLines.length + errLines.length
-
-  let outBudget
-  let errBudget
-  if (outLines.length === 0) {
-    outBudget = 0
-    errBudget = maxLines
-  } else if (errLines.length === 0) {
-    outBudget = maxLines
-    errBudget = 0
-  } else if (total <= maxLines) {
-    outBudget = outLines.length
-    errBudget = errLines.length
-  } else {
-    outBudget = Math.ceil(maxLines / 2)
-    errBudget = Math.floor(maxLines / 2)
-    if (outLines.length < outBudget) {
-      errBudget = maxLines - outLines.length
-      outBudget = outLines.length
-    } else if (errLines.length < errBudget) {
-      outBudget = maxLines - errLines.length
-      errBudget = errLines.length
-    }
-  }
-
-  const outCut = takeLastLines(outLines, outBudget)
-  const errCut = takeLastLines(errLines, errBudget)
-  const truncated = total > maxLines || outCut.truncated || errCut.truncated
-
-  const previewBody = `${outCut.lines.join('\n')}${errCut.lines.join('\n')}`
-  const preview = previewBody ? `${previewBody}\n${status}` : status
-  const text = truncated ? `${TRUNCATE_NOTICE}\n${preview}` : preview
-
-  return { text, truncated, preview, full }
+            const hapAfter = await findNewestHap(base, policy)
+            const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+            if (artifactVerified) {
+              return { ...outside, backend: 'devecocli', ok: true, exitCode: deExit, timedOut: r.timedOut, output: compileOut.stripAnsi(deOutput), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(null) }
+            }
+            deOutput += '\n\ndevecocli returned success but artifact state was not verified; using hvigor fallback.'
+          }
+          // devecocli failed or its channel was mojo-blocked — fall through to
+          // the direct hvigorw build instead of only reporting the block.
+        }
+        const fb = await hvigorDirectBuild({ base, product: q(args.product) || 'default', mode: q(args.buildMode) || 'debug', timeoutMs, policy, task: args.action === 'clean' ? 'clean' : 'assembleHap' })
+        if (fb.available && fb.ok) {
+          const hapAfter = await findNewestHap(base, policy)
+          const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+          if (artifactVerified) {
+            return { ...outside, backend: 'hvigorw', ok: true, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb), note2: (deMojo ? 'devecocli channel was mojo-blocked in this sandbox (0x5) — fell back to the direct hvigorw build. ' : 'devecocli failed — used the direct hvigorw build. ') + 'hvigorw uses the signingConfigs already present in build-profile.json5; unsigned builds cannot install on a device.' }
+          }
+          return { ...outside, backend: 'hvigorw', ok: false, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), error: args.action === 'clean' ? 'hvigorw reported success but build outputs were not cleaned' : 'hvigorw reported success but no .hap artifact was produced', hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb) }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/smoke.mjs:1-4](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/scripts/smoke.mjs#L1-L4)
+<a id="research-q03"></a>
 
-fake Shell验证范围。
+<a id="detail-section-13"></a>
 
-```text
-// dsh-hdc-bridge regression suite (no real hdc required — fake shell drives
-// everything except panel.mjs, whose direct hdc spawn is exercised only for
-// its graceful-degradation paths). Run: node scripts/smoke.mjs
-const MOD_URL = new URL('../lib/host.js', import.meta.url).href
-```
+### Q03 · 会话设备记忆和面板权限能否视为同一保证？
 
-**依据 4 · 源码核查**：[scripts/smoke.mjs:24-39](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/scripts/smoke.mjs#L24-L39)
-
-默认未匹配为空成功，限定测试证明。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-let connected = ['DEV_A', 'DEV_B']
-function deviceRows(list) { return list.map((id) => id + '\t\ttcp\tConnected\tlocalhost\thdc').join('\n') }
-// First matching rule answers the command; default stays empty-success so
-// unmatched probes degrade exactly like a silent failure would.
-const DEFAULT_RULES = [
-  [(c) => c.includes('list targets'), () => deviceRows(connected)],
-  [(c) => c.includes('hilog'), () => 'I 00000/HiLog: smoke line'],
-  [(c) => c.includes('PSVersionTable'), () => '7'],
-  [(c) => c.includes('hdc') && c.includes('-v'), () => 'Ver: 3.2.0c'],
-]
-function outcomeFor(rules, spec, sink) {
-  const cmd = spec.command || ''
-  if (sink) sink.push(cmd)
-  for (const [pred, reply] of rules) {
-    if (pred(cmd)) { const text = typeof reply === 'function' ? reply(cmd) : reply; return { stdout: { text }, stderr: { text: '' }, exitCode: 0, timedOut: false } }
-  }
-```
-
-</details>
-
-#### 缺口
-
-- 缺少目标平台的构建/部署正确率、面板负担与恢复投入对照。
-  **影响**：不能确定集成便利相对手工工具链的净收益。
-  **进一步探讨**：固定工程、设备和模型，对比独立hdc/CLI与插件流程的合格任务、总时间和恢复操作。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 可推导何种改进，当前如何采用？
-
-**研究主题**：新假设与验证、采用判断
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
-未验证方向是把每次修改设备的调用绑定到显式会话/设备/工程/产物收据，在执行前展示或确认不可省略目标，结果回指同一设备的观察证据。推导来自默认设备便利与多会话作用域不明、构建传输信号不足的张力。最小验证用两个模拟目标、两个工程和连接切换序列，对比默认preferred与显式绑定的误投目标、重复安装和人工确认次数；若只增加确认却不能防止绑定漂移，应否定该设计。
+不能把会话沙箱策略等同于所有设备交互的统一权限。host apply只创建一份hdcCore，core内preferredTarget是单值，未按sessionId建Map；显式target会改变它，缺省先沿用在线preferred，再回退连接目标。README称会话设备记忆，兑现这一范围仍取决于宿主如何实例化插件。若一实例承接多个会话，静态结构提示交叉影响风险，但本次未在真实装配中复现，不断言所有部署必然串设备。对比之下compile-session-cwd明确按sessionID Map保存工程目录。
 
-当前建议观察，适合已有鸿蒙工具链的维护者继续核对宿主实例和面板权限。单人单设备可降低风险，但当前源码不能普遍承诺会话隔离，先固定target、工程和允许动作，再定义不含真实数据的受控试用。需要多用户远程设备管理或无人值守破坏性动作时，不宜把该工具集当隔离系统。没有本轮安装、核心操作和卸载验收，不能给值得安装。
+面板使用execFile直接运行固定设备命令，和模型工具的宿主Shell策略不是同一路。它并非任意跨站无防护，panel挂载时调用独立checkPanelRequest，检查Host、Origin、Sec-Fetch-Site、回环peer和非读取JSON类型；反向代理需信任主机配置。这些栅栏缩小浏览器调用面，但不是每个session/device的授权证明，也不阻止同源操作者按面板能力访问设备。
+
+采用前最需要确认实际插件实例作用域、面板可达身份和默认设备变化。多设备时应显式指定target与工程，设备掉线后重新确认，不依赖自动回退继续破坏性动作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/hdc-core.mjs:156-181](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/hdc-core.mjs#L156-L181)
+**依据 1 · 源码核查**：[lib/host.js:253-266](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L253-L266)
 
-默认目标与preferred是改进推导起点。
+apply内创建一份hdcCore并向工具和面板提供接缝。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-  function pickTarget(list, requested) {
-    if (requested) return requested
-    const connected = list.find((t) => /connected/i.test(t.state))
-    return connected ? connected.id : (list[0] ? list[0].id : '')
-  }
+  const hdcCore = createHdcCore({
+    runShellRaw,
+    psQuote,
+    detectShellFlavor,
+    getShellFlavor: () => shellFlavor,
+    setShellFlavor: (v) => {
+      if (v !== shellFlavor) dropCliCache('shell flavor changed to ' + v)
+      shellFlavor = v
+      shellFlavorDetected = true
+    },
+    fsService,
+    extraRoots: extraSdkRoots,
+    log: logInfo,
+  })
+```
 
+</details>
+
+**依据 2 · 源码核查**：[lib/hdc-core.mjs:230-249](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/hdc-core.mjs#L230-L249)
+
+preferredTarget单值与自动回退。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
   // Session-scoped device memory: the last explicitly used or panel-
   // selected target, reused by every tool call that omits `target`.
   let preferredTarget = ''
@@ -965,35 +515,12 @@ function outcomeFor(rules, spec, sink) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/panel.mjs:316-326](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/panel.mjs#L316-L326)
+**依据 3 · 源码核查**：[lib/compile-session-cwd.mjs:13-30](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/compile-session-cwd.mjs#L13-L30)
 
-面板可修改preferred。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-      register('exact', '/api2/hdc-bridge/select', async (req, res) => {
-        if (req.method !== 'POST') return sendJson(res, 405, { ok: false, error: 'method not allowed' })
-        const body = await readBody(req)
-        const target = body && typeof body.target === 'string' ? body.target.trim() : ''
-        if (!target) return sendJson(res, 400, { ok: false, error: 'target is required' })
-        const list = await listTargets()
-        const hit = (list.targets || []).find((d) => d.id === target && /connected/i.test(d.state))
-        if (!hit) return sendJson(res, 400, { ok: false, error: 'target is not connected: ' + target })
-        if (bridge.setPreferred) bridge.setPreferred(target)
-        await refreshWithWatchdog(false, '')
-        sendJson(res, 200, cache.state)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/compile-session-cwd.mjs:13-24](https://github.com/1na-ko/dsh-hdc-bridge/blob/51868ae19c9114ea1f7d148f708928c0c0d00e59/lib/compile-session-cwd.mjs#L13-L24)
-
-工程按会话存储，可作为绑定的一部分。
+工程cwd按sessionID map，和设备状态对照。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
 const sessionCwd = new Map()
@@ -1008,14 +535,392 @@ export function setSessionCwd(sessionID, cwd) {
 export function getSessionCwd(sessionID) {
   if (!sessionID) return undefined
   return sessionCwd.get(sessionID)
+}
+
+export function clearSessionCwd(sessionID) {
+  if (!sessionID) {
+    sessionCwd.clear()
+    return
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/panel.mjs:29-43](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/panel.mjs#L29-L43)
+
+直接execFile探测，不走模型Shell seam。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+// Direct-spown probe primitives kept behind an injectable seam so tests can
+// simulate machines where only PATH resolves hdc.
+function defaultProbe() {
+  return {
+    accessOk(p) { try { accessSync(p, constants.X_OK); return true } catch (e) { return false } },
+    run(file, args, timeoutMs, maxBuffer) {
+      return new Promise((resolve) => {
+        try {
+          execFile(file, args, { timeout: timeoutMs || 12000, maxBuffer: maxBuffer || 65536, windowsHide: true }, (error, stdout, stderr) => {
+            resolve({ ok: !error, stdout: String(stdout || ''), stderr: String(stderr || (error && error.message) || '') })
+          })
+        } catch (e) {
+          // Restricted sandboxes throw EPERM synchronously — degrade like runHdc does.
+          resolve({ ok: false, stdout: '', stderr: String(e && e.message ? e.message : e) })
+        }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/http-guard.mjs:96-143](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/http-guard.mjs#L96-L143)
+
+已有浏览器请求栅栏。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+
+  if (String(headers['sec-fetch-site'] || '').toLowerCase() === 'cross-site') {
+    return deny(403, 'cross-site', 'Cross-site requests are refused on the panel routes.')
+  }
+
+  const origin = headers.origin
+  if (origin !== undefined && origin !== '') {
+    let originUrl = null
+    try { originUrl = new URL(String(origin)) } catch { originUrl = null }
+    if (!originUrl || (originUrl.protocol !== 'http:' && originUrl.protocol !== 'https:')) {
+      return deny(403, 'origin-mismatch', 'The Origin header is not a usable http(s) origin.')
+    }
+    const originAuthority = parseAuthority(originUrl.host)
+    if (!sameAuthority(originAuthority, host, originUrl.protocol)) {
+      return deny(403, 'origin-mismatch', 'The Origin does not match the Host this panel is served from.')
+    }
+  }
+
+  if (isLoopbackHostname(host.hostname)) {
+    const peer = request && request.socket ? request.socket.remoteAddress : ''
+    if (!isLoopbackAddress(peer)) {
+      return deny(403, 'peer-not-local', 'A loopback Host is only accepted from a loopback peer.')
+    }
+  } else {
+    const allowed = options.trustedAuthorities !== undefined
+      ? options.trustedAuthorities
+      : trustedAuthorities()
+    const bind = options.bindHost ? parseAuthority(options.bindHost) : null
+    const served = options.servedOrigin ? parseAuthority(String(options.servedOrigin).replace(/^[a-z]+:\/\//i, '')) : null
+    if (!matchesTrusted(host, allowed) && !(bind && bind.hostname === host.hostname) && !(served && served.hostname === host.hostname)) {
+      return deny(403, 'host-untrusted',
+        'This host is not trusted for the panel routes. Reaching the panel through a LAN address or a tunnel requires it in ' + PANEL_TRUST_ENV + '.')
+    }
+  }
+
+  if (method !== 'GET' && method !== 'HEAD' && method !== 'OPTIONS') {
+    const type = String(headers['content-type'] || '').toLowerCase()
+    if (!type.startsWith('application/json')) {
+      return deny(415, 'content-type', 'State-changing panel routes require Content-Type: application/json.')
+    }
+  }
+
+  return { ok: true, status: 200, reason: '', hint: '' }
+}
+
+function deny(status, reason, hint) {
+  return { ok: false, status, reason, hint }
+}
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/panel.mjs:333-350](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/panel.mjs#L333-L350)
+
+面板真实调用checkPanelRequest。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+      // panel routes are same-origin control surfaces, not a public API. The
+      // fence lives in lib/http-guard.mjs so the regression suite can drive
+      // each rule without an HTTP server.
+      const refused = new Set()
+      function guard(req, res) {
+        let verdict
+        try {
+          verdict = checkPanelRequest(req, {
+            trustedAuthorities: trustedAuthorities(),
+            bindHost: bindHostOf(ws),
+            servedOrigin: servedOriginOf(ws),
+          })
+        } catch (e) {
+          verdict = { ok: false, status: 403, reason: 'guard-error', hint: String(e && e.message ? e.message : e) }
+        }
+        if (verdict.ok) return true
+        const host = String((req && req.headers && req.headers.host) || '')
+        const key = verdict.reason + '|' + host
 ```
 
 </details>
 
 #### 缺口
 
-- 多会话实例、面板认证与目标绑定验收未形成完整证据。
-  **影响**：阻碍当前升级为可控通用试用。
-  **进一步探讨**：先核对宿主作用域和路由权限，再设计双设备双会话反例与明确停止标准。
+- 未取得实际宿主的插件实例隔离与多会话/多设备执行证据。
+  **影响**：不能确认preferredTarget的会话语义，也不能把面板围栏当租户授权。
+  **进一步探讨**：在隔离宿主创建两会话、两工程与两设备，交叉显式/缺省target、掉线和面板选择，核真实接收者。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 采用负担与受控探索应如何安排？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+本轮建议先观察关键作用域，再决定受控试用。开发者需要兼容DSH Shell/tools，设备调试授权和本机hdc；构建/签名另需SDK、Studio或CLT、项目配置与证书。纯文本模型可读UI dump，截图理解依赖图像能力；离线知识可在无设备时用，但文档存在不保证目标API/工程能编译。
+
+工具链安装、设备资源和模型调用费用、每次构建时间均未测；还要承担签名、版本/路径、默认设备及部分失败恢复的人工核查。可先在无真实数据的设备使用显式target做只读列表和诊断，确认作用域/面板访问，再做可恢复样例工程安装。构建文字成功要连同产物和设备效果验收，删除数据/卸载等动作单独评估。
+
+如果设备被默认切到非预期目标、策略无法明确、旧产物被当新结果或面板访问超出预期，就停止相关工具/面板，回直接CLI与人工验收并核设备状态；不能把无依赖npm包理解成无环境负担，也不能据作者矩阵承诺本机兼容。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:70-89](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/README.md#L70-L89)
+
+作者工具链、SDK和可选后端条件。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+````text
+dsh --profile <name> --dump-config   # 确认出现 dsh-hdc-bridge 层 / confirms the dsh-hdc-bridge layer
+dsh --profile <name>
+```
+
+## 环境要求
+
+- **DSH ≥ 0.1.7-rc.2（推荐 ≥ 0.2.0-rc.2，0.2.0-rc.2 已实测）**：上游 0.2.0-rc.2 起把 `ctx.shell.run()` 换成 `resolve()` + `execute()`（句柄 `result()` 取结果）——新契约为准；0.1.5 及更早的旧线（`run()`）由兼容垫片接管，两条线都可用。两条 seam 都不存在的宿主会直接给出「seam 缺失」的明确报错，而不是误导性的 `hdc not found`
+- HarmonyOS 设备/模拟器；真机需开发者模式 + USB 调试
+- hdc 二进制自动探测（工具与面板共用同一套候选源）：显式 `devecoPath` / `DEVECO_STUDIO_HOME` / `DEVECO_HOME` / `DEVECO_SDK_HOME` → Windows 注册表（含 WOW6432Node）→ 非默认 DevEco/CLT SDK 根 → 默认安装根（apiVer 覆盖 default/10…18）→ PATH 回退（`where.exe` / `Get-Command` / `which`）；面板优先复用工具层已解析路径，两侧行为一致
+- 截图查看需图像输入模型；纯文本模型可用 `hdc_ui_dump` 做文本化 UI 检查
+- 可选后端 `@deveco/deveco-cli`（MIT）**不随插件安装**（插件零依赖，安装期不执行任何第三方脚本），工具链二选一：
+  - **路线 A｜DevEco Studio**：本机装 DevEco Studio ≥ 6.1.0（macOS/Windows）+ `npm i -g @deveco/deveco-cli`；
+  - **路线 B｜独立 Command Line Tools**：华为官方 zip 发行版（codelinter / hvigorw / ohpm / emulator / 内嵌 SDK，≥ 26.0.0，解压即用），下载自 developer.huawei.com/consumer/cn/download/command-line-tools-for-hmos，设置 `DEVECO_CLI_CLT_PATH`（或 `COMMAND_LINE_TOOL_PATH`）指向解压目录即可被自动识别；根识别支持 `version.txt` 与无 `version.txt` 的发行形态（HNP/系统集成包：以 `sdk/default` 布局为准，世代号取自 `sdk/default/sdk-pkg.json`）；**Linux 主机仅支持此形态**。
+  - 未安装时相关工具全部优雅降级并给出安装指引；`hms_setup` 一眼可查当前 `toolchainKind`（studio / clt）。签名前需一次人工 `devecocli auth login`（浏览器 OAuth）
+- 本机无任何工具链时仍可用：hdc_* 全部工具、设备面板与 Tier-1 离线知识层（随包内置）
+- `hms_api` / `hms_lint rules` 直接读本机 DevEco Studio/SDK 安装（零再分发）；未装 Studio 时这两项降级并给出指引
+- `hms_knowledge` 的 Tier-1 官方知识节选随包内置（28 篇约 1.7MB，CC-BY-4.0 逐字节选并附署名 + 逐文件溯源），**离线可用**，无需任何本机安装
+- `hms_api_change`（check compat）需要更高版本的 DevEco Studio（实测 6.1.0.830 报"min required 26.0.0.810"）；不满足时工具返回官方错误原文 + 升级指引，并提示先用 `hms_api` 的 `@since/@deprecated` 版本知识
+
+## 依赖与许可合规
+````
+
+</details>
+
+**依据 2 · 源码核查**：[lib/host.js:1915-1932](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L1915-L1932)
+
+构建产物核验而不只文字。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+            const hapAfter = await findNewestHap(base, policy)
+            const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+            if (artifactVerified) {
+              return { ...outside, backend: 'devecocli', ok: true, exitCode: deExit, timedOut: r.timedOut, output: compileOut.stripAnsi(deOutput), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(null) }
+            }
+            deOutput += '\n\ndevecocli returned success but artifact state was not verified; using hvigor fallback.'
+          }
+          // devecocli failed or its channel was mojo-blocked — fall through to
+          // the direct hvigorw build instead of only reporting the block.
+        }
+        const fb = await hvigorDirectBuild({ base, product: q(args.product) || 'default', mode: q(args.buildMode) || 'debug', timeoutMs, policy, task: args.action === 'clean' ? 'clean' : 'assembleHap' })
+        if (fb.available && fb.ok) {
+          const hapAfter = await findNewestHap(base, policy)
+          const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+          if (artifactVerified) {
+            return { ...outside, backend: 'hvigorw', ok: true, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb), note2: (deMojo ? 'devecocli channel was mojo-blocked in this sandbox (0x5) — fell back to the direct hvigorw build. ' : 'devecocli failed — used the direct hvigorw build. ') + 'hvigorw uses the signingConfigs already present in build-profile.json5; unsigned builds cannot install on a device.' }
+          }
+          return { ...outside, backend: 'hvigorw', ok: false, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), error: args.action === 'clean' ? 'hvigorw reported success but build outputs were not cleaned' : 'hvigorw reported success but no .hap artifact was produced', hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb) }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/hdc-core.mjs:234-249](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/hdc-core.mjs#L234-L249)
+
+默认设备变化带来的核对责任。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  async function currentTarget(requested, policy) {
+    const list = await listTargets(policy)
+    const clean = requested ? String(requested).trim() : ''
+    if (clean) {
+      preferredTarget = clean
+      return { target: clean, error: '' }
+    }
+    if (preferredTarget && list.targets.some((t) => t.id === preferredTarget && /connected/i.test(t.state))) {
+      return { target: preferredTarget, error: '' }
+    }
+    const target = pickTarget(list.targets, '')
+    if (!target) {
+      return { target: '', error: 'No HarmonyOS device/emulator connected. Connect one (hdc_connect 127.0.0.1:5555 for an emulator) or start a DevEco emulator.' }
+    }
+    preferredTarget = target
+    return { target, error: '' }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/host.js:334-350](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L334-L350)
+
+设备安装后仍需验证。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  async function install(args, policy) {
+    args = args || {}
+    const cur = await currentTarget(args.target, policy)
+    if (cur.error) return { ok: false, error: cur.error }
+    if (typeof args.hapPath !== 'string' || !args.hapPath.trim()) return { ok: false, error: 'hapPath is required (path to a built .hap file)' }
+    const argv = ['install']
+    if (args.replace !== false) argv.push('-r')
+    // Windows hdc resolves forward-slash absolute paths against the cwd and
+    // double-joins them; normalize to backslashes on the pwsh host dialect.
+    const hapRaw = args.hapPath.trim()
+    const hap = (typeof process !== 'undefined' && process.platform === 'win32') ? hapRaw.replace(/\//g, '\\') : hapRaw
+    argv.push(psQuote(hap))
+    const r = await runHdc(argv, { target: cur.target, timeoutMs: 180000, stdoutMaxBytes: 262144 }, policy)
+    const text = r.stdout + '\n' + r.stderr
+    const ok = r.ok && !/error|failed|fail/i.test(text)
+    const hint = ok ? 'Installed. Run hdc_screenshot or hdc_ui_dump to verify the UI.' : errorHint(text)
+    return { ok, exitCode: r.exitCode, stdout: tailText(r.stdout, 4000), stderr: tailText(r.stderr, 2000), timedOut: r.timedOut, hint }
+```
+
+</details>
+
+#### 缺口
+
+- 无目标环境资源/耗时与合格部署对照，也缺作用域验收。
+  **影响**：不支持节时、成功率或单位合格任务成本判断。
+  **进一步探讨**：先核双会话作用域，再记录同一工程从构建到设备验收的全尝试、资源和人工时间。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 执行收据是否能减少目标混淆？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+假设在执行前后提供同一份会话、工程、显式/回退设备及产物身份收据，让操作者确认“这次在哪做了什么”。推导来自Q03的设备默认选择与Q02的产物存在性判据；它不是替代宿主沙箱，也不让未验收产物自动可信。
+
+已有preferred/preferredActive、编译cwd和hapBefore/hapAfter是反证，不能声称完全缺状态。新增部分应只连接这些分散字段，并在自动回退时要求更明确确认；如果实际宿主每会话隔离已解决设备记忆问题，收据的收益可能很小。
+
+可用两会话两设备两工程安排连接切换、增量构建、旧hap和超时，比较当前输出与收据原型的误投设备、错误部署、查错耗时和确认次数。若没有降低错误、提示本身过期或新增确认负担抵消收益，应否定。作用域事实和用户需要都尚未验证，不将该构想算现有创新。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/hdc-core.mjs:234-249](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/hdc-core.mjs#L234-L249)
+
+显式与回退设备选择。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  async function currentTarget(requested, policy) {
+    const list = await listTargets(policy)
+    const clean = requested ? String(requested).trim() : ''
+    if (clean) {
+      preferredTarget = clean
+      return { target: clean, error: '' }
+    }
+    if (preferredTarget && list.targets.some((t) => t.id === preferredTarget && /connected/i.test(t.state))) {
+      return { target: preferredTarget, error: '' }
+    }
+    const target = pickTarget(list.targets, '')
+    if (!target) {
+      return { target: '', error: 'No HarmonyOS device/emulator connected. Connect one (hdc_connect 127.0.0.1:5555 for an emulator) or start a DevEco emulator.' }
+    }
+    preferredTarget = target
+    return { target, error: '' }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/host.js:1915-1932](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/host.js#L1915-L1932)
+
+已有产物前后状态可作为收据基础。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+            const hapAfter = await findNewestHap(base, policy)
+            const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+            if (artifactVerified) {
+              return { ...outside, backend: 'devecocli', ok: true, exitCode: deExit, timedOut: r.timedOut, output: compileOut.stripAnsi(deOutput), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(null) }
+            }
+            deOutput += '\n\ndevecocli returned success but artifact state was not verified; using hvigor fallback.'
+          }
+          // devecocli failed or its channel was mojo-blocked — fall through to
+          // the direct hvigorw build instead of only reporting the block.
+        }
+        const fb = await hvigorDirectBuild({ base, product: q(args.product) || 'default', mode: q(args.buildMode) || 'debug', timeoutMs, policy, task: args.action === 'clean' ? 'clean' : 'assembleHap' })
+        if (fb.available && fb.ok) {
+          const hapAfter = await findNewestHap(base, policy)
+          const artifactVerified = args.action === 'clean' ? !hapAfter : Boolean(hapAfter)
+          if (artifactVerified) {
+            return { ...outside, backend: 'hvigorw', ok: true, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), artifactVerified, hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb), note2: (deMojo ? 'devecocli channel was mojo-blocked in this sandbox (0x5) — fell back to the direct hvigorw build. ' : 'devecocli failed — used the direct hvigorw build. ') + 'hvigorw uses the signingConfigs already present in build-profile.json5; unsigned builds cannot install on a device.' }
+          }
+          return { ...outside, backend: 'hvigorw', ok: false, exitCode: fb.exitCode, timedOut: fb.timedOut, output: compileOut.stripAnsi(fb.output), error: args.action === 'clean' ? 'hvigorw reported success but build outputs were not cleaned' : 'hvigorw reported success but no .hap artifact was produced', hapBefore: hapBefore || '', hapAfter: hapAfter || '', ...hvigorDiag(fb) }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/compile-session-cwd.mjs:13-30](https://github.com/1na-ko/dsh-hdc-bridge/blob/61b3e6d827e644c96fdfb527114ef9e5e3b17e06/lib/compile-session-cwd.mjs#L13-L30)
+
+已有会话工程映射。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+const sessionCwd = new Map()
+
+export function setSessionCwd(sessionID, cwd) {
+  const id = String(sessionID || '').trim()
+  const dir = String(cwd || '').trim()
+  if (!id || !dir) return
+  sessionCwd.set(id, dir)
+}
+
+export function getSessionCwd(sessionID) {
+  if (!sessionID) return undefined
+  return sessionCwd.get(sessionID)
+}
+
+export function clearSessionCwd(sessionID) {
+  if (!sessionID) {
+    sessionCwd.clear()
+    return
+```
+
+</details>
+
+#### 缺口
+
+- 没有收据原型、用户混淆反馈或双设备对照。
+  **影响**：只能提出待验证假设，不能称已确认需求。
+  **进一步探讨**：固定作用域后做故障序列对照，保留负结果。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

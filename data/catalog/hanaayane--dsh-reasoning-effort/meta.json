@@ -1,40 +1,35 @@
 {
     "repository": "HanaAyane/dsh-reasoning-effort",
     "repository_id": 1334442247,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
-    "stars": 256,
-    "pushed_at": "2026-10-28T15:33:40Z",
+    "captured_at": "2026-11-03T02:00:13.357Z",
+    "window_start": "2026-10-04T02:00:13.357Z",
+    "stars": 264,
+    "pushed_at": "2026-10-30T11:45:24Z",
     "issues": {
-        "open": 4,
-        "closed": 11,
-        "created_30d": 7,
+        "open": 2,
+        "closed": 13,
+        "created_30d": 5,
         "closed_30d": 8,
-        "updated_30d": 10
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AHanaAyane%2Fdsh-reasoning-effort%20is%3Aissue%20updated%3A2026-10-04T02%3A00%3A13.357Z..2026-11-03T02%3A00%3A13.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2744:3DE994:2ECE8:9951C:6AE94239 and timestamp 2026-11-03 02:08:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@ayanehana/dsh-reasoning-effort",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 904,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40ayanehana%2Fdsh-reasoning-effort",
+        "captured_at": "2026-11-02T11:17:42.215Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 1442,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40ayanehana%2Fdsh-reasoning-effort",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-20T15:32:04.118Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-11-02T11:17:42.215Z",
             "source_url": "https://registry.npmjs.org/%40ayanehana%2Fdsh-reasoning-effort",
             "error": null,
             "latest_version": "0.9.1",

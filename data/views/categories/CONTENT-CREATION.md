@@ -42,6 +42,7 @@
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | DSH工作区资料创作插件，将对话生成接到Studio修订、学习交互与真实文件交接；引用合法/快照状态和生成答案仍需独立核验。 | 已有兼容环境且允许外发公开小资料者，可试quiz/卡片并人工核答案；不直接学生评分/大批生成，不强开Office/媒体，见[Q04](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q04)/[Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05)。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
+| [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
 | [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
@@ -540,6 +541,22 @@
 
 [查看完整分析](../../plugins/andiii208--gzhflow/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1139128402-root"></a>
+
+## [humanizer-ru](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md)
+
+[![GitHub ★ 139](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=139&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Vladimir-Human/humanizer-ru)
+
+> **用途**：[Q01](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q01) 能读俄语的作者/编辑希望把生成稿改成符合自身体裁和文风的文字，合格结果须保留事实与作者观点。
+
+> **亮点**：[Q01](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q01)、[Q02](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q02) 将俄语文风规则与数字、归属、模态守恒流程结合，提供errors/checks两层复核和可回退粘贴清理，而非仅删模板词。
+
+> **思考**：[Q02](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q02) exit0只表示未发现规则errors，checks仍需人读；模型提示不保证语义不变，单一bak非历史，作者小样本模型裁判不能外推当前版本真实编辑效果。
+
+> **建议**：[Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 未验证锚点审阅视图对照已有锚点/checks，测否定、归属与模态漏判和审阅时间；无改善或负担增加即否定。
+
+[查看完整分析](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1399694663-root"></a>
 
 ## [Media Studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
@@ -816,4 +833,4 @@
 
 ## 更新时间
 
-2026-11-02
+2026-11-03
