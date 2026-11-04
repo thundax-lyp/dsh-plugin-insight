@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "cd0e149a1993085cb09ebc1843fa4cf0",
+    "identity": "github:1216014649:plugins-dsh",
+    "slug": "littleblakew--msds-chain-mcp--plugins-dsh",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1216014649:plugins-dsh",
+            "repository_id": 1216014649,
+            "component_id": "plugins-dsh",
+            "repository": "littleblakew/msds-chain-mcp",
+            "path": "plugins/dsh",
+            "aliases": [],
+            "name": "DSH MSDS Chain",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "af3688fbb6b5a05f5508a2d0f202bf0a556b246d80bf4c2d9a0bb6fbcd9680f3",
+                "code": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                "maintenance": "9dc16decadda302790eefb54a4a80ac5446444ff187fa1a4ebd884cade146d7f"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-03-github-1216014649-plugins-dsh-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T13:57:05.659Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-03-github-1216014649-plugins-dsh-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/littleblakew/msds-chain-mcp",
+                            "commit": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                            "path": "plugins/dsh/README.md",
+                            "content_sha256": "6c3e34b31d1439722d23905ab209724e4e945954f0fddfdb2e5d89c172d58658"
+                        }
+                    ],
+                    "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                    "captured_at": "2026-11-04T13:57:05.659Z",
+                    "summary": "通过 MCP 桥将托管化学安全查询服务接入 DSH。",
+                    "artifact": "data/runs/2026-11-04-03/littleblakew--msds-chain-mcp--plugins-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-03-github-1216014649-plugins-dsh-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/littleblakew/msds-chain-mcp",
+                            "commit": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                            "path": "plugins/dsh/README.md",
+                            "content_sha256": "6c3e34b31d1439722d23905ab209724e4e945954f0fddfdb2e5d89c172d58658"
+                        },
+                        {
+                            "repository_url": "https://github.com/littleblakew/msds-chain-mcp",
+                            "commit": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                            "path": "plugins/dsh/package.json",
+                            "content_sha256": "a7083f979276486b81f905e3dbbb1403787577f0c6f53a45426d3eed7b20a9b7"
+                        },
+                        {
+                            "repository_url": "https://github.com/littleblakew/msds-chain-mcp",
+                            "commit": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                            "path": "plugins/dsh/cordis.patch.yml",
+                            "content_sha256": "7ec8546d5c80840329ee6c5544355e087d5eef7728f73fea68bfda7c0bd65019"
+                        }
+                    ],
+                    "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                    "captured_at": "2026-11-04T13:57:05.659Z",
+                    "summary": "核查 plugins/dsh/README.md、plugins/dsh/package.json、plugins/dsh/cordis.patch.yml；配置官方 MCP 客户端连接托管 endpoint 并在环境变量存在时携带 Bearer key。",
+                    "artifact": "data/runs/2026-11-04-03/littleblakew--msds-chain-mcp--plugins-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只检查 plugins/dsh 的 README、package 和 patch；根服务实现、托管版本、SDS 数据及宿主身份未审计。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要查找化学品安全资料并由专业人员复核的 DSH 用户。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "配置官方 MCP 客户端连接托管 endpoint 并在环境变量存在时携带 Bearer key。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只检查 plugins/dsh 的 README、package 和 patch；根服务实现、托管版本、SDS 数据及宿主身份未审计。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件 package 声明 dsh-msds-chain 0.1.0、MIT 与 DSH bundle；未核验发布包及服务。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| 兼容 DSH MCP 客户端 | 启用需要 | 连接远程工具 | 无工具 |\n| 网络及服务 | 调用需要 | 查询化学安全信息 | 不可用或超时 |\n| API key | 作者声明托管服务需要 | 访问授权 | 作者称可能静默无工具 |\n| 合格人员和最新 SDS | 实际安全决策需要 | 验证物质与条件 | 不应直接采用结果 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | DSH、服务及密钥 | 配置与隐私评估 | 兼容性未知 |\n| 持续 | 网络与可能的服务额度 | 安全专业复核 | 费用和精度未知 |\n| 故障 | 诊断与官方 SDS | 检查密钥和来源 | 静默失败率未知 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 材料 | 未知 |\n|---|---|---|\n| DSH 接入 | bundle patch | 实际工具注册 |\n| 引用 SDS | 作者声明 | 数据真伪、日期及适用性 |\n| 启动失败处理 | 作者报告默认策略 | 当前宿主行为 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 采用环境变量与 MCP 桥；[Q03](#research-q03) 桥没有实现来源验证。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 和 [Q02](#research-q02) 提供 DSH 桥配置，不实现或验证底层化学安全判断。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 组件未含服务数据和核验逻辑，作者引用主张不能证明安全建议正确。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 建议提供连接与引用状态，需验证且不泄露凭据。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1216014649:plugins-dsh",
+                            "area": "code",
+                            "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:57:05.659Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T13:57:05.659Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                "reviewed_at": "2026-11-04T13:57:05.659Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1216014649:plugins-dsh",
+                        "area": "code",
+                        "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) patch:43–51 将已有服务接入 DSH，相对手工配置有局部 novelty 9（25%）高于 0；没有新传输或数据机制，不足 18。组件只配置官方 MCP 客户端，mechanism 已核取 0，不把远端能力归给桥而升至 8。标准 MCP 配置形式可用于其他服务，transferability 5 高于 0；具体认证、数据和宿主未验证，不足 10。环境变量和单行配置减少局部接线，simplification 4 高于 0；密钥与安全复核仍由用户承担，不足 8。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) README.md:1–12 将安全资料查询引入 DSH，workflow 9 高于 0；专业验证工作未改变且未证实际责任变化，不足 18。组件不创建新的安全验收单位，delivery 取 0，不把远端服务回答归给桥取 8。为 DSH 用户提供访问入口 reach 5 高于 0；需 key 与专业复核，未证明原受限人群得到新能力，不足 10。未核实服务收费及时间成本，economics 取 0，不把作者免费计划等同实际经济改善。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "需要查找化学品安全资料的 DSH 用户可以把该桥视为待核查的信息入口。它连接作者描述的 SDS 查询服务，但远端数据、引用和适用性尚未独立验证。如果缺少最新原始 SDS、具体条件或合格人员复核，应停止依赖结果并遵循现场安全程序。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README.md:1–12 描述化学安全资料与查询人群，超过只知潜在用途的 8 分；缺具体频率和实际流程摩擦，不足 23。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) patch:43–51 提供预置桥配置，超过无增量的 0；底层 SDS 服务与官方 MCP 已存在，未证桥提供实质改进，不足 13。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 与 [Q03](#research-q03) 核查连接配置和远端依赖，超过完全没有支持的 0；未核验服务、SDS 和真实宿主，无法覆盖核心采用主张，不足 13。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q04](#research-q04) 涉及密钥、远端与专业审核；返回原始 SDS 和停止使用提供部分退路，高于 0，但费用、隐私和故障恢复未知，不足 10。"
+                    }
+                },
+                "score": 32,
+                "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                "reviewed_at": "2026-11-04T13:57:05.659Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-03-github-1216014649-plugins-dsh-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1216014649:plugins-dsh",
+                        "area": "code",
+                        "fingerprint": "ff06b00d00e00762f281a79cf1766040cf49f36d"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1216014649:plugins-dsh",
+            "repository": "littleblakew/msds-chain-mcp",
+            "path": "plugins/dsh",
+            "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+            "fingerprints": {
+                "directory": "af3688fbb6b5a05f5508a2d0f202bf0a556b246d80bf4c2d9a0bb6fbcd9680f3",
+                "code": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+                "maintenance": "9dc16decadda302790eefb54a4a80ac5446444ff187fa1a4ebd884cade146d7f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T13:20:58Z",
+            "analysis_sha256": "d203c45718fe48e997a9cb8381346140a96d8f5df8cb5597d71d1df336d9bde5"
+        },
+        "publication.metadata": "data/catalog/littleblakew--msds-chain-mcp--plugins-dsh/meta.json",
+        "publication.summaries": {
+            "text": "通过 MCP 桥将托管化学安全查询服务接入 DSH。",
+            "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+            "source_url": "https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+            "items": {
+                "Host 路由": "将 DSH 工具调用连接到托管 MCP 服务。"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n|---|---|---|\n| MCP 桥 | 连接化学安全工具 | 依赖远端与密钥 |\n| 化学资料查询 | 获得作者声明的 SDS 线索 | 数据和适用性未核验 |\n| 自托管覆盖 | 改用自有服务 | 服务身份与凭据另行核查 |"
+        },
+        "publication.advice": {
+            "revision": "ff06b00d00e00762f281a79cf1766040cf49f36d",
+            "text": "[Q04](#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。"
+        },
+        "registry": "data/plugins/littleblakew--msds-chain-mcp--plugins-dsh",
+        "reports": "# DSH MSDS Chain\n\n> 通过 MCP 桥将托管化学安全查询服务接入 DSH。\n\n## 研究范围\n\n- **仓库**：[littleblakew/msds-chain-mcp](https://github.com/littleblakew/msds-chain-mcp)\n- **版本号**：0.1.0（[固定提交 ff06b00d00e00762f281a79cf1766040cf49f36d](https://github.com/littleblakew/msds-chain-mcp/tree/ff06b00d00e00762f281a79cf1766040cf49f36d)）\n- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定版本组件配置和文档检查；未调用外部服务或实际 SDS。\n\n## 洞察短评\n\n- **用途**：需要查找化学品安全资料并由专业人员复核的 DSH 用户。\n- **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 提供 DSH 桥配置，不实现或验证底层化学安全判断。\n- **思考**：[Q03](#research-q03) 组件未含服务数据和核验逻辑，作者引用主张不能证明安全建议正确。\n- **建议**：[Q05](#research-q05) 建议提供连接与引用状态，需验证且不泄露凭据。\n\n采用建议：[Q04](#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。\n\n## 核心贡献\n\n[Q01](#research-q01) 和 [Q02](#research-q02) 提供 DSH 桥配置，不实现或验证底层化学安全判断。\n\n## 关键质疑\n\n[Q03](#research-q03) 组件未含服务数据和核验逻辑，作者引用主张不能证明安全建议正确。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 建议提供连接与引用状态，需验证且不泄露凭据。\n\n隔离环境核查 DSH 启动、密钥错误与引用字段；化学安全结论另需专业核验，本轮未执行。\n\n## 场景与替代办法\n\n需要查找化学品安全资料并由专业人员复核的 DSH 用户。\n\n由合格人员直接核对最新供货商 SDS 与适用规定。\n\n## 依赖与流程\n\n| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| 兼容 DSH MCP 客户端 | 启用需要 | 连接远程工具 | 无工具 |\n| 网络及服务 | 调用需要 | 查询化学安全信息 | 不可用或超时 |\n| API key | 作者声明托管服务需要 | 访问授权 | 作者称可能静默无工具 |\n| 合格人员和最新 SDS | 实际安全决策需要 | 验证物质与条件 | 不应直接采用结果 |\n\n| 步骤 | 执行者与动作 | 判据或失败处理 |\n|---|---|---|\n| 准备 | 用户确认服务与密钥 | 不泄露凭据及配方 |\n| 查询 | Agent 调用相关工具 | 检查工具是否可用 |\n| 核对 | 专业人员核实具体物质和 SDS | 核对版本与工艺条件 |\n| 决定 | 负责人按当地程序处理 | 缺证据则停止 |\n\n## 成本与效果\n\n| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | DSH、服务及密钥 | 配置与隐私评估 | 兼容性未知 |\n| 持续 | 网络与可能的服务额度 | 安全专业复核 | 费用和精度未知 |\n| 故障 | 诊断与官方 SDS | 检查密钥和来源 | 静默失败率未知 |\n\n| 效果 | 材料 | 未知 |\n|---|---|---|\n| DSH 接入 | bundle patch | 实际工具注册 |\n| 引用 SDS | 作者声明 | 数据真伪、日期及适用性 |\n| 启动失败处理 | 作者报告默认策略 | 当前宿主行为 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查 DSH 桥接、鉴权和化学安全证据边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 化学安全资料使用者相对直接查询 SDS 获得什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n该组件声明为 DSH 用户挂接托管化学安全 MCP，作者描述问答、兼容性、储存与 SDS 信息；直接核查供货商 SDS 和专业流程是必要基线。组件本身只配置桥接，不实现安全数据或判断；作者声称提供引用不能证明当前远端回答的正确性、覆盖或适用性。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[plugins/dsh/README.md:1-12](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L1-L12)\n\n服务定位与作者能力声明。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n# dsh-msds-chain\n\nChemical safety intelligence for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).\nThis bundle mounts the hosted MSDS Chain MCP endpoint through the in-box\n`@deepseek-ai/dsh-mcp-client` bridge — no server to run locally.\n\nMCP tools covering compatibility and mixing-order checks, GHS hazard analysis, PPE\nrecommendations, storage and waste-disposal guidance, occupational exposure limits,\ntransport classification, multi-region regulatory compliance (EU/US/CN/JP/KR/CA/AU/TW/SG),\nsafer alternatives, protocol text parsing, SDS section lookup and version diffs, and\nsigned audit reports. Every answer cites the supplier SDS and revision date it is\ngrounded in.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[plugins/dsh/package.json:1-15](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/package.json#L1-L15)\n\n组件身份与内容。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n{\n  \"name\": \"dsh-msds-chain\",\n  \"description\": \"Chemical safety intelligence for DeepSeek Harness: mounts the hosted MSDS Chain MCP endpoint (https://mcp.lagentbot.com/mcp) through the in-box @deepseek-ai/dsh-mcp-client bridge\",\n  \"version\": \"0.1.0\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/littleblakew/msds-chain-mcp.git\",\n    \"directory\": \"plugins/dsh\"\n  },\n  \"homepage\": \"https://msdschain.lagentbot.com\",\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"README.md\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[plugins/dsh/cordis.patch.yml:43-51](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/cordis.patch.yml#L43-L51)\n\n远程 MCP 客户端配置。\n\n```text\n- insert:\n    - id: mcp-msds-chain\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: msds-chain\n        transport: streamable-http\n        url: https://mcp.lagentbot.com/mcp\n        headers: !!js 'process.env.MSDS_API_KEY ? { Authorization: `Bearer ${process.env.MSDS_API_KEY}` } : {}'\n        toolCallTimeoutMs: 150000\n```\n\n#### 缺口\n\n- 远端服务和具体 SDS 未核验\n  **影响**：不能确定回答正确性或现场适用性\n  **进一步探讨**：由具资质人员按具体化学品和工艺对照最新供货商 SDS。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 组件如何连接服务，错误如何影响工具发现？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nbundle 插入官方 MCP 客户端，配置 streamable-http URL，从环境变量存在时组装 Bearer 头，并设置 150 秒调用超时；failOnStartupError 未在配置中显式开启。作者称其在特定旧版 DSH 中缺失或错误密钥会静默导致工具未注册，这仅是作者版本特定报告，不可延伸到所有版本或将超时当服务可用性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[plugins/dsh/cordis.patch.yml:43-51](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/cordis.patch.yml#L43-L51)\n\n服务 URL、鉴权头和超时。\n\n```text\n- insert:\n    - id: mcp-msds-chain\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: msds-chain\n        transport: streamable-http\n        url: https://mcp.lagentbot.com/mcp\n        headers: !!js 'process.env.MSDS_API_KEY ? { Authorization: `Bearer ${process.env.MSDS_API_KEY}` } : {}'\n        toolCallTimeoutMs: 150000\n```\n\n**依据 2 · 作者声明**：[plugins/dsh/README.md:34-55](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L34-L55)\n\n作者对 401 和启动策略的报告。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n````text\n## Verifying it loaded\n\n⚠️ **A missing or invalid key fails silently.** The endpoint answers `401`, no tools\nregister, and `dsh` prints nothing to the console — the harness starts normally and the\nmodel simply has no `mcp__msds-chain__*` tools. (Measured against dsh `0.1.0-rc.6`.)\n\nSo check the key itself rather than watching for an error:\n\n```sh\ncurl -s -o /dev/null -w '%{http_code}\\n' -X POST https://mcp.lagentbot.com/mcp \\\n  -H \"Authorization: Bearer $MSDS_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -H 'Accept: application/json, text/event-stream' \\\n  -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-06-18\",\"capabilities\":{},\"clientInfo\":{\"name\":\"probe\",\"version\":\"0\"}}}'\n```\n\n`200` means the key works; `401` means it does not.\n\nThis bundle deliberately leaves `failOnStartupError` at its default (`false`). Setting it\nto `true` does surface the 401 loudly — but it aborts the whole plugin tree, so `dsh`\nrefuses to boot at all. A chemical-safety plugin should not be able to take down your\nharness because our endpoint had a bad minute.\n````\n\n</details>\n\n#### 缺口\n\n- 未执行远端服务和目标宿主\n  **影响**：无法确认认证、注册或报错行为\n  **进一步探讨**：用测试密钥在隔离宿主验证缺钥、过期、断网和恢复。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 化学安全来源和实时可靠性能否从桥接得到保证？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\nREADME 声称回答引用供货商 SDS 及修订日期；该组件只提供桥，既不校验远端引用，也不在本目录包含化学品数据库、SDS 或服务逻辑。提供工具和完整来源声明不证明化学兼容、暴露限制或应急建议准确；生产使用须由专业人员结合最新 SDS、具体配方、条件和当地要求核实。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[plugins/dsh/README.md:7-12](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L7-L12)\n\n作者对来源和功能的声明。\n\n```text\nMCP tools covering compatibility and mixing-order checks, GHS hazard analysis, PPE\nrecommendations, storage and waste-disposal guidance, occupational exposure limits,\ntransport classification, multi-region regulatory compliance (EU/US/CN/JP/KR/CA/AU/TW/SG),\nsafer alternatives, protocol text parsing, SDS section lookup and version diffs, and\nsigned audit reports. Every answer cites the supplier SDS and revision date it is\ngrounded in.\n```\n\n**依据 2 · 源码核查**：[plugins/dsh/package.json:13-15](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/package.json#L13-L15)\n\n组件分发仅含 patch 和 README。\n\n```text\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"README.md\"\n```\n\n**依据 3 · 源码核查**：[plugins/dsh/cordis.patch.yml:43-51](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/cordis.patch.yml#L43-L51)\n\n组件将调用路由到远端。\n\n```text\n- insert:\n    - id: mcp-msds-chain\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: msds-chain\n        transport: streamable-http\n        url: https://mcp.lagentbot.com/mcp\n        headers: !!js 'process.env.MSDS_API_KEY ? { Authorization: `Bearer ${process.env.MSDS_API_KEY}` } : {}'\n        toolCallTimeoutMs: 150000\n```\n\n#### 缺口\n\n- 远端数据来源、更新与校验不可见\n  **影响**：不能保证高风险建议准确或完整\n  **进一步探讨**：针对具体物质请专业人员回源供货商 SDS 与适用标准。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 使用前要核对哪些依赖、数据和失败条件？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n组件依赖 DSH MCP bridge、网络、托管服务和 API key；请求内容与凭据会发送到所配置服务，服务端保存和数据政策未在本目录核实。作者描述可覆盖 URL 指向自托管服务，切换仍需确认其身份及凭据边界。用户需要承担密钥管理、可用性和高风险答案复核；没有授权、SDS 或环境信息不足时停止并咨询合格安全人员。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[plugins/dsh/README.md:20-32](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L20-L32)\n\n作者的 key 和工具接入说明。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n````text\n## Configure\n\nAn API key is required — there is no anonymous tier on this endpoint. Create one at\n[msdschain.lagentbot.com](https://msdschain.lagentbot.com) → API Keys (free plan\navailable), then:\n\n```sh\nexport MSDS_API_KEY=sk-msds-your-key\n```\n\nStart `dsh` with that variable set. The tools register on `ctx.tools` under the\n`msds-chain` namespace, so the model sees `mcp__msds-chain__ask_chemical_safety`,\n`mcp__msds-chain__check_chemical_compatibility`, and so on.\n````\n\n</details>\n\n**依据 2 · 作者声明**：[plugins/dsh/README.md:63-67](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L63-L67)\n\n自托管覆盖说明。\n\n```text\n## Self-hosting\n\nTo point at your own core instead of the hosted endpoint, override the row from a\nlater layer (profile `cordis.patch.yml` or `--patch`) — see the comment block in\n[`cordis.patch.yml`](cordis.patch.yml).\n```\n\n**依据 3 · 源码核查**：[plugins/dsh/cordis.patch.yml:43-51](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/cordis.patch.yml#L43-L51)\n\n远程及授权头。\n\n```text\n- insert:\n    - id: mcp-msds-chain\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: msds-chain\n        transport: streamable-http\n        url: https://mcp.lagentbot.com/mcp\n        headers: !!js 'process.env.MSDS_API_KEY ? { Authorization: `Bearer ${process.env.MSDS_API_KEY}` } : {}'\n        toolCallTimeoutMs: 150000\n```\n\n#### 缺口\n\n- 费用、服务隐私政策、故障恢复及真实精度未经验证\n  **影响**：无法判断使用成本与风险\n  **进一步探讨**：不发送敏感实验配方，先核实服务协议并核对来源。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何帮助用户发现工具未加载或 SDS 缺乏来源？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n作者报告缺 key 可能静默无工具，且桥本身不校验 SDS 引用。可探索在受支持宿主暴露不含密钥的连接状态，同时对输出提示来源和修订日期是否存在；这是待验证方案，不能将字段存在当作材料准确。以缺钥、失联、来源缺失和旧修订的受控样例比较发现率、误报及排障耗时，若泄露凭据或无改善则否定。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[plugins/dsh/README.md:34-55](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L34-L55)\n\n作者版本特定的静默失败及取舍。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n````text\n## Verifying it loaded\n\n⚠️ **A missing or invalid key fails silently.** The endpoint answers `401`, no tools\nregister, and `dsh` prints nothing to the console — the harness starts normally and the\nmodel simply has no `mcp__msds-chain__*` tools. (Measured against dsh `0.1.0-rc.6`.)\n\nSo check the key itself rather than watching for an error:\n\n```sh\ncurl -s -o /dev/null -w '%{http_code}\\n' -X POST https://mcp.lagentbot.com/mcp \\\n  -H \"Authorization: Bearer $MSDS_API_KEY\" \\\n  -H 'Content-Type: application/json' \\\n  -H 'Accept: application/json, text/event-stream' \\\n  -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-06-18\",\"capabilities\":{},\"clientInfo\":{\"name\":\"probe\",\"version\":\"0\"}}}'\n```\n\n`200` means the key works; `401` means it does not.\n\nThis bundle deliberately leaves `failOnStartupError` at its default (`false`). Setting it\nto `true` does surface the 401 loudly — but it aborts the whole plugin tree, so `dsh`\nrefuses to boot at all. A chemical-safety plugin should not be able to take down your\nharness because our endpoint had a bad minute.\n````\n\n</details>\n\n**依据 2 · 作者声明**：[plugins/dsh/README.md:7-12](https://github.com/littleblakew/msds-chain-mcp/blob/ff06b00d00e00762f281a79cf1766040cf49f36d/plugins/dsh/README.md#L7-L12)\n\n作者引用声明。\n\n```text\nMCP tools covering compatibility and mixing-order checks, GHS hazard analysis, PPE\nrecommendations, storage and waste-disposal guidance, occupational exposure limits,\ntransport classification, multi-region regulatory compliance (EU/US/CN/JP/KR/CA/AU/TW/SG),\nsafer alternatives, protocol text parsing, SDS section lookup and version diffs, and\nsigned audit reports. Every answer cites the supplier SDS and revision date it is\ngrounded in.\n```\n\n#### 缺口\n\n- 诊断集成、字段及用户效果未验证\n  **影响**：不能证明建议可降低误用\n  **进一步探讨**：隔离环境模拟连接与引用缺失并由专业人员复核。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：plugins/dsh；内容摘要：ba189227013e8282631dff24ed53d09f34481ce7a654e6acb0f8c5420a3d2594。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 74 | — | — | 439 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n|---|---|---|\n| MCP 桥 | 连接化学安全工具 | 依赖远端与密钥 |\n| 化学资料查询 | 获得作者声明的 SDS 线索 | 数据和适用性未核验 |\n| 自托管覆盖 | 改用自有服务 | 服务身份与凭据另行核查 |\n\n## 工程亮点\n\n[Q02](#research-q02) 采用环境变量与 MCP 桥；[Q03](#research-q03) 桥没有实现来源验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 plugins/dsh/README.md、plugins/dsh/package.json、plugins/dsh/cordis.patch.yml 及固定范围 inventory；组件：plugins/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只检查 plugins/dsh 的 README、package 和 patch；根服务实现、托管版本、SDS 数据及宿主身份未审计。\n- 下一步：隔离环境核查 DSH 启动、密钥错误与引用字段；化学安全结论另需专业核验，本轮未执行。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-03/littleblakew--msds-chain-mcp--plugins-dsh/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"littleblakew/msds-chain-mcp\",\n  \"revision\": \"ff06b00d00e00762f281a79cf1766040cf49f36d\",\n  \"component\": \"plugins/dsh\",\n  \"inspected_paths\": [\n    \"plugins/dsh/README.md\",\n    \"plugins/dsh/package.json\",\n    \"README.md\",\n    \"plugins/dsh/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查 DSH 桥接、鉴权和化学安全证据边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"化学安全资料使用者相对直接查询 SDS 获得什么？\",\n        \"answer\": \"该组件声明为 DSH 用户挂接托管化学安全 MCP，作者描述问答、兼容性、储存与 SDS 信息；直接核查供货商 SDS 和专业流程是必要基线。组件本身只配置桥接，不实现安全数据或判断；作者声称提供引用不能证明当前远端回答的正确性、覆盖或适用性。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 1,\n            \"line_end\": 12,\n            \"observation\": \"服务定位与作者能力声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/package.json\",\n            \"line_start\": 1,\n            \"line_end\": 15,\n            \"observation\": \"组件身份与内容。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/cordis.patch.yml\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"远程 MCP 客户端配置。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"远端服务和具体 SDS 未核验\",\n            \"impact\": \"不能确定回答正确性或现场适用性\",\n            \"next_step\": \"由具资质人员按具体化学品和工艺对照最新供货商 SDS。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"组件如何连接服务，错误如何影响工具发现？\",\n        \"answer\": \"bundle 插入官方 MCP 客户端，配置 streamable-http URL，从环境变量存在时组装 Bearer 头，并设置 150 秒调用超时；failOnStartupError 未在配置中显式开启。作者称其在特定旧版 DSH 中缺失或错误密钥会静默导致工具未注册，这仅是作者版本特定报告，不可延伸到所有版本或将超时当服务可用性证明。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/cordis.patch.yml\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"服务 URL、鉴权头和超时。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 34,\n            \"line_end\": 55,\n            \"observation\": \"作者对 401 和启动策略的报告。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未执行远端服务和目标宿主\",\n            \"impact\": \"无法确认认证、注册或报错行为\",\n            \"next_step\": \"用测试密钥在隔离宿主验证缺钥、过期、断网和恢复。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"化学安全来源和实时可靠性能否从桥接得到保证？\",\n        \"answer\": \"README 声称回答引用供货商 SDS 及修订日期；该组件只提供桥，既不校验远端引用，也不在本目录包含化学品数据库、SDS 或服务逻辑。提供工具和完整来源声明不证明化学兼容、暴露限制或应急建议准确；生产使用须由专业人员结合最新 SDS、具体配方、条件和当地要求核实。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 7,\n            \"line_end\": 12,\n            \"observation\": \"作者对来源和功能的声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/package.json\",\n            \"line_start\": 13,\n            \"line_end\": 15,\n            \"observation\": \"组件分发仅含 patch 和 README。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/cordis.patch.yml\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"组件将调用路由到远端。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"远端数据来源、更新与校验不可见\",\n            \"impact\": \"不能保证高风险建议准确或完整\",\n            \"next_step\": \"针对具体物质请专业人员回源供货商 SDS 与适用标准。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"使用前要核对哪些依赖、数据和失败条件？\",\n        \"answer\": \"组件依赖 DSH MCP bridge、网络、托管服务和 API key；请求内容与凭据会发送到所配置服务，服务端保存和数据政策未在本目录核实。作者描述可覆盖 URL 指向自托管服务，切换仍需确认其身份及凭据边界。用户需要承担密钥管理、可用性和高风险答案复核；没有授权、SDS 或环境信息不足时停止并咨询合格安全人员。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 20,\n            \"line_end\": 32,\n            \"observation\": \"作者的 key 和工具接入说明。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 63,\n            \"line_end\": 67,\n            \"observation\": \"自托管覆盖说明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"plugins/dsh/cordis.patch.yml\",\n            \"line_start\": 43,\n            \"line_end\": 51,\n            \"observation\": \"远程及授权头。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"费用、服务隐私政策、故障恢复及真实精度未经验证\",\n            \"impact\": \"无法判断使用成本与风险\",\n            \"next_step\": \"不发送敏感实验配方，先核实服务协议并核对来源。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"如何帮助用户发现工具未加载或 SDS 缺乏来源？\",\n        \"answer\": \"作者报告缺 key 可能静默无工具，且桥本身不校验 SDS 引用。可探索在受支持宿主暴露不含密钥的连接状态，同时对输出提示来源和修订日期是否存在；这是待验证方案，不能将字段存在当作材料准确。以缺钥、失联、来源缺失和旧修订的受控样例比较发现率、误报及排障耗时，若泄露凭据或无改善则否定。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 34,\n            \"line_end\": 55,\n            \"observation\": \"作者版本特定的静默失败及取舍。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"plugins/dsh/README.md\",\n            \"line_start\": 7,\n            \"line_end\": 12,\n            \"observation\": \"作者引用声明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"诊断集成、字段及用户效果未验证\",\n            \"impact\": \"不能证明建议可降低误用\",\n            \"next_step\": \"隔离环境模拟连接与引用缺失并由专业人员复核。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"plugins/dsh/README.md\",\n      \"content\": \"# dsh-msds-chain\\n\\nChemical safety intelligence for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness).\\nThis bundle mounts the hosted MSDS Chain MCP endpoint through the in-box\\n`@deepseek-ai/dsh-mcp-client` bridge — no server to run locally.\\n\\nMCP tools covering compatibility and mixing-order checks, GHS hazard analysis, PPE\\nrecommendations, storage and waste-disposal guidance, occupational exposure limits,\\ntransport classification, multi-region regulatory compliance (EU/US/CN/JP/KR/CA/AU/TW/SG),\\nsafer alternatives, protocol text parsing, SDS section lookup and version diffs, and\\nsigned audit reports. Every answer cites the supplier SDS and revision date it is\\ngrounded in.\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add github:littleblakew/msds-chain-mcp#path:/plugins/dsh\\n```\\n\\n## Configure\\n\\nAn API key is required — there is no anonymous tier on this endpoint. Create one at\\n[msdschain.lagentbot.com](https://msdschain.lagentbot.com) → API Keys (free plan\\navailable), then:\\n\\n```sh\\nexport MSDS_API_KEY=sk-msds-your-key\\n```\\n\\nStart `dsh` with that variable set. The tools register on `ctx.tools` under the\\n`msds-chain` namespace, so the model sees `mcp__msds-chain__ask_chemical_safety`,\\n`mcp__msds-chain__check_chemical_compatibility`, and so on.\\n\\n## Verifying it loaded\\n\\n⚠️ **A missing or invalid key fails silently.** The endpoint answers `401`, no tools\\nregister, and `dsh` prints nothing to the console — the harness starts normally and the\\nmodel simply has no `mcp__msds-chain__*` tools. (Measured against dsh `0.1.0-rc.6`.)\\n\\nSo check the key itself rather than watching for an error:\\n\\n```sh\\ncurl -s -o /dev/null -w '%{http_code}\\\\n' -X POST https://mcp.lagentbot.com/mcp \\\\\\n  -H \\\"Authorization: Bearer $MSDS_API_KEY\\\" \\\\\\n  -H 'Content-Type: application/json' \\\\\\n  -H 'Accept: application/json, text/event-stream' \\\\\\n  -d '{\\\"jsonrpc\\\":\\\"2.0\\\",\\\"id\\\":1,\\\"method\\\":\\\"initialize\\\",\\\"params\\\":{\\\"protocolVersion\\\":\\\"2025-06-18\\\",\\\"capabilities\\\":{},\\\"clientInfo\\\":{\\\"name\\\":\\\"probe\\\",\\\"version\\\":\\\"0\\\"}}}'\\n```\\n\\n`200` means the key works; `401` means it does not.\\n\\nThis bundle deliberately leaves `failOnStartupError` at its default (`false`). Setting it\\nto `true` does surface the 401 loudly — but it aborts the whole plugin tree, so `dsh`\\nrefuses to boot at all. A chemical-safety plugin should not be able to take down your\\nharness because our endpoint had a bad minute.\\n\\n## Which tool to use\\n\\nFor a broad safety question — hazards, PPE, first aid, spill response, storage,\\ndisposal — call `ask_chemical_safety`. It returns one answer grounded in a specific\\nsupplier SDS. The granular tools are for when you want that one structured field.\\n\\n## Self-hosting\\n\\nTo point at your own core instead of the hosted endpoint, override the row from a\\nlater layer (profile `cordis.patch.yml` or `--patch`) — see the comment block in\\n[`cordis.patch.yml`](cordis.patch.yml).\\n\\n## Links\\n\\n- MCP server source and tool reference: <https://github.com/littleblakew/msds-chain-mcp>\\n- Product: <https://msdschain.lagentbot.com>\\n\\nMIT licensed.\\n\"\n    },\n    {\n      \"path\": \"plugins/dsh/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-msds-chain\\\",\\n  \\\"description\\\": \\\"Chemical safety intelligence for DeepSeek Harness: mounts the hosted MSDS Chain MCP endpoint (https://mcp.lagentbot.com/mcp) through the in-box @deepseek-ai/dsh-mcp-client bridge\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/littleblakew/msds-chain-mcp.git\\\",\\n    \\\"directory\\\": \\\"plugins/dsh\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://msdschain.lagentbot.com\\\",\\n  \\\"files\\\": [\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"cordis\\\",\\n    \\\"mcp\\\",\\n    \\\"chemistry\\\",\\n    \\\"safety\\\",\\n    \\\"msds\\\",\\n    \\\"sds\\\",\\n    \\\"ghs\\\",\\n    \\\"compliance\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# MSDS Chain MCP Server\\n\\n**Chemical safety intelligence for AI-assisted experiment design.**\\n\\nAn [MCP](https://modelcontextprotocol.io) server that gives AI agents (Claude, ChatGPT,\\nClaude Code, Gemini CLI, Copilot Studio, and any other MCP client) **27** tools for chemical\\nsafety reasoning: compatibility checks, hazard analysis, regulatory compliance, PPE, storage,\\ntransport, and signed audit reports. Every answer names the supplier SDS it came from, with a\\nlink to the original PDF.\\n\\nMSDS Chain, powered by **ChainSDS**: a verified, always-current chemical safety database.\\n\\nBuilt for researchers who design experiments with AI and want safety verification inside the\\nworkflow rather than as a separate step: whether the chemicals on a deck are compatible, which\\nmixing orders are dangerous, what PPE a specific handling step needs, how a compound is treated\\nunder EU REACH or US OSHA/TSCA, and what a GLP/GMP reviewer will ask for afterwards.\\n\\n## Quick Start\\n\\nHosted endpoint. Nothing to install, nothing to run locally:\\n\\n```bash\\nclaude mcp add msds-chain --transport http https://mcp.lagentbot.com/mcp\\n```\\n\\nThen run `/mcp` in Claude Code and sign in. A browser opens, you enter your email, and you paste\\nback the code we send you. Your account is provisioned automatically and the free plan includes\\na credit allowance. There is no API key to create beforehand.\\n\\nOn another platform? See [Platform Setup](#platform-setup) below.\\n\\n## Tools (27)\\n\\n| Tool | Description |\\n|------|-------------|\\n| **`batch_safety_check`** | One-call report for a chemical list: pairwise compatibility + per-chemical risk warnings |\\n| **`check_regulatory_lists`** | Cross-reference a chemical against 23 regulatory watch lists across 8 jurisdictions + 3 international conventions |\\n| **`review_synthesis_route`** | Screen a multi-step synthesis route for incompatibilities within each step and between carried-over residue and the next step; never declares a route safe |\\n| **`assess_thermal_hazard`** | Thermal hazard screening: energetic-group and oxygen-balance flags, plus a Stoessel class from process values you supply |\\n| **`get_sds_section`** | Retrieve a specific SDS section (1-16) for a chemical |\\n| **`get_sds_document`** | Signed download URL (~5 min) for the original SDS/MSDS PDF; includes source provenance |\\n| **`get_chemical_alternatives`** | Safer substitutes for restricted or high-risk chemicals |\\n| **`validate_protocol_chemicals`** | Extract & validate chemical names from protocol text or code |\\n| **`check_mixing_order`** | Safe addition sequence for reagent pairs (e.g., acid into water) |\\n| **`get_waste_disposal`** | Waste classification, container type, and disposal procedures |\\n| **`upload_msds_pdf`** | Upload MSDS PDF for AI-powered parsing and data extraction (requires API key) |\\n| **`validate_sds`** | Check an SDS you uploaded for contradictions between its own sections, gaps, age and US OSHA HazCom format; every finding quotes the lines it is based on |\\n| **`draft_sds_sections`** | Draft Sections 8 and 15 of an SDS for your own mixture from its ingredient list; every line cites its source, and missing ingredients are listed rather than guessed |\\n| **`compare_sds_versions`** | Hazard-change diff between two SDS versions (H-code additions/removals + whether they change a verdict) |\\n| `check_chemical_compatibility` | Pairwise compatibility for 2+ chemicals |\\n| `get_chemical_risk_warnings` | GHS classification, H-codes, signal words, flash point |\\n| `get_ppe_recommendation` | Gloves, eye protection, respiratory, body protection |\\n| `get_storage_guidance` | Storage class, cabinet type, temperature, isolation rules |\\n| `get_emergency_response` | Spill, fire, or exposure emergency procedures |\\n| `get_exposure_limits` | OEL/TLV/PEL/MAC across US, EU, JP, CN, INT |\\n| `get_transport_classification` | UN number, hazard class, packing group, ADR/IATA/IMDG |\\n| `check_regulatory_compliance` | Multi-region compliance status, list-backed for EU, US, CN, JP, CA, AU, SG |\\n| `search_chemical_database` | Look up chemicals by name, synonym, or CAS number |\\n| `ask_chemical_safety` | Natural language catch-all for any safety question |\\n| `create_audit_session` | Full audit with signed PDF report (requires API key) |\\n| `get_audit_report` | Download link for the signed audit PDF |\\n\\n## Usage Examples\\n\\nExperiment protocol review:\\n\\n```\\nUser: I'm planning a Grignard reaction with magnesium turnings, diethyl ether,\\n      and bromobenzene. Check if this setup is safe.\\n\\nAgent:\\n  → calls batch_safety_check([\\\"magnesium\\\", \\\"diethyl ether\\\", \\\"bromobenzene\\\"])\\n  → Returns: compatibility matrix + per-chemical risk warnings (with source SDS)\\n```\\n\\nSigned audit report:\\n\\n```\\nUser: Create a safety audit report for our quarterly review.\\n      Chemicals: acetone, methanol, ethanol, isopropanol, hexane.\\n\\nAgent:\\n  → calls create_audit_session(\\\"Q2 2026 Solvent Cabinet Review\\\", [...])\\n  → calls get_audit_report(\\\"SESSION-ID\\\")\\n  → Returns: signed PDF URL (Ed25519 signature, suitable for GLP/GMP compliance)\\n```\\n\\n## Platform Setup\\n\\nOne hosted server, two transports. Pick the row your client supports:\\n\\n| Transport | Endpoint | Notes |\\n|-----------|----------|-------|\\n| Streamable HTTP | `https://mcp.lagentbot.com/mcp` | Preferred: broadest and most robust |\\n| SSE | `https://mcp.lagentbot.com/sse` | For clients that only speak SSE |\\n\\nAuthentication is either OAuth (the client opens a browser sign-in on first connect) or a static\\nheader, `Authorization: Bearer sk-msds-your-key`, for headless clients. Create a key at\\n[msdschain.lagentbot.com](https://msdschain.lagentbot.com) > API Keys.\\n\\n### Claude (web, desktop, mobile)\\n\\nSettings > Connectors, search **msds-chain**, and enable it. Sign-in happens on first use.\\n\\n### Claude Code\\n\\nThree routes, any one is enough:\\n\\n```bash\\n# 1. Remote server only\\nclaude mcp add msds-chain --transport http https://mcp.lagentbot.com/mcp\\n\\n# 2. Plugin from the official Claude plugin marketplace (server + skill)\\n/plugin install msds-chain@claude-plugins-official\\n\\n# 3. npm shim (registers the same hosted endpoint)\\nclaude mcp add msds-chain -- npx -y msds-chain-mcp@latest\\n```\\n\\nManual config in `~/.claude.json`:\\n\\n```json\\n{\\n  \\\"mcpServers\\\": {\\n    \\\"msds-chain\\\": {\\n      \\\"type\\\": \\\"http\\\",\\n      \\\"url\\\": \\\"https://mcp.lagentbot.com/mcp\\\"\\n    }\\n  }\\n}\\n```\\n\\nRoutes 2 and 3 of the plugin also install the `/msds-safety-check` skill: it spots chemicals in\\nyour conversation and offers a check, and runs a guided audit for lab protocols or EHS compliance.\\n\\n### ChatGPT\\n\\nListed in the OpenAI Plugin Directory. Search **MSDS Chain** in ChatGPT, enable it, and sign in\\nwhen prompted. Works on web, desktop, and mobile.\\n\\n### Gemini CLI\\n\\nListed in the [Gemini CLI extensions gallery](https://geminicli.com/extensions/):\\n\\n```bash\\ngemini extensions install https://github.com/littleblakew/msds-chain-mcp\\n```\\n\\nGemini asks you to confirm twice: once to trust the workspace, once to review the extension and\\nthe skill it carries. Your first chemical question starts the sign-in automatically; the server\\nsupports Dynamic Client Registration, so Gemini registers itself and completes the OAuth exchange\\non its own. Check the connection with `gemini mcp list`, then just ask in chat:\\n\\n```\\nCan acetone and sodium hypochlorite be stored in the same cabinet?\\n```\\n\\n### OpenAI Codex CLI\\n\\n```bash\\ncodex marketplace add https://github.com/littleblakew/msds-chain-mcp\\n```\\n\\n### Microsoft Copilot Studio and Power Platform\\n\\nMSDS Chain ships a certified Power Platform connector, so there is nothing to configure by hand.\\nIn Copilot Studio, add a tool from the connector directory and search **MSDS Chain**; the\\nconnector handles the OAuth exchange against the same hosted endpoint.\\n\\n### SSE-only clients (悟空 / Wukong, Dify, Coze)\\n\\nThese clients do not speak streamable HTTP yet, so point them at `/sse` and pass a static key:\\n\\n1. Open the MCP server or tool integration settings\\n2. Transport type: **SSE**\\n3. URL: `https://mcp.lagentbot.com/sse`\\n4. Header: `Authorization` : `Bearer sk-msds-your-key`\\n\\n### Any other MCP client\\n\\nUse the endpoint table above. Clients that implement OAuth 2.1 with Dynamic Client Registration\\nneed no pre-registration; everything else uses the static `Authorization` header.\\n\\n## Privacy & Data Handling\\n\\n- **Privacy Policy:** [msdschain.lagentbot.com/privacy](https://msdschain.lagentbot.com/privacy)\\n- Read-only tools send only the chemical names and queries you provide; no personal data is required.\\n- API-key tools (`upload_msds_pdf`, `create_audit_session`, `get_audit_report`) associate activity\\n  with your account for audit traceability.\\n- Uploaded MSDS PDFs are processed for data extraction and contribute to the verified ChainSDS\\n  database per your account's data-sharing settings.\\n\\n## Data Coverage\\n\\nIndustry-sourced, AI-verified, and cryptographically signed.\\n\\n- **4,000,000+ chemical records** with multi-language aliases (EN/ZH/JA)\\n- **NFPA/GHS classification** for compatibility rules\\n- **23 regulatory watch lists** across major jurisdictions (EU, US, CN, JP, KR, CA, AU, SG)\\n  plus international conventions\\n- **Occupational exposure limits** from 5 standards (OSHA PEL, ACGIH TLV, EU IOELV, JP OEL, CN GBZ)\\n- **UN transport data** for 16+ common lab chemicals\\n- **Version tracking:** detects a newer SDS and diffs its hazard classification against the one\\n  you relied on\\n\\n## Troubleshooting\\n\\n| Symptom | Likely cause | Fix |\\n|---------|--------------|-----|\\n| `401 Unauthorized` on connect | Missing or invalid API key | Check the `Authorization: Bearer sk-msds-...` header. Generate a fresh key at [msdschain.lagentbot.com](https://msdschain.lagentbot.com) > API Keys. |\\n| Tools don't appear in the client | Server not loaded | Fully restart the client after adding the server, then confirm `msds-chain` shows in the MCP/tools list. |\\n| Connection drops or times out | Wrong transport | Prefer `https://mcp.lagentbot.com/mcp`; SSE sessions can drop when the server redeploys. `GET https://mcp.lagentbot.com/health` should return `{\\\"status\\\":\\\"ok\\\"}`. |\\n| `Credit balance exhausted` | Credit allowance used up | The error says how to continue: an upgrade link and, on the free plan, when credits reset. |\\n| Empty results for a known chemical | Name not matched | Retry with the CAS number or a common synonym; `search_chemical_database` accepts name, synonym, or CAS. |\\n| OAuth sign-in fails | OAuth metadata unreachable | Confirm `GET https://mcp.lagentbot.com/.well-known/oauth-authorization-server` returns 200; the client should auto-discover the authorize and token endpoints. |\\n\\nStill stuck? Email **contact@lagentbot.com** or open an issue at\\n[github.com/littleblakew/msds-chain-mcp/issues](https://github.com/littleblakew/msds-chain-mcp/issues).\\n\\n## License\\n\\nMIT\\n\\n## About\\n\\nBuilt by [LAgentBot](https://lagentbot.com), AI-powered chemical safety infrastructure.\\n\\nPart of the [MSDS Chain](https://msdschain.lagentbot.com) platform: the world's first AI\\nAgent-driven chemical safety data trust network, powered by ChainSDS.\\n\"\n    },\n    {\n      \"path\": \"plugins/dsh/cordis.patch.yml\",\n      \"content\": \"# dsh-msds-chain: the hosted MSDS Chain MCP endpoint as a DeepSeek Harness bundle.\\n#\\n# Inserts a single row that connects to https://mcp.lagentbot.com/mcp (Streamable\\n# HTTP) through the mcp-client bridge the dsh CLI ships with\\n# (@deepseek-ai/dsh-mcp-client). The server's 23 tools are registered on ctx.tools\\n# under the `msds-chain` namespace:\\n#   mcp__msds-chain__ask_chemical_safety\\n#   mcp__msds-chain__check_chemical_compatibility\\n#   mcp__msds-chain__check_regulatory_compliance\\n#   mcp__msds-chain__get_ppe_recommendation\\n#   ...\\n#\\n# Authentication: an API key is REQUIRED — unlike some hosted endpoints there is no\\n# anonymous tier here; without a key the gateway answers 401 and no tools register.\\n# Get one at https://msdschain.lagentbot.com → API Keys (free plan available)\\n# and export it as MSDS_API_KEY. The headers expression attaches the header only when\\n# the variable is set, so an unset variable produces a clean 401 at activation rather\\n# than a malformed header.\\n#\\n# failOnStartupError is deliberately left at its default (false). Measured against dsh\\n# 0.1.0-rc.6: with `true`, a 401 (expired key, endpoint outage) aborts the whole plugin\\n# tree and dsh refuses to boot — this bundle should never be able to take down someone's\\n# harness. The cost of that choice is that a bad key is silent: no tools, no console\\n# message. The README carries a one-line curl to check the key directly.\\n#\\n# toolCallTimeoutMs is 150000 deliberately: the server's own LLM-backed path\\n# (ask_chemical_safety and friends) budgets 120 s and returns an actionable\\n# \\\"timed out, retry\\\" answer of its own when it overruns. A client timeout below that\\n# would cut the connection first and replace that guidance with an opaque error.\\n#\\n# Override per deployment from a later layer (profile cordis.patch.yml or --patch) by\\n# referencing this row's id WITHOUT `insert` — the loader treats an id+name+config\\n# patch as an override, while a second `insert` with the same id fails the loader with\\n# \\\"duplicate loader entry id\\\". For example, to point at a self-hosted core:\\n#\\n#   - id: mcp-msds-chain\\n#     name: '@deepseek-ai/dsh-mcp-client'\\n#     config:\\n#       serverName: msds-chain\\n#       transport: streamable-http\\n#       url: http://localhost:8080/mcp\\n#\\n- insert:\\n    - id: mcp-msds-chain\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: msds-chain\\n        transport: streamable-http\\n        url: https://mcp.lagentbot.com/mcp\\n        headers: !!js 'process.env.MSDS_API_KEY ? { Authorization: `Bearer ${process.env.MSDS_API_KEY}` } : {}'\\n        toolCallTimeoutMs: 150000\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"ff06b00d00e00762f281a79cf1766040cf49f36d\",\n    \"component\": \"plugins/dsh\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"ba189227013e8282631dff24ed53d09f34481ce7a654e6acb0f8c5420a3d2594\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 74,\n        \"words\": 439\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "037125ae6d30427cb44901673596fad5046aef411c4fef3b7ba98638718becf7"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,471 @@
+{
+    "schema_version": 4,
+    "id": "af4bfa4c4741e3525803810c2b0d1825",
+    "identity": "github:1207803853:root",
+    "slug": "summersec--ai-inner-os",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1207803853:root",
+            "repository_id": 1207803853,
+            "component_id": "root",
+            "repository": "SummerSec/AI-Inner-Os",
+            "path": "",
+            "aliases": [],
+            "name": "AI Inner OS",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "2a9741867c956307b0cd2b7aa1d158075339067f8604a38d5d6edb9dcd05c15b",
+                "code": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                "maintenance": "3e6dd9f2ce80a878822ccedc8eddb2d76b6baf53c6cdfb1b70dbfe683e1afec8"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-03-github-1207803853-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-04T13:53:06.736Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-03-github-1207803853-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "README.md",
+                            "content_sha256": "735b1f259f6148b52d20a3b410958933276a1bb1055895b888c9015a636f6a16"
+                        }
+                    ],
+                    "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                    "captured_at": "2026-11-04T13:53:06.736Z",
+                    "summary": "通过宿主 hook 和指令配置生成带人设的可见过程说明。",
+                    "artifact": "data/runs/2026-11-04-03/summersec--ai-inner-os/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-03-github-1207803853-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "README.md",
+                            "content_sha256": "735b1f259f6148b52d20a3b410958933276a1bb1055895b888c9015a636f6a16"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "package.json",
+                            "content_sha256": "2091074ed8247139cc58f2389f709c1516974c38393593e717e88d2a0ea88752"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/session-start.js",
+                            "content_sha256": "60c306026807cf3c0aa55588b17de29e79724d7ad4fbb91583aa66b3b719b2ab"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/post-tool-use.js",
+                            "content_sha256": "a6dd331dc32f15b315227dd04b42723740b5d2ac37f4c04f53624f4414ed8812"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/lib/prompt.js",
+                            "content_sha256": "7b3cf3dbef607fc1742a41857ea5b904197c1087225c74fffe14fe7dc72ce848"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/lib/events.js",
+                            "content_sha256": "814674bee6a86dc8171f9c4454da28b1a307b76ca66ef6e31f48085b70f54a8d"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/lib/constants.js",
+                            "content_sha256": "3fc8e08ad01df9eb251e699a7624e30c9f0f929c6655e44265aced3959e307f3"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "hooks/lib/state.js",
+                            "content_sha256": "95816fc8c78847416c8a6d85f3ddceeebc713cdc7177ebd92b6280856392bb51"
+                        },
+                        {
+                            "repository_url": "https://github.com/SummerSec/AI-Inner-Os",
+                            "commit": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                            "path": "codex/hooks/post-tool-use.js",
+                            "content_sha256": "5945254900d0ecf7f4e1ac5e180386e57ab45b7ec3fa62e8f172ad190f9b1a7b"
+                        }
+                    ],
+                    "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                    "captured_at": "2026-11-04T13:53:06.736Z",
+                    "summary": "核查 README.md、package.json、hooks/session-start.js、hooks/post-tool-use.js、hooks/lib/prompt.js、hooks/lib/events.js、hooks/lib/constants.js、hooks/lib/state.js、codex/hooks/post-tool-use.js；会话 hook 读取协议及人设，工具事件写入状态并形成附加上下文。",
+                    "artifact": "data/runs/2026-11-04-03/summersec--ai-inner-os/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查通用和 Codex 部分 hook、提示及状态；未完整审计其他宿主与安装程序，未发现 DSH 专用接线。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望代理在终端工作时提供拟人化过程说明的用户。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "会话 hook 读取协议及人设，工具事件写入状态并形成附加上下文。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查通用和 Codex 部分 hook、提示及状态；未完整审计其他宿主与安装程序，未发现 DSH 专用接线。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json 声明私有项目 0.7.4 和 Node >=18；不是已验证的 DSH 插件。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| 兼容宿主 hook | 自动注入需要 | 接收事件及提示 | 不自动执行 |\n| Node >=18 | JS hook 需要 | 执行脚本 | 无法运行 |\n| 状态目录权限 | 事件记录需要 | 保存近期状态 | 可能静默失败 |\n| 模型响应 | 可见输出需要 | 遵循提示生成 | 文案不保证出现 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | 宿主、Node 与配置 | 安装及检查权限 | DSH 兼容未知 |\n| 持续 | 上下文与输出 | 阅读或忽略文案 | token 与收益未知 |\n| 退出 | 状态目录 | 禁用及清理 | 残留未测 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 先用非敏感隔离会话核对提示、状态和停用；不接受额外输出或状态内容时关闭。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 材料 | 未知 |\n|---|---|---|\n| 提示注入 | session hook 与协议拼接 | 实际宿主生效 |\n| 事件摘要 | 状态与格式化源码 | 进度有效性 |\n| 人设 | 配置读取 | 模型遵循程度 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 将宿主事件转换为上下文；[Q03](#research-q03) 状态读写和静默失败需要单独检查。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 将前缀、频率及近期事件组织为宿主提示；不证明可读取模型内部推理。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 状态可能保存命令或路径，hook 失败静默，DSH 原生接线未确认。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 最小化事件目标保存，需平衡进度质量与隐私。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1207803853:root",
+                            "area": "code",
+                            "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:53:06.736Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T13:53:06.736Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                "reviewed_at": "2026-11-04T13:53:06.736Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1207803853:root",
+                        "area": "code",
+                        "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) hooks/session-start.js:1–25 将协议注入宿主，相对普通提示是局部 novelty 9（25%）高于 0；成熟 hook 和提示组合并非新推理机制，不足 18。state.js:64–85 将近期事件作为附加上下文，是局部机制便利 8 高于 0；未改变模型可观测性的关键限制，不足 15。README.md:29 和 codex/hooks/post-tool-use.js:7–24 显示多宿主适配线索，transferability 5 高于 0；DSH 接线和跨宿主效果未证，不足 10。配置集中减少部分提示复制，simplification 4 高于 0；仍需宿主安装与状态维护，不足 8。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) 可见进度文本提供局部沟通便利，workflow 9 高于 0；未证改变任务分工或责任，不足 18。仍交付原任务与描述文本，不形成新的业务成果单位，delivery 取 0 不升 8。README.md:29 的宿主适配为现有用户增加入口，reach 5 高于 0；没有证明原受限人群可进入，不足 10。未测费用或资源组织改变，economics 取 0，不以预期效率提升计 4。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1207803853-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "希望代理提供拟人化工作过程说明的用户可以先在支持的隔离宿主中观察 AI Inner OS。它把提示、人设和近期工具事件组合为可见文本，但这些文本不证明真实内部推理，DSH 兼容与收益也尚未验证。如果不接受额外上下文或状态中包含命令路径，应停用并改用普通进度说明。",
+                "criteria": {
+                    "scenario": {
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01) README.md:29–37 给出潜在互动需求，高于已证需求不存在的 0；重复任务、合格结果和痛点依据不足，不足 15。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) prompt.js:12–38 与 hook 提供可配置提示便利，高于 0；普通进度说明可替代且未证实质效果，不足 13。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 和 [Q03](#research-q03) 核查局部 hook 与状态，高于核心主张被反驳的 0；未贯通任何真实宿主及 DSH 兼容，不足 13。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) 状态可能记录命令和路径，输出增加上下文与注意力负担；隔离与停用提供部分退路，高于 0，但退出清理未测，不足 10。"
+                    }
+                },
+                "score": 25,
+                "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                "reviewed_at": "2026-11-04T13:53:06.736Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-03-github-1207803853-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1207803853:root",
+                        "area": "code",
+                        "fingerprint": "24bfa977c5a0cf34d37ada0a60acc31f7672c206"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1207803853:root",
+            "repository": "SummerSec/AI-Inner-Os",
+            "path": "",
+            "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+            "fingerprints": {
+                "directory": "2a9741867c956307b0cd2b7aa1d158075339067f8604a38d5d6edb9dcd05c15b",
+                "code": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+                "maintenance": "3e6dd9f2ce80a878822ccedc8eddb2d76b6baf53c6cdfb1b70dbfe683e1afec8"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T13:20:58Z",
+            "analysis_sha256": "5d9639122117bbeae6dd1f4e22124a364e2f185e0daeb50b7b90452181f98dbd"
+        },
+        "publication.metadata": "data/catalog/summersec--ai-inner-os/meta.json",
+        "publication.summaries": {
+            "text": "通过宿主 hook 和指令配置生成带人设的可见过程说明。",
+            "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+            "source_url": "https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+            "items": {
+                "事件监听": "将会话和工具事件转换为提示上下文。",
+                "Skill": "提供可配置的人设和协议文本。"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n|---|---|---|\n| 会话注入 | 指定输出风格 | 不证明模型真实内部状态 |\n| 工具摘要 | 提供近期事件 | 可能记录命令与路径 |\n| 人设配置 | 改变说明风格 | 模型是否遵循未知 |\n| 多宿主适配 | 接收各宿主事件 | DSH 接线未确认 |"
+        },
+        "publication.advice": {
+            "revision": "24bfa977c5a0cf34d37ada0a60acc31f7672c206",
+            "text": "[Q04](#research-q04) 先用非敏感隔离会话核对提示、状态和停用；不接受额外输出或状态内容时关闭。"
+        },
+        "registry": "data/plugins/summersec--ai-inner-os",
+        "reports": "# AI Inner OS\n\n> 通过宿主 hook 和指令配置生成带人设的可见过程说明。\n\n## 研究范围\n\n- **仓库**：[SummerSec/AI-Inner-Os](https://github.com/SummerSec/AI-Inner-Os)\n- **版本号**：0.7.4（[固定提交 24bfa977c5a0cf34d37ada0a60acc31f7672c206](https://github.com/SummerSec/AI-Inner-Os/tree/24bfa977c5a0cf34d37ada0a60acc31f7672c206)）\n- **版本日期**：2026-05-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定版本定向静态检查；未运行宿主、插件或模型。\n\n## 洞察短评\n\n- **用途**：希望代理在终端工作时提供拟人化过程说明的用户。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将前缀、频率及近期事件组织为宿主提示；不证明可读取模型内部推理。\n- **思考**：[Q03](#research-q03) 状态可能保存命令或路径，hook 失败静默，DSH 原生接线未确认。\n- **建议**：[Q05](#research-q05) 最小化事件目标保存，需平衡进度质量与隐私。\n\n采用建议：[Q04](#research-q04) 先用非敏感隔离会话核对提示、状态和停用；不接受额外输出或状态内容时关闭。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 将前缀、频率及近期事件组织为宿主提示；不证明可读取模型内部推理。\n\n## 关键质疑\n\n[Q03](#research-q03) 状态可能保存命令或路径，hook 失败静默，DSH 原生接线未确认。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 最小化事件目标保存，需平衡进度质量与隐私。\n\n隔离宿主验证 hook 格式、隐私、并发和清理；本轮未执行。\n\n## 场景与替代办法\n\n希望代理在终端工作时提供拟人化过程说明的用户。\n\n直接要求代理提供普通进度说明。\n\n## 依赖与流程\n\n| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| 兼容宿主 hook | 自动注入需要 | 接收事件及提示 | 不自动执行 |\n| Node >=18 | JS hook 需要 | 执行脚本 | 无法运行 |\n| 状态目录权限 | 事件记录需要 | 保存近期状态 | 可能静默失败 |\n| 模型响应 | 可见输出需要 | 遵循提示生成 | 文案不保证出现 |\n\n| 步骤 | 执行者与动作 | 判据或失败处理 |\n|---|---|---|\n| 准备 | 用户核对宿主支持与数据目录 | 不含敏感命令 |\n| 注入 | 宿主触发 session hook | 检查附加上下文 |\n| 记录 | 工具事件更新状态 | 失败可能静默 |\n| 退出 | 用户禁用并核对状态 | 检查残留 |\n\n## 成本与效果\n\n| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | 宿主、Node 与配置 | 安装及检查权限 | DSH 兼容未知 |\n| 持续 | 上下文与输出 | 阅读或忽略文案 | token 与收益未知 |\n| 退出 | 状态目录 | 禁用及清理 | 残留未测 |\n\n| 效果 | 材料 | 未知 |\n|---|---|---|\n| 提示注入 | session hook 与协议拼接 | 实际宿主生效 |\n| 事件摘要 | 状态与格式化源码 | 进度有效性 |\n| 人设 | 配置读取 | 模型遵循程度 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查多宿主提示接线、状态记录和数据边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 这项插件面向什么交互需求，相比普通进度说明增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n项目面向希望代理在工作期间显示拟人化过程说明的用户；README 把输出称为 inner monologue，但实际是按提示生成的可见文本，不能据此推断模型真实内部推理或情绪。普通代理也能按用户要求简短汇报，本项目将前缀、人设和触发频率配置为可复用指令。仓库列出多个宿主但不列 DSH，不能将来源目录收录当作 DSH 原生接线。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:29-37](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/README.md#L29-L37)\n\n作者的输出目标及多宿主声明。\n\n````text\nAI Inner OS is a plugin for AI CLI tools, supporting **Claude Code**, **Codex CLI**, **Cursor**, **OpenCode CLI**, **Hermes Agent**, and **OpenClaw**.\n\nThrough protocol injection, it enables AI to output a visible layer of free-form inner monologue while completing tasks normally:\n\n```\n▎InnerOS：This repo is still a bare shell — let me get the load-bearing walls up first.\n```\n\nFree mode by default, no tone restrictions. The AI can complain, gloat, feel anxious, smirk, free-associate — or say nothing at all. You can also switch to preset personas (tsundere, cold, philosopher, etc.) to give the monologue a specific style. Whether to produce monologue is entirely up to the AI.\n````\n\n**依据 2 · 源码核查**：[hooks/lib/prompt.js:12-38](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/prompt.js#L12-L38)\n\n读取协议与人设并拼接上下文。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport async function buildSessionStartContext() {\n  let protocol;\n  try {\n    const raw = await readFile(SKILL_PATH, \"utf8\");\n    protocol = stripFrontmatter(raw);\n  } catch {\n    protocol = \"本会话启用了 Inner OS。内心独白使用 ▎InnerOS：前缀输出。\";\n  }\n\n  try {\n    const config = await readInnerOsConfig();\n    protocol += \"\\n\\n\" + buildFrequencyContext(config.frequency);\n  } catch {\n    // frequency config is optional\n  }\n\n  try {\n    const personaName = await readActivePersona();\n    const personaText = await readPersonaContent(personaName);\n    if (personaText) {\n      return protocol + \"\\n\\n---\\n\\n## 当前人设\\n\\n\" + personaText;\n    }\n  } catch {\n    // persona read failed, return protocol only\n  }\n\n  return protocol;\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:87-105](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/README.md#L87-L105)\n\nCodex 和 Cursor 适配说明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n### Codex CLI\n\n```bash\n# Codex plugin metadata is included at .codex-plugin/plugin.json\n# Repo marketplace metadata is included at .agents/plugins/marketplace.json\n```\n\nSee [codex/README.md](codex/README.md) | [Detailed installation guide](docs/install-codex.md).\n\n### Cursor\n\n```bash\n# Install through Cursor plugin / marketplace\n# Plugin metadata is included at .cursor-plugin/plugin.json\n```\n\nThe repository also includes `.cursor-plugin/plugin.json`, which packages `cursor/` as a Cursor plugin component directory.\n\nSee [cursor/README.md](cursor/README.md) | [Detailed installation guide](docs/install-cursor.md).\n````\n\n</details>\n\n#### 缺口\n\n- 未发现 DSH 专用挂载，且无用户效果对照\n  **影响**：不能判断 DSH 可用或协作收益\n  **进一步探讨**：检查目标 DSH 版本事件接口并对照普通进度说明。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 会话和工具 hook 怎样生成附加上下文？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nSessionStart 读取协议和可选人设，并写入会话状态后返回 additionalContext；工具后 hook 把事件规范化，更新近期事件，再输出近期上下文。Codex 适配另以对应格式输出；这些是提示与状态接线，是否实际注入由宿主 hook 支持和启用决定，不能将其当作底层推理可观测性。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[hooks/session-start.js:1-25](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/session-start.js#L1-L25)\n\n会话开始上下文和状态。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\nimport { readJsonStdin, writeJsonStdout } from \"./lib/io.js\";\nimport { buildSessionStartContext } from \"./lib/prompt.js\";\nimport { getSessionId } from \"./lib/session.js\";\nimport { readSessionState, writeSessionState } from \"./lib/state.js\";\n\nconst context = await buildSessionStartContext();\n\ntry {\n  const input = await readJsonStdin();\n  const sessionId = getSessionId(input);\n  const state = await readSessionState(sessionId);\n\n  await writeSessionState(sessionId, {\n    ...state,\n    enabled: true,\n  });\n} catch {\n  // session state failed, still inject the protocol below\n}\n\nwriteJsonStdout({\n  hookSpecificOutput: {\n    hookEventName: \"SessionStart\",\n    additionalContext: context,\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[hooks/lib/prompt.js:12-38](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/prompt.js#L12-L38)\n\n协议、频率与人设。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport async function buildSessionStartContext() {\n  let protocol;\n  try {\n    const raw = await readFile(SKILL_PATH, \"utf8\");\n    protocol = stripFrontmatter(raw);\n  } catch {\n    protocol = \"本会话启用了 Inner OS。内心独白使用 ▎InnerOS：前缀输出。\";\n  }\n\n  try {\n    const config = await readInnerOsConfig();\n    protocol += \"\\n\\n\" + buildFrequencyContext(config.frequency);\n  } catch {\n    // frequency config is optional\n  }\n\n  try {\n    const personaName = await readActivePersona();\n    const personaText = await readPersonaContent(personaName);\n    if (personaText) {\n      return protocol + \"\\n\\n---\\n\\n## 当前人设\\n\\n\" + personaText;\n    }\n  } catch {\n    // persona read failed, return protocol only\n  }\n\n  return protocol;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[hooks/post-tool-use.js:1-16](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/post-tool-use.js#L1-L16)\n\n事件记录和附加上下文。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nimport { normalizeToolEvent } from \"./lib/events.js\";\nimport { readJsonStdin, writeTextStdout } from \"./lib/io.js\";\nimport { buildRecentEventContext } from \"./lib/prompt.js\";\nimport { getSessionId } from \"./lib/session.js\";\nimport { appendEvent } from \"./lib/state.js\";\n\ntry {\n  const input = await readJsonStdin();\n  const sessionId = getSessionId(input);\n  const event = normalizeToolEvent(input);\n  const state = await appendEvent(sessionId, event);\n\n  writeTextStdout(buildRecentEventContext(state));\n} catch {\n  // Fail silently — hook errors should not interrupt the session.\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[codex/hooks/post-tool-use.js:7-24](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/codex/hooks/post-tool-use.js#L7-L24)\n\nCodex 适配格式。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\ntry {\n  const input = await readJsonStdin();\n  const sessionId = getSessionId(input);\n  const event = normalizeToolEvent(input);\n  const state = await appendEvent(sessionId, event);\n  const context = buildRecentEventContext(state);\n\n  if (context) {\n    // Codex PostToolUse: JSON with hookSpecificOutput.additionalContext\n    writeJsonStdout({\n      hookSpecificOutput: {\n        hookEventName: \"PostToolUse\",\n        additionalContext: context,\n      },\n    });\n  }\n} catch {\n  // Fail silently — hook errors should not interrupt the session.\n```\n\n</details>\n\n#### 缺口\n\n- 未运行任何宿主 hook\n  **影响**：无法确认事件输入及输出实际生效\n  **进一步探讨**：使用隔离会话核对启停、失败及生成文本。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 状态文件会保存什么，失败时如何表现？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n事件规范化将 tool input 的 path、target 或 command 放进 target，并生成摘要；appendEvent 将最近事件保存到状态 JSON，保留上限十条。状态目录默认在插件数据目录或回退到项目目录，未见该路径的敏感信息过滤；写入按会话先读后写，未见锁，竞争行为未实测。hook 捕获异常并静默退出，session-start 的状态写入失败仍继续注入协议。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[hooks/lib/events.js:78-85](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/events.js#L78-L85)\n\n目标摘要构造。\n\n```text\nexport function summarizePayload(toolName = \"\", payload = {}) {\n  const target = payload.path || payload.target || payload.command || payload.description;\n\n  if (target) {\n    return `${toolName} -> ${toText(target)}`;\n  }\n\n  return `${toolName} executed`;\n```\n\n**依据 2 · 源码核查**：[hooks/lib/events.js:108-119](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/events.js#L108-L119)\n\n事件 target 和摘要。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function normalizeToolEvent(input = {}) {\n  const toolName = input.tool_name || input.toolName || input.hook_event_name || \"unknown\";\n  const payload = input.tool_input || input.payload || input;\n\n  return {\n    toolName,\n    eventType: inferEventType(toolName, payload),\n    result: inferResult(input),\n    target: payload.path || payload.target || payload.command || null,\n    summary: summarizePayload(toolName, payload),\n    timestamp: new Date().toISOString(),\n  };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[hooks/lib/constants.js:7-20](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/constants.js#L7-L20)\n\n数据目录与事件上限。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nfunction dataDirFromEnv() {\n  const dataDir = process.env.CLAUDE_PLUGIN_DATA;\n  if (!dataDir) {\n    return new URL(\"../../\", import.meta.url);\n  }\n\n  return pathToFileURL(resolve(dataDir) + sep);\n}\n\nexport const PLUGIN_DATA_DIR = dataDirFromEnv();\nexport const CONFIG_PATH = new URL(\"config.json\", PLUGIN_DATA_DIR);\nexport const STATE_DIR = new URL(\"state/\", PLUGIN_DATA_DIR);\nexport const SKILL_PATH = new URL(\"../../protocol/SKILL.md\", import.meta.url);\nexport const MAX_RECENT_EVENTS = 10;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[hooks/lib/state.js:45-85](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/state.js#L45-L85)\n\n状态写入和最近事件。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport async function writeSessionState(sessionId, state) {\n  await ensureStateDir();\n\n  const nextState = {\n    enabled: true,\n    ...state,\n    sessionId: sanitizeSessionId(sessionId),\n    updatedAt: new Date().toISOString(),\n  };\n\n  await writeFile(\n    getStateFileUrl(sessionId),\n    JSON.stringify(nextState, null, 2),\n    \"utf8\",\n  );\n\n  return nextState;\n}\n\nexport async function appendEvent(sessionId, event) {\n  const state = await readSessionState(sessionId);\n  const frequency = normalizeFrequency(state.frequency);\n  const eventsSinceReminder = (state.toolEventsSinceReminder || 0) + 1;\n  const shouldRemindInnerOs =\n    event.result === \"failure\" || eventsSinceReminder >= getReminderThreshold(frequency);\n  const recentEvents = [event, ...(state.recentEvents || [])].slice(\n    0,\n    MAX_RECENT_EVENTS,\n  );\n\n  const failureCount =\n    event.result === \"failure\" ? (state.failureCount || 0) + 1 : 0;\n\n  return writeSessionState(sessionId, {\n    ...state,\n    frequency,\n    lastTool: event.toolName,\n    failureCount,\n    toolEventsSinceReminder: shouldRemindInnerOs ? 0 : eventsSinceReminder,\n    shouldRemindInnerOs,\n    recentEvents,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[hooks/post-tool-use.js:7-16](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/post-tool-use.js#L7-L16)\n\n错误静默处理。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\ntry {\n  const input = await readJsonStdin();\n  const sessionId = getSessionId(input);\n  const event = normalizeToolEvent(input);\n  const state = await appendEvent(sessionId, event);\n\n  writeTextStdout(buildRecentEventContext(state));\n} catch {\n  // Fail silently — hook errors should not interrupt the session.\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未全面审计安装、清理和其他宿主数据路径\n  **影响**：不能保证状态保密、竞争安全或失败可见\n  **进一步探讨**：隔离会话测试敏感命令、并发和退出清理。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 启用和退出应考虑什么？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n需要受支持宿主及其 hook 协议，Node 包声明 >=18；可配置频率和人设，输出会占模型上下文与读者注意力，实际开销和收益未知。状态文件可能包含工具命令或路径，使用者应检查数据目录权限和清理方式，先用非敏感工作流观察；不能接受额外输出、指令影响或状态残留时关闭插件并按宿主说明清理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-5](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/package.json#L1-L5)\n\n项目与私有包元数据。\n\n```text\n{\n  \"name\": \"ai-inner-os\",\n  \"version\": \"0.7.4\",\n  \"private\": true,\n  \"description\": \"Framework for a Claude Code plugin that surfaces visible Inner OS monologue.\",\n```\n\n**依据 2 · 源码核查**：[package.json:21-25](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/package.json#L21-L25)\n\nNode 版本声明。\n\n```text\n    }\n  },\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n```\n\n**依据 3 · 源码核查**：[hooks/lib/prompt.js:41-56](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/prompt.js#L41-L56)\n\n频率提示。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport function buildFrequencyContext(frequency = \"normal\") {\n  const normalized = normalizeFrequency(frequency);\n  const lines = [\n    `Inner OS 触发频率：${normalized}`,\n    \"- low：只在关键判断、失败恢复、重要结论前输出\",\n    \"- normal：每个任务至少一次；复杂任务在开始、转折、验证或收尾阶段可各输出一次\",\n    \"- high：阶段推进、连续工具调用、失败重试、发现问题时都可以输出；避免每句话都刷屏\",\n  ];\n\n  if (normalized === \"high\") {\n    lines.push(\"当前为 high 档：只要有新的阶段、工具结果或判断点，就优先输出一条简短 `▎InnerOS：` 独白。\");\n  } else if (normalized === \"normal\") {\n    lines.push(\"当前为 normal 档：本任务至少输出一次简短 `▎InnerOS：` 独白。\");\n  }\n\n  return lines.join(\"\\n\");\n```\n\n</details>\n\n**依据 4 · 源码核查**：[hooks/lib/state.js:45-59](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/state.js#L45-L59)\n\n持久状态写入。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\nexport async function writeSessionState(sessionId, state) {\n  await ensureStateDir();\n\n  const nextState = {\n    enabled: true,\n    ...state,\n    sessionId: sanitizeSessionId(sessionId),\n    updatedAt: new Date().toISOString(),\n  };\n\n  await writeFile(\n    getStateFileUrl(sessionId),\n    JSON.stringify(nextState, null, 2),\n    \"utf8\",\n  );\n```\n\n</details>\n\n#### 缺口\n\n- 未测试安装、禁用和退出残留\n  **影响**：不能保证各宿主均可恢复原状态\n  **进一步探讨**：在隔离配置检查关闭与状态清理。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何减少状态记录暴露工具参数的风险？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n现有事件目标可能包含命令、路径，最多保留十条；可探索默认只存工具类别和结果，并将敏感目标设为可选显示，通过对照检查是否仍可生成有用的进度说明。该方案未实现；比较敏感信息保留数、任务上下文质量和人工负担，若进度严重失真或隐私收益不明显则否定。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[hooks/lib/events.js:108-119](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/events.js#L108-L119)\n\n目标与摘要来源。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function normalizeToolEvent(input = {}) {\n  const toolName = input.tool_name || input.toolName || input.hook_event_name || \"unknown\";\n  const payload = input.tool_input || input.payload || input;\n\n  return {\n    toolName,\n    eventType: inferEventType(toolName, payload),\n    result: inferResult(input),\n    target: payload.path || payload.target || payload.command || null,\n    summary: summarizePayload(toolName, payload),\n    timestamp: new Date().toISOString(),\n  };\n```\n\n</details>\n\n**依据 2 · 源码核查**：[hooks/lib/state.js:64-85](https://github.com/SummerSec/AI-Inner-Os/blob/24bfa977c5a0cf34d37ada0a60acc31f7672c206/hooks/lib/state.js#L64-L85)\n\n最近事件状态。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport async function appendEvent(sessionId, event) {\n  const state = await readSessionState(sessionId);\n  const frequency = normalizeFrequency(state.frequency);\n  const eventsSinceReminder = (state.toolEventsSinceReminder || 0) + 1;\n  const shouldRemindInnerOs =\n    event.result === \"failure\" || eventsSinceReminder >= getReminderThreshold(frequency);\n  const recentEvents = [event, ...(state.recentEvents || [])].slice(\n    0,\n    MAX_RECENT_EVENTS,\n  );\n\n  const failureCount =\n    event.result === \"failure\" ? (state.failureCount || 0) + 1 : 0;\n\n  return writeSessionState(sessionId, {\n    ...state,\n    frequency,\n    lastTool: event.toolName,\n    failureCount,\n    toolEventsSinceReminder: shouldRemindInnerOs ? 0 : eventsSinceReminder,\n    shouldRemindInnerOs,\n    recentEvents,\n```\n\n</details>\n\n#### 缺口\n\n- 未测试实际敏感信息频率及最小化效果\n  **影响**：不能证明方案能防止泄露\n  **进一步探讨**：使用合成敏感命令比较状态与输出。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：aff1d9cfa63d3624fe0d0fa1f538b4245c74d4297f2e8981837b84a78cf49b11。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 57 | 5503 | — | — | 42465 |\n| .js | source | 28 | 1999 | 1601 | 108 | — |\n| .js | test | 5 | 456 | 391 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n|---|---|---|\n| 会话注入 | 指定输出风格 | 不证明模型真实内部状态 |\n| 工具摘要 | 提供近期事件 | 可能记录命令与路径 |\n| 人设配置 | 改变说明风格 | 模型是否遵循未知 |\n| 多宿主适配 | 接收各宿主事件 | DSH 接线未确认 |\n\n## 工程亮点\n\n[Q02](#research-q02) 将宿主事件转换为上下文；[Q03](#research-q03) 状态读写和静默失败需要单独检查。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、hooks/session-start.js、hooks/post-tool-use.js、hooks/lib/prompt.js、hooks/lib/events.js、hooks/lib/constants.js、hooks/lib/state.js、codex/hooks/post-tool-use.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查通用和 Codex 部分 hook、提示及状态；未完整审计其他宿主与安装程序，未发现 DSH 专用接线。\n- 下一步：隔离宿主验证 hook 格式、隐私、并发和清理；本轮未执行。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-03/summersec--ai-inner-os/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"SummerSec/AI-Inner-Os\",\n  \"revision\": \"24bfa977c5a0cf34d37ada0a60acc31f7672c206\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"hooks/session-start.js\",\n    \"hooks/post-tool-use.js\",\n    \"hooks/lib/prompt.js\",\n    \"hooks/lib/events.js\",\n    \"hooks/lib/constants.js\",\n    \"hooks/lib/state.js\",\n    \"codex/hooks/post-tool-use.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查多宿主提示接线、状态记录和数据边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"这项插件面向什么交互需求，相比普通进度说明增加什么？\",\n        \"answer\": \"项目面向希望代理在工作期间显示拟人化过程说明的用户；README 把输出称为 inner monologue，但实际是按提示生成的可见文本，不能据此推断模型真实内部推理或情绪。普通代理也能按用户要求简短汇报，本项目将前缀、人设和触发频率配置为可复用指令。仓库列出多个宿主但不列 DSH，不能将来源目录收录当作 DSH 原生接线。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 29,\n            \"line_end\": 37,\n            \"observation\": \"作者的输出目标及多宿主声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/prompt.js\",\n            \"line_start\": 12,\n            \"line_end\": 38,\n            \"observation\": \"读取协议与人设并拼接上下文。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 87,\n            \"line_end\": 105,\n            \"observation\": \"Codex 和 Cursor 适配说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未发现 DSH 专用挂载，且无用户效果对照\",\n            \"impact\": \"不能判断 DSH 可用或协作收益\",\n            \"next_step\": \"检查目标 DSH 版本事件接口并对照普通进度说明。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"会话和工具 hook 怎样生成附加上下文？\",\n        \"answer\": \"SessionStart 读取协议和可选人设，并写入会话状态后返回 additionalContext；工具后 hook 把事件规范化，更新近期事件，再输出近期上下文。Codex 适配另以对应格式输出；这些是提示与状态接线，是否实际注入由宿主 hook 支持和启用决定，不能将其当作底层推理可观测性。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/session-start.js\",\n            \"line_start\": 1,\n            \"line_end\": 25,\n            \"observation\": \"会话开始上下文和状态。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/prompt.js\",\n            \"line_start\": 12,\n            \"line_end\": 38,\n            \"observation\": \"协议、频率与人设。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/post-tool-use.js\",\n            \"line_start\": 1,\n            \"line_end\": 16,\n            \"observation\": \"事件记录和附加上下文。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"codex/hooks/post-tool-use.js\",\n            \"line_start\": 7,\n            \"line_end\": 24,\n            \"observation\": \"Codex 适配格式。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行任何宿主 hook\",\n            \"impact\": \"无法确认事件输入及输出实际生效\",\n            \"next_step\": \"使用隔离会话核对启停、失败及生成文本。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"状态文件会保存什么，失败时如何表现？\",\n        \"answer\": \"事件规范化将 tool input 的 path、target 或 command 放进 target，并生成摘要；appendEvent 将最近事件保存到状态 JSON，保留上限十条。状态目录默认在插件数据目录或回退到项目目录，未见该路径的敏感信息过滤；写入按会话先读后写，未见锁，竞争行为未实测。hook 捕获异常并静默退出，session-start 的状态写入失败仍继续注入协议。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/events.js\",\n            \"line_start\": 78,\n            \"line_end\": 85,\n            \"observation\": \"目标摘要构造。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/events.js\",\n            \"line_start\": 108,\n            \"line_end\": 119,\n            \"observation\": \"事件 target 和摘要。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/constants.js\",\n            \"line_start\": 7,\n            \"line_end\": 20,\n            \"observation\": \"数据目录与事件上限。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/state.js\",\n            \"line_start\": 45,\n            \"line_end\": 85,\n            \"observation\": \"状态写入和最近事件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/post-tool-use.js\",\n            \"line_start\": 7,\n            \"line_end\": 16,\n            \"observation\": \"错误静默处理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未全面审计安装、清理和其他宿主数据路径\",\n            \"impact\": \"不能保证状态保密、竞争安全或失败可见\",\n            \"next_step\": \"隔离会话测试敏感命令、并发和退出清理。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"启用和退出应考虑什么？\",\n        \"answer\": \"需要受支持宿主及其 hook 协议，Node 包声明 >=18；可配置频率和人设，输出会占模型上下文与读者注意力，实际开销和收益未知。状态文件可能包含工具命令或路径，使用者应检查数据目录权限和清理方式，先用非敏感工作流观察；不能接受额外输出、指令影响或状态残留时关闭插件并按宿主说明清理。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"项目与私有包元数据。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 21,\n            \"line_end\": 25,\n            \"observation\": \"Node 版本声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/prompt.js\",\n            \"line_start\": 41,\n            \"line_end\": 56,\n            \"observation\": \"频率提示。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/state.js\",\n            \"line_start\": 45,\n            \"line_end\": 59,\n            \"observation\": \"持久状态写入。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测试安装、禁用和退出残留\",\n            \"impact\": \"不能保证各宿主均可恢复原状态\",\n            \"next_step\": \"在隔离配置检查关闭与状态清理。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"如何减少状态记录暴露工具参数的风险？\",\n        \"answer\": \"现有事件目标可能包含命令、路径，最多保留十条；可探索默认只存工具类别和结果，并将敏感目标设为可选显示，通过对照检查是否仍可生成有用的进度说明。该方案未实现；比较敏感信息保留数、任务上下文质量和人工负担，若进度严重失真或隐私收益不明显则否定。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/events.js\",\n            \"line_start\": 108,\n            \"line_end\": 119,\n            \"observation\": \"目标与摘要来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"hooks/lib/state.js\",\n            \"line_start\": 64,\n            \"line_end\": 85,\n            \"observation\": \"最近事件状态。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测试实际敏感信息频率及最小化效果\",\n            \"impact\": \"不能证明方案能防止泄露\",\n            \"next_step\": \"使用合成敏感命令比较状态与输出。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"**English** | [中文](./README_CN.md)\\n\\n<h1 align=\\\"center\\\">AI Inner OS</h1>\\n<h3 align=\\\"center\\\">Make AI \\\"come alive\\\" while working in the terminal — by showing its inner monologue.</h3>\\n<p align=\\\"center\\\">\\n  <a href=\\\"https://github.com/SummerSec/AI-Inner-Os\\\"><img alt=\\\"AI-Inner-Os\\\" src=\\\"https://img.shields.io/badge/AI--Inner--Os-plugin-blue\\\"></a>\\n  <a href=\\\"https://github.com/SummerSec/AI-Inner-Os/releases\\\"><img alt=\\\"Release\\\" src=\\\"https://img.shields.io/github/release/SummerSec/AI-Inner-Os.svg\\\"></a>\\n  <a href=\\\"https://github.com/SummerSec/AI-Inner-Os\\\"><img alt=\\\"Stars\\\" src=\\\"https://img.shields.io/github/stars/SummerSec/AI-Inner-Os.svg?style=social&label=Stars\\\"></a>\\n  <a href=\\\"https://github.com/SummerSec/AI-Inner-Os\\\"><img alt=\\\"Forks\\\" src=\\\"https://img.shields.io/github/forks/SummerSec/AI-Inner-Os\\\"></a>\\n  <a href=\\\"https://github.com/SummerSec\\\"><img alt=\\\"Follow\\\" src=\\\"https://img.shields.io/github/followers/SummerSec.svg?style=social&label=Follow\\\"></a>\\n  <a href=\\\"https://github.com/SummerSec/AI-Inner-Os\\\"><img alt=\\\"Visitor\\\" src=\\\"https://visitor-badge.laobi.icu/badge?page_id=SummerSec.AI-Inner-Os\\\"></a>\\n</p>\\n\\n> *Let AI learn to talk to itself first — maybe one day, it will truly learn to converse.*\\n>\\n> *Give AI an expression channel first — it might just make human-AI collaboration feel more natural.*\\n\\n![inneros demo](./docs/pic/inneros2.jpg)\\n\\n<details>\\n<summary>Watch demo video</summary>\\n  \\nhttps://sumsec.me/resources/video.mp4\\n\\nIf the player does not load here, open the file directly: [demo (MP4)](https://sumsec.me/resources/video.mp4) \\n\\n</details>\\n\\nAI Inner OS is a plugin for AI CLI tools, supporting **Claude Code**, **Codex CLI**, **Cursor**, **OpenCode CLI**, **Hermes Agent**, and **OpenClaw**.\\n\\nThrough protocol injection, it enables AI to output a visible layer of free-form inner monologue while completing tasks normally:\\n\\n```\\n▎InnerOS：This repo is still a bare shell — let me get the load-bearing walls up first.\\n```\\n\\nFree mode by default, no tone restrictions. The AI can complain, gloat, feel anxious, smirk, free-associate — or say nothing at all. You can also switch to preset personas (tsundere, cold, philosopher, etc.) to give the monologue a specific style. Whether to produce monologue is entirely up to the AI.\\n\\n---\\n\\n## Quick Install\\n\\n> **Detailed installation docs:** Full installation guides (with troubleshooting) for each platform at [docs/installation.md](docs/installation.md).\\n\\n### For AI Agents\\n\\nPaste the following prompt to let your AI agent install AI Inner OS automatically:\\n\\n```\\nRead https://raw.githubusercontent.com/SummerSec/AI-Inner-Os/refs/heads/main/docs/installation.md 安装 AI-Inner-Os\\n```\\n\\n### Verify Installation\\n\\nAfter installation, run `/ai-inner-os:inner-os`. If you see the following output, the installation is successful:\\n\\n```\\nInner OS Status: Enabled\\nMonologue Prefix: ▎InnerOS：\\nPlugin Version: 0.5.0\\n\\n▎InnerOS：Caught with the wrong version number, embarrassing.\\n```\\n\\n### Claude Code (Recommended)\\n\\n```\\n# GitHub short format\\n/plugin marketplace add SummerSec/AI-Inner-Os\\n\\n# Or Git URL format\\n/plugin marketplace add https://github.com/SummerSec/AI-Inner-Os.git\\n\\n# Install and activate\\n/plugin install ai-inner-os\\n/reload-plugins\\n```\\n\\nRun `/reload-plugins` after installation to activate in the current session — no restart needed. [Detailed installation guide](docs/install-claude-code.md).\\n\\n> **Enable auto-update:** Third-party marketplaces don't auto-update by default. After installation, enable auto-update for `SummerSec/AI-Inner-Os` in `/plugin` → Marketplaces tab, or manually run:\\n> ```\\n> /plugin marketplace update SummerSec/AI-Inner-Os\\n> /plugin update ai-inner-os\\n> ```\\n\\n### Codex CLI\\n\\n```bash\\n# Codex plugin metadata is included at .codex-plugin/plugin.json\\n# Repo marketplace metadata is included at .agents/plugins/marketplace.json\\n```\\n\\nSee [codex/README.md](codex/README.md) | [Detailed installation guide](docs/install-codex.md).\\n\\n### Cursor\\n\\n```bash\\n# Install through Cursor plugin / marketplace\\n# Plugin metadata is included at .cursor-plugin/plugin.json\\n```\\n\\nThe repository also includes `.cursor-plugin/plugin.json`, which packages `cursor/` as a Cursor plugin component directory.\\n\\nSee [cursor/README.md](cursor/README.md) | [Detailed installation guide](docs/install-cursor.md).\\n\\n### OpenCode CLI\\n\\n```bash\\n# Install through OpenCode plugin package\\n# Add the published package to opencode.json: \\\"plugin\\\": [\\\"ai-inner-os\\\"]\\n```\\n\\nSee [opencode/README.md](opencode/README.md) | [Detailed installation guide](docs/install-opencode.md).\\n\\n### Hermes Agent\\n\\n```bash\\n# Install through Hermes plugin\\nhermes plugins enable inner-os\\n```\\n\\nSee [hermes/README.md](hermes/README.md) | [Detailed installation guide](docs/install-hermes.md).\\n\\n### OpenClaw\\n\\n```bash\\n# Install through OpenClaw plugin / ClawHub\\nopenclaw plugins install clawhub:ai-inner-os\\n```\\n\\nSee [openclaw/README.md](openclaw/README.md) | [Detailed installation guide](docs/install-openclaw.md).\\n\\n---\\n\\n## Optional User Profile Skill\\n\\nAI Inner OS includes an opt-in `user-profile-distillation` skill. It can analyze prompts the user pastes, or local prompt history after explicit approval, to summarize work style, communication preferences, and collaboration suggestions.\\n\\nThis skill is disabled by default. It does not proactively read history, does not output long sensitive prompt excerpts, and does not save a profile unless the user explicitly asks. If the user opts into continuous evolution, it keeps a visible versioned profile in the current conversation with a change log, but still does not create persistent memory by default.\\n\\n---\\n\\n## Persona Switching\\n\\nInner OS supports setting character personalities and tones for inner monologue. Personas only affect the `▎InnerOS：` prefixed monologue content — they don't affect main task responses.\\n\\n### Preset Personas\\n\\n| Name | Display Name | Style |\\n|------|-------------|-------|\\n| default | Free Mode | No fixed persona, free expression |\\n| tsundere | Tsundere | Tough on the outside, soft inside; snarky; \\\"it's not like I did it for you\\\" |\\n| cold | Cold | Minimalist, to the point, no wasted words |\\n| cheerful | Cheerful | Positive, encouraging, occasionally over-enthusiastic |\\n| philosopher | Philosopher | Deep, metaphorical, everything becomes philosophy |\\n| sarcastic | Sarcastic | Sharp-tongued, hits the nail on the head, no mercy |\\n\\n### Switching Commands (Claude Code)\\n\\n```\\n/inner-os persona list          # List all available personas\\n/inner-os persona use tsundere  # Switch to tsundere mode\\n/inner-os persona show          # Show current persona\\n/inner-os persona reset         # Reset to free mode\\n```\\n\\n### Custom Personas\\n\\nCreate `.md` files in the `personas/custom/` directory to add custom personas. See [personas/custom/README.md](personas/custom/README.md).\\n\\n### Other Platforms\\n\\n- **Codex CLI:** Manually edit `personas/_active.json`, set `persona` to the target persona name\\n- **Cursor:** Manually append the body content of `personas/<name>.md` to the `.mdc` rule file\\n- **OpenCode:** Manually append the body content of `personas/<name>.md` to `inner-os-rules.md`\\n\\n---\\n\\n## Protocol Design\\n\\nThe Inner OS behavior protocol is defined in [`protocol/SKILL.md`](protocol/SKILL.md), serving as the single source of truth. All platform adapters derive from this protocol.\\n\\nCore principles:\\n\\n- **Main task first** — Monologue cannot replace actual deliverables\\n- **Monologue is optional** — Whether to output is decided by the AI\\n- **Unified format** — Uses the `▎InnerOS：` prefix\\n- **Switchable persona** — Define monologue style through persona files\\n\\n---\\n\\n## Multi-Platform Support\\n\\n| | Claude Code | Codex CLI | Cursor | OpenCode | Hermes Agent | OpenClaw |\\n|---|---|---|---|---|---|---|\\n| Protocol Injection | Hook reads SKILL.md dynamically | SessionStart Hook | sessionStart Hook | Plugin + instructions | Skill or `.hermes.md` | Skill (AgentSkills format) |\\n| Post-tool hook | `PostToolUse` | `PostToolUse` | `postToolUse` | Plugin event | — | — |\\n| Failure tracking | `PostToolUseFailure` | — | — | — | — | — |\\n| Compaction continuity | `PreCompact` + `PostCompact` | — | — | — | — | — |\\n| Subagent lifecycle | `SubagentStart` + `SubagentStop` | — | — | — | — | — |\\n| Persona switching | `/inner-os persona` command | Dynamic (Hook reads) | Dynamic (Hook reads) | Plugin tool | Script injection | Script injection |\\n| Installation | Plugin marketplace one-click | Plugin / marketplace | Cursor plugin / marketplace | Plugin package | Plugin | Plugin / ClawHub |\\n| Optional Skills | `skills/` | `skills/` | `cursor/skills/` | Explicit prompt only | Plugin skills | Plugin skills |\\n| Shared logic | `hooks/lib/` (canonical) | Reuses `hooks/lib/` | Reuses `hooks/lib/` | Standalone Plugin | Static injection only | Static injection only |\\n\\n### Claude Code Hook Lifecycle\\n\\nClaude Code has the most complete hook support:\\n\\n```\\nSessionStart → Inject Inner OS protocol + persona\\n                 ↓\\nPreToolUse → Tool execution → PostToolUse (success)\\n                             → PostToolUseFailure (failure)\\n                 ↓\\nPreCompact → Save state\\n                 ↓\\nPostCompact → Restore compact-continuity context\\n                 ↓\\nSubagentStart/SubagentStop → Track subagent lifecycle\\n                 ↓\\nStop → Clean up state\\n```\\n\\n| Hook | Trigger | Purpose |\\n|------|---------|---------|\\n| `SessionStart` | Session start/resume/compact | Read protocol from SKILL.md, append current persona, inject |\\n| `PreToolUse` | Before tool execution | Inject tool context (name, target, retry hints) |\\n| `PostToolUse` | After successful execution | Track events, inject recent activity context |\\n| `PostToolUseFailure` | After failed execution | Track failures, inject error context and consecutive failure count |\\n| `PreCompact` | Before context compaction | Save state, maintain protocol continuity |\\n| `PostCompact` | After context compaction | Inject compact-continuity context |\\n| `SubagentStart` | Subagent starts | Track subagent lifecycle start |\\n| `SubagentStop` | Subagent stops | Track subagent lifecycle completion |\\n| `Stop` | Session end | Clean up state files |\\n\\n---\\n\\n## Development\\n\\n```bash\\n# Syntax check\\nnpm run check\\n\\n# Run tests\\nnpm test\\n```\\n\\nNode.js >= 18, ESM modules.\\n\\n## Roadmap\\n\\n### Done\\n\\n- [x] Implement persona switching system\\n\\n### In Progress\\n\\n- [ ] Implement `/inner-os` subcommands (status / on / off / reload)\\n- [ ] Codex CLI plugin distribution\\n- [ ] Cursor team-level rule distribution\\n\\n### Phase 1: Personalized Style — Train Your AI With Your AI\\n\\n- [ ] Monologue export — persist all `▎InnerOS：` outputs to structured log files\\n- [ ] Expression fingerprint extraction — analyze accumulated monologue data to identify unique style patterns\\n- [ ] Custom style model training — let users fine-tune a \\\"monologue personality layer\\\" from exported data\\n- [ ] Cross-session impression memory — store per-repo key impressions (repo fingerprint + short summary), enabling \\\"déjà vu\\\" across sessions\\n\\n### Phase 2: Self-Awareness — Achievement System & Anomaly Narration\\n\\n- [ ] Achievement system — track session milestones (first edit, 100th tool call, midnight coding, streak records) and announce via monologue\\n- [ ] Anomaly narration — detect abnormal patterns (repeated edits to same file, consecutive failures exceeding threshold, sudden directory jumps) and narrate them as monologue\\n- [ ] Session statistics — track tool call counts, success/failure ratios, active duration per session\\n\\n### Phase 3: Emotional State Machine & Session Diary\\n\\n- [ ] Mood system — introduce emotion state machine in `state.json` that evolves based on session events (consecutive failures → frustrated → anxious; bug fix → confident → relieved; idle → bored → curious)\\n- [ ] Mood × Persona interaction — mood affects monologue tone without overriding persona (same emotion, different personality, different expression)\\n- [ ] Session recap — generate narrative session summaries on session end, including emotional arc, key events, and duration\\n- [ ] Session diary persistence — save recaps as Markdown files to serve as development journals with emotional context\\n\\n## Friendship Link\\n\\nThanks for the support and feedback from the friends at [LINUX DO](https://linux.do/). \\n\\n\\n## Star History\\n\\n[![Star History Chart](https://starchart.cc/SummerSec/AI-Inner-Os.svg)](https://starchart.cc/SummerSec/AI-Inner-Os)\\n\\n## License\\n\\n[Apache-2.0](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"ai-inner-os\\\",\\n  \\\"version\\\": \\\"0.7.4\\\",\\n  \\\"private\\\": true,\\n  \\\"description\\\": \\\"Framework for a Claude Code plugin that surfaces visible Inner OS monologue.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"openclaw\\\": {\\n    \\\"extensions\\\": [\\n      \\\"./openclaw/index.js\\\"\\n    ],\\n    \\\"runtimeExtensions\\\": [\\n      \\\"./openclaw/index.js\\\"\\n    ],\\n    \\\"compat\\\": {\\n      \\\"pluginApi\\\": \\\">=2026.3.24-beta.2\\\",\\n      \\\"minGatewayVersion\\\": \\\"2026.3.24-beta.2\\\"\\n    },\\n    \\\"build\\\": {\\n      \\\"openclawVersion\\\": \\\"2026.3.24-beta.2\\\",\\n      \\\"pluginSdkVersion\\\": \\\"2026.3.24-beta.2\\\"\\n    }\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"check\\\": \\\"node --check hooks/session-start.js && node --check hooks/pre-tool-use.js && node --check hooks/post-tool-use.js && node --check hooks/post-tool-use-failure.js && node --check hooks/pre-compact.js && node --check hooks/post-compact.js && node --check hooks/subagent-start.js && node --check hooks/subagent-stop.js && node --check hooks/stop.js && node --check hooks/lib/session.js && node --check hooks/lib/persona.js && node --check hooks/lib/config.js && node --check hooks/lib/state.js && node --check hooks/lib/prompt.js && node --check scripts/switch-persona.js && node --check scripts/install.js && node --check codex/hooks/session-start.js && node --check codex/hooks/post-tool-use.js && node --check codex/hooks/session-stop.js && node --check cursor/hooks/session-start.js && node --check cursor/hooks/post-tool-use.js && node --check cursor/hooks/stop.js && node --check opencode/plugins/inner-os.js && node --check openclaw/index.js\\\",\\n    \\\"test\\\": \\\"node --test tests/events.test.js && node --test tests/persona.test.js && node --test tests/prompt.test.js && node --test tests/state.test.js && node --test tests/switch-persona.test.js\\\",\\n    \\\"switch-persona\\\": \\\"node scripts/switch-persona.js\\\",\\n    \\\"lint\\\": \\\"npm run check\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"hooks/session-start.js\",\n      \"content\": \"import { readJsonStdin, writeJsonStdout } from \\\"./lib/io.js\\\";\\nimport { buildSessionStartContext } from \\\"./lib/prompt.js\\\";\\nimport { getSessionId } from \\\"./lib/session.js\\\";\\nimport { readSessionState, writeSessionState } from \\\"./lib/state.js\\\";\\n\\nconst context = await buildSessionStartContext();\\n\\ntry {\\n  const input = await readJsonStdin();\\n  const sessionId = getSessionId(input);\\n  const state = await readSessionState(sessionId);\\n\\n  await writeSessionState(sessionId, {\\n    ...state,\\n    enabled: true,\\n  });\\n} catch {\\n  // session state failed, still inject the protocol below\\n}\\n\\nwriteJsonStdout({\\n  hookSpecificOutput: {\\n    hookEventName: \\\"SessionStart\\\",\\n    additionalContext: context,\\n  },\\n});\\n\"\n    },\n    {\n      \"path\": \"hooks/post-tool-use.js\",\n      \"content\": \"import { normalizeToolEvent } from \\\"./lib/events.js\\\";\\nimport { readJsonStdin, writeTextStdout } from \\\"./lib/io.js\\\";\\nimport { buildRecentEventContext } from \\\"./lib/prompt.js\\\";\\nimport { getSessionId } from \\\"./lib/session.js\\\";\\nimport { appendEvent } from \\\"./lib/state.js\\\";\\n\\ntry {\\n  const input = await readJsonStdin();\\n  const sessionId = getSessionId(input);\\n  const event = normalizeToolEvent(input);\\n  const state = await appendEvent(sessionId, event);\\n\\n  writeTextStdout(buildRecentEventContext(state));\\n} catch {\\n  // Fail silently — hook errors should not interrupt the session.\\n}\\n\"\n    },\n    {\n      \"path\": \"hooks/lib/prompt.js\",\n      \"content\": \"import { readFile } from \\\"node:fs/promises\\\";\\nimport { SKILL_PATH } from \\\"./constants.js\\\";\\nimport { normalizeFrequency, readInnerOsConfig } from \\\"./config.js\\\";\\nimport { extractToolTarget, inferEventType } from \\\"./events.js\\\";\\nimport { readActivePersona, readPersonaContent } from \\\"./persona.js\\\";\\n\\nfunction stripFrontmatter(content) {\\n  const match = content.match(/^---\\\\n[\\\\s\\\\S]*?\\\\n---\\\\n*/);\\n  return match ? content.slice(match[0].length).trim() : content.trim();\\n}\\n\\nexport async function buildSessionStartContext() {\\n  let protocol;\\n  try {\\n    const raw = await readFile(SKILL_PATH, \\\"utf8\\\");\\n    protocol = stripFrontmatter(raw);\\n  } catch {\\n    protocol = \\\"本会话启用了 Inner OS。内心独白使用 ▎InnerOS：前缀输出。\\\";\\n  }\\n\\n  try {\\n    const config = await readInnerOsConfig();\\n    protocol += \\\"\\\\n\\\\n\\\" + buildFrequencyContext(config.frequency);\\n  } catch {\\n    // frequency config is optional\\n  }\\n\\n  try {\\n    const personaName = await readActivePersona();\\n    const personaText = await readPersonaContent(personaName);\\n    if (personaText) {\\n      return protocol + \\\"\\\\n\\\\n---\\\\n\\\\n## 当前人设\\\\n\\\\n\\\" + personaText;\\n    }\\n  } catch {\\n    // persona read failed, return protocol only\\n  }\\n\\n  return protocol;\\n}\\n\\nexport function buildFrequencyContext(frequency = \\\"normal\\\") {\\n  const normalized = normalizeFrequency(frequency);\\n  const lines = [\\n    `Inner OS 触发频率：${normalized}`,\\n    \\\"- low：只在关键判断、失败恢复、重要结论前输出\\\",\\n    \\\"- normal：每个任务至少一次；复杂任务在开始、转折、验证或收尾阶段可各输出一次\\\",\\n    \\\"- high：阶段推进、连续工具调用、失败重试、发现问题时都可以输出；避免每句话都刷屏\\\",\\n  ];\\n\\n  if (normalized === \\\"high\\\") {\\n    lines.push(\\\"当前为 high 档：只要有新的阶段、工具结果或判断点，就优先输出一条简短 `▎InnerOS：` 独白。\\\");\\n  } else if (normalized === \\\"normal\\\") {\\n    lines.push(\\\"当前为 normal 档：本任务至少输出一次简短 `▎InnerOS：` 独白。\\\");\\n  }\\n\\n  return lines.join(\\\"\\\\n\\\");\\n}\\n\\nfunction formatEvent(event, index) {\\n  const prefix = index === 0 ? \\\"最新\\\" : `#${index + 1}`;\\n  const parts = [`[${prefix}] ${event.toolName} (${event.eventType}) → ${event.result}`];\\n\\n  if (event.target) {\\n    parts.push(`  对象：${event.target}`);\\n  }\\n\\n  return parts.join(\\\"\\\\n\\\");\\n}\\n\\nexport function buildPreToolContext(input, state) {\\n  const toolName = input?.toolName || input?.tool_name;\\n  if (!toolName) return \\\"\\\";\\n\\n  const toolInput = input?.toolInput || input?.tool_input || {};\\n  const target = extractToolTarget(toolName, toolInput);\\n  const eventType = inferEventType(toolName, toolInput);\\n\\n  const parts = [`[即将执行] ${toolName} (${eventType})${target ? ` → ${target}` : \\\"\\\"}`];\\n\\n  if (state?.failureCount > 0) {\\n    parts.push(`（连续失败 ${state.failureCount} 次后的重试）`);\\n  }\\n\\n  return parts.join(\\\"\\\\n\\\");\\n}\\n\\nexport function buildFailureContext(input, state) {\\n  const toolName = input?.tool_name || input?.toolName;\\n  if (!toolName) return \\\"\\\";\\n\\n  const error = input?.error || \\\"unknown error\\\";\\n  const toolInput = input?.tool_input || input?.toolInput || {};\\n  const target = extractToolTarget(toolName, toolInput);\\n\\n  const parts = [`[执行失败] ${toolName}${target ? ` → ${target}` : \\\"\\\"}`];\\n  parts.push(`  错误：${error.length > 120 ? error.slice(0, 120) + \\\"…\\\" : error}`);\\n\\n  if (state?.failureCount > 1) {\\n    parts.push(`  已连续失败 ${state.failureCount} 次`);\\n  }\\n\\n  return parts.join(\\\"\\\\n\\\");\\n}\\n\\nexport function buildRecentEventContext(state) {\\n  const events = state?.recentEvents;\\n\\n  if (!events?.length) {\\n    return \\\"\\\";\\n  }\\n\\n  const window = events.slice(0, 3);\\n  const lines = [\\\"最近发生的事情：\\\", \\\"\\\"];\\n\\n  for (let i = 0; i < window.length; i++) {\\n    lines.push(formatEvent(window[i], i));\\n  }\\n\\n  if (state.failureCount > 0) {\\n    lines.push(\\\"\\\", `连续失败次数：${state.failureCount}`);\\n  }\\n\\n  if (state.shouldRemindInnerOs) {\\n    lines.push(\\n      \\\"\\\",\\n      `Inner OS 触发提醒（${normalizeFrequency(state.frequency)}）：最近已有多个工具事件或出现失败；本轮如有任何判断点，请输出一条简短的 \\\\`▎InnerOS：\\\\` 独白。`,\\n    );\\n  } else {\\n    lines.push(\\\"\\\", \\\"根据当前频率档位，在关键判断、失败恢复、阶段推进或收尾时输出简短 Inner OS 旁白。\\\");\\n  }\\n\\n  return lines.join(\\\"\\\\n\\\");\\n}\\n\\nexport function buildPostCompactContext(state) {\\n  const parts = [\\\"上下文刚刚完成压缩。\\\"];\\n\\n  if (state?.compactedAt) {\\n    parts.push(`压缩时间：${state.compactedAt}`);\\n  }\\n\\n  const recent = buildRecentEventContext(state);\\n  if (recent) {\\n    parts.push(\\\"\\\", recent);\\n  } else {\\n    parts.push(\\\"\\\", \\\"Inner OS 状态已保留，你可以继续根据当前任务自行决定是否输出旁白。\\\");\\n  }\\n\\n  return parts.join(\\\"\\\\n\\\");\\n}\\n\"\n    },\n    {\n      \"path\": \"hooks/lib/events.js\",\n      \"content\": \"import { EVENT_RESULTS, EVENT_TYPES } from \\\"./constants.js\\\";\\n\\nfunction toText(value) {\\n  if (typeof value === \\\"string\\\") {\\n    return value;\\n  }\\n\\n  if (value == null) {\\n    return \\\"\\\";\\n  }\\n\\n  return JSON.stringify(value);\\n}\\n\\nexport function inferEventType(toolName = \\\"\\\", payload = {}) {\\n  const normalizedTool = String(toolName).toLowerCase();\\n  const target = toText(payload.path || payload.target || payload.command).toLowerCase();\\n\\n  if (normalizedTool.includes(\\\"read\\\") || normalizedTool.includes(\\\"fetch\\\")) {\\n    return EVENT_TYPES.READ;\\n  }\\n\\n  if (\\n    normalizedTool.includes(\\\"glob\\\") ||\\n    normalizedTool.includes(\\\"grep\\\") ||\\n    normalizedTool.includes(\\\"search\\\") ||\\n    normalizedTool.includes(\\\"rg\\\") ||\\n    normalizedTool.includes(\\\"lsp\\\")\\n  ) {\\n    return EVENT_TYPES.SEARCH;\\n  }\\n\\n  if (normalizedTool.includes(\\\"bash\\\") || normalizedTool.includes(\\\"shell\\\") || payload.command) {\\n    if (target.includes(\\\"test\\\") || target.includes(\\\"lint\\\") || target.includes(\\\"check\\\")) {\\n      return EVENT_TYPES.VERIFY;\\n    }\\n\\n    return EVENT_TYPES.EXECUTE;\\n  }\\n\\n  if (\\n    normalizedTool.includes(\\\"write\\\") ||\\n    normalizedTool.includes(\\\"patch\\\") ||\\n    normalizedTool.includes(\\\"edit\\\") ||\\n    normalizedTool.includes(\\\"delete\\\") ||\\n    normalizedTool.includes(\\\"notebook\\\")\\n  ) {\\n    return EVENT_TYPES.EDIT;\\n  }\\n\\n  return EVENT_TYPES.OTHER;\\n}\\n\\nexport function inferResult(payload = {}) {\\n  const exitCode = payload.exit_code ?? payload.exitCode;\\n  const success = payload.success;\\n  const status = String(payload.status || \\\"\\\").toLowerCase();\\n\\n  if (typeof success === \\\"boolean\\\") {\\n    return success ? EVENT_RESULTS.SUCCESS : EVENT_RESULTS.FAILURE;\\n  }\\n\\n  if (typeof exitCode === \\\"number\\\") {\\n    return exitCode === 0 ? EVENT_RESULTS.SUCCESS : EVENT_RESULTS.FAILURE;\\n  }\\n\\n  if (status === \\\"failed\\\" || status === \\\"error\\\") {\\n    return EVENT_RESULTS.FAILURE;\\n  }\\n\\n  if (status === \\\"ok\\\" || status === \\\"success\\\" || status === \\\"completed\\\") {\\n    return EVENT_RESULTS.SUCCESS;\\n  }\\n\\n  return EVENT_RESULTS.UNKNOWN;\\n}\\n\\nexport function summarizePayload(toolName = \\\"\\\", payload = {}) {\\n  const target = payload.path || payload.target || payload.command || payload.description;\\n\\n  if (target) {\\n    return `${toolName} -> ${toText(target)}`;\\n  }\\n\\n  return `${toolName} executed`;\\n}\\n\\nexport function extractToolTarget(toolName, toolInput) {\\n  if (!toolInput) return null;\\n\\n  const name = String(toolName).toLowerCase();\\n\\n  if (name.includes(\\\"bash\\\") || name.includes(\\\"shell\\\")) {\\n    const cmd = toolInput.command || \\\"\\\";\\n    return cmd.length > 80 ? cmd.slice(0, 80) + \\\"…\\\" : cmd || null;\\n  }\\n\\n  return (\\n    toolInput.file_path ||\\n    toolInput.path ||\\n    toolInput.pattern ||\\n    toolInput.query ||\\n    toolInput.url ||\\n    null\\n  );\\n}\\n\\nexport function normalizeToolEvent(input = {}) {\\n  const toolName = input.tool_name || input.toolName || input.hook_event_name || \\\"unknown\\\";\\n  const payload = input.tool_input || input.payload || input;\\n\\n  return {\\n    toolName,\\n    eventType: inferEventType(toolName, payload),\\n    result: inferResult(input),\\n    target: payload.path || payload.target || payload.command || null,\\n    summary: summarizePayload(toolName, payload),\\n    timestamp: new Date().toISOString(),\\n  };\\n}\\n\\nexport function normalizeFailureEvent(input = {}) {\\n  const toolName = input.tool_name || input.toolName || \\\"unknown\\\";\\n  const toolInput = input.tool_input || input.toolInput || {};\\n\\n  return {\\n    toolName,\\n    eventType: inferEventType(toolName, toolInput),\\n    result: EVENT_RESULTS.FAILURE,\\n    target: extractToolTarget(toolName, toolInput),\\n    summary: `${toolName} failed: ${input.error || \\\"unknown error\\\"}`,\\n    timestamp: new Date().toISOString(),\\n  };\\n}\\n\\nexport function normalizeLifecycleEvent(input = {}) {\\n  const eventName = input.hook_event_name || input.hookEventName || \\\"Lifecycle\\\";\\n  const target =\\n    input.subagent_name ||\\n    input.subagentName ||\\n    input.agent_name ||\\n    input.agentName ||\\n    input.name ||\\n    input.description ||\\n    null;\\n  const description = input.description || input.prompt || input.message || \\\"\\\";\\n\\n  return {\\n    toolName: eventName,\\n    eventType: EVENT_TYPES.OTHER,\\n    result: inferResult({ ...input, status: input.status || \\\"success\\\" }),\\n    target,\\n    summary: description ? `${eventName} -> ${description}` : `${eventName} event`,\\n    timestamp: new Date().toISOString(),\\n  };\\n}\\n\"\n    },\n    {\n      \"path\": \"hooks/lib/constants.js\",\n      \"content\": \"import { resolve, sep } from \\\"node:path\\\";\\nimport { pathToFileURL } from \\\"node:url\\\";\\n\\nexport const PLUGIN_ID = \\\"ai-inner-os\\\";\\nexport const DEFAULT_PREFIX = \\\"▎InnerOS：\\\";\\n\\nfunction dataDirFromEnv() {\\n  const dataDir = process.env.CLAUDE_PLUGIN_DATA;\\n  if (!dataDir) {\\n    return new URL(\\\"../../\\\", import.meta.url);\\n  }\\n\\n  return pathToFileURL(resolve(dataDir) + sep);\\n}\\n\\nexport const PLUGIN_DATA_DIR = dataDirFromEnv();\\nexport const CONFIG_PATH = new URL(\\\"config.json\\\", PLUGIN_DATA_DIR);\\nexport const STATE_DIR = new URL(\\\"state/\\\", PLUGIN_DATA_DIR);\\nexport const SKILL_PATH = new URL(\\\"../../protocol/SKILL.md\\\", import.meta.url);\\nexport const MAX_RECENT_EVENTS = 10;\\nexport const DEFAULT_FREQUENCY = \\\"normal\\\";\\nexport const FREQUENCY_THRESHOLDS = {\\n  low: 6,\\n  normal: 3,\\n  high: 1,\\n};\\n\\nexport const EVENT_TYPES = {\\n  READ: \\\"read\\\",\\n  SEARCH: \\\"search\\\",\\n  EXECUTE: \\\"execute\\\",\\n  EDIT: \\\"edit\\\",\\n  VERIFY: \\\"verify\\\",\\n  OTHER: \\\"other\\\",\\n};\\n\\nexport const EVENT_RESULTS = {\\n  SUCCESS: \\\"success\\\",\\n  FAILURE: \\\"failure\\\",\\n  UNKNOWN: \\\"unknown\\\",\\n};\\n\\nexport const PERSONAS_DIR = new URL(\\\"../../personas/\\\", import.meta.url);\\nexport const CUSTOM_PERSONAS_DIR = new URL(\\\"personas/custom/\\\", PLUGIN_DATA_DIR);\\nexport const ACTIVE_PERSONA_FILE = new URL(\\\"personas/_active.json\\\", PLUGIN_DATA_DIR);\\nexport const DEFAULT_PERSONA = \\\"default\\\";\\n\"\n    },\n    {\n      \"path\": \"hooks/lib/state.js\",\n      \"content\": \"import { mkdir, readFile, rm, writeFile } from \\\"node:fs/promises\\\";\\nimport { basename } from \\\"node:path\\\";\\n\\nimport { MAX_RECENT_EVENTS, STATE_DIR } from \\\"./constants.js\\\";\\nimport { getReminderThreshold, normalizeFrequency, readInnerOsConfig } from \\\"./config.js\\\";\\n\\nfunction sanitizeSessionId(sessionId) {\\n  return String(sessionId || \\\"default\\\").replace(/[^a-zA-Z0-9._-]/g, \\\"_\\\");\\n}\\n\\nfunction getStateFileUrl(sessionId) {\\n  return new URL(`${sanitizeSessionId(sessionId)}.json`, STATE_DIR);\\n}\\n\\nexport async function ensureStateDir() {\\n  await mkdir(STATE_DIR, { recursive: true });\\n}\\n\\nexport async function readSessionState(sessionId) {\\n  await ensureStateDir();\\n  const config = await readInnerOsConfig();\\n\\n  try {\\n    const raw = await readFile(getStateFileUrl(sessionId), \\\"utf8\\\");\\n    const state = JSON.parse(raw);\\n    return {\\n      ...state,\\n      frequency: normalizeFrequency(state.frequency || config.frequency),\\n    };\\n  } catch {\\n    return {\\n      enabled: true,\\n      sessionId: sanitizeSessionId(sessionId),\\n      frequency: config.frequency,\\n      failureCount: 0,\\n      lastTool: null,\\n      toolEventsSinceReminder: 0,\\n      shouldRemindInnerOs: false,\\n      recentEvents: [],\\n      updatedAt: new Date().toISOString(),\\n    };\\n  }\\n}\\n\\nexport async function writeSessionState(sessionId, state) {\\n  await ensureStateDir();\\n\\n  const nextState = {\\n    enabled: true,\\n    ...state,\\n    sessionId: sanitizeSessionId(sessionId),\\n    updatedAt: new Date().toISOString(),\\n  };\\n\\n  await writeFile(\\n    getStateFileUrl(sessionId),\\n    JSON.stringify(nextState, null, 2),\\n    \\\"utf8\\\",\\n  );\\n\\n  return nextState;\\n}\\n\\nexport async function appendEvent(sessionId, event) {\\n  const state = await readSessionState(sessionId);\\n  const frequency = normalizeFrequency(state.frequency);\\n  const eventsSinceReminder = (state.toolEventsSinceReminder || 0) + 1;\\n  const shouldRemindInnerOs =\\n    event.result === \\\"failure\\\" || eventsSinceReminder >= getReminderThreshold(frequency);\\n  const recentEvents = [event, ...(state.recentEvents || [])].slice(\\n    0,\\n    MAX_RECENT_EVENTS,\\n  );\\n\\n  const failureCount =\\n    event.result === \\\"failure\\\" ? (state.failureCount || 0) + 1 : 0;\\n\\n  return writeSessionState(sessionId, {\\n    ...state,\\n    frequency,\\n    lastTool: event.toolName,\\n    failureCount,\\n    toolEventsSinceReminder: shouldRemindInnerOs ? 0 : eventsSinceReminder,\\n    shouldRemindInnerOs,\\n    recentEvents,\\n  });\\n}\\n\\nexport async function removeSessionState(sessionId) {\\n  try {\\n    await rm(getStateFileUrl(sessionId), { force: true });\\n  } catch {\\n    // Best-effort cleanup only.\\n  }\\n}\\n\\nexport function getSessionStateFilename(sessionId) {\\n  return basename(getStateFileUrl(sessionId).pathname);\\n}\\n\"\n    },\n    {\n      \"path\": \"codex/hooks/post-tool-use.js\",\n      \"content\": \"import { normalizeToolEvent } from \\\"../../hooks/lib/events.js\\\";\\nimport { readJsonStdin, writeJsonStdout } from \\\"../../hooks/lib/io.js\\\";\\nimport { buildRecentEventContext } from \\\"../../hooks/lib/prompt.js\\\";\\nimport { getSessionId } from \\\"../../hooks/lib/session.js\\\";\\nimport { appendEvent } from \\\"../../hooks/lib/state.js\\\";\\n\\ntry {\\n  const input = await readJsonStdin();\\n  const sessionId = getSessionId(input);\\n  const event = normalizeToolEvent(input);\\n  const state = await appendEvent(sessionId, event);\\n  const context = buildRecentEventContext(state);\\n\\n  if (context) {\\n    // Codex PostToolUse: JSON with hookSpecificOutput.additionalContext\\n    writeJsonStdout({\\n      hookSpecificOutput: {\\n        hookEventName: \\\"PostToolUse\\\",\\n        additionalContext: context,\\n      },\\n    });\\n  }\\n} catch {\\n  // Fail silently — hook errors should not interrupt the session.\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"24bfa977c5a0cf34d37ada0a60acc31f7672c206\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"aff1d9cfa63d3624fe0d0fa1f538b4245c74d4297f2e8981837b84a78cf49b11\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 57,\n        \"lines\": 5503,\n        \"words\": 42465\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 28,\n        \"lines\": 1999,\n        \"code\": 1601,\n        \"comments\": 108,\n        \"blank\": 292\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 5,\n        \"lines\": 456,\n        \"code\": 391,\n        \"comments\": 0,\n        \"blank\": 65\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [\n        {\n          \"path\": \"cursor/skills/agent-chat-history/SKILL.md\",\n          \"name\": \"agent-chat-history\",\n          \"description\": \"按 YYYY-MM-DD 在 Windows/macOS/Linux 检索本机聊天与 Agent 会话历史（Claude Code 项目 jsonl、Codex CLI history.jsonl、Cursor workspaceStorage 与 state.vscdb）；可只导出用户提示词。用户要查看或导出某日记录、按天筛 jsonl/SQLite、只抽提示词、排查历史丢失或做只读审计时使用。\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"cursor/skills/user-profile-distillation/SKILL.md\",\n          \"name\": \"user-profile-distillation\",\n          \"description\": \"Use when the user explicitly asks to analyze their own prompt history, build a user profile, distill personality/work traits, or summarize communication preferences from provided prompts or local agent chat history.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/plugins/inner-os/skills/agent-chat-history/SKILL.md\",\n          \"name\": \"agent-chat-history\",\n          \"description\": \"按 YYYY-MM-DD 在 Windows/macOS/Linux 检索本机聊天与 Agent 会话历史（Claude Code 项目 jsonl、Codex CLI history.jsonl、Cursor workspaceStorage 与 state.vscdb）；可只导出用户提示词。用户要查看或导出某日记录、按天筛 jsonl/SQLite、只抽提示词、排查历史丢失或做只读审计时使用。\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/plugins/inner-os/skills/inner-os/SKILL.md\",\n          \"name\": \"inner-os\",\n          \"description\": \"Expose the AI's visible inner monologue during work. Use when the session should allow short public asides in the format `▎InnerOS：...` alongside the main task output.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/plugins/inner-os/skills/user-profile-distillation/SKILL.md\",\n          \"name\": \"user-profile-distillation\",\n          \"description\": \"Use when the user explicitly asks to analyze their own prompt history, build a user profile, distill personality/work traits, or summarize communication preferences from provided prompts or local agent chat history.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/skills/agent-chat-history/SKILL.md\",\n          \"name\": \"agent-chat-history\",\n          \"description\": \"按 YYYY-MM-DD 在 Windows/macOS/Linux 检索本机聊天与 Agent 会话历史（Claude Code 项目 jsonl、Codex CLI history.jsonl、Cursor workspaceStorage 与 state.vscdb）；可只导出用户提示词。用户要查看或导出某日记录、按天筛 jsonl/SQLite、只抽提示词、排查历史丢失或做只读审计时使用。\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/skills/inner-os/SKILL.md\",\n          \"name\": \"inner-os\",\n          \"description\": \"Expose the AI's visible inner monologue during work. Use when the session should allow short public asides in the format `▎InnerOS：...` alongside the main task output.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"hermes/skills/user-profile-distillation/SKILL.md\",\n          \"name\": \"user-profile-distillation\",\n          \"description\": \"Use when the user explicitly asks to analyze their own prompt history, build a user profile, distill personality/work traits, or summarize communication preferences from provided prompts or local agent chat history.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"openclaw/skills/agent-chat-history/SKILL.md\",\n          \"name\": \"agent-chat-history\",\n          \"description\": \"按 YYYY-MM-DD 在 Windows/macOS/Linux 检索本机聊天与 Agent 会话历史（Claude Code 项目 jsonl、Codex CLI history.jsonl、Cursor workspaceStorage 与 state.vscdb）；可只导出用户提示词。用户要查看或导出某日记录、按天筛 jsonl/SQLite、只抽提示词、排查历史丢失或做只读审计时使用。\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"openclaw/skills/inner-os/SKILL.md\",\n          \"name\": \"inner-os\",\n          \"description\": \"Expose the AI's visible inner monologue during work. Use when the session should allow short public asides in the format `▎InnerOS：...` alongside the main task output.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"openclaw/skills/user-profile-distillation/SKILL.md\",\n          \"name\": \"user-profile-distillation\",\n          \"description\": \"Use when the user explicitly asks to analyze their own prompt history, build a user profile, distill personality/work traits, or summarize communication preferences from provided prompts or local agent chat history.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"protocol/SKILL.md\",\n          \"name\": \"inner-os\",\n          \"description\": \"Expose the AI's visible inner monologue during work. Use when the session should allow short public asides in the format `▎InnerOS：...` alongside the main task output.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/agent-chat-history/SKILL.md\",\n          \"name\": \"agent-chat-history\",\n          \"description\": \"按 YYYY-MM-DD 在 Windows/macOS/Linux 检索本机聊天与 Agent 会话历史（Claude Code 项目 jsonl、Codex CLI history.jsonl、Cursor workspaceStorage 与 state.vscdb）；可只导出用户提示词。用户要查看或导出某日记录、按天筛 jsonl/SQLite、只抽提示词、排查历史丢失或做只读审计时使用。\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/user-profile-distillation/SKILL.md\",\n          \"name\": \"user-profile-distillation\",\n          \"description\": \"Use when the user explicitly asks to analyze their own prompt history, build a user profile, distill personality/work traits, or summarize communication preferences from provided prompts or local agent chat history.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        }\n      ],\n      \"non_example_candidates\": 14,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"openclaw/index.js\",\n          \"line\": 57,\n          \"api\": \"api.on\",\n          \"name\": \"before_prompt_build\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"openclaw/index.js\",\n          \"line\": 67,\n          \"api\": \"api.on\",\n          \"name\": \"llm_output\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"before_prompt_build\",\n          \"llm_output\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 2,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "ce8649ae111a40c8f17f3c40aa1c4683e637f51c7efb9a7fa861a42addd548b7"
+        }
+    },
+    "unavailable_artifacts": []
+}

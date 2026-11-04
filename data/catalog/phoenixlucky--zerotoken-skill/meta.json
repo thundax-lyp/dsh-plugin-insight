@@ -1,0 +1,40 @@
+{
+    "repository": "phoenixlucky/zerotoken-skill",
+    "repository_id": 1222262862,
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 22,
+    "pushed_at": "2026-10-16T03:07:02Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aphoenixlucky%2Fzerotoken-skill%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CC6:3280C3:227B7C:2F9632:6AEB332F and timestamp 2026-11-04 13:29:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "zerotoken-skill",
+        "captured_at": "2026-11-04T13:26:04.262Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/zerotoken-skill",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-04T13:26:04.262Z",
+            "source_url": "https://registry.npmjs.org/zerotoken-skill",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

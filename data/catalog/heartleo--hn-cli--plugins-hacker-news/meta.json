@@ -1,0 +1,48 @@
+{
+    "repository": "heartleo/hn-cli",
+    "repository_id": 1211255316,
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 51,
+    "pushed_at": "2026-08-27T04:39:46Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6EE6:34F4D8:62B79:6AAE2:6AEB3314 and timestamp 2026-11-04 13:28:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6F1E:3DEFB1:62A3F:6A9B1:6AEB3316 and timestamp 2026-11-04 13:28:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20updated%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6F48:277206:6FF29:77F79:6AEB3317 and timestamp 2026-11-04 13:28:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-hacker-news",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 707,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-hacker-news",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T09:06:17.836Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
+            "source_url": "https://registry.npmjs.org/dsh-hacker-news",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-18T09:06:18.960Z",
+            "latest_error": null
+        }
+    }
+}

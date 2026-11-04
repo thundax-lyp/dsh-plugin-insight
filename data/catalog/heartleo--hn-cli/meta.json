@@ -1,0 +1,38 @@
+{
+    "repository": "heartleo/hn-cli",
+    "repository_id": 1211255316,
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 51,
+    "pushed_at": "2026-08-27T04:39:46Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6FF6:277206:7017A:781F3:6AEB331A and timestamp 2026-11-04 13:28:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 702A:3580A4:66591:6E627:6AEB331C and timestamp 2026-11-04 13:29:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 709A:C561C:645F8:6C533:6AEB331D and timestamp 2026-11-04 13:29:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 70FC:3C4A15:6D888:7592A:6AEB331F and timestamp 2026-11-04 13:29:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aheartleo%2Fhn-cli%20is%3Aissue%20updated%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7140:ABCAB:649BB:6C9D1:6AEB3320 and timestamp 2026-11-04 13:29:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
+}
