@@ -1,44 +1,47 @@
 {
     "repository": "A2chitect/dsh-openviking-enhance",
     "repository_id": 1401255267,
-    "captured_at": "2026-10-27T01:50:27.819Z",
-    "window_start": "2026-09-27T01:50:27.819Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
     "stars": 6,
-    "pushed_at": "2026-10-27T01:13:34Z",
+    "pushed_at": "2026-11-04T03:23:10Z",
     "issues": {
         "open": 0,
         "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA2chitect%2Fdsh-openviking-enhance%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82C6:4A6F1:A596D4:AE2BB6:6AEAEB7E and timestamp 2026-11-04 08:23:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA2chitect%2Fdsh-openviking-enhance%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8324:1FCEFA:706E82:790535:6AEAEB7F and timestamp 2026-11-04 08:23:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA2chitect%2Fdsh-openviking-enhance%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8396:56049:801350:88ABD8:6AEAEB81 and timestamp 2026-11-04 08:23:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-27T00:51:31.108Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-openviking-enhance",
-        "captured_at": "2026-10-27T01:50:27.819Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 969,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-openviking-enhance",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1656,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-openviking-enhance",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-02T09:19:48.640Z",
-            "captured_at": "2026-10-26T20:32:35.909Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
             "source_url": "https://registry.npmjs.org/dsh-openviking-enhance",
             "error": null,
-            "latest_version": "0.2.1",
-            "latest_published_at": "2026-10-17T16:13:01.306Z",
+            "latest_version": "0.2.2",
+            "latest_published_at": "2026-10-27T01:20:06.280Z",
             "latest_error": null
         }
     }

@@ -1,55 +1,44 @@
 {
     "repository": "AhaCrazy/dsh-stock-quotes",
     "repository_id": 1425208683,
-    "captured_at": "2026-10-23T01:51:06.992Z",
-    "window_start": "2026-09-23T01:51:06.992Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
     "stars": 0,
-    "pushed_at": "2026-10-22T03:47:28Z",
+    "pushed_at": "2026-11-02T03:20:26Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D1BC:3FD3DC:1BEE08:1D68BA:6ADABD8D and timestamp 2026-10-23 01:51:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D2E4:1BA4B3:185101:1A2338:6ADABD8E and timestamp 2026-10-23 01:51:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20created%3A2026-09-23T01%3A51%3A06.992Z..2026-10-23T01%3A51%3A06.992Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D450:294215:1292F9:140DBC:6ADABD90 and timestamp 2026-10-23 01:51:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-23T01%3A51%3A06.992Z..2026-10-23T01%3A51%3A06.992Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D55C:101592:115D3EB:12A9C8F:6ADABD91 and timestamp 2026-10-23 01:51:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9282:2DD808:757D75:7E1358:6AEAEBBD and timestamp 2026-11-04 08:24:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20updated%3A2026-09-23T01%3A51%3A06.992Z..2026-10-23T01%3A51%3A06.992Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D5FC:1BC665:121334C:135FCEB:6ADABD93 and timestamp 2026-10-23 01:51:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAhaCrazy%2Fdsh-stock-quotes%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 92CC:552CD:8D6220:95FD28:6AEAEBBE and timestamp 2026-11-04 08:24:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-stock-quotes",
-        "captured_at": "2026-10-23T01:51:15.572Z",
-        "window_start": "2026-09-23",
-        "window_end": "2026-10-22",
-        "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-23:2026-10-22/dsh-stock-quotes",
-        "error": "HTTP 404",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 331,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-stock-quotes",
+        "error": null,
         "publication": {
-            "first_published_at": null,
-            "captured_at": "2026-10-23T01:51:15.572Z",
+            "first_published_at": "2026-11-02T03:03:45.758Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
             "source_url": "https://registry.npmjs.org/dsh-stock-quotes",
-            "error": "HTTP 404",
-            "latest_version": null,
-            "latest_published_at": null,
-            "latest_error": "HTTP 404"
+            "error": null,
+            "latest_version": "2.0.2",
+            "latest_published_at": "2026-11-02T03:04:42.164Z",
+            "latest_error": null
         }
     }
 }

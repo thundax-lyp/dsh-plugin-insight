@@ -1,0 +1,56 @@
+{
+    "repository": "orziz/odai",
+    "repository_id": 1185828998,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 119,
+    "pushed_at": "2026-10-29T12:45:37Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aorziz%2Fodai%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A27A:1FCEFA:70C396:796143:6AEAEBFF and timestamp 2026-11-04 08:25:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aorziz%2Fodai%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A302:20DAE5:734444:7BD996:6AEAEC02 and timestamp 2026-11-04 08:25:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aorziz%2Fodai%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A378:225F93:6F01C7:779E36:6AEAEC03 and timestamp 2026-11-04 08:25:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aorziz%2Fodai%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A3BC:49B4F:726F2D:7B05E3:6AEAEC05 and timestamp 2026-11-04 08:25:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aorziz%2Fodai%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A3EC:37D06C:74CB68:7D661C:6AEAEC06 and timestamp 2026-11-04 08:25:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "odai-dsh-plugin",
+        "captured_at": "2026-11-03T06:53:49.722Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2356,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/odai-dsh-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T16:03:56.799Z",
+            "captured_at": "2026-11-03T06:53:49.722Z",
+            "source_url": "https://registry.npmjs.org/odai-dsh-plugin",
+            "error": null,
+            "latest_version": "0.3.3",
+            "latest_published_at": "2026-10-29T13:07:18.052Z",
+            "latest_error": null
+        }
+    }
+}

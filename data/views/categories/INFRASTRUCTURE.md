@@ -14,7 +14,6 @@
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
 | [AI Infrastructure Agent Skills](#plugin-1129378320-root) | 面向 AI 基础设施工程师的 Skill 集合，涵盖 GPU 开发、显存估算、训练指导和技术图表。 | [Q03](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q03) 先观察，按一项已知结果任务筛选并固定独立环境。 |
-| [Almost Full Access](#plugin-1336031182-root) | 在DSH完全访问预设上，为部分命名shell工具加入确定性/子代理审查、人工审批面板和命令记忆。 | 日常安全权限用途不推荐；只保留无敏感权限的隔离研究边界。 |
 | [ANOLISA](#plugin-1195873793-root) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | [Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。 |
 | [Awesome DSH Plugins](#plugin-1333144072-root) | 提供 DSH 插件分类目录与可订阅到官方发现页的安装目标索引。 | [Q04](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md#research-q04) 独立profile只试单个任务候选，上游核权限/版本，不批装；不清回原仓库。 |
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
@@ -57,7 +56,7 @@
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | 先在隔离端口登记已有服务、保存参数并核对测速口径。 |
 | [dsh-ollama-cloud](#plugin-1394197658-root) | 接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。 | 适合已有Ollama凭据且可锁宿主版本的用户，以短文本和一个可丢弃工具任务试接入。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
-| [dsh-openviking-enhance](#plugin-1401255267-root) | 把 OpenViking Studio、会话记忆提交状态与当前召回详情接入 DSH 界面。 | 在可信个人单机和非敏感会话受控试用，先把一份归档差异与直接API核对；身份或连接不符立即退回直接查询。 |
+| [dsh-openviking-enhance](#plugin-1401255267-root) | 在 DSH Web 界面展示 OpenViking Studio、会话记忆提交状态和当前召回结果。 | [Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05) 建议可信个人单机以非敏感会话对照一条归档和当前搜索；身份、端点或权限不符时停止并回服务端核查。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
@@ -124,6 +123,7 @@
 | [mem9](#plugin-1175756746-root) | 为 AI Agent 提供跨会话、跨设备的持久共享记忆和检索。 | [Q05](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q05) 先关闭自动写入，在隔离空间用合成事实验证读取、更正和删除；数据授权或传播不明时回本地笔记。 |
 | [Mirage](#plugin-1231135337-root) | 用虚拟文件系统、命令及运行时为 Agent 组合统一终端。 | 先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
+| [MultiVibe Companion for DSH](#plugin-1168322081-plugins-dsh-multivibe) | 连接 DSH 与 MultiVibe 网关，并查看可用模型及连接状态。 | [Q05](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q05) 建议已有网关者在隔离 profile 使用专用密钥试配置，确认容量、状态与费用后再做获授权测试。 |
 | [Open Managed Agents (OpenMA)](#plugin-1206555053-root) | 自托管 Agent 控制面与执行基础设施，组合会话持久化、模型 harness、工具、沙箱、确认和恢复，提供多种 API 与部署适配。 | 先观察并准备单组合隔离测试任务与模拟外部服务，达到权限/恢复/退出对账再扩大，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。 |
 | [opencode2dsh](#plugin-1350368388-packages-plugin) | 为 DSH 提供 OpenCode Zen 匿名模型适配与可选本地委派。 | 非敏感任务核对实际来源、输出与网络资格；不明结果先对账。 |
 | [OpenGuardrails](#plugin-1081166515-root) | 以本地规则、模型裁决、秘密替换、网关和 sandbox 为 AI Agent 提供安全检查与行为记录。 | [Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 仅在一次性工作区以合成秘密评本地规则，保留宿主审批，明确 observe/enforce 差异。 |
@@ -173,22 +173,6 @@
 > **建议**：[Q04](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q04) 提出每示例附输入、框架/硬件、执行状态与对照结果的最小复核记录，检验是否减少错误推广；现有测试不自动等于目标环境通过。
 
 [查看完整分析](../../plugins/yzlnew--infra-skills/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1336031182-root"></a>
-
-## [Almost Full Access](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 1,006](https://img.shields.io/static/v1?label=npm+30d&message=1%2C006&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
-
-> **用途**：希望减少工作区外可逆操作审批、仍确认危险命令的用户；作为安全权限用途，必须验证全部真实执行入口。它是原生DSH插件，但底层仍是完全访问预设。见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)。
-
-> **亮点**：确定性风险优先、无工具审查与可见审批/错误构成低中断的权限交互原型；但只对已覆盖路径成立，不能替代宿主统一授权。已有增量与归因见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)、[Q02](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q02)。
-
-> **思考**：完全访问前提下，缺会话/预设、未命名工具等条件可绕过门控；短哈希复用未绑定会话/cwd/脚本版本，审批端点也不独立绑定操作者。局部超时拒绝与随机ID不足以证明整体安全，见[Q02](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q02)、[Q03](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q03)。
-
-> **建议**：先将真实执行边界、缺身份默认值与精确授权复用做成可否定的安全验收，再评是否需要跨组件上下文描述；账户、历史范围与凭据目的地必须分别约束。方案未实现/未执行，最小验证见[Q05](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q05)、[Q07](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q07)。
-
-[查看完整分析](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195873793-root"></a>
 
@@ -866,15 +850,15 @@
 
 ## [dsh-openviking-enhance](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md)
 
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/A2chitect/dsh-openviking-enhance) [![npm 30d 969](https://img.shields.io/static/v1?label=npm+30d&message=969&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openviking-enhance) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openviking-enhance)
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/A2chitect/dsh-openviking-enhance) [![npm 30d 1,656](https://img.shields.io/static/v1?label=npm+30d&message=1%2C656&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openviking-enhance) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openviking-enhance)
 
-> **用途**：已部署 DSH 与本地 OpenViking 的维护者可核对一次会话的记忆归档与当前召回。
+> **用途**：已运行 DSH 与 OpenViking 的维护者可在当前会话附近查看记忆归档与检索状态。
 
-> **亮点**：把分散的Studio、归档差异和检索查询组织到DSH同会话观察流程，增量在诊断集成而非检索算法。详见[Q01](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q01) 与 [Q02](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q02) 将 Studio、归档状态和差异组织进 DSH 界面；增量在诊断集成，未证明改变底层检索能力或节时。
 
-> **思考**：当前重检索不能证明历史模型注入；loopback来源防线也不构成用户或会话授权，仅适合可信单机边界。详见[Q03](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q03) 是当前重检索而非历史输入；[Q04](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q04) 的本地来源限制不核验独立用户和会话授权，不能将其当作多用户权限边界。
 
-> **建议**：未验证假设是在注入边界保存轮次命中快照，与当前重检索并列解释；须以修改记忆后的前后对照证明差异，同时核对敏感数据保留代价。详见[Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05)。
+> **建议**：[Q06](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q06) 提出把真实注入收据与当前搜索并列的未验证方案；须先比较宿主日志并评估敏感信息保留。
 
 [查看完整分析](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1933,6 +1917,22 @@
 > **建议**：未验证假设：非破坏性检查 fs、shell、spill 和审批的一致性可减少错配；须对照现有共享分发验证。[Q05](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/strukto-ai--mirage--typescript-packages-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1168322081-plugins-dsh-multivibe"></a>
+
+## [MultiVibe Companion for DSH](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md)
+
+[![GitHub ★ 61](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=61&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/thibautrey/multivibe)
+
+> **用途**：已使用 MultiVibe 网关与 DSH 的操作者可在面板中发现模型并配置受管理的 provider。
+
+> **亮点**：[Q01](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q01) 与 [Q02](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q02) 将模型发现、容量确认和宿主 provider 接线集中；推理由既有适配器承担，实际收益尚未测量。
+
+> **思考**：[Q03](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q03) 的凭据与设置变更跨服务且补偿可能失败；[Q02](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q02) 的目录成功不证明模型请求、工具或费用正常。
+
+> **建议**：[Q06](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q06) 提出主动测试后的能力收据，需验证其是否比手工记录更少误判且值得费用。
+
+[查看完整分析](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1206555053-root"></a>
 

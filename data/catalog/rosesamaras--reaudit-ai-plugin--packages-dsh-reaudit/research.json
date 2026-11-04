@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "ec0cd33dccd48803a1a267ace1a77222",
+    "identity": "github:1172884215:packages-dsh-reaudit",
+    "slug": "rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1172884215:packages-dsh-reaudit",
+            "repository_id": 1172884215,
+            "component_id": "packages-dsh-reaudit",
+            "repository": "RoseSamaras/reaudit-ai-plugin",
+            "path": "packages/dsh-reaudit",
+            "aliases": [],
+            "name": "DSH Reaudit",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "office-operations",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "10448c56f490eb25a38ae63de81a1d79f843acc0fa9928b183ea8d12ad095293",
+                "code": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                "maintenance": "04cfded88086ab125ddd0e6760a0096b02185b33ddf802cc4026bd0d83ee65d7"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-02-github-1172884215-packages-dsh-reaudit-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T08:52:41.729Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-02-github-1172884215-packages-dsh-reaudit-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/RoseSamaras/reaudit-ai-plugin",
+                            "commit": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                            "path": "packages/dsh-reaudit/README.md",
+                            "content_sha256": "89f5b345a6c22ca94b3f67c6c60e500871cf7ce4a57e31adffe88715605844d1"
+                        }
+                    ],
+                    "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                    "captured_at": "2026-11-04T08:52:41.729Z",
+                    "summary": "通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。",
+                    "artifact": "data/runs/2026-11-04-02/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/RoseSamaras/reaudit-ai-plugin",
+                            "commit": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                            "path": "packages/dsh-reaudit/package.json",
+                            "content_sha256": "8a789f9f81b9f98c27be41bc50a8a0b5b0c433ffd715ab81d3720db1a0790119"
+                        },
+                        {
+                            "repository_url": "https://github.com/RoseSamaras/reaudit-ai-plugin",
+                            "commit": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                            "path": "packages/dsh-reaudit/README.md",
+                            "content_sha256": "89f5b345a6c22ca94b3f67c6c60e500871cf7ce4a57e31adffe88715605844d1"
+                        },
+                        {
+                            "repository_url": "https://github.com/RoseSamaras/reaudit-ai-plugin",
+                            "commit": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                            "path": "packages/dsh-reaudit/cordis.patch.yml",
+                            "content_sha256": "f9e8e62393e3c1a84e7b43ab33f7ac18500de5808079d871d010ae06c9d0b9a5"
+                        }
+                    ],
+                    "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                    "captured_at": "2026-11-04T08:52:41.729Z",
+                    "summary": "核查 packages/dsh-reaudit/package.json、packages/dsh-reaudit/README.md、packages/dsh-reaudit/cordis.patch.yml；bundle 配置宿主 MCP 客户端，以环境变量中的凭据连接托管的 streamable HTTP 服务。",
+                    "artifact": "data/runs/2026-11-04-02/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "子组件固定树只含包、README、许可与 bundle patch；未读取宿主 MCP 桥实现或运行服务、测试和网络，也不审计仓库其他平台插件。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有 Reaudit 账户且需查看品牌搜索可见性或站点数据的团队，可评估在 DSH 中使用远端工具。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "bundle 配置宿主 MCP 客户端，以环境变量中的凭据连接托管的 streamable HTTP 服务。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "子组件固定树只含包、README、许可与 bundle patch；未读取宿主 MCP 桥实现或运行服务、测试和网络，也不审计仓库其他平台插件。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "dsh-reaudit 0.1.0，MIT，DSH bundle 配置包；未安装或核验发布包。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 兼容 DSH MCP 客户端 | 连接需要 | 挂载工具 | 未验证具体宿主版本 |\n| Reaudit 账户与 API key | 作者声明需要 | 认证远端服务 | 缺失时作者称连接失败，尚未实测 |\n| 网络与远端服务 | 远端操作需要 | 请求审查等能力 | 不可用时无法取得实时结果 |\n| 相应账号权限 | 对应数据或写操作需要 | 访问和执行 | 权限及费用未知 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 账户和服务费用未知 | 配置桥接及核对权限 | 远端服务与宿主未运行 |\n| 持续 | 服务、模型与网络费用未知 | 审查目标、数据和结果 | 工具数量和质量可变化 |\n| 失败恢复 | 查询及重试成本未知 | 回查远端副作用 | 写操作幂等性未知 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| DSH 连接 | patch 配置远端桥接 | 真实连接与工具注册 |\n| 站点分析 | 作者声明远端工具类别 | 结果质量和覆盖 |\n| 内容操作 | 作者声明存在生成和发布 | 账号权限与实际副作用 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 的最小 bundle 复用宿主桥并允许后续覆盖配置；服务故障与能力变化仍须在实际宿主中验证。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 显示组件将端点、命名空间、凭据与超时封装为宿主配置；远端审查能力本身不归因于此子包。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 的远端实现、工具权限和数据处理不在固定子包中；[Q04](#research-q04) 的潜在写入或发布必须先核账户与服务契约。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 提出逐调用权限和目标预览及结果回查的未验证设想；元数据不可靠或负担大于收益时否定。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                            "area": "code",
+                            "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T08:52:41.729Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T08:52:41.729Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                "reviewed_at": "2026-11-04T08:52:41.729Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                        "area": "code",
+                        "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 是现有 MCP 桥的常规配置，带有命名、认证和超时组合；远端引擎不在子包中，迁移仍依赖该桥及服务。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 将既有服务接入 DSH，提供局部操作便利；远端交付与用户规模、成本收益未由子包证明。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有 Reaudit 账户并使用 DSH 的网站运营人员可以先核对该桥接包的工具与权限。它提供现成的远端连接配置，真实服务能力和相比手工配置的收益尚未验证。如果服务的数据处理、目标账户或工具是否会发布内容不清楚，用户应停止调用并先在服务界面核实。",
+                "criteria": {
+                    "scenario": {
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01) 的 README 列出网站和品牌团队用途，超过无对象；缺重复痛点、真实需求及结果材料，不达部分成立档。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 的 patch 减少手写连接配置，比没有入口更便利；已有 MCP 手工配置可以连接同一服务，核心收益未经验证，不到实质增量档。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 有固定连接配置，超过仅有宣传；[Q03](#research-q03) 中桥实现与服务能力、失败和权限均未核，核心调用链未获直接证据，不到源码完整档。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q04](#research-q04) 已识别密钥、服务及写操作未知，比已知无退路更可控；费用、权限和结果回查均未确认，不足以认定完整退路与中档负担。"
+                    }
+                },
+                "score": 25,
+                "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                "reviewed_at": "2026-11-04T08:52:41.729Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-02-github-1172884215-packages-dsh-reaudit-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1172884215:packages-dsh-reaudit",
+                        "area": "code",
+                        "fingerprint": "93268dc3fa4b0768243c28917ab9b41318322c69"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1172884215:packages-dsh-reaudit",
+            "repository": "RoseSamaras/reaudit-ai-plugin",
+            "path": "packages/dsh-reaudit",
+            "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+            "fingerprints": {
+                "directory": "10448c56f490eb25a38ae63de81a1d79f843acc0fa9928b183ea8d12ad095293",
+                "code": "93268dc3fa4b0768243c28917ab9b41318322c69",
+                "maintenance": "04cfded88086ab125ddd0e6760a0096b02185b33ddf802cc4026bd0d83ee65d7"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T08:17:32Z",
+            "analysis_sha256": "7fd4fb3b5cc356370a57d6241b16552899b3abb6d485a39f0b030f2e99edcf0a"
+        },
+        "publication.metadata": "data/catalog/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/meta.json",
+        "publication.summaries": {
+            "text": "通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。",
+            "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+            "source_url": "https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+            "items": {
+                "后台": "配置 DSH MCP 客户端连接托管的 Reaudit 服务。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| MCP 连接配置 | 在宿主挂载 Reaudit 远端服务 | 需要兼容桥、网络和账户密钥 |\n| 远端工具调用 | 作者声明提供站点、内容和分析工具 | 实际清单、权限及效果未实测 |"
+        },
+        "publication.advice": {
+            "revision": "93268dc3fa4b0768243c28917ab9b41318322c69",
+            "text": "[Q04](#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。"
+        },
+        "registry": "data/plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit",
+        "reports": "# DSH Reaudit\n\n> 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。\n\n## 研究范围\n\n- **仓库**：[RoseSamaras/reaudit-ai-plugin](https://github.com/RoseSamaras/reaudit-ai-plugin)\n- **版本号**：0.1.0（[固定提交 93268dc3fa4b0768243c28917ab9b41318322c69](https://github.com/RoseSamaras/reaudit-ai-plugin/tree/93268dc3fa4b0768243c28917ab9b41318322c69)）\n- **版本日期**：2026-10-06（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定配置支持桥接机制判断；服务工具清单、权限、效果和假设均未实际验证。\n\n## 洞察短评\n\n- **用途**：已有 Reaudit 账户且需查看品牌搜索可见性或站点数据的团队，可评估在 DSH 中使用远端工具。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示组件将端点、命名空间、凭据与超时封装为宿主配置；远端审查能力本身不归因于此子包。\n- **思考**：[Q03](#research-q03) 的远端实现、工具权限和数据处理不在固定子包中；[Q04](#research-q04) 的潜在写入或发布必须先核账户与服务契约。\n- **建议**：[Q05](#research-q05) 提出逐调用权限和目标预览及结果回查的未验证设想；元数据不可靠或负担大于收益时否定。\n\n采用建议：[Q04](#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 显示组件将端点、命名空间、凭据与超时封装为宿主配置；远端审查能力本身不归因于此子包。\n\n## 关键质疑\n\n[Q03](#research-q03) 的远端实现、工具权限和数据处理不在固定子包中；[Q04](#research-q04) 的潜在写入或发布必须先核账户与服务契约。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 提出逐调用权限和目标预览及结果回查的未验证设想；元数据不可靠或负担大于收益时否定。\n\n固定 DSH 与服务版本，在隔离账户检查密钥失败、工具发现、只读响应、超时和潜在写操作的回查。\n\n## 场景与替代办法\n\n已有 Reaudit 账户且需查看品牌搜索可见性或站点数据的团队，可评估在 DSH 中使用远端工具。\n\n用户可以使用服务网站，或自行配置同一 MCP 客户端；子包主要提供一份可安装的连接配置。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 兼容 DSH MCP 客户端 | 连接需要 | 挂载工具 | 未验证具体宿主版本 |\n| Reaudit 账户与 API key | 作者声明需要 | 认证远端服务 | 缺失时作者称连接失败，尚未实测 |\n| 网络与远端服务 | 远端操作需要 | 请求审查等能力 | 不可用时无法取得实时结果 |\n| 相应账号权限 | 对应数据或写操作需要 | 访问和执行 | 权限及费用未知 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户核实服务政策、权限和测试账户 | 不明时停止连接敏感数据 |\n| 配置 | 用户在兼容宿主提供密钥与端点 | 检查连接是否成功及实际工具 |\n| 使用 | 用户从只读非敏感请求开始 | 核对目标、数据和响应 |\n| 恢复 | 用户回查远端状态 | 结果未知时不盲目重放写操作 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 账户和服务费用未知 | 配置桥接及核对权限 | 远端服务与宿主未运行 |\n| 持续 | 服务、模型与网络费用未知 | 审查目标、数据和结果 | 工具数量和质量可变化 |\n| 失败恢复 | 查询及重试成本未知 | 回查远端副作用 | 写操作幂等性未知 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| DSH 连接 | patch 配置远端桥接 | 真实连接与工具注册 |\n| 站点分析 | 作者声明远端工具类别 | 结果质量和覆盖 |\n| 内容操作 | 作者声明存在生成和发布 | 账号权限与实际副作用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查 DSH 连接包的实际桥接配置、远端能力和采用边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁可以使用它，它相对直接使用远端服务增加了什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n维护品牌搜索可见性或站点内容的团队，如果已有 Reaudit 账户和兼容宿主，可以尝试在 DSH 中调用远端服务提供的审查和内容工具。直接使用服务网站或手工配置同一 MCP 客户端也可能完成部分任务；此子包提供的具体增量是一份可安装的宿主连接配置，避免每次手写桥接行。它不包含远端审查引擎，目录中的工具清单是作者描述，不能当成本次实际发现或执行结果。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-reaudit/README.md:3-15](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L3-L15)\n\n作者描述目标、远端工具类别及执行位置。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n# dsh-reaudit\n\n[Reaudit](https://reaudit.io) for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness): a bundle that mounts the hosted Reaudit MCP server (`https://mcp.reaudit.io/mcp`) through the in-box `@deepseek-ai/dsh-mcp-client` bridge.\n\nThe agent gets Reaudit's tools as `mcp__reaudit__*` (238 at the time of writing; the server's `/health` endpoint reports the live count), covering:\n\n- **AI visibility**: how ChatGPT, Perplexity, Gemini, Google AI Overviews and other engines answer your tracked prompts, visibility scores, competitor comparisons, citation sources and sentiment (`get_visibility_score`, `get_competitor_comparison`, `get_citation_sources`, `get_sentiment_report`).\n- **Site health**: audits and recommendations, crawlability and agent-readiness checks (`run_audit`, `get_audit_recommendations`, `check_crawlability`, `scan_agent_readiness`).\n- **Content**: generation, editing, translation and publishing to WordPress (`generate_content`, `edit_content`, `translate_content`, `publish_to_wordpress`).\n- **Search and analytics**: Google Search Console, GA4 and Bing Webmaster data in one place, plus each source on its own (`get_analytics_hub`, `get_ga4_analytics`, `get_bing_search_performance`).\n- **Social and community**: post generation and scheduling, Reddit opportunities (`generate_social_posts`, `schedule_social_post`, `get_reddit_opportunities`).\n\nNothing runs locally besides the bridge: the tools execute on Reaudit's server against your account.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-reaudit/package.json:1-12](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/package.json#L1-L12)\n\n组件身份、描述与仓库子路径。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n{\n  \"name\": \"dsh-reaudit\",\n  \"description\": \"Reaudit MCP for DeepSeek Harness: mounts the hosted Reaudit MCP server (https://mcp.reaudit.io/mcp) through the in-box @deepseek-ai/dsh-mcp-client bridge.\",\n  \"version\": \"0.1.0\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"homepage\": \"https://reaudit.io\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/RoseSamaras/reaudit-ai-plugin.git\",\n    \"directory\": \"packages/dsh-reaudit\"\n  },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-reaudit/cordis.patch.yml:24-35](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/cordis.patch.yml#L24-L35)\n\n通过宿主 MCP 客户端注册远端连接。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- insert:\n    - id: mcp-reaudit\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: reaudit\n        transport: streamable-http\n        url: https://mcp.reaudit.io/mcp\n        headers:\n          Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n        # Audits, strategy steps and content generation run for minutes.\n        toolCallTimeoutMs: 300000\n        failOnStartupError: false\n```\n\n</details>\n\n#### 缺口\n\n- 未使用服务账户或对照网站操作\n  **影响**：不能量化接线节时、真实需求或服务效果\n  **进一步探讨**：在授权测试账户对照手配和包配置，并检查实际工具清单。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 宿主怎样连接、认证和处理启动失败？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n子包没有本地工具实现；bundle 插入一行 @deepseek-ai/dsh-mcp-client，配置名为 reaudit、使用 streamable HTTP 指向固定的 Reaudit MCP 地址，Authorization 值从 REAUDIT_API_KEY 环境变量构造，单次工具调用超时设置为 300000 毫秒并配置 failOnStartupError 为 false。README 建议通过同一行 ID 的后续层覆盖端点或超时；具体 MCP 客户端对空密钥、鉴权失败和注册失败的运行行为依赖宿主桥接和远端，本次没有读取宿主版本或连接，因此不能把启动成功、工具数量或在线可用性当作已验证事实。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-reaudit/cordis.patch.yml:24-35](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/cordis.patch.yml#L24-L35)\n\n实际 bundle 行、认证头、超时与失败设置。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- insert:\n    - id: mcp-reaudit\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: reaudit\n        transport: streamable-http\n        url: https://mcp.reaudit.io/mcp\n        headers:\n          Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n        # Audits, strategy steps and content generation run for minutes.\n        toolCallTimeoutMs: 300000\n        failOnStartupError: false\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-reaudit/README.md:23-33](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L23-L33)\n\n作者说明密钥配置及预期的缺密钥行为。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n## Authenticate\n\n1. Create an API key at [reaudit.io](https://reaudit.io/dashboard/tools) under **Tools → MCP Server** (it starts with `rau_`).\n2. Make it available to dsh as `REAUDIT_API_KEY`:\n\n   ```sh\n   export REAUDIT_API_KEY=rau_your_key_here\n   dsh --profile <profile>\n   ```\n\nThe key is sent as an `Authorization: Bearer` header, not in the URL, so it stays out of access logs. Without it the server answers 401 and dsh starts without the Reaudit tools (`failOnStartupError: false`).\n````\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-reaudit/README.md:35-49](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L35-L49)\n\n作者说明后续层覆盖方式。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## Configure\n\nLong-running tools (audits, strategy research, content generation) take minutes, so the bundle raises the per-call timeout to 5 minutes. To change it, or the endpoint, repeat the row's id **without** `insert` in a later layer (your profile's `cordis.patch.yml` or a `--patch` file):\n\n```yaml\n- id: mcp-reaudit\n  name: '@deepseek-ai/dsh-mcp-client'\n  config:\n    serverName: reaudit\n    transport: streamable-http\n    url: https://mcp.reaudit.io/mcp\n    headers:\n      Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n    toolCallTimeoutMs: 600000\n```\n````\n\n</details>\n\n#### 缺口\n\n- 未运行 DSH 桥接或访问远端\n  **影响**：不能确认鉴权、连接及工具注册结果\n  **进一步探讨**：使用隔离凭据在固定宿主版本检查连接、失败状态和实际工具列表。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 这个子包能证明远端能力、权限和数据处理吗？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n固定子目录仅包含包元数据、README、许可和 patch，实际业务调用被配置指向远端；审查、生成、发布和账号内操作的实现、数据保存以及权限策略不在本组件可查范围。README 列出查看可见性、审查站点、内容生成和发布等工具，但这只是作者声明，数量与名称可能随远端变化。请求可包含账号密钥和用户提供的数据；头部避免把密钥放进 URL 不代表任何日志、服务方或网络中均不可见。不能将配置中的 300 秒超时当作服务正常完成或结果正确的保证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-reaudit/package.json:13-18](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/package.json#L13-L18)\n\n列出的分发文件只有配置、文档及资产声明。\n\n```text\n  \"files\": [\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"LICENSE\",\n    \"assets/logo.png\"\n  ],\n```\n\n**依据 2 · 源码核查**：[packages/dsh-reaudit/cordis.patch.yml:24-35](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/cordis.patch.yml#L24-L35)\n\n配置调用外部服务并携带认证头。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- insert:\n    - id: mcp-reaudit\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: reaudit\n        transport: streamable-http\n        url: https://mcp.reaudit.io/mcp\n        headers:\n          Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n        # Audits, strategy steps and content generation run for minutes.\n        toolCallTimeoutMs: 300000\n        failOnStartupError: false\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-reaudit/README.md:7-15](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L7-L15)\n\n作者列出远端能力与执行边界。\n\n```text\nThe agent gets Reaudit's tools as `mcp__reaudit__*` (238 at the time of writing; the server's `/health` endpoint reports the live count), covering:\n\n- **AI visibility**: how ChatGPT, Perplexity, Gemini, Google AI Overviews and other engines answer your tracked prompts, visibility scores, competitor comparisons, citation sources and sentiment (`get_visibility_score`, `get_competitor_comparison`, `get_citation_sources`, `get_sentiment_report`).\n- **Site health**: audits and recommendations, crawlability and agent-readiness checks (`run_audit`, `get_audit_recommendations`, `check_crawlability`, `scan_agent_readiness`).\n- **Content**: generation, editing, translation and publishing to WordPress (`generate_content`, `edit_content`, `translate_content`, `publish_to_wordpress`).\n- **Search and analytics**: Google Search Console, GA4 and Bing Webmaster data in one place, plus each source on its own (`get_analytics_hub`, `get_ga4_analytics`, `get_bing_search_performance`).\n- **Social and community**: post generation and scheduling, Reddit opportunities (`generate_social_posts`, `schedule_social_post`, `get_reddit_opportunities`).\n\nNothing runs locally besides the bridge: the tools execute on Reaudit's server against your account.\n```\n\n#### 缺口\n\n- 远端实现、账号权限、价格和数据政策未核实\n  **影响**：不能判断结果正确性、可用性及对外操作影响\n  **进一步探讨**：查服务契约并在隔离账户核对可用权限、读写动作和数据处理。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 需要什么条件、成本及停止标准？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n需要兼容的 DSH MCP 桥、网络、Reaudit 账户与 API key，部分作者列举的分析或发布还可能需要额外账户权限，具体条件和收费在本次材料中未知。首次需要配置密钥并核查服务与数据政策，持续可能产生服务和模型调用费用，也需人工复核结果，具体金额、耗时和频率未知；失败时需要核查服务是否已经执行，不应盲目重放可能写入或发布的操作。鉴于远端能力与权限没有实测，建议先观察并核实权限，仅在隔离测试账户读取非敏感数据；工具清单、目的地或数据处理不清时停止并回到服务界面人工核对。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-reaudit/README.md:15-33](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L15-L33)\n\n作者说明远端执行及账号密钥要求。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\nNothing runs locally besides the bridge: the tools execute on Reaudit's server against your account.\n\n## Install\n\n```sh\ndsh plugin --profile <profile> add github:RoseSamaras/reaudit-ai-plugin#path:/packages/dsh-reaudit\n```\n\n## Authenticate\n\n1. Create an API key at [reaudit.io](https://reaudit.io/dashboard/tools) under **Tools → MCP Server** (it starts with `rau_`).\n2. Make it available to dsh as `REAUDIT_API_KEY`:\n\n   ```sh\n   export REAUDIT_API_KEY=rau_your_key_here\n   dsh --profile <profile>\n   ```\n\nThe key is sent as an `Authorization: Bearer` header, not in the URL, so it stays out of access logs. Without it the server answers 401 and dsh starts without the Reaudit tools (`failOnStartupError: false`).\n````\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-reaudit/cordis.patch.yml:24-35](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/cordis.patch.yml#L24-L35)\n\n桥接、环境变量与超时配置。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- insert:\n    - id: mcp-reaudit\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: reaudit\n        transport: streamable-http\n        url: https://mcp.reaudit.io/mcp\n        headers:\n          Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n        # Audits, strategy steps and content generation run for minutes.\n        toolCallTimeoutMs: 300000\n        failOnStartupError: false\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-reaudit/README.md:9-13](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L9-L13)\n\n作者列出可能产生内容或发布的远端操作。\n\n```text\n- **AI visibility**: how ChatGPT, Perplexity, Gemini, Google AI Overviews and other engines answer your tracked prompts, visibility scores, competitor comparisons, citation sources and sentiment (`get_visibility_score`, `get_competitor_comparison`, `get_citation_sources`, `get_sentiment_report`).\n- **Site health**: audits and recommendations, crawlability and agent-readiness checks (`run_audit`, `get_audit_recommendations`, `check_crawlability`, `scan_agent_readiness`).\n- **Content**: generation, editing, translation and publishing to WordPress (`generate_content`, `edit_content`, `translate_content`, `publish_to_wordpress`).\n- **Search and analytics**: Google Search Console, GA4 and Bing Webmaster data in one place, plus each source on its own (`get_analytics_hub`, `get_ga4_analytics`, `get_bing_search_performance`).\n- **Social and community**: post generation and scheduling, Reddit opportunities (`generate_social_posts`, `schedule_social_post`, `get_reddit_opportunities`).\n```\n\n#### 缺口\n\n- 计费、服务权限及操作幂等性未验证\n  **影响**：无法估计成本或安全重试写操作\n  **进一步探讨**：在正式使用前核对服务说明，并用测试账户记录请求和状态。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么后续设计值得验证？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可探索让桥接层在调用前展示远端工具的读写类别、目标账户和数据发送范围，并对结果未知的写操作保留可回查的请求标识。当前子包已有端点、命名空间和超时，但未提供此类逐调用预览；该方向需要远端接口提供真实权限和状态信息，不能靠工具名称猜测。以测试账户比较错误目标、重复提交和用户确认时间；如果元数据不可靠、不能减少错误或审批负担超过收益，就否定。此方向未实现也未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-reaudit/cordis.patch.yml:24-35](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/cordis.patch.yml#L24-L35)\n\n现有配置只有连接、认证、超时和失败设置。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n- insert:\n    - id: mcp-reaudit\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: reaudit\n        transport: streamable-http\n        url: https://mcp.reaudit.io/mcp\n        headers:\n          Authorization: !!js \"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\"\n        # Audits, strategy steps and content generation run for minutes.\n        toolCallTimeoutMs: 300000\n        failOnStartupError: false\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-reaudit/README.md:9-13](https://github.com/RoseSamaras/reaudit-ai-plugin/blob/93268dc3fa4b0768243c28917ab9b41318322c69/packages/dsh-reaudit/README.md#L9-L13)\n\n作者描述读取和发布等不同类别工具。\n\n```text\n- **AI visibility**: how ChatGPT, Perplexity, Gemini, Google AI Overviews and other engines answer your tracked prompts, visibility scores, competitor comparisons, citation sources and sentiment (`get_visibility_score`, `get_competitor_comparison`, `get_citation_sources`, `get_sentiment_report`).\n- **Site health**: audits and recommendations, crawlability and agent-readiness checks (`run_audit`, `get_audit_recommendations`, `check_crawlability`, `scan_agent_readiness`).\n- **Content**: generation, editing, translation and publishing to WordPress (`generate_content`, `edit_content`, `translate_content`, `publish_to_wordpress`).\n- **Search and analytics**: Google Search Console, GA4 and Bing Webmaster data in one place, plus each source on its own (`get_analytics_hub`, `get_ga4_analytics`, `get_bing_search_performance`).\n- **Social and community**: post generation and scheduling, Reddit opportunities (`generate_social_posts`, `schedule_social_post`, `get_reddit_opportunities`).\n```\n\n#### 缺口\n\n- 没有可验证的权限元数据及结果回查机制\n  **影响**：不能证明方案可执行或减少错误\n  **进一步探讨**：先验证服务能否提供稳定工具权限和请求状态，再设计隔离对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-reaudit；内容摘要：e31c0c678cbc7b68d27a9ddf4038de8ce46e65f9f2faef7423faec866be1046c。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 53 | — | — | 373 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| MCP 连接配置 | 在宿主挂载 Reaudit 远端服务 | 需要兼容桥、网络和账户密钥 |\n| 远端工具调用 | 作者声明提供站点、内容和分析工具 | 实际清单、权限及效果未实测 |\n\n## 工程亮点\n\n[Q02](#research-q02) 的最小 bundle 复用宿主桥并允许后续覆盖配置；服务故障与能力变化仍须在实际宿主中验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-reaudit/package.json、packages/dsh-reaudit/README.md、packages/dsh-reaudit/cordis.patch.yml 及固定范围 inventory；组件：packages/dsh-reaudit。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：子组件固定树只含包、README、许可与 bundle patch；未读取宿主 MCP 桥实现或运行服务、测试和网络，也不审计仓库其他平台插件。\n- 下一步：固定 DSH 与服务版本，在隔离账户检查密钥失败、工具发现、只读响应、超时和潜在写操作的回查。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-02/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"RoseSamaras/reaudit-ai-plugin\",\n  \"revision\": \"93268dc3fa4b0768243c28917ab9b41318322c69\",\n  \"component\": \"packages/dsh-reaudit\",\n  \"inspected_paths\": [\n    \"packages/dsh-reaudit/README.md\",\n    \"packages/dsh-reaudit/package.json\",\n    \"README.md\",\n    \"packages/dsh-reaudit/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查 DSH 连接包的实际桥接配置、远端能力和采用边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁可以使用它，它相对直接使用远端服务增加了什么？\",\n        \"answer\": \"维护品牌搜索可见性或站点内容的团队，如果已有 Reaudit 账户和兼容宿主，可以尝试在 DSH 中调用远端服务提供的审查和内容工具。直接使用服务网站或手工配置同一 MCP 客户端也可能完成部分任务；此子包提供的具体增量是一份可安装的宿主连接配置，避免每次手写桥接行。它不包含远端审查引擎，目录中的工具清单是作者描述，不能当成本次实际发现或执行结果。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 3,\n            \"line_end\": 15,\n            \"observation\": \"作者描述目标、远端工具类别及执行位置。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/package.json\",\n            \"line_start\": 1,\n            \"line_end\": 12,\n            \"observation\": \"组件身份、描述与仓库子路径。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n            \"line_start\": 24,\n            \"line_end\": 35,\n            \"observation\": \"通过宿主 MCP 客户端注册远端连接。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未使用服务账户或对照网站操作\",\n            \"impact\": \"不能量化接线节时、真实需求或服务效果\",\n            \"next_step\": \"在授权测试账户对照手配和包配置，并检查实际工具清单。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"宿主怎样连接、认证和处理启动失败？\",\n        \"answer\": \"子包没有本地工具实现；bundle 插入一行 @deepseek-ai/dsh-mcp-client，配置名为 reaudit、使用 streamable HTTP 指向固定的 Reaudit MCP 地址，Authorization 值从 REAUDIT_API_KEY 环境变量构造，单次工具调用超时设置为 300000 毫秒并配置 failOnStartupError 为 false。README 建议通过同一行 ID 的后续层覆盖端点或超时；具体 MCP 客户端对空密钥、鉴权失败和注册失败的运行行为依赖宿主桥接和远端，本次没有读取宿主版本或连接，因此不能把启动成功、工具数量或在线可用性当作已验证事实。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n            \"line_start\": 24,\n            \"line_end\": 35,\n            \"observation\": \"实际 bundle 行、认证头、超时与失败设置。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 23,\n            \"line_end\": 33,\n            \"observation\": \"作者说明密钥配置及预期的缺密钥行为。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 35,\n            \"line_end\": 49,\n            \"observation\": \"作者说明后续层覆盖方式。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行 DSH 桥接或访问远端\",\n            \"impact\": \"不能确认鉴权、连接及工具注册结果\",\n            \"next_step\": \"使用隔离凭据在固定宿主版本检查连接、失败状态和实际工具列表。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"这个子包能证明远端能力、权限和数据处理吗？\",\n        \"answer\": \"固定子目录仅包含包元数据、README、许可和 patch，实际业务调用被配置指向远端；审查、生成、发布和账号内操作的实现、数据保存以及权限策略不在本组件可查范围。README 列出查看可见性、审查站点、内容生成和发布等工具，但这只是作者声明，数量与名称可能随远端变化。请求可包含账号密钥和用户提供的数据；头部避免把密钥放进 URL 不代表任何日志、服务方或网络中均不可见。不能将配置中的 300 秒超时当作服务正常完成或结果正确的保证。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/package.json\",\n            \"line_start\": 13,\n            \"line_end\": 18,\n            \"observation\": \"列出的分发文件只有配置、文档及资产声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n            \"line_start\": 24,\n            \"line_end\": 35,\n            \"observation\": \"配置调用外部服务并携带认证头。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 7,\n            \"line_end\": 15,\n            \"observation\": \"作者列出远端能力与执行边界。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"远端实现、账号权限、价格和数据政策未核实\",\n            \"impact\": \"不能判断结果正确性、可用性及对外操作影响\",\n            \"next_step\": \"查服务契约并在隔离账户核对可用权限、读写动作和数据处理。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"需要什么条件、成本及停止标准？\",\n        \"answer\": \"需要兼容的 DSH MCP 桥、网络、Reaudit 账户与 API key，部分作者列举的分析或发布还可能需要额外账户权限，具体条件和收费在本次材料中未知。首次需要配置密钥并核查服务与数据政策，持续可能产生服务和模型调用费用，也需人工复核结果，具体金额、耗时和频率未知；失败时需要核查服务是否已经执行，不应盲目重放可能写入或发布的操作。鉴于远端能力与权限没有实测，建议先观察并核实权限，仅在隔离测试账户读取非敏感数据；工具清单、目的地或数据处理不清时停止并回到服务界面人工核对。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 15,\n            \"line_end\": 33,\n            \"observation\": \"作者说明远端执行及账号密钥要求。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n            \"line_start\": 24,\n            \"line_end\": 35,\n            \"observation\": \"桥接、环境变量与超时配置。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 13,\n            \"observation\": \"作者列出可能产生内容或发布的远端操作。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"计费、服务权限及操作幂等性未验证\",\n            \"impact\": \"无法估计成本或安全重试写操作\",\n            \"next_step\": \"在正式使用前核对服务说明，并用测试账户记录请求和状态。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"什么后续设计值得验证？\",\n        \"answer\": \"可探索让桥接层在调用前展示远端工具的读写类别、目标账户和数据发送范围，并对结果未知的写操作保留可回查的请求标识。当前子包已有端点、命名空间和超时，但未提供此类逐调用预览；该方向需要远端接口提供真实权限和状态信息，不能靠工具名称猜测。以测试账户比较错误目标、重复提交和用户确认时间；如果元数据不可靠、不能减少错误或审批负担超过收益，就否定。此方向未实现也未验证。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n            \"line_start\": 24,\n            \"line_end\": 35,\n            \"observation\": \"现有配置只有连接、认证、超时和失败设置。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-reaudit/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 13,\n            \"observation\": \"作者描述读取和发布等不同类别工具。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有可验证的权限元数据及结果回查机制\",\n            \"impact\": \"不能证明方案可执行或减少错误\",\n            \"next_step\": \"先验证服务能否提供稳定工具权限和请求状态，再设计隔离对照。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-reaudit/README.md\",\n      \"content\": \"<p align=\\\"center\\\"><img src=\\\"assets/logo.png\\\" alt=\\\"Reaudit\\\" width=\\\"128\\\" height=\\\"128\\\"></p>\\n\\n# dsh-reaudit\\n\\n[Reaudit](https://reaudit.io) for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness): a bundle that mounts the hosted Reaudit MCP server (`https://mcp.reaudit.io/mcp`) through the in-box `@deepseek-ai/dsh-mcp-client` bridge.\\n\\nThe agent gets Reaudit's tools as `mcp__reaudit__*` (238 at the time of writing; the server's `/health` endpoint reports the live count), covering:\\n\\n- **AI visibility**: how ChatGPT, Perplexity, Gemini, Google AI Overviews and other engines answer your tracked prompts, visibility scores, competitor comparisons, citation sources and sentiment (`get_visibility_score`, `get_competitor_comparison`, `get_citation_sources`, `get_sentiment_report`).\\n- **Site health**: audits and recommendations, crawlability and agent-readiness checks (`run_audit`, `get_audit_recommendations`, `check_crawlability`, `scan_agent_readiness`).\\n- **Content**: generation, editing, translation and publishing to WordPress (`generate_content`, `edit_content`, `translate_content`, `publish_to_wordpress`).\\n- **Search and analytics**: Google Search Console, GA4 and Bing Webmaster data in one place, plus each source on its own (`get_analytics_hub`, `get_ga4_analytics`, `get_bing_search_performance`).\\n- **Social and community**: post generation and scheduling, Reddit opportunities (`generate_social_posts`, `schedule_social_post`, `get_reddit_opportunities`).\\n\\nNothing runs locally besides the bridge: the tools execute on Reaudit's server against your account.\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile <profile> add github:RoseSamaras/reaudit-ai-plugin#path:/packages/dsh-reaudit\\n```\\n\\n## Authenticate\\n\\n1. Create an API key at [reaudit.io](https://reaudit.io/dashboard/tools) under **Tools → MCP Server** (it starts with `rau_`).\\n2. Make it available to dsh as `REAUDIT_API_KEY`:\\n\\n   ```sh\\n   export REAUDIT_API_KEY=rau_your_key_here\\n   dsh --profile <profile>\\n   ```\\n\\nThe key is sent as an `Authorization: Bearer` header, not in the URL, so it stays out of access logs. Without it the server answers 401 and dsh starts without the Reaudit tools (`failOnStartupError: false`).\\n\\n## Configure\\n\\nLong-running tools (audits, strategy research, content generation) take minutes, so the bundle raises the per-call timeout to 5 minutes. To change it, or the endpoint, repeat the row's id **without** `insert` in a later layer (your profile's `cordis.patch.yml` or a `--patch` file):\\n\\n```yaml\\n- id: mcp-reaudit\\n  name: '@deepseek-ai/dsh-mcp-client'\\n  config:\\n    serverName: reaudit\\n    transport: streamable-http\\n    url: https://mcp.reaudit.io/mcp\\n    headers:\\n      Authorization: !!js \\\"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\\\"\\n    toolCallTimeoutMs: 600000\\n```\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-reaudit/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-reaudit\\\",\\n  \\\"description\\\": \\\"Reaudit MCP for DeepSeek Harness: mounts the hosted Reaudit MCP server (https://mcp.reaudit.io/mcp) through the in-box @deepseek-ai/dsh-mcp-client bridge.\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"homepage\\\": \\\"https://reaudit.io\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/RoseSamaras/reaudit-ai-plugin.git\\\",\\n    \\\"directory\\\": \\\"packages/dsh-reaudit\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\",\\n    \\\"assets/logo.png\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"cordis\\\",\\n    \\\"mcp\\\",\\n    \\\"reaudit\\\",\\n    \\\"ai-visibility\\\",\\n    \\\"seo\\\",\\n    \\\"geo\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# Reaudit AI Plugin\\n\\nOfficial Reaudit plugin for Cursor, Claude Code, and other AI coding tools. Access your AI search visibility data, generate optimized content, manage paid amplification campaigns, and monitor brand presence directly from your editor.\\n\\n## What is Reaudit?\\n\\n[Reaudit](https://reaudit.io) is the AI Search Visibility Platform. It answers the question every modern business needs to ask: **\\\"How does AI see my brand?\\\"**\\n\\nTrack, optimize, and grow your brand presence across 11 AI search engines:\\n\\n| Platform | Status |\\n|----------|--------|\\n| ChatGPT | Full tracking |\\n| Claude | Full tracking |\\n| Perplexity | Full tracking |\\n| Google Gemini | Full tracking |\\n| Google AI Overview | Full tracking |\\n| Google AI Mode | Full tracking |\\n| Microsoft Copilot | Full tracking |\\n| Meta AI | Full tracking |\\n| DeepSeek | Full tracking |\\n| Grok | Full tracking |\\n| Mistral | Full tracking |\\n\\n## Installation\\n\\n### Cursor\\n\\n**Recommended:** list on [Cursor Directory](https://cursor.directory/plugins/new) (community catalog — submit [this repo](https://github.com/RoseSamaras/reaudit-ai-plugin)).\\n\\nAfter install, connect via OAuth on first use, or add the hosted MCP manually:\\n\\n```json\\n{\\n  \\\"mcpServers\\\": {\\n    \\\"reaudit\\\": {\\n      \\\"type\\\": \\\"http\\\",\\n      \\\"url\\\": \\\"https://mcp.reaudit.io/mcp\\\"\\n    }\\n  }\\n}\\n```\\n\\nSlash commands and skills ship from this repo when installed as a plugin. The official [Cursor Marketplace](https://cursor.com/marketplace) `cursor/plugins` catalog is not listing new third-party MCPs at this time (Oct 2026).\\n\\n### Claude Code\\n\\n```bash\\nclaude plugin install reaudit\\n```\\n\\n### Manual Installation\\n\\n```bash\\ngit clone https://github.com/RoseSamaras/reaudit-ai-plugin.git\\n```\\n\\n## Authentication\\n\\nThe plugin connects to Reaudit's hosted MCP server at `mcp.reaudit.io`. Authentication happens automatically via **OAuth 2.0 with PKCE** — when you first use a Reaudit tool, your browser opens for a quick login. No API key configuration needed.\\n\\n### Alternative: API Key\\n\\nIf you prefer API key authentication, generate a key in your [Reaudit Dashboard](https://reaudit.io/dashboard/tools) under **Tools > MCP Server**, then configure manually:\\n\\n```json\\n{\\n  \\\"mcpServers\\\": {\\n    \\\"reaudit\\\": {\\n      \\\"url\\\": \\\"https://mcp.reaudit.io/sse?apiKey=rau_your_key_here\\\"\\n    }\\n  }\\n}\\n```\\n\\n## Features\\n\\nThis plugin provides access to **197 tools** across these categories:\\n\\n### Projects & Onboarding\\n- **Create a project end-to-end** — `create_project` runs the full onboarding pipeline from a single call: website crawl, AI brand analysis, SEO audit, competitor detection, and AI-prompt suggestions (requires name, website, country, and language)\\n- Returns the new project ID, audit scores (current + potential), detected industry, competitors, and suggested prompts ready to track\\n- Manage project settings: brand aliases, products, trademarks, competitors\\n\\n### AI Visibility\\n- Check your AI visibility score across 11 platforms\\n- View brand mentions and sentiment analysis\\n- Read the full verbatim AI engine responses per prompt — exactly what ChatGPT, Perplexity, and others said about your brand\\n- Track citation sources and growth trends, now with a per-engine source-type breakdown (brand, video, forum, encyclopedia, social, news, docs) and a \\\"video opportunity\\\" flag for engines that lean on YouTube\\n- Reverse citation lookup — see which prompts cause any URL to be cited\\n- Monitor AI bot crawl activity on your site\\n\\n### Prompt Tracking\\n- Create prompt topics for organized monitoring\\n- Track prompts across ChatGPT, Perplexity, Google, and more\\n- Add prompts to existing topics, or delete a single wrong/outdated/duplicate prompt without recreating the topic\\n- Get AI-generated prompt suggestions for your industry\\n- Analyze mention rates, sentiment, and visibility by prompt\\n- Generate deep prompt research reports\\n\\n### Content Generation\\n- Generate GEO-optimized blog posts, FAQs, comparisons, how-tos, and more — every generation returns a 0-100 GEO answer-shape score (answer-first lead, question-form headings, table, stat density, visible freshness date) plus quality warnings\\n- Translate content into multiple languages\\n- Publish directly to WordPress or React/Next.js sites\\n- Create and schedule social media posts\\n- Generate social images and cross-post across platforms\\n\\n### Content Audit\\n- **Content inventory** — build an auditable inventory of your existing pages from Reaudit-generated content, WordPress, Shopify, and/or your sitemap\\n- **AI search visibility scoring** — score each page on five checks: GEO answer-shape (extractability for AI engines), freshness, readability, entity gap (does the page actually name your brand, products, and core topics?), and brand-voice drift\\n- **Severity-ranked findings** — every issue comes with the page URL, a specific message, and a recommendation\\n- **Grounded fixes** — generate an AI-optimized rewrite for Reaudit-managed pages, or a copyable fix suggestion for external pages\\n\\n### Competitive Intelligence\\n- Compare visibility against tracked competitors\\n- Add and manage competitor tracking\\n- Monitor competitor mentions and citation patterns\\n- **Content Radar** — detect, inspect, and AI-analyze competitor content as it is published (angle, topics, gaps, opportunities), and trigger fresh scans of tracked sources\\n\\n### Paid Intelligence\\n- **Ad Creative Generation** — Generate AI-powered ad creatives with GEO scoring for Google, Meta, LinkedIn, X/Twitter, and ChatGPT Ads (OpenAI `chat_card` format)\\n- **Visibility Gap Detection** — Identify queries where your brand is absent, underperforming, or dominated by competitors\\n- **Campaign Management** — Create and manage ad campaigns across platforms with budget tracking\\n- **Platform Connections** — Connect Google Ads, Meta Ads, LinkedIn Ads, X/Twitter Ads, and ChatGPT Ads (OpenAI) accounts\\n- **Visibility Lift Analytics** — Measure how ad campaigns correlate with AI visibility score improvements\\n- **ROI Dashboard** — Closed-loop reporting: ad spend vs. visibility delta, cost per visibility point, gap coverage\\n- **Advanced Analytics** — Search term reports, keyword/ad performance, negative keywords, bid management, cross-platform comparison\\n- **Meta Deep Insights** — Audience insights, creative performance, campaign status management\\n- **Multi-Platform Campaigns** — Create and analyze campaigns on Meta, LinkedIn, X/Twitter, and ChatGPT Ads (OpenAI) directly\\n- **ChatGPT Ads (OpenAI)** — Full integration with the OpenAI Advertiser API: 7-day rollups, configurable 1–90 day daily performance series, and live campaign / ad-group / ad insights with `since`, `until`, and `granularity` controls\\n- **Paid Analytics Alerts** — Configure anomaly alerts on six new paid metrics sourced from ChatGPT Ads: `paidSpend`, `paidClicks`, `paidImpressions`, `paidCtr`, `paidCpc`, `paidConversions`\\n\\n### ChatGPT Competitor Ad Intelligence (Adthena-style)\\n- **Sponsored Carousel Capture** — Every tracked-prompt run on ChatGPT Search captures the sponsored carousel cards alongside the organic answer\\n- **Ad-Presence Summary** — See how often sponsored cards appear across your tracked prompts, total card volume, unique advertisers, and the own / tracked-competitor / other split\\n- **Top Advertisers** — Ranked list of advertisers dominating your queries, tagged as own brand, tracked competitor, or other\\n- **Weekly Diff** — \\\"What changed this week\\\" view: new advertisers, lost advertisers, and presence-rate shifts over the last 7 days vs. the prior 7\\n\\n### Conversion Rate Optimization (CRO)\\n- **CRO Dashboard** — Unified view of conversion metrics, funnels, and optimization opportunities\\n- **Conversion Goals** — Create and track conversion goals with flexible event matching\\n- **Funnel Analysis** — Build multi-step funnels and identify drop-off points\\n- **A/B Testing** — View and analyze A/B test results with statistical significance\\n- **Landing Page Analysis** — Score and optimize landing pages for conversion\\n- **CRO Insights** — AI-generated optimization recommendations with priority scoring\\n- **CRO Strategy** — Create, manage, and track conversion optimization strategies\\n\\n### Revenue Attribution\\n- Unified revenue attribution across AI referral sources\\n- Track which AI platforms drive conversions and revenue\\n- Referrer breakdown with AI source identification\\n\\n### AI Commerce (Shopping Visibility)\\n- **Shopping AI Visibility** — How your products surface in AI-driven Shopping experiences via your connected Google Merchant Center account\\n- **Competitive Share of Voice** — Relative Shopping visibility against tracked competitor domains\\n- **Organic Shopping Funnel** — Impressions, clicks, and CTR for your Shopping surfaces\\n- **Attribute Completeness** — How well your feed describes products (color, material, gtin, size) so AI systems can understand and recommend them\\n- **Feed Issue Detection** — Critical, error, and suggestion-level problems that make products hard for AI to recommend, with affected product counts\\n\\n### Analytics & Reporting\\n- Unified analytics hub across all connected sources\\n- Custom analytics queries with flexible metrics and dimensions\\n- Google Analytics 4 integration with detailed reporting\\n- Bing Webmaster Tools — search performance, crawl health, backlinks, URL submission\\n- Saved reports and automated alerts\\n- Configurable alert thresholds for key metrics\\n\\n### Site Tracking & Integrations\\n- **Cloudflare Analytics** — Traffic and performance data from Cloudflare\\n- **AI Referral Performance** — Track visits and conversions from AI search engines\\n- **Page Citations** — See which pages are cited by AI platforms\\n- **Webflow Tracking** — AI visibility data for Webflow sites\\n- **Wix Tracking** — AI visibility data for Wix sites\\n\\n### SEO & Optimization\\n- Technical SEO audits with prioritized recommendations\\n- **Entity Authority** — score your brand's recognition in public knowledge graphs (Wikidata QID, Wikipedia presence, detected `sameAs` profiles) into a 0-100 entity score with established/emerging/unrecognized status and prioritized fixes — entity recognition is now the prerequisite for AI citation\\n- **ChatGPT eligibility (Bing-grounded)** — optimization reports flag whether your pages are indexed in Bing, since a page Bing hasn't indexed cannot be cited in ChatGPT Search\\n- **AI agent readiness scan** — 20 checks across discoverability, content accessibility, bot access control, API/Auth/MCP discovery, and agentic commerce, rolled into a 0-5 readiness level with per-check fix guidance\\n- Free AI-bot crawlability check — confirm GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot, Google-Extended, and CCBot can actually reach a page (catches silent WAF/CDN blocks, consumes no credits)\\n- SEO alerts for critical issues and ranking changes\\n- Generate llms.txt files for AI discoverability\\n- Instant indexing for search engines (Google, Bing)\\n- Action grids for tracking optimization tasks\\n\\n### GitHub Auto-Fixes\\n- **Repo connections** — check whether a project has a GitHub repo connected\\n- **Propose fixes** — turn audit findings into a patch preview before opening a PR\\n- **Open SEO and GEO fix PRs** — write the fix and open a pull request directly in your repo on a fresh branch\\n- Reaudit never pushes to your default branch. Every change is a pull request you review and merge.\\n\\n### Reddit Lead Monitoring\\n- Monitor Reddit for brand mentions and lead opportunities\\n- Track and qualify Reddit leads by relevance\\n- Update lead status and notes for follow-up\\n- **Draft Reddit replies** — `draft_reddit_reply` crawls AI-cited Reddit threads and drafts on-brand comment replies (1 credit per generation; returns cached drafts when available)\\n\\n### GTM Strategy\\n- 6-module, 21-step Go-To-Market strategy builder\\n- Deep search for each strategy step with regeneration support\\n- 90-day content calendar with status tracking\\n- Offer conversion system with pricing, value stack, and copy blocks\\n\\n### Interactive MCP Apps\\n\\nFive tools return rich interactive visualizations directly in the chat:\\n\\n- **Visibility Score** — Gauge chart with platform-by-platform breakdown bars\\n- **Citation Tracker** — Donut chart with citation distribution and sparkline trends\\n- **AI Crawl Monitor** — Terminal-style log of AI bot activity with bot badges\\n- **AI Readiness Score** — Score card with category progress bars\\n- **Revenue Attribution** — Referrer bars and AI source breakdown with revenue metrics\\n\\nThese MCP Apps use the Reaudit dark theme with glass card effects and platform-specific colors.\\n\\n## Slash Commands\\n\\n- `/reaudit:projects` — Create a project with full onboarding (crawl, AI analysis, SEO audit, competitors, prompt suggestions) and manage settings\\n- `/reaudit:visibility` — Check brand visibility scores\\n- `/reaudit:tracking` — Manage prompt tracking\\n- `/reaudit:content` — Generate AI-optimized content\\n- `/reaudit:content-audit` — Audit existing content for AI search visibility and fix the gaps\\n- `/reaudit:competitors` — Competitor comparison\\n- `/reaudit:analytics` — Analytics dashboards and reports\\n- `/reaudit:shopping` — Google Merchant Center Shopping AI visibility and product feed health\\n- `/reaudit:sources` — Citation source analysis\\n- `/reaudit:paid-intelligence` — Manage paid amplification campaigns and visibility gaps\\n- `/reaudit:chatgpt-ads` — ChatGPT Ads (OpenAI) performance and Adthena-style competitor ad intelligence\\n- `/reaudit:cro` — Conversion rate optimization dashboard and tools\\n- `/reaudit:reddit` — Reddit lead monitoring and qualification\\n- `/reaudit:attribution` — Revenue attribution across AI sources\\n- `/reaudit:github` — Open pull requests that fix SEO and GEO issues found in your audits\\n\\n## Skills\\n\\n- **Project Onboarding** — Create a project and run the full onboarding pipeline, then turn the results into a working tracking setup\\n- **AI Visibility Audit** — Full audit of brand presence across AI search engines\\n- **Content Optimization** — Generate and publish GEO-optimized content\\n- **Content Audit** — Inventory existing pages, score them for AI search visibility, and draft grounded fixes\\n- **Competitor Analysis** — Benchmark against competitors in AI search\\n- **Prompt Tracking Setup** — Set up systematic prompt monitoring at scale\\n- **Shopping Visibility** — Analyze Google Merchant Center Shopping AI visibility, competitive share, and product feed health\\n- **Paid Intelligence Campaigns** — End-to-end workflow for visibility-driven paid amplification\\n- **ChatGPT Competitor Ads** — Adthena-style workflow for tracking which advertisers dominate sponsored carousels on ChatGPT Search and what changed this week\\n- **CRO Optimization** — Analyze and improve conversion rates with AI-powered insights\\n- **Reddit Lead Generation** — Monitor Reddit for brand mentions and qualify leads\\n- **GitHub PR Fixing** — Connect a repo, scan an audit, open pull requests that fix SEO and GEO issues\\n\\n## Example Usage\\n\\n```\\n> Create a new project for my client's site https://example.com, UK market, English\\n> Set up this brand on Reaudit and start tracking the suggested prompts\\n\\n> What's my AI visibility score?\\n> How does ChatGPT see my brand?\\n> What did ChatGPT and Perplexity actually say about my brand last week?\\n> Can GPTBot and ClaudeBot actually reach my homepage?\\n> Which prompts cause competitor.com to get cited?\\n> Draft a helpful Reddit reply for this AI-cited thread: https://reddit.com/r/SEO/comments/...\\n\\n> Track the prompt \\\"best project management tools\\\"\\n> Which prompts mention my brand?\\n> Fix the wording of that prompt instead of adding a new one\\n> Rename this topic and switch it to weekly tracking\\n> Delete the outdated 2025 prompt from my Greek beauty topic\\n> Delete the whole duplicate prompt topic\\n> Scan my site for AI agent readiness and tell me what's failing\\n> What new content have my competitors published this week?\\n\\n> Is my brand a recognized entity? Check my Wikidata and Wikipedia presence\\n> What's my entity authority score and how do I improve it?\\n> Can my pages be cited in ChatGPT? Are they indexed in Bing?\\n> Which engines cite YouTube for my prompts — where's my video opportunity?\\n\\n> Write a blog post about AI search optimization\\n> Publish my article to WordPress\\n\\n> Audit my existing content for AI search visibility\\n> Which of my pages are stale or hard for AI to cite?\\n> Import my sitemap and run a content audit\\n> Generate a fix for the lowest-scoring page\\n\\n> How do I compare against competitors in AI search?\\n> Add Acme Corp as a competitor\\n\\n> Show me my analytics dashboard\\n> Which AI bots are crawling my site?\\n\\n> Create a GTM strategy for my product launch\\n> Generate prompt suggestions for my industry\\n\\n> Generate a Google search ad for \\\"best CRM software\\\"\\n> Generate a ChatGPT chat_card ad for \\\"AI search visibility platform\\\"\\n> What are my visibility gaps?\\n> Create a campaign brief for my top visibility gap\\n> What's my paid intelligence ROI?\\n> Show me the visibility lift from my ad campaigns\\n\\n> What's my ChatGPT Ads performance this week?\\n> Show my ChatGPT Ads daily performance over the last 30 days\\n> Get insights for my ChatGPT Ads campaign abc-123 between 2026-04-01 and 2026-04-30\\n> Alert me when my ChatGPT Ads paidSpend doubles week over week\\n\\n> Which advertisers are dominating ChatGPT for my queries?\\n> How often do sponsored cards appear on ChatGPT for my tracked prompts?\\n> What changed in ChatGPT competitor ads this week?\\n\\n> Show my CRO dashboard\\n> Analyze my landing page conversion rate\\n> What are my funnel drop-off points?\\n\\n> Show me revenue attribution by AI source\\n> Which AI platforms drive the most conversions?\\n\\n> How visible are my products in Shopping?\\n> What's my Shopping share of voice vs competitors?\\n> Which product attributes are incomplete in my feed?\\n> What feed issues are hurting how AI recommends my products?\\n\\n> Show my Reddit leads\\n> Are there any SEO alerts?\\n> How's my Bing search performance?\\n\\n> Which of my projects has a GitHub repo connected?\\n> Open a pull request that fixes the SEO issues in my latest audit\\n> Preview the fixes you would propose for the missing-llms.txt recommendation\\n```\\n\\n## Privacy Policy\\n\\nReaudit collects and processes data as described in our [Privacy Policy](https://reaudit.io/privacy):\\n\\n- **Data collected**: AI search visibility data, brand mentions, citation sources, and analytics from connected platforms (Google Analytics, Bing Webmaster, WordPress, Cloudflare, etc.)\\n- **Usage**: Data is used to generate visibility scores, content recommendations, competitive intelligence, and optimization reports for your projects\\n- **Storage**: All data is stored securely on Reaudit's servers with encryption at rest and in transit\\n- **Third-party sharing**: Data is not shared with third parties except as required to provide connected platform integrations (e.g., Google Ads, Meta Ads) that you explicitly authorize\\n- **Retention**: Project data is retained while your account is active and deleted upon account closure\\n- **Contact**: support@reaudit.io\\n\\n## Requirements\\n\\n- A [Reaudit](https://reaudit.io) account\\n- Cursor, Claude Code, or any MCP-compatible AI client\\n\\n## Documentation\\n\\n- [Reaudit Platform](https://reaudit.io)\\n- [MCP Server Documentation](https://reaudit.io/docs/mcp)\\n- [Help Center](https://reaudit.io/help)\\n\\n## Support\\n\\n- [Privacy Policy](https://reaudit.io/privacy)\\n- [Terms of Service](https://reaudit.io/terms)\\n- Email: support@reaudit.io\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-reaudit/cordis.patch.yml\",\n      \"content\": \"# dsh-reaudit: the Reaudit MCP server as a deepseek-harness bundle.\\n#\\n# One row that connects to the hosted Reaudit MCP server\\n# (https://mcp.reaudit.io/mcp, Streamable HTTP) through the mcp-client bridge\\n# the dsh CLI ships with (@deepseek-ai/dsh-mcp-client). The server's tools are\\n# registered under the `reaudit` namespace, e.g.\\n#   mcp__reaudit__list_projects\\n#   mcp__reaudit__get_visibility_score\\n#   mcp__reaudit__get_competitor_comparison\\n#   mcp__reaudit__run_audit\\n#   mcp__reaudit__generate_content\\n#   ...\\n#\\n# Authentication: a Reaudit API key (rau_…) from reaudit.io → Tools → MCP\\n# Server, read from REAUDIT_API_KEY and sent as a bearer token. A header\\n# rather than the `?apiKey=` query form keeps the key out of access logs.\\n# Without the variable the server answers 401; failOnStartupError: false\\n# lets dsh boot anyway, without the Reaudit tools.\\n#\\n# Override from a later layer (profile cordis.patch.yml or --patch) by\\n# repeating this row's id WITHOUT `insert` — an `insert` with the same id\\n# fails with \\\"duplicate loader entry id\\\".\\n#\\n- insert:\\n    - id: mcp-reaudit\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: reaudit\\n        transport: streamable-http\\n        url: https://mcp.reaudit.io/mcp\\n        headers:\\n          Authorization: !!js \\\"`Bearer ${process.env.REAUDIT_API_KEY || ''}`\\\"\\n        # Audits, strategy steps and content generation run for minutes.\\n        toolCallTimeoutMs: 300000\\n        failOnStartupError: false\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"93268dc3fa4b0768243c28917ab9b41318322c69\",\n    \"component\": \"packages/dsh-reaudit\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"e31c0c678cbc7b68d27a9ddf4038de8ce46e65f9f2faef7423faec866be1046c\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 53,\n        \"words\": 373\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "68e4115a1f5f12d04d7ecf75c2549043e536580b32c6217f59ac620961d61059"
+        }
+    },
+    "unavailable_artifacts": []
+}

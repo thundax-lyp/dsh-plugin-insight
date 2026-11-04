@@ -1,0 +1,56 @@
+{
+    "repository": "1129742588/dsh-memory-tiers",
+    "repository_id": 1189267013,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 2,
+    "pushed_at": "2026-11-03T15:01:47Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A1129742588%2Fdsh-memory-tiers%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A52E:209060:71A91B:7A45DF:6AEAEC0B and timestamp 2026-11-04 08:25:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A1129742588%2Fdsh-memory-tiers%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A56E:2DF2C8:75EED9:7E8C9E:6AEAEC0C and timestamp 2026-11-04 08:25:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1129742588%2Fdsh-memory-tiers%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A59E:40065:7A8CFB:8327C6:6AEAEC0D and timestamp 2026-11-04 08:25:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1129742588%2Fdsh-memory-tiers%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A5F0:20FAC3:75DE0C:7E7920:6AEAEC0F and timestamp 2026-11-04 08:25:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A1129742588%2Fdsh-memory-tiers%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A63E:2DD808:75BCF7:7E5763:6AEAEC10 and timestamp 2026-11-04 08:25:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-memory-tiers",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1099,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-memory-tiers",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-01T02:14:43.563Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-memory-tiers",
+            "error": null,
+            "latest_version": "1.2.2",
+            "latest_published_at": "2026-11-03T14:50:39.417Z",
+            "latest_error": null
+        }
+    }
+}

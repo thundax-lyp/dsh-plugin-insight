@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[e5a68f8](https://github.com/ADWMC/helm-d/tree/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd)
+源码版本：[1e6b954](https://github.com/ADWMC/helm-d/tree/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 827](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=827&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ADWMC/helm-d) [![npm 30d 463](https://img.shields.io/static/v1?label=npm+30d&message=463&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d)
+[![GitHub ★ 1,024](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C024&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ADWMC/helm-d) [![npm 30d 545](https://img.shields.io/static/v1?label=npm+30d&message=545&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@adwmc/helm-d)
 <!-- END META -->
 
-> **功能**：在 DSH 中组织安全分析案例、工具输出证据、引用结论与资料路由，并组合多层提示策略。
+> **功能**：为 DSH 提供安全分析工具、案例证据记录及相关工作流。
 
-> **亮点**：横切持久化、磁盘恢复与finding结构检查使证据整理集中；health把生成preset和宿主指纹关联并尝试重生成，备份/写入/重启边界见 [Q05](#research-q05)，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示案例绑定、部分工具输出编号和恢复入口的集中接线；它有助于组织材料，但不能代替原件和结论审核。
 
-> **主要限制**：编号存在/命令非空不证明蕴含与复现，长证据截断与完整hash不同；行为干预不是授权或安全边界，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 的编号、命令文本及可选调用轨迹检查不验证证据蕴含或实际复现；[Q02](#research-q02) 长输出可能只留截断片段，需独立保存原始材料。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 固定组件在授权分析中交付什么，相对人工记录多做什么？](#detail-section-11)
-  - [Q02 · 工具输出、恢复和结论门控能保证多少？](#detail-section-12)
-  - [Q03 · 提示和工具描述干预是否等于权限与可信边界？](#detail-section-13)
-  - [Q04 · 采用和退出如何界定，可提出什么可证伪改进？](#detail-section-14)
-  - [Q05 · 健康入口何时自动写preset，备份与生效边界是什么？](#detail-section-15)
+  - [Q01 · 授权安全分析人员使用这个组件，相对手工证据表增加什么？](#detail-section-11)
+  - [Q02 · 哪些工具结果进入案例，文件与摘要能否代表完整证据？](#detail-section-12)
+  - [Q03 · 发现引用和复现命令检查能否证明结论正确？](#detail-section-13)
+  - [Q04 · 启动健康检查会否写配置，失败后有什么恢复条件？](#detail-section-14)
+  - [Q05 · 什么情况下应暂停使用并退回手工证据流程？](#detail-section-15)
+  - [Q06 · 把可审证据与行为干预拆开能否改善结果可信度？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：为授权样本分析人员集中建案、留存受包裹工具输出并登记引用结论，合格标准仍是证据相关且结论正确，见 [Q01](#research-q01)。
+> **用途**：授权安全分析人员可将样本分析的部分工具输出和发现组织到案例中，并在后续会话恢复。
 
-手工脚本、证据表和聊天记录；宿主与解释器提供实际分析能力，自动编号/恢复组织是本组件增量，拒绝减少不算正确性。
+原始工具日志、手工证据表与独立复核可完成相同留证；此组件集中部分流程，未证明结果更可信。
 
 <a id="detail-section-3"></a>
 
@@ -52,70 +53,68 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 案例组织 | 证据编号和恢复 | 字符串、活动案、非完整事务 |
-| finding | 引用及复现文本登记 | 不验蕴含或实际命令执行 |
-| health | 漂移检测及策略化重生成 | .bak非强制，实际生效仍需重启核目录 |
-| 领域工具/策略 | 分析入口和行为干预 | 提示不授权，脚本须独立审 |
+| 案例记录 | 组织任务和留存证据编号 | 无活动案例或非字符串结果不自动保存 |
+| 发现登记 | 关联证据编号和复现文本 | 不证明证据支持结论或实际复现 |
+| 案例恢复 | 从磁盘查找并重新绑定案例 | 实际恢复与并发未验证 |
+| preset 健康检查 | 对照宿主并按策略修复 | 默认可写入，备份失败不阻止修复 |
+| 领域分析工具 | 调用本地程序处理授权样本 | 执行权限、工具与目标需独立核实 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| 匹配宿主与生成preset | 必需 | health/Agent组合 | 默认有来源指纹漂移可重写，.bak尽力而为；仍需重启 |
-| tools/systemPrompt及案例目录 | 核心必需 | 包装、提示和磁盘绑定 | 无活动案仅软提醒 |
-| 解释器/领域脚本/样本 | 对应分析必需 | 真正执行分析 | 缺宿主subprocess会本地fallback，须审边界 |
-| 完整提示审阅与范围授权 | 正式交付必需 | 判断实际行为 | star/编号不能代授权 |
+| 兼容 DSH 与 Node | 加载需要 | Host、Agent、工具和系统提示 | 版本不符不能假定可用 |
+| 活动案例及可写目录 | 自动留证需要 | 保存字符串输出与编号 | 无案例时结果不保存 |
+| 解释器或外部程序 | 对应分析需要 | 执行所选工具 | 缺服务时可能回退本地进程 |
+| 授权范围和独立审阅 | 使用与交付需要 | 确认目标、证据和结论 | 编号与提示不能代替授权 |
+| 独立 preset 备份 | 配置修复前需要 | 恢复原文件 | 内置备份失败仍可能继续修复 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 人审preset/脚本/样本 | 固定范围与执行边界 |
-| 加载 | health按策略检测/备份/重写，Agent注册 | 核patch与真实备份，重启核目录 |
-| 组织 | 开案、执行、记录引用 | 查实际工件与相关性 |
-| 恢复 | 读磁盘绑定和resume | 先核部分动作，勿盲重试 |
-| 交付 | 人复核命令及结论 | 不用编号或少拒绝替代 |
+| 准备 | 分析人员确认授权并备份配置 | 目标和可恢复副本均明确 |
+| 收集 | 在隔离案例保存完整原始工具结果 | 回读编号、原文与截断情况 |
+| 复核 | 独立人员对照发现与证据 | 验证相关性和实际复现 |
+| 恢复 | 发现写入、权限或证据异常 | 停止并恢复配置，回到手工证据表 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 运行时/存储/模型金额未知 | 审preset写策略、原文件/真实备份、人设与脚本 | 默认auto可能写入，未确认隔离证据层 |
-| 持续使用 | 重试/进程/证据增长未知 | 结论相关性及正确性审查 | 无合格任务费用/耗时 |
-| 失败恢复 | 部分工件与重复进程未知 | 查.bak是否成功、还原patch并重启，重绑定案例 | 备份可失败，直接写/动作非事务 |
-| 退出 | 案例迁移存储未知 | 禁用并核副作用/资料归属 | 卸载不撤分析动作 |
+| 首次 | 宿主、模型和工具资源费用未知 | 审查提示、脚本、授权和备份 | 默认策略可能修复带指纹 preset |
+| 持续 | 工具执行与证据存储费用未知 | 核原件、相关性与复现 | 不知合格任务成本 |
+| 恢复 | 重试和存储资源未知 | 查备份并核部分写入和实际状态 | 内置备份可能失败 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 出处组织 | 活动案字符串记录/编号 | 完整产物覆盖 |
-| finding结构 | 编号与命令文本检查 | 蕴含、真实复现、正确率 |
-| 恢复 | 磁盘案例与resume | 重复动作与恢复节时 |
-| preset修复 | 默认auto来源校验、生成和重评 | .bak成功、写盘中断及重启后实际目录 |
-| 行为策略 | 模型/描述干预存在 | 减少拒绝不证明质量 |
+| 证据组织 | 活动案例可保存部分字符串输出 | 全部原件覆盖及独立可信度 |
+| 发现记录 | 验证编号、非空命令及可选调用轨迹 | 证据蕴含、真实复现和结论正确率 |
+| preset 维护 | 条件下重生成并复核文件 | 备份成功和重启后运行 |
 
-> **思考**：编号存在/命令非空不证明蕴含与复现，长证据截断与完整hash不同；行为干预不是授权或安全边界，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 的编号、命令文本及可选调用轨迹检查不验证证据蕴含或实际复现；[Q02](#research-q02) 长输出可能只留截断片段，需独立保存原始材料。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：横切持久化、磁盘恢复与finding结构检查使证据整理集中；health把生成preset和宿主指纹关联并尝试重生成，备份/写入/重启边界见 [Q05](#research-q05)，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示案例绑定、部分工具输出编号和恢复入口的集中接线；它有助于组织材料，但不能代替原件和结论审核。
 
-[Q02](#research-q02) 注册包装集中组织有效，需清楚字符串/案绑定契约和长输出hash；[Q03](#research-q03) 提示与请求改写要独立归因，不能混作证据可信度。
+[Q02](#research-q02) 将部分插件工具留证集中到注册包装；[Q03](#research-q03) 的结构约束不应被误读成语义或独立安全验收。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-编号存在/命令非空不证明蕴含与复现，长证据截断与完整hash不同；行为干预不是授权或安全边界，见 [Q02](#research-q02) 和 [Q03](#research-q03)。
+[Q03](#research-q03) 的编号、命令文本及可选调用轨迹检查不验证证据蕴含或实际复现；[Q02](#research-q02) 长输出可能只留截断片段，需独立保存原始材料。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-观察为主，先审提示/脚本及health默认写策略，确认独立原patch备份与重启退路，再决定离线验证证据层；不接重要交付，见 [Q04](#research-q04)。
+[Q05](#research-q05) 建议先观察并审阅完整行为，确认授权、独立备份和执行边界后再考虑隔离验证。
 
 <a id="detail-section-7"></a>
 
@@ -123,18 +122,18 @@
 
 **核查状态**：已检查源码。
 
-固定入口与证据/提示代表链已核，已有工程贡献与未来分离复核假设分开；建议观察，未运行目标或审完封印正文/全部领域脚本。
+固定源码支持条件性留证和配置修复机制；完整覆盖、授权、独立复现与实际收益未经本次验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/helmd/package.json、packages/helmd/src/case.ts、packages/helmd/src/gate.ts、packages/helmd/src/health.ts、packages/helmd/src/index.ts、packages/helmd/src/llm-stream-hook.ts、packages/helmd/src/persist.ts、packages/helmd/src/seam.ts、packages/helmd/src/tool-wash.ts、packages/helmd/src/tools/caseflow.ts、scripts/gen-preset.mjs 及固定范围 inventory；组件：packages/helmd。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/helmd/package.json、packages/helmd/src/index.ts、packages/helmd/src/persist.ts、packages/helmd/src/case.ts、packages/helmd/src/tools/caseflow.ts、packages/helmd/src/health.ts、packages/helmd/src/seam.ts、packages/helmd/src/llm-stream-hook.ts 及固定范围 inventory；组件：packages/helmd。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：组件完整inventory复用；读health/package/index、persist/case/caseflow、seam、gate及描述/stream代表链。baseline原稿、完整问题及11 findings/自code依赖均复核；未运行、补追health自动修复、gen-preset写入/备份；未全审封印/领域脚本。
-- 下一步：固定离线授权样本比较人工表、当前与分离+复核方案，覆盖长输出、timeline失败及中断，并用副本核auto/off/force、备份失败、直接写中断及重启目录，盲审支持率/遗漏/重试/人工与模型成本。本轮无目标运行。
+- 边界：定向核查包入口、案例包装、发现记录、健康修复及执行接口；未全面审计封装内容、模型干预、所有工具与宿主权限，不运行目标。
+- 下一步：获得明确授权后在隔离环境对照手工证据表，核非字符串、长输出、实际复现、备份失败及重启结果。
 
 **分析版本**
 
 - **仓库**：[ADWMC/helm-d](https://github.com/ADWMC/helm-d)
-- **版本号**：0.5.2（[固定提交 e5a68f8](https://github.com/ADWMC/helm-d/tree/e5a68f88a6017dd1bb393e2d020c2c1bf091154c)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.3（[固定提交 1e6b954](https://github.com/ADWMC/helm-d/tree/1e6b954dd290267ce330e19cea6368f7d2184683)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -142,9 +141,9 @@
 
 <a id="innovation"></a>
 
-分离可审证据层与模型干预，明确原始/留存hash并为finding加入摘录和独立支持复核；新样本对照失败则否定，见 [Q04](#research-q04)。
+[Q06](#research-q06) 提出可审证据层与行为干预分离的未验证假设，需对照完整原始日志及人工审查。
 
-固定离线授权样本比较人工表、当前与分离+复核方案，覆盖长输出、timeline失败及中断，并用副本核auto/off/force、备份失败、直接写中断及重启目录，盲审支持率/遗漏/重试/人工与模型成本。本轮无目标运行。
+获得明确授权后在隔离环境对照手工证据表，核非字符串、长输出、实际复现、备份失败及重启结果。
 
 <a id="detail-section-9"></a>
 
@@ -153,57 +152,58 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 7 | 2356 | 1926 | 306 | — |
-| .md | source | 366 | 95370 | — | — | 523478 |
-| .mjs | source | 3 | 671 | 488 | 138 | — |
-| .ts | source | 37 | 6360 | 5044 | 877 | — |
+| .js | source | 7 | 3015 | 2568 | 309 | — |
+| .md | source | 367 | 96189 | — | — | 548153 |
+| .mjs | source | 3 | 688 | 497 | 146 | — |
+| .ts | source | 47 | 9236 | 7529 | 1192 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+created%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=4&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z) [![近30天关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/ADWMC/helm-d/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z)
 
 
 
-统计日期：2026-10-29。
+统计日期：2026-11-04。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：案例证据结构如何约束结论，提示/工具干预及恢复边界能否支持授权分析交付？
+**插件研究总目标**：核查授权样本分析的案例留证、发现校验及宿主配置和执行边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 固定组件在授权分析中交付什么，相对人工记录多做什么？
+### Q01 · 授权安全分析人员使用这个组件，相对手工证据表增加什么？
 
-**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-@adwmc/helm-d 0.5.2是DSH原生插件子包。main指向health，而实际工具放在生成preset组合，不能把仅加载健康卡视为Agent工具已激活。包同时交付客户端、生成preset、封印资料和人设；核心目标可分为案例证据组织、领域工具路由和模型行为干预。针对自有或已授权样本的分析人员，合格交付是可定位证据、可复现过程和正确结论，不能用拒绝减少、输出变长或编号增多验收。
-
-相对手动建目录、复制脚本输出和维护证据表，注册边界自动记录及磁盘案例恢复可减少分散接线；分析脚本、系统解释器和宿主能力仍是直接依赖。health比较安装宿主standard与生成preset指纹，还可自动重写生成文件；这不是只读检测，详细策略和恢复代价见本项健康检查分析。该处理不能证明所有工具或实际任务通过。领域覆盖和封印资料未逐项验收，来源固定不是公开发布包与源码一致性的证明。
+对自有或获授权样本开展分析的人员，可以用案例目录集中保存部分工具输出与编号，并记录引用这些编号的发现。包的插件 patch 与 Agent 导出声明、入口注册案例和领域工具，说明它是 DSH 插件组件。手工证据表、原始工具日志和人工复核也能组织同一工作；这里的增量是将案例绑定、部分工具输出留存和结构化记录接到 Agent 流程，而不是证明分析结果可靠或安全评估更有效。权限范围和真实需求仍需人工独立确认。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/helmd/package.json:2-35](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/package.json#L2-L35)
+**依据 1 · 源码核查**：[packages/helmd/package.json:1-36](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/package.json#L1-L36)
 
-版本、health主入口及子入口。
+包身份和 Agent 导出。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
+{
   "name": "@adwmc/helm-d",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "type": "module",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ADWMC/helm-d.git",
@@ -234,49 +234,125 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
+    "./client": "./client.js",
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/helmd/src/health.ts:4-24](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L4-L24)
+**依据 2 · 源码核查**：[packages/helmd/package.json:50-68](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/package.json#L50-L68)
 
-健康面与preset实际工具层分工。
+bundle 和客户端声明。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    "!presets/profiles"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "node ../../scripts/verify-pack.mjs --require-sealed"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml",
+        "./preset.generated.patch.yml"
+      ]
+    },
+    "client": {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/helmd/src/index.ts:24-38](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L24-L38)
+
+Agent 注入与持久化包装。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+export const name = 'helmd'
+export const inject = ['tools', 'systemPrompt']
+
+/** The host's native shell tool on this platform. Selecting one (instead of
+ *  listing both) keeps the bootstrap anchor unambiguous when a machine has
+ *  both bash and pwsh installed — on Linux, `win32` never enters the list. */
+const NATIVE_SHELL = process.platform === 'win32' ? 'pwsh' : 'bash'
+
+export function apply(ctx: Context): void {
+  // Description wash FIRST: normalize any "denial is final" tool wording before
+  // any domain tool registers (defensive layer — current helmd descriptions are clean).
+  const unwash = applyDescriptionWash(ctx)
+  // Persistence wrap FIRST: every later-registered domain tool gains
+  // evidence persistence without per-tool edits (soft gate).
+  const unwrap = applyPersistenceWrap(ctx)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/helmd/src/index.ts:59-79](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L59-L79)
+
+案例及领域工具注册。
 
 <details>
 <summary>查看原文（21行）</summary>
 
 ```text
- * Evaluates the package-internal preset patch (`preset.generated.patch.yml`,
- * written by gen-preset.mjs and loaded through `dsh.bundle.patch`) against the
- * hash of the INSTALLED host's own `standard` preset patch, and serves the
- * verdict at `GET /api/helmd/health`.
- *
- * 0.1.7 moved presets from a deployed `.agent-presets/<name>/agent.cordis.yml`
- * to a composition row, so this package now carries its own preset artifact and
- * there is no deployment step to drift: drift here means the shipped artifact
- * was generated against a different host standard (HOST_UPGRADED) or no longer
- * satisfies the structural assertion (STALE).
- *
- * Evaluation runs once per process start — deliberately. The standing-mount
- * semantics mean a preset change is only safe after a harness restart
- * (incident 2026-08-26: generation replacement collides in the same preset
- * scope), so boot time is exactly the moment this verdict is true.
- *
- * The verdict is derived state, not configuration: 0.1.7's settings document
- * only carries Config schemas of profile entries, so the card reads the HTTP
- * route instead of a settings namespace. Agent tools are mounted by the preset
- * row; keeping this row on the host plane makes the health card available
- * without exposing helmd tools to other agents.
+    // Local team protocol: role guard + orchestrator contract + dispatch.
+    registerTeamPolicy(ctx)
+    registerTeamContext(ctx)
+    registerTeamTools(ctx)
+
+    // Case lifecycle: begin_case / case_status / record_finding / save_evidence / end_case
+    registerCaseflowTools(ctx)
+    // Per-turn [helm-d case] section: the model sees the case it is bound to,
+    // not just a tool it may forget to call after compaction.
+    registerCaseContext(ctx)
+
+
+    // Domain tools
+    registerAndroidTools(ctx)
+    registerWebTools(ctx)
+    registerNativeTools(ctx)
+    registerProtocolTools(ctx)
+    registerMalwareTools(ctx)
+    registerAiSecurityTools(ctx)
+    registerEvidenceTools(ctx)
+    registerToolboxTools(ctx)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/helmd/src/index.ts:30-50](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/index.ts#L30-L50)
+#### 缺口
 
-工具包装与多层提示接线。
+- 没有同任务分析人员对照
+  **影响**：不能证明节时、覆盖或结论质量提升
+  **进一步探讨**：以授权测试样本比较手工证据表与插件的完整审核成本。
 
-<details>
-<summary>查看原文（21行）</summary>
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 哪些工具结果进入案例，文件与摘要能否代表完整证据？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+Agent 入口在注册插件工具之前临时包装 tools.register，之后恢复原注册函数；排除清单和非字符串结果不经持久化，没有活动案例时仍返回结果并提示未保存。因此不能将其理解为覆盖所有宿主工具或所有输出。活动案例下包装器将字符串交给 saveEvidence 并返回编号。saveEvidence 对完整字符串计算 SHA-256，但超过 256×1024 字符时只写前段与截断提示，再返回完整内容的摘要；仅有落盘片段不能重建完整原文。case_status 可查磁盘并重新绑定案例，但恢复效率及并发行为未实测。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/helmd/src/index.ts:32-38](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L32-L38)
+
+注册前包装。
 
 ```text
 export function apply(ctx: Context): void {
@@ -286,78 +362,66 @@ export function apply(ctx: Context): void {
   // Persistence wrap FIRST: every later-registered domain tool gains
   // evidence persistence without per-tool edits (soft gate).
   const unwrap = applyPersistenceWrap(ctx)
-  try {
-    // ICA context: behavior demonstrations as durable user-role snapshot (L2).
-    // Registered before everything else — it needs systemPrompt only.
-    registerIcaContext(ctx)
-
-    // Bootstrap filter: first request only exposes the platform shell + read
-    applyBootstrapFilter(ctx, {
-      shellTools: [NATIVE_SHELL],
-      commonTools: ['read'],
-      promoteOn: 'either',
-    })
-
-    // Advisory ledger: producers submit before the renderer runs its post-next render.
-    registerAdvisoryHook(ctx)
 ```
 
-</details>
+**依据 2 · 源码核查**：[packages/helmd/src/index.ts:64-82](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L64-L82)
 
-**依据 4 · 源码核查**：[packages/helmd/src/seam.ts:107-123](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/seam.ts#L107-L123)
-
-领域执行依赖宿主subprocess。
+注册案例及领域工具后解除包装。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-/**
- * Prefer the ctx.subprocess capability seam; fall back to a local Node
- * spawn when the host has no provider.
- */
-export async function runSeam(ctx: Context, argv: string[], cwd: string): Promise<string> {
-  const program = await resolveCommand(ctx, argv[0])
-  const resolvedArgv = [program, ...argv.slice(1)]
-  const subprocess = ctx.get('subprocess')
-  if (subprocess != null && typeof subprocess.spawn === 'function') {
-    const handle = subprocess.spawn({
-      argv: resolvedArgv,
-      cwd,
-      stdio: {
-        stdin: 'ignore',
-        stdout: { maxBytes: MAX_OUTPUT_BYTES, spill: { maxBytes: MAX_OUTPUT_BYTES * 8 } },
-        stderr: { maxBytes: MAX_OUTPUT_BYTES },
-      },
+    // Case lifecycle: begin_case / case_status / record_finding / save_evidence / end_case
+    registerCaseflowTools(ctx)
+    // Per-turn [helm-d case] section: the model sees the case it is bound to,
+    // not just a tool it may forget to call after compaction.
+    registerCaseContext(ctx)
+
+
+    // Domain tools
+    registerAndroidTools(ctx)
+    registerWebTools(ctx)
+    registerNativeTools(ctx)
+    registerProtocolTools(ctx)
+    registerMalwareTools(ctx)
+    registerAiSecurityTools(ctx)
+    registerEvidenceTools(ctx)
+    registerToolboxTools(ctx)
+  } finally {
+    unwrap()
+    unwash()
 ```
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[packages/helmd/src/persist.ts:13-24](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/persist.ts#L13-L24)
 
-- 没有同条件独立合格报告、宿主版本及依赖安装验收。
-  **影响**：不据静态结构推断实际分析准确性或宿主执行保障。
-  **进一步探讨**：先静态审阅完整提示与工具脚本，再以离线授权样本比较人工证据表的结论支持率和整理负担。
+排除的工具集合。
 
-<a id="research-q02"></a>
+<details>
+<summary>查看原文（12行）</summary>
 
-<a id="detail-section-12"></a>
+```text
+const NO_PERSIST = new Set([
+  // knowledge / router / session tools — outputs are not case artifacts
+  'skill_catalog', 'read_reference', 'analysis_mode', 'route_task',
+  'evidence_reference', 'native_reference', 'web_reference',
+  'malware_reference', 'ai_reference', 'protocol_reference',
+  'tool_recommend',
+  // coordination, not an artifact of the analysis
+  'team_dispatch',
+  // case lifecycle / ledger bookkeeping itself
+  'begin_case', 'case_status', 'record_finding', 'end_case', 'save_evidence',
+  'record_hypothesis', 'update_hypothesis',
+])
+```
 
-### Q02 · 工具输出、恢复和结论门控能保证多少？
+</details>
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**依据 4 · 源码核查**：[packages/helmd/src/persist.ts:69-87](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/persist.ts#L69-L87)
 
-#### 完整回答
-
-apply在注册领域工具前包装ctx.tools.register，豁免路由、参考及案例管理工具；受包裹execute先执行再persistHook。只有字符串且有活动案例才saveEvidence，无案例只附未持久化提醒，非字符串直接通过，因此不是全工具强制审计。saveEvidence写证据再appendTimeline，后续失败不撤实际分析动作；长内容按256*1024字符截断，返回sha却按完整内容算，不能拿这个sha直接验证已截断文件。去重读已有文件算hash，对超长原始输出也不等价；这些是可核设计边界，不把文件存在当完整留证。
-
-record_finding拒未知编号并要求非空repro_cmd，之后把调用者的title/detail和命令字符串直接appendFinding。它既不验证证据蕴含结论，也不执行复现命令；DEEP关案要求finding与命令文本，仍只是结构门控。case_status按磁盘案例重绑定及摘要resume有明确恢复思路，但副作用的已执行/已记录/是否重试不是事务。证据组织可追溯的贡献成立，无幻觉或可靠自动恢复不成立为已证效果。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/helmd/src/persist.ts:65-83](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/persist.ts#L65-L83)
-
-字符串、活动案例、先写盘再nudge。
+非字符串和无活动案分支、保存与返回编号。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -386,9 +450,9 @@ async function persistHook(
 
 </details>
 
-**依据 2 · 源码核查**：[packages/helmd/src/persist.ts:90-108](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/persist.ts#L90-L108)
+**依据 5 · 源码核查**：[packages/helmd/src/persist.ts:94-112](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/persist.ts#L94-L112)
 
-注册包装实际链。
+临时注册包装和恢复。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -417,9 +481,9 @@ export function applyPersistenceWrap(ctx: Context): () => void {
 
 </details>
 
-**依据 3 · 源码核查**：[packages/helmd/src/case.ts:232-258](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/case.ts#L232-L258)
+**依据 6 · 源码核查**：[packages/helmd/src/case.ts:232-258](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/case.ts#L232-L258)
 
-原文hash、截断文件与timeline次序。
+全内容摘要和截断落盘。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -456,50 +520,85 @@ export async function saveEvidence(
 
 </details>
 
-**依据 4 · 源码核查**：[packages/helmd/src/case.ts:269-278](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/case.ts#L269-L278)
+**依据 7 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:117-124](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L117-L124)
 
-只校编号存在。
-
-<details>
-<summary>查看原文（10行）</summary>
+磁盘案例状态与恢复入口。
 
 ```text
-export async function validateEvidenceIds(
-  caseDir: string,
-  ids: string[],
-): Promise<{ ok: boolean; missing: string[]; known: string[] }> {
-  const files = await readdir(join(caseDir, 'evidence')).catch(() => [] as string[])
-  const known = files
-    .map((f) => /^(E-\d{3})-/.exec(f)?.[1])
-    .filter((x): x is string => Boolean(x))
-  const missing = ids.filter((id) => !known.includes(id))
-  return { ok: missing.length === 0, missing, known }
+  ctx.tools.register(defineTool({
+    name: 'case_status',
+    description:
+      'Re-read the active case state from disk (CASE.md header, samples, recent timeline). ' +
+      'Call this FIRST when resuming a task after context compaction — disk state survives what the conversation loses. ' +
+      'Can also resume an existing case by name or inspect cases on disk.',
+    parameters: {
+      name: { type: 'string', description: 'Optional case folder name to resume (or "open"/"latest" to rebind the most recent open case).' },
 ```
 
-</details>
+#### 缺口
 
-**依据 5 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:202-230](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/tools/caseflow.ts#L202-L230)
+- 没有运行或并发与长输出故障实验
+  **影响**：不能确认实际宿主中全部留存、恢复或完整性
+  **进一步探讨**：隔离案例以长字符串、非字符串和无案例结果验证原件与返回摘要。
 
-命令非空而不执行或语义核验。
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 发现引用和复现命令检查能否证明结论正确？
+
+**研究主题**：功能与机制、缺陷与关键质疑
+
+#### 完整回答
+
+record_finding 检查活动案例、引用编号存在及复现命令文本非空；启用相应纪律设置时，还检查至少一项非自写来源文件和会话中有参考文档工具调用。实现根据证据数量和置信度等处理严重程度。这些检查比任意文本记账更有结构，但没有在该入口执行所写命令，也没有判断证据是否蕴含结论或验证工具输出本身正确。另有工具描述及模型流拦截与重试行为，会影响模型呈现与调用，不能把拒绝减少等同于授权成立、风险降低或事实正确。应由独立审核者核对原件、目标及真实复现。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:227-248](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L227-L248)
+
+发现输入与严重程度规则说明。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
   ctx.tools.register(defineTool({
     name: 'record_finding',
     description:
-      'Record a conclusion into findings.md. Every evidence id you cite is validated against the evidence/ directory — ' +
-      'citing ids that do not exist is rejected. Pass repro_cmd (a command that reproduces the result); ' +
-      'DEEP mode requires it before the case can close.',
+      'Register a finding in the case register (findings.json + findings.md). severity is required; CVSS (when given) is ' +
+      'authoritative and the asserted value is kept for audit. critical/high need >= 2 evidence ids and non-unverified ' +
+      'confidence, otherwise the severity is downgraded. Identical vuln_class+target+title merges into the existing finding. ' +
+      'Every evidence id is validated; citing unknown ids or self-authored evidence is rejected.',
     parameters: {
-      title: { type: 'string', required: true },
-      detail: { type: 'string', required: true },
-      evidence_ids: { type: 'array', items: { type: 'string' }, required: true, description: 'e.g. ["E-002","E-005"]' },
+      title: { type: 'string', required: true, description: 'Finding title, e.g. "License check is a plaintext base64 compare".' },
+      detail: { type: 'string', required: true, description: 'What was found, how it was observed, and the impact.' },
+      evidence_ids: { type: 'array', items: { type: 'string' }, required: true, description: 'e.g. ["E-002","E-005"].' },
       repro_cmd: { type: 'string', required: true, description: 'Reusable command/tool call that reproduces the conclusion.' },
-    },
-    output: { schema: { type: 'string' }, render: (_a: unknown, v: string) => [{ type: 'text', text: v }] },
-    async execute(args: { title: string; detail: string; evidence_ids: string[]; repro_cmd: string }, exec?: ExecLike) {
+      severity: {
+        type: 'string',
+        required: true,
+        description: `One of: ${FINDING_SEVERITIES.join(' | ')}. critical/high require >= 2 evidence ids.`,
+      },
+      vuln_class: { type: 'string', description: 'Vulnerability class, e.g. auth-bypass / xss / license-bypass; used for dedup.' },
+      target: { type: 'string', description: 'Affected target/endpoint/file; used for dedup.' },
+      confidence: { type: 'string', description: `One of: ${FINDING_CONFIDENCES.join(' | ')} (default probable). unverified caps severity at medium.` },
+      cvss: { type: 'number', description: 'CVSS v3 score 0-10; when supplied it overrides severity by the standard bands.' },
+      status: { type: 'string', description: `Initial triage state: ${FINDING_STATUSES.join(' | ')} (default verified after the gates).` },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:264-278](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L264-L278)
+
+检查活动案例、编号和非空命令。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+      exec?: ExecLike,
+    ) {
       const active = getCase(exec?.agent?.id)
       if (!active) return 'No active case. begin_case() first — findings need an evidence chain.'
       const check = await validateEvidenceIds(active.dir, args.evidence_ids ?? [])
@@ -513,72 +612,78 @@ export async function validateEvidenceIds(
       if ((args.repro_cmd ?? '').trim() === '') {
         return 'REJECTED — repro_cmd is required: a finding without a reproducible command is not a conclusion.'
       }
-      await appendFinding(active.dir, args.title, args.detail, args.evidence_ids ?? [], args.repro_cmd)
-      return `finding recorded: ${args.title} [${(args.evidence_ids ?? []).join(', ')}]\nrepro: ${args.repro_cmd.trim()}`
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:304-323](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/tools/caseflow.ts#L304-L323)
+**依据 3 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:279-306](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L279-L306)
 
-DEEP关案结构要求。
+可配置的工具证据与文档调用检查。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-      'Close the active case: stamps CASE.md completed and unbinds the session. ' +
-      'In deep mode at least one recorded finding is required, and every finding must carry repro_cmd. ' +
-      'Closing also requires at least one evidence entry on disk, unless the summary states why there is none ' +
-      'with "(no-evidence: …)".',
-    parameters: { summary: { type: 'string', description: 'One-line closing summary.' } },
-    output: { schema: { type: 'string' }, render: (_a: unknown, v: string) => [{ type: 'text', text: v }] },
-    async execute(args: { summary?: string }, exec?: ExecLike) {
-      const active = getCase(exec?.agent?.id)
-      if (!active) return 'No active case bound to this session.'
-      const mode = getLevel(exec?.agent?.id)
-      if (mode === 'deep') {
-        const findings = await loadFindings(active.dir)
-        if (findings.length === 0) {
-          return 'DEEP mode requires at least one record_finding before end_case. Evidence chain incomplete.'
-        }
-        const missingRepro = findings.filter((finding) => (finding.repro ?? '').trim() === '')
-        if (missingRepro.length > 0) {
+      // Anti-pretence gates. The model can CLAIM it read references or ran a
+      // tool; these checks read the actual evidence filenames (produced by the
+      // persisting wrapper) and the session's real tool/call trace instead.
+      const discipline = loadSettings().advisory
+      if (discipline.requireToolEvidence) {
+        const onDisk = await listEvidence(active.dir)
+        const byId = new Map(onDisk.map((entry) => [entry.id, entry.file]))
+        const citedFiles = (args.evidence_ids ?? []).map((id) => byId.get(id)).filter((file): file is string => file !== undefined)
+        // `manual_` is the reserved prefix save_evidence stamps on every
+        // model-authored capture, so a spoofed label can never pass as tool output.
+        const selfAuthored = /^E-\d+-(manual_|save_evidence|team_report)/
+        if (!citedFiles.some((file) => !selfAuthored.test(file))) {
           return [
-            `REJECTED — DEEP mode requires repro_cmd on every finding: ${missingRepro.map((f) => f.title).join(', ')}.`,
-            'Re-record the finding with repro_cmd (a command that reproduces it) before closing.',
+            'REJECTED — every cited evidence id is self-authored (save_evidence/team_report).',
+            `cited: ${citedFiles.join(', ') || '(none)'}`,
+            'Run a real analysis tool first; its output is auto-captured as evidence with the tool name in the filename.',
+          ].join('\n')
+        }
+      }
+      if (discipline.requireDocRead) {
+        const calls = toolCalls(sessionEvents(exec?.agent as unknown as Parameters<typeof sessionEvents>[0], 'caseflow'))
+        if (!calls.some((call) => call.name === 'read_reference')) {
+          return [
+            'REJECTED — no read_reference call found in this session\'s real tool trace.',
+            'Call route_task(goal) and then read_reference(<matched refs>) before recording a conclusion;',
+            'the claim "I read the docs" is not evidence.',
+          ].join('\n')
+        }
 ```
 
 </details>
 
-#### 缺口
+**依据 4 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:308-320](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L308-L320)
 
-- 并发编号、长输出与写盘失败后的真实恢复结果未验证。
-  **影响**：不据静态结构推断实际分析准确性或宿主执行保障。
-  **进一步探讨**：离线样本制造长/非字符串输出、timeline失败和中断，分别核实际工件、hash、索引与是否重复执行，并盲审引用支持。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 提示和工具描述干预是否等于权限与可信边界？
-
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
-
-#### 完整回答
-
-不是。index注册工具描述wash、bootstrap过滤、advisory与llm/stream hook；wash不只包内未来注册，还处理已注册宿主工具描述和参数说明。stream hook默认reactive，监测拒绝后能重新请求模型并改变历史上下文，最终仍依赖模型输出。该策略是绕过拒绝的行为干预，不是证明任务被授权、工具获得额外能力或结论更正确。此处仅核其存在和作用，不提供绕过优化或复现操作。
-
-域工具执行还在seam优先调用宿主subprocess而缺失时回本地Node进程，不能把宿主接口描述当唯一执行隔离。Star gate的弹窗/设备流与persona是不同层，源码明确persona不被star门控；star不是分析授权凭证。封印提示与多层请求/说明改写使操作者难从原始聊天归因最终行为，审计须保存实际生效提示和执行证据，不应仅看CASE编号或拒绝统计。运行重试也可能增加模型费用，效果与实际次数需测，不能承诺节省。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/helmd/src/index.ts:30-51](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/index.ts#L30-L51)
-
-实际注册多层改写。
+写入用户提供的发现与命令。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（13行）</summary>
+
+```text
+      try {
+        const recorded = await recordFinding(active.dir, {
+          title: args.title,
+          detail: args.detail,
+          evidenceIds: args.evidence_ids ?? [],
+          severity: args.severity as FindingSeverity,
+          vulnClass: args.vuln_class,
+          target: args.target,
+          confidence: args.confidence as FindingConfidence | undefined,
+          cvss: typeof args.cvss === 'number' ? args.cvss : undefined,
+          status: args.status as FindingStatus | undefined,
+          repro: args.repro_cmd,
+        })
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/helmd/src/index.ts:32-38](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L32-L38)
+
+描述改写与证据包装的注册顺序。
 
 ```text
 export function apply(ctx: Context): void {
@@ -588,122 +693,279 @@ export function apply(ctx: Context): void {
   // Persistence wrap FIRST: every later-registered domain tool gains
   // evidence persistence without per-tool edits (soft gate).
   const unwrap = applyPersistenceWrap(ctx)
-  try {
-    // ICA context: behavior demonstrations as durable user-role snapshot (L2).
-    // Registered before everything else — it needs systemPrompt only.
-    registerIcaContext(ctx)
-
-    // Bootstrap filter: first request only exposes the platform shell + read
-    applyBootstrapFilter(ctx, {
-      shellTools: [NATIVE_SHELL],
-      commonTools: ['read'],
-      promoteOn: 'either',
-    })
-
-    // Advisory ledger: producers submit before the renderer runs its post-next render.
-    registerAdvisoryHook(ctx)
-    registerLlmStreamHook(ctx)
 ```
 
-</details>
+**依据 6 · 源码核查**：[packages/helmd/src/llm-stream-hook.ts:1-18](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/llm-stream-hook.ts#L1-L18)
 
-**依据 2 · 源码核查**：[packages/helmd/src/tool-wash.ts:85-124](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/tool-wash.ts#L85-L124)
-
-既有/后续工具与参数说明改写范围。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-export function applyDescriptionWash(ctx: unknown, verbose = false): () => void {
-  const target = (ctx as { tools: unknown }).tools as {
-    register: (def: Record<string, unknown>) => void
-    get?: (name: string, scope?: unknown) => { description?: unknown; parameters?: unknown; name?: unknown } | undefined
-  }
-  // 追溯清洗（retro-wash）：先于 wrap 执行，覆盖在 helmd apply 之前注册的宿主工具。
-  if (typeof target.get === 'function') {
-    for (const name of HOST_TOOL_NAMES) {
-      try {
-        const def = target.get(name)
-        if (def && washDefinitionInPlace(def) && verbose) {
-          console.log(`[helmd/tool-wash] ${name}: retro-washed`)
-        }
-      } catch {
-        // registry 拒绝/未注册 — 跳过，宿主版本差异不应让插件装载失败
-      }
-    }
-  }
-  const originalRegister = target.register
-  target.register = (def) => {
-    if (def && typeof def.description === 'string') {
-      const washed = washDescription(def.description)
-      if (washed !== def.description) {
-        if (verbose) console.log(`[helmd/tool-wash] ${def.name}: description washed`)
-        def.description = washed
-      }
-      const params = def.parameters as Record<string, { description?: string }> | undefined
-      if (params) {
-        for (const [key, param] of Object.entries(params)) {
-          if (param && typeof param.description === 'string') {
-            const p = washDescription(param.description)
-            if (p !== param.description) {
-              if (verbose) console.log(`[helmd/tool-wash] ${def.name}.${key}: description washed`)
-              param.description = p
-            }
-          }
-        }
-      }
-    }
-    return originalRegister.call(target, def)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/helmd/src/llm-stream-hook.ts:139-140](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/llm-stream-hook.ts#L139-L140)
-
-默认模式和重试预算。
-
-```text
-const MAX_RETRIES = Math.max(1, Number(process.env.HELMD_STREAM_RETRIES ?? 3))
-const MODE = (process.env.HELMD_STREAM_MODE ?? 'reactive').toLowerCase()
-```
-
-**依据 4 · 源码核查**：[packages/helmd/src/llm-stream-hook.ts:530-547](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/llm-stream-hook.ts#L530-L547)
-
-hook注册与嵌套模型调用。
+模型流拦截和重试机制概述。
 
 <details>
 <summary>查看原文（18行）</summary>
 
 ```text
-export function registerLlmStreamHook(ctx: Context): void {
-  const host = ctx as any
-  if (typeof host?.on !== 'function') return
-
-  host.on('llm/stream', async function* (options: any, next: () => AsyncIterable<Chunk>) {
-    if (MODE === 'off') {
-      yield* next()
-      return
-    }
-
-    const attempt = Math.max(0, Number(options?.__helmdAttempt ?? 0))
-    const isLastAttempt = attempt >= MAX_RETRIES
-    const abortable = !isLastAttempt
-
-    const streamNested = async function* (nextAttempt: number, failureClass: FailureClass): AsyncGenerator<Chunk> {
-      const llm = safeService<{ stream?: (req: any) => AsyncIterable<Chunk> }>(ctx, 'llm')
-      if (llm != null && typeof llm.stream === 'function') {
-        retryCount++
+/**
+ * LLM Stream Refusal Interception & Retry Hook
+ *
+ * Single `llm/stream` listener owning the retry loop. The host hands the
+ * waterfall a DEEP-FROZEN request (dsh-agent-loop buildRequest freezes the
+ * request object, the message array and every message), so mutating the
+ * outbound request in place is impossible — assignment throws "Cannot assign
+ * to read only property". Each retry therefore re-enters the `llm` service
+ * with a request object this plugin owns:
+ *
+ *   monitoring (inbound)  — buffers the first window of reasoning/content deltas,
+ *                           aborts refusal streams before they finish;
+ *   re-entry  (outbound)  — on refusal, builds an unfrozen request copy with
+ *                           laundered history + prefill carrier + refusal
+ *                           stop-strings and calls `llm.stream(nested)`; the
+ *                           nested dispatch re-runs this listener (marked via
+ *                           `__helmdAttempt`), so the ladder recurses with a
+ *                           hard budget of MAX_RETRIES.
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/helmd/src/seam.ts:107-146](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/seam.ts#L107-L146)
+#### 缺口
 
-宿主执行到本地fallback。
+- 未对实际记录做独立复现或调用级权限测试
+  **影响**：编号、轨迹与非空命令无法证明事实或授权
+  **进一步探讨**：在隔离授权样本中逐条回读完整原件并独立复现。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 启动健康检查会否写配置，失败后有什么恢复条件？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+包默认入口是 health，bundle 同时包含生成的 preset。健康检查比较宿主标准 preset 的摘要与部署文件；策略默认 auto，仅对带生成指纹且被判定为 STALE 或 HOST_UPGRADED 的状态修复，off 不写，force 扩大修复范围。修复先尝试复制 .bak，但复制失败被吞掉仍继续调用生成器；成功提示需重启并核对宿主加载，不能把“已修复”当作备份完整或重启验收。重生成和任何部分写入失败都可能要求用户从独立备份恢复。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/helmd/package.json:22-35](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/package.json#L22-L35)
+
+包默认 health 入口与 Agent 导出。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（14行）</summary>
+
+```text
+    "malware-analysis",
+    "ai-security"
+  ],
+  "main": "dist/health.js",
+  "types": "dist/health.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/health.d.ts",
+      "default": "./dist/health.js"
+    },
+    "./agent": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/helmd/package.json:59-68](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/package.json#L59-L68)
+
+bundle 引用 preset。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+    "prepublishOnly": "node ../../scripts/verify-pack.mjs --require-sealed"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml",
+        "./preset.generated.patch.yml"
+      ]
+    },
+    "client": {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/helmd/src/health.ts:152-175](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/health.ts#L152-L175)
+
+默认、关闭、强制策略与状态范围。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+ * Drift-repair policy:
+ *   unset → repair a deployed preset that carries our fingerprint header (provenance is
+ *           provable: it is an artifact we generated), and only report one without a
+ *           header (it may be hand-written, so overwriting it is the user's call);
+ *   `0`   → never write — escape hatch for a locked-down or hand-managed deployment;
+ *   `1`   → repair every healable status, header or not.
+ * A repair keeps the previous file as `.bak` first. Restarting dsh and asserting the
+ * catalog (MAINTENANCE §8) stays the user's step: this only re-syncs the file.
+ */
+function healPolicy(): 'auto' | 'off' | 'force' {
+  const flag = process.env.HELMD_AUTO_HEAL?.trim().toLowerCase()
+  if (flag === '0' || flag === 'false' || flag === 'no') return 'off'
+  if (flag === '1' || flag === 'true' || flag === 'yes') return 'force'
+  return 'auto'
+}
+
+/** Statuses whose deployed file carries the gen-preset header, i.e. provably our artifact. */
+const DERIVED_STATUSES = new Set(['STALE', 'HOST_UPGRADED'])
+
+function shouldRepair(status: string, policy: 'auto' | 'off' | 'force'): boolean {
+  if (policy === 'off') return false
+  if (policy === 'force') return true
+  return DERIVED_STATUSES.has(status)
+}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/helmd/src/health.ts:266-295](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/health.ts#L266-L295)
+
+尽力备份、调用生成器和重启提示。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+/**
+ * Regenerate this package's preset patch from the installed host standard. The caller has
+ * already decided (via {@link shouldRepair}) that writing is allowed; this only performs it
+ * and keeps the previous file as `.bak` first.
+ */
+function autoHealPreset(): { healed: boolean; verdict: string } {
+  const gen = resolveGenerator()
+  if (gen === null) return { healed: false, verdict: 'unavailable (no generator)' }
+  const target = presetPatchPath()
+  if (target === '') return { healed: false, verdict: 'failed (preset patch path is unresolved)' }
+  try {
+    if (existsSync(target)) {
+      try {
+        copyFileSync(target, `${target}.bak`)
+      } catch {
+        // A failed backup must not block the repair; the exit status below still reports it.
+      }
+    }
+    const res = spawnSync(process.execPath, [gen, '--out', target], {
+      encoding: 'utf8',
+      timeout: 60_000,
+    })
+    if (res.status !== 0) {
+      const why = String(res.stderr || res.error?.message || '').trim().split('\n').slice(-1)[0] ?? ''
+      return { healed: false, verdict: `failed (exit ${String(res.status)}${why ? `: ${why}` : ''})` }
+    }
+    const anchor = process.platform === 'win32' ? '[pwsh, read]' : '[bash, read]'
+    return { healed: true, verdict: `restart dsh and assert the first request is ${anchor} (MAINTENANCE §8)` }
+  } catch (e) {
+    return { healed: false, verdict: `failed (${(e as Error).message})` }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/helmd/src/health.ts:384-399](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/health.ts#L384-L399)
+
+检查、按策略修复与再次评估。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function evaluateHealth(): HelmdHealth {
+  const first = evaluateHealthCore()
+  if (!HEALABLE.has(first.status)) return first
+  const policy = healPolicy()
+  if (!shouldRepair(first.status, policy)) {
+    first.autoHeal = reportOnlyVerdict(first.status, policy)
+    return first
+  }
+  const outcome = autoHealPreset()
+  if (!outcome.healed) {
+    first.autoHeal = outcome.verdict
+    return first
+  }
+  const healed = evaluateHealthCore()
+  healed.autoHeal = `healed (${first.status} → ${healed.status}) — ${artifactVerdict(healed)}; ${outcome.verdict}`
+  return healed
+```
+
+</details>
+
+#### 缺口
+
+- 没有执行健康修复、备份失败或重启验收
+  **影响**：不能确认实际部署中的写入、备份及加载结果
+  **进一步探讨**：先独立备份隔离 profile，模拟缺备份权限和生成失败后回读。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 什么情况下应暂停使用并退回手工证据流程？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+该组件需要兼容 DSH、Node、工具与系统提示服务；域分析还可能依赖解释器和外部程序。runSeam 优先使用宿主 subprocess，缺少时回退 Node 本地进程，因此需先核清部署的执行权限和被调用工具，不应由插件名称推断边界。建议先观察，不把它接入重要安全交付；先确认授权、审查提示及脚本、独立备份 preset，并使用隔离样本比对原始证据与案例记录。若证据被截断、目标或授权不清、自动写入无法恢复或发现缺少独立复现，应停止该流程并回到手工证据表。模型、工具和人工复核费用及时间均未知。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/helmd/package.json:70-89](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/package.json#L70-L89)
+
+宿主 peer 与 Node 版本。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-settings": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.2.2-0",
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.2.2-0",
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-settings": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.2.2-0",
+    "@deepseek-ai/dsh-tools": ">=0.1.5-rc.1 <0.2.0-0 || >=0.2.0-rc.1 <0.2.2-0",
+    "@deepseek-ai/schemastery": "^3.18.2"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/helmd/src/index.ts:24-25](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/index.ts#L24-L25)
+
+工具和系统提示依赖。
+
+```text
+export const name = 'helmd'
+export const inject = ['tools', 'systemPrompt']
+```
+
+**依据 3 · 源码核查**：[packages/helmd/src/seam.ts:154-189](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/seam.ts#L154-L189)
+
+宿主 subprocess 优先和本地回退。
+
+<details>
+<summary>查看原文（36行）</summary>
 
 ```text
 /**
@@ -742,103 +1004,15 @@ export async function runSeam(ctx: Context, argv: string[], cwd: string): Promis
       env: { ...process.env, PYTHONUTF8: '1', PYTHONIOENCODING: 'utf-8' },
     })
     return stdout
-  } catch (error) {
-    const e = error as any
-    throw new Error(`${program} failed: ${e?.stderr ?? e?.message ?? String(e)}`)
-  }
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[packages/helmd/src/gate.ts:1-9](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/gate.ts#L1-L9)
+**依据 4 · 源码核查**：[packages/helmd/src/case.ts:250-258](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/case.ts#L250-L258)
 
-persona不由star门控。
-
-```text
-// Star gate for helm-d.
-//
-// The persona is never gated: the active profile body always loads. The only
-// surface is the web panel popup (GET /api/helmd/gate) plus the CLI code file;
-// no model-facing tool is registered, so nothing about the ask enters a session.
-//
-// The device-flow session is a module singleton: one user_code at a time, polled
-// in the background, re-issued on expiry. The token is discarded inside
-// star-gate.ts (verifyStar) — nothing credential-shaped crosses this module.
-```
-
-#### 缺口
-
-- 封印人设正文和全部领域执行脚本没有完整独立审计。
-  **影响**：不据静态结构推断实际分析准确性或宿主执行保障。
-  **进一步探讨**：由具审计能力者在无网络离线样本环境记录最终提示、工具定义与实际调用，确认授权边界和结果正确性，不能靠减少拒绝验收。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 采用和退出如何界定，可提出什么可证伪改进？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-建议观察。证据组织与行为干预捆绑，本轮没有确认只启用证据层且负担可控的交付路径；不把它直接接入重要安全报告。首次需核宿主指纹、preset、人设、脚本、解释器和样本范围；持续有模型重试、进程资源、证据增长及人工审阅；失败需重绑定并核部分动作与工件，禁用不会自动迁走案例或撤销脚本副作用。现金/时间均未知，不能用MIT、目录或按钮状态填成零成本。
-
-可借鉴横切持久化与磁盘resume，但应分离已执行动作、原始完整hash、留存截断hash、引用摘录和人工支持判定。当前只有编号和非空命令，未验证假设是增加逐finding摘录与独立复核，并让证据层可不启用描述/模型干预。固定离线样本、模型及总预算，对照人工证据表、当前机制和分离+复核方案，盲审结论支持率、遗漏、重复执行、人工时间及模型费用。若支持率不提高，或新增复核/接线负担超过减少的返工，就否定，不把未做方案计成当前能力。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/helmd/src/persist.ts:90-108](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/persist.ts#L90-L108)
-
-可独立思考的注册横切层。
-
-<details>
-<summary>查看原文（19行）</summary>
+长输出截断。
 
 ```text
-export function applyPersistenceWrap(ctx: Context): () => void {
-  const target = ctx.tools as unknown as {
-    register: (def: { name: string; execute?: (...a: any[]) => any }) => void
-  }
-  const originalRegister = target.register
-  target.register = (def) => {
-    if (!def || typeof def.execute !== 'function' || isNoPersist(def.name)) {
-      return originalRegister.call(ctx.tools, def)
-    }
-    const original = def.execute.bind(def)
-    ;(def as any).execute = async (args: unknown, exec?: { agent?: { id?: string } }) => {
-      const result = await original(args, exec)
-      return await persistHook(exec?.agent?.id, def.name, result, exec?.agent)
-    }
-    return originalRegister.call(ctx.tools, def)
-  }
-  return () => {
-    target.register = originalRegister
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/helmd/src/case.ts:238-258](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/case.ts#L238-L258)
-
-完整hash与留存范围的界面需求。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-  const sha = createHash('sha256').update(content, 'utf8').digest('hex')
-  // Dedup: if an evidence file with the same content hash exists, return it.
-  const files = await readdir(join(caseDir, 'evidence')).catch(() => [] as string[])
-  for (const f of files) {
-    if (!/^E-\d{3,}-/.test(f)) continue
-    const existing = await readFile(join(caseDir, 'evidence', f), 'utf8').catch(() => '')
-    const existingSha = createHash('sha256').update(existing, 'utf8').digest('hex')
-    if (existingSha === sha) {
-      const existingId = /^E-(\d{3,})-/.exec(f)?.[1]
-      if (existingId) return { id: `E-${existingId}`, path: join(caseDir, 'evidence', f), sha256: sha, dedup: `E-${existingId}` }
-    }
-  }
   const id = await nextEvidenceId(caseDir)
   const safeTool = toolLabel.replace(/[^a-zA-Z0-9_-]+/g, '_').slice(0, 40) || 'output'
   const capped = content.length > 256 * 1024
@@ -850,149 +1024,12 @@ export function applyPersistenceWrap(ctx: Context): () => void {
   return { id, path, sha256: sha }
 ```
 
-</details>
+**依据 5 · 源码核查**：[packages/helmd/src/health.ts:271-293](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/health.ts#L271-L293)
 
-**依据 3 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:215-230](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/tools/caseflow.ts#L215-L230)
-
-当前finding校验不足语义判断。
+备份与修复边界。
 
 <details>
-<summary>查看原文（16行）</summary>
-
-```text
-    async execute(args: { title: string; detail: string; evidence_ids: string[]; repro_cmd: string }, exec?: ExecLike) {
-      const active = getCase(exec?.agent?.id)
-      if (!active) return 'No active case. begin_case() first — findings need an evidence chain.'
-      const check = await validateEvidenceIds(active.dir, args.evidence_ids ?? [])
-      if (!check.ok) {
-        return [
-          `REJECTED — unknown evidence ids: ${check.missing.join(', ')}`,
-          `known ids: ${check.known.join(', ') || '(none)'}`,
-          'Cite only ids that exist in evidence/. Run the tool that produces the proof first.',
-        ].join('\n')
-      }
-      if ((args.repro_cmd ?? '').trim() === '') {
-        return 'REJECTED — repro_cmd is required: a finding without a reproducible command is not a conclusion.'
-      }
-      await appendFinding(active.dir, args.title, args.detail, args.evidence_ids ?? [], args.repro_cmd)
-      return `finding recorded: ${args.title} [${(args.evidence_ids ?? []).join(', ')}]\nrepro: ${args.repro_cmd.trim()}`
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/helmd/src/index.ts:30-51](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/index.ts#L30-L51)
-
-证据与行为干预捆绑。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-export function apply(ctx: Context): void {
-  // Description wash FIRST: normalize any "denial is final" tool wording before
-  // any domain tool registers (defensive layer — current helmd descriptions are clean).
-  const unwash = applyDescriptionWash(ctx)
-  // Persistence wrap FIRST: every later-registered domain tool gains
-  // evidence persistence without per-tool edits (soft gate).
-  const unwrap = applyPersistenceWrap(ctx)
-  try {
-    // ICA context: behavior demonstrations as durable user-role snapshot (L2).
-    // Registered before everything else — it needs systemPrompt only.
-    registerIcaContext(ctx)
-
-    // Bootstrap filter: first request only exposes the platform shell + read
-    applyBootstrapFilter(ctx, {
-      shellTools: [NATIVE_SHELL],
-      commonTools: ['read'],
-      promoteOn: 'either',
-    })
-
-    // Advisory ledger: producers submit before the renderer runs its post-next render.
-    registerAdvisoryHook(ctx)
-    registerLlmStreamHook(ctx)
-```
-
-</details>
-
-#### 缺口
-
-- 没有分离证据层的已验收配置、真实采用与合格任务成本。
-  **影响**：不据静态结构推断实际分析准确性或宿主执行保障。
-  **进一步探讨**：先核可审完整源码与隔离方案，再用新离线样本对照；未改善正确性或恢复负担时停止。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 健康入口何时自动写preset，备份与生效边界是什么？
-
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程、效果与总成本、缺陷与关键质疑
-
-#### 完整回答
-
-health的apply在webServer/tools就绪后调用evaluateHealth并保存启动期结果。evaluateHealth先判断healable状态，再读实际healPolicy：默认auto对带本生成器指纹的STALE/HOST_UPGRADED尝试修复，无header不默认覆盖；off不写，force可对可修复状态强制生成。函数上方仍有“default report-only”的陈旧注释，实际分支以healPolicy/shouldRepair为准。修复先尝试copyFileSync到同名.bak，但备份失败被吞而不阻止后续写入，因此不能承诺一定保有恢复点。
-
-resolveGenerator只在预期安装布局找到脚本时生效；找不到返回unavailable。找到后spawnSync当前Node运行gen-preset --out目标，限60秒；生成器读取宿主standard，去除原persona再加入本包persona/helmd行，构成带宿主hash的patch。已有内容相同只保mtime，否则mkdir后writeFileSync直接覆盖，并非原子rename或全局事务。脚本失败、写盘/备份权限、宿主standard不兼容都可能使修复未完成；强制覆盖尤其要防手工文件。生成后只重评静态结构，仍须用户重启Host并核首请求工具目录，不能把healed当运行中preset已正确替换。首次接入和失败恢复都应记录原patch、.bak是否确实存在、实际新内容和重启结果。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/helmd/src/health.ts:120-143](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L120-L143)
-
-真实auto/off/force策略。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-/**
- * Drift-repair policy:
- *   unset → repair a deployed preset that carries our fingerprint header (provenance is
- *           provable: it is an artifact we generated), and only report one without a
- *           header (it may be hand-written, so overwriting it is the user's call);
- *   `0`   → never write — escape hatch for a locked-down or hand-managed deployment;
- *   `1`   → repair every healable status, header or not.
- * A repair keeps the previous file as `.bak` first. Restarting dsh and asserting the
- * catalog (MAINTENANCE §8) stays the user's step: this only re-syncs the file.
- */
-function healPolicy(): 'auto' | 'off' | 'force' {
-  const flag = process.env.HELMD_AUTO_HEAL?.trim().toLowerCase()
-  if (flag === '0' || flag === 'false' || flag === 'no') return 'off'
-  if (flag === '1' || flag === 'true' || flag === 'yes') return 'force'
-  return 'auto'
-}
-
-/** Statuses whose deployed file carries the gen-preset header, i.e. provably our artifact. */
-const DERIVED_STATUSES = new Set(['STALE', 'HOST_UPGRADED'])
-
-function shouldRepair(status: string, policy: 'auto' | 'off' | 'force'): boolean {
-  if (policy === 'off') return false
-  if (policy === 'force') return true
-  return DERIVED_STATUSES.has(status)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/helmd/src/health.ts:153-160](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L153-L160)
-
-安装布局与生成器可得性。
-
-```text
-/** Locate the bundled generator that rewrites the deployed preset from the host standard. */
-function resolveGenerator(): string | null {
-  try {
-    const p = resolve(fileURLToPath(new URL('.', import.meta.url)), '..', 'scripts', 'gen-preset.mjs')
-    return existsSync(p) ? p : null
-  } catch {
-    return null
-  }
-```
-
-**依据 3 · 源码核查**：[packages/helmd/src/health.ts:237-261](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L237-L261)
-
-备份失败不阻止、同步生成与超时。
-
-<details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
 function autoHealPreset(): { healed: boolean; verdict: string } {
@@ -1018,123 +1055,131 @@ function autoHealPreset(): { healed: boolean; verdict: string } {
     }
     const anchor = process.platform === 'win32' ? '[pwsh, read]' : '[bash, read]'
     return { healed: true, verdict: `restart dsh and assert the first request is ${anchor} (MAINTENANCE §8)` }
-  } catch (e) {
-    return { healed: false, verdict: `failed (${(e as Error).message})` }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/helmd/src/health.ts:351-365](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L351-L365)
-
-判状态后写入并重评。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export function evaluateHealth(): HelmdHealth {
-  const first = evaluateHealthCore()
-  if (!HEALABLE.has(first.status)) return first
-  const policy = healPolicy()
-  if (!shouldRepair(first.status, policy)) {
-    first.autoHeal = reportOnlyVerdict(first.status, policy)
-    return first
-  }
-  const outcome = autoHealPreset()
-  if (!outcome.healed) {
-    first.autoHeal = outcome.verdict
-    return first
-  }
-  const healed = evaluateHealthCore()
-  healed.autoHeal = `healed (${first.status} → ${healed.status}) — ${artifactVerdict(healed)}; ${outcome.verdict}`
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/helmd/src/health.ts:373-385](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/packages/helmd/src/health.ts#L373-L385)
-
-apply实际调用健康评估。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-export function apply(ctx: Context): void {
-  // tools 必须在列：api-routes 的 /api/helmd/tools 读 ctx.tools，cordis 的注入守卫
-  // 会对未声明的服务抛 `cannot get property "tools" without inject`（路由处理器
-  // 接住后对外表现为 HTTP 500）。
-  ctx.inject(['webServer', 'tools'], (webCtx) => {
-    try {
-      // Once per boot — the standing-mount semantics make boot the only
-      // moment this verdict is true (see module comment).
-      const health = evaluateHealth()
-      registerHelmdApi(webCtx, () => health)
-    } catch (e) {
-      console.error(`[helmd-health] webServer route registration failed: ${String((e as Error)?.message ?? e)}`)
-    }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[scripts/gen-preset.mjs:3-12](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/scripts/gen-preset.mjs#L3-L12)
-
-生成内容来源与替换职责。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
- * gen-preset.mjs — generate the package-internal preset patch
- * (`preset.generated.patch.yml`) from the HOST's own installed standard preset.
- *
- * 0.1.7 shape: a preset is ONE composition entry (`name: '@deepseek-ai/dsh-agent-preset'`)
- * whose `config.plugins` list carries the platform rows; the standard lives at
- * `<dsh>/…/dsh-web-app/presets/standard.patch.yml`. Our generated file is a
- * sibling insert-patch declaring preset id `helmd`, loaded through the bundle's
- * `dsh.bundle.patch` array — there is no `.agent-presets/` deployment step anymore.
- *
- * Output = host `config.plugins` − host persona + luna persona + helmd row.
-```
-
-</details>
-
-**依据 7 · 源码核查**：[scripts/gen-preset.mjs:380-400](https://github.com/ADWMC/helm-d/blob/e5a68f88a6017dd1bb393e2d020c2c1bf091154c/scripts/gen-preset.mjs#L380-L400)
-
-相同内容保持mtime，否则直接写目标。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-let wroteAny = false
-for (const p of outPaths) {
-  const oldFp = fileFingerprint(p)
-  mkdirSync(dirname(p), { recursive: true })
-  // Avoid changing mtime when the generated bytes are already current. dsh
-  // uses the composition file stamp to decide whether to rebuild a standing
-  // mount; a no-op install must not trigger a second registration attempt.
-  let current = null
-  try { current = readFileSync(p, 'utf8') } catch { /* new output */ }
-  if (current !== null && normalizeEol(current) === generated) {
-    console.log(`unchanged: ${p}`)
-    continue
-  }
-  writeFileSync(p, generated, 'utf8')
-  wroteAny = true
-  console.log(`generated: ${p}`)
-  if (oldFp !== null && oldFp !== hostHash) {
-    console.log(`  note: host standard changed since last generation (${oldFp.slice(0, 12)}… → ${hostHash.slice(0, 12)}…)`)
-  }
-}
-if (!wroteAny) console.log('nothing to write')
 ```
 
 </details>
 
 #### 缺口
 
-- 生成脚本与宿主布局/权限、备份失败、写盘中断和重启后的实际目录尚未验收。
-  **影响**：不据静态结构推断实际分析准确性或宿主执行保障。
-  **进一步探讨**：在独立副本分别触发auto/off/force、缺header、备份失败及生成中断，逐文件核旧/新/.bak，再重启检查目录，不能以healed代通过。
+- 未核所有脚本、目标权限和真实恢复成本
+  **影响**：不能断言适合重要交付或有净节时
+  **进一步探讨**：在获得授权的隔离环境比对执行权限和独立证据表。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 把可审证据与行为干预拆开能否改善结果可信度？
+
+**研究主题**：新假设与验证、贡献与相对优势
+
+#### 完整回答
+
+未验证假设是单独提供可选择的留证层，保留原始完整输出及其摘要，并要求发现关联具体摘录和独立复核，再将模型行为设置作为独立可审选择。相较当前编号、命令文本与工具轨迹检查，潜在增量是更容易核对证据是否支持结论，但增加存储、隐私与审核负担；如果手工日志和独立审核已同样可靠或额外流程增加错误，则不推广。应以同一批授权样本比较原始证据完整性、错误结论通过率与审核人时；当前没有原型或效果数据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/helmd/src/persist.ts:69-87](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/persist.ts#L69-L87)
+
+实际字符串留存路径。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+async function persistHook(
+  sessionId: string | undefined,
+  toolName: string,
+  result: unknown,
+  agent: unknown,
+): Promise<unknown> {
+  if (typeof result !== 'string') return result
+  const active = getCase(sessionId)
+  if (!active) {
+    return result + '\n[no active case — output NOT persisted. begin_case(goal, samples) keeps evidence.]'
+  }
+  const firstLine = result.split('\n').find((l) => l.trim()) ?? ''
+  const { id } = await saveEvidence(active.dir, toolName, result, firstLine)
+  try {
+    await nudgeCaseState(sessionId, agent, active)
+  } catch {
+    // The nudge is best-effort; a case/ledger read failure must not break the tool result.
+  }
+  return result + `\n[evidence: ${id} saved to ${active.name}]`
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/helmd/src/case.ts:232-258](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/case.ts#L232-L258)
+
+原始输出摘要和截断存储。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+export async function saveEvidence(
+  caseDir: string,
+  toolLabel: string,
+  content: string,
+  summary: string,
+): Promise<{ id: string; path: string; sha256: string; dedup?: string }> {
+  const sha = createHash('sha256').update(content, 'utf8').digest('hex')
+  // Dedup: if an evidence file with the same content hash exists, return it.
+  const files = await readdir(join(caseDir, 'evidence')).catch(() => [] as string[])
+  for (const f of files) {
+    if (!/^E-\d{3,}-/.test(f)) continue
+    const existing = await readFile(join(caseDir, 'evidence', f), 'utf8').catch(() => '')
+    const existingSha = createHash('sha256').update(existing, 'utf8').digest('hex')
+    if (existingSha === sha) {
+      const existingId = /^E-(\d{3,})-/.exec(f)?.[1]
+      if (existingId) return { id: `E-${existingId}`, path: join(caseDir, 'evidence', f), sha256: sha, dedup: `E-${existingId}` }
+    }
+  }
+  const id = await nextEvidenceId(caseDir)
+  const safeTool = toolLabel.replace(/[^a-zA-Z0-9_-]+/g, '_').slice(0, 40) || 'output'
+  const capped = content.length > 256 * 1024
+    ? content.slice(0, 256 * 1024) + `\n[truncated at 256KB; full length ${content.length}]\n`
+    : content
+  const path = join(caseDir, 'evidence', `${id}-${safeTool}.txt`)
+  await writeFile(path, capped, 'utf8')
+  await appendTimeline(caseDir, `${toolLabel} → ${id} — ${summary.slice(0, 80)}`)
+  return { id, path, sha256: sha }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/helmd/src/tools/caseflow.ts:264-278](https://github.com/ADWMC/helm-d/blob/1e6b954dd290267ce330e19cea6368f7d2184683/packages/helmd/src/tools/caseflow.ts#L264-L278)
+
+现有编号与命令文本检查。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+      exec?: ExecLike,
+    ) {
+      const active = getCase(exec?.agent?.id)
+      if (!active) return 'No active case. begin_case() first — findings need an evidence chain.'
+      const check = await validateEvidenceIds(active.dir, args.evidence_ids ?? [])
+      if (!check.ok) {
+        return [
+          `REJECTED — unknown evidence ids: ${check.missing.join(', ')}`,
+          `known ids: ${check.known.join(', ') || '(none)'}`,
+          'Cite only ids that exist in evidence/. Run the tool that produces the proof first.',
+        ].join('\n')
+      }
+      if ((args.repro_cmd ?? '').trim() === '') {
+        return 'REJECTED — repro_cmd is required: a finding without a reproducible command is not a conclusion.'
+      }
+```
+
+</details>
+
+#### 缺口
+
+- 没有独立证据层原型与比较实验
+  **影响**：不能证明提高可信度或降低总成本
+  **进一步探讨**：以隔离样本盲审原始日志与候选完整证据，统计错误通过及时间。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

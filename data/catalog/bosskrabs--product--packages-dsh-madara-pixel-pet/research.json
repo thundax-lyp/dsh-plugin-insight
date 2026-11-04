@@ -1,0 +1,447 @@
+{
+    "schema_version": 4,
+    "id": "8a5b6561527f9824a16df2a1d709fd16",
+    "identity": "github:1196157387:packages-dsh-madara-pixel-pet",
+    "slug": "bosskrabs--product--packages-dsh-madara-pixel-pet",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1196157387:packages-dsh-madara-pixel-pet",
+            "repository_id": 1196157387,
+            "component_id": "packages-dsh-madara-pixel-pet",
+            "repository": "BossKrabs/product",
+            "path": "packages/dsh-madara-pixel-pet",
+            "aliases": [],
+            "name": "宇智波斑像素桌宠",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "13ae4eaf8fbdf538830c6547509a4a8c7a3ef7eeb4622b2531707b4b3c9ef5a1",
+                "code": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "maintenance": "993eeb410b77487b256c7463e62eaee57f15c0b258bcce63b71d285b379cd0b1"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T09:11:52.721Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/README.md",
+                            "content_sha256": "8d92195e58ba889fef551592416de18c0af07a032b309d5cd17764958c4a2f59"
+                        }
+                    ],
+                    "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                    "captured_at": "2026-11-04T09:11:52.721Z",
+                    "summary": "以像素斑角色显示 Harness 任务状态，支持拖动及点击互动。",
+                    "artifact": "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-pet/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/README.md",
+                            "content_sha256": "8d92195e58ba889fef551592416de18c0af07a032b309d5cd17764958c4a2f59"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/package.json",
+                            "content_sha256": "d2fca12f5ec786e42eb42dec570b2d77370e24fabee5e91d012eef634aa21361"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/index.js",
+                            "content_sha256": "22d64e1160ec5684b5f4264a517156ad0fe849bb9dc5b4dd9d82c9cd19327266"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/settings-scope.js",
+                            "content_sha256": "2784908b1bdfc6739774d5c65eefd9781f2320e173f314d2396212d93f86974d"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-pet/ASSET-NOTICE.md",
+                            "content_sha256": "80c6fb3054d6152cdb394123920020a9b447d743f152c4e31fbf554f45f14e06"
+                        }
+                    ],
+                    "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                    "captured_at": "2026-11-04T09:11:52.721Z",
+                    "summary": "核查 packages/dsh-madara-pixel-pet/README.md、packages/dsh-madara-pixel-pet/package.json、packages/dsh-madara-pixel-pet/index.js、packages/dsh-madara-pixel-pet/settings-scope.js、packages/dsh-madara-pixel-pet/ASSET-NOTICE.md；本包将会话事件送入上游 reducer 并通过原生 helper 显示，配置与文件运行目录独立。",
+                    "artifact": "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-pet/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定源码静态核查本组件与声明依赖，不运行 Windows helper；材料检出帧未落盘但 Git 树有帧路径。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望以像素角色观察任务状态的 Windows x64 DSH 用户。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "本包将会话事件送入上游 reducer 并通过原生 helper 显示，配置与文件运行目录独立。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定源码静态核查本组件与声明依赖，不运行 Windows helper；材料检出帧未落盘但 Git 树有帧路径。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "组件版本 1.0.0，声明 Windows x64、Node >=22.19 与 DSH 0.2.1-rc.2；未核线上安装包。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 条件 | 用途 | 边界 |\n|---|---|---|\n| Windows x64 与兼容 DSH | 宿主和原生窗口 | 其他平台 apply 直接返回 |\n| dsh-dafeiyu 0.1.22 | helper 和 reducer | 上游数据行为未审 |\n| 本地运行目录 | 复制程序与素材 | 关闭后保留文件 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 资源或费用 | 人工时间 |\n|---|---|---|\n| 首次 | 下载与磁盘占用未测 | 安装与兼容验证 |\n| 持续 | 原生进程资源未测 | 调整和观察 |\n| 恢复 | 保留日志与运行库 | 停用和检查进程 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q05](#research-q05) 在隔离 profile 测试并确认依赖及素材权利，不适用时停用。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 固定源码支持 | 未确定 |\n|---|---|---|\n| 角色显示 | 资源清单与 helper 接线 | 实际显示和体验 |\n| 任务状态 | 事件传入上游 reducer | 状态准确性 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 复用上游 helper 并清理订阅；[Q03](#research-q03) 内容更新依赖大小和清单哈希。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 主要提供角色素材、独立运行目录与设置接入；状态和原生运行继承上游。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) helper 只比较大小、皮肤只比较 manifest 哈希；同版本资源变化可能未更新，尚未复现。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q06](#research-q06) 建议评估资源内容摘要，需结合发布保证与测量判断。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:11:52.721Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T09:11:52.721Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "reviewed_at": "2026-11-04T09:11:52.721Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                        "area": "code",
+                        "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 复用上游 helper 与事件 reducer，novelty、mechanism 小幅；隔离运行目录可条件迁移，transferability 和 simplification 小幅。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 通过角色形象改善观察体验属小幅流程增量；delivery、reach 与 economics 未经对照，限于机制推断。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "希望在 Windows 上用像素角色观察 DSH 状态的用户可以先观察这个桌宠。它加入独立角色和设置，但原生执行依赖上游且实际画面、资源更新和隐私边界尚未验证。如果窗口影响工作、状态不准或不能接受素材与依赖条件，应停用并返回原有任务界面。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 明确用户、外观与上游基线，超过 8 分；缺用户和体验对照，不到 23 分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 角色和独立配置提供小幅差异；核心状态与窗口依赖上游，不到 13 分。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 和 [Q03](#research-q03) 有源码及失败路径，超过 0 分；未执行原生宿主与依赖，不到 13 分。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q05](#research-q05) 可停用并恢复原界面，高于 0 分；进程、文件和兼容成本未测，不到 10 分。"
+                    }
+                },
+                "score": 32,
+                "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "reviewed_at": "2026-11-04T09:11:52.721Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-pet-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1196157387:packages-dsh-madara-pixel-pet",
+                        "area": "code",
+                        "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1196157387:packages-dsh-madara-pixel-pet",
+            "repository": "BossKrabs/product",
+            "path": "packages/dsh-madara-pixel-pet",
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "fingerprints": {
+                "directory": "13ae4eaf8fbdf538830c6547509a4a8c7a3ef7eeb4622b2531707b4b3c9ef5a1",
+                "code": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "maintenance": "993eeb410b77487b256c7463e62eaee57f15c0b258bcce63b71d285b379cd0b1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T08:17:32Z",
+            "analysis_sha256": "a54e3ccfe262988f369d73fa746952136259136b8e8f25f4bad0b82e0f773451"
+        },
+        "publication.metadata": "data/catalog/bosskrabs--product--packages-dsh-madara-pixel-pet/meta.json",
+        "publication.summaries": {
+            "text": "以像素斑角色显示 Harness 任务状态，支持拖动及点击互动。",
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "source_url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "items": {
+                "界面": "通过上游原生 helper 显示像素角色与状态。",
+                "事件监听": "将会话事件转交上游 reducer。"
+            },
+            "table": "| 能力 | 用途 | 限制 |\n|---|---|---|\n| 原生桌宠 | 显示动作和交互 | Windows x64，未实测 |\n| 任务状态 | 消费会话事件 | reducer 属于上游 |"
+        },
+        "publication.advice": {
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "text": "[Q05](#research-q05) 在隔离 profile 测试并确认依赖及素材权利，不适用时停用。"
+        },
+        "registry": "data/plugins/bosskrabs--product--packages-dsh-madara-pixel-pet",
+        "reports": "# 宇智波斑像素桌宠\n\n> 以像素斑角色显示 Harness 任务状态，支持拖动及点击互动。\n\n## 研究范围\n\n- **仓库**：[BossKrabs/product](https://github.com/BossKrabs/product)\n- **版本号**：1.0.0（[固定提交 2eb032cb14be44c35501757fd4f3f25449730a17](https://github.com/BossKrabs/product/tree/2eb032cb14be44c35501757fd4f3f25449730a17)）\n- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持静态接线和资源更新判断；原生桌面及完整依赖未验证。\n\n## 洞察短评\n\n- **用途**：希望以像素角色观察任务状态的 Windows x64 DSH 用户。\n- **亮点**：[Q01](#research-q01) 主要提供角色素材、独立运行目录与设置接入；状态和原生运行继承上游。\n- **思考**：[Q03](#research-q03) helper 只比较大小、皮肤只比较 manifest 哈希；同版本资源变化可能未更新，尚未复现。\n- **建议**：[Q06](#research-q06) 建议评估资源内容摘要，需结合发布保证与测量判断。\n\n采用建议：[Q05](#research-q05) 在隔离 profile 测试并确认依赖及素材权利，不适用时停用。\n\n## 核心贡献\n\n[Q01](#research-q01) 主要提供角色素材、独立运行目录与设置接入；状态和原生运行继承上游。\n\n## 关键质疑\n\n[Q03](#research-q03) helper 只比较大小、皮肤只比较 manifest 哈希；同版本资源变化可能未更新，尚未复现。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q06](#research-q06) 建议评估资源内容摘要，需结合发布保证与测量判断。\n\n在 Windows x64 隔离环境核实画面、状态、交互、helper 生命周期和更新行为。\n\n## 场景与替代办法\n\n希望以像素角色观察任务状态的 Windows x64 DSH 用户。\n\n使用 DSH 原有任务界面或上游大肥鱼桌宠；实际体验差异未测。\n\n## 依赖与流程\n\n| 条件 | 用途 | 边界 |\n|---|---|---|\n| Windows x64 与兼容 DSH | 宿主和原生窗口 | 其他平台 apply 直接返回 |\n| dsh-dafeiyu 0.1.22 | helper 和 reducer | 上游数据行为未审 |\n| 本地运行目录 | 复制程序与素材 | 关闭后保留文件 |\n\n| 步骤 | 动作 | 结果或边界 |\n|---|---|---|\n| 安装 | 安装依赖及本包 | 需匹配平台 |\n| 启动 | 复制 helper 与素材 | 失败记录日志 |\n| 运行 | 会话事件交给 reducer | 上游决定映射 |\n| 停止 | 停用并检查进程 | 本地文件保留需核实 |\n\n## 成本与效果\n\n| 阶段 | 资源或费用 | 人工时间 |\n|---|---|---|\n| 首次 | 下载与磁盘占用未测 | 安装与兼容验证 |\n| 持续 | 原生进程资源未测 | 调整和观察 |\n| 恢复 | 保留日志与运行库 | 停用和检查进程 |\n\n| 效果 | 固定源码支持 | 未确定 |\n|---|---|---|\n| 角色显示 | 资源清单与 helper 接线 | 实际显示和体验 |\n| 任务状态 | 事件传入上游 reducer | 状态准确性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查桌宠增量、上游依赖、文件准备与采用边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 适合谁，相对原版桌宠增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n希望用像素斑形象显示 DSH 任务状态的 Windows x64 用户可考虑此包。它提供角色动作清单、独立运行目录、配置与宿主接线；状态转换和原生 helper 来自 dsh-dafeiyu，并非此包自行实现。相对上游原版主要增量是形象和隔离的实例，而非新的任务理解能力；README 声称 16 组动作和交互，未实际展示验证。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-madara-pixel-pet/README.md:1-13](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md#L1-L13)\n\n作者说明形象、平台和使用。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n# 宇智波斑像素桌宠\n\n带有红甲、长发和写轮眼的像素风宇智波斑原生桌面伴侣。支持待机眨眼、思考、结印工作、搜索张望、等待、完成、错误、拖拽、落地、摸头、戳动及空闲动作，共 16 组。任务状态直接来自 Harness 会话事件。\n\n## 安装与使用\n\n支持 Windows x64，已验证 Harness 0.2.1-rc.2。通过官方桌面应用的「插件 → 添加插件」选择 dsh-madara-pixel-pet-1.0.0.tgz，安装后启用。依赖会从原作者的 dsh-dafeiyu@0.1.22 自动安装；无需单独启用大肥鱼 bundle。\n\n在本插件的配置中调整角色大小、气泡大小、空闲动作频率、减少动态、提示音和气泡显示。角色可拖动，松手播放落地；不同位置点击或双击触发互动。随 Harness 启动和退出。\n\n如果已经启用原版大肥鱼，两者会各显示一个角色。只想保留斑时，在插件管理中关闭大肥鱼，保留本插件。关闭或卸载本插件会停止斑的进程；设置、日志和本地运行库保留供重装使用。\n\n本插件不会修改大肥鱼文件，也不需要管理员权限。运行目录是 DSH_HOME/plugins/madara-pixel-pet；未指定 DSH_HOME 时使用 ~/.dsh/plugins/madara-pixel-pet。首次启动会把原作者预编译运行库和本包的像素帧复制到独立目录。首次联网安装仍需下载上游依赖；运行时不调用图像生成或模型 API。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-madara-pixel-pet/README.md:19-21](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md#L19-L21)\n\n作者说明上游归属。\n\n```text\n## 来源与授权\n\n原生运行库、任务状态转换和进程管理来自 QCYTSN/dsh-dafeiyu；本包新增独立的像素斑素材、动作清单、运行目录及生命周期与配置接入。详见 THIRD-PARTY-NOTICES.md、ASSET-NOTICE.md 和 LICENSE。人物是非官方同人外观。\n```\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:7-9](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L7-L9)\n\n引入上游 reducer 和 helper。\n\n```text\nimport Schema from '@deepseek-ai/schemastery';\nimport {CompanionReducer,HelperProcess} from 'dsh-dafeiyu';\nimport {createSettingsScope} from './settings-scope.js';\n```\n\n#### 缺口\n\n- 没有实际用户或 Windows 桌面效果对照\n  **影响**：不能断言偏好、效率或视觉质量\n  **进一步探讨**：在兼容环境比较原版及本包。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 状态如何到原生窗口？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nWindows x64 apply 创建 settings scope、准备独立运行目录，构造上游 HelperProcess 和 CompanionReducer，订阅全局 session/event 与 session/disposed。事件交给 reducer，所得消息送 helper；配置变化可更新环境和 config 消息，停止时清订阅并终止 helper。事件处理异常被捕获并记录；helper 的内部行为、事件映射与窗口绘制由外部依赖决定，本次没有检查其执行结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:34-54](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L34-L54)\n\n运行目录、二进制与资源复制。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function runtimeHome(env=process.env){return join(env.DSH_HOME||join(homedir(),'.dsh'),'plugins','madara-pixel-pet');}\nexport function prepareRuntime(options={}){\n  const dependencyRoot=options.dependencyRoot||dirname(require.resolve('dsh-dafeiyu/package.json'));\n  const base=options.runtimeRoot||runtimeHome();\n  const directory=join(base,pkg.version),manifest=join(root,'assets','pet-manifest.json');\n  const digest=createHash('sha256').update(readFileSync(manifest)).digest('hex');\n  const executable=join(directory,'madara-pixel-pet-helper.exe');\n  const original=join(dependencyRoot,'runtime','bin','win32-x64','dsh-dafeiyu-helper.exe');\n  mkdirSync(directory,{recursive:true});\n  if(!existsSync(executable)||statSync(executable).size!==statSync(original).size){const temporary=executable+'.new';copyFileSync(original,temporary);renameSync(temporary,executable);}\n  const marker=join(directory,'skin.sha256');\n  if(!existsSync(marker)||readFileSync(marker,'utf8')!==digest){\n    const assets=join(directory,'assets');mkdirSync(assets,{recursive:true});\n    cpSync(join(root,'assets','pet'),join(assets,'pet'),{recursive:true});\n    for(const file of ['sounds','cursors','cursor_grab.cur','cursor_grabbing.cur']){const source=join(dependencyRoot,'assets',file);if(existsSync(source))cpSync(source,join(assets,file),{recursive:true});}\n    copyFileSync(manifest,join(assets,'pet-manifest.json.new'));renameSync(join(assets,'pet-manifest.json.new'),join(assets,'pet-manifest.json'));\n    // Write the marker only after all runtime assets are present.\n    const bytes=Buffer.from(digest);const fs=require('node:fs');fs.writeFileSync(marker,bytes);\n  }\n  return {command:executable,args:[],tempDirectory:join(base,'tmp'),logFile:join(base,'helper.log'),env:{DSH_DAFEIYU_LAYOUT_PATH:join(base,'layout.json')}};\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:55-75](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L55-L75)\n\nhelper、reducer 与配置接线。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nexport function createController(ctx,settings,runtime,engine={HelperProcess,CompanionReducer}){\n  let bridge=null,reducer=null,disposed=false;\n  const logger=ctx.logger||console;\n  const message=(kind,data={})=>({protocolVersion:1,kind,timestamp:Date.now(),...data});\n  const launch=(config)=>{\n    if(disposed||bridge||!config.enabled)return;\n    reducer=new engine.CompanionReducer({includeSubagents:config.includeSubagents});\n    bridge=new engine.HelperProcess({...runtime,env:{...runtime.env,DSH_DAFEIYU_SCALE:String(config.scale),DSH_DAFEIYU_BUBBLE_SCALE:String(config.bubbleScale),DSH_DAFEIYU_REDUCED_MOTION:config.reducedMotion?'1':'0',DSH_DAFEIYU_SOUND_ENABLED:config.soundEnabled?'1':'0'},onSettingsChange:patch=>{void Promise.resolve(settings.update?.(patch)).catch(error=>logger.warn?.('像素斑设置未能保存',error));}},logger);\n    bridge.start();bridge.send(message('hello',{host:'deepseek-harness',pluginVersion:pkg.version}));bridge.send(message('state',{state:'IDLE',message:'等待新的任务',detail:'HARNESS · 像素宇智波斑'}));\n  };\n  const stop=()=>{bridge?.stop('madara-pet-disabled');bridge=null;reducer=null;};\n  const configure=(value)=>{\n    const next=normalize(value);if(!next.enabled){stop();return;}launch(next);if(!bridge)return;\n    Object.assign(bridge.options.env,{DSH_DAFEIYU_SCALE:String(next.scale),DSH_DAFEIYU_BUBBLE_SCALE:String(next.bubbleScale),DSH_DAFEIYU_ACTIVITY_LEVEL:next.activityLevel,DSH_DAFEIYU_REDUCED_MOTION:next.reducedMotion?'1':'0',DSH_DAFEIYU_SOUND_ENABLED:next.soundEnabled?'1':'0',DSH_DAFEIYU_BUBBLE_MODE:next.bubbleMode});\n    for(const m of reducer.setIncludeSubagents(next.includeSubagents))bridge.send(m);\n    bridge.send(message('config',{...next,soundStates:['SUCCESS','ERROR'],bubbleStates:['SUCCESS','ERROR','WAITING'],openUrl:'dsh://open',openLabel:'打开 Harness'}));\n  };\n  const event=(session,event)=>{if(!bridge||!reducer)return;try{for(const m of reducer.handle(session,event))bridge.send(m);}catch(error){logger.warn?.('像素斑未能处理任务事件',error);}};\n  const sessionDisposed=session=>{if(!bridge||!reducer)return;try{for(const m of reducer.disposeSession(session))bridge.send(m);}catch(error){logger.warn?.('像素斑未能移除任务状态',error);}};\n  const unwatch=settings.watch(configure);configure(settings.get());\n  return {event,sessionDisposed,configure,dispose(){disposed=true;unwatch?.();stop();}};\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:77-87](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L77-L87)\n\n平台守卫、订阅和清理。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport function apply(ctx,config={}){\n  if(process.platform!=='win32'||process.arch!=='x64'){ctx.logger?.warn?.('当前版本仅支持 Windows x64 原生桌宠。');return;}\n  ctx.effect(()=>{\n    let controller,settings,offEvent,offDisposed;\n    try{\n      settings=createSettingsScope(ctx,Config,config,normalize);\n      controller=createController(ctx,settings,prepareRuntime());\n      offEvent=ctx.on('session/event',controller.event,{global:true});offDisposed=ctx.on('session/disposed',controller.sessionDisposed,{global:true});\n    }catch(error){controller?.dispose();settings?.dispose?.();ctx.logger?.error?.('宇智波斑桌宠本次未能启动',error);return;}\n    return()=>{offEvent?.();offDisposed?.();controller.dispose();settings.dispose?.();};\n  },'madara-pixel-pet: native companion');\n```\n\n</details>\n\n#### 缺口\n\n- 没有执行 Windows 原生进程或核上游依赖内部\n  **影响**：不能验证状态映射、窗口绘制与进程实际退出\n  **进一步探讨**：隔离 Windows 环境观察状态和停止后进程。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 运行文件更新和失败处理有什么边界？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n运行目录按包版本划分；helper 不存在或大小不同才复制，上游可执行文件同大小变化不会触发替换。皮肤更新仅根据 pet-manifest.json 哈希，像素帧变化但清单字节未变时可能复用旧资源；只有复制成功后才写标记。prepareRuntime 失败会被 apply 捕获并记日志，插件不继续注册事件。当前材料检出没有工作树像素帧，Git 树列有帧路径；未把这个材料边界当作上游缺文件，也未验证打包文件完整性。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:34-53](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L34-L53)\n\nhelper 大小检查、manifest 哈希和复制。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function runtimeHome(env=process.env){return join(env.DSH_HOME||join(homedir(),'.dsh'),'plugins','madara-pixel-pet');}\nexport function prepareRuntime(options={}){\n  const dependencyRoot=options.dependencyRoot||dirname(require.resolve('dsh-dafeiyu/package.json'));\n  const base=options.runtimeRoot||runtimeHome();\n  const directory=join(base,pkg.version),manifest=join(root,'assets','pet-manifest.json');\n  const digest=createHash('sha256').update(readFileSync(manifest)).digest('hex');\n  const executable=join(directory,'madara-pixel-pet-helper.exe');\n  const original=join(dependencyRoot,'runtime','bin','win32-x64','dsh-dafeiyu-helper.exe');\n  mkdirSync(directory,{recursive:true});\n  if(!existsSync(executable)||statSync(executable).size!==statSync(original).size){const temporary=executable+'.new';copyFileSync(original,temporary);renameSync(temporary,executable);}\n  const marker=join(directory,'skin.sha256');\n  if(!existsSync(marker)||readFileSync(marker,'utf8')!==digest){\n    const assets=join(directory,'assets');mkdirSync(assets,{recursive:true});\n    cpSync(join(root,'assets','pet'),join(assets,'pet'),{recursive:true});\n    for(const file of ['sounds','cursors','cursor_grab.cur','cursor_grabbing.cur']){const source=join(dependencyRoot,'assets',file);if(existsSync(source))cpSync(source,join(assets,file),{recursive:true});}\n    copyFileSync(manifest,join(assets,'pet-manifest.json.new'));renameSync(join(assets,'pet-manifest.json.new'),join(assets,'pet-manifest.json'));\n    // Write the marker only after all runtime assets are present.\n    const bytes=Buffer.from(digest);const fs=require('node:fs');fs.writeFileSync(marker,bytes);\n  }\n  return {command:executable,args:[],tempDirectory:join(base,'tmp'),logFile:join(base,'helper.log'),env:{DSH_DAFEIYU_LAYOUT_PATH:join(base,'layout.json')}};\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:77-86](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L77-L86)\n\n准备失败与清理。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\nexport function apply(ctx,config={}){\n  if(process.platform!=='win32'||process.arch!=='x64'){ctx.logger?.warn?.('当前版本仅支持 Windows x64 原生桌宠。');return;}\n  ctx.effect(()=>{\n    let controller,settings,offEvent,offDisposed;\n    try{\n      settings=createSettingsScope(ctx,Config,config,normalize);\n      controller=createController(ctx,settings,prepareRuntime());\n      offEvent=ctx.on('session/event',controller.event,{global:true});offDisposed=ctx.on('session/disposed',controller.sessionDisposed,{global:true});\n    }catch(error){controller?.dispose();settings?.dispose?.();ctx.logger?.error?.('宇智波斑桌宠本次未能启动',error);return;}\n    return()=>{offEvent?.();offDisposed?.();controller.dispose();settings.dispose?.();};\n```\n\n</details>\n\n#### 缺口\n\n- 未检查所有资源字节、npm 包和同版本重装\n  **影响**：无法确认旧资源风险是否实际发生\n  **进一步探讨**：对同版本修改帧与同大小 helper 的隔离样本做更新测试。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 兼容、资产和隐私条件是什么？\n\n**研究主题**：依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包声明 Windows x64、Node >=22.19、DSH 0.2.1-rc.2，精确依赖 dsh-dafeiyu 0.1.22；首次准备会复制依赖中的原生程序和资源并写入 DSH_HOME 下本地目录。README 声称不读取屏幕或凭据，源码能看到事件转发但未审上游 helper 的所有数据处理，不能证明完整隐私行为。角色是非官方同人，资产通知说明代码 MIT 不授予角色权利；商业再分发需另核权利。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-pet/package.json:1-27](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/package.json#L1-L27)\n\n版本和平台声明。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n{\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=22.19\",\n    \"dsh\": \"0.2.1-rc.2\"\n  },\n  \"license\": \"SEE LICENSE IN LICENSE\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"madara\",\n    \"pixel-art\"\n  ],\n  \"publishConfig\": {\n    \"access\": \"public\",\n    \"registry\": \"https://registry.npmjs.org/\"\n  },\n  \"name\": \"dsh-madara-pixel-pet\",\n  \"description\": \"宇智波斑像素桌宠：16 组透明动作，跟随 Harness 任务状态，支持拖动与点击互动。\",\n  \"os\": [\n    \"win32\"\n  ],\n  \"cpu\": [\n    \"x64\"\n  ],\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-pet/package.json:43-54](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/package.json#L43-L54)\n\n精确依赖与 bundle。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  \"dependencies\": {\n    \"dsh-dafeiyu\": \"0.1.22\",\n    \"@deepseek-ai/schemastery\": \"3.18.4\"\n  },\n  \"scripts\": {\n    \"test\": \"node --test test/*.test.mjs\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:34-53](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L34-L53)\n\n本地复制与运行目录。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\nexport function runtimeHome(env=process.env){return join(env.DSH_HOME||join(homedir(),'.dsh'),'plugins','madara-pixel-pet');}\nexport function prepareRuntime(options={}){\n  const dependencyRoot=options.dependencyRoot||dirname(require.resolve('dsh-dafeiyu/package.json'));\n  const base=options.runtimeRoot||runtimeHome();\n  const directory=join(base,pkg.version),manifest=join(root,'assets','pet-manifest.json');\n  const digest=createHash('sha256').update(readFileSync(manifest)).digest('hex');\n  const executable=join(directory,'madara-pixel-pet-helper.exe');\n  const original=join(dependencyRoot,'runtime','bin','win32-x64','dsh-dafeiyu-helper.exe');\n  mkdirSync(directory,{recursive:true});\n  if(!existsSync(executable)||statSync(executable).size!==statSync(original).size){const temporary=executable+'.new';copyFileSync(original,temporary);renameSync(temporary,executable);}\n  const marker=join(directory,'skin.sha256');\n  if(!existsSync(marker)||readFileSync(marker,'utf8')!==digest){\n    const assets=join(directory,'assets');mkdirSync(assets,{recursive:true});\n    cpSync(join(root,'assets','pet'),join(assets,'pet'),{recursive:true});\n    for(const file of ['sounds','cursors','cursor_grab.cur','cursor_grabbing.cur']){const source=join(dependencyRoot,'assets',file);if(existsSync(source))cpSync(source,join(assets,file),{recursive:true});}\n    copyFileSync(manifest,join(assets,'pet-manifest.json.new'));renameSync(join(assets,'pet-manifest.json.new'),join(assets,'pet-manifest.json'));\n    // Write the marker only after all runtime assets are present.\n    const bytes=Buffer.from(digest);const fs=require('node:fs');fs.writeFileSync(marker,bytes);\n  }\n  return {command:executable,args:[],tempDirectory:join(base,'tmp'),logFile:join(base,'helper.log'),env:{DSH_DAFEIYU_LAYOUT_PATH:join(base,'layout.json')}};\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-madara-pixel-pet/README.md:15-21](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md#L15-L21)\n\n作者隐私和依赖声明。\n\n```text\n## 状态与隐私\n\n显示真实会话任务、工具调用和待办状态。不读取屏幕，不读取或发布账号凭据。内部错误被限制在本插件内，避免阻断 Harness 的其他会话事件订阅。\n\n## 来源与授权\n\n原生运行库、任务状态转换和进程管理来自 QCYTSN/dsh-dafeiyu；本包新增独立的像素斑素材、动作清单、运行目录及生命周期与配置接入。详见 THIRD-PARTY-NOTICES.md、ASSET-NOTICE.md 和 LICENSE。人物是非官方同人外观。\n```\n\n**依据 5 · 作者声明**：[packages/dsh-madara-pixel-pet/ASSET-NOTICE.md:1-5](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/ASSET-NOTICE.md#L1-L5)\n\n资产权利声明。\n\n```text\n# 素材与授权\n\n本项目是用户定制的非官方同人外观。宇智波斑和《火影忍者》的角色名称、形象及相关权利属于各自权利人；项目不声称拥有这些角色权利，也不声称得到原作或 DeepSeek 官方认可。\n\n项目代码适用 LICENSE 中的 MIT 许可；该代码许可不授予角色、商标或其他第三方素材的权利。人物素材由内置图像生成功能按用户要求生成。像素桌宠帧采用保留透明度的无损打包；完整图像生成提示词随源代码保留。\n```\n\n#### 缺口\n\n- 未审上游二进制、目标系统和素材权利\n  **影响**：不能确认隐私、兼容或再分发许可\n  **进一步探讨**：核依赖来源、数据流和相关权利。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何试用并停止？\n\n**研究主题**：采用判断、效果与总成本\n\n#### 完整回答\n\n已有兼容 Windows x64 宿主且愿意使用同人角色的用户可在隔离 profile 验证启用、任务事件、声音、缩放、拖动和关闭；先了解运行目录保留策略。若 helper 无法启动、任务状态不准、影响桌面操作或不接受数据与素材边界，应停用并回到原有状态界面；README 称日志和运行库保留，需核实后再按个人需要处理。没有目标环境测试，安装耗时、资源占用与显示质量均未知。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:65-86](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L65-L86)\n\n禁用、订阅和清理。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n  const stop=()=>{bridge?.stop('madara-pet-disabled');bridge=null;reducer=null;};\n  const configure=(value)=>{\n    const next=normalize(value);if(!next.enabled){stop();return;}launch(next);if(!bridge)return;\n    Object.assign(bridge.options.env,{DSH_DAFEIYU_SCALE:String(next.scale),DSH_DAFEIYU_BUBBLE_SCALE:String(next.bubbleScale),DSH_DAFEIYU_ACTIVITY_LEVEL:next.activityLevel,DSH_DAFEIYU_REDUCED_MOTION:next.reducedMotion?'1':'0',DSH_DAFEIYU_SOUND_ENABLED:next.soundEnabled?'1':'0',DSH_DAFEIYU_BUBBLE_MODE:next.bubbleMode});\n    for(const m of reducer.setIncludeSubagents(next.includeSubagents))bridge.send(m);\n    bridge.send(message('config',{...next,soundStates:['SUCCESS','ERROR'],bubbleStates:['SUCCESS','ERROR','WAITING'],openUrl:'dsh://open',openLabel:'打开 Harness'}));\n  };\n  const event=(session,event)=>{if(!bridge||!reducer)return;try{for(const m of reducer.handle(session,event))bridge.send(m);}catch(error){logger.warn?.('像素斑未能处理任务事件',error);}};\n  const sessionDisposed=session=>{if(!bridge||!reducer)return;try{for(const m of reducer.disposeSession(session))bridge.send(m);}catch(error){logger.warn?.('像素斑未能移除任务状态',error);}};\n  const unwatch=settings.watch(configure);configure(settings.get());\n  return {event,sessionDisposed,configure,dispose(){disposed=true;unwatch?.();stop();}};\n}\nexport function apply(ctx,config={}){\n  if(process.platform!=='win32'||process.arch!=='x64'){ctx.logger?.warn?.('当前版本仅支持 Windows x64 原生桌宠。');return;}\n  ctx.effect(()=>{\n    let controller,settings,offEvent,offDisposed;\n    try{\n      settings=createSettingsScope(ctx,Config,config,normalize);\n      controller=createController(ctx,settings,prepareRuntime());\n      offEvent=ctx.on('session/event',controller.event,{global:true});offDisposed=ctx.on('session/disposed',controller.sessionDisposed,{global:true});\n    }catch(error){controller?.dispose();settings?.dispose?.();ctx.logger?.error?.('宇智波斑桌宠本次未能启动',error);return;}\n    return()=>{offEvent?.();offDisposed?.();controller.dispose();settings.dispose?.();};\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-madara-pixel-pet/README.md:7-13](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/README.md#L7-L13)\n\n作者安装、保留和运行说明。\n\n```text\n支持 Windows x64，已验证 Harness 0.2.1-rc.2。通过官方桌面应用的「插件 → 添加插件」选择 dsh-madara-pixel-pet-1.0.0.tgz，安装后启用。依赖会从原作者的 dsh-dafeiyu@0.1.22 自动安装；无需单独启用大肥鱼 bundle。\n\n在本插件的配置中调整角色大小、气泡大小、空闲动作频率、减少动态、提示音和气泡显示。角色可拖动，松手播放落地；不同位置点击或双击触发互动。随 Harness 启动和退出。\n\n如果已经启用原版大肥鱼，两者会各显示一个角色。只想保留斑时，在插件管理中关闭大肥鱼，保留本插件。关闭或卸载本插件会停止斑的进程；设置、日志和本地运行库保留供重装使用。\n\n本插件不会修改大肥鱼文件，也不需要管理员权限。运行目录是 DSH_HOME/plugins/madara-pixel-pet；未指定 DSH_HOME 时使用 ~/.dsh/plugins/madara-pixel-pet。首次启动会把原作者预编译运行库和本包的像素帧复制到独立目录。首次联网安装仍需下载上游依赖；运行时不调用图像生成或模型 API。\n```\n\n#### 缺口\n\n- 未在 Windows 和真实会话操作\n  **影响**：不能保证关闭、恢复或资源消耗\n  **进一步探讨**：用可回退配置观察进程和保留文件。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 内容完整性校验是否值得改善更新？\n\n**研究主题**：新假设与验证、贡献与相对优势\n\n#### 完整回答\n\n可提出未验证方案：为 helper 与所有资源生成内容摘要，并在更新前检查，降低同大小可执行文件或未改 manifest 的帧变化被漏掉的可能。代价是多读文件及版本维护复杂度；若发布保证每次变更均更换版本与清单，当前机制可能已足够。以同版本替换与正常升级样本比较检查耗时、误复制和漏检；没有原型或实验。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-pet/index.js:38-51](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-pet/index.js#L38-L51)\n\n现有大小和 manifest 校验方式。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  const directory=join(base,pkg.version),manifest=join(root,'assets','pet-manifest.json');\n  const digest=createHash('sha256').update(readFileSync(manifest)).digest('hex');\n  const executable=join(directory,'madara-pixel-pet-helper.exe');\n  const original=join(dependencyRoot,'runtime','bin','win32-x64','dsh-dafeiyu-helper.exe');\n  mkdirSync(directory,{recursive:true});\n  if(!existsSync(executable)||statSync(executable).size!==statSync(original).size){const temporary=executable+'.new';copyFileSync(original,temporary);renameSync(temporary,executable);}\n  const marker=join(directory,'skin.sha256');\n  if(!existsSync(marker)||readFileSync(marker,'utf8')!==digest){\n    const assets=join(directory,'assets');mkdirSync(assets,{recursive:true});\n    cpSync(join(root,'assets','pet'),join(assets,'pet'),{recursive:true});\n    for(const file of ['sounds','cursors','cursor_grab.cur','cursor_grabbing.cur']){const source=join(dependencyRoot,'assets',file);if(existsSync(source))cpSync(source,join(assets,file),{recursive:true});}\n    copyFileSync(manifest,join(assets,'pet-manifest.json.new'));renameSync(join(assets,'pet-manifest.json.new'),join(assets,'pet-manifest.json'));\n    // Write the marker only after all runtime assets are present.\n    const bytes=Buffer.from(digest);const fs=require('node:fs');fs.writeFileSync(marker,bytes);\n```\n\n</details>\n\n#### 缺口\n\n- 无更新故障频率与原型\n  **影响**：不能证明增加哈希值得\n  **进一步探讨**：以真实发布约束和故障样本测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-madara-pixel-pet；内容摘要：d58f3b8b4f3dd4e0ccfa2063bfe0395418235791f05738a04148890f2ef691c9。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 67 | — | — | 1104 |\n| .js | source | 2 | 168 | 156 | 10 | — |\n| .mjs | test | 1 | 49 | 44 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 限制 |\n|---|---|---|\n| 原生桌宠 | 显示动作和交互 | Windows x64，未实测 |\n| 任务状态 | 消费会话事件 | reducer 属于上游 |\n\n## 工程亮点\n\n[Q02](#research-q02) 复用上游 helper 并清理订阅；[Q03](#research-q03) 内容更新依赖大小和清单哈希。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-madara-pixel-pet/README.md、packages/dsh-madara-pixel-pet/package.json、packages/dsh-madara-pixel-pet/index.js、packages/dsh-madara-pixel-pet/settings-scope.js、packages/dsh-madara-pixel-pet/ASSET-NOTICE.md 及固定范围 inventory；组件：packages/dsh-madara-pixel-pet。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码静态核查本组件与声明依赖，不运行 Windows helper；材料检出帧未落盘但 Git 树有帧路径。\n- 下一步：在 Windows x64 隔离环境核实画面、状态、交互、helper 生命周期和更新行为。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-pet/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"BossKrabs/product\",\n  \"revision\": \"2eb032cb14be44c35501757fd4f3f25449730a17\",\n  \"component\": \"packages/dsh-madara-pixel-pet\",\n  \"inspected_paths\": [\n    \"packages/dsh-madara-pixel-pet/README.md\",\n    \"packages/dsh-madara-pixel-pet/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-madara-pixel-pet/index.js\",\n    \"packages/dsh-madara-pixel-pet/settings-scope.js\",\n    \"packages/dsh-madara-pixel-pet/ASSET-NOTICE.md\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查桌宠增量、上游依赖、文件准备与采用边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"适合谁，相对原版桌宠增加什么？\",\n        \"answer\": \"希望用像素斑形象显示 DSH 任务状态的 Windows x64 用户可考虑此包。它提供角色动作清单、独立运行目录、配置与宿主接线；状态转换和原生 helper 来自 dsh-dafeiyu，并非此包自行实现。相对上游原版主要增量是形象和隔离的实例，而非新的任务理解能力；README 声称 16 组动作和交互，未实际展示验证。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/README.md\",\n            \"line_start\": 1,\n            \"line_end\": 13,\n            \"observation\": \"作者说明形象、平台和使用。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/README.md\",\n            \"line_start\": 19,\n            \"line_end\": 21,\n            \"observation\": \"作者说明上游归属。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 7,\n            \"line_end\": 9,\n            \"observation\": \"引入上游 reducer 和 helper。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有实际用户或 Windows 桌面效果对照\",\n            \"impact\": \"不能断言偏好、效率或视觉质量\",\n            \"next_step\": \"在兼容环境比较原版及本包。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"状态如何到原生窗口？\",\n        \"answer\": \"Windows x64 apply 创建 settings scope、准备独立运行目录，构造上游 HelperProcess 和 CompanionReducer，订阅全局 session/event 与 session/disposed。事件交给 reducer，所得消息送 helper；配置变化可更新环境和 config 消息，停止时清订阅并终止 helper。事件处理异常被捕获并记录；helper 的内部行为、事件映射与窗口绘制由外部依赖决定，本次没有检查其执行结果。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 34,\n            \"line_end\": 54,\n            \"observation\": \"运行目录、二进制与资源复制。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 55,\n            \"line_end\": 75,\n            \"observation\": \"helper、reducer 与配置接线。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 77,\n            \"line_end\": 87,\n            \"observation\": \"平台守卫、订阅和清理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有执行 Windows 原生进程或核上游依赖内部\",\n            \"impact\": \"不能验证状态映射、窗口绘制与进程实际退出\",\n            \"next_step\": \"隔离 Windows 环境观察状态和停止后进程。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"运行文件更新和失败处理有什么边界？\",\n        \"answer\": \"运行目录按包版本划分；helper 不存在或大小不同才复制，上游可执行文件同大小变化不会触发替换。皮肤更新仅根据 pet-manifest.json 哈希，像素帧变化但清单字节未变时可能复用旧资源；只有复制成功后才写标记。prepareRuntime 失败会被 apply 捕获并记日志，插件不继续注册事件。当前材料检出没有工作树像素帧，Git 树列有帧路径；未把这个材料边界当作上游缺文件，也未验证打包文件完整性。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 34,\n            \"line_end\": 53,\n            \"observation\": \"helper 大小检查、manifest 哈希和复制。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 77,\n            \"line_end\": 86,\n            \"observation\": \"准备失败与清理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未检查所有资源字节、npm 包和同版本重装\",\n            \"impact\": \"无法确认旧资源风险是否实际发生\",\n            \"next_step\": \"对同版本修改帧与同大小 helper 的隔离样本做更新测试。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\"\n        ],\n        \"question\": \"兼容、资产和隐私条件是什么？\",\n        \"answer\": \"包声明 Windows x64、Node >=22.19、DSH 0.2.1-rc.2，精确依赖 dsh-dafeiyu 0.1.22；首次准备会复制依赖中的原生程序和资源并写入 DSH_HOME 下本地目录。README 声称不读取屏幕或凭据，源码能看到事件转发但未审上游 helper 的所有数据处理，不能证明完整隐私行为。角色是非官方同人，资产通知说明代码 MIT 不授予角色权利；商业再分发需另核权利。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/package.json\",\n            \"line_start\": 1,\n            \"line_end\": 27,\n            \"observation\": \"版本和平台声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/package.json\",\n            \"line_start\": 43,\n            \"line_end\": 54,\n            \"observation\": \"精确依赖与 bundle。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 34,\n            \"line_end\": 53,\n            \"observation\": \"本地复制与运行目录。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/README.md\",\n            \"line_start\": 15,\n            \"line_end\": 21,\n            \"observation\": \"作者隐私和依赖声明。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/ASSET-NOTICE.md\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"资产权利声明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未审上游二进制、目标系统和素材权利\",\n            \"impact\": \"不能确认隐私、兼容或再分发许可\",\n            \"next_step\": \"核依赖来源、数据流和相关权利。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"adoption\",\n          \"cost\"\n        ],\n        \"question\": \"如何试用并停止？\",\n        \"answer\": \"已有兼容 Windows x64 宿主且愿意使用同人角色的用户可在隔离 profile 验证启用、任务事件、声音、缩放、拖动和关闭；先了解运行目录保留策略。若 helper 无法启动、任务状态不准、影响桌面操作或不接受数据与素材边界，应停用并回到原有状态界面；README 称日志和运行库保留，需核实后再按个人需要处理。没有目标环境测试，安装耗时、资源占用与显示质量均未知。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 65,\n            \"line_end\": 86,\n            \"observation\": \"禁用、订阅和清理。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/README.md\",\n            \"line_start\": 7,\n            \"line_end\": 13,\n            \"observation\": \"作者安装、保留和运行说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在 Windows 和真实会话操作\",\n            \"impact\": \"不能保证关闭、恢复或资源消耗\",\n            \"next_step\": \"用可回退配置观察进程和保留文件。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"hypothesis\",\n          \"contribution\"\n        ],\n        \"question\": \"内容完整性校验是否值得改善更新？\",\n        \"answer\": \"可提出未验证方案：为 helper 与所有资源生成内容摘要，并在更新前检查，降低同大小可执行文件或未改 manifest 的帧变化被漏掉的可能。代价是多读文件及版本维护复杂度；若发布保证每次变更均更换版本与清单，当前机制可能已足够。以同版本替换与正常升级样本比较检查耗时、误复制和漏检；没有原型或实验。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-pet/index.js\",\n            \"line_start\": 38,\n            \"line_end\": 51,\n            \"observation\": \"现有大小和 manifest 校验方式。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"无更新故障频率与原型\",\n            \"impact\": \"不能证明增加哈希值得\",\n            \"next_step\": \"以真实发布约束和故障样本测量。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-madara-pixel-pet/README.md\",\n      \"content\": \"# 宇智波斑像素桌宠\\n\\n带有红甲、长发和写轮眼的像素风宇智波斑原生桌面伴侣。支持待机眨眼、思考、结印工作、搜索张望、等待、完成、错误、拖拽、落地、摸头、戳动及空闲动作，共 16 组。任务状态直接来自 Harness 会话事件。\\n\\n## 安装与使用\\n\\n支持 Windows x64，已验证 Harness 0.2.1-rc.2。通过官方桌面应用的「插件 → 添加插件」选择 dsh-madara-pixel-pet-1.0.0.tgz，安装后启用。依赖会从原作者的 dsh-dafeiyu@0.1.22 自动安装；无需单独启用大肥鱼 bundle。\\n\\n在本插件的配置中调整角色大小、气泡大小、空闲动作频率、减少动态、提示音和气泡显示。角色可拖动，松手播放落地；不同位置点击或双击触发互动。随 Harness 启动和退出。\\n\\n如果已经启用原版大肥鱼，两者会各显示一个角色。只想保留斑时，在插件管理中关闭大肥鱼，保留本插件。关闭或卸载本插件会停止斑的进程；设置、日志和本地运行库保留供重装使用。\\n\\n本插件不会修改大肥鱼文件，也不需要管理员权限。运行目录是 DSH_HOME/plugins/madara-pixel-pet；未指定 DSH_HOME 时使用 ~/.dsh/plugins/madara-pixel-pet。首次启动会把原作者预编译运行库和本包的像素帧复制到独立目录。首次联网安装仍需下载上游依赖；运行时不调用图像生成或模型 API。\\n\\n## 状态与隐私\\n\\n显示真实会话任务、工具调用和待办状态。不读取屏幕，不读取或发布账号凭据。内部错误被限制在本插件内，避免阻断 Harness 的其他会话事件订阅。\\n\\n## 来源与授权\\n\\n原生运行库、任务状态转换和进程管理来自 QCYTSN/dsh-dafeiyu；本包新增独立的像素斑素材、动作清单、运行目录及生命周期与配置接入。详见 THIRD-PARTY-NOTICES.md、ASSET-NOTICE.md 和 LICENSE。人物是非官方同人外观。\\n\\n## 公开安装包\\n\\n下载：https://github.com/BossKrabs/product/raw/refs/heads/main/dist/dsh-madara-pixel-pet-1.0.0.tgz\\n\\n源码：https://github.com/BossKrabs/product/tree/main/packages/dsh-madara-pixel-pet\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-pet/package.json\",\n      \"content\": \"{\\n  \\\"version\\\": \\\"1.0.0\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.19\\\",\\n    \\\"dsh\\\": \\\"0.2.1-rc.2\\\"\\n  },\\n  \\\"license\\\": \\\"SEE LICENSE IN LICENSE\\\",\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"madara\\\",\\n    \\\"pixel-art\\\"\\n  ],\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\",\\n    \\\"registry\\\": \\\"https://registry.npmjs.org/\\\"\\n  },\\n  \\\"name\\\": \\\"dsh-madara-pixel-pet\\\",\\n  \\\"description\\\": \\\"宇智波斑像素桌宠：16 组透明动作，跟随 Harness 任务状态，支持拖动与点击互动。\\\",\\n  \\\"os\\\": [\\n    \\\"win32\\\"\\n  ],\\n  \\\"cpu\\\": [\\n    \\\"x64\\\"\\n  ],\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"settings-scope.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"assets\\\",\\n    \\\"LICENSE\\\",\\n    \\\"THIRD-PARTY-NOTICES.md\\\",\\n    \\\"ASSET-NOTICE.md\\\",\\n    \\\"README.md\\\",\\n    \\\"CHANGELOG.md\\\"\\n  ],\\n  \\\"dependencies\\\": {\\n    \\\"dsh-dafeiyu\\\": \\\"0.1.22\\\",\\n    \\\"@deepseek-ai/schemastery\\\": \\\"3.18.4\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.mjs\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/BossKrabs/product.git\\\",\\n    \\\"directory\\\": \\\"packages/dsh-madara-pixel-pet\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/BossKrabs/product/tree/main/packages/dsh-madara-pixel-pet\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/BossKrabs/product/issues\\\"\\n  },\\n  \\\"author\\\": {\\n    \\\"name\\\": \\\"BossKrabs\\\",\\n    \\\"url\\\": \\\"https://github.com/BossKrabs\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# Harness · 宇智波斑像素插件\\n\\n两个分别安装的 DeepSeek Harness 插件。\\n\\n| 插件 | 功能 | 源码 | 安装包 |\\n| --- | --- | --- | --- |\\n| 宇智波斑像素主题 | 深蓝暗红配色、中文像素字体、可跳过的写轮眼启动动画 | [主题](packages/dsh-madara-pixel-theme) | [1.0.0](dist/dsh-madara-pixel-theme-1.0.0.tgz) |\\n| 宇智波斑像素桌宠 | Windows x64 桌宠，16 组动作随 Harness 任务状态变化 | [桌宠](packages/dsh-madara-pixel-pet) | [1.0.0](dist/dsh-madara-pixel-pet-1.0.0.tgz) |\\n\\n下载对应安装包后，在官方 Harness 的「插件 → 添加插件」中填写 .tgz 的完整本地路径，安装后启用。已验证 Harness 0.2.1-rc.2；详细用法、兼容范围和许可证见各子包 README。\\n\\n主题和桌宠彼此独立。桌宠直接依赖 QCYTSN 原作者发布的 dsh-dafeiyu@0.1.22，不覆盖大肥鱼文件。首次安装依赖仍需要联网下载原作者的运行库。\\n\\n本仓库不包含账号、会话或个人配置，不包含额外生成的预览图。角色外观为非官方同人制作，相关角色权利归各自权利人；项目代码、字体与依赖分别遵循各自许可证。\\n\\n本地验证：主题启用、关闭、Esc 跳过、设置保存与清理；桌宠状态转发、配置、独立素材目录以及原生 Helper 的 ready/ping/shutdown 均已通过。打包清单和校验值见 dist/validation.json 与 dist/checksums.json。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"bosskrabs-harness-plugins\\\",\\n  \\\"private\\\": true,\\n  \\\"description\\\": \\\"Independently installable Madara pixel theme and desktop companion.\\\",\\n  \\\"workspaces\\\": [\\n    \\\"packages/*\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-pet/index.js\",\n      \"content\": \"import {createRequire} from 'node:module';\\nimport {readFileSync,existsSync,mkdirSync,copyFileSync,cpSync,renameSync,statSync} from 'node:fs';\\nimport {createHash} from 'node:crypto';\\nimport {dirname,join,resolve} from 'node:path';\\nimport {homedir} from 'node:os';\\nimport {fileURLToPath} from 'node:url';\\nimport Schema from '@deepseek-ai/schemastery';\\nimport {CompanionReducer,HelperProcess} from 'dsh-dafeiyu';\\nimport {createSettingsScope} from './settings-scope.js';\\n\\nconst require=createRequire(import.meta.url),root=dirname(fileURLToPath(import.meta.url));\\nconst pkg=JSON.parse(readFileSync(join(root,'package.json'),'utf8'));\\nexport const name='madara-pixel-pet';\\nexport const inject=['sessions','settings'];\\nconst defaults={enabled:true,scale:1,bubbleScale:1,activityLevel:'normal',reducedMotion:false,soundEnabled:true,bubbleMode:'always',includeSubagents:false};\\nexport const Config=Schema.object({\\n  enabled:Schema.boolean().default(true).description('启用宇智波斑桌宠'),\\n  scale:Schema.number().min(0.55).max(1.4).step(0.05).default(1).role('slider').description('角色大小'),\\n  bubbleScale:Schema.number().min(0.8).max(1.2).step(0.05).default(1).role('slider').description('气泡大小'),\\n  activityLevel:Schema.union(['quiet','normal','lively']).default('normal').description('空闲动作频率'),\\n  reducedMotion:Schema.boolean().default(false).description('减少动态'),\\n  soundEnabled:Schema.boolean().default(true).description('任务完成或出错提示音'),\\n  bubbleMode:Schema.union(['always','hidden','custom']).default('always').description('气泡显示'),\\n  includeSubagents:Schema.boolean().default(false).description('显示子任务状态'),\\n}).description('像素风宇智波斑桌面伴侣');\\nfor(const [key,field] of Object.entries(Config.dict))Config.dict[key]=field.volatile();\\nexport function normalize(value={}){\\n  const c={...defaults,...value};\\n  c.scale=Math.min(1.4,Math.max(0.55,Number(c.scale)||1));c.bubbleScale=Math.min(1.2,Math.max(0.8,Number(c.bubbleScale)||1));\\n  if(!['quiet','normal','lively'].includes(c.activityLevel))c.activityLevel='normal';if(!['always','hidden','custom'].includes(c.bubbleMode))c.bubbleMode='always';\\n  for(const key of ['enabled','reducedMotion','soundEnabled','includeSubagents'])c[key]=typeof c[key]==='boolean'?c[key]:defaults[key];\\n  return c;\\n}\\nexport function runtimeHome(env=process.env){return join(env.DSH_HOME||join(homedir(),'.dsh'),'plugins','madara-pixel-pet');}\\nexport function prepareRuntime(options={}){\\n  const dependencyRoot=options.dependencyRoot||dirname(require.resolve('dsh-dafeiyu/package.json'));\\n  const base=options.runtimeRoot||runtimeHome();\\n  const directory=join(base,pkg.version),manifest=join(root,'assets','pet-manifest.json');\\n  const digest=createHash('sha256').update(readFileSync(manifest)).digest('hex');\\n  const executable=join(directory,'madara-pixel-pet-helper.exe');\\n  const original=join(dependencyRoot,'runtime','bin','win32-x64','dsh-dafeiyu-helper.exe');\\n  mkdirSync(directory,{recursive:true});\\n  if(!existsSync(executable)||statSync(executable).size!==statSync(original).size){const temporary=executable+'.new';copyFileSync(original,temporary);renameSync(temporary,executable);}\\n  const marker=join(directory,'skin.sha256');\\n  if(!existsSync(marker)||readFileSync(marker,'utf8')!==digest){\\n    const assets=join(directory,'assets');mkdirSync(assets,{recursive:true});\\n    cpSync(join(root,'assets','pet'),join(assets,'pet'),{recursive:true});\\n    for(const file of ['sounds','cursors','cursor_grab.cur','cursor_grabbing.cur']){const source=join(dependencyRoot,'assets',file);if(existsSync(source))cpSync(source,join(assets,file),{recursive:true});}\\n    copyFileSync(manifest,join(assets,'pet-manifest.json.new'));renameSync(join(assets,'pet-manifest.json.new'),join(assets,'pet-manifest.json'));\\n    // Write the marker only after all runtime assets are present.\\n    const bytes=Buffer.from(digest);const fs=require('node:fs');fs.writeFileSync(marker,bytes);\\n  }\\n  return {command:executable,args:[],tempDirectory:join(base,'tmp'),logFile:join(base,'helper.log'),env:{DSH_DAFEIYU_LAYOUT_PATH:join(base,'layout.json')}};\\n}\\nexport function createController(ctx,settings,runtime,engine={HelperProcess,CompanionReducer}){\\n  let bridge=null,reducer=null,disposed=false;\\n  const logger=ctx.logger||console;\\n  const message=(kind,data={})=>({protocolVersion:1,kind,timestamp:Date.now(),...data});\\n  const launch=(config)=>{\\n    if(disposed||bridge||!config.enabled)return;\\n    reducer=new engine.CompanionReducer({includeSubagents:config.includeSubagents});\\n    bridge=new engine.HelperProcess({...runtime,env:{...runtime.env,DSH_DAFEIYU_SCALE:String(config.scale),DSH_DAFEIYU_BUBBLE_SCALE:String(config.bubbleScale),DSH_DAFEIYU_REDUCED_MOTION:config.reducedMotion?'1':'0',DSH_DAFEIYU_SOUND_ENABLED:config.soundEnabled?'1':'0'},onSettingsChange:patch=>{void Promise.resolve(settings.update?.(patch)).catch(error=>logger.warn?.('像素斑设置未能保存',error));}},logger);\\n    bridge.start();bridge.send(message('hello',{host:'deepseek-harness',pluginVersion:pkg.version}));bridge.send(message('state',{state:'IDLE',message:'等待新的任务',detail:'HARNESS · 像素宇智波斑'}));\\n  };\\n  const stop=()=>{bridge?.stop('madara-pet-disabled');bridge=null;reducer=null;};\\n  const configure=(value)=>{\\n    const next=normalize(value);if(!next.enabled){stop();return;}launch(next);if(!bridge)return;\\n    Object.assign(bridge.options.env,{DSH_DAFEIYU_SCALE:String(next.scale),DSH_DAFEIYU_BUBBLE_SCALE:String(next.bubbleScale),DSH_DAFEIYU_ACTIVITY_LEVEL:next.activityLevel,DSH_DAFEIYU_REDUCED_MOTION:next.reducedMotion?'1':'0',DSH_DAFEIYU_SOUND_ENABLED:next.soundEnabled?'1':'0',DSH_DAFEIYU_BUBBLE_MODE:next.bubbleMode});\\n    for(const m of reducer.setIncludeSubagents(next.includeSubagents))bridge.send(m);\\n    bridge.send(message('config',{...next,soundStates:['SUCCESS','ERROR'],bubbleStates:['SUCCESS','ERROR','WAITING'],openUrl:'dsh://open',openLabel:'打开 Harness'}));\\n  };\\n  const event=(session,event)=>{if(!bridge||!reducer)return;try{for(const m of reducer.handle(session,event))bridge.send(m);}catch(error){logger.warn?.('像素斑未能处理任务事件',error);}};\\n  const sessionDisposed=session=>{if(!bridge||!reducer)return;try{for(const m of reducer.disposeSession(session))bridge.send(m);}catch(error){logger.warn?.('像素斑未能移除任务状态',error);}};\\n  const unwatch=settings.watch(configure);configure(settings.get());\\n  return {event,sessionDisposed,configure,dispose(){disposed=true;unwatch?.();stop();}};\\n}\\nexport function apply(ctx,config={}){\\n  if(process.platform!=='win32'||process.arch!=='x64'){ctx.logger?.warn?.('当前版本仅支持 Windows x64 原生桌宠。');return;}\\n  ctx.effect(()=>{\\n    let controller,settings,offEvent,offDisposed;\\n    try{\\n      settings=createSettingsScope(ctx,Config,config,normalize);\\n      controller=createController(ctx,settings,prepareRuntime());\\n      offEvent=ctx.on('session/event',controller.event,{global:true});offDisposed=ctx.on('session/disposed',controller.sessionDisposed,{global:true});\\n    }catch(error){controller?.dispose();settings?.dispose?.();ctx.logger?.error?.('宇智波斑桌宠本次未能启动',error);return;}\\n    return()=>{offEvent?.();offDisposed?.();controller.dispose();settings.dispose?.();};\\n  },'madara-pixel-pet: native companion');\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-pet/settings-scope.js\",\n      \"content\": \"import Schema from '@deepseek-ai/schemastery'\\n\\n// DSH 0.2 projects volatile Config fields into settings; older hosts register\\n// namespaces explicitly. Keep both behind the same small runtime interface.\\nexport function plainConfig(config) {\\n  if (config && typeof config.get === 'function') return plainConfig(config.get())\\n  if (Array.isArray(config)) return config.map(plainConfig)\\n  if (config && typeof config === 'object') {\\n    return Object.fromEntries(Object.entries(config).map(([key, value]) => [key, plainConfig(value)]))\\n  }\\n  return config\\n}\\n\\nexport function createSettingsScope(ctx, schema, config, normalize) {\\n  const base = normalize(plainConfig(config))\\n  if (typeof ctx.settings?.register === 'function') {\\n    // Older settings own plain values and serialize them directly. Their\\n    // registered schema must not return the new Loader's live references.\\n    const legacySchema = Schema.object(Object.fromEntries(Object.entries(schema.dict)\\n      .map(([key, field]) => [key, field.extra('volatile', false)])))\\n    return ctx.settings.register('madara-pixel-pet', legacySchema, { base, applies: 'live' })\\n  }\\n  const service = ctx.settings\\n  const namespace = ctx.fiber?.entry?.options?.id ?? 'madara-pixel-pet'\\n  const watchers = new Set()\\n  let value = base\\n  let reading = false\\n  const read = () => {\\n    if (reading) return value\\n    reading = true\\n    try {\\n      const entry = service?.describe?.().find((row) => row.ns === namespace)\\n      // The user layer also covers hosts that persist a patch before updating\\n      // their running descriptor. Never guess another plugin's namespace.\\n      return normalize({ ...plainConfig(config), ...entry?.value, ...entry?.user })\\n    } finally {\\n      reading = false\\n    }\\n  }\\n  const adopt = (next) => {\\n    if (JSON.stringify(next) === JSON.stringify(value)) return\\n    value = next\\n    for (const watcher of watchers) watcher(value)\\n  }\\n  const refresh = () => {\\n    try { adopt(read()) } catch (error) { ctx.logger?.warn?.('madara-pixel-pet settings refresh failed', error) }\\n  }\\n  const offDocument = ctx.on?.('settings/document-updated', (ns) => {\\n    if (ns === namespace && !reading) refresh()\\n  }, { global: true })\\n  const offVolatile = ctx.on?.('loader/volatile-update', refresh)\\n  return {\\n    namespace,\\n    // Diagnostics only: the host's settings service silently refuses writes\\n    // when this namespace is absent, so record what it actually exposes.\\n    describe() {\\n      try {\\n        return service?.describe?.() ?? []\\n      } catch {\\n        return []\\n      }\\n    },\\n    get: () => value,\\n    watch(callback) {\\n      watchers.add(callback)\\n      return () => watchers.delete(callback)\\n    },\\n    ...(typeof service?.update === 'function' ? {\\n      async update(patch) {\\n        await service.update(namespace, patch)\\n        adopt(normalize({ ...value, ...patch }))\\n      },\\n    } : {}),\\n    dispose() {\\n      offDocument?.()\\n      offVolatile?.()\\n      watchers.clear()\\n    },\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-pet/ASSET-NOTICE.md\",\n      \"content\": \"# 素材与授权\\n\\n本项目是用户定制的非官方同人外观。宇智波斑和《火影忍者》的角色名称、形象及相关权利属于各自权利人；项目不声称拥有这些角色权利，也不声称得到原作或 DeepSeek 官方认可。\\n\\n项目代码适用 LICENSE 中的 MIT 许可；该代码许可不授予角色、商标或其他第三方素材的权利。人物素材由内置图像生成功能按用户要求生成。像素桌宠帧采用保留透明度的无损打包；完整图像生成提示词随源代码保留。\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"2eb032cb14be44c35501757fd4f3f25449730a17\",\n    \"component\": \"packages/dsh-madara-pixel-pet\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"d58f3b8b4f3dd4e0ccfa2063bfe0395418235791f05738a04148890f2ef691c9\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 67,\n        \"words\": 1104\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 168,\n        \"code\": 156,\n        \"comments\": 10,\n        \"blank\": 3\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 49,\n        \"code\": 44,\n        \"comments\": 0,\n        \"blank\": 5\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/index.js\",\n          \"line\": 84,\n          \"api\": \"ctx.on\",\n          \"name\": \"session/event\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/index.js\",\n          \"line\": 84,\n          \"api\": \"ctx.on\",\n          \"name\": \"session/disposed\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/settings-scope.js\",\n          \"line\": 48,\n          \"api\": \"ctx.on\",\n          \"name\": \"settings/document-updated\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/settings-scope.js\",\n          \"line\": 51,\n          \"api\": \"ctx.on\",\n          \"name\": \"loader/volatile-update\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/test/runtime.test.mjs\",\n          \"line\": 44,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/test/runtime.test.mjs\",\n          \"line\": 45,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-pet/test/runtime.test.mjs\",\n          \"line\": 47,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"loader/volatile-update\",\n          \"session/disposed\",\n          \"session/event\",\n          \"settings/document-updated\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "2a769007c7fa4de860f905da766cdc2b87fe4109cd94e3ccc69726e741875ea1"
+        }
+    },
+    "unavailable_artifacts": []
+}

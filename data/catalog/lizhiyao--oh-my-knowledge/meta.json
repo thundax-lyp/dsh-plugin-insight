@@ -1,0 +1,35 @@
+{
+    "repository": "lizhiyao/oh-my-knowledge",
+    "repository_id": 1190633989,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 23,
+    "pushed_at": "2026-11-03T17:17:23Z",
+    "issues": {
+        "open": 3,
+        "closed": 234,
+        "created_30d": 66,
+        "closed_30d": 66,
+        "updated_30d": 69
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "oh-my-knowledge",
+        "captured_at": "2026-11-04T08:22:39.587Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 416,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/oh-my-knowledge",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-03-25T08:04:34.140Z",
+            "captured_at": "2026-11-04T08:22:39.587Z",
+            "source_url": "https://registry.npmjs.org/oh-my-knowledge",
+            "error": null,
+            "latest_version": "0.54.0",
+            "latest_published_at": "2026-08-24T14:13:42.096Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "repository": "opencues/opencues",
+    "repository_id": 1197335472,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 70,
+    "pushed_at": "2026-10-25T14:31:25Z",
+    "issues": {
+        "open": 1,
+        "closed": 13,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "@opencues/dsh",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 822,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40opencues%2Fdsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T18:37:33.836Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
+            "source_url": "https://registry.npmjs.org/%40opencues%2Fdsh",
+            "error": null,
+            "latest_version": "0.2.21",
+            "latest_published_at": "2026-09-07T22:22:19.543Z",
+            "latest_error": null
+        }
+    }
+}

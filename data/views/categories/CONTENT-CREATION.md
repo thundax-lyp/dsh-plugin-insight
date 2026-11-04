@@ -16,6 +16,7 @@
 | [Adult Tension](#plugin-1339714338-root) | 把中文互动叙事交给宿主模型，并以本地 Python 引擎维护角色、时间、事实、事件与存档的 Skill。 | 中性多角色短局先核保存/重试/撤销/退出，才扩长局；只需短篇可用纯聊天，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。 |
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
+| [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
@@ -40,7 +41,7 @@
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
-| [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | DSH工作区资料创作插件，将对话生成接到Studio修订、学习交互与真实文件交接；引用合法/快照状态和生成答案仍需独立核验。 | 已有兼容环境且允许外发公开小资料者，可试quiz/卡片并人工核答案；不直接学生评分/大批生成，不强开Office/媒体，见[Q04](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q04)/[Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05)。 |
+| [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
@@ -124,6 +125,22 @@
 > **建议**：[Q06](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q06) 提出图关系附来源或人工推断标记的未验证方案，须与现有代码行引用和语法检查对照并衡量错误发现率及成本。
 
 [查看完整分析](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1175716983-root"></a>
+
+## [Atlas Cloud Skills](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md)
+
+[![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AtlasCloudAI/atlas-cloud-skills)
+
+> **用途**：使用云端生成模型的创作者或开发者可参考多媒体 API、视频规划和提示规范。
+
+> **亮点**：[Q01](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q01) 与 [Q02](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q02) 显示项目组合多份技能和可恢复视频任务脚本；模型生成能力来自外部服务，不归因于本集合。
+
+> **思考**：[Q03](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q03) 的素材和凭据会进入外部路径；[Q02](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q02) 直接脚本的音轨重试可能产生额外生成，不应将托管连接器报价机制假定适用。
+
+> **建议**：[Q05](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q05) 提出覆盖直接脚本提交与重试的预算和恢复状态提示；若不能改善决策或代价过高则否定。
+
+[查看完整分析](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1220744720-root"></a>
 
@@ -513,15 +530,15 @@
 
 ## [EduWork Knowledge Studio](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md)
 
-[![GitHub ★ 250](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=250&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 1,595](https://img.shields.io/static/v1?label=npm+30d&message=1%2C595&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio)
+[![GitHub ★ 285](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=285&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 2,243](https://img.shields.io/static/v1?label=npm+30d&message=2%2C243&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-knowledge-studio)
 
-> **用途**：为已有兼容DSH的教师和培训资料维护者，把允许的资料整理成可追问、可修订的学习草稿；场景明确而需求/学习效果未验证，见[Q01](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q01)。
+> **用途**：教师或培训资料维护者可在兼容 DSH 工作区，用允许发送给模型的资料制作并审核测验或卡片草稿。
 
-> **亮点**：当前同会话到学习草稿/真实工件的管理链、条件轮末最终版与失败历史/只重导出机制，比散落聊天复制多了可管理交接。共享服务属直接依赖，输出正确与教学效果仍未证，见[Q01](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q01)/[Q03](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q03)。
+> **亮点**：[Q01](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q01) 与 [Q02](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q02) 显示工作区资料、模型生成、来源快照和学习交互连成同会话的成果流程；共享能力属于配套服务，未证明净节时。
 
-> **思考**：引用可选且只验ID/结构；索引fresh比较当前索引而非实时重读文件，合法答案索引也不证答案真值。无索引创作仍静态加载Ladybug native；正常工具/直启RPC权限路径不同，见[Q02](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q02)至[Q04](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q04)。
+> **思考**：[Q03](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q03) 显示题目校验只检查结构和引用 ID，索引型 fresh 不重读文件；用户仍须核对活源与每个答案，不能把标记当事实保证。
 
-> **建议**：先补索引与活文件对齐，再在现有快照/修订上核条目级事实和答案支持/教师确认，三组对照误用与总投入；现有能力已等效就否定，见[Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05)。
+> **建议**：[Q06](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q06) 提出把实时源比对和教师逐题确认绑定成果版本的未验证假设，需与普通人工审校对照成本与误通过率。
 
 [查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md) · [返回表格](#category-index)
 

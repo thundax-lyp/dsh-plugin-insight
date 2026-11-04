@@ -1,0 +1,35 @@
+{
+    "repository": "btspoony/mstar-harness",
+    "repository_id": 1174622182,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 68,
+    "pushed_at": "2026-11-04T04:31:19Z",
+    "issues": {
+        "open": 0,
+        "closed": 117,
+        "created_30d": 62,
+        "closed_30d": 78,
+        "updated_30d": 79
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "@mstar-harness/dsh",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 4104,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40mstar-harness%2Fdsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T13:23:13.683Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
+            "source_url": "https://registry.npmjs.org/%40mstar-harness%2Fdsh",
+            "error": null,
+            "latest_version": "4.1.6",
+            "latest_published_at": "2026-11-03T11:51:53.605Z",
+            "latest_error": null
+        }
+    }
+}

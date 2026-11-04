@@ -1,53 +1,43 @@
 {
     "repository": "5aaee9/pi-agent-extensions",
     "repository_id": 1324229194,
-    "captured_at": "2026-10-29T03:03:10.741Z",
-    "window_start": "2026-09-29T03:03:10.741Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
     "stars": 3,
-    "pushed_at": "2026-10-28T14:45:15Z",
+    "pushed_at": "2026-11-04T04:45:28Z",
     "issues": {
-        "open": null,
-        "closed": null,
+        "open": 0,
+        "closed": 3,
         "created_30d": 3,
-        "closed_30d": 3,
-        "updated_30d": 3
+        "closed_30d": null,
+        "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 543A:949C0:16FBCAB:18C5D17:6AE2B7BA and timestamp 2026-10-29 03:04:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82C2:5AF11:7587B2:7E1700:6AEAEB7E and timestamp 2026-11-04 08:23:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 545A:34E039:16DA5C3:18A3E2A:6AE2B7BB and timestamp 2026-10-29 03:04:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A5aaee9%2Fpi-agent-extensions%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8346:36133E:766E33:7EFDFE:6AEAEB80 and timestamp 2026-11-04 08:23:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@indexyz/dsh-autocompact",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 1270,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40indexyz%2Fdsh-autocompact",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1782,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40indexyz%2Fdsh-autocompact",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-16T14:19:18.589Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
             "source_url": "https://registry.npmjs.org/%40indexyz%2Fdsh-autocompact",
             "error": null,
-            "latest_version": "0.2.1",
-            "latest_published_at": "2026-10-24T16:12:24.071Z",
+            "latest_version": "0.2.2",
+            "latest_published_at": "2026-10-30T07:51:57.754Z",
             "latest_error": null
         }
     }

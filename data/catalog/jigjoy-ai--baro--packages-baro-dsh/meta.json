@@ -1,0 +1,56 @@
+{
+    "repository": "jigjoy-ai/baro",
+    "repository_id": 1188682315,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 126,
+    "pushed_at": "2026-10-28T11:56:23Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajigjoy-ai%2Fbaro%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A596:356C4:740065:7C9B18:6AEAEC0D and timestamp 2026-11-04 08:25:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajigjoy-ai%2Fbaro%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A606:4A6F1:A5FFEC:AE9CE8:6AEAEC0F and timestamp 2026-11-04 08:25:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajigjoy-ai%2Fbaro%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A670:2124D3:6FA5F4:784616:6AEAEC11 and timestamp 2026-11-04 08:25:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajigjoy-ai%2Fbaro%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A734:36133E:76D63F:7F6E37:6AEAEC13 and timestamp 2026-11-04 08:25:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajigjoy-ai%2Fbaro%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7BC:3169DF:76549F:7EF3A3:6AEAEC16 and timestamp 2026-11-04 08:25:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "baro-dsh",
+        "captured_at": "2026-11-04T08:22:39.587Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 22,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/baro-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-09T14:32:59.974Z",
+            "captured_at": "2026-11-04T08:22:39.587Z",
+            "source_url": "https://registry.npmjs.org/baro-dsh",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-09-09T14:33:00.347Z",
+            "latest_error": null
+        }
+    }
+}

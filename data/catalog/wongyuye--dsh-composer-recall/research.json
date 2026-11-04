@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "5272c884476db5fa19bbe1268e96fdcf",
+    "identity": "github:1180917560:root",
+    "slug": "wongyuye--dsh-composer-recall",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1180917560:root",
+            "repository_id": 1180917560,
+            "component_id": "root",
+            "repository": "WongYuYe/dsh-composer-recall",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-composer-recall",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "512835be914963b3039431574bc9fceb2b56106a418f44a1bab51fe58fdadf01",
+                "code": "3a816a36648007a9eb266798234118600a3e88c9",
+                "maintenance": "7f3b8db7764203a1a27a68fbc37089af3e0fcb9b52c30bd64ebdd617f60c39a8"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-02-github-1180917560-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T09:00:22.377Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-02-github-1180917560-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "README.md",
+                            "content_sha256": "ad8c51ca3790b6b2d5b722cf3ae8201cd475eb46700cee1aae7eedb17a930af8"
+                        }
+                    ],
+                    "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+                    "captured_at": "2026-11-04T09:00:22.377Z",
+                    "summary": "在 DSH 输入框用方向键召回本会话已显示的用户消息，并恢复草稿。",
+                    "artifact": "data/runs/2026-11-04-02/wongyuye--dsh-composer-recall/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-02-github-1180917560-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "README.md",
+                            "content_sha256": "ad8c51ca3790b6b2d5b722cf3ae8201cd475eb46700cee1aae7eedb17a930af8"
+                        },
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "package.json",
+                            "content_sha256": "f16acd4b63bfaba47c8c5ce084495c83e7bbd088ecb1ad271b5669462c5eb4dd"
+                        },
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "adf6c660d83d8444d2b453869fbb795410a7adb24ee91f33b90968e059c29775"
+                        },
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "lib/index.js",
+                            "content_sha256": "09972713b349d4bdcdcfc09359fbe8b49dbd30c089b2249d06c35f3ae76136b6"
+                        },
+                        {
+                            "repository_url": "https://github.com/WongYuYe/dsh-composer-recall",
+                            "commit": "3a816a36648007a9eb266798234118600a3e88c9",
+                            "path": "lib/client.js",
+                            "content_sha256": "794ad6bbadac383c59ef9f2f9b23b9bc97a6f4043ce396714a346aa7c74ecd70"
+                        }
+                    ],
+                    "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+                    "captured_at": "2026-11-04T09:00:22.377Z",
+                    "summary": "核查 README.md、package.json、cordis.patch.yml、lib/index.js、lib/client.js；客户端读取渲染的用户行，拦截方向键，通过会话 input shell 写回草稿。",
+                    "artifact": "data/runs/2026-11-04-02/wongyuye--dsh-composer-recall/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定提交静态核查包声明与客户端主要路径，未安装、运行或比较目标宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要在兼容 DSH 输入框反复编辑已发送消息的用户。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "客户端读取渲染的用户行，拦截方向键，通过会话 input shell 写回草稿。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定提交静态核查包声明与客户端主要路径，未安装、运行或比较目标宿主。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "根包版本 0.1.3，Node >=20；未核 npm 发布物。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖 | 作用 | 边界 |\n|---|---|---|\n| 兼容 DSH 客户端 | 提供输入 shell 和 DOM | conversation peer 指定版本范围 |\n| 浏览器端 | 接收键盘与渲染消息 | DOM 变化可能失效 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金和资源 | 人工时间 |\n|---|---|---|\n| 首次 | 未知 | 安装与版本测试 |\n| 持续 | 未测 | 核对快捷键和文本 |\n| 恢复 | 未测 | 重新复制草稿 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q05](#research-q05) 先用非敏感文本验证按键、会话切换和恢复，异常时停止并手动复制。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 源码支持 | 未确定 |\n|---|---|---|\n| 召回 | 按键遍历页面文本 | 实际节省时间 |\n| 草稿恢复 | 保存与写回机制 | 宿主切换和异常表现 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 事件捕获有卸载路径；[Q03](#research-q03) 静默异常和跨会话闭包状态需要验证。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 为已显示消息提供就地键盘召回；缺实际对照，不能量化节省。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 闭包状态未按会话隔离，DOM 全局查询和静默异常使实际会话切换及恢复值得验证。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q06](#research-q06) 提出按会话隔离游标和草稿，需用实例生命周期及切换测试确认。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1180917560:root",
+                            "area": "code",
+                            "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:00:22.377Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T09:00:22.377Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+                "reviewed_at": "2026-11-04T09:00:22.377Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1180917560:root",
+                        "area": "code",
+                        "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 用常见 DOM 和事件监听实现小范围快捷操作，novelty 与 mechanism 小幅；迁移依赖宿主 DOM 和输入 shell，transferability 与 simplification 小幅。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 减少手动查找步骤，workflow 小幅；delivery、reach 与 economics 的收益缺用户和成本对照，仅作有限机制推断。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1180917560-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "使用兼容 DSH 输入框且常重用消息的用户可以先小范围观察历史召回。它把页面消息直接放回输入框，但会话切换和恢复尚未在目标宿主验证。如果文本不符、草稿恢复失败或干扰输入法，应停用并回到手动复制。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 明确输入历史与手动复制基线，超过 8 分；缺真实需求与对照，不到 23 分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 用键盘遍历可见消息，有明确小幅方便；[Q03](#research-q03) 依赖页面与会话状态，不能达到 13 分。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 与 [Q03](#research-q03) 有源码及失败路径，超过 0 分；未运行宿主，不到 13 分。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q04](#research-q04) 需要安装和版本维护，可退回手动复制，高于 0 分；实际恢复成本未知，不到 10 分。"
+                    }
+                },
+                "score": 32,
+                "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+                "reviewed_at": "2026-11-04T09:00:22.377Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-02-github-1180917560-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1180917560:root",
+                        "area": "code",
+                        "fingerprint": "3a816a36648007a9eb266798234118600a3e88c9"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1180917560:root",
+            "repository": "WongYuYe/dsh-composer-recall",
+            "path": "",
+            "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+            "fingerprints": {
+                "directory": "512835be914963b3039431574bc9fceb2b56106a418f44a1bab51fe58fdadf01",
+                "code": "3a816a36648007a9eb266798234118600a3e88c9",
+                "maintenance": "7f3b8db7764203a1a27a68fbc37089af3e0fcb9b52c30bd64ebdd617f60c39a8"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T08:17:32Z",
+            "analysis_sha256": "5e594730133462277c89a5a5ac371b42f5a35ecb9786e7c06a155c86a61797bf"
+        },
+        "publication.metadata": "data/catalog/wongyuye--dsh-composer-recall/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 输入框用方向键召回本会话已显示的用户消息，并恢复草稿。",
+            "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+            "source_url": "https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+            "items": {
+                "事件监听": "监听方向键、输入法与输入事件以提供历史召回。"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n|---|---|---|\n| 上下键 | 浏览已渲染用户文本 | 非跨会话持久历史 |\n| Esc | 恢复暂存草稿 | 会话切换和输入法未验证 |"
+        },
+        "publication.advice": {
+            "revision": "3a816a36648007a9eb266798234118600a3e88c9",
+            "text": "[Q05](#research-q05) 先用非敏感文本验证按键、会话切换和恢复，异常时停止并手动复制。"
+        },
+        "registry": "data/plugins/wongyuye--dsh-composer-recall",
+        "reports": "# dsh-composer-recall\n\n> 在 DSH 输入框用方向键召回本会话已显示的用户消息，并恢复草稿。\n\n## 研究范围\n\n- **仓库**：[WongYuYe/dsh-composer-recall](https://github.com/WongYuYe/dsh-composer-recall)\n- **版本号**：0.1.3（[固定提交 3a816a36648007a9eb266798234118600a3e88c9](https://github.com/WongYuYe/dsh-composer-recall/tree/3a816a36648007a9eb266798234118600a3e88c9)）\n- **版本日期**：2026-09-08（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持静态机制判断；未验证桌面宿主和实际操作。\n\n## 洞察短评\n\n- **用途**：需要在兼容 DSH 输入框反复编辑已发送消息的用户。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 为已显示消息提供就地键盘召回；缺实际对照，不能量化节省。\n- **思考**：[Q03](#research-q03) 闭包状态未按会话隔离，DOM 全局查询和静默异常使实际会话切换及恢复值得验证。\n- **建议**：[Q06](#research-q06) 提出按会话隔离游标和草稿，需用实例生命周期及切换测试确认。\n\n采用建议：[Q05](#research-q05) 先用非敏感文本验证按键、会话切换和恢复，异常时停止并手动复制。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 为已显示消息提供就地键盘召回；缺实际对照，不能量化节省。\n\n## 关键质疑\n\n[Q03](#research-q03) 闭包状态未按会话隔离，DOM 全局查询和静默异常使实际会话切换及恢复值得验证。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q06](#research-q06) 提出按会话隔离游标和草稿，需用实例生命周期及切换测试确认。\n\n在目标桌面版本测试多会话、虚拟滚动、输入法、草稿恢复和卸载。\n\n## 场景与替代办法\n\n需要在兼容 DSH 输入框反复编辑已发送消息的用户。\n\n手动从聊天记录复制，或使用目标宿主既有历史快捷键；效果差异未测。\n\n## 依赖与流程\n\n| 依赖 | 作用 | 边界 |\n|---|---|---|\n| 兼容 DSH 客户端 | 提供输入 shell 和 DOM | conversation peer 指定版本范围 |\n| 浏览器端 | 接收键盘与渲染消息 | DOM 变化可能失效 |\n\n| 步骤 | 动作 | 结果或处理 |\n|---|---|---|\n| 安装 | 为目标 profile 安装并重载 | 核对版本 |\n| 召回 | 输入为空或光标在首位按上 | 从已渲染消息取文本 |\n| 退出 | 按 Esc 或前进到末尾 | 恢复草稿；失败时手工复制 |\n\n## 成本与效果\n\n| 阶段 | 现金和资源 | 人工时间 |\n|---|---|---|\n| 首次 | 未知 | 安装与版本测试 |\n| 持续 | 未测 | 核对快捷键和文本 |\n| 恢复 | 未测 | 重新复制草稿 |\n\n| 效果 | 源码支持 | 未确定 |\n|---|---|---|\n| 召回 | 按键遍历页面文本 | 实际节省时间 |\n| 草稿恢复 | 保存与写回机制 | 宿主切换和异常表现 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查输入历史的用户价值、实际接线、兼容和风险。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要输入历史，相比手动查找增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n使用兼容 DSH Lexical 输入框、反复编辑本会话已发消息的人，可以用方向键从显示的用户消息中召回文本，减少切到聊天记录复制的步骤；Esc 或前进到末尾可恢复暂存草稿。相对手动查找复制，这是键盘就地操作；未比较实际时间、准确率或宿主原生快捷键，不能声称独有或更高效。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-12](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/README.md#L9-L12)\n\n作者说明用途和旧方案差异。\n\n```text\n给 [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) 输入框用的方向键历史：空着按 **↑** 召回本会话刚发过的话，**↓** 前进，**Esc** 还原正在打的草稿。\n\n适配现在的 Lexical 输入框。去读 `session.getSnapshot().nodes` 或 `<textarea>` 的旧历史插件，在这个版本上会崩或没反应。\n\n```\n\n**依据 2 · 源码核查**：[lib/client.js:131-163](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L131-L163)\n\n触发和恢复逻辑。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\t\t\t\tif (e.key === 'ArrowUp') {\n\t\t\t\t\tif (cursor === -1) {\n\t\t\t\t\t\tconst caret = caretOffset(composer)\n\t\t\t\t\t\tif (draft !== '' && caret !== 0) return\n\t\t\t\t\t\tconst next = userHistory()\n\t\t\t\t\t\tif (next.length === 0) return\n\t\t\t\t\t\thist = next\n\t\t\t\t\t\tdraftStash = draft\n\t\t\t\t\t\tcursor = hist.length - 1\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t} else {\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tif (cursor > 0) {\n\t\t\t\t\t\t\tcursor -= 1\n\t\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (cursor === -1) return\n\t\t\t\te.preventDefault()\n\t\t\t\te.stopPropagation()\n\t\t\t\tif (cursor < hist.length - 1) {\n\t\t\t\t\tcursor += 1\n\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t} else {\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(shell, draftStash)\n\t\t\t\t}\n```\n\n</details>\n\n#### 缺口\n\n- 缺实际使用与原生能力对照\n  **影响**：无法确认效益或快捷键冲突\n  **进一步探讨**：在目标版本对比手动复制和原生快捷键。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 事件如何找到会话、收集历史并写入草稿？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n客户端捕获 keydown，确认目标是输入区并处于焦点，通过 sessions 当前 ID 和 conversation.input.for 获取 shell；首次上键读取页面所有匹配的用户消息行，取 bubble 文本并去空格，再保存当前草稿和数组游标。上下移动调用 shell.setDraft；可信 input 退出浏览，effect 卸载监听器。历史来自渲染 DOM 而非持久存储，快照建立后不会同步新增消息；抓取、读取或写入异常被吞掉，可能无反馈。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:20-57](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L20-L57)\n\n查找 shell 和读取写入草稿。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\n\t\tfunction composerOf(target) {\n\t\t\tif (!(target instanceof HTMLElement)) return undefined\n\t\t\tconst editable = target.closest(COMPOSER_SEL)\n\t\t\tif (editable instanceof HTMLElement && editable.closest(SCROLL_SEL) !== null) return editable\n\t\t\treturn undefined\n\t\t}\n\n\t\t/** The per-session input shell (SessionInputShell face), or undefined. */\n\t\tfunction currentShell(ctx) {\n\t\t\ttry {\n\t\t\t\tconst sessions = ctx.get('sessions')\n\t\t\t\tconst conversation = ctx.get('conversation')\n\t\t\t\tconst id = sessions?.list?.getSnapshot?.()?.current\n\t\t\t\tif (id === undefined) return undefined\n\t\t\t\tconst actx = sessions.scope(id)\n\t\t\t\tif (actx === undefined) return undefined\n\t\t\t\treturn conversation.input.for(actx)\n\t\t\t} catch {\n\t\t\t\treturn undefined\n\t\t\t}\n\t\t}\n\n\t\t/** Authoritative plain-text draft of the current composer. */\n\t\tfunction currentDraft(shell) {\n\t\t\ttry {\n\t\t\t\treturn shell.state.getSnapshot().draft ?? ''\n\t\t\t} catch {\n\t\t\t\treturn ''\n\t\t\t}\n\t\t}\n\n\t\t/** Replace the whole draft via the official input shell (editor.update). */\n\t\tfunction setDraft(shell, text) {\n\t\t\tif (shell === undefined) return\n\t\t\ttry {\n\t\t\t\tshell.setDraft(text)\n\t\t\t} catch {}\n\t\t}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:59-75](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L59-L75)\n\n页面范围收集文本。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t/**\n\t\t * Submitted user prompts for the current session, oldest first, read from\n\t\t * rendered chat rows. Each `[data-chat-flow-kind=\"user\"]` row carries its\n\t\t * text in a `.bubble` element (the row also contains a timestamp / copy\n\t\t * action, so the bubble is the reliable text face).\n\t\t */\n\t\tfunction userHistory() {\n\t\t\tconst out = []\n\t\t\ttry {\n\t\t\t\tfor (const row of document.querySelectorAll(USER_SEL)) {\n\t\t\t\t\tconst bubble = row.querySelector('[class*=\"bubble\"]')\n\t\t\t\t\tconst text = (bubble !== null ? bubble.textContent : row.textContent) ?? ''\n\t\t\t\t\tconst t = text.replace(/\\u00a0/g, ' ').trim()\n\t\t\t\t\tif (t !== '') out.push(t)\n\t\t\t\t}\n\t\t\t} catch {}\n\t\t\treturn out\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:109-168](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L109-L168)\n\n按键与输入状态。\n\n<details>\n<summary>查看原文（60行）</summary>\n\n```text\n\t\t\tconst onKeyDown = (e) => {\n\t\t\t\tif (e.key === 'Escape') {\n\t\t\t\t\tif (composerOf(e.target) === undefined) return\n\t\t\t\t\tif (cursor === -1) return\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(currentShell(ctx), draftStash)\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (composing || e.isComposing) return\n\t\t\t\tif (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return\n\t\t\t\tif (e.ctrlKey || e.metaKey || e.altKey) return\n\n\t\t\t\tconst composer = composerOf(e.target)\n\t\t\t\tif (composer === undefined) return\n\t\t\t\tif (document.activeElement !== composer) return\n\n\t\t\t\tconst shell = currentShell(ctx)\n\t\t\t\tif (shell === undefined) return\n\n\t\t\t\tconst draft = currentDraft(shell)\n\n\t\t\t\tif (e.key === 'ArrowUp') {\n\t\t\t\t\tif (cursor === -1) {\n\t\t\t\t\t\tconst caret = caretOffset(composer)\n\t\t\t\t\t\tif (draft !== '' && caret !== 0) return\n\t\t\t\t\t\tconst next = userHistory()\n\t\t\t\t\t\tif (next.length === 0) return\n\t\t\t\t\t\thist = next\n\t\t\t\t\t\tdraftStash = draft\n\t\t\t\t\t\tcursor = hist.length - 1\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t} else {\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tif (cursor > 0) {\n\t\t\t\t\t\t\tcursor -= 1\n\t\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (cursor === -1) return\n\t\t\t\te.preventDefault()\n\t\t\t\te.stopPropagation()\n\t\t\t\tif (cursor < hist.length - 1) {\n\t\t\t\t\tcursor += 1\n\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t} else {\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(shell, draftStash)\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tconst onInput = (e) => {\n\t\t\t\tif (cursor !== -1 && composerOf(e.target) !== undefined && e.isTrusted) cursor = -1\n\t\t\t}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:170-185](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L170-L185)\n\n注册和卸载。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\t\t\tdocument.addEventListener('compositionstart', onCompositionStart, true)\n\t\t\tdocument.addEventListener('compositionend', onCompositionEnd, true)\n\t\t\tdocument.addEventListener('keydown', onKeyDown, true)\n\t\t\tdocument.addEventListener('input', onInput, true)\n\n\t\t\tctx.effect(() => () => {\n\t\t\t\tdocument.removeEventListener('compositionstart', onCompositionStart, true)\n\t\t\t\tdocument.removeEventListener('compositionend', onCompositionEnd, true)\n\t\t\t\tdocument.removeEventListener('keydown', onKeyDown, true)\n\t\t\t\tdocument.removeEventListener('input', onInput, true)\n\t\t\t}, 'dsh-composer-recall: history')\n\t\t}\n\n\t\texports.name = name\n\t\texports.inject = inject\n\t\texports.apply = apply\n```\n\n</details>\n\n#### 缺口\n\n- 未在实际页面检查渲染、虚拟列表或 shell 写入\n  **影响**：不能保证完整历史或实际联动\n  **进一步探讨**：使用多消息与滚动加载的目标页面人工验证。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么时候会误触或丢失原草稿？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n首次上键仅在空草稿或光标偏移为零时触发，拒绝 Ctrl、Meta、Alt 及输入法组合；但 Escape 分支在组合状态检查之前，且未阻止事件继续传播。游标与暂存草稿保存在插件级闭包，不按会话键隔离，源码没有会话切换时重置；若在浏览历史中切换会话，后续事件可能对当前 shell 使用旧会话历史或草稿，这是静态风险而非已复现缺陷。DOM 查询是 document 全局范围，实际是否混入其他可见或隐藏会话取决于宿主页面。setDraft 异常被吞掉，按键已被拦截时也可能无修改。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:96-127](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L96-L127)\n\n闭包状态、Escape 和组合顺序。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n\t\tfunction apply(ctx) {\n\t\t\tlet cursor = -1\n\t\t\tlet hist = []\n\t\t\tlet draftStash = ''\n\t\t\tlet composing = false\n\n\t\t\tconst onCompositionStart = () => {\n\t\t\t\tcomposing = true\n\t\t\t}\n\t\t\tconst onCompositionEnd = () => {\n\t\t\t\tcomposing = false\n\t\t\t}\n\n\t\t\tconst onKeyDown = (e) => {\n\t\t\t\tif (e.key === 'Escape') {\n\t\t\t\t\tif (composerOf(e.target) === undefined) return\n\t\t\t\t\tif (cursor === -1) return\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(currentShell(ctx), draftStash)\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (composing || e.isComposing) return\n\t\t\t\tif (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return\n\t\t\t\tif (e.ctrlKey || e.metaKey || e.altKey) return\n\n\t\t\t\tconst composer = composerOf(e.target)\n\t\t\t\tif (composer === undefined) return\n\t\t\t\tif (document.activeElement !== composer) return\n\n\t\t\t\tconst shell = currentShell(ctx)\n\t\t\t\tif (shell === undefined) return\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:131-163](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L131-L163)\n\n草稿保存、阻止按键和写入。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n\t\t\t\tif (e.key === 'ArrowUp') {\n\t\t\t\t\tif (cursor === -1) {\n\t\t\t\t\t\tconst caret = caretOffset(composer)\n\t\t\t\t\t\tif (draft !== '' && caret !== 0) return\n\t\t\t\t\t\tconst next = userHistory()\n\t\t\t\t\t\tif (next.length === 0) return\n\t\t\t\t\t\thist = next\n\t\t\t\t\t\tdraftStash = draft\n\t\t\t\t\t\tcursor = hist.length - 1\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t} else {\n\t\t\t\t\t\te.preventDefault()\n\t\t\t\t\t\te.stopPropagation()\n\t\t\t\t\t\tif (cursor > 0) {\n\t\t\t\t\t\t\tcursor -= 1\n\t\t\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (cursor === -1) return\n\t\t\t\te.preventDefault()\n\t\t\t\te.stopPropagation()\n\t\t\t\tif (cursor < hist.length - 1) {\n\t\t\t\t\tcursor += 1\n\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t} else {\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(shell, draftStash)\n\t\t\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:65-75](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L65-L75)\n\n全页面用户行查询。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n\t\tfunction userHistory() {\n\t\t\tconst out = []\n\t\t\ttry {\n\t\t\t\tfor (const row of document.querySelectorAll(USER_SEL)) {\n\t\t\t\t\tconst bubble = row.querySelector('[class*=\"bubble\"]')\n\t\t\t\t\tconst text = (bubble !== null ? bubble.textContent : row.textContent) ?? ''\n\t\t\t\t\tconst t = text.replace(/\\u00a0/g, ' ').trim()\n\t\t\t\t\tif (t !== '') out.push(t)\n\t\t\t\t}\n\t\t\t} catch {}\n\t\t\treturn out\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:51-57](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L51-L57)\n\n写入异常静默。\n\n```text\n\t\t/** Replace the whole draft via the official input shell (editor.update). */\n\t\tfunction setDraft(shell, text) {\n\t\t\tif (shell === undefined) return\n\t\t\ttry {\n\t\t\t\tshell.setDraft(text)\n\t\t\t} catch {}\n\t\t}\n```\n\n#### 缺口\n\n- 未复现切换会话、IME 与多个页面容器\n  **影响**：不能确认风险在指定宿主实际发生\n  **进一步探讨**：隔离桌面验证切换会话、输入法和多窗口。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 部署需要什么依赖，失败如何恢复？\n\n**研究主题**：依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n包版本 0.1.3，声明 Node >=20、Cordis ^4.0.1 与可选 conversation peer >=0.1.2-alpha.1 <0.2.0-0；客户端平台 web 并注入会话与 conversation。README 给出 Desktop 安装及刷新，源码依赖 Lexical 区域的 data 属性、用户行和 bubble 类名，宿主布局变动可造成空历史或取错文本。首次需配置并重载，持续需检查版本与快捷键冲突，未测现金、耗时；若失效可停用插件并手工从聊天复制。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:39-64](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/package.json#L39-L64)\n\n运行环境和兼容范围。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"publishConfig\": {\n    \"access\": \"public\",\n    \"registry\": \"https://registry.npmjs.org\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-ui-conversation\"\n      ]\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-client-ui-conversation\": \">=0.1.2-alpha.1 <0.2.0-0\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/dsh-client-ui-conversation\": {\n      \"optional\": true\n    }\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:14-35](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/README.md#L14-L35)\n\n安装与刷新步骤。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n````text\n\n```sh\ndsh plugin --profile desktop add dsh-composer-recall\n```\n\n或从 GitHub：\n\n```sh\ndsh plugin --profile desktop add github:WongYuYe/dsh-composer-recall\n```\n\n装完刷新 Web GUI，或重启 DSH Desktop。\n\n从源码：\n\n```sh\ngit clone https://github.com/WongYuYe/dsh-composer-recall.git\ncd dsh-composer-recall\ndsh plugin --profile desktop add .\n```\n\n需要 DeepSeek Harness `0.1.2-alpha.1` 及以上（Lexical 输入框）。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:8-13](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L8-L13)\n\n依赖与 DOM 选择器。\n\n```text\n\t\tconst name = 'dsh-composer-recall'\n\t\tconst inject = ['conversation', 'sessions']\n\n\t\tconst COMPOSER_SEL = '[data-composer-input]'\n\t\tconst SCROLL_SEL = '[data-input-scroll]'\n\t\tconst USER_SEL = '[data-chat-flow-kind=\"user\"]'\n```\n\n**依据 4 · 源码核查**：[lib/client.js:65-75](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L65-L75)\n\n文本提取依赖 bubble。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n\t\tfunction userHistory() {\n\t\t\tconst out = []\n\t\t\ttry {\n\t\t\t\tfor (const row of document.querySelectorAll(USER_SEL)) {\n\t\t\t\t\tconst bubble = row.querySelector('[class*=\"bubble\"]')\n\t\t\t\t\tconst text = (bubble !== null ? bubble.textContent : row.textContent) ?? ''\n\t\t\t\t\tconst t = text.replace(/\\u00a0/g, ' ').trim()\n\t\t\t\t\tif (t !== '') out.push(t)\n\t\t\t\t}\n\t\t\t} catch {}\n\t\t\treturn out\n```\n\n</details>\n\n#### 缺口\n\n- 未安装也未核线上包与具体桌面版本\n  **影响**：不能证实兼容性或依赖解析\n  **进一步探讨**：在可回退配置中安装并验证目标版本。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样安全试用，何时停止？\n\n**研究主题**：采用判断、效果与总成本\n\n#### 完整回答\n\n有兼容宿主且主要处理纯文本的用户可在可回退配置用非敏感短语测试上下、Esc、编辑后退出、切换会话与输入法；结果与原记录逐字比对，保留临时草稿。若召回错误会话、文本被截断、恢复失败或影响输入法，应停止使用并退回手动复制。未测试富文本、附件、虚拟化和长期使用，不应依赖它保存唯一草稿。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:65-75](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L65-L75)\n\n只从文本内容提取。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n\t\tfunction userHistory() {\n\t\t\tconst out = []\n\t\t\ttry {\n\t\t\t\tfor (const row of document.querySelectorAll(USER_SEL)) {\n\t\t\t\t\tconst bubble = row.querySelector('[class*=\"bubble\"]')\n\t\t\t\t\tconst text = (bubble !== null ? bubble.textContent : row.textContent) ?? ''\n\t\t\t\t\tconst t = text.replace(/\\u00a0/g, ' ').trim()\n\t\t\t\t\tif (t !== '') out.push(t)\n\t\t\t\t}\n\t\t\t} catch {}\n\t\t\treturn out\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:96-118](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L96-L118)\n\n状态及 Escape 顺序。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n\t\tfunction apply(ctx) {\n\t\t\tlet cursor = -1\n\t\t\tlet hist = []\n\t\t\tlet draftStash = ''\n\t\t\tlet composing = false\n\n\t\t\tconst onCompositionStart = () => {\n\t\t\t\tcomposing = true\n\t\t\t}\n\t\t\tconst onCompositionEnd = () => {\n\t\t\t\tcomposing = false\n\t\t\t}\n\n\t\t\tconst onKeyDown = (e) => {\n\t\t\t\tif (e.key === 'Escape') {\n\t\t\t\t\tif (composerOf(e.target) === undefined) return\n\t\t\t\t\tif (cursor === -1) return\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(currentShell(ctx), draftStash)\n\t\t\t\t\treturn\n\t\t\t\t}\n\n\t\t\t\tif (composing || e.isComposing) return\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:154-168](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L154-L168)\n\n前进恢复和编辑退出。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n\t\t\t\tif (cursor === -1) return\n\t\t\t\te.preventDefault()\n\t\t\t\te.stopPropagation()\n\t\t\t\tif (cursor < hist.length - 1) {\n\t\t\t\t\tcursor += 1\n\t\t\t\t\tsetDraft(shell, hist[cursor])\n\t\t\t\t} else {\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(shell, draftStash)\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tconst onInput = (e) => {\n\t\t\t\tif (cursor !== -1 && composerOf(e.target) !== undefined && e.isTrusted) cursor = -1\n\t\t\t}\n```\n\n</details>\n\n#### 缺口\n\n- 没有真实宿主测试\n  **影响**：不能证明上述试用步骤成功\n  **进一步探讨**：测试前保存草稿并记录宿主版本。\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 按会话隔离游标是否值得扩展？\n\n**研究主题**：新假设与验证、贡献与相对优势\n\n#### 完整回答\n\n可验证的设计假设是把历史游标和草稿绑定会话 ID，切换时重置或恢复该会话状态；相比现有单闭包可减少跨会话串用的可能，但额外状态可能引入过期草稿或内存管理复杂度。以多会话切换与失败写入案例比较现有版本和原型，记录错误草稿和操作成本；若宿主本就会销毁实例或新状态带来更多误恢复，则不应假定此改动有价值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:28-36](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L28-L36)\n\n当前会话 ID 的获取。\n\n```text\n\t\tfunction currentShell(ctx) {\n\t\t\ttry {\n\t\t\t\tconst sessions = ctx.get('sessions')\n\t\t\t\tconst conversation = ctx.get('conversation')\n\t\t\t\tconst id = sessions?.list?.getSnapshot?.()?.current\n\t\t\t\tif (id === undefined) return undefined\n\t\t\t\tconst actx = sessions.scope(id)\n\t\t\t\tif (actx === undefined) return undefined\n\t\t\t\treturn conversation.input.for(actx)\n```\n\n**依据 2 · 源码核查**：[lib/client.js:96-100](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L96-L100)\n\n游标和暂存位于 apply 闭包。\n\n```text\n\t\tfunction apply(ctx) {\n\t\t\tlet cursor = -1\n\t\t\tlet hist = []\n\t\t\tlet draftStash = ''\n\t\t\tlet composing = false\n```\n\n**依据 3 · 源码核查**：[lib/client.js:109-115](https://github.com/WongYuYe/dsh-composer-recall/blob/3a816a36648007a9eb266798234118600a3e88c9/lib/client.js#L109-L115)\n\nEscape 恢复当前 shell。\n\n```text\n\t\t\tconst onKeyDown = (e) => {\n\t\t\t\tif (e.key === 'Escape') {\n\t\t\t\t\tif (composerOf(e.target) === undefined) return\n\t\t\t\t\tif (cursor === -1) return\n\t\t\t\t\tcursor = -1\n\t\t\t\t\tsetDraft(currentShell(ctx), draftStash)\n\t\t\t\t\treturn\n```\n\n#### 缺口\n\n- 没有切换生命周期证据或原型对照\n  **影响**：不能确定潜在风险是否发生或改动收益\n  **进一步探讨**：在真实宿主记录切换和实例生命周期后验证原型。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：783014c8a2a0cab40c82989cd7e036a9b0fdf6a234ec3763a876f4946f87be00。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 197 | 155 | 20 | — |\n| .md | source | 2 | 98 | — | — | 519 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n|---|---|---|\n| 上下键 | 浏览已渲染用户文本 | 非跨会话持久历史 |\n| Esc | 恢复暂存草稿 | 会话切换和输入法未验证 |\n\n## 工程亮点\n\n[Q02](#research-q02) 事件捕获有卸载路径；[Q03](#research-q03) 静默异常和跨会话闭包状态需要验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定提交静态核查包声明与客户端主要路径，未安装、运行或比较目标宿主。\n- 下一步：在目标桌面版本测试多会话、虚拟滚动、输入法、草稿恢复和卸载。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-02/wongyuye--dsh-composer-recall/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"WongYuYe/dsh-composer-recall\",\n  \"revision\": \"3a816a36648007a9eb266798234118600a3e88c9\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"cordis.patch.yml\",\n    \"lib/index.js\",\n    \"lib/client.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查输入历史的用户价值、实际接线、兼容和风险。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁需要输入历史，相比手动查找增加什么？\",\n        \"answer\": \"使用兼容 DSH Lexical 输入框、反复编辑本会话已发消息的人，可以用方向键从显示的用户消息中召回文本，减少切到聊天记录复制的步骤；Esc 或前进到末尾可恢复暂存草稿。相对手动查找复制，这是键盘就地操作；未比较实际时间、准确率或宿主原生快捷键，不能声称独有或更高效。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 9,\n            \"line_end\": 12,\n            \"observation\": \"作者说明用途和旧方案差异。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 131,\n            \"line_end\": 163,\n            \"observation\": \"触发和恢复逻辑。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺实际使用与原生能力对照\",\n            \"impact\": \"无法确认效益或快捷键冲突\",\n            \"next_step\": \"在目标版本对比手动复制和原生快捷键。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"事件如何找到会话、收集历史并写入草稿？\",\n        \"answer\": \"客户端捕获 keydown，确认目标是输入区并处于焦点，通过 sessions 当前 ID 和 conversation.input.for 获取 shell；首次上键读取页面所有匹配的用户消息行，取 bubble 文本并去空格，再保存当前草稿和数组游标。上下移动调用 shell.setDraft；可信 input 退出浏览，effect 卸载监听器。历史来自渲染 DOM 而非持久存储，快照建立后不会同步新增消息；抓取、读取或写入异常被吞掉，可能无反馈。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 20,\n            \"line_end\": 57,\n            \"observation\": \"查找 shell 和读取写入草稿。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 59,\n            \"line_end\": 75,\n            \"observation\": \"页面范围收集文本。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 109,\n            \"line_end\": 168,\n            \"observation\": \"按键与输入状态。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 170,\n            \"line_end\": 185,\n            \"observation\": \"注册和卸载。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在实际页面检查渲染、虚拟列表或 shell 写入\",\n            \"impact\": \"不能保证完整历史或实际联动\",\n            \"next_step\": \"使用多消息与滚动加载的目标页面人工验证。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"什么时候会误触或丢失原草稿？\",\n        \"answer\": \"首次上键仅在空草稿或光标偏移为零时触发，拒绝 Ctrl、Meta、Alt 及输入法组合；但 Escape 分支在组合状态检查之前，且未阻止事件继续传播。游标与暂存草稿保存在插件级闭包，不按会话键隔离，源码没有会话切换时重置；若在浏览历史中切换会话，后续事件可能对当前 shell 使用旧会话历史或草稿，这是静态风险而非已复现缺陷。DOM 查询是 document 全局范围，实际是否混入其他可见或隐藏会话取决于宿主页面。setDraft 异常被吞掉，按键已被拦截时也可能无修改。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 96,\n            \"line_end\": 127,\n            \"observation\": \"闭包状态、Escape 和组合顺序。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 131,\n            \"line_end\": 163,\n            \"observation\": \"草稿保存、阻止按键和写入。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 65,\n            \"line_end\": 75,\n            \"observation\": \"全页面用户行查询。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 51,\n            \"line_end\": 57,\n            \"observation\": \"写入异常静默。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未复现切换会话、IME 与多个页面容器\",\n            \"impact\": \"不能确认风险在指定宿主实际发生\",\n            \"next_step\": \"隔离桌面验证切换会话、输入法和多窗口。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\"\n        ],\n        \"question\": \"部署需要什么依赖，失败如何恢复？\",\n        \"answer\": \"包版本 0.1.3，声明 Node >=20、Cordis ^4.0.1 与可选 conversation peer >=0.1.2-alpha.1 <0.2.0-0；客户端平台 web 并注入会话与 conversation。README 给出 Desktop 安装及刷新，源码依赖 Lexical 区域的 data 属性、用户行和 bubble 类名，宿主布局变动可造成空历史或取错文本。首次需配置并重载，持续需检查版本与快捷键冲突，未测现金、耗时；若失效可停用插件并手工从聊天复制。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 39,\n            \"line_end\": 64,\n            \"observation\": \"运行环境和兼容范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 14,\n            \"line_end\": 35,\n            \"observation\": \"安装与刷新步骤。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 8,\n            \"line_end\": 13,\n            \"observation\": \"依赖与 DOM 选择器。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 65,\n            \"line_end\": 75,\n            \"observation\": \"文本提取依赖 bubble。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未安装也未核线上包与具体桌面版本\",\n            \"impact\": \"不能证实兼容性或依赖解析\",\n            \"next_step\": \"在可回退配置中安装并验证目标版本。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"adoption\",\n          \"cost\"\n        ],\n        \"question\": \"怎样安全试用，何时停止？\",\n        \"answer\": \"有兼容宿主且主要处理纯文本的用户可在可回退配置用非敏感短语测试上下、Esc、编辑后退出、切换会话与输入法；结果与原记录逐字比对，保留临时草稿。若召回错误会话、文本被截断、恢复失败或影响输入法，应停止使用并退回手动复制。未测试富文本、附件、虚拟化和长期使用，不应依赖它保存唯一草稿。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 65,\n            \"line_end\": 75,\n            \"observation\": \"只从文本内容提取。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 96,\n            \"line_end\": 118,\n            \"observation\": \"状态及 Escape 顺序。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 154,\n            \"line_end\": 168,\n            \"observation\": \"前进恢复和编辑退出。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有真实宿主测试\",\n            \"impact\": \"不能证明上述试用步骤成功\",\n            \"next_step\": \"测试前保存草稿并记录宿主版本。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"hypothesis\",\n          \"contribution\"\n        ],\n        \"question\": \"按会话隔离游标是否值得扩展？\",\n        \"answer\": \"可验证的设计假设是把历史游标和草稿绑定会话 ID，切换时重置或恢复该会话状态；相比现有单闭包可减少跨会话串用的可能，但额外状态可能引入过期草稿或内存管理复杂度。以多会话切换与失败写入案例比较现有版本和原型，记录错误草稿和操作成本；若宿主本就会销毁实例或新状态带来更多误恢复，则不应假定此改动有价值。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 28,\n            \"line_end\": 36,\n            \"observation\": \"当前会话 ID 的获取。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 96,\n            \"line_end\": 100,\n            \"observation\": \"游标和暂存位于 apply 闭包。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 109,\n            \"line_end\": 115,\n            \"observation\": \"Escape 恢复当前 shell。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有切换生命周期证据或原型对照\",\n            \"impact\": \"不能确定潜在风险是否发生或改动收益\",\n            \"next_step\": \"在真实宿主记录切换和实例生命周期后验证原型。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-composer-recall\\n\\n[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\\n[![npm](https://img.shields.io/npm/v/dsh-composer-recall?style=flat-square)](https://www.npmjs.com/package/dsh-composer-recall)\\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)\\n\\n简体中文 | [English](README.en.md)\\n\\n给 [DSH Desktop](https://github.com/anywhere-labs/dsh-desktop) 输入框用的方向键历史：空着按 **↑** 召回本会话刚发过的话，**↓** 前进，**Esc** 还原正在打的草稿。\\n\\n适配现在的 Lexical 输入框。去读 `session.getSnapshot().nodes` 或 `<textarea>` 的旧历史插件，在这个版本上会崩或没反应。\\n\\n## 安装\\n\\n```sh\\ndsh plugin --profile desktop add dsh-composer-recall\\n```\\n\\n或从 GitHub：\\n\\n```sh\\ndsh plugin --profile desktop add github:WongYuYe/dsh-composer-recall\\n```\\n\\n装完刷新 Web GUI，或重启 DSH Desktop。\\n\\n从源码：\\n\\n```sh\\ngit clone https://github.com/WongYuYe/dsh-composer-recall.git\\ncd dsh-composer-recall\\ndsh plugin --profile desktop add .\\n```\\n\\n需要 DeepSeek Harness `0.1.2-alpha.1` 及以上（Lexical 输入框）。\\n\\n## 使用\\n\\n1. 聚焦输入框。\\n2. 草稿为空，或光标在开头时，按 **↑**。\\n3. 再按 **↑** 看更早的消息，**↓** 前进。\\n4. **Esc** 退出历史，还原暂存的草稿。\\n5. 浏览时直接打字会留下召回的内容，并退出历史。\\n\\n历史只来自当前会话已经显示出来的用户消息，不是跨工作区的全局环。\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-composer-recall\\\",\\n  \\\"version\\\": \\\"0.1.3\\\",\\n  \\\"description\\\": \\\"Arrow-key input history for DSH 0.1.2-alpha.1: press ↑ in an empty composer (or at the start of the draft) to recall this session's prompts, ↓ to go forward, Esc to restore what you were typing.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./client\\\": \\\"./lib/client.js\\\",\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.en.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"author\\\": \\\"WongYuYe\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/WongYuYe/dsh-composer-recall.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/WongYuYe/dsh-composer-recall/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/WongYuYe/dsh-composer-recall#readme\\\",\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"composer\\\",\\n    \\\"input-history\\\",\\n    \\\"keyboard-shortcuts\\\",\\n    \\\"lexical\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20\\\"\\n  },\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\",\\n    \\\"registry\\\": \\\"https://registry.npmjs.org\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-ui-conversation\\\"\\n      ]\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-conversation\\\": \\\">=0.1.2-alpha.1 <0.2.0-0\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/dsh-client-ui-conversation\\\": {\\n      \\\"optional\\\": true\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"cordis.patch.yml\",\n      \"content\": \"# bundle patch: insert composer recall into the host composition\\n- insert:\\n    - id: dsh-composer-recall\\n      name: dsh-composer-recall\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/**\\n * Host half. Behavior is browser-only; the Loader still needs this entry so\\n * the package can appear as a cordis.yml row and `dsh.client` can join the\\n * web boot graph.\\n */\\nexport const name = 'dsh-composer-recall'\\nexport const inject = []\\n\\nexport function apply() {}\\n\"\n    },\n    {\n      \"path\": \"lib/client.js\",\n      \"content\": \"window.__ModuleLoader__.load({\\n\\tid: 'dsh-composer-recall',\\n\\tfactory: (require) => {\\n\\t\\tconst module = { exports: {} }\\n\\t\\tconst exports = module.exports\\n\\t\\tObject.defineProperty(exports, Symbol.toStringTag, { value: 'Module' })\\n\\n\\t\\tconst name = 'dsh-composer-recall'\\n\\t\\tconst inject = ['conversation', 'sessions']\\n\\n\\t\\tconst COMPOSER_SEL = '[data-composer-input]'\\n\\t\\tconst SCROLL_SEL = '[data-input-scroll]'\\n\\t\\tconst USER_SEL = '[data-chat-flow-kind=\\\"user\\\"]'\\n\\n\\t\\t/**\\n\\t\\t * The Lexical composer surface behind an event target, or undefined when\\n\\t\\t * the target is not the composer (`[data-composer-input]` inside\\n\\t\\t * `[data-input-scroll]`).\\n\\t\\t */\\n\\t\\tfunction composerOf(target) {\\n\\t\\t\\tif (!(target instanceof HTMLElement)) return undefined\\n\\t\\t\\tconst editable = target.closest(COMPOSER_SEL)\\n\\t\\t\\tif (editable instanceof HTMLElement && editable.closest(SCROLL_SEL) !== null) return editable\\n\\t\\t\\treturn undefined\\n\\t\\t}\\n\\n\\t\\t/** The per-session input shell (SessionInputShell face), or undefined. */\\n\\t\\tfunction currentShell(ctx) {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tconst sessions = ctx.get('sessions')\\n\\t\\t\\t\\tconst conversation = ctx.get('conversation')\\n\\t\\t\\t\\tconst id = sessions?.list?.getSnapshot?.()?.current\\n\\t\\t\\t\\tif (id === undefined) return undefined\\n\\t\\t\\t\\tconst actx = sessions.scope(id)\\n\\t\\t\\t\\tif (actx === undefined) return undefined\\n\\t\\t\\t\\treturn conversation.input.for(actx)\\n\\t\\t\\t} catch {\\n\\t\\t\\t\\treturn undefined\\n\\t\\t\\t}\\n\\t\\t}\\n\\n\\t\\t/** Authoritative plain-text draft of the current composer. */\\n\\t\\tfunction currentDraft(shell) {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\treturn shell.state.getSnapshot().draft ?? ''\\n\\t\\t\\t} catch {\\n\\t\\t\\t\\treturn ''\\n\\t\\t\\t}\\n\\t\\t}\\n\\n\\t\\t/** Replace the whole draft via the official input shell (editor.update). */\\n\\t\\tfunction setDraft(shell, text) {\\n\\t\\t\\tif (shell === undefined) return\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tshell.setDraft(text)\\n\\t\\t\\t} catch {}\\n\\t\\t}\\n\\n\\t\\t/**\\n\\t\\t * Submitted user prompts for the current session, oldest first, read from\\n\\t\\t * rendered chat rows. Each `[data-chat-flow-kind=\\\"user\\\"]` row carries its\\n\\t\\t * text in a `.bubble` element (the row also contains a timestamp / copy\\n\\t\\t * action, so the bubble is the reliable text face).\\n\\t\\t */\\n\\t\\tfunction userHistory() {\\n\\t\\t\\tconst out = []\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tfor (const row of document.querySelectorAll(USER_SEL)) {\\n\\t\\t\\t\\t\\tconst bubble = row.querySelector('[class*=\\\"bubble\\\"]')\\n\\t\\t\\t\\t\\tconst text = (bubble !== null ? bubble.textContent : row.textContent) ?? ''\\n\\t\\t\\t\\t\\tconst t = text.replace(/\\\\u00a0/g, ' ').trim()\\n\\t\\t\\t\\t\\tif (t !== '') out.push(t)\\n\\t\\t\\t\\t}\\n\\t\\t\\t} catch {}\\n\\t\\t\\treturn out\\n\\t\\t}\\n\\n\\t\\t/** Collapsed caret offset into the contenteditable composer text. */\\n\\t\\tfunction caretOffset(composer) {\\n\\t\\t\\ttry {\\n\\t\\t\\t\\tconst sel = document.getSelection()\\n\\t\\t\\t\\tif (sel === null || sel.rangeCount === 0) return 0\\n\\t\\t\\t\\tconst range = sel.getRangeAt(0)\\n\\t\\t\\t\\tif (!range.collapsed) return -1\\n\\t\\t\\t\\tconst container = range.startContainer\\n\\t\\t\\t\\tif (container !== composer && !composer.contains(container)) return -1\\n\\t\\t\\t\\tconst pre = range.cloneRange()\\n\\t\\t\\t\\tpre.selectNodeContents(composer)\\n\\t\\t\\t\\tpre.setEnd(container, range.startOffset)\\n\\t\\t\\t\\treturn pre.toString().length\\n\\t\\t\\t} catch {\\n\\t\\t\\t\\treturn 0\\n\\t\\t\\t}\\n\\t\\t}\\n\\n\\t\\tfunction apply(ctx) {\\n\\t\\t\\tlet cursor = -1\\n\\t\\t\\tlet hist = []\\n\\t\\t\\tlet draftStash = ''\\n\\t\\t\\tlet composing = false\\n\\n\\t\\t\\tconst onCompositionStart = () => {\\n\\t\\t\\t\\tcomposing = true\\n\\t\\t\\t}\\n\\t\\t\\tconst onCompositionEnd = () => {\\n\\t\\t\\t\\tcomposing = false\\n\\t\\t\\t}\\n\\n\\t\\t\\tconst onKeyDown = (e) => {\\n\\t\\t\\t\\tif (e.key === 'Escape') {\\n\\t\\t\\t\\t\\tif (composerOf(e.target) === undefined) return\\n\\t\\t\\t\\t\\tif (cursor === -1) return\\n\\t\\t\\t\\t\\tcursor = -1\\n\\t\\t\\t\\t\\tsetDraft(currentShell(ctx), draftStash)\\n\\t\\t\\t\\t\\treturn\\n\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\tif (composing || e.isComposing) return\\n\\t\\t\\t\\tif (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return\\n\\t\\t\\t\\tif (e.ctrlKey || e.metaKey || e.altKey) return\\n\\n\\t\\t\\t\\tconst composer = composerOf(e.target)\\n\\t\\t\\t\\tif (composer === undefined) return\\n\\t\\t\\t\\tif (document.activeElement !== composer) return\\n\\n\\t\\t\\t\\tconst shell = currentShell(ctx)\\n\\t\\t\\t\\tif (shell === undefined) return\\n\\n\\t\\t\\t\\tconst draft = currentDraft(shell)\\n\\n\\t\\t\\t\\tif (e.key === 'ArrowUp') {\\n\\t\\t\\t\\t\\tif (cursor === -1) {\\n\\t\\t\\t\\t\\t\\tconst caret = caretOffset(composer)\\n\\t\\t\\t\\t\\t\\tif (draft !== '' && caret !== 0) return\\n\\t\\t\\t\\t\\t\\tconst next = userHistory()\\n\\t\\t\\t\\t\\t\\tif (next.length === 0) return\\n\\t\\t\\t\\t\\t\\thist = next\\n\\t\\t\\t\\t\\t\\tdraftStash = draft\\n\\t\\t\\t\\t\\t\\tcursor = hist.length - 1\\n\\t\\t\\t\\t\\t\\te.preventDefault()\\n\\t\\t\\t\\t\\t\\te.stopPropagation()\\n\\t\\t\\t\\t\\t\\tsetDraft(shell, hist[cursor])\\n\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\te.preventDefault()\\n\\t\\t\\t\\t\\t\\te.stopPropagation()\\n\\t\\t\\t\\t\\t\\tif (cursor > 0) {\\n\\t\\t\\t\\t\\t\\t\\tcursor -= 1\\n\\t\\t\\t\\t\\t\\t\\tsetDraft(shell, hist[cursor])\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\treturn\\n\\t\\t\\t\\t}\\n\\n\\t\\t\\t\\tif (cursor === -1) return\\n\\t\\t\\t\\te.preventDefault()\\n\\t\\t\\t\\te.stopPropagation()\\n\\t\\t\\t\\tif (cursor < hist.length - 1) {\\n\\t\\t\\t\\t\\tcursor += 1\\n\\t\\t\\t\\t\\tsetDraft(shell, hist[cursor])\\n\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\tcursor = -1\\n\\t\\t\\t\\t\\tsetDraft(shell, draftStash)\\n\\t\\t\\t\\t}\\n\\t\\t\\t}\\n\\n\\t\\t\\tconst onInput = (e) => {\\n\\t\\t\\t\\tif (cursor !== -1 && composerOf(e.target) !== undefined && e.isTrusted) cursor = -1\\n\\t\\t\\t}\\n\\n\\t\\t\\tdocument.addEventListener('compositionstart', onCompositionStart, true)\\n\\t\\t\\tdocument.addEventListener('compositionend', onCompositionEnd, true)\\n\\t\\t\\tdocument.addEventListener('keydown', onKeyDown, true)\\n\\t\\t\\tdocument.addEventListener('input', onInput, true)\\n\\n\\t\\t\\tctx.effect(() => () => {\\n\\t\\t\\t\\tdocument.removeEventListener('compositionstart', onCompositionStart, true)\\n\\t\\t\\t\\tdocument.removeEventListener('compositionend', onCompositionEnd, true)\\n\\t\\t\\t\\tdocument.removeEventListener('keydown', onKeyDown, true)\\n\\t\\t\\t\\tdocument.removeEventListener('input', onInput, true)\\n\\t\\t\\t}, 'dsh-composer-recall: history')\\n\\t\\t}\\n\\n\\t\\texports.name = name\\n\\t\\texports.inject = inject\\n\\t\\texports.apply = apply\\n\\t\\treturn module.exports\\n\\t},\\n})\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"3a816a36648007a9eb266798234118600a3e88c9\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"783014c8a2a0cab40c82989cd7e036a9b0fdf6a234ec3763a876f4946f87be00\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 197,\n        \"code\": 155,\n        \"comments\": 20,\n        \"blank\": 22\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 98,\n        \"words\": 519\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "84d7311789771ca8efbcaa2e659d09bd5d7173a4931434a5fb8c2a12cca29e06"
+        }
+    },
+    "unavailable_artifacts": []
+}

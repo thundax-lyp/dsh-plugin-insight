@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "2ba1c7b209f3f1bc1e8f3353af5a0289",
+    "identity": "github:1196157387:packages-dsh-madara-pixel-theme",
+    "slug": "bosskrabs--product--packages-dsh-madara-pixel-theme",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1196157387:packages-dsh-madara-pixel-theme",
+            "repository_id": 1196157387,
+            "component_id": "packages-dsh-madara-pixel-theme",
+            "repository": "BossKrabs/product",
+            "path": "packages/dsh-madara-pixel-theme",
+            "aliases": [],
+            "name": "dsh-madara-pixel-theme",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "857837e53d466e3f68a3e73408f31d816b73209345b93bd7ec33a64d8925d655",
+                "code": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "maintenance": "993eeb410b77487b256c7463e62eaee57f15c0b258bcce63b71d285b379cd0b1"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T09:50:53.915Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/README.md",
+                            "content_sha256": "6ff681443edb49076cbd11ddbfdd3c4010f3eb7e1f75d12cc427c9ffd3af66ba"
+                        }
+                    ],
+                    "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                    "captured_at": "2026-11-04T09:50:53.915Z",
+                    "summary": "为 DSH Web 界面提供宇智波斑像素主题、字体及启动动画。",
+                    "artifact": "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-theme/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/README.md",
+                            "content_sha256": "6ff681443edb49076cbd11ddbfdd3c4010f3eb7e1f75d12cc427c9ffd3af66ba"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/package.json",
+                            "content_sha256": "940aa8cf36c87c968a41fcfa71850f0628add549651314a5676fc058e44f6c26"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/index.js",
+                            "content_sha256": "4717a89dd256c40f17aa91081d78b5b703c5c028278703ad6f9e976e26795116"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/client.template.js",
+                            "content_sha256": "661035b31470b332a4c403246b3a4ef1e10f6660e9bb2f9b80f255305b286ba6"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/boot.js",
+                            "content_sha256": "7232707993ffbcf74180ed71dac1764a6e7006d18b299f702a8a7fce6d7d9a1d"
+                        },
+                        {
+                            "repository_url": "https://github.com/BossKrabs/product",
+                            "commit": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                            "path": "packages/dsh-madara-pixel-theme/build.cjs",
+                            "content_sha256": "d9f54cc6edac2384fe1b337813b4161fd70359b5bc02e8f2e48e1310f13af970"
+                        }
+                    ],
+                    "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                    "captured_at": "2026-11-04T09:50:53.915Z",
+                    "summary": "核查 packages/dsh-madara-pixel-theme/README.md、packages/dsh-madara-pixel-theme/package.json、packages/dsh-madara-pixel-theme/index.js、packages/dsh-madara-pixel-theme/client.template.js、packages/dsh-madara-pixel-theme/boot.js、packages/dsh-madara-pixel-theme/build.cjs；[Q02](#research-q02) 客户端覆盖主题 token、偏好与样式。",
+                    "artifact": "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-theme/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查子包清单、入口、模板、构建和动画；未逐项审计 CSS、素材版权或独立桌宠。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 面向希望定制 DSH Web 界面的用户。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "[Q02](#research-q02) 客户端覆盖主题 token、偏好与样式。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查子包清单、入口、模板、构建和动画；未逐项审计 CSS、素材版权或独立桌宠。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json 声明 1.0.0、Node >=22.19、DSH 0.2.1-rc.2；README 提供 tarball，成品未核对。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH 0.2.1-rc.2 Web 主题与槽位 | 客户端必需 | 覆盖样式及设置 | 其他版本需验证 |\n| 浏览器 localStorage、dialog | 偏好与动画条件 | 保存偏好及展示 | 无法使用时体验取决宿主 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地资源，费用未知 | 检查版本及许可 | 包与构建未测 |\n| 持续使用 | 样式与动画开销未知 | 调整设置 | 性能未测 |\n| 失败恢复 | 资源成本未知 | 禁用并检查外观 | 冲突恢复未测 |\n| 退出 | 本地数据成本低但未测 | 检查偏好残留 | 自动清理未确认 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 确认版本和许可，在隔离 profile 检查外观冲突及退出。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 像素主题 | 客户端样式与 token | 各平台实际显示 |\n| 动画 | 可跳过与减少动态代码 | 无障碍及浏览器效果 |\n| 恢复 | 清理覆盖和恢复偏好代码 | 多主题冲突场景 |",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 在 effect 内安装并清理覆盖，恢复先前明暗偏好；[Q03](#research-q03) 依赖宿主 DOM。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 将像素视觉与设置面板集成到宿主。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "[Q03](#research-q03) 首页样式依赖具体哈希类名，进度条只是装饰；宿主版本兼容未验证。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 假设检测宿主界面或使用稳定槽位可减少静默失效；尚未实现。",
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                            "area": "code",
+                            "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T09:50:53.915Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T09:50:53.915Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "reviewed_at": "2026-11-04T09:50:53.915Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                        "area": "code",
+                        "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "novelty：采用已有主题和动画机制；mechanism：组合 token、样式及退出清理；transferability：依赖具体宿主 API 与 DOM；simplification：设置集中但需核对兼容。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "workflow：主要改变视觉感受；delivery：提供可调外观但未运行验证；reach：面向偏好该视觉的 DSH 用户；economics：效益未测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "喜欢像素风格的 DSH 用户可以先在兼容版本的隔离 profile 观察这个主题。相比宿主原有外观，它增加人物背景、字体和可跳过动画，但跨版本显示和恢复尚未验证。若视觉冲突、动画影响使用或许可不符合要求，应关闭主题并检查原主题及本地偏好。",
+                "criteria": {
+                    "scenario": {
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01) 的 README.md:1-15 和 package.json:41-51 描述喜欢该像素风格、使用 DSH Web 界面的用户，原办法是使用宿主自带明暗主题，预期是可调整的配色、背景和动画。这支持具体但以个人偏好为主的潜在场景，超过无任务依据的 0 档；没有用户重复使用、现有外观造成实际摩擦或采用必要性的直接材料，尚不能达到重复任务与需求依据充分的 50% 档。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01) 和 [Q02](#research-q02) 的 client.template.js:8-30、33-44 表明相对宿主原有主题，增加像素视觉、中文字体、设置开关与主题恢复代码，可解释为具体外观便利，因此超过无增量的 0 档。[Q03](#research-q03) 的哈希选择器和未验证显示、恢复是主要限制；该贡献主要是局部视觉包装，未证明实现相对原生方案的重要任务改善，故为 25% 而非 50% 档。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 至 [Q04](#research-q04) 引用固定版本的 package.json、client.template.js、boot.js 和 build.cjs，覆盖入口、主题覆盖、偏好、动画与依赖，且指出首页类名和模板占位的反例；直接实现材料超过只有作者说明或片段的 25% 档。README 的 Windows 桌面验证属于作者声明，本次未构建或运行宿主、浏览器、发布包和无障碍检查，因此源码级取 50% 档，缺少 75% 档所需的同版本本地测试。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q02](#research-q02) 的 client.template.js:20-30、41-44 提供停用时移除覆盖和恢复先前主题的代码，[Q04](#research-q04) 的 package.json:1-8、27-50 与 README.md:13-19 给出版本、资源与安装条件，用户可识别首次兼容检查、持续视觉冲突及关闭后的复核，已有源码级可行退路，超过恢复路径不清的 25% 档。实际安装、其他主题并用、卸载后 localStorage 和恢复均未验证，不能认定主要失败已可发现和恢复，故不能达到 75% 档。"
+                    }
+                },
+                "score": 37,
+                "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "reviewed_at": "2026-11-04T09:50:53.915Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-02-github-1196157387-packages-dsh-madara-pixel-theme-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1196157387:packages-dsh-madara-pixel-theme",
+                        "area": "code",
+                        "fingerprint": "2eb032cb14be44c35501757fd4f3f25449730a17"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1196157387:packages-dsh-madara-pixel-theme",
+            "repository": "BossKrabs/product",
+            "path": "packages/dsh-madara-pixel-theme",
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "fingerprints": {
+                "directory": "857837e53d466e3f68a3e73408f31d816b73209345b93bd7ec33a64d8925d655",
+                "code": "2eb032cb14be44c35501757fd4f3f25449730a17",
+                "maintenance": "993eeb410b77487b256c7463e62eaee57f15c0b258bcce63b71d285b379cd0b1"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T08:17:32Z",
+            "analysis_sha256": "79e6b6819f06ea2760e0d1460451a9a1b0ca03fbe2a8fbf3644753dee95a33b3"
+        },
+        "publication.metadata": "data/catalog/bosskrabs--product--packages-dsh-madara-pixel-theme/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH Web 界面提供宇智波斑像素主题、字体及启动动画。",
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "source_url": "https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "items": {
+                "界面": "提供主题设置、样式、字体及启动动画。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 主题和字体 | 自定义配色和字体 | 依赖宿主主题 API 与 CSS |\n| 人物背景 | 首页像素风格 | 选择器可能随宿主变化 |\n| 启动动画 | 可跳过的装饰性开场 | 进度不是加载状态 |\n| 设置 | 分别启停效果 | 本地偏好与恢复未运行验证 |"
+        },
+        "publication.advice": {
+            "revision": "2eb032cb14be44c35501757fd4f3f25449730a17",
+            "text": "[Q04](#research-q04) 确认版本和许可，在隔离 profile 检查外观冲突及退出。"
+        },
+        "registry": "data/plugins/bosskrabs--product--packages-dsh-madara-pixel-theme",
+        "reports": "# dsh-madara-pixel-theme\n\n> 为 DSH Web 界面提供宇智波斑像素主题、字体及启动动画。\n\n## 研究范围\n\n- **仓库**：[BossKrabs/product](https://github.com/BossKrabs/product)\n- **版本号**：1.0.0（[固定提交 2eb032cb14be44c35501757fd4f3f25449730a17](https://github.com/BossKrabs/product/tree/2eb032cb14be44c35501757fd4f3f25449730a17)）\n- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持本地客户端主题与可关闭动画；桌面、Web、构建产物、无障碍和跨版本兼容未实际验证。\n\n## 洞察短评\n\n- **用途**：[Q01](#research-q01) 面向希望定制 DSH Web 界面的用户。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将像素视觉与设置面板集成到宿主。\n- **思考**：[Q03](#research-q03) 首页样式依赖具体哈希类名，进度条只是装饰；宿主版本兼容未验证。\n- **建议**：[Q05](#research-q05) 假设检测宿主界面或使用稳定槽位可减少静默失效；尚未实现。\n\n采用建议：[Q04](#research-q04) 确认版本和许可，在隔离 profile 检查外观冲突及退出。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 将像素视觉与设置面板集成到宿主。\n\n## 关键质疑\n\n[Q03](#research-q03) 首页样式依赖具体哈希类名，进度条只是装饰；宿主版本兼容未验证。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 假设检测宿主界面或使用稳定槽位可减少静默失效；尚未实现。\n\n静态阅读固定源码，未运行构建、测试、宿主或浏览器；材料解析器报模板占位解析错误，未外推到生成客户端。\n\n## 场景与替代办法\n\n[Q01](#research-q01) 面向希望定制 DSH Web 界面的用户。\n\n相对于 DSH 原有明暗主题，增加人物像素视觉、字体和可跳过动画，不增加业务功能。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| DSH 0.2.1-rc.2 Web 主题与槽位 | 客户端必需 | 覆盖样式及设置 | 其他版本需验证 |\n| 浏览器 localStorage、dialog | 偏好与动画条件 | 保存偏好及展示 | 无法使用时体验取决宿主 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户检查宿主版本和许可 | 保留原主题设置 |\n| 使用 | 用户启用并调整各项视觉效果 | 核对界面及动画可跳过 |\n| 退出 | 用户关闭并检查恢复 | 恢复明暗主题及检查偏好 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地资源，费用未知 | 检查版本及许可 | 包与构建未测 |\n| 持续使用 | 样式与动画开销未知 | 调整设置 | 性能未测 |\n| 失败恢复 | 资源成本未知 | 禁用并检查外观 | 冲突恢复未测 |\n| 退出 | 本地数据成本低但未测 | 检查偏好残留 | 自动清理未确认 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 像素主题 | 客户端样式与 token | 各平台实际显示 |\n| 动画 | 可跳过与减少动态代码 | 无障碍及浏览器效果 |\n| 恢复 | 清理覆盖和恢复偏好代码 | 多主题冲突场景 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核对像素主题的宿主接线、动态效果和兼容性。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 主题提供什么，适合谁？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n希望在 DSH Web 界面使用宇智波斑像素风格的用户可使用此主题；作者描述深蓝暗红配色、中文像素字体、人物背景和约三秒启动动画，设置项可分别关闭。包声明 Web Client 和主题、槽位注入，Host 入口为空函数，功能主要在客户端，不应与同仓库桌宠组件混同。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-madara-pixel-theme/README.md:1-19](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md#L1-L19)\n\n作者说明。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n# 宇智波斑像素主题\n\n深蓝、暗红与金色的 Harness 操作界面，中文像素字体，以及写轮眼旋转的约三秒启动动画。主题默认启用像素字体、首页人物背景和启动动画，每项均可独立关闭。\n\n## 安装\n\n已验证 DeepSeek Harness 0.2.1-rc.2 的 Windows 官方桌面端。通过应用的「插件 → 添加插件」选择本包的完整 .tgz 路径，安装后按提示启用。浏览器 WebUI 可执行：\n\n```sh\ndsh plugin --profile web add /path/to/dsh-madara-pixel-theme-1.0.0.tgz\n```\n\n在「设置 → 通用」中的「宇智波斑 · 像素主题」调整主题、首页人物与点阵、像素字体和启动动画。启动动画支持 Esc 跳过、重播、系统减少动态设置；其进度条为视觉效果，不能代表后台加载进度。关闭主题或卸载时移除样式与颜色覆盖，并恢复启用前的明暗模式。\n\n主题和其他外观插件都可能覆盖界面颜色，建议一次只启用一个外观主题。本版本面向 Harness 0.2.1-rc.2 的界面结构；其他版本需重新验证。\n\n## 源码与授权\n\n运行时已包含编译好的 client.js，安装不运行构建脚本。源码执行 `node build.cjs` 可重新构建。所有资源本地加载；不联网下载字体，不读取会话或账号凭据。详见 LICENSE、ASSET-NOTICE.md 与 licenses/。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-theme/package.json:20-26](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/package.json#L20-L26)\n\n固定版本代码。\n\n```text\n  \"name\": \"dsh-madara-pixel-theme\",\n  \"description\": \"宇智波斑像素主题：深蓝暗红配色、中文像素字体和可跳过的写轮眼启动动画。\",\n  \"exports\": {\n    \".\": \"./index.js\",\n    \"./client\": \"./client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-theme/package.json:41-51](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/package.json#L41-L51)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-ui-theme\",\n        \"@deepseek-ai/dsh-client-ui-slots\"\n      ],\n      \"platform\": \"web\"\n    }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-madara-pixel-theme/index.js:1-2](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/index.js#L1-L2)\n\n固定版本代码。\n\n```text\nexport const name='madara-pixel-theme';\nexport function apply() {}\n```\n\n#### 缺口\n\n- 未运行桌面或 Web 界面，不能证实显示效果\n  **影响**：运行效果未知\n  **进一步探讨**：在目标版本检查设置与界面。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 客户端如何覆盖和恢复主题？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n客户端读取 localStorage 布尔偏好，默认启用主题、纹理、像素字体和动画；启用时保存此前 theme preference、注册 token 覆盖，写入 body data 属性并切暗色。设置面板挂在 settings.general.item；停用或 effect 清理移除覆盖、样式和属性并尝试恢复先前明暗偏好。恢复逻辑与其他主题同时更改时的最终表现未验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-theme/client.template.js:8-30](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/client.template.js#L8-L30)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    const KEY='dsh.madara-pixel-theme.preferences.v1';\n    function apply(ctx){\n      const defaults={enabled:true,texture:true,pixelFont:true,bootAnimation:true};\n      let prefs={...defaults};\n      try {const saved=JSON.parse(localStorage.getItem(KEY)||'{}');for(const key of Object.keys(defaults))if(typeof saved[key]==='boolean')prefs[key]=saved[key];}catch{}\n      const subscribers=new Set();\n      let removeTokens=null,removeBoot=null,disposed=false,previousTheme=null,autoTimer=null;\n      const style=document.createElement('style');style.dataset.plugin='dsh-madara-pixel-theme';\n      style.textContent=CSS+'\\nbody[data-dsh-madara-theme=\"on\"][data-dsh-madara-texture=\"on\"] .Dc7zOa_root[data-phase=\"hero\"]::before{background-image:url(\"'+PIXEL_MADARA_ART+'\")}';\n      function save(){try{localStorage.setItem(KEY,JSON.stringify(prefs));}catch{}}\n      function clearBody(){delete document.body.dataset.dshMadaraTheme;delete document.body.dataset.dshMadaraTexture;delete document.body.dataset.dshMadaraFont;}\n      function playBoot(){if(disposed||!prefs.enabled)return;removeBoot?.();removeBoot=mountPixelBoot({onClose:()=>{removeBoot=null;}});}\n      function update(patch={}){\n        Object.assign(prefs,patch);\n        if(!prefs.enabled||!prefs.bootAnimation)removeBoot?.();\n        if(prefs.enabled){\n          if(!removeTokens){previousTheme=ctx.theme.getTheme().preference;removeTokens=ctx.theme.overrideTokens('dsh-madara-pixel-theme',TOKENS);}\n          document.body.dataset.dshMadaraTheme='on';document.body.dataset.dshMadaraTexture=prefs.texture?'on':'off';document.body.dataset.dshMadaraFont=prefs.pixelFont?'on':'off';\n          if(ctx.theme.getTheme().preference!=='dark')ctx.theme.setTheme('dark');\n        }else{\n          removeTokens?.();removeTokens=null;clearBody();if(previousTheme){ctx.theme.setTheme(previousTheme);previousTheme=null;}\n        }\n        save();for(const listener of subscribers)listener({...prefs});\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-theme/client.template.js:33-44](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/client.template.js#L33-L44)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      function Settings(){\n        const [value,setValue]=React.useState({...prefs});React.useEffect(()=>{subscribers.add(setValue);return()=>subscribers.delete(setValue);},[]);const e=React.createElement;\n        const toggle=(key,label)=>e('button',{type:'button',className:'madara-theme-control','aria-pressed':value[key],onClick:()=>update({[key]:!prefs[key]})},label+(value[key]?'：开':'：关'));\n        return e('section',{className:'madara-theme-settings','aria-label':'宇智波斑像素主题'},\n          e('div',{className:'madara-theme-settings-title'},e('span',null,'宇智波斑 · 像素主题'),e('span',{className:'madara-theme-settings-caption'},'MADARA / 01')),\n          e('p',{className:'madara-theme-settings-note'},'深蓝背景、暗红盔甲与金色高亮。首页人物背景、像素字体和约三秒启动动画可独立关闭。'),\n          e('div',{className:'madara-theme-settings-actions'},toggle('enabled','界面主题'),toggle('texture','首页人物与点阵'),toggle('pixelFont','像素字体'),toggle('bootAnimation','启动动画'),e('button',{type:'button',className:'madara-theme-control',disabled:!value.enabled,onClick:playBoot},'重播动画')));\n      }\n      ctx.effect(()=>{document.head.appendChild(style);update();autoTimer=setTimeout(autoBoot,80);document.addEventListener('visibilitychange',autoBoot);return()=>{disposed=true;clearTimeout(autoTimer);document.removeEventListener('visibilitychange',autoBoot);removeBoot?.();removeTokens?.();style.remove();clearBody();if(previousTheme)ctx.theme.setTheme(previousTheme);subscribers.clear();};},'madara-pixel-theme: scoped theme');\n      ctx.slots.inject('settings.general.item',()=>ctx.slots.register({name:'settings.general.item',id:'madara-pixel-theme',order:9},Settings));\n    }\n    return {name:'madara-pixel-theme',inject:['theme','slots'],apply};\n```\n\n</details>\n\n#### 缺口\n\n- 未在真实宿主验证持久化、主题冲突和恢复\n  **影响**：运行效果未知\n  **进一步探讨**：检查启停、重载、系统主题切换。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 启动动画和兼容声明的边界是什么？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n动画通过 dialog 创建，支持 Escape、跳过、减少动态、自动结束和独立 4.2 秒硬停止，并恢复先前焦点；作者明确进度条是装饰而非后台加载进度。首页背景依赖带哈希样式类名和 data-phase 的选择器，界面版本变化可能失配；README 的 Windows 官方桌面验证是作者声明，非本次测试，其他环境不能由此推断兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-theme/client.template.js:15-16](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/client.template.js#L15-L16)\n\n固定版本代码。\n\n```text\n      const style=document.createElement('style');style.dataset.plugin='dsh-madara-pixel-theme';\n      style.textContent=CSS+'\\nbody[data-dsh-madara-theme=\"on\"][data-dsh-madara-texture=\"on\"] .Dc7zOa_root[data-phase=\"hero\"]::before{background-image:url(\"'+PIXEL_MADARA_ART+'\")}';\n```\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-theme/boot.js:75-105](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/boot.js#L75-L105)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  function after(fn, ms) {\n    const timer = setTimeout(() => { timers.delete(timer); if (!closed) fn(); }, ms);\n    timers.add(timer);\n    return timer;\n  }\n  function dispose() {\n    if (closed) return;\n    closed = true;\n    for (const timer of timers) clearTimeout(timer);\n    timers.clear();\n    motion.removeEventListener('change', onMotionChange);\n    dialog.removeEventListener('cancel', onCancel);\n    dialog.removeEventListener('close', dispose);\n    dialog.remove();\n    if (previousFocus instanceof HTMLElement && previousFocus.isConnected) previousFocus.focus({ preventScroll: true });\n    onClose();\n  }\n  function finish() {\n    if (closed || closeTimer !== null) return;\n    if (motion.matches) { dispose(); return; }\n    dialog.classList.add('is-leaving');\n    closeTimer = after(dispose, 240);\n  }\n  function onCancel(event) { event.preventDefault(); dispose(); }\n  function onMotionChange(event) { if (event.matches) dispose(); }\n  dialog.querySelector('.madara-pixel-boot-skip').addEventListener('click', dispose);\n  dialog.addEventListener('cancel', onCancel);\n  dialog.addEventListener('close', dispose);\n  motion.addEventListener('change', onMotionChange);\n  document.body.appendChild(dialog);\n  try { dialog.showModal(); } catch { dispose(); return () => {}; }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-theme/boot.js:106-119](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/boot.js#L106-L119)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  after(() => {\n    dialog.querySelector('.madara-pixel-boot-stage').textContent = '写轮眼 · 觉醒';\n    dialog.querySelector('.madara-pixel-boot-count').textContent = '02 / 03';\n    dialog.classList.add('is-awakened');\n  }, 1050);\n  after(() => {\n    dialog.querySelector('.madara-pixel-boot-stage').textContent = 'HARNESS · 就绪';\n    dialog.querySelector('.madara-pixel-boot-count').textContent = 'READY';\n    dialog.classList.add('is-ready');\n  }, 2250);\n  after(finish, motion.matches ? 350 : 2800);\n  // Independent hard stop: an intro must never trap the application.\n  after(dispose, 4200);\n  return dispose;\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-madara-pixel-theme/README.md:7-15](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md#L7-L15)\n\n作者说明。\n\n````text\n已验证 DeepSeek Harness 0.2.1-rc.2 的 Windows 官方桌面端。通过应用的「插件 → 添加插件」选择本包的完整 .tgz 路径，安装后按提示启用。浏览器 WebUI 可执行：\n\n```sh\ndsh plugin --profile web add /path/to/dsh-madara-pixel-theme-1.0.0.tgz\n```\n\n在「设置 → 通用」中的「宇智波斑 · 像素主题」调整主题、首页人物与点阵、像素字体和启动动画。启动动画支持 Esc 跳过、重播、系统减少动态设置；其进度条为视觉效果，不能代表后台加载进度。关闭主题或卸载时移除样式与颜色覆盖，并恢复启用前的明暗模式。\n\n主题和其他外观插件都可能覆盖界面颜色，建议一次只启用一个外观主题。本版本面向 Harness 0.2.1-rc.2 的界面结构；其他版本需重新验证。\n````\n\n#### 缺口\n\n- 未做真实浏览器、屏幕阅读器或多平台测试，不能确认无障碍和视觉兼容\n  **影响**：运行效果未知\n  **进一步探讨**：在目标宿主分别验证。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、构建与退出有哪些条件？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n清单声明 Node >=22.19、DSH 0.2.1-rc.2、Web Client；打包清单包含已生成 client.js 和许可材料。构建脚本读取字体、图片、CSS、token 和模板生成内嵌客户端，固定源码库存档的解析器将 boot.js 和模板占位表达式报告为解析错误；这属于模板占位语法，不能据此判定生成 client.js 同样失败。用户需核查目标版本、主题冲突及字体和图像许可，关闭后偏好仍可能留在 localStorage；未检验包与源码一致或卸载行为。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-theme/package.json:1-8](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/package.json#L1-L8)\n\n固定版本代码。\n\n```text\n{\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=22.19\",\n    \"dsh\": \"0.2.1-rc.2\"\n  },\n```\n\n**依据 2 · 源码核查**：[packages/dsh-madara-pixel-theme/package.json:27-50](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/package.json#L27-L50)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  \"files\": [\n    \"index.js\",\n    \"client.js\",\n    \"cordis.patch.yml\",\n    \"LICENSE\",\n    \"ASSET-NOTICE.md\",\n    \"licenses\",\n    \"README.md\",\n    \"CHANGELOG.md\"\n  ],\n  \"scripts\": {\n    \"build\": \"node build.cjs\",\n    \"test\": \"node --test test/*.test.cjs\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [\n        \"@deepseek-ai/dsh-client-ui-theme\",\n        \"@deepseek-ai/dsh-client-ui-slots\"\n      ],\n      \"platform\": \"web\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-madara-pixel-theme/build.cjs:1-7](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/build.cjs#L1-L7)\n\n固定版本代码。\n\n```text\nconst fs=require('fs'),path=require('path');const dir=__dirname;\nconst font=(family,file,format,mime)=>'@font-face{font-family:\"'+family+'\";src:url(data:'+mime+';base64,'+fs.readFileSync(path.join(dir,'assets',file)).toString('base64')+') format(\"'+format+'\");font-weight:400;font-style:normal;font-display:swap;}';\nconst css=font('Madara Silkscreen','Silkscreen-Regular.ttf','truetype','font/ttf')+font('Madara Fusion Pixel','fusion-pixel-12px-proportional-zh-Hans.woff2','woff2','font/woff2')+font('Madara Fusion Pixel Mono','fusion-pixel-12px-monospaced-zh-Hans.woff2','woff2','font/woff2')+fs.readFileSync(path.join(dir,'theme.css'),'utf8')+fs.readFileSync(path.join(dir,'boot.css'),'utf8');\nconst art='data:image/png;base64,'+fs.readFileSync(path.join(dir,'assets/madara-foreground.png')).toString('base64');\nconst boot=fs.readFileSync(path.join(dir,'boot.js'),'utf8').replace('/* MADARA_FOREGROUND_VALUE */',()=>JSON.stringify(art));\nconst client=fs.readFileSync(path.join(dir,'client.template.js'),'utf8').replace('/* CSS_VALUE */',()=>JSON.stringify(css)).replace('/* TOKENS_VALUE */',()=>JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir,'tokens.json'),'utf8')))).replace('/* BOOT_VALUE */',()=>boot);\nfs.writeFileSync(path.join(dir,'client.js'),client);console.log('Standalone Madara theme built.');\n```\n\n**依据 4 · 源码核查**：[packages/dsh-madara-pixel-theme/client.template.js:8-18](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/client.template.js#L8-L18)\n\n固定版本代码。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n    const KEY='dsh.madara-pixel-theme.preferences.v1';\n    function apply(ctx){\n      const defaults={enabled:true,texture:true,pixelFont:true,bootAnimation:true};\n      let prefs={...defaults};\n      try {const saved=JSON.parse(localStorage.getItem(KEY)||'{}');for(const key of Object.keys(defaults))if(typeof saved[key]==='boolean')prefs[key]=saved[key];}catch{}\n      const subscribers=new Set();\n      let removeTokens=null,removeBoot=null,disposed=false,previousTheme=null,autoTimer=null;\n      const style=document.createElement('style');style.dataset.plugin='dsh-madara-pixel-theme';\n      style.textContent=CSS+'\\nbody[data-dsh-madara-theme=\"on\"][data-dsh-madara-texture=\"on\"] .Dc7zOa_root[data-phase=\"hero\"]::before{background-image:url(\"'+PIXEL_MADARA_ART+'\")}';\n      function save(){try{localStorage.setItem(KEY,JSON.stringify(prefs));}catch{}}\n      function clearBody(){delete document.body.dataset.dshMadaraTheme;delete document.body.dataset.dshMadaraTexture;delete document.body.dataset.dshMadaraFont;}\n```\n\n</details>\n\n**依据 5 · 作者声明**：[packages/dsh-madara-pixel-theme/README.md:13-19](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md#L13-L19)\n\n作者说明。\n\n```text\n在「设置 → 通用」中的「宇智波斑 · 像素主题」调整主题、首页人物与点阵、像素字体和启动动画。启动动画支持 Esc 跳过、重播、系统减少动态设置；其进度条为视觉效果，不能代表后台加载进度。关闭主题或卸载时移除样式与颜色覆盖，并恢复启用前的明暗模式。\n\n主题和其他外观插件都可能覆盖界面颜色，建议一次只启用一个外观主题。本版本面向 Harness 0.2.1-rc.2 的界面结构；其他版本需重新验证。\n\n## 源码与授权\n\n运行时已包含编译好的 client.js，安装不运行构建脚本。源码执行 `node build.cjs` 可重新构建。所有资源本地加载；不联网下载字体，不读取会话或账号凭据。详见 LICENSE、ASSET-NOTICE.md 与 licenses/。\n```\n\n#### 缺口\n\n- 未运行构建、发布 tarball 或清理验证\n  **影响**：不能确认资源及退出完整\n  **进一步探讨**：隔离环境比对成品并检查本地存储。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 兼容性检查能否降低样式失效？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证假设：在挂载主题时检测首页目标节点或可公开的稳定槽位，并在不匹配时显示兼容提示，可能减少版本升级导致的人物背景静默缺失。可比较当前哈希选择器与稳定槽位方案在多个宿主版本和主题切换下的表现；若误报影响正常界面或其他视觉覆盖仍错误，假设不成立。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-madara-pixel-theme/client.template.js:15-16](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/client.template.js#L15-L16)\n\n固定版本代码。\n\n```text\n      const style=document.createElement('style');style.dataset.plugin='dsh-madara-pixel-theme';\n      style.textContent=CSS+'\\nbody[data-dsh-madara-theme=\"on\"][data-dsh-madara-texture=\"on\"] .Dc7zOa_root[data-phase=\"hero\"]::before{background-image:url(\"'+PIXEL_MADARA_ART+'\")}';\n```\n\n**依据 2 · 作者声明**：[packages/dsh-madara-pixel-theme/README.md:13-15](https://github.com/BossKrabs/product/blob/2eb032cb14be44c35501757fd4f3f25449730a17/packages/dsh-madara-pixel-theme/README.md#L13-L15)\n\n作者说明。\n\n```text\n在「设置 → 通用」中的「宇智波斑 · 像素主题」调整主题、首页人物与点阵、像素字体和启动动画。启动动画支持 Esc 跳过、重播、系统减少动态设置；其进度条为视觉效果，不能代表后台加载进度。关闭主题或卸载时移除样式与颜色覆盖，并恢复启用前的明暗模式。\n\n主题和其他外观插件都可能覆盖界面颜色，建议一次只启用一个外观主题。本版本面向 Harness 0.2.1-rc.2 的界面结构；其他版本需重新验证。\n```\n\n#### 缺口\n\n- 该检查尚未实现或测试\n  **影响**：不能保证跨版本显示\n  **进一步探讨**：用真实版本和截图对照验证。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-madara-pixel-theme；内容摘要：780064ad1af03cf9d38bb86f7e216d18f563dd25c618eceba055046300339ac3。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 37 | — | — | 643 |\n| .js | source | 4 | 334 | 324 | 12 | — |\n| .cjs | source | 1 | 7 | 7 | 2 | — |\n| .cjs | test | 1 | 34 | 34 | 1 | — |\n\n排除 0 项，解析错误 3 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 主题和字体 | 自定义配色和字体 | 依赖宿主主题 API 与 CSS |\n| 人物背景 | 首页像素风格 | 选择器可能随宿主变化 |\n| 启动动画 | 可跳过的装饰性开场 | 进度不是加载状态 |\n| 设置 | 分别启停效果 | 本地偏好与恢复未运行验证 |\n\n## 工程亮点\n\n[Q02](#research-q02) 在 effect 内安装并清理覆盖，恢复先前明暗偏好；[Q03](#research-q03) 依赖宿主 DOM。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-madara-pixel-theme/README.md、packages/dsh-madara-pixel-theme/package.json、packages/dsh-madara-pixel-theme/index.js、packages/dsh-madara-pixel-theme/client.template.js、packages/dsh-madara-pixel-theme/boot.js、packages/dsh-madara-pixel-theme/build.cjs 及固定范围 inventory；组件：packages/dsh-madara-pixel-theme。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查子包清单、入口、模板、构建和动画；未逐项审计 CSS、素材版权或独立桌宠。\n- 下一步：静态阅读固定源码，未运行构建、测试、宿主或浏览器；材料解析器报模板占位解析错误，未外推到生成客户端。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-02/bosskrabs--product--packages-dsh-madara-pixel-theme/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"BossKrabs/product\",\n  \"revision\": \"2eb032cb14be44c35501757fd4f3f25449730a17\",\n  \"component\": \"packages/dsh-madara-pixel-theme\",\n  \"inspected_paths\": [\n    \"packages/dsh-madara-pixel-theme/README.md\",\n    \"packages/dsh-madara-pixel-theme/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-madara-pixel-theme/index.js\",\n    \"packages/dsh-madara-pixel-theme/client.template.js\",\n    \"packages/dsh-madara-pixel-theme/boot.js\",\n    \"packages/dsh-madara-pixel-theme/build.cjs\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核对像素主题的宿主接线、动态效果和兼容性。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"主题提供什么，适合谁？\",\n        \"answer\": \"希望在 DSH Web 界面使用宇智波斑像素风格的用户可使用此主题；作者描述深蓝暗红配色、中文像素字体、人物背景和约三秒启动动画，设置项可分别关闭。包声明 Web Client 和主题、槽位注入，Host 入口为空函数，功能主要在客户端，不应与同仓库桌宠组件混同。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/README.md\",\n            \"line_start\": 1,\n            \"line_end\": 19,\n            \"observation\": \"作者说明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/package.json\",\n            \"line_start\": 20,\n            \"line_end\": 26,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/package.json\",\n            \"line_start\": 41,\n            \"line_end\": 51,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 2,\n            \"observation\": \"固定版本代码。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行桌面或 Web 界面，不能证实显示效果\",\n            \"impact\": \"运行效果未知\",\n            \"next_step\": \"在目标版本检查设置与界面。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"客户端如何覆盖和恢复主题？\",\n        \"answer\": \"客户端读取 localStorage 布尔偏好，默认启用主题、纹理、像素字体和动画；启用时保存此前 theme preference、注册 token 覆盖，写入 body data 属性并切暗色。设置面板挂在 settings.general.item；停用或 effect 清理移除覆盖、样式和属性并尝试恢复先前明暗偏好。恢复逻辑与其他主题同时更改时的最终表现未验证。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n            \"line_start\": 8,\n            \"line_end\": 30,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n            \"line_start\": 33,\n            \"line_end\": 44,\n            \"observation\": \"固定版本代码。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在真实宿主验证持久化、主题冲突和恢复\",\n            \"impact\": \"运行效果未知\",\n            \"next_step\": \"检查启停、重载、系统主题切换。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"启动动画和兼容声明的边界是什么？\",\n        \"answer\": \"动画通过 dialog 创建，支持 Escape、跳过、减少动态、自动结束和独立 4.2 秒硬停止，并恢复先前焦点；作者明确进度条是装饰而非后台加载进度。首页背景依赖带哈希样式类名和 data-phase 的选择器，界面版本变化可能失配；README 的 Windows 官方桌面验证是作者声明，非本次测试，其他环境不能由此推断兼容。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n            \"line_start\": 15,\n            \"line_end\": 16,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/boot.js\",\n            \"line_start\": 75,\n            \"line_end\": 105,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/boot.js\",\n            \"line_start\": 106,\n            \"line_end\": 119,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/README.md\",\n            \"line_start\": 7,\n            \"line_end\": 15,\n            \"observation\": \"作者说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未做真实浏览器、屏幕阅读器或多平台测试，不能确认无障碍和视觉兼容\",\n            \"impact\": \"运行效果未知\",\n            \"next_step\": \"在目标宿主分别验证。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"安装、构建与退出有哪些条件？\",\n        \"answer\": \"清单声明 Node >=22.19、DSH 0.2.1-rc.2、Web Client；打包清单包含已生成 client.js 和许可材料。构建脚本读取字体、图片、CSS、token 和模板生成内嵌客户端，固定源码库存档的解析器将 boot.js 和模板占位表达式报告为解析错误；这属于模板占位语法，不能据此判定生成 client.js 同样失败。用户需核查目标版本、主题冲突及字体和图像许可，关闭后偏好仍可能留在 localStorage；未检验包与源码一致或卸载行为。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/package.json\",\n            \"line_start\": 1,\n            \"line_end\": 8,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/package.json\",\n            \"line_start\": 27,\n            \"line_end\": 50,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/build.cjs\",\n            \"line_start\": 1,\n            \"line_end\": 7,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n            \"line_start\": 8,\n            \"line_end\": 18,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/README.md\",\n            \"line_start\": 13,\n            \"line_end\": 19,\n            \"observation\": \"作者说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行构建、发布 tarball 或清理验证\",\n            \"impact\": \"不能确认资源及退出完整\",\n            \"next_step\": \"隔离环境比对成品并检查本地存储。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"兼容性检查能否降低样式失效？\",\n        \"answer\": \"未验证假设：在挂载主题时检测首页目标节点或可公开的稳定槽位，并在不匹配时显示兼容提示，可能减少版本升级导致的人物背景静默缺失。可比较当前哈希选择器与稳定槽位方案在多个宿主版本和主题切换下的表现；若误报影响正常界面或其他视觉覆盖仍错误，假设不成立。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n            \"line_start\": 15,\n            \"line_end\": 16,\n            \"observation\": \"固定版本代码。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-madara-pixel-theme/README.md\",\n            \"line_start\": 13,\n            \"line_end\": 15,\n            \"observation\": \"作者说明。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"该检查尚未实现或测试\",\n            \"impact\": \"不能保证跨版本显示\",\n            \"next_step\": \"用真实版本和截图对照验证。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/README.md\",\n      \"content\": \"# 宇智波斑像素主题\\n\\n深蓝、暗红与金色的 Harness 操作界面，中文像素字体，以及写轮眼旋转的约三秒启动动画。主题默认启用像素字体、首页人物背景和启动动画，每项均可独立关闭。\\n\\n## 安装\\n\\n已验证 DeepSeek Harness 0.2.1-rc.2 的 Windows 官方桌面端。通过应用的「插件 → 添加插件」选择本包的完整 .tgz 路径，安装后按提示启用。浏览器 WebUI 可执行：\\n\\n```sh\\ndsh plugin --profile web add /path/to/dsh-madara-pixel-theme-1.0.0.tgz\\n```\\n\\n在「设置 → 通用」中的「宇智波斑 · 像素主题」调整主题、首页人物与点阵、像素字体和启动动画。启动动画支持 Esc 跳过、重播、系统减少动态设置；其进度条为视觉效果，不能代表后台加载进度。关闭主题或卸载时移除样式与颜色覆盖，并恢复启用前的明暗模式。\\n\\n主题和其他外观插件都可能覆盖界面颜色，建议一次只启用一个外观主题。本版本面向 Harness 0.2.1-rc.2 的界面结构；其他版本需重新验证。\\n\\n## 源码与授权\\n\\n运行时已包含编译好的 client.js，安装不运行构建脚本。源码执行 `node build.cjs` 可重新构建。所有资源本地加载；不联网下载字体，不读取会话或账号凭据。详见 LICENSE、ASSET-NOTICE.md 与 licenses/。\\n\\n## 公开安装包\\n\\n下载：https://github.com/BossKrabs/product/raw/refs/heads/main/dist/dsh-madara-pixel-theme-1.0.0.tgz\\n\\n源码：https://github.com/BossKrabs/product/tree/main/packages/dsh-madara-pixel-theme\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/package.json\",\n      \"content\": \"{\\n  \\\"version\\\": \\\"1.0.0\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.19\\\",\\n    \\\"dsh\\\": \\\"0.2.1-rc.2\\\"\\n  },\\n  \\\"license\\\": \\\"SEE LICENSE IN LICENSE\\\",\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"madara\\\",\\n    \\\"pixel-art\\\"\\n  ],\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\",\\n    \\\"registry\\\": \\\"https://registry.npmjs.org/\\\"\\n  },\\n  \\\"name\\\": \\\"dsh-madara-pixel-theme\\\",\\n  \\\"description\\\": \\\"宇智波斑像素主题：深蓝暗红配色、中文像素字体和可跳过的写轮眼启动动画。\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./client\\\": \\\"./client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"client.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"LICENSE\\\",\\n    \\\"ASSET-NOTICE.md\\\",\\n    \\\"licenses\\\",\\n    \\\"README.md\\\",\\n    \\\"CHANGELOG.md\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"node build.cjs\\\",\\n    \\\"test\\\": \\\"node --test test/*.test.cjs\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-ui-theme\\\",\\n        \\\"@deepseek-ai/dsh-client-ui-slots\\\"\\n      ],\\n      \\\"platform\\\": \\\"web\\\"\\n    }\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/BossKrabs/product.git\\\",\\n    \\\"directory\\\": \\\"packages/dsh-madara-pixel-theme\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/BossKrabs/product/tree/main/packages/dsh-madara-pixel-theme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/BossKrabs/product/issues\\\"\\n  },\\n  \\\"author\\\": {\\n    \\\"name\\\": \\\"BossKrabs\\\",\\n    \\\"url\\\": \\\"https://github.com/BossKrabs\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# Harness · 宇智波斑像素插件\\n\\n两个分别安装的 DeepSeek Harness 插件。\\n\\n| 插件 | 功能 | 源码 | 安装包 |\\n| --- | --- | --- | --- |\\n| 宇智波斑像素主题 | 深蓝暗红配色、中文像素字体、可跳过的写轮眼启动动画 | [主题](packages/dsh-madara-pixel-theme) | [1.0.0](dist/dsh-madara-pixel-theme-1.0.0.tgz) |\\n| 宇智波斑像素桌宠 | Windows x64 桌宠，16 组动作随 Harness 任务状态变化 | [桌宠](packages/dsh-madara-pixel-pet) | [1.0.0](dist/dsh-madara-pixel-pet-1.0.0.tgz) |\\n\\n下载对应安装包后，在官方 Harness 的「插件 → 添加插件」中填写 .tgz 的完整本地路径，安装后启用。已验证 Harness 0.2.1-rc.2；详细用法、兼容范围和许可证见各子包 README。\\n\\n主题和桌宠彼此独立。桌宠直接依赖 QCYTSN 原作者发布的 dsh-dafeiyu@0.1.22，不覆盖大肥鱼文件。首次安装依赖仍需要联网下载原作者的运行库。\\n\\n本仓库不包含账号、会话或个人配置，不包含额外生成的预览图。角色外观为非官方同人制作，相关角色权利归各自权利人；项目代码、字体与依赖分别遵循各自许可证。\\n\\n本地验证：主题启用、关闭、Esc 跳过、设置保存与清理；桌宠状态转发、配置、独立素材目录以及原生 Helper 的 ready/ping/shutdown 均已通过。打包清单和校验值见 dist/validation.json 与 dist/checksums.json。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"bosskrabs-harness-plugins\\\",\\n  \\\"private\\\": true,\\n  \\\"description\\\": \\\"Independently installable Madara pixel theme and desktop companion.\\\",\\n  \\\"workspaces\\\": [\\n    \\\"packages/*\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/index.js\",\n      \"content\": \"export const name='madara-pixel-theme';\\nexport function apply() {}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n      \"content\": \"window.__ModuleLoader__.load({\\n  id: 'dsh-madara-pixel-theme',\\n  factory: (require) => {\\n    const React=require('react');\\n    const CSS=/* CSS_VALUE */;\\n    const TOKENS=/* TOKENS_VALUE */;\\n    /* BOOT_VALUE */\\n    const KEY='dsh.madara-pixel-theme.preferences.v1';\\n    function apply(ctx){\\n      const defaults={enabled:true,texture:true,pixelFont:true,bootAnimation:true};\\n      let prefs={...defaults};\\n      try {const saved=JSON.parse(localStorage.getItem(KEY)||'{}');for(const key of Object.keys(defaults))if(typeof saved[key]==='boolean')prefs[key]=saved[key];}catch{}\\n      const subscribers=new Set();\\n      let removeTokens=null,removeBoot=null,disposed=false,previousTheme=null,autoTimer=null;\\n      const style=document.createElement('style');style.dataset.plugin='dsh-madara-pixel-theme';\\n      style.textContent=CSS+'\\\\nbody[data-dsh-madara-theme=\\\"on\\\"][data-dsh-madara-texture=\\\"on\\\"] .Dc7zOa_root[data-phase=\\\"hero\\\"]::before{background-image:url(\\\"'+PIXEL_MADARA_ART+'\\\")}';\\n      function save(){try{localStorage.setItem(KEY,JSON.stringify(prefs));}catch{}}\\n      function clearBody(){delete document.body.dataset.dshMadaraTheme;delete document.body.dataset.dshMadaraTexture;delete document.body.dataset.dshMadaraFont;}\\n      function playBoot(){if(disposed||!prefs.enabled)return;removeBoot?.();removeBoot=mountPixelBoot({onClose:()=>{removeBoot=null;}});}\\n      function update(patch={}){\\n        Object.assign(prefs,patch);\\n        if(!prefs.enabled||!prefs.bootAnimation)removeBoot?.();\\n        if(prefs.enabled){\\n          if(!removeTokens){previousTheme=ctx.theme.getTheme().preference;removeTokens=ctx.theme.overrideTokens('dsh-madara-pixel-theme',TOKENS);}\\n          document.body.dataset.dshMadaraTheme='on';document.body.dataset.dshMadaraTexture=prefs.texture?'on':'off';document.body.dataset.dshMadaraFont=prefs.pixelFont?'on':'off';\\n          if(ctx.theme.getTheme().preference!=='dark')ctx.theme.setTheme('dark');\\n        }else{\\n          removeTokens?.();removeTokens=null;clearBody();if(previousTheme){ctx.theme.setTheme(previousTheme);previousTheme=null;}\\n        }\\n        save();for(const listener of subscribers)listener({...prefs});\\n      }\\n      function autoBoot(){if(disposed||document.hidden||window.__dshMadaraPixelBootPlayed)return;window.__dshMadaraPixelBootPlayed=true;if(prefs.enabled&&prefs.bootAnimation)playBoot();}\\n      function Settings(){\\n        const [value,setValue]=React.useState({...prefs});React.useEffect(()=>{subscribers.add(setValue);return()=>subscribers.delete(setValue);},[]);const e=React.createElement;\\n        const toggle=(key,label)=>e('button',{type:'button',className:'madara-theme-control','aria-pressed':value[key],onClick:()=>update({[key]:!prefs[key]})},label+(value[key]?'：开':'：关'));\\n        return e('section',{className:'madara-theme-settings','aria-label':'宇智波斑像素主题'},\\n          e('div',{className:'madara-theme-settings-title'},e('span',null,'宇智波斑 · 像素主题'),e('span',{className:'madara-theme-settings-caption'},'MADARA / 01')),\\n          e('p',{className:'madara-theme-settings-note'},'深蓝背景、暗红盔甲与金色高亮。首页人物背景、像素字体和约三秒启动动画可独立关闭。'),\\n          e('div',{className:'madara-theme-settings-actions'},toggle('enabled','界面主题'),toggle('texture','首页人物与点阵'),toggle('pixelFont','像素字体'),toggle('bootAnimation','启动动画'),e('button',{type:'button',className:'madara-theme-control',disabled:!value.enabled,onClick:playBoot},'重播动画')));\\n      }\\n      ctx.effect(()=>{document.head.appendChild(style);update();autoTimer=setTimeout(autoBoot,80);document.addEventListener('visibilitychange',autoBoot);return()=>{disposed=true;clearTimeout(autoTimer);document.removeEventListener('visibilitychange',autoBoot);removeBoot?.();removeTokens?.();style.remove();clearBody();if(previousTheme)ctx.theme.setTheme(previousTheme);subscribers.clear();};},'madara-pixel-theme: scoped theme');\\n      ctx.slots.inject('settings.general.item',()=>ctx.slots.register({name:'settings.general.item',id:'madara-pixel-theme',order:9},Settings));\\n    }\\n    return {name:'madara-pixel-theme',inject:['theme','slots'],apply};\\n  }\\n});\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/boot.js\",\n      \"content\": \"const PIXEL_MADARA_ART = /* MADARA_FOREGROUND_VALUE */;\\n/* Local, silent intro. The progress is decorative, not backend readiness. */\\nfunction mountPixelBoot({ onClose = () => {} } = {}) {\\n  const ART = PIXEL_MADARA_ART;\\n  const previousFocus = document.activeElement;\\n  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');\\n  const dialog = document.createElement('dialog');\\n  const timers = new Set();\\n  let closed = false;\\n  let closeTimer = null;\\n  dialog.className = 'madara-pixel-boot' + (motion.matches ? ' is-reduced' : '');\\n  dialog.setAttribute('aria-label', 'Harness 宇智波斑像素开机动画');\\n  dialog.setAttribute('aria-describedby', 'madara-pixel-boot-description');\\n  const blocks = '<i></i>'.repeat(24);\\n  // The iris is an independent vector layer behind the opaque character art.\\n  const texture = [];\\n  for (let y = -300; y <= 300; y += 10) for (let x = -300; x <= 300; x += 10) {\\n    const hash = ((x + 311) * 73 + (y + 317) * 151) % 29;\\n    if (Math.hypot(x,y) > 305 || hash > 9) continue;\\n    texture.push(`<rect x=\\\"${x}\\\" y=\\\"${y}\\\" width=\\\"${hash%3===0?10:5}\\\" height=\\\"${hash%2===0?10:5}\\\" fill=\\\"${['#b92f41','#eb4441','#c63843','#f34c41'][hash%4]}\\\"/>`);\\n  }\\n  const tomoe = '<path d=\\\"M0-115C-49-115-67-139-64-180C-61-224-10-255 75-273C34-241 50-226 57-203C64-178 54-138 28-120C18-116 8-114 0-115Z\\\"/>';\\n  const sharingan = `<svg class=\\\"madara-pixel-boot-sharingan\\\" viewBox=\\\"0 0 1254 1254\\\" shape-rendering=\\\"crispEdges\\\" aria-hidden=\\\"true\\\">\\n    <path fill=\\\"#091322\\\" d=\\\"M0 0H1254V1254H0Z\\\"/>\\n    <g transform=\\\"translate(956 310)\\\">\\n      <circle r=\\\"343\\\" fill=\\\"#080e1d\\\"/><circle r=\\\"333\\\" fill=\\\"#a62c3f\\\"/><circle r=\\\"323\\\" fill=\\\"#141628\\\"/>\\n      <circle r=\\\"310\\\" fill=\\\"#d73540\\\"/><circle r=\\\"290\\\" fill=\\\"#df373c\\\"/>\\n      ${texture.join('')}\\n      <circle r=\\\"248\\\" fill=\\\"none\\\" stroke=\\\"#a32d3d\\\" stroke-width=\\\"7\\\"/>\\n      <circle r=\\\"124\\\" fill=\\\"none\\\" stroke=\\\"#ad3040\\\" stroke-width=\\\"8\\\"/>\\n      <circle r=\\\"64\\\" fill=\\\"#070f20\\\"/>\\n      <g class=\\\"madara-pixel-boot-sharingan-spin\\\" fill=\\\"#070f20\\\">${tomoe}<g transform=\\\"rotate(120)\\\">${tomoe}</g><g transform=\\\"rotate(240)\\\">${tomoe}</g></g>\\n    </g>\\n  </svg>`;\\n  dialog.innerHTML = `\\n    <div class=\\\"madara-pixel-boot-scene\\\">\\n      <div class=\\\"madara-pixel-boot-horizon\\\" aria-hidden=\\\"true\\\"></div>\\n      <div class=\\\"madara-pixel-boot-card\\\">\\n        <header class=\\\"madara-pixel-boot-top\\\" aria-hidden=\\\"true\\\">\\n          <span><i class=\\\"madara-pixel-boot-led\\\"></i> DEEPSEEK / HARNESS</span><span>MADARA EDITION</span>\\n        </header>\\n        <div class=\\\"madara-pixel-boot-screen\\\">\\n          <div class=\\\"madara-pixel-boot-art\\\" aria-hidden=\\\"true\\\">\\n            <div class=\\\"madara-pixel-boot-portrait-stack\\\">\\n              ${sharingan}\\n              <img class=\\\"madara-pixel-boot-madara\\\" src=\\\"${ART}\\\" alt=\\\"\\\" decoding=\\\"sync\\\" draggable=\\\"false\\\">\\n              <div class=\\\"madara-pixel-boot-eye-signal\\\"></div>\\n            </div>\\n            <div class=\\\"madara-pixel-boot-art-shade\\\"></div>\\n            <div class=\\\"madara-pixel-boot-scan\\\"></div>\\n            <span class=\\\"madara-pixel-boot-art-label\\\">UCHIHA / MADARA<span>うちは マダラ</span></span>\\n            <i class=\\\"madara-pixel-boot-corner madara-pixel-boot-corner-a\\\"></i><i class=\\\"madara-pixel-boot-corner madara-pixel-boot-corner-b\\\"></i>\\n          </div>\\n          <div class=\\\"madara-pixel-boot-console\\\">\\n            <div class=\\\"madara-pixel-boot-edition\\\" aria-hidden=\\\"true\\\"><span class=\\\"madara-pixel-boot-emblem\\\">◉</span> SHARINGAN / 03</div>\\n            <div class=\\\"madara-pixel-boot-wordmark\\\" aria-hidden=\\\"true\\\">HARNESS<span class=\\\"madara-pixel-boot-cursor\\\">_</span></div>\\n            <p class=\\\"madara-pixel-boot-character\\\">宇智波斑 <span>/ 写轮眼</span></p>\\n            <div class=\\\"madara-pixel-boot-rule\\\" aria-hidden=\\\"true\\\"><i></i><i></i><i></i></div>\\n            <p class=\\\"madara-pixel-boot-tagline\\\">洞见想法，开启创造。</p>\\n            <div class=\\\"madara-pixel-boot-sequence\\\" aria-hidden=\\\"true\\\">\\n              <div class=\\\"madara-pixel-boot-status\\\"><span class=\\\"madara-pixel-boot-stage\\\">查克拉 · 汇聚</span><span class=\\\"madara-pixel-boot-count\\\">01 / 03</span></div>\\n              <div class=\\\"madara-pixel-boot-meter\\\"><div class=\\\"madara-pixel-boot-meter-empty\\\">${blocks}</div><div class=\\\"madara-pixel-boot-meter-track\\\">${blocks}</div></div>\\n            </div>\\n            <div class=\\\"madara-pixel-boot-console-note\\\" aria-hidden=\\\"true\\\"><span>PLAYER 01</span><span>READY TO CREATE</span></div>\\n          </div>\\n          <p id=\\\"madara-pixel-boot-description\\\" class=\\\"madara-pixel-boot-sr-only\\\">宇智波斑与写轮眼主题开场，约三秒后自动进入 Harness。按 Escape 或选择跳过，可立即结束动画。</p>\\n        </div>\\n        <footer class=\\\"madara-pixel-boot-bottom\\\" aria-hidden=\\\"true\\\">\\n          <span>PIXEL SYSTEM / 02</span><span class=\\\"madara-pixel-boot-footer-pips\\\"><i></i><i></i><i></i></span><span>IDEAS INTO REALITY</span>\\n        </footer>\\n      </div>\\n      <button type=\\\"button\\\" class=\\\"madara-pixel-boot-skip\\\"><kbd>ESC</kbd><span>跳过动画</span><span aria-hidden=\\\"true\\\">↗</span></button>\\n    </div>`;\\n\\n  function after(fn, ms) {\\n    const timer = setTimeout(() => { timers.delete(timer); if (!closed) fn(); }, ms);\\n    timers.add(timer);\\n    return timer;\\n  }\\n  function dispose() {\\n    if (closed) return;\\n    closed = true;\\n    for (const timer of timers) clearTimeout(timer);\\n    timers.clear();\\n    motion.removeEventListener('change', onMotionChange);\\n    dialog.removeEventListener('cancel', onCancel);\\n    dialog.removeEventListener('close', dispose);\\n    dialog.remove();\\n    if (previousFocus instanceof HTMLElement && previousFocus.isConnected) previousFocus.focus({ preventScroll: true });\\n    onClose();\\n  }\\n  function finish() {\\n    if (closed || closeTimer !== null) return;\\n    if (motion.matches) { dispose(); return; }\\n    dialog.classList.add('is-leaving');\\n    closeTimer = after(dispose, 240);\\n  }\\n  function onCancel(event) { event.preventDefault(); dispose(); }\\n  function onMotionChange(event) { if (event.matches) dispose(); }\\n  dialog.querySelector('.madara-pixel-boot-skip').addEventListener('click', dispose);\\n  dialog.addEventListener('cancel', onCancel);\\n  dialog.addEventListener('close', dispose);\\n  motion.addEventListener('change', onMotionChange);\\n  document.body.appendChild(dialog);\\n  try { dialog.showModal(); } catch { dispose(); return () => {}; }\\n  after(() => {\\n    dialog.querySelector('.madara-pixel-boot-stage').textContent = '写轮眼 · 觉醒';\\n    dialog.querySelector('.madara-pixel-boot-count').textContent = '02 / 03';\\n    dialog.classList.add('is-awakened');\\n  }, 1050);\\n  after(() => {\\n    dialog.querySelector('.madara-pixel-boot-stage').textContent = 'HARNESS · 就绪';\\n    dialog.querySelector('.madara-pixel-boot-count').textContent = 'READY';\\n    dialog.classList.add('is-ready');\\n  }, 2250);\\n  after(finish, motion.matches ? 350 : 2800);\\n  // Independent hard stop: an intro must never trap the application.\\n  after(dispose, 4200);\\n  return dispose;\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-madara-pixel-theme/build.cjs\",\n      \"content\": \"const fs=require('fs'),path=require('path');const dir=__dirname;\\nconst font=(family,file,format,mime)=>'@font-face{font-family:\\\"'+family+'\\\";src:url(data:'+mime+';base64,'+fs.readFileSync(path.join(dir,'assets',file)).toString('base64')+') format(\\\"'+format+'\\\");font-weight:400;font-style:normal;font-display:swap;}';\\nconst css=font('Madara Silkscreen','Silkscreen-Regular.ttf','truetype','font/ttf')+font('Madara Fusion Pixel','fusion-pixel-12px-proportional-zh-Hans.woff2','woff2','font/woff2')+font('Madara Fusion Pixel Mono','fusion-pixel-12px-monospaced-zh-Hans.woff2','woff2','font/woff2')+fs.readFileSync(path.join(dir,'theme.css'),'utf8')+fs.readFileSync(path.join(dir,'boot.css'),'utf8');\\nconst art='data:image/png;base64,'+fs.readFileSync(path.join(dir,'assets/madara-foreground.png')).toString('base64');\\nconst boot=fs.readFileSync(path.join(dir,'boot.js'),'utf8').replace('/* MADARA_FOREGROUND_VALUE */',()=>JSON.stringify(art));\\nconst client=fs.readFileSync(path.join(dir,'client.template.js'),'utf8').replace('/* CSS_VALUE */',()=>JSON.stringify(css)).replace('/* TOKENS_VALUE */',()=>JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir,'tokens.json'),'utf8')))).replace('/* BOOT_VALUE */',()=>boot);\\nfs.writeFileSync(path.join(dir,'client.js'),client);console.log('Standalone Madara theme built.');\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"2eb032cb14be44c35501757fd4f3f25449730a17\",\n    \"component\": \"packages/dsh-madara-pixel-theme\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"780064ad1af03cf9d38bb86f7e216d18f563dd25c618eceba055046300339ac3\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 37,\n        \"words\": 643\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 334,\n        \"code\": 324,\n        \"comments\": 12,\n        \"blank\": 3\n      },\n      {\n        \"extension\": \".cjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 7,\n        \"code\": 7,\n        \"comments\": 2,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".cjs\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 34,\n        \"code\": 34,\n        \"comments\": 1,\n        \"blank\": 0\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/test/client.test.cjs\",\n          \"line\": 17,\n          \"api\": \"browser.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/boot.js\",\n          \"line\": 76,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/client.js\",\n          \"line\": 82,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/client.js\",\n          \"line\": 161,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n          \"line\": 41,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/test/client.test.cjs\",\n          \"line\": 11,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/test/client.test.cjs\",\n          \"line\": 13,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/test/client.test.cjs\",\n          \"line\": 17,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/client.js\",\n          \"line\": 162,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"settings.general.item\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n          \"line\": 42,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"settings.general.item\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 4,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"settings.general.item\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [\n      {\n        \"path\": \"packages/dsh-madara-pixel-theme/boot.js\",\n        \"start\": 54,\n        \"message\": \"Expression expected.\"\n      },\n      {\n        \"path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n        \"start\": 152,\n        \"message\": \"Expression expected.\"\n      },\n      {\n        \"path\": \"packages/dsh-madara-pixel-theme/client.template.js\",\n        \"start\": 189,\n        \"message\": \"Expression expected.\"\n      }\n    ],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "4fd82f63e9098ea90080881ea16dc1da8cb0fc58dc83b041d3bec000f468e197"
+        }
+    },
+    "unavailable_artifacts": []
+}

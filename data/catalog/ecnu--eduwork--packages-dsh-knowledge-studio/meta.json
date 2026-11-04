@@ -1,44 +1,39 @@
 {
     "repository": "ECNU/EduWork",
     "repository_id": 1369398336,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 250,
-    "pushed_at": "2026-10-28T15:47:51Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 285,
+    "pushed_at": "2026-11-03T13:36:19Z",
     "issues": {
-        "open": 18,
-        "closed": 16,
+        "open": null,
+        "closed": 17,
         "created_30d": 31,
         "closed_30d": 14,
-        "updated_30d": 32
+        "updated_30d": 33
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AECNU%2FEduWork%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A3A:2E5D5B:7139CB:79D23B:6AEAEB9C and timestamp 2026-11-04 08:23:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T06:21:21.324Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@eduwork/dsh-knowledge-studio",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 1595,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/%40eduwork%2Fdsh-knowledge-studio",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2243,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40eduwork%2Fdsh-knowledge-studio",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-06T09:29:57.257Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
             "source_url": "https://registry.npmjs.org/%40eduwork%2Fdsh-knowledge-studio",
             "error": null,
-            "latest_version": "0.6.2",
-            "latest_published_at": "2026-10-22T08:52:15.264Z",
+            "latest_version": "0.6.3",
+            "latest_published_at": "2026-11-02T06:01:49.829Z",
             "latest_error": null
         }
     }
