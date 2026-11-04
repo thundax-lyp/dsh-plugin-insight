@@ -29,6 +29,7 @@
 | [DSH Connect WorkBuddy](#plugin-1349641014-root) | 将本机 WorkBuddy 账号和模型接入 DeepSeek Harness。 | [Q05](../../plugins/dingminhua--dsh-connect-workbuddy/INSIGHT.md#research-q05) 建议仅在允许该接入方式的隔离配置下核对账号、请求和预算；费用、凭据或输入变化不明时停止并回退。 |
 | [DSH Cost Meter](#plugin-1333235870-root) | 统计 DSH 会话模型用量及估算费用，并提供预算、历史与额度信息。 | [Q06](../../plugins/han-1413141--dsh-cost-meter/INSIGHT.md#research-q06) 建议先对照少量已知调用，遇到缺记录或未知价格即停止将本地金额作为费用依据，回看供应商账单。 |
 | [DSH Crew](#plugin-1336068061-root) | 把DSH Agent作为Claude Code、Codex等编排器可分派的子任务worker并展示进度。 | [Q03](../../plugins/zseven-w--dsh-crew/INSIGHT.md#research-q03)正式写任务observe；仅丢弃目录单进程只读评估，固定强制hub、禁CLI与升级，任何未知状态先人工核查。 |
+| [DSH DeepSeek Web Login](#plugin-1364181676-root) | 把 DeepSeek 网页登录态接为 DSH 模型供应商，支持流式回复、图片输入和提示词工具调用桥接。 | [Q05](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q05)先观察；后续仅以非敏感只读任务核输入齐备、工具实执行和产物，任何缺图、协议代执行或清理不明都停止并回已验证供应商。 |
 | [DSH Desktop](#plugin-1333321333-root) | 将 DeepSeek Harness 的本地 Web 界面、Host 和插件系统集成到原生桌面应用。 | [Q05](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md#research-q05) 建议使用隔离账户与数据根试单项任务，检查网络范围和退出；数据归属或恢复不明确时保留原备份并回到现有 CLI 或 Web。 |
 | [DSH HoneyBee / DSHB](#plugin-1355618827-packages-dshb) | 在 DSH 中管理 SSH/Docker 节点并路由文件、命令与终端，提供工作区指令和多实例会话同步。 | [Q03](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q03) 保持观察。 |
 | [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览社区插件，并管理安装、更新和配置。 | [Q06](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q06) 建议维护多个插件且已备份 profile 的用户先在隔离副本试装；发现取消后状态不清或无法恢复时停止并退回宿主 Discover 与 CLI。 |
@@ -44,7 +45,6 @@
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
 | [dsh-compaction-route](#plugin-1391040578-root) | 在 DSH 设置页选择会话压缩摘要模型，并配置终止错误后的备用模型。 | 适合能保留原会话并复核摘要的长会话维护者限范围试用。 |
-| [dsh-deepseek-web-login](#plugin-1364181676-root) | 以网页版登录态向 DSH 提供 DeepSeek 模型，桥接流式回答、图片和提示词工具调用。 | 先观察。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | DSH 工具将 Companion v1 健康检查和动作调用转给手机/IoT/薄 Agent。 | 仅隔离网络、低风险动作且设备端认证明确时观察；危险动作须先审共享库及设备实现。 |
 | [dsh-find-plugin](#plugin-1333689922-root) | 在 DSH 对话中搜索插件仓库，补充目录描述和安装命令，并在在线搜索失败时回退目录关键词匹配。 | [Q03](../../plugins/awesome-dsh-plugin--dsh-find-plugin/INSIGHT.md#research-q03) 把工具当候选入口，读来源note并回仓库核固定提交、兼容与权限。 |
 | [dsh-gov](#plugin-1336647931-root) | 为DSH提供规则式工具allow/deny/ask、JSONL审计查询与按Agent累计token的预算警告。 | 观察，只作可信单用户辅助诊断继续探讨，强权限/预算/审计在宿主受权面另保证。 |
@@ -132,6 +132,7 @@
 | [pi2dsh](#plugin-1333452358-root) | 在 DSH 中提供 Pi 扩展兼容层，发现已安装 Pi 包并映射工具、命令、会话和界面能力。 | [Q04](../../plugins/weijiafu14--pi2dsh/INSIGHT.md#research-q04) 已有Pi任务的用户可在独立profile逐包试用，固定宿主/surface/扩展，先inspect再对照真实关键任务。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [SandBase Harness](#plugin-1297278222-root) | 本地优先的 Agent 运行时，管理持久会话、工具、记忆、凭据、审计与控制台 | [Q04](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md#research-q04) 建议先观察，只用可信只读输入评估会话回收与产物接口；报告不绑定固定提交或结果未知时停止并回到单次脚本加人工验收。 |
+| [Sealos Skills](#plugin-1150374613-root) | 向 DSH 注册 Sealos 部署与运维技能，提供模板部署、数据库、存储及故障诊断指引。 | [Q04](../../plugins/labring--sealos-skills/INSIGHT.md#research-q04) 限定本地、无生产数据的小应用；同时验收页面和工作负载，托管资源缺失立即停止。 |
 | [SeekTTY](#plugin-1334096871-root) | 复用DeepSeek Harness原生服务的终端工作区，提供会话、设置及审批交互。 | [Q03](../../plugins/hilbert-beinghappy--seektty/INSIGHT.md#research-q03)复制profile固定Host/spec并禁自动更新，先核审批/恢复/退出，失败退原入口。 |
 | [SkillCorpus](#plugin-1330431542-root) | 聚合、筛选和评估技能语料，并按任务从本地与远端来源检索技能，供不同 Agent 宿主使用。 | [Q03](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q03) 先限定本地审核目录，关闭远端与共享，用少量可独立验收任务比较固定目录。 |
 | [Tingly Box](#plugin-1100971867-root) | 独立统一模型网关，为多客户端和团队提供协议转换、模型选路、凭据与团队 key 管理，以及请求路径和用量观察。 | 熟悉凭据/规则的管理员可localhost隔离渐进小样；身份/协议/规则不符、scope或DSH部分写不明时停扩流/自动配置，核attempt和文件、退原endpoint/副本。 |
@@ -413,6 +414,22 @@
 
 [查看完整分析](../../plugins/zseven-w--dsh-crew/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1364181676-root"></a>
+
+## [DSH DeepSeek Web Login](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md)
+
+[![GitHub ★ 353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/cv-superding/dsh-deepseek-web-login) [![npm 30d 7,080](https://img.shields.io/static/v1?label=npm+30d&message=7%2C080&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepseek-web-login) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepseek-web-login)
+
+> **用途**：面向已有网页账号、希望研究非官方供应商适配的个人DSH操作者；合格结果须核对必需输入、真实工具执行和最终产物，见[Q01](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q01)。
+
+> **亮点**：[Q02](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q02)把提示词工具协议接到真实宿主工具事件，[Q04](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q04)按请求起始账号归属记录并在删除确认前保留清理责任。这些机制为有条件适配提供可查设计，不证明运行闭环或全局幂等。
+
+> **思考**：[Q03](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q03)确认两次图片引用拒绝后的无图重发仍可能保留附图标记且无本分支告知；当前默认链式上下文也依赖远端早期约束保留。[Q04](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q04)表明凭据明文、导出及卸载/登出/远端删除是不同生命周期，正文恢复不能直接算任务完成。
+
+> **建议**：[Q05](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q05)提出未验证的任务级恢复契约，把输入齐备、工具实执行、结果核对和远端清理状态分开。用图片拒绝、未知工具、约束丢失和删除超时对照，错误放行不降或维护负担高于正式替代就否定。
+
+[查看完整分析](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333321333-root"></a>
 
 ## [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md)
@@ -652,22 +669,6 @@
 > **建议**：可探索只记录路线、终止类别、全部 usage 和预算判定的压缩尝试记录，以分清调用恢复与摘要恢复；隐私与排障收益尚未验证。见[Q04](../../plugins/643048695--dsh-compaction-route/INSIGHT.md#research-q04)与[Q05](../../plugins/643048695--dsh-compaction-route/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/643048695--dsh-compaction-route/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1364181676-root"></a>
-
-## [dsh-deepseek-web-login](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md)
-
-[![GitHub ★ 326](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=326&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/cv-superding/dsh-deepseek-web-login) [![npm 30d 14,269](https://img.shields.io/static/v1?label=npm+30d&message=14%2C269&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepseek-web-login) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepseek-web-login)
-
-> **用途**：已有网页账号且希望在DSH执行工具任务的操作者，可观察非官方供应商适配；合格结果要核对真实工具和必需输入。见[Q01](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q01)。
-
-> **亮点**：工具调用从文本协议真实接到宿主事件，结合账号稳定身份及删除确认前保留清理义务，支持有条件的Agent适配研究；本轮未证明运行闭环。见[Q02](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q02)、[Q04](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q04)。
-
-> **思考**：回复恢复可能伴随无图却仍标已附图的降级、链首约束丢失或远端会话未清，网页登录与凭据保管又是外部依赖；有文本不等于原任务办结，卸载也不等于登出。见[Q03](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q03)、[Q04](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q04)。
-
-> **建议**：未验证假设是把输入齐备、工具实执行和结果核对作为公开任务级恢复状态，减少丢图或协议失败后的假完成；比较合格交付、遗漏和人工修正，维护代价长期高于正式替代时停止。见[Q05](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/cv-superding--dsh-deepseek-web-login/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1384810806-root"></a>
 
@@ -2061,6 +2062,22 @@
 
 [查看完整分析](../../plugins/sandbaseai--sandbase-harness/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1150374613-root"></a>
+
+## [Sealos Skills](../../plugins/labring--sealos-skills/INSIGHT.md)
+
+[![GitHub ★ 83](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=83&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/labring/sealos-skills)
+
+> **用途**：该包为在 Sealos Cloud 部署或运维应用的 DSH 用户提供 use-sealos 技能。package.json 声明 bundle patch，index.js 注入 skills 服务并注册 provider；list 返回单个候选，get 按名称返回技能定义，资源基目录指向技能文件夹。随后实际部署由模型读取技能、调用其 Python 脚本和 kubectl 完成，而不是 provider 自动执行。相比用户手动查阅部署文档并拼接命令，增量是按平台资源模型、模板路径和失败诊断组织的一份可加载操作知识。Kubernetes、Template API、数据库控制器和模型决策能力不属于本包原创；没有用户任务实测来证明15分钟路径或成功率。
+
+> **亮点**：[Q01](../../plugins/labring--sealos-skills/INSIGHT.md#research-q01) 将平台特定资源知识和部署验证路径接入DSH技能服务，属于知识编排与接口适配增量。
+
+> **思考**：[Q02](../../plugins/labring--sealos-skills/INSIGHT.md#research-q02) 发布白名单没有包含托管分支引用的同级技能；脚本ready也不保证页面合格，必须限定本地路径并继续检查真实页面。
+
+> **建议**：[Q04](../../plugins/labring--sealos-skills/INSIGHT.md#research-q04) 对发布资源闭包和页面语义建立联合验收契约，可能减少错误报完；尚未实现或验证。
+
+[查看完整分析](../../plugins/labring--sealos-skills/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1334096871-root"></a>
 
 ## [SeekTTY](../../plugins/hilbert-beinghappy--seektty/INSIGHT.md)
@@ -2193,4 +2210,4 @@
 
 ## 更新时间
 
-2026-11-03
+2026-11-04

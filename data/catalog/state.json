@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "33e9b14676063c2963fea1a43cd39f6546843bf369d97fe5ffd0635fb092b5e2",
-    "index_sha256": "32a2fb2f1095232d63ac82276f78ec0031a58751c164ce85e987bdbc4382f96a",
+    "snapshot_digest": "2b8fe9746ac29a200af62825a448f1b70e2f09f5749a67582a871e3c2a9e8441",
+    "index_sha256": "22d3e10177c97c5fbfd6c238a99a05e398a906f0a34dc21fddea9a3753ae33dd",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-03T01:47:35Z",
+        "checked_at": "2026-11-04T02:08:44Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 20，完成 19，受阻 1；已知同版本受阻跳过 6；频繁更新窗口内跳过 156；当前发布 794",
+            "scope": "本轮所选 15，完成 15，受阻 0；已知同版本受阻跳过 7；频繁更新窗口内跳过 183；当前发布 801",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,14 +20,14 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-03T01:47:35Z"
+            "checked_at": "2026-11-04T02:08:44Z"
         },
         "registry": {},
         "discovery": {
             "sources": [
                 {
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "152f265239da7b1505ee5ec800466d25d9317208",
+                    "revision": "1fe9aed6d3d3021482a6486a4a0b268bdf2bcea7",
                     "complete": false
                 },
                 {
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-03-01",
-            "work_digest": "a2c35ad0c33483e6d66e21473f79f8dfdf0143592d4a17d3bd9b72c161bef521"
+            "id": "2026-11-04-01",
+            "work_digest": "49e62e4e3001721ee67af06643019cba0caf91c1f3ab3384ef75acb573a29c8f"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -494,14 +494,20 @@
             "github:1139329853:root",
             "github:113965016:root",
             "github:1139909532:root",
+            "github:1142234916:root",
             "github:1145914675:integrations-dsh",
+            "github:1146519069:root",
+            "github:1147277275:root",
             "github:1147866277:root",
             "github:1148224636:root",
             "github:1148960257:root",
+            "github:1150374613:root",
             "github:1153190876:plugins-dsh",
             "github:1153190876:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
             "github:1154200345:root",
             "github:1154333841:root",
+            "github:1156210476:root",
             "github:1156882085:root",
             "github:1157659618:plugins-dsh-postiz",
             "github:1158472225:root",
@@ -510,6 +516,7 @@
             "github:1162230313:root",
             "github:1163808542:root",
             "github:1164005541:root",
+            "github:1166078953:root",
             "github:1170373459:dsh-invoice-downloader",
             "github:1170373459:root",
             "github:1171186947:root",
@@ -2054,7 +2061,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -2850,7 +2864,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -3646,7 +3667,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -4442,7 +4470,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -5238,7 +5273,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "registry": [
             "github:1339316901:root",
@@ -6034,7 +6076,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "reports": [
             "github:1339316901:root",
@@ -6830,7 +6879,14 @@
             "github:1139128402:root",
             "github:1137545389:root",
             "github:1139909532:root",
-            "github:1092940076:root"
+            "github:1092940076:root",
+            "github:1147277275:root",
+            "github:1150374613:root",
+            "github:1166078953:root",
+            "github:1153598290:plugins-dsh-portfolio-os",
+            "github:1146519069:root",
+            "github:1142234916:root",
+            "github:1156210476:root"
         ],
         "retained_documents": []
     },
@@ -7628,7 +7684,14 @@
         "github:1139128402:root",
         "github:1137545389:root",
         "github:1139909532:root",
-        "github:1092940076:root"
+        "github:1092940076:root",
+        "github:1147277275:root",
+        "github:1150374613:root",
+        "github:1166078953:root",
+        "github:1153598290:plugins-dsh-portfolio-os",
+        "github:1146519069:root",
+        "github:1142234916:root",
+        "github:1156210476:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-26-01/01ngvi-qingyi--no-ai-style/REVIEWED-SOURCE.json",
@@ -7947,7 +8010,6 @@
         "data/runs/2026-10-23-04/alannerfranklin--dsh-cutout-pet/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/alexyin-tongji--dsh-plugin-console/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/alexyin-tongji--dsh-ui-enhancer/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-26-03/alice-marx--dsh-model-router/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/aliceljy--dsh-thumb/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/aliengene--dsh-llm-balance-siderbar/REVIEWED-SOURCE.json",
         "data/runs/2026-10-27-01/alisa0808--vox-director/REVIEWED-SOURCE.json",
@@ -8082,8 +8144,6 @@
         "data/runs/2026-10-29-01/ecnu--eduwork--packages-dsh-annotation/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-01/nativedog1--dsh-boot-animation/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-01/featherhunter--dsh-mattpocock-skills-deck/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-01/cv-superding--dsh-deepseek-web-login/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-01/yuuyuko-uu--dsh-fish-memory/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-01/techflag--workdsh--packages-enterprise-connection/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-01/nagi-ovo--dsh-visualize/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-01/yu-tao-li--dsh-computer-use-win/REVIEWED-SOURCE.json",
@@ -8093,19 +8153,14 @@
         "data/runs/2026-10-29-01/dhicoc--dsh-reverse-skill/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/a8chann--dsh-pet-live2d--dsh-live2d-pet/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/adwmc--helm-d--packages-helmd/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-02/amethystluna--embedded-workbench/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-02/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/18477514055--dsh-ledger-memory/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/7starsseeker--dsh-fact-check/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/alexpeng07--dsh-custom-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-02/00080000--dsh-project-memory/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/2026heshao--dsh-armory/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/amer-cn--zcode-usage-stats/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/wyh66666666--dsh-transparent-ui-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-02/240xu--dsh-message-ops/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/0x7a7a6572--dsh-forge-studio--plugin-notes/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-29-02/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/amethystluna--logicprobe/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/daha1216--dsh-adult-tension/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-02/yjh051108--dsh-router-standard/REVIEWED-SOURCE.json",
@@ -8436,6 +8491,21 @@
         "data/runs/2026-11-03-01/vladimir-human--humanizer-ru/REVIEWED-SOURCE.json",
         "data/runs/2026-11-03-01/isomoes--ikanban/REVIEWED-SOURCE.json",
         "data/runs/2026-11-03-01/iamaanahmad--everything-kiro/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-03-01/unknowcao--dsh-dock/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-03-01/unknowcao--dsh-dock/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/yuukilike--zeromd/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/00080000--dsh-project-memory/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/yuuyuko-uu--dsh-fish-memory/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/labring--sealos-skills/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/01virex--dsh-status-rotator/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/jingbiaomei--tokdash/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/240xu--dsh-message-ops/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/amethystluna--embedded-workbench/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/9087--dsh-diff-approval/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/snowball-labbot--portfolio-os--plugins-dsh-portfolio-os/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/alice-marx--dsh-model-router/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/leslie-sss--seewxapkg/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/ma-pony--deepspider/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/wxkingstar--specfusion/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-04-01/cv-superding--dsh-deepseek-web-login/REVIEWED-SOURCE.json"
     ]
 }

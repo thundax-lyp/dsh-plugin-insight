@@ -1,65 +1,43 @@
 {
     "repository": "9087/dsh-diff-approval",
     "repository_id": 1335980444,
-    "captured_at": "2026-10-29T03:03:10.741Z",
-    "window_start": "2026-09-29T03:03:10.741Z",
+    "captured_at": "2026-11-04T02:13:37.357Z",
+    "window_start": "2026-10-05T02:13:37.357Z",
     "stars": 15,
-    "pushed_at": "2026-10-28T19:05:09Z",
+    "pushed_at": "2026-11-01T19:41:01Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 1,
+        "closed": 6,
+        "created_30d": 1,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1912:15E58E:59A74ED:800B112:6AE2B794 and timestamp 2026-10-29 03:03:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 192A:1BC6A2:5D7307B:850C91E:6AE2B795 and timestamp 2026-10-29 03:03:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20created%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1934:161C40:5B3C3D8:8217B66:6AE2B796 and timestamp 2026-10-29 03:03:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1940:1EA11A:5D8752E:8539F45:6AE2B797 and timestamp 2026-10-29 03:03:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A81A:20FAC3:36CD02:3A8C62:6AEA950B and timestamp 2026-11-04 02:14:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20updated%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 194E:357B63:5CF8A5B:846AA68:6AE2B798 and timestamp 2026-10-29 03:03:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A9087%2Fdsh-diff-approval%20is%3Aissue%20updated%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A870:1883A4:348C0B:384B18:6AEA950D and timestamp 2026-11-04 02:14:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-diff-approval",
-        "captured_at": "2026-10-27T15:24:06.392Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 5099,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-diff-approval",
+        "captured_at": "2026-11-02T11:17:42.215Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 4518,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-diff-approval",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-16T16:05:19.437Z",
-            "captured_at": "2026-10-27T15:24:06.392Z",
+            "captured_at": "2026-11-02T11:17:42.215Z",
             "source_url": "https://registry.npmjs.org/dsh-diff-approval",
             "error": null,
-            "latest_version": "0.36.1",
-            "latest_published_at": "2026-10-19T16:34:29.420Z",
+            "latest_version": "0.37.1",
+            "latest_published_at": "2026-11-01T19:48:25.292Z",
             "latest_error": null
         }
     }
