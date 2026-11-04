@@ -1,27 +1,30 @@
 {
     "repository": "Ariestar/sivtr",
     "repository_id": 1215961903,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 253,
-    "pushed_at": "2026-10-29T02:58:56Z",
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 255,
+    "pushed_at": "2026-11-04T08:43:20Z",
     "issues": {
-        "open": 30,
-        "closed": 7,
-        "created_30d": 1,
-        "closed_30d": 0,
-        "updated_30d": 3
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": 2,
+        "updated_30d": 4
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-29T01:29:30.018Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    }
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAriestar%2Fsivtr%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 577C:356129:5C890:6419E:6AEB32B2 and timestamp 2026-11-04 13:27:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAriestar%2Fsivtr%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 57F8:C8832:62F09:6A882:6AEB32B4 and timestamp 2026-11-04 13:27:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAriestar%2Fsivtr%20is%3Aissue%20created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5838:3DEFB1:5E50A:65F26:6AEB32B6 and timestamp 2026-11-04 13:27:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
 }

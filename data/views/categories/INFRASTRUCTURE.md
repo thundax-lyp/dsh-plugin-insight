@@ -14,6 +14,7 @@
 | --- | --- | --- |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
 | [AI Infrastructure Agent Skills](#plugin-1129378320-root) | 面向 AI 基础设施工程师的 Skill 集合，涵盖 GPU 开发、显存估算、训练指导和技术图表。 | [Q03](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q03) 先观察，按一项已知结果任务筛选并固定独立环境。 |
+| [Almost Full Access](#plugin-1336031182-root) | 在DSH完全访问预设上，为部分命名shell工具加入确定性/子代理审查、人工审批面板和命令记忆。 | 日常安全权限用途不推荐；只保留无敏感权限的隔离研究边界。 |
 | [ANOLISA](#plugin-1195873793-root) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | [Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。 |
 | [Awesome DSH Plugins](#plugin-1333144072-root) | 提供 DSH 插件分类目录与可订阅到官方发现页的安装目标索引。 | [Q04](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md#research-q04) 独立profile只试单个任务候选，上游核权限/版本，不批装；不清回原仓库。 |
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
@@ -124,7 +125,7 @@
 | [Mirage](#plugin-1231135337-root) | 用虚拟文件系统、命令及运行时为 Agent 组合统一终端。 | 先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
 | [MultiVibe Companion for DSH](#plugin-1168322081-plugins-dsh-multivibe) | 连接 DSH 与 MultiVibe 网关，并查看可用模型及连接状态。 | [Q05](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q05) 建议已有网关者在隔离 profile 使用专用密钥试配置，确认容量、状态与费用后再做获授权测试。 |
-| [Open Managed Agents (OpenMA)](#plugin-1206555053-root) | 自托管 Agent 控制面与执行基础设施，组合会话持久化、模型 harness、工具、沙箱、确认和恢复，提供多种 API 与部署适配。 | 先观察并准备单组合隔离测试任务与模拟外部服务，达到权限/恢复/退出对账再扩大，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。 |
+| [Open Managed Agents](#plugin-1206555053-root) | 提供自托管 Agent 会话、工具执行和恢复基础设施。 | [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03) 先以固定组合和模拟外部服务观察；认证、沙箱或对账不满足时停止并保留现有方案。 |
 | [opencode2dsh](#plugin-1350368388-packages-plugin) | 为 DSH 提供 OpenCode Zen 匿名模型适配与可选本地委派。 | 非敏感任务核对实际来源、输出与网络资格；不明结果先对账。 |
 | [OpenGuardrails](#plugin-1081166515-root) | 以本地规则、模型裁决、秘密替换、网关和 sandbox 为 AI Agent 提供安全检查与行为记录。 | [Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 仅在一次性工作区以合成秘密评本地规则，保留宿主审批，明确 observe/enforce 差异。 |
 | [OpenViking](#plugin-1128123594-root) | 为 AI Agent 组织知识、记忆与技能的上下文数据库。 | [Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05) 建议先对非敏感可回滚语料逐步试用并核验原文；数据外发、来源或权限不明时暂停并使用原文件搜索。 |
@@ -135,7 +136,7 @@
 | [Sealos Skills](#plugin-1150374613-root) | 向 DSH 注册 Sealos 部署与运维技能，提供模板部署、数据库、存储及故障诊断指引。 | [Q04](../../plugins/labring--sealos-skills/INSIGHT.md#research-q04) 限定本地、无生产数据的小应用；同时验收页面和工作负载，托管资源缺失立即停止。 |
 | [SeekTTY](#plugin-1334096871-root) | 复用DeepSeek Harness原生服务的终端工作区，提供会话、设置及审批交互。 | [Q03](../../plugins/hilbert-beinghappy--seektty/INSIGHT.md#research-q03)复制profile固定Host/spec并禁自动更新，先核审批/恢复/退出，失败退原入口。 |
 | [SkillCorpus](#plugin-1330431542-root) | 聚合、筛选和评估技能语料，并按任务从本地与远端来源检索技能，供不同 Agent 宿主使用。 | [Q03](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q03) 先限定本地审核目录，关闭远端与共享，用少量可独立验收任务比较固定目录。 |
-| [Tingly Box](#plugin-1100971867-root) | 独立统一模型网关，为多客户端和团队提供协议转换、模型选路、凭据与团队 key 管理，以及请求路径和用量观察。 | 熟悉凭据/规则的管理员可localhost隔离渐进小样；身份/协议/规则不符、scope或DSH部分写不明时停扩流/自动配置，核attempt和文件、退原endpoint/副本。 |
+| [Tingly Box](#plugin-1100971867-root) | 统一模型网关，为客户端与团队提供协议入口、路由和管理能力。 | [Q05](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q05) 在隔离本机先测单客户端与失败路径；不满足身份、预算或恢复条件时退回原端点。 |
 | [TokenLedger](#plugin-1333969047-root) | 从 DSH 会话日志聚合 Token 用量，按路由、模型和项目展示，并提供费用估算与可选账户余额查询。 | [Q03](../../plugins/zh667--tokenledger/INSIGHT.md#research-q03) 先用副本日志核usage与归因，读failed/未知/未定价。 |
 | [Treg](#plugin-1301657572-root) | 为 Agent 提供工具目录、凭据注入代理和调用计费。 | 选择受控只读任务、核对账单及费用上限，异常时撤销 token 并回退直连。 |
 | [Usage Billing](#plugin-1363429979-plugin-usage-billing) | 从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。 | 先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。 |
@@ -173,6 +174,22 @@
 > **建议**：[Q04](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q04) 提出每示例附输入、框架/硬件、执行状态与对照结果的最小复核记录，检验是否减少错误推广；现有测试不自动等于目标环境通过。
 
 [查看完整分析](../../plugins/yzlnew--infra-skills/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1336031182-root"></a>
+
+## [Almost Full Access](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 989](https://img.shields.io/static/v1?label=npm+30d&message=989&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
+
+> **用途**：希望减少工作区外可逆操作审批、仍确认危险命令的用户；作为安全权限用途，必须验证全部真实执行入口。它是原生DSH插件，但底层仍是完全访问预设。见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)。
+
+> **亮点**：确定性风险优先、无工具审查与可见审批/错误构成低中断的权限交互原型；但只对已覆盖路径成立，不能替代宿主统一授权。已有增量与归因见[Q01](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q01)、[Q02](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q02)。
+
+> **思考**：完全访问前提下，缺会话/预设、未命名工具等条件可绕过门控；短哈希复用未绑定会话/cwd/脚本版本，审批端点也不独立绑定操作者。局部超时拒绝与随机ID不足以证明整体安全，见[Q02](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q02)、[Q03](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q03)。
+
+> **建议**：先将真实执行边界、缺身份默认值与精确授权复用做成可否定的安全验收，再评是否需要跨组件上下文描述；账户、历史范围与凭据目的地必须分别约束。方案未实现/未执行，最小验证见[Q05](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q05)、[Q07](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md#research-q07)。
+
+[查看完整分析](../../plugins/alnita-m--dsh-almost_full_access/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195873793-root"></a>
 
@@ -1936,17 +1953,17 @@
 
 <a id="plugin-1206555053-root"></a>
 
-## [Open Managed Agents (OpenMA)](../../plugins/openma-ai--open-managed-agents/INSIGHT.md)
+## [Open Managed Agents](../../plugins/openma-ai--open-managed-agents/INSIGHT.md)
 
-[![GitHub ★ 342](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=342&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/openma-ai/open-managed-agents)
+[![GitHub ★ 343](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=343&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/openma-ai/open-managed-agents)
 
-> **用途**：需要自行管理Agent会话、执行环境和恢复的团队；使用范围须固定harness/部署/存储合同，见 [Q01](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q01)。
+> **用途**：需要自行管理 Agent 会话与隔离执行的开发团队。
 
-> **亮点**：会话/执行环境/harness分层，真工具循环、领取续租和可配置确认成为托管执行基础，见 [Q01](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q01) 与 [Q02](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q01) 与 [Q02](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q02) 将执行生命周期和可插拔组件组成平台，并给会话授权加入当前 claim 检查。
 
-> **思考**：持久租约非外部动作exactly-once；缺省许可可allow、确认/共享sandbox/凭据隔离依配置，API与云合同不同，见 [Q02](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03) 租约和会话 fencing 不证明对外副作用恰好一次；部署隔离与恢复取决于组合。
 
-> **建议**：动作ID/许可/后置证据连接租约、事件与检查点，接手先对账，测故障重复/遗漏和总成本，未实现，见 [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03)。
+> **建议**：[Q04](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q04) 建议将外部动作凭据与可对账回执绑定，验证重复和遗漏，尚未实现或运行。
 
 [查看完整分析](../../plugins/openma-ai--open-managed-agents/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2114,15 +2131,15 @@
 
 ## [Tingly Box](../../plugins/tingly-dev--tingly-box/INSIGHT.md)
 
-[![GitHub ★ 370](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=370&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tingly-dev/tingly-box)
+[![GitHub ★ 379](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=379&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tingly-dev/tingly-box)
 
-> **用途**：为需接多个模型/客户端的个人或管理员，在统一入口管理规则、scope和用量，减少重复baseURL/key接线。见[Q01](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q01)。
+> **用途**：需要管理多个模型、客户端或团队入口的个人和管理员，集中配置规则与凭据。
 
-> **亮点**：把角色scope/分区亲和与异构failover/观察接成统一管理路径，有首chunk不混流和非global probe剥头等明确边界。见[Q02](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q02)、[Q03](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q03)。
+> **亮点**：[Q01](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q02) 将协议入口、规则和服务选择集中；具体兼容与收益未测。
 
-> **思考**：degrade可保不健康候选，首chunk后不重试、quota非硬财务限额、usage非全厂商扣费；DSH两文件备份直写非事务，团队全路径隔离未验。见[Q02](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q02)至[Q04](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q04)。
+> **思考**：[Q03](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q03) 首块后不再重试且所有候选不健康时仍可能请求；[Q04](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q04) 两份 DSH 配置分别写入。
 
-> **建议**：未验证方向是在既有timeline/usage之上加政策版本/客户端语义核对，比较误scope/错路/消费未知和定位负担，现trace充分则否定。见[Q06](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q06)。
+> **建议**：[Q06](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q06) 假设将规则版本和语义核对关联现有 trace 有助定位错路，需对照证伪。
 
 [查看完整分析](../../plugins/tingly-dev--tingly-box/INSIGHT.md) · [返回表格](#category-index)
 

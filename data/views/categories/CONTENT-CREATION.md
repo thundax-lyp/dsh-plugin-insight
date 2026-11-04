@@ -42,12 +42,15 @@
 | [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
+| [ff-toolkit](#plugin-1205593265-root) | 将 FFmpeg 媒体处理操作封装为 Python 和模型可调用工具。 | [Q04](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q04) 先在隔离副本中关闭覆盖、使用新路径并检查结果；不接受权限或恢复边界时停止。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
+| [lightroom-py](#plugin-1225248471-root) | 通过 Python、MCP 和 DSH 接口控制 Lightroom Classic 图库及编辑。 | [Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) 在备份图库副本上先核依赖、选区与单项操作；结果或恢复不明确时停止写入。 |
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
-| [MuseAI](#plugin-1200521020-root) | 在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。 |
+| [MuseAI](#plugin-1200521020-root) | 本地角色对话、文字冒险与故事世界资料管理应用。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 的状态暴露未修复核实前不启用 LAN。 |
 | [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
+| [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
 | [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
@@ -60,7 +63,6 @@
 | [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
-| [开源版锤子便签（根应用）](#plugin-1182135360-root) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 先以单人、单活动编辑端和非敏感稿件试用，保留Markdown原稿，核对主题、图片和全文后再分享；多端并发编辑暂缓。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -542,6 +544,22 @@
 
 [查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1205593265-root"></a>
+
+## [ff-toolkit](../../plugins/inthepond--ff-toolkit/INSIGHT.md)
+
+[![GitHub ★ 8](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/inthepond/ff-toolkit)
+
+> **用途**：需要将媒体处理接入 Agent 或 Python 流水线的开发者。
+
+> **亮点**：[Q01](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q01) 和 [Q02](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q02) 提供统一操作和宿主桥接；编码能力由 FFmpeg 提供。
+
+> **思考**：[Q03](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q03) 默认覆盖已存在输出，concat 清单可能残留；[Q04](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q04) 取消和恢复未验。
+
+> **建议**：[Q05](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q05) 假设显式覆盖确认和清理临时清单能减少损失，需实测。
+
+[查看完整分析](../../plugins/inthepond--ff-toolkit/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339888505-root"></a>
 
 ## [gzhflow](../../plugins/andiii208--gzhflow/INSIGHT.md)
@@ -574,6 +592,22 @@
 
 [查看完整分析](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1225248471-root"></a>
+
+## [lightroom-py](../../plugins/drshy-org--lightroom-py/INSIGHT.md)
+
+[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/drshy-org/lightroom-py)
+
+> **用途**：希望用 Agent 组织 Lightroom Classic 图库和批处理编辑的摄影用户。
+
+> **亮点**：[Q01](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q01) 与 [Q02](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q02) 将已有 Lightroom 操作暴露为 MCP 工具，并由 DSH 纯配置挂载。
+
+> **思考**：[Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) MCP 可选依赖和默认桥接路径须核对，写操作可能修改真实图库。
+
+> **建议**：[Q04](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q04) 假设写前绑定目标与确认可减少误改，尚未验证。
+
+[查看完整分析](../../plugins/drshy-org--lightroom-py/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1399694663-root"></a>
 
 ## [Media Studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
@@ -594,15 +628,15 @@
 
 ## [MuseAI](../../plugins/yejiming--museai/INSIGHT.md)
 
-[![GitHub ★ 674](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=674&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yejiming/MuseAI)
+[![GitHub ★ 682](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=682&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yejiming/MuseAI)
 
-> **用途**：角色互动创作者跨会话维护世界书、角色关系与关键事件，合格结果应是与原对话一致且可恢复的记忆。
+> **用途**：希望长期整理角色卡、世界观和对话的角色互动与文字冒险用户。
 
-> **亮点**：[Q01](../../plugins/yejiming--museai/INSIGHT.md#research-q01) 和 [Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 支持将模型建议、用户编辑与角色归档组织为一个流程，减少资料分散；不能把自动抽取视作正确记忆。
+> **亮点**：[Q01](../../plugins/yejiming--museai/INSIGHT.md#research-q01) 和 [Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 显示角色资料与人工确认归档结合；长期质量未对照。
 
-> **思考**：[Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 的角色和归档更新早于会话保存，失败分支未见补偿；后端分析实现仍有定位缺口，核心可靠性尚不足以建议迁移真实档案。
+> **思考**：[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 显示公开 LAN 状态返回含 token 的结构；[Q02](../../plugins/yejiming--museai/INSIGHT.md#research-q02) 归档多步写入无显式回滚。
 
-> **建议**：[Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 提出可回退差异与会话共同提交的封存方式，尚未实现验证；若不能减少错误记忆和恢复投入则否定。
+> **建议**：[Q05](../../plugins/yejiming--museai/INSIGHT.md#research-q05) 提出隐藏公开状态凭据及协调归档恢复，需测试配对与故障。
 
 [查看完整分析](../../plugins/yejiming--museai/INSIGHT.md) · [返回表格](#category-index)
 
@@ -637,6 +671,22 @@
 > **建议**：从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1182135360-root"></a>
+
+## [Notes](../../plugins/zhaoolee--notes/INSIGHT.md)
+
+[![GitHub ★ 324](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=324&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes)
+
+> **用途**：个人内容作者用 Markdown 编辑便签并生成分享材料。
+
+> **亮点**：[Q01](../../plugins/zhaoolee--notes/INSIGHT.md#research-q01) 与 [Q03](../../plugins/zhaoolee--notes/INSIGHT.md#research-q03) 将编辑、主题截图和网站包组织在一个应用中；效果未对照。
+
+> **思考**：[Q02](../../plugins/zhaoolee--notes/INSIGHT.md#research-q02) Web 写入未带服务端可选版本，整工作区并发保存可能覆盖。
+
+> **建议**：[Q05](../../plugins/zhaoolee--notes/INSIGHT.md#research-q05) 假设客户端强制前置版本并保留冲突副本能降低无提示丢稿，尚未验证。
+
+[查看完整分析](../../plugins/zhaoolee--notes/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339737707-root"></a>
 
@@ -829,22 +879,6 @@
 > **建议**：[Q06](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1182135360-root"></a>
-
-## [开源版锤子便签（根应用）](../../plugins/zhaoolee--notes/INSIGHT.md)
-
-[![GitHub ★ 315](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=315&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes)
-
-> **用途**：以单人编辑为主的内容作者可把 Markdown 便签排版为主题长图或文章资源，先保留源稿再分享，详见 [Q01](../../plugins/zhaoolee--notes/INSIGHT.md#research-q01)。
-
-> **亮点**：应用把便签源稿、主题、资源等待和截图输出串在同一流程，前端还核对导出主题，减少手动组合不同工具的步骤；价值属于集成设计和有条件推断，见 [Q01](../../plugins/zhaoolee--notes/INSIGHT.md#research-q01) 与 [Q03](../../plugins/zhaoolee--notes/INSIGHT.md#research-q03)。
-
-> **思考**：单页串行保存不能推出多端无覆盖。Web请求未传服务端可选的expectedUpdatedAt，多设备的整工作区后写可能覆盖先写；实际损失尚未复现，因此试用应限制单活动编辑端并保留源稿，见 [Q02](../../plugins/zhaoolee--notes/INSIGHT.md#research-q02)。
-
-> **建议**：让每次Web写入强制带云版本，并在冲突时保留双方副本，可能减少静默覆盖，但也增加人工合并负担。这是未实现假设，用双端不同/相同便签和断网重连对照，任一方内容无提示消失则否定，见 [Q05](../../plugins/zhaoolee--notes/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/zhaoolee--notes/INSIGHT.md) · [返回表格](#category-index)
 
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 

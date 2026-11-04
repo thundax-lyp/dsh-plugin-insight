@@ -89,7 +89,6 @@
 | [dsh-agent-recycle-guard](#plugin-1414323673-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 适合有独立备份的DSH维护者在可丢弃目录试用常见删除缓冲；须接受有限脚本覆盖并核对权限重入和回收结果。 |
 | [HelloAGENTS](#plugin-1064776002-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为AI编码CLI提供任务路由、质量Skill、项目知识、会话恢复和交付检查脚本。 | 有多阶段跨轮编码任务的CLI用户可在一个副本项目试用。 |
 | [Hindsight 编码 Agent 记忆集成](#plugin-1086419061-hindsight-integrations-coding-agents)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 编码会话自动召回并后台保存项目记忆。 | 长期维护同一项目且已有 Hindsight 服务的 DSH 用户可在独立 bank 试用历史决策召回。 |
-| [Tingly Box](#plugin-1100971867-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 独立统一模型网关，为多客户端和团队提供协议转换、模型选路、凭据与团队 key 管理，以及请求路径和用量观察。 | 需要集中多个模型和客户端、能管理凭据与规则的个人或团队管理员，可先在 localhost 和独立副本配置中接模拟上游或无价值单 provider 小样。 |
 | [CC Safety Net](#plugin-1122873619-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在编码 Agent 的工具调用前检查危险命令和敏感文件访问。 | 能核对规则和工具覆盖的 DSH 用户可以在隔离环境用非破坏样本试用命令检查。 |
 | [Ouroboros 规格先行引擎](#plugin-1133901637-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过访谈、固定规格、执行与多阶段评估组织 AI 软件开发任务。 | 能够审查验证命令和验收标准的开发者可在可丢弃项目副本中试一项小任务。 |
 | [PicGo](#plugin-113965016-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 重复处理文档配图且已有可信图床的创作者可用非敏感样本试用，先验证链接权限与混合失败恢复。 |
@@ -101,17 +100,18 @@
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 每月批量收集 QQ 或 163 邮箱票据的用户可用 InvoiceFlowAI 桌面工具试做有真值的小批次。 |
 | [Graph Memory](#plugin-1178312395-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | 长会话的个人 DSH 用户可以在副本数据库和非敏感任务中试用 Graph Memory。 |
 | [HarmonyOS NEXT Skills](#plugin-1179983747-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过 DSH 单技能 provider 提供离线 HarmonyOS 资料导航及 DevEco/HDC 证据脚本。 | 固定版本资料检索和无外部副作用设备测试页有清晰小样本入口，值得有HarmonyOS环境的开发者有限试用。 |
-| [开源版锤子便签（根应用）](#plugin-1182135360-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。 | 以单人和单活动编辑端为主的 Markdown 作者可保留原稿后试用主题便签图片导出。 |
+| [Notes](#plugin-1182135360-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | 单人撰写和分享便签的用户可以先用非敏感稿件试用主题与导出。 |
 | [ANOLISA](#plugin-1195873793-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | 已经维护 DSH 环境且能保留原文的开发者，可以在任务副本中试用 Tokenless 输出优化这一链路。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | 有会议权限的个人或团队，可用测试账号试用小范围只读会议和录制查询。 |
 | [awesome-gpt-image-2](#plugin-1220744720-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 先作为资源用授权素材手工单模板试用，固定参数核验质量，安装须备份范围，商业和模型比较不作保证。 |
-| [Aegis Method Pack](#plugin-1225840521-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。 | 能恢复profile且有项目规则的开发者可在一个非敏感中等修改任务试用Aegis的基线与完成证据流程。 |
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
 | [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。 | 已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。 |
 | [Caliper](#plugin-1237259189-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 真实安装 Agent Skill，重复运行任务并分别评估激活、执行检查与有无 Skill 的差异。 | 能提供独立测试环境的 Skill 维护者可先关闭用户自定义工具，用 Caliper 对自有非敏感 Skill 做小规模激活与断言回归。 |
 | [Flowix](#plugin-1248774202-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 本地 Markdown 笔记客户端，让人工写作与多个 Agent 共用可持续读写的上下文。 | 以 Markdown 维护项目知识的用户，可用副本笔记本试用人工与 Agent 共用上下文。 |
 | [嵌入式工作台](#plugin-1276714299-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为嵌入式 C/C++ 开发提供按需技能，并在 DSH 首个模型步注入计划核查提醒。 | 已有嵌入式 C/C++ 工具链的开发者，可以在可回滚的故障修复中试用按需领域技能。 |
 | [DSH Graphlint](#plugin-1285824983-integrations-dsh)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为DSH提供graphlint依赖图查询、索引构建、配置工具和使用Skill。 | 已有静态分析经验的开发者可在分支核对告警后试用，不能自动删代码。 |
+| [Memmy Agent](#plugin-1302496224-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 提供本地记忆服务、桌面及 CLI，并生成宿主适配以支持跨会话上下文。 | 需要跨会话接力且能审查数据来源的用户，可先以非敏感小项目和隔离 profile 验证召回。 |
+| [TavernWeave X DSH](#plugin-1308599537-host-adapters-dsh-plugin)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 把 TavernWeave Skill、角色卡工程预设与世界书管理面板打包接入 DSH。 | 非商业个人创作者可在独立 DSH profile 和世界书副本中试用 TavernWeave。 |
 
 <a id="plugin-1418493685-root"></a>
 
@@ -1807,28 +1807,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1100971867-root"></a>
-
-## [Tingly Box](../../plugins/tingly-dev--tingly-box/INSIGHT.md)
-
-[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
-
-[![GitHub ★ 370](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=370&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tingly-dev/tingly-box)
-
-**主要用途**：独立统一模型网关，为多客户端和团队提供协议转换、模型选路、凭据与团队 key 管理，以及请求路径和用量观察。
-
-**建议**：试用
-
-**推荐理由**：需要集中多个模型和客户端、能管理凭据与规则的个人或团队管理员，可先在 localhost 和独立副本配置中接模拟上游或无价值单 provider 小样。它比逐客户端直连多统一协议、scope、选路与请求观察，但兼容和团队全路径隔离仍需验收，重试与 quota 观察也不保证费用硬上限。身份、协议或规则不符以及 DSH 两文件部分写入无法核恢复时，应停扩流和自动配置，查看实际尝试与文件后退回原 endpoint 或副本。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：熟悉凭据/规则的管理员可localhost隔离渐进小样；身份/协议/规则不符、scope或DSH部分写不明时停扩流/自动配置，核attempt和文件、退原endpoint/副本。见[Q05](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/tingly-dev--tingly-box/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1122873619-root"></a>
 
 ## [CC Safety Net](../../plugins/kenryu42--cc-safety-net/INSIGHT.md)
@@ -2073,21 +2051,21 @@
 
 <a id="plugin-1182135360-root"></a>
 
-## [开源版锤子便签（根应用）](../../plugins/zhaoolee--notes/INSIGHT.md)
+## [Notes](../../plugins/zhaoolee--notes/INSIGHT.md)
 
 [![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md)
 
-[![GitHub ★ 315](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=315&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes)
+[![GitHub ★ 324](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=324&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes)
 
-**主要用途**：Web 便签应用，支持 Markdown 编辑、多便签管理、主题图片导出、账号同步和文章资源输出。
+**主要用途**：提供便签编辑、主题排版与图片、Markdown 和网站导出。
 
 **建议**：试用
 
-**推荐理由**：以单人和单活动编辑端为主的 Markdown 作者可保留原稿后试用主题便签图片导出。相较手动排版再截图，源码把主题核对、资源等待和图片输出接为一条链，但节时与视觉合格率尚未实测。用户若发现云端覆盖、导出主题不符或图片缺失，应停止分享并退回本地源稿与手动排版，多设备并发编辑暂缓。
+**推荐理由**：单人撰写和分享便签的用户可以先用非敏感稿件试用主题与导出。它把编辑、截图和网站包生成放在同一应用中，但多端并发保护与导出完整性未验证。如果云保存状态不明或图片缺失，应停止写入并回到保留的 Markdown 原稿。
 
 **核查情况**：已核查固定版本源码；无同版本宿主验收记录。
 
-**试用条件**：先以单人、单活动编辑端和非敏感稿件试用，保留Markdown原稿，核对主题、图片和全文后再分享；多端并发编辑暂缓。云保存异常或导出缺失时退回本地稿与手工排版，外部草稿另行核对结果，见 [Q05](../../plugins/zhaoolee--notes/INSIGHT.md#research-q05)。
+**试用条件**：[Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。
 
 [查看完整分析 →](../../plugins/zhaoolee--notes/INSIGHT.md)
 
@@ -2156,28 +2134,6 @@
 **试用条件**：作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
 
 [查看完整分析 →](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1225840521-root"></a>
-
-## [Aegis Method Pack](../../plugins/ganyuanran--aegis/INSIGHT.md)
-
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
-
-[![GitHub ★ 1,386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GanyuanRan/Aegis)
-
-**主要用途**：为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。
-
-**建议**：试用
-
-**推荐理由**：能恢复profile且有项目规则的开发者可在一个非敏感中等修改任务试用Aegis的基线与完成证据流程。相比反复手写提醒，它提供DSH生命周期入口和按需技能，但返工改善不能从旧基准外推。若简单任务流程膨胀或仍无当前完成证据，切explicit或移除后退回项目AGENTS与手动核验。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：先在单个中等任务核当前证据与实际路由，保留项目规则优先；流程过载就改explicit或退回原工作法。见[Q04](../../plugins/ganyuanran--aegis/INSIGHT.md#research-q04)。
-
-[查看完整分析 →](../../plugins/ganyuanran--aegis/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2310,6 +2266,50 @@
 **试用条件**：已有graphlint使用经验且愿意逐项核对告警的开发者可先在分支试用。固定CLI版本、明确root与入口规则，再挑一个小模块查询，不自动删除动态入口；核对配置副作用、job取消及重新索引。不能把告警数量减少当业务交付，也不能把本插件推荐解释为其上游所有语言分析已通过验收。 [Q09](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md#research-q09)
 
 [查看完整分析 →](../../plugins/angeloszou--graphlint--integrations-dsh/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1302496224-root"></a>
+
+## [Memmy Agent](../../plugins/memtensor--memmy-agent/INSIGHT.md)
+
+[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md)
+
+[![GitHub ★ 2,167](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C167&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/memmy-agent)
+
+**主要用途**：提供本地记忆服务、桌面及 CLI，并生成宿主适配以支持跨会话上下文。
+
+**建议**：试用
+
+**推荐理由**：需要跨会话接力且能审查数据来源的用户，可先以非敏感小项目和隔离 profile 验证召回。相比手工交接，它减少上下文搬运，但需承担模型、存储和错误记忆复核，真实收益未测。若数据流、项目隔离或捕获状态不明，应暂停接入并回到人工笔记。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q05](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q05) 在隔离 profile 和非敏感项目先对照手工，检查模型和服务状态。
+
+[查看完整分析 →](../../plugins/memtensor--memmy-agent/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1308599537-host-adapters-dsh-plugin"></a>
+
+## [TavernWeave X DSH](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md)
+
+[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md)
+
+[![GitHub ★ 201](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=201&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiarMTTT/TavernWeave)
+
+**主要用途**：把 TavernWeave Skill、角色卡工程预设与世界书管理面板打包接入 DSH。
+
+**建议**：试用
+
+**推荐理由**：非商业个人创作者可在独立 DSH profile 和世界书副本中试用 TavernWeave。它把 Skill、任务预设和管理面板放在一次安装内，并有备份与路径围栏，但静态检查不证明角色卡可运行。若覆盖人工修改、根路径混乱或备份不可恢复，应停面板写入并回外部编辑器，真实卡另做 SillyTavern 试用。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q04)非商业独立profile/副本小改，核备份与重开；异常停写回编辑器。
+
+[查看完整分析 →](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md)
 
 [返回表格](#column-index)
 

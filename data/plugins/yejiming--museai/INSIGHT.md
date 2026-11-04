@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[85c1ea7](https://github.com/yejiming/MuseAI/tree/85c1ea76c565e697f510cc45d82ebcb352458dd6)
+源码版本：[b601d64](https://github.com/yejiming/MuseAI/tree/b601d648c15dc9905480f3637504fd9438244d5d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 674](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=674&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yejiming/MuseAI)
+[![GitHub ★ 682](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=682&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yejiming/MuseAI)
 <!-- END META -->
 
-> **功能**：在本地管理角色、世界设定与会话，提供 AI 伴侣、文字冒险和穿书互动。
+> **功能**：本地角色对话、文字冒险与故事世界资料管理应用。
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 支持将模型建议、用户编辑与角色归档组织为一个流程，减少资料分散；不能把自动抽取视作正确记忆。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示角色资料与人工确认归档结合；长期质量未对照。
 
-> **主要限制**：[Q02](#research-q02) 的角色和归档更新早于会话保存，失败分支未见补偿；后端分析实现仍有定位缺口，核心可靠性尚不足以建议迁移真实档案。
+> **主要限制**：[Q03](#research-q03) 显示公开 LAN 状态返回含 token 的结构；[Q02](#research-q02) 归档多步写入无显式回滚。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 应用身份和相对手工角色卡的增量是什么？](#detail-section-11)
-  - [Q02 · 封存按钮怎样更新角色与会话，失败是否一致？](#detail-section-12)
-  - [Q03 · 模型与状态存储带来哪些操作和成本？](#detail-section-13)
-  - [Q04 · 谁能试用，怎样验证记忆确实有帮助？](#detail-section-14)
+  - [Q01 · MuseAI 面向什么人，相对普通聊天的增量是什么？](#detail-section-11)
+  - [Q02 · 聊天与角色记忆从输入到归档如何接线？](#detail-section-12)
+  - [Q03 · 局域网模式的 token 是否限制了未授权访问？](#detail-section-13)
+  - [Q04 · 本地存储是否意味着不发送内容，使用与退出成本是什么？](#detail-section-14)
+  - [Q05 · 如何同时改善 LAN 凭据与归档中断后的恢复？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,75 +40,73 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：角色互动创作者跨会话维护世界书、角色关系与关键事件，合格结果应是与原对话一致且可恢复的记忆。
+> **用途**：希望长期整理角色卡、世界观和对话的角色互动与文字冒险用户。
 
-参照手工角色卡、文本摘要和会话备份；本地桌面应用与另一个 DSH 客户端插件分开评价。
+普通模型聊天和手工文档也可保存人物与对话；本应用组织角色资料与归档交互。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 角色会话 | 持续互动 | 需要角色和模型配置 |
-| 记忆封存 | 分析并编辑角色事件 | 抽取准确性需用户核对 |
-| 本地状态保存 | 保存设定与会话 | 不等同跨文件原子事务 |
+| 能力 | 用途 | 边界 |
+|---|---|---|
+| 角色对话 | 使用角色和历史请求模型 | 内容发送配置的服务 |
+| 记忆归档 | 用户审阅并更新角色 | 多步保存失败可能不一致 |
+| LAN 访问 | 手机连接桌面应用 | 公开状态可能泄露访问 token |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 模型 API 与密钥 | 分析必需 | 聊天和抽取 | 无法分析记忆 |
-| 角色卡与世界书 | 任务必需 | 提供设定 | 缺少角色上下文 |
-| 本地 Documents 存储及备份 | 保存必需 | 持续档案 | 失败需核对角色和会话 |
+| 依赖 | 条件 | 用途 | 缺失影响 |
+|---|---|---|---|
+| 桌面 Tauri 环境 | 应用运行需要 | 界面与本地命令 | 无法运行 |
+| 模型端点与 API key | 生成需要 | 聊天和记忆分析 | 请求不可用 |
+| 本地存储与备份 | 持续使用需要 | 保存会话及角色 | 故障可能丢数据 |
+| 可信网络隔离 | 使用 LAN 前需审查 | 防止未授权访问 | 公开状态存在凭据暴露路径 |
 
-#### 启动步骤
+| 步骤 | 执行者与动作 | 判据或失败处理 |
+|---|---|---|
+| 准备 | 用户备份目录并核对模型提供商 | 无法接受外发则停止 |
+| 聊天 | 用户选择角色并发送非敏感样本 | 结果错误时人工修正 |
+| 归档 | 检查分析后确认角色变化 | 保存失败时核对角色和会话 |
+| LAN | 保持关闭直至访问边界被修复验证 | 不可信网络不得启用 |
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户配置模型并复制虚构角色 | 连接测试与备份存在 |
-| 分析 | 应用分析当前对话，用户编辑建议 | 逐项与对话一致 |
-| 保存 | 应用更新角色再保存会话 | 两份内容均应核对 |
-| 恢复 | 用户对照备份 | 不一致停止继续归档 |
+**效果与成本**
 
-#### 成本
+| 阶段 | 资源 | 人工 | 未知 |
+|---|---|---|---|
+| 首次 | 桌面环境、模型凭据 | 设置角色和服务商 | 兼容未知 |
+| 持续 | 模型调用与磁盘 | 审核和备份 | 实际费用未知 |
+| 恢复 | 备份副本 | 检查部分归档状态 | 故障恢复未测 |
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 桌面存储与模型服务 | 角色整理和备份 | 实际耗时未知 |
-| 持续使用 | 聊天及归档分析调用 | 核对生成记忆 | token 与费用未知 |
-| 失败恢复 | 重复分析及备份空间 | 核对多份状态 | 一致性恢复未测 |
+| 结果 | 依据 | 未知 |
+|---|---|---|
+| 角色归档 | 用户确认及保存源码 | 记忆真实性和持久一致性 |
+| 本地记录 | 应用状态写入 | 全路径隐私 |
+| LAN 访问 | 服务路由源码 | 公开状态风险的实际可达性 |
 
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 记忆工作流 | 模型建议可编辑并归档 | 长期准确与关系连续性 |
-| 本地持久化 | config 文件写入 | 失败原子性和恢复完整性 |
-
-> **思考**：[Q02](#research-q02) 的角色和归档更新早于会话保存，失败分支未见补偿；后端分析实现仍有定位缺口，核心可靠性尚不足以建议迁移真实档案。
+> **思考**：[Q03](#research-q03) 显示公开 LAN 状态返回含 token 的结构；[Q02](#research-q02) 归档多步写入无显式回滚。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 支持将模型建议、用户编辑与角色归档组织为一个流程，减少资料分散；不能把自动抽取视作正确记忆。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示角色资料与人工确认归档结合；长期质量未对照。
 
-[Q02](#research-q02) 分离分析与人工编辑值得借鉴，但需引入跨角色和会话的提交边界；状态持久化删除目前无操作，退出需保留文件副本。
+[Q02](#research-q02) 保留用户确认环节，但角色更新与会话保存分步；[Q03](#research-q03) 公开状态与 token 鉴权存在交叉边界。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 的角色和归档更新早于会话保存，失败分支未见补偿；后端分析实现仍有定位缺口，核心可靠性尚不足以建议迁移真实档案。
+[Q03](#research-q03) 显示公开 LAN 状态返回含 token 的结构；[Q02](#research-q02) 归档多步写入无显式回滚。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 暂缓迁移唯一角色档案；先检查虚构副本与保存失败后状态，真实资料继续手工维护并备份。
+[Q04](#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](#research-q03) 的状态暴露未修复核实前不启用 LAN。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +114,18 @@
 
 **核查状态**：已检查源码。
 
-前端归档与文件写入有源码支持；后端模型链和失败一致性不足，长期收益未知。
+定向检查固定版本源码；未运行目标、网络服务或模型。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/pages/Chat.tsx、src/utils/archiveAnalysis.ts、src/stores/diskStorage.ts、src-tauri/src/commands/workspace.rs、src-tauri/src/lib.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/pages/Chat.tsx、src/stores/diskStorage.ts、src-tauri/src/mobile_server.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定客户端仓库，重点前端封存、状态持久化与 Rust 落盘；未研究另一个 DSH 插件仓库。
-- 下一步：补查模型分析命令，验证保存失败和错误事件抽取；使用同剧情人工卡作对照，未执行。
+- 边界：核查桌面角色聊天、归档确认、磁盘存储和 LAN 路由；未全审模型请求、全部文件接口与宿主网络。
+- 下一步：在隔离网络核对无凭据状态请求与受保护 API，注入保存失败，并验证备份恢复；本次均未运行。
 
 **分析版本**
 
 - **仓库**：[yejiming/MuseAI](https://github.com/yejiming/MuseAI)
-- **版本号**：0.9.8（[固定提交 85c1ea7](https://github.com/yejiming/MuseAI/tree/85c1ea76c565e697f510cc45d82ebcb352458dd6)）
-- **版本日期**：2026-08-14（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.8（[固定提交 b601d64](https://github.com/yejiming/MuseAI/tree/b601d648c15dc9905480f3637504fd9438244d5d)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +133,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提出可回退差异与会话共同提交的封存方式，尚未实现验证；若不能减少错误记忆和恢复投入则否定。
+[Q05](#research-q05) 提出隐藏公开状态凭据及协调归档恢复，需测试配对与故障。
 
-补查模型分析命令，验证保存失败和错误事件抽取；使用同剧情人工卡作对照，未执行。
+在隔离网络核对无凭据状态请求与受保护 API，注入保存失败，并验证备份恢复；本次均未运行。
 
 <a id="detail-section-9"></a>
 
@@ -145,49 +144,55 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 46 | 14055 | — | — | 192928 |
-| .tsx | test | 27 | 5668 | 4941 | 14 | — |
+| .tsx | test | 27 | 5661 | 4933 | 14 | — |
 | .ts | test | 24 | 2619 | 2294 | 14 | — |
-| .tsx | source | 40 | 26691 | 24835 | 241 | — |
+| .tsx | source | 40 | 26720 | 24864 | 241 | — |
 | .ts | source | 32 | 5984 | 5321 | 109 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/yejiming/MuseAI/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/yejiming/MuseAI/issues?q=is%3Aissue+created%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/yejiming/MuseAI/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z)
-
-
-
-统计日期：2026-10-27。
+Issue 活跃度数据暂未获取（查询日期：2026-11-04），可前往 [GitHub Issues](https://github.com/yejiming/MuseAI/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：角色会话如何成为可持续且可核对的本地记忆？
+**插件研究总目标**：核查独立角色互动应用的归档、模型外发与局域网访问边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 应用身份和相对手工角色卡的增量是什么？
+### Q01 · MuseAI 面向什么人，相对普通聊天的增量是什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-MuseAI 是本地角色互动桌面应用；README 指向另一个 dsh-museai-tavern 仓库，当前身份应为 client，不能把链接当本仓库 DSH 注册证据。目标是角色聊天和文字冒险中让设定、关系与关键事件持续保存。相对手工维护角色卡和分散会话，它把模型分析、可编辑记忆和归档放进同一用户流程；这是整合增量，不证明长期记忆准确或实际陪伴效果。
+MuseAI 是独立 Tauri 本地桌面应用，面向维护角色设定、长期对话及文字冒险的用户；README 链接的 DSH 客户端插件位于另一个仓库，不能把根应用当 DSH 插件。相对普通聊天，它组织角色卡、会话和用户确认的记忆归档，但长期一致性、陪伴感或实际创作收益未对照。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:6-13](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/README.md#L6-L13)
+**依据 1 · 作者声明**：[README.md:1-13](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/README.md#L1-L13)
 
-作者区分本应用与独立 DSH 插件。
+作者介绍应用并另链 DSH 插件。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
+# MuseAI — 本地 AI 伴侣、文字冒险与穿书互动应用
+
+[English](README_EN.md) | 简体中文
+
+
 > ### 🆕 重要更新：MuseAI 现在可以装进 DeepSeek Harness
 > 新增 DSH 客户端插件 —— 把 MuseAI 装进 DeepSeek Harness
 > 
@@ -198,76 +203,154 @@ MuseAI 是一款面向沉浸式角色互动的本地 AI 应用。你可以创建
 它不只是普通的 AI 聊天工具，也不只是写作软件。MuseAI 更像一个可以保存世界、角色、记忆和关系的本地 AI 互动世界。
 ```
 
-**依据 2 · 作者声明**：[README.md:44-61](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/README.md#L44-L61)
+</details>
 
-目标任务与记忆主张。
+**依据 2 · 作者声明**：[README.md:228-234](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/README.md#L228-L234)
 
-<details>
-<summary>查看原文（18行）</summary>
+作者描述持续资料与用途。
 
 ```text
-### AI 伴侣与角色聊天
+**Q：MuseAI 和普通 AI 聊天工具有什么区别？**
 
-在「背景设定」中创建世界书和角色卡后，就可以到「伴侣对话」选择角色，开启一对一 AI 角色聊天。角色会根据人设、说话风格、与你的关系和过往记忆回应你，让对话更像一段持续发展的关系，而不是一次性的问答。
+A：普通 AI 聊天工具通常以单次对话为主，角色、世界观和记忆容易散落在不同窗口里。MuseAI 会把世界书、角色卡、聊天记录、冒险记录和羁绊变化保存在本地，让同一个角色可以长期延续。
 
-- 支持自定义角色姓名、性格、关系、底线、口头禅和背景故事
-- 支持绑定世界书，让角色始终处在同一个故事世界中
-- 支持归档记忆，提炼关键事件并更新角色卡
-- 适合 AI 伴侣、AI 虚拟角色、OC 聊天、角色扮演和沉浸式陪伴
+**Q：MuseAI 是 AI 伴侣应用还是 AI 写作工具？**
 
-![MuseAI 智能伴侣：选择角色卡后与 AI 角色进行长期对话](assets/聊天页.png)
+A：MuseAI 当前更适合作为本地 AI 伴侣、AI 角色聊天、文字冒险和穿书互动应用使用。作品管理、大纲、反向大纲和去 AI 味属于辅助创作能力，用来帮助你整理故事世界和互动素材。
+```
 
-### 长期记忆与羁绊档案
+**依据 3 · 源码核查**：[package.json:1-14](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/package.json#L1-L14)
 
-每次对话或冒险结束后，你都可以让 MuseAI 分析本次经历，将关系变化、重要事件和相处模式写回角色档案。「羁绊」页面会按角色整理这些记录，形成可回顾的关系轨迹。
+私有应用和 Tauri 工具链。
 
-- **关系概览**：查看关系类型、相处模式与关系底线
-- **羁绊时间线**：用时间轴记录关键事件
-- **会话足迹**：只展示与该角色相关的聊天记录
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+{
+  "name": "museai",
+  "private": true,
+  "version": "0.9.8",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.2.3",
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/pages/Chat.tsx:914-920](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/pages/Chat.tsx#L914-L920)
+**依据 4 · 源码核查**：[src/pages/Chat.tsx:930-952](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L930-L952)
 
-模型建议进入可编辑字段。
+归档确认写回角色和会话。
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
-      const analysis = parseArchiveAnalysisResponse(resultStr);
-      setArchiveAnalysis(analysis);
-      setEditedTitle(analysis.sessionTitle || sessionTitle || '未命名会话');
-      setEditedRelationType(analysis.userRelationType || '');
-      setEditedRelationModel(analysis.userInteractionModel || '');
-      setEditedRelationBottomLine(analysis.userRelationBottomLine || '');
-      setEditedEvents(analysis.keyEvents || '');
+  const handleConfirmArchive = async () => {
+    if (!selectedCharacterCard) return;
+
+    try {
+      // 1. Update character card fields in usePartnerStore
+      updateItemFields(selectedCharacterCard.id, 'character_card', {
+        userRelationType: editedRelationType,
+        userInteractionModel: editedRelationModel,
+        userRelationBottomLine: editedRelationBottomLine,
+        keyEvents: editedEvents
+      });
+
+      // 2. Set current session archive status to true
+      setIsSessionArchived(true);
+
+      // 3. Set the new session title
+      const finalTitle = editedTitle.trim() || '未命名会话';
+      setSessionTitle(finalTitle);
+      sessionTitleRef.current = finalTitle;
+      isSessionArchivedRef.current = true;
+
+      // 4. Save the archived session
+      const saved = await saveCurrentSession();
 ```
+
+</details>
 
 #### 缺口
 
-- 长期角色一致性缺少对照
-  **影响**：不能把保存状态等同有效记忆
-  **进一步探讨**：以固定角色和跨会话矛盾用例比较手工维护
+- 缺少用户对照与长期体验数据
+  **影响**：无法证明记忆质量或陪伴效果
+  **进一步探讨**：固定角色任务对比普通聊天并评估一致性与人工纠错。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 封存按钮怎样更新角色与会话，失败是否一致？
+### Q02 · 聊天与角色记忆从输入到归档如何接线？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-handleArchiveMemory 从用户和 Agent 消息构建历史，携模型配置调用 analyze_character_memory，解析返回值后供用户编辑。确认归档先更新角色字段，再设归档状态与标题，最后 await saveCurrentSession；保存失败显示错误，所读分支没有回退前面的字段及归档状态。因此可以确认这里存在多状态先后写入的设计风险，不能保证记忆和会话原子一致；未运行所以不声称已复现丢失。diskStorage 通过 appInvoke 保存，Rust 将字符串直接写入 config 文件。JSON 解析只保证语法，可接受对象，不验证记忆真实性。后端分析命令完整实现未在本次范围定位，作用仅能确认到前端调用和注册，核心模型链保留缺口。
+客户端将用户消息与已有历史组装后，向 start_chat_completion_stream 传入提供商地址、API key、模型、系统提示和消息；记忆归档先按用户/角色组合历史并调用 analyze_character_memory，解析结果后展示给用户编辑。用户确认时先更新角色字段、设置归档标志，再调用 saveCurrentSession 保存；这不是单一原子写，保存失败时捕获并提示，但已更新的内存及角色字段没有在该分支回滚。不能把提取出的记忆视作客观事实。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/pages/Chat.tsx:872-927](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/pages/Chat.tsx#L872-L927)
+**依据 1 · 源码核查**：[src/pages/Chat.tsx:528-560](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L528-L560)
 
-分析入口、上下文和结果编辑。
+构造消息与模型请求。
 
 <details>
-<summary>查看原文（56行）</summary>
+<summary>查看原文（33行）</summary>
+
+```text
+    const nextMessages = [...messages, userMessage, pendingAgentMessage];
+    messagesRef.current = nextMessages;
+    setMessages(nextMessages);
+    setInput('');
+    setIsStreaming(true);
+    scrollToBottomOnce();
+
+    try {
+      // Map Zustand Messages to LLM API message schema
+      const modelMessages = nextMessages.slice(0, -1).map(msg => ({
+        id: msg.id,
+        role: msg.role === 'user' ? 'user' as const : 'assistant' as const,
+        content: msg.content
+      }));
+
+      const runId = await invoke<string>('start_chat_completion_stream', {
+        request: {
+          agentId: 'partnerChat',
+          modelInterface: settings.modelInterface,
+          baseUrl: settings.llmBaseUrl,
+          apiKey: settings.llmApiKey,
+          model: settings.llmModel,
+          temperature: settings.agentConfigs?.partnerChat?.temperature ?? 0.3,
+          maxOutputTokens: settings.agentConfigs?.partnerChat?.maxOutputTokens ?? 32000,
+          maxContextTokens: settings.agentConfigs?.partnerChat?.maxContextTokens ?? 200000,
+          compactionTurnThreshold: settings.agentConfigs?.partnerChat?.compactionTurnThreshold ?? 20,
+          frequencyPenalty: settings.agentConfigs?.partnerChat?.frequencyPenalty ?? 0.3,
+          presencePenalty: settings.agentConfigs?.partnerChat?.presencePenalty ?? 0.2,
+          topP: settings.agentConfigs?.partnerChat?.topP ?? 0.9,
+          thinkingDepth: settings.agentConfigs?.partnerChat?.thinkingDepth ?? 'off',
+          systemPrompt: effectiveSystemPrompt,
+          workspacePath: null,
+          messages: modelMessages,
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/pages/Chat.tsx:872-915](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L872-L915)
+
+归档请求及分析结果。
+
+<details>
+<summary>查看原文（44行）</summary>
 
 ```text
   const handleArchiveMemory = async () => {
@@ -314,25 +397,13 @@ handleArchiveMemory 从用户和 Agent 消息构建历史，携模型配置调�
 
       const analysis = parseArchiveAnalysisResponse(resultStr);
       setArchiveAnalysis(analysis);
-      setEditedTitle(analysis.sessionTitle || sessionTitle || '未命名会话');
-      setEditedRelationType(analysis.userRelationType || '');
-      setEditedRelationModel(analysis.userInteractionModel || '');
-      setEditedRelationBottomLine(analysis.userRelationBottomLine || '');
-      setEditedEvents(analysis.keyEvents || '');
-    } catch (err) {
-      console.error('分析记忆失败:', err);
-      message.error(`记忆分析失败：${String(err)}`);
-      setIsArchiveModalOpen(false);
-    } finally {
-      setIsAnalyzing(false);
-    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/pages/Chat.tsx:930-962](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/pages/Chat.tsx#L930-L962)
+**依据 3 · 源码核查**：[src/pages/Chat.tsx:930-962](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L930-L962)
 
-多状态更新早于会话持久化，catch 未回滚。
+确认时先更新角色及状态，再保存并提示错误。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -375,44 +446,343 @@ handleArchiveMemory 从用户和 Agent 消息构建历史，携模型配置调�
 
 </details>
 
-**依据 3 · 源码核查**：[src/utils/archiveAnalysis.ts:1-20](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/utils/archiveAnalysis.ts#L1-L20)
+**依据 4 · 源码核查**：[src/pages/Chat.tsx:318-342](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L318-L342)
 
-JSON 解析没有领域事实核验。
+会话保存内容。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（25行）</summary>
 
-````text
-export function parseArchiveAnalysisResponse(response: unknown): Record<string, any> {
-  if (response && typeof response === 'object') {
-    return response as Record<string, any>;
-  }
+```text
+  const saveCurrentSession = useCallback(async (title = sessionTitleRef.current, sessionIdOverride?: string) => {
+    const userMessages = messagesRef.current.filter(m => m.role === 'user');
+    if (userMessages.length === 0) return false;
+    const currentSessionId = sessionIdOverride
+      ? ensureSessionId(sessionIdOverride, 'partner-session')
+      : ensureCurrentSessionId();
 
-  if (typeof response !== 'string') {
-    throw new Error('记忆分析结果格式不正确');
-  }
-
-  const trimmed = response.trim();
-  const fenced = trimmed.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim();
-  const start = fenced.indexOf('{');
-  const end = fenced.lastIndexOf('}');
-  const jsonText = start >= 0 && end > start ? fenced.slice(start, end + 1) : fenced;
-
-  try {
-    return JSON.parse(jsonText);
-  } catch {
-    throw new Error('记忆分析结果不是合法 JSON，请重新分析');
-  }
-````
+    try {
+      await invoke<AgentSessionSummary>('save_agent_session', {
+        session: {
+          id: currentSessionId,
+          title,
+          savedAt: Date.now(),
+          messages: messagesRef.current,
+          selectedReferenceFiles: [],
+          selectedOutlineFile: null,
+          todos: [],
+          contextCompaction: contextCompactionRef.current,
+          isArchived: isSessionArchivedRef.current,
+          characterCardId: selectedCharacterCardIdRef.current,
+          selectedWorldBookId: selectedWorldBookIdRef.current,
+          selectedStylePresetIds: selectedStylePresetIdsRef.current,
+          initialStylePresetIds: initialStylePresetIdsRef.current,
+          initialSystemPromptSnapshot: initialSystemPromptSnapshotRef.current,
+        }
+```
 
 </details>
 
-**依据 4 · 源码核查**：[src/stores/diskStorage.ts:9-34](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/stores/diskStorage.ts#L9-L34)
+#### 缺口
 
-磁盘状态接口和删除无操作。
+- 未模拟写入失败和 Zustand 异步持久化
+  **影响**：不能确定失败后的磁盘与内存最终状态
+  **进一步探讨**：隔离环境注入会话保存失败并重启对照角色和归档标志。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 局域网模式的 token 是否限制了未授权访问？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+服务尝试监听 0.0.0.0 的 4080–4085 端口，并通过 HTTP URL 的查询参数提供 token；状态和会话等路径经过 token 验证。然而 /api/mobile/status 被明确列为公开路径，其处理器直接序列化完整 MobileServiceStatus；服务启动后 status 同时含 token 和带 token 的 URL。由此可推断能访问该服务的网络客户端无需先持 token 即可能从公开状态取得 token，再访问受保护 API；此为固定源码链分析，未运行攻击，也未确认防火墙或具体部署可达性。默认 token 可在会话间更换，启用固定 token 时会写入本地文件。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src-tauri/src/mobile_server.rs:27-34](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L27-L34)
+
+状态包含 URL 与 token。
+
+```text
+#[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
+#[serde(rename_all = "camelCase")]
+pub struct MobileServiceStatus {
+    pub is_running: bool,
+    pub url: Option<String>,
+    pub token: Option<String>,
+    pub fixed_token_enabled: bool,
+    pub error: Option<String>,
+```
+
+**依据 2 · 源码核查**：[src-tauri/src/mobile_server.rs:99-128](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L99-L128)
+
+随机和固定 token 存取。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（30行）</summary>
+
+```text
+pub fn get_mobile_access_token() -> String {
+    let cell = MOBILE_ACCESS_TOKEN.get_or_init(|| Mutex::new(String::new()));
+    let mut guard = cell.lock().unwrap();
+    if guard.is_empty() {
+        *guard = current_fixed_mobile_token_path()
+            .and_then(|path| load_token_from_path(&path))
+            .unwrap_or_else(|| uuid::Uuid::new_v4().to_string());
+    }
+    guard.clone()
+}
+
+/// Enables or disables the fixed mobile access token under a given user data root.
+/// When enabled the token is persisted to `config/mobile-fixed-token` and reused
+/// across restarts; when disabled the persisted token is removed and a fresh
+/// random token is generated for the current session.
+pub fn set_mobile_fixed_token_at(base: &std::path::Path, enabled: bool) -> Result<String, String> {
+    let path = fixed_mobile_token_path(base);
+    if enabled {
+        let token =
+            load_token_from_path(&path).unwrap_or_else(|| uuid::Uuid::new_v4().to_string());
+        if let Some(parent) = path.parent() {
+            fs::create_dir_all(parent).map_err(|e| e.to_string())?;
+        }
+        fs::write(&path, &token).map_err(|e| e.to_string())?;
+        set_mobile_access_token(token.clone());
+        Ok(token)
+    } else {
+        let _ = fs::remove_file(&path);
+        let token = uuid::Uuid::new_v4().to_string();
+        set_mobile_access_token(token.clone());
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src-tauri/src/mobile_server.rs:242-263](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L242-L263)
+
+status 列为公开路径。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+fn is_public_path(path: &str) -> bool {
+    matches!(path, "/" | "/api/mobile/status") || path.starts_with("/assets/")
+}
+
+fn extract_token_from_cookies(cookie_header: &str) -> Option<String> {
+    cookie_header.split(';').find_map(|kv| {
+        let mut parts = kv.splitn(2, '=');
+        let key = parts.next()?.trim();
+        let val = parts.next()?.trim();
+        if key == "mobile_token" {
+            Some(val.to_string())
+        } else {
+            None
+        }
+    })
+}
+
+fn validate_token(req: &Request) -> bool {
+    let path = req.uri().path();
+    if is_public_path(path) {
+        return true;
+    }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src-tauri/src/mobile_server.rs:265-291](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L265-L291)
+
+其他路径接受 header、query 或 cookie token。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+    let expected = get_mobile_access_token();
+
+    if let Some(header_val) = req.headers().get("X-Mobile-Token") {
+        if let Ok(s) = header_val.to_str() {
+            if s == expected {
+                return true;
+            }
+        }
+    }
+
+    if let Some(query) = req.uri().query() {
+        if let Some(token) = parse_query(query).get("token") {
+            if token == &expected {
+                return true;
+            }
+        }
+    }
+
+    if let Some(cookie_header) = req.headers().get(header::COOKIE) {
+        if let Ok(s) = cookie_header.to_str() {
+            if let Some(token) = extract_token_from_cookies(s) {
+                if token == expected {
+                    return true;
+                }
+            }
+        }
+    }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src-tauri/src/mobile_server.rs:372-375](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L372-L375)
+
+公开处理器返回完整状态。
+
+```text
+async fn get_mobile_status() -> impl IntoResponse {
+    let status = get_status();
+    axum::Json(status)
+}
+```
+
+**依据 6 · 源码核查**：[src-tauri/src/mobile_server.rs:1642-1682](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L1642-L1682)
+
+状态及数据接口均挂同一 middleware。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+pub fn create_mobile_router<R: Runtime>(app_handle: AppHandle<R>) -> Router {
+    Router::new()
+        .route("/", get(serve_html::<R>))
+        .route("/assets/{*path}", get(serve_static_assets::<R>))
+        .route("/api/mobile/status", get(get_mobile_status))
+        .route(
+            "/api/mobile/state/{name}",
+            get(get_app_state::<R>).post(save_app_state::<R>),
+        )
+        .route(
+            "/api/mobile/sessions",
+            get(list_sessions::<R>).post(save_session::<R>),
+        )
+        .route(
+            "/api/mobile/sessions/{id}",
+            get(load_session::<R>).delete(delete_session::<R>),
+        )
+        .route(
+            "/api/mobile/sessions/{id}/title",
+            put(update_session_title::<R>),
+        )
+        .route(
+            "/api/mobile/sessions/{id}/analyze-memory",
+            post(analyze_session_memory::<R>),
+        )
+        .route("/api/mobile/summarize", post(summarize_title::<R>))
+        .route(
+            "/api/mobile/character-cards/convert-silly-tavern",
+            post(convert_character_card_to_silly_tavern_endpoint::<R>),
+        )
+        .route(
+            "/api/mobile/sessions/{id}/archive",
+            post(archive_session_memory::<R>),
+        )
+        .route("/api/mobile/chat/start", post(start_run_endpoint::<R>))
+        .route("/api/mobile/story/start", post(start_run_endpoint::<R>))
+        .route("/api/mobile/chat/stop", post(stop_run_endpoint::<R>))
+        .route("/api/mobile/stream", get(subscribe_stream))
+        .fallback(serve_html::<R>)
+        .layer(axum::middleware::from_fn(auth_middleware))
+        .with_state(app_handle)
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src-tauri/src/mobile_server.rs:1685-1692](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L1685-L1692)
+
+监听所有接口。
+
+```text
+pub async fn start_server<R: Runtime>(app_handle: AppHandle<R>) -> Result<(), String> {
+    let mut listener = None;
+    let mut port = 4080;
+
+    for p in 4080..=4085 {
+        let addr = SocketAddr::from(([0, 0, 0, 0], p));
+        if let Ok(l) = tokio::net::TcpListener::bind(&addr).await {
+            listener = Some(l);
+```
+
+**依据 8 · 源码核查**：[src-tauri/src/mobile_server.rs:1710-1718](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L1710-L1718)
+
+运行状态赋予 token 与 URL。
+
+```text
+    let lan_ip = get_lan_ip().unwrap_or(IpAddr::V4(std::net::Ipv4Addr::new(127, 0, 0, 1)));
+    let token = get_mobile_access_token();
+    let url = format!("http://{}:{}/?token={}", lan_ip, port, token);
+
+    set_status(MobileServiceStatus {
+        is_running: true,
+        url: Some(url),
+        token: Some(token),
+        fixed_token_enabled: is_fixed_mobile_token_enabled(),
+```
+
+#### 缺口
+
+- 未运行服务、检查防火墙或其他外层网关
+  **影响**：不能声称实际发生泄露或任意网络均可达
+  **进一步探讨**：隔离环境以无凭据客户端请求 status，再核对数据 API、访问控制与监听地址。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 本地存储是否意味着不发送内容，使用与退出成本是什么？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+本地磁盘保存角色及会话，聊天和记忆分析请求明确包含模型地址、API key、消息或角色内容，实际由所配置服务处理，不能称内容绝不出机。使用者需审查提供商及模型费用、定期备份角色会话，并核对归档写入；启用局域网服务时 Q03 的公开状态令 token 不能作为可靠的网络隔离。若敏感内容、模型发送或网络风险无法接受，应停止 LAN 服务并避免发送敏感内容；备份和恢复是否成功仍需验证。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:206-222](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/README.md#L206-L222)
+
+作者的数据路径与备份建议。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+
+所有用户数据统一存放在 `~/Documents/MuseAI/` 目录下：
+
+| 数据类型 | 存储位置 |
+| --- | --- |
+| 作品文件 | `~/Documents/MuseAI/articles/` |
+| 范文库 | `~/Documents/MuseAI/references/` |
+| 大纲文件 | `~/Documents/MuseAI/outline/` |
+| 版本历史 | 各文件同目录下的 `.versions/` 文件夹 |
+| 角色卡 / 世界书 | `~/Documents/MuseAI/config/partner-store.json` |
+| 智能伴侣会话 | `~/Documents/MuseAI/agent-sessions/partner-session-*.json` |
+| 故事冒险会话 | `~/Documents/MuseAI/agent-sessions/story-session-*.json` |
+| 写作 Agent 会话 | `~/Documents/MuseAI/agent-sessions/session-*.json` |
+| 应用设置 | `~/Documents/MuseAI/config/settings-store.json` |
+| 各模块 UI 状态 | `~/Documents/MuseAI/config/*.json` |
+
+建议定期备份 `~/Documents/MuseAI/` 目录，以防数据丢失。
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/stores/diskStorage.ts:9-33](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/stores/diskStorage.ts#L9-L33)
+
+应用状态写入和无删除实现。
+
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
     getItem: async () => {
@@ -440,117 +810,49 @@ export function parseArchiveAnalysisResponse(response: unknown): Record<string, 
     },
     removeItem: async () => {
       // no-op: app state deletion is not exposed
-    },
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src-tauri/src/commands/workspace.rs:510-529](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src-tauri/src/commands/workspace.rs#L510-L529)
+**依据 3 · 源码核查**：[src/pages/Chat.tsx:543-560](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L543-L560)
 
-命令将状态写到 Documents 下配置。
+对话请求传输配置及消息。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-pub fn save_app_state_path(base: &Path, name: &str, content: &str) -> Result<(), String> {
-    if name.contains('/') || name.contains('\\') || name.contains("..") {
-        return Err("非法的状态名称".to_string());
-    }
-    let dir = base.join("MuseAI").join("config");
-    fs::create_dir_all(&dir).map_err(|e| e.to_string())?;
-    let path = dir.join(format!("{}.json", name));
-    fs::write(path, content).map_err(|e| e.to_string())
-}
-
-#[tauri::command]
-pub fn load_app_state(app: AppHandle, name: String) -> Result<String, String> {
-    let doc_dir = resolve_document_dir(&app)?;
-    load_app_state_path(&doc_dir, &name)
-}
-
-#[tauri::command]
-pub fn save_app_state(app: AppHandle, name: String, content: String) -> Result<(), String> {
-    let doc_dir = resolve_document_dir(&app)?;
-    save_app_state_path(&doc_dir, &name, &content)
+      const runId = await invoke<string>('start_chat_completion_stream', {
+        request: {
+          agentId: 'partnerChat',
+          modelInterface: settings.modelInterface,
+          baseUrl: settings.llmBaseUrl,
+          apiKey: settings.llmApiKey,
+          model: settings.llmModel,
+          temperature: settings.agentConfigs?.partnerChat?.temperature ?? 0.3,
+          maxOutputTokens: settings.agentConfigs?.partnerChat?.maxOutputTokens ?? 32000,
+          maxContextTokens: settings.agentConfigs?.partnerChat?.maxContextTokens ?? 200000,
+          compactionTurnThreshold: settings.agentConfigs?.partnerChat?.compactionTurnThreshold ?? 20,
+          frequencyPenalty: settings.agentConfigs?.partnerChat?.frequencyPenalty ?? 0.3,
+          presencePenalty: settings.agentConfigs?.partnerChat?.presencePenalty ?? 0.2,
+          topP: settings.agentConfigs?.partnerChat?.topP ?? 0.9,
+          thinkingDepth: settings.agentConfigs?.partnerChat?.thinkingDepth ?? 'off',
+          systemPrompt: effectiveSystemPrompt,
+          workspacePath: null,
+          messages: modelMessages,
 ```
 
 </details>
 
-#### 缺口
+**依据 4 · 源码核查**：[src/pages/Chat.tsx:893-910](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L893-L910)
 
-- 后端模型分析完整链与失败原子性未验证
-  **影响**：不能充分支持记忆准确及可靠封存主张
-  **进一步探讨**：补查命令实现并故障注入保存失败，核对角色和归档是否可恢复
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 模型与状态存储带来哪些操作和成本？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-首次需配置 API 地址、密钥和模型，再建立世界书与角色卡；本地保存的是作品、状态和会话，分析时 Chat.tsx 将历史与角色设定交给配置的模型服务，因此本地存储不意味着全部推理数据不出机。持续成本包括聊天与独立封存分析调用、人工纠错及定期备份；无本轮价格和工作量，不能估算单位合格剧情费用。失败恢复应先备份 Documents/MuseAI 并核对角色卡和会话，不能仅因成功弹窗推断两份数据已一致；退出可保留本地文件，但恢复操作与格式迁移没有实测。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:160-178](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/README.md#L160-L178)
-
-配置与用户操作步骤。
+归档分析包含角色和对话。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-### 2. 配置 AI 模型
-
-首次启动后，进入「设置」页面，配置你的 AI 模型：
-
-1. 填写 API Key（支持 OpenAI、Anthropic 及兼容 OpenAI 格式的第三方服务）
-2. 填写 API 地址（如使用国内中转服务，在此填写自定义地址）
-3. 选择模型名称（如 `deepseek-v4-flash`、`claude-sonnet-4-6` 等）
-4. 点击「测试连接」，确认配置正确
-
-![MuseAI 设置页：配置 OpenAI、Claude、DeepSeek、Kimi 等模型服务](assets/设置页.png)
-
-你可以为伴侣聊天、冒险、穿书、去 AI 味、大纲等模块分别配置不同模型和参数，灵活搭配效果、速度与成本。
-
-### 3. 开始使用
-
-- **AI 伴侣**：在「背景设定」创建世界书和角色卡，再到「伴侣对话」选择角色开始聊天
-- **文字冒险**：在「冒险」选择世界书和角色卡，输入开场剧情后开始 AI 跑团
-- **穿书互动**：先到「穿书素材」装配大纲、世界书和角色卡，再进入「穿书」开始剧情
-- **羁绊档案**：对话或冒险归档后，到「羁绊」查看关系变化和关键事件
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:215-222](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/README.md#L215-L222)
-
-本地存储位置和备份建议。
-
-```text
-| 角色卡 / 世界书 | `~/Documents/MuseAI/config/partner-store.json` |
-| 智能伴侣会话 | `~/Documents/MuseAI/agent-sessions/partner-session-*.json` |
-| 故事冒险会话 | `~/Documents/MuseAI/agent-sessions/story-session-*.json` |
-| 写作 Agent 会话 | `~/Documents/MuseAI/agent-sessions/session-*.json` |
-| 应用设置 | `~/Documents/MuseAI/config/settings-store.json` |
-| 各模块 UI 状态 | `~/Documents/MuseAI/config/*.json` |
-
-建议定期备份 `~/Documents/MuseAI/` 目录，以防数据丢失。
-```
-
-**依据 3 · 源码核查**：[src/pages/Chat.tsx:894-910](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/pages/Chat.tsx#L894-L910)
-
-分析请求携历史、角色和 API 配置。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
+      const archiveConfig = settings.agentConfigs?.chatArchive || {};
       const resultStr = await invoke<string | Record<string, any>>('analyze_character_memory', {
         request: {
           modelInterface: settings.modelInterface,
@@ -572,29 +874,108 @@ pub fn save_app_state(app: AppHandle, name: String, content: String) -> Result<(
 
 </details>
 
+**依据 5 · 源码核查**：[src-tauri/src/mobile_server.rs:242-263](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L242-L263)
+
+公开状态的安全边界。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+fn is_public_path(path: &str) -> bool {
+    matches!(path, "/" | "/api/mobile/status") || path.starts_with("/assets/")
+}
+
+fn extract_token_from_cookies(cookie_header: &str) -> Option<String> {
+    cookie_header.split(';').find_map(|kv| {
+        let mut parts = kv.splitn(2, '=');
+        let key = parts.next()?.trim();
+        let val = parts.next()?.trim();
+        if key == "mobile_token" {
+            Some(val.to_string())
+        } else {
+            None
+        }
+    })
+}
+
+fn validate_token(req: &Request) -> bool {
+    let path = req.uri().path();
+    if is_public_path(path) {
+        return true;
+    }
+```
+
+</details>
+
 #### 缺口
 
-- 封存调用费用和纠错时间未知
-  **影响**：无法证明自动记忆更省成本
-  **进一步探讨**：记录聊天与归档全调用账单、纠错次数及恢复时间
+- 没有全网络出口、费用和恢复实验
+  **影响**：不能断定全部外发路径或量化成本
+  **进一步探讨**：用非敏感样本观察网络和备份恢复并核对供应商数据条款。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 谁能试用，怎样验证记忆确实有帮助？
+### Q05 · 如何同时改善 LAN 凭据与归档中断后的恢复？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-当前建议观察，不把持有长期角色资料的用户直接导入正式档案：保存失败后的双状态一致性和后端模型链仍影响核心承诺。有开发能力的创作者可先用虚构副本审查，不迁移唯一角色资料。可验证的方向是把记忆修改作为待确认差异、与会话归档一起提交并保留回退点；这会增加存储和确认步骤，假设其减少错误记忆与恢复时间。以同一剧情对比人工角色卡和自动封存，检查虚构事件、关系漂移及失败恢复；若更难纠错或会话与角色不一致，回到手工角色卡和文件备份。
+基于 Q03 的公开状态含 token，可假设将无凭据状态输出限制为不含 URL、token 的健康字段并仅在可信桌面通道显示配对信息，降低凭据暴露；基于 Q02 的多步归档，可假设以持久操作记录或受控回滚协调角色与会话。方案均未实现；对照无凭据请求与故障注入，核对配对可用性、未授权读取、角色和会话一致性以及恢复复杂度，若正常配对受损或新风险高于改善则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/pages/Chat.tsx:930-962](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/src/pages/Chat.tsx#L930-L962)
+**依据 1 · 源码核查**：[src-tauri/src/mobile_server.rs:242-263](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L242-L263)
 
-保存顺序是事务式记忆假设的直接起点。
+公开状态入口。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+fn is_public_path(path: &str) -> bool {
+    matches!(path, "/" | "/api/mobile/status") || path.starts_with("/assets/")
+}
+
+fn extract_token_from_cookies(cookie_header: &str) -> Option<String> {
+    cookie_header.split(';').find_map(|kv| {
+        let mut parts = kv.splitn(2, '=');
+        let key = parts.next()?.trim();
+        let val = parts.next()?.trim();
+        if key == "mobile_token" {
+            Some(val.to_string())
+        } else {
+            None
+        }
+    })
+}
+
+fn validate_token(req: &Request) -> bool {
+    let path = req.uri().path();
+    if is_public_path(path) {
+        return true;
+    }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src-tauri/src/mobile_server.rs:372-375](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src-tauri/src/mobile_server.rs#L372-L375)
+
+直接返回状态。
+
+```text
+async fn get_mobile_status() -> impl IntoResponse {
+    let status = get_status();
+    axum::Json(status)
+}
+```
+
+**依据 3 · 源码核查**：[src/pages/Chat.tsx:930-962](https://github.com/yejiming/MuseAI/blob/b601d648c15dc9905480f3637504fd9438244d5d/src/pages/Chat.tsx#L930-L962)
+
+角色写入与会话保存顺序。
 
 <details>
 <summary>查看原文（33行）</summary>
@@ -637,25 +1018,10 @@ pub fn save_app_state(app: AppHandle, name: String, content: String) -> Result<(
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:215-222](https://github.com/yejiming/MuseAI/blob/85c1ea76c565e697f510cc45d82ebcb352458dd6/README.md#L215-L222)
-
-备份提供当前可行退路。
-
-```text
-| 角色卡 / 世界书 | `~/Documents/MuseAI/config/partner-store.json` |
-| 智能伴侣会话 | `~/Documents/MuseAI/agent-sessions/partner-session-*.json` |
-| 故事冒险会话 | `~/Documents/MuseAI/agent-sessions/story-session-*.json` |
-| 写作 Agent 会话 | `~/Documents/MuseAI/agent-sessions/session-*.json` |
-| 应用设置 | `~/Documents/MuseAI/config/settings-store.json` |
-| 各模块 UI 状态 | `~/Documents/MuseAI/config/*.json` |
-
-建议定期备份 `~/Documents/MuseAI/` 目录，以防数据丢失。
-```
-
 #### 缺口
 
-- 事务式封存改善效果尚未验证
-  **影响**：不是已有功能贡献
-  **进一步探讨**：先检验失败时角色与会话均不改变，再比较纠错投入
+- 候选方案未实现也未测试
+  **影响**：无法保证安全或完整事务
+  **进一步探讨**：开展无凭据 LAN 访问与归档写入故障矩阵。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

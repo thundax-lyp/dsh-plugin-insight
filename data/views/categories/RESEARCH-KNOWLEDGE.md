@@ -18,13 +18,14 @@
 | [AnySearch for DSH](#plugin-1333247282-root) | 在 DSH 原生网页搜索与抓取接口接入 AnySearch，并提供垂直检索和有限并发批量搜索。 | [Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 非敏感问题先比原provider与批量结果，以有效引用而非命中数决定继续；限流或缺证回人工。 |
 | [Argo](#plugin-1304997851-root) | 为 Agent 提供多源搜索、网页取证和本地资料检索，并以 CLI、Skill 与 MCP 接口交付结果。 | [Q03](../../plugins/taxueseek--argo/INSIGHT.md#research-q03) 先固定少量公开源并关闭本地并入，保留原文和失败诊断，用同任务核对正确率与全部投入。 |
 | [Argo DSH](#plugin-1304997851-packages-dsh-plugin) | 把 Argo 检索、抓取、原生 Web provider 和多轨道研究编排接入 DSH。 | [Q05](../../plugins/taxueseek--argo--packages-dsh-plugin/INSIGHT.md#research-q05) 观察自动研究报告采用；公开低后果样例先核实际工具和每条原文，发现依赖/引用缺口则退回单Agent或人工。 |
-| [Awesome AI Pedia](#plugin-1321280738-root) | 中文 AI 工具指南、实践笔记与规则的 VitePress 知识库 | [Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 可将其作为中文资料线索小范围试读；具体命令与官方原文冲突时停止照做并回上游。 |
+| [Awesome AI Pedia](#plugin-1321280738-root) | 按主题整理 AI 工具、Agent、Skill 和 DSH 相关文章的中文知识库。 | [Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 先作为线索入口，再按任务核对官方固定版本，不直接执行未经验证的命令。 |
 | [Awesome DeepSeek Harness](#plugin-1330942675-root) | 按场景分类整理 DSH 插件、工具和基础设施，并提供生成的仓库目录。 | 建议作为发现资源试用：按场景挑少量候选后固定目标版本核查；不可访问或过时条目退回原仓库及公开搜索，不批量安装。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
 | [Awesome DeepSeek Harness Plugins（imsai-sh）](#plugin-1333844474-root) | 维护社区插件目录与提交 Skill，通过可信静态审查、按目录 PR 版本合并、远端同步和双语 README 生成组织收录。 | 先在干净目录准备单项，授权外部PR前看自动合并条件；只把目录当候选，不把静态PASS或ack当功能验收，见 [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04)。 |
 | [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
 | [Awesome DeepSeek Harness（资源目录）](#plugin-1333173677-root) | 按用途汇集DSH扩展候选的双语目录，附近期、星标、精选链接和独立示例。 | 有限采用作候选发现资源，无需安装根或执行脚本，目标另行验收。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 整理 DSH 插件候选并生成可读目录与市场索引。 | 先发现，再固定候选版本、独立核验权限与宿主兼容；不要把目录收录当安装背书。 |
+| [Awesome Gaussian Skills](#plugin-1223099228-root) | 提供 3D Gaussian Splatting 方法资料、Agent Skill 与 MCP 渲染服务。 | [Q04](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q04) 先隔离网络并用非敏感场景核对真实渲染；[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 边界不满足时停止。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
@@ -34,12 +35,14 @@
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
+| [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
+| [dsh-hacker-news](#plugin-1211255316-plugins-hacker-news) | 为 DeepSeek Harness 提供 Hacker News 榜单、评论、搜索和用户信息工具。 | [Q04](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q04) 仅用非敏感查询并检查截断，重要结论回原帖；网络或完整性不满足时停止。 |
 | [dsh-handbook](#plugin-1333258936-root) | 提供DeepSeek Harness中文学习路径、配置示例、插件开发案例与生态观察材料。 | 初学者可作为中文导航阅读，选一个小目标在独立目录练习；版本、权限和配置与对应官方资料交叉核对；需要当前产品比较或生产安全结论时不要只依赖本手册。 |
 | [dsh-insight](#plugin-1336649545-root) | 用需求匹配、环境配方、健康评分、静态安全扫描与统一 verdict 辅助选择 DSH 插件。 | 适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。 |
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
@@ -71,17 +74,18 @@
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 给 WSL 中的 DSH Agent 提供 Windows Obsidian 笔记库的状态、检索、读写和桌面打开工具。 | 建议观察，在测试 vault/备份副本先核 status、读写新文件和 Windows 显示；重要共享库暂不自动覆盖。 |
 | [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
-| [dshfind](#plugin-1333082908-root) | 聚合 DSH 生态条目、安装线索、代理评分和文档课程的发现网站，结合 GitHub 同步、数据库与页面快照。 | 作为发现入口，以少量真实任务候选回原来源核查并独立试用，不以rank/verified直接授权，见 [Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03)。 |
+| [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
 | [Free Search](#plugin-1334384058-root) | 为 DSH 提供多来源网页搜索、回退和研究证据整理工具。 | 先备份并隔离 profile，用非敏感查询测试允许的来源；核对 provider、实际费用和出处，停用前恢复原配置。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
 | [Graph Memory](#plugin-1178312395-root) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | [Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 个人非敏感任务用副本库对照；审计或多租户任务先保留原历史并验证隔离。 |
-| [Jacobian](#plugin-1309745037-root) | 通过 MCP、Python 与 CLI 提供可搜索、类型化且限定适用范围的数学原子操作，由 Agent 选择与组合。 | 兼容环境本地stdio先核少量精确算术，复杂域与remote另验；直接CAS仍为对照，见 [Q03](../../plugins/morluto--jacobian/INSIGHT.md#research-q03)。 |
+| [hn](#plugin-1211255316-root) | 在终端浏览 Hacker News 故事和评论，并提供可选翻译。 | [Q03](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q03) 先用公开帖子并核模型端点；内容不全或不接受外发时返回网页和原文。 |
+| [Jacobian](#plugin-1309745037-root) | 为 Agent 提供可搜索的数学操作、执行结果和类型化接口。 | [Q03](../../plugins/morluto--jacobian/INSIGHT.md#research-q03) 先检查后端和操作合同，以已知题及独立方法对照；结果不完整或不一致则停止依赖。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
-| [last30days-cn](#plugin-1196982492-root) | 检索近期中文平台讨论并聚合热榜，输出带来源的研究报告。 | [Q04](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q04) 适合可接受非完整样本的线索研究，先核查每源状态与抽样链接；不适合未经补证的总体舆论比例或事实定论。 |
+| [last30days-cn](#plugin-1196982492-root) | 检索中文平台近期讨论与热榜，整理附原始来源的研究结果。 | [Q04](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q04) 先在授权范围内选公开来源并检查状态和原文；覆盖不足时停止总体结论。 |
 | [Learn Harness Engineering](#plugin-1195243030-root) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | 适合已经遇到跨会话丢状态或提前报完成的开发者，先选一个真实失败，在项目副本上加入最少文件，并用相同任务比较前后。 |
-| [Market Research Cockpit](#plugin-1303848201-root) | 聚合股票、商品、资金流和新闻的市场看板，并通过 MCP 向 DSH 提供行情查询工具。 | 先观察，不把资金流工具的正常协议响应直接当合格数据。 |
+| [Market Research Cockpit](#plugin-1303848201-root) | 聚合行情、板块、新闻及市场研究数据，提供看板和 MCP 工具。 | [Q04](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q04) 仅作研究线索并核对原始数据、时间与字段；发现数据过期或指标变化时停止使用。 |
 | [MCP-for-Stata](#plugin-956330003-root) | 让宿主Agent调用本地Stata与数据/日志工具，保存来源快照和执行审计；默认保护、真实安装确认与研究结果验收须分别核查。 | 已有合法Stata与方法能力，匿名本地副本、不用unsafe安装；确认guard、目录、资源/timeout实际配置，按已知答案核结果再扩大，见[Q04](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q04)、[Q05](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q05)。 |
 | [Memmy Agent](#plugin-1302496224-root) | 提供本地记忆服务、桌面及 CLI，并生成宿主适配以支持跨会话上下文。 | [Q05](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q05) 在隔离 profile 和非敏感项目先对照手工，检查模型和服务状态。 |
 | [MemOS](#plugin-1014729376-root) | 为 Agent 提供记忆存储、检索及本地或云端接入的基础设施。 | 在隔离 profile 用低敏样例核对召回、捕获、外发与删除；出现错误或费用不明时关闭捕获并保留可核对原记录。 |
@@ -99,7 +103,6 @@
 | [ReMe](#plugin-849121458-root) | 以文件记忆、搜索与模型演化为 Agent 提供可读长期记忆。 | [Q05](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q05) 以少量可纠正资料试默认检索和回读；冲突或回执不明时暂停演化。 |
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
-| [sivtr](#plugin-1215961903-root) | 独立Rust记忆工具将终端与Agent日志统一归档并以MCP检索；已核Dsh链与完整WorkSet保存，但本地裸whole-ref的MCP默认全文缺补载。 | 先修MCP裸whole-ref全文，谨慎核已有@last/CLI路径；不强制开embedding/share/hooks，避免把未知平台/需求当已验证安装推荐，见[Q04](../../plugins/ariestar--sivtr/INSIGHT.md#research-q04)/[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
@@ -205,15 +208,15 @@
 
 ## [Awesome AI Pedia](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md)
 
-[![GitHub ★ 504](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=504&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia)
+[![GitHub ★ 583](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=583&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Awesome-AI-Pedia/Awesome-AI-Pedia)
 
-> **用途**：面向中文开发者，按主题查找AI工具资料与实践笔记；根条目是知识资源。
+> **用途**：需要查找中文 AI 工具或 DSH 介绍并回源的读者。
 
-> **亮点**：[Q02](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q02) 将散落中文资料组织为可导航站点，自动侧栏减少部分维护；VitePress能力归框架。
+> **亮点**：[Q01](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q01) 形成中文主题组织，[Q02](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q02) 以目录生成导航；不提供 DSH 运行能力。
 
-> **思考**：[Q03](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q03) 构建忽略死链且笔记可能滞后，资料可读不能证明上游命令和能力仍有效。
+> **思考**：[Q03](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q03) 文章中的绝对化陈述未绑定明确源码版本，站点忽略死链，需逐项回源。
 
-> **建议**：[Q04](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q04) 提出按文章记录上游版本与定向外链核验的未验证假设；以版本匹配和回查耗时比较，改善不足则否定。
+> **建议**：[Q05](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md#research-q05) 通过版本与复核日期提示过期风险，仍需验证维护与效果。
 
 [查看完整分析](../../plugins/awesome-ai-pedia--awesome-ai-pedia/INSIGHT.md) · [返回表格](#category-index)
 
@@ -312,6 +315,22 @@
 > **建议**：未验证假设：显示实际扫描版本、最近成功时间和失败原因可减少旧记录误读；须测识别、误报及维护成本。[Q05](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1223099228-root"></a>
+
+## [Awesome Gaussian Skills](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md)
+
+[![GitHub ★ 177](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=177&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/jaccen/Awesome-Gaussian-Skills)
+
+> **用途**：3DGS 研究和内容制作人员需要发现方法、获取辅助指引或探索场景渲染。
+
+> **亮点**：[Q01](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q01) 和 [Q02](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q02) 集合资料、Skill 和 MCP 入口；实际研究与渲染收益未对照。
+
+> **思考**：[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 渲染桥网络与路径检查存在需验证的边界；[Q02](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q02) stub 和 headless 不能当真实结果。
+
+> **建议**：[Q05](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q05) 假设持续传递场景来源与渲染能力可减少结果误认，需对照现有标志。
+
+[查看完整分析](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1154333841-root"></a>
 
@@ -457,6 +476,22 @@
 
 [查看完整分析](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1216014649-plugins-dsh"></a>
+
+## [DSH MSDS Chain](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md)
+
+
+
+> **用途**：需要查找化学品安全资料并由专业人员复核的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q01) 和 [Q02](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q02) 提供 DSH 桥配置，不实现或验证底层化学安全判断。
+
+> **思考**：[Q03](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q03) 组件未含服务数据和核验逻辑，作者引用主张不能证明安全建议正确。
+
+> **建议**：[Q05](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q05) 建议提供连接与引用状态，需验证且不泄露凭据。
+
+[查看完整分析](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1346064150-root"></a>
 
 ## [DSH PDF Reader](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md)
@@ -552,6 +587,22 @@
 > **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q05)；真实路径写入仍需独立约束。
 
 [查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1211255316-plugins-hacker-news"></a>
+
+## [dsh-hacker-news](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md)
+
+[![GitHub ★ 51](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=51&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/heartleo/hn-cli) [![npm 30d 707](https://img.shields.io/static/v1?label=npm+30d&message=707&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hacker-news) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hacker-news)
+
+> **用途**：DSH 用户希望查询 Hacker News 文章、讨论或用户资料。
+
+> **亮点**：[Q01](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q01) 与 [Q02](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q02) 将多个公开来源整合为可限量的宿主工具；信息质量仍需回源。
+
+> **思考**：[Q03](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q03) 截断和缺失可能影响对讨论的理解，外部内容也不能当可信指令。
+
+> **建议**：[Q05](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q05) 假设补充缺失节点统计可改进覆盖判断，需对照现有截断标志。
+
+[查看完整分析](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333258936-root"></a>
 
@@ -1053,15 +1104,15 @@
 
 ## [dshfind](../../plugins/hikariming--dshfind/INSIGHT.md)
 
-[![GitHub ★ 336](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=336&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hikariming/dshfind)
+[![GitHub ★ 359](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=359&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hikariming/dshfind)
 
-> **用途**：查DSH候选插件或学习开发的读者，在目录筛选后回原来源核版本/分发/权限，见 [Q01](../../plugins/hikariming--dshfind/INSIGHT.md#research-q01)。
+> **用途**：DSH 用户搜索插件并学习相关概念，维护者聚合与发布目录。
 
-> **亮点**：发现/学习入口、元数据安装分类与null处理、D1和快照复用，见 [Q01](../../plugins/hikariming--dshfind/INSIGHT.md#research-q01) 与 [Q02](../../plugins/hikariming--dshfind/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/hikariming--dshfind/INSIGHT.md#research-q01) 和 [Q02](../../plugins/hikariming--dshfind/INSIGHT.md#research-q02) 将候选、课程和发现入口集中；不证明插件已验证可用。
 
-> **思考**：元数据可装/编辑verified非实装，代理分/手填或探测下载非生产效果，旧事实和前端迁移需标口径，见 [Q02](../../plugins/hikariming--dshfind/INSIGHT.md#research-q02)。
+> **思考**：[Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03) 截断或手工来源失败仍可能继续执行缺席标记。
 
-> **建议**：需求到固定候选/权限/真实验收证据卡，测无效命令与试用完成率，未实现，见 [Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03)。
+> **建议**：[Q05](../../plugins/hikariming--dshfind/INSIGHT.md#research-q05) 提出按来源完成状态控制缺席判断，需权衡漏隐藏和过期留存。
 
 [查看完整分析](../../plugins/hikariming--dshfind/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1145,19 +1196,35 @@
 
 [查看完整分析](../../plugins/adoresever--graph-memory/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1211255316-root"></a>
+
+## [hn](../../plugins/heartleo--hn-cli/INSIGHT.md)
+
+[![GitHub ★ 51](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=51&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/heartleo/hn-cli)
+
+> **用途**：希望在终端阅读 Hacker News 并可选翻译内容的用户。
+
+> **亮点**：[Q01](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q01) 与 [Q02](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q02) 把阅读、多源回退和可选翻译放在终端。
+
+> **思考**：[Q02](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q02) 页面未处理分页、回退源有索引延迟，成功不证明评论完整。
+
+> **建议**：[Q04](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q04) 假设显示来源和完整性提示帮助读者判断，尚未验证。
+
+[查看完整分析](../../plugins/heartleo--hn-cli/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1309745037-root"></a>
 
 ## [Jacobian](../../plugins/morluto--jacobian/INSIGHT.md)
 
-[![GitHub ★ 336](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=336&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/jacobian)
+[![GitHub ★ 353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/jacobian)
 
-> **用途**：Agent/数学研究者需要精确小步骤、清楚输入域和结构结果，由模型组合而不是黑箱自动证明，见 [Q01](../../plugins/morluto--jacobian/INSIGHT.md#research-q01)。
+> **用途**：让 Agent 在数学任务中查找并调用受约束操作的开发者。
 
-> **亮点**：可搜数学操作、规范大数输入、结构结果与领域/资源错误形成复用接口，见 [Q01](../../plugins/morluto--jacobian/INSIGHT.md#research-q01) 与 [Q02](../../plugins/morluto--jacobian/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/morluto--jacobian/INSIGHT.md#research-q01) 与 [Q02](../../plugins/morluto--jacobian/INSIGHT.md#research-q02) 把后端操作组织为可检索且声明类型的接口，不将后端算法归为项目原创。
 
-> **思考**：严格schema/精确后端与整体定理证明不同；代表worker资源策略不能外推全栈，原生平台与remote隔离需另验，见 [Q02](../../plugins/morluto--jacobian/INSIGHT.md#research-q02)。
+> **思考**：[Q02](../../plugins/morluto--jacobian/INSIGHT.md#research-q02) 类型与错误分类不能证明操作选择或数学结果正确。
 
-> **建议**：任务前提到操作/结果/独立核证的证明义务账本，测域误用/未证跳步和纠错成本，未实现，见 [Q03](../../plugins/morluto--jacobian/INSIGHT.md#research-q03)。
+> **建议**：[Q04](../../plugins/morluto--jacobian/INSIGHT.md#research-q04) 假设执行前显式记录前提并独立核结果可降低误用，尚未对照。
 
 [查看完整分析](../../plugins/morluto--jacobian/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1181,15 +1248,15 @@
 
 ## [last30days-cn](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md)
 
-[![GitHub ★ 1,967](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C967&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Jesseovo/last30days-skill-cn)
+[![GitHub ★ 2,044](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C044&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Jesseovo/last30days-skill-cn)
 
-> **用途**：中文研究与内容人员以时间窗主题检索发现线索，再核查原始出处。
+> **用途**：需要查找中文平台近期讨论并复核原始出处的研究者。
 
-> **亮点**：[Q01](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q01)、[Q02](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q02) 在上游研究Skill基础上组织中文来源与质量状态，减少手工聚合步骤；成熟检索/去重框架和上游贡献不作本项目原创。
+> **亮点**：[Q01](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q01) 和 [Q02](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q02) 将中文来源及整理流程接入 DSH；真实覆盖和效率未知。
 
-> **思考**：[Q03](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q03) 不同采集路径、日期缺失和转载使样本不可当全网观点比例，热度与相关性分数不验证事实；关键结论必须回原文。
+> **思考**：[Q03](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q03) 外层默认超时可能早于 deep 流程预算；来源缺失不能当作无讨论。
 
-> **建议**：[Q05](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q05) 未验证假设是用来源路径和日期/转载覆盖矩阵约束比较资格，五份报告对照误读与阅读时间；没有改善就停止。
+> **建议**：[Q05](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q05) 提议将来源状态与结论影响关联，需检验是否改变读者判断。
 
 [查看完整分析](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1213,15 +1280,15 @@
 
 ## [Market Research Cockpit](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md)
 
-[![GitHub ★ 427](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=427&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/theBigGavin/marketingdashboard)
+[![GitHub ★ 450](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=450&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/theBigGavin/marketingdashboard)
 
-> **用途**：需要跨市场整理材料的研究人员，可从统一看板和 MCP 查询取得候选信息；应核对指标与时间后再用于研究。见[Q01](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q01)。
+> **用途**：需要同时查阅多市场行情与新闻的研究人员。
 
-> **亮点**：同一套源适配器服务看板与 Agent，前端还将多个面板报价合并分发，减少接口和请求组织的重复；这支持集成价值，不能证明研究更准确或节时。见[Q01](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q01)、[Q03](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q03)。
+> **亮点**：[Q01](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q01) 和 [Q02](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q02) 汇集多个市场入口并提供 MCP；时效和实际收益未知。
 
-> **思考**：get_money_flow 在东财空结果或失败时改返回涨幅榜且仍包装为成功内容，指标语义并未保持；缓存新鲜度也没有统一传播到 MCP。该源码边界会影响自动研究采用，未声称已在线复现。见[Q02](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q02)、[Q03](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q03) 资金流 fallback 调用涨跌排行，且通用 cached 丢弃新鲜度包装，不能一概当作实时同义数据。
 
-> **建议**：未验证假设是用包含指标、来源、数据时间及降级原因的固定结果信封，并拒绝不同指标互相回退，可减少故障时的 Agent 事实误标。与直接报错比较误标、合格率和人工修正成本；更简单方案同样有效时停止复杂化。见[Q05](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q05) 统一指标来源、新鲜度和降级语义，需检验消费方及用户误判。
 
 [查看完整分析](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1496,22 +1563,6 @@
 > **建议**：[Q05](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q05) 未验证假设是对账本抽样做独立语义回源，记录引用支持和origin错误，比较现有流程的漏判与新增成本；已有溯源提示不能重复算新贡献。
 
 [查看完整分析](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1215961903-root"></a>
-
-## [sivtr](../../plugins/ariestar--sivtr/INSIGHT.md)
-
-[![GitHub ★ 253](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=253&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ariestar/sivtr)
-
-> **用途**：为需要找回既往失败输出/会话的开发者提供本地统一查找，场景明确而频率/净收益未验证，见[Q01](../../plugins/ariestar--sivtr/INSIGHT.md#research-q01)。
-
-> **亮点**：跨来源记录/派生归档、标准MCP查询和已物化WorkSet形成可复用材料组织；已核检索链不等自主工作闭环，也不等不可变裸ref或已验正确答案，见[Q01](../../plugins/ariestar--sivtr/INSIGHT.md#research-q01)/[Q02](../../plugins/ariestar--sivtr/INSIGHT.md#research-q02)。
-
-> **思考**：MCP本地裸whole-ref以Light加载后默认full直接读空parts，条件性报No content found；@last/命名完整变量、part与CLI路径需分开。可选embedding发送内容，分享脱敏/价目不等安全与账单真值，见[Q02](../../plugins/ariestar--sivtr/INSIGHT.md#research-q02)/[Q03](../../plugins/ariestar--sivtr/INSIGHT.md#research-q03)。
-
-> **建议**：先修现有全文入口；再检验历史证据与当前任务适用性的可核交接，区别于已有快照/hash/口头核文件要求。三组对照若无误引/投入改善即否定，见[Q05](../../plugins/ariestar--sivtr/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/ariestar--sivtr/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1374986657-root"></a>
 

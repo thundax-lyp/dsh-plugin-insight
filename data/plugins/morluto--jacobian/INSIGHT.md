@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[9dc2aaf](https://github.com/morluto/jacobian/tree/9dc2aaf6efe8803f1c501e2972f741dd94962c32)
+源码版本：[ea52eb5](https://github.com/morluto/jacobian/tree/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89)
 
 <!-- BEGIN META -->
-[![GitHub ★ 336](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=336&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/jacobian)
+[![GitHub ★ 353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/jacobian)
 <!-- END META -->
 
-> **功能**：通过 MCP、Python 与 CLI 提供可搜索、类型化且限定适用范围的数学原子操作，由 Agent 选择与组合。
+> **功能**：为 Agent 提供可搜索的数学操作、执行结果和类型化接口。
 
-> **亮点**：可搜数学操作、规范大数输入、结构结果与领域/资源错误形成复用接口，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把后端操作组织为可检索且声明类型的接口，不将后端算法归为项目原创。
 
-> **主要限制**：严格schema/精确后端与整体定理证明不同；代表worker资源策略不能外推全栈，原生平台与remote隔离需另验，见 [Q02](#research-q02)。
+> **主要限制**：[Q02](#research-q02) 类型与错误分类不能证明操作选择或数学结果正确。
 
 **本文目录**
 
@@ -26,9 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · Jacobian是否自动解数学问题，Agent如何获得实际操作？](#detail-section-11)
-  - [Q02 · 严格输入、精确结果与资源隔离分别保证什么？](#detail-section-12)
-  - [Q03 · 哪些用户能有限试用，怎样验证数学工具价值？](#detail-section-13)
+  - [Q01 · 数学工具词汇为 Agent 增加什么，与直接调用数学库有什么区别？](#detail-section-11)
+  - [Q02 · 检索、检查和执行如何连接，错误如何表达？](#detail-section-12)
+  - [Q03 · 运行条件和失败时的退路是什么？](#detail-section-13)
+  - [Q04 · 如何检验操作选择与结果可信度改进？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -38,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Agent/数学研究者需要精确小步骤、清楚输入域和结构结果，由模型组合而不是黑箱自动证明，见 [Q01](#research-q01)。
+> **用途**：让 Agent 在数学任务中查找并调用受约束操作的开发者。
 
-模型+直接CAS/小脚本，人工管输入域/结果。Jacobian统一可发现契约与受界操作，不替代数学推理/证明。
+直接使用数学后端或人工实现也能计算；项目提供发现、契约与统一协议。
 
 <a id="detail-section-3"></a>
 
@@ -50,69 +51,65 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 发现 | 搜/查数学契约 | 已安装目录非自动选对 |
-| 执行 | 后端bounded数学操作 | 输入域/后端/资源限 |
-| 结构结果 | 类型输出与运行时间 | 不独立认证整体证明 |
-| Worker | 部分计数取消/资源预算 | 非全域OS隔离保证 |
+| math.find | 搜索或检查操作 | 输入模式互斥，检索不证明适用 |
+| math.run | 调用已注册操作 | 参数、后端及授权须满足 |
+| CLI/Python | 脱离 MCP 调用 | 本轮未运行或验证安装 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Python>=3.12<3.14及原生后端栈 | 必需 | 数学计算 | 平台/wheel兼容先核 |
-| MCP宿主/stdio配置 | Agent使用必需 | 工具发现/调用 | Python/CLI可作另一接口 |
-| 特定Singular/QEPCAD | 部分操作必需 | 系统后端 | 不自动供给，不能假有 |
-| 模型选域/人工独立核证 | 推理必需 | 组合结果 | 工具成功不等整体证明 |
-| 授权/进程预算 | 视部署 | remote/资源边界 | 本轮未全审隔离 |
+| Python 3.12–3.13 及包依赖 | Python 服务必需 | 加载目录与后端 | 安装或启动可能失败 |
+| MCP 宿主 | Agent 集成必需 | 发现并调用工具 | 无 MCP 交互 |
+| Singular/QEPCAD | 特定操作需要 | 对应计算 | 应检查可用性 |
+| 独立数学复核 | 可信结果需要 | 核假设与结论 | 类型正确不等结果正确 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 环境 | 用户隔离兼容Python/后端 | 核已安装operation/可用性 |
-| 发现 | Agent math.find查语义/schema | 不硬猜工具/域 |
-| 计算 | math.run严格请求 | 分错误/timeout/有界结果 |
-| 核证 | 人工/独立方法查恒等与前提 | 不以局部输出替证明 |
-| 退出 | 停服务/撤MCP | 依赖与配置分开保管 |
+| 准备 | 核 Python 和后端 | 不满足则停止 |
+| 查找 | 输入需求或精确 ID | 核操作合同 |
+| 执行 | 传有效参数并接收结果 | 超时或失败不当证明 |
+| 验证 | 对照独立参考 | 不一致时回到人工方法 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 原生栈/环境资源未知 | 平台/注册/样例核证 | 作者已测Linux非本机保证 |
-| 持续使用 | 模型token/CPU内存未知 | 选域/组合/结果复核 | 无新任务净节省证据 |
-| 失败恢复 | worker/超时重试未知 | 判输入/域/后端故障 | 不将unknown当false |
-| 退出 | venv/系统后端留存未知 | 撤配置/停本服务 | 不动无关后端 |
+| 首次 | Python 及后端资源未知 | 安装与兼容核查 | 平台未实测 |
+| 持续 | 计算、模型调用费用未知 | 选择操作和核结果 | 时延与准确率未知 |
+| 恢复 | 重试及资源成本未知 | 排查后端或手工复核 | 中断行为随操作而异 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 输入 | 类型/大数/契约 | 模型选域正确 |
-| 计算 | 代表后端结果与worker | 全域正确/规模实际限 |
-| 推理 | 可组合操作接口 | 证明/新题质量与节时 |
+| 查找操作 | find 注册与参数约束 | 检索适用性 |
+| 类型化执行 | dispatch 与绑定检查 | 数学算法正确性 |
+| 明确错误 | 超时与取消映射 | 所有后端真实中断能力 |
 
-> **思考**：严格schema/精确后端与整体定理证明不同；代表worker资源策略不能外推全栈，原生平台与remote隔离需另验，见 [Q02](#research-q02)。
+> **思考**：[Q02](#research-q02) 类型与错误分类不能证明操作选择或数学结果正确。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：可搜数学操作、规范大数输入、结构结果与领域/资源错误形成复用接口，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把后端操作组织为可检索且声明类型的接口，不将后端算法归为项目原创。
 
-[Q02](#research-q02) strict JSON与领域owned schema、受检worker可复用；返回typed result不是独立证明器，平台和语义证据必须分开。
+[Q02](#research-q02) 将发现、类型见证和执行封装分开；静态契约不能替代算法或宿主验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-严格schema/精确后端与整体定理证明不同；代表worker资源策略不能外推全栈，原生平台与remote隔离需另验，见 [Q02](#research-q02)。
+[Q02](#research-q02) 类型与错误分类不能证明操作选择或数学结果正确。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-兼容环境本地stdio先核少量精确算术，复杂域与remote另验；直接CAS仍为对照，见 [Q03](#research-q03)。
+[Q03](#research-q03) 先检查后端和操作合同，以已知题及独立方法对照；结果不完整或不一致则停止依赖。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-固定MCP/dispatch与代表算术/计数源码已核；建议兼容环境少量精确操作有限试用，无数学或Host运行验收。
+只核 MCP 接口、绑定和执行代表路径；未运行 Python、后端或目标宿主。
 
-- 已检查：作者 README、包清单、源码路径 README.md、pyproject.toml、src/jacobian/dispatch.py、src/jacobian/math/combinatorics/_counting_process.py、src/jacobian/math/number_theory/_divisibility_models.py、src/jacobian/math/number_theory/_integer_input.py、src/jacobian/math/number_theory/arithmetic/operations.py、src/jacobian/mcp/protocol.py、src/jacobian/mcp/runtime.py、src/jacobian/mcp/tools.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、pyproject.toml、src/jacobian/mcp/protocol.py、src/jacobian/mcp/tools.py、src/jacobian/dispatch.py、src/jacobian/catalog/catalog.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：四材料身份/固定revision一致，catalog无旧研究。核pyproject、MCP protocol/run/runtime、dispatch、整数输入/gcdex和组合计数worker；数学域巨大未穷尽，未全审remote、全部native后端/操作/benchmark，未执行目标。
-- 下一步：未安装/运行数学或MCP；作者平台/精确声明只归作者。后续小Bézout独立恒等/整除、域边界/取消/缺后端和新任务A/B，未知不得写成通过。
+- 边界：检查 README、pyproject、MCP 注册与工具、目录绑定和 dispatch；未穷尽具体数学操作、安装链、远程鉴权或后端中断。
+- 下一步：隔离环境对照固定题集的具体操作、类型、缺后端、超时及结果。
 
 **分析版本**
 
 - **仓库**：[morluto/jacobian](https://github.com/morluto/jacobian)
-- **版本号**：0.23.0（Python 包，pyproject.toml:7）（[固定提交 9dc2aaf](https://github.com/morluto/jacobian/tree/9dc2aaf6efe8803f1c501e2972f741dd94962c32)）
-- **版本日期**：2026-10-04（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 ea52eb5](https://github.com/morluto/jacobian/tree/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89)）
+- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +136,9 @@
 
 <a id="innovation"></a>
 
-任务前提到操作/结果/独立核证的证明义务账本，测域误用/未证跳步和纠错成本，未实现，见 [Q03](#research-q03)。
+[Q04](#research-q04) 假设执行前显式记录前提并独立核结果可降低误用，尚未对照。
 
-未安装/运行数学或MCP；作者平台/精确声明只归作者。后续小Bézout独立恒等/整除、域边界/取消/缺后端和新任务A/B，未知不得写成通过。
+隔离环境对照固定题集的具体操作、类型、缺后端、超时及结果。
 
 <a id="detail-section-9"></a>
 
@@ -150,100 +147,89 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 831 | 33153 | — | — | 274358 |
-| .cjs | source | 2 | 725 | 637 | 30 | — |
-| .mjs | test | 1 | 482 | 439 | 7 | — |
+| .cjs | source | 2 | 816 | 725 | 30 | — |
+| .mjs | test | 1 | 820 | 744 | 8 | — |
 | .md | example | 1 | 20 | — | — | 97 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 97](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=97&color=737b86&logo=github)](https://github.com/morluto/jacobian/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 64](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=64&color=737b86&logo=github)](https://github.com/morluto/jacobian/issues?q=is%3Aissue+created%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z) [![近30天关闭 73](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=73&color=737b86&logo=github)](https://github.com/morluto/jacobian/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-29T03%3A03%3A10.741Z..2026-10-29T03%3A03%3A10.741Z)
+[![Issue 未关闭 88](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=88&color=737b86&logo=github)](https://github.com/morluto/jacobian/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-10-29。
+统计日期：2026-11-04。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：数学原子工具的发现/执行/边界是否帮助Agent形成可核推理，而非把局部计算冒充整体证明？
+**插件研究总目标**：核查数学操作检索、执行契约与正确性边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · Jacobian是否自动解数学问题，Agent如何获得实际操作？
+### Q01 · 数学工具词汇为 Agent 增加什么，与直接调用数学库有什么区别？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-固定Python包jacobian0.23.0提供Python API/CLI/stdio与remote MCP，是外接数学工具服务，不是DSH原生Host插件。面向需要组合可检查数学步骤的Agent/研究者：MCP固定核心math.find搜/检查安装目录，math.run选择operation_id/payload，另有operation://catalog全量资源；无需一次把所有schema塞给模型。公开操作严格输入、领域语义和规模，模型负责选步骤/组合/停止，不自动给任意问题完整证明。
-
-真实math.run授权回调后走dispatch，从catalog绑定中取request_type严格JSON校验、调用binding.run并投影JSON结果与runtime_ms。比如integer extended-gcd输入规范大整数，实际调SymPy gcdex并返回gcd与两系数。相对模型心算/随手写CAS代码，它减少参数/语义和接口错误，继承后端计算而非发明数学算法；发现命中和操作成功不等整体解题正确。
+Jacobian 是面向 Agent 的数学 MCP 服务，提供操作检索、单项执行和类型化结果；同一工程也提供 CLI/Python 接口。SymPy 等库可直接实现计算，但调用者需自己选择函数、解析输入和解释边界；本项目增加可发现、按操作声明的协议和结果封装，具体计算仍依赖后端，不能把后端算法归成新原创。检索命中和类型正确不证明模型选择的操作适用于问题，也没有同任务对照。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[pyproject.toml:5-11](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/pyproject.toml#L5-L11)
+**依据 1 · 作者声明**：[README.md:17-34](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/README.md#L17-L34)
 
-Python包身份/版本。
-
-```text
-[project]
-name = "jacobian"
-version = "0.23.0"
-description = "Atomic mathematical tools for agents over MCP and Python"
-readme = "README.md"
-requires-python = ">=3.12,<3.14"
-license = { text = "MIT" }
-```
-
-**依据 2 · 源码核查**：[pyproject.toml:18-38](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/pyproject.toml#L18-L38)
-
-后端依赖与真实CLI/MCP出口。
+作者描述词汇和组合假设。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-dependencies = [
-    "anyio>=4.5,<5",
-    "CyPari>=2.5,<3",
-    "mcp==2.2.0",
-    "networkx==3.6.1",
-    "pplpy==0.9.0",
-    "pydantic>=2.12,<3",
-    "pydantic-core>=2.0,<3",
-    "python-flint==0.9.0",
-    "rfc8785==0.1.4",
-    "scipy==1.16.1",
-    "sympy==1.14.0",
-    "typer>=0.20,<1",
-    "typing-extensions>=4.14.1",
-    "z3-solver==5.1.0.0",
-]
+Jacobian is an MCP server that gives AI agents a searchable vocabulary of typed
+mathematical operations. `math.find` matches a mathematical need or inspects one
+exact contract, and `math.run` executes it and returns its typed result. The same
+mathematical library is also available through a CLI and native Python API.
 
-[project.scripts]
-jacobian = "jacobian.cli:app"
-jacobian-mcp = "jacobian.mcp.stdio_cli:main"
-jacobian-remote-mcp = "jacobian.mcp.remote_cli:main"
+Each operation establishes one stable, reusable mathematical postcondition
+rather than prescribing a workflow or proof strategy. Results are exact where
+claimed and make approximation, incompleteness, or uncertainty explicit.
+
+**Jacobian's hypothesis is that mathematical reasoning benefits from an
+executable vocabulary of semantically scoped, bounded operations.** Rather than
+exposing large domain solvers or precomposed workflows, Jacobian exposes
+mathematical primitives that agents can search for and compose into solutions
+beyond what any individual operation was designed to solve. The library
+supplies trustworthy mathematical moves; the reasoning model decides which
+moves to make, how to combine their results, and when to stop. Keeping the
+operations semantically narrow and domain-owned preserves that search space
+instead of baking one proof strategy or workflow into the tools themselves.
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/jacobian/mcp/protocol.py:21-60](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/mcp/protocol.py#L21-L60)
+**依据 2 · 源码核查**：[src/jacobian/mcp/protocol.py:15-45](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/protocol.py#L15-L45)
 
-真实核心tool与全目录资源。
+注册两项固定 MCP 工具。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
+def register_core_projection(
+    server: MCPServer[AppState],
+    state: AppState,
+) -> None:
+    """Register Jacobian's fixed tools and static resources directly with the SDK."""
+
     server.add_tool(
         math_find,
         name="math.find",
@@ -269,33 +255,161 @@ jacobian-remote-mcp = "jacobian.mcp.remote_cli:main"
             open_world_hint=False,
         ),
         structured_output=True,
-    )
-
-    def operation_catalog() -> OperationCatalogSnapshot:
-        return state.operation_catalog.snapshot()
-
-    server.add_resource(
-        FunctionResource.from_function(
-            operation_catalog,
-            uri="operation://catalog",
-            name="operation-catalog",
-            description=(
-                "Large exact bulk export of every installed operation, schema, and "
-                "example. Use math.find for ordinary operation discovery and "
-                "inspection. If matching fails, refine or paginate math.find; read "
-                "this resource only when the task requires the complete inventory."
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/jacobian/mcp/tools.py:260-286](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/mcp/tools.py#L260-L286)
+**依据 3 · 源码核查**：[src/jacobian/catalog/catalog.py:38-53](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/catalog/catalog.py#L38-L53)
 
-math.run授权/dispatch接线。
+运行时请求/结果类型检查。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
+def _bind_operation[RequestT: StrictModel, ResultT: StrictModel](
+    operation: MathTool[RequestT, ResultT],
+) -> _BoundMathTool:
+    """Erase one typed declaration only after retaining its runtime witnesses."""
+
+    def run(request: StrictModel) -> StrictModel:
+        if not isinstance(request, operation.request_type):
+            raise TypeError(
+                f"{operation.operation_id} received a request outside its declared type"
+            )
+        result = operation.run(request)
+        if type(result) is not operation.result_type:
+            raise TypeError(
+                f"{operation.operation_id} returned a result outside its declared type"
+            )
+        return result
+```
+
+</details>
+
+#### 缺口
+
+- 未验证数学正确性与模型选择效果
+  **影响**：不能推断整体证明或解题正确
+  **进一步探讨**：固定题集比较直接库调用、工具组合和独立校验。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 检索、检查和执行如何连接，错误如何表达？
+
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+protocol.py 注册 math.find 和 math.run。find 要求 query 或 operation_id 恰有一个，按 ID 检查会返回契约及后端可用性；run 先授权，再将 operation_id 和 payload 送执行器。执行器解析输入、查目录绑定、调用操作并投影结果，绑定在调用前后检查声明类型；超时和取消在 MCP 错误边界转换为明确错误。以上是部分源码接线，类型与错误边界不证明某个数学算法正确，也不能推出所有后端具有相同中断能力。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/jacobian/mcp/protocol.py:15-45](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/protocol.py#L15-L45)
+
+固定工具注册。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+def register_core_projection(
+    server: MCPServer[AppState],
+    state: AppState,
+) -> None:
+    """Register Jacobian's fixed tools and static resources directly with the SDK."""
+
+    server.add_tool(
+        math_find,
+        name="math.find",
+        title="Search installed Jacobian math tools",
+        description=MATH_FIND_DESCRIPTION,
+        annotations=ToolAnnotations(
+            read_only_hint=True,
+            destructive_hint=False,
+            idempotent_hint=True,
+            open_world_hint=False,
+        ),
+        structured_output=True,
+    )
+    server.add_tool(
+        math_run,
+        name="math.run",
+        title="Run one installed Jacobian math tool",
+        description=MATH_RUN_DESCRIPTION,
+        annotations=ToolAnnotations(
+            read_only_hint=True,
+            destructive_hint=False,
+            idempotent_hint=False,
+            open_world_hint=False,
+        ),
+        structured_output=True,
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/jacobian/mcp/tools.py:191-220](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L191-L220)
+
+find 的互斥输入约束。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+def _math_find_sync(
+    query: OperationNeed | None,
+    operation_id: OperationFindOperationId | None,
+    namespace: OperationNamespace,
+    limit: OperationMatchLimit | None,
+    cursor: OperationCursor,
+    search_mode: OperationSearchMode,
+    active_catalog: Catalog,
+) -> OperationFindResponse:
+    if query is None and operation_id is None:
+        raise _find_invalid_request_error(
+            "Provide exactly one of query or operation_id.",
+            hint="Use query to search, or operation_id to inspect one operation.",
+            locations=("query", "operation_id"),
+        )
+    if query is not None and operation_id is not None:
+        raise _find_invalid_request_error(
+            "Provide exactly one of query or operation_id, not both.",
+            hint="Remove operation_id for a search, or remove query for inspection.",
+            locations=("query", "operation_id"),
+        )
+    if operation_id is not None and (
+        namespace is not None
+        or limit is not None
+        or cursor is not None
+        or search_mode != "precise"
+    ):
+        raise _find_invalid_request_error(
+            "namespace, limit, cursor, and search_mode are only valid with query.",
+            hint="Remove search options when inspecting an operation_id.",
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/jacobian/mcp/tools.py:250-286](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L250-L286)
+
+可用性与授权后的执行。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+        OperationInspectionResult(
+            kind="operation",
+            operation=descriptor,
+            backend_availability=tuple(
+                check_backend(name) for name in descriptor.runtime_requirements
+            ),
+        )
+    )
+
+
 async def math_run(
     operation_id: OperationId,
     payload: dict[str, Any],
@@ -313,28 +427,29 @@ async def math_run(
                     operation_id,
                     payload,
                     catalog,
-                    projector=lambda selected_id, result, started: OperationResult(
-                        operation_id=selected_id,
-                        runtime_ms=max(0, round((time.monotonic() - started) * 1000)),
-                        output=result.model_dump(mode="json"),
-                    ),
+                    projector=_operation_result_projector,
                     cancellation_signal=cancellation,
                     progress_sink=progress_sink,
                 ),
                 ctx,
             )
+        except _OperationResolutionError as exc:
+            raise ToolError(
+                _unknown_operation_error_detail(operation_id).model_dump_json()
+            ) from exc
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/jacobian/dispatch.py:134-153](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/dispatch.py#L134-L153)
+**依据 4 · 源码核查**：[src/jacobian/dispatch.py:133-153](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/dispatch.py#L133-L153)
 
-绑定、严格输入、执行/投影。
+解析、绑定、执行、投影与检查点。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
+    ):
         request_checkpoint("before parsing")
         binding = catalog._binding(operation_id)
         if binding is None:
@@ -359,298 +474,97 @@ async def math_run(
 
 </details>
 
-**依据 6 · 源码核查**：[src/jacobian/math/number_theory/arithmetic/operations.py:292-307](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/number_theory/arithmetic/operations.py#L292-L307)
+**依据 5 · 源码核查**：[src/jacobian/catalog/catalog.py:38-53](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/catalog/catalog.py#L38-L53)
 
-代表性精确后端调用与系数输出。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-def extended_gcd(
-    left: SupportsIndex | IntegerValue,
-    right: SupportsIndex | IntegerValue,
-) -> ExtendedGcdResult:
-    """Return a gcd and exact Bezout coefficients for two integers."""
-
-    from sympy import gcdex
-
-    left_value = _as_python_integer(left)
-    right_value = _as_python_integer(right)
-    x, y, divisor = gcdex(left_value, right_value)
-    return ExtendedGcdResult(
-        gcd=int(divisor),
-        left_coefficient=int(x),
-        right_coefficient=int(y),
-    )
-```
-
-</details>
-
-**依据 7 · 作者声明**：[README.md:26-34](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/README.md#L26-L34)
-
-作者假设与模型负责组合。
-
-```text
-**Jacobian's hypothesis is that mathematical reasoning benefits from an
-executable vocabulary of semantically scoped, bounded operations.** Rather than
-exposing large domain solvers or precomposed workflows, Jacobian exposes
-mathematical primitives that agents can search for and compose into solutions
-beyond what any individual operation was designed to solve. The library
-supplies trustworthy mathematical moves; the reasoning model decides which
-moves to make, how to combine their results, and when to stop. Keeping the
-operations semantically narrow and domain-owned preserves that search space
-instead of baking one proof strategy or workflow into the tools themselves.
-```
-
-#### 缺口
-
-- 未独立核宿主工具发现/实际运行与复杂任务完成。
-  **影响**：未独立运行发现/计算，不能将操作可搜与源码后端调用当本机可用或复杂推理完成。
-  **进一步探讨**：独立stdio注册后以小整数Bézout例核schema/响应/独立算术，再试多个操作的推理链。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 严格输入、精确结果与资源隔离分别保证什么？
-
-**研究主题**：工程质量与复用、缺陷与关键质疑
-
-#### 完整回答
-
-dispatch把payload严格JSON往返再model_validate_json(strict=True)，不容Python特有值绕过公共输入；代表IntegerPair约定最多256位规范十进制字符串或安全JSON整数，避免大数经JS失真。数学正确性仍取决输入语义、绑定实现与后端：extended-gcd直接把gcdex结果封类型返回，投影器只dump和记时，没有为每个返回值独立重算证明，不能从严格schema推到任意定理已证。有限范围数值/反例也不能直接升级全称命题。
-
-资源方面要逐操作看：精确组合计数路径用临时cwd和受检worker，传deadline、stdout/stderr限、CPU/地址空间/文件大小限，并传取消与超时错误；这是实际工程约束，不应外推所有backend都同进程杀限或是完整OS安全沙箱。原生后端/可选系统运行时和平台资源限制仍需真实验收。MCP授权回调由宿主注入，读tool annotations只是协议提示；本轮没全审remote租户/网络部署，不据此宣称多租户隔离或允许匿名公网暴露。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/jacobian/dispatch.py:68-77](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/dispatch.py#L68-L77)
-
-严格JSON+模型输入。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-def parse_operation_input[ModelT: BaseModel](
-    model: type[ModelT], payload: dict[str, Any]
-) -> ModelT:
-    """Parse one bounded request once into its owning strict model."""
-
-    # Round-trip through strict JSON so Python-only values cannot bypass the
-    # public JSON contract. Dispatch is shared by native, stdio, and HTTP
-    # callers, so concrete transport byte ceilings belong in their adapters.
-    encoded = encode_strict_json(payload)
-    return model.model_validate_json(encoded, strict=True)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/jacobian/math/number_theory/_divisibility_models.py:12-26](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/number_theory/_divisibility_models.py#L12-L26)
-
-代表整数输入界限。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-class IntegerPairRequest(StrictModel):
-    """Two canonical integers supplied to a symmetric binary operation."""
-
-    left: IntegerInput = Field(
-        description=(
-            "Exact integer with at most 256 decimal digits, as a canonical decimal "
-            "string or a safe JSON integer (absolute value at most 9007199254740991)."
-        )
-    )
-    right: IntegerInput = Field(
-        description=(
-            "Exact integer with at most 256 decimal digits, as a canonical decimal "
-            "string or a safe JSON integer (absolute value at most 9007199254740991)."
-        )
-    )
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/jacobian/math/number_theory/_integer_input.py:64-84](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/number_theory/_integer_input.py#L64-L84)
-
-安全JSON整数和规范字符串。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-        exact = core_schema.chain_schema([canonical, bounded])
-        safe_limit = min(MAX_SAFE_INTEGER, 10**self.max_digits - 1)
-        numeric = core_schema.int_schema(
-            strict=True,
-            ge=max(
-                -safe_limit, self.minimum if self.minimum is not None else -safe_limit
-            ),
-            le=min(
-                safe_limit, self.maximum if self.maximum is not None else safe_limit
-            ),
-        )
-        return core_schema.json_or_python_schema(
-            json_schema=core_schema.union_schema(
-                [exact, numeric],
-                custom_error_type="number_theory.integer_input",
-                custom_error_message=(
-                    "integer must be a canonical decimal string with at most "
-                    f"{self.max_digits} digits, or a JSON integer with absolute value "
-                    f"at most {safe_limit}; decoded value must be in "
-                    f"[{self.minimum if self.minimum is not None else '-infinity'}, "
-                    f"{self.maximum if self.maximum is not None else 'infinity'}]"
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/jacobian/math/number_theory/arithmetic/operations.py:292-307](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/number_theory/arithmetic/operations.py#L292-L307)
-
-结果依后端不另核证。
+请求与结果类型见证。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-def extended_gcd(
-    left: SupportsIndex | IntegerValue,
-    right: SupportsIndex | IntegerValue,
-) -> ExtendedGcdResult:
-    """Return a gcd and exact Bezout coefficients for two integers."""
+def _bind_operation[RequestT: StrictModel, ResultT: StrictModel](
+    operation: MathTool[RequestT, ResultT],
+) -> _BoundMathTool:
+    """Erase one typed declaration only after retaining its runtime witnesses."""
 
-    from sympy import gcdex
-
-    left_value = _as_python_integer(left)
-    right_value = _as_python_integer(right)
-    x, y, divisor = gcdex(left_value, right_value)
-    return ExtendedGcdResult(
-        gcd=int(divisor),
-        left_coefficient=int(x),
-        right_coefficient=int(y),
-    )
+    def run(request: StrictModel) -> StrictModel:
+        if not isinstance(request, operation.request_type):
+            raise TypeError(
+                f"{operation.operation_id} received a request outside its declared type"
+            )
+        result = operation.run(request)
+        if type(result) is not operation.result_type:
+            raise TypeError(
+                f"{operation.operation_id} returned a result outside its declared type"
+            )
+        return result
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/jacobian/dispatch.py:157-167](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/dispatch.py#L157-L167)
+**依据 6 · 源码核查**：[src/jacobian/mcp/tools.py:289-306](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L289-L306)
 
-结果投影非全局证明检查。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-def _operation_result_projector(
-    operation_id: OperationId,
-    result: StrictModel,
-    started: float,
-) -> OperationResult:
-    output = result.model_dump(mode="json")
-    return OperationResult(
-        operation_id=operation_id,
-        runtime_ms=max(0, round((time.monotonic() - started) * 1000)),
-        output=output,
-    )
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/jacobian/math/combinatorics/_counting_process.py:55-90](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/combinatorics/_counting_process.py#L55-L90)
-
-特定worker路径的deadline/限流/限资源。
+超时与取消转错误。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-    execution = current_request_execution()
-    started = execution.started_at if execution is not None else time.monotonic()
-    deadline = (
-        execution.deadline
-        if execution is not None and execution.deadline is not None
-        else started + _COUNTING_WALL_SECONDS
-    )
-    bind_request_deadline(deadline)
-    request_checkpoint("before exact counting")
-    remaining = deadline - time.monotonic()
-    if remaining <= 0:
-        raise OperationExecutionTimeoutError(
-            "request deadline expired before exact counting"
-        )
+@contextmanager
+def _operation_error_boundary(operation_id: str) -> Iterator[None]:
+    """Translate and privately log failures once for both SDK entry points."""
 
     try:
-        with TemporaryDirectory(prefix="jacobian-counting-") as worker_directory:
-            result = run_checked_worker_process(
-                [sys.executable, str(_COUNTING_WORKER)],
-                input_bytes=json.dumps(
-                    {"op": operation, "n": n, "k": k},
-                    separators=(",", ":"),
-                ).encode("utf-8"),
-                timeout_seconds=remaining,
-                environment=worker_environment(locale="C.UTF-8"),
-                stdout_limit=_counting_stdout_limit(n, k),
-                stderr_limit=_COUNTING_STDERR_LIMIT,
-                resource_limits=ProcessResourceLimits(
-                    cpu_seconds=max(1, math.ceil(_COUNTING_WALL_SECONDS)),
-                    address_space_bytes=_COUNTING_ADDRESS_SPACE_BYTES,
-                    file_size_bytes=_COUNTING_FILE_SIZE_BYTES,
-                ),
-                cwd=worker_directory,
-                decode_result=_decode_count_result,
-            )
-    except (OperationExecutionCancelledError, OperationExecutionTimeoutError):
+        yield
+    except (OperationRequestValidationError, OperationDomainValidationError) as exc:
+        raise _invalid_request_error(operation_id, exc) from exc
+    except OperationExecutionTimeoutError as exc:
+        raise _execution_tool_error(
+            code="OPERATION_TIMEOUT",
+            operation_id=operation_id,
+            stage=exc.stage,
+            timeout=exc,
+        ) from exc
+    except OperationExecutionCancelledError as exc:
+        raise _execution_tool_error(
+            code="OPERATION_CANCELLED", operation_id=operation_id, stage=exc.stage
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/jacobian/mcp/runtime.py:42-47](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/mcp/runtime.py#L42-L47)
-
-授权由回调提供。
-
-```text
-def _authorize(ctx: Context[Any, Any]) -> None:
-    """Run request-scoped authorization if the host provided one."""
-
-    callback = _state(ctx).authorize
-    if callback is not None:
-        callback()
-```
-
 #### 缺口
 
-- 全部数学域正确/规模、所有worker平台约束和remote租户隔离未核。
-  **影响**：未穷尽领域/worker/remote边界，不能以严格类型或代表算术正确性推全域数学正确/进程与租户隔离。
-  **进一步探讨**：按所需operation独立数学恒等式/边界/错误/超时验证，后端不可用/取消及平台资源隔离另验；远程部署单列授权审查。
+- 未逐项审计算法及后端超时
+  **影响**：不能对所有操作或数学结论作正确性保证
+  **进一步探讨**：选定具体操作与独立数学参考对照错误和中断。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 哪些用户能有限试用，怎样验证数学工具价值？
+### Q03 · 运行条件和失败时的退路是什么？
 
-**研究主题**：效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-建议需要可核精确算术的Agent使用者先本地stdio有限试用一两个操作，不以工具总量、发布测试绿或作者exact声明替代独立数学验证。Python要求>=3.12<3.14，强制SymPy/FLINT/Z3/CyPari/pplpy/SciPy等原生栈不是轻量纯Python；作者声明已测二进制契约是glibc Linux x86-64 CPython3.12/3.13，不能据本机macOS源码可读就认定可安装。Singular/QEPCAD仅少数操作所需且不自动供给。
-
-首次成本为兼容环境、原生包/可能系统库、MCP注册与schema/样例核对；持续为发现/多步调用模型token和后端计算/内存；失败需要分辨输入/领域/依赖不可用/超时，不能把unknown当false或无限增规模；退出停服务、撤MCP配置、虚拟环境/缓存分别保管。具体金额、耗时和净节省未知。简单算术直接CAS/小脚本是低配置对照。
-
-生产方向是把任务前提→操作契约→结果→独立校验/适用范围串成可审阅证明义务账本，遇有界/近似/超时就保留范围，避免Agent将局部输出写成全称结论。以新题对比模型+CAS、当前MCP、账本版的选错操作、域误用、未证跳步、人工纠正和token；无收益或契约解释负担更高则停止。当前typed结果/目录是基础，账本未实现。
+Python 包声明 3.12 至 3.13 和包括 SymPy、Z3、FLINT、CyPari 等依赖；作者说明其二进制安装合同限 CPython glibc Linux x86-64，Singular、QEPCAD 为部分操作的可选系统后端。调用方应先 inspect 后端和操作约束，再以已知样例与独立工具对照；缺依赖、超时、近似或未完成时停止把结果当证明并退回人工验证。安装、模型及求解运行成本依任务而异，现金与耗时均未实测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[pyproject.toml:10-32](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/pyproject.toml#L10-L32)
+**依据 1 · 源码核查**：[pyproject.toml:5-37](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/pyproject.toml#L5-L37)
 
-Python版本和强制原生依赖。
+版本、依赖和入口。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
+[project]
+name = "jacobian"
+version = "0.23.0"
+description = "Atomic mathematical tools for agents over MCP and Python"
+readme = "README.md"
 requires-python = ">=3.12,<3.14"
 license = { text = "MIT" }
 authors = [{ name = "Jacobian contributors" }]
@@ -674,16 +588,21 @@ dependencies = [
     "typer>=0.20,<1",
     "typing-extensions>=4.14.1",
     "z3-solver==5.1.0.0",
+]
+
+[project.scripts]
+jacobian = "jacobian.cli:app"
+jacobian-mcp = "jacobian.mcp.stdio_cli:main"
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:77-91](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/README.md#L77-L91)
+**依据 2 · 作者声明**：[README.md:77-89](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/README.md#L77-L89)
 
-作者已测平台与可选运行时范围。
+作者说明平台合同及可选后端。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
 That package includes Jacobian's exact maintained Python backend stack: SymPy,
@@ -699,104 +618,177 @@ Singular and QEPCAD are optional system runtimes for a small subset of operation
 The Python installation does not provision them, and ordinary operations do not
 require Docker. Python callers can use `jacobian.backends.check_backend`; MCP
 inspection reports availability in the server environment. See
-[backend requirements](docs/how-to/backend-requirements.md) for exact coverage
-and setup.
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:135-139](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/README.md#L135-L139)
+**依据 3 · 源码核查**：[src/jacobian/mcp/tools.py:250-255](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L250-L255)
 
-pre-stable契约。
+检查后端可用性。
 
 ```text
-## Status
-
-Jacobian 0.23.0 <!-- x-release-please-version --> is pre-stable. Its published package and operation contracts
-describe the supported surface; experimental operation contracts may change
-between releases.
+        OperationInspectionResult(
+            kind="operation",
+            operation=descriptor,
+            backend_availability=tuple(
+                check_backend(name) for name in descriptor.runtime_requirements
+            ),
 ```
 
-**依据 4 · 源码核查**：[src/jacobian/math/number_theory/arithmetic/operations.py:292-307](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/number_theory/arithmetic/operations.py#L292-L307)
+**依据 4 · 源码核查**：[src/jacobian/mcp/tools.py:289-306](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L289-L306)
 
-独立可核的Bézout小例。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-def extended_gcd(
-    left: SupportsIndex | IntegerValue,
-    right: SupportsIndex | IntegerValue,
-) -> ExtendedGcdResult:
-    """Return a gcd and exact Bezout coefficients for two integers."""
-
-    from sympy import gcdex
-
-    left_value = _as_python_integer(left)
-    right_value = _as_python_integer(right)
-    x, y, divisor = gcdex(left_value, right_value)
-    return ExtendedGcdResult(
-        gcd=int(divisor),
-        left_coefficient=int(x),
-        right_coefficient=int(y),
-    )
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/jacobian/math/combinatorics/_counting_process.py:55-90](https://github.com/morluto/jacobian/blob/9dc2aaf6efe8803f1c501e2972f741dd94962c32/src/jacobian/math/combinatorics/_counting_process.py#L55-L90)
-
-计算与超时资源边界。
+超时与取消显式返回。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-    execution = current_request_execution()
-    started = execution.started_at if execution is not None else time.monotonic()
-    deadline = (
-        execution.deadline
-        if execution is not None and execution.deadline is not None
-        else started + _COUNTING_WALL_SECONDS
-    )
-    bind_request_deadline(deadline)
-    request_checkpoint("before exact counting")
-    remaining = deadline - time.monotonic()
-    if remaining <= 0:
-        raise OperationExecutionTimeoutError(
-            "request deadline expired before exact counting"
-        )
+@contextmanager
+def _operation_error_boundary(operation_id: str) -> Iterator[None]:
+    """Translate and privately log failures once for both SDK entry points."""
 
     try:
-        with TemporaryDirectory(prefix="jacobian-counting-") as worker_directory:
-            result = run_checked_worker_process(
-                [sys.executable, str(_COUNTING_WORKER)],
-                input_bytes=json.dumps(
-                    {"op": operation, "n": n, "k": k},
-                    separators=(",", ":"),
-                ).encode("utf-8"),
-                timeout_seconds=remaining,
-                environment=worker_environment(locale="C.UTF-8"),
-                stdout_limit=_counting_stdout_limit(n, k),
-                stderr_limit=_COUNTING_STDERR_LIMIT,
-                resource_limits=ProcessResourceLimits(
-                    cpu_seconds=max(1, math.ceil(_COUNTING_WALL_SECONDS)),
-                    address_space_bytes=_COUNTING_ADDRESS_SPACE_BYTES,
-                    file_size_bytes=_COUNTING_FILE_SIZE_BYTES,
-                ),
-                cwd=worker_directory,
-                decode_result=_decode_count_result,
-            )
-    except (OperationExecutionCancelledError, OperationExecutionTimeoutError):
+        yield
+    except (OperationRequestValidationError, OperationDomainValidationError) as exc:
+        raise _invalid_request_error(operation_id, exc) from exc
+    except OperationExecutionTimeoutError as exc:
+        raise _execution_tool_error(
+            code="OPERATION_TIMEOUT",
+            operation_id=operation_id,
+            stage=exc.stage,
+            timeout=exc,
+        ) from exc
+    except OperationExecutionCancelledError as exc:
+        raise _execution_tool_error(
+            code="OPERATION_CANCELLED", operation_id=operation_id, stage=exc.stage
 ```
 
 </details>
 
 #### 缺口
 
-- 没有本轮安装/数学运行或新任务A/B，需求与节省未证。
-  **影响**：无本机栈/新题A/B，无法判定安装与选域核证成本是否低于直接CAS，或是否减少未证跳步。
-  **进一步探讨**：兼容Linux隔离环境先小例核a*x+b*y=g、g整除两输入及符号，检查错误/取消，再测新题多步语义与人工成本。
+- 未安装或测性能、平台及后端
+  **影响**：无法保证目标机器能运行或估计费用
+  **进一步探讨**：隔离环境核后端版本并测已知答案、超时与退出。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何检验操作选择与结果可信度改进？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+可以假设让模型在执行前保存已检查操作、适用前提和预期结果类型，并在完成后用独立验证器或反例检查，可降低误选操作或把不完整结果当证明；这是待验证流程而非项目已经保证。用相同题集对照普通检索与增加前提核查，记录误选、错误证成、正确完成率、工具次数和人工复核时间；若正确性无改善或额外负担大则否定。对于本来就没有独立验证器的问题，不能把类型成功当作验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/jacobian/mcp/tools.py:191-220](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/mcp/tools.py#L191-L220)
+
+操作检索或契约检查。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+def _math_find_sync(
+    query: OperationNeed | None,
+    operation_id: OperationFindOperationId | None,
+    namespace: OperationNamespace,
+    limit: OperationMatchLimit | None,
+    cursor: OperationCursor,
+    search_mode: OperationSearchMode,
+    active_catalog: Catalog,
+) -> OperationFindResponse:
+    if query is None and operation_id is None:
+        raise _find_invalid_request_error(
+            "Provide exactly one of query or operation_id.",
+            hint="Use query to search, or operation_id to inspect one operation.",
+            locations=("query", "operation_id"),
+        )
+    if query is not None and operation_id is not None:
+        raise _find_invalid_request_error(
+            "Provide exactly one of query or operation_id, not both.",
+            hint="Remove operation_id for a search, or remove query for inspection.",
+            locations=("query", "operation_id"),
+        )
+    if operation_id is not None and (
+        namespace is not None
+        or limit is not None
+        or cursor is not None
+        or search_mode != "precise"
+    ):
+        raise _find_invalid_request_error(
+            "namespace, limit, cursor, and search_mode are only valid with query.",
+            hint="Remove search options when inspecting an operation_id.",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/jacobian/dispatch.py:133-153](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/src/jacobian/dispatch.py#L133-L153)
+
+输入执行和投影的边界。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    ):
+        request_checkpoint("before parsing")
+        binding = catalog._binding(operation_id)
+        if binding is None:
+            raise _OperationResolutionError(f"unknown operation: {operation_id}")
+        try:
+            with request_stage(OperationExecutionStage.REQUEST_PARSING):
+                request = parse_operation_input(binding.request_type, payload)
+        except (CanonicalizationError, ValidationError) as exc:
+            raise OperationRequestValidationError(exc) from exc
+        request_checkpoint(
+            "after parsing", public_stage=OperationExecutionStage.REQUEST_PARSING
+        )
+        result = binding.run(request)
+        request_checkpoint("after operation execution")
+        with request_stage(OperationExecutionStage.RESULT_PROJECTION):
+            projected = projector(operation_id, result, started)
+        request_checkpoint(
+            "after result projection",
+            public_stage=OperationExecutionStage.RESULT_PROJECTION,
+        )
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:22-34](https://github.com/morluto/jacobian/blob/ea52eb5a8395fe9dcf4aad3220c6ca62c58ccb89/README.md#L22-L34)
+
+作者对可组合数学操作的假设。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+Each operation establishes one stable, reusable mathematical postcondition
+rather than prescribing a workflow or proof strategy. Results are exact where
+claimed and make approximation, incompleteness, or uncertainty explicit.
+
+**Jacobian's hypothesis is that mathematical reasoning benefits from an
+executable vocabulary of semantically scoped, bounded operations.** Rather than
+exposing large domain solvers or precomposed workflows, Jacobian exposes
+mathematical primitives that agents can search for and compose into solutions
+beyond what any individual operation was designed to solve. The library
+supplies trustworthy mathematical moves; the reasoning model decides which
+moves to make, how to combine their results, and when to stop. Keeping the
+operations semantically narrow and domain-owned preserves that search space
+instead of baking one proof strategy or workflow into the tools themselves.
+```
+
+</details>
+
+#### 缺口
+
+- 未实施同题集对照或独立验证
+  **影响**：不能判断是否减少误用
+  **进一步探讨**：覆盖可证明、不可判定和后端缺失样例。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

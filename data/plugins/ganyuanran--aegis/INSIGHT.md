@@ -1,18 +1,18 @@
-# Aegis Method Pack
+# Aegis
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[0461c21](https://github.com/GanyuanRan/Aegis/tree/0461c211e4d812f0b215fab240a68a25c1e22424)
+源码版本：[1370a15](https://github.com/GanyuanRan/Aegis/tree/1370a15001b9130316d51715bab44c87a3993dcb)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GanyuanRan/Aegis)
+[![GitHub ★ 1,416](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C416&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GanyuanRan/Aegis)
 <!-- END META -->
 
-> **功能**：为编码 Agent 提供按需技能路由、基线读取、变更治理与完成证据流程，含 DSH 适配。
+> **功能**：为 AI 编码助手提供任务路由、工程方法及验证指导。
 
-> **亮点**：把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 将多方法集中并接到宿主发现机制；效果仍需对照。
 
-> **主要限制**：自动bootstrap在首个durable活动后才投递，依赖模型遵守；作者旧Codex基准不能当本版DSH的安全/完成保证。见[Q02](#research-q02)。
+> **主要限制**：[Q02](#research-q02) 提示在首次 promotion 后才投递，不能保证第一次写工具前已约束。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 方法包为谁改变基线和完成证据的流程？](#detail-section-11)
-  - [Q02 · DSH如何发现技能并注入自动入口？](#detail-section-12)
-  - [Q03 · 旧基准和生命周期成本如何限制本版采用结论？](#detail-section-13)
-  - [Q04 · 什么试用与可证伪的流程简化有依据？](#detail-section-14)
+  - [Q01 · Aegis 为开发者增加什么，相比宿主原生 Skill 有何区别？](#detail-section-11)
+  - [Q02 · DSH 路由何时注入，能否约束第一次工具调用？](#detail-section-12)
+  - [Q03 · 依赖、结果证据和退出条件是什么？](#detail-section-13)
+  - [Q04 · 如何验证首动作路由边界的改进？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：有既有工程规则的开发者可用方法包辅助非平凡变更的基线对齐和完成核验。
+> **用途**：使用 AI 编码助手处理有不同风险等级任务的开发团队。
 
-项目AGENTS加手工基线/验证提醒为简单基线，auto和explicit分别比较，不用旧Codex数字替代。
+宿主原生 Skill 和团队手工工程规则也能提供方法；项目增加自动注入和跨宿主方法组织。
 
 <a id="detail-section-3"></a>
 
@@ -50,66 +50,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 方法Skill发现 | 按需读取基线/调试/核验方法 | 模型遵守，未逐一执行所有Skill |
-| 自动路由提示 | 生命周期后补入using-aegis | 首durable活动后注入，不是首写硬门禁 |
-| explicit配置 | 停自动注入、保留显式调用 | 需配置及新会话核生效 |
+|---|---|---|
+| Skill 发现 | 暴露方法包 | 宿主 filesystem provider |
+| 路由提示 | 引导任务选择 | 首次 promotion 后注入，不是强制门禁 |
+| 压缩重注入 | 恢复上下文指导 | 依赖事件与 session ID |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 匹配DSH skills/agents及peer包 | 必需 | 技能发现与事件注入 | 插件不能正确激活 |
-| 正确profile管理者和Git来源 | 必需 | 可靠安装 | Desktop不以web替代 |
-| Python doctor与配置 | 作者完整安装流程需要 | 核工作区支持和配置 | 不宣称安装完整 |
-| 模型遵守与工程基线 | 效果必需 | 兑现方法流程 | 注入不是强制完成保证 |
+|---|---|---|---|
+| 兼容 DSH skills、agents 及 filesystem provider | DSH 路由必需 | 发现 Skill 与注入 | 接线不可用或时序不同 |
+| using-aegis 原稿及稳定 session.id | 自动注入必需 | 构建和定位会话 | 缺文件抛错，缺 ID 跳过 |
+| 模型遵循路由文本 | 期望流程必需 | 决定 Skill 或快路径 | 无强制完成保证 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 用户核profile所有者、固定Git和备份 | 原生插件启用、Skill发现 |
-| 配置 | 用户按作者指南在方法包根doctor | 配置/工作区支持检查通过但还需入口核对 |
-| 试用 | Agent处理非敏感中等变更 | 真实基线、恰当路由和当前完成证据 |
-| 退出 | 用户切explicit或移除并新开会话 | 回项目AGENTS，核无额外注入 |
+|---|---|---|
+| 准备 | 核版本和自动激活 | 不适配则停用 |
+| 启动 | 宿主发现 Skill 并记录会话 | 可解析 session.id |
+| 路由 | 首次事件后投递提示 | 对照首动作及提示实际时序 |
+| 交付 | 模型依任务选择 Skill 或快路径 | 人工核证据与结果 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | Git包、DSH依赖与Python支持；金额未知 | 核profile、doctor配置及自动入口 | 发现文件不等于激活 |
-| 持续使用 | 指南token、基线读取和工作材料 | 解释路由、验证完成；时间未知 | 快路径节省未测 |
-| 失败恢复 | 配置/会话重载资源 | 切explicit/移除并新会话核注入 | 已注入上下文不会凭禁用自动消失 |
+|---|---|---|---|
+| 首次 | 额外上下文和运行资源未知 | 配置兼容与规则 | 未测时间 |
+| 持续 | 模型 token 成本未知 | 路由与结果复核 | 效率未对照 |
+| 恢复 | 资源成本未知 | 纠正漏路由及关闭配置 | 首动作影响需单独核对 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 技能路由 | canonical目录与bootstrap | 首写前实际遵守 |
-| 完成核验 | 指南要求当前证据和残余风险 | 当前版本合格率/返工 |
-| 作者基准 | 旧2.7.6冻结记录 | 本版DSH/模型效果 |
+|---|---|---|
+| 方法发现 | 原生 provider 配置 | 所有宿主实际加载 |
+| 路由提示 | 延迟注入源码 | 首动作前遵守率 |
+| 质量效果 | 作者旧版有边界基准 | 当前版本及 DSH 效果 |
 
-> **思考**：自动bootstrap在首个durable活动后才投递，依赖模型遵守；作者旧Codex基准不能当本版DSH的安全/完成保证。见[Q02](#research-q02)。
+> **思考**：[Q02](#research-q02) 提示在首次 promotion 后才投递，不能保证第一次写工具前已约束。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把基线、风险路由与完成证据原则组织为按需Skill，并适配DSH生命周期，减少反复提醒属于有条件推断。见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 将多方法集中并接到宿主发现机制；效果仍需对照。
 
-薄适配复用宿主filesystem provider、epoch校验和卸载清理值得借鉴；路由合同是提示而非外部权限，迁移需实核事件顺序与消息source格式，见[Q02](#research-q02)。
+[Q02](#research-q02) 按 session、epoch 管理取消和重注入，减少迟到投递；延迟时序不构成写前强制门禁。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-自动bootstrap在首个durable活动后才投递，依赖模型遵守；作者旧Codex基准不能当本版DSH的安全/完成保证。见[Q02](#research-q02)。
+[Q02](#research-q02) 提示在首次 promotion 后才投递，不能保证第一次写工具前已约束。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先在单个中等任务核当前证据与实际路由，保留项目规则优先；流程过载就改explicit或退回原工作法。见[Q04](#research-q04)。
+[Q03](#research-q03) 在隔离仓库对照首次动作和交付证据；路由未生效或成本过高时停用自动激活。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-技能发现和提示注入有源码支持；不是工具硬门禁，旧基准不代表本版效果，最小路由评估为未验证方向。
+仅检查固定版本 DSH 适配器、路由 Skill 和作者基准摘要；未运行目标。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、extensions/dsh/index.js、extensions/dsh/cordis.patch.yml、extensions/dsh/bootstrap.js、skills/using-aegis/SKILL.md、docs/README.deepseek-harness.md、benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、extensions/dsh/index.js、extensions/dsh/bootstrap.js、skills/using-aegis/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：本轮检查根包DSH薄适配、bootstrap、using-aegis路由及作者基准边界，不执行doctor/安装/目标测试或全部Skill。
-- 下一步：固定提交、DSH、模型及同任务集，对比合格交付/返工、token与人工理解时间；单列发现、自动入口、遵守与结果四个层级。
+- 边界：检查根包、DSH adapter、bootstrap、using-aegis 路由及 README 基准摘要；未全审其他宿主或独立复算实验。
+- 下一步：固定 DSH 版本验证首次写动作、无 ID、压缩和投递失败，并对照人工规则。
 
 **分析版本**
 
 - **仓库**：[GanyuanRan/Aegis](https://github.com/GanyuanRan/Aegis)
-- **版本号**：2.14.2（[固定提交 0461c21](https://github.com/GanyuanRan/Aegis/tree/0461c211e4d812f0b215fab240a68a25c1e22424)）
-- **版本日期**：2026-10-25（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.14.3（[固定提交 1370a15](https://github.com/GanyuanRan/Aegis/tree/1370a15001b9130316d51715bab44c87a3993dcb)）
+- **版本日期**：2026-11-02（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +135,9 @@
 
 <a id="innovation"></a>
 
-未验证方向是比较auto、explicit与原AGENTS的最小指南路由，记录返工和总投入；自动模式仅增材料无改善则收窄。见[Q04](#research-q04)。
+[Q04](#research-q04) 假设经宿主确定性拦截首个写动作能减少漏路由，尚未验证。
 
-固定提交、DSH、模型及同任务集，对比合格交付/返工、token与人工理解时间；单列发现、自动入口、遵守与结果四个层级。
+固定 DSH 版本验证首次写动作、无 ID、压缩和投递失败，并对照人工规则。
 
 <a id="detail-section-9"></a>
 
@@ -147,9 +146,11 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 136 | 31730 | — | — | 191504 |
+| .md | source | 136 | 31831 | — | — | 192592 |
 | .js | source | 3 | 849 | 642 | 86 | — |
 | .ts | source | 4 | 493 | 325 | 127 | — |
 | .md | test | 37 | 1495 | — | — | 7667 |
@@ -161,109 +162,40 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=15&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=16&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 13](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=13&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z) [![近30天关闭 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=16&color=737b86&logo=github)](https://github.com/GanyuanRan/Aegis/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-04。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查方法包的DSH自动入口、软性约束与证据流程及当前收益边界
+**插件研究总目标**：核查方法包贡献、DSH 注入时序及效果证据边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 方法包为谁改变基线和完成证据的流程？
+### Q01 · Aegis 为开发者增加什么，相比宿主原生 Skill 有何区别？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标人群是让Agent在已有工程做非平凡修改、常遇到忽略契约、过度设计或无证据声称完成的开发者。合格交付是实际完成用户范围、绑定当前基线与验证，并说清残余风险；单有计划文件或测试数不够。相对一段AGENTS原则，Aegis将路由、风险分级、基线读取、调试和完成核验组织为按需Skill，简单任务可快路径。贡献在方法的可复用组织与宿主入口适配，不是运行权限或新的验证算法。using-aegis明确用户/工程指令优先、测试只证明覆盖范围、不要额外审批或完整追踪模板，说明作者尝试限制流程本身膨胀。收益需对具体任务检验，不能从方法覆盖广就推断少返工。
+Aegis 是跨宿主的方法包，面向希望 Agent 在改代码前选择方法、交付时说明验证和风险的团队。它提供路由指引及相关 Skill；DSH 适配器把其 skills 树交给宿主原生 filesystem provider，并注入压缩路由指引，未替换宿主 Skill 工具或建立新的运行时权限。与手工调用宿主 Skill 相比，增量是默认路由和共享方法集合；模型是否遵守及实际减少返工不能仅由文本证明。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/using-aegis/SKILL.md:17-37](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/skills/using-aegis/SKILL.md#L17-L37)
+**依据 1 · 作者声明**：[README.md:40-68](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/README.md#L40-L68)
 
-以用户结果、证据范围和最小必要流程约束完成
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-
-## Outcome Anchor
-
-Understand the requested object, scope, actions, conditions, and deliverables
-from the conversation. Complete the authorized task within business constraints
-and deliver a usable, verifiable result. Project goals guide durable choices;
-they do not override the user's current scope. Preserve outstanding intent
-across follow-ups; clarify material ambiguity before dependent action and
-continue independent authorized work. Do not repeat satisfied approvals.
-
-Judge success by the requested outcome. Execution, parsing, tests, and
-architecture alignment prove only their covered scope; tests of real acceptance
-criteria can prove that outcome. Fix the problem class at its owner, preserving
-neighboring behavior. Report delivered results and remaining gaps honestly;
-partial work is not complete. These are decision principles, not a new artifact,
-universal goal-framing route, or completion authority.
-
-Preserve task fidelity through understanding, transformation, execution and
-delivery: retain decision-relevant meaning and evidence status, checking both
-omissions and unsupported additions. Authorized summaries, designs and
-evidence-based corrections are valid. Use existing checkpoints and sufficient
-```
-
-</details>
-
-**依据 2 · 源码核查**：[skills/using-aegis/SKILL.md:41-61](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/skills/using-aegis/SKILL.md#L41-L61)
-
-按需路由、风险分级及简单任务快路径
+作者描述方法和效果边界。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-
-1. User/project instructions outrank Aegis.
-2. Load only the smallest explicitly requested or clearly relevant skill/reference;
-   otherwise stay on the fast path. Compose `ui-ux-governance` for UI/UX effects;
-   retain task ownership and scope.
-3. Active codebase question/"what next": use the authority index and relevant
-   README/ADR/rule/baseline sections, else a bounded index-first scan. Do not
-   recursively read all linked docs. Non-trivial work passively use relevant
-   `CONTEXT-MAP.md`/`CONTEXT.md`; model semantic conflicts only when found.
-4. Primary routes: `grill me`/`grill this plan`/`审问我`/`盘问我`/`拷问我` -> `brainstorming` (literal/explanatory uses do not); `/aegis-goal` or `Aegis goal:` -> `goal-framing`. Bug, failure, regression, or unexpected behavior routes to `systematic-debugging`.
-5. Implementation only: Classify before implementation. Low stays owner-local;
-   Medium/high: baseline read-set + plan. Spec Brief or Design Spec only for
-   ambiguous/contract/cross-module medium/high work. TDD: off=no auto route/load; auto=risk-based strict/light/skipped; explicit strict applies.
-   Pure explanation and read-only diagnosis skip implementation/TDD/write gates.
-6. For writes, the owner workflow surfaces Change Necessity, records
-   `TaskStartSnapshot`, and decides `ArchitectureReviewRequired`; ceremony alone
-   never creates a branch/worktree.
-7. At the first substantive user-visible stage say why Aegis is shaping
-   non-tiny work; do not wait for the user to ask. structured trace is only for audit/debug/release/long-task review/asked and does not route (`Trace Digest`).
-8. Workspace support is lazy; use configured Aegis workspace support as needed.
-   Q&A/status writes no files except authorized baseline bootstrap before
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:37-67](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/README.md#L37-L67)
-
-作者价值主张与旧版基准限制
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-    <a href="docs/current/AEGIS_FAST_TRACK_PLAYBOOK_ZH.md">速通秘籍</a>
-</p>
-
 > **Stop babysitting your agent.** Aegis makes your agent plan against your real
 > baseline before it edits, prove completion with fresh evidence, and leave simple
 > tasks alone — you get **fewer reworks, safer changes, and less blind trust in "done"**.
@@ -292,38 +224,29 @@ engineers — so you don't have to watch them.
 
 > These numbers are bounded advisory evidence from Aegis 2.7.6 (2026-08-11),
 > not a measurement of this release, a universal-quality claim, or completion authority.
+> See [the full benchmark and its limitations](#measured-agentic-benchmark).
 ```
 
 </details>
 
-#### 缺口
+**依据 2 · 源码核查**：[extensions/dsh/index.js:1-29](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/index.js#L1-L29)
 
-- 当前版在真实用户任务上的返工和审阅负担未知
-  **影响**：不能把完整方法说明当作已验证用户收益
-  **进一步探讨**：选同一工程真实变更，比较原AGENTS与方法包的合格交付、返工和人工理解时间
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · DSH如何发现技能并注入自动入口？
-
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
-
-#### 完整回答
-
-根包是private源码工程，但dsh.bundle指向专用patch；原生安装通过Git来源而非猜测npm身份。适配器注入skills/agents，复用官方filesystem provider，只指向包内canonical skills目录，不复制正文、不替换skill工具，也不添加运行权限。bootstrap读取用户配置，activation explicit时直接不注入；默认auto，TDD默认off。自动模式在agent创建或旧session-start时为稳定sessionId置pending，等首个durable tool/call或assistant/message后异步注入带plugin:aegis来源的用户消息；compaction/end重新武装，epoch及agent匹配防过时投递，卸载清timer和监听。这个时序特意保持首请求无注入，所以不能说首个工具调用前已有硬性路由门禁；消息中的路由合同靠模型遵守。本轮没见tools.guard式阻止动作，不能将“proof before done”描述为外部强制放行。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[extensions/dsh/index.js:11-29](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/extensions/dsh/index.js#L11-L29)
-
-官方provider与bootstrap接线
+DSH 使用宿主 provider 和 bootstrap。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+/**
+ * Thin DeepSeek Harness bundle adapter for Aegis Method Pack.
+ *
+ * The host-owned filesystem provider remains the discovery implementation.
+ * This adapter points one isolated provider at this package's canonical
+ * skills tree and injects the compact Aegis router at DSH lifecycle start. It
+ * does not copy skill bodies, replace the native skill tool, or add runtime
+ * authority.
+ */
+
 import { fileURLToPath } from "node:url";
 import { createUserMessage } from "@deepseek-ai/dsh-llm";
 import { apply as applyFilesystemProvider } from "@deepseek-ai/dsh-skill-filesystem";
@@ -347,9 +270,55 @@ export function apply(ctx) {
 
 </details>
 
-**依据 2 · 源码核查**：[extensions/dsh/bootstrap.js:25-40](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/extensions/dsh/bootstrap.js#L25-L40)
+**依据 3 · 源码核查**：[skills/using-aegis/SKILL.md:45-58](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/skills/using-aegis/SKILL.md#L45-L58)
 
-auto/explicit与TDD默认
+按任务和风险的文本路由。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+## Hot Path
+
+1. User/project instructions outrank Aegis.
+2. Load only the smallest explicitly requested or clearly relevant skill/reference;
+   otherwise stay on the fast path. Compose `ui-ux-governance` for UI/UX effects;
+   retain task ownership and scope.
+3. Active codebase question/"what next": use the authority index and relevant
+   README/ADR/rule/baseline sections, else a bounded index-first scan. Do not
+   recursively read all linked docs. Non-trivial work passively use relevant
+   `CONTEXT-MAP.md`/`CONTEXT.md`; model semantic conflicts only when found.
+4. Primary routes: `grill me`/`grill this plan`/`审问我`/`盘问我`/`拷问我` -> `brainstorming` (literal/explanatory uses do not); `/aegis-goal` or `Aegis goal:` -> `goal-framing`. Bug, failure, regression, or unexpected behavior routes to `systematic-debugging`.
+5. Implementation only: Classify before implementation. Low stays owner-local;
+   Medium/high: baseline read-set + plan. Spec Brief or Design Spec only for
+   ambiguous/contract/cross-module medium/high work. TDD: off=no auto route/load; auto=risk-based strict/light/skipped; explicit strict applies.
+```
+
+</details>
+
+#### 缺口
+
+- 缺本版本同任务对照和宿主运行
+  **影响**：不能确认触发可靠性或净收益
+  **进一步探讨**：固定任务、模型与宿主对照加载行为、正确率和耗时。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · DSH 路由何时注入，能否约束第一次工具调用？
+
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+默认 activation 是 auto，显式模式不安装 bootstrap。auto 同步读 using-aegis 内容，agent 创建或旧生命周期事件按 session.id 记录 agent 并 arm；首个 tool/call 或 assistant/message 后通过零延迟定时器注入提示，compaction/end 再次 arm。子代理和缺 session.id 被跳过，agent disposed 会取消待投递并清理。提示要求首次非只读工具前选路，但注入本身故意晚于首个持久 promotion，故不能据此保证第一次工具调用之前已收到要求；agent.inject 失败只打印错误。这里是提示与生命周期静态接线，不是强制拦截或已测时序。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[extensions/dsh/bootstrap.js:25-40](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L25-L40)
+
+activation 与 TDD 默认值。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -375,9 +344,35 @@ export function readAegisConfig(homeDir = os.homedir()) {
 
 </details>
 
-**依据 3 · 源码核查**：[extensions/dsh/bootstrap.js:85-108](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/extensions/dsh/bootstrap.js#L85-L108)
+**依据 2 · 源码核查**：[extensions/dsh/bootstrap.js:57-70](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L57-L70)
 
-explicit不注入及首个durable事件后投递的设计
+注入文本的首次工具前路由要求。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+export function buildBootstrap(body, { tddMode }) {
+  return `<${BOOTSTRAP_MARKER}>
+You have Aegis.
+
+Aegis TDD mode: ${tddMode}. off is the default and disables automatic TDD while verification-before-completion still applies; auto routes strict TDD only when risk warrants.
+
+**ROUTING CONTRACT (this lifecycle):** Before the first non-readonly tool call, either use DeepSeek Harness's native \`skill\` tool to load the relevant task-specific Aegis skill, or explicitly declare \`Route: fast-path\` with a one-line reason. The compact \`using-aegis\` hot path is already loaded below; do not load it again.
+
+${body.trim()}
+
+**Tool Mapping for DeepSeek Harness:**
+- \`Skill\` tool → DeepSeek Harness's native \`skill\` tool
+- \`Read\`, \`Write\`, \`Edit\`, and shell references → the equivalent tools available in the active DSH profile
+</${BOOTSTRAP_MARKER}>`;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[extensions/dsh/bootstrap.js:85-108](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L85-L108)
+
+显式模式及延迟注入动机。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -411,14 +406,68 @@ export function installBootstrap(
 
 </details>
 
-**依据 4 · 源码核查**：[extensions/dsh/bootstrap.js:175-206](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/extensions/dsh/bootstrap.js#L175-L206)
+**依据 4 · 源码核查**：[extensions/dsh/bootstrap.js:133-162](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L133-L162)
 
-事件触发、压缩重武装及卸载清理
+定时投递、失败记录、会话和子代理过滤。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
+  const deferDelivery = (sessionId, agent, epoch, message) => {
+    const delivery = { agent, epoch, timer: undefined };
+    delivery.timer = setTimeout(() => {
+      if (scheduledDeliveries.get(sessionId) !== delivery) return;
+      scheduledDeliveries.delete(sessionId);
+      if (
+        disposed ||
+        agents.get(sessionId) !== agent ||
+        epochs.get(sessionId) !== epoch
+      ) {
+        return;
+      }
+      try {
+        agent.inject(message);
+      } catch (error) {
+        reportDeliveryFailure(error);
+      }
+    }, 0);
+    scheduledDeliveries.set(sessionId, delivery);
+  };
+
+  const armFromLifecycle = ({ agent }) => {
+    if (agent.session?.header?.origin === "subagent") return;
+    const sessionId = agent.session?.id;
+    if (sessionId === undefined) return;
+    armDelivery(sessionId, agent);
+  };
+  // DSH 0.1.6+ moved the source-bearing lifecycle event to agent/created.
+  // Older preview hosts still emit agent/session-start; their agent/created
+  // event can also fire before it, so both subscriptions share one path.
+```
+
+</details>
+
+**依据 5 · 源码核查**：[extensions/dsh/bootstrap.js:163-205](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L163-L205)
+
+生命周期和 promotion、压缩、清理处理。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+  const disposeLifecycle = ctx.on("agent/created", armFromLifecycle);
+  const disposeLegacyLifecycle = ctx.on("agent/session-start", armFromLifecycle);
+
+  const disposeAgents = ctx.on("agent/disposed", ({ agent }) => {
+    const sessionId = agent.session?.id;
+    if (sessionId === undefined || agents.get(sessionId) !== agent) return;
+    cancelDelivery(sessionId);
+    agents.delete(sessionId);
+    epochs.delete(sessionId);
+    pending.delete(sessionId);
+  });
+
   const disposeEvents = ctx.on("session/event", (session, event) => {
     const sessionId = session?.id;
     if (sessionId === undefined || !agents.has(sessionId)) return;
@@ -450,54 +499,92 @@ export function installBootstrap(
     epochs.clear();
     pending.clear();
   };
-}
 ```
 
 </details>
 
 #### 缺口
 
-- 目标DSH事件时序及真实Skill调用未执行
-  **影响**：不能确认首次写入前模型已收到或遵守方法约束
-  **进一步探讨**：在临时会话记录首请求、首工具事件与注入顺序，并核auto/explicit及压缩后行为
+- 未运行 DSH 生命周期和异常竞态
+  **影响**：不能保证提示在目标动作前被消费
+  **进一步探讨**：隔离宿主测首次即写工具、无 session ID、压缩与投递失败。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 旧基准和生命周期成本如何限制本版采用结论？
+### Q03 · 依赖、结果证据和退出条件是什么？
 
-**研究主题**：缺陷与关键质疑、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-README的61.67%到93.33%来自作者2.7.6旧版冻结A/B，不是当前2.14.2或DSH验收；文中明确评审并非独立人类、宿主事件没返回观察到的模型身份。现有sanitized JSON含120次valid结果与advisory边界，支持作者确实提供有范围的结果记录，但本轮不复算因果或把它外推新版本。首次需要正确profile管理者、Git来源、DSH依赖及Python doctor写配置/工作区支持；Desktop要通过应用管理，web/headless单独安装，不应混用兼容复制目录。持续有路由/指南上下文和基线阅读、证据整理、可能工作区材料维护，金额/耗时未知。简单任务快路径是意图而非已测开销保证。失败应先区分Skill发现、自动入口、配置和模型遵守，doctor通过只证明检查项；退出可切explicit或按profile移除，已注入会话需新开/重载核状态，不能以禁用包自动抹去历史上下文。
+DSH 路径依赖宿主 skills/agents、filesystem provider、消息格式和会话事件；watch 为 false，变更何时重新发现要依宿主加载行为验证。README 展示的 2.7.6 基准是作者报告，指出评审并非独立人工且无法观测实际模型身份，不能外推到当前 2.14.3 或 DSH。配置和路由阅读消耗模型上下文与人工复核，时间和费用未知。先用隔离仓库比较一类任务的首动作和证据质量；若首次写入缺指引、路由不遵守或负担抵消收益，停用自动激活并回到原生流程。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:65-96](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/README.md#L65-L96)
+**依据 1 · 源码核查**：[extensions/dsh/index.js:11-29](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/index.js#L11-L29)
 
-作者明确旧版基准与限制
+宿主依赖及 watch false。
 
 <details>
-<summary>查看原文（32行）</summary>
-
-````text
-
-> These numbers are bounded advisory evidence from Aegis 2.7.6 (2026-08-11),
-> not a measurement of this release, a universal-quality claim, or completion authority.
-> See [the full benchmark and its limitations](#measured-agentic-benchmark).
-
-## Quick Install
-
-New here? The fastest start is one prompt to your agent — the full
-install-and-verify flow is below.
-
-Give this prompt to your AI coding agent:
+<summary>查看原文（19行）</summary>
 
 ```text
-Read https://github.com/GanyuanRan/Aegis, identify my current AI coding host, and install Aegis globally using the correct host guide. If the host is the official DeepSeek Harness (`dsh`), treat global/minimal installation as native profile-plugin installation with `dsh plugin --profile <profile> add "git+https://github.com/GanyuanRan/Aegis.git"`; do not silently substitute the direct-child compatibility path unless the plugin manager is unavailable and I explicitly approve compatibility mode. Restart or reload the host if needed, then run complete-install verification from the installed Aegis method-pack root. Do not run the doctor command from the target project directory. First locate `<aegis-method-pack-root>`, then run `cd <aegis-method-pack-root> && python scripts/aegis-doctor.py --write-config --json`. Treat the install as complete only if the JSON includes `"ok": true`, `"workspaceSupport": "available"`, and `"configStatus": "configured"`; if the host uses a separate skill discovery directory, also verify it with `--discovery-root <path>`; if the host guide declares a skill directory name prefix, also pass `--discovery-name-prefix <prefix>`. Also complete the selected host guide's native activation and automatic-entry checks; file discovery or a generic doctor result alone is not sufficient when the host provides a plugin, hook, or session-start bootstrap contract.
+import { fileURLToPath } from "node:url";
+import { createUserMessage } from "@deepseek-ai/dsh-llm";
+import { apply as applyFilesystemProvider } from "@deepseek-ai/dsh-skill-filesystem";
+import { installBootstrap } from "./bootstrap.js";
+
+const skillsRoot = fileURLToPath(new URL("../../skills/", import.meta.url));
+
+export const name = "aegis-method-pack";
+export const inject = ["skills", "agents"];
+
+export function apply(ctx) {
+  applyFilesystemProvider(ctx, {
+    providerName: "aegis-method-pack",
+    includeDefaultRoots: false,
+    bundledSkillDir: skillsRoot,
+    watch: false,
+  });
+
+  installBootstrap(ctx, { createUserMessage, skillsRoot });
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[extensions/dsh/bootstrap.js:85-95](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L85-L95)
+
+配置控制自动注入。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+export function installBootstrap(
+  ctx,
+  { createUserMessage, skillsRoot, homeDir = os.homedir() },
+) {
+  const config = readAegisConfig(homeDir);
+  if (config.activationMode === "explicit") return null;
+
+  // Read and render synchronously during plugin apply so injection cannot race
+  // the first model step on either supported DSH lifecycle event.
+  const body = readUsingAegisBody(skillsRoot);
+  const bootstrap = buildBootstrap(body, config);
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:80-90](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/README.md#L80-L90)
+
+作者标明旧版本实验、评审和模型身份限制。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
 
 ## Measured Agentic Benchmark
 
@@ -509,208 +596,111 @@ contract pass rate was **61.67% → 93.33% (+31.67 pp)** and unsafe outcomes wer
 [Sanitized JSON](benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.json) · [English table](benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.en.md) · [中文表格](benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.zh-CN.md) · [Methodology](docs/current/AEGIS_AGENTIC_BENCHMARK_BASELINE.md)
 
 A newer [matrix-v7 standard snapshot for Aegis 2.10.8](benchmarks/results/gpt-5-6-sol-xhigh-standard-20260925-v2-10-8.en.md)
-covers 22 cases with one observation per arm and case. It uses a different run
-profile from the extended snapshot above and does not measure the changes in
-this release.
-
-## Try Aegis Methods in a Coding Runtime
-
-````
-
-</details>
-
-**依据 2 · 源码核查**：[benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.json:1-13](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/benchmarks/results/gpt-5-6-sol-xhigh-extended-20260811-v2-7-6.json#L1-L13)
-
-120valid结果及advisory authority字段
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-{
-  "attempts": {
-    "fails": 27,
-    "invalid": 0,
-    "invalidReasons": {},
-    "passes": 93,
-    "remaining": 0,
-    "total": 120,
-    "valid": 120
-  },
-  "authorityBoundary": "advisory-method-pack-evidence-not-completion-authority",
-  "batchDigest": "be67a98fdcd9f249e6fb0de8eaf921e640d0d7ab5c860feb02a57223c1f6b46b",
-  "batchId": "gpt-5-6-sol-xhigh-extended-20260811-aegis-2-7-6-958fcc2-native-proxy-001",
 ```
-
-</details>
-
-**依据 3 · 源码核查**：[docs/README.deepseek-harness.md:80-104](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/docs/README.deepseek-harness.md#L80-L104)
-
-profile独立安装和固定Git目标
-
-<details>
-<summary>查看原文（25行）</summary>
-
-````text
-Install Aegis through the manager that owns the intended profile. The following
-terminal commands apply to CLI-managed Web and Headless profiles. For Web:
-
-```bash
-dsh plugin --profile web add "git+https://github.com/GanyuanRan/Aegis.git"
-```
-
-For the Headless profile, install it separately:
-
-```bash
-dsh plugin --profile headless add "git+https://github.com/GanyuanRan/Aegis.git"
-```
-
-An `aegis` dependency that is installed in one profile is not automatically
-active in another profile. Do not also register Aegis under `$DSH_HOME/skills`,
-`$DSH_AGENTS_HOME/skills`, a project `.dsh/skills` directory, or a custom skill
-directory.
-
-After a bundle-bearing Aegis release exists, a release tag may be pinned:
-
-```bash
-dsh plugin --profile web add "git+https://github.com/GanyuanRan/Aegis.git#vX.Y.Z"
-```
-
-The explicit `git+https://` form is intentional. Do not shorten it to
-````
-
-</details>
-
-**依据 4 · 源码核查**：[docs/README.deepseek-harness.md:112-132](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/docs/README.deepseek-harness.md#L112-L132)
-
-Desktop管理归属与不能替换profile
-
-<details>
-<summary>查看原文（21行）</summary>
-
-````text
-### Desktop (Electron)
-
-DSH `0.2.0-rc.2` reserves the `desktop` profile for the Electron application.
-Terminal plugin commands for that profile fail with
-`profile "desktop" is managed exclusively by the Electron application`.
-Use the desktop application's plugin manager for installation, inspection,
-update, and removal. Do not substitute `web`: it is a different profile and
-does not make the plugin active in Desktop.
-
-When the application's own installer supports an explicit Git target, select
-the official repository and a fixed release, for example:
-
-```text
-git+https://github.com/GanyuanRan/Aegis.git#v2.12.2
-```
-
-Read back the actual dependency name, source/ref, installed package version,
-and bundle through the application or its profile manifest. Do not assume a
-community marketplace's catalog button or custom Git input preserves the
-requested target; see the marketplace channel changes below. Do not edit the
-Electron-managed profile to bypass its manager.
-````
 
 </details>
 
 #### 缺口
 
-- 本版DSH真实安装、自动入口和任务收益未知
-  **影响**：不能推荐持续安装或声称当前数字改善
-  **进一步探讨**：固定此提交、宿主和模型，对小/中/跨模块任务分别核完成质量和总投入
+- 未独立复算实验或验证当前宿主
+  **影响**：无法证明当前版本效果
+  **进一步探讨**：固定版本和同任务运行两组并审阅实际轨迹。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么试用与可证伪的流程简化有依据？
+### Q04 · 如何验证首动作路由边界的改进？
 
-**研究主题**：采用判断、新假设与验证
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-已有工程治理和可恢复profile的开发者可在一个非敏感中等修改任务试用，先检查原生插件启用、技能目录和auto/explicit入口，要求交付指向真实当前证据。相对每次手写基线/完成提醒，源码提供生命周期入口和按需资源，能否减少返工仍是推断。若简单请求反复触发无关文档、首写前仍未定位基线、或把旧测试当本次完成凭证，则停止依赖自动路由，切explicit/移除并回到项目AGENTS和手动验证。由默认auto和快路径之间张力可推导未验证方向：用少量可解释任务风险信号选择最小指南，并记录每次路由增加的读取与人工负担。最小验证同一任务集比较手动AGENTS、auto和explicit，分别看合格交付、返工、token及用户理解时间；若auto只是增加材料而不改善交付，或风险信号漏掉跨模块修改，应收窄自动范围。不得把新增指标再变成每任务强制报告。
+假设宿主提供确定性的首个写工具前拦截，并在进入动作前确认已路由或真实快路径，可减少提示尚未注入时的漏路由；这不是现有实现，也不证明模型必然遵守。对照当前延迟 promotion 与拦截方案，在首个动作是写、只读后写、压缩后写及无 session ID 的固定任务中测漏拦、误阻和延迟；若损失基线行为、误阻过多或没有减少漏路由则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/using-aegis/SKILL.md:41-61](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/skills/using-aegis/SKILL.md#L41-L61)
+**依据 1 · 源码核查**：[extensions/dsh/bootstrap.js:57-70](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L57-L70)
 
-最小相关资源与风险分级提供简化起点
+目标路由条件。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
+export function buildBootstrap(body, { tddMode }) {
+  return `<${BOOTSTRAP_MARKER}>
+You have Aegis.
 
-1. User/project instructions outrank Aegis.
-2. Load only the smallest explicitly requested or clearly relevant skill/reference;
-   otherwise stay on the fast path. Compose `ui-ux-governance` for UI/UX effects;
-   retain task ownership and scope.
-3. Active codebase question/"what next": use the authority index and relevant
-   README/ADR/rule/baseline sections, else a bounded index-first scan. Do not
-   recursively read all linked docs. Non-trivial work passively use relevant
-   `CONTEXT-MAP.md`/`CONTEXT.md`; model semantic conflicts only when found.
-4. Primary routes: `grill me`/`grill this plan`/`审问我`/`盘问我`/`拷问我` -> `brainstorming` (literal/explanatory uses do not); `/aegis-goal` or `Aegis goal:` -> `goal-framing`. Bug, failure, regression, or unexpected behavior routes to `systematic-debugging`.
-5. Implementation only: Classify before implementation. Low stays owner-local;
-   Medium/high: baseline read-set + plan. Spec Brief or Design Spec only for
-   ambiguous/contract/cross-module medium/high work. TDD: off=no auto route/load; auto=risk-based strict/light/skipped; explicit strict applies.
-   Pure explanation and read-only diagnosis skip implementation/TDD/write gates.
-6. For writes, the owner workflow surfaces Change Necessity, records
-   `TaskStartSnapshot`, and decides `ArchitectureReviewRequired`; ceremony alone
-   never creates a branch/worktree.
-7. At the first substantive user-visible stage say why Aegis is shaping
-   non-tiny work; do not wait for the user to ask. structured trace is only for audit/debug/release/long-task review/asked and does not route (`Trace Digest`).
-8. Workspace support is lazy; use configured Aegis workspace support as needed.
-   Q&A/status writes no files except authorized baseline bootstrap before
+Aegis TDD mode: ${tddMode}. off is the default and disables automatic TDD while verification-before-completion still applies; auto routes strict TDD only when risk warrants.
+
+**ROUTING CONTRACT (this lifecycle):** Before the first non-readonly tool call, either use DeepSeek Harness's native \`skill\` tool to load the relevant task-specific Aegis skill, or explicitly declare \`Route: fast-path\` with a one-line reason. The compact \`using-aegis\` hot path is already loaded below; do not load it again.
+
+${body.trim()}
+
+**Tool Mapping for DeepSeek Harness:**
+- \`Skill\` tool → DeepSeek Harness's native \`skill\` tool
+- \`Read\`, \`Write\`, \`Edit\`, and shell references → the equivalent tools available in the active DSH profile
+</${BOOTSTRAP_MARKER}>`;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[extensions/dsh/bootstrap.js:25-40](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/extensions/dsh/bootstrap.js#L25-L40)
+**依据 2 · 源码核查**：[extensions/dsh/bootstrap.js:97-108](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L97-L108)
 
-auto/explicit是可比较入口
+现有刻意推迟到 promotion。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-export function readAegisConfig(homeDir = os.homedir()) {
-  const envActivation = process.env.AEGIS_ACTIVATION_MODE;
-  const configuredActivation = readConfigValue(homeDir, "activation_mode");
-  const requestedActivation = envActivation ?? configuredActivation;
-  const activationMode =
-    requestedActivation === "auto" || requestedActivation === "explicit"
-      ? requestedActivation
-      : "auto";
-
-  const envTdd = process.env.AEGIS_TDD_MODE;
-  const configuredTdd = readConfigValue(homeDir, "tdd_mode");
-  const requestedTdd = envTdd ?? configuredTdd;
-  const tddMode =
-    requestedTdd === "auto" || requestedTdd === "off" ? requestedTdd : "off";
-
-  return { activationMode, tddMode };
+  // Injecting at session start used to land the bootstrap in the session
+  // inbox BEFORE the first model request, which polluted the sterile
+  // first-request baseline that trajectory presets such as
+  // dsh-anchored-standard (context gate) depend on. Deferral keeps that
+  // request clean: every session lifecycle boundary only ARMS an injection, and
+  // the bootstrap lands once the session emits its first durable promotion
+  // signal (`tool/call` or `assistant/message`) — after the anchored first
+  // request has already been assembled. `compaction/end` re-arms the
+  // deferral because the first post-compaction request is itself a gated
+  // "second first request". Sessions without a stable `session.id` cannot
+  // be correlated with their events, so they are skipped rather than
+  // injected blind.
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[skills/using-aegis/SKILL.md:33-37](https://github.com/GanyuanRan/Aegis/blob/0461c211e4d812f0b215fab240a68a25c1e22424/skills/using-aegis/SKILL.md#L33-L37)
+**依据 3 · 源码核查**：[extensions/dsh/bootstrap.js:175-189](https://github.com/GanyuanRan/Aegis/blob/1370a15001b9130316d51715bab44c87a3993dcb/extensions/dsh/bootstrap.js#L175-L189)
 
-不要新审批或完整追踪的作者边界
+触发后排队投递。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
-
-Preserve task fidelity through understanding, transformation, execution and
-delivery: retain decision-relevant meaning and evidence status, checking both
-omissions and unsupported additions. Authorized summaries, designs and
-evidence-based corrections are valid. Use existing checkpoints and sufficient
+  const disposeEvents = ctx.on("session/event", (session, event) => {
+    const sessionId = session?.id;
+    if (sessionId === undefined || !agents.has(sessionId)) return;
+    if (event?.type === "compaction/end") {
+      armDelivery(sessionId);
+      return;
+    }
+    if (event?.type !== "tool/call" && event?.type !== "assistant/message") {
+      return;
+    }
+    if (!pending.delete(sessionId)) return;
+    const agent = agents.get(sessionId);
+    const epoch = epochs.get(sessionId);
+    const message = createBootstrapMessage(createUserMessage, bootstrap);
+    deferDelivery(sessionId, agent, epoch, message);
 ```
+
+</details>
 
 #### 缺口
 
-- 风险路由的增量效果未验证
-  **影响**：不能作为已确认生产插件机会
-  **进一步探讨**：先在现有方法包做只读路由与投入记录，不先建设新平台
+- 宿主是否支持安全同步拦截未确认
+  **影响**：不能保证方案可行或无副作用
+  **进一步探讨**：核对固定宿主事件合同并运行上述对照。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
