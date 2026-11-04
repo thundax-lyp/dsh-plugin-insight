@@ -14,6 +14,7 @@
 | --- | --- | --- |
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 先观察，匿名样本验证日期/partial/写入和启用恢复后再评真实数据范围。 |
+| [AX Feishu Bridge](#plugin-1249325080-root) | 把飞书或 Lark 消息和回复卡片桥接到本机 DeepSeek Harness 或 Pi。 | [Q03](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md#research-q03) 先核隔离 app 的身份和 Host 工具，无法证实时保留 Web 工作流。 |
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 的浏览器操作接入 DSH 模型工具并提供会话观察。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 先用测试账号、显式会话和只读网页；操作结果或目标不明时停止并核对页面与本机保存文件。 |
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
@@ -34,11 +35,12 @@
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
-| [dsh-wsl-im](#plugin-1370460115-root) | 把多平台 IM 消息、媒体和聊天会话桥接到 DSH Agent，再把文本回复送回原聊天。 | 不按默认设置暴露真实 bot。 |
+| [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
 | [EduWork DSH Mail](#plugin-1369398336-packages-dsh-mail) | 为 DSH 提供邮件读取、附件保存与受控 SMTP 发送工具。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q04) 隔离账户先验证权限并由用户核对；外发需明确授权，异常先查询。 |
 | [EduWork OIDC](#plugin-1369398336-packages-dsh-oidc) | 为 DSH 提供机构身份登录与授权模型接入。 | 先用隔离身份测试登录、模型类型及撤销失败，状态不明由管理员核查。 |
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
+| [LeLogin for DeepSeek Harness](#plugin-1226490932-root) | 在 DSH 注册 LeLogin Skill，指导凭据引用、注入和已认证应用的本地使用。 | 先观察注册和假账号发现；对实际凭据操作保留手工退路，直到验证运行时与审批。 |
 | [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
@@ -75,6 +77,22 @@
 > **建议**：活动覆盖收据、事实链接和正文/导出版本确认，能否减少漏项误报及总恢复成本待验证。见[Q06](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-daily-log/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1249325080-root"></a>
+
+## [AX Feishu Bridge](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md)
+
+[![GitHub ★ 58](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=58&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AX1202/ax-feishu-bridge) [![npm 30d 556](https://img.shields.io/static/v1?label=npm+30d&message=556&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ax-feishu-bridge) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ax-feishu-bridge)
+
+> **用途**：已有 DSH 或 Pi 的团队希望从飞书持续处理协作消息。
+
+> **亮点**：[Q01](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md#research-q01) 复用宿主 Agent 和会话，同时把引用及附件带到聊天侧。
+
+> **思考**：[Q02](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md#research-q02) 群触发只筛事件，消息 claim 与 flush 也不能保证严格一次和持久。
+
+> **建议**：[Q03](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md#research-q03) 比较隔离飞书桥与手工交接的确认时间和误回复；不改善即退出。
+
+[查看完整分析](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
 
@@ -402,13 +420,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-im)
 
-> **用途**：希望从飞书、企微、钉钉、QQ、Slack、Discord、Telegram 或 Mattermost 远程访问 DSH。
+> **用途**：已有 WSL 上 DSH 的用户，希望在 Telegram 等聊天平台继续处理任务并收到回复。
 
-> **亮点**：把现有 DSH Agent 工具能力带到多个聊天入口，支持工作区与多媒体转接。详见[Q01](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q01) 将平台接入和 Agent 会话/工作区组织分离，多个渠道共享附件和回复通路；工具、模型和附件存储仍由宿主提供。
 
-> **思考**：requireAllowlist 默认关闭、空名单放行，Agent 默认 danger-full-access；权限设置失败仍继续。这使远程聊天可能驱动宿主工具。详见[Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 默认允许空白名单并用 danger-full-access，设置更低权限失败仍继续。真实 bot 试用前要能核实平台 ID 和实际宿主工具边界。
 
-> **建议**：把白名单与最小权限设为默认 fail-closed，并验证各平台身份/附件/权限矩阵后再开放真实 bot；现版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q04)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 比较当前警告后继续与权限设置失败即停止的策略，观察错权限下的工具触发及正常任务完成率。若越界未减少或合法流程代价过高则放弃；未做实验。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-im/INSIGHT.md) · [返回表格](#category-index)
 
@@ -475,6 +493,22 @@
 > **建议**：未验证假设是用邮箱范围完整、原件保留与关键字段核对组成批次验收门槛，较成功数量能减少漏交付；固定真值对照漏票发现、人工时间和重试，若只增工时不降错误则推翻。[Q04](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1226490932-root"></a>
+
+## [LeLogin for DeepSeek Harness](../../plugins/zcmilan--lelogin-skill/INSIGHT.md)
+
+
+
+> **用途**：已授权 LeLogin 用户希望按账号运行本地凭据或 Web 应用流程。
+
+> **亮点**：把凭据引用与 Profile 选择写成宿主可发现的工作流，减少引导用户直接粘贴秘密的需求。[Q01](../../plugins/zcmilan--lelogin-skill/INSIGHT.md#research-q01) [Q02](../../plugins/zcmilan--lelogin-skill/INSIGHT.md#research-q02)
+
+> **思考**：注册器不强制批准或脱敏，真实数据边界取决于未核验的外部运行时和下游命令。[Q03](../../plugins/zcmilan--lelogin-skill/INSIGHT.md#research-q03)
+
+> **建议**：对比带非敏感目标预览和本地审计的方案，核错号率与泄漏。尚未验证。[Q04](../../plugins/zcmilan--lelogin-skill/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/zcmilan--lelogin-skill/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-306829688-root"></a>
 

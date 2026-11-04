@@ -1,0 +1,35 @@
+{
+    "repository": "sensedeal/cue-skills",
+    "repository_id": 1244140731,
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 6,
+    "pushed_at": "2026-11-04T06:48:26Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "@cueai/dsh-omni-reader-guard",
+        "captured_at": "2026-11-04T14:32:21.161Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 107,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40cueai%2Fdsh-omni-reader-guard",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-22T12:34:33.257Z",
+            "captured_at": "2026-11-04T14:32:21.161Z",
+            "source_url": "https://registry.npmjs.org/%40cueai%2Fdsh-omni-reader-guard",
+            "error": null,
+            "latest_version": "0.1.5",
+            "latest_published_at": "2026-09-04T12:12:07.511Z",
+            "latest_error": null
+        }
+    }
+}

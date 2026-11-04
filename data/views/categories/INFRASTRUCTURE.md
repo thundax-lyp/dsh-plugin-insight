@@ -20,6 +20,7 @@
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [ClawMetry](#plugin-1156882085-root) | 读取 Agent 会话与运行日志，统一展示时间轴、工具事件及可得用量的观测工具 | [Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 已有OpenClaw数据者可对照原JSONL条件试读；本目录DSH用途先观察，未核Pro适配前不采用其健康/控制判断。 |
+| [Cue Omni Reader Guard](#plugin-1244140731-dsh-cue-omni-reader-guard) | 在 DeepSeek Harness 调用 Omni Reader 解析前检查 URL、文件根与审批策略。 | [Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q03) 用隔离测试验证应用层门槛。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于插件组合提供 Agent 运行、工具调用、会话和交互的开源宿主。 | 适合有 Agent 扩展需求的开发者先在隔离 profile、固定模型和小任务上验收；服务缺失、非预期写入或重启不一致时停止并回到已知配置。 |
 | [DeepSeek Harness Channel BCN](#plugin-1290565606-apps-bcs-crates-plugins-deepseek-harness-channel-bcn) | 将 DeepSeek Harness Agent 接入 Avernet Bot Collaboration Network。 | [Q04](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q04) 先在受控服务和兼容宿主用低敏消息试通，并对照终态；异常时双方核查后再处理。 |
 | [DeepSeek Harness Studio](#plugin-1334747723-root) | 将 Harness 打包为桌面工作区，提供插件需求检索、确定版本安装和事务恢复界面。 | 首次要安装完整Studio、配置模型和选择profile，迁移既有插件时需记录原版本与数据；候选自然语言搜索另产生模型与npm网络成本。 |
@@ -93,13 +94,13 @@
 | [dsh-wsl-dns](#plugin-1351854118-root) | 提供 dns_doctor，对照 WSL 与 Windows 的 DNS IPv4 解析和 resolv.conf。 | [Q04](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q04) 观察并先补错误和预算，不以ok/mismatch自动修DNS；回原生查询核实。 |
 | [dsh-wsl-editor](#plugin-1351854212-root) | 在 Windows Cursor、VS Code 或 Notepad 中打开 WSL 路径并支持可选行列。 | [Q04](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q04) 显式绝对路径/可信样例试用，人工确认文档；取消或失败先核窗口再重试。 |
 | [dsh-wsl-eventlog](#plugin-1391143266-root) | 从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。 | 只作本机日志初筛；空结果和 full 消息需与事件查看器复核。 |
-| [dsh-wsl-fetch](#plugin-1362694736-root) | 为 DSH WSL 的官方 web_fetch 提供进程内 HTTP(S) 代理传输 provider。 | 可信代理与公开站点小范围试用；含敏感内网的环境先验证代理目的地址控制。 |
+| [dsh-wsl-fetch](#plugin-1362694736-root) | 让 WSL 中 DSH 的 web_fetch 通过 Windows HTTP 代理读取公开网页。 | 先用无敏感 URL 的公开文本页确认 provider 和结果。 |
 | [dsh-wsl-helm](#plugin-1381843528-root) | 将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。 | 建议观察，先用显式 context 的只读账号在测试集群对照原生 Helm；不要把 allowedContexts 或状态文本单独当自动决策依据。 |
 | [dsh-wsl-llamacpp](#plugin-1381832318-root) | 给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。 | 先核 /v1/models，再以固定 prompt 对照服务端原生结果与资源；不要只看 status.ok。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过本机 Himalaya 与 notmuch CLI 向 DSH 提供信封列表、未读概况和邮件搜索。 | 先核 mail_status 与未读语义，Himalaya fallback 仅视近期样本，敏感邮箱限制 Agent 访问。 |
 | [dsh-wsl-mnt](#plugin-1351854159-root) | 提供 mnt_doctor，按路径分类 Windows 挂载工作区并给出 Linux home 建议。 | [Q04](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q04) 显式path并核挂载/基准，不按ok自动迁移，冲突或误判回原检查。 |
 | [dsh-wsl-net](#plugin-1338965593-root) | 为 WSL 中的 DeepSeek Harness 诊断代理环境、宿主进程、端口监听与 HTTPS 可达性，并生成修复建议。 | [Q03](../../plugins/173787247--dsh-wsl-net/INSIGHT.md#research-q03) 个人无凭据测试环境先关闭注入并核对PID，只把报告作为排障线索。 |
-| [dsh-wsl-ollama](#plugin-1381724774-root) | 为 DSH 在 WSL 或本机调用现有 Ollama 守护进程提供状态、模型列表、聊天和嵌入工具。 | 仅在已确认 reachable、模型和地址的环境小范围试用；长 messages 与向量返回需核宿主负担。 |
+| [dsh-wsl-ollama](#plugin-1381724774-root) | 为 DSH 提供 Ollama 状态、模型列表、非流式对话和向量工具。 | 先固定可信本地地址，用短文本确认结果；路由或宿主数据范围不清时回本地 CLI。 |
 | [dsh-wsl-perf](#plugin-1391142601-root) | 从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。 | 低频初筛，0 值先核 CIM；CPU 热点另用实时进程采样。 |
 | [dsh-wsl-power](#plugin-1391140034-root) | 从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。 | 先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。 |
 | [dsh-wsl-rclone](#plugin-1381859181-root) | 把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。 | 只读凭据加显式 allowedRemotes，小路径先验；勿把 count 当总量或把 ok 当健康。 |
@@ -114,13 +115,13 @@
 | [dsh-wsl-winctl](#plugin-1391143632-root) | 从 WSL 枚举并控制 Windows 顶层窗口的 Agent 工具，支持窗口状态与多种变更动作。 | 先只读枚举，变更时提供 PID+标题并事后复核；close/topmost 需人类批准。 |
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。 | 只在隔离桌面试用，指定私有输出目录并手工核 PNG/残留；敏感窗口需额外授权。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
-| [DSHBox](#plugin-1336708336-root) | 在 Android 中集成 PRoot/Debian、Node 与 DSH 运行时、WebView、终端和文件工作区，并附浏览器与手机助手适配。 | 备用兼容设备测试资料先启动/文件/终端，再单核Browser/Pilot，不以数量代验收，见 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。 |
+| [DSHBox](#plugin-1336708336-root) | 在 Android 设备上运行 DeepSeek Harness，集成 Debian 环境、双渲染变体、终端和移动工具。 | 用测试机和非敏感工作区做一次本地会话及重启恢复，保持开发者通道关闭。 |
 | [EchoBird](#plugin-1158472225-root) | 桌面 AI 工具管理应用，提供模型配置、账号管理和本地多候选路由。 | [Q05](../../plugins/edison7009--echobird/INSIGHT.md#research-q05) 在独立配置使用受控任务比较直连，数据或续接边界不清时回退。 |
 | [Engramory DSH 适配目录](#plugin-1268424426-adapters-dsh) | Engramory 仓库中存放 DeepSeek Harness 插件实现的适配器分组目录。 | [Q02](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md#research-q02)仅observe资源导航，运行需求直接转固定plugin子包；不要把根和容器重复安装或把一份运行贡献计三次。 |
-| [Enterprise Connection](#plugin-1363739656-packages-enterprise-connection) | 以固定版本捆绑企业身份与协作依赖的 WorkDSH 安装壳，安装代码后仍须后台验证企业账号权限。 | 观察为主，已有公司测试后台和对应Desktop才验证包与账号全链；不把它推荐为独立通用企业插件，见 [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03)。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
 | [HOL Guard](#plugin-1194748811-root) | 为 Agent 动作提供策略审查、审批、扫描和证据入口。 | [Q04](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q04) 隔离验证实际钩子，不能以静态扫描代替执行覆盖。 |
 | [K8E](#plugin-292529340-root) | 自托管 AI Agent 沙箱平台，提供会话、执行、文件与 DSH 接入 | [Q05](../../plugins/xiaods--k8e/INSIGHT.md#research-q05) 建议已有运维条件的团队以独立 profile 试用读写、断连和销毁；发生本机误写、串扰或残留会话则停止并退回 CLI。 |
+| [Local Shell MCP for DSH](#plugin-1249040497-root) | 将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。 | [Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 先检查隔离会话归属与远端认证，再决定是否引入工具。 |
 | [mem9](#plugin-1175756746-root) | 为 AI Agent 提供跨会话、跨设备的持久共享记忆和检索。 | [Q05](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q05) 先关闭自动写入，在隔离空间用合成事实验证读取、更正和删除；数据授权或传播不明时回本地笔记。 |
 | [Mirage](#plugin-1231135337-root) | 用虚拟文件系统、命令及运行时为 Agent 组合统一终端。 | 先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
@@ -137,9 +138,11 @@
 | [SeekTTY](#plugin-1334096871-root) | 复用DeepSeek Harness原生服务的终端工作区，提供会话、设置及审批交互。 | [Q03](../../plugins/hilbert-beinghappy--seektty/INSIGHT.md#research-q03)复制profile固定Host/spec并禁自动更新，先核审批/恢复/退出，失败退原入口。 |
 | [SkillCorpus](#plugin-1330431542-root) | 聚合、筛选和评估技能语料，并按任务从本地与远端来源检索技能，供不同 Agent 宿主使用。 | [Q03](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q03) 先限定本地审核目录，关闭远端与共享，用少量可独立验收任务比较固定目录。 |
 | [Tingly Box](#plugin-1100971867-root) | 统一模型网关，为客户端与团队提供协议入口、路由和管理能力。 | [Q05](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q05) 在隔离本机先测单客户端与失败路径；不满足身份、预算或恢复条件时退回原端点。 |
+| [Token Bank](#plugin-1233571420-root) | 独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。 | 只用模拟上游和临时配置检验接管、失败与退出，不能确认恢复就保留直连。 |
 | [TokenLedger](#plugin-1333969047-root) | 从 DSH 会话日志聚合 Token 用量，按路由、模型和项目展示，并提供费用估算与可选账户余额查询。 | [Q03](../../plugins/zh667--tokenledger/INSIGHT.md#research-q03) 先用副本日志核usage与归因，读failed/未知/未定价。 |
 | [Treg](#plugin-1301657572-root) | 为 Agent 提供工具目录、凭据注入代理和调用计费。 | 选择受控只读任务、核对账单及费用上限，异常时撤销 token 并回退直连。 |
 | [Usage Billing](#plugin-1363429979-plugin-usage-billing) | 从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。 | 先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。 |
+| [WorkDSH 企业连接](#plugin-1363739656-packages-enterprise-connection) | 从个人空间安装管理员归档后连接 WorkDSH 企业账号与协作。 | [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03) 有匹配 Desktop 与测试后台才验证归档、身份和退出；任一边界未确认即暂停分发并退回个人空间。 |
 | [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
 | [元冰可](#plugin-1416699252-root) | 企业AI资源治理平台，管理身份、MCP/Agent等资产，提供受控调用、模型接入、计量审计与控制台。 | 观察，先有真实匿名案件与平台/恢复责任人，再做一个资源的小样；无账实一致、结果恢复及净维护收益就不扩域，详见[Q06](../../plugins/01men--ybkkasi/INSIGHT.md#research-q06)。 |
 
@@ -270,6 +273,22 @@
 > **建议**：[Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 推导每个指标携带来源/覆盖/启用/错误合同的未验证改进，以盲区误判和定位时间检验，噪声或成本抵消收益则推翻。
 
 [查看完整分析](../../plugins/vivekchand--clawmetry/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1244140731-dsh-cue-omni-reader-guard"></a>
+
+## [Cue Omni Reader Guard](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sensedeal/cue-skills) [![npm 30d 107](https://img.shields.io/static/v1?label=npm+30d&message=107&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cueai/dsh-omni-reader-guard) [![最新发布 2026-09-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cueai/dsh-omni-reader-guard)
+
+> **用途**：维护 Omni Reader 的 DSH 管理员希望对模型解析调用实施可配置入口策略。
+
+> **亮点**：[Q01](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q01) 把 URL 和本地源策略移入模型工具调用前，提供可配置的默认拒绝。
+
+> **思考**：[Q02](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q02) 仅检查主机字符串和词法路径，另有 IPv6、通配域及根目录语义缺口。
+
+> **建议**：[Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q03) 对照 Guard 和下游目的地复核，测越界和误拒绝，效果不改善即退出。
+
+[查看完整分析](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333065091-root"></a>
 
@@ -1445,13 +1464,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-fetch)
 
-> **用途**：WSL 中官方 web_fetch 直连失败而 Windows HTTP 代理可用的公开网页抓取。详见[Q01](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q01)。
+> **用途**：适合已有可用代理、但原 web_fetch 直连公开站点失败的 WSL 用户。
 
-> **亮点**：将代理放入官方 web_fetch 进程内调用链，并在无代理/已有其他 provider 时避免强行覆盖。详见[Q01](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q01)。
+> **亮点**：保留原 web_fetch 工具调用，在宿主 provider 层将 GET 转给已配置代理，用户无需改用 shell 抓取。[Q01](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q01) [Q02](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q02)
 
-> **思考**：公有域名解析到私网的路径不受此插件代码校验，普通 sleep 不响应 deadline；宿主与代理外层控制未知。详见[Q03](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q03)和[Q04](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q04)。
+> **思考**：私网过滤只检查 URL 字面值，代理如何解析与连接需要独立验证。已保留自定义 provider 时，提示文本也可能误报路线。[Q02](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q02) [Q03](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q03)
 
-> **建议**：未验证改进是代理最终目的地约束、可中止退避、配置上限和受控站点效果测量。详见[Q05](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q05)。
+> **建议**：代理侧核查最终连接并给操作者提供明确选用与拒绝信息，对照公开网页通过率和私网访问结果。假设未验证。[Q04](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-fetch/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1541,13 +1560,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-ollama)
 
-> **用途**：已有 Ollama 模型的本机/WSL 辅助调用；不是 DSH 主模型提供器。详见[Q01](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q01)。
+> **用途**：在保留当前 DSH 主模型的同时，按需请求已安装的 Ollama 模型。
 
-> **亮点**：简化 Agent 对本地 Ollama 模型的自查、聊天与向量获取。详见[Q01](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q01)。
+> **亮点**：让会话按需调用本地模型而无需切换主 provider；工具分别暴露探测、生成与向量结果。[Q01](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q01) [Q02](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q02)
 
-> **思考**：只看 status.ok 会误判连通；maxPromptChars 不限制 messages 分支，且 baseUrl 并非保证本地。详见[Q03](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q03)和[Q04](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q04)。
+> **思考**：WSL 默认地址是启发式，实际请求可走配置的非本地端点；主会话也仍可能使用云模型。[Q01](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q01) [Q03](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q03)
 
-> **建议**：未验证改进为统一 reachable/ok、传播取消、限所有消息/向量长度及展示地址边界。详见[Q05](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q05)。
+> **建议**：让操作者确认实际选路，并在多种 WSL 网络模式中对照错连率和首次响应。未验证。[Q04](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-ollama/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1779,15 +1798,15 @@
 
 ## [DSHBox](../../plugins/wsk-build--dshbox/INSIGHT.md)
 
-[![GitHub ★ 351](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=351&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/WSK-build/DSHBox)
+[![GitHub ★ 511](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=511&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/WSK-build/DSHBox)
 
-> **用途**：希望手机使用DSH、避免手搭Termux环境的Android用户；本地DSH不等本地模型推理，见 [Q01](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q01)。
+> **用途**：远离工作站但需要继续 DSH 会话的 Android 用户，可以把宿主进程和工作目录放在设备上。
 
-> **亮点**：集成启动、当前token刷新、分层数据和移动交互，减少环境拼接，见 [Q01](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q01)。
+> **亮点**：把 Android 渲染与 Debian DSH 启动接在同一客户端，并在特定文件系统拒绝时通过不覆盖复制适配异步硬链接调用。见 [Q01](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q01)、[Q02](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q02)。
 
-> **思考**：PRoot/共享与Android授权非安全VM，自动化全执行链未穷核，后台/更新和真实数据恢复未验，见 [Q02](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q02) 与 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。
+> **思考**：本地运行与额外隔离、离线模型和真实恢复是独立条件。文件复制不保留共享 inode，开发者通道也有独立权限边界。见 [Q02](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q02)、[Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。
 
-> **建议**：分层健康+可恢复任务检查点，对照手搭测休眠/升级/撤权后资料与任务恢复，未实现，见 [Q03](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q03)。
+> **建议**：在远程宿主断开而模型仍可用的条件下，对照本机运行与远端 Web 的会话恢复和文件完整性。见 [Q04](../../plugins/wsk-build--dshbox/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/wsk-build--dshbox/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1822,22 +1841,6 @@
 > **建议**：[Q04](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md#research-q04)明确分组标记与唯一安装导航可能减少误装／重复计数；陌生用户任务比较错误与查找时间，无改善则否定。未实施不计当前贡献。
 
 [查看完整分析](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1363739656-packages-enterprise-connection"></a>
-
-## [Enterprise Connection](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md)
-
-[![GitHub ★ 274](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=274&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/techflag/workdsh)
-
-> **用途**：公司管理员给匹配WorkDSH Desktop用户分发企业代码，再连接账号；不是给任意DSH用户即装即用的企业后台，见 [Q01](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q01)。
-
-> **亮点**：固定依赖集合、可追commit/sha256的pack清单和复用身份客户端构成有限分发贡献；核心身份/协作归其他包和后台，不计整仓能力，见 [Q01](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q01)。
-
-> **思考**：源码缺浏览器出口但有明确生成链，不能判空占位也不能判成品可用；安装代码不等授权，装配不复制个人profile也不等登录后企业正文不上传，见 [Q01](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q01) 与 [Q02](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q02)。
-
-> **建议**：未形成独立产品方向；可验证交付/身份/资源/正文各状态的验收收据能否减少安装即授权误判，依赖现有manifest与状态而未实现，见 [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03)。
-
-[查看完整分析](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1364766828-root"></a>
 
@@ -1886,6 +1889,22 @@
 > **建议**：[Q05](../../plugins/xiaods--k8e/INSIGHT.md#research-q05) 提出未验证的位置与会话归属可见性假设；同任务比较错误归属、人工核对和残留资源，若不改善则推翻。
 
 [查看完整分析](../../plugins/xiaods--k8e/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1249040497-root"></a>
+
+## [Local Shell MCP for DSH](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md)
+
+[![GitHub ★ 106](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=106&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fwerkor/local-shell-mcp) [![npm 30d 1,446](https://img.shields.io/static/v1?label=npm+30d&message=1%2C446&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/local-shell-mcp-dsh) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/local-shell-mcp-dsh)
+
+> **用途**：维护多个 DSH 会话的操作者希望使用已部署的 LSM 执行环境并查看活动。
+
+> **亮点**：[Q01](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q01) 将执行连接和工作区按会话组织，减少从 DSH 找到运行记录的跳转。
+
+> **思考**：[Q02](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q02) 亲和头与格式检查不等于访问控制。凭据路由、共享 fallback 和首次并发需独立验证。
+
+> **建议**：[Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 对照通用 bridge 测重连找回与跨会话串线；没有改善则退出。
+
+[查看完整分析](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1175756746-root"></a>
 
@@ -2143,6 +2162,22 @@
 
 [查看完整分析](../../plugins/tingly-dev--tingly-box/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1233571420-root"></a>
+
+## [Token Bank](../../plugins/wink-run--tokenbank/INSIGHT.md)
+
+[![GitHub ★ 111](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=111&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wink-run/tokenbank)
+
+> **用途**：使用多个模型来源的开发者可以通过一个网关管理 DSH 接入与候选切换。
+
+> **亮点**：把源级冷却与候选切换集中于独立网关，让上游拒绝可在链内处理。见 [Q01](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q01)、[Q02](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q02)。
+
+> **思考**：接管会重写 YAML。解析异常退空和流式开始后难重试是实际边界。见 [Q02](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q02)、[Q03](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q03)。
+
+> **建议**：将首字节前后故障分开，对照网关和直连的完成率、流语义和回退。见 [Q04](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/wink-run--tokenbank/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333969047-root"></a>
 
 ## [TokenLedger](../../plugins/zh667--tokenledger/INSIGHT.md)
@@ -2190,6 +2225,22 @@
 > **建议**：提供商计量/合同/FX的不可变行收据，普通重折保旧、重估显式修订，以新夹具和授权对账证伪，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。
 
 [查看完整分析](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1363739656-packages-enterprise-connection"></a>
+
+## [WorkDSH 企业连接](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md)
+
+[![GitHub ★ 302](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=302&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/techflag/workdsh)
+
+> **用途**：管理员向已有 WorkDSH Desktop 的组织成员分发一个企业归档，成员通过个人空间安装后从设置连接企业账号。
+
+> **亮点**：[Q01](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q01) 把两个固定依赖和身份客户端装入单个管理员交付物，保留可比对的工件清单。账号认证和协作业务分别由依赖及 Desktop 与后台完成。
+
+> **思考**：[Q02](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q02) 固定版本下的精确 peer 和 Desktop 导出要求可能在部署中阻止企业激活；安装不能当成授权，也不能据此宣称企业数据和个人数据已实证隔离。
+
+> **建议**：[Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03) 可试验在企业接入流程独立显示归档核验、成员核验和退出撤销状态。若误判和二次核对均未减少，放弃扩展；目前只有源码推导。
+
+[查看完整分析](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-403559729-root"></a>
 

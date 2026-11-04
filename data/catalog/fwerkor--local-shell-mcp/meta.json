@@ -1,0 +1,56 @@
+{
+    "repository": "fwerkor/local-shell-mcp",
+    "repository_id": 1249040497,
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 106,
+    "pushed_at": "2026-11-04T14:32:52Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Afwerkor%2Flocal-shell-mcp%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5846:165625:F4BEA4:31CA70F:6AEB42F7 and timestamp 2026-11-04 14:36:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Afwerkor%2Flocal-shell-mcp%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 586E:3DDF99:FE4349:34C8A95:6AEB42F9 and timestamp 2026-11-04 14:36:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afwerkor%2Flocal-shell-mcp%20is%3Aissue%20created%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 58A4:32BF78:E1B4B2:2E345B3:6AEB42FA and timestamp 2026-11-04 14:36:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afwerkor%2Flocal-shell-mcp%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5928:2E0ECF:E8C63A:2F8425F:6AEB42FD and timestamp 2026-11-04 14:36:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afwerkor%2Flocal-shell-mcp%20is%3Aissue%20updated%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 598A:39876D:DEBB2E:2D7C79D:6AEB4300 and timestamp 2026-11-04 14:36:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "local-shell-mcp-dsh",
+        "captured_at": "2026-11-04T14:32:21.161Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1446,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/local-shell-mcp-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-06T09:49:24.204Z",
+            "captured_at": "2026-11-04T14:32:21.161Z",
+            "source_url": "https://registry.npmjs.org/local-shell-mcp-dsh",
+            "error": null,
+            "latest_version": "5.1.4",
+            "latest_published_at": "2026-10-17T08:03:32.887Z",
+            "latest_error": null
+        }
+    }
+}

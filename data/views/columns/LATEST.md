@@ -14,6 +14,7 @@
 | --- | --- | --- | --- |
 | [DSH Lighthouse](#plugin-1422364992-root) | 汇总作品的本地、GitHub、市场与 npm 状态，并生成观察面板和报告。 | 0.3.4 | [2026&#8288;-&#8288;11&#8288;-&#8288;04](https://www.npmjs.com/package/dsh-lighthouse) |
 | [DSH Memory Tiers Core](#plugin-1189267013-core) | 为 DSH 提供本地分层记忆、检索、上下文注入和历史替代。 | 1.2.2 | [2026&#8288;-&#8288;11&#8288;-&#8288;03](https://www.npmjs.com/package/dsh-memory-tiers) |
+| [dsh-cgss-idol-theme](#plugin-1335281982-root) | CGSS 多角色 Web 主题，提供角色配色、卡面、沉浸阅读和 Windows 桌宠会话提醒。 | 1.3.4 | [2026&#8288;-&#8288;11&#8288;-&#8288;03](https://www.npmjs.com/package/dsh-cgss-idol-theme) |
 | [@mstar-harness/dsh](#plugin-1174622182-packages-dsh) | 将 Morning Star 工作流门禁、命令和面板接入 DeepSeek Harness。 | 4.1.6 | [2026&#8288;-&#8288;11&#8288;-&#8288;03](https://www.npmjs.com/package/@mstar-harness/dsh) |
 | [dsh-trellis](#plugin-1335559646-root) | 为 DSH 提供任务阶段、步骤状态、会话提示与可选规划期工具过滤。 | 0.5.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;03](https://www.npmjs.com/package/@banana-peeljj12/dsh-trellis) |
 | [dsh-snapshot-manager](#plugin-1412896722-root) | 按会话轮次采集工作区快照，并提供文件恢复和对话回退入口。 | 0.3.3 | [2026&#8288;-&#8288;11&#8288;-&#8288;03](https://www.npmjs.com/package/dsh-snapshot-manager) |
@@ -44,6 +45,7 @@
 | [刷B站（dsh-bili-scroll）](#plugin-1418639621-root) | 按兴趣筛选 B站内容并生成日报或提醒。 | 2.4.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/dsh-bili-scroll) |
 | [dsh-damage-pulse](#plugin-1336614837-root) | 为 DeepSeek Harness 提供用量、费用与余额监控，并以鲸鱼娘动画反馈 Token 消耗。 | 4.3.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/dsh-damage-pulse) |
 | [DSH Plugin Manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页面检查更新与兼容声明，并提供更新和重启入口。 | 0.4.13 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/@linxin666/dsh-client-ui-plugin-manager) |
+| [Stock Analysis Plugin](#plugin-1238532570-root) | 多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。 | 0.2.10 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/@weaxs/stock-analysis-plugin) |
 | [dsh-remote](#plugin-1333787962-root) | 通过 SSH 连接远程主机，在 DSH 会话中绑定远程工作区并提供文件、命令、镜像同步与隧道操作。 | 0.8.67 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/dsh-remote) |
 | [dsh-wsl-workspace](#plugin-1334205011-root) | 在 DeepSeek Harness 中使用本机 WSL 发行版工作区。 | 0.7.12 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/dsh-wsl-workspace) |
 | [DSH Plugins Marketplace](#plugin-1333295863-root) | 在 DSH 设置页浏览第三方插件与 Skill 索引，识别安装形态并组织材料、确认、安装和版本状态。 | 0.5.7 | [2026&#8288;-&#8288;10&#8288;-&#8288;31](https://www.npmjs.com/package/dsh-plugin-marketplace) |
@@ -89,11 +91,13 @@
 | [MemOS Local Plugin](#plugin-1014729376-apps-memos-local-plugin) | 为 Agent 提供本地分层记忆、召回和反馈的多宿主插件。 | 2.0.21 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@memtensor/memos-local-plugin) |
 | [Argo](#plugin-1304997851-root) | 为 Agent 提供多源搜索、网页取证和本地资料检索，并以 CLI、Skill 与 MCP 接口交付结果。 | 2.10.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/argo-search) |
 | [Argo DSH](#plugin-1304997851-packages-dsh-plugin) | 把 Argo 检索、抓取、原生 Web provider 和多轨道研究编排接入 DSH。 | 2.10.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@taxueseek/argo-dsh) |
+| [RainSkills](#plugin-1237266636-root) | 在多种 Agent 中提供 Rainbond 部署、排障与交付验证流程，DSH 包注册引导 Skill。 | 0.1.50 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/rainskills) |
 | [DSH Computer Use](#plugin-1333116579-root) | 为 DSH 提供面向应用的桌面观察与操作工具。 | 0.3.7 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@anionex/dsh-computer-use) |
 | [DSH 大肥鱼桌面伴侣](#plugin-1333755311-root) | 以常驻角色展示 DSH 会话阶段、等待与错误。 | 0.1.23 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/dsh-dafeiyu) |
 | [DSH 订阅模型适配插件](#plugin-1333964468-root) | 将多个订阅 provider 的账号与可选候选池接入 DSH。 | 0.9.12 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/dsh-plugin-subscriptions) |
 | [DSH Cost Meter](#plugin-1333235870-root) | 统计 DSH 会话模型用量及估算费用，并提供预算、历史与额度信息。 | 1.9.46 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/dsh-cost-meter) |
 | [dsh-soul](#plugin-1352089397-root) | 管理DSH人格、用户资料、预设和三级配置覆盖，提供确认与历史观测，目标回合生效仍需核验。 | 0.9.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/dsh-soul) |
+| [Cue Omni Reader](#plugin-1244140731-dsh-cue-omni-reader) | 将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。 | 0.1.17 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@cueai/dsh-omni-reader) |
 | [feiyu-memory](#plugin-1415822787-root) | 为个人陪伴保存事件日记，以摘要、近期提示和主动召回延续叙事记忆。 | 4.0.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/feiyu-memory) |
 | [DSH SSH](#plugin-1331636953-packages-dsh-ssh) | 在 DSH 中管理 SSH 主机，并提供远端命令、终端、文件传输与隧道。 | 0.4.12 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@linxin666/dsh-ssh) |
 | [DSH Remote Web UI](#plugin-1331636953-packages-dsh-remote-web-ui) | 通过设备配对为 DSH Web 界面提供手机和电脑远程访问，并支持网络入口管理。 | 0.4.12 | [2026&#8288;-&#8288;10&#8288;-&#8288;29](https://www.npmjs.com/package/@linxin666/dsh-remote-web-ui) |
@@ -222,6 +226,7 @@
 | [dsh-plugin-veriscope](#plugin-1422943787-root) | 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。 | 0.6.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;18](https://www.npmjs.com/package/dsh-plugin-veriscope) |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 0.1.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;17](https://www.npmjs.com/package/@vfvrpq/dsh-search) |
 | [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | 2.12.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;17](https://www.npmjs.com/package/dsh-pocket) |
+| [Local Shell MCP for DSH](#plugin-1249040497-root) | 将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。 | 5.1.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;17](https://www.npmjs.com/package/local-shell-mcp-dsh) |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | 0.7.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;16](https://www.npmjs.com/package/dsh-ui-auth) |
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | 0.1.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;16](https://www.npmjs.com/package/@agentscope-ai/reme-dsh-plugin) |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 0.4.3 | [2026&#8288;-&#8288;10&#8288;-&#8288;16](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) |
@@ -296,6 +301,24 @@
 **使用条件**：[Q04](../../plugins/1129742588--dsh-memory-tiers--core/INSIGHT.md#research-q04) 建议先在隔离 profile 关闭历史替代并验证非敏感样本；缺关键事实或不能恢复原历史时保持宿主历史。
 
 [查看完整分析 →](../../plugins/1129742588--dsh-memory-tiers--core/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1335281982-root"></a>
+
+## [dsh-cgss-idol-theme](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md)
+
+[![npm 30d 807](https://img.shields.io/static/v1?label=npm+30d&message=807&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cgss-idol-theme) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cgss-idol-theme)
+
+**主要用途**：CGSS 多角色 Web 主题，提供角色配色、卡面、沉浸阅读和 Windows 桌宠会话提醒。
+
+**最新发布**：[1.3.4 · 2026-11-03（北京时间）](https://www.npmjs.com/package/dsh-cgss-idol-theme)。
+
+**源码版本**：[5813a4c8](https://github.com/AlyceStocking/dsh-cgss-idol-theme/commit/5813a4c84e53fd028dfa56d5c462515ec5a6d974)（与该发布版本的对应关系未核实）。
+
+**使用条件**：用隔离 Web Profile 先看浅深色对话和退出；桌宠只在匿名会话试待答、待批和回跳。错跳、外部素材不适合或标题不应置顶时，关闭对应组件。[Q04](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q04) [Q05](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q05)
+
+[查看完整分析 →](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -836,6 +859,24 @@
 **使用条件**：熟悉 profile 的维护者先在备份过的可弃置环境试更新一个可信非关键包；版本、目标或恢复不明时停下并人工核对，再用官方固定版本命令和回归。[Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md#research-q04)
 
 [查看完整分析 →](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1238532570-root"></a>
+
+## [Stock Analysis Plugin](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md)
+
+[![GitHub ★ 37](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=37&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Weaxs/stock-analysis-plugin) [![npm 30d 1,631](https://img.shields.io/static/v1?label=npm+30d&message=1%2C631&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@weaxs/stock-analysis-plugin) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@weaxs/stock-analysis-plugin)
+
+**主要用途**：多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。
+
+**最新发布**：[0.2.10 · 2026-10-31（北京时间）](https://www.npmjs.com/package/@weaxs/stock-analysis-plugin)。
+
+**源码版本**：[4aeb5e89](https://github.com/Weaxs/stock-analysis-plugin/commit/4aeb5e8993c3f51eac18ffcc6c5fd53bb86f258d)（与该发布版本的对应关系未核实）。
+
+**使用条件**：只在隔离 Profile 用已许可的固定样本核对复盘。结果不可复现就回到手工记录。见 [Q03](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md#research-q03)。
+
+[查看完整分析 →](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1649,6 +1690,24 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1237266636-root"></a>
+
+## [RainSkills](../../plugins/goodrain--rainskills/INSIGHT.md)
+
+[![GitHub ★ 12](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/goodrain/rainskills) [![npm 30d 2,378](https://img.shields.io/static/v1?label=npm+30d&message=2%2C378&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rainskills) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rainskills)
+
+**主要用途**：在多种 Agent 中提供 Rainbond 部署、排障与交付验证流程，DSH 包注册引导 Skill。
+
+**最新发布**：[0.1.50 · 2026-10-29（北京时间）](https://www.npmjs.com/package/rainskills)。
+
+**源码版本**：[d670ec14](https://github.com/goodrain/rainskills/commit/d670ec145d39019939eec305dddeedf8380f2ed5)（与该发布版本的对应关系未核实）。
+
+**使用条件**：仅在测试租户验证一个应用，先回读权限，未知写入先查询，最后检查目标 API。见 [Q03](../../plugins/goodrain--rainskills/INSIGHT.md#research-q03)。
+
+[查看完整分析 →](../../plugins/goodrain--rainskills/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1333116579-root"></a>
 
 ## [DSH Computer Use](../../plugins/anionex--dsh-computer-use/INSIGHT.md)
@@ -1736,6 +1795,24 @@
 **使用条件**：[Q04](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q04) 先观察，隔离单会话核实际提示再扩；错范围/跨会话确认或送达不明停用，备份后回原生提示，新会话核验。
 
 [查看完整分析 →](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1244140731-dsh-cue-omni-reader"></a>
+
+## [Cue Omni Reader](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader/INSIGHT.md)
+
+[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sensedeal/cue-skills) [![npm 30d 1,204](https://img.shields.io/static/v1?label=npm+30d&message=1%2C204&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cueai/dsh-omni-reader) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@cueai/dsh-omni-reader)
+
+**主要用途**：将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。
+
+**最新发布**：[0.1.17 · 2026-10-29（北京时间）](https://www.npmjs.com/package/@cueai/dsh-omni-reader)。
+
+**源码版本**：[0e6b629e](https://github.com/sensedeal/cue-skills/commit/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader/INSIGHT.md#research-q03) 只有具备隔离 key、已核外部包和非敏感样本，才进一步验证。
+
+[查看完整分析 →](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -4040,6 +4117,24 @@
 **使用条件**：[Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。不要把共享PIN当只读委派；需要公网时另验认证/网络/恢复边界。意外权限、无法关闭或不需要常驻管理时，停止代理并回电脑原界面。
 
 [查看完整分析 →](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1249040497-root"></a>
+
+## [Local Shell MCP for DSH](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md)
+
+[![GitHub ★ 106](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=106&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fwerkor/local-shell-mcp) [![npm 30d 1,446](https://img.shields.io/static/v1?label=npm+30d&message=1%2C446&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/local-shell-mcp-dsh) [![最新发布 2026-10-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/local-shell-mcp-dsh)
+
+**主要用途**：将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。
+
+**最新发布**：[5.1.4 · 2026-10-17（北京时间）](https://www.npmjs.com/package/local-shell-mcp-dsh)。
+
+**源码版本**：[cd29a63d](https://github.com/fwerkor/local-shell-mcp/commit/cd29a63d15826b17edfd55352e5237e0612a3fb8)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 先检查隔离会话归属与远端认证，再决定是否引入工具。
+
+[查看完整分析 →](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md)
 
 [返回表格](#column-index)
 

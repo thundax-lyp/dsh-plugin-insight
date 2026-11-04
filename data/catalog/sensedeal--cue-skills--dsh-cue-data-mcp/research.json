@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "6e44773aaae79f919240b81bf806a276",
+    "identity": "github:1244140731:dsh-cue-data-mcp",
+    "slug": "sensedeal--cue-skills--dsh-cue-data-mcp",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1244140731:dsh-cue-data-mcp",
+            "repository_id": 1244140731,
+            "component_id": "dsh-cue-data-mcp",
+            "repository": "sensedeal/cue-skills",
+            "path": "dsh/cue-data-mcp",
+            "aliases": [],
+            "name": "Cue Data MCP",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "14adbb0e7d7e11fa576ce4c5a4b5fce7c64ac0fa56ffb4b7ac5252f7f1dd0c34",
+                "code": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "maintenance": "4f144d4c49c948c9ede1d642e3479ec75bb6a197f4974758f081fe4d2de2ccae"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T15:06:11.015Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-data-mcp/README.md",
+                            "content_sha256": "43344468db22fc567229bcddee9bb02764a0892d98090353d3a7ddae475c61ef"
+                        }
+                    ],
+                    "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                    "captured_at": "2026-11-04T15:06:11.015Z",
+                    "summary": "把 Cue 监管、宏观、披露等公开数据 MCP 域接入 DSH。",
+                    "artifact": "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-data-mcp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-data-mcp/README.zh-CN.md",
+                            "content_sha256": "5e15a479ca8089473c76f8dee258faea4860215a95048d3bfd5a81edab8a798b"
+                        },
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-data-mcp/package.json",
+                            "content_sha256": "ec4b1d810a622547f53795d9832f0daadb26440db752e2ce201c5242f25bb7a4"
+                        },
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-data-mcp/cordis.patch.yml",
+                            "content_sha256": "63ac112962e8d44c8cf81613523387dadcf88ea97f7132db3d99e0302cab1943"
+                        }
+                    ],
+                    "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                    "captured_at": "2026-11-04T15:06:11.015Z",
+                    "summary": "核查 dsh/cue-data-mcp/README.zh-CN.md、dsh/cue-data-mcp/package.json、dsh/cue-data-mcp/cordis.patch.yml；Cordis 补丁为不同域创建 15 个固定 HTTPS streamable-http 客户端行。",
+                    "artifact": "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-data-mcp/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读指定子包全部跟踪文件，未运行 MCP 客户端、查询或核 npm。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在 DSH 中反复查多个 Cue 数据域的研究者需要统一入口。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Cordis 补丁为不同域创建 15 个固定 HTTPS streamable-http 客户端行。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读指定子包全部跟踪文件，未运行 MCP 客户端、查询或核 npm。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "@cueai/dsh-cue-data-mcp 0.1.3 manifest，Node 20.12+，实际发布未查。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| dsh-mcp-client ^0.1.1-rc.2 | 必需 | 挂载传输和工具 | 检查 profile peer |\n| Cue key 与网络 | 必需 | 查询远端 | 保留手工渠道 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 额度未核 | 配置 key 和 profile | 仅测试少量工具 |\n| 持续 | 查询和模型费用未知 | 维护密钥和工具差异 | 依赖远端 |\n| 失败 | 重试费用未知 | 查配置与远端拒绝 | 优先避免盲重试 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 用隔离 profile 对照工具发现与授权的小查询，身份或费用不明即退回人工。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多域统一 | 固定 MCP 行 | 真实工具与覆盖 |\n| 查询复用 | 宿主工具命名 | 实际节时与时效 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "固定出站服务地址使配置可检查；接线层不校验数据结果。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 一次组合多域和一致工具命名，复用宿主传输与发现。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 15 行只证明静态接入，远端工具、权限和数据新鲜度仍需检查。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 在隔离环境测工具清单差异检查能否较早发现远端漂移。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:06:11.015Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T15:06:11.015Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "reviewed_at": "2026-11-04T15:06:11.015Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                        "area": "code",
+                        "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 对比手写配置，novelty 9 和 mechanism 8 为现成 client 的组合，缺自定义传输；transferability 5 因可仿配但域绑定供应商；simplification 8 因 15 行减少重复，凭据和远端限制仍在，未到75%。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 与 [Q03](#research-q03) 对比手工逐域，workflow 9 因局部便捷，delivery 8 因统一工具而结果仍来自 Cue，reach 5 因面向既有 DSH 用户，economics 4 因少配但额度未知，未达相邻高档。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要在 DSH 查多个 Cue 数据域的研究者可先检查隔离配置并试用一条公开数据查询。相比逐域手写连接，bundle 提供统一的域命名和现成端点。若实际工具、凭据权限或请求费用无法核对，应移除 bundle 并回到手工查源。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 5–14 与 patch 支持多域重复任务，超8；使用频率未知，低于23。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) patch 6–33、106–141 预配多域超6分入口；单域手配足够，低于19。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) manifest 12–18 和 patch 6–24 支持完整配置与依赖，超6分；未运行，低于19。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) README 45–48 有移除办法，超5；额度及失败处置未经验证，低于15。"
+                    }
+                },
+                "score": 51,
+                "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "reviewed_at": "2026-11-04T15:06:11.015Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-04-github-1244140731-dsh-cue-data-mcp-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1244140731:dsh-cue-data-mcp",
+                        "area": "code",
+                        "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1244140731:dsh-cue-data-mcp",
+            "repository": "sensedeal/cue-skills",
+            "path": "dsh/cue-data-mcp",
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "fingerprints": {
+                "directory": "14adbb0e7d7e11fa576ce4c5a4b5fce7c64ac0fa56ffb4b7ac5252f7f1dd0c34",
+                "code": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "maintenance": "4f144d4c49c948c9ede1d642e3479ec75bb6a197f4974758f081fe4d2de2ccae"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T14:25:57.000Z",
+            "analysis_sha256": "bf57366cb695b6373f3c800e62765930d22c90ebf480d0360c1059ca65e4d112"
+        },
+        "publication.metadata": "data/catalog/sensedeal--cue-skills--dsh-cue-data-mcp/meta.json",
+        "publication.summaries": {
+            "text": "把 Cue 监管、宏观、披露等公开数据 MCP 域接入 DSH。",
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "source_url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "items": {
+                "模型工具": "向宿主提供 Cue 多个公开数据域的 MCP 客户端配置。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 多域 MCP | 接入监管与宏观等数据 | 工具能力取决于远端 |\n| 固定端点 | 约束配置中的网络地址 | 未核远端调用实现 |"
+        },
+        "publication.advice": {
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "text": "[Q03](#research-q03) 用隔离 profile 对照工具发现与授权的小查询，身份或费用不明即退回人工。"
+        },
+        "registry": "data/plugins/sensedeal--cue-skills--dsh-cue-data-mcp",
+        "reports": "# Cue Data MCP\n\n> 把 Cue 监管、宏观、披露等公开数据 MCP 域接入 DSH。\n\n## 研究范围\n\n- **仓库**：[sensedeal/cue-skills](https://github.com/sensedeal/cue-skills)\n- **版本号**：0.1.3（[固定提交 0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107](https://github.com/sensedeal/cue-skills/tree/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107)）\n- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定补丁和 manifest 可核。远端数据和费用未验证。\n\n## 洞察短评\n\n- **用途**：在 DSH 中反复查多个 Cue 数据域的研究者需要统一入口。\n- **亮点**：[Q01](#research-q01) 一次组合多域和一致工具命名，复用宿主传输与发现。\n- **思考**：[Q02](#research-q02) 15 行只证明静态接入，远端工具、权限和数据新鲜度仍需检查。\n- **建议**：[Q03](#research-q03) 在隔离环境测工具清单差异检查能否较早发现远端漂移。\n\n采用建议：[Q03](#research-q03) 用隔离 profile 对照工具发现与授权的小查询，身份或费用不明即退回人工。\n\n## 核心贡献\n\n[Q01](#research-q01) 一次组合多域和一致工具命名，复用宿主传输与发现。\n\n## 关键质疑\n\n[Q02](#research-q02) 15 行只证明静态接入，远端工具、权限和数据新鲜度仍需检查。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 在隔离环境测工具清单差异检查能否较早发现远端漂移。\n\n核展开行、代表工具发现、无凭据拒绝、数据出处和卸载后新会话。\n\n## 场景与替代办法\n\n在 DSH 中反复查多个 Cue 数据域的研究者需要统一入口。\n\n按需手配单域 MCP 行，或切换浏览器到原始来源。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| dsh-mcp-client ^0.1.1-rc.2 | 必需 | 挂载传输和工具 | 检查 profile peer |\n| Cue key 与网络 | 必需 | 查询远端 | 保留手工渠道 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户展开隔离 profile 配置 | 确认 15 个预期域 |\n| 验证 | 用户对已知数据核工具和来源 | 异常则停止使用输出 |\n| 退出 | 用户移除 bundle | 新会话无对应工具 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 额度未核 | 配置 key 和 profile | 仅测试少量工具 |\n| 持续 | 查询和模型费用未知 | 维护密钥和工具差异 | 依赖远端 |\n| 失败 | 重试费用未知 | 查配置与远端拒绝 | 优先避免盲重试 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多域统一 | 固定 MCP 行 | 真实工具与覆盖 |\n| 查询复用 | 宿主工具命名 | 实际节时与时效 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：预配多域 MCP 能否降低研究者的 DSH 接入负担？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 哪些用户可以用一个 bundle 访问多个 Cue 数据域？\n\n**研究主题**：场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n反复查看监管、宏观和披露的 DSH 研究者，可复用预配的 MCP 客户端行而不逐域手写配置。子包仅有 manifest、补丁与说明，实际传输与工具映射依赖宿主 dsh-mcp-client，Cue 服务负责数据。逐一核查补丁有 15 条 insert 客户端行，都是相同 Cue 域名的分域路径和独立 serverName；不含 Omni Reader。单域用户手配一条 MCP 行即可，多域时统一入口才减少重复配置；无本地查询、缓存和数据加工的新实现。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[dsh/cue-data-mcp/README.zh-CN.md:5-14](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.zh-CN.md#L5-L14)\n\n作者描述场景、15 个域及安装。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n````text\n一个 [DeepSeek Harness](https://github.com/deepseek-harness) **bundle**,把 Cue 的**公开数据** MCP 服务以原生 `mcp__cue_<domain>__*` 工具形式暴露到任何 Harness profile。每个\"活\"数据域作为一条 [`@deepseek-ai/dsh-mcp-client`](https://github.com/deepseek-harness) 实例(`transport: streamable-http`)接入 Cue 自有端点——**无需 SSRF 护栏**(URL 为 Cue 固定端点,工具集即数据面)。\n\n15 个活域 / **约 104 个工具**(截至 2026-08-24):制裁与执法(OFAC/EU/BIS,11)、中国监管(16)、宏观(15)、美股披露 SEC EDGAR(5)、中国披露(5)、法规全文(3)、机构持仓(2)、主体数据(2)、学术(3)、事实索引(4)、IPO(9)、ESOP(10)、回购(2)、脚注(14)、两融(3)。`omni-reader` 已排除——它有独立的 `cue-omni-reader` skill。\n\n## 安装\n\n```sh\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp\n# 或一次性\ndsh web --patch ./dsh/cue-data-mcp/cordis.patch.yml\n````\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/cue-data-mcp/package.json:2-17](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/package.json#L2-L17)\n\nmanifest 的 Cordis patch、peer 与 Node 要求。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  \"name\": \"@cueai/dsh-cue-data-mcp\",\n  \"version\": \"0.1.3\",\n  \"description\": \"DSH bundle: exposes Cue's public data MCP services (regulatory, macro, disclosures, market data, statute, holdings, entity, academic, IPO, ESOP, buyback, footnote, fact index) as native mcp__cue_<domain>__* tools.\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"dependencies\": {},\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-mcp-client\": \"^0.1.1-rc.2\"\n  },\n  \"engines\": {\n    \"node\": \">=20.12\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/cue-data-mcp/cordis.patch.yml:6-33](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/cordis.patch.yml#L6-L33)\n\n监管与宏观代表配置。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n- insert:\n    - id: mcp-cue_regulatory\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_regulatory\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/regulatory/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_regulatory_cn\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_regulatory_cn\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/regulatory_cn/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_macro\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_macro\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/macro/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh/cue-data-mcp/cordis.patch.yml:106-141](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/cordis.patch.yml#L106-L141)\n\nIPO、ESOP、回购和脚注等尾部配置。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    - id: mcp-cue_ipo\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_ipo\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/ipo/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_esop\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_esop\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/esop/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_buyback\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_buyback\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/buyback/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_fr_footnote\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_fr_footnote\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/fr_footnote/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n```\n\n</details>\n\n#### 缺口\n\n- 未运行宿主加载\n  **影响**：工具前缀和各域是否启动需要现场核实\n  **进一步探讨**：检查 profile 展开并逐域比对工具清单\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 固定地址与统一密钥限定了哪些风险？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n每行用 streamable-http，目标固定指向 mcp.cuecue.cn，并在环境变量中读取同一 CUE_API_KEY 作为 Bearer，请求 Accept 支持 JSON 和事件流。调用模型无法从此补丁设置服务 URL，因此这一层没有任意 URL 解析入口；这与保证远端数据真实或服务没有进一步请求不同。没有凭据预检、独立域密钥、缓存或错误恢复实现。若环境变量没值，模板仍会拼字符串，实际拒绝与日志脱敏依赖客户端和服务。文档工具数量为采集时点的外部清单；静态配置只证明 15 行，不能证明实时工具数或字段兼容。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/cue-data-mcp/cordis.patch.yml:6-24](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/cordis.patch.yml#L6-L24)\n\n固定 URL 与请求头。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n- insert:\n    - id: mcp-cue_regulatory\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_regulatory\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/regulatory/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_regulatory_cn\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_regulatory_cn\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/regulatory_cn/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[dsh/cue-data-mcp/README.zh-CN.md:19-43](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.zh-CN.md#L19-L43)\n\n作者说明环境变量、工具发现与边界。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\n只需一个凭据,走环境变量:\n\n```sh\n# $DSH_HOME/.env(或启动 dsh 前 export)\nCUE_API_KEY=sk-...     # 来自 https://cuecue.cn/hub/api-key\n```\n\n每个 server 发送 `Authorization: Bearer $CUE_API_KEY` 与 streamable-http 所需的 `Accept` 头。\n\n## 使用\n\n重启后模型可见各域的 `mcp__cue_<domain>__*`(如 `mcp__cue_regulatory__*`、`mcp__cue_macro__*`、`mcp__cue_ipo__*`)。用各端点的 `tools/list` 发现实际工具名,再以 `tools/call` 调用。\n\n## 验证\n\n```sh\ndsh --profile web --dump-config     # 应列出 15 条 `mcp-cue_*`\n# 然后在会话里确认 mcp__cue_* 工具出现、一次小数据查询成功。\n```\n\n## 安全与范围\n\n- 需要 `CUE_API_KEY`;模型可查询 Cue 的数据工具集,但端点是 Cue 自有且固定,无任意出网/SSRF 面。\n- 不要把 key 放聊天、命令参数、本文件、日志或生成的 JSON。\n- 数据端点走 `streamable-http`,由 `@deepseek-ai/dsh-mcp-client`(peer 依赖,`^0.1.1-rc.2`)桥接。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/cue-data-mcp/package.json:12-18](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/package.json#L12-L18)\n\n运行组件由宿主提供。\n\n```text\n  \"dependencies\": {},\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-mcp-client\": \"^0.1.1-rc.2\"\n  },\n  \"engines\": {\n    \"node\": \">=20.12\"\n  },\n```\n\n#### 缺口\n\n- 未核服务工具、凭据权限及配额\n  **影响**：无法确认查询范围与费用或数据时效\n  **进一步探讨**：用测试 key 在单域检查 tools/list、权限拒绝和小查询\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何受控试用、退出及验证多域部署收益？\n\n**研究主题**：效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n可在隔离 DSH profile 比较手配单域与全量 bundle，先只检查配置，再用获授权的测试 key 做一条已知公开查询。首次成本在宿主版本、环境变量和额度，持续成本取决于请求量、远端和模型；出错先区分配置、身份、服务和返回数据，再按作者说明移除 bundle 并检查工具从新会话消失。可比较固定工具清单差异检查与仅看 profile 加载成功，测变更发现时间及误报；若清单差异无助于定位真实失败，则不加监测。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[dsh/cue-data-mcp/README.zh-CN.md:9-26](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.zh-CN.md#L9-L26)\n\n安装、凭据与请求条件。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## 安装\n\n```sh\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp\n# 或一次性\ndsh web --patch ./dsh/cue-data-mcp/cordis.patch.yml\n```\n\n## 配置\n\n只需一个凭据,走环境变量:\n\n```sh\n# $DSH_HOME/.env(或启动 dsh 前 export)\nCUE_API_KEY=sk-...     # 来自 https://cuecue.cn/hub/api-key\n```\n\n每个 server 发送 `Authorization: Bearer $CUE_API_KEY` 与 streamable-http 所需的 `Accept` 头。\n````\n\n</details>\n\n**依据 2 · 作者声明**：[dsh/cue-data-mcp/README.zh-CN.md:28-48](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/README.zh-CN.md#L28-L48)\n\n查询工具发现、回滚及验证说明。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\n## 使用\n\n重启后模型可见各域的 `mcp__cue_<domain>__*`(如 `mcp__cue_regulatory__*`、`mcp__cue_macro__*`、`mcp__cue_ipo__*`)。用各端点的 `tools/list` 发现实际工具名,再以 `tools/call` 调用。\n\n## 验证\n\n```sh\ndsh --profile web --dump-config     # 应列出 15 条 `mcp-cue_*`\n# 然后在会话里确认 mcp__cue_* 工具出现、一次小数据查询成功。\n```\n\n## 安全与范围\n\n- 需要 `CUE_API_KEY`;模型可查询 Cue 的数据工具集,但端点是 Cue 自有且固定,无任意出网/SSRF 面。\n- 不要把 key 放聊天、命令参数、本文件、日志或生成的 JSON。\n- 数据端点走 `streamable-http`,由 `@deepseek-ai/dsh-mcp-client`(peer 依赖,`^0.1.1-rc.2`)桥接。\n\n## 版本 / 回滚\n\n- `@deepseek-ai/dsh-mcp-client` 是 **peer** 依赖(由 Harness profile 提供)。\n- 回滚:`dsh plugin --profile web remove @cueai/dsh-cue-data-mcp`。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/cue-data-mcp/cordis.patch.yml:25-42](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-data-mcp/cordis.patch.yml#L25-L42)\n\n实际远端域连接形态。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    - id: mcp-cue_macro\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_macro\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/macro/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n    - id: mcp-cue_disclosure\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: cue_disclosure\n        transport: streamable-http\n        url: https://mcp.cuecue.cn/api/disclosure/mcp/\n        headers:\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\n          Accept: \"application/json, text/event-stream\"\n```\n\n</details>\n\n#### 缺口\n\n- 无真实计费和移除回读\n  **影响**：不能判断持续价格、退出效果或节时\n  **进一步探讨**：记录隔离试用的请求数、账单及新旧会话清单\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh/cue-data-mcp；内容摘要：6bc47c634f54fd1141382bcd6abed8a763e48f5886440d4893ed0a383599deab。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 118 | — | — | 802 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 多域 MCP | 接入监管与宏观等数据 | 工具能力取决于远端 |\n| 固定端点 | 约束配置中的网络地址 | 未核远端调用实现 |\n\n## 工程亮点\n\n固定出站服务地址使配置可检查；接线层不校验数据结果。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh/cue-data-mcp/README.zh-CN.md、dsh/cue-data-mcp/package.json、dsh/cue-data-mcp/cordis.patch.yml 及固定范围 inventory；组件：dsh/cue-data-mcp。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读指定子包全部跟踪文件，未运行 MCP 客户端、查询或核 npm。\n- 下一步：核展开行、代表工具发现、无凭据拒绝、数据出处和卸载后新会话。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-data-mcp/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"sensedeal/cue-skills\",\n  \"revision\": \"0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107\",\n  \"component\": \"dsh/cue-data-mcp\",\n  \"inspected_paths\": [\n    \"dsh/cue-data-mcp/README.md\",\n    \"dsh/cue-data-mcp/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"dsh/cue-data-mcp/README.zh-CN.md\",\n    \"dsh/cue-data-mcp/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"预配多域 MCP 能否降低研究者的 DSH 接入负担？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\",\n          \"mechanism\"\n        ],\n        \"question\": \"哪些用户可以用一个 bundle 访问多个 Cue 数据域？\",\n        \"answer\": \"反复查看监管、宏观和披露的 DSH 研究者，可复用预配的 MCP 客户端行而不逐域手写配置。子包仅有 manifest、补丁与说明，实际传输与工具映射依赖宿主 dsh-mcp-client，Cue 服务负责数据。逐一核查补丁有 15 条 insert 客户端行，都是相同 Cue 域名的分域路径和独立 serverName；不含 Omni Reader。单域用户手配一条 MCP 行即可，多域时统一入口才减少重复配置；无本地查询、缓存和数据加工的新实现。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-data-mcp/README.zh-CN.md\",\n            \"line_start\": 5,\n            \"line_end\": 14,\n            \"observation\": \"作者描述场景、15 个域及安装。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 17,\n            \"observation\": \"manifest 的 Cordis patch、peer 与 Node 要求。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/cordis.patch.yml\",\n            \"line_start\": 6,\n            \"line_end\": 33,\n            \"observation\": \"监管与宏观代表配置。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/cordis.patch.yml\",\n            \"line_start\": 106,\n            \"line_end\": 141,\n            \"observation\": \"IPO、ESOP、回购和脚注等尾部配置。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行宿主加载\",\n            \"impact\": \"工具前缀和各域是否启动需要现场核实\",\n            \"next_step\": \"检查 profile 展开并逐域比对工具清单\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"固定地址与统一密钥限定了哪些风险？\",\n        \"answer\": \"每行用 streamable-http，目标固定指向 mcp.cuecue.cn，并在环境变量中读取同一 CUE_API_KEY 作为 Bearer，请求 Accept 支持 JSON 和事件流。调用模型无法从此补丁设置服务 URL，因此这一层没有任意 URL 解析入口；这与保证远端数据真实或服务没有进一步请求不同。没有凭据预检、独立域密钥、缓存或错误恢复实现。若环境变量没值，模板仍会拼字符串，实际拒绝与日志脱敏依赖客户端和服务。文档工具数量为采集时点的外部清单；静态配置只证明 15 行，不能证明实时工具数或字段兼容。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/cordis.patch.yml\",\n            \"line_start\": 6,\n            \"line_end\": 24,\n            \"observation\": \"固定 URL 与请求头。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-data-mcp/README.zh-CN.md\",\n            \"line_start\": 19,\n            \"line_end\": 43,\n            \"observation\": \"作者说明环境变量、工具发现与边界。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/package.json\",\n            \"line_start\": 12,\n            \"line_end\": 18,\n            \"observation\": \"运行组件由宿主提供。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核服务工具、凭据权限及配额\",\n            \"impact\": \"无法确认查询范围与费用或数据时效\",\n            \"next_step\": \"用测试 key 在单域检查 tools/list、权限拒绝和小查询\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"如何受控试用、退出及验证多域部署收益？\",\n        \"answer\": \"可在隔离 DSH profile 比较手配单域与全量 bundle，先只检查配置，再用获授权的测试 key 做一条已知公开查询。首次成本在宿主版本、环境变量和额度，持续成本取决于请求量、远端和模型；出错先区分配置、身份、服务和返回数据，再按作者说明移除 bundle 并检查工具从新会话消失。可比较固定工具清单差异检查与仅看 profile 加载成功，测变更发现时间及误报；若清单差异无助于定位真实失败，则不加监测。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-data-mcp/README.zh-CN.md\",\n            \"line_start\": 9,\n            \"line_end\": 26,\n            \"observation\": \"安装、凭据与请求条件。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-data-mcp/README.zh-CN.md\",\n            \"line_start\": 28,\n            \"line_end\": 48,\n            \"observation\": \"查询工具发现、回滚及验证说明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-data-mcp/cordis.patch.yml\",\n            \"line_start\": 25,\n            \"line_end\": 42,\n            \"observation\": \"实际远端域连接形态。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"无真实计费和移除回读\",\n            \"impact\": \"不能判断持续价格、退出效果或节时\",\n            \"next_step\": \"记录隔离试用的请求数、账单及新旧会话清单\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"dsh/cue-data-mcp/README.md\",\n      \"content\": \"# @cueai/dsh-cue-data-mcp\\n\\n**[English](https://github.com/sensedeal/cue-skills/blob/main/dsh/cue-data-mcp/README.md)** · [中文](https://github.com/sensedeal/cue-skills/blob/main/dsh/cue-data-mcp/README.zh-CN.md)\\n\\nA [DeepSeek Harness](https://github.com/deepseek-harness) **bundle** that exposes\\nCue's public **data** MCP services as native `mcp__cue_<domain>__*` tools in any\\nHarness profile. Each live data domain is wired as one\\n[`@deepseek-ai/dsh-mcp-client`](https://github.com/deepseek-harness) instance\\n(`transport: streamable-http`) against Cue's own endpoints — no SSRF guard needed,\\nthe URLs are fixed Cue endpoints and the tool set is the data surface.\\n\\n15 live domains / **~104 tools** (as of 2026-08-24): regulatory (OFAC/EU/BIS, 11),\\nChina regulatory (16), macro (15), US disclosures SEC EDGAR (5), CN disclosures (5),\\nstatute full text (3), institutional (2), entity data (2), academic (3), fact index (4),\\nIPO (9), ESOP (10), buyback (2), footnote (14), margin (3).\\n`omni-reader` is excluded — it has its own dedicated `cue-omni-reader` skill.\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp\\n# or one-off\\ndsh web --patch ./dsh/cue-data-mcp/cordis.patch.yml\\n```\\n\\n## Configure\\n\\nOnly one credential is needed — env-driven:\\n\\n```sh\\n# $DSH_HOME/.env (or export before launching dsh)\\nCUE_API_KEY=sk-...     # from https://cuecue.cn/hub/api-key\\n```\\n\\nEach server sends `Authorization: Bearer $CUE_API_KEY` and the streamable-http\\n`Accept` header.\\n\\n## Usage\\n\\nAfter a restart the model sees `mcp__cue_<domain>__*` per domain (e.g.\\n`mcp__cue_regulatory__*`, `mcp__cue_macro__*`, `mcp__cue_ipo__*`). Discover the\\nlive tool names with `tools/list` per endpoint; call them with `tools/call`.\\n\\n## Verify\\n\\n```sh\\ndsh --profile web --dump-config     # should list 15 `mcp-cue_*` rows\\n# then in a session confirm the mcp__cue_* tools and a small data call succeed.\\n```\\n\\n## Security & scope\\n\\n- Requires `CUE_API_KEY`; the model can query Cue's data tool set but the endpoints\\n  are Cue-owned and fixed, so there is no arbitrary egress/SSRF surface.\\n- Never put the key in chat, command arguments, this file, logs, or generated JSON.\\n- The data endpoints are `streamable-http`; DSH bridges them with\\n  `@deepseek-ai/dsh-mcp-client` (peer dependency, `^0.1.1-rc.2`).\\n\\n## Versioning / Rollback\\n\\n- `@deepseek-ai/dsh-mcp-client` is a **peer** dependency (Harness profile provides it).\\n- Roll back: `dsh plugin --profile web remove @cueai/dsh-cue-data-mcp`.\\n\\n## License\\n\\nMIT — see [LICENSE](../../LICENSE).\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-data-mcp/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@cueai/dsh-cue-data-mcp\\\",\\n  \\\"version\\\": \\\"0.1.3\\\",\\n  \\\"description\\\": \\\"DSH bundle: exposes Cue's public data MCP services (regulatory, macro, disclosures, market data, statute, holdings, entity, academic, IPO, ESOP, buyback, footnote, fact index) as native mcp__cue_<domain>__* tools.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"dependencies\\\": {},\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-mcp-client\\\": \\\"^0.1.1-rc.2\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20.12\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"mcp\\\",\\n    \\\"cue\\\",\\n    \\\"data\\\",\\n    \\\"finance\\\",\\n    \\\"dsh-plugin\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# cue-skills\\n\\n**[English](README.md) · [中文](README.zh-CN.md)**\\n\\nOpen-source agent skills published by [Cue](https://cuecue.cn) (sensedeal).\\n\\nA **skill** is a portable instruction bundle that any AI agent ([Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills), Codex CLI, Gemini CLI, …) can load to gain a new capability — without modifying the agent itself. This repo collects the skills Cue maintains for public use.\\n\\n> **New here?** Read **[Why Cue](docs/landing.md)** · [中文](docs/landing.zh-CN.md) — source-cited research you can verify, and how to try it free.\\n\\n## Install\\n\\n```sh\\nnpx skills add sensedeal/cue-skills                       # default: lists cue-buddy, cue-research, cue-omni-reader, cue-data-mcp\\nnpx skills add sensedeal/cue-skills --skill cue-research   # add one skill\\n```\\n\\nSee [Using a skill](#using-a-skill) for manual install and per-skill notes. DSH users: jump to [DSH bundles](#dsh-users-install-the-cue-deep-research-bundles).\\n\\n## DSH users: install the Cue Deep Research bundles\\n\\nRunning [DeepSeek Harness](https://github.com/deepseek-harness)? Add the three Cue bundles to a profile and get Cue as native `mcp__omni__*` (parse/read) and `mcp__cue_*` (financial/regulatory data) tools:\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-omni-reader            # Omni Reader parse/read tools\\ndsh plugin --profile web add @cueai/dsh-omni-reader-guard      # optional SSRF/consent guard\\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp           # Cue public data MCP (15 domains / ~104 tools)\\n```\\n\\nRestart dsh; the model then sees `mcp__omni__parse` / `…get_parse_status` / `…read_result` / `…read_outline` / `…save_result` / `…cancel_parse` / `…discard_result` and `mcp__cue_<domain>__*` data tools. Set `CUE_API_KEY` (+ optional `OMNI_ALLOWED_ROOTS`) via `$DSH_HOME/.env`. Guide: [`dsh/`](./dsh) · [`usage.md`](./dsh/usage.md).\\n\\n## DSH bundles\\n\\nThis repo also ships [DeepSeek Harness](https://github.com/deepseek-harness) **bundles** under [`dsh/`](./dsh) — thin composition packages that wire a Cue MCP server into a DSH profile so its tools surface natively (e.g. `mcp__omni__parse`). A skill is agent-loadable *instructions*; a bundle is a *composition package* (`package.json` + `cordis.patch.yml`) for the Harness. Install one with `dsh plugin --profile web add <pkg>`; see [`dsh/README.md`](./dsh) and the [`cue-omni-reader` bundle](./dsh/cue-omni-reader).\\n\\n### Repo-root bundle\\n\\nThe repository root is itself a DSH bundle (`package.json` declaring `dsh.bundle.patch` → [`cordis.patch.yml`](./cordis.patch.yml)), so one command wires the whole Cue surface — the Omni Reader MCP server plus the Cue public data domains — into a profile:\\n\\n```sh\\ndsh plugin --profile web add github:sensedeal/cue-skills#<commit>\\n```\\n\\nRegistries that install a repository as a DSH bundle (for example [skillhub.cn](https://skillhub.cn/plugins)) accept a repo only when this root manifest exists; the per-capability bundles under [`dsh/`](./dsh) stay available for narrower installs, and the optional SSRF/consent guard is deliberately **not** part of the repo-root bundle because it fails closed on local files.\\n\\n## Skills in this repo\\n\\n| Skill | Purpose | Status |\\n|---|---|---|\\n| [`cue-buddy/`](./cue-buddy) — **cue-buddy** | Lets business experts author, validate, test, tune, and pin-as-frequent [Cue](https://cuecue.cn) \\\"buddy\\\" research templates via natural conversation. No Python / API knowledge needed; the agent talks to the Cue production API on the user's behalf. | v0.3.8 |\\n| [`cue-research/`](./cue-research) — **cue-research** | Sibling to cue-buddy for *using* Cue from inside your AI agent: ask a question → skill matches ≤2 candidate buddies (or routes to free-form deep research via `/api/rewrite`) → you confirm credits → it runs in the background and retrieves the report via replay → on satisfaction you can distill a free-form run into a saved buddy via cue-buddy. Supports 仿写/mimic (imitate a reference URL or sample document's writing style). | v0.3.8 |\\n| [`cue-omni-reader/`](./cue-omni-reader) — **cue-omni-reader** | Helps external agents parse HTTP(S) URLs and authorized local documents, audio, or video through the official MCP tools, including safe Bridge bootstrap, recoverable operations, deliberate inline/artifact delivery, outline navigation, complete result reading, and cleanup. Thin instruction layer; no custom parser or protocol driver. | v0.5.8 |\\n| [`cue-data-mcp/`](./cue-data-mcp) — **cue-data-mcp** | Lets external agents query Cue's public MCP data services (regulatory, macro, disclosures, market data, legal full text, holdings, entity data, academic, IPO, ESOP, buyback, footnote details) by discovering live domains from the anonymous `/api/mcp-catalog` and connecting through each domain's routing DTO. Thin instruction layer; no hardcoded endpoints or tool names. | v0.3.6 |\\n| [`playbook/`](./playbook) — **playbook scene skills** | One agent-loadable `SKILL.md` per [Cue playbook](https://cuecue.cn/playbook) scene (equity research, credit diligence, wealth advisory, global macro, …). Load one and your agent runs that scenario's Cue deep research: it queries the **live** `/api/playbook` for the scene's *current* buddies, picks one, confirms credits, runs, and returns a source-cited report. Runtime-query-live — no baked `template_id`, so buddy add/edit/remove auto-reflects with no regeneration. Auto-generated by [`scripts/gen_scene_skills.py`](./scripts/gen_scene_skills.py). Works two ways: bundled here next to `cue-research`/`cue-buddy`, **or** published standalone to a third-party store — a standalone scene skill **self-bootstraps** (clones this repo, with a Gitee mirror fallback, to fetch the runner if not already present). | auto-generated |\\n\\nMore skills will be added here as Cue's surface grows.\\n\\n## What is Cue / What is a buddy\\n\\n[Cue](https://cuecue.cn) is a **Deep Research Agent + Intelligence Sentinel** platform for high-precision finance and business workflows. It picks tools from 300+ professional data sources (A-share / HK / US equity disclosures, fund AMAC registries, business registries, court records, regulatory feeds, sell-side research, capital flow data), cross-validates findings across sources, and produces structured, source-cited reports in minutes instead of hours.\\n\\nA **\\\"buddy\\\" (搭子)** is a research playbook for a specific scenario — corporate-credit pre-diligence, public-record compliance snapshot, quarterly earnings review, private-fund manager DD, etc. — defined once and reused by supplying the subject. The `cue-buddy` skill in this repo is what business experts use to author these playbooks conversationally.\\n\\n> **Scope boundary**: Cue's tool surface covers public data sources only (equity disclosures / business registries / court records / regulatory filings / capital flows / etc.). Scenarios requiring private data (real AML on bank-internal transactions, medical diagnosis, internal accounting) are **not appropriate** as Cue buddies — the supervisor cannot route them and falls back to generic web search. `cue-buddy +author` flow calls `+capabilities` to cross-check each declared evidence source against the actual catalog before persisting a template.\\n\\nSee [`cue-buddy/README.md`](./cue-buddy/README.md) for the full skill walkthrough.\\n\\n## Using a skill\\n\\n`cue-buddy` is self-contained: an entrypoint `SKILL.md`, supporting `references/`, and stdlib-only `scripts/`. `cue-research` is **self-contained too** — it vendors the shared Cue client (`cue_api` / `sse_report` / `paths`) in its own `scripts/`, so it runs standalone (no sibling `cue-buddy` required).\\n\\nPreferred install is at the top of this README (`npx skills add`). The `skills` CLI lists every skill; `--skill` picks one.\\n\\n**Manual install**: copy the skill folder into `~/.claude/skills/` (Claude Code) or reference it via `/use-skill <path>`; other agents load `<skill>/SKILL.md` as a system instruction. Each skill is self-contained — `cue-buddy`/`cue-research` vendor their runtime, `cue-omni-reader`/`cue-data-mcp` are thin instruction layers.\\n\\n**`cue-omni-reader`** ships no runtime parser scripts. Load its `SKILL.md` and connect an official Omni MCP surface. Existing URL tools need no local install; local files use the audited Bridge after minimum-root confirmation.\\n\\n**`cue-data-mcp`** ships no runtime code. Load its `SKILL.md` and let the agent discover the live data domains from the anonymous `/api/mcp-catalog`, then connect through each domain's routing DTO. Self-contained: no sibling folders required.\\n\\nThe **`playbook/`** scene skills delegate the actual research run to `cue-research`'s runner. `cue-research` is self-contained (it vendors the shared Cue client), so install `playbook/<scene>` + `cue-research` as siblings under the same parent dir; `cue-buddy` is only needed if you also want to author or save buddies.\\n\\n> **Credit grant to start**: every Cue account gets **500 credits on signup, plus 10 more each day**. Once you apply for an API key (sign in via the `cue` CLI) you can start — data queries and initial research draw from this grant, and each deep-research run still consumes credits, so the skills always confirm with you before spending.\\n\\n## Contributing\\n\\nBug reports and skill suggestions: [open an issue](https://github.com/sensedeal/cue-skills/issues).\\n\\nPull requests welcome. Each skill has its own hard-rules / validator; see the skill's README for contribution guidelines.\\n\\n## License\\n\\nMIT — see [LICENSE](./LICENSE). Skill content is free to use, modify, and redistribute.\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@cueai/dsh-cue-skills\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"private\\\": true,\\n  \\\"description\\\": \\\"DSH bundle entry for sensedeal/cue-skills: wires the audited Cue Omni Reader MCP server (mcp__omni__*) and Cue's public data MCP services (mcp__cue_*) into any DeepSeek Harness profile.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-mcp-client\\\": \\\"^0.1.1-rc.2\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20.12\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"mcp\\\",\\n    \\\"cue\\\",\\n    \\\"cue-skills\\\",\\n    \\\"omni-reader\\\",\\n    \\\"cue-data-mcp\\\",\\n    \\\"dsh-plugin\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-data-mcp/README.zh-CN.md\",\n      \"content\": \"# @cueai/dsh-cue-data-mcp\\n\\n**[English](README.md)** · [中文](README.zh-CN.md)\\n\\n一个 [DeepSeek Harness](https://github.com/deepseek-harness) **bundle**,把 Cue 的**公开数据** MCP 服务以原生 `mcp__cue_<domain>__*` 工具形式暴露到任何 Harness profile。每个\\\"活\\\"数据域作为一条 [`@deepseek-ai/dsh-mcp-client`](https://github.com/deepseek-harness) 实例(`transport: streamable-http`)接入 Cue 自有端点——**无需 SSRF 护栏**(URL 为 Cue 固定端点,工具集即数据面)。\\n\\n15 个活域 / **约 104 个工具**(截至 2026-08-24):制裁与执法(OFAC/EU/BIS,11)、中国监管(16)、宏观(15)、美股披露 SEC EDGAR(5)、中国披露(5)、法规全文(3)、机构持仓(2)、主体数据(2)、学术(3)、事实索引(4)、IPO(9)、ESOP(10)、回购(2)、脚注(14)、两融(3)。`omni-reader` 已排除——它有独立的 `cue-omni-reader` skill。\\n\\n## 安装\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp\\n# 或一次性\\ndsh web --patch ./dsh/cue-data-mcp/cordis.patch.yml\\n```\\n\\n## 配置\\n\\n只需一个凭据,走环境变量:\\n\\n```sh\\n# $DSH_HOME/.env(或启动 dsh 前 export)\\nCUE_API_KEY=sk-...     # 来自 https://cuecue.cn/hub/api-key\\n```\\n\\n每个 server 发送 `Authorization: Bearer $CUE_API_KEY` 与 streamable-http 所需的 `Accept` 头。\\n\\n## 使用\\n\\n重启后模型可见各域的 `mcp__cue_<domain>__*`(如 `mcp__cue_regulatory__*`、`mcp__cue_macro__*`、`mcp__cue_ipo__*`)。用各端点的 `tools/list` 发现实际工具名,再以 `tools/call` 调用。\\n\\n## 验证\\n\\n```sh\\ndsh --profile web --dump-config     # 应列出 15 条 `mcp-cue_*`\\n# 然后在会话里确认 mcp__cue_* 工具出现、一次小数据查询成功。\\n```\\n\\n## 安全与范围\\n\\n- 需要 `CUE_API_KEY`;模型可查询 Cue 的数据工具集,但端点是 Cue 自有且固定,无任意出网/SSRF 面。\\n- 不要把 key 放聊天、命令参数、本文件、日志或生成的 JSON。\\n- 数据端点走 `streamable-http`,由 `@deepseek-ai/dsh-mcp-client`(peer 依赖,`^0.1.1-rc.2`)桥接。\\n\\n## 版本 / 回滚\\n\\n- `@deepseek-ai/dsh-mcp-client` 是 **peer** 依赖(由 Harness profile 提供)。\\n- 回滚:`dsh plugin --profile web remove @cueai/dsh-cue-data-mcp`。\\n\\n## 许可\\n\\nMIT — 见 [LICENSE](../../LICENSE)。\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-data-mcp/cordis.patch.yml\",\n      \"content\": \"# @cueai/dsh-cue-data-mcp — expose Cue's public data MCP services as DSH tools.\\n#\\n# One `@deepseek-ai/dsh-mcp-client` instance per live data domain (streamable-http);\\n# the model sees `mcp__cue_<domain>__<tool>`. URLs are Cue's own fixed endpoints,\\n# so no SSRF guard is needed — only `CUE_API_KEY` is required (via env).\\n- insert:\\n    - id: mcp-cue_regulatory\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_regulatory\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/regulatory/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_regulatory_cn\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_regulatory_cn\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/regulatory_cn/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_macro\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_macro\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/macro/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_disclosure\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_disclosure\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/disclosure/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_disclosure_cn\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_disclosure_cn\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/disclosure_cn/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_margin\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_margin\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/margin/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_statute\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_statute\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/statute/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_institutional\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_institutional\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/institutional/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_entity_data\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_entity_data\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/entity_data/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_academic\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_academic\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/academic/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_fr_fact_index\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_fr_fact_index\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/fr_fact_index/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_ipo\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_ipo\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/ipo/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_esop\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_esop\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/esop/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_buyback\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_buyback\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/buyback/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n    - id: mcp-cue_fr_footnote\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: cue_fr_footnote\\n        transport: streamable-http\\n        url: https://mcp.cuecue.cn/api/fr_footnote/mcp/\\n        headers:\\n          Authorization: !!js '`Bearer ${process.env.CUE_API_KEY}`'\\n          Accept: \\\"application/json, text/event-stream\\\"\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107\",\n    \"component\": \"dsh/cue-data-mcp\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"6bc47c634f54fd1141382bcd6abed8a763e48f5886440d4893ed0a383599deab\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 118,\n        \"words\": 802\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "f558a60e8f5ee0f1bbb53c77c8f377a91a42c799fc75d62d161284309001e9fe"
+        }
+    },
+    "unavailable_artifacts": []
+}

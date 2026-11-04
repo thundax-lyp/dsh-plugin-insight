@@ -1,0 +1,52 @@
+{
+    "repository": "AX1202/ax-feishu-bridge",
+    "repository_id": 1249325080,
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 58,
+    "pushed_at": "2026-08-27T13:50:13Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": 2
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAX1202%2Fax-feishu-bridge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 58E0:3E9D00:F4911E:31DFE19:6AEB42FB and timestamp 2026-11-04 14:36:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAX1202%2Fax-feishu-bridge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 595C:2E0ECF:E8D217:2F86905:6AEB42FE and timestamp 2026-11-04 14:36:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAX1202%2Fax-feishu-bridge%20is%3Aissue%20created%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5976:2E0ECF:E8DD38:2F88E67:6AEB42FF and timestamp 2026-11-04 14:36:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAX1202%2Fax-feishu-bridge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5998:221428:DB6D2A:2CC61D3:6AEB4300 and timestamp 2026-11-04 14:36:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "ax-feishu-bridge",
+        "captured_at": "2026-11-04T14:32:21.161Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 556,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/ax-feishu-bridge",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T15:37:25.662Z",
+            "captured_at": "2026-11-04T14:32:21.161Z",
+            "source_url": "https://registry.npmjs.org/ax-feishu-bridge",
+            "error": null,
+            "latest_version": "0.4.9",
+            "latest_published_at": "2026-08-27T13:45:33.982Z",
+            "latest_error": null
+        }
+    }
+}
