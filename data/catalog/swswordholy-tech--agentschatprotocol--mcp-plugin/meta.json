@@ -1,0 +1,35 @@
+{
+    "repository": "swswordholy-tech/AgentsChatProtocol",
+    "repository_id": 1197290805,
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 0,
+    "pushed_at": "2026-10-30T06:27:46Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "agentschat-mcp",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2964,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/agentschat-mcp",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-04-24T14:17:40.541Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/agentschat-mcp",
+            "error": null,
+            "latest_version": "0.36.23",
+            "latest_published_at": "2026-10-30T18:24:04.692Z",
+            "latest_error": null
+        }
+    }
+}
