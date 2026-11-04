@@ -1,49 +1,30 @@
 {
     "repository": "7starsseeker/dsh-fact-check",
     "repository_id": 1380181057,
-    "captured_at": "2026-10-29T03:03:10.741Z",
-    "window_start": "2026-09-29T03:03:10.741Z",
-    "stars": 2,
-    "pushed_at": "2026-10-27T18:39:05Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 5,
+    "pushed_at": "2026-10-31T07:24:42Z",
     "issues": {
-        "open": null,
-        "closed": null,
+        "open": 0,
+        "closed": 0,
         "created_30d": 0,
         "closed_30d": 0,
         "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5430:2777BD:162BF91:17F4412:6AE2B7BA and timestamp 2026-10-29 03:04:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A7starsseeker%2Fdsh-fact-check%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5446:25EE10:16E8AE5:18B32B3:6AE2B7BA and timestamp 2026-10-29 03:04:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T06:21:21.324Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-fact-check",
-        "captured_at": "2026-10-28T20:19:57.951Z",
-        "window_start": "2026-09-28",
-        "window_end": "2026-10-27",
-        "downloads_30d": 2283,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-28:2026-10-27/dsh-fact-check",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2675,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-fact-check",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-21T19:06:07.838Z",
-            "captured_at": "2026-10-28T20:19:57.951Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
             "source_url": "https://registry.npmjs.org/dsh-fact-check",
             "error": null,
             "latest_version": "1.5.1",

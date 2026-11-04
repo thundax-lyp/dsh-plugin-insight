@@ -1,29 +1,51 @@
 {
     "repository": "AdonisSheldon/dsh-openai-oauth",
     "repository_id": 1335992154,
-    "captured_at": "2026-10-22T10:42:48.046Z",
-    "window_start": "2026-09-22T10:42:48.046Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
     "stars": 9,
-    "pushed_at": "2026-08-20T16:23:48Z",
+    "pushed_at": "2026-11-03T08:04:08Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 86D2:552CD:8D3714:95CF84:6AEAEB90 and timestamp 2026-11-04 08:23:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 873E:375B3A:73E112:7C7695:6AEAEB91 and timestamp 2026-11-04 08:23:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 87D0:2CD977:757EC2:7E17A7:6AEAEB92 and timestamp 2026-11-04 08:23:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8818:3B861A:75B0C9:7E4801:6AEAEB94 and timestamp 2026-11-04 08:23:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AAdonisSheldon%2Fdsh-openai-oauth%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88BA:4F522:75C673:7E6125:6AEAEB96 and timestamp 2026-11-04 08:23:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-openai-oauth",
-        "captured_at": "2026-10-22T10:43:02.750Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": 770,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-openai-oauth",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 895,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-openai-oauth",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T16:04:29.875Z",
-            "captured_at": "2026-10-22T10:43:02.750Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
             "source_url": "https://registry.npmjs.org/dsh-openai-oauth",
             "error": null,
             "latest_version": "0.4.0",

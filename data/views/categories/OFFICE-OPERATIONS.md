@@ -18,7 +18,8 @@
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
-| [DSH Notes 对话导出](#plugin-1182135360-dsh-plugin) | 将 Agent 整理的 Markdown 写入便签服务，或经匿名渲染生成本地 PNG 长图。 | 已有可信便签服务者可用非敏感短对话试导出，回读内容/分类/实际server；类型不符、内容遗漏或超时重复时停自动流程，先核对已有ID，退回复制粘贴。 |
+| [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
+| [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
@@ -143,19 +144,35 @@
 
 <a id="plugin-1182135360-dsh-plugin"></a>
 
-## [DSH Notes 对话导出](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md)
+## [DSH Notes Export](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md)
 
-[![GitHub ★ 315](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=315&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes) [![npm 30d 848](https://img.shields.io/static/v1?label=npm+30d&message=848&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes)
+[![GitHub ★ 324](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=324&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhaoolee/notes) [![npm 30d 770](https://img.shields.io/static/v1?label=npm+30d&message=770&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes) [![最新发布 2026-08-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zhaoolee/dsh-notes)
 
-> **用途**：希望把对话整理成可编辑便签或分享长图的DSH用户，可使用统一工具，但要明确输出类型与发送目的地。见[Q01](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q01)。
+> **用途**：需要将对话整理成可编辑便签或分享图片的 DSH 用户，可以调用统一导出工具。
 
-> **亮点**：统一工具连接笔记与图片两类输出，云端更新保留未传字段并带乐观版本比较；减少接线但不证明节时或原文完整。见[Q01](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q01)、[Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q01) 和 [Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02) 显示统一工具连接两种导出，[Q03](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q03) 的条件更新保留未修改字段；不证明内容保真或节时。
 
-> **思考**：未配baseUrl会把完整markdown发公网演示渲染，图片不是可编辑笔记；409重试也不能解决保存后响应丢失，盲重试新建可能重复。见[Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02)、[Q03](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q02) 的缺省路径会发送 Markdown 到演示服务且只生成图片；[Q03](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q03) 的 409 重试不能解决成功后响应丢失导致的新建重复。
 
-> **建议**：未验证假设是稳定操作ID加结果未知/回读确认状态，可减少断线后的重复导出；以提交后断线、409和本地写失败比较重复与恢复时间，服务无支持时先给可核对ID不假装exactly-once。见[Q05](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q05) 提出稳定操作 ID 与结果未知时回读确认的未验证方案；服务不支持查询或收益不抵成本时否定。
 
 [查看完整分析](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1172884215-packages-dsh-reaudit"></a>
+
+## [DSH Reaudit](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md)
+
+
+
+> **用途**：已有 Reaudit 账户且需查看品牌搜索可见性或站点数据的团队，可评估在 DSH 中使用远端工具。
+
+> **亮点**：[Q01](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q01) 与 [Q02](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q02) 显示组件将端点、命名空间、凭据与超时封装为宿主配置；远端审查能力本身不归因于此子包。
+
+> **思考**：[Q03](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q03) 的远端实现、工具权限和数据处理不在固定子包中；[Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 的潜在写入或发布必须先核账户与服务契约。
+
+> **建议**：[Q05](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q05) 提出逐调用权限和目标预览及结果回查的未验证设想；元数据不可靠或负担大于收益时否定。
+
+[查看完整分析](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418842530-root"></a>
 

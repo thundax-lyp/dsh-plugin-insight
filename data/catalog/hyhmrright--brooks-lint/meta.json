@@ -1,40 +1,51 @@
 {
     "repository": "hyhmrright/brooks-lint",
     "repository_id": 1192608669,
-    "captured_at": "2026-10-27T01:50:27.819Z",
-    "window_start": "2026-09-27T01:50:27.819Z",
-    "stars": 1546,
-    "pushed_at": "2026-10-26T08:57:49Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 1558,
+    "pushed_at": "2026-11-04T07:20:37Z",
     "issues": {
-        "open": 0,
-        "closed": 15,
-        "created_30d": 1,
-        "closed_30d": 1,
-        "updated_30d": 1
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahyhmrright%2Fbrooks-lint%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8748:41EF6:770071:7F9473:6AEAEB91 and timestamp 2026-11-04 08:23:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahyhmrright%2Fbrooks-lint%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 87F8:522DF:735582:7BE980:6AEAEB93 and timestamp 2026-11-04 08:23:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahyhmrright%2Fbrooks-lint%20is%3Aissue%20created%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8828:2124D3:6F55F9:77EF3D:6AEAEB94 and timestamp 2026-11-04 08:23:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahyhmrright%2Fbrooks-lint%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8892:20DAE5:72F3A8:7B8314:6AEAEB96 and timestamp 2026-11-04 08:23:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahyhmrright%2Fbrooks-lint%20is%3Aissue%20updated%3A2026-10-05T08%3A22%3A39.587Z..2026-11-04T08%3A22%3A39.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88EE:552CD:8D3D74:95D66E:6AEAEB97 and timestamp 2026-11-04 08:23:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-26T20:57:32.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11c26935bcac89c97562afae13ed96f7c8ff27f1",
-        "blob_sha": "c381408d3d1e01d7244783610570a1f22e366cda",
-        "errors_blob_sha": "c4ef327e54d6993acb7a516ce0ebc7eff76190fe",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "brooks-lint",
-        "captured_at": "2026-10-27T01:50:27.819Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
-        "downloads_30d": 582,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/brooks-lint",
+        "captured_at": "2026-11-02T00:48:10.719Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 1110,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/brooks-lint",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-24T01:22:26.825Z",
-            "captured_at": "2026-10-26T04:53:39.056Z",
+            "captured_at": "2026-11-02T00:48:10.719Z",
             "source_url": "https://registry.npmjs.org/brooks-lint",
             "error": null,
             "latest_version": "1.9.1",

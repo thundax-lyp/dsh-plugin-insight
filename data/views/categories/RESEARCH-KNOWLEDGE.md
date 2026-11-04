@@ -29,7 +29,9 @@
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
+| [DSH Annotation](#plugin-1369398336-packages-dsh-annotation) | 把助手回复中的选段和批注作为原生引用加入草稿，并按顺序发送。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04) 建议先用非敏感长回复在兼容客户端核对多处选段、撤销、刷新和历史；定位或草稿恢复异常时回退手工引用。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
+| [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
@@ -71,9 +73,7 @@
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
 | [dshfind](#plugin-1333082908-root) | 聚合 DSH 生态条目、安装线索、代理评分和文档课程的发现网站，结合 GitHub 同步、数据库与页面快照。 | 作为发现入口，以少量真实任务候选回原来源核查并独立试用，不以rank/verified直接授权，见 [Q03](../../plugins/hikariming--dshfind/INSIGHT.md#research-q03)。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
-| [EduWork 选段引用与批注](#plugin-1369398336-packages-dsh-annotation) | 为 DSH 已完成回复添加编号批注，用原生引用草稿组合摘录、评论与问题，并从消息恢复显示。 | 在兼容客户端先用不含敏感内容的长回复试几处批注，核对来源、撤销、刷新和发送后历史，再纳入日常追问。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
-| [Fact Check](#plugin-1380181057-root) | 为 DSH 提供公开资料核查 Skill、关键词取证路由与可选 Jev 判断，组织原文、来源关系和不确定结论。 | 少量公开原始资料事实点先人工核查试用，确认正文链再用；Jev仅额外线索，不无人值守发布，见 [Q03](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q03)。 |
 | [Free Search](#plugin-1334384058-root) | 为 DSH 提供多来源网页搜索、回退和研究证据整理工具。 | 先备份并隔离 profile，用非敏感查询测试允许的来源；核对 provider、实际费用和出处，停用前恢复原配置。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
 | [Graph Memory](#plugin-1178312395-root) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | [Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 个人非敏感任务用副本库对照；审计或多租户任务先保留原历史并验证隔离。 |
@@ -93,6 +93,7 @@
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 先在非敏感副本库试用 Memory CLI，明确指定库并保留笔记备份。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | [Q05](../../plugins/liustack--modsearch/INSIGHT.md#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。 |
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
+| [Oh My Knowledge](#plugin-1190633989-root) | 面向 AI 工作记录的知识提取、维护和载体评测工具集。 | [Q04](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q04) 先用可信非敏感材料复核来源和模型目标；无法验证来源或执行环境不可信时停止。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具。 | 以非敏感独立项目核验 peer、召回、短断网及停用后队列；出现串扰或缺失时停止相关进程并回退人工笔记。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
 | [ReMe](#plugin-849121458-root) | 以文件记忆、搜索与模型演化为 Agent 提供可读长期记忆。 | [Q05](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q05) 以少量可纠正资料试默认检索和回读；冲突或回执不明时暂停演化。 |
@@ -376,6 +377,22 @@
 
 [查看完整分析](../../plugins/titanwings--distilly/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1369398336-packages-dsh-annotation"></a>
+
+## [DSH Annotation](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md)
+
+[![GitHub ★ 285](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=285&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 1,227](https://img.shields.io/static/v1?label=npm+30d&message=1%2C227&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-annotation) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-annotation)
+
+> **用途**：需要对长回复多处追问的用户可以选择片段、附评论并在同一草稿中发送。
+
+> **亮点**：[Q01](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q01) 和 [Q02](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q02) 显示选段、编号与版本化局部编辑组合到原生输入；[Q03](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q03) 的协议使发送和展示共享消息内容，不必依赖另一套批注库。
+
+> **思考**：[Q03](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q03) 的来源和有限前后文不证明完整原文已读，提示也不保证模型遵守；[Q02](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q02) 的选区依赖宿主行结构与公开身份接口。
+
+> **建议**：[Q05](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q05) 提出发送前展示来源可访问性、上下文范围和输入量的未验证方案；若对照中错误未减少或确认负担更大则否定。
+
+[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1331112087-root"></a>
 
 ## [DSH Data Agent](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md)
@@ -391,6 +408,22 @@
 > **建议**：[Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 提议把已有Catalog版本、SQL与截断状态绑定到可回读交付收据；先核等价字段，再比较过时/错误口径发现与全部开销，无增益即否定。
 
 [查看完整分析](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1380181057-root"></a>
+
+## [DSH Fact Check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
+
+[![GitHub ★ 5](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 2,675](https://img.shields.io/static/v1?label=npm+30d&message=2%2C675&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fact-check)
+
+> **用途**：需要核查公开声明的研究者可以按事实点检索原文、比较来源并记录仍不能核实的部分。
+
+> **亮点**：[Q01](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q01) 与 [Q02](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q02) 显示 Skill、渠道计划与判断脚本将一套核查方法接到宿主；其好处取决于实际搜索及人工判断，不是事实正确保证。
+
+> **思考**：[Q03](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q03) 的来源数量与双轨属于方法指引，不能代替原文和独立性核查；[Q04](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q04) 的缺密钥退出、对外传输及 sufficient 调用也要求使用者实际检查。
+
+> **建议**：[Q06](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q06) 提出绑定原文版本和引用关系的未验证证据图；若盲测无法改善失效引用识别或增加成本过高则否定。
+
+[查看完整分析](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339669759-root"></a>
 
@@ -1048,22 +1081,6 @@
 
 [查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1369398336-packages-dsh-annotation"></a>
-
-## [EduWork 选段引用与批注](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md)
-
-[![GitHub ★ 250](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=250&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ECNU/EduWork) [![npm 30d 613](https://img.shields.io/static/v1?label=npm+30d&message=613&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-annotation) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@eduwork/dsh-annotation)
-
-> **用途**：阅读长回复后需要多处追问或逐点修改的DSH用户，可把选段和评论按原生草稿顺序组织后发送，见 [Q01](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q01)。
-
-> **亮点**：将编号与批注自包含放入宿主原生引用和消息，通过版本校验局部编辑及共用codec降低另维护状态的需要；这是具体交互集成增量，见 [Q01](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q01) 与 [Q02](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q02)。
-
-> **思考**：来源ID和前后各320字符只支持有限上下文，不能代表全文已读；摘录作为材料的提示也不保证模型不会错用其内容。选区身份还依赖宿主Chat结构，需用户核对，见 [Q01](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q01) 和 [Q02](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q02)。
-
-> **建议**：可探索发送前说明每段摘录范围、来源加载状态和额外输入量，减少用户把有限摘录当全文证据的误读。方案未实现，若定位错误/纠正时间不改善或确认负担更大即否定，见 [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04)。
-
-[查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1085086903-root"></a>
 
 ## [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md)
@@ -1079,22 +1096,6 @@
 > **建议**：假设向调用者暴露逐记忆索引可见性水位可减少已保存但不可搜索的误判；对照注入延迟时的误判、等待与维护成本，不改善则否定。[Q05](../../plugins/evermind-ai--everos/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/evermind-ai--everos/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1380181057-root"></a>
-
-## [Fact Check](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md)
-
-[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7starsseeker/dsh-fact-check) [![npm 30d 2,283](https://img.shields.io/static/v1?label=npm+30d&message=2%2C283&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fact-check) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fact-check)
-
-> **用途**：研究者可拆事实点并组织多渠道原文和矛盾报告，合格交付需相关证据与未知明确，见 [Q01](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q01)。
-
-> **亮点**：方法/本机配置分离、正文现读一致性、确定性渠道计划和判据可替换，减少协议重复组织，见 [Q01](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q01) 与 [Q02](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q02)。
-
-> **思考**：URL与模板不证明原文、独立源或蕴含，双轨是规范口径、Jev数字不等概率真值，审计也可降级，见 [Q02](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q02)。
-
-> **建议**：冻结断言-摘录-来源图以提高后续复核，对照无改善或负担过大即否定，未实现，见 [Q03](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q03)。
-
-[查看完整分析](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334384058-root"></a>
 
@@ -1399,6 +1400,22 @@
 > **建议**：[Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)会话固定vault/来源版本收据可探索，须先与现有显式id比较，无差异则否定。
 
 [查看完整分析](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1190633989-root"></a>
+
+## [Oh My Knowledge](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md)
+
+[![GitHub ★ 23](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=23&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/lizhiyao/oh-my-knowledge) [![npm 30d 416](https://img.shields.io/static/v1?label=npm+30d&message=416&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/oh-my-knowledge) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/oh-my-knowledge)
+
+> **用途**：个人和开发者从工作记录整理知识，维护知识载体并对比版本。
+
+> **亮点**：[Q01](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q01) 描述记录、知识维护和评测的集成；[Q02](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q02) 给出来源覆盖决策和版本检查的源码依据。
+
+> **思考**：[Q03](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q03) 指出模型材料、本地代码执行和无认证服务边界；[Q04](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q04) 说明试用及维护成本未知。
+
+> **建议**：[Q05](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q05) 建议关联载体实际使用与独立结果，以对照验证价值。
+
+[查看完整分析](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 

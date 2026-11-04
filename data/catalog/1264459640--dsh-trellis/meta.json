@@ -1,10 +1,10 @@
 {
     "repository": "1264459640/dsh-trellis",
     "repository_id": 1335559646,
-    "captured_at": "2026-10-26T01:59:33.546Z",
-    "window_start": "2026-09-26T01:59:33.546Z",
-    "stars": 10,
-    "pushed_at": "2026-10-25T06:06:15Z",
+    "captured_at": "2026-11-04T08:22:39.587Z",
+    "window_start": "2026-10-05T08:22:39.587Z",
+    "stars": 11,
+    "pushed_at": "2026-11-03T07:22:42Z",
     "issues": {
         "open": 0,
         "closed": 4,
@@ -14,31 +14,21 @@
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-25T12:12:11.673Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "4ade8ba7f0e1503ccce61e35b3d02cb075c07859",
-        "blob_sha": "039a46b8957dde58e3e5671a4b91d6c9e2c2c8e1",
-        "errors_blob_sha": "5f21aec7f75b1dfbdca2ea250b52be913a2ebf0f",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@banana-peeljj12/dsh-trellis",
-        "captured_at": "2026-10-26T01:59:33.546Z",
-        "window_start": "2026-09-26",
-        "window_end": "2026-10-25",
-        "downloads_30d": 1504,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-26:2026-10-25/%40banana-peeljj12%2Fdsh-trellis",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2737,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40banana-peeljj12%2Fdsh-trellis",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-18T03:29:35.618Z",
-            "captured_at": "2026-10-25T11:38:12.058Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
             "source_url": "https://registry.npmjs.org/%40banana-peeljj12%2Fdsh-trellis",
             "error": null,
-            "latest_version": "0.4.7",
-            "latest_published_at": "2026-10-25T06:07:28.166Z",
+            "latest_version": "0.5.1",
+            "latest_published_at": "2026-11-03T07:24:25.623Z",
             "latest_error": null
         }
     }
