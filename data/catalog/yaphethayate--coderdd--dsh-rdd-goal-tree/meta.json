@@ -1,0 +1,35 @@
+{
+    "repository": "YaphetHayate/codeRDD",
+    "repository_id": 1222692871,
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 4,
+    "pushed_at": "2026-10-30T02:25:16Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "@coderrdd/dsh-rdd-goal-tree",
+        "captured_at": "2026-11-04T13:26:04.262Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40coderrdd%2Fdsh-rdd-goal-tree",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-04T13:26:04.262Z",
+            "source_url": "https://registry.npmjs.org/%40coderrdd%2Fdsh-rdd-goal-tree",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "repository": "linxuhao/AItelier",
+    "repository_id": 1201143178,
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 3,
+    "pushed_at": "2026-11-04T12:20:28Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Alinxuhao%2FAItelier%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 668E:A0C92:6726C:6F0B4:6AEB32EC and timestamp 2026-11-04 13:28:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Alinxuhao%2FAItelier%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 66E0:2816A7:7B4C6:833AD:6AEB32EE and timestamp 2026-11-04 13:28:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alinxuhao%2FAItelier%20is%3Aissue%20created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6722:B580D:67C99:6FA8A:6AEB32EF and timestamp 2026-11-04 13:28:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alinxuhao%2FAItelier%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 675A:3580A4:6487F:6C6A1:6AEB32F0 and timestamp 2026-11-04 13:28:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alinxuhao%2FAItelier%20is%3Aissue%20updated%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6790:26D5C6:71EB4:79D2A:6AEB32F2 and timestamp 2026-11-04 13:28:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-plugin-aitelier",
+        "captured_at": "2026-11-02T21:44:22.915Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 882,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-plugin-aitelier",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-25T13:34:29.893Z",
+            "captured_at": "2026-11-02T21:44:22.915Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-aitelier",
+            "error": null,
+            "latest_version": "0.1.9",
+            "latest_published_at": "2026-09-08T13:42:21.315Z",
+            "latest_error": null
+        }
+    }
+}

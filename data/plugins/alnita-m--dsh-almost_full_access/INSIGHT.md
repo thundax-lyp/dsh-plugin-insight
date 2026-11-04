@@ -5,7 +5,7 @@
 源码版本：[269ab86](https://github.com/Alnita-M/dsh-Almost_Full_Access/tree/269ab865fd02a4dded171eaecc40b1255f5df227)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 1,006](https://img.shields.io/static/v1?label=npm+30d&message=1%2C006&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alnita-M/dsh-Almost_Full_Access) [![npm 30d 989](https://img.shields.io/static/v1?label=npm+30d&message=989&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access) [![最新发布 2026-10-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-almost-full-access)
 <!-- END META -->
 
 > **功能**：在DSH完全访问预设上，为部分命名shell工具加入确定性/子代理审查、人工审批面板和命令记忆。
@@ -139,7 +139,11 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-29），可前往 [GitHub Issues](https://github.com/Alnita-M/dsh-Almost_Full_Access/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Alnita-M/dsh-Almost_Full_Access/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Alnita-M/dsh-Almost_Full_Access/issues?q=is%3Aissue+created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Alnita-M/dsh-Almost_Full_Access/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z)
+
+
+
+统计日期：2026-11-04。
 
 <a id="detail-section-10"></a>
 
@@ -1336,8 +1340,8 @@ export const deepseekProbe: Probe = {
 
 ```
 
-当前ZCode7045cfd29cea53f139d3eed873c5ecf38202f55f直接扫描配置的sessions root；磁盘缓存按profileContext.dir或USAGE_STATS_CACHE_DIR选择，解析不到才回退web，且schema3使旧语义缓存失效，输出有partial/scan信息。模块级cache/cacheDir/inflight仍没有按每次上下文建表，磁盘加载还含旧路径迁移；聚合cache载入检查schema而没有在该处比对当前扫描root。应验证共享模块、多profile/根切换和旧缓存迁移的范围一致性，不能把它说成已经混入其他用户数据。API主动调用connection.requestRejection，缺服务返回503，取数范围问题不能扩成匿名可访问。
-[Amer-CN/zcode-usage-stats lib/index.mjs:672-680](https://github.com/Amer-CN/zcode-usage-stats/blob/7045cfd29cea53f139d3eed873c5ecf38202f55f/lib/index.mjs#L672-L680)
+当前ZCodef202d78d3db342fbb251b862b6f8f23bbe4d61c3直接扫描配置的sessions root；磁盘缓存按profileContext.dir或USAGE_STATS_CACHE_DIR选择，解析不到才回退web，且schema3使旧语义缓存失效，输出有partial/scan信息。模块级cache/cacheDir/inflight仍没有按每次上下文建表，未显式设置USAGE_STATS_CACHE_DIR时磁盘加载还含旧路径迁移；显式设置该变量时当前源码跳过旧路径迁移。聚合cache载入检查schema而没有在该处比对当前扫描root。应验证共享模块、多profile/根切换和旧缓存迁移的范围一致性，不能把它说成已经混入其他用户数据。API主动调用connection.requestRejection，缺服务返回503，取数范围问题不能扩成匿名可访问。
+[Amer-CN/zcode-usage-stats lib/index.mjs:672-680](https://github.com/Amer-CN/zcode-usage-stats/blob/f202d78d3db342fbb251b862b6f8f23bbe4d61c3/lib/index.mjs#L672-L680)
 
 ```
 async function loadDiskCache() {
@@ -1351,7 +1355,7 @@ async function loadDiskCache() {
       return j;
 ```
 
-[Amer-CN/zcode-usage-stats lib/index.mjs:711-722](https://github.com/Amer-CN/zcode-usage-stats/blob/7045cfd29cea53f139d3eed873c5ecf38202f55f/lib/index.mjs#L711-L722)
+[Amer-CN/zcode-usage-stats lib/index.mjs:711-722](https://github.com/Amer-CN/zcode-usage-stats/blob/f202d78d3db342fbb251b862b6f8f23bbe4d61c3/lib/index.mjs#L711-L722)
 
 ```
 export function apply(ctx) {
@@ -1368,7 +1372,7 @@ export function apply(ctx) {
   if (typeof envCacheDir === "string" && envCacheDir.trim()) cacheDir = envCacheDir.trim();
 ```
 
-[Amer-CN/zcode-usage-stats lib/index.mjs:802-810](https://github.com/Amer-CN/zcode-usage-stats/blob/7045cfd29cea53f139d3eed873c5ecf38202f55f/lib/index.mjs#L802-L810)
+[Amer-CN/zcode-usage-stats lib/index.mjs:802-810](https://github.com/Amer-CN/zcode-usage-stats/blob/f202d78d3db342fbb251b862b6f8f23bbe4d61c3/lib/index.mjs#L802-L810)
 
 ```
       // 本路由是 /api 下的 exact 路由,优先级高于 dsh-client-connection 挂在 /api prefix 上的

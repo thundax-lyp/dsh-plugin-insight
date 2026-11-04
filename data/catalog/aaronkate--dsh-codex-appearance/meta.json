@@ -1,66 +1,35 @@
 {
     "repository": "AaronKate/dsh-codex-appearance",
     "repository_id": 1426448931,
-    "captured_at": "2026-10-29T05:28:58.410Z",
-    "window_start": "2026-09-29T05:28:58.410Z",
-    "stars": 0,
-    "pushed_at": "2026-10-27T12:48:05Z",
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 1,
+    "pushed_at": "2026-11-03T13:00:45Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAD0:15E58E:5F43724:8817446:6AE2DB48 and timestamp 2026-10-29 05:36:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAEC:2CB578:6320F45:8D28F07:6AE2DB49 and timestamp 2026-10-29 05:36:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20created%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB08:3A0262:638849D:8DA30FA:6AE2DB49 and timestamp 2026-10-29 05:36:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB12:1EA11A:63476C5:8D8033D:6AE2DB4A and timestamp 2026-10-29 05:36:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAaronKate%2Fdsh-codex-appearance%20is%3Aissue%20updated%3A2026-09-29T05%3A28%3A58.410Z..2026-10-29T05%3A28%3A58.410Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DB22:1EA11A:634796C:8D80717:6AE2DB4B and timestamp 2026-10-29 05:36:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T13:34:01.474Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "a12952106a69c3721d4b3e865f317f44cd83bb24",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-eye-comfort",
-        "captured_at": "2026-10-29T05:28:58.410Z",
-        "window_start": "2026-09-29",
-        "window_end": "2026-10-28",
-        "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-eye-comfort",
-        "error": "HTTP 404",
+        "captured_at": "2026-11-02T11:17:42.215Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 0,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-eye-comfort",
+        "error": null,
         "publication": {
-            "first_published_at": null,
-            "captured_at": "2026-10-29T05:28:58.410Z",
+            "first_published_at": "2026-10-30T10:26:02.184Z",
+            "captured_at": "2026-11-02T11:17:42.215Z",
             "source_url": "https://registry.npmjs.org/dsh-eye-comfort",
-            "error": "HTTP 404",
-            "latest_version": null,
-            "latest_published_at": null,
-            "latest_error": "HTTP 404"
+            "error": null,
+            "latest_version": "0.3.21",
+            "latest_published_at": "2026-11-02T06:16:07.300Z",
+            "latest_error": null
         }
     }
 }

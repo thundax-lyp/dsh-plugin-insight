@@ -1,27 +1,38 @@
 {
     "repository": "hikariming/dshfind",
     "repository_id": 1333082908,
-    "captured_at": "2026-10-29T03:03:10.741Z",
-    "window_start": "2026-09-29T03:03:10.741Z",
-    "stars": 336,
-    "pushed_at": "2026-10-27T03:34:32Z",
+    "captured_at": "2026-11-04T13:26:04.262Z",
+    "window_start": "2026-10-05T13:26:04.262Z",
+    "stars": 359,
+    "pushed_at": "2026-11-02T10:06:20Z",
     "issues": {
-        "open": 38,
-        "closed": 7,
-        "created_30d": 11,
-        "closed_30d": 2,
-        "updated_30d": 13
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-29T01:29:30.018Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2ec69289ae1002a655e9f6fb0998b596829ce8c0",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    }
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahikariming%2Fdshfind%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6362:1FFC35:5ED6E:669C3:6AEB32E4 and timestamp 2026-11-04 13:28:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahikariming%2Fdshfind%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 63FC:277206:6D966:7571D:6AEB32E5 and timestamp 2026-11-04 13:28:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahikariming%2Fdshfind%20is%3Aissue%20created%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 645A:34F4D8:60D10:689F2:6AEB32E6 and timestamp 2026-11-04 13:28:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahikariming%2Fdshfind%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6516:35067C:65DB2:6DB78:6AEB32E8 and timestamp 2026-11-04 13:28:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahikariming%2Fdshfind%20is%3Aissue%20updated%3A2026-10-05T13%3A26%3A04.262Z..2026-11-04T13%3A26%3A04.262Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 65A6:34AADF:62460:6A0C6:6AEB32E9 and timestamp 2026-11-04 13:28:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
 }

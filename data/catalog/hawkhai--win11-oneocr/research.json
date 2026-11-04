@@ -1,0 +1,435 @@
+{
+    "schema_version": 4,
+    "id": "8c847a3057b14492b44d0b599de35036",
+    "identity": "github:1203867532:root",
+    "slug": "hawkhai--win11-oneocr",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1203867532:root",
+            "repository_id": 1203867532,
+            "component_id": "root",
+            "repository": "hawkhai/win11-oneocr",
+            "path": "",
+            "aliases": [],
+            "name": "Windows 11 OneOCR",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f2baf779cf13affaad6a666c1fd4efd4bb71a1504a0a1d9dc4f562a945b19f2b",
+                "code": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                "maintenance": "ff2f0a57010d625430aaed4a51c3c7e75f3117ffade23d88509d143b1353f18c"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-03-github-1203867532-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T13:49:07.324Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-03-github-1203867532-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hawkhai/win11-oneocr",
+                            "commit": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                            "path": "README.md",
+                            "content_sha256": "a047696a033465d3a619001f0a016661e7f783429420e98dbeac7f8013829522"
+                        }
+                    ],
+                    "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                    "captured_at": "2026-11-04T13:49:07.324Z",
+                    "summary": "为 DSH 提供本地图片的 OneOCR 文字与结构化结果。",
+                    "artifact": "data/runs/2026-11-04-03/hawkhai--win11-oneocr/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-03-github-1203867532-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hawkhai/win11-oneocr",
+                            "commit": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                            "path": "README.md",
+                            "content_sha256": "a047696a033465d3a619001f0a016661e7f783429420e98dbeac7f8013829522"
+                        },
+                        {
+                            "repository_url": "https://github.com/hawkhai/win11-oneocr",
+                            "commit": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                            "path": "package.json",
+                            "content_sha256": "daf64dee0dbe4f1cbd9241895b79458c316de07a769501f32870be35df1d1d27"
+                        },
+                        {
+                            "repository_url": "https://github.com/hawkhai/win11-oneocr",
+                            "commit": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                            "path": "src/index.js",
+                            "content_sha256": "a46e23a986e0f214f47c852d58438a7ebf41b886f8e75f6e62be46ca3cfef1e6"
+                        }
+                    ],
+                    "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                    "captured_at": "2026-11-04T13:49:07.324Z",
+                    "summary": "核查 README.md、package.json、src/index.js；注册模型工具，启动 OneOCR CLI 到临时 JSON，返回提取文本及结构化结果。",
+                    "artifact": "data/runs/2026-11-04-03/hawkhai--win11-oneocr/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查 DSH 入口、进程边界、包声明和 README；DLL、模型、发布包一致性及宿主数据路径未审计。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要从 Windows 本地图片读取文字并交给 DSH 的用户。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "注册模型工具，启动 OneOCR CLI 到临时 JSON，返回提取文本及结构化结果。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查 DSH 入口、进程边界、包声明和 README；DLL、模型、发布包一致性及宿主数据路径未审计。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package.json 声明 0.1.1、MIT、DSH bundle 和预编译 DLL/模型；第三方二进制许可和发布内容未独立核验。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| Windows 11 和 DSH | 工具运行需要 | 宿主与进程 | 无法使用 |\n| OneOCR 可执行文件和 DLL/模型 | 识别需要 | 运行 OCR | 进程失败 |\n| 可读图片及权限 | 每次调用 | 提供输入 | 读取失败 |\n| 临时目录 | 输出需要 | 保存结果 | 调用失败 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | Windows、二进制和 DSH | 安装和许可核对 | 兼容未知 |\n| 持续 | 本机计算与临时存储 | 复核图片和结果 | 精度耗时未知 |\n| 故障 | 临时目录和进程 | 核对退出与残留 | 异常清理未测 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 使用非敏感图片验证并核对 DLL 来源；无法接受宿主数据发送或未知二进制边界时停用。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 材料 | 未知 |\n|---|---|---|\n| DSH 工具 | 注册与执行源码 | 实际宿主兼容 |\n| 本地进程 | shell=false 和文件路径 | DLL 网络行为 |\n| 输出限制 | 大小与超时检查 | 系统资源与识别质量 |",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 有大小、超时和临时清理路径；[Q03](#research-q03) 二进制及绝对路径权限不由工具沙箱保证。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 将已有 OCR CLI 接入 DSH，[Q02](#research-q02) 限制进程输出并清理临时结果；不是新识别模型。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) DLL 与模型未开源且识别文本交给宿主，不能仅凭 JS 证明完整离线与保密。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 将低置信词引向人工复核，需用标注样本验证。",
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1203867532:root",
+                            "area": "code",
+                            "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T13:49:07.324Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T13:49:07.324Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                "reviewed_at": "2026-11-04T13:49:07.324Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1203867532:root",
+                        "area": "code",
+                        "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 与 src/index.js:80–103 显示现有 CLI 的 DSH 包装，novelty 9（25%）高于无增量 0，但模型由上游提供，不足重要新方法 18；[Q02](#research-q02) 的 timeout、取消和临时清理是常规局部工程机制，mechanism 8 高于 0，未形成重要新取舍不足 15。调用接口可迁移到类似本地 OCR，但依赖 Windows，transferability 5 高于 0，未证跨平台方案不足 10。省去手工调用和解析的局部步骤，simplification 4 高于 0；仍要配置二进制并处理失败，不足重要简化 8。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) 把现有 OCR 接入代理流程提供局部便利，workflow 9 高于 0；没有改变任务责任或验证方式的依据，不足 18。原交付仍为识别文字与布局，delivery 取 0，不将原 CLI 输出算新增单位。提供 DSH 入口 reach 5 高于 0，但 Windows 和本地资源限制仍在，未证新增受限人群，不足 10。未证费用或资源组织变化，economics 取 0，不以离线猜测节省到 4。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-11-04-03-github-1203867532-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "需要在 Windows 的 DSH 会话中读取本地图片的用户可以先用非敏感图片观察该工具。它将已有 OneOCR 结果接入模型工具，但识别效果、二进制行为和宿主数据流尚未实测。如果不能接受图片读取或未知二进制及模型传输边界，应停用工具并用受控的人工流程。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README.md:7–15 明确本地图像识别任务和用户，超过只有潜在用途的 8 分；使用频率与采用必要性缺少材料，不足 23 分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) src/index.js:80–103 和 121–126 为已有 CLI 提供工具包装，高于无增量 0；直接 CLI 也可得到 JSON，未证实质任务改善，不足 13 分。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 和 [Q03](#research-q03) 检查注册与进程边界，超过核心主张被反驳的 0 分；关键 DLL、二进制与宿主行为未验证，不足 13 分。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q04](#research-q04) 的 Windows、DLL 来源和敏感内容需用户处理，使用非敏感图片和停用提供有限退路，超过 0 分；失败清理和许可未核清，不足 10 分。"
+                    }
+                },
+                "score": 32,
+                "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                "reviewed_at": "2026-11-04T13:49:07.324Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-03-github-1203867532-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1203867532:root",
+                        "area": "code",
+                        "fingerprint": "f09ce228b50fefee64dfbfb5ef879a1092a894fd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1203867532:root",
+            "repository": "hawkhai/win11-oneocr",
+            "path": "",
+            "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+            "fingerprints": {
+                "directory": "f2baf779cf13affaad6a666c1fd4efd4bb71a1504a0a1d9dc4f562a945b19f2b",
+                "code": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+                "maintenance": "ff2f0a57010d625430aaed4a51c3c7e75f3117ffade23d88509d143b1353f18c"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T13:20:58Z",
+            "analysis_sha256": "02f6b1b3485fcb642246ed3559e2d5ffc4aa50469abdc695d5b4515e7b0eef58"
+        },
+        "publication.metadata": "data/catalog/hawkhai--win11-oneocr/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供本地图片的 OneOCR 文字与结构化结果。",
+            "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+            "source_url": "https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+            "items": {
+                "模型工具": "注册本地图片 OCR 及结构化结果工具。",
+                "后台": "启动 OCR 进程并处理临时 JSON。"
+            },
+            "table": "| 能力 | 用途 | 边界 |\n|---|---|---|\n| 图片识别 | 提取文本及布局 | Windows 和 OneOCR 依赖 |\n| 输出限制 | 控制结果与进程时间 | 实际资源及终止未测 |\n| 临时结果 | 将 JSON 交给 DSH | 模型内容后续流向取决于宿主 |"
+        },
+        "publication.advice": {
+            "revision": "f09ce228b50fefee64dfbfb5ef879a1092a894fd",
+            "text": "[Q04](#research-q04) 使用非敏感图片验证并核对 DLL 来源；无法接受宿主数据发送或未知二进制边界时停用。"
+        },
+        "registry": "data/plugins/hawkhai--win11-oneocr",
+        "reports": "# Windows 11 OneOCR\n\n> 为 DSH 提供本地图片的 OneOCR 文字与结构化结果。\n\n## 研究范围\n\n- **仓库**：[hawkhai/win11-oneocr](https://github.com/hawkhai/win11-oneocr)\n- **版本号**：0.1.1（[固定提交 f09ce228b50fefee64dfbfb5ef879a1092a894fd](https://github.com/hawkhai/win11-oneocr/tree/f09ce228b50fefee64dfbfb5ef879a1092a894fd)）\n- **版本日期**：2026-08-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定版本静态核查，未运行 Windows 二进制、DSH 或模型。\n\n## 洞察短评\n\n- **用途**：需要从 Windows 本地图片读取文字并交给 DSH 的用户。\n- **亮点**：[Q01](#research-q01) 将已有 OCR CLI 接入 DSH，[Q02](#research-q02) 限制进程输出并清理临时结果；不是新识别模型。\n- **思考**：[Q03](#research-q03) DLL 与模型未开源且识别文本交给宿主，不能仅凭 JS 证明完整离线与保密。\n- **建议**：[Q05](#research-q05) 将低置信词引向人工复核，需用标注样本验证。\n\n采用建议：[Q04](#research-q04) 使用非敏感图片验证并核对 DLL 来源；无法接受宿主数据发送或未知二进制边界时停用。\n\n## 核心贡献\n\n[Q01](#research-q01) 将已有 OCR CLI 接入 DSH，[Q02](#research-q02) 限制进程输出并清理临时结果；不是新识别模型。\n\n## 关键质疑\n\n[Q03](#research-q03) DLL 与模型未开源且识别文本交给宿主，不能仅凭 JS 证明完整离线与保密。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 将低置信词引向人工复核，需用标注样本验证。\n\n隔离 Windows 测试宿主调用、文件权限、二进制来源、网络和异常清理；本轮未执行。\n\n## 场景与替代办法\n\n需要从 Windows 本地图片读取文字并交给 DSH 的用户。\n\n手工查看图片或直接运行已有 OneOCR CLI。\n\n## 依赖与流程\n\n| 依赖 | 条件 | 作用 | 缺失影响 |\n|---|---|---|---|\n| Windows 11 和 DSH | 工具运行需要 | 宿主与进程 | 无法使用 |\n| OneOCR 可执行文件和 DLL/模型 | 识别需要 | 运行 OCR | 进程失败 |\n| 可读图片及权限 | 每次调用 | 提供输入 | 读取失败 |\n| 临时目录 | 输出需要 | 保存结果 | 调用失败 |\n\n| 步骤 | 执行者与动作 | 判据或失败处理 |\n|---|---|---|\n| 准备 | 用户核查 Windows 与二进制来源 | 使用非敏感测试图 |\n| 调用 | Agent 提供可读图片路径 | 工具校验平台和参数 |\n| 解析 | 子进程写临时 JSON | 超时或错误则报告 |\n| 复核 | 用户检查文字和坐标 | 未确认时返回原图 |\n\n## 成本与效果\n\n| 阶段 | 资源 | 人工 | 未知 |\n|---|---|---|---|\n| 首次 | Windows、二进制和 DSH | 安装和许可核对 | 兼容未知 |\n| 持续 | 本机计算与临时存储 | 复核图片和结果 | 精度耗时未知 |\n| 故障 | 临时目录和进程 | 核对退出与残留 | 异常清理未测 |\n\n| 效果 | 材料 | 未知 |\n|---|---|---|\n| DSH 工具 | 注册与执行源码 | 实际宿主兼容 |\n| 本地进程 | shell=false 和文件路径 | DLL 网络行为 |\n| 输出限制 | 大小与超时检查 | 系统资源与识别质量 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核查 DSH OCR 接线、二进制依赖及隐私边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · Windows 图片文字识别相对手动复制增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n项目面向希望在 DSH 中读取本地图片文字的 Windows 用户。它把已有 OneOCR 可执行程序封装为模型工具，返回文字与结构化布局；相比人工看图抄录或直接调用 OCR CLI，具体增量是 DSH 工具接线及结构化结果传递，不是 OneOCR 模型本身。识别精度、速度和真实成本均未经同任务对照。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:7-17](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md#L7-L17)\n\nDSH 工具用途及本地运行主张。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n````text\n## DeepSeek Harness plugin\n\nThis repository can be installed as a [DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) plugin:\n\n```powershell\ndsh plugin add github:hawkhai/win11-oneocr\n```\n\nIt registers `oneocr_recognize`, a model-facing tool that accepts a local image path and returns recognized text together with OneOCR's structured line/word polygons, confidence values, image angle, and handwriting style. The tool runs locally on Windows 11; image bytes are not sent to an external OCR service.\n\nThe bundle defaults to the prebuilt `bin/ocr.exe` and its adjacent runtime files. Override `ocrBin`, `timeoutMs`, or `maxOutputBytes` in the plugin row if needed.\n````\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:19-33](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md#L19-L33)\n\n作者描述的 OCR 输出能力。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n## Features\n\n| Feature | Description |\n|---|---|\n| **8-point Bounding Box** | 4-corner polygon bbox for lines and words (not just axis-aligned rect) |\n| **Word Confidence** | Per-word recognition confidence score (0.0–1.0) |\n| **Image Angle** | Detected rotation angle of the text in the image |\n| **Line Style** | Handwritten vs. printed text classification with confidence |\n| **Resize Resolution** | Configurable max internal resize before OCR (performance/accuracy trade-off) |\n| **Resource Release** | Proper cleanup via `ReleaseOcrResult`, `ReleaseOcrPipeline`, etc. |\n| **Unicode Path** | Full Unicode file path support via `_wfopen` in the DLL wrapper |\n| **Multi-image Batch** | Process multiple images in one invocation |\n| **Plain Text Output** | `--text` mode for pipe-friendly output (no JSON) |\n| **Raw Buffer OCR** | `ocrImageRaw()` for in-memory BGRA pixel buffers (no file I/O) |\n| **Visualization** | Python script with confidence-colored word boxes and style labels |\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:80-103](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L80-L103)\n\n工具注册和结果渲染。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const ocrBin = typeof config.ocrBin === 'string' && config.ocrBin ? resolve(config.ocrBin) : DEFAULT_OCR_BIN\n  const timeoutMs = positiveInteger(config.timeoutMs, 60_000, 'timeoutMs')\n  const maxOutputBytes = positiveInteger(config.maxOutputBytes, 4 * 1024 * 1024, 'maxOutputBytes')\n\n  ctx.tools.register(defineTool({\n    name: 'oneocr_recognize',\n    description: 'Recognize text in a local image with the offline Windows 11 OneOCR engine. Returns plain text plus the engine JSON with line/word polygons, confidence, rotation, and handwriting style.',\n    parameters: {\n      image_path: { type: 'string', required: true, description: 'Absolute path, or a path relative to the current session workspace.' },\n      max_lines: { type: 'integer', description: 'Maximum recognition lines (1-1000). Default: 1000.' },\n      resize_width: { type: 'integer', description: 'Optional internal resize width; use together with resize_height.' },\n      resize_height: { type: 'integer', description: 'Optional internal resize height; use together with resize_width.' }\n    },\n    output: {\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          text: { type: 'string', required: true },\n          result: { type: 'string', required: true }\n        }\n      },\n      render: (_args, value) => [{ type: 'text', text: `<ocr_text>\\n${value.text}\\n</ocr_text>\\n<oneocr_json>\\n${value.result}\\n</oneocr_json>` }]\n```\n\n</details>\n\n#### 缺口\n\n- 缺少目标图片与其他 OCR 的对照\n  **影响**：不能衡量精度和收益\n  **进一步探讨**：用标注图片比较识别准确率、失败和人工复核。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 本地图像如何送入进程并返回 DSH？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n插件验证 Windows、路径、行数和成对尺寸，解析相对路径后创建临时目录，以 shell=false 启动指定 ocr.exe 并传文件路径和输出参数，读取 JSON 返回文字及原结果，finally 清理临时目录。子进程输出、结果文件设大小限制，超时或取消调用停止流程；Windows taskkill 是异步发起，不能单凭调用证明后代均已退出。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.js:19-39](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L19-L39)\n\n路径及进程启动和停止。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nfunction sessionPath(path, exec) {\n  if (isAbsolute(path)) return path\n  const cwd = exec.agent?.session?.header?.cwd ?? process.cwd()\n  return resolve(cwd, path)\n}\n\nfunction runProcess(command, args, { cwd, timeoutMs, maxOutputBytes, signal }) {\n  return new Promise((resolveRun, reject) => {\n    if (signal?.aborted) return reject(new Error('OneOCR call aborted'))\n    const child = spawn(command, args, { cwd, windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] })\n    let stdout = Buffer.alloc(0)\n    let stderr = Buffer.alloc(0)\n    let settled = false\n\n    const stop = () => {\n      if (child.exitCode !== null || child.signalCode !== null) return\n      if (process.platform === 'win32' && child.pid) {\n        const killer = spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { windowsHide: true, stdio: 'ignore' })\n        killer.unref()\n      } else child.kill('SIGKILL')\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/index.js:40-71](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L40-L71)\n\n上限、取消、超时与错误。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n    const finish = (error, value) => {\n      if (settled) return\n      settled = true\n      clearTimeout(timer)\n      signal?.removeEventListener('abort', onAbort)\n      error ? reject(error) : resolveRun(value)\n    }\n    const append = (current, chunk, stream) => {\n      const next = Buffer.concat([current, chunk])\n      if (next.length > maxOutputBytes) {\n        stop()\n        finish(new Error(`${stream} exceeded ${maxOutputBytes} bytes`))\n      }\n      return next\n    }\n    const onAbort = () => {\n      stop()\n      finish(new Error('OneOCR call aborted'))\n    }\n    const timer = setTimeout(() => {\n      stop()\n      finish(new Error(`OneOCR timed out after ${timeoutMs} ms`))\n    }, timeoutMs)\n    signal?.addEventListener('abort', onAbort, { once: true })\n    child.stdout.on('data', (chunk) => { stdout = append(stdout, chunk, 'stdout') })\n    child.stderr.on('data', (chunk) => { stderr = append(stderr, chunk, 'stderr') })\n    child.on('error', (error) => finish(error))\n    child.on('close', (code) => {\n      if (settled) return\n      if (code !== 0) return finish(new Error(`OneOCR exited with code ${code}: ${stderr.toString('utf8').trim().slice(0, 2000)}`))\n      finish(undefined)\n    })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.js:80-103](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L80-L103)\n\n工具与输出模式。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n  const ocrBin = typeof config.ocrBin === 'string' && config.ocrBin ? resolve(config.ocrBin) : DEFAULT_OCR_BIN\n  const timeoutMs = positiveInteger(config.timeoutMs, 60_000, 'timeoutMs')\n  const maxOutputBytes = positiveInteger(config.maxOutputBytes, 4 * 1024 * 1024, 'maxOutputBytes')\n\n  ctx.tools.register(defineTool({\n    name: 'oneocr_recognize',\n    description: 'Recognize text in a local image with the offline Windows 11 OneOCR engine. Returns plain text plus the engine JSON with line/word polygons, confidence, rotation, and handwriting style.',\n    parameters: {\n      image_path: { type: 'string', required: true, description: 'Absolute path, or a path relative to the current session workspace.' },\n      max_lines: { type: 'integer', description: 'Maximum recognition lines (1-1000). Default: 1000.' },\n      resize_width: { type: 'integer', description: 'Optional internal resize width; use together with resize_height.' },\n      resize_height: { type: 'integer', description: 'Optional internal resize height; use together with resize_width.' }\n    },\n    output: {\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          text: { type: 'string', required: true },\n          result: { type: 'string', required: true }\n        }\n      },\n      render: (_args, value) => [{ type: 'text', text: `<ocr_text>\\n${value.text}\\n</ocr_text>\\n<oneocr_json>\\n${value.result}\\n</oneocr_json>` }]\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.js:105-131](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L105-L131)\n\n参数校验、临时结果和清理。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n    isConcurrencySafe: () => true,\n    async execute(args, exec) {\n      if (exec.signal?.aborted) throw new Error('OneOCR call aborted')\n      if (process.platform !== 'win32') throw new Error('OneOCR requires Windows 11')\n      if (typeof args.image_path !== 'string' || !args.image_path.trim()) throw new Error('image_path must be a non-empty string')\n      const maxLines = positiveInteger(args.max_lines, 1000, 'max_lines')\n      if (maxLines > 1000) throw new Error('max_lines must not exceed 1000')\n      const hasWidth = args.resize_width !== undefined\n      const hasHeight = args.resize_height !== undefined\n      if (hasWidth !== hasHeight) throw new Error('resize_width and resize_height must be supplied together')\n      const tempDir = await fs.mkdtemp(join(tmpdir(), 'dsh-oneocr-'))\n      const outputPath = join(tempDir, 'result.json')\n      const argv = [sessionPath(args.image_path, exec), '--output', outputPath, '--max-lines', String(maxLines), '--quiet']\n      if (hasWidth) {\n        argv.push('--resize', `${positiveInteger(args.resize_width, 0, 'resize_width')}x${positiveInteger(args.resize_height, 0, 'resize_height')}`)\n      }\n      try {\n        await runProcess(ocrBin, argv, { cwd: dirname(ocrBin), timeoutMs, maxOutputBytes, signal: exec.signal })\n        const info = await fs.stat(outputPath)\n        if (info.size > maxOutputBytes) throw new Error(`OneOCR result exceeded ${maxOutputBytes} bytes`)\n        const result = JSON.parse(await fs.readFile(outputPath, 'utf8'))\n        return { text: plainText(result), result: JSON.stringify(result, null, 2) }\n      } finally {\n        await fs.rm(tempDir, { recursive: true, force: true })\n      }\n    },\n    presentCall: (args) => ({ card: 'generic', title: `OneOCR ${args.image_path}`, kind: 'read', locations: [{ path: args.image_path }] })\n```\n\n</details>\n\n#### 缺口\n\n- 未运行 Windows 二进制和 DSH 工具\n  **影响**：不能确认识别、清理或终止效果\n  **进一步探讨**：隔离 Windows 测试路径、超时、取消和临时文件。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 闭源引擎、离线和隐私主张的边界是什么？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n仓库包括 ocr.exe、OneOCR DLL、模型及包装源码；README 将识别称为离线，但其中 DLL 和模型的内部实现未提供可审阅源码，不能仅凭 JS 不发网络证明其完整行为或二进制与 C++ 源码一致。工具把识别文字和完整结果交给 DSH，之后是否发送给模型取决于宿主配置；绝对路径未限制在工作目录内，调用权限取决于宿主策略及进程权限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-17](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md#L3-L17)\n\n作者离线和二进制说明。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\nOffline OCR engine extracted from the Windows 11 Snipping Tool, with full-featured C++ CLI, reusable DLL wrapper, and Python visualization.\n\nBased on: https://b1tg.github.io/post/win11-oneocr/\n\n## DeepSeek Harness plugin\n\nThis repository can be installed as a [DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) plugin:\n\n```powershell\ndsh plugin add github:hawkhai/win11-oneocr\n```\n\nIt registers `oneocr_recognize`, a model-facing tool that accepts a local image path and returns recognized text together with OneOCR's structured line/word polygons, confidence values, image angle, and handwriting style. The tool runs locally on Windows 11; image bytes are not sent to an external OCR service.\n\nThe bundle defaults to the prebuilt `bin/ocr.exe` and its adjacent runtime files. Override `ocrBin`, `timeoutMs`, or `maxOutputBytes` in the plugin row if needed.\n````\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:8-15](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/package.json#L8-L15)\n\n打包 exe、DLL 和模型声明。\n\n```text\n  \"files\": [\n    \"src\",\n    \"bin/ocr.exe\",\n    \"bin/oneocr.dll\",\n    \"bin/oneocr.onemodel\",\n    \"bin/onnxruntime.dll\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n```\n\n**依据 3 · 源码核查**：[src/index.js:19-22](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L19-L22)\n\n绝对路径不受 cwd 约束。\n\n```text\nfunction sessionPath(path, exec) {\n  if (isAbsolute(path)) return path\n  const cwd = exec.agent?.session?.header?.cwd ?? process.cwd()\n  return resolve(cwd, path)\n```\n\n**依据 4 · 源码核查**：[src/index.js:121-131](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L121-L131)\n\n输出读回及返回给宿主。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      try {\n        await runProcess(ocrBin, argv, { cwd: dirname(ocrBin), timeoutMs, maxOutputBytes, signal: exec.signal })\n        const info = await fs.stat(outputPath)\n        if (info.size > maxOutputBytes) throw new Error(`OneOCR result exceeded ${maxOutputBytes} bytes`)\n        const result = JSON.parse(await fs.readFile(outputPath, 'utf8'))\n        return { text: plainText(result), result: JSON.stringify(result, null, 2) }\n      } finally {\n        await fs.rm(tempDir, { recursive: true, force: true })\n      }\n    },\n    presentCall: (args) => ({ card: 'generic', title: `OneOCR ${args.image_path}`, kind: 'read', locations: [{ path: args.image_path }] })\n```\n\n</details>\n\n#### 缺口\n\n- 未审计 DLL、模型和宿主数据流\n  **影响**：无法独立证实完整离线或数据保密\n  **进一步探讨**：核对来源许可、二进制并在隔离网络环境审查进程及模型调用。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 使用需要哪些系统、权限及恢复条件？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n依赖 Windows 11、兼容 Node 和 DSH 工具；包声明附带 exe 与运行文件，README 同时提供从 Snipping Tool 复制依赖的说明，部署方式和权利适用条件需独立核实。使用者需提供可读图片并复核识别结果，临时目录保存结构化输出，进程或强制终止失败可能留下未验证状态。先用非敏感测试图片验证，不能接受读取或未知二进制边界时停用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:8-15](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/package.json#L8-L15)\n\n预期分发文件。\n\n```text\n  \"files\": [\n    \"src\",\n    \"bin/ocr.exe\",\n    \"bin/oneocr.dll\",\n    \"bin/oneocr.onemodel\",\n    \"bin/onnxruntime.dll\",\n    \"cordis.patch.yml\",\n    \"README.md\"\n```\n\n**依据 2 · 源码核查**：[package.json:33-47](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/package.json#L33-L47)\n\nNode、宿主依赖与 bundle。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=20\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \">=4.0.0 <5.0.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"4.0.1\",\n    \"@deepseek-ai/dsh-tools\": \"0.1.0-rc.7\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:35-44](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md#L35-L44)\n\n系统和额外运行依赖声明。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## Prerequisites\n\n- Windows 11 (tested on 23H2+)\n- Snipping Tool 11.2409.25.0+\n\nCopy these 3 files from the Snipping Tool installation folder into the same directory as `ocr.exe`:\n\n- `oneocr.dll`\n- `oneocr.onemodel`\n- `onnxruntime.dll`\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/index.js:115-128](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L115-L128)\n\n临时目录与正常清理。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      const tempDir = await fs.mkdtemp(join(tmpdir(), 'dsh-oneocr-'))\n      const outputPath = join(tempDir, 'result.json')\n      const argv = [sessionPath(args.image_path, exec), '--output', outputPath, '--max-lines', String(maxLines), '--quiet']\n      if (hasWidth) {\n        argv.push('--resize', `${positiveInteger(args.resize_width, 0, 'resize_width')}x${positiveInteger(args.resize_height, 0, 'resize_height')}`)\n      }\n      try {\n        await runProcess(ocrBin, argv, { cwd: dirname(ocrBin), timeoutMs, maxOutputBytes, signal: exec.signal })\n        const info = await fs.stat(outputPath)\n        if (info.size > maxOutputBytes) throw new Error(`OneOCR result exceeded ${maxOutputBytes} bytes`)\n        const result = JSON.parse(await fs.readFile(outputPath, 'utf8'))\n        return { text: plainText(result), result: JSON.stringify(result, null, 2) }\n      } finally {\n        await fs.rm(tempDir, { recursive: true, force: true })\n```\n\n</details>\n\n#### 缺口\n\n- 未测二进制兼容、许可、资源和清理\n  **影响**：无法确认总成本或恢复\n  **进一步探讨**：固定 Windows 与 DSH 版本测试异常退出与临时文件，并核实许可。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 如何降低 OCR 文本被误当确定事实的风险？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n结果包含结构化识别与置信信息，但本插件不做事实校验。可探索给低置信词提供图像位置引用与人工复核提示，并与现有直接返回结构化 JSON 对照；这是待验证方案，不声称已经实现。用带标注的真实和合成图片统计错误识别、用户发现率和处理时长，若未提升纠错或产生过多误报则否定。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:21-26](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/README.md#L21-L26)\n\n作者描述位置和置信输出。\n\n```text\n| Feature | Description |\n|---|---|\n| **8-point Bounding Box** | 4-corner polygon bbox for lines and words (not just axis-aligned rect) |\n| **Word Confidence** | Per-word recognition confidence score (0.0–1.0) |\n| **Image Angle** | Detected rotation angle of the text in the image |\n| **Line Style** | Handwritten vs. printed text classification with confidence |\n```\n\n**依据 2 · 源码核查**：[src/index.js:95-103](https://github.com/hawkhai/win11-oneocr/blob/f09ce228b50fefee64dfbfb5ef879a1092a894fd/src/index.js#L95-L103)\n\n文字与原始 JSON 返回。\n\n```text\n      schema: {\n        type: 'object',\n        additionalProperties: false,\n        properties: {\n          text: { type: 'string', required: true },\n          result: { type: 'string', required: true }\n        }\n      },\n      render: (_args, value) => [{ type: 'text', text: `<ocr_text>\\n${value.text}\\n</ocr_text>\\n<oneocr_json>\\n${value.result}\\n</oneocr_json>` }]\n```\n\n#### 缺口\n\n- 阈值和人工复核收益未知\n  **影响**：无法证明降低误读\n  **进一步探讨**：用多语言与低分辨率数据按置信度校准并对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：eba7be0f18c4afdfc7bfe04f003ce1778e17b746ca2b8d71fac168d6222c64ad。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 191 | — | — | 813 |\n| .js | source | 1 | 133 | 124 | 0 | — |\n| .mjs | test | 1 | 14 | 13 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n|---|---|---|\n| 图片识别 | 提取文本及布局 | Windows 和 OneOCR 依赖 |\n| 输出限制 | 控制结果与进程时间 | 实际资源及终止未测 |\n| 临时结果 | 将 JSON 交给 DSH | 模型内容后续流向取决于宿主 |\n\n## 工程亮点\n\n[Q02](#research-q02) 有大小、超时和临时清理路径；[Q03](#research-q03) 二进制及绝对路径权限不由工具沙箱保证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查 DSH 入口、进程边界、包声明和 README；DLL、模型、发布包一致性及宿主数据路径未审计。\n- 下一步：隔离 Windows 测试宿主调用、文件权限、二进制来源、网络和异常清理；本轮未执行。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-03/hawkhai--win11-oneocr/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"hawkhai/win11-oneocr\",\n  \"revision\": \"f09ce228b50fefee64dfbfb5ef879a1092a894fd\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"src/index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核查 DSH OCR 接线、二进制依赖及隐私边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"Windows 图片文字识别相对手动复制增加什么？\",\n        \"answer\": \"项目面向希望在 DSH 中读取本地图片文字的 Windows 用户。它把已有 OneOCR 可执行程序封装为模型工具，返回文字与结构化布局；相比人工看图抄录或直接调用 OCR CLI，具体增量是 DSH 工具接线及结构化结果传递，不是 OneOCR 模型本身。识别精度、速度和真实成本均未经同任务对照。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 7,\n            \"line_end\": 17,\n            \"observation\": \"DSH 工具用途及本地运行主张。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 19,\n            \"line_end\": 33,\n            \"observation\": \"作者描述的 OCR 输出能力。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 80,\n            \"line_end\": 103,\n            \"observation\": \"工具注册和结果渲染。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少目标图片与其他 OCR 的对照\",\n            \"impact\": \"不能衡量精度和收益\",\n            \"next_step\": \"用标注图片比较识别准确率、失败和人工复核。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"本地图像如何送入进程并返回 DSH？\",\n        \"answer\": \"插件验证 Windows、路径、行数和成对尺寸，解析相对路径后创建临时目录，以 shell=false 启动指定 ocr.exe 并传文件路径和输出参数，读取 JSON 返回文字及原结果，finally 清理临时目录。子进程输出、结果文件设大小限制，超时或取消调用停止流程；Windows taskkill 是异步发起，不能单凭调用证明后代均已退出。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 19,\n            \"line_end\": 39,\n            \"observation\": \"路径及进程启动和停止。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 40,\n            \"line_end\": 71,\n            \"observation\": \"上限、取消、超时与错误。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 80,\n            \"line_end\": 103,\n            \"observation\": \"工具与输出模式。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 105,\n            \"line_end\": 131,\n            \"observation\": \"参数校验、临时结果和清理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行 Windows 二进制和 DSH 工具\",\n            \"impact\": \"不能确认识别、清理或终止效果\",\n            \"next_step\": \"隔离 Windows 测试路径、超时、取消和临时文件。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"闭源引擎、离线和隐私主张的边界是什么？\",\n        \"answer\": \"仓库包括 ocr.exe、OneOCR DLL、模型及包装源码；README 将识别称为离线，但其中 DLL 和模型的内部实现未提供可审阅源码，不能仅凭 JS 不发网络证明其完整行为或二进制与 C++ 源码一致。工具把识别文字和完整结果交给 DSH，之后是否发送给模型取决于宿主配置；绝对路径未限制在工作目录内，调用权限取决于宿主策略及进程权限。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 3,\n            \"line_end\": 17,\n            \"observation\": \"作者离线和二进制说明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 8,\n            \"line_end\": 15,\n            \"observation\": \"打包 exe、DLL 和模型声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 19,\n            \"line_end\": 22,\n            \"observation\": \"绝对路径不受 cwd 约束。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 121,\n            \"line_end\": 131,\n            \"observation\": \"输出读回及返回给宿主。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未审计 DLL、模型和宿主数据流\",\n            \"impact\": \"无法独立证实完整离线或数据保密\",\n            \"next_step\": \"核对来源许可、二进制并在隔离网络环境审查进程及模型调用。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"使用需要哪些系统、权限及恢复条件？\",\n        \"answer\": \"依赖 Windows 11、兼容 Node 和 DSH 工具；包声明附带 exe 与运行文件，README 同时提供从 Snipping Tool 复制依赖的说明，部署方式和权利适用条件需独立核实。使用者需提供可读图片并复核识别结果，临时目录保存结构化输出，进程或强制终止失败可能留下未验证状态。先用非敏感测试图片验证，不能接受读取或未知二进制边界时停用。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 8,\n            \"line_end\": 15,\n            \"observation\": \"预期分发文件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 33,\n            \"line_end\": 47,\n            \"observation\": \"Node、宿主依赖与 bundle。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 35,\n            \"line_end\": 44,\n            \"observation\": \"系统和额外运行依赖声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 115,\n            \"line_end\": 128,\n            \"observation\": \"临时目录与正常清理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测二进制兼容、许可、资源和清理\",\n            \"impact\": \"无法确认总成本或恢复\",\n            \"next_step\": \"固定 Windows 与 DSH 版本测试异常退出与临时文件，并核实许可。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"如何降低 OCR 文本被误当确定事实的风险？\",\n        \"answer\": \"结果包含结构化识别与置信信息，但本插件不做事实校验。可探索给低置信词提供图像位置引用与人工复核提示，并与现有直接返回结构化 JSON 对照；这是待验证方案，不声称已经实现。用带标注的真实和合成图片统计错误识别、用户发现率和处理时长，若未提升纠错或产生过多误报则否定。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 21,\n            \"line_end\": 26,\n            \"observation\": \"作者描述位置和置信输出。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.js\",\n            \"line_start\": 95,\n            \"line_end\": 103,\n            \"observation\": \"文字与原始 JSON 返回。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"阈值和人工复核收益未知\",\n            \"impact\": \"无法证明降低误读\",\n            \"next_step\": \"用多语言与低分辨率数据按置信度校准并对照。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# Windows 11 Snipping Tool OCR (OneOCR)\\n\\nOffline OCR engine extracted from the Windows 11 Snipping Tool, with full-featured C++ CLI, reusable DLL wrapper, and Python visualization.\\n\\nBased on: https://b1tg.github.io/post/win11-oneocr/\\n\\n## DeepSeek Harness plugin\\n\\nThis repository can be installed as a [DeepSeek Harness](https://github.com/deepseek-ai/DeepSeek-Harness) plugin:\\n\\n```powershell\\ndsh plugin add github:hawkhai/win11-oneocr\\n```\\n\\nIt registers `oneocr_recognize`, a model-facing tool that accepts a local image path and returns recognized text together with OneOCR's structured line/word polygons, confidence values, image angle, and handwriting style. The tool runs locally on Windows 11; image bytes are not sent to an external OCR service.\\n\\nThe bundle defaults to the prebuilt `bin/ocr.exe` and its adjacent runtime files. Override `ocrBin`, `timeoutMs`, or `maxOutputBytes` in the plugin row if needed.\\n\\n## Features\\n\\n| Feature | Description |\\n|---|---|\\n| **8-point Bounding Box** | 4-corner polygon bbox for lines and words (not just axis-aligned rect) |\\n| **Word Confidence** | Per-word recognition confidence score (0.0–1.0) |\\n| **Image Angle** | Detected rotation angle of the text in the image |\\n| **Line Style** | Handwritten vs. printed text classification with confidence |\\n| **Resize Resolution** | Configurable max internal resize before OCR (performance/accuracy trade-off) |\\n| **Resource Release** | Proper cleanup via `ReleaseOcrResult`, `ReleaseOcrPipeline`, etc. |\\n| **Unicode Path** | Full Unicode file path support via `_wfopen` in the DLL wrapper |\\n| **Multi-image Batch** | Process multiple images in one invocation |\\n| **Plain Text Output** | `--text` mode for pipe-friendly output (no JSON) |\\n| **Raw Buffer OCR** | `ocrImageRaw()` for in-memory BGRA pixel buffers (no file I/O) |\\n| **Visualization** | Python script with confidence-colored word boxes and style labels |\\n\\n## Prerequisites\\n\\n- Windows 11 (tested on 23H2+)\\n- Snipping Tool 11.2409.25.0+\\n\\nCopy these 3 files from the Snipping Tool installation folder into the same directory as `ocr.exe`:\\n\\n- `oneocr.dll`\\n- `oneocr.onemodel`\\n- `onnxruntime.dll`\\n\\nFind the Snipping Tool folder:\\n```powershell\\nGet-AppxPackage Microsoft.ScreenSketch | Select-Object -ExpandProperty InstallLocation\\n```\\n\\nExample: `C:\\\\Program Files\\\\WindowsApps\\\\Microsoft.ScreenSketch_11.2409.25.0_x64__8wekyb3d8bbwe\\\\SnippingTool`\\n\\n## CLI Usage (`ocr.exe`)\\n\\n```cmd\\nocr.exe <image1.png> [image2.jpg ...] [options]\\n```\\n\\n### Options\\n\\n| Option | Description |\\n|---|---|\\n| `--text`, `-t` | Output plain text only (no JSON) |\\n| `--output`, `-o <file>` | Write JSON to specified file (default: `<image>.json`) |\\n| `--max-lines <n>` | Max recognition lines, 1–1000 (default 1000) |\\n| `--resize <WxH>` | Max internal resize resolution (e.g. `1152x768`) |\\n| `--quiet`, `-q` | Suppress progress messages |\\n| `--help`, `-h` | Show help |\\n\\n### Examples\\n\\n```cmd\\n# Single image → JSON\\nocr.exe screenshot.png\\n\\n# Plain text output (pipe to file)\\nocr.exe screenshot.png --text > result.txt\\n\\n# Batch process\\nocr.exe img1.png img2.jpg img3.bmp\\n\\n# Custom options\\nocr.exe photo.jpg --max-lines 50 --resize 800x600 -o result.json\\n```\\n\\n### JSON Output Format\\n\\n```json\\n{\\n  \\\"file\\\": \\\"test.png\\\",\\n  \\\"image\\\": { \\\"width\\\": 771, \\\"height\\\": 479, \\\"step\\\": 3084 },\\n  \\\"image_angle\\\": 0.0643,\\n  \\\"line_count\\\": 2,\\n  \\\"lines\\\": [\\n    {\\n      \\\"index\\\": 0,\\n      \\\"text\\\": \\\"Hello World\\\",\\n      \\\"bounding_box\\\": [\\n        13.0, 38.0, 458.0, 38.0,\\n        458.0, 77.0, 13.0, 76.0\\n      ],\\n      \\\"style\\\": { \\\"type\\\": \\\"printed\\\", \\\"confidence\\\": 0.035 },\\n      \\\"word_count\\\": 2,\\n      \\\"words\\\": [\\n        {\\n          \\\"index\\\": 0,\\n          \\\"text\\\": \\\"Hello\\\",\\n          \\\"bounding_box\\\": [\\n            14.35, 39.70, 140.35, 41.31,\\n            139.93, 73.42, 13.78, 74.09\\n          ],\\n          \\\"confidence\\\": 0.987\\n        }\\n      ]\\n    }\\n  ]\\n}\\n```\\n\\n## DLL Wrapper (`oneocr_wrapper.dll`)\\n\\nA reusable C DLL wrapper with 3 main APIs:\\n\\n| Function | Description |\\n|---|---|\\n| `initModel(model_dir)` | Load DLL + model, initialize pipeline |\\n| `ocrImage(image_path, json, alloc)` | OCR an image file → JSON string |\\n| `ocrImageEx(image_path, json, alloc, max_lines, resize_w, resize_h)` | OCR with configurable options |\\n| `ocrImageRaw(pixel_data, w, h, step, json, alloc)` | OCR on raw BGRA pixel buffer |\\n| `releaseModel()` | Clean up all resources |\\n\\n### C++ Header-Only Usage (`oneocr.h`)\\n\\n```cpp\\n#include \\\"oneocr.h\\\"\\n\\nOneOcr ocr;                               // loads oneocr_wrapper.dll\\nocr.initModel(L\\\".\\\");                      // directory with oneocr.dll + .onemodel\\n\\nstd::string json;\\nocr.ocrImage(L\\\"test.png\\\", json);          // basic OCR\\nocr.ocrImageEx(L\\\"test.png\\\", json, 50);    // max 50 lines\\nocr.ocrImageRaw(bgra_ptr, w, h, json);    // raw buffer OCR\\n```\\n\\n## Visualization (`visualize.py`)\\n\\n```cmd\\npython visualize.py <image_path> <json_path> [output_path]\\n```\\n\\nFeatures:\\n- 8-point polygon bounding boxes (lines in red, words colored by confidence)\\n- Confidence score labels below each word\\n- Handwritten lines highlighted in orange, printed in red\\n- Image angle and line count overlay\\n\\n## Build\\n\\nRequires: MSVC (Visual Studio), `json.hpp` (nlohmann/json), `stb_image.h`.\\n\\n```cmd\\n# Build CLI\\ncl /EHsc /O2 ocr.cpp /Fe:ocr.exe\\n\\n# Build wrapper DLL\\ncl /EHsc /O2 /LD oneocr_wrapper.cpp /Fe:oneocr_wrapper.dll\\n\\n# Build test\\ncl /EHsc /O2 oneocr_test.cpp /Fe:oneocr_test.exe\\n```\\n\\n## Other Implementations\\n\\n| Directory | Language | Description |\\n|---|---|---|\\n| `oneocr/` | Python | PyPI package with PIL/cv2 input, FastAPI web server |\\n| `oneocr-rs/` | Rust | crates.io library with `image` crate, serde JSON |\\n| `oneocr-cli/` | Rust | Minimal CLI, plain text output |\\n| `win11_oneocr_py/` | Python | Basic ctypes script (original Python port) |\\n\\n## Credits\\n\\n- [b1tg](https://github.com/b1tg/win11-oneocr) - Original reverse engineering and C++ implementation\\n- [AuroraWright/oneocr](https://github.com/AuroraWright/oneocr) - Python package with web server\\n- [wangfu91/oneocr-rs](https://github.com/wangfu91/oneocr-rs) - Rust binding with full feature coverage\\n- [Cecilia-pj/win11_oneocr_py](https://github.com/Cecilia-pj/win11_oneocr_py) - Original Python port\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-win11-oneocr\\\",\\n  \\\"version\\\": \\\"0.1.1\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness tool for offline OCR with the Windows 11 Snipping Tool OneOCR engine.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"src/index.js\\\",\\n  \\\"exports\\\": \\\"./src/index.js\\\",\\n  \\\"files\\\": [\\n    \\\"src\\\",\\n    \\\"bin/ocr.exe\\\",\\n    \\\"bin/oneocr.dll\\\",\\n    \\\"bin/oneocr.onemodel\\\",\\n    \\\"bin/onnxruntime.dll\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node test/standalone-test.mjs\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"ocr\\\",\\n    \\\"oneocr\\\",\\n    \\\"windows\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/hawkhai/win11-oneocr.git\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\">=4.0.0 <5.0.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.1.0 || >=0.1.0-rc.1 <0.2.0-0\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"0.1.0-rc.7\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"src/index.js\",\n      \"content\": \"import { spawn } from 'node:child_process'\\nimport { promises as fs } from 'node:fs'\\nimport { tmpdir } from 'node:os'\\nimport { dirname, isAbsolute, join, resolve } from 'node:path'\\nimport { fileURLToPath } from 'node:url'\\nimport { defineTool } from '@deepseek-ai/dsh-tools'\\n\\nexport const name = 'win11-oneocr'\\nexport const inject = ['tools']\\n\\nconst DEFAULT_OCR_BIN = fileURLToPath(new URL('../bin/ocr.exe', import.meta.url))\\n\\nfunction positiveInteger(value, fallback, label) {\\n  const resolved = value === undefined ? fallback : value\\n  if (!Number.isInteger(resolved) || resolved < 1) throw new Error(`${label} must be a positive integer`)\\n  return resolved\\n}\\n\\nfunction sessionPath(path, exec) {\\n  if (isAbsolute(path)) return path\\n  const cwd = exec.agent?.session?.header?.cwd ?? process.cwd()\\n  return resolve(cwd, path)\\n}\\n\\nfunction runProcess(command, args, { cwd, timeoutMs, maxOutputBytes, signal }) {\\n  return new Promise((resolveRun, reject) => {\\n    if (signal?.aborted) return reject(new Error('OneOCR call aborted'))\\n    const child = spawn(command, args, { cwd, windowsHide: true, shell: false, stdio: ['ignore', 'pipe', 'pipe'] })\\n    let stdout = Buffer.alloc(0)\\n    let stderr = Buffer.alloc(0)\\n    let settled = false\\n\\n    const stop = () => {\\n      if (child.exitCode !== null || child.signalCode !== null) return\\n      if (process.platform === 'win32' && child.pid) {\\n        const killer = spawn('taskkill', ['/pid', String(child.pid), '/t', '/f'], { windowsHide: true, stdio: 'ignore' })\\n        killer.unref()\\n      } else child.kill('SIGKILL')\\n    }\\n    const finish = (error, value) => {\\n      if (settled) return\\n      settled = true\\n      clearTimeout(timer)\\n      signal?.removeEventListener('abort', onAbort)\\n      error ? reject(error) : resolveRun(value)\\n    }\\n    const append = (current, chunk, stream) => {\\n      const next = Buffer.concat([current, chunk])\\n      if (next.length > maxOutputBytes) {\\n        stop()\\n        finish(new Error(`${stream} exceeded ${maxOutputBytes} bytes`))\\n      }\\n      return next\\n    }\\n    const onAbort = () => {\\n      stop()\\n      finish(new Error('OneOCR call aborted'))\\n    }\\n    const timer = setTimeout(() => {\\n      stop()\\n      finish(new Error(`OneOCR timed out after ${timeoutMs} ms`))\\n    }, timeoutMs)\\n    signal?.addEventListener('abort', onAbort, { once: true })\\n    child.stdout.on('data', (chunk) => { stdout = append(stdout, chunk, 'stdout') })\\n    child.stderr.on('data', (chunk) => { stderr = append(stderr, chunk, 'stderr') })\\n    child.on('error', (error) => finish(error))\\n    child.on('close', (code) => {\\n      if (settled) return\\n      if (code !== 0) return finish(new Error(`OneOCR exited with code ${code}: ${stderr.toString('utf8').trim().slice(0, 2000)}`))\\n      finish(undefined)\\n    })\\n  })\\n}\\n\\nfunction plainText(result) {\\n  if (!Array.isArray(result?.lines)) return ''\\n  return result.lines.map((line) => typeof line?.text === 'string' ? line.text : '').filter(Boolean).join('\\\\n')\\n}\\n\\nexport function apply(ctx, config = {}) {\\n  const ocrBin = typeof config.ocrBin === 'string' && config.ocrBin ? resolve(config.ocrBin) : DEFAULT_OCR_BIN\\n  const timeoutMs = positiveInteger(config.timeoutMs, 60_000, 'timeoutMs')\\n  const maxOutputBytes = positiveInteger(config.maxOutputBytes, 4 * 1024 * 1024, 'maxOutputBytes')\\n\\n  ctx.tools.register(defineTool({\\n    name: 'oneocr_recognize',\\n    description: 'Recognize text in a local image with the offline Windows 11 OneOCR engine. Returns plain text plus the engine JSON with line/word polygons, confidence, rotation, and handwriting style.',\\n    parameters: {\\n      image_path: { type: 'string', required: true, description: 'Absolute path, or a path relative to the current session workspace.' },\\n      max_lines: { type: 'integer', description: 'Maximum recognition lines (1-1000). Default: 1000.' },\\n      resize_width: { type: 'integer', description: 'Optional internal resize width; use together with resize_height.' },\\n      resize_height: { type: 'integer', description: 'Optional internal resize height; use together with resize_width.' }\\n    },\\n    output: {\\n      schema: {\\n        type: 'object',\\n        additionalProperties: false,\\n        properties: {\\n          text: { type: 'string', required: true },\\n          result: { type: 'string', required: true }\\n        }\\n      },\\n      render: (_args, value) => [{ type: 'text', text: `<ocr_text>\\\\n${value.text}\\\\n</ocr_text>\\\\n<oneocr_json>\\\\n${value.result}\\\\n</oneocr_json>` }]\\n    },\\n    isConcurrencySafe: () => true,\\n    async execute(args, exec) {\\n      if (exec.signal?.aborted) throw new Error('OneOCR call aborted')\\n      if (process.platform !== 'win32') throw new Error('OneOCR requires Windows 11')\\n      if (typeof args.image_path !== 'string' || !args.image_path.trim()) throw new Error('image_path must be a non-empty string')\\n      const maxLines = positiveInteger(args.max_lines, 1000, 'max_lines')\\n      if (maxLines > 1000) throw new Error('max_lines must not exceed 1000')\\n      const hasWidth = args.resize_width !== undefined\\n      const hasHeight = args.resize_height !== undefined\\n      if (hasWidth !== hasHeight) throw new Error('resize_width and resize_height must be supplied together')\\n      const tempDir = await fs.mkdtemp(join(tmpdir(), 'dsh-oneocr-'))\\n      const outputPath = join(tempDir, 'result.json')\\n      const argv = [sessionPath(args.image_path, exec), '--output', outputPath, '--max-lines', String(maxLines), '--quiet']\\n      if (hasWidth) {\\n        argv.push('--resize', `${positiveInteger(args.resize_width, 0, 'resize_width')}x${positiveInteger(args.resize_height, 0, 'resize_height')}`)\\n      }\\n      try {\\n        await runProcess(ocrBin, argv, { cwd: dirname(ocrBin), timeoutMs, maxOutputBytes, signal: exec.signal })\\n        const info = await fs.stat(outputPath)\\n        if (info.size > maxOutputBytes) throw new Error(`OneOCR result exceeded ${maxOutputBytes} bytes`)\\n        const result = JSON.parse(await fs.readFile(outputPath, 'utf8'))\\n        return { text: plainText(result), result: JSON.stringify(result, null, 2) }\\n      } finally {\\n        await fs.rm(tempDir, { recursive: true, force: true })\\n      }\\n    },\\n    presentCall: (args) => ({ card: 'generic', title: `OneOCR ${args.image_path}`, kind: 'read', locations: [{ path: args.image_path }] })\\n  }))\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"f09ce228b50fefee64dfbfb5ef879a1092a894fd\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"eba7be0f18c4afdfc7bfe04f003ce1778e17b746ca2b8d71fac168d6222c64ad\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 191,\n        \"words\": 813\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 133,\n        \"code\": 124,\n        \"comments\": 0,\n        \"blank\": 9\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 14,\n        \"code\": 13,\n        \"comments\": 0,\n        \"blank\": 1\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 85,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 85,\n          \"api\": \"defineTool\",\n          \"name\": \"oneocr_recognize\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 64,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 65,\n          \"api\": \"child.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 66,\n          \"api\": \"child.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 67,\n          \"api\": \"child.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"src/index.js\",\n          \"line\": 59,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"oneocr_recognize\"\n        ],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"close\",\n          \"data\",\n          \"error\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 3,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "4062a89679038420111878a271bdcd6f21fb4a3fe940ba37dcebcfe05a284e3b"
+        }
+    },
+    "unavailable_artifacts": []
+}
