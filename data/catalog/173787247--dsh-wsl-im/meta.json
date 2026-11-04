@@ -1,16 +1,35 @@
 {
     "repository": "173787247/dsh-wsl-im",
     "repository_id": 1370460115,
-    "captured_at": "2026-10-22T05:53:01.687Z",
-    "window_start": "2026-09-22T05:53:01.687Z",
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
     "stars": 1,
-    "pushed_at": "2026-10-10T16:22:11Z",
+    "pushed_at": "2026-11-03T16:37:50Z",
     "issues": {
         "open": 1,
         "closed": 0,
-        "created_30d": 1,
+        "created_30d": 0,
         "closed_30d": 0,
-        "updated_30d": 1
+        "updated_30d": 0
     },
-    "errors": []
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "dsh-wsl-im",
+        "captured_at": "2026-11-04T14:32:21.161Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-wsl-im",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-04T14:32:21.161Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-im",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
 }

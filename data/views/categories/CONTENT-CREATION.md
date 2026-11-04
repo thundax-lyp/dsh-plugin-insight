@@ -13,7 +13,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
-| [Adult Tension](#plugin-1339714338-root) | 把中文互动叙事交给宿主模型，并以本地 Python 引擎维护角色、时间、事实、事件与存档的 Skill。 | 中性多角色短局先核保存/重试/撤销/退出，才扩长局；只需短篇可用纯聊天，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。 |
+| [Adult Tension](#plugin-1339714338-root) | 面向成年人的中文互动叙事 Skill，用本地 Python 运行时管理剧情状态、时间、边界与存档。 | 只用中性合成内容和隔离项目验证存档恢复。 |
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
@@ -39,11 +39,12 @@
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
-| [dsh-wsl-media](#plugin-1381725238-root) | 把ffprobe、ffmpeg、PDF文本、Whisper、Pandoc、OCR和ExifTool接为DSH本地文件工具，按允许目录读取或生成产物。 | 先观察，先显式窄roots和无敏感独立输出，核真实产物/覆盖/取消，避免唯一原件与批量并发。 |
+| [dsh-wsl-media](#plugin-1381725238-root) | 为 DSH 提供本地媒体探测、音轨与缩略图提取、PDF、转写、文档转换、OCR 和元数据工具。 | 优先只读小样本，配置独立根目录，空目标写入；条件不明时回本地工具。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
 | [ff-toolkit](#plugin-1205593265-root) | 将 FFmpeg 媒体处理操作封装为 Python 和模型可调用工具。 | [Q04](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q04) 先在隔离副本中关闭覆盖、使用新路径并检查结果；不接受权限或恢复边界时停止。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
+| [HTML Studio](#plugin-1237969184-root) | 独立的本地 HTML 与 Markdown 文档浏览、编辑和版本恢复工作台。 | 仅观察隔离副本上的写范围与恢复，继续用原编辑器管理真实文件。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
 | [lightroom-py](#plugin-1225248471-root) | 通过 Python、MCP 和 DSH 接口控制 Lightroom Classic 图库及编辑。 | [Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) 在备份图库副本上先核依赖、选区与单项操作；结果或恢复不明确时停止写入。 |
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
@@ -84,15 +85,15 @@
 
 ## [Adult Tension](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md)
 
-[![GitHub ★ 408](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=408&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/daha1216/dsh-adult-tension)
+[![GitHub ★ 484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/daha1216/dsh-adult-tension)
 
-> **用途**：中文互动叙事玩家希望跨回合保留角色/时间/事件，模型写作、引擎管结构状态，见 [Q01](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q01)。
+> **用途**：希望跨会话续写互动故事的成年用户，可以重新读取引擎保存的已提交状态。
 
-> **亮点**：写作与状态维护分责，版本/幂等和working copy使记录有明确结构约束，见 [Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)。
+> **亮点**：把会话状态从纯文本中分离，在写事务绑定幂等记录和修订检查，令已提交的进度可单独核对。见 [Q01](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q01)、[Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)。
 
-> **思考**：正文可先行积攒，拒绝可改记录不改正文；授权/回应/tag仍由模型提交，成功记录不能证明可见故事符合结构与玩家意图，见 [Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)。
+> **思考**：普通回合会先展示正文后批量落盘；退出时可能只保留已提交状态。诊断日志和模型传输也有独立的数据路径。见 [Q02](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q02)、[Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。
 
-> **建议**：可见正文—操作—状态差异审阅，测遗漏/矛盾和修复时间，未实现，见 [Q03](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q03)。
+> **建议**：分别在提交前后中断同一故事，比较纯摘要与状态引擎能否恢复最后确认的事件。见 [Q04](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/daha1216--dsh-adult-tension/INSIGHT.md) · [返回表格](#category-index)
 
@@ -502,13 +503,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-media)
 
-> **用途**：面向在WSL/类Linux环境用DSH处理本地媒体和文档的人。九工具覆盖CLI状态、媒体信息、抽音轨、缩略图、PDF文本、Whisper转录、Pandoc转换、OCR与Exif，不提供远程素材下载、专业编辑时间线或模型自动理解全部媒体。
+> **用途**：对本地音视频、PDF 和图像执行常见探测或转换。
 
-> **亮点**：将常用媒体/文档CLI封装成结构化参数、路径检查和统一错误/截断结果，减少手写命令。详见[Q02](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q02)。
+> **亮点**：把多种本地转换及探测带入同一代理工作流，产物可回指原路径。[Q01](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q01) [Q02](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q02)
 
-> **思考**：不存在输出不核父realpath，ffmpeg-y覆盖且写工具并发安全标记；Whisper写/tmp txt但返回stdout，stderr内存无上限、宿主取消未接child。默认roots较宽。详见[Q03](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q03)、[Q05](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q05)。
+> **思考**：默认范围较广，新目标没有解析祖先链接，ffmpeg 允许覆盖；失败也可能留下输出。[Q03](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q03)
 
-> **建议**：可探索物理父路径/文件身份绑定、临时产物验收后原子不覆盖、显式后端收据及stderr/signal树治理；未实现。详见[Q06](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q06)。
+> **建议**：窄路径与无覆盖临时交接可降低原件风险，用相同故障夹具验证。尚未验证。[Q04](../../plugins/173787247--dsh-wsl-media/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-media/INSIGHT.md) · [返回表格](#category-index)
 
@@ -575,6 +576,22 @@
 > **建议**：可探索按产物hash绑定质检/审阅、按attempt保存图生/上传/草稿远端ID收据，比较错版/重复与恢复人工；未实现。详见[Q06](../../plugins/andiii208--gzhflow/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/andiii208--gzhflow/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1237969184-root"></a>
+
+## [HTML Studio](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md)
+
+[![GitHub ★ 10](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/louisecxqiu-glitch/html-doc-center)
+
+> **用途**：经常处理多个生成文档的维护者可在一个工作区查看和编辑。
+
+> **亮点**：文件树和版本恢复同处一套入口，可在恢复前创建当前版本备份。见 [Q01](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md#research-q01)、[Q02](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md#research-q02)。
+
+> **思考**：另存处理没有普通保存的扫描根检查，备份失败也不总阻止覆盖。见 [Q02](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md#research-q02)。
+
+> **建议**：用无敏感文档比较恢复哈希、时间和误写，覆盖备份失败。见 [Q04](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/louisecxqiu-glitch--html-doc-center/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1139128402-root"></a>
 

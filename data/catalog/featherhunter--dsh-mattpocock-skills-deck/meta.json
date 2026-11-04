@@ -1,27 +1,38 @@
 {
     "repository": "FeatherHunter/dsh-mattpocock-skills-deck",
     "repository_id": 1336488925,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
-    "stars": 251,
-    "pushed_at": "2026-10-28T22:17:05Z",
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 285,
+    "pushed_at": "2026-11-04T13:10:29Z",
     "issues": {
-        "open": 21,
-        "closed": 1541,
-        "created_30d": 800,
-        "closed_30d": 809,
-        "updated_30d": 827
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-10-28T20:51:18.907Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
-        "latest_error": null
-    }
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFeatherHunter%2Fdsh-mattpocock-skills-deck%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 895A:3D5671:50E38A:6F431F:6AEB4234 and timestamp 2026-11-04 14:33:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFeatherHunter%2Fdsh-mattpocock-skills-deck%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 89A0:ABEC0:504B10:6ECB1B:6AEB4236 and timestamp 2026-11-04 14:33:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFeatherHunter%2Fdsh-mattpocock-skills-deck%20is%3Aissue%20created%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A24:3B5428:4E7802:6CD0B9:6AEB4238 and timestamp 2026-11-04 14:33:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFeatherHunter%2Fdsh-mattpocock-skills-deck%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8A98:99B28:5D6971:810D55:6AEB423A and timestamp 2026-11-04 14:33:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFeatherHunter%2Fdsh-mattpocock-skills-deck%20is%3Aissue%20updated%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B10:ABEC0:505DD7:6EE3D8:6AEB423C and timestamp 2026-11-04 14:33:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
 }

@@ -79,6 +79,7 @@
 | [dsh-at-file](#plugin-1333068434-root) | 在 DSH Web 输入框搜索工作区路径并插入文件或目录引用 | [Q03](../../plugins/fsmargoo--dsh-at-file/INSIGHT.md#research-q03) 新用户先看原生引用，旧用户只保留确有差异的路径筛选需求。 |
 | [dsh-at-skill](#plugin-1346023186-root) | 给Web输入框增加@Skill候选，并在host模型步骤前加载匹配且可用户调用的Skill。 | 命名清楚且宿主匹配时试用，轨迹核加载来源。 |
 | [dsh-audiobook](#plugin-1426914549-root) | 搜索或导入读物并分段朗读，保存收听进度、位置心得，支持语音记录和AI讨论。 | 可让有授权低敏感读物的个人先试用浏览器语音与单本书，抽查提取和断点再启AI/云语音。 |
+| [dsh-auto-extract](#plugin-1249788655-root) | 在 DSH 中批量探测和递归解压后缀伪装、嵌套或带密码的归档。 | [Q03](../../plugins/sanqipanax--jieyatool/INSIGHT.md#research-q03) 使用虚构密码和一次性样例核副作用。 |
 | [dsh-auto-shutdown](#plugin-1425073734-root) | Windows 专用设置开关，在根对话结束时安排一次性关机并弹出取消倒计时。 | 仅建议在隔离 Windows 测试机以 dry-run 和可保存任务观察；关键工作或无人值守场景待一致性故障修正和实测后再评估。 |
 | [dsh-backup-sync](#plugin-1418642133-root) | 按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。 | 先从可丢弃技能目录创建包并异机导入，检查新增、本地修改和冲突各一项；确认未选模块不变，失败文件和基线可解释后扩大范围。 |
 | [dsh-balance-chip](#plugin-1347136944-root) | 在 DSH web 侧栏与右下角显示经主机查询的 DeepSeek API 余额状态。 | 建议观察；若试用，应使用隔离 Key 与可核账户余额，先测非美元/错误值、route 访问和停用后请求是否停止。 |
@@ -91,6 +92,7 @@
 | [dsh-butler-memory](#plugin-1335928912-root) | 历史 DSH Bundle：接 Butler Memory MCP agent 工具及 Web 用户记忆审阅面板，作者已停止维护。 | 只作为历史参考；存量实例先隔离验权限、修订、崩溃/超时恢复和当前 DSH 契约。 |
 | [dsh-callout](#plugin-1359145352-root) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 有条件试用，兼容Web/偏好重点卡片用户先核流式/主题/卸载与非标记拒绝；不将视觉类型当内容审查。 |
 | [dsh-capability-index](#plugin-1335594781-root) | 在每步系统上下文中注入候选工具提示，用规则、向量召回与 not_for 过滤预审插件库。 | 不建议作为当前生产依赖：仓库已归档且作者承认 16 样本不足。 |
+| [dsh-cgss-idol-theme](#plugin-1335281982-root) | CGSS 多角色 Web 主题，提供角色配色、卡面、沉浸阅读和 Windows 桌宠会话提醒。 | 用隔离 Web Profile 先看浅深色对话和退出；桌宠只在匿名会话试待答、待批和回跳。 |
 | [dsh-chat-width](#plugin-1339332869-root) | 为旧版 DSH web 扩大聊天内容列并提供拖拽调宽，检测到新版原生把手时让位。 | 当前组件推荐观察。 |
 | [dsh-chatgpt-style](#plugin-1421963463-root) | 调整 DSH 对话与侧栏样式、标注语义文字，并添加思考/快速模型档位切换。 | 限本机非关键 UI 观察，选档仍核宿主当前模型与计费；待可逆卸载和同名模型修正后再扩大使用。 |
 | [dsh-claude-style](#plugin-1377512288-root) | 为 DeepSeek Harness 网页界面提供 Claude Code Desktop 风格主题及交互。 | 在测试会话核对权限操作和禁用恢复，异常时回原生界面。 |
@@ -221,7 +223,7 @@
 | [dsh-whale-tools](#plugin-1365163847-root) | 为鲸鱼挂件提供上传图片抠图换装、当前图片服务、浏览器心跳及会话头部重启入口。 | 已有鲸鱼挂件者可备份原图后先用白底单主体试用，验收主体完整、透明边缘和重载显示；主体被裁或副图丢失就停止并用外部编辑。 |
 | [dsh-wsl-cal](#plugin-1381860995-root) | 把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。 | 适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。 |
 | [dsh-wsl-clipboard](#plugin-1350378372-root) | 让 WSL 中的 DSH Agent 读写 Windows 文本剪贴板。 | [Q04](../../plugins/173787247--dsh-wsl-clipboard/INSIGHT.md#research-q04) 明确授权后，先备份并用非敏感短文本试读写；失败或结果未知时手动核对恢复。 |
-| [dsh-wsl-download](#plugin-1351854499-root) | 在 WSL 中列举或复制 Windows Downloads 单文件，并给出模型下载静态提示。 | 先 list、核源路径与目标目录，在空目录试单文件；大分片用有校验和断点机制的工具；详见[Q03](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q03)。 |
+| [dsh-wsl-download](#plugin-1351854499-root) | 在 WSL 中列出、复制 Windows 下载目录文件，并提供模型注册表与 GGUF 分片复用提示。 | 用空目录和非敏感小文件先验证。 |
 | [dsh-wsl-gpu](#plugin-1350378777-root) | 在 WSL 中汇总 NVIDIA GPU 与本地推理端口线索。 | [Q04](../../plugins/173787247--dsh-wsl-gpu/INSIGHT.md#research-q04) 将其作为排障线索并核原始设备、服务协议和进程；归属不明时不据建议停止服务。 |
 | [dsh-wsl-notify](#plugin-1350379268-root) | 提供WSL到Windows短消息工具，支持阻塞MessageBox和BalloonTip回退，不自动验证任务完成或用户已读。 | [Q04](../../plugins/173787247--dsh-wsl-notify/INSIGHT.md#research-q04) 明确授权非敏感短提醒可试，接受阻塞与fallback，保留原日志；显示不符、重复打扰或等待超预算即停用回原界面。 |
 | [dsh-wsl-open](#plugin-1347958944-root) | 将聊天中的Linux文件路径接到Windows默认应用或Explorer，检查真实路径范围并支持路径转换回退。 | [Q04](../../plugins/173787247--dsh-wsl-open/INSIGHT.md#research-q04) 已有个人WSL环境先试可信办公文件，实际看见正确文件才验收；复杂路径误点、异常应用或权限不清则停用，回手工转换与打开。 |
@@ -229,7 +231,6 @@
 | [dsh-wsl-uia](#plugin-1391141792-root) | 从WSL读取Windows顶层窗口和UI Automation控件树，提供过滤查找、按名等待和祖先路径，并给元素标注观测内句柄。 | 先观察，可用无敏感测试窗口纯观察，先解决目标/预算/隐私与动作消费者契约，不直接当安全自动操作基础。 |
 | [dsh-wsl-wininput](#plugin-1391142149-root) | 让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。 | 建议观察。 |
 | [dsh-youreyes](#plugin-1335045545-root) | 将图片交给视觉模型生成文字记录，供 DSH 文本模型调用，支持 OCR、区域、多图与记忆复用。 | 建议观察，先补发布物和数据边界，以不敏感有标签图片验证；不把auto或结构化记录当隐私/准确保证。 |
-| [dsh-yukimi-theme](#plugin-1335281982-root) | DSH Web 佐城雪美主题与 Windows desktop profile 桌宠通知，素材从外部 wiki URL 加载。 | 先在隔离 Web 看可读性，再完整打包桌面副本、核通知/回滚和素材权利。 |
 | [DSHCode](#plugin-1333142935-root) | 将 DeepSeek Harness 的 Web UI 和插件运行时打包为 macOS、Windows 桌面应用。 | 首次需要匹配平台架构的完整安装包和模型凭据，源码开发另需Node、pnpm及工作区构建；包装免终端不等于模型/API费用为零。 |
 | [DSH小鲸鱼记账挂件](#plugin-1337920628-root) | 在DSH界面显示余额、会话用量、可自定义气泡与交互提醒。 | 可给希望少切控制台的个人用户试用常驻余额和当轮提示，先确认账户范围与部分数据标签。 |
 | [Engramory](#plugin-1268424426-root) | 以精选 Markdown 笔记和常驻索引组织 Agent 长期记忆，提供跨宿主安装、尺寸检查和记忆库诊断工具。 | [Q03](../../plugins/tinqiao-oss--engramory/INSIGHT.md#research-q03)一个host小库单writer试用，显式检查与备份；不自动扩到私密共享或复杂hooks。 |
@@ -1349,6 +1350,22 @@
 
 [查看完整分析](../../plugins/aicivilization--dsh-audiobook/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1249788655-root"></a>
+
+## [dsh-auto-extract](../../plugins/sanqipanax--jieyatool/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sanqiPanax/jieyaTool)
+
+> **用途**：需要处理多个可信但命名混乱的多层归档的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/sanqipanax--jieyatool/INSIGHT.md#research-q01) 复用 7-Zip 解码，并编排魔数探测、分层候选与自动入队。
+
+> **思考**：[Q02](../../plugins/sanqipanax--jieyatool/INSIGHT.md#research-q02) 明文密码进入进度和结果，合并可覆盖输出；归位失败后清理不等于安全回滚。
+
+> **建议**：[Q03](../../plugins/sanqipanax--jieyatool/INSIGHT.md#research-q03) 脱敏日志与隔离提交可以用同一冲突样本和凭据扫描对照，若泄漏或误覆盖不降则不推广。
+
+[查看完整分析](../../plugins/sanqipanax--jieyatool/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1425073734-root"></a>
 
 ## [dsh-auto-shutdown](../../plugins/873360545--dsh-auto-shutdown/INSIGHT.md)
@@ -1540,6 +1557,22 @@
 > **建议**：未验证假设是只在原生工具选择出现高熵时注入候选，而不是每步预审，可减少上下文成本同时保留召回。最小 A/B 用 100 个含/不含工具需求的盲测任务，比原生、现插件、熵门控三组的正确工具调用率、无关调用率、提示 token 和端到端合格率；净收益不超过原生即否定。 详见[Q08](../../plugins/777-zen--dsh-capability-index/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/777-zen--dsh-capability-index/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335281982-root"></a>
+
+## [dsh-cgss-idol-theme](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md)
+
+[![npm 30d 807](https://img.shields.io/static/v1?label=npm+30d&message=807&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cgss-idol-theme) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cgss-idol-theme)
+
+> **用途**：喜欢 CGSS 的用户可以改变 DSH 会话外观。Windows 桌面用户还可让桌宠提醒根会话的待答、待批与本轮结果。
+
+> **亮点**：把角色主题与会话状态联动。对离开 DSH 窗口的 Windows 用户，待答和待批进入独立桌宠，点回目标会话处理；只需换色的用户可留在 Web。[Q01](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q01) [Q02](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q02)
+
+> **思考**：置顶桌宠仍携带会话标题，提醒在共享屏幕上会改变任务信息的可见范围。在线图像与随包台词也有各自的来源条件。[Q04](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q04)
+
+> **建议**：可试验泛化标题的共享屏幕模式，同时保留用于回跳的会话身份。若匿名化后误点增加或录屏仍可看出原标题，就需要调整或放弃。尚未验证。[Q05](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339332869-root"></a>
 
@@ -3627,13 +3660,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-download)
 
-> **用途**：把 Windows 已下载文件搬入 WSL，或查询模型文件获取建议。
+> **用途**：适合已在 Windows 下载模型、再从 WSL 用现成分片的 DSH 用户。
 
-> **亮点**：提供 Windows Downloads 到 WSL 的简单模型工具入口，详见[Q01](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q01)。
+> **亮点**：将已有 Windows 文件的查找与搬运变成代理可调用的动作，并将分片复用提示放在同一入口。[Q01](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q01) [Q02](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q02)
 
-> **思考**：destDir 任意、默认覆盖同名文件，源 stat 跟随符号链接；详见[Q02](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q02)。 copy前先stat整目录且同步不接signal，30/15秒不等总IO或取消保证。
+> **思考**：目标路径由调用方给出，同名复制未拒绝覆盖，结果也没有验证目标摘要。[Q03](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q03)
 
-> **建议**：可探索授权realpath、默认no-clobber与分片清单/hash、有限可取消临时复制和明确组状态；有IO/空间/维护代价，尚未实现。详见[Q05](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q05)。
+> **建议**：将预览、拒绝覆盖和临时落盘后的摘要交付加入一次验证，比较误覆盖与处理时间；假设未验证。[Q04](../../plugins/173787247--dsh-wsl-download/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-download/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3748,22 +3781,6 @@
 > **建议**：可研究原图/区域定位与纠错失效绑定的视觉记录，用固定错误跨轮样例比较纠正效果、调用量和上下文代价。当前未验证。详见[Q05](../../plugins/54xkeee--dsh-youreyes/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/54xkeee--dsh-youreyes/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1335281982-root"></a>
-
-## [dsh-yukimi-theme](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md)
-
-
-
-> **用途**：用户喜欢角色主题，并希望桌面可见根会话的询问、审批与本轮结果。
-
-> **亮点**：主题加桌宠把会话等待与本轮完成事项带到桌面。详见[Q01](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q01)。
-
-> **思考**：桌宠通知虽不传聊天正文，仍使用会话标题并主动置顶；素材为第三方角色外链，公开/商用使用需另核。详见[Q02](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q02)、[Q03](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q03)。
-
-> **建议**：提供隐藏/泛化标题选项与离线可授权素材集，可改善隐私和稳定性；本版本未证。详见[Q03](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md#research-q03)。
-
-[查看完整分析](../../plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333142935-root"></a>
 

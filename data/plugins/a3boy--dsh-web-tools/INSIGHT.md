@@ -1,18 +1,18 @@
-# dsh-web-tools
+# DSH Web Tools
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[cfa00a7](https://github.com/A3Boy/dsh-web-tools/tree/cfa00a70b600da212915ac3a82e970e9b93ac9c2)
+源码版本：[686d87b](https://github.com/A3Boy/dsh-web-tools/tree/686d87bdf688e18966733c3d070fd3698779c255)
 
 <!-- BEGIN META -->
 [![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/A3Boy/dsh-web-tools)
 <!-- END META -->
 
-> **功能**：为DSH提供多供应商网页搜索与抓取，以及小红书和X浏览器来源接入。
+> **功能**：为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。
 
-> **亮点**：统一宿主接口下保留后端差异并显式处理平台失败，是检索工程组合增量；不是检索算法或完整语义理解证明。见 [Q01](#research-q01)。
+> **亮点**：保持 web_search 和 web_fetch 的宿主入口，按认证、限流和取消区分后备行为。相比手工切换，它能在同次请求中尝试独立提供者并保留失败边界。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-> **主要限制**：工具成功和固定truncated:false不能代表来源完整、约束保真或图片/评论已覆盖；长查询与规则启发式还会改变检索语义。见 [Q03](#research-q03)。
+> **主要限制**：Always 接受一次失败的工具完成，不能当作拿到可靠证据。平台后备也无法恢复权限受限的原生内容。见 [Q02](#research-q02)、[Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 多来源检索解决什么任务，增量来自哪里？](#detail-section-11)
-  - [Q02 · 查询语义和失败状态如何被编译与路由？](#detail-section-12)
-  - [Q03 · 统一接口是否保存了完整语义与证据范围？](#detail-section-13)
-  - [Q04 · 用户要承担哪些外部服务、账号与重试成本？](#detail-section-14)
-  - [Q05 · 哪些设计值得借鉴，怎样控制试用？](#detail-section-15)
+  - [Q01 · 模型何时获得工具，调用如何到达插件？](#detail-section-11)
+  - [Q02 · 多提供者与 Always 模式分别保证了什么？](#detail-section-12)
+  - [Q03 · 平台访问、目标授权和抓取各依赖什么，哪些错误不能由后备弥补？](#detail-section-13)
+  - [Q04 · 哪些人值得试用，如何退出？](#detail-section-14)
+  - [Q05 · 错误感知的双源切换何时值得保留？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合有重复资料检索与服务中断问题的用户，合格材料仍须来源可追溯且覆盖问题。原生单服务对照见 [Q01](#research-q01)。
+> **用途**：对经常需要引用原始网页的 DSH Web 用户，同一个会话可通过原有工具名访问不同检索提供者。
 
-单供应商原生接入、最低公分母多服务代理与人工浏览器检索；未实际比较检索排名，不确认供应商当前价格。
+参照单一宿主提供者与遇限流后手工更换凭据。若单个来源已经稳定，额外路由、配置和权限核对的收益可能有限。
 
 <a id="detail-section-3"></a>
 
@@ -51,69 +51,59 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 多后端网页搜索 | 统一请求与后备 | 后端参数能力不同 |
-| 网页内容提取 | 提供正文材料 | 原文覆盖需人工核对 |
-| SearchHints编译 | 映射日期/域名/主题 | 规则启发式，非通用语义理解 |
-| X/小红书来源 | 登录态搜索/详情入口 | 本地浏览器、登录和平台限制 |
-| 密钥/健康路由 | 对认证/限流分别恢复 | 后备调用可能增加成本 |
+| --- | --- | --- |
+| 多来源搜索与抓取 | 同一入口尝试不同后端 | 取决于配置与故障类型 |
+| 原生平台路由 | 获取 X、小红书内容 | 要有专用浏览器与可用登录态 |
+| 会话搜索模式 | 约束工具是否可用与是否必须尝试 | 一次失败完成也会满足 Always |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 兼容DSH web/credentials/settings等 | 必需 | 注册与配置 | 不保证加载 |
-| 配置供应商或自建搜索服务 | 普通检索必需 | 搜索/提取 | 无可用后端则失败 |
-| 本地Chrome/Edge与平台登录 | 平台源必需 | 原生搜索/详情 | 登录/访问错误需人工处理 |
-| 网络及允许的预算 | 远端请求必需 | 后端与页面访问 | 后备可能增加调用 |
+| 依赖 | 用途 | 边界 |
+| --- | --- | --- |
+| DSH Web Profile 与包 peer | 运行 Host 和设置界面 | 固定版宿主兼容待验证 |
+| 供应商凭据或免密自建端点 | 提供网页搜索和抽取 | 双源需确认独立性 |
+| 支持的浏览器和独立账号 | 可选原生平台 | 不与普通搜索共用登录资料 |
 
-#### 启动步骤
+| 步骤 | 操作 | 失败处理 |
+| --- | --- | --- |
+| 配置 | 在隔离 Profile 固定包版本并设置两来源 | 核对宿主工具是否出现 |
+| 对照 | 先仅测试普通搜索和抓取 | 将限流、认证、取消分开记录 |
+| 退出 | 移除、重启并回读工具状态 | 若曾开启平台，确认专用 Profile 的清理 |
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 1 | 用户配置单一可信后端与预算 | 可返回可追溯样例 |
-| 2 | 逐个启用备用与平台登录 | 来源及失败语义正确 |
-| 3 | 执行带域名/日期的公开查询 | 对照原文确认约束和遗漏 |
-| 4 | 记录所有请求和人工复核 | 费用/质量不符即停用对应路径 |
+**效果与成本**
 
-#### 成本
+| 阶段 | 人工负担 | 现金和时间 |
+| --- | --- | --- |
+| 首次 | 配置 Profile 与凭据 | 未测搭建耗时 |
+| 持续 | 看额度和错误并轮替失效 key | 记录实际 API 消耗，另计排障时间 |
+| 恢复 | 切回单源，核对卸载与资料清理 | 未测最坏尾时延 |
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | API账户/自建服务与浏览器配置 | 设置密钥、地址、登录 | 价格和配置时间未知 |
-| 持续使用 | 成功及失败后备请求、模型上下文 | 核原文、维护登录/API | 无单位合格资料成本 |
-| 失败恢复 | 超时和备用调用 | 检查错误分类及来源 | 不可重试登录/访问错误须人工处理 |
-| 迁移退出 | 配置和账号资料管理 | 禁用提供者、撤销不需密钥 | 实际退出与迁移时间未测 |
+| 预期结果 | 验收 | 边界 |
+| --- | --- | --- |
+| 主来源限流时仍能找到原文 | 记录可定位证据和尝试数 | 源码支持切换，效果未测 |
+| 平台错误可辨 | 原生拒绝不伪装成网页结果 | 无真实平台验收 |
 
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 服务中断恢复 | 密钥/后端分类和冷却 | 实际可用率及追加费用 |
-| 参数适配 | 硬软域名与主题编译 | 全语义和全供应商等价性 |
-| 平台材料 | 原生来源与失败保留 | 图片OCR、全部评论及召回 |
-
-> **思考**：工具成功和固定truncated:false不能代表来源完整、约束保真或图片/评论已覆盖；长查询与规则启发式还会改变检索语义。见 [Q03](#research-q03)。
+> **思考**：Always 接受一次失败的工具完成，不能当作拿到可靠证据。平台后备也无法恢复权限受限的原生内容。见 [Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：统一宿主接口下保留后端差异并显式处理平台失败，是检索工程组合增量；不是检索算法或完整语义理解证明。见 [Q01](#research-q01)。
+> **亮点**：保持 web_search 和 web_fetch 的宿主入口，按认证、限流和取消区分后备行为。相比手工切换，它能在同次请求中尝试独立提供者并保留失败边界。见 [Q01](#research-q01)、[Q02](#research-q02)。
 
-意图编译、健康状态与来源路由分离便于复用；维护成本来自供应商协议和平台页面不断变化，证据覆盖仍需独立验收。见 [Q02](#research-q02) 与 [Q05](#research-q05)。
+执行链区分池内认证轮换、提供者冷却和终止错误。平台 session 的停止和删除为独立操作。自定义提供者的固定连接边界与通用抓取的 DNS 预检分开判断。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-工具成功和固定truncated:false不能代表来源完整、约束保真或图片/评论已覆盖；长查询与规则启发式还会改变检索语义。见 [Q03](#research-q03)。
+Always 接受一次失败的工具完成，不能当作拿到可靠证据。平台后备也无法恢复权限受限的原生内容。见 [Q02](#research-q02)、[Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议在可信本机、公开材料和小预算下试用，逐项回原文验收并记录全部尝试成本。平台来源及停止条件见 [Q05](#research-q05)。
+仅在隔离 Profile 测普通双源与单源。先预设来源、费用和时延上限，后回读可引用原文和原工具状态。如果不能恢复或成本超限，回到单源。见 [Q04](#research-q04)、[Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +111,18 @@
 
 **核查状态**：已检查源码。
 
-参数编译和故障路由有源码支持；可用性/质量/总成本未实测，覆盖证明为未验证设计假设。
+已静态核对补丁、路由、故障分支及 Profile 生命周期。多来源在实际宿主上的兼容、净收益及效果仍待核实，故障注入比较是验证方案。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/host/index.ts、src/host/search-hints.ts、src/host/providers/parallel.ts、src/host/registry.ts、src/host/pool.ts、src/host/sources/registry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、src/host/index.ts、src/client/index.ts、src/host/registry.ts、README.md、src/host/search-mode-runtime.ts、src/host/sources/registry.ts、src/host/browser/session-manager.ts、src/host/provider-transport.ts、src/host/generic-fetch.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查固定版本宿主注册、SearchHints规则、Parallel编译、密钥池/路由和平台registry；未逐项审阅全部八家API、浏览器脚本、通用抓取安全实现或真实服务。
-- 下一步：已检查源码；未运行目标代码、测试、真实API或登录浏览器，不将作者功能声明当独立验收。
+- 边界：检查了包和 patch、Host 与 Client 注册、搜索后备、回合钩子、专用浏览器生命周期和两个出站边界。未逐个核查全部适配器、平台 DOM、发布包与源码构建一致性或真实宿主。
+- 下一步：先做隔离 Profile 工具和卸载烟测，再按故障注入矩阵比较资料任务。平台登录及出站检查用单独账号和受控目标。
 
 **分析版本**
 
 - **仓库**：[A3Boy/dsh-web-tools](https://github.com/A3Boy/dsh-web-tools)
-- **版本号**：0.3.8（[固定提交 cfa00a7](https://github.com/A3Boy/dsh-web-tools/tree/cfa00a70b600da212915ac3a82e970e9b93ac9c2)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.9（[固定提交 686d87b](https://github.com/A3Boy/dsh-web-tools/tree/686d87bdf688e18966733c3d070fd3698779c255)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +130,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是输出约束执行、覆盖和降级来源证明，帮助减少可用性与完整性混淆；对照及否定条件见 [Q05](#research-q05)。
+先在隔离 Profile 做单源和双源限流对照。用原文命中率、尝试次数、尾时延及费用决定是否保留后备链。见 [Q05](#research-q05)。
 
-已检查源码；未运行目标代码、测试、真实API或登录浏览器，不将作者功能声明当独立验收。
+先做隔离 Profile 工具和卸载烟测，再按故障注入矩阵比较资料任务。平台登录及出站检查用单独账号和受控目标。
 
 <a id="detail-section-9"></a>
 
@@ -151,105 +141,142 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4 | 851 | — | — | 9327 |
+| .md | source | 4 | 857 | — | — | 9511 |
 | .mjs | source | 17 | 1927 | 1571 | 154 | — |
-| .js | source | 97 | 24932 | 21923 | 3751 | — |
+| .js | source | 98 | 25065 | 22041 | 3770 | — |
 | .cjs | source | 6 | 1213 | 978 | 129 | — |
-| .ts | source | 86 | 18544 | 14085 | 3047 | — |
-| .tsx | source | 11 | 4780 | 4282 | 302 | — |
-| .ts | test | 45 | 9926 | 8249 | 940 | — |
+| .ts | source | 87 | 18665 | 14184 | 3064 | — |
+| .tsx | source | 11 | 4782 | 4284 | 303 | — |
+| .ts | test | 46 | 10001 | 8317 | 945 | — |
 | .mjs | test | 4 | 1093 | 885 | 146 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+created%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/A3Boy/dsh-web-tools/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z)
 
-暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-10-26。
+
+统计日期：2026-11-04。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核对多供应商搜索/抓取的适配增量、失败语义和合格证据边界。
+**插件研究总目标**：使用 DSH Web 的研究工作者能否通过此插件减少单一网页检索服务故障带来的中断，哪些故障与数据边界需要由使用者承担？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 多来源检索解决什么任务，增量来自哪里？
+### Q01 · 模型何时获得工具，调用如何到达插件？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、工程质量与复用
 
 #### 完整回答
 
-面向需要持续获得网页与社交平台材料的DSH研究用户。合格交付应能回到原页面、区分原生平台与普通索引结果，并核对正文是否覆盖问题。相对单供应商接入，贡献在统一宿主web接口下保留供应商专有参数、组织多密钥/供应商故障转移和本地登录态平台来源。它没有提出新的检索排序算法，SearchHints是规则解析与参数编译；服务端可用性改善不能自动等同相关性、召回或事实正确率提高。简单单服务配置仍是低维护替代。
+频繁做网页资料搜集的 DSH Web 用户可以保留 web_search 和 web_fetch 两个工具名，同时更换执行后端。包的 Host 与 Web Client 分开导出，DSH manifest 指向补丁。补丁把 tool-web 的 search 和 fetch 显式打开，并给 web 指定两个插件提供者 ID。Host apply 分别注册 search 和 fetch，并以平台路由包装普通链；搜索请求先提取提示，再把平台或通用结果转成 sources。客户端注册设置区并在会话输入栏注入模式控制。相比直接换一次原生服务，实际增量在同一入口的多来源路由；若用户只用一个稳定服务，接管整个 Profile 的补丁会增加配置面。包清单和源码可支持接线判断，宿主版本行为仍需验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:30-46](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/README.md#L30-L46)
+**依据 1 · 源码核查**：[package.json:2-17](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/package.json#L2-L17)
 
-作者提出单供应商中断和参数最低公分母问题。
+版本 0.3.9，Host/Web Client 导出分离
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-## What problem does it solve?
-
-When web access depends on a single provider, exhausted quota, rate limits, or timeouts can interrupt retrieval. Wrapping multiple APIs with a naive proxy often flattens them to a lowest common denominator, failing to leverage each provider's specialized search modes, categories, freshness, domain rules, and extraction capabilities.
-
-dsh-web-tools connects Exa, Tavily, Firecrawl, Parallel, Brave, You.com, Jina, SearXNG, Xiaohongshu, and Twitter / X to DSH’s standard `web_search` / `web_fetch` interface.
-
-While keeping the tool interface unified, dsh-web-tools normalizes search intents through SearchHints and compiles queries into native provider-specific parameters. This leverages each engine's native categories, freshness filters, domain policies, regional targeting, and content extraction, while maximizing uptime through multi-key allocation, automated failover, and dedicated browser profiles.
-
----
-
-**Key Highlights**:
-
-- **Native-Capability Adaptation Across 8 Web Providers**: Keeps the standard `web_search` / `web_fetch` contracts while compiling unified search intent into provider-specific native parameters instead of reducing every backend to the same lowest-common-denominator feature set.
-- **SearchHints → Provider-Specific Parameter Compilation**: Normalizes technical, research, news, date, region, and domain constraints from queries, compiling them into provider-native parameters through deterministic code without additional LLM latency.
-- **Xiaohongshu & Twitter / X Platform Sources**: Both platforms support signed-in native search, detail extraction, and returned comments or replies through dedicated local browser profiles.
-- **Multi-Source Scheduling & Resilience**: Features multi-API-key pooling, 401 failover, 429 cooldown windows, configurable Ordered / Round-Robin / Random routing, and failover chains.
-- **Native DSH Tool Integration**: Plugs directly into standard `web_search` / `web_fetch` without requiring new tool declarations, and includes a session-level "Search Mode" toggle.
+  "name": "dsh-web-tools",
+  "version": "0.3.9",
+  "description": "Multi-provider Web Search & Fetch for DeepSeek Harness — 9 deeply adapted providers, SearchHints, resilient fallback, and native X / Xiaohongshu retrieval",
+  "icon": "assets/logo-icon.png",
+  "author": "A3Boy",
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/host/index.js",
+  "exports": {
+    ".": {
+      "types": "./lib/host/index.d.ts",
+      "default": "./lib/host/index.js"
+    },
+    "./client": {
+      "types": "./lib/client/index.d.ts",
+      "default": "./lib/client.js"
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/index.ts:295-358](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/index.ts#L295-L358)
+**依据 2 · 源码核查**：[package.json:33-46](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/package.json#L33-L46)
 
-统一web提供者和平台来源注册链。
+DSH manifest 指向 Cordis 补丁和 Web 客户端
 
 <details>
-<summary>查看原文（64行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-  // ONE shared health store so search + fetch respect the same cooldowns.
-  const healthStore = createProviderHealthStore();
-
-  const sourceRegistry = new SpecializedSourceRegistry();
-
-  const generalSearchProvider = createSearchProvider(resolveRuntimeConfig, resolveKeys, {
-    record: (e) => stats.record({ ...e, at: Date.now() }),
-  }, undefined, poolStore, healthStore, resolveSnapshot);
-
-  const generalFetchProvider = createFetchProvider(resolveRuntimeConfig, resolveKeys, undefined, poolStore, healthStore, undefined, resolveSnapshot);
-
-  sourceRegistry.setFallbackProviders(generalSearchProvider, generalFetchProvider);
-
-  // Sync platformEnabled from config on boot and live updates
-  configHandle.onMounted(() => {
-    const cfg = readConfig();
-    if (cfg.platformEnabled) {
-      sourceRegistry.setPlatformEnabled(cfg.platformEnabled);
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-api-remotes"
+      ]
     }
-  });
+```
 
+</details>
+
+**依据 3 · 源码核查**：[cordis.patch.yml:13-31](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/cordis.patch.yml#L13-L31)
+
+启用宿主工具并选定插件两个提供者
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+- id: tool-web
+  disabled: false
+  config:
+    search: true
+    fetch: true
+    searchMaxQueries: 4
+    searchMaxResults: 8
+    searchTimeoutMs: 60000
+    fetchTimeoutMs: 30000
+    fetchMaxOutputChars: 200000
+
+- id: web
+  config:
+    searchProvider: dsh-web-tools
+    fetchProvider: dsh-web-tools-fetch
+
+- insert:
+    - id: dsh-web-tools
+      name: 'dsh-web-tools'
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/host/index.ts:316-358](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/index.ts#L316-L358)
+
+注册实际路由，包装 search 和 fetch
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
   // Wrap search provider with SpecializedSourceRouter for XHS / X transparent platform handling
   const routedSearchProvider = {
     id: PROVIDER_ID,
@@ -297,158 +324,95 @@ While keeping the tool interface unified, dsh-web-tools normalizes search intent
 
 </details>
 
+**依据 5 · 源码核查**：[src/client/index.ts:78-86](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/client/index.ts#L78-L86)
+
+注册客户端设置区
+
+```text
+  };
+
+  registerSettingsSection(ctx, t, SectionWithBoundary, ui);
+
+  // "联网搜索" per-session toggle — a small always-visible control at the left
+  // end of the composer tool row (official `conversation.input.left` seat).
+  // Session-scoped: the seat supplies `sessionId` as a standard prop. Because
+  // this slot exposes no `inject`, a thin wrapper forwards the sessionId along
+  // with locale-localized copy (re-renders when the page language flips).
+```
+
+**依据 6 · 源码核查**：[src/client/index.ts:103-118](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/client/index.ts#L103-L118)
+
+向会话输入栏注入控件
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+        required: t("searchModeRequiredDesc"),
+        off: t("searchModeOffDesc"),
+      },
+    });
+  };
+
+  ctx.slots.inject("conversation.input.left", () =>
+    ctx.slots.register(
+      {
+        name: "conversation.input.left",
+        id: "dsh-web-tools-search-mode",
+        order: 30,
+        // Localized projected label follows the active locale without re-register.
+        label: () => t("searchModeLabel"),
+      },
+      SearchModeControl,
+```
+
+</details>
+
 #### 缺口
 
-- 没有同查询集的相关性与可用性对照
-  **影响**：无法量化多来源相对单服务的实际收益
-  **进一步探讨**：固定问题/预算比较原生单服务、统一最低参数与完整适配，人工评相关性和可追溯性
+- 固定版未在实际 Profile 加载
+  **影响**：补丁兼容和 UI 可见性未验证
+  **进一步探讨**：在隔离 Profile 对照启用前后工具清单并试一次搜索和抓取
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 查询语义和失败状态如何被编译与路由？
+### Q02 · 多提供者与 Always 模式分别保证了什么？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
-SearchHints从显式site、日期、语言及主题词提取结构化意图，区分硬域名限制与软官方来源偏好。Parallel适配例将软偏好放objective、cleanQuery放search_queries、硬域名和after日期放source_policy；代码是确定性的，不额外调用LLM。通用检索共用健康状态，认证失败换同供应商密钥，限流/网络/服务器错误转下一供应商，Retry-After触发供应商冷却，调用取消终止链。平台源成功即使零结果也保留原生结论；非retryable登录/访问错误直接返回，避免以索引搜索伪装原生成功。
+多提供者把同一请求中不同故障分开处理。无可用凭据、全部失效或在冷却的池会被跳过。认证失败会把当前 key 标为不健康，尝试本池下一个；429、网络、超时等可重试非认证故障转下一个提供者，带 Retry-After 的限流记录冷却。调用者取消和终止类错误不继续。抓取另有能提取网页的链，随后可转通用 HTTP 抽取。与单一原生入口或手工换 key 比，这可以减少需要人为切换的故障；同后端共故障或最后一个服务失败时仍会返回错误，额外尝试会占时并可能产生额外 API 消耗。Always 对照 README 的资料可靠性描述，应理解为每轮完成一次工具尝试。结果钩子分别记录完成与成功，失败结果也能满足停止条件；完全没完成才先 steer 一次再 cancel。因此它不能单独保证找到外部证据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/host/search-hints.ts:93-154](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/search-hints.ts#L93-L154)
+**依据 1 · 源码核查**：[src/host/registry.ts:246-290](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L246-L290)
 
-规则解析的具体词表与日期/site模式。
-
-<details>
-<summary>查看原文（62行）</summary>
-
-```text
-// Regex patterns for operator extraction
-const SITE_INCLUDE_RE = /(?:^|\s)site:([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?:\b|\s|$)/gi;
-const SITE_EXCLUDE_RE = /(?:^|\s)-site:([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?:\b|\s|$)/gi;
-
-// Platform indicators (high precision to avoid false positives on solitary 'x' or common words)
-const XIAOHONGSHU_EXPLICIT_RE = /(?:小红书|rednote|\bxsec_token\b)/i;
-const XIAOHONGSHU_CLEAN_RE = /(?:(?:请\s*)?(?:在|去)?\s*(?:小红书|rednote)(?:上|里|中)?\s*(?:搜索|搜|查找|找|看看)?)/gi;
-
-const X_EXPLICIT_RE = /(?:twitter|推特|x\.com|twitter\.com|(?:在|上)X(?:上|里|中)?|X\s*(?:平台|推特|社区|帖子|动态|热搜)|^\s*X\s*[:：])/i;
-const X_ROUTE_PREFIX_RE = /^\s*X\s*[:：]\s*/i;
-const X_CLEAN_RE = /(?:(?:请\s*)?(?:在|去)?\s*(?:X(?:上|里|中)|(?:twitter|推特)(?:上|里|中)?|X\s*(?:平台|推特|社区|帖子|动态|热搜)(?:上|里|中)?)\s*(?:搜索|搜|查找|找|看看)?)/gi;
-
-// Code topic indicators (keywords or patterns)
-const CODE_INDICATORS = [
-  /\b(github|gitlab|npm|pnpm|cargo|pip|pypi|nuget|crates\.io|stackoverflow|golang|typescript|python|rust|c\+\+|javascript|react|vue|svelte|docker|k8s|kubernetes|linux|bash|powershell|sql|postgres|redis|git|api|sdk|graphql|rest|grpc|webhook|bug|error|issue|pr|pull request|stacktrace|exception|panic|segfault|syntax|compiler|traceback)\b/i,
-  /(?:代码|函数|接口|报错|崩溃|源码|组件|配置|版本号|仓库|提交|异常|编译)/,
-];
-
-// News topic indicators
-const NEWS_INDICATORS = [
-  /\b(news|breaking|announced|announcement|press release|headline|journal|report|coverage)\b/i,
-  /(?:新闻|快讯|发布会|报道|最新消息|突发|动态|头条)/,
-];
-
-// Finance topic indicators
-const FINANCE_INDICATORS = [
-  /\b(stock|shares|nasdaq|nyse|sec|10-k|10-q|earnings|revenue|market cap|valuation|ipo|crypto|bitcoin|ethereum|dividend|fiscal|quarterly|ebitda)\b/i,
-  /(?:财报|股价|营收|市值|估值|财季|分红|股票|证券|上市|收益率|净利润)/,
-];
-
-// Research topic indicators
-const RESEARCH_INDICATORS = [
-  /\b(arxiv|paper|research|benchmark|ablation|evaluation|dataset|methodology|conference|neurips|icml|iclr|cvpr|acl|ieee|springer|nature|science)\b/i,
-  /(?:论文|学术|评测|基准|消融实验|数据集|学术会议|研报|文献)/,
-];
-
-// Freshness indicators
-const DAY_INDICATORS = [
-  /\b(today|past 24 hours|last 24 hours|24h|today's)\b/i,
-  /(?:今天|今日|过去24小时|24小时内|当天)/,
-];
-const WEEK_INDICATORS = [
-  /\b(this week|past week|last 7 days|7d|recent week)\b/i,
-  /(?:本周|这一周|过去7天|近7天|最近一周)/,
-];
-const MONTH_INDICATORS = [
-  /\b(this month|past month|last 30 days|latest|recently|recent|newest|current)\b/i,
-  /(?:本月|过去30天|近1个月|最近|最新|近期|近来)/,
-];
-const YEAR_INDICATORS = [
-  /\b(this year|past year|last 12 months|annual)\b/i,
-  /(?:今年|本年度|近1年|过去一年)/,
-];
-
-// Explicit date range in query (e.g. 2026-08-01..2026-08-20 or after:2026-01-01)
-const AFTER_DATE_RE = /\bafter:(\d{4}-\d{2}-\d{2})\b/i;
-const BEFORE_DATE_RE = /\bbefore:(\d{4}-\d{2}-\d{2})\b/i;
-
-// Official source preference indicators
-const OFFICIAL_PREFERENCE_INDICATORS = [
-  /\b(official|primary doc|primary documentation|official docs?|official website|canonical source)\b/i,
-  /(?:官方文档|官网|官方|权威来源|正规文档|官方指南)/,
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/host/providers/parallel.ts:129-166](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/providers/parallel.ts#L129-L166)
-
-硬软语义分别编译到请求参数。
+跳过规则和每次尝试
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（45行）</summary>
 
 ```text
-): Record<string, unknown> {
-  let objective = query;
-  const cleanQ = hints?.cleanQuery ? hints.cleanQuery : query;
+          // Keyless sources (self-hosted SearXNG, or a custom source with auth
+          // mode "none") execute with an empty key.
+          entries = [new PoolEntry("", 0)];
+        } else if (entries.length === 0) {
+          attempts.push({ provider: providerName, outcome: "skipped-no-keys" });
+          continue;
+        }
 
-  // Soft steering via objective (Parallel official best practice)
-  if (hints?.domains?.preferOfficial) {
-    objective += "\nPrefer primary documentation and official sources when available.";
-  } else if (hints?.domains?.prefer && hints.domains.prefer.length > 0 && !hints.domains.include) {
-    objective += `\nPrefer sources from: ${hints.domains.prefer.join(", ")}.`;
-  }
+        // Auth-invalid keys stay unhealthy until the credential actually
+        // changes (refreshPool preserves healthy=false for persisted keys).
+        // If the whole pool is unusable, skip this provider — do NOT reset.
+        let usable = entries.filter((e) => e.healthy);
+        if (usable.length === 0) {
+          attempts.push({ provider: providerName, outcome: "skipped-no-healthy-keys" });
+          continue;
+        }
 
-  // Advanced settings & source policy
-  const advancedSettings: Record<string, unknown> = {
-    max_results: count,
-  };
-
-  const sourcePolicy: Record<string, unknown> = {};
-  if (hints?.domains?.include && hints.domains.include.length > 0) {
-    sourcePolicy.include_domains = hints.domains.include;
-  }
-  if (hints?.domains?.exclude && hints.domains.exclude.length > 0) {
-    sourcePolicy.exclude_domains = hints.domains.exclude;
-  }
-  if (hints?.freshness?.after) {
-    sourcePolicy.after_date = hints.freshness.after;
-  }
-
-  if (Object.keys(sourcePolicy).length > 0) {
-    advancedSettings.source_policy = sourcePolicy;
-  }
-
-  const body: Record<string, unknown> = {
-    objective,
-    search_queries: [normalizeParallelQuery(cleanQ)],
-    mode: options?.mode ?? "advanced",
-    advanced_settings: advancedSettings,
-  };
-
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/host/registry.ts:263-344](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/registry.ts#L263-L344)
-
-密钥轮换、取消和限流路由。
-
-<details>
-<summary>查看原文（82行）</summary>
-
-```text
         // Provider-level cooldown (Retry-After). The store uses its own clock
         // (injectable for tests) — zero HTTP when cooling down.
         if (healthStore?.isCoolingDown(providerName)) {
@@ -477,34 +441,18 @@ const OFFICIAL_PREFERENCE_INDICATORS = [
               (s) =>
                 adapter.search(request.query, maxResults, entry?.key ?? "", searchBaseUrl, {
                   signal: s,
-                  options: providerOptions,
-                  hints: searchHints,
-                }),
-              cfg.providerAttemptTimeoutMs,
-              signal,
-            );
-            if (entry) markUsed(entries, index);
-            const latencyMs = Date.now() - started;
-            attempts.push({ provider: providerName, outcome: "success", latencyMs });
-            stats.record({ provider: providerName, outcome: "success", latencyMs });
-            return {
-              ...outcome,
-              truncated: false,
-              attempts,
-              backend: providerName,
-            };
-          } catch (error) {
-            const err = toProviderError(error);
-            const latencyMs = Date.now() - started;
-            const decision = classifyFailure(err);
-            // Caller cancellation terminates the whole chain — never fall back.
-            if (decision === "terminal") {
-              providerLevelDecision = "terminal";
-              lastError = err;
-              attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              break;
-            }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/host/registry.ts:319-359](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L319-L359)
+
+认证轮换、限流冷却和终止分支
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
             if (decision === "non-retryable") {
               providerLevelDecision = "break";
               lastError = err;
@@ -531,444 +479,211 @@ const OFFICIAL_PREFERENCE_INDICATORS = [
             stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
             providerLevelDecision = "next-provider";
             break;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/host/sources/registry.ts:135-159](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/sources/registry.ts#L135-L159)
-
-原生成功/零结果和不可重试错误保留。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-    const nativeQuery = req?.hints?.cleanQuery?.trim() || query;
-    const outcome = await source.search(nativeQuery, req, signal);
-    // If native search succeeded (even 0 results), keep native outcome!
-    if (outcome.error === undefined) {
-      return { ...outcome, retrievalMode: "native-browser" };
-    }
-
-    // Do not hide platform authentication/access failures behind indexed web
-    // results. They cannot provide native details or real comments and would
-    // make an explicit platform search look successful when it was not.
-    if (signal?.aborted || outcome.error.code === "aborted") {
-      return outcome;
-    }
-    if (!outcome.error.retryable) {
-      return outcome;
-    }
-
-    // Retryable browser/runtime failures may still use indexed discovery.
-    return fallbackSearchToGeneralWeb(
-      query,
-      platform,
-      this.fallbackSearchProvider,
-      req?.maxResults,
-      signal,
-    );
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 统一接口是否保存了完整语义与证据范围？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-关键质疑是统一成功会否掩盖约束或内容缺失。规则词表无法保证任意自然语言理解；适配器间参数能力也不同，Parallel查询会被截到200字符，并非每种时间边界都映射。宿主返回映射只保留URL、标题、摘要和时间，写死truncated:false，因此不能把该标记理解成网页、平台评论或原问题已完整覆盖。README明确社交详情最多30评论/回复、每项800字且不做图片OCR，这是内容边界而非无结果。研究者必须核对实际来源和正文，不能只靠工具调用成功或多个后端数量。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/host/providers/parallel.ts:105-115](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/providers/parallel.ts#L105-L115)
-
-查询长度限制。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-/** Clamp the requested result count into Parallel's accepted range (1..20). */
-export function clampParallelCount(maxResults: number | undefined): number {
-  return Math.min(Math.max(maxResults ?? 5, 1), PARALLEL_MAX_RESULTS);
-}
-
-/**
- * Normalize one raw query into a Parallel search_queries entry: whitespace
- * collapsed, trimmed, and capped at 200 characters (the per-query API limit).
- */
-export function normalizeParallelQuery(query: string): string {
-  return query.replace(/\s+/g, " ").trim().slice(0, PARALLEL_QUERY_MAX_CHARS);
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/host/index.ts:329-337](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/index.ts#L329-L337)
-
-宿主搜索返回字段及固定截断标记。
-
-```text
-      return {
-        sources: outcome.items.map((item) => ({
-          url: item.url,
-          title: item.title,
-          snippet: item.snippet,
-          publishedAt: item.publishedAt,
-        })),
-        truncated: false,
-      };
-```
-
-**依据 3 · 作者声明**：[README.md:118-125](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/README.md#L118-L125)
-
-评论上限、无OCR和降级边界。
-
-```text
-Each detail fetch includes at most 30 comments or replies, with up to 800 characters per entry. Additional pages or nested replies are explicitly marked as truncated to keep model context bounded.
-
-> **Capability Boundary**: For Xiaohongshu notes where the primary content resides in images, the fetcher returns the title, text description, engagement metrics, image count, and loaded comments; it does not perform optical character recognition (OCR) on image text or automatically paginate through all comments.
-
-Agents use `小红书:` or `X:` as a platform-routing prefix. The prefix selects the platform and is removed before the native search runs; for example, `小红书: DeepSeek Harness` enters only `DeepSeek Harness` into Xiaohongshu's search box.
-
-* **General-Web Fallback**: Uses configured general search or fetch providers when a platform source is disabled, temporarily unavailable, or reports a retryable failure. Non-retryable sign-in, access-control, search-restriction, and invalid-detail errors are returned directly so indexed content is not presented as native platform results, details, or comments.
-* **Automated Session Verification**: Cookies are only the first gate. Xiaohongshu requires both `a1` and `web_session`, then performs a stabilized live `/explore` check in the interactive browser. A visible login wall invalidates the old session and restores the sign-in action; a wall appearing only after search submission is reported directly as `search-restricted` rather than being hidden behind indexed web results.
-```
-
-**依据 4 · 源码核查**：[src/host/search-hints.ts:105-154](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/search-hints.ts#L105-L154)
-
-主题/新鲜度依赖启发式词表。
-
-<details>
-<summary>查看原文（50行）</summary>
-
-```text
-// Code topic indicators (keywords or patterns)
-const CODE_INDICATORS = [
-  /\b(github|gitlab|npm|pnpm|cargo|pip|pypi|nuget|crates\.io|stackoverflow|golang|typescript|python|rust|c\+\+|javascript|react|vue|svelte|docker|k8s|kubernetes|linux|bash|powershell|sql|postgres|redis|git|api|sdk|graphql|rest|grpc|webhook|bug|error|issue|pr|pull request|stacktrace|exception|panic|segfault|syntax|compiler|traceback)\b/i,
-  /(?:代码|函数|接口|报错|崩溃|源码|组件|配置|版本号|仓库|提交|异常|编译)/,
-];
-
-// News topic indicators
-const NEWS_INDICATORS = [
-  /\b(news|breaking|announced|announcement|press release|headline|journal|report|coverage)\b/i,
-  /(?:新闻|快讯|发布会|报道|最新消息|突发|动态|头条)/,
-];
-
-// Finance topic indicators
-const FINANCE_INDICATORS = [
-  /\b(stock|shares|nasdaq|nyse|sec|10-k|10-q|earnings|revenue|market cap|valuation|ipo|crypto|bitcoin|ethereum|dividend|fiscal|quarterly|ebitda)\b/i,
-  /(?:财报|股价|营收|市值|估值|财季|分红|股票|证券|上市|收益率|净利润)/,
-];
-
-// Research topic indicators
-const RESEARCH_INDICATORS = [
-  /\b(arxiv|paper|research|benchmark|ablation|evaluation|dataset|methodology|conference|neurips|icml|iclr|cvpr|acl|ieee|springer|nature|science)\b/i,
-  /(?:论文|学术|评测|基准|消融实验|数据集|学术会议|研报|文献)/,
-];
-
-// Freshness indicators
-const DAY_INDICATORS = [
-  /\b(today|past 24 hours|last 24 hours|24h|today's)\b/i,
-  /(?:今天|今日|过去24小时|24小时内|当天)/,
-];
-const WEEK_INDICATORS = [
-  /\b(this week|past week|last 7 days|7d|recent week)\b/i,
-  /(?:本周|这一周|过去7天|近7天|最近一周)/,
-];
-const MONTH_INDICATORS = [
-  /\b(this month|past month|last 30 days|latest|recently|recent|newest|current)\b/i,
-  /(?:本月|过去30天|近1个月|最近|最新|近期|近来)/,
-];
-const YEAR_INDICATORS = [
-  /\b(this year|past year|last 12 months|annual)\b/i,
-  /(?:今年|本年度|近1年|过去一年)/,
-];
-
-// Explicit date range in query (e.g. 2026-08-01..2026-08-20 or after:2026-01-01)
-const AFTER_DATE_RE = /\bafter:(\d{4}-\d{2}-\d{2})\b/i;
-const BEFORE_DATE_RE = /\bbefore:(\d{4}-\d{2}-\d{2})\b/i;
-
-// Official source preference indicators
-const OFFICIAL_PREFERENCE_INDICATORS = [
-  /\b(official|primary doc|primary documentation|official docs?|official website|canonical source)\b/i,
-  /(?:官方文档|官网|官方|权威来源|正规文档|官方指南)/,
-```
-
-</details>
-
-#### 缺口
-
-- 跨供应商约束保真率、图片内容遗漏和检索质量未知
-  **影响**：阻碍把统一接口当完整证据采集器
-  **进一步探讨**：建立长查询、否定条件、图片笔记及分页评论样例，逐项核对原内容和返回边界
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 用户要承担哪些外部服务、账号与重试成本？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-普通网页路径依赖已配置的供应商账户/密钥或自建SearXNG，部分抓取可走本地通用解析；平台路径则依赖本地Chrome/Edge、独立配置目录及人工登录，登录和访问限制不会被自动消除。多密钥仅用于合法轮换/分摊，失败转移可能增加请求数和付费调用，不能由“无额外LLM”推断总成本低。需要统计全部失败/超时/备用请求、模型上下文和人工全文复核。首次设置密钥、地址与平台账号后还需持续维护登录状态和API变化；恢复应看具体错误和实际来源，不对不可重试访问错误盲补位。本轮未访问真实账户或服务，价格、额度和当前可用性没有核实。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:103-125](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/README.md#L103-L125)
-
-浏览器登录与平台能力边界。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-## Social Platform Sources
-
-Unlike general search engines, the plugin connects directly to native social platform sessions:
-
-* **Native Isolated Browser Architecture**:
-  * Directly controls local Edge / Chrome instances using dedicated profiles over CDP.
-  * **0 browser extensions and 0 Playwright / Chromium bundles**. Cookies remain managed by the dedicated browser profile and are not written to plugin configuration, logs, or relays; the browser still sends them to the platform during normal authenticated requests.
-
-* **Xiaohongshu**:
-  * **Note Detail & Comment Fetch (`web_fetch`)**: Uses the dedicated browser profile to extract structured `__INITIAL_STATE__` data with DOM fallback while preserving signed `xsec_token` URLs. When the page loads comment data, top-level comments and returned nested replies are extracted individually.
-  * **Native Search Discovery (`web_search`)**: Uses the signed-in browser and the real search controls on `/explore`, entering only the cleaned topic query rather than platform names or `site:` operators. It distinguishes login walls, security verification, and a genuinely signed-out session. Operators can temporarily disable this path with `XHS_NATIVE_SEARCH=0` while diagnosing browser issues.
-
-* **Twitter / X**:
-  * **Native Search, Tweet Detail & Replies**: Captures the X web client's GraphQL data streams (SearchTimeline / TweetDetail) over CDP, parses the target tweet and its reply tree structurally, and uses DOM extraction as a supplement and fallback. Supports `from:`, `since:`, and `until:` operators.
-
-Each detail fetch includes at most 30 comments or replies, with up to 800 characters per entry. Additional pages or nested replies are explicitly marked as truncated to keep model context bounded.
-
-> **Capability Boundary**: For Xiaohongshu notes where the primary content resides in images, the fetcher returns the title, text description, engagement metrics, image count, and loaded comments; it does not perform optical character recognition (OCR) on image text or automatically paginate through all comments.
-
-Agents use `小红书:` or `X:` as a platform-routing prefix. The prefix selects the platform and is removed before the native search runs; for example, `小红书: DeepSeek Harness` enters only `DeepSeek Harness` into Xiaohongshu's search box.
-
-* **General-Web Fallback**: Uses configured general search or fetch providers when a platform source is disabled, temporarily unavailable, or reports a retryable failure. Non-retryable sign-in, access-control, search-restriction, and invalid-detail errors are returned directly so indexed content is not presented as native platform results, details, or comments.
-* **Automated Session Verification**: Cookies are only the first gate. Xiaohongshu requires both `a1` and `web_session`, then performs a stabilized live `/explore` check in the interactive browser. A visible login wall invalidates the old session and restores the sign-in action; a wall appearing only after search submission is reported directly as `search-restricted` rather than being hidden behind indexed web results.
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/host/pool.ts:1-10](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/pool.ts#L1-L10)
-
-密钥池用途限定。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-/**
- * dsh-web-tools — per-provider account pool (pure logic, no I/O).
- *
- * Each provider can hold a pool of API keys (e.g. several Tavily accounts).
- * Selection policy: least-used-first with a fixed tie-break order (the key
- * list order). A key that fails a call is marked unhealthy and skipped until
- * the whole pool is exhausted, at which point health resets so a recovered
- * account can be used again.
- *
- * This serves legitimate multi-key / rollover / load-spreading scenarios only.
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/host/registry.ts:263-344](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/registry.ts#L263-L344)
-
-失败分类决定潜在追加调用。
-
-<details>
-<summary>查看原文（82行）</summary>
-
-```text
-        // Provider-level cooldown (Retry-After). The store uses its own clock
-        // (injectable for tests) — zero HTTP when cooling down.
-        if (healthStore?.isCoolingDown(providerName)) {
-          attempts.push({ provider: providerName, outcome: "skipped-cooldown" });
-          continue;
+          } finally {
+            if (entry) releaseKey(entries, index);
+          }
         }
 
-        // Provider-internal key failover: on AUTH failures only, try the next
-        // healthy key in the SAME provider before falling back to another
-        // provider. Non-auth failures (429/5xx/network/timeout) do not rotate
-        // keys — they fall through to the next provider directly.
-        let providerLevelDecision: "next-provider" | "break" | "terminal" | null = null;
-        // Base URL from the request snapshot, so an override edit mid-request
-        // cannot make one attempt dial a different host than another.
-        const searchBaseUrl = entryInfo?.builtIn
-          ? entryInfo.endpoint?.effectiveBaseUrl
-          : cfg.providerBaseUrls[providerName];
-        while (usable.length > 0) {
-          const index = selectIndex(entries);
-          const entry = entries[index];
-          if (entry) reserveKey(entries, index);
-          const started = Date.now();
-          const providerOptions = cfg.providerOptions?.[providerName as keyof StoredProviderOptions];
-          try {
-            const outcome = await runWithTimeout(
-              (s) =>
-                adapter.search(request.query, maxResults, entry?.key ?? "", searchBaseUrl, {
-                  signal: s,
-                  options: providerOptions,
-                  hints: searchHints,
-                }),
-              cfg.providerAttemptTimeoutMs,
-              signal,
-            );
-            if (entry) markUsed(entries, index);
-            const latencyMs = Date.now() - started;
-            attempts.push({ provider: providerName, outcome: "success", latencyMs });
-            stats.record({ provider: providerName, outcome: "success", latencyMs });
-            return {
-              ...outcome,
-              truncated: false,
-              attempts,
-              backend: providerName,
-            };
-          } catch (error) {
-            const err = toProviderError(error);
-            const latencyMs = Date.now() - started;
-            const decision = classifyFailure(err);
-            // Caller cancellation terminates the whole chain — never fall back.
-            if (decision === "terminal") {
-              providerLevelDecision = "terminal";
-              lastError = err;
-              attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              break;
-            }
-            if (decision === "non-retryable") {
-              providerLevelDecision = "break";
-              lastError = err;
-              attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              break;
-            }
-            // retryable:
-            if (err.code === "auth") {
-              // key indicted → mark unhealthy, try the next key in this pool
-              markUnhealthy(entries, index);
-              attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-              usable = entries.filter((e) => e.healthy);
-              continue;
-            }
-            // non-auth retryable (429/5xx/network/timeout) → next provider
-            lastError = err;
-            // Only rate-limit errors carry a server-requested cooldown.
-            if (err.code === "rate-limit" && typeof err.retryAfterMs === "number" && err.retryAfterMs > 0) {
-              healthStore?.cooldownFor(providerName, err.retryAfterMs, "rate-limit");
-            }
-            attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-            stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
-            providerLevelDecision = "next-provider";
-            break;
+        if (providerLevelDecision === "terminal") throw toWebError(lastError);
+        if (providerLevelDecision === "break") break;
+        // else fall through to the next provider in the chain
+      }
+
+      const reason = lastError
+        ? `${lastError.code}: ${lastError.message}`
+        : "no usable provider";
+      const err = new WebToolsWebError(`web search failed after ${attempts.length} attempt(s): ${reason}`);
+      err.attempts = attempts;
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[package.json:49-72](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/package.json#L49-L72)
+**依据 3 · 源码核查**：[src/host/registry.ts:445-481](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L445-L481)
 
-解析、网络与宿主依赖声明。
+抓取终止或通用 HTTP fallback
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+          const err = toProviderError(error);
+          if (err.code === "auth") markUnhealthy(entries, index);
+          if (err.code === "rate-limit" && typeof err.retryAfterMs === "number" && err.retryAfterMs > 0) {
+            healthStore?.cooldownFor(providerName, err.retryAfterMs, "rate-limit");
+          }
+          lastNativeError = err;
+          attempts.push({ provider: providerName, outcome: `failed:${err.code}` });
+          const decision = classifyFailure(err);
+          // Caller cancellation or terminal URL/SSRF errors should abort immediately without fallback
+          if (decision === "terminal") {
+            const terminalErr = toWebError(error);
+            terminalErr.attempts = attempts;
+            throw terminalErr;
+          }
+          if (decision === "non-retryable") break;
+          // retryable → try next fetch-capable provider in the chain
+        } finally {
+          if (entry) releaseKey(entries, index);
+        }
+      }
+
+      // If caller aborted, do not proceed to built-in generic fetch
+      if (signal?.aborted) {
+        const abortErr = new WebToolsWebError("web fetch aborted by caller");
+        abortErr.code = "WEB_ABORTED";
+        abortErr.attempts = attempts;
+        throw abortErr;
+      }
+
+      // 2. Fallback to built-in generic HTTP fetcher (Defuddle + linkedom)
+      try {
+        const res = await genericFetcher(request.url, {
+          signal,
+          timeoutMs: cfg.providerAttemptTimeoutMs,
+        });
+        attempts.push({ provider: "builtin-http", outcome: "success" });
+        return {
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:171-177](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/README.md#L171-L177)
+
+作者对 Always 的强一致叙述
+
+```text
+* **429 Retry-After Cooldown**: Enforces zero-request cooldown windows when servers return `Retry-After` headers, skipping rate-limited providers immediately.
+* **Configurable Routing Policies**: `web_search` supports Ordered, Round-Robin, and Random starting-provider selection. `web_fetch` always follows the deterministic fetch-capable chain.
+* **Session-Level Search Mode**: A refined, compact picker in the composer offering three deterministic retrieval behaviors (defaults to Smart):
+  * **Smart (智能联网)**: Elastic semantic dispatch. The agent autonomously determines whether real-time web retrieval is needed based on conversational intent.
+  * **Always (始终联网)**: Strong-consistency knowledge verification. Mandates at least one completed `web_search` or `web_fetch` per turn to ensure claims are grounded in external sources.
+  * **Off (关闭联网)**: Deterministic physical isolation. Replaces fragile prompt-only requests with a **three-tier runtime enforcement barrier** (dynamically withholds tools from the agent's schema, blocks model inertia via a monotonic guard before execution, and injects a single-turn explanation), ensuring zero outbound network leakage regardless of historical context.
+
+```
+
+**依据 5 · 源码核查**：[src/host/search-mode-runtime.ts:155-178](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/search-mode-runtime.ts#L155-L178)
+
+完成和成功使用不同字段
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
-    "defuddle": "^0.19.3",
-    "linkedom": "^0.18.13",
-    "undici": "^6.26.0",
-    "ws": "^8.18.0"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-api-remotes": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-client-connection": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-client-locale": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-client-ui-primitives": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-credentials": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-llm": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-settings": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/dsh-web": "^0.1.0-rc.6 || ^0.2.0-0 || ^0.2.1-0",
-    "@deepseek-ai/schemastery": "^3.18.1",
-    "react": "^18.2.0"
-  },
-  "scripts": {
-    "build": "node -e \"require('fs').rmSync('lib',{recursive:true,force:true})\" && tsc -p tsconfig.build.json && tsdown",
-    "prepack": "npm run build",
-    "bundle": "tsdown",
+
+  /**
+   * Record that a web_search call COMPLETED. Completion (even a total provider
+   * failure) satisfies "must research first"; success additionally records that
+   * fresh web data was available.
+   */
+  markSearchResult(sessionId: string, succeeded: boolean): void {
+    const state = this.turns.get(sessionId);
+    if (!state) return;
+    state.webSearchCompleted = true;
+    state.webSearchSucceeded ||= succeeded;
+  }
+
+  /**
+   * Record that a web_fetch call COMPLETED. A fetch also satisfies the
+   * "must research first" requirement — a user-supplied URL is a valid
+   * research action and must not be gated behind a pointless search.
+   */
+  markFetchResult(sessionId: string, succeeded: boolean): void {
+    const state = this.turns.get(sessionId);
+    if (!state) return;
+    state.webFetchCompleted = true;
+    state.webFetchSucceeded ||= succeeded;
+  }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/host/search-mode-runtime.ts:401-423](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/search-mode-runtime.ts#L401-L423)
+
+工具结果与停止的实际判据
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+      const stopResult = agent.ctx.on(
+        "tools/result",
+        (exec: { name?: string; agent?: { id: string } | null }, result: { isError?: boolean }) => {
+          if (!exec.agent?.id) return;
+          const succeeded = result?.isError === false;
+          if (exec?.name === "web_search") runtime.markSearchResult(exec.agent.id, succeeded);
+          else if (exec?.name === "web_fetch") runtime.markFetchResult(exec.agent.id, succeeded);
+        },
+      );
+
+      const stopStopping = agent.ctx.on(
+        "agent/turn-stopping",
+        (payload: { turn: number; signal?: AbortSignal }) => {
+          if (payload.signal?.aborted) return;
+          const state = runtime.getTurn(agent.id);
+          if (!state?.required || webResearchCompleted(state)) return;
+          if (state.correctionCount === 0) {
+            state.correctionCount += 1;
+            agent.steer(messages.correction());
+            return;
+          }
+          agent.cancel({ kind: "hook", reason: "required web research was not completed" });
+        },
 ```
 
 </details>
 
 #### 缺口
 
-- 供应商价格/实际请求量与平台登录维护时间未知
-  **影响**：无法报告单位合格检索成本
-  **进一步探讨**：以授权配置的小样本查询记录所有后端尝试、最终合格资料数和人工复核分钟数
+- 没有独立提供者故障时的任务完成数据
+  **影响**：无法判断 fallback 的净收益或 Always 下事实准确率
+  **进一步探讨**：注入可控的认证错误和限流，记录尝试序列与真实证据命中率
 
-<a id="research-q05"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-13"></a>
 
-### Q05 · 哪些设计值得借鉴，怎样控制试用？
+### Q03 · 平台访问、目标授权和抓取各依赖什么，哪些错误不能由后备弥补？
 
-**研究主题**：工程质量与复用、新假设与验证、采用判断
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
 
 #### 完整回答
 
-把查询意图、供应商编译、错误分类、健康状态和平台来源分层，便于在保持宿主接口的同时适配不同后端；请求快照避免配置中途编辑改变尝试目的地，是可复用的边界设计。未验证假设是给统一返回增加约束执行说明、内容覆盖与降级来源证明，可能减少研究者把可用性当完整性的误判。最小验证固定含硬域名、长查询、分页和登录限制的样例，比较现有返回与带证明返回的盲审错误率和复核时间；若只是增加上下文而未减少误判则否定。当前建议trial，限定可信本机公开材料、小预算和人工回原文；平台源需显式登录并核对原生/索引来源，关键内容缺失时停止将其用于完整性结论。
+X 和小红书源挂到同一平台注册表，原生路径依赖可启动的本地浏览器、专用 Profile 和可用登录态。平台被关闭或缺失可用普通网页查找；原生返回零条仍保留，取消、认证或权限等标记不可重试的失败直接返回。普通搜索索引因此只能作为发现线索，不能用作原生评论的替代证据。配置自定义服务还需分清出站和网页抓取两类边界。自定义传输会判定显式授权、DNS、私网和代理策略，拒绝重定向并对直接自定义连接固定地址；经代理的目标有单独授权条件。通用抓取则在手动重定向每跳预检 URL 和 DNS，再交给 fetch，请求前预检与最终连接之间仍需实测，不能借用自定义传输的固定地址结论。浏览器 resetSession 先停进程再删除专用 Profile；普通 dispose 只停止平台运行，不清除已有登录资料。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/host/registry.ts:272-291](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/registry.ts#L272-L291)
+**依据 1 · 源码核查**：[src/host/index.ts:353-358](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/index.ts#L353-L358)
 
-配置快照与供应商请求边界。
-
-<details>
-<summary>查看原文（20行）</summary>
+平台源注入浏览器 runtime
 
 ```text
-        // provider. Non-auth failures (429/5xx/network/timeout) do not rotate
-        // keys — they fall through to the next provider directly.
-        let providerLevelDecision: "next-provider" | "break" | "terminal" | null = null;
-        // Base URL from the request snapshot, so an override edit mid-request
-        // cannot make one attempt dial a different host than another.
-        const searchBaseUrl = entryInfo?.builtIn
-          ? entryInfo.endpoint?.effectiveBaseUrl
-          : cfg.providerBaseUrls[providerName];
-        while (usable.length > 0) {
-          const index = selectIndex(entries);
-          const entry = entries[index];
-          if (entry) reserveKey(entries, index);
-          const started = Date.now();
-          const providerOptions = cfg.providerOptions?.[providerName as keyof StoredProviderOptions];
-          try {
-            const outcome = await runWithTimeout(
-              (s) =>
-                adapter.search(request.query, maxResults, entry?.key ?? "", searchBaseUrl, {
-                  signal: s,
-                  options: providerOptions,
+  // Specialized Sources: Register Xiaohongshu and Twitter/X with NativeBrowserRuntime
+  const nativeRuntime = createNativeBrowserRuntime();
+  const xhsSource = new XiaohongshuSource(nativeRuntime);
+  const xSource = new XSource(nativeRuntime);
+  sourceRegistry.registerSource(xhsSource);
+  sourceRegistry.registerSource(xSource);
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/host/sources/registry.ts:124-157](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/sources/registry.ts#L124-L157)
 
-**依据 2 · 源码核查**：[src/host/sources/registry.ts:135-159](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/sources/registry.ts#L135-L159)
-
-来源与失败边界的分层。
+平台搜索保留零条和不可重试错误
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
+    const source = this.sources.get(platform);
+    if (!source || !this.isPlatformEnabled(platform)) {
+      return fallbackSearchToGeneralWeb(
+        query,
+        platform,
+        this.fallbackSearchProvider,
+        req?.maxResults,
+        signal,
+      );
+    }
+
     const nativeQuery = req?.hints?.cleanQuery?.trim() || query;
     const outcome = await source.search(nativeQuery, req, signal);
     // If native search succeeded (even 0 results), keep native outcome!
@@ -992,26 +707,531 @@ Agents use `小红书:` or `X:` as a platform-routing prefix. The prefix selects
       platform,
       this.fallbackSearchProvider,
       req?.maxResults,
-      signal,
-    );
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/host/index.ts:329-337](https://github.com/A3Boy/dsh-web-tools/blob/cfa00a70b600da212915ac3a82e970e9b93ac9c2/src/host/index.ts#L329-L337)
+**依据 3 · 源码核查**：[src/host/sources/registry.ts:193-215](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/sources/registry.ts#L193-L215)
 
-证明/覆盖信息假设的具体缺口。
+详情同样区分原生成功、拒绝与后备
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
-      return {
-        sources: outcome.items.map((item) => ({
-          url: item.url,
-          title: item.title,
-          snippet: item.snippet,
-          publishedAt: item.publishedAt,
-        })),
-        truncated: false,
-      };
+    const source = this.sources.get(targetPlatform);
+    if (!source || !this.isPlatformEnabled(targetPlatform)) {
+      return fallbackFetchToGeneralWeb(url, this.fallbackFetchProvider, signal);
+    }
+
+    const outcome = await source.fetch(url, signal);
+    if (outcome.error === undefined && outcome.item) {
+      return { ...outcome, retrievalMode: "native-browser" };
+    }
+
+    if (signal?.aborted || outcome.error?.code === "aborted") {
+      return outcome;
+    }
+
+    // A source marks platform-auth, access-control, and invalid-detail errors
+    // as non-retryable. Do not hide that concrete result behind a potentially
+    // long general-provider chain that cannot recover native comments/session
+    // data and may consume the tool's entire timeout budget.
+    if (outcome.error && !outcome.error.retryable) {
+      return outcome;
+    }
+
+    return fallbackFetchToGeneralWeb(url, this.fallbackFetchProvider, signal);
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[src/host/browser/session-manager.ts:646-654](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/browser/session-manager.ts#L646-L654)
+
+启动专用 Profile 浏览器
+
+```text
+      const profileDir = this.profileStore.ensureProfileDir(platform);
+      const isVisible = desiredMode === "interactive";
+      const config = PLATFORM_AUTH_CONFIG[platform];
+      const startUrl = initialUrl || (isVisible ? config.initialUrl : undefined);
+
+      let spawned: SpawnedBrowserProcess;
+      try {
+        spawned = await this.launcher(browser, profileDir, startUrl, isVisible, !isVisible);
+      } catch (err) {
+```
+
+**依据 5 · 源码核查**：[src/host/browser/session-manager.ts:776-791](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/browser/session-manager.ts#L776-L791)
+
+区分停止、显式重置与 dispose
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  async stop(platform: BrowserPlatform): Promise<void> {
+    return this.enqueue(platform, async () => {
+      const rec = this.getRecord(platform);
+      await this.internalStop(rec);
+    });
+  }
+
+  async resetSession(platform: BrowserPlatform): Promise<void> {
+    await this.stop(platform);
+    this.profileStore.clearProfile(platform);
+  }
+
+  async dispose(): Promise<void> {
+    this.disposed = true;
+    const platforms = Array.from(this.records.keys());
+    await Promise.all(platforms.map((p) => this.stop(p)));
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/host/provider-transport.ts:501-546](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/provider-transport.ts#L501-L546)
+
+明文、授权、地址和代理前置判断
+
+<details>
+<summary>查看原文（46行）</summary>
+
+```text
+    const isAuthorizedHttp = authorization?.allowHttp === true;
+    const allowed = request.trust === "official"
+      ? isLoopbackHost(parsed.hostname)
+      : (policy.allowPublicHttp === true || isAuthorizedHttp);
+    if (!allowed) {
+      throw new TransportError(
+        "destination-blocked",
+        "Plain http:// endpoints are only allowed for loopback defaults or an explicitly authorized target",
+      );
+    }
+  }
+
+  // ---- 2. host authorization (before DNS) --------------------------------
+  if (request.trust === "authorized" && !authorization) {
+    throw new TransportError("destination-blocked", `Destination "${parsed.hostname}:${port}" is not authorized`);
+  }
+  if ((request.trust === "official" || request.trust === "authorized") && authorization?.allowHttp && parsed.protocol === "http:") {
+    // explicit http grant for a non-loopback authorized target
+  }
+
+  // ---- 3. header hygiene -------------------------------------------------
+  for (const name of Object.keys(request.headers)) assertHeaderName(name);
+
+  // ---- 4. DNS pre-flight ------------------------------------------------
+  // Runs BEFORE the proxy decision because the resolved address decides it: an
+  // ambient HTTP proxy cannot reach private/LAN space (it dials from wherever
+  // it runs), so a destination that resolves to a private address must be
+  // dialed directly even when Windows has a system proxy configured. Without
+  // this, a self-hosted source on 192.168.x.x could be saved and authorized and
+  // still fail every search with `proxy-required`.
+  const preflight = await preflightDns(parsed.hostname, request.trust, policy, deps);
+  const pinned = preflight.addresses[0];
+  const useTls = parsed.protocol === "https:";
+  const privateDestination = preflight.addresses.some((record) => isPrivateOrRestrictedIp(record.address));
+
+  // ---- 5. proxy decision (fail closed) ----------------------------------
+  // Loopback and private destinations are connected directly: this only
+  // bypasses proxy ROUTING, never the allowHttp/allowPrivate authorization or
+  // the pinned connection below.
+  const directDial = isLoopbackHost(parsed.hostname) || privateDestination;
+  const proxyUrl = directDial ? undefined : deps.proxyUrl?.();
+  let dispatcher: unknown;
+  if (proxyUrl !== undefined && !(request.builtInOfficial === true) && !isLoopbackUrl(parsed.href)) {
+    if (policy.allowProxy !== true) {
+      throw new TransportError(
+        "proxy-required",
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/host/provider-transport.ts:553-585](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/provider-transport.ts#L553-L585)
+
+禁止重定向，区分代理与直接固定地址
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+  // Only attach the custom dispatcher when we are NOT pinning, i.e. built-in
+  // official endpoints (whose host is trusted by construction) and proxied
+  // requests (where the proxy performs the connection).
+  const signal = combineAbort(request.signal, policy.requestTimeoutMs ?? DEFAULT_REQUEST_TIMEOUT_MS);
+
+  const init: Record<string, unknown> = {
+    method: request.method,
+    headers: request.headers,
+    // A 3xx must never re-send the credential to another origin.
+    redirect: "error",
+    signal: signal.signal,
+    ...(request.body !== undefined ? { body: request.body } : {}),
+  };
+  let pinnedDispatcher: any = undefined;
+  if (dispatcher !== undefined) {
+    init.dispatcher = dispatcher;
+  } else if (request.trust === "official") {
+    // Built-in official endpoint: host is trusted by construction (no DNS
+    // rebinding incentive — the credential goes where it was always going),
+    // so the platform fetch resolves and connects normally. The redirect and
+    // size guards above still apply.
+  } else {
+    // Operator-typed destination: always pinned to a pre-validated address.
+    pinnedDispatcher = await createPinnedDispatcher({
+      address: pinned.address,
+      port,
+      servername: parsed.hostname,
+      useTls,
+      connectTimeoutMs: policy.connectTimeoutMs ?? DEFAULT_CONNECT_TIMEOUT_MS,
+      connect: deps.connect,
+      signal: signal.signal,
+    });
+    init.dispatcher = pinnedDispatcher;
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/host/generic-fetch.ts:242-268](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/generic-fetch.ts#L242-L268)
+
+通用抓取预检后进入手动重定向
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+    const validateAndResolveUrl = async (rawUrl: string): Promise<URL> => {
+      try {
+        const parsed = validateFetchUrl(rawUrl);
+        await validateFetchDns(parsed.hostname, customDnsLookup, controller.signal);
+        return parsed;
+      } catch (err: unknown) {
+        if (controller.signal.aborted) {
+          throw new GenericFetchError(
+            abortCause === "timeout" ? "WEB_TIMEOUT" : "WEB_ABORTED",
+            abortCause === "timeout" ? `Fetch timed out after ${timeoutMs}ms` : "Fetch aborted by caller",
+            { url: rawUrl },
+          );
+        }
+        if (err instanceof FetchSecurityError) {
+          throw new GenericFetchError(err.code, err.message, { url: rawUrl });
+        }
+        throw err;
+      }
+    };
+
+    let currentParsedUrl = await validateAndResolveUrl(initialUrl);
+    let currentUrl = currentParsedUrl.href;
+    let hopCount = 0;
+    let response: Response | undefined;
+
+    // Manual redirect loop to validate SSRF and DNS on every hop
+    while (true) {
+```
+
+</details>
+
+**依据 9 · 源码核查**：[src/host/generic-fetch.ts:317-339](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/generic-fetch.ts#L317-L339)
+
+每跳校验重定向地址
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+        const location = response.headers.get("location");
+        if (!location) {
+          throw new GenericFetchError("WEB_HTTP_ERROR", `Redirect status ${response.status} missing Location header`, {
+            statusCode: response.status,
+            url: currentUrl,
+          });
+        }
+
+        // Resolve relative redirect URL against current URL
+        let nextUrl: string;
+        try {
+          nextUrl = new URL(location, currentUrl).href;
+        } catch {
+          throw new GenericFetchError("WEB_INVALID_URL", `Invalid redirect URL "${location}" from "${currentUrl}"`);
+        }
+
+        // Re-validate target URL and DNS for SSRF / loopback / private IP
+        const validatedNext = await validateAndResolveUrl(nextUrl);
+        currentParsedUrl = validatedNext;
+        currentUrl = validatedNext.href;
+
+        hopCount++;
+        continue;
+```
+
+</details>
+
+#### 缺口
+
+- 未对 DNS 变化、代理及平台真实登录执行对抗或兼容测试
+  **影响**：不能确认最终出站边界、长期会话可用性或评论完整性
+  **进一步探讨**：用受控域名和本地私网哨兵验证连接地址，再用独立账号检查登录、过期与重置
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 哪些人值得试用，如何退出？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+若同一 Web Profile 经常做带来源的研究，且已能配置两个独立服务，可先只启用普通搜索链，固定两个来源与任务后观察证据回收，而不在首轮开启社交账号和自定义网关。首次成本是创建 Profile、核对 patch 与设置凭据；持续成本是额度、失效 key 与链路尾时延；失败恢复要能区分认证和限流，必要时回到单一 Provider。以一次有可追溯证据且在预算内完成的任务计量，现金 API 支出与排障人时分开记录。README 给出 remove 和重启路径，移除后需回读原工具状态。曾开启平台时还应先确认专用 Profile 是否显式清理；只做普通搜索的试用不会引入该登录态。单一服务已经稳定或无法隔离凭据时，直接维持已有方案。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:208-224](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/README.md#L208-L224)
+
+作者给出的安装、移除、重启与设置路径
+
+<details>
+<summary>查看原文（17行）</summary>
+
+````text
+## Installation & Updates
+
+**DSH version support**: `0.1.0-rc.6` and later, including the `0.2.0-rc.x` and `0.2.1-rc.x` lines (both the `latest` and `next` channels are verified). The requirement lives in `peerDependencies`, which DSH uses to decide whether the plugin may activate; if the plugin stays inactive after a DSH upgrade, run `dsh plugin --profile web update dsh-web-tools` once.
+
+```bash
+# Install
+dsh plugin --profile web add github:A3Boy/dsh-web-tools
+
+# Update
+dsh plugin --profile web update dsh-web-tools
+
+# Remove
+dsh plugin --profile web remove dsh-web-tools
+
+```
+
+Restart `dsh web` and navigate to `Settings` → `Web Search`.
+````
+
+</details>
+
+**依据 2 · 源码核查**：[src/host/index.ts:232-253](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/index.ts#L232-L253)
+
+凭据从 Host 按 ref 解析
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  const resolveKeys = async (providerName: string) => {
+    // Custom sources own host-derived refs (and may use two refs for Basic).
+    // Resolve through the catalog so both kinds share one pool store, and a
+    // custom source's key can never collide with a built-in's.
+    const entry = buildSnapshot().get(providerName);
+    if (entry && !entry.builtIn) {
+      const refs = entry.refs;
+      if (refs.username !== undefined || refs.password !== undefined) {
+        // Basic auth uses two separate credentials refs so passwords containing
+        // delimiters (comma, semicolon, space) are never corrupted by splitting.
+        // If username is configured, return an account identifier so the pool
+        // allocates a healthy dispatch slot rather than skipping the provider.
+        const user = (await readCredential(ctx, refs.username ?? "")).value ?? "";
+        return user ? `basic:${user}` : "";
+      }
+      if (refs.key === undefined) return "";
+      const cred = await readCredential(ctx, refs.key);
+      return cred.value ?? "";
+    }
+    const ref = credRefOf(providerName);
+    const cred = await readCredential(ctx, ref);
+    return cred.value ?? "";
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/host/registry.ts:326-347](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L326-L347)
+
+认证、限流与重试成本来自不同支路
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+            // retryable:
+            if (err.code === "auth") {
+              // key indicted → mark unhealthy, try the next key in this pool
+              markUnhealthy(entries, index);
+              attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+              stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+              usable = entries.filter((e) => e.healthy);
+              continue;
+            }
+            // non-auth retryable (429/5xx/network/timeout) → next provider
+            lastError = err;
+            // Only rate-limit errors carry a server-requested cooldown.
+            if (err.code === "rate-limit" && typeof err.retryAfterMs === "number" && err.retryAfterMs > 0) {
+              healthStore?.cooldownFor(providerName, err.retryAfterMs, "rate-limit");
+            }
+            attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+            stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+            providerLevelDecision = "next-provider";
+            break;
+          } finally {
+            if (entry) releaseKey(entries, index);
+          }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/host/browser/session-manager.ts:776-791](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/browser/session-manager.ts#L776-L791)
+
+退出时停进程与重置浏览器资料是不同操作
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  async stop(platform: BrowserPlatform): Promise<void> {
+    return this.enqueue(platform, async () => {
+      const rec = this.getRecord(platform);
+      await this.internalStop(rec);
+    });
+  }
+
+  async resetSession(platform: BrowserPlatform): Promise<void> {
+    await this.stop(platform);
+    this.profileStore.clearProfile(platform);
+  }
+
+  async dispose(): Promise<void> {
+    this.disposed = true;
+    const platforms = Array.from(this.records.keys());
+    await Promise.all(platforms.map((p) => this.stop(p)));
+```
+
+</details>
+
+#### 缺口
+
+- 未观察实际任务成本、卸载后补丁状态或凭据清理
+  **影响**：持续采用和生产上线没有验收依据
+  **进一步探讨**：在隔离 Profile 检查关闭、移除、重启后原提供者与凭据状态
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 错误感知的双源切换何时值得保留？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+待验证假设是在主提供者发生间歇限流时，双源链能提高有出处任务的完成率，其代价可能是尾时延和额外请求。比较同一个隔离 Profile 中单源与双源两组，保持题集、模型、截止时间和主服务限流注入一致，第二来源可独立正常响应。记录成功定位原文率、尝试次数、p95、现金费用和排障人时。模型输出声称成功但没有原文应判失败。若成功率无改善，或尾时延和费用超过预设阈值，退回单源。现有链与冷却机制提供可测试条件，尚无本次独立效果数据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/host/registry.ts:263-273](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L263-L273)
+
+冷却与不同故障可注入做对照
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+        // Provider-level cooldown (Retry-After). The store uses its own clock
+        // (injectable for tests) — zero HTTP when cooling down.
+        if (healthStore?.isCoolingDown(providerName)) {
+          attempts.push({ provider: providerName, outcome: "skipped-cooldown" });
+          continue;
+        }
+
+        // Provider-internal key failover: on AUTH failures only, try the next
+        // healthy key in the SAME provider before falling back to another
+        // provider. Non-auth failures (429/5xx/network/timeout) do not rotate
+        // keys — they fall through to the next provider directly.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/host/registry.ts:335-359](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/registry.ts#L335-L359)
+
+每个尝试和总失败提供可观测节点
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+            // non-auth retryable (429/5xx/network/timeout) → next provider
+            lastError = err;
+            // Only rate-limit errors carry a server-requested cooldown.
+            if (err.code === "rate-limit" && typeof err.retryAfterMs === "number" && err.retryAfterMs > 0) {
+              healthStore?.cooldownFor(providerName, err.retryAfterMs, "rate-limit");
+            }
+            attempts.push({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+            stats.record({ provider: providerName, outcome: `failed:${err.code}`, latencyMs });
+            providerLevelDecision = "next-provider";
+            break;
+          } finally {
+            if (entry) releaseKey(entries, index);
+          }
+        }
+
+        if (providerLevelDecision === "terminal") throw toWebError(lastError);
+        if (providerLevelDecision === "break") break;
+        // else fall through to the next provider in the chain
+      }
+
+      const reason = lastError
+        ? `${lastError.code}: ${lastError.message}`
+        : "no usable provider";
+      const err = new WebToolsWebError(`web search failed after ${attempts.length} attempt(s): ${reason}`);
+      err.attempts = attempts;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/host/search-mode-runtime.ts:155-178](https://github.com/A3Boy/dsh-web-tools/blob/686d87bdf688e18966733c3d070fd3698779c255/src/host/search-mode-runtime.ts#L155-L178)
+
+不能用工具完成代替有效证据
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+
+  /**
+   * Record that a web_search call COMPLETED. Completion (even a total provider
+   * failure) satisfies "must research first"; success additionally records that
+   * fresh web data was available.
+   */
+  markSearchResult(sessionId: string, succeeded: boolean): void {
+    const state = this.turns.get(sessionId);
+    if (!state) return;
+    state.webSearchCompleted = true;
+    state.webSearchSucceeded ||= succeeded;
+  }
+
+  /**
+   * Record that a web_fetch call COMPLETED. A fetch also satisfies the
+   * "must research first" requirement — a user-supplied URL is a valid
+   * research action and must not be gated behind a pointless search.
+   */
+  markFetchResult(sessionId: string, succeeded: boolean): void {
+    const state = this.turns.get(sessionId);
+    if (!state) return;
+    state.webFetchCompleted = true;
+    state.webFetchSucceeded ||= succeeded;
+  }
+```
+
+</details>
+
+#### 缺口
+
+- 未做相同任务的单源与双源对照
+  **影响**：不量化可靠性收益
+  **进一步探讨**：按上述观测指标执行受控故障注入
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
