@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "208ec39401ec899fd49eea368f09cea5",
+    "identity": "github:1244140731:dsh-cue-omni-reader",
+    "slug": "sensedeal--cue-skills--dsh-cue-omni-reader",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1244140731:dsh-cue-omni-reader",
+            "repository_id": 1244140731,
+            "component_id": "dsh-cue-omni-reader",
+            "repository": "sensedeal/cue-skills",
+            "path": "dsh/cue-omni-reader",
+            "aliases": [],
+            "name": "Cue Omni Reader",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f964b3d6c438e4c171440ec29aedb0ea6918544aea75f7e0dab976a753d6f0a2",
+                "code": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "maintenance": "4f144d4c49c948c9ede1d642e3479ec75bb6a197f4974758f081fe4d2de2ccae"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T15:07:10.397Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-omni-reader/README.md",
+                            "content_sha256": "e8800f45464f5f6ad0a3443413e658e8ae49b224893c1c5a9c932c9ddfd70a88"
+                        }
+                    ],
+                    "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                    "captured_at": "2026-11-04T15:07:10.397Z",
+                    "summary": "将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。",
+                    "artifact": "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-omni-reader/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-omni-reader/README.zh-CN.md",
+                            "content_sha256": "c2f2f33b9390f4848b17b64b9fedaa6a9606a43309736337d79517180b8967aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-omni-reader/package.json",
+                            "content_sha256": "a6d879979e787b0d7865bd953695622df00cf6faabdbf1feae3bebc373208ca4"
+                        },
+                        {
+                            "repository_url": "https://github.com/sensedeal/cue-skills",
+                            "commit": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                            "path": "dsh/cue-omni-reader/cordis.patch.yml",
+                            "content_sha256": "9aa7b1b231a5afbaf2bed4a0997eb0cbbb9bcfc5cb55264568a8cc2b56febec8"
+                        }
+                    ],
+                    "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                    "captured_at": "2026-11-04T15:07:10.397Z",
+                    "summary": "核查 dsh/cue-omni-reader/README.zh-CN.md、dsh/cue-omni-reader/package.json、dsh/cue-omni-reader/cordis.patch.yml；Cordis 插入 stdio 客户端，以 npx 运行固定版本的外部包。",
+                    "artifact": "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-omni-reader/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只读子包四个跟踪文件，未运行 npx 或解析服务。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在 DSH 中需要持续提取网页或已授权文档的用户。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Cordis 插入 stdio 客户端，以 npx 运行固定版本的外部包。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只读子包四个跟踪文件，未运行 npx 或解析服务。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "@cueai/dsh-omni-reader 0.1.17 的 DSH bundle；另依赖外部桥 1.9.0，未核发行工件。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node 20.12+、npx 与 registry | 必需 | 启动固定桥 | 检查缓存或停止 |\n| 宿主 MCP 客户端与 Cue key | 必需 | 工具连接与解析 | 无法使用 |\n| 受限允许根 | 本地解析需 | 限定声明文件范围 | 不解析本地文件 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 解析试用额度未知 | 核包、密钥和权限 | 需外部进程 |\n| 持续 | 请求与模型费用未知 | 核对任务和内容 | 额度随账户 |\n| 失败 | 重试及存储未知 | 复核未取消任务与保存结果 | 无独立清理证据 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 只有具备隔离 key、已核外部包和非敏感样本，才进一步验证。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 解析接入 | 固定 stdio 行 | 实际格式与质量 |\n| 运行配置 | 版本和可读根显式 | 真实出站与收费 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 明确版本与环境变量；需要独立确认默认 cwd 及实际可读边界。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 交付固定版本和环境配置的 profile 接线，复用既有 DSH 客户端与外部桥。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 默认本地根使用进程 cwd，外部进程与任意 URL 解析有独立执行和数据边界。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 对照相同版本的手配 MCP，测接线复用是否缩短失败恢复时间。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                            "area": "code",
+                            "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:07:10.397Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T15:07:10.397Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "reviewed_at": "2026-11-04T15:07:10.397Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                        "area": "code",
+                        "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 对照手配 stdio，novelty 9 为局部适配，mechanism 8 因固定外部入口，无自建解析，transferability 5 因同一模板可借用但供应商特定，simplification 4 因减少一条配置但仍需运行管理。没有进一步机制支撑升档。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 与 [Q03](#research-q03) 对照手动文档提取，workflow 9 仅集成入口，delivery 8 因可接收外部解析，reach 5 因服务只扩到已有 profile，economics 4 因省配置但远端费用未知。未确认长期流程改善。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "需要在 DSH 解析文档的用户可先核对 Omni Reader 外部包与可读目录。相比手配 stdio，接线包提供固定进程版本和现成 profile 配置。若外部进程的文件访问、网络或额度无法验证，应暂停解析并退回手工阅读。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 5–15 明确重复解析用途，超过8；频率和需求强度不足23。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01) patch 12–24 减少手配步骤，高于0；本身只封一条 MCP 接线，尚不足13。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) patch 明确进程与参数，高于0；关键解析与隔离在外部且未核，低于13。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) README 80–85 有回滚办法，高于0；额度、数据和未完成任务无法由移除保证，低于10。"
+                    }
+                },
+                "score": 32,
+                "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "reviewed_at": "2026-11-04T15:07:10.397Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-04-github-1244140731-dsh-cue-omni-reader-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1244140731:dsh-cue-omni-reader",
+                        "area": "code",
+                        "fingerprint": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1244140731:dsh-cue-omni-reader",
+            "repository": "sensedeal/cue-skills",
+            "path": "dsh/cue-omni-reader",
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "fingerprints": {
+                "directory": "f964b3d6c438e4c171440ec29aedb0ea6918544aea75f7e0dab976a753d6f0a2",
+                "code": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+                "maintenance": "4f144d4c49c948c9ede1d642e3479ec75bb6a197f4974758f081fe4d2de2ccae"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T14:25:57.000Z",
+            "analysis_sha256": "377aad9f178e6da44c83aaec81f12847693b41c3d7ba52122c3f1a50f3048bc9"
+        },
+        "publication.metadata": "data/catalog/sensedeal--cue-skills--dsh-cue-omni-reader/meta.json",
+        "publication.summaries": {
+            "text": "将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。",
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "source_url": "https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "items": {
+                "模型工具": "通过宿主 MCP 客户端接入外部 Omni Reader。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| MCP 接线 | 注册 Omni 服务工具 | 依赖外部进程 |\n| 环境注入 | 传递 key 和可读根 | 执行边界由外部实现 |"
+        },
+        "publication.advice": {
+            "revision": "0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107",
+            "text": "[Q03](#research-q03) 只有具备隔离 key、已核外部包和非敏感样本，才进一步验证。"
+        },
+        "registry": "data/plugins/sensedeal--cue-skills--dsh-cue-omni-reader",
+        "reports": "# Cue Omni Reader\n\n> 将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。\n\n## 研究范围\n\n- **仓库**：[sensedeal/cue-skills](https://github.com/sensedeal/cue-skills)\n- **版本号**：0.1.17（[固定提交 0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107](https://github.com/sensedeal/cue-skills/tree/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107)）\n- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已核子包接线，解析与数据边界仍需验外部包和服务。\n\n## 洞察短评\n\n- **用途**：在 DSH 中需要持续提取网页或已授权文档的用户。\n- **亮点**：[Q01](#research-q01) 交付固定版本和环境配置的 profile 接线，复用既有 DSH 客户端与外部桥。\n- **思考**：[Q02](#research-q02) 默认本地根使用进程 cwd，外部进程与任意 URL 解析有独立执行和数据边界。\n- **建议**：[Q03](#research-q03) 对照相同版本的手配 MCP，测接线复用是否缩短失败恢复时间。\n\n采用建议：[Q03](#research-q03) 只有具备隔离 key、已核外部包和非敏感样本，才进一步验证。\n\n## 核心贡献\n\n[Q01](#research-q01) 交付固定版本和环境配置的 profile 接线，复用既有 DSH 客户端与外部桥。\n\n## 关键质疑\n\n[Q02](#research-q02) 默认本地根使用进程 cwd，外部进程与任意 URL 解析有独立执行和数据边界。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 对照相同版本的手配 MCP，测接线复用是否缩短失败恢复时间。\n\n核实际进程、工具发现、最小目录、远端落点、任务取消、额度与卸载。\n\n## 场景与替代办法\n\n在 DSH 中需要持续提取网页或已授权文档的用户。\n\n手配同一 MCP bridge，或直接浏览和本地提取文档。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node 20.12+、npx 与 registry | 必需 | 启动固定桥 | 检查缓存或停止 |\n| 宿主 MCP 客户端与 Cue key | 必需 | 工具连接与解析 | 无法使用 |\n| 受限允许根 | 本地解析需 | 限定声明文件范围 | 不解析本地文件 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户核对 bridge 版本及可读根 | 仅隔离环境 |\n| 观察 | 用户检查工具清单和合成样例 | 内容、费用或范围不明则停 |\n| 退出 | 用户移除 bundle 或补丁 | 新会话检查工具与旧任务 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 解析试用额度未知 | 核包、密钥和权限 | 需外部进程 |\n| 持续 | 请求与模型费用未知 | 核对任务和内容 | 额度随账户 |\n| 失败 | 重试及存储未知 | 复核未取消任务与保存结果 | 无独立清理证据 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 解析接入 | 固定 stdio 行 | 实际格式与质量 |\n| 运行配置 | 版本和可读根显式 | 真实出站与收费 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：固定 stdio 接线如何接入外部解析器，试用有哪些数据和费用边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 接线包给 DSH 用户带来什么？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n反复提取网页、文档或音视频内容的 DSH 用户可将 Cue 解析工具挂入一个 profile。这个子包只有 manifest、补丁和说明，实际逻辑是 DSH MCP 客户端通过 stdio 连接外部进程。作者列出提交解析、查询状态、取消、读结果、读目录、丢弃与保存；这些是外部 MCP 服务能力，补丁不定义其工具 schema，也没有仓内解析算法。相对手配 stdio MCP 命令，增量是可版本化的 profile 安装入口和默认参数，而不是新增格式支持。另行发布的 Skill 引导也不由本包加载。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[dsh/cue-omni-reader/README.zh-CN.md:5-15](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md#L5-L15)\n\n作者声明工具、另行 Skill 与运行依赖。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n一个 [DeepSeek Harness](https://github.com/deepseek-harness) **bundle**,把审校版的 **Cue Omni Reader** MCP server 接进 Harness,让它的工具以原生 `mcp__omni__*` 形式暴露给任何 harness profile。它是薄组成层——DSH 通过 `@deepseek-ai/dsh-mcp-client` 桥接 MCP;本包只负责声明 server 行及其配置,不含自定义解析器或 MCP driver。\n\n工具能力:`parse` / `get_parse_status` / `cancel_parse` / `read_result` / `read_outline` / `discard_result` / `save_result` —— 把一个 HTTP(S) URL 或已授权的本地文档、音频、视频源转成内容。\n\n> 面向 skill 的引导(同一能力,可被 agent 加载的指令包)在本仓库单独以 [`cue-omni-reader/`](../../cue-omni-reader) 发布。两者都装,才能既拿到工具**又**有引导流程。\n\n## 前置条件\n\n- **Node.js ≥ 20.12**(Bridge 运行时)。\n- **Cue API key**:<https://cuecue.cn/hub/api-key>。新账号有赠送额度(当前额度见 skill 的 setup 参考)。\n- Bridge 通过 `npx -y @cueai/omni-reader-mcp@1.9.0` 拉起,所以 npm registry 需可达,或安装一个二进制在 `PATH` 上的版本。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh/cue-omni-reader/package.json:2-17](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/package.json#L2-L17)\n\nbundle 指向补丁，宿主 client 作为 peer。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  \"name\": \"@cueai/dsh-omni-reader\",\n  \"version\": \"0.1.17\",\n  \"description\": \"DSH bundle: registers the audited Cue Omni Reader MCP server so its tools surface as mcp__omni__* in any DeepSeek Harness profile.\",\n  \"license\": \"MIT\",\n  \"type\": \"module\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"dependencies\": {},\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-mcp-client\": \"^0.1.1-rc.2\"\n  },\n  \"engines\": {\n    \"node\": \">=20.12\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh/cue-omni-reader/cordis.patch.yml:12-24](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/cordis.patch.yml#L12-L24)\n\n实际只插入一个 stdio server。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n- insert:\n    - id: mcp-omni\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: omni\n        transport: stdio\n        command: npx\n        args: ['-y', '@cueai/omni-reader-mcp@1.9.0']\n        cwd: !!js process.cwd()\n        env:\n          CUE_API_KEY: !!js process.env.CUE_API_KEY\n          # Configurable, never hardcoded: explicit root wins, else the dsh cwd.\n          OMNI_ALLOWED_ROOTS: !!js 'process.env.OMNI_ALLOWED_ROOTS || process.cwd()'\n```\n\n</details>\n\n#### 缺口\n\n- 未列出实机 MCP 工具或执行解析\n  **影响**：不能确认可用格式、返回字段及取消语义\n  **进一步探讨**：以隔离会话发现工具，再比较一份测试文档的输入和输出\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 固定进程版本能控制哪些执行与数据边界？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n补丁写明 command npx，args 使用 -y 和 @cueai/omni-reader-mcp@1.9.0。固定包版本使入口可复核，仍需本地 npx、registry 或缓存；-y 表示可在没有交互提示时运行该外部包。CUE_API_KEY 由环境传入，OMNI_ALLOWED_ROOTS 未显式设置时用 DSH 进程 cwd，若进程从过宽目录启动，接线默认值就扩大桥可见的声明范围。作者说明可能解析任意 URL，接线未包含出站策略和工具前置许可。读取限制、子进程环境清理、远端数据传输均发生在外部包或服务，本固定子包不能证明它们实际生效。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh/cue-omni-reader/cordis.patch.yml:8-24](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/cordis.patch.yml#L8-L24)\n\n固定启动参数、进程 cwd、凭据和本地根。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n# The Bridge version is pinned (never an implicit `latest`). Runtime needs\n# Node >= 20.12 and a CUE_API_KEY configured via the environment (set it in\n# $DSH_HOME/.env or export it before launching dsh). Secrets never go in this\n# file; local reads are bounded by OMNI_ALLOWED_ROOTS.\n- insert:\n    - id: mcp-omni\n      name: '@deepseek-ai/dsh-mcp-client'\n      config:\n        serverName: omni\n        transport: stdio\n        command: npx\n        args: ['-y', '@cueai/omni-reader-mcp@1.9.0']\n        cwd: !!js process.cwd()\n        env:\n          CUE_API_KEY: !!js process.env.CUE_API_KEY\n          # Configurable, never hardcoded: explicit root wins, else the dsh cwd.\n          OMNI_ALLOWED_ROOTS: !!js 'process.env.OMNI_ALLOWED_ROOTS || process.cwd()'\n```\n\n</details>\n\n**依据 2 · 作者声明**：[dsh/cue-omni-reader/README.zh-CN.md:35-48](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md#L35-L48)\n\n作者说明环境变量。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n````text\nserver 行的 env 由环境变量驱动(文件里不含密钥或绝对路径):\n\n| Env | 含义 | 默认 |\n|---|---|---|\n| `CUE_API_KEY` | Cue Omni 凭据 | 必填——在 `$DSH_HOME/.env` 里设置,或在启动 dsh 前 export |\n| `OMNI_ALLOWED_ROOTS` | Bridge 可读的 `:` 分隔绝对目录 | `process.cwd()`(dsh 工作目录) |\n\n配置好 key(和可选根)后重启 dsh,让分层的 `.env`/config 生效:\n\n```sh\n# ~/.dsh/.env\nCUE_API_KEY=sk-...\nOMNI_ALLOWED_ROOTS=/home/you/workspace\n```\n````\n\n</details>\n\n**依据 3 · 作者声明**：[dsh/cue-omni-reader/README.zh-CN.md:69-78](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md#L69-L78)\n\n作者声明任意 URL 与外部隔离行为。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## 安全与范围\n\n- Omni 可解析**任意 URL** —— 这是任意网络/出网面。把 `OMNI_ALLOWED_ROOTS` 收到 agent 真正需要的最小目录,并在把 URL 解析交给无人值守 agent 前征得同意。\n- 本地文件读取受 `OMNI_ALLOWED_ROOTS` 约束;Bridge 在拉起子进程前会 scrubbing(清除)环境里像凭据的变量。\n- 不要把 API key 放进聊天、命令参数、本文件、日志或生成的 JSON;一旦明文出现过就轮换它。\n\n## 版本\n\n- Bridge 固定:**`@cueai/omni-reader-mcp@1.9.0`**(审校版;永远不用隐式 `latest`)。\n- `@deepseek-ai/dsh-mcp-client` 是 **peer** 依赖(声明为 `^0.1.1-rc.2`),由 Harness profile 提供;如需要,对齐到你所跑的 Harness 版本。\n```\n\n</details>\n\n#### 缺口\n\n- 没有外部桥发行物与服务协议的独立核查\n  **影响**：无法判断网络请求、符号链接或敏感数据处理\n  **进一步探讨**：只在独立环境用公开 URL 与合成文件测试允许、拒绝和网络落点\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎样验证解析链和退出成本？\n\n**研究主题**：效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n先用最小本地根和隔离 key 检查 npx 来源、运行时和 profile 展开。若授权进行测试，提交一个公开 URL 或合成文件，检查任务状态、内容读取、取消及保存，再根据作者说明移除包或手动补丁，复核新会话没有工具并检查未完成任务。持续成本是远端额度、模型、存储和运行诊断，未从本包测得。可对照直接启动外部 MCP 与固定 bundle，比较同版本发现成功率与恢复时间。若复用没有缩短接入，或隐藏了根目录和凭据错误，就放弃接线层。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[dsh/cue-omni-reader/README.zh-CN.md:50-67](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md#L50-L67)\n\n作者描述异步解析和验证入口。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## 使用\n\n重启后模型可见:\n\n```\nmcp__omni__parse mcp__omni__get_parse_status mcp__omni__cancel_parse\nmcp__omni__read_result mcp__omni__read_outline mcp__omni__discard_result\nmcp__omni__save_result\n```\n\n用 `source`(URL 或在允许根内的路径)调 `mcp__omni__parse`,轮询 `mcp__omni__get_parse_status`,再消费结果。\n\n## 验证\n\n```sh\ndsh --profile web --dump-config      # 应包含一个 `mcp-omni` 行\n# 然后在会话里确认工具出现、一次小解析成功。\n```\n````\n\n</details>\n\n**依据 2 · 作者声明**：[dsh/cue-omni-reader/README.zh-CN.md:80-85](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/README.zh-CN.md#L80-L85)\n\n作者说明回滚。\n\n````text\n## 回滚\n\n```sh\ndsh plugin --profile web remove @cueai/dsh-omni-reader\n# 或删除你 profile cordis.patch.yml 里的 `mcp-omni` insert。\n```\n````\n\n**依据 3 · 源码核查**：[dsh/cue-omni-reader/cordis.patch.yml:18-24](https://github.com/sensedeal/cue-skills/blob/0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107/dsh/cue-omni-reader/cordis.patch.yml#L18-L24)\n\n本地进程与默认根实际设置。\n\n```text\n        command: npx\n        args: ['-y', '@cueai/omni-reader-mcp@1.9.0']\n        cwd: !!js process.cwd()\n        env:\n          CUE_API_KEY: !!js process.env.CUE_API_KEY\n          # Configurable, never hardcoded: explicit root wins, else the dsh cwd.\n          OMNI_ALLOWED_ROOTS: !!js 'process.env.OMNI_ALLOWED_ROOTS || process.cwd()'\n```\n\n#### 缺口\n\n- 未实际启动或注销任务\n  **影响**：额度、结果保留与卸载后远端状态未知\n  **进一步探讨**：只用非敏感样本核账单、任务终态和工具清单\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh/cue-omni-reader；内容摘要：e9b79fdea5852a20b5fd310dfaf1557d042f4a41aa82d4ce9cc4d25298d13de2。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 195 | — | — | 1293 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| MCP 接线 | 注册 Omni 服务工具 | 依赖外部进程 |\n| 环境注入 | 传递 key 和可读根 | 执行边界由外部实现 |\n\n## 工程亮点\n\n[Q02](#research-q02) 明确版本与环境变量；需要独立确认默认 cwd 及实际可读边界。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh/cue-omni-reader/README.zh-CN.md、dsh/cue-omni-reader/package.json、dsh/cue-omni-reader/cordis.patch.yml 及固定范围 inventory；组件：dsh/cue-omni-reader。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只读子包四个跟踪文件，未运行 npx 或解析服务。\n- 下一步：核实际进程、工具发现、最小目录、远端落点、任务取消、额度与卸载。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-04/sensedeal--cue-skills--dsh-cue-omni-reader/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"sensedeal/cue-skills\",\n  \"revision\": \"0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107\",\n  \"component\": \"dsh/cue-omni-reader\",\n  \"inspected_paths\": [\n    \"dsh/cue-omni-reader/README.md\",\n    \"dsh/cue-omni-reader/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"dsh/cue-omni-reader/README.zh-CN.md\",\n    \"dsh/cue-omni-reader/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"固定 stdio 接线如何接入外部解析器，试用有哪些数据和费用边界？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"接线包给 DSH 用户带来什么？\",\n        \"answer\": \"反复提取网页、文档或音视频内容的 DSH 用户可将 Cue 解析工具挂入一个 profile。这个子包只有 manifest、补丁和说明，实际逻辑是 DSH MCP 客户端通过 stdio 连接外部进程。作者列出提交解析、查询状态、取消、读结果、读目录、丢弃与保存；这些是外部 MCP 服务能力，补丁不定义其工具 schema，也没有仓内解析算法。相对手配 stdio MCP 命令，增量是可版本化的 profile 安装入口和默认参数，而不是新增格式支持。另行发布的 Skill 引导也不由本包加载。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n            \"line_start\": 5,\n            \"line_end\": 15,\n            \"observation\": \"作者声明工具、另行 Skill 与运行依赖。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-omni-reader/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 17,\n            \"observation\": \"bundle 指向补丁，宿主 client 作为 peer。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-omni-reader/cordis.patch.yml\",\n            \"line_start\": 12,\n            \"line_end\": 24,\n            \"observation\": \"实际只插入一个 stdio server。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未列出实机 MCP 工具或执行解析\",\n            \"impact\": \"不能确认可用格式、返回字段及取消语义\",\n            \"next_step\": \"以隔离会话发现工具，再比较一份测试文档的输入和输出\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"固定进程版本能控制哪些执行与数据边界？\",\n        \"answer\": \"补丁写明 command npx，args 使用 -y 和 @cueai/omni-reader-mcp@1.9.0。固定包版本使入口可复核，仍需本地 npx、registry 或缓存；-y 表示可在没有交互提示时运行该外部包。CUE_API_KEY 由环境传入，OMNI_ALLOWED_ROOTS 未显式设置时用 DSH 进程 cwd，若进程从过宽目录启动，接线默认值就扩大桥可见的声明范围。作者说明可能解析任意 URL，接线未包含出站策略和工具前置许可。读取限制、子进程环境清理、远端数据传输均发生在外部包或服务，本固定子包不能证明它们实际生效。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-omni-reader/cordis.patch.yml\",\n            \"line_start\": 8,\n            \"line_end\": 24,\n            \"observation\": \"固定启动参数、进程 cwd、凭据和本地根。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n            \"line_start\": 35,\n            \"line_end\": 48,\n            \"observation\": \"作者说明环境变量。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n            \"line_start\": 69,\n            \"line_end\": 78,\n            \"observation\": \"作者声明任意 URL 与外部隔离行为。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有外部桥发行物与服务协议的独立核查\",\n            \"impact\": \"无法判断网络请求、符号链接或敏感数据处理\",\n            \"next_step\": \"只在独立环境用公开 URL 与合成文件测试允许、拒绝和网络落点\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样验证解析链和退出成本？\",\n        \"answer\": \"先用最小本地根和隔离 key 检查 npx 来源、运行时和 profile 展开。若授权进行测试，提交一个公开 URL 或合成文件，检查任务状态、内容读取、取消及保存，再根据作者说明移除包或手动补丁，复核新会话没有工具并检查未完成任务。持续成本是远端额度、模型、存储和运行诊断，未从本包测得。可对照直接启动外部 MCP 与固定 bundle，比较同版本发现成功率与恢复时间。若复用没有缩短接入，或隐藏了根目录和凭据错误，就放弃接线层。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n            \"line_start\": 50,\n            \"line_end\": 67,\n            \"observation\": \"作者描述异步解析和验证入口。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n            \"line_start\": 80,\n            \"line_end\": 85,\n            \"observation\": \"作者说明回滚。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh/cue-omni-reader/cordis.patch.yml\",\n            \"line_start\": 18,\n            \"line_end\": 24,\n            \"observation\": \"本地进程与默认根实际设置。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未实际启动或注销任务\",\n            \"impact\": \"额度、结果保留与卸载后远端状态未知\",\n            \"next_step\": \"只用非敏感样本核账单、任务终态和工具清单\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"dsh/cue-omni-reader/README.md\",\n      \"content\": \"# @cueai/dsh-omni-reader\\n\\n**[English](https://github.com/sensedeal/cue-skills/blob/main/dsh/cue-omni-reader/README.md)** · [中文](https://github.com/sensedeal/cue-skills/blob/main/dsh/cue-omni-reader/README.zh-CN.md)\\n\\nA [DeepSeek Harness](https://github.com/deepseek-harness) **bundle** that registers the\\naudited **Cue Omni Reader** MCP server so its tools surface as native `mcp__omni__*`\\ntools in any Harness profile. It is a thin composition layer — DSH exposes the tools\\nthrough `@deepseek-ai/dsh-mcp-client`; this bundle only wires the server row and its\\nconfiguration, and ships no custom parser or MCP driver.\\n\\nWhat the tools do: `parse` / `get_parse_status` / `cancel_parse` / `read_result` /\\n`read_outline` / `discard_result` / `save_result` — turn an HTTP(S) URL or an\\nauthorized local document, audio, or video source into content.\\n\\n> The skill-facing guidance (same capability, agent-loadable instructions) ships\\n> separately in this repo as [`cue-omni-reader/`](../../cue-omni-reader). Install\\n> both to get the tools **and** the guided flow.\\n\\n## Prerequisites\\n\\n- **Node.js ≥ 20.12** (the Bridge runtime).\\n- A **Cue API key** from <https://cuecue.cn/hub/api-key>. New accounts get free\\n  credits (see the skill's setup reference for current allowances).\\n- The Bridge is spawned via `npx -y @cueai/omni-reader-mcp@1.9.0`, so the npm registry\\n  must be reachable, or pin an install whose binary is on `PATH`.\\n\\n## Install\\n\\nInstall the bundle into a profile (pnpm-managed; it auto-joins the profile's\\nbundle stack because it declares `dsh.bundle`):\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-omni-reader\\n# or from a local checkout / git spec:\\ndsh plugin --profile web add ./dsh/cue-omni-reader\\n```\\n\\nAlternative one-off apply (no package):\\n\\n```sh\\ndsh web --patch ./dsh/cue-omni-reader/cordis.patch.yml\\n```\\n\\n## Configure\\n\\nThe server row's env is env-driven (no secrets or absolute paths in this file):\\n\\n| Env var | Meaning | Default |\\n|---|---|---|\\n| `CUE_API_KEY` | Cue Omni credential | required — set in `$DSH_HOME/.env` or export before launching dsh |\\n| `OMNI_ALLOWED_ROOTS` | `:`-separated absolute dirs the Bridge may read | `process.cwd()` (the dsh working dir) |\\n\\nSet the key and (optionally) a root, then restart dsh so the layered `.env`/config\\ntakes effect:\\n\\n```sh\\n# ~/.dsh/.env\\nCUE_API_KEY=sk-...\\nOMNI_ALLOWED_ROOTS=/home/you/workspace\\n```\\n\\n## Usage\\n\\nAfter a restart the model sees:\\n\\n```\\nmcp__omni__parse mcp__omni__get_parse_status mcp__omni__cancel_parse\\nmcp__omni__read_result mcp__omni__read_outline mcp__omni__discard_result\\nmcp__omni__save_result\\n```\\n\\nCall `mcp__omni__parse` with a `source` (URL or an allowed-root path), poll\\n`mcp__omni__get_parse_status`, and consume the result.\\n\\n## Verify\\n\\n```sh\\ndsh --profile web --dump-config      # the tree should include an `mcp-omni` row\\n# then, in a session, confirm the tools appear and a small parse succeeds.\\n```\\n\\n## Security & scope\\n\\n- Omni can parse **any URL** — that is an arbitrary network / egress surface.\\n  Keep `OMNI_ALLOWED_ROOTS` to the minimum directories the agent actually needs,\\n  and give consent before exposing URL parsing to an unattended agent.\\n- Local file reads are bounded by `OMNI_ALLOWED_ROOTS`; the Bridge scrubs ambient\\n  credential-ish env before launching the child.\\n- Do not put the API key in chat, command arguments, this file, logs, or generated\\n  JSON. Rotate it if it ever appears in plaintext.\\n\\n## Versioning\\n\\n- Bridge pin: **`@cueai/omni-reader-mcp@1.9.0`** (audited; never an implicit `latest`).\\n- `@deepseek-ai/dsh-mcp-client` is a **peer** dependency (declared as `^0.1.1-rc.2`); the Harness profile provides it. Align it to the Harness release you run if needed.\\n\\n## Rollback\\n\\n```sh\\ndsh plugin --profile web remove @cueai/dsh-omni-reader\\n# or delete the `mcp-omni` insert from your profile's cordis.patch.yml.\\n```\\n\\n## License\\n\\nMIT — see [LICENSE](../../LICENSE).\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-omni-reader/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@cueai/dsh-omni-reader\\\",\\n  \\\"version\\\": \\\"0.1.17\\\",\\n  \\\"description\\\": \\\"DSH bundle: registers the audited Cue Omni Reader MCP server so its tools surface as mcp__omni__* in any DeepSeek Harness profile.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"dependencies\\\": {},\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-mcp-client\\\": \\\"^0.1.1-rc.2\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20.12\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"mcp\\\",\\n    \\\"omni-reader\\\",\\n    \\\"cue\\\",\\n    \\\"dsh-plugin\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# cue-skills\\n\\n**[English](README.md) · [中文](README.zh-CN.md)**\\n\\nOpen-source agent skills published by [Cue](https://cuecue.cn) (sensedeal).\\n\\nA **skill** is a portable instruction bundle that any AI agent ([Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/agent-skills), Codex CLI, Gemini CLI, …) can load to gain a new capability — without modifying the agent itself. This repo collects the skills Cue maintains for public use.\\n\\n> **New here?** Read **[Why Cue](docs/landing.md)** · [中文](docs/landing.zh-CN.md) — source-cited research you can verify, and how to try it free.\\n\\n## Install\\n\\n```sh\\nnpx skills add sensedeal/cue-skills                       # default: lists cue-buddy, cue-research, cue-omni-reader, cue-data-mcp\\nnpx skills add sensedeal/cue-skills --skill cue-research   # add one skill\\n```\\n\\nSee [Using a skill](#using-a-skill) for manual install and per-skill notes. DSH users: jump to [DSH bundles](#dsh-users-install-the-cue-deep-research-bundles).\\n\\n## DSH users: install the Cue Deep Research bundles\\n\\nRunning [DeepSeek Harness](https://github.com/deepseek-harness)? Add the three Cue bundles to a profile and get Cue as native `mcp__omni__*` (parse/read) and `mcp__cue_*` (financial/regulatory data) tools:\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-omni-reader            # Omni Reader parse/read tools\\ndsh plugin --profile web add @cueai/dsh-omni-reader-guard      # optional SSRF/consent guard\\ndsh plugin --profile web add @cueai/dsh-cue-data-mcp           # Cue public data MCP (15 domains / ~104 tools)\\n```\\n\\nRestart dsh; the model then sees `mcp__omni__parse` / `…get_parse_status` / `…read_result` / `…read_outline` / `…save_result` / `…cancel_parse` / `…discard_result` and `mcp__cue_<domain>__*` data tools. Set `CUE_API_KEY` (+ optional `OMNI_ALLOWED_ROOTS`) via `$DSH_HOME/.env`. Guide: [`dsh/`](./dsh) · [`usage.md`](./dsh/usage.md).\\n\\n## DSH bundles\\n\\nThis repo also ships [DeepSeek Harness](https://github.com/deepseek-harness) **bundles** under [`dsh/`](./dsh) — thin composition packages that wire a Cue MCP server into a DSH profile so its tools surface natively (e.g. `mcp__omni__parse`). A skill is agent-loadable *instructions*; a bundle is a *composition package* (`package.json` + `cordis.patch.yml`) for the Harness. Install one with `dsh plugin --profile web add <pkg>`; see [`dsh/README.md`](./dsh) and the [`cue-omni-reader` bundle](./dsh/cue-omni-reader).\\n\\n### Repo-root bundle\\n\\nThe repository root is itself a DSH bundle (`package.json` declaring `dsh.bundle.patch` → [`cordis.patch.yml`](./cordis.patch.yml)), so one command wires the whole Cue surface — the Omni Reader MCP server plus the Cue public data domains — into a profile:\\n\\n```sh\\ndsh plugin --profile web add github:sensedeal/cue-skills#<commit>\\n```\\n\\nRegistries that install a repository as a DSH bundle (for example [skillhub.cn](https://skillhub.cn/plugins)) accept a repo only when this root manifest exists; the per-capability bundles under [`dsh/`](./dsh) stay available for narrower installs, and the optional SSRF/consent guard is deliberately **not** part of the repo-root bundle because it fails closed on local files.\\n\\n## Skills in this repo\\n\\n| Skill | Purpose | Status |\\n|---|---|---|\\n| [`cue-buddy/`](./cue-buddy) — **cue-buddy** | Lets business experts author, validate, test, tune, and pin-as-frequent [Cue](https://cuecue.cn) \\\"buddy\\\" research templates via natural conversation. No Python / API knowledge needed; the agent talks to the Cue production API on the user's behalf. | v0.3.8 |\\n| [`cue-research/`](./cue-research) — **cue-research** | Sibling to cue-buddy for *using* Cue from inside your AI agent: ask a question → skill matches ≤2 candidate buddies (or routes to free-form deep research via `/api/rewrite`) → you confirm credits → it runs in the background and retrieves the report via replay → on satisfaction you can distill a free-form run into a saved buddy via cue-buddy. Supports 仿写/mimic (imitate a reference URL or sample document's writing style). | v0.3.8 |\\n| [`cue-omni-reader/`](./cue-omni-reader) — **cue-omni-reader** | Helps external agents parse HTTP(S) URLs and authorized local documents, audio, or video through the official MCP tools, including safe Bridge bootstrap, recoverable operations, deliberate inline/artifact delivery, outline navigation, complete result reading, and cleanup. Thin instruction layer; no custom parser or protocol driver. | v0.5.8 |\\n| [`cue-data-mcp/`](./cue-data-mcp) — **cue-data-mcp** | Lets external agents query Cue's public MCP data services (regulatory, macro, disclosures, market data, legal full text, holdings, entity data, academic, IPO, ESOP, buyback, footnote details) by discovering live domains from the anonymous `/api/mcp-catalog` and connecting through each domain's routing DTO. Thin instruction layer; no hardcoded endpoints or tool names. | v0.3.6 |\\n| [`playbook/`](./playbook) — **playbook scene skills** | One agent-loadable `SKILL.md` per [Cue playbook](https://cuecue.cn/playbook) scene (equity research, credit diligence, wealth advisory, global macro, …). Load one and your agent runs that scenario's Cue deep research: it queries the **live** `/api/playbook` for the scene's *current* buddies, picks one, confirms credits, runs, and returns a source-cited report. Runtime-query-live — no baked `template_id`, so buddy add/edit/remove auto-reflects with no regeneration. Auto-generated by [`scripts/gen_scene_skills.py`](./scripts/gen_scene_skills.py). Works two ways: bundled here next to `cue-research`/`cue-buddy`, **or** published standalone to a third-party store — a standalone scene skill **self-bootstraps** (clones this repo, with a Gitee mirror fallback, to fetch the runner if not already present). | auto-generated |\\n\\nMore skills will be added here as Cue's surface grows.\\n\\n## What is Cue / What is a buddy\\n\\n[Cue](https://cuecue.cn) is a **Deep Research Agent + Intelligence Sentinel** platform for high-precision finance and business workflows. It picks tools from 300+ professional data sources (A-share / HK / US equity disclosures, fund AMAC registries, business registries, court records, regulatory feeds, sell-side research, capital flow data), cross-validates findings across sources, and produces structured, source-cited reports in minutes instead of hours.\\n\\nA **\\\"buddy\\\" (搭子)** is a research playbook for a specific scenario — corporate-credit pre-diligence, public-record compliance snapshot, quarterly earnings review, private-fund manager DD, etc. — defined once and reused by supplying the subject. The `cue-buddy` skill in this repo is what business experts use to author these playbooks conversationally.\\n\\n> **Scope boundary**: Cue's tool surface covers public data sources only (equity disclosures / business registries / court records / regulatory filings / capital flows / etc.). Scenarios requiring private data (real AML on bank-internal transactions, medical diagnosis, internal accounting) are **not appropriate** as Cue buddies — the supervisor cannot route them and falls back to generic web search. `cue-buddy +author` flow calls `+capabilities` to cross-check each declared evidence source against the actual catalog before persisting a template.\\n\\nSee [`cue-buddy/README.md`](./cue-buddy/README.md) for the full skill walkthrough.\\n\\n## Using a skill\\n\\n`cue-buddy` is self-contained: an entrypoint `SKILL.md`, supporting `references/`, and stdlib-only `scripts/`. `cue-research` is **self-contained too** — it vendors the shared Cue client (`cue_api` / `sse_report` / `paths`) in its own `scripts/`, so it runs standalone (no sibling `cue-buddy` required).\\n\\nPreferred install is at the top of this README (`npx skills add`). The `skills` CLI lists every skill; `--skill` picks one.\\n\\n**Manual install**: copy the skill folder into `~/.claude/skills/` (Claude Code) or reference it via `/use-skill <path>`; other agents load `<skill>/SKILL.md` as a system instruction. Each skill is self-contained — `cue-buddy`/`cue-research` vendor their runtime, `cue-omni-reader`/`cue-data-mcp` are thin instruction layers.\\n\\n**`cue-omni-reader`** ships no runtime parser scripts. Load its `SKILL.md` and connect an official Omni MCP surface. Existing URL tools need no local install; local files use the audited Bridge after minimum-root confirmation.\\n\\n**`cue-data-mcp`** ships no runtime code. Load its `SKILL.md` and let the agent discover the live data domains from the anonymous `/api/mcp-catalog`, then connect through each domain's routing DTO. Self-contained: no sibling folders required.\\n\\nThe **`playbook/`** scene skills delegate the actual research run to `cue-research`'s runner. `cue-research` is self-contained (it vendors the shared Cue client), so install `playbook/<scene>` + `cue-research` as siblings under the same parent dir; `cue-buddy` is only needed if you also want to author or save buddies.\\n\\n> **Credit grant to start**: every Cue account gets **500 credits on signup, plus 10 more each day**. Once you apply for an API key (sign in via the `cue` CLI) you can start — data queries and initial research draw from this grant, and each deep-research run still consumes credits, so the skills always confirm with you before spending.\\n\\n## Contributing\\n\\nBug reports and skill suggestions: [open an issue](https://github.com/sensedeal/cue-skills/issues).\\n\\nPull requests welcome. Each skill has its own hard-rules / validator; see the skill's README for contribution guidelines.\\n\\n## License\\n\\nMIT — see [LICENSE](./LICENSE). Skill content is free to use, modify, and redistribute.\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@cueai/dsh-cue-skills\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"private\\\": true,\\n  \\\"description\\\": \\\"DSH bundle entry for sensedeal/cue-skills: wires the audited Cue Omni Reader MCP server (mcp__omni__*) and Cue's public data MCP services (mcp__cue_*) into any DeepSeek Harness profile.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-mcp-client\\\": \\\"^0.1.1-rc.2\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=20.12\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"mcp\\\",\\n    \\\"cue\\\",\\n    \\\"cue-skills\\\",\\n    \\\"omni-reader\\\",\\n    \\\"cue-data-mcp\\\",\\n    \\\"dsh-plugin\\\"\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-omni-reader/README.zh-CN.md\",\n      \"content\": \"# @cueai/dsh-omni-reader\\n\\n**中文** · [English](README.md)\\n\\n一个 [DeepSeek Harness](https://github.com/deepseek-harness) **bundle**,把审校版的 **Cue Omni Reader** MCP server 接进 Harness,让它的工具以原生 `mcp__omni__*` 形式暴露给任何 harness profile。它是薄组成层——DSH 通过 `@deepseek-ai/dsh-mcp-client` 桥接 MCP;本包只负责声明 server 行及其配置,不含自定义解析器或 MCP driver。\\n\\n工具能力:`parse` / `get_parse_status` / `cancel_parse` / `read_result` / `read_outline` / `discard_result` / `save_result` —— 把一个 HTTP(S) URL 或已授权的本地文档、音频、视频源转成内容。\\n\\n> 面向 skill 的引导(同一能力,可被 agent 加载的指令包)在本仓库单独以 [`cue-omni-reader/`](../../cue-omni-reader) 发布。两者都装,才能既拿到工具**又**有引导流程。\\n\\n## 前置条件\\n\\n- **Node.js ≥ 20.12**(Bridge 运行时)。\\n- **Cue API key**:<https://cuecue.cn/hub/api-key>。新账号有赠送额度(当前额度见 skill 的 setup 参考)。\\n- Bridge 通过 `npx -y @cueai/omni-reader-mcp@1.9.0` 拉起,所以 npm registry 需可达,或安装一个二进制在 `PATH` 上的版本。\\n\\n## 安装\\n\\n把 bundle 装入某个 profile(pnpm 管理;因为它声明了 `dsh.bundle`,会自动加入 profile 的 bundle 层栈):\\n\\n```sh\\ndsh plugin --profile web add @cueai/dsh-omni-reader\\n# 或从本地 checkout / git spec:\\ndsh plugin --profile web add ./dsh/cue-omni-reader\\n```\\n\\n一次性应用(不打成包):\\n\\n```sh\\ndsh web --patch ./dsh/cue-omni-reader/cordis.patch.yml\\n```\\n\\n## 配置\\n\\nserver 行的 env 由环境变量驱动(文件里不含密钥或绝对路径):\\n\\n| Env | 含义 | 默认 |\\n|---|---|---|\\n| `CUE_API_KEY` | Cue Omni 凭据 | 必填——在 `$DSH_HOME/.env` 里设置,或在启动 dsh 前 export |\\n| `OMNI_ALLOWED_ROOTS` | Bridge 可读的 `:` 分隔绝对目录 | `process.cwd()`(dsh 工作目录) |\\n\\n配置好 key(和可选根)后重启 dsh,让分层的 `.env`/config 生效:\\n\\n```sh\\n# ~/.dsh/.env\\nCUE_API_KEY=sk-...\\nOMNI_ALLOWED_ROOTS=/home/you/workspace\\n```\\n\\n## 使用\\n\\n重启后模型可见:\\n\\n```\\nmcp__omni__parse mcp__omni__get_parse_status mcp__omni__cancel_parse\\nmcp__omni__read_result mcp__omni__read_outline mcp__omni__discard_result\\nmcp__omni__save_result\\n```\\n\\n用 `source`(URL 或在允许根内的路径)调 `mcp__omni__parse`,轮询 `mcp__omni__get_parse_status`,再消费结果。\\n\\n## 验证\\n\\n```sh\\ndsh --profile web --dump-config      # 应包含一个 `mcp-omni` 行\\n# 然后在会话里确认工具出现、一次小解析成功。\\n```\\n\\n## 安全与范围\\n\\n- Omni 可解析**任意 URL** —— 这是任意网络/出网面。把 `OMNI_ALLOWED_ROOTS` 收到 agent 真正需要的最小目录,并在把 URL 解析交给无人值守 agent 前征得同意。\\n- 本地文件读取受 `OMNI_ALLOWED_ROOTS` 约束;Bridge 在拉起子进程前会 scrubbing(清除)环境里像凭据的变量。\\n- 不要把 API key 放进聊天、命令参数、本文件、日志或生成的 JSON;一旦明文出现过就轮换它。\\n\\n## 版本\\n\\n- Bridge 固定:**`@cueai/omni-reader-mcp@1.9.0`**(审校版;永远不用隐式 `latest`)。\\n- `@deepseek-ai/dsh-mcp-client` 是 **peer** 依赖(声明为 `^0.1.1-rc.2`),由 Harness profile 提供;如需要,对齐到你所跑的 Harness 版本。\\n\\n## 回滚\\n\\n```sh\\ndsh plugin --profile web remove @cueai/dsh-omni-reader\\n# 或删除你 profile cordis.patch.yml 里的 `mcp-omni` insert。\\n```\\n\\n## 许可\\n\\nMIT — 见 [LICENSE](../../LICENSE)。\\n\"\n    },\n    {\n      \"path\": \"dsh/cue-omni-reader/cordis.patch.yml\",\n      \"content\": \"# @cueai/dsh-omni-reader — register the audited Cue Omni Reader MCP server.\\n#\\n# Apply one of:\\n#   dsh plugin --profile web add @cueai/dsh-omni-reader   # npm/git/path/tarball spec\\n#   dsh web --patch ./dsh/cue-omni-reader/cordis.patch.yml  # one-off\\n#   or merge this single `insert` into your profile's cordis.patch.yml.\\n#\\n# The Bridge version is pinned (never an implicit `latest`). Runtime needs\\n# Node >= 20.12 and a CUE_API_KEY configured via the environment (set it in\\n# $DSH_HOME/.env or export it before launching dsh). Secrets never go in this\\n# file; local reads are bounded by OMNI_ALLOWED_ROOTS.\\n- insert:\\n    - id: mcp-omni\\n      name: '@deepseek-ai/dsh-mcp-client'\\n      config:\\n        serverName: omni\\n        transport: stdio\\n        command: npx\\n        args: ['-y', '@cueai/omni-reader-mcp@1.9.0']\\n        cwd: !!js process.cwd()\\n        env:\\n          CUE_API_KEY: !!js process.env.CUE_API_KEY\\n          # Configurable, never hardcoded: explicit root wins, else the dsh cwd.\\n          OMNI_ALLOWED_ROOTS: !!js 'process.env.OMNI_ALLOWED_ROOTS || process.cwd()'\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"0e6b629e98bebef31e63dc3f6dabdd7a0ec1d107\",\n    \"component\": \"dsh/cue-omni-reader\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"e9b79fdea5852a20b5fd310dfaf1557d042f4a41aa82d4ce9cc4d25298d13de2\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 195,\n        \"words\": 1293\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "90a7e33acbe89ae8b98bf4cc25421e2113b09e4af7fb997cc2c4736a52da516e"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,35 @@
+{
+    "repository": "goodrain/rainskills",
+    "repository_id": 1237266636,
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 12,
+    "pushed_at": "2026-11-04T07:42:09Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "npm": {
+        "package_name": "rainskills",
+        "captured_at": "2026-11-03T06:53:49.722Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 2378,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/rainskills",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-07-29T01:20:58.815Z",
+            "captured_at": "2026-11-03T06:53:49.722Z",
+            "source_url": "https://registry.npmjs.org/rainskills",
+            "error": null,
+            "latest_version": "0.1.50",
+            "latest_published_at": "2026-10-29T08:44:46.986Z",
+            "latest_error": null
+        }
+    }
+}

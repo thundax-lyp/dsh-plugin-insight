@@ -1,0 +1,34 @@
+{
+    "repository": "alxshelepenok/grove",
+    "repository_id": 1229298801,
+    "captured_at": "2026-11-04T14:32:21.161Z",
+    "window_start": "2026-10-05T14:32:21.161Z",
+    "stars": 30,
+    "pushed_at": "2026-10-29T03:05:35Z",
+    "issues": {
+        "open": 2,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aalxshelepenok%2Fgrove%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B8B6:32BF78:DE8C65:2D8E8E1:6AEB42A7 and timestamp 2026-11-04 14:35:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aalxshelepenok%2Fgrove%20is%3Aissue%20created%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B98E:2F3E91:E4BB4E:2E95B43:6AEB42AB and timestamp 2026-11-04 14:35:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aalxshelepenok%2Fgrove%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BAB8:185EF3:DEE0EA:2D7D0D0:6AEB42AF and timestamp 2026-11-04 14:35:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aalxshelepenok%2Fgrove%20is%3Aissue%20updated%3A2026-10-05T14%3A32%3A21.161Z..2026-11-04T14%3A32%3A21.161Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BB26:354C0E:F81CA5:328C950:6AEB42B1 and timestamp 2026-11-04 14:35:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false
+}

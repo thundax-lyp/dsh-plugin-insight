@@ -1,0 +1,440 @@
+{
+    "schema_version": 4,
+    "id": "72ed69cb3852c3691c89b2ef7b8db346",
+    "identity": "github:1249788655:root",
+    "slug": "sanqipanax--jieyatool",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1249788655:root",
+            "repository_id": 1249788655,
+            "component_id": "root",
+            "repository": "sanqiPanax/jieyaTool",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-auto-extract",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b049fb4e8b0af01ea337a70ffd0142e3025d09060a836eca1d2c6df5a3f1a678",
+                "code": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                "maintenance": "42ad0d203ff940d52193cd82ebf602c8bdce177572df4a063a4e1bc6bcd0b5e2"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-04-04-github-1249788655-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c4261924d2d8845901faaae5d0e6301a75afafa5",
+                    "retrieved_at": "2026-11-04T15:12:21.940Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-04-04-github-1249788655-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sanqiPanax/jieyaTool",
+                            "commit": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                            "path": "README.md",
+                            "content_sha256": "597b6dcd3dce91a6c603d640552c33d60eaa0576110782bc91a4f452f9735239"
+                        }
+                    ],
+                    "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                    "captured_at": "2026-11-04T15:12:21.940Z",
+                    "summary": "在 DSH 中批量探测和递归解压后缀伪装、嵌套或带密码的归档。",
+                    "artifact": "data/runs/2026-11-04-04/sanqipanax--jieyatool/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-04-04-github-1249788655-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/sanqiPanax/jieyaTool",
+                            "commit": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                            "path": "README.md",
+                            "content_sha256": "597b6dcd3dce91a6c603d640552c33d60eaa0576110782bc91a4f452f9735239"
+                        },
+                        {
+                            "repository_url": "https://github.com/sanqiPanax/jieyaTool",
+                            "commit": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                            "path": "package.json",
+                            "content_sha256": "79ad0568535904867512f7a06b625ee136f36d349761ebae772f3f2cb2b193e7"
+                        },
+                        {
+                            "repository_url": "https://github.com/sanqiPanax/jieyaTool",
+                            "commit": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                            "path": "lib/archive-core.js",
+                            "content_sha256": "9865693a96dab3e1cc352447938ec0d1b48edfd288ba54483cddad4c2b69288a"
+                        },
+                        {
+                            "repository_url": "https://github.com/sanqiPanax/jieyaTool",
+                            "commit": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                            "path": "lib/index.js",
+                            "content_sha256": "b0aaa7e3b6a825b543b332d15653bf389f502a33ec84b6c61308c3f2bbce956a"
+                        }
+                    ],
+                    "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                    "captured_at": "2026-11-04T15:12:21.940Z",
+                    "summary": "核查 README.md、package.json、lib/archive-core.js、lib/index.js；通过魔数和 7-Zip 探测格式，排队试密码，合并输出并扫描嵌套。",
+                    "artifact": "data/runs/2026-11-04-04/sanqipanax--jieyatool/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定组件的工具入口、核心和作者材料。未运行 7-Zip 或样本。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要处理多个可信但命名混乱的多层归档的 DSH 用户。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "通过魔数和 7-Zip 探测格式，排队试密码，合并输出并扫描嵌套。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定组件的工具入口、核心和作者材料。未运行 7-Zip 或样本。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "dsh-auto-extract 0.1.0 私有 bundle；README 说明 Node 18+ 和本机 7-Zip，源码未证 npm 发布。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH、Node 和 7-Zip | 必需 | 挂载工具和执行归档 | 切回手工工具 |\n| 合成归档和密码 | 评估必需 | 验证流程与泄漏 | 不使用生产输入 |\n| 全新输出及资源限额 | 评估必需 | 隔离覆盖和体积 | 只做探测 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 磁盘和工具成本未知 | 准备隔离样本和版本 | 需 7-Zip |\n| 持续 | 多密码和嵌套消耗未知 | 核产物与冲突 | 没有完整资源限制 |\n| 失败 | 恢复开销未知 | 从备份恢复并核是否泄漏 | 临时目录不等同回滚 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 使用虚构密码和一次性样例核副作用。包含真实密码或已有输出的工作保留人工处理。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 批量归档 | 源码有队列和格式识别 | 实际覆盖与速度 |\n| 输出归位 | 可合并并清理中间层 | 一致性和误覆盖 |",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 逐密码使用临时目录，但日志含密码，且归位和清理缺少统一事务。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 复用 7-Zip 解码，并编排魔数探测、分层候选与自动入队。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 明文密码进入进度和结果，合并可覆盖输出；归位失败后清理不等于安全回滚。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 脱敏日志与隔离提交可以用同一冲突样本和凭据扫描对照，若泄漏或误覆盖不降则不推广。",
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1249788655:root",
+                            "area": "code",
+                            "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-04T15:12:21.940Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-04T15:12:21.940Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                "reviewed_at": "2026-11-04T15:12:21.940Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1249788655:root",
+                        "area": "code",
+                        "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 相对手工工具，novelty 9 为已有格式探测整合，mechanism 15 因分层密码和入队改进批处理，transferability 5 因依赖 7-Zip 和命名启发式，simplification 8 因减少逐个解压但未处理安全副作用。不达更高档。",
+                    "basis": "interpretation",
+                    "score": 37,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 与 [Q03](#research-q03) 相比 GUI，workflow 18 因重组批量工作，delivery 8 因有产物报告却可能冲突，reach 5 因仍需可信归档，economics 4 因或省人工而空间和泄漏成本未测。未达相邻高档。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-11-04-04-github-1249788655-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "not_recommended",
+                "reason": "需要递归处理带密码归档的用户可先用合成样本核查自动解压流程。相比逐层手工解压，它能自动识别若干格式并将新归档加入队列。若任务涉及真实密码或重要输出，应停用自动解压并在隔离目录手工处理。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 15–25 与队列说明重复操作，超8；无真实工作量，低于23。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 入队和多密码比6分简单包装多，密码泄漏和覆盖限制19。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 源码验证功能但直接反驳安全采用条件，超0的功能证据不足13。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q02](#research-q02) 与 [Q03](#research-q03) 可在隔离输出恢复，超0；真实凭据、文件覆盖和资源限制影响10档。"
+                    }
+                },
+                "score": 39,
+                "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                "reviewed_at": "2026-11-04T15:12:21.940Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-04-04-github-1249788655-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1249788655:root",
+                        "area": "code",
+                        "fingerprint": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1249788655:root",
+            "repository": "sanqiPanax/jieyaTool",
+            "path": "",
+            "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+            "fingerprints": {
+                "directory": "b049fb4e8b0af01ea337a70ffd0142e3025d09060a836eca1d2c6df5a3f1a678",
+                "code": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+                "maintenance": "42ad0d203ff940d52193cd82ebf602c8bdce177572df4a063a4e1bc6bcd0b5e2"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-04T14:25:57.000Z",
+            "analysis_sha256": "c995fee9218d1ddca3d187d11a08b9297d4f0e4a37139b7e2b3e7b4dc7e37cd3"
+        },
+        "publication.metadata": "data/catalog/sanqipanax--jieyatool/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 中批量探测和递归解压后缀伪装、嵌套或带密码的归档。",
+            "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+            "source_url": "https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+            "items": {
+                "模型工具": "提供批量解压、格式探测和 7-Zip 状态工具。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 格式探测 | 识别若干魔数和疑似 SFX | 底层格式取决于 7-Zip |\n| 递归解压 | 排队尝试密码并扫描产物 | 需隔离输出和日志 |\n| 环境状态 | 查可用 7-Zip | 不验证归档可靠性 |"
+        },
+        "publication.advice": {
+            "revision": "09fd3cb4cb7287b4ebd089f7f972da6ac2e76813",
+            "text": "[Q03](#research-q03) 使用虚构密码和一次性样例核副作用。包含真实密码或已有输出的工作保留人工处理。"
+        },
+        "registry": "data/plugins/sanqipanax--jieyatool",
+        "reports": "# dsh-auto-extract\n\n> 在 DSH 中批量探测和递归解压后缀伪装、嵌套或带密码的归档。\n\n## 研究范围\n\n- **仓库**：[sanqiPanax/jieyaTool](https://github.com/sanqiPanax/jieyaTool)\n- **版本号**：0.1.0（[固定提交 09fd3cb4cb7287b4ebd089f7f972da6ac2e76813](https://github.com/sanqiPanax/jieyaTool/tree/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813)）\n- **版本日期**：2026-09-07（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态证据支持自动化与副作用。实际 7-Zip、宿主和作者演示未复验。\n\n## 洞察短评\n\n- **用途**：需要处理多个可信但命名混乱的多层归档的 DSH 用户。\n- **亮点**：[Q01](#research-q01) 复用 7-Zip 解码，并编排魔数探测、分层候选与自动入队。\n- **思考**：[Q02](#research-q02) 明文密码进入进度和结果，合并可覆盖输出；归位失败后清理不等于安全回滚。\n- **建议**：[Q03](#research-q03) 脱敏日志与隔离提交可以用同一冲突样本和凭据扫描对照，若泄漏或误覆盖不降则不推广。\n\n采用建议：[Q03](#research-q03) 使用虚构密码和一次性样例核副作用。包含真实密码或已有输出的工作保留人工处理。\n\n## 核心贡献\n\n[Q01](#research-q01) 复用 7-Zip 解码，并编排魔数探测、分层候选与自动入队。\n\n## 关键质疑\n\n[Q02](#research-q02) 明文密码进入进度和结果，合并可覆盖输出；归位失败后清理不等于安全回滚。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 脱敏日志与隔离提交可以用同一冲突样本和凭据扫描对照，若泄漏或误覆盖不降则不推广。\n\n在隔离环境对照明文日志、同名覆盖、失败清理、深度与压缩资源上限。\n\n## 场景与替代办法\n\n需要处理多个可信但命名混乱的多层归档的 DSH 用户。\n\n使用 7-Zip GUI 或脚本手工确认格式、密码和每层输出。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH、Node 和 7-Zip | 必需 | 挂载工具和执行归档 | 切回手工工具 |\n| 合成归档和密码 | 评估必需 | 验证流程与泄漏 | 不使用生产输入 |\n| 全新输出及资源限额 | 评估必需 | 隔离覆盖和体积 | 只做探测 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户隔离目录并核 7-Zip | 无真实密码 |\n| 验证 | 用户探测再执行小样例 | 比较源和输出哈希 |\n| 退出 | 用户清理独立输出并禁用 | 核日志与结果 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 磁盘和工具成本未知 | 准备隔离样本和版本 | 需 7-Zip |\n| 持续 | 多密码和嵌套消耗未知 | 核产物与冲突 | 没有完整资源限制 |\n| 失败 | 恢复开销未知 | 从备份恢复并核是否泄漏 | 临时目录不等同回滚 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 批量归档 | 源码有队列和格式识别 | 实际覆盖与速度 |\n| 输出归位 | 可合并并清理中间层 | 一致性和误覆盖 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：递归解压可节省哪些重复操作，哪些密码和文件副作用阻止采用？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户批量处理伪装、多层归档时，工具增加了什么？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n对于来源已核对且需重复处理多层压缩包的用户，DSH 工具把格式探测、候选密码与递归扫描合成一次目录任务。代码读取文件头，区分常见魔数；可调用 7-Zip list 探测疑似自解压文件并排除普通 PE 类型。起始扫描只遍历顶层常规文件，按命名规则跳过附属分卷；解压成功后扫描结果树，发现新归档加入队列。所谓自动分卷主要是识别主卷与跳过已知命名的附属卷，实际组合由 7-Zip，规则不能覆盖任意分卷命名。相比手动按包执行 7-Zip，此插件提供可复用的队列和格式线索，没有自建解码。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:15-25](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/README.md#L15-L25)\n\n作者列出格式、递归和分卷。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n## ✨ 核心能力\n\n| 能力 | 说明 |\n|---|---|\n| 🧬 **魔数识别真实格式** | 不信扩展名。伪装成 `.jpg` / `.mp4` / `.7z删除` / `.7删除z` / `.是7z` / 无后缀,按文件头判断真实格式(7z/rar/zip/gz/xz/sfx) |\n| 🔍 **exe 智能探测** | 用 7-Zip 探测 exe 是否为 SFX 自解压;`Type=PE` 的普通程序 exe(游戏成品)绝不误解压 |\n| 🔁 **递归下钻** | 解出的新压缩包自动入队继续解,直到不再产出压缩包(实测 4 层套娃全自动) |\n| 🔑 **多密码自动尝试** | 全局密码文件(每行一个)+ 动态密码:解出内容出现「第二层密码:xxx」(目录名/文件名/txt)自动学习用于后续层;顺序=动态→全局→空 |\n| 📦 **SFX/分卷处理** | `.part2.rar`/`.002`/`.r00` 等附属卷自动跳过,由主卷(`.part1.exe`/`.001`)带出;成功解压的中间压缩包自动清理 |\n| 🛡️ **安全** | 输出到源目录旁 `_extracted`,原始文件只读不动;解压先进临时目录,失败只清临时目录;工具运行库目录(`gameSaveBackup`/`node_modules`/`locales`)自动跳过防误递归 |\n| 🚫 **私有格式归类** | 7z/WinRAR 都不识别的自定义封装(如 RC-SFX `.sfxv`)识别为普通文件不动,不误删不卡死 |\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:2-19](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/package.json#L2-L19)\n\n真实 DSH 插件入口。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"name\": \"dsh-auto-extract\",\n  \"version\": \"0.1.0\",\n  \"description\": \"DSH 自动解压工具:魔数识别真格式(不信伪装后缀)、递归解压嵌套压缩包、多密码池自动尝试、SFX/分卷配对、私有格式归类报告。核心基于 7-Zip。\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"./lib/index.js\",\n  \"exports\": {\n    \".\": {\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/archive-core.js:62-103](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L62-L103)\n\n文件头、7-Zip 探测及分卷启发式。\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nexport async function detectType(file, { sevenZip = null, passwords = [], log = () => {} } = {}) {\n  let b\n  try { b = await headBytes(file, 8) } catch { return 'none' }\n  if (b.length < 4) return 'none'\n  const h = hex(b)\n  const ext = extname(file).toLowerCase()\n  if (h.startsWith('377ABCAF')) return '7z'\n  if (h.startsWith('526172211A07')) return 'rar'\n  if (h.startsWith('504B0304') || h.startsWith('504B0506') || h.startsWith('504B0708')) {\n    return DOC_ZIP_EXTS.has(ext) ? 'none' : 'zip'\n  }\n  if (h.startsWith('1F8B')) return 'gz'\n  if (h.startsWith('FD377A585A00')) return 'xz'\n  if (h.startsWith('425A68')) return 'bz2'\n  if (h.startsWith('28B52FFD')) return 'zst'\n  if (h.startsWith('4D5A')) {\n    // exe: 用 7z 带密码逐个 list 探测,Type 非 PE 才算 SFX\n    if (ext !== '.exe' || !sevenZip) return 'none'\n    const probePws = ['', ...passwords]\n    for (const pw of probePws) {\n      // 关键:无论有无密码都传 -p(空密码传 -p 不带值),否则 7z 会交互等 stdin 而挂起\n      const args = pw ? ['l', '-p' + pw, file] : ['l', '-p', file]\n      const r = await run7z(sevenZip, args)\n      const m = /^Type\\s*=\\s*(\\S+)/m.exec(r.out)\n      const type = m ? m[1] : ''\n      if (r.code === 0 && type && !PE_TYPES.has(type)) return 'sfx'\n      if (r.code === 0 && type === 'PE') break // 普通程序\n      if (r.code !== 2 && r.code !== 255) break // 非\"需密码\"错误 => 非归档\n      // code 2/255:可能加密归档需对密码,继续试\n    }\n    return 'none'\n  }\n  return 'none'\n}\n\n// ---------- 分卷附属卷 ----------\nexport function isSplitSlave(name) {\n  if (/\\.(002|003|004|005|006|007|008|009|010)(\\.|$)/i.test(name)) return true\n  if (/\\.(r00|r01|r02|r03|r04|r05|r06|r07|r08|r09)$/i.test(name)) return true\n  if (/\\.part(0*[2-9]|[1-9]\\d+)\\.(rar|7z|exe)$/i.test(name)) return true\n  if (/\\.sfxv$/i.test(name) && !/\\.001\\./i.test(name)) return true\n  return false\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/archive-core.js:263-281](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L263-L281)\n\n首层队列与扫描。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  // 队列\n  const queue = []\n  const results = { success: [], failed: [], unsupported: [], products: [] }\n  const seenFiles = new Set()\n\n  const pushTask = (file, depth, baseDir) => {\n    if (seenFiles.has(file)) return\n    seenFiles.add(file)\n    queue.push({ file, depth, baseDir })\n  }\n\n  // 初始扫描顶层(只收真压缩,跳过附属卷)\n  let topEntries = []\n  try { topEntries = await readdir(sourceDir, { withFileTypes: true }) } catch (e) { throw new Error('读源目录失败: ' + e.message) }\n  for (const e of topEntries) {\n    if (!e.isFile()) continue\n    if (isSplitSlave(e.name)) { log(`跳过分卷附属: ${e.name}`); continue }\n    const full = join(sourceDir, e.name)\n    const t = await detectType(full, { sevenZip, passwords: allPw(), log })\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/archive-core.js:345-370](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L345-L370)\n\n动态密码和新归档入队。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n    // 吸收密码(子项名/txt)+ 扫描新压缩包\n    const newPws = await scanPasswords(finalDir, { log })\n    for (const p of newPws) if (!dynPw.includes(p)) dynPw.push(p)\n\n    const walkStack = [finalDir]\n    // 跳过这些目录(工具备份/存档/运行库/资源,非套娃压缩内容,避免误递归爆炸)\n    const SKIP_DIR_RE = /(gameSaveBackup|save_backup|\\.git|node_modules|locales|swiftshader|pnacl|www|loaders|_cache|Cache|backup|Backup)/i\n    while (walkStack.length) {\n      const cur = walkStack.pop()\n      let entries = []\n      try { entries = await readdir(cur, { withFileTypes: true }) } catch { continue }\n      for (const e of entries) {\n        const full = join(cur, e.name)\n        if (e.isDirectory()) {\n          // 跳过工具/存档/运行库目录(里面 zip 多为资源或存档备份,非内容套娃)\n          if (SKIP_DIR_RE.test(e.name)) { log(`  [跳过目录] ${e.name}`); continue }\n          walkStack.push(full)\n        }\n        else if (e.isFile() && !isSplitSlave(e.name)) {\n          const t2 = await detectType(full, { sevenZip, passwords: allPw(), log })\n          if (t2 !== 'none') {\n            pushTask(full, depth + 1, dirname(full))\n            log(`  发现新压缩包(深度${depth+1}, ${t2}): ${e.name}`)\n          }\n        }\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 没有复现归档样本和分卷边界\n  **影响**：不能保证任意格式、私有 SFX 与深度\n  **进一步探讨**：在隔离环境以合成 zip、rar、SFX 和错后缀对照工具结果\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 密码和输出路径的副作用是什么？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n密码由动态与全局候选拼接，传给 7-Zip 进程参数；全部全局候选和命中密码也进入日志，而工具将日志用于进度输出和最终尾部。即使解压失败也可能已泄漏候选，不能用真实复用密码试跑。暂存目录隔离单次试解，但成功后 mergeDir 对同名文件覆盖，目录冲突可递归删除旧目标。归位前已计 success，归位异常又记 failed，仍继续扫描并可能清理中间包。中间清理用 file.startsWith(outRoot) 而非路径真实包含校验，用户可指定 outRoot，不能保证所有组合都只清理预期输出。7-Zip 进程没有单次超时或输出字节限制；路径穿越与炸弹防护未在插件代码核到。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/archive-core.js:44-55](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L44-L55)\n\n进程参数、不限输出缓冲。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nfunction run7z(sevenZip, args, opts = {}) {\n  return new Promise((resolve) => {\n    const child = spawn(sevenZip, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })\n    // 立即关闭 stdin,防止 7z 在需密码时交互等待输入而挂起\n    try { child.stdin.end() } catch {}\n    let out = ''\n    let err = ''\n    child.stdout.on('data', (d) => (out += d.toString('utf8')))\n    child.stderr.on('data', (d) => (err += d.toString('utf8')))\n    child.on('error', (e) => resolve({ code: -1, out: '', err: String(e) }))\n    child.on('close', (code) => resolve({ code: code == null ? -1 : code, out, err }))\n  })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/archive-core.js:107-123](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L107-L123)\n\n密码参数和单次失败清理。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport async function extractOne(file, dest, sevenZip, passwords, { log = () => {} } = {}) {\n  await mkdir(dest, { recursive: true })\n  // 密码顺序:传入的候选(动态在前,全局在后)→ 最后空密码兜底\n  // (绝不能空密码优先:大文件无密码试解会跑很久才失败)\n  const pws = [...passwords, '']\n  for (const pw of pws) {\n    const args = ['x', '-y', '-o' + dest]\n    if (pw) args.push('-p' + pw); else args.push('-p')\n    args.push(file)\n    const r = await run7z(sevenZip, args)\n    if (r.code === 0) {\n      return { ok: true, password: pw || null }\n    }\n    // 失败:清掉本次部分解压,试下一个密码\n    try { await rm(dest, { recursive: true, force: true }); await mkdir(dest, { recursive: true }) } catch {}\n  }\n  return { ok: false, password: null }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/archive-core.js:182-219](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L182-L219)\n\n合并可覆盖和删除输出目标。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nasync function mergeDir(srcDir, dstDir, { depth = 0 } = {}) {\n  if (depth > 40) return\n  await mkdir(dstDir, { recursive: true })\n  let entries = []\n  try { entries = await readdir(srcDir, { withFileTypes: true }) } catch { return }\n  for (const e of entries) {\n    const src = join(srcDir, e.name)\n    const dst = join(dstDir, e.name)\n    if (e.isDirectory()) {\n      // 目录:目标同名存在\n      let dstIsDir = false\n      try { dstIsDir = (await stat(dst)).isDirectory() } catch {}\n      if (dstIsDir) {\n        // 递归合并\n        await mergeDir(src, dst, { depth: depth + 1 })\n        await rm(src, { recursive: true, force: true }).catch(() => {})\n      } else {\n        if (existsSync(dst)) await rm(dst, { recursive: true, force: true }).catch(() => {})\n        await rename(src, dst).catch(async () => {\n          // rename 失败(跨卷等)则复制\n          await copyDir(src, dst)\n          await rm(src, { recursive: true, force: true }).catch(() => {})\n        })\n      }\n    } else {\n      // 文件:目标同名已存在目录时,把它放进带后缀的路径避免冲突\n      if (existsSync(dst)) {\n        let dstIsDir = false\n        try { dstIsDir = (await stat(dst)).isDirectory() } catch {}\n        if (dstIsDir) {\n          const alt = dst + ' (duplicate)'\n          await rename(src, alt).catch(async () => { await copyFile(src, alt) })\n          continue\n        }\n        // 同名文件:覆盖(解压重复内容,后解覆盖先解)\n        await rm(dst, { force: true }).catch(() => {})\n      }\n      try { await rename(src, dst) } catch { await copyFile(src, dst) }\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/archive-core.js:248-261](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L248-L261)\n\n明文全局密码池日志。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  // 全局密码\n  const globalPw = []\n  if (opts.secretFile && existsSync(opts.secretFile)) {\n    const raw = await readFile(opts.secretFile, 'utf8')\n    for (const l of raw.split(/\\r?\\n/)) {\n      const t = l.trim()\n      if (t && !globalPw.includes(t)) globalPw.push(t)\n    }\n  }\n  log(`全局密码池: [${globalPw.join(' | ')}] (${globalPw.length} 条)`)\n\n  // 动态密码\n  const dynPw = []\n  const allPw = () => [...new Set([...dynPw, ...globalPw])]\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/archive-core.js:299-343](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L299-L343)\n\n暂存、命中密码日志及归位失败。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n    log(`\\n[${round}] 深度${depth} 类型=${type}: ${file}`)\n    // 临时目录解压,成功再归位(防失败误删源)\n    const tmpDir = join(outRoot, '_work_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6))\n    await mkdir(tmpDir, { recursive: true })\n\n    let r\n    try {\n      r = await extractOne(file, tmpDir, sevenZip, allPw(), { log })\n    } catch (e) {\n      log(`✗ extractOne 异常: ${(e && e.stack) || e}`)\n      r = { ok: false, password: null }\n    }\n    if (!r.ok) {\n      log(`✗ 解压失败(密码均错/损坏): ${file}`)\n      await rm(tmpDir, { recursive: true, force: true }).catch(() => {})\n      results.failed.push(file)\n      continue\n    }\n    log(`✓ 密码命中: ${r.password || '(无密码)'}`)\n    results.success.push(file)\n\n    // 归位:去掉扩展名当目录名\n    let finalName = stripArchiveExt(basename(file))\n    const finalDir = join(baseDir, finalName)\n    await mkdir(finalDir, { recursive: true })\n\n    // 上提冗余嵌套:tmpDir 内若是 单目录且名≈finalName,逐层上提\n    let cursor = tmpDir\n    for (let i = 0; i < 5; i++) {\n      let kids = []\n      try { kids = await readdir(cursor, { withFileTypes: true }) } catch { break }\n      if (kids.length === 1 && kids[0].isDirectory() && (kids[0].name === finalName || kids[0].name.startsWith(finalName))) {\n        cursor = join(cursor, kids[0].name)\n      } else break\n    }\n    // cursor 内容并入 finalDir(稳健合并,处理同名冲突)\n    try {\n      await mergeDir(cursor, finalDir)\n      await rm(tmpDir, { recursive: true, force: true }).catch(() => {})\n      log(`→ 产物: ${finalDir}`)\n    } catch (e) {\n      log(`✗ 归位异常: ${(e && e.stack) || e}`)\n      // 不致命:保留 tmpDir 内容,记录但继续\n      results.failed.push(file)\n    }\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/archive-core.js:373-377](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L373-L377)\n\n中间清理只按字符串前缀。\n\n```text\n    // 中间包清理:源在 outRoot 内且成功解压 => 删源(防残留中间层)\n    if (opts.deleteIntermediate !== false && file.startsWith(outRoot) && existsSync(file)) {\n      log(`[清理中间包] ${file}`)\n      await rm(file, { force: true }).catch(() => {})\n    }\n```\n\n**依据 7 · 源码核查**：[lib/index.js:105-121](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/index.js#L105-L121)\n\n日志转给 Agent 进度。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n      async execute(args, exec) {\n        const { sourceDir, secretFile, outRoot, maxDepth } = args\n        if (!sourceDir || !existsSync(sourceDir)) return '源目录不存在或未提供: ' + sourceDir\n        const logLines = []\n        const log = (m) => {\n          logLines.push(m)\n          if (exec && typeof exec.sendMessage === 'function') {\n            try { exec.sendMessage({ type: 'progress', message: m }) } catch {}\n          }\n        }\n        try {\n          const r = await autoExtractTree(sourceDir, {\n            outRoot,\n            secretFile,\n            maxDepth,\n            log,\n          })\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/index.js:141-147](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/index.js#L141-L147)\n\n最终结果附日志。\n\n```text\n          lines.push('')\n          lines.push('--- 执行日志(截断) ---')\n          // 日志尾部 40 行\n          lines.push(...logLines.slice(-40))\n          return lines.join('\\n')\n        } catch (e) {\n          return '解压失败: ' + ((e && e.message) || e)\n```\n\n#### 缺口\n\n- 未验真实 Host 记录层及 7-Zip 解包路径约束\n  **影响**：不可假设生产归档、密码或目标目录安全\n  **进一步探讨**：用虚构密码、冲突文件、符号链接和资源受限样本在沙箱比较实际副作用\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 什么情况适合验证，怎样退出？\n\n**研究主题**：效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n优先仅用探测工具和一次性合成归档，核 Windows Node 与可控 7-Zip，使用全新输出目录、低权限、资源限额和合成密码。真实源文件与输出需分别备份，检查执行前后哈希，回退时停止插件并丢弃独立输出。对于不可信归档、有复用密码或已有输出的重要目录，保留人工解压；不能把作者演示当作安全或通用性证据。可比较改为脱敏日志、冲突拒绝和真实路径保护后的重复解压，记录泄露与覆盖次数、恢复时间；若边界没改善或正常样本误拒不可接受，放弃扩展。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:87-105](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/README.md#L87-L105)\n\n作者说明依赖和已知边界。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## ⚙️ 依赖\n\n- Node ≥ 18\n- 7-Zip(自动探测 `C:\\Program Files\\7-Zip\\7z.exe` / `E:\\7-Zip\\7z.exe` 等,或设 `SEVENZIP_PATH`)\n\n## 🧩 与 v1.0 对比\n\n| | jieyaTool v1.0(GUI) | 本插件 v2.0 |\n|---|---|---|\n| 识别格式 | 手动选后缀强制改名 | 魔数自动识别(伪装/无后缀都行) |\n| 嵌套 | 单层 | 自动递归到尽头 |\n| 密码 | 单密码记忆 | 多密码列表 + 层内动态发现 |\n| 分卷 | 手动 | 自动配对跳过附属卷 |\n| SFX | 不支持 | 自动探测(排除成品 exe) |\n| 调用方式 | 手动拖文件 | 对 Agent 说一句即可 |\n\n## ⚠️ 已知边界\n\n- **私有自解压格式**(RC 自定义 SFX、`.sfxv` 加密分卷)7-Zip 不识别,无法命令行自动化,需双击 exe 图形解压\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:78-97](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/index.js#L78-L97)\n\n工具路径和递归输入。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    tools.register({\n      name: 'auto_extract_run',\n      description:\n        '自动批量递归解压一个目录里的所有压缩包(核心工具):自动识别真实格式(伪装后缀 .jpg/.mp4/.7z删除/无后缀都行)、' +\n        '跳过 SFX 分卷附属卷(.part2.rar/.002 等)、递归解压嵌套压缩包直到不再产出压缩包、' +\n        '多密码自动尝试(secret 文件每行一个;解出内容里若出现\"密码:xxx\"或\"第二层密码:xxx\"(目录名/文件名/txt),自动学习并用于后续层)。' +\n        '输出到 sourceDir 旁的 _extracted 目录,原文件只读不动,解压成功的中间压缩包自动清理。' +\n        '适合:一次性下载了几十个包、改过后缀、多层套娃、密码可能分层的场景。' +\n        '参数: sourceDir=源目录(必填); secretFile=密码文件路径(可选,每行一个密码); outRoot=输出目录(可选,默认 sourceDir/_extracted)。' +\n        '执行可能耗时较长(GB 级),完成后返回成功/失败清单与发现的成品。',\n      parameters: {\n        type: 'object',\n        properties: {\n          sourceDir: { type: 'string', description: '要批量解压的源目录(绝对路径)' },\n          secretFile: { type: 'string', description: '密码文件路径(可选,每行一个密码)' },\n          outRoot: { type: 'string', description: '输出目录(可选,默认 sourceDir 旁的 _extracted)' },\n          maxDepth: { type: 'number', description: '最大递归深度(可选,默认 50)' },\n        },\n        required: ['sourceDir'],\n      },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/archive-core.js:238-246](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L238-L246)\n\n输出根和默认深度。\n\n```text\nexport async function autoExtractTree(sourceDir, opts = {}) {\n  const sevenZip = opts.sevenZip || findSevenZip()\n  if (!sevenZip) throw new Error('找不到 7-Zip,请安装或设置 SEVENZIP_PATH')\n  if (!existsSync(sourceDir)) throw new Error('源目录不存在: ' + sourceDir)\n\n  const outRoot = opts.outRoot || join(sourceDir, '_extracted')\n  await mkdir(outRoot, { recursive: true })\n  const log = opts.log || (() => {})\n  const maxDepth = opts.maxDepth || 50\n```\n\n**依据 4 · 源码核查**：[lib/archive-core.js:289-314](https://github.com/sanqiPanax/jieyaTool/blob/09fd3cb4cb7287b4ebd089f7f972da6ac2e76813/lib/archive-core.js#L289-L314)\n\n深度限制和失败输出。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  while (queue.length > 0) {\n    const task = queue.shift()\n    const { file, depth, baseDir } = task\n    round++\n    if (depth > maxDepth) { log(`SKIP 超深: ${file}`); results.failed.push(file); continue }\n    if (!existsSync(file)) { log(`SKIP 消失: ${file}`); continue }\n\n    const type = await detectType(file, { sevenZip, passwords: allPw(), log })\n    if (type === 'none') continue\n\n    log(`\\n[${round}] 深度${depth} 类型=${type}: ${file}`)\n    // 临时目录解压,成功再归位(防失败误删源)\n    const tmpDir = join(outRoot, '_work_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6))\n    await mkdir(tmpDir, { recursive: true })\n\n    let r\n    try {\n      r = await extractOne(file, tmpDir, sevenZip, allPw(), { log })\n    } catch (e) {\n      log(`✗ extractOne 异常: ${(e && e.stack) || e}`)\n      r = { ok: false, password: null }\n    }\n    if (!r.ok) {\n      log(`✗ 解压失败(密码均错/损坏): ${file}`)\n      await rm(tmpDir, { recursive: true, force: true }).catch(() => {})\n      results.failed.push(file)\n```\n\n</details>\n\n#### 缺口\n\n- 没有实测空间、耗时及恢复\n  **影响**：不能评估大归档或生产数据的负担\n  **进一步探讨**：用小型合成包核对 7-Zip 退出码、输出哈希和工具日志\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6a1a9444b9646412d9ce7e223807347116c86a4e1501c25d7492dcc12041f877。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 584 | 479 | 63 | — |\n| .md | source | 1 | 106 | — | — | 1006 |\n\n排除 2 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 格式探测 | 识别若干魔数和疑似 SFX | 底层格式取决于 7-Zip |\n| 递归解压 | 排队尝试密码并扫描产物 | 需隔离输出和日志 |\n| 环境状态 | 查可用 7-Zip | 不验证归档可靠性 |\n\n## 工程亮点\n\n[Q02](#research-q02) 逐密码使用临时目录，但日志含密码，且归位和清理缺少统一事务。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/archive-core.js、lib/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定组件的工具入口、核心和作者材料。未运行 7-Zip 或样本。\n- 下一步：在隔离环境对照明文日志、同名覆盖、失败清理、深度与压缩资源上限。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-04-04/sanqipanax--jieyatool/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"sanqiPanax/jieyaTool\",\n  \"revision\": \"09fd3cb4cb7287b4ebd089f7f972da6ac2e76813\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/archive-core.js\",\n    \"lib/index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"递归解压可节省哪些重复操作，哪些密码和文件副作用阻止采用？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"用户批量处理伪装、多层归档时，工具增加了什么？\",\n        \"answer\": \"对于来源已核对且需重复处理多层压缩包的用户，DSH 工具把格式探测、候选密码与递归扫描合成一次目录任务。代码读取文件头，区分常见魔数；可调用 7-Zip list 探测疑似自解压文件并排除普通 PE 类型。起始扫描只遍历顶层常规文件，按命名规则跳过附属分卷；解压成功后扫描结果树，发现新归档加入队列。所谓自动分卷主要是识别主卷与跳过已知命名的附属卷，实际组合由 7-Zip，规则不能覆盖任意分卷命名。相比手动按包执行 7-Zip，此插件提供可复用的队列和格式线索，没有自建解码。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 15,\n            \"line_end\": 25,\n            \"observation\": \"作者列出格式、递归和分卷。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 2,\n            \"line_end\": 19,\n            \"observation\": \"真实 DSH 插件入口。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 62,\n            \"line_end\": 103,\n            \"observation\": \"文件头、7-Zip 探测及分卷启发式。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 263,\n            \"line_end\": 281,\n            \"observation\": \"首层队列与扫描。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 345,\n            \"line_end\": 370,\n            \"observation\": \"动态密码和新归档入队。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有复现归档样本和分卷边界\",\n            \"impact\": \"不能保证任意格式、私有 SFX 与深度\",\n            \"next_step\": \"在隔离环境以合成 zip、rar、SFX 和错后缀对照工具结果\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"密码和输出路径的副作用是什么？\",\n        \"answer\": \"密码由动态与全局候选拼接，传给 7-Zip 进程参数；全部全局候选和命中密码也进入日志，而工具将日志用于进度输出和最终尾部。即使解压失败也可能已泄漏候选，不能用真实复用密码试跑。暂存目录隔离单次试解，但成功后 mergeDir 对同名文件覆盖，目录冲突可递归删除旧目标。归位前已计 success，归位异常又记 failed，仍继续扫描并可能清理中间包。中间清理用 file.startsWith(outRoot) 而非路径真实包含校验，用户可指定 outRoot，不能保证所有组合都只清理预期输出。7-Zip 进程没有单次超时或输出字节限制；路径穿越与炸弹防护未在插件代码核到。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 44,\n            \"line_end\": 55,\n            \"observation\": \"进程参数、不限输出缓冲。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 107,\n            \"line_end\": 123,\n            \"observation\": \"密码参数和单次失败清理。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 182,\n            \"line_end\": 219,\n            \"observation\": \"合并可覆盖和删除输出目标。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 248,\n            \"line_end\": 261,\n            \"observation\": \"明文全局密码池日志。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 299,\n            \"line_end\": 343,\n            \"observation\": \"暂存、命中密码日志及归位失败。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 373,\n            \"line_end\": 377,\n            \"observation\": \"中间清理只按字符串前缀。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 105,\n            \"line_end\": 121,\n            \"observation\": \"日志转给 Agent 进度。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 141,\n            \"line_end\": 147,\n            \"observation\": \"最终结果附日志。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验真实 Host 记录层及 7-Zip 解包路径约束\",\n            \"impact\": \"不可假设生产归档、密码或目标目录安全\",\n            \"next_step\": \"用虚构密码、冲突文件、符号链接和资源受限样本在沙箱比较实际副作用\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"什么情况适合验证，怎样退出？\",\n        \"answer\": \"优先仅用探测工具和一次性合成归档，核 Windows Node 与可控 7-Zip，使用全新输出目录、低权限、资源限额和合成密码。真实源文件与输出需分别备份，检查执行前后哈希，回退时停止插件并丢弃独立输出。对于不可信归档、有复用密码或已有输出的重要目录，保留人工解压；不能把作者演示当作安全或通用性证据。可比较改为脱敏日志、冲突拒绝和真实路径保护后的重复解压，记录泄露与覆盖次数、恢复时间；若边界没改善或正常样本误拒不可接受，放弃扩展。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 87,\n            \"line_end\": 105,\n            \"observation\": \"作者说明依赖和已知边界。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 78,\n            \"line_end\": 97,\n            \"observation\": \"工具路径和递归输入。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 238,\n            \"line_end\": 246,\n            \"observation\": \"输出根和默认深度。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/archive-core.js\",\n            \"line_start\": 289,\n            \"line_end\": 314,\n            \"observation\": \"深度限制和失败输出。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有实测空间、耗时及恢复\",\n            \"impact\": \"不能评估大归档或生产数据的负担\",\n            \"next_step\": \"用小型合成包核对 7-Zip 退出码、输出哈希和工具日志\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-auto-extract（原 jieyaTool v2）\\n\\n> 从 **jieyaTool v1.0**（GUI 手动改后缀解压）进化为 **DSH 插件**：对 Agent 说一句话，全自动批量递归解压。\\n\\n一个 DeepSeek Harness (DSH) 自动解压插件。解决「一次性下载几十个压缩包、后缀被改、多层嵌套、每层密码不同、带分卷/SFX」的批量解压痛点——**零人工右键、零手动选后缀**。\\n\\n## 🎬 演示\\n\\n真实执行记录（非摆拍）：\\n\\n![演示](dist/演示.gif)\\n\\n> 完整视频: [dist/演示.mp4](dist/演示.mp4)\\n\\n## ✨ 核心能力\\n\\n| 能力 | 说明 |\\n|---|---|\\n| 🧬 **魔数识别真实格式** | 不信扩展名。伪装成 `.jpg` / `.mp4` / `.7z删除` / `.7删除z` / `.是7z` / 无后缀,按文件头判断真实格式(7z/rar/zip/gz/xz/sfx) |\\n| 🔍 **exe 智能探测** | 用 7-Zip 探测 exe 是否为 SFX 自解压;`Type=PE` 的普通程序 exe(游戏成品)绝不误解压 |\\n| 🔁 **递归下钻** | 解出的新压缩包自动入队继续解,直到不再产出压缩包(实测 4 层套娃全自动) |\\n| 🔑 **多密码自动尝试** | 全局密码文件(每行一个)+ 动态密码:解出内容出现「第二层密码:xxx」(目录名/文件名/txt)自动学习用于后续层;顺序=动态→全局→空 |\\n| 📦 **SFX/分卷处理** | `.part2.rar`/`.002`/`.r00` 等附属卷自动跳过,由主卷(`.part1.exe`/`.001`)带出;成功解压的中间压缩包自动清理 |\\n| 🛡️ **安全** | 输出到源目录旁 `_extracted`,原始文件只读不动;解压先进临时目录,失败只清临时目录;工具运行库目录(`gameSaveBackup`/`node_modules`/`locales`)自动跳过防误递归 |\\n| 🚫 **私有格式归类** | 7z/WinRAR 都不识别的自定义封装(如 RC-SFX `.sfxv`)识别为普通文件不动,不误删不卡死 |\\n\\n## 🚀 安装\\n\\n```bash\\n# 本地开发安装(file 指向仓库目录)\\ncd ~/.dsh/profiles/web\\n# package.json 的 dependencies 加:\\n#   \\\"dsh-auto-extract\\\": \\\"file:F:/ownWork/jieyaTool\\\"\\n# dsh.profile.bundles 加:\\n#   \\\"dsh-auto-extract\\\"\\npnpm install\\n\\n# 重启 dsh 生效\\n```\\n\\n## 🎮 使用(对 Agent 说一句即可)\\n\\n```\\n用户: 我下载了一堆包在 E:\\\\downloads\\\\batch1,后缀都乱七八糟,密码在 secret.txt 里,帮我全解了\\nAgent: auto_extract_run(sourceDir=\\\"E:\\\\downloads\\\\batch1\\\", secretFile=\\\"E:\\\\downloads\\\\batch1\\\\secret.txt\\\")\\n```\\n\\n## 🛠 工具\\n\\n| 工具 | 作用 |\\n|---|---|\\n| `auto_extract_run` | 批量递归解压一个目录(核心) |\\n| `auto_extract_probe` | 识别单文件真实格式(是压缩包还是普通文件) |\\n| `auto_extract_status` | 检查 7-Zip 环境 |\\n\\n## 📊 实战验证\\n\\n两个真实测试场全自动解压,0 人工干预:\\n\\n**E:\\\\Hgame\\\\39**(5/6 链):\\n- `22222.7z删除` → 3 层 7z 套娃 → hero_legend.exe 游戏\\n- `飞天小女警.jpg`(伪装)→ Kendo.exe 游戏\\n- `Over·Empir`(无后缀)→ Game.exe 游戏(5.2GB)\\n- `C097999.jpg`(伪装 Rar5)→ 魔術師『恵』游戏\\n- `AL2695.sfx.part1+2`(RAR5 SFX 分卷)→ **自动发现「白菜」动态密码** → Goodbye_Eternity 游戏\\n\\n**E:\\\\Hgame\\\\40**(6/6 链,12 个压缩包):\\n- `87.7z删` → 2 层 → C157000 Game.exe(跳过 MTool 存档目录)\\n- `黑手.7删除z` → 多层 → 被黑手浸染的玫瑰与百合 Game.exe\\n- `神之血.txt`(伪装 rar)→ The Blood of Yidhra.exe(4.1GB)\\n- `C142666_分卷`(part1-3)→ zip→rar→zip **4 层套娃** → ウミノイエ Game.exe\\n- `Guilty Hell Ⅱ_2.是7z` → GuiltyHell2_alpha.exe(12.6GB)\\n- `PCC153444.7z` → 私の雇い主は変態店長 Game.exe\\n\\n## 📁 结构\\n\\n```\\njieyaTool/\\n├── package.json          ← 插件清单(dsh.bundle.patch)\\n├── cordis.patch.yml      ← bundle 激活行\\n├── lib/\\n│   ├── index.js          ← 插件壳(注册 auto_extract_* 工具)\\n│   └── archive-core.js   ← 纯 Node 解压引擎(无第三方依赖)\\n└── README.md\\n```\\n\\n## ⚙️ 依赖\\n\\n- Node ≥ 18\\n- 7-Zip(自动探测 `C:\\\\Program Files\\\\7-Zip\\\\7z.exe` / `E:\\\\7-Zip\\\\7z.exe` 等,或设 `SEVENZIP_PATH`)\\n\\n## 🧩 与 v1.0 对比\\n\\n| | jieyaTool v1.0(GUI) | 本插件 v2.0 |\\n|---|---|---|\\n| 识别格式 | 手动选后缀强制改名 | 魔数自动识别(伪装/无后缀都行) |\\n| 嵌套 | 单层 | 自动递归到尽头 |\\n| 密码 | 单密码记忆 | 多密码列表 + 层内动态发现 |\\n| 分卷 | 手动 | 自动配对跳过附属卷 |\\n| SFX | 不支持 | 自动探测(排除成品 exe) |\\n| 调用方式 | 手动拖文件 | 对 Agent 说一句即可 |\\n\\n## ⚠️ 已知边界\\n\\n- **私有自解压格式**(RC 自定义 SFX、`.sfxv` 加密分卷)7-Zip 不识别,无法命令行自动化,需双击 exe 图形解压\\n- 需本机装 7-Zip\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-auto-extract\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"DSH 自动解压工具:魔数识别真格式(不信伪装后缀)、递归解压嵌套压缩包、多密码池自动尝试、SFX/分卷配对、私有格式归类报告。核心基于 7-Zip。\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"./lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\"\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/archive-core.js\",\n      \"content\": \"// dsh-auto-extract / archive-core.js\\n// 纯解压引擎(无 DSH 依赖,可独立 node 测试):\\n//   - detectType(path):魔数识别 + exe 用 7z 探测(Type=PE 排除成品),返回类型\\n//   - isSplitSlave(name):分卷附属卷判定(.002/.part2.rar/.r00...)\\n//   - extractOne(file, dest, passwords[], sevenZip):逐个密码试解,成功返回 {password}\\n//   - scanPasswords(dir):从目录/文件名/密码txt 提取\\\"密码:xxx\\\"动态密码\\n//   - autoExtractTree(root, opts):递归解压主流程(队列 + 动态密码 + 中间包清理)\\n// 7-Zip 通过子进程调用;所有路径以 UTF-8/原生参数传递(Windows 下用 spawn 不经 shell)。\\n\\nimport { spawn } from 'node:child_process'\\nimport { readFile, readdir, stat, mkdir, rename, rm, copyFile } from 'node:fs/promises'\\nimport { existsSync } from 'node:fs'\\nimport { join, dirname, basename, extname, parse, sep } from 'node:path'\\nimport { createReadStream } from 'node:fs'\\n\\n// ---------- 7z 定位 ----------\\nconst SZ_CANDIDATES = [\\n  process.env.SEVENZIP_PATH,\\n  'C:\\\\\\\\Program Files\\\\\\\\7-Zip\\\\\\\\7z.exe',\\n  'C:\\\\\\\\Program Files (x86)\\\\\\\\7-Zip\\\\\\\\7z.exe',\\n  process.env.LOCALAPPDATA + '\\\\\\\\Programs\\\\\\\\7-Zip\\\\\\\\7z.exe',\\n  'E:\\\\\\\\7-Zip\\\\\\\\7z.exe',\\n  'D:\\\\\\\\7-Zip\\\\\\\\7z.exe',\\n]\\nexport function findSevenZip() {\\n  for (const c of SZ_CANDIDATES) if (c && existsSync(c)) return c\\n  return null\\n}\\n\\n// ---------- 读文件头 ----------\\nasync function headBytes(file, n = 8) {\\n  return new Promise((resolve, reject) => {\\n    const rs = createReadStream(file, { start: 0, end: n - 1 })\\n    const chunks = []\\n    rs.on('data', (c) => chunks.push(c))\\n    rs.on('end', () => resolve(Buffer.concat(chunks)))\\n    rs.on('error', reject)\\n  })\\n}\\n\\nfunction hex(b) { return b.toString('hex').toUpperCase() }\\n\\n// ---------- 跑 7z(子进程,不经 shell 防中文损坏)----------\\nfunction run7z(sevenZip, args, opts = {}) {\\n  return new Promise((resolve) => {\\n    const child = spawn(sevenZip, args, { windowsHide: true, stdio: ['ignore', 'pipe', 'pipe'] })\\n    // 立即关闭 stdin,防止 7z 在需密码时交互等待输入而挂起\\n    try { child.stdin.end() } catch {}\\n    let out = ''\\n    let err = ''\\n    child.stdout.on('data', (d) => (out += d.toString('utf8')))\\n    child.stderr.on('data', (d) => (err += d.toString('utf8')))\\n    child.on('error', (e) => resolve({ code: -1, out: '', err: String(e) }))\\n    child.on('close', (code) => resolve({ code: code == null ? -1 : code, out, err }))\\n  })\\n}\\n\\n// ---------- 魔数识别 + exe 探测 ----------\\nconst DOC_ZIP_EXTS = new Set(['.docx','.xlsx','.pptx','.docm','.xlsm','.pptm','.odt','.ods','.odp','.jar','.apk','.epub','.vsix','.nupkg'])\\nconst PE_TYPES = new Set(['PE','PE32','PE32+','Mach-O','ELF'])\\n\\nexport async function detectType(file, { sevenZip = null, passwords = [], log = () => {} } = {}) {\\n  let b\\n  try { b = await headBytes(file, 8) } catch { return 'none' }\\n  if (b.length < 4) return 'none'\\n  const h = hex(b)\\n  const ext = extname(file).toLowerCase()\\n  if (h.startsWith('377ABCAF')) return '7z'\\n  if (h.startsWith('526172211A07')) return 'rar'\\n  if (h.startsWith('504B0304') || h.startsWith('504B0506') || h.startsWith('504B0708')) {\\n    return DOC_ZIP_EXTS.has(ext) ? 'none' : 'zip'\\n  }\\n  if (h.startsWith('1F8B')) return 'gz'\\n  if (h.startsWith('FD377A585A00')) return 'xz'\\n  if (h.startsWith('425A68')) return 'bz2'\\n  if (h.startsWith('28B52FFD')) return 'zst'\\n  if (h.startsWith('4D5A')) {\\n    // exe: 用 7z 带密码逐个 list 探测,Type 非 PE 才算 SFX\\n    if (ext !== '.exe' || !sevenZip) return 'none'\\n    const probePws = ['', ...passwords]\\n    for (const pw of probePws) {\\n      // 关键:无论有无密码都传 -p(空密码传 -p 不带值),否则 7z 会交互等 stdin 而挂起\\n      const args = pw ? ['l', '-p' + pw, file] : ['l', '-p', file]\\n      const r = await run7z(sevenZip, args)\\n      const m = /^Type\\\\s*=\\\\s*(\\\\S+)/m.exec(r.out)\\n      const type = m ? m[1] : ''\\n      if (r.code === 0 && type && !PE_TYPES.has(type)) return 'sfx'\\n      if (r.code === 0 && type === 'PE') break // 普通程序\\n      if (r.code !== 2 && r.code !== 255) break // 非\\\"需密码\\\"错误 => 非归档\\n      // code 2/255:可能加密归档需对密码,继续试\\n    }\\n    return 'none'\\n  }\\n  return 'none'\\n}\\n\\n// ---------- 分卷附属卷 ----------\\nexport function isSplitSlave(name) {\\n  if (/\\\\.(002|003|004|005|006|007|008|009|010)(\\\\.|$)/i.test(name)) return true\\n  if (/\\\\.(r00|r01|r02|r03|r04|r05|r06|r07|r08|r09)$/i.test(name)) return true\\n  if (/\\\\.part(0*[2-9]|[1-9]\\\\d+)\\\\.(rar|7z|exe)$/i.test(name)) return true\\n  if (/\\\\.sfxv$/i.test(name) && !/\\\\.001\\\\./i.test(name)) return true\\n  return false\\n}\\n\\n// ---------- 解压单文件(逐个密码)----------\\nexport async function extractOne(file, dest, sevenZip, passwords, { log = () => {} } = {}) {\\n  await mkdir(dest, { recursive: true })\\n  // 密码顺序:传入的候选(动态在前,全局在后)→ 最后空密码兜底\\n  // (绝不能空密码优先:大文件无密码试解会跑很久才失败)\\n  const pws = [...passwords, '']\\n  for (const pw of pws) {\\n    const args = ['x', '-y', '-o' + dest]\\n    if (pw) args.push('-p' + pw); else args.push('-p')\\n    args.push(file)\\n    const r = await run7z(sevenZip, args)\\n    if (r.code === 0) {\\n      return { ok: true, password: pw || null }\\n    }\\n    // 失败:清掉本次部分解压,试下一个密码\\n    try { await rm(dest, { recursive: true, force: true }); await mkdir(dest, { recursive: true }) } catch {}\\n  }\\n  return { ok: false, password: null }\\n}\\n\\n// ---------- 密码线索提取 ----------\\nconst PW_RE = /(?:密码|提取码|解压码|password|pwd|passwd|key)\\\\s*[:：=]\\\\s*([^\\\\s,，;；、]+)/gi\\n\\nexport function passwordsFromText(text) {\\n  const found = []\\n  if (!text) return found\\n  let m\\n  PW_RE.lastIndex = 0\\n  while ((m = PW_RE.exec(text)) !== null) {\\n    const t = m[1].trim().replace(/[\\\"”'。.!！]+$/, '')\\n    if (t && t.length <= 100 && !found.includes(t)) found.push(t)\\n  }\\n  return found\\n}\\n\\n// 递归收集目录里所有\\\"密码:xxx\\\"线索(子项名 + txt/log/md 内容)\\nexport async function scanPasswords(dir, { log = () => {} } = {}) {\\n  const found = []\\n  let entries = []\\n  try { entries = await readdir(dir, { withFileTypes: true }) } catch { return found }\\n  for (const e of entries) {\\n    for (const t of passwordsFromText(e.name)) {\\n      if (!found.includes(t)) { found.push(t); log(`[动态密码] ${e.name}: ${t}`) }\\n    }\\n    if (e.isFile() && /\\\\.(txt|log|md)$/i.test(e.name)) {\\n      try {\\n        const content = await readFile(join(dir, e.name), 'utf8')\\n        for (const line of content.split(/\\\\r?\\\\n/)) {\\n          for (const t of passwordsFromText(line)) {\\n            if (!found.includes(t)) { found.push(t); log(`[动态密码] ${e.name}: ${t}`) }\\n          }\\n        }\\n      } catch {}\\n    }\\n  }\\n  return found\\n}\\n\\n// ---------- 去掉压缩扩展名(循环)---------\\n// 处理真实世界怪后缀:.7z删除 / .7z删除删除 / .sfx.part1.exe / .jpg 伪装等\\n// 策略:持续剥离\\\"看起来像压缩相关\\\"的尾段,直到不再匹配。\\nconst ARC_SEG_RE = /\\\\.(7z(删除)*|rar(删除)*|zip(删除)*|删除+|exe(删除)*|sfx(删除)*|part\\\\d+|001|002|003|gz|xz|bz2|jpg|jpeg|png|mp4|mp3|txt|pdf)$/i\\nexport function stripArchiveExt(name) {\\n  let n = name\\n  for (let i = 0; i < 12; i++) {\\n    const idx = n.lastIndexOf('.')\\n    if (idx <= 0) break\\n    const tail = n.slice(idx)\\n    if (ARC_SEG_RE.test(tail)) {\\n      n = n.slice(0, idx)\\n    } else break\\n  }\\n  return n || 'extracted'\\n}\\n\\n// ---------- 稳健目录合并:把 srcDir 内容并入 dstDir(处理文件/目录同名冲突)----------\\nasync function mergeDir(srcDir, dstDir, { depth = 0 } = {}) {\\n  if (depth > 40) return\\n  await mkdir(dstDir, { recursive: true })\\n  let entries = []\\n  try { entries = await readdir(srcDir, { withFileTypes: true }) } catch { return }\\n  for (const e of entries) {\\n    const src = join(srcDir, e.name)\\n    const dst = join(dstDir, e.name)\\n    if (e.isDirectory()) {\\n      // 目录:目标同名存在\\n      let dstIsDir = false\\n      try { dstIsDir = (await stat(dst)).isDirectory() } catch {}\\n      if (dstIsDir) {\\n        // 递归合并\\n        await mergeDir(src, dst, { depth: depth + 1 })\\n        await rm(src, { recursive: true, force: true }).catch(() => {})\\n      } else {\\n        if (existsSync(dst)) await rm(dst, { recursive: true, force: true }).catch(() => {})\\n        await rename(src, dst).catch(async () => {\\n          // rename 失败(跨卷等)则复制\\n          await copyDir(src, dst)\\n          await rm(src, { recursive: true, force: true }).catch(() => {})\\n        })\\n      }\\n    } else {\\n      // 文件:目标同名已存在目录时,把它放进带后缀的路径避免冲突\\n      if (existsSync(dst)) {\\n        let dstIsDir = false\\n        try { dstIsDir = (await stat(dst)).isDirectory() } catch {}\\n        if (dstIsDir) {\\n          const alt = dst + ' (duplicate)'\\n          await rename(src, alt).catch(async () => { await copyFile(src, alt) })\\n          continue\\n        }\\n        // 同名文件:覆盖(解压重复内容,后解覆盖先解)\\n        await rm(dst, { force: true }).catch(() => {})\\n      }\\n      try { await rename(src, dst) } catch { await copyFile(src, dst) }\\n    }\\n  }\\n}\\n\\nasync function copyDir(src, dst) {\\n  await mkdir(dst, { recursive: true })\\n  const entries = await readdir(src, { withFileTypes: true })\\n  for (const e of entries) {\\n    const s = join(src, e.name)\\n    const d = join(dst, e.name)\\n    if (e.isDirectory()) await copyDir(s, d)\\n    else { await copyFile(s, d) }\\n  }\\n}\\n\\n\\n// opts: { outRoot, secretFile, sevenZip, maxDepth=50, deleteIntermediate=true, log }\\n// 返回: { success:[], failed:[], unsupported:[], products:[] }\\nexport async function autoExtractTree(sourceDir, opts = {}) {\\n  const sevenZip = opts.sevenZip || findSevenZip()\\n  if (!sevenZip) throw new Error('找不到 7-Zip,请安装或设置 SEVENZIP_PATH')\\n  if (!existsSync(sourceDir)) throw new Error('源目录不存在: ' + sourceDir)\\n\\n  const outRoot = opts.outRoot || join(sourceDir, '_extracted')\\n  await mkdir(outRoot, { recursive: true })\\n  const log = opts.log || (() => {})\\n  const maxDepth = opts.maxDepth || 50\\n\\n  // 全局密码\\n  const globalPw = []\\n  if (opts.secretFile && existsSync(opts.secretFile)) {\\n    const raw = await readFile(opts.secretFile, 'utf8')\\n    for (const l of raw.split(/\\\\r?\\\\n/)) {\\n      const t = l.trim()\\n      if (t && !globalPw.includes(t)) globalPw.push(t)\\n    }\\n  }\\n  log(`全局密码池: [${globalPw.join(' | ')}] (${globalPw.length} 条)`)\\n\\n  // 动态密码\\n  const dynPw = []\\n  const allPw = () => [...new Set([...dynPw, ...globalPw])]\\n\\n  // 队列\\n  const queue = []\\n  const results = { success: [], failed: [], unsupported: [], products: [] }\\n  const seenFiles = new Set()\\n\\n  const pushTask = (file, depth, baseDir) => {\\n    if (seenFiles.has(file)) return\\n    seenFiles.add(file)\\n    queue.push({ file, depth, baseDir })\\n  }\\n\\n  // 初始扫描顶层(只收真压缩,跳过附属卷)\\n  let topEntries = []\\n  try { topEntries = await readdir(sourceDir, { withFileTypes: true }) } catch (e) { throw new Error('读源目录失败: ' + e.message) }\\n  for (const e of topEntries) {\\n    if (!e.isFile()) continue\\n    if (isSplitSlave(e.name)) { log(`跳过分卷附属: ${e.name}`); continue }\\n    const full = join(sourceDir, e.name)\\n    const t = await detectType(full, { sevenZip, passwords: allPw(), log })\\n    if (t !== 'none') { pushTask(full, 0, outRoot); log(`入队(初始, ${t}): ${e.name}`) }\\n  }\\n\\n  // 复制普通非压缩文件(顶层辅助文件如 secret.txt 不必复制,但其它文件保留)\\n  // (策略:只解压,顶层普通文件不复制,避免污染输出)\\n\\n  let round = 0\\n  while (queue.length > 0) {\\n    const task = queue.shift()\\n    const { file, depth, baseDir } = task\\n    round++\\n    if (depth > maxDepth) { log(`SKIP 超深: ${file}`); results.failed.push(file); continue }\\n    if (!existsSync(file)) { log(`SKIP 消失: ${file}`); continue }\\n\\n    const type = await detectType(file, { sevenZip, passwords: allPw(), log })\\n    if (type === 'none') continue\\n\\n    log(`\\\\n[${round}] 深度${depth} 类型=${type}: ${file}`)\\n    // 临时目录解压,成功再归位(防失败误删源)\\n    const tmpDir = join(outRoot, '_work_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6))\\n    await mkdir(tmpDir, { recursive: true })\\n\\n    let r\\n    try {\\n      r = await extractOne(file, tmpDir, sevenZip, allPw(), { log })\\n    } catch (e) {\\n      log(`✗ extractOne 异常: ${(e && e.stack) || e}`)\\n      r = { ok: false, password: null }\\n    }\\n    if (!r.ok) {\\n      log(`✗ 解压失败(密码均错/损坏): ${file}`)\\n      await rm(tmpDir, { recursive: true, force: true }).catch(() => {})\\n      results.failed.push(file)\\n      continue\\n    }\\n    log(`✓ 密码命中: ${r.password || '(无密码)'}`)\\n    results.success.push(file)\\n\\n    // 归位:去掉扩展名当目录名\\n    let finalName = stripArchiveExt(basename(file))\\n    const finalDir = join(baseDir, finalName)\\n    await mkdir(finalDir, { recursive: true })\\n\\n    // 上提冗余嵌套:tmpDir 内若是 单目录且名≈finalName,逐层上提\\n    let cursor = tmpDir\\n    for (let i = 0; i < 5; i++) {\\n      let kids = []\\n      try { kids = await readdir(cursor, { withFileTypes: true }) } catch { break }\\n      if (kids.length === 1 && kids[0].isDirectory() && (kids[0].name === finalName || kids[0].name.startsWith(finalName))) {\\n        cursor = join(cursor, kids[0].name)\\n      } else break\\n    }\\n    // cursor 内容并入 finalDir(稳健合并,处理同名冲突)\\n    try {\\n      await mergeDir(cursor, finalDir)\\n      await rm(tmpDir, { recursive: true, force: true }).catch(() => {})\\n      log(`→ 产物: ${finalDir}`)\\n    } catch (e) {\\n      log(`✗ 归位异常: ${(e && e.stack) || e}`)\\n      // 不致命:保留 tmpDir 内容,记录但继续\\n      results.failed.push(file)\\n    }\\n\\n    // 吸收密码(子项名/txt)+ 扫描新压缩包\\n    const newPws = await scanPasswords(finalDir, { log })\\n    for (const p of newPws) if (!dynPw.includes(p)) dynPw.push(p)\\n\\n    const walkStack = [finalDir]\\n    // 跳过这些目录(工具备份/存档/运行库/资源,非套娃压缩内容,避免误递归爆炸)\\n    const SKIP_DIR_RE = /(gameSaveBackup|save_backup|\\\\.git|node_modules|locales|swiftshader|pnacl|www|loaders|_cache|Cache|backup|Backup)/i\\n    while (walkStack.length) {\\n      const cur = walkStack.pop()\\n      let entries = []\\n      try { entries = await readdir(cur, { withFileTypes: true }) } catch { continue }\\n      for (const e of entries) {\\n        const full = join(cur, e.name)\\n        if (e.isDirectory()) {\\n          // 跳过工具/存档/运行库目录(里面 zip 多为资源或存档备份,非内容套娃)\\n          if (SKIP_DIR_RE.test(e.name)) { log(`  [跳过目录] ${e.name}`); continue }\\n          walkStack.push(full)\\n        }\\n        else if (e.isFile() && !isSplitSlave(e.name)) {\\n          const t2 = await detectType(full, { sevenZip, passwords: allPw(), log })\\n          if (t2 !== 'none') {\\n            pushTask(full, depth + 1, dirname(full))\\n            log(`  发现新压缩包(深度${depth+1}, ${t2}): ${e.name}`)\\n          }\\n        }\\n      }\\n    }\\n\\n    // 中间包清理:源在 outRoot 内且成功解压 => 删源(防残留中间层)\\n    if (opts.deleteIntermediate !== false && file.startsWith(outRoot) && existsSync(file)) {\\n      log(`[清理中间包] ${file}`)\\n      await rm(file, { force: true }).catch(() => {})\\n    }\\n  }\\n\\n  // 报告产物 exe(成品游戏)\\n  const walk = async (d) => {\\n    let ents = []\\n    try { ents = await readdir(d, { withFileTypes: true }) } catch { return }\\n    for (const e of ents) {\\n      const full = join(d, e.name)\\n      if (e.isDirectory()) await walk(full)\\n      else if (/\\\\.(exe)$/i.test(e.name)) results.products.push(full)\\n    }\\n  }\\n  await walk(outRoot)\\n\\n  results.outRoot = outRoot\\n  return results\\n}\\n\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"// dsh-auto-extract / index.js (host 插件壳)\\n// 职责:\\n//   1. 注册 auto_extract_* 模型工具:让 agent 直接调批量递归解压\\n//   2. 探测/识别/密码池能力全部在 archive-core.js(纯 node,调 7-Zip)\\n// 依赖:仅 node 内置 + 外部 7-Zip(自动探测常见路径,可用设置覆盖)\\nimport { homedir } from 'node:os'\\nimport { join } from 'node:path'\\nimport { existsSync, mkdirSync } from 'node:fs'\\nimport {\\n  findSevenZip,\\n  detectType,\\n  isSplitSlave,\\n  extractOne,\\n  scanPasswords,\\n  autoExtractTree,\\n} from './archive-core.js'\\n\\nexport const name = 'dsh-auto-extract'\\nexport const inject = ['tools']\\n\\nconst DEFAULT_OUT_MARK = '_extracted'\\n\\n// 渲染工具返回\\nfunction textRender(_args, value) {\\n  return [{ type: 'text', text: String(value || '') }]\\n}\\n\\nexport function apply(ctx) {\\n  try {\\n    const tools = ctx.get('tools')\\n    if (!tools) {\\n      console.error('[dsh-auto-extract] tools 服务不可用,工具未注册')\\n      return\\n    }\\n\\n    // ---- 工具1: 识别单文件真实格式 ----\\n    tools.register({\\n      name: 'auto_extract_probe',\\n      description:\\n        '识别一个文件的真实压缩格式(不信扩展名):通过魔数(magic bytes)判断 7z/rar/zip/gz 等,' +\\n        '对 exe 会用 7-Zip 探测是否为自解压(SFX)压缩包(普通程序 exe 会识别为普通文件,不会误判)。' +\\n        '用于\\\"这个文件到底是压缩包还是普通文件/伪装的什么\\\"。参数: path = 文件绝对路径。返回识别结果。',\\n      parameters: {\\n        type: 'object',\\n        properties: {\\n          path: { type: 'string', description: '要识别的文件绝对路径' },\\n        },\\n        required: ['path'],\\n      },\\n      output: { schema: { type: 'string' }, render: textRender },\\n      async execute(args) {\\n        const { path } = args\\n        if (!path) return '缺少 path 参数'\\n        if (!existsSync(path)) return '文件不存在: ' + path\\n        const sevenZip = findSevenZip()\\n        const t = await detectType(path, {\\n          sevenZip,\\n          passwords: [],\\n          log: () => {},\\n        })\\n        const sz = sevenZip ? sevenZip : '(未找到 7-Zip)'\\n        const slave = isSplitSlave(path.split(/[\\\\\\\\/]/).pop())\\n        const lines = [\\n          `文件: ${path}`,\\n          `大小: ${(await statSize(path))}`,\\n          `真实类型: ${t === 'none' ? '非压缩包(普通文件)' : t}`,\\n          `分卷附属: ${slave ? '是(不应单独解,由主卷带出)' : '否'}`,\\n          `7-Zip: ${sz}`,\\n        ]\\n        if (t === 'none') {\\n          lines.push('提示: 若此文件来自下载资源且疑似伪装,可能为私有/加密自定义格式,通用工具无法识别。')\\n        }\\n        return lines.join('\\\\n')\\n      },\\n    })\\n\\n    // ---- 工具2: 批量递归解压 ----\\n    tools.register({\\n      name: 'auto_extract_run',\\n      description:\\n        '自动批量递归解压一个目录里的所有压缩包(核心工具):自动识别真实格式(伪装后缀 .jpg/.mp4/.7z删除/无后缀都行)、' +\\n        '跳过 SFX 分卷附属卷(.part2.rar/.002 等)、递归解压嵌套压缩包直到不再产出压缩包、' +\\n        '多密码自动尝试(secret 文件每行一个;解出内容里若出现\\\"密码:xxx\\\"或\\\"第二层密码:xxx\\\"(目录名/文件名/txt),自动学习并用于后续层)。' +\\n        '输出到 sourceDir 旁的 _extracted 目录,原文件只读不动,解压成功的中间压缩包自动清理。' +\\n        '适合:一次性下载了几十个包、改过后缀、多层套娃、密码可能分层的场景。' +\\n        '参数: sourceDir=源目录(必填); secretFile=密码文件路径(可选,每行一个密码); outRoot=输出目录(可选,默认 sourceDir/_extracted)。' +\\n        '执行可能耗时较长(GB 级),完成后返回成功/失败清单与发现的成品。',\\n      parameters: {\\n        type: 'object',\\n        properties: {\\n          sourceDir: { type: 'string', description: '要批量解压的源目录(绝对路径)' },\\n          secretFile: { type: 'string', description: '密码文件路径(可选,每行一个密码)' },\\n          outRoot: { type: 'string', description: '输出目录(可选,默认 sourceDir 旁的 _extracted)' },\\n          maxDepth: { type: 'number', description: '最大递归深度(可选,默认 50)' },\\n        },\\n        required: ['sourceDir'],\\n      },\\n      output: {\\n        schema: { type: 'string' },\\n        render(_args, value) {\\n          // 长输出折叠:只显示摘要 + 失败清单\\n          return [{ type: 'text', text: String(value || '') }]\\n        },\\n      },\\n      async execute(args, exec) {\\n        const { sourceDir, secretFile, outRoot, maxDepth } = args\\n        if (!sourceDir || !existsSync(sourceDir)) return '源目录不存在或未提供: ' + sourceDir\\n        const logLines = []\\n        const log = (m) => {\\n          logLines.push(m)\\n          if (exec && typeof exec.sendMessage === 'function') {\\n            try { exec.sendMessage({ type: 'progress', message: m }) } catch {}\\n          }\\n        }\\n        try {\\n          const r = await autoExtractTree(sourceDir, {\\n            outRoot,\\n            secretFile,\\n            maxDepth,\\n            log,\\n          })\\n          const lines = [\\n            `==== 自动解压完成 ====`,\\n            `源目录: ${sourceDir}`,\\n            `输出目录: ${r.outRoot}`,\\n            `成功解压: ${r.success.length} 个`,\\n            `失败: ${r.failed.length} 个`,\\n            `发现的成品 exe: ${r.products.length} 个`,\\n            '',\\n          ]\\n          if (r.failed.length) {\\n            lines.push('失败清单:')\\n            r.failed.forEach((f) => lines.push('  ✗ ' + f))\\n            lines.push('')\\n          }\\n          if (r.products.length) {\\n            lines.push('成品(exe):')\\n            r.products.slice(0, 20).forEach((p) => lines.push('  ✅ ' + p))\\n            if (r.products.length > 20) lines.push(`  ... 共 ${r.products.length} 个`)\\n          }\\n          lines.push('')\\n          lines.push('--- 执行日志(截断) ---')\\n          // 日志尾部 40 行\\n          lines.push(...logLines.slice(-40))\\n          return lines.join('\\\\n')\\n        } catch (e) {\\n          return '解压失败: ' + ((e && e.message) || e)\\n        }\\n      },\\n    })\\n\\n    // ---- 工具3: 环境检查 ----\\n    tools.register({\\n      name: 'auto_extract_status',\\n      description:\\n        '检查 dsh-auto-extract 插件的运行环境:7-Zip 是否可用(在哪)、默认密码文件约定等。' +\\n        '解压前可先调用确认环境就绪。',\\n      parameters: {\\n        type: 'object',\\n        properties: {},\\n      },\\n      output: { schema: { type: 'string' }, render: textRender },\\n      async execute() {\\n        const sz = findSevenZip()\\n        const lines = [\\n          'dsh-auto-extract 环境:',\\n          `7-Zip: ${sz ? '✅ ' + sz : '❌ 未找到(请安装 7-Zip 或设置 SEVENZIP_PATH 环境变量)'}`,\\n          `默认输出标记: ${DEFAULT_OUT_MARK}`,\\n          '能力: 魔数识别 / SFX 探测 / 分卷跳过 / 递归解压 / 多密码(全局+动态)',\\n        ]\\n        return lines.join('\\\\n')\\n      },\\n    })\\n  } catch (e) {\\n    console.error('[dsh-auto-extract] apply failed:', (e && e.message) || e)\\n  }\\n}\\n\\nasync function statSize(p) {\\n  try {\\n    const { stat } = await import('node:fs/promises')\\n    const s = await stat(p)\\n    if (s.size > 1e9) return (s.size / 1e9).toFixed(2) + ' GB'\\n    if (s.size > 1e6) return (s.size / 1e6).toFixed(1) + ' MB'\\n    return s.size + ' B'\\n  } catch {\\n    return '?'\\n  }\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"09fd3cb4cb7287b4ebd089f7f972da6ac2e76813\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"6a1a9444b9646412d9ce7e223807347116c86a4e1501c25d7492dcc12041f877\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 584,\n        \"code\": 479,\n        \"comments\": 63,\n        \"blank\": 44\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 106,\n        \"words\": 1006\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"dist/演示.gif\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"dist/演示.mp4\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 35,\n          \"api\": \"rs.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 36,\n          \"api\": \"rs.on\",\n          \"name\": \"end\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 37,\n          \"api\": \"rs.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 51,\n          \"api\": \"child.stdout.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 52,\n          \"api\": \"child.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 53,\n          \"api\": \"child.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/archive-core.js\",\n          \"line\": 54,\n          \"api\": \"child.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"close\",\n          \"data\",\n          \"end\",\n          \"error\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "04f680e48869fcdcc88e7b06e051375aa88f35e0fa5d2ac7d2b15cb0036b3af9"
+        }
+    },
+    "unavailable_artifacts": []
+}
