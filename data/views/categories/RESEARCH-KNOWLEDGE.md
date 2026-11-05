@@ -45,9 +45,11 @@
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [DSH Web Tools](#plugin-1335219884-root) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 仅在隔离 Profile 测普通双源与单源。 |
+| [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
+| [dsh-git-memory](#plugin-1339286962-root) | 为 DSH 提供本地 Git 长期记忆、有限检索与可恢复的记忆管理。 | [Q03](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q03) 在可丢弃仓库先试只读。 |
 | [dsh-hacker-news](#plugin-1211255316-plugins-hacker-news) | 为 DeepSeek Harness 提供 Hacker News 榜单、评论、搜索和用户信息工具。 | [Q04](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q04) 仅用非敏感查询并检查截断，重要结论回原帖；网络或完整性不满足时停止。 |
 | [dsh-handbook](#plugin-1333258936-root) | DeepSeek Harness 中文优先的学习手册与生态观察，涵盖上手、插件开发、案例和调优。 | 先用固定宿主完成一次隔离的入门练习。 |
 | [dsh-insight](#plugin-1336649545-root) | 用需求匹配、环境配方、健康评分、静态安全扫描与统一 verdict 辅助选择 DSH 插件。 | 适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。 |
@@ -109,6 +111,7 @@
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
 | [Stock Analysis Plugin](#plugin-1238532570-root) | 多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。 | 只在隔离 Profile 用已许可的固定样本核对复盘。 |
+| [StudyHub](#plugin-1367673687-root) | 把讲义等资料生成有来源的练习题，支持复习、题库与音频转录。 | [Q04](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q04) 用可外发资料先生成少量题并人工核对。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
@@ -643,6 +646,22 @@
 
 [查看完整分析](../../plugins/a3boy--dsh-web-tools/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1400385991-packages-dsh-weekly-panel"></a>
+
+## [DSH 插件周榜面板](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/514006234/dsh-weekly-check)
+
+> **用途**：DSH 内查周榜的读者可从侧栏进入。
+
+> **亮点**：[Q01](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q01) 把排行榜摘要带入宿主并提供复制入口。
+
+> **思考**：[Q03](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q03) 回环代理不能保证远程访问和榜单实时性。
+
+> **建议**：[Q05](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q05) 验证明确标记数据年龄是否有帮助。
+
+[查看完整分析](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1337467566-root"></a>
 
 ## [dsh-anchored-monitor](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md)
@@ -690,6 +709,22 @@
 > **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q05)；真实路径写入仍需独立约束。
 
 [查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339286962-root"></a>
+
+## [dsh-git-memory](../../plugins/seriousz158--dsh-memory/INSIGHT.md)
+
+[![GitHub ★ 169](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=169&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/seriousz158/dsh-memory) [![npm 30d 1,002](https://img.shields.io/static/v1?label=npm+30d&message=1%2C002&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-git-memory) [![最新发布 2026-08-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-git-memory)
+
+> **用途**：需要在 DSH 复用版本化项目知识的开发者。
+
+> **亮点**：[Q01](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q01) 将 Git 文档的摘要、检索与开关连接到宿主。
+
+> **思考**：[Q02](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q02) 清理保留 Git 恢复历史，异常恢复仍需验收。
+
+> **建议**：[Q04](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q04) 将重置、恢复点与潜在备份分开提示。
+
+[查看完整分析](../../plugins/seriousz158--dsh-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1211255316-plugins-hacker-news"></a>
 
@@ -1666,6 +1701,22 @@
 > **建议**：用同一历史样本对照插件与手算，检查交易序列、费用和核对人时。见 [Q04](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1367673687-root"></a>
+
+## [StudyHub](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md)
+
+[![GitHub ★ 165](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=165&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EricWang1358/dsh-web-studyhub) [![npm 30d 812](https://img.shields.io/static/v1?label=npm+30d&message=812&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ericwang1358/dsh-daily-flashcard) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ericwang1358/dsh-daily-flashcard)
+
+> **用途**：用讲义复习的学生可评估生成题与来源回链。
+
+> **亮点**：[Q01](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q01) 把选段、候选和发布组成可查流程。
+
+> **思考**：[Q03](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q03) 模型审核不等于题目正确，模型调用也会外发片段。
+
+> **建议**：[Q05](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q05) 比较回链对错题审核的帮助。
+
+[查看完整分析](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1374986657-root"></a>
 

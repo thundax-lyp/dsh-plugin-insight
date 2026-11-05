@@ -1,18 +1,18 @@
 # dsh-wsl-wininput
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[eaa10e6](https://github.com/173787247/dsh-wsl-wininput/tree/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41)
+源码版本：[90d6b90](https://github.com/173787247/dsh-wsl-wininput/tree/90d6b907ca7e878a2e59365c91622ff099ebe1bb)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-wininput)
 <!-- END META -->
 
-> **功能**：让 WSL 中的 DSH 按窗口和 UI Automation 元素定向发送 Windows 输入。
+> **功能**：从 WSL 调用 Windows 控件，并发送键盘、文字、点击和滚动操作。
 
-> **亮点**：相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 将语义调用与桌面输入接入 WSL 会话。
 
-> **主要限制**：最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。 参见[Q04](#research-q04)。
+> **主要限制**：[Q02](#research-q02) 实际按名称找控件，键盘和坐标路径没有验证实际输入目标。
 
 **本文目录**
 
@@ -26,15 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · WSL 内定向控制 Windows 窗口适合什么自动化任务？](#detail-section-11)
-  - [Q02 · win_invoke 如何跨 WSL、PowerShell 与 UI Automation 执行动作？](#detail-section-12)
-  - [Q03 · dsh-wsl-wininput 相对简单替代的独立增量是什么？](#detail-section-13)
-  - [Q04 · 窗口匹配、焦点、权限和坐标会造成哪些误操作？](#detail-section-14)
-  - [Q05 · dsh-wsl-wininput 启动、持续使用与失败恢复依赖什么？](#detail-section-15)
-  - [Q06 · 一次合格 Windows 动作的延迟与恢复成本是什么？](#detail-section-16)
-  - [Q07 · 参数约束、目标解析和回执设计是否足以复用？](#detail-section-17)
-  - [Q08 · 能否用读后写验证与幂等动作令牌降低误点？](#detail-section-18)
-  - [Q09 · dsh-wsl-wininput 适合观察、试用还是安装，停止条件是什么？](#detail-section-19)
+  - [Q01 · 会话能怎样操作一个 Windows 测试窗口？](#detail-section-11)
+  - [Q02 · 输入实际绑定目标和控件的强度如何？](#detail-section-12)
+  - [Q03 · 怎样验收并降低误输入？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -44,11 +38,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向 DSH 运行在 WSL、但需要操作明确 Windows 窗口或控件的用户。输入是窗口选择器、UIA 属性或按键/点击动作；合格结果是目标窗口被唯一识别，动作落在预期元素，最好不抢前台焦点，并返回足够信息确认执行。简单替代是手动操作、普通 SendKeys 或桌面自动化框架。
+> **用途**：开发者调试可弃用 Windows 桌面流程。
 
-参见[Q01](#research-q01)。
-
-基线是手动桌面操作或全局 SendKeys；前者可靠但不可自动化，后者简单却容易抢焦点或打到错误窗口。
+手工操作 Windows，或使用能验证目标及后置状态的专用自动化。
 
 <a id="detail-section-3"></a>
 
@@ -58,67 +50,58 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| UIA 元素调用 | 按属性定位后 Invoke | 依赖稳定 Automation 元素和权限 |
-| 窗口定向按键 | 向选择的 Windows 窗口发键 | 应用可能不接受后台输入 |
-| 窗口定向点击 | 在目标窗口计算点击位置 | DPI、多屏和布局变化需验证 |
+| 语义调用 | 操作匹配名称的控件 | 要求 InvokePattern，匹配范围有限 |
+| 键鼠输入 | 发送桌面事件 | 焦点及屏幕位置影响实际目标 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| Windows + WSL | 必需 | 运行 DSH 与目标桌面 | 非 WSL 返回不适用 |
-| 标准路径 PowerShell | 必需 | 跨边界执行 Windows 脚本 | 找不到时工具失败 |
-| UIA 可访问的目标应用 | 特定动作必需 | 按元素定位与 Invoke | 自绘/提权应用可能不可见 |
-| 唯一窗口/元素选择器 | 效果必需 | 避免把输入发错目标 | 多匹配应拒绝并重查 |
+| WSL interop 与交互桌面 | 必需 | 执行 Windows 操作 | 无会话或权限时失败 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 确认 WSL 和 PowerShell，打开低风险目标 | 平台检测通过 |
-| 定位 | 提供窗口与元素条件 | 只得到一个可解释目标；多匹配停止 |
-| 执行 | 调用 Invoke 或定向按键/点击 | 回执标出目标和执行方式 |
-| 验收/恢复 | 读取目标状态，异常时重新定位而非盲重试 | 状态符合预期或人工撤销 |
+| 准备 | 用户选可弃用测试应用 | 无敏感数据 |
+| 验收 | 用户核对单次动作与实际状态 | 确保未影响其他窗口 |
+| 退出 | 用户改手工并检查副作用 | 不盲目重试 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | 无需常驻服务；资源金额未知 | 配置环境和学习选择器 | 兼容应用范围未知 |
-| 持续使用 | 每次 PowerShell/UIA 进程与枚举 | 构造参数并核对回执 | P95 延迟未知 |
-| 失败恢复 | 误输入可能有业务代价 | 重新定位、撤销和处理权限 | 恢复时长取决于目标应用 |
+| 首次 | 资源未知 | 建立隔离桌面 | 需确认目标 |
+| 持续 | 调用开销未知 | 核对焦点和结果 | 坐标会受其他窗口影响 |
+| 失败 | 恢复成本未知 | 检查真实应用状态 | 返回成功不证明动作完成 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 定向输入 | 源码按窗口/元素执行而非全局广播 | 真实应用命中率未测 |
-| 减少抢焦点 | 部分 UIA 模式可不移动光标 | 并非所有应用支持 |
-| 轻量部署 | 无常驻 Windows 服务 | 每次进程开销未知 |
+| 桌面操作 | 能发出语义、键盘及鼠标动作 | 实际命中和节时 |
 
-> **思考**：最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。 参见[Q04](#research-q04)。
+> **思考**：[Q02](#research-q02) 实际按名称找控件，键盘和坐标路径没有验证实际输入目标。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。 参见[Q03](#research-q03)。
+> **亮点**：[Q01](#research-q01) 将语义调用与桌面输入接入 WSL 会话。
 
-模块把 WSL 检测、宿主进程、参数/格式与具体执行分离，工具面较窄，便于审计。可借鉴的是元素模式优先于坐标，但执行脚本仍承担大量 Windows 特例；没有长期缓存可减少陈旧句柄，却增加每次启动成本。源码测试存在，本轮未运行，不能把兼容声明写成已验证。 参见[Q07](#research-q07)。
+[Q02](#research-q02) 控件在当前遍历中重新匹配，调用没有消费先前观察的 handle。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。 参见[Q04](#research-q04)。
+[Q02](#research-q02) 实际按名称找控件，键盘和坐标路径没有验证实际输入目标。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察。仅在低风险、可撤销的桌面任务和唯一窗口选择器上评估；先禁用坐标路径，用计算器/记事本验证元素 Invoke、超时和权限拒绝。任何多匹配仍执行或无状态回执的写动作都应停止。 参见[Q04](#research-q04)、[Q06](#research-q06)与[Q09](#research-q09)。
-
-参见[Q01](#research-q01)。
+[Q03](#research-q03) 先在可弃用应用验证焦点和结果，暂不用于高影响动作。
 
 <a id="detail-section-7"></a>
 
@@ -126,18 +109,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持 WSL 到 Windows 输入桥的工具契约与边界判断；焦点、键盘布局、剪贴板和跨权限窗口上的实际落点未在 Windows/WSL 验证，带前置状态的输入意图仍属假设，见[Q08](#research-q08)。
+固定源码确认执行动作及定位缺口。真实输入去向和收益未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/wininput.js、lib/wininput-exec.js、lib/wsl-host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/wininput-exec.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查 README、工具入口、WSL/PowerShell 桥和执行脚本；不运行 Windows side effects。 未运行目标插件、测试、外部服务或真实 Host；源码存在不等于运行通过。
-- 下一步：先用同名双窗口和可自动读回的状态测试唯一匹配、拒绝与幂等；任何多匹配仍执行、提权越界或读回不符即停止。
+- 边界：固定源码。未运行 Windows、桌面输入、目标或宿主。
+- 下一步：覆盖重复标题和控件、失焦、越界坐标与真实结果。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-wininput](https://github.com/173787247/dsh-wsl-wininput)
-- **版本号**：0.1.0（[固定提交 eaa10e6](https://github.com/173787247/dsh-wsl-wininput/tree/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41)）
-- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 90d6b90](https://github.com/173787247/dsh-wsl-wininput/tree/90d6b907ca7e878a2e59365c91622ff099ebe1bb)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -145,9 +128,9 @@
 
 <a id="innovation"></a>
 
-可为写动作增加先读后写协议：返回目标窗口/元素指纹，用户或代理提交带短期 nonce 的动作，执行后再次读取属性并比对预期；重复 nonce 拒绝。它可能减少错窗口和盲重试，但会增加一次往返并依赖可观察状态。 参见[Q08](#research-q08)。
+[Q03](#research-q03) 绑定窗口并复核焦点及坐标，比较误输入。
 
-先用同名双窗口和可自动读回的状态测试唯一匹配、拒绝与幂等；任何多匹配仍执行、提权越界或读回不符即停止。
+覆盖重复标题和控件、失焦、越界坐标与真实结果。
 
 <a id="detail-section-9"></a>
 
@@ -155,6 +138,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -166,347 +151,504 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+created%3A2026-09-22T16%3A02%3A19.147Z..2026-10-22T16%3A02%3A19.147Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T16%3A02%3A19.147Z..2026-10-22T16%3A02%3A19.147Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+created%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-wininput/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z)
 
 
 
-统计日期：2026-10-23。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定提交 eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41 上判断 dsh-wsl-wininput 的核心贡献、关键质疑、采用边界及可证伪的新设计假设。
+**插件研究总目标**：WSL 用户能否用 DSH 操作指定 Windows 测试控件并核对输入实际去向？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · WSL 内定向控制 Windows 窗口适合什么自动化任务？
+### Q01 · 会话能怎样操作一个 Windows 测试窗口？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向 DSH 运行在 WSL、但需要操作明确 Windows 窗口或控件的用户。输入是窗口选择器、UIA 属性或按键/点击动作；合格结果是目标窗口被唯一识别，动作落在预期元素，最好不抢前台焦点，并返回足够信息确认执行。简单替代是手动操作、普通 SendKeys 或桌面自动化框架。
+WSL 桌面自动化开发者可通过 DSH 对支持 InvokePattern 的控件执行语义调用，或选择键盘、文本、点击与滚动输入。相较手工切换环境，增加跨边界工具入口。合格结果要观察测试应用的实际状态变化，返回动作参数本身不足以证明完成。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
+**依据 1 · 作者声明**：[README.md:3-7](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/README.md#L3-L7)
 
-作者给出 UIA、按键和点击用法。
+作者的定向输入定位。
 
-````text
-## Usage
+```text
+DeepSeek Harness plugin: Targeted Windows input from WSL: invoke a UI Automation element, or send keys and clicks to a chosen window without stealing focus.
 
+Part of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.
+
+[中文说明 → README.zh.md](./README.zh.md)
 ```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
+
+**依据 2 · 源码核查**：[index.js:12-32](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/index.js#L12-L32)
+
+Host 注册。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    name: "tool:win_invoke",
+    order: 211,
+    text: "Use win_invoke to act on Windows UI from WSL. action=invoke activates a UI Automation element by the handle uia_tree returned; the element is re-checked before it is invoked, so a handle from an older observation fails instead of clicking the wrong control. action=type and action=click target a window by pid.",
+  });
+
+  ctx.tools.register({
+    name: "win_invoke",
+    description: "Targeted Windows input from WSL: invoke a UI Automation element by handle, type text into a window, or click a window-relative point.",
+    parameters: core.parameters(),
+    output: {
+      schema: core.outputSchema(),
+      render: (_args, value) => [{ type: "text", text: core.format(value) }],
+    },
+    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,
+    isConcurrencySafe: () => false,
+    async execute(args) {
+      if (!wsl) return { ok: false, action: args?.action ?? "invoke", error: "not running in WSL" };
+      try {
+        return await execute(args, config);
+      } catch (error) {
+        return { ok: false, action: args?.action ?? "invoke", error: String(error?.message ?? error) };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/wininput-exec.js:196-257](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L196-L257)
+
+实际动作分发。
+
+<details>
+<summary>查看原文（62行）</summary>
+
+```text
+export async function execute(args, config = {}) {
+  const action = assertAction(args?.action ?? "invoke");
+  const pid = safeInt(args?.pid);
+  const title = typeof args?.titleContains === "string" ? args.titleContains : "";
+  const timeoutMs = Math.min(120_000, Math.max(1000, Number(config.timeoutMs) || 30_000));
+
+  if (action === "invoke") {
+    const expectName = typeof args?.expectName === "string" ? args.expectName : "";
+    if (!expectName) {
+      return { ok: false, action, error: "expectName is required: name the element you want, as uia_tree reported it" };
+    }
+    const expectType = typeof args?.expectType === "string" ? args.expectType : "";
+    const maxDepth = Math.min(12, Math.max(1, safeInt(config.invokeMaxDepth, 10)));
+    const maxElements = Math.min(3000, Math.max(10, safeInt(config.invokeMaxElements, 1200)));
+    const { stdout } = await runPowerShell(
+      buildInvokeScript({ pid, title, expectName, expectType, maxDepth, maxElements }),
+      { timeoutMs },
+    );
+    const raw = JSON.parse(stdout.trim() || "{}");
+    if (raw.error) return { ok: false, action, error: String(raw.error), element: raw.element, count: raw.count };
+    return { ok: true, action, element: raw.element, window: raw.window, searched: raw.searched };
+  }
+
+  if (action === "type") {
+    if (typeof args?.text !== "string" || !args.text) return { ok: false, action, error: "text is required" };
+    const { stdout } = await runPowerShell(buildTypeScript({ pid, title, text: args.text }), { timeoutMs });
+    const raw = JSON.parse(stdout.trim() || "{}");
+    if (raw.error) return { ok: false, action, error: String(raw.error) };
+    return { ok: true, action, window: raw.window, text: raw.typed };
+  }
+
+  if (action === "key") {
+    let sequence;
+    try {
+      sequence = buildKeySequence(args?.key, Array.isArray(args?.modifiers) ? args.modifiers : []);
+    } catch (error) {
+      return { ok: false, action, error: String(error.message) };
+    }
+    const { stdout } = await runPowerShell(buildKeyScript({ pid, title, sequence }), { timeoutMs });
+    const raw = JSON.parse(stdout.trim() || "{}");
+    if (raw.error) return { ok: false, action, error: String(raw.error) };
+    return { ok: true, action, window: raw.window, sequence: raw.sequence };
+  }
+
+  if (action === "scroll") {
+    const amount = Math.min(20, Math.max(1, safeInt(args?.amount, 3)));
+    const direction = args?.direction === "up" ? "up" : "down";
+    const { stdout } = await runPowerShell(
+      buildScrollScript({ pid, title, x: safeInt(args?.x, 100), y: safeInt(args?.y, 100), amount, direction }),
+      { timeoutMs },
+    );
+    const raw = JSON.parse(stdout.trim() || "{}");
+    if (raw.error) return { ok: false, action, error: String(raw.error) };
+    return { ok: true, action, window: raw.window, scrolled: raw.scrolled };
+  }
+
+  const x = safeInt(args?.x, NaN), y = safeInt(args?.y, NaN);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return { ok: false, action, error: "click requires x and y" };
+  const { stdout } = await runPowerShell(buildClickScript({ pid, title, x, y }), { timeoutMs });
+  const raw = JSON.parse(stdout.trim() || "{}");
+  if (raw.error) return { ok: false, action, error: String(raw.error) };
+  return { ok: true, action, window: raw.window, point: raw.point };
+```
+
+</details>
+
+#### 缺口
+
+- 未运行桌面流程
+  **影响**：真实跨环境收益和成功率未知
+  **进一步探讨**：在可弃用窗口对照原生输入
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · win_invoke 如何跨 WSL、PowerShell 与 UI Automation 执行动作？
+### Q02 · 输入实际绑定目标和控件的强度如何？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-插件注册 win_invoke 工具，把结构化参数交给 lib/wininput，定位 Windows PowerShell 后启动脚本执行层；执行层枚举窗口和 UIA 元素，优先调用元素模式，也支持向指定窗口发送按键和点击。WSL 宿主模块负责平台检测、路径和超时。
+提示声称消费 UIA handle 并拒绝过期，实际 invoke 分支要求 expectName，按 PID/标题找到第一个窗口并重新遍历匹配名称及可选类型，不消费 handle。已扫描范围内匹配多个时拒绝，一个匹配且支持 InvokePattern 才调用。键盘及文本会尝试置前但忽略结果，随后 SendWait，若前台未切换可能输入其他窗口。坐标分支把相对位置换成屏幕坐标，不检查偏移落在目标矩形，鼠标动作指向实际屏幕。脚本输出不验证应用结果。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/index.js#L17-L20)
+**依据 1 · 源码核查**：[index.js:12-26](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/index.js#L12-L26)
 
-入口注册单一 win_invoke 模型工具。
+工具自述与并发标记。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
+    name: "tool:win_invoke",
+    order: 211,
+    text: "Use win_invoke to act on Windows UI from WSL. action=invoke activates a UI Automation element by the handle uia_tree returned; the element is re-checked before it is invoked, so a handle from an older observation fails instead of clicking the wrong control. action=type and action=click target a window by pid.",
+  });
+
   ctx.tools.register({
     name: "win_invoke",
     description: "Targeted Windows input from WSL: invoke a UI Automation element by handle, type text into a window, or click a window-relative point.",
     parameters: core.parameters(),
+    output: {
+      schema: core.outputSchema(),
+      render: (_args, value) => [{ type: "text", text: core.format(value) }],
+    },
+    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,
+    isConcurrencySafe: () => false,
 ```
 
-**依据 2 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
+</details>
 
-中间层限定可执行动作并提供参数与输出契约。
+**依据 2 · 源码核查**：[lib/wininput-exec.js:21-30](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L21-L30)
+
+首个窗口选择。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
+function Dsh-Window([int]$targetPid, [string]$title) {
+  $cond = New-Object System.Windows.Automation.PropertyCondition([System.Windows.Automation.AutomationElement]::ControlTypeProperty, [System.Windows.Automation.ControlType]::Window)
+  $wins = [System.Windows.Automation.AutomationElement]::RootElement.FindAll([System.Windows.Automation.TreeScope]::Children, $cond)
+  foreach ($w in $wins) {
+    if ($w.Current.NativeWindowHandle -eq 0) { continue }
+    if ($targetPid -gt 0 -and $w.Current.ProcessId -ne $targetPid) { continue }
+    if ($title -ne '' -and $w.Current.Name -notlike "*$title*") { continue }
+    return $w
+  }
+  return $null
 ```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/wininput-exec.js:46-88](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L46-L88)
+
+重新遍历、歧义和 InvokePattern。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+export function buildInvokeScript({ pid, title, expectName, expectType, maxDepth, maxElements }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+$walker = [System.Windows.Automation.TreeWalker]::ControlViewWalker
+$matches = New-Object System.Collections.ArrayList
+$seen = 0
+$queue = New-Object System.Collections.Queue
+$queue.Enqueue(@{ el = $target; d = 0 })
+while ($queue.Count -gt 0 -and $seen -lt ${maxElements}) {
+  $item = $queue.Dequeue(); $el = $item.el; $d = $item.d
+  $seen++
+  if ($d -gt 0) {
+    try {
+      $ct = $el.Current.ControlType.ProgrammaticName.Replace('ControlType.','')
+      $nm = $el.Current.Name
+      $typeOk = ${expectType ? `($ct -eq ${psq(expectType)})` : "$true"}
+      if ($typeOk -and $nm -eq ${psq(expectName)}) { [void]$matches.Add($el) }
+    } catch {}
+  }
+  if ($d -lt ${maxDepth}) {
+    $c = $walker.GetFirstChild($el)
+    while ($c) { $queue.Enqueue(@{ el = $c; d = $d + 1 }); $c = $walker.GetNextSibling($c) }
+  }
+}
+if ($matches.Count -eq 0) { ConvertTo-Json -Compress @{ error = ${psq("no element matched")}; searched = $seen }; exit }
+if ($matches.Count -gt 1) {
+  ConvertTo-Json -Compress @{ error = ${psq("ambiguous: more than one element matched")}; count = $matches.Count; searched = $seen }
+  exit
+}
+$el = $matches[0]
+$o = $null
+if (-not $el.TryGetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern, [ref]$o)) {
+  ConvertTo-Json -Compress @{ error = 'element does not support InvokePattern'; element = @{ controlType = $el.Current.ControlType.ProgrammaticName.Replace('ControlType.',''); name = $el.Current.Name } }
+  exit
+}
+$o.Invoke()
+$r = New-Object DshIn+RECT; [void][DshIn]::GetWindowRect([IntPtr]$target.Current.NativeWindowHandle, [ref]$r)
+ConvertTo-Json -Compress -Depth 4 @{
+  element = @{ controlType = $el.Current.ControlType.ProgrammaticName.Replace('ControlType.',''); name = $el.Current.Name }
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  searched = $seen
+  x = $r.L; y = $r.T
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/wininput-exec.js:126-169](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L126-L169)
+
+焦点、滚动与键盘。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+export function buildKeyScript({ pid, title, sequence }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+[void][DshIn]::SetForegroundWindow([IntPtr]$target.Current.NativeWindowHandle)
+Start-Sleep -Milliseconds 250
+[System.Windows.Forms.SendKeys]::SendWait(${psq(sequence)})
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  sequence = ${psq(sequence)}
+}
+`;
+}
+
+export function buildScrollScript({ pid, title, x, y, amount, direction }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+$r = New-Object DshIn+RECT; [void][DshIn]::GetWindowRect([IntPtr]$target.Current.NativeWindowHandle, [ref]$r)
+if ($r.R -le $r.L -or $r.B -le $r.T) { ConvertTo-Json -Compress @{ error = 'window has no drawable area' }; exit }
+# The wheel goes to whatever is under the cursor, so park it on the target first.
+[void][DshIn]::SetCursorPos(($r.L + ${x}), ($r.T + ${y}))
+Start-Sleep -Milliseconds 60
+[DshIn]::mouse_event(0x0800, 0, 0, ${direction === "up" ? amount : -amount}, [IntPtr]::Zero)
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  scrolled = ${psq(direction + " " + amount)}
+}
+`;
+}
+
+export function buildTypeScript({ pid, title, text }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+# Synthesized keystrokes go to the focused window, so a background target has to
+# be raised first.
+[void][DshIn]::SetForegroundWindow([IntPtr]$target.Current.NativeWindowHandle)
+Start-Sleep -Milliseconds 250
+[System.Windows.Forms.SendKeys]::SendWait(${psq(escapeSendKeys(text))})
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  typed = ${psq(text)}
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/wininput-exec.js:178-216](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L178-L216)
+
+鼠标与实际 invoke 参数。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+export function buildClickScript({ pid, title, x, y }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+$r = New-Object DshIn+RECT; [void][DshIn]::GetWindowRect([IntPtr]$target.Current.NativeWindowHandle, [ref]$r)
+if ($r.R -le $r.L -or $r.B -le $r.T) { ConvertTo-Json -Compress @{ error = 'window has no drawable area' }; exit }
+$sx = $r.L + ${x}; $sy = $r.T + ${y}
+[void][DshIn]::SetCursorPos($sx, $sy)
+Start-Sleep -Milliseconds 60
+[DshIn]::mouse_event(0x0002, 0, 0, 0, [IntPtr]::Zero)
+[DshIn]::mouse_event(0x0004, 0, 0, 0, [IntPtr]::Zero)
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  point = @{ x = ${x}; y = ${y} }
+}
+`;
+}
+
+export async function execute(args, config = {}) {
+  const action = assertAction(args?.action ?? "invoke");
+  const pid = safeInt(args?.pid);
+  const title = typeof args?.titleContains === "string" ? args.titleContains : "";
+  const timeoutMs = Math.min(120_000, Math.max(1000, Number(config.timeoutMs) || 30_000));
+
+  if (action === "invoke") {
+    const expectName = typeof args?.expectName === "string" ? args.expectName : "";
+    if (!expectName) {
+      return { ok: false, action, error: "expectName is required: name the element you want, as uia_tree reported it" };
+    }
+    const expectType = typeof args?.expectType === "string" ? args.expectType : "";
+    const maxDepth = Math.min(12, Math.max(1, safeInt(config.invokeMaxDepth, 10)));
+    const maxElements = Math.min(3000, Math.max(10, safeInt(config.invokeMaxElements, 1200)));
+    const { stdout } = await runPowerShell(
+      buildInvokeScript({ pid, title, expectName, expectType, maxDepth, maxElements }),
+      { timeoutMs },
+    );
+    const raw = JSON.parse(stdout.trim() || "{}");
+    if (raw.error) return { ok: false, action, error: String(raw.error), element: raw.element, count: raw.count };
+    return { ok: true, action, element: raw.element, window: raw.window, searched: raw.searched };
+```
+
+</details>
+
+#### 缺口
+
+- 未测试多窗口、焦点切换及屏幕坐标
+  **影响**：不能保证键鼠落到指定目标
+  **进一步探讨**：用隔离桌面验证重复标题、错误焦点和越界点击
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · dsh-wsl-wininput 相对简单替代的独立增量是什么？
+### Q03 · 怎样验收并降低误输入？
 
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-相对全局键鼠模拟，它强调先选窗口/元素再执行，可在部分路径避免抢焦点；相对完整 RPA，它是单工具、零长期服务的轻量桥。贡献是 WSL 到 Windows UIA/输入的窄接口与结构化回执，不是新的 UI Automation 算法。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/index.js#L17-L20)
-
-入口注册单一 win_invoke 模型工具。
-
-```text
-  ctx.tools.register({
-    name: "win_invoke",
-    description: "Targeted Windows input from WSL: invoke a UI Automation element by handle, type text into a window, or click a window-relative point.",
-    parameters: core.parameters(),
-```
-
-**依据 2 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
-
-中间层限定可执行动作并提供参数与输出契约。
-
-```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
-```
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 窗口匹配、焦点、权限和坐标会造成哪些误操作？
-
-**研究主题**：缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-最关键风险是目标解析错误后仍产生真实输入。窗口标题可能重复，元素树会变化，坐标受 DPI/多屏影响；非前台输入并非所有应用都支持，管理员窗口还受权限边界。源码级参数检查不能证明真实应用收到动作，也未看到统一的用户审批或动作后结构差异验证。
+仅在 interop 可用的隔离桌面操作可弃用应用，避免真实内容和高影响动作。先核对控件名、类型与应用状态，再确认实际后置状态；遇目标或焦点不明即改手工。可对照明确窗口句柄、输入前复核当前前台和坐标范围，并在状态无法确认时停下。测多窗口中错目标率、误拒绝和额外等待，若不能下降则不采纳。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
+**依据 1 · 源码核查**：[index.js:25-33](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/index.js#L25-L33)
 
-中间层限定可执行动作并提供参数与输出契约。
+宿主拒绝与执行。
 
 ```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
+    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,
+    isConcurrencySafe: () => false,
+    async execute(args) {
+      if (!wsl) return { ok: false, action: args?.action ?? "invoke", error: "not running in WSL" };
+      try {
+        return await execute(args, config);
+      } catch (error) {
+        return { ok: false, action: args?.action ?? "invoke", error: String(error?.message ?? error) };
+      }
 ```
 
-**依据 2 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
+**依据 2 · 源码核查**：[lib/wininput-exec.js:126-169](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L126-L169)
 
-作者给出 UIA、按键和点击用法。
+未验证焦点基线。
 
-````text
-## Usage
+<details>
+<summary>查看原文（44行）</summary>
 
+```text
+export function buildKeyScript({ pid, title, sequence }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+[void][DshIn]::SetForegroundWindow([IntPtr]$target.Current.NativeWindowHandle)
+Start-Sleep -Milliseconds 250
+[System.Windows.Forms.SendKeys]::SendWait(${psq(sequence)})
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  sequence = ${psq(sequence)}
+}
+`;
+}
+
+export function buildScrollScript({ pid, title, x, y, amount, direction }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+$r = New-Object DshIn+RECT; [void][DshIn]::GetWindowRect([IntPtr]$target.Current.NativeWindowHandle, [ref]$r)
+if ($r.R -le $r.L -or $r.B -le $r.T) { ConvertTo-Json -Compress @{ error = 'window has no drawable area' }; exit }
+# The wheel goes to whatever is under the cursor, so park it on the target first.
+[void][DshIn]::SetCursorPos(($r.L + ${x}), ($r.T + ${y}))
+Start-Sleep -Milliseconds 60
+[DshIn]::mouse_event(0x0800, 0, 0, ${direction === "up" ? amount : -amount}, [IntPtr]::Zero)
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  scrolled = ${psq(direction + " " + amount)}
+}
+`;
+}
+
+export function buildTypeScript({ pid, title, text }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+# Synthesized keystrokes go to the focused window, so a background target has to
+# be raised first.
+[void][DshIn]::SetForegroundWindow([IntPtr]$target.Current.NativeWindowHandle)
+Start-Sleep -Milliseconds 250
+[System.Windows.Forms.SendKeys]::SendWait(${psq(escapeSendKeys(text))})
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  typed = ${psq(text)}
+}
 ```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
+
+</details>
+
+**依据 3 · 源码核查**：[lib/wininput-exec.js:178-191](https://github.com/173787247/dsh-wsl-wininput/blob/90d6b907ca7e878a2e59365c91622ff099ebe1bb/lib/wininput-exec.js#L178-L191)
+
+坐标投影及直接动作。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+export function buildClickScript({ pid, title, x, y }) {
+  return `${PRELUDE}
+$target = Dsh-Window ${pid} '${title.replace(/'/g, "''")}'
+if ($null -eq $target) { ConvertTo-Json -Compress @{ error = 'no matching window' }; exit }
+$r = New-Object DshIn+RECT; [void][DshIn]::GetWindowRect([IntPtr]$target.Current.NativeWindowHandle, [ref]$r)
+if ($r.R -le $r.L -or $r.B -le $r.T) { ConvertTo-Json -Compress @{ error = 'window has no drawable area' }; exit }
+$sx = $r.L + ${x}; $sy = $r.T + ${y}
+[void][DshIn]::SetCursorPos($sx, $sy)
+Start-Sleep -Milliseconds 60
+[DshIn]::mouse_event(0x0002, 0, 0, 0, [IntPtr]::Zero)
+[DshIn]::mouse_event(0x0004, 0, 0, 0, [IntPtr]::Zero)
+ConvertTo-Json -Compress -Depth 4 @{
+  window = @{ pid = $target.Current.ProcessId; title = $target.Current.Name }
+  point = @{ x = ${x}; y = ${y} }
+```
+
+</details>
 
 #### 缺口
 
-- 真实 Windows 应用、DPI、多屏、前后台和管理员权限组合下的目标准确率
-  **影响**：误输入可能修改错误应用且难以自动撤销
-  **进一步探讨**：用同名双窗口、移动窗口、125%/150% DPI、前后台和提权窗口构造矩阵，记录拒绝、唯一命中和实际状态变化
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · dsh-wsl-wininput 启动、持续使用与失败恢复依赖什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-启动要求 Windows+WSL、标准路径 PowerShell 和可访问目标进程；UIA 模式依赖应用暴露稳定 Automation 属性。失败恢复要区分找不到窗口、多个匹配、元素陈旧、超时和动作已部分生效，用户需重新读取目标状态再决定是否重试。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/index.js#L17-L20)
-
-入口注册单一 win_invoke 模型工具。
-
-```text
-  ctx.tools.register({
-    name: "win_invoke",
-    description: "Targeted Windows input from WSL: invoke a UI Automation element by handle, type text into a window, or click a window-relative point.",
-    parameters: core.parameters(),
-```
-
-**依据 2 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
-
-作者给出 UIA、按键和点击用法。
-
-````text
-## Usage
-
-```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 一次合格 Windows 动作的延迟与恢复成本是什么？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-合格任务是一条动作作用到唯一预期目标且状态符合预期。首次要配置 WSL/PowerShell 和学习选择器；持续成本是每次 PowerShell 进程、UIA 枚举与模型选择参数；失败恢复包括重新定位、撤销误输入和处理焦点变化。没有多应用成功率、P95 延迟、误目标率和人工恢复分钟数。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
-
-作者给出 UIA、按键和点击用法。
-
-````text
-## Usage
-
-```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
-
-**依据 2 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
-
-中间层限定可执行动作并提供参数与输出契约。
-
-```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
-```
-
-#### 缺口
-
-- 每动作 PowerShell 启动时延、UIA 枚举时延、成功率、误目标率和恢复分钟数
-  **影响**：无法给出合格任务单位成本、成功率、节时或 ROI
-  **进一步探讨**：对三类应用各执行 100 个可验证动作，与手工及全局 SendKeys 比较 P50/P95、错误和恢复
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 参数约束、目标解析和回执设计是否足以复用？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-模块把 WSL 检测、宿主进程、参数/格式与具体执行分离，工具面较窄，便于审计。可借鉴的是元素模式优先于坐标，但执行脚本仍承担大量 Windows 特例；没有长期缓存可减少陈旧句柄，却增加每次启动成本。源码测试存在，本轮未运行，不能把兼容声明写成已验证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:17-20](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/index.js#L17-L20)
-
-入口注册单一 win_invoke 模型工具。
-
-```text
-  ctx.tools.register({
-    name: "win_invoke",
-    description: "Targeted Windows input from WSL: invoke a UI Automation element by handle, type text into a window, or click a window-relative point.",
-    parameters: core.parameters(),
-```
-
-**依据 2 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
-
-中间层限定可执行动作并提供参数与输出契约。
-
-```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
-```
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 能否用读后写验证与幂等动作令牌降低误点？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-可为写动作增加先读后写协议：返回目标窗口/元素指纹，用户或代理提交带短期 nonce 的动作，执行后再次读取属性并比对预期；重复 nonce 拒绝。它可能减少错窗口和盲重试，但会增加一次往返并依赖可观察状态。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
-
-中间层限定可执行动作并提供参数与输出契约。
-
-```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
-```
-
-**依据 2 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
-
-作者给出 UIA、按键和点击用法。
-
-````text
-## Usage
-
-```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
-
-#### 缺口
-
-- 读后写 nonce 是否能覆盖常见误操作而不过度增加交互
-  **影响**：新方向仍是推演，不能计入插件当前贡献或效果
-  **进一步探讨**：原型要求目标指纹和预期属性，若误目标降为零且中位延迟增加低于 300ms则支持，否则否定
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · dsh-wsl-wininput 适合观察、试用还是安装，停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-建议观察。仅在低风险、可撤销的桌面任务和唯一窗口选择器上评估；先禁用坐标路径，用计算器/记事本验证元素 Invoke、超时和权限拒绝。任何多匹配仍执行或无状态回执的写动作都应停止。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:15-18](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/README.md#L15-L18)
-
-作者给出 UIA、按键和点击用法。
-
-````text
-## Usage
-
-```
-win_invoke action=invoke pid=1234 expectName="Save" expectType=Button
-````
-
-**依据 2 · 源码核查**：[lib/wininput.js:4-7](https://github.com/173787247/dsh-wsl-wininput/blob/eaa10e6b313f2a6e65f7ce5e2523c7f4bc050b41/lib/wininput.js#L4-L7)
-
-中间层限定可执行动作并提供参数与输出契约。
-
-```text
-export const ACTIONS = ["invoke", "type", "key", "click", "scroll"];
-
-export function assertAction(action) {
-  if (!ACTIONS.includes(action)) {
-```
-
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+- 真实宿主与改法未运行
+  **影响**：误操作和恢复成本未知
+  **进一步探讨**：使用虚拟文档验证焦点竞争、坐标边界及拒绝
+
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

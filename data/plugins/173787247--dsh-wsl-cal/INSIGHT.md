@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[675bc5c](https://github.com/173787247/dsh-wsl-cal/tree/675bc5cc7efaf79a171e205e4f570ac2b945bb13)
+源码版本：[107fbe3](https://github.com/173787247/dsh-wsl-cal/tree/107fbe3a9c6184859b95d518421baa2e363968fa)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-cal)
 <!-- END META -->
 
-> **功能**：把本机 khal 日历以只读状态、今日和未来日程工具暴露给 DSH。
+> **功能**：在 DSH 中查看 khal 日历、今日议程和未来数日事项。
 
-> **亮点**：相对终端执行 khal，它把只读日历查询接入模型工具并限制日期范围，增量是低风险接线而非新的日历能力。 [Q03](#research-q03)
+> **亮点**：[Q01](#research-q01) 将当前 khal 配置的议程接到 DSH，会话内即可查阅。
 
-> **主要限制**：输出依赖用户自行维护的 khal 配置、时区与同步状态，且插件不创建或修改事件；读取成功不能证明日历已同步或计划可执行。 [Q04](#research-q04)
+> **主要限制**：[Q02](#research-q02) 时间含义和新鲜度沿用 khal，截断后不应把未显示的事项当作不存在。
 
 **本文目录**
 
@@ -26,15 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？](#detail-section-11)
-  - [Q02 · 能力如何从入口、注册、调用到状态变化实现？](#detail-section-12)
-  - [Q03 · 相对原生能力或简单替代，固定版本增加了什么？](#detail-section-13)
-  - [Q04 · 什么前提最可能使核心价值不成立？](#detail-section-14)
-  - [Q05 · 启动、持续生效和失败恢复分别依赖什么？](#detail-section-15)
-  - [Q06 · 首次、持续与失败恢复成本及效果证据如何？](#detail-section-16)
-  - [Q07 · 实现有哪些可靠性取舍和可复用设计？](#detail-section-17)
-  - [Q08 · 由贡献和限制能推导什么未验证方向？](#detail-section-18)
-  - [Q09 · 对什么人值得观察或试用，成功与停止条件是什么？](#detail-section-19)
+  - [Q01 · 已有 khal 的用户怎样在 DSH 查询日程？](#detail-section-11)
+  - [Q02 · 日程的时间范围和完整性如何确定？](#detail-section-12)
+  - [Q03 · 如何试用并发现过期日程？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +38,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已在 WSL 使用 khal 管理日历的用户，让代理在每日检查和计划任务时读取现有安排。 [Q01](#research-q01)
+> **用途**：用户需要在工作会话安排新任务前核对近期日程。
 
-基线是用户运行 khal list 或查看日历应用；插件减少代理读取步骤，但不承担同步、写入和提醒。
+直接运行 khal 或打开原日历。
 
 <a id="detail-section-3"></a>
 
@@ -55,66 +49,58 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 环境状态 | 检查 khal 版本与日历配置。 | 仅由固定版本源码确认；运行效果未验证 |
-| 今日日程 | 读取当天事件。 | 仅由固定版本源码确认；运行效果未验证 |
-| 范围查询 | 读取最多 31 天的未来日程。 | 仅由固定版本源码确认；运行效果未验证 |
+| --- | --- | --- |
+| 日历和议程 | 核对近期安排 | 取决于当前 khal 配置和同步 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| PATH 中可用 khal | 必需 | 实际查询日历 | status/查询返回错误 |
-| 用户已配置并同步日历 | 必需 | 提供可信事件源 | 空结果或陈旧结果不代表无日程 |
-| 正确时区/DST 配置 | 必需 | 解释 today 与未来范围 | 事件时间可能偏移 |
-| DSH tools/systemPrompt | 必需 | 注册四个只读工具 | 无法由代理调用 |
+| --- | --- | --- | --- |
+| khal 与测试日历 | 必需 | 读取当前配置 | 无 CLI 或配置时失败 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|---|
-| 状态检查 | Agent 先调用 cal_status/cal_calendars | khal 可用且日历数量符合预期 |
-| 查询 | 调 cal_today 或限定 1–31 天的 cal_list | 返回事件和明确空结果 |
-| 核对 | 用户确认同步时间与时区 | 关键安排与外部日历一致 |
-| 降级 | 配置/同步异常时回到 khal 或日历应用 | 不根据陈旧/空结果自动安排任务 |
+| --- | --- | --- |
+| 准备 | 用户建立测试日历 | 不含私人事项 |
+| 比对 | 用户查询今日与多日 | 核对原时间及完整性 |
+| 退出 | 用户回原日历 | 按原件排期 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | khal 与日历同步基础设施 | 配账号、日历与时区 | 插件不承担同步配置 |
-| 持续使用 | 每次一个本地 khal 子进程 | 核对关键事件与同步状态 | 每次查询秒数未知 |
-| 失败恢复 | 无写入回滚成本 | 修 PATH、配置、同步或时区 | 陈旧数据识别时间未知 |
+| --- | --- | --- | --- |
+| 首次 | 资源未知 | 验证 CLI 和时区 | 依赖已配置日历 |
+| 持续 | 查询成本未知 | 复核同步与截断 | 不自动刷新远端 |
+| 失败 | 排查耗时未知 | 回原日历 | 避免漏看冲突 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 只读边界 | 四工具均不创建/修改事件 | 宿主环境实际权限与输出兼容 |
-| 范围限制 | list 天数有默认和上限 | DST/跨时区边界正确性 |
-| 计划接线 | Agent 可直接取得 today/list | 陈旧同步是否被正确识别 |
+| --- | --- | --- |
+| 议程查看 | 返回今日与多日文本 | 日历冲突识别与节时 |
 
-> **思考**：输出依赖用户自行维护的 khal 配置、时区与同步状态，且插件不创建或修改事件；读取成功不能证明日历已同步或计划可执行。 [Q04](#research-q04)
+> **思考**：[Q02](#research-q02) 时间含义和新鲜度沿用 khal，截断后不应把未显示的事项当作不存在。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对终端执行 khal，它把只读日历查询接入模型工具并限制日期范围，增量是低风险接线而非新的日历能力。 [Q03](#research-q03)
+> **亮点**：[Q01](#research-q01) 将当前 khal 配置的议程接到 DSH，会话内即可查阅。
 
-只读边界、天数上限、超时和错误返回降低副作用，适合作为轻量集成样本；仍需用真实时区、多日历和异常输出验证。
+[Q02](#research-q02) 日历数来自上限后的切片，不能作为完整库存。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-输出依赖用户自行维护的 khal 配置、时区与同步状态，且插件不创建或修改事件；读取成功不能证明日历已同步或计划可执行。 [Q04](#research-q04)
+[Q02](#research-q02) 时间含义和新鲜度沿用 khal，截断后不应把未显示的事项当作不存在。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。成功标准是 status 能暴露配置问题、today/list 与 khal 在事件数和时间上一致、陈旧同步被用户识别；出现时区偏移或遗漏时应停止将输出用于自动计划。 [Q09](#research-q09)
+[Q03](#research-q03) 先用合成事项确认本地时区、跨日和输出完整性。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +108,18 @@
 
 **核查状态**：已检查源码。
 
-已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。
+静态确认查询和返回范围，实际时区、同步与节时待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/cal.js、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。
-- 下一步：在测试 khal 日历放入全天、跨午夜、DST 与多时区事件，逐项比较 cal_today/cal_list 与 khal 原输出，记录事件数、时间偏差和查询秒数；再制造同步陈旧与 PATH 缺失，确认工具明确失败。任何时间偏移或空结果被误当“无安排”即限制采用。
+- 边界：固定源码核查。未运行目标、khal 或 DSH。
+- 下一步：验证日历配置、时间边界、非零退出和截断。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-cal](https://github.com/173787247/dsh-wsl-cal)
-- **版本号**：0.1.1（[固定提交 675bc5c](https://github.com/173787247/dsh-wsl-cal/tree/675bc5cc7efaf79a171e205e4f570ac2b945bb13)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 107fbe3](https://github.com/173787247/dsh-wsl-cal/tree/107fbe3a9c6184859b95d518421baa2e363968fa)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +127,9 @@
 
 <a id="innovation"></a>
 
-可在保持只读的前提下增加“计划冲突解释”，明确引用事件来源和时区，并让任何写入建议仍由用户确认到外部日历工具。 [Q08](#research-q08)
+[Q03](#research-q03) 显示时间范围及同步来源，比较过期和跨日误判。
 
-在测试 khal 日历放入全天、跨午夜、DST 与多时区事件，逐项比较 cal_today/cal_list 与 khal 原输出，记录事件数、时间偏差和查询秒数；再制造同步陈旧与 PATH 缺失，确认工具明确失败。任何时间偏移或空结果被误当“无安排”即限制采用。
+验证日历配置、时间边界、非零退出和截断。
 
 <a id="detail-section-9"></a>
 
@@ -151,6 +137,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,40 +150,40 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-cal/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-cal/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-cal/issues?q=is%3Aissue+created%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-cal/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z)
+
+
+
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：研究 dsh-wsl-cal 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。
+**插件研究总目标**：已有 khal 的用户能否在 DSH 查阅可核对的近期日程？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？
+### Q01 · 已有 khal 的用户怎样在 DSH 查询日程？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向已在 WSL 使用 khal 管理日历的用户，让代理在每日检查和计划任务时读取现有安排。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是用户运行 khal list 或查看日历应用；插件减少代理读取步骤，但不承担同步、写入和提醒。
+用户可列出 khal 日历，再查今天或未来数日的事项。相比打开终端，工具让会话直接取得当前配置下的 agenda，适合在安排任务前找出具体冲突。工具既不选择单一日历，也不执行远端同步，结果仅反映当前 khal 环境可见内容。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-20](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/README.md#L1-L20)
+**依据 1 · 作者声明**：[README.md:5-15](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/README.md#L5-L15)
 
-作者材料说明目标用户、安装方式、主要能力和已知边界。
+作者用途与加载。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（11行）</summary>
 
 ````text
-# dsh-wsl-cal
-
-> **语言：** **中文**（本页） · [English](./README.en.md)
-
 日历只读：khal list / today。
 
 | | |
@@ -207,108 +195,236 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-22），可前往 [Gi
 
 ```sh
 dsh plugin --profile web add github:173787247/dsh-wsl-cal
-# 或本机 path：
-# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-cal
-```
-
-kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
 ````
 
 </details>
+
+**依据 2 · 源码核查**：[lib/cal.js:65-90](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/lib/cal.js#L65-L90)
+
+列表和时间段命令。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+export async function khalCalendars({ timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const r = await run(bin, ["printcalendars"], { timeoutMs: timeoutMs || 10_000, maxOut: 8_000 });
+  if (r.code !== 0) throw new Error(`khal printcalendars failed: ${r.stderr || r.code}`);
+  const calendars = r.stdout
+    .split("\n")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 50);
+  return { ok: true, count: calendars.length, calendars };
+}
+
+export async function khalList({ days = 7, timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const d = Math.min(31, Math.max(1, Number(days) || 7));
+  // khal list today today+Nd
+  const r = await run(bin, ["list", "today", `${d}d`], { timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`khal list failed: ${r.stderr || r.code}`);
+  return { ok: true, days: d, truncated: r.truncated, output: r.stdout };
+}
+
+export async function khalAgenda({ timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const r = await run(bin, ["list", "today"], { timeoutMs, maxOut: 20_000 });
+  if (r.code !== 0) throw new Error(`khal agenda failed: ${r.stderr || r.code}`);
+  return { ok: true, truncated: r.truncated, output: r.stdout };
+```
+
+</details>
+
+#### 缺口
+
+- 未比较查日程耗时
+  **影响**：不能断言有用户节时
+  **进一步探讨**：用同一测试日历比较直接 khal 与工具
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 能力如何从入口、注册、调用到状态变化实现？
+### Q02 · 日程的时间范围和完整性如何确定？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-插件注册状态、日历列表、今日与未来 N 天四个只读工具，底层调用 khal 并统一超时与结构化错误。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。
+查询将 days 夹在 1 到 31，传递 today 和 Nd 给 khal，时区、日期解析和同步新鲜度依赖宿主与 khal 配置。列表最多返回 50 个日历名，count 只是切片后数量。议程只包装截断后的原文本，子进程超限或非零时错误处理与普通空议程不同，调用方仍需查当天配置和数据更新时间。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
+**依据 1 · 源码核查**：[lib/cal.js:14-41](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/lib/cal.js#L14-L41)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+进程时限与 stdout 截断。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
+export function run(bin, args, { timeoutMs = 15_000, maxOut = 40_000 } = {}) {
+  return new Promise((resolvePromise, reject) => {
+    const child = spawn(bin, args, { stdio: ["ignore", "pipe", "pipe"] });
+    let stdout = "";
+    let stderr = "";
+    const t = setTimeout(() => {
+      child.kill("SIGKILL");
+      reject(new Error("timeout"));
+    }, timeoutMs);
+    child.stdout.on("data", (d) => {
+      stdout += d;
+      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
+    });
+    child.stderr.on("data", (d) => (stderr += d));
+    child.on("close", (code) => {
+      clearTimeout(t);
+      resolvePromise({
+        code,
+        stdout: stdout.slice(0, maxOut),
+        stderr: stderr.slice(0, 4000),
+        truncated: stdout.length > maxOut,
+      });
+    });
+    child.on("error", (e) => {
+      clearTimeout(t);
+      reject(e);
+    });
   });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
 ```
 
 </details>
+
+**依据 2 · 源码核查**：[lib/cal.js:44-74](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/lib/cal.js#L44-L74)
+
+探测和日历计数。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+export async function calStatus() {
+  const khal = (await which("khal")) || null;
+  let version = null;
+  let calendarCount = null;
+  if (khal) {
+    try {
+      const ver = await run(khal, ["--version"], { timeoutMs: 5_000, maxOut: 500 });
+      version = (ver.stdout || ver.stderr || "").trim().slice(0, 200) || null;
+    } catch {
+      /* ignore */
+    }
+    try {
+      const cals = await khalCalendars({ timeoutMs: 8_000 });
+      calendarCount = Array.isArray(cals.calendars) ? cals.calendars.length : null;
+    } catch {
+      calendarCount = null;
+    }
+  }
+  return { ok: true, khal, version, calendarCount };
+}
+
+export async function khalCalendars({ timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const r = await run(bin, ["printcalendars"], { timeoutMs: timeoutMs || 10_000, maxOut: 8_000 });
+  if (r.code !== 0) throw new Error(`khal printcalendars failed: ${r.stderr || r.code}`);
+  const calendars = r.stdout
+    .split("\n")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .slice(0, 50);
+  return { ok: true, count: calendars.length, calendars };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/cal.js:77-90](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/lib/cal.js#L77-L90)
+
+固定参数及结果。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+export async function khalList({ days = 7, timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const d = Math.min(31, Math.max(1, Number(days) || 7));
+  // khal list today today+Nd
+  const r = await run(bin, ["list", "today", `${d}d`], { timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`khal list failed: ${r.stderr || r.code}`);
+  return { ok: true, days: d, truncated: r.truncated, output: r.stdout };
+}
+
+export async function khalAgenda({ timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const r = await run(bin, ["list", "today"], { timeoutMs, maxOut: 20_000 });
+  if (r.code !== 0) throw new Error(`khal agenda failed: ${r.stderr || r.code}`);
+  return { ok: true, truncated: r.truncated, output: r.stdout };
+```
+
+</details>
+
+**依据 4 · 源码核查**：[index.js:78-96](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/index.js#L78-L96)
+
+days 注册和调用。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    name: "cal_list",
+    description: "khal list next N days (default 7, max 31).",
+    parameters: {
+      type: "object",
+      additionalProperties: false,
+      properties: { days: { type: "number" } },
+    },
+    output: {
+      schema: { type: "object", additionalProperties: true },
+      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "(none)" }],
+    },
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      try {
+        return await khalList({ days: args?.days, timeoutMs });
+      } catch (e) {
+        return { ok: false, error: e instanceof Error ? e.message : String(e) };
+      }
+```
+
+</details>
+
+#### 缺口
+
+- 未验证当前 khal 日期语义及日历同步
+  **影响**：不能确定跨日事件和远端新事件的覆盖
+  **进一步探讨**：构造跨时区、多日历和已更新但未同步的样例
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相对原生能力或简单替代，固定版本增加了什么？
+### Q03 · 如何试用并发现过期日程？
 
-**研究主题**：贡献与相对优势
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
 
 #### 完整回答
 
-相对终端执行 khal，它把只读日历查询接入模型工具并限制日期范围，增量是低风险接线而非新的日历能力。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。
+用无敏感事项的本地 khal 配置，在独立 DSH profile 对照原命令读取今天和多日，检查时区和完整性。不符则停用并回日历原件。可验证加上宿主时区、实际查询范围与同步来源说明，是否降低把旧副本当最新日程的概率。对照跨日与未同步事件，测冲突判断和附加检查时间，无改善则放弃。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
+**依据 1 · 源码核查**：[index.js:6-29](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/index.js#L6-L29)
 
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+宿主开关与状态工具。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
 export function apply(ctx, config = {}) {
   if (config.enabled === false) {
     console.log("[dsh-wsl-cal] disabled");
@@ -333,427 +449,40 @@ export function apply(ctx, config = {}) {
       return calStatus();
     },
     presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
 ```
 
 </details>
 
-<a id="research-q04"></a>
+**依据 2 · 源码核查**：[lib/cal.js:77-90](https://github.com/173787247/dsh-wsl-cal/blob/107fbe3a9c6184859b95d518421baa2e363968fa/lib/cal.js#L77-L90)
 
-<a id="detail-section-14"></a>
-
-### Q04 · 什么前提最可能使核心价值不成立？
-
-**研究主题**：缺陷与关键质疑
-
-#### 完整回答
-
-最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：输出依赖用户自行维护的 khal 配置、时区与同步状态，且插件不创建或修改事件；读取成功不能证明日历已同步或计划可执行。 这会直接收窄采用范围，而不是否定所有能力。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
+返回结构未给时区和同步时间。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
+export async function khalList({ days = 7, timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const d = Math.min(31, Math.max(1, Number(days) || 7));
+  // khal list today today+Nd
+  const r = await run(bin, ["list", "today", `${d}d`], { timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`khal list failed: ${r.stderr || r.code}`);
+  return { ok: true, days: d, truncated: r.truncated, output: r.stdout };
+}
 
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
-```
-
-</details>
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 启动、持续生效和失败恢复分别依赖什么？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-需要 WSL/Node 环境、PATH 中可用的 khal 及已配置日历；超时和输出格式变化可能影响解析，没有写操作降级。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 首次、持续与失败恢复成本及效果证据如何？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次成本是安装并配置 khal、日历源和时区，而插件本身只增加工具接线；持续成本是每次 khal 子进程、日历同步读取和用户核对时区；失败恢复包括 PATH/配置错误、超时和陈旧同步，插件不会写入或修复事件。合格单位是指定日期范围内事件名称、时间和来源日历与 khal 当前输出一致。当前缺多日历/时区样本的准确率、查询秒数和陈旧同步比例。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
+export async function khalAgenda({ timeoutMs } = {}) {
+  const bin = (await which("khal")) || "khal";
+  const r = await run(bin, ["list", "today"], { timeoutMs, maxOut: 20_000 });
+  if (r.code !== 0) throw new Error(`khal agenda failed: ${r.stderr || r.code}`);
+  return { ok: true, truncated: r.truncated, output: r.stdout };
 ```
 
 </details>
 
 #### 缺口
 
-- 缺少真实 khal 配置下的多日历、全天事件、跨时区和未来 31 天查询准确率与延迟。
-  **影响**：无法确认只读接线在每日计划中是否可靠，陈旧同步可能产生错误安排。
-  **进一步探讨**：用已知事件金标准覆盖全天/跨时区/多日历，比较 cal_today/cal_list 与 khal 原输出，记录遗漏、时区偏移和查询秒数。
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 实现有哪些可靠性取舍和可复用设计？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-只读边界、天数上限、超时和错误返回降低副作用，适合作为轻量集成样本；仍需用真实时区、多日历和异常输出验证。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
-```
-
-</details>
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 由贡献和限制能推导什么未验证方向？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-从已确认机制与关键限制可推导：可在保持只读的前提下增加“计划冲突解释”，明确引用事件来源和时区，并让任何写入建议仍由用户确认到外部日历工具。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
-```
-
-</details>
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-适合已经稳定使用 khal、只需代理读取日程的 WSL 用户试用；需要创建、修改、提醒或同步保证的人不适用。成功标准是 status 能暴露配置问题、today/list 与 khal 在事件数和时间上一致、陈旧同步被用户识别；出现时区偏移或遗漏时应停止将输出用于自动计划。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-40](https://github.com/173787247/dsh-wsl-cal/blob/675bc5cc7efaf79a171e205e4f570ac2b945bb13/index.js#L1-L40)
-
-固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-import { calStatus, khalList, khalAgenda, khalCalendars } from "./lib/cal.js";
-
-export const name = "dsh-wsl-cal";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-cal] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-
-  ctx.systemPrompt.section({
-    name: "tool:cal",
-    order: 140,
-    text: "dsh-wsl-cal lists events via khal (read-only). Prefer cal_today for daily check-ins. Configure khal calendars yourself. Does not create/modify events.",
-  });
-
-  ctx.tools.register({
-    name: "cal_status",
-    description: "Whether khal is on PATH; version + configured calendar count.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 10_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return calStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "cal status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cal status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "cal_calendars",
-    description: "List configured khal calendars (printcalendars). Read-only.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : (v.calendars || []).join("\n") || "(none)" },
-```
-
-</details>
-
-#### 缺口
-
-- 未核实多时区、全天事件与同步陈旧时的输出。
-  **影响**：错误日程可能影响后续计划，即使插件保持只读。
-  **进一步探讨**：构造带已知事件的测试 calendar，覆盖 DST/全天/跨区间并逐项比对 khal 与工具输出。
+- 无真实宿主、CLI 与改法对照
+  **影响**：实际接入与复核成本未知
+  **进一步探讨**：用合成日历测试缺配置、时区、过期及长输出
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

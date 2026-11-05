@@ -22,6 +22,8 @@
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
+| [DSH ComfyUI](#plugin-1340918386-root) | 从 DSH 调用本地或远程 ComfyUI，管理工作流参数和生成媒体。 | [Q04](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q04) 先同步试一次并检查真实队列。 |
+| [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
@@ -226,6 +228,38 @@
 > **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 提议操作票据与状态核对，须对照已有 job、txn 和 gate 做故障实验。
 
 [查看完整分析](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1340918386-root"></a>
+
+## [DSH ComfyUI](../../plugins/fandc520--dsh-comfyui/INSIGHT.md)
+
+[![GitHub ★ 161](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=161&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fandc520/dsh-comfyui) [![npm 30d 6,235](https://img.shields.io/static/v1?label=npm+30d&message=6%2C235&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-comfyui) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-comfyui)
+
+> **用途**：在 DSH 调用已有 ComfyUI 工作流的创作者可减少操作切换。
+
+> **亮点**：[Q01](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q01) 把参数和媒体结果连到会话。
+
+> **思考**：[Q03](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q03) 背景作业检查可能发生在远端提交之后。
+
+> **建议**：[Q05](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q05) 验证预检能否减少失败重试时的重复。
+
+[查看完整分析](../../plugins/fandc520--dsh-comfyui/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335287012-root"></a>
+
+## [DSH ImageGen](../../plugins/dickpy--dsh-imagegen/INSIGHT.md)
+
+[![GitHub ★ 168](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=168&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dickpy/dsh-imagegen) [![npm 30d 12,287](https://img.shields.io/static/v1?label=npm+30d&message=12%2C287&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dickpy/dsh-imagegen) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dickpy/dsh-imagegen)
+
+> **用途**：在 DSH 做图的用户可评估一体化生成和历史。
+
+> **亮点**：[Q01](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q01) 把渠道生成和作品记录串起来。
+
+> **思考**：[Q03](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q03) 指定渠道缺失会回退，对象同步是独立出站路径。
+
+> **建议**：[Q05](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q05) 核查显式渠道缺失提示能否减少错发。
+
+[查看完整分析](../../plugins/dickpy--dsh-imagegen/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1332212466-root"></a>
 
