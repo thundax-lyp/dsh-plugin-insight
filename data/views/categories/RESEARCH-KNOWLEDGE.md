@@ -84,7 +84,6 @@
 | [dsh-run2skill](#plugin-1339317132-root) | 从 DSH 会话提炼可审查的 Skill 提案，确认后按作用域发布。 | [Q03](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q03) 先显式生成项目草稿，核对下次用法后再扩展。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | 适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。 |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
-| [dsh-source-deck](#plugin-1422910686-root) | 在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。 | 在明确支持的RC环境用非敏感选型任务试用，先检查搜索/抓页/spawn可用，再核实候选URL和关键许可。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。 |
 | [dsh-tabbit](#plugin-1334076307-root) | 将 Tabbit 浏览器任务、网页抓取和标签提及接入 DSH，并为页面访问设置审批。 | [Q03](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q03) 先试独立实例中的合成页面。 |
 | [dsh-tavily-web](#plugin-1369301269-root) | 提供 Tavily 多密钥轮询检索工具，以及通过宿主 shell 的 curl 网页正文抓取工具。 | 在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。 |
@@ -96,6 +95,7 @@
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 在 WSL 中为 DSH 接入 Obscura 无头页面抓取、版本检查和 MCP 接线提示。 | 在隔离环境试非敏感公开网页，禁用私网和 eval；用静态请求或受控浏览器退出。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 让 WSL 中的 DSH Agent 搜索、读写 Windows Obsidian 笔记并打开桌面应用。 | [Q03](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q03) 先从复制库核路径、搜索与桌面打开。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
+| [dsh-zotero](#plugin-1334739972-root) | 让 DSH 通过本地 Zotero API 检索、读取、定位和导出文献，提供文献界面及可选审批写入。 | 先做现有副本库的只读试用，保持写入与外部学术组件关闭；核对原文和截断后再使用引用。 |
 | [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [Envoy](#plugin-1262941478-integrations-dsh-envoy-dsh) | DSH 子包注册 Envoy Skill、MCP 和链接读取提示，输出可定位资料。 | [Q03](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q03) 固定链接同预算人工对照。 |
@@ -136,6 +136,7 @@
 | [ReMe](#plugin-849121458-root) | 以文件记忆、搜索与模型演化为 Agent 提供可读长期记忆。 | [Q05](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q05) 以少量可纠正资料试默认检索和回读；冲突或回执不明时暂停演化。 |
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
+| [SourceDeck / 资料台](#plugin-1422910686-root) | 在 DSH 侧栏进行后台资料研究、候选筛选与对比，并将保留资料作为快照引用回对话。 | 固定RC后隔离试用，先核候选事实及草稿/附件引用，失败回到书签和手工引用。 |
 | [Stock Analysis Plugin](#plugin-1238532570-root) | 多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。 | 只在隔离 Profile 用已许可的固定样本核对复盘。 |
 | [StrataGate AgentMemory](#plugin-1329972465-root) | 为 DSH 提供分层会话记忆、事件检索、目录和提示词上下文。 | [Q03](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md#research-q03) 用无敏感信息的测试库。 |
 | [StudyHub](#plugin-1367673687-root) | 把讲义等资料生成有来源的练习题，支持复习、题库与音频转录。 | [Q04](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q04) 用可外发资料先生成少量题并人工核对。 |
@@ -1300,22 +1301,6 @@
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1422910686-root"></a>
-
-## [dsh-source-deck](../../plugins/archaofan--dsh-source-deck/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Archaofan/dsh-source-deck)
-
-> **用途**：面向技术选型和可复用开源实现调研者，把发现后的筛选理由、对比和引用交接集中在当前会话。
-
-> **亮点**：相对浏览器标签页加手工书签，插件把研究、人工保留/排除和引用到开发对话串成可回看的交接链。不可变快照保留当时筛选理由，输入桥防止异步插入覆盖用户新草稿，是比简单搜索列表更具体的增量；搜索和推理能力仍来自宿主工具及模型。[Q01](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q01)
-
-> **思考**：可复查的选择过程是否包含可信资料决定技术选型价值。scope-policy明确不自行取元数据，Agent提交stars、license等，Host主要检查类型和按策略给非阻断标记。快照保存的是当时内容，能阻止后续改判悄悄改变引用，却不能证明URL、许可证、活跃度或研究判断正确。不能把筛选排序界面当独立代码审计。[Q02](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q02)
-
-> **建议**：由不可变选择与未核实元数据的落差，可推导未验证的候选证据账本：每个判断保留获取URL、时间、版本和原始片段，区分模型推断与已核事实，引用时携带证据缺口。对同组真实与伪造候选比较用户选型准确率、复核时间和模型预算；若只是加表单但不能降低错误选择或负担过高，则否定其价值。[Q04](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q04)
-
-[查看完整分析](../../plugins/archaofan--dsh-source-deck/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1331846104-root"></a>
 
 ## [dsh-stock-market](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md)
@@ -1491,6 +1476,22 @@
 > **建议**：[Q05](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q05) 向调用者显示检索阶段，已知索引不一致时拒绝返回命中。用相同有答案和无答案查询比较错引率及有效召回，观察是否值得引入。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334739972-root"></a>
+
+## [dsh-zotero](../../plugins/vncntvx--dsh-zotero/INSIGHT.md)
+
+[![GitHub ★ 64](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=64&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Vncntvx/dsh-zotero) [![npm 30d 7,835](https://img.shields.io/static/v1?label=npm+30d&message=7%2C835&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-zotero) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-zotero)
+
+> **用途**：已有Zotero库的研究者可在对话中检索并回到条目和片段核对引用，最终论证仍由人负责。[Q01](../../plugins/vncntvx--dsh-zotero/INSIGHT.md#research-q01)
+
+> **亮点**：把检索、来源片段和稳定条目ref贯穿到DSH研究流程，有限预算与实例身份使结果范围可说明；不是新的文献数据库或模型推理能力。[Q01](../../plugins/vncntvx--dsh-zotero/INSIGHT.md#research-q01)
+
+> **思考**：BM25与预算可能漏掉关键无词面重合段落，空结果不等于文献无证据；单项批准和版本保护也不意味着批量写全库可回滚。[Q02](../../plugins/vncntvx--dsh-zotero/INSIGHT.md#research-q02) [Q03](../../plugins/vncntvx--dsh-zotero/INSIGHT.md#research-q03)
+
+> **建议**：让无匹配结果引导经用户确认的同义词扩展可能改善召回而不伪造证据；须比较漏检、错误引用与成本，尚未实现。[Q05](../../plugins/vncntvx--dsh-zotero/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/vncntvx--dsh-zotero/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333082908-root"></a>
 
@@ -2131,6 +2132,22 @@
 > **建议**：[Q05](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q05) 未验证假设是对账本抽样做独立语义回源，记录引用支持和origin错误，比较现有流程的漏判与新增成本；已有溯源提示不能重复算新贡献。
 
 [查看完整分析](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1422910686-root"></a>
+
+## [SourceDeck / 资料台](../../plugins/archaofan--dsh-source-deck/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Archaofan/dsh-source-deck)
+
+> **用途**：反复做开源技术选型的开发者，可在当前DSH会话筛选资料并引用到未发送草稿。
+
+> **亮点**：它把受限后台研究、主题内筛选和不可变引用连接起来，让选型决定有交接载体并保护原草稿。[Q01](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q01)、[Q02](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q02)、[Q03](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q03)
+
+> **思考**：工具受限和元数据类型合法不保证来源事实准确，scope策略只是提示标记；精确RC与多步存储也限制通用兼容和崩溃保证。[Q04](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q04)
+
+> **建议**：可在候选字段与引用快照保留固定证据定位、核查状态及未知项，用手工流程对照检验事实错误和核查负担；尚未实现。[Q05](../../plugins/archaofan--dsh-source-deck/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/archaofan--dsh-source-deck/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1238532570-root"></a>
 

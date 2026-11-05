@@ -34,6 +34,8 @@
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
+| [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中接入图像和异步视频生成渠道，统一管理任务、历史与画布，并支持本地拼接和代码渲染。 | 先观察并核清代码执行隔离和远端账单；不要把本地取消当止费，也不要把VM注释当安全验收。 |
+| [dsh-infinite-canvas](#plugin-1412882758-root) | 在 DSH 中以节点画布组织剧本、分镜、媒体生成和成片预览，并连接后期工具。 | 先保留原素材，单项目逐节点验证真实生成、任务恢复、媒体迁移和一个后期工程；记录费用与返工再决定是否扩大，当前观察。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
 | [dsh-media-studio](#plugin-1399694663-root) | 在 DSH 会话生成或发送图片与视频，并提供内联预览和后台推送。 | [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03) 先用可披露素材和测试模型核对同步，再检查后台是否可追踪。 |
@@ -430,6 +432,38 @@
 > **建议**：增加 per-request 预算、下载 allowlist 和结果 manifest（prompt、模型、费用、哈希），可把生成图从临时附件升级为可追溯产物。 详见[Q08](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/544244857--dsh-image2-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1420747575-root"></a>
+
+## [dsh-imagegen-video](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md)
+
+[![GitHub ★ 73](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=73&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/q253595422/dsh-imagegen-video) [![npm 30d 6,009](https://img.shields.io/static/v1?label=npm+30d&message=6%2C009&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video)
+
+> **用途**：反复生成和整理图片/短视频的DSH用户可研究统一渠道、任务和历史入口，成品质量仍需人工核对。[Q01](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q01)
+
+> **亮点**：把模型图像/视频结果汇入同一历史和创作工作流，并把视频远端ID用于恢复、将本地取消与远端状态分开；这是适配与流程组织，不是生成模型创新。[Q01](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q01) [Q03](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q03)
+
+> **思考**：当前视频远端取消全部不支持，而本地代码实际帧函数不受创建阶段vm timeout抢占；因此本地取消/超时显示不能被理解为停止计费或终止任意代码。[Q03](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q03) [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04)
+
+> **建议**：将远端任务账本和可强制终止的隔离渲染分开验收，可能降低重复付费与无法收口的恢复负担；须同故障轨迹比较，尚未实现或验证。[Q05](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1412882758-root"></a>
+
+## [dsh-infinite-canvas](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md)
+
+[![GitHub ★ 107](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=107&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NINKCH/dsh-infinite_canvas) [![npm 30d 8,312](https://img.shields.io/static/v1?label=npm+30d&message=8%2C312&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas)
+
+> **用途**：连续短片创作者在同一项目中维护设定、分镜与媒体引用，结合对话改节点并在画布查看结果。[Q01](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q01)
+
+> **亮点**：把创意、设定、节点引用、迭代生成和后期交接集中于DSH，减少手工搬运并保留可见中间状态；已查公共编排和代表分支。[Q01](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q01)
+
+> **思考**：单个运行槽读取即清空，触发不等于已运行，超时也不是失败；工作区文档与媒体分开，CLI工程交接未证明最终渲染，尚不支持无人值守采用。[Q02](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q02) [Q03](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q03)
+
+> **建议**：未验证方向是runId持久队列及消费确认，替代单槽与文档时间归因；断连和双触发若仍错绑或引入重扣费就否定。[Q03](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334395883-root"></a>
 

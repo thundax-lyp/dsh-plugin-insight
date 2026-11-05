@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[d9986d8](https://github.com/Amengclass/dsh-settings-hub/tree/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3)
+源码版本：[72910cc](https://github.com/Amengclass/dsh-settings-hub/tree/72910cca0f425f2de7cfd00d2d4423b8678bafd6)
 
 <!-- BEGIN META -->
-[![npm 30d 996](https://img.shields.io/static/v1?label=npm+30d&message=996&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub)
+[![npm 30d 1,265](https://img.shields.io/static/v1?label=npm+30d&message=1%2C265&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-settings-hub)
 <!-- END META -->
 
-> **功能**：将 DSH 第三方设置页归组、折叠并提供本地拖拽排序的设置导航插件
+> **功能**：将 DSH 第三方插件设置页聚合分组，并支持折叠及拖动保存导航顺序。
 
-> **亮点**：将真实slot设置页按插件聚合并保存拖拽排序；当前registrant优先、未知项保留fallback，比纯源码字符串猜测稳健，但不接管各页业务正确性。[Q01](#research-q01)
+> **亮点**：以真实slot为清单、归属失败保留其他组，将多个插件的设置导航组织起来，并保存组和子项顺序。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **主要限制**：shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；归属依赖异步deps和ID变化，慢API/共享依赖/profile fallback仍可错组。列出条目不能代替设置保存验收。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：接管外壳并不保证页面可操作，locale/store契约、profile回退及异步依赖图都可能影响实际设置流程。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 集中设置入口真实如何构建？](#detail-section-11)
-  - [Q02 · 不改宿主源码是否等于兼容负担低？](#detail-section-12)
-  - [Q03 · 动态归属能完全跟随安装与慢加载吗？](#detail-section-13)
-  - [Q04 · 权限与全周期负担有哪些？](#detail-section-14)
-  - [Q05 · 怎样采用，哪项增量设计能检验？](#detail-section-15)
+  - [Q01 · 聚合设置解决什么导航问题，贡献由谁实现？](#detail-section-11)
+  - [Q02 · 真实设置页如何归属、渲染和保存排序？](#detail-section-12)
+  - [Q03 · 哪些条件会让自动分组或页面兼容不成立？](#detail-section-13)
+  - [Q04 · 使用和故障恢复负担是什么，收益能量化吗？](#detail-section-14)
+  - [Q05 · 怎样试用才能检验其价值，可推广什么设计？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：多个第三方设置页导航分散的DSH用户，希望集中分组和保存排序。
+> **用途**：装有多个第三方设置页的 DSH 用户可在聚合导航中按插件查找和排序。
 
-原生设置导航逐项寻找；实际配置读写仍由原设置页和宿主承担。
+参照原生平铺设置导航，新增分组及本地顺序；业务配置继续由原组件处理。
 
 <a id="detail-section-3"></a>
 
@@ -52,66 +52,65 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 插件设置归组 | 收纳分散section | registrant优先，未知fallback，不保证唯一父 |
-| 本地排序 | 保存个人导航偏好 | localStorage吞错，双端不同源 |
-| shadow renderer | 继续打开原设置页 | 宿主kit变化需重验 |
+| 聚合设置导航 | 按插件查找真实设置页 | 依赖slot与原页面服务，未知归属回其他组 |
+| 分组与子项拖动 | 调整个人导航顺序 | 存储失败可能静默丢顺序 |
+| profile依赖图 | 关联子包与父插件 | 共享依赖首父归属，需核对实际profile |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| DSH webServer与client slots/locale/primitives | 启动必需 | Host依赖图和shadow | 宿主API变动要重验 |
-| profile真实package/node_modules布局 | 正确归属必需 | 识别父插件 | 探测失败回web可能错误 |
-| hostFace/store/locale能力 | 对应设置页必需 | 复现官方renderer kit | 缺失会throw并显示错误 |
-| localStorage | 排序持久必需 | 保存组和section顺序 | 失败吞掉，双端不共享 |
+| DSH web客户端slots/modules及UI包 | 必需 | 接管外壳与读取真实设置项 | 外壳或页面无法加载 |
+| webServer与正确profile清单 | 父包分组必需 | 读取安装依赖关系 | 分组回退或错误归属 |
+| 原页面locale/store等宿主能力 | 对应页面必需 | 重建页面kit | 特定设置页报错 |
+| localStorage | 排序持久化条件 | 保存组与子项顺序 | 写入失败无错误提示，顺序可能丢失 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户固定host/profile并装插件 | 不把宽0.1/0.2声明当验收 |
-| 2 | 用户核native与三类第三方设置页 | 页能读取/保存，不只标题 |
-| 3 | 用户拖动、重载并测试慢加载 | 顺序和归属一致，fallback仍可达 |
-| 4 | 用户分开验Web/Desktop | 缺页/不可写/误组则停shadow回原生 |
+| 接入 | 用户在可恢复profile加载并重启 | 真实设置页可找到 |
+| 验收 | 用户逐类页面读取并保存可逆项 | 原插件配置按预期生效 |
+| 排序 | 用户拖动组和子项并重载 | 次序保留，新增项可见 |
+| 恢复 | 用户停用组件并重启 | 原外壳可达并复核设置 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 本地依赖图/浏览器资源未知 | 核profile、host与多种设置页 | 没有模型调用不等于零维护 |
-| 持续使用 | 依赖扫描和UI内存未知 | 新插件/宿主更新后复核 | 节省导航时间未测 |
-| 失败恢复 | 重载/重扫资源未知 | 区分错归属与renderer缺能力 | 排序持久失败可丢失 |
-| 退出 | 存储资源未知 | 停shadow回原生，保留所需顺序记录 | 不修改原设置业务配置 |
+| 首次 | 本地包与依赖扫描资源未测 | 核profile和各类页面，耗时未知 | 无实际双端兼容验收 |
+| 持续 | API扫描、UI观察器资源未测 | 插件和宿主变更后复核 | 节省导航时间未知 |
+| 失败恢复 | 重启与排障资源未测 | 停shadow、记录顺序和核配置 | 排序静默失败可能需重排 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 统一导航 | live slot、分组、fallback与排序 | 净节时和复杂插件集合可用性 |
-| 动态归属 | registrant优先、ID变化重扫 | 慢deps/共享父/同ID来源变化 |
-| 页面操作 | 复制kit和错误边界 | 所有host/双端store/locale兼容 |
+| 聚合真实设置页 | 真实slot作为候选，未知归入其他组 | 全部页面操作与正确归属 |
+| 顺序持久化 | 拖动后写localStorage | 隐私模式或存储故障下保留 |
+| 维护便利 | 原插件业务组件复用 | 镜像renderer的长期维护净负担 |
 
-> **思考**：shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；归属依赖异步deps和ID变化，慢API/共享依赖/profile fallback仍可错组。列出条目不能代替设置保存验收。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：接管外壳并不保证页面可操作，locale/store契约、profile回退及异步依赖图都可能影响实际设置流程。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将真实slot设置页按插件聚合并保存拖拽排序；当前registrant优先、未知项保留fallback，比纯源码字符串猜测稳健，但不接管各页业务正确性。[Q01](#research-q01)
+> **亮点**：以真实slot为清单、归属失败保留其他组，将多个插件的设置导航组织起来，并保存组和子项顺序。[Q01](#research-q01)、[Q02](#research-q02)
 
-真实entries不发明ID、registrant优先及fallback保可达值得复用；复制renderer、异步变量无通知、依赖首父和profile回web是持续兼容代价。[Q01](#research-q01) [Q02](#research-q02) [Q03](#research-q03)
+[Q02](#research-q02) 真实条目优先与未知fallback可复用；[Q03](#research-q03) 复制renderer、首父依赖归属和异步变量不通知带来持续维护责任。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；归属依赖异步deps和ID变化，慢API/共享依赖/profile fallback仍可错组。列出条目不能代替设置保存验收。[Q02](#research-q02) [Q03](#research-q03)
+接管外壳并不保证页面可操作，locale/store契约、profile回退及异步依赖图都可能影响实际设置流程。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-多插件用户先固定环境核native和三类设置页保存、拖动与重载，Web/Desktop分开验；页不可操作、错归属误导或排序丢失就停shadow回原生导航。[Q05](#research-q05)
+先用固定插件集核对普通页和带locale/store页的保存、拖动与重载；不满足时停用聚合外壳，保留原设置入口。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +118,18 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 
 **核查状态**：已检查源码。
 
-真实slot聚合、排序和shadow为源码支持；宽双端兼容是作者声明，本轮未运行。归属/renderer风险按具体条件判断；稳定来源方案是假设。
+源码支持聚合与排序机制；真实节时和全设置页兼容未知，显式归属协议仍是未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根组件6个tracked文件统计；读完整Host入口、client归属、renderer、动态重扫、存储与shadow，package/README。未运行GUI，不据截图/宽声明称双端兼容。 本轮重新读取相同固定提交的关键入口、状态与失败分支，采用判断由这些材料复核。
-- 下一步：固定host/profile，以store/locale/children页、慢deps、同ID换归属、共享依赖、link路径与存储满矩阵，核可达/保存/正确分组和总排查分钟。
+- 边界：定向复核固定版本的Host、client归属、渲染、排序和失败路径；未运行目标或宿主，不把README宽兼容声明当验收。
+- 下一步：对照原导航验收固定插件集，覆盖共享依赖、慢API、带locale/store页和排序重载；记录失败而非仅截图。
 
 **分析版本**
 
 - **仓库**：[Amengclass/dsh-settings-hub](https://github.com/Amengclass/dsh-settings-hub)
-- **版本号**：0.1.3（[固定提交 d9986d8](https://github.com/Amengclass/dsh-settings-hub/tree/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.3（[固定提交 72910cc](https://github.com/Amengclass/dsh-settings-hub/tree/72910cca0f425f2de7cfd00d2d4423b8678bafd6)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +137,9 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 
 <a id="innovation"></a>
 
-未验证假设是稳定slot来源与异步完成通知替代字符串/定时归属，并显式共享父不确定性；用慢API、ID不变换来源、延迟模块和共享依赖比较错组/漏页/排查分钟，无改善即否定。[Q05](#research-q05)
+可探索显式、可订阅的父插件归属元数据，替代apply字符串猜测和一次延迟重扫；须以相同插件集的误归属与维护负担对照证伪。[Q05](#research-q05)
 
-固定host/profile，以store/locale/children页、慢deps、同ID换归属、共享依赖、link路径与存储满矩阵，核可达/保存/正确分组和总排查分钟。
+对照原导航验收固定插件集，覆盖共享依赖、慢API、带locale/store页和排序重载；记录失败而非仅截图。
 
 <a id="detail-section-9"></a>
 
@@ -149,45 +148,47 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 3 | 411 | — | — | 2355 |
-| .js | source | 2 | 1165 | 923 | 192 | — |
+| .md | source | 3 | 424 | — | — | 2599 |
+| .js | source | 2 | 1216 | 963 | 203 | — |
 | .cjs | source | 1 | 124 | 88 | 17 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-28T03%3A54%3A21.981Z..2026-10-28T03%3A54%3A21.981Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Amengclass/dsh-settings-hub/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z)
 
 
 
-统计日期：2026-10-28。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：统一设置导航能否保留可达、可操作与正确动态归属，维护代价是什么？
+**插件研究总目标**：分组导航能否在不丢失真实设置页和配置能力的前提下减少多插件查找负担？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 集中设置入口真实如何构建？
+### Q01 · 聚合设置解决什么导航问题，贡献由谁实现？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向装了多个第三方插件、设置导航分散的DSH用户，合格结果是所有真实设置页仍可达且可编辑，不是“扩展设置”标题出现。client shadow sidebar.settings重建外壳，读取实际settings.section entries，排除固定native IDs。归属最先用包名形态registrant和安装依赖图；未知才扫描apply源码中的id/string/token，最终放“其他插件”，不凭字符串发明section。相对手动滚动原生导航，贡献是插件分组、折叠与拖动排序；配置业务逻辑仍属原插件/宿主。主包0.1.3是DSH原生plugin，Host读profile依赖图，client渲染与排序。
+面向已安装多个第三方设置页、需要反复寻找和组织设置的 DSH 用户。合格结果是原生和第三方真实设置页都可达、能正常保存，并能保留用户顺序，不能只验收出现“扩展设置”标题。组件读取真实 settings.section 的获胜项，再按插件分组、折叠与排序；相对在原列表滚动寻找，增量是导航组织。原插件的配置读写、宿主服务和权限仍由原插件及宿主实现，不能把它们归为本组件贡献。对插件很少的用户，新增分组层级可能没有优势。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[README.md:20-28](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/README.md#L20-L28)
+**依据 1 · 作者声明**：[README.md:20-28](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/README.md#L20-L28)
 
-作者目标与shadow宽兼容声明。
+作者描述聚合、动态发现与排序。
 
 ```text
 ## Highlights
@@ -201,140 +202,46 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 - **双端兼容** — 同时支持 `dsh web` 与 DSH 桌面应用（DSH 0.1.x / 0.2.x）
 ```
 
-**依据 2 · 源码核查**：[lib/client.js:367-418](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L367-L418)
+**依据 2 · 源码核查**：[lib/client.js:1063-1099](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L1063-L1099)
 
-真实entries、registrant优先及归组。
-
-<details>
-<summary>查看原文（52行）</summary>
-
-```text
-		function readSectionEntries() {
-			try {
-				const es = pluginCtx?.slots?.entriesOfSlot?.("settings.section") ?? [];
-				return es
-					.map((e) => ({ id: e.options?.id ?? "", registrant: e.registrant }))
-					.filter((e) => e.id && !NATIVE_IDS.has(e.id));
-			} catch {
-				return [];
-			}
-		}
-
-		/** A registrant worth naming a group after (`dsh-market`, not minified `Gb`). */
-		function pkgLikeRegistrant(registrant) {
-			return typeof registrant === "string"
-				&& registrant.length >= 4
-				&& /[-/]/.test(registrant)
-				&& /^[@\w][\w./-]*$/.test(registrant);
-		}
-
-		/**
-		 * Group the sections that actually exist in the settings.section slot by
-		 * the plugin that registered them.
-		 *
-		 * Section ids come from the live slot; a module scan is only ever used to
-		 * *attribute* those ids to a package — never to invent ids. The earlier
-		 * version harvested every `id:` literal out of any module that mentioned
-		 * `settings.section`. A module registers several slots, so that collected
-		 * ids belonging to other slots; `flatItems` then looked them up in the real
-		 * row list, missed, and dropped them, leaving a group header with nothing
-		 * under it.
-		 *
-		 * Attribution runs strongest first: the slot entry's own `registrant` when
-		 * it names a package, then a module whose `apply()` inlines
-		 * `id: "<section>"`, then a module whose `apply()` merely mentions the id.
-		 * Anything still unclaimed ships under a fallback group — a section the
-		 * user installed must never silently vanish.
-		 */
-		function buildPluginSectionMap(entries) {
-			const claimed = new Set();
-			const groups = {};
-			const add = (name, id) => {
-				if (!id || claimed.has(id)) return;
-				claimed.add(id);
-				if (!groups[name]) groups[name] = [];
-				groups[name].push(id);
-			};
-			const getParent = buildParentMap();
-
-			for (const e of entries) {
-				if (pkgLikeRegistrant(e.registrant)) {
-					add(groupNameOf(getParent(e.registrant)), e.id);
-				}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/client.js:421-473](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L421-L473)
-
-源码扫描仅归属fallback，未知仍展示。
+真实slot获胜项和shadow接管。
 
 <details>
-<summary>查看原文（53行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
-			const cache = pluginCtx?.modules?.loadCache;
-			const sectionMods = [];
-			const allMods = [];
-			if (cache) {
-				for (const [modId, mod] of cache) {
-					if (modId.startsWith('@deepseek-ai/')) continue;
-					if (!mod || !mod.exports || typeof mod.exports.apply !== 'function') continue;
-					const src = String(mod.exports.apply);
-					allMods.push([modId, src]);
-					if (src.includes('settings.section')) sectionMods.push([modId, src]);
-				}
-			}
-			const strong = (src, id) => src.includes(`id: "${id}"`) || src.includes(`id: '${id}'`)
-				|| src.includes(`id:"${id}"`) || src.includes(`id:'${id}'`);
-			const mentions = (src, id) => src.includes(`"${id}"`) || src.includes(`'${id}'`);
-			// `id:` inside a settings-section module is a near-certain hit; a bare
-			// literal anywhere else is only a hint, and newer DSH moved the
-			// registration out of `apply()` entirely, so that hint is all some
-			// sections leave behind.
-			for (const test of [[strong, sectionMods], [mentions, allMods]]) {
-				const [probe, candidates] = test;
-				for (const e of entries) {
-					if (claimed.has(e.id)) continue;
-					for (const [modId, src] of candidates) {
-						if (probe(src, e.id)) {
-							add(groupNameOf(getParent(modId)), e.id);
-							break;
-						}
-					}
-				}
-			}
-
-			// Last resort before the fallback bucket: when DSH stops inlining the
-			// registration, the only trace left is the section id itself. Match it
-			// against module ids token-wise, requiring *every* section token to line
-			// up (`archived-sessions` → `dsh-session-archive`, `opencode-go` →
-			// `dsh-opencode-go`). Requiring all tokens keeps this from grabbing a
-			// module that only shares a generic word.
-			const tokensOf = (s) => s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
-			const tokEq = (a, b) => a === b || (a.length >= 3 && b.startsWith(a)) || (b.length >= 3 && a.startsWith(b));
-			for (const e of entries) {
-				if (claimed.has(e.id)) continue;
-				const st = tokensOf(e.id);
-				if (st.length === 0) continue;
-				const hit = allMods.find(([modId]) => {
-					const mt = tokensOf(modId);
-					return st.every((tk) => mt.some((m) => tokEq(tk, m)));
-				});
-				if (hit) add(groupNameOf(getParent(hit[0])), e.id);
-			}
-
-			for (const e of entries) add("其他插件", e.id);
-			return groups;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/client.js:1044-1048](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L1044-L1048)
-
-真实sidebar.settings接管。
-
-```text
+		const inject = ["slots", "modules"];
+		function apply(ctx) {
+			pluginCtx = ctx;
+			ensureStyles();
+			fetchDepMap();
+			// uSES feed over the settings.section WINNERS (entriesOfSlot): one row
+			// per cell id, sorted by order. Native ids stay in the feed — HubPanel
+			// splits them out.
+			let rowsVersion = -1;
+			let rows = [];
+			const shellInjected = () => ({
+				ctx,
+				hooks: {
+					sections: {
+						getSnapshot: () => {
+							const version = ctx.slots.getVersion("settings.section");
+							if (version !== rowsVersion) {
+								rowsVersion = version;
+								rows = ctx.slots.entriesOfSlot("settings.section")
+									.map((e) => ({
+										id: e.options.id ?? "",
+										order: e.options.order ?? 0,
+										label: slotsPkg.resolveSlotLabel(e.options.label) ?? "",
+									}))
+									.sort((a, b) => a.order - b.order);
+							}
+							return rows;
+						},
+						subscribe: (listener) => ctx.slots.subscribe("settings.section", listener),
+					},
+				},
+			});
 			ctx.slots.inject("sidebar.settings", () => ctx.slots.register({
 				name: "sidebar.settings",
 				priority: -100, // lowest priority renders → shadows the shipped shell
@@ -342,26 +249,28 @@ shadow重建renderer协议，hostFace/store/locale缺失会让页不可操作；
 			}, HubRoot));
 ```
 
+</details>
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 不改宿主源码是否等于兼容负担低？
+### Q02 · 真实设置页如何归属、渲染和保存排序？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-不等于。renderEntry重新构造官方kit：hostFace存在才提供会话/工作区hooks，有locale却无face直接throw，有store却无storeOf也throw，再把inject hooks适配为use<Name>。EntryBoundary可以隔离组件错误，但不能让缺少host能力的设置页恢复可操作。client还重建子slot dispatch、locale和observable hooks，说明shadow是复制renderer协议而不是仅换导航标签。原生shell仍注册、卸载可释放shadow，是可行退路；但官方renderer变化会持续产生适配责任。README“双端0.1.x/0.2.x”属于宽声明，本轮没有对应矩阵，不能据此说所有设置页保持原样。
+客户端以较低优先级注册 sidebar.settings 外壳并订阅 settings.section 版本，始终从真实条目生成行。归属优先使用包名形态 registrant，通过Host依赖图映射父包；再从已加载模块apply源码匹配id或词元，未认出归到“其他插件”，而不凭字符串发明设置页。分组和子项顺序存在localStorage，拖动结束才写回。页面通过自行构造的kit传递locale、store、hooks与children，再调用原entry.component；错误边界可隔离组件渲染异常，但kit构造期间的错误在外层处理。这个设计保留原配置逻辑，却承担镜像宿主renderer契约的维护责任。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/client.js:194-239](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L194-L239)
+**依据 1 · 源码核查**：[lib/client.js:194-240](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L194-L240)
 
-hostFace/store/locale/inject真实适配及错误分支。
+自建kit和entry渲染链。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
 		function renderEntry(ctx, slotKey, entry, ownerProps) {
@@ -410,313 +319,19 @@ hostFace/store/locale/inject真实适配及错误分支。
 				EntryBoundary,
 				{ slotKey, children: jsxRuntime.jsx(entry.component, { ...kit, ...injected, ...ownerProps }) },
 				entry,
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/client.js:1044-1048](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L1044-L1048)
-
-shadow接管而非编辑宿主文件。
-
-```text
-			ctx.slots.inject("sidebar.settings", () => ctx.slots.register({
-				name: "sidebar.settings",
-				priority: -100, // lowest priority renders → shadows the shipped shell
-				inject: shellInjected,
-			}, HubRoot));
-```
-
-#### 缺口
-
-- 依赖store、locale、children的第三方页在各host和Desktop是否可操作未实机验收。
-  **影响**：设置页能列出不证明其表单能读写；可能需退回原生shell。
-  **进一步探讨**：在精确host上选三类有store/locale/children页逐一保存/重载；任一缺能力就停用shadow并用原生设置。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 动态归属能完全跟随安装与慢加载吗？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
-
-#### 完整回答
-
-当前会随liveRowKey变化重算，并额外500ms重扫，因此不能沿用“仅一次定时重扫”判断。限制是liveRowKey只由section IDs组成；同一ID集合的registrant/模块归属改变不会单独触发effect。fetchDepMap异步修改模块变量，没有显式setState重算，慢于额外500ms时父归属可能保持fallback到下一次row变化或重载。Host collectDeps对共享依赖只保留首次父插件，不代表真实唯一所有者；profile从import路径向上五层探测，失败回web profile，link安装或非标准布局可能拿错图。这些多为归属可靠性风险而非条目必丢：live entries与“其他插件”保留了可达性。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/client.js:326-342](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L326-L342)
-
-异步fetch只赋变量和parentMap。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-		async function fetchDepMap() {
-			try {
-				const r = await fetch("/api/dsh-settings-hub/deps");
-				if (!r.ok) return;
-				const d = await r.json();
-				if (Array.isArray(d.installedPlugins)) INSTALLED_PLUGINS = d.installedPlugins;
-				if (d.depMap && typeof d.depMap === "object") DEP_MAP = d.depMap;
-			} catch {}
-		}
-// __DEP_MAP_END__
-
-		function buildParentMap() {
-			const installed = new Set(INSTALLED_PLUGINS);
-			return function getParent(modId) {
-				if (installed.has(modId)) return modId;
-				return DEP_MAP[modId] || modId;
-			};
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/client.js:625-643](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L625-L643)
-
-依IDs触发重算及500ms补扫。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-				return () => { observer.disconnect(); removeOverlay(); };
-			}, []);
-			const nativeRows = rows.filter((r) => NATIVE_IDS.has(r.id));
-			const pluginRows = rows.filter((r) => !NATIVE_IDS.has(r.id));
-			// Live section ids as a stable key: the scan below re-runs when the slot's
-			// contents change (plugins load after the first render).
-			const liveRowKey = pluginRows.map((r) => r.id).join("|");
-			const [pluginSectionMap, setPluginSectionMap] = react.useState(
-				() => buildPluginSectionMap(readSectionEntries()),
 			);
-			react.useEffect(() => {
-				// Re-scan when the row set changes, and once more after mount in case
-				// late-loading plugins materialise their modules after the slot fills.
-				setPluginSectionMap(buildPluginSectionMap(readSectionEntries()));
-				const timer = setTimeout(() => {
-					setPluginSectionMap(buildPluginSectionMap(readSectionEntries()));
-				}, 500);
-				return () => clearTimeout(timer);
-			}, [liveRowKey]);
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:25-52](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/index.js#L25-L52)
+**依据 2 · 源码核查**：[lib/client.js:404-473](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L404-L473)
 
-递归依赖与first-parent语义。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-function collectDeps(pkgName, visited, nodeModulesDir) {
-  if (visited.has(pkgName)) return;
-  visited.add(pkgName);
-  const pkgJsonPath = path.join(nodeModulesDir, pkgName, "package.json");
-  const pkg = readJson(pkgJsonPath);
-  if (!pkg || !pkg.dependencies) return;
-  for (const dep of Object.keys(pkg.dependencies)) {
-    collectDeps(dep, visited, nodeModulesDir);
-  }
-}
-
-function buildDepMap(profileDir) {
-  const profilePkg = readJson(path.join(profileDir, "package.json"));
-  if (!profilePkg || !profilePkg.dependencies) {
-    return { installedPlugins: [], depMap: {} };
-  }
-  const installedPlugins = Object.keys(profilePkg.dependencies);
-  const nodeModulesDir = path.join(profileDir, "node_modules");
-  const depMap = {};
-  for (const plugin of installedPlugins) {
-    const visited = new Set();
-    collectDeps(plugin, visited, nodeModulesDir);
-    for (const dep of visited) {
-      if (dep === plugin) continue;
-      if (!depMap[dep]) depMap[dep] = plugin;
-    }
-  }
-  return { installedPlugins, depMap };
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:65-77](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/index.js#L65-L77)
-
-profile有限向上探测与web fallback。
+归属顺序与未知fallback。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（70行）</summary>
 
 ```text
-function resolveProfileDir() {
-  let dir = path.dirname(fileURLToPath(import.meta.url));
-  for (let i = 0; i < 5; i++) {
-    const pkg = readJson(path.join(dir, "package.json"));
-    if (pkg && typeof pkg.name === "string" && pkg.name.startsWith("dsh-profile-")) {
-      return dir;
-    }
-    const parent = path.dirname(dir);
-    if (parent === dir) break;
-    dir = parent;
-  }
-  // Fall back to the web profile when running outside an installed profile.
-  return path.join(os.homedir(), ".dsh", "profiles", "web");
-```
-
-</details>
-
-#### 缺口
-
-- 慢API、同ID改归属与非标准profile下实际分组未测。
-  **影响**：不能保证“自动出现且正确父归属”全部成立；使用者可能需重载或手工识别。
-  **进一步探讨**：延迟deps超过500ms、共享依赖两父插件和link路径三类fixture核分组；错误归属不能靠重命名假装修好。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 权限与全周期负担有哪些？
-
-**研究主题**：效果与总成本、依赖、兼容与流程
-
-#### 完整回答
-
-启动依赖宿主webServer、client slots/locale/primitives及renderer约定；并不只是Node18。Host deps接口GET输出安装插件与依赖映射，CORS=*且handler未见owner检查，需核外层准入；它是包清单暴露，不是设置写入接口，但不能因只读就忽略身份。排序用localStorage、失败吞掉，存储满可能仅本轮排序有效，Web/Desktop来源不同不自动同步。用户首次要核native与多插件页，持续要适配新增/更新插件，失败需区分归属错误和renderer能力错误。无新增模型调用不等于维护零成本；没有导航耗时对照不能称节时。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:80-108](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/index.js#L80-L108)
-
-GET/CORS和实际deps路由无内建admit。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-function writeJson(res, status, data) {
-  const body = JSON.stringify(data);
-  res.writeHead(status, {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-    "Cache-Control": "no-cache",
-  });
-  res.end(body);
-}
-
-export function apply(ctx, config) {
-  ctx.inject(["webServer"], (hostCtx) => {
-    hostCtx.effect(() => {
-      const route = hostCtx.webServer.register({
-        kind: "exact",
-        path: "/api/dsh-settings-hub/deps",
-        handler: (req, res) => {
-          if (req.method !== "GET") {
-            res.writeHead(405);
-            res.end("method not allowed");
-            return;
-          }
-          const profileDir = config?.profileDirectory ?? resolveProfileDir();
-          const result = buildDepMap(profileDir);
-          writeJson(res, 200, result);
-        },
-      });
-      return () => route();
-    }, "dsh-settings-hub: deps api");
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/client.js:306-316](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L306-L316)
-
-排序保存吞错。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-		function loadGroupOrder() {
-			try { return JSON.parse(localStorage.getItem(GROUP_ORDER_KEY)) ?? []; } catch { return []; }
-		}
-		function saveGroupOrder(groups) {
-			try { localStorage.setItem(GROUP_ORDER_KEY, JSON.stringify(groups)); } catch {}
-		}
-		function loadSectionOrder() {
-			try { return JSON.parse(localStorage.getItem(SECTION_ORDER_KEY)) ?? {}; } catch { return {}; }
-		}
-		function saveSectionOrder(obj) {
-			try { localStorage.setItem(SECTION_ORDER_KEY, JSON.stringify(obj)); } catch {}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[package.json:29-44](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/package.json#L29-L44)
-
-client实际注入依赖。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-slots",
-        "@deepseek-ai/dsh-client-ui-primitives"
-      ],
-      "platform": "web"
-    }
-  },
-  "license": "MIT",
-  "keywords": [
-    "dsh-plugin",
-    "deepseek-harness",
-```
-
-</details>
-
-#### 缺口
-
-- Host外层准入、排序持久失败可见性与双端存储实测未知。
-  **影响**：远程共享部署和重要设置操作前需额外核查，退出需保留原生入口。
-  **进一步探讨**：隔离profile从未登录来源读deps，模拟localStorage满并重载，Web/Desktop分别验收。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 怎样采用，哪项增量设计能检验？
-
-**研究主题**：采用判断、新假设与验证
-
-#### 完整回答
-
-多插件设置确实分散且愿做兼容核查的用户可小范围试用，先固定host，核native与三个不同依赖类型设置页、拖动保存与重载，再分开验Web/Desktop。若页只显示标题却不能编辑、错误归属误导操作或刷新排序丢失，停用shadow回原生设置；不需要改原插件配置来挽救导航。未验证假设是使用稳定slot来源元数据和异步deps完成通知，替代同ID集合的源码字符串猜归属，并对共享依赖呈现不确定父项；这样可能减少错误分组和定时竞态。故障集包括慢API、延迟模块、共享依赖、ID不变换来源，比较错归属/漏页/人工排查分钟；无改善或新增host耦合更重则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/client.js:398-473](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L398-L473)
-
-当前强弱归属链支持元数据改进假设。
-
-<details>
-<summary>查看原文（76行）</summary>
-
-```text
-		 * Attribution runs strongest first: the slot entry's own `registrant` when
-		 * it names a package, then a module whose `apply()` inlines
-		 * `id: "<section>"`, then a module whose `apply()` merely mentions the id.
-		 * Anything still unclaimed ships under a fallback group — a section the
-		 * user installed must never silently vanish.
-		 */
 		function buildPluginSectionMap(entries) {
 			const claimed = new Set();
 			const groups = {};
@@ -791,11 +406,269 @@ client实际注入依赖。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/client.js:635-643](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/lib/client.js#L635-L643)
+**依据 3 · 源码核查**：[lib/client.js:304-316](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L304-L316)
 
-异步通知可替代固定延迟补扫。
+排序存储异常被吞。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
+		const GROUP_ORDER_KEY = 'dsh-settings-hub-group-order';
+		const SECTION_ORDER_KEY = 'dsh-settings-hub-section-order';
+		function loadGroupOrder() {
+			try { return JSON.parse(localStorage.getItem(GROUP_ORDER_KEY)) ?? []; } catch { return []; }
+		}
+		function saveGroupOrder(groups) {
+			try { localStorage.setItem(GROUP_ORDER_KEY, JSON.stringify(groups)); } catch {}
+		}
+		function loadSectionOrder() {
+			try { return JSON.parse(localStorage.getItem(SECTION_ORDER_KEY)) ?? {}; } catch { return {}; }
+		}
+		function saveSectionOrder(obj) {
+			try { localStorage.setItem(SECTION_ORDER_KEY, JSON.stringify(obj)); } catch {}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/client.js:740-778](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L740-L778)
+
+拖动写回真实状态。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+				if (ref.draggingId && ref.dragOverId && ref.draggingId !== ref.dragOverId) {
+					const isGroupDrag = ref.draggingId.startsWith("__group__");
+					if (isGroupDrag) {
+						const pluginName = ref.draggingId.slice(9);
+						const target = ref.flatItems.find((x) => x.id === ref.dragOverId);
+						const fromIdx = ref.groupOrder.indexOf(pluginName);
+						const toIdx = target ? ref.groupOrder.indexOf(target.pluginName) : -1;
+						if (fromIdx !== -1 && toIdx !== -1) {
+							// `dragOverAfter` comes from the same pointer/midpoint test
+							// that drew the line, so the result always matches it.
+							let insertIdx = toIdx + (ref.dragOverAfter ? 1 : 0);
+							const newOrder = [...ref.groupOrder];
+							newOrder.splice(fromIdx, 1);
+							if (fromIdx < insertIdx) insertIdx -= 1;
+							newOrder.splice(insertIdx, 0, pluginName);
+							if (newOrder.some((g, i) => g !== ref.groupOrder[i])) {
+								saveGroupOrder(newOrder);
+								setGroupOrder(newOrder);
+							}
+						}
+					} else {
+						const draggedItem = ref.flatItems.find((x) => x.id === ref.draggingId);
+						if (draggedItem && draggedItem.pluginName) {
+							const g = draggedItem.pluginName;
+							const secIds = [...(ref.sectionOrder[g] || [])];
+							const fromIdx = secIds.indexOf(ref.draggingId);
+							const overItem = ref.flatItems.find((x) => x.id === ref.dragOverId);
+							const toIdx = overItem && overItem.type === "section" && overItem.pluginName === g
+								? secIds.indexOf(ref.dragOverId)
+								: -1;
+							if (fromIdx !== -1 && toIdx !== -1) {
+								let insertIdx = toIdx + (ref.dragOverAfter ? 1 : 0);
+								secIds.splice(fromIdx, 1);
+								if (fromIdx < insertIdx) insertIdx -= 1;
+								secIds.splice(insertIdx, 0, ref.draggingId);
+								if (secIds.some((id, i) => id !== (ref.sectionOrder[g] || [])[i])) {
+									const newSectionOrder = { ...ref.sectionOrder, [g]: secIds };
+									saveSectionOrder(newSectionOrder);
+									setSectionOrder(newSectionOrder);
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 哪些条件会让自动分组或页面兼容不成立？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+Host 从包所在位置向上最多五层找dsh-profile-*，找不到回退 ~/.dsh/profiles/web；本地link、特殊包布局或desktop安装应核对实际profileDirectory，否则分组可能读错安装集合。依赖图把共享子依赖分给首次遇到的父包，不能证明唯一归属。fetchDepMap异步改变模块变量但没有显式通知，界面只在行ID变化和一次500ms后重扫，慢接口可能要重开页面才看到正确父分组。更关键的是hostFace缺失时普通页可降级，但声明locale/store的页会抛错，出现分组不代表该页能操作。依赖API设置Access-Control-Allow-Origin:*，本入口未调用connection请求拒绝；实际暴露仍受宿主前置网络策略影响，源码不足以断言已被外站读取，但这类安装清单接口不能当私密通道。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:36-77](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/index.js#L36-L77)
+
+首次父依赖和profile解析回退。
+
+<details>
+<summary>查看原文（42行）</summary>
+
+```text
+function buildDepMap(profileDir) {
+  const profilePkg = readJson(path.join(profileDir, "package.json"));
+  if (!profilePkg || !profilePkg.dependencies) {
+    return { installedPlugins: [], depMap: {} };
+  }
+  const installedPlugins = Object.keys(profilePkg.dependencies);
+  const nodeModulesDir = path.join(profileDir, "node_modules");
+  const depMap = {};
+  for (const plugin of installedPlugins) {
+    const visited = new Set();
+    collectDeps(plugin, visited, nodeModulesDir);
+    for (const dep of visited) {
+      if (dep === plugin) continue;
+      if (!depMap[dep]) depMap[dep] = plugin;
+    }
+  }
+  return { installedPlugins, depMap };
+}
+
+/**
+ * Locate the profile this copy of the plugin is installed into.
+ *
+ * The web UI and the desktop app each boot their own profile
+ * (`~/.dsh/profiles/web` and `~/.dsh/profiles/desktop`), and they carry
+ * different plugin sets. Hardcoding one of them made the hub report the
+ * wrong dependency tree whenever the other profile booted. So walk up from
+ * this file until the enclosing profile's package.json shows up — the
+ * profile root is named `dsh-profile-*`.
+ */
+function resolveProfileDir() {
+  let dir = path.dirname(fileURLToPath(import.meta.url));
+  for (let i = 0; i < 5; i++) {
+    const pkg = readJson(path.join(dir, "package.json"));
+    if (pkg && typeof pkg.name === "string" && pkg.name.startsWith("dsh-profile-")) {
+      return dir;
+    }
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+  // Fall back to the web profile when running outside an installed profile.
+  return path.join(os.homedir(), ".dsh", "profiles", "web");
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:80-108](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/index.js#L80-L108)
+
+依赖API内容与跨域头，未见本入口信任检查。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+function writeJson(res, status, data) {
+  const body = JSON.stringify(data);
+  res.writeHead(status, {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "no-cache",
+  });
+  res.end(body);
+}
+
+export function apply(ctx, config) {
+  ctx.inject(["webServer"], (hostCtx) => {
+    hostCtx.effect(() => {
+      const route = hostCtx.webServer.register({
+        kind: "exact",
+        path: "/api/dsh-settings-hub/deps",
+        handler: (req, res) => {
+          if (req.method !== "GET") {
+            res.writeHead(405);
+            res.end("method not allowed");
+            return;
+          }
+          const profileDir = config?.profileDirectory ?? resolveProfileDir();
+          const result = buildDepMap(profileDir);
+          writeJson(res, 200, result);
+        },
+      });
+      return () => route();
+    }, "dsh-settings-hub: deps api");
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/client.js:326-342](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L326-L342)
+
+异步依赖图仅写模块变量。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+		async function fetchDepMap() {
+			try {
+				const r = await fetch("/api/dsh-settings-hub/deps");
+				if (!r.ok) return;
+				const d = await r.json();
+				if (Array.isArray(d.installedPlugins)) INSTALLED_PLUGINS = d.installedPlugins;
+				if (d.depMap && typeof d.depMap === "object") DEP_MAP = d.depMap;
+			} catch {}
+		}
+// __DEP_MAP_END__
+
+		function buildParentMap() {
+			const installed = new Set(INSTALLED_PLUGINS);
+			return function getParent(modId) {
+				if (installed.has(modId)) return modId;
+				return DEP_MAP[modId] || modId;
+			};
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/client.js:194-219](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L194-L219)
+
+locale/store依赖明确失败。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+		function renderEntry(ctx, slotKey, entry, ownerProps) {
+			// hostFace() is provided by @deepseek-ai/dsh-client-runtime, which the
+			// desktop shell (DSH 0.2.x) no longer ships — it moved to
+			// dsh-client-ui-renderer. Sections that need nothing from the host face
+			// (the common case) still render fine on an empty kit, so degrade
+			// instead of crashing the whole settings shell.
+			const host = typeof ctx.slots.hostFace === "function" ? ctx.slots.hostFace() : undefined;
+			const kit = {};
+			if (host) {
+				kit.useSessions = host.sessions ? observableHookOf(host.sessions.list) : undefined;
+				kit.useWorkspaces = host.workspaces ? observableHookOf(host.workspaces.list) : undefined;
+			}
+			if (entry.locale !== undefined) {
+				const face = host?.locale;
+				if (face === undefined) throw new Error(`[dsh-settings-hub] entry locale '${entry.locale}' but no locale face installed`);
+				kit.t = makeLocaleSeat(face, entry.locale);
+			}
+			if (entry.children !== undefined) {
+				kit.renderSlot = boundRenderSlotOf(ctx, entry);
+			}
+			// Store seat: resolve the instance (root scope → ROOT_INSTANCE_KEY)
+			// and expose the uSES pair + actions, as standardKit does.
+			if (entry.store !== undefined) {
+				const store = host?.storeOf?.(entry, "root");
+				if (!store) throw new Error(`[dsh-settings-hub] entry store but no store face installed`);
+				kit.useStore = observableHookOf(store);
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/client.js:648-659](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L648-L659)
+
+ID变化和500ms重扫边界。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+			const [pluginSectionMap, setPluginSectionMap] = react.useState(
+				() => buildPluginSectionMap(readSectionEntries()),
+			);
 			react.useEffect(() => {
 				// Re-scan when the row set changes, and once more after mount in case
 				// late-loading plugins materialise their modules after the slot fills.
@@ -807,23 +680,237 @@ client实际注入依赖。
 			}, [liveRowKey]);
 ```
 
-**依据 3 · 源码核查**：[index.js:44-49](https://github.com/Amengclass/dsh-settings-hub/blob/d9986d8637c550ac5ebfd0fc545b7afaecf7f7d3/index.js#L44-L49)
+</details>
 
-共享依赖首父规则的反例。
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 使用和故障恢复负担是什么，收益能量化吗？
+
+**研究主题**：依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+需要DSH web客户端的slots/modules及locale、UI基础包，Host需webServer和可读的profile包清单与node_modules；第三方设置页还各自依赖自己的服务。首次用户应核对profile，并逐页试保存、切换、重载和拖动；持续使用在宿主或插件更新后复核页面契约。排序读写失败会静默回默认或不持久，原插件业务配置不是由本组件存储。失败时停用shadow并重启回原设置壳，必要时记录自己的顺序；不能把停用解释为已证实所有页面无损恢复。依赖扫描和浏览器观察器资源、导航节时与维护耗时均没有计量。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:28-39](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/package.json#L28-L39)
+
+客户端包与web平台声明。
+
+<details>
+<summary>查看原文（12行）</summary>
 
 ```text
-  for (const plugin of installedPlugins) {
-    const visited = new Set();
-    collectDeps(plugin, visited, nodeModulesDir);
-    for (const dep of visited) {
-      if (dep === plugin) continue;
-      if (!depMap[dep]) depMap[dep] = plugin;
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ],
+      "platform": "web"
+    }
 ```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:90-108](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/index.js#L90-L108)
+
+Host路由与依赖图。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export function apply(ctx, config) {
+  ctx.inject(["webServer"], (hostCtx) => {
+    hostCtx.effect(() => {
+      const route = hostCtx.webServer.register({
+        kind: "exact",
+        path: "/api/dsh-settings-hub/deps",
+        handler: (req, res) => {
+          if (req.method !== "GET") {
+            res.writeHead(405);
+            res.end("method not allowed");
+            return;
+          }
+          const profileDir = config?.profileDirectory ?? resolveProfileDir();
+          const result = buildDepMap(profileDir);
+          writeJson(res, 200, result);
+        },
+      });
+      return () => route();
+    }, "dsh-settings-hub: deps api");
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/client.js:304-316](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L304-L316)
+
+排序存储边界。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+		const GROUP_ORDER_KEY = 'dsh-settings-hub-group-order';
+		const SECTION_ORDER_KEY = 'dsh-settings-hub-section-order';
+		function loadGroupOrder() {
+			try { return JSON.parse(localStorage.getItem(GROUP_ORDER_KEY)) ?? []; } catch { return []; }
+		}
+		function saveGroupOrder(groups) {
+			try { localStorage.setItem(GROUP_ORDER_KEY, JSON.stringify(groups)); } catch {}
+		}
+		function loadSectionOrder() {
+			try { return JSON.parse(localStorage.getItem(SECTION_ORDER_KEY)) ?? {}; } catch { return {}; }
+		}
+		function saveSectionOrder(obj) {
+			try { localStorage.setItem(SECTION_ORDER_KEY, JSON.stringify(obj)); } catch {}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/client.js:638-641](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L638-L641)
+
+观察器清理。
+
+```text
+				const observer = new MutationObserver(scan);
+				observer.observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['style', 'class'] });
+				scan();
+				return () => { observer.disconnect(); removeOverlay(); };
+```
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 怎样试用才能检验其价值，可推广什么设计？
+
+**研究主题**：新假设与验证、采用判断
+
+#### 完整回答
+
+可供多插件用户在可恢复profile小范围试用，先比较原导航与分组导航找到相同设置页并保存一项可逆设置；必须覆盖普通页、带locale/store的页、慢依赖API和重载后的排序。页不能操作、分组误导或排序持续丢失时停用并恢复原外壳。由真实条目与启发式归属的分离可推导一个未实现方向，把注册者到父插件的归属做成显式、可订阅元数据，减少解析apply字符串及异步竞态；它需要宿主协议与插件参与，不能假定天然更简单。以相同插件集测试共享依赖、延迟响应及不同打包形式，若误归属与维护修改没有减少，则否定这个方向。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/client.js:404-473](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L404-L473)
+
+显式注册者到启发式fallback的归属链。
+
+<details>
+<summary>查看原文（70行）</summary>
+
+```text
+		function buildPluginSectionMap(entries) {
+			const claimed = new Set();
+			const groups = {};
+			const add = (name, id) => {
+				if (!id || claimed.has(id)) return;
+				claimed.add(id);
+				if (!groups[name]) groups[name] = [];
+				groups[name].push(id);
+			};
+			const getParent = buildParentMap();
+
+			for (const e of entries) {
+				if (pkgLikeRegistrant(e.registrant)) {
+					add(groupNameOf(getParent(e.registrant)), e.id);
+				}
+			}
+
+			const cache = pluginCtx?.modules?.loadCache;
+			const sectionMods = [];
+			const allMods = [];
+			if (cache) {
+				for (const [modId, mod] of cache) {
+					if (modId.startsWith('@deepseek-ai/')) continue;
+					if (!mod || !mod.exports || typeof mod.exports.apply !== 'function') continue;
+					const src = String(mod.exports.apply);
+					allMods.push([modId, src]);
+					if (src.includes('settings.section')) sectionMods.push([modId, src]);
+				}
+			}
+			const strong = (src, id) => src.includes(`id: "${id}"`) || src.includes(`id: '${id}'`)
+				|| src.includes(`id:"${id}"`) || src.includes(`id:'${id}'`);
+			const mentions = (src, id) => src.includes(`"${id}"`) || src.includes(`'${id}'`);
+			// `id:` inside a settings-section module is a near-certain hit; a bare
+			// literal anywhere else is only a hint, and newer DSH moved the
+			// registration out of `apply()` entirely, so that hint is all some
+			// sections leave behind.
+			for (const test of [[strong, sectionMods], [mentions, allMods]]) {
+				const [probe, candidates] = test;
+				for (const e of entries) {
+					if (claimed.has(e.id)) continue;
+					for (const [modId, src] of candidates) {
+						if (probe(src, e.id)) {
+							add(groupNameOf(getParent(modId)), e.id);
+							break;
+						}
+					}
+				}
+			}
+
+			// Last resort before the fallback bucket: when DSH stops inlining the
+			// registration, the only trace left is the section id itself. Match it
+			// against module ids token-wise, requiring *every* section token to line
+			// up (`archived-sessions` → `dsh-session-archive`, `opencode-go` →
+			// `dsh-opencode-go`). Requiring all tokens keeps this from grabbing a
+			// module that only shares a generic word.
+			const tokensOf = (s) => s.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+			const tokEq = (a, b) => a === b || (a.length >= 3 && b.startsWith(a)) || (b.length >= 3 && a.startsWith(b));
+			for (const e of entries) {
+				if (claimed.has(e.id)) continue;
+				const st = tokensOf(e.id);
+				if (st.length === 0) continue;
+				const hit = allMods.find(([modId]) => {
+					const mt = tokensOf(modId);
+					return st.every((tk) => mt.some((m) => tokEq(tk, m)));
+				});
+				if (hit) add(groupNameOf(getParent(hit[0])), e.id);
+			}
+
+			for (const e of entries) add("其他插件", e.id);
+			return groups;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/client.js:648-659](https://github.com/Amengclass/dsh-settings-hub/blob/72910cca0f425f2de7cfd00d2d4423b8678bafd6/lib/client.js#L648-L659)
+
+可订阅元数据假设针对异步一次重扫。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+			const [pluginSectionMap, setPluginSectionMap] = react.useState(
+				() => buildPluginSectionMap(readSectionEntries()),
+			);
+			react.useEffect(() => {
+				// Re-scan when the row set changes, and once more after mount in case
+				// late-loading plugins materialise their modules after the slot fills.
+				setPluginSectionMap(buildPluginSectionMap(readSectionEntries()));
+				const timer = setTimeout(() => {
+					setPluginSectionMap(buildPluginSectionMap(readSectionEntries()));
+				}, 500);
+				return () => clearTimeout(timer);
+			}, [liveRowKey]);
+```
+
+</details>
 
 #### 缺口
 
-- 稳定元数据在现有DSH版本可获得性和改进维护收益未知。
-  **影响**：不能把假设写成当前正确归组或独立插件机会。
-  **进一步探讨**：固定两host/双端故障矩阵，错归属不降且维护负担上升则保留原生导航。
+- 没有同条件的找页耗时、错误保存与长期维护数据。
+  **影响**：无法量化导航净收益或声称所有DSH版本及设置页兼容。
+  **进一步探讨**：固定插件集和宿主版本对照原壳，记录找页、保存、重载与维护失败。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

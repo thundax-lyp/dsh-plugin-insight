@@ -1,0 +1,66 @@
+{
+    "repository": "LX2000WASD/dsh-web-plugin-manager",
+    "repository_id": 1333491534,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 64,
+    "pushed_at": "2026-09-20T03:19:21Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ALX2000WASD%2Fdsh-web-plugin-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F984:5DB9B:E3A207:1457BB4:6AEC811A and timestamp 2026-11-05 13:14:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ALX2000WASD%2Fdsh-web-plugin-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F9D0:3A4560:EA7EC6:14E92A2:6AEC811C and timestamp 2026-11-05 13:14:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALX2000WASD%2Fdsh-web-plugin-manager%20is%3Aissue%20created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FA12:21431C:E16FED:1427F4C:6AEC811D and timestamp 2026-11-05 13:14:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALX2000WASD%2Fdsh-web-plugin-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FA38:5DB9B:E3AEBC:1458D86:6AEC811E and timestamp 2026-11-05 13:14:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALX2000WASD%2Fdsh-web-plugin-manager%20is%3Aissue%20updated%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FA98:54A78:E51EF3:148927D:6AEC8120 and timestamp 2026-11-05 13:14:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-web-plugin-manager",
+        "captured_at": "2026-11-05T13:09:40.123Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 466,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-web-plugin-manager",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T20:04:50.257Z",
+            "captured_at": "2026-11-05T13:09:40.123Z",
+            "source_url": "https://registry.npmjs.org/dsh-web-plugin-manager",
+            "error": null,
+            "latest_version": "0.6.3",
+            "latest_published_at": "2026-09-12T19:56:11.755Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "repository": "yxxbc/dsh-balance-plugin",
+    "repository_id": 1334675743,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 64,
+    "pushed_at": "2026-09-08T09:09:24Z",
+    "issues": {
+        "open": 0,
+        "closed": 6,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "npm identity",
+            "message": "npm身份不匹配：固定README.md:105-106明确同名npm包属于他人；父Agent独立核实registry repository为luokai-demo/dsh-plugins，与yxxbc/dsh-balance-plugin不同，删除该npm指标关联。"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    }
+}

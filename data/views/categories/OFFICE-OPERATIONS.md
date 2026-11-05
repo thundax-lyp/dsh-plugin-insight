@@ -41,6 +41,7 @@
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
+| [dsh-whale-catch](#plugin-1425215508-root) | 在 DSH 侧栏收集会话产物，提供预览、差异、交付台账、体检、归档和还原。 | 先用含旧mtime复制件的固定目录核对漏收，仅复制归档；还原放在可丢弃目录并逐项确认，异常退回人工打包。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 在 DSH 中查看邮件信封与未读概况，并通过 notmuch 搜索。 | [Q03](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md#research-q03) 只用合成信封验证，明确 notmuch 未读计数和 Himalaya 样本的区别。 |
 | [EduWork DSH Mail](#plugin-1369398336-packages-dsh-mail) | 为 DSH 提供邮件读取、附件保存与受控 SMTP 发送工具。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q04) 隔离账户先验证权限并由用户核对；外发需明确授权，异常先查询。 |
@@ -521,6 +522,22 @@
 > **建议**：未验证假设是从官方账单抽取每日总额做只读校准，并显示“覆盖率/差额”而非单一费用，可防止估算被误当账单。最小实验连续30天比较插件日汇总、官方账单和原始调用样本，按模型/时段定位差额；95%日期超出预设误差即否定当前计价可用性。 详见[Q08](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/940842546--dsh-usage-billing/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1425215508-root"></a>
+
+## [dsh-whale-catch](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md)
+
+[![GitHub ★ 101](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=101&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Rosynb666/dsh-whale-catch) [![npm 30d 1,968](https://img.shields.io/static/v1?label=npm+30d&message=1%2C968&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-whale-catch) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-whale-catch)
+
+> **用途**：会话内产物较多的交付者可集中查看并复制归档；完整性仍由显式清单核对。[Q01](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q01)
+
+> **亮点**：把显式产物、宿主改动和mtime扫描汇为常驻工作台，并连到hash归档清单与历史回看，减少入口分散；收益尚无同任务对照。[Q01](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q01) [Q03](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q03)
+
+> **思考**：自动集合既不证明完整也不证明归属；敏感体检只是有界提示，还原可能部分成功，界面预览未在Host绑定计划。[Q01](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q01) [Q02](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q02)
+
+> **建议**：未验证假设是预览时固定清单及hash，在应用前拒绝版本漂移，减少错版本交付；以预览后改文件的对照检验，不降错配或等待过大就放弃。[Q03](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1370460115-root"></a>
 

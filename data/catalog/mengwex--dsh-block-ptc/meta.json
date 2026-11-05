@@ -1,0 +1,45 @@
+{
+    "repository": "mengwEX/dsh-block-ptc",
+    "repository_id": 1420110365,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 102,
+    "pushed_at": "2026-10-21T08:09:07Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T11:33:05.584Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-block-ptc",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1170,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-block-ptc",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-15T03:20:55.981Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-block-ptc",
+            "error": null,
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-10-21T08:11:11.152Z",
+            "latest_error": null
+        }
+    }
+}
