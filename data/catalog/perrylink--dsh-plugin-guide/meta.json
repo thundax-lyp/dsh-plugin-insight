@@ -1,0 +1,62 @@
+{
+    "repository": "PerryLink/dsh-plugin-guide",
+    "repository_id": 1333351747,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 64,
+    "pushed_at": "2026-11-04T16:37:15Z",
+    "issues": {
+        "open": 1,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-plugin-guide%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F738:365BCE:E9DECF:14D969C:6AEC810E and timestamp 2026-11-05 13:13:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-plugin-guide%20is%3Aissue%20created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F768:5CC79:E769A9:14B99A1:6AEC810F and timestamp 2026-11-05 13:13:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-plugin-guide%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F790:54A78:E4F360:14854FF:6AEC8110 and timestamp 2026-11-05 13:13:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-plugin-guide%20is%3Aissue%20updated%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F7C0:51C90:E8BFAA:14CD1D8:6AEC8111 and timestamp 2026-11-05 13:13:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-guide",
+        "captured_at": "2026-11-02T21:44:22.915Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 8679,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-plugin-guide",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T16:29:44.175Z",
+            "captured_at": "2026-11-02T21:44:22.915Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-guide",
+            "error": null,
+            "latest_version": "0.3.42",
+            "latest_published_at": "2026-11-02T14:57:06.814Z",
+            "latest_error": null
+        }
+    }
+}

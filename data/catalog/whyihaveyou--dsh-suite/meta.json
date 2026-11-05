@@ -1,0 +1,48 @@
+{
+    "repository": "whyihaveyou/dsh-suite",
+    "repository_id": 1333152408,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 64,
+    "pushed_at": "2026-11-05T12:23:53Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F810:251195:E93165:14D7132:6AEC8113 and timestamp 2026-11-05 13:13:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F834:5CC79:E7771B:14BABE6:6AEC8114 and timestamp 2026-11-05 13:13:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F87C:54A78:E4FFFF:1486733:6AEC8115 and timestamp 2026-11-05 13:13:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F8A8:21431C:E15F2E:14266B4:6AEC8116 and timestamp 2026-11-05 13:13:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20updated%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F8FA:3A4560:EA7667:14E8682:6AEC8118 and timestamp 2026-11-05 13:14:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    }
+}

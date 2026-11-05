@@ -1,0 +1,45 @@
+{
+    "repository": "Sev7eEn7/dsh-sieve",
+    "repository_id": 1404374196,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 110,
+    "pushed_at": "2026-11-01T03:34:19Z",
+    "issues": {
+        "open": 5,
+        "closed": 1,
+        "created_30d": 6,
+        "closed_30d": 1,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T11:33:05.584Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-sieve",
+        "captured_at": "2026-11-05T13:09:40.123Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 1523,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-sieve",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-06T08:55:28.603Z",
+            "captured_at": "2026-11-05T13:09:40.123Z",
+            "source_url": "https://registry.npmjs.org/dsh-sieve",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2026-11-01T03:31:40.230Z",
+            "latest_error": null
+        }
+    }
+}
