@@ -1,0 +1,36 @@
+{
+    "repository": "Zhenyu98/dsh-context-doctor",
+    "repository_id": 1332210938,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 66,
+    "pushed_at": "2026-09-06T06:56:28Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 4,
+        "closed_30d": 0,
+        "updated_30d": 4
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AZhenyu98%2Fdsh-context-doctor%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ACF6:2E7893:4C7EE1:523CFC:6AEC44AC and timestamp 2026-11-05 08:56:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AZhenyu98%2Fdsh-context-doctor%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD96:11714B:4BDFD8:519E18:6AEC44AE and timestamp 2026-11-05 08:56:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

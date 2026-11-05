@@ -30,6 +30,7 @@
 | [Awesome DSH Plugin 目录](#plugin-1334020733-root) | 从双语 README 生成 DSH 插件分类站点、订阅源与机器可读索引。 | [Q04](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q04) 用作候选列表，安装前重新确认目标仓库与包。 |
 | [Awesome Gaussian Skills](#plugin-1223099228-root) | 提供 3D Gaussian Splatting 方法资料、Agent Skill 与 MCP 渲染服务。 | [Q04](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q04) 先隔离网络并用非敏感场景核对真实渲染；[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 边界不满足时停止。 |
 | [BigA](#plugin-1250326123-root) | 将 A 股观察池与市场摘要 Skill 及其 Python 扫描脚本装入 DeepSeek Harness。 | [Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 仅将离线合成样本用于核格式和口径，异常回人工资料核查。 |
+| [BioDSH](#plugin-1351845049-packages-dsh-biodsh) | 为生信分析组合技能选择、步数收敛、公共输出合同与重放检查的 DSH 预设包 | [Q05](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q05) 建议观察，先由熟悉统计的用户在新鲜去敏金标合同上核打包资源、覆盖、重放及恢复。 |
 | [causal-memory](#plugin-1312924592-root) | 本地记忆引擎存储事实与决策结果关系，并以 DSH 工具提供召回。 | [Q03](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q03) 独立库小样本对照后再扩展。 |
 | [causal-memory DSH plugin](#plugin-1312924592-dsh-plugin) | 通过 stdio MCP 将 causal-memory 工具和服务接入 DSH。 | [Q03](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q03) 用临时数据库。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
@@ -38,6 +39,7 @@
 | [Cue Data MCP](#plugin-1244140731-dsh-cue-data-mcp) | 把 Cue 监管、宏观、披露等公开数据 MCP 域接入 DSH。 | [Q03](../../plugins/sensedeal--cue-skills--dsh-cue-data-mcp/INSIGHT.md#research-q03) 用隔离 profile 对照工具发现与授权的小查询，身份或费用不明即退回人工。 |
 | [Cue Omni Reader](#plugin-1244140731-dsh-cue-omni-reader) | 将 Cue Omni Reader 的文档与网页解析 MCP 接入 DeepSeek Harness。 | [Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader/INSIGHT.md#research-q03) 只有具备隔离 key、已核外部包和非敏感样本，才进一步验证。 |
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
+| [DeepRead 精读助手](#plugin-1334924880-root) | 将文本、文件和微信文章整理为精读报告、知识地图与复习问题，支持预算预检及文件导出。 | 当前建议观察。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
 | [DSH Annotation](#plugin-1369398336-packages-dsh-annotation) | 把助手回复中的选段和批注作为原生引用加入草稿，并按顺序发送。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04) 建议先用非敏感长回复在兼容客户端核对多处选段、撤销、刷新和历史；定位或草稿恢复异常时回退手工引用。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
@@ -60,6 +62,7 @@
 | [dsh-auto-memory](#plugin-1381430202-root) | 将项目和用户记忆写入本地文件并注入索引，可选结束时固化。 | [Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 只在测试项目验收核心工具和提示，随后对照自动固化。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
+| [dsh-fund-research](#plugin-1339672104-root) | 采集中国公募基金公开数据，确定性计算指标并封存带数字回溯附录的版本化研究报告。 | 懂基金数据口径者可仅在副本工作区对一支固定离线样本试用，核对来源、日期/覆盖、关键指标和hash，停止于字段漂移、无法复算或状态异常。 |
 | [dsh-git-memory](#plugin-1339286962-root) | 为 DSH 提供本地 Git 长期记忆、有限检索与可恢复的记忆管理。 | [Q03](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q03) 在可丢弃仓库先试只读。 |
 | [dsh-hacker-news](#plugin-1211255316-plugins-hacker-news) | 为 DeepSeek Harness 提供 Hacker News 榜单、评论、搜索和用户信息工具。 | [Q04](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q04) 仅用非敏感查询并检查截断，重要结论回原帖；网络或完整性不满足时停止。 |
 | [dsh-handbook](#plugin-1333258936-root) | DeepSeek Harness 中文优先的学习手册与生态观察，涵盖上手、插件开发、案例和调优。 | 先用固定宿主完成一次隔离的入门练习。 |
@@ -126,6 +129,7 @@
 | [OpenContext](#plugin-1329484633-root) | 面向Agent应用的记忆、检索和图修订基础设施，提供库facade及MCP/HTTP入口。 | [Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) 先loopback单用户只读及dryRun，再由host加授权。 |
 | [OpenQuantum](#plugin-1335086034-root) | 面向 DeepSeek Harness Desktop 与 Codex 的量子研究 Skills 和 Tools | [Q04](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q04) 仅隔离Home试支持域的重复复核任务，保留原SDK和结果包，先验失败/停止/回退。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具。 | 以非敏感独立项目核验 peer、召回、短断网及停用后队列；出现串扰或缺失时停止相关进程并回退人工笔记。 |
+| [PaperMachine](#plugin-1345235144-root) | 本地运行 Python/R 并以版本化产物和来源记录支持审阅的科研桌面客户端 | 建议有限试用，见 [Q05](../../plugins/superjj007--papermachine/INSIGHT.md#research-q05)：macOS上先以去敏且已有正确答案的小CSV验证执行轨迹、版本、人工编辑和备份恢复。 |
 | [PatentRadar](#plugin-1230059993-root) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 仅用公开、可回源案例验证一份线索表；不能支持具体特征时回到人工检索。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
 | [ProMentor](#plugin-1318330553-root) | 通过Agent Skill把项目组织为讲义、源码导读、Lab与行为测试，配JSON进度和可选Dashboard。 | [Q05](../../plugins/lyn-77--promentor/INSIGHT.md#research-q05) 观察一章非敏感副本；先审命令和题目，再独立迁移验证，读边界修复前不远程共享。 |
@@ -432,6 +436,22 @@
 
 [查看完整分析](../../plugins/kobenfang--biga/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1351845049-packages-dsh-biodsh"></a>
+
+## [BioDSH](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md)
+
+[![GitHub ★ 65](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=65&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sagirimo/BioDSH) [![npm 30d 1,434](https://img.shields.io/static/v1?label=npm+30d&message=1%2C434&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-biodsh) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-biodsh)
+
+> **用途**：生信分析者希望从自然语言完成数据分析并保留规范化可查交付，见 [Q01](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q01)，实际采用仍需统计与合同审阅能力。
+
+> **亮点**：[Q01](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q01) 和 [Q04](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q04) 把生信方法组织与公共合同、固定原始输入规则和干净重放连成可追溯修复循环，超过只有persona的包装；引用/规则仍由模型解释，不等于完整科学验证。
+
+> **思考**：[Q04](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q04) 默认coverage关闭且部分列检查可accepted，重放一致不能排同算法错误；[Q03](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q03) 时间提示非总预算，[Q05](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q05) MAGI非隔离盲法且发布有非原子恢复窗口。应明确每次究竟核过哪些科学主张。
+
+> **建议**：[Q06](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q06) 未验证的关键列覆盖、全尝试预算与带manifest原子发布契约，以错误分母未核、稳定错误重放和复制中断反例检验。
+
+[查看完整分析](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1312924592-root"></a>
 
 ## [causal-memory](../../plugins/jingxuanc--causal-memory/INSIGHT.md)
@@ -559,6 +579,22 @@
 > **建议**：[Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 从八类Delta合同推导外部验证器假设；用中断和损坏实验检验错误完成是否减少，未实现且未验证。
 
 [查看完整分析](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334924880-root"></a>
+
+## [DeepRead 精读助手](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md)
+
+[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xiehuan123/dsh-deepread) [![npm 30d 2,894](https://img.shields.io/static/v1?label=npm+30d&message=2%2C894&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepread) [![最新发布 2026-09-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepread)
+
+> **用途**：面向需要从材料提取论点、论据和引句的研究与学习者，提供模式化精读报告。[Q01](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q01) 以普通摘要和人工标注为参照，合格结果要求引文真实且位置可查，字段齐全不等于证据正确。真实学习和工时收益没有本次数据。
+
+> **亮点**：[Q01](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q01) 支持结构化精读与宿主接线的集成贡献，较普通摘要提供可供人工核验的观点、论据与位置字段；[Q03](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q03) 的存储epoch绑定也是可复用工程设计。但这些字段由模型生成，当前没有原文对齐保障，不能把“输出可追溯格式”升级为“证据已核真”。
+
+> **思考**：[Q02](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q02) 的PDF空页过滤后重编号和长文分段上限会改变引用位置与覆盖范围；[Q03](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q03) 没有机械核验引句和支持关系。[Q04](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q04) 预算是估计，取消标记不等于供应商停止。核心质疑是读者能否知道真正读了什么、引句是否存在以及失败还在花多少资源，当前只适合人工核验的辅助整理。
+
+> **建议**：[Q06](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md#research-q06) 提出未验证的阅读任务契约：固定原始锚点与覆盖账本、引句匹配后标已核、逐次模型尝试预算及端到端取消/未知状态。以空页PDF、尾部反证、近似引句与取消重试为最小反例；任何错误页号、未读全书结论或新重试都削弱充分性，新增核验成本也需比较。
+
+[查看完整分析](../../plugins/xiehuan123--dsh-deepread/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1195828337-root"></a>
 
@@ -911,6 +947,22 @@
 > **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q05)；真实路径写入仍需独立约束。
 
 [查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339672104-root"></a>
+
+## [dsh-fund-research](../../plugins/perrylink--dsh-fund-research/INSIGHT.md)
+
+[![GitHub ★ 66](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=66&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-fund-research) [![npm 30d 3,990](https://img.shields.io/static/v1?label=npm+30d&message=3%2C990&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fund-research) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fund-research)
+
+> **用途**：需要反复整理基金公开资料且能复核口径的研究者，把版本化Markdown/JSON作为可复算底稿，不把它当交易或预测系统。[Q01](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q01)
+
+> **亮点**：把公开基金数据提取、确定性指标和逐数字路径附录变为宿主工具，输出可独立保留的版本化资料包，并为缺失字段显式留gaps。其价值是可检查的资料组织，不是自动验证市场事实或预测正确。[Q01](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q01) [Q02](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q02) [Q03](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q03)
+
+> **思考**：asOf只截净值却保留其他当前字段，不能作为全资料历史可得性；verified仅与同快照一致，且核查异常仍封存。review重建snapshot数字而未解析实际报告或校验其hash，恢复和tracking尽力写，不能据封存/完成推完整、无泄漏或不可篡改。[Q02](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q02) [Q03](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q03) [Q04](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q04)
+
+> **建议**：给每来源/字段附观测和可得时间，并区分历史可用与当前补充章节，可研究是否减少旧截点报告的前视混入；固定披露日样本比较泄漏、覆盖和维护成本。无法提供证据就拒用历史字段，收益未验证，不计当前创新。[Q05](../../plugins/perrylink--dsh-fund-research/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/perrylink--dsh-fund-research/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339286962-root"></a>
 
@@ -1967,6 +2019,22 @@
 > **建议**：未验证假设：用户授权后分别显示本地待发、永久失败和根服务后台提取状态，可能降低静默缺失；对照现有日志和 task 回执测误报、识别率与隐私成本。[Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1345235144-root"></a>
+
+## [PaperMachine](../../plugins/superjj007--papermachine/INSIGHT.md)
+
+[![GitHub ★ 67](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=67&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SuperJJ007/papermachine)
+
+> **用途**：能审阅数据与代码的研究者，用桌面会话完成Python/R分析并检查结果来源，见 [Q01](../../plugins/superjj007--papermachine/INSIGHT.md#research-q01)。
+
+> **亮点**：[Q01](../../plugins/superjj007--papermachine/INSIGHT.md#research-q01) 与 [Q03](../../plugins/superjj007--papermachine/INSIGHT.md#research-q03) 支持将本地Python/R、执行身份、环境和版本图表组织成科研桌面工作流的集成贡献；不是新统计方法，亦不能把继承DSH代码与外部Skill算原创。
+
+> **思考**：[Q02](../../plugins/superjj007--papermachine/INSIGHT.md#research-q02) 的持久状态和平台写隔离不保证重放或科学正确；[Q03](../../plugins/superjj007--papermachine/INSIGHT.md#research-q03) store与会话事件分离，捕获可部分成功。核心问题是可查看来源能否降低审阅负担，当前缺少同任务和恢复验收。
+
+> **建议**：[Q06](../../plugins/superjj007--papermachine/INSIGHT.md#research-q06) 提出未验证的可重放分析交付包，以精确输入、代码次序、锁环境及未捕获原因在清洁kernel验收；隐藏状态、丢版本或错误统计均可推翻充分性，重放仍不代替领域审阅。
+
+[查看完整分析](../../plugins/superjj007--papermachine/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1230059993-root"></a>
 

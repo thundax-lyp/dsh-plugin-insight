@@ -1,0 +1,45 @@
+{
+    "repository": "HaoyueQin/dsh-better-reasoning-effort",
+    "repository_id": 1339889879,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 65,
+    "pushed_at": "2026-10-18T17:39:51Z",
+    "issues": {
+        "open": 0,
+        "closed": 11,
+        "created_30d": 1,
+        "closed_30d": 1,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-better-reasoning-effort",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 3996,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-better-reasoning-effort",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T05:21:01.959Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-better-reasoning-effort",
+            "error": null,
+            "latest_version": "0.5.4",
+            "latest_published_at": "2026-10-18T17:50:07.952Z",
+            "latest_error": null
+        }
+    }
+}

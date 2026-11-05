@@ -1,0 +1,66 @@
+{
+    "repository": "whyihaveyou/dsh-suite",
+    "repository_id": 1333152408,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 64,
+    "pushed_at": "2026-11-05T04:54:05Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C86C:399226:4CE4F4:52A7C8:6AEC451B and timestamp 2026-11-05 08:58:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C89C:354826:D308EE:E10DB9:6AEC451C and timestamp 2026-11-05 08:58:05 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20created%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8C0:3CB2B4:537E46:5942C5:6AEC451D and timestamp 2026-11-05 08:58:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8F2:3A2B8A:4D1F9D:52E0A6:6AEC451E and timestamp 2026-11-05 08:58:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awhyihaveyou%2Fdsh-suite%20is%3Aissue%20updated%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C926:2E2F38:4BD60D:519AC9:6AEC451F and timestamp 2026-11-05 08:58:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@dsh-suite/plugin-notify",
+        "captured_at": "2026-11-05T08:55:05.110Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 145,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40dsh-suite%2Fplugin-notify",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T15:16:33.482Z",
+            "captured_at": "2026-11-05T08:55:05.110Z",
+            "source_url": "https://registry.npmjs.org/%40dsh-suite%2Fplugin-notify",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-08-16T10:17:59.560Z",
+            "latest_error": null
+        }
+    }
+}

@@ -28,6 +28,7 @@
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
+| [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 建议先观察。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
@@ -75,6 +76,7 @@
 | [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
+| [催更姬](#plugin-1389035449-root) | 在 DSH 中编辑小说正文、规划情节并管理人物世界设定，支持按需查阅、版本历史与作品数据管理。 | 已有DSH且愿意维护人物和规划资料的长篇作者，可在新建副本库先试修订一章：核对维护ready、作品ID和revision，用唯一patch保存后回读正文及历史，再检查关联资料。 |
 | [大肥鱼的小说工坊](#plugin-1337043852-root) | 用阶段门禁、设定注入和版本归档管理连载小说 | [Q04](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q04) 先用虚构三章验证门禁、预算与导出。 |
 
 <a id="plugin-1352959121-root"></a>
@@ -332,6 +334,22 @@
 > **建议**：未验证假设是把内容新鲜度及表示缺口作为预览交付的一部分，以减少旧缓存和视觉误验；对照同元数据改写、纹理模型与Blender直接打开，若误验不降或复核更慢则否定。[Q05](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334049596-root"></a>
+
+## [dsh-blender](../../plugins/cheshirejcat--blender/INSIGHT.md)
+
+[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/CheshireJCat/blender) [![npm 30d 5,667](https://img.shields.io/static/v1?label=npm+30d&message=5%2C667&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender)
+
+> **用途**：面向已有 Blender 环境的 DSH 用户，将小型三维资产制作、场景检查和模型交接放进对话工具流程，保留可编辑 .blend、便携模型及预览证据。具体流程与合格结果见 [Q01](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q01)。
+
+> **亮点**：插件把Blender操作、结构报告、导出回读和上游领域知识接到DSH，提供可调用的制作与诊断入口，这是宿主集成增量。回读虽独立启动进程，却没有显式清场或默认绑定新增对象，不能将其描述为空场景资产验收；建模算法和知识配方也不归为本插件原创。[Q01](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q01) [Q03](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q03)
+
+> **思考**：最影响当前采用的是报告验证的对象是否真来自目标资产。导入没有清场，回读默认验证整个场景，初始网格在特定条件下可能掩盖资产未增加网格；该后果是源码推断，未复现。passed又仅表示profile没有硬错误，导出不依赖该报告；加上任意Python本机权限，当前不足以凭报告信任完整交付。[Q02](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q02) [Q03](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q03)
+
+> **建议**：优先研究导入来源范围：记录并核对新增对象，验证只作用目标集合，拒绝空集合并绑定输入摘要/profile，避免把启动场景对象当目标资产。用无新增网格、仅非网格、正常网格对照误通过、误拒和人工核对量；若仍借用启动网格或正常资产损失抵消改善，应否定该方向。模型摘要和人工视觉交接应在来源范围明确后再研究，均未验证或实现。[Q05](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/cheshirejcat--blender/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1388372309-integrations-deepseek-harness"></a>
 
@@ -1084,6 +1102,22 @@
 > **建议**：[Q06](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1389035449-root"></a>
+
+## [催更姬](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md)
+
+[![GitHub ★ 69](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=69&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/mistnest/dsh-cuigengji-plugin) [![npm 30d 3,725](https://img.shields.io/static/v1?label=npm+30d&message=3%2C725&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cuigengji-plugin) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cuigengji-plugin)
+
+> **用途**：面向持续写长篇的 DSH 用户，在聊天旁维护正文、情节画布和人物世界资料，Agent围绕相同对象读取、续写和修订，保留版本供作者核对。[Q01](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q01)
+
+> **亮点**：可核查的贡献是把作者工作台和Agent动作接到同一作品对象及版本历史，结合正文来源引用、设定失效标记和恢复日志，形成比聊天记录更明确的写作交接。它整合成熟的版本检查与日志提交方法，不证明文学质量或创作速度提高。[Q01](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q01) [Q03](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q03)
+
+> **思考**：资料可查询、修改可落盘，不等于模型已正确落实人物和情节。stale只沿已登记引用传播，正文、规划和设定又分别保存；写入后审计失败或等待超时可能留下已提交正文。作者要回读实际版本并处理关联待办，不能靠一次成功/失败响应判断整章任务完整性。[Q02](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q02) [Q03](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q03)
+
+> **建议**：由按需资料读取和分模块提交可推导一种待验证交接回执，记录实际读取的revision及保存后关联待处理对象，而不强制每轮重读全库。可在设定并发变化、后续维护失败等任务中比较漏报、误报、人工修正和上下文量；若不能改善净负担，或把已读误当理解正确，应否定该方向。这不是当前已有能力。[Q05](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/mistnest--dsh-cuigengji-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1337043852-root"></a>
 

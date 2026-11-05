@@ -1,0 +1,50 @@
+{
+    "repository": "dingchenhui0618-arch/dsh-in-hand",
+    "repository_id": 1377874436,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 69,
+    "pushed_at": "2026-11-03T02:34:02Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingchenhui0618-arch%2Fdsh-in-hand%20is%3Aissue%20updated%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2F4:236376:4948E7:4F0647:6AEC448B and timestamp 2026-11-05 08:55:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-in-hand",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 6966,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-in-hand",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-10T04:06:06.727Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-in-hand",
+            "error": null,
+            "latest_version": "1.8.25",
+            "latest_published_at": "2026-11-03T02:38:02.232Z",
+            "latest_error": null
+        }
+    }
+}

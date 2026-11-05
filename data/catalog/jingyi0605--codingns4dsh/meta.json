@@ -1,0 +1,62 @@
+{
+    "repository": "jingyi0605/Codingns4DSH",
+    "repository_id": 1386538234,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 70,
+    "pushed_at": "2026-11-01T02:55:47Z",
+    "issues": {
+        "open": 0,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajingyi0605%2FCodingns4DSH%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A2CA:1147F6:4C9E2C:525AFF:6AEC448A and timestamp 2026-11-05 08:55:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajingyi0605%2FCodingns4DSH%20is%3Aissue%20created%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A314:3A34F4:4AD37C:508B69:6AEC448B and timestamp 2026-11-05 08:55:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajingyi0605%2FCodingns4DSH%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A37A:FFFD4:4C44BE:51FD67:6AEC448C and timestamp 2026-11-05 08:55:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajingyi0605%2FCodingns4DSH%20is%3Aissue%20updated%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A3BA:11808E:4999C4:4F5529:6AEC448D and timestamp 2026-11-05 08:55:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@jingyi0605/codingns4dsh",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 3661,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40jingyi0605%2Fcodingns4dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-26T19:05:37.032Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40jingyi0605%2Fcodingns4dsh",
+            "error": null,
+            "latest_version": "0.2.0-rc.3",
+            "latest_published_at": "2026-10-04T11:48:48.621Z",
+            "latest_error": null
+        }
+    }
+}

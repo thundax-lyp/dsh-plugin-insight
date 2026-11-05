@@ -1,0 +1,66 @@
+{
+    "repository": "masknull/dsh-qoder-connect",
+    "repository_id": 1376861123,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 67,
+    "pushed_at": "2026-11-04T09:55:36Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Amasknull%2Fdsh-qoder-connect%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AB0C:288EE:4A4CEA:4FFDE8:6AEC44A6 and timestamp 2026-11-05 08:56:06 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Amasknull%2Fdsh-qoder-connect%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AB9E:F9C69:4B04E7:50BC21:6AEC44A7 and timestamp 2026-11-05 08:56:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Amasknull%2Fdsh-qoder-connect%20is%3Aissue%20created%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AC0C:3A90D6:4A0C23:4FC94B:6AEC44A9 and timestamp 2026-11-05 08:56:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Amasknull%2Fdsh-qoder-connect%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ACC8:288EE:4A52A2:5003D3:6AEC44AB and timestamp 2026-11-05 08:56:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Amasknull%2Fdsh-qoder-connect%20is%3Aissue%20updated%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD7C:FA966:496A45:4F0B9D:6AEC44AD and timestamp 2026-11-05 08:56:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-qoder-connect",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 4737,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-qoder-connect",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-19T07:08:02.083Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-qoder-connect",
+            "error": null,
+            "latest_version": "0.2.11",
+            "latest_published_at": "2026-10-26T08:09:13.357Z",
+            "latest_error": null
+        }
+    }
+}

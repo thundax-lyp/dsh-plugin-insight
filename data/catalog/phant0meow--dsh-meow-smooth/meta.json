@@ -1,0 +1,66 @@
+{
+    "repository": "Phant0Meow/dsh-meow-smooth",
+    "repository_id": 1339915507,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 67,
+    "pushed_at": "2026-10-17T16:21:21Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-smooth%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A84A:C9EE0:C29126:D08857:6AEC449E and timestamp 2026-11-05 08:55:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-smooth%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A884:3DC06:4F4166:54FB53:6AEC449F and timestamp 2026-11-05 08:55:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-smooth%20is%3Aissue%20created%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8D6:3A7040:49EE27:4FAADA:6AEC449F and timestamp 2026-11-05 08:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-smooth%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A924:F5B60:5240A4:57FE28:6AEC44A0 and timestamp 2026-11-05 08:56:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APhant0Meow%2Fdsh-meow-smooth%20is%3Aissue%20updated%3A2026-10-06T08%3A55%3A05.110Z..2026-11-05T08%3A55%3A05.110Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A982:F9C69:4B0026:50B713:6AEC44A1 and timestamp 2026-11-05 08:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "meow-smooth",
+        "captured_at": "2026-11-05T06:53:59.607Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 3298,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/meow-smooth",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T13:47:41.219Z",
+            "captured_at": "2026-11-05T06:53:59.607Z",
+            "source_url": "https://registry.npmjs.org/meow-smooth",
+            "error": null,
+            "latest_version": "0.8.1",
+            "latest_published_at": "2026-09-23T01:51:18.941Z",
+            "latest_error": null
+        }
+    }
+}
