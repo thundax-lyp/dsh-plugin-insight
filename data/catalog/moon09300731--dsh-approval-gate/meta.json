@@ -1,0 +1,45 @@
+{
+    "repository": "moon09300731/dsh-approval-gate",
+    "repository_id": 1333918421,
+    "captured_at": "2026-11-05T04:31:11.152Z",
+    "window_start": "2026-10-06T04:31:11.152Z",
+    "stars": 110,
+    "pushed_at": "2026-08-20T06:16:50Z",
+    "issues": {
+        "open": 13,
+        "closed": 2,
+        "created_30d": 2,
+        "closed_30d": 1,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d25aa7b04c78f6097ade59330763d2bd038aceb3",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-approval-gate",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 3936,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-approval-gate",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T07:44:56.874Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-approval-gate",
+            "error": null,
+            "latest_version": "0.5.0",
+            "latest_published_at": "2026-08-18T04:37:32.642Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "repository": "qkycir-123/dsh-run2skill",
+    "repository_id": 1339317132,
+    "captured_at": "2026-11-05T04:31:11.152Z",
+    "window_start": "2026-10-06T04:31:11.152Z",
+    "stars": 106,
+    "pushed_at": "2026-10-20T16:31:51Z",
+    "issues": {
+        "open": 9,
+        "closed": 74,
+        "created_30d": 2,
+        "closed_30d": null,
+        "updated_30d": 2
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aqkycir-123%2Fdsh-run2skill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T04%3A31%3A11.152Z..2026-11-05T04%3A31%3A11.152Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3Aqkycir-123%2Fdsh-run2skill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T04%3A31%3A11.152Z..2026-11-05T04%3A31%3A11.152Z&per_page=1\": net/http: TLS handshake timeout"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d25aa7b04c78f6097ade59330763d2bd038aceb3",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-run2skill",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1898,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-run2skill",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T04:35:04.092Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-run2skill",
+            "error": null,
+            "latest_version": "0.5.0-alpha.4",
+            "latest_published_at": "2026-10-01T16:14:03.961Z",
+            "latest_error": null
+        }
+    }
+}

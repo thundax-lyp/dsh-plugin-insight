@@ -1,0 +1,32 @@
+{
+    "repository": "pingfanfan/hello-dsh",
+    "repository_id": 1333303761,
+    "captured_at": "2026-11-05T04:31:11.152Z",
+    "window_start": "2026-10-06T04:31:11.152Z",
+    "stars": 106,
+    "pushed_at": "2026-09-14T17:39:49Z",
+    "issues": {
+        "open": null,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Apingfanfan%2Fhello-dsh%20is%3Aissue%20is%3Aopen&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3Apingfanfan%2Fhello-dsh%20is%3Aissue%20is%3Aopen&per_page=1\": net/http: TLS handshake timeout"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d25aa7b04c78f6097ade59330763d2bd038aceb3",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

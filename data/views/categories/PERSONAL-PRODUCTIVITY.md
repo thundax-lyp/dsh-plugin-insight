@@ -76,6 +76,7 @@
 | [DSH Voice Prompt Enhancer](#plugin-1333612974-root) | 为官方语音输入增加热键与停顿检测，并在发送前改写草稿 | [Q04](../../plugins/fishsb--dsh-voice-prompt-enhancer/INSIGHT.md#research-q04) 固定版本分开验证语音、改写与退出。 |
 | [DSH Watcher](#plugin-1340657858-root) | 把宿主会话投影整理为可折叠的工作路径与用量估算 | [Q04](../../plugins/aa2246740--dsh-watcher/INSIGHT.md#research-q04) 以虚构会话核对步骤、估算、可选侧栏及退出。 |
 | [DSH Workspace Menu](#plugin-1339803365-root) | 为 DSH 首页工作区和会话提供右键与双击菜单，集中重命名、置顶、归档、路径及删除等操作。 | [Q03](../../plugins/0imzero--dsh-workspace-menu/INSIGHT.md#research-q03) 先观察并优先核查Host目标绑定与恢复。 |
+| [DSH 个人中心](#plugin-1339844498-root) | 在 DSH Web 聚合用量与估算成本，管理工作区指令和桌宠。 | [Q03](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md#research-q03) 用合成日志及指令。 |
 | [DSH 会话字号控制](#plugin-1403442165-root) | 为 DSH 会话字号添加输入栏步进器、快捷键和 Ctrl 滚轮。 | [Q04](../../plugins/aprilcrystal--dsh-client-ui-font-scale/INSIGHT.md#research-q04) 先测试按钮和已有浏览器缩放习惯。 |
 | [DSH 大肥鱼桌面伴侣](#plugin-1333755311-root) | 以常驻角色展示 DSH 会话阶段、等待与错误。 | 先用非敏感任务对照宿主状态和系统通知；误提示或干扰过高时关闭。 |
 | [dsh-about](#plugin-1354283280-root) | 为 DSH Web 设置页展示版本及上游更新日志。 | [Q04](../../plugins/1010n111--dsh-about/INSIGHT.md#research-q04) 版本异常时与 CLI、进程路径和官方资料核对。 |
@@ -189,6 +190,8 @@
 | [dsh-roam-planner](#plugin-1427038024-root) | 在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。 | 先用非交易测试行程检查地点、路线、候选与重开草稿，人工确认最终内容。 |
 | [dsh-rtl-chat](#plugin-1410794267-root) | 给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。 | RTL读者本地试用，混排不合适随时切回。 |
 | [dsh-scroll-piano](#plugin-1412162067-root) | 把对话滚动位置映射为音高，并用消息刻度提供跳转导航。 | 保持观察；仅对明确喜欢听觉反馈的个人用户，在长会话和读屏环境先核 CPU、焦点、静音及 DOM 升级回退。 |
+| [dsh-session-manager](#plugin-1334266810-root) | 为 DSH Web 提供会话整理、回收站恢复、清除和工作区管理。 | [Q03](../../plugins/dream12347--dsh-session-manager/INSIGHT.md#research-q03) 先验收恢复、溢出和重新打开会话。 |
+| [dsh-session-manager](#plugin-1335356493-root) | 管理工作区与会话，支持批量整理、跨工作区迁移、预设改写和标注。 | [Q03](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md#research-q03) 先验证冷会话，再验证 live 和异常。 |
 | [dsh-session-path](#plugin-1412141303-root) | 复制DSH会话日志位置，或把压缩日志导出为可读交接文件，便于另一个会话阅读接续。 | 先观察，继续核真实路径授权、导出完整性与JSONL最新语义，再对受控日志研究接续效果。 |
 | [dsh-session-rename](#plugin-1368115538-root) | 向模型提供 rename_session 工具，显式设置当前或已加载会话标题。 | 先仅省略 session_id 命名当前会话；多用户前核宿主权限。 |
 | [dsh-session-turn-eta](#plugin-1368581082-root) | 根据会话事件估计当前轮次剩余时间并展示进度。 | [Q04](../../plugins/778672151--dsh-session-turn-eta/INSIGHT.md#research-q04) 仅作等待提示，最终检查宿主结果。 |
@@ -213,6 +216,7 @@
 | [dsh-thumb](#plugin-1341694685-root) | 将DSH窄屏侧栏改为覆盖式抽屉，切换会话后关闭，并调整设置布局和对话密度。 | 个人窄屏用户可受控试用，先检查会话切换、设置与轨迹，保留?thumb=0后重载的退出路径；定位或触控出现影响任务的问题就停用。 |
 | [dsh-tingdong](#plugin-1426519329-root) | 把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。 | 可让能核对英文与译文的个人用短篇低敏感材料试用，先修ASR/翻译再练习；考试成绩承诺、无能力审校或要求原文严格保真的任务先观察。 |
 | [dsh-toolbox-web](#plugin-1335244607-root) | 为 DSH Web 提供会话、目录、搜索、回收站、配置与预设等管理面板。 | 当前建议观察。 |
+| [dsh-turn-delete](#plugin-1337335939-root) | 将活动会话的一个完整已关闭回合从模型上下文移除，保留原始事件。 | [Q03](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md#research-q03) 先删除测试会话中间轮次，再验证重开。 |
 | [dsh-turn-outline](#plugin-1356219122-root) | 不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。 | 宿主授权明确的一人本地长会话可试用作导航摘要，远程/多用户先核会话授权。 |
 | [dsh-type-tune](#plugin-1388463793-root) | 为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。 | 仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。 |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合右侧文件预览、@文件引用、本地壁纸和活动宠物，增强DSH web桌面体验。 | 先观察，优先核对活动路由授权与上游预览，明确边界后再评估个人本地小范围试用。 |
@@ -250,6 +254,7 @@
 | [hover-glossary](#plugin-1374454334-root) | 在DSH聊天正文悬停显示本地词库的一到多条释义，支持大小写/全角归一化与中文最长词匹配。 | 先观察，非敏感个人环境按诊断策略可限定试用；保密/键盘优先需求应先处理日志与交互边界。 |
 | [ikun-theme-skin](#plugin-1335144603-root) | 给 DSH Web 添加三套 IKUN 配色、壁纸、音乐、发送音效与娱乐化 UI。 | 个人隔离试用，需能关闭音效并核原外观偏好；共享环境先经用户选择。 |
 | [KeyFlow Typing Studio](#plugin-1428515480-root) | DSH内的中英文打字练习面板，提供拼音、计时、上屏计分和本地记录。 | 已有DSH且需要短时双语练习者可控试用；先验证本人IME、纠错口径及本地保存，不将成绩作为正式考试或长期学习成效证明。 |
+| [Kun Like 桌宠](#plugin-1333889802-root) | 以桌宠动作与宿主音效提示 Agent 活动 | [Q04](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md#research-q04) 隔离 profile 验证并行、失败与卸载。 |
 | [maid-atelier · 深海女仆工坊](#plugin-1333123776-maid-atelier) | 为 DSH Web 界面提供双女仆主题、亮暗背景、侧栏装饰和表格阅读交互。 | [Q04](../../plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md#research-q04) 有明确视觉偏好的个人用户可在单主题配置试用。 |
 | [MakoCode](#plugin-1271273008-root) | 用 Electron 视觉小说界面封装 Claude Code CLI，提供角色、配音和会话交互。 | [Q04](../../plugins/liebaojun--makocode/INSIGHT.md#research-q04) 只用无凭据替身或静态阅读。 |
 | [messaging-core](#plugin-1335798113-packages-messaging-core) | 把多种消息平台接入DSH，共享聊天会话映射、流式出站路由、白名单配置和消息工具。 | 先观察，继续核查可用无账号adapter桩验证出站权限和投递状态，再按明确授权评估单平台单用户；暂不把整套作默认多人远程入口。 |
@@ -1312,6 +1317,22 @@
 > **建议**：[Q04](../../plugins/0imzero--dsh-workspace-menu/INSIGHT.md#research-q04) 可研究Host按workspace身份固定的一次性删除计划、逐步回执与可回收目录，用目标变化和阶段失败比较误删与恢复负担；现有双确认/排队已存在，未来增量未验证。
 
 [查看完整分析](../../plugins/0imzero--dsh-workspace-menu/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339844498-root"></a>
+
+## [DSH 个人中心](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md)
+
+[![GitHub ★ 115](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=115&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PolinniZhong/dsh-personal-center) [![npm 30d 2,054](https://img.shields.io/static/v1?label=npm+30d&message=2%2C054&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-personal-center) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-personal-center)
+
+> **用途**：希望查看用量并按项目配置指令的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md#research-q01) 将本地活动回顾与指令维护并入个人中心。
+
+> **思考**：[Q02](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md#research-q02) 整行日志解析、模型传输和路由访问分别核对。
+
+> **建议**：[Q04](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md#research-q04) 宿主身份和来源约束可测试写入边界。
+
+[查看完整分析](../../plugins/polinnizhong--dsh-personal-center/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1403442165-root"></a>
 
@@ -3121,6 +3142,38 @@
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-scroll-piano/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334266810-root"></a>
+
+## [dsh-session-manager](../../plugins/dream12347--dsh-session-manager/INSIGHT.md)
+
+[![GitHub ★ 107](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=107&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream12347/dsh-session-manager) [![npm 30d 15,242](https://img.shields.io/static/v1?label=npm+30d&message=15%2C242&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-manager) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-manager)
+
+> **用途**：使用多个工作区的用户需要管理累积会话。
+
+> **亮点**：[Q01](../../plugins/dream12347--dsh-session-manager/INSIGHT.md#research-q01) 把归档、恢复和目录清理集中到面板。
+
+> **思考**：[Q02](../../plugins/dream12347--dsh-session-manager/INSIGHT.md#research-q02) 溢出和冲突会清理副本，永久清除没有二次运行检查。
+
+> **建议**：[Q03](../../plugins/dream12347--dsh-session-manager/INSIGHT.md#research-q03) 对照官方归档测找回和清理的耗时与丢失。
+
+[查看完整分析](../../plugins/dream12347--dsh-session-manager/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335356493-root"></a>
+
+## [dsh-session-manager](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md)
+
+[![GitHub ★ 106](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=106&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hkkz9522/dsh-session-manager) [![npm 30d 15,242](https://img.shields.io/static/v1?label=npm+30d&message=15%2C242&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-manager) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-manager)
+
+> **用途**：用户重组工作区或预设后希望继续现有会话。
+
+> **亮点**：[Q01](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md#research-q01) 保留会话历史并调整工作目录和归属。
+
+> **思考**：[Q02](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md#research-q02) 改写跨文件、运行时和注册表，崩溃恢复需验证。
+
+> **建议**：[Q03](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md#research-q03) 对照新会话测上下文保留和恢复。
+
+[查看完整分析](../../plugins/hkkz9522--dsh-session-manager/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1412141303-root"></a>
 
 ## [dsh-session-path](../../plugins/439436269-ctrl--dsh-session-path/INSIGHT.md)
@@ -3504,6 +3557,22 @@
 > **建议**：未验证假设是将会话写操作迁到宿主控制API或至少统一最高代解析并强制备份成功，再核对内存/落盘一致性；比较迁移会话的误改和恢复率，若兼容负担不降则否定。[Q05](../../plugins/abcdefgxw--dsh-toolbox-web/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/abcdefgxw--dsh-toolbox-web/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1337335939-root"></a>
+
+## [dsh-turn-delete](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md)
+
+[![GitHub ★ 110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hanshenmesen/dsh-turn-delete) [![npm 30d 359](https://img.shields.io/static/v1?label=npm+30d&message=359&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-turn-delete)
+
+> **用途**：用户希望去掉一个错误回合并保留同一会话的后续进展。
+
+> **亮点**：[Q01](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md#research-q01) 保留会话和后续轮次，缩小上下文更改范围。
+
+> **思考**：[Q02](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md#research-q02) 压缩跨度可能被拒绝，flush 失败后的重试需验证。
+
+> **建议**：[Q03](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md#research-q03) 对照新建会话测上下文保留与错误恢复。
+
+[查看完整分析](../../plugins/hanshenmesen--dsh-turn-delete/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1356219122-root"></a>
 
@@ -4096,6 +4165,22 @@
 > **建议**：未验证假设是显式字素口径、独立累计最佳和保存回执减少成绩误解；用扩展汉字、历史淘汰和配额失败对照，若解释和稳定性不改善则否定。[Q05](../../plugins/654970--dsh-typing-studio/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/654970--dsh-typing-studio/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333889802-root"></a>
+
+## [Kun Like 桌宠](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md)
+
+[![GitHub ★ 113](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=113&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liyupi/dsh-kun-like-pet) [![npm 30d 196](https://img.shields.io/static/v1?label=npm+30d&message=196&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-kun-like-pet) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-kun-like-pet)
+
+> **用途**：用户在其他窗口工作时希望感知 DSH 进度。
+
+> **亮点**：[Q01](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md#research-q01) 把状态变化转为声画提示。
+
+> **思考**：[Q03](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md#research-q03) 轮询转空闲只是信号，存在并行误报窗口。
+
+> **建议**：[Q05](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md#research-q05) 声画提示可缩短发现等待或结束的时间。
+
+[查看完整分析](../../plugins/liyupi--dsh-kun-like-pet/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333123776-maid-atelier"></a>
 

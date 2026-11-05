@@ -23,6 +23,7 @@
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [DSH ComfyUI](#plugin-1340918386-root) | 从 DSH 调用本地或远程 ComfyUI，管理工作流参数和生成媒体。 | [Q04](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q04) 先同步试一次并检查真实队列。 |
 | [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
+| [DSH OpenMAIC](#plugin-1333147218-root) | 将完整课堂生成与会话内教学卡片接入 DSH | [Q04](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q04) 先试无敏卡片，再用模拟服务验证课堂提交。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
@@ -71,6 +72,7 @@
 | [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
 | [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
+| [大肥鱼的小说工坊](#plugin-1337043852-root) | 用阶段门禁、设定注入和版本归档管理连载小说 | [Q04](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q04) 先用虚构三章验证门禁、预算与导出。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -247,6 +249,22 @@
 > **建议**：[Q05](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q05) 核查显式渠道缺失提示能否减少错发。
 
 [查看完整分析](../../plugins/dickpy--dsh-imagegen/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333147218-root"></a>
+
+## [DSH OpenMAIC](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md)
+
+[![GitHub ★ 113](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=113&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/THU-MAIC/dsh-openmaic)
+
+> **用途**：教师需在 DSH 会话解释抽象概念并让学生操作。
+
+> **亮点**：[Q01](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q01) 提供课堂链接和会话中可操作的教学材料。
+
+> **思考**：[Q03](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q03) 外部 API、浏览器资源和教学正确性应分别核对。
+
+> **建议**：[Q05](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q05) 小型交互演示能减少备课切换并维持可复核性。
+
+[查看完整分析](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1332212466-root"></a>
 
@@ -1015,6 +1033,22 @@
 > **建议**：[Q06](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1337043852-root"></a>
+
+## [大肥鱼的小说工坊](../../plugins/akira399--dsh-novel-writer/INSIGHT.md)
+
+[![GitHub ★ 110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/akira399/dsh-novel-writer)
+
+> **用途**：连载作者需要维持多章设定和修订历史。
+
+> **亮点**：[Q01](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q01) 把阶段、版本与设定集中到 DSH 创作界面。
+
+> **思考**：[Q03](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q03) 有限裁剪和规则无法保证长文一致性。
+
+> **建议**：[Q05](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q05) 在同一连载样本上可减少查找设定和回退时间。
+
+[查看完整分析](../../plugins/akira399--dsh-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 

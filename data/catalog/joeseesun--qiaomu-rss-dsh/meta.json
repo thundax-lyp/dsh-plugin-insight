@@ -1,0 +1,27 @@
+{
+    "repository": "joeseesun/qiaomu-rss-dsh",
+    "repository_id": 1396833540,
+    "captured_at": "2026-11-05T04:31:11.152Z",
+    "window_start": "2026-10-06T04:31:11.152Z",
+    "stars": 110,
+    "pushed_at": "2026-11-04T14:29:35Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d25aa7b04c78f6097ade59330763d2bd038aceb3",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

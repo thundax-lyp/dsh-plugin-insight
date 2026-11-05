@@ -52,11 +52,13 @@
 | [dsh-agy-link](#plugin-1339101586-root) | 把本地 Antigravity CLI 接入 DSH，并提供账号池和配额管理。 | [Q03](../../plugins/amlyczz--dsh-agy-link/INSIGHT.md#research-q03) 先检查隔离条件。 |
 | [dsh-anatomy-panel](#plugin-1366089972-workspace-plugins-dsh-anatomy-panel) | 从 Agent-Body 运行时文件实时展示器官体征、心跳和脉冲的宿主网页。 | 限隔离本机开发 Host 观察，不能作为独立健康判据；共享可达环境应先核认证、渲染和来源状态。 |
 | [dsh-api-dashboard](#plugin-1346196699-root) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 可信单用户本地试用，限定Key接收方和刷新，未知模型先缺价核查，估算与官方账单分开，更新优先宿主管理器。 |
+| [dsh-approval-gate](#plugin-1333918421-root) | 按会话预设、规则和 Flash 判断处理 DSH 审批，附审查和快照界面。 | [Q03](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md#research-q03) 只做隔离对照，确认严格解析前维持人工。 |
 | [dsh-auto-mode](#plugin-1333939283-root) | 在 DSH 的 workspace-write 中为部分工具提供确定性与语义审批策略。 | [Q03](../../plugins/nanmicoder--dsh-auto-mode/INSIGHT.md#research-q03) 新配置使用适合任务的宿主手工模式，旧会话先备份后退出。 |
 | [dsh-builtin-browser](#plugin-1334400504-root) | 在 DSH 中为模型提供浏览器导航、页面操作和可选远程观看。 | [Q03](../../plugins/wqty123--dsh-browser/INSIGHT.md#research-q03) 从无登录页面开始。 |
 | [dsh-cap-profile](#plugin-1349267122-root) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 先确认面板显示真实数据，再选数份脱敏会话核对调用、模型和错误归属；用它缩小排查范围。 |
 | [dsh-clean-desktop-shell-pro](#plugin-1389469406-root) | 将 DSH web profile 包装为 Electron 桌面壳，并增加后端自动启动、托盘退出选择与运行时准备。 | 隔离桌面 profile 分别验本地/远程、离线下载、托盘退出与升级后再替换原版。 |
 | [dsh-compaction-route](#plugin-1391040578-root) | 在 DSH 为会话压缩选择主摘要模型及失败后的备用模型。 | [Q03](../../plugins/643048695--dsh-compaction-route/INSIGHT.md#research-q03) 用允许发送的虚拟历史验证。 |
+| [dsh-daruma](#plugin-1348357631-packages-dsh-daruma) | 在 DSH 请求路径内按故障与预算切换模型通道。 | [Q03](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md#research-q03) 先用可计数的模拟模型。 |
 | [dsh-device-bridge](#plugin-1384810806-root) | 在 DSH 中列出配置设备、探测 Companion 状态并请求命名动作。 | [Q03](../../plugins/173787247--dsh-device-bridge/INSIGHT.md#research-q03) 先用隔离 mock 对照请求与设备日志，再评估真实服务。 |
 | [dsh-find-plugin](#plugin-1333689922-root) | 在 DSH 对话中搜索插件仓库，补充目录描述和安装命令，并在在线搜索失败时回退目录关键词匹配。 | [Q03](../../plugins/awesome-dsh-plugin--dsh-find-plugin/INSIGHT.md#research-q03) 把工具当候选入口，读来源note并回仓库核固定提交、兼容与权限。 |
 | [dsh-gitbash-preset](#plugin-1334692596-root) | 复制旧式用户预设文件并提供 Git Bash 执行器，已记录版本发现障碍。 | [Q03](../../plugins/liceses--dsh-gitbash-preset/INSIGHT.md#research-q03) 先验收预设发现和权限，适配前维持官方入口。 |
@@ -74,6 +76,7 @@
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 在 DSH Web 界面展示 OpenViking Studio、会话记忆提交状态和当前召回结果。 | [Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05) 建议可信个人单机以非敏感会话对照一条归档和当前搜索；身份、端点或权限不符时停止并回服务端核查。 |
 | [dsh-permission-rules](#plugin-1333515275-root) | 把可配置的工具权限规则、审批分流和代理网络判断接入 DSH。 | [Q03](../../plugins/perrylink--dsh-permission-rules/INSIGHT.md#research-q03) 在测试 profile 先预演并记录差异。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
+| [dsh-plugin-gating-hub](#plugin-1333974533-root) | 在 DSH 内检查框架变更和插件兼容，提供升级备份、回滚与证据禁用。 | [Q03](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q03) 先在可弃用副本演练并保存独立恢复点。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。 | 建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。 |
@@ -139,6 +142,7 @@
 | [HOL Guard](#plugin-1194748811-root) | 为 Agent 动作提供策略审查、审批、扫描和证据入口。 | [Q04](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q04) 隔离验证实际钩子，不能以静态扫描代替执行覆盖。 |
 | [K8E](#plugin-292529340-root) | 自托管 AI Agent 沙箱平台，提供会话、执行、文件与 DSH 接入 | [Q05](../../plugins/xiaods--k8e/INSIGHT.md#research-q05) 建议已有运维条件的团队以独立 profile 试用读写、断连和销毁；发生本机误写、串扰或残留会话则停止并退回 CLI。 |
 | [Local Shell MCP for DSH](#plugin-1249040497-root) | 将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。 | [Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 先检查隔离会话归属与远端认证，再决定是否引入工具。 |
+| [Mebular DSH Plugin](#plugin-1339704814-packages-dsh-plugin) | 把 Mebular daemon 的 MCP 与 Console 接入 DSH，并管理连接和受管进程状态。 | [Q03](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q03) 先测试节点只读。 |
 | [mem9](#plugin-1175756746-root) | 为 AI Agent 提供跨会话、跨设备的持久共享记忆和检索。 | [Q05](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q05) 先关闭自动写入，在隔离空间用合成事实验证读取、更正和删除；数据授权或传播不明时回本地笔记。 |
 | [Mirage](#plugin-1231135337-root) | 用虚拟文件系统、命令及运行时为 Agent 组合统一终端。 | 先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
@@ -803,6 +807,22 @@
 
 [查看完整分析](../../plugins/133563825as-ai--dsh-api-dashboard/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333918421-root"></a>
+
+## [dsh-approval-gate](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md)
+
+[![GitHub ★ 110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/moon09300731/dsh-approval-gate) [![npm 30d 3,936](https://img.shields.io/static/v1?label=npm+30d&message=3%2C936&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-approval-gate) [![最新发布 2026-08-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-approval-gate)
+
+> **用途**：经常处理沙箱越界审批的用户希望减少重复确认。
+
+> **亮点**：[Q01](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md#research-q01) 对专用预设加入规则和模型分流。
+
+> **思考**：[Q02](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md#research-q02) SAFE 子串可放行 UNSAFE，且撤销仅投递指令。
+
+> **建议**：[Q03](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md#research-q03) 比较严格协议和当前解析的误放行与等待。
+
+[查看完整分析](../../plugins/moon09300731--dsh-approval-gate/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333939283-root"></a>
 
 ## [dsh-auto-mode](../../plugins/nanmicoder--dsh-auto-mode/INSIGHT.md)
@@ -882,6 +902,22 @@
 > **建议**：[Q04](../../plugins/643048695--dsh-compaction-route/INSIGHT.md#research-q04) 关联配置目标与实际尝试以减少错误归因。
 
 [查看完整分析](../../plugins/643048695--dsh-compaction-route/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1348357631-packages-dsh-daruma"></a>
+
+## [dsh-daruma](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md)
+
+[![GitHub ★ 116](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=116&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SISCHOI/daruma) [![npm 30d 1,307](https://img.shields.io/static/v1?label=npm+30d&message=1%2C307&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-daruma) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-daruma)
+
+> **用途**：有多条可用模型通道并希望降低故障中断的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md#research-q01) 将有预算的切换接入模型请求生命周期。
+
+> **思考**：[Q02](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md#research-q02) 需核对成功推断和备用供应商输入。
+
+> **建议**：[Q04](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md#research-q04) 真实请求完成事件可能改善归因。
+
+[查看完整分析](../../plugins/sischoi--daruma--packages-dsh-daruma/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1384810806-root"></a>
 
@@ -1154,6 +1190,22 @@
 > **建议**：未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/940842546--dsh-permissions/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333974533-root"></a>
+
+## [dsh-plugin-gating-hub](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md)
+
+[![GitHub ★ 120](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=120&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Noob-stupid/dsh-plugin-gating-hub) [![npm 30d 15,946](https://img.shields.io/static/v1?label=npm+30d&message=15%2C946&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@noob-stupid/dsh-plugin-console) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@noob-stupid/dsh-plugin-console)
+
+> **用途**：维护多个插件的管理员担心框架升级造成服务失效。
+
+> **亮点**：[Q01](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q01) 将升级与恢复点纳入同一控制台。
+
+> **思考**：[Q02](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q02) 启动前失效时兼容路由无法接手，且自动禁用会改写配置。
+
+> **建议**：[Q03](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q03) 对照手工恢复，测回滚时间和文件完整度。
+
+[查看完整分析](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1394489199-root"></a>
 
@@ -2194,6 +2246,22 @@
 > **建议**：[Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 对照通用 bridge 测重连找回与跨会话串线；没有改善则退出。
 
 [查看完整分析](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339704814-packages-dsh-plugin"></a>
+
+## [Mebular DSH Plugin](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 108](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=108&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Windsander/Mebular) [![npm 30d 1,921](https://img.shields.io/static/v1?label=npm+30d&message=1%2C921&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mebular/dsh-plugin) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@mebular/dsh-plugin)
+
+> **用途**：已有 Mebular 节点并希望在 DSH 使用同一记忆库的用户。
+
+> **亮点**：[Q01](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q01) 将两种入口和 daemon 发现接到宿主。
+
+> **思考**：[Q02](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q02) 区分共享数据、显式端点和子进程所有权。
+
+> **建议**：[Q04](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q04) 可验证身份可能减少误挂载。
+
+[查看完整分析](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1175756746-root"></a>
 
