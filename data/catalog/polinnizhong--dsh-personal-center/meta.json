@@ -1,0 +1,45 @@
+{
+    "repository": "PolinniZhong/dsh-personal-center",
+    "repository_id": 1339844498,
+    "captured_at": "2026-11-05T04:31:11.152Z",
+    "window_start": "2026-10-06T04:31:11.152Z",
+    "stars": 115,
+    "pushed_at": "2026-10-30T06:28:11Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d25aa7b04c78f6097ade59330763d2bd038aceb3",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-personal-center",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 2054,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-personal-center",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-22T12:48:52.633Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-personal-center",
+            "error": null,
+            "latest_version": "1.2.0",
+            "latest_published_at": "2026-10-30T06:26:14.747Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,447 @@
+{
+    "schema_version": 4,
+    "id": "2891a4a6fafffe88044e2ffc91925c84",
+    "identity": "github:1333303761:root",
+    "slug": "pingfanfan--hello-dsh",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333303761:root",
+            "repository_id": 1333303761,
+            "component_id": "root",
+            "repository": "pingfanfan/hello-dsh",
+            "path": "",
+            "aliases": [],
+            "name": "hello-dsh",
+            "entry_type": "resource",
+            "technical_category": "agent-workflow",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "61438cd3637c1f938c28ae84a72171b12cbde565652deb58433476d1bc91438f",
+                "code": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                "maintenance": "0113cbb4634a0ab0449065fedd6d90608b8a3c85f49c9aa05ca8cf08393e44ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-05-github-1333303761-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T04:40:18.361Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-05-github-1333303761-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "README.md",
+                            "content_sha256": "11e92e6adee237adb6b005e29c03b7b6d1f07f4db258119d405f84d8f3832c7c"
+                        }
+                    ],
+                    "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                    "captured_at": "2026-11-05T04:40:18.361Z",
+                    "summary": "提供中文 DSH 入门教程、示例 Skill 和最小代码插件。",
+                    "artifact": "data/runs/2026-11-05-05/pingfanfan--hello-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-05-github-1333303761-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "README.md",
+                            "content_sha256": "11e92e6adee237adb6b005e29c03b7b6d1f07f4db258119d405f84d8f3832c7c"
+                        },
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "docs/hello-dsh.md",
+                            "content_sha256": "f8aaf5e092cef1778187d7956c81c79dd6cf77baf00c99c267bad71eaf7d3ffd"
+                        },
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "examples/skills/hello-dsh/SKILL.md",
+                            "content_sha256": "28d8bfcf5edcb1f27a7305ad6e6fce513f238b2ba098a73e100ca79105127eeb"
+                        },
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "examples/hello-plugin/src/hello.ts",
+                            "content_sha256": "e3ddd625e54c0f39645746f2a47d486bbf4a1f62ca858c7584c6193171d27dbf"
+                        },
+                        {
+                            "repository_url": "https://github.com/pingfanfan/hello-dsh",
+                            "commit": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                            "path": "INSTALL-FOR-AGENTS.md",
+                            "content_sha256": "3b8f5e14e23a1ecf0d9bfa32ce0990eab420db4df3e566a3ebda01db50fbabcb"
+                        }
+                    ],
+                    "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                    "captured_at": "2026-11-05T04:40:18.361Z",
+                    "summary": "核查 README.md、docs/hello-dsh.md、examples/skills/hello-dsh/SKILL.md、examples/hello-plugin/src/hello.ts、INSTALL-FOR-AGENTS.md；通过逐步检查点、磁盘 Skill 和独立工具插件演示。",
+                    "artifact": "data/runs/2026-11-05-05/pingfanfan--hello-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定教程、Skill 和代码样例；未下载、复制或运行目标。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "首次学习 DSH 扩展机制的中文用户。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "通过逐步检查点、磁盘 Skill 和独立工具插件演示。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定教程、Skill 和代码样例；未下载、复制或运行目标。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "教程与示例仓库，Skill 目录和代码样例分开。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node 与可用 DSH | 实践需要 | 观察插件和 Skill | 仅阅读无需安装 |\n| 模型路由与网络 | 按练习需要 | 运行示例对话 | 可先只做静态和界面练习 |",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 模型及网络资源未知 | 准备环境并完成检查点 | 作者估计未独立验证 |\n| 持续 | 资源未知 | 更新旧版本指引 | 按需复用例子 |\n| 失败 | 恢复工时未知 | 移除测试例子并查宿主文档 | 保留原用户目录 |",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 先用临时环境和单个固定示例。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 新手入门 | 按检查点理解 DSH 扩展 | 实际通过率与用时 |",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 文档的批量复制不处理同名覆盖，核对具体版本。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 把技能发现和工具注册变为可观察的练习。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 验证环境是早期 DSH，批量复制存在版本和同名冲突。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 对照官方文档比较首个扩展的完成时间。",
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333303761:root",
+                            "area": "code",
+                            "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:40:18.361Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T04:40:18.361Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                "reviewed_at": "2026-11-05T04:40:18.361Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333303761:root",
+                        "area": "code",
+                        "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) novelty 25%，分步教程有先例；mechanism 25%，演示现有入口。[Q02](#research-q02) transferability 50%，依赖宿主，但检查点思路可迁移；[Q03](#research-q03) simplification 50%，对入门有集中指引。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) workflow 25%，仅入门；delivery 50%，有示例和文档；reach 25%，中文初学者。[Q03](#research-q03) economics 25%，节时待测。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-11-05-05-github-1333303761-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "想学 DSH 扩展的中文用户可以先读教程并在隔离目录试一个示例。逐步检查点帮助分辨 Skill 读取和插件注册。若当前宿主的路径或接口已变，就按当前文档核对后继续。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) docs/hello-dsh.md 7–28 有明确初学任务，高于8；仅一次性，低于23。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 示例 Skill 7–12 及工具样例 4–12 提供可观察练习，高于6；主要是教学，低于19。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) INSTALL-FOR-AGENTS.md 72–100 给出实际操作，超过6；未复跑，低于19。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q03](#research-q03) 可以单独复制一个 Skill 并回退，高于10；仍依赖宿主及下载，低于20。"
+                    }
+                },
+                "score": 56,
+                "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                "reviewed_at": "2026-11-05T04:40:18.361Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-05-github-1333303761-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333303761:root",
+                        "area": "code",
+                        "fingerprint": "ef388c22b65cb7429f536be79e3c76af97a81b4e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333303761:root",
+            "repository": "pingfanfan/hello-dsh",
+            "path": "",
+            "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+            "fingerprints": {
+                "directory": "61438cd3637c1f938c28ae84a72171b12cbde565652deb58433476d1bc91438f",
+                "code": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+                "maintenance": "0113cbb4634a0ab0449065fedd6d90608b8a3c85f49c9aa05ca8cf08393e44ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T04:22:23Z",
+            "analysis_sha256": "6a3b8fd0bb3aaa31684752cf0abeb08ea33beb2e57a7a03e17746ec3d409368e"
+        },
+        "publication.metadata": "data/catalog/pingfanfan--hello-dsh/meta.json",
+        "publication.summaries": {
+            "text": "提供中文 DSH 入门教程、示例 Skill 和最小代码插件。",
+            "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+            "source_url": "https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+            "items": {
+                "Skill": "中文示例 Skill",
+                "模型工具": "独立 hello 插件演示工具注册"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 教程 | 跟随检查点了解 DSH | 作者环境为早期 macOS 构建 |\n| 示例 | 观察 Skill 和工具插件 | 在隔离环境逐个验收 |"
+        },
+        "publication.advice": {
+            "revision": "ef388c22b65cb7429f536be79e3c76af97a81b4e",
+            "text": "[Q03](#research-q03) 先用临时环境和单个固定示例。"
+        },
+        "registry": "data/plugins/pingfanfan--hello-dsh",
+        "reports": "# hello-dsh\n\n> 提供中文 DSH 入门教程、示例 Skill 和最小代码插件。\n\n## 研究范围\n\n- **仓库**：[pingfanfan/hello-dsh](https://github.com/pingfanfan/hello-dsh)\n- **版本号**：未声明（[固定提交 ef388c22b65cb7429f536be79e3c76af97a81b4e](https://github.com/pingfanfan/hello-dsh/tree/ef388c22b65cb7429f536be79e3c76af97a81b4e)）\n- **版本日期**：2026-09-14（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n确认是教程资源及示例集合，未运行。\n\n## 洞察短评\n\n- **用途**：首次学习 DSH 扩展机制的中文用户。\n- **亮点**：[Q01](#research-q01) 把技能发现和工具注册变为可观察的练习。\n- **思考**：[Q02](#research-q02) 验证环境是早期 DSH，批量复制存在版本和同名冲突。\n- **建议**：[Q03](#research-q03) 对照官方文档比较首个扩展的完成时间。\n\n采用建议：[Q03](#research-q03) 先用临时环境和单个固定示例。\n\n## 核心贡献\n\n[Q01](#research-q01) 把技能发现和工具注册变为可观察的练习。\n\n## 关键质疑\n\n[Q02](#research-q02) 验证环境是早期 DSH，批量复制存在版本和同名冲突。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 对照官方文档比较首个扩展的完成时间。\n\n空配置对照教程和现行 Host，记录发现路径和通过率。\n\n## 场景与替代办法\n\n首次学习 DSH 扩展机制的中文用户。\n\n直接阅读官方架构和 API 文档。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node 与可用 DSH | 实践需要 | 观察插件和 Skill | 仅阅读无需安装 |\n| 模型路由与网络 | 按练习需要 | 运行示例对话 | 可先只做静态和界面练习 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 阅读 | 从中文教程的终端和插件检查开始 | 核对版本 |\n| 体验 | 在临时目录试固定 Skill | 确认发现和输出 |\n| 编写 | 阅读工具样例并走生命周期 | 核对 Host 当前 API |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 模型及网络资源未知 | 准备环境并完成检查点 | 作者估计未独立验证 |\n| 持续 | 资源未知 | 更新旧版本指引 | 按需复用例子 |\n| 失败 | 恢复工时未知 | 移除测试例子并查宿主文档 | 保留原用户目录 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 新手入门 | 按检查点理解 DSH 扩展 | 实际通过率与用时 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：首次使用 DSH 的中文用户能否观察 Skill 加载和代码插件生命周期？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 学习者能实际观察什么？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n仓库主入口是中文入门教程，配套独立 Skill 示例和一个最小代码插件。教程由命令行走到插件列表与生命周期；hello-dsh Skill 用固定句子演示从磁盘读内容，代码样例通过 apply 向 tools 服务注册工具。相对只读官方架构介绍，学习者能按检查点分辨模型读 Skill 和 Host 执行插件。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:20-36](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/README.md#L20-L36)\n\n主入口和语言。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nDSH introduces itself as *\"Everything is a Plugin.\"*\n\nThat is not marketing. Open Settings → Plugins → Plugin list and look at the count:\n\n![Plugin list](assets/05-plugin-list-133.png)\n\n**133 of them.** `llm` (the model adapter), `session` (conversation history), `webserver` (the page you are looking at), `ui-sidebar` (the sidebar on the left), and `agent-loop` — **the agent loop itself is a plugin**.\n\nThis repo walks you from \"open a terminal\" to building your own plugin and watching its lifecycle.\n\n---\n\n## Start here\n\n**→ [Full tutorial: Hello DSH](docs/hello-dsh.md)**\n\n> 🌏 **The tutorial is currently written in Chinese.** An English version is in progress.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[docs/hello-dsh.md:7-28](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/docs/hello-dsh.md#L7-L28)\n\n版本和分步检查点。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n**这份教程假设你什么都没有。** 没装过 Node，没用过命令行，不知道什么是环境变量。每一节末尾都有一个检查点，**看到指定的结果才能往下走**。\n\n所有截图和输出都是真实的（DSH `0.1.0-rc.6`，macOS，2026-08-13）。\n\n---\n\n## 目录\n\n| 节 | 内容 | 预计 |\n|---|---|---|\n| [第 1 步](#第-1-步打开终端) | 打开终端 | 2 分钟 |\n| [第 2 步](#第-2-步装-nodejs) | 装 Node.js | 5 分钟 |\n| [第 3 步](#第-3-步启动-dsh) | 启动 DSH | 5 分钟 |\n| [第 4 步](#第-4-步配置密钥) | 配置 API 密钥 | 3 分钟 |\n| [第 5 步](#第-5-步选一个工作区) | 选一个工作区 | 2 分钟 |\n| [第 6 步](#第-6-步亲眼看到-133-个插件) | **亲眼看到 133 个插件** | 3 分钟 |\n| [第 7 步](#第-7-步做第一个插件) | **做第一个插件** | 5 分钟 |\n| [第 8 步](#第-8-步看它的生命周期) | **看它的生命周期** | 5 分钟 |\n| [第 9 步](#第-9-步接下来可以做什么) | 接下来可以做什么 | 3 分钟 |\n| [第 10 步](#第-10-步原理选读) | 原理（选读） | 10 分钟 |\n\n前 8 步大约 30 分钟，跑完就能用。第 10 步（原理）是选读的。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[examples/skills/hello-dsh/SKILL.md:7-12](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/examples/skills/hello-dsh/SKILL.md#L7-L12)\n\nSkill 示范的可观测输出。\n\n```text\n\n先原样输出这一行：\n\n**HELLO DSH — 这句话来自 ~/.dsh/skills/hello-dsh/SKILL.md**\n\n然后用一句话说明：这句话不在你的训练数据里，是刚才通过 `skill` 工具从本地磁盘的一个 Markdown 文件读到的。\n```\n\n**依据 4 · 源码核查**：[examples/hello-plugin/src/hello.ts:4-12](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/examples/hello-plugin/src/hello.ts#L4-L12)\n\n独立代码插件接线。\n\n```text\nexport const name = 'hello-plugin'\nexport const inject = ['tools']\n\nexport function apply(ctx: Context) {\n  ctx.tools.register(defineTool({\n    name: 'pingfan_hello',\n    description: '返回一句固定问候，用于验证第三方插件是否加载成功。',\n    parameters: {\n      who: { type: 'string', description: '要问候的对象' },\n```\n\n#### 缺口\n\n- 未观察真实学习者\n  **影响**：无法确认教程节时或通过率\n  **进一步探讨**：让新用户从空 profile 复述两种入口并完成检查点\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 复制 Skill 的路径和版本有什么限制？\n\n**研究主题**：工程质量与复用、缺陷与关键质疑、依赖、兼容与流程\n\n#### 完整回答\n\n作者提供 DSH 用户目录和跨 Agent 共享目录；安装手册示例从 main 下载后批量复制，不能提供固定制品或同名文件冲突防护。示例环境声明为 macOS DSH 0.1.0-rc.6。Node、网络和可用模型根据选定步骤有不同需求，截图和发现检查点在其他版本须重新验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[INSTALL-FOR-AGENTS.md:19-41](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/INSTALL-FOR-AGENTS.md#L19-L41)\n\nNode 与 npx 的前置条件。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n````text\n### 1. Node.js（硬前置，缺了做不下去）\n\n```sh\nnode --version\n```\n\n没有 Node 就**停下来告诉用户去装**，不要自作主张用包管理器装（可能污染他的环境）：\n\n> DSH 需要 Node.js。请先从 https://nodejs.org 安装（建议 LTS 版本），装完告诉我，我继续。\n\nmacOS 用户如果有 Homebrew，可以建议 `brew install node`，但**要先问过再执行**。\n\n### 2. DSH 本身（不用预装）\n\n```sh\nnpx @deepseek-ai/dsh --version\n```\n\n**这一步会自动下载 DSH，首次会比较慢（几十秒到几分钟），不是卡死。**\n\n如果输出了版本号（例如 `0.1.0-rc.6`），说明没问题。\n\n> 注意：DSH **不需要提前安装**。`npx` 会按需拉取，`~/.dsh/` 目录也是首次运行时自动生成的。所以技能可以在 DSH 第一次运行之前就放好——实测确认过，把技能放进一个从没跑过 DSH 的目录，第一次运行就能发现它们。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[INSTALL-FOR-AGENTS.md:72-100](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/INSTALL-FOR-AGENTS.md#L72-L100)\n\n复制源和作用域。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n````text\n\n| 位置 | 用于 |\n|---|---|\n| `~/.dsh/skills/` | 只给 DSH 用（**默认选这个**） |\n| `~/.agents/skills/` | 跨 agent 共享，Claude Code 等也能读到 |\n\n### 取得文件\n\n优先用 git（保留后续更新能力）：\n\n```sh\ngit clone --depth 1 https://github.com/pingfanfan/hello-dsh.git /tmp/hello-dsh\n```\n\n没有 git 时用打包下载：\n\n```sh\ncurl -fsSL https://github.com/pingfanfan/hello-dsh/archive/refs/heads/main.tar.gz | tar xz -C /tmp\n# 解出 /tmp/hello-dsh-main\n```\n\n### 拷贝\n\n```sh\nmkdir -p ~/.dsh/skills\ncp -R /tmp/hello-dsh/examples/skills/* ~/.dsh/skills/\n```\n\n`~/.dsh/skills/` 不存在时直接创建即可，**不用先跑 DSH**。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[docs/hello-dsh.md:5-9](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/docs/hello-dsh.md#L5-L9)\n\n作者验证环境。\n\n```text\n这句话不是修辞。跑完这份教程，你会亲眼看到它有 **133 个插件**，其中包括模型适配器、工具注册表、会话记录、Web 服务器，甚至 **agent 的主循环本身**。然后你会自己做出一个。\n\n**这份教程假设你什么都没有。** 没装过 Node，没用过命令行，不知道什么是环境变量。每一节末尾都有一个检查点，**看到指定的结果才能往下走**。\n\n所有截图和输出都是真实的（DSH `0.1.0-rc.6`，macOS，2026-08-13）。\n```\n\n#### 缺口\n\n- 未测试各平台和版本的发现顺序\n  **影响**：可能出现已复制但 Host 没发现的情况\n  **进一步探讨**：用隔离目录单独复制一个固定 Skill，再测试发现与同名冲突\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何低成本判断教程适合当前环境？\n\n**研究主题**：采用判断、效果与总成本、新假设与验证\n\n#### 完整回答\n\n先读中文教程并走到原生插件列表，在临时配置中只放入一个固定版本示例 Skill，核对名字、触发和输出后再做代码样例。对照纯官方文档的时间和卡住次数。若版本差异使路径失效，就以当前宿主文档核对流程，保留这套教程用于理解概念。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[docs/hello-dsh.md:13-28](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/docs/hello-dsh.md#L13-L28)\n\n逐步验收顺序。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 目录\n\n| 节 | 内容 | 预计 |\n|---|---|---|\n| [第 1 步](#第-1-步打开终端) | 打开终端 | 2 分钟 |\n| [第 2 步](#第-2-步装-nodejs) | 装 Node.js | 5 分钟 |\n| [第 3 步](#第-3-步启动-dsh) | 启动 DSH | 5 分钟 |\n| [第 4 步](#第-4-步配置密钥) | 配置 API 密钥 | 3 分钟 |\n| [第 5 步](#第-5-步选一个工作区) | 选一个工作区 | 2 分钟 |\n| [第 6 步](#第-6-步亲眼看到-133-个插件) | **亲眼看到 133 个插件** | 3 分钟 |\n| [第 7 步](#第-7-步做第一个插件) | **做第一个插件** | 5 分钟 |\n| [第 8 步](#第-8-步看它的生命周期) | **看它的生命周期** | 5 分钟 |\n| [第 9 步](#第-9-步接下来可以做什么) | 接下来可以做什么 | 3 分钟 |\n| [第 10 步](#第-10-步原理选读) | 原理（选读） | 10 分钟 |\n\n前 8 步大约 30 分钟，跑完就能用。第 10 步（原理）是选读的。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[INSTALL-FOR-AGENTS.md:100-115](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/INSTALL-FOR-AGENTS.md#L100-L115)\n\n检查目录与 headless 示例。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\n`~/.dsh/skills/` 不存在时直接创建即可，**不用先跑 DSH**。\n\n---\n\n## 第三步：验证\n\n```sh\nls ~/.dsh/skills/\n```\n\n应该看到 20 多个目录，每个里面有一个 `SKILL.md`。\n\n如果用户有 API Key，直接做端到端验证：\n\n```sh\nnpx @deepseek-ai/dsh --profile headless \"hello dsh\"\n````\n\n</details>\n\n**依据 3 · 源码核查**：[examples/skills/hello-dsh/SKILL.md:24-44](https://github.com/pingfanfan/hello-dsh/blob/ef388c22b65cb7429f536be79e3c76af97a81b4e/examples/skills/hello-dsh/SKILL.md#L24-L44)\n\nSkill 和插件的概念边界。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n不只是\"支持插件扩展\"，而是**产品自身就是插件拼出来的**：模型适配器是插件，工具注册表是插件，会话日志是插件，连 agent 主循环本身都是插件。\n\n刚才那句暗号就是证据。让它成为可能的是四个插件协作：\n\n| 插件 | 干什么 |\n|---|---|\n| `dsh-skill` | 定义「技能」这个能力 |\n| `dsh-skill-filesystem` | 扫描目录、读取 Markdown 文件 |\n| `dsh-tool-skill` | 把技能目录给模型看，提供加载工具 |\n| `dsh-client-ui-skill` | Web UI 里的技能界面 |\n\n**你要给 DSH 加东西，也是加插件。** 两条路：\n\n| 路 | 写什么 | 成本 | 适合 |\n|---|---|---|---|\n| **技能插件** | 一个 Markdown 文件 | 5 分钟 | 改变判断标准、输出格式、工作流程 |\n| **代码插件** | TypeScript 模块 | 半小时起 | 注册新工具、接外部服务、挂生命周期钩子 |\n\n**判断依据：用自然语言能说清楚的，走 Markdown 那条路。**\n\n（严格说，技能是被 `skill-filesystem` 插件读取的数据文件，本身不是 Cordis 意义上的插件实体。这个区别在写代码插件时才需要在意，用的时候不影响。）\n```\n\n</details>\n\n#### 缺口\n\n- 作者的约 30 分钟未实测\n  **影响**：入门时间和环境摩擦未知\n  **进一步探讨**：记录首次检查点成功和失败位置\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：2ed3d583e578a73a3aef8e8f31f14659dae1cb3eb754d1571ab09ce34f1afafe。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 6 | 1635 | — | — | 12709 |\n| .md | example | 23 | 2489 | — | — | 23696 |\n| .ts | example | 1 | 29 | 27 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 教程 | 跟随检查点了解 DSH | 作者环境为早期 macOS 构建 |\n| 示例 | 观察 Skill 和工具插件 | 在隔离环境逐个验收 |\n\n## 工程亮点\n\n[Q02](#research-q02) 文档的批量复制不处理同名覆盖，核对具体版本。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、docs/hello-dsh.md、examples/skills/hello-dsh/SKILL.md、examples/hello-plugin/src/hello.ts、INSTALL-FOR-AGENTS.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定教程、Skill 和代码样例；未下载、复制或运行目标。\n- 下一步：空配置对照教程和现行 Host，记录发现路径和通过率。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-05/pingfanfan--hello-dsh/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"pingfanfan/hello-dsh\",\n  \"revision\": \"ef388c22b65cb7429f536be79e3c76af97a81b4e\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"docs/hello-dsh.md\",\n    \"examples/skills/hello-dsh/SKILL.md\",\n    \"examples/hello-plugin/src/hello.ts\",\n    \"INSTALL-FOR-AGENTS.md\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"首次使用 DSH 的中文用户能否观察 Skill 加载和代码插件生命周期？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"学习者能实际观察什么？\",\n        \"answer\": \"仓库主入口是中文入门教程，配套独立 Skill 示例和一个最小代码插件。教程由命令行走到插件列表与生命周期；hello-dsh Skill 用固定句子演示从磁盘读内容，代码样例通过 apply 向 tools 服务注册工具。相对只读官方架构介绍，学习者能按检查点分辨模型读 Skill 和 Host 执行插件。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 20,\n            \"line_end\": 36,\n            \"observation\": \"主入口和语言。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/hello-dsh.md\",\n            \"line_start\": 7,\n            \"line_end\": 28,\n            \"observation\": \"版本和分步检查点。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"examples/skills/hello-dsh/SKILL.md\",\n            \"line_start\": 7,\n            \"line_end\": 12,\n            \"observation\": \"Skill 示范的可观测输出。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"examples/hello-plugin/src/hello.ts\",\n            \"line_start\": 4,\n            \"line_end\": 12,\n            \"observation\": \"独立代码插件接线。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未观察真实学习者\",\n            \"impact\": \"无法确认教程节时或通过率\",\n            \"next_step\": \"让新用户从空 profile 复述两种入口并完成检查点\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"engineering\",\n          \"limitations\",\n          \"dependencies\"\n        ],\n        \"question\": \"复制 Skill 的路径和版本有什么限制？\",\n        \"answer\": \"作者提供 DSH 用户目录和跨 Agent 共享目录；安装手册示例从 main 下载后批量复制，不能提供固定制品或同名文件冲突防护。示例环境声明为 macOS DSH 0.1.0-rc.6。Node、网络和可用模型根据选定步骤有不同需求，截图和发现检查点在其他版本须重新验证。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"INSTALL-FOR-AGENTS.md\",\n            \"line_start\": 19,\n            \"line_end\": 41,\n            \"observation\": \"Node 与 npx 的前置条件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"INSTALL-FOR-AGENTS.md\",\n            \"line_start\": 72,\n            \"line_end\": 100,\n            \"observation\": \"复制源和作用域。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/hello-dsh.md\",\n            \"line_start\": 5,\n            \"line_end\": 9,\n            \"observation\": \"作者验证环境。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测试各平台和版本的发现顺序\",\n            \"impact\": \"可能出现已复制但 Host 没发现的情况\",\n            \"next_step\": \"用隔离目录单独复制一个固定 Skill，再测试发现与同名冲突\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"adoption\",\n          \"cost\",\n          \"hypothesis\"\n        ],\n        \"question\": \"如何低成本判断教程适合当前环境？\",\n        \"answer\": \"先读中文教程并走到原生插件列表，在临时配置中只放入一个固定版本示例 Skill，核对名字、触发和输出后再做代码样例。对照纯官方文档的时间和卡住次数。若版本差异使路径失效，就以当前宿主文档核对流程，保留这套教程用于理解概念。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"docs/hello-dsh.md\",\n            \"line_start\": 13,\n            \"line_end\": 28,\n            \"observation\": \"逐步验收顺序。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"INSTALL-FOR-AGENTS.md\",\n            \"line_start\": 100,\n            \"line_end\": 115,\n            \"observation\": \"检查目录与 headless 示例。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"examples/skills/hello-dsh/SKILL.md\",\n            \"line_start\": 24,\n            \"line_end\": 44,\n            \"observation\": \"Skill 和插件的概念边界。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"作者的约 30 分钟未实测\",\n            \"impact\": \"入门时间和环境摩擦未知\",\n            \"next_step\": \"记录首次检查点成功和失败位置\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"<div align=\\\"center\\\">\\n\\n<img src=\\\"assets/banner.png\\\" alt=\\\"Hello DSH — Everything is a Plugin\\\" width=\\\"820\\\">\\n\\n**The first lesson for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)**\\n\\nFrom \\\"open a terminal\\\" to your first plugin, in 30 minutes\\n\\n[![Tutorial](https://img.shields.io/badge/tutorial-10%20steps-blue)](docs/hello-dsh.md)\\n[![Skills](https://img.shields.io/badge/example%20skills-22-green)](examples/skills/)\\n[![DSH](https://img.shields.io/badge/DSH-0.1.0--rc.6%20verified-orange)](https://github.com/deepseek-ai/deepseek-harness)\\n[![License](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)\\n\\n**English** · [中文](README.zh.md) · [**Start →**](docs/hello-dsh.md)\\n\\n</div>\\n\\n---\\n\\nDSH introduces itself as *\\\"Everything is a Plugin.\\\"*\\n\\nThat is not marketing. Open Settings → Plugins → Plugin list and look at the count:\\n\\n![Plugin list](assets/05-plugin-list-133.png)\\n\\n**133 of them.** `llm` (the model adapter), `session` (conversation history), `webserver` (the page you are looking at), `ui-sidebar` (the sidebar on the left), and `agent-loop` — **the agent loop itself is a plugin**.\\n\\nThis repo walks you from \\\"open a terminal\\\" to building your own plugin and watching its lifecycle.\\n\\n---\\n\\n## Start here\\n\\n**→ [Full tutorial: Hello DSH](docs/hello-dsh.md)**\\n\\n> 🌏 **The tutorial is currently written in Chinese.** An English version is in progress.\\n> The code, commands, and screenshots are language-neutral, so the walkthrough is still\\n> followable — and the skills in [`examples/skills/`](examples/skills/) work regardless of\\n> what language you read.\\n>\\n> ⚠️ **Launch the web UI with `--patch`**, or skills silently do nothing. See\\n> [the gotcha below](#one-gotcha).\\n\\nIt assumes you have nothing: no Node.js, no command-line experience. Every section ends with a checkpoint — **you don't move on until you see the expected result**.\\n\\n| Steps | What | Time |\\n|---|---|---|\\n| 1–2 | Open a terminal, install Node.js | 7 min |\\n| 3–5 | Launch DSH, configure the API key, pick a workspace | 10 min |\\n| 6 | **See all 133 plugins for yourself** | 3 min |\\n| 7–8 | **Build your first plugin, watch its lifecycle** | 10 min |\\n| 9–10 | What's next, theory (optional) | 13 min |\\n\\nSteps 1–8 take about 30 minutes and leave you with a working setup.\\n\\n---\\n\\n## Two routes to extend DSH\\n\\n| Route | What you write | Effort | Good for |\\n|---|---|---|---|\\n| **Markdown** (skill) | One text file | 5 minutes | Changing how the model judges, formats, and works |\\n| **TypeScript** (code plugin) | A code module | 30+ minutes | New tools, external services, UI changes |\\n\\n**Rule of thumb: if you can explain it in plain language, take the Markdown route.**\\n\\nThe tutorial walks through both.\\n\\n---\\n\\n## Ready-made examples\\n\\nOnce you're through the tutorial, [`examples/skills/`](examples/skills/) has 22 Chinese-language skills ready to use.\\n\\n### Let an AI install them (easiest)\\n\\nHand this link to Codex, Claude Code, or DSH itself:\\n\\n```\\nhttps://github.com/pingfanfan/hello-dsh/blob/main/INSTALL-FOR-AGENTS.md\\ninstall this\\n```\\n\\nIt checks Node, DSH, and the API key first, then copies files.\\n\\n### Or run one command\\n\\n```sh\\ngit clone https://github.com/pingfanfan/hello-dsh.git\\ncd hello-dsh && ./install.sh\\n```\\n\\nPreview first: `./install.sh --dry-run`\\nRemove: `./install.sh --uninstall`\\n\\n### The skills\\n\\n| Skill | Use it when |\\n|---|---|\\n| `hello-dsh` | **Start here**: verify the plugin system, lifecycle, theory |\\n| `dsh-onboarding` | First run of DSH, or stuck on startup, workspace, permissions |\\n| `dsh-skill-dev` | Full rules for writing skills (Markdown route) |\\n| `dsh-first-plugin` | Building your first code plugin (tested walkthrough) |\\n| `dsh-plugin-dev` | Full rules for writing plugins (TypeScript route) |\\n| `dsh-troubleshoot` | Won't start, config not applying, UNKNOWN_TOOL, missing skills |\\n| `plan-before-code` | A task spanning several files, with unknowns |\\n| `code-review-cn` | Reviewing a change, PR, or diff |\\n| `debug-systematically` | A bug, a failing test, \\\"it worked yesterday\\\" |\\n| `explain-codebase` | Getting oriented in an unfamiliar project |\\n| `refactor-safely` | Refactoring, splitting functions, removing duplication |\\n| `test-first` | Writing tests, implementing a feature, fixing a bug |\\n| `api-design` | Designing an interface, adding a public method |\\n| `error-handling` | Designing error handling, throw vs return |\\n| `perf-optimize` | Optimizing performance, finding what's slow |\\n| `security-review-cn` | Security review, attack surface, credential handling |\\n| `commit-message` | Writing commit messages, splitting changes |\\n| `pr-description` | Writing a PR description, preparing review |\\n| `write-tech-cn` | Writing Chinese docs, READMEs, technical posts |\\n| `write-docs-cn` | Writing or organizing project docs, API references |\\n| `web-research` | Researching online, verifying facts, evaluating options |\\n| `ask-good-questions` | Asking a technical question, reporting a bug |\\n\\nOnce installed, say **\\\"hello dsh\\\"** to DSH and it walks you through, one layer at a time.\\n\\n---\\n\\n## One gotcha\\n\\n⚠️ **The DSH web UI ships with skills disabled** (the CLI profile has them on). Verified on `0.1.0-rc.6`.\\n\\nTo use skills in the web UI:\\n\\n```sh\\nnpx @deepseek-ai/dsh web --patch ./enable-skills-in-web.yml\\n```\\n\\nThat file is in this repo's root.\\n\\n---\\n\\n## What this tutorial found\\n\\nWriting this meant running DSH end to end on two clean Macs. These behaviors are documented in the tutorial because each one silently blocks a beginner:\\n\\n| Finding | Why it matters |\\n|---|---|\\n| The web profile ships with `tool-skill` and `skill-filesystem` **disabled**; `headless` has them on | Same skill works in the CLI, silently does nothing in the web UI, with no error |\\n| The web UI **requires a workspace** before the send button activates | The CLI has no such requirement, so it's easy to miss when testing |\\n| A stale DSH process holding port 3080 makes the page **load normally** | New instance exits with `EADDRINUSE`; the browser silently talks to the old one and no config change appears to take effect |\\n| `--patch` **inserts** rather than overrides, so patched plugins mount twice | Harmless, but the plugin list shows 7 skill plugins instead of 5 |\\n| A camelCase frontmatter key drops the **entire skill**, warning only | Documented fail-closed behavior, but hard to diagnose without knowing it |\\n\\nAll verified on `0.1.0-rc.6`.\\n\\n## Companion tool\\n\\n`dsh-doctor` — config health checks that catch silent failures:\\n\\n```sh\\nnpx dsh-doctor\\n```\\n\\nRead-only. Every rule maps to a real failure documented in DeepSeek's own docs or postmortems.\\n\\n---\\n\\n## How these skills are written\\n\\nFollowing DSH's own [`.agents/skills/`](https://github.com/deepseek-ai/deepseek-harness/tree/master/.agents/skills) — 11 skills DeepSeek wrote for internal use. What they have in common:\\n\\n1. **Guidance, not a checklist** (their words: *\\\"This skill is guidance, not a complete checklist\\\"*)\\n2. **Name the sources of truth**, and say \\\"read them, don't restate them\\\"\\n3. **Layer it**: blocking requirements / manual checks / what not to do\\n4. **A dedicated \\\"what not to do\\\" section** — it prevents more than the positive instructions do\\n\\nSee [docs/writing-skills.md](docs/writing-skills.md).\\n\\n## Contributing\\n\\nSee [CONTRIBUTING.md](CONTRIBUTING.md). Two requirements: Chinese, and you actually use it.\\n\\n## License\\n\\nMIT\\n\\n---\\n\\nUnofficial community project. Not affiliated with DeepSeek.\\n\"\n    },\n    {\n      \"path\": \"docs/hello-dsh.md\",\n      \"content\": \"# Hello DSH：从零开始，看懂「万物皆可插件」\\n\\nDeepSeek Harness（下称 DSH）的第一句自我介绍是 **\\\"Everything is a Plugin\\\"**。\\n\\n这句话不是修辞。跑完这份教程，你会亲眼看到它有 **133 个插件**，其中包括模型适配器、工具注册表、会话记录、Web 服务器，甚至 **agent 的主循环本身**。然后你会自己做出一个。\\n\\n**这份教程假设你什么都没有。** 没装过 Node，没用过命令行，不知道什么是环境变量。每一节末尾都有一个检查点，**看到指定的结果才能往下走**。\\n\\n所有截图和输出都是真实的（DSH `0.1.0-rc.6`，macOS，2026-08-13）。\\n\\n---\\n\\n## 目录\\n\\n| 节 | 内容 | 预计 |\\n|---|---|---|\\n| [第 1 步](#第-1-步打开终端) | 打开终端 | 2 分钟 |\\n| [第 2 步](#第-2-步装-nodejs) | 装 Node.js | 5 分钟 |\\n| [第 3 步](#第-3-步启动-dsh) | 启动 DSH | 5 分钟 |\\n| [第 4 步](#第-4-步配置密钥) | 配置 API 密钥 | 3 分钟 |\\n| [第 5 步](#第-5-步选一个工作区) | 选一个工作区 | 2 分钟 |\\n| [第 6 步](#第-6-步亲眼看到-133-个插件) | **亲眼看到 133 个插件** | 3 分钟 |\\n| [第 7 步](#第-7-步做第一个插件) | **做第一个插件** | 5 分钟 |\\n| [第 8 步](#第-8-步看它的生命周期) | **看它的生命周期** | 5 分钟 |\\n| [第 9 步](#第-9-步接下来可以做什么) | 接下来可以做什么 | 3 分钟 |\\n| [第 10 步](#第-10-步原理选读) | 原理（选读） | 10 分钟 |\\n\\n前 8 步大约 30 分钟，跑完就能用。第 10 步（原理）是选读的。\\n\\n---\\n\\n## 第 1 步：打开终端\\n\\nDSH 需要用命令行启动。**命令行就是一个可以输入文字命令的窗口**，不可怕。\\n\\n**macOS**：按 `Command + 空格`，输入 `终端`，回车。\\n\\n**Windows**：按 `Win` 键，输入 `PowerShell`，回车。\\n\\n**Linux**：按 `Ctrl + Alt + T`。\\n\\n打开后你会看到一个黑色或白色的窗口，里面有一行字，末尾有个闪烁的光标。**这就对了。**\\n\\n后面所有以 `$` 或 ```` ``` ```` 开头的命令，都是复制粘贴到这个窗口里，然后按回车。\\n\\n> 粘贴的快捷键：macOS 是 `Command + V`，Windows 终端是 `Ctrl + V` 或右键。\\n\\n### ✅ 检查点 1\\n\\n在终端里输入这行，按回车：\\n\\n```sh\\necho hello\\n```\\n\\n**必须看到：**\\n\\n```\\nhello\\n```\\n\\n看到了就继续。没看到说明还没真正打开终端，回到本节开头。\\n\\n---\\n\\n## 第 2 步：装 Node.js\\n\\nDSH 是用 JavaScript 写的，需要 Node.js 这个运行环境。\\n\\n先看你有没有：\\n\\n```sh\\nnode --version\\n```\\n\\n**如果输出了一个版本号**（比如 `v22.11.0`），跳到检查点。\\n\\n**如果提示 `command not found`**，说明没装：\\n\\n1. 打开 https://nodejs.org\\n2. 点页面上那个写着 **LTS** 的绿色大按钮下载\\n3. 双击下载好的文件，一路点「继续」\\n\\n> LTS = 长期支持版，是给普通用户的稳定版本。\\n\\n**装完之后必须关掉终端窗口再重新打开**，否则新装的东西不会生效。\\n\\n### ✅ 检查点 2\\n\\n```sh\\nnode --version\\n```\\n\\n**必须看到一个版本号**，比如：\\n\\n```\\nv22.11.0\\n```\\n\\n版本号是 `v20` 或更高就行。\\n\\n**看到 `command not found` 就不能往下走** —— 回到上面重装，注意装完要重开终端。\\n\\n---\\n\\n## 第 3 步：启动 DSH\\n\\n**DSH 不需要单独安装。** 下面的命令会自动下载并运行它。\\n\\n### 先做一件事：打开技能功能\\n\\n⚠️ **DSH 的网页版出厂时把技能功能关掉了**（命令行版是开着的）。不打开的话，你在第 7 步做的东西**不会生效**，而且不报错，模型只会自己瞎编。\\n\\n这是当前版本（`0.1.0-rc.6`）的实际情况，一分钟就能解决。\\n\\n> **提前说一声：这里做完还不够。** 第 5 步还要在界面上把模式切成 `Standard mode`，\\n> 那是**另一个层**的开关，两个都对了技能才会生效。两处漏任何一处，症状都是\\n> 「技能不生效且不报错」。\\n\\n先创建一个小配置文件，**整段复制粘贴到终端，按回车**：\\n\\n```sh\\ncat > ~/enable-skills.yml <<'EOF'\\n- id: skill-filesystem\\n  disabled: false\\n- id: tool-skill\\n  disabled: false\\n- id: skill-badge\\n  disabled: false\\nEOF\\n```\\n\\n它不会有任何输出，这是正常的。\\n\\n### 启动前先确认端口是空的\\n\\n**这一步别跳过。** 如果之前启动过 DSH 没关干净，新的会起不来，而浏览器**照样能打开页面** —— 打开的是旧进程，你后面所有的配置改动都不会生效。\\n\\n```sh\\nlsof -nP -iTCP:3080 -sTCP:LISTEN\\n```\\n\\n**没有任何输出**才能继续。有输出的话先杀掉：\\n\\n```sh\\nkill $(lsof -t -nP -iTCP:3080 -sTCP:LISTEN)\\n```\\n\\n杀完再跑一次上面那条确认命令，直到没有输出为止。\\n\\n### 启动\\n\\n```sh\\nnpx @deepseek-ai/dsh web --patch ~/enable-skills.yml\\n```\\n\\n> **注意末尾那个 `--patch ~/enable-skills.yml`，不要漏掉。**\\n> 漏了的话 DSH 照样能跑，但技能不生效 —— 这是最容易踩的坑。\\n\\n**必须看到这一行才算成功：**\\n\\n```\\ndsh web: http://127.0.0.1:3080\\n```\\n\\n如果看到 `EADDRINUSE: address already in use`，说明端口还被占着，回到上一步杀干净再来。\\n\\n第一次运行要下载几十兆的文件，**可能要等一到几分钟，屏幕上没动静是正常的，不是卡死了**。\\n\\n如果中途问你 `Ok to proceed? (y)`，输入 `y` 按回车。\\n\\n看到这一行就说明起来了：\\n\\n```\\ndsh web: http://127.0.0.1:3080\\n```\\n\\n**保持这个终端窗口开着**，关掉 DSH 就停了。\\n\\n现在打开浏览器，访问 http://127.0.0.1:3080\\n\\n你会看到这个：\\n\\n![首次启动](../assets/01-first-launch.png)\\n\\n这是官方的测试期提示，大意是 DSH 0.1 还在开发者测试阶段，欢迎反馈。**点右下角的 `Continue`。**\\n\\n然后是主界面：\\n\\n![主界面](../assets/02-main-ui.png)\\n\\n### ✅ 检查点 3\\n\\n**必须同时满足：**\\n\\n1. 浏览器里能打开 http://127.0.0.1:3080\\n2. 关掉提示弹窗后，看到中间写着 **\\\"Into the Unknown\\\"**\\n3. 终端窗口还开着，没有报错\\n4. **技能功能确实打开了** —— 验证方法见下\\n\\n**验证技能功能有没有打开**（这一条最关键）：\\n\\n点左下角 **Settings** → 左侧 **Plugins** → 上方 **Plugin list** 标签 → 搜索框输入 `skill`。\\n\\n应该看到 5 个插件，其中 **`skill-filesystem` 和 `tool-skill` 都标着 `Enabled`**。\\n\\n如果它们标着 `Disabled`，说明启动时漏了 `--patch`。按 `Ctrl + C` 停掉，用上面那条带 `--patch` 的命令重启。\\n\\n**如果浏览器打不开**，检查终端里有没有 `EADDRINUSE` 字样。有的话说明 3080 端口被占用了。\\n\\n⚠️ **更隐蔽的情况：页面能打开，但行为不对。**\\n\\n如果你之前启动过 DSH 没关干净，新启动的那个会因为端口被占直接退出，**而浏览器连上的是那个旧进程**。看起来一切正常，但你改的配置全都没生效。\\n\\n先确认端口上跑的是不是你刚启动的那个：\\n\\n```sh\\nlsof -nP -iTCP:3080 -sTCP:LISTEN\\n```\\n\\n有输出但你刚启动的终端已经报错退出了，就是撞上这个情况。杀掉旧的：\\n\\n```sh\\nkill $(lsof -t -nP -iTCP:3080 -sTCP:LISTEN)\\n```\\n\\n然后重新启动。\\n\\n---\\n\\n## 第 4 步：配置密钥\\n\\nDSH 需要 DeepSeek 的 API 密钥才能调用模型。**这一步全程在网页上点，不用碰命令行。**\\n\\n### 拿密钥\\n\\n1. 打开 https://platform.deepseek.com\\n2. 注册或登录\\n3. 找到「API keys」，创建一个新的\\n4. **复制它**（形如 `sk-` 开头的一长串）\\n\\n> 密钥只在创建时显示一次，关掉就看不到了，务必先复制。\\n> 它等于你账户的钥匙，**不要发给别人、不要贴到聊天群或代码里**。\\n\\n### 填进去\\n\\n**第一次打开 DSH 时，它会自己弹出这个框：**\\n\\n![填入密钥](../assets/07-api-key-dialog.png)\\n\\n把密钥粘进去，点 **Save and continue**。\\n\\n> 点了 **Configure later** 也没关系，随时可以从\\n> **Settings → Models → 在 `DeepSeek` 那行点 Edit** 补上：\\n>\\n> ![从设置里配置](../assets/03-api-key.png)\\n\\n配好之后，Settings → Models 里 `DeepSeek` 右边会有一个**绿点**。\\n\\n### ✅ 检查点 4\\n\\n**必须看到 `DeepSeek` 右边有绿点。**\\n\\n没有绿点就是没配好，重新检查密钥有没有粘贴完整（`sk-` 开头，中间不能有空格或换行）。\\n\\n---\\n\\n## 第 5 步：选一个工作区\\n\\n**不选工作区，网页版发不出任何消息。**\\n\\n打开页面后你会看到输入框里写着 `Choose a workspace to start`，右下角的发送按钮是**灰的**，点了没反应。这不是 bug，是 DSH 要求你先指定它能在哪个目录里干活。\\n\\n> 命令行版（`--profile headless`）没有这个限制，直接就能对话。这也是为什么有人在命令行能跑通、在网页版却卡住。\\n\\n### 先建一个空文件夹\\n\\n**不要直接选你的真实项目。** agent 会有这个目录的读写权限，先拿一个空目录练手最安全：\\n\\n```sh\\nmkdir -p ~/Documents/dsh-test\\n```\\n\\n### 在网页里选它\\n\\n1. 点页面中间的 **Choose workspace**，或左侧边栏 `Workspaces` 右边的**加号图标**\\n2. 会弹出 macOS 的文件选择框\\n3. 选中刚才建的 `dsh-test` 文件夹\\n\\n选好之后，输入框的提示文字会变，发送按钮变成**可点击**的蓝色。\\n\\n选好之后应该是这样，注意左上角显示了工作区名字，右下角发送按钮变成了**蓝色**：\\n\\n![可以发送了](../assets/09-ready-to-send.png)\\n\\n### 顺手把模式切了 ⚠️ **这一步不做，第 7 步会失败**\\n\\n工作区名字**右边**还有一个胶囊按钮，默认写着 **`Minimal mode`**。点开它，有四个选项：\\n\\n| 选项 | 是什么 | 支持技能 |\\n|---|---|---|\\n| **Standard mode** | 完整能力：文件编辑、Shell、检索、技能、计划、子代理、工作流 | ✅ |\\n| **PTC mode** | 标准的全部能力，但让模型用一段 TypeScript 组合多步操作 | ✅ |\\n| **Minimal mode** | **默认选中**。只有持久 bash 和 str_replace_editor 两类工具 | ❌ |\\n| **Creator mode** | 标准的全部能力，外加运行时检查和插件开发指导 | ✅ |\\n\\n**选 `Standard mode`。**\\n\\n为什么必须切：**`Minimal mode` 一共只有 5 个工具，里面根本没有技能相关的插件。** 你在第 7 步做的技能，模型压根看不见——而且它不会报错，只会装作没这回事。\\n\\n> **这里有个很容易混淆的地方。**\\n>\\n> 第 3 步那个 `--patch` 和这里的模式，是**两个不同的层**：\\n>\\n> - `--patch` 管的是**整个服务端装哪些插件**\\n> - 模式管的是**这次对话给模型哪些工具**\\n>\\n> **两个都得对。** 只做一个，症状一模一样：技能不生效，还不报错。\\n>\\n> 模式**只能在界面上选，没有命令行参数**。\\n\\n### ✅ 检查点 5\\n\\n**必须满足：**\\n\\n1. 输入框里不再写着 `Choose a workspace to start`\\n2. 右下角发送按钮是**蓝色**的，不是灰的\\n3. 能在输入框里打字\\n4. **工作区右边那个按钮显示 `Standard mode`，不是 `Minimal mode`**\\n\\n**发送按钮还是灰的**，就是工作区没选上，重新点一次 Choose workspace。\\n\\n---\\n\\n## 第 6 步：亲眼看到 133 个插件\\n\\n这一步不用做任何操作，只是看。**但它是理解 DSH 的关键。**\\n\\n在 Settings 里点左侧的 **Plugins**，再点上方的 **Plugin list** 标签：\\n\\n![插件列表](../assets/05-plugin-list-133.png)\\n\\n看右上角那个数字：**133**。\\n\\n往下翻这个列表，你会看到：\\n\\n| 插件名 | 它是什么 |\\n|---|---|\\n| `llm` | **模型适配器** —— 跟 DeepSeek API 说话的那一层 |\\n| `agent-loop` | **agent 的主循环** —— 整个产品的心脏 |\\n| `tools` | **工具注册表** —— 管理模型能调用哪些工具 |\\n| `session` | **会话记录** |\\n| `webserver` | **你正在看的这个网页服务器** |\\n| `ui-sidebar` | **左边那条侧边栏** |\\n\\n**看明白了吗？** 不是\\\"DSH 支持插件扩展\\\"，而是 **DSH 本身就是 133 个插件拼出来的**。你现在正在用的每一个部分，都是一个可以被替换、被禁用、被重写的插件。\\n\\n这就是 \\\"Everything is a Plugin\\\" 的字面意思。\\n\\n再看一个具体的。在搜索框里输入 `skill`：\\n\\n![技能也是插件](../assets/06-skill-is-plugin.png)\\n\\n出来 5 个插件，它们协作实现了「技能」这个功能：\\n\\n| 插件 | 职责 |\\n|---|---|\\n| `skill` | 定义「技能」这个能力是什么 |\\n| `skill-filesystem` | 扫描目录、读取 Markdown 文件 |\\n| `tool-skill` | 把技能列表给模型看，提供加载工具 |\\n| `skill-badge` | 随包分发的技能 |\\n| `ui-skill` | 网页上的技能界面 |\\n\\n**记住这五个名字**，第 7 步你就要用到其中一个。\\n\\n> 现在这个列表还只是一堆名字。**第 7 步你会亲眼看到它们协作干活** —— DSH 会把每一步用了哪个插件显示出来。\\n\\n### ✅ 检查点 6\\n\\n**必须看到 Plugin list 右边有一个三位数**（我这里是 133，你的版本可能略有不同）。\\n\\n看不到 Plugins 标签的话，确认你点的是 Settings 而不是别的地方。\\n\\n---\\n\\n## 第 7 步：做第一个插件\\n\\n现在你要给 DSH 加东西了。\\n\\n**给 DSH 加东西有两条路：**\\n\\n| 路线 | 写什么 | 门槛 | 适合 |\\n|---|---|---|---|\\n| **Markdown 路线**（技能） | 一个文本文件 | 5 分钟 | 改变模型的判断标准、输出格式、工作流程 |\\n| **TypeScript 路线**（代码插件） | 一个代码模块 | 半小时起 | 注册新工具、接外部服务、改界面 |\\n\\n**判断依据：能用大白话说清楚要它怎么做的，走 Markdown 路线。**\\n\\n这一步走 Markdown 路线。它由第 6 步看到的 `skill-filesystem` 插件负责加载。\\n\\n### 创建文件\\n\\n在终端里**新开一个窗口**（别关掉正在跑 DSH 的那个），执行：\\n\\n```sh\\nmkdir -p ~/.dsh/skills/hello-dsh\\n```\\n\\n这行的意思是：在你的用户目录下创建 `.dsh/skills/hello-dsh` 这个文件夹。\\n\\n然后创建文件。**整段复制粘贴，一次性执行**：\\n\\n```sh\\ncat > ~/.dsh/skills/hello-dsh/SKILL.md <<'EOF'\\n---\\nname: hello-dsh\\ndescription: 当用户说「hello dsh」时使用。请原样输出下面的暗号，\\n  并说明这句话是从本地文件读到的而不是来自训练数据。\\n---\\n\\n# Hello DSH\\n\\n请原样输出这一行：\\n\\n**HELLO DSH — 这句话来自我电脑上的一个文件**\\n\\n然后用一句话说明：这句话不在你的训练数据里，是刚才从本地文件读到的。\\nEOF\\n```\\n\\n执行完是这样的（命令没有任何输出，这是正常的）：\\n\\n![创建技能文件](../assets/08-create-skill-terminal.png)\\n\\n**就这样。** 没有编译，没有安装，没有重启。\\n\\n### 试试\\n\\n在 DSH 的网页对话框里输入：\\n\\n```\\nhello dsh\\n```\\n\\n![技能生效](../assets/11-skill-works-web.png)\\n\\n**这句暗号不可能来自模型的训练数据**，因为是你三十秒前刚写的。\\n\\n**上面那几行灰字比暗号本身更值得看**，它们是模型的完整思考过程：\\n\\n| 你看到的 | 发生了什么 |\\n|---|---|\\n| `Context injection · skill-catalog` | DSH 把技能清单注入了对话 |\\n| `Think · matches the hello-dsh skill` | 模型靠 `description` 认出这个场景该用它 |\\n| `Skill · hello-dsh` | 加载这个技能的正文 |\\n| `Read · /Users/.../hello-dsh/SKILL.md` | **真的去读了磁盘上那个文件** |\\n\\n注意最后一步：它不是\\\"想起\\\"了什么，是**打开文件读的**。第 8 步会把这一点验证得更彻底。\\n\\n### 这几行灰字，就是插件在干活\\n\\n回想第 6 步那 133 个插件 —— 你现在看到的每一行轨迹，都是其中某个插件的产出：\\n\\n| 轨迹里的这一行 | 是哪个插件干的 |\\n|---|---|\\n| `Context injection · @deepseek-ai/dsh-system-prompt` | `system-prompt` 插件注入系统提示 |\\n| `Context injection · skill-catalog` | `tool-skill` 插件注入技能清单 |\\n| `Skill · hello-dsh` | `tool-skill` 提供的加载工具 |\\n| `Glob · **/*` | `tool-fs-search` 插件 |\\n| `Read · .../SKILL.md` | `tool-fs` 插件 |\\n| `Think · ...` | `agent-loop` 插件驱动的推理步骤 |\\n\\n**这是整个教程里最能\\\"看见\\\"插件的地方。** 插件列表告诉你有什么，这几行灰字告诉你它们实际怎么协作。\\n\\n你可以点开任意一行 `Think` 看完整内容，也可以点 `Read` 那行的文件路径直接跳过去。\\n\\n> **也可以用命令行**，结果一样：\\n>\\n> ```sh\\n> npx @deepseek-ai/dsh --profile headless \\\"hello dsh\\\"\\n> ```\\n\\n### 这个文件的两个必填项\\n\\n```yaml\\nname: hello-dsh          # 必填，只能用小写字母和连字符，要和文件夹同名\\ndescription: 当……时使用   # 必填\\n```\\n\\n`description` 决定模型**什么时候会想起用它**。模型一开始只看到一份清单（每项只有名字和这句描述），正文要等它决定用了才读。\\n\\n所以：\\n\\n```yaml\\n# 没用，模型不知道什么场合该用\\ndescription: 一个用于代码审查的技能\\n\\n# 有用\\ndescription: 当需要审查代码改动、pull request 或 diff 时使用，\\n  按正确性、生命周期、安全、测试强度的顺序给出中文审查意见。\\n```\\n\\n**用「当……时使用」开头。** 这是 DeepSeek 官方那 11 个内置技能的统一写法。\\n\\n### ✅ 检查点 7\\n\\n**必须看到模型输出了你写的那句暗号。**\\n\\n看不到的话，按顺序查：\\n\\n1. **模式是不是还停在 `Minimal mode`** —— 看工作区名字右边那个按钮，\\n   必须是 `Standard mode`（**最高频的原因**，回到第 5 步）\\n2. 文件路径对不对：`ls ~/.dsh/skills/hello-dsh/` 应该列出 `SKILL.md`\\n3. `name` 是不是写成了 `Hello_DSH` 这种（**必须是小写加连字符**）\\n4. 用网页版的话，启动时有没有带 `--patch ~/enable-skills.yml`（回到检查点 3 验证）\\n\\n> 第 1 条和第 4 条症状完全一样，但一个在**对话层**、一个在**服务端层**。\\n> 两个都要对。\\n\\n---\\n\\n## 第 8 步：看它的生命周期\\n\\n**这一步是整份教程的核心。全程不要重启 DSH。**\\n\\n### 删掉它\\n\\n在终端里执行：\\n\\n```sh\\nrm -rf ~/.dsh/skills/hello-dsh\\n```\\n\\n**然后回到网页，不要重启 DSH**，直接再说一次 `hello dsh`：\\n\\n![删掉技能后的反应](../assets/10-skill-removed-web.png)\\n\\n**仔细看这张图，它把整件事说清楚了：**\\n\\n| 你看到的 | 说明了什么 |\\n|---|---|\\n| `Context injection · skill-catalog` | DSH 每一步之前都会重新扫一遍技能目录 |\\n| `Read · Error: cannot read \\\".../hello-dsh/SKILL.md\\\": not found` | 它**真的去读了那个文件**，文件没了所以读失败 |\\n| `Think · The skill catalog is now empty` | 技能清单已经空了 |\\n| 最后那段中文回答 | 它明确拒绝凭记忆复述暗号 |\\n\\n最有意思的是最后那句：\\n\\n> 所以这次我没法再从本地文件读出那句暗号了 —— 如果我现在把「HELLO DSH — 这句话来自我电脑上的一个文件」再输出一遍，那就会是凭记忆复述而不是读自本地文件，那样就不诚实了。\\n\\n**这就是技能生效的最好证明。** 模型这一轮对话里见过那句暗号（在上下文里），但它知道那不算数 —— 因为暗号的来源是磁盘上的文件，而那个文件已经没了。\\n\\n### 放回来\\n\\n把第 7 步那段 `cat > ...` 命令再执行一遍，**依然不重启**，再问一次：\\n\\n```\\nhello dsh\\n```\\n\\n暗号又回来了。\\n\\n> **也可以用命令行验证同一件事**，效果一样：\\n>\\n> ```sh\\n> npx @deepseek-ai/dsh --profile headless \\\"你现在有没有一个叫 hello-dsh 的技能？只回答有或没有\\\"\\n> ```\\n>\\n> 删掉时答「没有」，放回后答「有」。\\n\\n### 这意味着什么\\n\\n**文件出现，功能就在；文件消失，功能就没了。中间没有任何重启、安装、注册的动作。**\\n\\n对比一下你熟悉的软件：装个浏览器插件要重启浏览器，装个 VSCode 扩展要重载窗口。DSH 不用。\\n\\n这不是小聪明，是它底层设计的直接结果。第 10 步会讲为什么。\\n\\n### ✅ 检查点 8\\n\\n**必须看到这两种截然不同的反应，且中间你没有重启过任何东西：**\\n\\n1. **删掉之后**：轨迹里出现 `Read · Error: ... not found`，模型明确说读不到文件、拒绝复述暗号\\n2. **放回之后**：轨迹里出现 `Skill · hello-dsh` 和 `Read · .../SKILL.md`，暗号又出来了\\n\\n**如果删掉之后模型还是照常输出暗号**，说明它在凭上下文记忆复述，不是真的读文件 —— 开一个新会话（点左上角 `New Session`）再试一次。\\n\\n---\\n\\n## 第 9 步：接下来可以做什么\\n\\n你已经掌握了 DSH 最常用的扩展方式。**大部分需求到这里就够了。**\\n\\n### 再写几个技能\\n\\n同样的套路，换个 `name` 和 `description` 就行：\\n\\n```sh\\nmkdir -p ~/.dsh/skills/我的技能名\\n# 然后写 SKILL.md\\n```\\n\\n写法上有几条经验（来自 DeepSeek 官方那 11 个内置技能）：\\n\\n1. **`description` 用「当……时使用」开头** —— 它决定模型什么时候想起你\\n2. **写判断标准，不写清单** —— 官方原话是 *\\\"This skill is guidance, not a complete checklist\\\"*\\n3. **单独写一节「不要做的事」** —— 挡住的问题往往比「要做什么」更多\\n\\n详细规则见 [`dsh-skill-dev`](../examples/skills/dsh-skill-dev/SKILL.md) 技能。\\n\\n### 直接用现成的\\n\\n这个仓库的 [`examples/skills/`](../examples/skills/) 里有 22 个写好的中文技能，覆盖代码审查、系统化排查、写提交信息、安全审查等：\\n\\n```sh\\ngit clone https://github.com/pingfanfan/hello-dsh.git\\ncd hello-dsh && ./install.sh\\n```\\n\\n或者把 [INSTALL-FOR-AGENTS.md](../INSTALL-FOR-AGENTS.md) 的链接丢给任何 AI agent，说「照这个装」。\\n\\n### 什么时候需要写代码插件\\n\\n技能改变模型的**做事方式**，但它不能给模型**新能力**。需要下面这些时，就得写 TypeScript 插件：\\n\\n| 需求 | 为什么技能做不到 |\\n|---|---|\\n| 让它查天气、读数据库 | 要调外部 API |\\n| 在网页界面上加一个面板 | 要改 UI |\\n| 在每次对话前后做点什么 | 要挂生命周期钩子 |\\n\\n代码插件的完整流程（含三个新手必踩的报错）见 [`dsh-first-plugin`](../examples/skills/dsh-first-plugin/SKILL.md) 技能，以及可运行的例子 [`examples/hello-plugin/`](../examples/hello-plugin/)。\\n\\n**但先别急着写。** 大多数人以为需要插件的场景，其实用技能就能解决。先问一句：这件事能不能用大白话说清楚？能，就写技能。\\n\\n---\\n\\n## 第 10 步：原理（选读）\\n\\n到这里你已经会用了。这一节解释为什么。\\n\\nDSH 建立在一个叫 **Cordis** 的框架上，Cordis 有一篇论文：《A Programming Paradigm for Spatiotemporal Composability》（Yifan Shi、Wei Zhang、Tianyi Cui，北京大学 / DeepSeek-AI）。\\n\\n**第 8 步那个演示，正是这篇论文形式化描述的东西的最小可观察实例。**\\n\\n论文把「动态组合」拆成两个互相独立的维度。\\n\\n### 时间维度：撤得干净\\n\\n> 组件被移除时，它对环境的修改必须被完整、安全、有序地撤销。\\n\\n论文的做法：每一次改动都**自带一个撤销操作**，运行时全程追踪，卸载时按相反顺序执行（§3.1）。\\n\\n论文里有一组数据很能说明问题（§1.2.1）：VSCode 安装量前 100 的扩展中，有 **87 个**含可执行代码，因此禁用或卸载它们**必须重启整个扩展宿主**。\\n\\n而你在第 8 步删掉那个技能时，什么都没重启。\\n\\n### 空间维度：依赖变了自己知道\\n\\n> 组件声明它需要什么，运行时在这些东西出现、消失、或换了提供者时，重新判断它能不能运行。\\n\\n论文称之为**反应式 coeffect**（§3.2）：依赖满足就激活，不满足就停用，无关的变化不动它。\\n\\n写代码插件时用的 `export const inject = ['tools']` 就是这个声明。\\n\\n**这里有个重要细节**：依赖不满足时，组件是**静默不激活的，不报错**。所以「插件装了但没反应」的时候，第一个要怀疑的就是依赖没满足。\\n\\n### 只有两个状态\\n\\n论文 §4.1 的图 1，整个生命周期就这么简单：\\n\\n```\\n          L-Reload\\nInactive  ⇄  Active\\n          L-Unload\\n```\\n\\n驱动转换的是一次比较：**当前生效的状态**和**应该处于的状态**是否一致。不一致就切换。\\n\\n第 8 步那三步，就是这个比较在文件系统上的表现：文件在不在，决定了「应该处于的状态」是什么。\\n\\n### 一条对写插件的人很重要的提醒\\n\\n论文 §5.1.1 明确说：**撤销操作写得对不对，是插件作者的责任，运行时不会验证**（原文：*\\\"an obligation on the component author rather than a property the runtime verifies\\\"*）。\\n\\n也就是说你 `setInterval` 忘了配 `clearInterval`，没人会告诉你，只会在插件卸载后留下一个还在跑的定时器。\\n\\n正确写法是把两者写在一起：\\n\\n```ts\\nctx.effect(() => {\\n  const timer = setInterval(tick, 1000)\\n  return () => clearInterval(timer)     // 撤销紧挨着创建\\n})\\n```\\n\\n---\\n\\n## 遇到问题\\n\\n### 网页版怎么改都不生效（最高频）\\n\\n**先怀疑端口被旧进程占了。**\\n\\n症状很有迷惑性：页面能正常打开、界面一切正常，但你改的配置**全都不生效**。原因是旧的 DSH 还在跑占着 3080，新启动的那个报 `EADDRINUSE` 直接退出了，**浏览器连上的一直是旧进程**。\\n\\n```sh\\n# 1. 看谁占着\\nlsof -nP -iTCP:3080 -sTCP:LISTEN\\n\\n# 2. 杀掉\\nkill $(lsof -t -nP -iTCP:3080 -sTCP:LISTEN)\\n\\n# 3. 确认空了（这条必须没有输出）\\nlsof -nP -iTCP:3080 -sTCP:LISTEN\\n\\n# 4. 重新启动\\nnpx @deepseek-ai/dsh web --patch ~/enable-skills.yml\\n```\\n\\n启动时**必须看到 `dsh web: http://127.0.0.1:3080`**，看到 `EADDRINUSE` 就是没杀干净。\\n\\n### 网页版发不出消息，发送按钮是灰的\\n\\n没选工作区。见[第 5 步](#第-5-步选一个工作区)。\\n\\n### 网页版说 `hello dsh` 输出不对，命令行版却是对的\\n\\n如果端口和工作区都排除了，那就是**网页版没打开技能功能**。\\n\\n**判断标准**：模型回你一段 \\\"I'm your DSH coding agent...\\\" 之类的通用自我介绍，而不是你写的暗号 —— 这说明它没看到技能，在凭自己编。这种输出看起来\\\"像那么回事\\\"，但内容是错的，**而且不会报错**。\\n\\n命令行版（`--profile headless`）默认开着技能，网页版默认关着，所以会出现同一个技能命令行能用、网页不能用的情况。\\n\\n**解决**：按 `Ctrl + C` 停掉网页版，然后：\\n\\n```sh\\ncat > ~/enable-skills.yml <<'EOF'\\n- id: skill-filesystem\\n  disabled: false\\n- id: tool-skill\\n  disabled: false\\n- id: skill-badge\\n  disabled: false\\nEOF\\n\\nnpx @deepseek-ai/dsh web --patch ~/enable-skills.yml\\n```\\n\\n**确认它真的开了**：Settings → Plugins → Plugin list → 搜 `skill`，看 `skill-filesystem` 和 `tool-skill` 是不是 `Enabled`。\\n\\n> 你可能会看到 7 个而不是 5 个，`skill-filesystem` 和 `tool-skill` 各出现两次。\\n> 这是因为上面那种 `--patch` 写法是**插入**而不是覆盖，会多挂一份实例。\\n> **不影响使用**，能跑通就不用管。想要干净的话把配置文件改成 `update` 形式：\\n>\\n> ```yaml\\n> - update:\\n>     - id: skill-filesystem\\n>       disabled: false\\n>     - id: tool-skill\\n>       disabled: false\\n>     - id: skill-badge\\n>       disabled: false\\n> ```\\n\\n### 技能写了但模型看不到？\\n\\n1. **模式停在 `Minimal mode`** —— 工作区名字右边那个按钮，切成 `Standard mode`。\\n   `Minimal mode` 只有 5 个工具，**根本不含技能插件**\\n2. `name` 是不是小写加连字符，且和文件夹同名\\n3. 有没有把 `user-invocable` 写成 `userInvocable` —— **驼峰写法会导致整个文件被丢弃**，只留一条警告，不报错\\n4. 是不是放到了多层嵌套的目录里（只扫一层）\\n\\n> **模式和 `--patch` 是两个层，别搞混：**\\n>\\n> | 层 | 管什么 | 怎么控制 |\\n> |---|---|---|\\n> | profile | 服务端装哪些插件 | `--patch`、`--profile` |\\n> | 模式 | **这次对话**给模型哪些工具 | **只能在界面选** |\\n>\\n> 两个都得对，症状还一模一样（不生效且不报错）。\\n\\n### 插件加载了但没反应？\\n\\n1. `--dump-config` 看它在不在、是不是 `disabled`\\n2. 有没有 `export default`\\n3. `inject` 里声明的东西有没有提供者\\n\\n### 一条命令扫出上面大部分问题\\n\\n```sh\\nnpx dsh-doctor\\n```\\n\\n这是配套的检查工具，只读不改，每条结果都带着官方文档或事故报告的链接。\\n\\n---\\n\\n## 接下来\\n\\n你现在会了两条路线。接下来可以：\\n\\n**直接用现成的。** 这个仓库的 [`examples/skills/`](../examples/skills/) 里有 22 个写好的中文技能（代码审查、系统化排查、写提交信息等）：\\n\\n```sh\\ngit clone https://github.com/pingfanfan/hello-dsh.git\\ncd hello-dsh && ./install.sh\\n```\\n\\n或者把 [INSTALL-FOR-AGENTS.md](../INSTALL-FOR-AGENTS.md) 的链接丢给任何 AI agent，说「照这个装」。\\n\\n**自己写更多。** 参考：\\n\\n| 想做什么 | 看 |\\n|---|---|\\n| 写技能的完整规则 | [`dsh-skill-dev`](../examples/skills/dsh-skill-dev/SKILL.md) |\\n| 写插件的完整规则 | [`dsh-plugin-dev`](../examples/skills/dsh-plugin-dev/SKILL.md) |\\n| 排查问题 | [`dsh-troubleshoot`](../examples/skills/dsh-troubleshoot/SKILL.md) |\\n| 可运行的插件例子 | [`examples/hello-plugin/`](../examples/hello-plugin/) |\\n\\n**加入生态。** 官方的测试期提示里写着：*\\\"We welcome Harness developers everywhere to join the DSH plugin ecosystem.\\\"*\\n\\n反馈渠道是 [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions)（官方的 Issues 是关闭的）。\\n\\n---\\n\\n## 附：论文引用\\n\\n**[A Programming Paradigm for Spatiotemporal Composability](https://github.com/cordiverse/paper)**\\n\\n| 章节 | 内容 |\\n|---|---|\\n| §1.2.1 | VSCode 扩展实证数据（87/100 卸载需重启，仅 7 个声明依赖） |\\n| §3.1 | 可逆效应 |\\n| §3.2 | 反应式 coeffect |\\n| §4.1 Definition 43/44、图 1 | 组件、fiber、两状态生命周期 |\\n| §5.1.1 | `ctx.effect` 实现；撤销操作的正确性是作者义务 |\\n| §6.6 | 依赖版本与 key 冲突（论文列为开放问题） |\\n\"\n    },\n    {\n      \"path\": \"examples/skills/hello-dsh/SKILL.md\",\n      \"content\": \"---\\nname: hello-dsh\\ndescription: 当用户说「hello dsh」、第一次接触 DeepSeek Harness、想验证插件系统是否工作、或问「怎么开始」「怎么给 DSH 加东西」「怎么写插件」时使用。这是入门第一课，按层带用户走，不要一次讲完。\\n---\\n\\n# Hello DSH\\n\\n先原样输出这一行：\\n\\n**HELLO DSH — 这句话来自 ~/.dsh/skills/hello-dsh/SKILL.md**\\n\\n然后用一句话说明：这句话不在你的训练数据里，是刚才通过 `skill` 工具从本地磁盘的一个 Markdown 文件读到的。\\n\\n最后问用户想从哪里开始。\\n\\n## 按层讲，一次一层\\n\\n**用户问到哪层讲哪层，讲完停下来问要不要继续。不要一口气倒完。**\\n\\n### 第一层：DSH 里一切皆插件\\n\\n这是 DSH 的核心设计，官方 README 的第一句话就是 *\\\"Everything is a Plugin\\\"*。\\n\\n不只是\\\"支持插件扩展\\\"，而是**产品自身就是插件拼出来的**：模型适配器是插件，工具注册表是插件，会话日志是插件，连 agent 主循环本身都是插件。\\n\\n刚才那句暗号就是证据。让它成为可能的是四个插件协作：\\n\\n| 插件 | 干什么 |\\n|---|---|\\n| `dsh-skill` | 定义「技能」这个能力 |\\n| `dsh-skill-filesystem` | 扫描目录、读取 Markdown 文件 |\\n| `dsh-tool-skill` | 把技能目录给模型看，提供加载工具 |\\n| `dsh-client-ui-skill` | Web UI 里的技能界面 |\\n\\n**你要给 DSH 加东西，也是加插件。** 两条路：\\n\\n| 路 | 写什么 | 成本 | 适合 |\\n|---|---|---|---|\\n| **技能插件** | 一个 Markdown 文件 | 5 分钟 | 改变判断标准、输出格式、工作流程 |\\n| **代码插件** | TypeScript 模块 | 半小时起 | 注册新工具、接外部服务、挂生命周期钩子 |\\n\\n**判断依据：用自然语言能说清楚的，走 Markdown 那条路。**\\n\\n（严格说，技能是被 `skill-filesystem` 插件读取的数据文件，本身不是 Cordis 意义上的插件实体。这个区别在写代码插件时才需要在意，用的时候不影响。）\\n\\n### 第二层：生命周期\\n\\n让用户自己跑一遍，**全程不用重启**：\\n\\n```sh\\nrm -rf ~/.dsh/skills/hello-dsh        # 删掉 → 问模型，答「没有」\\n# 把文件写回去                          # 放回 → 再问，答「有」并能加载\\n```\\n\\n文件出现就在，文件消失就不在，中间没有任何重启动作。\\n\\n代码插件也一样：改完源码不用重启进程，HMR 会替换掉旧的 fiber。\\n\\n### 第三层：写一个代码插件\\n\\n三个新手必踩的坑，都是实测出来的：\\n\\n1. **必须 `defineTool()` 包裹，且声明 `output { schema, render }`**\\n   否则报 `must declare output {...}`\\n2. **`required` 只能填 `true`**，可选参数直接省略这个字段\\n   否则报 `UNSUPPORTED_SCHEMA`\\n3. **模块里不能有 `export default`**\\n   否则 Loader 会丢掉 `inject`，报 `cannot get property \\\"xxx\\\" without inject`。这个坑官方自己踩过并写了事故复盘，当时有 178 个绿色测试和 100% 覆盖率都没抓到\\n\\n另外：`parameters` 是**扁平字段映射**，而 `output.schema` 是**标准 JSON Schema**，两者形态不同。\\n\\n完整可运行的例子和每一步的真实报错，见教程。\\n\\n### 第四层：背后的原理\\n\\nDSH 建立在 **Cordis** 之上，有一篇论文《A Programming Paradigm for Spatiotemporal Composability》。第二层那个演示，正是论文形式化内容的最小可观察实例：\\n\\n- **时间可组合性**（§3.1）：组件移除时其影响被完整撤销。每个作用携带逆操作，卸载时按 LIFO 恢复。对比：VSCode 安装量前 100 的扩展里 **87 个**卸载必须重启宿主（§1.2.1）。\\n- **空间可组合性**（§3.2）：组件声明依赖，运行时在依赖出现/消失时重新判断它能否运行。依赖不满足时**静默不激活，不报错**——这是排查「插件装了没反应」的第一个方向。\\n- **两状态生命周期**（§4.1 图 1）：`Inactive ⇄ Active`，由「当前生效的视图」和「目标视图」的比较驱动。\\n\\n**不读论文也能用。** 知道之后两件事变得可预期：为什么改完不用重启，以及为什么插件\\\"明明在那儿却不生效\\\"。\\n\\n## 一个必须提醒用户的坑\\n\\n**Web UI 默认关闭了技能功能**（`headless` 是开的）。用 `dsh web` 时技能不会生效，需要显式打开：\\n\\n```sh\\nnpx @deepseek-ai/dsh web --patch ./enable-skills-in-web.yml\\n```\\n\\n这个文件在 hello-dsh 仓库根目录。实测于 `0.1.0-rc.6`。\\n\\n## 完整教程\\n\\n从零跑通两类插件的完整实操，含每一步真实输出和三个报错的确切修法：`docs/hello-dsh.md`\\n\\n## 讲解时不要做的事\\n\\n- 不要一次把四层全倒出来\\n- 不要在用户只想跑通时讲论文\\n- 不要搬论文的形式化符号，讲行为就够\\n- 不要说「技能就是提示词」，它有生命周期、优先级、依赖，提示词没有\\n\"\n    },\n    {\n      \"path\": \"examples/hello-plugin/src/hello.ts\",\n      \"content\": \"import type { Context } from '@deepseek-ai/cordis'\\nimport { defineTool } from '@deepseek-ai/dsh-tools'\\n\\nexport const name = 'hello-plugin'\\nexport const inject = ['tools']\\n\\nexport function apply(ctx: Context) {\\n  ctx.tools.register(defineTool({\\n    name: 'pingfan_hello',\\n    description: '返回一句固定问候，用于验证第三方插件是否加载成功。',\\n    parameters: {\\n      who: { type: 'string', description: '要问候的对象' },\\n    },\\n    output: {\\n      schema: {\\n        type: 'object',\\n        additionalProperties: false,\\n        properties: {\\n          greeting: { type: 'string', required: true },\\n        },\\n      },\\n      render: (_args, value) => [{ type: 'text', text: value.greeting }],\\n    },\\n    execute(args) {\\n      const who = args.who ?? 'world'\\n      return Promise.resolve({ greeting: `HELLO_FROM_PINGFAN_PLUGIN to ${who}` })\\n    },\\n  }))\\n}\\n\"\n    },\n    {\n      \"path\": \"INSTALL-FOR-AGENTS.md\",\n      \"content\": \"# 给 AI Agent 的安装指令\\n\\n> 这份文件是写给 AI agent 读的（Codex、Claude Code、DSH 自己、任何能读写文件并执行命令的 agent）。\\n>\\n> **人类用户**：把本文件的链接丢给你的 agent，说「照这个装」即可。你不需要懂下面的内容。\\n\\n## 任务\\n\\n让用户能用上 `pingfanfan/hello-dsh` 这套 DeepSeek Harness（DSH）中文技能。\\n\\n**先检查前置条件，再安装。** 用户很可能什么都没装过。\\n\\n---\\n\\n## 第一步：检查前置条件\\n\\n按顺序检查这三项，**不要跳过**。\\n\\n### 1. Node.js（硬前置，缺了做不下去）\\n\\n```sh\\nnode --version\\n```\\n\\n没有 Node 就**停下来告诉用户去装**，不要自作主张用包管理器装（可能污染他的环境）：\\n\\n> DSH 需要 Node.js。请先从 https://nodejs.org 安装（建议 LTS 版本），装完告诉我，我继续。\\n\\nmacOS 用户如果有 Homebrew，可以建议 `brew install node`，但**要先问过再执行**。\\n\\n### 2. DSH 本身（不用预装）\\n\\n```sh\\nnpx @deepseek-ai/dsh --version\\n```\\n\\n**这一步会自动下载 DSH，首次会比较慢（几十秒到几分钟），不是卡死。**\\n\\n如果输出了版本号（例如 `0.1.0-rc.6`），说明没问题。\\n\\n> 注意：DSH **不需要提前安装**。`npx` 会按需拉取，`~/.dsh/` 目录也是首次运行时自动生成的。所以技能可以在 DSH 第一次运行之前就放好——实测确认过，把技能放进一个从没跑过 DSH 的目录，第一次运行就能发现它们。\\n\\n### 3. API Key（不影响安装，但影响使用）\\n\\n```sh\\necho ${DEEPSEEK_API_KEY:+已设置}\\n```\\n\\n没设置的话，安装照常进行，但**要在最后告诉用户**：\\n\\n> 技能已装好，但 DSH 还需要 API Key 才能用。去 https://platform.deepseek.com 拿一个，然后：\\n> ```sh\\n> export DEEPSEEK_API_KEY=sk-你的key\\n> ```\\n> 想永久生效就写进 `~/.zshrc` 或 `~/.bashrc`。\\n\\n缺 Key 时的报错长这样，看到就是这个原因：\\n\\n```\\ndsh: MISSING_CREDENTIAL: llm-deepseek: no API key for provider route \\\"deepseek-official\\\"\\n```\\n\\n**不要替用户设置 Key，也不要把 Key 写进任何文件或提交到任何地方。**\\n\\n---\\n\\n## 第二步：安装技能\\n\\n技能是**纯 Markdown 文件**。安装 = 把目录拷到约定位置。**不需要编译、不需要 npm install、不需要构建。**\\n\\n目标位置二选一：\\n\\n| 位置 | 用于 |\\n|---|---|\\n| `~/.dsh/skills/` | 只给 DSH 用（**默认选这个**） |\\n| `~/.agents/skills/` | 跨 agent 共享，Claude Code 等也能读到 |\\n\\n### 取得文件\\n\\n优先用 git（保留后续更新能力）：\\n\\n```sh\\ngit clone --depth 1 https://github.com/pingfanfan/hello-dsh.git /tmp/hello-dsh\\n```\\n\\n没有 git 时用打包下载：\\n\\n```sh\\ncurl -fsSL https://github.com/pingfanfan/hello-dsh/archive/refs/heads/main.tar.gz | tar xz -C /tmp\\n# 解出 /tmp/hello-dsh-main\\n```\\n\\n### 拷贝\\n\\n```sh\\nmkdir -p ~/.dsh/skills\\ncp -R /tmp/hello-dsh/examples/skills/* ~/.dsh/skills/\\n```\\n\\n`~/.dsh/skills/` 不存在时直接创建即可，**不用先跑 DSH**。\\n\\n---\\n\\n## 第三步：验证\\n\\n```sh\\nls ~/.dsh/skills/\\n```\\n\\n应该看到 20 多个目录，每个里面有一个 `SKILL.md`。\\n\\n如果用户有 API Key，直接做端到端验证：\\n\\n```sh\\nnpx @deepseek-ai/dsh --profile headless \\\"hello dsh\\\"\\n```\\n\\n成功的话会输出一句以 `HELLO DSH` 开头的暗号，并列出四层入门菜单。\\n\\n---\\n\\n## 第四步：告诉用户\\n\\n说清楚这几件事：\\n\\n1. 装了多少个技能，装在哪个目录\\n2. 怎么开始：**对 DSH 说「hello dsh」**，它会带着走一遍\\n3. 如果缺 Key，告诉他怎么配（见上面第 3 项）\\n4. 完整教程在 `~/.dsh/skills/` 同源仓库的 `docs/hello-dsh.md`\\n\\n---\\n\\n## 重要约束\\n\\n**只写这两个目录：`~/.dsh/skills/` 和 `~/.agents/skills/`。**\\n\\n- 不要修改 shell 配置（`.bashrc`、`.zshrc`、`.profile`）\\n- 不要修改 git 全局配置\\n- 不要装任何全局 npm 包\\n- 不要替用户设置或写入 API Key\\n- 不要动用户已有的、不属于本仓库的技能目录\\n\\n---\\n\\n## 卸载\\n\\n按名字逐个删除，**绝对不要用通配符**，否则会误删用户自己写的技能：\\n\\n```sh\\nfor n in $(ls /tmp/hello-dsh/examples/skills); do\\n  rm -rf ~/.dsh/skills/\\\"$n\\\"\\ndone\\n```\\n\\n## 更新\\n\\n```sh\\ncd /tmp/hello-dsh && git pull\\ncp -R examples/skills/* ~/.dsh/skills/\\n```\\n\\n技能是热加载的，**不需要重启 DSH**。\\n\\n---\\n\\n## 排查\\n\\n**技能装了但 DSH 看不到？** 按顺序查：\\n\\n1. `SKILL.md` 的 frontmatter 里 `name` 是不是 kebab-case（必须是，且与目录名一致）\\n2. 有没有把 `user-invocable` 写成 `userInvocable` —— 驼峰会导致**整个技能被丢弃**，只有一条警告不报错\\n3. 有没有嵌套目录（只扫一层，`skills/a/b/SKILL.md` 不会被发现）\\n\\n一条命令扫出这类问题：\\n\\n```sh\\nnpx dsh-doctor\\n```\\n\\n**`npx` 卡住不动？** 首次下载 DSH 需要时间，等几分钟。如果用户在中国大陆，可能需要配置 npm 镜像。\\n\\n**报 `MISSING_CREDENTIAL`？** 缺 API Key，见第一步第 3 项。\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"ef388c22b65cb7429f536be79e3c76af97a81b4e\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"2ed3d583e578a73a3aef8e8f31f14659dae1cb3eb754d1571ab09ce34f1afafe\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 6,\n        \"lines\": 1635,\n        \"words\": 12709\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"example\",\n        \"files\": 23,\n        \"lines\": 2489,\n        \"words\": 23696\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"example\",\n        \"files\": 1,\n        \"lines\": 29,\n        \"code\": 27,\n        \"comments\": 0,\n        \"blank\": 2\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [\n        {\n          \"path\": \"examples/skills/api-design/SKILL.md\",\n          \"name\": \"api-design\",\n          \"description\": \"当需要设计接口、给模块加公开方法、定义数据结构或评估某个 API 该不该存在时使用——按\\\"有几个真实调用方\\\"来判断必要性，优先让错误用法无法编译。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/ask-good-questions/SKILL.md\",\n          \"name\": \"ask-good-questions\",\n          \"description\": \"当需要在 GitHub Discussions、issue、社区或团队里提技术问题、报 bug、或帮别人改进他们的提问时使用——给出能被复现的最小信息集，避免\\\"用不了\\\"这类无效提问。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/code-review-cn/SKILL.md\",\n          \"name\": \"code-review-cn\",\n          \"description\": \"当需要审查代码改动、pull request 或 diff 时使用——按正确性、生命周期、安全、测试强度的顺序给出中文审查意见，优先给出少数有依据的阻断项而不是一堆风格挑剔。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/commit-message/SKILL.md\",\n          \"name\": \"commit-message\",\n          \"description\": \"当需要写 git 提交信息、整理提交历史或拆分改动时使用——按 Conventional Commits 规范生成中文提交信息，重点说明为什么改而不是改了什么。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/debug-systematically/SKILL.md\",\n          \"name\": \"debug-systematically\",\n          \"description\": \"当遇到 bug、测试失败、报错或\\\"本来是好的现在坏了\\\"时使用——强制先复现、再定位根因、最后才修复，禁止跳过定位直接改代码。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/dsh-first-plugin/SKILL.md\",\n          \"name\": \"dsh-first-plugin\",\n          \"description\": \"当需要从零做出并装上第一个 DSH 插件时使用——给出跑通的完整流程（写文件、写 overlay、加载、验证），以及实测会踩到的三个报错和它们的确切修法。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/dsh-onboarding/SKILL.md\",\n          \"name\": \"dsh-onboarding\",\n          \"description\": \"当用户第一次使用 DeepSeek Harness（DSH），或在启动、工作区、权限、技能发现环节卡住时使用——解释 DSH 的进程模型、目录约定和权限边界，并给出可自查的排错路径。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/dsh-plugin-dev/SKILL.md\",\n          \"name\": \"dsh-plugin-dev\",\n          \"description\": \"当需要给 DeepSeek Harness 写插件、调试插件没加载或没注入的问题、或理解 Cordis 的组件生命周期时使用——覆盖导出规则、依赖声明、可逆效应和加载路径陷阱。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/dsh-skill-dev/SKILL.md\",\n          \"name\": \"dsh-skill-dev\",\n          \"description\": \"当需要给 DeepSeek Harness 写一个技能、调试技能没被发现的问题、或决定某个能力该做成技能还是插件时使用——覆盖 frontmatter 规则、发现路径、fail-closed 陷阱和自测方法。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/dsh-troubleshoot/SKILL.md\",\n          \"name\": \"dsh-troubleshoot\",\n          \"description\": \"当 DeepSeek Harness 起不来、插件没加载、技能不见了、工具报 UNKNOWN_TOOL、或出现\\\"配置写了但没生效\\\"这类静默失效时使用——按静默失效优先的顺序排查。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/error-handling/SKILL.md\",\n          \"name\": \"error-handling\",\n          \"description\": \"当需要设计错误处理、决定该抛还是该返回、写错误信息、或排查\\\"出错了但没人知道\\\"的问题时使用——按调用方是否需要区分处理来决定错误的结构。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/explain-codebase/SKILL.md\",\n          \"name\": \"explain-codebase\",\n          \"description\": \"当需要快速理解一个陌生项目、回答\\\"这个仓库是干什么的\\\"、或在动手改代码前建立架构认知时使用——按入口、数据流、关键抽象的顺序讲清楚，而不是逐个目录罗列。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/hello-dsh/SKILL.md\",\n          \"name\": \"hello-dsh\",\n          \"description\": \"当用户说「hello dsh」、第一次接触 DeepSeek Harness、想验证插件系统是否工作、或问「怎么开始」「怎么给 DSH 加东西」「怎么写插件」时使用。这是入门第一课，按层带用户走，不要一次讲完。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/perf-optimize/SKILL.md\",\n          \"name\": \"perf-optimize\",\n          \"description\": \"当需要优化性能、排查慢的原因、或判断某个优化值不值得做时使用——强制先测量再优化，禁止凭直觉猜瓶颈。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/plan-before-code/SKILL.md\",\n          \"name\": \"plan-before-code\",\n          \"description\": \"当接到一个需要改多处、涉及不确定性、或超过半天工作量的任务时使用——先把方案、边界和验证方式想清楚再动手，避免写到一半发现路走错了。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/pr-description/SKILL.md\",\n          \"name\": \"pr-description\",\n          \"description\": \"当需要写 pull request 描述、准备代码评审、或整理一组改动的说明时使用——重点写清为什么改和怎么验证的，让评审者能快速判断该看哪里。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/refactor-safely/SKILL.md\",\n          \"name\": \"refactor-safely\",\n          \"description\": \"当需要重构代码、拆分大函数、消除重复、调整模块结构时使用——强制小步前进、每步验证、行为不变，禁止重构和功能修改混在一次提交里。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/security-review-cn/SKILL.md\",\n          \"name\": \"security-review-cn\",\n          \"description\": \"当需要做安全审查、评估代码的攻击面、检查凭据处理或判断输入是否可信时使用——按信任边界组织检查，优先看那些能被外部输入触达的路径。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/test-first/SKILL.md\",\n          \"name\": \"test-first\",\n          \"description\": \"当需要写测试、实现新功能或修复缺陷时使用——先写一个会失败的测试再写实现，并用\\\"回退实现后测试是否变红\\\"来判断测试是否真的有效。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/web-research/SKILL.md\",\n          \"name\": \"web-research\",\n          \"description\": \"当需要联网查资料、核实事实、调研技术选型或整理某个话题的现状时使用——强制追到一手来源、标注不确定性，禁止把检索不到当成不存在。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/write-docs-cn/SKILL.md\",\n          \"name\": \"write-docs-cn\",\n          \"description\": \"当需要写或整理项目文档、README、API 说明、教程时使用——先判断这份文档是教程还是参考，再决定放哪、写多长、写什么。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"examples/skills/write-tech-cn/SKILL.md\",\n          \"name\": \"write-tech-cn\",\n          \"description\": \"当需要写中文技术文档、README、博客、教程或技术说明时使用——去掉翻译腔和 AI 味，先给结论和可执行动作，术语中英混排按中文习惯处理。\",\n          \"role\": \"example\",\n          \"status\": \"entry_candidate\"\n        }\n      ],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"examples/hello-plugin/src/hello.ts\",\n          \"line\": 8,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"example\"\n        },\n        {\n          \"path\": \"examples/hello-plugin/src/hello.ts\",\n          \"line\": 8,\n          \"api\": \"defineTool\",\n          \"name\": \"pingfan_hello\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"example\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "a783f1fdd76bb61ed19dd3269597e7eba0f799f51ce208e917f892f937c7861b"
+        }
+    },
+    "unavailable_artifacts": []
+}
