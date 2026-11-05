@@ -1,0 +1,66 @@
+{
+    "repository": "seriousz158/dsh-memory",
+    "repository_id": 1339286962,
+    "captured_at": "2026-11-05T02:43:55.370Z",
+    "window_start": "2026-10-06T02:43:55.370Z",
+    "stars": 169,
+    "pushed_at": "2026-10-10T15:59:03Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aseriousz158%2Fdsh-memory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 710A:CDD8D:895279:92A3D7:6AEBEDE4 and timestamp 2026-11-05 02:45:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aseriousz158%2Fdsh-memory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7148:1176DE:DBC99:ED809:6AEBEDE5 and timestamp 2026-11-05 02:45:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aseriousz158%2Fdsh-memory%20is%3Aissue%20created%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 71B2:355015:CFD99:E180B:6AEBEDE6 and timestamp 2026-11-05 02:45:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aseriousz158%2Fdsh-memory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7266:2906EE:899E87:92F2AC:6AEBEDE8 and timestamp 2026-11-05 02:46:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aseriousz158%2Fdsh-memory%20is%3Aissue%20updated%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 72BC:C9EE0:84459F:8D9A1C:6AEBEDE9 and timestamp 2026-11-05 02:46:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bb0463f04e50889079f27ca294a28262b9720935",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-git-memory",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1002,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-git-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T09:29:22.989Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-git-memory",
+            "error": null,
+            "latest_version": "0.8.1",
+            "latest_published_at": "2026-08-24T02:15:03.602Z",
+            "latest_error": null
+        }
+    }
+}
