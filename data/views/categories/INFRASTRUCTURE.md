@@ -18,6 +18,7 @@
 | [ANOLISA](#plugin-1195873793-root) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | [Q04](../../plugins/agentic-os-org--anolisa/INSIGHT.md#research-q04) 仅对已能维护运行环境和保留原文的开发者，建议以任务副本小范围试用所查压缩链路；内容丢失、取回失败或净成本不降就停用。 |
 | [Ark Plan API](#plugin-1269979871-dsh-plugins-ark-plan-api) | 为 DSH 的原生模型适配器声明火山方舟 Plan 和后付费路由。 | [Q03](../../plugins/volcengine--ark-cli--dsh-plugins-ark-plan-api/INSIGHT.md#research-q03) 先做无钥匙组合核对，再按需验收。 |
 | [Awesome DSH Plugins](#plugin-1333144072-root) | 提供 DSH 插件分类目录与可订阅到官方发现页的安装目标索引。 | [Q04](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md#research-q04) 独立profile只试单个任务候选，上游核权限/版本，不批装；不清回原仓库。 |
+| [Awesome DSH Plugins](#plugin-1333490005-root) | 按人工分类清单生成双语索引和可搜索静态插件目录 | [Q04](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q04) [Q04](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q04) 仅发现与跳转，安装目标另固定版本隔离验收。 |
 | [billion-context-dsh](#plugin-1333322877-root) | 为 DSH 提供模型驱动的上下文压缩、恢复与压缩提示。 | [Q03](../../plugins/tyan66666--billion-context-dsh/INSIGHT.md#research-q03) 新部署保留宿主原生路径，既有安装先检查历史。 |
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
@@ -51,6 +52,8 @@
 | [DSH Plugin Manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页面检查更新与兼容声明，并提供更新和重启入口。 | 熟悉 profile 的维护者先在备份过的可弃置环境试更新一个可信非关键包；版本、目标或恢复不明时停下并人工核对，再用官方固定版本命令和回归。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集 DSH 插件候选，归并兼容性记录并发布可浏览目录与机器可读数据。 | [Q04](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q04) 先按固定提交读取少量候选，再回原仓核对版本和权限；数据日期或逐条证据不明时停止自动安装并人工查找。 |
 | [DSH Plugins Marketplace](#plugin-1333295863-root) | 在 DSH 设置页浏览第三方插件与 Skill 索引，识别安装形态并组织材料、确认、安装和版本状态。 | [Q03](../../plugins/bradegithub--dsh-plugins-marketplace/INSIGHT.md#research-q03)正式管理observe，先修并在丢弃profile验multi-skill只删所属项。 |
+| [DSH Plugins Store](#plugin-1333579278-root) | 自动收录、分类并以固定源码验证状态组织插件市场 | [Q04](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md#research-q04) 先读固定记录，安装第三方仍隔离验收。 |
+| [DSH Remote Plugin](#plugin-1334902330-packages-plugin) | 在DSH添加手机连接入口并管理独立远程网关 | [Q04](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q04) [Q04](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q04) 暂观察，仅隔离loopback且禁自启核直连路由；不开放使用。 |
 | [DSH RotaKit](#plugin-1387227102-root) | 把本机 WorkBuddy/CodeBuddy 账号组成模型池，提供 Chat、Responses、Messages 本地代理与积分状态。 | 建议观察，本人账号与明确上游条件下隔离验证实际客户端闭环和积分成本；不以返回码或余额面板单独判断可用。 |
 | [DSH SSH](#plugin-1331636953-packages-dsh-ssh) | 在 DSH 中管理 SSH 主机，并提供远端命令、终端、文件传输与隧道。 | [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md#research-q05) 建议熟悉 SSH 的用户只在隔离测试机和独立 home 试用人工审核的只读命令；要求 host key pin 时使用现有 SSH 方案。 |
 | [DSH Standard](#plugin-1336081431-root) | 提供可独立实现的协议声明、协商器与 DeepSeek Harness 映射。 | [Q04](../../plugins/t-auto--dsh-std/INSIGHT.md#research-q04) 先用于单领域 CI，并另验运行映射。 |
@@ -90,6 +93,7 @@
 | [dsh-opencode-go](#plugin-1371644959-root) | 为 DSH 接入 OpenCode Go 与 Free 模型，提供多账号管理、额度显示和本地用量估算。 | [Q04](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q04) 在独立 profile 配置可撤销测试凭据。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 在 DSH Web 界面展示 OpenViking Studio、会话记忆提交状态和当前召回结果。 | [Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05) 建议可信个人单机以非敏感会话对照一条归档和当前搜索；身份、端点或权限不符时停止并回服务端核查。 |
+| [dsh-passwords](#plugin-1333875303-root) | 为共享DSH提供账号网关、逐资源权限、粗用量配额和管理界面，需独立部署与宿主桥接。 | [Q07](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q07) 仅观察可丢弃部署；先负向矩阵与密钥恢复，失败关闭外部入口，不依赖健康检查升级生产。 |
 | [dsh-permission-rules](#plugin-1333515275-root) | 把可配置的工具权限规则、审批分流和代理网络判断接入 DSH。 | [Q03](../../plugins/perrylink--dsh-permission-rules/INSIGHT.md#research-q03) 在测试 profile 先预演并记录差异。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
 | [dsh-plugin-gating-hub](#plugin-1333974533-root) | 在 DSH 内检查框架变更和插件兼容，提供升级备份、回滚与证据禁用。 | [Q03](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q03) 先在可弃用副本演练并保存独立恢复点。 |
@@ -157,6 +161,7 @@
 | [Engramory DSH 适配目录](#plugin-1268424426-adapters-dsh) | Engramory 仓库中存放 DeepSeek Harness 插件实现的适配器分组目录。 | [Q02](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md#research-q02)仅observe资源导航，运行需求直接转固定plugin子包；不要把根和容器重复安装或把一份运行贡献计三次。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
 | [HOL Guard](#plugin-1194748811-root) | 为 Agent 动作提供策略审查、审批、扫描和证据入口。 | [Q04](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q04) 隔离验证实际钩子，不能以静态扫描代替执行覆盖。 |
+| [HuaweiCloud DevKit](#plugin-1314502072-root) | 给Agent分发华为云知识Skill、KooCLI和计划执行保护 | [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) 先单目标隔离只读、禁预装和遥测、最小IAM；写操作须独立批准/幂等。 |
 | [K8E](#plugin-292529340-root) | 自托管 AI Agent 沙箱平台，提供会话、执行、文件与 DSH 接入 | [Q05](../../plugins/xiaods--k8e/INSIGHT.md#research-q05) 建议已有运维条件的团队以独立 profile 试用读写、断连和销毁；发生本机误写、串扰或残留会话则停止并退回 CLI。 |
 | [Local Shell MCP for DSH](#plugin-1249040497-root) | 将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。 | [Q03](../../plugins/fwerkor--local-shell-mcp/INSIGHT.md#research-q03) 先检查隔离会话归属与远端认证，再决定是否引入工具。 |
 | [Mebular DSH Plugin](#plugin-1339704814-packages-dsh-plugin) | 把 Mebular daemon 的 MCP 与 Console 接入 DSH，并管理连接和受管进程状态。 | [Q03](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q03) 先测试节点只读。 |
@@ -167,6 +172,7 @@
 | [Open Managed Agents](#plugin-1206555053-root) | 提供自托管 Agent 会话、工具执行和恢复基础设施。 | [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03) 先以固定组合和模拟外部服务观察；认证、沙箱或对账不满足时停止并保留现有方案。 |
 | [opencode2dsh](#plugin-1350368388-packages-plugin) | 为 DSH 提供 OpenCode Zen 匿名模型适配与可选本地委派。 | 非敏感任务核对实际来源、输出与网络资格；不明结果先对账。 |
 | [OpenGuardrails](#plugin-1081166515-root) | 以本地规则、模型裁决、秘密替换、网关和 sandbox 为 AI Agent 提供安全检查与行为记录。 | [Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 仅在一次性工作区以合成秘密评本地规则，保留宿主审批，明确 observe/enforce 差异。 |
+| [OpenQuantum Web Branding](#plugin-1335086034-packages-openquantum-web-branding) | 用宿主扩展点替换OpenQuantum品牌和浏览器/PWA元信息 | [Q04](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q04) [Q04](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q04) 先隔离核pack依赖和完整刷新回退，再考虑分发。 |
 | [OpenViking](#plugin-1128123594-root) | 为 AI Agent 组织知识、记忆与技能的上下文数据库。 | [Q05](../../plugins/volcengine--openviking/INSIGHT.md#research-q05) 建议先对非敏感可回滚语料逐步试用并核验原文；数据外发、来源或权限不明时暂停并使用原文件搜索。 |
 | [Our Free Model](#plugin-1385896447-root) | 为 DSH 提供免费模型、账户渠道和自带密钥提供者的统一模型接入。 | [Q05](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md#research-q05) 建议在确认供应商政策后以脱敏内容试单车道；数据去向不明、限额或工具异常时停止并切回已知官方端点。 |
 | [pi2dsh](#plugin-1333452358-root) | 在 DSH 中提供 Pi 扩展兼容层，发现已安装 Pi 包并映射工具、命令、会话和界面能力。 | [Q04](../../plugins/weijiafu14--pi2dsh/INSIGHT.md#research-q04) 已有Pi任务的用户可在独立profile逐包试用，固定宿主/surface/扩展，先inspect再对照真实关键任务。 |
@@ -279,6 +285,22 @@
 > **建议**：[Q04](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md#research-q04) 决策处展示核验层级和入选原因，若不降误信或增加负担即否定。
 
 [查看完整分析](../../plugins/bruc3van--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333490005-root"></a>
+
+## [Awesome DSH Plugins](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md)
+
+[![GitHub ★ 73](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=73&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kejixiaoliang/awesome-dsh-plugins)
+
+> **用途**：想发现DSH生态候选的读者需要分类入口。
+
+> **亮点**：[Q01](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q01) [Q01](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q01) 集中分类、描述、安装文本和检索入口。
+
+> **思考**：[Q03](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q03) [Q03](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q03) 仅格式/重复/链接检查，无目标版本或质量认证。
+
+> **建议**：[Q05](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q05) [Q05](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md#research-q05) 检索便利是否减少时间需相同候选集验证。
+
+[查看完整分析](../../plugins/kejixiaoliang--awesome-dsh-plugins/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333322877-root"></a>
 
@@ -807,6 +829,38 @@
 > **建议**：[Q04](../../plugins/bradegithub--dsh-plugins-marketplace/INSIGHT.md#research-q04)逐文件/目录ownership与来源commit、hash/共享引用复核可能防旁删。可丢弃profile对照多包冲突/用户修改后卸载，旁删不降或误阻断过高则否定，未实现不计贡献。
 
 [查看完整分析](../../plugins/bradegithub--dsh-plugins-marketplace/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333579278-root"></a>
+
+## [DSH Plugins Store](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md)
+
+[![GitHub ★ 74](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=74&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZASENJC/dsh-plugins-store)
+
+> **用途**：用户需区分插件候选和有限环境验证。
+
+> **亮点**：[Q01](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md#research-q01) 把可定位验证记录加入发现流程。
+
+> **思考**：[Q03](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md#research-q03) 标签有版本与环境边界，loader只测apply初始化；[Q02](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md#research-q02) 清理失败不撤销verified。
+
+> **建议**：[Q05](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md#research-q05) 完整报告可能降低筛选误判，尚需对照。
+
+[查看完整分析](../../plugins/zasenjc--dsh-plugins-store/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334902330-packages-plugin"></a>
+
+## [DSH Remote Plugin](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md)
+
+[![GitHub ★ 73](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=73&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Blank-not-black/dsh-Remote) [![npm 30d 5,796](https://img.shields.io/static/v1?label=npm+30d&message=5%2C796&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-remote-plugin) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-remote-plugin)
+
+> **用途**：DSH用户希望从手机继续会话并管理连接网关。
+
+> **亮点**：[Q01](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q01) [Q01](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q01) 管理宿主接线和启动，不承担全部移动客户端能力。
+
+> **思考**：[Q03](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q03) [Q03](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q03) 插件直连管理路由缺局部鉴权且state返回master token，外层保护需证实。
+
+> **建议**：[Q05](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q05) [Q05](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md#research-q05) 若门禁和停机先通过，可再对照配置成本。
+
+[查看完整分析](../../plugins/blank-not-black--dsh-remote--packages-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1387227102-root"></a>
 
@@ -1431,6 +1485,22 @@
 > **建议**：[Q06](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q06) 提出把真实注入收据与当前搜索并列的未验证方案；须先比较宿主日志并评估敏感信息保留。
 
 [查看完整分析](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333875303-root"></a>
+
+## [dsh-passwords](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md)
+
+[![GitHub ★ 82](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=82&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/slywalker2006/dsh-passwords) [![npm 30d 2,714](https://img.shields.io/static/v1?label=npm+30d&message=2%2C714&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-passwords) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-passwords)
+
+> **用途**：[Q01](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q01) 面向有运维能力的小团队管理员，让子用户仅访问分配的工作区/会话。
+
+> **亮点**：[Q03](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q03) 实质贡献是身份、会话grant、运行时通道分类与撤销接线组合；不是单独登录页，也非已证明的全租户隔离。
+
+> **思考**：[Q02](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q02) 内存logout吊销不跨重启；[Q04](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q04) 客户端计数不构成不可信用户硬预算；全代理面未穷尽。
+
+> **建议**：[Q06](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q06) 服务器预算预留/幂等结算和持久吊销收据是假设，须先证明入口全覆盖，当前未实现。
+
+[查看完整分析](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333515275-root"></a>
 
@@ -2504,6 +2574,22 @@
 
 [查看完整分析](../../plugins/hashgraph-online--hol-guard/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1314502072-root"></a>
+
+## [HuaweiCloud DevKit](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md)
+
+[![GitHub ★ 71](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=71&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/huaweicloud/huaweicloud-devkit) [![npm 30d 8,774](https://img.shields.io/static/v1?label=npm+30d&message=8%2C774&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/huaweicloud-devkit) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/huaweicloud-devkit)
+
+> **用途**：Agent用户要查询或管理华为云资源而不想手工拼CLI。
+
+> **亮点**：[Q01](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q01) [Q01](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q01) 统一知识分发、计划与脱敏输出，不新增云权限系统。
+
+> **思考**：[Q03](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q03) [Q03](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q03) 布尔批准、unknown_read、自动网络重试与默认安装/遥测需分清。
+
+> **建议**：[Q05](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q05) [Q05](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q05) 可检验参数正确与操作完成，但无本轮安全/费用收益。
+
+[查看完整分析](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-292529340-root"></a>
 
 ## [K8E](../../plugins/xiaods--k8e/INSIGHT.md)
@@ -2663,6 +2749,22 @@
 > **建议**：[Q04](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q04) 从明确 unjudged 语义推导任务级未知汇总与人工接管清单，可能减少未知被误当通过；它尚未实现或验证。用同任务双组比较未知遗漏、人工核对和完成率；若遗漏不降或总时间增则否定。
 
 [查看完整分析](../../plugins/openguardrails--openguardrails/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335086034-packages-openquantum-web-branding"></a>
+
+## [OpenQuantum Web Branding](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md)
+
+[![GitHub ★ 71](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=71&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xi-zhao/OpenQuantum)
+
+> **用途**：需要OpenQuantum品牌的DSH分发维护者想避免直接改上游UI。
+
+> **亮点**：[Q01](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q01) [Q01](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q01) 可安装呈现模块，不是量子计算能力。
+
+> **思考**：[Q03](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q03) [Q03](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q03) 打包遗漏风险与脚本热卸载不恢复，简化设置隐藏其他section。
+
+> **建议**：[Q05](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q05) [Q05](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q05) 易用性需以原任务/设置可达性对照，当前未测。
+
+[查看完整分析](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-root"></a>
 

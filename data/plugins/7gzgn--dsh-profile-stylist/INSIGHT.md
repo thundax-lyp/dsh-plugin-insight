@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[05dfa3e](https://github.com/7gzgn/dsh-profile-stylist/tree/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4)
+源码版本：[58133e2](https://github.com/7gzgn/dsh-profile-stylist/tree/58133e2ea3a76f23dbd2807c55c4be14ab727fc4)
 
 <!-- BEGIN META -->
-
+[![npm 30d 811](https://img.shields.io/static/v1?label=npm+30d&message=811&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-stylist) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-profile-stylist)
 <!-- END META -->
 
 > **功能**：用宿主 LLM 起草 GitHub/Gitee 个人资料，默认 dry-run，确认后经浏览器填文本/头像并点击保存。
@@ -49,26 +49,22 @@
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| profile_author | 生文案 | 需人工核事实 |
-| profile_apply dry-run | 体检 | 不绑定下一次确认 |
-| confirm:true | 自动填表/点击保存 | 直接字段绕过 URL/长度限制，无回读 |
-| Gitee 头像 | 上传/确认 | div 确认与脚本查 button 不匹配 |
+| 文案草稿 | 宿主LLM生成昵称、简介等结构字段 | 草稿URL/长度处理不等直接apply校验 |
+| 写入计划 | dry-run检查站点支持字段 | 不绑定后续confirm，超长仅warning |
+| 浏览器填表 | confirm后设置资料并点保存 | 保存后无远端回读 |
+| 头像准备 | 本地图dataURL或canvas模板，素材目录列举 | Gitee div确认与button扫描不匹配；上传非确认成功 |
 
 **流程与依赖**
-
-#### 启动与依赖
 
 | 依赖 | 必需 | 用途 | 缺失后果 |
 | --- | --- | --- | --- |
 | DSH tools/systemPrompt、browser | 写入必需 | 工具与站点操作 | 无法写入 |
 | 宿主 LLM | 自动草稿必需 | 生文案 | author 失败 |
 | GitHub/Gitee 登录与 DOM | 写入必需 | 资料页面 | 选择器失效/未授权 |
-
-#### 启动步骤
 
 | 步骤 | 动作 | 判据/恢复 |
 | --- | --- | --- |
@@ -79,15 +75,11 @@
 
 **效果与成本**
 
-#### 成本
-
 | 阶段 | 资源成本 | 人工投入 | 边界 |
 | --- | --- | --- | --- |
 | 安装 | DSH LLM/browser 与账号，金额未知 | 配插件、登录、选择头像 | 站点 DOM 可变 |
 | 写入 | LLM token/浏览器时间未知 | 审文案、dry-run、确认 | 直接 apply 校验缺口 |
 | 恢复 | 可能部分写入 | 回读资料/手工纠正 | Gitee 头像确认不匹配 |
-
-#### 效果
 
 | 效果项 | 源码支持 | 未证实 |
 | --- | --- | --- |
@@ -117,6 +109,10 @@
 
 先在测试账号观察；直接 apply 统一校验与 Gitee 头像确认修复、远端回读之后才扩大使用。详见[Q05](#research-q05)。
 
+<a id="innovation"></a>
+
+目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。
+
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -125,7 +121,10 @@
 
 固定源码支持三工具和默认 dry-run，但直接 apply 绕过文案长度与 URL 归一化；Gitee 头像确认档案为 div 而脚本只找 button/input；未回读站点结果。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/hosts.js、lib/author.js、lib/constants.js、lib/compose.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/compose.js、package.json、lib/author.js、lib/hosts.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定author、compose、hosts、index和package，核旧稿与元数据变化；未生成资料、传头像或访问账号。
+- 下一步：- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/hosts.js、lib/author.js、lib/constants.js、lib/compose.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：只读核固定提交 README、manifest、author/hosts/compose/index；未运行目标代码、站点浏览器或作者测试；旧 META 仅复用。
 - 下一步：目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。
@@ -133,18 +132,24 @@
 **分析版本**
 
 - **仓库**：[7gzgn/dsh-profile-stylist](https://github.com/7gzgn/dsh-profile-stylist)
-- **版本号**：0.2.2（[固定提交 05dfa3e](https://github.com/7gzgn/dsh-profile-stylist/tree/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.2（[固定提交 58133e2](https://github.com/7gzgn/dsh-profile-stylist/tree/58133e2ea3a76f23dbd2807c55c4be14ab727fc4)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+<a id="innovation"></a>
 
 未验证方向是统一归一化、一次性摘要确认、按档案 selector 处理头像并提交后回读。详见[Q06](#research-q06)。
 
 目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。
+
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/hosts.js、lib/author.js、lib/constants.js、lib/compose.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：只读核固定提交 README、manifest、author/hosts/compose/index；未运行目标代码、站点浏览器或作者测试；旧 META 仅复用。
+- 下一步：目标 GitHub/Gitee 测合法/非法 URL、超长、头像 div 确认、页面变化、提交回读、部分失败与测试账号恢复。
 
 <a id="detail-section-9"></a>
 
@@ -152,6 +157,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,13 +169,17 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/7gzgn/dsh-profile-stylist/issues) 查看。
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-profile-stylist/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-profile-stylist/issues?q=is%3Aissue+created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-profile-stylist/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z)
+
+
+
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：个人资料写入能否在统一字段约束和可验证确认下安全落地 GitHub/Gitee？
+**插件研究总目标**：资料维护者能否审查文案与头像，并确认远端资料确实保存？
 
 <a id="research-q01"></a>
 
@@ -182,9 +193,11 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [Gi
 
 插件把“想要怎样的人设”分为 host LLM 生成草稿、资料字段/头像规划和浏览器写入三工具，目标是已登录 GitHub/Gitee 的个人资料页。它能读取本地头像或在页面 canvas 画 460px 模板图；默认 profile_apply dry-run，不自动打开页面。站点选择器“真机验证”是作者报告，本轮只核固定源码，没有重访当前网页，因此不保证今天仍有效。资料内容由模型生成后仍需用户审阅真实性。
 
+当前package描述为“给DSH个人资料装扮”，但实际Host档案仍是GitHub/Gitee、工具仍走其profileUrl。研究按实现的外站资料操作归类，不能把包描述当DSH自身头像/称号/配色能力。
+
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-32](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L1-L32)
+**依据 1 · 作者声明**：[README.md:1-32](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/README.md#L1-L32)
 
 作者描述目标流程和默认 dry-run
 
@@ -228,7 +241,7 @@ profile_apply   fields='{"name":"…","bio":"…"}' [host=github] [avatarPath=�
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:49-72](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L49-L72)
+**依据 2 · 作者声明**：[README.md:49-72](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/README.md#L49-L72)
 
 GitHub/Gitee 范围和选择器声明
 
@@ -264,7 +277,7 @@ GitHub/Gitee 范围和选择器声明
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:222-364](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L222-L364)
+**依据 3 · 源码核查**：[lib/index.js:222-364](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L222-L364)
 
 assets/author 工具注册
 
@@ -419,7 +432,7 @@ export function apply(ctx, config) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:363-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L363-L450)
+**依据 4 · 源码核查**：[lib/index.js:363-450](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L363-L450)
 
 apply 规划与 confirm 分支
 
@@ -519,7 +532,7 @@ apply 规划与 confirm 分支
 
 </details>
 
-**依据 5 · 源码核查**：[lib/compose.js:17-24](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/compose.js#L17-L24)
+**依据 5 · 源码核查**：[lib/compose.js:17-24](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/compose.js#L17-L24)
 
 三类头像模板和尺寸
 
@@ -532,6 +545,20 @@ export const AVATAR_TEMPLATES = Object.freeze({
 
 /** 画布边长（px）。 */
 export const AVATAR_SIZE = 460;
+```
+
+**依据 6 · 作者声明**：[package.json:1-7](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/package.json#L1-L7)
+
+新包描述与实际外站档案范围分开。
+
+```text
+{
+  "name": "dsh-profile-stylist",
+  "version": "0.2.2",
+  "description": "给 DSH 的个人资料做装扮：头像、称号、配色，改完立刻能看到。 Dress up the DSH profile: avatar, title and colors, visible the moment you save.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
 ```
 
 #### 缺口
@@ -554,7 +581,7 @@ profile_author 调宿主 llm 服务与默认模型路线，解析 JSON、限字�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/author.js:124-167](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L124-L167)
+**依据 1 · 源码核查**：[lib/author.js:124-167](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/author.js#L124-L167)
 
 LLM 草稿、归一化与 blog 检查
 
@@ -610,7 +637,7 @@ export async function draftProfile(ctx, llm, request) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L400-L450)
+**依据 2 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L400-L450)
 
 apply 独立接 fields/dry-run
 
@@ -673,7 +700,7 @@ apply 独立接 fields/dry-run
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L461-L530)
+**依据 3 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L461-L530)
 
 浏览器准备、注入与结果
 
@@ -755,7 +782,7 @@ apply 独立接 fields/dry-run
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:85-175](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L85-L175)
+**依据 4 · 源码核查**：[lib/index.js:85-175](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L85-L175)
 
 页面填字段、头像、点击保存
 
@@ -878,7 +905,7 @@ export function buildWriterScript() {
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:7-21](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L7-L21)
+**依据 1 · 作者声明**：[README.md:7-21](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/README.md#L7-L21)
 
 作者宣称截断/URL 限制/写前展示
 
@@ -905,7 +932,7 @@ export function buildWriterScript() {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/author.js:155-167](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L155-L167)
+**依据 2 · 源码核查**：[lib/author.js:155-167](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/author.js#L155-L167)
 
 限制只在生成路径
 
@@ -930,7 +957,7 @@ export function buildWriterScript() {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L400-L450)
+**依据 3 · 源码核查**：[lib/index.js:400-450](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L400-L450)
 
 apply 直接接 fields 且仅 confirm 布尔门
 
@@ -993,7 +1020,7 @@ apply 直接接 fields 且仅 confirm 布尔门
 
 </details>
 
-**依据 4 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L130-L153)
+**依据 4 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/hosts.js#L130-L153)
 
 checkAgainstHost 超长只警告且原值保留
 
@@ -1029,7 +1056,7 @@ export function checkAgainstHost(host, fields) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:503-520](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L503-L520)
+**依据 5 · 源码核查**：[lib/index.js:503-520](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L503-L520)
 
 supported 原值送页面脚本
 
@@ -1079,7 +1106,7 @@ Gitee 档案把确认控件设为 div#confirm-avatar，文本“确定”；页�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/hosts.js:74-97](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L74-L97)
+**依据 1 · 源码核查**：[lib/hosts.js:74-97](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/hosts.js#L74-L97)
 
 Gitee 头像确认是 div#confirm-avatar，container 空
 
@@ -1115,7 +1142,7 @@ Gitee 头像确认是 div#confirm-avatar，container 空
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:118-155](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L118-L155)
+**依据 2 · 源码核查**：[lib/index.js:118-155](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L118-L155)
 
 写入脚本只遍历 button/input submit，轮询 30 秒
 
@@ -1165,7 +1192,7 @@ Gitee 头像确认是 div#confirm-avatar，container 空
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:54-58](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L54-L58)
+**依据 3 · 作者声明**：[README.md:54-58](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/README.md#L54-L58)
 
 作者称 Gitee 头像选择器验证
 
@@ -1197,7 +1224,7 @@ Gitee 头像确认是 div#confirm-avatar，container 空
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-79](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/package.json#L1-L79)
+**依据 1 · 源码核查**：[package.json:1-79](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/package.json#L1-L79)
 
 包版本/兼容/依赖
 
@@ -1208,7 +1235,7 @@ Gitee 头像确认是 div#confirm-avatar，container 空
 {
   "name": "dsh-profile-stylist",
   "version": "0.2.2",
-  "description": "Say what kind of profile you want; the agent writes it and puts it up. Generates nickname/bio/taglines with the host model, picks a local asset OR composes an avatar in-page with canvas (initials / gradient / tagline templates), then fills the profile page and uploads the picture - dry-run by default. GitHub and Gitee selectors are both verified on the live sites.",
+  "description": "给 DSH 的个人资料做装扮：头像、称号、配色，改完立刻能看到。 Dress up the DSH profile: avatar, title and colors, visible the moment you save.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -1263,7 +1290,8 @@ Gitee 头像确认是 div#confirm-avatar，container 空
     "compatibility": {
       "dshReleases": {
         "0.2.0-rc.2": "compatible",
-        "0.2.1-rc.2": "compatible"
+        "0.2.1-rc.2": "compatible",
+        "0.2.2-rc.1": "compatible"
       }
     },
     "bundle": {
@@ -1283,12 +1311,11 @@ Gitee 头像确认是 div#confirm-avatar，container 空
       "optional": true
     }
   }
-}
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:81-99](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/README.md#L81-L99)
+**依据 2 · 作者声明**：[README.md:81-99](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/README.md#L81-L99)
 
 作者安装与测试说明
 
@@ -1319,7 +1346,7 @@ node test/smoke.mjs      # 35 项：纯逻辑 / 站点档案 / 生成层（假 L
 
 </details>
 
-**依据 3 · 源码核查**：[lib/author.js:222-242](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/author.js#L222-L242)
+**依据 3 · 源码核查**：[lib/author.js:222-242](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/author.js#L222-L242)
 
 图片大小/扩展名读取
 
@@ -1352,7 +1379,7 @@ export async function readImageBase64(path) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L461-L530)
+**依据 4 · 源码核查**：[lib/index.js:461-530](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L461-L530)
 
 浏览器依赖与错误回报
 
@@ -1454,7 +1481,7 @@ export async function readImageBase64(path) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/hosts.js#L130-L153)
+**依据 1 · 源码核查**：[lib/hosts.js:130-153](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/hosts.js#L130-L153)
 
 现有字段检查只警告
 
@@ -1490,7 +1517,7 @@ export function checkAgainstHost(host, fields) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:139-166](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L139-L166)
+**依据 2 · 源码核查**：[lib/index.js:139-166](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L139-L166)
 
 头像与保存回报有限
 
@@ -1530,7 +1557,7 @@ export function checkAgainstHost(host, fields) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:439-450](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L439-L450)
+**依据 3 · 源码核查**：[lib/index.js:439-450](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L439-L450)
 
 当前确认只是布尔分支
 
@@ -1554,7 +1581,7 @@ export function checkAgainstHost(host, fields) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:519-530](https://github.com/7gzgn/dsh-profile-stylist/blob/05dfa3ede30b5de6c3cc1c7adc328fe9d7e7fbc4/lib/index.js#L519-L530)
+**依据 4 · 源码核查**：[lib/index.js:519-530](https://github.com/7gzgn/dsh-profile-stylist/blob/58133e2ea3a76f23dbd2807c55c4be14ab727fc4/lib/index.js#L519-L530)
 
 结果无远端回读
 

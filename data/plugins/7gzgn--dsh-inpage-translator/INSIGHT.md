@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[4a57cad](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)
+源码版本：[f5edefd](https://github.com/7gzgn/dsh-inpage-translator/tree/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98)
 
 <!-- BEGIN META -->
-
+[![npm 30d 1,181](https://img.shields.io/static/v1?label=npm+30d&message=1%2C181&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-inpage-translator) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-inpage-translator)
 <!-- END META -->
 
 > **功能**：在DSH浏览器页面注入翻译按钮，按文本去重分块调用宿主模型，缓存译文并提供翻译、还原与状态工具。
@@ -62,10 +62,6 @@
 | 分块模型 | 预算与部分失败回执 | 原文发宿主模型，非全页必成功 |
 | 自动巡场 | 导航后补按钮 | 默认多会话，失败三次跳过 |
 
-**流程与依赖**
-
-#### 启动与依赖
-
 | 条件 | 用途 | 不满足时 |
 | --- | --- | --- |
 | Node>=18与兼容DSH | ESM工具/提示注册 | 包声明rc.2兼容并非本轮加载验收 |
@@ -74,19 +70,14 @@
 | 页面内容披露许可 | 原文发模型 | 不因无自持key而免披露 |
 | 非关键交互页/可重新加载原文 | 恢复手段 | restore不恢复原DOM结构 |
 
+#### 启动步骤
 
-
-#### 使用流程
-
-| 步骤 | 动作 | 判据/失败处理 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 配置 | 先关闭autoInject，选可信非敏感页 | 核模型和站点范围 |
-| 选页 | 指定session并核标题URL | 活跃序号不代替焦点 |
-| 小页翻译 | 固定较小正maxChars，检查回执 | 对照漏段/缓存/错误 |
-| 核结构 | 检链接/表单/双语及原文 | 发现破坏则重新加载原页 |
-| 维护 | 卸载核timer停止、刷新清页面注入 | 默认失败三次跳过不自动恢复 |
-
-固定Git共有八个文件，包括README、LICENSE、package、cordis.patch.yml和四个lib。patch实际插入plugin-inpage-translator行；package声明的lib/text-chunks.js和test/smoke.mjs未在固定树出现。main与patch存在，不能据缺失子路径/测试断言核心必然无法加载。npm实际tarball未检查，不把Git缺文件扩展为发布物结论。
+| 配置 | 先关闭autoInject，固定许可清楚的非敏感页面及宿主模型 | 核对站点和session；默认巡场不是焦点选择 |
+| 翻译 | 显式session和较小正maxChars，观察编号回填与漏项 | 对照原文、链接与表单，不以JSON可解析当忠实 |
+| 恢复 | 先restore再重载原页，保存必要表单输入 | textContent只还原扁平文字，不能重建子节点和监听器 |
+| 退出 | 禁用插件并核timer停止，刷新原页面清注入 | 已发模型的原文无法撤回，核实际费用 |
 
 #### 成本
 
@@ -96,18 +87,12 @@
 | 持续使用 | 原文/提示/译文tokens，每1.5秒最多六会话脚本巡查 | 核漏段、缓存和译文质量 | 24000字符不是金额/token硬账单，实际计费未知 |
 | 失败恢复 | 漏译/JSON错块重试再耗模型，重载页面资源 | 检错误/恢复原页及表单状态 | 已有表单状态不能靠restore保证恢复，工时/金额未知 |
 
-
-
-#### 效果
-
 | 目标 | 源码增量 | 边界 |
 | --- | --- | --- |
 | 少复制粘贴 | 页面按钮和编号回填 | 结构保真缺口明显 |
 | 降重复请求 | 原文去重+4000条缓存 | 仅进程内，无质量/版本失效判据 |
 | 限单轮规模 | 自适应4000–24000字符与分块 | 多会话/重复触发不等于总预算 |
 | 容忍部分失败 | warnings/漏项/调用统计 | 有译文不代表全页成功 |
-
-单块stream超时AbortError直接返回已收文本，非空结果带error finish也可能进入解析；JSON可解析部分输出不自动等于完整成功。并行最多四、默认三减少等待可能，但注释称token花销不变只是相同请求规模的设计解释，不是计费证明。翻译质量、总时延和费用优势均无同页对照，不填省钱百分比。
 
 > **思考**：父元素textContent覆盖会丢子结构，restore只返扁平文本；未严格过滤可见内容，页面DOM请求不是可信人工许可，异步回填缺文档版本。详见[Q03](#research-q03)、[Q04](#research-q04)。
 
@@ -137,7 +122,9 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 观察，先修文本节点/还原、宿主许可和文档版本边界，再考虑非敏感小页试用。详见[Q07](#research-q07)。
 
-合格结果应是选对页面、得到忠实译文、明确哪些段落未翻，并保持链接/交互结构和可靠还原。基线是复制到聊天翻译再对照原页，或浏览器已有翻译功能。增量是宿主模型与页面按钮/会话接线；与成熟浏览器翻译器的质量/结构保真尚无对照，作者“每个可见节点/还原”必须与实现分开。
+<a id="innovation"></a>
+
+可继续以无秘密本地HTML/mock检嵌套DOM、隐藏祖先、伪请求、导航竞争和部分JSON，对照结构/授权/预算。
 
 <a id="detail-section-7"></a>
 
@@ -145,9 +132,12 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 **核查状态**：已检查源码。
 
-已检查源码。按钮/缓存/字符预算明确，DOM结构还原与页面授权/异步版本边界需先收紧。
+源码确认父元素textContent回填和DOM请求轮询；结构还原与人类授权主张受限，真实Host与译文未验。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/page-script.js、lib/translate.js、lib/constants.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/translate.js、lib/page-script.js、package.json、lib/constants.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定lib/index、page-script、translate、constants与package，核旧研究及当前元数据diff；未执行浏览器或模型。
+- 下一步：- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/page-script.js、lib/translate.js、lib/constants.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定Git四lib关键页面/模型/轮询/预算链及README/包/patch，树含八文件；不打开网页、调用模型或运行目标测试。
 - 下一步：可继续以无秘密本地HTML/mock检嵌套DOM、隐藏祖先、伪请求、导航竞争和部分JSON，对照结构/授权/预算。
@@ -155,18 +145,24 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 **分析版本**
 
 - **仓库**：[7gzgn/dsh-inpage-translator](https://github.com/7gzgn/dsh-inpage-translator)
-- **版本号**：0.2.4（[固定提交 4a57cad](https://github.com/7gzgn/dsh-inpage-translator/tree/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190)）
-- **版本日期**：2026-10-17（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.6（[固定提交 f5edefd](https://github.com/7gzgn/dsh-inpage-translator/tree/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+<a id="innovation"></a>
 
 可探索宿主许可/文档版本绑定的独立Text补丁和逆操作，核拒绝未授权与过期回填、结构还原及成本；未实现。详见[Q07](#research-q07)。
 
 可继续以无秘密本地HTML/mock检嵌套DOM、隐藏祖先、伪请求、导航竞争和部分JSON，对照结构/授权/预算。
+
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/page-script.js、lib/translate.js、lib/constants.js、cordis.patch.yml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定Git四lib关键页面/模型/轮询/预算链及README/包/patch，树含八文件；不打开网页、调用模型或运行目标测试。
+- 下一步：可继续以无秘密本地HTML/mock检嵌套DOM、隐藏祖先、伪请求、导航竞争和部分JSON，对照结构/授权/预算。
 
 <a id="detail-section-9"></a>
 
@@ -174,6 +170,8 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -184,17 +182,17 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+created%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T07%3A38%3A53.554Z..2026-10-22T07%3A38%3A53.554Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-inpage-translator/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核网页翻译的页面选择、DOM保真/还原、模型披露与许可、预算缓存、依赖分发和推荐边界。
+**插件研究总目标**：网页阅读者能否忠实就地翻译并保留结构、授权和可恢复原文？
 
 <a id="research-q01"></a>
 
@@ -212,7 +210,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-13](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/README.md#L3-L13)
+**依据 1 · 作者声明**：[README.md:3-13](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/README.md#L3-L13)
 
 作者常驻按钮/文本还原承诺。
 
@@ -235,7 +233,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:19-30](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/README.md#L19-L30)
+**依据 2 · 作者声明**：[README.md:19-30](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/README.md#L19-L30)
 
 工具和回执定位。
 
@@ -277,7 +275,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:118-156](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L118-L156)
+**依据 1 · 源码核查**：[lib/index.js:118-156](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L118-L156)
 
 私有会话发现与选择。
 
@@ -328,7 +326,7 @@ export function pickSession(sessions) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:215-245](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L215-L245)
+**依据 2 · 源码核查**：[lib/index.js:215-245](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L215-L245)
 
 轮询/失败门限。
 
@@ -371,7 +369,7 @@ async function sweepOnce(ctx, browser, state) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L184-L202)
+**依据 3 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L184-L202)
 
 收集模型回填。
 
@@ -402,7 +400,7 @@ async function handleClick(browser, session, report, context) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/translate.js:129-171](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js#L129-L171)
+**依据 4 · 源码核查**：[lib/translate.js:129-171](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/translate.js#L129-L171)
 
 route语言原文缓存。
 
@@ -457,7 +455,7 @@ function remember(map, route, target, text, value) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/translate.js:53-73](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js#L53-L73)
+**依据 5 · 源码核查**：[lib/translate.js:53-73](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/translate.js#L53-L73)
 
 默认模型解析。
 
@@ -508,9 +506,11 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 此外mode传给apply却没有分支，replace与bilingual在这条实现均写textContent，双语宣传不由这一分支支撑。textContent避免把模型输出当HTML执行，是有用限制，但不能补回结构保真。
 
+当前package描述“without rebuilding its DOM”不能作为结构保真证据；固定page-script仍把Text节点的parentElement作wrapper，apply和restore都直接设置该父元素textContent。元数据文字与实现范围须分别解释。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/page-script.js:108-167](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js#L108-L167)
+**依据 1 · 源码核查**：[lib/page-script.js:108-167](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/page-script.js#L108-L167)
 
 父元素采集/写入/还原，无布局过滤。
 
@@ -582,7 +582,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 </details>
 
-**依据 2 · 源码核查**：[lib/page-script.js:471-501](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js#L471-L501)
+**依据 2 · 源码核查**：[lib/page-script.js:471-501](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/page-script.js#L471-L501)
 
 重采样清原标、translate与restore。
 
@@ -625,7 +625,7 @@ handleClick在模型await前收集，await后只凭原session和数字编号回�
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L184-L202)
+**依据 3 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L184-L202)
 
 await前后无文档版本。
 
@@ -656,7 +656,7 @@ async function handleClick(browser, session, report, context) {
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:35-42](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/README.md#L35-L42)
+**依据 4 · 作者声明**：[README.md:35-42](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/README.md#L35-L42)
 
 iframe/可见/不重排作者边界。
 
@@ -669,6 +669,20 @@ iframe/可见/不重排作者边界。
 | **只翻可见文本节点** | 图片、`background-image`、canvas 里的文字不动；`<input>` / `<textarea>` 的值不动。 |
 | **字符上限默认自适应** | `maxChars` 不传时按页面唯一文本量自适应（`4000 ~ 24000` 字符）：小页面不被预留浪费、大页面不被 6000 硬截断；超出自适应上限的部分**如实回报**并跳过。给正数则按该值硬截断。 |
 | **文本节点被包了一层 `<span>`** | 元素上只打标、不重排子树（`span` 用 `display:inherit`），但页面自己重写这段 DOM 时译文可能被覆盖 —— 那时重跑一次即可。 |
+```
+
+**依据 5 · 作者声明**：[package.json:1-7](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/package.json#L1-L7)
+
+包描述的保结构主张需要与实际父元素覆盖比较。
+
+```text
+{
+  "name": "dsh-inpage-translator",
+  "version": "0.2.6",
+  "description": "在网页里就地翻译，不动原页面的结构。 Translate a page in place without rebuilding its DOM.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
 ```
 
 #### 缺口
@@ -695,7 +709,7 @@ iframe/可见/不重排作者边界。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/page-script.js:350-380](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js#L350-L380)
+**依据 1 · 源码核查**：[lib/page-script.js:350-380](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/page-script.js#L350-L380)
 
 普通DOM事件/属性作为请求。
 
@@ -738,7 +752,7 @@ iframe/可见/不重排作者边界。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:235-260](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L235-L260)
+**依据 2 · 源码核查**：[lib/index.js:235-260](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L235-L260)
 
 仅页面状态触发翻译。
 
@@ -776,7 +790,7 @@ iframe/可见/不重排作者边界。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:611-630](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L611-L630)
+**依据 3 · 源码核查**：[lib/index.js:611-630](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L611-L630)
 
 默认全会话巡场。
 
@@ -808,7 +822,7 @@ iframe/可见/不重排作者边界。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/constants.js:333-347](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/constants.js#L333-L347)
+**依据 4 · 源码核查**：[lib/constants.js:333-347](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/constants.js#L333-L347)
 
 翻译提示/用户文本。
 
@@ -875,7 +889,7 @@ export function buildPrompt(chunk, options) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:7-20](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/package.json#L7-L20)
+**依据 1 · 源码核查**：[package.json:7-20](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/package.json#L7-L20)
 
 入口/导出声明。
 
@@ -901,7 +915,7 @@ export function buildPrompt(chunk, options) {
 
 </details>
 
-**依据 2 · 源码核查**：[package.json:37-69](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/package.json#L37-L69)
+**依据 2 · 源码核查**：[package.json:37-69](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/package.json#L37-L69)
 
 Node/test/patch/peer声明。
 
@@ -931,7 +945,8 @@ Node/test/patch/peer声明。
     "compatibility": {
       "dshReleases": {
         "0.2.0-rc.2": "compatible",
-        "0.2.1-rc.2": "compatible"
+        "0.2.1-rc.2": "compatible",
+        "0.2.2-rc.1": "compatible"
       }
     },
     "bundle": {
@@ -941,12 +956,11 @@ Node/test/patch/peer声明。
   "peerDependencies": {
     "@deepseek-ai/cordis": ">=4.0.4 <5.0.0",
     "@deepseek-ai/dsh-system-prompt": ">=0.2.0-rc.2 <0.3.0-0",
-    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.3.0-0"
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:586-605](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L586-L605)
+**依据 3 · 源码核查**：[lib/index.js:586-605](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L586-L605)
 
 browser/llm缺失错误。
 
@@ -978,7 +992,7 @@ browser/llm缺失错误。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:643-650](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L643-L650)
+**依据 4 · 源码核查**：[lib/index.js:643-650](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L643-L650)
 
 disposer清理。
 
@@ -993,7 +1007,7 @@ disposer清理。
         }
 ```
 
-**依据 5 · 源码核查**：[cordis.patch.yml:1-4](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/cordis.patch.yml#L1-L4)
+**依据 5 · 源码核查**：[cordis.patch.yml:1-4](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/cordis.patch.yml#L1-L4)
 
 固定Git真实存在bundle插入行。
 
@@ -1041,7 +1055,7 @@ disposer清理。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/constants.js:65-94](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/constants.js#L65-L94)
+**依据 1 · 源码核查**：[lib/constants.js:65-94](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/constants.js#L65-L94)
 
 预算/并发/周期。
 
@@ -1083,7 +1097,7 @@ export const MAX_OUTPUT_TOKENS = 4096;
 
 </details>
 
-**依据 2 · 源码核查**：[lib/translate.js:100-123](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js#L100-L123)
+**依据 2 · 源码核查**：[lib/translate.js:100-123](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/translate.js#L100-L123)
 
 超时部分文本返回。
 
@@ -1119,7 +1133,7 @@ async function streamOnce(prepared, base, system, user, timeoutMs) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/translate.js:278-338](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/translate.js#L278-L338)
+**依据 3 · 源码核查**：[lib/translate.js:278-338](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/translate.js#L278-L338)
 
 局部失败/并发/缓存/统计。
 
@@ -1216,7 +1230,7 @@ async function streamOnce(prepared, base, system, user, timeoutMs) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/page-script.js:108-167](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/page-script.js#L108-L167)
+**依据 1 · 源码核查**：[lib/page-script.js:108-167](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/page-script.js#L108-L167)
 
 文本节点补丁对照基线。
 
@@ -1288,7 +1302,7 @@ async function streamOnce(prepared, base, system, user, timeoutMs) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L184-L202)
+**依据 2 · 源码核查**：[lib/index.js:184-202](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L184-L202)
 
 版本绑定对照基线。
 
@@ -1319,7 +1333,7 @@ async function handleClick(browser, session, report, context) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:245-260](https://github.com/7gzgn/dsh-inpage-translator/blob/4a57cad05fb8f57ae3c0cb12f8d4e5ef644d5190/lib/index.js#L245-L260)
+**依据 3 · 源码核查**：[lib/index.js:245-260](https://github.com/7gzgn/dsh-inpage-translator/blob/f5edefd3aff0f1345f25e91dcaeb34e2716c5c98/lib/index.js#L245-L260)
 
 宿主授权对照基线。
 

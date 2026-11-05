@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[dd118db](https://github.com/7gzgn/dsh-gui-guard/tree/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd)
+源码版本：[2e59e4f](https://github.com/7gzgn/dsh-gui-guard/tree/2e59e4fd4ad126b8be21866cbf4b34fb9299d237)
 
 <!-- BEGIN META -->
-
+[![npm 30d 760](https://img.shields.io/static/v1?label=npm+30d&message=760&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gui-guard) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gui-guard)
 <!-- END META -->
 
 > **功能**：为 Windows 窗口提供状态检查、前台准备及带坐标口径的点击与输入工具。
@@ -52,10 +52,10 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| list/probe | 查窗口与前台/DPI 状态 | 有标题主窗口，重名需用 PID |
-| prepare | 还原、前台与可选尺寸 | SetForegroundWindow 结果需复核 |
-| click | 物理/逻辑坐标换算和鼠标事件 | 不校验前台成功或控件命中 |
-| type | 激活后 SendKeys 输入 | 无焦点硬门控，特殊字符遵循 SendKeys 语法 |
+| 窗口列表与状态 | 枚举标题/PID并probe矩形、DPI、前台等 | 同名首项不拒歧义，非控件识别 |
+| 窗口准备 | 还原最小化、切前台并可改位置尺寸 | API请求不保证取得前台，应检查isForeground |
+| 坐标点击 | 物理/逻辑坐标转换并回显光标 | 前台失败仍发全局事件；未检查窗内或控件响应 |
+| 键盘输入 | 激活后用SendKeys发送字符串 | 不是逐字文本赋值；未验证目标完整收到 |
 
 #### 启动与依赖
 
@@ -66,7 +66,6 @@
 | DSH tools 服务 | 实际工具暴露必需 | 注册 gui_guard | 动态 import 降级不等于工具可用 |
 | systemPrompt 服务 | 可选 | 提醒 Agent 用法 | 缺失时跳过公告 |
 | 已知窗口和坐标 | click/type 条件 | 定位目标与落点 | 不提供 OCR/元素识别 |
-
 
 #### 启动步骤
 
@@ -84,7 +83,6 @@
 | 首次使用 | 现金未知；Windows 与 PowerShell 资源 | 核宿主版本、窗口定位和坐标口径 | 安装/权限验收未做 |
 | 持续使用 | 每次 PowerShell 进程与固定 sleep | 核实前台、点位和实际响应 | 延迟、误点率未独立测 |
 | 失败恢复 | 目标应用撤销或重做成本未知 | 人工查错误窗口与输入副作用 | 未见可回滚机制 |
-
 
 #### 效果
 
@@ -116,6 +114,10 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 
 真实业务桌面当前建议观察；隔离试用先以 PID 定位和 probe 核查，若 isForeground=false、点位越界或光标不匹配就停止人工接管。详见[Q05](#research-q05)。
 
+<a id="innovation"></a>
+
+在隔离 Windows 桌面构造前台切换失败、重名窗口、窗外坐标、跨屏 DPI 和正常输入，测目标事件落点、误拒、延迟与退出状态。
+
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -124,7 +126,10 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 
 五动作源码可核查；前台失败后仍可能发送全局事件，真实误点与性能未在本轮验证；前台门控是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/win32.ps1、test/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/win32.ps1、package.json、test/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定Node执行器、五动作Win32脚本及测试断言；核元数据/公告变更，未启动PowerShell或点击/输入。
+- 下一步：- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/win32.ps1、test/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：读取固定提交 README、package、Node 入口、PowerShell 后端和真实点击测试脚本；未执行任何目标代码或操作 Windows 窗口。
 - 下一步：在隔离 Windows 桌面构造前台切换失败、重名窗口、窗外坐标、跨屏 DPI 和正常输入，测目标事件落点、误拒、延迟与退出状态。
@@ -132,18 +137,24 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 **分析版本**
 
 - **仓库**：[7gzgn/dsh-gui-guard](https://github.com/7gzgn/dsh-gui-guard)
-- **版本号**：0.1.1（[固定提交 dd118db](https://github.com/7gzgn/dsh-gui-guard/tree/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 2e59e4f](https://github.com/7gzgn/dsh-gui-guard/tree/2e59e4fd4ad126b8be21866cbf4b34fb9299d237)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+<a id="innovation"></a>
 
 可在全局事件发送前加入前台与点位范围门控，并以拒绝前台、重名窗口及跨屏 DPI 输入对照误点和误拒；尚未实现。详见[Q05](#research-q05)。
 
 在隔离 Windows 桌面构造前台切换失败、重名窗口、窗外坐标、跨屏 DPI 和正常输入，测目标事件落点、误拒、延迟与退出状态。
+
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/win32.ps1、test/smoke.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：读取固定提交 README、package、Node 入口、PowerShell 后端和真实点击测试脚本；未执行任何目标代码或操作 Windows 窗口。
+- 下一步：在隔离 Windows 桌面构造前台切换失败、重名窗口、窗外坐标、跨屏 DPI 和正常输入，测目标事件落点、误拒、延迟与退出状态。
 
 <a id="detail-section-9"></a>
 
@@ -151,6 +162,8 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,17 +175,17 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-gui-guard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-gui-guard/issues?q=is%3Aissue+created%3A2026-09-22T05%3A11%3A08.599Z..2026-10-22T05%3A11%3A08.599Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-gui-guard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A11%3A08.599Z..2026-10-22T05%3A11%3A08.599Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-gui-guard/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：判断固定提交的 Windows GUI 操作层是否能减少坐标点击与输入事故，识别不能保证安全的情况和采用成本。
+**插件研究总目标**：有明确坐标的Windows自动化能否准备正确窗口并区分输入发出与目标实际响应？
 
 <a id="research-q01"></a>
 
@@ -190,7 +203,7 @@ Ensure-Foreground 的 isForeground 没有成为 click/type 的执行门槛，ok 
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-42](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/README.md#L1-L42)
+**依据 1 · 作者声明**：[README.md:1-42](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/README.md#L1-L42)
 
 作者陈述四类失败场景与五种动作，事故未获独立复现。
 
@@ -244,7 +257,7 @@ gui_guard({ action: "probe", window: "记事本" })
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:82-103](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/README.md#L82-L103)
+**依据 2 · 作者声明**：[README.md:82-103](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/README.md#L82-L103)
 
 作者界定坐标口径、无 OCR/UIA 定位与协同边界。
 
@@ -278,7 +291,7 @@ gui_guard({ action: "probe", window: "记事本" })
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:170-211](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js#L170-L211)
+**依据 3 · 源码核查**：[lib/index.js:170-211](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/index.js#L170-L211)
 
 工具定义五动作及输入参数，click 的目标坐标由调用方提供。
 
@@ -346,9 +359,11 @@ Node 侧用 execFile 选择 pwsh 或 powershell.exe，将 JSON payload 编成 ba
 
 这种把坐标口径与动作回显集中在工具边界的做法可迁移到其它桌面自动化；base64 JSON 减少 shell 引号问题，execFile 也避免通过 shell 拼接模型输入。工程上每个动作都启一个脚本进程，存在固定等待；批量操作资源成本不能按单次示例外推。Node 的动态 defineTool 降级仅在宿主服务缺失时保持可装载，不说明工具仍能被模型调用。
 
+runAction先尝试解析stdout最后一行JSON，即使execFile给err也会返回可解析结果；故调用者不能仅凭Promise成功判动作成功。它没有接入宿主取消signal，45秒子进程超时也不能撤销已发鼠标或键盘事件。type实际是SendKeys语法而非文本框值写入，特殊按键字符与目标应用收到的文本仍须核验。当前announceToAgent只有显式true才加提示，不代表工具默认关闭。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:41-100](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js#L41-L100)
+**依据 1 · 源码核查**：[lib/index.js:41-100](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/index.js#L41-L100)
 
 确认 shell 选择、base64、execFile 和超时。
 
@@ -420,7 +435,7 @@ async function runAction(action, payload = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/win32.ps1:64-115](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L64-L115)
+**依据 2 · 源码核查**：[lib/win32.ps1:64-115](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L64-L115)
 
 确认窗口定位顺序、状态字段与前台准备函数。
 
@@ -484,7 +499,7 @@ function Ensure-Foreground([IntPtr]$h) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/win32.ps1:191-251](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L191-L251)
+**依据 3 · 源码核查**：[lib/win32.ps1:191-251](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L191-L251)
 
 确认点击坐标换算、按键、回显与 type 路径。
 
@@ -557,6 +572,40 @@ function Ensure-Foreground([IntPtr]$h) {
 
 </details>
 
+**依据 4 · 源码核查**：[lib/index.js:79-100](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/index.js#L79-L100)
+
+先解析JSON后处理err，超时不撤销已发生事件。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+      timeout: 45000,
+      windowsHide: true,
+      maxBuffer: 4 * 1024 * 1024,
+    }, (err, stdout, stderr) => {
+      const text = String(stdout || '').trim();
+      const lastLine = text.split(/\r?\n/).filter((l) => l.trim() !== '').pop();
+      if (lastLine) {
+        try {
+          resolve(JSON.parse(lastLine));
+          return;
+        } catch {
+          /* 落到下面的错误分支 */
+        }
+      }
+      if (err) {
+        reject(new Error(`${err.message}${stderr ? ` | ${String(stderr).slice(0, 300)}` : ''}`));
+        return;
+      }
+      reject(new Error(`后端没有返回可解析的 JSON：${text.slice(0, 200)}`));
+    });
+  });
+}
+```
+
+</details>
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
@@ -573,7 +622,7 @@ function Ensure-Foreground([IntPtr]$h) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/win32.ps1:105-116](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L105-L116)
+**依据 1 · 源码核查**：[lib/win32.ps1:105-116](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L105-L116)
 
 前台准备函数返回 isForeground，但只是状态。
 
@@ -597,7 +646,7 @@ function Ensure-Foreground([IntPtr]$h) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/win32.ps1:191-251](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L191-L251)
+**依据 2 · 源码核查**：[lib/win32.ps1:191-251](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L191-L251)
 
 click/type 无前台门控，cursorMatches 只比较光标坐标。
 
@@ -670,7 +719,7 @@ click/type 无前台门控，cursorMatches 只比较光标坐标。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/win32.ps1:64-74](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L64-L74)
+**依据 3 · 源码核查**：[lib/win32.ps1:64-74](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L64-L74)
 
 标题子串匹配选第一个进程，没有歧义拒绝。
 
@@ -715,7 +764,7 @@ function Get-Target([string]$needle, $pidValue) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-55](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/package.json#L1-L55)
+**依据 1 · 源码核查**：[package.json:1-55](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/package.json#L1-L55)
 
 包清单声明平台关联依赖与兼容范围。
 
@@ -726,7 +775,7 @@ function Get-Target([string]$needle, $pidValue) {
 {
   "name": "dsh-gui-guard",
   "version": "0.1.1",
-  "description": "Windows GUI automation reliability layer: probe whether a window is minimized, foreground or DPI-scaled, then click and type with the coordinate space and activation order handled for you. Zero dependencies, local only.",
+  "description": "先确认这个窗口现在能不能安全操作，再动手点击或输入——最小化、不在前台、DPI 缩放都替你处理掉。 Windows window-operation reliability layer: probe whether a window is minimized, in the foreground or DPI-scaled, then click and type with the coordinate space handled.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -782,7 +831,7 @@ function Get-Target([string]$needle, $pidValue) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:69-100](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js#L69-L100)
+**依据 2 · 源码核查**：[lib/index.js:69-100](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/index.js#L69-L100)
 
 每次动作由 execFile 启 PowerShell，设置超时。
 
@@ -826,7 +875,7 @@ async function runAction(action, payload = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/win32.ps1:209-250](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L209-L250)
+**依据 3 · 源码核查**：[lib/win32.ps1:209-250](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L209-L250)
 
 固定等待与全局输入副作用可见。
 
@@ -880,7 +929,7 @@ async function runAction(action, payload = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[test/smoke.mjs:1-76](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/test/smoke.mjs#L1-L76)
+**依据 4 · 源码核查**：[test/smoke.mjs:1-76](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/test/smoke.mjs#L1-L76)
 
 测试含真实点击且断言主要覆盖返回、坐标与光标。
 
@@ -984,7 +1033,7 @@ const badType = await runAction('type', { window: 'dsh-gui-guard-no-such-window-
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:129-145](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/index.js#L129-L145)
+**依据 1 · 源码核查**：[lib/index.js:129-145](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/index.js#L129-L145)
 
 工具回显请求、应用与光标状态，但文本不证明控件响应。
 
@@ -1013,7 +1062,7 @@ const badType = await runAction('type', { window: 'dsh-gui-guard-no-such-window-
 
 </details>
 
-**依据 2 · 源码核查**：[lib/win32.ps1:105-116](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L105-L116)
+**依据 2 · 源码核查**：[lib/win32.ps1:105-116](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L105-L116)
 
 已有 isForeground 可用于假设中的门控。
 
@@ -1037,7 +1086,7 @@ function Ensure-Foreground([IntPtr]$h) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/win32.ps1:191-232](https://github.com/7gzgn/dsh-gui-guard/blob/dd118dbc4a1839ebf2a5730eb0682a5fa1a93ffd/lib/win32.ps1#L191-L232)
+**依据 3 · 源码核查**：[lib/win32.ps1:191-232](https://github.com/7gzgn/dsh-gui-guard/blob/2e59e4fd4ad126b8be21866cbf4b34fb9299d237/lib/win32.ps1#L191-L232)
 
 现有 click 不检查前台与窗口边界，是改进比较基线。
 

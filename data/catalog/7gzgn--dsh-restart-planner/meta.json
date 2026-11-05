@@ -1,46 +1,43 @@
 {
     "repository": "7gzgn/dsh-restart-planner",
     "repository_id": 1422176522,
-    "captured_at": "2026-10-22T16:03:28.181Z",
-    "window_start": "2026-09-22T16:03:28.181Z",
-    "stars": 0,
-    "pushed_at": "2026-10-18T04:00:47Z",
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 1,
+    "pushed_at": "2026-11-05T06:30:22Z",
     "issues": {
         "open": 0,
-        "closed": null,
+        "closed": 0,
         "created_30d": null,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0DB2:F66E0:9FB483:ACA4CA:6ADA33D3 and timestamp 2026-10-22 16:03:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20created%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0EEE:15C753:A01AD8:AD1418:6ADA33D5 and timestamp 2026-10-22 16:03:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1F6:102F66:341B1F:382872:6AEC239D and timestamp 2026-11-05 06:35:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 102E:F66E0:9FB651:ACA69C:6ADA33D6 and timestamp 2026-10-22 16:03:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A23E:1176DE:34F09F:38FEC7:6AEC239E and timestamp 2026-11-05 06:35:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20updated%3A2026-09-22T16%3A03%3A28.181Z..2026-10-22T16%3A03%3A28.181Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1146:1BCF5F:AA34B4:B72D32:6ADA33D7 and timestamp 2026-10-22 16:03:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-restart-planner%20is%3Aissue%20updated%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A268:D556F:B217D7:BE5A5F:6AEC239F and timestamp 2026-11-05 06:35:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-restart-planner",
-        "captured_at": "2026-10-22T16:03:35.622Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-restart-planner",
-        "error": "HTTP 404",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 777,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-restart-planner",
+        "error": null,
         "publication": {
             "first_published_at": "2026-10-22T13:27:00.291Z",
-            "captured_at": "2026-10-22T16:03:35.622Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
             "source_url": "https://registry.npmjs.org/dsh-restart-planner",
             "error": null,
             "latest_version": "0.4.6",

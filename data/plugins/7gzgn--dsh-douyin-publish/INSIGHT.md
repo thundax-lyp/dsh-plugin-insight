@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[3413d53](https://github.com/7gzgn/dsh-douyin-publish/tree/3413d538e2b4a3384092c456c56f97862f787fed)
+源码版本：[9b6e855](https://github.com/7gzgn/dsh-douyin-publish/tree/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238)
 
 <!-- BEGIN META -->
-
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/7gzgn/dsh-douyin-publish) [![npm 30d 1,677](https://img.shields.io/static/v1?label=npm+30d&message=1%2C677&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-douyin-publish) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-douyin-publish)
 <!-- END META -->
 
 > **功能**：把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。
@@ -69,7 +69,6 @@
 | ffmpeg/音频和足够临时空间 | 本地混音可选 | 新MP4混音 | 失败停止，副本需清理 |
 | Windows PowerShell/桌面UI | 对话框fallback必需 | 大文件/注入失败时交文件 | 非跨平台保证，回读不明就失败 |
 
-
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
@@ -86,7 +85,6 @@
 | 首次使用 | browser/账号/可选ffmpeg与平台环境 | 固定页面版本、cfg和受控素材 | 当前适配需另核 |
 | 持续使用 | 视频网络上传、页面Blob/File内存、可选混音/临时磁盘 | 审核字幕/标签/封面/可见性 | 512MiB注入阈值不是峰值内存上限 |
 | 失败恢复 | 重传/混音副本、平台未提交稿处理 | 核实际平台受理/素材状态 | 无帖子ID/幂等键，未知不盲重发 |
-
 
 #### 效果
 
@@ -119,6 +117,10 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。详见[Q06](#research-q06)。
 
+<a id="innovation"></a>
+
+进一步探讨可先核cfg/字段/账号与并发取消，再用平台可回读帖子证明受理，未知不重复点击。
+
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -129,24 +131,33 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 - 已检查：作者 README、包清单、源码路径 lib/plan.js、lib/pipeline.js、lib/attach.js、lib/platforms.js、lib/index.js、lib/serve.js、README.md、lib/bgm.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定当前index、plan、pipeline、attach、serve、bgm和平台档案，核旧稿变化；未登录平台、上传或发布。
+- 下一步：- 已检查：作者 README、包清单、源码路径 lib/plan.js、lib/pipeline.js、lib/attach.js、lib/platforms.js、lib/index.js、lib/serve.js、README.md、lib/bgm.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定参数/Host注册、主pipeline、文件服务/注入/对话框桥接和BGM边界；未全面审PowerShell UI细节或当前平台/上游browser实现。
 - 下一步：进一步探讨可先核cfg/字段/账号与并发取消，再用平台可回读帖子证明受理，未知不重复点击。
 
 **分析版本**
 
 - **仓库**：[7gzgn/dsh-douyin-publish](https://github.com/7gzgn/dsh-douyin-publish)
-- **版本号**：0.6.4（[固定提交 3413d53](https://github.com/7gzgn/dsh-douyin-publish/tree/3413d538e2b4a3384092c456c56f97862f787fed)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.4（[固定提交 9b6e855](https://github.com/7gzgn/dsh-douyin-publish/tree/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+<a id="innovation"></a>
 
 可探讨账号/素材/字段绑定和发布受理收据，逐次授权、页锁及unknown查询恢复，平台维护成本未验证。详见[Q05](#research-q05)。
 
 进一步探讨可先核cfg/字段/账号与并发取消，再用平台可回读帖子证明受理，未知不重复点击。
+
+- 已检查：作者 README、包清单、源码路径 lib/plan.js、lib/pipeline.js、lib/attach.js、lib/platforms.js、lib/index.js、lib/serve.js、README.md、lib/bgm.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定参数/Host注册、主pipeline、文件服务/注入/对话框桥接和BGM边界；未全面审PowerShell UI细节或当前平台/上游browser实现。
+- 下一步：进一步探讨可先核cfg/字段/账号与并发取消，再用平台可回读帖子证明受理，未知不重复点击。
 
 <a id="detail-section-9"></a>
 
@@ -154,6 +165,8 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -165,17 +178,17 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+created%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A35%3A38.976Z..2026-10-22T06%3A35%3A38.976Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-douyin-publish/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核文件交接/填表/草稿与发布状态，区分默认约束、逐次授权和平台受理证据。
+**插件研究总目标**：创作者能否把自有视频准备成可核对草稿，并区分点击与平台受理？
 
 <a id="research-q01"></a>
 
@@ -193,7 +206,7 @@ cfg可默认publish，字段warning仍继续；published只证明点击，不核
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/plan.js:53-70](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/plan.js#L53-L70)
+**依据 1 · 源码核查**：[lib/plan.js:53-70](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/plan.js#L53-L70)
 
 路径与模式参数。
 
@@ -223,7 +236,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pipeline.js:495-550](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L495-L550)
+**依据 2 · 源码核查**：[lib/pipeline.js:495-550](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L495-L550)
 
 支持/预检边界。
 
@@ -291,7 +304,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pipeline.js:584-610](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L584-L610)
+**依据 3 · 源码核查**：[lib/pipeline.js:584-610](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L584-L610)
 
 浏览器及恢复稿。
 
@@ -330,7 +343,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/pipeline.js:658-695](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L658-L695)
+**依据 4 · 源码核查**：[lib/pipeline.js:658-695](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L658-L695)
 
 文件服务/候选/推进。
 
@@ -380,7 +393,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/attach.js:40-71](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/attach.js#L40-L71)
+**依据 5 · 源码核查**：[lib/attach.js:40-71](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/attach.js#L40-L71)
 
 Blob到File/input事件。
 
@@ -424,7 +437,7 @@ export async function injectFile(browser, opts = {}) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/attach.js:111-129](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/attach.js#L111-L129)
+**依据 6 · 源码核查**：[lib/attach.js:111-129](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/attach.js#L111-L129)
 
 fallback回读。
 
@@ -455,7 +468,7 @@ export async function attachViaDialog(browser, deps, opts = {}) {
 
 </details>
 
-**依据 7 · 源码核查**：[lib/pipeline.js:902-945](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L902-L945)
+**依据 7 · 源码核查**：[lib/pipeline.js:902-945](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L902-L945)
 
 模式分支与服务关闭。
 
@@ -511,7 +524,7 @@ export async function attachViaDialog(browser, deps, opts = {}) {
 
 </details>
 
-**依据 8 · 作者声明**：[lib/platforms.js:8-9](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/platforms.js#L8-L9)
+**依据 8 · 作者声明**：[lib/platforms.js:8-9](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/platforms.js#L8-L9)
 
 verified为作者核对。
 
@@ -536,9 +549,11 @@ verified为作者核对。
 
 browser键是固定插件常量，不是每次调用独有，代码未见同键串行锁；同插件并发任务或用户手动改页可能串扰。工具execute没接执行上下文signal传pipeline，库虽支持deps.signal不能证明Host取消能中止整个链。单文件服务token/loopback是主调用默认，并非所有export使用都强制只回环，startFileServer公开options.host可覆盖；CORS开放意味着持有token的页面可读，token不可泄露。
 
+当前提示段仅在announceToAgent===true时注册，默认不再自动公告给模型；这减少启动上下文，不改变工具调用的cfg继承、字段warning或点击回执语义。package新增0.2.2-rc.1兼容声明属于作者元数据，当前浏览器/API是否兼容仍须验收。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:120-142](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/index.js#L120-L142)
+**依据 1 · 源码核查**：[lib/index.js:120-142](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/index.js#L120-L142)
 
 cfg继承及未传signal。
 
@@ -573,7 +588,7 @@ cfg继承及未传signal。
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L902-L932)
+**依据 2 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L902-L932)
 
 点击即标发布。
 
@@ -616,7 +631,7 @@ cfg继承及未传signal。
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pipeline.js:753-782](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L753-L782)
+**依据 3 · 源码核查**：[lib/pipeline.js:753-782](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L753-L782)
 
 字段warn不中止/可见性失败中止。
 
@@ -658,7 +673,7 @@ cfg继承及未传signal。
 
 </details>
 
-**依据 4 · 源码核查**：[lib/pipeline.js:270-299](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L270-L299)
+**依据 4 · 源码核查**：[lib/pipeline.js:270-299](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L270-L299)
 
 全文话题回读及tags对齐。
 
@@ -700,7 +715,7 @@ cfg继承及未传signal。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/pipeline.js:645-656](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L645-L656)
+**依据 5 · 源码核查**：[lib/pipeline.js:645-656](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L645-L656)
 
 unknown布局继续。
 
@@ -724,7 +739,7 @@ unknown布局继续。
 
 </details>
 
-**依据 6 · 源码核查**：[lib/pipeline.js:584-592](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L584-L592)
+**依据 6 · 源码核查**：[lib/pipeline.js:584-592](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L584-L592)
 
 固定key使用。
 
@@ -740,7 +755,7 @@ unknown布局继续。
   const localDeps = { ...deps, session };
 ```
 
-**依据 7 · 源码核查**：[lib/serve.js:60-68](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/serve.js#L60-L68)
+**依据 7 · 源码核查**：[lib/serve.js:60-68](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/serve.js#L60-L68)
 
 host可覆盖/随机token。
 
@@ -756,7 +771,7 @@ export async function startFileServer(options = {}) {
   const route = `/f/${token}/${encodeURIComponent(basename(filePath))}`;
 ```
 
-**依据 8 · 源码核查**：[lib/serve.js:100-112](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/serve.js#L100-L112)
+**依据 8 · 源码核查**：[lib/serve.js:100-112](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/serve.js#L100-L112)
 
 开放CORS。
 
@@ -780,6 +795,20 @@ export async function startFileServer(options = {}) {
 ```
 
 </details>
+
+**依据 9 · 源码核查**：[lib/index.js:155-161](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/index.js#L155-L161)
+
+提示注入须显式true，不改变投稿决策。
+
+```text
+  if (cfg.announceToAgent === true && ctx.systemPrompt !== undefined
+    && typeof ctx.systemPrompt.section === 'function') {
+    disposers.push(ctx.systemPrompt.section({
+      name: 'plugin:douyin-publish',
+      order: SECTION_ORDER,
+      text: DOUYIN_GUIDANCE,
+    }));
+```
 
 #### 缺口
 
@@ -826,7 +855,7 @@ Node/DSH是工具入口，browser登录态与其他会话共享，调用会把�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-5](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/README.md#L3-L5)
+**依据 1 · 作者声明**：[README.md:3-5](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/README.md#L3-L5)
 
 作者目标待发布。
 
@@ -836,7 +865,7 @@ Node/DSH是工具入口，browser登录态与其他会话共享，调用会把�
 打开投稿页 → 版式自检 → **把文件直接塞进页面自己的上传控件** → 填标题 → 填文案/话题 → 设可见性 → **默认停手**。
 ```
 
-**依据 2 · 作者声明**：[lib/index.js:29-39](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/index.js#L29-L39)
+**依据 2 · 作者声明**：[lib/index.js:29-39](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/index.js#L29-L39)
 
 共享登录/曲库/指导声明。
 
@@ -859,7 +888,7 @@ export const DOUYIN_GUIDANCE = [
 
 </details>
 
-**依据 3 · 源码核查**：[lib/plan.js:53-65](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/plan.js#L53-L65)
+**依据 3 · 源码核查**：[lib/plan.js:53-65](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/plan.js#L53-L65)
 
 绝对路径检查。
 
@@ -884,7 +913,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/pipeline.js:532-550](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L532-L550)
+**依据 4 · 源码核查**：[lib/pipeline.js:532-550](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L532-L550)
 
 dryRun无浏览器动作。
 
@@ -915,7 +944,7 @@ dryRun无浏览器动作。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:120-142](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/index.js#L120-L142)
+**依据 5 · 源码核查**：[lib/index.js:120-142](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/index.js#L120-L142)
 
 实际参数/依赖。
 
@@ -950,7 +979,7 @@ dryRun无浏览器动作。
 
 </details>
 
-**依据 6 · 源码核查**：[lib/bgm.js:112-130](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/bgm.js#L112-L130)
+**依据 6 · 源码核查**：[lib/bgm.js:112-130](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/bgm.js#L112-L130)
 
 可选混音。
 
@@ -1014,7 +1043,7 @@ BGM音轨探测失败或解析异常返回false，混音走无原声映射分支
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/attach.js:42-71](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/attach.js#L42-L71)
+**依据 1 · 源码核查**：[lib/attach.js:42-71](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/attach.js#L42-L71)
 
 页面Blob/File。
 
@@ -1056,7 +1085,7 @@ BGM音轨探测失败或解析异常返回false，混音走无原声映射分支
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pipeline.js:663-695](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L663-L695)
+**依据 2 · 源码核查**：[lib/pipeline.js:663-695](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L663-L695)
 
 候选等待。
 
@@ -1101,7 +1130,7 @@ BGM音轨探测失败或解析异常返回false，混音走无原声映射分支
 
 </details>
 
-**依据 3 · 源码核查**：[lib/bgm.js:69-79](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/bgm.js#L69-L79)
+**依据 3 · 源码核查**：[lib/bgm.js:69-79](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/bgm.js#L69-L79)
 
 音轨失败返回false。
 
@@ -1124,7 +1153,7 @@ export async function hasAudioTrack(spawnImpl, ffprobe, path) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/bgm.js:87-104](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/bgm.js#L87-L104)
+**依据 4 · 源码核查**：[lib/bgm.js:87-104](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/bgm.js#L87-L104)
 
 两种映射。
 
@@ -1154,7 +1183,7 @@ export function buildMixArgs({ videoPath, bgmPath, outPath, volume, videoHasAudi
 
 </details>
 
-**依据 5 · 源码核查**：[lib/bgm.js:112-130](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/bgm.js#L112-L130)
+**依据 5 · 源码核查**：[lib/bgm.js:112-130](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/bgm.js#L112-L130)
 
 临时新视频。
 
@@ -1185,7 +1214,7 @@ export async function mixBgm(input) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/pipeline.js:938-945](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L938-L945)
+**依据 6 · 源码核查**：[lib/pipeline.js:938-945](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L938-L945)
 
 仅服务关闭。
 
@@ -1222,7 +1251,7 @@ export async function mixBgm(input) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/platforms.js:22-58](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/platforms.js#L22-L58)
+**依据 1 · 源码核查**：[lib/platforms.js:22-58](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/platforms.js#L22-L58)
 
 平台档案。
 
@@ -1271,7 +1300,7 @@ export const PLATFORMS = Object.freeze({
 
 </details>
 
-**依据 2 · 源码核查**：[lib/serve.js:60-68](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/serve.js#L60-L68)
+**依据 2 · 源码核查**：[lib/serve.js:60-68](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/serve.js#L60-L68)
 
 token单文件。
 
@@ -1287,7 +1316,7 @@ export async function startFileServer(options = {}) {
   const route = `/f/${token}/${encodeURIComponent(basename(filePath))}`;
 ```
 
-**依据 3 · 源码核查**：[lib/pipeline.js:677-690](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L677-L690)
+**依据 3 · 源码核查**：[lib/pipeline.js:677-690](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L677-L690)
 
 推进探测。
 
@@ -1313,7 +1342,7 @@ export async function startFileServer(options = {}) {
 
 </details>
 
-**依据 4 · 源码核查**：[lib/attach.js:118-129](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/attach.js#L118-L129)
+**依据 4 · 源码核查**：[lib/attach.js:118-129](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/attach.js#L118-L129)
 
 对话框回读。
 
@@ -1337,7 +1366,7 @@ export async function startFileServer(options = {}) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L902-L932)
+**依据 5 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L902-L932)
 
 收据假设起点。
 
@@ -1396,7 +1425,7 @@ export async function startFileServer(options = {}) {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:130-142](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/index.js#L130-L142)
+**依据 1 · 源码核查**：[lib/index.js:130-142](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/index.js#L130-L142)
 
 有效参数依赖。
 
@@ -1421,7 +1450,7 @@ export async function startFileServer(options = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pipeline.js:753-782](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L753-L782)
+**依据 2 · 源码核查**：[lib/pipeline.js:753-782](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L753-L782)
 
 字段/可见性。
 
@@ -1463,7 +1492,7 @@ export async function startFileServer(options = {}) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/3413d538e2b4a3384092c456c56f97862f787fed/lib/pipeline.js#L902-L932)
+**依据 3 · 源码核查**：[lib/pipeline.js:902-932](https://github.com/7gzgn/dsh-douyin-publish/blob/9b6e85527b8e5f1a2ff6c5ff008facdf87d40238/lib/pipeline.js#L902-L932)
 
 click与结果。
 

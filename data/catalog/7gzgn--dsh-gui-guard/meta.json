@@ -1,34 +1,48 @@
 {
     "repository": "7gzgn/dsh-gui-guard",
     "repository_id": 1422121370,
-    "captured_at": "2026-10-22T05:11:08.599Z",
-    "window_start": "2026-09-22T05:11:08.599Z",
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
     "stars": 0,
-    "pushed_at": "2026-10-17T23:53:08Z",
+    "pushed_at": "2026-11-05T06:27:32Z",
     "issues": {
         "open": 0,
         "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-gui-guard%20is%3Aissue%20created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A200:CDD8D:AF006B:BB404F:6AEC239D and timestamp 2026-11-05 06:35:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-gui-guard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A23A:3A2B8A:35007C:390B13:6AEC239E and timestamp 2026-11-05 06:35:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A7gzgn%2Fdsh-gui-guard%20is%3Aissue%20updated%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A266:FE5BB:33B5AD:37C08D:6AEC239F and timestamp 2026-11-05 06:35:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
     "npm": {
         "package_name": "dsh-gui-guard",
-        "captured_at": "2026-10-22T05:11:17.154Z",
-        "window_start": "2026-09-22",
-        "window_end": "2026-10-21",
-        "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-gui-guard",
-        "error": "HTTP 404",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 760,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-gui-guard",
+        "error": null,
         "publication": {
-            "first_published_at": null,
-            "captured_at": "2026-10-22T05:11:17.154Z",
+            "first_published_at": "2026-10-22T13:26:35.434Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
             "source_url": "https://registry.npmjs.org/dsh-gui-guard",
-            "error": "HTTP 404",
-            "latest_version": null,
-            "latest_published_at": null,
-            "latest_error": "HTTP 404"
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-10-22T13:28:12.887Z",
+            "latest_error": null
         }
     }
 }

@@ -47,6 +47,7 @@
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
 | [DSH Noema](#plugin-1334167430-root) | 将本地 Noema 记忆服务接入 DSH，支持检索与跨工具导入。 | [Q03](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q03) 先隔离验证。 |
+| [DSH OpenContext](#plugin-1329484633-plugins-dsh-opencontext) | 将OpenContext记忆工具、自动捕获与有界证据召回接入DSH。 | [Q03](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q03) 单scope关闭捕获先核工具闭环。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH Plugins 中文导航](#plugin-1335045464-root) | 提供带安装、起步建议与限制的插件发现目录 | [Q04](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q04) 只作发现源，回源固定包版本并独立验收。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
@@ -122,9 +123,12 @@
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
 | [Oh My Knowledge](#plugin-1190633989-root) | 面向 AI 工作记录的知识提取、维护和载体评测工具集。 | [Q04](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q04) 先用可信非敏感材料复核来源和模型目标；无法验证来源或执行环境不可信时停止。 |
 | [Oh-My-DSH](#plugin-1333671427-root) | 提供 DSH 插件分类目录、元数据快照与检索站点。 | [Q03](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q03) 先在固定快照查找目标，再到候选固定源核对身份、入口及权限。 |
+| [OpenContext](#plugin-1329484633-root) | 面向Agent应用的记忆、检索和图修订基础设施，提供库facade及MCP/HTTP入口。 | [Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) 先loopback单用户只读及dryRun，再由host加授权。 |
+| [OpenQuantum](#plugin-1335086034-root) | 面向 DeepSeek Harness Desktop 与 Codex 的量子研究 Skills 和 Tools | [Q04](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q04) 仅隔离Home试支持域的重复复核任务，保留原SDK和结果包，先验失败/停止/回退。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具。 | 以非敏感独立项目核验 peer、召回、短断网及停用后队列；出现串扰或缺失时停止相关进程并回退人工笔记。 |
 | [PatentRadar](#plugin-1230059993-root) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 仅用公开、可回源案例验证一份线索表；不能支持具体特征时回到人工检索。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
+| [ProMentor](#plugin-1318330553-root) | 通过Agent Skill把项目组织为讲义、源码导读、Lab与行为测试，配JSON进度和可选Dashboard。 | [Q05](../../plugins/lyn-77--promentor/INSIGHT.md#research-q05) 观察一章非敏感副本；先审命令和题目，再独立迁移验证，读边界修复前不远程共享。 |
 | [ReMe](#plugin-849121458-root) | 以文件记忆、搜索与模型演化为 Agent 提供可读长期记忆。 | [Q05](../../plugins/agentscope-ai--reme/INSIGHT.md#research-q05) 以少量可纠正资料试默认检索和回读；冲突或回执不明时暂停演化。 |
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
@@ -138,6 +142,7 @@
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
 | [WSL Playwright 页面读取](#plugin-1381860363-root) | 在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。 | [Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。 |
 | [乔木 RSS](#plugin-1396833540-root) | 把 RSS 订阅阅读、版本切换和带原文的伴读放进 DSH | [Q04](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q04) 先用公开或虚构 RSS，保持实验室关闭。 |
+| [乔木 UI 学习](#plugin-1435757109-root) | 在 DSH 浏览设计参考、学习UI词汇与测验，并保存点评和Markdown。 | [Q03](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md#research-q03) 先独立目录验证一条笔记。 |
 
 <a id="plugin-1390987906-root"></a>
 
@@ -698,6 +703,22 @@
 > **建议**：[Q04](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q04) 在提交前显示待导入范围。
 
 [查看完整分析](../../plugins/zseven-w--dsh-noema/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1329484633-plugins-dsh-opencontext"></a>
+
+## [DSH OpenContext](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md)
+
+[![GitHub ★ 76](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=76&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/melandlabs/opencontext) [![npm 30d 1,045](https://img.shields.io/static/v1?label=npm+30d&message=1%2C045&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-opencontext) [![最新发布 2026-09-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-opencontext)
+
+> **用途**：希望在单用户DSH项目实验持久记忆与知识召回的开发者。
+
+> **亮点**：[Q01](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q01) 将自动事件和工具检索接到现有OpenContext。
+
+> **思考**：[Q02](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q02) 默认scope不统一且get未检查所有权；[Q03](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q03) 超时不取消已开始写入。
+
+> **建议**：[Q04](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q04) 统一可信scope及按ID检查是否改善闭环需两项目对照。
+
+[查看完整分析](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1346064150-root"></a>
 
@@ -1899,6 +1920,38 @@
 
 [查看完整分析](../../plugins/like-study1--oh-my-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1329484633-root"></a>
+
+## [OpenContext](../../plugins/melandlabs--opencontext/INSIGHT.md)
+
+[![GitHub ★ 76](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=76&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/melandlabs/opencontext)
+
+> **用途**：需要把多源持久证据接入自建Agent应用并能承担宿主治理的开发者。
+
+> **亮点**：[Q01](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q01) 统一可嵌入面；[Q02](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q02) 多源可解释检索；[Q03](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q03) 图版本和重放守卫。
+
+> **思考**：[Q03](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q03) 图和raw退役非原子且applied不等于实际写成功；[Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) HTTP身份绑定要host补足。
+
+> **建议**：[Q05](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q05) 逐路径写状态是否减少误重试需故障对照。
+
+[查看完整分析](../../plugins/melandlabs--opencontext/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335086034-root"></a>
+
+## [OpenQuantum](../../plugins/xi-zhao--openquantum/INSIGHT.md)
+
+[![GitHub ★ 71](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=71&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xi-zhao/OpenQuantum)
+
+> **用途**：量子研究者在Agent中做受限模型计算并交给同事重验，需要保存输入、数值与校验规则。
+
+> **亮点**：[Q01](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q01) 统一按需准备与具摘要的事实/校验交付，ground-state有独立科学Validator而非仅模型解释。
+
+> **思考**：[Q03](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q03) 模型域很窄，通用SDK结果非科学验收；Host有180秒/2MiB边界，但底层worker省略预算可不限，纯JS取消不保证即时停止。
+
+> **建议**：[Q05](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q05) 同输入比较第三方重验率、误接受、总准备/人工时间；一次虚假passed即可否定。
+
+[查看完整分析](../../plugins/xi-zhao--openquantum/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 
 ## [OpenViking DSH 记忆插件](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
@@ -1946,6 +1999,22 @@
 > **建议**：超出现有重挂/指标终检与文献manifest，验证Python-ML候选代码和固定独立评测器/数据划分的结果来源边界；反例/成本/停止条件见[Q05](../../plugins/zju-real--polaris/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/zju-real--polaris/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1318330553-root"></a>
+
+## [ProMentor](../../plugins/lyn-77--promentor/INSIGHT.md)
+
+[![GitHub ★ 81](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=81&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Lyn-77/ProMentor)
+
+> **用途**：[Q01](../../plugins/lyn-77--promentor/INSIGHT.md#research-q01) 开发者在项目副本逐章学习架构，合格结果是独立实现与迁移，不只是测试100分。
+
+> **亮点**：[Q01](../../plugins/lyn-77--promentor/INSIGHT.md#research-q01)/[Q05](../../plugins/lyn-77--promentor/INSIGHT.md#research-q05) 将源码阅读与实现练习流程结构化；无可信独立判题或学习效果证据。
+
+> **思考**：[Q02](../../plugins/lyn-77--promentor/INSIGHT.md#research-q02) 成绩/测试可同工作区改动、恢复无版本校核；[Q03](../../plugins/lyn-77--promentor/INSIGHT.md#research-q03) 面板路径与授权边界不宜敏感远程共享。
+
+> **建议**：[Q05](../../plugins/lyn-77--promentor/INSIGHT.md#research-q05) 版本绑定与独立审核课程是假设，以迁移学习和审核成本对照证伪，当前未实现。
+
+[查看完整分析](../../plugins/lyn-77--promentor/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-849121458-root"></a>
 
@@ -2154,6 +2223,22 @@
 > **建议**：[Q05](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q05) 对照选段问答可减少切换和引用错误。
 
 [查看完整分析](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1435757109-root"></a>
+
+## [乔木 UI 学习](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md)
+
+[![GitHub ★ 80](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=80&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/joeseesun/qiaomu-ui-learn-dsh)
+
+> **用途**：希望在DSH里整理设计参考并写学习笔记的用户。
+
+> **亮点**：[Q01](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md#research-q01) 新增DSH容器、文件保存及可选Home接线，内容继承原项目。
+
+> **思考**：[Q02](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md#research-q02) revision与etag保护有服务实例边界，不能推出跨进程安全。
+
+> **建议**：[Q04](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md#research-q04) 若共享home真实并发丢写，再评估文件级条件提交。
+
+[查看完整分析](../../plugins/joeseesun--qiaomu-ui-learn-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
