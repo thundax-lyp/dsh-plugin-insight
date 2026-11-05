@@ -1,0 +1,66 @@
+{
+    "repository": "WM-CODER/custom-first-control-prompt",
+    "repository_id": 1335237926,
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 80,
+    "pushed_at": "2026-09-01T11:26:55Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AWM-CODER%2Fcustom-first-control-prompt%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A726:2DFF9C:317F1B:358609:6AEC23B3 and timestamp 2026-11-05 06:35:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AWM-CODER%2Fcustom-first-control-prompt%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A770:2E44D6:32A1CD:36ADC5:6AEC23B4 and timestamp 2026-11-05 06:35:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWM-CODER%2Fcustom-first-control-prompt%20is%3Aissue%20created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7B8:369D35:B08221:BCC447:6AEC23B5 and timestamp 2026-11-05 06:35:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWM-CODER%2Fcustom-first-control-prompt%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7EE:355015:33119D:371D99:6AEC23B6 and timestamp 2026-11-05 06:35:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWM-CODER%2Fcustom-first-control-prompt%20is%3Aissue%20updated%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A858:2C252B:369DAC:3AAB52:6AEC23B7 and timestamp 2026-11-05 06:35:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4f25861a660f6c27802fb6fc6d85c66ffb992d9",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@wm-coders/dsh-custom-first-control-prompt",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 822,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40wm-coders%2Fdsh-custom-first-control-prompt",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T07:34:28.272Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40wm-coders%2Fdsh-custom-first-control-prompt",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-09-01T11:36:04.744Z",
+            "latest_error": null
+        }
+    }
+}

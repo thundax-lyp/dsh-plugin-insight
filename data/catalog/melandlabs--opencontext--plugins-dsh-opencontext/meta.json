@@ -1,0 +1,45 @@
+{
+    "repository": "melandlabs/opencontext",
+    "repository_id": 1329484633,
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 76,
+    "pushed_at": "2026-11-05T06:35:06Z",
+    "issues": {
+        "open": 5,
+        "closed": 5,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4f25861a660f6c27802fb6fc6d85c66ffb992d9",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-opencontext",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1045,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-opencontext",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T03:37:29.392Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-opencontext",
+            "error": null,
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-09-21T03:47:03.403Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,453 @@
+{
+    "schema_version": 4,
+    "id": "d0180a03fcda828e377d05705c336b2c",
+    "identity": "github:1435757109:root",
+    "slug": "joeseesun--qiaomu-ui-learn-dsh",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1435757109:root",
+            "repository_id": 1435757109,
+            "component_id": "root",
+            "repository": "joeseesun/qiaomu-ui-learn-dsh",
+            "path": "",
+            "aliases": [],
+            "name": "乔木 UI 学习",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "159e73be6b903fe06be4640186556ec1f9490cee831e3840b46773010d150cb0",
+                "code": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                "maintenance": "2d70167597060685caa06bcb1fcd2685385effe5599ee185565c04dee73dee0f"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-08-github-1435757109-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "fa94055bbfacbcbcbc911aa6dba906e54cc17848",
+                    "retrieved_at": "2026-11-05T06:45:03.910Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-08-github-1435757109-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "README.md",
+                            "content_sha256": "9747b4d977ac220fb1d4f44fb57e4924637d498a04f750462b2c05bbf4953c5f"
+                        }
+                    ],
+                    "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                    "captured_at": "2026-11-05T06:45:03.910Z",
+                    "summary": "在 DSH 浏览设计参考、学习UI词汇与测验，并保存点评和Markdown。",
+                    "artifact": "data/runs/2026-11-05-08/joeseesun--qiaomu-ui-learn-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-08-github-1435757109-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "README.md",
+                            "content_sha256": "9747b4d977ac220fb1d4f44fb57e4924637d498a04f750462b2c05bbf4953c5f"
+                        },
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "src/client.jsx",
+                            "content_sha256": "0da3b43f533c22ccbd569a76b201c5b806d6de914b250e8b7cc990670e811a60"
+                        },
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "src/host.js",
+                            "content_sha256": "cc7e3bd7d58468329303593cbf8e408bc757708a510021b490b3a4983231a12b"
+                        },
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "src/notes.js",
+                            "content_sha256": "94c37c92bbfcc5540ec2582deeb9ba3d8a533a7abf513b976c353bf4b8b75c8b"
+                        },
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "src/source.js",
+                            "content_sha256": "fd930ca6c52cf546e81e29dc1a4e2acf76dbdb9b732c7f4d7ccf20cb2383c763"
+                        },
+                        {
+                            "repository_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh",
+                            "commit": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                            "path": "src/storage.js",
+                            "content_sha256": "b1b8366a32c468e7f3ab2790ada4a8502f14990f5dc7ae6d4fdb654935be793e"
+                        }
+                    ],
+                    "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                    "captured_at": "2026-11-05T06:45:03.910Z",
+                    "summary": "核查 README.md、src/client.jsx、src/host.js、src/notes.js、src/source.js、src/storage.js；复用原学习界面，宿主remote持久化state与Markdown并限制源码下载。",
+                    "artifact": "data/runs/2026-11-05-08/joeseesun--qiaomu-ui-learn-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定学习适配入口、remote、state/notes与源码下载。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "希望在DSH里整理设计参考并写学习笔记的用户。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "复用原学习界面，宿主remote持久化state与Markdown并限制源码下载。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定学习适配入口、remote、state/notes与源码下载。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH学习界面插件，默认数据按DSH_HOME共享。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 固定兼容DSH | 必需 | 界面及remote | 回原学习工具 |\n| 独立dataDir与notesRoot | 试用需要 | 隔离学习记录 | 勿与真实记录混用 |\n| 远端图库 | 部分预览需要 | 缩略图和源码 | 断网保留本地词典 |\n| Home v1 | 可选 | 首页卡片和搜索 | 独立工作 |",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地磁盘和网络未知 | 准备参考与目录 | 无模型调用路径 |\n| 持续使用 | 图库下载资源未知 | 整理点评与导出 | 按素材 |\n| 失败恢复 | 数据副本未知 | 处理冲突及独立恢复 | 需读回文件 |",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 先独立目录验证一条笔记。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 学习入口 | 继承界面与宿主接线 | 真实学习收益 |\n| 文件保存 | revision与etag门 | 跨进程竞争 |\n| 源码读取 | 限制目录、重定向和字节 | 远端稳定性 |",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 存储拒读不覆盖原件，边界仍受进程与外部编辑影响。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 新增DSH容器、文件保存及可选Home接线，内容继承原项目。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) revision与etag保护有服务实例边界，不能推出跨进程安全。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 若共享home真实并发丢写，再评估文件级条件提交。",
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1435757109:root",
+                            "area": "code",
+                            "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T06:45:03.910Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T06:45:03.910Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                "reviewed_at": "2026-11-05T06:45:03.910Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1435757109:root",
+                        "area": "code",
+                        "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) novelty9取25%为学习产品迁移，语料继承不加新颖分；mechanism15取50%，[Q02](#research-q02)路径、revision与etag使持久化有明确冲突处理，超8分接线，跨进程未验不足23；transferability10取50%可供同类宿主文件适配，但需重接remote不足15；simplification4取25%少一次复制，仍需整理不足8。",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) workflow9取25%集中局部操作，未改变学习交接不足18；delivery8取25%输出Markdown笔记，学习质量未测不足15；reach5取25%服务DSH用户，未证新学习群体不足10；economics0无可核查成本结构变化。",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-11-05-08-github-1435757109-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "想在DSH整理设计参考的用户可用独立数据目录试一次点评和Markdown导出。相比另开学习工具，适配器把记录和笔记保存接到宿主。若发生保存冲突、导出缺失或远端资源不可用，应保留原文件并回原学习工具。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README3–20描述明确记录流程，超8分偶发便利；真实重复摩擦未观察不足23。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) host32–80有实际文件交付增量，超6分仅入口；学习效果未知不足19。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 保存、路径、错误及[Q03](#research-q03)下载链完整，超6分局部；未运行不足19。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) 独立目录可备份且Home可选，超5分；远端资源与恢复仍需复核不足15。"
+                    }
+                },
+                "score": 51,
+                "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                "reviewed_at": "2026-11-05T06:45:03.910Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-08-github-1435757109-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1435757109:root",
+                        "area": "code",
+                        "fingerprint": "ad7dffddcd08fd9878db9d8123559fc6540a77bb"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1435757109:root",
+            "repository": "joeseesun/qiaomu-ui-learn-dsh",
+            "path": "",
+            "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+            "fingerprints": {
+                "directory": "159e73be6b903fe06be4640186556ec1f9490cee831e3840b46773010d150cb0",
+                "code": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+                "maintenance": "2d70167597060685caa06bcb1fcd2685385effe5599ee185565c04dee73dee0f"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T06:30:13Z",
+            "analysis_sha256": "ed845374c7bd591a25c2e049792243357fa510ea4a3a7f70270a0e85bc129373"
+        },
+        "publication.metadata": "data/catalog/joeseesun--qiaomu-ui-learn-dsh/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 浏览设计参考、学习UI词汇与测验，并保存点评和Markdown。",
+            "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+            "source_url": "https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+            "items": {
+                "界面": "设计参考、词典、测验和点评。",
+                "Host 路由": "通过remote保存记录和Markdown。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 学习界面 | 参考词典与练习 | 内容继承原项目 |\n| 记录笔记 | 保存点评及Markdown | 独立目录和冲突核对 |\n| 参考源码 | 有界下载公开HTML | 依赖远端 |"
+        },
+        "publication.advice": {
+            "revision": "ad7dffddcd08fd9878db9d8123559fc6540a77bb",
+            "text": "[Q03](#research-q03) 先独立目录验证一条笔记。"
+        },
+        "registry": "data/plugins/joeseesun--qiaomu-ui-learn-dsh",
+        "reports": "# 乔木 UI 学习\n\n> 在 DSH 浏览设计参考、学习UI词汇与测验，并保存点评和Markdown。\n\n## 研究范围\n\n- **仓库**：[joeseesun/qiaomu-ui-learn-dsh](https://github.com/joeseesun/qiaomu-ui-learn-dsh)\n- **版本号**：0.1.4（[固定提交 ad7dffddcd08fd9878db9d8123559fc6540a77bb](https://github.com/joeseesun/qiaomu-ui-learn-dsh/tree/ad7dffddcd08fd9878db9d8123559fc6540a77bb)）\n- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n宿主适配、存储与下载静态核查，学习及恢复效果未知。\n\n## 洞察短评\n\n- **用途**：希望在DSH里整理设计参考并写学习笔记的用户。\n- **亮点**：[Q01](#research-q01) 新增DSH容器、文件保存及可选Home接线，内容继承原项目。\n- **思考**：[Q02](#research-q02) revision与etag保护有服务实例边界，不能推出跨进程安全。\n- **建议**：[Q04](#research-q04) 若共享home真实并发丢写，再评估文件级条件提交。\n\n采用建议：[Q03](#research-q03) 先独立目录验证一条笔记。\n\n## 核心贡献\n\n[Q01](#research-q01) 新增DSH容器、文件保存及可选Home接线，内容继承原项目。\n\n## 关键质疑\n\n[Q02](#research-q02) revision与etag保护有服务实例边界，不能推出跨进程安全。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 若共享home真实并发丢写，再评估文件级条件提交。\n\n核对导出、版本冲突、断网和双进程保存。\n\n## 场景与替代办法\n\n希望在DSH里整理设计参考并写学习笔记的用户。\n\n在独立学习工具中浏览，再复制点评到项目。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 固定兼容DSH | 必需 | 界面及remote | 回原学习工具 |\n| 独立dataDir与notesRoot | 试用需要 | 隔离学习记录 | 勿与真实记录混用 |\n| 远端图库 | 部分预览需要 | 缩略图和源码 | 断网保留本地词典 |\n| Home v1 | 可选 | 首页卡片和搜索 | 独立工作 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 独立记录和笔记目录 | 备份已有数据 |\n| 学习 | 参考点评及测验 | 检查持久状态 |\n| 导出 | Markdown读写与冲突 | 读回内容 |\n| 退出 | 备份state和notes后禁用 | 回原工具 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 本地磁盘和网络未知 | 准备参考与目录 | 无模型调用路径 |\n| 持续使用 | 图库下载资源未知 | 整理点评与导出 | 按素材 |\n| 失败恢复 | 数据副本未知 | 处理冲突及独立恢复 | 需读回文件 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 学习入口 | 继承界面与宿主接线 | 真实学习收益 |\n| 文件保存 | revision与etag门 | 跨进程竞争 |\n| 源码读取 | 限制目录、重定向和字节 | 远端稳定性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：设计学习如何迁入DSH，记录和Markdown保存能否可靠复核？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · DSH适配增加了什么学习流程？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n需要边看参考边写点评的设计学习者，可在DSH浏览图库、词典及测验，再保存学习状态和Markdown。作者明确沿用Obsidian版的内容与界面，不能把这些语料和训练设计当作本适配原创。host把StateStore、NotesStore和受限参考源码下载暴露为remote方法，客户端注册快捷操作和主视图，并可选对接Home provider。相比来回切Obsidian，变化是宿主入口及文件交付，不是自动提高审美。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-20](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/README.md#L3-L20)\n\n继承界面与功能描述\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n> v0.1.4：DeepSeek Harness **0.2.2-rc.1** 兼容更新。[本次验证范围](docs/DSH-0.2.2-RC1.md)。\n\n在 DeepSeek Harness 里浏览设计参考、学习 UI 词汇、练习审美，并把自己的点评保存成 Markdown。\n\n直接沿用 [Obsidian 版乔木 UI 学习](https://github.com/joeseesun/qiaomu-ui-learn) 的图库、词典、风格、测验、详情、收藏夹和设置界面，产品 CSS 保持一致。迁移仅替换宿主容器、文件保存、快捷操作和 Home 联动接口。\n\n![原版图库](docs/screenshots/original-gallery.png)\n\n## 功能\n\n- 13,561 条设计参考、184 个分类；搜索、收藏夹、最近浏览、点评筛选和卡片密度。\n- UI 词典与风格图鉴：106 个交互标本、双语解释、识别特征、关联风格、代码与实现提示词。\n- 审美测验：组件、风格或混合练习，键盘作答、掌握状态与复习记录。\n- 五星评价、标签、评论；逐条或批量导出 Markdown，笔记浏览、光标插入和未保存草稿恢复。\n- 原版设计灯箱、图片/Markdown/提示词复制、参考页面 HTML 源码读取。\n- 导入 Obsidian `data.json` 或本插件备份；覆盖前下载现有记录备份。\n- 5 个 Harness 原生快捷操作，可在宿主快捷键设置中绑定。\n- 安装支持 v1 provider 服务的乔木 Home 后，提供最近设计卡片、浏览入口和全局设计搜索；没有 Home 时独立工作。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/host.js:32-80](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/host.js#L32-L80)\n\n宿主服务接线\n\n<details>\n<summary>查看原文（49行）</summary>\n\n```text\nexport default class PluginService extends TypertRemoteService {\n  constructor(ctx, config = {}) {\n    super(ctx, SERVICE);\n    this.store = new StateStore(\n      config.dataDir ||\n        path.join(\n          process.env.DSH_HOME || path.join(homedir(), \".dsh\"),\n          \"qiaomu\",\n          NAME,\n        ),\n    );\n    this.notes = new NotesStore(\n      config.notesRoot || path.join(path.dirname(this.store.file), \"notes\"),\n    );\n  }\n  notesList(request) {\n    return this.notes.list(request?.folder || \"\");\n  }\n  notesRead(request) {\n    return this.notes.read(request.path);\n  }\n  notesWrite(request) {\n    return this.notes.write(request);\n  }\n  referenceSource(request) {\n    return fetchReference(request);\n  }\n  load() {\n    return this.store.load();\n  }\n  save(request) {\n    return this.store.save(request);\n  }\n}\nfor (const name of [\n  \"load\",\n  \"save\",\n  \"notesList\",\n  \"notesRead\",\n  \"notesWrite\",\n  \"referenceSource\",\n])\n  Remote(name)(PluginService.prototype[name], {\n    name,\n    private: false,\n    static: false,\n    addInitializer(fn) {\n      fn.call(Object.create(PluginService.prototype));\n    },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client.jsx:26-48](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/client.jsx#L26-L48)\n\n快捷操作与可选Home\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    send(action) { if(runAction)void runAction(action);else pending=action; },\n  };\n  ctx.inject([\"shortcuts\",\"layout\"], ready => {\n    for(const [action,zh,en] of [\n      [\"gallery\",\"打开灵感图库\",\"Open design gallery\"],\n      [\"dictionary\",\"打开 UI 词典\",\"Open UI dictionary\"],\n      [\"styles\",\"打开风格图鉴\",\"Open style atlas\"],\n      [\"quiz\",\"打开审美测验\",\"Open design quiz\"],\n      [\"export\",\"导出全部学习笔记\",\"Export all study notes\"],\n    ]) ready.effect(()=>ready.shortcuts.register({\n      id:`${ID}.${action}`,label:()=>`${TITLE} · ${navigator.language.startsWith('zh')?zh:en}`,\n      aliases:[en,zh,\"Qiaomu UI Learn\"],defaults:{},regions:[\"page\",\"editable\"],modals:[],\n      resolve:()=>({status:\"handled\",run:()=>{ready.layout.selectPanel(ID);actions.send(action);}}),\n    }));\n  });\n  const listeners = new Set();\n  let api = null,\n    error = \"\";\n  const notify = () => {listeners.forEach((f) => f());actions.changed();};\n  ctx.inject([\"qiaomuHome\",\"layout\"],ready=>ready.effect(()=>ready.qiaomuHome.register(NAME,createHomeProvider({\n    load:()=>api?.load()??Promise.resolve({data:{}}),\n    open:action=>{ready.layout.selectPanel(ID);actions.send(action);},\n    subscribe:fn=>{homeListeners.add(fn);return()=>homeListeners.delete(fn);},\n```\n\n</details>\n\n**依据 4 · 源码核查**：[src/client.jsx:125-145](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/client.jsx#L125-L145)\n\n主界面注册\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n        ) : (\n          <p role=\"status\">{error || \"正在连接本地服务 / Connecting…\"}</p>\n        )}\n      </div>\n    );\n  }\n  ctx.effect(() =>\n    ctx.slots.inject(\"main\", () =>\n      ctx.slots.register({ name: \"main\", key: ID, locale: ID }, Panel),\n    ),\n  );\n  ctx.effect(() =>\n    ctx.slots.inject(\"sidebar.panellist\", () =>\n      ctx.slots.register(\n        {\n          name: \"sidebar.panellist\",\n          id: ID,\n          order: 45,\n          locale: ID,\n          label: () => TITLE,\n        },\n```\n\n</details>\n\n#### 缺口\n\n- 学习效果与真实DSH兼容未独立验证\n  **影响**：不能宣称测验带来能力提升或减少学习时间\n  **进一步探讨**：用一篇参考完成点评、笔记及重开核对\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 学习记录和Markdown如何拒绝覆盖？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nStateStore有本实例队列，加载时校验revision和data；非ENOENT损坏拒读并保留文件。保存要求客户端revision等于当前值，8MB上限，临时文件后rename。笔记根先realpath，拒绝绝对、点段、非Markdown路径并逐段lstat拒symlink；读回2MB上限和etag，写前比etag，再用临时文件与rename。两者保护普通窗口冲突，但队列不跨宿主进程，检查到rename之间还有外部编辑窗口，不能当同权限恶意进程隔离。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/storage.js:9-58](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/storage.js#L9-L58)\n\nrevision队列与原子替换\n\n<details>\n<summary>查看原文（50行）</summary>\n\n```text\n  async load() {\n    try {\n      const raw = JSON.parse(await readFile(this.file, \"utf8\"));\n      if (\n        !Number.isSafeInteger(raw.revision) ||\n        raw.revision < 0 ||\n        !raw.data ||\n        typeof raw.data !== \"object\" ||\n        Array.isArray(raw.data)\n      )\n        throw Error(\"Invalid saved data\");\n      return raw;\n    } catch (e) {\n      if (e.code === \"ENOENT\") return { revision: 0, data: {} };\n      throw Error(\"Saved data could not be read. Original file preserved.\", {\n        cause: e,\n      });\n    }\n  }\n  save(input) {\n    const task = this.queue\n      .catch(() => {})\n      .then(async () => {\n        if (\n          !input ||\n          !Number.isSafeInteger(input.revision) ||\n          !input.data ||\n          typeof input.data !== \"object\" ||\n          Array.isArray(input.data)\n        )\n          throw Error(\"Invalid state\");\n        const current = await this.load();\n        if (input.revision !== current.revision)\n          throw Error(\n            \"Another window saved changes. Reopen this panel before saving.\",\n          );\n        const next = { revision: current.revision + 1, data: input.data };\n        const text = JSON.stringify(next);\n        if (Buffer.byteLength(text) > 8 * 1024 * 1024)\n          throw Error(\n            \"Saved project exceeds 8 MB. Export it as a file instead.\",\n          );\n        await mkdir(path.dirname(this.file), { recursive: true, mode: 0o700 });\n        const temp = this.file + \".\" + randomUUID() + \".tmp\";\n        await writeFile(temp, text, { mode: 0o600 });\n        await rename(temp, this.file);\n        return next;\n      });\n    this.queue = task;\n    return task;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/notes.js:14-54](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/notes.js#L14-L54)\n\n根及链接路径检查\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\nexport class NotesStore {\n  constructor(root) {\n    this.root = path.resolve(root);\n    this.queue = Promise.resolve();\n    this.ready = mkdir(this.root, { recursive: true, mode: 0o700 })\n      .then(() => realpath(this.root))\n      .then((root) => {\n        this.root = root;\n      });\n  }\n  async resolve(relative, { directory = false } = {}) {\n    await this.ready;\n    if (\n      typeof relative !== \"string\" ||\n      relative.includes(\"\\0\") ||\n      path.isAbsolute(relative) ||\n      relative.split(/[\\\\/]/).some((x) => x === \"..\" || x.startsWith(\".\"))\n    )\n      throw Error(\"Choose a relative path inside the notes folder\");\n    if (!directory && !relative.toLowerCase().endsWith(\".md\"))\n      throw Error(\"Only Markdown notes are supported\");\n    const target = path.resolve(this.root, relative);\n    if (target !== this.root && !target.startsWith(this.root + path.sep))\n      throw Error(\"Invalid note path\");\n    // The explicit root is canonicalized (macOS /tmp and /var are symlinks).\n    // Never follow user-controlled links beneath that root.\n    let current = this.root;\n    for (const part of target\n      .slice(current.length)\n      .split(path.sep)\n      .filter(Boolean)) {\n      current = path.join(current, part);\n      try {\n        const stat = await lstat(current);\n        if (stat.isSymbolicLink())\n          throw Error(\"Symbolic links are not followed\");\n      } catch (e) {\n        if (e.code !== \"ENOENT\") throw e;\n      }\n    }\n    return target;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/notes.js:83-129](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/notes.js#L83-L129)\n\netag与写入\n\n<details>\n<summary>查看原文（47行）</summary>\n\n```text\n  async read(relative) {\n    const filename = await this.resolve(relative);\n    const s = await lstat(filename);\n    if (!s.isFile() || s.size > 2 * 1024 * 1024)\n      throw Error(\"Note exceeds 2 MB or is not a file\");\n    const text = await readFile(filename, \"utf8\");\n    return { path: relative, text, etag: hash(text) };\n  }\n  write(request) {\n    const work = this.queue\n      .catch(() => {})\n      .then(async () => {\n        if (\n          !request ||\n          typeof request.text !== \"string\" ||\n          Buffer.byteLength(request.text) > 2 * 1024 * 1024\n        )\n          throw Error(\"Invalid note or note exceeds 2 MB\");\n        const filename = await this.resolve(request.path);\n        let existing = null;\n        try {\n          existing = await this.read(request.path);\n        } catch (e) {\n          if (e.code !== \"ENOENT\") throw e;\n        }\n        if ((existing?.etag ?? null) !== (request.etag ?? null))\n          throw Error(\n            \"The note has changed or already exists. Open it again before saving.\",\n          );\n        await mkdir(path.dirname(filename), { recursive: true, mode: 0o700 });\n        await this.resolve(request.path);\n        const temp = filename + \".\" + randomUUID() + \".tmp\";\n        try {\n          await writeFile(temp, request.text, { mode: 0o600, flag: \"wx\" });\n          await rename(temp, filename);\n        } catch (e) {\n          await unlink(temp).catch(() => {});\n          throw e;\n        }\n        return {\n          path: request.path,\n          text: request.text,\n          etag: hash(request.text),\n        };\n      });\n    this.queue = work;\n    return work;\n```\n\n</details>\n\n#### 缺口\n\n- 跨进程或外部编辑竞争的真实结果未测\n  **影响**：共享home可能出现检查后写入冲突\n  **进一步探讨**：两测试宿主用同一数据目录在读后延迟保存\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎样试用并保留自己的笔记？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n需匹配固定作者要求的DSH版本，Home不是独立工作的必要条件。dataDir与notesRoot可单独设绝对路径，默认跟DSH_HOME，因此不同profile共享home时也共享记录。用测试目录先完成点评、导出、编辑和冲突拒绝；远端缩略图与预览有网络，参考源码只接受目录内key映射的特定HTTPS路径，拒重定向、15秒超时、2MB实际流量上限，并在12万字符处截断。现金与本地磁盘未知，没有模型生成路径；人工要整理参考和核对导出。退出禁用插件前导出记录并备份state及notes，不能只清浏览器。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:24-42](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/README.md#L24-L42)\n\n宿主版本与数据网络\n\n<details>\n<summary>查看原文（19行）</summary>\n\n````text\n## 安装\n\n要求 DeepSeek Harness **0.2.2-rc.1**。从 [Releases](https://github.com/joeseesun/qiaomu-ui-learn-dsh/releases) 下载 `.tgz` 和 `SHA256SUMS`，核对摘要后，在 Harness 插件管理中安装本地 bundle。按宿主提示重载，然后从侧边栏打开「乔木 UI 学习」。\n\n也可使用 Harness 自带 CLI 安装到指定 profile：\n\n```sh\ndsh plugin --profile YOUR_PROFILE add /absolute/path/qiaomu-ui-learn-dsh-0.1.4.tgz\n```\n\n`YOUR_PROFILE` 替换为自己的 profile。macOS App 自带 CLI 位于 `/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh`。本项目交付预构建 GitHub Release 包，不需要 npm 账号或 Obsidian。\n\nHome 联动需要提供 `qiaomuHome` v1 服务的版本；Home 0.2.1 的旧发布包尚无此接口。\n\n## 数据与网络\n\n默认学习记录位于 `${DSH_HOME:-~/.dsh}/qiaomu/qiaomu-ui-learn-dsh/state.json`，Markdown 位于同目录 `notes/`。Host 支持绝对路径配置 `dataDir`、`notesRoot`。现有 Obsidian 数据不会被自动修改；需要迁移时在设置中手动选择 JSON。不同 profile 使用同一 DSH_HOME 时默认共享该插件数据，可配置 `dataDir` 隔离。\n\n图库缩略图与参考预览按需从 Kombai 加载；词典、风格与交互标本随包提供。源码下载限定公开参考目录、15 秒超时、2 MB 响应上限。笔记操作限制在所配置的目录内，写入校验版本，冲突时保留现有文件。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/host.js:8-44](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/host.js#L8-L44)\n\n绝对目录配置\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport const Config = {\n  \"~standard\": {\n    version: 1,\n    vendor: NAME,\n    validate(value) {\n      if (value == null) return { value: {} };\n      if (\n        typeof value !== \"object\" ||\n        Array.isArray(value) ||\n        Object.keys(value).some((k) => ![\"dataDir\", \"notesRoot\"].includes(k)) ||\n        (value.dataDir !== undefined &&\n          (typeof value.dataDir !== \"string\" ||\n            !path.isAbsolute(value.dataDir))) ||\n        (value.notesRoot !== undefined &&\n          (typeof value.notesRoot !== \"string\" ||\n            !path.isAbsolute(value.notesRoot)))\n      )\n        return {\n          issues: [{ message: \"dataDir must be an absolute directory\" }],\n        };\n      return { value };\n    },\n  },\n};\nexport default class PluginService extends TypertRemoteService {\n  constructor(ctx, config = {}) {\n    super(ctx, SERVICE);\n    this.store = new StateStore(\n      config.dataDir ||\n        path.join(\n          process.env.DSH_HOME || path.join(homedir(), \".dsh\"),\n          \"qiaomu\",\n          NAME,\n        ),\n    );\n    this.notes = new NotesStore(\n      config.notesRoot || path.join(path.dirname(this.store.file), \"notes\"),\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/source.js:4-31](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/source.js#L4-L31)\n\n固定URL及流量截断\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nexport async function fetchReference(request, fetcher = fetch) {\n  const item = lookup.get(request?.key);\n  const url = item && previewUrl(item.row, item.cat.k);\n  if (\n    !url ||\n    !/^https:\\/\\/agent\\.kombai\\.com\\/kombai-inspiration-library\\/(?:app-pages|sections)\\/[a-z0-9-]+\\/web\\/\\d+\\/index\\.html$/.test(\n      url,\n    )\n  )\n    throw Error(\"This reference has no downloadable HTML source\");\n  const response = await fetcher(url, {\n    redirect: \"error\",\n    signal: AbortSignal.timeout(15000),\n  });\n  if (!response.ok)\n    throw Error(`Reference download failed (${response.status})`);\n  if (Number(response.headers.get(\"content-length\")) > 2 * 1024 * 1024)\n    throw Error(\"Reference source exceeds 2 MB\");\n  let size = 0,\n    text = \"\";\n  const decoder = new TextDecoder();\n  for await (const chunk of response.body) {\n    size += chunk.length;\n    if (size > 2 * 1024 * 1024) throw Error(\"Reference source exceeds 2 MB\");\n    text += decoder.decode(chunk, { stream: true });\n  }\n  text += decoder.decode();\n  return { url, text: text.slice(0, 120000), truncated: text.length > 120000 };\n```\n\n</details>\n\n#### 缺口\n\n- 远端资源、导出恢复和卸载未运行\n  **影响**：不能确认离线完整体验或数据迁移成功\n  **进一步探讨**：小参考集验证断网、截断及独立目录恢复\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 多进程保存是否需要文件级版本交换？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n当前revision和etag已覆盖同服务实例，新增研究应针对共享home的两个host同时保存。以一个旧revision或etag进入的两次操作，在检查后同时继续，比较最终文件与客户端成功回执。若两次都成功而有数据丢失，可试验文件锁或条件提交；若宿主已保证单进程，或增强机制不改善目标环境，就保留现有设计。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/storage.js:28-58](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/storage.js#L28-L58)\n\n进程内queue及rename\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n  save(input) {\n    const task = this.queue\n      .catch(() => {})\n      .then(async () => {\n        if (\n          !input ||\n          !Number.isSafeInteger(input.revision) ||\n          !input.data ||\n          typeof input.data !== \"object\" ||\n          Array.isArray(input.data)\n        )\n          throw Error(\"Invalid state\");\n        const current = await this.load();\n        if (input.revision !== current.revision)\n          throw Error(\n            \"Another window saved changes. Reopen this panel before saving.\",\n          );\n        const next = { revision: current.revision + 1, data: input.data };\n        const text = JSON.stringify(next);\n        if (Buffer.byteLength(text) > 8 * 1024 * 1024)\n          throw Error(\n            \"Saved project exceeds 8 MB. Export it as a file instead.\",\n          );\n        await mkdir(path.dirname(this.file), { recursive: true, mode: 0o700 });\n        const temp = this.file + \".\" + randomUUID() + \".tmp\";\n        await writeFile(temp, text, { mode: 0o600 });\n        await rename(temp, this.file);\n        return next;\n      });\n    this.queue = task;\n    return task;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/notes.js:91-129](https://github.com/joeseesun/qiaomu-ui-learn-dsh/blob/ad7dffddcd08fd9878db9d8123559fc6540a77bb/src/notes.js#L91-L129)\n\netag读后写入\n\n<details>\n<summary>查看原文（39行）</summary>\n\n```text\n  write(request) {\n    const work = this.queue\n      .catch(() => {})\n      .then(async () => {\n        if (\n          !request ||\n          typeof request.text !== \"string\" ||\n          Buffer.byteLength(request.text) > 2 * 1024 * 1024\n        )\n          throw Error(\"Invalid note or note exceeds 2 MB\");\n        const filename = await this.resolve(request.path);\n        let existing = null;\n        try {\n          existing = await this.read(request.path);\n        } catch (e) {\n          if (e.code !== \"ENOENT\") throw e;\n        }\n        if ((existing?.etag ?? null) !== (request.etag ?? null))\n          throw Error(\n            \"The note has changed or already exists. Open it again before saving.\",\n          );\n        await mkdir(path.dirname(filename), { recursive: true, mode: 0o700 });\n        await this.resolve(request.path);\n        const temp = filename + \".\" + randomUUID() + \".tmp\";\n        try {\n          await writeFile(temp, request.text, { mode: 0o600, flag: \"wx\" });\n          await rename(temp, filename);\n        } catch (e) {\n          await unlink(temp).catch(() => {});\n          throw e;\n        }\n        return {\n          path: request.path,\n          text: request.text,\n          etag: hash(request.text),\n        };\n      });\n    this.queue = work;\n    return work;\n```\n\n</details>\n\n#### 缺口\n\n- 真实多进程丢写未复现\n  **影响**：不能把潜在竞争写成已发生数据损失\n  **进一步探讨**：先确定部署允许共享home再并发合成记录\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：9a4d95161f54e17b35024aa17cbb1949bb98c137348f30c791de783ae1497327。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 10 | 54321 | 47429 | 4884 | — |\n| .md | source | 7 | 339 | — | — | 4963 |\n| .mjs | source | 2 | 48 | 48 | 0 | — |\n| .jsx | source | 3 | 221 | 220 | 0 | — |\n| .ts | source | 17 | 3906 | 3436 | 147 | — |\n| .mjs | test | 7 | 341 | 338 | 6 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 学习界面 | 参考词典与练习 | 内容继承原项目 |\n| 记录笔记 | 保存点评及Markdown | 独立目录和冲突核对 |\n| 参考源码 | 有界下载公开HTML | 依赖远端 |\n\n## 工程亮点\n\n[Q02](#research-q02) 存储拒读不覆盖原件，边界仍受进程与外部编辑影响。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/client.jsx、src/host.js、src/notes.js、src/source.js、src/storage.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定学习适配入口、remote、state/notes与源码下载。\n- 下一步：核对导出、版本冲突、断网和双进程保存。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-08/joeseesun--qiaomu-ui-learn-dsh/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"joeseesun/qiaomu-ui-learn-dsh\",\n  \"revision\": \"ad7dffddcd08fd9878db9d8123559fc6540a77bb\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"src/client.jsx\",\n    \"src/host.js\",\n    \"src/notes.js\",\n    \"src/source.js\",\n    \"src/storage.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"设计学习如何迁入DSH，记录和Markdown保存能否可靠复核？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"DSH适配增加了什么学习流程？\",\n        \"answer\": \"需要边看参考边写点评的设计学习者，可在DSH浏览图库、词典及测验，再保存学习状态和Markdown。作者明确沿用Obsidian版的内容与界面，不能把这些语料和训练设计当作本适配原创。host把StateStore、NotesStore和受限参考源码下载暴露为remote方法，客户端注册快捷操作和主视图，并可选对接Home provider。相比来回切Obsidian，变化是宿主入口及文件交付，不是自动提高审美。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 3,\n            \"line_end\": 20,\n            \"observation\": \"继承界面与功能描述\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/host.js\",\n            \"line_start\": 32,\n            \"line_end\": 80,\n            \"observation\": \"宿主服务接线\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/client.jsx\",\n            \"line_start\": 26,\n            \"line_end\": 48,\n            \"observation\": \"快捷操作与可选Home\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/client.jsx\",\n            \"line_start\": 125,\n            \"line_end\": 145,\n            \"observation\": \"主界面注册\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"学习效果与真实DSH兼容未独立验证\",\n            \"impact\": \"不能宣称测验带来能力提升或减少学习时间\",\n            \"next_step\": \"用一篇参考完成点评、笔记及重开核对\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"学习记录和Markdown如何拒绝覆盖？\",\n        \"answer\": \"StateStore有本实例队列，加载时校验revision和data；非ENOENT损坏拒读并保留文件。保存要求客户端revision等于当前值，8MB上限，临时文件后rename。笔记根先realpath，拒绝绝对、点段、非Markdown路径并逐段lstat拒symlink；读回2MB上限和etag，写前比etag，再用临时文件与rename。两者保护普通窗口冲突，但队列不跨宿主进程，检查到rename之间还有外部编辑窗口，不能当同权限恶意进程隔离。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/storage.js\",\n            \"line_start\": 9,\n            \"line_end\": 58,\n            \"observation\": \"revision队列与原子替换\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/notes.js\",\n            \"line_start\": 14,\n            \"line_end\": 54,\n            \"observation\": \"根及链接路径检查\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/notes.js\",\n            \"line_start\": 83,\n            \"line_end\": 129,\n            \"observation\": \"etag与写入\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"跨进程或外部编辑竞争的真实结果未测\",\n            \"impact\": \"共享home可能出现检查后写入冲突\",\n            \"next_step\": \"两测试宿主用同一数据目录在读后延迟保存\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样试用并保留自己的笔记？\",\n        \"answer\": \"需匹配固定作者要求的DSH版本，Home不是独立工作的必要条件。dataDir与notesRoot可单独设绝对路径，默认跟DSH_HOME，因此不同profile共享home时也共享记录。用测试目录先完成点评、导出、编辑和冲突拒绝；远端缩略图与预览有网络，参考源码只接受目录内key映射的特定HTTPS路径，拒重定向、15秒超时、2MB实际流量上限，并在12万字符处截断。现金与本地磁盘未知，没有模型生成路径；人工要整理参考和核对导出。退出禁用插件前导出记录并备份state及notes，不能只清浏览器。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 24,\n            \"line_end\": 42,\n            \"observation\": \"宿主版本与数据网络\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/host.js\",\n            \"line_start\": 8,\n            \"line_end\": 44,\n            \"observation\": \"绝对目录配置\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/source.js\",\n            \"line_start\": 4,\n            \"line_end\": 31,\n            \"observation\": \"固定URL及流量截断\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"远端资源、导出恢复和卸载未运行\",\n            \"impact\": \"不能确认离线完整体验或数据迁移成功\",\n            \"next_step\": \"小参考集验证断网、截断及独立目录恢复\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"多进程保存是否需要文件级版本交换？\",\n        \"answer\": \"当前revision和etag已覆盖同服务实例，新增研究应针对共享home的两个host同时保存。以一个旧revision或etag进入的两次操作，在检查后同时继续，比较最终文件与客户端成功回执。若两次都成功而有数据丢失，可试验文件锁或条件提交；若宿主已保证单进程，或增强机制不改善目标环境，就保留现有设计。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/storage.js\",\n            \"line_start\": 28,\n            \"line_end\": 58,\n            \"observation\": \"进程内queue及rename\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/notes.js\",\n            \"line_start\": 91,\n            \"line_end\": 129,\n            \"observation\": \"etag读后写入\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实多进程丢写未复现\",\n            \"impact\": \"不能把潜在竞争写成已发生数据损失\",\n            \"next_step\": \"先确定部署允许共享home再并发合成记录\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 乔木 UI 学习 · DeepSeek Harness\\n\\n> v0.1.4：DeepSeek Harness **0.2.2-rc.1** 兼容更新。[本次验证范围](docs/DSH-0.2.2-RC1.md)。\\n\\n在 DeepSeek Harness 里浏览设计参考、学习 UI 词汇、练习审美，并把自己的点评保存成 Markdown。\\n\\n直接沿用 [Obsidian 版乔木 UI 学习](https://github.com/joeseesun/qiaomu-ui-learn) 的图库、词典、风格、测验、详情、收藏夹和设置界面，产品 CSS 保持一致。迁移仅替换宿主容器、文件保存、快捷操作和 Home 联动接口。\\n\\n![原版图库](docs/screenshots/original-gallery.png)\\n\\n## 功能\\n\\n- 13,561 条设计参考、184 个分类；搜索、收藏夹、最近浏览、点评筛选和卡片密度。\\n- UI 词典与风格图鉴：106 个交互标本、双语解释、识别特征、关联风格、代码与实现提示词。\\n- 审美测验：组件、风格或混合练习，键盘作答、掌握状态与复习记录。\\n- 五星评价、标签、评论；逐条或批量导出 Markdown，笔记浏览、光标插入和未保存草稿恢复。\\n- 原版设计灯箱、图片/Markdown/提示词复制、参考页面 HTML 源码读取。\\n- 导入 Obsidian `data.json` 或本插件备份；覆盖前下载现有记录备份。\\n- 5 个 Harness 原生快捷操作，可在宿主快捷键设置中绑定。\\n- 安装支持 v1 provider 服务的乔木 Home 后，提供最近设计卡片、浏览入口和全局设计搜索；没有 Home 时独立工作。\\n\\n![原版词典](docs/screenshots/original-dictionary-dark.png)\\n\\n## 安装\\n\\n要求 DeepSeek Harness **0.2.2-rc.1**。从 [Releases](https://github.com/joeseesun/qiaomu-ui-learn-dsh/releases) 下载 `.tgz` 和 `SHA256SUMS`，核对摘要后，在 Harness 插件管理中安装本地 bundle。按宿主提示重载，然后从侧边栏打开「乔木 UI 学习」。\\n\\n也可使用 Harness 自带 CLI 安装到指定 profile：\\n\\n```sh\\ndsh plugin --profile YOUR_PROFILE add /absolute/path/qiaomu-ui-learn-dsh-0.1.4.tgz\\n```\\n\\n`YOUR_PROFILE` 替换为自己的 profile。macOS App 自带 CLI 位于 `/Applications/DeepSeek Harness.app/Contents/Resources/runtime/cli/bin/dsh`。本项目交付预构建 GitHub Release 包，不需要 npm 账号或 Obsidian。\\n\\nHome 联动需要提供 `qiaomuHome` v1 服务的版本；Home 0.2.1 的旧发布包尚无此接口。\\n\\n## 数据与网络\\n\\n默认学习记录位于 `${DSH_HOME:-~/.dsh}/qiaomu/qiaomu-ui-learn-dsh/state.json`，Markdown 位于同目录 `notes/`。Host 支持绝对路径配置 `dataDir`、`notesRoot`。现有 Obsidian 数据不会被自动修改；需要迁移时在设置中手动选择 JSON。不同 profile 使用同一 DSH_HOME 时默认共享该插件数据，可配置 `dataDir` 隔离。\\n\\n图库缩略图与参考预览按需从 Kombai 加载；词典、风格与交互标本随包提供。源码下载限定公开参考目录、15 秒超时、2 MB 响应上限。笔记操作限制在所配置的目录内，写入校验版本，冲突时保留现有文件。\\n\\n## 开发与验收\\n\\n```sh\\nnpm ci\\nnpm run check\\nnpm pack\\n```\\n\\n18 项自动检查涵盖原版全部 106 详情的中英挂载、样式一致性、测验和点评逻辑、Home 协议、数据保存冲突、Markdown 路径保护及复制失败处理。真实 Harness 验收范围见 [适配对照](docs/ADAPTATION.md)。macOS Harness 的亮色、深色和 720px 窗口已验证；其他操作系统尚未实机验收。\\n\\n## 来源与许可\\n\\n插件 MIT；保留原仓库源码、作者署名和数据归属。设计目录及缩略图来自 Kombai Gallery；UI 学习内容通过 joeseesun/learnui 整理，原英文内容来自 namethatui.com。详见 [第三方声明](THIRD_PARTY_NOTICES.md)。\\n\\n[English](README.en.md) · [源项目](https://github.com/joeseesun/qiaomu-ui-learn)\\n\\nHarness 0.2.2-rc.1 适配与实测边界见 [兼容验证记录](docs/DSH-0.2.2-RC1.md)。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"qiaomu-ui-learn-dsh\\\",\\n  \\\"version\\\": \\\"0.1.4\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"description\\\": \\\"Qiaomu UI Learn for DeepSeek Harness\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22\\\",\\n    \\\"dsh\\\": \\\"0.2.1-rc.3 || 0.2.1-rc.4 || 0.2.1-rc.5 || 0.2.2-rc.1\\\"\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./client\\\": \\\"./client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\",\\n    \\\"./locale/*.json\\\": \\\"./locale/*.json\\\"\\n  },\\n  \\\"icon\\\": \\\"./icon.svg\\\",\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"client.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"icon.svg\\\",\\n    \\\"locale\\\",\\n    \\\"LICENSE\\\",\\n    \\\"THIRD_PARTY_NOTICES.md\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"node scripts/build.mjs\\\",\\n    \\\"test\\\": \\\"node --import tsx --test tests/*.test.mjs\\\",\\n    \\\"check\\\": \\\"npm test && npm run build && node scripts/check-package.mjs\\\",\\n    \\\"prepack\\\": \\\"npm run build && node scripts/check-package.mjs\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"esbuild\\\": \\\"0.28.1\\\",\\n    \\\"jsdom\\\": \\\"^29.1.1\\\",\\n    \\\"lucide\\\": \\\"^1.47.0\\\",\\n    \\\"lucide-react\\\": \\\"1.47.0\\\",\\n    \\\"react\\\": \\\"18.3.1\\\",\\n    \\\"react-dom\\\": \\\"18.3.1\\\",\\n    \\\"tsx\\\": \\\"4.20.6\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"~4.0.5 || 4.1.0\\\",\\n    \\\"@deepseek-ai/dsh-typert-protocol\\\": \\\"0.2.1-rc.3 || 0.2.1-rc.4 || 0.2.1-rc.5 || 0.2.2-rc.1\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/cordis\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-typert-protocol\\\": {\\n      \\\"optional\\\": true\\n    }\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/joeseesun/qiaomu-ui-learn-dsh.git\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"qiaomu\\\",\\n    \\\"ui-learn\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"immediately\\\": true,\\n      \\\"inject\\\": []\\n    },\\n    \\\"meta\\\": {\\n      \\\"title\\\": \\\"乔木 UI 学习\\\",\\n      \\\"description\\\": \\\"Qiaomu UI Learn for DeepSeek Harness\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"src/client.jsx\",\n      \"content\": \"import { remoteApi } from \\\"./remote.js\\\";\\nimport React, { useEffect, useState } from \\\"react\\\";\\nimport { BookOpen, Palette, AudioLines, FileText } from \\\"lucide-react\\\";\\nimport { NAME, ID, TITLE, EN_TITLE, SERVICE } from \\\"./meta.js\\\";\\nimport {initI18n} from \\\"./original-ui/i18n\\\";\\nimport {createHomeProvider} from \\\"./home-provider.js\\\";\\nimport { App } from \\\"./native-app.jsx\\\";\\nimport originalCss from \\\"./original-ui/styles.css\\\";\\nimport hostCss from \\\"./harness-ui.css\\\";\\nconst css = hostCss + \\\"\\\\n\\\" + originalCss;\\nconst ICON = NAME.includes(\\\"ui-learn\\\")\\n  ? BookOpen\\n  : NAME.includes(\\\"cover\\\")\\n    ? Palette\\n    : NAME.includes(\\\"audio\\\")\\n      ? AudioLines\\n      : FileText;\\nexport const inject = [\\\"slots\\\", \\\"remote\\\", \\\"locale\\\"];\\nexport function apply(ctx) {\\n\\n  let pending = null, runAction = null;\\n  const homeListeners=new Set();\\n  const actions = {\\n    changed(){for(const fn of homeListeners)fn();},\\n    attach(handler) { runAction=handler; if(pending){const next=pending;pending=null;void handler(next);} return()=>{if(runAction===handler)runAction=null;}; },\\n    send(action) { if(runAction)void runAction(action);else pending=action; },\\n  };\\n  ctx.inject([\\\"shortcuts\\\",\\\"layout\\\"], ready => {\\n    for(const [action,zh,en] of [\\n      [\\\"gallery\\\",\\\"打开灵感图库\\\",\\\"Open design gallery\\\"],\\n      [\\\"dictionary\\\",\\\"打开 UI 词典\\\",\\\"Open UI dictionary\\\"],\\n      [\\\"styles\\\",\\\"打开风格图鉴\\\",\\\"Open style atlas\\\"],\\n      [\\\"quiz\\\",\\\"打开审美测验\\\",\\\"Open design quiz\\\"],\\n      [\\\"export\\\",\\\"导出全部学习笔记\\\",\\\"Export all study notes\\\"],\\n    ]) ready.effect(()=>ready.shortcuts.register({\\n      id:`${ID}.${action}`,label:()=>`${TITLE} · ${navigator.language.startsWith('zh')?zh:en}`,\\n      aliases:[en,zh,\\\"Qiaomu UI Learn\\\"],defaults:{},regions:[\\\"page\\\",\\\"editable\\\"],modals:[],\\n      resolve:()=>({status:\\\"handled\\\",run:()=>{ready.layout.selectPanel(ID);actions.send(action);}}),\\n    }));\\n  });\\n  const listeners = new Set();\\n  let api = null,\\n    error = \\\"\\\";\\n  const notify = () => {listeners.forEach((f) => f());actions.changed();};\\n  ctx.inject([\\\"qiaomuHome\\\",\\\"layout\\\"],ready=>ready.effect(()=>ready.qiaomuHome.register(NAME,createHomeProvider({\\n    load:()=>api?.load()??Promise.resolve({data:{}}),\\n    open:action=>{ready.layout.selectPanel(ID);actions.send(action);},\\n    subscribe:fn=>{homeListeners.add(fn);return()=>homeListeners.delete(fn);},\\n  }),{label:TITLE})));\\n  let disposed = false;\\n  ctx.effect(() => {\\n    const style = document.createElement(\\\"style\\\");\\n    style.textContent = css;\\n    document.head.append(style);\\n    return () => style.remove();\\n  });\\n  ctx.effect(() =>\\n    ctx.locale.register(ID, { zh: { title: TITLE, language:\\\"zh\\\" }, en: { title: EN_TITLE, language:\\\"en\\\" } }),\\n  );\\n  const hostLanguage=()=>ctx.locale.bind(ID)(\\\"language\\\");\\n  initI18n(hostLanguage()===\\\"zh\\\"?\\\"zh\\\":\\\"en\\\");\\n  const codec = () => ({\\n    mode: \\\"strict\\\",\\n    typeSymbol: NAME + \\\"#json\\\",\\n    create: () => ({\\n      parse: (v) => v,\\n      safeParse: (v) => ({ success: true, data: v }),\\n    }),\\n  });\\n  const methods = [\\n    \\\"load\\\",\\n    \\\"save\\\",\\n    \\\"notesList\\\",\\n    \\\"notesRead\\\",\\n    \\\"notesWrite\\\",\\n    \\\"referenceSource\\\",\\n  ];\\n  const descriptors = methods.map((method) => ({\\n    id: `${NAME}#${SERVICE}/${method}`,\\n    service: SERVICE,\\n    namespace: SERVICE,\\n    method,\\n    invocation: { kind: \\\"direct\\\" },\\n    parameters: [\\\"load\\\", \\\"voices\\\"].includes(method)\\n      ? []\\n      : [{ name: \\\"request\\\", wire: \\\"request\\\", source: \\\"json\\\", codec: codec() }],\\n    result: { mode: \\\"src-json\\\" },\\n    cancellation: { parameter: \\\"signal\\\" },\\n  }));\\n  ctx.effect(() => () => {\\n    disposed = true;\\n    api = null;\\n    listeners.clear();\\n    homeListeners.clear();\\n  });\\n  ctx.remote\\n    .$mount({ package: NAME, descriptors })\\n    .then(() => {\\n      if (disposed) return;\\n      ctx.inject([\\\"remote.\\\" + SERVICE], (ready) => {\\n        api = remoteApi(ready.remote[SERVICE], methods);\\n        error = \\\"\\\";\\n        notify();\\n        return () => {\\n          api = null;\\n          notify();\\n        };\\n      });\\n    })\\n    .catch((e) => {\\n      error = e.message;\\n      notify();\\n    });\\n  function Panel() {\\n    const [, render] = useState(0);\\n    useEffect(() => {\\n      const f = () => render((x) => x + 1);\\n      listeners.add(f);\\n      return () => listeners.delete(f);\\n    }, []);\\n    return (\\n      <div className=\\\"qpg-dsh-surface qpg-dsh-host\\\" data-plugin={NAME}>\\n        {api ? (\\n          <App api={api} actions={actions} hostLanguage={hostLanguage()} />\\n        ) : (\\n          <p role=\\\"status\\\">{error || \\\"正在连接本地服务 / Connecting…\\\"}</p>\\n        )}\\n      </div>\\n    );\\n  }\\n  ctx.effect(() =>\\n    ctx.slots.inject(\\\"main\\\", () =>\\n      ctx.slots.register({ name: \\\"main\\\", key: ID, locale: ID }, Panel),\\n    ),\\n  );\\n  ctx.effect(() =>\\n    ctx.slots.inject(\\\"sidebar.panellist\\\", () =>\\n      ctx.slots.register(\\n        {\\n          name: \\\"sidebar.panellist\\\",\\n          id: ID,\\n          order: 45,\\n          locale: ID,\\n          label: () => TITLE,\\n        },\\n        ICON,\\n      ),\\n    ),\\n  );\\n}\\n\"\n    },\n    {\n      \"path\": \"src/host.js\",\n      \"content\": \"import { TypertRemoteService, Remote } from \\\"@deepseek-ai/dsh-typert-protocol\\\";\\nimport path from \\\"node:path\\\";\\nimport { homedir } from \\\"node:os\\\";\\nimport { StateStore } from \\\"./storage.js\\\";\\nimport { NotesStore } from \\\"./notes.js\\\";\\nimport { fetchReference } from \\\"./source.js\\\";\\nimport { NAME, SERVICE } from \\\"./meta.js\\\";\\nexport const Config = {\\n  \\\"~standard\\\": {\\n    version: 1,\\n    vendor: NAME,\\n    validate(value) {\\n      if (value == null) return { value: {} };\\n      if (\\n        typeof value !== \\\"object\\\" ||\\n        Array.isArray(value) ||\\n        Object.keys(value).some((k) => ![\\\"dataDir\\\", \\\"notesRoot\\\"].includes(k)) ||\\n        (value.dataDir !== undefined &&\\n          (typeof value.dataDir !== \\\"string\\\" ||\\n            !path.isAbsolute(value.dataDir))) ||\\n        (value.notesRoot !== undefined &&\\n          (typeof value.notesRoot !== \\\"string\\\" ||\\n            !path.isAbsolute(value.notesRoot)))\\n      )\\n        return {\\n          issues: [{ message: \\\"dataDir must be an absolute directory\\\" }],\\n        };\\n      return { value };\\n    },\\n  },\\n};\\nexport default class PluginService extends TypertRemoteService {\\n  constructor(ctx, config = {}) {\\n    super(ctx, SERVICE);\\n    this.store = new StateStore(\\n      config.dataDir ||\\n        path.join(\\n          process.env.DSH_HOME || path.join(homedir(), \\\".dsh\\\"),\\n          \\\"qiaomu\\\",\\n          NAME,\\n        ),\\n    );\\n    this.notes = new NotesStore(\\n      config.notesRoot || path.join(path.dirname(this.store.file), \\\"notes\\\"),\\n    );\\n  }\\n  notesList(request) {\\n    return this.notes.list(request?.folder || \\\"\\\");\\n  }\\n  notesRead(request) {\\n    return this.notes.read(request.path);\\n  }\\n  notesWrite(request) {\\n    return this.notes.write(request);\\n  }\\n  referenceSource(request) {\\n    return fetchReference(request);\\n  }\\n  load() {\\n    return this.store.load();\\n  }\\n  save(request) {\\n    return this.store.save(request);\\n  }\\n}\\nfor (const name of [\\n  \\\"load\\\",\\n  \\\"save\\\",\\n  \\\"notesList\\\",\\n  \\\"notesRead\\\",\\n  \\\"notesWrite\\\",\\n  \\\"referenceSource\\\",\\n])\\n  Remote(name)(PluginService.prototype[name], {\\n    name,\\n    private: false,\\n    static: false,\\n    addInitializer(fn) {\\n      fn.call(Object.create(PluginService.prototype));\\n    },\\n  });\\n\"\n    },\n    {\n      \"path\": \"src/notes.js\",\n      \"content\": \"import {\\n  mkdir,\\n  readdir,\\n  readFile,\\n  writeFile,\\n  rename,\\n  lstat,\\n  unlink,\\n  realpath,\\n} from \\\"node:fs/promises\\\";\\nimport path from \\\"node:path\\\";\\nimport { createHash, randomUUID } from \\\"node:crypto\\\";\\nconst hash = (text) => createHash(\\\"sha256\\\").update(text).digest(\\\"hex\\\");\\nexport class NotesStore {\\n  constructor(root) {\\n    this.root = path.resolve(root);\\n    this.queue = Promise.resolve();\\n    this.ready = mkdir(this.root, { recursive: true, mode: 0o700 })\\n      .then(() => realpath(this.root))\\n      .then((root) => {\\n        this.root = root;\\n      });\\n  }\\n  async resolve(relative, { directory = false } = {}) {\\n    await this.ready;\\n    if (\\n      typeof relative !== \\\"string\\\" ||\\n      relative.includes(\\\"\\\\0\\\") ||\\n      path.isAbsolute(relative) ||\\n      relative.split(/[\\\\\\\\/]/).some((x) => x === \\\"..\\\" || x.startsWith(\\\".\\\"))\\n    )\\n      throw Error(\\\"Choose a relative path inside the notes folder\\\");\\n    if (!directory && !relative.toLowerCase().endsWith(\\\".md\\\"))\\n      throw Error(\\\"Only Markdown notes are supported\\\");\\n    const target = path.resolve(this.root, relative);\\n    if (target !== this.root && !target.startsWith(this.root + path.sep))\\n      throw Error(\\\"Invalid note path\\\");\\n    // The explicit root is canonicalized (macOS /tmp and /var are symlinks).\\n    // Never follow user-controlled links beneath that root.\\n    let current = this.root;\\n    for (const part of target\\n      .slice(current.length)\\n      .split(path.sep)\\n      .filter(Boolean)) {\\n      current = path.join(current, part);\\n      try {\\n        const stat = await lstat(current);\\n        if (stat.isSymbolicLink())\\n          throw Error(\\\"Symbolic links are not followed\\\");\\n      } catch (e) {\\n        if (e.code !== \\\"ENOENT\\\") throw e;\\n      }\\n    }\\n    return target;\\n  }\\n  async list(folder = \\\"\\\") {\\n    const dir = await this.resolve(folder, { directory: true });\\n    try {\\n      const entries = await readdir(dir, { withFileTypes: true });\\n      return {\\n        root: this.root,\\n        folder,\\n        entries: entries\\n          .filter(\\n            (x) =>\\n              !x.name.startsWith(\\\".\\\") &&\\n              !x.isSymbolicLink() &&\\n              (x.isDirectory() || x.name.toLowerCase().endsWith(\\\".md\\\")),\\n          )\\n          .slice(0, 1000)\\n          .map((x) => ({ name: x.name, directory: x.isDirectory() }))\\n          .sort(\\n            (a, b) =>\\n              Number(b.directory) - Number(a.directory) ||\\n              a.name.localeCompare(b.name),\\n          ),\\n      };\\n    } catch (e) {\\n      if (e.code === \\\"ENOENT\\\") return { root: this.root, folder, entries: [] };\\n      throw e;\\n    }\\n  }\\n  async read(relative) {\\n    const filename = await this.resolve(relative);\\n    const s = await lstat(filename);\\n    if (!s.isFile() || s.size > 2 * 1024 * 1024)\\n      throw Error(\\\"Note exceeds 2 MB or is not a file\\\");\\n    const text = await readFile(filename, \\\"utf8\\\");\\n    return { path: relative, text, etag: hash(text) };\\n  }\\n  write(request) {\\n    const work = this.queue\\n      .catch(() => {})\\n      .then(async () => {\\n        if (\\n          !request ||\\n          typeof request.text !== \\\"string\\\" ||\\n          Buffer.byteLength(request.text) > 2 * 1024 * 1024\\n        )\\n          throw Error(\\\"Invalid note or note exceeds 2 MB\\\");\\n        const filename = await this.resolve(request.path);\\n        let existing = null;\\n        try {\\n          existing = await this.read(request.path);\\n        } catch (e) {\\n          if (e.code !== \\\"ENOENT\\\") throw e;\\n        }\\n        if ((existing?.etag ?? null) !== (request.etag ?? null))\\n          throw Error(\\n            \\\"The note has changed or already exists. Open it again before saving.\\\",\\n          );\\n        await mkdir(path.dirname(filename), { recursive: true, mode: 0o700 });\\n        await this.resolve(request.path);\\n        const temp = filename + \\\".\\\" + randomUUID() + \\\".tmp\\\";\\n        try {\\n          await writeFile(temp, request.text, { mode: 0o600, flag: \\\"wx\\\" });\\n          await rename(temp, filename);\\n        } catch (e) {\\n          await unlink(temp).catch(() => {});\\n          throw e;\\n        }\\n        return {\\n          path: request.path,\\n          text: request.text,\\n          etag: hash(request.text),\\n        };\\n      });\\n    this.queue = work;\\n    return work;\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"src/source.js\",\n      \"content\": \"import { flatten, previewUrl } from \\\"./original-ui/catalog.ts\\\";\\nimport catalog from \\\"../data/catalog.json\\\" with { type: \\\"json\\\" };\\nconst lookup = new Map(flatten(catalog).map((i) => [i.key, i]));\\nexport async function fetchReference(request, fetcher = fetch) {\\n  const item = lookup.get(request?.key);\\n  const url = item && previewUrl(item.row, item.cat.k);\\n  if (\\n    !url ||\\n    !/^https:\\\\/\\\\/agent\\\\.kombai\\\\.com\\\\/kombai-inspiration-library\\\\/(?:app-pages|sections)\\\\/[a-z0-9-]+\\\\/web\\\\/\\\\d+\\\\/index\\\\.html$/.test(\\n      url,\\n    )\\n  )\\n    throw Error(\\\"This reference has no downloadable HTML source\\\");\\n  const response = await fetcher(url, {\\n    redirect: \\\"error\\\",\\n    signal: AbortSignal.timeout(15000),\\n  });\\n  if (!response.ok)\\n    throw Error(`Reference download failed (${response.status})`);\\n  if (Number(response.headers.get(\\\"content-length\\\")) > 2 * 1024 * 1024)\\n    throw Error(\\\"Reference source exceeds 2 MB\\\");\\n  let size = 0,\\n    text = \\\"\\\";\\n  const decoder = new TextDecoder();\\n  for await (const chunk of response.body) {\\n    size += chunk.length;\\n    if (size > 2 * 1024 * 1024) throw Error(\\\"Reference source exceeds 2 MB\\\");\\n    text += decoder.decode(chunk, { stream: true });\\n  }\\n  text += decoder.decode();\\n  return { url, text: text.slice(0, 120000), truncated: text.length > 120000 };\\n}\\n\"\n    },\n    {\n      \"path\": \"src/storage.js\",\n      \"content\": \"import { mkdir, readFile, writeFile, rename } from \\\"node:fs/promises\\\";\\nimport path from \\\"node:path\\\";\\nimport { randomUUID } from \\\"node:crypto\\\";\\nexport class StateStore {\\n  constructor(directory) {\\n    this.file = path.join(directory, \\\"state.json\\\");\\n    this.queue = Promise.resolve();\\n  }\\n  async load() {\\n    try {\\n      const raw = JSON.parse(await readFile(this.file, \\\"utf8\\\"));\\n      if (\\n        !Number.isSafeInteger(raw.revision) ||\\n        raw.revision < 0 ||\\n        !raw.data ||\\n        typeof raw.data !== \\\"object\\\" ||\\n        Array.isArray(raw.data)\\n      )\\n        throw Error(\\\"Invalid saved data\\\");\\n      return raw;\\n    } catch (e) {\\n      if (e.code === \\\"ENOENT\\\") return { revision: 0, data: {} };\\n      throw Error(\\\"Saved data could not be read. Original file preserved.\\\", {\\n        cause: e,\\n      });\\n    }\\n  }\\n  save(input) {\\n    const task = this.queue\\n      .catch(() => {})\\n      .then(async () => {\\n        if (\\n          !input ||\\n          !Number.isSafeInteger(input.revision) ||\\n          !input.data ||\\n          typeof input.data !== \\\"object\\\" ||\\n          Array.isArray(input.data)\\n        )\\n          throw Error(\\\"Invalid state\\\");\\n        const current = await this.load();\\n        if (input.revision !== current.revision)\\n          throw Error(\\n            \\\"Another window saved changes. Reopen this panel before saving.\\\",\\n          );\\n        const next = { revision: current.revision + 1, data: input.data };\\n        const text = JSON.stringify(next);\\n        if (Buffer.byteLength(text) > 8 * 1024 * 1024)\\n          throw Error(\\n            \\\"Saved project exceeds 8 MB. Export it as a file instead.\\\",\\n          );\\n        await mkdir(path.dirname(this.file), { recursive: true, mode: 0o700 });\\n        const temp = this.file + \\\".\\\" + randomUUID() + \\\".tmp\\\";\\n        await writeFile(temp, text, { mode: 0o600 });\\n        await rename(temp, this.file);\\n        return next;\\n      });\\n    this.queue = task;\\n    return task;\\n  }\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"ad7dffddcd08fd9878db9d8123559fc6540a77bb\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"9a4d95161f54e17b35024aa17cbb1949bb98c137348f30c791de783ae1497327\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 10,\n        \"lines\": 54321,\n        \"code\": 47429,\n        \"comments\": 4884,\n        \"blank\": 2542\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 7,\n        \"lines\": 339,\n        \"words\": 4963\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 48,\n        \"code\": 48,\n        \"comments\": 0,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".jsx\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 221,\n        \"code\": 220,\n        \"comments\": 0,\n        \"blank\": 1\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 17,\n        \"lines\": 3906,\n        \"code\": 3436,\n        \"comments\": 147,\n        \"blank\": 349\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 7,\n        \"lines\": 341,\n        \"code\": 338,\n        \"comments\": 6,\n        \"blank\": 3\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [\n        {\n          \"path\": \"client.js\",\n          \"line\": 48083,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"client.js\",\n          \"line\": 48387,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"client.js\",\n          \"line\": 49024,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"client.js\",\n          \"line\": 49944,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"client.js\",\n          \"line\": 51187,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/common.jsx\",\n          \"line\": 9,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/harness-ui.ts\",\n          \"line\": 38,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/original-ui/collections.ts\",\n          \"line\": 80,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/original-ui/learn-quiz.ts\",\n          \"line\": 202,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/original-ui/learn-review.ts\",\n          \"line\": 52,\n          \"api\": \"window.setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"client.js\",\n          \"line\": 51640,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"main\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"client.js\",\n          \"line\": 51646,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"sidebar.panellist\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client.jsx\",\n          \"line\": 133,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"main\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/client.jsx\",\n          \"line\": 138,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"sidebar.panellist\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 10,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"main\",\n          \"sidebar.panellist\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 2,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "272b3db79c799c7c143385124dc4cb1bab1c86e56f15bfe37ca65e10bd1a6cb1"
+        }
+    },
+    "unavailable_artifacts": []
+}

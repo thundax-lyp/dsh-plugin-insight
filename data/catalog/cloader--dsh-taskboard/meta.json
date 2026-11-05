@@ -1,0 +1,66 @@
+{
+    "repository": "cloader/dsh-taskboard",
+    "repository_id": 1334866577,
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 78,
+    "pushed_at": "2026-11-05T01:36:19Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Acloader%2Fdsh-taskboard%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA4C:74061:324DF0:365222:6AEC23BD and timestamp 2026-11-05 06:35:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Acloader%2Fdsh-taskboard%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA80:37AFFA:330F3C:371847:6AEC23BE and timestamp 2026-11-05 06:35:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acloader%2Fdsh-taskboard%20is%3Aissue%20created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AADA:2E7893:3363F9:3771D1:6AEC23BF and timestamp 2026-11-05 06:35:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acloader%2Fdsh-taskboard%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AB34:2C499A:34B27D:38BFC9:6AEC23C0 and timestamp 2026-11-05 06:35:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acloader%2Fdsh-taskboard%20is%3Aissue%20updated%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AB8A:BCD72:B2C0E1:BF032B:6AEC23C0 and timestamp 2026-11-05 06:35:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4f25861a660f6c27802fb6fc6d85c66ffb992d9",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-taskboard",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 6697,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-taskboard",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T08:17:37.042Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-taskboard",
+            "error": null,
+            "latest_version": "0.9.10",
+            "latest_published_at": "2026-11-03T06:43:03.960Z",
+            "latest_error": null
+        }
+    }
+}
