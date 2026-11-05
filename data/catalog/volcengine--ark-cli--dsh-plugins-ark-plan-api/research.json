@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "0aa34cbfdde167ddcf0a5e36027f150c",
+    "identity": "github:1269979871:dsh-plugins-ark-plan-api",
+    "slug": "volcengine--ark-cli--dsh-plugins-ark-plan-api",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1269979871:dsh-plugins-ark-plan-api",
+            "repository_id": 1269979871,
+            "component_id": "dsh-plugins-ark-plan-api",
+            "repository": "volcengine/ark-cli",
+            "path": "dsh-plugins/ark-plan-api",
+            "aliases": [],
+            "name": "Ark Plan API",
+            "entry_type": "plugin",
+            "technical_category": "model-provider",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f240a6a2a26f287a9a543fb6d33cd58f4f0ccda620ca69eca41b89c5300466a6",
+                "code": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                "maintenance": "1d549b110cc25a5b5350f6e8f3cec86a01fe97efd1e74c55dd7f559c083c9157"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "fa94055bbfacbcbcbc911aa6dba906e54cc17848",
+                    "retrieved_at": "2026-11-05T03:32:20.622Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/volcengine/ark-cli",
+                            "commit": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                            "path": "dsh-plugins/ark-plan-api/README.md",
+                            "content_sha256": "74dfc4f581b941e2b015ab223299746fc006e55cef3d29865b67b2f9be6c691e"
+                        }
+                    ],
+                    "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                    "captured_at": "2026-11-05T03:32:20.622Z",
+                    "summary": "为 DSH 的原生模型适配器声明火山方舟 Plan 和后付费路由。",
+                    "artifact": "data/runs/2026-11-05-03/volcengine--ark-cli--dsh-plugins-ark-plan-api/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/volcengine/ark-cli",
+                            "commit": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                            "path": "dsh-plugins/ark-plan-api/README.md",
+                            "content_sha256": "74dfc4f581b941e2b015ab223299746fc006e55cef3d29865b67b2f9be6c691e"
+                        },
+                        {
+                            "repository_url": "https://github.com/volcengine/ark-cli",
+                            "commit": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                            "path": "dsh-plugins/ark-plan-api/cordis.patch.yml",
+                            "content_sha256": "02d99826e9ae3b5b558ff151a907003baa19d0e352b893f9451e2253d59dae78"
+                        },
+                        {
+                            "repository_url": "https://github.com/volcengine/ark-cli",
+                            "commit": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                            "path": "dsh-plugins/ark-plan-api/package.json",
+                            "content_sha256": "feafb84b80ea0f5ae7cf78cee40016aaad7d9c8896d0a348fd2270d1e16da1a5"
+                        }
+                    ],
+                    "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                    "captured_at": "2026-11-05T03:32:20.622Z",
+                    "summary": "核查 dsh-plugins/ark-plan-api/README.md、dsh-plugins/ark-plan-api/cordis.patch.yml、dsh-plugins/ark-plan-api/package.json；补丁向 llm-pi-ai 写入模型目录、端点和凭据引用。",
+                    "artifact": "data/runs/2026-11-05-03/volcengine--ark-cli--dsh-plugins-ark-plan-api/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定子组件的清单和补丁，Git 树无声明载体。未执行目标。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有方舟对应账号并要在 DSH 选择模型的开发者。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "补丁向 llm-pi-ai 写入模型目录、端点和凭据引用。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定子组件的清单和补丁，Git 树无声明载体。未执行目标。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "声明为 DSH provider bundle 的子包，固定树仅能核对配置。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 兼容宿主 pi-ai | 必需 | 提供协议与模型选择 | 手工接入 |\n| 完整发行制品 | 挂载必需 | 提供声明的载体 | 固定 checkout 不足 |\n| 对应凭据 | 真实调用必需 | 授权目标服务 | 停在无钥匙核对 |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 包与账号资源未知 | 核对制品和宿主 | 未实测 |\n| 持续 | 模型请求费用未知 | 维护地区和计划 | 需独立对账 |\n| 恢复 | 重试成本未知 | 撤销测试配置 | 核对实际路由 |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 先做无钥匙组合核对，再按需验收。[Q02](#research-q02) 不从固定 checkout 推断可安装。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 预置路由 | 配置可读取 | 实际挂载和可用性 |\n| 凭据分开 | 各路由独立引用 | 账号权限与费用 |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 复用共享适配器，将变化限定在提供方配置。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 把不同方舟服务预置为独立路由。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 固定 checkout 缺载体，不能确认最终组合。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 在选择前展示地区和计费类别。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                            "area": "code",
+                            "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:32:20.622Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T03:32:20.622Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                "reviewed_at": "2026-11-05T03:32:20.622Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                        "area": "code",
+                        "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) novelty 9 是配置映射，mechanism 8 复用宿主协议并隔开凭据。transferability 5 依赖宿主配置。[Q02](#research-q02) simplification 4 减少手填但仍有覆盖和账号验证。",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) workflow 9 预置模型目录，delivery 0 仍是相同模型请求，reach 5 限有对应账号的开发者。[Q03](#research-q03) economics 4 减少配置操作，真实用量未测。",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "已有方舟账号的 DSH 开发者可以先核对固定补丁中的地区和凭据映射。相比手填多个端点，它将目录和凭据引用预设在宿主配置中。若载体制品、最终路由或计费条件无法核实，应保留原接入。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 组件 README 第45–63行明确配置任务，高于8分，实际频次未知低于23分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01) 补丁第36–65行确认静态映射，高于0分，但缺运行载体低于13分。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 清单第43–53行及补丁第25–42行支持配置事实，高于0分，挂载与真实服务未知低于13分。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) README 第15–43行列制品入口，高于0分，未验包与退出低于10分。"
+                    }
+                },
+                "score": 32,
+                "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                "reviewed_at": "2026-11-05T03:32:20.622Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-03-github-1269979871-dsh-plugins-ark-plan-api-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1269979871:dsh-plugins-ark-plan-api",
+                        "area": "code",
+                        "fingerprint": "b84d1c02c3e3dc024b1b927f37dd39858053ea82"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1269979871:dsh-plugins-ark-plan-api",
+            "repository": "volcengine/ark-cli",
+            "path": "dsh-plugins/ark-plan-api",
+            "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+            "fingerprints": {
+                "directory": "f240a6a2a26f287a9a543fb6d33cd58f4f0ccda620ca69eca41b89c5300466a6",
+                "code": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+                "maintenance": "1d549b110cc25a5b5350f6e8f3cec86a01fe97efd1e74c55dd7f559c083c9157"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T03:21:38Z",
+            "analysis_sha256": "954cc16b5bcad1e084a02f6e40cd4000495ca1b51692f87a2173b6b814c4fcdd"
+        },
+        "publication.metadata": "data/catalog/volcengine--ark-cli--dsh-plugins-ark-plan-api/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH 的原生模型适配器声明火山方舟 Plan 和后付费路由。",
+            "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+            "source_url": "https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+            "items": {
+                "Host 路由": "向原生适配器声明方舟模型路由和凭据引用。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 方舟路由配置 | 选择地区和服务 | 需要完整制品、宿主和权限 |"
+        },
+        "publication.advice": {
+            "revision": "b84d1c02c3e3dc024b1b927f37dd39858053ea82",
+            "text": "[Q03](#research-q03) 先做无钥匙组合核对，再按需验收。[Q02](#research-q02) 不从固定 checkout 推断可安装。"
+        },
+        "registry": "data/plugins/volcengine--ark-cli--dsh-plugins-ark-plan-api",
+        "reports": "# Ark Plan API\n\n> 为 DSH 的原生模型适配器声明火山方舟 Plan 和后付费路由。\n\n## 研究范围\n\n- **仓库**：[volcengine/ark-cli](https://github.com/volcengine/ark-cli)\n- **版本号**：0.1.0（[固定提交 b84d1c02c3e3dc024b1b927f37dd39858053ea82](https://github.com/volcengine/ark-cli/tree/b84d1c02c3e3dc024b1b927f37dd39858053ea82)）\n- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n核对固定子组件的配置实现。载体未提交，未验收发行物、宿主或服务。\n\n## 洞察短评\n\n- **用途**：已有方舟对应账号并要在 DSH 选择模型的开发者。\n- **亮点**：[Q01](#research-q01) 把不同方舟服务预置为独立路由。\n- **思考**：[Q02](#research-q02) 固定 checkout 缺载体，不能确认最终组合。\n- **建议**：[Q04](#research-q04) 在选择前展示地区和计费类别。\n\n采用建议：[Q03](#research-q03) 先做无钥匙组合核对，再按需验收。[Q02](#research-q02) 不从固定 checkout 推断可安装。\n\n## 核心贡献\n\n[Q01](#research-q01) 把不同方舟服务预置为独立路由。\n\n## 关键质疑\n\n[Q02](#research-q02) 固定 checkout 缺载体，不能确认最终组合。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 在选择前展示地区和计费类别。\n\n核对正式制品、宿主组合、实际端点及停用。\n\n## 场景与替代办法\n\n已有方舟对应账号并要在 DSH 选择模型的开发者。\n\n手工在原生适配器配置模型、端点和凭据。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 兼容宿主 pi-ai | 必需 | 提供协议与模型选择 | 手工接入 |\n| 完整发行制品 | 挂载必需 | 提供声明的载体 | 固定 checkout 不足 |\n| 对应凭据 | 真实调用必需 | 授权目标服务 | 停在无钥匙核对 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 检查 | 用户核对制品与最终配置 | 排除覆盖 |\n| 选择 | 用户确认地区和服务 | 记录凭据引用 |\n| 退出 | 恢复原适配器配置 | 核对路由回归 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 包与账号资源未知 | 核对制品和宿主 | 未实测 |\n| 持续 | 模型请求费用未知 | 维护地区和计划 | 需独立对账 |\n| 恢复 | 重试成本未知 | 撤销测试配置 | 核对实际路由 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 预置路由 | 配置可读取 | 实际挂载和可用性 |\n| 凭据分开 | 各路由独立引用 | 账号权限与费用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：Ark Plan API 的固定补丁提供什么，哪些运行行为仍待查？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 方舟路由怎样配置？\n\n**研究主题**：场景与需求、贡献与相对优势、功能与机制\n\n#### 完整回答\n\n已有方舟相应计划或后付费凭据的用户，可把模型接入 DSH 原生选择流程。固定补丁将各路由配置送入 llm-pi-ai，给不同服务及区域独立凭据引用。代表 Agent Plan 与 Coding Plan 都以 anthropic-messages 声明协议，模型列表含配置的窗口与输入类型。增量是预置映射及模型目录，HTTP 和流式实现依赖宿主适配器。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-plugins/ark-plan-api/cordis.patch.yml:36-65](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/cordis.patch.yml#L36-L65)\n\n载体及 Agent Plan 配置\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n- insert:\n    - id: '@volcengine/ark-plan-api'\n      name: '@volcengine/ark-plan-api'\n\n- id: llm-pi-ai\n  config:\n    providers:\n\n      # --- Agent Plan (cn-beijing) -----------------------------------------\n      ark-agent-plan-cn:\n        displayName: Ark Agent Plan\n        apiKeyEnv: ARK_AGENT_PLAN_CN_API_KEY\n        api: anthropic-messages\n        baseURL: https://ark.cn-beijing.volces.com/api/plan\n        models:\n          - id: doubao-seed-evolving\n            name: Doubao Seed Evolving (Agent Plan)\n            contextWindow: 1024000\n            maxTokens: 256000\n            input: [text, image]\n          - id: doubao-seed-2.1-pro\n            name: Doubao Seed 2.1 Pro (Agent Plan)\n            contextWindow: 256000\n            maxTokens: 256000\n            input: [text, image]\n          - id: doubao-seed-2.1-turbo\n            name: Doubao Seed 2.1 Turbo (Agent Plan)\n            contextWindow: 256000\n            maxTokens: 256000\n            input: [text, image]\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-plugins/ark-plan-api/cordis.patch.yml:102-110](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/cordis.patch.yml#L102-L110)\n\nCoding Plan 引用与 endpoint\n\n```text\n      # --- Coding Plan (cn-beijing) ----------------------------------------\n      ark-coding-plan-cn:\n        displayName: Ark Coding Plan\n        apiKeyEnv: ARK_CODING_PLAN_CN_API_KEY\n        api: anthropic-messages\n        baseURL: https://ark.cn-beijing.volces.com/api/coding\n        models:\n          - id: doubao-seed-2.1-pro\n            name: Doubao Seed 2.1 Pro (Coding Plan)\n```\n\n**依据 3 · 源码核查**：[dsh-plugins/ark-plan-api/README.md:45-57](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md#L45-L57)\n\n作者列出的区域和协议\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Providers / 提供的模型路由\n\n| Route ID | Purpose / 用途 | Base URL | API Key Env |\n|---|---|---|---|\n| `ark-agent-plan-cn` | Agent Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/plan` | `ARK_AGENT_PLAN_CN_API_KEY` |\n| `ark-coding-plan-cn` | Coding Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/coding` | `ARK_CODING_PLAN_CN_API_KEY` |\n| `ark-coding-plan-byteplus` | Coding Plan (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/coding` | `ARK_CODING_PLAN_BYTEPLUS_API_KEY` |\n| `ark-cn` | Postpaid API 后付费 (cn-beijing) | `https://ark.cn-beijing.volces.com/api/v3/compatible` | `ARK_CN_API_KEY` |\n| `ark-byteplus` | Postpaid API 后付费 (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/v3/compatible` | `ARK_BYTEPLUS_API_KEY` |\n\nDefault wire protocol is the Anthropic Messages API. Base URLs intentionally omit the `/v1` suffix — pi-ai hands `baseURL` straight to the Anthropic SDK, which appends `/v1/messages`.\n\n默认走 Anthropic Messages 协议。`baseURL` 已省略 `/v1` 后缀，pi-ai 会将其直接传给 Anthropic SDK，由 SDK 拼接 `/v1/messages`。\n```\n\n</details>\n\n#### 缺口\n\n- 未挂载或调用真实账号\n  **影响**：无法证实当前目录模型或工具和图像能力\n  **进一步探讨**：先核对制品和宿主，再测试可控账号\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 配置能支持哪些结论？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n固定提交的子树只有许可证、README、清单和补丁，清单所指 index.js 缺失。补丁明确插入裸包行并改写 llm-pi-ai 配置，可以审查声明式映射，但不能把固定 checkout 当作完整可运行制品。补丁作者注释说明目标 row 的 config 会整块替换，假定原 row 未配置；多个同类补丁是否覆盖取决于组合规则，需读回宿主最终配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-plugins/ark-plan-api/package.json:1-27](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/package.json#L1-L27)\n\n声明载体与 bundle\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n{\n  \"name\": \"@volcengine/ark-plan-api\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Volcengine Ark provider plugin for DeepSeek Harness (DSH): registers Agent Plan, Coding Plan, and postpaid routes on the native pi-ai adapter so Ark models appear in the model picker.\",\n  \"type\": \"module\",\n  \"license\": \"Apache-2.0\",\n  \"author\": \"Beijing Volcano Engine Technology Co., Ltd.\",\n  \"homepage\": \"https://www.volcengine.com/product/ark\",\n  \"main\": \"./index.js\",\n  \"keywords\": [\n    \"deepseek-harness\",\n    \"dsh\",\n    \"dsh-plugin\",\n    \"dsh-bundle\",\n    \"cordis-plugin\",\n    \"ark\",\n    \"volcengine\",\n    \"llm-provider\"\n  ],\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24\"\n  },\n  \"dsh\": {\n    \"plugin\": true,\n    \"kind\": \"server\",\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-plugins/ark-plan-api/package.json:43-53](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/package.json#L43-L53)\n\n发布文件和导出均指 index.js\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"files\": [\n    \"index.js\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"LICENSE\"\n  ],\n  \"exports\": {\n    \".\": \"./index.js\",\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-plugins/ark-plan-api/cordis.patch.yml:25-42](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/cordis.patch.yml#L25-L42)\n\n注释和实际目标行\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n# A row patch replaces the whole `config` of the targeted row; dsh-base mounts\n# `llm-pi-ai` with no config, so restating only `providers` here is safe.\n#\n# The leading `insert` adds this bundle's own inert carrier row (name:\n# '@volcengine/ark-plan-api', whose index.js exports name/apply and does nothing)\n# so the bundle owns a Loader entry with a live root fiber — that is what makes\n# it appear in Settings › Plugins › Plugin list (the host plugin-inventory\n# enumerates Loader entries). It does not change provider behaviour: the\n# providers are still injected via the `llm-pi-ai` row patch below.\n# ============================================================================\n\n- insert:\n    - id: '@volcengine/ark-plan-api'\n      name: '@volcengine/ark-plan-api'\n\n- id: llm-pi-ai\n  config:\n    providers:\n```\n\n</details>\n\n**依据 4 · 源码核查**：[dsh-plugins/ark-plan-api/cordis.patch.yml:45-65](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/cordis.patch.yml#L45-L65)\n\n静态模型元数据\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n      ark-agent-plan-cn:\n        displayName: Ark Agent Plan\n        apiKeyEnv: ARK_AGENT_PLAN_CN_API_KEY\n        api: anthropic-messages\n        baseURL: https://ark.cn-beijing.volces.com/api/plan\n        models:\n          - id: doubao-seed-evolving\n            name: Doubao Seed Evolving (Agent Plan)\n            contextWindow: 1024000\n            maxTokens: 256000\n            input: [text, image]\n          - id: doubao-seed-2.1-pro\n            name: Doubao Seed 2.1 Pro (Agent Plan)\n            contextWindow: 256000\n            maxTokens: 256000\n            input: [text, image]\n          - id: doubao-seed-2.1-turbo\n            name: Doubao Seed 2.1 Turbo (Agent Plan)\n            contextWindow: 256000\n            maxTokens: 256000\n            input: [text, image]\n```\n\n</details>\n\n#### 缺口\n\n- 未取得固定提交对应发行物、载体和宿主组合\n  **影响**：不能确认启动及与既有路由的共存\n  **进一步探讨**：校验制品包含导出，离线读回不同补丁次序的配置\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何验证采用？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n先确认安装制品、Node 和宿主 pi-ai。按实际地区和计划选用隔离凭据，检查生成配置中的 endpoint 及命名空间，再尝试一个获授权小请求。首次有包与账号配置，持续用量按所选计划或后付费服务计，实际价格、可用性和退路仍待验证。若目标配置被覆盖或凭据指向不明，保留原适配器与手工配置。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-plugins/ark-plan-api/package.json:20-28](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/package.json#L20-L28)\n\nNode 与 bundle 声明\n\n```text\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24\"\n  },\n  \"dsh\": {\n    \"plugin\": true,\n    \"kind\": \"server\",\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n```\n\n**依据 2 · 源码核查**：[dsh-plugins/ark-plan-api/README.md:15-43](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md#L15-L43)\n\n作者安装路径与重启\n\n<details>\n<summary>查看原文（29行）</summary>\n\n````text\n## Install / 安装\n\n### From npm (recommended / 推荐)\n\n```sh\nnpx -y @deepseek-ai/dsh plugin --profile web add @volcengine/ark-plan-api\n```\n\n### From GitHub Release\n\n```sh\nnpx -y @deepseek-ai/dsh plugin --profile web add https://github.com/volcengine/ark-cli/releases/download/dsh-plugins%2Fv0.1.0/ark-plan-api.tgz\n```\n\n### Via awesome-dsh-plugin registry\n\n```sh\nnpx -y @deepseek-ai/dsh plugin --profile web add volcengine/ark-cli#ark-plan-api\n```\n\n### From a local clone (development / 开发用)\n\n```sh\nnpx -y @deepseek-ai/dsh plugin --profile web add ./dsh-plugins/ark-plan-api\n```\n\nRestart DSH after install, then open **Settings → Models**, pick an Ark provider and paste your API key. Each route reads its key from a separate env var (see table below); the Models UI writes the key to the correct name automatically.\n\n安装后重启 DSH，打开 **Settings → Models**，选择 Ark provider 并粘贴 API Key。每条路由从独立的环境变量读取密钥（见下表），Models 设置页会自动写入对应变量。\n````\n\n</details>\n\n**依据 3 · 源码核查**：[dsh-plugins/ark-plan-api/README.md:45-63](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md#L45-L63)\n\n不同地区、模式和凭据\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n## Providers / 提供的模型路由\n\n| Route ID | Purpose / 用途 | Base URL | API Key Env |\n|---|---|---|---|\n| `ark-agent-plan-cn` | Agent Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/plan` | `ARK_AGENT_PLAN_CN_API_KEY` |\n| `ark-coding-plan-cn` | Coding Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/coding` | `ARK_CODING_PLAN_CN_API_KEY` |\n| `ark-coding-plan-byteplus` | Coding Plan (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/coding` | `ARK_CODING_PLAN_BYTEPLUS_API_KEY` |\n| `ark-cn` | Postpaid API 后付费 (cn-beijing) | `https://ark.cn-beijing.volces.com/api/v3/compatible` | `ARK_CN_API_KEY` |\n| `ark-byteplus` | Postpaid API 后付费 (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/v3/compatible` | `ARK_BYTEPLUS_API_KEY` |\n\nDefault wire protocol is the Anthropic Messages API. Base URLs intentionally omit the `/v1` suffix — pi-ai hands `baseURL` straight to the Anthropic SDK, which appends `/v1/messages`.\n\n默认走 Anthropic Messages 协议。`baseURL` 已省略 `/v1` 后缀，pi-ai 会将其直接传给 Anthropic SDK，由 SDK 拼接 `/v1/messages`。\n\n## Requirements / 前置条件\n\n- DSH ≥ 0.1.0\n- Node.js ≥ 22.19.0 (ships with DSH)\n- A Volcengine Ark API key with access to the corresponding endpoint\n```\n\n</details>\n\n#### 缺口\n\n- 未核对价格、账号、停用或真实包\n  **影响**：无法量化成本或兼容\n  **进一步探讨**：在独立 profile 先进行无钥匙组合检查\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样减少路由误选？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可给选择器增加实际地区、计划与后付费归类以及凭据引用状态，帮助用户在调用前发现同名模型的计费区别。先以当前固定配置为基线，对照多地区同模型任务，记录误选、额外时间与授权失败。若误选没有下降或提示造成错误归因，撤回。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[dsh-plugins/ark-plan-api/README.md:45-57](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/README.md#L45-L57)\n\n同类服务分布不同地区\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## Providers / 提供的模型路由\n\n| Route ID | Purpose / 用途 | Base URL | API Key Env |\n|---|---|---|---|\n| `ark-agent-plan-cn` | Agent Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/plan` | `ARK_AGENT_PLAN_CN_API_KEY` |\n| `ark-coding-plan-cn` | Coding Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/coding` | `ARK_CODING_PLAN_CN_API_KEY` |\n| `ark-coding-plan-byteplus` | Coding Plan (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/coding` | `ARK_CODING_PLAN_BYTEPLUS_API_KEY` |\n| `ark-cn` | Postpaid API 后付费 (cn-beijing) | `https://ark.cn-beijing.volces.com/api/v3/compatible` | `ARK_CN_API_KEY` |\n| `ark-byteplus` | Postpaid API 后付费 (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/v3/compatible` | `ARK_BYTEPLUS_API_KEY` |\n\nDefault wire protocol is the Anthropic Messages API. Base URLs intentionally omit the `/v1` suffix — pi-ai hands `baseURL` straight to the Anthropic SDK, which appends `/v1/messages`.\n\n默认走 Anthropic Messages 协议。`baseURL` 已省略 `/v1` 后缀，pi-ai 会将其直接传给 Anthropic SDK，由 SDK 拼接 `/v1/messages`。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[dsh-plugins/ark-plan-api/cordis.patch.yml:44-55](https://github.com/volcengine/ark-cli/blob/b84d1c02c3e3dc024b1b927f37dd39858053ea82/dsh-plugins/ark-plan-api/cordis.patch.yml#L44-L55)\n\n选项中已有路由和模型描述\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n      # --- Agent Plan (cn-beijing) -----------------------------------------\n      ark-agent-plan-cn:\n        displayName: Ark Agent Plan\n        apiKeyEnv: ARK_AGENT_PLAN_CN_API_KEY\n        api: anthropic-messages\n        baseURL: https://ark.cn-beijing.volces.com/api/plan\n        models:\n          - id: doubao-seed-evolving\n            name: Doubao Seed Evolving (Agent Plan)\n            contextWindow: 1024000\n            maxTokens: 256000\n            input: [text, image]\n```\n\n</details>\n\n#### 缺口\n\n- 未核对宿主当前模型选择器展示\n  **影响**：可能已展示部分信息\n  **进一步探讨**：先检查实际 UI 再做对照\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：dsh-plugins/ark-plan-api；内容摘要：ea5a41146a5f4b80e88bd157850583988ea3f255e09f2b7668ff43a66b3e070a。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 67 | — | — | 561 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 方舟路由配置 | 选择地区和服务 | 需要完整制品、宿主和权限 |\n\n## 工程亮点\n\n[Q01](#research-q01) 复用共享适配器，将变化限定在提供方配置。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 dsh-plugins/ark-plan-api/README.md、dsh-plugins/ark-plan-api/cordis.patch.yml、dsh-plugins/ark-plan-api/package.json 及固定范围 inventory；组件：dsh-plugins/ark-plan-api。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定子组件的清单和补丁，Git 树无声明载体。未执行目标。\n- 下一步：核对正式制品、宿主组合、实际端点及停用。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-03/volcengine--ark-cli--dsh-plugins-ark-plan-api/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"volcengine/ark-cli\",\n  \"revision\": \"b84d1c02c3e3dc024b1b927f37dd39858053ea82\",\n  \"component\": \"dsh-plugins/ark-plan-api\",\n  \"inspected_paths\": [\n    \"dsh-plugins/ark-plan-api/README.md\",\n    \"dsh-plugins/ark-plan-api/package.json\",\n    \"README.md\",\n    \"dsh-plugins/ark-plan-api/cordis.patch.yml\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"Ark Plan API 的固定补丁提供什么，哪些运行行为仍待查？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\",\n          \"mechanism\"\n        ],\n        \"question\": \"方舟路由怎样配置？\",\n        \"answer\": \"已有方舟相应计划或后付费凭据的用户，可把模型接入 DSH 原生选择流程。固定补丁将各路由配置送入 llm-pi-ai，给不同服务及区域独立凭据引用。代表 Agent Plan 与 Coding Plan 都以 anthropic-messages 声明协议，模型列表含配置的窗口与输入类型。增量是预置映射及模型目录，HTTP 和流式实现依赖宿主适配器。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n            \"line_start\": 36,\n            \"line_end\": 65,\n            \"observation\": \"载体及 Agent Plan 配置\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n            \"line_start\": 102,\n            \"line_end\": 110,\n            \"observation\": \"Coding Plan 引用与 endpoint\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/README.md\",\n            \"line_start\": 45,\n            \"line_end\": 57,\n            \"observation\": \"作者列出的区域和协议\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未挂载或调用真实账号\",\n            \"impact\": \"无法证实当前目录模型或工具和图像能力\",\n            \"next_step\": \"先核对制品和宿主，再测试可控账号\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"配置能支持哪些结论？\",\n        \"answer\": \"固定提交的子树只有许可证、README、清单和补丁，清单所指 index.js 缺失。补丁明确插入裸包行并改写 llm-pi-ai 配置，可以审查声明式映射，但不能把固定 checkout 当作完整可运行制品。补丁作者注释说明目标 row 的 config 会整块替换，假定原 row 未配置；多个同类补丁是否覆盖取决于组合规则，需读回宿主最终配置。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/package.json\",\n            \"line_start\": 1,\n            \"line_end\": 27,\n            \"observation\": \"声明载体与 bundle\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/package.json\",\n            \"line_start\": 43,\n            \"line_end\": 53,\n            \"observation\": \"发布文件和导出均指 index.js\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n            \"line_start\": 25,\n            \"line_end\": 42,\n            \"observation\": \"注释和实际目标行\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n            \"line_start\": 45,\n            \"line_end\": 65,\n            \"observation\": \"静态模型元数据\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未取得固定提交对应发行物、载体和宿主组合\",\n            \"impact\": \"不能确认启动及与既有路由的共存\",\n            \"next_step\": \"校验制品包含导出，离线读回不同补丁次序的配置\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"如何验证采用？\",\n        \"answer\": \"先确认安装制品、Node 和宿主 pi-ai。按实际地区和计划选用隔离凭据，检查生成配置中的 endpoint 及命名空间，再尝试一个获授权小请求。首次有包与账号配置，持续用量按所选计划或后付费服务计，实际价格、可用性和退路仍待验证。若目标配置被覆盖或凭据指向不明，保留原适配器与手工配置。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/package.json\",\n            \"line_start\": 20,\n            \"line_end\": 28,\n            \"observation\": \"Node 与 bundle 声明\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/README.md\",\n            \"line_start\": 15,\n            \"line_end\": 43,\n            \"observation\": \"作者安装路径与重启\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/README.md\",\n            \"line_start\": 45,\n            \"line_end\": 63,\n            \"observation\": \"不同地区、模式和凭据\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核对价格、账号、停用或真实包\",\n            \"impact\": \"无法量化成本或兼容\",\n            \"next_step\": \"在独立 profile 先进行无钥匙组合检查\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"怎样减少路由误选？\",\n        \"answer\": \"可给选择器增加实际地区、计划与后付费归类以及凭据引用状态，帮助用户在调用前发现同名模型的计费区别。先以当前固定配置为基线，对照多地区同模型任务，记录误选、额外时间与授权失败。若误选没有下降或提示造成错误归因，撤回。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/README.md\",\n            \"line_start\": 45,\n            \"line_end\": 57,\n            \"observation\": \"同类服务分布不同地区\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n            \"line_start\": 44,\n            \"line_end\": 55,\n            \"observation\": \"选项中已有路由和模型描述\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核对宿主当前模型选择器展示\",\n            \"impact\": \"可能已展示部分信息\",\n            \"next_step\": \"先检查实际 UI 再做对照\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"dsh-plugins/ark-plan-api/README.md\",\n      \"content\": \"# @volcengine/ark-plan-api\\n\\nA [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) cordis plugin that registers Volcengine Ark model provider routes on the native `llm-pi-ai` adapter. After install and an API key, Ark Agent Plan, Coding Plan and postpaid models appear directly in DSH's model picker — no extra configuration beyond pasting the key.\\n\\n火山方舟模型路由插件。在 DSH 原生模型选择器中注册方舟 Agent Plan、Coding Plan 与后付费模型路由；安装后填入 API Key 即可使用，无需额外配置。\\n\\n## Features / 功能\\n\\n- **Agent Plan** — `doubao-seed-evolving`, `doubao-seed-2.1-pro`, `deepseek-v4-pro` and more via the Agent Plan endpoint.\\n- **Coding Plan** — Coding-optimized models for both cn-beijing and BytePlus regions.\\n- **Postpaid (后付费)** — Direct pay-as-you-go access to Ark foundation models.\\n- **Native picker integration** — All providers show up alongside built-in ones in **Settings → Models**, no model IDs to memorize.\\n- **Anthropic Messages wire protocol** — Uses the same Messages API shape DSH uses for Anthropic, so tool use, vision and streaming work out of the box.\\n\\n## Install / 安装\\n\\n### From npm (recommended / 推荐)\\n\\n```sh\\nnpx -y @deepseek-ai/dsh plugin --profile web add @volcengine/ark-plan-api\\n```\\n\\n### From GitHub Release\\n\\n```sh\\nnpx -y @deepseek-ai/dsh plugin --profile web add https://github.com/volcengine/ark-cli/releases/download/dsh-plugins%2Fv0.1.0/ark-plan-api.tgz\\n```\\n\\n### Via awesome-dsh-plugin registry\\n\\n```sh\\nnpx -y @deepseek-ai/dsh plugin --profile web add volcengine/ark-cli#ark-plan-api\\n```\\n\\n### From a local clone (development / 开发用)\\n\\n```sh\\nnpx -y @deepseek-ai/dsh plugin --profile web add ./dsh-plugins/ark-plan-api\\n```\\n\\nRestart DSH after install, then open **Settings → Models**, pick an Ark provider and paste your API key. Each route reads its key from a separate env var (see table below); the Models UI writes the key to the correct name automatically.\\n\\n安装后重启 DSH，打开 **Settings → Models**，选择 Ark provider 并粘贴 API Key。每条路由从独立的环境变量读取密钥（见下表），Models 设置页会自动写入对应变量。\\n\\n## Providers / 提供的模型路由\\n\\n| Route ID | Purpose / 用途 | Base URL | API Key Env |\\n|---|---|---|---|\\n| `ark-agent-plan-cn` | Agent Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/plan` | `ARK_AGENT_PLAN_CN_API_KEY` |\\n| `ark-coding-plan-cn` | Coding Plan (cn-beijing) | `https://ark.cn-beijing.volces.com/api/coding` | `ARK_CODING_PLAN_CN_API_KEY` |\\n| `ark-coding-plan-byteplus` | Coding Plan (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/coding` | `ARK_CODING_PLAN_BYTEPLUS_API_KEY` |\\n| `ark-cn` | Postpaid API 后付费 (cn-beijing) | `https://ark.cn-beijing.volces.com/api/v3/compatible` | `ARK_CN_API_KEY` |\\n| `ark-byteplus` | Postpaid API 后付费 (BytePlus/海外) | `https://ark.ap-southeast.bytepluses.com/api/v3/compatible` | `ARK_BYTEPLUS_API_KEY` |\\n\\nDefault wire protocol is the Anthropic Messages API. Base URLs intentionally omit the `/v1` suffix — pi-ai hands `baseURL` straight to the Anthropic SDK, which appends `/v1/messages`.\\n\\n默认走 Anthropic Messages 协议。`baseURL` 已省略 `/v1` 后缀，pi-ai 会将其直接传给 Anthropic SDK，由 SDK 拼接 `/v1/messages`。\\n\\n## Requirements / 前置条件\\n\\n- DSH ≥ 0.1.0\\n- Node.js ≥ 22.19.0 (ships with DSH)\\n- A Volcengine Ark API key with access to the corresponding endpoint\\n\\n## License\\n\\nApache-2.0 © 2025-2026 Beijing Volcano Engine Technology Co., Ltd.\\n\"\n    },\n    {\n      \"path\": \"dsh-plugins/ark-plan-api/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@volcengine/ark-plan-api\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"Volcengine Ark provider plugin for DeepSeek Harness (DSH): registers Agent Plan, Coding Plan, and postpaid routes on the native pi-ai adapter so Ark models appear in the model picker.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"license\\\": \\\"Apache-2.0\\\",\\n  \\\"author\\\": \\\"Beijing Volcano Engine Technology Co., Ltd.\\\",\\n  \\\"homepage\\\": \\\"https://www.volcengine.com/product/ark\\\",\\n  \\\"main\\\": \\\"./index.js\\\",\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"dsh-bundle\\\",\\n    \\\"cordis-plugin\\\",\\n    \\\"ark\\\",\\n    \\\"volcengine\\\",\\n    \\\"llm-provider\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"plugin\\\": true,\\n    \\\"kind\\\": \\\"server\\\",\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/volcengine/ark-cli.git\\\",\\n    \\\"directory\\\": \\\"dsh-plugins/ark-plan-api\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/cordis\\\": {\\n      \\\"optional\\\": true\\n    }\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"<div align=\\\"center\\\">\\n\\n# Ark CLI\\n\\n**给你的 AI Agent 赋予火山方舟的全部能力**\\n\\n[![npm](https://img.shields.io/npm/v/@volcengine/ark-cli?color=brightgreen&label=npm)](https://www.npmjs.com/package/@volcengine/ark-cli)\\n[![license](https://img.shields.io/badge/license-Apache--2.0-blue)](./LICENSE)\\n[![node](https://img.shields.io/badge/node-%3E%3D16-brightgreen)](https://nodejs.org)\\n\\n火山方舟模型、生成、多模态理解、Plan、精调、部署、用量、账单和诊断能力，都可以通过 Ark CLI + Skills 交给 Claude Code、OpenCode、Codex 等本地 Agent 调用。\\n\\n```shell\\nnpm i -g @volcengine/ark-cli@latest\\n```\\n\\n</div>\\n\\n---\\n\\n## Ark CLI 能做什么\\n\\n让你的 AI Agent 具备这些方舟能力，并能在复杂任务中组合调用：\\n\\n- **模型调用**：文本对话、多模态输入、流式输出、多轮接续\\n- **图片 / 视频生成**：Seedream 生图、Seedance 生视频，产物自动下载到本地\\n- **多模态理解**：OCR、视频总结、语音转写、字幕打轴、文档字段抽取\\n- **Plan 管理**：Agent Plan / Coding Plan 查询、购买、续费、团队席位管理\\n- **Agent 接入**：安装 Ark Skills，配置 Harness / MCP，让本地 Agent 调用方舟能力\\n- **模型生产**：精调任务、自定义模型、训练状态跟踪\\n- **服务上线**：基础模型或自定义模型一键部署为 Endpoint\\n- **治理闭环**：Usage、Billing、Doctor、监控指标和错误码诊断\\n\\n## 为什么需要 Ark CLI\\n\\nArk CLI 不是让你记住更多命令，而是把火山方舟 MaaS 平台能力变成 Agent 可以调用的工具箱。\\n\\n```text\\n消费链路:\\n选择模型\\n  -> 开通 Plan 或部署模型\\n  -> 接入本地 Agent / Harness\\n  -> 调用、理解、生成\\n  -> 查看用量、账单、监控和诊断结果\\n\\n生产链路:\\n准备数据\\n  -> 创建精调任务\\n  -> 得到自定义模型\\n  -> 部署成 Endpoint\\n  -> 回到消费链路继续使用\\n```\\n\\n## 安装与初始化\\n\\n```shell\\n# 1. 安装 CLI\\nnpm i -g @volcengine/ark-cli@latest\\narkcli --version\\n\\n# 2. 登录火山方舟\\narkcli auth login volc-sso\\narkcli auth status\\n\\n# 3. 同步 Ark Skills 到本地 Agent\\narkcli +connect\\n```\\n\\n如只需 CLI，可在本次安装时跳过 Skills 下载和自动安装：\\n\\n```shell\\nARKCLI_SKIP_SKILLS=1 npm i -g @volcengine/ark-cli@latest\\n```\\n\\n该环境变量统一适用于所有产品的内外网 npm 安装，只有值为 `1` 时生效；默认行为不变。CLI 二进制仍正常下载、校验、安装和初始化，包内已有的 Skills 内容不会被移除。开关不保存配置、不删除已有 Skills，之后仍可手动运行 `arkcli +connect`。`ARKCLI_SKIP_POSTINSTALL=1` 会跳过整个安装钩子，不能用于只跳过 Skills。\\n\\n无浏览器环境，例如远程开发机、CI 或 Agent 沙箱：\\n\\n```shell\\narkcli auth login --no-browser\\narkcli auth login --no-browser --code <授权码>\\n```\\n\\n## 一次完整任务可以这样开始\\n\\n你可以直接告诉 Agent 一个目标：\\n\\n```text\\n帮我选择一个适合图文理解的模型，配置到本地 Agent，\\n然后用它总结一段视频，并告诉我本月用了多少 token。\\n```\\n\\nAgent 可以通过 Ark CLI 串起完整流程：\\n\\n```text\\narkcli models search\\n  -> arkcli plans get / arkcli plans model-list\\n  -> arkcli +connect / arkcli helper configure\\n  -> arkcli +understand video-summary\\n  -> arkcli usage stats / arkcli billing list\\n```\\n\\n用户描述目标，Agent 负责选择命令、调用方舟能力、汇总结果。\\n\\n## 常用任务\\n\\n### 选择并调用模型\\n\\n```shell\\narkcli +chat \\\"总结一下 RAG 的核心思想\\\"\\n\\narkcli +chat --input @photo.jpg \\\"描述这张图片\\\"\\n\\narkcli +understand video-summary --input @demo.mp4 \\\"按章节总结这个视频\\\"\\n\\narkcli +gen \\\"生成一张未来城市海报\\\"\\n```\\n\\n### 开通和管理 Plan\\n\\n```shell\\n# 查看当前账号持有哪些套餐\\narkcli plans get\\n\\n# 查看 Plan 支持哪些模型\\narkcli plans model-list --plan agent-plan\\n\\n# 查看团队版席位\\narkcli plans team seat-list --plan agent-plan-team\\n\\n# 查看本机 Agent 上 Plan 相关能力状态\\narkcli plans harness-status\\n\\n# 购买或续费前先查看参数\\narkcli plans buy --help\\narkcli plans renew --help\\n```\\n\\n`plans buy` / `plans renew` 是计费操作，Ark CLI 会先展示协议和确认步骤，不会默认直接扣款。\\n\\n### 接入方舟服务能力\\n\\n`+connect` 安装 Ark Skills，让 Agent 知道有哪些方舟任务可以做。`helper` 配置 Harness / MCP / Plan，让 Agent 真正接上模型和工具能力。\\n\\n```shell\\n# 查看会检测到哪些本地 Agent\\narkcli +connect list\\n\\n# 安装 Ark Skills\\narkcli +connect\\n\\n# 清理已注入的 Ark Skills\\narkcli +connect uninstall\\n\\n# 查看 Harness / Agent 配置状态\\narkcli helper list\\n\\n# 给当前 Agent 注入 MCP 工具能力\\narkcli helper mcp\\n\\n# 配置指定 Harness，并同步注入 MCP\\narkcli helper configure codex --with-mcp\\n```\\n\\n`arkcli +connect uninstall` 会清理注入到本地 Agent 的 `ark-` / `arkcli-` 前缀 Skills，适合想恢复干净 Agent 环境、或担心 Skills 过多影响 Agent 路由时使用。它不会卸载 `arkcli` 命令本身。\\n\\n### 生产模型\\n\\n```shell\\narkcli train finetune --help\\narkcli train finetune capability get --model <model> --version <version>\\narkcli train finetune create --help\\narkcli train finetune watch <job-id>\\n```\\n\\n### 上线服务\\n\\n```shell\\narkcli +deploy --name my-endpoint --model doubao-seed-2-0-pro-260215 --dry-run\\narkcli +deploy --name my-endpoint --model doubao-seed-2-0-pro-260215\\narkcli infer endpoint list\\narkcli infer endpoint get <endpoint-id>\\n```\\n\\n### 管成本、状态和健康\\n\\n```shell\\narkcli usage plan\\narkcli usage stats --start 2026-07-01 --mine\\narkcli billing list --start 2026-07\\narkcli billing list --start 2026-07 --endpoint ep-xxx\\n\\narkcli doctor\\narkcli doctor model <model-name>\\narkcli doctor infer-endpoint <endpoint-id>\\narkcli doctor metrics request.qpm\\narkcli doctor error ContentRiskBlocked\\n```\\n\\n`doctor` 默认是只读诊断，不会修改资源。需要修复时会通过确认流程执行。\\n\\n## 命令入口\\n\\n| 任务 | 命令 |\\n|---|---|\\n| 对话和多模态推理 | `arkcli +chat` |\\n| 图片 / 视频生成 | `arkcli +gen` |\\n| OCR、视频总结、语音转写、文档抽取 | `arkcli +understand` |\\n| 模型查询 | `arkcli models` |\\n| Plan / 套餐管理 | `arkcli plans` |\\n| Agent 接入和 Harness 配置 | `arkcli +connect`, `arkcli helper` |\\n| 精调任务 | `arkcli train finetune` |\\n| 一键部署 Endpoint | `arkcli +deploy` |\\n| Endpoint 管理 | `arkcli infer endpoint` |\\n| 用量查询 | `arkcli usage` |\\n| 账单查询 | `arkcli billing` |\\n| 诊断和自助排障 | `arkcli doctor` |\\n\\n每个命令都自带帮助：\\n\\n```shell\\narkcli +chat --help\\narkcli +gen --help\\narkcli +understand --help\\narkcli +deploy --help\\narkcli plans --help\\narkcli doctor --help\\n```\\n\\n## 认证\\n\\n推荐使用火山 SSO：\\n\\n```shell\\narkcli auth login volc-sso\\n```\\n\\n登录后 Ark CLI 会自动完成身份、profile 和 API Key 配置。你通常不需要手动复制密钥。\\n\\n```shell\\narkcli auth status\\narkcli auth apikey\\narkcli auth logout\\n```\\n\\n## 配置\\n\\n```shell\\n# 查看当前 profile\\narkcli profile show\\n\\n# 列出所有 profile\\narkcli profile list\\n\\n# 切换 profile\\narkcli profile use <profile-name>\\n```\\n\\n更多 profile 管理能力可查看 `arkcli profile --help`。\\n\\n## AI Agent Skills\\n\\n本仓库的 [`skills/`](https://github.com/volcengine/ark-cli/tree/main/skills) 收录了 Ark CLI 内置的 Agent Skills。执行：\\n\\n```shell\\narkcli +connect\\n```\\n\\nArk CLI 会把这些 Skills 安装到本机 Agent，使 Agent 能通过自然语言调用火山方舟能力，包括对话、多模态理解、图片视频生成、模型查询、Plan 管理、Endpoint 部署、精调、用量、账单和诊断。\\n\\n## 用户交流群\\n\\n扫码加入 Ark CLI 飞书用户交流群，获取使用答疑、问题排查、Bug 反馈和使用经验交流支持。你可以在群里咨询安装、登录、模型调用、Skill 使用、版本升级等问题，也欢迎反馈 GitHub Issues 中未覆盖的异常。\\n\\n请勿在群内发送 API Key、AK/SK、Token 等敏感信息。对于可稳定复现的 Bug，建议同步提交 GitHub Issue，便于跟踪和修复。\\n\\n<img src=\\\"./assets/lark-user-group.png\\\" width=\\\"360\\\" alt=\\\"Ark CLI 飞书用户交流群二维码\\\" />\\n\\n## 链接\\n\\n- 火山方舟：<https://www.volcengine.com/product/ark>\\n- npm：<https://www.npmjs.com/package/@volcengine/ark-cli>\\n- GitHub Releases：<https://github.com/volcengine/ark-cli/releases>\\n- 内置 Skills：<https://github.com/volcengine/ark-cli/tree/main/skills>\\n\\n## Changelog\\n\\nRelease notes live in [GitHub Releases](https://github.com/volcengine/ark-cli/releases).\\n\\n## License\\n\\n[Apache-2.0](./LICENSE)\\n\"\n    },\n    {\n      \"path\": \"dsh-plugins/ark-plan-api/cordis.patch.yml\",\n      \"content\": \"# Copyright (c) 2025-2026 Beijing Volcano Engine Technology Co., Ltd.\\n# SPDX-License-Identifier: Apache-2.0\\n# ============================================================================\\n# ark-plan-api — DeepSeek Harness bundle patch\\n#\\n# Registers Volcengine Ark provider routes on the shared pi-ai adapter\\n# (`@deepseek-ai/dsh-llm-pi-ai`, mounted dormant by dsh-base). Because these\\n# providers are supplied here as the settings *base* layer, they show up in the\\n# native model picker the moment this bundle is composed — the user only has to\\n# add an API key (the web Models page writes it to the credential name each\\n# route references via `apiKeyEnv`). Anything the user later edits in\\n# `settings.yaml` deep-merges on top of these defaults per provider key.\\n#\\n# Provider routes (from the product spec):\\n#   ark-agent-plan-cn        Agent Plan (cn-beijing)        https://ark.cn-beijing.volces.com/api/plan\\n#   ark-coding-plan-cn       Coding Plan (cn-beijing)       https://ark.cn-beijing.volces.com/api/coding\\n#   ark-coding-plan-byteplus Coding Plan (BytePlus/海外)    https://ark.ap-southeast.bytepluses.com/api/coding\\n#   ark-cn                   后付费 API (cn-beijing)         https://ark.cn-beijing.volces.com/api/v3/compatible\\n#   ark-byteplus             后付费 API 海外 (BytePlus)      https://ark.ap-southeast.bytepluses.com/api/v3/compatible\\n#\\n# Default wire protocol is `anthropic-messages` (the Messages API). pi-ai hands\\n# `baseURL` straight to the Anthropic SDK, which appends `/v1/messages`, so the\\n# base URLs below intentionally omit the `/v1` suffix.\\n#\\n# A row patch replaces the whole `config` of the targeted row; dsh-base mounts\\n# `llm-pi-ai` with no config, so restating only `providers` here is safe.\\n#\\n# The leading `insert` adds this bundle's own inert carrier row (name:\\n# '@volcengine/ark-plan-api', whose index.js exports name/apply and does nothing)\\n# so the bundle owns a Loader entry with a live root fiber — that is what makes\\n# it appear in Settings › Plugins › Plugin list (the host plugin-inventory\\n# enumerates Loader entries). It does not change provider behaviour: the\\n# providers are still injected via the `llm-pi-ai` row patch below.\\n# ============================================================================\\n\\n- insert:\\n    - id: '@volcengine/ark-plan-api'\\n      name: '@volcengine/ark-plan-api'\\n\\n- id: llm-pi-ai\\n  config:\\n    providers:\\n\\n      # --- Agent Plan (cn-beijing) -----------------------------------------\\n      ark-agent-plan-cn:\\n        displayName: Ark Agent Plan\\n        apiKeyEnv: ARK_AGENT_PLAN_CN_API_KEY\\n        api: anthropic-messages\\n        baseURL: https://ark.cn-beijing.volces.com/api/plan\\n        models:\\n          - id: doubao-seed-evolving\\n            name: Doubao Seed Evolving (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-2.1-pro\\n            name: Doubao Seed 2.1 Pro (Agent Plan)\\n            contextWindow: 256000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-2.1-turbo\\n            name: Doubao Seed 2.1 Turbo (Agent Plan)\\n            contextWindow: 256000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-2.0-lite\\n            name: Doubao Seed 2.0 Lite (Agent Plan)\\n            contextWindow: 256000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: doubao-seed-2.0-mini\\n            name: Doubao Seed 2.0 Mini (Agent Plan)\\n            contextWindow: 256000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: glm-5.3\\n            name: GLM-5.3 (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 128000\\n            input: [text]\\n          - id: kimi-k3\\n            name: Kimi K3 (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: deepseek-v4-pro\\n            name: DeepSeek V4 Pro (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 384000\\n            input: [text]\\n          - id: minimax-m3\\n            name: MiniMax M3 (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: deepseek-v4-flash\\n            name: DeepSeek V4 Flash (Agent Plan)\\n            contextWindow: 1024000\\n            maxTokens: 384000\\n            input: [text]\\n\\n      # --- Coding Plan (cn-beijing) ----------------------------------------\\n      ark-coding-plan-cn:\\n        displayName: Ark Coding Plan\\n        apiKeyEnv: ARK_CODING_PLAN_CN_API_KEY\\n        api: anthropic-messages\\n        baseURL: https://ark.cn-beijing.volces.com/api/coding\\n        models:\\n          - id: doubao-seed-2.1-pro\\n            name: Doubao Seed 2.1 Pro (Coding Plan)\\n            contextWindow: 256000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-2.1-turbo\\n            name: Doubao Seed 2.1 Turbo (Coding Plan)\\n            contextWindow: 256000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-evolving\\n            name: Doubao Seed Evolving (Coding Plan)\\n            contextWindow: 1024000\\n            maxTokens: 256000\\n            input: [text, image]\\n          - id: doubao-seed-2.0-lite\\n            name: Doubao Seed 2.0 Lite (Coding Plan)\\n            contextWindow: 256000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: glm-5.3\\n            name: GLM-5.3 (Coding Plan)\\n            contextWindow: 1024000\\n            maxTokens: 128000\\n            input: [text]\\n          - id: deepseek-v4-pro\\n            name: DeepSeek V4 Pro (Coding Plan)\\n            contextWindow: 1024000\\n            maxTokens: 384000\\n            input: [text]\\n          - id: minimax-m3\\n            name: MiniMax M3 (Coding Plan)\\n            contextWindow: 1024000\\n            maxTokens: 128000\\n            input: [text, image]\\n          - id: deepseek-v4-flash\\n            name: DeepSeek V4 Flash (Coding Plan)\\n            contextWindow: 1024000\\n            maxTokens: 384000\\n            input: [text]\\n\\n      # --- Coding Plan (BytePlus / 海外) -----------------------------------\\n      # BytePlus base URLs mirror the cn-beijing layout on the ap-southeast\\n      # host; adjust if your BytePlus account exposes a different endpoint.\\n      ark-coding-plan-byteplus:\\n        displayName: Ark Coding Plan (BytePlus)\\n        apiKeyEnv: ARK_CODING_PLAN_BYTEPLUS_API_KEY\\n        api: anthropic-messages\\n        baseURL: https://ark.ap-southeast.bytepluses.com/api/coding\\n        models:\\n          - id: doubao-seed-2.1-turbo\\n            name: Doubao Seed 2.1 Turbo (Coding Plan BytePlus)\\n            contextWindow: 256000\\n            maxTokens: 65536\\n            input: [text, image]\\n          - id: doubao-seed-2.1-pro\\n            name: Doubao Seed 2.1 Pro (Coding Plan BytePlus)\\n            contextWindow: 256000\\n            maxTokens: 65536\\n            input: [text, image]\\n\\n      # --- 后付费 API (cn-beijing) ------------------------------------------\\n      ark-cn:\\n        displayName: Ark (后付费)\\n        apiKeyEnv: ARK_CN_API_KEY\\n        api: anthropic-messages\\n        baseURL: https://ark.cn-beijing.volces.com/api/v3/compatible\\n        models:\\n          - id: doubao-seed-2.1-pro\\n            name: Doubao Seed 2.1 Pro\\n            contextWindow: 256000\\n            maxTokens: 65536\\n            input: [text, image]\\n          - id: doubao-seed-2.1-turbo\\n            name: Doubao Seed 2.1 Turbo\\n            contextWindow: 256000\\n            maxTokens: 65536\\n            input: [text, image]\\n          - id: doubao-seed-evolving\\n            name: Doubao Seed Evolving\\n            contextWindow: 1024000\\n            maxTokens: 65536\\n            input: [text, image]\\n\\n      # --- 后付费 API 海外 (BytePlus) --------------------------------------\\n      ark-byteplus:\\n        displayName: Ark BytePlus (后付费)\\n        apiKeyEnv: ARK_BYTEPLUS_API_KEY\\n        api: anthropic-messages\\n        baseURL: https://ark.ap-southeast.bytepluses.com/api/v3/compatible\\n        models:\\n          - id: doubao-seed-2.1-turbo\\n            name: Doubao Seed 2.1 Turbo (BytePlus)\\n            contextWindow: 256000\\n            maxTokens: 65536\\n            input: [text, image]\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"b84d1c02c3e3dc024b1b927f37dd39858053ea82\",\n    \"component\": \"dsh-plugins/ark-plan-api\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"ea5a41146a5f4b80e88bd157850583988ea3f255e09f2b7668ff43a66b3e070a\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 67,\n        \"words\": 561\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "e87cbafe5b51358b3e1a8f614cd7fd5c36894bc616ea43b8e117343861be42e6"
+        }
+    },
+    "unavailable_artifacts": []
+}

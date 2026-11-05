@@ -1,0 +1,45 @@
+{
+    "repository": "Jueze-2019/dsh-redteam-mode",
+    "repository_id": 1364387461,
+    "captured_at": "2026-11-05T03:25:48.280Z",
+    "window_start": "2026-10-06T03:25:48.280Z",
+    "stars": 147,
+    "pushed_at": "2026-11-04T15:36:30Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d5303ca389f08f4407a543290ddcbded84852400",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-redteam-mode",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 4478,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-redteam-mode",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-13T16:11:03.962Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-redteam-mode",
+            "error": null,
+            "latest_version": "0.15.1",
+            "latest_published_at": "2026-10-28T04:43:08.034Z",
+            "latest_error": null
+        }
+    }
+}

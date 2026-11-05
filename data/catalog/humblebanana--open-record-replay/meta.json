@@ -1,0 +1,66 @@
+{
+    "repository": "humblebanana/open-record-replay",
+    "repository_id": 1276135867,
+    "captured_at": "2026-11-05T03:25:48.280Z",
+    "window_start": "2026-10-06T03:25:48.280Z",
+    "stars": 148,
+    "pushed_at": "2026-06-22T10:00:18Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahumblebanana%2Fopen-record-replay%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2692:2DFF9C:130B7C:14AA77:6AEBF77F and timestamp 2026-11-05 03:26:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahumblebanana%2Fopen-record-replay%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 26DE:BBF97:8E4BE1:982787:6AEBF77F and timestamp 2026-11-05 03:26:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahumblebanana%2Fopen-record-replay%20is%3Aissue%20created%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2738:2D0486:163312:17D91F:6AEBF780 and timestamp 2026-11-05 03:26:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahumblebanana%2Fopen-record-replay%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2772:BC075:91EE96:9BCC9C:6AEBF781 and timestamp 2026-11-05 03:26:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahumblebanana%2Fopen-record-replay%20is%3Aissue%20updated%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 27C4:2C252B:14AA21:165116:6AEBF782 and timestamp 2026-11-05 03:26:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d5303ca389f08f4407a543290ddcbded84852400",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "open-record-replay",
+        "captured_at": "2026-11-05T03:25:48.280Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 53,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/open-record-replay",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-06-23T06:23:54.210Z",
+            "captured_at": "2026-11-05T03:25:48.280Z",
+            "source_url": "https://registry.npmjs.org/open-record-replay",
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-06-23T06:50:35.001Z",
+            "latest_error": null
+        }
+    }
+}

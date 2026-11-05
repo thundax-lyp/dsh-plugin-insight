@@ -1,0 +1,66 @@
+{
+    "repository": "EternalNight996/memory-eternal",
+    "repository_id": 1351908966,
+    "captured_at": "2026-11-05T03:25:48.280Z",
+    "window_start": "2026-10-06T03:25:48.280Z",
+    "stars": 139,
+    "pushed_at": "2026-11-05T01:02:21Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AEternalNight996%2Fmemory-eternal%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 358A:399226:14F39C:169C72:6AEBF7AC and timestamp 2026-11-05 03:27:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AEternalNight996%2Fmemory-eternal%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 35E2:BCD72:9189F8:9B68FA:6AEBF7AD and timestamp 2026-11-05 03:27:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEternalNight996%2Fmemory-eternal%20is%3Aissue%20created%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3628:3B547B:13AF6F:1557F3:6AEBF7AE and timestamp 2026-11-05 03:27:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEternalNight996%2Fmemory-eternal%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3676:356C22:8F5B36:99410F:6AEBF7AF and timestamp 2026-11-05 03:27:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AEternalNight996%2Fmemory-eternal%20is%3Aissue%20updated%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 36E6:2C3294:14BF6E:166825:6AEBF7AF and timestamp 2026-11-05 03:27:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d5303ca389f08f4407a543290ddcbded84852400",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "memory-eternal",
+        "captured_at": "2026-11-03T06:53:49.722Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 13160,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/memory-eternal",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-31T02:31:12.761Z",
+            "captured_at": "2026-11-03T06:53:49.722Z",
+            "source_url": "https://registry.npmjs.org/memory-eternal",
+            "error": null,
+            "latest_version": "0.18.2",
+            "latest_published_at": "2026-10-26T12:39:13.213Z",
+            "latest_error": null
+        }
+    }
+}
