@@ -76,7 +76,6 @@
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
 | [dsh-visualize](#plugin-1333132287-root) | 在 DSH Web 中生成、修订和重放隔离交互卡片或页面，并提供图片与草稿桥接。 | 有限试用小规模非敏感解释/原型，核已知答案再扩大；正式计算或业务系统另验。 |
-| [dsh-weknora-archive](#plugin-1412897932-root) | 提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。 | 已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 在 WSL 中为 DSH 接入 Obscura 无头页面抓取、版本检查和 MCP 接线提示。 | 在隔离环境试非敏感公开网页，禁用私网和 eval；用静态请求或受控浏览器退出。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 让 WSL 中的 DSH Agent 搜索、读写 Windows Obsidian 笔记并打开桌面应用。 | [Q03](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q03) 先从复制库核路径、搜索与桌面打开。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
@@ -94,6 +93,7 @@
 | [Market Research Cockpit](#plugin-1303848201-root) | 聚合行情、板块、新闻及市场研究数据，提供看板和 MCP 工具。 | [Q04](../../plugins/thebiggavin--marketingdashboard/INSIGHT.md#research-q04) 仅作研究线索并核对原始数据、时间与字段；发现数据过期或指标变化时停止使用。 |
 | [MCP-for-Stata](#plugin-956330003-root) | 让宿主Agent调用本地Stata与数据/日志工具，保存来源快照和执行审计；默认保护、真实安装确认与研究结果验收须分别核查。 | 已有合法Stata与方法能力，匿名本地副本、不用unsafe安装；确认guard、目录、资源/timeout实际配置，按已知答案核结果再扩大，见[Q04](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q04)、[Q05](../../plugins/sepinetam--mcp-for-stata/INSIGHT.md#research-q05)。 |
 | [Memmy Agent](#plugin-1302496224-root) | 提供本地记忆服务、桌面及 CLI，并生成宿主适配以支持跨会话上下文。 | [Q05](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q05) 在隔离 profile 和非敏感项目先对照手工，检查模型和服务状态。 |
+| [Memory Eternal](#plugin-1351908966-root) | 跨会话沉淀和审阅知识卡，并提供核心记忆与用量账本 | [Q04](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q04) 以隔离 vault 和虚构数据验证审核、检索和核心注入。 |
 | [MemOS](#plugin-1014729376-root) | 为 Agent 提供记忆存储、检索及本地或云端接入的基础设施。 | 在隔离 profile 用低敏样例核对召回、捕获、外发与删除；出现错误或费用不明时关闭捕获并保留可核对原记录。 |
 | [MemSearch](#plugin-1153190876-root) | 面向 Markdown 知识库提供增量索引和语义加关键词混合搜索。 | [Q05](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q05) 在隔离 collection 先验报告并对照 grep；有失败或不能核对来源时回原文件。 |
 | [MemSearch DSH](#plugin-1153190876-plugins-dsh) | 为 DSH 提供会话摘要日记、按需召回 Skill 与候选评审入口。 | [Q05](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q05) 先在隔离项目核查日记、索引和原会话，失败时回原文。 |
@@ -115,6 +115,7 @@
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
+| [WeKnora 会话归档](#plugin-1412897932-root) | 将 DSH 会话摘要增量写入 WeKnora，并观察文档解析状态。 | [Q04](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q04) 测试先给已有库 ID 并关闭精炼。 |
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
 | [WSL Playwright 页面读取](#plugin-1381860363-root) | 在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。 | [Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。 |
 
@@ -1142,22 +1143,6 @@
 
 [查看完整分析](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1412897932-root"></a>
-
-## [dsh-weknora-archive](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md)
-
-
-
-> **用途**：已部署 WeKnora、希望把 DSH 对话沉淀为团队知识库的用户可用它按游标增量读取 DSH 会话，清洗并摘要后去重上传到 WeKnora，支持手动工具与定时归档；合格结果是只归档新增且符合筛选条件的会话，重复内容不重复写入，失败可定位并重试。详见[Q01](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q01)。
-
-> **亮点**：补齐 DSH 到 WeKnora 的增量写入链，将会话提取、摘要、指纹去重与上传串成一个可调度流程。它相对“人工导出会话、整理 Markdown 后上传，或只使用 WeKnora 检索而不自动写入”减少接线或重复操作，但未建立同条件效果优势。详见[Q03](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q03)。
-
-> **思考**：摘要会把模型判断引入档案，隐私过滤和去重指纹不能保证敏感内容不外发或语义重复被识别。这会影响贡献能否转化为端到端收益，需以故障注入和同条件对照改变判断。详见[Q04](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q04)。
-
-> **建议**：未来可探索：可在上传前增加可复核的字段级隐私清单与内容寻址回执，让删除、重放和来源追踪成为归档协议的一部分。该方向由现有贡献与限制推导，尚未实现；失败或恢复负担不改善即应否定。详见[Q08](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q08)。
-
-[查看完整分析](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1358313559-root"></a>
 
 ## [dsh-wsl-obscura](../../plugins/173787247--dsh-wsl-obscura/INSIGHT.md)
@@ -1429,6 +1414,22 @@
 > **建议**：[Q06](../../plugins/memtensor--memmy-agent/INSIGHT.md#research-q06) 对高影响记忆展示来源及确认时间并请求核对，须对照现有提示和过滤测漏用、误拦与成本。
 
 [查看完整分析](../../plugins/memtensor--memmy-agent/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1351908966-root"></a>
+
+## [Memory Eternal](../../plugins/eternalnight996--memory-eternal/INSIGHT.md)
+
+[![GitHub ★ 139](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=139&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EternalNight996/memory-eternal) [![npm 30d 13,160](https://img.shields.io/static/v1?label=npm+30d&message=13%2C160&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/memory-eternal) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/memory-eternal)
+
+> **用途**：开发者在 DSH 与其他 MCP 客户端之间反复交代项目知识。
+
+> **亮点**：[Q01](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q01) 本地知识库配合人工审核与用量观测。
+
+> **思考**：[Q03](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q03) 审核和本机存储均无法决定模型路由是否会接收对话与核心卡。
+
+> **建议**：[Q05](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q05) 审核后复用稳定项目约束可能减少重复输入，需计入审核及蒸馏开销。
+
+[查看完整分析](../../plugins/eternalnight996--memory-eternal/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1014729376-root"></a>
 
@@ -1765,6 +1766,22 @@
 > **建议**：假设为 ask 引用补充逐条裁剪标志与补读提示，可减少片段被当成完整证据的误判；对照现有 search/read 标志及人工补读，测错误、token 和时间，收益不足则否定。[Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1412897932-root"></a>
+
+## [WeKnora 会话归档](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md)
+
+
+
+> **用途**：希望把历史 DSH 会话用于内部检索的团队可评估归档。
+
+> **亮点**：[Q01](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q01) 把会话摘要和解析观察串联。
+
+> **思考**：[Q03](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q03) 未匹配库时 dry run 仍可创建知识库。
+
+> **建议**：[Q05](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q05) 验证预览的零写入条件。
+
+[查看完整分析](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1024118326-root"></a>
 

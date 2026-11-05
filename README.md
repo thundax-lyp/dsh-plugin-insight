@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 900](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=900&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 918](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=918&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -9,14 +9,6 @@
 ## [推荐尝试](data/views/columns/RECOMMENDED.md)
 
 > 看看插件能解决什么问题，以及试用前需要确认什么。
-
-- **[no-ai-style](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)** ｜ 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
-
-    **推荐理由**：适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。
-
-    **试用条件**：作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
-
-    [查看完整分析](data/plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
 - **[dsh-plugin-veriscope](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)** ｜ 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
 
@@ -34,13 +26,21 @@
 
     [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
 
+- **[Tokdash](data/plugins/jingbiaomei--tokdash/INSIGHT.md)** ｜ 本地 AI 编码工具用量与费用看板，汇总会话、模型、缓存用量及使用报告。
+
+    **推荐理由**：保存 DSH 会话日志并愿意核对计数的个人开发者可试用本地 Tokdash 回顾用量。相比人工翻日志，它按会话与模型汇总，并显式处理重试和重复文件，但金额仍是本地价格估算。日志格式被跳过、模型价格缺失或样本不一致时，应暂停费用判断并回到原始日志和供应商账单。
+
+    **试用条件**：[Q04](data/plugins/jingbiaomei--tokdash/INSIGHT.md#research-q04) 限定个人本地使用回顾，先人工核对一个会话；价格或日志缺口出现即暂停金额判断。
+
+    [查看完整分析](data/plugins/jingbiaomei--tokdash/INSIGHT.md)
+
 ## [最近发布](data/views/columns/LATEST.md)
 
 > 查看最近发布的版本，了解用途和使用条件。
 
+- [Better Workspace File Manager](data/plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md) · 在 DSH Web 中管理工作区文件，支持上传、移动、下载和带版本检查的文本编辑。 · [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-workspace-file-manager)
+- [dsh-plugin-mobile-gateway](data/plugins/clarklevis1995--dsh-plugin-mobile-gateway/INSIGHT.md) · 为 DSH 提供设备配对、移动会话同步和可选实验传输。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-mobile-gateway)
 - [See Now](data/plugins/saos-3624--dsh-see-now/INSIGHT.md) · 从屏幕、摄像头或视频筛选变化帧并拼图，作为 DSH 视觉工具的输入。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-see-now)
-- [Anime Garden for DeepSeek Harness](data/plugins/yjl9903--animegarden--plugins-dsh/INSIGHT.md) · 在 DSH 会话或侧边栏搜索 Anime Garden 资源，查看周历并打开播放或磁力链接。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-animegarden)
-- [DSH Lighthouse](data/plugins/7gzgn--dsh-lighthouse/INSIGHT.md) · 汇总作品的本地、GitHub、市场与 npm 状态，并生成观察面板和报告。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lighthouse)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 272 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 36 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 105 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 291 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 56 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 271 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 37 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 106 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 298 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 58 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 136 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 144 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 [浏览全部分类](data/views/categories/INDEX.md)

@@ -1,35 +1,51 @@
 {
     "repository": "361533652/dsh-token-bi",
     "repository_id": 1428375235,
-    "captured_at": "2026-10-27T08:34:14.025Z",
-    "window_start": "2026-09-27T08:34:14.025Z",
+    "captured_at": "2026-11-05T03:25:48.280Z",
+    "window_start": "2026-10-06T03:25:48.280Z",
     "stars": 0,
-    "pushed_at": "2026-10-26T20:04:22Z",
+    "pushed_at": "2026-11-04T19:57:52Z",
     "issues": {
-        "open": 0,
-        "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2068:10F766:133EE2:14E2BC:6AEBF768 and timestamp 2026-11-05 03:26:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2092:11638E:14A5ED:164A29:6AEBF769 and timestamp 2026-11-05 03:26:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20created%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 20CA:FFFD4:1471BA:161504:6AEBF769 and timestamp 2026-11-05 03:26:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 20F6:36D9C2:12AEE6:144C7F:6AEBF76A and timestamp 2026-11-05 03:26:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20updated%3A2026-09-27T08%3A34%3A14.025Z..2026-10-27T08%3A34%3A14.025Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B484:187E52:1D881F:20233C:6AE06234 and timestamp 2026-10-27 08:35:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A361533652%2Fdsh-token-bi%20is%3Aissue%20updated%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2134:3D9FE8:13E48D:1588F9:6AEBF76B and timestamp 2026-11-05 03:26:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "npm": {
         "package_name": "dsh-token-bi",
-        "captured_at": "2026-10-27T08:34:14.025Z",
-        "window_start": "2026-09-27",
-        "window_end": "2026-10-26",
+        "captured_at": "2026-11-05T03:25:48.280Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-27:2026-10-26/dsh-token-bi",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-token-bi",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-27T08:34:14.025Z",
+            "captured_at": "2026-11-05T03:25:48.280Z",
             "source_url": "https://registry.npmjs.org/dsh-token-bi",
             "error": "HTTP 404",
             "latest_version": null,

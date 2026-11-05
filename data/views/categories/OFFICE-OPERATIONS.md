@@ -47,6 +47,7 @@
 | [QQBot 增强版](#plugin-1357268674-root) | 把 QQ 消息接入 DSH 会话，并提供富媒体、交付文件发送和 Web 设置。 | [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04) 先在受控群确认名单和静默策略，再测试一个文件并保留人工退路。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
+| [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
 <a id="plugin-1334428397-root"></a>
@@ -608,6 +609,22 @@
 > **建议**：假设审批卡展示导出结构差异及抽样渲染可减少格式损失漏检；以固定文件集和审阅人比较漏检、误报及时间，若收益不足则否定。[Q05](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1294942686-root"></a>
+
+## [新诉讼可视化](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md)
+
+[![GitHub ★ 142](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=142&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MiaoQichuan/new-litigation-visualization)
+
+> **用途**：法律工作人员需要向当事人解释案件经过并保留出处。
+
+> **亮点**：[Q01](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q01) 以独立布局和出处索引减少反复排版，同时提供 DSH 原生启动工具。
+
+> **思考**：[Q03](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q03) 字符子序列守卫允许删字，人工仍须核查否定、事实归属和争议口径。
+
+> **建议**：[Q05](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q05) 同一虚构卷宗经插件制作的时间轴或可减少排版工时且保留出处核对质量。
+
+[查看完整分析](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335382133-root"></a>
 

@@ -17,7 +17,6 @@
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
-| [awesome-gpt-image-2](#plugin-1220744720-root) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
@@ -28,10 +27,13 @@
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
+| [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
+| [dsh-media-studio](#plugin-1399694663-root) | 在 DSH 会话生成或发送图片与视频，并提供内联预览和后台推送。 | [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03) 先用可披露素材和测试模型核对同步，再检查后台是否可追踪。 |
+| [dsh-mimotts](#plugin-1397477851-root) | 为 DSH 助手回复合成语音，提供内联播放器、语音历史和工作区 WAV 工具。 | [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 先用可披露文本，核对音频、索引和失败再扩大使用。 |
 | [dsh-oil-creator](#plugin-1339110580-root) | 为 DSH Desktop 提供本地内容工作台，组织选题脚本、录屏工程、字幕封面、视觉审查与发布状态。 | [Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03)复制小库仅核心片库/脚本/自有会话trial，先预览不批量整理。 |
 | [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
@@ -46,15 +48,15 @@
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
 | [ff-toolkit](#plugin-1205593265-root) | 将 FFmpeg 媒体处理操作封装为 Python 和模型可调用工具。 | [Q04](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q04) 先在隔离副本中关闭覆盖、使用新路径并检查结果；不接受权限或恢复边界时停止。 |
+| [GPT-Image2 提示词画廊](#plugin-1220744720-root) | 提供可浏览、复制的图像提示词案例、模板及衍生风格 Skill。 | [Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04) 先浏览和改写模板，生成另行核对。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [HTML Studio](#plugin-1237969184-root) | 独立的本地 HTML 与 Markdown 文档浏览、编辑和版本恢复工作台。 | 仅观察隔离副本上的写范围与恢复，继续用原编辑器管理真实文件。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
 | [lightroom-py](#plugin-1225248471-root) | 通过 Python、MCP 和 DSH 接口控制 Lightroom Classic 图库及编辑。 | [Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) 在备份图库副本上先核依赖、选区与单项操作；结果或恢复不明确时停止写入。 |
-| [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 本地角色对话、文字冒险与故事世界资料管理应用。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 的状态暴露未修复核实前不启用 LAN。 |
 | [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
 | [NextTavern](#plugin-1366204745-root) | 为 DSH 提供角色扮演工作区，支持角色卡、世界线、记忆和小说导出。 | [Q04](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q04) 先独立工作区核对原文出稿，再决定是否启用整理。 |
-| [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
+| [No AI Style](#plugin-1418493685-root) | 为学术和专业写作提供检查、润色和起草 Skill，以及 DSH 输入栏模式按钮。 | [Q04](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q04) 先做只审阅并复核原文。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
@@ -148,22 +150,6 @@
 > **建议**：[Q05](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q05) 提出覆盖直接脚本提交与重试的预算和恢复状态提示；若不能改善决策或代价过高则否定。
 
 [查看完整分析](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1220744720-root"></a>
-
-## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
-
-[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
-
-> **用途**：面向重复制作海报/产品图/信息图的用户与Agent；主要交付可复制提示词资源，实际成片另验。[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01)
-
-> **亮点**：相对散收藏提示词，将案例、模板和约束组织成可检索Skill参考；增量是表达与分发，未证明新图像算法或稳定生产收益。[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01)
-
-> **思考**：单次案例缺具体模型与原始条件，不能支持同条件版本排名；MIT不覆盖所有社区素材，安装默认all会覆盖同名技能目录。[Q02](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q02) [Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03)
-
-> **建议**：未验证假设是给模板绑定模型/参数/合格标准和失败卡，比美图目录更能选择生产方案；固定预算盲评合格率与总成本，无改善则否定。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
-
-[查看完整分析](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335095892-root"></a>
 
@@ -325,6 +311,22 @@
 
 [查看完整分析](../../plugins/7gzgn--dsh-douyin-publish/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1377645668-root"></a>
+
+## [dsh-game-material-master](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md)
+
+[![GitHub ★ 142](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=142&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/universe-st/dsh-game-material-master) [![npm 30d 5,626](https://img.shields.io/static/v1?label=npm+30d&message=5%2C626&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-game-material-master) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-game-material-master)
+
+> **用途**：小团队从参考图制作可导入游戏项目的资产并检查小地图。
+
+> **亮点**：[Q01](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q01) 将图像任务、阶段状态与地图检查工具带到同一工作台。
+
+> **思考**：[Q02](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q02) 外部生成和本地处理须分开看，地图版本检查也不保证并发原子性。
+
+> **建议**：[Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 强制版本绑定并串行修改，比较协作编辑的丢更新与负担。
+
+[查看完整分析](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1336998801-root"></a>
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
@@ -388,6 +390,38 @@
 > **建议**：未验证假设是把“文本投影恒等”做成基于属性的编辑序列测试，可在宿主升级时自动发现光标/撤销/字节漂移。最小生成1000条含IME、粘贴、列表退格和围栏的操作序列，比较插件前后最终纯文本、selection与undo；任一字节差异即否定安全启用。 详见[Q08](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/9426haruka--dsh-markdown-live/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1399694663-root"></a>
+
+## [dsh-media-studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
+
+
+
+> **用途**：内容创作者需要生成媒体并在当前聊天审阅。
+
+> **亮点**：[Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01) 将生成、保存和查看媒体接到同一会话。
+
+> **思考**：[Q02](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q02) 后台可在无 jobId 时继续，结果送达和远端取消需独立核对，文件读取沿用宿主权限。
+
+> **建议**：[Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03) 收费请求前要求可追踪任务或明确同步回退，测重复提交。
+
+[查看完整分析](../../plugins/1497105876--dsh-media-studio/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1397477851-root"></a>
+
+## [dsh-mimotts](../../plugins/1497105876--dsh-mimotts/INSIGHT.md)
+
+
+
+> **用途**：需要听取助手回复或为后续渠道制作语音文件。
+
+> **亮点**：[Q01](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q01) 将回复朗读、播放与版本回听连接到 DSH 会话。
+
+> **思考**：[Q02](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q02) 请求会传文本和配置的声音样本，历史索引并发写入与失败仍需核对。
+
+> **建议**：[Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 让历史更新可串行提交，并区分上游成功和保存失败。
+
+[查看完整分析](../../plugins/1497105876--dsh-mimotts/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339110580-root"></a>
 
@@ -613,6 +647,22 @@
 
 [查看完整分析](../../plugins/inthepond--ff-toolkit/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1220744720-root"></a>
+
+## [GPT-Image2 提示词画廊](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
+
+[![GitHub ★ 35,459](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C459&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
+
+> **用途**：需要为商业图或插画找提示词参考的人可查画廊。
+
+> **亮点**：[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01) 把模板和样例整理为可复用结构。
+
+> **思考**：[Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03) 单次复刻且条件不齐，无法推断模型质量。
+
+> **建议**：[Q05](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q05) 比较模板对一次合格率的影响。
+
+[查看完整分析](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339888505-root"></a>
 
 ## [gzhflow](../../plugins/andiii208--gzhflow/INSIGHT.md)
@@ -677,22 +727,6 @@
 
 [查看完整分析](../../plugins/drshy-org--lightroom-py/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1399694663-root"></a>
-
-## [Media Studio](../../plugins/1497105876--dsh-media-studio/INSIGHT.md)
-
-
-
-> **用途**：反复在DSH内由Agent/命令创作并回交图片或短视频、愿意核端点与素材范围的用户；结果是合格且可找回/可取用的作品，摩擦及替代见[Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)。
-
-> **亮点**：集成价值是让生成资产沿canonical/meta及命令payload进入宿主文件/附件和实际视图，减少另接服务与手动搬运；模型、jobs与浏览器能力继承上游，见[Q01](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q01)、[Q02](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q02)。
-
-> **思考**：后台缺句柄降级/无交回确认且需模型再执行工具，取消/超时不代表远端终止；协议字段、无副本卡片与key引用还有实际条件反例，不能从started或文件存在推已交付，见[Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03)、[Q04](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q04)。
-
-> **建议**：复用现有job/远端ID/已存文件做最小分阶段关联，未知先查原任务，再对照实际send_media/视图读取；不是再造后台框架，若现有日志+目录已够用则否定独立层，见[Q06](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q06)。
-
-[查看完整分析](../../plugins/1497105876--dsh-media-studio/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1200521020-root"></a>
 
 ## [MuseAI](../../plugins/yejiming--museai/INSIGHT.md)
@@ -743,17 +777,17 @@
 
 <a id="plugin-1418493685-root"></a>
 
-## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
+## [No AI Style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
 
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01NGVI-QINGYI/no-ai-style)
+[![GitHub ★ 7](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01NGVI-QINGYI/no-ai-style)
 
-> **用途**：适合需保留学术事实、引用与不确定性的作者，在授权段落内审阅和轻改英中日文稿。验收对象是改写后的命题及证据边界，仍由作者复核。
+> **用途**：要审校学术或专业文字的人可先选择允许的操作模式。
 
-> **亮点**：将阅读契约、事实边界、最小编辑和回查门槛与三模式交付接合，比单句润色提示更有审阅结构。详见[Q01](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q01) 让编辑范围和事实约束更明确。
 
-> **思考**：词法flags和数字multiset不能证明语义等价；按钮只是提示插入，自动执行与宿主引用保护有具体契约条件。详见[Q03](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q03) 提示词不能强制保证模型保持事实。
 
-> **建议**：从锚点不保关系推导命题级变更收据，按换对象/因果升级/删null等反例比较误改和人工负担，未验证。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
+> **建议**：[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05) 对照只检查模式的越权改写率。
 
 [查看完整分析](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md) · [返回表格](#category-index)
 
