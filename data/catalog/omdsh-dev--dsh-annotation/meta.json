@@ -1,0 +1,54 @@
+{
+    "repository": "omdsh-dev/dsh-annotation",
+    "repository_id": 1330089831,
+    "captured_at": "2026-11-05T02:43:55.370Z",
+    "window_start": "2026-10-06T02:43:55.370Z",
+    "stars": 160,
+    "pushed_at": "2026-11-03T02:22:17Z",
+    "issues": {
+        "open": 9,
+        "closed": null,
+        "created_30d": 8,
+        "closed_30d": 0,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aomdsh-dev%2Fdsh-annotation%20is%3Aissue%20is%3Aclosed&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3Aomdsh-dev%2Fdsh-annotation%20is%3Aissue%20is%3Aclosed&per_page=1\": EOF"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aomdsh-dev%2Fdsh-annotation%20is%3Aissue%20updated%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D56:316A9F:22580A6:30B462F:6AEBEE2C and timestamp 2026-11-05 02:47:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bb0463f04e50889079f27ca294a28262b9720935",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@changfenhuang/dsh-annotation",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 3331,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40changfenhuang%2Fdsh-annotation",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-24T03:04:42.179Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40changfenhuang%2Fdsh-annotation",
+            "error": null,
+            "latest_version": "1.4.11",
+            "latest_published_at": "2026-10-01T07:53:33.954Z",
+            "latest_error": null
+        }
+    }
+}

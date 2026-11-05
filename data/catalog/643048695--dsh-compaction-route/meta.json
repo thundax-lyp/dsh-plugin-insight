@@ -1,40 +1,53 @@
 {
     "repository": "643048695/dsh-compaction-route",
     "repository_id": 1391040578,
-    "captured_at": "2026-10-29T01:33:21.476Z",
-    "window_start": "2026-09-29T01:33:21.476Z",
+    "captured_at": "2026-11-05T02:43:55.370Z",
+    "window_start": "2026-10-06T02:43:55.370Z",
     "stars": 0,
-    "pushed_at": "2026-10-28T18:35:52Z",
+    "pushed_at": "2026-10-30T12:59:35Z",
     "issues": {
         "open": 0,
         "closed": 0,
-        "created_30d": 0,
-        "closed_30d": 0,
-        "updated_30d": 0
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A643048695%2Fdsh-compaction-route%20is%3Aissue%20created%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D24:15241:D9DCB:EB829:6AEBEDD9 and timestamp 2026-11-05 02:45:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A643048695%2Fdsh-compaction-route%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D7C:11714B:D4455:E5E29:6AEBEDDA and timestamp 2026-11-05 02:45:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A643048695%2Fdsh-compaction-route%20is%3Aissue%20updated%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6DC2:C5E88:8AA4C8:93F388:6AEBEDDB and timestamp 2026-11-05 02:45:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-28T06:21:21.324Z",
+        "captured_at": "2026-11-05T01:50:29.156Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "2504c133ad6a336a0302300935b3fad657efe526",
-        "blob_sha": "524bccf61363cdfdbf89ad4b883e2b97d5e99a67",
-        "errors_blob_sha": "08ec43cd9e09c22edd78df110c83b5bdac1a2cf5",
+        "commit_sha": "bb0463f04e50889079f27ca294a28262b9720935",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-compaction-route",
-        "captured_at": "2026-10-29T01:33:21.476Z",
-        "window_start": "2026-09-29",
-        "window_end": "2026-10-28",
+        "captured_at": "2026-11-05T02:43:55.370Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-29:2026-10-28/dsh-compaction-route",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-compaction-route",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-29T01:33:21.476Z",
+            "captured_at": "2026-11-05T02:43:55.370Z",
             "source_url": "https://registry.npmjs.org/dsh-compaction-route",
             "error": "HTTP 404",
             "latest_version": null,

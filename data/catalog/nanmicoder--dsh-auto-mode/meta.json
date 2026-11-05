@@ -1,0 +1,45 @@
+{
+    "repository": "NanmiCoder/dsh-auto-mode",
+    "repository_id": 1333939283,
+    "captured_at": "2026-11-05T02:43:55.370Z",
+    "window_start": "2026-10-06T02:43:55.370Z",
+    "stars": 161,
+    "pushed_at": "2026-09-29T14:19:13Z",
+    "issues": {
+        "open": 1,
+        "closed": 6,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": true,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "bb0463f04e50889079f27ca294a28262b9720935",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@nanmicoder/dsh-auto-mode",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1588,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40nanmicoder%2Fdsh-auto-mode",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T20:12:29.549Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
+            "source_url": "https://registry.npmjs.org/%40nanmicoder%2Fdsh-auto-mode",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-09-29T14:01:41.354Z",
+            "latest_error": null
+        }
+    }
+}

@@ -20,63 +20,75 @@
             "research_depth": "source",
             "fingerprints": {
                 "directory": "bf893391edc698e8a99c4eced0713dcf6f7a095dabdcc0f102ab107871786ee5",
-                "code": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                "maintenance": "a0ee70d42b829999a407a9605f167a2361f5234a51613d78f1de8b9d66966b39"
+                "code": "7777ae2d838701185dca0b7478f5167931290cf1",
+                "maintenance": "3659148683cc0990e7e4db56d5a8c3feec6a2f335fc10a0f38d513ddf2342cbc"
             },
             "sources": [
                 {
-                    "id": "2026-10-22-01-github-1391141174-root-directory-0",
+                    "id": "2026-11-05-02-github-1391141174-root-directory-0",
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "779a0a5a03e3055a5f7bfc14026aeead601e3a45",
-                    "retrieved_at": "2026-10-22T15:30:13.465Z",
+                    "revision": "fa94055bbfacbcbcbc911aa6dba906e54cc17848",
+                    "retrieved_at": "2026-11-05T02:58:29.574Z",
                     "membership": "present"
                 }
             ],
             "evidence": [
                 {
-                    "id": "2026-10-22-01-github-1391141174-root-author",
+                    "id": "2026-11-05-02-github-1391141174-root-author",
                     "kind": "author_claim",
-                    "url": "https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/README.md",
+                    "url": "https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/173787247/dsh-wsl-defender",
-                            "commit": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
+                            "commit": "7777ae2d838701185dca0b7478f5167931290cf1",
                             "path": "README.md",
-                            "content_sha256": "143a3d7c7672867460a230f18409ec31ec7f30ce5d785f38522420e7cb1d7d70"
+                            "content_sha256": "da7f4a47b0acd700a6ca1d1f4e544f7bb492cc7834fda023e2f25f66b0299768"
                         }
                     ],
-                    "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                    "captured_at": "2026-10-22T15:30:13.465Z",
-                    "summary": "从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。",
-                    "artifact": "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json",
+                    "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+                    "captured_at": "2026-11-05T02:58:29.574Z",
+                    "summary": "从 WSL 查看 Windows Defender、防火墙、检测记录与排除项。",
+                    "artifact": "data/runs/2026-11-05-02/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json",
                     "limitations": [
                         "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
                     ]
                 },
                 {
-                    "id": "2026-10-22-01-github-1391141174-root-source",
+                    "id": "2026-11-05-02-github-1391141174-root-source",
                     "kind": "source_inspection",
-                    "url": "https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/README.md",
+                    "url": "https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/README.md",
                     "git_refs": [
                         {
                             "repository_url": "https://github.com/173787247/dsh-wsl-defender",
-                            "commit": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
+                            "commit": "7777ae2d838701185dca0b7478f5167931290cf1",
                             "path": "README.md",
-                            "content_sha256": "143a3d7c7672867460a230f18409ec31ec7f30ce5d785f38522420e7cb1d7d70"
+                            "content_sha256": "da7f4a47b0acd700a6ca1d1f4e544f7bb492cc7834fda023e2f25f66b0299768"
                         },
                         {
                             "repository_url": "https://github.com/173787247/dsh-wsl-defender",
-                            "commit": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
+                            "commit": "7777ae2d838701185dca0b7478f5167931290cf1",
+                            "path": "lib/defender-exec.js",
+                            "content_sha256": "cb8bc1602bbb5de3d9311cda92a5c18856db1f7ad89ab1282b8b7a207caaf383"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-defender",
+                            "commit": "7777ae2d838701185dca0b7478f5167931290cf1",
+                            "path": "lib/defender.js",
+                            "content_sha256": "d2d6c405bfa902db503e9d89ccf14ec0f1253080b2e34045713ee1fc6975988b"
+                        },
+                        {
+                            "repository_url": "https://github.com/173787247/dsh-wsl-defender",
+                            "commit": "7777ae2d838701185dca0b7478f5167931290cf1",
                             "path": "index.js",
                             "content_sha256": "2ffdb3d3303b1b9203f3720b1be56a32a95365c5baeb974dd81485d20e9c4b39"
                         }
                     ],
-                    "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                    "captured_at": "2026-10-22T15:30:13.465Z",
-                    "summary": "核查 README.md、index.js；单一 win_defender 工具检测 WSL 后调用 PowerShell 查询，纯函数层规范化 Defender、Firewall、威胁与排除项并格式化输出。",
-                    "artifact": "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json",
+                    "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+                    "captured_at": "2026-11-05T02:58:29.574Z",
+                    "summary": "核查 README.md、lib/defender-exec.js、lib/defender.js、index.js；通过 PowerShell 分别查询 Defender 与防火墙，规范化成快照。",
+                    "artifact": "data/runs/2026-11-05-02/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json",
                     "limitations": [
-                        "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                        "固定源码，未运行 Windows、Defender、PowerShell 或 DSH。",
                         "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
                         "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
                     ]
@@ -87,278 +99,296 @@
                     "id": "scenario",
                     "topic": "positioning",
                     "basis": "interpretation",
-                    "text": "面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。 [Q01](#research-q01)",
+                    "text": "维护者需要从会话核对 Windows 安全配置线索。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "mechanism",
                     "topic": "mechanism",
                     "basis": "supported",
-                    "text": "单一 win_defender 工具检测 WSL 后调用 PowerShell 查询，纯函数层规范化 Defender、Firewall、威胁与排除项并格式化输出。",
+                    "text": "通过 PowerShell 分别查询 Defender 与防火墙，规范化成快照。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "scope",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。",
+                    "text": "固定源码，未运行 Windows、Defender、PowerShell 或 DSH。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "distribution",
                     "topic": "engineering",
                     "basis": "supported",
-                    "text": "分发与包信息按固定 package.json 和 META 保存；热度不用于贡献或采用判断。",
+                    "text": "DSH Host 工具插件。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "cost",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 复用 Windows 安全组件 | 核对权限和字段支持 | 环境矩阵准备时间未知 |\n| 持续使用 | 每次多条 PowerShell 查询 | 解读签名、威胁、排除和 profile | 查询秒数/审阅分钟未知 |\n| 失败恢复 | 无自动修复资源 | 切 Windows UI、提权或确认第三方杀软 | 权限失败率未知 |",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 资源未知 | 确认测试模块与账户 | 避免真实排除值 |\n| 持续 | 查询资源未知 | 复核缺失和敏感输出 | 有结果也需查范围 |\n| 失败 | 排查耗时未知 | 直接核查各探针 | 结果为空需排除权限失败 |",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "adoption",
                     "topic": "adoption",
                     "basis": "interpretation",
-                    "text": "仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。若关键字段与 Windows Security UI 一致、权限不足明确标注且历史差异不被误写成威胁处置，再用于诊断；发现缺字段仍格式化为正常或 action 被误解，应停止。 [Q09](#research-q09)",
+                    "text": "[Q03](#research-q03) 先在隔离 Windows 主机对照每个探针，空结果不用于结论。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "value",
                     "topic": "business_value",
                     "basis": "interpretation",
-                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 聚合查询 | Defender/Firewall/威胁/排除项结构存在 | 各 Windows 版本字段完整率 |\n| 只读诊断 | 工具无修改参数 | 执行脚本是否在所有分支保持只读 |\n| 可读格式 | 规范化与文本格式分离 | action-ok 等字段是否会被误解 |",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 安全初筛 | 多项 Windows 状态聚合 | 真实判断准确性与用时 |",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "engineering",
                     "topic": "engineering",
                     "basis": "interpretation",
-                    "text": "执行层与规范化/格式化纯函数分离，利于测试和兼容修复；需要针对权限不足、字段缺失与非 Defender 环境验证。",
+                    "text": "[Q02](#research-q02) 各探针分开执行，当前状态未携带其失败原因。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "contribution",
-                    "topic": "technical_innovation",
+                    "topic": "comparison",
                     "basis": "interpretation",
-                    "text": "相对手工切到 PowerShell，它把多个安全查询聚合成 DSH 可读结果并保持只读，降低跨系统诊断交接。 [Q03](#research-q03)",
+                    "text": "[Q01](#research-q01) 在 WSL 排障中聚合多个 Windows 安全状态探针。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "critical_question",
                     "topic": "limitations",
                     "basis": "interpretation",
-                    "text": "返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 [Q04](#research-q04)",
+                    "text": "[Q02](#research-q02) 多类错误退化为空，且排除路径等敏感字段可能进入会话。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 },
                 {
                     "id": "innovation_hypothesis",
                     "topic": "technical_innovation",
                     "basis": "unverified",
-                    "text": "可增加带时间戳的差异快照，只突出防护关闭、签名过旧和新增排除项，并要求用户确认后再建议任何修复动作。 [Q08](#research-q08)",
+                    "text": "[Q03](#research-q03) 分探针回报权限、失败和空数据，比较误判。",
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ],
                     "dependencies": [
                         {
                             "plugin_id": "github:1391141174:root",
                             "area": "code",
-                            "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                         }
                     ],
-                    "reviewed_at": "2026-10-22T15:30:13.465Z",
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| WSL interop 和 PowerShell 安全模块 | 必需 | 查询 Windows 安全状态 | 部分探针可静默失败 |",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1391141174-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1391141174:root",
+                            "area": "code",
+                            "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:29.574Z",
                     "status": "current"
                 }
             ],
-            "last_checked_at": "2026-10-22T15:30:13.465Z",
+            "last_checked_at": "2026-11-05T02:58:29.574Z",
             "innovation_scores": {
                 "rubric": "innovation-v1",
-                "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                "reviewed_at": "2026-10-22T15:30:13.465Z",
+                "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+                "reviewed_at": "2026-11-05T02:58:29.574Z",
                 "status": "current",
                 "dependencies": [
                     {
                         "plugin_id": "github:1391141174:root",
                         "area": "code",
-                        "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                        "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                     }
                 ],
                 "technical": {
                     "criteria": {
                         "novelty": 9,
-                        "mechanism": 15,
-                        "transferability": 10,
+                        "mechanism": 8,
+                        "transferability": 5,
                         "simplification": 4
                     },
-                    "rationale": "相对明确基线存在具体集成和机制增量；返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 未运行，效果只作解释性判断。",
+                    "rationale": "[Q01](#research-q01) novelty 25%，Windows 快照接入 WSL。[Q02](#research-q02) mechanism 25%，聚合多探针但未区分错误。transferability 25%，分项快照可借用，采集依赖 Defender。[Q03](#research-q03) simplification 25%，少切原工具，关键状态仍需核对。",
                     "basis": "interpretation",
-                    "score": 38,
+                    "score": 26,
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ]
                 },
                 "business": {
                     "criteria": {
-                        "workflow": 18,
-                        "delivery": 8,
-                        "reach": 5,
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 0,
                         "economics": 4
                     },
-                    "rationale": "工作流接线有所改变，但交付收益、覆盖人群和成本改善缺少实测；面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。",
+                    "rationale": "[Q01](#research-q01) workflow 25%，安全线索初筛移进会话；delivery 0%，仍需原生安全判定；reach 0%，需要原有权限。[Q03](#research-q03) economics 25%，可能少手工取证，成本未知。",
                     "basis": "interpretation",
-                    "score": 35,
+                    "score": 13,
                     "evidence_ids": [
-                        "2026-10-22-01-github-1391141174-root-source"
+                        "2026-11-05-02-github-1391141174-root-source"
                     ]
                 }
             },
             "recommendation": {
                 "rubric": "adoption-v1",
                 "decision": "observe",
-                "reason": "可作为 WSL 内只读安全诊断入口观察；逐字段对照 Windows UI 前不能用于合规或处置判断。",
+                "reason": "核对 Windows 安全配置的 WSL 维护者可在隔离主机观察状态查询。它把 Defender、防火墙和有限检测摘要集中到当前会话。若数据为空或访问权限不清楚，就回 Windows 安全中心和原生命令核对。",
                 "criteria": {
                     "scenario": {
                         "score": 15,
-                        "rationale": "跨 WSL 查看 Windows 安全状态的技术场景明确但较窄。"
+                        "rationale": "[Q01](#research-q01) README.md 3–7 与 lib/defender-exec.js 24–54 给出实际核查任务，高于8；频次未知，低于23。"
                     },
                     "advantage": {
                         "score": 13,
-                        "rationale": "多 cmdlet 聚合和格式化提供有限便利。"
+                        "rationale": "[Q01](#research-q01) 多探针聚合高于6；[Q02](#research-q02) 错误与空结果混同，低于19。"
                     },
                     "evidence": {
                         "score": 13,
-                        "rationale": "纯函数与工具入口可核查；未执行 Windows 查询。"
+                        "rationale": "[Q02](#research-q02) lib/defender-exec.js 24–54、lib/defender.js 4–20、29–48 支持读取和边界，高于6；未实测，低于19。"
                     },
                     "cost": {
-                        "score": 15,
-                        "rationale": "无写入和订阅成本，但安全解释与权限排查负担不可忽略。"
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) 原生配置可回退，高于0；权限与敏感排除项需复核，低于10。"
                     }
                 },
-                "score": 56,
-                "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                "reviewed_at": "2026-10-22T15:30:13.465Z",
+                "score": 46,
+                "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+                "reviewed_at": "2026-11-05T02:58:29.574Z",
                 "status": "current",
                 "evaluator": "ai",
                 "evidence_ids": [
-                    "2026-10-22-01-github-1391141174-root-source"
+                    "2026-11-05-02-github-1391141174-root-source"
                 ],
                 "dependencies": [
                     {
                         "plugin_id": "github:1391141174:root",
                         "area": "code",
-                        "fingerprint": "3463d756faa7318bb8c1597db9a1bc0b1072d413"
+                        "fingerprint": "7777ae2d838701185dca0b7478f5167931290cf1"
                     }
                 ]
             }
@@ -367,43 +397,43 @@
             "id": "github:1391141174:root",
             "repository": "173787247/dsh-wsl-defender",
             "path": "",
-            "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
+            "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
             "fingerprints": {
                 "directory": "bf893391edc698e8a99c4eced0713dcf6f7a095dabdcc0f102ab107871786ee5",
-                "code": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-                "maintenance": "a0ee70d42b829999a407a9605f167a2361f5234a51613d78f1de8b9d66966b39"
+                "code": "7777ae2d838701185dca0b7478f5167931290cf1",
+                "maintenance": "3659148683cc0990e7e4db56d5a8c3feec6a2f335fc10a0f38d513ddf2342cbc"
             },
             "source_urls": [
                 "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
             ],
             "status": "complete",
-            "checked_at": "2026-10-22T15:06:59Z",
-            "analysis_sha256": "3d76f7d148c9eb193489f0d74db5c8c40248a04798906450f7da774413a5a9dc"
+            "checked_at": "2026-11-05T02:39:05Z",
+            "analysis_sha256": "cb0ac6d23469ab860b1e5ad9491e3230877fc86e46cbd3bbda96180a3a66df45"
         },
         "publication.metadata": "data/catalog/173787247--dsh-wsl-defender/meta.json",
         "publication.summaries": {
-            "text": "从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。",
-            "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-            "source_url": "https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/README.md"
+            "text": "从 WSL 查看 Windows Defender、防火墙、检测记录与排除项。",
+            "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+            "source_url": "https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/README.md"
         },
         "publication.capabilities": {
-            "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
+            "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
             "items": {
-                "模型工具": "注册 `win_defender`，从 WSL 聚合 Defender、防篡改、Firewall、威胁和排除项只读状态。"
+                "模型工具": "查询 Windows Defender、防火墙、有限检测记录和排除项"
             },
-            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 安全态势 | 汇总 Defender 实时保护、签名与扫描信息。 | 仅由固定版本源码确认；运行效果未验证 |\n| 防火墙状态 | 读取各 Windows Firewall profile。 | 仅由固定版本源码确认；运行效果未验证 |\n| 威胁与排除 | 展示近期检测和配置的排除项。 | 仅由固定版本源码确认；运行效果未验证 |"
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| Windows 安全快照 | 辅助核对主机配置 | 权限失败可能显示为空，输出可含排除路径 |"
         },
         "publication.advice": {
-            "revision": "3463d756faa7318bb8c1597db9a1bc0b1072d413",
-            "text": "仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。若关键字段与 Windows Security UI 一致、权限不足明确标注且历史差异不被误写成威胁处置，再用于诊断；发现缺字段仍格式化为正常或 action 被误解，应停止。 [Q09](#research-q09)"
+            "revision": "7777ae2d838701185dca0b7478f5167931290cf1",
+            "text": "[Q03](#research-q03) 先在隔离 Windows 主机对照每个探针，空结果不用于结论。"
         },
         "registry": "data/plugins/173787247--dsh-wsl-defender",
-        "reports": "# dsh-wsl-defender\n\n> 从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-defender](https://github.com/173787247/dsh-wsl-defender)\n- **版本号**：0.1.0（[固定提交 3463d756faa7318bb8c1597db9a1bc0b1072d413](https://github.com/173787247/dsh-wsl-defender/tree/3463d756faa7318bb8c1597db9a1bc0b1072d413)）\n- **版本日期**：2026-09-29（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已有贡献为固定版本源码支持的实现与集成增量；效果和真实宿主可用性未验证。未来设计假设保持未验证，不计入插件现有能力。\n\n## 洞察短评\n\n- **用途**：面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。 [Q01](#research-q01)\n- **亮点**：相对手工切到 PowerShell，它把多个安全查询聚合成 DSH 可读结果并保持只读，降低跨系统诊断交接。 [Q03](#research-q03)\n- **思考**：返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 [Q04](#research-q04)\n- **建议**：可增加带时间戳的差异快照，只突出防护关闭、签名过旧和新增排除项，并要求用户确认后再建议任何修复动作。 [Q08](#research-q08)\n\n采用建议：仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。若关键字段与 Windows Security UI 一致、权限不足明确标注且历史差异不被误写成威胁处置，再用于诊断；发现缺字段仍格式化为正常或 action 被误解，应停止。 [Q09](#research-q09)\n\n## 核心贡献\n\n相对手工切到 PowerShell，它把多个安全查询聚合成 DSH 可读结果并保持只读，降低跨系统诊断交接。 [Q03](#research-q03)\n\n## 关键质疑\n\n返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 [Q04](#research-q04)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可增加带时间戳的差异快照，只突出防护关闭、签名过旧和新增排除项，并要求用户确认后再建议任何修复动作。 [Q08](#research-q08)\n\n在测试 Windows VM 组合管理员/普通用户、Defender 开关和不同 firewall profile，保存原始 cmdlet、插件 JSON 与 Security UI 截图逐字段对照；记录查询秒数和缺失字段。任何 unavailable 被呈现为正常或威胁 action 语义错误，就不应作为安全判断入口。\n\n## 场景与替代办法\n\n面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。 [Q01](#research-q01)\n\n基线是在 Windows PowerShell 分别执行安全 cmdlet；插件减少查询与格式转换，但不替代安全产品和人工判断。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| WSL→Windows PowerShell | 必需 | 执行 Defender/Firewall 查询 | 返回 not WSL 或执行错误 |\n| Defender/Firewall cmdlet | 必需 | 提供防护、签名、威胁和 profile | 第三方杀软/版本差异导致空字段 |\n| 足够只读权限 | 按字段 | 读取威胁与排除项 | 部分数据 unavailable，不能当零 |\n| 人工安全解释 | 采用必需 | 区分状态、检测和已处置 | 输出不等于合规结论 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|---|\n| 环境检测 | 工具确认 WSL 并调用 PowerShell | 原始查询可执行 |\n| 规范化 | 纯函数整理 Defender、Firewall、threats、exclusions | 缺失保持 unavailable/null |\n| 人工核对 | 用户对照 Windows Security 或原始 cmdlet | 关键字段语义一致 |\n| 后续处置 | 用户转到受控安全流程 | 插件不自动改配置、隔离或删除 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 复用 Windows 安全组件 | 核对权限和字段支持 | 环境矩阵准备时间未知 |\n| 持续使用 | 每次多条 PowerShell 查询 | 解读签名、威胁、排除和 profile | 查询秒数/审阅分钟未知 |\n| 失败恢复 | 无自动修复资源 | 切 Windows UI、提权或确认第三方杀软 | 权限失败率未知 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 聚合查询 | Defender/Firewall/威胁/排除项结构存在 | 各 Windows 版本字段完整率 |\n| 只读诊断 | 工具无修改参数 | 执行脚本是否在所有分支保持只读 |\n| 可读格式 | 规范化与文本格式分离 | action-ok 等字段是否会被误解 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：研究 dsh-wsl-defender 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在何种任务中使用，原有办法和合格结果是什么？\n\n**研究主题**：场景与需求\n\n#### 完整回答\n\n面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是在 Windows PowerShell 分别执行安全 cmdlet；插件减少查询与格式转换，但不替代安全产品和人工判断。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-20](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/README.md#L1-L20)\n\n作者材料说明目标用户、安装方式、主要能力和已知边界。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n# dsh-wsl-defender\n\nDeepSeek Harness plugin: Windows security posture from WSL: Defender antivirus status and firewall profile state.\n\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\n\n[中文说明 → README.zh.md](./README.zh.md)\n\n## Install\n\n```sh\ndsh plugin --profile web add github:173787247/dsh-wsl-defender\n```\n\n## Usage\n\n```\nwin_defender          # antivirus + firewall posture\n```\n\n````\n\n</details>\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 能力如何从入口、注册、调用到状态变化实现？\n\n**研究主题**：功能与机制\n\n#### 完整回答\n\n单一 win_defender 工具检测 WSL 后调用 PowerShell 查询，纯函数层规范化 Defender、Firewall、威胁与排除项并格式化输出。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 相对原生能力或简单替代，固定版本增加了什么？\n\n**研究主题**：贡献与相对优势\n\n#### 完整回答\n\n相对手工切到 PowerShell，它把多个安全查询聚合成 DSH 可读结果并保持只读，降低跨系统诊断交接。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 什么前提最可能使核心价值不成立？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 这会直接收窄采用范围，而不是否定所有能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 启动、持续生效和失败恢复分别依赖什么？\n\n**研究主题**：依赖、兼容与流程\n\n#### 完整回答\n\n必须在 WSL 中访问 Windows PowerShell，查询权限和 Defender/Firewall cmdlet 可用；插件本身不修复、不隔离威胁。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q06\"></a>\n\n### Q06 · 首次、持续与失败恢复成本及效果证据如何？\n\n**研究主题**：效果与总成本\n\n#### 完整回答\n\n首次成本是确认 WSL 能调用 Windows PowerShell、当前账户可读 Defender/Firewall cmdlet；持续成本是一轮多个安全查询和人工解释签名年龄、扫描时间、威胁 action 与排除项；失败恢复包括权限不足、非 Defender 环境和字段缺失，插件只返回状态、不修复。合格单位是一次带采集时间、字段完整性和权限边界的安全快照，而不是 `ok=true`。当前缺 Windows 版本矩阵、查询秒数、权限失败率和与 Windows Security UI 的一致率。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n#### 缺口\n\n- 缺少不同 Windows/PowerShell/权限/第三方杀软环境下的字段完整率、查询延迟和 UI 一致性。\n  **影响**：无法把聚合输出当作可靠安全态势，更不能据此推断威胁已处理。\n  **进一步探讨**：在管理员/普通用户、Defender 启用/禁用与不同防火墙 profile 下，对照 Windows Security UI 和原始 cmdlet，记录缺字段、误解和查询秒数。\n\n<a id=\"research-q07\"></a>\n\n### Q07 · 实现有哪些可靠性取舍和可复用设计？\n\n**研究主题**：工程质量与复用\n\n#### 完整回答\n\n执行层与规范化/格式化纯函数分离，利于测试和兼容修复；需要针对权限不足、字段缺失与非 Defender 环境验证。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q08\"></a>\n\n### Q08 · 由贡献和限制能推导什么未验证方向？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n从已确认机制与关键限制可推导：可增加带时间戳的差异快照，只突出防护关闭、签名过旧和新增排除项，并要求用户确认后再建议任何修复动作。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n<a id=\"research-q09\"></a>\n\n### Q09 · 对什么人值得观察或试用，成功与停止条件是什么？\n\n**研究主题**：采用判断\n\n#### 完整回答\n\n仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。若关键字段与 Windows Security UI 一致、权限不足明确标注且历史差异不被误写成威胁处置，再用于诊断；发现缺字段仍格式化为正常或 action 被误解，应停止。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:1-38](https://github.com/173787247/dsh-wsl-defender/blob/3463d756faa7318bb8c1597db9a1bc0b1072d413/index.js#L1-L38)\n\n固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\n\n<details>\n<summary>查看原文（38行）</summary>\n\n```text\nimport { detectWsl } from \"./lib/wsl-host.js\";\nimport * as core from \"./lib/defender.js\";\nimport { execute } from \"./lib/defender-exec.js\";\n\nexport const name = \"dsh-wsl-defender\";\nexport const inject = [\"tools\", \"systemPrompt\"];\n\nexport function apply(ctx, config = {}) {\n  const wsl = detectWsl();\n\n  ctx.systemPrompt.section({\n    name: \"tool:win_defender\",\n    order: 218,\n    text: \"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n  });\n\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n    },\n    presentCall: () => ({ card: \"generic\", title: \"win_defender\" }),\n    presentResult: (_args, result) => ({ card: \"generic\", title: \"win_defender\", content: result?.content }),\n  });\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未在真实 Windows 安全环境核对规范化字段与 UI/cmdlet。\n  **影响**：安全状态误报会比普通工具失败产生更高决策风险。\n  **进一步探讨**：建立多个权限和 Defender 状态组合，逐字段对照原始 PowerShell 与 UI，并让安全人员审阅格式含义。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bd35dc6145e49343f623bb85da067ee66b53cc3e28b933ba9a5ca9119aaa1516。sloc 0.3.2，TypeScript 5.9.3。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 115 | — | — | 407 |\n| .js | source | 4 | 241 | 207 | 12 | — |\n| .js | test | 1 | 22 | 21 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 安全态势 | 汇总 Defender 实时保护、签名与扫描信息。 | 仅由固定版本源码确认；运行效果未验证 |\n| 防火墙状态 | 读取各 Windows Firewall profile。 | 仅由固定版本源码确认；运行效果未验证 |\n| 威胁与排除 | 展示近期检测和配置的排除项。 | 仅由固定版本源码确认；运行效果未验证 |\n\n## 工程亮点\n\n执行层与规范化/格式化纯函数分离，利于测试和兼容修复；需要针对权限不足、字段缺失与非 Defender 环境验证。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：仅检查固定提交的作者材料、入口和关键实现；未运行插件、测试、外部服务或真实宿主，也未核验独立用户反馈。\n- 下一步：在测试 Windows VM 组合管理员/普通用户、Defender 开关和不同 firewall profile，保存原始 cmdlet、插件 JSON 与 Security UI 截图逐字段对照；记录查询秒数和缺失字段。任何 unavailable 被呈现为正常或威胁 action 语义错误，就不应作为安全判断入口。\n"
+        "reports": "# dsh-wsl-defender\n\n> 从 WSL 查看 Windows Defender、防火墙、检测记录与排除项。\n\n## 研究范围\n\n- **仓库**：[173787247/dsh-wsl-defender](https://github.com/173787247/dsh-wsl-defender)\n- **版本号**：0.1.0（[固定提交 7777ae2d838701185dca0b7478f5167931290cf1](https://github.com/173787247/dsh-wsl-defender/tree/7777ae2d838701185dca0b7478f5167931290cf1)）\n- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态确认采集与回退。真实权限、配置和错误分类未验证。\n\n## 洞察短评\n\n- **用途**：维护者需要从会话核对 Windows 安全配置线索。\n- **亮点**：[Q01](#research-q01) 在 WSL 排障中聚合多个 Windows 安全状态探针。\n- **思考**：[Q02](#research-q02) 多类错误退化为空，且排除路径等敏感字段可能进入会话。\n- **建议**：[Q03](#research-q03) 分探针回报权限、失败和空数据，比较误判。\n\n采用建议：[Q03](#research-q03) 先在隔离 Windows 主机对照每个探针，空结果不用于结论。\n\n## 核心贡献\n\n[Q01](#research-q01) 在 WSL 排障中聚合多个 Windows 安全状态探针。\n\n## 关键质疑\n\n[Q02](#research-q02) 多类错误退化为空，且排除路径等敏感字段可能进入会话。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 分探针回报权限、失败和空数据，比较误判。\n\n覆盖模块缺失、拒绝、空检测、排除项截断和非 WSL。\n\n## 场景与替代办法\n\n维护者需要从会话核对 Windows 安全配置线索。\n\n从 Windows 安全中心或原生 PowerShell 读取。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| WSL interop 和 PowerShell 安全模块 | 必需 | 查询 Windows 安全状态 | 部分探针可静默失败 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户选隔离主机与非敏感配置 | 核对模块与权限 |\n| 对照 | 用户查各项并比对原工具 | 区分失败和空数据 |\n| 退出 | 用户回安全中心 | 以原件确认状态 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 资源未知 | 确认测试模块与账户 | 避免真实排除值 |\n| 持续 | 查询资源未知 | 复核缺失和敏感输出 | 有结果也需查范围 |\n| 失败 | 排查耗时未知 | 直接核查各探针 | 结果为空需排除权限失败 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 安全初筛 | 多项 Windows 状态聚合 | 真实判断准确性与用时 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：WSL 维护者能否从 DSH 获取 Windows 安全状态线索并区分读取失败与空数据？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 从 WSL 查 Defender 有什么运维用途？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n排查 Windows 安全设置与 WSL 任务的关系时，可从 DSH 查看 Defender 状态、防火墙配置文件及有限检测与排除项，定位值得人工核查的主机配置。原生 Windows 安全中心和 PowerShell 可读取相同材料，工具增量是会话内聚合。快照不能证明符合安全策略或说明某故障由防火墙造成。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-7](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/README.md#L3-L7)\n\n作者范围。\n\n```text\nDeepSeek Harness plugin: Windows security posture from WSL: Defender antivirus status and firewall profile state.\n\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\n\n[中文说明 → README.zh.md](./README.zh.md)\n```\n\n**依据 2 · 源码核查**：[lib/defender-exec.js:24-54](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender-exec.js#L24-L54)\n\n实际采集与字段。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n$av = $null\ntry { $av = Get-MpComputerStatus -ErrorAction Stop } catch {}\n$fw = @()\ntry { $fw = Get-NetFirewallProfile -ErrorAction Stop | ForEach-Object { @{ profile = $_.Name; enabled = [bool]$_.Enabled } } } catch {}\n$threats = @()\ntry {\n  $threats = @(Get-MpThreatDetection -ErrorAction Stop | Select-Object -First 10 | ForEach-Object {\n    @{ time = $_.InitialDetectionTime.ToString('o'); name = \"$($_.ThreatID)\"; action = \"$($_.ActionSuccess)\" }\n  })\n} catch {}\n$excl = $null\ntry {\n  $p = Get-MpPreference -ErrorAction Stop\n  $excl = @{\n    paths = @($p.ExclusionPath | Where-Object { $_ } | Select-Object -First 20)\n    extensions = @($p.ExclusionExtension | Where-Object { $_ } | Select-Object -First 20)\n    processes = @($p.ExclusionProcess | Where-Object { $_ } | Select-Object -First 20)\n  }\n} catch {}\n$out = @{ firewall = @($fw); threats = @($threats) }\nif ($av) {\n  $out.antivirus = @{\n    realTime = [bool]$av.RealTimeProtectionEnabled\n    sigAge = [int]$av.AntivirusSignatureAge\n    sigVersion = \"$($av.AntivirusSignatureVersion)\"\n    quickScanAge = [int]$av.QuickScanAge\n  }\n  $out.tamperProtected = [bool]$av.IsTamperProtected\n}\nif ($excl) { $out.exclusions = $excl }\nConvertTo-Json -Compress -Depth 5 $out`)(a);\n```\n\n</details>\n\n#### 缺口\n\n- 未做同环境诊断对照\n  **影响**：未知聚合是否改变判断时间和质量\n  **进一步探讨**：在测试机对照原生命令与工具状态\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 为什么空检测和空防火墙列表需要区别？\n\n**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑\n\n#### 完整回答\n\n脚本分别 try/catch 四类命令，不记录各项异常。检测和防火墙默认空数组，取数失败可产生与无记录相同的结果；杀毒状态缺失才在文本显示 unavailable。检测只取前 10 条，排除项各取前 20 项，源码没有在查询前按时间排序。检测 name 实际承载 ThreatID，action 来自 ActionSuccess。输出可能含本地排除路径、扩展名及进程名，读取权限和结果披露需分别约束。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/defender-exec.js:24-54](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender-exec.js#L24-L54)\n\n每类读取、上限和缺省。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n$av = $null\ntry { $av = Get-MpComputerStatus -ErrorAction Stop } catch {}\n$fw = @()\ntry { $fw = Get-NetFirewallProfile -ErrorAction Stop | ForEach-Object { @{ profile = $_.Name; enabled = [bool]$_.Enabled } } } catch {}\n$threats = @()\ntry {\n  $threats = @(Get-MpThreatDetection -ErrorAction Stop | Select-Object -First 10 | ForEach-Object {\n    @{ time = $_.InitialDetectionTime.ToString('o'); name = \"$($_.ThreatID)\"; action = \"$($_.ActionSuccess)\" }\n  })\n} catch {}\n$excl = $null\ntry {\n  $p = Get-MpPreference -ErrorAction Stop\n  $excl = @{\n    paths = @($p.ExclusionPath | Where-Object { $_ } | Select-Object -First 20)\n    extensions = @($p.ExclusionExtension | Where-Object { $_ } | Select-Object -First 20)\n    processes = @($p.ExclusionProcess | Where-Object { $_ } | Select-Object -First 20)\n  }\n} catch {}\n$out = @{ firewall = @($fw); threats = @($threats) }\nif ($av) {\n  $out.antivirus = @{\n    realTime = [bool]$av.RealTimeProtectionEnabled\n    sigAge = [int]$av.AntivirusSignatureAge\n    sigVersion = \"$($av.AntivirusSignatureVersion)\"\n    quickScanAge = [int]$av.QuickScanAge\n  }\n  $out.tamperProtected = [bool]$av.IsTamperProtected\n}\nif ($excl) { $out.exclusions = $excl }\nConvertTo-Json -Compress -Depth 5 $out`)(a);\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/defender.js:4-20](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender.js#L4-L20)\n\n规范化空值。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function normalize(raw) {\n  return ((raw) => ({\n      antivirus: raw.antivirus ? {\n        realTime: Boolean(raw.antivirus.realTime),\n        sigAge: num(raw.antivirus.sigAge),\n        sigVersion: String(raw.antivirus.sigVersion ?? \"\"),\n        quickScanAge: num(raw.antivirus.quickScanAge),\n      } : null,\n      tamperProtected: raw.tamperProtected === undefined ? null : Boolean(raw.tamperProtected),\n      firewall: (raw.firewall || []).map((f) => ({ profile: String(f.profile ?? \"\"), enabled: Boolean(f.enabled) })),\n      threats: (raw.threats || []).map((t) => ({ time: String(t.time ?? \"\"), name: String(t.name ?? \"\"), action: String(t.action ?? \"\") })),\n      exclusions: raw.exclusions ? {\n        paths: (raw.exclusions.paths || []).map(String),\n        extensions: (raw.exclusions.extensions || []).map(String),\n        processes: (raw.exclusions.processes || []).map(String),\n      } : null,\n    }))(raw ?? {});\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/defender.js:29-48](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender.js#L29-L48)\n\n空检测及排除项的文本。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  return ((v) => {\n      const l = [`win_defender ok=${v.ok}`];\n      if (v.antivirus) {\n        l.push(`  real-time protection: ${v.antivirus.realTime ? \"on\" : \"OFF\"}`);\n        l.push(`  signatures: ${v.antivirus.sigVersion} (${v.antivirus.sigAge} days old)`);\n        l.push(`  last quick scan: ${v.antivirus.quickScanAge === 0 ? \"today\" : v.antivirus.quickScanAge + \" days ago\"}`);\n      } else l.push(\"  antivirus: unavailable (Get-MpComputerStatus failed)\");\n      if (v.tamperProtected !== null) l.push(`  tamper protection: ${v.tamperProtected ? \"on\" : \"off\"}`);\n      for (const f of v.firewall || []) l.push(`  firewall ${f.profile}: ${f.enabled ? \"on\" : \"OFF\"}`);\n      if ((v.threats ?? []).length) {\n        l.push(`  recent detections: ${v.threats.length}`);\n        for (const t of v.threats) l.push(`    ${t.time.slice(0, 19)} threat ${t.name} action-ok=${t.action}`);\n      } else l.push(\"  recent detections: none\");\n      if (v.exclusions) {\n        const x = v.exclusions;\n        l.push(`  exclusions: ${x.paths.length + x.extensions.length + x.processes.length}`);\n        for (const p of x.paths) l.push(`    path ${p}`);\n        for (const e of x.extensions) l.push(`    ext  ${e}`);\n        for (const p of x.processes) l.push(`    proc ${p}`);\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 未测真实 Defender 模块、策略与权限失败\n  **影响**：不能将空视为无威胁或防火墙正常\n  **进一步探讨**：用测试主机对照命令缺失、拒绝和确实无记录\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎样验收并避免把未知读数当安全结论？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n使用隔离 Windows 测试机及已知合成配置，先验证 interop 和 PowerShell 模块，再对照状态、排除项和防火墙原始结果。遇到空、拒绝或敏感输出时回安全中心。可让每个探针独立报告 unavailable、denied、ok-empty 和 ok-data，减少将读取失败视为无检测。以相同受限与正常环境比较误判和输出体积，若误判不降则不采用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:17-33](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/index.js#L17-L33)\n\n注册和非 WSL 拒绝。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  ctx.tools.register({\n    name: \"win_defender\",\n    description: \"Windows security posture from WSL: Defender antivirus status and firewall profile state.\",\n    parameters: core.parameters(),\n    output: {\n      schema: core.outputSchema(),\n      render: (_args, value) => [{ type: \"text\", text: core.format(value) }],\n    },\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\n    isConcurrencySafe: () => true,\n    async execute(args) {\n      if (!wsl) return { ok: false, error: \"not running in WSL\" };\n      try {\n        return await execute(args, config);\n      } catch (error) {\n        return { ok: false, error: String(error?.message ?? error) };\n      }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/defender-exec.js:24-54](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender-exec.js#L24-L54)\n\n独立探针及当前错误处理。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\n$av = $null\ntry { $av = Get-MpComputerStatus -ErrorAction Stop } catch {}\n$fw = @()\ntry { $fw = Get-NetFirewallProfile -ErrorAction Stop | ForEach-Object { @{ profile = $_.Name; enabled = [bool]$_.Enabled } } } catch {}\n$threats = @()\ntry {\n  $threats = @(Get-MpThreatDetection -ErrorAction Stop | Select-Object -First 10 | ForEach-Object {\n    @{ time = $_.InitialDetectionTime.ToString('o'); name = \"$($_.ThreatID)\"; action = \"$($_.ActionSuccess)\" }\n  })\n} catch {}\n$excl = $null\ntry {\n  $p = Get-MpPreference -ErrorAction Stop\n  $excl = @{\n    paths = @($p.ExclusionPath | Where-Object { $_ } | Select-Object -First 20)\n    extensions = @($p.ExclusionExtension | Where-Object { $_ } | Select-Object -First 20)\n    processes = @($p.ExclusionProcess | Where-Object { $_ } | Select-Object -First 20)\n  }\n} catch {}\n$out = @{ firewall = @($fw); threats = @($threats) }\nif ($av) {\n  $out.antivirus = @{\n    realTime = [bool]$av.RealTimeProtectionEnabled\n    sigAge = [int]$av.AntivirusSignatureAge\n    sigVersion = \"$($av.AntivirusSignatureVersion)\"\n    quickScanAge = [int]$av.QuickScanAge\n  }\n  $out.tamperProtected = [bool]$av.IsTamperProtected\n}\nif ($excl) { $out.exclusions = $excl }\nConvertTo-Json -Compress -Depth 5 $out`)(a);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/defender.js:29-48](https://github.com/173787247/dsh-wsl-defender/blob/7777ae2d838701185dca0b7478f5167931290cf1/lib/defender.js#L29-L48)\n\n用户可见空状态。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n  return ((v) => {\n      const l = [`win_defender ok=${v.ok}`];\n      if (v.antivirus) {\n        l.push(`  real-time protection: ${v.antivirus.realTime ? \"on\" : \"OFF\"}`);\n        l.push(`  signatures: ${v.antivirus.sigVersion} (${v.antivirus.sigAge} days old)`);\n        l.push(`  last quick scan: ${v.antivirus.quickScanAge === 0 ? \"today\" : v.antivirus.quickScanAge + \" days ago\"}`);\n      } else l.push(\"  antivirus: unavailable (Get-MpComputerStatus failed)\");\n      if (v.tamperProtected !== null) l.push(`  tamper protection: ${v.tamperProtected ? \"on\" : \"off\"}`);\n      for (const f of v.firewall || []) l.push(`  firewall ${f.profile}: ${f.enabled ? \"on\" : \"OFF\"}`);\n      if ((v.threats ?? []).length) {\n        l.push(`  recent detections: ${v.threats.length}`);\n        for (const t of v.threats) l.push(`    ${t.time.slice(0, 19)} threat ${t.name} action-ok=${t.action}`);\n      } else l.push(\"  recent detections: none\");\n      if (v.exclusions) {\n        const x = v.exclusions;\n        l.push(`  exclusions: ${x.paths.length + x.extensions.length + x.processes.length}`);\n        for (const p of x.paths) l.push(`    path ${p}`);\n        for (const e of x.extensions) l.push(`    ext  ${e}`);\n        for (const p of x.processes) l.push(`    proc ${p}`);\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 真实宿主与改法未验收\n  **影响**：无法确定兼容范围、披露风险和分类收益\n  **进一步探讨**：用有权限和无权限测试用户逐项比较\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6cd8d285ba0f10d6c47ad5229df32217f892a2db482417275bd691d3882252e6。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 5 | 115 | — | — | 407 |\n| .js | source | 4 | 241 | 207 | 12 | — |\n| .js | test | 1 | 22 | 21 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| Windows 安全快照 | 辅助核对主机配置 | 权限失败可能显示为空，输出可含排除路径 |\n\n## 工程亮点\n\n[Q02](#research-q02) 各探针分开执行，当前状态未携带其失败原因。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/defender-exec.js、lib/defender.js、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定源码，未运行 Windows、Defender、PowerShell 或 DSH。\n- 下一步：覆盖模块缺失、拒绝、空检测、排除项截断和非 WSL。\n"
     },
     "artifacts": {
-        "data/runs/2026-10-22-01/snapshots/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json": {
-            "content": "{\n  \"repository\": \"173787247/dsh-wsl-defender\",\n  \"revision\": \"3463d756faa7318bb8c1597db9a1bc0b1072d413\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"研究 dsh-wsl-defender 在固定版本中的实现贡献、成立条件、关键限制、采用价值与可证伪的新设计方向。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\"\n        ],\n        \"question\": \"谁在何种任务中使用，原有办法和合格结果是什么？\",\n        \"answer\": \"面向在 WSL 内工作的 Windows 开发者，让代理在诊断环境时读取宿主安全态势而不修改设置。 合格结果不是“工具被调用”，而是用户能在既定边界内得到可复核产物。基线是在 Windows PowerShell 分别执行安全 cmdlet；插件减少查询与格式转换，但不替代安全产品和人工判断。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 20,\n            \"observation\": \"作者材料说明目标用户、安装方式、主要能力和已知边界。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\"\n        ],\n        \"question\": \"能力如何从入口、注册、调用到状态变化实现？\",\n        \"answer\": \"单一 win_defender 工具检测 WSL 后调用 PowerShell 查询，纯函数层规范化 Defender、Firewall、威胁与排除项并格式化输出。 源码可以确认注册和数据流存在，但不能据此推断宿主加载、外部服务或最终效果已经通过。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"contribution\"\n        ],\n        \"question\": \"相对原生能力或简单替代，固定版本增加了什么？\",\n        \"answer\": \"相对手工切到 PowerShell，它把多个安全查询聚合成 DSH 可读结果并保持只读，降低跨系统诊断交接。 参照是宿主原生工具、直接脚本或手工流程，现有证据支持实现增量，不支持全球首创或收益排名。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"什么前提最可能使核心价值不成立？\",\n        \"answer\": \"最强支持是固定版本实现确有完整入口和防御分支。最关键限制是：返回值受 Windows 版本、权限、Defender 可用性和本地化字段影响，聚合结果也不是合规审计或威胁已处置证明。 这会直接收窄采用范围，而不是否定所有能力。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"dependencies\"\n        ],\n        \"question\": \"启动、持续生效和失败恢复分别依赖什么？\",\n        \"answer\": \"必须在 WSL 中访问 Windows PowerShell，查询权限和 Defender/Firewall cmdlet 可用；插件本身不修复、不隔离威胁。 启动成功、持续有用和失败恢复是三类不同条件；缺少依赖时不能把“已注册”当作任务已办结。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q06\",\n        \"topics\": [\n          \"cost\"\n        ],\n        \"question\": \"首次、持续与失败恢复成本及效果证据如何？\",\n        \"answer\": \"首次成本是确认 WSL 能调用 Windows PowerShell、当前账户可读 Defender/Firewall cmdlet；持续成本是一轮多个安全查询和人工解释签名年龄、扫描时间、威胁 action 与排除项；失败恢复包括权限不足、非 Defender 环境和字段缺失，插件只返回状态、不修复。合格单位是一次带采集时间、字段完整性和权限边界的安全快照，而不是 `ok=true`。当前缺 Windows 版本矩阵、查询秒数、权限失败率和与 Windows Security UI 的一致率。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少不同 Windows/PowerShell/权限/第三方杀软环境下的字段完整率、查询延迟和 UI 一致性。\",\n            \"impact\": \"无法把聚合输出当作可靠安全态势，更不能据此推断威胁已处理。\",\n            \"next_step\": \"在管理员/普通用户、Defender 启用/禁用与不同防火墙 profile 下，对照 Windows Security UI 和原始 cmdlet，记录缺字段、误解和查询秒数。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q07\",\n        \"topics\": [\n          \"engineering\"\n        ],\n        \"question\": \"实现有哪些可靠性取舍和可复用设计？\",\n        \"answer\": \"执行层与规范化/格式化纯函数分离，利于测试和兼容修复；需要针对权限不足、字段缺失与非 Defender 环境验证。 这些判断来自结构与错误路径抽读，不等于完整安全审计或生产可靠性证明。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q08\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"由贡献和限制能推导什么未验证方向？\",\n        \"answer\": \"从已确认机制与关键限制可推导：可增加带时间戳的差异快照，只突出防护关闭、签名过旧和新增排除项，并要求用户确认后再建议任何修复动作。 最小验证应与现有简单流程在相同任务、模型、预算和验收标准下比较，并在人工投入或失败率上升时否定该方向。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q09\",\n        \"topics\": [\n          \"adoption\"\n        ],\n        \"question\": \"对什么人值得观察或试用，成功与停止条件是什么？\",\n        \"answer\": \"仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。若关键字段与 Windows Security UI 一致、权限不足明确标注且历史差异不被误写成威胁处置，再用于诊断；发现缺字段仍格式化为正常或 action 被误解，应停止。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 1,\n            \"line_end\": 38,\n            \"observation\": \"固定版本源码显示入口接线、关键数据流与失败处理；这不是运行结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未在真实 Windows 安全环境核对规范化字段与 UI/cmdlet。\",\n            \"impact\": \"安全状态误报会比普通工具失败产生更高决策风险。\",\n            \"next_step\": \"建立多个权限和 Defender 状态组合，逐字段对照原始 PowerShell 与 UI，并让安全人员审阅格式含义。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-defender\\n\\nDeepSeek Harness plugin: Windows security posture from WSL: Defender antivirus status and firewall profile state.\\n\\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\\n\\n[中文说明 → README.zh.md](./README.zh.md)\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-defender\\n```\\n\\n## Usage\\n\\n```\\nwin_defender          # antivirus + firewall posture\\n```\\n\\n## Notes\\n\\nUses `Get-MpComputerStatus` and `Get-NetFirewallProfile`. If Defender is\\nmanaged by a third party, or the cmdlets are unavailable, the antivirus section reports\\nunavailable rather than guessing.\\n\\n## Requirements\\n\\n- Windows with WSL, and DeepSeek Harness running inside it.\\n\\n## Tests\\n\\n```sh\\nnpm test\\n```\\n\\nThe unit tests run anywhere. The live tests are skipped outside WSL.\\n\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-wsl-defender` **0.1.0** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.0-rc.2`**) — single source of truth for the suite |\\n| **Kit set** | `full` or install alone |\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-defender\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-defender.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-defender/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-wsl-defender#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"wsl\\\",\\n    \\\"windows\\\",\\n    \\\"defender\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { detectWsl } from \\\"./lib/wsl-host.js\\\";\\nimport * as core from \\\"./lib/defender.js\\\";\\nimport { execute } from \\\"./lib/defender-exec.js\\\";\\n\\nexport const name = \\\"dsh-wsl-defender\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const wsl = detectWsl();\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:win_defender\\\",\\n    order: 218,\\n    text: \\\"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"win_defender\\\",\\n    description: \\\"Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n    parameters: core.parameters(),\\n    output: {\\n      schema: core.outputSchema(),\\n      render: (_args, value) => [{ type: \\\"text\\\", text: core.format(value) }],\\n    },\\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      if (!wsl) return { ok: false, error: \\\"not running in WSL\\\" };\\n      try {\\n        return await execute(args, config);\\n      } catch (error) {\\n        return { ok: false, error: String(error?.message ?? error) };\\n      }\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"win_defender\\\" }),\\n    presentResult: (_args, result) => ({ card: \\\"generic\\\", title: \\\"win_defender\\\", content: result?.content }),\\n  });\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"3463d756faa7318bb8c1597db9a1bc0b1072d413\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"bd35dc6145e49343f623bb85da067ee66b53cc3e28b933ba9a5ca9119aaa1516\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 115,\n        \"words\": 407\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 241,\n        \"code\": 207,\n        \"comments\": 12,\n        \"blank\": 22\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 22,\n        \"code\": 21,\n        \"comments\": 0,\n        \"blank\": 1\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 17,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"win_defender\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"win_defender\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Markdown is staged as HTML for total lines only; cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  },\n  \"metadata\": {\n    \"repository\": \"173787247/dsh-wsl-defender\",\n    \"repository_id\": 1391141174,\n    \"captured_at\": \"2026-10-22T15:13:32.381Z\",\n    \"window_start\": \"2026-09-22T15:13:32.381Z\",\n    \"stars\": 1,\n    \"pushed_at\": \"2026-09-29T15:32:23Z\",\n    \"issues\": {\n      \"open\": null,\n      \"closed\": null,\n      \"created_30d\": null,\n      \"closed_30d\": null,\n      \"updated_30d\": null\n    },\n    \"errors\": [\n      {\n        \"target\": \"open\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-defender%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6410:10116C:99E12B:A62A10:6ADA281E and timestamp 2026-10-22 15:13:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-defender%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 64EC:1BC665:9A3803:A683D2:6ADA281F and timestamp 2026-10-22 15:13:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"created_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-defender%20is%3Aissue%20created%3A2026-09-22T15%3A13%3A32.381Z..2026-10-22T15%3A13%3A32.381Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 65E6:1C0D96:995E13:A5A76C:6ADA2821 and timestamp 2026-10-22 15:13:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"closed_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-defender%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-22T15%3A13%3A32.381Z..2026-10-22T15%3A13%3A32.381Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6686:1B1079:95B3D3:A1F925:6ADA2822 and timestamp 2026-10-22 15:13:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      },\n      {\n        \"target\": \"updated_30d\",\n        \"message\": \"GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-defender%20is%3Aissue%20updated%3A2026-09-22T15%3A13%3A32.381Z..2026-10-22T15%3A13%3A32.381Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 674C:1865FC:95B57A:A1F990:6ADA2823 and timestamp 2026-10-22 15:13:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)\"\n      }\n    ],\n    \"npm\": {\n      \"package_name\": \"dsh-wsl-defender\",\n      \"captured_at\": \"2026-10-22T15:13:39.588Z\",\n      \"window_start\": \"2026-09-22\",\n      \"window_end\": \"2026-10-21\",\n      \"downloads_30d\": null,\n      \"source_url\": \"https://api.npmjs.org/downloads/point/2026-09-22:2026-10-21/dsh-wsl-defender\",\n      \"error\": \"HTTP 404\",\n      \"publication\": {\n        \"first_published_at\": null,\n        \"captured_at\": \"2026-10-22T15:13:39.588Z\",\n        \"source_url\": \"https://registry.npmjs.org/dsh-wsl-defender\",\n        \"error\": \"HTTP 404\",\n        \"latest_version\": null,\n        \"latest_published_at\": null,\n        \"latest_error\": \"HTTP 404\"\n      }\n    }\n  }\n}\n",
-            "sha256": "0df494fd0e94e8131cfddd677ff70494af13e15a7ed292cd02f371e2afd8e812"
+        "data/runs/2026-11-05-02/173787247--dsh-wsl-defender/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"173787247/dsh-wsl-defender\",\n  \"revision\": \"7777ae2d838701185dca0b7478f5167931290cf1\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/defender-exec.js\",\n    \"lib/defender.js\",\n    \"index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"WSL 维护者能否从 DSH 获取 Windows 安全状态线索并区分读取失败与空数据？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"从 WSL 查 Defender 有什么运维用途？\",\n        \"answer\": \"排查 Windows 安全设置与 WSL 任务的关系时，可从 DSH 查看 Defender 状态、防火墙配置文件及有限检测与排除项，定位值得人工核查的主机配置。原生 Windows 安全中心和 PowerShell 可读取相同材料，工具增量是会话内聚合。快照不能证明符合安全策略或说明某故障由防火墙造成。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 3,\n            \"line_end\": 7,\n            \"observation\": \"作者范围。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender-exec.js\",\n            \"line_start\": 24,\n            \"line_end\": 54,\n            \"observation\": \"实际采集与字段。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未做同环境诊断对照\",\n            \"impact\": \"未知聚合是否改变判断时间和质量\",\n            \"next_step\": \"在测试机对照原生命令与工具状态\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\",\n          \"limitations\"\n        ],\n        \"question\": \"为什么空检测和空防火墙列表需要区别？\",\n        \"answer\": \"脚本分别 try/catch 四类命令，不记录各项异常。检测和防火墙默认空数组，取数失败可产生与无记录相同的结果；杀毒状态缺失才在文本显示 unavailable。检测只取前 10 条，排除项各取前 20 项，源码没有在查询前按时间排序。检测 name 实际承载 ThreatID，action 来自 ActionSuccess。输出可能含本地排除路径、扩展名及进程名，读取权限和结果披露需分别约束。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender-exec.js\",\n            \"line_start\": 24,\n            \"line_end\": 54,\n            \"observation\": \"每类读取、上限和缺省。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender.js\",\n            \"line_start\": 4,\n            \"line_end\": 20,\n            \"observation\": \"规范化空值。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender.js\",\n            \"line_start\": 29,\n            \"line_end\": 48,\n            \"observation\": \"空检测及排除项的文本。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测真实 Defender 模块、策略与权限失败\",\n            \"impact\": \"不能将空视为无威胁或防火墙正常\",\n            \"next_step\": \"用测试主机对照命令缺失、拒绝和确实无记录\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"怎样验收并避免把未知读数当安全结论？\",\n        \"answer\": \"使用隔离 Windows 测试机及已知合成配置，先验证 interop 和 PowerShell 模块，再对照状态、排除项和防火墙原始结果。遇到空、拒绝或敏感输出时回安全中心。可让每个探针独立报告 unavailable、denied、ok-empty 和 ok-data，减少将读取失败视为无检测。以相同受限与正常环境比较误判和输出体积，若误判不降则不采用。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 17,\n            \"line_end\": 33,\n            \"observation\": \"注册和非 WSL 拒绝。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender-exec.js\",\n            \"line_start\": 24,\n            \"line_end\": 54,\n            \"observation\": \"独立探针及当前错误处理。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/defender.js\",\n            \"line_start\": 29,\n            \"line_end\": 48,\n            \"observation\": \"用户可见空状态。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实宿主与改法未验收\",\n            \"impact\": \"无法确定兼容范围、披露风险和分类收益\",\n            \"next_step\": \"用有权限和无权限测试用户逐项比较\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-wsl-defender\\n\\nDeepSeek Harness plugin: Windows security posture from WSL: Defender antivirus status and firewall profile state.\\n\\nPart of **[dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit)**.\\n\\n[中文说明 → README.zh.md](./README.zh.md)\\n\\n## Install\\n\\n```sh\\ndsh plugin --profile web add github:173787247/dsh-wsl-defender\\n```\\n\\n## Usage\\n\\n```\\nwin_defender          # antivirus + firewall posture\\n```\\n\\n## Notes\\n\\nUses `Get-MpComputerStatus` and `Get-NetFirewallProfile`. If Defender is\\nmanaged by a third party, or the cmdlets are unavailable, the antivirus section reports\\nunavailable rather than guessing.\\n\\n## Requirements\\n\\n- Windows with WSL, and DeepSeek Harness running inside it.\\n\\n## Tests\\n\\n```sh\\nnpm test\\n```\\n\\nThe unit tests run anywhere. The live tests are skipped outside WSL.\\n\\n## Compatibility\\n\\n| Field | Value |\\n|-------|-------|\\n| **Plugin** | `dsh-wsl-defender` **0.1.0** |\\n| **Minimum dsh** | ≥ **0.1.2** (web UI one-shot `?token=` on Windows relay `:3081`) |\\n| **Latest verified** | See [dsh-wsl-kit Compatibility](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) (currently **`0.2.2-rc.1`**) — single source of truth for the suite |\\n| **Kit set** | `full` or install alone |\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-wsl-defender\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-defender.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/173787247/dsh-wsl-defender/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/173787247/dsh-wsl-defender#readme\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test test/*.test.js\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"wsl\\\",\\n    \\\"windows\\\",\\n    \\\"defender\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/defender-exec.js\",\n      \"content\": \"import { runPowerShell } from \\\"./wsl-host.js\\\";\\nimport { normalize } from \\\"./defender.js\\\";\\n\\n/** The kit's one escaping rule: single-quote the value, doubling any apostrophe. */\\nfunction esc(s) {\\n  return \\\"'\\\" + String(s ?? \\\"\\\").replace(/'/g, \\\"''\\\") + \\\"'\\\";\\n}\\n\\nfunction clamp(v, min, max, fallback) {\\n  const n = Number(v);\\n  if (!Number.isFinite(n)) return fallback;\\n  return Math.min(max, Math.max(min, Math.trunc(n)));\\n}\\n\\n/**\\n * The script is built here, at the call site, the way every other plugin in the\\n * kit does it: the PowerShell is written inline and the values are escaped as\\n * they are interpolated. An earlier version of this file used a @@TOKEN@@\\n * substitution table instead, which needed a template literal that ate the\\n * backslashes in a regex and quoted every token twice.\\n */\\nexport function script(a) {\\n  return (() => `\\n$av = $null\\ntry { $av = Get-MpComputerStatus -ErrorAction Stop } catch {}\\n$fw = @()\\ntry { $fw = Get-NetFirewallProfile -ErrorAction Stop | ForEach-Object { @{ profile = $_.Name; enabled = [bool]$_.Enabled } } } catch {}\\n$threats = @()\\ntry {\\n  $threats = @(Get-MpThreatDetection -ErrorAction Stop | Select-Object -First 10 | ForEach-Object {\\n    @{ time = $_.InitialDetectionTime.ToString('o'); name = \\\"$($_.ThreatID)\\\"; action = \\\"$($_.ActionSuccess)\\\" }\\n  })\\n} catch {}\\n$excl = $null\\ntry {\\n  $p = Get-MpPreference -ErrorAction Stop\\n  $excl = @{\\n    paths = @($p.ExclusionPath | Where-Object { $_ } | Select-Object -First 20)\\n    extensions = @($p.ExclusionExtension | Where-Object { $_ } | Select-Object -First 20)\\n    processes = @($p.ExclusionProcess | Where-Object { $_ } | Select-Object -First 20)\\n  }\\n} catch {}\\n$out = @{ firewall = @($fw); threats = @($threats) }\\nif ($av) {\\n  $out.antivirus = @{\\n    realTime = [bool]$av.RealTimeProtectionEnabled\\n    sigAge = [int]$av.AntivirusSignatureAge\\n    sigVersion = \\\"$($av.AntivirusSignatureVersion)\\\"\\n    quickScanAge = [int]$av.QuickScanAge\\n  }\\n  $out.tamperProtected = [bool]$av.IsTamperProtected\\n}\\nif ($excl) { $out.exclusions = $excl }\\nConvertTo-Json -Compress -Depth 5 $out`)(a);\\n}\\n\\nexport async function execute(args, config = {}) {\\n  const a = {\\n    name: typeof args?.name === \\\"string\\\" ? args.name : \\\"\\\",\\n    state: typeof args?.state === \\\"string\\\" ? args.state : \\\"\\\",\\n    log: typeof args?.log === \\\"string\\\" ? args.log : \\\"System\\\",\\n    path: typeof args?.path === \\\"string\\\" ? args.path : \\\"\\\",\\n    provider: typeof args?.provider === \\\"string\\\" ? args.provider : \\\"\\\",\\n    level: clamp(args?.level, 1, 5, 2),\\n    count: clamp(args?.count, 1, 200, 20),\\n    limit: clamp(args?.limit, 1, 400, 40),\\n    top: clamp(args?.top, 1, 40, 8),\\n    detail: Boolean(args?.detail),\\n    subkeys: Boolean(args?.subkeys),\\n    all: Boolean(args?.all),\\n    full: Boolean(args?.full),\\n    since: null,\\n  };\\n\\n\\n\\n  const timeoutMs = clamp(config.timeoutMs, 1000, 120000, 30000);\\n  const { stdout } = await runPowerShell(script(a), { timeoutMs });\\n  const raw = JSON.parse(stdout.trim() || \\\"{}\\\");\\n  if (raw.error) return { ok: false, error: String(raw.error) };\\n  return { ok: true, ...normalize(raw) };\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/defender.js\",\n      \"content\": \"// Pure side of defender: normalisation and formatting, testable without Windows.\\nfunction num(v) { const n = Number(v); return Number.isFinite(n) ? n : 0; }\\n\\nexport function normalize(raw) {\\n  return ((raw) => ({\\n      antivirus: raw.antivirus ? {\\n        realTime: Boolean(raw.antivirus.realTime),\\n        sigAge: num(raw.antivirus.sigAge),\\n        sigVersion: String(raw.antivirus.sigVersion ?? \\\"\\\"),\\n        quickScanAge: num(raw.antivirus.quickScanAge),\\n      } : null,\\n      tamperProtected: raw.tamperProtected === undefined ? null : Boolean(raw.tamperProtected),\\n      firewall: (raw.firewall || []).map((f) => ({ profile: String(f.profile ?? \\\"\\\"), enabled: Boolean(f.enabled) })),\\n      threats: (raw.threats || []).map((t) => ({ time: String(t.time ?? \\\"\\\"), name: String(t.name ?? \\\"\\\"), action: String(t.action ?? \\\"\\\") })),\\n      exclusions: raw.exclusions ? {\\n        paths: (raw.exclusions.paths || []).map(String),\\n        extensions: (raw.exclusions.extensions || []).map(String),\\n        processes: (raw.exclusions.processes || []).map(String),\\n      } : null,\\n    }))(raw ?? {});\\n}\\n\\n// Dispatch on the shape of the result rather than making the caller say which\\n// formatter to use: a result carries either `detail`, or `subkeys`, or neither.\\nexport function format(v) {\\n  const withOk = { ok: true, ...v };\\n  if (withOk.detail && typeof formatDetail === \\\"function\\\") return formatDetail(withOk);\\n  if (withOk.subkeys && typeof formatKeys === \\\"function\\\") return formatKeys(withOk);\\n  return ((v) => {\\n      const l = [`win_defender ok=${v.ok}`];\\n      if (v.antivirus) {\\n        l.push(`  real-time protection: ${v.antivirus.realTime ? \\\"on\\\" : \\\"OFF\\\"}`);\\n        l.push(`  signatures: ${v.antivirus.sigVersion} (${v.antivirus.sigAge} days old)`);\\n        l.push(`  last quick scan: ${v.antivirus.quickScanAge === 0 ? \\\"today\\\" : v.antivirus.quickScanAge + \\\" days ago\\\"}`);\\n      } else l.push(\\\"  antivirus: unavailable (Get-MpComputerStatus failed)\\\");\\n      if (v.tamperProtected !== null) l.push(`  tamper protection: ${v.tamperProtected ? \\\"on\\\" : \\\"off\\\"}`);\\n      for (const f of v.firewall || []) l.push(`  firewall ${f.profile}: ${f.enabled ? \\\"on\\\" : \\\"OFF\\\"}`);\\n      if ((v.threats ?? []).length) {\\n        l.push(`  recent detections: ${v.threats.length}`);\\n        for (const t of v.threats) l.push(`    ${t.time.slice(0, 19)} threat ${t.name} action-ok=${t.action}`);\\n      } else l.push(\\\"  recent detections: none\\\");\\n      if (v.exclusions) {\\n        const x = v.exclusions;\\n        l.push(`  exclusions: ${x.paths.length + x.extensions.length + x.processes.length}`);\\n        for (const p of x.paths) l.push(`    path ${p}`);\\n        for (const e of x.extensions) l.push(`    ext  ${e}`);\\n        for (const p of x.processes) l.push(`    proc ${p}`);\\n      }\\n      if (v.error) l.push(`error: ${v.error}`);\\n      return l.join(\\\"\\\\n\\\");\\n    })(withOk);\\n}\\n\\nexport function parameters() {\\n  return {\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"additionalProperties\\\": false,\\n  \\\"properties\\\": {}\\n};\\n}\\n\\nexport function outputSchema() {\\n  return { type: \\\"object\\\", additionalProperties: true };\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"import { detectWsl } from \\\"./lib/wsl-host.js\\\";\\nimport * as core from \\\"./lib/defender.js\\\";\\nimport { execute } from \\\"./lib/defender-exec.js\\\";\\n\\nexport const name = \\\"dsh-wsl-defender\\\";\\nexport const inject = [\\\"tools\\\", \\\"systemPrompt\\\"];\\n\\nexport function apply(ctx, config = {}) {\\n  const wsl = detectWsl();\\n\\n  ctx.systemPrompt.section({\\n    name: \\\"tool:win_defender\\\",\\n    order: 218,\\n    text: \\\"Use win_defender for WSL/Windows interop: Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n  });\\n\\n  ctx.tools.register({\\n    name: \\\"win_defender\\\",\\n    description: \\\"Windows security posture from WSL: Defender antivirus status and firewall profile state.\\\",\\n    parameters: core.parameters(),\\n    output: {\\n      schema: core.outputSchema(),\\n      render: (_args, value) => [{ type: \\\"text\\\", text: core.format(value) }],\\n    },\\n    timeoutMs: Number(config.timeoutMs) > 0 ? Number(config.timeoutMs) : 30_000,\\n    isConcurrencySafe: () => true,\\n    async execute(args) {\\n      if (!wsl) return { ok: false, error: \\\"not running in WSL\\\" };\\n      try {\\n        return await execute(args, config);\\n      } catch (error) {\\n        return { ok: false, error: String(error?.message ?? error) };\\n      }\\n    },\\n    presentCall: () => ({ card: \\\"generic\\\", title: \\\"win_defender\\\" }),\\n    presentResult: (_args, result) => ({ card: \\\"generic\\\", title: \\\"win_defender\\\", content: result?.content }),\\n  });\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"7777ae2d838701185dca0b7478f5167931290cf1\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"6cd8d285ba0f10d6c47ad5229df32217f892a2db482417275bd691d3882252e6\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 115,\n        \"words\": 407\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 241,\n        \"code\": 207,\n        \"comments\": 12,\n        \"blank\": 22\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 22,\n        \"code\": 21,\n        \"comments\": 0,\n        \"blank\": 1\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"index.js\",\n          \"line\": 17,\n          \"api\": \"ctx.tools.register\",\n          \"name\": \"win_defender\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"win_defender\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "3ad01a16120c9d9cfdb182276cd5c9e8565b7549fdcfdec06f56fee44942d2ca"
         }
     },
     "unavailable_artifacts": []

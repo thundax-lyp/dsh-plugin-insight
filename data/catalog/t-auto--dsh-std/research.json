@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "91d200840193d22914bf99796e461c86",
+    "identity": "github:1336081431:root",
+    "slug": "t-auto--dsh-std",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336081431:root",
+            "repository_id": 1336081431,
+            "component_id": "root",
+            "repository": "T-Auto/dsh-std",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Standard",
+            "entry_type": "infrastructure",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5961042408bdff73203c054ac83da9f428d438a5bca9c871169525c3d461ffdd",
+                "code": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                "maintenance": "f36554994f1d618952a9d8ff149772c5f4162ee9ce3aac70a8dd9700f66f138e"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-02-github-1336081431-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T02:58:06.282Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-02-github-1336081431-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/T-Auto/dsh-std",
+                            "commit": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                            "path": "README.md",
+                            "content_sha256": "15714d558cfc06aaaf53b5da9dda0dd6eac2b30f1bd981a0722f7f4efa947ee9"
+                        }
+                    ],
+                    "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                    "captured_at": "2026-11-05T02:58:06.282Z",
+                    "summary": "提供可独立实现的协议声明、协商器与 DeepSeek Harness 映射。",
+                    "artifact": "data/runs/2026-11-05-02/t-auto--dsh-std/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-02-github-1336081431-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/T-Auto/dsh-std",
+                            "commit": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                            "path": "README.md",
+                            "content_sha256": "15714d558cfc06aaaf53b5da9dda0dd6eac2b30f1bd981a0722f7f4efa947ee9"
+                        },
+                        {
+                            "repository_url": "https://github.com/T-Auto/dsh-std",
+                            "commit": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                            "path": "packages/core/src/negotiation.ts",
+                            "content_sha256": "3d59d4fd57f8dc7e8c3b43bac3ade4b8c737e4082408206cec7da53a4ed52d43"
+                        },
+                        {
+                            "repository_url": "https://github.com/T-Auto/dsh-std",
+                            "commit": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                            "path": "package.json",
+                            "content_sha256": "56939dc5a806df24f5040063b9357c4d873e678dcf83b8148a33248086584476"
+                        }
+                    ],
+                    "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                    "captured_at": "2026-11-05T02:58:06.282Z",
+                    "summary": "核查 README.md、packages/core/src/negotiation.ts、package.json；定义目录按版本和 kind 查找，汇总领域协商问题。",
+                    "artifact": "data/runs/2026-11-05-02/t-auto--dsh-std/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查固定提交的协议目录的兼容判断与实际宿主能力边界。未执行目标代码或实际宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "维护跨宿主扩展的开发者可评估声明协商。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "定义目录按版本和 kind 查找，汇总领域协商问题。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查固定提交的协议目录的兼容判断与实际宿主能力边界。未执行目标代码或实际宿主验证。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "协议工作区与独立适配器。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 协议定义 | 必需 | 验证并计算报告 | 缺失会报问题 |\n| 宿主映射 | 实际执行需要 | 接入产品服务 | 只能静态检查 |",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 集成费用未知 | 准备耗时未知 | 需要维护声明 |\n| 持续 | 运行与维护成本未知 | 校对耗时未知 | 领域版本独立 |\n| 恢复 | 迁移开销未知 | 排障耗时未知 | 可回原适配 |",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 先用于单领域 CI，并另验运行映射。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 报告 | 有结构化等级与路径 | 真实互操作性 |",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "未知必需与可选定义区分错误等级。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 把版本和能力要求变成可检查报告。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 兼容报告基于声明，不能代替真实运行。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 比较结构化报告的排障收益。",
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336081431:root",
+                            "area": "code",
+                            "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:58:06.282Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T02:58:06.282Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                "reviewed_at": "2026-11-05T02:58:06.282Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336081431:root",
+                        "area": "code",
+                        "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 分层协议有局部原创 25%；独立定义和协商机制 50%；参考实现可跨宿主迁移 50%，未实证；减少部分对接，简化 25%。",
+                    "basis": "interpretation",
+                    "score": 38,
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) [Q04](#research-q04) 维护流程、报告交付与适用人群各 25%；无经济结构证据 0%。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-11-05-02-github-1336081431-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "维护多宿主扩展的开发者可以先评估单个协议的 CI 校验。相比在运行时才发现接口差异，它可报告缺失声明和版本问题。若映射或维护成本不合适，应保留原适配方式。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 第 26–36 行明确集成任务，频率和维护代价未测。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 协商错误分级超过版本字符串比较；运行收益未知。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q03](#research-q03) 源码可定位协议协商，真实跨宿主运行未验，低于 13。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04) 可在 CI 局部接入并退出，高于 5；映射和版本维护未知，低于 15。"
+                    }
+                },
+                "score": 44,
+                "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                "reviewed_at": "2026-11-05T02:58:06.282Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-02-github-1336081431-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336081431:root",
+                        "area": "code",
+                        "fingerprint": "37e9c35b953f0dccaad089df6e68e4f00daae7bd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336081431:root",
+            "repository": "T-Auto/dsh-std",
+            "path": "",
+            "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+            "fingerprints": {
+                "directory": "5961042408bdff73203c054ac83da9f428d438a5bca9c871169525c3d461ffdd",
+                "code": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+                "maintenance": "f36554994f1d618952a9d8ff149772c5f4162ee9ce3aac70a8dd9700f66f138e"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T02:39:05Z",
+            "analysis_sha256": "4b853c593495b1cc0ddd0eadf17f501bab91dc9a8442066d6e35675ab764f422"
+        },
+        "publication.metadata": "data/catalog/t-auto--dsh-std/meta.json",
+        "publication.summaries": {
+            "text": "提供可独立实现的协议声明、协商器与 DeepSeek Harness 映射。",
+            "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+            "source_url": "https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+            "items": {
+                "后台": "提供协议声明、校验与结构化协商。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 协议协商 | 检查声明兼容 | 需已注册定义 |\n| DSH 适配 | 连接领域到宿主 | 需单独验证运行 |"
+        },
+        "publication.advice": {
+            "revision": "37e9c35b953f0dccaad089df6e68e4f00daae7bd",
+            "text": "[Q04](#research-q04) 先用于单领域 CI，并另验运行映射。"
+        },
+        "registry": "data/plugins/t-auto--dsh-std",
+        "reports": "# DSH Standard\n\n> 提供可独立实现的协议声明、协商器与 DeepSeek Harness 映射。\n\n## 研究范围\n\n- **仓库**：[T-Auto/dsh-std](https://github.com/T-Auto/dsh-std)\n- **版本号**：未声明（[固定提交 37e9c35b953f0dccaad089df6e68e4f00daae7bd](https://github.com/T-Auto/dsh-std/tree/37e9c35b953f0dccaad089df6e68e4f00daae7bd)）\n- **版本日期**：2026-10-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态核查固定提交的协议目录的兼容判断与实际宿主能力边界。未执行目标代码或实际宿主验证。\n\n## 洞察短评\n\n- **用途**：维护跨宿主扩展的开发者可评估声明协商。\n- **亮点**：[Q01](#research-q01) 把版本和能力要求变成可检查报告。\n- **思考**：[Q03](#research-q03) 兼容报告基于声明，不能代替真实运行。\n- **建议**：[Q05](#research-q05) 比较结构化报告的排障收益。\n\n采用建议：[Q04](#research-q04) 先用于单领域 CI，并另验运行映射。\n\n## 核心贡献\n\n[Q01](#research-q01) 把版本和能力要求变成可检查报告。\n\n## 关键质疑\n\n[Q03](#research-q03) 兼容报告基于声明，不能代替真实运行。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 比较结构化报告的排障收益。\n\n用同一矩阵盲评诊断耗时\n\n## 场景与替代办法\n\n维护跨宿主扩展的开发者可评估声明协商。\n\n直接集成容易起步，但适配差异留到运行期。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 协议定义 | 必需 | 验证并计算报告 | 缺失会报问题 |\n| 宿主映射 | 实际执行需要 | 接入产品服务 | 只能静态检查 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 选择 | 单一领域 | 固定版本 |\n| 校验 | 比较报告与运行 | 检查缺失和可选项 |\n| 退出 | 保留直接集成 | 不影响现有接口 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 集成费用未知 | 准备耗时未知 | 需要维护声明 |\n| 持续 | 运行与维护成本未知 | 校对耗时未知 | 领域版本独立 |\n| 恢复 | 迁移开销未知 | 排障耗时未知 | 可回原适配 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 报告 | 有结构化等级与路径 | 真实互操作性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：协议目录的兼容判断与实际宿主能力边界\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 协议库替集成者省掉什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n需要把同一个扩展对接不同运行时的人可先描述 requires 和 supports，再用相应协议定义生成兼容报告。相对直接调用某宿主内部 API，它把交集判定提早，但真正使用仍要接适配器。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-20](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md#L5-L20)\n\n元协议及领域隔离\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nIn plain terms, DSH Standard is a set of **universal interoperability protocols**. Its goal is simple: let DSH plugins, background runtimes, and various user interfaces (TUI terminals, Web UIs, desktop apps, headless daemons) decouple cleanly and work together smoothly.\n\n`@dsh-std/core` is a \"meta-protocol\" (the **protocol about protocols**). Domain-specific protocols—like Command, Tool, Model, and Presentation—sit on top of this meta-protocol substrate for discovery and negotiation, each versioned independently. Different hosts and applications only implement the parts they actually need.\n\nReference packages provide types, validators, and pure-function negotiators. Conforming implementations are not required to depend on these npm packages, nor do they need to run inside DeepSeek Harness.\n\n## What is a \"Meta-protocol\" (The Protocol About Protocols)?\n\nMost protocols you deal with handle **specific domain tasks**:\n- A Command protocol handles how commands are registered and executed;\n- A Model protocol governs how LLM providers are plugged in;\n- A Presentation protocol handles UI dialogs, questions, and approvals.\n\nIn contrast, `@dsh-std/core` **knows zero domain business fields** (it doesn't even know what a command or a model is). It is purely the **\"protocol about protocols\"**:\n\n- It defines universal primitives: how protocols are identified (`apiVersion` + `kind`), how participants declare what they need (`requires`) and what they provide (`supports`), and how to run pure-function negotiations to output a structured compatibility report.\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/core/src/negotiation.ts:17-42](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L17-L42)\n\n协商数据与协议定义\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport interface ProtocolNegotiationInput<RequirementSpec = unknown, SupportSpec = unknown, Policy = unknown> {\n  readonly requirements: readonly { readonly participant: string; readonly requirement: ProtocolRequirement<RequirementSpec> }[]\n  readonly supports: readonly { readonly participant: string; readonly support: ProtocolSupport<SupportSpec> }[]\n  readonly policy?: Policy\n}\n\nexport interface ProtocolNegotiationOutcome<Agreement = unknown> {\n  readonly agreement?: Agreement\n  readonly issues?: readonly ProtocolIssue[]\n}\n\nexport interface ProtocolDefinition<RequirementSpec = unknown, SupportSpec = unknown, Agreement = unknown, Policy = unknown>\n  extends ApiReference {\n  /** Every accepted wire/static API version. No compatibility is inferred by core. */\n  readonly accepts?: readonly string[]\n  validateRequirement(spec: unknown, context: ApiReference): RequirementSpec\n  validateSupport(spec: unknown, context: ApiReference): SupportSpec\n  /**\n   * Normalize and validate the definition-owned agreement before publication.\n   * Optional for definitions written against the original v1alpha1 API.\n   */\n  readonly validateAgreement?: (agreement: unknown, context: ApiReference) => Agreement\n  negotiate(\n    input: ProtocolNegotiationInput<RequirementSpec, SupportSpec, Policy>,\n  ): ProtocolNegotiationOutcome<Agreement>\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未比较移植维护时间\n  **影响**：不能断言减少总成本\n  **进一步探讨**：把一个小能力对接两种宿主\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 核心如何判定未知协议？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n注册版本需显式接受，重复键拒绝。参与者身份重复抛错，未知必需定义记 error，可选记 warning；定义负责验证和协商，错误汇入报告。最终 compatible 仅取决于有没有 error。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/core/src/negotiation.ts:71-87](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L71-L87)\n\n版本键和注销\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  register(definition: ProtocolDefinition): () => void {\n    validateDefinition(definition)\n    const accepted = new Set([definition.apiVersion, ...(definition.accepts ?? [])])\n    for (const version of accepted) {\n      const key = protocolKey({ apiVersion: version, kind: definition.kind })\n      if (this.definitions.has(key)) {\n        throw new Error(`protocol definition for ${version} ${definition.kind} is already registered`)\n      }\n    }\n    const stored = Object.freeze({ definition: freezeDefinition(definition), accepted: new Set(accepted) })\n    for (const version of accepted) this.definitions.set(protocolKey({ apiVersion: version, kind: definition.kind }), stored)\n    return () => {\n      for (const version of accepted) {\n        const key = protocolKey({ apiVersion: version, kind: definition.kind })\n        if (this.definitions.get(key) === stored) this.definitions.delete(key)\n      }\n    }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/core/src/negotiation.ts:99-142](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L99-L142)\n\n输入与缺失定义\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\n  negotiate(declarations: readonly ProtocolDeclaration[], policy?: unknown): NegotiationReport {\n    const participantIds = new Set<string>()\n    for (const declaration of declarations) {\n      validateProtocolDeclaration(declaration)\n      if (participantIds.has(declaration.participant.id)) {\n        throw new TypeError(`duplicate participant identity ${JSON.stringify(declaration.participant.id)}`)\n      }\n      participantIds.add(declaration.participant.id)\n    }\n\n    const groups = new Map<StoredDefinition, {\n      requirements: ProtocolNegotiationInput['requirements'][number][]\n      supports: ProtocolNegotiationInput['supports'][number][]\n    }>()\n    const issues: ProtocolIssue[] = []\n    for (const [declarationIndex, declaration] of declarations.entries()) {\n      for (const [index, requirement] of (declaration.requires ?? []).entries()) {\n        const stored = this.definitions.get(protocolKey(requirement))\n        if (stored === undefined) {\n          issues.push(freezeIssue({\n            code: 'definition-unavailable',\n            severity: requirement.optional === true ? 'warning' : 'error',\n            participant: declaration.participant.id,\n            path: `/declarations/${declarationIndex}/requires/${index}`,\n            message: `no definition recognizes ${requirement.apiVersion} ${requirement.kind}`,\n          }))\n          continue\n        }\n        const group = groups.get(stored) ?? { requirements: [], supports: [] }\n        try {\n          group.requirements.push(Object.freeze({\n            participant: declaration.participant.id,\n            requirement: Object.freeze({\n              ...requirement,\n              ...(Object.hasOwn(requirement, 'spec')\n                ? { spec: stored.definition.validateRequirement(requirement.spec, validationContext(requirement)) }\n                : { spec: stored.definition.validateRequirement(undefined, validationContext(requirement)) }),\n            }),\n          }))\n        } catch (error) {\n          issues.push(freezeIssue({\n            code: 'invalid-requirement', severity: 'error', participant: declaration.participant.id,\n            path: `/declarations/${declarationIndex}/requires/${index}/spec`, message: errorMessage(error),\n          }))\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/core/src/negotiation.ts:178-219](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L178-L219)\n\n领域协商与报告\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    for (const stored of [...groups.keys()].sort((left, right) => compareStrings(protocolKey(left.definition), protocolKey(right.definition)))) {\n      const group = groups.get(stored) as NonNullable<ReturnType<typeof groups.get>>\n      let outcome: ProtocolNegotiationOutcome\n      try {\n        outcome = stored.definition.negotiate(Object.freeze({\n          requirements: Object.freeze([...group.requirements]),\n          supports: Object.freeze([...group.supports]),\n          ...(policy === undefined ? {} : { policy }),\n        }))\n        if (Object.hasOwn(outcome, 'agreement') && stored.definition.validateAgreement !== undefined) {\n          outcome = Object.freeze({\n            ...outcome,\n            agreement: stored.definition.validateAgreement(\n              outcome.agreement,\n              validationContext(stored.definition),\n            ),\n          })\n        }\n      } catch (error) {\n        outcome = { issues: [{ code: 'definition-failed', severity: 'error', message: errorMessage(error) }] }\n      }\n      const protocolIssues = Object.freeze((outcome.issues ?? []).map(freezeIssue))\n      issues.push(...protocolIssues)\n      protocols.push(Object.freeze({\n        apiVersion: stored.definition.apiVersion,\n        kind: stored.definition.kind,\n        participants: Object.freeze([...new Set([\n          ...group.requirements.map(row => row.participant),\n          ...group.supports.map(row => row.participant),\n        ])].sort(compareStrings)),\n        ...(Object.hasOwn(outcome, 'agreement') ? { agreement: outcome.agreement } : {}),\n        issues: protocolIssues,\n      }))\n    }\n\n    return Object.freeze({\n      apiVersion: 'core.dsh/report/v1alpha1',\n      evaluator: Object.freeze({ ...this.evaluator }),\n      compatible: !issues.some(issue => issue.severity === 'error'),\n      protocols: Object.freeze(protocols),\n      issues: Object.freeze(issues),\n    })\n```\n\n</details>\n\n#### 缺口\n\n- 未运行边界矩阵\n  **影响**：无法确认所有领域错误映射\n  **进一步探讨**：构造缺定义及重复版本测试\n\n<a id=\"research-q03\"></a>\n\n### Q03 · compatible 能证明运行吗？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n报告只表明给定声明和定义没有产生 error。定义可选验证 agreement，且定义本身是可执行函数，因此不能把装载任意第三方定义等同于纯粹解析不可信清单。根包是私有开发工作区，适配器为独立包。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/core/src/negotiation.ts:178-219](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L178-L219)\n\n报告使用注册函数\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\n    for (const stored of [...groups.keys()].sort((left, right) => compareStrings(protocolKey(left.definition), protocolKey(right.definition)))) {\n      const group = groups.get(stored) as NonNullable<ReturnType<typeof groups.get>>\n      let outcome: ProtocolNegotiationOutcome\n      try {\n        outcome = stored.definition.negotiate(Object.freeze({\n          requirements: Object.freeze([...group.requirements]),\n          supports: Object.freeze([...group.supports]),\n          ...(policy === undefined ? {} : { policy }),\n        }))\n        if (Object.hasOwn(outcome, 'agreement') && stored.definition.validateAgreement !== undefined) {\n          outcome = Object.freeze({\n            ...outcome,\n            agreement: stored.definition.validateAgreement(\n              outcome.agreement,\n              validationContext(stored.definition),\n            ),\n          })\n        }\n      } catch (error) {\n        outcome = { issues: [{ code: 'definition-failed', severity: 'error', message: errorMessage(error) }] }\n      }\n      const protocolIssues = Object.freeze((outcome.issues ?? []).map(freezeIssue))\n      issues.push(...protocolIssues)\n      protocols.push(Object.freeze({\n        apiVersion: stored.definition.apiVersion,\n        kind: stored.definition.kind,\n        participants: Object.freeze([...new Set([\n          ...group.requirements.map(row => row.participant),\n          ...group.supports.map(row => row.participant),\n        ])].sort(compareStrings)),\n        ...(Object.hasOwn(outcome, 'agreement') ? { agreement: outcome.agreement } : {}),\n        issues: protocolIssues,\n      }))\n    }\n\n    return Object.freeze({\n      apiVersion: 'core.dsh/report/v1alpha1',\n      evaluator: Object.freeze({ ...this.evaluator }),\n      compatible: !issues.some(issue => issue.severity === 'error'),\n      protocols: Object.freeze(protocols),\n      issues: Object.freeze(issues),\n    })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:1-13](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/package.json#L1-L13)\n\n根包工作区脚本\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n{\n  \"name\": \"dsh-std-workspace\",\n  \"private\": true,\n  \"license\": \"MIT\",\n  \"packageManager\": \"pnpm@11.21.0\",\n  \"scripts\": {\n    \"build\": \"pnpm -r build\",\n    \"typecheck\": \"pnpm -r typecheck\",\n    \"test\": \"pnpm run build && pnpm -r test\",\n    \"test:release-plan\": \"vitest run scripts/release-plan.spec.mjs\",\n    \"check:changelogs\": \"node scripts/check-changelogs.mjs\",\n    \"check\": \"pnpm run check:changelogs && pnpm run test:release-plan && pnpm run test\"\n  },\n```\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:33-45](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md#L33-L45)\n\n作者说明适配与声明判断\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n**Adapter functions and implementation**\nAn adapter maps internal product services to the standard protocols the product adopts. Reusable adapters can reduce repeated product API integration work for third-party plugins. Each project can design its own adapter or use an existing implementation.\n\nThird-party plugins target the protocol contracts they adopt; adapter internals and package names are not a shared entrypoint. [`@dsh-std/adapter-dsh`](packages/adapter-dsh/README.md) provides a set of mappings for DeepSeek Harness. TUIs, Web frontends, remote runners, and other integrators can provide their own implementations. Compatibility depends on protocol versions, live capabilities, and product mappings.\n\n## What else is great about this (Beyond stable dependencies)?\n\nSeparating protocol contracts from product implementations supports the following development patterns:\n\n- **Less repeated platform integration**: Plugins can reuse business logic that follows protocol contracts, while each product's mappings connect it to local capabilities.\n- **On-Demand Activation & Zero Leaks (Facet model)**: A single plugin package can contain both frontend UI and backend logic. A host only activates the facets it needs (e.g., a headless server never loads frontend UI code). When a plugin is disabled or uninstalled, all listeners, timers, and resources are automatically garbage-collected by the scope.\n- **Know Before Installing (No crash roulette)**: With static manifests (`dsh-plugin.json`), marketplaces, hosts, and CI tools calculate compatibility in milliseconds **without running a single line of plugin code**. No more installing a plugin only to find out it crashes at runtime.\n- **Blazing-fast Headless Unit Tests**: The protocol core consists entirely of pure data structures and pure-function negotiators. Testing plugins or hosts takes tens of milliseconds in lightweight Node.js/CI—no need to spin up a full DSH instance or heavy browser.\n```\n\n</details>\n\n#### 缺口\n\n- 未测实际激活和清理\n  **影响**：不能证明跨宿主运行\n  **进一步探讨**：对照声明和真实可执行能力\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样在项目中评估？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n先挑一个需要版本协商的领域，用参考 core 和受控协议定义在 CI 检查兼容，再单独验证真实宿主映射。若声明维护代价过高，保持直接集成；不需要把根工作区安装到 DSH profile。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-9](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md#L5-L9)\n\n参考实现可选\n\n```text\nIn plain terms, DSH Standard is a set of **universal interoperability protocols**. Its goal is simple: let DSH plugins, background runtimes, and various user interfaces (TUI terminals, Web UIs, desktop apps, headless daemons) decouple cleanly and work together smoothly.\n\n`@dsh-std/core` is a \"meta-protocol\" (the **protocol about protocols**). Domain-specific protocols—like Command, Tool, Model, and Presentation—sit on top of this meta-protocol substrate for discovery and negotiation, each versioned independently. Different hosts and applications only implement the parts they actually need.\n\nReference packages provide types, validators, and pure-function negotiators. Conforming implementations are not required to depend on these npm packages, nor do they need to run inside DeepSeek Harness.\n```\n\n**依据 2 · 作者声明**：[README.md:33-36](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/README.md#L33-L36)\n\nDSH 映射独立\n\n```text\n**Adapter functions and implementation**\nAn adapter maps internal product services to the standard protocols the product adopts. Reusable adapters can reduce repeated product API integration work for third-party plugins. Each project can design its own adapter or use an existing implementation.\n\nThird-party plugins target the protocol contracts they adopt; adapter internals and package names are not a shared entrypoint. [`@dsh-std/adapter-dsh`](packages/adapter-dsh/README.md) provides a set of mappings for DeepSeek Harness. TUIs, Web frontends, remote runners, and other integrators can provide their own implementations. Compatibility depends on protocol versions, live capabilities, and product mappings.\n```\n\n**依据 3 · 源码核查**：[packages/core/src/negotiation.ts:90-105](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L90-L105)\n\n可先解析和协商\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n  resolve(reference: ApiReference): ProtocolDefinition | undefined {\n    validateApiReference(reference)\n    return this.definitions.get(protocolKey(reference))?.definition\n  }\n\n  understands(reference: ApiReference): boolean {\n    return this.resolve(reference) !== undefined\n  }\n\n  negotiate(declarations: readonly ProtocolDeclaration[], policy?: unknown): NegotiationReport {\n    const participantIds = new Set<string>()\n    for (const declaration of declarations) {\n      validateProtocolDeclaration(declaration)\n      if (participantIds.has(declaration.participant.id)) {\n        throw new TypeError(`duplicate participant identity ${JSON.stringify(declaration.participant.id)}`)\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 未验证发行包\n  **影响**：环境和升级耗时未知\n  **进一步探讨**：做最小版本冲突样例\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 比较协议报告与普通错误是否更好定位问题？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n对照版本不符、可选功能缺失和错误声明三种情况。比较集成者找到责任方及恢复时间，若报告未改善或维护成本高于收益就不采用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/core/src/negotiation.ts:113-142](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L113-L142)\n\n错误带参与者和路径\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n    const issues: ProtocolIssue[] = []\n    for (const [declarationIndex, declaration] of declarations.entries()) {\n      for (const [index, requirement] of (declaration.requires ?? []).entries()) {\n        const stored = this.definitions.get(protocolKey(requirement))\n        if (stored === undefined) {\n          issues.push(freezeIssue({\n            code: 'definition-unavailable',\n            severity: requirement.optional === true ? 'warning' : 'error',\n            participant: declaration.participant.id,\n            path: `/declarations/${declarationIndex}/requires/${index}`,\n            message: `no definition recognizes ${requirement.apiVersion} ${requirement.kind}`,\n          }))\n          continue\n        }\n        const group = groups.get(stored) ?? { requirements: [], supports: [] }\n        try {\n          group.requirements.push(Object.freeze({\n            participant: declaration.participant.id,\n            requirement: Object.freeze({\n              ...requirement,\n              ...(Object.hasOwn(requirement, 'spec')\n                ? { spec: stored.definition.validateRequirement(requirement.spec, validationContext(requirement)) }\n                : { spec: stored.definition.validateRequirement(undefined, validationContext(requirement)) }),\n            }),\n          }))\n        } catch (error) {\n          issues.push(freezeIssue({\n            code: 'invalid-requirement', severity: 'error', participant: declaration.participant.id,\n            path: `/declarations/${declarationIndex}/requires/${index}/spec`, message: errorMessage(error),\n          }))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/core/src/negotiation.ts:213-219](https://github.com/T-Auto/dsh-std/blob/37e9c35b953f0dccaad089df6e68e4f00daae7bd/packages/core/src/negotiation.ts#L213-L219)\n\n报告格式\n\n```text\n    return Object.freeze({\n      apiVersion: 'core.dsh/report/v1alpha1',\n      evaluator: Object.freeze({ ...this.evaluator }),\n      compatible: !issues.some(issue => issue.severity === 'error'),\n      protocols: Object.freeze(protocols),\n      issues: Object.freeze(issues),\n    })\n```\n\n#### 缺口\n\n- 无诊断实测\n  **影响**：收益未知\n  **进一步探讨**：用同一矩阵盲评诊断耗时\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：bf878d57291f2948504ee893058f7baa727374e00f295f71553374b662ac32c0。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 94 | 9882 | — | — | 108605 |\n| .ts | source | 70 | 12903 | 11475 | 277 | — |\n| .ts | test | 23 | 5205 | 4898 | 21 | — |\n| .js | source | 1 | 4 | 4 | 0 | — |\n| .mjs | source | 2 | 214 | 201 | 0 | — |\n| .mjs | test | 1 | 51 | 46 | 0 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 协议协商 | 检查声明兼容 | 需已注册定义 |\n| DSH 适配 | 连接领域到宿主 | 需单独验证运行 |\n\n## 工程亮点\n\n未知必需与可选定义区分错误等级。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、packages/core/src/negotiation.ts、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查固定提交的协议目录的兼容判断与实际宿主能力边界。未执行目标代码或实际宿主验证。\n- 下一步：用同一矩阵盲评诊断耗时\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-02/t-auto--dsh-std/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"T-Auto/dsh-std\",\n  \"revision\": \"37e9c35b953f0dccaad089df6e68e4f00daae7bd\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"packages/core/src/negotiation.ts\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"协议目录的兼容判断与实际宿主能力边界\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"协议库替集成者省掉什么？\",\n        \"answer\": \"需要把同一个扩展对接不同运行时的人可先描述 requires 和 supports，再用相应协议定义生成兼容报告。相对直接调用某宿主内部 API，它把交集判定提早，但真正使用仍要接适配器。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 5,\n            \"line_end\": 20,\n            \"observation\": \"元协议及领域隔离\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 17,\n            \"line_end\": 42,\n            \"observation\": \"协商数据与协议定义\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未比较移植维护时间\",\n            \"impact\": \"不能断言减少总成本\",\n            \"next_step\": \"把一个小能力对接两种宿主\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"核心如何判定未知协议？\",\n        \"answer\": \"注册版本需显式接受，重复键拒绝。参与者身份重复抛错，未知必需定义记 error，可选记 warning；定义负责验证和协商，错误汇入报告。最终 compatible 仅取决于有没有 error。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 71,\n            \"line_end\": 87,\n            \"observation\": \"版本键和注销\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 99,\n            \"line_end\": 142,\n            \"observation\": \"输入与缺失定义\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 178,\n            \"line_end\": 219,\n            \"observation\": \"领域协商与报告\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行边界矩阵\",\n            \"impact\": \"无法确认所有领域错误映射\",\n            \"next_step\": \"构造缺定义及重复版本测试\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"compatible 能证明运行吗？\",\n        \"answer\": \"报告只表明给定声明和定义没有产生 error。定义可选验证 agreement，且定义本身是可执行函数，因此不能把装载任意第三方定义等同于纯粹解析不可信清单。根包是私有开发工作区，适配器为独立包。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 178,\n            \"line_end\": 219,\n            \"observation\": \"报告使用注册函数\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"package.json\",\n            \"line_start\": 1,\n            \"line_end\": 13,\n            \"observation\": \"根包工作区脚本\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 33,\n            \"line_end\": 45,\n            \"observation\": \"作者说明适配与声明判断\",\n            \"kind\": \"author_claim\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测实际激活和清理\",\n            \"impact\": \"不能证明跨宿主运行\",\n            \"next_step\": \"对照声明和真实可执行能力\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样在项目中评估？\",\n        \"answer\": \"先挑一个需要版本协商的领域，用参考 core 和受控协议定义在 CI 检查兼容，再单独验证真实宿主映射。若声明维护代价过高，保持直接集成；不需要把根工作区安装到 DSH profile。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 5,\n            \"line_end\": 9,\n            \"observation\": \"参考实现可选\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 33,\n            \"line_end\": 36,\n            \"observation\": \"DSH 映射独立\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 90,\n            \"line_end\": 105,\n            \"observation\": \"可先解析和协商\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验证发行包\",\n            \"impact\": \"环境和升级耗时未知\",\n            \"next_step\": \"做最小版本冲突样例\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"比较协议报告与普通错误是否更好定位问题？\",\n        \"answer\": \"对照版本不符、可选功能缺失和错误声明三种情况。比较集成者找到责任方及恢复时间，若报告未改善或维护成本高于收益就不采用。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 113,\n            \"line_end\": 142,\n            \"observation\": \"错误带参与者和路径\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"packages/core/src/negotiation.ts\",\n            \"line_start\": 213,\n            \"line_end\": 219,\n            \"observation\": \"报告格式\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"无诊断实测\",\n            \"impact\": \"收益未知\",\n            \"next_step\": \"用同一矩阵盲评诊断耗时\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# DSH Standard\\n\\nEnglish | [中文](README.zh.md)\\n\\nIn plain terms, DSH Standard is a set of **universal interoperability protocols**. Its goal is simple: let DSH plugins, background runtimes, and various user interfaces (TUI terminals, Web UIs, desktop apps, headless daemons) decouple cleanly and work together smoothly.\\n\\n`@dsh-std/core` is a \\\"meta-protocol\\\" (the **protocol about protocols**). Domain-specific protocols—like Command, Tool, Model, and Presentation—sit on top of this meta-protocol substrate for discovery and negotiation, each versioned independently. Different hosts and applications only implement the parts they actually need.\\n\\nReference packages provide types, validators, and pure-function negotiators. Conforming implementations are not required to depend on these npm packages, nor do they need to run inside DeepSeek Harness.\\n\\n## What is a \\\"Meta-protocol\\\" (The Protocol About Protocols)?\\n\\nMost protocols you deal with handle **specific domain tasks**:\\n- A Command protocol handles how commands are registered and executed;\\n- A Model protocol governs how LLM providers are plugged in;\\n- A Presentation protocol handles UI dialogs, questions, and approvals.\\n\\nIn contrast, `@dsh-std/core` **knows zero domain business fields** (it doesn't even know what a command or a model is). It is purely the **\\\"protocol about protocols\\\"**:\\n\\n- It defines universal primitives: how protocols are identified (`apiVersion` + `kind`), how participants declare what they need (`requires`) and what they provide (`supports`), and how to run pure-function negotiations to output a structured compatibility report.\\n- **An analogy**: It works like the USB interface specification. The core only cares about physical pinouts, slot dimensions, and handshake negotiation. Whether you plug in a mouse, keyboard, thumb drive, or webcam, the core never needs to know or change.\\n\\n**Why is this powerful?**  \\nMonolithic frameworks hardcode every capability (commands, storage, events) into a central SDK; whenever a new domain arises, the entire framework requires a release or a breaking change. Under a meta-protocol architecture, **the protocols themselves are pluggable plugins**: public standards, community extensions, and private protocols alike register as standalone protocol definitions. The core never changes, letting the ecosystem evolve boundlessly on its own.\\n\\n## Why Decouple via Adapters?\\n\\nThe upstream DSH core and downstream ecosystem plugins have inherently different engineering priorities:\\n\\n- **Upstream DSH focuses on rapid innovation**: Its mission is to build the fastest, most capable Agent execution engine, requiring frequent iteration over model scheduling, context engineering, and internal architecture. The core should not have its hands tied by external UI variations or third-party interop standards.\\n- **Downstream plugins need stable contracts**: Plugin authors want to focus on feature logic without worrying that their code will break with every upstream update.\\n\\n**Adapter functions and implementation**\\nAn adapter maps internal product services to the standard protocols the product adopts. Reusable adapters can reduce repeated product API integration work for third-party plugins. Each project can design its own adapter or use an existing implementation.\\n\\nThird-party plugins target the protocol contracts they adopt; adapter internals and package names are not a shared entrypoint. [`@dsh-std/adapter-dsh`](packages/adapter-dsh/README.md) provides a set of mappings for DeepSeek Harness. TUIs, Web frontends, remote runners, and other integrators can provide their own implementations. Compatibility depends on protocol versions, live capabilities, and product mappings.\\n\\n## What else is great about this (Beyond stable dependencies)?\\n\\nSeparating protocol contracts from product implementations supports the following development patterns:\\n\\n- **Less repeated platform integration**: Plugins can reuse business logic that follows protocol contracts, while each product's mappings connect it to local capabilities.\\n- **On-Demand Activation & Zero Leaks (Facet model)**: A single plugin package can contain both frontend UI and backend logic. A host only activates the facets it needs (e.g., a headless server never loads frontend UI code). When a plugin is disabled or uninstalled, all listeners, timers, and resources are automatically garbage-collected by the scope.\\n- **Know Before Installing (No crash roulette)**: With static manifests (`dsh-plugin.json`), marketplaces, hosts, and CI tools calculate compatibility in milliseconds **without running a single line of plugin code**. No more installing a plugin only to find out it crashes at runtime.\\n- **Blazing-fast Headless Unit Tests**: The protocol core consists entirely of pure data structures and pure-function negotiators. Testing plugins or hosts takes tens of milliseconds in lightweight Node.js/CI—no need to spin up a full DSH instance or heavy browser.\\n- **Decentralized Ecosystem Growth**: Want to create a novel Agent capability (like special multimodal streaming or bespoke tool hooks)? Define your own protocol and run with it—no need to wait for approval or central releases.\\n\\n## Vision: Layered, Optional, Non-coercive\\n\\n```text\\nMeta-protocol (core)   only defines how protocols are declared and negotiated; no domain concepts, no fixed roles\\n        |\\nDomain protocols       connection / command / tool / session / presentation / agent ...\\n        |              independently versioned, implementable and replaceable; future protocols may supersede them\\n        |\\nProfiles               admission and interoperability specifications for concrete product shapes,\\n                       carried by ecosystem projects (e.g. dsh-ecosystem-spec provides the TUI Profile)\\n```\\n\\n- **Adoption is voluntary**: No project is forced to adopt this standard; but once claiming conformance to a protocol version, it must pass the corresponding conformance suite.\\n- **Radical Agent exploration welcomed**: Headless clusters, long-running daemon agents, and distributed collaborative systems can all grow naturally on top of the meta-protocol.\\n- Projects wanting a familiar \\\"Host + Plugin Manifest\\\" experience can follow the relevant Profile; those with other architectures remain completely unrestricted.\\n\\n## Start here\\n\\n- Read the [architecture](docs/architecture.md) for the boundary between the meta-protocol, independent protocols, and product implementations.\\n- Read the [cross-profile application guide](docs/profiles/README.md) to see how one plugin package relates to the several profile compositions that may mount it — browser, terminal, desktop, or no user interface at all.\\n- The current design work is indexed in the [Chinese proposal index](docs/proposals/README.zh.md).\\n- See the [Endpoint Connection proposal](docs/proposals/endpoint-connection.zh.md) for connection negotiation and attachments.\\n- Use the [package index](packages/README.md) to select the smallest implemented package surface.\\n- Adapter code for DSH lives in [`@dsh-std/adapter-dsh`](packages/adapter-dsh/README.md).\\n\\n## Status\\n\\nThe code and proposals are early drafts.\\n\\nEach package records changes in its own `CHANGELOG.md`. Public contract modifications must update the corresponding changelog.\\n\\n## Development\\n\\nNode.js `^22.19 || >=24` and pnpm are required.\\n\\n```sh\\npnpm install\\npnpm check\\n```\\n\\n## Releasing\\n\\nPublished package versions are maintained directly in each `packages/*/package.json`; the release workflow does not rewrite them. A push to `main` compares those versions with the pre-push commit, then packs, OIDC-publishes, tags, and creates a GitHub Release for every increase. Prerelease versions use their prerelease identifier as the npm dist-tag (`rc`, `alpha`, or `beta`); stable versions use `latest`.\\n\\nThe release job is restricted to this repository's GitHub ID, so ownership transfers do not disable it and forks do not publish packages. GitHub Releases target the repository running the workflow through `GH_REPO`.\\n\\nFor the transfer to `T-Auto/dsh-std`, each published npm package's trusted publisher must use owner `T-Auto`, repository `dsh-std`, and workflow `release.yml` (with no environment). Configure this in the package's npm settings before publishing from the transferred repository; GitHub ownership transfer does not update the npm configuration. See [npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).\\n\\n## License\\n\\n[MIT](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-std-workspace\\\",\\n  \\\"private\\\": true,\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"packageManager\\\": \\\"pnpm@11.21.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"pnpm -r build\\\",\\n    \\\"typecheck\\\": \\\"pnpm -r typecheck\\\",\\n    \\\"test\\\": \\\"pnpm run build && pnpm -r test\\\",\\n    \\\"test:release-plan\\\": \\\"vitest run scripts/release-plan.spec.mjs\\\",\\n    \\\"check:changelogs\\\": \\\"node scripts/check-changelogs.mjs\\\",\\n    \\\"check\\\": \\\"pnpm run check:changelogs && pnpm run test:release-plan && pnpm run test\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^22.20.0\\\",\\n    \\\"tsdown\\\": \\\"^0.22.2\\\",\\n    \\\"typescript\\\": \\\"^5.9.3\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/core/src/negotiation.ts\",\n      \"content\": \"import { protocolKey, validateApiReference, type ApiReference } from './identity.js'\\nimport {\\n  validateProtocolDeclaration,\\n  type ProtocolDeclaration,\\n  type ProtocolRequirement,\\n  type ProtocolSupport,\\n} from './protocol.js'\\n\\nexport interface ProtocolIssue {\\n  readonly code: string\\n  readonly severity: 'error' | 'warning'\\n  readonly participant?: string\\n  readonly path?: string\\n  readonly message: string\\n}\\n\\nexport interface ProtocolNegotiationInput<RequirementSpec = unknown, SupportSpec = unknown, Policy = unknown> {\\n  readonly requirements: readonly { readonly participant: string; readonly requirement: ProtocolRequirement<RequirementSpec> }[]\\n  readonly supports: readonly { readonly participant: string; readonly support: ProtocolSupport<SupportSpec> }[]\\n  readonly policy?: Policy\\n}\\n\\nexport interface ProtocolNegotiationOutcome<Agreement = unknown> {\\n  readonly agreement?: Agreement\\n  readonly issues?: readonly ProtocolIssue[]\\n}\\n\\nexport interface ProtocolDefinition<RequirementSpec = unknown, SupportSpec = unknown, Agreement = unknown, Policy = unknown>\\n  extends ApiReference {\\n  /** Every accepted wire/static API version. No compatibility is inferred by core. */\\n  readonly accepts?: readonly string[]\\n  validateRequirement(spec: unknown, context: ApiReference): RequirementSpec\\n  validateSupport(spec: unknown, context: ApiReference): SupportSpec\\n  /**\\n   * Normalize and validate the definition-owned agreement before publication.\\n   * Optional for definitions written against the original v1alpha1 API.\\n   */\\n  readonly validateAgreement?: (agreement: unknown, context: ApiReference) => Agreement\\n  negotiate(\\n    input: ProtocolNegotiationInput<RequirementSpec, SupportSpec, Policy>,\\n  ): ProtocolNegotiationOutcome<Agreement>\\n}\\n\\nexport interface NegotiatedProtocol<Agreement = unknown> extends ApiReference {\\n  readonly participants: readonly string[]\\n  readonly agreement?: Agreement\\n  readonly issues: readonly ProtocolIssue[]\\n}\\n\\nexport interface NegotiationReport {\\n  readonly apiVersion: 'core.dsh/report/v1alpha1'\\n  readonly evaluator: { readonly name: string; readonly version: string }\\n  readonly compatible: boolean\\n  readonly protocols: readonly NegotiatedProtocol[]\\n  readonly issues: readonly ProtocolIssue[]\\n}\\n\\ninterface StoredDefinition {\\n  readonly definition: ProtocolDefinition\\n  readonly accepted: ReadonlySet<string>\\n}\\n\\nexport class ProtocolCatalog {\\n  private readonly definitions = new Map<string, StoredDefinition>()\\n\\n  constructor(readonly evaluator: NegotiationReport['evaluator']) {\\n    nonEmpty(evaluator.name, 'evaluator.name')\\n    nonEmpty(evaluator.version, 'evaluator.version')\\n  }\\n\\n  register(definition: ProtocolDefinition): () => void {\\n    validateDefinition(definition)\\n    const accepted = new Set([definition.apiVersion, ...(definition.accepts ?? [])])\\n    for (const version of accepted) {\\n      const key = protocolKey({ apiVersion: version, kind: definition.kind })\\n      if (this.definitions.has(key)) {\\n        throw new Error(`protocol definition for ${version} ${definition.kind} is already registered`)\\n      }\\n    }\\n    const stored = Object.freeze({ definition: freezeDefinition(definition), accepted: new Set(accepted) })\\n    for (const version of accepted) this.definitions.set(protocolKey({ apiVersion: version, kind: definition.kind }), stored)\\n    return () => {\\n      for (const version of accepted) {\\n        const key = protocolKey({ apiVersion: version, kind: definition.kind })\\n        if (this.definitions.get(key) === stored) this.definitions.delete(key)\\n      }\\n    }\\n  }\\n\\n  resolve(reference: ApiReference): ProtocolDefinition | undefined {\\n    validateApiReference(reference)\\n    return this.definitions.get(protocolKey(reference))?.definition\\n  }\\n\\n  understands(reference: ApiReference): boolean {\\n    return this.resolve(reference) !== undefined\\n  }\\n\\n  negotiate(declarations: readonly ProtocolDeclaration[], policy?: unknown): NegotiationReport {\\n    const participantIds = new Set<string>()\\n    for (const declaration of declarations) {\\n      validateProtocolDeclaration(declaration)\\n      if (participantIds.has(declaration.participant.id)) {\\n        throw new TypeError(`duplicate participant identity ${JSON.stringify(declaration.participant.id)}`)\\n      }\\n      participantIds.add(declaration.participant.id)\\n    }\\n\\n    const groups = new Map<StoredDefinition, {\\n      requirements: ProtocolNegotiationInput['requirements'][number][]\\n      supports: ProtocolNegotiationInput['supports'][number][]\\n    }>()\\n    const issues: ProtocolIssue[] = []\\n    for (const [declarationIndex, declaration] of declarations.entries()) {\\n      for (const [index, requirement] of (declaration.requires ?? []).entries()) {\\n        const stored = this.definitions.get(protocolKey(requirement))\\n        if (stored === undefined) {\\n          issues.push(freezeIssue({\\n            code: 'definition-unavailable',\\n            severity: requirement.optional === true ? 'warning' : 'error',\\n            participant: declaration.participant.id,\\n            path: `/declarations/${declarationIndex}/requires/${index}`,\\n            message: `no definition recognizes ${requirement.apiVersion} ${requirement.kind}`,\\n          }))\\n          continue\\n        }\\n        const group = groups.get(stored) ?? { requirements: [], supports: [] }\\n        try {\\n          group.requirements.push(Object.freeze({\\n            participant: declaration.participant.id,\\n            requirement: Object.freeze({\\n              ...requirement,\\n              ...(Object.hasOwn(requirement, 'spec')\\n                ? { spec: stored.definition.validateRequirement(requirement.spec, validationContext(requirement)) }\\n                : { spec: stored.definition.validateRequirement(undefined, validationContext(requirement)) }),\\n            }),\\n          }))\\n        } catch (error) {\\n          issues.push(freezeIssue({\\n            code: 'invalid-requirement', severity: 'error', participant: declaration.participant.id,\\n            path: `/declarations/${declarationIndex}/requires/${index}/spec`, message: errorMessage(error),\\n          }))\\n        }\\n        groups.set(stored, group)\\n      }\\n      for (const [index, support] of (declaration.supports ?? []).entries()) {\\n        const stored = this.definitions.get(protocolKey(support))\\n        if (stored === undefined) {\\n          issues.push(freezeIssue({\\n            code: 'definition-unavailable', severity: 'warning', participant: declaration.participant.id,\\n            path: `/declarations/${declarationIndex}/supports/${index}`,\\n            message: `no definition recognizes ${support.apiVersion} ${support.kind}`,\\n          }))\\n          continue\\n        }\\n        const group = groups.get(stored) ?? { requirements: [], supports: [] }\\n        try {\\n          group.supports.push(Object.freeze({\\n            participant: declaration.participant.id,\\n            support: Object.freeze({\\n              ...support,\\n              ...(Object.hasOwn(support, 'spec')\\n                ? { spec: stored.definition.validateSupport(support.spec, validationContext(support)) }\\n                : { spec: stored.definition.validateSupport(undefined, validationContext(support)) }),\\n            }),\\n          }))\\n        } catch (error) {\\n          issues.push(freezeIssue({\\n            code: 'invalid-support', severity: 'error', participant: declaration.participant.id,\\n            path: `/declarations/${declarationIndex}/supports/${index}/spec`, message: errorMessage(error),\\n          }))\\n        }\\n        groups.set(stored, group)\\n      }\\n    }\\n\\n    const protocols: NegotiatedProtocol[] = []\\n    for (const stored of [...groups.keys()].sort((left, right) => compareStrings(protocolKey(left.definition), protocolKey(right.definition)))) {\\n      const group = groups.get(stored) as NonNullable<ReturnType<typeof groups.get>>\\n      let outcome: ProtocolNegotiationOutcome\\n      try {\\n        outcome = stored.definition.negotiate(Object.freeze({\\n          requirements: Object.freeze([...group.requirements]),\\n          supports: Object.freeze([...group.supports]),\\n          ...(policy === undefined ? {} : { policy }),\\n        }))\\n        if (Object.hasOwn(outcome, 'agreement') && stored.definition.validateAgreement !== undefined) {\\n          outcome = Object.freeze({\\n            ...outcome,\\n            agreement: stored.definition.validateAgreement(\\n              outcome.agreement,\\n              validationContext(stored.definition),\\n            ),\\n          })\\n        }\\n      } catch (error) {\\n        outcome = { issues: [{ code: 'definition-failed', severity: 'error', message: errorMessage(error) }] }\\n      }\\n      const protocolIssues = Object.freeze((outcome.issues ?? []).map(freezeIssue))\\n      issues.push(...protocolIssues)\\n      protocols.push(Object.freeze({\\n        apiVersion: stored.definition.apiVersion,\\n        kind: stored.definition.kind,\\n        participants: Object.freeze([...new Set([\\n          ...group.requirements.map(row => row.participant),\\n          ...group.supports.map(row => row.participant),\\n        ])].sort(compareStrings)),\\n        ...(Object.hasOwn(outcome, 'agreement') ? { agreement: outcome.agreement } : {}),\\n        issues: protocolIssues,\\n      }))\\n    }\\n\\n    return Object.freeze({\\n      apiVersion: 'core.dsh/report/v1alpha1',\\n      evaluator: Object.freeze({ ...this.evaluator }),\\n      compatible: !issues.some(issue => issue.severity === 'error'),\\n      protocols: Object.freeze(protocols),\\n      issues: Object.freeze(issues),\\n    })\\n  }\\n}\\n\\nfunction validateDefinition(definition: ProtocolDefinition): void {\\n  validateApiReference(definition, 'protocol definition')\\n  if (typeof definition.validateRequirement !== 'function'\\n    || typeof definition.validateSupport !== 'function'\\n    || typeof definition.negotiate !== 'function') {\\n    throw new TypeError('protocol definition must provide validators and negotiate')\\n  }\\n  const versions = [definition.apiVersion, ...(definition.accepts ?? [])]\\n  if (new Set(versions).size !== versions.length) throw new TypeError('protocol definition accepts duplicate versions')\\n  for (const version of versions) validateApiReference({ apiVersion: version, kind: definition.kind })\\n}\\n\\nfunction freezeDefinition(definition: ProtocolDefinition): ProtocolDefinition {\\n  return Object.freeze({ ...definition, ...(definition.accepts === undefined ? {} : { accepts: Object.freeze([...definition.accepts]) }) })\\n}\\n\\nfunction validationContext(reference: ApiReference): ApiReference {\\n  return Object.freeze({ apiVersion: reference.apiVersion, kind: reference.kind })\\n}\\n\\nfunction freezeIssue(issue: ProtocolIssue): ProtocolIssue {\\n  if (issue.severity !== 'error' && issue.severity !== 'warning') throw new TypeError('protocol issue severity is invalid')\\n  nonEmpty(issue.code, 'protocol issue.code')\\n  nonEmpty(issue.message, 'protocol issue.message')\\n  return Object.freeze({ ...issue })\\n}\\n\\nfunction nonEmpty(value: unknown, label: string): asserts value is string {\\n  if (typeof value !== 'string' || value.trim() === '') throw new TypeError(`${label} must be a non-empty string`)\\n}\\n\\nfunction compareStrings(left: string, right: string): number {\\n  return left < right ? -1 : left > right ? 1 : 0\\n}\\n\\nfunction errorMessage(error: unknown): string {\\n  return error instanceof Error ? error.message : String(error)\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"37e9c35b953f0dccaad089df6e68e4f00daae7bd\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"bf878d57291f2948504ee893058f7baa727374e00f295f71553374b662ac32c0\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 94,\n        \"lines\": 9882,\n        \"words\": 108605\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 70,\n        \"lines\": 12903,\n        \"code\": 11475,\n        \"comments\": 277,\n        \"blank\": 1158\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 23,\n        \"lines\": 5205,\n        \"code\": 4898,\n        \"comments\": 21,\n        \"blank\": 299\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 4,\n        \"code\": 4,\n        \"comments\": 0,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 214,\n        \"code\": 201,\n        \"comments\": 0,\n        \"blank\": 13\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 51,\n        \"code\": 46,\n        \"comments\": 0,\n        \"blank\": 5\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/namespace-guard/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 644,\n          \"api\": \"agent.ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 1166,\n          \"api\": \"agent.ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"commands\": [\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 1831,\n          \"api\": \"registerCommand\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 1090,\n          \"api\": \"ctx.commands.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"events\": [\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 535,\n          \"api\": \"ctx.on\",\n          \"name\": \"agent/created\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 549,\n          \"api\": \"ctx.on\",\n          \"name\": \"agent/disposed\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 550,\n          \"api\": \"ctx.on\",\n          \"name\": \"tools/change\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/src/index.ts\",\n          \"line\": 630,\n          \"api\": \"agent.ctx.on\",\n          \"name\": \"tools/execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 1296,\n          \"api\": \"eventContext.on\",\n          \"name\": \"fs/write-intent\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 1297,\n          \"api\": \"eventContext.on\",\n          \"name\": \"fs/observed\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 854,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/adapter-dsh/tests/adapter.spec.ts\",\n          \"line\": 887,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"agent/created\",\n          \"agent/disposed\",\n          \"tools/change\",\n          \"tools/execute\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "523e59c3b57a2f38b7de61fbb9a786d5989fb2f96a2a6abe66d0aa39eb7e5f73"
+        }
+    },
+    "unavailable_artifacts": []
+}

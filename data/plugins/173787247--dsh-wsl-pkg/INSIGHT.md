@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[c795535](https://github.com/173787247/dsh-wsl-pkg/tree/c79553532eda43f86f3d056ad31e35d11710ad33)
+源码版本：[b5a0115](https://github.com/173787247/dsh-wsl-pkg/tree/b5a0115dced4ef97be907bf3f6180c795a67a848)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-pkg)
 <!-- END META -->
 
-> **功能**：将 npm、pip、cargo 查询接为 DSH 工具，给出有限长度的依赖摘要。
+> **功能**：在 DSH 中读取 npm、pip 与 Cargo 的依赖和版本摘要。
 
-> **亮点**：把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 在同一会话取得三类依赖线索，方便决定接下来读哪些原件。
 
-> **主要限制**：allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项目；解析失败也可能 ok:true，须核项目、退出和截断。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) npm 错误与摘要切片可能没有清楚标记，pip 口径也不同。
 
 **本文目录**
 
@@ -26,11 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 包依赖摘要服务哪种用户判断，合格结果是什么？](#detail-section-11)
-  - [Q02 · 命令执行、路径限制和摘要截断如何工作？](#detail-section-12)
-  - [Q03 · 只读、项目归属和结果完整性有哪些边界？](#detail-section-13)
-  - [Q04 · 部署、持续扫描和错误恢复要付什么成本？](#detail-section-14)
-  - [Q05 · 适合怎样采用，项目环境绑定如何验证？](#detail-section-15)
+  - [Q01 · 依赖摘要适合做什么判断？](#detail-section-11)
+  - [Q02 · 命令失败和截断怎样影响依赖结论？](#detail-section-12)
+  - [Q03 · 如何试用并减少把部分结果误读为完整库存？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -40,74 +38,69 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：DSH 用户快速看多语言项目依赖和 npm 更新候选；需核环境归属与截断，不能代替全量审计。
+> **用途**：维护者快速定位项目依赖或环境异常。
 
-基线为直接 npm ls/outdated、pip list、cargo tree；本包只做宿主接线与摘要。
+直接运行原生包管理命令并查锁文件。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| pkg_status | 包管理器可用性 | 不表示项目归属 |
-| pkg_npm_ls/outdated | Node 依赖和更新 | 有网络/截断/解析条件 |
-| pkg_pip_list | Python 列表 | 未绑定项目 venv |
-| pkg_cargo_tree | Rust 摘要 | 需核实际参数语义 |
+| 依赖摘要 | 定位需要复核的依赖 | 查询范围与输出上限因 CLI 而异 |
 
-**流程与依赖**
+#### 启动与依赖
 
-| 条件 | 用途 | 缺失时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| npm、pip 或 Cargo | 按查询必需 | 读取现有环境 | 二进制或环境不同则结果不同 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| Node>=18、DSH tools/systemPrompt | 工具注册 | 插件不可用 |
-| npm/pip/cargo PATH | 读取依赖 | 对应工具失败 |
-| 项目目录与可选 allowRoots | npm/cargo 定位 | 错目录或拒绝 |
-| registry 网络 | npm outdated | 结果/延迟不确定 |
+| 准备 | 用户建立测试项目 | 已知依赖和环境 |
+| 比对 | 用户查深度、更新和重复依赖 | 核对与原命令相符 |
+| 退出 | 用户回锁文件和原命令 | 摘要不充当库存 |
 
-| 步骤 | 动作 | 判据 |
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次 | 资源未知 | 检查 CLI 与项目根 | 确认虚拟环境 |
+| 持续 | 查询资源未知 | 复核输出和 registry | 不自动更新依赖 |
+| 失败 | 排查开销未知 | 从原命令查退出与 stderr | 空结果不可盲信 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 准备 | 核项目根、解释器和 allowRoots | 目标明确 |
-| 查询 | 看 status，再按语言调工具 | 返回非截断且命令成功 |
-| 复核 | 对比锁文件和原命令 | 重要依赖完整 |
-| 恢复 | 区分 PATH、网络、解析及 peer 问题 | 不把 ok:true 当完整成功 |
+| 依赖初筛 | 限深树、包列表与重复依赖 | 诊断时间及完整性 |
 
-**效果与成本**
-
-| 阶段 | 投入 | 未知 |
-| --- | --- | --- |
-| 初次 | 宿主、包管理器 PATH、allowRoots | 环境匹配时间 |
-| 持续 | 子进程、outdated 网络请求 | 延迟/截断率 |
-| 恢复 | 区分缺工具、超时、非 JSON 和依赖问题 | 人工复核时间 |
-
-| 结果 | 源码支持 | 未知 |
-| --- | --- | --- |
-| 依赖概览 | npm/pip/cargo 命令摘要 | 项目与解释器归属准确率 |
-| npm 更新 | outdated JSON 摘要 | registry 变动和网络成本 |
-| 限量输出 | 深度/项数/长度截断 | 重要项漏出率 |
-
-> **思考**：allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项目；解析失败也可能 ok:true，须核项目、退出和截断。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) npm 错误与摘要切片可能没有清楚标记，pip 口径也不同。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把既有包管理器命令包成 DSH 工具与浅摘要，提供可选项目根限制；不增加依赖解析算法。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 在同一会话取得三类依赖线索，方便决定接下来读哪些原件。
 
-spawn argv 数组避免把项目路径拼到 shell；resolveDir 对存在路径 realpath，allowRoots 空则不限制。npm ls/outdated 解析失败仍 ok:true；pip 无项目目录；stderr 收集无显式上限。
+[Q02](#research-q02) npm ls 的二次树切片不在 truncated 字段中。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项目；解析失败也可能 ok:true，须核项目、退出和截断。详见[Q03](#research-q03)。
+[Q02](#research-q02) npm 错误与摘要切片可能没有清楚标记，pip 口径也不同。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-配置 allowRoots 后作为快速导航；Python 环境与锁文件/原命令另核，不能用有限摘要做全量结论。详见[Q05](#research-q05)。
+[Q03](#research-q03) 先在已知依赖项目验证实际包管理环境。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +108,18 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 **核查状态**：已检查源码。
 
-源码证实命令与摘要，但未在项目运行；pip 环境归属、网络和大项目成本待测。
+固定源码支持接线与限量，CLI 兼容与改法未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/pkg.js、test/pkg.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/pkg.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交核 README、package、index.js、lib/pkg.js、测试源码；未运行目标插件和任何包管理器。
-- 下一步：隔离两项目双 venv 对照原命令，测目录/环境错配、截断率、运行时间与人工复核成本。
+- 边界：固定源码，未运行包管理工具、插件或宿主。
+- 下一步：覆盖空 stdout、异常退出、不同虚拟环境、深度和截断。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-pkg](https://github.com/173787247/dsh-wsl-pkg)
-- **版本号**：0.1.1（[固定提交 c795535](https://github.com/173787247/dsh-wsl-pkg/tree/c79553532eda43f86f3d056ad31e35d11710ad33)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 b5a0115](https://github.com/173787247/dsh-wsl-pkg/tree/b5a0115dced4ef97be907bf3f6180c795a67a848)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +127,9 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 <a id="innovation"></a>
 
-绑定项目根、解释器/包管理器路径、退出码和完整性标签，可能减少多环境错配；双 venv 对照验证，尚未实现。详见[Q05](#research-q05)。
+[Q03](#research-q03) 独立标记失败及两种截断，测完整性误读。
 
-隔离两项目双 venv 对照原命令，测目录/环境错配、截断率、运行时间与人工复核成本。
+覆盖空 stdout、异常退出、不同虚拟环境、深度和截断。
 
 <a id="detail-section-9"></a>
 
@@ -144,6 +137,8 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,44 +150,40 @@ allowRoots 空时不限目录，pip list 跟随 DSH 进程 PATH 而非指定项�
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A28%3A08.886Z..2026-10-22T05%3A28%3A08.886Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+created%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-pkg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A43%3A55.370Z..2026-11-05T02%3A43%3A55.370Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核清多语言依赖摘要的真实覆盖、环境归属与采用条件。
+**插件研究总目标**：维护者能否用 DSH 初筛依赖问题，并辨别摘要的范围与失败？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 包依赖摘要服务哪种用户判断，合格结果是什么？
+### Q01 · 依赖摘要适合做什么判断？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-DSH 中查看 Node/Python/Rust 项目依赖与 npm 更新候选，省去人工切终端。合格结果须明确扫描的是哪个项目/解释器环境、命令退出码和截断状态，不能把有限浅树当全量 SBOM 或漏洞/许可证结论。README 工具表只列四项，实际入口还注册 pkg_npm_outdated；直接终端调用同样命令是基线。
+接手仓库时可从会话查 npm 依赖树和可更新项、当前 pip 环境包或 Cargo 重复依赖。相较读完整命令输出，插件有 npm 深度限制与有限节点投影。四个结果的范围不同，pip 是宿主找到的 pip 环境，cargo tree -d 聚焦重复依赖，均不能当作统一的依赖物料清单。合格结果是定位需回原工具检查的一项依赖。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-35](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/README.md#L1-L35)
+**依据 1 · 作者声明**：[README.md:5-15](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/README.md#L5-L15)
 
-作者用途和浅摘要。
+作者定位。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（11行）</summary>
 
 ````text
-# dsh-wsl-pkg
-
-> **语言：** **中文**（本页） · [English](./README.en.md)
-
 依赖树摘要：npm ls / pip list / cargo tree。
 
 | | |
@@ -204,369 +195,16 @@ DSH 中查看 Node/Python/Rust 项目依赖与 npm 更新候选，省去人工�
 
 ```sh
 dsh plugin --profile web add github:173787247/dsh-wsl-pkg
-# 或本机 path：
-# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-pkg
-```
-
-kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
-
-## 工具
-
-| 工具 | 作用 |
-|------|------|
-| `pkg_status` | 包管理器是否可用 |
-| `pkg_npm_ls` | npm ls 浅摘要 |
-| `pkg_pip_list` | pip list |
-| `pkg_cargo_tree` | cargo tree -d 1 |
-
-## 配置要点
-
-`allowRoots / timeoutMs`
-
-不安装/卸载。深度默认很浅，避免噪音。
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:20-70](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/index.js#L20-L70)
+**依据 2 · 源码核查**：[lib/pkg.js:79-128](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L79-L128)
 
-实际还注册 npm outdated。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "pkg_status",
-    description: "Whether npm / pip / cargo are on PATH; npm version.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 8_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return pkgStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "pkg status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pkg status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "pkg_npm_outdated",
-    description: "npm outdated --json summary for a project dir (read-only; does not upgrade).",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["dir"],
-      properties: { dir: { type: "string" } },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        {
-          type: "text",
-          text:
-            v.ok === false
-              ? v.error
-              : (v.packages || [])
-                  .map((p) => `${p.name}\tcurrent=${p.current}\twanted=${p.wanted}\tlatest=${p.latest}`)
-                  .join("\n") ||
-                v.output ||
-                "(none outdated)",
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await npmOutdated({ dir: args.dir, allowRoots, timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "npm outdated" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "npm outdated", content: r.content }),
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:72-148](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/index.js#L72-L148)
-
-npm、pip、cargo 工具。
+两类 npm 查询。
 
 <details>
-<summary>查看原文（77行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "pkg_npm_ls",
-    description: "npm ls --json shallow summary for a project dir (depth 0–3).",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["dir"],
-      properties: { dir: { type: "string" }, depth: { type: "number" } },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : JSON.stringify(v.tree || v, null, 2) }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await npmLs({ dir: args.dir, depth: args.depth, allowRoots, timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "npm ls" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "npm ls", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "pkg_pip_list",
-    description: "pip list --format=json (capped names).",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        {
-          type: "text",
-          text: v.ok === false ? v.error : (v.packages || []).map((p) => `${p.name}==${p.version}`).join("\n"),
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute() {
-      try {
-        return await pipList({ timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pip list" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pip list", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "pkg_cargo_tree",
-    description: "cargo tree -d 1 in a Rust project dir.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["dir"],
-      properties: { dir: { type: "string" } },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await cargoTree({ dir: args.dir, allowRoots, timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "cargo tree" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "cargo tree", content: r.content }),
-  });
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/pkg.js:108-165](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L108-L165)
-
-真实命令及数据截断。
-
-<details>
-<summary>查看原文（58行）</summary>
-
-```text
-export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
-  const cwd = resolveDir(dir, allowRoots);
-  const d = Math.min(3, Math.max(0, Number(depth) || 0));
-  const bin = (await which("npm")) || "npm";
-  const r = await run(bin, ["ls", "--all", `--depth=${d}`, "--json"], { cwd, timeoutMs, maxOut: 40_000 });
-  // npm ls exits 1 on peer issues — still parse
-  let json;
-  try {
-    json = JSON.parse(r.stdout || "{}");
-  } catch {
-    return { ok: true, dir: cwd, output: r.stdout, truncated: r.truncated };
-  }
-  return {
-    ok: true,
-    dir: cwd,
-    name: json.name,
-    version: json.version,
-    problems: json.problems || null,
-    truncated: r.truncated,
-    tree: summarizeNpm(json, d),
-  };
-}
-
-function summarizeNpm(node, depthLeft) {
-  if (!node || typeof node !== "object") return null;
-  const deps = node.dependencies || {};
-  const keys = Object.keys(deps).slice(0, 80);
-  const out = {};
-  for (const k of keys) {
-    const child = deps[k];
-    out[k] = {
-      version: child.version,
-      ...(depthLeft > 0 ? { dependencies: summarizeNpm(child, depthLeft - 1) } : {}),
-    };
-  }
-  return out;
-}
-
-export async function pipList({ timeoutMs } = {}) {
-  const bin = (await which("pip")) || (await which("pip3")) || "pip";
-  const r = await run(bin, ["list", "--format=json"], { timeoutMs, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`pip list failed: ${r.stderr || r.code}`);
-  let items;
-  try {
-    items = JSON.parse(r.stdout || "[]");
-  } catch {
-    return { ok: true, output: r.stdout };
-  }
-  const list = (Array.isArray(items) ? items : []).slice(0, 200).map((p) => ({ name: p.name, version: p.version }));
-  return { ok: true, count: list.length, packages: list };
-}
-
-export async function cargoTree({ dir, allowRoots, timeoutMs } = {}) {
-  const cwd = resolveDir(dir, allowRoots);
-  const bin = (await which("cargo")) || "cargo";
-  const r = await run(bin, ["tree", "-d", "1"], { cwd, timeoutMs, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`cargo tree failed: ${r.stderr || r.code}`);
-  return { ok: true, dir: cwd, truncated: r.truncated, output: r.stdout };
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 命令执行、路径限制和摘要截断如何工作？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-index 注册五项工具；lib 使用 spawn 参数数组执行 npm ls --all --depth=N --json、npm outdated --json、pip list --format=json、cargo tree -d 1，按命令分别解析或截断。npm 深度限制 0–3，依赖每层最多取 80 个名称，pip 仅前 200 项，stdout 最多返回 40k 字符。dir 经 resolveDir 先 realpath，再按 allowRoots 前缀校验；但是 allowRoots 默认为空，这时不限制项目目录。相对手工 CLI 的增量是 DSH 工具接线和紧凑结构化摘要，并非新的依赖解析算法。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:1-17](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/index.js#L1-L17)
-
-入口与配置默认。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-import { pkgStatus, npmLs, pipList, cargoTree, npmOutdated } from "./lib/pkg.js";
-
-export const name = "dsh-wsl-pkg";
-export const inject = ["tools", "systemPrompt"];
-
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-pkg] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 60_000);
-  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];
-
-  ctx.systemPrompt.section({
-    name: "tool:pkg",
-    order: 141,
-    text: "dsh-wsl-pkg summarizes dependency trees (npm ls / npm outdated / pip list / cargo tree). Prefer shallow depth. Does not install/uninstall packages.",
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/pkg.js:16-31](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L16-L31)
-
-目录 realpath 和可选 allowRoots。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function resolveDir(dir, allowRoots = []) {
-  const abs = resolve(String(dir || ".").trim() || ".");
-  const real = existsSync(abs) ? realpathSync(abs) : abs;
-  if (allowRoots.length) {
-    const roots = allowRoots.map((r) => {
-      const a = resolve(r);
-      return existsSync(a) ? realpathSync(a) : a;
-    });
-    const ok = roots.some((root) => {
-      const x = root.replace(/[/\\]+$/, "");
-      return real === x || real.startsWith(x + "/") || real.startsWith(x + "\\");
-    });
-    if (!ok) throw new Error(`dir outside allowRoots: ${real}`);
-  }
-  return real;
-}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/pkg.js:33-60](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L33-L60)
-
-子进程与截断。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 40_000 } = {}) {
-  return new Promise((resolvePromise, reject) => {
-    const child = spawn(bin, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
-    let stdout = "";
-    let stderr = "";
-    const t = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({
-        code,
-        stdout: stdout.slice(0, maxOut),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOut,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/pkg.js:79-105](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L79-L105)
-
-outdated 解析。
-
-<details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（50行）</summary>
 
 ```text
 export async function npmOutdated({ dir, allowRoots, timeoutMs, maxOut = 40_000 } = {}) {
@@ -596,18 +234,8 @@ export async function npmOutdated({ dir, allowRoots, timeoutMs, maxOut = 40_000 
     truncated: r.truncated || Object.keys(json || {}).length > 80,
     packages,
   };
-```
+}
 
-</details>
-
-**依据 5 · 源码核查**：[lib/pkg.js:108-165](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L108-L165)
-
-npm/pip/cargo 摘要。
-
-<details>
-<summary>查看原文（58行）</summary>
-
-```text
 export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
   const cwd = resolveDir(dir, allowRoots);
   const d = Math.min(3, Math.max(0, Number(depth) || 0));
@@ -629,165 +257,13 @@ export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
     truncated: r.truncated,
     tree: summarizeNpm(json, d),
   };
-}
-
-function summarizeNpm(node, depthLeft) {
-  if (!node || typeof node !== "object") return null;
-  const deps = node.dependencies || {};
-  const keys = Object.keys(deps).slice(0, 80);
-  const out = {};
-  for (const k of keys) {
-    const child = deps[k];
-    out[k] = {
-      version: child.version,
-      ...(depthLeft > 0 ? { dependencies: summarizeNpm(child, depthLeft - 1) } : {}),
-    };
-  }
-  return out;
-}
-
-export async function pipList({ timeoutMs } = {}) {
-  const bin = (await which("pip")) || (await which("pip3")) || "pip";
-  const r = await run(bin, ["list", "--format=json"], { timeoutMs, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`pip list failed: ${r.stderr || r.code}`);
-  let items;
-  try {
-    items = JSON.parse(r.stdout || "[]");
-  } catch {
-    return { ok: true, output: r.stdout };
-  }
-  const list = (Array.isArray(items) ? items : []).slice(0, 200).map((p) => ({ name: p.name, version: p.version }));
-  return { ok: true, count: list.length, packages: list };
-}
-
-export async function cargoTree({ dir, allowRoots, timeoutMs } = {}) {
-  const cwd = resolveDir(dir, allowRoots);
-  const bin = (await which("cargo")) || "cargo";
-  const r = await run(bin, ["tree", "-d", "1"], { cwd, timeoutMs, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`cargo tree failed: ${r.stderr || r.code}`);
-  return { ok: true, dir: cwd, truncated: r.truncated, output: r.stdout };
 ```
 
 </details>
 
-<a id="research-q03"></a>
+**依据 3 · 源码核查**：[lib/pkg.js:146-165](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L146-L165)
 
-<a id="detail-section-13"></a>
-
-### Q03 · 只读、项目归属和结果完整性有哪些边界？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-插件不执行安装/卸载，但 npm outdated 查询 registry，不能等同无网络或无缓存副作用。allowRoots=[] 不是默认拒绝而是允许任意可访问目录；它限制的是项目工作目录，并不约束 pip list，因为后者无 dir 参数、由 DSH 进程 PATH 中的 pip 决定，可能与目标项目虚拟环境错位。npm ls JSON 解析失败仍返回 ok:true 的原始文本，npm outdated JSON 解析失败同样 ok:true；npm ls 在 peer 问题时可以 exit 1 并继续解析，这符合容错但调用方必须看 problems/exitCode/截断。cargo tree 命令参数是 -d 1，需要另核该版本 cargo 的语义，不能从 README “深度 1”直接推断完整树。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/pkg.js:16-31](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L16-L31)
-
-空 allowRoots 时跳过目录限制。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function resolveDir(dir, allowRoots = []) {
-  const abs = resolve(String(dir || ".").trim() || ".");
-  const real = existsSync(abs) ? realpathSync(abs) : abs;
-  if (allowRoots.length) {
-    const roots = allowRoots.map((r) => {
-      const a = resolve(r);
-      return existsSync(a) ? realpathSync(a) : a;
-    });
-    const ok = roots.some((root) => {
-      const x = root.replace(/[/\\]+$/, "");
-      return real === x || real.startsWith(x + "/") || real.startsWith(x + "\\");
-    });
-    if (!ok) throw new Error(`dir outside allowRoots: ${real}`);
-  }
-  return real;
-}
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/pkg.js:79-105](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L79-L105)
-
-outdated 命令与解析失败仍 ok。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-export async function npmOutdated({ dir, allowRoots, timeoutMs, maxOut = 40_000 } = {}) {
-  const cwd = resolveDir(dir, allowRoots);
-  const bin = (await which("npm")) || "npm";
-  const r = await run(bin, ["outdated", "--json"], { cwd, timeoutMs, maxOut });
-  // npm outdated exits 1 when updates exist
-  let json = {};
-  try {
-    json = JSON.parse(r.stdout || "{}");
-  } catch {
-    return { ok: true, dir: cwd, exitCode: r.code, output: r.stdout.slice(0, maxOut), truncated: r.truncated };
-  }
-  const names = Object.keys(json || {}).slice(0, 80);
-  const packages = names.map((name) => ({
-    name,
-    current: json[name].current,
-    wanted: json[name].wanted,
-    latest: json[name].latest,
-    type: json[name].type,
-  }));
-  return {
-    ok: true,
-    dir: cwd,
-    count: packages.length,
-    exitCode: r.code,
-    truncated: r.truncated || Object.keys(json || {}).length > 80,
-    packages,
-  };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/pkg.js:108-129](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L108-L129)
-
-npm ls 的部分失败与解析。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
-  const cwd = resolveDir(dir, allowRoots);
-  const d = Math.min(3, Math.max(0, Number(depth) || 0));
-  const bin = (await which("npm")) || "npm";
-  const r = await run(bin, ["ls", "--all", `--depth=${d}`, "--json"], { cwd, timeoutMs, maxOut: 40_000 });
-  // npm ls exits 1 on peer issues — still parse
-  let json;
-  try {
-    json = JSON.parse(r.stdout || "{}");
-  } catch {
-    return { ok: true, dir: cwd, output: r.stdout, truncated: r.truncated };
-  }
-  return {
-    ok: true,
-    dir: cwd,
-    name: json.name,
-    version: json.version,
-    problems: json.problems || null,
-    truncated: r.truncated,
-    tree: summarizeNpm(json, d),
-  };
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/pkg.js:146-165](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L146-L165)
-
-pip 无 dir，cargo 参数。
+pip 和 Cargo 范围。
 
 <details>
 <summary>查看原文（20行）</summary>
@@ -817,222 +293,32 @@ export async function cargoTree({ dir, allowRoots, timeoutMs } = {}) {
 
 </details>
 
-**依据 5 · 源码核查**：[index.js:98-121](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/index.js#L98-L121)
-
-pip 工具不接受项目目录。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "pkg_pip_list",
-    description: "pip list --format=json (capped names).",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        {
-          type: "text",
-          text: v.ok === false ? v.error : (v.packages || []).map((p) => `${p.name}==${p.version}`).join("\n"),
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute() {
-      try {
-        return await pipList({ timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pip list" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pip list", content: r.content }),
-```
-
-</details>
-
-**依据 6 · 作者声明**：[README.md:31-35](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/README.md#L31-L35)
-
-作者只读与浅层说明。
-
-```text
-## 配置要点
-
-`allowRoots / timeoutMs`
-
-不安装/卸载。深度默认很浅，避免噪音。
-```
-
 #### 缺口
 
-- 未在虚拟环境和受限目录做宿主验收。
-  **影响**：pip 归属错位与目录访问范围未量化。
-  **进一步探讨**：隔离建两 venv 和允许/禁止目录，核 pip 版本来源与 allowRoots。
-- 未核固定 cargo 版本参数表现。
-  **影响**：Rust 摘要是否符合作者深度描述未知。
-  **进一步探讨**：在固定 cargo 工程对照原命令输出。
+- 未做同项目排查对照
+  **影响**：不能判断省时和漏项比例
+  **进一步探讨**：对照有重复依赖和多虚拟环境的测试项目
 
-<a id="research-q04"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-12"></a>
 
-### Q04 · 部署、持续扫描和错误恢复要付什么成本？
+### Q02 · 命令失败和截断怎样影响依赖结论？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-包声明 0.1.1 MIT Node>=18，README 顶部版本写 0.1.0 而兼容表写 0.1.1，应以固定 package 为准。需要宿主 tools/systemPrompt 与 PATH 上相应包管理器；npm outdated 还依赖网络和 registry 状态。每次扫描起本机子进程，默认 60 秒超时、40k 输出返回限制；大树会被截断，stderr 收集无显式大小上限。缺包、超时、非 JSON 和 peer 依赖问题需分别恢复；人工核对真实项目和解释器环境成本未测。
+npm outdated 与 npm ls 都解析 stdout，不按退出码决定失败。前者把退出码保留，后者成功结构无退出码，空 stdout 会变成空对象。npm ls 摘要每级只取 80 项，truncated 只源于命令输出长度，未表示此二次切片。pip 只返回前 200 项，count 是切片后数量。目录限制只校验 npm 和 Cargo 的工作目录，未约束继承的 registry、凭据或 pip 虚拟环境。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-13](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/package.json#L1-L13)
+**依据 1 · 源码核查**：[lib/pkg.js:16-35](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L16-L35)
 
-固定包版本与 Node。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-{
-  "name": "dsh-wsl-pkg",
-  "version": "0.1.1",
-  "description": "DeepSeek Harness WSL plugin: npm/pip/cargo dependency tree summaries.",
-  "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/173787247/dsh-wsl-pkg.git" },
-  "type": "module",
-  "main": "index.js",
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test test/*.test.js" },
-  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.en.md", "README.zh.md", "LICENSE", "CHANGELOG.md"],
-  "keywords": ["dsh-plugin", "wsl", "npm", "pip", "cargo"],
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:5-10](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/README.md#L5-L10)
-
-顶部版本 0.1.0。
-
-```text
-依赖树摘要：npm ls / pip list / cargo tree。
-
-| | |
-|---|---|
-| 版本 | **0.1.0** |
-| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |
-```
-
-**依据 3 · 作者声明**：[README.md:37-44](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/README.md#L37-L44)
-
-兼容表 0.1.1。
-
-```text
-## 兼容性
-
-| 字段 | 值 |
-|------|----|
-| **插件** | `dsh-wsl-pkg` **0.1.1** |
-| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |
-| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |
-| **套件档位** | 可选（默认不在 `install.sh` / `KIT_SET=daily`） |
-```
-
-**依据 4 · 源码核查**：[lib/pkg.js:33-60](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L33-L60)
-
-子进程、超时及输出限制。
+目录解析和进程继承。
 
 <details>
-<summary>查看原文（28行）</summary>
-
-```text
-export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 40_000 } = {}) {
-  return new Promise((resolvePromise, reject) => {
-    const child = spawn(bin, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
-    let stdout = "";
-    let stderr = "";
-    const t = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({
-        code,
-        stdout: stdout.slice(0, maxOut),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOut,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/pkg.js:63-76](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L63-L76)
-
-PATH 检查。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-export async function pkgStatus() {
-  const npm = (await which("npm")) || null;
-  const pip = (await which("pip")) || (await which("pip3")) || null;
-  const cargo = (await which("cargo")) || null;
-  let npmVersion = null;
-  if (npm) {
-    try {
-      const r = await run(npm, ["--version"], { timeoutMs: 8_000, maxOut: 200 });
-      npmVersion = (r.stdout || "").trim() || null;
-    } catch {
-      /* ignore */
-    }
-  }
-  return { ok: true, npm, npmVersion, pip, cargo };
-```
-
-</details>
-
-#### 缺口
-
-- 无大项目运行成本或节时对照。
-  **影响**：不能宣称扫描无代价或摘要足够。
-  **进一步探讨**：固定大小项目记耗时、截断、人工复核分钟。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 适合怎样采用，项目环境绑定如何验证？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-可先把它当快速导航，在配置 allowRoots 后使用 npm/cargo 目录工具，重要结论仍看原始锁文件和官方命令；Python 目标环境必须明确指定解释器路径或先保证 DSH 进程 PATH 与项目 venv 一致，当前工具没有 project dir 参数。可提出未实现假设：每次结果携带包管理器可执行路径、项目根、环境标识、退出码和截断完整性，再以根内 venv 选 pip，可减少“别的环境包列表”误判。两套 venv 和两个项目交错查询，对照当前工具的环境错配率、复核时间和额外配置。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/pkg.js:16-31](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L16-L31)
-
-项目 realpath 限制可作为根绑定基础。
-
-<details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
 export function resolveDir(dir, allowRoots = []) {
@@ -1051,13 +337,146 @@ export function resolveDir(dir, allowRoots = []) {
   }
   return real;
 }
+
+export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 40_000 } = {}) {
+  return new Promise((resolvePromise, reject) => {
+    const child = spawn(bin, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pkg.js:63-76](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L63-L76)
+**依据 2 · 源码核查**：[lib/pkg.js:79-128](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L79-L128)
 
-可执行路径发现。
+退出和空对象分支。
+
+<details>
+<summary>查看原文（50行）</summary>
+
+```text
+export async function npmOutdated({ dir, allowRoots, timeoutMs, maxOut = 40_000 } = {}) {
+  const cwd = resolveDir(dir, allowRoots);
+  const bin = (await which("npm")) || "npm";
+  const r = await run(bin, ["outdated", "--json"], { cwd, timeoutMs, maxOut });
+  // npm outdated exits 1 when updates exist
+  let json = {};
+  try {
+    json = JSON.parse(r.stdout || "{}");
+  } catch {
+    return { ok: true, dir: cwd, exitCode: r.code, output: r.stdout.slice(0, maxOut), truncated: r.truncated };
+  }
+  const names = Object.keys(json || {}).slice(0, 80);
+  const packages = names.map((name) => ({
+    name,
+    current: json[name].current,
+    wanted: json[name].wanted,
+    latest: json[name].latest,
+    type: json[name].type,
+  }));
+  return {
+    ok: true,
+    dir: cwd,
+    count: packages.length,
+    exitCode: r.code,
+    truncated: r.truncated || Object.keys(json || {}).length > 80,
+    packages,
+  };
+}
+
+export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
+  const cwd = resolveDir(dir, allowRoots);
+  const d = Math.min(3, Math.max(0, Number(depth) || 0));
+  const bin = (await which("npm")) || "npm";
+  const r = await run(bin, ["ls", "--all", `--depth=${d}`, "--json"], { cwd, timeoutMs, maxOut: 40_000 });
+  // npm ls exits 1 on peer issues — still parse
+  let json;
+  try {
+    json = JSON.parse(r.stdout || "{}");
+  } catch {
+    return { ok: true, dir: cwd, output: r.stdout, truncated: r.truncated };
+  }
+  return {
+    ok: true,
+    dir: cwd,
+    name: json.name,
+    version: json.version,
+    problems: json.problems || null,
+    truncated: r.truncated,
+    tree: summarizeNpm(json, d),
+  };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/pkg.js:131-165](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L131-L165)
+
+摘要切片与不同退出处理。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+function summarizeNpm(node, depthLeft) {
+  if (!node || typeof node !== "object") return null;
+  const deps = node.dependencies || {};
+  const keys = Object.keys(deps).slice(0, 80);
+  const out = {};
+  for (const k of keys) {
+    const child = deps[k];
+    out[k] = {
+      version: child.version,
+      ...(depthLeft > 0 ? { dependencies: summarizeNpm(child, depthLeft - 1) } : {}),
+    };
+  }
+  return out;
+}
+
+export async function pipList({ timeoutMs } = {}) {
+  const bin = (await which("pip")) || (await which("pip3")) || "pip";
+  const r = await run(bin, ["list", "--format=json"], { timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`pip list failed: ${r.stderr || r.code}`);
+  let items;
+  try {
+    items = JSON.parse(r.stdout || "[]");
+  } catch {
+    return { ok: true, output: r.stdout };
+  }
+  const list = (Array.isArray(items) ? items : []).slice(0, 200).map((p) => ({ name: p.name, version: p.version }));
+  return { ok: true, count: list.length, packages: list };
+}
+
+export async function cargoTree({ dir, allowRoots, timeoutMs } = {}) {
+  const cwd = resolveDir(dir, allowRoots);
+  const bin = (await which("cargo")) || "cargo";
+  const r = await run(bin, ["tree", "-d", "1"], { cwd, timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`cargo tree failed: ${r.stderr || r.code}`);
+  return { ok: true, dir: cwd, truncated: r.truncated, output: r.stdout };
+```
+
+</details>
+
+#### 缺口
+
+- 未核对真实 CLI 对网络、工作区和异常退出的行为
+  **影响**：不能推导完整性或离线保证
+  **进一步探讨**：用非敏感仓库演练 npm 错误、超长输出和私有 registry 配置
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 如何试用并减少把部分结果误读为完整库存？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+在测试 profile 核对 npm、pip 和 Cargo 路径、项目根及虚拟环境。先与原命令比较少量结果，再故意超深或移除工具，检查失败语义。遇到缺节点或空摘要就退到原命令和锁文件。可同时标记查询失败、原始输出截断和摘要切片，测有已知缺项时的诊断正确率和额外字数。若误判不减或真实查询被过度拒绝，放弃该方案。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/pkg.js:63-76](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L63-L76)
+
+状态发现工具。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -1081,12 +500,60 @@ export async function pkgStatus() {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pkg.js:146-157](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/lib/pkg.js#L146-L157)
+**依据 2 · 源码核查**：[lib/pkg.js:108-143](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L108-L143)
 
-pip 当前跟随全局 PATH。
+当前 npm 摘要。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（36行）</summary>
+
+```text
+export async function npmLs({ dir, depth = 0, allowRoots, timeoutMs } = {}) {
+  const cwd = resolveDir(dir, allowRoots);
+  const d = Math.min(3, Math.max(0, Number(depth) || 0));
+  const bin = (await which("npm")) || "npm";
+  const r = await run(bin, ["ls", "--all", `--depth=${d}`, "--json"], { cwd, timeoutMs, maxOut: 40_000 });
+  // npm ls exits 1 on peer issues — still parse
+  let json;
+  try {
+    json = JSON.parse(r.stdout || "{}");
+  } catch {
+    return { ok: true, dir: cwd, output: r.stdout, truncated: r.truncated };
+  }
+  return {
+    ok: true,
+    dir: cwd,
+    name: json.name,
+    version: json.version,
+    problems: json.problems || null,
+    truncated: r.truncated,
+    tree: summarizeNpm(json, d),
+  };
+}
+
+function summarizeNpm(node, depthLeft) {
+  if (!node || typeof node !== "object") return null;
+  const deps = node.dependencies || {};
+  const keys = Object.keys(deps).slice(0, 80);
+  const out = {};
+  for (const k of keys) {
+    const child = deps[k];
+    out[k] = {
+      version: child.version,
+      ...(depthLeft > 0 ? { dependencies: summarizeNpm(child, depthLeft - 1) } : {}),
+    };
+  }
+  return out;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/pkg.js:146-165](https://github.com/173787247/dsh-wsl-pkg/blob/b5a0115dced4ef97be907bf3f6180c795a67a848/lib/pkg.js#L146-L165)
+
+pip 和 Cargo 返回口径。
+
+<details>
+<summary>查看原文（20行）</summary>
 
 ```text
 export async function pipList({ timeoutMs } = {}) {
@@ -1101,50 +568,22 @@ export async function pipList({ timeoutMs } = {}) {
   }
   const list = (Array.isArray(items) ? items : []).slice(0, 200).map((p) => ({ name: p.name, version: p.version }));
   return { ok: true, count: list.length, packages: list };
-```
+}
 
-</details>
-
-**依据 4 · 源码核查**：[index.js:98-121](https://github.com/173787247/dsh-wsl-pkg/blob/c79553532eda43f86f3d056ad31e35d11710ad33/index.js#L98-L121)
-
-pip 工具不带 dir。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "pkg_pip_list",
-    description: "pip list --format=json (capped names).",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        {
-          type: "text",
-          text: v.ok === false ? v.error : (v.packages || []).map((p) => `${p.name}==${p.version}`).join("\n"),
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute() {
-      try {
-        return await pipList({ timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pip list" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pip list", content: r.content }),
+export async function cargoTree({ dir, allowRoots, timeoutMs } = {}) {
+  const cwd = resolveDir(dir, allowRoots);
+  const bin = (await which("cargo")) || "cargo";
+  const r = await run(bin, ["tree", "-d", "1"], { cwd, timeoutMs, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`cargo tree failed: ${r.stderr || r.code}`);
+  return { ok: true, dir: cwd, truncated: r.truncated, output: r.stdout };
 ```
 
 </details>
 
 #### 缺口
 
-- 环境绑定与完整性标签未实现。
-  **影响**：不能当当前收益。
-  **进一步探讨**：双 venv/双项目交错查询，核错配率与复核工时。
+- 真实宿主与改法未运行
+  **影响**：接入及读取开销未知
+  **进一步探讨**：用合成多级依赖和两个 pip 环境验收
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
