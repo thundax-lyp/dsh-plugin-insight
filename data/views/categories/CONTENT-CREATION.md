@@ -52,6 +52,7 @@
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [HTML Studio](#plugin-1237969184-root) | 独立的本地 HTML 与 Markdown 文档浏览、编辑和版本恢复工作台。 | 仅观察隔离副本上的写范围与恢复，继续用原编辑器管理真实文件。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
+| [Jacky Creator](#plugin-1345649791-root) | 在 DSH 内管理本地内容项目和运营工作台，按需接入字幕、封面与发布能力。 | [Q03](../../plugins/jackywxsz--dsh-creator/INSIGHT.md#research-q03) 无真实素材和外部凭据试跑。 |
 | [lightroom-py](#plugin-1225248471-root) | 通过 Python、MCP 和 DSH 接口控制 Lightroom Classic 图库及编辑。 | [Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) 在备份图库副本上先核依赖、选区与单项操作；结果或恢复不明确时停止写入。 |
 | [MuseAI](#plugin-1200521020-root) | 本地角色对话、文字冒险与故事世界资料管理应用。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 的状态暴露未修复核实前不启用 LAN。 |
 | [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
@@ -710,6 +711,22 @@
 > **建议**：[Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 未验证锚点审阅视图对照已有锚点/checks，测否定、归属与模态漏判和审阅时间；无改善或负担增加即否定。
 
 [查看完整分析](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1345649791-root"></a>
+
+## [Jacky Creator](../../plugins/jackywxsz--dsh-creator/INSIGHT.md)
+
+[![GitHub ★ 125](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=125&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Jackywxsz/DSH-Creator) [![npm 30d 1,510](https://img.shields.io/static/v1?label=npm+30d&message=1%2C510&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/jacky-creator) [![最新发布 2026-10-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/jacky-creator)
+
+> **用途**：希望用 Agent 操作本地创作目录的个人创作者。
+
+> **亮点**：[Q01](../../plugins/jackywxsz--dsh-creator/INSIGHT.md#research-q01) 把目录结构和运营操作接到同一 DSH 工作流。
+
+> **思考**：[Q02](../../plugins/jackywxsz--dsh-creator/INSIGHT.md#research-q02) 配置确认和图片预览都需要额外验证宿主权限边界。
+
+> **建议**：[Q04](../../plugins/jackywxsz--dsh-creator/INSIGHT.md#research-q04) 预览按实际路径和短期权限约束可阻止越界读取。
+
+[查看完整分析](../../plugins/jackywxsz--dsh-creator/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1225248471-root"></a>
 
