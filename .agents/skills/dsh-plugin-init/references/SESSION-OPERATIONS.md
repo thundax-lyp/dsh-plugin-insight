@@ -50,6 +50,15 @@ INIT 的频繁更新过滤在新 WORK 固定 selection.cooldown_ids；具体窗�
 
 ## 合并后清理
 
+### 已嵌入源码凭据的脱敏
+
+使用 `npm run snapshot -- redact-artifact --input <REDACTION.json>` 预览，审阅后加 `--apply`。
+输入包含 `base_digest`、`plugin_id`、旧 `artifact`、新 `new_artifact`（以 `/REVIEWED-SOURCE.json` 结尾），
+以及 `redactions` 数组（每项仅含 `path`、1基 `line`、不含凭据的 `reason`）。入口只替换未被逐题引用的行，
+保留行数与原文件摘要，更换证据身份并同步依赖引用；引用行、共享材料、基线漂移均拒绝。
+应用后回读快照并重新生成页面，再运行 `npm run check`。脱敏不是新一轮研究，保留原研究时间与结论。
+已被密钥保护拒绝的提交不得绕过保护；保留本地历史，在原目标基线创建只含脱敏成果的新分支，或按明确授权处理历史。
+
 清理前须按 INIT 的双清单步骤执行 `npm run export:meta-manifests -- --work <WORK.json>` 的预览及 `--apply`，确认返回 `verified: true` 且两份 `remaining_changes` 均为 false。路径未部署、身份解析、并发更新或任一回读失败时保留 WORK；单独 npm 回写成功不能视为双清单已完成。目标字段和事务语义以[数据契约](../../_shared/references/DATA-CONTRACT.md#外部-meta-双清单回写)为准。
 
 按[输出标准](OUTPUT-STANDARD.md#本地-runs-与-git-清单)检查本轮合并结果、当前引用及恢复需求。确认当前快照可独立校验和生成后，预览并清理无引用的已合并副本，不要求永久归档。
