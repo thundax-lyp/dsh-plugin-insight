@@ -93,6 +93,31 @@ export function validateResearchQuestions(value, { sourcePaths, readSource, repo
 // Validate durable answers using embedded source bytes, without depending on local runs or checkouts.
 export function validateResearchQuestionArtifact(material) {
     if (!Object.hasOwn(material, 'research_questions')) return;
+    const redacted = new Set();
+    for (const entry of material.redactions ?? []) {
+        const key = `${entry.path}:${entry.line}`;
+        const source = material.files.find((file) => file.path === entry.path)?.content;
+        if (
+            redacted.has(key) ||
+            !Number.isSafeInteger(entry.line) ||
+            entry.line < 1 ||
+            typeof entry.reason !== 'string' ||
+            !entry.reason.trim() ||
+            !/^[a-f0-9]{64}$/.test(entry.original_content_sha256 ?? '') ||
+            typeof source !== 'string' ||
+            source.split('\n')[entry.line - 1] !== '// [REDACTED: credential omitted; see redactions metadata]'
+        )
+            throw Error('invalid source redaction metadata');
+        redacted.add(key);
+        if (
+            material.research_questions.questions.some((q) =>
+                q.evidence.some(
+                    (e) => e.source_path === entry.path && entry.line >= e.line_start && entry.line <= e.line_end
+                )
+            )
+        )
+            throw Error('redaction intersects quoted research evidence');
+    }
     return validateResearchQuestions(material.research_questions, {
         repository: material.repository,
         revision: material.revision,

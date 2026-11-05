@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "e3df9afa8fdf4fcad5276887efe108382f03506e12b4042f92c64534c16d3b43",
-    "index_sha256": "bedfd9ef49e8aaf9083ec66172181a2511c23fa4491b02fd0194e32c06d51478",
+    "snapshot_digest": "2a4b38c2c5f7c3df7e89ea84d60df3fe3ef97a8bf0649b545949d9bc1a80c498",
+    "index_sha256": "06a61bf769f3e42d9ed90417317f08dcec79df3bc69e7e09ee853a5f56efd22b",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-05T06:30:13Z",
+        "checked_at": "2026-11-05T08:50:18Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 38，完成 38，受阻 0；已知同版本受阻跳过 18；频繁更新窗口内跳过 268；当前发布 1045",
+            "scope": "本轮所选 31，完成 29，受阻 2；已知同版本受阻跳过 16；频繁更新窗口内跳过 282；当前发布 1073",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-05T06:30:13Z"
+            "checked_at": "2026-11-05T08:50:18Z"
         },
         "registry": {},
         "discovery": {
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-05-08",
-            "work_digest": "b2c985b24041c3f2dbc9bc705910cbb4d858aff330331c2ca74b444e62c9181c"
+            "id": "research-20261105-09",
+            "work_digest": "7c99220f41c677d2dca2ad044b27ecadb687ced388e51971b1f01daea7bc738a"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -930,16 +930,61 @@
             },
             "github:1374007757:plugins-dsh-midscene-plugin": {
                 "plugin_id": "github:1374007757:plugins-dsh-midscene-plugin",
-                "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
                 "reason_code": "insight_retry_exhausted",
-                "reason": "两次逐题语义验收未通过，修订后仍将外部替代基线作为本组件已确认能力，未满足正向能力交付要求。",
+                "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
                 "details": {
                     "reason_code": "insight_retry_exhausted",
-                    "reason": "两次逐题语义验收未通过，修订后仍将外部替代基线作为本组件已确认能力，未满足正向能力交付要求。",
+                    "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
                     "details": {
-                        "repository": "FNOSP/fnos-dsh",
-                        "component": "plugins/dsh-midscene-plugin",
-                        "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                        "original_block": {
+                            "plugin_id": "github:1374007757:plugins-dsh-midscene-plugin",
+                            "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                            "reason_code": "insight_retry_exhausted",
+                            "reason": "两次逐题语义验收未通过，修订后仍将外部替代基线作为本组件已确认能力，未满足正向能力交付要求。",
+                            "details": {
+                                "reason_code": "insight_retry_exhausted",
+                                "reason": "两次逐题语义验收未通过，修订后仍将外部替代基线作为本组件已确认能力，未满足正向能力交付要求。",
+                                "details": {
+                                    "repository": "FNOSP/fnos-dsh",
+                                    "component": "plugins/dsh-midscene-plugin",
+                                    "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                                    "attempts": [
+                                        {
+                                            "attempt": 1,
+                                            "at": "2026-11-05T05:42:40.000Z",
+                                            "stage": "semantic_acceptance",
+                                            "failures": [
+                                                "多个unknown impact写收益或计划，未说明未知后果",
+                                                "未核查消息转换限制、默认超时和桥实例sessionId复用"
+                                            ],
+                                            "correction_requested": "补查convert与bridge-server，完善报告综合、表格及评分"
+                                        },
+                                        {
+                                            "attempt": 2,
+                                            "at": "2026-11-05T05:45:14.598Z",
+                                            "stage": "semantic_acceptance",
+                                            "correction_result": "已补协议转换与共享sessionId机制，但成品能力表仍混入外部替代方案",
+                                            "failures": [
+                                                "capability_table第一行将Midscene单独配置供应商作为已确认能力，不属于本组件实现"
+                                            ]
+                                        }
+                                    ],
+                                    "evidence": {
+                                        "invalid_capability_row": "| Midscene 单独配置供应商。 | 可直接比较 | 保留人工步骤 |",
+                                        "source_locations": [
+                                            "plugins/dsh-midscene-plugin/src/host/bridge-server.ts",
+                                            "plugins/dsh-midscene-plugin/src/host/convert.ts"
+                                        ],
+                                        "boundary": "本次未执行目标代码；取消信号传递不证明供应商停止。"
+                                    },
+                                    "retry_after": "2026-12-05T05:45:14.598Z"
+                                }
+                            },
+                            "blocked_at": "2026-11-05T05:45:26.401Z",
+                            "run_id": "2026-11-05-07"
+                        },
+                        "retry_after": "2026-12-05T05:45:14.598Z",
                         "attempts": [
                             {
                                 "attempt": 1,
@@ -961,32 +1006,75 @@
                                 ]
                             }
                         ],
-                        "evidence": {
-                            "invalid_capability_row": "| Midscene 单独配置供应商。 | 可直接比较 | 保留人工步骤 |",
-                            "source_locations": [
-                                "plugins/dsh-midscene-plugin/src/host/bridge-server.ts",
-                                "plugins/dsh-midscene-plugin/src/host/convert.ts"
-                            ],
-                            "boundary": "本次未执行目标代码；取消信号传递不证明供应商停止。"
-                        },
-                        "retry_after": "2026-12-05T05:45:14.598Z"
+                        "checked_at": "2026-11-05T08:50:18Z",
+                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。"
                     }
                 },
-                "blocked_at": "2026-11-05T05:45:26.401Z",
-                "run_id": "2026-11-05-07"
+                "blocked_at": "2026-11-05T08:59:10.506Z",
+                "run_id": "research-20261105-09"
             },
             "github:1374007757:plugins-dsh-semi-ui-showcase-plugin": {
                 "plugin_id": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
-                "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
                 "reason_code": "insight_retry_exhausted",
-                "reason": "同一固定版本两次逐题语义验收失败，第二次仍将未验证收益写入效果依据，且依赖、流程、成本及创新分项论证不足。",
+                "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
                 "details": {
                     "reason_code": "insight_retry_exhausted",
-                    "reason": "同一固定版本两次逐题语义验收失败，第二次仍将未验证收益写入效果依据，且依赖、流程、成本及创新分项论证不足。",
+                    "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
                     "details": {
-                        "repository": "FNOSP/fnos-dsh",
-                        "component": "plugins/dsh-semi-ui-showcase-plugin",
-                        "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                        "original_block": {
+                            "plugin_id": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
+                            "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                            "reason_code": "insight_retry_exhausted",
+                            "reason": "同一固定版本两次逐题语义验收失败，第二次仍将未验证收益写入效果依据，且依赖、流程、成本及创新分项论证不足。",
+                            "details": {
+                                "reason_code": "insight_retry_exhausted",
+                                "reason": "同一固定版本两次逐题语义验收失败，第二次仍将未验证收益写入效果依据，且依赖、流程、成本及创新分项论证不足。",
+                                "details": {
+                                    "repository": "FNOSP/fnos-dsh",
+                                    "component": "plugins/dsh-semi-ui-showcase-plugin",
+                                    "revision": "4058feee0fa16d34e123f917978abe47c205f830",
+                                    "attempts": [
+                                        {
+                                            "attempt": 1,
+                                            "at": "2026-11-05T05:41:05.000Z",
+                                            "stage": "semantic_acceptance",
+                                            "failures": [
+                                                "Q01仅引用注册入口与README，未核对示例编排",
+                                                "Q02 unknown impact 未说明争用hash后果",
+                                                "Q04未分清执行范围和收益缺口"
+                                            ],
+                                            "correction_requested": "补读ShowcasePage及catalog，修正路由影响并拆分范围与研究缺口"
+                                        },
+                                        {
+                                            "attempt": 2,
+                                            "at": "2026-11-05T05:44:02.130Z",
+                                            "stage": "semantic_acceptance",
+                                            "correction_result": "已补示例映射和路由影响，但报告整体仍有实质缺口",
+                                            "failures": [
+                                                "效果表当前证据支持列写“可减少开发者收集组件状态的时间”，Q05同时声明未运行对照",
+                                                "依赖表缺少已知rc.2及共享组件包条件，成本及流程表为通用占位",
+                                                "创新两轴只有总评，缺少四分项独立依据及档位推导"
+                                            ]
+                                        }
+                                    ],
+                                    "evidence": {
+                                        "report_effect": "| 帮助维护者在发布前复查主题及组件交互 | 可减少开发者收集组件状态的时间。 | 隔离 profile 保存原主题，检查路由和停用恢复。 |",
+                                        "cost_row": "| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |",
+                                        "source_locations": [
+                                            "plugins/dsh-semi-ui-showcase-plugin/src/client/index.tsx:17-40",
+                                            "plugins/dsh-semi-ui-showcase-plugin/src/client/route.ts:90-123",
+                                            "plugins/dsh-semi-ui-showcase-plugin/src/client/theme-preview.ts:25-36"
+                                        ],
+                                        "second_delivery_digest": "ff7ab34e929a28823777fc510cbbee89b7b25b8ced249fcccd0765ac796a176c"
+                                    },
+                                    "retry_after": "2026-12-05T05:44:02.130Z"
+                                }
+                            },
+                            "blocked_at": "2026-11-05T05:44:14.759Z",
+                            "run_id": "2026-11-05-07"
+                        },
+                        "retry_after": "2026-12-05T05:44:02.130Z",
                         "attempts": [
                             {
                                 "attempt": 1,
@@ -1011,21 +1099,12 @@
                                 ]
                             }
                         ],
-                        "evidence": {
-                            "report_effect": "| 帮助维护者在发布前复查主题及组件交互 | 可减少开发者收集组件状态的时间。 | 隔离 profile 保存原主题，检查路由和停用恢复。 |",
-                            "cost_row": "| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |",
-                            "source_locations": [
-                                "plugins/dsh-semi-ui-showcase-plugin/src/client/index.tsx:17-40",
-                                "plugins/dsh-semi-ui-showcase-plugin/src/client/route.ts:90-123",
-                                "plugins/dsh-semi-ui-showcase-plugin/src/client/theme-preview.ts:25-36"
-                            ],
-                            "second_delivery_digest": "ff7ab34e929a28823777fc510cbbee89b7b25b8ced249fcccd0765ac796a176c"
-                        },
-                        "retry_after": "2026-12-05T05:44:02.130Z"
+                        "checked_at": "2026-11-05T08:50:18Z",
+                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。"
                     }
                 },
-                "blocked_at": "2026-11-05T05:44:14.759Z",
-                "run_id": "2026-11-05-07"
+                "blocked_at": "2026-11-05T08:59:10.507Z",
+                "run_id": "research-20261105-09"
             }
         },
         "retained_documents": {}
@@ -1246,6 +1325,7 @@
             "github:1313032827:dsh",
             "github:1313032827:root",
             "github:1314502072:root",
+            "github:1314587317:root",
             "github:1314807642:integrations-deepseek-harness",
             "github:1314807642:root",
             "github:1315919904:root",
@@ -1254,8 +1334,10 @@
             "github:1319093879:root",
             "github:1319174653:root",
             "github:1319484586:root",
+            "github:1320201099:plugins-dsh-tinytitan",
             "github:1321152436:root",
             "github:1321280738:root",
+            "github:1321408361:root",
             "github:1323404274:root",
             "github:1323731026:root",
             "github:1324229194:dsh-autocompact",
@@ -1264,6 +1346,7 @@
             "github:1324996099:root",
             "github:1326394141:root",
             "github:1326893710:root",
+            "github:1327124384:root",
             "github:1327854826:root",
             "github:1329113397:root",
             "github:1329424520:root",
@@ -1289,6 +1372,7 @@
             "github:1331636953:root",
             "github:1331846104:root",
             "github:1332073142:root",
+            "github:1332210938:root",
             "github:1332212466:root",
             "github:1332243516:root",
             "github:1332396549:root",
@@ -1317,6 +1401,10 @@
             "github:1333146829:root",
             "github:1333147218:root",
             "github:1333150357:root",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1333152408:packages-plugins-plugin-session-export",
             "github:1333167552:root",
             "github:1333171737:root",
             "github:1333173677:root",
@@ -1382,6 +1470,7 @@
             "github:1333755311:root",
             "github:1333755444:root",
             "github:1333768172:root",
+            "github:1333781342:root",
             "github:1333787962:root",
             "github:1333800488:root",
             "github:1333807290:root",
@@ -1408,10 +1497,12 @@
             "github:1334020974:root",
             "github:1334023305:root",
             "github:1334025844:root",
+            "github:1334049596:root",
             "github:1334063554:root",
             "github:1334075920:root",
             "github:1334076307:root",
             "github:1334096871:root",
+            "github:1334109809:root",
             "github:1334118559:root",
             "github:1334119885:root",
             "github:1334134226:root",
@@ -1480,8 +1571,10 @@
             "github:1334899834:root",
             "github:1334902330:packages-plugin",
             "github:1334902330:root",
+            "github:1334924880:root",
             "github:1334939514:root",
             "github:1334962266:root",
+            "github:1335001737:root",
             "github:1335038926:root",
             "github:1335045464:root",
             "github:1335045545:root",
@@ -1604,6 +1697,7 @@
             "github:1337350700:root",
             "github:1337467566:root",
             "github:1337487779:root",
+            "github:1337511446:root",
             "github:1337578630:root",
             "github:1337780031:integrations-deepseek-harness-dsh-plugin-mission-control",
             "github:1337916824:root",
@@ -1614,6 +1708,7 @@
             "github:1337978261:root",
             "github:1338176891:root",
             "github:1338230382:root",
+            "github:1338367781:root",
             "github:1338398749:root",
             "github:1338425616:root",
             "github:1338463750:root",
@@ -1638,6 +1733,7 @@
             "github:1339462797:root",
             "github:1339655720:root",
             "github:1339669759:root",
+            "github:1339672104:root",
             "github:1339704814:packages-dsh-plugin",
             "github:1339714338:root",
             "github:1339737707:root",
@@ -1646,6 +1742,8 @@
             "github:1339882322:root",
             "github:1339888505:root",
             "github:1339888634:root",
+            "github:1339889879:root",
+            "github:1339915507:root",
             "github:1340244547:root",
             "github:1340280087:root",
             "github:1340340493:root",
@@ -1708,6 +1806,7 @@
             "github:1344799417:root",
             "github:1345173002:root",
             "github:1345209661:packages-dsh-tech-lead",
+            "github:1345235144:root",
             "github:1345649791:root",
             "github:1346017360:root",
             "github:1346023186:root",
@@ -1719,6 +1818,7 @@
             "github:1347136944:root",
             "github:1347749203:root",
             "github:1347752454:plugins-dsh-code-rag-index-panel",
+            "github:1347955066:root",
             "github:1347958944:root",
             "github:1348357631:packages-dsh-daruma",
             "github:1348535666:root",
@@ -1745,6 +1845,7 @@
             "github:1350816706:root",
             "github:1351375738:root",
             "github:1351594249:root",
+            "github:1351845049:packages-dsh-biodsh",
             "github:1351853812:root",
             "github:1351853863:root",
             "github:1351853903:root",
@@ -1843,11 +1944,13 @@
             "github:1374986657:root",
             "github:1376666455:root",
             "github:1376777535:root",
+            "github:1376861123:root",
             "github:1376880747:root",
             "github:1377159975:root",
             "github:1377185339:root",
             "github:1377512288:root",
             "github:1377645668:root",
+            "github:1377874436:root",
             "github:1378097401:dsh-live2d-pet",
             "github:1378138611:root",
             "github:1378350155:root",
@@ -1885,17 +1988,20 @@
             "github:1381861315:root",
             "github:1381989584:root",
             "github:1382292535:root",
+            "github:1383592161:root",
             "github:1384810201:root",
             "github:1384810483:root",
             "github:1384810806:root",
             "github:1385896447:root",
             "github:1385913707:root",
             "github:1386463441:root",
+            "github:1386538234:root",
             "github:1387205322:root",
             "github:1387206451:root",
             "github:1387227102:root",
             "github:1388372309:integrations-deepseek-harness",
             "github:1388463793:root",
+            "github:1389035449:root",
             "github:1389061748:root",
             "github:1389458393:root",
             "github:1389469406:root",
@@ -1922,6 +2028,7 @@
             "github:1394188597:root",
             "github:1394197658:root",
             "github:1394489199:root",
+            "github:1396132820:root",
             "github:1396768359:root",
             "github:1396833540:root",
             "github:1397477851:root",
@@ -3123,7 +3230,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -4170,7 +4305,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -5217,7 +5380,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -6264,7 +6455,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -7311,7 +7530,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "registry": [
             "github:1339316901:root",
@@ -8358,7 +8605,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "reports": [
             "github:1339316901:root",
@@ -9405,7 +9680,35 @@
             "github:1335086034:packages-openquantum-web-branding",
             "github:1269132133:root",
             "github:1337972266:root",
-            "github:1335086034:root"
+            "github:1335086034:root",
+            "github:1337511446:root",
+            "github:1386538234:root",
+            "github:1377874436:root",
+            "github:1334049596:root",
+            "github:1389035449:root",
+            "github:1347955066:root",
+            "github:1335001737:root",
+            "github:1334924880:root",
+            "github:1339915507:root",
+            "github:1334109809:root",
+            "github:1345235144:root",
+            "github:1376861123:root",
+            "github:1383592161:root",
+            "github:1320201099:plugins-dsh-tinytitan",
+            "github:1333152408:packages-create-dsh-plugin",
+            "github:1333152408:packages-plugins-plugin-manager",
+            "github:1333781342:root",
+            "github:1332210938:root",
+            "github:1333152408:packages-plugins-plugin-notify",
+            "github:1338367781:root",
+            "github:1333152408:packages-plugins-plugin-session-export",
+            "github:1339672104:root",
+            "github:1351845049:packages-dsh-biodsh",
+            "github:1314587317:root",
+            "github:1327124384:root",
+            "github:1321408361:root",
+            "github:1396132820:root",
+            "github:1339889879:root"
         ],
         "retained_documents": []
     },
@@ -10454,7 +10757,35 @@
         "github:1335086034:packages-openquantum-web-branding",
         "github:1269132133:root",
         "github:1337972266:root",
-        "github:1335086034:root"
+        "github:1335086034:root",
+        "github:1337511446:root",
+        "github:1386538234:root",
+        "github:1377874436:root",
+        "github:1334049596:root",
+        "github:1389035449:root",
+        "github:1347955066:root",
+        "github:1335001737:root",
+        "github:1334924880:root",
+        "github:1339915507:root",
+        "github:1334109809:root",
+        "github:1345235144:root",
+        "github:1376861123:root",
+        "github:1383592161:root",
+        "github:1320201099:plugins-dsh-tinytitan",
+        "github:1333152408:packages-create-dsh-plugin",
+        "github:1333152408:packages-plugins-plugin-manager",
+        "github:1333781342:root",
+        "github:1332210938:root",
+        "github:1333152408:packages-plugins-plugin-notify",
+        "github:1338367781:root",
+        "github:1333152408:packages-plugins-plugin-session-export",
+        "github:1339672104:root",
+        "github:1351845049:packages-dsh-biodsh",
+        "github:1314587317:root",
+        "github:1327124384:root",
+        "github:1321408361:root",
+        "github:1396132820:root",
+        "github:1339889879:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-22-02/snapshots/02muller25--dsh-api-balance/REVIEWED-SOURCE.json",
@@ -10586,7 +10917,6 @@
         "data/runs/2026-10-22-02/snapshots/7dgroup-ai--dsh-skill-7d-code-reviewer/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/7dgroup-ai--dsh-skill-7d-git-commit/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-leak-guard/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-22-02/snapshots/7gzgn--dsh-slipway/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/7starsseeker--mcmodsdevbridge/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/7vw58n3ftvq7cn89v--dsh-plugin-session-colors/REVIEWED-SOURCE.json",
         "data/runs/2026-10-22-02/snapshots/82c86b8z86-stack--dsh-engineering-workflow/REVIEWED-SOURCE.json",
@@ -11513,6 +11843,35 @@
         "data/runs/2026-11-05-08/xi-zhao--openquantum--packages-openquantum-web-branding/REVIEWED-SOURCE.json",
         "data/runs/2026-11-05-08/kuangre123--codex-switch/REVIEWED-SOURCE.json",
         "data/runs/2026-11-05-08/polinnizhong--dsh-omi-voice/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-05-08/xi-zhao--openquantum/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-05-08/xi-zhao--openquantum/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/7gzgn--dsh-slipway/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/raullenchai--rapid-mlx-dsh-provider/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/jingyi0605--codingns4dsh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/dingchenhui0618-arch--dsh-in-hand/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/cheshirejcat--blender/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/mistnest--dsh-cuigengji-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/vibe-any--dsh-plugin-save-token/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/dshbox--cordis-rs/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/xiehuan123--dsh-deepread/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/phant0meow--dsh-meow-smooth/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/superjj007--papermachine/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/masknull--dsh-qoder-connect/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/zhu1090093659--dsh-pet/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/pummelchen--tinytitan--plugins-dsh-tinytitan/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/whyihaveyou--dsh-suite--packages-create-dsh-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/whyihaveyou--dsh-suite--packages-plugins-plugin-manager/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/peiyuwang54--deepseek-harness-cli/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/zhenyu98--dsh-context-doctor/revision-2/zhenyu98--dsh-context-doctor/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/whyihaveyou--dsh-suite--packages-plugins-plugin-notify/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/gdwhisper--dsh-web-startup-auth/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/whyihaveyou--dsh-suite--packages-plugins-plugin-session-export/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/perrylink--dsh-fund-research/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/sagirimo--biodsh--packages-dsh-biodsh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/cofy-x--axern/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/cosyncing--cosyncing/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/zenx0x--allinluna/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/guzhou079-arch--deepseek-harness-android/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/haoyueqin--dsh-better-reasoning-effort/revision-2/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-05-09/chaos-03x--dsh-agy/privacy-1/REVIEWED-SOURCE.json"
     ]
 }

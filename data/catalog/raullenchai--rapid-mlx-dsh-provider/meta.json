@@ -1,0 +1,45 @@
+{
+    "repository": "raullenchai/rapid-mlx-dsh-provider",
+    "repository_id": 1337511446,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 70,
+    "pushed_at": "2026-08-19T19:34:33Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@raullenchai/dsh-provider",
+        "captured_at": "2026-11-05T08:55:05.110Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 100,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40raullenchai%2Fdsh-provider",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T16:22:45.036Z",
+            "captured_at": "2026-11-05T08:55:05.110Z",
+            "source_url": "https://registry.npmjs.org/%40raullenchai%2Fdsh-provider",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-08-19T19:34:48.376Z",
+            "latest_error": null
+        }
+    }
+}

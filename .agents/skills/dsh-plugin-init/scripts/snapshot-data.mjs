@@ -19,6 +19,7 @@ import { renderSnapshot } from './render-snapshot.mjs';
 import { snapshotFile, readSnapshot, validateWork } from './snapshot-state.mjs';
 import { bootstrap } from './bootstrap-snapshot.mjs';
 import { forgetResearch } from './forget-research.mjs';
+import { redactArtifact } from './redact-artifact.mjs';
 import {
     startWork,
     stageRecords,
@@ -158,6 +159,9 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'forget') {
         console.log(JSON.stringify(forgetResearch(read(need('input')), ROOT, v.apply)));
         if (v.apply) renderSnapshot();
+    } else if (command === 'redact-artifact') {
+        console.log(JSON.stringify(redactArtifact(read(need('input')), ROOT, v.apply)));
+        if (v.apply) renderSnapshot();
     } else if (command === 'block-batch') {
         changeBlockRecords(need('work'), read(need('input')));
         console.log('Block batch saved; formal snapshot unchanged');
@@ -183,7 +187,7 @@ export async function main(args = process.argv.slice(2)) {
     } else if (command === 'clean') console.log(JSON.stringify(cleanWork(need('work'), ROOT, v.apply)));
     else
         throw Error(
-            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|reopen|forget|plan|apply|render|validate|assess-recommendations|migrate-storage|reindex|recover-storage|migrate-work|clean'
+            'Usage: snapshot bootstrap|start|next|stage|stage-batch|block|block-batch|reopen|forget|redact-artifact|plan|apply|render|validate|assess-recommendations|migrate-storage|reindex|recover-storage|migrate-work|clean'
         );
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url))

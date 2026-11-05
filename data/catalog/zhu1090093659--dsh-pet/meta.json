@@ -1,0 +1,45 @@
+{
+    "repository": "zhu1090093659/dsh-pet",
+    "repository_id": 1383592161,
+    "captured_at": "2026-11-05T08:55:05.110Z",
+    "window_start": "2026-10-06T08:55:05.110Z",
+    "stars": 67,
+    "pushed_at": "2026-11-05T04:21:30Z",
+    "issues": {
+        "open": 0,
+        "closed": 5,
+        "created_30d": 3,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "49308d45cc7d621601953591e253dd01e1dcb15c",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@linxin666/dsh-pet",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 135425,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40linxin666%2Fdsh-pet",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T15:05:49.415Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-pet",
+            "error": null,
+            "latest_version": "0.4.15",
+            "latest_published_at": "2026-11-04T15:39:07.021Z",
+            "latest_error": null
+        }
+    }
+}
