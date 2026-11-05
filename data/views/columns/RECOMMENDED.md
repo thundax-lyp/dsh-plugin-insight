@@ -12,16 +12,17 @@
 
 | 插件 | 主要用途 | 推荐理由 |
 | --- | --- | --- |
-| [no-ai-style](#plugin-1418493685-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。 |
 | [dsh-plugin-veriscope](#plugin-1422943787-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。 | 已有可信逐条分数与显式策略可试用，先用builtin和独立状态备份；PASS限输入范围，replay需固定环境且发布另负责。 |
 | [dsh-markdown-live](#plugin-1426477683-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。 |
 | [Tokdash](#plugin-1166078953-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 本地 AI 编码工具用量与费用看板，汇总会话、模型、缓存用量及使用报告。 | 保存 DSH 会话日志并愿意核对计数的个人开发者可试用本地 Tokdash 回顾用量。 |
 | [RainSkills](#plugin-1237266636-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在多种 Agent 中提供 Rainbond 部署、排障与交付验证流程，DSH 包注册引导 Skill。 | 已有测试 Rainbond 的多组件项目维护者，可以在非生产应用试一次部署和访问核验。 |
+| [新诉讼可视化](#plugin-1294942686-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 把案件材料整理成有出处、可编辑和可打印的图表 | 可用虚构卷宗检验时间轴和出处核对流程。 |
 | [dsh Browser Control](#plugin-1324996099-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 通过Chrome或Firefox扩展和DSH侧栏，使用结构化文本读取并操作已有登录网页。 | 有重复登录网页任务的DSH用户可先用非敏感测试站点试用。 |
 | [dsh-stock-market](#plugin-1331846104-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在DSH会话中接入图像问答、OCR、定位、截图差异和视觉产物。 | 使用文字模型的DSH开发者可先拿非敏感截图做定位或差异检查。 |
 | [DSH Turn Rewind](#plugin-1333100390-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为DSH消息提供文件检查点、变更预览、选择恢复及会话重新开始。 | 反复让Agent修改同一工作目录的开发者可在副本试用消息锚定文件恢复。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
+| [DSH Memento](#plugin-1333471394-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 提供带审批策略与审计的跨会话记忆 | 可在隔离 profile 验证稳定约束复用。 |
 | [DSH Taskboard](#plugin-1333732838-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 提供本地 SQLite 项目看板、Agent 任务工具、原生会话执行与自动化。 | 已有本地 DSH 项目且愿意人工验收的操作者可以在独立测试库中试用 Taskboard 管理多会话任务。 |
 | [@awiki/dsh-plugin](#plugin-1334428397-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [dsh-mermaid](#plugin-1334569498-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。 | 经常在DSH阅读流程图的用户可保持严格模式和大小限制试用小型Mermaid就地渲染。 |
@@ -39,6 +40,7 @@
 | [dsh-api-dashboard](#plugin-1346196699-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 在DSH界面汇聚多平台余额/额度、会话及子代理用量估算，支持刷新告警、自定义端点与手动确认更新。 | 使用多平台API的单用户可在审阅密钥接收方后试用余额与会话估算看板。 |
 | [dsh-cap-profile](#plugin-1349267122-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 扫描 DSH 本地会话历史，按模型展示工具调用、错误签名和时间范围对比。 | 适合将其作为本地日志排查索引试用，先核对真实数据和模型归因，不据错误率直接做能力排名。 |
 | [OrcaReplay](#plugin-1350419329-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 外置 CLI 调试工具，记录 Agent 请求、工具和文件变化，支持模型响应回放、检查点分叉与模型比较。 | 能隔离工具副作用的 Agent 开发者，可用无真实秘密的复制项目试用故障录制与严格模型响应回放。 |
+| [Memory Eternal](#plugin-1351908966-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 跨会话沉淀和审阅知识卡，并提供核心记忆与用量账本 | 可用虚构卡片验证复用与审核。 |
 | [dsh-capmap-viz](#plugin-1356896576-dsh-capmap-viz)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 解析 CapMap 文档并在 DSH 侧栏展示能力图、状态、前沿和校验门。 | 对已有 CapMap 文档的团队有清晰只读导航价值，但必须把图视为声明并回查原文。 |
 | [dsh-usage-analytics](#plugin-1356960582-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH设置中展示本机1、7、30天Token图表、模型分布和技能调用状态，并支持重建派生缓存。 | 适合本机个人用户对小样本受控试用并核对用量字段和索引状态；不作账单、技能成果成功率或多人权限保证。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 已维护多个可替代文本渠道的用户，可在人工可核查任务中试用首内容输出前的自动切换。 |
@@ -59,7 +61,6 @@
 | [dsh-which](#plugin-1423215529-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 提供命令路径、同名遮蔽、PATH环境及目录脚本诊断，并可选执行版本探测。 | 适合多版本工具链维护者在可信环境试用只读诊断；关闭默认探测，并用真实shell查询核对关键结论。 |
 | [dsh-vercel](#plugin-1425044910-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过OAuth接入Vercel官方MCP，在DSH按Agent搜索加载工具、分页长结果并按需读取随包指南。 | 匹配宿主可信单profile可先只读工具试用，核账户/团队再写；多账户并发和强撤销需先补凭据版本契约。 |
 | [dsh-ai-armor](#plugin-1425045401-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将Git回归、堆栈、配置、shell转义和MyBatis Plus静态审计工具合并分发。 | 可先试用静态只读工具；Git bisect只应在干净的可丢弃副本和审阅过的复现命令中运行。 |
-| [dsh-better-workspace-file-manager](#plugin-1425087677-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。 | 适合Web工作区用户先在有备份的独立目录试上传、下载与编辑，永久删除和批量失败需特别核对。 |
 | [dsh-tingdong](#plugin-1426519329-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 把英文音频或文档制成逐句听力课，提供翻译讲解、音轨、练习、间隔复习与导出。 | 短篇低敏感材料可由能审英文者受控试用，先修教材再练，不能把自评掌握当效果。 |
 | [dsh-audiobook](#plugin-1426914549-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 搜索或导入读物并分段朗读，保存收听进度、位置心得，支持语音记录和AI讨论。 | 个人低敏感授权读物可受控试用，须抽查提取/断点并明确云语音与AI外发。 |
 | [dsh-roam-planner](#plugin-1427038024-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在 DSH 对话与地图中编辑旅行草稿、冻结候选、采用行程并接入地点路线和可选 MCP。 | 适合非交易行程规划小范围试用，逐项核实地点路线，并独立确认采用内容，不能把候选状态当严格人工审批。 |
@@ -67,6 +68,7 @@
 | [dsh-codex-bridge](#plugin-1427331352-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过Codex CLI读取账号额度与模型建议，并以可选模型和推理强度委派独立任务。 | 已登录Codex且能验收产物者可先只读小任务试用，额度快照非硬预算，写任务超时须先核工作树。 |
 | [dsh-curate](#plugin-1428582868-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。 | 能明确长会话关键约束、并愿意先复制非关键会话的 DSH 用户，可试用逐消息标注、纠错和区间整理。 |
 | [Learn Harness Engineering](#plugin-1195243030-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 项目式编码 Agent 工程课程，提供状态、验证、范围与跨会话恢复教材、示例和脚手架 Skill。 | 已有跨会话或提前报完成问题的开发者，可在项目副本上只改一个环节，并用同任务比较真实结果。 |
+| [Superpowers DSH](#plugin-1333750613-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将上游软件开发方法作为可调用 DSH 技能注册 | 可在开发 profile 试用单个技能。 |
 | [dsh-composer-expand](#plugin-1334850903-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。 | 功能窄且无额外外部数据面，长稿单composer场景可控试用；先核IME/菜单/撤销和收起，广兼容表不等于操作验证。 |
 | [dsh-archived-conversations](#plugin-1335060115-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH设置页列归档会话并只读预览最近六条用户/助手文本，不切换或恢复会话。 | 可信本地HTTP单用户辨认归档可试用，知晓不能恢复/全文且快切要核标题正文。 |
 | [dsh-recipe](#plugin-1336583700-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 适合作场景清单与命令草案，逐组件检查并补profile、版本和配置后使用；不能按一行命令假定整套可靠。 |
@@ -76,7 +78,6 @@
 | [dsh-turn-outline](#plugin-1356219122-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 不调用模型，把DSH事件按用户轮次折叠为输入、工具与输出轨迹，并用seq定位回原文。 | 结构化轨迹和跳转有用，限宿主授权明确的本地回看，摘要/缓存与多用户边界需核对。 |
 | [dsh-callout](#plugin-1359145352-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH Web将首行五类GitHub式提示标记呈现为主题卡片，监听流式DOM更新并在卸载时有条件恢复标记。 | 重点卡片与保正文/精确卸载路径实用，兼容Web可控试用；先核来源/转义/主题和编辑，颜色不替代判断。 |
 | [dsh-sidebar-git-graph](#plugin-1393980674-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在DSH右侧栏查看当前会话仓库的提交关系、工作树改动和文件差异。 | 适合本地单用户DSH开发者受控试用会话内Git查阅，先核对访问控制、仓库选择和CLI结果，不把只读视图当授权或原子状态保证。 |
-| [dsh-client-ui-font-scale](#plugin-1403442165-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。 | 适合频繁调整对话字号并接受 Ctrl 滚轮语义变化的人先检查快捷键冲突后试用。 |
 | [dsh-rtl-chat](#plugin-1410794267-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。 | 阿拉伯语为主的匹配Web宿主可本地试用，先核混排与代码，理解全局偏好；热卸载后留意残按钮样式。 |
 | [dsh-pick](#plugin-1423941835-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。 | 去噪与候选对照适合辅助选型，需独立核查适用性和安装权限。 |
 | [dsh-language-guard](#plugin-1424475406-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。 | 频繁语言漂移用户可从B/C小范围试用，按可见答复验收，临时命令不作多会话隔离保证。 |
@@ -102,7 +103,6 @@
 | [Notes](#plugin-1182135360-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | 单人撰写和分享便签的用户可以先用非敏感稿件试用主题与导出。 |
 | [ANOLISA](#plugin-1195873793-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | 已经维护 DSH 环境且能保留原文的开发者，可以在任务副本中试用 Tokenless 输出优化这一链路。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | 有会议权限的个人或团队，可用测试账号试用小范围只读会议和录制查询。 |
-| [awesome-gpt-image-2](#plugin-1220744720-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | 先作为资源用授权素材手工单模板试用，固定参数核验质量，安装须备份范围，商业和模型比较不作保证。 |
 | [PatentRadar](#plugin-1230059993-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 处理公开专利资料且有专业审阅者的研究人员，可以挑一个可回源案例试做特征证据表。 |
 | [Agent Handoff Skill](#plugin-1230123793-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种编码 Agent 建立仓库级交接文件，并辅助初始化、维护和归档。 | 反复更换 DSH 会话的项目维护者，可以在测试仓库先预览一套交接布局。 |
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
@@ -112,28 +112,6 @@
 | [Caliper](#plugin-1237259189-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 真实安装 Agent Skill，重复运行任务并分别评估激活、执行检查与有无 Skill 的差异。 | 能提供独立测试环境的 Skill 维护者可先关闭用户自定义工具，用 Caliper 对自有非敏感 Skill 做小规模激活与断言回归。 |
 | [Flowix](#plugin-1248774202-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 本地 Markdown 笔记客户端，让人工写作与多个 Agent 共用可持续读写的上下文。 | 以 Markdown 维护项目知识的用户，可用副本笔记本试用人工与 Agent 共用上下文。 |
 | [嵌入式工作台](#plugin-1276714299-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为嵌入式 C/C++ 开发提供按需技能，并在 DSH 首个模型步注入计划核查提醒。 | 已有嵌入式 C/C++ 工具链的开发者，可以在可回滚的故障修复中试用按需领域技能。 |
-
-<a id="plugin-1418493685-root"></a>
-
-## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
-
-[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md)
-
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/01NGVI-QINGYI/no-ai-style)
-
-**主要用途**：提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。
-
-**建议**：试用
-
-**推荐理由**：适合保留原文、由作者复核的写作流程试用；flags/锚点相同不等语义或原创认证，真实证据需独立核。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。详见[Q05](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
-
-[返回表格](#column-index)
 
 <a id="plugin-1422943787-root"></a>
 
@@ -220,6 +198,28 @@
 **试用条件**：仅在测试租户验证一个应用，先回读权限，未知写入先查询，最后检查目标 API。见 [Q03](../../plugins/goodrain--rainskills/INSIGHT.md#research-q03)。
 
 [查看完整分析 →](../../plugins/goodrain--rainskills/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1294942686-root"></a>
+
+## [新诉讼可视化](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md)
+
+[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md)
+
+[![GitHub ★ 142](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=142&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MiaoQichuan/new-litigation-visualization)
+
+**主要用途**：把案件材料整理成有出处、可编辑和可打印的图表
+
+**建议**：试用
+
+**推荐理由**：可用虚构卷宗检验时间轴和出处核对流程。当前源码支撑结构校验与执行入口。扩大采用取决于独立复核和宿主资料策略。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。
+
+[查看完整分析 →](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -330,6 +330,28 @@
 **试用条件**：需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 采用结论是试用，不是安装保证；成功与停止标准见[Q09](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md#research-q09)。
 
 [查看完整分析 →](../../plugins/030611--qiushi-dsh-evidence-audit/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333471394-root"></a>
+
+## [DSH Memento](../../plugins/perrylink--dsh-memento/INSIGHT.md)
+
+[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
+
+[![GitHub ★ 142](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=142&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-memento) [![npm 30d 6,848](https://img.shields.io/static/v1?label=npm+30d&message=6%2C848&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-memento) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-memento)
+
+**主要用途**：提供带审批策略与审计的跨会话记忆
+
+**建议**：试用
+
+**推荐理由**：可在隔离 profile 验证稳定约束复用。源码可追踪写入和查询路径。扩用取决于审批及数据留存测试。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/perrylink--dsh-memento/INSIGHT.md#research-q04) 隔离 profile 使用虚构条目验证批准、拒绝和删除。
+
+[查看完整分析 →](../../plugins/perrylink--dsh-memento/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -704,6 +726,28 @@
 **试用条件**：先用可丢弃、无真实秘密的项目做严格回放，只把匹配视为协议重现；分叉需另看真实任务质量与费用。生产工具或外部写入不明时退回只读trace；分享前检查MCP、文件快照和所有附属原件，见 [Q04](../../plugins/continuum-ai-corp--orcareplay/INSIGHT.md#research-q04)。
 
 [查看完整分析 →](../../plugins/continuum-ai-corp--orcareplay/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1351908966-root"></a>
+
+## [Memory Eternal](../../plugins/eternalnight996--memory-eternal/INSIGHT.md)
+
+[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md)
+
+[![GitHub ★ 139](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=139&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EternalNight996/memory-eternal) [![npm 30d 13,160](https://img.shields.io/static/v1?label=npm+30d&message=13%2C160&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/memory-eternal) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/memory-eternal)
+
+**主要用途**：跨会话沉淀和审阅知识卡，并提供核心记忆与用量账本
+
+**建议**：试用
+
+**推荐理由**：可用虚构卡片验证复用与审核。源码表明模型路由可能接收正文或核心上下文。扩大采用取决于资料边界和净收益。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q04) 以隔离 vault 和虚构数据验证审核、检索和核心注入。
+
+[查看完整分析 →](../../plugins/eternalnight996--memory-eternal/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1147,28 +1191,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1425087677-root"></a>
-
-## [dsh-better-workspace-file-manager](../../plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md)
-
-[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
-
-
-
-**主要用途**：为工作区文件页增加上传、下载、建目录、移动、删除、拖入聊天和文本编辑。
-
-**建议**：试用
-
-**推荐理由**：适合Web工作区用户先在有备份的独立目录试上传、下载与编辑，永久删除和批量失败需特别核对。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：适合需要Web工作区文件交接的人在独立测试目录先试上传、下载和版本受保护编辑。成本含文件传输流量、ZIP压缩与内存、用户核对内容；没有吞吐或时间样本，不给金额和节时结论。首次需要Host本地fs与客户端插槽，持续承受DOM兼容维护。失败上传有清理，移动与删除需人工核对部分状态；永久删除的恢复依赖外部备份。成功判据是上传同名保留两份、旧版本保存被拒绝、下载字节一致和其他工作区不变；任何静默覆盖或边界外写入都应停止。 [Q04](../../plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md#research-q04)
-
-[查看完整分析 →](../../plugins/arrosam--dsh-better-workspace-file-manager/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1426519329-root"></a>
 
 ## [dsh-tingdong](../../plugins/aicivilization--dsh-tingdong/INSIGHT.md)
@@ -1320,6 +1342,28 @@
 **试用条件**：适合已经遇到跨会话丢状态或提前报完成的开发者，先选一个真实失败，在项目副本上加入最少文件，并用相同任务比较前后。已有成熟工程规范的仓库可只参考课程而不全套生成。若只是结构评分变高、实际错误和人工介入没有下降，应删减无效约定，不继续扩充模板。[Q05](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md#research-q05)
 
 [查看完整分析 →](../../plugins/walkinglabs--learn-harness-engineering/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333750613-root"></a>
+
+## [Superpowers DSH](../../plugins/laynechai--superpowers-dsh/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 139](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=139&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LayneChai/superpowers-dsh) [![npm 30d 6,155](https://img.shields.io/static/v1?label=npm+30d&message=6%2C155&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/superpowers-dsh) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/superpowers-dsh)
+
+**主要用途**：将上游软件开发方法作为可调用 DSH 技能注册
+
+**建议**：试用
+
+**推荐理由**：可在开发 profile 试用单个技能。源码支持发现和加载流程。实际行为收益与项目规则相容性仍需对照。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/laynechai--superpowers-dsh/INSIGHT.md#research-q04) 先在隔离 profile 选择一个技能，对照团队现有规范。
+
+[查看完整分析 →](../../plugins/laynechai--superpowers-dsh/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1518,28 +1562,6 @@
 **试用条件**：本地单用户开发者可先用小仓库试用并与CLI核对；先审查webServer访问控制，出现静默换库、未说明截断或无法解释的差异即回到CLI。尚不足以推荐持续安装。详见[Q09](../../plugins/afundog--dsh-sidebar-git-graph/INSIGHT.md#research-q09)。
 
 [查看完整分析 →](../../plugins/afundog--dsh-sidebar-git-graph/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1403442165-root"></a>
-
-## [dsh-client-ui-font-scale](../../plugins/aprilcrystal--dsh-client-ui-font-scale/INSIGHT.md)
-
-[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
-
-
-
-**主要用途**：为 DSH 对话字号提供输入区步进器、快捷键和 Ctrl 滚轮控制。
-
-**建议**：试用
-
-**推荐理由**：适合频繁调整对话字号并接受 Ctrl 滚轮语义变化的人先检查快捷键冲突后试用。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：先用步进器与原生设置交替修改，确认数值一致，再检查输入焦点下快捷键及 Ctrl 滚轮是否符合习惯。需要整页放大或出现冲突时保留原生设置路径。[Q03](../../plugins/aprilcrystal--dsh-client-ui-font-scale/INSIGHT.md#research-q03)
-
-[查看完整分析 →](../../plugins/aprilcrystal--dsh-client-ui-font-scale/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2090,28 +2112,6 @@
 **试用条件**：[Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。
 
 [查看完整分析 →](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1220744720-root"></a>
-
-## [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
-
-[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md)
-
-[![GitHub ★ 35,006](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C006&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
-
-**主要用途**：社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。
-
-**建议**：试用
-
-**推荐理由**：先作为资源用授权素材手工单模板试用，固定参数核验质量，安装须备份范围，商业和模型比较不作保证。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：作为资源先手工选单模板，以有权素材和固定模型小批试用；安装前选目标备份，不把案例或广告当成片/收费保证。[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04)
-
-[查看完整分析 →](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
 
 [返回表格](#column-index)
 

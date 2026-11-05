@@ -8,20 +8,20 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 272 |
-| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 36 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 105 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 291 |
-| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 56 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 271 |
+| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 37 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 106 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 298 |
+| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 58 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 136 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 144 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（272）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（271）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -33,7 +33,7 @@
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
-### [办公与运营（36）](OFFICE-OPERATIONS.md)
+### [办公与运营（37）](OFFICE-OPERATIONS.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -45,7 +45,7 @@
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（105）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（106）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（291）](SOFTWARE-DELIVERY.md)
+### [软件交付（298）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -69,13 +69,13 @@
 
 [查看全部插件 →](SOFTWARE-DELIVERY.md)
 
-### [内容生产（56）](CONTENT-CREATION.md)
+### [内容生产（58）](CONTENT-CREATION.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | [![GitHub Star 105,115](https://img.shields.io/static/v1?label=&message=105%2C115&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design) |
 | [Next AI Draw.io DSH](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [![GitHub Star 36,548](https://img.shields.io/static/v1?label=&message=36%2C548&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) |
-| [awesome-gpt-image-2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) | 社区图像案例与结构化提示词模板库，附Agent风格选择Skill和在线画廊。 | [![GitHub Star 35,006](https://img.shields.io/static/v1?label=&message=35%2C006&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2) |
+| [GPT-Image2 提示词画廊](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) | 提供可浏览、复制的图像提示词案例、模板及衍生风格 Skill。 | [![GitHub Star 35,459](https://img.shields.io/static/v1?label=&message=35%2C459&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2) |
 | [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | [![GitHub Star 27,409](https://img.shields.io/static/v1?label=&message=27%2C409&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Molunerfinn/PicGo) |
 | [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [![GitHub Star 6,991](https://img.shields.io/static/v1?label=&message=6%2C991&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil) |
 
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（136）](INFRASTRUCTURE.md)
+### [基础设施（144）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |

@@ -1,0 +1,442 @@
+{
+    "schema_version": 4,
+    "id": "97d2b855f0c0c7fcbf2a5073f36b072f",
+    "identity": "github:1333750613:root",
+    "slug": "laynechai--superpowers-dsh",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333750613:root",
+            "repository_id": 1333750613,
+            "component_id": "root",
+            "repository": "LayneChai/superpowers-dsh",
+            "path": "",
+            "aliases": [],
+            "name": "Superpowers DSH",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "0b33dd7584786ebd251ee2f4638844c794cc82d125076e540de3db21461afe24",
+                "code": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                "maintenance": "d51649717710ea2c0e2e52fa58723f73804970e69b92c454a3487c6eac8eb11d"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-03-github-1333750613-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "fa94055bbfacbcbcbc911aa6dba906e54cc17848",
+                    "retrieved_at": "2026-11-05T03:36:24.885Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-11-05-03-github-1333750613-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T03:36:24.885Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-03-github-1333750613-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/LayneChai/superpowers-dsh",
+                            "commit": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                            "path": "README.md",
+                            "content_sha256": "4c740da75b2719949a59003f2501e59408e0c639329ef99056d716520a352116"
+                        }
+                    ],
+                    "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                    "captured_at": "2026-11-05T03:36:24.885Z",
+                    "summary": "将上游软件开发方法作为可调用 DSH 技能注册",
+                    "artifact": "data/runs/2026-11-05-03/laynechai--superpowers-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-03-github-1333750613-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/LayneChai/superpowers-dsh",
+                            "commit": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                            "path": "README.md",
+                            "content_sha256": "4c740da75b2719949a59003f2501e59408e0c639329ef99056d716520a352116"
+                        },
+                        {
+                            "repository_url": "https://github.com/LayneChai/superpowers-dsh",
+                            "commit": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                            "path": "lib/index.js",
+                            "content_sha256": "2ba36ba65877d79ceacc0d0fe23cdd97858e237dc435e284dcadc058eb56051b"
+                        },
+                        {
+                            "repository_url": "https://github.com/LayneChai/superpowers-dsh",
+                            "commit": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                            "path": "skills/test-driven-development/SKILL.md",
+                            "content_sha256": "64b03fce4aee5a97a93160cea8111f3ba13a17b7c001db4bd5836d67fd10705d"
+                        }
+                    ],
+                    "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                    "captured_at": "2026-11-05T03:36:24.885Z",
+                    "summary": "核查 README.md、lib/index.js、skills/test-driven-development/SKILL.md；provider 扫描随包技能并返回文本及资源根。",
+                    "artifact": "data/runs/2026-11-05-03/laynechai--superpowers-dsh/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查固定提交的让同一 profile 的开发会话可选加载统一工作流。未执行目标代码或实际宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者希望在 DSH 中复用规划、调试与验证约定。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "provider 扫描随包技能并返回文本及资源根。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查固定提交的让同一 profile 的开发会话可选加载统一工作流。未执行目标代码或实际宿主验证。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "作者给出 npm、Git 和本地包安装。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH skills registry | 必需 | 注册与发现技能 | 目标 profile 验证 |\n| 上游技能文本 | 随包 | 工程方法 | 评估与团队规范一致性 |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装渠道成本未知 | 配置及重启耗时未知 | 依宿主变化 |\n| 持续 | 提示开销未知 | 处理规则冲突耗时未知 | 依任务及已装技能变化 |\n| 恢复 | 版本回退成本未知 | 卸载和恢复目录耗时未知 | 取决于 profile |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 先在隔离 profile 选择一个技能，对照团队现有规范。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 目录发现 | 核对列表和正文 | 技能与资源可读取 |\n| 工作流收益 | 对照复现与验证步骤 | 记录越权和回归结果 |",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "技能注册、解析和资源定位均可从固定源码追踪。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 把上游方法统一接入 DSH 技能目录。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 技能内容为模型指导，执行和同名优先级需实测。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 统一注册可能减少配置成本，并提高缺陷修复中实际执行验证的比例。",
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333750613:root",
+                            "area": "code",
+                            "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T03:36:24.885Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T03:36:24.885Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                "reviewed_at": "2026-11-05T03:36:24.885Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333750613:root",
+                        "area": "code",
+                        "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q02](#research-q02) 主要是上游技能分发和宿主注册。",
+                    "basis": "interpretation",
+                    "score": 30,
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) [Q04](#research-q04) 统一安装降低部分维护，行为收益待测。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-11-05-03-github-1333750613-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "可在开发 profile 试用单个技能。源码支持发现和加载流程。实际行为收益与项目规则相容性仍需对照。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01) 开发流程有可复现任务"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 统一分发，已有手工基线"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q03](#research-q03) 入口源码可见"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q04](#research-q04) 可在隔离 profile 回退"
+                    }
+                },
+                "score": 64,
+                "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                "reviewed_at": "2026-11-05T03:36:24.885Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-03-github-1333750613-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333750613:root",
+                        "area": "code",
+                        "fingerprint": "cc0c87f3a7a8627b175465f36a99e971e7eed507"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333750613:root",
+            "repository": "LayneChai/superpowers-dsh",
+            "path": "",
+            "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+            "fingerprints": {
+                "directory": "0b33dd7584786ebd251ee2f4638844c794cc82d125076e540de3db21461afe24",
+                "code": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+                "maintenance": "d51649717710ea2c0e2e52fa58723f73804970e69b92c454a3487c6eac8eb11d"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T03:21:38Z",
+            "analysis_sha256": "012a49219ca8a479b8c54c1ea1abcae269274f2dbe914d18dcb832abe0ecca49"
+        },
+        "publication.metadata": "data/catalog/laynechai--superpowers-dsh/meta.json",
+        "publication.summaries": {
+            "text": "将上游软件开发方法作为可调用 DSH 技能注册",
+            "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+            "source_url": "https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+            "items": {
+                "Skill": "规划、调试、测试、评审与验证等开发技能"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 手工安装 | 单独选择流程 | 需维护路径和版本 |\n| Superpowers DSH | 统一发现与调用 | 需管理规则重叠 |"
+        },
+        "publication.advice": {
+            "revision": "cc0c87f3a7a8627b175465f36a99e971e7eed507",
+            "text": "[Q04](#research-q04) 先在隔离 profile 选择一个技能，对照团队现有规范。"
+        },
+        "registry": "data/plugins/laynechai--superpowers-dsh",
+        "reports": "# Superpowers DSH\n\n> 将上游软件开发方法作为可调用 DSH 技能注册\n\n## 研究范围\n\n- **仓库**：[LayneChai/superpowers-dsh](https://github.com/LayneChai/superpowers-dsh)\n- **版本号**：0.4.0（[固定提交 cc0c87f3a7a8627b175465f36a99e971e7eed507](https://github.com/LayneChai/superpowers-dsh/tree/cc0c87f3a7a8627b175465f36a99e971e7eed507)）\n- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态核查固定提交的让同一 profile 的开发会话可选加载统一工作流。未执行目标代码或实际宿主验证。\n\n## 洞察短评\n\n- **用途**：开发者希望在 DSH 中复用规划、调试与验证约定。\n- **亮点**：[Q01](#research-q01) 把上游方法统一接入 DSH 技能目录。\n- **思考**：[Q03](#research-q03) 技能内容为模型指导，执行和同名优先级需实测。\n- **建议**：[Q05](#research-q05) 统一注册可能减少配置成本，并提高缺陷修复中实际执行验证的比例。\n\n采用建议：[Q04](#research-q04) 先在隔离 profile 选择一个技能，对照团队现有规范。\n\n## 核心贡献\n\n[Q01](#research-q01) 把上游方法统一接入 DSH 技能目录。\n\n## 关键质疑\n\n[Q03](#research-q03) 技能内容为模型指导，执行和同名优先级需实测。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 统一注册可能减少配置成本，并提高缺陷修复中实际执行验证的比例。\n\n至少保留一轮工具轨迹供对照。\n\n## 场景与替代办法\n\n开发者希望在 DSH 中复用规划、调试与验证约定。\n\n逐个复制 SKILL.md 或项目内维护指令。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH skills registry | 必需 | 注册与发现技能 | 目标 profile 验证 |\n| 上游技能文本 | 随包 | 工程方法 | 评估与团队规范一致性 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 隔离 profile 与固定任务 | 保留无插件基准 |\n| 执行 | 分别运行调试 | 观察技能调用 |\n| 复核 | 比较验证与冲突 | 留存工具轨迹 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装渠道成本未知 | 配置及重启耗时未知 | 依宿主变化 |\n| 持续 | 提示开销未知 | 处理规则冲突耗时未知 | 依任务及已装技能变化 |\n| 恢复 | 版本回退成本未知 | 卸载和恢复目录耗时未知 | 取决于 profile |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 目录发现 | 核对列表和正文 | 技能与资源可读取 |\n| 工作流收益 | 对照复现与验证步骤 | 记录越权和回归结果 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：让同一 profile 的开发会话可选加载统一工作流\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要这组技能？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n在 DSH 内反复进行规划、调试和验证的开发者。与逐个复制技能相比，一个插件提供上游 Superpowers 的统一安装入口。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-23](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md#L13-L23)\n\n作者说明上游移植和 host 层用途\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n# superpowers-dsh\n\n为 **DeepSeek Harness (DSH)** 打造的 Superpowers 插件包：把\n[obra/superpowers](https://github.com/obra/superpowers) 的核心技能\n（Claude-Code 技能库：TDD、调试、规划、协作模式）移植到 DSH 的 Cordis\n插件架构上。\n\n插件会向 `ctx.skills` 注册表的 **host 层** 注册一个技能提供者，因此每个\nagent preset 的作用域链都会合并这些技能。技能正文随包分发\n（`skills/<name>/SKILL.md`），通过 `import.meta.url` 定位——这是包的\n组装事实，不需要任何用户配置。\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:36-40](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md#L36-L40)\n\n作者列出 15 个技能及同步版本\n\n```text\n## 在 DeepSeek Harness 中安装与使用\n\n这是 DeepSeek Harness 的**插件包**。安装后会把下面的 15 个技能注册进\nhost 技能注册表，你 profile 里的每个 agent 会话都能在技能目录中看到它们，\n并可用 `skill` 工具加载。技能内容同步自上游 **obra/superpowers v7.0.1**。\n```\n\n#### 缺口\n\n- 技能集合可能覆盖现有团队指令。\n  **影响**：统一发现减少手工维护。\n  **进一步探讨**：只选一个调试任务先验收。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 插件如何交付技能？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nprovider 枚举每个子目录的 SKILL.md，抽取元数据，注册可由用户或模型调用的候选。取正文时带资源目录。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:88-116](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/lib/index.js#L88-L116)\n\n目录发现并构造候选\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\nasync function discoverCandidates(skillsRoot, signal) {\n  let entries\n  try {\n    entries = await readdir(skillsRoot, { withFileTypes: true })\n  } catch {\n    return []\n  }\n  const candidates = []\n  for (const entry of entries) {\n    if (signal?.aborted) break\n    if (!entry.isDirectory()) continue\n    const skillDir = join(skillsRoot, entry.name)\n    const skillFile = join(skillDir, 'SKILL.md')\n    const parsed = await parseSkillFile(skillFile, signal)\n    if (parsed === undefined) continue\n    candidates.push({\n      name: parsed.name,\n      description: parsed.description,\n      ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\n      invocation: { modelInvocable: true, userInvocable: true },\n      source: SOURCE,\n      provider: name,\n      rank: PACKAGED_SKILL_RANK,\n      locator: skillDir,\n      path: skillFile,\n      ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {})\n    })\n  }\n  return candidates\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:119-143](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/lib/index.js#L119-L143)\n\n注册 provider 并在读取时设置资源根\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Register the packaged superpowers provider on `ctx.skills`. */\nfunction apply(ctx) {\n  const skillsRoot = join(dirname(fileURLToPath(import.meta.url)), '..', 'skills')\n  ctx.skills.registerProvider((control) => ({\n    name,\n    async list(options) {\n      return discoverCandidates(skillsRoot, options.signal)\n    },\n    async get(candidate, options) {\n      const parsed = await parseSkillFile(candidate.path, options.signal)\n      if (parsed === undefined) return undefined\n      return {\n        name: parsed.name,\n        description: parsed.description,\n        ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\n        invocation: { modelInvocable: true, userInvocable: true },\n        source: SOURCE,\n        provider: name,\n        resourceBase: { kind: 'directory', path: candidate.locator },\n        path: candidate.path,\n        ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {}),\n        content: parsed.content\n      }\n    }\n  }))\n```\n\n</details>\n\n#### 缺口\n\n- 缺失或无法解析的技能不会进入候选。\n  **影响**：路径与资源能跟随包分发。\n  **进一步探讨**：检查列表、读取及资源定位。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 是否强制执行工程流程？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\nTDD 文件要求先看到失败再改代码，这是给 agent 的文本指导。provider 暴露文本，源材料没有证明模型会严格执行。解析器只处理单行键值，扩展元数据也需测试。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/test-driven-development/SKILL.md:6-27](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/skills/test-driven-development/SKILL.md#L6-L27)\n\n测试先行和例外以技能文本表达\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n# Test-Driven Development (TDD)\n\n## Overview\n\nWrite the test first. Watch it fail. Write minimal code to pass.\n\n**Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.\n\n**Violating the letter of the rules is violating the spirit of the rules.**\n\n## When to Use\n\n**Always:**\n- New features\n- Bug fixes\n- Refactoring\n- Behavior changes\n\n**Exceptions (ask your human partner):**\n- Throwaway prototypes\n- Generated code\n- Configuration files\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:37-53](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/lib/index.js#L37-L53)\n\n元数据用单行正则解析\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nfunction parseFrontmatter(text) {\n  if (!text.startsWith('---')) return null\n  const end = text.indexOf('\\n---', 3)\n  if (end === -1) return null\n  const block = text.slice(3, end)\n  const body = text.slice(end + 4).replace(/^\\n+/, '')\n  const metadata = {}\n  for (const line of block.split('\\n')) {\n    const match = /^([A-Za-z][\\w-]*):\\s*(.*)$/.exec(line.trim())\n    if (!match) continue\n    let value = match[2].trim()\n    if ((value.startsWith('\"') && value.endsWith('\"')) || (value.startsWith(\"'\") && value.endsWith(\"'\"))) {\n      value = value.slice(1, -1)\n    }\n    metadata[match[1]] = value\n  }\n  return { metadata, body }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:119-143](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/lib/index.js#L119-L143)\n\n读取返回内容和调用元数据\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Register the packaged superpowers provider on `ctx.skills`. */\nfunction apply(ctx) {\n  const skillsRoot = join(dirname(fileURLToPath(import.meta.url)), '..', 'skills')\n  ctx.skills.registerProvider((control) => ({\n    name,\n    async list(options) {\n      return discoverCandidates(skillsRoot, options.signal)\n    },\n    async get(candidate, options) {\n      const parsed = await parseSkillFile(candidate.path, options.signal)\n      if (parsed === undefined) return undefined\n      return {\n        name: parsed.name,\n        description: parsed.description,\n        ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\n        invocation: { modelInvocable: true, userInvocable: true },\n        source: SOURCE,\n        provider: name,\n        resourceBase: { kind: 'directory', path: candidate.locator },\n        path: candidate.path,\n        ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {}),\n        content: parsed.content\n      }\n    }\n  }))\n```\n\n</details>\n\n#### 缺口\n\n- 同名技能与团队规则冲突时需确认宿主行为。\n  **影响**：规范能否执行取决于实际会话。\n  **进一步探讨**：为同名技能和项目禁令设计反例。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何最小成本采用？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n作者说明需用 DSH 插件命令挂入 profile 并重启，也可用本地 tarball。隔离 profile 先确认技能列表和行为。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:65-99](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/README.md#L65-L99)\n\n作者区分普通 npm 安装与 DSH profile 安装\n\n<details>\n<summary>查看原文（35行）</summary>\n\n````text\n\n包已发布到 npm，名为 `superpowers-dsh`（国内会自动同步到 npmmirror 镜像）：\n\n```sh\ndsh plugin --profile web add superpowers-dsh\n```\n\n> 必须用 `dsh plugin` 形式——直接 `npm install superpowers-dsh` 只会把包当\n> 普通库装到当前目录，**不会**注册进任何 DeepSeek Harness profile，技能\n> 永远不会被加载。\n\n### 从 GitHub 安装\n\n```sh\n# 任意目录下执行\ndsh plugin --profile web add https://github.com/LayneChai/superpowers-dsh.git\n```\n\n### 从 tarball 或本地文件夹安装\n\n```sh\n# tarball（例如 Release 里的 superpowers-dsh-0.1.0.tgz）\ndsh plugin --profile web add C:\\路径\\to\\superpowers-dsh-0.1.0.tgz\n\n# 或解压后的插件文件夹（pnpm 以链接方式安装，改完重启即生效）\ndsh plugin --profile web add C:\\路径\\to\\superpowers-dsh\n```\n\n### 重启并验证\n\nbundle 层在 profile 启动时挂载，所以需要**重启 profile**（停掉后重新运行\n`dsh web` / `npx @deepseek-ai/dsh web`，再刷新浏览器）。确认层已组合：\n\n```sh\ndsh --profile web --dump-config     # 必须出现 `superpowers-dsh` 行\n````\n\n</details>\n\n#### 缺口\n\n- profile 内多个 agent 可能见到同一组技能。\n  **影响**：试用要看现有规则是否重复。\n  **进一步探讨**：用隔离 profile 并固定包版本。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么结果支持保留？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n用同一个可复现 bug 比较原配置与启用版，记录定位步骤、额外上下文、回归验证与越权行为，关注是否真的执行最小验证。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/test-driven-development/SKILL.md:6-27](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/skills/test-driven-development/SKILL.md#L6-L27)\n\n技能规定了可观察的测试过程\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n# Test-Driven Development (TDD)\n\n## Overview\n\nWrite the test first. Watch it fail. Write minimal code to pass.\n\n**Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.\n\n**Violating the letter of the rules is violating the spirit of the rules.**\n\n## When to Use\n\n**Always:**\n- New features\n- Bug fixes\n- Refactoring\n- Behavior changes\n\n**Exceptions (ask your human partner):**\n- Throwaway prototypes\n- Generated code\n- Configuration files\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:119-143](https://github.com/LayneChai/superpowers-dsh/blob/cc0c87f3a7a8627b175465f36a99e971e7eed507/lib/index.js#L119-L143)\n\n内容在调用时提供给 agent\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n/** Register the packaged superpowers provider on `ctx.skills`. */\nfunction apply(ctx) {\n  const skillsRoot = join(dirname(fileURLToPath(import.meta.url)), '..', 'skills')\n  ctx.skills.registerProvider((control) => ({\n    name,\n    async list(options) {\n      return discoverCandidates(skillsRoot, options.signal)\n    },\n    async get(candidate, options) {\n      const parsed = await parseSkillFile(candidate.path, options.signal)\n      if (parsed === undefined) return undefined\n      return {\n        name: parsed.name,\n        description: parsed.description,\n        ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\n        invocation: { modelInvocable: true, userInvocable: true },\n        source: SOURCE,\n        provider: name,\n        resourceBase: { kind: 'directory', path: candidate.locator },\n        path: candidate.path,\n        ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {}),\n        content: parsed.content\n      }\n    }\n  }))\n```\n\n</details>\n\n#### 缺口\n\n- 缺少同任务对照。\n  **影响**：可区分技能发现和行为收益。\n  **进一步探讨**：至少保留一轮工具轨迹供对照。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：574f63f460b9163f45fb0fdf7ce1da5cef23f7b5bd3ad79ee07a5400653af690。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 483 | 355 | 73 | — |\n| .md | source | 67 | 9501 | — | — | 57264 |\n| .mjs | source | 3 | 723 | 536 | 130 | — |\n| .cjs | source | 1 | 723 | 575 | 76 | — |\n| .ts | source | 1 | 158 | 74 | 71 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 手工安装 | 单独选择流程 | 需维护路径和版本 |\n| Superpowers DSH | 统一发现与调用 | 需管理规则重叠 |\n\n## 工程亮点\n\n技能注册、解析和资源定位均可从固定源码追踪。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、skills/test-driven-development/SKILL.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查固定提交的让同一 profile 的开发会话可选加载统一工作流。未执行目标代码或实际宿主验证。\n- 下一步：至少保留一轮工具轨迹供对照。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-03/laynechai--superpowers-dsh/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"LayneChai/superpowers-dsh\",\n  \"revision\": \"cc0c87f3a7a8627b175465f36a99e971e7eed507\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\",\n    \"skills/test-driven-development/SKILL.md\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"让同一 profile 的开发会话可选加载统一工作流\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁需要这组技能？\",\n        \"answer\": \"在 DSH 内反复进行规划、调试和验证的开发者。与逐个复制技能相比，一个插件提供上游 Superpowers 的统一安装入口。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 13,\n            \"line_end\": 23,\n            \"observation\": \"作者说明上游移植和 host 层用途\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 36,\n            \"line_end\": 40,\n            \"observation\": \"作者列出 15 个技能及同步版本\",\n            \"kind\": \"author_claim\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"技能集合可能覆盖现有团队指令。\",\n            \"impact\": \"统一发现减少手工维护。\",\n            \"next_step\": \"只选一个调试任务先验收。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"插件如何交付技能？\",\n        \"answer\": \"provider 枚举每个子目录的 SKILL.md，抽取元数据，注册可由用户或模型调用的候选。取正文时带资源目录。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 88,\n            \"line_end\": 116,\n            \"observation\": \"目录发现并构造候选\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 119,\n            \"line_end\": 143,\n            \"observation\": \"注册 provider 并在读取时设置资源根\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺失或无法解析的技能不会进入候选。\",\n            \"impact\": \"路径与资源能跟随包分发。\",\n            \"next_step\": \"检查列表、读取及资源定位。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"是否强制执行工程流程？\",\n        \"answer\": \"TDD 文件要求先看到失败再改代码，这是给 agent 的文本指导。provider 暴露文本，源材料没有证明模型会严格执行。解析器只处理单行键值，扩展元数据也需测试。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"skills/test-driven-development/SKILL.md\",\n            \"line_start\": 6,\n            \"line_end\": 27,\n            \"observation\": \"测试先行和例外以技能文本表达\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 37,\n            \"line_end\": 53,\n            \"observation\": \"元数据用单行正则解析\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 119,\n            \"line_end\": 143,\n            \"observation\": \"读取返回内容和调用元数据\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"同名技能与团队规则冲突时需确认宿主行为。\",\n            \"impact\": \"规范能否执行取决于实际会话。\",\n            \"next_step\": \"为同名技能和项目禁令设计反例。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"如何最小成本采用？\",\n        \"answer\": \"作者说明需用 DSH 插件命令挂入 profile 并重启，也可用本地 tarball。隔离 profile 先确认技能列表和行为。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 65,\n            \"line_end\": 99,\n            \"observation\": \"作者区分普通 npm 安装与 DSH profile 安装\",\n            \"kind\": \"author_claim\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"profile 内多个 agent 可能见到同一组技能。\",\n            \"impact\": \"试用要看现有规则是否重复。\",\n            \"next_step\": \"用隔离 profile 并固定包版本。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"什么结果支持保留？\",\n        \"answer\": \"用同一个可复现 bug 比较原配置与启用版，记录定位步骤、额外上下文、回归验证与越权行为，关注是否真的执行最小验证。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"skills/test-driven-development/SKILL.md\",\n            \"line_start\": 6,\n            \"line_end\": 27,\n            \"observation\": \"技能规定了可观察的测试过程\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 119,\n            \"line_end\": 143,\n            \"observation\": \"内容在调用时提供给 agent\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少同任务对照。\",\n            \"impact\": \"可区分技能发现和行为收益。\",\n            \"next_step\": \"至少保留一轮工具轨迹供对照。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"<div align=\\\"center\\\">\\n\\n[English](README.en.md) | **简体中文**\\n\\n</div>\\n\\n<div align=\\\"center\\\">\\n\\n![superpowers-dsh](static/home.png)\\n\\n</div>\\n\\n# superpowers-dsh\\n\\n为 **DeepSeek Harness (DSH)** 打造的 Superpowers 插件包：把\\n[obra/superpowers](https://github.com/obra/superpowers) 的核心技能\\n（Claude-Code 技能库：TDD、调试、规划、协作模式）移植到 DSH 的 Cordis\\n插件架构上。\\n\\n插件会向 `ctx.skills` 注册表的 **host 层** 注册一个技能提供者，因此每个\\nagent preset 的作用域链都会合并这些技能。技能正文随包分发\\n（`skills/<name>/SKILL.md`），通过 `import.meta.url` 定位——这是包的\\n组装事实，不需要任何用户配置。\\n\\n## 目录\\n\\n- [在 DeepSeek Harness 中安装与使用](#在-deepseek-harness-中安装与使用)\\n- [DSH 版本兼容性](#dsh-版本兼容性)\\n- [技能列表](#技能列表)\\n- [工作原理](#工作原理)\\n- [上游同步](#上游同步)\\n- [移植说明](#移植说明)\\n- [添加自己的技能](#添加自己的技能)\\n- [许可证](#许可证)\\n\\n## 在 DeepSeek Harness 中安装与使用\\n\\n这是 DeepSeek Harness 的**插件包**。安装后会把下面的 15 个技能注册进\\nhost 技能注册表，你 profile 里的每个 agent 会话都能在技能目录中看到它们，\\n并可用 `skill` 工具加载。技能内容同步自上游 **obra/superpowers v7.0.1**。\\n\\n### 最简单：一条命令\\n\\n不需要先全局安装 `dsh`，在任意目录执行：\\n\\n```sh\\nnpx @deepseek-ai/dsh plugin --profile web add github:LayneChai/superpowers-dsh\\n```\\n\\n装完后重启 `npx @deepseek-ai/dsh web`（或 `dsh web`），刷新浏览器即可。\\n\\n### 最推荐：直接让 DeepSeek Harness 帮你安装\\n\\n打开 DeepSeek Harness（Web 界面），新建对话，把下面这句话发给它：\\n\\n```\\n帮我安装这个链接里边的插件：https://github.com/LayneChai/superpowers-dsh\\n```\\n\\nAgent 会自动完成安装（`dsh plugin --profile web add` → 重启 profile →\\n验证技能注册），无需你手动敲任何命令。装完后你可以在对话里让它运行\\n`dsh --profile web --dump-config`，确认输出里有 `superpowers-dsh` 行。\\n\\n### 从 npm 安装（推荐，一条命令）\\n\\n包已发布到 npm，名为 `superpowers-dsh`（国内会自动同步到 npmmirror 镜像）：\\n\\n```sh\\ndsh plugin --profile web add superpowers-dsh\\n```\\n\\n> 必须用 `dsh plugin` 形式——直接 `npm install superpowers-dsh` 只会把包当\\n> 普通库装到当前目录，**不会**注册进任何 DeepSeek Harness profile，技能\\n> 永远不会被加载。\\n\\n### 从 GitHub 安装\\n\\n```sh\\n# 任意目录下执行\\ndsh plugin --profile web add https://github.com/LayneChai/superpowers-dsh.git\\n```\\n\\n### 从 tarball 或本地文件夹安装\\n\\n```sh\\n# tarball（例如 Release 里的 superpowers-dsh-0.1.0.tgz）\\ndsh plugin --profile web add C:\\\\路径\\\\to\\\\superpowers-dsh-0.1.0.tgz\\n\\n# 或解压后的插件文件夹（pnpm 以链接方式安装，改完重启即生效）\\ndsh plugin --profile web add C:\\\\路径\\\\to\\\\superpowers-dsh\\n```\\n\\n### 重启并验证\\n\\nbundle 层在 profile 启动时挂载，所以需要**重启 profile**（停掉后重新运行\\n`dsh web` / `npx @deepseek-ai/dsh web`，再刷新浏览器）。确认层已组合：\\n\\n```sh\\ndsh --profile web --dump-config     # 必须出现 `superpowers-dsh` 行\\n```\\n\\n之后技能会出现在 agent 技能目录中（`using-superpowers` 是入口技能），\\n可以用 `skill` 工具加载。\\n\\n安装成功后的界面如下：\\n\\n![安装成功截图](static/install-success.png)\\n\\n### 在其他 profile（headless / tui / 自定义）中使用\\n\\n把 `--profile` 指向你实际运行的 profile：\\n\\n```sh\\ndsh plugin --profile headless add superpowers-dsh\\ndsh --profile headless --dump-config\\n```\\n\\n### 卸载\\n\\n```sh\\ndsh plugin --profile web remove superpowers-dsh\\n# 卸载后同样需要重启 profile\\n```\\n\\n### 注意事项\\n\\n- 国内用户可以先把 npm 镜像设为 npmmirror，让 `dsh plugin add\\n  superpowers-dsh` 更快：`npm config set registry https://registry.npmmirror.com`\\n- 从文件夹或 `file:` 规格安装的插件是链接安装（不是复制）：修改该文件夹后，\\n  下次重启 profile 生效\\n- 使用者**不需要 npm 账号，也不需要 2FA**——安装只是普通的包下载\\n\\n## DSH 版本兼容性\\n\\n**结论：与 npm 上已发布的全部 DSH 版本兼容；已在 DSH `0.2.0-rc.2`（当前 `latest`）上端到端实跑验证。无已知不兼容问题。**\\n\\n核对日期 2026-10-03，npm 发布通道：`latest` = `next` = `0.2.0-rc.2`，`alpha` = `0.2.1-alpha.1`。\\n\\n### 支持矩阵\\n\\n| 检查项 | 结果 |\\n| --- | --- |\\n| 插件依赖的 DSH 接口 | ① `ctx.skills.registerProvider(...)`（技能提供者注册）② `dsh.bundle.patch`（bundle 挂载自己的 `cordis.patch.yml`） |\\n| 已发布版本数 | 承载接口的两个包 `@deepseek-ai/dsh-skill` 与 `@deepseek-ai/dsh-app-boot` 各 **31 个已发布版本** |\\n| 逐版本核对结果 | **31 / 31 全部一致**，从最早的 `0.0.1-rc.1` 到最新的 `0.2.1-alpha.1`，接口签名与语义均未变 |\\n| 端到端实跑 | 把 `lib/index.js` 挂进本机 DSH `0.2.0-rc.2` 的**真实 `SkillRegistry`**：`list()` 返回 15 个技能，逐个 `get()` 都能取到正文与 `resourceBase` |\\n| 插件自身版本 | `0.4.0`（技能内容同步自 obra/superpowers `v7.0.1`） |\\n| 运行时依赖 | 无。只用 Node 内置模块，不引入任何第三方依赖，因此不受 DSH 依赖树变化影响 |\\n| Node.js | 本机验证 `v22.22.2`；DSH 自身未声明 `engines`，本插件也未限制 |\\n\\n### 已知兼容性说明\\n\\n- **无已知不兼容问题。** 上游 DSH 从 `0.1.7-rc.2` 起加入插件兼容性闸门\\n  `evaluatePluginCompatibility`：它**只检查插件自己声明的 `@deepseek-ai/dsh*`\\n  peerDependencies**，范围不满足就把整个 bundle 跳过并报错。本插件不声明任何\\n  peerDependencies，因此这道闸门**不会拦截它**（同时它也意味着 DSH 不会替你校验版本，\\n  所以升级 DSH 后建议跑一次下面的复核命令）。\\n- **同名技能的优先级是有意选择**：插件以 `PACKAGED_SKILL_RANK = 550` 注册，DSH 内置\\n  bundled 根为 `BUNDLED_SKILL_RANK = 600`（数值越小越优先），所以**同名时你自己的技能\\n  会覆盖本插件的同名技能**。DSH 内置技能里没有与本插件重名的技能。\\n- **Windows 提示**：技能正文里的 bash 辅助脚本需要 Git for Windows（Git Bash）；Node\\n  脚本（`server.cjs`、`render-graphs.js`）全平台可用。技能正文已按\\\"经解释器调用\\\"\\n  （`bash scripts/...`）编写，不依赖 Unix 可执行位。\\n- 安装方式不影响兼容性：npm 包、GitHub 源、本地目录链接三种安装方式加载的是同一份\\n  bundle 声明。\\n\\n### 兼容性怎么复核\\n\\n一条命令，对着**你本机安装的** DSH 复跑上面全部检查（包括真实注册表挂载）：\\n\\n```sh\\nnode scripts/check-dsh-compat.mjs\\n# 也可指定别的 node_modules，或用 $DSH_NODE_MODULES\\nnode scripts/check-dsh-compat.mjs D:\\\\path\\\\to\\\\profile\\\\node_modules\\n```\\n\\n本机实测输出：\\n\\n```\\ndsh SDK      : @deepseek-ai/dsh-skill 0.2.0-rc.2\\nmounted      : 15 skills listed and read through the real SkillRegistry\\nrank         : PACKAGED_SKILL_RANK=550 is below BUNDLED_SKILL_RANK=600\\n\\ncheck-dsh-compat: OK — this plugin matches the installed DSH SDK\\n```\\n\\n它依次检查：SDK 是否存在及版本 → 已安装 SDK 的类型声明里是否仍声明本插件实现的接口\\n（`registerProvider`、`SkillProvider.list/get`、`SkillCandidate`、`SkillResourceBase`、\\n`'custom'` 来源桶）→ 把 `lib/index.js` 真的挂进 `SkillRegistry` 并逐个读回 →\\n比较 rank 关系。任一项不成立就 `exit 1`，并指出具体是哪条契约变了。\\n\\n在**没有安装 DSH 的机器**上（例如 CI、干净容器）没有可比对的对象，它会打印\\n`SKIPPED` 并 `exit 0`——这是\\\"没检查\\\"，不是\\\"检查失败\\\"（发布流程因此不会被误拦）。\\n显式传目录或以 `--require` 运行时，找不到 SDK 仍按错误处理。想强制要求先装 SDK：\\n`DSH_COMPAT_REQUIRE=1 node scripts/check-dsh-compat.mjs`。\\n\\n> 结论以**验证时的 DSH 版本**为准。如果你跑的是更新的 DSH，先跑一遍上面的命令；\\n> 上游一旦改动技能接口，它会立刻报出具体变化，而不是等到技能悄悄消失。\\n\\n## 技能列表\\n\\n| 技能 | 用途 |\\n| --- | --- |\\n| `using-superpowers` | 如何查找和使用技能；入口技能 |\\n| `brainstorming` | 动手前先问清「你到底想要什么、为什么」，理解后再定规模和做法 |\\n| `writing-plans` | 根据规格编写全面的实施计划 |\\n| `executing-plans` | 本会话内（Native/内联）执行计划，末尾一次整分支评审 |\\n| `subagent-driven-development` | 每个任务派发全新子代理并评审 |\\n| `dispatching-parallel-agents` | 把独立工作扇出到并行代理 |\\n| `systematic-debugging` | 先找根因的调试纪律 |\\n| `test-driven-development` | RED-GREEN-REFACTOR 实施循环 |\\n| `verification-before-completion` | 声称成功前先拿出证据 |\\n| `requesting-code-review` | 合并前获得严格评审 |\\n| `receiving-code-review` | 核实反馈，而不是盲目照做 |\\n| `finishing-a-development-branch` | 安全地整合已完成的工作 |\\n| `using-git-worktrees` | 功能开发的隔离工作区 |\\n| `writing-skills` | 以 TDD 方式编写并验证新技能 |\\n| `diagnosing-superpowers` | 会话出问题时读磁盘上的 transcript，带 `path:line` 取证复盘 |\\n\\n## 工作原理\\n\\n- **Bundle 层** —— `cordis.patch.yml` 在 dsh-base 层之上插入一行\\n  （`- id: superpowers-dsh, name: superpowers-dsh`）。后面的层（profile 的\\n  `cordis.patch.yml`、`--patch` 叠加）仍可按 id 定位这一行。\\n- **提供者** —— `lib/index.js` 调用 `ctx.skills.registerProvider(...)`，\\n  注册一个提供者：\\n  - `list()` 扫描包内 `skills/` 目录，把每个 `<name>/SKILL.md` 作为候选，\\n    从 YAML frontmatter 解析出 `name`、`description`、`whenToUse`。\\n  - `get()` 按需读取候选技能正文，返回完整技能定义，`resourceBase` 指向\\n    技能所在目录，使相对引用（脚本、提示模板）可以正确解析。\\n- **零运行时依赖** —— 插件只使用 Node 内置模块，消费注入的 `ctx.skills`\\n  服务接口。\\n\\n## 上游同步\\n\\n当前同步的上游版本：**obra/superpowers v7.0.1**（见 `package.json` 的\\n`dsh.superpowersUpstream`）。\\n\\n`skills/` 是**生成产物**，不要手改。同步逻辑写在两个地方，改它们再重跑即可：\\n\\n- `scripts/sync-from-upstream.mjs` —— 拉上游技能树 + 重放所有 DSH 适配\\n  （每条适配都是一个带断言的字符串改写，上游一旦改了原文就**直接报错**，\\n  不会静默丢适配）。\\n- `port/overrides/` —— 只属于 DSH 的文件（`using-superpowers/references/dsh-tools.md`），\\n  覆盖到同步结果上。\\n\\n```sh\\n# 1. 取上游对应版本的源码（git 协议在部分网络不可用，走 codeload）\\nmkdir -p .upstream/superpowers\\ncurl -L https://codeload.github.com/obra/superpowers/tar.gz/refs/tags/v7.0.1 \\\\\\n  | tar -xz -C .upstream/superpowers --strip-components=1\\n\\n# 2. 重放同步\\nnode scripts/sync-from-upstream.mjs .upstream/superpowers\\n\\n# 3. 校验（provider 能列出全部技能、frontmatter 合法、没有悬空引用）\\nnode scripts/verify-skills.mjs\\n\\n# 4. 兼容性（对着本机安装的 DSH 真实 SDK 复跑契约与挂载检查）\\nnode scripts/check-dsh-compat.mjs\\n```\\n\\n本次同步带来的上游变更（**v7.0.1**，2026-10-21；技能数仍为 15 个，文件 68 → 78）：\\n\\n- **`brainstorming` 按反馈重新调音**（#2560 / #2571）：v7.0.0 那套「开场先问\\n  要不要跳过提问，再问一个泛泛的『你什么时候最想要它』」被用户吐槽像模板，\\n  v7.0.1 改掉了两件事 —— ①**先摸上下文再开口**：有项目、有 spec/plan/文件时，\\n  第一句话之前先读它们，已经写在里面的不再问；②**问题接着你的答案走**：你说清\\n  需求后，它先把你说的话连同项目里查到的东西**复述**一遍，只问那一个还没定的\\n  点，后面的问题建立在你的回答和它的发现之上，并说明「这个答案会改变什么」。\\n  「要不要跳过提问」现在**只在你没点名要 brainstorming 时才提供**；显式点名或\\n  `/brainstorming` 调用时不再多问一遍。\\n- **设计文档不再被跳过**：明确要求「先说两三种做法＋推荐一种让你挑，然后写设计\\n  文档，你批准之前不动手」。上游实测：改之前 24/24 次跳过文档直接开工，改之后\\n  3/24。\\n- **三个长技能为「压缩后仍可存活」而拆分**（#2563 / #2564 / #2565，起因 #2481）：\\n  Claude Code 在压缩后会把每个技能在 **20,000 字符处截断**，超出的部分整个会话\\n  都不再存在 —— 有会话里 `subagent-driven-development` 因此丢了「最多 5 轮修复」\\n  的限制，在一个任务上跑了 18 轮。\\n  - `subagent-driven-development`：把修复循环、最终评审、报告处理、续跑、\\n    preflight、分批、无法验证等内容移到 **`references/`**（7 个新文件），用到哪\\n    一步再读哪个文件。**SKILL.md 32,510 → 19,470 字节。**\\n  - `writing-skills`：把支撑文档、SKILL.md 模板与发现机制、bulletproofing、\\n    flowchart 约定移到 `references/`（新增 `discovery.md`、`bulletproofing.md`、\\n    `flowcharts.md`，其余是原文件重命名进 `references/`）。\\n    **26,615 → 16,754 字节。**\\n  - `executing-plans`：删掉与上文规则重复的 Example Workflow。\\n    **20,454 → 18,164 字节。**\\n  - 上游同时加了 `tests/skill-size/test-skill-size.sh`，任何 `SKILL.md` 达到\\n    20,000 字节即失败。本 port 现在 15 个 SKILL.md **全部低于 20,000 字节**\\n    （最大的是 `subagent-driven-development` 19,470）。\\n- **与 DSH 无关的部分**：issue / PR 模板改为要求「谁提的、你的人类伙伴原本要什么、\\n  200 字以内由人写的摘要」（#2569），`diagnosing-superpowers` 跟着加这两节并改用\\n  Bug Report 模板，`docs/superpowers/plans/` 下 18 份历史计划文档被删除。这些都在\\n  `skills/` 之外，不进本 port 的产物。\\n\\n> **给 DSH 的适配**：v7.0.1 把 `writing-skills/references/CLAUDE_MD_TESTING.md`\\n> 重命名进了 `references/`，这个文件也随之进入发布产物。它整篇是拿来测「技能文档\\n> 怎么写才容易被发现」的场景稿，里面 14 处让 agent 去 `~/.claude/skills/` 找技能 ——\\n> 在 DSH 上那个目录不存在，场景就测不出东西。同步脚本因此新增一条 `sweep` 改写，\\n> 把它统一换成 `$DSH_HOME/skills/`。\\n\\n上一版（**v7.0.0**，2026-10-10）的上游变更，保留备查：\\n\\n- **`brainstorming` 完全重写**（#2463 / #2482 / #2483）：先在第一条消息里说明\\n  「可以跳过提问直接开工」，然后问一个开放式问题让你描述真实场景；边聊边把\\n  理解**分块复述**回来（约 200–300 字）让你纠正；理解清楚后再用大白话\\n  **定规模**（直接做 / 聊两句就动手 / 写设计文档），你可以否决；会主动确认\\n  哪些「怎么做」的选择你想自己拿主意（平台、语言、库、媒介），你交出去它就\\n  选合理默认值并说明。\\n- **设计文档的评审换成 builder check**：**新增**\\n  `skills/brainstorming/builder-check-prompt.md`，派一个全新子代理以「要动手\\n  建它的人」的视角读设计、列出还需要问什么；**删除**\\n  `skills/brainstorming/spec-document-reviewer-prompt.md`（旧 spec reviewer 被\\n  取代）。问出来的问题只回一轮。\\n- **`subagent-driven-development` 的 `scripts/sdd-workspace`**：不再每次覆盖\\n  仓库自己的 `.superpowers/sdd/.gitignore`（只在文件不存在时写默认值）；\\n  Windows/Git Bash 下计划标记保持**仓库相对路径**（原先会记成机器绝对路径）。\\n- **`executing-plans` 的 `scripts/task-done`**：测试命令**静默通过**（无输出）\\n  时现在也写 ledger，记为 `→ (no output)`；以前 `grep|tail` 返回非零会 exit 1，\\n  让已完成的任务看起来没完成。\\n- **`requesting-code-review`**：示例里的 base-SHA 命令改用 `cut -d' ' -f1`，\\n  因为 Claude Code 会把技能正文里的 `$1` 替换成调用参数。\\n- **`systematic-debugging`**：多层诊断示例不再把要检查的密钥**值**打进日志。\\n- **视觉伴侣 `scripts/server.cjs`**：修掉 `String.replace` 把 `$'`、`$&` 当\\n  替换模式的问题，现在按字面量插入内容。\\n- 其余为 Antigravity / Hermes / Claude Code hooks 相关修复，DSH 没有 hook\\n  系统，不适用本 port。\\n\\n## 移植说明\\n\\n- 去掉了命名空间前缀：`superpowers:brainstorming` → `brainstorming`\\n  （DSH 技能用裸名称寻址）。\\n- `using-superpowers` 现在介绍 DSH 的 `skill` 工具，并指向\\n  `skills/using-superpowers/references/dsh-tools.md`——完整的\\n  Claude-Code → DSH 工具映射（`pwsh`、`subagent`、`workflow`、`goal` ...）。\\n  上游那份“按 harness 选参考文件”的清单（Claude Code / Codex / Gemini /\\n  Copilot / Pi / Antigravity / Hermes / Muse）只保留 DSH 一份，其余上游\\n  `references/*-tools.md` 不随包分发。\\n- 子代理引用映射到 DSH 的 `subagent` / `subagent_fork`；上游的命名 agent\\n  （`superpowers:code-reviewer`）在 DSH 不存在，按技能自带的 prompt 模板派发。\\n- `using-superpowers` 里的 `<SUBAGENT-STOP>` 不再保留：DSH 的子代理同样需要\\n  遵守技能（实现者子代理必须走 TDD）。\\n- 跨 harness 的路径改成 DSH 路径：`~/.claude/skills/` → `$DSH_HOME/skills/`，\\n  `~/.superpowers/...` → `$DSH_HOME/...`（默认 `~/.dsh`）。\\n- `diagnosing-superpowers` 补了 DSH 的会话存储事实\\n  （`$DSH_HOME/sessions/<cwd-slug>/session-<uuid>/session.*.jsonl.zstd`，\\n  多 zstd frame 拼接，需按 frame 解压）。\\n- `brainstorming` 的视觉伴侣补充了 Windows 说明：Node 服务\\n  （`scripts/server.cjs`）全平台可跑；`.sh` 辅助脚本仅限 bash。\\n- `brainstorming` 在 v7.0.0 重写后，上游正文已直接写 `visual-companion.md`\\n  这个裸相对名，所以本 port 原先那条「把 `skills/brainstorming/...` 改写成\\n  裸相对名」的适配已删除（同步脚本里留有 NOTE，若上游将来回退再加回）。\\n- `writing-skills/references/CLAUDE_MD_TESTING.md` 随 v7.0.1 的重命名进入发布\\n  产物（原先在 `examples/` 下，上游一直没把它当正文看）。它整篇是「技能文档\\n  怎么写才容易被 agent 发现」的测试场景稿，所以保留；但里面 14 处让 agent 去\\n  `~/.claude/skills/` 找技能，在 DSH 上那个目录不存在、场景就测不出东西，\\n  因此同步脚本用一条 `sweep` 改写统一换成 `$DSH_HOME/skills/`。同一文件里\\n  `~/.claude/CLAUDE.md` 这类**历史出处**描述不改（那是事实记录，不是指令）。\\n\\n## 添加自己的技能\\n\\n`list()` 会自动发现包里任何 `skills/<kebab-name>/SKILL.md`——只要它以 YAML\\nfrontmatter 开头（`name` + `description`，可选 `whenToUse`），无需改代码。\\n\\n注意：`skills/` 是上游同步的生成目录，**重跑 `scripts/sync-from-upstream.mjs`\\n会整体重建它**，直接放进去的自建技能会被删掉。两个安全位置：\\n\\n- 放到 `$DSH_HOME/skills/`（用户级）或项目的 `.dsh/skills/` —— 与插件无关，\\n  最省事；\\n- 或者放进 `port/overrides/<kebab-name>/SKILL.md` —— 同步时会被复制进\\n  `skills/`，因此不会被清掉。\\n\\n## 许可证\\n\\nMIT。技能内容改编自\\n[obra/superpowers](https://github.com/obra/superpowers)（MIT），© Jesse Vincent\\n及贡献者。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"superpowers-dsh\\\",\\n  \\\"description\\\": \\\"Superpowers for the DeepSeek Harness: TDD, debugging, planning, and collaboration skills adapted from obra/superpowers\\\",\\n  \\\"version\\\": \\\"0.4.0\\\",\\n  \\\"private\\\": false,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"skills\\\",\\n    \\\"scripts\\\",\\n    \\\"port\\\",\\n    \\\"static\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.en.md\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"verify\\\": \\\"node scripts/verify-skills.mjs\\\",\\n    \\\"compat\\\": \\\"node scripts/check-dsh-compat.mjs\\\",\\n    \\\"sync\\\": \\\"node scripts/sync-from-upstream.mjs\\\"\\n  },\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/LayneChai/superpowers-dsh.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/LayneChai/superpowers-dsh#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/LayneChai/superpowers-dsh/issues\\\"\\n  },\\n  \\\"publishConfig\\\": {\\n    \\\"registry\\\": \\\"https://registry.npmjs.org/\\\",\\n    \\\"access\\\": \\\"public\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"plugin\\\",\\n    \\\"skills\\\",\\n    \\\"superpowers\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"superpowersUpstream\\\": \\\"v7.0.1\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"// superpowers-dsh: Superpowers skills for the DeepSeek Harness.\\n//\\n// A Cordis plugin that registers one skill provider into the HOST layer of the\\n// `ctx.skills` registry, so every agent preset's scope chain merges these\\n// skills. Skill bodies live in `../skills/<name>/SKILL.md` inside this\\n// package; the provider locates them from `import.meta.url` (an assembly\\n// fact of this package, never user config) and loads bodies on demand.\\n//\\n// The provider protocol mirrors @deepseek-ai/dsh-skill-filesystem:\\n//   - list()  discovers directory-bundle candidates (name/description from\\n//     YAML frontmatter, body left unread until requested)\\n//   - get()   parses the winning candidate's SKILL.md and returns the full\\n//     definition with a directory resource base for relative references\\n//\\n// @module superpowers-dsh\\nimport { readdir, readFile } from 'node:fs/promises'\\nimport { fileURLToPath } from 'node:url'\\nimport { dirname, join } from 'node:path'\\n\\nconst name = 'superpowers-dsh'\\nconst inject = ['skills']\\n\\n/** Registry precedence for packaged skill providers: ranks below the local bundled root. */\\nconst PACKAGED_SKILL_RANK = 550\\n\\n/** The source bucket these skills advertise under (prompt-visible metadata). */\\nconst SOURCE = 'custom'\\n\\n/**\\n * Parse the YAML frontmatter block of a SKILL.md into metadata plus body.\\n * Handles only the scalar fields DSH skill discovery consumes (name,\\n * description, whenToUse); richer metadata passes through verbatim.\\n * @param text - the raw skill file contents.\\n * @returns parsed metadata object and the markdown body after the block, or\\n *   null when the file has no frontmatter block at all.\\n */\\nfunction parseFrontmatter(text) {\\n  if (!text.startsWith('---')) return null\\n  const end = text.indexOf('\\\\n---', 3)\\n  if (end === -1) return null\\n  const block = text.slice(3, end)\\n  const body = text.slice(end + 4).replace(/^\\\\n+/, '')\\n  const metadata = {}\\n  for (const line of block.split('\\\\n')) {\\n    const match = /^([A-Za-z][\\\\w-]*):\\\\s*(.*)$/.exec(line.trim())\\n    if (!match) continue\\n    let value = match[2].trim()\\n    if ((value.startsWith('\\\"') && value.endsWith('\\\"')) || (value.startsWith(\\\"'\\\") && value.endsWith(\\\"'\\\"))) {\\n      value = value.slice(1, -1)\\n    }\\n    metadata[match[1]] = value\\n  }\\n  return { metadata, body }\\n}\\n\\n/**\\n * Read and parse one skill directory's SKILL.md.\\n * @param skillFile - absolute path to the SKILL.md file.\\n * @param signal - optional cancellation; aborts the read.\\n * @returns the parsed skill record, or undefined when the file vanished.\\n */\\nasync function parseSkillFile(skillFile, signal) {\\n  let text\\n  try {\\n    text = await readFile(skillFile, 'utf8')\\n  } catch {\\n    return undefined\\n  }\\n  if (signal?.aborted) return undefined\\n  const parsed = parseFrontmatter(text)\\n  if (parsed === null) return undefined\\n  return {\\n    name: parsed.metadata.name ?? '',\\n    description: parsed.metadata.description ?? '',\\n    whenToUse: parsed.metadata.whenToUse,\\n    metadata: parsed.metadata,\\n    content: parsed.body\\n  }\\n}\\n\\n/**\\n * Discover packaged skill candidates by scanning the package's `skills/`\\n * directory: one subdirectory per skill, each carrying a SKILL.md.\\n * @param skillsRoot - absolute path to this package's skills directory.\\n * @param signal - optional cancellation.\\n * @returns the candidate list.\\n */\\nasync function discoverCandidates(skillsRoot, signal) {\\n  let entries\\n  try {\\n    entries = await readdir(skillsRoot, { withFileTypes: true })\\n  } catch {\\n    return []\\n  }\\n  const candidates = []\\n  for (const entry of entries) {\\n    if (signal?.aborted) break\\n    if (!entry.isDirectory()) continue\\n    const skillDir = join(skillsRoot, entry.name)\\n    const skillFile = join(skillDir, 'SKILL.md')\\n    const parsed = await parseSkillFile(skillFile, signal)\\n    if (parsed === undefined) continue\\n    candidates.push({\\n      name: parsed.name,\\n      description: parsed.description,\\n      ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\\n      invocation: { modelInvocable: true, userInvocable: true },\\n      source: SOURCE,\\n      provider: name,\\n      rank: PACKAGED_SKILL_RANK,\\n      locator: skillDir,\\n      path: skillFile,\\n      ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {})\\n    })\\n  }\\n  return candidates\\n}\\n\\n/** Register the packaged superpowers provider on `ctx.skills`. */\\nfunction apply(ctx) {\\n  const skillsRoot = join(dirname(fileURLToPath(import.meta.url)), '..', 'skills')\\n  ctx.skills.registerProvider((control) => ({\\n    name,\\n    async list(options) {\\n      return discoverCandidates(skillsRoot, options.signal)\\n    },\\n    async get(candidate, options) {\\n      const parsed = await parseSkillFile(candidate.path, options.signal)\\n      if (parsed === undefined) return undefined\\n      return {\\n        name: parsed.name,\\n        description: parsed.description,\\n        ...(parsed.whenToUse !== undefined ? { whenToUse: parsed.whenToUse } : {}),\\n        invocation: { modelInvocable: true, userInvocable: true },\\n        source: SOURCE,\\n        provider: name,\\n        resourceBase: { kind: 'directory', path: candidate.locator },\\n        path: candidate.path,\\n        ...(Object.keys(parsed.metadata).length > 0 ? { metadata: parsed.metadata } : {}),\\n        content: parsed.content\\n      }\\n    }\\n  }))\\n}\\n\\nexport { apply, name, inject }\\nexport default { apply, name, inject }\\n\"\n    },\n    {\n      \"path\": \"skills/test-driven-development/SKILL.md\",\n      \"content\": \"---\\nname: test-driven-development\\ndescription: Use when implementing any feature or bugfix, before writing implementation code\\n---\\n\\n# Test-Driven Development (TDD)\\n\\n## Overview\\n\\nWrite the test first. Watch it fail. Write minimal code to pass.\\n\\n**Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.\\n\\n**Violating the letter of the rules is violating the spirit of the rules.**\\n\\n## When to Use\\n\\n**Always:**\\n- New features\\n- Bug fixes\\n- Refactoring\\n- Behavior changes\\n\\n**Exceptions (ask your human partner):**\\n- Throwaway prototypes\\n- Generated code\\n- Configuration files\\n\\nThinking \\\"skip TDD just this once\\\"? Stop. That's rationalization.\\n\\n## The Iron Law\\n\\n```\\nNO PRODUCTION CODE WITHOUT A FAILING TEST FIRST\\n```\\n\\nWrite code before the test? Delete it. Start over.\\n\\n**No exceptions:**\\n- Don't keep it as \\\"reference\\\"\\n- Don't \\\"adapt\\\" it while writing tests\\n- Don't look at it\\n- Delete means delete\\n\\nImplement fresh from tests. Period.\\n\\n## Red-Green-Refactor\\n\\n```dot\\ndigraph tdd_cycle {\\n    rankdir=LR;\\n    red [label=\\\"RED\\\\nWrite failing test\\\", shape=box, style=filled, fillcolor=\\\"#ffcccc\\\"];\\n    verify_red [label=\\\"Verify fails\\\\ncorrectly\\\", shape=diamond];\\n    green [label=\\\"GREEN\\\\nMinimal code\\\", shape=box, style=filled, fillcolor=\\\"#ccffcc\\\"];\\n    verify_green [label=\\\"Verify passes\\\\nAll green\\\", shape=diamond];\\n    refactor [label=\\\"REFACTOR\\\\nClean up\\\", shape=box, style=filled, fillcolor=\\\"#ccccff\\\"];\\n    next [label=\\\"Next\\\", shape=ellipse];\\n\\n    red -> verify_red;\\n    verify_red -> green [label=\\\"yes\\\"];\\n    verify_red -> red [label=\\\"wrong\\\\nfailure\\\"];\\n    green -> verify_green;\\n    verify_green -> refactor [label=\\\"yes\\\"];\\n    verify_green -> green [label=\\\"no\\\"];\\n    refactor -> verify_green [label=\\\"stay\\\\ngreen\\\"];\\n    verify_green -> next;\\n    next -> red;\\n}\\n```\\n\\n### RED - Write Failing Test\\n\\nWrite one minimal test showing what should happen.\\n\\n<Good>\\n```typescript\\ntest('retries failed operations 3 times', async () => {\\n  let attempts = 0;\\n  const operation = () => {\\n    attempts++;\\n    if (attempts < 3) throw new Error('fail');\\n    return 'success';\\n  };\\n\\n  const result = await retryOperation(operation);\\n\\n  expect(result).toBe('success');\\n  expect(attempts).toBe(3);\\n});\\n```\\nClear name, tests real behavior, one thing\\n</Good>\\n\\n<Bad>\\n```typescript\\ntest('retry works', async () => {\\n  const mock = jest.fn()\\n    .mockRejectedValueOnce(new Error())\\n    .mockRejectedValueOnce(new Error())\\n    .mockResolvedValueOnce('success');\\n  await retryOperation(mock);\\n  expect(mock).toHaveBeenCalledTimes(3);\\n});\\n```\\nVague name, tests mock not code\\n</Bad>\\n\\n**Requirements:**\\n- One behavior\\n- Clear name\\n- Real code (no mocks unless unavoidable)\\n\\n### Verify RED - Watch It Fail\\n\\n**MANDATORY. Never skip.**\\n\\n```bash\\nnpm test path/to/test.test.ts\\n```\\n\\nConfirm:\\n- Test fails (not errors)\\n- Failure message is expected\\n- Fails because feature missing (not typos)\\n\\n**Test passes?** You're testing existing behavior. Fix test.\\n\\n**Test errors?** Fix error, re-run until it fails correctly.\\n\\n### GREEN - Minimal Code\\n\\nWrite simplest code to pass the test.\\n\\n<Good>\\n```typescript\\nasync function retryOperation<T>(fn: () => Promise<T>): Promise<T> {\\n  for (let i = 0; i < 3; i++) {\\n    try {\\n      return await fn();\\n    } catch (e) {\\n      if (i === 2) throw e;\\n    }\\n  }\\n  throw new Error('unreachable');\\n}\\n```\\nJust enough to pass\\n</Good>\\n\\n<Bad>\\n```typescript\\nasync function retryOperation<T>(\\n  fn: () => Promise<T>,\\n  options?: {\\n    maxRetries?: number;\\n    backoff?: 'linear' | 'exponential';\\n    onRetry?: (attempt: number) => void;\\n  }\\n): Promise<T> {\\n  // YAGNI\\n}\\n```\\nOver-engineered\\n</Bad>\\n\\nDon't add features, refactor other code, or \\\"improve\\\" beyond the test.\\n\\n### Verify GREEN - Watch It Pass\\n\\n**MANDATORY.**\\n\\n```bash\\nnpm test path/to/test.test.ts\\n```\\n\\nConfirm:\\n- Test passes\\n- Other tests still pass\\n- Output pristine (no errors, warnings)\\n\\n**Test fails?** Fix code, not test.\\n\\n**Other tests fail?** Fix now.\\n\\n**\\\"Other tests\\\" means the project's suite, not just your file.** A\\ngreen run of the test you wrote is not a green suite. Before you call\\nthe change done, run the project's test command (bare `pytest`,\\n`npm test`, `cargo test` — whatever the repo uses) even when your task\\nnamed only one test file. A scope statement in your task bounds the\\ndeliverable, not your verification. Any failure that run shows —\\nincluding one you didn't cause — goes in your report by name; a red\\ntest you watched scroll past and didn't mention is a report falsified\\nby omission.\\n\\n### REFACTOR - Clean Up\\n\\nAfter green only:\\n- Remove duplication\\n- Improve names\\n- Extract helpers\\n\\nKeep tests green. Don't add behavior.\\n\\n### Repeat\\n\\nNext failing test for next feature.\\n\\n## Good Tests\\n\\n| Quality | Good | Bad |\\n|---------|------|-----|\\n| **Minimal** | One thing. \\\"and\\\" in name? Split it. | `test('validates email and domain and whitespace')` |\\n| **Clear** | Name describes behavior | `test('test1')` |\\n| **Shows intent** | Demonstrates desired API | Obscures what code should do |\\n\\nWhen writing or changing any test, read [writing-good-tests.md](writing-good-tests.md) for the rules that keep tests honest:\\n- Name the production change that would make the test fail — before writing it\\n- Assert on real behavior, never on mock behavior\\n- Keep test-only code in test utilities, out of production classes\\n- Understand a dependency's side effects before mocking it\\n\\n## Common Rationalizations\\n\\n| Excuse | Reality |\\n|--------|---------|\\n| \\\"Too simple to test\\\" | Simple code breaks. Test takes 30 seconds. |\\n| \\\"I'll test after\\\" | Tests written after pass immediately — which proves nothing. They may test the wrong thing, test the implementation instead of the behavior, or miss the edge case you forgot. You never watched it fail, so you never proved it can catch the bug. Test-first forces that failure. |\\n| \\\"Tests after achieve same goals (spirit not ritual)\\\" | Tests-after answer \\\"what does this do?\\\"; tests-first answer \\\"what should this do?\\\" Tests written after are biased by the code you already wrote — you verify the cases you remembered, not the ones you'd have discovered. Coverage without proof the tests work. |\\n| \\\"Already manually tested\\\" | Manual testing is ad-hoc: no record of what you covered, no way to re-run it when the code changes, easy to forget cases under pressure. \\\"Worked when I tried it\\\" ≠ comprehensive. Automated tests run the same way every time. |\\n| \\\"Deleting X hours is wasteful\\\" | Sunk cost fallacy — that time is already spent either way. The real choice: rewrite with TDD (high confidence) vs. keep it and bolt tests on after (low confidence, likely bugs). Keeping code you can't trust is the waste. |\\n| \\\"Keep as reference, write tests first\\\" | You'll adapt it. That's testing after. Delete means delete. |\\n| \\\"Need to explore first\\\" | Fine. Throw away exploration, start with TDD. |\\n| \\\"Test hard = design unclear\\\" | Listen to test. Hard to test = hard to use. |\\n| \\\"TDD will slow me down\\\" | TDD IS the pragmatic path: catches bugs before commit, prevents regressions, lets you refactor without fear. \\\"Pragmatic\\\" shortcuts mean debugging in production — slower, not faster. |\\n| \\\"Manual test faster\\\" | Manual doesn't prove edge cases. You'll re-test every change. |\\n| \\\"Existing code has no tests\\\" | You're improving it. Add tests for existing code. |\\n\\n## Red Flags - STOP and Start Over\\n\\n- Code before test\\n- Test after implementation\\n- Test passes immediately\\n- Can't explain why test failed\\n- Tests added \\\"later\\\"\\n- Rationalizing \\\"just this once\\\"\\n- \\\"I already manually tested it\\\"\\n- \\\"Tests after achieve the same purpose\\\"\\n- \\\"It's about spirit not ritual\\\"\\n- \\\"Keep as reference\\\" or \\\"adapt existing code\\\"\\n- \\\"Already spent X hours, deleting is wasteful\\\"\\n- \\\"TDD is dogmatic, I'm being pragmatic\\\"\\n- \\\"This is different because...\\\"\\n\\n**All of these mean: Delete code. Start over with TDD.**\\n\\n## Example: Bug Fix\\n\\n**Bug:** Empty email accepted\\n\\n**RED**\\n```typescript\\ntest('rejects empty email', async () => {\\n  const result = await submitForm({ email: '' });\\n  expect(result.error).toBe('Email required');\\n});\\n```\\n\\n**Verify RED**\\n```bash\\n$ npm test\\nFAIL: expected 'Email required', got undefined\\n```\\n\\n**GREEN**\\n```typescript\\nfunction submitForm(data: FormData) {\\n  if (!data.email?.trim()) {\\n    return { error: 'Email required' };\\n  }\\n  // ...\\n}\\n```\\n\\n**Verify GREEN**\\n```bash\\n$ npm test\\nPASS\\n```\\n\\n**REFACTOR**\\nExtract validation for multiple fields if needed.\\n\\n## Verification Checklist\\n\\nBefore marking work complete:\\n\\n- [ ] Every new function/method has a test\\n- [ ] Watched each test fail before implementing\\n- [ ] Each test failed for expected reason (feature missing, not typo)\\n- [ ] Wrote minimal code to pass each test\\n- [ ] All tests pass\\n- [ ] Output pristine (no errors, warnings)\\n- [ ] Tests use real code (mocks only if unavoidable)\\n- [ ] Edge cases and errors covered\\n\\nCan't check all boxes? You skipped TDD. Start over.\\n\\n## When Stuck\\n\\n| Problem | Solution |\\n|---------|----------|\\n| Don't know how to test | Write wished-for API. Write assertion first. Ask your human partner. |\\n| Test too complicated | Design too complicated. Simplify interface. |\\n| Must mock everything | Code too coupled. Use dependency injection. |\\n| Test setup huge | Extract helpers. Still complex? Simplify design. |\\n\\n## Debugging Integration\\n\\nBug found? Write failing test reproducing it. Follow TDD cycle. Test proves fix and prevents regression.\\n\\nNever fix bugs without a test.\\n\\n## Final Rule\\n\\n```\\nProduction code → test exists and failed first\\nOtherwise → not TDD\\n```\\n\\nNo exceptions without your human partner's permission.\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"cc0c87f3a7a8627b175465f36a99e971e7eed507\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"574f63f460b9163f45fb0fdf7ce1da5cef23f7b5bd3ad79ee07a5400653af690\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 483,\n        \"code\": 355,\n        \"comments\": 73,\n        \"blank\": 57\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 67,\n        \"lines\": 9501,\n        \"words\": 57264\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 723,\n        \"code\": 536,\n        \"comments\": 130,\n        \"blank\": 59\n      },\n      {\n        \"extension\": \".cjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 723,\n        \"code\": 575,\n        \"comments\": 76,\n        \"blank\": 91\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 158,\n        \"code\": 74,\n        \"comments\": 71,\n        \"blank\": 14\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [\n        {\n          \"path\": \"skills/brainstorming/SKILL.md\",\n          \"name\": \"brainstorming\",\n          \"description\": \"\\\"You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation).\\\"\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/diagnosing-superpowers/SKILL.md\",\n          \"name\": \"diagnosing-superpowers\",\n          \"description\": \"Use when a superpowers session went wrong and your human partner wants to know why — repeated work, ignored plans, stumbles, poor results, a skill that didn't fire, \\\"it took too long\\\", \\\"why is it so expensive\\\", \\\"what is it doing\\\" — or wants to build a bug report for the superpowers maintainers, for the current session or a past one identified by id or path, on any harness.\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/dispatching-parallel-agents/SKILL.md\",\n          \"name\": \"dispatching-parallel-agents\",\n          \"description\": \"Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/executing-plans/SKILL.md\",\n          \"name\": \"executing-plans\",\n          \"description\": \"Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is available\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/finishing-a-development-branch/SKILL.md\",\n          \"name\": \"finishing-a-development-branch\",\n          \"description\": \"Use when implementation is complete, all tests pass, and you need to decide how to integrate the work\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/receiving-code-review/SKILL.md\",\n          \"name\": \"receiving-code-review\",\n          \"description\": \"Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/requesting-code-review/SKILL.md\",\n          \"name\": \"requesting-code-review\",\n          \"description\": \"Use when completing tasks, implementing major features, or before merging to verify work meets requirements\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/subagent-driven-development/SKILL.md\",\n          \"name\": \"subagent-driven-development\",\n          \"description\": \"Use when executing implementation plans with independent tasks in the current session\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/systematic-debugging/SKILL.md\",\n          \"name\": \"systematic-debugging\",\n          \"description\": \"Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/test-driven-development/SKILL.md\",\n          \"name\": \"test-driven-development\",\n          \"description\": \"Use when implementing any feature or bugfix, before writing implementation code\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/using-git-worktrees/SKILL.md\",\n          \"name\": \"using-git-worktrees\",\n          \"description\": \"Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via native tools or git worktree fallback\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/using-superpowers/SKILL.md\",\n          \"name\": \"using-superpowers\",\n          \"description\": \"Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/verification-before-completion/SKILL.md\",\n          \"name\": \"verification-before-completion\",\n          \"description\": \"Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/writing-plans/SKILL.md\",\n          \"name\": \"writing-plans\",\n          \"description\": \"Use when you have a spec or requirements for a multi-step task, before touching code\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        },\n        {\n          \"path\": \"skills/writing-skills/SKILL.md\",\n          \"name\": \"writing-skills\",\n          \"description\": \"Use when creating new skills, editing existing skills, or verifying skills work before deployment\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        }\n      ],\n      \"non_example_candidates\": 15,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 461,\n          \"api\": \"socket.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 499,\n          \"api\": \"socket.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 500,\n          \"api\": \"socket.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 588,\n          \"api\": \"server.on\",\n          \"name\": \"upgrade\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 614,\n          \"api\": \"watcher.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 691,\n          \"api\": \"server.on\",\n          \"name\": \"error\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"skills/brainstorming/scripts/helper.js\",\n          \"line\": 112,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 594,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/brainstorming/scripts/server.cjs\",\n          \"line\": 640,\n          \"api\": \"setInterval\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/systematic-debugging/condition-based-waiting-example.ts\",\n          \"line\": 38,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/systematic-debugging/condition-based-waiting-example.ts\",\n          \"line\": 83,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"skills/systematic-debugging/condition-based-waiting-example.ts\",\n          \"line\": 130,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"close\",\n          \"data\",\n          \"error\",\n          \"upgrade\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 4,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 6,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "8b6e8b455316777a2770b92f812e59fd4f564949128fcd36806bba2c97d89dc2"
+        }
+    },
+    "unavailable_artifacts": []
+}

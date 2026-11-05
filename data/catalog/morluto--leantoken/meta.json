@@ -1,0 +1,27 @@
+{
+    "repository": "morluto/leantoken",
+    "repository_id": 1301161244,
+    "captured_at": "2026-11-05T03:25:48.280Z",
+    "window_start": "2026-10-06T03:25:48.280Z",
+    "stars": 144,
+    "pushed_at": "2026-11-02T09:07:21Z",
+    "issues": {
+        "open": 10,
+        "closed": 299,
+        "created_30d": 23,
+        "closed_30d": 23,
+        "updated_30d": 28
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d5303ca389f08f4407a543290ddcbded84852400",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}
