@@ -1,0 +1,441 @@
+{
+    "schema_version": 4,
+    "id": "8013b456f377dcd776a55c422662d869",
+    "identity": "github:1333375150:root",
+    "slug": "bugmaker2--dsh-plugin-template",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333375150:root",
+            "repository_id": 1333375150,
+            "component_id": "root",
+            "repository": "bugmaker2/dsh-plugin-template",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Plugin Template",
+            "entry_type": "plugin",
+            "technical_category": "runtime-deployment",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "859083f5b8120f67efc5cab3ce2dc30287c5191838316c2a5396e41f496a9b9a",
+                "code": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                "maintenance": "99e0bab0317f04f57f61ddc84ada552b93c3f35c41724b0e10cc76688004e40f"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-06-github-1333375150-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T05:12:11.932Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-06-github-1333375150-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/bugmaker2/dsh-plugin-template",
+                            "commit": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                            "path": "README.md",
+                            "content_sha256": "b90f52b0b719794d3970c2d1c3ae7dfd28d51d28fb6d0f35d3ea2e02abbaba45"
+                        }
+                    ],
+                    "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                    "captured_at": "2026-11-05T05:12:11.932Z",
+                    "summary": "展示带共享协议的宿主和客户端插件骨架",
+                    "artifact": "data/runs/2026-11-05-06/bugmaker2--dsh-plugin-template/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-06-github-1333375150-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/bugmaker2/dsh-plugin-template",
+                            "commit": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                            "path": "README.md",
+                            "content_sha256": "b90f52b0b719794d3970c2d1c3ae7dfd28d51d28fb6d0f35d3ea2e02abbaba45"
+                        },
+                        {
+                            "repository_url": "https://github.com/bugmaker2/dsh-plugin-template",
+                            "commit": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                            "path": "src/contract.ts",
+                            "content_sha256": "c141bd8698d2169458ecba8042e11257141f680718b5ad7061980fe7f4f57681"
+                        },
+                        {
+                            "repository_url": "https://github.com/bugmaker2/dsh-plugin-template",
+                            "commit": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                            "path": "src/runtime.ts",
+                            "content_sha256": "ab5927392778661780e2142a152f0b89e3a4f35a664518ba7b803d15afc10751"
+                        },
+                        {
+                            "repository_url": "https://github.com/bugmaker2/dsh-plugin-template",
+                            "commit": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                            "path": "src/client/index.tsx",
+                            "content_sha256": "59b31ae5b352663d2f605d041c7ae44c44fe6972d6f732357fbe8cb70936b82a"
+                        }
+                    ],
+                    "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                    "captured_at": "2026-11-05T05:12:11.932Z",
+                    "summary": "核查 README.md、src/contract.ts、src/runtime.ts、src/client/index.tsx；共享 wire 描述贯通宿主 Remote 和客户端标签。",
+                    "artifact": "data/runs/2026-11-05-06/bugmaker2--dsh-plugin-template/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查固定提交的以最小问候流程确认插件开发链路。未执行目标代码或实际宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者开始编写双端插件。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "共享 wire 描述贯通宿主 Remote 和客户端标签。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查固定提交的以最小问候流程确认插件开发链路。未执行目标代码或实际宿主验证。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "仓库模板含构建与元信息。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 共享 wire 描述贯通宿主 Remote 和客户端标签。 | 用隔离 profile 确认 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 隔离 profile 检查合法、非法和卸载。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 以最小问候流程确认插件开发链路 | 可降低首个双端插件的接线时间。 | 隔离 profile 检查合法、非法和卸载。 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "共享契约和显式 mount/dispose。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 提供可追踪的最小端到端骨架。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 无副作用示例尚未覆盖授权和长任务取消。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 可降低首个双端插件的接线时间。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333375150:root",
+                            "area": "code",
+                            "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:12:11.932Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T05:12:11.932Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                "reviewed_at": "2026-11-05T05:12:11.932Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333375150:root",
+                        "area": "code",
+                        "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 主要贡献见机制和证据，通用性仍待测。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) [Q04](#research-q04) 已有可描述工作流，净收益待验。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1333375150-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可在隔离环境观察具体使用任务。固定源码支持部分机制。采用取决于对照验证和部署条件。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01) 有明确的使用任务"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 相对现有流程有局部改进"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q03](#research-q03) 固定源码支持入口与约束"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04) 目标宿主需独立验证"
+                    }
+                },
+                "score": 59,
+                "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                "reviewed_at": "2026-11-05T05:12:11.932Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-06-github-1333375150-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333375150:root",
+                        "area": "code",
+                        "fingerprint": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333375150:root",
+            "repository": "bugmaker2/dsh-plugin-template",
+            "path": "",
+            "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+            "fingerprints": {
+                "directory": "859083f5b8120f67efc5cab3ce2dc30287c5191838316c2a5396e41f496a9b9a",
+                "code": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+                "maintenance": "99e0bab0317f04f57f61ddc84ada552b93c3f35c41724b0e10cc76688004e40f"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T05:03:39Z",
+            "analysis_sha256": "93056b02228bda25302724ff1a06e9911a88fb07d786718be6e1205dedb24d4d"
+        },
+        "publication.metadata": "data/catalog/bugmaker2--dsh-plugin-template/meta.json",
+        "publication.summaries": {
+            "text": "展示带共享协议的宿主和客户端插件骨架",
+            "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+            "source_url": "https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+            "items": {
+                "界面": "问候标签页",
+                "Host 路由": "Typert greet Remote"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 从 SDK 文档独立装配。 | 可直接比较 | 保留人工步骤 |\n| DSH Plugin Template | 提供可追踪的最小端到端骨架。 | 无副作用示例尚未覆盖授权和长任务取消。 |"
+        },
+        "publication.advice": {
+            "revision": "31af7ebeb8d07cff73253f52f9a9f530cde9de9a",
+            "text": "[Q04](#research-q04) 隔离 profile 检查合法、非法和卸载。"
+        },
+        "registry": "data/plugins/bugmaker2--dsh-plugin-template",
+        "reports": "# DSH Plugin Template\n\n> 展示带共享协议的宿主和客户端插件骨架\n\n## 研究范围\n\n- **仓库**：[bugmaker2/dsh-plugin-template](https://github.com/bugmaker2/dsh-plugin-template)\n- **版本号**：0.1.0（[固定提交 31af7ebeb8d07cff73253f52f9a9f530cde9de9a](https://github.com/bugmaker2/dsh-plugin-template/tree/31af7ebeb8d07cff73253f52f9a9f530cde9de9a)）\n- **版本日期**：2026-08-27（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态核查固定提交的以最小问候流程确认插件开发链路。未执行目标代码或实际宿主验证。\n\n## 洞察短评\n\n- **用途**：开发者开始编写双端插件。\n- **亮点**：[Q01](#research-q01) 提供可追踪的最小端到端骨架。\n- **思考**：[Q03](#research-q03) 无副作用示例尚未覆盖授权和长任务取消。\n- **建议**：[Q05](#research-q05) 可降低首个双端插件的接线时间。\n\n采用建议：[Q04](#research-q04) 隔离 profile 检查合法、非法和卸载。\n\n## 核心贡献\n\n[Q01](#research-q01) 提供可追踪的最小端到端骨架。\n\n## 关键质疑\n\n[Q03](#research-q03) 无副作用示例尚未覆盖授权和长任务取消。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 可降低首个双端插件的接线时间。\n\n保留输入、返回和清理记录。\n\n## 场景与替代办法\n\n开发者开始编写双端插件。\n\n从 SDK 文档独立装配。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 共享 wire 描述贯通宿主 Remote 和客户端标签。 | 用隔离 profile 确认 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 开发者开始编写双端插件。 | 保留原流程 |\n| 试验 | 共享 wire 描述贯通宿主 Remote 和客户端标签。 | 观察固定版本 |\n| 复核 | 隔离 profile 检查合法、非法和卸载。 | 比对任务结果 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 以最小问候流程确认插件开发链路 | 可降低首个双端插件的接线时间。 | 隔离 profile 检查合法、非法和卸载。 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：以最小问候流程确认插件开发链路\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 模板交付什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n开发者可从宿主问候 Remote 和客户端标签页起步，验证配置到结果的往返。相对从零接 SDK，验收是正常输入返回预期文本，空白及过长输入被拒。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:8-10](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/README.md#L8-L10)\n\n作者说明模板及问候用例\n\n```text\nA complete dual-side [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin template. It demonstrates the full plugin surface — a **host** plugin exposing a Typert Remote, and a **client** plugin mounting that Remote into a React view — with type-checking, linting, unit tests, CI, and publishing metadata wired up.\n\nOut of the box it registers a `greet` Remote: the host composes `\"Hello, <name>\"` from a configurable prefix, and the client renders the result in a new \"Greet\" tab.\n```\n\n**依据 2 · 源码核查**：[src/contract.ts:12-15](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/contract.ts#L12-L15)\n\n名称和结果的 wire schema\n\n```text\n/** Wire codec for the caller's name. */\nexport const nameSchema = z.string().trim().min(1).max(200)\n/** Wire codec for the greeting result projection. */\nexport const greetResultSchema = z.object({ message: z.string() }).readonly()\n```\n\n#### 缺口\n\n- 通用业务功能仍需开发。\n  **影响**：减少接线摸索。\n  **进一步探讨**：用独立 profile 检查一轮。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 协议如何避免漂移？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n共享 descriptors 给双方引用，宿主再解析名称并组合配置结果。客户端 mount remote 后注册标签页，卸载时处理 dispose。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/contract.ts:25-30](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/contract.ts#L25-L30)\n\n共享调用描述\n\n```text\n/** Strict Typert descriptors shared by the host and browser halves. */\nexport const DSH_TEMPLATE_INVOCATIONS: readonly InvocationDescriptor[] = [\n  {\n    id: 'dsh-plugin-template#greet/greet', service: 'greet', namespace: 'greet', method: 'greet', invocation: { kind: 'direct' },\n    parameters: [nameParameter], cancellation: { parameter: 'signal' }, result: greetResult,\n  },\n```\n\n**依据 2 · 源码核查**：[src/runtime.ts:14-24](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/runtime.ts#L14-L24)\n\n宿主实际验证及问候\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\nexport class GreetRuntime extends TypertRemoteService {\n  /** @param ctx - owning Cordis context. @param config - resolved plugin config. */\n  constructor(ctx: Context, private readonly config: ResolvedConfig) { super(ctx, 'greet') }\n\n  /** Compose a greeting from the configured prefix and the caller's name. */\n  @Remote\n  async greet(name: string, signal?: AbortSignal): Promise<GreetResult> {\n    void signal\n    const checked = nameSchema.parse(name)\n    const suffix = this.config.excited ? '!' : ''\n    return { message: `${this.config.greeting}, ${checked}${suffix}` }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/client/index.tsx:25-48](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/client/index.tsx#L25-L48)\n\n挂载、卸载和标签注册\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n  ctx.effect(async () => {\n    const dispose = await ctx.remote.$mount(DSH_TEMPLATE_REMOTE)\n    greet = (ctx.reflect as unknown as { get(name: string): unknown }).get('remote.greet')\n    if (greet === undefined) throw new Error('dsh-plugin-template: the greet Remote namespace did not mount')\n    return () => { greet = undefined; void dispose() }\n  }, 'dsh-plugin-template: remote')\n\n  const actions: GreetActions = {\n    greet: (name: string) => {\n      if (greet === undefined) return Promise.reject(new Error('dsh-plugin-template: greet Remote is not mounted'))\n      const fn = (greet as Record<string, unknown>).greet\n      if (typeof fn !== 'function') return Promise.reject(new Error('dsh-plugin-template: greet method is not available'))\n      return (fn as (n: string) => unknown)(name) as ReturnType<GreetActions['greet']>\n    },\n  }\n\n  // Register the greet tab into the session conversation view ring.\n  ctx.slots.inject('conversation.view', () => ctx.slots.register({\n    name: 'conversation.view',\n    id: 'dsh-plugin-template',\n    order: 20,\n    label: () => t('view.label'),\n    inject: () => ({ actions, t }),\n  }, (props: TemplateViewSlotProps) => <TemplateView actions={props.actions} t={props.t} />))\n```\n\n</details>\n\n#### 缺口\n\n- 依赖 SDK 版本仍会改变接线。\n  **影响**：共享协议降低字段不一致。\n  **进一步探讨**：升级前做 wire 对照。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 权限与取消到什么程度？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n模板方法只做字符串拼接，显式忽略 signal。把它扩展为网络或文件操作时，需要补授权、取消及副作用语义。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/runtime.ts:18-24](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/runtime.ts#L18-L24)\n\n方法忽略取消 signal\n\n```text\n  /** Compose a greeting from the configured prefix and the caller's name. */\n  @Remote\n  async greet(name: string, signal?: AbortSignal): Promise<GreetResult> {\n    void signal\n    const checked = nameSchema.parse(name)\n    const suffix = this.config.excited ? '!' : ''\n    return { message: `${this.config.greeting}, ${checked}${suffix}` }\n```\n\n**依据 2 · 源码核查**：[src/contract.ts:28-29](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/contract.ts#L28-L29)\n\nwire 声明取消参数\n\n```text\n    id: 'dsh-plugin-template#greet/greet', service: 'greet', namespace: 'greet', method: 'greet', invocation: { kind: 'direct' },\n    parameters: [nameParameter], cancellation: { parameter: 'signal' }, result: greetResult,\n```\n\n#### 缺口\n\n- 不能外推到高副作用业务。\n  **影响**：基础问候正确不足以证明生产服务。\n  **进一步探讨**：扩展前设计取消测试。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 采用和退出？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n复制模板后先改包、服务和 namespace，按仓库说明核对目标 DSH。成本在 SDK 维护及业务实现。退出测试 profile 时确认 tab 和 remote 无残留。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:14-26](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/README.md#L14-L26)\n\n作者标注组成文件\n\n<details>\n<summary>查看原文（13行）</summary>\n\n````text\n```text\npackage.json           # dsh.bundle + dsh.client manifests, scripts, peer deps\ncordis.patch.yml       # mounts the host plugin row into a profile\ndsh.plugin.json        # dsh.so registry manifest\nsrc/index.ts           # host entry: Config schema + Typert manifest registration\nsrc/runtime.ts         # host Remote service (TypertRemoteService)\nsrc/typert.ts          # Typert model manifest\nsrc/contract.ts        # strict wire contract shared by host and client\nsrc/types.ts           # shared host/client types\nsrc/client/index.tsx   # client entry: mounts Remote + registers the view slot\nsrc/client/remote.ts   # client Remote contribution + typed namespace\nsrc/client/locales.ts  # zh / en dictionaries\nsrc/client/view.tsx    # minimal React view\n````\n\n</details>\n\n**依据 2 · 源码核查**：[src/client/index.tsx:25-30](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/client/index.tsx#L25-L30)\n\nremote 释放路径\n\n```text\n  ctx.effect(async () => {\n    const dispose = await ctx.remote.$mount(DSH_TEMPLATE_REMOTE)\n    greet = (ctx.reflect as unknown as { get(name: string): unknown }).get('remote.greet')\n    if (greet === undefined) throw new Error('dsh-plugin-template: the greet Remote namespace did not mount')\n    return () => { greet = undefined; void dispose() }\n  }, 'dsh-plugin-template: remote')\n```\n\n#### 缺口\n\n- 样式清理未验证。\n  **影响**：复制后命名冲突需要检验。\n  **进一步探讨**：同装两份改名模板。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样判定有用？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n比较从零接入与模板起步耗时，测试重复 mount、服务缺失和非法输入。若两实例互串 namespace 或卸载仍能调用，则基础目标未达到。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client/index.tsx:25-37](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/client/index.tsx#L25-L37)\n\n缺服务有显式错误\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n  ctx.effect(async () => {\n    const dispose = await ctx.remote.$mount(DSH_TEMPLATE_REMOTE)\n    greet = (ctx.reflect as unknown as { get(name: string): unknown }).get('remote.greet')\n    if (greet === undefined) throw new Error('dsh-plugin-template: the greet Remote namespace did not mount')\n    return () => { greet = undefined; void dispose() }\n  }, 'dsh-plugin-template: remote')\n\n  const actions: GreetActions = {\n    greet: (name: string) => {\n      if (greet === undefined) return Promise.reject(new Error('dsh-plugin-template: greet Remote is not mounted'))\n      const fn = (greet as Record<string, unknown>).greet\n      if (typeof fn !== 'function') return Promise.reject(new Error('dsh-plugin-template: greet method is not available'))\n      return (fn as (n: string) => unknown)(name) as ReturnType<GreetActions['greet']>\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/contract.ts:12-15](https://github.com/bugmaker2/dsh-plugin-template/blob/31af7ebeb8d07cff73253f52f9a9f530cde9de9a/src/contract.ts#L12-L15)\n\n边界输入可验\n\n```text\n/** Wire codec for the caller's name. */\nexport const nameSchema = z.string().trim().min(1).max(200)\n/** Wire codec for the greeting result projection. */\nexport const greetResultSchema = z.object({ message: z.string() }).readonly()\n```\n\n#### 缺口\n\n- 无本次宿主结果。\n  **影响**：可测开发成本和协议可靠性。\n  **进一步探讨**：保留输入、返回和清理记录。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：1f3612298b315a04af242764bdbf9ae357e83c1a8beb5079135d050c2a6b13c4。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .mjs | source | 1 | 30 | 16 | 11 | — |\n| .js | source | 1 | 8 | 7 | 0 | — |\n| .md | source | 2 | 232 | — | — | 1364 |\n| .tsx | source | 2 | 116 | 80 | 22 | — |\n| .ts | source | 9 | 221 | 120 | 78 | — |\n| .ts | test | 2 | 48 | 41 | 0 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 从 SDK 文档独立装配。 | 可直接比较 | 保留人工步骤 |\n| DSH Plugin Template | 提供可追踪的最小端到端骨架。 | 无副作用示例尚未覆盖授权和长任务取消。 |\n\n## 工程亮点\n\n共享契约和显式 mount/dispose。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/contract.ts、src/runtime.ts、src/client/index.tsx 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查固定提交的以最小问候流程确认插件开发链路。未执行目标代码或实际宿主验证。\n- 下一步：保留输入、返回和清理记录。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-06/bugmaker2--dsh-plugin-template/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"bugmaker2/dsh-plugin-template\",\n  \"revision\": \"31af7ebeb8d07cff73253f52f9a9f530cde9de9a\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"src/contract.ts\",\n    \"src/runtime.ts\",\n    \"src/client/index.tsx\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"以最小问候流程确认插件开发链路\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"模板交付什么？\",\n        \"answer\": \"开发者可从宿主问候 Remote 和客户端标签页起步，验证配置到结果的往返。相对从零接 SDK，验收是正常输入返回预期文本，空白及过长输入被拒。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 8,\n            \"line_end\": 10,\n            \"observation\": \"作者说明模板及问候用例\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"src/contract.ts\",\n            \"line_start\": 12,\n            \"line_end\": 15,\n            \"observation\": \"名称和结果的 wire schema\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"通用业务功能仍需开发。\",\n            \"impact\": \"减少接线摸索。\",\n            \"next_step\": \"用独立 profile 检查一轮。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"协议如何避免漂移？\",\n        \"answer\": \"共享 descriptors 给双方引用，宿主再解析名称并组合配置结果。客户端 mount remote 后注册标签页，卸载时处理 dispose。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/contract.ts\",\n            \"line_start\": 25,\n            \"line_end\": 30,\n            \"observation\": \"共享调用描述\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/runtime.ts\",\n            \"line_start\": 14,\n            \"line_end\": 24,\n            \"observation\": \"宿主实际验证及问候\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/client/index.tsx\",\n            \"line_start\": 25,\n            \"line_end\": 48,\n            \"observation\": \"挂载、卸载和标签注册\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"依赖 SDK 版本仍会改变接线。\",\n            \"impact\": \"共享协议降低字段不一致。\",\n            \"next_step\": \"升级前做 wire 对照。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"权限与取消到什么程度？\",\n        \"answer\": \"模板方法只做字符串拼接，显式忽略 signal。把它扩展为网络或文件操作时，需要补授权、取消及副作用语义。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/runtime.ts\",\n            \"line_start\": 18,\n            \"line_end\": 24,\n            \"observation\": \"方法忽略取消 signal\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/contract.ts\",\n            \"line_start\": 28,\n            \"line_end\": 29,\n            \"observation\": \"wire 声明取消参数\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"不能外推到高副作用业务。\",\n            \"impact\": \"基础问候正确不足以证明生产服务。\",\n            \"next_step\": \"扩展前设计取消测试。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"采用和退出？\",\n        \"answer\": \"复制模板后先改包、服务和 namespace，按仓库说明核对目标 DSH。成本在 SDK 维护及业务实现。退出测试 profile 时确认 tab 和 remote 无残留。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 14,\n            \"line_end\": 26,\n            \"observation\": \"作者标注组成文件\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"src/client/index.tsx\",\n            \"line_start\": 25,\n            \"line_end\": 30,\n            \"observation\": \"remote 释放路径\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"样式清理未验证。\",\n            \"impact\": \"复制后命名冲突需要检验。\",\n            \"next_step\": \"同装两份改名模板。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"怎样判定有用？\",\n        \"answer\": \"比较从零接入与模板起步耗时，测试重复 mount、服务缺失和非法输入。若两实例互串 namespace 或卸载仍能调用，则基础目标未达到。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/client/index.tsx\",\n            \"line_start\": 25,\n            \"line_end\": 37,\n            \"observation\": \"缺服务有显式错误\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/contract.ts\",\n            \"line_start\": 12,\n            \"line_end\": 15,\n            \"observation\": \"边界输入可验\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"无本次宿主结果。\",\n            \"impact\": \"可测开发成本和协议可靠性。\",\n            \"next_step\": \"保留输入、返回和清理记录。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-plugin-template\\n\\nEnglish | [中文](README.zh.md)\\n\\n[![dsh.so security](https://www.dsh.so/badge/dsh-plugin-template.svg)](https://www.dsh.so/artifact/dsh-plugin-template)\\n[![dsh.so install](https://www.dsh.so/badge/install/dsh-plugin-template.svg)](https://www.dsh.so/artifact/dsh-plugin-template)\\n\\nA complete dual-side [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) plugin template. It demonstrates the full plugin surface — a **host** plugin exposing a Typert Remote, and a **client** plugin mounting that Remote into a React view — with type-checking, linting, unit tests, CI, and publishing metadata wired up.\\n\\nOut of the box it registers a `greet` Remote: the host composes `\\\"Hello, <name>\\\"` from a configurable prefix, and the client renders the result in a new \\\"Greet\\\" tab.\\n\\n## Structure\\n\\n```text\\npackage.json           # dsh.bundle + dsh.client manifests, scripts, peer deps\\ncordis.patch.yml       # mounts the host plugin row into a profile\\ndsh.plugin.json        # dsh.so registry manifest\\nsrc/index.ts           # host entry: Config schema + Typert manifest registration\\nsrc/runtime.ts         # host Remote service (TypertRemoteService)\\nsrc/typert.ts          # Typert model manifest\\nsrc/contract.ts        # strict wire contract shared by host and client\\nsrc/types.ts           # shared host/client types\\nsrc/client/index.tsx   # client entry: mounts Remote + registers the view slot\\nsrc/client/remote.ts   # client Remote contribution + typed namespace\\nsrc/client/locales.ts  # zh / en dictionaries\\nsrc/client/view.tsx    # minimal React view\\nsrc/client/styles.ts   # theme-token stylesheet\\ntests/                 # vitest unit tests (contract + runtime)\\nbuild.mjs              # esbuild dual build (host ESM + client CJS)\\n.github/workflows/ci.yml\\n```\\n\\n`package.json` is the only manifest Harness needs. `dsh.bundle.patch` makes the package an installable profile bundle; `dsh.client` declares the Web client bundle and the client packages it injects. The host entry is the ordinary Cordis `name`/`apply` export; the client entry is bundled to `lib/client.js` and loaded by the Web harness module loader.\\n\\n## Requirements\\n\\n- Node.js `>= 22.19` (or `>= 24`)\\n- pnpm `>= 9`\\n- DeepSeek Harness `>=0.1.0-rc.6`\\n\\n## Install from a local checkout\\n\\n```sh\\npnpm install\\npnpm run build\\ndsh plugin --profile web add .\\n```\\n\\nRestart the Web Harness after rebuilding the plugin. A \\\"Greet\\\" tab appears in the session view ring showing `Hello, DSH`.\\n\\nRemove it with:\\n\\n```sh\\ndsh plugin --profile web remove dsh-plugin-template\\n```\\n\\n## Install from Git\\n\\n```sh\\ndsh plugin --profile web add github:you/dsh-plugin-template\\n```\\n\\nA Git install fetches sources, not built artifacts, so pnpm runs the `prepare` script to build `lib/`. pnpm ≥10 blocks that build until you allow it; on the first failed `add`, `dsh` prints the fix — copy the package key it shows into the profile's `pnpm-workspace.yaml`:\\n\\n```yaml\\nallowBuilds:\\n  dsh-plugin-template: true\\n```\\n\\nthen re-run the `add`. That allowance lets the package run code at install time, so only allow packages you trust (and pin a commit).\\n\\n## Development\\n\\n```sh\\npnpm run check\\n```\\n\\n`check` runs `typecheck`, `lint`, `test`, and `build`. CI runs the same command after `pnpm install --frozen-lockfile`.\\n\\nIndividual scripts:\\n\\n```sh\\npnpm run build      # esbuild dual bundle + declaration emit\\npnpm run typecheck  # tsc over src and tests\\npnpm run lint       # eslint\\npnpm run test       # vitest\\n```\\n\\n## Renaming the package\\n\\nKeep these values in sync when you rename:\\n\\n- `package.json` → `name`, `exports`, `files`\\n- `build.mjs` → the `__ModuleLoader__.load` id\\n- `src/index.ts` → `name`\\n- `src/client/remote.ts` → package id and the `TypertRemoteNamespace$…` hex of the service key\\n- `src/client/locales.ts` → locale namespace key\\n- `src/client/index.tsx` → slot id\\n- `src/typert.ts` → `package`\\n- `src/contract.ts` → invocation ids\\n- `cordis.patch.yml` → `id` and `name`\\n- `dsh.plugin.json` → `id`\\n\\n## Discoverability\\n\\nAdd the GitHub topic [`dsh-plugin`](https://github.com/topics/dsh-plugin) to your fork:\\n\\n```sh\\ngh api --method PUT repos/YOUR-USER/dsh-plugin-template/topics \\\\\\n  -H 'Accept: application/vnd.github+json' \\\\\\n  -f 'names[]=dsh-plugin'\\n```\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-plugin-template\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"description\\\": \\\"Dual-side (host + client) DeepSeek Harness plugin template with Typert Remote, React view, tests, lint, and CI.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"packageManager\\\": \\\"pnpm@10.17.0\\\",\\n  \\\"pnpm\\\": {\\n    \\\"onlyBuiltDependencies\\\": [\\n      \\\"esbuild\\\"\\n    ]\\n  },\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./client\\\": {\\n      \\\"types\\\": \\\"./lib/types/client/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/client.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"inject\\\": [\\n        \\\"@deepseek-ai/dsh-client-runtime\\\",\\n        \\\"@deepseek-ai/dsh-client-ui-slots\\\",\\n        \\\"@deepseek-ai/dsh-client-locale\\\",\\n        \\\"@deepseek-ai/dsh-client-ui-primitives\\\"\\n      ]\\n    }\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"dsh.plugin.json\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"node build.mjs && tsc -p tsconfig.build.json\\\",\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit && tsc -p tsconfig.tests.json --noEmit\\\",\\n    \\\"test\\\": \\\"vitest run\\\",\\n    \\\"lint\\\": \\\"eslint .\\\",\\n    \\\"check\\\": \\\"pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run build\\\",\\n    \\\"prepare\\\": \\\"pnpm run build\\\",\\n    \\\"prepublishOnly\\\": \\\"pnpm run check\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19 || >=24\\\",\\n    \\\"dsh\\\": \\\">=0.1.0-rc.6\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-typert-protocol\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-typert-registry\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-client-runtime\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-client-locale\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-primitives\\\": \\\"*\\\",\\n    \\\"react\\\": \\\"^18.2.0\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/cordis\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-typert-protocol\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-typert-registry\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-client-runtime\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-client-locale\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"@deepseek-ai/dsh-client-ui-primitives\\\": {\\n      \\\"optional\\\": true\\n    },\\n    \\\"react\\\": {\\n      \\\"optional\\\": true\\n    }\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"zod\\\": \\\"^4.4.3\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-typert-protocol\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@deepseek-ai/dsh-typert-registry\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@deepseek-ai/schemastery\\\": \\\"3.18.1\\\",\\n    \\\"@deepseek-ai/dsh-client-runtime\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-slots\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@deepseek-ai/dsh-client-locale\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@deepseek-ai/dsh-client-ui-primitives\\\": \\\"0.1.0-rc.6\\\",\\n    \\\"@eslint/js\\\": \\\"^9.30.0\\\",\\n    \\\"@types/node\\\": \\\"^22.19.0\\\",\\n    \\\"@types/react\\\": \\\"^18.3.0\\\",\\n    \\\"@types/react-dom\\\": \\\"^18.3.0\\\",\\n    \\\"esbuild\\\": \\\"^0.25.0\\\",\\n    \\\"eslint\\\": \\\"^9.30.0\\\",\\n    \\\"react\\\": \\\"^18.3.1\\\",\\n    \\\"react-dom\\\": \\\"^18.3.1\\\",\\n    \\\"typescript\\\": \\\"^6.0.0\\\",\\n    \\\"typescript-eslint\\\": \\\"^8.35.0\\\",\\n    \\\"vitest\\\": \\\"^3.2.0\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh-plugin\\\",\\n    \\\"deepseek-harness\\\"\\n  ],\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+ssh://git@github.com/bugmaker2/dsh-plugin-template.git\\\"\\n  },\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/bugmaker2/dsh-plugin-template/issues\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/bugmaker2/dsh-plugin-template\\\",\\n  \\\"author\\\": {\\n    \\\"name\\\": \\\"bugmaker2\\\",\\n    \\\"url\\\": \\\"https://github.com/bugmaker2\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"src/contract.ts\",\n      \"content\": \"/**\\n * dsh-plugin-template — Shared strict Typert wire contract between the host\\n * and browser halves.\\n *\\n * Every Remote method has one InvocationDescriptor here. The host manifest\\n * (typert.ts) and the client Remote contribution (client/remote.ts) both\\n * point at this same list, so host and client can never drift apart.\\n */\\nimport { z } from 'zod'\\nimport type { InvocationDescriptor } from '@deepseek-ai/dsh-typert-protocol'\\n\\n/** Wire codec for the caller's name. */\\nexport const nameSchema = z.string().trim().min(1).max(200)\\n/** Wire codec for the greeting result projection. */\\nexport const greetResultSchema = z.object({ message: z.string() }).readonly()\\n\\nconst json = (name: string, wire: string, typeSymbol: string, schema: z.ZodType) => ({\\n  name, wire, source: 'json' as const, codec: { mode: 'strict' as const, typeSymbol, schema },\\n})\\nconst resultOf = (typeSymbol: string, schema: z.ZodType) => ({ mode: 'strict' as const, typeSymbol, schema })\\n\\nconst nameParameter = json('name', 'name', 'dsh-plugin-template#Name', nameSchema)\\nconst greetResult = resultOf('dsh-plugin-template#GreetResult', greetResultSchema)\\n\\n/** Strict Typert descriptors shared by the host and browser halves. */\\nexport const DSH_TEMPLATE_INVOCATIONS: readonly InvocationDescriptor[] = [\\n  {\\n    id: 'dsh-plugin-template#greet/greet', service: 'greet', namespace: 'greet', method: 'greet', invocation: { kind: 'direct' },\\n    parameters: [nameParameter], cancellation: { parameter: 'signal' }, result: greetResult,\\n  },\\n]\\n\"\n    },\n    {\n      \"path\": \"src/runtime.ts\",\n      \"content\": \"/**\\n * dsh-plugin-template — Host Remote service.\\n *\\n * A TypertRemoteService exposes async methods to the browser through the\\n * harness Remote gateway. The @Remote decorator marks each callable method;\\n * the constructor's second argument is the service key the client mounts.\\n */\\nimport type { Context } from '@deepseek-ai/cordis'\\nimport { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'\\nimport { nameSchema } from './contract.ts'\\nimport type { GreetResult, ResolvedConfig } from './types.ts'\\n\\n/** Host-side service backing the `greet` Remote namespace. */\\nexport class GreetRuntime extends TypertRemoteService {\\n  /** @param ctx - owning Cordis context. @param config - resolved plugin config. */\\n  constructor(ctx: Context, private readonly config: ResolvedConfig) { super(ctx, 'greet') }\\n\\n  /** Compose a greeting from the configured prefix and the caller's name. */\\n  @Remote\\n  async greet(name: string, signal?: AbortSignal): Promise<GreetResult> {\\n    void signal\\n    const checked = nameSchema.parse(name)\\n    const suffix = this.config.excited ? '!' : ''\\n    return { message: `${this.config.greeting}, ${checked}${suffix}` }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"src/client/index.tsx\",\n      \"content\": \"/**\\n * dsh-plugin-template — Client plugin entry (browser half).\\n *\\n * Mounts the greet Remote namespace, registers locale dictionaries, and\\n * injects one conversation.view tab that renders the greet result.\\n */\\nimport type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client'\\nimport type {} from '@deepseek-ai/dsh-client-locale/client'\\nimport { DSH_TEMPLATE_REMOTE } from './remote.ts'\\nimport { NS, en, zh } from './locales.ts'\\nimport { TemplateView, type GreetActions, type TemplateViewSlotProps } from './view.tsx'\\nimport { adoptStyles } from './styles.ts'\\n\\n/** Required services: the Remote gateway, locale, and slots. */\\nexport const inject = ['slots', 'remote', 'locale']\\n\\n/** Compose the greet view tab. @param ctx - client root context. */\\nexport function apply(ctx: ClientContext): void {\\n  adoptStyles()\\n  ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-plugin-template: dictionaries')\\n\\n  let greet: unknown\\n  const t = ctx.locale.bind(NS)\\n\\n  ctx.effect(async () => {\\n    const dispose = await ctx.remote.$mount(DSH_TEMPLATE_REMOTE)\\n    greet = (ctx.reflect as unknown as { get(name: string): unknown }).get('remote.greet')\\n    if (greet === undefined) throw new Error('dsh-plugin-template: the greet Remote namespace did not mount')\\n    return () => { greet = undefined; void dispose() }\\n  }, 'dsh-plugin-template: remote')\\n\\n  const actions: GreetActions = {\\n    greet: (name: string) => {\\n      if (greet === undefined) return Promise.reject(new Error('dsh-plugin-template: greet Remote is not mounted'))\\n      const fn = (greet as Record<string, unknown>).greet\\n      if (typeof fn !== 'function') return Promise.reject(new Error('dsh-plugin-template: greet method is not available'))\\n      return (fn as (n: string) => unknown)(name) as ReturnType<GreetActions['greet']>\\n    },\\n  }\\n\\n  // Register the greet tab into the session conversation view ring.\\n  ctx.slots.inject('conversation.view', () => ctx.slots.register({\\n    name: 'conversation.view',\\n    id: 'dsh-plugin-template',\\n    order: 20,\\n    label: () => t('view.label'),\\n    inject: () => ({ actions, t }),\\n  }, (props: TemplateViewSlotProps) => <TemplateView actions={props.actions} t={props.t} />))\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"31af7ebeb8d07cff73253f52f9a9f530cde9de9a\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"1f3612298b315a04af242764bdbf9ae357e83c1a8beb5079135d050c2a6b13c4\",\n    \"groups\": [\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 30,\n        \"code\": 16,\n        \"comments\": 11,\n        \"blank\": 3\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 8,\n        \"code\": 7,\n        \"comments\": 0,\n        \"blank\": 1\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 232,\n        \"words\": 1364\n      },\n      {\n        \"extension\": \".tsx\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 116,\n        \"code\": 80,\n        \"comments\": 22,\n        \"blank\": 14\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 9,\n        \"lines\": 221,\n        \"code\": 120,\n        \"comments\": 78,\n        \"blank\": 23\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 48,\n        \"code\": 41,\n        \"comments\": 0,\n        \"blank\": 7\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": [\n        {\n          \"path\": \"src/client/index.tsx\",\n          \"line\": 42,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"conversation.view\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"conversation.view\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "240b6a643c8ac8fbe24661718e0d855bd70f716d16976fd9bffb40ded56b9125"
+        }
+    },
+    "unavailable_artifacts": []
+}

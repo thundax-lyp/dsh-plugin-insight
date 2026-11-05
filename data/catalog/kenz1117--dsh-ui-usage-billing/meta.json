@@ -1,0 +1,45 @@
+{
+    "repository": "kenz1117/dsh-ui-usage-billing",
+    "repository_id": 1335651249,
+    "captured_at": "2026-11-05T05:08:46.024Z",
+    "window_start": "2026-10-06T05:08:46.024Z",
+    "stars": 95,
+    "pushed_at": "2026-11-04T06:49:12Z",
+    "issues": {
+        "open": 1,
+        "closed": 84,
+        "created_30d": 25,
+        "closed_30d": 27,
+        "updated_30d": 28
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4d8be0adc3deff65514eb0a86f72fca308ec336",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@kenz1117/dsh-ui-usage-billing",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 14283,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40kenz1117%2Fdsh-ui-usage-billing",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T06:50:03.584Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40kenz1117%2Fdsh-ui-usage-billing",
+            "error": null,
+            "latest_version": "1.8.2",
+            "latest_published_at": "2026-11-04T00:28:26.759Z",
+            "latest_error": null
+        }
+    }
+}

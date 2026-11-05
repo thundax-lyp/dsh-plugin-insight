@@ -1,0 +1,27 @@
+{
+    "repository": "rison114514/dsh-endfield-ui",
+    "repository_id": 1337211821,
+    "captured_at": "2026-11-05T05:08:46.024Z",
+    "window_start": "2026-10-06T05:08:46.024Z",
+    "stars": 97,
+    "pushed_at": "2026-10-09T12:25:43Z",
+    "issues": {
+        "open": 3,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4d8be0adc3deff65514eb0a86f72fca308ec336",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

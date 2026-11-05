@@ -1,0 +1,62 @@
+{
+    "repository": "Tasihi89/dsh-talk-map",
+    "repository_id": 1337950867,
+    "captured_at": "2026-11-05T05:08:46.024Z",
+    "window_start": "2026-10-06T05:08:46.024Z",
+    "stars": 103,
+    "pushed_at": "2026-08-23T13:59:19Z",
+    "issues": {
+        "open": 3,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ATasihi89%2Fdsh-talk-map%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A792:10D257:260B26:290560:6AEC0F77 and timestamp 2026-11-05 05:09:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATasihi89%2Fdsh-talk-map%20is%3Aissue%20created%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7C2:10BCDA:2478FC:2771D8:6AEC0F78 and timestamp 2026-11-05 05:09:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATasihi89%2Fdsh-talk-map%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7F6:2C3294:254B2F:2844A6:6AEC0F78 and timestamp 2026-11-05 05:09:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATasihi89%2Fdsh-talk-map%20is%3Aissue%20updated%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A818:369D35:A1CA1F:ACF880:6AEC0F79 and timestamp 2026-11-05 05:09:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4d8be0adc3deff65514eb0a86f72fca308ec336",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-talk-map",
+        "captured_at": "2026-11-03T06:53:49.722Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 4378,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-talk-map",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-01T10:47:16.383Z",
+            "captured_at": "2026-11-03T06:53:49.722Z",
+            "source_url": "https://registry.npmjs.org/dsh-talk-map",
+            "error": null,
+            "latest_version": "0.1.55",
+            "latest_published_at": "2026-11-03T05:20:22.859Z",
+            "latest_error": null
+        }
+    }
+}

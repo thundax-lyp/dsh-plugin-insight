@@ -1,0 +1,434 @@
+{
+    "schema_version": 4,
+    "id": "14357d52c2656ef439e6de142f1f02af",
+    "identity": "github:1338176891:root",
+    "slug": "xierw--dsh-beauty-skins",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1338176891:root",
+            "repository_id": 1338176891,
+            "component_id": "root",
+            "repository": "XieRW/dsh-beauty-skins",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Beauty Skins",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "c2a74e072c276c06d2551145f553f49d0feef41e1c17a3c9d451aa2a906fdd9a",
+                "code": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                "maintenance": "1dce6a1c1fdaf19d635fe1d37ea7615160568cd78a4716f6c171839c13ac0465"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-06-github-1338176891-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T05:13:31.096Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-06-github-1338176891-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/XieRW/dsh-beauty-skins",
+                            "commit": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                            "path": "README.md",
+                            "content_sha256": "d5159b5fc8511510163bec974562cbf74f1123342d69763d70d1f3fc1ffc278a"
+                        }
+                    ],
+                    "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                    "captured_at": "2026-11-05T05:13:31.096Z",
+                    "summary": "从壁纸提取配色并替换宿主主题源码",
+                    "artifact": "data/runs/2026-11-05-06/xierw--dsh-beauty-skins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-06-github-1338176891-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/XieRW/dsh-beauty-skins",
+                            "commit": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                            "path": "README.md",
+                            "content_sha256": "d5159b5fc8511510163bec974562cbf74f1123342d69763d70d1f3fc1ffc278a"
+                        },
+                        {
+                            "repository_url": "https://github.com/XieRW/dsh-beauty-skins",
+                            "commit": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                            "path": "scripts/install.sh",
+                            "content_sha256": "07899cc168093efeba0fd5716aa789286c1bb7742fa61298427cface69c1fa30"
+                        },
+                        {
+                            "repository_url": "https://github.com/XieRW/dsh-beauty-skins",
+                            "commit": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                            "path": "scripts/uninstall.sh",
+                            "content_sha256": "a518250cbb58632487c4a863535da2d7b75edd14952b72cdb046eba55d070c70"
+                        }
+                    ],
+                    "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                    "captured_at": "2026-11-05T05:13:31.096Z",
+                    "summary": "核查 README.md、scripts/install.sh、scripts/uninstall.sh；覆盖主题源码并应用宿主补丁。",
+                    "artifact": "data/runs/2026-11-05-06/xierw--dsh-beauty-skins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查固定提交的在自选壁纸下维持输入和阅读可用。未执行目标代码或实际宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "个人用户定制 DSH 壁纸和配色。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "覆盖主题源码并应用宿主补丁。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查固定提交的在自选壁纸下维持输入和阅读可用。未执行目标代码或实际宿主验证。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "仓库提供主题源码和安装脚本。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 覆盖主题源码并应用宿主补丁。 | 用隔离 profile 确认 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 仅在可备份源码环境验证冲突和恢复。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 在自选壁纸下维持输入和阅读可用 | 可在保留操作可用时满足个性化需求。 | 仅在可备份源码环境验证冲突和恢复。 |",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "提供备份与恢复脚本。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 集中管理壁纸与配色。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 源码覆盖和版本冲突带来恢复成本。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 可在保留操作可用时满足个性化需求。",
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338176891:root",
+                            "area": "code",
+                            "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T05:13:31.096Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T05:13:31.096Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                "reviewed_at": "2026-11-05T05:13:31.096Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1338176891:root",
+                        "area": "code",
+                        "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 主要贡献见机制和证据，通用性仍待测。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) [Q04](#research-q04) 已有可描述工作流，净收益待验。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-11-05-06-github-1338176891-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可在隔离环境观察具体使用任务。固定源码支持部分机制。采用取决于对照验证和部署条件。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01) 有明确的使用任务"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 相对现有流程有局部改进"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q03](#research-q03) 固定源码支持入口与约束"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04) 目标宿主需独立验证"
+                    }
+                },
+                "score": 59,
+                "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                "reviewed_at": "2026-11-05T05:13:31.096Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-06-github-1338176891-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1338176891:root",
+                        "area": "code",
+                        "fingerprint": "28e4e38e99c8f8636f3d220891816a0899a93084"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1338176891:root",
+            "repository": "XieRW/dsh-beauty-skins",
+            "path": "",
+            "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+            "fingerprints": {
+                "directory": "c2a74e072c276c06d2551145f553f49d0feef41e1c17a3c9d451aa2a906fdd9a",
+                "code": "28e4e38e99c8f8636f3d220891816a0899a93084",
+                "maintenance": "1dce6a1c1fdaf19d635fe1d37ea7615160568cd78a4716f6c171839c13ac0465"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T05:03:39Z",
+            "analysis_sha256": "82f1f2b95c7b84d50fc6e4ed92f70f189992487f102ed7eafe4f625cd684e3a6"
+        },
+        "publication.metadata": "data/catalog/xierw--dsh-beauty-skins/meta.json",
+        "publication.summaries": {
+            "text": "从壁纸提取配色并替换宿主主题源码",
+            "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+            "source_url": "https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+            "items": {
+                "界面": "壁纸、动态背景和配色"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 内置主题。 | 可直接比较 | 保留人工步骤 |\n| DSH Beauty Skins | 集中管理壁纸与配色。 | 源码覆盖和版本冲突带来恢复成本。 |"
+        },
+        "publication.advice": {
+            "revision": "28e4e38e99c8f8636f3d220891816a0899a93084",
+            "text": "[Q04](#research-q04) 仅在可备份源码环境验证冲突和恢复。"
+        },
+        "registry": "data/plugins/xierw--dsh-beauty-skins",
+        "reports": "# DSH Beauty Skins\n\n> 从壁纸提取配色并替换宿主主题源码\n\n## 研究范围\n\n- **仓库**：[XieRW/dsh-beauty-skins](https://github.com/XieRW/dsh-beauty-skins)\n- **版本号**：未声明（[固定提交 28e4e38e99c8f8636f3d220891816a0899a93084](https://github.com/XieRW/dsh-beauty-skins/tree/28e4e38e99c8f8636f3d220891816a0899a93084)）\n- **版本日期**：2026-08-27（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态核查固定提交的在自选壁纸下维持输入和阅读可用。未执行目标代码或实际宿主验证。\n\n## 洞察短评\n\n- **用途**：个人用户定制 DSH 壁纸和配色。\n- **亮点**：[Q01](#research-q01) 集中管理壁纸与配色。\n- **思考**：[Q03](#research-q03) 源码覆盖和版本冲突带来恢复成本。\n- **建议**：[Q05](#research-q05) 可在保留操作可用时满足个性化需求。\n\n采用建议：[Q04](#research-q04) 仅在可备份源码环境验证冲突和恢复。\n\n## 核心贡献\n\n[Q01](#research-q01) 集中管理壁纸与配色。\n\n## 关键质疑\n\n[Q03](#research-q03) 源码覆盖和版本冲突带来恢复成本。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 可在保留操作可用时满足个性化需求。\n\n保留文件摘要与任务时间。\n\n## 场景与替代办法\n\n个人用户定制 DSH 壁纸和配色。\n\n内置主题。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 覆盖主题源码并应用宿主补丁。 | 用隔离 profile 确认 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 个人用户定制 DSH 壁纸和配色。 | 保留原流程 |\n| 试验 | 覆盖主题源码并应用宿主补丁。 | 观察固定版本 |\n| 复核 | 仅在可备份源码环境验证冲突和恢复。 | 比对任务结果 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 在自选壁纸下维持输入和阅读可用 | 可在保留操作可用时满足个性化需求。 | 仅在可备份源码环境验证冲突和恢复。 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：在自选壁纸下维持输入和阅读可用\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 用户得到什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n用户选择壁纸并获得相应配色，可含动态背景。相对默认主题，验收以选图、对比度和原生操作可达为准。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:5-16](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/README.md#L5-L16)\n\n作者描述壁纸、配色及素材归属\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n给 DeepSeek Harness 用的**美女系列**皮肤：设置里从 [哲风壁纸](https://haowallpaper.com/homeView?page=1&lbName=%E7%BE%8E%E5%A5%B3&sortType=3&rows=9&wpType=3,4) 拉预览网格，点一张即应用，配色从壁纸提取。支持动态壁纸，也保留自定义选图。\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n![Repo](https://img.shields.io/badge/repo-dsh--beauty--skins-111827)\n![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-0.1.0--rc.7-4D6BFE)\n![Skins](https://img.shields.io/badge/skins-catalog%20wallpapers-c8447e)\n[![dsh.so security](https://www.dsh.so/badge/dsh-beauty-skins.svg)](https://www.dsh.so/artifact/dsh-beauty-skins)\n[![dsh.so install](https://www.dsh.so/badge/install/dsh-beauty-skins.svg)](https://www.dsh.so/artifact/dsh-beauty-skins)\n\n[快速开始](#快速开始) · [长这样](#长这样) · [怎么选](#怎么选) · [English](README.en.md)\n\n本仓库基于 HeiGeAi 的皮肤系统改写，与 DeepSeek 官方无隶属关系。壁纸来自 [哲风壁纸](https://haowallpaper.com)，版权归原站及作者。\n```\n\n</details>\n\n#### 缺口\n\n- 图像喜好和可读性不同。\n  **影响**：提供个性化外观。\n  **进一步探讨**：检查长文和窄屏。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 安装机制？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n脚本先备份 ui-theme 和指定宿主文件，再覆盖主题包并打宿主集成补丁，要求重新安装依赖和构建。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/install.sh:36-63](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/install.sh#L36-L63)\n\n备份和覆盖\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\nelse\n  STAMP=\"$(date +%Y%m%d-%H%M%S)\"\n  BACKUP=\"$HOME/.dsh-skin-backups/$STAMP\"\n  mkdir -p \"$BACKUP/packages/client\"\n  cp -R \"$TARGET/packages/client/ui-theme\" \"$BACKUP/packages/client/ui-theme\"\n  while IFS= read -r rel; do\n    mkdir -p \"$BACKUP/$(dirname \"$rel\")\"\n    cp \"$TARGET/$rel\" \"$BACKUP/$rel\"\n  done < \"$HERE/scripts/patched-files.txt\"\n  printf '%s\\n' \"$TARGET\" > \"$BACKUP/.target\"\n  ok \"已备份到 $BACKUP\"\nfi\n\n# 2. 覆盖 ui-theme 包（Windows Git Bash 往往没有 rsync）\ncopy_theme() {\n  local src=\"$1\" dest=\"$2\"\n  mkdir -p \"$dest\"\n  if command -v rsync >/dev/null 2>&1; then\n    rsync -a --exclude 'node_modules' --exclude 'dist' --exclude 'lib' \"$src/\" \"$dest/\"\n    return\n  fi\n  (cd \"$src\" && tar -cf - --exclude=node_modules --exclude=dist --exclude=lib .) \\\n    | (cd \"$dest\" && tar -xf -)\n}\n\ncopy_theme \"$HERE/tree/packages/client/ui-theme\" \"$TARGET/packages/client/ui-theme\"\nnode \"$HERE/scripts/pin-theme-version.mjs\" \"$TARGET/packages/client/ui-theme/package.json\" \"$HOST_VER\"\nok \"已写入 ui-theme 皮肤包（壁纸目录 + 自定义皮肤 + 更新检查）\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/install.sh:65-87](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/install.sh#L65-L87)\n\n打补丁与构建提示\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n# 3. 打宿主集成补丁（背景层、标题栏挂钩、消息气泡、皮肤 CSS 入口）\ncd \"$TARGET\"\nPATCH=\"$HERE/patches/host-integration.patch\"\nif git -C \"$TARGET\" rev-parse --git-dir >/dev/null 2>&1; then\n  if git apply --check \"$PATCH\" 2>/dev/null; then\n    git apply \"$PATCH\"\n    ok \"已打宿主集成补丁\"\n  elif git apply --check --reverse \"$PATCH\" 2>/dev/null; then\n    ok \"宿主集成补丁已在，跳过\"\n  else\n    die \"补丁打不上。你的 deepseek-harness 版本可能和本皮肤包不匹配（本包基于 ${BASELINE}），请手工比对 patches/host-integration.patch\"\n  fi\nelse\n  patch -p1 --forward --silent < \"$PATCH\" \\\n    || die \"补丁打不上，请手工比对 patches/host-integration.patch\"\n  ok \"已打宿主集成补丁\"\nfi\n\nprintf '\\n\\033[1m接下来手动跑这三条\\033[0m\\n'\nsay \"cd $TARGET\"\nsay \"pnpm install\"\nsay \"pnpm run build\"\nsay \"pnpm dsh web\"\n```\n\n</details>\n\n#### 缺口\n\n- 部分失败可能发生在覆盖后。\n  **影响**：适配依赖源码布局。\n  **进一步探讨**：在测试 checkout 记录全过程差异。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 主要限制？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n补丁冲突会报错，且动作发生在先覆盖后打补丁。恢复需要未带皮肤的较早备份，不能用任意最新备份。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/install.sh:61-79](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/install.sh#L61-L79)\n\n覆盖后检查补丁\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\ncopy_theme \"$HERE/tree/packages/client/ui-theme\" \"$TARGET/packages/client/ui-theme\"\nnode \"$HERE/scripts/pin-theme-version.mjs\" \"$TARGET/packages/client/ui-theme/package.json\" \"$HOST_VER\"\nok \"已写入 ui-theme 皮肤包（壁纸目录 + 自定义皮肤 + 更新检查）\"\n\n# 3. 打宿主集成补丁（背景层、标题栏挂钩、消息气泡、皮肤 CSS 入口）\ncd \"$TARGET\"\nPATCH=\"$HERE/patches/host-integration.patch\"\nif git -C \"$TARGET\" rev-parse --git-dir >/dev/null 2>&1; then\n  if git apply --check \"$PATCH\" 2>/dev/null; then\n    git apply \"$PATCH\"\n    ok \"已打宿主集成补丁\"\n  elif git apply --check --reverse \"$PATCH\" 2>/dev/null; then\n    ok \"宿主集成补丁已在，跳过\"\n  else\n    die \"补丁打不上。你的 deepseek-harness 版本可能和本皮肤包不匹配（本包基于 ${BASELINE}），请手工比对 patches/host-integration.patch\"\n  fi\nelse\n  patch -p1 --forward --silent < \"$PATCH\" \\\n    || die \"补丁打不上，请手工比对 patches/host-integration.patch\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/uninstall.sh:36-51](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/uninstall.sh#L36-L51)\n\n拒绝带皮肤备份并覆盖还原\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n# 备份本身带皮肤就说明它记录的是「装过之后」的状态，还原它等于没卸载\n[ -f \"$BACKUP/packages/client/ui-theme/src/skin-version.ts\" ] \\\n  && die \"这份备份里已经含皮肤（$BACKUP），还原它退不回原生。请指定更早的时间戳：ls $ROOT\"\n\nprintf '\\n\\033[1mDeepSeek Harness Skin 卸载\\033[0m\\n'\nsay \"目标仓库：$TARGET\"\nsay \"还原自：$BACKUP\"\n\nrm -rf \"$TARGET/packages/client/ui-theme\"\ncp -R \"$BACKUP/packages/client/ui-theme\" \"$TARGET/packages/client/ui-theme\"\nok \"已还原 ui-theme 包\"\n\nwhile IFS= read -r rel; do\n  [ -f \"$BACKUP/$rel\" ] || continue\n  cp \"$BACKUP/$rel\" \"$TARGET/$rel\"\ndone < \"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)/patched-files.txt\"\n```\n\n</details>\n\n#### 缺口\n\n- 源码本地修改可能被恢复文件覆盖。\n  **影响**：退出需确认备份对应版本。\n  **进一步探讨**：先构造补丁冲突。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 采用退出成本？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n需宿主源码、依赖构建及备份空间，维护随宿主升级。退出按备份恢复并重建，自定义图片仍留本机目录。素材许可应按原站与作者声明另核。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/uninstall.sh:44-57](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/uninstall.sh#L44-L57)\n\n恢复、重建与图片留存\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nrm -rf \"$TARGET/packages/client/ui-theme\"\ncp -R \"$BACKUP/packages/client/ui-theme\" \"$TARGET/packages/client/ui-theme\"\nok \"已还原 ui-theme 包\"\n\nwhile IFS= read -r rel; do\n  [ -f \"$BACKUP/$rel\" ] || continue\n  cp \"$BACKUP/$rel\" \"$TARGET/$rel\"\ndone < \"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)/patched-files.txt\"\nok \"已还原宿主集成补丁涉及的 8 个文件\"\n\nprintf '\\n\\033[1m接下来手动跑这两条\\033[0m\\n'\nsay \"cd $TARGET\"\nsay \"pnpm install && pnpm run build\"\nprintf '\\n本机上传过的自定义背景图仍留在 ~/.dsh/skins/，不用可以自行删除。\\n\\n'\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:14-16](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/README.md#L14-L16)\n\n第三方壁纸归属\n\n```text\n[快速开始](#快速开始) · [长这样](#长这样) · [怎么选](#怎么选) · [English](README.en.md)\n\n本仓库基于 HeiGeAi 的皮肤系统改写，与 DeepSeek 官方无隶属关系。壁纸来自 [哲风壁纸](https://haowallpaper.com)，版权归原站及作者。\n```\n\n#### 缺口\n\n- 壁纸服务和版本兼容未实测。\n  **影响**：部署比单一 bundle 更重。\n  **进一步探讨**：固定宿主及原文件摘要。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 怎样验证价值？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n同尺寸对比默认、静态和动态主题，测阅读、键盘和内存，卸载后对账原文件。若补丁失败未恢复或关键控件遮挡则不适合当前宿主。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/install.sh:65-87](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/install.sh#L65-L87)\n\n宿主补丁边界\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n# 3. 打宿主集成补丁（背景层、标题栏挂钩、消息气泡、皮肤 CSS 入口）\ncd \"$TARGET\"\nPATCH=\"$HERE/patches/host-integration.patch\"\nif git -C \"$TARGET\" rev-parse --git-dir >/dev/null 2>&1; then\n  if git apply --check \"$PATCH\" 2>/dev/null; then\n    git apply \"$PATCH\"\n    ok \"已打宿主集成补丁\"\n  elif git apply --check --reverse \"$PATCH\" 2>/dev/null; then\n    ok \"宿主集成补丁已在，跳过\"\n  else\n    die \"补丁打不上。你的 deepseek-harness 版本可能和本皮肤包不匹配（本包基于 ${BASELINE}），请手工比对 patches/host-integration.patch\"\n  fi\nelse\n  patch -p1 --forward --silent < \"$PATCH\" \\\n    || die \"补丁打不上，请手工比对 patches/host-integration.patch\"\n  ok \"已打宿主集成补丁\"\nfi\n\nprintf '\\n\\033[1m接下来手动跑这三条\\033[0m\\n'\nsay \"cd $TARGET\"\nsay \"pnpm install\"\nsay \"pnpm run build\"\nsay \"pnpm dsh web\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/uninstall.sh:44-57](https://github.com/XieRW/dsh-beauty-skins/blob/28e4e38e99c8f8636f3d220891816a0899a93084/scripts/uninstall.sh#L44-L57)\n\n退出对照路径\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nrm -rf \"$TARGET/packages/client/ui-theme\"\ncp -R \"$BACKUP/packages/client/ui-theme\" \"$TARGET/packages/client/ui-theme\"\nok \"已还原 ui-theme 包\"\n\nwhile IFS= read -r rel; do\n  [ -f \"$BACKUP/$rel\" ] || continue\n  cp \"$BACKUP/$rel\" \"$TARGET/$rel\"\ndone < \"$(cd \"$(dirname \"${BASH_SOURCE[0]}\")\" && pwd)/patched-files.txt\"\nok \"已还原宿主集成补丁涉及的 8 个文件\"\n\nprintf '\\n\\033[1m接下来手动跑这两条\\033[0m\\n'\nsay \"cd $TARGET\"\nsay \"pnpm install && pnpm run build\"\nprintf '\\n本机上传过的自定义背景图仍留在 ~/.dsh/skins/，不用可以自行删除。\\n\\n'\n```\n\n</details>\n\n#### 缺口\n\n- 暂无浏览器测试。\n  **影响**：可量化外观收益和维护负担。\n  **进一步探讨**：保留文件摘要与任务时间。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：8c4efacbe7a539c9b73c63292e913717a7edb26cc45527e9920af6c4cbbf0fb8。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 9 | 316 | — | — | 4683 |\n| .mjs | source | 2 | 277 | 179 | 73 | — |\n| .ts | source | 26 | 4121 | 2340 | 1495 | — |\n| .tsx | source | 1 | 394 | 310 | 60 | — |\n| .tsx | test | 2 | 555 | 461 | 41 | — |\n| .ts | test | 17 | 3277 | 2590 | 392 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 内置主题。 | 可直接比较 | 保留人工步骤 |\n| DSH Beauty Skins | 集中管理壁纸与配色。 | 源码覆盖和版本冲突带来恢复成本。 |\n\n## 工程亮点\n\n提供备份与恢复脚本。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、scripts/install.sh、scripts/uninstall.sh 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查固定提交的在自选壁纸下维持输入和阅读可用。未执行目标代码或实际宿主验证。\n- 下一步：保留文件摘要与任务时间。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-06/xierw--dsh-beauty-skins/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"XieRW/dsh-beauty-skins\",\n  \"revision\": \"28e4e38e99c8f8636f3d220891816a0899a93084\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"scripts/install.sh\",\n    \"scripts/uninstall.sh\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"在自选壁纸下维持输入和阅读可用\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"用户得到什么？\",\n        \"answer\": \"用户选择壁纸并获得相应配色，可含动态背景。相对默认主题，验收以选图、对比度和原生操作可达为准。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 5,\n            \"line_end\": 16,\n            \"observation\": \"作者描述壁纸、配色及素材归属\",\n            \"kind\": \"author_claim\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"图像喜好和可读性不同。\",\n            \"impact\": \"提供个性化外观。\",\n            \"next_step\": \"检查长文和窄屏。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"安装机制？\",\n        \"answer\": \"脚本先备份 ui-theme 和指定宿主文件，再覆盖主题包并打宿主集成补丁，要求重新安装依赖和构建。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"scripts/install.sh\",\n            \"line_start\": 36,\n            \"line_end\": 63,\n            \"observation\": \"备份和覆盖\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"scripts/install.sh\",\n            \"line_start\": 65,\n            \"line_end\": 87,\n            \"observation\": \"打补丁与构建提示\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"部分失败可能发生在覆盖后。\",\n            \"impact\": \"适配依赖源码布局。\",\n            \"next_step\": \"在测试 checkout 记录全过程差异。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"主要限制？\",\n        \"answer\": \"补丁冲突会报错，且动作发生在先覆盖后打补丁。恢复需要未带皮肤的较早备份，不能用任意最新备份。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"scripts/install.sh\",\n            \"line_start\": 61,\n            \"line_end\": 79,\n            \"observation\": \"覆盖后检查补丁\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"scripts/uninstall.sh\",\n            \"line_start\": 36,\n            \"line_end\": 51,\n            \"observation\": \"拒绝带皮肤备份并覆盖还原\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"源码本地修改可能被恢复文件覆盖。\",\n            \"impact\": \"退出需确认备份对应版本。\",\n            \"next_step\": \"先构造补丁冲突。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"采用退出成本？\",\n        \"answer\": \"需宿主源码、依赖构建及备份空间，维护随宿主升级。退出按备份恢复并重建，自定义图片仍留本机目录。素材许可应按原站与作者声明另核。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"scripts/uninstall.sh\",\n            \"line_start\": 44,\n            \"line_end\": 57,\n            \"observation\": \"恢复、重建与图片留存\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 14,\n            \"line_end\": 16,\n            \"observation\": \"第三方壁纸归属\",\n            \"kind\": \"author_claim\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"壁纸服务和版本兼容未实测。\",\n            \"impact\": \"部署比单一 bundle 更重。\",\n            \"next_step\": \"固定宿主及原文件摘要。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"怎样验证价值？\",\n        \"answer\": \"同尺寸对比默认、静态和动态主题，测阅读、键盘和内存，卸载后对账原文件。若补丁失败未恢复或关键控件遮挡则不适合当前宿主。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"scripts/install.sh\",\n            \"line_start\": 65,\n            \"line_end\": 87,\n            \"observation\": \"宿主补丁边界\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"scripts/uninstall.sh\",\n            \"line_start\": 44,\n            \"line_end\": 57,\n            \"observation\": \"退出对照路径\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"暂无浏览器测试。\",\n            \"impact\": \"可量化外观收益和维护负担。\",\n            \"next_step\": \"保留文件摘要与任务时间。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# DSH 美女系列皮肤 | dsh-beauty-skins\\n\\n**跑 agent 的地方，也可以是你选的样子。**\\n\\n给 DeepSeek Harness 用的**美女系列**皮肤：设置里从 [哲风壁纸](https://haowallpaper.com/homeView?page=1&lbName=%E7%BE%8E%E5%A5%B3&sortType=3&rows=9&wpType=3,4) 拉预览网格，点一张即应用，配色从壁纸提取。支持动态壁纸，也保留自定义选图。\\n\\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\\n![Repo](https://img.shields.io/badge/repo-dsh--beauty--skins-111827)\\n![DeepSeek Harness](https://img.shields.io/badge/DeepSeek%20Harness-0.1.0--rc.7-4D6BFE)\\n![Skins](https://img.shields.io/badge/skins-catalog%20wallpapers-c8447e)\\n[![dsh.so security](https://www.dsh.so/badge/dsh-beauty-skins.svg)](https://www.dsh.so/artifact/dsh-beauty-skins)\\n[![dsh.so install](https://www.dsh.so/badge/install/dsh-beauty-skins.svg)](https://www.dsh.so/artifact/dsh-beauty-skins)\\n\\n[快速开始](#快速开始) · [长这样](#长这样) · [怎么选](#怎么选) · [English](README.en.md)\\n\\n本仓库基于 HeiGeAi 的皮肤系统改写，与 DeepSeek 官方无隶属关系。壁纸来自 [哲风壁纸](https://haowallpaper.com)，版权归原站及作者。\\n\\n![设置里点选美女系列壁纸](docs/screenshot.png)\\n\\n## 长这样\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"docs/skin-1.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 1\\\" />\\n  <img src=\\\"docs/skin-2.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 2\\\" />\\n  <img src=\\\"docs/skin-3.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 3\\\" />\\n  <img src=\\\"docs/skin-4.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 4\\\" />\\n  <img src=\\\"docs/skin-5.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 5\\\" />\\n  <img src=\\\"docs/skin-6.png\\\" width=\\\"32%\\\" alt=\\\"皮肤预览 6\\\" />\\n</p>\\n\\n## 怎么选\\n\\n设置 → 通用设置 → 皮肤。第一行仍是「自定义（选图）」「默认」「美女系列」；下面是壁纸预览网格，点一张即应用。动态壁纸带「动态」角标，生效后在窗口里循环播放。\\n\\n每张壁纸都会走和自定义选图同一套本地取色：解码、采样、压成 WebP 存进 `~/.dsh/skins/`，视频本身不落地，由 Host 代理播放。\\n\\n## 快速开始\\n\\n前置：一份 [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 源码（`0.1.0-rc.7`）、Node.js 22.19+、pnpm。`npx @deepseek-ai/dsh` 装不了，皮肤要跟前端一起构建。\\n\\nWindows PowerShell（本机若禁止脚本，加上 Bypass）：\\n\\n```powershell\\npowershell -ExecutionPolicy Bypass -File scripts/install.ps1 \\\\path\\\\to\\\\deepseek-harness\\ncd \\\\path\\\\to\\\\deepseek-harness\\npnpm install\\npnpm run build\\npnpm dsh web\\n```\\n\\nGit Bash / macOS / Linux：\\n\\n```bash\\nbash scripts/install.sh /path/to/deepseek-harness\\ncd /path/to/deepseek-harness && pnpm install && pnpm run build && pnpm dsh web\\n```\\n\\n浏览器打开 `http://127.0.0.1:3080`，左下角**设置 → 通用设置 → 皮肤**。退回原样：\\n\\n```bash\\nbash scripts/uninstall.sh /path/to/deepseek-harness\\n```\\n\\nWindows：`powershell -ExecutionPolicy Bypass -File scripts/uninstall.ps1 \\\\path\\\\to\\\\deepseek-harness`\\n\\n## 自定义选图\\n\\n点「自定义（选图）」，本地解码、取色、压成 WebP，图只存在本机 `~/.dsh/skins/`。与点选目录壁纸互不影响。\\n\\n## 使用须知\\n\\n- 源码级改动：覆盖 `packages/client/ui-theme` 并打宿主补丁，需要重新 `pnpm run build`。\\n- 基线 DSH `0.1.0-rc.7`。上游改界面结构时补丁可能打不上。\\n- 目录壁纸由 Host 代理 [哲风壁纸](https://haowallpaper.com) 的列表与媒体，浏览器不直连、也不内置肖像。素材权利边界见 [NOTICE.md](NOTICE.md)。\\n\\n## 许可证\\n\\n代码 [MIT License](LICENSE)。本项目与 DeepSeek 官方无隶属关系。原皮肤引擎来自 [HeiGeAi/deepseek-harness-skin](https://github.com/HeiGeAi/deepseek-harness-skin)。\\n\"\n    },\n    {\n      \"path\": \"scripts/install.sh\",\n      \"content\": \"#!/usr/bin/env bash\\n# 把皮肤装进一份 deepseek-harness 源码检出。\\n# 用法：scripts/install.sh /path/to/deepseek-harness\\nset -euo pipefail\\n\\nHERE=\\\"$(cd \\\"$(dirname \\\"${BASH_SOURCE[0]}\\\")/..\\\" && pwd)\\\"\\nTARGET=\\\"${1:-}\\\"\\n# 宿主补丁相对这一版 DSH 源码生成；版本对不上就拒绝，避免装出一半。\\nBASELINE=\\\"0.1.0-rc.7\\\"\\n\\ndie() { printf '\\\\033[31m✗ %s\\\\033[0m\\\\n' \\\"$*\\\" >&2; exit 1; }\\nok()  { printf '\\\\033[32m✓ %s\\\\033[0m\\\\n' \\\"$*\\\"; }\\nsay() { printf '  %s\\\\n' \\\"$*\\\"; }\\n\\n[ -n \\\"$TARGET\\\" ] || die \\\"用法：$0 /path/to/deepseek-harness\\\"\\n[ -d \\\"$TARGET\\\" ] || die \\\"目录不存在：$TARGET\\\"\\nTARGET=\\\"$(cd \\\"$TARGET\\\" && pwd)\\\"\\n\\ngrep -q '\\\"@deepseek-ai/dsh-root\\\"' \\\"$TARGET/package.json\\\" 2>/dev/null \\\\\\n  || die \\\"这不像是 deepseek-harness 源码检出：$TARGET\\\"\\n\\n[ -d \\\"$TARGET/packages/client/ui-theme\\\" ] \\\\\\n  || die \\\"找不到 packages/client/ui-theme，仓库结构对不上\\\"\\n\\nHOST_VER=\\\"$(node -p \\\"JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).version\\\" \\\"$TARGET/package.json\\\")\\\"\\n[ \\\"$HOST_VER\\\" = \\\"$BASELINE\\\" ] \\\\\\n  || die \\\"本包基于 DSH ${BASELINE}，目标是 ${HOST_VER}。请换一份匹配的源码，或更新 patches/host-integration.patch\\\"\\n\\nprintf '\\\\n\\\\033[1mDeepSeek Harness Skin 安装（DSH %s）\\\\033[0m\\\\n' \\\"$BASELINE\\\"\\nsay \\\"目标仓库：$TARGET\\\"\\n\\n# 1. 备份要覆盖的文件，装错了能原样退回。\\n#    已经装过皮肤就跳过，否则备份的是「装过之后」的样子，卸载会退不干净。\\nif [ -f \\\"$TARGET/packages/client/ui-theme/src/skin-version.ts\\\" ]; then\\n  ok \\\"目标已装过皮肤，跳过备份（首次安装的备份仍在 $HOME/.dsh-skin-backups/）\\\"\\nelse\\n  STAMP=\\\"$(date +%Y%m%d-%H%M%S)\\\"\\n  BACKUP=\\\"$HOME/.dsh-skin-backups/$STAMP\\\"\\n  mkdir -p \\\"$BACKUP/packages/client\\\"\\n  cp -R \\\"$TARGET/packages/client/ui-theme\\\" \\\"$BACKUP/packages/client/ui-theme\\\"\\n  while IFS= read -r rel; do\\n    mkdir -p \\\"$BACKUP/$(dirname \\\"$rel\\\")\\\"\\n    cp \\\"$TARGET/$rel\\\" \\\"$BACKUP/$rel\\\"\\n  done < \\\"$HERE/scripts/patched-files.txt\\\"\\n  printf '%s\\\\n' \\\"$TARGET\\\" > \\\"$BACKUP/.target\\\"\\n  ok \\\"已备份到 $BACKUP\\\"\\nfi\\n\\n# 2. 覆盖 ui-theme 包（Windows Git Bash 往往没有 rsync）\\ncopy_theme() {\\n  local src=\\\"$1\\\" dest=\\\"$2\\\"\\n  mkdir -p \\\"$dest\\\"\\n  if command -v rsync >/dev/null 2>&1; then\\n    rsync -a --exclude 'node_modules' --exclude 'dist' --exclude 'lib' \\\"$src/\\\" \\\"$dest/\\\"\\n    return\\n  fi\\n  (cd \\\"$src\\\" && tar -cf - --exclude=node_modules --exclude=dist --exclude=lib .) \\\\\\n    | (cd \\\"$dest\\\" && tar -xf -)\\n}\\n\\ncopy_theme \\\"$HERE/tree/packages/client/ui-theme\\\" \\\"$TARGET/packages/client/ui-theme\\\"\\nnode \\\"$HERE/scripts/pin-theme-version.mjs\\\" \\\"$TARGET/packages/client/ui-theme/package.json\\\" \\\"$HOST_VER\\\"\\nok \\\"已写入 ui-theme 皮肤包（壁纸目录 + 自定义皮肤 + 更新检查）\\\"\\n\\n# 3. 打宿主集成补丁（背景层、标题栏挂钩、消息气泡、皮肤 CSS 入口）\\ncd \\\"$TARGET\\\"\\nPATCH=\\\"$HERE/patches/host-integration.patch\\\"\\nif git -C \\\"$TARGET\\\" rev-parse --git-dir >/dev/null 2>&1; then\\n  if git apply --check \\\"$PATCH\\\" 2>/dev/null; then\\n    git apply \\\"$PATCH\\\"\\n    ok \\\"已打宿主集成补丁\\\"\\n  elif git apply --check --reverse \\\"$PATCH\\\" 2>/dev/null; then\\n    ok \\\"宿主集成补丁已在，跳过\\\"\\n  else\\n    die \\\"补丁打不上。你的 deepseek-harness 版本可能和本皮肤包不匹配（本包基于 ${BASELINE}），请手工比对 patches/host-integration.patch\\\"\\n  fi\\nelse\\n  patch -p1 --forward --silent < \\\"$PATCH\\\" \\\\\\n    || die \\\"补丁打不上，请手工比对 patches/host-integration.patch\\\"\\n  ok \\\"已打宿主集成补丁\\\"\\nfi\\n\\nprintf '\\\\n\\\\033[1m接下来手动跑这三条\\\\033[0m\\\\n'\\nsay \\\"cd $TARGET\\\"\\nsay \\\"pnpm install\\\"\\nsay \\\"pnpm run build\\\"\\nsay \\\"pnpm dsh web\\\"\\nprintf '\\\\n浏览器打开 http://127.0.0.1:3080 ，左下角「设置」→「皮肤」就能换。\\\\n'\\nprintf '想退回原样：scripts/uninstall.sh %s\\\\n\\\\n' \\\"$TARGET\\\"\\n\"\n    },\n    {\n      \"path\": \"scripts/uninstall.sh\",\n      \"content\": \"#!/usr/bin/env bash\\n# 把 deepseek-harness 退回安装皮肤之前的样子。\\n# 用法：scripts/uninstall.sh /path/to/deepseek-harness [备份时间戳]\\nset -euo pipefail\\n\\nTARGET=\\\"${1:-}\\\"\\nSTAMP=\\\"${2:-}\\\"\\n\\ndie() { printf '\\\\033[31m✗ %s\\\\033[0m\\\\n' \\\"$*\\\" >&2; exit 1; }\\nok()  { printf '\\\\033[32m✓ %s\\\\033[0m\\\\n' \\\"$*\\\"; }\\nsay() { printf '  %s\\\\n' \\\"$*\\\"; }\\n\\n[ -n \\\"$TARGET\\\" ] || die \\\"用法：$0 /path/to/deepseek-harness [备份时间戳]\\\"\\n[ -d \\\"$TARGET\\\" ] || die \\\"目录不存在：$TARGET\\\"\\nTARGET=\\\"$(cd \\\"$TARGET\\\" && pwd)\\\"\\n\\nROOT=\\\"$HOME/.dsh-skin-backups\\\"\\n[ -d \\\"$ROOT\\\" ] || die \\\"没有找到任何备份（$ROOT 不存在）\\\"\\n\\nif [ -z \\\"$STAMP\\\" ]; then\\n  # 取最近一次「针对这个目标」的备份；没有匹配记录时退回到最新一份\\n  for candidate in $(ls -1 \\\"$ROOT\\\" | sort -r); do\\n    if [ -f \\\"$ROOT/$candidate/.target\\\" ] && [ \\\"$(cat \\\"$ROOT/$candidate/.target\\\")\\\" = \\\"$TARGET\\\" ]; then\\n      STAMP=\\\"$candidate\\\"; break\\n    fi\\n  done\\n  [ -n \\\"$STAMP\\\" ] && say \\\"匹配到该目标的备份：$STAMP\\\"\\nfi\\nif [ -z \\\"$STAMP\\\" ]; then\\n  STAMP=\\\"$(ls -1 \\\"$ROOT\\\" | sort | tail -1)\\\"\\n  [ -n \\\"$STAMP\\\" ] || die \\\"$ROOT 里没有备份\\\"\\nfi\\nBACKUP=\\\"$ROOT/$STAMP\\\"\\n[ -d \\\"$BACKUP\\\" ] || die \\\"备份不存在：$BACKUP\\\"\\n\\n# 备份本身带皮肤就说明它记录的是「装过之后」的状态，还原它等于没卸载\\n[ -f \\\"$BACKUP/packages/client/ui-theme/src/skin-version.ts\\\" ] \\\\\\n  && die \\\"这份备份里已经含皮肤（$BACKUP），还原它退不回原生。请指定更早的时间戳：ls $ROOT\\\"\\n\\nprintf '\\\\n\\\\033[1mDeepSeek Harness Skin 卸载\\\\033[0m\\\\n'\\nsay \\\"目标仓库：$TARGET\\\"\\nsay \\\"还原自：$BACKUP\\\"\\n\\nrm -rf \\\"$TARGET/packages/client/ui-theme\\\"\\ncp -R \\\"$BACKUP/packages/client/ui-theme\\\" \\\"$TARGET/packages/client/ui-theme\\\"\\nok \\\"已还原 ui-theme 包\\\"\\n\\nwhile IFS= read -r rel; do\\n  [ -f \\\"$BACKUP/$rel\\\" ] || continue\\n  cp \\\"$BACKUP/$rel\\\" \\\"$TARGET/$rel\\\"\\ndone < \\\"$(cd \\\"$(dirname \\\"${BASH_SOURCE[0]}\\\")\\\" && pwd)/patched-files.txt\\\"\\nok \\\"已还原宿主集成补丁涉及的 8 个文件\\\"\\n\\nprintf '\\\\n\\\\033[1m接下来手动跑这两条\\\\033[0m\\\\n'\\nsay \\\"cd $TARGET\\\"\\nsay \\\"pnpm install && pnpm run build\\\"\\nprintf '\\\\n本机上传过的自定义背景图仍留在 ~/.dsh/skins/，不用可以自行删除。\\\\n\\\\n'\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"28e4e38e99c8f8636f3d220891816a0899a93084\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"8c4efacbe7a539c9b73c63292e913717a7edb26cc45527e9920af6c4cbbf0fb8\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 9,\n        \"lines\": 316,\n        \"words\": 4683\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 277,\n        \"code\": 179,\n        \"comments\": 73,\n        \"blank\": 28\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 26,\n        \"lines\": 4121,\n        \"code\": 2340,\n        \"comments\": 1495,\n        \"blank\": 298\n      },\n      {\n        \"extension\": \".tsx\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 394,\n        \"code\": 310,\n        \"comments\": 60,\n        \"blank\": 24\n      },\n      {\n        \"extension\": \".tsx\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 555,\n        \"code\": 461,\n        \"comments\": 41,\n        \"blank\": 54\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 17,\n        \"lines\": 3277,\n        \"code\": 2590,\n        \"comments\": 392,\n        \"blank\": 300\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"tree/packages/client/ui-theme/src/css-modules.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"tree/packages/client/ui-theme/src/client/index.ts\",\n          \"line\": 475,\n          \"api\": \"ctx.on\",\n          \"name\": \"theme/change\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"tree/packages/client/ui-theme/tests/theme.client.spec.ts\",\n          \"line\": 41,\n          \"api\": \"ctx.on\",\n          \"name\": \"theme/change\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"tree/packages/client/ui-theme/src/update-check.ts\",\n          \"line\": 147,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        }\n      ],\n      \"ui\": [\n        {\n          \"path\": \"tree/packages/client/ui-theme/src/client/index.ts\",\n          \"line\": 507,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"settings.general.item\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"theme/change\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 1,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"settings.general.item\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "c253d573f3e352c4afe9c4821e217bc75d6c7c76fc78e7b5a9c7e849364a15de"
+        }
+    },
+    "unavailable_artifacts": []
+}

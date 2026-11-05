@@ -1,0 +1,62 @@
+{
+    "repository": "jsdvjx/dsh-strata",
+    "repository_id": 1338599825,
+    "captured_at": "2026-11-05T05:08:46.024Z",
+    "window_start": "2026-10-06T05:08:46.024Z",
+    "stars": 95,
+    "pushed_at": "2026-09-11T07:46:08Z",
+    "issues": {
+        "open": 1,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajsdvjx%2Fdsh-strata%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B808:3DC06:26EB46:29E684:6AEC0FB9 and timestamp 2026-11-05 05:10:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajsdvjx%2Fdsh-strata%20is%3Aissue%20created%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B84E:3D9FE8:244063:273C56:6AEC0FBA and timestamp 2026-11-05 05:10:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajsdvjx%2Fdsh-strata%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B89C:3B2A46:24C8EF:27BE23:6AEC0FBB and timestamp 2026-11-05 05:10:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ajsdvjx%2Fdsh-strata%20is%3Aissue%20updated%3A2026-10-06T05%3A08%3A46.024Z..2026-11-05T05%3A08%3A46.024Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B8C0:3A2B8A:25CD47:28C97F:6AEC0FBB and timestamp 2026-11-05 05:10:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4d8be0adc3deff65514eb0a86f72fca308ec336",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-strata",
+        "captured_at": "2026-11-02T21:44:22.915Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 1275,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-strata",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T01:23:17.799Z",
+            "captured_at": "2026-11-02T21:44:22.915Z",
+            "source_url": "https://registry.npmjs.org/dsh-strata",
+            "error": null,
+            "latest_version": "0.12.1",
+            "latest_published_at": "2026-09-11T07:49:01.824Z",
+            "latest_error": null
+        }
+    }
+}
