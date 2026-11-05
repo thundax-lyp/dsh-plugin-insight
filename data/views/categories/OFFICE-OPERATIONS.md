@@ -23,6 +23,7 @@
 | [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
+| [dsh-automation](#plugin-1333150357-root) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | [Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 单个只读周期任务先验收。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
@@ -51,6 +52,7 @@
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
+| [公文全流程处理专家](#plugin-1306637593-root) | 在 DSH 中调用公文检查、修复与修订工具 | [Q04](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q04) 用虚构文档验证原件、取消与渲染。 |
 | [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
 
@@ -229,6 +231,22 @@
 > **建议**：[Q05](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q05) 提出逐调用权限和目标预览及结果回查的未验证设想；元数据不可靠或负担大于收益时否定。
 
 [查看完整分析](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333150357-root"></a>
+
+## [dsh-automation](../../plugins/titanwings--dsh-automation/INSIGHT.md)
+
+[![GitHub ★ 103](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/titanwings/dsh-automation)
+
+> **用途**：用户需定期生成代码检查或工作区报告。
+
+> **亮点**：[Q01](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q01) 把任务和权限完整保存后独立派发。
+
+> **思考**：[Q02](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q02) 中断标失败不能说明外部效果不存在。
+
+> **建议**：[Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 对照人工重复任务的漏跑与报告质量。
+
+[查看完整分析](../../plugins/titanwings--dsh-automation/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418842530-root"></a>
 
@@ -677,6 +695,22 @@
 > **建议**：假设审批卡展示导出结构差异及抽样渲染可减少格式损失漏检；以固定文件集和审阅人比较漏检、误报及时间，若收益不足则否定。[Q05](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1306637593-root"></a>
+
+## [公文全流程处理专家](../../plugins/linhut--gongwen-skill/INSIGHT.md)
+
+[![GitHub ★ 99](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=99&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/linhut/gongwen-skill) [![npm 30d 3,414](https://img.shields.io/static/v1?label=npm+30d&message=3%2C414&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/gongwen-skill) [![最新发布 2026-10-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/gongwen-skill)
+
+> **用途**：文秘人员反复处理公文格式与修订。
+
+> **亮点**：[Q01](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q01) 把格式、模板和修订处理集中到 Agent 入口。
+
+> **思考**：[Q03](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q03) 直接子进程权限和最终渲染需核对。
+
+> **建议**：[Q05](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q05) 能减少固定排版工时而保持文本可核查。
+
+[查看完整分析](../../plugins/linhut--gongwen-skill/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1294942686-root"></a>
 

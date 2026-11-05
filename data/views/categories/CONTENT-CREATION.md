@@ -17,6 +17,7 @@
 | [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
+| [DeepBlend Studio Bundle](#plugin-1368481604-packages-deepblend-bundle) | 组合 DSH 中的 Blender runtime、业务 host 与工作台。 | [Q03](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q03) 固定 DSH、Node、Blender 和视频工具版本，使用独立工作目录与最小场景。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
@@ -25,6 +26,7 @@
 | [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
 | [DSH OpenMAIC](#plugin-1333147218-root) | 将完整课堂生成与会话内教学卡片接入 DSH | [Q04](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q04) 先试无敏卡片，再用模拟服务验证课堂提交。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
+| [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
@@ -154,6 +156,22 @@
 
 [查看完整分析](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1368481604-packages-deepblend-bundle"></a>
+
+## [DeepBlend Studio Bundle](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md)
+
+[![GitHub ★ 101](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=101&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/pearjelly/deep-blend) [![npm 30d 6,813](https://img.shields.io/static/v1?label=npm+30d&message=6%2C813&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepblend/dsh-blender-bundle) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@deepblend/dsh-blender-bundle)
+
+> **用途**：需要 Agent 辅助三维创作的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q01) 想在 DSH 进行场景编辑与渲染的用户通过 bundle 一次挂载 runtime、host 和 UI。lib 入口转出 UI，patch 明确将模型工具留给 agent preset，避免进程级组合给所有会话注册。相比手配多个插件，bundle 提供统一分发与配置。
+
+> **思考**：[Q02](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q02) bundle 组合的是直接依赖，审批与任务恢复需核查 host 及实际工具调用。host 渲染门说明批准属于 harness 层，由调用方重发带 grant；patch 的配置覆盖按作者说明为整体替换，因此运营配置遗漏可能改变默认。不能只因配置里有阈值就认定所有入口强制审批。
+
+> **建议**：[Q04](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q04) 对照当前 host 审批和任务流程，试验用任务 ID、执行代和落盘帧读回确认取消。延迟结果及取消后恢复对照重复帧和误完成，若没有改善则撤回。
+
+[查看完整分析](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1335095892-root"></a>
 
 ## [DeepSeek Design 分发与贡献入口](../../plugins/devin-axis--deepseek-design/INSIGHT.md)
@@ -281,6 +299,22 @@
 > **建议**：[Q04](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q04) 可把brief中的可观察验收项绑定最终图像/节点，经独立审阅与当前digest自审做同预算对照，计误发布和人工修改；这项收益未验证。
 
 [查看完整分析](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1341430062-root"></a>
+
+## [DSH Raw HTML](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md)
+
+[![GitHub ★ 94](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=94&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/plolpl789/dsh-raw-html)
+
+> **用途**：用户希望会话中的 HTML 成为可阅读卡片。
+
+> **亮点**：[Q01](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q01) 整合 HTML 图表公式与风格约束。
+
+> **思考**：[Q03](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q03) 可信模式及宿主 bundle 修改要求独立检验。
+
+> **建议**：[Q05](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q05) 可减少外部预览切换。
+
+[查看完整分析](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1427791087-root"></a>
 

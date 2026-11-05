@@ -25,10 +25,12 @@
 | [Awesome DeepSeek Harness Plugins](#plugin-1333844474-root) | 提供 DeepSeek Harness 社区插件目录、结构化投稿审核与双语目录生成。 | [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 先选一个公开且已定位 manifest 的仓库，从干净分支准备单条 JSON，用本地文件或隔离服务检查投影。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1336739291-root) | 将 marketplace 索引转为可浏览、可校验的双语插件目录 | [Q04](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 用固定提交作发现源，并对实际包独立验证。 |
 | [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
+| [Awesome DSH Plugin](#plugin-1332582761-root) | 以双语元数据整理跨场景插件候选 | [Q04](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md#research-q04) 固定提交抽样核对来源和双语。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 整理 DSH 插件候选并生成可读目录与市场索引。 | 先发现，再固定候选版本、独立核验权限与宿主兼容；不要把目录收录当安装背书。 |
 | [Awesome DSH Plugin 目录](#plugin-1334020733-root) | 从双语 README 生成 DSH 插件分类站点、订阅源与机器可读索引。 | [Q04](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q04) 用作候选列表，安装前重新确认目标仓库与包。 |
 | [Awesome Gaussian Skills](#plugin-1223099228-root) | 提供 3D Gaussian Splatting 方法资料、Agent Skill 与 MCP 渲染服务。 | [Q04](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q04) 先隔离网络并用非敏感场景核对真实渲染；[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 边界不满足时停止。 |
 | [BigA](#plugin-1250326123-root) | 将 A 股观察池与市场摘要 Skill 及其 Python 扫描脚本装入 DeepSeek Harness。 | [Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 仅将离线合成样本用于核格式和口径，异常回人工资料核查。 |
+| [causal-memory](#plugin-1312924592-root) | 本地记忆引擎存储事实与决策结果关系，并以 DSH 工具提供召回。 | [Q03](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q03) 独立库小样本对照后再扩展。 |
 | [causal-memory DSH plugin](#plugin-1312924592-dsh-plugin) | 通过 stdio MCP 将 causal-memory 工具和服务接入 DSH。 | [Q03](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q03) 用临时数据库。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
 | [clawock](#plugin-1240554500-root) | 为外部 AI Agent 提供投资研究的证据组织、决策校验和结果复盘流程。 | [Q03](../../plugins/kcnyu--clawock/INSIGHT.md#research-q03) 仅用离线模拟材料测试可审计交接，输入和回执对不上即退回人工复核。 |
@@ -88,6 +90,7 @@
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
 | [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
+| [Envoy](#plugin-1262941478-integrations-dsh-envoy-dsh) | DSH 子包注册 Envoy Skill、MCP 和链接读取提示，输出可定位资料。 | [Q03](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q03) 固定链接同预算人工对照。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
 | [Free Search](#plugin-1334384058-root) | 为 DSH 提供多来源网页搜索、回退和研究证据整理工具。 | 先备份并隔离 profile，用非敏感查询测试允许的来源；核对 provider、实际费用和出处，停用前恢复原配置。 |
 | [GeoChat 画布](#plugin-959005755-plugins-deepseek-harness) | 让 DSH 模型操作会话右侧的 GeoGebra 画布 | [Q04](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q04) 使用固定 Web 版本对照双会话与断流。 |
@@ -114,6 +117,7 @@
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | [Q05](../../plugins/liustack--modsearch/INSIGHT.md#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。 |
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
 | [Oh My Knowledge](#plugin-1190633989-root) | 面向 AI 工作记录的知识提取、维护和载体评测工具集。 | [Q04](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q04) 先用可信非敏感材料复核来源和模型目标；无法验证来源或执行环境不可信时停止。 |
+| [Oh-My-DSH](#plugin-1333671427-root) | 提供 DSH 插件分类目录、元数据快照与检索站点。 | [Q03](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q03) 先在固定快照查找目标，再到候选固定源核对身份、入口及权限。 |
 | [OpenViking DSH 记忆插件](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DSH 提供 OpenViking 画像、召回、消息采集及记忆工具。 | 以非敏感独立项目核验 peer、召回、短断网及停用后队列；出现串扰或缺失时停止相关进程并回退人工笔记。 |
 | [PatentRadar](#plugin-1230059993-root) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 仅用公开、可回源案例验证一份线索表；不能支持具体特征时回到人工检索。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
@@ -339,6 +343,22 @@
 
 [查看完整分析](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1332582761-root"></a>
+
+## [Awesome DSH Plugin](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 104](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Alex-Yanggg/awesome-DSH-plugin)
+
+> **用途**：用户按用途寻找 DSH 插件。
+
+> **亮点**：[Q01](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md#research-q01) 统一双语目录及可复查元数据。
+
+> **思考**：[Q03](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md#research-q03) 收录状态需回到实际包核验。
+
+> **建议**：[Q05](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md#research-q05) 可缩短发现候选时间。
+
+[查看完整分析](../../plugins/alex-yanggg--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333175049-root"></a>
 
 ## [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)
@@ -402,6 +422,22 @@
 > **建议**：[Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 统一可核评分和明确未知标志，再测审阅误读及工时；无改善则保持人工。
 
 [查看完整分析](../../plugins/kobenfang--biga/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1312924592-root"></a>
+
+## [causal-memory](../../plugins/jingxuanc--causal-memory/INSIGHT.md)
+
+[![GitHub ★ 104](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/JingxuanC/causal-memory)
+
+> **用途**：代理跨会话反复处理相同决策，需要查到旧结果。
+
+> **亮点**：[Q01](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q01) 让决策记录独立于会话压缩并提供查询。
+
+> **思考**：[Q02](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q02) 超时不代表服务端取消，默认同库及能力降级要核对。
+
+> **建议**：[Q03](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q03) 对照手写表测实际召回与误归因。
+
+[查看完整分析](../../plugins/jingxuanc--causal-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1312924592-dsh-plugin"></a>
 
@@ -1347,6 +1383,22 @@
 
 [查看完整分析](../../plugins/ecnu--eduwork--packages-dsh-literature/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1262941478-integrations-dsh-envoy-dsh"></a>
+
+## [Envoy](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md)
+
+[![GitHub ★ 96](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=96&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/regrevia/Envoy) [![npm 30d 2,394](https://img.shields.io/static/v1?label=npm+30d&message=2%2C394&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/envoy-dsh) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/envoy-dsh)
+
+> **用途**：用户把文章、PDF、音视频链接交给 DSH 整理。
+
+> **亮点**：[Q01](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q01) 给公开链接加读取路由和可引用材料路径。
+
+> **思考**：[Q02](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q02) 需外部 runtime，探索基准不足以证明事实正确。
+
+> **建议**：[Q03](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q03) 相同时限比较材料覆盖和事实错误。
+
+[查看完整分析](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1085086903-root"></a>
 
 ## [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md)
@@ -1762,6 +1814,22 @@
 > **建议**：[Q05](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q05) 建议关联载体实际使用与独立结果，以对照验证价值。
 
 [查看完整分析](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333671427-root"></a>
+
+## [Oh-My-DSH](../../plugins/like-study1--oh-my-dsh/INSIGHT.md)
+
+[![GitHub ★ 100](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=100&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/like-study1/Oh-My-DSH)
+
+> **用途**：需要查找与初筛扩展的用户。
+
+> **亮点**：[Q01](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q01) 想寻找 DSH 扩展的用户可浏览分类目录和检索站点。Python 同步流程从 GitHub 查询获取元数据，结合 curated 覆盖项并排序，生成 Markdown、索引和站点。固定树表现为目录与生成器，其价值是聚合发现入口。
+
+> **思考**：[Q02](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q02) 同步按 stars 排序取搜索页，类型和维护信号来自元数据与覆盖配置，不能证明安装或安全。README 声明监测 2000 仓库和收录 2133 条，仅当作固定快照作者描述。生成器有手工和覆盖路径，完整性还依赖搜索上限、去重和来源。
+
+> **建议**：[Q04](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q04) 在星数和主题信号后增加固定 manifest 与实际入口的分类核验，对照客户端、目录、插件和子组件保留集。比较误分类及审核时间，若没有改善则调整。
+
+[查看完整分析](../../plugins/like-study1--oh-my-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 
