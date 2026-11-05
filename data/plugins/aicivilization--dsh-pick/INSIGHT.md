@@ -1,18 +1,18 @@
 # dsh-pick
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[bbae391](https://github.com/AIcivilization/dsh-pick/tree/bbae391f560ccbf8438805d513abaf9142bc31d7)
+源码版本：[925db29](https://github.com/AIcivilization/dsh-pick/tree/925db2950d58c2b8662e0f6fa14f8950a0739212)
 
 <!-- BEGIN META -->
-[![npm 30d 1,532](https://img.shields.io/static/v1?label=npm+30d&message=1%2C532&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick)
+[![npm 30d 2,415](https://img.shields.io/static/v1?label=npm+30d&message=2%2C415&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pick)
 <!-- END META -->
 
-> **功能**：从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。
+> **功能**：按需求检索 DSH 插件候选，比较 npm 与 GitHub 指标，并提供面板、对话工具和安装入口。
 
-> **亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
+> **亮点**：它把需求词项搜索、去噪统计和四个对话工具接到同一目录，减少信息分散，贡献是信息组织而非质量保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-> **主要限制**：所谓健康分仍由下载与发版代理指标构成，频繁发版会同时影响去噪基线和节奏加分；被排除样本不足又回退原始中位数，不支持“最值得安装”的因果结论。[Q03](#research-q03)
+> **主要限制**：剔除发布日不能识别全部自动流量，健康度还为缺指标填默认值；高分不证明真实用户、可靠性或任务适配。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 去噪选型比简单热度榜多了什么？](#detail-section-11)
-  - [Q02 · 目录如何更新并进入统一引擎？](#detail-section-12)
-  - [Q03 · 健康分能否代表真实使用和维护质量？](#detail-section-13)
-  - [Q04 · 如何使用而不被排名代替判断？](#detail-section-14)
-  - [Q05 · 统计与功能证据分维度能否减少误推荐？](#detail-section-15)
+  - [Q01 · 选插件顾问到底比下载榜多做了什么？](#detail-section-11)
+  - [Q02 · 目录、指标和AI工具怎样把需求变成候选？](#detail-section-12)
+  - [Q03 · 去噪基线与健康度能否代表真实使用和可采用性？](#detail-section-13)
+  - [Q04 · 数据刷新和安装链有哪些条件与副作用？](#detail-section-14)
+  - [Q05 · 如何使用这些指标，可推导什么更可靠的选择流程？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向需要缩小插件候选集的DSH用户；合格结果是带统计口径和兼容提醒的候选，不是以下载量替代源码或真实任务评估。
+> **用途**：需要在多个DSH候选间比较的用户，可按需求查目录与统计，再独立核查任务适配。
 
-npm官网、市场和人工README比较能完成选型，去噪与统一候选对照减少搬运，但代码安全与功能适配仍需另查。
+参照手动浏览npm/GitHub数据，本组件集中统计、候选和对话入口；不代替固定版本业务验证。
 
 <a id="detail-section-3"></a>
 
@@ -52,64 +52,71 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 搜索与排行 | 缩小候选集合 | 目录覆盖和日期限制 |
-| 去噪统计 | 比较下载基线、增长和节奏 | 不等于用户数或质量 |
-| AI工具/面板对照 | 带口径传递候选数字 | 仍需场景及源码判断 |
-| 安装委托 | 经确认交给宿主安装 | 目录入选不是安全许可 |
+| pick_search | 按需求查目录候选 | 词项匹配与下载加权，不验证任务 |
+| pick_stats | 查询包的详细指标 | 每次最多8个合法包名，目录缺指标时实时查npm |
+| pick_compare | 对照候选的多个指标 | 2~6个合法包名，统计最好不等于任务最好 |
+| pick_rank | 查目录或来源榜单 | 截止时间与指标覆盖受目录限制 |
+| 面板发到对话 | 携带需求与数字请求分析 | 不覆盖非空草稿，提交非最终答复保证 |
+| 目录刷新 | 获取较新数据 | 有限格式校验与旧目录回退 |
+| 安装和装卸管理 | 调用宿主包管理 | 显式操作有副作用，不固定研究提交 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Node>=20及可读目录 | 必需 | 引擎和内置数据 | 旧目录仍可作为有日期候选 |
-| npm/GitHub镜像 | 更新与实时统计需 | 获取下载与发布 | 失败回退内置/缓存，非新鲜保证 |
-| DSH插件管理器 | 安装才需 | 安装确认后委托宿主 | 不支持时返回终端命令 |
-| dshmarket | 兼容提示可选 | 查询宿主兼容 | 未装时缺该提醒 |
+| Node>=20与DSH web客户端、webServer | 面板必需 | 提供目录与嵌入页面 | 无面板路由 |
+| tools及模型账号 | 对话查询条件 | 注册四工具并由Agent分析 | 工具不可用或模型费用未知 |
+| npm、CDN与GitHub网络 | 刷新条件 | 指标与远端目录 | 继续旧目录，须看截止时间 |
+| pluginManager | 安装管理条件 | 装卸候选或更新自身 | 提供终端命令，不等于已安装 |
+| dshmarket兼容接口 | 可选 | 前端兼容提示 | 缺失时不显示该判断 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 用户说明任务并查候选 | 核对目录日期和统计口径 |
-| 2 | 比较2–6项并阅读源码/依赖 | 不把健康分当适用结论 |
-| 3 | 明确确认后由宿主安装 | 失败读管理器错误，必要时重启 |
+| 读取 | 用户核对目录来源与截止日 | 时间和缺失指标可辨 |
+| 比较 | 用户按具体任务搜索并核数据 | 不把健康度当质量 |
+| 核查 | 用户读候选版本、权限和退出 | 满足任务后才另行决定安装 |
+| 恢复 | 用户停用或卸载本组件 | 已装候选需独立管理，不自动撤销 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 插件与目录缓存，金额未知 | 学习指标和候选核查 | 不安装候选也可读数据 |
-| 持续使用 | 每6小时更新和npm请求 | 复核功能、权限、兼容 | 下载不能替代人工研究 |
-| 失败恢复 | 网络重试和目录回退 | 核对数据日期及安装状态 | 缓存可用不代表新数据 |
+| 首次 | 包与目录存储，金额未知 | 配置入口、核目录来源 | 运行兼容未实测 |
+| 持续 | 网络刷新与可选AI调用费用未知 | 解释指标并查任务适配 | 无选对率或节时数据 |
+| 失败恢复 | 重试及旧目录资源未知 | 识别过期、核装卸结果 | 原子写保护完整性不保证数据真实 |
+| 退出 | 已安装候选可能继续占资源 | 分别卸载组件和候选 | 本组件卸载不撤销其他包 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 减少发布峰值影响 | 排除发布日/次日并取中位数 | 估计真实使用量的准确性 |
-| 选型辅助 | 搜索、比较和提醒已接线 | 合格安装选择率或安全性 |
+| 集中比较 | 目录、四工具和面板已接线 | 对具体任务选对率 |
+| 去噪统计 | 排除部分发版日并算中位数 | 剩余流量是否真实用户 |
+| 安装便利 | 目录白名单与管理器调用 | 解析到的版本与实际可用 |
 
-> **思考**：所谓健康分仍由下载与发版代理指标构成，频繁发版会同时影响去噪基线和节奏加分；被排除样本不足又回退原始中位数，不支持“最值得安装”的因果结论。[Q03](#research-q03)
+> **思考**：剔除发布日不能识别全部自动流量，健康度还为缺指标填默认值；高分不证明真实用户、可靠性或任务适配。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对只看周下载或Star，增量在显式的去发布日指标、候选对照和安装前提醒；它改善信息组织，不能据统计指标推出安全、活跃用户或任务适用性。[Q01](#research-q01)
+> **亮点**：它把需求词项搜索、去噪统计和四个对话工具接到同一目录，减少信息分散，贡献是信息组织而非质量保证。[Q01](#research-q01)、[Q02](#research-q02)
 
-引擎复用和更新原子写减少半目录风险，网络失败保留已有数据。validCatalog只检查最低包数与前50项字段，属于形状门槛而非全目录语义验收；移植时应增加数据来源和缺失状态审查。
+[Q04](#research-q04) 原子目录替换和占用重试值得复用；有限格式检查只防部分坏文件，不能称内容真实性校验。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-所谓健康分仍由下载与发版代理指标构成，频繁发版会同时影响去噪基线和节奏加分；被排除样本不足又回退原始中位数，不支持“最值得安装”的因果结论。[Q03](#research-q03)
+剔除发布日不能识别全部自动流量，健康度还为缺指标填默认值；高分不证明真实用户、可靠性或任务适配。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-可把它当候选搜索和数字比较工具试用；先核对日期与兼容，再读目标插件权限和源码。安装前自行确认，不能把健康分当安全或推荐结论。[Q04](#research-q04)
+优先只读使用候选面板，独立检查任务证据与固定版本；不要自动按健康度安装。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +124,18 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 **核查状态**：已检查源码。
 
-贡献为固定源码支持的设计解释，效果未独立验证；未来设计假设尚未实现或验证。
+源码支持候选检索与统计整合；去噪正确性及选对率未知，任务证据层是未验证假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、lib/metrics.js、lib/engine.js、lib/remote.js、plugin/index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/engine.js、lib/metrics.js、lib/remote.js、plugin/index.js、plugin/tools.js、plugin/client.js、web/panel.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查引擎、指标、远程更新和安装委托；不把随包catalog的数值视为已独立验证需求或用户数。
-- 下一步：按固定任务预注册候选验收标准，比较热度、去噪及源码证据三种选择方法的合格率和总核查时间；对频繁发版样本作敏感性分析，未执行。
+- 边界：复核固定版本指标、目录、工具、对话桥和安装链；未执行目标、npm请求或实际候选业务任务，不把作者竞品定位当独立比较。
+- 下一步：固定候选、版本与任务，对照统计排序和加入任务证据后的合格率、误装及人工核查时间。
 
 **分析版本**
 
 - **仓库**：[AIcivilization/dsh-pick](https://github.com/AIcivilization/dsh-pick)
-- **版本号**：0.4.4（[固定提交 bbae391](https://github.com/AIcivilization/dsh-pick/tree/bbae391f560ccbf8438805d513abaf9142bc31d7)）
-- **版本日期**：2026-10-22（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.1（[固定提交 925db29](https://github.com/AIcivilization/dsh-pick/tree/925db2950d58c2b8662e0f6fa14f8950a0739212)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +143,9 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 
 <a id="innovation"></a>
 
-未验证假设是把指标结论与源码/兼容证据分成独立维度，并为基线提供敏感性区间，可减少高热度误推荐；用已知任务盲选比较合格率与核查成本，没有提升则否定。[Q05](#research-q05)
+可将描述性热度与固定版本任务适配、证据覆盖分开，让选择对照实际合格任务；尚未实现和验证。[Q05](#research-q05)
 
-按固定任务预注册候选验收标准，比较热度、去噪及源码证据三种选择方法的合格率和总核查时间；对频繁发版样本作敏感性分析，未执行。
+固定候选、版本与任务，对照统计排序和加入任务证据后的合格率、误装及人工核查时间。
 
 <a id="detail-section-9"></a>
 
@@ -147,88 +154,68 @@ npm官网、市场和人工README比较能完成选型，去噪与统一候选�
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 10 | 2862 | 2262 | 368 | — |
-| .md | source | 1 | 232 | — | — | 2427 |
+| .js | source | 12 | 3482 | 2758 | 467 | — |
+| .md | source | 1 | 251 | — | — | 2869 |
 | .mjs | source | 2 | 147 | 108 | 21 | — |
-| .js | test | 6 | 519 | 451 | 24 | — |
+| .js | test | 7 | 642 | 561 | 45 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+created%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-23T01%3A50%3A41.035Z..2026-10-23T01%3A50%3A41.035Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/AIcivilization/dsh-pick/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z)
 
 
 
-统计日期：2026-10-23。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：AIcivilization/dsh-pick 固定组件如何完成目标任务，贡献在何种边界成立，是否适合可控试用？
+**插件研究总目标**：统计去噪与候选比较是否能支撑具体任务选择，数据与安装边界是什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 去噪选型比简单热度榜多了什么？
+### Q01 · 选插件顾问到底比下载榜多做了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-插件把需求搜索、候选比较、统计口径与安装入口放到一处，省去反复在npm和市场搬运数字。核心统计剔除发布日与次日并取中位数，能削弱部分发版尖峰。这个设计只改变代理指标，不给用户真实任务、权限或可靠性证据；“找到候选”可以成立，“挑对”仍需场景与源码核查。
+面向面对多个DSH候选、需要按需求缩小范围并比较指标的用户。相对手动浏览npm和GitHub，本组件把词典搜索、下载指标、来源榜、已装提示和对话工具集中起来，合格结果是有可追溯数据与限制的候选清单，用户再核查适配及任务能力。README“挑对”比找到更强，但源码没有对候选执行目标业务或验证合格交付；它的贡献是候选信息整理与统计启发式，不是已验证插件质量判断。README对dsh-find-plugin的比较仅作作者定位，本轮未检查另一插件，不作跨组件优劣结论。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/metrics.js:29-53](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/metrics.js#L29-L53)
+**依据 1 · 作者声明**：[README.md:8-14](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/README.md#L8-L14)
 
-去噪是有限发布日排除而非真实用户测量。
-
-<details>
-<summary>查看原文（25行）</summary>
+作者定位与比较声明。
 
 ```text
-/**
- * 日常基线：扣掉发布日影响后的每日中位数
- * 发布日当天 + 后一天很可能是拉取安装产生的虚高，剔除后再取中位数。
- * 中位数本身对尖峰不敏感，再剔一次发布日就更接近真实使用量。
- * @param {number[]} daily 近 30 天每日下载
- * @param {string[]} releaseDates 该窗口内发布过版本的日期（ISO）
- * @param {string} startISO 窗口首日（ISO）
- * @returns {number}
- */
-export function baselineWithStart(daily = [], releaseDates = [], startISO = '') {
-  if (!daily.length) return 0
-  if (!releaseDates.length || !startISO) return median(daily)
+**帮你在 DSH 生态里选对插件。**
 
-  const spikes = new Set()
-  const s = toDay(startISO)
-  for (const d of releaseDates) {
-    const n = toDay(d)
-    if (n >= s && n <= s + daily.length) {
-      spikes.add(n - s)        // 发布当天
-      spikes.add(n - s + 1)    // 发布次日
-    }
-  }
-  const kept = daily.filter((_, i) => !spikes.has(i))
-  return kept.length >= 5 ? median(kept) : median(daily)
-}
+说需求 → 找候选 → 多维比较 → 出结论。下载量只是证据，判断才算数。
+
+> 定位对比：`dsh-find-plugin` 负责「**找到**」（搜 GitHub 仓库，按 star 排）；
+> `dsh-pick` 负责「**挑对**」（算去噪指标，给首选 / 备选 / 不推荐）。
+> 一个 `find_dsh_plugin`，一个 `pick_plugin`。
 ```
 
-</details>
+**依据 2 · 作者声明**：[README.md:65-85](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/README.md#L65-L85)
 
-**依据 2 · 作者声明**：[README.md:66-82](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/README.md#L66-L82)
-
-工具和安装前提醒的作者功能说明。
+面板对话、四工具和安装流程声明。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
+**和对话联动**（这是插件版比独立网页好用的地方）：
 
 - **+AI**：候选卡片、「候选」「结论」「我的监控」的标题上都有。点一下，把这块的需求和关键数字整理成一段话发到当前对话，AI 在对话里结合你的场景分析。只发结论和数字，不发原始数据；输入框里有你没发出的文字时不会覆盖。
 - **在对话里直接问**：插件给 AI 注册了 4 个工具，不开面板也行，直接问「我想装个数据库插件，哪个靠谱？」，AI 会自己查目录、比较。
@@ -246,6 +233,62 @@ export function baselineWithStart(daily = [], releaseDates = [], startISO = '') 
   - ✓ 兼容你的 DSH / ⚠ 和你的 DSH 不兼容（需要 …）：问的是插件市场（dshmarket）的兼容性接口，规则和它安装前的检查一致；没装插件市场就不显示这一项
   - ⚠ 没声明 dsh.bundle：DSH 一定拒绝安装
   - ⚠ tui 客户端插件：装进桌面版 / 网页版可能让 DSH 起不来
+  - ⚠ 你已装同类：功能可能重叠
+
+  装不了的不给「安装」按钮，AI 工具的结果里也带着同样的提醒。
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/engine.js:385-425](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/engine.js#L385-L425)
+
+词项匹配与下载加权的实际搜索。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+export function searchByNeed(catalog, need, { limit = 12, category = null } = {}) {
+  const terms = expandWords(need)
+  if (!terms.length) return []
+
+  const maxWeight = terms.reduce((s, t) => s + t.weight, 0)
+  const scored = []
+  for (const rec of Object.values(catalog.packages || {})) {
+    if (category && rec.cat !== category) continue
+    const hay = [(rec.n || ''), ...(rec.kw || []), rec.d || ''].join(' ').toLowerCase()
+    let hit = 0
+    let any = false
+    for (const t of terms) {
+      if (hay.includes(t.w)) { hit += t.weight; any = true }
+    }
+    if (!any) continue
+    const relevance = hit / maxWeight
+    // 下载量只做微弱加权，避免「发版本最勤」挤掉真正相关的
+    const pop = Math.log10(Math.max(rec.w, 1)) / 6
+    scored.push({ rec, relevance, score: relevance * 0.85 + pop * 0.15 })
+  }
+
+  scored.sort((a, b) => b.score - a.score)
+  return scored.slice(0, limit).map(x => ({
+    name: x.rec.n,
+    version: x.rec.v,
+    category: x.rec.cat,
+    description: x.rec.d,
+    weekly: x.rec.w,
+    monthly: x.rec.m,
+    deep: x.rec.deep
+      ? {
+          baseline: x.rec.deep.base,
+          growth: x.rec.deep.growth,
+          cadence: x.rec.deep.cadence,
+          ageDays: x.rec.deep.age,
+          lastRelease: x.rec.deep.lastRelease,
+          versions: x.rec.deep.versions,
+          score: x.rec.deep.s,
+        }
+      : null,
+    relevance: Math.round(x.relevance * 100),
 ```
 
 </details>
@@ -254,24 +297,324 @@ export function baselineWithStart(daily = [], releaseDates = [], startISO = '') 
 
 <a id="detail-section-12"></a>
 
-### Q02 · 目录如何更新并进入统一引擎？
+### Q02 · 目录、指标和AI工具怎样把需求变成候选？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制
 
 #### 完整回答
 
-远程先取meta比较新旧，更新时拉目录，validCatalog过门槛后写临时文件再rename，最后reload内存。失败保留原数据，内置目录兜底；这改善可用性但可能陈旧。引擎从npm关键字搜索形成目录，deep默认仅覆盖下载前部，未深挖项不能假装有同等证据。安装通过宿主管理器，包名需在目录且有bundle提示。
+loadCatalog选择随包与缓存中较新的anchor/asOf目录，缺失则空目录；启动5秒后及每6小时尝试远端更新。搜索对名称、关键词和描述做词项包含匹配，相关度占0.85、周下载对数占0.15，不能称为语义模型检索。四个注册工具分别搜索、统计、比较2~6包和排行，附数据截止及注意说明；比较取每项最大/最小并以健康度排序，不会验证任务。+AI面板消息检查iframe来源与同源，草稿非空时不覆盖，重复排队文本跳过；否则setDraft后submit queue，成功状态代表提交而非最终分析正确。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/remote.js:79-106](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/remote.js#L79-L106)
+**依据 1 · 源码核查**：[lib/engine.js:315-333](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/engine.js#L315-L333)
 
-更新检查、校验与保留旧数据。
+目录新旧选择与空回退。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
+/** a 比 b 新：先比统计截止日，再比构建日 */
+export function newerCatalog(a, b) {
+  if (!a || !a.packages) return false
+  if (!b || !b.packages) return true
+  const ka = `${a.anchor || ''}|${a.asOf || ''}`
+  const kb = `${b.anchor || ''}|${b.asOf || ''}`
+  return ka > kb
+}
+
+/**
+ * 目录：随包自带的和每日更新的，用新的那份。
+ * source 标出用的是哪份（'remote' 每日更新 / 'bundled' 随包自带），设置页显示用
+ */
+export async function loadCatalog({ env = process.env } = {}) {
+  if (cache) return cache
+  const [bundled, cached] = await Promise.all([readJson(CATALOG_PATH), readJson(cachePath(env))])
+  const pick = newerCatalog(cached, bundled) ? { ...cached, source: 'remote' } : bundled ? { ...bundled, source: 'bundled' } : null
+  cache = pick ? normalize(pick) : { asOf: null, anchor: null, packages: {}, total: 0, source: 'none' }
+  return cache
+```
+
+</details>
+
+**依据 2 · 源码核查**：[plugin/index.js:225-240](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/index.js#L225-L240)
+
+远端调度与工具真实注册。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  // 每日更新的目录：启动时查一次，之后每 6 小时查一次（查不到就继续用手上的）
+  const refresh = () => refreshCatalog().catch(() => {})
+  const startTimer = setTimeout(refresh, 5000) // 别和 DSH 启动抢网络
+  const timer = setInterval(refresh, CHECK_EVERY_MS)
+  if (timer.unref) timer.unref()
+  if (startTimer.unref) startTimer.unref()
+  const stop = () => { clearTimeout(startTimer); clearInterval(timer) }
+  if (typeof ctx.effect === 'function') ctx.effect(() => stop)
+  else if (typeof ctx.on === 'function') ctx.on('dispose', stop)
+
+  // AI 工具：DSH 有 tools 服务才注册（可选依赖，没有也不影响面板）
+  ctx.inject(['tools'], (toolsCtx) => {
+    const tools = toolsCtx.tools || (toolsCtx.get && toolsCtx.get('tools'))
+    if (!tools || typeof tools.register !== 'function') return
+    registerTools({ tools }, { installed: async () => (await installedNames(pluginManager)) || new Set() })
+      .catch(e => console.warn('[dsh-pick] AI 工具注册失败', e))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[plugin/tools.js:215-237](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/tools.js#L215-L237)
+
+比较指标及健康度排序。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+      async execute(args) {
+        const cat = await loadCatalog()
+        const names = cleanNames(args.names, 6)
+        if (names.length < 2) throw new Error('至少要两个合法的 npm 包名')
+        const all = (await stats(cat, names)).map(withCatalogFields(cat))
+        const rows = all.filter(r => r.source !== 'not-found')
+        const missing = all.filter(r => r.source === 'not-found').map(r => r.name)
+        const METRICS = [
+          { label: '日常基线（越高越好）', get: r => r.deep && r.deep.baseline, better: 'max', fmt: num },
+          { label: '近 7 日环比（越高越好）', get: r => r.deep && r.deep.growth, better: 'max', fmt: pct },
+          { label: '最近更新（越近越好）', get: r => r.deep && r.deep.ageDays, better: 'min', fmt: n => `${n} 天前` },
+          { label: '版本节奏（越短越活跃）', get: r => r.deep && r.deep.cadence, better: 'min', fmt: n => `${n} 天/版` },
+          { label: '健康度（越高越好）', get: r => r.deep && r.deep.score, better: 'max', fmt: n => String(n) },
+          { label: '周下载（含非人类流量）', get: r => r.weekly, better: 'max', fmt: num },
+        ]
+        const best = METRICS.map(m => {
+          const vals = rows.map(r => [r.name, m.get(r)]).filter(([, x]) => x != null && !Number.isNaN(x))
+          if (!vals.length) return { label: m.label, winner: null }
+          vals.sort((a, b) => (m.better === 'max' ? b[1] - a[1] : a[1] - b[1]))
+          return { label: m.label, winner: vals[0][0], value: m.fmt(vals[0][1]) }
+        })
+        rows.sort((a, b) => ((b.deep && b.deep.score) ?? -1) - ((a.deep && a.deep.score) ?? -1))
+        return plain({ header: header(cat), best, rows: annotate(rows, cat, await installed()), missing })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[plugin/client.js:191-225](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/client.js#L191-L225)
+
+对话输入保护与提交边界。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+    async function sendToChat(sessionId, text) {
+      const input = composerFor(sessionId)
+      if (!input) return 'none'
+      // 用户正在输入的内容不覆盖
+      if (composerDraft(input)) return 'draft'
+      // AI 忙着时连点几下，别排一串一样的
+      if (queuedTexts(input).includes(text.trim())) return 'queued'
+      input.setDraft(text)
+      // 输入框更新是异步的：等它收到这句话再发，不然发出去的是空的
+      for (let i = 0; i < 20 && !composerDraft(input); i += 1) await new Promise(r => setTimeout(r, 25))
+      if (!composerDraft(input)) {
+        if (input.focus) input.focus()
+        return 'none'
+      }
+      await input.submit('queue')
+      return 'sent'
+    }
+
+    /** 右侧栏里的完整面板：标题行 + 占满栏高的 iframe（iframe 自己滚动；目录信息面板里自带） */
+    function PickPanel({ sessionId }) {
+      const frame = useRef(null)
+      const sid = sessionId ? String(sessionId) : ''
+
+      useEffect(() => {
+        const onMessage = async (e) => {
+          const win = frame.current && frame.current.contentWindow
+          if (!win || e.source !== win || e.origin !== window.location.origin) return
+          const d = e.data
+          if (!d || d.type !== 'dsh-pick:ask' || typeof d.text !== 'string' || !d.text.trim()) return
+          let status = 'none'
+          try { status = await sendToChat(sid, d.text.slice(0, 8000)) } catch { status = 'none' }
+          win.postMessage({ type: 'dsh-pick:ask-result', id: d.id, status }, window.location.origin)
+        }
+        window.addEventListener('message', onMessage)
+        return () => window.removeEventListener('message', onMessage)
+```
+
+</details>
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 去噪基线与健康度能否代表真实使用和可采用性？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+baseline剔除发布日和次日后取中位数，但剩少于5天回退所有有效天；它不能识别其他日期的CI、镜像或自动化流量，故“最接近真实使用量”是启发式假设。growth先去掉null再取最后两个7个观测，缺日期时不等于连续日历周；前7个总量为0时有增长直接给1，不是可比的真实比率。score将缺增长填0.5、缺新鲜度/节奏填0.4，并按40/25/20/15加权，这是面板偏好而非可靠性或需求证据。没有执行结果、权限、退出或成本合格性作为质量分项，因此高分不能证明该装；频繁发版亦不自动等于维护好。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/metrics.js:39-57](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/metrics.js#L39-L57)
+
+基线剔除及样本不足回退。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+  // null = npm 那天没有数据（全网都是 0 的日子，见 engine.js 的 gapDays）：不算进中位数
+  const valid = daily.filter(v => v != null)
+  if (!valid.length) return 0
+  if (!releaseDates.length || !startISO) return median(valid)
+
+  const spikes = new Set()
+  const s = toDay(startISO)
+  for (const d of releaseDates) {
+    const n = toDay(d)
+    if (n >= s && n <= s + daily.length) {
+      spikes.add(n - s)        // 发布当天
+      spikes.add(n - s + 1)    // 发布次日
+    }
+  }
+  const kept = daily.filter((v, i) => v != null && !spikes.has(i))
+  return kept.length >= 5 ? median(kept) : median(valid)
+}
+
+/**
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/metrics.js:64-72](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/metrics.js#L64-L72)
+
+增长压缩有效观测与零基数处理。
+
+```text
+  const valid = daily.filter(v => v != null)
+  if (valid.length < 14) return null
+  const last7 = sum(valid.slice(-7))
+  const prev7 = sum(valid.slice(-14, -7))
+  if (prev7 === 0) return last7 > 0 ? 1 : null
+  return (last7 - prev7) / prev7
+}
+
+/**
+```
+
+**依据 3 · 源码核查**：[lib/metrics.js:98-109](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/metrics.js#L98-L109)
+
+健康度默认值与权重。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+export function score({ baseline: b = 0, growth: g = null, age = null, cadence: c = null }) {
+  const baselinePart = clamp01(Math.log10(Math.max(b, 1)) / 4)                    // 1 → 0, 1万 → 1
+  const growthPart = g === null ? 0.5 : clamp01((g + 0.5) / 1.5)                  // -50% → 0, +100% → 1
+  const agePart = age === null ? 0.4 : clamp01(1 - age / 180)                     // 今天 → 1, 180 天前 → 0
+  const cadencePart = c === null ? 0.4 : clamp01(1 - (c - 1) / 21)                // 1天/版 → 1, 22天/版 → 0
+
+  return Math.round(
+    baselinePart * 40 + growthPart * 25 + agePart * 20 + cadencePart * 15
+  )
+}
+
+function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x }
+```
+
+</details>
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 数据刷新和安装链有哪些条件与副作用？
+
+**研究主题**：依赖、兼容与流程、工程质量与复用、效果与总成本
+
+#### 完整回答
+
+Node>=20、DSH web客户端和webServer是面板条件；tools用于对话工具、pluginManager用于安装卸载，缺失时提供手动命令。远端只检查目录格式、至少500条及前50条名称和周下载，没有内容签名或逐项完整校验；原子临时写后rename并对占用退避重试保护文件完整性，但不证明来源或指标真实。安装API限制合法且目录存在的npm名，只在inst.b明确false时拒绝，缺声明未知并不在此直接拒绝；最终installBundle按包名解析，未绑定研究提交。前端兼容提示可依赖可选dshmarket接口，不能推为所有后端安装都经过同样检查。模型+AI有额外费用，npm/镜像查询和目录下载有网络资源；具体金额、等待与节时未知。发生错误保留旧目录，不应把旧数据当最新；停用与卸载不撤销已安装候选。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:27-33](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/package.json#L27-L33)
+
+web客户端包声明。
+
+```text
+  "dsh": {
+    "bundle": {
+      "patch": "./plugin/cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+```
+
+**依据 2 · 源码核查**：[lib/remote.js:38-60](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/remote.js#L38-L60)
+
+原子替换和占用重试。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+ * 先写临时文件再改名替换：替换是原子的，读的一方要么看到旧文件、要么看到完整的新文件。
+ * 被占用就退避重试几次；最后还是不行，删掉临时文件、把错抛出去（这一轮不换，下一轮再试）
+ */
+export async function writeAtomic(file, text, { tries = 5, wait = 150, renameImpl = rename } = {}) {
+  await mkdir(dirname(file), { recursive: true })
+  const tmp = `${file}.${process.pid}.tmp`
+  await writeFile(tmp, text, 'utf8')
+  for (let i = 1; ; i++) {
+    try {
+      await renameImpl(tmp, file)
+      return
+    } catch (e) {
+      if (!BUSY.has(e && e.code) || i >= tries) {
+        await rm(tmp, { force: true }).catch(() => {})
+        throw e
+      }
+      await new Promise(r => setTimeout(r, wait * 2 ** (i - 1)))
+    }
+  }
+}
+
+async function getJson(fetchImpl, url, timeoutMs) {
+  const r = await fetchImpl(url, { signal: AbortSignal.timeout(timeoutMs), headers: { accept: 'application/json' } })
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/remote.js:68-106](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/remote.js#L68-L106)
+
+有限目录校验与网络失败回退。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(cat.anchor || ''))) return false
+  const list = Object.values(cat.packages)
+  return list.length >= 500 && list.slice(0, 50).every(r => r && typeof r.n === 'string' && typeof r.w === 'number')
+}
+
+/**
+ * 检查并下载更新的目录。
+ * @param {object} [opt]
+ * @param {boolean} [opt.force] 不管 6 小时内查过没有，马上查
+ * @returns {Promise<{checked: boolean, updated: boolean, anchor?: string, mirror?: string, error?: string}>}
+ */
 export async function refreshCatalog({ fetchImpl = globalThis.fetch, env = process.env, force = false, now = Date.now } = {}) {
   const state = await readState(env)
   if (!force && state.checkedAt && now() - Date.parse(state.checkedAt) < CHECK_EVERY_MS) {
@@ -304,29 +647,38 @@ export async function refreshCatalog({ fetchImpl = globalThis.fetch, env = proce
 
 </details>
 
-**依据 2 · 源码核查**：[lib/engine.js:140-147](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/engine.js#L140-L147)
+**依据 4 · 源码核查**：[plugin/index.js:171-181](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/index.js#L171-L181)
 
-deep按周下载选择产生覆盖边界。
-
-```text
-  // 深挖：日序列 + 发布历史 → 日常基线 / 增速 / 版本节奏 / 新鲜度
-  // 注意：api.npmjs.org 并发稍高就开始 429，所以下载量请求必须低并发；
-  //      registry.npmjs.org 宽松得多，可以并发。两段分开抓。
-  // deepOnly 时只补缺失的；全量时按周下载取 Top N
-  const targets = [...records.values()]
-    .filter(r => (deepOnly ? !r.deep : true))
-    .sort((a, b) => b.w - a.w)
-    .slice(0, deep)
-```
-
-**依据 3 · 源码核查**：[plugin/index.js:386-407](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/plugin/index.js#L386-L407)
-
-安装权限委托和目录门槛。
+JSON POST与Origin host检查。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
+function isSafePost(req) {
+  if (req.method !== 'POST') return false
+  if (!String(req.headers['content-type'] || '').startsWith('application/json')) return false
+  const origin = req.headers.origin
+  if (!origin) return true
+  try {
+    return new URL(origin).host === req.headers.host
+  } catch {
+    return false
+  }
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[plugin/index.js:383-409](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/index.js#L383-L409)
+
+安装白名单、bundle明确false及包名调用。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+    // 安装目录里的插件：只装目录里有的（都是带 dsh-plugin 关键字的 npm 包），不接受任意包名
     track(ws.register({
       kind: 'exact',
       path: '/api-dsh-pick/install',
@@ -349,64 +701,129 @@ deep按周下载选择产生覆盖边界。
           const err = managerError(result)
           if (err) return sendJson(res, 200, { ok: false, message: `安装失败（${err}）`, command })
           return sendJson(res, 200, { ok: true, restart: result && result.application === 'restart-required' })
+        } catch (e) {
+          return sendJson(res, 200, { ok: false, message: `安装失败：${e.message}`, command })
+        }
+      },
 ```
 
 </details>
 
-<a id="research-q03"></a>
+**依据 6 · 源码核查**：[web/panel.js:140-185](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/web/panel.js#L140-L185)
 
-<a id="detail-section-13"></a>
+可选市场兼容查询与前端提示。
 
-### Q03 · 健康分能否代表真实使用和维护质量？
+<details>
+<summary>查看原文（46行）</summary>
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+```text
+const COMPAT = new Map() // 包名 → { status: 'compatible'|'incompatible'|'unknown', requirement }
+let HOST_VERSION = null
+let marketCompat = true
+async function loadCompat(names) {
+  if (!IN_DSH || !marketCompat) return
+  const want = names.filter(n => !COMPAT.has(n)).slice(0, 64)
+  if (!want.length) return
+  want.forEach(n => COMPAT.set(n, null)) // 先占位：查不到也不反复查
+  try {
+    const r = await fetch('/dsh-market/discovery-compatibility', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ packages: want }),
+    })
+    if (r.status === 404) { marketCompat = false; return }
+    if (!r.ok) return
+    const j = await r.json()
+    HOST_VERSION = j.hostVersion || HOST_VERSION
+    for (const [n, v] of Object.entries(j.plugins || {})) COMPAT.set(n, v || null)
+    renderCands($('#need').value.trim(), { keepCompat: true })
+  } catch { /* 查不到就不显示 */ }
+}
+
+/** 已装插件里和它同类的（「其他」类不算，太杂） */
+function sameKindInstalled(r) {
+  if (!r.cat || r.cat === '其他' || INSTALLED.has(r.n)) return []
+  return [...INSTALLED].filter(n => n !== r.n && n !== 'dsh-pick' && CAT.packages[n] && CAT.packages[n].cat === r.cat)
+}
+
+/**
+ * 能不能装、为什么不能：目录里的安装信息（dsh.bundle、客户端平台）+ 插件市场给的兼容结论
+ * @returns {{ok: boolean, warn: string[], good: string[]}}
+ */
+function installCheck(r) {
+  const warn = []
+  const good = []
+  let ok = true
+  const inst = r.inst
+  if (inst && !inst.b) { ok = false; warn.push('没声明 dsh.bundle，DSH 装不了') }
+  if (inst && inst.p && inst.p !== 'web') { ok = false; warn.push(`${inst.p} 客户端插件，装进这里可能让 DSH 起不来`) }
+  const c = COMPAT.get(r.n)
+  if (c && c.status === 'incompatible') {
+    ok = false
+    warn.push(`和你的 DSH${HOST_VERSION ? ' ' + HOST_VERSION : ''} 不兼容${c.requirement ? `（需要 ${c.requirement}）` : ''}`)
+  } else if (c && c.status === 'compatible' && ok) {
+    // 已经装不了（没 bundle、终端版）就不说「兼容」：版本对得上不等于装得上，两句放一起让人困惑
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 如何使用这些指标，可推导什么更可靠的选择流程？
+
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-不能。score对下载基线、增长、更新时间和发版节奏加权，没有功能正确性或用户留存项。频繁发布时剔除后少于5天又回退原始中位数，可能使所谓去噪失去原解释。新版多不等于维护质量高，下载也包含自动化。远程校验只检查前50项和包数，不能当全目录真实有效。它适合展示可解释数字，不宜自动做高风险安装决策。
+可作为只读候选整理工具小范围试用，先提出具体任务，在相同目录截止日比较几项候选，人工检查官方包声明、权限与实际交付；不要从健康度直接安装。数据时间过旧、去噪样本不足或候选不支持任务时停止排行判断，回到原仓库和文档；安装前需单独核对版本与退路。由统计与合格任务的缺口可推导未实现的两层流程，先保留描述性热度，再附固定版本的任务适配与证据覆盖，不把未知指标默认值混成质量分。用同一候选集比较只看当前分数与增加任务证据后的选择，观察合格率、人工时间和错误安装；若没有改善或核查成本过大则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/metrics.js:38-52](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/metrics.js#L38-L52)
+**依据 1 · 源码核查**：[plugin/tools.js:215-237](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/tools.js#L215-L237)
 
-不足样本回退口径。
+指标比较与任务验证之间的边界。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-export function baselineWithStart(daily = [], releaseDates = [], startISO = '') {
-  if (!daily.length) return 0
-  if (!releaseDates.length || !startISO) return median(daily)
-
-  const spikes = new Set()
-  const s = toDay(startISO)
-  for (const d of releaseDates) {
-    const n = toDay(d)
-    if (n >= s && n <= s + daily.length) {
-      spikes.add(n - s)        // 发布当天
-      spikes.add(n - s + 1)    // 发布次日
-    }
-  }
-  const kept = daily.filter((_, i) => !spikes.has(i))
-  return kept.length >= 5 ? median(kept) : median(daily)
+      async execute(args) {
+        const cat = await loadCatalog()
+        const names = cleanNames(args.names, 6)
+        if (names.length < 2) throw new Error('至少要两个合法的 npm 包名')
+        const all = (await stats(cat, names)).map(withCatalogFields(cat))
+        const rows = all.filter(r => r.source !== 'not-found')
+        const missing = all.filter(r => r.source === 'not-found').map(r => r.name)
+        const METRICS = [
+          { label: '日常基线（越高越好）', get: r => r.deep && r.deep.baseline, better: 'max', fmt: num },
+          { label: '近 7 日环比（越高越好）', get: r => r.deep && r.deep.growth, better: 'max', fmt: pct },
+          { label: '最近更新（越近越好）', get: r => r.deep && r.deep.ageDays, better: 'min', fmt: n => `${n} 天前` },
+          { label: '版本节奏（越短越活跃）', get: r => r.deep && r.deep.cadence, better: 'min', fmt: n => `${n} 天/版` },
+          { label: '健康度（越高越好）', get: r => r.deep && r.deep.score, better: 'max', fmt: n => String(n) },
+          { label: '周下载（含非人类流量）', get: r => r.weekly, better: 'max', fmt: num },
+        ]
+        const best = METRICS.map(m => {
+          const vals = rows.map(r => [r.name, m.get(r)]).filter(([, x]) => x != null && !Number.isNaN(x))
+          if (!vals.length) return { label: m.label, winner: null }
+          vals.sort((a, b) => (m.better === 'max' ? b[1] - a[1] : a[1] - b[1]))
+          return { label: m.label, winner: vals[0][0], value: m.fmt(vals[0][1]) }
+        })
+        rows.sort((a, b) => ((b.deep && b.deep.score) ?? -1) - ((a.deep && a.deep.score) ?? -1))
+        return plain({ header: header(cat), best, rows: annotate(rows, cat, await installed()), missing })
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/metrics.js:89-102](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/metrics.js#L89-L102)
+**依据 2 · 源码核查**：[lib/metrics.js:98-109](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/lib/metrics.js#L98-L109)
 
-加权分数全部来自代理变量。
+默认填值支持拆分描述指标与质量假设。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-/**
- * 综合评分 0~100，用于「首选 / 备选」的默认排序依据
- * 权重：日常基线 40% + 增速 25% + 新鲜度 20% + 版本节奏 15%
- * 注意：这是给面板用的默认口径，AI 拿到同样的字段可以自行调整权重并解释
- */
 export function score({ baseline: b = 0, growth: g = null, age = null, cadence: c = null }) {
   const baselinePart = clamp01(Math.log10(Math.max(b, 1)) / 4)                    // 1 → 0, 1万 → 1
   const growthPart = g === null ? 0.5 : clamp01((g + 0.5) / 1.5)                  // -50% → 0, +100% → 1
@@ -416,51 +833,26 @@ export function score({ baseline: b = 0, growth: g = null, age = null, cadence: 
   return Math.round(
     baselinePart * 40 + growthPart * 25 + agePart * 20 + cadencePart * 15
   )
+}
+
+function clamp01(x) { return x < 0 ? 0 : x > 1 ? 1 : x }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/remote.js:65-70](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/remote.js#L65-L70)
+**依据 3 · 源码核查**：[plugin/index.js:383-409](https://github.com/AIcivilization/dsh-pick/blob/925db2950d58c2b8662e0f6fa14f8950a0739212/plugin/index.js#L383-L409)
 
-形状校验的有限覆盖。
-
-```text
-/** 下载来的目录像不像样：包够多、字段齐。防止镜像返回半截文件或错误页 */
-export function validCatalog(cat) {
-  if (!cat || typeof cat !== 'object' || !cat.packages || typeof cat.packages !== 'object') return false
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(cat.anchor || ''))) return false
-  const list = Object.values(cat.packages)
-  return list.length >= 500 && list.slice(0, 50).every(r => r && typeof r.n === 'string' && typeof r.w === 'number')
-```
-
-#### 缺口
-
-- 指标对真实用户、合格任务的预测有效性未知
-  **影响**：限制把首选排名当采用证据
-  **进一步探讨**：在预定义任务集对照选择结果，并分析频繁发布和缺失样本。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 如何使用而不被排名代替判断？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-先描述实际任务，读候选日期、数据缺失和兼容提醒，再查源码权限、外部服务及卸载路径；确认后才安装。纯读数据的试用范围可控，但安装候选会引入其自身成本，不能归为本工具已验收。网络更新和免费公开接口不证明长期可用或净节时，独立核查仍是必要人工投入。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[plugin/index.js:390-407](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/plugin/index.js#L390-L407)
-
-安装前输入门槛与宿主错误处理。
+安装与固定版本证据分离。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
+    // 安装目录里的插件：只装目录里有的（都是带 dsh-plugin 关键字的 npm 包），不接受任意包名
+    track(ws.register({
+      kind: 'exact',
+      path: '/api-dsh-pick/install',
+      handler: async (req, res) => {
         if (!isSafePost(req)) return sendJson(res, 403, { ok: false, message: '只接受本页面发出的请求' })
         const { name } = await readJsonBody(req)
         if (typeof name !== 'string' || !NAME_RE.test(name)) return sendJson(res, 400, { ok: false, message: '包名不对' })
@@ -479,100 +871,18 @@ export function validCatalog(cat) {
           const err = managerError(result)
           if (err) return sendJson(res, 200, { ok: false, message: `安装失败（${err}）`, command })
           return sendJson(res, 200, { ok: true, restart: result && result.application === 'restart-required' })
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/remote.js:101-106](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/remote.js#L101-L106)
-
-网络失败不升级数据新鲜度。
-
-```text
-    } catch (e) {
-      lastError = e && e.message ? e.message : String(e)
-    }
-  }
-  // 都连不上：不记 checkedAt，下一轮再试
-  return { checked: true, updated: false, error: lastError }
-```
-
-#### 缺口
-
-- 选型净耗时和错误安装减少量未知
-  **影响**：不能宣称去噪提高用户决策质量
-  **进一步探讨**：记录从需求到合格候选的总时间和被独立验收拒绝的比例。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 统计与功能证据分维度能否减少误推荐？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证设计把下载统计、功能源码证据、兼容和实际任务验收分开呈现，不折成一个健康分；为去噪显示剔除比例和区间。推导来自当前加权分的代理混淆。用同一任务盲选比较当前榜单和分维度方案的合格率、错误安装和核查时间，若增加认知负担而选择不改善则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/metrics.js:89-102](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/metrics.js#L89-L102)
-
-单分数混合代理变量是设计参照。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-/**
- * 综合评分 0~100，用于「首选 / 备选」的默认排序依据
- * 权重：日常基线 40% + 增速 25% + 新鲜度 20% + 版本节奏 15%
- * 注意：这是给面板用的默认口径，AI 拿到同样的字段可以自行调整权重并解释
- */
-export function score({ baseline: b = 0, growth: g = null, age = null, cadence: c = null }) {
-  const baselinePart = clamp01(Math.log10(Math.max(b, 1)) / 4)                    // 1 → 0, 1万 → 1
-  const growthPart = g === null ? 0.5 : clamp01((g + 0.5) / 1.5)                  // -50% → 0, +100% → 1
-  const agePart = age === null ? 0.4 : clamp01(1 - age / 180)                     // 今天 → 1, 180 天前 → 0
-  const cadencePart = c === null ? 0.4 : clamp01(1 - (c - 1) / 21)                // 1天/版 → 1, 22天/版 → 0
-
-  return Math.round(
-    baselinePart * 40 + growthPart * 25 + agePart * 20 + cadencePart * 15
-  )
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/metrics.js:38-52](https://github.com/AIcivilization/dsh-pick/blob/bbae391f560ccbf8438805d513abaf9142bc31d7/lib/metrics.js#L38-L52)
-
-剔除和回退支持敏感性区间需要。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export function baselineWithStart(daily = [], releaseDates = [], startISO = '') {
-  if (!daily.length) return 0
-  if (!releaseDates.length || !startISO) return median(daily)
-
-  const spikes = new Set()
-  const s = toDay(startISO)
-  for (const d of releaseDates) {
-    const n = toDay(d)
-    if (n >= s && n <= s + daily.length) {
-      spikes.add(n - s)        // 发布当天
-      spikes.add(n - s + 1)    // 发布次日
-    }
-  }
-  const kept = daily.filter((_, i) => !spikes.has(i))
-  return kept.length >= 5 ? median(kept) : median(daily)
+        } catch (e) {
+          return sendJson(res, 200, { ok: false, message: `安装失败：${e.message}`, command })
+        }
+      },
 ```
 
 </details>
 
 #### 缺口
 
-- 分维度原型与效益未验证
-  **影响**：不应计入当前能力
-  **进一步探讨**：用小批任务及预注册验收标准比较。
+- 没有以实际合格任务对照验证统计排序的选择效果。
+  **影响**：不能证明去噪或健康度提高选对率，也不能给出可靠性排名。
+  **进一步探讨**：固定任务、候选版本和预算，记录按指标选与人工证据选的合格交付、误装及核查负担。
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
