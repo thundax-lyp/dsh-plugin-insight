@@ -48,6 +48,7 @@
 | [LeLogin for DeepSeek Harness](#plugin-1226490932-root) | 在 DSH 注册 LeLogin Skill，指导凭据引用、注入和已认证应用的本地使用。 | 先观察注册和假账号发现；对实际凭据操作保留手工退路，直到验证运行时与审批。 |
 | [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
 | [QQBot 增强版](#plugin-1357268674-root) | 把 QQ 消息接入 DSH 会话，并提供富媒体、交付文件发送和 Web 设置。 | [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04) 先在受控群确认名单和静默策略，再测试一个文件并保留人工退路。 |
+| [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
 | [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
@@ -628,6 +629,22 @@
 > **建议**：[Q05](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q05) 对照按安排去重，测试带确认状态的去重和可控重试。
 
 [查看完整分析](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1294614772-root"></a>
+
+## [Recruiting Copilot](../../plugins/viy1204--recruiting-copilot/INSIGHT.md)
+
+[![GitHub ★ 107](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=107&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Viy1204/recruiting-copilot)
+
+> **用途**：有稳定招聘流程、需要整理岗位和人选的团队。
+
+> **亮点**：[Q01](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q01) 统一招聘流程、回执与本地进展。
+
+> **思考**：[Q02](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q02) Skill 授权约定与实际外发约束需分别验收。
+
+> **建议**：[Q04](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q04) 持久未知状态收据可能减少重复联系。
+
+[查看完整分析](../../plugins/viy1204--recruiting-copilot/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1203725733-root"></a>
 

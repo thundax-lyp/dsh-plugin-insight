@@ -23,11 +23,13 @@
 | [Awesome DeepSeek Harness](#plugin-1333173677-root) | 按任务分类收录 DeepSeek Harness 插件、Skill、MCP、客户端及其他配套资源的双语目录。 | 当读者尚不熟悉某类扩展时，可限时浏览目录，先从任务分类挑少量目标并记录链接，进入原仓库后另行核对版本和组件。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333844474-root) | 提供 DeepSeek Harness 社区插件目录、结构化投稿审核与双语目录生成。 | [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 先选一个公开且已定位 manifest 的仓库，从干净分支准备单条 JSON，用本地文件或隔离服务检查投影。 |
+| [Awesome DeepSeek Harness Plugins](#plugin-1336739291-root) | 将 marketplace 索引转为可浏览、可校验的双语插件目录 | [Q04](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 用固定提交作发现源，并对实际包独立验证。 |
 | [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 整理 DSH 插件候选并生成可读目录与市场索引。 | 先发现，再固定候选版本、独立核验权限与宿主兼容；不要把目录收录当安装背书。 |
 | [Awesome DSH Plugin 目录](#plugin-1334020733-root) | 从双语 README 生成 DSH 插件分类站点、订阅源与机器可读索引。 | [Q04](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q04) 用作候选列表，安装前重新确认目标仓库与包。 |
 | [Awesome Gaussian Skills](#plugin-1223099228-root) | 提供 3D Gaussian Splatting 方法资料、Agent Skill 与 MCP 渲染服务。 | [Q04](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q04) 先隔离网络并用非敏感场景核对真实渲染；[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 边界不满足时停止。 |
 | [BigA](#plugin-1250326123-root) | 将 A 股观察池与市场摘要 Skill 及其 Python 扫描脚本装入 DeepSeek Harness。 | [Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 仅将离线合成样本用于核格式和口径，异常回人工资料核查。 |
+| [causal-memory DSH plugin](#plugin-1312924592-dsh-plugin) | 通过 stdio MCP 将 causal-memory 工具和服务接入 DSH。 | [Q03](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q03) 用临时数据库。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
 | [clawock](#plugin-1240554500-root) | 为外部 AI Agent 提供投资研究的证据组织、决策校验和结果复盘流程。 | [Q03](../../plugins/kcnyu--clawock/INSIGHT.md#research-q03) 仅用离线模拟材料测试可审计交接，输入和回执对不上即退回人工复核。 |
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | [Q04](../../plugins/clearailhc--clearai-dsh/INSIGHT.md#research-q04) 在固定材料与可反驳问题上试用，保留人工复核，用错误结案及全部费用决定是否继续。 |
@@ -45,6 +47,7 @@
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
+| [DSH Video Lens](#plugin-1338640495-root) | 将本地视频抽样、可选转写和视觉问答接入 DSH | [Q04](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q04) 只用虚构短片验收抽样、时间和传输。 |
 | [DSH Web Tools](#plugin-1335219884-root) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 仅在隔离 Profile 测普通双源与单源。 |
 | [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
@@ -68,6 +71,7 @@
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
+| [dsh-run2skill](#plugin-1339317132-root) | 从 DSH 会话提炼可审查的 Skill 提案，确认后按作用域发布。 | [Q03](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q03) 先显式生成项目草稿，核对下次用法后再扩展。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | 适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。 |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
 | [dsh-source-deck](#plugin-1422910686-root) | 在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。 | 在明确支持的RC环境用非敏感选型任务试用，先检查搜索/抓页/spawn可用，再核实候选URL和关键许可。 |
@@ -89,6 +93,8 @@
 | [GeoChat 画布](#plugin-959005755-plugins-deepseek-harness) | 让 DSH 模型操作会话右侧的 GeoGebra 画布 | [Q04](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q04) 使用固定 Web 版本对照双会话与断流。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
 | [Graph Memory](#plugin-1178312395-root) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | [Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 个人非敏感任务用副本库对照；审计或多租户任务先保留原历史并验证隔离。 |
+| [Hanai Worth 值见](#plugin-1334675451-root) | 将行情快照、研究会话与可校验报告归档集中在独立 DSH 工作台 | [Q04](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md#research-q04) 用虚构历史材料确认缓存、封存与迁移。 |
+| [hello-dsh](#plugin-1333303761-root) | 提供中文 DSH 入门教程、示例 Skill 和最小代码插件。 | [Q03](../../plugins/pingfanfan--hello-dsh/INSIGHT.md#research-q03) 先用临时环境和单个固定示例。 |
 | [hn](#plugin-1211255316-root) | 在终端浏览 Hacker News 故事和评论，并提供可选翻译。 | [Q03](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q03) 先用公开帖子并核模型端点；内容不全或不接受外发时返回网页和原文。 |
 | [Jacobian](#plugin-1309745037-root) | 为 Agent 提供可搜索的数学操作、执行结果和类型化接口。 | [Q03](../../plugins/morluto--jacobian/INSIGHT.md#research-q03) 先检查后端和操作合同，以已知题及独立方法对照；结果不完整或不一致则停止依赖。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
@@ -115,6 +121,7 @@
 | [ReMe DSH 集成](#plugin-849121458-integrations-dsh) | 将 ReMe 长期记忆检索、会话记录和后台整理桥接 DSH。 | [Q05](../../plugins/agentscope-ai--reme--integrations-dsh/INSIGHT.md#research-q05) 隔离试搜索、先关闭自动归档；检查隐私和质量再决定开启。 |
 | [SandBase Skills](#plugin-1315919904-root) | 提供可移植 Agent 工作流技能集合，含 DSH 目录挂载、单技能复制工具和多源研究证据账本样本。 | [Q04](../../plugins/sandbaseai--sandbase-skills/INSIGHT.md#research-q04) 可在测试项目只取multi-source-search，预读资源并对一个不敏感主张试用；用真实能力名，不为通过伪造第二来源。 |
 | [Stock Analysis Plugin](#plugin-1238532570-root) | 多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。 | 只在隔离 Profile 用已许可的固定样本核对复盘。 |
+| [StrataGate AgentMemory](#plugin-1329972465-root) | 为 DSH 提供分层会话记忆、事件检索、目录和提示词上下文。 | [Q03](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md#research-q03) 用无敏感信息的测试库。 |
 | [StudyHub](#plugin-1367673687-root) | 把讲义等资料生成有来源的练习题，支持复习、题库与音频转录。 | [Q04](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q04) 用可外发资料先生成少量题并人工核对。 |
 | [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
@@ -122,6 +129,7 @@
 | [WeKnora 会话归档](#plugin-1412897932-root) | 将 DSH 会话摘要增量写入 WeKnora，并观察文档解析状态。 | [Q04](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q04) 测试先给已有库 ID 并关闭精炼。 |
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
 | [WSL Playwright 页面读取](#plugin-1381860363-root) | 在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。 | [Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。 |
+| [乔木 RSS](#plugin-1396833540-root) | 把 RSS 订阅阅读、版本切换和带原文的伴读放进 DSH | [Q04](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q04) 先用公开或虚构 RSS，保持实验室关闭。 |
 
 <a id="plugin-1390987906-root"></a>
 
@@ -299,6 +307,22 @@
 
 [查看完整分析](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1336739291-root"></a>
+
+## [Awesome DeepSeek Harness Plugins](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md)
+
+[![GitHub ★ 113](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=113&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/web-casa/Awesome-DeepSeek-Harness-Plugins)
+
+> **用途**：用户需按用途初步发现 DSH 插件。
+
+> **亮点**：[Q01](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q01) 提供可追溯到商城的双语目录和结构化索引。
+
+> **思考**：[Q03](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 索引验证只覆盖结构，安装兼容与安全状态需另核。
+
+> **建议**：[Q05](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q05) 可缩短发现候选的时间并保持来源可追溯。
+
+[查看完整分析](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333167552-root"></a>
 
 ## [Awesome DeepSeek Harness（libukai）](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md)
@@ -378,6 +402,22 @@
 > **建议**：[Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 统一可核评分和明确未知标志，再测审阅误读及工时；无改善则保持人工。
 
 [查看完整分析](../../plugins/kobenfang--biga/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1312924592-dsh-plugin"></a>
+
+## [causal-memory DSH plugin](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 104](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/JingxuanC/causal-memory)
+
+> **用途**：需要复查历史决策、事实和结果的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q01) 将因果记忆能力暴露给模型和其他宿主插件。
+
+> **思考**：[Q02](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q02) 超时不决定写入结果，子进程环境需要隔离。
+
+> **建议**：[Q04](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q04) 操作 ID 与结果读回可改善超时恢复。
+
+[查看完整分析](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1154333841-root"></a>
 
@@ -650,6 +690,22 @@
 > **建议**：未验证假设：持久操作状态与完成后回读可帮助区分超时后的未知写入，须对照已有成功幂等与回执。[Q06](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md#research-q06)
 
 [查看完整分析](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1338640495-root"></a>
+
+## [DSH Video Lens](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md)
+
+[![GitHub ★ 112](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=112&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dundunhan/dsh-video-lens) [![npm 30d 2,425](https://img.shields.io/static/v1?label=npm+30d&message=2%2C425&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-video-lens) [![最新发布 2026-09-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-video-lens)
+
+> **用途**：用户要快速定位录屏中的某个事件。
+
+> **亮点**：[Q01](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q01) 通过时间窗口和语音线索减少候选片段。
+
+> **思考**：[Q03](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q03) 帧抽样会漏事件，外部端点可收到媒体内容。
+
+> **建议**：[Q05](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q05) 明确时间的问答或可节约回看时间。
+
+[查看完整分析](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335219884-root"></a>
 
@@ -1019,6 +1075,22 @@
 
 [查看完整分析](../../plugins/2672243194--dsh-read-url/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1339317132-root"></a>
+
+## [dsh-run2skill](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md)
+
+[![GitHub ★ 106](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=106&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/qkycir-123/dsh-run2skill) [![npm 30d 1,898](https://img.shields.io/static/v1?label=npm+30d&message=1%2C898&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-run2skill) [![最新发布 2026-10-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-run2skill)
+
+> **用途**：用户反复向 Agent 解释团队工作流，希望将纠正保存为可复用指令。
+
+> **亮点**：[Q01](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q01) 连接会话经验和有来源的待审草稿。
+
+> **思考**：[Q02](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q02) 发布绑定当前项目和审查版本，实际异常恢复与数据边界待验。
+
+> **建议**：[Q03](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q03) 对照手写的用时、审查负担与次轮命中。
+
+[查看完整分析](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1334269686-root"></a>
 
 ## [dsh-scrape-webpage](../../plugins/131cda1--dsh-scrape-webpage/INSIGHT.md)
@@ -1354,6 +1426,38 @@
 > **建议**：[Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 提出按可复核任务保留关键工具回执，未验证；若无法提升纠错质量或抵消新增上下文则否定。
 
 [查看完整分析](../../plugins/adoresever--graph-memory/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334675451-root"></a>
+
+## [Hanai Worth 值见](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md)
+
+[![GitHub ★ 120](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=120&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hancao97/hanai-investment-dsh)
+
+> **用途**：研究者希望在同一工作台保留可复核的行情观察和报告。
+
+> **亮点**：[Q01](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md#research-q01) 将来源状态和报告归档串到同一研究流程。
+
+> **思考**：[Q03](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md#research-q03) 可校验文件与事实准确是独立指标。
+
+> **建议**：[Q05](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md#research-q05) 对照任务可减少查找来源和整理报告的时间。
+
+[查看完整分析](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333303761-root"></a>
+
+## [hello-dsh](../../plugins/pingfanfan--hello-dsh/INSIGHT.md)
+
+[![GitHub ★ 106](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=106&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/pingfanfan/hello-dsh)
+
+> **用途**：首次学习 DSH 扩展机制的中文用户。
+
+> **亮点**：[Q01](../../plugins/pingfanfan--hello-dsh/INSIGHT.md#research-q01) 把技能发现和工具注册变为可观察的练习。
+
+> **思考**：[Q02](../../plugins/pingfanfan--hello-dsh/INSIGHT.md#research-q02) 验证环境是早期 DSH，批量复制存在版本和同名冲突。
+
+> **建议**：[Q03](../../plugins/pingfanfan--hello-dsh/INSIGHT.md#research-q03) 对照官方文档比较首个扩展的完成时间。
+
+[查看完整分析](../../plugins/pingfanfan--hello-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1211255316-root"></a>
 
@@ -1771,6 +1875,22 @@
 
 [查看完整分析](../../plugins/weaxs--stock-analysis-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1329972465-root"></a>
+
+## [StrataGate AgentMemory](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md)
+
+[![GitHub ★ 112](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=112&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/diqierjia/StrataGate-AgentMemory) [![npm 30d 8,539](https://img.shields.io/static/v1?label=npm+30d&message=8%2C539&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/stratagate-dsh) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/stratagate-dsh)
+
+> **用途**：需要在长期项目中查找较早对话证据的用户。
+
+> **亮点**：[Q01](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md#research-q01) 把分层记忆与可查询历史接到 DSH。
+
+> **思考**：[Q02](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md#research-q02) 画像共享、后台模型输入及评测归因需分别判断。
+
+> **建议**：[Q04](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md#research-q04) 历史指代触发可能减少漏检。
+
+[查看完整分析](../../plugins/diqierjia--stratagate-agentmemory/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1367673687-root"></a>
 
 ## [StudyHub](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md)
@@ -1882,6 +2002,22 @@
 > **建议**：[Q05](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q05) 比较先看标题再按需取正文和直接抓全文的成本及效果。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1396833540-root"></a>
+
+## [乔木 RSS](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md)
+
+[![GitHub ★ 110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/joeseesun/qiaomu-rss-dsh)
+
+> **用途**：外文 RSS 阅读和讨论常需来回复制文章。
+
+> **亮点**：[Q01](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q01) 让选段、正文和伴读在同一界面可追溯。
+
+> **思考**：[Q03](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q03) 模型、订阅读取和公开收录有不同数据去向。
+
+> **建议**：[Q05](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q05) 对照选段问答可减少切换和引用错误。
+
+[查看完整分析](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
