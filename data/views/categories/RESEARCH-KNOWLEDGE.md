@@ -41,12 +41,14 @@
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
+| [DSH Noema](#plugin-1334167430-root) | 将本地 Noema 记忆服务接入 DSH，支持检索与跨工具导入。 | [Q03](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q03) 先隔离验证。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [DSH Web Tools](#plugin-1335219884-root) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 仅在隔离 Profile 测普通双源与单源。 |
 | [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
+| [dsh-auto-memory](#plugin-1381430202-root) | 将项目和用户记忆写入本地文件并注入索引，可选结束时固化。 | [Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 只在测试项目验收核心工具和提示，随后对照自动固化。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
 | [dsh-git-memory](#plugin-1339286962-root) | 为 DSH 提供本地 Git 长期记忆、有限检索与可恢复的记忆管理。 | [Q03](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q03) 在可丢弃仓库先试只读。 |
@@ -70,6 +72,7 @@
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
 | [dsh-source-deck](#plugin-1422910686-root) | 在会话侧栏后台查找资料，筛选和对比候选，并把保留项的不可变快照引用到当前草稿。 | 在明确支持的RC环境用非敏感选型任务试用，先检查搜索/抓页/spawn可用，再核实候选URL和关键许可。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。 |
+| [dsh-tabbit](#plugin-1334076307-root) | 将 Tabbit 浏览器任务、网页抓取和标签提及接入 DSH，并为页面访问设置审批。 | [Q03](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q03) 先试独立实例中的合成页面。 |
 | [dsh-tavily-web](#plugin-1369301269-root) | 提供 Tavily 多密钥轮询检索工具，以及通过宿主 shell 的 curl 网页正文抓取工具。 | 在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。 |
 | [dsh-teaching-board](#plugin-1358319839-root) | 在 DSH 会话中展示 HTML 板书，支持圈画、方向选择及把截图作为图片消息回传。 | 先观察并补齐消息来源和提交确认，再以非敏感课程在隔离 profile 检查四工具、增量更新和截图反馈；成功需图片进入正确会话且不覆盖用户草稿。 |
 | [dsh-thoughtdag](#plugin-1160354976-dsh) | 将 ThoughtDAG 图形画布嵌入 DSH 并桥接会话读取和写回。 | [Q04](../../plugins/chenxiachan--thoughtdag--dsh/INSIGHT.md#research-q04) 用隔离会话并核对引用；不明写回先回原文。 |
@@ -83,6 +86,7 @@
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
 | [Free Search](#plugin-1334384058-root) | 为 DSH 提供多来源网页搜索、回退和研究证据整理工具。 | 先备份并隔离 profile，用非敏感查询测试允许的来源；核对 provider、实际费用和出处，停用前恢复原配置。 |
+| [GeoChat 画布](#plugin-959005755-plugins-deepseek-harness) | 让 DSH 模型操作会话右侧的 GeoGebra 画布 | [Q04](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q04) 使用固定 Web 版本对照双会话与断流。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
 | [Graph Memory](#plugin-1178312395-root) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | [Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 个人非敏感任务用副本库对照；审计或多租户任务先保留原历史并验证隔离。 |
 | [hn](#plugin-1211255316-root) | 在终端浏览 Hacker News 故事和评论，并提供可选翻译。 | [Q03](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q03) 先用公开帖子并核模型端点；内容不全或不接受外发时返回网页和原文。 |
@@ -583,6 +587,22 @@
 
 [查看完整分析](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334167430-root"></a>
+
+## [DSH Noema](../../plugins/zseven-w--dsh-noema/INSIGHT.md)
+
+[![GitHub ★ 136](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=136&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/dsh-noema) [![npm 30d 1,976](https://img.shields.io/static/v1?label=npm+30d&message=1%2C976&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zseven-w/dsh-noema) [![最新发布 2026-10-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zseven-w/dsh-noema)
+
+> **用途**：需要在 DSH 复用长期开发笔记的用户。
+
+> **亮点**：[Q01](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q01) 统一接入记忆工具与生命周期。
+
+> **思考**：[Q02](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q02) 已接受的记忆与去重账本不是同一提交。
+
+> **建议**：[Q04](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q04) 在提交前显示待导入范围。
+
+[查看完整分析](../../plugins/zseven-w--dsh-noema/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1346064150-root"></a>
 
 ## [DSH PDF Reader](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md)
@@ -678,6 +698,22 @@
 > **建议**：默认只读、受保护的统计摘要和人工批准干预能降低误打断；尚未实现。详见[Q05](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/aik358--dsh-anchored-monitor/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1381430202-root"></a>
+
+## [dsh-auto-memory](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md)
+
+[![GitHub ★ 122](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=122&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AskTheWay/dsh-auto-memory) [![npm 30d 9,671](https://img.shields.io/static/v1?label=npm+30d&message=9%2C671&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-auto-memory) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-auto-memory)
+
+> **用途**：编码用户在多个会话中反复提供相同项目背景和偏好。
+
+> **亮点**：[Q01](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q01) 在会话步骤注入工作区索引并提供记忆工具。
+
+> **思考**：[Q02](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q02) 防护为启发式，固定 API 文件含 NUL，网页权限未覆盖。
+
+> **建议**：[Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 比较启用前后的拒答、污染和注入成本。
+
+[查看完整分析](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1359423472-root"></a>
 
@@ -1047,6 +1083,22 @@
 
 [查看完整分析](../../plugins/anacondakc--dsh-stock-market/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334076307-root"></a>
+
+## [dsh-tabbit](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md)
+
+[![GitHub ★ 122](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=122&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tabbit-Browser/dsh-tabbit) [![npm 30d 2,395](https://img.shields.io/static/v1?label=npm+30d&message=2%2C395&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tabbit) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tabbit)
+
+> **用途**：需要用现有浏览器读取渲染网页、登录页或标签上下文的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q01) 连接本地真实浏览器、会话任务与宿主工具。
+
+> **思考**：[Q02](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q02) 授权记忆、一般浏览器动作与抓取重定向需要区分。
+
+> **建议**：[Q04](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q04) 请求前逐跳检查可能减少内网目标收到的未授权请求。
+
+[查看完整分析](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1369301269-root"></a>
 
 ## [dsh-tavily-web](../../plugins/arcaneorion--dsh-tavily-web/INSIGHT.md)
@@ -1254,6 +1306,22 @@
 > **建议**：假设按已验证来源质量与额度调整并发可提升固定预算下的有效来源覆盖；用相同查询集比较现有策略，若覆盖不改善或成本与错误增加则否定。[Q05](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/dddmuc--dsh-free-search/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-959005755-plugins-deepseek-harness"></a>
+
+## [GeoChat 画布](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 125](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=125&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tiwe0/GeoChat)
+
+> **用途**：用户希望在 DSH 内构建可操作数学图。
+
+> **亮点**：[Q01](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q01) 在同一会话内执行并检查对象。
+
+> **思考**：[Q03](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q03) 回执失败后需检查真实 Applet 状态。
+
+> **建议**：[Q05](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q05) 常见构图可以减少窗口切换而维持数学准确。
+
+[查看完整分析](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335867536-root"></a>
 

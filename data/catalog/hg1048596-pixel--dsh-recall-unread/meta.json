@@ -1,0 +1,66 @@
+{
+    "repository": "hg1048596-pixel/dsh-recall-unread",
+    "repository_id": 1336836593,
+    "captured_at": "2026-11-05T03:59:20.742Z",
+    "window_start": "2026-10-06T03:59:20.742Z",
+    "stars": 126,
+    "pushed_at": "2026-11-02T18:22:19Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahg1048596-pixel%2Fdsh-recall-unread%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0EE0:C0E6F:25090DB:349CB74:6AEBFF51 and timestamp 2026-11-05 04:00:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahg1048596-pixel%2Fdsh-recall-unread%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0F4A:C0E6F:25095B4:349D212:6AEBFF52 and timestamp 2026-11-05 04:00:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahg1048596-pixel%2Fdsh-recall-unread%20is%3Aissue%20created%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0FB2:3BAA19:23ECAD9:331E231:6AEBFF54 and timestamp 2026-11-05 04:00:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahg1048596-pixel%2Fdsh-recall-unread%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1014:1600:18479F7:22B00F8:6AEBFF56 and timestamp 2026-11-05 04:00:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahg1048596-pixel%2Fdsh-recall-unread%20is%3Aissue%20updated%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 104C:1600:1847CDB:22B050A:6AEBFF57 and timestamp 2026-11-05 04:00:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "9b2ec5016676b5797a91a13ad33197ed4c292dca",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-recall-unread",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1583,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-recall-unread",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T17:23:31.436Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-recall-unread",
+            "error": null,
+            "latest_version": "1.2.1",
+            "latest_published_at": "2026-11-02T18:28:55.561Z",
+            "latest_error": null
+        }
+    }
+}

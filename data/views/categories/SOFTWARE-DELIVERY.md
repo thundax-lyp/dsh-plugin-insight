@@ -51,6 +51,7 @@
 | [Cocode](#plugin-1334020974-root) | 将 DeepSeek Harness 组装为桌面和终端开发环境，通过 Supervisor 共享宿主。 | [Q04](../../plugins/cocode-agency--cocode/INSIGHT.md#research-q04) 先用独立 home 验证两端切换。 |
 | [Code RAG 索引面板](#plugin-1347752454-plugins-dsh-code-rag-index-panel) | 在DSH会话显示Code RAG索引状态与进度，并提供索引操作、设置和诊断卡片。 | 建议已有本机code-rag基础设施且能核对目标根的开发者试用；普通搜索需求先比较现有工具，setup和重建须按实际写入与算力操作处理。 |
 | [Codex Taskboard 本地任务看板](#plugin-1311108439-root) | 本地优先任务看板，通过浏览器、taskctl和Skill管理项目与AI任务交接。 | [Q01](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md#research-q01)、[Q04](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md#research-q04) 先在非关键项目试用浏览器与CLI，验证任务版本冲突和待审接受；有明确同步收益后才考虑桌面注入或云模式，不把根目录作为DSH可装插件。 |
+| [codex-guard](#plugin-1340906871-root) | 为 DSH 注册本地 Git 差异扫描工具，仓库同时提供独立 PR 检查。 | [Q03](../../plugins/akimiya-z--codex-guard/INSIGHT.md#research-q03) 用测试仓库对照本地报告与 PR 检查。 |
 | [Coding Tools MCP](#plugin-1245329241-root) | 通过 MCP 提供工作区文件、补丁、命令和 Git 编码工具。 | 在隔离环境用可丢弃仓库验证补丁和权限；不可信工作缺额外沙箱时停止。 |
 | [Comi Pet](#plugin-1359009818-root) | 独立桌宠可跟随编码助手的工作和审批状态，并在桌面与 DSH 界面内切换显示。 | [Q04](../../plugins/ivenkoolab--desktop-pet/INSIGHT.md#research-q04) 先在可退出的本机 profile 试三种状态。 |
 | [Crossfire](#plugin-1399279897-root) | 在 DSH 对已定稿成果组织红队评审并由用户逐条裁决。 | 隔离副本先核实专家工具权限，用户逐条复核，异常转人工。 |
@@ -934,6 +935,22 @@
 > **建议**：[Q05](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md#research-q05) 未验证假设是把需求版本、代码revision和验证结果绑定为接受包，用五个需求变动任务对照错配办结与人工成本；无改善或维护更重即停止。
 
 [查看完整分析](../../plugins/chuspeeism--dashi-taskboard/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1340906871-root"></a>
+
+## [codex-guard](../../plugins/akimiya-z--codex-guard/INSIGHT.md)
+
+[![GitHub ★ 131](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=131&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Akimiya-z/codex-guard) [![npm 30d 169](https://img.shields.io/static/v1?label=npm+30d&message=169&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/codex-guard) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/codex-guard)
+
+> **用途**：代理作者提交前需要发现 TODO、疑似密钥和提交标题问题。
+
+> **亮点**：[Q01](../../plugins/akimiya-z--codex-guard/INSIGHT.md#research-q01) 把静态问题前移到代理可调用入口。
+
+> **思考**：[Q02](../../plugins/akimiya-z--codex-guard/INSIGHT.md#research-q02) npx 版本未固定，扫描目录是进程 cwd，结果是文本。
+
+> **建议**：[Q03](../../plugins/akimiya-z--codex-guard/INSIGHT.md#research-q03) 用同一差异验证本地预检能否减少首轮 CI 失败。
+
+[查看完整分析](../../plugins/akimiya-z--codex-guard/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1245329241-root"></a>
 

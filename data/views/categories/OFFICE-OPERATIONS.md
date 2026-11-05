@@ -18,13 +18,16 @@
 | [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 的浏览器操作接入 DSH 模型工具并提供会话观察。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 先用测试账号、显式会话和只读网页；操作结果或目标不明时停止并核对页面与本机保存文件。 |
 | [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
+| [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
+| [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
 | [dsh-im](#plugin-1334561781-root) | 把即时通讯机器人与本机 DSH 会话和工作区连接。 | [Q05](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q05) 在非敏感私聊和固定工作区试用，结果未知时暂停并对账。 |
+| [dsh-im-connect](#plugin-1335758624-root) | 把多账号 IM 聊天接入 DSH，支持会话绑定、审批和断线后交付。 | [Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 从隔离私聊开始验收，随后扩展至群聊。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 通过 Mac Companion 在 DSH 发通知、运行 Shortcuts 和读写剪贴板。 | [Q03](../../plugins/173787247--dsh-mac-companion/INSIGHT.md#research-q03) 仅用隔离 Mac 和无敏感通知开始，执行状态不明时回本机。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
@@ -146,6 +149,22 @@
 
 [查看完整分析](../../plugins/534119219--chicheng-stats/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334554248-root"></a>
+
+## [DeepSeek Harness GenUI](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md)
+
+[![GitHub ★ 124](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=124&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/pengyue-polaron/deepseek-harness-genui) [![npm 30d 2,099](https://img.shields.io/static/v1?label=npm+30d&message=2%2C099&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-genui) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-genui)
+
+> **用途**：用户需跨轮保留多个相关选择。
+
+> **亮点**：[Q01](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q01) 将选择和后续动作组织为可回读任务状态。
+
+> **思考**：[Q03](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q03) 需验证跨会话隔离、撤权及回退时状态边界。
+
+> **建议**：[Q05](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q05) 保存和回读可在减少重述时维持状态准确。
+
+[查看完整分析](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1326394141-root"></a>
 
 ## [DSH Ego Browser](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md)
@@ -161,6 +180,22 @@
 > **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
 
 [查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1340581082-root"></a>
+
+## [DSH Generative UI](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md)
+
+[![GitHub ★ 137](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=137&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MindLab-Research/dsh-generative-ui) [![npm 30d 1,951](https://img.shields.io/static/v1?label=npm+30d&message=1%2C951&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-generative-ui) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-generative-ui)
+
+> **用途**：用户需多次调整计算参数。
+
+> **亮点**：[Q01](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q01) 提供可直接操作和跨轮保留的界面。
+
+> **思考**：[Q03](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q03) 命令桥默认开启，但还要 webServer、shell 与 sandboxPolicy，关闭 allowExec 或缺服务时路由不挂载。已挂载时执行采用会话沙箱且没有逐命令审批。文件桥依赖 fs 与 sandboxPolicy，拒绝不在活动工作区清单的 cwd，拒绝码与文件不存在要区分。模型桥依赖 llm 与 agentDefaultModel，拒绝不在活动清单的 cwd，并通过宿主选中模型处理卡片 prompt。浏览器依赖加载、文件访问、命令执行和模型调用应分别检查。
+
+> **建议**：[Q05](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q05) 交互面板可减少重新询问参数的轮数。
+
+[查看完整分析](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1182135360-dsh-plugin"></a>
 
@@ -257,6 +292,22 @@
 > **建议**：[Q04](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q04) 会话发送前展示目标和文件范围或能减少误投；需要对照实验，尚未验证。
 
 [查看完整分析](../../plugins/xmanrui--dsh-im/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335758624-root"></a>
+
+## [dsh-im-connect](../../plugins/michengai--dsh-im-connect/INSIGHT.md)
+
+[![GitHub ★ 122](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=122&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-im-connect) [![npm 30d 61,624](https://img.shields.io/static/v1?label=npm+30d&message=61%2C624&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect)
+
+> **用途**：团队离开 DSH 网页后仍希望在一个聊天里提交和跟进任务。
+
+> **亮点**：[Q01](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q01) 将宿主会话映射到已用聊天并保留历史。
+
+> **思考**：[Q02](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q02) 未知送达有独立状态，平台 ACK 和身份隔离待验。
+
+> **建议**：[Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 比较单渠道接入与网页流程的跟进时间和重复交付。
+
+[查看完整分析](../../plugins/michengai--dsh-im-connect/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1344714819-root"></a>
 
