@@ -1,0 +1,45 @@
+{
+    "repository": "PensiveFei/dsh-secure-audit",
+    "repository_id": 1339251799,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 86,
+    "pushed_at": "2026-11-02T12:42:51Z",
+    "issues": {
+        "open": 0,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-secure-audit",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 2799,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-secure-audit",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T15:02:24.179Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-secure-audit",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-11-02T12:42:01.082Z",
+            "latest_error": null
+        }
+    }
+}

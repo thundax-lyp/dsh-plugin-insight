@@ -42,14 +42,17 @@
 | [DSH Annotation](#plugin-1369398336-packages-dsh-annotation) | 把助手回复中的选段和批注作为原生引用加入草稿，并按顺序发送。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04) 建议先用非敏感长回复在兼容客户端核对多处选段、撤销、刷新和历史；定位或草稿恢复异常时回退手工引用。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
+| [DSH Failover Search](#plugin-1374007757-plugins-dsh-failover-search-plugin) | 在宿主搜索与取回接缝按账号和平台故障转移 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q04) 模拟服务起步，保存原搜索和取回配置作为退出。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
 | [DSH Noema](#plugin-1334167430-root) | 将本地 Noema 记忆服务接入 DSH，支持检索与跨工具导入。 | [Q03](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q03) 先隔离验证。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
+| [DSH Plugins 中文导航](#plugin-1335045464-root) | 提供带安装、起步建议与限制的插件发现目录 | [Q04](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q04) 只作发现源，回源固定包版本并独立验收。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [DSH Video Lens](#plugin-1338640495-root) | 将本地视频抽样、可选转写和视觉问答接入 DSH | [Q04](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q04) 只用虚构短片验收抽样、时间和传输。 |
+| [DSH Web Search Pro](#plugin-1333320049-root) | 以按需动作和有出处的证据包组织多来源搜索 | [Q04](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q04) 公开来源起步，对照规则和远程评分。 |
 | [DSH Web Tools](#plugin-1335219884-root) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 仅在隔离 Profile 测普通双源与单源。 |
 | [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
@@ -60,6 +63,7 @@
 | [dsh-hacker-news](#plugin-1211255316-plugins-hacker-news) | 为 DeepSeek Harness 提供 Hacker News 榜单、评论、搜索和用户信息工具。 | [Q04](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q04) 仅用非敏感查询并检查截断，重要结论回原帖；网络或完整性不满足时停止。 |
 | [dsh-handbook](#plugin-1333258936-root) | DeepSeek Harness 中文优先的学习手册与生态观察，涵盖上手、插件开发、案例和调优。 | 先用固定宿主完成一次隔离的入门练习。 |
 | [dsh-insight](#plugin-1336649545-root) | 用需求匹配、环境配方、健康评分、静态安全扫描与统一 verdict 辅助选择 DSH 插件。 | 适合插件研究者把它当候选筛选和审计线索观察，不应直接驱动生产安装。 |
+| [dsh-knowledge](#plugin-1335253559-root) | 为 DSH 提供文档知识库、混合检索、引用及可续读证据。 | [Q03](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md#research-q03) 先用两篇资料核对范围、降级与更新后续读，再验证四类数据备份。 |
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
 | [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。 |
@@ -615,6 +619,22 @@
 
 [查看完整分析](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1374007757-plugins-dsh-failover-search-plugin"></a>
+
+## [DSH Failover Search](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md)
+
+[![GitHub ★ 87](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=87&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/FNOSP/fnos-dsh) [![npm 30d 3,733](https://img.shields.io/static/v1?label=npm+30d&message=3%2C733&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tnnevol/dsh-failover-search) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tnnevol/dsh-failover-search)
+
+> **用途**：依赖网页资料的用户遇到单来源服务故障。
+
+> **亮点**：[Q01](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q01) 将失败转移、用量探测和错误说明接入宿主。
+
+> **思考**：[Q03](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q03) 顺序尝试带来延迟、配额与多方资料传输。
+
+> **建议**：[Q05](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q05) 可在单来源故障时提高合格检索任务完成率。
+
+[查看完整分析](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339669759-root"></a>
 
 ## [DSH Industry Research](../../plugins/perrylink--dsh-industry-research/INSIGHT.md)
@@ -695,6 +715,22 @@
 
 [查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335045464-root"></a>
+
+## [DSH Plugins 中文导航](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md)
+
+[![GitHub ★ 85](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=85&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/gityuanbao/DSH-Plugins)
+
+> **用途**：中文读者需从候选仓库走到可核查的安装起步。
+
+> **亮点**：[Q01](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q01) 增加采用线索的集中整理。
+
+> **思考**：[Q03](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q03) 快照与来源类别不证明当前可装或安全。
+
+> **建议**：[Q05](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q05) 可减少候选初筛时间，需对照时效核实。
+
+[查看完整分析](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339655720-root"></a>
 
 ## [DSH Research Report](../../plugins/perrylink--dsh-research-report/INSIGHT.md)
@@ -742,6 +778,22 @@
 > **建议**：[Q05](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q05) 明确时间的问答或可节约回看时间。
 
 [查看完整分析](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333320049-root"></a>
+
+## [DSH Web Search Pro](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md)
+
+[![GitHub ★ 84](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=84&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/anweat/dsh-web-search-pro) [![npm 30d 6,045](https://img.shields.io/static/v1?label=npm+30d&message=6%2C045&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-web-search-pro) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-web-search-pro)
+
+> **用途**：研究者要按多个要求整理来源证据。
+
+> **亮点**：[Q01](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q01) 提供需求映射、摘录及可追查原块。
+
+> **思考**：[Q03](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q03) 压缩和评分回退可能漏证，CLI及历史需管理。
+
+> **建议**：[Q05](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q05) 证据包可在保留关键事实时降低整理负担。
+
+[查看完整分析](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335219884-root"></a>
 
@@ -902,6 +954,22 @@
 > **建议**：未验证假设是把 verdict 改成可追溯证据图，并在数据过期或扫描未覆盖时拒绝给出 install，可降低误导。最小实验让两名审查者对 30 个插件做盲审，与现 verdict/证据图 verdict 比较一致率、严重漏报和复核时间；若可追溯版不降低高风险误判则否定。 详见[Q08](../../plugins/863683348--dsh-insight/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/863683348--dsh-insight/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335253559-root"></a>
+
+## [dsh-knowledge](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md)
+
+[![GitHub ★ 91](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=91&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Soren-ABT/dsh-knowledge) [![npm 30d 2,848](https://img.shields.io/static/v1?label=npm+30d&message=2%2C848&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-knowledge) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-knowledge)
+
+> **用途**：在项目中反复引用多份资料，需要查找并核对原文的用户。
+
+> **亮点**：[Q01](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md#research-q01) 搜索在词法和向量候选前实施范围过滤，再以带修订的证据读取保持引用定位。
+
+> **思考**：[Q02](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md#research-q02) 未配置库选择意味着全部库，功能范围依赖宿主身份；省略修订会读取当前版本。[Q03](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md#research-q03) 备份还必须包含独立处理产物。
+
+> **建议**：[Q04](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md#research-q04) 旧修订已被拒绝，新的可用性假设仅针对调用方省略修订的实证情形。
+
+[查看完整分析](../../plugins/soren-abt--dsh-knowledge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1351375738-root"></a>
 

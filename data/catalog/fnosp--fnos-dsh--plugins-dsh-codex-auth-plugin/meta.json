@@ -1,0 +1,54 @@
+{
+    "repository": "FNOSP/fnos-dsh",
+    "repository_id": 1374007757,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 87,
+    "pushed_at": "2026-11-04T02:16:00Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 17,
+        "closed_30d": 14,
+        "updated_30d": 17
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFNOSP%2Ffnos-dsh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D4C:2CE3B4:290D02:2C5E00:6AEC162E and timestamp 2026-11-05 05:37:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFNOSP%2Ffnos-dsh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D9A:FE5BB:2A1F53:2D71B4:6AEC162F and timestamp 2026-11-05 05:37:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@tnnevol/dsh-codex-auth",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 9655,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40tnnevol%2Fdsh-codex-auth",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T11:33:03.155Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40tnnevol%2Fdsh-codex-auth",
+            "error": null,
+            "latest_version": "7.0.2",
+            "latest_published_at": "2026-10-30T08:01:47.559Z",
+            "latest_error": null
+        }
+    }
+}
