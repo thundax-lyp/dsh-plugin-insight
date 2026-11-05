@@ -1,0 +1,440 @@
+{
+    "schema_version": 4,
+    "id": "16424d6a33d2d3859e046ec7bb0e606c",
+    "identity": "github:1333132389:root",
+    "slug": "nagi-ovo--dsh-find-plugins",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333132389:root",
+            "repository_id": 1333132389,
+            "component_id": "root",
+            "repository": "Nagi-ovo/dsh-find-plugins",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-find-plugins",
+            "entry_type": "skill",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "981ad06263293bb9d67b8dad59484adbc99324e2b2bb0356020396e3170dbc1b",
+                "code": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                "maintenance": "c830ddb2a42c66f923bd70ba32d3c917b5175b03dcf9483c5292a2d9e9803910"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-01-github-1333132389-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T02:13:57.367Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-01-github-1333132389-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Nagi-ovo/dsh-find-plugins",
+                            "commit": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                            "path": "README.md",
+                            "content_sha256": "a5be8780c6e3baa06a01ffba47793d6c469e3ed19705a6a9d66b7c1827c30bee"
+                        }
+                    ],
+                    "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                    "captured_at": "2026-11-05T02:13:57.367Z",
+                    "summary": "按 GitHub topic 发现 DSH 插件，比较候选并引导安全检查、安装和挂载验证。",
+                    "artifact": "data/runs/2026-11-05-01/nagi-ovo--dsh-find-plugins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-01-github-1333132389-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Nagi-ovo/dsh-find-plugins",
+                            "commit": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                            "path": "README.md",
+                            "content_sha256": "a5be8780c6e3baa06a01ffba47793d6c469e3ed19705a6a9d66b7c1827c30bee"
+                        },
+                        {
+                            "repository_url": "https://github.com/Nagi-ovo/dsh-find-plugins",
+                            "commit": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                            "path": "skills/find-plugins/SKILL.md",
+                            "content_sha256": "8eee4d2e07a0b9948dfc5c1042b014082d0e6fe69cd0d298b25e66ff7f6e79e7"
+                        },
+                        {
+                            "repository_url": "https://github.com/Nagi-ovo/dsh-find-plugins",
+                            "commit": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                            "path": "skills/find-plugins/references/install-methods.md",
+                            "content_sha256": "4986592eefa04bce40d9253d5539e2f35b7203cfc50b14730249ce3cc133964b"
+                        },
+                        {
+                            "repository_url": "https://github.com/Nagi-ovo/dsh-find-plugins",
+                            "commit": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                            "path": "skills/find-plugins/scripts/search-topic.mjs",
+                            "content_sha256": "36546a3807e0aa3618d4c3a6cb01feda756bca466cce30b048f5f38236068511"
+                        }
+                    ],
+                    "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                    "captured_at": "2026-11-05T02:13:57.367Z",
+                    "summary": "核查 README.md、skills/find-plugins/SKILL.md、skills/find-plugins/references/install-methods.md、skills/find-plugins/scripts/search-topic.mjs；Node 脚本整理 GitHub topic 候选，宿主 Agent 按技能文本检查来源、确认及安装。",
+                    "artifact": "data/runs/2026-11-05-01/nagi-ovo--dsh-find-plugins/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定 Skill、脚本与安装参考，未执行目标代码、登录、安装或宿主测试。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要按任务寻找 DSH 插件且不了解仓库名和装法的用户。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Node 脚本整理 GitHub topic 候选，宿主 Agent 按技能文本检查来源、确认及安装。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定 Skill、脚本与安装参考，未执行目标代码、登录、安装或宿主测试。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH Skill 目录，附 Node 检索脚本与安装参考。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node 和 GitHub API | 检索必需 | 运行查询 | 报告错误或手工核对 |\n| GitHub 凭据 | 可选 | 增加查询限额 | 无令牌时使用公开 API |\n| DSH 技能发现根 | 宿主使用必需 | 载入技能文本 | 检查 profile 和技能列表 |",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 网络与宿主模型费用未知 | 选择作用域 | 未测耗时 |\n| 持续 | API 和 Agent 阅读消耗 | 复核候选和权限 | 限流和频次未知 |\n| 失败恢复 | 重试成本未知 | 检查入口并恢复配置 | 取决于安装类型 |",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 先只读比较候选，再按 [Q02](#research-q02) 的方式明确授权和宿主作用域。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 候选比较 | 脚本输出结构化列表 | 生态覆盖和正确率 |\n| 安装复核 | 文本要求双确认 | Agent 是否始终遵循 |\n| 挂载验证 | 按实际表面核对 | 真实宿主兼容 |",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 将确定性发现和人工筛选拆开。[Q04](#research-q04) 覆盖状态仍可改进。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 以公共 topic 当前地址整理候选，[Q02](#research-q02) 将装法和风险复核分为显式步骤。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 搜索窗口有上限，[Q02](#research-q02) 安装确认是 Agent 流程约定，权限仍由宿主和目标包决定。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 将搜索不完整和截断信息传给上层，检验是否减少把未发现当成不存在。",
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333132389:root",
+                            "area": "code",
+                            "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T02:13:57.367Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T02:13:57.367Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                "reviewed_at": "2026-11-05T02:13:57.367Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333132389:root",
+                        "area": "code",
+                        "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) novelty 9 是常规 topic 搜索适配，mechanism 8 是有限分页和当前 URL 去重，未增加索引算法。[Q02](#research-q02) transferability 5 的检查流程可移植但依赖宿主执行。[Q03](#research-q03) simplification 4 收拢装法参考但保留判断和配置步骤。",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q02](#research-q02) workflow 9 让 Agent 准备风险复核，用户继续审批。[Q01](#research-q01) delivery 8 多产出小型候选表，仍以选出插件为目标。reach 5 为不知道包名者提供入口，仍限公共 topic。[Q03](#research-q03) economics 4 可减少手工翻页，新增模型与网络成本。",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-05-01-github-1333132389-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "不熟悉 DSH 插件目录的用户可以先用它做一次只读候选比较。相比手工查 topic 页面，它把当前地址和安装方式整理成少量可复核选项。若候选覆盖或权限无法核对，停在候选阶段并按目标仓库固定版本手动核查。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 的技能第31–52行界定用户任务和结果，超过8分偶发入口，实际频次不明低于23分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 搜索脚本第24–65行和 [Q02](#research-q02) 技能第54–88行整合发现与审核，超过6分入口包装，未测实际命中率低于19分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 脚本第7–65行覆盖查询、认证及过滤，[Q02](#research-q02) 已明确安装要求属于文本流程，支持只读试用，超过6分局部声明。未执行本地测试或宿主，低于19分。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q03](#research-q03) 安装对照第59–68行支持项目作用域试用，可停在候选阶段，高于10分的显著排障。仍需网络、宿主核对，低于20分。"
+                    }
+                },
+                "score": 56,
+                "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                "reviewed_at": "2026-11-05T02:13:57.367Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-01-github-1333132389-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333132389:root",
+                        "area": "code",
+                        "fingerprint": "61b30c697f12075ac1071418b7b7ca2300de37ac"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333132389:root",
+            "repository": "Nagi-ovo/dsh-find-plugins",
+            "path": "",
+            "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+            "fingerprints": {
+                "directory": "981ad06263293bb9d67b8dad59484adbc99324e2b2bb0356020396e3170dbc1b",
+                "code": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+                "maintenance": "c830ddb2a42c66f923bd70ba32d3c917b5175b03dcf9483c5292a2d9e9803910"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T01:56:58Z",
+            "analysis_sha256": "e4c4fe26eedfb8a8313b218bf6fb2def8462f8d1cf268a4a4b820c00bc912fb4"
+        },
+        "publication.metadata": "data/catalog/nagi-ovo--dsh-find-plugins/meta.json",
+        "publication.summaries": {
+            "text": "按 GitHub topic 发现 DSH 插件，比较候选并引导安全检查、安装和挂载验证。",
+            "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+            "source_url": "https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+            "items": {
+                "Skill": "按任务发现插件并引导比较、风险核查与挂载验证。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 候选发现 | 按 topic 搜索当前仓库 | 需 GitHub API，结果受查询窗口限制 |\n| 安装引导 | 比较装法及审查权限 | 需用户确认与宿主执行 |\n| 挂载核对 | 查验界面或技能条目 | 需访问目标 profile |"
+        },
+        "publication.advice": {
+            "revision": "61b30c697f12075ac1071418b7b7ca2300de37ac",
+            "text": "[Q03](#research-q03) 先只读比较候选，再按 [Q02](#research-q02) 的方式明确授权和宿主作用域。"
+        },
+        "registry": "data/plugins/nagi-ovo--dsh-find-plugins",
+        "reports": "# dsh-find-plugins\n\n> 按 GitHub topic 发现 DSH 插件，比较候选并引导安全检查、安装和挂载验证。\n\n## 研究范围\n\n- **仓库**：[Nagi-ovo/dsh-find-plugins](https://github.com/Nagi-ovo/dsh-find-plugins)\n- **版本号**：未声明（[固定提交 61b30c697f12075ac1071418b7b7ca2300de37ac](https://github.com/Nagi-ovo/dsh-find-plugins/tree/61b30c697f12075ac1071418b7b7ca2300de37ac)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码和技能文档支持检索与流程核查。未执行 GitHub 查询、安装或真实宿主验证。\n\n## 洞察短评\n\n- **用途**：需要按任务寻找 DSH 插件且不了解仓库名和装法的用户。\n- **亮点**：[Q01](#research-q01) 以公共 topic 当前地址整理候选，[Q02](#research-q02) 将装法和风险复核分为显式步骤。\n- **思考**：[Q01](#research-q01) 搜索窗口有上限，[Q02](#research-q02) 安装确认是 Agent 流程约定，权限仍由宿主和目标包决定。\n- **建议**：[Q04](#research-q04) 将搜索不完整和截断信息传给上层，检验是否减少把未发现当成不存在。\n\n采用建议：[Q03](#research-q03) 先只读比较候选，再按 [Q02](#research-q02) 的方式明确授权和宿主作用域。\n\n## 核心贡献\n\n[Q01](#research-q01) 以公共 topic 当前地址整理候选，[Q02](#research-q02) 将装法和风险复核分为显式步骤。\n\n## 关键质疑\n\n[Q01](#research-q01) 搜索窗口有上限，[Q02](#research-q02) 安装确认是 Agent 流程约定，权限仍由宿主和目标包决定。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 将搜索不完整和截断信息传给上层，检验是否减少把未发现当成不存在。\n\n用固定 API 样本与隔离 profile 测试候选、风险报告与恢复。\n\n## 场景与替代办法\n\n需要按任务寻找 DSH 插件且不了解仓库名和装法的用户。\n\n用户手工搜索 topic、读包声明并在 profile 核对挂载。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| Node 和 GitHub API | 检索必需 | 运行查询 | 报告错误或手工核对 |\n| GitHub 凭据 | 可选 | 增加查询限额 | 无令牌时使用公开 API |\n| DSH 技能发现根 | 宿主使用必需 | 载入技能文本 | 检查 profile 和技能列表 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 加载 | 用户将技能放入测试项目 | 宿主技能列表可见 |\n| 检索 | Agent 比较少量候选 | 对照当前仓库与装法 |\n| 确认 | 用户复核权限并决定是否继续 | 缺证即停 |\n| 验证 | 如获授权安装则检查宿主表面 | 有错误恢复 profile |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次 | 网络与宿主模型费用未知 | 选择作用域 | 未测耗时 |\n| 持续 | API 和 Agent 阅读消耗 | 复核候选和权限 | 限流和频次未知 |\n| 失败恢复 | 重试成本未知 | 检查入口并恢复配置 | 取决于安装类型 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 候选比较 | 脚本输出结构化列表 | 生态覆盖和正确率 |\n| 安装复核 | 文本要求双确认 | Agent 是否始终遵循 |\n| 挂载验证 | 按实际表面核对 | 真实宿主兼容 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：该技能怎样将候选发现、安装风险复核和挂载验证连起来？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 候选检索比手工查 topic 多完成哪些工作？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n想在 DSH 中解决具体任务却不熟悉包名的用户，可以让 Agent 从公共 topic 候选着手，再核对最多三项的安装方式。相对手工打开 topic 页，脚本固定 Search API 查询，按页请求并过滤停用、归档和 fork，以不区分大小写的 full_name 去重，输出当前 URL、描述和更新时间。Skill 再以语义匹配及更新作为阅读线索。Hub 仅补充当前 URL 匹配的条目。未标 topic、私有或被搜索窗口截断的条目不能从空结果判断为不存在。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:7-19](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L7-L19)\n\n查询条件、页数与令牌优先级\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nconst topic = 'dsh-plugin'\nconst query = `topic:${topic} is:public archived:false`\nconst pageSize = 100\nconst maxPages = 10\nlet token = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN ?? ''\nif (token === '') {\n  try {\n    token = execFileSync('gh', ['auth', 'token'], { encoding: 'utf8', timeout: 5_000 }).trim()\n  } catch {\n    // An authenticated token only raises GitHub's rate limit; public search\n    // remains functional when gh is absent or logged out.\n    token = ''\n  }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:24-47](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L24-L47)\n\n调用官方 API、超时、状态与过滤\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nfor (let page = 1; page <= maxPages; page += 1) {\n  const url = new URL('https://api.github.com/search/repositories')\n  url.searchParams.set('q', query)\n  url.searchParams.set('sort', 'updated')\n  url.searchParams.set('order', 'desc')\n  url.searchParams.set('per_page', String(pageSize))\n  url.searchParams.set('page', String(page))\n  const headers = {\n    accept: 'application/vnd.github+json',\n    'user-agent': 'dsh-find-plugins',\n    'x-github-api-version': '2022-11-28',\n  }\n  if (token !== '') headers.authorization = `Bearer ${token}`\n  const response = await fetch(url, { headers, signal: AbortSignal.timeout(20_000) })\n  if (!response.ok) {\n    throw new Error(`GitHub topic search failed (${response.status}); authenticate gh or set GH_TOKEN and retry`)\n  }\n  const body = await response.json()\n  if (!Array.isArray(body.items)) throw new Error('GitHub topic search returned no items array')\n  for (const repo of body.items) {\n    if (repo?.archived === true || repo?.disabled === true || repo?.fork === true) continue\n    if (!Array.isArray(repo?.topics) || !repo.topics.includes(topic)) continue\n    if (typeof repo?.full_name !== 'string' || seen.has(repo.full_name.toLowerCase())) continue\n    seen.add(repo.full_name.toLowerCase())\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:48-65](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L48-L65)\n\n结构化结果、停止和输出\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n    repositories.push({\n      fullName: repo.full_name,\n      name: repo.name,\n      url: repo.html_url,\n      description: repo.description ?? '',\n      topics: repo.topics,\n      language: repo.language,\n      pushedAt: repo.pushed_at,\n      updatedAt: repo.updated_at,\n      defaultBranch: repo.default_branch,\n      stars: repo.stargazers_count,\n    })\n  }\n  const total = typeof body.total_count === 'number' ? body.total_count : body.items.length\n  if (page * pageSize >= total || body.items.length < pageSize) break\n}\n\nprocess.stdout.write(`${JSON.stringify({ topic, repositories }, null, 2)}\\n`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skills/find-plugins/SKILL.md:31-52](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/SKILL.md#L31-L52)\n\n候选核对、可选 Hub 及三项比较\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n## Step 2：筛选并确认装法\n\n先用用户需求对照 `name`、`description`、`topics`，按 `pushedAt` 优先查看较新的\n命中项。只对语义最匹配的少量仓库读取 README、`package.json` 和仓库文件树：\n\n- `package.json` 声明 `dsh.bundle.patch`：`bundle`。\n- 含一个或多个 `SKILL.md`，且没有 bundle 声明：`skill`。\n- README 明确要求写入 `cordis.patch.yml`，但没有 bundle 声明：`cordis`。\n- 只有 `.dsh-plugin` / `repository` 旧格式：标成「需迁移」，不能直接安装。\n- 仍无法判断：标成「需核对」，不要编造安装命令。\n\n如果当前账号能读取 `dsh-external/hub/catalog.json`，可以把其中的 `note`、\n`category`、`managers` 当补充信息；只接受 `url` 与 topic 搜索结果当前 URL 完全匹配\n的条目。Hub 缺失、私有或仍指向转移前地址都不影响发现结果，也不能覆盖仓库自身\n的当前声明。\n\n产出最多 3 行候选表：名字、一句话用途、最近更新、装法。表后用一句话说明首选\n理由。比如「整活 / 复古 / 好玩」可命中\n[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)；「把数据、流程和对比画出来」可命中\n[dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)。\n\n一条都不匹配时直说 topic 目录里没有，并问是否转 `make-dsh-plugin` 现写一个。\n```\n\n</details>\n\n#### 缺口\n\n- 未实测候选覆盖与命中质量\n  **影响**：无法确定是否减少找错插件或漏项\n  **进一步探讨**：用含未标注、迁移与重名的已知仓库集对照手工和技能检索\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 安装前的保护由谁执行？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n用户先选候选，Agent 检查 lifecycle 脚本、网络与子进程、会话数据和凭据读取，再汇报并等待明确继续。执行方式从清单、技能目录或 README 推断，旧格式和未知项需要停止或核对。安装出现未预期的源、写入或提权也要求暂停。确定性脚本只收集候选，授权及判断由宿主 Agent 遵循文本执行，所见材料没有独立策略引擎约束下载、安装和挂载。若 Git 来源锁定提交，可缩小审核与执行版本漂移，但包依赖和宿主权限仍要核对。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/find-plugins/SKILL.md:33-45](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/SKILL.md#L33-L45)\n\n类型判断与仓库自述优先级\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n先用用户需求对照 `name`、`description`、`topics`，按 `pushedAt` 优先查看较新的\n命中项。只对语义最匹配的少量仓库读取 README、`package.json` 和仓库文件树：\n\n- `package.json` 声明 `dsh.bundle.patch`：`bundle`。\n- 含一个或多个 `SKILL.md`，且没有 bundle 声明：`skill`。\n- README 明确要求写入 `cordis.patch.yml`，但没有 bundle 声明：`cordis`。\n- 只有 `.dsh-plugin` / `repository` 旧格式：标成「需迁移」，不能直接安装。\n- 仍无法判断：标成「需核对」，不要编造安装命令。\n\n如果当前账号能读取 `dsh-external/hub/catalog.json`，可以把其中的 `note`、\n`category`、`managers` 当补充信息；只接受 `url` 与 topic 搜索结果当前 URL 完全匹配\n的条目。Hub 缺失、私有或仍指向转移前地址都不影响发现结果，也不能覆盖仓库自身\n的当前声明。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[skills/find-plugins/SKILL.md:54-88](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/SKILL.md#L54-L88)\n\n确认、检查与意外行为时停止\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n## Step 3：用户拍板\n\n停下来等选择。用户已经点名某个插件时，从 Step 2 核对当前仓库和装法后直接进入\nStep 4。\n\n## Step 4：安全检查并汇报\n\n用户点头之后、动手之前，先看一遍这个插件装进来会拿到什么。插件运行在用户的\nDSH 进程里，能读会话、调工具、跑命令，装它等于授权，所以这一步不能跳过，也不\n能只在发现问题时才出声。\n\n至少看这四处：\n\n- `package.json` 的 lifecycle scripts：`preinstall`、`install`、`postinstall`、\n  `prepare` 在 Git / npm 安装时会执行。\n- 插件声明和源码里对外的动作：网络请求、子进程、写 `$DSH_HOME` 之外的路径、\n  改 shell 配置或系统设置。\n- 插件读取的会话数据和凭据：读会话日志、settings、`.env` 或 credentials 的地方。\n- 仓库本身的可信度：`pushedAt`、star 数、作者是否还有其他 dsh 插件、README 与\n  代码是否对得上。\n\n**不管有没有发现问题，都要汇报**，三到五行讲清：查了哪几处、这个插件实际要什么\n权限、有没有和它宣称的用途对不上的动作。有可疑项就把原文贴出来，别转述。\n\n汇报完再问一次是否继续。用户说停就停在这里，不要顺手装完。\n\n完成点：用户看过这份汇报，并明确说继续。\n\n## Step 5：安装\n\n按确认出的安装类型打开 [references/install-methods.md](references/install-methods.md)\n并照对应小节操作。多个方式并存时按该文件开头的优先级选一种。\n\n安装过程中冒出 Step 4 没看到的动作（新的下载源、额外的写入路径、要求提权），\n停下来把原文交给用户，不要边装边判断。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:24-65](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L24-L65)\n\n脚本输出候选，不调用安装程序\n\n<details>\n<summary>查看原文（42行）</summary>\n\n```text\nfor (let page = 1; page <= maxPages; page += 1) {\n  const url = new URL('https://api.github.com/search/repositories')\n  url.searchParams.set('q', query)\n  url.searchParams.set('sort', 'updated')\n  url.searchParams.set('order', 'desc')\n  url.searchParams.set('per_page', String(pageSize))\n  url.searchParams.set('page', String(page))\n  const headers = {\n    accept: 'application/vnd.github+json',\n    'user-agent': 'dsh-find-plugins',\n    'x-github-api-version': '2022-11-28',\n  }\n  if (token !== '') headers.authorization = `Bearer ${token}`\n  const response = await fetch(url, { headers, signal: AbortSignal.timeout(20_000) })\n  if (!response.ok) {\n    throw new Error(`GitHub topic search failed (${response.status}); authenticate gh or set GH_TOKEN and retry`)\n  }\n  const body = await response.json()\n  if (!Array.isArray(body.items)) throw new Error('GitHub topic search returned no items array')\n  for (const repo of body.items) {\n    if (repo?.archived === true || repo?.disabled === true || repo?.fork === true) continue\n    if (!Array.isArray(repo?.topics) || !repo.topics.includes(topic)) continue\n    if (typeof repo?.full_name !== 'string' || seen.has(repo.full_name.toLowerCase())) continue\n    seen.add(repo.full_name.toLowerCase())\n    repositories.push({\n      fullName: repo.full_name,\n      name: repo.name,\n      url: repo.html_url,\n      description: repo.description ?? '',\n      topics: repo.topics,\n      language: repo.language,\n      pushedAt: repo.pushed_at,\n      updatedAt: repo.updated_at,\n      defaultBranch: repo.default_branch,\n      stars: repo.stargazers_count,\n    })\n  }\n  const total = typeof body.total_count === 'number' ? body.total_count : body.items.length\n  if (page * pageSize >= total || body.items.length < pageSize) break\n}\n\nprocess.stdout.write(`${JSON.stringify({ topic, repositories }, null, 2)}\\n`)\n```\n\n</details>\n\n**依据 4 · 源码核查**：[skills/find-plugins/references/install-methods.md:12-29](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/references/install-methods.md#L12-L29)\n\n建议锁 Git 提交并保留组件路径\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## bundle —— 官方 profile bundle\n\n包的 package.json 声明了 `dsh.bundle.patch`，安装进 profile 即挂载它自带的\npatch 层：\n\n```sh\ncd <dsh-source>\npnpm dsh plugin --profile <profile> add <package-or-git-spec>\n```\n\nGitHub 仓库建议使用 topic 搜索返回的当前 owner，并锁定 commit：\n\n```sh\npnpm dsh plugin --profile <profile> add 'github:<owner>/<repo>#<commit>'\n```\n\nREADME 指定 `&path:/<子目录>` 时保留该参数。安装命令会交给 profile 的 pnpm，\n成功后自动把声明了 `dsh.bundle.patch` 的包加入 `dsh.profile.bundles`。\n````\n\n</details>\n\n#### 缺口\n\n- 未以恶意 README 或安装副作用验证 Agent 执行边界\n  **影响**：无法确定确认步骤在提示注入或含糊用户指令下始终执行\n  **进一步探讨**：在隔离 profile 用惰性样本评估风险报告、动作和确认记录\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何试用及回退？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n这个项目分发的是含脚本与参考文件的 Skill，试用可放在独立项目的技能发现根。搜索要求可运行 Node 并访问 GitHub API，脚本可借用环境或本机 gh 登录令牌。检索和比较会消耗网络与 Agent 阅读时间。若走到安装，bundle 路径写目标 profile，裸 Cordis 还需写 patch，skill 则复制到发现根。当前参考把命令写成源码 checkout 的 pnpm dsh，目标若使用另一种分发须先确认入口。长驻 Web 的挂载仍按实际 UI、工具或技能验证。可在只读候选模式观察，若出现不可确认的权限或安装版本即停，移走测试 Skill 并恢复独立 profile。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:17-31](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/README.md#L17-L31)\n\n项目或全局安装及总体工作流\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## 安装\n\n把下面这句话发给 DSH：\n\n```text\n请从 https://github.com/Nagi-ovo/dsh-find-plugins 安装 dsh-find-plugins skill\n```\n\n手动安装时，把 `skills/find-plugins/` 整个目录复制到 `$DSH_HOME/skills/`（默认是 `~/.dsh/skills/`）；只想给当前项目使用，则复制到 `<项目根>/.dsh/skills/`。如果还想与其他 Agent 共用，也可以放在 `<项目根>/.agents/skills/`。目录 watcher 会让它立即生效。\n\n## 它会怎么做\n\nSkill 会先运行自带脚本，获取所有公开、未归档、非 fork 的 `dsh-plugin` 仓库。它只检查最匹配的少量候选，并从 README、`package.json` 和仓库文件判断应该按 bundle、Cordis 插件还是 skill 安装。\n\n你选定之后、开装之前，它会先查一遍这个插件的 lifecycle scripts、对外网络和子进程、读取的会话数据与凭据，以及仓库本身的可信度，然后**无论有没有问题都汇报一次**，再问你要不要继续。插件跑在你的 DSH 进程里，装它等于授权。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:11-19](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L11-L19)\n\n认证令牌回退\n\n```text\nlet token = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN ?? ''\nif (token === '') {\n  try {\n    token = execFileSync('gh', ['auth', 'token'], { encoding: 'utf8', timeout: 5_000 }).trim()\n  } catch {\n    // An authenticated token only raises GitHub's rate limit; public search\n    // remains functional when gh is absent or logged out.\n    token = ''\n  }\n```\n\n**依据 3 · 源码核查**：[skills/find-plugins/references/install-methods.md:8-37](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/references/install-methods.md#L8-L37)\n\n参考文档绑定的 CLI 和 profile 写入\n\n<details>\n<summary>查看原文（30行）</summary>\n\n````text\n下文 `<profile>` 指目标 profile 名（web 界面对应 `web`），`<dsh-source>` 指\n用户当前运行的 DeepSeek Harness 源码 checkout。最新 DSH 不再分发全局 `dsh`\nlauncher，命令从该 checkout 根目录通过 `pnpm dsh` 运行。\n\n## bundle —— 官方 profile bundle\n\n包的 package.json 声明了 `dsh.bundle.patch`，安装进 profile 即挂载它自带的\npatch 层：\n\n```sh\ncd <dsh-source>\npnpm dsh plugin --profile <profile> add <package-or-git-spec>\n```\n\nGitHub 仓库建议使用 topic 搜索返回的当前 owner，并锁定 commit：\n\n```sh\npnpm dsh plugin --profile <profile> add 'github:<owner>/<repo>#<commit>'\n```\n\nREADME 指定 `&path:/<子目录>` 时保留该参数。安装命令会交给 profile 的 pnpm，\n成功后自动把声明了 `dsh.bundle.patch` 的包加入 `dsh.profile.bundles`。\n\nCLI 不可用时手工等价操作：\n\n1. `$DSH_HOME/profiles/<profile>/package.json` 的 `dependencies` 加包\n   （GitHub 源写 `github:<owner>/<repo>`，本地开发写 `link:<路径>`）。\n2. 同文件 `dsh.profile.bundles` 数组末尾追加包名（列表顺序即 patch 层\n   应用顺序，官方 bundle 在前）。\n3. 在该 profile 目录执行 `pnpm install`。\n````\n\n</details>\n\n**依据 4 · 源码核查**：[skills/find-plugins/references/install-methods.md:45-68](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/references/install-methods.md#L45-L68)\n\n裸 Cordis 和 Skill 的作用域\n\n<details>\n<summary>查看原文（24行）</summary>\n\n````text\n## cordis —— 裸 cordis 插件挂载\n\n包是普通 Cordis 插件、没有自带 patch 层。先用 `pnpm dsh plugin --profile\n<profile> add <package-or-git-spec>` 把包装进 profile；CLI 会提示它是普通依赖。\n再在 `$DSH_HOME/profiles/<profile>/cordis.patch.yml` 顶层数组加一个 insert 条目：\n\n```yaml\n- insert:\n    - name: '<package-name>'\n      config: {}\n```\n\n`config` 字段照该插件 README 填；README 给了现成挂载片段的以仓库为准。\n\n## skill —— 技能目录\n\n仓库分发的是技能（`SKILL.md` 目录），clone 后把含 `SKILL.md` 的目录整个\n拷进任一发现根：\n\n- 只给当前项目：`<项目根>/.agents/skills/<技能名>/`\n- 全局：`$DSH_HOME/skills/<技能名>/`\n- 共享 agent 根：`${DSH_AGENTS_HOME:-~/.agents}/skills/<技能名>/`\n\n目录有 watcher，放进去即生效，不用重启。\n````\n\n</details>\n\n**依据 5 · 源码核查**：[skills/find-plugins/SKILL.md:92-100](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/SKILL.md#L92-L100)\n\n挂载与诊断验收\n\n```text\n## Step 6：验证挂载\n\nweb 等长驻 surface 监听 patch 文件改动后热载；一次性运行下次启动才生效。请用户\n确认相应 UI、工具或技能条目出现。\n\n没出现时依次排查：服务日志中的 `hmr/config-update-failed`、Git spec 是否仍用了\n转移前 owner、ref / path 拼写、profile 目录的 `pnpm install` 是否成功。\n\n完成点：用户确认可用；或把具体报错和已排除的原因一并带回。\n```\n\n#### 缺口\n\n- 未验证宿主版本的实际发现和挂载耗时\n  **影响**：无法确认文档命令适用于本机或可无残留退出\n  **进一步探讨**：先只读检索，再用独立 profile 核对发现、挂载与恢复\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何降低搜索覆盖误判？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n输出只有 topic 和仓库列表。固定十页上限与每页一百项，以及基于结果总数或短页停止，让上层无法从输出区分完整搜索窗口、截断或服务端 incomplete_results。可附页数、服务端不完整标记与截断原因，在无法判断覆盖时要求 Agent 把空匹配表述为当前窗口没有命中。以固定 API 样本对照空结果、超上限和不完整页，测用户错误排除候选的比例与额外耗时。若误判不降或提示导致无效重试增加，撤回。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:7-10](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L7-L10)\n\n固定窗口\n\n```text\nconst topic = 'dsh-plugin'\nconst query = `topic:${topic} is:public archived:false`\nconst pageSize = 100\nconst maxPages = 10\n```\n\n**依据 2 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:41-47](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L41-L47)\n\n仅检查 items 与条目过滤\n\n```text\n  const body = await response.json()\n  if (!Array.isArray(body.items)) throw new Error('GitHub topic search returned no items array')\n  for (const repo of body.items) {\n    if (repo?.archived === true || repo?.disabled === true || repo?.fork === true) continue\n    if (!Array.isArray(repo?.topics) || !repo.topics.includes(topic)) continue\n    if (typeof repo?.full_name !== 'string' || seen.has(repo.full_name.toLowerCase())) continue\n    seen.add(repo.full_name.toLowerCase())\n```\n\n**依据 3 · 源码核查**：[skills/find-plugins/scripts/search-topic.mjs:61-65](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/scripts/search-topic.mjs#L61-L65)\n\n输出缺少覆盖元数据\n\n```text\n  const total = typeof body.total_count === 'number' ? body.total_count : body.items.length\n  if (page * pageSize >= total || body.items.length < pageSize) break\n}\n\nprocess.stdout.write(`${JSON.stringify({ topic, repositories }, null, 2)}\\n`)\n```\n\n**依据 4 · 源码核查**：[skills/find-plugins/SKILL.md:47-52](https://github.com/Nagi-ovo/dsh-find-plugins/blob/61b30c697f12075ac1071418b7b7ca2300de37ac/skills/find-plugins/SKILL.md#L47-L52)\n\n空结果的读者措辞\n\n```text\n产出最多 3 行候选表：名字、一句话用途、最近更新、装法。表后用一句话说明首选\n理由。比如「整活 / 复古 / 好玩」可命中\n[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)；「把数据、流程和对比画出来」可命中\n[dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)。\n\n一条都不匹配时直说 topic 目录里没有，并问是否转 `make-dsh-plugin` 现写一个。\n```\n\n#### 缺口\n\n- 未比较提示对真实用户或 Agent 的影响\n  **影响**：无法判断覆盖标记是否减少错误排除\n  **进一步探讨**：先用固定响应和同一组任务对照错误及时间\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：08a348ff67c35ac1e889bd1b05407f878b63866cd592dc08f3ddabd9e8d4ce29。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 248 | — | — | 2712 |\n| .mjs | source | 1 | 65 | 57 | 4 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 候选发现 | 按 topic 搜索当前仓库 | 需 GitHub API，结果受查询窗口限制 |\n| 安装引导 | 比较装法及审查权限 | 需用户确认与宿主执行 |\n| 挂载核对 | 查验界面或技能条目 | 需访问目标 profile |\n\n## 工程亮点\n\n[Q01](#research-q01) 将确定性发现和人工筛选拆开。[Q04](#research-q04) 覆盖状态仍可改进。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、skills/find-plugins/SKILL.md、skills/find-plugins/references/install-methods.md、skills/find-plugins/scripts/search-topic.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定 Skill、脚本与安装参考，未执行目标代码、登录、安装或宿主测试。\n- 下一步：用固定 API 样本与隔离 profile 测试候选、风险报告与恢复。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-01/nagi-ovo--dsh-find-plugins/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"Nagi-ovo/dsh-find-plugins\",\n  \"revision\": \"61b30c697f12075ac1071418b7b7ca2300de37ac\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"skills/find-plugins/SKILL.md\",\n    \"skills/find-plugins/references/install-methods.md\",\n    \"skills/find-plugins/scripts/search-topic.mjs\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"该技能怎样将候选发现、安装风险复核和挂载验证连起来？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"候选检索比手工查 topic 多完成哪些工作？\",\n        \"answer\": \"想在 DSH 中解决具体任务却不熟悉包名的用户，可以让 Agent 从公共 topic 候选着手，再核对最多三项的安装方式。相对手工打开 topic 页，脚本固定 Search API 查询，按页请求并过滤停用、归档和 fork，以不区分大小写的 full_name 去重，输出当前 URL、描述和更新时间。Skill 再以语义匹配及更新作为阅读线索。Hub 仅补充当前 URL 匹配的条目。未标 topic、私有或被搜索窗口截断的条目不能从空结果判断为不存在。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 7,\n            \"line_end\": 19,\n            \"observation\": \"查询条件、页数与令牌优先级\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 24,\n            \"line_end\": 47,\n            \"observation\": \"调用官方 API、超时、状态与过滤\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 48,\n            \"line_end\": 65,\n            \"observation\": \"结构化结果、停止和输出\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/SKILL.md\",\n            \"line_start\": 31,\n            \"line_end\": 52,\n            \"observation\": \"候选核对、可选 Hub 及三项比较\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未实测候选覆盖与命中质量\",\n            \"impact\": \"无法确定是否减少找错插件或漏项\",\n            \"next_step\": \"用含未标注、迁移与重名的已知仓库集对照手工和技能检索\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"安装前的保护由谁执行？\",\n        \"answer\": \"用户先选候选，Agent 检查 lifecycle 脚本、网络与子进程、会话数据和凭据读取，再汇报并等待明确继续。执行方式从清单、技能目录或 README 推断，旧格式和未知项需要停止或核对。安装出现未预期的源、写入或提权也要求暂停。确定性脚本只收集候选，授权及判断由宿主 Agent 遵循文本执行，所见材料没有独立策略引擎约束下载、安装和挂载。若 Git 来源锁定提交，可缩小审核与执行版本漂移，但包依赖和宿主权限仍要核对。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/SKILL.md\",\n            \"line_start\": 33,\n            \"line_end\": 45,\n            \"observation\": \"类型判断与仓库自述优先级\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/SKILL.md\",\n            \"line_start\": 54,\n            \"line_end\": 88,\n            \"observation\": \"确认、检查与意外行为时停止\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 24,\n            \"line_end\": 65,\n            \"observation\": \"脚本输出候选，不调用安装程序\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/references/install-methods.md\",\n            \"line_start\": 12,\n            \"line_end\": 29,\n            \"observation\": \"建议锁 Git 提交并保留组件路径\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未以恶意 README 或安装副作用验证 Agent 执行边界\",\n            \"impact\": \"无法确定确认步骤在提示注入或含糊用户指令下始终执行\",\n            \"next_step\": \"在隔离 profile 用惰性样本评估风险报告、动作和确认记录\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"如何试用及回退？\",\n        \"answer\": \"这个项目分发的是含脚本与参考文件的 Skill，试用可放在独立项目的技能发现根。搜索要求可运行 Node 并访问 GitHub API，脚本可借用环境或本机 gh 登录令牌。检索和比较会消耗网络与 Agent 阅读时间。若走到安装，bundle 路径写目标 profile，裸 Cordis 还需写 patch，skill 则复制到发现根。当前参考把命令写成源码 checkout 的 pnpm dsh，目标若使用另一种分发须先确认入口。长驻 Web 的挂载仍按实际 UI、工具或技能验证。可在只读候选模式观察，若出现不可确认的权限或安装版本即停，移走测试 Skill 并恢复独立 profile。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 17,\n            \"line_end\": 31,\n            \"observation\": \"项目或全局安装及总体工作流\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 11,\n            \"line_end\": 19,\n            \"observation\": \"认证令牌回退\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/references/install-methods.md\",\n            \"line_start\": 8,\n            \"line_end\": 37,\n            \"observation\": \"参考文档绑定的 CLI 和 profile 写入\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/references/install-methods.md\",\n            \"line_start\": 45,\n            \"line_end\": 68,\n            \"observation\": \"裸 Cordis 和 Skill 的作用域\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/SKILL.md\",\n            \"line_start\": 92,\n            \"line_end\": 100,\n            \"observation\": \"挂载与诊断验收\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验证宿主版本的实际发现和挂载耗时\",\n            \"impact\": \"无法确认文档命令适用于本机或可无残留退出\",\n            \"next_step\": \"先只读检索，再用独立 profile 核对发现、挂载与恢复\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"如何降低搜索覆盖误判？\",\n        \"answer\": \"输出只有 topic 和仓库列表。固定十页上限与每页一百项，以及基于结果总数或短页停止，让上层无法从输出区分完整搜索窗口、截断或服务端 incomplete_results。可附页数、服务端不完整标记与截断原因，在无法判断覆盖时要求 Agent 把空匹配表述为当前窗口没有命中。以固定 API 样本对照空结果、超上限和不完整页，测用户错误排除候选的比例与额外耗时。若误判不降或提示导致无效重试增加，撤回。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 7,\n            \"line_end\": 10,\n            \"observation\": \"固定窗口\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 41,\n            \"line_end\": 47,\n            \"observation\": \"仅检查 items 与条目过滤\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n            \"line_start\": 61,\n            \"line_end\": 65,\n            \"observation\": \"输出缺少覆盖元数据\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"skills/find-plugins/SKILL.md\",\n            \"line_start\": 47,\n            \"line_end\": 52,\n            \"observation\": \"空结果的读者措辞\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未比较提示对真实用户或 Agent 的影响\",\n            \"impact\": \"无法判断覆盖标记是否减少错误排除\",\n            \"next_step\": \"先用固定响应和同一组任务对照错误及时间\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-find-plugins\\n\\n![dsh-find-plugins](assets/social-preview.jpg)\\n\\n<p align=\\\"center\\\">\\n  <strong>简体中文</strong> | <a href=\\\"README.en.md\\\">English</a>\\n</p>\\n\\n<p align=\\\"center\\\">\\n  <a href=\\\"https://dshfind.com/zh/plugins/Nagi-ovo/dsh-find-plugins?ref=badge\\\"><img src=\\\"https://dshfind.com/api/card/Nagi-ovo/dsh-find-plugins?lang=zh\\\" alt=\\\"dsh-find-plugins 在 dshfind 插件目录上的展示卡\\\" width=\\\"440\\\"></a>\\n</p>\\n\\n对 DSH 说一句「有没有插件能……」，它就会从全 GitHub 的 [`dsh-plugin` topic](https://github.com/topics/dsh-plugin) 里找出候选，解释差别，等你选好以后再安装和验证。\\n\\n仓库属于个人还是组织并不重要。只要是公开仓库并带有 `dsh-plugin` topic，转移仓库后仍然能被发现。\\n\\n## 安装\\n\\n把下面这句话发给 DSH：\\n\\n```text\\n请从 https://github.com/Nagi-ovo/dsh-find-plugins 安装 dsh-find-plugins skill\\n```\\n\\n手动安装时，把 `skills/find-plugins/` 整个目录复制到 `$DSH_HOME/skills/`（默认是 `~/.dsh/skills/`）；只想给当前项目使用，则复制到 `<项目根>/.dsh/skills/`。如果还想与其他 Agent 共用，也可以放在 `<项目根>/.agents/skills/`。目录 watcher 会让它立即生效。\\n\\n## 它会怎么做\\n\\nSkill 会先运行自带脚本，获取所有公开、未归档、非 fork 的 `dsh-plugin` 仓库。它只检查最匹配的少量候选，并从 README、`package.json` 和仓库文件判断应该按 bundle、Cordis 插件还是 skill 安装。\\n\\n你选定之后、开装之前，它会先查一遍这个插件的 lifecycle scripts、对外网络和子进程、读取的会话数据与凭据，以及仓库本身的可信度，然后**无论有没有问题都汇报一次**，再问你要不要继续。插件跑在你的 DSH 进程里，装它等于授权。\\n\\n比如「想把数据和流程画出来」可以找到 [dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)；「想给 Web UI 加点 2005 年互联网味道」可能会找到 [dsh-ads](https://github.com/Nagi-ovo/dsh-ads)。检索命中纯属巧合。\\n\\n[dsh-external/hub](https://github.com/dsh-external/hub) 在当前账号可访问时可以补充分类和安装信息，但 GitHub topic 才是主目录。灵感来自 vercel-labs/skills 的 find-skills。\\n\\nLicense: [BSD-3-Clause](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"skills/find-plugins/SKILL.md\",\n      \"content\": \"---\\nname: find-plugins\\ndescription: >\\n  用户想给 DeepSeek Harness 找插件时使用：「有没有插件能……」「帮我装个 XX」\\n  「生态里有什么好玩的」。从全 GitHub 的 dsh-plugin topic 发现跨个人与组织的\\n  公开仓库，筛选候选，等用户拍板，先汇报这个插件要什么权限，再从仓库声明判断\\n  安装方式并验证挂载。只负责找和装；开发新插件转 make-dsh-plugin。\\n---\\n\\n# 找插件、装插件\\n\\n把 GitHub 的 `dsh-plugin` topic 当作插件身份，不把某个 owner 或组织当作目录。\\n仓库转移后以搜索结果返回的最新 `fullName` 和 `url` 为准。完成态只有一个：用户\\n选中的插件在他的 DSH 里可用。\\n\\n## Step 1：取候选池\\n\\n运行本 skill 自带的确定性检索脚本：\\n\\n```sh\\nnode <本 skill 目录>/scripts/search-topic.mjs > <临时目录>/dsh-plugins.json\\n```\\n\\n脚本搜索所有公开、未归档、非 fork、带 `dsh-plugin` topic 的仓库，并处理 GitHub\\n分页。它依次复用 `GITHUB_TOKEN` / `GH_TOKEN`、本机 `gh` 登录令牌以提高限额；都\\n没有时使用公开 API。限流时运行 `gh auth login` 后重试，不要退回组织仓库列表。\\n\\n完成点：JSON 中的 `repositories` 非空，每条都有当前 `fullName`、`url`、描述、\\ntopics 和更新时间。按 `fullName` 去重，不根据旧 owner 猜地址。\\n\\n## Step 2：筛选并确认装法\\n\\n先用用户需求对照 `name`、`description`、`topics`，按 `pushedAt` 优先查看较新的\\n命中项。只对语义最匹配的少量仓库读取 README、`package.json` 和仓库文件树：\\n\\n- `package.json` 声明 `dsh.bundle.patch`：`bundle`。\\n- 含一个或多个 `SKILL.md`，且没有 bundle 声明：`skill`。\\n- README 明确要求写入 `cordis.patch.yml`，但没有 bundle 声明：`cordis`。\\n- 只有 `.dsh-plugin` / `repository` 旧格式：标成「需迁移」，不能直接安装。\\n- 仍无法判断：标成「需核对」，不要编造安装命令。\\n\\n如果当前账号能读取 `dsh-external/hub/catalog.json`，可以把其中的 `note`、\\n`category`、`managers` 当补充信息；只接受 `url` 与 topic 搜索结果当前 URL 完全匹配\\n的条目。Hub 缺失、私有或仍指向转移前地址都不影响发现结果，也不能覆盖仓库自身\\n的当前声明。\\n\\n产出最多 3 行候选表：名字、一句话用途、最近更新、装法。表后用一句话说明首选\\n理由。比如「整活 / 复古 / 好玩」可命中\\n[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)；「把数据、流程和对比画出来」可命中\\n[dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)。\\n\\n一条都不匹配时直说 topic 目录里没有，并问是否转 `make-dsh-plugin` 现写一个。\\n\\n## Step 3：用户拍板\\n\\n停下来等选择。用户已经点名某个插件时，从 Step 2 核对当前仓库和装法后直接进入\\nStep 4。\\n\\n## Step 4：安全检查并汇报\\n\\n用户点头之后、动手之前，先看一遍这个插件装进来会拿到什么。插件运行在用户的\\nDSH 进程里，能读会话、调工具、跑命令，装它等于授权，所以这一步不能跳过，也不\\n能只在发现问题时才出声。\\n\\n至少看这四处：\\n\\n- `package.json` 的 lifecycle scripts：`preinstall`、`install`、`postinstall`、\\n  `prepare` 在 Git / npm 安装时会执行。\\n- 插件声明和源码里对外的动作：网络请求、子进程、写 `$DSH_HOME` 之外的路径、\\n  改 shell 配置或系统设置。\\n- 插件读取的会话数据和凭据：读会话日志、settings、`.env` 或 credentials 的地方。\\n- 仓库本身的可信度：`pushedAt`、star 数、作者是否还有其他 dsh 插件、README 与\\n  代码是否对得上。\\n\\n**不管有没有发现问题，都要汇报**，三到五行讲清：查了哪几处、这个插件实际要什么\\n权限、有没有和它宣称的用途对不上的动作。有可疑项就把原文贴出来，别转述。\\n\\n汇报完再问一次是否继续。用户说停就停在这里，不要顺手装完。\\n\\n完成点：用户看过这份汇报，并明确说继续。\\n\\n## Step 5：安装\\n\\n按确认出的安装类型打开 [references/install-methods.md](references/install-methods.md)\\n并照对应小节操作。多个方式并存时按该文件开头的优先级选一种。\\n\\n安装过程中冒出 Step 4 没看到的动作（新的下载源、额外的写入路径、要求提权），\\n停下来把原文交给用户，不要边装边判断。\\n\\n完成点：配置写入、依赖装完、命令零报错。\\n\\n## Step 6：验证挂载\\n\\nweb 等长驻 surface 监听 patch 文件改动后热载；一次性运行下次启动才生效。请用户\\n确认相应 UI、工具或技能条目出现。\\n\\n没出现时依次排查：服务日志中的 `hmr/config-update-failed`、Git spec 是否仍用了\\n转移前 owner、ref / path 拼写、profile 目录的 `pnpm install` 是否成功。\\n\\n完成点：用户确认可用；或把具体报错和已排除的原因一并带回。\\n\"\n    },\n    {\n      \"path\": \"skills/find-plugins/references/install-methods.md\",\n      \"content\": \"# 安装方式对照\\n\\n按仓库当前声明确认的安装类型查小节。多值并存时的优先级：\\n`bundle` > `cordis` > 外部管理器（`marisa` / `mygo`）。`repository` 已从\\n最新 DSH 移除；同一条目还有 `bundle` 时走 bundle，只有 `repository` 时停止并\\n说明该插件需要迁移。\\n\\n下文 `<profile>` 指目标 profile 名（web 界面对应 `web`），`<dsh-source>` 指\\n用户当前运行的 DeepSeek Harness 源码 checkout。最新 DSH 不再分发全局 `dsh`\\nlauncher，命令从该 checkout 根目录通过 `pnpm dsh` 运行。\\n\\n## bundle —— 官方 profile bundle\\n\\n包的 package.json 声明了 `dsh.bundle.patch`，安装进 profile 即挂载它自带的\\npatch 层：\\n\\n```sh\\ncd <dsh-source>\\npnpm dsh plugin --profile <profile> add <package-or-git-spec>\\n```\\n\\nGitHub 仓库建议使用 topic 搜索返回的当前 owner，并锁定 commit：\\n\\n```sh\\npnpm dsh plugin --profile <profile> add 'github:<owner>/<repo>#<commit>'\\n```\\n\\nREADME 指定 `&path:/<子目录>` 时保留该参数。安装命令会交给 profile 的 pnpm，\\n成功后自动把声明了 `dsh.bundle.patch` 的包加入 `dsh.profile.bundles`。\\n\\nCLI 不可用时手工等价操作：\\n\\n1. `$DSH_HOME/profiles/<profile>/package.json` 的 `dependencies` 加包\\n   （GitHub 源写 `github:<owner>/<repo>`，本地开发写 `link:<路径>`）。\\n2. 同文件 `dsh.profile.bundles` 数组末尾追加包名（列表顺序即 patch 层\\n   应用顺序，官方 bundle 在前）。\\n3. 在该 profile 目录执行 `pnpm install`。\\n\\n## repository —— 已移除的旧格式\\n\\n最新 DSH 已删除 `@deepseek-ai/dsh-repository-plugin`、`.dsh-plugin`、repository\\ncache 和对应配置行，不提供兼容解析。只有 `repository` 标记的插件不能安装；\\n报告仓库链接和「需要迁移为 profile bundle」，不要写旧配置或声称已挂载。\\n\\n## cordis —— 裸 cordis 插件挂载\\n\\n包是普通 Cordis 插件、没有自带 patch 层。先用 `pnpm dsh plugin --profile\\n<profile> add <package-or-git-spec>` 把包装进 profile；CLI 会提示它是普通依赖。\\n再在 `$DSH_HOME/profiles/<profile>/cordis.patch.yml` 顶层数组加一个 insert 条目：\\n\\n```yaml\\n- insert:\\n    - name: '<package-name>'\\n      config: {}\\n```\\n\\n`config` 字段照该插件 README 填；README 给了现成挂载片段的以仓库为准。\\n\\n## skill —— 技能目录\\n\\n仓库分发的是技能（`SKILL.md` 目录），clone 后把含 `SKILL.md` 的目录整个\\n拷进任一发现根：\\n\\n- 只给当前项目：`<项目根>/.agents/skills/<技能名>/`\\n- 全局：`$DSH_HOME/skills/<技能名>/`\\n- 共享 agent 根：`${DSH_AGENTS_HOME:-~/.agents}/skills/<技能名>/`\\n\\n目录有 watcher，放进去即生效，不用重启。\\n\\n## marisa / mygo —— 外部管理器\\n\\n这两类由社区管理器接管，本 skill 不代劳：marisa 用它的 `dshx install`\\n和设置页插件面板，mygo 按其仓库 README 操作。用户没装对应管理器时，\\n先把管理器仓库链接给用户并说明这是前置条件。\\n\"\n    },\n    {\n      \"path\": \"skills/find-plugins/scripts/search-topic.mjs\",\n      \"content\": \"#!/usr/bin/env node\\n\\n/** Fetch every public, active repository carrying the `dsh-plugin` topic. */\\n\\nimport { execFileSync } from 'node:child_process'\\n\\nconst topic = 'dsh-plugin'\\nconst query = `topic:${topic} is:public archived:false`\\nconst pageSize = 100\\nconst maxPages = 10\\nlet token = process.env.GITHUB_TOKEN ?? process.env.GH_TOKEN ?? ''\\nif (token === '') {\\n  try {\\n    token = execFileSync('gh', ['auth', 'token'], { encoding: 'utf8', timeout: 5_000 }).trim()\\n  } catch {\\n    // An authenticated token only raises GitHub's rate limit; public search\\n    // remains functional when gh is absent or logged out.\\n    token = ''\\n  }\\n}\\nconst repositories = []\\nconst seen = new Set()\\n\\nfor (let page = 1; page <= maxPages; page += 1) {\\n  const url = new URL('https://api.github.com/search/repositories')\\n  url.searchParams.set('q', query)\\n  url.searchParams.set('sort', 'updated')\\n  url.searchParams.set('order', 'desc')\\n  url.searchParams.set('per_page', String(pageSize))\\n  url.searchParams.set('page', String(page))\\n  const headers = {\\n    accept: 'application/vnd.github+json',\\n    'user-agent': 'dsh-find-plugins',\\n    'x-github-api-version': '2022-11-28',\\n  }\\n  if (token !== '') headers.authorization = `Bearer ${token}`\\n  const response = await fetch(url, { headers, signal: AbortSignal.timeout(20_000) })\\n  if (!response.ok) {\\n    throw new Error(`GitHub topic search failed (${response.status}); authenticate gh or set GH_TOKEN and retry`)\\n  }\\n  const body = await response.json()\\n  if (!Array.isArray(body.items)) throw new Error('GitHub topic search returned no items array')\\n  for (const repo of body.items) {\\n    if (repo?.archived === true || repo?.disabled === true || repo?.fork === true) continue\\n    if (!Array.isArray(repo?.topics) || !repo.topics.includes(topic)) continue\\n    if (typeof repo?.full_name !== 'string' || seen.has(repo.full_name.toLowerCase())) continue\\n    seen.add(repo.full_name.toLowerCase())\\n    repositories.push({\\n      fullName: repo.full_name,\\n      name: repo.name,\\n      url: repo.html_url,\\n      description: repo.description ?? '',\\n      topics: repo.topics,\\n      language: repo.language,\\n      pushedAt: repo.pushed_at,\\n      updatedAt: repo.updated_at,\\n      defaultBranch: repo.default_branch,\\n      stars: repo.stargazers_count,\\n    })\\n  }\\n  const total = typeof body.total_count === 'number' ? body.total_count : body.items.length\\n  if (page * pageSize >= total || body.items.length < pageSize) break\\n}\\n\\nprocess.stdout.write(`${JSON.stringify({ topic, repositories }, null, 2)}\\\\n`)\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"61b30c697f12075ac1071418b7b7ca2300de37ac\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"08a348ff67c35ac1e889bd1b05407f878b63866cd592dc08f3ddabd9e8d4ce29\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 248,\n        \"words\": 2712\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 65,\n        \"code\": 57,\n        \"comments\": 4,\n        \"blank\": 5\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [\n        {\n          \"path\": \"skills/find-plugins/SKILL.md\",\n          \"name\": \"find-plugins\",\n          \"description\": \">\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        }\n      ],\n      \"non_example_candidates\": 1,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "a4b8e5268240f39668afe4a418a72e02e652c1371544ac58efc8ad29c942f1bb"
+        }
+    },
+    "unavailable_artifacts": []
+}

@@ -1,0 +1,50 @@
+{
+    "repository": "SAOS-3624/dsh-see-now",
+    "repository_id": 1441851226,
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
+    "stars": 334,
+    "pushed_at": "2026-11-04T15:53:19Z",
+    "issues": {
+        "open": 1,
+        "closed": 11,
+        "created_30d": 12,
+        "closed_30d": 11,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASAOS-3624%2Fdsh-see-now%20is%3Aissue%20updated%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AD96:11714B:68AB8:7132C:6AEBE3E0 and timestamp 2026-11-05 02:03:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:08.740Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-see-now",
+        "captured_at": "2026-11-05T02:01:36.775Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 6403,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-see-now",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-01T15:33:44.438Z",
+            "captured_at": "2026-11-05T02:01:36.775Z",
+            "source_url": "https://registry.npmjs.org/dsh-see-now",
+            "error": null,
+            "latest_version": "0.1.1",
+            "latest_published_at": "2026-11-04T11:53:23.888Z",
+            "latest_error": null
+        }
+    }
+}

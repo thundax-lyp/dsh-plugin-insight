@@ -1,18 +1,18 @@
-# dsh-wsl-playwright
+# WSL Playwright 页面读取
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[a451fef](https://github.com/173787247/dsh-wsl-playwright/tree/a451fefa0d3dc7454cc0c08c58110c392c64611a)
+源码版本：[ce0063a](https://github.com/173787247/dsh-wsl-playwright/tree/ce0063af6d5bf485e47cf0f666c529b7ef0821bc)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-playwright)
 <!-- END META -->
 
-> **功能**：在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。
+> **功能**：在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。
 
-> **亮点**：把无头网页标题/正文读取接入模型工具，减少手工复制，并为 JS 渲染页面提供潜在增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 将浏览器标题和正文结果变成专用会话工具输出。
 
-> **主要限制**：临时目录 ESM 导入与 npx 包解析关系未验证，现有单测不覆盖启动；URL 无内网/重定向边界，fetch 不呈现最终 URL/HTTP 状态。详见[Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) HTTP/HTTPS 校验不限制目标主机，状态检查也不能证明 Chromium 可用。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁会用，交付哪些网页信息？](#detail-section-11)
-  - [Q02 · Playwright 如何启动、提取和裁剪输出？](#detail-section-12)
-  - [Q03 · URL 和包解析是否限制可访问范围、能否可靠启动？](#detail-section-13)
-  - [Q04 · 采用成本和最小验证是什么？](#detail-section-14)
+  - [Q01 · 何时值得用无头浏览读取页面？](#detail-section-11)
+  - [Q02 · 一次调用如何启动浏览器并退出？](#detail-section-12)
+  - [Q03 · http(s) 校验能隔离内网和重定向吗？](#detail-section-13)
+  - [Q04 · 怎样核对可用性与退路？](#detail-section-14)
+  - [Q05 · 要先确认标题还是直接读取正文？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,83 +40,74 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：DSH 用户需要读取公开、可能经 JavaScript 渲染的网页内容。
+> **用途**：在 WSL 内需要给 DSH 查看网页标题或正文的人可评估无头读取工具。
 
-手工浏览器复制或普通 HTTP 请求；本组件提供浏览器渲染后正文工具。
+HTTP 拉取适合静态内容，人工浏览可处理交互，但结果需自行复制。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 工具 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| pw_status | node/npx 探测 | 不验证 Chromium 可运行 |
-| pw_title | 标题/状态/最终 URL | 单次新浏览器 |
-| pw_fetch | 正文文本 | 不呈现状态/最终 URL，截断 |
+| 标题查询 | 快速看状态和最终 URL | 需浏览器启动 |
+| 正文读取 | 返回限量的页面文本 | 动态内容可能还未出现 |
+| 状态探测 | 看 Node 与 npx 路径 | 不检查浏览器可用性 |
 
-**流程与依赖**
+#### 启动与依赖
 
-#### 运行条件
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| WSL 的 bash、node、npx | 必需 | 定位及启动子脚本 | 不返回网页结果 |
+| Playwright 与 Chromium | 必需 | 无头导航 | 启动失败 |
+| 受控网络出口 | 按部署需要 | 限定访问 | 协议校验本身无法隔离 |
 
-| 条件 | 用途 | 缺失时 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| Node/npx | 启动脚本 | 工具失败 |
-| Playwright/Chromium | 页面渲染 | 下载或启动失败 |
-| 网络与站点权限 | 请求目标 | 超时、拒绝或敏感读取风险 |
-| DSH tools/systemPrompt | 注册工具 | 不可用 |
-
-
-#### 运行步骤
-
-| 步骤 | 动作 | 判据 |
-| --- | --- | --- |
-| 探测 | pw_status | node/npx 存在，尚不证明 Playwright 可用 |
-| 标题 | pw_title(URL) | title/status/finalUrl 可核 |
-| 正文 | pw_fetch(URL) | 截断正文并由人核来源 |
-| 复核 | 对重定向和关键事实检查 | 避免网页文本当指令 |
-
-**效果与成本**
+| 准备 | 检查依赖和网络权限 | 只用受控页面 |
+| 核对 | 分别调用标题和正文 | 检查空正文、状态及最终地址 |
+| 退出 | 禁用工具 | 保留原读网页路径 |
 
 #### 成本
 
-| 阶段 | 资源与时间 | 人工事项 | 未知 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | Node/npx、Playwright 与 Chromium 下载 | 装包、配置隔离网络 | 下载与安装成功率 |
-| 每次 | 新浏览器/脚本、页面导航 | 核目标/重定向和正文 | 延迟、内存、页面质量 |
-| 故障 | 超时/解析/浏览器错误 | 排查包解析与站点访问 | 孙进程与日志上限 |
-
+| 首次 | 下载和浏览器资源未知 | 解析与准备时间未知 | npx 依赖未固定 |
+| 持续 | 浏览器启动和网络消耗未知 | 复核正文耗时未知 | 每次新开浏览器 |
+| 恢复 | 重新运行资源未知 | 清理和排查耗时未知 | 超时不证明进程树已结束 |
 
 #### 效果
 
-| 项 | 源码支持 | 未知 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 标题/状态 | pw_title 返回 JSON | 真实浏览器成功率 |
-| 正文 | body.innerText 截断 | 动态/登录页面质量 |
-| URL 范围 | http/https 限制 | 内网、跳转、凭据隔离 |
+| 标题读取 | 有状态和最终 URL | 实测启动与目标识别 |
+| 正文提取 | innerText 截断 | 动态页面完整性 |
 
-> **思考**：临时目录 ESM 导入与 npx 包解析关系未验证，现有单测不覆盖启动；URL 无内网/重定向边界，fetch 不呈现最终 URL/HTTP 状态。详见[Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) HTTP/HTTPS 校验不限制目标主机，状态检查也不能证明 Chromium 可用。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把无头网页标题/正文读取接入模型工具，减少手工复制，并为 JS 渲染页面提供潜在增量。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 将浏览器标题和正文结果变成专用会话工具输出。
 
-独立 argv 降低 shell 注入风险，临时脚本导入依赖的解析路径需验证；stdout 超阈值杀直接进程，stderr 收集无界；每次启动新 Chromium。
+临时脚本与输出边界明确，超时只定位到直接子进程。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-临时目录 ESM 导入与 npx 包解析关系未验证，现有单测不覆盖启动；URL 无内网/重定向边界，fetch 不呈现最终 URL/HTTP 状态。详见[Q03](#research-q03)。
+[Q03](#research-q03) HTTP/HTTPS 校验不限制目标主机，状态检查也不能证明 Chromium 可用。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-观察。只在无凭据隔离环境先测试公开页面；若真实启动/地址边界不稳，则不作无监督网页抓取。详见[Q03](#research-q03)、[Q04](#research-q04)。
+[Q04](#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。
 
 <a id="detail-section-7"></a>
 
@@ -123,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-入口与源码范围已核；Playwright 包解析、浏览器运行、网络范围与抓取质量未验证，URL 只限协议不限制目的地。
+固定代码支持工具接线与临时脚本。依赖、实际网页与网络隔离未运行。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/pw.js、test/playwright.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/pw.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交静态检查 README、package、入口、lib/pw.js 与 URL 单测；未运行目标代码、浏览器或目标站点。
-- 下一步：在隔离 WSL 对静态、JS 渲染、重定向、错误、内网模拟页做同条件对照，检查包解析、结果、资源与边界。
+- 边界：固定注册与 Playwright 脚本，未执行浏览器、WSL、外部网页或依赖。
+- 下一步：测试受控空正文、重定向、浏览器缺失及超时进程。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-playwright](https://github.com/173787247/dsh-wsl-playwright)
-- **版本号**：0.1.1（[固定提交 a451fef](https://github.com/173787247/dsh-wsl-playwright/tree/a451fefa0d3dc7454cc0c08c58110c392c64611a)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 ce0063a](https://github.com/173787247/dsh-wsl-playwright/tree/ce0063af6d5bf485e47cf0f666c529b7ef0821bc)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -142,9 +134,9 @@
 
 <a id="innovation"></a>
 
-固定可解析的 Playwright 环境并添加目标地址门控、最终 URL/状态审计；在隔离站点矩阵比较成功率/延迟/误访问后再采用，本版未实现。详见[Q04](#research-q04)。
+[Q05](#research-q05) 比较先看标题再按需取正文和直接抓全文的成本及效果。
 
-在隔离 WSL 对静态、JS 渲染、重定向、错误、内网模拟页做同条件对照，检查包解析、结果、资源与边界。
+测试受控空正文、重定向、浏览器缺失及超时进程。
 
 <a id="detail-section-9"></a>
 
@@ -152,6 +144,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -163,61 +157,40 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+created%3A2026-09-22T05%3A27%3A14.154Z..2026-10-22T05%3A27%3A14.154Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A27%3A14.154Z..2026-10-22T05%3A27%3A14.154Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-playwright/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核实 WSL 无头浏览器读取工具、运行依赖与 URL 风险，确定采用条件。
+**插件研究总目标**：核查一次性浏览的提取范围、动态依赖和访问边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁会用，交付哪些网页信息？
+### Q01 · 何时值得用无头浏览读取页面？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向需要在 DSH/WSL 中无头读取网页标题、HTTP 状态和正文的自动化用户。实际注册 pw_status（检查 npx/node 路径与 Node 版本）、pw_title（标题/状态/最终 URL）和 pw_fetch（标题/正文）三个模型工具，并在系统提示中建议交互式 Windows 浏览另用 dsh-wsl-browser。相对手工开浏览器复制内容，它把浏览器渲染后的可见正文送入模型回合；但并未提供点击、表单、多页会话，也没有网页可靠性或事实验证。README 工具表只列 status/fetch，入口另有 title，固定 package 版本 0.1.1 而 README 页首仍列 0.1.0；应按实际源码与包版本理解。合格结果需显示目标 URL、最终 URL、响应状态和正文来源，不能把网页文本当可信指令。
+在 WSL 里需要给 DSH 查看网页标题或正文的使用者，可以按任务选择 pw_title 或 pw_fetch。标题路径返回状态与最终 URL，正文路径取 body 的 innerText 后限量。相较手工浏览再复制，结果直接进会话；相较简单 HTTP 客户端，它会加载浏览器页面，但不保留交互工作流。只等待 DOMContentLoaded，正文可能仍未加载。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-33](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/README.md#L1-L33)
+**依据 1 · 作者声明**：[README.md:22-33](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/README.md#L22-L33)
 
-作者称 WSL 无头抓取、可选 kit 与浏览器分工；版本/工具表未与入口完全同步。
+作者区分只读抓取和交互浏览
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（12行）</summary>
 
-````text
-# dsh-wsl-playwright
-
-> **语言：** **中文**（本页） · [English](./README.en.md)
-
-WSL 无头 Playwright 抓取页面标题与正文。
-
-| | |
-|---|---|
-| 版本 | **0.1.0** |
-| 套件 | [dsh-wsl-kit](https://github.com/173787247/dsh-wsl-kit) **可选**，不在 `install.sh` |
-
-## 安装
-
-```sh
-dsh plugin --profile web add github:173787247/dsh-wsl-playwright
-# 或本机 path：
-# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-playwright
-```
-
-kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
-
+```text
 ## 工具
 
 | 工具 | 作用 |
@@ -230,38 +203,18 @@ kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
 `timeoutMs / maxChars`
 
 交互浏览优先 `dsh-wsl-browser`（Windows）。同一任务不要双轨驱动。首次可能经 npx 下载浏览器。
-````
+```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:15-92](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/index.js#L15-L92)
+**依据 2 · 源码核查**：[index.js:35-59](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/index.js#L35-L59)
 
-系统提示和三个工具参数、响应范围。
+标题工具实际注册
 
 <details>
-<summary>查看原文（78行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-  ctx.systemPrompt.section({
-    name: "tool:playwright-wsl",
-    order: 138,
-    text: "dsh-wsl-playwright does headless Chromium fetch in WSL (pw_title for quick title/status, pw_fetch for body text). For interactive Windows browsing prefer dsh-wsl-browser. Do not drive both on the same task. First run may download Playwright browsers via npx.",
-  });
-
-  ctx.tools.register({
-    name: "pw_status",
-    description: "Whether npx/node available for Playwright headless runs; node version.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 8_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return pwStatus();
-    },
-    presentCall: () => ({ card: "generic", title: "pw status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pw status", content: r.content }),
-  });
-
   ctx.tools.register({
     name: "pw_title",
     description: "Headless open http(s) URL; return title + HTTP status + final URL (no body). High-frequency read-only probe.",
@@ -287,12 +240,18 @@ kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
         return await pwTitle({ url: args.url, timeoutMs });
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pw title" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pw title", content: r.content }),
-  });
+```
 
+</details>
+
+**依据 3 · 源码核查**：[index.js:66-87](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/index.js#L66-L87)
+
+正文工具实际注册
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
   ctx.tools.register({
     name: "pw_fetch",
     description: "Headless open an http(s) URL; return title + body text (capped). Slow; may download browsers once.",
@@ -315,59 +274,60 @@ kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
         return await pwFetch({ url: args.url, timeoutMs, maxChars });
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pw fetch" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pw fetch", content: r.content }),
-  });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[package.json:1-12](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/package.json#L1-L12)
+**依据 4 · 源码核查**：[lib/pw.js:148-159](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L148-L159)
 
-固定包版本0.1.1、Node>=18及分发文件。
+提取范围与等待条件
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-{
-  "name": "dsh-wsl-playwright",
-  "version": "0.1.1",
-  "description": "DeepSeek Harness WSL plugin: headless Playwright URL fetch in WSL.",
-  "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/173787247/dsh-wsl-playwright.git" },
-  "type": "module",
-  "main": "index.js",
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test test/*.test.js" },
-  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.en.md", "README.zh.md", "LICENSE", "CHANGELOG.md"],
-  "keywords": ["dsh-plugin", "wsl", "playwright"],
+import { chromium } from 'playwright';
+const url = process.argv[2];
+const max = Number(process.argv[3] || 30000);
+const browser = await chromium.launch({ headless: true });
+try {
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
+  const title = await page.title();
+  let text = '';
+  try { text = await page.locator('body').innerText({ timeout: 10000 }); } catch {}
+  text = String(text || '').slice(0, max);
+  process.stdout.write(JSON.stringify({ ok: true, url, title, chars: text.length, text }));
 ```
 
 </details>
+
+#### 缺口
+
+- 未比较静态和动态网站覆盖
+  **影响**：无法确定何时比 HTTP 拉取更好
+  **进一步探讨**：用受控静态和延迟渲染页面对照
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · Playwright 如何启动、提取和裁剪输出？
+### Q02 · 一次调用如何启动浏览器并退出？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-每次 title/fetch 在系统临时目录写一个 ESM 脚本，再以 npx --yes -p playwright node <临时脚本> <URL> 启动。脚本导入 chromium，headless 启动新浏览器、打开新页面，等待 DOMContentLoaded；title 返回页面 title、最终 URL 和 response.status，fetch 取 body.innerText 并按 maxChars 截断。外层把 stdout JSON 解析为工具结果；默认总超时90秒，页面导航内部45秒。run 用 spawn 独立 argv，不拼用户 URL 为 shell 文本；stdout 过 maxOut*2 杀子进程，完成后裁剪；stderr 仅结束时切到8000字符，中途累积不设限。仅 kill npx 直接子进程，浏览器后代退出行为未由代码证明。浏览器脚本和临时目录在 finally 中删除。title 不返回网页 body，fetch 不返回 HTTP 状态/最终 URL，调用者需分别调用才能把跳转与状态并入正文记录。
+工具创建临时脚本，用 npx --yes -p playwright 调用 node，脚本启动新 Chromium 页面并从 stdout 返回 JSON，正常路径在 finally 关闭浏览器，调用方再尝试删除临时目录。超时杀掉启动的直接子进程，代码没有等待整个浏览器进程组退出的证据。正文读取异常被吞掉后仍可能返回 ok 和空文本，成功状态不能代表正文完整。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/pw.js:30-57](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L30-L57)
+**依据 1 · 源码核查**：[lib/pw.js:30-56](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L30-L56)
 
-spawn、超时、stdout/stderr 收集与裁剪实现。
+子进程、超时和输出控制
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
 export function run(bin, args, { timeoutMs = 90_000, maxOut = 120_000 } = {}) {
@@ -397,20 +357,18 @@ export function run(bin, args, { timeoutMs = 90_000, maxOut = 120_000 } = {}) {
       clearTimeout(t);
       reject(e);
     });
-  });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pw.js:81-138](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L81-L138)
+**依据 2 · 源码核查**：[lib/pw.js:82-130](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L82-L130)
 
-title 临时脚本、新 Chromium/页面、导航和 JSON 解析。
+临时脚本、npx 入口和清理
 
 <details>
-<summary>查看原文（58行）</summary>
+<summary>查看原文（49行）</summary>
 
 ```text
-/** Fast high-freq probe: open URL and return title + final URL only. */
 export async function pwTitle({ url, timeoutMs = 60_000 } = {}) {
   const u = assertUrl(url);
   const npx = (await which("npx")) || "npx";
@@ -460,34 +418,18 @@ try {
     try {
       rmSync(dir, { recursive: true, force: true });
     } catch {
-      try {
-        unlinkSync(script);
-      } catch {
-        /* ignore */
-      }
-    }
-  }
-}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pw.js:140-194](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L140-L194)
+**依据 3 · 源码核查**：[lib/pw.js:148-180](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L148-L180)
 
-fetch 的正文提取、字符截断及清理。
+正文容错、输出与异常处理
 
 <details>
-<summary>查看原文（55行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
-export async function pwFetch({ url, timeoutMs = 90_000, maxChars = 30_000 } = {}) {
-  const u = assertUrl(url);
-  const npx = (await which("npx")) || "npx";
-  const dir = mkdtempSync(join(tmpdir(), "dsh-pw-"));
-  const script = join(dir, "fetch.mjs");
-  writeFileSync(
-    script,
-    `
 import { chromium } from 'playwright';
 const url = process.argv[2];
 const max = Number(process.argv[3] || 30000);
@@ -521,89 +463,36 @@ try {
     } catch {
       throw new Error(`playwright non-JSON: ${line.slice(0, 200)} ${r.stderr}`);
     }
-    if (json.ok === false) throw new Error(json.error || "playwright failed");
-    return json;
-  } finally {
-    try {
-      rmSync(dir, { recursive: true, force: true });
-    } catch {
-      try {
-        unlinkSync(script);
-      } catch {
-        /* ignore */
-      }
-    }
-  }
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:66-92](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/index.js#L66-L92)
-
-工具只显示 title 与正文，不呈现最终 URL/HTTP 状态。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "pw_fetch",
-    description: "Headless open an http(s) URL; return title + body text (capped). Slow; may download browsers once.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["url"],
-      properties: { url: { type: "string" } },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : `title=${v.title}\n\n${v.text || ""}` },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await pwFetch({ url: args.url, timeoutMs, maxChars });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pw fetch" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pw fetch", content: r.content }),
-  });
 ```
 
 </details>
 
 #### 缺口
 
-- 无真实浏览器和高输出页面压力对照。
-  **影响**：无法量化每请求启动成本、子进程退出、长 stderr 内存与正文正确率。
-  **进一步探讨**：用本地测试站点覆盖重定向、错误状态、长文本、长 stderr、超时与重试。
+- 未运行超时与子进程树
+  **影响**：无法确认无残留或可用正文
+  **进一步探讨**：用超时页面和空 body 分别核对返回与进程
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · URL 和包解析是否限制可访问范围、能否可靠启动？
+### Q03 · http(s) 校验能隔离内网和重定向吗？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-assertUrl 只检查字符串非空、<=2000字符、URL 解析及 http/https 协议；没有域名、内网/回环地址、重定向最终地址、DNS 解析或认证范围门控。因此模型给出的 URL 若指向可达内网 HTTP 服务，浏览器原则上可能读取其正文；真实网络策略仍由宿主决定，不能据此断言已泄露。另一个启动疑点是脚本写在系统临时目录却从脚本内部以 ESM import 'playwright'；npx -p playwright 为 node 命令提供临时包环境，不必然使该临时脚本的 ESM 包解析路径包含 Playwright，代码没有把包安装到脚本祖先目录或显式定位模块。现有单测只覆盖 http URL 和 file 拒绝，不覆盖浏览器启动、内网/重定向或解析。该依赖失败路径是静态风险，应通过隔离运行证实，不能宣称必然失败。
+输入只校验 URL 长度、可解析及 HTTP/HTTPS 协议，没有检查目标主机。页面直接交给 Chromium 导航，没有在这条路径按实际请求拦截本机地址、子资源或重定向。因而网络权限取决于执行环境，不能把协议校验等同于只可访问公开站点。工具内容会进入模型上下文，应当作外部数据。另一个边界是 npx 使用未固定版本的 playwright，并且这段代码没有安装 Chromium 的独立步骤。README 的首次可能下载说明不能证明当前环境会自动准备浏览器。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/pw.js:17-28](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L17-L28)
+**依据 1 · 源码核查**：[lib/pw.js:17-27](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L17-L27)
 
-只校验协议和长度，没有主机/IP/重定向限制。
+仅检查协议和长度
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
 export function assertUrl(url) {
@@ -617,26 +506,18 @@ export function assertUrl(url) {
   }
   if (!/^https?:$/i.test(parsed.protocol)) throw new Error("only http(s) urls");
   return u;
-}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pw.js:83-115](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L83-L115)
+**依据 2 · 源码核查**：[lib/pw.js:90-108](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L90-L108)
 
-临时目录中的 ESM import 与 npx -p playwright 启动方式。
+直接导航并关闭
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-  const u = assertUrl(url);
-  const npx = (await which("npx")) || "npx";
-  const dir = mkdtempSync(join(tmpdir(), "dsh-pw-"));
-  const script = join(dir, "title.mjs");
-  writeFileSync(
-    script,
-    `
 import { chromium } from 'playwright';
 const url = process.argv[2];
 const browser = await chromium.launch({ headless: true });
@@ -656,33 +537,18 @@ try {
   process.exitCode = 1;
 } finally {
   await browser.close();
-}
-`,
-  );
-  try {
-    const r = await run(npx, ["--yes", "-p", "playwright", "node", script, u], {
-      timeoutMs,
-      maxOut: 8_000,
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/pw.js:140-171](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L140-L171)
+**依据 3 · 源码核查**：[lib/pw.js:148-171](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L148-L171)
 
-fetch 同样使用临时脚本及 npx 包解析方式。
+浏览器请求和 npx 未固定依赖
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-export async function pwFetch({ url, timeoutMs = 90_000, maxChars = 30_000 } = {}) {
-  const u = assertUrl(url);
-  const npx = (await which("npx")) || "npx";
-  const dir = mkdtempSync(join(tmpdir(), "dsh-pw-"));
-  const script = join(dir, "fetch.mjs");
-  writeFileSync(
-    script,
-    `
 import { chromium } from 'playwright';
 const url = process.argv[2];
 const max = Number(process.argv[3] || 30000);
@@ -711,43 +577,9 @@ try {
 
 </details>
 
-**依据 4 · 源码核查**：[test/playwright.test.js:1-7](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/test/playwright.test.js#L1-L7)
+**依据 4 · 作者声明**：[README.md:29-42](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/README.md#L29-L42)
 
-现有测试只检查 URL 校验两条路径。
-
-```text
-import { describe, it } from "node:test";
-import assert from "node:assert/strict";
-import { assertUrl } from "../lib/pw.js";
-describe("pw", () => {
-  it("url", () => assert.ok(assertUrl("https://example.com")));
-  it("bad", () => assert.throws(() => assertUrl("file:///x"), /http/));
-});
-```
-
-#### 缺口
-
-- 未执行隔离 npx/Playwright import 与内网地址实验。
-  **影响**：运行可用性和内网实际暴露程度未证实。
-  **进一步探讨**：在离线缓存且无敏感网络的临时 WSL 环境验证 ESM 包解析；用本地回环页测 URL/重定向策略。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 采用成本和最小验证是什么？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-首次需 Node/npx、Playwright 包及 Chromium 浏览器，可触发下载；每次调用重新创建浏览器和临时脚本，网络/CPU/内存与等待时间可能高于普通 HTTP 获取。浏览器可执行脚本并访问其可达网络，页面正文进入模型上下文，需限定可信站点或隔离网络及凭据。当前建议观察：对公开、需要 JS 渲染的页面才有明确相对纯 HTTP 抓取的价值；网页正文仍需证据核对。未实现的改进是假设：固定可解析的 Playwright 运行环境、复用受控浏览器、限制可访问地址及最终跳转，并在 fetch 同时记录最终 URL/HTTP 状态。最小对照用静态页、JS 渲染页、重定向、内网模拟页和错误状态页，测成功率、延迟、资源、目标边界以及与原手工/HTTP 方法相比的额外信息。若无法稳定启动或误读受限地址，就不宜用于无监督抓取。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:29-42](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/README.md#L29-L42)
-
-配置、首次 npx 下载和套件兼容性声明。
+作者的兼容与下载描述
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -765,34 +597,129 @@ describe("pw", () => {
 |------|----|
 | **插件** | `dsh-wsl-playwright` **0.1.1** |
 | **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |
-| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |
+| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.2-alpha.3`**）— 套件唯一真源 |
 | **套件档位** | 可选（默认不在 `install.sh` / `KIT_SET=daily`） |
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/pw.js:81-115](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L81-L115)
+#### 缺口
 
-每次 title 新临时脚本与浏览器。
+- 未验证运行环境的网络出口和依赖解析
+  **影响**：不能认定内网隔离或首次运行成功
+  **进一步探讨**：隔离网络下核对重定向和缺浏览器报错
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 怎样核对可用性与退路？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+需要兼容 DSH、WSL 内可找到 bash、node、npx，以及可解析的 Playwright 包和已可启动的 Chromium。pw_status 只检查可执行文件路径与 Node 版本，因此还要用受控公开页面确认 title/fetch。依赖安装、运行时间和出站访问均无本轮测量。若环境不允许临时依赖或开放网络，禁用该插件，保留原有网页读取方式。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:12-20](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/README.md#L12-L20)
+
+可选独立安装
+
+````text
+## 安装
+
+```sh
+dsh plugin --profile web add github:173787247/dsh-wsl-playwright
+# 或本机 path：
+# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-playwright
+```
+
+kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
+````
+
+**依据 2 · 源码核查**：[lib/pw.js:60-78](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L60-L78)
+
+状态工具只检查命令和版本
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-/** Fast high-freq probe: open URL and return title + final URL only. */
-export async function pwTitle({ url, timeoutMs = 60_000 } = {}) {
-  const u = assertUrl(url);
-  const npx = (await which("npx")) || "npx";
-  const dir = mkdtempSync(join(tmpdir(), "dsh-pw-"));
-  const script = join(dir, "title.mjs");
-  writeFileSync(
-    script,
-    `
-import { chromium } from 'playwright';
-const url = process.argv[2];
-const browser = await chromium.launch({ headless: true });
-try {
-  const page = await browser.newPage();
+export async function pwStatus() {
+  const npx = (await which("npx")) || null;
+  const node = (await which("node")) || null;
+  let nodeVersion = null;
+  if (node) {
+    try {
+      const r = await run(node, ["--version"], { timeoutMs: 5_000, maxOut: 200 });
+      nodeVersion = (r.stdout || r.stderr || "").trim() || null;
+    } catch {
+      /* ignore */
+    }
+  }
+  return {
+    ok: true,
+    npx,
+    node,
+    nodeVersion,
+    note: "Headless Chromium via npx -p playwright. First run may download browsers. Prefer Windows dsh-wsl-browser for GUI; use this for WSL-side automation only.",
+  };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:6-18](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/index.js#L6-L18)
+
+启用、限时和字符配置
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+export function apply(ctx, config = {}) {
+  if (config.enabled === false) {
+    console.log("[dsh-wsl-playwright] disabled");
+    return;
+  }
+  const timeoutMs = positive(config.timeoutMs, 90_000);
+  const maxChars = positive(config.maxChars, 30_000);
+  console.log("[dsh-wsl-playwright] headless fetch only");
+
+  ctx.systemPrompt.section({
+    name: "tool:playwright-wsl",
+    order: 138,
+    text: "dsh-wsl-playwright does headless Chromium fetch in WSL (pw_title for quick title/status, pw_fetch for body text). For interactive Windows browsing prefer dsh-wsl-browser. Do not drive both on the same task. First run may download Playwright browsers via npx.",
+```
+
+</details>
+
+#### 缺口
+
+- 未运行 WSL 或浏览器
+  **影响**：无法认定首次准备成本和稳定性
+  **进一步探讨**：对无缓存与有缓存的隔离环境比较
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 要先确认标题还是直接读取正文？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+已有标题模式返回状态和最终 URL，正文模式才返回文本。可验证针对同一批站点先读标题并按任务选择正文，是否减少无用上下文与误读。对照直接抓正文，记录总进程启动数、任务准确性、响应时间和失败。如果额外进程成本抵消了内容收益或漏掉关键页面，放弃该策略。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/pw.js:95-103](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L95-L103)
+
+标题和状态输出
+
+```text
   const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   const title = await page.title();
   process.stdout.write(JSON.stringify({
@@ -802,43 +729,13 @@ try {
     title,
     status: resp ? resp.status() : null,
   }));
-} catch (e) {
-  process.stdout.write(JSON.stringify({ ok: false, error: String(e && e.message || e) }));
-  process.exitCode = 1;
-} finally {
-  await browser.close();
-}
-`,
-  );
-  try {
-    const r = await run(npx, ["--yes", "-p", "playwright", "node", script, u], {
-      timeoutMs,
-      maxOut: 8_000,
 ```
 
-</details>
+**依据 2 · 源码核查**：[lib/pw.js:153-159](https://github.com/173787247/dsh-wsl-playwright/blob/ce0063af6d5bf485e47cf0f666c529b7ef0821bc/lib/pw.js#L153-L159)
 
-**依据 3 · 源码核查**：[lib/pw.js:140-171](https://github.com/173787247/dsh-wsl-playwright/blob/a451fefa0d3dc7454cc0c08c58110c392c64611a/lib/pw.js#L140-L171)
-
-每次 fetch 新临时脚本与浏览器，未共享会话。
-
-<details>
-<summary>查看原文（32行）</summary>
+正文输出范围
 
 ```text
-export async function pwFetch({ url, timeoutMs = 90_000, maxChars = 30_000 } = {}) {
-  const u = assertUrl(url);
-  const npx = (await which("npx")) || "npx";
-  const dir = mkdtempSync(join(tmpdir(), "dsh-pw-"));
-  const script = join(dir, "fetch.mjs");
-  writeFileSync(
-    script,
-    `
-import { chromium } from 'playwright';
-const url = process.argv[2];
-const max = Number(process.argv[3] || 30000);
-const browser = await chromium.launch({ headless: true });
-try {
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
   const title = await page.title();
@@ -846,29 +743,12 @@ try {
   try { text = await page.locator('body').innerText({ timeout: 10000 }); } catch {}
   text = String(text || '').slice(0, max);
   process.stdout.write(JSON.stringify({ ok: true, url, title, chars: text.length, text }));
-} catch (e) {
-  process.stdout.write(JSON.stringify({ ok: false, error: String(e && e.message || e) }));
-  process.exitCode = 1;
-} finally {
-  await browser.close();
-}
-`,
-  );
-  try {
-    const r = await run(npx, ["--yes", "-p", "playwright", "node", script, u, String(maxChars)], {
-      timeoutMs,
-      maxOut: maxChars + 8000,
 ```
-
-</details>
 
 #### 缺口
 
-- 无本轮安装、下载、延迟、内存或抓取质量测量。
-  **影响**：无法证明相对普通 HTTP 抓取的收益或投入产出。
-  **进一步探讨**：在隔离 WSL 实测上述站点矩阵，记录下载/启动成本、成功率与渲染增益。
-- 地址门控、受控浏览器复用尚未实现。
-  **影响**：只属改进假设，不计入本版能力。
-  **进一步探讨**：原型化后与现版对比安全边界和性能。
+- 没有任务负载对照
+  **影响**：不能声称两阶段更快
+  **进一步探讨**：固定网页集合比较两种策略
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

@@ -1,10 +1,10 @@
 {
     "repository": "173787247/dsh-wsl-compose",
     "repository_id": 1381842592,
-    "captured_at": "2026-10-21T05:08:56.162Z",
-    "window_start": "2026-09-21T05:08:56.162Z",
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
     "stars": 1,
-    "pushed_at": "2026-09-30T03:21:43Z",
+    "pushed_at": "2026-11-03T16:36:34Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,49 +15,52 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6410:3A339B:137E2B:20F091:6AD8495F and timestamp 2026-10-21 05:10:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A0E8:102F66:67417:6FA7C:6AEBE3B7 and timestamp 2026-11-05 02:02:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6412:9ED8B:145CAF:21D82C:6AD84960 and timestamp 2026-10-21 05:10:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A132:356C22:80F024:89B36D:6AEBE3B8 and timestamp 2026-11-05 02:02:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20created%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6413:B65AE:137398:20E98C:6AD84960 and timestamp 2026-10-21 05:10:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1B2:364175:67FCE:705AB:6AEBE3B9 and timestamp 2026-11-05 02:02:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed%20closed%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6415:DBD0:156536:22D6BA:6AD84960 and timestamp 2026-10-21 05:10:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A1FA:2D9F9E:68132:707C0:6AEBE3BA and timestamp 2026-11-05 02:02:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20updated%3A2026-09-21T05%3A08%3A56.162Z..2026-10-21T05%3A08%3A56.162Z&per_page=1: gh: API rate limit exceeded for installation. If you reach out to GitHub Support for help, please include the request ID 6409:194586:14AACD:223E5F:6AD84960 and timestamp 2026-10-21 05:10:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3A173787247%2Fdsh-wsl-compose%20is%3Aissue%20updated%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A256:102F66:676D0:6FD42:6AEBE3BB and timestamp 2026-11-05 02:02:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-wsl-compose",
-        "captured_at": "2026-10-21T05:08:56.162Z",
-        "window_start": "2026-09-21",
-        "window_end": "2026-10-20",
+        "captured_at": "2026-11-05T02:01:36.775Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-21:2026-10-20/dsh-wsl-compose",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-wsl-compose",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-10-21T07:15:57.121Z",
+            "captured_at": "2026-11-05T02:01:36.775Z",
             "source_url": "https://registry.npmjs.org/dsh-wsl-compose",
             "error": "HTTP 404",
             "latest_version": null,
             "latest_published_at": null,
             "latest_error": "HTTP 404"
         }
-    },
-    "code_update": {
-        "checked_at": "2026-10-21T05:08:56.162Z",
-        "baseline_revision": "bea57df86854983d90c8ac9219d15db1235c1652",
-        "current_revision": "bea57df86854983d90c8ac9219d15db1235c1652",
-        "script_changed": false,
-        "changed_files": [],
-        "error": null
     }
 }

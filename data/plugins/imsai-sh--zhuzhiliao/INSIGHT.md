@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)
 
-源码版本：[199e203](https://github.com/imsai-sh/zhuzhiliao/tree/199e203b038ffb515f3a21189a29da4b4fb8518f)
+源码版本：[01f2c0e](https://github.com/imsai-sh/zhuzhiliao/tree/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
+[![GitHub ★ 2,875](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C875&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
 <!-- END META -->
 
-> **功能**：在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。
+> **功能**：在浏览器中模拟甩动传统竹知了，可按住画圈、自动甩或使用手机体感，并随动作发出模拟叫声。
 
-> **亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 的录音声部把角速度和绳长比例变成响度与节奏，使操作者能改变何时发声；[Q02](#research-q02) 则让同一物理状态驱动可选的 3D 姿态，切回手绘时仍沿用原模拟。
 
-> **主要限制**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](#research-q03)。
+> **主要限制**：[Q03](#research-q03) 的离线能力分为本地 HTML 与预缓存两条路径。预缓存失败或首页收到 HTTP 错误响应时，页面可能无法离线恢复，且本地 HTML 的 2D 路径仍依赖浏览器允许 Web Audio。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 它是什么工程，与 DSH 有什么关系？](#detail-section-11)
-  - [Q02 · 物理、发声、存储与可选3D如何接线？](#detail-section-12)
-  - [Q03 · 离线、浏览器权限和分发条件是否支持采用？](#detail-section-13)
-  - [Q04 · 该工程应如何采用，能推导什么新假设？](#detail-section-14)
+  - [Q01 · 按住画圈与播放一段知了录音相比，用户多做成了什么？](#detail-section-11)
+  - [Q02 · 3D 视图改变了哪些反馈，输入、计数和音频由谁控制？](#detail-section-12)
+  - [Q03 · 单文件、离线 PWA 与发声分别受什么条件约束？](#detail-section-13)
+  - [Q04 · 从 Harness 目录进入时，应该把它接入宿主还是当独立网页阅读？](#detail-section-14)
+  - [Q05 · 能否用现有状态给首次使用者解释静音原因？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：传统玩具爱好者在手机浏览器通过画圈或传感器体验竹知了；它是独立Web项目。
+> **用途**：想回顾或演示竹知了的读者可以在浏览器里画圈，让虚拟甩杆带动竹筒发声。
 
-录音播放或玩具视频是体验基线；DSH扩展任务则没有对应实现，不能用玩具效果替代插件验收。
+录音便于直接展示叫声，真实玩具提供触感和实体运动。浏览器模拟提供可控制的音画反馈，触感和声学还原程度仍需对照。
 
 <a id="detail-section-3"></a>
 
@@ -51,65 +52,63 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 浏览器甩动与发声 | 独立数字玩具体验 | Canvas/Web Audio；非DSH能力 |
-| 本机圈数 | 记录手动交互 | 仅浏览器存储，清理后会丢失 |
-| 可选3D | 叠加视觉呈现 | 依赖WebGL与资源，失败回2D |
+| 动作驱动声音 | 让操作者控制叫声时机与节奏 | 浏览器须允许音频运行，录音解码失败可使用合成 |
+| 手绘与 3D | 用不同画面表现同一运动状态 | 3D 依赖模块加载与 WebGL |
+| 离线缓存 | 在已缓存时尝试断网打开首页 | 注册依赖安全上下文，首次断网无法预缓存 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| Canvas/Web Audio浏览器 | 必需 | 图形和声音 | 对应能力不可用 |
-| 安全上下文/传感器授权 | 体感模式必需 | 动作输入 | 回到触控或自动甩 |
-| WebGL及Three资源 | 3D可选 | 叠加渲染 | 回到2D |
-| 作者许可范围 | 本地使用必要条件 | 决定允许的用途 | 不自行公开部署或再分发 |
+| 支持脚本和 Canvas 的浏览器 | 基础玩法必需 | 更新和呈现玩具 | 无法交互 |
+| Web Audio 和用户激活 | 听见声音时必需 | 解锁并驱动音频 | 优先尝试页面提供的解锁方式，仍无声可只观察画面 |
+| WebGL、同目录 3D 文件 | 3D 模式必需 | 加载和渲染程序模型 | 初始化不可用时沿用手绘路径 |
+| 安全上下文和可读静态资源 | PWA 预缓存必需 | 注册 Worker 并缓存核心资源 | 保留本地 HTML 作 2D 路径 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 用户按许可在受控设备打开本地HTML | 页面可见，不交给DSH加载 |
-| 交互 | 用户首次点击解锁声音并拖动画圈 | 速度与声音联动；失败检查音频权限 |
-| 降级 | 用户无法体感或3D时选触控/2D | 仍可体验主物理与声音链 |
-| 退出 | 用户关闭页面 | 本机计数仅保存在浏览器存储 |
+| 打开 | 读者在允许的个人使用范围内打开页面 | 看到手绘或 3D 玩具 |
+| 互动 | 按住画圈并根据画面调整动作 | 观察绳和竹筒运动，尝试听见随速度变化的声音 |
+| 恢复 | 无声时点按，3D 初始化不可用时用手绘 | 记录具体浏览器和模式，区别画面、音频和缓存问题 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | 下载HTML及可选资源，金额未知 | 音频解锁、可选传感器授权；耗时未知 | DSH安装不适用 |
-| 持续使用 | 音频、Canvas与可选WebGL资源 | 交互体验；耗时按个人任务 | 能耗未测，PWA有后台更新 |
-| 失败恢复 | 重载与资源重取，金额未知 | 切回2D或拖动模式 | 清数据会丢本机计数 |
+| 首次使用 | 金额及资源消耗未知 | 打开、解锁与首响耗时未知 | 2D 路径无需构建，3D 需要附加文件 |
+| 持续使用 | 2D 与 3D 耗电差未知 | 适应手势或体感所需时间未知 | 体感和 PWA 取决于环境 |
+| 失败恢复 | 资源重新加载开销未知 | 切换模式和复核缓存所需时间未知 | 受限存储的计数不可指望跨页面恢复 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 互动声音 | 物理状态驱动采样/合成链 | 拟真、端到端延迟 |
-| 本机记录 | localStorage累加人工圈数 | 清存储后的恢复 |
-| DSH扩展 | 材料明确独立Web类型 | 未提供DSH集成 |
+| 可控发声 | 角速度和绳长比例驱动响度，采样速率随转速变化 | 手感、听感和用户首响表现 |
+| 渲染选择 | 初始化失败保留手绘，成功后 3D 消费原物理状态 | 低端设备代价与 WebGL 中途故障表现 |
 
-> **思考**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](#research-q03)。
+> **思考**：[Q03](#research-q03) 的离线能力分为本地 HTML 与预缓存两条路径。预缓存失败或首页收到 HTTP 错误响应时，页面可能无法离线恢复，且本地 HTML 的 2D 路径仍依赖浏览器允许 Web Audio。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 的录音声部把角速度和绳长比例变成响度与节奏，使操作者能改变何时发声；[Q02](#research-q02) 则让同一物理状态驱动可选的 3D 姿态，切回手绘时仍沿用原模拟。
 
-物理状态归主页面、渲染可选且初始化失败回退，是值得独立学习的分层；复用思想需自己实现或获得适用授权。SW的静态资源更新说明离线与联网生命周期要分开评价，见[Q02](#research-q02)。
+同一组模拟状态可以驱动两种显示，便于按渲染条件取舍。[Q02](#research-q02) 核查的导入异常处理覆盖初始化，逐帧渲染的恢复仍需另测。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](#research-q03)。
+[Q03](#research-q03) 的离线能力分为本地 HTML 与预缓存两条路径。预缓存失败或首页收到 HTTP 错误响应时，页面可能无法离线恢复，且本地 HTML 的 2D 路径仍依赖浏览器允许 Web Audio。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-不推荐作为DSH插件；许可允许的个人本地阅读与体验是不同任务。见[Q04](#research-q04)。
+[Q04](#research-q04) 对源码学习可先对照指针目标、角速度和音频更新，再比较手绘与 3D 消费同一状态的方式。若在个人设备试玩时受模块或图形环境限制，可保留手绘模式。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-独立Web玩具机制可核查，未发现DSH入口；拟真和节能效果未实测，呈现模式对照为未验证假设。
+固定提交的网页入口、交互链和 3D 回退来自静态核查。实际听感、离线恢复和静音提示效果仍待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、LICENSE、index.html、sw.js、3d/boot3d.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.html、3d/boot3d.js、3d/model.js、sw.js、LICENSE 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查独立Web源码、PWA与3D接线及作者许可文本；不运行浏览器，不做法律意见。
-- 下一步：先确认研究目标是个人交互设计；呈现模式对照使用相同输入轨迹与设备，测辨识、延迟和能耗，不因有3D代码宣称体验提升。
+- 边界：固定根仓网页源码、渲染接口、许可文字和 Service Worker。Web Audio、体感、浏览器离线恢复和设备性能未实测。
+- 下一步：比较同一动作在 2D 和 3D 的首响及帧时间；再分别测已缓存与首次离线打开，并记录音频解锁和计数保存。
 
 **分析版本**
 
 - **仓库**：[imsai-sh/zhuzhiliao](https://github.com/imsai-sh/zhuzhiliao)
-- **版本号**：未声明（[固定提交 199e203](https://github.com/imsai-sh/zhuzhiliao/tree/199e203b038ffb515f3a21189a29da4b4fb8518f)）
-- **版本日期**：2026-08-14（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 01f2c0e](https://github.com/imsai-sh/zhuzhiliao/tree/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +135,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是固定同一物理轨迹，比较纯音频、2D与3D模式的拟真感和卡顿；若3D无辨识增益且更耗资源则保留2D默认。见[Q04](#research-q04)。
+[Q05](#research-q05) 在现有转速和解锁提示上增加短时静音原因反馈，有可能减少首次操作者的无效重试。以首响时间和误导率对照现有界面，收益缺失或误导增加即否定。
 
-先确认研究目标是个人交互设计；呈现模式对照使用相同输入轨迹与设备，测辨识、延迟和能耗，不因有3D代码宣称体验提升。
+比较同一动作在 2D 和 3D 的首响及帧时间；再分别测已缓存与首次离线打开，并记录音频解锁和计数保存。
 
 <a id="detail-section-9"></a>
 
@@ -147,62 +146,46 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .js | source | 3 | 570 | 472 | 59 | — |
-| .md | source | 2 | 202 | — | — | 3070 |
+| .md | source | 2 | 204 | — | — | 3110 |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [GitHub Issues](https://github.com/imsai-sh/zhuzhiliao/issues) 查看。
+[![Issue 未关闭 12](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=12&color=737b86&logo=github)](https://github.com/imsai-sh/zhuzhiliao/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/imsai-sh/zhuzhiliao/issues?q=is%3Aissue+created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/imsai-sh/zhuzhiliao/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z)
+
+
+
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查竹知了是否实现DSH任务及其独立Web玩具机制与采用边界
+**插件研究总目标**：浏览器版竹知了怎样把动作转成可感知的反馈，目录读者在什么条件下能使用它？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 它是什么工程，与 DSH 有什么关系？
+### Q01 · 按住画圈与播放一段知了录音相比，用户多做成了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-竹知了是面向手机浏览器的传统发声玩具模拟，输入是画圈拖动、自动甩或动作传感器，合格结果是画面与声音随甩动变化。README中的DSH内容是另一个Awesome清单的推广链接，不是本工程的加载入口；根目录没有插件package清单。相对只播放录音或观看玩具视频，它将绳系质点的转动状态驱动发声和视觉，提供可交互体验，属于浏览器玩具设计。它不提供模型工具、DSH会话流程或宿主插件注册，因此不能作为可安装DSH插件推荐；这不否认其独立交互价值。
+想回顾或演示传统玩具的人，可以用指针移动甩杆，并尝试让竹筒在绳拉紧时达到发声条件。指针按下会取消自动甩并更新目标坐标，触屏还会上移锚点。物理循环用甩杆与竹筒的相对位置计算角速度，按转速和绳长比例驱动发声强度。录音声部的音量、速率和音高也随状态变化。播放现成录音能听到音色，这个页面让操作者控制发声时机与节奏。自动甩也能把状态推到发声区间，因而有声音只能说明玩具进入发声状态，不能据此判断操作者掌握了手势。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-10](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L1-L10)
+**依据 1 · 作者声明**：[README.md:36-42](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/README.md#L36-L42)
 
-作者定位Web玩具，DSH只在其他清单推广中出现
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-# 竹知了
-
-一转就"哇哇"叫的传统玩具，Web 模拟版。零依赖单文件，手机优先。
-
-**在线试玩：<https://imsai.top>**
-
-> [!TIP]
-> **新开源项目：[Awesome DeepSeek Harness Plugins](https://github.com/imsai-sh/awesome-deepseek-harness-plugins)**
->
-> 面向 DeepSeek harness 插件生态的 Awesome 清单，欢迎 Star 和共建。
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:34-40](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L34-L40)
-
-实际用户操作是浏览器交互
+作者描述指针、自动甩和体感三种入口。
 
 ```text
 ## 玩法
@@ -214,12 +197,43 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
 - **甩手机**（手机端，需 HTTPS 或本地文件）：握住手机划圈，重力方向在机身坐标里转动，直接驱动甩杆（iOS 首次需授权动作传感器；普通 http 局域网地址下浏览器不派发传感器事件，该按钮会自动隐藏）
 ```
 
-**依据 3 · 源码核查**：[index.html:768-802](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/index.html#L768-L802)
+**依据 2 · 源码核查**：[index.html:1247-1265](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1247-L1265)
 
-物理角速度及绳张力参与发声驱动
+按下和移动事件更新甩杆目标，手动按下关闭自动甩。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（19行）</summary>
+
+```text
+cv.addEventListener('pointerdown', e => {
+  if(pointer.down) return;                 // 已有手指在甩，忽略误触的第二指
+  pointer.down = true;
+  pointer.id = e.pointerId;
+  // 拇指按住时玩具画在指尖正下会被手挡住，触摸输入把锚点抬到指尖上方
+  pointer.lift = e.pointerType === 'touch' ? Math.min(110, ROPE_LEN*0.9) : 0;
+  interacted = true;
+  cv.classList.add('holding');
+  cv.setPointerCapture(e.pointerId);
+  if(auto.on) setAuto(false);
+  target.x = e.clientX;
+  target.y = Math.max(12, e.clientY - pointer.lift);
+  ensureAudio(true);
+});
+cv.addEventListener('pointermove', e => {
+  if(!pointer.down || e.pointerId !== pointer.id) return;
+  target.x = e.clientX;
+  target.y = Math.max(12, e.clientY - pointer.lift);
+});
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.html:768-784](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L768-L784)
+
+坐标和竹筒状态转换为绳方向的角速度。
+
+<details>
+<summary>查看原文（17行）</summary>
 
 ```text
   const k = 1 - Math.exp(-dt*26);
@@ -239,66 +253,212 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
   omega += (dth/dt - omega)*Math.min(1, dt*9);
   prevTheta = theta;
   rps = Math.abs(omega)/TAU;
+```
 
-  // 手动甩出的圈数计入「哇」——自动甩不算数
-  if(!auto.on && active > 0.3){
-    revAccum += Math.abs(dth);
-    if(revAccum >= TAU){
-      const n = Math.floor(revAccum/TAU);
-      revAccum -= n*TAU;
-      addWah(n);
-    }
-  }else{
-    revAccum = 0;
-  }
+</details>
 
+**依据 4 · 源码核查**：[index.html:798-803](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L798-L803)
+
+以绳长比例和转速组合成平滑发声强度。
+
+```text
   ropeDist = Math.hypot(tube.x - stick.x, tube.y - stick.y);
   taut = clamp((ropeDist/ROPE_LEN - 0.88)/0.12, 0, 1);
   drive = clamp((rps - 1.1)/2.6, 0, 1);
   const tgt = Math.pow(drive, 1.25)*taut;
   active += (tgt - active)*Math.min(1, dt*(tgt > active ? 10 : 3.2));
+
+```
+
+**依据 5 · 源码核查**：[index.html:703-714](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L703-L714)
+
+录音声部的响度、速率和音高受该状态驱动。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+function updateAudio(){
+  if(!AC || AC.state !== 'running' || !au || !au.mode) return;
+  const t = AC.currentTime;
+  // 总响度
+  au.master.gain.setTargetAtTime(0.85*Math.pow(active, 1.3), t, 0.07);
+
+  if(au.mode === 'sample'){
+    // 甩得越快回放越快越高；再叠每圈相位的音高微摆(张力/多普勒感)
+    const rate = clamp(Math.pow(rps/RECORDED_RPS, 0.7), 0.6, 1.5);
+    au.sample.playbackRate.setTargetAtTime(active > 0.02 ? rate : 0.9, t, 0.09);
+    au.sample.detune.setTargetAtTime(50*Math.sin(theta + 0.9)*clamp(active*1.6, 0, 1), t, 0.04);
+    return;
 ```
 
 </details>
+
+#### 缺口
+
+- 没有与录音或实物的用户对照
+  **影响**：无法判断互动是否更容易理解、是否还原手感或能形成重复使用
+  **进一步探讨**：对同一演示任务比较录音、浏览器画圈与实物的首响、理解和主观还原度
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 物理、发声、存储与可选3D如何接线？
+### Q02 · 3D 视图改变了哪些反馈，输入、计数和音频由谁控制？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-主页面用1/240秒子步调用physStep，再从绳方向变化平滑估计角速度，将每秒圈数和绳张紧度组合为active并更新声音。AudioContext优先解码内嵌采样，解码异常转入合成声部，声卡链有总增益、压缩器和分析器；静置8秒后挂起线程。手动圈数在自动模式关闭且active达阈值时累加，经800毫秒延迟写localStorage；存储异常静默降级，不把本机计数当全站数据。可选3D只接收主页面物理状态，WebGL初始化失败返回null，物理与声音仍归主页面所有。可借鉴的是把互动状态、音频和渲染职责分开并提供回退；新项目复用机制需重新实现或取得授权，不能把源码公开视作通用复用许可。
+入口将本地 Three.js 文件映射为模块，加载 WebGL 层成功后每帧传入甩杆、竹筒、转速、绳长和发声强度。渲染层以角加速度和竹筒移动速度近似计算两翼的弹簧阻尼运动，以绳长差控制垂度，并让发声强度驱动鼓面发光。模拟、声音和计数仍由页面更新函数处理，切换时只改变绘制分支。初始化不能创建 WebGL 渲染器会返回空值，导入失败也保持手绘路径。该回退位于加载阶段，逐帧调用没有同样的异常处理，不能据此保证渲染中途出错时自动切回。音频解码失败另走合成声部，与 3D 开关分离。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.html:587-614](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/index.html#L587-L614)
+**依据 1 · 源码核查**：[index.html:69-71](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L69-L71)
 
-采样解码失败回退合成声部
-
-<details>
-<summary>查看原文（28行）</summary>
+Three.js 来自项目内的 vendor 文件。
 
 ```text
-  const Ctx = window.AudioContext || window.webkitAudioContext;
-  if(!Ctx) return;
-  AC = new Ctx();
-  AC.resume().catch(() => {});
-  acTimeLast = 0; acAdvanceWall = performance.now();
+<script type="importmap">
+{"imports":{ "three":"./3d/vendor/three.module.min.js" }}
+</script>
+```
 
-  // 公共输出链：总闸 → 压限 → 分析器 → 扬声器
-  const master = AC.createGain(); master.gain.value = 0;
-  const comp = AC.createDynamicsCompressor();
-  comp.threshold.value = -18; comp.ratio.value = 8;
-  comp.attack.value = 0.004; comp.release.value = 0.18;
-  const analyser = AC.createAnalyser(); analyser.fftSize = 1024;
-  master.connect(comp); comp.connect(analyser); analyser.connect(AC.destination);
-  au = { master, analyser, mode: null };
+**依据 2 · 源码核查**：[index.html:1130-1152](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1130-L1152)
 
-  // 解码内嵌录音；任何一步失败都回退合成
+模块初始化、切换按钮及导入错误处理。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+let toy3d = null, use3d = false;
+let want3d = true;
+try{ want3d = localStorage.getItem('zzl_3d') !== '0'; }catch(_){}
+const STICK_TILT3D = Math.PI/2 - 1.15;   // 与 2D 版杆倾角一致（屏幕系→世界系换算）
+function toyScale(){ return clamp(Math.min(W, H)*0.155, 64, 88); }  // 筒身高对应像素
+function set3d(on){
+  use3d = !!(on && toy3d);
+  d3Btn.classList.toggle('on', use3d);
+  d3Btn.textContent = use3d ? '手绘小蝉' : '3D 小蝉';
+  cv3d.style.display = use3d ? '' : 'none';
+  try{ localStorage.setItem('zzl_3d', use3d ? '1' : '0'); }catch(_){}
+}
+import('./3d/boot3d.js').then(m => {
+  toy3d = m.init(cv3d);
+  if(!toy3d) return;
+  toy3d.resize(W, H, DPR, toyScale());
+  d3Btn.style.display = '';
+  set3d(want3d);
+}).catch(() => {});
+d3Btn.addEventListener('click', e => {
+  e.stopPropagation();
+  set3d(!use3d);
+});
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.html:953-958](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L953-L958)
+
+绘制分支消费同一组主页面状态。
+
+```text
+  if(use3d){
+    toy3d.render({ now, dt, stick, tube, ropeLen: ROPE_LEN, ropeDist,
+                   omega, active, stickTilt: STICK_TILT3D });
+  }else{
+    drawToy(now);
+  }
+```
+
+**依据 4 · 源码核查**：[3d/boot3d.js:13-19](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/3d/boot3d.js#L13-L19)
+
+初始化 WebGL 失败时返回空值。
+
+```text
+export function init(canvas) {
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  } catch (_) {
+    return null;
+  }
+```
+
+**依据 5 · 源码核查**：[3d/boot3d.js:79-119](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/3d/boot3d.js#L79-L119)
+
+姿态、翅膀及绳垂度由主页面状态派生。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+      const sx = px2wx(st.stick.x) / SCALE, sy = px2wy(st.stick.y) / SCALE;
+      const tx = px2wx(st.tube.x) / SCALE, ty = px2wy(st.tube.y) / SCALE;
+
+      // 头(鼓面)朝绳方向
+      const headAngle = Math.atan2(sy - ty, sx - tx) - Math.PI / 2;
+      // 甩得越快绕绳轴自旋越快，静止时缓慢回摆
+      spin += (st.omega * 0.45 + Math.sin(st.now * 0.6) * 0.15) * dt;
+
+      // —— 翅膀跟随晃动 ——
+      // 气流吹开：随穿行速度张开；晃动跟随：绳向角加速度让左右翅一先一后甩尾；
+      // 弹簧-阻尼积分产生滞后与过冲；高速时再叠高频振翅。
+      const speed = Math.hypot(st.tube.vx || 0, st.tube.vy || 0) / SCALE;
+      const alpha = clamp((st.omega - prevOmega) / dt, -60, 60);
+      prevOmega = st.omega;
+      const rest = 0.15 + Math.min(0.85, speed * 0.16)
+                 + Math.sin(st.now * 2.1) * 0.02;          // 静置时轻微呼吸
+      const kick = alpha * 0.016;                          // 甩尾激励（左右反相）
+      const stepWing = (w, force) => {
+        w.v += ((force - w.a) * WING_STIFF - w.v * WING_DAMP) * dt;
+        w.a += w.v * dt;
+        return w.a;
+      };
+      const flutter = Math.min(1, speed * 0.10 + st.active) * Math.sin(st.now * 46) * 0.22;
+      const wl = stepWing(wingL, rest - kick) + flutter;
+      const wr = stepWing(wingR, rest + kick) + flutter * 0.85;
+
+      // 绳松弛量 → 垂度（换算成模型单位）
+      const sag = Math.max(0, (st.ropeLen - st.ropeDist) * 0.55) / SCALE;
+
+      model.userData.drivePose({
+        stick: { x: sx, y: sy },
+        tube: { x: tx, y: ty },
+        headAngle,
+        spin,
+        tilt: 0.14 + st.active * 0.10,   // 轻微出屏倾斜，转快时更立体
+        stickTilt: st.stickTilt,
+        wingL: wl, wingR: wr, sag,
+      }, st.now);
+      model.userData.setSing(st.active);
+
+      renderer.render(scene, camera);
+```
+
+</details>
+
+**依据 6 · 源码核查**：[3d/model.js:356-360](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/3d/model.js#L356-L360)
+
+发声参数驱动模型发光。
+
+```text
+  root.userData.setSing = (v) => {
+    meshes['membrane-top'].material.emissiveIntensity = v * 0.85;
+  };
+
+  root.userData.tick = (dt, t) => {
+```
+
+**依据 7 · 源码核查**：[index.html:603-614](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L603-L614)
+
+录音数据解码失败会调用合成兜底。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
   try{
     if(!sampleBytes){
       const bin = atob(ZZL_SAMPLE);
@@ -315,40 +475,14 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
 
 </details>
 
-**依据 2 · 源码核查**：[index.html:772-812](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/index.html#L772-L812)
+**依据 8 · 源码核查**：[index.html:798-812](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L798-L812)
 
-物理子步、角速度、人工圈数与音频休眠
+发声强度与音频更新保持在页面循环。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  // 定步长积分
-  let acc = dt;
-  const h = 1/240;
-  while(acc > 1e-6){ const s = Math.min(h, acc); physStep(s); acc -= s; }
-
-  // 角速度(发声核心)：绳方向的转动快慢
-  theta = Math.atan2(tube.y - stick.y, tube.x - stick.x);
-  let dth = theta - prevTheta;
-  while(dth >  Math.PI) dth -= TAU;
-  while(dth < -Math.PI) dth += TAU;
-  omega += (dth/dt - omega)*Math.min(1, dt*9);
-  prevTheta = theta;
-  rps = Math.abs(omega)/TAU;
-
-  // 手动甩出的圈数计入「哇」——自动甩不算数
-  if(!auto.on && active > 0.3){
-    revAccum += Math.abs(dth);
-    if(revAccum >= TAU){
-      const n = Math.floor(revAccum/TAU);
-      revAccum -= n*TAU;
-      addWah(n);
-    }
-  }else{
-    revAccum = 0;
-  }
-
   ropeDist = Math.hypot(tube.x - stick.x, tube.y - stick.y);
   taut = clamp((ropeDist/ROPE_LEN - 0.88)/0.12, 0, 1);
   drive = clamp((rps - 1.1)/2.6, 0, 1);
@@ -368,94 +502,29 @@ Issue 活跃度数据暂未获取（查询日期：2026-10-27），可前往 [Gi
 
 </details>
 
-**依据 3 · 源码核查**：[index.html:1333-1355](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/index.html#L1333-L1355)
-
-本机计数持久化及存储异常降级
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-let myWah = 0;
-try{
-  myWah = parseInt(localStorage.getItem('zzl_mywah') || '0', 10) || 0;
-  localStorage.removeItem('zzl_uid');   // 旧版全站计数的访客标识，后端已下线，清掉
-}catch(_){ /* 无痕模式等 localStorage 不可用时静默降级 */ }
-
-const fmt = n => n.toLocaleString('zh-Hans-CN');
-function renderMine(){ stEls.mine.textContent = fmt(myWah); }
-
-let mySaveTimer = 0;
-function addWah(n){
-  myWah += n;
-  renderMine();
-  stEls.mineWrap.classList.remove('minepop');
-  void stEls.mineWrap.offsetWidth;      // 重启动画
-  stEls.mineWrap.classList.add('minepop');
-  if(!mySaveTimer){
-    mySaveTimer = setTimeout(() => {
-      mySaveTimer = 0;
-      try{ localStorage.setItem('zzl_mywah', String(myWah)); }catch(_){}
-    }, 800);
-  }
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[3d/boot3d.js:1-18](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/3d/boot3d.js#L1-L18)
-
-3D叠加层与初始化失败返回
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-// 3D 渲染层引导：在主站 2D 画布之上叠一层透明 WebGL，
-// 每帧接收主站物理状态（甩杆锚点/竹筒质点/转速/发声强度），
-// 把程序化 3D 模型摆到对应位姿。物理、声音、计数全部留在主站。
-//
-// 主站通过动态 import() 加载本模块：file:// 直开或 WebGL 不可用时
-// import 失败/init 返回 null，主站自动回落 2D 手绘小蝉。
-import * as THREE from 'three';
-import { createZhuzhiliaoModel } from './model.js';
-
-const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
-const clampDt = (dt) => (dt > 0 && dt < 0.05 ? dt : 0);
-
-export function init(canvas) {
-  let renderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  } catch (_) {
-    return null;
-```
-
-</details>
-
 #### 缺口
 
-- 没有真实移动设备上的声音、触控和能耗对照
-  **影响**：不能确认拟真感、延迟与节电效果
-  **进一步探讨**：在相同设备对比录音播放与交互版本的延迟、崩溃和电量，按浏览器列结果
+- 不同设备下的帧率、耗电和 WebGL 中途丢失表现未知
+  **影响**：难以判断 3D 的长时间代价和恢复体验
+  **进一步探讨**：在相同手势下比较 2D、3D 的帧时间与耗电，并单独记录上下文丢失时的画面和音频
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 离线、浏览器权限和分发条件是否支持采用？
+### Q03 · 单文件、离线 PWA 与发声分别受什么条件约束？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-2D主体验依赖浏览器Canvas和Web Audio，首次触摸/点击解锁音频；动作传感器模式另需安全上下文和iOS授权，不满足时应回到拖动或自动甩。README称单文件零依赖，源码另有可选Three.js渲染和Service Worker，不能把整个3D/PWA部署也叫没有附属资源。SW对导航网络优先、静态资源stale-while-revalidate，因此线上PWA会进行更新请求；作者“不再联网”应收窄为计数不上传，而非所有页面请求都消失。离线主文件与联网PWA是两种条件。许可允许受控设备本地运行和个人修改，明确不授予再分发、第三方部署及商业用途；本轮记录文中限制，不作法律推断。首次读取或本地体验需下载资源和权限选择，持续需浏览器音频/图形资源，失败恢复可刷新或切2D，清理浏览器数据会丢本机圈数；金额、工时、兼容范围均未知。
+单独保留 HTML 时，可用页面内的 2D 和嵌入音频路径。3D 还要能加载本地模块且建立 WebGL。PWA 缓存需要浏览器支持 Service Worker、当前为安全上下文且协议不是 file。安装要成功预缓存整组资源，资源缺失可使安装失败。导航缓存只在 fetch 拒绝时接管，HTTP 错误响应仍会作为响应返回，代码还会尝试把它写到首页缓存。断网前应检查已由 Worker 接管以及首页资源确实可用，持有 HTML 则可走独立的 2D 路径。出声还需浏览器允许 Web Audio 运行，手势触发解锁，AAC 解码错误改走合成。无痕或存储受限时计数保留于页面内存，保存失败没有提示，关闭页面后不应指望恢复。现金支出、首响耗时和维护成本均无测量。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:36-40](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L36-L40)
+**依据 1 · 作者声明**：[README.md:38-42](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/README.md#L38-L42)
 
-传感器安全上下文和权限前提
+作者说明直接打开 HTML 及体感权限条件。
 
 ```text
 直接用浏览器打开 `index.html` 即可（无需构建、无需联网）。
@@ -465,33 +534,78 @@ export function init(canvas) {
 - **甩手机**（手机端，需 HTTPS 或本地文件）：握住手机划圈，重力方向在机身坐标里转动，直接驱动甩杆（iOS 首次需授权动作传感器；普通 http 局域网地址下浏览器不派发传感器事件，该按钮会自动隐藏）
 ```
 
-**依据 2 · 作者声明**：[README.md:118-129](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L118-L129)
+**依据 2 · 源码核查**：[index.html:1276-1279](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1276-L1279)
 
-作者明确许可使用与限制
+页面用触摸结束、点击或键盘事件申请音频解锁。
+
+```text
+// 音频解锁只认这些事件：Android Chrome 上触摸授予激活的是 touchend
+// (pointerup 在它之前派发、拿不到激活)，click/keydown 覆盖按钮和键盘
+['touchend', 'click', 'keydown'].forEach(type =>
+  document.addEventListener(type, () => ensureAudio(true), { capture: true, passive: true }));
+```
+
+**依据 3 · 源码核查**：[index.html:603-614](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L603-L614)
+
+嵌入采样解码失败切至合成路径。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-## 许可与声明
-
-**本项目不是 OSI 意义上的开源项目。** 源码公开是为了技术分享，完整条款见 [LICENSE](LICENSE)：
-
-- **允许**：阅读研究源码、在自己拥有或控制的设备上本地运行、为学习或个人使用而修改
-- **不授权**：再分发（含修改版，无论是否收费）、部署到第三方可访问的位置、对外提供任何
-  形式的服务、任何商业使用、移除或篡改版权声明
-- **内容限制**：不得用本项目或其修改版制作、传播侵犯他人合法权益的内容，包括未经许可
-  使用真实人物的姓名、肖像、声音或其他人格标识；违反者许可自动终止
-
-官方站点只有 <https://imsai.top>，其他域名上的部署均未经授权，与本项目和作者
-无关——详见[页首声明](#竹知了)。需要超出上述范围的授权，请先联系作者取得书面许可。
+  try{
+    if(!sampleBytes){
+      const bin = atob(ZZL_SAMPLE);
+      sampleBytes = new Uint8Array(bin.length);
+      for(let i = 0; i < bin.length; i++) sampleBytes[i] = bin.charCodeAt(i);
+    }
+    // decodeAudioData 会 detach 传入的 buffer，给副本以便重建时复用
+    AC.decodeAudioData(sampleBytes.slice().buffer,
+      buf => startSampleVoice(buf),
+      () => startSynthVoice());
+  }catch(_){ startSynthVoice(); }
+}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[sw.js:24-50](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/sw.js#L24-L50)
+**依据 4 · 源码核查**：[index.html:1360-1363](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1360-L1363)
 
-PWA导航与静态资源存在网络更新请求
+安全上下文和协议限制，注册失败静默。
+
+```text
+/* —— Service Worker：安卓 Chrome 的安装提示以此为门槛，顺带离线可玩 —— */
+if('serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:'){
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+```
+
+**依据 5 · 源码核查**：[sw.js:4-14](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/sw.js#L4-L14)
+
+包括 3D 文件在内的核心资源批量预缓存。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+const CACHE = 'zzl-v1';
+const CORE = [
+  './', './manifest.webmanifest', './apple-touch-icon.png',
+  './icon-192.png', './icon-512.png',
+  './3d/boot3d.js', './3d/model.js',
+  './3d/vendor/three.module.min.js', './3d/vendor/OrbitControls.js',
+];
+
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting()));
+});
+```
+
+</details>
+
+**依据 6 · 源码核查**：[sw.js:24-50](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/sw.js#L24-L50)
+
+导航请求返回网络响应，只有拒绝才查缓存，静态请求检查 ok。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -528,106 +642,232 @@ self.addEventListener('fetch', e => {
 
 </details>
 
-**依据 4 · 源码核查**：[index.html:1361-1363](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/index.html#L1361-L1363)
+**依据 7 · 源码核查**：[index.html:1342-1354](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1342-L1354)
 
-安全上下文才注册SW
+更新界面后延时尝试存储，失败静默。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
-if('serviceWorker' in navigator && window.isSecureContext && location.protocol !== 'file:'){
-  navigator.serviceWorker.register('sw.js').catch(() => {});
-}
+let mySaveTimer = 0;
+function addWah(n){
+  myWah += n;
+  renderMine();
+  stEls.mineWrap.classList.remove('minepop');
+  void stEls.mineWrap.offsetWidth;      // 重启动画
+  stEls.mineWrap.classList.add('minepop');
+  if(!mySaveTimer){
+    mySaveTimer = setTimeout(() => {
+      mySaveTimer = 0;
+      try{ localStorage.setItem('zzl_mywah', String(myWah)); }catch(_){}
+    }, 800);
+  }
 ```
+
+</details>
 
 #### 缺口
 
-- README离线叙述与完整PWA/3D资源条件未统一
-  **影响**：容易把单页2D离线能力扩大到所有模式
-  **进一步探讨**：分别断网检查直接本地文件、首次PWA及缓存后PWA的完整资源依赖
+- 离线、许可提示和存储状态的具体浏览器差异未知
+  **影响**：无法量化首次试玩和故障恢复开销
+  **进一步探讨**：逐项比较本地 HTML、首次断网、缓存后断网、错误导航响应和禁用本地存储的实际表现
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 该工程应如何采用，能推导什么新假设？
+### Q04 · 从 Harness 目录进入时，应该把它接入宿主还是当独立网页阅读？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：采用判断
 
 #### 完整回答
 
-对寻找DSH能力的读者，不推荐将本工程加入插件配置，因为已检查材料明确是独立玩具，DSH链接通往另一工程。对交互设计学习者，可在许可允许的本地范围阅读实现，比较采样回放与物理驱动的表达方式。由同一物理状态驱动声音与3D的分层可推导未验证假设：保持主状态不变，增加可切换的纯音频/2D/3D呈现，以检验视觉复杂度是否真正提高拟真感。最小验证固定同一触控输入轨迹，比较用户辨识、卡顿和能耗；若3D没有辨识收益且持续增加卡顿，就不应默认启用。此处仅是设计推导，未经授权不复制分发或部署。
+本轮核查的固定提交为独立浏览器玩具。README 提到的 Fish Pocket 和 DSH 1024Store 链向不同仓库，页面的启动入口则是浏览器加载 index.html，随后处理指针输入、帧更新和 Web Audio。固定树未见插件包清单、宿主导出、工具注册或会话接线。要在 DSH 会话中增加工具或命令的人可以退出该条目的安装路径。想学习交互实现的人可以阅读源码，或按仓库许可在自己控制的设备上本地打开网页并从指针和 2D 模式开始。固定许可文字只列出阅读、个人修改和本地运行等授权，公开部署、再分发和商业使用须先取得作者书面授权。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-10](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L1-L10)
+**依据 1 · 作者声明**：[README.md:3-12](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/README.md#L3-L12)
 
-独立类型与DSH推广边界
+当前仓库自述为玩具，两个 DSH 项目是外部链接。
 
 <details>
 <summary>查看原文（10行）</summary>
 
 ```text
-# 竹知了
-
 一转就"哇哇"叫的传统玩具，Web 模拟版。零依赖单文件，手机优先。
 
 **在线试玩：<https://imsai.top>**
 
 > [!TIP]
-> **新开源项目：[Awesome DeepSeek Harness Plugins](https://github.com/imsai-sh/awesome-deepseek-harness-plugins)**
+> **新开源项目：[Fish Pocket](https://github.com/imsai-sh/fish-pocket)**
 >
-> 面向 DeepSeek harness 插件生态的 Awesome 清单，欢迎 Star 和共建。
+> 让 DeepSeek Harness 运行在 iPhone 和 iPad 上，随时随地使用。欢迎 Star 关注、一起共建。
+>
+> 往期推荐：[DSH 1024Store](https://github.com/imsai-sh/dsh-1024store)——DeepSeek Harness 的开源插件市场，在线搜索、安装和排行 dsh 插件：<https://deepseek1024.com>。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[3d/boot3d.js:1-18](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/3d/boot3d.js#L1-L18)
+**依据 2 · 作者声明**：[README.md:36-42](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/README.md#L36-L42)
 
-渲染与物理分离提供可比较条件
+使用入口是浏览器页面。
+
+```text
+## 玩法
+
+直接用浏览器打开 `index.html` 即可（无需构建、无需联网）。
+
+- **按住屏幕画圈**：像甩真玩具一样，转得越快叫得越响（触屏时锚点会自动抬到指尖上方，避免手挡住小蝉）
+- **自动甩**：不想动手就点它（空格键也行）
+- **甩手机**（手机端，需 HTTPS 或本地文件）：握住手机划圈，重力方向在机身坐标里转动，直接驱动甩杆（iOS 首次需授权动作传感器；普通 http 局域网地址下浏览器不派发传感器事件，该按钮会自动隐藏）
+```
+
+**依据 3 · 源码核查**：[index.html:1154-1170](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1154-L1170)
+
+页面直接推进更新、绘制和状态提示。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-// 3D 渲染层引导：在主站 2D 画布之上叠一层透明 WebGL，
-// 每帧接收主站物理状态（甩杆锚点/竹筒质点/转速/发声强度），
-// 把程序化 3D 模型摆到对应位姿。物理、声音、计数全部留在主站。
-//
-// 主站通过动态 import() 加载本模块：file:// 直开或 WebGL 不可用时
-// import 失败/init 返回 null，主站自动回落 2D 手绘小蝉。
-import * as THREE from 'three';
-import { createZhuzhiliaoModel } from './model.js';
-
-const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
-const clampDt = (dt) => (dt > 0 && dt < 0.05 ? dt : 0);
-
-export function init(canvas) {
-  let renderer;
-  try {
-    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  } catch (_) {
-    return null;
+function frame(now){
+  // 有些嵌入环境不派发 resize 事件，每帧自查尺寸变化（0 尺寸视为瞬态，忽略）
+  if(window.innerWidth > 0 &&
+     (window.innerWidth !== W || window.innerHeight !== H)) resize();
+  // rAF 出现大间隙说明页面被冻结过(部分 WebView 不派发 visibilitychange)，宽限期重置
+  if(now - last > 1000) acAdvanceWall = performance.now();
+  const dt = Math.min(0.05, (now - last)/1000) || 0.016;
+  last = now;
+  update(dt);
+  draw(now/1000, dt);
+  hudTimer -= dt;
+  if(hudTimer <= 0){
+    hudTimer = 0.15;
+    rpsEl.textContent = rps.toFixed(1);
+    syncUnlock();
+  }
+  requestAnimationFrame(frame);
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:120-126](https://github.com/imsai-sh/zhuzhiliao/blob/199e203b038ffb515f3a21189a29da4b4fb8518f/README.md#L120-L126)
+**依据 4 · 源码核查**：[index.html:1247-1265](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1247-L1265)
 
-限制试用之外的分发方式
+Canvas 是实际用户输入入口。
+
+<details>
+<summary>查看原文（19行）</summary>
 
 ```text
-**本项目不是 OSI 意义上的开源项目。** 源码公开是为了技术分享，完整条款见 [LICENSE](LICENSE)：
+cv.addEventListener('pointerdown', e => {
+  if(pointer.down) return;                 // 已有手指在甩，忽略误触的第二指
+  pointer.down = true;
+  pointer.id = e.pointerId;
+  // 拇指按住时玩具画在指尖正下会被手挡住，触摸输入把锚点抬到指尖上方
+  pointer.lift = e.pointerType === 'touch' ? Math.min(110, ROPE_LEN*0.9) : 0;
+  interacted = true;
+  cv.classList.add('holding');
+  cv.setPointerCapture(e.pointerId);
+  if(auto.on) setAuto(false);
+  target.x = e.clientX;
+  target.y = Math.max(12, e.clientY - pointer.lift);
+  ensureAudio(true);
+});
+cv.addEventListener('pointermove', e => {
+  if(!pointer.down || e.pointerId !== pointer.id) return;
+  target.x = e.clientX;
+  target.y = Math.max(12, e.clientY - pointer.lift);
+});
+```
 
-- **允许**：阅读研究源码、在自己拥有或控制的设备上本地运行、为学习或个人使用而修改
-- **不授权**：再分发（含修改版，无论是否收费）、部署到第三方可访问的位置、对外提供任何
-  形式的服务、任何商业使用、移除或篡改版权声明
-- **内容限制**：不得用本项目或其修改版制作、传播侵犯他人合法权益的内容，包括未经许可
-  使用真实人物的姓名、肖像、声音或其他人格标识；违反者许可自动终止
+</details>
+
+**依据 5 · 源码核查**：[LICENSE:14-28](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/LICENSE#L14-L28)
+
+区分本地研究和需另行授权的使用范围。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+一、授予的权利
+
+在完整遵守本许可的前提下，任何人可以：
+
+1. 阅读、研究本软件的源码；
+2. 在自己拥有或控制的设备上本地运行本软件；
+3. 为学习、研究或个人使用的目的修改本软件。
+
+二、未授予的权利（须事先取得作者书面授权）
+
+1. 再分发本软件或其修改版——无论是否收费，无论以源码、编译产物还是打包形式；
+2. 将本软件或其修改版部署到第三方可访问的位置，或据此提供任何形式的对外服务，
+   包括但不限于公开网站、小程序、App、API、SDK；
+3. 任何商业使用，包括在含广告、付费、引流或其他商业目的的场景中使用；
+4. 移除、遮蔽或篡改本软件中的版权声明、作者署名或本许可文件。
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 能否用现有状态给首次使用者解释静音原因？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+当前页面已显示转速，并调用解锁提示同步逻辑。转速数字单独无法解释为什么转动时仍安静：发声强度同时受绳长比例和转速门槛影响，音频链还要求上下文正在运行。可验证一个界面假设：保留原有转速与解锁提示，仅在手动甩且持续静音时，根据现有状态显示继续加速、拉紧绳或点按启声的当前首要原因。测试让首次体验者在同设备、同任务下随机使用原版或该提示版，分别尝试低速、绳松与音频未解锁。记录首响时间、错误重试、提示闪烁和误导率。如果首响和错误重试没有改善，或者误导增多，就否定该提示方案。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.html:1162-1169](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L1162-L1169)
+
+原页面已经刷新速度并同步音频解锁提示。
+
+```text
+  update(dt);
+  draw(now/1000, dt);
+  hudTimer -= dt;
+  if(hudTimer <= 0){
+    hudTimer = 0.15;
+    rpsEl.textContent = rps.toFixed(1);
+    syncUnlock();
+  }
+```
+
+**依据 2 · 源码核查**：[index.html:798-803](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L798-L803)
+
+同样转速可以因绳长比例不同而产生不同强度。
+
+```text
+  ropeDist = Math.hypot(tube.x - stick.x, tube.y - stick.y);
+  taut = clamp((ropeDist/ROPE_LEN - 0.88)/0.12, 0, 1);
+  drive = clamp((rps - 1.1)/2.6, 0, 1);
+  const tgt = Math.pow(drive, 1.25)*taut;
+  active += (tgt - active)*Math.min(1, dt*(tgt > active ? 10 : 3.2));
+
+```
+
+**依据 3 · 源码核查**：[index.html:703-707](https://github.com/imsai-sh/zhuzhiliao/blob/01f2c0e373f2f12519b383080bd8cc3ebad8b4d5/index.html#L703-L707)
+
+音频上下文须处于运行状态。
+
+```text
+function updateAudio(){
+  if(!AC || AC.state !== 'running' || !au || !au.mode) return;
+  const t = AC.currentTime;
+  // 总响度
+  au.master.gain.setTargetAtTime(0.85*Math.pow(active, 1.3), t, 0.07);
 ```
 
 #### 缺口
 
-- 呈现模式的需求与感知效果未测
-  **影响**：不能把3D叠加当作已验证体验改进
-  **进一步探讨**：在许可允许的个人研究范围先做呈现对照，再决定是否需要新的交互设计
+- 未实现提示对照，也未观察首次用户的实际困惑
+  **影响**：提示的辨识价值和噪声代价均属假设
+  **进一步探讨**：在相同设备上对照原有数字、解锁提示与分原因反馈
 
 [返回分类](../../views/categories/OTHER.md) · [返回首页](../../../README.md)

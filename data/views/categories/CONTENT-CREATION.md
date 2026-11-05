@@ -24,6 +24,7 @@
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
+| [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
@@ -50,6 +51,7 @@
 | [Media Studio](#plugin-1399694663-root) | 把图片/视频生成接到DSH工具、命令及媒体卡片；后台启动、作品保存和会话取用须分开核。 | 观察，先确认当前Host/API合同与选定后端的一次同步作品闭环，再讨论有限后台试用；出现未知远端状态/路径权限或文件恢复异常时停止新生成并保全已生成资产，见[Q07](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q07)。 |
 | [MuseAI](#plugin-1200521020-root) | 本地角色对话、文字冒险与故事世界资料管理应用。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 的状态暴露未修复核实前不启用 LAN。 |
 | [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
+| [NextTavern](#plugin-1366204745-root) | 为 DSH 提供角色扮演工作区，支持角色卡、世界线、记忆和小说导出。 | [Q04](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q04) 先独立工作区核对原文出稿，再决定是否启用整理。 |
 | [no-ai-style](#plugin-1418493685-root) | 提供英中日写作审阅、润色和起草Skill，附DSH模式插入按钮与离线词法/锚点检查。 | 作者留原文并逐命题复核的可控范围试用，先audit再授权编辑。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
@@ -256,6 +258,22 @@
 > **建议**：未验证假设是把内容新鲜度及表示缺口作为预览交付的一部分，以减少旧缓存和视觉误验；对照同元数据改写、纹理模型与Blender直接打开，若误验不降或复核更慢则否定。[Q05](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-blend-preview/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1388372309-integrations-deepseek-harness"></a>
+
+## [dsh-brewreel](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 179](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=179&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Finderchangchang/brewreel) [![npm 30d 1,432](https://img.shields.io/static/v1?label=npm+30d&message=1%2C432&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-brewreel) [![最新发布 2026-10-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-brewreel)
+
+> **用途**：需要从固定模板制作短竖版宣传片的开发者和内容人员。
+
+> **亮点**：[Q01](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q01) 把分镜、渲染和可交付文件回执连接为宿主工具路径。
+
+> **思考**：[Q02](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q02) 路径、环境和哈希约束有各自范围，成片仍需人审核。[Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 渲染依赖较重且有明确宿主边界。
+
+> **建议**：[Q04](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q04) 标记最终产物来自当前渲染还是已有文件复核，检验能否减少错交。
+
+[查看完整分析](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1422396858-root"></a>
 
@@ -673,6 +691,22 @@
 
 [查看完整分析](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1366204745-root"></a>
+
+## [NextTavern](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md)
+
+[![GitHub ★ 224](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=224&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/a86582751/dsh-nexttavern) [![npm 30d 1,937](https://img.shields.io/static/v1?label=npm+30d&message=1%2C937&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-nexttavern) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-nexttavern)
+
+> **用途**：需要把角色扮演会话整理成可读稿件的玩家可以评估分支导出。
+
+> **亮点**：[Q01](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q01) 让分支故事可进入原文或模型整理的导出任务，避免逐段搬运。
+
+> **思考**：[Q03](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q03) 固定树版本与 README 发行线不同，稿件不能替代会话备份。
+
+> **建议**：[Q05](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q05) 给整理稿增加来源定位，验证作者能否更快核对事实。
+
+[查看完整分析](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1418493685-root"></a>
 
 ## [no-ai-style](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md)
@@ -901,4 +935,4 @@
 
 ## 更新时间
 
-2026-11-04
+2026-11-05

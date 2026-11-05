@@ -20,6 +20,7 @@
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
 | [ClawMetry](#plugin-1156882085-root) | 读取 Agent 会话与运行日志，统一展示时间轴、工具事件及可得用量的观测工具 | [Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 已有OpenClaw数据者可对照原JSONL条件试读；本目录DSH用途先观察，未核Pro适配前不采用其健康/控制判断。 |
+| [Codex Connect](#plugin-1333646693-root) | 为 DSH 增加 ChatGPT OAuth 授权的 Codex 模型路由及可选辅助能力。 | [Q03](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q03) 先做无钥匙诊断再决定是否授权。 |
 | [Cue Omni Reader Guard](#plugin-1244140731-dsh-cue-omni-reader-guard) | 在 DeepSeek Harness 调用 Omni Reader 解析前检查 URL、文件根与审批策略。 | [Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q03) 用隔离测试验证应用层门槛。 |
 | [DeepSeek Harness](#plugin-1333065091-root) | 基于插件组合提供 Agent 运行、工具调用、会话和交互的开源宿主。 | 适合有 Agent 扩展需求的开发者先在隔离 profile、固定模型和小任务上验收；服务缺失、非预期写入或重启不一致时停止并回到已知配置。 |
 | [DeepSeek Harness Channel BCN](#plugin-1290565606-apps-bcs-crates-plugins-deepseek-harness-channel-bcn) | 将 DeepSeek Harness Agent 接入 Avernet Bot Collaboration Network。 | [Q04](../../plugins/inclusionai--avernet--apps-bcs-crates-plugins-deepseek-harness-channel-bcn/INSIGHT.md#research-q04) 先在受控服务和兼容宿主用低敏消息试通，并对照终态；异常时双方核查后再处理。 |
@@ -56,7 +57,8 @@
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。 |
 | [dsh-model-info-fill](#plugin-1358816037-root) | 从models.dev按模型名补自定义供应商缺失容量、图片和思考声明，展示冲突、未匹配与旧猜档待确认。 | 先观察；个人有备份profile关自动补，目录同步完成后逐项手动审阅再补，实际供应商优先。 |
 | [dsh-model-manager](#plugin-1349266980-root) | 在 DSH 管理本地推理服务、参数 Profile、GPU 检测和性能测试。 | 先在隔离端口登记已有服务、保存参数并核对测速口径。 |
-| [dsh-ollama-cloud](#plugin-1394197658-root) | 接入 Ollama 云端或本地模型，动态发现模型与推理档位，并显示云端用量。 | 适合已有Ollama凭据且可锁宿主版本的用户，以短文本和一个可丢弃工具任务试接入。 |
+| [dsh-ollama-cloud](#plugin-1394197658-root) | 为 DSH 接入 Ollama Cloud，提供模型发现、推理档位、额度视图及搜索和抓取。 | [Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 先保留可恢复的宿主配置并锁定已声明版本。 |
+| [dsh-opencode-go](#plugin-1371644959-root) | 为 DSH 接入 OpenCode Go 与 Free 模型，提供多账号管理、额度显示和本地用量估算。 | [Q04](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q04) 在独立 profile 配置可撤销测试凭据。 |
 | [dsh-opencode-zen-plugin](#plugin-1402771540-root) | 把 OpenCode Console 对话模型接入 DSH 的四协议 LLM adapter，附设置卡与模型目录刷新。 | 先隔离试用单个获授权模型，再做四协议/工具/图片/错误矩阵；保护本地诊断文件。 |
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 在 DSH Web 界面展示 OpenViking Studio、会话记忆提交状态和当前召回结果。 | [Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05) 建议可信个人单机以非敏感会话对照一条归档和当前搜索；身份、端点或权限不符时停止并回服务端核查。 |
 | [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
@@ -81,6 +83,7 @@
 | [dsh-tts-flash](#plugin-1363291561-root) | DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。 | 先在隔离桌面试听 Edge，再用受控云密钥验证长回复、中断、权限与费用。 |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | 建议观察，先固定目标宿主完成可达面和状态恢复核查；互不信任用户还需独立系统权限边界，不能把登录页当隔离验收。 |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。 | 先观察，可信单用户只作趋势对照。 |
+| [dsh-usage-stats](#plugin-1333685863-root) | 在 DSH 中展示供应商账户、Token 用量、费用估算和预算，支持聚合导出。 | [Q03](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q03) 先关闭账户轮询做本地统计对照，再按 [Q02](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q02) 检查真实部署的回环和导出边界。 |
 | [dsh-vps](#plugin-1377159975-root) | 为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。 | 先在隔离 VPS 钉所有文件来源、演练令牌缺失/备份失败/回滚，并对照原生隧道或手工部署；正式公网持续采用需独立安全及恢复验收。 |
 | [dsh-web](#plugin-1331636953-root) | 面向 DeepSeek Harness Web GUI 的模块化插件与主题集合。 | [Q05](../../plugins/zhu1090093659--dsh-web/INSIGHT.md#research-q05) 建议备份并在隔离 profile 先核实来源和所需行；版本、权限或恢复状态不明时暂停并改用按需安装。 |
 | [dsh-web-all](#plugin-1331636953-packages-dsh-web-all) | 将 DSH Web 家族插件组合为可按行配置的聚合安装包。 | [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md#research-q05) 建议备份并在隔离 profile 核对所需行和权限；版本或副作用不明时停止并恢复或改按需安装。 |
@@ -88,30 +91,29 @@
 | [dsh-web-restart](#plugin-1335060007-root) | Windows DSH Web 的侧栏重启按钮，调用硬编码 PowerShell 外部脚本。 | 暂不直接采用；只在隔离 Windows 复核脚本、授权和失败状态后考虑。 |
 | [dsh-workspace-tools](#plugin-1363511446-root) | 按已注册工作区为新根会话自动选择 Agent 与权限预设的设置页和事件监听器。 | 先在低权限工作区限定试用；全权限规则和大小写敏感环境先验证匹配及首 turn 顺序。 |
 | [dsh-wsl-clock](#plugin-1351854066-root) | 提供 clock_doctor 工具，诊断 WSL 与 Windows UTC 时间偏移。 | [Q04](../../plugins/173787247--dsh-wsl-clock/INSIGHT.md#research-q04) 只读试用并手工交叉核对，不自动重启；不一致回原诊断。 |
-| [dsh-wsl-compose](#plugin-1381842592-root) | 为 DSH 提供 Docker Compose 状态、容器列表、日志与可选 up/down 的本机运维工具。 | 默认只读并限制项目根；变更前后用宿主人工审批和 ps 对账，超时不盲重试。 |
-| [dsh-wsl-db](#plugin-1381859591-root) | 经 psql/redis-cli 为 DSH Agent 提供 PostgreSQL 与 Redis 连通性和查询工具。 | 仅隔离测试库、最小权限账号试用；生产库不直接采用。 |
+| [dsh-wsl-compose](#plugin-1381842592-root) | 在 DSH 中读取 Docker Compose 服务状态与日志，并按配置启停项目。 | [Q03](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q03) 在隔离测试项目只评估只读工具，变更时使用经核对目标的原生命令。 |
+| [dsh-wsl-db](#plugin-1381859591-root) | 在 DSH 中探测 PostgreSQL 和 Redis，并运行受规则限制的查询。 | [Q03](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q03) 在合成实例验收显式目标和读权限，避免用真实业务凭据作首次试验。 |
 | [dsh-wsl-defender](#plugin-1391141174-root) | 从 WSL 查询 Windows Defender、防篡改、Firewall 与近期威胁状态。 | 仅适合 WSL 内做初步、只读环境诊断的技术用户观察，不能替代安全产品、合规审计或自动修复。 |
 | [dsh-wsl-dns](#plugin-1351854118-root) | 提供 dns_doctor，对照 WSL 与 Windows 的 DNS IPv4 解析和 resolv.conf。 | [Q04](../../plugins/173787247--dsh-wsl-dns/INSIGHT.md#research-q04) 观察并先补错误和预算，不以ok/mismatch自动修DNS；回原生查询核实。 |
 | [dsh-wsl-editor](#plugin-1351854212-root) | 在 Windows Cursor、VS Code 或 Notepad 中打开 WSL 路径并支持可选行列。 | [Q04](../../plugins/173787247--dsh-wsl-editor/INSIGHT.md#research-q04) 显式绝对路径/可信样例试用，人工确认文档；取消或失败先核窗口再重试。 |
 | [dsh-wsl-eventlog](#plugin-1391143266-root) | 从 WSL 通过 PowerShell 只读查询 Windows 事件日志的 Agent 工具。 | 只作本机日志初筛；空结果和 full 消息需与事件查看器复核。 |
 | [dsh-wsl-fetch](#plugin-1362694736-root) | 让 WSL 中 DSH 的 web_fetch 通过 Windows HTTP 代理读取公开网页。 | 先用无敏感 URL 的公开文本页确认 provider 和结果。 |
-| [dsh-wsl-helm](#plugin-1381843528-root) | 将 Helm 的发布列表、状态和历史查询接入 DSH 模型工具。 | 建议观察，先用显式 context 的只读账号在测试集群对照原生 Helm；不要把 allowedContexts 或状态文本单独当自动决策依据。 |
-| [dsh-wsl-llamacpp](#plugin-1381832318-root) | 给 DSH Agent 提供 llama.cpp 兼容服务的模型列表状态与一次性非流式聊天工具。 | 先核 /v1/models，再以固定 prompt 对照服务端原生结果与资源；不要只看 status.ok。 |
+| [dsh-wsl-helm](#plugin-1381843528-root) | 在 DSH 中列出 Helm 发布并查看状态与历史。 | [Q03](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q03) 仅用测试 kubeconfig 对照同名发布，确定目标后再解释结果。 |
+| [dsh-wsl-k8s](#plugin-1381726881-root) | 在 DSH 中查询 kubectl 上下文、资源状态、对象详情和 Pod 日志。 | [Q03](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md#research-q03) 只在无生产凭据的测试 profile 验证两类 context 和非零退出，确认读取边界后再评估采用。 |
+| [dsh-wsl-llamacpp](#plugin-1381832318-root) | 在 DSH 中探测 llama.cpp 兼容服务并请求单次聊天生成。 | [Q03](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q03) 用测试 profile 验证列表及一个已知可用模型的非空输出。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 通过本机 Himalaya 与 notmuch CLI 向 DSH 提供信封列表、未读概况和邮件搜索。 | 先核 mail_status 与未读语义，Himalaya fallback 仅视近期样本，敏感邮箱限制 Agent 访问。 |
 | [dsh-wsl-mnt](#plugin-1351854159-root) | 提供 mnt_doctor，按路径分类 Windows 挂载工作区并给出 Linux home 建议。 | [Q04](../../plugins/173787247--dsh-wsl-mnt/INSIGHT.md#research-q04) 显式path并核挂载/基准，不按ok自动迁移，冲突或误判回原检查。 |
 | [dsh-wsl-net](#plugin-1338965593-root) | 为 WSL 中的 DeepSeek Harness 诊断代理环境、宿主进程、端口监听与 HTTPS 可达性，并生成修复建议。 | [Q03](../../plugins/173787247--dsh-wsl-net/INSIGHT.md#research-q03) 个人无凭据测试环境先关闭注入并核对PID，只把报告作为排障线索。 |
 | [dsh-wsl-ollama](#plugin-1381724774-root) | 为 DSH 提供 Ollama 状态、模型列表、非流式对话和向量工具。 | 先固定可信本地地址，用短文本确认结果；路由或宿主数据范围不清时回本地 CLI。 |
 | [dsh-wsl-perf](#plugin-1391142601-root) | 从 WSL 获取 Windows 宿主 CPU、内存、固定磁盘和按内存排序的进程快照。 | 低频初筛，0 值先核 CIM；CPU 热点另用实时进程采样。 |
 | [dsh-wsl-power](#plugin-1391140034-root) | 从 WSL 读取 Windows 活动电源方案、电池、睡眠与休眠信息的只读工具。 | 先与 Windows 原生命令逐字段对照，缺字段视未知；不要把休眠布尔和 sleep=0 直接用于决策。 |
-| [dsh-wsl-rclone](#plugin-1381859181-root) | 把 rclone 的 remote 列表、文件名枚举和配额查看暴露为 DSH 只读工具。 | 只读凭据加显式 allowedRemotes，小路径先验；勿把 count 当总量或把 ok 当健康。 |
 | [dsh-wsl-registry](#plugin-1391142974-root) | 为 WSL 内 DSH 提供受路径列表约束的 Windows 注册表读取工具。 | 建议观察并限非敏感诊断；在隔离测试键验证路径与长值边界、再评估是否允许真实注册表查询。 |
-| [dsh-wsl-secret](#plugin-1381733290-root) | 为 DSH 提供 pass/age 名单读取、预览和进程环境变量转交。 | 受信任单租户进程先用假密钥验名单与输出，保持 reveal=false；高敏/多插件隔离需求优先正式范围化凭据服务。 |
+| [dsh-wsl-secret](#plugin-1381733290-root) | 在 DSH 中查找 pass 条目、解密 pass 或 age 内容，并按需写入环境变量。 | [Q03](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q03) 只在独立测试进程中用虚拟密钥核对作用域与日志。 |
 | [dsh-wsl-service](#plugin-1391140376-root) | 给 WSL 中的 DSH Agent 提供 Windows 服务列表与单服务详情只读工具。 | 个人本机 WSL 排障可观察试用；共享环境先核工具授权和详情字段。 |
 | [dsh-wsl-shot](#plugin-1351854253-root) | 将 Windows 剪贴板图片保存为 WSL 文件，供后续多模态会话引用。 | [Q04](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md#research-q04) 非敏感样图/独立目录先核Public权限/失败残留与后续接图；异常回手工。 |
-| [dsh-wsl-struct](#plugin-1381832935-root) | 为DSH封装jq、yq与readonly SQLite查询，提供主文件allowRoots检查及输出截断标记。 | 先观察，固定CLI/缩小root并接宿主进程治理后再试，敏感配置先不用。 |
-| [dsh-wsl-systemd](#plugin-1381843201-root) | 为DSH提供用户systemd可用性探测、服务列表、单位属性与近期日志的只读工具，不启动或停止服务。 | 有条件试用，先核用户bus/日志脱敏和失败截断；严格取消/内存边界场景先观察。 |
-| [dsh-wsl-terraform](#plugin-1381843937-root) | 在DSH中检查Terraform/OpenTofu状态、验证配置、解析plan变更数量和列出state资源地址，不提供apply或destroy工具。 | 先观察，先假CLI验证exit/截断收据和明确批准根/最小权限，不直接在生产云项目启用。 |
-| [dsh-wsl-vllm](#plugin-1381832640-root) | 把已有本机/Docker vLLM OpenAI 兼容端点接入 DSH Agent 的状态与聊天工具。 | 仅已有可信 vLLM 的环境小范围试用；先核 reachable、模型 id、输入上限及取消时序。 |
+| [dsh-wsl-systemd](#plugin-1381843201-root) | 在 DSH 中查询 systemd 用户单元、状态和近期日志。 | [Q03](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q03) 先对照原命令验证可读范围和日志截断，再用于测试服务排障。 |
+| [dsh-wsl-terraform](#plugin-1381843937-root) | 在 DSH 中验证 Terraform 或 OpenTofu 配置，并读取计划摘要和状态地址。 | [Q03](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q03) 用隔离工程验证真正无变更与信号退出，遇不确定结果回原计划。 |
+| [dsh-wsl-vllm](#plugin-1381832640-root) | 在 DSH 中查看 vLLM 服务可达性和模型，并调用聊天补全。 | [Q03](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q03) 使用独立测试 profile 对比直接请求，核对模型和非空回复。 |
 | [dsh-wsl-winctl](#plugin-1391143632-root) | 从 WSL 枚举并控制 Windows 顶层窗口的 Agent 工具，支持窗口状态与多种变更动作。 | 先只读枚举，变更时提供 PID+标题并事后复核；close/topmost 需人类批准。 |
 | [dsh-wsl-winshot](#plugin-1391140767-root) | 从 WSL 调 PowerShell 截取 Windows 前台或指定 PID 窗口到本地 PNG 的工具。 | 只在隔离桌面试用，指定私有输出目录并手工核 PNG/残留；敏感窗口需额外授权。 |
 | [dsh-zspace](#plugin-1406500233-root) | 用 19 个模型工具管理极空间 NAS 文件、容器和系统状态。 | 保持观察，不连接承载唯一数据或家庭核心服务的 NAS；先只开只读工具，在测试共享目录验证通道切换和重复请求。 |
@@ -273,6 +275,22 @@
 > **建议**：[Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 推导每个指标携带来源/覆盖/启用/错误合同的未验证改进，以盲区误判和定位时间检验，噪声或成本抵消收益则推翻。
 
 [查看完整分析](../../plugins/vivekchand--clawmetry/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333646693-root"></a>
+
+## [Codex Connect](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md)
+
+[![GitHub ★ 179](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=179&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/franksong2702/dsh-codex-connect) [![npm 30d 7,739](https://img.shields.io/static/v1?label=npm+30d&message=7%2C739&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codex-connect) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-codex-connect)
+
+> **用途**：需要在 DSH 会话中使用 Codex 模型并保留宿主工具流程的开发者。
+
+> **亮点**：[Q01](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q01) 将 OAuth 模型纳入既有宿主模型选择和 Agent 流程。[Q02](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q02) 任务守卫单独限制指定宿主的自动化。
+
+> **思考**：[Q02](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q02) 精确宿主矩阵、旧任务恢复和真实账号权限是三个验收范围。
+
+> **建议**：[Q04](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q04) 将目录、包兼容与账户权限分开显示并验证是否减少误判。
+
+[查看完整分析](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1244140731-dsh-cue-omni-reader-guard"></a>
 
@@ -854,17 +872,33 @@
 
 ## [dsh-ollama-cloud](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md)
 
-[![GitHub ★ 3](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asheblog/dsh-ollama-cloud)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Asheblog/dsh-ollama-cloud)
 
-> **用途**：面向已使用Ollama云模型或自建兼容服务的DSH用户，合格结果是选择实际存在的模型、正确传递可用推理档位并完成同一聊天任务。手配兼容URL可解决基础对话，此插件增加原生tags/show发现、档位映射、目录刷新和配额界面。核心聊天继承官方PiAiAdapter，不应把上游协议转换算作本插件原创。增量是把端点特有元信息变为宿主可用选择与运维反馈。
+> **用途**：已有 Ollama Cloud 帐户且需要在 DSH 中选用多种云模型的开发者。
 
-> **亮点**：[Q01](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q01) 的增量是原生元信息与宿主模型选择、用量通道的联接；[Q02](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q02) 同代connection快照减少飞行请求与配置漂移。聊天协议能力明确归属上游PiAiAdapter。
+> **亮点**：[Q01](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q01) 把端点原生目录变成宿主可选模型，[Q02](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q02) 解释暂态保留和退役剔除的分工。[Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 的包级检查让宿主发布号变更有明确的静态判据。
 
-> **思考**：[Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 中目录成员与能力描述不等于真实任务可用，best-effort对齐警告也不能证明兼容。暂态保留防止误下架，同时保留能力未知风险。 [Q02](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q02) 的normalizeContext是实际缓冲机制，不能因警告非阻断就否定全部适配；但包已提高宿主下限，旧宿主不能凭shim宣称受支持。
+> **思考**：[Q03](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q03) 逐包相同只能支持所覆盖契约。[Q04](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q04) 和 [Q01](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q01) 的发现接口均将可覆盖目标地址与宿主凭据回退组合，需要分别核对调用权限和目的地限制。
 
-> **建议**：[Q05](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q05) 提出统一端点时效和验证状态的未验证设计，用误选与过期额度判断实验检验，而非把更多状态展示自动视为收益。
+> **建议**：[Q05](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md#research-q05) 在选择模型时区分目录来源、详情状态与凭据配置，检验能否减少错误重试和配置改动。
 
 [查看完整分析](../../plugins/asheblog--dsh-ollama-cloud/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1371644959-root"></a>
+
+## [dsh-opencode-go](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md)
+
+[![GitHub ★ 244](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=244&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Duskriver/dsh-opencode-go) [![npm 30d 6,010](https://img.shields.io/static/v1?label=npm+30d&message=6%2C010&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-opencode-go) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-opencode-go)
+
+> **用途**：已有 OpenCode Go 帐户，在 DSH 中重复进行多轮开发任务且希望管理额度的开发者。
+
+> **亮点**：[Q01](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q01) 将两套模型来源放入独立路由，[Q02](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q02) 将部分凭据和额度拒绝的重试从手工配置移到请求开始阶段。
+
+> **思考**：[Q02](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q02) 切换条件依赖已收到的块和用量，实际额度与可见输出不总是同步。[Q03](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q03) 本地费用估算还受历史记录和当前价格覆盖限制。
+
+> **建议**：[Q05](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md#research-q05) 在换号提示上区分备选响应、完成及此前尝试费用未知，通过对照故障验证用户是否更能判断下一步。
+
+[查看完整分析](../../plugins/duskriver--dsh-opencode-go/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1402771540-root"></a>
 
@@ -1250,6 +1284,22 @@
 
 [查看完整分析](../../plugins/1helloman1--dsh-usage-dashboard-plus/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333685863-root"></a>
+
+## [dsh-usage-stats](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md)
+
+[![GitHub ★ 187](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=187&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ychris12138/dsh-usage-stats) [![npm 30d 7,061](https://img.shields.io/static/v1?label=npm+30d&message=7%2C061&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ychris12138/dsh-usage-stats) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ychris12138/dsh-usage-stats)
+
+> **用途**：在 DSH 中使用多家模型供应商并需要排查用量变化的开发者。
+
+> **亮点**：[Q01](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q01) 将可读会话用量与估算汇总在宿主，同时保留多次独立调用。
+
+> **思考**：[Q01](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q01) 旧日志和计价覆盖决定估算范围。[Q02](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q02) 回环守卫与导出字段依赖实际部署和分享对象。
+
+> **建议**：[Q04](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q04) 给留空金额与旧快照分别说明原因，检验是否减少对账误判。
+
+[查看完整分析](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1377159975-root"></a>
 
 ## [dsh-vps](../../plugins/aicivilization--dsh-vps/INSIGHT.md)
@@ -1368,13 +1418,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-compose)
 
-> **用途**：可信项目目录中的 Docker Compose 初筛与受控变更；生产操作需宿主审批。详见[Q01](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q01)。
+> **用途**：使用 Docker Compose 的开发者需要找出本机测试服务故障。
 
-> **亮点**：把 Compose 诊断与基本启动/停止接入 DSH 工具，并默认关闭变更。详见[Q01](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q01) 把服务列表和尾部日志接进会话，便于先定位异常服务。
 
-> **思考**：双布尔条件不等于人工二次确认，开启变更且空 allowRoots 时可触及任意项目；超时需核实际 daemon 状态。详见[Q03](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q03)与[Q04](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q04)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q02) 启停参数确认不证明真人批准，工作目录检查也未绑定 daemon 和项目。
 
-> **建议**：未验证改进为强制目录根、宿主用户审批、stderr 流界及超时返回待复核状态。详见[Q05](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q05)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md#research-q03) 在变更前绑定实际 context、项目和配置，比较错目标率与排障开销。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-compose/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1384,13 +1434,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-db)
 
-> **用途**：开发者在受信 WSL 测试数据库做连通性与有限读取排障。详见[Q01](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q01)。
+> **用途**：维护者需要初步判断应用数据库和缓存是否可连通。
 
-> **亮点**：将常见 PostgreSQL/Redis 排障入口统一为 Agent 工具，默认限制连接 URL/Redis host。详见[Q01](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q01) 将连接探测和常用读取放到同一排障会话。
 
-> **思考**：SQL SELECT/EXPLAIN 仍可触发副作用，连接 URI 进入 psql argv；输出截断不限制 DB 端资源。详见[Q03](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q03)与[Q04](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q04)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q02) 字符串规则不等于服务端只读，默认 Redis ping 也未走主机检查。
 
-> **建议**：未验证改进为角色级只读、禁高成本 Redis 命令、凭据保护和探测分项状态明确化。详见[Q05](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q05)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-db/INSIGHT.md#research-q03) 显式绑定目标、区分子状态，再对照误判与非授权读取。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-db/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1480,15 +1530,31 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-helm)
 
-> **用途**：用于 Kubernetes 发布排查前的只读查询；合格输出须明确集群与命名空间，不能代替健康判断。详见[Q01](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q01)。
+> **用途**：维护 Kubernetes 发布的值班者需要核对 release 与 revision。
 
-> **亮点**：把 Helm CLI 的常用只读操作封装成 Agent 工具，控制动词并标识输出截断；增量是调用边界与呈现，发布语义仍属 Helm。详见[Q01](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q01) 将发布枚举、状态与历史接进同一诊断会话。
 
-> **思考**：guardContext 对空值直接放行，配置白名单不约束 Helm 默认上下文；此外 stderr 只在返回时裁剪而非累计限量。不能把“只读”误解为目标正确或无敏感信息。详见[Q03](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q02) 允许列表不约束省略 context 的调用，输出也可能因截断而不全。
 
-> **建议**：未验证方向是每次解析实际 context 并统一按白名单检查、回显目标，同时限制 stderr 累计；双集群和高输出夹具评估正确率、延迟与内存。详见[Q05](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q05)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md#research-q03) 绑定并回显目标后，以同名 release 对照错集群率。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-helm/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1381726881-root"></a>
+
+## [dsh-wsl-k8s](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-k8s)
+
+> **用途**：值班者在已有 kubeconfig 的机器上，需要从 Pod 状态和日志定位部署异常。
+
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md#research-q01) 把常用查询整理为结构化 DSH 工具，并为日志设置尾行和输出边界。
+
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md#research-q02) 允许列表只限制显式 context。默认探测和读取仍可能使用其他当前集群，工具入口也不能代替 RBAC。
+
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md#research-q04) 在所有远端探测前绑定并回显实际 context，有机会减少跨集群误读，需以两个测试集群做请求对照。
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-k8s/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381832318-root"></a>
 
@@ -1496,13 +1562,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-llamacpp)
 
-> **用途**：已有 GGUF/llama.cpp 服务时将个别辅助请求交给本地模型。详见[Q01](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q01)。
+> **用途**：已有兼容服务的 WSL 开发者想从当前会话发送一次短文本生成任务。
 
-> **亮点**：降低 Agent 调用本地 OpenAI 兼容 GGUF 服务的接线成本。详见[Q01](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q01) 在 DSH 会话里调用已有服务的两个接口，减少请求准备与终端切换。
 
-> **思考**：健康 ok:true 与可达性分离、状态超时不一致，最大 prompt 限制只对单 prompt 生效。详见[Q03](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q03)和[Q04](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q04)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q02) 模型列表可达和 HTTP 成功都不足以证明有效推理。调用方要核对模型、返回文本和实际上下文。
 
-> **建议**：未验证改进为一致健康语义、输入/输出边界和本机 URL 限制。详见[Q05](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md#research-q04) 在用户请求时增加指定模型的短探针，并对照误判率和额外负载。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-llamacpp/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1602,22 +1668,6 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-power/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1381859181-root"></a>
-
-## [dsh-wsl-rclone](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-rclone)
-
-> **用途**：已有 rclone remote 时辅助查看云端目录与用量，适合只读诊断。详见[Q01](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md#research-q01)。
-
-> **亮点**：把现有 rclone 配置的只读观察能力接入 Agent。详见[Q01](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md#research-q01)。
-
-> **思考**：允许列表默认开放、lsf 先递归后切片可能带来远端访问与计费；健康 ok:true 易误判。详见[Q02](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md#research-q02)至[Q04](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md#research-q04)。
-
-> **建议**：未实现的改进为默认拒绝远程、显式阻断动态 backend、真实上游分页/限额与健康语义。详见[Q05](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md#research-q05)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-rclone/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1391142974-root"></a>
 
 ## [dsh-wsl-registry](../../plugins/173787247--dsh-wsl-registry/INSIGHT.md)
@@ -1640,13 +1690,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-secret)
 
-> **用途**：WSL/Linux 用户用已有 pass/age 密钥驱动同一 DSH 进程的其他工具，需避免聊天暴露与跨插件扩散。
+> **用途**：已用 pass 或 age 保存应用凭据的 WSL 开发者，需要给支持环境变量的 DSH 工具提供单行密钥。
 
-> **亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q01) 在 DSH 中串起条目查找与环境变量注入，减少手工复制密钥的步骤。
 
-> **思考**：to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q02) age 路径前缀是词法检查，reveal 会把明文放入结果。[Q03](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q03) 环境变量跨工具共享且可覆盖，没有单次生命周期。
 
-> **建议**：短时工具级句柄结合 realpath 路径复核可能缩小明文可见范围和符号链接越界；需假密钥双插件对照，尚未实现。详见[Q05](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md#research-q04) 在获准目标的隔离子进程做单次注入，比较授权成功率、旁观读取率和启动耗时。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-secret/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1682,35 +1732,19 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-shot/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1381832935-root"></a>
-
-## [dsh-wsl-struct](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-struct)
-
-> **用途**：在明确授权数据上重复进行结构化查询，需正确结果和实际进程边界。
-
-> **亮点**：将参数化CLI、主路径realpath、SQLite readonly和错误输出接到DSH，算法与表达式能力来自上游。详见[Q01](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md#research-q01)与[Q02](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md#research-q02)。
-
-> **思考**：主路径谓词在POSIX接受反斜杠前缀可误认兄弟目录，也不限制CLI全部能力；raw spawn无宿主沙箱且默认HOME/tmp过宽；which/取消/输出资源边界也不完整。详见[Q02](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md#research-q02)。
-
-> **建议**：可探讨固定CLI的最小进程能力查询，接宿主policy/abort、环境/表达式与输出预算；兼容维护成本未验证。详见[Q04](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md#research-q04)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-struct/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1381843201-root"></a>
 
 ## [dsh-wsl-systemd](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-systemd)
 
-> **用途**：适合DSH宿主处在目标Linux/WSL用户会话、需要查看Ollama/自托管API等用户服务的状态和近期日志的维护者。基线手工执行systemctl --user与journalctl --user，再把结果交给模型；插件提供可调用的固定读操作与结构化/文本回执，不启动/停止/enable服务。
+> **用途**：用户服务异常时需要检查启动状态、PID 和近期日志。
 
-> **亮点**：把用户systemd手工list/show/journal整合为五入口四操作，提供单位约束、固定argv与结构化观察回执；不提供修复。详见[Q02](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q01) 聚合用户级服务状态和有限日志，支持排障初筛。
 
-> **思考**：发现命令which没有error/timeout，执行取消未贯穿；stderr无界、成功render隐藏truncated，日志只读仍可能披露秘密。详见[Q03](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q02) userAvailable 是退出码推断，输出还可能截断，应用健康需独立核对。
 
-> **建议**：可探索贯穿发现/执行deadline、双流预算和显式截断/阶段回执，以假执行器对照终止和信息保留；未实现。详见[Q05](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q05)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md#research-q03) 区分总线、权限和日志问题，比较是否减少错误诊断。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-systemd/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1720,13 +1754,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-terraform)
 
-> **用途**：面向已有初始化Terraform/OpenTofu项目的开发/运维人员，在DSH查CLI版本、validate、变更计数摘要和state资源地址列表。适合先了解拟变更数量、验证配置与资源范围，不提供apply/destroy接口，不取代完整plan评审、云权限和变更审批。
+> **用途**：基础设施工程师在审阅 IaC 变更前核对资源影响范围。
 
-> **亮点**：把固定validate/plan/state命令与参数化目录、计数/错误结果接入DSH，限制模型可选IaC动作。详见[Q02](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q01) 集中给出配置验证、计划计数及资源地址的初步线索。
 
-> **思考**：plan仅exit1拒绝，其他exit/null可ok:true；先截stdout可能丢Plan尾行，state500条截断未标，render隐藏部分状态。allowRoots默认空无限制且继承Host环境，不等价沙箱。详见[Q03](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q03)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q02) plan 继承环境和凭据，且异常退出可能被包装成成功。
 
-> **建议**：可探索仅exit0/2成功、完整原件hash/摘要来源、state完整性收据和最小env/signal/单目录串行，比较误判与资源成本；未实现。详见[Q06](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q06)。
+> **建议**：[Q03](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md#research-q03) 区分详细退出码、截断和来源，比较失败误判率。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-terraform/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1736,13 +1770,13 @@
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vllm)
 
-> **用途**：已有 vLLM 的 WSL 开发者让 Agent 按需查询模型并调用本地聊天补全。详见[Q01](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q01)。
+> **用途**：已有 vLLM 服务的操作者在当前 DSH 会话里提交一个短文本任务。
 
-> **亮点**：为现有 vLLM 提供轻量按需工具，包含状态探测和补全返回 usage。详见[Q01](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q01) 给现有 vLLM 服务增加会话内工具入口，减少操作界面切换。
 
-> **思考**：总输入不受 maxPromptChars 保证，reachable:false 仍 ok:true；服务资源和取消语义未知。详见[Q03](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q03)与[Q04](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q04)。
+> **思考**：[Q02](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q02) 状态可达未覆盖生成路径，工具不传结束原因，空回复也可能成功。后端容量与超时需单独验收。
 
-> **建议**：未验证改进为组合消息总上限、宿主取消信号传递和状态超时一致化。详见[Q05](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q05)。
+> **建议**：[Q04](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md#research-q04) 把结束原因、空回复和实际模型一并投影，以相同响应样本检查诊断和重试行为。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-vllm/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2278,4 +2312,4 @@
 
 ## 更新时间
 
-2026-11-04
+2026-11-05

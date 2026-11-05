@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[be996ef](https://github.com/173787247/dsh-wsl-secret/tree/be996ef420b165aebb759cda3957e65a966efe22)
+源码版本：[9e3617c](https://github.com/173787247/dsh-wsl-secret/tree/9e3617c76e3e33b988279899ca27680e854daca1)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-secret)
 <!-- END META -->
 
-> **功能**：为 DSH 提供 pass/age 名单读取、预览和进程环境变量转交。
+> **功能**：在 DSH 中查找 pass 条目、解密 pass 或 age 内容，并按需写入环境变量。
 
-> **亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 在 DSH 中串起条目查找与环境变量注入，减少手工复制密钥的步骤。
 
-> **主要限制**：to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) age 路径前缀是词法检查，reveal 会把明文放入结果。[Q03](#research-q03) 环境变量跨工具共享且可覆盖，没有单次生命周期。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 用户要完成什么密钥任务，哪些结果算合格？](#detail-section-11)
-  - [Q02 · pass/age 读取、名单与环境变量怎样接线？](#detail-section-12)
-  - [Q03 · “不暴露完整密钥”的边界和路径防护有什么缺口？](#detail-section-13)
-  - [Q04 · 初始化、持续及恢复成本是什么？](#detail-section-14)
-  - [Q05 · 如何试用并验证更窄的密钥传递机制？](#detail-section-15)
+  - [Q01 · 哪个凭据配置步骤被移入了 DSH？](#detail-section-11)
+  - [Q02 · 前缀、解密路径与可见范围怎样受限？](#detail-section-12)
+  - [Q03 · 如何试验环境注入并控制退出影响？](#detail-section-13)
+  - [Q04 · 将密钥绑定到单次目标工具会减少跨任务暴露吗？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,74 +39,74 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：WSL/Linux 用户用已有 pass/age 密钥驱动同一 DSH 进程的其他工具，需避免聊天暴露与跨插件扩散。
+> **用途**：已用 pass 或 age 保存应用凭据的 WSL 开发者，需要给支持环境变量的 DSH 工具提供单行密钥。
 
-基线为直接 pass/age 或宿主密钥服务；本包降低 Agent 接线工作，但未提供加密和跨插件隔离。
+直接通过受控进程配置注入密钥，或由目标工具读取单独配置。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| secret_status | 查看配置 | 不代表密钥可读 |
-| pass list/exists | 名称检查 | 名称仍可能敏感 |
-| pass/age get | 预览/可选 reveal | 默认预览泄首尾和长度 |
-| to_env | 后续工具读取 | 全进程可见、未见撤销 |
+| 状态、列表与存在性 | 查找可用命令和 pass 条目 | ready 仅反映前缀配置 |
+| 解密预览 | 检查 pass 或 age 输入 | reveal 可将原值写入结果 |
+| 环境注入 | 交给目标工具读取 | 作用范围为 DSH 进程，允许同名覆盖 |
 
-**流程与依赖**
+#### 启动与依赖
 
-| 条件 | 用途 | 缺失时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| Node、DSH 与 bash | 必需 | 挂载工具并发现命令 | 工具加载或命令查找失败 |
+| pass/GPG 或 age 与身份 | 相应解密必需 | 读取测试条目 | 存在性不代表可解密 |
+| allowPrefixes | 读取必需 | 限定名称和词法路径 | 空配置拒绝读取 |
+
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| pass/age 和密钥身份 | 实际解密 | 工具报错 |
-| DSH tools/systemPrompt | 注册入口 | 插件不工作 |
-| 非空 allowPrefixes | 白名单 | 全部读取拒绝 |
-| 受信任同进程插件 | env 明文范围 | 不宜使用 to_env |
+| 准备 | 用户配置虚拟密钥和独立 DSH 进程 | 无真实凭据 |
+| 调用 | 用户查存在性后向测试变量注入 | 验证目标工具能读且检查旁观范围 |
+| 退出 | 用户停止隔离进程 | 回到原受控配置 |
 
-| 步骤 | 动作 | 判据 |
+#### 成本
+
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| --- | --- | --- | --- |
+| 首次 | 现有工具与进程资源未知 | 配置前缀、密钥和虚拟样本 | 须区分 pass 和 age |
+| 持续 | 耗时未知 | 复核环境范围、并发与预览 | 同名覆盖需要应用方处理 |
+| 失败恢复 | 排障资源未知 | 停止测试进程并核对旧配置 | 插件不回滚已写变量 |
+
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 准备 | 用假密钥设置单一前缀 | 空名单仍拒读 |
-| 检查 | status、list、exists | 仅允许前缀可见 |
-| 使用 | reveal=false、有限 to_env | 原始值不在工具结果 |
-| 清理 | 轮换密钥并重启进程 | 环境残留消除 |
+| 应用凭据交接 | 按已配置条目写入单行环境变量 | 真实下游可用性和节时 |
+| 范围控制 | 前缀规则和输出预览 | 真实文件隔离、宿主结果留存与跨任务范围 |
 
-**效果与成本**
-
-| 阶段 | 投入 | 未知 |
-| --- | --- | --- |
-| 首次 | pass/age、身份和名单设置 | 配置分钟 |
-| 持续 | 解密子进程及密钥轮换 | 延迟/人工时间 |
-| 失败 | 排查缺工具、拒读、解密及环境残留 | 恢复工时 |
-
-| 结果 | 源码支持 | 未证实 |
-| --- | --- | --- |
-| 默认拒读 | 空 allowPrefixes 抛错 | 宿主整体授权边界 |
-| 隐藏完整值 | 默认预览、to_env 只回预览 | 进程其他插件能否读取的管控 |
-| age 目录 | 词法路径前缀 | 符号链接越界防护 |
-
-> **思考**：to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) age 路径前缀是词法检查，reveal 会把明文放入结果。[Q03](#research-q03) 环境变量跨工具共享且可覆盖，没有单次生命周期。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把已有 pass/age 操作接入 DSH 工具并提供默认拒读和 to_env 流程；底层加密仍由外部工具承担。详见[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 在 DSH 中串起条目查找与环境变量注入，减少手工复制密钥的步骤。
 
-spawn 使用 argv 数组避免一般命令拼接；stdout 有字符上限，stderr 无显式上限。pass 入口防 .. 和非法字符；age 使用词法 resolve 未见 realpath。to_env 使用进程全局变量，代码未见清理。
+[Q02](#research-q02) 当前路径检查未约束真实链接目标或 identity 文件位置，不能当作文件访问边界。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age 路径仅词法前缀判断、reveal 可给原始 value，不能当跨插件隔离。详见[Q03](#research-q03)。
+[Q02](#research-q02) age 路径前缀是词法检查，reveal 会把明文放入结果。[Q03](#research-q03) 环境变量跨工具共享且可覆盖，没有单次生命周期。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-受信任单租户进程先用假密钥验名单与输出，保持 reveal=false；高敏/多插件隔离需求优先正式范围化凭据服务。详见[Q05](#research-q05)。
+[Q03](#research-q03) 只在独立测试进程中用虚拟密钥核对作用域与日志。真实凭据优先沿用受控配置。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +114,18 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 
 **核查状态**：已检查源码。
 
-源码确认默认名单和预览，但全局环境及 reveal 结构化值、符号链接路径边界未做宿主验证。
+源码确认配置、解密、预览与写入边界。真实宿主可见范围及单次注入方案尚待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/secret.js、test/secret.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/secret.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交核 README、package、index.js、lib/secret.js、测试源码；未运行插件、测试或读真实密钥。
-- 下一步：假密钥与 symlink 故障注入，核允许/拒绝、结构化结果与宿主日志；双插件检查 env 可见性、轮换和恢复工时。
+- 边界：源码核查 Host 入口、前缀、子进程、输出与环境注入。未执行插件、解密命令、宿主或真实凭据操作。
+- 下一步：用虚拟值对照非法前缀、符号链接、reveal、同键并发、子进程继承与退出。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-secret](https://github.com/173787247/dsh-wsl-secret)
-- **版本号**：0.2.0（[固定提交 be996ef](https://github.com/173787247/dsh-wsl-secret/tree/be996ef420b165aebb759cda3957e65a966efe22)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.0（[固定提交 9e3617c](https://github.com/173787247/dsh-wsl-secret/tree/9e3617c76e3e33b988279899ca27680e854daca1)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +133,9 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 
 <a id="innovation"></a>
 
-短时工具级句柄结合 realpath 路径复核可能缩小明文可见范围和符号链接越界；需假密钥双插件对照，尚未实现。详见[Q05](#research-q05)。
+[Q04](#research-q04) 在获准目标的隔离子进程做单次注入，比较授权成功率、旁观读取率和启动耗时。
 
-假密钥与 symlink 故障注入，核允许/拒绝、结构化结果与宿主日志；双插件检查 env 可见性、轮换和恢复工时。
+用虚拟值对照非法前缀、符号链接、reveal、同键并发、子进程继承与退出。
 
 <a id="detail-section-9"></a>
 
@@ -144,6 +143,8 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -155,38 +156,38 @@ to_env 将明文放进整个进程环境，预览泄露首尾字符/长度；age
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+created%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A25%3A55.156Z..2026-10-22T05%3A25%3A55.156Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-secret/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：判断 pass/age 插件的真实转交边界与适用信任范围。
+**插件研究总目标**：已有 pass 或 age 的操作者能否从 DSH 使用应用凭据，并控制密钥可见范围与生命周期？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 用户要完成什么密钥任务，哪些结果算合格？
+### Q01 · 哪个凭据配置步骤被移入了 DSH？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-WSL/Linux DSH 用户希望从已有 pass/age 存储取应用密钥，供同一进程中后续工具调用使用，并避免把完整值放进聊天。README 给出 status、列名、存在性、to_env 的流程；空 allowPrefixes 默认拒绝读取。合格结果还应防跨前缀读取、控制进程内可见范围和生命周期。基线是 shell 手工用 pass/age 或宿主正式凭据服务；本插件缩短工具衔接，但不改变底层加解密能力。
+已有 pass 或 age 的操作者可查条目存在性，再将授权条目的密钥写入 DSH 进程环境，省去手工复制到对话或重新启进程注入变量。pass 路径取解密输出首行，age 环境路径也只取首行，因此适合单行应用 API 密钥。合格结果是目标工具按预期读到密钥并完成目标操作，插件只完成写入环境，已缓存配置的工具可能不会重新读取。预览对长值暴露首末各两字符与长度，不能将预览理解为完全隐藏。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-19](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md#L5-L19)
+**依据 1 · 作者声明**：[README.md:5-17](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/README.md#L5-L17)
 
-作者定位、环境和默认拒绝。
+作者区分应用密钥和 Git 凭据提示。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
 在 DSH（Cordis）里**安全读取** pass / age 密钥。
@@ -202,243 +203,18 @@ WSL/Linux DSH 用户希望从已有 pass/age 存储取应用密钥，供同一�
 
 - **`dsh-wsl-cred`** → 只给 Git 推送/拉取的凭据*提示*
 - **`dsh-wsl-secret`** → OpenRouter、Discord Bot Token 等应用密钥
-
-`secret_status` 显示 `ready=false` = 已安装但**未配置**，属正常安全默认。
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:56-74](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md#L56-L74)
+**依据 2 · 源码核查**：[index.js:135-167](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L135-L167)
 
-作者推荐流程。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-````text
-### 4. 推荐工具链
-
-| 步骤 | 工具 | 结果 |
-|------|------|------|
-| 检查 | `secret_status` | `ready=true` |
-| 列举 | `secret_pass_list` | 只有名字 |
-| 确认 | `secret_pass_exists` | `{ exists: true }` |
-| **使用** | `secret_to_env` | 写入 `process.env`，聊天里只有 preview |
-| 可选 | `secret_pass_get` | 预览（少用；勿开 reveal） |
-
-```json
-{ "name": "secret_to_env", "arguments": {
-  "name": "dsh/openrouter",
-  "envKey": "OPENROUTER_API_KEY"
-}}
-```
-
-之后**同一 dsh 进程**内其它工具可读 `process.env.OPENROUTER_API_KEY`。
-
-````
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:14-37](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L14-L37)
-
-空名单和提示注册。
+DSH 工具写入及文本预览。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-secret] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const allowPrefixes = Array.isArray(config.allowPrefixes) ? config.allowPrefixes.map(String) : [];
-  const reveal = config.reveal === true;
-  console.log(
-    `[dsh-wsl-secret] allowPrefixes=${allowPrefixes.length} reveal=${reveal}` +
-      (allowPrefixes.length ? "" : " (empty allowlist → all reads refused)"),
-  );
-
-  ctx.systemPrompt.section({
-    name: "tool:secret",
-    order: 133,
-    text: [
-      "dsh-wsl-secret reads pass/age secrets only under config.allowPrefixes.",
-      "Preferred flow: secret_pass_exists → secret_to_env (puts value in process.env, returns preview only) → call other tools.",
-      "Avoid secret_pass_get with reveal; never paste secrets into chat.",
-      "If allowPrefixes is empty, every read fails — tell the user to configure the plugin.",
-      "dsh-wsl-cred is for Git credential hints only; use this plugin for app API keys.",
-    ].join(" "),
-  });
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:43-69](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L43-L69)
-
-状态入口。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "secret_status",
-    description:
-      "Show whether pass/age exist, password-store path, and current allowPrefixes. Does not list or dump secrets.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [{ type: "text", text: formatStatus(v) }],
-    },
-    timeoutMs: 5_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      const st = await secretStatus();
-      return {
-        ...st,
-        allowPrefixes,
-        reveal,
-        ready: allowPrefixes.length > 0,
-        howToConfigure:
-          allowPrefixes.length > 0
-            ? null
-            : "Edit profile cordis.patch.yml → dsh-wsl-secret config.allowPrefixes (e.g. [\"dsh\"]). See plugin README.",
-      };
-    },
-    presentCall: () => ({ card: "generic", title: "Secret status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "Secret status", content: r.content }),
-  });
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · pass/age 读取、名单与环境变量怎样接线？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-插件注册 7 个工具；lib 对 pass 名做字符和前缀校验，age 文件先 resolve 后检查是否在配置目录，再用 spawn 参数数组调用 pass show 或 age -d。默认 reveal=false 返回首尾各两字符及长度或短值 ***；to_env 内部读取完整值写 process.env，返回预览。相对手工调用，增量是模型工具入口、名单默认拒绝和预览/环境变量转交，不是新的密钥库或加密实现。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[index.js:43-69](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L43-L69)
-
-状态工具。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "secret_status",
-    description:
-      "Show whether pass/age exist, password-store path, and current allowPrefixes. Does not list or dump secrets.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [{ type: "text", text: formatStatus(v) }],
-    },
-    timeoutMs: 5_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      const st = await secretStatus();
-      return {
-        ...st,
-        allowPrefixes,
-        reveal,
-        ready: allowPrefixes.length > 0,
-        howToConfigure:
-          allowPrefixes.length > 0
-            ? null
-            : "Edit profile cordis.patch.yml → dsh-wsl-secret config.allowPrefixes (e.g. [\"dsh\"]). See plugin README.",
-      };
-    },
-    presentCall: () => ({ card: "generic", title: "Secret status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "Secret status", content: r.content }),
-  });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[index.js:71-202](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L71-L202)
-
-pass 列表、检查、to_env、get 入口。
-
-<details>
-<summary>查看原文（132行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "secret_pass_list",
-    description: "List pass entry names under allowPrefixes (names only, no values). Optional prefix filter.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      properties: {
-        prefix: { type: "string", description: "Optional narrower prefix under allowlist" },
-        max: { type: "number" },
-      },
-    },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [
-        {
-          type: "text",
-          text:
-            v.ok === false
-              ? v.error
-              : [`secret_pass_list count=${v.count}`, ...(v.entries || []).map((e) => `- ${e}`)].join("\n"),
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await passList({ allowPrefixes, prefix: args?.prefix, max: args?.max || 100 });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pass list" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pass list", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "secret_pass_exists",
-    description: "Check whether a pass entry exists under allowPrefixes (boolean only).",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["name"],
-      properties: { name: { type: "string" } },
-    },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [
-        { type: "text", text: v.ok === false ? v.error : `${v.entry}: ${v.exists ? "exists" : "missing"}` },
-      ],
-    },
-    timeoutMs: 5_000,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await passExists(args.name, { allowPrefixes });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pass exists" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pass exists", content: r.content }),
-  });
-
   ctx.tools.register({
     name: "secret_to_env",
     description:
@@ -472,11 +248,160 @@ pass 列表、检查、to_env、get 入口。
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
       }
-    },
-    presentCall: () => ({ card: "generic", title: "secret → env" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "secret → env", content: r.content }),
-  });
+```
 
+</details>
+
+**依据 3 · 源码核查**：[lib/secret.js:90-96](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L90-L96)
+
+预览掩码规则。
+
+```text
+export function redactSecret(text, reveal) {
+  const s = String(text || "");
+  if (reveal) return s;
+  if (!s) return "";
+  if (s.length <= 8) return "***";
+  return `${s.slice(0, 2)}…${s.slice(-2)} (len=${s.length})`;
+}
+```
+
+**依据 4 · 源码核查**：[lib/secret.js:160-173](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L160-L173)
+
+pass 首行处理。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+export async function passShow(name, { allowPrefixes, timeoutMs, reveal }) {
+  const entry = assertPassName(name, allowPrefixes);
+  const bin = (await which("pass")) || "pass";
+  const { code, stdout, stderr } = await run(bin, ["show", entry], timeoutMs);
+  if (code !== 0) throw new Error(`pass failed: ${stderr || code}`);
+  // first line is the secret; rest often metadata
+  const lines = stdout.replace(/\r\n/g, "\n").split("\n");
+  const raw = lines[0] || "";
+  return {
+    ok: true,
+    entry,
+    preview: redactSecret(raw, reveal),
+    value: reveal ? raw : undefined,
+  };
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/secret.js:198-208](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L198-L208)
+
+实际写入进程环境。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
+  const key = assertEnvKey(envKey);
+  const shown = await passShow(name, { allowPrefixes, timeoutMs, reveal: true });
+  process.env[key] = shown.value;
+  return {
+    ok: true,
+    entry: shown.entry,
+    envKey: key,
+    preview: redactSecret(shown.value, false),
+    note: "Secret is in process.env for this dsh process only; not shown in full. Prefer this over reveal.",
+  };
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/secret.js:227-243](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L227-L243)
+
+age 环境注入取首行。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+export async function ageToEnv(filePath, envKey, { allowPrefixes, timeoutMs, identityFile }) {
+  const key = assertEnvKey(envKey);
+  const dec = await ageDecrypt(filePath, {
+    allowPrefixes,
+    timeoutMs,
+    reveal: true,
+    identityFile,
+  });
+  const value = String(dec.value || "").split("\n")[0] || "";
+  process.env[key] = value;
+  return {
+    ok: true,
+    path: dec.path,
+    envKey: key,
+    preview: redactSecret(value, false),
+    note: "Secret is in process.env for this dsh process only; not shown in full.",
+  };
+```
+
+</details>
+
+#### 缺口
+
+- 没有下游工具读取时机和运行对照
+  **影响**：无法确认哪些工具可在同一进程热用环境变量
+  **进一步探讨**：仅以合成凭据验证实时读取与缓存配置的差异
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 前缀、解密路径与可见范围怎样受限？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+pass 路径检查名称字符、连续点和目录前缀，空列表拒绝；age 路径用 resolve 与字符串前缀判断后检查存在性，未解析真实路径，因此只验证词法位置，无法阻止批准目录中的符号链接指向外部。可传 identityFile，源码只 resolve 并检查存在，未用 allowPrefixes 限定 identity。进程是否有权读出目标、密钥是否能解密仍由文件权限和 age 行为决定。默认 reveal=false，直接读取只回预览。打开 reveal 后 passShow 和 ageDecrypt 会把原值作为结构化 value 返回，也把 preview 改成原值，工具渲染会写入该 preview。这与只看成功状态有直接差别。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:19-36](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L19-L36)
+
+配置的默认值和作者意图。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  const timeoutMs = positive(config.timeoutMs, 15_000);
+  const allowPrefixes = Array.isArray(config.allowPrefixes) ? config.allowPrefixes.map(String) : [];
+  const reveal = config.reveal === true;
+  console.log(
+    `[dsh-wsl-secret] allowPrefixes=${allowPrefixes.length} reveal=${reveal}` +
+      (allowPrefixes.length ? "" : " (empty allowlist → all reads refused)"),
+  );
+
+  ctx.systemPrompt.section({
+    name: "tool:secret",
+    order: 133,
+    text: [
+      "dsh-wsl-secret reads pass/age secrets only under config.allowPrefixes.",
+      "Preferred flow: secret_pass_exists → secret_to_env (puts value in process.env, returns preview only) → call other tools.",
+      "Avoid secret_pass_get with reveal; never paste secrets into chat.",
+      "If allowPrefixes is empty, every read fails — tell the user to configure the plugin.",
+      "dsh-wsl-cred is for Git credential hints only; use this plugin for app API keys.",
+    ].join(" "),
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:173-199](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L173-L199)
+
+pass 工具文本直接输出 preview。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
   ctx.tools.register({
     name: "secret_pass_get",
     description:
@@ -504,60 +429,18 @@ pass 列表、检查、to_env、get 入口。
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
       }
-    },
-    presentCall: () => ({ card: "generic", title: "pass get" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pass get", content: r.content }),
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:205-278](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L205-L278)
+**依据 3 · 源码核查**：[index.js:244-273](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L244-L273)
 
-age 两个入口。
+age 工具接受 identityFile 并输出 preview。
 
 <details>
-<summary>查看原文（74行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "secret_age_to_env",
-    description: "Decrypt an age file under filesystem allowPrefixes into process.env[envKey]. Preview only in result.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["path", "envKey"],
-      properties: {
-        path: { type: "string" },
-        envKey: { type: "string" },
-        identityFile: { type: "string" },
-      },
-    },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [
-        {
-          type: "text",
-          text: v.ok === false ? v.error : `ok envKey=${v.envKey} path=${v.path} preview=${v.preview}`,
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await ageToEnv(args.path, args.envKey, {
-          allowPrefixes,
-          timeoutMs,
-          identityFile: args.identityFile,
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "age → env" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "age → env", content: r.content }),
-  });
-
   ctx.tools.register({
     name: "secret_age_decrypt",
     description: "Decrypt an age file under allowPrefixes. Prefer secret_age_to_env. Preview unless reveal=true.",
@@ -588,21 +471,16 @@ age 两个入口。
         });
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "age decrypt" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "age decrypt", content: r.content }),
-  });
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/secret.js:50-87](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L50-L87)
+**依据 4 · 源码核查**：[lib/secret.js:50-96](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L50-L96)
 
-pass 和 age 名单校验。
+词法检查与 reveal 对预览的影响。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
 /** pass entry name like Foo/bar — must match allowPrefixes (prefix/) or exact. */
@@ -643,151 +521,8 @@ export function assertAgePath(filePath, allowPrefixes = []) {
   if (!ok) throw new Error(`age file outside allowPrefixes: ${abs}`);
   if (!existsSync(abs)) throw new Error("age file missing");
   return abs;
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/secret.js:160-173](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L160-L173)
-
-pass show 读取与预览。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-export async function passShow(name, { allowPrefixes, timeoutMs, reveal }) {
-  const entry = assertPassName(name, allowPrefixes);
-  const bin = (await which("pass")) || "pass";
-  const { code, stdout, stderr } = await run(bin, ["show", entry], timeoutMs);
-  if (code !== 0) throw new Error(`pass failed: ${stderr || code}`);
-  // first line is the secret; rest often metadata
-  const lines = stdout.replace(/\r\n/g, "\n").split("\n");
-  const raw = lines[0] || "";
-  return {
-    ok: true,
-    entry,
-    preview: redactSecret(raw, reveal),
-    value: reveal ? raw : undefined,
-  };
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/secret.js:194-243](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L194-L243)
-
-to_env 与 age 解密。
-
-<details>
-<summary>查看原文（50行）</summary>
-
-```text
-/**
- * Load pass entry into process.env[envKey] for later tools in this dsh process.
- * Never returns the secret value (only preview + envKeys).
- */
-export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
-  const key = assertEnvKey(envKey);
-  const shown = await passShow(name, { allowPrefixes, timeoutMs, reveal: true });
-  process.env[key] = shown.value;
-  return {
-    ok: true,
-    entry: shown.entry,
-    envKey: key,
-    preview: redactSecret(shown.value, false),
-    note: "Secret is in process.env for this dsh process only; not shown in full. Prefer this over reveal.",
-  };
 }
 
-export async function ageDecrypt(filePath, { allowPrefixes, timeoutMs, reveal, identityFile }) {
-  const file = assertAgePath(filePath, allowPrefixes);
-  const bin = (await which("age")) || "age";
-  const args = ["-d"];
-  if (identityFile) {
-    const id = resolve(String(identityFile));
-    if (!existsSync(id)) throw new Error("identity file missing");
-    args.push("-i", id);
-  }
-  args.push(file);
-  const { code, stdout, stderr } = await run(bin, args, timeoutMs);
-  if (code !== 0) throw new Error(`age failed: ${stderr || code}`);
-  const raw = stdout;
-  return { ok: true, path: file, preview: redactSecret(raw, reveal), value: reveal ? raw : undefined };
-}
-
-export async function ageToEnv(filePath, envKey, { allowPrefixes, timeoutMs, identityFile }) {
-  const key = assertEnvKey(envKey);
-  const dec = await ageDecrypt(filePath, {
-    allowPrefixes,
-    timeoutMs,
-    reveal: true,
-    identityFile,
-  });
-  const value = String(dec.value || "").split("\n")[0] || "";
-  process.env[key] = value;
-  return {
-    ok: true,
-    path: dec.path,
-    envKey: key,
-    preview: redactSecret(value, false),
-    note: "Secret is in process.env for this dsh process only; not shown in full.",
-  };
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · “不暴露完整密钥”的边界和路径防护有什么缺口？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-默认 reveal=false 确实不把完整密钥作为工具结果返回，但预览泄出前后各两字符和长度；若配置 reveal=true，passShow/ageDecrypt 的结构化结果含 value，render 文字是否隐藏不能证明宿主存储、日志或调用者收不到完整值。to_env 把值写全局 process.env，同进程其他插件可读，代码没有 per-tool 授权、过期或撤销。age 路径只做词法 resolve/前缀校验后检查存在，未 realpath 跟随符号链接复核；允许目录下若有指向外部的符号链接，边界可能失效，需复现。identityFile 只查存在，不受 age 路径白名单限制。故此包适合受信任宿主内的便利转交，不能当跨插件密钥隔离器。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/secret.js:69-87](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L69-L87)
-
-age 是词法路径与前缀判断，未见 realpath。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export function assertAgePath(filePath, allowPrefixes = []) {
-  const abs = resolve(String(filePath || "").trim());
-  if (abs.includes("\0")) throw new Error("invalid age path");
-  if (!allowPrefixes.length) throw new Error("allowPrefixes empty");
-  const home = homedir();
-  const candidates = allowPrefixes
-    .map((p) => String(p).trim())
-    .filter((p) => p.startsWith("~") || p.startsWith("/") || /^[A-Za-z]:/.test(p) || p.includes("/") || p.includes("\\"))
-    .map((p) => resolve(p.startsWith("~") ? p.replace(/^~/, home) : p));
-  if (!candidates.length) {
-    throw new Error("no filesystem allowPrefixes for age (use absolute or ~/ paths)");
-  }
-  const ok = candidates.some((root) => {
-    const r = root.replace(/[/\\]+$/, "");
-    return abs === r || abs.startsWith(r + "/") || abs.startsWith(r + "\\");
-  });
-  if (!ok) throw new Error(`age file outside allowPrefixes: ${abs}`);
-  if (!existsSync(abs)) throw new Error("age file missing");
-  return abs;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/secret.js:90-103](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L90-L103)
-
-预览与 envKey 校验。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
 export function redactSecret(text, reveal) {
   const s = String(text || "");
   if (reveal) return s;
@@ -795,76 +530,16 @@ export function redactSecret(text, reveal) {
   if (s.length <= 8) return "***";
   return `${s.slice(0, 2)}…${s.slice(-2)} (len=${s.length})`;
 }
-
-export function assertEnvKey(key) {
-  const k = String(key || "").trim();
-  if (!ENV_KEY_RE.test(k)) throw new Error(`invalid env key: ${key}`);
-  if (k === "PATH" || k === "HOME" || k === "USER") throw new Error(`refusing to overwrite ${k}`);
-  return k;
-}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/secret.js:160-173](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L160-L173)
+**依据 5 · 源码核查**：[lib/secret.js:211-225](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L211-L225)
 
-reveal 可返回 value。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-export async function passShow(name, { allowPrefixes, timeoutMs, reveal }) {
-  const entry = assertPassName(name, allowPrefixes);
-  const bin = (await which("pass")) || "pass";
-  const { code, stdout, stderr } = await run(bin, ["show", entry], timeoutMs);
-  if (code !== 0) throw new Error(`pass failed: ${stderr || code}`);
-  // first line is the secret; rest often metadata
-  const lines = stdout.replace(/\r\n/g, "\n").split("\n");
-  const raw = lines[0] || "";
-  return {
-    ok: true,
-    entry,
-    preview: redactSecret(raw, reveal),
-    value: reveal ? raw : undefined,
-  };
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/secret.js:194-208](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L194-L208)
-
-to_env 写全局 process.env。
+identity 路径和解密返回。
 
 <details>
 <summary>查看原文（15行）</summary>
-
-```text
-/**
- * Load pass entry into process.env[envKey] for later tools in this dsh process.
- * Never returns the secret value (only preview + envKeys).
- */
-export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
-  const key = assertEnvKey(envKey);
-  const shown = await passShow(name, { allowPrefixes, timeoutMs, reveal: true });
-  process.env[key] = shown.value;
-  return {
-    ok: true,
-    entry: shown.entry,
-    envKey: key,
-    preview: redactSecret(shown.value, false),
-    note: "Secret is in process.env for this dsh process only; not shown in full. Prefer this over reveal.",
-  };
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/secret.js:211-243](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L211-L243)
-
-age 身份文件与环境转交。
-
-<details>
-<summary>查看原文（33行）</summary>
 
 ```text
 export async function ageDecrypt(filePath, { allowPrefixes, timeoutMs, reveal, identityFile }) {
@@ -882,199 +557,110 @@ export async function ageDecrypt(filePath, { allowPrefixes, timeoutMs, reveal, i
   const raw = stdout;
   return { ok: true, path: file, preview: redactSecret(raw, reveal), value: reveal ? raw : undefined };
 }
-
-export async function ageToEnv(filePath, envKey, { allowPrefixes, timeoutMs, identityFile }) {
-  const key = assertEnvKey(envKey);
-  const dec = await ageDecrypt(filePath, {
-    allowPrefixes,
-    timeoutMs,
-    reveal: true,
-    identityFile,
-  });
-  const value = String(dec.value || "").split("\n")[0] || "";
-  process.env[key] = value;
-  return {
-    ok: true,
-    path: dec.path,
-    envKey: key,
-    preview: redactSecret(value, false),
-    note: "Secret is in process.env for this dsh process only; not shown in full.",
-  };
-```
-
-</details>
-
-**依据 6 · 源码核查**：[index.js:173-202](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L173-L202)
-
-pass_get render 和结构化输出。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "secret_pass_get",
-    description:
-      "Read a pass entry. With reveal=false (default config) only preview is returned. Prefer secret_to_env instead.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["name"],
-      properties: { name: { type: "string", description: "pass entry e.g. dsh/openrouter" } },
-    },
-    output: {
-      ...commonOut,
-      render: (_a, v) => [
-        {
-          type: "text",
-          text: v.ok === false ? v.error : `entry=${v.entry} preview=${v.preview}${v.value ? "\n(value present — reveal on)" : ""}`,
-        },
-      ],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await passShow(args.name, { allowPrefixes, timeoutMs, reveal });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "pass get" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "pass get", content: r.content }),
 ```
 
 </details>
 
 #### 缺口
 
-- 未用符号链接测试 age 路径。
-  **影响**：越界属于源码推断，实际行为需独立复现。
-  **进一步探讨**：在允许根内放指向根外的 .age 符号链接，核拒绝/读取并对比 realpath。
-- 未核宿主对结构化 value 的保存与模型可见规则。
-  **影响**：reveal=true 的泄露面无法量化。
-  **进一步探讨**：隔离假密钥记录工具原始结果、UI、日志与后续 Agent 上下文。
+- 未验证真实系统上链接、权限和宿主日志路径
+  **影响**：不能把前缀校验当作文件隔离或日志保密
+  **进一步探讨**：用无真实凭据的 fixture 对照外部链接、未获准路径、禁用 reveal 和已启用 reveal
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 初始化、持续及恢复成本是什么？
+### Q03 · 如何试验环境注入并控制退出影响？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-需要 WSL/Linux 的 pass/age、可用 GPG/age 身份、Cordis tools/systemPrompt 与允许前缀配置；源码包声明 Node>=18，而 README 单列 DSH 最低 0.1.2。使用中每次读取起子进程并可至默认 15 秒，stdout 超 200k 会杀进程，stderr 未见大小上限；写进程环境会一直持续到覆盖或进程结束。人工需维护密钥目录、身份、名单和轮换，失败要区分缺工具、解密错误、超时、前缀拒绝及进程污染。没有单位调用延迟或事故率数据。
+包声明 Node 18+ 和 bundle patch，Host 还需要 tools、systemPrompt 以及 bash 和所选解密工具、对应密钥。status 的 ready 只取决于前缀是否配置，不能证明可解密。envKey 校验变量名语法并禁止 PATH、HOME、USER，其余可由调用指定；同进程中其他工具可以读取它，子进程如果继承环境也可看到。注册将注入标为并发安全，但两次写同名变量会覆盖，未记录调用归属、回滚或过期机制。插件停用路径没有清理已有变量。只用虚拟值在隔离进程观察，验收目标工具、其他工具和新子进程的可见范围，随后停止测试进程并从原受控配置运行。进程共享环境或密钥值可能落入结果时，不应将真实凭据交给该路径。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-13](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/package.json#L1-L13)
+**依据 1 · 源码核查**：[index.js:11-21](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L11-L21)
 
-版本 0.2.0、Node 与安装文件。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-{
-  "name": "dsh-wsl-secret",
-  "version": "0.2.0",
-  "description": "DeepSeek Harness WSL plugin: pass/age secrets with allowlist; list/exists; secret_to_env without dumping values into chat.",
-  "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/173787247/dsh-wsl-secret.git" },
-  "type": "module",
-  "main": "index.js",
-  "engines": { "node": ">=18" },
-  "scripts": { "test": "node --test test/*.test.js" },
-  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.en.md", "README.zh.md", "LICENSE", "CHANGELOG.md"],
-  "keywords": ["dsh-plugin", "wsl", "pass", "age", "secrets"],
-  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:21-52](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md#L21-L52)
-
-工具、密钥和名单设置。
+Host 服务、禁用与配置。
 
 <details>
-<summary>查看原文（32行）</summary>
-
-````text
-## 5 分钟上手
-
-### 1. 装工具（一次）
-
-```bash
-sudo apt install pass age
-# 需要时: pass init <gpg-id>
-```
-
-### 2. 密钥放在同一前缀下
-
-```bash
-pass insert dsh/openrouter
-pass insert dsh/discord-bot
-```
-
-### 3. Cordis 放行该前缀
-
-编辑 profile 的 `cordis.patch.yml`（例如 `~/.dsh/profiles/web/cordis.patch.yml`）：
-
-```yaml
-plugins:
-  dsh-wsl-secret:
-    enabled: true
-    path: /mnt/c/Users/你/Desktop/AIFullStackDevelopment/dsh-wsl-secret
-    config:
-      allowPrefixes:
-        - dsh
-        # - ~/secrets          # age 用文件系统根
-      reveal: false
-      timeoutMs: 15000
-```
-````
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:98-105](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md#L98-L105)
-
-作者 DSH 兼容声明。
+<summary>查看原文（11行）</summary>
 
 ```text
-## 兼容性
+export const name = "dsh-wsl-secret";
+export const inject = ["tools", "systemPrompt"];
 
-| 字段 | 值 |
-|------|----|
-| **插件** | `dsh-wsl-secret` **0.2.0** |
-| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |
-| **最新验证** | 以 [dsh-wsl-kit 兼容性](https://github.com/173787247/dsh-wsl-kit#compatibility-2026-09) 为准（当前 **`0.2.0-rc.2`**）— 套件唯一真源 |
-| **套件档位** | 可选（默认不在 `install.sh` / `KIT_SET=daily`） |
-```
-
-**依据 4 · 源码核查**：[index.js:19-25](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L19-L25)
-
-默认超时/名单/reveal。
-
-```text
+export function apply(ctx, config = {}) {
+  if (config.enabled === false) {
+    console.log("[dsh-wsl-secret] disabled");
+    return;
+  }
   const timeoutMs = positive(config.timeoutMs, 15_000);
   const allowPrefixes = Array.isArray(config.allowPrefixes) ? config.allowPrefixes.map(String) : [];
   const reveal = config.reveal === true;
-  console.log(
-    `[dsh-wsl-secret] allowPrefixes=${allowPrefixes.length} reveal=${reveal}` +
-      (allowPrefixes.length ? "" : " (empty allowlist → all reads refused)"),
-  );
 ```
 
-**依据 5 · 源码核查**：[lib/secret.js:19-42](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L19-L42)
+</details>
 
-子进程、超时和 stdout 上限。
+**依据 2 · 源码核查**：[index.js:54-65](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L54-L65)
+
+ready 只取决于前缀数。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
+    async execute() {
+      const st = await secretStatus();
+      return {
+        ...st,
+        allowPrefixes,
+        reveal,
+        ready: allowPrefixes.length > 0,
+        howToConfigure:
+          allowPrefixes.length > 0
+            ? null
+            : "Edit profile cordis.patch.yml → dsh-wsl-secret config.allowPrefixes (e.g. [\"dsh\"]). See plugin README.",
+      };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:160-166](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L160-L166)
+
+注入工具注册为并发安全。
+
+```text
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      try {
+        return await passToEnv(args.name, args.envKey, { allowPrefixes, timeoutMs });
+      } catch (e) {
+        return { ok: false, error: e instanceof Error ? e.message : String(e) };
+```
+
+**依据 4 · 源码核查**：[lib/secret.js:8-26](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L8-L26)
+
+查找命令与子进程继承环境。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export function which(cmd) {
+  const safe = String(cmd || "").replace(/[^a-zA-Z0-9._+-]/g, "");
+  if (!safe) return Promise.resolve("");
+  return new Promise((resolvePromise) => {
+    const child = spawn("bash", ["-lc", `command -v ${safe}`], { stdio: ["ignore", "pipe", "ignore"] });
+    let out = "";
+    child.stdout.on("data", (d) => (out += d));
+    child.on("close", (c) => resolvePromise(c === 0 ? out.trim() : ""));
+  });
+}
+
 export function run(bin, args, timeoutMs = 15_000) {
   return new Promise((resolvePromise, reject) => {
     const child = spawn(bin, args, { stdio: ["ignore", "pipe", "pipe"], env: process.env });
@@ -1083,38 +669,31 @@ export function run(bin, args, timeoutMs = 15_000) {
     const t = setTimeout(() => {
       child.kill("SIGKILL");
       reject(new Error("timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > 200_000) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({ code, stdout, stderr });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/secret.js:98-103](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L98-L103)
+
+变量名称和三个保留变量。
+
+```text
+export function assertEnvKey(key) {
+  const k = String(key || "").trim();
+  if (!ENV_KEY_RE.test(k)) throw new Error(`invalid env key: ${key}`);
+  if (k === "PATH" || k === "HOME" || k === "USER") throw new Error(`refusing to overwrite ${k}`);
+  return k;
 }
 ```
 
-</details>
+**依据 6 · 源码核查**：[lib/secret.js:198-208](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L198-L208)
 
-**依据 6 · 源码核查**：[lib/secret.js:194-208](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L194-L208)
-
-进程环境持久写入。
+进程级变量覆盖，没有回滚。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-/**
- * Load pass entry into process.env[envKey] for later tools in this dsh process.
- * Never returns the secret value (only preview + envKeys).
- */
 export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
   const key = assertEnvKey(envKey);
   const shown = await passShow(name, { allowPrefixes, timeoutMs, reveal: true });
@@ -1130,69 +709,47 @@ export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
 
 </details>
 
+**依据 7 · 源码核查**：[package.json:8-13](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/package.json#L8-L13)
+
+声明 Node 和包接线。
+
+```text
+  "main": "index.js",
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test test/*.test.js" },
+  "files": ["index.js", "lib", "cordis.patch.yml", "README.md", "README.en.md", "README.zh.md", "LICENSE", "CHANGELOG.md"],
+  "keywords": ["dsh-plugin", "wsl", "pass", "age", "secrets"],
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } }
+```
+
 #### 缺口
 
-- 无真实初始化、读取延迟和轮换成本测量。
-  **影响**：不能证明比手工或宿主凭据服务净省时。
-  **进一步探讨**：用假密钥记录配置分钟、读取延迟、失败恢复与清理时间。
+- 真实下游进程的环境继承和配置缓存未验收
+  **影响**：无法保证一次注入只影响预期调用
+  **进一步探讨**：以虚拟值进行两次同键注入、并发调用和停止进程后的作用域检查
 
-<a id="research-q05"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-14"></a>
 
-### Q05 · 如何试用并验证更窄的密钥传递机制？
+### Q04 · 将密钥绑定到单次目标工具会减少跨任务暴露吗？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-仅在单租户、受信任 DSH 进程中以假密钥先验名单和结果，生产时优先宿主范围化凭据服务；不启用 reveal，避免把高敏密钥放全局 process.env。若必须用本包，限定单一前缀和后续工具，做好进程重启轮换。可提出未实现假设：短时工具级句柄代替进程全局 env，并在 age 文件访问前按 realpath 复核，能减少跨插件暴露和符号链接越界；与现行 to_env 对照成功任务、明文可见进程数、失效时间与人工配置成本。
+现有注入返回掩码而将原值放在宿主进程级环境。可比较仅给获准目标工具的隔离子进程注入一次变量，任务结束即结束进程，默认结果只报成功状态。用相同虚拟凭据测试两个并发任务及一个无权旁观工具，记录授权操作成功率、非目标读取率和额外启动耗时。若目标兼容性明显下降或旁观者仍可通过宿主日志、子进程和并发任务读到值，则否定该方案。此处只提出待验证设计。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/secret.js:69-87](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L69-L87)
+**依据 1 · 源码核查**：[lib/secret.js:198-208](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L198-L208)
 
-当前路径白名单实现。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export function assertAgePath(filePath, allowPrefixes = []) {
-  const abs = resolve(String(filePath || "").trim());
-  if (abs.includes("\0")) throw new Error("invalid age path");
-  if (!allowPrefixes.length) throw new Error("allowPrefixes empty");
-  const home = homedir();
-  const candidates = allowPrefixes
-    .map((p) => String(p).trim())
-    .filter((p) => p.startsWith("~") || p.startsWith("/") || /^[A-Za-z]:/.test(p) || p.includes("/") || p.includes("\\"))
-    .map((p) => resolve(p.startsWith("~") ? p.replace(/^~/, home) : p));
-  if (!candidates.length) {
-    throw new Error("no filesystem allowPrefixes for age (use absolute or ~/ paths)");
-  }
-  const ok = candidates.some((root) => {
-    const r = root.replace(/[/\\]+$/, "");
-    return abs === r || abs.startsWith(r + "/") || abs.startsWith(r + "\\");
-  });
-  if (!ok) throw new Error(`age file outside allowPrefixes: ${abs}`);
-  if (!existsSync(abs)) throw new Error("age file missing");
-  return abs;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/secret.js:194-208](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/lib/secret.js#L194-L208)
-
-全局 env 转交。
+进程级写入基线。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-/**
- * Load pass entry into process.env[envKey] for later tools in this dsh process.
- * Never returns the secret value (only preview + envKeys).
- */
 export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
   const key = assertEnvKey(envKey);
   const shown = await passShow(name, { allowPrefixes, timeoutMs, reveal: true });
@@ -1208,57 +765,68 @@ export async function passToEnv(name, envKey, { allowPrefixes, timeoutMs }) {
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:19-37](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/index.js#L19-L37)
+**依据 2 · 源码核查**：[lib/secret.js:227-243](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/lib/secret.js#L227-L243)
 
-可默认关闭 reveal。
+age 路径同样全局写入。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-  const timeoutMs = positive(config.timeoutMs, 15_000);
-  const allowPrefixes = Array.isArray(config.allowPrefixes) ? config.allowPrefixes.map(String) : [];
-  const reveal = config.reveal === true;
-  console.log(
-    `[dsh-wsl-secret] allowPrefixes=${allowPrefixes.length} reveal=${reveal}` +
-      (allowPrefixes.length ? "" : " (empty allowlist → all reads refused)"),
-  );
-
-  ctx.systemPrompt.section({
-    name: "tool:secret",
-    order: 133,
-    text: [
-      "dsh-wsl-secret reads pass/age secrets only under config.allowPrefixes.",
-      "Preferred flow: secret_pass_exists → secret_to_env (puts value in process.env, returns preview only) → call other tools.",
-      "Avoid secret_pass_get with reveal; never paste secrets into chat.",
-      "If allowPrefixes is empty, every read fails — tell the user to configure the plugin.",
-      "dsh-wsl-cred is for Git credential hints only; use this plugin for app API keys.",
-    ].join(" "),
+export async function ageToEnv(filePath, envKey, { allowPrefixes, timeoutMs, identityFile }) {
+  const key = assertEnvKey(envKey);
+  const dec = await ageDecrypt(filePath, {
+    allowPrefixes,
+    timeoutMs,
+    reveal: true,
+    identityFile,
   });
+  const value = String(dec.value || "").split("\n")[0] || "";
+  process.env[key] = value;
+  return {
+    ok: true,
+    path: dec.path,
+    envKey: key,
+    preview: redactSecret(value, false),
+    note: "Secret is in process.env for this dsh process only; not shown in full.",
+  };
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:87-95](https://github.com/173787247/dsh-wsl-secret/blob/be996ef420b165aebb759cda3957e65a966efe22/README.md#L87-L95)
+**依据 3 · 源码核查**：[index.js:148-164](https://github.com/173787247/dsh-wsl-secret/blob/9e3617c76e3e33b988279899ca27680e854daca1/index.js#L148-L164)
 
-作者安全模型。
+预览已经有独立投影，可对照调整。
+
+<details>
+<summary>查看原文（17行）</summary>
 
 ```text
-## 安全模型（摘要）
-
-1. 空 `allowPrefixes` → 全部拒绝  
-2. pass 名必须匹配前缀（`dsh` → `dsh/...`）  
-3. age 路径必须在列表里的目录根下  
-4. 默认 `reveal: false`，结果不含完整密钥  
-5. 优先 `secret_to_env`，避免把明文塞进模型上下文  
-6. 永远不要把密钥贴进聊天  
-
+    output: {
+      ...commonOut,
+      render: (_a, v) => [
+        {
+          type: "text",
+          text:
+            v.ok === false
+              ? v.error
+              : `ok envKey=${v.envKey} entry=${v.entry} preview=${v.preview}\n${v.note || ""}`,
+        },
+      ],
+    },
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      try {
+        return await passToEnv(args.name, args.envKey, { allowPrefixes, timeoutMs });
 ```
+
+</details>
 
 #### 缺口
 
-- 句柄和 realpath 防护未实现。
-  **影响**：不能把设想当当前能力或已证实收益。
-  **进一步探讨**：假密钥双插件隔离及符号链接测试，比较暴露范围和任务成功率。
+- 没有作用域方案或对照试验
+  **影响**：不能宣称隔离或收益成立
+  **进一步探讨**：以合成值测授权成功、旁观读取和进程开销
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

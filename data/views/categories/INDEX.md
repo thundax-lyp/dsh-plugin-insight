@@ -8,20 +8,20 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 265 |
-| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 33 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 101 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 272 |
-| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 52 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 271 |
+| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 34 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 102 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 280 |
+| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 54 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 133 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 135 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（265）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（271）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -33,7 +33,7 @@
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
-### [办公与运营（33）](OFFICE-OPERATIONS.md)
+### [办公与运营（34）](OFFICE-OPERATIONS.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -45,7 +45,7 @@
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（101）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（102）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（272）](SOFTWARE-DELIVERY.md)
+### [软件交付（280）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -69,7 +69,7 @@
 
 [查看全部插件 →](SOFTWARE-DELIVERY.md)
 
-### [内容生产（52）](CONTENT-CREATION.md)
+### [内容生产（54）](CONTENT-CREATION.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（133）](INFRASTRUCTURE.md)
+### [基础设施（135）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -105,7 +105,7 @@
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
-| [竹知了](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md) | 在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。 | [![GitHub Star 2,880](https://img.shields.io/static/v1?label=&message=2%2C880&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao) |
+| [竹知了](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md) | 在浏览器中模拟甩动传统竹知了，可按住画圈、自动甩或使用手机体感，并随动作发出模拟叫声。 | [![GitHub Star 2,875](https://img.shields.io/static/v1?label=&message=2%2C875&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao) |
 | [dsh-armor-switch](../../plugins/571242--dsh-armor-switch/INSIGHT.md) | 向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。 | [![GitHub Star 2](https://img.shields.io/static/v1?label=&message=2&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/571242/dsh-armor-switch) |
 | [dsh-piano](../../plugins/439436269-ctrl--dsh-piano/INSIGHT.md) | 在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 | - |
 
@@ -113,4 +113,4 @@
 
 ## 更新时间
 
-2026-11-04
+2026-11-05

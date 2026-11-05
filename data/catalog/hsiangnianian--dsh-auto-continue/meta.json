@@ -1,0 +1,45 @@
+{
+    "repository": "HsiangNianian/dsh-auto-continue",
+    "repository_id": 1333738786,
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
+    "stars": 185,
+    "pushed_at": "2026-11-02T13:17:18Z",
+    "issues": {
+        "open": 0,
+        "closed": 39,
+        "created_30d": 8,
+        "closed_30d": 11,
+        "updated_30d": 13
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-client-auto-continue",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 10820,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-client-auto-continue",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T04:24:27.892Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-client-auto-continue",
+            "error": null,
+            "latest_version": "0.17.3",
+            "latest_published_at": "2026-11-02T13:24:50.869Z",
+            "latest_error": null
+        }
+    }
+}

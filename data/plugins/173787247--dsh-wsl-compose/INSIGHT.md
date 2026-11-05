@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[bea57df](https://github.com/173787247/dsh-wsl-compose/tree/bea57df86854983d90c8ac9219d15db1235c1652)
+源码版本：[de7e941](https://github.com/173787247/dsh-wsl-compose/tree/de7e941a218af3959805e211a589e8850ab065b0)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-compose)
 <!-- END META -->
 
-> **功能**：为 DSH 提供 Docker Compose 状态、容器列表、日志与可选 up/down 的本机运维工具。
+> **功能**：在 DSH 中读取 Docker Compose 服务状态与日志，并按配置启停项目。
 
-> **亮点**：把 Compose 诊断与基本启动/停止接入 DSH 工具，并默认关闭变更。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 把服务列表和尾部日志接进会话，便于先定位异常服务。
 
-> **主要限制**：双布尔条件不等于人工二次确认，开启变更且空 allowRoots 时可触及任意项目；超时需核实际 daemon 状态。详见[Q03](#research-q03)与[Q04](#research-q04)。
+> **主要限制**：[Q02](#research-q02) 启停参数确认不证明真人批准，工作目录检查也未绑定 daemon 和项目。
 
 **本文目录**
 
@@ -26,11 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · Compose 工具覆盖哪些诊断与变更任务？](#detail-section-11)
-  - [Q02 · 路径、命令和输出的边界如何实现？](#detail-section-12)
-  - [Q03 · “双重确认”是不是人工审批？](#detail-section-13)
-  - [Q04 · 超时与失败恢复能否证明操作未发生？](#detail-section-14)
-  - [Q05 · 怎样在不误停服务的前提下试用？](#detail-section-15)
+  - [Q01 · Compose 工具在哪个诊断阶段有价值？](#detail-section-11)
+  - [Q02 · 启停的两道检查能约束哪些副作用？](#detail-section-12)
+  - [Q03 · 如何试用并降低启停目标误判？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -40,81 +38,72 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：可信项目目录中的 Docker Compose 初筛与受控变更；生产操作需宿主审批。详见[Q01](#research-q01)。
+> **用途**：使用 Docker Compose 的开发者需要找出本机测试服务故障。
 
-手工 docker compose CLI 可明确 cwd 和人为确认；插件减少 Agent 排障步骤，但不替代审批。
+直接指定 Docker context、Compose 配置和项目执行原生命令。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 状态/日志 | 运维初筛 | 输出截断 |
-| up/down | 启停容器 | confirm 非人工审批 |
-| allowRoots | 限项目 | 空数组无约束 |
-
-**流程与依赖**
+| 服务状态与日志 | 诊断容器异常 | 依赖 Compose 插件和 daemon |
+| 启停 | 启动或停止项目 | 默认关闭变更，允许时还需 confirm |
 
 #### 启动与依赖
 
-| 依赖 | 必需 | 用途 | 缺失后果 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| DSH tools | 必需 | Agent 入口 | 无工具 |
-| Docker Compose/daemon | 必需 | 执行操作 | 失败 |
-| 项目目录/权限 | 必需 | cwd | 无法操作 |
-| 宿主审批 | 生产建议 | 变更许可 | 仅模型布尔确认 |
+| Docker Compose 插件与 daemon | 必需 | 执行服务读取 | 仅旧 CLI 不够 |
+| 明确 Docker context 与项目目录 | 受控使用必需 | 绑定测试目标 | 可能对错 daemon 或项目操作 |
 
-#### 使用步骤
+#### 启动步骤
 
-| 步骤 | 动作 | 判据/恢复 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 限界 | 设 allowRoots | 项目 realpath 在根内 |
-| 诊断 | status/ps/logs | 记录截断 |
-| 审批 | 人工确认 up/down | 宿主授权 |
-| 复核 | 操作后 ps/logs | 超时核 daemon |
-
-**效果与成本**
+| 准备 | 用户配置隔离 daemon 并关闭变更 | 项目可弃用 |
+| 诊断 | 用户查 ps 和服务日志 | 对照实际容器状态 |
+| 退出 | 用户回原生 Compose | 超时先检查服务状态 |
 
 #### 成本
 
-| 阶段 | 资源成本 | 人工投入 | 边界 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 接入 | Docker/Compose/DSH | 配 allowRoots | 兼容未测 |
-| 诊断 | 日志读取 | 复核截断/权限 | 时延未知 |
-| 变更 | 容器启动/停机 | 审批/状态对账 | 生产代价未知 |
+| 首次 | daemon 资源未知 | 准备目录和权限 | 核对项目来源 |
+| 持续 | 日志与服务开销未知 | 复核目标和截断 | 不要把表格当 JSON |
+| 失败 | 恢复开销未知 | 检查 daemon 而非直接重试 | CLI 超时后可能仍有副作用 |
 
 #### 效果
 
-| 效果项 | 源码支持 | 未证实 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| ps/logs | 数组命令/输出截断 | 完整状态 |
-| up/down | 双布尔门槛 | 人工审批 |
-| 超时 | 杀 CLI | daemon 回滚 |
+| 故障定位 | 会话内取服务列表和日志尾部 | 实际排障耗时 |
+| 启停 | 需要配置和 confirm 参数 | 真人批准与实际目标正确性 |
 
-> **思考**：双布尔条件不等于人工二次确认，开启变更且空 allowRoots 时可触及任意项目；超时需核实际 daemon 状态。详见[Q03](#research-q03)与[Q04](#research-q04)。
+> **思考**：[Q02](#research-q02) 启停参数确认不证明真人批准，工作目录检查也未绑定 daemon 和项目。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把 Compose 诊断与基本启动/停止接入 DSH 工具，并默认关闭变更。详见[Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 把服务列表和尾部日志接进会话，便于先定位异常服务。
 
-使用 spawn 参数数组和 realpath 有借鉴价值；默认目录与确认/超时语义需加强。详见[Q02](#research-q02)至[Q04](#research-q04)。
+[Q02](#research-q02) 子进程退出只说明 CLI 结果，超时后的目标状态需重查。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-双布尔条件不等于人工二次确认，开启变更且空 allowRoots 时可触及任意项目；超时需核实际 daemon 状态。详见[Q03](#research-q03)与[Q04](#research-q04)。
+[Q02](#research-q02) 启停参数确认不证明真人批准，工作目录检查也未绑定 daemon 和项目。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-默认只读并限制项目根；变更前后用宿主人工审批和 ps 对账，超时不盲重试。详见[Q05](#research-q05)。
+[Q03](#research-q03) 在隔离测试项目只评估只读工具，变更时使用经核对目标的原生命令。
 
 <a id="detail-section-7"></a>
 
@@ -122,18 +111,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持五工具；空 allowRoots 不限目录，confirm 仅工具参数非人类审批，超时无法证明 daemon 回滚；目标 Docker 未测。
+源码确认命令接线与配置门槛。真实 daemon 权限、操作结果及目标绑定假设待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/compose.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/compose.js、index.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读核固定提交 README.md、index.js、lib/compose.js、package.json；未执行 docker/目标工具。旧 META 仅复用。
-- 下一步：目标隔离 Docker 项目测路径根、符号链接、超时、长日志与 up/down 宿主审批。
+- 边界：固定 Host 源码核查。未运行 Docker、DSH、目标测试或任何启停。
+- 下一步：用可弃用项目检查旧 CLI、项目根、context、输出回退、超时与启停拒绝。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-compose](https://github.com/173787247/dsh-wsl-compose)
-- **版本号**：0.1.1（[固定提交 bea57df](https://github.com/173787247/dsh-wsl-compose/tree/bea57df86854983d90c8ac9219d15db1235c1652)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 de7e941](https://github.com/173787247/dsh-wsl-compose/tree/de7e941a218af3959805e211a589e8850ab065b0)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,9 +130,9 @@
 
 <a id="innovation"></a>
 
-未验证改进为强制目录根、宿主用户审批、stderr 流界及超时返回待复核状态。详见[Q05](#research-q05)。
+[Q03](#research-q03) 在变更前绑定实际 context、项目和配置，比较错目标率与排障开销。
 
-目标隔离 Docker 项目测路径根、符号链接、超时、长日志与 up/down 宿主审批。
+用可弃用项目检查旧 CLI、项目根、context、输出回退、超时与启停拒绝。
 
 <a id="detail-section-9"></a>
 
@@ -151,6 +140,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -162,34 +153,34 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-21），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-compose/issues) 查看。
+Issue 活跃度数据暂未获取（查询日期：2026-11-05），可前往 [GitHub Issues](https://github.com/173787247/dsh-wsl-compose/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Compose 运维工具的目录隔离、确认语义及超时后状态是否足以支持安全采用？
+**插件研究总目标**：开发者能否在 DSH 中诊断 Compose 服务并控制启停目标？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · Compose 工具覆盖哪些诊断与变更任务？
+### Q01 · Compose 工具在哪个诊断阶段有价值？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-插件为 DSH 注册 compose_status、compose_ps、compose_logs、compose_up、compose_down；前三者用于检查 Docker/项目容器和日志，后二者触发 up -d 或 down。作者称默认不允许变更，源码 allowMutate 只有显式 true 才打开。适合可信本机项目目录的运维辅助；不是 Compose 配置审计、发布编排或 Docker 权限隔离，docker 命令自身权限仍决定实际副作用。
+开发者可先列 Compose 服务并读取指定服务尾部日志，在 DSH 会话内确定哪个容器需进一步调查。原生 docker compose 已能给出同一信息，工具额外提供结构化目录、服务和尾行参数。ps 先请求 JSON，命令非零则回表格，输出字段不保证是同一格式。status 检测旧 docker-compose，但后续路径只调用 docker compose，所以只有旧二进制并不能使用。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-36](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/README.md#L5-L36)
+**依据 1 · 作者声明**：[README.md:5-15](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/README.md#L5-L15)
 
-作者功能/默认变更配置
+作者说明状态、日志及启停。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（11行）</summary>
 
 ````text
 docker compose：ps/logs；up/down 需双重确认。
@@ -203,324 +194,43 @@ docker compose：ps/logs；up/down 需双重确认。
 
 ```sh
 dsh plugin --profile web add github:173787247/dsh-wsl-compose
-# 或本机 path：
-# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-compose
-```
-
-kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
-
-## 工具
-
-| 工具 | 作用 |
-|------|------|
-| `compose_status` | docker 是否可用 |
-| `compose_ps` | compose ps |
-| `compose_logs` | 日志尾 |
-| `compose_up` | up -d（危险） |
-| `compose_down` | down（危险） |
-
-## 配置要点
-
-`allowRoots / allowMutate / timeoutMs`
-
-默认 `allowMutate: false`。变更必须 `allowMutate=true` 且工具参数 `confirm=true`。互补 `docker_doctor`。
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:11-25](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L11-L25)
+**依据 2 · 源码核查**：[lib/compose.js:63-98](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L63-L98)
 
-配置/提示
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export function apply(ctx, config = {}) {
-  if (config.enabled === false) {
-    console.log("[dsh-wsl-compose] disabled");
-    return;
-  }
-  const timeoutMs = positive(config.timeoutMs, 60_000);
-  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];
-  const allowMutate = config.allowMutate === true;
-  console.log(`[dsh-wsl-compose] allowMutate=${allowMutate}`);
-
-  ctx.systemPrompt.section({
-    name: "tool:compose",
-    order: 121,
-    text: "dsh-wsl-compose wraps docker compose: prefer compose_ps and compose_logs. compose_up / compose_down require confirm=true and only work when allowMutate=true in plugin config. Complements docker_doctor; does not replace it.",
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:27-101](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L27-L101)
-
-诊断工具
+执行只走 Compose 插件，ps 有格式回退。
 
 <details>
-<summary>查看原文（75行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "compose_status",
-    description: "Whether docker / compose plugin are on PATH; compose version + allowMutate flag.",
-    parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
-    timeoutMs: 8_000,
-    isConcurrencySafe: () => true,
-    async execute() {
-      return { ...(await composeStatus()), allowMutate, allowRootsCount: allowRoots.length };
-    },
-    presentCall: () => ({ card: "generic", title: "compose status" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose status", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "compose_ps",
-    description: "docker compose ps for a project directory.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir"],
-      properties: { projectDir: { type: "string" } },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await composePs({ projectDir: args.projectDir, allowRoots, timeoutMs });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose ps" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose ps", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "compose_logs",
-    description: "Tail docker compose logs (capped). Optional service name.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir"],
-      properties: {
-        projectDir: { type: "string" },
-        service: { type: "string" },
-        tail: { type: "number" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output }],
-    },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        return await composeLogs({
-          projectDir: args.projectDir,
-          service: args.service,
-          tail: args.tail,
-          allowRoots,
-          timeoutMs,
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose logs" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose logs", content: r.content }),
-  });
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:103-173](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L103-L173)
-
-变更工具
-
-<details>
-<summary>查看原文（71行）</summary>
-
-```text
-  ctx.tools.register({
-    name: "compose_up",
-    description: "docker compose up -d. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
-    timeoutMs: Math.max(timeoutMs, 180_000),
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!allowMutate) return { ok: false, error: "compose_up disabled (set config.allowMutate=true)" };
-      try {
-        return await composeUpDown({
-          projectDir: args.projectDir,
-          action: "up",
-          confirm: args.confirm,
-          allowRoots,
-          timeoutMs: Math.max(timeoutMs, 180_000),
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose up" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose up", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "compose_down",
-    description: "docker compose down. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
-    timeoutMs: Math.max(timeoutMs, 180_000),
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!allowMutate) return { ok: false, error: "compose_down disabled (set config.allowMutate=true)" };
-      try {
-        return await composeUpDown({
-          projectDir: args.projectDir,
-          action: "down",
-          confirm: args.confirm,
-          allowRoots,
-          timeoutMs: Math.max(timeoutMs, 180_000),
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose down" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose down", content: r.content }),
-  });
-```
-
-</details>
-
-#### 缺口
-
-- 目标 Docker/Compose 和 DSH 工具权限未测
-  **影响**：不能据注册判断目标容器可用
-  **进一步探讨**：目标隔离项目 status/ps/logs 对照 docker CLI
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 路径、命令和输出的边界如何实现？
-
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-项目目录先 resolve，存在时 realpath，再与 allowRoots 列表根路径比较；仅在 allowRoots 非空时执行限制，空列表默认允许任意 cwd。命令以 spawn(bin,args,{cwd}) 数组调用，避免把 service/projectDir 拼入 shell；service 仅允许字母数字点下划线短横。日志 tail 限1–500，stdout 截60k/80k 等；但 stderr 在进程运行中持续累加，最终只截4k，无实时大小上限。目录在校验到 spawn 之间也可能被替换，需目标环境确认。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/compose.js:16-31](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L16-L31)
-
-路径和可选根检查
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-export function resolveProject(dir, allowRoots = []) {
-  const abs = resolve(String(dir || ".").trim() || ".");
-  const real = existsSync(abs) ? realpathSync(abs) : abs;
-  if (allowRoots.length) {
-    const roots = allowRoots.map((r) => {
-      const a = resolve(r);
-      return existsSync(a) ? realpathSync(a) : a;
-    });
-    const ok = roots.some((root) => {
-      const x = root.replace(/[/\\]+$/, "");
-      return real === x || real.startsWith(x + "/") || real.startsWith(x + "\\");
-    });
-    if (!ok) throw new Error(`compose project outside allowRoots: ${real}`);
-  }
-  return real;
+async function composeBin() {
+  // prefer `docker compose` plugin; fall back to docker-compose
+  const docker = (await which("docker")) || "docker";
+  return { kind: "plugin", docker };
 }
-```
 
-</details>
+export async function composeStatus() {
+  const docker = (await which("docker")) || null;
+  const legacy = (await which("docker-compose")) || null;
+  let composeVersion = null;
+  if (docker) {
+    try {
+      const r = await run(docker, ["compose", "version", "--short"], { timeoutMs: 8_000, maxOut: 2_000 });
+      if (r.code === 0) composeVersion = r.stdout.trim();
+      else {
+        const r2 = await run(docker, ["compose", "version"], { timeoutMs: 8_000, maxOut: 4_000 });
+        composeVersion = (r2.stdout || r2.stderr || "").trim().slice(0, 200) || null;
+      }
+    } catch {
+      composeVersion = null;
+    }
+  }
+  return { ok: true, docker, dockerComposeLegacy: legacy, composeVersion };
+}
 
-**依据 2 · 源码核查**：[lib/compose.js:33-60](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L33-L60)
-
-spawn/输出/超时
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 80_000 } = {}) {
-  return new Promise((resolvePromise, reject) => {
-    const child = spawn(bin, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
-    let stdout = "";
-    let stderr = "";
-    const t = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({
-        code,
-        stdout: stdout.slice(0, maxOut),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOut,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/compose.js:88-111](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L88-L111)
-
-ps/logs及参数限制
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
 export async function composePs({ projectDir, allowRoots, timeoutMs }) {
   const cwd = resolveProject(projectDir, allowRoots);
   const { docker } = await composeBin();
@@ -532,8 +242,18 @@ export async function composePs({ projectDir, allowRoots, timeoutMs }) {
     return { ok: true, project: cwd, output: r2.stdout, truncated: r2.truncated };
   }
   return { ok: true, project: cwd, output: r.stdout, truncated: r.truncated };
-}
+```
 
+</details>
+
+**依据 3 · 源码核查**：[lib/compose.js:101-111](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L101-L111)
+
+日志尾行与服务约束。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
 export async function composeLogs({ projectDir, service, tail = 80, allowRoots, timeoutMs, maxOut = 60_000 }) {
   const cwd = resolveProject(projectDir, allowRoots);
   const svc = String(service || "").trim();
@@ -551,71 +271,48 @@ export async function composeLogs({ projectDir, service, tail = 80, allowRoots, 
 
 #### 缺口
 
-- 目标文件系统符号链接竞争、超大 stderr 未测
-  **影响**：默认目录范围宽，恶意日志可耗内存
-  **进一步探讨**：隔离目录/大 stderr/路径替换测试
+- 没有对照真实故障的诊断效果
+  **影响**：不能量化会话内取证增益
+  **进一步探讨**：用含失败服务的测试项目核对格式和日志
 
-<a id="research-q03"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-12"></a>
 
-### Q03 · “双重确认”是不是人工审批？
+### Q02 · 启停的两道检查能约束哪些副作用？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-up/down 执行前检查插件配置 allowMutate，composeUpDown 再要求工具参数 confirm===true；该 confirm 由工具调用者/模型可传入，并未见人类审批服务或交互确认。allowRoots 默认空，则一旦管理员开启 allowMutate，工具可对任意可达目录执行 up/down。对于生产环境应配置窄 allowRoots 并在宿主层设置用户审批；不要把两个布尔条件描述成人工二次确认。
+必须配置 allowMutate=true，再由工具调用传 confirm=true，才运行 up -d 或 down。confirm 是模型调用参数，不能据此证明真人批准。allowRoots 检查工作目录的 realpath，空列表不限制目录，也未固定 Docker context 或 Compose 实际读取的配置。命令继承运行环境，Docker daemon 的账户权限与目标决定实际影响。超时杀死 CLI 后没有查询 daemon 结果，不能判断动作最终完成或取消。读路径仍可让日志进入会话；日志服务名语法允许连字符，后续直接作为参数传递，实际旗标解析需验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:32-36](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/README.md#L32-L36)
+**依据 1 · 源码核查**：[index.js:16-24](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/index.js#L16-L24)
 
-作者双条件说法
-
-```text
-## 配置要点
-
-`allowRoots / allowMutate / timeoutMs`
-
-默认 `allowMutate: false`。变更必须 `allowMutate=true` 且工具参数 `confirm=true`。互补 `docker_doctor`。
-```
-
-**依据 2 · 源码核查**：[index.js:16-19](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L16-L19)
-
-allowMutate 默认仅 true
+配置门槛。
 
 ```text
   const timeoutMs = positive(config.timeoutMs, 60_000);
   const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];
   const allowMutate = config.allowMutate === true;
   console.log(`[dsh-wsl-compose] allowMutate=${allowMutate}`);
+
+  ctx.systemPrompt.section({
+    name: "tool:compose",
+    order: 121,
+    text: "dsh-wsl-compose wraps docker compose: prefer compose_ps and compose_logs. compose_up / compose_down require confirm=true and only work when allowMutate=true in plugin config. Complements docker_doctor; does not replace it.",
 ```
 
-**依据 3 · 源码核查**：[index.js:103-168](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L103-L168)
+**依据 2 · 源码核查**：[index.js:119-133](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/index.js#L119-L133)
 
-up/down 布尔门槛
+up 的调用检查和操作。
 
 <details>
-<summary>查看原文（66行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "compose_up",
-    description: "docker compose up -d. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
     timeoutMs: Math.max(timeoutMs, 180_000),
     isConcurrencySafe: () => false,
     async execute(args) {
@@ -631,27 +328,18 @@ up/down 布尔门槛
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
       }
-    },
-    presentCall: () => ({ card: "generic", title: "compose up" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose up", content: r.content }),
-  });
+```
 
-  ctx.tools.register({
-    name: "compose_down",
-    description: "docker compose down. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
+</details>
+
+**依据 3 · 源码核查**：[index.js:155-169](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/index.js#L155-L169)
+
+down 的调用检查和操作。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
     timeoutMs: Math.max(timeoutMs, 180_000),
     isConcurrencySafe: () => false,
     async execute(args) {
@@ -666,261 +354,17 @@ up/down 布尔门槛
         });
       } catch (e) {
         return { ok: false, error: e instanceof Error ? e.message : String(e) };
+      }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/compose.js:16-30](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L16-L30)
+**依据 4 · 源码核查**：[lib/compose.js:16-41](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L16-L41)
 
-空 allowRoots 不限制
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export function resolveProject(dir, allowRoots = []) {
-  const abs = resolve(String(dir || ".").trim() || ".");
-  const real = existsSync(abs) ? realpathSync(abs) : abs;
-  if (allowRoots.length) {
-    const roots = allowRoots.map((r) => {
-      const a = resolve(r);
-      return existsSync(a) ? realpathSync(a) : a;
-    });
-    const ok = roots.some((root) => {
-      const x = root.replace(/[/\\]+$/, "");
-      return real === x || real.startsWith(x + "/") || real.startsWith(x + "\\");
-    });
-    if (!ok) throw new Error(`compose project outside allowRoots: ${real}`);
-  }
-  return real;
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/compose.js:114-126](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L114-L126)
-
-confirm 工具参数检查
+目录限制及客户端超时。
 
 <details>
-<summary>查看原文（13行）</summary>
-
-```text
-/**
- * Dangerous: up/down require confirm=true explicitly.
- */
-export async function composeUpDown({ projectDir, action, confirm, allowRoots, timeoutMs }) {
-  if (confirm !== true) throw new Error(`${action} refused: pass confirm=true`);
-  const act = String(action || "").toLowerCase();
-  if (act !== "up" && act !== "down") throw new Error("action must be up or down");
-  const cwd = resolveProject(projectDir, allowRoots);
-  const { docker } = await composeBin();
-  const args = act === "up" ? ["compose", "up", "-d"] : ["compose", "down"];
-  const r = await run(docker, args, { cwd, timeoutMs: timeoutMs || 180_000, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`compose ${act} failed: ${r.stderr || r.code}`);
-  return { ok: true, project: cwd, action: act, output: r.stdout || r.stderr };
-```
-
-</details>
-
-#### 缺口
-
-- 宿主工具批准策略未核
-  **影响**：可能产生意外容器启动/停止
-  **进一步探讨**：目标宿主确认调用前审批与根范围
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 超时与失败恢复能否证明操作未发生？
-
-**研究主题**：缺陷与关键质疑、效果与总成本
-
-#### 完整回答
-
-run 超时后向 child 发送 SIGKILL 并 reject；这只终止本地 docker CLI，不能证明 Docker daemon 已回滚 up/down 已提交的容器状态。标准输出截断、stderr 仅截4k，失败后仍需 docker compose ps/logs 或 daemon 状态复核；不能因超时直接重试非幂等操作。工具 up/down 标至少180秒，底层同值，但实际网络/容器启动耗时未测。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/compose.js:33-60](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L33-L60)
-
-进程超时/输出
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 80_000 } = {}) {
-  return new Promise((resolvePromise, reject) => {
-    const child = spawn(bin, args, { cwd, stdio: ["ignore", "pipe", "pipe"] });
-    let stdout = "";
-    let stderr = "";
-    const t = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({
-        code,
-        stdout: stdout.slice(0, maxOut),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOut,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/compose.js:114-126](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L114-L126)
-
-up/down 调用
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-/**
- * Dangerous: up/down require confirm=true explicitly.
- */
-export async function composeUpDown({ projectDir, action, confirm, allowRoots, timeoutMs }) {
-  if (confirm !== true) throw new Error(`${action} refused: pass confirm=true`);
-  const act = String(action || "").toLowerCase();
-  if (act !== "up" && act !== "down") throw new Error("action must be up or down");
-  const cwd = resolveProject(projectDir, allowRoots);
-  const { docker } = await composeBin();
-  const args = act === "up" ? ["compose", "up", "-d"] : ["compose", "down"];
-  const r = await run(docker, args, { cwd, timeoutMs: timeoutMs || 180_000, maxOut: 40_000 });
-  if (r.code !== 0) throw new Error(`compose ${act} failed: ${r.stderr || r.code}`);
-  return { ok: true, project: cwd, action: act, output: r.stdout || r.stderr };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[index.js:119-130](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L119-L130)
-
-变更工具时限
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    timeoutMs: Math.max(timeoutMs, 180_000),
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!allowMutate) return { ok: false, error: "compose_up disabled (set config.allowMutate=true)" };
-      try {
-        return await composeUpDown({
-          projectDir: args.projectDir,
-          action: "up",
-          confirm: args.confirm,
-          allowRoots,
-          timeoutMs: Math.max(timeoutMs, 180_000),
-        });
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.md:22-36](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/README.md#L22-L36)
-
-操作范围
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-## 工具
-
-| 工具 | 作用 |
-|------|------|
-| `compose_status` | docker 是否可用 |
-| `compose_ps` | compose ps |
-| `compose_logs` | 日志尾 |
-| `compose_up` | up -d（危险） |
-| `compose_down` | down（危险） |
-
-## 配置要点
-
-`allowRoots / allowMutate / timeoutMs`
-
-默认 `allowMutate: false`。变更必须 `allowMutate=true` 且工具参数 `confirm=true`。互补 `docker_doctor`。
-```
-
-</details>
-
-#### 缺口
-
-- 目标 daemon 超时后状态未知
-  **影响**：误重试可能扩大变更
-  **进一步探讨**：隔离 Compose 项目模拟超时并核服务状态
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 怎样在不误停服务的前提下试用？
-
-**研究主题**：采用判断、新假设与验证、效果与总成本
-
-#### 完整回答
-
-先在无关键业务的 Docker 项目只启用 status/ps/logs，配置 allowRoots 为固定 realpath；确需 up/down 时由人类明确允许环境与操作，并用宿主审批机制控制模型工具，操作前后各记 ps 状态和日志。部署成本包含 Docker 服务、日志可见性、人工确认与超时后的状态对账；金额/时延未知。改进可让 allowRoots 必填、与宿主审批联动、为 stderr 加界、超时返回需复核状态；这些尚未实现。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:12-36](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/README.md#L12-L36)
-
-作者安装/配置
-
-<details>
-<summary>查看原文（25行）</summary>
-
-````text
-## 安装
-
-```sh
-dsh plugin --profile web add github:173787247/dsh-wsl-compose
-# 或本机 path：
-# dsh plugin --profile web add /mnt/c/Users/YOU/Desktop/AIFullStackDevelopment/dsh-wsl-compose
-```
-
-kit 批量链接（可选）：`bash dsh-wsl-kit/scripts/link-linux-plugins.sh`
-
-## 工具
-
-| 工具 | 作用 |
-|------|------|
-| `compose_status` | docker 是否可用 |
-| `compose_ps` | compose ps |
-| `compose_logs` | 日志尾 |
-| `compose_up` | up -d（危险） |
-| `compose_down` | down（危险） |
-
-## 配置要点
-
-`allowRoots / allowMutate / timeoutMs`
-
-默认 `allowMutate: false`。变更必须 `allowMutate=true` 且工具参数 `confirm=true`。互补 `docker_doctor`。
-````
-
-</details>
-
-**依据 2 · 源码核查**：[lib/compose.js:16-60](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/lib/compose.js#L16-L60)
-
-目录/进程边界
-
-<details>
-<summary>查看原文（45行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
 export function resolveProject(dir, allowRoots = []) {
@@ -949,116 +393,154 @@ export function run(bin, args, { cwd, timeoutMs = 60_000, maxOut = 80_000 } = {}
       child.kill("SIGKILL");
       reject(new Error("timeout"));
     }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOut * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolvePromise({
-        code,
-        stdout: stdout.slice(0, maxOut),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOut,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:103-173](https://github.com/173787247/dsh-wsl-compose/blob/bea57df86854983d90c8ac9219d15db1235c1652/index.js#L103-L173)
+**依据 5 · 源码核查**：[lib/compose.js:101-126](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L101-L126)
 
-变更调用条件
+日志及真实启停参数。
 
 <details>
-<summary>查看原文（71行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "compose_up",
-    description: "docker compose up -d. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
-    timeoutMs: Math.max(timeoutMs, 180_000),
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!allowMutate) return { ok: false, error: "compose_up disabled (set config.allowMutate=true)" };
-      try {
-        return await composeUpDown({
-          projectDir: args.projectDir,
-          action: "up",
-          confirm: args.confirm,
-          allowRoots,
-          timeoutMs: Math.max(timeoutMs, 180_000),
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose up" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose up", content: r.content }),
-  });
+export async function composeLogs({ projectDir, service, tail = 80, allowRoots, timeoutMs, maxOut = 60_000 }) {
+  const cwd = resolveProject(projectDir, allowRoots);
+  const svc = String(service || "").trim();
+  if (svc && !/^[A-Za-z0-9._-]+$/.test(svc)) throw new Error("invalid service name");
+  const n = Math.min(500, Math.max(1, Number(tail) || 80));
+  const { docker } = await composeBin();
+  const args = ["compose", "logs", "--no-color", "--tail", String(n)];
+  if (svc) args.push(svc);
+  const r = await run(docker, args, { cwd, timeoutMs, maxOut });
+  if (r.code !== 0) throw new Error(`compose logs failed: ${r.stderr || r.code}`);
+  return { ok: true, project: cwd, service: svc || null, output: r.stdout, truncated: r.truncated };
+}
 
-  ctx.tools.register({
-    name: "compose_down",
-    description: "docker compose down. Requires plugin allowMutate=true AND confirm=true.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["projectDir", "confirm"],
-      properties: {
-        projectDir: { type: "string" },
-        confirm: { type: "boolean" },
-      },
-    },
-    output: {
-      schema: { type: "object", additionalProperties: true },
-      render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.output || "ok" }],
-    },
-    timeoutMs: Math.max(timeoutMs, 180_000),
-    isConcurrencySafe: () => false,
-    async execute(args) {
-      if (!allowMutate) return { ok: false, error: "compose_down disabled (set config.allowMutate=true)" };
-      try {
-        return await composeUpDown({
-          projectDir: args.projectDir,
-          action: "down",
-          confirm: args.confirm,
-          allowRoots,
-          timeoutMs: Math.max(timeoutMs, 180_000),
-        });
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "compose down" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "compose down", content: r.content }),
-  });
+/**
+ * Dangerous: up/down require confirm=true explicitly.
+ */
+export async function composeUpDown({ projectDir, action, confirm, allowRoots, timeoutMs }) {
+  if (confirm !== true) throw new Error(`${action} refused: pass confirm=true`);
+  const act = String(action || "").toLowerCase();
+  if (act !== "up" && act !== "down") throw new Error("action must be up or down");
+  const cwd = resolveProject(projectDir, allowRoots);
+  const { docker } = await composeBin();
+  const args = act === "up" ? ["compose", "up", "-d"] : ["compose", "down"];
+  const r = await run(docker, args, { cwd, timeoutMs: timeoutMs || 180_000, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`compose ${act} failed: ${r.stderr || r.code}`);
+  return { ok: true, project: cwd, action: act, output: r.stdout || r.stderr };
 ```
 
 </details>
 
 #### 缺口
 
-- 目标宿主审批、实际服务中断代价未知
-  **影响**：不能直接推广到生产变更
-  **进一步探讨**：隔离项目完成诊断/变更/超时矩阵
+- 未验证目标选择、服务参数解析或超时后 daemon 状态
+  **影响**：不能认为两道布尔检查提供可靠审批或取消
+  **进一步探讨**：用可弃用项目和隔离 daemon 校验目标、权限和超时后状态
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 如何试用并降低启停目标误判？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+先只用 allowMutate=false，在隔离 Docker context 的测试目录验收 ps、logs 和无权限退出，确认 Docker Compose 插件而非旧 CLI。若需启停，当前最直接退路是使用已核对项目与 context 的原生命令，超时先核查 daemon 再决定是否重试。可试验在调用前绑定 Docker context、解析后的项目名和配置文件，向操作者显示并取得一次明确确认。把当前模型布尔值与目标绑定对照，在两项目、两 context 和配置变化时测错目标、拒绝率与额外时间。若仍有错目标或干扰正常取证则不采纳。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:12-24](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/index.js#L12-L24)
+
+默认关闭变更与目录配置。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+  if (config.enabled === false) {
+    console.log("[dsh-wsl-compose] disabled");
+    return;
+  }
+  const timeoutMs = positive(config.timeoutMs, 60_000);
+  const allowRoots = Array.isArray(config.allowRoots) ? config.allowRoots.map(String) : [];
+  const allowMutate = config.allowMutate === true;
+  console.log(`[dsh-wsl-compose] allowMutate=${allowMutate}`);
+
+  ctx.systemPrompt.section({
+    name: "tool:compose",
+    order: 121,
+    text: "dsh-wsl-compose wraps docker compose: prefer compose_ps and compose_logs. compose_up / compose_down require confirm=true and only work when allowMutate=true in plugin config. Complements docker_doctor; does not replace it.",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/compose.js:63-85](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L63-L85)
+
+可用 Compose 路径。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+async function composeBin() {
+  // prefer `docker compose` plugin; fall back to docker-compose
+  const docker = (await which("docker")) || "docker";
+  return { kind: "plugin", docker };
+}
+
+export async function composeStatus() {
+  const docker = (await which("docker")) || null;
+  const legacy = (await which("docker-compose")) || null;
+  let composeVersion = null;
+  if (docker) {
+    try {
+      const r = await run(docker, ["compose", "version", "--short"], { timeoutMs: 8_000, maxOut: 2_000 });
+      if (r.code === 0) composeVersion = r.stdout.trim();
+      else {
+        const r2 = await run(docker, ["compose", "version"], { timeoutMs: 8_000, maxOut: 4_000 });
+        composeVersion = (r2.stdout || r2.stderr || "").trim().slice(0, 200) || null;
+      }
+    } catch {
+      composeVersion = null;
+    }
+  }
+  return { ok: true, docker, dockerComposeLegacy: legacy, composeVersion };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/compose.js:117-126](https://github.com/173787247/dsh-wsl-compose/blob/de7e941a218af3959805e211a589e8850ab065b0/lib/compose.js#L117-L126)
+
+当前只使用布尔确认与目录。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export async function composeUpDown({ projectDir, action, confirm, allowRoots, timeoutMs }) {
+  if (confirm !== true) throw new Error(`${action} refused: pass confirm=true`);
+  const act = String(action || "").toLowerCase();
+  if (act !== "up" && act !== "down") throw new Error("action must be up or down");
+  const cwd = resolveProject(projectDir, allowRoots);
+  const { docker } = await composeBin();
+  const args = act === "up" ? ["compose", "up", "-d"] : ["compose", "down"];
+  const r = await run(docker, args, { cwd, timeoutMs: timeoutMs || 180_000, maxOut: 40_000 });
+  if (r.code !== 0) throw new Error(`compose ${act} failed: ${r.stderr || r.code}`);
+  return { ok: true, project: cwd, action: act, output: r.stdout || r.stderr };
+```
+
+</details>
+
+#### 缺口
+
+- 未测试 Docker 环境和目标绑定方案
+  **影响**：恢复时间、误操作代价及审批效果未知
+  **进一步探讨**：独立 daemon 验证读取、拒绝、模拟延迟和实际目标
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

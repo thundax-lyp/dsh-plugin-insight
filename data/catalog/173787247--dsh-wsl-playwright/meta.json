@@ -1,10 +1,10 @@
 {
     "repository": "173787247/dsh-wsl-playwright",
     "repository_id": 1381860363,
-    "captured_at": "2026-10-22T05:27:14.154Z",
-    "window_start": "2026-09-22T05:27:14.154Z",
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
     "stars": 1,
-    "pushed_at": "2026-09-30T03:22:32Z",
+    "pushed_at": "2026-11-03T16:39:02Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -12,5 +12,34 @@
         "closed_30d": 0,
         "updated_30d": 0
     },
-    "errors": []
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-wsl-playwright",
+        "captured_at": "2026-11-05T02:01:36.775Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-wsl-playwright",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-05T02:01:36.775Z",
+            "source_url": "https://registry.npmjs.org/dsh-wsl-playwright",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
 }
