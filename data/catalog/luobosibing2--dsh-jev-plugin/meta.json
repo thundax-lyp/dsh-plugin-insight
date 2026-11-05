@@ -1,0 +1,36 @@
+{
+    "repository": "luobosibing2/dsh-jev-plugin",
+    "repository_id": 1391049410,
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
+    "stars": 202,
+    "pushed_at": "2026-11-03T12:05:18Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 14,
+        "closed_30d": 12,
+        "updated_30d": 14
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluobosibing2%2Fdsh-jev-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B9D0:288EE:63566:6B92E:6AEBE3FD and timestamp 2026-11-05 02:03:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluobosibing2%2Fdsh-jev-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 65A4:33C363:1F99EAD:2CEA5A4:6AEBE406 and timestamp 2026-11-05 02:03:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

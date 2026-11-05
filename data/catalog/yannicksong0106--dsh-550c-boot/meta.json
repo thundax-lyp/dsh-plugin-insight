@@ -1,0 +1,66 @@
+{
+    "repository": "yannicksong0106/dsh-550c-boot",
+    "repository_id": 1393144751,
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
+    "stars": 218,
+    "pushed_at": "2026-10-26T03:55:59Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayannicksong0106%2Fdsh-550c-boot%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B200:10BCDA:677A8:7013B:6AEBE3EE and timestamp 2026-11-05 02:03:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayannicksong0106%2Fdsh-550c-boot%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B28C:2D9F9E:6A616:72F8C:6AEBE3EF and timestamp 2026-11-05 02:03:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayannicksong0106%2Fdsh-550c-boot%20is%3Aissue%20created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B2F4:2D3365:6C102:74AA9:6AEBE3F0 and timestamp 2026-11-05 02:03:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayannicksong0106%2Fdsh-550c-boot%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B36E:3A90D6:6604E:6E9DC:6AEBE3F1 and timestamp 2026-11-05 02:03:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayannicksong0106%2Fdsh-550c-boot%20is%3Aissue%20updated%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B3D2:354826:8A0506:92CDC4:6AEBE3F2 and timestamp 2026-11-05 02:03:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-550c-boot",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 10029,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-550c-boot",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-30T14:34:38.526Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-550c-boot",
+            "error": null,
+            "latest_version": "0.5.4",
+            "latest_published_at": "2026-10-26T16:35:59.220Z",
+            "latest_error": null
+        }
+    }
+}

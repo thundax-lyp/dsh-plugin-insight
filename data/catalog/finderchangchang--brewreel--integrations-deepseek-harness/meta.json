@@ -1,0 +1,62 @@
+{
+    "repository": "Finderchangchang/brewreel",
+    "repository_id": 1388372309,
+    "captured_at": "2026-11-05T02:01:36.775Z",
+    "window_start": "2026-10-06T02:01:36.775Z",
+    "stars": 179,
+    "pushed_at": "2026-10-12T08:15:06Z",
+    "issues": {
+        "open": 1,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFinderchangchang%2Fbrewreel%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E16A:3B188A:6F871:789F6:6AEBE47C and timestamp 2026-11-05 02:05:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFinderchangchang%2Fbrewreel%20is%3Aissue%20created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E1DA:F9C69:65357:6DCA3:6AEBE47D and timestamp 2026-11-05 02:05:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFinderchangchang%2Fbrewreel%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E22C:364175:71977:7AABB:6AEBE47E and timestamp 2026-11-05 02:05:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFinderchangchang%2Fbrewreel%20is%3Aissue%20updated%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2B6:24717:6F60C:7877A:6AEBE47F and timestamp 2026-11-05 02:05:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c1fd5e1a41de7c5a8825309d0b924595fb00aa4e",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-brewreel",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1432,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-brewreel",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-27T05:57:29.749Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-brewreel",
+            "error": null,
+            "latest_version": "0.6.0",
+            "latest_published_at": "2026-10-07T06:54:57.504Z",
+            "latest_error": null
+        }
+    }
+}
