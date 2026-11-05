@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[e1c6158](https://github.com/7gzgn/dsh-file-handover/tree/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f)
+源码版本：[4463319](https://github.com/7gzgn/dsh-file-handover/tree/44633197f2fa93823f796f046a740c8d88e9b7d0)
 
 <!-- BEGIN META -->
-
+[![npm 30d 714](https://img.shields.io/static/v1?label=npm+30d&message=714&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-file-handover) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-file-handover)
 <!-- END META -->
 
 > **功能**：将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。
@@ -48,17 +48,17 @@
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 探测/填路径 | 原生文件框 | 首结构匹配 |
-| 回读/确认 | 交接动作 | 子串/无应用收据 |
-| CLI | 脱离会话调用 | 非DSH用户命令 |
+| 文件输入核验 | 核绝对路径、数量上限与文件存在 | 最多12项；存在不等目标应用接受 |
+| 文件框探测 | 列举符合标题与输入框条件的原生窗口 | 未强制绑定PID/HWND/owner；探测结果不租约绑定后续调用 |
+| 填入并回读 | UIA、Win32及剪贴板/按键回退设置文件名 | 回读包含判断不等精确路径集合；前台和剪贴板副作用需核对 |
+| 可选确认 | 回读通过后按配置点击原生确认 | 确认消息发出不等对话框关闭或应用上传收据 |
+| 命令行交接 | 独立CLI复用参数与PowerShell链 | 仍要求Windows交互桌面和目标文件框 |
 
 **流程与依赖**
-
-#### 启动与依赖
 
 | 条件 | 用途 | 失效影响 |
 | --- | --- | --- |
@@ -66,8 +66,6 @@
 | Windows PS/.NET | Win32/UIA | 非Windows通常spawn失败 |
 | 交互桌面/权限 | 控件动作 | 焦点/权限差异 |
 | 单一已打开文件框 | 选目标 | 默认多框不拒绝 |
-
-#### 启动步骤
 
 | 步骤 | 执行者 | 判断标准 |
 | --- | --- | --- |
@@ -83,9 +81,6 @@
 | 首次使用 | Windows交互桌面/权限 | 打开框、核唯一目标 | 需Windows交互桌面/唯一对话框；准备工时未知 |
 | 持续使用 | PS进程、焦点和剪贴板；无插件模型请求 | 人工确认目标与应用附件结果 | 无插件模型请求；PS/焦点/剪贴板资源和成功率未计量 |
 | 失败恢复 | 候选/actual与应用附件状态 | 先查已发生动作，避免盲重试 | 先核actual与应用附件再重试；恢复工时未知 |
-
-
-#### 效果
 
 | 目标 | 源码支持 | 边界 |
 | --- | --- | --- |
@@ -115,6 +110,10 @@
 
 先观察，单可见框probe+click=false人工核对。详见[Q05](#research-q05)。
 
+<a id="innovation"></a>
+
+进一步从双框/换框、路径前缀、抢焦点和确认后超时研究租约/收据。
+
 <a id="detail-section-7"></a>
 
 ### 1.6 核查说明与分析版本
@@ -123,7 +122,10 @@
 
 回读与失败现场设计可查；目标非必选身份、子串校验和全局输入限制自动确认。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/plan.js、lib/handover.js、lib/handover.ps1、bin/dsh-file-handover.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、lib/index.js、lib/handover.js、package.json、lib/plan.js、lib/handover.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定Node入口、路径校验、参数构造及PowerShell窗口枚举、填入、回读、确认和剪贴板回退实现；未启动PowerShell或目标窗口。
+- 下一步：- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/plan.js、lib/handover.js、lib/handover.ps1、bin/dsh-file-handover.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
 - 边界：固定完整plan/Node编排和宿主注册、PowerShell定位/回读/fallback/确认关键链、CLI/README；不执行桌面。
 - 下一步：进一步从双框/换框、路径前缀、抢焦点和确认后超时研究租约/收据。
@@ -131,18 +133,24 @@
 **分析版本**
 
 - **仓库**：[7gzgn/dsh-file-handover](https://github.com/7gzgn/dsh-file-handover)
-- **版本号**：0.2.1（[固定提交 e1c6158](https://github.com/7gzgn/dsh-file-handover/tree/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f)）
-- **版本日期**：2026-10-18（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.1（[固定提交 4463319](https://github.com/7gzgn/dsh-file-handover/tree/44633197f2fa93823f796f046a740c8d88e9b7d0)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
+<a id="innovation"></a>
 
 研究目标租约、精确路径集合与应用回执，拒多候选并限制全局输入，比较误投/重复确认。当前未验证。详见[Q05](#research-q05)。
 
 进一步从双框/换框、路径前缀、抢焦点和确认后超时研究租约/收据。
+
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/plan.js、lib/handover.js、lib/handover.ps1、bin/dsh-file-handover.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
+- 边界：固定完整plan/Node编排和宿主注册、PowerShell定位/回读/fallback/确认关键链、CLI/README；不执行桌面。
+- 下一步：进一步从双框/换框、路径前缀、抢焦点和确认后超时研究租约/收据。
 
 <a id="detail-section-9"></a>
 
@@ -150,6 +158,8 @@
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -161,17 +171,17 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+created%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T06%3A24%3A33.147Z..2026-10-22T06%3A24%3A33.147Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/7gzgn/dsh-file-handover/issues?q=is%3Aissue+created%3A2026-10-06T06%3A34%3A44.234Z..2026-11-05T06%3A34%3A44.234Z)
 
+暂未获取：近30天关闭。
 
-
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Windows原生文件框交接怎样定位目标/回读/确认，其结果可支持什么自动化责任？
+**插件研究总目标**：Windows文件选择任务能否把指定文件交给正确应用，并分清填入、确认与应用接受？
 
 <a id="research-q01"></a>
 
@@ -187,9 +197,11 @@
 
 成功层级必须分清探测到框、路径回读、点击确认以及应用确实收到文件。README本身要求最后用浏览器/应用回读名字字节数；工具ok最多表明脚本这段动作满足其判断，不能替代发布、上传、发送结果。描述“目标总显式”与参数实际能力不一致，绝对文件路径显式不等目标窗口身份显式。
 
+当前包描述写“不依赖原生文件对话框”，但实际handOverFile仍执行handover.ps1并寻找#32770原生文件框；描述不构成无原生对话框的能力，研究按Windows原生框交接核查。
+
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:46-59](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/README.md#L46-L59)
+**依据 1 · 作者声明**：[README.md:46-59](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/README.md#L46-L59)
 
 工具配合与外部回读。
 
@@ -215,7 +227,7 @@ handover_file  path=... [timeoutSec] [dryRun] [expectTitle] [maxAttempts] [click
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:69-87](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/index.js#L69-L87)
+**依据 2 · 源码核查**：[lib/index.js:69-87](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/index.js#L69-L87)
 
 工具参数无窗口ID/PID。
 
@@ -246,7 +258,7 @@ handover_file  path=... [timeoutSec] [dryRun] [expectTitle] [maxAttempts] [click
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.js:70-103](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js#L70-L103)
+**依据 3 · 源码核查**：[lib/handover.js:70-103](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.js#L70-L103)
 
 结果封装。
 
@@ -292,6 +304,22 @@ export async function runHandover(input = {}, deps = {}) {
 
 </details>
 
+**依据 4 · 作者声明**：[package.json:1-9](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/package.json#L1-L9)
+
+包描述需与实际PowerShell原生框链区分。
+
+```text
+{
+  "name": "dsh-file-handover",
+  "version": "0.2.1",
+  "description": "把本机文件递给会话或网页，不弹系统文件对话框。 Hand a local file to a session or a page without opening the native file dialog.",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "dsh-file-handover": "bin/dsh-file-handover.mjs"
+  },
+```
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
@@ -308,7 +336,7 @@ plan校验文件绝对路径/最多12个，stat逐个确认文件，组argv不�
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/plan.js:36-69](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/plan.js#L36-L69)
+**依据 1 · 源码核查**：[lib/plan.js:36-69](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/plan.js#L36-L69)
 
 校验。
 
@@ -354,7 +382,7 @@ export function validateInput(input = {}) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/plan.js:112-149](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/plan.js#L112-L149)
+**依据 2 · 源码核查**：[lib/plan.js:112-149](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/plan.js#L112-L149)
 
 argv与ExecutionPolicy。
 
@@ -404,7 +432,7 @@ export function buildPsCommand(input, { scriptPath, powershell = 'powershell.exe
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.js:25-31](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js#L25-L31)
+**依据 3 · 源码核查**：[lib/handover.js:25-31](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.js#L25-L31)
 
 解释器配置。
 
@@ -418,7 +446,7 @@ export function defaultPowerShell() {
   return process.env.DSH_FILE_HANDOVER_POWERSHELL ?? 'powershell.exe';
 ```
 
-**依据 4 · 源码核查**：[lib/handover.ps1:1-25](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L1-L25)
+**依据 4 · 源码核查**：[lib/handover.ps1:1-25](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L1-L25)
 
 Win32与ASCII取舍。
 
@@ -455,7 +483,7 @@ Win32与ASCII取舍。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/handover.ps1:236-262](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L236-L262)
+**依据 5 · 源码核查**：[lib/handover.ps1:236-262](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L236-L262)
 
 装配/选框。
 
@@ -494,7 +522,7 @@ try {
 
 </details>
 
-**依据 6 · 源码核查**：[package.json:38-44](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/package.json#L38-L44)
+**依据 6 · 源码核查**：[package.json:38-44](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/package.json#L38-L44)
 
 Node声明。
 
@@ -524,7 +552,7 @@ Test-Filled先比较整串，再检查每个路径是否是actual子串，连单
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/handover.ps1:66-73](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L66-L73)
+**依据 1 · 源码核查**：[lib/handover.ps1:66-73](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L66-L73)
 
 子串回读。
 
@@ -539,7 +567,7 @@ function Test-Filled([string]$actual) {
   return $true
 ```
 
-**依据 2 · 源码核查**：[lib/handover.ps1:250-281](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L250-L281)
+**依据 2 · 源码核查**：[lib/handover.ps1:250-281](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L250-L281)
 
 首结构匹配与dry-run。
 
@@ -583,7 +611,7 @@ function Test-Filled([string]$actual) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.ps1:172-180](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L172-L180)
+**依据 3 · 源码核查**：[lib/handover.ps1:172-180](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L172-L180)
 
 确认fallback发消息又返回false。
 
@@ -599,7 +627,7 @@ function Test-Filled([string]$actual) {
         return false;
 ```
 
-**依据 4 · 源码核查**：[lib/handover.ps1:369-432](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L369-L432)
+**依据 4 · 源码核查**：[lib/handover.ps1:369-432](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L369-L432)
 
 剪贴板/焦点/拒绝未回读。
 
@@ -675,7 +703,7 @@ function Test-Filled([string]$actual) {
 
 </details>
 
-**依据 5 · 源码核查**：[lib/handover.ps1:435-454](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L435-L454)
+**依据 5 · 源码核查**：[lib/handover.ps1:435-454](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L435-L454)
 
 确认无应用回执。
 
@@ -723,7 +751,7 @@ Node给子进程timeout=(timeoutSec+20)s，宿主工具固定180秒，但execute
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/handover.js:42-60](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js#L42-L60)
+**依据 1 · 源码核查**：[lib/handover.js:42-60](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.js#L42-L60)
 
 收集和spawn timeout。
 
@@ -754,7 +782,7 @@ function spawnAndCollect(spawnImpl, command, args, timeoutMs) {
 
 </details>
 
-**依据 2 · 源码核查**：[lib/handover.js:85-103](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.js#L85-L103)
+**依据 2 · 源码核查**：[lib/handover.js:85-103](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.js#L85-L103)
 
 硬限与记录。
 
@@ -785,7 +813,7 @@ function spawnAndCollect(spawnImpl, command, args, timeoutMs) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:35-36](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/index.js#L35-L36)
+**依据 3 · 源码核查**：[lib/index.js:35-36](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/index.js#L35-L36)
 
 宿主固定限时。
 
@@ -794,7 +822,7 @@ const SECTION_ORDER = 208;
 const TOOL_TIMEOUT_MS = 180000;
 ```
 
-**依据 4 · 源码核查**：[lib/index.js:110-130](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/index.js#L110-L130)
+**依据 4 · 源码核查**：[lib/index.js:110-130](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/index.js#L110-L130)
 
 执行未接signal。
 
@@ -827,7 +855,7 @@ const TOOL_TIMEOUT_MS = 180000;
 
 </details>
 
-**依据 5 · 源码核查**：[package.json:40-44](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/package.json#L40-L44)
+**依据 5 · 源码核查**：[package.json:40-44](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/package.json#L40-L44)
 
 test入口。
 
@@ -855,7 +883,7 @@ test入口。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/handover.ps1:66-73](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L66-L73)
+**依据 1 · 源码核查**：[lib/handover.ps1:66-73](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L66-L73)
 
 回读基线。
 
@@ -870,7 +898,7 @@ function Test-Filled([string]$actual) {
   return $true
 ```
 
-**依据 2 · 源码核查**：[lib/handover.ps1:250-281](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L250-L281)
+**依据 2 · 源码核查**：[lib/handover.ps1:250-281](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L250-L281)
 
 目标基线。
 
@@ -914,7 +942,7 @@ function Test-Filled([string]$actual) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/handover.ps1:369-454](https://github.com/7gzgn/dsh-file-handover/blob/e1c6158dbd4a4ec5c3057305d7d9c445edb9799f/lib/handover.ps1#L369-L454)
+**依据 3 · 源码核查**：[lib/handover.ps1:369-454](https://github.com/7gzgn/dsh-file-handover/blob/44633197f2fa93823f796f046a740c8d88e9b7d0/lib/handover.ps1#L369-L454)
 
 输入和确认基线。
 

@@ -1,0 +1,45 @@
+{
+    "repository": "PolinniZhong/dsh-omi-voice",
+    "repository_id": 1337972266,
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 75,
+    "pushed_at": "2026-08-28T06:41:49Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4f25861a660f6c27802fb6fc6d85c66ffb992d9",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-omi-voice",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1727,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-omi-voice",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-25T03:16:51.874Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-omi-voice",
+            "error": null,
+            "latest_version": "0.1.2",
+            "latest_published_at": "2026-08-25T03:16:52.063Z",
+            "latest_error": null
+        }
+    }
+}

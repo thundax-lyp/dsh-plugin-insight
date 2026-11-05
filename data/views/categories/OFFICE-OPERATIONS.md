@@ -301,7 +301,7 @@
 
 ## [dsh-file-handover](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md)
 
-
+[![npm 30d 714](https://img.shields.io/static/v1?label=npm+30d&message=714&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-file-handover) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-file-handover)
 
 > **用途**：浏览器上传/应用打开文件需要跨到Windows原生文件框。详见[Q01](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md#research-q01)。
 

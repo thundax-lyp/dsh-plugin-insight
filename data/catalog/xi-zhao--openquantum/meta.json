@@ -1,0 +1,27 @@
+{
+    "repository": "xi-zhao/OpenQuantum",
+    "repository_id": 1335086034,
+    "captured_at": "2026-11-05T06:34:44.234Z",
+    "window_start": "2026-10-06T06:34:44.234Z",
+    "stars": 71,
+    "pushed_at": "2026-11-05T02:55:24Z",
+    "issues": {
+        "open": 7,
+        "closed": 0,
+        "created_30d": 7,
+        "closed_30d": 0,
+        "updated_30d": 7
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "d4f25861a660f6c27802fb6fc6d85c66ffb992d9",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

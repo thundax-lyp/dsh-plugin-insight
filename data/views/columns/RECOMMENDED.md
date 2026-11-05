@@ -84,7 +84,6 @@
 | [dsh-rtl-chat](#plugin-1410794267-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 给会话消息区提供RTL/LTR切换和本地偏好，代码保持LTR，适合阿拉伯语阅读。 | 阿拉伯语为主的匹配Web宿主可本地试用，先核混排与代码，理解全局偏好；热卸载后留意残按钮样式。 |
 | [dsh-pick](#plugin-1423941835-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 从插件目录搜索、比较和排行 DSH 插件，并提供下载指标与宿主安装入口。 | 去噪与候选对照适合辅助选型，需独立核查适用性和安装权限。 |
 | [dsh-language-guard](#plugin-1424475406-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 用多位置系统提示、周期提醒和界面/命令配置设置DSH目标输出语言。 | 频繁语言漂移用户可从B/C小范围试用，按可见答复验收，临时命令不作多会话隔离保证。 |
-| [dsh-my-plugins](#plugin-1429766953-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。 | 适合明确profile的多插件用户作清单阅读辅助，先逐项核对包与描述来源；不要将数量和版本fallback当运行激活证明。 |
 | [dsh-ultramath](#plugin-1337487779-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 仅在隔离 profile/备份同名目录后用于辅助建模试点；结果必须人工独立核。 |
 | [DSH Cost Tracker](#plugin-1338230382-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH中记录模型调用用量与估算费用，提供账本、可视化、余额和可选云同步。 | 需要会话费用线索且能准备可丢弃宿主副本的用户，可在副本仅试本地账本。 |
 | [dsh-cua-pre](#plugin-1346533795-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。 | 仅在隔离 Windows 桌面、明确目标应用、保留人工确认的低风险任务试点；故障后重观察。 |
@@ -112,6 +111,7 @@
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
 | [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。 | 已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。 |
 | [Supergraph](#plugin-1232531989-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为编码 Agent 集成工程工作流、代码图上下文和协作工具，包含 DSH Host 与客户端接入。 | 需要处理跨模块改动的 DSH 维护者可以在隔离 Profile 试一次图辅助扫描。 |
+| [Token Bank](#plugin-1233571420-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。 | 需要比较多个模型来源的 DSH 开发者，可以在隔离配置里用模拟上游试验网关降级。 |
 
 <a id="plugin-1422943787-root"></a>
 
@@ -1697,28 +1697,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1429766953-root"></a>
-
-## [dsh-my-plugins](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md)
-
-[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
-
-[![npm 30d 519](https://img.shields.io/static/v1?label=npm+30d&message=519&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-my-plugins) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-my-plugins)
-
-**主要用途**：在顶栏提供可搜索插件清单，显示所选 profile 的包名、版本、说明和分类。
-
-**建议**：试用
-
-**推荐理由**：适合明确profile的多插件用户作清单阅读辅助，先逐项核对包与描述来源；不要将数量和版本fallback当运行激活证明。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：明确设置DSH_PROFILE并仅把它当包清单阅读辅助的人可受控试用。首次检查profile名称、声明bundle和实装版本一致，再搜索一个已知插件并强刷；持续有同步文件读取、面板渲染、市场HTTP与缓存写，未调用模型但不能标零成本。包缺失、市场不可用可降级描述，人工需核对未知而不是信任数量。成功是清单逐项对应所选profile，描述来源不误认作者，禁用后overlay移除；若误选profile或把声明版本/启发式入口当运行状态，应停止依赖这些字段排障。真实节时和大规模插件延迟无数据。 [Q04](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md#research-q04)
-
-[查看完整分析 →](../../plugins/7gzgn--dsh-my-plugins/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1337487779-root"></a>
 
 ## [dsh-ultramath](../../plugins/andiii208--dsh-ultramath/INSIGHT.md)
@@ -2310,6 +2288,28 @@
 **试用条件**：在隔离 Profile 只试一个项目的扫描，核对图结论与实际改动；失败即回到 Git diff 与测试。见 [Q03](../../plugins/datit309--supergraph/INSIGHT.md#research-q03)。
 
 [查看完整分析 →](../../plugins/datit309--supergraph/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1233571420-root"></a>
+
+## [Token Bank](../../plugins/wink-run--tokenbank/INSIGHT.md)
+
+[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
+
+[![GitHub ★ 111](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=111&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wink-run/tokenbank)
+
+**主要用途**：独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。
+
+**建议**：试用
+
+**推荐理由**：需要比较多个模型来源的 DSH 开发者，可以在隔离配置里用模拟上游试验网关降级。相比上游拒绝后手工换配置，网关能在候选链中记录冷却并尝试可用来源。若流式输出受损或配置无法恢复，就停止接管并回到直连。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：只用模拟上游和临时配置检验接管、失败与退出，不能确认恢复就保留直连。见 [Q03](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q03)。
+
+[查看完整分析 →](../../plugins/wink-run--tokenbank/INSIGHT.md)
 
 [返回表格](#column-index)
 
