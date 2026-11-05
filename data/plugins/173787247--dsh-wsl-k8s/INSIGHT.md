@@ -1,18 +1,18 @@
 # dsh-wsl-k8s
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[003a48d](https://github.com/173787247/dsh-wsl-k8s/tree/003a48d9e45841b4f0869d9e3eaad2275bab485b)
+源码版本：[71e6c1c](https://github.com/173787247/dsh-wsl-k8s/tree/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b)
 
 <!-- BEGIN META -->
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-k8s)
 <!-- END META -->
 
-> **功能**：将 kubectl 状态、上下文、get、describe 与日志读取封装为 DSH 工具。
+> **功能**：在 DSH 中查询 kubectl 上下文、资源状态、对象详情和 Pod 日志。
 
-> **亮点**：将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 把常用查询整理为结构化 DSH 工具，并为日志设置尾行和输出边界。
 
-> **主要限制**：allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeconfig 当前集群；contexts 过滤仅影响显示，status 也不门控。不能将该配置当生产隔离。详见[Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) 允许列表只限制显式 context。默认探测和读取仍可能使用其他当前集群，工具入口也不能代替 RBAC。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要它，交付哪些诊断信息？](#detail-section-11)
-  - [Q02 · 命令白名单、输出和日志上限如何实现？](#detail-section-12)
-  - [Q03 · allowedContexts 是否严格限制所有集群查询？](#detail-section-13)
-  - [Q04 · 采用负担和最小改进验证是什么？](#detail-section-14)
+  - [Q01 · 值班者能从 DSH 获得哪些 Kubernetes 排障线索？](#detail-section-11)
+  - [Q02 · 只读与 context 限制在哪些分支生效？](#detail-section-12)
+  - [Q03 · 在什么条件下可以评估这组工具，失败时怎么判断？](#detail-section-13)
+  - [Q04 · 把上下文绑定到每个访问集群的工具是否更可靠？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：已有 kubeconfig 的开发/运维人员用 DSH 辅助集群只读排障。
+> **用途**：值班者在已有 kubeconfig 的机器上，需要从 Pod 状态和日志定位部署异常。
 
-手工 kubectl get/describe/logs 后把输出交给 AI；插件把固定只读子命令嵌入 DSH tool。
+直接执行 kubectl 可取得同一原始材料，并明确控制上下文和输出。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +51,60 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| status/contexts | 查 kubectl 和当前配置 | status 会触达当前集群，清单仅过滤展示 |
-| get/describe | 读对象状态与细节 | 必须核 RBAC 和实际 context |
-| logs | 截尾读取 Pod 日志 | 可能含敏感内容，tail 有上限 |
+| 上下文与状态 | 定位 kubeconfig 及目标 | 状态使用当前 context |
+| 资源与日志 | 采集排障线索 | 权限由集群控制，输出可截断 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| kubectl/kubeconfig | 必需 | 连接目标集群 | 工具失败或走错误当前上下文 |
-| RBAC 最小权限 | 生产必需 | 限实际读取 | 插件白名单不能代替 |
-| DSH tools/systemPrompt | 注册必需 | 模型工具和提示 | 缺失时不可用 |
-| allowedContexts | 可选 | 显式 context 筛选 | 省略 context 不受其约束 |
-
+| kubectl 与测试 kubeconfig | 必需 | 读取目标集群 | 无连接或凭据时无法取证 |
+| 最小 RBAC 权限 | 受控试用必需 | 限定实际读取范围 | 可能访问超出预期的资源 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 用户配置独立低权限 kubeconfig | 当前/允许集群明确 |
-| 探测 | Agent 查 status/contexts | 与用户预期一致，注意清单只过滤显示 |
-| 查询 | 显式指定 context、namespace、对象 | 有用结果且无敏感误泄露 |
-| 退出 | 用户停用并核工具消失 | 本轮未做宿主验收 |
+| 准备 | 用户建立单集群测试配置 | 无生产凭据 |
+| 取证 | 用户显式选择 context 和 namespace | 同原生命令核对对象 |
+| 退出 | 用户切回原生命令 | 不使用空输出判断资源不存在 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | kubectl、网络与集群资源，现金未知 | 配 kubeconfig、RBAC 和允许集群 | 宿主安装未验 |
-| 持续使用 | 每次进程/API 请求与日志上下文 | 核查询目标和敏感输出 | 延迟/配额未测 |
-| 失败恢复 | 超时/重试资源未知 | 查 context、RBAC、网络、对象 | 不应放宽权限掩盖故障 |
-
+| 首次 | 集群资源未知 | 准备 kubeconfig 和 RBAC | 须验证当前默认 context |
+| 持续 | 日志采集开销未知 | 复核输出完整性 | 长输出可能截断 |
+| 失败 | 诊断成本未知 | 核对 stderr、权限和网络 | 工具文本可能省略错误 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 常用只读查询 | get/describe/logs/status/context 源码可见 | 真实集群诊断正确性和延迟 |
-| 输出边界 | tail 和 stdout 裁剪可见 | 巨量 stderr 和参数解析行为 |
-| 上下文清单 | 显式 context 可拒绝 | 省略 context 时当前集群不门控 |
+| 诊断 | 可读取状态与日志尾部 | 排障实际节时 |
+| 目标限制 | 仅显式 context 有允许值检查 | 宿主 RBAC 与选项处理 |
 
-> **思考**：allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeconfig 当前集群；contexts 过滤仅影响显示，status 也不门控。不能将该配置当生产隔离。详见[Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) 允许列表只限制显式 context。默认探测和读取仍可能使用其他当前集群，工具入口也不能代替 RBAC。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将常用 kubectl 只读查询做成模型工具并限制动词与输出，减少手工复制诊断信息；集群权限和语义仍由 kubectl/RBAC 提供。详见[Q01](#research-q01)、[Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 把常用查询整理为结构化 DSH 工具，并为日志设置尾行和输出边界。
 
-spawn 独立 argv 且只暴露固定工具，避免任意 shell 命令；只读动词与输出裁剪降低一般副作用。允许清单只检查显式 context，且资源名称/输出格式未作完整参数语义验证。
+[Q02](#research-q02) 直接 spawn 消除 shell 插值，但参数字段仍由 kubectl 解析。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeconfig 当前集群；contexts 过滤仅影响显示，status 也不门控。不能将该配置当生产隔离。详见[Q03](#research-q03)。
+[Q02](#research-q02) 允许列表只限制显式 context。默认探测和读取仍可能使用其他当前集群，工具入口也不能代替 RBAC。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-建议观察。先在独立低权限测试集群核默认/显式 context 和敏感输出，再考虑用于实际排障；生产不依赖 allowedContexts 单独隔离。详见[Q04](#research-q04)。
+[Q03](#research-q03) 只在无生产凭据的测试 profile 验证两类 context 和非零退出，确认读取边界后再评估采用。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +112,18 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 
 **核查状态**：已检查源码。
 
-只读动词和输出限制有源码证据；allowedContexts 未约束省略 context 的当前集群，实际 RBAC/宿主行为未验证；默认门控是假设。
+固定源码证实查询注册、参数和默认上下文路径。访问控制效果、诊断增益与假设仍需验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/kubectl.js、test/k8s.test.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、index.js、lib/kubectl.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交阅读 README、工具入口、kubectl runner 与单测源码；未运行目标代码或接触 kubeconfig/集群。
-- 下一步：在两个隔离测试集群用同 kubeconfig 切换当前上下文，比较省略/显式 context、敏感对象、输出/错误和退出行为。
+- 边界：固定源码与作者说明。未运行插件、kubectl、宿主或测试集群。
+- 下一步：用测试集群验收 context、RBAC、非零退出、截断与否定输入。
 
 **分析版本**
 
 - **仓库**：[173787247/dsh-wsl-k8s](https://github.com/173787247/dsh-wsl-k8s)
-- **版本号**：0.1.1（[固定提交 003a48d](https://github.com/173787247/dsh-wsl-k8s/tree/003a48d9e45841b4f0869d9e3eaad2275bab485b)）
-- **版本日期**：2026-09-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1（[固定提交 71e6c1c](https://github.com/173787247/dsh-wsl-k8s/tree/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +131,9 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 
 <a id="innovation"></a>
 
-可对所有查询解析并固定当前 context，非允许上下文拒绝，配合两测试集群比较误放行、误拒与延迟；本版未实现。详见[Q04](#research-q04)。
+[Q04](#research-q04) 在所有远端探测前绑定并回显实际 context，有机会减少跨集群误读，需以两个测试集群做请求对照。
 
-在两个隔离测试集群用同 kubeconfig 切换当前上下文，比较省略/显式 context、敏感对象、输出/错误和退出行为。
+用测试集群验收 context、RBAC、非零退出、截断与否定输入。
 
 <a id="detail-section-9"></a>
 
@@ -148,6 +141,8 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 
 <details>
 <summary>工程统计</summary>
+
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
@@ -159,46 +154,40 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+created%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-22T05%3A22%3A13.264Z..2026-10-22T05%3A22%3A13.264Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+created%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/173787247/dsh-wsl-k8s/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T02%3A01%3A36.775Z..2026-11-05T02%3A01%3A36.775Z)
 
 
 
-统计日期：2026-10-22。
+统计日期：2026-11-05。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：判断固定版本只读 Kubernetes 工具的查询能力、集群上下文边界和真实采用条件。
+**插件研究总目标**：值班者能否在 DSH 中读取足以定位故障的 Kubernetes 线索，并限制到预期集群？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要它，交付哪些诊断信息？
+### Q01 · 值班者能从 DSH 获得哪些 Kubernetes 排障线索？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-本包面向已配置 kubectl/kubeconfig、需要让 DSH 读取 Kubernetes 对象状态和日志的开发或运维人员。工具提供 k8s_status、k8s_contexts、k8s_get、k8s_describe、k8s_logs；合格结果是明确所查集群/命名空间、输出未被误截断、日志足够用于排障，同时不会意外把其它上下文或敏感对象返回给模型。README 最短说明强调 get/describe/logs 不做 apply/delete/exec，入口实际还有 status 与 contexts。
-
-原办法是用户手动执行相同 kubectl 命令再贴给 AI。插件的增量是把常用只读命令封装为有参数的模型工具，限制动词、日志尾数和返回长度，并让用户可配置上下文清单；它并未创建新的集群诊断算法，也不能替代 Kubernetes RBAC。读取 Secret、ConfigMap 或 Pod 日志仍可能暴露敏感值，不能用“只读”推断无安全成本。
+值班者可以先看 context，再获取 Pod 或 Deployment 状态、describe 细节和某容器的日志尾部。相比离开会话手动组织 kubectl 命令，插件新增的是有参数结构的模型工具和输出约束，集群的查询能力来自 kubectl。日志使用固定尾行参数，配置允许调节但夹在 1 至 2000。源码实际注册 status、contexts、get、describe、logs，系统提示列出的 top 和 config view 没有独立工具。合格结果应明确来自哪个集群和命名空间，并能够回到原命令核实；需要历史日志、指标或修复时仍要其他入口。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-38](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/README.md#L1-L38)
+**依据 1 · 作者声明**：[README.md:5-14](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/README.md#L5-L14)
 
-作者声明只读诊断用途、安装与 allowedContexts 配置。
+作者把用途定位为现有 kubeconfig 下的诊断。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（10行）</summary>
 
 ````text
-# dsh-wsl-k8s
-
-> **语言：** **中文**（本页） · [English](./README.en.md)
-
 只读 **kubectl** 工具：`k8s_get` / `k8s_describe` / `k8s_logs`。
 
 **不能** apply / delete / exec / port-forward。适合排障看状态，不改集群。
@@ -209,40 +198,13 @@ allowedContexts 对空 context 直接放行，get/describe/logs 可沿用 kubeco
 # kubectl 已配置好 kubeconfig
 dsh plugin --profile web add github:173787247/dsh-wsl-k8s
 ```
-
-## 工具
-
-| 工具 | 作用 |
-|------|------|
-| `k8s_status` | kubectl 是否可用、当前 context |
-| `k8s_get` | `kubectl get`（输出有长度上限） |
-| `k8s_describe` | `kubectl describe` |
-| `k8s_logs` | Pod 日志（截断） |
-
-## 配置
-
-```yaml
-config:
-  enabled: true
-  timeoutMs: 30000
-  maxOutputChars: 40000
-  # 非空时只允许这些 context；空 = 不限制（仍只读）
-  allowedContexts: []
-  # 例: allowedContexts: [dev, staging]
-```
-
-生产集群建议显式写 `allowedContexts`，并保证 kubeconfig 本身权限最小。
-
 ````
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:18-35](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L18-L35)
+**依据 2 · 源码核查**：[index.js:18-24](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L18-L24)
 
-status 工具与提示文字列明上下文/查询类别。
-
-<details>
-<summary>查看原文（18行）</summary>
+提示文案与工具接线须区分。
 
 ```text
   ctx.systemPrompt.section({
@@ -252,96 +214,63 @@ status 工具与提示文字列明上下文/查询类别。
   });
 
   ctx.tools.register({
-    name: "k8s_status",
-    description: "kubectl client/server reachability, current context, and context count (read-only).",
+```
+
+**依据 3 · 源码核查**：[index.js:63-97](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L63-L97)
+
+上下文列表及筛选。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+  ctx.tools.register({
+    name: "k8s_contexts",
+    description: "List kubectl contexts (name/cluster/current). Honors allowedContexts filter when set.",
     parameters: { type: "object", additionalProperties: false, properties: {} },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: JSON.stringify(v, null, 2) }] },
+    output: {
+      schema: { type: "object", additionalProperties: true },
+      render: (_a, v) => [
+        {
+          type: "text",
+          text:
+            v.ok === false
+              ? v.error
+              : (v.contexts || [])
+                  .map((c) => `${c.current ? "*" : " "} ${c.name}\tcluster=${c.cluster || "-"}\tns=${c.namespace || "-"}`)
+                  .join("\n") || "(none)",
+        },
+      ],
+    },
     timeoutMs,
     isConcurrencySafe: () => true,
     async execute() {
       try {
-        const ver = await runKubectl(["version", "--client=true", "-o", "yaml"], { timeoutMs, maxOutputChars });
-        const ctxOut = await runKubectl(["config", "current-context"], { timeoutMs, maxOutputChars });
-        const listOut = await runKubectl(["config", "get-contexts"], { timeoutMs, maxOutputChars });
+        assertReadonlyArgs(["config", "get-contexts"]);
+        const out = await runKubectl(["config", "get-contexts"], { timeoutMs, maxOutputChars });
+        if (out.code !== 0) throw new Error(out.stderr || `exit ${out.code}`);
+        let contexts = parseContextsTable(out.stdout);
+        if (allowedContexts.length) {
+          contexts = contexts.filter((c) => allowedContexts.includes(c.name));
+        }
+        return {
+          ok: true,
+          count: contexts.length,
+          current: contexts.find((c) => c.current)?.name || null,
+          contexts: contexts.slice(0, 100),
+        };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:106-207](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L106-L207)
+**依据 4 · 源码核查**：[index.js:173-200](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L173-L200)
 
-get/describe/logs 的实际参数与输出路径。
+日志真实参数与执行。
 
 <details>
-<summary>查看原文（102行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "k8s_get",
-    description: "kubectl get RESOURCE (read-only). Optional namespace and context.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["resource"],
-      properties: {
-        resource: { type: "string", description: "e.g. pods, deploy, svc/my-svc" },
-        namespace: { type: "string" },
-        context: { type: "string" },
-        output: { type: "string", description: "wide|yaml|json|name (default wide)" },
-      },
-    },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        const context = guardContext(args.context, allowedContexts);
-        const a = ["get", String(args.resource)];
-        if (args.namespace) a.push("-n", String(args.namespace));
-        a.push("-o", String(args.output || "wide"));
-        assertReadonlyArgs(a);
-        const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
-        return { ok: out.code === 0, ...out };
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s get" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s get", content: r.content }),
-  });
-
-  ctx.tools.register({
-    name: "k8s_describe",
-    description: "kubectl describe RESOURCE NAME (read-only).",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["resource", "name"],
-      properties: {
-        resource: { type: "string" },
-        name: { type: "string" },
-        namespace: { type: "string" },
-        context: { type: "string" },
-      },
-    },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
-    timeoutMs,
-    isConcurrencySafe: () => true,
-    async execute(args) {
-      try {
-        const context = guardContext(args.context, allowedContexts);
-        const a = ["describe", String(args.resource), String(args.name)];
-        if (args.namespace) a.push("-n", String(args.namespace));
-        assertReadonlyArgs(a);
-        const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
-        return { ok: out.code === 0, ...out };
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s describe" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s describe", content: r.content }),
-  });
-
   ctx.tools.register({
     name: "k8s_logs",
     description: "kubectl logs POD (tail capped by config.maxTail, default 500). Read-only.",
@@ -370,102 +299,13 @@ get/describe/logs 的实际参数与输出路径。
         assertReadonlyArgs(a);
         const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
         return { ok: out.code === 0, tail, ...out };
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s logs" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s logs", content: r.content }),
-  });
 ```
 
 </details>
 
-<a id="research-q02"></a>
+**依据 5 · 源码核查**：[lib/kubectl.js:55-61](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L55-L61)
 
-<a id="detail-section-12"></a>
-
-### Q02 · 命令白名单、输出和日志上限如何实现？
-
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
-
-#### 完整回答
-
-工具通过 Node spawn('kubectl', finalArgs) 传单独 argv，stdin 忽略、stdout/stderr 管道读取，超时杀子进程。assertReadonlyArgs 允许 get、describe、logs 等读动词，拒绝写动词、config 的非查询子命令以及 --raw；入口只构造 status/contexts/get/describe/logs 五个工具。get 允许 resource、namespace、context、output；describe 用 resource/name；logs 用 pod/container 和默认100、最大受配置限制且硬上限2000的 tail。stdout 默认截到40000字符，stderr 截到4000，过大 stdout 会 kill。
-
-这能减少任意 shell 命令执行和无界日志进入模型上下文，但 output/resource/name 等来自调用者，并未验证以 '-' 起始的值是否会被 kubectl 当作额外选项；参数并非 shell 注入，也不能仅凭静态代码断言可越权。stderr 在截断前持续字符串累积，强大量 stderr 的内存边界不如 stdout 明确。状态工具中的 server reachability 会向当前 kubeconfig 集群请求版本，与单纯本地命令检查不同。运行依赖可执行 kubectl、有效 kubeconfig 和 Kubernetes RBAC；README 所称 WSL 套件归属不等于本组件强制检测 WSL。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/kubectl.js:3-53](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/lib/kubectl.js#L3-L53)
-
-读动词筛选和禁止 --raw 的精确范围。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-const WRITE_VERBS = new Set([
-  "apply",
-  "create",
-  "delete",
-  "edit",
-  "patch",
-  "replace",
-  "scale",
-  "rollout",
-  "exec",
-  "cp",
-  "run",
-  "expose",
-  "annotate",
-  "label",
-  "taint",
-  "cordon",
-  "drain",
-  "uncordon",
-]);
-
-export function assertReadonlyArgs(args) {
-  const list = Array.isArray(args) ? args.map(String) : [];
-  if (!list.length) throw new Error("kubectl args required");
-  // allow: get, describe, logs, top, api-resources, version, cluster-info, config view/get-contexts/current-context
-  const allowed = new Set([
-    "get",
-    "describe",
-    "logs",
-    "top",
-    "api-resources",
-    "api-versions",
-    "version",
-    "cluster-info",
-    "explain",
-    "auth",
-    "config",
-  ]);
-  if (!allowed.has(list[0])) throw new Error(`kubectl verb not allowed: ${list[0]} (read-only plugin)`);
-  if (WRITE_VERBS.has(list[0])) throw new Error("write verb blocked");
-  if (list[0] === "config") {
-    const sub = list[1] || "";
-    const okSub = new Set(["view", "get-contexts", "current-context", "get-clusters"]);
-    if (!okSub.has(sub)) throw new Error(`kubectl config subcommand not allowed: ${sub}`);
-  }
-  if (list[0] === "auth" && list[1] !== "can-i") throw new Error("only kubectl auth can-i allowed");
-  for (const a of list) {
-    if (a === "--raw" || a.startsWith("--raw=")) throw new Error("--raw blocked");
-  }
-  return list;
-}
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/kubectl.js:55-93](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/lib/kubectl.js#L55-L93)
-
-tail、spawn、超时、stdout/stderr 裁剪。
-
-<details>
-<summary>查看原文（39行）</summary>
+日志尾行限幅。
 
 ```text
 export function clampTail(tail, { defaultTail = 100, maxTail = 500 } = {}) {
@@ -475,67 +315,38 @@ export function clampTail(tail, { defaultTail = 100, maxTail = 500 } = {}) {
   if (!Number.isFinite(n) || n <= 0) return d;
   return Math.min(max, Math.max(1, Math.floor(n)));
 }
-
-export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, context } = {}) {
-  const finalArgs = [...args];
-  if (context) finalArgs.unshift("--context", String(context));
-  return new Promise((resolve, reject) => {
-    const child = spawn("kubectl", finalArgs, { stdio: ["ignore", "pipe", "pipe"] });
-    let stdout = "";
-    let stderr = "";
-    const t = setTimeout(() => {
-      child.kill("SIGKILL");
-      reject(new Error("kubectl timeout"));
-    }, timeoutMs);
-    child.stdout.on("data", (d) => {
-      stdout += d;
-      if (stdout.length > maxOutputChars * 2) child.kill("SIGKILL");
-    });
-    child.stderr.on("data", (d) => (stderr += d));
-    child.on("close", (code) => {
-      clearTimeout(t);
-      resolve({
-        code,
-        stdout: stdout.slice(0, maxOutputChars),
-        stderr: stderr.slice(0, 4000),
-        truncated: stdout.length > maxOutputChars,
-      });
-    });
-    child.on("error", (e) => {
-      clearTimeout(t);
-      reject(e);
-    });
-  });
-}
 ```
 
-</details>
+#### 缺口
 
-**依据 3 · 源码核查**：[index.js:106-207](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L106-L207)
+- 未比较排障耗时和错误诊断
+  **影响**：无法量化工具化的实际增益
+  **进一步探讨**：同一测试事故记录直接命令与会话工具的取证时间和正确率
 
-五工具中三种对象查询的调用参数。
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 只读与 context 限制在哪些分支生效？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+get、describe、logs 固定首个 kubectl 子命令，检查允许动词并拦截 --raw，直接 spawn 可避免 shell 展开。但 get 的 resource、describe 的 name、logs 的 pod 等直接作为参数传给 kubectl，没有用参数分隔符或逐字段验证拒绝以连字符开头的 token。插件自身不会挡下所有 kubectl 选项。实际可接受和优先级取决于 kubectl 解析，源码不能证明集群授权或任意旗标的效果。
+
+allowedContexts 只在 context 参数显式非空时做成员检查。省略或空白返回 undefined，不向 kubectl 传 --context，于是使用当前 kubeconfig，哪怕它不在配置列表。status 的 server version 也直接用当前 kubeconfig，而 contexts 仅过滤其展示列表。get 没有限制资源种类，日志和资源数据可含敏感内容，进程权限仍由 kubeconfig 及服务器 RBAC 决定。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:123-132](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L123-L132)
+
+get 参数构造及运行。
 
 <details>
-<summary>查看原文（102行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-  ctx.tools.register({
-    name: "k8s_get",
-    description: "kubectl get RESOURCE (read-only). Optional namespace and context.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["resource"],
-      properties: {
-        resource: { type: "string", description: "e.g. pods, deploy, svc/my-svc" },
-        namespace: { type: "string" },
-        context: { type: "string" },
-        output: { type: "string", description: "wide|yaml|json|name (default wide)" },
-      },
-    },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
-    timeoutMs,
-    isConcurrencySafe: () => true,
     async execute(args) {
       try {
         const context = guardContext(args.context, allowedContexts);
@@ -546,30 +357,15 @@ export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, 
         const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
         return { ok: out.code === 0, ...out };
       } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s get" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s get", content: r.content }),
-  });
+```
 
-  ctx.tools.register({
-    name: "k8s_describe",
-    description: "kubectl describe RESOURCE NAME (read-only).",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["resource", "name"],
-      properties: {
-        resource: { type: "string" },
-        name: { type: "string" },
-        namespace: { type: "string" },
-        context: { type: "string" },
-      },
-    },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
-    timeoutMs,
-    isConcurrencySafe: () => true,
+</details>
+
+**依据 2 · 源码核查**：[index.js:157-165](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L157-L165)
+
+describe 直接传 name。
+
+```text
     async execute(args) {
       try {
         const context = guardContext(args.context, allowedContexts);
@@ -579,31 +375,16 @@ export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, 
         const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
         return { ok: out.code === 0, ...out };
       } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s describe" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s describe", content: r.content }),
-  });
+```
 
-  ctx.tools.register({
-    name: "k8s_logs",
-    description: "kubectl logs POD (tail capped by config.maxTail, default 500). Read-only.",
-    parameters: {
-      type: "object",
-      additionalProperties: false,
-      required: ["pod"],
-      properties: {
-        pod: { type: "string" },
-        namespace: { type: "string" },
-        container: { type: "string" },
-        tail: { type: "number", description: `Lines from end (default ${defaultTail}, max ${maxTail})` },
-        context: { type: "string" },
-      },
-    },
-    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
-    timeoutMs,
-    isConcurrencySafe: () => true,
+**依据 3 · 源码核查**：[index.js:191-201](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L191-L201)
+
+logs 直接传 pod 和容器。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
     async execute(args) {
       try {
         const context = guardContext(args.context, allowedContexts);
@@ -615,67 +396,13 @@ export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, 
         const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
         return { ok: out.code === 0, tail, ...out };
       } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
-    presentCall: () => ({ card: "generic", title: "k8s logs" }),
-    presentResult: (_a, r) => ({ card: "generic", title: "k8s logs", content: r.content }),
-  });
 ```
 
 </details>
 
-#### 缺口
+**依据 4 · 源码核查**：[index.js:31-53](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L31-L53)
 
-- 没有本轮 kubectl 版本下以连字符开头的模型参数和大量 stderr 对照。
-  **影响**：不能保证所有用户参数只作资源名，也不能量化进程/内存上界。
-  **进一步探讨**：在临时集群和假 kubectl 中测试参数解析、极长 stderr、超时与错误呈现。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · allowedContexts 是否严格限制所有集群查询？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-没有覆盖默认上下文。guardContext 对空 context 直接返回 undefined，即使 allowedContexts 非空；runKubectl 只有 context truthy 时才加入 --context，因此 get/describe/logs 在调用方不传 context 时仍使用 kubeconfig 当前上下文。若当前上下文不在 allowedContexts，配置字面意思与执行路径不一致。k8s_contexts 只是先运行 config get-contexts 再过滤显示列表；这不改变当前上下文或限制其它查询。k8s_status 也直接运行 current-context 与 server version，并返回 currentContext，不经过允许清单。
-
-所以 allowedContexts 至多约束显式传入的 context；真实集群访问仍受 kubeconfig/RBAC 约束，但不该把该配置称为生产集群的充分隔离。源码测试断言 guardContext('prod',['dev']) 会抛错，却没有测试空 context 加白名单、当前上下文不在白名单的读取路径。get/describe/logs 的只读性质不消除对生产 Secret、日志或资源元数据的查看风险。此结论是固定源码语义，并未实际访问集群。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/kubectl.js:63-66](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/lib/kubectl.js#L63-L66)
-
-未传 context 时 finalArgs 不加 --context。
-
-```text
-export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, context } = {}) {
-  const finalArgs = [...args];
-  if (context) finalArgs.unshift("--context", String(context));
-  return new Promise((resolve, reject) => {
-```
-
-**依据 2 · 源码核查**：[lib/kubectl.js:95-102](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/lib/kubectl.js#L95-L102)
-
-guardContext 空值直接返回，不查 allowedContexts。
-
-```text
-export function guardContext(context, allowedContexts = []) {
-  const c = String(context || "").trim();
-  if (!c) return undefined;
-  if (allowedContexts.length && !allowedContexts.includes(c)) {
-    throw new Error(`context not in allowedContexts: ${c}`);
-  }
-  return c;
-}
-```
-
-**依据 3 · 源码核查**：[index.js:31-53](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L31-L53)
-
-status 查询 kubeconfig 当前上下文及 server，不做白名单门控。
+状态探测未调用 guardContext。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -708,135 +435,154 @@ status 查询 kubeconfig 当前上下文及 server，不做白名单门控。
 
 </details>
 
-**依据 4 · 源码核查**：[index.js:83-101](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L83-L101)
+**依据 5 · 源码核查**：[lib/kubectl.js:24-52](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L24-L52)
 
-contexts 仅对展示结果过滤。
+动词及 raw 过滤。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-    async execute() {
-      try {
-        assertReadonlyArgs(["config", "get-contexts"]);
-        const out = await runKubectl(["config", "get-contexts"], { timeoutMs, maxOutputChars });
-        if (out.code !== 0) throw new Error(out.stderr || `exit ${out.code}`);
-        let contexts = parseContextsTable(out.stdout);
-        if (allowedContexts.length) {
-          contexts = contexts.filter((c) => allowedContexts.includes(c.name));
-        }
-        return {
-          ok: true,
-          count: contexts.length,
-          current: contexts.find((c) => c.current)?.name || null,
-          contexts: contexts.slice(0, 100),
-        };
-      } catch (e) {
-        return { ok: false, error: e instanceof Error ? e.message : String(e) };
-      }
-    },
+export function assertReadonlyArgs(args) {
+  const list = Array.isArray(args) ? args.map(String) : [];
+  if (!list.length) throw new Error("kubectl args required");
+  // allow: get, describe, logs, top, api-resources, version, cluster-info, config view/get-contexts/current-context
+  const allowed = new Set([
+    "get",
+    "describe",
+    "logs",
+    "top",
+    "api-resources",
+    "api-versions",
+    "version",
+    "cluster-info",
+    "explain",
+    "auth",
+    "config",
+  ]);
+  if (!allowed.has(list[0])) throw new Error(`kubectl verb not allowed: ${list[0]} (read-only plugin)`);
+  if (WRITE_VERBS.has(list[0])) throw new Error("write verb blocked");
+  if (list[0] === "config") {
+    const sub = list[1] || "";
+    const okSub = new Set(["view", "get-contexts", "current-context", "get-clusters"]);
+    if (!okSub.has(sub)) throw new Error(`kubectl config subcommand not allowed: ${sub}`);
+  }
+  if (list[0] === "auth" && list[1] !== "can-i") throw new Error("only kubectl auth can-i allowed");
+  for (const a of list) {
+    if (a === "--raw" || a.startsWith("--raw=")) throw new Error("--raw blocked");
+  }
+  return list;
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[test/k8s.test.js:5-23](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/test/k8s.test.js#L5-L23)
+**依据 6 · 源码核查**：[lib/kubectl.js:63-67](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L63-L67)
 
-测试只有显式不允许上下文与 tail 断言，缺默认上下文场景。
-
-<details>
-<summary>查看原文（19行）</summary>
+添加 context 并直接 spawn。
 
 ```text
-describe("kubectl guard", () => {
-  it("allows get", () => {
-    assert.deepEqual(assertReadonlyArgs(["get", "pods"]), ["get", "pods"]);
-  });
-  it("blocks apply", () => {
-    assert.throws(() => assertReadonlyArgs(["apply", "-f", "x"]), /not allowed|blocked/);
-  });
-  it("allows config get-contexts", () => {
-    assert.deepEqual(assertReadonlyArgs(["config", "get-contexts"]), ["config", "get-contexts"]);
-  });
-  it("guards context allowlist", () => {
-    assert.equal(guardContext("dev", ["dev"]), "dev");
-    assert.throws(() => guardContext("prod", ["dev"]), /allowedContexts/);
-  });
-  it("clamps log tail", () => {
-    assert.equal(clampTail(9999, { maxTail: 500 }), 500);
-    assert.equal(clampTail(undefined, { defaultTail: 80, maxTail: 500 }), 80);
-    assert.equal(clampTail(10, { maxTail: 500 }), 10);
-  });
+export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, context } = {}) {
+  const finalArgs = [...args];
+  if (context) finalArgs.unshift("--context", String(context));
+  return new Promise((resolve, reject) => {
+    const child = spawn("kubectl", finalArgs, { stdio: ["ignore", "pipe", "pipe"] });
 ```
 
-</details>
+**依据 7 · 源码核查**：[lib/kubectl.js:95-102](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L95-L102)
+
+空 context 在检查前返回。
+
+```text
+export function guardContext(context, allowedContexts = []) {
+  const c = String(context || "").trim();
+  if (!c) return undefined;
+  if (allowedContexts.length && !allowedContexts.includes(c)) {
+    throw new Error(`context not in allowedContexts: ${c}`);
+  }
+  return c;
+}
+```
 
 #### 缺口
 
-- 未在具有多个上下文的 kubeconfig 与真实 RBAC 下验证默认路径。
-  **影响**：静态配置缺口已成立，但无法量化实际可读取内容。
-  **进一步探讨**：在两个隔离测试集群间把不允许的上下文设为当前，分别省略/显式指定 context，验证工具实际请求目标。
+- 没有在固定 kubectl 版本验证选项解析与 RBAC
+  **影响**：无法给出实际访问范围或完整拒绝矩阵
+  **进一步探讨**：用非生产集群与测试凭据核对空 context、显式禁用 context、旗标形输入及资源拒绝
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 采用负担和最小改进验证是什么？
+### Q03 · 在什么条件下可以评估这组工具，失败时怎么判断？
 
-**研究主题**：效果与总成本、采用判断、新假设与验证
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-首次使用需安装组件、配置 kubectl/kubeconfig 和最小权限 RBAC，明确允许查询的集群与命名空间；持续每次请求产生 kubectl 子进程及集群 API 读取，可能占用配额，返回日志和对象还需人工审阅。错误或超时需要查上下文、网络、RBAC、命名空间和对象名称，而不能盲目放宽允许清单。现金、延迟和集群负载未本轮测量。
-
-当前建议观察，特别是生产集群不应仅依赖 allowedContexts；即使工具不暴露写动词，也应先用独立低权限 kubeconfig 和非敏感测试环境。可提出未实现的默认上下文强制门控：所有工具在查询前解析当前 context，若不在允许清单则拒绝，且将显式 context 固定传给 kubectl；status/contexts 也需定义一致的展示规则。最小验证以允许/不允许两个测试集群、当前上下文切换、显式/省略 context、Secret 读取和错误分支作为矩阵，记录实际命中集群、拒绝正确率与额外延迟。若新门控阻断合法路径或仍可通过模型参数选错上下文，则方案需修正。
+先在专用测试 kubeconfig 中只留目标集群与最小读取权限，使用 status 查看客户端和 server，再显式指定 context、namespace 读取已知对象及短日志。工具默认子进程限 30 秒，超时会发 SIGKILL 并拒绝；stdout 达配置值两倍时也杀进程，返回时截断，stderr 只在返回截取，收集过程未提前限长。get 等对非零退出构造 ok=false 并带 stderr，但文本投影读取 error 字段，故非零退出时默认渲染可能没有错误内容，不能将空文本当作没有资源。生产或保密数据使用前要先校验上下文控制与输出去向。失败回同一测试凭据的原生命令。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:18-44](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/README.md#L18-L44)
+**依据 1 · 作者声明**：[README.md:9-14](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/README.md#L9-L14)
 
-作者建议生产场景配置 allowedContexts 与最小权限。
-
-<details>
-<summary>查看原文（27行）</summary>
+作者要求现有 kubectl 和 kubeconfig。
 
 ````text
-| 工具 | 作用 |
-|------|------|
-| `k8s_status` | kubectl 是否可用、当前 context |
-| `k8s_get` | `kubectl get`（输出有长度上限） |
-| `k8s_describe` | `kubectl describe` |
-| `k8s_logs` | Pod 日志（截断） |
+## 最短上手
 
-## 配置
+```sh
+# kubectl 已配置好 kubeconfig
+dsh plugin --profile web add github:173787247/dsh-wsl-k8s
+```
+````
 
-```yaml
-config:
-  enabled: true
-  timeoutMs: 30000
-  maxOutputChars: 40000
-  # 非空时只允许这些 context；空 = 不限制（仍只读）
-  allowedContexts: []
-  # 例: allowedContexts: [dev, staging]
+**依据 2 · 源码核查**：[index.js:11-15](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L11-L15)
+
+超时、输出和尾行配置。
+
+```text
+  const timeoutMs = positive(config.timeoutMs, 30_000);
+  const maxOutputChars = positive(config.maxOutputChars, 40_000);
+  const maxTail = positive(config.maxTail, 500);
+  const defaultTail = positive(config.defaultTail, 100);
+  const allowedContexts = Array.isArray(config.allowedContexts) ? config.allowedContexts.map(String) : [];
 ```
 
-生产集群建议显式写 `allowedContexts`，并保证 kubeconfig 本身权限最小。
+**依据 3 · 源码核查**：[index.js:118-134](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L118-L134)
 
-## 兼容性
+get 的非零退出与文本投影字段不一致。
 
-| 字段 | 值 |
-|------|----|
-| **插件** | `dsh-wsl-k8s` **0.1.1** |
-| **最低 dsh** | ≥ **0.1.2**（Web UI 一次性 `?token=`，Windows 中继 `:3081`） |
-````
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+      },
+    },
+    output: { schema: { type: "object", additionalProperties: true }, render: (_a, v) => [{ type: "text", text: v.ok === false ? v.error : v.stdout || "" }] },
+    timeoutMs,
+    isConcurrencySafe: () => true,
+    async execute(args) {
+      try {
+        const context = guardContext(args.context, allowedContexts);
+        const a = ["get", String(args.resource)];
+        if (args.namespace) a.push("-n", String(args.namespace));
+        a.push("-o", String(args.output || "wide"));
+        assertReadonlyArgs(a);
+        const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
+        return { ok: out.code === 0, ...out };
+      } catch (e) {
+        return { ok: false, error: e instanceof Error ? e.message : String(e) };
+      }
+```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/kubectl.js:63-102](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/lib/kubectl.js#L63-L102)
+**依据 4 · 源码核查**：[lib/kubectl.js:63-91](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L63-L91)
 
-默认上下文不门控是改进对照基线。
+计时、截断及错误路径。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
 export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, context } = {}) {
@@ -868,9 +614,87 @@ export function runKubectl(args, { timeoutMs = 30_000, maxOutputChars = 40_000, 
       clearTimeout(t);
       reject(e);
     });
-  });
-}
+```
 
+</details>
+
+#### 缺口
+
+- 实际 WSL 加载、模型输出及长日志开销未知
+  **影响**：无法估算诊断链路的维护和复核时长
+  **进一步探讨**：测试 profile 分别演练权限拒绝、命令不存在、超时和输出超限
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 把上下文绑定到每个访问集群的工具是否更可靠？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+当前 contexts 列表已按允许值筛选，但默认读取和 status 探测仍可走当前集群。可验证在配置允许列表时要求显式 context 或固定配置目标，并把实际目标与失败原因一并传给调用者，能否减少对错集群的取证。用相同两个测试 context，随机改变当前 context，在默认、显式和禁用输入下对照请求目标、误阻断率和排障耗时。若仍能访问禁用集群，或频繁阻断正确目标且无误读改善，则不采纳。此方案尚未实现验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:83-97](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L83-L97)
+
+目录列表已经筛选允许项。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+    async execute() {
+      try {
+        assertReadonlyArgs(["config", "get-contexts"]);
+        const out = await runKubectl(["config", "get-contexts"], { timeoutMs, maxOutputChars });
+        if (out.code !== 0) throw new Error(out.stderr || `exit ${out.code}`);
+        let contexts = parseContextsTable(out.stdout);
+        if (allowedContexts.length) {
+          contexts = contexts.filter((c) => allowedContexts.includes(c.name));
+        }
+        return {
+          ok: true,
+          count: contexts.length,
+          current: contexts.find((c) => c.current)?.name || null,
+          contexts: contexts.slice(0, 100),
+        };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:31-43](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/index.js#L31-L43)
+
+状态路径依赖当前目标。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+    async execute() {
+      try {
+        const ver = await runKubectl(["version", "--client=true", "-o", "yaml"], { timeoutMs, maxOutputChars });
+        const ctxOut = await runKubectl(["config", "current-context"], { timeoutMs, maxOutputChars });
+        const listOut = await runKubectl(["config", "get-contexts"], { timeoutMs, maxOutputChars });
+        const contexts = parseContextsTable(listOut.stdout);
+        let server = null;
+        try {
+          const srv = await runKubectl(["version", "-o", "yaml"], { timeoutMs: Math.min(timeoutMs, 15_000), maxOutputChars: 8_000 });
+          if (srv.code === 0) server = "reachable";
+          else server = { ok: false, stderr: (srv.stderr || "").slice(0, 200) };
+        } catch (e) {
+          server = { ok: false, error: e instanceof Error ? e.message : String(e) };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/kubectl.js:95-102](https://github.com/173787247/dsh-wsl-k8s/blob/71e6c1ce7690ae454f4e5052aa52f9ac59153a0b/lib/kubectl.js#L95-L102)
+
+省略 context 不能得到固定目标。
+
+```text
 export function guardContext(context, allowedContexts = []) {
   const c = String(context || "").trim();
   if (!c) return undefined;
@@ -881,28 +705,10 @@ export function guardContext(context, allowedContexts = []) {
 }
 ```
 
-</details>
-
-**依据 3 · 源码核查**：[index.js:123-131](https://github.com/173787247/dsh-wsl-k8s/blob/003a48d9e45841b4f0869d9e3eaad2275bab485b/index.js#L123-L131)
-
-get 可直接省略 context 并执行读取。
-
-```text
-    async execute(args) {
-      try {
-        const context = guardContext(args.context, allowedContexts);
-        const a = ["get", String(args.resource)];
-        if (args.namespace) a.push("-n", String(args.namespace));
-        a.push("-o", String(args.output || "wide"));
-        assertReadonlyArgs(a);
-        const out = await runKubectl(a, { timeoutMs, maxOutputChars, context });
-        return { ok: out.code === 0, ...out };
-```
-
 #### 缺口
 
-- 强制默认上下文门控未实现，缺两个测试集群的对照。
-  **影响**：不能算现有隔离能力或提高采用成熟度。
-  **进一步探讨**：在隔离 kubeconfig 切换当前上下文并记录实际请求集群与拒绝行为。
+- 未测上下文变化的用户误判频率
+  **影响**：无法确认显式选择的收益超过新增操作
+  **进一步探讨**：以隔离测试集群记录实际 API 请求和诊断完成时间
 
-[返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

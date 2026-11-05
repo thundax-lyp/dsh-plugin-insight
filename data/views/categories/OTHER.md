@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | [dsh-armor-switch](#plugin-1409096911-root) | 向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。 | 普通偏好优先使用既有窄配置；当前不建议新增采用整套覆盖契约。 |
 | [dsh-piano](#plugin-1412161923-root) | 在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 | 娱乐用途可观察或在隔离浏览器小范围试用，先核发声、刮奏与停用后资源；不用于需 MIDI/录音交付的场景。 |
-| [竹知了](#plugin-1319484586-root) | 在浏览器中模拟竹知了玩具的甩动、发声与本机圈数记录。 | 不推荐作为DSH插件；许可允许的个人本地阅读与体验是不同任务。 |
+| [竹知了](#plugin-1319484586-root) | 在浏览器中模拟甩动传统竹知了，可按住画圈、自动甩或使用手机体感，并随动作发出模拟叫声。 | [Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04) 对源码学习可先对照指针目标、角速度和音频更新，再比较手绘与 3D 消费同一状态的方式。 |
 
 <a id="plugin-1409096911-root"></a>
 
@@ -52,15 +52,15 @@
 
 ## [竹知了](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md)
 
-[![GitHub ★ 2,880](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C880&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
+[![GitHub ★ 2,875](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C875&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/imsai-sh/zhuzhiliao)
 
-> **用途**：传统玩具爱好者在手机浏览器通过画圈或传感器体验竹知了；它是独立Web项目。
+> **用途**：想回顾或演示竹知了的读者可以在浏览器里画圈，让虚拟甩杆带动竹筒发声。
 
-> **亮点**：相对静态视频或录音，以角速度和绳张力共同驱动交互声音，增量属于玩具体验设计；不构成DSH能力。见[Q01](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q01)。
+> **亮点**：[Q01](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q01) 的录音声部把角速度和绳长比例变成响度与节奏，使操作者能改变何时发声；[Q02](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q02) 则让同一物理状态驱动可选的 3D 姿态，切回手绘时仍沿用原模拟。
 
-> **思考**：它并非DSH插件，完整PWA/3D也不等于单文件离线；源码公开不授权第三方部署或再分发。见[Q03](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q03)。
+> **思考**：[Q03](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q03) 的离线能力分为本地 HTML 与预缓存两条路径。预缓存失败或首页收到 HTTP 错误响应时，页面可能无法离线恢复，且本地 HTML 的 2D 路径仍依赖浏览器允许 Web Audio。
 
-> **建议**：未验证假设是固定同一物理轨迹，比较纯音频、2D与3D模式的拟真感和卡顿；若3D无辨识增益且更耗资源则保留2D默认。见[Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04)。
+> **建议**：[Q05](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q05) 在现有转速和解锁提示上增加短时静音原因反馈，有可能减少首次操作者的无效重试。以首响时间和误导率对照现有界面，收益缺失或误导增加即否定。
 
 [查看完整分析](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md) · [返回表格](#category-index)
 
@@ -68,4 +68,4 @@
 
 ## 更新时间
 
-2026-11-04
+2026-11-05

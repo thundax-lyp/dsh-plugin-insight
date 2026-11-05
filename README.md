@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 860](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=860&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 880](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=880&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -38,9 +38,9 @@
 
 > 查看最近发布的版本，了解用途和使用条件。
 
+- [See Now](data/plugins/saos-3624--dsh-see-now/INSIGHT.md) · 从屏幕、摄像头或视频筛选变化帧并拼图，作为 DSH 视觉工具的输入。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-see-now)
+- [Anime Garden for DeepSeek Harness](data/plugins/yjl9903--animegarden--plugins-dsh/INSIGHT.md) · 在 DSH 会话或侧边栏搜索 Anime Garden 资源，查看周历并打开播放或磁力链接。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-animegarden)
 - [DSH Lighthouse](data/plugins/7gzgn--dsh-lighthouse/INSIGHT.md) · 汇总作品的本地、GitHub、市场与 npm 状态，并生成观察面板和报告。 · [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lighthouse)
-- [DSH Memory Tiers Core](data/plugins/1129742588--dsh-memory-tiers--core/INSIGHT.md) · 为 DSH 提供本地分层记忆、检索、上下文注入和历史替代。 · [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-memory-tiers)
-- [dsh-cgss-idol-theme](data/plugins/alycestocking--dsh-yukimi-theme/INSIGHT.md) · CGSS 多角色 Web 主题，提供角色配色、卡面、沉浸阅读和 Windows 桌宠会话提醒。 · [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-cgss-idol-theme)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 265 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 33 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 101 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 272 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 52 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 271 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 34 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 102 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 280 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 54 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 133 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 135 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 [浏览全部分类](data/views/categories/INDEX.md)
@@ -76,4 +76,4 @@
 
 ## 更新时间
 
-2026-11-04
+2026-11-05

@@ -25,6 +25,7 @@
 | [Awesome DeepSeek Harness Plugins](#plugin-1333844474-root) | 提供 DeepSeek Harness 社区插件目录、结构化投稿审核与双语目录生成。 | [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 先选一个公开且已定位 manifest 的仓库，从干净分支准备单条 JSON，用本地文件或隔离服务检查投影。 |
 | [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
 | [Awesome DSH Plugin](#plugin-1333175049-root) | 整理 DSH 插件候选并生成可读目录与市场索引。 | 先发现，再固定候选版本、独立核验权限与宿主兼容；不要把目录收录当安装背书。 |
+| [Awesome DSH Plugin 目录](#plugin-1334020733-root) | 从双语 README 生成 DSH 插件分类站点、订阅源与机器可读索引。 | [Q04](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q04) 用作候选列表，安装前重新确认目标仓库与包。 |
 | [Awesome Gaussian Skills](#plugin-1223099228-root) | 提供 3D Gaussian Splatting 方法资料、Agent Skill 与 MCP 渲染服务。 | [Q04](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q04) 先隔离网络并用非敏感场景核对真实渲染；[Q03](../../plugins/jaccen--awesome-gaussian-skills/INSIGHT.md#research-q03) 边界不满足时停止。 |
 | [BigA](#plugin-1250326123-root) | 将 A 股观察池与市场摘要 Skill 及其 Python 扫描脚本装入 DeepSeek Harness。 | [Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 仅将离线合成样本用于核格式和口径，异常回人工资料核查。 |
 | [Claude Paper](#plugin-1154333841-root) | 跨宿主论文阅读 Skill 组合：下载解析 PDF，生成摘要或学习材料，并以本地网页库组织笔记。 | 一篇公开PDF的summary对照人工原文，study/Web库逐步另验；依赖和资料都备份，见 [Q03](../../plugins/alaliqing--claude-paper/INSIGHT.md#research-q03)。 |
@@ -76,8 +77,7 @@
 | [dsh-weknora-archive](#plugin-1412897932-root) | 提取、摘要、去重并上传DSH会话到WeKnora知识库，补充官方只读检索插件的写入侧。 | 已自建WeKnora且能接受内容外发者可观察，先用脱敏样本验证筛选、删除、重试和重复归档边界。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 在 WSL 中为 DSH 接入 Obscura 无头页面抓取、版本检查和 MCP 接线提示。 | 在隔离环境试非敏感公开网页，禁用私网和 eval；用静态请求或受控浏览器退出。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 让 WSL 中的 DSH Agent 搜索、读写 Windows Obsidian 笔记并打开桌面应用。 | [Q03](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q03) 先从复制库核路径、搜索与桌面打开。 |
-| [dsh-wsl-playwright](#plugin-1381860363-root) | 在 WSL 经 npx 启动无头 Chromium，读取 URL 标题、状态或正文。 | 观察。 |
-| [dsh-wsl-vecmem](#plugin-1381726438-root) | 用本地 Ollama embedding 保存短文本，并按工作区进行语义检索。 | 适合少量、非敏感、可重建的项目碎片先观察；需要事务、并发写、强隔离或不可丢数据的团队应使用成熟存储。 |
+| [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
 | [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地优先 Markdown 记忆服务与检索框架。 | 隔离数据根，用低敏样例测试 add、flush、任务状态及检索；核对文件、成本与备份，DSH 桥接需单独验收。 |
@@ -113,6 +113,7 @@
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [WeKnora DSH 插件](#plugin-1024118326-packages-dsh-weknora) | 为 DSH 提供 WeKnora 知识库检索、文档补读与综合问答工具。 | 先以受限 API key 和匿名资料关闭 ask 试验检索与补读；核对库范围、原文和裁剪，异常时停用工具并回平台。 |
 | [WeKnora 知识平台](#plugin-1024118326-root) | 集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。 | 先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。 |
+| [WSL Playwright 页面读取](#plugin-1381860363-root) | 在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。 | [Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。 |
 
 <a id="plugin-1390987906-root"></a>
 
@@ -321,6 +322,22 @@
 > **建议**：未验证假设：显示实际扫描版本、最近成功时间和失败原因可减少旧记录误读；须测识别、误报及维护成本。[Q05](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334020733-root"></a>
+
+## [Awesome DSH Plugin 目录](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 188](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=188&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/beancookie/awesome-dsh-plugin) [![npm 30d 1,643](https://img.shields.io/static/v1?label=npm+30d&message=1%2C643&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin) [![最新发布 2026-08-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/awesome-dsh-plugin)
+
+> **用途**：找 DSH 插件的读者可以从双语分类目录建立候选名单。
+
+> **亮点**：[Q01](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q01) 将人工条目和分类同时提供给读者与索引消费者。
+
+> **思考**：[Q03](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q03) 安装命令是缓存和字符串匹配生成的入口，真实包及兼容仍需单独核对。
+
+> **建议**：[Q05](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md#research-q05) 显示缺包与未核实的区别，测试是否减少选错来源。
+
+[查看完整分析](../../plugins/beancookie--awesome-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1223099228-root"></a>
 
@@ -1138,35 +1155,19 @@
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1381860363-root"></a>
-
-## [dsh-wsl-playwright](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-playwright)
-
-> **用途**：DSH 用户需要读取公开、可能经 JavaScript 渲染的网页内容。
-
-> **亮点**：把无头网页标题/正文读取接入模型工具，减少手工复制，并为 JS 渲染页面提供潜在增量。详见[Q01](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q01)、[Q02](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q02)。
-
-> **思考**：临时目录 ESM 导入与 npx 包解析关系未验证，现有单测不覆盖启动；URL 无内网/重定向边界，fetch 不呈现最终 URL/HTTP 状态。详见[Q03](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q03)。
-
-> **建议**：固定可解析的 Playwright 环境并添加目标地址门控、最终 URL/状态审计；在隔离站点矩阵比较成功率/延迟/误访问后再采用，本版未实现。详见[Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04)。
-
-[查看完整分析](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1381726438-root"></a>
 
 ## [dsh-wsl-vecmem](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md)
 
 [![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-vecmem)
 
-> **用途**：面向需要保存项目碎片而不想上云的 DSH 用户，把短文本写入本地向量库并按 workspace 检索。 [Q01](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q01)
+> **用途**：项目成员已经保留笔记原件，需要从 DSH 会话用自然语言找回小段项目事实。
 
-> **亮点**：相对把向量直接写 JSON，它把元数据与 Float32 矩阵分离并检测双文件漂移，改善数千条规模的空间和解析负担；业务上仍是轻量碎片库。 [Q03](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q03)
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q01) 将项目短记的写入和相似度查询接进 DSH 工具调用。[Q03](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q03) 把向量从 JSON 索引移到 Float32 文件，避免把向量解析成 JSON 数字。
 
-> **思考**：双文件写入不是原子事务，崩溃只会被检测而不会自动修复；检索质量依赖本地模型、文本切分和可选 reranker，且缺少任务结果对照。 [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04)
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q03) 文件长度异常只进入状态提示，查询仍可能返回列表。[Q02](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q02) 常规文本投影缺少检索阶段和信心字段，非空命中不足以判断是否找对事实。
 
-> **建议**：可加入写前 journal 与原子索引切换，并记录 embedding 模型指纹；模型变更时显式进入重建队列而不是混写或静默失配。 [Q08](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q08)
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q05) 向调用者显示检索阶段，已知索引不一致时拒绝返回命中。用相同有答案和无答案查询比较错引率及有效召回，观察是否值得引入。
 
 [查看完整分析](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1730,8 +1731,24 @@
 
 [查看完整分析](../../plugins/tencent--weknora/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1381860363-root"></a>
+
+## [WSL Playwright 页面读取](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md)
+
+[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/173787247/dsh-wsl-playwright)
+
+> **用途**：在 WSL 内需要给 DSH 查看网页标题或正文的人可评估无头读取工具。
+
+> **亮点**：[Q01](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q01) 将浏览器标题和正文结果变成专用会话工具输出。
+
+> **思考**：[Q03](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q03) HTTP/HTTPS 校验不限制目标主机，状态检查也不能证明 Chromium 可用。
+
+> **建议**：[Q05](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q05) 比较先看标题再按需取正文和直接抓全文的成本及效果。
+
+[查看完整分析](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md) · [返回表格](#category-index)
+
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-04
+2026-11-05
