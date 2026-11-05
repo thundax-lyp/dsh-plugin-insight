@@ -47,6 +47,7 @@
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
+| [dsh-vision](#plugin-1333755444-root) | 原生视觉透传，文本主模型经云或OCR观察桥接图片。 | [Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 固定测试图对照两阶段结果再日用。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 为 DSH 提供本地媒体探测、音轨与缩略图提取、PDF、转写、文档转换、OCR 和元数据工具。 | 优先只读小样本，配置独立根目录，空目标写入；条件不明时回本地工具。 |
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
@@ -635,6 +636,22 @@
 > **建议**：采用秘密引用/受控工具而非正文替换，并维护平台版本/费用/发布门端到端回归，可降低迁移风险；现版未实现。详见[Q04](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-video-pipeline/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333755444-root"></a>
+
+## [dsh-vision](../../plugins/oil-oil--dsh-vision/INSIGHT.md)
+
+[![GitHub ★ 91](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=91&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/oil-oil/dsh-vision)
+
+> **用途**：希望保留文本主模型同时处理少量图片的DSH用户。
+
+> **亮点**：[Q01](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q01) 保留主模型并提供附件观察路径。
+
+> **思考**：[Q02](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q02) 观察替代原图有损，pending共享取消及system注入需验。
+
+> **建议**：[Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 对照两阶段错误、费用与延迟。
+
+[查看完整分析](../../plugins/oil-oil--dsh-vision/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381725238-root"></a>
 

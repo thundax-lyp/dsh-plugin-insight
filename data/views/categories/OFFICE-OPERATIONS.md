@@ -20,6 +20,7 @@
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
+| [DSH fnOS Integration](#plugin-1374007757-plugins-dsh-fnos-plugin) | 把NAS授权目录、文件打开和主题接入fnOS应用载体 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q04) 只在单用户隔离测试目录观察，先审外层网关和直达宿主路径；依赖多用户隔离的部署应继续使用fnOS原生文件管理器，直至逐入口证明用户权限。 |
 | [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
@@ -183,6 +184,22 @@
 > **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
 
 [查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1374007757-plugins-dsh-fnos-plugin"></a>
+
+## [DSH fnOS Integration](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md)
+
+[![GitHub ★ 87](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=87&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/FNOSP/fnos-dsh) [![npm 30d 9,447](https://img.shields.io/static/v1?label=npm+30d&message=9%2C447&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tnnevol/dsh-fnos) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tnnevol/dsh-fnos)
+
+> **用途**：fnOS用户需从DSH打开授权NAS文件。
+
+> **亮点**：[Q01](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q01) 集中系统载体、授权目录和主题接线。
+
+> **思考**：[Q03](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q03) 缺uid时不执行用户ACL，ACL接口失败时可退为应用目录授权。来源门禁不能证明用户身份，当前源码不支持共享NAS用户隔离结论。
+
+> **建议**：[Q05](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q05) 可减少定位路径步骤而保持拒绝可见。
+
+[查看完整分析](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1340581082-root"></a>
 

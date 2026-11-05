@@ -128,9 +128,11 @@
 | [dsh-crypto-portfolio](#plugin-1342742812-root) | 通过 DSH 启动 Python 本地资产仪表盘，聚合链上/CEX 余额、历史、来源和健康视图。 | 仅作辅助观察；先限制 API 可达性、验证密钥保护并用自己的账本对账，关键财务判断暂不依赖单一总额。 |
 | [dsh-cua-pre](#plugin-1346533795-root) | Windows UI Automation 优先的 DSH 桌面控制插件，包含 Python worker、30 工具和 Web 面板。 | 隔离 Windows profile 开始，以最小目标 PID 配白名单并检查日志可写；非幂等动作结果不明时先重观察/人工核，避免自动重放。 |
 | [dsh-curate](#plugin-1428582868-root) | 按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。 | 先复制非关键会话，标明必须保留事实，少量应用与压缩后检查下一请求。 |
+| [dsh-custom-skin](#plugin-1344799417-root) | 在 DSH Web 设置中管理本地壁纸和面板外观。 | [Q02](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md#research-q02) 同origin小图先验证刷新和删除。 |
 | [dsh-cyber-particle](#plugin-1334274281-root) | DSH Web Canvas 粒子网络背景，提供设置页与本地持久化。 | 作为个人装饰观察；减动效用户和低性能设备建议先关闭或等修复/性能验证。 |
 | [dsh-damage-pulse](#plugin-1336614837-root) | 为 DeepSeek Harness 提供用量、费用与余额监控，并以鲸鱼娘动画反馈 Token 消耗。 | [Q04](../../plugins/wssfk12138--dsh-damage-pulse/INSIGHT.md#research-q04) 先只观察用量与明细，以已知请求核来源、规则、写盘和供应商记录；有需要再开脚本/通知。 |
 | [dsh-deep-whale · 鲸鱼娘皮肤合集](#plugin-1333123776-root) | 汇集两套 DSH 鲸鱼娘主题与皮肤管理器，提供选包、互斥切换和个性化设置入口。 | [Q03](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q03) 根合集用于观察和选包，先以一套具体主题试用，不把根URL当整体插件安装。 |
+| [dsh-deepcanary](#plugin-1350816706-root) | 将 DSH 待答、审批和完成事件整理到收件箱，并协调本地通知。 | [Q03](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md#research-q03) 固定事件集和双标签测试后再日用。 |
 | [dsh-desktop-uia](#plugin-1381221232-root) | 通过 Windows UI Automation 暴露桌面观察、动作与审批。 | 建议观察。 |
 | [dsh-dictation-hotkey](#plugin-1414017637-root) | 给 DSH Web 输入框增加按住或切换式语音热键，复用宿主转写并填入/可选发送。 | 建议观察，先关闭自动发送，在测试会话和慢转写场景核落点；敏感语音先核 provider 处理位置。 |
 | [dsh-discord-richpresence](#plugin-1342915339-root) | 将 DSH 粗粒度活动经本地 Discord IPC 发布为 Rich Presence，丰富模式可附步骤/tokens/思考时长。 | 用隔离 Discord 账号核状态可见范围与断连行为，再决定是否配置文案/丰富模式；详见[Q02](../../plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md#research-q02)、[Q03](../../plugins/0qwq0--dsh-discord-richpresence/INSIGHT.md#research-q03)。 |
@@ -166,6 +168,7 @@
 | [dsh-nav-history](#plugin-1429464857-root) | 为 DSH 会话和页面提供前进后退历史。 | [Q04](../../plugins/ahacrazy--dsh-nav-history/INSIGHT.md#research-q04) 用非敏感会话测试后退与刷新；错跳时手动选择目标。 |
 | [dsh-need-finder](#plugin-1336571882-root) | 用本地固定插件目录做中英文词法加权检索，返回命中理由和命令文本，并给出社区套装有序安装计划。 | 观察，先补真实描述/来源/版本与约束，作为探索入口而非可信安装名单或环境求解。 |
 | [dsh-neo-skin](#plugin-1335557891-root) | 为 DSH Web UI 叠加两套新粗野主义配色和结构样式。 | 个人隔离 profile 先做浅/深/系统、双方案与开关的视觉回归。 |
+| [dsh-notification](#plugin-1333068254-root) | 从DSH完成摘要和待交互状态发送可配置浏览器系统通知。 | [Q03](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md#research-q03) 单标签实时任务先验收。 |
 | [dsh-notification-desktop](#plugin-1428147033-root) | 适配DSH 0.2.x的任务完成通知，Windows桌面经Host发送WinRT提醒。 | 建议观察；Windows本地隔离环境先核对路由鉴权及注册表回滚，再检查真实可见与重连；非Windows桌面Host路径不适用。 |
 | [dsh-openai-bridge（dsh-remote）](#plugin-1405845793-root) | 提供 OpenAI 兼容会话接口和手机面板，可继续 DSH 会话、浏览文件、处理审批及管理模型与上下文。 | 先观察，在隔离非敏感profile核对TLS和代理来源，显式选择session，并测试新会话权限set失败会被拒绝。 |
 | [dsh-opencodego-status](#plugin-1426264117-root) | 在 DSH Web 浮层显示 OpenCode Go 的 5 小时、周与月用量，并提供设备码登录。 | 当前建议保持观察。 |
@@ -209,6 +212,7 @@
 | [dsh-simplify](#plugin-1349207533-root) | 清理模式下右键移除DSH界面元素，并在设置页预览、恢复及持久保存记录。 | 建议仅对个人本地Web的非关键控件试用，先验证恢复与记录落盘；动态组件或多窗口重度使用先暂停扩展。 |
 | [dsh-skill-manager](#plugin-1336106328-root) | 在Harness设置页分层浏览、编辑技能，支持zip导入导出、删除与启停。 | 建议观察；有编辑需求者可先只读浏览并备份后改单文件，不应依赖当前zip导入迁移复杂技能。 |
 | [dsh-smart-prompt](#plugin-1419869951-root) | 在 DSH 输入框中改写草稿，支持追问、模式切换和恢复原文。 | [Q06](../../plugins/arrosam--dsh-smart-prompt/INSIGHT.md#research-q06) 建议先用非关键草稿试 Light，并对照原文核权限和否定；不符时恢复原稿。 |
+| [dsh-smooth-stream](#plugin-1334813049-root) | 包装 DSH 消息 renderer，通过逐帧展示与滚动跟随调整流式阅读。 | [Q03](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md#research-q03) 录制流加手动交互对照。 |
 | [dsh-soul](#plugin-1352089397-root) | 管理DSH人格、用户资料、预设和三级配置覆盖，提供确认与历史观测，目标回合生效仍需核验。 | [Q04](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md#research-q04) 先观察，隔离单会话核实际提示再扩；错范围/跨会话确认或送达不明停用，备份后回原生提示，新会话核验。 |
 | [dsh-sound](#plugin-1335332435-root) | 按完成、审批、提问、计划评审、受阻和失败播放独立声音，并区分主Agent/子Agent来源。 | 可试用作辅助通知，先内置低音量核主子频道/原UI，保留视觉提醒，不当唯一可靠通道。 |
 | [dsh-speak](#plugin-1334493734-root) | 通过系统语音播报 DSH 最终回复、审批和提问，提供重播与播放控制 | 观察；先用单会话非敏感内容核手动重播和停止，不能以声音作为唯一审批/完成判断。 |
@@ -217,6 +221,7 @@
 | [dsh-startup-screen](#plugin-1380798383-root) | 为 DSH 提供可配置的交互式启动动画。 | [Q04](../../plugins/6shenhonghong9--dsh-startup-screen/INSIGHT.md#research-q04) 在测试 profile 使用非敏感文案并保留跳过，检查键盘与声音；无法进入时禁用并核原界面。 |
 | [dsh-status-rotator](#plugin-1333328839-root) | 为 DSH 等待状态行提供可编辑轮换文案、渐变、弹幕和鲸尾动画。 | [Q04](../../plugins/01virex--dsh-status-rotator/INSIGHT.md#research-q04) 先只试本地文案，逐项核对时长、阶段、读屏和配置回读；冲突先重读，隐藏或残留时停用并回原状态行。 |
 | [dsh-stock-quotes](#plugin-1425208683-root) | 在 DSH 侧栏及对话工具中查看公开股票和板块行情。 | [Q04](../../plugins/ahacrazy--dsh-stock-quotes/INSIGHT.md#research-q04) 将结果作为公开数据参考，明确市场并核对名称、错误与实际来源时点；重要用途回到合适数据来源核实。 |
+| [dsh-stock-watch](#plugin-1334063554-root) | 在 DSH 展示自选行情和图表，并提供研究会话入口。 | [Q03](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md#research-q03) 先只读展示，不启研究。 |
 | [dsh-strata](#plugin-1338599825-root) | 在 DSH Chat 提供语义缩略地图、锚点和线索墙。 | [Q03](../../plugins/jsdvjx--dsh-strata/INSIGHT.md#research-q03) 在兼容 DSH Chat 中创建含工具错误和折叠轮次的合成会话，核对地图与线索墙，并试切换会话和浅深主题。 |
 | [dsh-study-coach](#plugin-1400498179-root) | 以学习预设、21个档案工具和网页面板管理目标、知识地图、练习证据、错题与每日任务。 | 先观察；可信本地非唯一档案，独立备份并用真实题目核掌握。 |
 | [dsh-temptask](#plugin-1390600932-root) | 为 DSH 创建、清理并转正临时任务工作区。 | [Q04](../../plugins/aeroscis--dsh-temptask/INSIGHT.md#research-q04) 删除前核对备份与活动进程，部分失败时先检查两端。 |
@@ -2161,6 +2166,22 @@
 
 [查看完整分析](../../plugins/111222cjyq--dsh-curate/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1344799417-root"></a>
+
+## [dsh-custom-skin](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md)
+
+[![GitHub ★ 91](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=91&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SLin-code/dsh-custom-skin)
+
+> **用途**：希望在个人浏览器定制DSH背景并保留图片的用户。
+
+> **亮点**：[Q01](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md#research-q01) 提供可持久化图片库与设置页。
+
+> **思考**：[Q02](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md#research-q02) 当前显示可能没有持久化，且换origin不迁移。
+
+> **建议**：[Q03](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md#research-q03) 若多标签出现陈旧库，可验证跨标签同步。
+
+[查看完整分析](../../plugins/slin-code--dsh-custom-skin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1334274281-root"></a>
 
 ## [dsh-cyber-particle](../../plugins/aks1st--dsh-cyber-particle/INSIGHT.md)
@@ -2208,6 +2229,22 @@
 > **建议**：[Q04](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md#research-q04) 未验证假设是在现有异步标记确认后，用明确用户任务区分“配置已写”与“界面可用”，重点覆盖版本豁免和失败恢复。若未降低错误成功提示，或额外操作超过恢复收益，应保留现状。
 
 [查看完整分析](../../plugins/small-tailqwq--dsh-deep-whale/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1350816706-root"></a>
+
+## [dsh-deepcanary](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md)
+
+[![GitHub ★ 92](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=92&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Oscar-Williams/dsh-deepcanary) [![npm 30d 1,754](https://img.shields.io/static/v1?label=npm+30d&message=1%2C754&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepcanary) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deepcanary)
+
+> **用途**：同时运行多个会话的用户需要回看和处理等待项。
+
+> **亮点**：[Q01](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md#research-q01) 把瞬时事件变成可延后和回看的待办。
+
+> **思考**：[Q02](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md#research-q02) claim按owner协调，回调主要按客户端时间推进，不是严格attempt fencing。
+
+> **建议**：[Q03](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md#research-q03) 固定事件集比较漏处理和打断。
+
+[查看完整分析](../../plugins/oscar-williams--dsh-deepcanary/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1381221232-root"></a>
 
@@ -2768,6 +2805,22 @@
 > **建议**：改用稳定语义 token/插槽并接入宿主设置可降低样式耦合、跨端设置漂移；尚未实现。详见[Q05](../../plugins/0nt-one--dsh-neo-skin/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/0nt-one--dsh-neo-skin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333068254-root"></a>
+
+## [dsh-notification](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md)
+
+[![GitHub ★ 91](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=91&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-notification) [![npm 30d 2,912](https://img.shields.io/static/v1?label=npm+30d&message=2%2C912&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notification) [![最新发布 2026-09-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notification)
+
+> **用途**：切换浏览器标签仍需知道任务何时结束的用户。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md#research-q01) 把实时完成边沿变成本地提醒。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md#research-q02) 断线历史不补发，失败已消费观察值，多标签未协调。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md#research-q03) 比较回看频率及可接受遗漏。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-notification/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1428147033-root"></a>
 
@@ -3457,6 +3510,22 @@
 
 [查看完整分析](../../plugins/arrosam--dsh-smart-prompt/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334813049-root"></a>
+
+## [dsh-smooth-stream](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md)
+
+[![GitHub ★ 92](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=92&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Laplace-bit/dsh-smooth-stream) [![npm 30d 3,813](https://img.shields.io/static/v1?label=npm+30d&message=3%2C813&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-smooth-stream) [![最新发布 2026-10-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-smooth-stream)
+
+> **用途**：经常阅读长篇代码与推理流的 DSH 用户。
+
+> **亮点**：[Q01](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md#research-q01) 把内容到达和可见节奏分开。
+
+> **思考**：[Q02](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md#research-q02) renderer 与滚动所有权有兼容耦合，显示完成晚于模型完成。
+
+> **建议**：[Q03](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md#research-q03) 同一录制流比较延迟、掉帧与回看。
+
+[查看完整分析](../../plugins/laplace-bit--dsh-smooth-stream/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1352089397-root"></a>
 
 ## [dsh-soul](../../plugins/aliuyanfeng--dsh-soul/INSIGHT.md)
@@ -3584,6 +3653,22 @@
 > **建议**：[Q05](../../plugins/ahacrazy--dsh-stock-quotes/INSIGHT.md#research-q05) 假设显式市场候选确认并区分来源报价时间，可减少错选与时效误读；尚未实现或验证。
 
 [查看完整分析](../../plugins/ahacrazy--dsh-stock-quotes/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334063554-root"></a>
+
+## [dsh-stock-watch](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md)
+
+[![GitHub ★ 86](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=86&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Awu12277/dsh-stock-watch) [![npm 30d 979](https://img.shields.io/static/v1?label=npm+30d&message=979&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-stock-watch) [![最新发布 2026-08-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-stock-watch)
+
+> **用途**：希望在Agent工作台查看自选列表的个人用户。
+
+> **亮点**：[Q01](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md#research-q01) 将行情列表接到DSH，研究入口另有会话副作用。
+
+> **思考**：[Q02](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md#research-q02) 安装可能复制全局Skill并注入提示，报价live也不证明实时。
+
+> **建议**：[Q04](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md#research-q04) 接收时间与行情时间分开可能减少新鲜度误读。
+
+[查看完整分析](../../plugins/awu12277--dsh-stock-watch/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1338599825-root"></a>
 
