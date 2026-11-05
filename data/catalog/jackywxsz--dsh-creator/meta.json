@@ -1,0 +1,66 @@
+{
+    "repository": "Jackywxsz/DSH-Creator",
+    "repository_id": 1345649791,
+    "captured_at": "2026-11-05T03:59:20.742Z",
+    "window_start": "2026-10-06T03:59:20.742Z",
+    "stars": 125,
+    "pushed_at": "2026-10-09T06:02:46Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AJackywxsz%2FDSH-Creator%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0FB8:1640:1F12DFE:2C45F7F:6AEBFF54 and timestamp 2026-11-05 04:00:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AJackywxsz%2FDSH-Creator%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1004:193243:23CBCAF:32EA18F:6AEBFF55 and timestamp 2026-11-05 04:00:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJackywxsz%2FDSH-Creator%20is%3Aissue%20created%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1076:1600:1847F8B:22B08C6:6AEBFF57 and timestamp 2026-11-05 04:00:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJackywxsz%2FDSH-Creator%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 10CA:C0E6F:250AD42:349F317:6AEBFF59 and timestamp 2026-11-05 04:00:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJackywxsz%2FDSH-Creator%20is%3Aissue%20updated%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 113C:1C2203:2530CC1:34CB300:6AEBFF5B and timestamp 2026-11-05 04:00:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "9b2ec5016676b5797a91a13ad33197ed4c292dca",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "jacky-creator",
+        "captured_at": "2026-11-03T06:53:49.722Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1510,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/jacky-creator",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-31T08:03:01.874Z",
+            "captured_at": "2026-11-03T06:53:49.722Z",
+            "source_url": "https://registry.npmjs.org/jacky-creator",
+            "error": null,
+            "latest_version": "0.1.0-beta.9",
+            "latest_published_at": "2026-10-09T05:46:51.086Z",
+            "latest_error": null
+        }
+    }
+}

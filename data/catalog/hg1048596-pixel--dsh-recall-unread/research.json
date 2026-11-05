@@ -1,0 +1,443 @@
+{
+    "schema_version": 4,
+    "id": "75eaf2cbbcd2a144bf32cb7b1b78d020",
+    "identity": "github:1336836593:root",
+    "slug": "hg1048596-pixel--dsh-recall-unread",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1336836593:root",
+            "repository_id": 1336836593,
+            "component_id": "root",
+            "repository": "hg1048596-pixel/dsh-recall-unread",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Recall Unread",
+            "entry_type": "plugin",
+            "technical_category": "sessions-messages",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "117130319999af1a05c7dbaed9a0d1731e2c6c45b626cde528047f92d8c64b6c",
+                "code": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                "maintenance": "aba564d6209abb04ee0a66f40b410917d169f9ea18727bdc78a958d97bc93277"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-05-04-github-1336836593-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "fa94055bbfacbcbcbc911aa6dba906e54cc17848",
+                    "retrieved_at": "2026-11-05T04:04:55.637Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-11-05-04-github-1336836593-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-05T04:04:55.637Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-05-04-github-1336836593-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hg1048596-pixel/dsh-recall-unread",
+                            "commit": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                            "path": "README.md",
+                            "content_sha256": "8e966a9f0432033dceac8d04ed87c6f595fbf46cb914542075545c511c85c9e6"
+                        }
+                    ],
+                    "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                    "captured_at": "2026-11-05T04:04:55.637Z",
+                    "summary": "撤回模型尚未认领的插话",
+                    "artifact": "data/runs/2026-11-05-04/hg1048596-pixel--dsh-recall-unread/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-05-04-github-1336836593-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hg1048596-pixel/dsh-recall-unread",
+                            "commit": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                            "path": "README.md",
+                            "content_sha256": "8e966a9f0432033dceac8d04ed87c6f595fbf46cb914542075545c511c85c9e6"
+                        },
+                        {
+                            "repository_url": "https://github.com/hg1048596-pixel/dsh-recall-unread",
+                            "commit": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                            "path": "src/client.js",
+                            "content_sha256": "0fd29975ce46eaffe613d520f87c7863cca560d14087cd9e61e39f0f593c61de"
+                        },
+                        {
+                            "repository_url": "https://github.com/hg1048596-pixel/dsh-recall-unread",
+                            "commit": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                            "path": "src/host.js",
+                            "content_sha256": "397c4e8b1c2cc55f0c328c13211dfa031432686605582f8501c8eeeb43b75388"
+                        }
+                    ],
+                    "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                    "captured_at": "2026-11-05T04:04:55.637Z",
+                    "summary": "核查 README.md、src/client.js、src/host.js；从对应版本的 pending 视图挑选插话，调用官方队列删除，旧宿主可回退 RPC。",
+                    "artifact": "data/runs/2026-11-05-04/hg1048596-pixel--dsh-recall-unread/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "静态核查固定提交的阻止误发插话进入后续模型上下文。未执行目标代码或实际宿主验证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "用户在模型处理任务时发错一条插话。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "从对应版本的 pending 视图挑选插话，调用官方队列删除，旧宿主可回退 RPC。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "静态核查固定提交的阻止误发插话进入后续模型上下文。未执行目标代码或实际宿主验证。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "作者说明 desktop/web 与兼容区间。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 从对应版本的 pending 视图挑选插话，调用官方队列删除，旧宿主可回退 RPC。 | 用隔离 profile 确认 |",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 对照宿主原生界面，验证认领竞争、只读与部分成功。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 阻止误发插话进入后续模型上下文 | 在未认领窗口内可避免错误输入进入后续上下文。 | 对照宿主原生界面，验证认领竞争、只读与部分成功。 |",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "按宿主数据契约分支并优先官方 RPC。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 在输入区补上未认领插话撤回入口。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 撤回只在认领前有效，批量操作可部分成功。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 在未认领窗口内可避免错误输入进入后续上下文。",
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1336836593:root",
+                            "area": "code",
+                            "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-05T04:04:55.637Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-05T04:04:55.637Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                "reviewed_at": "2026-11-05T04:04:55.637Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336836593:root",
+                        "area": "code",
+                        "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 主要贡献见机制和证据，通用性仍待测。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) [Q04](#research-q04) 已有可描述工作流，净收益待验。",
+                    "basis": "interpretation",
+                    "score": 31,
+                    "evidence_ids": [
+                        "2026-11-05-04-github-1336836593-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "可在隔离环境观察具体使用任务。固定源码支持部分机制。采用取决于对照验证和部署条件。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01) 有明确的使用任务"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 相对现有流程有局部改进"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q03](#research-q03) 固定源码支持入口与约束"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04) 目标宿主需独立验证"
+                    }
+                },
+                "score": 59,
+                "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                "reviewed_at": "2026-11-05T04:04:55.637Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-05-04-github-1336836593-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1336836593:root",
+                        "area": "code",
+                        "fingerprint": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1336836593:root",
+            "repository": "hg1048596-pixel/dsh-recall-unread",
+            "path": "",
+            "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+            "fingerprints": {
+                "directory": "117130319999af1a05c7dbaed9a0d1731e2c6c45b626cde528047f92d8c64b6c",
+                "code": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+                "maintenance": "aba564d6209abb04ee0a66f40b410917d169f9ea18727bdc78a958d97bc93277"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-05T03:53:43Z",
+            "analysis_sha256": "2bc282cefb8ecd8e82aa8e14ca1d24ea28abdc87d5ec1e89d23743ee1fa026f5"
+        },
+        "publication.metadata": "data/catalog/hg1048596-pixel--dsh-recall-unread/meta.json",
+        "publication.summaries": {
+            "text": "撤回模型尚未认领的插话",
+            "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+            "source_url": "https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+            "items": {
+                "界面": "未读插话列表和撤回结果",
+                "Host 路由": "旧宿主 RPC 回退"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 等待模型认领后再澄清。 | 可直接比较 | 保留人工步骤 |\n| DSH Recall Unread | 在输入区补上未认领插话撤回入口。 | 撤回只在认领前有效，批量操作可部分成功。 |"
+        },
+        "publication.advice": {
+            "revision": "c36080359a87e0fd16c3c28cec9a0f3afe7d5b76",
+            "text": "[Q04](#research-q04) 对照宿主原生界面，验证认领竞争、只读与部分成功。"
+        },
+        "registry": "data/plugins/hg1048596-pixel--dsh-recall-unread",
+        "reports": "# DSH Recall Unread\n\n> 撤回模型尚未认领的插话\n\n## 研究范围\n\n- **仓库**：[hg1048596-pixel/dsh-recall-unread](https://github.com/hg1048596-pixel/dsh-recall-unread)\n- **版本号**：1.2.1（[固定提交 c36080359a87e0fd16c3c28cec9a0f3afe7d5b76](https://github.com/hg1048596-pixel/dsh-recall-unread/tree/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76)）\n- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n静态核查固定提交的阻止误发插话进入后续模型上下文。未执行目标代码或实际宿主验证。\n\n## 洞察短评\n\n- **用途**：用户在模型处理任务时发错一条插话。\n- **亮点**：[Q01](#research-q01) 在输入区补上未认领插话撤回入口。\n- **思考**：[Q03](#research-q03) 撤回只在认领前有效，批量操作可部分成功。\n- **建议**：[Q05](#research-q05) 在未认领窗口内可避免错误输入进入后续上下文。\n\n采用建议：[Q04](#research-q04) 对照宿主原生界面，验证认领竞争、只读与部分成功。\n\n## 核心贡献\n\n[Q01](#research-q01) 在输入区补上未认领插话撤回入口。\n\n## 关键质疑\n\n[Q03](#research-q03) 撤回只在认领前有效，批量操作可部分成功。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 在未认领窗口内可避免错误输入进入后续上下文。\n\n记录服务响应、投影和下一步模型输入。\n\n## 场景与替代办法\n\n用户在模型处理任务时发错一条插话。\n\n等待模型认领后再澄清。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 宿主 | 必需 | 从对应版本的 pending 视图挑选插话，调用官方队列删除，旧宿主可回退 RPC。 | 用隔离 profile 确认 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户在模型处理任务时发错一条插话。 | 保留原流程 |\n| 试验 | 从对应版本的 pending 视图挑选插话，调用官方队列删除，旧宿主可回退 RPC。 | 观察固定版本 |\n| 复核 | 对照宿主原生界面，验证认领竞争、只读与部分成功。 | 比对任务结果 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 安装与运行成本未知 | 配置准备耗时未知 | 视 profile 而定 |\n| 持续 | 持续运行成本未知 | 日常维护耗时未知 | 视任务频率而定 |\n| 恢复 | 回退成本未知 | 恢复原流程耗时未知 | 视已有数据而定 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 阻止误发插话进入后续模型上下文 | 在未认领窗口内可避免错误输入进入后续上下文。 | 对照宿主原生界面，验证认领竞争、只读与部分成功。 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：阻止误发插话进入后续模型上下文\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁会用到？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n模型运行时误发补充说明的 DSH 用户。官方队列坞已有 queued 入口，作者定位于 steering 的 UI 缺口。验收须看到 pending 插话可撤，普通排队和已认领内容不受影响。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:20-31](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/README.md#L20-L31)\n\n作者区分 queued 与 steering\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n## 🔍 工作原理\n\nDSH 中“已发送但未读取”的消息 = 仍停留在 Agent **inbox**（待处理队列）中的消息：0.2.x 是 `inbox['next-turn']` / `inbox['next-step']` 里的 pending 项，0.1.x 是会话快照 `ConversationSnapshot.queue`。它有两种 placement：\n\n| placement | 含义 | 官方界面现状 |\n| --- | --- | --- |\n| `queued` | 运行中排队等待下一轮 | 官方队列坞已有「删除」按钮 |\n| `steering` | 运行中插话发送，显示为对话尾部待处理气泡 | **没有任何撤回入口** ← 本插件补上 |\n\n撤回实现分两个版本：\n\n- **静态版（推荐）**：Client 直接调用官方会话 RPC `session.updateQueue(itemId, { kind: 'remove' })`（与官方队列坞的「删除」同一实现）。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:53-75](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L53-L75)\n\n两代接口只筛选相应插话\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    const RecallDock = (props) => {\n      // props.useProjection 只在 0.2.x 出现；对同一组件实例恒定，可安全按运行时分支调用。\n      const hasProjection = typeof props.useProjection === 'function'\n      const inbox = hasProjection ? props.useProjection('inbox') : undefined\n      const session = typeof props.useSession === 'function' ? props.useSession((value) => value) : props.session\n      const canUpdate = typeof props.useAccess === 'function' ? props.useAccess('session/updateQueue') : true\n      let rows\n      if (hasProjection) {\n        // 投影未就绪时也不能回退到旧快照，否则会显示已被读取的陈旧消息。\n        const nextStep = inbox && Array.isArray(inbox['next-step']) ? inbox['next-step'] : []\n        rows = nextStep.filter((row) => row && typeof row.id === 'string' && row.source && row.source.kind === 'user')\n      } else {\n        const legacyQueue = session && Array.isArray(session.queue) ? session.queue : []\n        rows = legacyQueue.filter((row) => row && typeof row.id === 'string' && row.placement === 'steering')\n      }\n\n      const [busy, setBusy] = React.useState(null)\n      const busyRef = React.useRef(false)\n      const [status, setStatus] = React.useState(null)\n      const sessionId = props.sessionId\n      // RC 系列的只读 subagent 会话与官方 QueueDock 一样不提供修改操作。\n      const subagent = session && session.subagent\n      const queueMutable = canUpdate && (!subagent || (subagent.address && subagent.address.mode === 'continuable'))\n```\n\n</details>\n\n#### 缺口\n\n- 新宿主是否原生提供同入口需独立比较。\n  **影响**：缩短纠正误发的操作路径。\n  **进一步探讨**：对照同版宿主的官方队列。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 如何避免错误撤回？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n新版只读 inbox 投影的用户 next-step 行，投影未就绪不回退旧快照。用官方 updateQueue 删除。旧版无 sessions 服务才用私有 RPC 直接移除 inbox 项。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:53-75](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L53-L75)\n\n新旧来源和可修改条件\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n    const RecallDock = (props) => {\n      // props.useProjection 只在 0.2.x 出现；对同一组件实例恒定，可安全按运行时分支调用。\n      const hasProjection = typeof props.useProjection === 'function'\n      const inbox = hasProjection ? props.useProjection('inbox') : undefined\n      const session = typeof props.useSession === 'function' ? props.useSession((value) => value) : props.session\n      const canUpdate = typeof props.useAccess === 'function' ? props.useAccess('session/updateQueue') : true\n      let rows\n      if (hasProjection) {\n        // 投影未就绪时也不能回退到旧快照，否则会显示已被读取的陈旧消息。\n        const nextStep = inbox && Array.isArray(inbox['next-step']) ? inbox['next-step'] : []\n        rows = nextStep.filter((row) => row && typeof row.id === 'string' && row.source && row.source.kind === 'user')\n      } else {\n        const legacyQueue = session && Array.isArray(session.queue) ? session.queue : []\n        rows = legacyQueue.filter((row) => row && typeof row.id === 'string' && row.placement === 'steering')\n      }\n\n      const [busy, setBusy] = React.useState(null)\n      const busyRef = React.useRef(false)\n      const [status, setStatus] = React.useState(null)\n      const sessionId = props.sessionId\n      // RC 系列的只读 subagent 会话与官方 QueueDock 一样不提供修改操作。\n      const subagent = session && session.subagent\n      const queueMutable = canUpdate && (!subagent || (subagent.address && subagent.address.mode === 'continuable'))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:84-98](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L84-L98)\n\n优先官方会话 RPC\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n      // 0.1.x 的 code 是 queue-item-not-found，0.2.x 带命名空间前缀\n      const alreadySending = (code) => code === 'already-claimed' || code === 'queue-item-not-found' || code === 'session/queue-item-not-found' || code === 'session/steer-unavailable'\n      const accepted = (result) => result && result.ok === true && (!result.value || result.value.accepted !== false)\n\n      const recall = async (row) => {\n        const sessions = ctx.get('sessions')\n        // RC 系列走官方路径，保留权限检查和附件清理；仅旧运行时回退私有 RPC。\n        if (sessions === undefined) {\n          if (hasProjection) throw new Error('sessions service unavailable')\n          return host.call('recall', { sessionId, itemId: row.id })\n        }\n        const binding = sessions.binding(sessionId)\n        if (binding === undefined) throw new Error('session binding unavailable')\n        return binding.session.updateQueue(row.id, { kind: 'remove' })\n      }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/host.js:13-31](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/host.js#L13-L31)\n\n旧版直达 inbox 并报告已认领\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n    harness.handle('recall', async (args) => {\n      const sessionId = args && typeof args.sessionId === 'string' ? args.sessionId : ''\n      const itemId = args && typeof args.itemId === 'string' ? args.itemId : ''\n      if (sessionId === '' || itemId === '') {\n        return { ok: false, code: 'bad-args', message: 'sessionId and itemId are required' }\n      }\n      const agents = ctx.get('agents')\n      if (agents === undefined) {\n        return { ok: false, code: 'unavailable', message: 'agents service unavailable' }\n      }\n      const agent = agents.get(sessionId)\n      if (agent === undefined) {\n        return { ok: false, code: 'session-not-found', message: 'session is not attached' }\n      }\n      const removed = agent.inbox.remove(itemId)\n      if (!removed) {\n        return { ok: false, code: 'already-claimed', message: 'message is no longer pending (already read)' }\n      }\n      return { ok: true }\n```\n\n</details>\n\n#### 缺口\n\n- 旧 RPC 的鉴权取决于外层宿主。\n  **影响**：前端隐藏按钮无法替代服务授权。\n  **进一步探讨**：按宿主分开确认拒绝结果。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 竞争条件如何表现？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n批量撤回按行串行执行，失败继续并分别计数，整体不是原子操作。已认领或队列项不存在时单条反馈无法撤回。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:84-117](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L84-L117)\n\n按错误码报告队列竞争\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n      // 0.1.x 的 code 是 queue-item-not-found，0.2.x 带命名空间前缀\n      const alreadySending = (code) => code === 'already-claimed' || code === 'queue-item-not-found' || code === 'session/queue-item-not-found' || code === 'session/steer-unavailable'\n      const accepted = (result) => result && result.ok === true && (!result.value || result.value.accepted !== false)\n\n      const recall = async (row) => {\n        const sessions = ctx.get('sessions')\n        // RC 系列走官方路径，保留权限检查和附件清理；仅旧运行时回退私有 RPC。\n        if (sessions === undefined) {\n          if (hasProjection) throw new Error('sessions service unavailable')\n          return host.call('recall', { sessionId, itemId: row.id })\n        }\n        const binding = sessions.binding(sessionId)\n        if (binding === undefined) throw new Error('session binding unavailable')\n        return binding.session.updateQueue(row.id, { kind: 'remove' })\n      }\n\n      const doRecall = async (row) => {\n        if (busyRef.current || !queueMutable) return\n        busyRef.current = true\n        setBusy(row.id)\n        try {\n          const result = await recall(row)\n          if (accepted(result)) {\n            setStatus({ kind: 'info', text: '已撤回一条消息' })\n          } else {\n            const code = result && (result.code || (result.error && result.error.code))\n            setStatus({ kind: 'error', text: alreadySending(code) ? '该消息已开始发送，无法撤回' : '撤回失败，请重试' })\n          }\n        } catch (error) {\n          setStatus({ kind: 'error', text: '撤回失败，请重试' })\n          console.error('[dsh-recall-unread] recall failed', error)\n        } finally {\n          busyRef.current = false\n          setBusy((current) => (current === row.id ? null : current))\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:121-145](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L121-L145)\n\n逐条执行并累计成功与失败\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      const doRecallAll = async () => {\n        if (busyRef.current || !queueMutable) return\n        busyRef.current = true\n        setBusy('__all__')\n        let failed = 0\n        let succeeded = 0\n        try {\n          for (const row of rows) {\n            // 某条被模型抢先读取，不影响继续撤回其余仍未读的消息。\n            try {\n              const result = await recall(row)\n              if (accepted(result)) succeeded += 1\n              else failed += 1\n            } catch (error) {\n              failed += 1\n              console.error('[dsh-recall-unread] recall-all failed', error)\n            }\n          }\n          setStatus(failed === 0\n            ? { kind: 'info', text: '已撤回全部未读消息' }\n            : { kind: 'error', text: '已撤回 ' + succeeded + ' 条，另有 ' + failed + ' 条撤回失败，可能已开始发送' })\n        } finally {\n          busyRef.current = false\n          setBusy(null)\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 宿主真正认领和 UI 更新之间存在窗口。\n  **影响**：用户需根据最终返回判断。\n  **进一步探讨**：安排认领先于删除与反序各一次。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何采用并退出？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n作者说明 desktop 和 web 兼容声明，实际需覆盖新版投影及旧版快照。首次成本主要是宿主适配和并发试验，持续成本来自宿主 API 变更，退出时停用插件并对照官方队列仍可用。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:3-18](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/README.md#L3-L18)\n\n作者说明适用版本和停用行为\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n> DeepSeek Harness (DSH) 插件：撤回「已发送但尚未被模型读取」的文字消息。\n\n在模型运行中发送文字（插话发送）时，消息会以“待处理”气泡的形式出现在对话尾部——在模型认领（读取）之前，你可以一键撤回，避免把还没想好的话发给模型。\n\n当前版本 **v1.2.1**，兼容 **DSH 0.2.1-rc.1 至 0.2.1-rc.5**（desktop / web profile），并保留 0.1.x / 0.2.x 数据接口兼容。验证范围见[兼容说明](docs/compatibility.md)。\n\n---\n\n## ✨ 功能特性\n\n- **启用即生效**：在插件市场（dsh-market）或插件管理页启用本插件后，「未读消息」条带立即生效；停用即整体不加载。不依赖任何启动器菜单。\n- **未读消息条带**：在输入框上方（`conversation.input.dock` 插槽）列出所有已发送但模型尚未读取的插话消息（0.2.x 取 `inbox['next-step']` 的用户插话，0.1.x 取 `placement === 'steering'`）。\n- **单条撤回**：每条消息显示预览文本 + 「撤回」按钮，点击后消息从对话中移除，并提示“已撤回一条消息”。\n- **全部撤回**：存在多条未读消息时提供「全部撤回」一键操作；某条被模型抢先读取后，仍继续处理其他消息，并显示成功与失败条数。\n- **只读语义**：消息一旦被模型认领（开始读取）会自动离开条带，此时无法撤回——严格符合“仅未读取可撤回”。\n- **优雅降级**：撤回失败（消息已开始发送）时给出明确提示，不会破坏会话。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:88-98](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L88-L98)\n\n新版和旧版执行入口不同\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n      const recall = async (row) => {\n        const sessions = ctx.get('sessions')\n        // RC 系列走官方路径，保留权限检查和附件清理；仅旧运行时回退私有 RPC。\n        if (sessions === undefined) {\n          if (hasProjection) throw new Error('sessions service unavailable')\n          return host.call('recall', { sessionId, itemId: row.id })\n        }\n        const binding = sessions.binding(sessionId)\n        if (binding === undefined) throw new Error('session binding unavailable')\n        return binding.session.updateQueue(row.id, { kind: 'remove' })\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 安装和回退未实测。\n  **影响**：不同宿主上安全路径可能不同。\n  **进一步探讨**：每个目标 profile 独立验证。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么结果推翻预期？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n同版宿主对照默认界面与插件，安排认领先和删除先并监视模型上下文和会话投影。再测三条批量其中一条被认领和只读子会话。若删除结果与实际投影不一致，或已认领内容仍显示撤回成功，就不能依赖当前组合。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/client.js:73-86](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L73-L86)\n\n读取权限和预期冲突码\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n      // RC 系列的只读 subagent 会话与官方 QueueDock 一样不提供修改操作。\n      const subagent = session && session.subagent\n      const queueMutable = canUpdate && (!subagent || (subagent.address && subagent.address.mode === 'continuable'))\n\n      React.useEffect(() => {\n        if (status === null) return\n        return ctx.timeout(() => setStatus(null), 2500)\n      }, [status])\n\n      if ((rows.length === 0 && status === null) || sessionId === undefined) return null\n\n      // 0.1.x 的 code 是 queue-item-not-found，0.2.x 带命名空间前缀\n      const alreadySending = (code) => code === 'already-claimed' || code === 'queue-item-not-found' || code === 'session/queue-item-not-found' || code === 'session/steer-unavailable'\n      const accepted = (result) => result && result.ok === true && (!result.value || result.value.accepted !== false)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[src/client.js:121-145](https://github.com/hg1048596-pixel/dsh-recall-unread/blob/c36080359a87e0fd16c3c28cec9a0f3afe7d5b76/src/client.js#L121-L145)\n\n批量结果为逐项合计\n\n<details>\n<summary>查看原文（25行）</summary>\n\n```text\n      const doRecallAll = async () => {\n        if (busyRef.current || !queueMutable) return\n        busyRef.current = true\n        setBusy('__all__')\n        let failed = 0\n        let succeeded = 0\n        try {\n          for (const row of rows) {\n            // 某条被模型抢先读取，不影响继续撤回其余仍未读的消息。\n            try {\n              const result = await recall(row)\n              if (accepted(result)) succeeded += 1\n              else failed += 1\n            } catch (error) {\n              failed += 1\n              console.error('[dsh-recall-unread] recall-all failed', error)\n            }\n          }\n          setStatus(failed === 0\n            ? { kind: 'info', text: '已撤回全部未读消息' }\n            : { kind: 'error', text: '已撤回 ' + succeeded + ' 条，另有 ' + failed + ' 条撤回失败，可能已开始发送' })\n        } finally {\n          busyRef.current = false\n          setBusy(null)\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 没有宿主并发实测。\n  **影响**：可排除仅凭提示判断效果。\n  **进一步探讨**：记录服务响应、投影和下一步模型输入。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：d5c4f7e06ea26ef15a48749b2354947b9500507051b160b00633b735e7a74f5f。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 316 | — | — | 4194 |\n| .js | source | 4 | 442 | 337 | 79 | — |\n| .mjs | source | 3 | 591 | 540 | 9 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 等待模型认领后再澄清。 | 可直接比较 | 保留人工步骤 |\n| DSH Recall Unread | 在输入区补上未认领插话撤回入口。 | 撤回只在认领前有效，批量操作可部分成功。 |\n\n## 工程亮点\n\n按宿主数据契约分支并优先官方 RPC。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、src/client.js、src/host.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：静态核查固定提交的阻止误发插话进入后续模型上下文。未执行目标代码或实际宿主验证。\n- 下一步：记录服务响应、投影和下一步模型输入。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-05-04/hg1048596-pixel--dsh-recall-unread/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"hg1048596-pixel/dsh-recall-unread\",\n  \"revision\": \"c36080359a87e0fd16c3c28cec9a0f3afe7d5b76\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"src/client.js\",\n    \"src/host.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"阻止误发插话进入后续模型上下文\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁会用到？\",\n        \"answer\": \"模型运行时误发补充说明的 DSH 用户。官方队列坞已有 queued 入口，作者定位于 steering 的 UI 缺口。验收须看到 pending 插话可撤，普通排队和已认领内容不受影响。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 20,\n            \"line_end\": 31,\n            \"observation\": \"作者区分 queued 与 steering\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 53,\n            \"line_end\": 75,\n            \"observation\": \"两代接口只筛选相应插话\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"新宿主是否原生提供同入口需独立比较。\",\n            \"impact\": \"缩短纠正误发的操作路径。\",\n            \"next_step\": \"对照同版宿主的官方队列。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"如何避免错误撤回？\",\n        \"answer\": \"新版只读 inbox 投影的用户 next-step 行，投影未就绪不回退旧快照。用官方 updateQueue 删除。旧版无 sessions 服务才用私有 RPC 直接移除 inbox 项。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 53,\n            \"line_end\": 75,\n            \"observation\": \"新旧来源和可修改条件\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 84,\n            \"line_end\": 98,\n            \"observation\": \"优先官方会话 RPC\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/host.js\",\n            \"line_start\": 13,\n            \"line_end\": 31,\n            \"observation\": \"旧版直达 inbox 并报告已认领\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"旧 RPC 的鉴权取决于外层宿主。\",\n            \"impact\": \"前端隐藏按钮无法替代服务授权。\",\n            \"next_step\": \"按宿主分开确认拒绝结果。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"竞争条件如何表现？\",\n        \"answer\": \"批量撤回按行串行执行，失败继续并分别计数，整体不是原子操作。已认领或队列项不存在时单条反馈无法撤回。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 84,\n            \"line_end\": 117,\n            \"observation\": \"按错误码报告队列竞争\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 121,\n            \"line_end\": 145,\n            \"observation\": \"逐条执行并累计成功与失败\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主真正认领和 UI 更新之间存在窗口。\",\n            \"impact\": \"用户需根据最终返回判断。\",\n            \"next_step\": \"安排认领先于删除与反序各一次。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"如何采用并退出？\",\n        \"answer\": \"作者说明 desktop 和 web 兼容声明，实际需覆盖新版投影及旧版快照。首次成本主要是宿主适配和并发试验，持续成本来自宿主 API 变更，退出时停用插件并对照官方队列仍可用。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"README.md\",\n            \"line_start\": 3,\n            \"line_end\": 18,\n            \"observation\": \"作者说明适用版本和停用行为\",\n            \"kind\": \"author_claim\"\n          },\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 88,\n            \"line_end\": 98,\n            \"observation\": \"新版和旧版执行入口不同\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"安装和回退未实测。\",\n            \"impact\": \"不同宿主上安全路径可能不同。\",\n            \"next_step\": \"每个目标 profile 独立验证。\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"什么结果推翻预期？\",\n        \"answer\": \"同版宿主对照默认界面与插件，安排认领先和删除先并监视模型上下文和会话投影。再测三条批量其中一条被认领和只读子会话。若删除结果与实际投影不一致，或已认领内容仍显示撤回成功，就不能依赖当前组合。\",\n        \"evidence\": [\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 73,\n            \"line_end\": 86,\n            \"observation\": \"读取权限和预期冲突码\",\n            \"kind\": \"source_inspection\"\n          },\n          {\n            \"source_path\": \"src/client.js\",\n            \"line_start\": 121,\n            \"line_end\": 145,\n            \"observation\": \"批量结果为逐项合计\",\n            \"kind\": \"source_inspection\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有宿主并发实测。\",\n            \"impact\": \"可排除仅凭提示判断效果。\",\n            \"next_step\": \"记录服务响应、投影和下一步模型输入。\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-recall-unread\\n\\n> DeepSeek Harness (DSH) 插件：撤回「已发送但尚未被模型读取」的文字消息。\\n\\n在模型运行中发送文字（插话发送）时，消息会以“待处理”气泡的形式出现在对话尾部——在模型认领（读取）之前，你可以一键撤回，避免把还没想好的话发给模型。\\n\\n当前版本 **v1.2.1**，兼容 **DSH 0.2.1-rc.1 至 0.2.1-rc.5**（desktop / web profile），并保留 0.1.x / 0.2.x 数据接口兼容。验证范围见[兼容说明](docs/compatibility.md)。\\n\\n---\\n\\n## ✨ 功能特性\\n\\n- **启用即生效**：在插件市场（dsh-market）或插件管理页启用本插件后，「未读消息」条带立即生效；停用即整体不加载。不依赖任何启动器菜单。\\n- **未读消息条带**：在输入框上方（`conversation.input.dock` 插槽）列出所有已发送但模型尚未读取的插话消息（0.2.x 取 `inbox['next-step']` 的用户插话，0.1.x 取 `placement === 'steering'`）。\\n- **单条撤回**：每条消息显示预览文本 + 「撤回」按钮，点击后消息从对话中移除，并提示“已撤回一条消息”。\\n- **全部撤回**：存在多条未读消息时提供「全部撤回」一键操作；某条被模型抢先读取后，仍继续处理其他消息，并显示成功与失败条数。\\n- **只读语义**：消息一旦被模型认领（开始读取）会自动离开条带，此时无法撤回——严格符合“仅未读取可撤回”。\\n- **优雅降级**：撤回失败（消息已开始发送）时给出明确提示，不会破坏会话。\\n\\n## 🔍 工作原理\\n\\nDSH 中“已发送但未读取”的消息 = 仍停留在 Agent **inbox**（待处理队列）中的消息：0.2.x 是 `inbox['next-turn']` / `inbox['next-step']` 里的 pending 项，0.1.x 是会话快照 `ConversationSnapshot.queue`。它有两种 placement：\\n\\n| placement | 含义 | 官方界面现状 |\\n| --- | --- | --- |\\n| `queued` | 运行中排队等待下一轮 | 官方队列坞已有「删除」按钮 |\\n| `steering` | 运行中插话发送，显示为对话尾部待处理气泡 | **没有任何撤回入口** ← 本插件补上 |\\n\\n撤回实现分两个版本：\\n\\n- **静态版（推荐）**：Client 直接调用官方会话 RPC `session.updateQueue(itemId, { kind: 'remove' })`（与官方队列坞的「删除」同一实现）。\\n- **动态版**：优先调用同一官方会话 RPC；仅在旧运行时没有 `sessions` 服务时，通过包内私有 RPC 回退：\\n\\n```\\nClient  (撤回按钮)\\n   │  host.call('recall', { sessionId, itemId })\\n   ▼\\nHost    harness.handle('recall')\\n   │  agents.get(sessionId).inbox.remove(itemId)\\n   ▼\\n效果   消息从 inbox 移除 → inbox 投影更新 → 气泡与条带同步消失\\n```\\n\\n### 🧩 运行时兼容\\n\\n| 运行时 | 「未读插话」数据源 | 撤回调用 |\\n| --- | --- | --- |\\n| **0.2.1-rc.1 ～ rc.5**（desktop / web） | `useProjection('inbox')['next-step']` 中 `source.kind === 'user'` 的行 | 官方 `sessions.binding(sessionId).session.updateQueue(id, { kind: 'remove' })` |\\n| **0.2.x**（含 desktop profile） | `useProjection('inbox')['next-step']` 中 `source.kind === 'user'` 的行 | `sessions.binding(sessionId).session.updateQueue(id, { kind: 'remove' })`（失败码带命名空间：`session/queue-item-not-found`） |\\n| **0.1.x** | `useSession` / `session` 会话快照的 `queue` 中 `placement === 'steering'` 的行 | 同上（失败码 `queue-item-not-found`） |\\n\\n- 0.2.x 的 `SessionSnapshot` 已移除 `queue` 字段，本地回显改到 `pendingSubmissions`；插话被接纳后进入 `inbox['next-step']`，在模型下一步读取前仍可撤回。\\n- 官方队列坞只覆盖 `next-turn`（排队消息，已有删除按钮），`next-step`（插话）这一格由本插件补齐。\\n- 投影接口存在但尚未就绪时，不回退到旧快照，以免显示已被模型读取的陈旧消息。\\n- 与 RC 系列官方队列坞一致，只读子代理会话不显示撤回操作；可继续的子代理会话仍可操作。\\n- RC1–RC5 已逐个官方 tag 核对相关源码契约，并用测试桩覆盖静态、动态客户端；尚未逐版本完成真实界面验收。详见[兼容说明](docs/compatibility.md)。\\n\\n旧版 Host 回退直接调用 `agent.inbox.remove`；RC 系列使用官方 RPC，以保留会话检查和附件清理。\\n\\n## 📁 目录结构\\n\\n```\\ndsh-recall-unread/\\n├── README.md                  # 本文件\\n├── LICENSE                    # MIT 许可证\\n├── .gitignore                 # Git 忽略规则\\n├── package.json               # npm 安装清单、项目元数据与测试命令\\n├── plugin.json                # 插件清单（名称 / ID 前缀 / 代码来源）\\n├── src/\\n│   ├── host.js                # Host 半端源码（动态版，可直接作为 code.host）\\n│   └── client.js              # Client 半端源码（动态版，可直接作为 code.client）\\n├── plugin/                    # desktop / web 静态插件（安装后随 DSH 加载，推荐）\\n│   ├── package.json           # 安装包元数据（含 dsh.client 声明）\\n│   ├── host.js                # Host 半端（空实现占位，撤回走客户端官方 RPC）\\n│   └── client.js              # Client bundle（__ModuleLoader__ 注册）\\n└── docs/compatibility.md       # 兼容契约、验证范围与验收步骤\\n```\\n\\n## 🚀 安装与激活\\n\\n### 方式一：静态安装（推荐，随 DSH 加载，重启不丢失）\\n\\n桌面版使用应用内的「插件 → 添加插件」安装或更新，填写包名 `dsh-recall-unread`。\\n网页版可使用 DSH 官方插件命令：\\n\\n```sh\\n# 网页版\\ndsh plugin --profile web add dsh-recall-unread\\n```\\n\\n完全退出并重新启动对应的 DSH 应用。可在插件市场或插件管理页停用、启用插件。\\n\\n上述包名命令安装的是 npm 当前已发布版本。GitHub 源码版本与 npm 发布进度可能不同；需要安装本次 **v1.2.1** 更新时，可克隆对应 tag：\\n\\n```sh\\ngit clone --branch v1.2.1 https://github.com/hg1048596-pixel/dsh-recall-unread.git\\n```\\n\\n桌面版在应用内添加克隆目录的绝对路径；网页版将包名替换为该路径：\\n\\n```sh\\ndsh plugin --profile web add /absolute/path/to/dsh-recall-unread\\n```\\n\\n插件没有构建步骤。普通 npm 安装的 `dsh` CLI 会拒绝管理保留的 `desktop` profile；\\n只有桌面版配套的管理入口可使用 `dsh plugin --profile desktop …`，桌面用户优先使用应用内安装。\\n\\n> `dsh.client.platform: web` 表示使用浏览器客户端运行时；桌面版也使用这一客户端声明，无需改成 `desktop`。\\n\\n#### 手工安装（可选）\\n\\n无法使用插件命令时，可将 `plugin/` 目录部署到所用 profile。以下以 `web` 为例；桌面版使用 `desktop`：\\n\\n1. 将 `plugin/` 整个目录复制到 web profile 的 node_modules 下：\\n   ```\\n   ~/.dsh/profiles/web/node_modules/dsh-recall-unread/\\n   ```\\n2. 在 `~/.dsh/profiles/web/cordis.patch.yml` 末尾追加加载行：\\n   ```yaml\\n   - insert:\\n       - id: recall-unread\\n         name: dsh-recall-unread\\n   ```\\n3. 重启 DSH。插件启用后「未读消息」条带即生效；可在插件市场（dsh-market）或插件管理页随时停用/启用。\\n\\n> 说明：静态版在 Client 端直接调用官方会话 RPC `session.updateQueue(itemId, { kind: 'remove' })`（与官方队列坞的「删除」同一实现），无需动态 RPC，与官方界面行为完全一致。插件不依赖 Amadeus。\\n\\n### 方式二：动态插件（临时体验，重启后失效）\\n\\n本项目也可作为 **DSH 动态 Cordis 插件**（进程级定义）临时体验：\\n\\n1. 打开 DSH，在会话中进入 **Cordis 插件开发** 流程（`cordis_define`）。\\n2. 新建插件：\\n   - `idPrefix`：`recall`\\n   - `code.host`：粘贴 `src/host.js` 的完整内容\\n   - `code.client`：粘贴 `src/client.js` 的完整内容\\n   - `name`：`Recall Sent Unread Messages`\\n   - `purpose`：一句话说明用途\\n3. 用返回的 `pluginId` / `packageId` 调用 `cordis_run` 激活，并在界面批准运行。\\n4. 激活后在模型运行中发送一条插话消息，即可在输入框上方看到「未读消息」条带与「撤回」按钮。\\n\\n> 注意：动态插件是进程级、临时的——DSH 重启后需要重新定义。长期使用请用**方式一**的静态安装。\\n\\n## ⚙️ 配置\\n\\n本插件**零配置、开箱即用**，无需任何设置。静态安装修改 `plugin/client.js` 后重新部署并重启；动态版修改 `src/client.js` 后重新定义（`cordis_define`）。两处客户端逻辑应同步维护，常用可调项：\\n\\n| 项 | 位置 | 说明 |\\n| --- | --- | --- |\\n| 条带排序 | `slots.register(…, order: 30)` | 数字越大越靠后，可调整与输入框的贴近程度 |\\n| 提示停留时长 | `ctx.timeout(() => setStatus(null), 2500)` | 撤回结果提示自动消失的时间（毫秒） |\\n\\n## 📖 使用说明\\n\\n1. 确保插件已启用（安装后默认启用；可在插件市场/管理页开关）。\\n2. 模型正在运行（如深度思考、长工具调用）时，用**插话发送**（默认快捷键：运行中发送即进入 steering）发出一条文字。\\n3. 消息出现在对话尾部（带“待处理”标记），同时输入框上方出现「未读消息」条带。\\n4. 点击该消息右侧的「撤回」——消息从 inbox 移除后，气泡与列表同步更新，提示“已撤回一条消息”。最后一条撤回后，结果提示仍保留约 2.5 秒。\\n5. 有多条未读时，可点「全部撤回」。若部分消息已被读取，会继续撤回剩余消息并报告结果。请求执行中会阻止重复点击。\\n\\n## ⚠️ 限制与已知问题\\n\\n- 仅能撤回 **尚未被模型读取**（仍在 inbox）的消息；一旦被认领即不可撤回。\\n- 排队消息（`queued`）官方队列坞已提供删除，本插件不重复覆盖。\\n- 只读子代理会话仅显示未读消息，不提供撤回按钮。\\n- 受限于官方未提供“消息气泡级”插槽，撤回入口放在输入框上方的条带中，而非直接悬浮在气泡上。\\n- 动态插件不持久化；按「方式一」静态安装后随 DSH 启动自动加载，重启不丢失。\\n\\n## 🔒 防锁死机制（重要）\\n\\nDSH 网页启动是 **fail-loud** 的：任何一个插件加载失败都会整屏显示\\n`Failed to load plugins`，导致进不去 DSH。本插件曾因 bundle 里引用\\n`module.exports` 而触发 `ReferenceError: module is not defined` 锁死启动，\\n现从三层做了固化：\\n\\n### 1. Bundle 结构性修复（已生效）\\n\\nDSH 的 `window.__ModuleLoader__.load` 的 factory **只注入 `require`，不注入\\n`module` / `exports`**。`plugin/client.js` 现在完全不引用 `module` / `exports`，\\nfactory 直接 `return { inject, apply }`（返回值就是模块导出）。无论怎么改、\\n怎么重新包装，都不会再出现 `module is not defined`。文件头有详细警告注释。\\n\\n> ⚠️ **不要删掉 `inject` 里的 `'timer'`**：Cordis 的 `ctx` 是 Proxy，\\n> 未 inject 的服务属性被访问时会直接抛 `cannot get property \\\"timer\\\" without inject`，\\n> 导致 apply 阶段失败。客户端的 `timer` 服务由核心插件\\n> `@deepseek-ai/dsh-cordis-client-runner` 提供（`ctx.interval` / `ctx.timeout`\\n> 已 mixin 到 Context 原型，随 fiber 自动清理），轮询和提示自动消失都依赖它。\\n> 静态 Host 半端为空实现，不依赖 timer。\\n\\n### 2. Git 钩子：带病 bundle 不允许提交（安装一次即可）\\n\\n```powershell\\npwsh -NoProfile -ExecutionPolicy Bypass -File tools/install-hooks.ps1\\n```\\n\\n安装后每次 `git commit` 自动运行 `tools/check-client-bundle.ps1`：\\n\\n- `node --check` 校验 `plugin/client.js` / `plugin/host.js` 语法；\\n- 拦截任何非注释的 `module` / `exports` 引用（即会锁死 DSH 的写法）。\\n\\n校验失败会**直接拒绝提交**，从源头杜绝回归。手动运行同样可以：\\n`pwsh -NoProfile -ExecutionPolicy Bypass -File tools/check-client-bundle.ps1`。\\n\\n### 3. 急救开关：万一再出问题，一键进 DSH\\n\\n如果插件又导致启动红屏，**不用改任何配置**，禁用它即可正常进入 DSH：\\n\\n```powershell\\n# 禁用撤回插件（自动备份 cordis.patch.yml），然后重启 DSH\\npwsh -NoProfile -ExecutionPolicy Bypass -File tools/recall-killswitch.ps1\\n\\n# 恢复撤回插件，然后重启 DSH\\npwsh -NoProfile -ExecutionPolicy Bypass -File tools/recall-killswitch.ps1 -Action enable\\n```\\n\\n原理：在 `~/.dsh/profiles/web/cordis.patch.yml` 的 `recall-unread` 条目上加/删\\n`disabled: true`（loader 对 disabled 条目直接跳过，不导入该插件）。\\n脚本默认处理 `web` profile；桌面版应在 `~/.dsh/profiles/desktop/cordis.patch.yml` 中对同名条目设置 `disabled: true` 后重启。\\n\\n> 修改 `plugin/client.js` 后记得重新部署到\\n> `~/.dsh/profiles/web/node_modules/dsh-recall-unread/` 并重启 DSH。\\n\\n## 📦 版本历史\\n\\n- **v1.2.1**（2026-11）核对并适配 DSH 0.2.1-rc.1 至 rc.5：同步静态、动态客户端；投影未就绪时避免旧快照回退，遵守只读子代理限制；批量撤回遇单条失败继续处理其余消息，保留最后一条撤回的结果提示，并防止同时重复提交；补充兼容回归测试。\\n- **v1.2.0**（2026-10）适配 DSH 0.2.x（含 desktop profile）：未读插话改从\\n  `useProjection('inbox')['next-step']` 读取（`SessionSnapshot.queue` 已被官方移除），\\n  保留 0.1.x 的 `session.queue` 回退；预览文本按官方队列坞口径从 content 块折叠；\\n  失败码兼容 `session/queue-item-not-found`。\\n- **v1.1.0**（2026-08）移除 Amadeus 启动器依赖：删除 🧩 菜单入口与客户端\\n  amadeus 轮询，改为启用即生效（插件市场/管理页的启用·停用开关控制加载）。\\n- **v1.0.1**（2026-08）防锁死固化：bundle 彻底移除 `module`/`exports` 引用\\n  （factory 直接 return 导出）；`?.load` 注册守卫；`inject` 保留\\n  `['slots','timer']` 并加 Proxy 访问警告；新增 git 钩子校验与一键急救开关脚本。\\n- **v1.0.0**（2026-08）首个可运行版本：Host RPC 撤回 + Client 未读消息条带。\\n\\n## 📄 许可证\\n\\n[MIT](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-recall-unread\\\",\\n  \\\"version\\\": \\\"1.2.1\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness plugin: recall sent-but-unread text messages before the model reads them.\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"./plugin/host.js\\\",\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node tools/test-client-data-source.mjs\\\"\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./plugin/host.js\\\",\\n    \\\"./client\\\": \\\"./plugin/client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"plugin/\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"docs/compatibility.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh\\\",\\n    \\\"plugin\\\",\\n    \\\"cordis\\\",\\n    \\\"recall\\\",\\n    \\\"撤回\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\"\\n    }\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/hg1048596-pixel/dsh-recall-unread.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/hg1048596-pixel/dsh-recall-unread#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/hg1048596-pixel/dsh-recall-unread/issues\\\"\\n  }\\n}\\n\\n\"\n    },\n    {\n      \"path\": \"src/client.js\",\n      \"content\": \"/*\\n * dsh-recall-unread —— Client 半端\\n *\\n * 用法：在 DeepSeek Harness 的 Cordis 插件开发流程中（cordis_define），\\n * 把本文件内容整体作为 code.client 传入。该函数体返回一个 Cordis Plugin。\\n *\\n * 职责：在 conversation.input.dock 插槽注册一条「未读消息」条带，列出所有仍处于\\n * pending（模型尚未读取）的插话消息，每条提供「撤回」按钮。撤回优先调用\\n * 官方会话 RPC；旧运行时没有 sessions 服务时才使用包内私有 RPC。\\n *\\n * 数据源（兼容两代运行时）：\\n *   - DSH 0.2.x：useProjection('inbox')['next-step'] 中 source.kind === 'user' 的行\\n *     （SessionSnapshot.queue 已被官方移除）。\\n *   - DSH 0.1.x：会话快照 session.queue 中 placement === 'steering' 的行。\\n */\\nreturn {\\n  inject: ['slots', 'timer'],\\n  apply(ctx) {\\n    const slots = ctx.get('slots')\\n    if (slots === undefined) return\\n\\n    styles.insert(`\\n      .recall-dock{display:flex;justify-content:center;padding:0 var(--dsh-composer-side-clearance) 8px}\\n      .recall-panel{box-sizing:border-box;width:100%;max-width:var(--dsh-composer-card-max-width);background:var(--dsw-alias-bg-layer-2);border:1px solid var(--dsw-alias-border-l1);border-radius:12px;padding:8px 12px}\\n      .recall-head{display:flex;align-items:center;gap:8px;color:var(--dsw-alias-label-secondary);font-size:12px;line-height:18px}\\n      .recall-head b{color:var(--dsw-alias-label-primary);font-weight:600}\\n      .recall-spacer{flex:1}\\n      .recall-status{color:var(--dsw-alias-state-success-primary);font-size:12px;line-height:18px;margin-top:4px}\\n      .recall-status-error{color:var(--dsw-alias-state-error-primary)}\\n      .recall-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}\\n      .recall-row{display:flex;align-items:center;gap:10px;min-width:0}\\n      .recall-preview{flex:1;min-width:0;color:var(--dsw-alias-label-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}\\n      .recall-btn{flex:none;border:none;border-radius:8px;padding:2px 10px;font-size:12px;line-height:20px;cursor:pointer;color:var(--dsw-alias-label-primary);background:var(--dsw-alias-interactive-bg-hover)}\\n      .recall-btn:hover:not(:disabled){color:var(--dsw-alias-state-error-primary)}\\n      .recall-btn:disabled{opacity:.5;cursor:default}\\n      .recall-btn-ghost{background:transparent;color:var(--dsw-alias-label-secondary)}\\n    `)\\n\\n    // ---- 预览文本（0.2.x 的 inbox 行只有 content 块，没有 preview 字段）----\\n    const PREVIEW_CHARS = 80\\n    function previewOfContent(content) {\\n      if (!Array.isArray(content)) return ''\\n      const flat = content\\n        .filter((block) => block && block.type !== 'image' && block.type !== 'file')\\n        .map((block) => (block.type === 'text' ? block.text : '[' + String(block.type) + ']'))\\n        .join(' ')\\n        .replace(/\\\\s+/g, ' ')\\n        .trim()\\n      const chars = Array.from(flat)\\n      return chars.length > PREVIEW_CHARS ? chars.slice(0, PREVIEW_CHARS).join('') + '…' : flat\\n    }\\n\\n    const RecallDock = (props) => {\\n      // props.useProjection 只在 0.2.x 出现；对同一组件实例恒定，可安全按运行时分支调用。\\n      const hasProjection = typeof props.useProjection === 'function'\\n      const inbox = hasProjection ? props.useProjection('inbox') : undefined\\n      const session = typeof props.useSession === 'function' ? props.useSession((value) => value) : props.session\\n      const canUpdate = typeof props.useAccess === 'function' ? props.useAccess('session/updateQueue') : true\\n      let rows\\n      if (hasProjection) {\\n        // 投影未就绪时也不能回退到旧快照，否则会显示已被读取的陈旧消息。\\n        const nextStep = inbox && Array.isArray(inbox['next-step']) ? inbox['next-step'] : []\\n        rows = nextStep.filter((row) => row && typeof row.id === 'string' && row.source && row.source.kind === 'user')\\n      } else {\\n        const legacyQueue = session && Array.isArray(session.queue) ? session.queue : []\\n        rows = legacyQueue.filter((row) => row && typeof row.id === 'string' && row.placement === 'steering')\\n      }\\n\\n      const [busy, setBusy] = React.useState(null)\\n      const busyRef = React.useRef(false)\\n      const [status, setStatus] = React.useState(null)\\n      const sessionId = props.sessionId\\n      // RC 系列的只读 subagent 会话与官方 QueueDock 一样不提供修改操作。\\n      const subagent = session && session.subagent\\n      const queueMutable = canUpdate && (!subagent || (subagent.address && subagent.address.mode === 'continuable'))\\n\\n      React.useEffect(() => {\\n        if (status === null) return\\n        return ctx.timeout(() => setStatus(null), 2500)\\n      }, [status])\\n\\n      if ((rows.length === 0 && status === null) || sessionId === undefined) return null\\n\\n      // 0.1.x 的 code 是 queue-item-not-found，0.2.x 带命名空间前缀\\n      const alreadySending = (code) => code === 'already-claimed' || code === 'queue-item-not-found' || code === 'session/queue-item-not-found' || code === 'session/steer-unavailable'\\n      const accepted = (result) => result && result.ok === true && (!result.value || result.value.accepted !== false)\\n\\n      const recall = async (row) => {\\n        const sessions = ctx.get('sessions')\\n        // RC 系列走官方路径，保留权限检查和附件清理；仅旧运行时回退私有 RPC。\\n        if (sessions === undefined) {\\n          if (hasProjection) throw new Error('sessions service unavailable')\\n          return host.call('recall', { sessionId, itemId: row.id })\\n        }\\n        const binding = sessions.binding(sessionId)\\n        if (binding === undefined) throw new Error('session binding unavailable')\\n        return binding.session.updateQueue(row.id, { kind: 'remove' })\\n      }\\n\\n      const doRecall = async (row) => {\\n        if (busyRef.current || !queueMutable) return\\n        busyRef.current = true\\n        setBusy(row.id)\\n        try {\\n          const result = await recall(row)\\n          if (accepted(result)) {\\n            setStatus({ kind: 'info', text: '已撤回一条消息' })\\n          } else {\\n            const code = result && (result.code || (result.error && result.error.code))\\n            setStatus({ kind: 'error', text: alreadySending(code) ? '该消息已开始发送，无法撤回' : '撤回失败，请重试' })\\n          }\\n        } catch (error) {\\n          setStatus({ kind: 'error', text: '撤回失败，请重试' })\\n          console.error('[dsh-recall-unread] recall failed', error)\\n        } finally {\\n          busyRef.current = false\\n          setBusy((current) => (current === row.id ? null : current))\\n        }\\n      }\\n\\n      const doRecallAll = async () => {\\n        if (busyRef.current || !queueMutable) return\\n        busyRef.current = true\\n        setBusy('__all__')\\n        let failed = 0\\n        let succeeded = 0\\n        try {\\n          for (const row of rows) {\\n            // 某条被模型抢先读取，不影响继续撤回其余仍未读的消息。\\n            try {\\n              const result = await recall(row)\\n              if (accepted(result)) succeeded += 1\\n              else failed += 1\\n            } catch (error) {\\n              failed += 1\\n              console.error('[dsh-recall-unread] recall-all failed', error)\\n            }\\n          }\\n          setStatus(failed === 0\\n            ? { kind: 'info', text: '已撤回全部未读消息' }\\n            : { kind: 'error', text: '已撤回 ' + succeeded + ' 条，另有 ' + failed + ' 条撤回失败，可能已开始发送' })\\n        } finally {\\n          busyRef.current = false\\n          setBusy(null)\\n        }\\n      }\\n\\n      return React.createElement('div', { className: 'recall-dock', 'data-recall-dock': '' },\\n        React.createElement('div', { className: 'recall-panel' },\\n          React.createElement('div', { className: 'recall-head' },\\n            React.createElement('b', null, '未读消息'),\\n            rows.length > 0 ? React.createElement('span', null, rows.length + ' 条已发送插话，模型尚未读取') : null,\\n            React.createElement('span', { className: 'recall-spacer' }),\\n            rows.length > 1 && queueMutable ? React.createElement('button', {\\n              type: 'button',\\n              className: 'recall-btn recall-btn-ghost',\\n              disabled: busy !== null,\\n              onClick: doRecallAll\\n            }, '全部撤回') : null\\n          ),\\n          status !== null ? React.createElement('div', {\\n            role: status.kind === 'error' ? 'alert' : 'status',\\n            className: status.kind === 'error' ? 'recall-status recall-status-error' : 'recall-status'\\n          }, status.text) : null,\\n          React.createElement('ul', { className: 'recall-list' },\\n            rows.map((row) => React.createElement('li', { key: row.id, className: 'recall-row' },\\n              React.createElement('span', { className: 'recall-preview', title: row.preview !== undefined ? row.preview : previewOfContent(row.content) },\\n                row.preview !== undefined ? row.preview : previewOfContent(row.content)),\\n              queueMutable ? React.createElement('button', {\\n                type: 'button',\\n                className: 'recall-btn',\\n                disabled: busy !== null,\\n                onClick: () => doRecall(row)\\n              }, busy === row.id ? '撤回中…' : '撤回') : null\\n            ))\\n          )\\n        )\\n      )\\n    }\\n\\n    slots.inject('conversation.input.dock', () => slots.register(\\n      { name: 'conversation.input.dock', id: 'recall-sent', order: 30 },\\n      RecallDock\\n    ))\\n  },\\n}\\n\"\n    },\n    {\n      \"path\": \"src/host.js\",\n      \"content\": \"/*\\n * dsh-recall-unread —— Host 半端\\n *\\n * 用法：在 DeepSeek Harness 的 Cordis 插件开发流程中（cordis_define），\\n * 把本文件内容整体作为 code.host 传入。该函数体返回一个 Cordis Plugin。\\n *\\n * 职责：接收 Client 发来的「撤回」请求（包内私有 RPC 'recall'），\\n * 直接操作 Agent 的 inbox，移除仍未读取（仍处于 pending）的消息。\\n * 与官方 session.updateQueue 中 kind: 'remove' 的内部实现一致。\\n */\\nreturn {\\n  apply(ctx) {\\n    harness.handle('recall', async (args) => {\\n      const sessionId = args && typeof args.sessionId === 'string' ? args.sessionId : ''\\n      const itemId = args && typeof args.itemId === 'string' ? args.itemId : ''\\n      if (sessionId === '' || itemId === '') {\\n        return { ok: false, code: 'bad-args', message: 'sessionId and itemId are required' }\\n      }\\n      const agents = ctx.get('agents')\\n      if (agents === undefined) {\\n        return { ok: false, code: 'unavailable', message: 'agents service unavailable' }\\n      }\\n      const agent = agents.get(sessionId)\\n      if (agent === undefined) {\\n        return { ok: false, code: 'session-not-found', message: 'session is not attached' }\\n      }\\n      const removed = agent.inbox.remove(itemId)\\n      if (!removed) {\\n        return { ok: false, code: 'already-claimed', message: 'message is no longer pending (already read)' }\\n      }\\n      return { ok: true }\\n    })\\n  },\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c36080359a87e0fd16c3c28cec9a0f3afe7d5b76\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"d5c4f7e06ea26ef15a48749b2354947b9500507051b160b00633b735e7a74f5f\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 316,\n        \"words\": 4194\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 442,\n        \"code\": 337,\n        \"comments\": 79,\n        \"blank\": 27\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 591,\n        \"code\": 540,\n        \"comments\": 9,\n        \"blank\": 42\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "b184ac19ee7500bf433bdedc494c76813405fd1e9c9c37d1063e0ab006664fa3"
+        }
+    },
+    "unavailable_artifacts": []
+}

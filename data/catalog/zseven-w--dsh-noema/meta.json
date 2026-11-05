@@ -1,0 +1,45 @@
+{
+    "repository": "ZSeven-W/dsh-noema",
+    "repository_id": 1334167430,
+    "captured_at": "2026-11-05T03:59:20.742Z",
+    "window_start": "2026-10-06T03:59:20.742Z",
+    "stars": 136,
+    "pushed_at": "2026-10-06T08:23:06Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "9b2ec5016676b5797a91a13ad33197ed4c292dca",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@zseven-w/dsh-noema",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1976,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40zseven-w%2Fdsh-noema",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T14:29:01.953Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/%40zseven-w%2Fdsh-noema",
+            "error": null,
+            "latest_version": "0.1.0-rc.6",
+            "latest_published_at": "2026-10-06T04:20:02.036Z",
+            "latest_error": null
+        }
+    }
+}

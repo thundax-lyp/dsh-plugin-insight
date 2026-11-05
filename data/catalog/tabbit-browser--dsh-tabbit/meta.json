@@ -1,0 +1,45 @@
+{
+    "repository": "Tabbit-Browser/dsh-tabbit",
+    "repository_id": 1334076307,
+    "captured_at": "2026-11-05T03:59:20.742Z",
+    "window_start": "2026-10-06T03:59:20.742Z",
+    "stars": 122,
+    "pushed_at": "2026-11-03T04:49:26Z",
+    "issues": {
+        "open": 5,
+        "closed": 11,
+        "created_30d": 4,
+        "closed_30d": 3,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "9b2ec5016676b5797a91a13ad33197ed4c292dca",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-tabbit",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 2395,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-tabbit",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T12:40:09.332Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-tabbit",
+            "error": null,
+            "latest_version": "0.4.1",
+            "latest_published_at": "2026-11-03T04:50:01.992Z",
+            "latest_error": null
+        }
+    }
+}

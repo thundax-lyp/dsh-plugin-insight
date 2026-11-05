@@ -1,0 +1,62 @@
+{
+    "repository": "Renzic-Stone/DSH-EasyRewrite",
+    "repository_id": 1338463750,
+    "captured_at": "2026-11-05T03:59:20.742Z",
+    "window_start": "2026-10-06T03:59:20.742Z",
+    "stars": 129,
+    "pushed_at": "2026-11-02T20:05:55Z",
+    "issues": {
+        "open": 3,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ARenzic-Stone%2FDSH-EasyRewrite%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0800:33C363:2412597:3355309:6AEBFF3A and timestamp 2026-11-05 03:59:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARenzic-Stone%2FDSH-EasyRewrite%20is%3Aissue%20created%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0844:3BDAD3:F8FB6A:1645B12:6AEBFF3B and timestamp 2026-11-05 03:59:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARenzic-Stone%2FDSH-EasyRewrite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 08CC:3D9B6A:24BED2B:34533AD:6AEBFF3E and timestamp 2026-11-05 03:59:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ARenzic-Stone%2FDSH-EasyRewrite%20is%3Aissue%20updated%3A2026-10-06T03%3A59%3A20.742Z..2026-11-05T03%3A59%3A20.742Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0910:3D9B6A:24BF283:3453C57:6AEBFF3F and timestamp 2026-11-05 04:00:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "9b2ec5016676b5797a91a13ad33197ed4c292dca",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-easyrewrite",
+        "captured_at": "2026-11-04T17:18:27.577Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 2833,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-easyrewrite",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T14:47:09.755Z",
+            "captured_at": "2026-11-04T17:18:27.577Z",
+            "source_url": "https://registry.npmjs.org/dsh-easyrewrite",
+            "error": null,
+            "latest_version": "3.0.0",
+            "latest_published_at": "2026-11-02T19:52:41.142Z",
+            "latest_error": null
+        }
+    }
+}
