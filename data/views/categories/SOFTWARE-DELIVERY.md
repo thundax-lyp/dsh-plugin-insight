@@ -90,6 +90,7 @@
 | [DSH Model Router](#plugin-1353534254-root) | 为 DSH 提供多模型任务路由、依赖工作包、预算记账及官方 CLI 执行入口。 | [Q05](../../plugins/alice-marx--dsh-model-router/INSIGHT.md#research-q05) 当前保持观察，隔离home只评估可人工验收的只读小任务；未决费用、迁移拒绝或状态不符时停止新任务，保留状态并回独立稳定配置。 |
 | [DSH Orchestrator2](#plugin-1409845351-plugins-dsh-orchestrator2) | 提供自动开发调度预设，以任务包组织设计、开发、审查、预算与人工验收。 | 建议先观察并核对派工回执与角色参数，再做隔离任务包验收。 |
 | [DSH Plugin Hub](#plugin-1340244547-root) | 在 DeepSeek Harness 中浏览、搜索和安装社区插件。 | [Q05](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q05) 有隔离 profile 的用户可先查找并核对一个已知包，再人工确认目标与任务状态；来源、版本或构建许可不明时停止并回到手动核查。 |
+| [DSH Plugin Template](#plugin-1333375150-root) | 展示带共享协议的宿主和客户端插件骨架 | [Q04](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md#research-q04) 隔离 profile 检查合法、非法和卸载。 |
 | [DSH Python Env](#plugin-1335843541-root) | 管理工作区Python虚拟环境，提供发现、创建、安装、卸载和删除工具。 | 可信代码仓库的开发者可在一次性工作区试用。 |
 | [DSH RDD Goal Tree](#plugin-1222692871-dsh-rdd-goal-tree) | 在 DSH 会话中展示 goal-tree 状态并向规划者投递节点回调。 | [Q04](../../plugins/yaphethayate--coderdd--dsh-rdd-goal-tree/INSIGHT.md#research-q04) 先在隔离仓库核对视图、通知与 marker；不接受重复或权限风险时关闭 watcher 并人工核查账本。 |
 | [DSH Remote Web Gateway](#plugin-1336998102-root) | 通过远程入口和设备配对，从手机访问电脑上的 DSH Web。 | [Q04](../../plugins/summer1238--dsh-remote-web-gateway/INSIGHT.md#research-q04) 先在隔离环境验证允许和拒绝，异常就关闭远程入口。 |
@@ -160,6 +161,7 @@
 | [dsh-modernize-code](#plugin-1344714334-root) | 通过 Skill 和两个 Python 工具辅助遗留代码预检与热点扫描；迁移方案与改码依赖模型/人工。 | 用隔离副本运行两工具，限定 out，人工标注热点、运行真实构建/测试后再定路线图；详见[Q03](../../plugins/988hj7tczd-oss--dsh-modernize-code/INSIGHT.md#research-q03)。 |
 | [dsh-multi-folder](#plugin-1334119885-root) | 为DSH项目配置副工作目录，保持主cwd并将原文件和shell工具按单次目标重定根，附UI与@发现。 | 观察，继续从无碰撞稳定身份、store不落Agent写根及明确UI能力约束着手。 |
 | [dsh-mysql](#plugin-1337916824-root) | 在DSH设置管理多套MySQL连接，会话选择目标数据源，模型可查看表结构、查询，并在独立授权后执行行写与DDL。 | 先观察。 |
+| [dsh-ntr](#plugin-1367998877-root) | 把独立 ACP Agent 的会话、工具活动和权限交互接入 DSH 界面。 | [Q03](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md#research-q03) 保持 wait，逐 Agent 单独对照。 |
 | [dsh-openai-oauth](#plugin-1335992154-root) | 在 DeepSeek Harness 中通过 ChatGPT OAuth 使用 Codex 模型及搜索。 | [Q05](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md#research-q05) 先保留原路由，在隔离环境核对登录、搜索选择、指令和工具行为；凭据残留或语义异常时停止并恢复原配置。 |
 | [dsh-ops](#plugin-1409893258-root) | 为 DSH 提供文件、文档和 PTC 工具，以及按需发现和可配置的官方工具替换。 | [Q07](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q07) 先在可恢复副本做只读任务并检查结果完整性和回退；遇到准备失败、遗漏或状态未知先核对文件，不盲目重试。 |
 | [dsh-organism](#plugin-1366089972-workspace-plugins-dsh-organism) | 以器官模型聚合 DSH 工具，提供心跳体征、反射、代理调用和工具显影。 | 先隔离核 body_map/status 与宿主工具表，再分别启用门控和反射；保持最小权限与直接调用回退。 |
@@ -168,6 +170,7 @@
 | [dsh-plugin-adapter](#plugin-1374274469-root) | 以原生provider接入匿名Zen模型，含目录、消息/工具流适配及可选relay/IP池；根产物绑定待核。 | 观察：先核根真实包和退出恢复，再做一项可验文本/工具任务；严格出站、结果归属或共享网络未达标即停新请求并回退，见[Q06](../../plugins/1624318455--dsh-plugin-adapter/INSIGHT.md#research-q06)。 |
 | [dsh-plugin-aitelier](#plugin-1201143178-integrations-dsh) | 将 AItelier 的 MCP 流水线接口接入 DeepSeek Harness。 | [Q04](../../plugins/linxuhao--aitelier--integrations-dsh/INSIGHT.md#research-q04) 先隔离后端并验证 gate、凭据和工具；权限或后台状态不明时停止写入。 |
 | [dsh-plugin-bridge](#plugin-1336849011-root) | 在 DSH 预览并确认会话交接，将上下文或已批准计划移到新会话。 | [Q03](../../plugins/totoro-qaq--dsh-plugin-bridge/INSIGHT.md#research-q03) 从短任务验证目标。 |
+| [dsh-plugin-cc](#plugin-1333682494-root) | Claude Code 命令插件通过本地 bridge 委派 DSH 任务，支持结果保存及临时多轮。 | [Q03](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md#research-q03) 先只读任务，再演练超时停止。 |
 | [dsh-plugin-console](#plugin-1336720864-root) | 在DSH web核对社区插件、管理活动profile并通过确认计划执行安装、更新、暂停和Harness升级。 | 本地单人维护者可试用，先核对可信代码、精确宿主和备份；canary仅作为兼容线索，异常先盘点实际状态。 |
 | [dsh-plugin-gate](#plugin-1336663986-root) | 向 DSH Agent 提供插件源码静态扫描、风险差分/报告及破坏性操作建议工具，以 systemPrompt 提醒调用。 | 只在明确源码版本上扫描，逐项审阅 hits、notes 和 filesScanned；对高权限插件增加人工/沙箱审查。 |
 | [dsh-plugin-ide-hub](#plugin-1397817235-root) | 在 DSH 汇总本地编码工具的会话、用量和项目规则。 | [Q04](../../plugins/121212165--dsh-plugin-ide-hub/INSIGHT.md#research-q04) 对复制项目先备份、dry-run 并核差异；不完整或删除风险不明时停止。 |
@@ -1560,6 +1563,22 @@
 
 [查看完整分析](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333375150-root"></a>
+
+## [DSH Plugin Template](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md)
+
+[![GitHub ★ 103](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=103&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bugmaker2/dsh-plugin-template)
+
+> **用途**：开发者开始编写双端插件。
+
+> **亮点**：[Q01](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md#research-q01) 提供可追踪的最小端到端骨架。
+
+> **思考**：[Q03](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md#research-q03) 无副作用示例尚未覆盖授权和长任务取消。
+
+> **建议**：[Q05](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md#research-q05) 可降低首个双端插件的接线时间。
+
+[查看完整分析](../../plugins/bugmaker2--dsh-plugin-template/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1335843541-root"></a>
 
 ## [DSH Python Env](../../plugins/angeloszou--dsh-python-env/INSIGHT.md)
@@ -2680,6 +2699,22 @@
 
 [查看完整分析](../../plugins/1321928757--dsh-mysql/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1367998877-root"></a>
+
+## [dsh-ntr](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md)
+
+[![GitHub ★ 94](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=94&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/GDWhisper/dsh-ntr) [![npm 30d 5,424](https://img.shields.io/static/v1?label=npm+30d&message=5%2C424&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ntr) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ntr)
+
+> **用途**：用户希望沿用 DSH 会话界面操作其他 Agent。
+
+> **亮点**：[Q01](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md#research-q01) 统一操作界面并保留 Agent 的执行选择。
+
+> **思考**：[Q02](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md#research-q02) auto 优先长期放行，取消本地收尾不证明外部停止。
+
+> **建议**：[Q03](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md#research-q03) 对照目标 CLI 的事件完整度和恢复。
+
+[查看完整分析](../../plugins/gdwhisper--dsh-ntr/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1335992154-root"></a>
 
 ## [dsh-openai-oauth](../../plugins/adonissheldon--dsh-openai-oauth/INSIGHT.md)
@@ -2807,6 +2842,22 @@
 > **建议**：[Q04](../../plugins/totoro-qaq--dsh-plugin-bridge/INSIGHT.md#research-q04) 对照检查表能否减少迁移遗漏。
 
 [查看完整分析](../../plugins/totoro-qaq--dsh-plugin-bridge/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333682494-root"></a>
+
+## [dsh-plugin-cc](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md)
+
+[![GitHub ★ 104](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=104&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/cpj-dev/dsh-plugin-cc)
+
+> **用途**：Claude Code 用户需要在当前仓库调用 DSH 审阅或执行任务。
+
+> **亮点**：[Q01](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md#research-q01) 命令化委派并提供结果管理。
+
+> **思考**：[Q02](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md#research-q02) 等待超时仍执行，停止会丢失内存会话。
+
+> **建议**：[Q03](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md#research-q03) 对照手工入口测切换和恢复成本。
+
+[查看完整分析](../../plugins/cpj-dev--dsh-plugin-cc/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336720864-root"></a>
 
