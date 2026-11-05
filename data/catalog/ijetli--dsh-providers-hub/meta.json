@@ -1,0 +1,45 @@
+{
+    "repository": "iJetLi/dsh-providers-hub",
+    "repository_id": 1419341910,
+    "captured_at": "2026-11-05T13:09:40.123Z",
+    "window_start": "2026-10-06T13:09:40.123Z",
+    "stars": 99,
+    "pushed_at": "2026-11-05T11:41:40Z",
+    "issues": {
+        "open": 17,
+        "closed": 11,
+        "created_30d": 28,
+        "closed_30d": 11,
+        "updated_30d": 28
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T11:33:05.584Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
+        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
+        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-providers-hub",
+        "captured_at": "2026-11-05T13:09:40.123Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 7264,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-providers-hub",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-15T00:56:33.936Z",
+            "captured_at": "2026-11-05T13:09:40.123Z",
+            "source_url": "https://registry.npmjs.org/dsh-providers-hub",
+            "error": null,
+            "latest_version": "2.16.261105",
+            "latest_published_at": "2026-11-05T06:39:12.162Z",
+            "latest_error": null
+        }
+    }
+}
