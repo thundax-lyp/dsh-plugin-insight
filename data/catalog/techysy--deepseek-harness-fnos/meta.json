@@ -1,0 +1,27 @@
+{
+    "repository": "techysy/deepseek-harness-fnos",
+    "repository_id": 1333252932,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 85,
+    "pushed_at": "2026-11-05T04:01:34Z",
+    "issues": {
+        "open": 2,
+        "closed": 9,
+        "created_30d": 3,
+        "closed_30d": 1,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    }
+}

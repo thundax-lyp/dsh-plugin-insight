@@ -1,0 +1,66 @@
+{
+    "repository": "lamost423/dsh-maze",
+    "repository_id": 1338527485,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 87,
+    "pushed_at": "2026-10-10T03:04:36Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Alamost423%2Fdsh-maze%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1C26:CDD8D:A551CE:B0D8DD:6AEC162A and timestamp 2026-11-05 05:37:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Alamost423%2Fdsh-maze%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1C66:356C22:A47DB9:B00DE6:6AEC162B and timestamp 2026-11-05 05:37:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alamost423%2Fdsh-maze%20is%3Aissue%20created%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CAC:2C8C5E:283ADD:2B87FB:6AEC162C and timestamp 2026-11-05 05:37:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alamost423%2Fdsh-maze%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CE4:37AFFA:296D77:2CBCD9:6AEC162C and timestamp 2026-11-05 05:37:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alamost423%2Fdsh-maze%20is%3Aissue%20updated%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D2C:39F54F:290D61:2C579C:6AEC162D and timestamp 2026-11-05 05:37:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T20:04:16.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-maze",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 1840,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-maze",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-26T06:15:05.661Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-maze",
+            "error": null,
+            "latest_version": "2.4.0",
+            "latest_published_at": "2026-10-08T09:13:48.440Z",
+            "latest_error": null
+        }
+    }
+}

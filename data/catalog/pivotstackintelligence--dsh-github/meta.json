@@ -1,0 +1,45 @@
+{
+    "repository": "PivotStackIntelligence/dsh-github",
+    "repository_id": 1333375597,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 92,
+    "pushed_at": "2026-09-09T04:32:21Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-github",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1118,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-github",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T07:27:30.903Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-github",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-14T07:27:31.130Z",
+            "latest_error": null
+        }
+    }
+}

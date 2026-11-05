@@ -1,0 +1,45 @@
+{
+    "repository": "FNOSP/fnos-dsh",
+    "repository_id": 1374007757,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 87,
+    "pushed_at": "2026-11-04T02:16:00Z",
+    "issues": {
+        "open": 3,
+        "closed": 23,
+        "created_30d": 17,
+        "closed_30d": 14,
+        "updated_30d": 17
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T01:50:29.156Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@tnnevol/dsh-failover-search",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 3733,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40tnnevol%2Fdsh-failover-search",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-09T09:54:40.802Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
+            "source_url": "https://registry.npmjs.org/%40tnnevol%2Fdsh-failover-search",
+            "error": null,
+            "latest_version": "7.0.1",
+            "latest_published_at": "2026-10-30T03:36:48.588Z",
+            "latest_error": null
+        }
+    }
+}

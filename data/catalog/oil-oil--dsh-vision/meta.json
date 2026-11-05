@@ -1,0 +1,66 @@
+{
+    "repository": "oil-oil/dsh-vision",
+    "repository_id": 1333755444,
+    "captured_at": "2026-11-05T05:36:35.976Z",
+    "window_start": "2026-10-06T05:36:35.976Z",
+    "stars": 91,
+    "pushed_at": "2026-08-18T16:11:50Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoil-oil%2Fdsh-vision%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 14FE:2E6DD0:29CA80:2D1BB3:6AEC160D and timestamp 2026-11-05 05:37:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoil-oil%2Fdsh-vision%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1580:2E2F38:29C2E5:2D1582:6AEC160F and timestamp 2026-11-05 05:37:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoil-oil%2Fdsh-vision%20is%3Aissue%20created%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 15AA:2D3468:292A64:2C7E21:6AEC1610 and timestamp 2026-11-05 05:37:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoil-oil%2Fdsh-vision%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 15E8:3D9FE8:28AB9E:2BFC21:6AEC1611 and timestamp 2026-11-05 05:37:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoil-oil%2Fdsh-vision%20is%3Aissue%20updated%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1632:BC075:A881D6:B40B0A:6AEC1612 and timestamp 2026-11-05 05:37:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-04T14:37:45.327Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
+        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
+        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@oil-oil/dsh-vision",
+        "captured_at": "2026-11-05T05:36:35.976Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40oil-oil%2Fdsh-vision",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-05T05:36:35.976Z",
+            "source_url": "https://registry.npmjs.org/%40oil-oil%2Fdsh-vision",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}
