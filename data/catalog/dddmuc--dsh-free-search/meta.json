@@ -1,34 +1,44 @@
 {
     "repository": "DDDMUC/dsh-free-search",
     "repository_id": 1334384058,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 770,
-    "pushed_at": "2026-10-31T10:45:19Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 920,
+    "pushed_at": "2026-11-05T10:46:07Z",
     "issues": {
-        "open": 4,
-        "closed": 67,
-        "created_30d": 32,
-        "closed_30d": 29,
-        "updated_30d": 33
+        "open": 6,
+        "closed": 68,
+        "created_30d": 31,
+        "closed_30d": 25,
+        "updated_30d": 31
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-free-search",
-        "captured_at": "2026-10-31T05:50:28.596Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 68731,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-free-search",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 84610,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-free-search",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-15T20:30:58.085Z",
-            "captured_at": "2026-10-31T05:50:28.596Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
             "source_url": "https://registry.npmjs.org/dsh-free-search",
             "error": null,
-            "latest_version": "0.9.22",
-            "latest_published_at": "2026-10-30T10:40:36.732Z",
+            "latest_version": "0.9.31",
+            "latest_published_at": "2026-11-04T09:04:10.269Z",
             "latest_error": null
         }
     }

@@ -1,34 +1,44 @@
 {
     "repository": "dsh-market/dsh-market",
     "repository_id": 1333807290,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 10030,
-    "pushed_at": "2026-11-01T02:45:38Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 10983,
+    "pushed_at": "2026-11-06T06:09:26Z",
     "issues": {
-        "open": 54,
-        "closed": 500,
-        "created_30d": 165,
-        "closed_30d": 167,
-        "updated_30d": 219
+        "open": 79,
+        "closed": 509,
+        "created_30d": 189,
+        "closed_30d": 174,
+        "updated_30d": 252
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dshmarket",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 776009,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dshmarket",
+        "captured_at": "2026-11-05T06:53:59.607Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 907321,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dshmarket",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T15:33:59.185Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-05T06:53:59.607Z",
             "source_url": "https://registry.npmjs.org/dshmarket",
             "error": null,
-            "latest_version": "1.73.6",
-            "latest_published_at": "2026-10-30T18:46:17.882Z",
+            "latest_version": "1.73.11",
+            "latest_published_at": "2026-11-04T19:23:51.470Z",
             "latest_error": null
         }
     }

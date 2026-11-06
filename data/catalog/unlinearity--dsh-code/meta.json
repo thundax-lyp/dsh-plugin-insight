@@ -1,0 +1,66 @@
+{
+    "repository": "UNLINEARITY/dsh-code",
+    "repository_id": 1333936445,
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 46,
+    "pushed_at": "2026-10-28T08:18:45Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AUNLINEARITY%2Fdsh-code%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9CA2:399C16:2B8955:2F26AF:6AED7AE2 and timestamp 2026-11-06 06:59:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AUNLINEARITY%2Fdsh-code%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8320:2AE0E:159E168:1EEB757:6AED7AE3 and timestamp 2026-11-06 06:59:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AUNLINEARITY%2Fdsh-code%20is%3Aissue%20created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 83A4:D1730:154A03E:1E933FF:6AED7AE4 and timestamp 2026-11-06 06:59:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AUNLINEARITY%2Fdsh-code%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8402:18B06:1536DA8:1E7A66C:6AED7AE5 and timestamp 2026-11-06 06:59:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AUNLINEARITY%2Fdsh-code%20is%3Aissue%20updated%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 846A:288FBA:1481C2A:1D7FCFD:6AED7AE6 and timestamp 2026-11-06 06:59:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-code",
+        "captured_at": "2026-11-06T06:50:45.128Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 1255,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/dsh-code",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T08:06:43.247Z",
+            "captured_at": "2026-11-06T06:50:45.128Z",
+            "source_url": "https://registry.npmjs.org/dsh-code",
+            "error": null,
+            "latest_version": "2.1.0",
+            "latest_published_at": "2026-10-28T10:50:15.772Z",
+            "latest_error": null
+        }
+    }
+}

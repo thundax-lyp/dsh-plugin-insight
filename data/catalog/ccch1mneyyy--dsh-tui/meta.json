@@ -1,34 +1,44 @@
 {
     "repository": "ccch1mneyyy/dsh-TUI",
     "repository_id": 1333111893,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 6458,
-    "pushed_at": "2026-11-01T06:06:43Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 6990,
+    "pushed_at": "2026-11-06T06:52:03Z",
     "issues": {
-        "open": 96,
-        "closed": 648,
-        "created_30d": 264,
-        "closed_30d": 255,
-        "updated_30d": 351
+        "open": 102,
+        "closed": 669,
+        "created_30d": 255,
+        "closed_30d": 253,
+        "updated_30d": 355
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@deepseek-harness-tui/dsh-tui",
-        "captured_at": "2026-10-31T05:50:28.596Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 53368,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/%40deepseek-harness-tui%2Fdsh-tui",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 62591,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40deepseek-harness-tui%2Fdsh-tui",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T21:17:35.460Z",
-            "captured_at": "2026-10-31T05:50:28.596Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
             "source_url": "https://registry.npmjs.org/%40deepseek-harness-tui%2Fdsh-tui",
             "error": null,
-            "latest_version": "0.17.0",
-            "latest_published_at": "2026-10-24T10:17:28.657Z",
+            "latest_version": "0.18.0",
+            "latest_published_at": "2026-11-01T03:43:39.159Z",
             "latest_error": null
         }
     }

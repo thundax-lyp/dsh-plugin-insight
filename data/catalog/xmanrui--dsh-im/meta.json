@@ -1,51 +1,49 @@
 {
     "repository": "xmanrui/dsh-im",
     "repository_id": 1334561781,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 3023,
-    "pushed_at": "2026-10-31T16:43:05Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 3266,
+    "pushed_at": "2026-11-05T17:28:53Z",
     "issues": {
-        "open": 68,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": null,
+        "closed": 230,
+        "created_30d": 121,
+        "closed_30d": 57,
+        "updated_30d": 131
     },
     "errors": [
         {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Axmanrui%2Fdsh-im%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 71CA:1F506B:2B4FD:305A8:6AE6DE25 and timestamp 2026-11-01 06:37:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Axmanrui%2Fdsh-im%20is%3Aissue%20created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 71FC:45D11:2796A:2C71F:6AE6DE26 and timestamp 2026-11-01 06:37:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Axmanrui%2Fdsh-im%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 721E:272101:2C550:3160B:6AE6DE27 and timestamp 2026-11-01 06:37:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Axmanrui%2Fdsh-im%20is%3Aissue%20updated%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7250:15069:2F5D2:34711:6AE6DE28 and timestamp 2026-11-01 06:37:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Axmanrui%2Fdsh-im%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8CE4:589A1:2992FD:2D2D2A:6AED7AB6 and timestamp 2026-11-06 06:59:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@xmanrui/dsh-im",
-        "captured_at": "2026-10-30T01:05:22.633Z",
-        "window_start": "2026-09-30",
-        "window_end": "2026-10-29",
-        "downloads_30d": 79244,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-30:2026-10-29/%40xmanrui%2Fdsh-im",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 106140,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40xmanrui%2Fdsh-im",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-16T07:09:05.381Z",
-            "captured_at": "2026-10-30T01:05:22.633Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
             "source_url": "https://registry.npmjs.org/%40xmanrui%2Fdsh-im",
             "error": null,
-            "latest_version": "5.8.0",
-            "latest_published_at": "2026-10-29T17:13:07.791Z",
+            "latest_version": "5.10.0",
+            "latest_published_at": "2026-11-03T16:53:33.154Z",
             "latest_error": null
         }
     }

@@ -1,34 +1,44 @@
 {
     "repository": "zhu1090093659/dsh-web",
     "repository_id": 1331636953,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 9896,
-    "pushed_at": "2026-11-01T03:18:41Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 10117,
+    "pushed_at": "2026-11-06T04:18:14Z",
     "issues": {
-        "open": 2,
-        "closed": 1258,
-        "created_30d": 170,
-        "closed_30d": 173,
-        "updated_30d": 178
+        "open": 5,
+        "closed": 1282,
+        "created_30d": 158,
+        "closed_30d": 153,
+        "updated_30d": 160
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "@linxin666/dsh-ssh",
-        "captured_at": "2026-10-31T05:50:28.596Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 96003,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/%40linxin666%2Fdsh-ssh",
+        "captured_at": "2026-11-03T17:06:57.509Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 102561,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40linxin666%2Fdsh-ssh",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T15:05:54.130Z",
-            "captured_at": "2026-10-31T05:50:28.596Z",
+            "captured_at": "2026-11-03T17:06:57.509Z",
             "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-ssh",
             "error": null,
-            "latest_version": "0.4.12",
-            "latest_published_at": "2026-10-29T00:25:59.803Z",
+            "latest_version": "0.4.14",
+            "latest_published_at": "2026-11-02T09:47:04.035Z",
             "latest_error": null
         }
     }
