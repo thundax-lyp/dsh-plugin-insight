@@ -25,6 +25,7 @@
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-automation](#plugin-1333150357-root) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | [Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 单个只读周期任务先验收。 |
+| [dsh-better-sidebar-plugin-office](#plugin-1331821326-root) | 为 better-sidebar 注册 docx、xlsx 和 pptx 侧栏预览，失败时提供原件下载。 | 先确认better-sidebar=0.6.0，用非敏感代表文件逐格式比对关键内容。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
@@ -40,7 +41,6 @@
 | [dsh-plugin-mission-control](#plugin-1337780031-integrations-deepseek-harness-dsh-plugin-mission-control) | 将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。 | 已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
-| [dsh-usage-billing](#plugin-1333954586-root) | 监听本机 LLM 流量并按峰谷价持久化 token/费用，提供面板、预算告警、导出和余额查询。 | 只建议把它当预算观察工具，不用于报销或财务结算。 |
 | [dsh-whale-catch](#plugin-1425215508-root) | 在 DSH 侧栏收集会话产物，提供预览、差异、交付台账、体检、归档和还原。 | 先用含旧mtime复制件的固定目录核对漏收，仅复制归档；还原放在可丢弃目录并逐项确认，异常退回人工打包。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 在 DSH 中查看邮件信封与未读概况，并通过 notmuch 搜索。 | [Q03](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md#research-q03) 只用合成信封验证，明确 notmuch 未读计数和 Himalaya 样本的区别。 |
@@ -266,6 +266,22 @@
 > **建议**：[Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 对照人工重复任务的漏跑与报告质量。
 
 [查看完整分析](../../plugins/titanwings--dsh-automation/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1331821326-root"></a>
+
+## [dsh-better-sidebar-plugin-office](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md)
+
+[![GitHub ★ 63](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=63&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/HuanLinOTO/dsh-plugin-better-sidebar-plugin-office) [![npm 30d 3,010](https://img.shields.io/static/v1?label=npm+30d&message=3%2C010&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huanlin/dsh-plugin-better-sidebar-plugin-office) [![最新发布 2026-09-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huanlin/dsh-plugin-better-sidebar-plugin-office)
+
+> **用途**：供已用better-sidebar的DSH Web用户在会话内查阅Office文件，需对关键数据与版式回原件核对，不作为完整编辑保存或精确核算工具。
+
+> **亮点**：[Q01](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md#research-q01)、[Q02](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md#research-q02)支持通过稳定viewer描述符复用侧栏路由与设置，将三种Office预览独立分发。收益是依赖边界与查阅流程便利，不证明保真和性能节省。
+
+> **思考**：[Q03](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md#research-q03)最影响价值的限制是渲染ready不代表内容完整，xlsx不保留样式、条件格式和图表，公式交给另一引擎重算。动态import仍在同bundle，客户端参数不证明Host文件隔离。
+
+> **建议**：[Q04](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md#research-q04)提出未验证的文件特征级保真提示，按可靠解析识别不保留内容并引导原件核对。对照误判和查阅耗时，若不降低错误或误报过多则放弃，不是当前能力。
+
+[查看完整分析](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1418842530-root"></a>
 
@@ -506,22 +522,6 @@
 > **建议**：现版声明 JSONL 真相源却不重建/去重，未知价零与路径前缀错归；若按 sid+seq 重建、缺价标 unknown、身份/路径段归因，或可降漏计/误拦，但增启动/管理成本。故障、重复、相邻路径和未知模型对照事件/账单；若误差不降或成本超阈值即证伪。详见[Q05](../../plugins/1569126506-sudo--dsh-team-cost/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/1569126506-sudo--dsh-team-cost/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1333954586-root"></a>
-
-## [dsh-usage-billing](../../plugins/940842546--dsh-usage-billing/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 1,051](https://img.shields.io/static/v1?label=npm+30d&message=1%2C051&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing)
-
-> **用途**：频繁使用 DeepSeek 模型的个人或团队希望按会话、模型、日期追踪 token 和估算费用，基线是手工导出日志乘官方单价。合格结果是每次调用只计一次、时区/节假日/模型档位正确、共享文件不丢写，估算与官方账单在定义误差内可对账。 详见[Q01](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q01)。
-
-> **亮点**：相对表格手算，它把实时采集、历史回填、价格分段、预算告警和会话导航整合进 DSH。价值是本地可见性而非正式账单；模型按名称子串归类、价格表与节假日需要持续维护，多实例共享文件会互相覆盖。 详见[Q03](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q03)。
-
-> **思考**：核心质疑是估算准确性。llm/stream 事件缺失/重复、历史回填去重、模型别名、价格变更、法定调休和汇率都可能偏差；官方余额只是账户总额，不能反证插件按会话分摊正确。若用户把估算当财务账单，错误告警会误导预算决策。 详见[Q04](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q04)。
-
-> **建议**：未验证假设是从官方账单抽取每日总额做只读校准，并显示“覆盖率/差额”而非单一费用，可防止估算被误当账单。最小实验连续30天比较插件日汇总、官方账单和原始调用样本，按模型/时段定位差额；95%日期超出预设误差即否定当前计价可用性。 详见[Q08](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q08)。
-
-[查看完整分析](../../plugins/940842546--dsh-usage-billing/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1425215508-root"></a>
 
@@ -799,4 +799,4 @@
 
 ## 更新时间
 
-2026-11-05
+2026-11-06

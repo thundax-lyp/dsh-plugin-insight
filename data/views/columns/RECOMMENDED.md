@@ -22,6 +22,7 @@
 | [dsh-stock-market](#plugin-1331846104-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 适合个人DSH用户受控试用公开资料查询，核对源、行情时间、口径和关闭策略；不作为交易依据或稳定数据服务保证。 |
 | [DSH Vision Toolkit](#plugin-1333100071-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在DSH会话中接入图像问答、OCR、定位、截图差异和视觉产物。 | 使用文字模型的DSH开发者可先拿非敏感截图做定位或差异检查。 |
 | [DSH Turn Rewind](#plugin-1333100390-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为DSH消息提供文件检查点、变更预览、选择恢复及会话重新开始。 | 反复让Agent修改同一工作目录的开发者可在副本试用消息锚定文件恢复。 |
+| [dsh-visualize](#plugin-1333132287-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 在 DSH 对话中生成、更新交互式 HTML 卡片与独立页面，支持图片嵌入和本机交互状态保存。 | 已使用 DSH Web 的个人用户可用它试做可核对答案的算法讲解或参数探索卡片。 |
 | [dsh-automation](#plugin-1333150357-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | 有固定只读工作区任务的用户可先建一个测试日程。 |
 | [Qiushi DSH Evidence Audit](#plugin-1333357514-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 监听会话与工具结果，写入规范化、哈希串联的只观察证据回执。 | 需要本地防篡改线索者可在非关键环境试用，但必须把它视为检测记录而非事件真实性或完整性的证明。 |
 | [DSH Memento](#plugin-1333471394-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 提供带审批策略与审计的跨会话记忆 | 可在隔离 profile 验证稳定约束复用。 |
@@ -111,7 +112,6 @@
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
 | [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。 | 已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。 |
 | [Supergraph](#plugin-1232531989-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为编码 Agent 集成工程工作流、代码图上下文和协作工具，包含 DSH Host 与客户端接入。 | 需要处理跨模块改动的 DSH 维护者可以在隔离 Profile 试一次图辅助扫描。 |
-| [Token Bank](#plugin-1233571420-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。 | 需要比较多个模型来源的 DSH 开发者，可以在隔离配置里用模拟上游试验网关降级。 |
 
 <a id="plugin-1422943787-root"></a>
 
@@ -330,6 +330,28 @@
 **试用条件**：适合经常需要撤销Agent文件修改且愿意核对路径的开发者，在可丢弃副本中先做一次“文件恢复+消息新建”，对照受管理路径内容与原会话。只有预览范围、救援点和原有Git状态都符合预期才扩大使用；发现缺检查点、范围遗漏或回滚错误时停止写回，保留journal与rescue，以独立备份或手工Git恢复接管。不用于外部数据库或未纳管文件的整体事务回滚。 依据 [Q09](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md#research-q09)。
 
 [查看完整分析 →](../../plugins/anionex--dsh-turn-rewind/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1333132287-root"></a>
+
+## [dsh-visualize](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md)
+
+[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md)
+
+[![GitHub ★ 335](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=335&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Nagi-ovo/dsh-visualize) [![npm 30d 6,080](https://img.shields.io/static/v1?label=npm+30d&message=6%2C080&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize)
+
+**主要用途**：在 DSH 对话中生成、更新交互式 HTML 卡片与独立页面，支持图片嵌入和本机交互状态保存。
+
+**建议**：试用
+
+**推荐理由**：已使用 DSH Web 的个人用户可用它试做可核对答案的算法讲解或参数探索卡片。相对保存 HTML 再打开的办法，它把展示和精确修订留在对话里，但理解与节时收益尚未实测。若关键图缺失、计算与已知结果冲突或反复修复仍不稳定，应停止扩展并退回静态图或独立可核验文件。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：先在个人、非敏感会话中用一张已知答案的卡片检查参数变化、刷新和局部修订。重要输入另存为可核验文件，关键图片缺失或计算不符时停止卡片扩展；共享主目录和跨设备业务表单另验权限与存储。见 [Q05](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q05)。
+
+[查看完整分析 →](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2291,30 +2313,8 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1233571420-root"></a>
-
-## [Token Bank](../../plugins/wink-run--tokenbank/INSIGHT.md)
-
-[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
-
-[![GitHub ★ 111](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=111&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wink-run/tokenbank)
-
-**主要用途**：独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。
-
-**建议**：试用
-
-**推荐理由**：需要比较多个模型来源的 DSH 开发者，可以在隔离配置里用模拟上游试验网关降级。相比上游拒绝后手工换配置，网关能在候选链中记录冷却并尝试可用来源。若流式输出受损或配置无法恢复，就停止接管并回到直连。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：只用模拟上游和临时配置检验接管、失败与退出，不能确认恢复就保留直连。见 [Q03](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q03)。
-
-[查看完整分析 →](../../plugins/wink-run--tokenbank/INSIGHT.md)
-
-[返回表格](#column-index)
-
 [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-05
+2026-11-06

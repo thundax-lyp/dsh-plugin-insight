@@ -1,18 +1,18 @@
-# 书童 Pagekin（AI Novel Writer）
+# 书童 Pagekin
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[59153ce](https://github.com/EthanYoQ/AI-Novel-Writer/tree/59153ceb1174b20339e205b801f4e694e5ad5507)
+源码版本：[b5bb7b4](https://github.com/EthanYoQ/Pagekin/tree/b5bb7b493c955ced13a7decb0c03e56f240f6d0a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,172](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C172&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
+[![GitHub ★ 2,371](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C371&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/Pagekin)
 <!-- END META -->
 
-> **功能**：本地优先的长篇小说写作桌面工作区。
+> **功能**：本地优先的长篇小说桌面写作工作区，覆盖设定、蓝图、写稿、审稿、修稿和定稿。
 
-> **亮点**：[Q02](#research-q02) 与 [Q03](#research-q03) 为章节选择和定稿提供可追溯边界；模型文学质量及净收益未知。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持围绕作品组织规划到定稿的状态交接，并以源校验、revision裁决和定稿outbox区分生成与交付。可解释增量是作者掌控版本与恢复，不是已证明文学质量或全球首创。
 
-> **主要限制**：[Q02](#research-q02) 可选材料仍可能省略，审稿与起草可能共同漏掉设定；[Q03](#research-q03) 已提交不等于文件已发布。
+> **主要限制**：[Q02](#research-q02)至[Q04](#research-q04)表明数据库已定稿、实体稿待发布、生成候选和未存尾段必须区分；本地优先仍会向配置模型和可选WebDAV外发。未验恢复和人审收益，不能用版本/文件存在当生产验收。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 长篇作者需要怎样的写作流程，普通编辑器与聊天模型能否替代？](#detail-section-11)
-  - [Q02 · 章节上下文如何选择、冻结和暴露缺口？](#detail-section-12)
-  - [Q03 · 审修和定稿怎样绑定版本并处理发布失败？](#detail-section-13)
-  - [Q04 · 本地优先是否意味着所有正文和凭据都不离开电脑？](#detail-section-14)
-  - [Q05 · 迁移、模型成本与作者验收有什么限制？](#detail-section-15)
-  - [Q06 · 能否针对可选材料省略定向回查原文以减少跨章冲突？](#detail-section-16)
+  - [Q01 · Pagekin桌面应用为长篇作者改变什么交付？](#detail-section-11)
+  - [Q02 · 审稿修稿合并和定稿的事实边界是什么？](#detail-section-12)
+  - [Q03 · 本地优先是否代表作品与费用都不离开电脑？](#detail-section-13)
+  - [Q04 · 失败候选、续跑、备份和退出的全周期代价如何？](#detail-section-14)
+  - [Q05 · 从状态机制可提出什么独立可验方向？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,73 +40,81 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向需要组织长篇设定、分章起草和审改的小说作者。
+> **用途**：适合愿意维护设定、架构、角色、蓝图和章节版本的长篇作者。原办法是聊天生成后在文档中手工复制、审核修订和整理连续性；这里将草稿、审稿、修稿、差异确认、定稿和版本放进作品上下文。合格交付应是作者接受且能回读/导出的章节与来源版本，不是模型生成长度、UI状态或一篇审稿报告。相对普通编辑器+聊天，增量是作品状态和章节交接；底层LLM、SQLite、编辑器和outbox不是独创。
 
-普通编辑器加聊天模型可完成写作，需自行维护上下文与版本。
+普通编辑器+聊天手工整理章节与版本；LLM/SQLite/版本/outbox为既有方法。冻结DSH子包独立格式与维护状态，不继承桌面功能。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 条件与边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 章节资料 | 必需覆盖和可选筛选 | 可选内容可能省略 |
-| 审修改稿 | 绑定生成 run、文本与版本 | 不证明语义正确 |
-| 定稿 | 事务提交与文件投影 | pending 需恢复，旧定稿可被取代 |
+| 桌面小说工作区 | 设定/蓝图/章节交接 | 根客户端，非DSH插件 |
+| 审稿修稿/合并 | 作者裁决独立revision | 源变化拒绝，不保证文学质量 |
+| 定稿outbox | 保存事实并发布实体稿 | committed与published分别核对 |
+| 候选/续跑 | 中断文本恢复 | 来源一致才续，磁盘失败尾段不保证 |
+| BYOK/WebDAV | 推理与可选备份 | 明确外发端点、费用与留存 |
 
-**流程与依赖**
+#### 启动与依赖
 
-| 条件 | 是否必需 | 用途 | 不满足时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| 桌面应用和本地作品目录 | 工作区需要 | 存储项目与编辑 | 无法打开对应作品 |
-| 配置模型与协议 | 生成或审稿需要 | 处理作者提示和上下文 | 无模型调用或不兼容 |
-| 云模型或本地推理服务 | 按用户选择 | 实际推理 | 云服务涉及外发与费用 |
-| WebDAV | 仅可选云备份 | 存放备份 | 仍可用本地备份 |
+| Electron桌面/本地项目和SQLite | 必需 | 作品与主进程状态 | 存储失败不能当已保存 |
+| 自备模型/端点/key | AI必需 | 云兼容协议或本地Ollama | 软件不提供额度，协议兼容待验 |
+| Node>=22.14、pnpm11.11 | 源码构建必需 | Electron及原生依赖 | 不等正式安装包验收 |
+| 向量模型 | 语义检索可选 | 知识选择 | 可退文本检索，质量未测 |
+| WebDAV账号 | 云备份可选 | 上传作品archive | 与本地保存不同外发边界 |
 
-| 步骤 | 动作 | 检查或退路 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 备份隔离副本，配置模型目的地 | 不允许外发时先核实本地服务 |
-| 起稿 | 选择章节资料与模型 | 检查来源、预算与覆盖缺口 |
-| 审修 | 作者核对意见、差异与原定稿 | 不一致时回查原文手工修订 |
-| 定稿 | 查看提交与实体稿发布状态 | pending 时核验文件和记录再恢复 |
+| 准备 | 作者建无敏感副本、选模型并备份 | 确认端点和作品位置 |
+| 创作 | 规划/蓝图后写一章，选择审稿修稿 | 结果作为候选和revision，非自动权威 |
+| 合并定稿 | 作者确认差异，核DB和实体稿 | 待发布按既有id恢复，不重新生成 |
+| 退出 | 停任务、导出/备份、撤外部凭证 | 不自动撤回云端已收文本 |
 
-**效果与成本**
+#### 成本
 
-| 阶段 | 资源与现金 | 人工时间 | 未知 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 设备、存储、模型或本地推理 | 配置与备份 | 迁移成功率未知 |
-| 持续 | 云模型按服务商收费或本地算力 | 资料整理、审稿与核实 | 节时和质量未对照 |
-| 恢复 | 备份空间与修复资源 | 核对提交、文件及版本 | 故障恢复时间未测 |
+| 首次 | 安装/硬盘/模型资源未知 | 作品迁移、模型和备份配置 | 根包号非发布验收 |
+| 持续 | token/本地硬件/WebDAV未知 | 规划、人审、修稿和版本维护 | 无质量或净时间改善实测 |
+| 失败 | 重试与磁盘恢复未知 | 判定候选、未存尾段、待发布 | 收据存在不保证末尾持久 |
+| 退出升级 | 导出/备份/存储未知 | 保留DB与原稿，核云副本 | 卸载不撤云数据和调用费用 |
 
-| 效果 | 证据支持 | 未验证 |
+#### 效果
+
+| 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 上下文选择 | 必需覆盖、省略与快照 | 发现所有关键设定 |
-| 审修定稿 | 版本绑定和已提交/待发布区分 | 语义质量与所有故障恢复 |
-| 可选备份 | 文档描述本地和 WebDAV | 实际备份恢复可靠性 |
+| 作者控制 | 源核对、独立revision和合并 | 真实UI误判与审阅遵循 |
+| 定稿交付 | DB事实与outbox投影分开 | 崩溃/切作品/磁盘故障恢复 |
+| 连续创作 | 分阶段和上下文规则 | 文学质量、长篇矛盾与人审成本 |
 
-> **思考**：[Q02](#research-q02) 可选材料仍可能省略，审稿与起草可能共同漏掉设定；[Q03](#research-q03) 已提交不等于文件已发布。
+> **思考**：[Q02](#research-q02)至[Q04](#research-q04)表明数据库已定稿、实体稿待发布、生成候选和未存尾段必须区分；本地优先仍会向配置模型和可选WebDAV外发。未验恢复和人审收益，不能用版本/文件存在当生产验收。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 与 [Q03](#research-q03) 为章节选择和定稿提供可追溯边界；模型文学质量及净收益未知。
+> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持围绕作品组织规划到定稿的状态交接，并以源校验、revision裁决和定稿outbox区分生成与交付。可解释增量是作者掌控版本与恢复，不是已证明文学质量或全球首创。
 
-[Q02](#research-q02) 只有必需材料覆盖不全明确阻断，[Q03](#research-q03) 区分数据库提交、权威性与文件发布。
+根桌面源/版本/lease校验与DB事实、实体稿投影分离可借鉴；不能与冻结DSH子包合并评价，未全审安全、模型适配或发行包。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 可选材料仍可能省略，审稿与起草可能共同漏掉设定；[Q03](#research-q03) 已提交不等于文件已发布。
+[Q02](#research-q02)至[Q04](#research-q04)表明数据库已定稿、实体稿待发布、生成候选和未存尾段必须区分；本地优先仍会向配置模型和可选WebDAV外发。未验恢复和人审收益，不能用版本/文件存在当生产验收。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。
+长篇作者先用非敏感一章及独立备份试用，核候选/合并/定稿待发布/导出完整链。确认模型和备份目的地后再增加内容；收益不如编辑器加聊天就导出回退。见[Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +122,18 @@
 
 **核查状态**：已检查源码。
 
-固定版本代表源码和文档已查；未运行桌面应用、模型、备份或作者任务。
+根为独立桌面客户端；源码支持章节源/版本/定稿状态设计，未运行桌面或恢复/模型实验。统一交付认知是假设，版本号不作发布验收。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、src/services/workflows/source-selection.ts、src/services/workflows/chapter-materials.ts、src/services/workflows/context-snapshot.ts、electron/services/review-revision-generation.ts、electron/services/finalization-service.ts、electron/repositories/finalization-repository.ts、electron/llm/gemini-provider.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、electron/llm/openai-provider.ts、electron/repositories/finalization-repository.ts、electron/repositories/revision-repository.ts、electron/services/finalization-service.ts、electron/services/generation-draft-effects.ts、electron/services/generation-run-service.ts、electron/services/main-generation-plan.ts、electron/services/project-restore-service.ts、electron/services/review-revision-context.ts、electron/services/webdav-backup-service.ts、package.json、plugins/dsh-ai-novel-writer/README.md、src/stores/draft-store.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读固定版本根桌面应用说明、章节选择与快照、审修版本校验、定稿发布、Gemini 代表请求；未运行目标、模型和网络，未审计所有格式、备份、安全或文学质量。独立 DSH 子组件另行研究，不引用其实现。
-- 下一步：在人工标注的长篇上比较资料缺口、审修、定稿与手工工作流；注入重复提交、磁盘失败和取代定稿并按 [Q06](#research-q06) 盲评冲突。
+- 边界：抽读根README/package、审稿上下文、修订/合并、定稿仓储/服务、生成run与draft effects、provider、WebDAV上传和restore身份；未全面审计全应用/网络/凭证/发行包及全部上下文编排。
+- 下一步：未安装运行桌面、模型/备份、目标代码/测试或故障实验；源码支持设计不等效果/无损恢复，作者陈述单独标记。
 
 **分析版本**
 
-- **仓库**：[EthanYoQ/AI-Novel-Writer](https://github.com/EthanYoQ/AI-Novel-Writer)
-- **版本号**：1.4.0（[固定提交 59153ce](https://github.com/EthanYoQ/AI-Novel-Writer/tree/59153ceb1174b20339e205b801f4e694e5ad5507)）
-- **版本日期**：2026-10-29（固定提交日期，北京时间；不是包发布日期）
+- **仓库**：[EthanYoQ/Pagekin](https://github.com/EthanYoQ/Pagekin)
+- **版本号**：1.4.0（[固定提交 b5bb7b4](https://github.com/EthanYoQ/Pagekin/tree/b5bb7b493c955ced13a7decb0c03e56f240f6d0a)）
+- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +141,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
+[Q05](#research-q05)推导未验证的章节交付核对视图，围绕权威版本/发布/候选统一可回查行动；同故障对照识别准确率、恢复耗时和维护负担，无改善则放弃，不计已有贡献。
 
-在人工标注的长篇上比较资料缺口、审修、定稿与手工工作流；注入重复提交、磁盘失败和取代定稿并按 [Q06](#research-q06) 盲评冲突。
+未安装运行桌面、模型/备份、目标代码/测试或故障实验；源码支持设计不等效果/无损恢复，作者陈述单独标记。
 
 <a id="detail-section-9"></a>
 
@@ -149,15 +156,15 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 207 | 13930 | — | — | 395140 |
-| .cjs | source | 5 | 170 | 149 | 16 | — |
-| .mjs | source | 122 | 47954 | 44110 | 1635 | — |
-| .mjs | test | 25 | 11987 | 11303 | 325 | — |
-| .ts | source | 529 | 122626 | 107286 | 7232 | — |
-| .tsx | source | 140 | 23585 | 21300 | 1043 | — |
+| .md | source | 210 | 14404 | — | — | 404020 |
+| .cjs | source | 5 | 185 | 164 | 18 | — |
+| .mjs | source | 132 | 50108 | 45942 | 1768 | — |
+| .mjs | test | 27 | 12394 | 11667 | 344 | — |
+| .ts | source | 545 | 125686 | 109842 | 7517 | — |
+| .tsx | source | 143 | 24171 | 21847 | 1055 | — |
 | .js | source | 3 | 267 | 250 | 5 | — |
-| .ts | test | 497 | 137860 | 125873 | 1256 | — |
-| .tsx | test | 89 | 27229 | 24579 | 290 | — |
+| .ts | test | 521 | 144318 | 131479 | 1344 | — |
+| .tsx | test | 93 | 29224 | 26346 | 301 | — |
 | .mjs | example | 5 | 3703 | 3575 | 87 | — |
 | .ts | example | 2 | 85 | 65 | 15 | — |
 
@@ -165,63 +172,42 @@
 
 **活跃度**
 
-[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 111](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=111&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 122](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=122&color=737b86&logo=github)](https://github.com/EthanYoQ/AI-Novel-Writer/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/EthanYoQ/Pagekin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 114](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=114&color=737b86&logo=github)](https://github.com/EthanYoQ/Pagekin/issues?q=is%3Aissue+created%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z) [![近30天关闭 143](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=143&color=737b86&logo=github)](https://github.com/EthanYoQ/Pagekin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-06。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核对章节资料选择、审修定稿、数据流和采用边界。
+**插件研究总目标**：判断独立桌面应用章节交付、作者确认、恢复和外发边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 长篇作者需要怎样的写作流程，普通编辑器与聊天模型能否替代？
+### Q01 · Pagekin桌面应用为长篇作者改变什么交付？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-README:11-18 将书童 Pagekin 定义为本地优先的长篇小说桌面工作区，作者说明从设定、章节到起草、审稿和定稿，并自行提供 API Key 或本地模型；84-86 说明审稿意见和修订差异由作者选择确认。普通文档编辑器加聊天模型也可完成写作，但需要作者自己维护资料版本和回填。固定版本代码可归因的是资料筛选、审修绑定和定稿路径，而不是模型文学能力；未做同任务对照。
+当前根组件是书童Pagekin独立Electron桌面写作客户端，原名AI Novel Writer。根package私有、main为Electron，并不应安装为DSH插件；同仓库冻结子包有不同格式与生命周期，其贡献不能互相借用。README主要仍介绍1.3.0，而固定根包标1.4.0，不能把包号当已发布且验收的产品。
+
+适合愿意维护设定、架构、角色、蓝图和章节版本的长篇作者。原办法是聊天生成后在文档中手工复制、审核修订和整理连续性；这里将草稿、审稿、修稿、差异确认、定稿和版本放进作品上下文。合格交付应是作者接受且能回读/导出的章节与来源版本，不是模型生成长度、UI状态或一篇审稿报告。相对普通编辑器+聊天，增量是作品状态和章节交接；底层LLM、SQLite、编辑器和outbox不是独创。
+
+README宣称各阶段由用户确认、一次最多批量10章，但是否减少长篇矛盾或人审成本本次无独立结果。仅偶发短文或不愿规划的作者可能用普通编辑器即可，不应把长篇工序数量当需求证明。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:11-18](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L11-L18)
+**依据 1 · 源码核查**：[package.json:1-14](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/package.json#L1-L14)
 
-作者描述作品和模型边界。
-
-```text
-<h1 align="center">书童 Pagekin</h1>
-
-<p align="center"><sub>原名「AI 小说作家 / AI Novel Writer」</sub></p>
-
-<p align="center">
-  <strong>开源免费的 AI 小说写作桌面软件，为长篇小说和网文连载设计。</strong><br />
-  从设定、架构、章节蓝图到正文、审稿、修稿、定稿，一章一章把书写完；也能拆解参考小说来仿写、导入原稿接着续写，或按你的要求改写。<br />
-  本地优先：作品存在你自己的电脑上。软件不带模型：接你自己的 API Key，或用 Ollama 跑本地模型。
-```
-
-**依据 2 · 作者声明**：[README.md:84-86](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L84-L86)
-
-作者描述审修的人工作用。
-
-```text
-### 正文：写稿、审稿、修稿、定稿
-
-正文单章视图把一章从待写带到定稿。AI 写出草稿后，你可以直接改，也可以让 AI 审稿。审稿报告列出每条意见，你逐条勾选或忽略，也可以加上自己的意见。修稿结果以差异给你逐段确认，不会直接覆盖原稿。确认无误后定稿。
-```
-
-**依据 3 · 源码核查**：[package.json:1-11](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/package.json#L1-L11)
-
-独立桌面应用包名和版本。
+根私有Electron客户端与Node条件。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
 {
@@ -235,332 +221,345 @@ README:11-18 将书童 Pagekin 定义为本地优先的长篇小说桌面工作�
   "engines": {
     "node": ">=22.14.0"
   },
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "postinstall": "node node_modules/electron/install.js",
 ```
 
 </details>
 
+**依据 2 · 作者声明**：[README.md:15-24](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L15-L24)
+
+作者本地优先/BYOK与实录耗时边界。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+<p align="center">
+  <strong>Pagekin，免费 AI 小说写作软件</strong><br />
+  从设定、架构、章节蓝图到正文、审稿、修稿、定稿，一章一章把书写完；也能拆解参考小说来仿写、导入原稿接着续写，或按你的要求改写。<br />
+  本地优先：作品存在你自己的电脑上。软件不带模型：接你自己的 API Key，或用 Ollama 跑本地模型。
+</p>
+
+<p align="center">
+  <a href="https://github.com/EthanYoQ/Pagekin/releases/latest"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD-Windows%20%7C%20macOS-2b4c8c?style=for-the-badge" alt="下载 Windows 与 macOS 安装包" /></a><br />
+  <a href="https://www.orz.md/ai-novel-writer/demo/">观看 32 秒中文实录：选段续写与改成对话</a><br />
+  <sub>1.3.0 实录，模型等待段已剪短，AI 配音；32 秒是片长，不是生成耗时。</sub>
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:84-113](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L84-L113)
+
+章节流程、恢复、版本与Skill作者描述。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+### 正文：写稿、审稿、修稿、定稿
+
+正文单章视图把一章从待写带到定稿。AI 写出草稿后，你可以直接改，也可以让 AI 审稿。审稿报告列出每条意见，你逐条勾选或忽略，也可以加上自己的意见。修稿结果以差异给你逐段确认，不会直接覆盖原稿。确认无误后定稿。
+
+![正文单章视图：左侧是设定、架构、蓝图、正文四步流程，中间是第 3 章正文，右侧是审稿报告](docs/assets/readme/v130-zh-chapter.webp)
+
+写作时，AI 拿到的是这一章的蓝图、相关角色、世界观、前文摘要和上一章全文，而不是整本书的聊天记录。
+
+正文编辑器支持 Tab 插入两个全角空格作为段首缩进。写一章的全过程可以只用键盘完成。
+
+### 运行侧页：看清 AI 正在做什么
+
+所有生成任务都在运行侧页里，分进行中、历史、诊断三页。写作时可以实时看到输出，随时取消。批量创作可以暂停。生成失败时，已经写出的文字会留成恢复候选，可以复制或放弃。
+
+![运行侧页：正在写第 3 章，实时输出逐句出现](docs/assets/readme/v130-zh-run.webp)
+
+### 作品资料与版本：写长篇不丢线索
+
+- **剧情与伏笔**：按章节看主线、支线和伏笔的进度，记下每条线索在哪一章埋设、推进或解决。
+- **知识库**：导入参考资料（.txt、.md）。没有配置检索模型时，也能用本地全文检索。
+- **版本历史**：每章的历次稿件都留着，可以和当前稿对比，也可以回退成一份新草稿。
+- **导出与备份**：导出为合并 Markdown、分章 Markdown 或 TXT。可以把作品打包存到本机，或备份到你绑定的 WebDAV 云端。恢复时总是另存为一份新副本。
+
+### 写作 Skill：导入你自己的写作规则
+
+在设置的「写作 Skills」页，可以从本机选一个 Skill 文件夹或单个 SKILL.md，也可以填 GitHub 上的 Skill 地址，导入提示词型的写作 Skill，比如「去 AI 味」、某种文风或某类题材的写法。SKILL.md 引用的 references 文本会一并装入。安装前软件会先读取并展示内容，由你检查后再安装。装好后把它绑定到规划、写稿、审稿或修稿阶段，之后这一阶段的生成都会带上它。
+
+只支持自包含的 SKILL.md 提示词。脚本、hook、子代理和工具调用这类内容不会被安装，Skill 不能在你的电脑上执行代码。
+
+### 深色主题与中英文界面
+```
+
+</details>
+
+**依据 4 · 作者声明**：[plugins/dsh-ai-novel-writer/README.md:3-7](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/plugins/dsh-ai-novel-writer/README.md#L3-L7)
+
+同仓库子包独立冻结且不打开桌面项目。
+
+```text
+The `0.1.0` plugin preview is frozen. No short-term feature work is planned. This README supports existing users and maintainers. Development can resume only under a new, explicitly scoped plan.
+
+The plugin adds a local novel workspace to DeepSeek Harness Web. It has its own project format and release. It does not open desktop projects. The desktop app's `1.2.0-Preview` release does not change this plugin's version or maintenance status.
+
+[Desktop app](../../README_en.md) · [npm package](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) · [Installation guide](docs/official-dsh-plugin-installation.md)
+```
+
 #### 缺口
 
-- 无作者任务、普通编辑器与模型的同任务对照
-  **影响**：不能量化节时、完成率或文学质量
-  **进一步探讨**：固定长篇样本对照人工整理与本应用并盲评。
+- 未验证正式安装包与1.4.0源码对应、长篇连续性及真实人审收益。
+  **影响**：不能推荐长期生产采用或从演示片长推生成性能。
+  **进一步探讨**：先用自有短篇样本完成一章闭环，记录人审返工，再扩大章数。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 章节上下文如何选择、冻结和暴露缺口？
+### Q02 · 审稿修稿合并和定稿的事实边界是什么？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-source-selection.ts:167-189 过滤来源身份、未知来源和未准入候选，必需先于可选，可选按相关词排序；214-245 超预算记录省略，必需覆盖不完整会返回 capacity-conflict 或 split-required。chapter-materials.ts:678-704、716-733 调用选择并在非 ready 时抛出容量错误；746-754 会渲染可选材料覆盖缺口。context-snapshot.ts:38-49、51-94 对纳入内容和完整省略裁决建立确定性哈希，标注来源与估算单位。快照固定已有选择，不等于识别了所有相关设定；可选内容仍可能因预算被省略，也不能把字节估算当精确 token。
+审稿/修稿上下文在主进程按当前草稿id、版本、状态和hash捕获，原始作者选择不能自动改成更新的正文；源变化会拒绝。修稿保存为独立revision，并校验expectedSource。合并入口冻结编辑器内容revision，依项目session和typed资源身份调用db:revision-merge；仓储再校验当前正文和修订来源后更新内容与合并状态。这比直接覆盖模型输出更能保留作者裁决边界，但结构和指纹一致不证明文学质量或模型审稿意见正确。
+
+定稿不是简单写一个Markdown：SQLite事务提交正文/定稿与outbox，FinalizationService随后把冻结快照发布为实体稿。数据库已提交而文件发布失败时返回committed=true、待发布；retry只取finalizationId和已提交快照，验证hash与权威状态再重试。换作品期间不会把发布状态记到另一个作品。丢响应后相同冻结请求复用既有记录，冲突请求拒绝。
+
+因此用户应分别核作者接受、数据库定稿事实与实体稿发布状态。失败不等全部回滚，已有最终稿不应靠再次生成重建。此处只抽查核心主进程/仓储链，不宣称完整UI及所有数据库操作已经验收。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/services/workflows/source-selection.ts:167-189](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/source-selection.ts#L167-L189)
+**依据 1 · 源码核查**：[electron/services/review-revision-context.ts:21-62](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/review-revision-context.ts#L21-L62)
 
-来源准入与必需优先。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-  for (const candidate of ordered) {
-    const omit = (reason: SourceOmissionReason) => block(candidate, reason)
-    if (!sameProjectEpoch(candidate.ref, input.current) || !candidate.ref.sourceId.trim()
-      || !Number.isSafeInteger(candidate.ref.revision) || candidate.ref.revision < 0) { omit('invalid-source-ref'); continue }
-    if (candidate.ref.sourceId.startsWith(PLOT_TREE_PREFIX)) { omit('plot-tree-not-manuscript'); continue }
-    if (candidate.provenance === 'unknown') { omit('unknown-provenance'); continue }
-    if (candidate.candidate && !mayUseCandidate(candidate.candidate.source, candidate.candidate.admission)) {
-      omit('candidate-not-admitted'); continue
-    }
-    const identity = sourceIdentity(candidate)
-    if (seenIdentity.has(identity)) { omit('duplicate-source-ref'); continue }
-    seenIdentity.add(identity)
-    admissible.push(candidate)
-  }
-
-  const requiredFirst = [...admissible].sort((left, right) => {
-    if (left.required !== right.required) return Number(right.required) - Number(left.required)
-    // 先必需后可选；可选材料之间按本章相关词命中数排序，再按稳定全序收口。
-    if (!left.required) {
-      const delta = relevanceOf(right.text, input.relevanceTerms) - relevanceOf(left.text, input.relevanceTerms)
-      if (delta !== 0) return delta
-    }
-    return compareCandidate(left, right)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/services/workflows/source-selection.ts:214-245](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/source-selection.ts#L214-L245)
-
-预算、省略和必需覆盖判定。
+原始选择重构和当前草稿hash/版本校验。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（42行）</summary>
 
 ```text
-    const cost = blocks.reduce((sum, piece) => sum + unitOf(piece.text), 0)
-    if (cost > remaining || !candidate.required && input.optionalMaterialCeiling !== undefined
-      && input.capacity.maxInputUnits - remaining + cost > input.optionalMaterialCeiling) {
-      block(candidate, 'budget')
-      continue
-    }
-    remaining -= cost
-    for (const piece of blocks) {
-      included.push({ ref: candidate.ref, category: candidate.category, text: piece.text,
-        required: candidate.required, reason: piece.reason })
-    }
-    coveredContent.add(candidate.ref.contentHash)
-  }
 
-  const coverage = coverageOf(requiredContent, coveredContent)
-  if (coverage.complete) return { decision: 'ready', included, omissions, coverage }
+/** Reconstruct only the original author selection, never a newer manuscript or confirmation. */
+export function reviewRevisionRequest(context: ReviewRevisionContext): PrepareReviewRevisionRequest {
+  return { operation: context.operation, draftId: context.source.id,
+    expectedDraft: { chapterNumber: context.source.chapterNumber, version: context.source.version,
+      status: context.source.status, contentHash: context.sourceHash },
+    authorInputs: structuredClone(context.authorInputs), uiLocale: context.uiLocale,
+    ...(context.confirmation ? { reviewSourceId: context.confirmation.reviewSourceId, confirmedReviewContent: context.confirmation.content } : {}),
+    ...(context.recheck ? { reviewCycleId: context.recheck.cycleId, expectedMergedHash: context.recheck.mergedHash } : {}) }
+}
 
-  // 结算：按稳定顺序挑出第一个未被覆盖的必需来源作为阻断点。
-  const blocking = ordered.find(item => item.required && !coveredContent.has(item.ref.contentHash))!
-  // blocking 取自 ordered，是同一个对象引用，因此这里取到的就是它自己的原因。
-  const reason = reasonByCandidate.get(blocking) ?? 'budget'
-  if (UNUSABLE_SOURCE_REASONS.includes(reason)) {
-    // 来源本身不可用：拆小范围也解决不了。
-    return { decision: 'capacity-conflict', blockingSourceId: blocking.ref.sourceId,
-      blockingReason: reason, omissions, coverage }
-  }
-  return coverage.included === 0
-    ? { decision: 'capacity-conflict', blockingSourceId: blocking.ref.sourceId,
-        blockingReason: reason, omissions, coverage }
-    : { decision: 'split-required', remainingRequired: ordered
-        .filter(item => item.required && !coveredContent.has(item.ref.contentHash))
-        .map(item => item.ref.sourceId), omissions, coverage }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/services/workflows/chapter-materials.ts:678-704](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/chapter-materials.ts#L678-L704)
-
-章节材料调用选择与去重。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  const select = () => {
-    const choose = (dropped: Set<MaterialCandidate>) => selectChapterSources({
-      current: input.identity,
-      capacity,
-      optionalMaterialCeiling,
-      relevanceTerms: input.relevanceTerms,
-      candidates: candidates.filter(item => !dropped.has(item)),
-    })
-    const covered = (selection: SourceSelection) => {
-      const passages: string[] = []
-      if (selection.decision === 'ready') for (const material of selection.included) {
-        const family = familyBySourceId.get(material.ref.sourceId)
-        if (family?.family === 'finalized') passages.push(...family.passages)
-      }
-      return new Set(referenceCandidates.filter(({ reference }) => reference.deduplicateAgainstFinalized
-        && reference.text.length > 0 && passages.some(passage => passage.includes(reference.text))).map(({ candidate }) => candidate))
-    }
-    const droppedReferences = covered(choose(new Set()))
-    let selection = choose(droppedReferences)
-    while (droppedReferences.size > 0) {
-      const stillCovered = covered(selection)
-      const restored = [...droppedReferences].filter(candidate => !stillCovered.has(candidate))
-      if (!restored.length) break
-      for (const candidate of restored) droppedReferences.delete(candidate)
-      selection = choose(droppedReferences)
-    }
-    return { droppedReferences, selection }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/services/workflows/chapter-materials.ts:716-733](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/chapter-materials.ts#L716-L733)
-
-必需材料不足时阻断。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-  if (selection.decision !== 'ready') {
-    const omission = selection.omissions.find(item => (
-      [requiredCandidate, requiredPredecessorMaterial].some(material => material
-        && item.sourceId === material.ref.sourceId
-        && item.revision === material.ref.revision
-        && item.contentHash === material.ref.contentHash)
-    ))
-    if (omission) {
-      throw new ChapterMaterialCapacityError({
-        decision: 'capacity-conflict',
-        blockingSourceId: omission.sourceId,
-        blockingReason: omission.reason,
-        omissions: selection.omissions,
-        coverage: selection.coverage,
-      }, writingLanguage)
-    }
-  }
-  if (selection.decision !== 'ready') throw new ChapterMaterialCapacityError(selection, writingLanguage)
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/services/workflows/chapter-materials.ts:746-754](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/chapter-materials.ts#L746-L754)
-
-把可选覆盖缺口呈现为上下文文本。
-
-```text
-  const selectedOmissions = selection.omissions
-    .map(omission => describeSelectionOmission(omission, familyBySourceId))
-    .filter((omission): omission is ChapterMaterialOmission => omission !== null)
-  const allOmissions = [...omissions, ...selectedOmissions]
-  const gap = allOmissions.length > 0
-    ? promptLanguageText(
-        writingLanguage,
-        `【可选材料覆盖缺口】${allOmissions.map(item => `${item.source}${item.chapterNumber ? `#${item.chapterNumber}` : ''}:${item.reason}`).join('；')}`,
-        `[Optional material coverage gaps] ${allOmissions.map(item => `${item.source}${item.chapterNumber ? `#${item.chapterNumber}` : ''}:${item.reason}`).join('; ')}`,
-```
-
-**依据 6 · 源码核查**：[src/services/workflows/context-snapshot.ts:38-49](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/context-snapshot.ts#L38-L49)
-
-快照冻结范围与不执行 IO。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
 /**
- * 冻结选择结果 -> 可重放快照。
+ * Captured DB is the authority. The returned material is also re-read on dispatch/resume/save.
  *
- * 指纹覆盖真正进入上下文的内容与完整的省略裁决，所以「同一 ref、不同正文」或
- * 「同一来源集、不同省略」都不会撞成同一个 id。会话 epoch 只记不哈希：同一章
- * 跨会话重放得到同一个快照 id。
- *
- * 边界：S01 的 `ContextSnapshot` 是被冻结的共享 DTO，只承载投影结果。必需的
- * coverage、decision 以及候选 state/lineage 留在调用方的 `SourceSelection` 上，
- * 由 S10B 的 receipt 与快照一起持久化，本函数不扩展共享类型。
- *
- * 本函数不读数据库、不写文件、不发请求。
+ * Only the project id enters the captured identity: the session lease (`epoch`) is deliberately
+ * NOT an input, so the result is a pure function of `(db, request)` and therefore identical across
+ * a reopen. The live lease is attached to the `SourceRef` at the point of use instead.
+ */
+export function captureReviewRevisionContext(db: Database.Database, request: PrepareReviewRevisionRequest,
+  projectId: string, frozenRecheckVersion?: 1 | 2): ReviewRevisionContext {
+  if (!request || Object.keys(request).some(key => !['operation', 'draftId', 'expectedDraft', 'reviewSourceId', 'confirmedReviewContent', 'reviewCycleId', 'expectedMergedHash', 'authorInputs', 'uiLocale'].includes(key))
+    || !REVIEW_REVISION_OPERATIONS.includes(request.operation) || !Number.isSafeInteger(request.draftId) || request.draftId < 1
+    || !['zh-CN', 'en-US'].includes(request.uiLocale) || !request.expectedDraft
+    || Object.keys(request.expectedDraft).some(key => !['chapterNumber', 'version', 'status', 'contentHash'].includes(key))
+    || !Array.isArray(request.authorInputs) || request.authorInputs.length > 2) fail()
+  const allowedInputs = request.operation === 'refine-draft' ? ['user-prompt', 'merged-guidance'] : request.operation === 'review-chapter' ? ['review-focus'] : []
+  if (new Set(request.authorInputs.map(item => item?.id)).size !== request.authorInputs.length
+    || request.authorInputs.some(item => !item || Object.keys(item).some(key => !['id', 'text'].includes(key))
+      || !allowedInputs.includes(item.id) || typeof item.text !== 'string' || Buffer.byteLength(item.text) > 8 * 1024 * 1024)) fail()
+  if (request.operation !== 'refine-from-review' && (request.reviewSourceId !== undefined || request.confirmedReviewContent !== undefined)) fail()
+  const recheckRequested = request.reviewCycleId !== undefined || request.expectedMergedHash !== undefined
+  if (recheckRequested && (request.operation !== 'review-chapter' || typeof request.reviewCycleId !== 'string'
+    || !request.reviewCycleId.trim() || typeof request.expectedMergedHash !== 'string')) fail()
+  return db.transaction((): ReviewRevisionContext => {
+    const source = db.prepare('SELECT d.id,d.chapter_number AS chapterNumber,d.version,d.status,c.body AS content FROM drafts d JOIN contents c ON c.id=d.content_id WHERE d.id=?')
+      .get(request.draftId) as ExpectedDraftSource | undefined
+    const latest = source && db.prepare(`SELECT id FROM drafts WHERE chapter_number=? AND status IN (${CURRENT_DRAFT_STATUS_SQL}) ORDER BY version DESC,id DESC LIMIT 1`).pluck().get(source.chapterNumber)
+    if (!source || latest !== source.id || !isDeepStrictEqual(request.expectedDraft,
+      { chapterNumber: source.chapterNumber, version: source.version, status: source.status, contentHash: textHash(source.content) }))
+      throw new Error('GENERATION_REVIEW_SOURCE_CHANGED')
+    let recheck: ReviewRevisionContext['recheck']
+    if (recheckRequested) {
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/services/workflows/context-snapshot.ts:51-94](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/context-snapshot.ts#L51-L94)
+**依据 2 · 源码核查**：[electron/repositories/revision-repository.ts:110-138](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/repositories/revision-repository.ts#L110-L138)
 
-快照哈希、来源、省略和估算。
+事务创建revision前校验源。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-export async function buildChapterContextSnapshot(input: ChapterContextSnapshotInput): Promise<ContextSnapshot> {
-  const ordered = [...input.selection.included].sort((left, right) =>
-    compareCodeUnit(left.ref.sourceId, right.ref.sourceId)
-    || compareCodeUnit(left.ref.contentHash, right.ref.contentHash)
-    || compareCodeUnit(left.text, right.text))
-  const omissions = [...input.selection.omissions].sort((left, right) =>
-    compareCodeUnit(left.sourceId, right.sourceId)
-    || left.revision - right.revision
-    || compareCodeUnit(left.contentHash, right.contentHash)
-    || compareCodeUnit(left.reason, right.reason)
-    || Number(left.required) - Number(right.required))
-  const hash = await hashAuthorText(JSON.stringify({
-    included: ordered.map(entry => ({
-      sourceId: entry.ref.sourceId,
-      revision: entry.ref.revision,
-      contentHash: entry.ref.contentHash,
-      category: entry.category,
-      required: entry.required,
-      text: entry.text,
-    })),
-    omissions: omissions.map(omission => ({
-      sourceId: omission.sourceId,
-      revision: omission.revision,
-      contentHash: omission.contentHash,
-      reason: omission.reason,
-      required: omission.required,
-    })),
-  }))
-  return {
-    projectId: input.current.projectId,
-    epoch: input.current.epoch,
-    id: `context:${hash}`,
-    hash,
-    sources: ordered.map(entry => ({
-      ref: entry.ref,
-      slot: SLOT_BY_CATEGORY[entry.category],
-      reason: `${entry.category}: ${entry.reason}`,
-    })),
-    omissions: omissions.map(omission => ({
-      sourceId: omission.sourceId,
-      reason: omission.reason,
-      required: omission.required,
-    })),
-    estimate: { methodVersion: CONTEXT_ESTIMATOR_VERSION, inputUnits: contextSnapshotUnits(ordered) },
+    }): { id: number; revisionIndex: number } {
+        const db = getProjectDb()
+        if (!db) throw new Error('PROJECT_NOT_OPEN')
+
+        const tx = db.transaction(() => {
+            if (!params.expectedSource) throw new SourceDraftChangedError()
+            assertExpectedDraftSource(db, params.baseDraftId, params.expectedSource)
+            const row = db.prepare(`
+        SELECT MAX(revision_index) as maxIdx FROM revisions WHERE base_draft_id = ?
+      `).get(params.baseDraftId) as { maxIdx: number | null }
+            const revisionIndex = (row.maxIdx ?? 0) + 1
+
+            const contentId = ContentRepository.create(params.content)
+            const result = db.prepare(`
+        INSERT INTO revisions (
+          base_draft_id, revision_index, revision_type,
+          user_prompt, review_source_id,
+          source_draft_chapter_number, source_draft_version, source_draft_status, source_content,
+          content_id, word_count
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      `).run(
+                params.baseDraftId,
+                revisionIndex,
+                params.revisionType,
+                params.userPrompt ?? '',
+                params.reviewSourceId ?? null,
+                params.expectedSource?.chapterNumber ?? null,
+                params.expectedSource?.version ?? null,
+                params.expectedSource?.status ?? null,
 ```
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[src/stores/draft-store.ts:303-350](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/src/stores/draft-store.ts#L303-L350)
 
-- 未端到端验证大纲、历史定稿和真实模型窗口
-  **影响**：无法量化遗漏率与生成一致性
-  **进一步探讨**：用含隐蔽跨章约束的手工标注语料比较筛选与原文。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 审修和定稿怎样绑定版本并处理发布失败？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-review-revision-generation.ts:40-47 校验审修上下文和源文本哈希，66-73 校验 artifact 所属 run、revision、textHash、finishReason 等。finalization-service.ts:101-146 若 draft 已有相同冻结请求则重用已有提交，不同则冲突；149-171 从 finalizationId 重试并先校验快照哈希。174-207 区分已提交和实体稿发布，当前 authoritative 检查失败返回 FINALIZATION_SUPERSEDED；发布异常标记 pending。对比旧提交 62880d629af7bbfaf968c0cda5ae76816e917915，本次新增 isAuthoritative 检查。已提交不等于文件已发布；版本绑定不证明评审语义正确，也不能推断所有并发或崩溃路径均无误。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[electron/services/review-revision-generation.ts:40-47](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/review-revision-generation.ts#L40-L47)
-
-审修上下文与源文本哈希。
-
-```text
-  private context(run: DurableGenerationRun): ReviewRevisionContext {
-    const context = run.binding.sourceManifest.reviewRevisionContext as ReviewRevisionContext | undefined
-    if (!context || context.version !== 1 || context.operation !== run.binding.sourceManifest.operation
-      || !REVIEW_REVISION_OPERATIONS.includes(context.operation)
-      || run.binding.sourceManifest.reviewRevisionContextHash !== contextHash(context)
-      || context.sourceHash !== textHash(context.source.content)
-      || !isDeepStrictEqual(run.binding.sourceManifest.authorInputs, [{ id: 'review-revision-context', text: JSON.stringify(context) }]))
-      throw new Error('GENERATION_REVIEW_CONTEXT_UNPROVEN')
-```
-
-**依据 2 · 源码核查**：[electron/services/review-revision-generation.ts:66-73](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/review-revision-generation.ts#L66-L73)
-
-run、artifact、revision 和完成条件检查。
-
-```text
-  private proveArtifact(run: DurableGenerationRun, reference: ArtifactRef) {
-    if (!reference || Object.keys(reference).some(key => !['artifactId', 'revision', 'textHash'].includes(key))) throw new Error('GENERATION_REVIEW_ARTIFACT_INVALID')
-    const row = this.db.prepare('SELECT attempt_id,run_id,status FROM generation_artifacts WHERE artifact_id=?').get(reference.artifactId) as { attempt_id: string; run_id: string; status: string } | undefined
-    if (!row || row.run_id !== run.runId || row.status === 'discarded') throw new Error('GENERATION_REVIEW_ARTIFACT_INVALID')
-    const receipt = this.runs.receipt(row.attempt_id), artifact = receipt.artifact
-    if (!artifact || artifact.revision !== reference.revision || artifact.textHash !== reference.textHash
-      || textHash(artifact.text) !== reference.textHash || receipt.failureCode || receipt.result?.finishReason !== 'stop'
-      || !['settled', 'unknown'].includes(receipt.attempt.status)) throw new Error('GENERATION_REVIEW_ARTIFACT_INVALID')
-```
-
-**依据 3 · 源码核查**：[electron/services/finalization-service.ts:101-146](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/finalization-service.ts#L101-L146)
-
-冻结请求去重、冲突与定稿提交。
+冻结编辑器及项目session、typed合并。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（48行）</summary>
 
 ```text
+    void chapterDir // Compatibility argument; typed DB identities now determine the merge target.
+    let committedReceipt: Awaited<ReturnType<typeof ipc.invoke<'db:revision-merge'>>>['receipt'] | undefined
+    try {
+      const projectSession = currentDraftProjectSession(expectedProjectPath, expectedProjectSession)
+      if (!projectSession) {
+        return { success: false, error: '项目已切换，已拒绝跨项目合并' }
+      }
+      // 必须在第一次 await 前冻结标签；否则动态导入/身份解析期间的新输入
+      // 会被误当成提交基准，并在完成回执到达时被覆盖。
+      const editorState = useEditorStore.getState()
+      const targetTab = editorState.tabs.find(t =>
+        t.projectKey === expectedProjectPath && t.filePath === filePath
+      )
+      const editorSnapshot = targetTab
+        ? {
+            content: targetTab.content ?? expectedDraftContent,
+            contentRevision: targetTab.contentRevision ?? 0,
+          }
+        : undefined
+
+      const draftResource = parseResourceUri(filePath)
+      const revisionResource = parseResourceUri(revPath)
+      if (!resourceWriteAllowed(filePath) || draftResource?.kind !== 'draft'
+        || revisionResource?.kind !== 'revision' || revisionResource.legacy) {
+        return { success: false, error: '资源只读或无法确定草稿与修订身份' }
+      }
+      const targetDraftId = draftResource.id
+      const revisionId = revisionResource.id
+
+      const merged = requireIpcSuccess(
+        await ipc.invokeWithProjectSession(
+          projectSession,
+          'db:revision-merge',
+          {
+            revisionId,
+            targetDraftId,
+            expectedDraftContent,
+            mergedContent: mergedText,
+            wordCount: countDraftUnits(mergedText),
+          },
+          expectedProjectPath,
+        ),
+        '提交合并后的修订稿',
+      )
+      committedReceipt = merged.receipt
+      if (!isDraftProjectSessionCurrent(projectSession)) {
+        return { success: true, receipt: committedReceipt, postCommitError: staleProjectError().error }
+      }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[electron/repositories/revision-repository.ts:340-378](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/repositories/revision-repository.ts#L340-L378)
+
+校验当前/源正文后更新与标记合并。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+                throw new Error('REVISION_NOT_PENDING')
+            }
+            if (!['draft', 'revised', 'reviewed'].includes(target.status)) {
+                throw new Error('REVISION_TARGET_NOT_EDITABLE')
+            }
+            if (target.body !== request.expectedDraftContent) {
+                throw new Error('REVISION_TARGET_CHANGED')
+            }
+            if (
+                revision.source_draft_chapter_number === null
+                || revision.source_draft_version === null
+                || revision.source_draft_status === null
+                || revision.source_content === null
+            ) {
+                throw new Error('REVISION_SOURCE_MISSING')
+            }
+            if (
+                target.chapter_number !== revision.source_draft_chapter_number
+                || target.version !== revision.source_draft_version
+                || target.status !== revision.source_draft_status
+                || target.body !== revision.source_content
+            ) {
+                throw new Error('REVISION_SOURCE_MISMATCH')
+            }
+            db.prepare('UPDATE contents SET body = ? WHERE id = ?')
+                .run(request.mergedContent, target.content_id)
+            const draftUpdate = db.prepare(`
+              UPDATE drafts_all
+              SET status = 'revised', word_count = ?, updated_at = datetime('now')
+              WHERE id = ? AND status IN ('draft', 'revised', 'reviewed')
+            `).run(request.wordCount, request.targetDraftId)
+            if (draftUpdate.changes !== 1) {
+                throw new Error('REVISION_TARGET_CHANGED')
+            }
+            const revisionUpdate = db.prepare(`
+              UPDATE revisions
+              SET status = 'merged', merged_to_draft_id = ?, updated_at = datetime('now')
+              WHERE id = ? AND base_draft_id = ? AND status = 'pending'
+            `).run(request.targetDraftId, request.revisionId, request.targetDraftId)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[electron/repositories/finalization-repository.ts:210-216](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/repositories/finalization-repository.ts#L210-L216)
+
+数据库事实与outbox共同事务约束。
+
+```text
+ * 定稿的数据库事实源。正文、字数、定稿状态与发布 outbox 必须由同一个 SQLite
+ * transaction 共同提交；任何一个 statement 失败都会回滚其余变化。
+ */
+export class FinalizationRepository {
+  /** One transactionally frozen, highest-version finalized fact per chapter. */
+  static listAuthoritativeForExport(): FinalizedDraftExportSnapshot[] {
+    return readAuthoritativeExportRows().map(({ snapshot }) => snapshot)
+```
+
+**依据 6 · 源码核查**：[electron/services/finalization-service.ts:100-157](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/finalization-service.ts#L100-L157)
+
+重复请求复用与提交后发布。
+
+<details>
+<summary>查看原文（58行）</summary>
+
+```text
+    this.createFinalizationId = options.createFinalizationId ?? randomUUID
+    this.publisher = options.publisher ?? manuscriptPublisher
+  }
+
   async finalize(request: FinalizationRequest): Promise<FinalizationResult> {
     const finalizationId = this.createFinalizationId()
     const contentHash = snapshotHash(request.content)
@@ -584,6 +583,8 @@ run、artifact、revision 和完成条件检查。
         chapterNumber: request.chapterNumber,
         chapterTitle: request.chapterTitle,
         finalizationId,
+        // 删除清理还没记完的文件名不能用：续跑那次清理会把新发布的这份删掉。
+        reserved: ChapterDeletionRepository.reservedManuscriptTargets(),
       })
       record = FinalizationRepository.commit({
         finalizationId,
@@ -607,53 +608,25 @@ run、artifact、revision 和完成条件检查。
       }
     }
     return this.publishCommitted(request.projectRoot, record)
-```
+  }
 
-</details>
-
-**依据 4 · 源码核查**：[electron/services/finalization-service.ts:149-171](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/finalization-service.ts#L149-L171)
-
-重试读已提交记录并校验快照。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
   async retry(request: FinalizationRetryRequest): Promise<FinalizationResult> {
     let record: FinalizationRecord | null
     try {
       record = FinalizationRepository.get(request.finalizationId)
-    } catch (error) {
-      return { success: false, committed: false, error: String(error) }
-    }
-    if (!record) {
-      return {
-        success: false,
-        committed: false,
-        finalizationId: request.finalizationId,
-        error: 'FINALIZATION_COMMIT_NOT_FOUND',
-      }
-    }
-    const integrityError = snapshotIntegrityError(record)
-    if (integrityError) {
-      return toResult(record, false, integrityError)
-    }
-    if (record.publicationStatus === 'published') {
-      return toResult(record, true)
-    }
-    return this.publishCommitted(request.projectRoot, record)
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[electron/services/finalization-service.ts:174-207](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/finalization-service.ts#L174-L207)
+**依据 7 · 源码核查**：[electron/services/finalization-service.ts:178-218](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/finalization-service.ts#L178-L218)
 
-权威性、发布和 pending 分支。
+冻结快照发布、跨项目和待发布失败状态。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
+
   private async publishCommitted(projectRoot: string, record: FinalizationRecord): Promise<FinalizationResult> {
     try {
       readPortableRuntimeFreeze(projectRoot).assertMutable('finalization_outbox', record.finalizationId)
@@ -677,209 +650,100 @@ run、artifact、revision 和完成条件检查。
         chapterTitle: record.chapterTitle,
         content: record.contentSnapshot,
       })
+      // 写实体稿期间换了作品：发布结果不记进另一部作品的库；原作品的 outbox 仍是待发布，重新打开后重试即可（同内容幂等）。
+      assertRequiredExpectedProjectPath(getCurrentProjectPath(), projectRoot)
       return toResult(FinalizationRepository.markPublished(record.finalizationId), true)
     } catch (error) {
       // committed: true 已表明定稿已提交、实体稿待发布，各显示处自己写这句；error 只带原因（错误码或系统报错）。
       const message = String(error)
+      try {
+        assertRequiredExpectedProjectPath(getCurrentProjectPath(), projectRoot)
+      } catch {
+        return toResult(record, false, message)
+      }
       try {
         const pending = FinalizationRepository.markPublicationPending(record.finalizationId, message)
         return toResult(pending, false, message)
       } catch (markError) {
         // outbox 在事务内已经以 pending 创建；即使补记错误失败，也不能把已提交事实伪装为回滚。
         console.error('[finalization] 实体稿待发布状态记录失败:', markError)
-        return toResult(record, false, message)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[electron/repositories/finalization-repository.ts:372-379](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/repositories/finalization-repository.ts#L372-L379)
-
-选出当前权威定稿。
-
-```text
-  static isAuthoritative(draftId: number): boolean {
-    return requireDatabase().prepare(`
-      SELECT drafts.id FROM drafts
-      WHERE drafts.status = 'finalized'
-        AND drafts.chapter_number = (SELECT chapter_number FROM drafts WHERE id = ?)
-      ORDER BY ${AUTHORITATIVE_FINALIZED_ORDER}
-      LIMIT 1
-    `).pluck().get(draftId) === draftId
-```
-
 #### 缺口
 
-- 未运行并发定稿、崩溃恢复或磁盘故障
-  **影响**：不能确认实际文件恢复及一致性
-  **进一步探讨**：隔离作品注入写入失败、重复提交和定稿被取代。
+- 未故障注入合并并发、发布丢响应和UI误判。
+  **影响**：不能把outbox源码认定所有版本/文件恢复无损。
+  **进一步探讨**：用可丢弃作品测试源变化、切作品、磁盘写失败和重复定稿，核DB/实体稿与receipt。
 
-<a id="research-q04"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-13"></a>
 
-### Q04 · 本地优先是否意味着所有正文和凭据都不离开电脑？
+### Q03 · 本地优先是否代表作品与费用都不离开电脑？
 
 **研究主题**：缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
-README:183-192 称作品和 SQLite 存本地，云端模型请求会把提示和上下文发到选择的服务商，本机配置包含 API Key；103-105 还描述可选 WebDAV 备份。gemini-provider.ts:92-124 构造模型 URL、序列化消息体并 POST，含 API Key 请求头，支持云端输出路径的源码例证；是否本机或远端由用户选的 baseUrl 决定。数据存储本地不意味着云调用、局域网推理或备份无外发；未核查全部厂商协议、凭据保护或网络。
+本地优先说的是作品文件与SQLite存储，不等所有推理离线。OpenAI兼容provider把messages与model参数序列化POST至用户baseURL，Authorization带配置key；云端模型能看到被选中的设定、正文和上下文。Ollama可用本地端点，但用户仍需运行模型并承担硬件资源，不能称零成本。README说明Gemini原生与OpenAI兼容两种协议，不能换URL就支持任意接口；本次未逐一验证所有provider。
+
+可选WebDAV备份会实际上传作品archive、manifest和完成描述，和默认本地保存是不同数据通道。恢复服务会校验来源、目标与安装收据，为新副本分配新项目id；它并非多人实时协作同步或云端模型账号。没有完整审计凭证静态保护、备份内容与所有网络出口，不宣称全链路加密或无秘密泄露。
+
+用户应使用自己有权处理的素材，明确模型与备份目的地，先用无敏感内容测试。正文事实和版权判断由作者承担。语义检索另需向量模型；未配置时README称可本地全文搜索，不能把检索配置成功当连续性事实正确。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:183-192](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L183-L192)
+**依据 1 · 源码核查**：[electron/llm/openai-provider.ts:107-135](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/llm/openai-provider.ts#L107-L135)
 
-作者披露作品、模型请求和凭据位置。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-## 数据与隐私
-
-| 数据或行为 | 存放位置或去向 |
-| --- | --- |
-| 作品、角色、蓝图、草稿和定稿 | 你的作品文件夹和本地 SQLite 数据库。 |
-| 生成失败的恢复候选 | 只存在当前作品的本地数据库里，不会自动变成草稿或定稿。 |
-| 导入的参考资料 | 留在本地作品里，除非你把它发给云端模型。 |
-| 本地模型请求 | 发给你配置的本机或局域网推理服务。 |
-| 云端模型请求 | 提示词和上下文发给你选择的服务商。 |
-| 模型配置与 API Key | 保存在本机应用数据目录的 `ai-novel-writer` 文件夹里（Windows 为 `%APPDATA%\ai-novel-writer`，macOS 为 `~/Library/Application Support/ai-novel-writer`）。请保护好系统账户，不要分享这个文件夹。 |
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:100-105](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L100-L105)
-
-作者描述本地与 WebDAV 备份。
-
-```text
-### 作品资料与版本：写长篇不丢线索
-
-- **剧情与伏笔**：按章节看主线、支线和伏笔的进度，记下每条线索在哪一章埋设、推进或解决。
-- **知识库**：导入参考资料（.txt、.md）。没有配置检索模型时，也能用本地全文检索。
-- **版本历史**：每章的历次稿件都留着，可以和当前稿对比，也可以回退成一份新草稿。
-- **导出与备份**：导出为合并 Markdown、分章 Markdown 或 TXT。可以把作品打包存到本机，或备份到你绑定的 WebDAV 云端。恢复时总是另存为一份新副本。
-```
-
-**依据 3 · 源码核查**：[electron/llm/gemini-provider.ts:92-124](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/llm/gemini-provider.ts#L92-L124)
-
-Gemini 请求地址、正文与鉴权。
+实际key header和messages POST端点。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+  private buildRequestHeaders(model: ModelProfile, conversationId?: string): Record<string, string> {
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${model.apiKey}`,
+    }
+    if (isOpencodeGoBaseUrl(model.baseUrl)) {
+      headers['x-opencode-session'] = conversationId || crypto.randomUUID()
+      headers['User-Agent'] = OPENCODE_GO_USER_AGENT
+    }
+    return headers
+  }
+
   async generate(model: ModelProfile, messages: Array<{ role: string; content: string }>, opts: LLMGenerateOptions): Promise<LLMResponse> {
     try {
-      const baseUrl = model.baseUrl.replace(/\/$/, '')
-      const url = `${baseUrl}/v1beta/models/${model.modelName}:generateContent`
-
-      const { contents, systemInstruction } = this.toGeminiContents(messages)
-
-      const generationConfig: Record<string, unknown> = {
-        maxOutputTokens: opts.maxTokens ?? model.maxTokens,
-      }
-      if (opts.temperature !== undefined) {
-        generationConfig.temperature = opts.temperature
-      }
-      if (opts.responseFormat?.type === 'json_object') {
-        generationConfig.responseMimeType = 'application/json'
-      }
-      this.applyReasoning(generationConfig, opts)
-
-      const body: Record<string, unknown> = {
-        contents,
-        generationConfig,
-      }
-      if (systemInstruction) {
-        body.systemInstruction = { parts: [{ text: systemInstruction }] }
-      }
+      const url = resolveOpenAIChatCompletionsUrl(model.baseUrl, model.provider)
+      const body = this.buildRequestBody(model, messages, opts, false)
 
       const res = await fetch(url, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-goog-api-key': model.apiKey,
-        },
+        headers: this.buildRequestHeaders(model, opts.conversationId),
         body: JSON.stringify(body),
+        signal: opts.signal,
+      })
+
+      if (!res.ok) {
+        const text = await res.text()
+        return { success: false, content: '', finishReason: 'error', error: 'LLM_REQUEST_FAILED', httpFailure: { status: res.status, body: text } }
+      }
+
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[README.md:119-124](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L119-L124)
+**依据 2 · 作者声明**：[README.md:128-148](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L128-L148)
 
-模型需要用户配置。
-
-```text
-## 支持的模型与服务
-
-书童不提供模型，也不代管额度。你在设置里填上自己的服务地址、模型名和 API Key。软件支持两种调用协议：
-
-- **OpenAI 兼容协议**：Chat Completions 接口兼容的服务都可以用。
-- **Gemini 原生协议**：Google Gemini。
-```
-
-#### 缺口
-
-- 未审计所有网络入口、凭据存储加密和本地服务
-  **影响**：不能证明完全离线或隐私合规
-  **进一步探讨**：隔离作品验证云端和本地模型目的地并检查备份。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 迁移、模型成本与作者验收有什么限制？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-package.json:1-11 给出根应用 1.4.0、Node >=22.14 和 pnpm 11.11；README:119-142 指出需自配模型，支持 OpenAI 兼容 Chat Completions 或 Gemini，任意 URL 不保证兼容；103-105 描述本地或 WebDAV 备份与另存恢复，201-205 说明云模型费用由用户承担。当前 README 的演示是 1.3.0 并压缩模型等待时长，不能当作本次 1.4.0 的用时或质量测量；不能仅凭源码推断发布包、全部 UI、迁移与恢复成功。建议非敏感小样本先备份，人工验收再复制回正式稿。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-11](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/package.json#L1-L11)
-
-包版本、构建运行条件。
+服务协议与向量检索条件。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（21行）</summary>
 
-```text
-{
-  "name": "ai-novel-writer",
-  "version": "1.4.0",
-  "description": "AI Novel Writer - a local-first production workspace for long-form fiction",
-  "author": "AI Novel Writer Maintainers",
-  "private": true,
-  "type": "module",
-  "packageManager": "pnpm@11.11.0",
-  "engines": {
-    "node": ">=22.14.0"
-  },
-```
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:119-142](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L119-L142)
-
-作者列明模型协议与兼容限制。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-## 支持的模型与服务
-
-书童不提供模型，也不代管额度。你在设置里填上自己的服务地址、模型名和 API Key。软件支持两种调用协议：
-
-- **OpenAI 兼容协议**：Chat Completions 接口兼容的服务都可以用。
-- **Gemini 原生协议**：Google Gemini。
-
-设置里内置了这些服务商的预设：
-
+````text
 | 服务商 | 协议 | 说明 |
 | --- | --- | --- |
 | DeepSeek | OpenAI 兼容 | 预设地址 `https://api.deepseek.com` |
@@ -895,194 +759,437 @@ package.json:1-11 给出根应用 1.4.0、Node >=22.14 和 pnpm 11.11；README:1
 「自定义」只是在上面两种协议里换地址、模型名和凭据，不是任意 HTTP 接口。Anthropic、Azure、KoboldAI 原生接口等需要单独的适配器，换个 URL 不能保证能用。
 
 知识库的语义检索另需一个向量模型，在设置的「检索模型」里配置。
+
+### 用 Ollama 跑本地模型
+
+```text
+服务商：   Ollama（本地）或自定义
+协议：     OpenAI 兼容
+````
+
+</details>
+
+**依据 3 · 源码核查**：[electron/services/webdav-backup-service.ts:320-343](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/webdav-backup-service.ts#L320-L343)
+
+作品archive实际上传及manifest。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+    const manifest: GenerationManifest = {
+      version: 1,
+      cloudBookId: input.cloudBookId,
+      generationId,
+      parentGenerationIds: parents,
+      createdAt,
+      originProjectId: input.originProjectId,
+      portableSnapshotGeneration: input.portableSnapshotGeneration,
+      archive: { file: 'archive.ainovel', ...localArchive },
+    }
+    const manifestBytes = Buffer.from(JSON.stringify(manifest), 'utf8')
+    if (manifestBytes.length > this.maxJsonBytes) fail('WEBDAV_INPUT_INVALID')
+    await this.putFile(input.account, locations.archive, input.archivePath, localArchive, input.signal)
+    await this.putBytes(input.account, locations.manifest, manifestBytes, input.signal)
+    const completion: CompletionDescriptor = {
+      version: 1,
+      cloudBookId: input.cloudBookId,
+      generationId,
+      manifest: { file: 'manifest.json', sha256: sha256(manifestBytes), byteSize: manifestBytes.length },
+      archive: manifest.archive,
+      completedAt: this.now().toISOString(),
+    }
+    const completionBytes = Buffer.from(JSON.stringify(completion), 'utf8')
+    if (completionBytes.length > this.maxJsonBytes) fail('WEBDAV_INPUT_INVALID')
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:100-105](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L100-L105)
+**依据 4 · 源码核查**：[electron/services/project-restore-service.ts:835-850](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/project-restore-service.ts#L835-L850)
 
-作者描述备份和恢复。
+恢复分配新项目身份。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
+      if (!journal) fail('PORTABLE_RESTORE_TARGET_EXISTS')
+      reservationOwned(journal, targetRoot)
+      activeInstallJournals.add(normalized(journal.path))
+      heldJournalPath = journal.path
+    } else if (journal) {
+      unlinkIdentity(journal.path, journal.identity)
+      journal = null
+    }
+
+    const targetProjectId = journal?.document.targetProjectId ?? (input.newProjectId ?? randomUUID)()
+    if (!UUID.test(targetProjectId) || targetProjectId === authority.originProjectId) fail('PORTABLE_RESTORE_INVALID')
+    const storage = path.join(attempt.root, CANONICAL_PROJECT_DIRECTORY)
+    mkdirOwned(attempt, storage)
+    for (const entry of extracted.manifest.entries) {
+      const source = path.join(attempt.root, ...entry.path.split('/'))
+      if (contained(storage, source)) continue
+```
+
+</details>
+
+**依据 5 · 作者声明**：[README.md:202-212](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L202-L212)
+
+作者费用、存储与外发说明。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+免费。软件以 GPL-3.0 协议开源。调用云端模型产生的费用由你和模型服务商结算，与本软件无关。用 Ollama 跑本地模型则不需要付费给任何服务商。
+
+**需要什么模型？**
+任何兼容 OpenAI Chat Completions 接口的模型都可以接，Google Gemini 走原生协议。设置里有 DeepSeek、SiliconFlow、智谱、OpenAI、xAI、Gemini、Ollama 和 NovelAI 的预设。生成质量取决于你选的模型，软件不对模型输出质量作保证。
+
+**作品数据存在哪里？**
+存在你自己的电脑上：作品文件夹加一个本地 SQLite 数据库。只有你发起生成时，相关的提示词、作品设定和上下文才会发给你配置的模型服务。
+
+**能写多长的小说？**
+总章数由你在设定里填，没有固定上限。写每一章时，AI 拿到的是这一章的蓝图、相关角色、世界观、前文摘要和上一章全文，所以不需要把整本书塞进一次对话。批量创作一次最多连写 10 章，可以多次接着写。
+
+```
+
+</details>
+
+#### 缺口
+
+- 未全审模型凭证静态保护、全部网络路径与WebDAV加密/恢复。
+  **影响**：不能对私密作品作全链路本机/加密保证，不能用免费软件替代总成本。
+  **进一步探讨**：按目标模型/备份配置核对请求和archive内容及凭证保存，再决定是否导入私密作品。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 失败候选、续跑、备份和退出的全周期代价如何？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+生成run持久保存可见文本与usage状态。失败/取消会尝试flush并settle稳定错误分类，存储失败另保留unsavedTail；主进程resume要求指纹、contextSnapshotId和sourceManifest一致且validateRecovery通过。生成候选可读、可放弃，但候选不是已经批准的正文，磁盘失败也不能保证最后可见尾段都持久。GenerationDraftEffects用receipt/hash和当前正文核对，区分absent、changed、current，避免把被改过的草稿当原生成提交。
+
+首次要安装桌面包或维护Node/pnpm/Electron原生依赖，准备模型与作品路径；持续要审核长文本、更新设定/蓝图、处理旧源冲突、模型费用、备份和导出。默认根生成策略有请求/token/时间上限，但规划任务可按工作量扩展预算，不能拿该常数当所有任务同一固定账单。云费、硬件、电力、恢复时间与质量净收益均未实测。
+
+当前可试用非敏感一章，先验证取消候选、源变化拒绝、revision合并、定稿待发布和导出备份；保留原文与独立备份。退出前导出并保留项目/DB，取消活动任务、按需要删除WebDAV副本或撤凭证；卸载应用不等撤回模型已收文本或清理云副本。若复核和状态维护超普通编辑器+聊天，回退原流程。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[electron/services/generation-run-service.ts:271-310](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/generation-run-service.ts#L271-L310)
+
+失败flush、settle与存储失败分类。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+            }
+            catch (error) {
+                if (diagnostics && !diagnostics.endReason) diagnostics = { ...diagnostics, ...safeTransportError(error),
+                    elapsedMs: diagnostics.elapsedMs + Math.max(0, Math.round(performance.now() - diagnosticsAt)),
+                    endReason: controller.signal.aborted ? 'cancelled' : 'failed' };
+                retainInterruptedAgentText();
+                flush();
+                try {
+                    if (suspended) return { ...receipt, ...(storageFailed ? { unsavedTail: text.slice(durable.length) } : {}), failureCode: 'GENERATION_PROJECT_CLOSED' };
+                    const current = deps.repository.receipt(attemptId);
+                    if (current.attempt.status === 'dispatch-marked') {
+                        // Persist only stable categories, never provider text that may contain credentials or prompts.
+                        const networkCode = diagnostics?.causeCode ?? diagnostics?.errorCode;
+                        const network = Boolean(networkCode && /^(UND_ERR_|ECONN|ETIMEDOUT|ENOTFOUND|EAI_AGAIN|ERR_STREAM_PREMATURE_CLOSE)/.test(networkCode))
+                            || error instanceof Error && /^(NETWORK_ERROR|ECONNRESET|ETIMEDOUT|FETCH_FAILED)$/.test(error.message);
+                        let known = 'GENERATION_PROVIDER_FAILED';
+                        if (error instanceof Error && isTerminalProviderFailure(error.message)) known = 'GENERATION_CONTEXT_LENGTH_EXCEEDED';
+                        else if (network) known = 'NETWORK_ERROR';
+                        const failureCode = storageFailed ? 'GENERATION_STORAGE_FAILED' : timedOut ? 'ROOT_BUDGET_EXHAUSTED'
+                            : streamFailed ? 'GENERATION_STREAM_INVALID' : controller.signal.aborted ? 'GENERATION_CANCELLED' : known;
+                        receipt = deps.repository.settle(attemptId, null, null, failureCode, diagnostics);
+                    }
+                    else
+                        receipt = current;
+                }
+                catch {
+                    storageFailed = true;
+                    failedRoots.add(run.rootActionId);
+                }
+            }
+            finally {
+                terminal = true;
+                if (timer)
+                    clearInterval(timer);
+                if (deadline)
+                    clearTimeout(deadline);
+                removeAbortListener();
+                controllers.delete(attemptId);
+            }
+            if (storageFailed)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[electron/services/generation-run-service.ts:342-357](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/generation-run-service.ts#L342-L357)
+
+候选/取消/恢复指纹与来源检查。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+        readUnsavedTails: (): readonly GenerationUnsavedTail[] => Object.freeze([...unsavedTails.values()]),
+        get: (runId: string) => deps.repository.get(runId),
+        readAttempt: (attemptId: string) => deps.repository.receipt(attemptId),
+        listCandidates: () => deps.repository.listCandidates(),
+        discardCandidate: (id: string) => {
+            deps.repository.discardCandidate(id);
+            for (const [attemptId, tail] of unsavedTails) if (tail.artifactId === id) unsavedTails.delete(attemptId);
+        },
+        pause: (rootId: string) => { deps.repository.pause(rootId); stopRoot(rootId); },
+        cancel: (rootId: string) => { deps.repository.pause(rootId, true); stopRoot(rootId); },
+        resume: async (runId: string, next: RunBinding) => { const old = deps.repository.get(runId); if (!isDeepStrictEqual(old.binding.fingerprint, next.fingerprint) || old.binding.contextSnapshotId !== next.contextSnapshotId || !isDeepStrictEqual(old.binding.sourceManifest, next.sourceManifest) || !deps.validateRecovery || !await deps.validateRecovery(old.binding, next))
+            throw new Error('GENERATION_RECOVERY_UNAUTHORIZED'); deps.repository.resume(runId, next); return deps.repository.get(runId); },
+        restart: (oldRootId: string, request: OpenGenerationRunRequest) => { deps.repository.pause(oldRootId, true); stopRoot(oldRootId); return deps.repository.open(request); },
+        recoverInterrupted: () => deps.repository.recoverInterrupted(),
+    };
+}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[electron/services/generation-draft-effects.ts:96-123](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/generation-draft-effects.ts#L96-L123)
+
+receipt校验和恢复状态区分。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  private verifiedCommit(row: AttemptRow) {
+    const usage = JSON.parse(row.usage_receipt_json), stored = usage.draftCommit as StoredDraftCommit | undefined
+    if (!stored) return null
+    const run = this.runs.get(row.run_id), composition = this.runs.readVisibleComposition(run.runId)
+    const draft = this.db.prepare('SELECT d.id,d.version,d.chapter_number,d.status,c.body FROM drafts d JOIN contents c ON c.id=d.content_id WHERE d.id=?').get(stored.id) as { id: number; version: number; chapter_number: number; status: string; body: string } | undefined
+    if (!composition || !isDraftVisibleTextVersion(composition.algorithm) || stored.success !== true
+      || stored.chapterNumber !== run.binding.sourceManifest.chapterNumber
+      || draft && (stored.chapterNumber !== draft.chapter_number || stored.version !== draft.version) || stored.contentHash !== textHash(stored.content) || stored.contentHash !== composition.textHash
+      || stored.content !== composition.text || stored.batchId !== run.binding.sourceManifest.batchId
+      || !isDeepStrictEqual(stored.handle, { ...handleOf(run), epoch: usage.artifactIdentity?.epoch }))
+      throw new Error('GENERATION_DRAFT_RECEIPT_INVALID')
+    return { receipt: stored, matchesBody: !!draft && stored.content === draft.body, draft }
+  }
+  private readSaveState(runId: string) {
+    const commits = this.attempts(runId).map(row => this.verifiedCommit(row)).filter(item => item !== null)
+    if (commits.length > 1) throw new Error('GENERATION_DRAFT_RECEIPT_INVALID')
+    return commits[0] ?? null
+  }
+  readCommit(runId: string): StoredDraftCommit | null {
+    const saved = this.readSaveState(runId)
+    if (saved && !saved.matchesBody) throw new Error('GENERATION_DRAFT_RECEIPT_INVALID')
+    return saved?.receipt ?? null
+  }
+  readRecovery(runId: string): GenerationDraftSaveState {
+    const saved = this.readSaveState(runId)
+    if (!saved) return { kind: 'absent' }
+    if (!saved.matchesBody) return { kind: 'changed' }
+    const { id, version, content, contentHash } = saved.receipt
+```
+
+</details>
+
+**依据 4 · 源码核查**：[electron/services/main-generation-plan.ts:15-40](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/main-generation-plan.ts#L15-L40)
+
+默认预算及按工作量放大逻辑。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+/** Finite root ceilings and semantic sizing are frozen into each source binding. */
+export const MAIN_GENERATION_POLICY = Object.freeze({
+  version: 's07-task-and-liability-v1',
+  taskBudgetPolicy: S07_TASK_BUDGET_POLICY,
+  capabilityPolicyVersion: 'verified-endpoint-model-budget-v1',
+  budget: Object.freeze({ maxPhysicalRequests: 32, maxTokenLiability: 2_097_152,
+    maxOutputPerRequest: 32_768, maxActiveElapsedMs: 3_600_000 } satisfies RootBudget),
+  estimatorVersion: 'utf8-bytes-plus-chat-framing-v1',
+  safetyMarginTokens: 512,
+})
+
+export type MainGenerationPolicy = Readonly<Omit<typeof MAIN_GENERATION_POLICY, 'version' | 'budget'> & {
+  version: typeof MAIN_GENERATION_POLICY.version | 's07-planning-v1' | 's07-capacity-v2'
+  budget: RootBudget
+  planning?: PlanningGenerationScope
+}>
+
+function scaledRootBudget(requests: number, maxOutputPerRequest: number, perRequestLiability = MAIN_GENERATION_POLICY.budget.maxTokenLiability / MAIN_GENERATION_POLICY.budget.maxPhysicalRequests): RootBudget {
+  const base = MAIN_GENERATION_POLICY.budget
+  const maxPhysicalRequests = Math.max(base.maxPhysicalRequests, requests)
+  const budget = { maxPhysicalRequests,
+    maxTokenLiability: perRequestLiability * maxPhysicalRequests,
+    maxOutputPerRequest,
+    maxActiveElapsedMs: base.maxActiveElapsedMs / base.maxPhysicalRequests * maxPhysicalRequests }
+  if (Object.values(budget).some(value => !Number.isSafeInteger(value) || value <= 0)) throw new Error('GENERATION_PLANNING_BUDGET_INVALID')
+  return Object.freeze(budget)
+```
+
+</details>
+
+**依据 5 · 作者声明**：[README.md:224-236](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L224-L236)
+
+作者签名限制与模型不替代审阅。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+
+**Windows 或 macOS 提示安装包不安全怎么办？**
+Windows 安装包未签名，Mac 安装包只有 ad-hoc 签名、没有经过 Apple 公证，所以系统会提示。确认安装包来自本项目的官方 GitHub Release 后，按上面「下载与安装」的步骤允许打开。
+
+## 当前限制
+
+- 不保证任意第三方 API 只靠 URL 和 Key 就能接入，只保证已实现的协议和预设。
+- 不替代作者的创意、事实核查和版权判断。AI 写出的内容需要你审阅。
+- 不提供在线发布、阅读社区或云端模型账号。
+
+## 从源码构建
+
+需要 Node.js 22.14 以上和仓库指定版本的 pnpm。
+```
+
+</details>
+
+#### 缺口
+
+- 未运行真实桌面、取消/崩溃恢复、备份恢复或跨平台安装。
+  **影响**：只能推荐有独立备份的小范围试用，不能承诺无丢字与低维护。
+  **进一步探讨**：记录同一章写作/审阅/恢复总时间和费用，先跑故障矩阵再决定长期采用。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 从状态机制可提出什么独立可验方向？
+
+**研究主题**：新假设与验证、工程质量与复用
+
+#### 完整回答
+
+已有值得借鉴的是分开模型候选、作者合并、数据库定稿与实体稿投影，冻结源与收据为失败核对提供依据；这来自成熟版本/事务方法在长篇作品中的组合，不是模型文学能力突破。最重要未知是作者是否真正理解这些状态，而非底层能否多存一些文件。
+
+未验证方向为“章节交付核对”：把当前权威正文、作者接受的revision、定稿是否落DB、实体稿是否已发布及失败候选放在一个可回查状态页，以明确行动消除“看到文字就已保存”的误判。相对现有运行侧页/版本记录的增量是围绕单章最终交付统一认知，不增加自动写作权力；会增加UI和状态映射维护。
+
+最小验证在同一章节和预算下比较现界面与核对视图，注入切作品、发布失败、存储尾段失败和源变化，测作者识别权威版本、找回文字的准确率与耗时，同时盲评正文质量。若只多一个面板、不降误判或变慢，则收窄/放弃；本次未实现，不能计入已有贡献。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[electron/services/finalization-service.ts:178-218](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/finalization-service.ts#L178-L218)
+
+已提交与待发布必须分别表达。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+
+  private async publishCommitted(projectRoot: string, record: FinalizationRecord): Promise<FinalizationResult> {
+    try {
+      readPortableRuntimeFreeze(projectRoot).assertMutable('finalization_outbox', record.finalizationId)
+    } catch (error) {
+      const message = error instanceof PortableRuntimeFreezeError ? error.code : String(error)
+      return toResult(record, false, message)
+    }
+    try {
+      const integrityError = snapshotIntegrityError(record)
+      if (integrityError) throw new Error(integrityError)
+      if (record.publicationStatus === 'published') {
+        return toResult(record, true)
+      }
+      if (!FinalizationRepository.isAuthoritative(record.draftId)) {
+        return toResult(record, false, 'FINALIZATION_SUPERSEDED')
+      }
+      await this.publisher.publish({
+        projectRoot,
+        targetFileName: record.targetFileName,
+        chapterNumber: record.chapterNumber,
+        chapterTitle: record.chapterTitle,
+        content: record.contentSnapshot,
+      })
+      // 写实体稿期间换了作品：发布结果不记进另一部作品的库；原作品的 outbox 仍是待发布，重新打开后重试即可（同内容幂等）。
+      assertRequiredExpectedProjectPath(getCurrentProjectPath(), projectRoot)
+      return toResult(FinalizationRepository.markPublished(record.finalizationId), true)
+    } catch (error) {
+      // committed: true 已表明定稿已提交、实体稿待发布，各显示处自己写这句；error 只带原因（错误码或系统报错）。
+      const message = String(error)
+      try {
+        assertRequiredExpectedProjectPath(getCurrentProjectPath(), projectRoot)
+      } catch {
+        return toResult(record, false, message)
+      }
+      try {
+        const pending = FinalizationRepository.markPublicationPending(record.finalizationId, message)
+        return toResult(pending, false, message)
+      } catch (markError) {
+        // outbox 在事务内已经以 pending 创建；即使补记错误失败，也不能把已提交事实伪装为回滚。
+        console.error('[finalization] 实体稿待发布状态记录失败:', markError)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[electron/services/generation-draft-effects.ts:113-123](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/electron/services/generation-draft-effects.ts#L113-L123)
+
+当前/变更/不存在恢复状态。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  }
+  readCommit(runId: string): StoredDraftCommit | null {
+    const saved = this.readSaveState(runId)
+    if (saved && !saved.matchesBody) throw new Error('GENERATION_DRAFT_RECEIPT_INVALID')
+    return saved?.receipt ?? null
+  }
+  readRecovery(runId: string): GenerationDraftSaveState {
+    const saved = this.readSaveState(runId)
+    if (!saved) return { kind: 'absent' }
+    if (!saved.matchesBody) return { kind: 'changed' }
+    const { id, version, content, contentHash } = saved.receipt
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.md:97-107](https://github.com/EthanYoQ/Pagekin/blob/b5bb7b493c955ced13a7decb0c03e56f240f6d0a/README.md#L97-L107)
+
+已有运行侧页和版本基线。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+
+![运行侧页：正在写第 3 章，实时输出逐句出现](docs/assets/readme/v130-zh-run.webp)
+
 ### 作品资料与版本：写长篇不丢线索
 
 - **剧情与伏笔**：按章节看主线、支线和伏笔的进度，记下每条线索在哪一章埋设、推进或解决。
 - **知识库**：导入参考资料（.txt、.md）。没有配置检索模型时，也能用本地全文检索。
 - **版本历史**：每章的历次稿件都留着，可以和当前稿对比，也可以回退成一份新草稿。
 - **导出与备份**：导出为合并 Markdown、分章 Markdown 或 TXT。可以把作品打包存到本机，或备份到你绑定的 WebDAV 云端。恢复时总是另存为一份新副本。
-```
 
-**依据 4 · 作者声明**：[README.md:201-205](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L201-L205)
-
-作者描述费用和质量边界。
-
-```text
-**书童免费吗？**
-免费。软件以 GPL-3.0 协议开源。调用云端模型产生的费用由你和模型服务商结算，与本软件无关。用 Ollama 跑本地模型则不需要付费给任何服务商。
-
-**需要什么模型？**
-任何兼容 OpenAI Chat Completions 接口的模型都可以接，Google Gemini 走原生协议。设置里有 DeepSeek、SiliconFlow、智谱、OpenAI、xAI、Gemini、Ollama 和 NovelAI 的预设。生成质量取决于你选的模型，软件不对模型输出质量作保证。
-```
-
-**依据 5 · 作者声明**：[README.md:21-24](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/README.md#L21-L24)
-
-历史演示版本与等待剪辑。
-
-```text
-<p align="center">
-  <a href="https://github.com/EthanYoQ/AI-Novel-Writer/releases/latest"><img src="https://img.shields.io/badge/%E4%B8%8B%E8%BD%BD-Windows%20%7C%20macOS-2b4c8c?style=for-the-badge" alt="下载 Windows 与 macOS 安装包" /></a><br />
-  <a href="https://www.orz.md/ai-novel-writer/demo/">观看 32 秒中文实录：选段续写与改成对话</a><br />
-  <sub>1.3.0 实录，模型等待段已剪短，AI 配音；32 秒是片长，不是生成耗时。</sub>
-```
-
-#### 缺口
-
-- 未测打包、备份恢复、付费和作品质量
-  **影响**：无法证明升级安全、净费用或节时
-  **进一步探讨**：先备份并在隔离副本用非敏感章节试写。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 能否针对可选材料省略定向回查原文以减少跨章冲突？
-
-**研究主题**：新假设与验证、贡献与相对优势
-
-#### 完整回答
-
-现有选择器已经强制必需覆盖，并把可选材料缺口渲染出来；审修还已有生成报告与 recheck 分支，所以再加省略列表、模型审稿或通用重审不是新方案。未验证假设：对作者选择的高影响可选省略来源，单独定位对应已定稿原文段落，提供版本与上下文引用并和当前草稿并排展示，要求作者确认是否需要追加受控审查；查不到或来源过期标 unknown、不自动补写正文。用同一冻结章节集对照现有缺口提示加普通审稿与定向原文回查，混入真实跨章冲突、无冲突和未检索到的陷阱；记录人工盲标漏检/误报、回查与模型成本、作者时间、隐私和过时引用。若没有降低漏检、过时报错被当事实、误报/成本过高或引用泄露，则否定；这是待验证方案，不保证作品一致或模型能发现全部冲突。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/services/workflows/source-selection.ts:214-245](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/source-selection.ts#L214-L245)
-
-现有必需覆盖及可选预算省略。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-    const cost = blocks.reduce((sum, piece) => sum + unitOf(piece.text), 0)
-    if (cost > remaining || !candidate.required && input.optionalMaterialCeiling !== undefined
-      && input.capacity.maxInputUnits - remaining + cost > input.optionalMaterialCeiling) {
-      block(candidate, 'budget')
-      continue
-    }
-    remaining -= cost
-    for (const piece of blocks) {
-      included.push({ ref: candidate.ref, category: candidate.category, text: piece.text,
-        required: candidate.required, reason: piece.reason })
-    }
-    coveredContent.add(candidate.ref.contentHash)
-  }
-
-  const coverage = coverageOf(requiredContent, coveredContent)
-  if (coverage.complete) return { decision: 'ready', included, omissions, coverage }
-
-  // 结算：按稳定顺序挑出第一个未被覆盖的必需来源作为阻断点。
-  const blocking = ordered.find(item => item.required && !coveredContent.has(item.ref.contentHash))!
-  // blocking 取自 ordered，是同一个对象引用，因此这里取到的就是它自己的原因。
-  const reason = reasonByCandidate.get(blocking) ?? 'budget'
-  if (UNUSABLE_SOURCE_REASONS.includes(reason)) {
-    // 来源本身不可用：拆小范围也解决不了。
-    return { decision: 'capacity-conflict', blockingSourceId: blocking.ref.sourceId,
-      blockingReason: reason, omissions, coverage }
-  }
-  return coverage.included === 0
-    ? { decision: 'capacity-conflict', blockingSourceId: blocking.ref.sourceId,
-        blockingReason: reason, omissions, coverage }
-    : { decision: 'split-required', remainingRequired: ordered
-        .filter(item => item.required && !coveredContent.has(item.ref.contentHash))
-        .map(item => item.ref.sourceId), omissions, coverage }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/services/workflows/chapter-materials.ts:746-754](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/chapter-materials.ts#L746-L754)
-
-现有可选缺口提示。
-
-```text
-  const selectedOmissions = selection.omissions
-    .map(omission => describeSelectionOmission(omission, familyBySourceId))
-    .filter((omission): omission is ChapterMaterialOmission => omission !== null)
-  const allOmissions = [...omissions, ...selectedOmissions]
-  const gap = allOmissions.length > 0
-    ? promptLanguageText(
-        writingLanguage,
-        `【可选材料覆盖缺口】${allOmissions.map(item => `${item.source}${item.chapterNumber ? `#${item.chapterNumber}` : ''}:${item.reason}`).join('；')}`,
-        `[Optional material coverage gaps] ${allOmissions.map(item => `${item.source}${item.chapterNumber ? `#${item.chapterNumber}` : ''}:${item.reason}`).join('; ')}`,
-```
-
-**依据 3 · 源码核查**：[src/services/workflows/context-snapshot.ts:71-94](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/src/services/workflows/context-snapshot.ts#L71-L94)
-
-现有省略来源与快照元数据。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-    omissions: omissions.map(omission => ({
-      sourceId: omission.sourceId,
-      revision: omission.revision,
-      contentHash: omission.contentHash,
-      reason: omission.reason,
-      required: omission.required,
-    })),
-  }))
-  return {
-    projectId: input.current.projectId,
-    epoch: input.current.epoch,
-    id: `context:${hash}`,
-    hash,
-    sources: ordered.map(entry => ({
-      ref: entry.ref,
-      slot: SLOT_BY_CATEGORY[entry.category],
-      reason: `${entry.category}: ${entry.reason}`,
-    })),
-    omissions: omissions.map(omission => ({
-      sourceId: omission.sourceId,
-      reason: omission.reason,
-      required: omission.required,
-    })),
-    estimate: { methodVersion: CONTEXT_ESTIMATOR_VERSION, inputUnits: contextSnapshotUnits(ordered) },
-```
-
-</details>
-
-**依据 4 · 源码核查**：[electron/services/review-revision-generation.ts:76-91](https://github.com/EthanYoQ/AI-Novel-Writer/blob/59153ceb1174b20339e205b801f4e694e5ad5507/electron/services/review-revision-generation.ts#L76-L91)
-
-现有审稿报告和重审分支。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  private reviewBody(run: DurableGenerationRun, reference: ArtifactRef, reportVersion: ReviewReportVersion = 2): string {
-    const context = this.context(run), { row, artifact } = this.proveArtifact(run, reference)
-    if (context.recheck) {
-      const attempt = this.attempts(run.runId).find(candidate => candidate.attempt_id === row.attempt_id)
-      let persistedVersion: 1 | 2 | undefined
-      try {
-        const receipt = attempt && JSON.parse(attempt.usage_receipt_json).reviewCycleRecheck
-        if (receipt?.version === 1 || receipt?.version === 2) persistedVersion = receipt.version
-      } catch { /* Invalid persisted receipts fail later proof checks; do not downgrade current policy. */ }
-      const policy = persistedVersion ? { ...context.recheck, version: persistedVersion } : recheckCommitPolicy(context.recheck)
-      const built = buildReviewCycleRecheckReport(artifact.text, context.source.content, policy, context.uiLocale, reportVersion)
-      return JSON.stringify({ summary: built.summary, items: built.items }, null, 2)
-    }
-    return JSON.stringify(buildReviewGenerationReport({ content: artifact.text, sourceContent: context.source.content,
-      frozenGoals: context.frozenGoals, writingLanguage: context.writingLanguage, uiLocale: context.uiLocale,
-      preflightFindings: context.preflightFindings, reportVersion }), null, 2)
+### 写作 Skill：导入你自己的写作规则
 ```
 
 </details>
 
 #### 缺口
 
-- 没有定向原文回查原型和带真值的长篇冲突数据集
-  **影响**：无法证明方案减少漏检或值得额外成本
-  **进一步探讨**：构造有真值的跨章冲突与无冲突样本进行盲评。
+- 统一交付状态是否帮助作者理解与降低恢复时间未知。
+  **影响**：不能称当前痛点已经由新设计解决或已证实商业需求。
+  **进一步探讨**：预先设误判与时间阈值，同故障样本测量，失败则停止。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

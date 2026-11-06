@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [Adult Tension](#plugin-1339714338-root) | 面向成年人的中文互动叙事 Skill，用本地 Python 运行时管理剧情状态、时间、边界与存档。 | 只用中性合成内容和隔离项目验证存档恢复。 |
-| [AI Novel Writer DSH 插件预览](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在 DSH 工作台中组织小说项目和待人工应用的写作提案。 | [Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 资格验证前观察，实际使用需备份并逐项核对 partial。 |
+| [AI Novel Writer for DeepSeek Harness](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在DSH Web管理本地小说项目，通过V1单资产审批或V2人审提案协作写作。 | 新用户观察冻结版本，先核兼容/备份恢复；已有用户在独立副本核read-propose-human apply-read，逐item核状态，不以Git替代DB备份。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
 | [DeepBlend Studio Bundle](#plugin-1368481604-packages-deepblend-bundle) | 组合 DSH 中的 Blender runtime、业务 host 与工作台。 | [Q03](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q03) 固定 DSH、Node、Blender 和视频工具版本，使用独立工作目录与最小场景。 |
@@ -77,7 +77,7 @@
 | [TavernWeave X DSH](#plugin-1308599537-host-adapters-dsh-plugin) | 把 TavernWeave Skill、角色卡工程预设与世界书管理面板打包接入 DSH。 | [Q04](../../plugins/liarmttt--tavernweave--host-adapters-dsh-plugin/INSIGHT.md#research-q04)非商业独立profile/副本小改，核备份与重开；异常停写回编辑器。 |
 | [TongFlow](#plugin-1204369117-root) | 提供跨文本、图像、音频和视频的生成式工作流平台。 | 明确预算并以短样例逐节点验证；未知结果先查询供应商。 |
 | [Vox Director](#plugin-1296647613-root) | 以主题和 beats 配置编排拼贴视频的图像、运动、旁白、音乐和字幕，并用 ffmpeg 合成。 | 先观察编排和回执边界，付费试验需先有明确预算/逐任务对账；源码检查不授权生成。 |
-| [书童 Pagekin（AI Novel Writer）](#plugin-1275436512-root) | 本地优先的长篇小说写作桌面工作区。 | [Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05) 在隔离副本试用非敏感章节，验证备份并由作者核对原稿；外发目标或定稿状态不清时停止。 |
+| [书童 Pagekin](#plugin-1275436512-root) | 本地优先的长篇小说桌面写作工作区，覆盖设定、蓝图、写稿、审稿、修稿和定稿。 | 长篇作者先用非敏感一章及独立备份试用，核候选/合并/定稿待发布/导出完整链。 |
 | [催更姬](#plugin-1389035449-root) | 在 DSH 中编辑小说正文、规划情节并管理人物世界设定，支持按需查阅、版本历史与作品数据管理。 | 已有DSH且愿意维护人物和规划资料的长篇作者，可在新建副本库先试修订一章：核对维护ready、作品ID和revision，用唯一patch保存后回读正文及历史，再检查关联资料。 |
 | [大肥鱼的小说工坊](#plugin-1337043852-root) | 用阶段门禁、设定注入和版本归档管理连载小说 | [Q04](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q04) 先用虚构三章验证门禁、预算与导出。 |
 
@@ -115,17 +115,17 @@
 
 <a id="plugin-1275436512-plugins-dsh-ai-novel-writer"></a>
 
-## [AI Novel Writer DSH 插件预览](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md)
+## [AI Novel Writer for DeepSeek Harness](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 2,172](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C172&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer) [![npm 30d 1,545](https://img.shields.io/static/v1?label=npm+30d&message=1%2C545&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
+[![GitHub ★ 2,371](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C371&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/Pagekin) [![npm 30d 1,470](https://img.shields.io/static/v1?label=npm+30d&message=1%2C470&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer) [![最新发布 2026-08-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ethanyoq/dsh-ai-novel-writer)
 
-> **用途**：面向在 DSH 中逐章写作并愿意人工审阅提案的作者。
+> **用途**：用户是已有兼容DSH Web、希望在同一会话围绕本地小说设定、架构、人物、蓝图和单章正文协作的作者。相对聊天后手工存文件，V1提供单资产审批保存，V2以结构化提案收件箱将模型建议与作者应用分开；合格结果是用户接受的项目状态与可回读receipt，而非生成文字。相对根桌面，本插件没有其批量流程或自动审稿，也无项目导出。
 
-> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q02) 将模型建议与人工应用分离，[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 已记录逐项和 partial；不是自动文学质量保证。
+> **亮点**：[Q01](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q01)、[Q02](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q02)支持有限小说工具面、V1单资产审批和V2持久非权威提案；以人审应用明确项目事实，增量是协作变更边界。依赖DSH既有loop/审批，不证明文学质量。
 
-> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03) 部分应用不能视为整包成功，Git 不备份数据库；[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04) 本轮没有资格测试。
+> **思考**：[Q03](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q03)、[Q04](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q04)表明逐item事务可能partial，提案/表单非保存，迁移发布后失败仍可能有DB；Git忽略DB且无导出、冻结旧rc兼容未验，新用户不能从根桌面成熟度推可用。
 
-> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q05) 对角色和时间线引用展示可复核差异；现有逐项处理是反证，效果未验证。
+> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md#research-q05)提出未验证的基线差异/叙事约束冲突预览加应用后回读；同章对照错误接受、返工与人审成本，不改善就放弃，不能借用桌面审稿或算当前贡献。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer--plugins-dsh-ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1123,17 +1123,17 @@
 
 <a id="plugin-1275436512-root"></a>
 
-## [书童 Pagekin（AI Novel Writer）](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
+## [书童 Pagekin](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md)
 
-[![GitHub ★ 2,172](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C172&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/AI-Novel-Writer)
+[![GitHub ★ 2,371](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C371&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/EthanYoQ/Pagekin)
 
-> **用途**：面向需要组织长篇设定、分章起草和审改的小说作者。
+> **用途**：适合愿意维护设定、架构、角色、蓝图和章节版本的长篇作者。原办法是聊天生成后在文档中手工复制、审核修订和整理连续性；这里将草稿、审稿、修稿、差异确认、定稿和版本放进作品上下文。合格交付应是作者接受且能回读/导出的章节与来源版本，不是模型生成长度、UI状态或一篇审稿报告。相对普通编辑器+聊天，增量是作品状态和章节交接；底层LLM、SQLite、编辑器和outbox不是独创。
 
-> **亮点**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02) 与 [Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 为章节选择和定稿提供可追溯边界；模型文学质量及净收益未知。
+> **亮点**：[Q01](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q01)、[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02)支持围绕作品组织规划到定稿的状态交接，并以源校验、revision裁决和定稿outbox区分生成与交付。可解释增量是作者掌控版本与恢复，不是已证明文学质量或全球首创。
 
-> **思考**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02) 可选材料仍可能省略，审稿与起草可能共同漏掉设定；[Q03](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q03) 已提交不等于文件已发布。
+> **思考**：[Q02](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q02)至[Q04](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q04)表明数据库已定稿、实体稿待发布、生成候选和未存尾段必须区分；本地优先仍会向配置模型和可选WebDAV外发。未验恢复和人审收益，不能用版本/文件存在当生产验收。
 
-> **建议**：[Q06](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q06) 假设作者选择的高影响遗漏材料可定向回查定稿原文以减少跨章冲突；尚未实现或验证。
+> **建议**：[Q05](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md#research-q05)推导未验证的章节交付核对视图，围绕权威版本/发布/候选统一可回查行动；同故障对照识别准确率、恢复耗时和维护负担，无改善则放弃，不计已有贡献。
 
 [查看完整分析](../../plugins/ethanyoq--ai-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1173,4 +1173,4 @@
 
 ## 更新时间
 
-2026-11-05
+2026-11-06
