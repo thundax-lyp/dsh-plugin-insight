@@ -1,0 +1,66 @@
+{
+    "repository": "Gin-7/dsh-pet-remielle",
+    "repository_id": 1334868640,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 63,
+    "pushed_at": "2026-10-27T12:41:12Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AGin-7%2Fdsh-pet-remielle%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 32DC:CCBFC:2A93A3:2DA8A9:6AED3761 and timestamp 2026-11-06 02:11:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AGin-7%2Fdsh-pet-remielle%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 33B4:379367:29FFB4:2D157F:6AED3762 and timestamp 2026-11-06 02:11:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGin-7%2Fdsh-pet-remielle%20is%3Aissue%20created%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 344A:CCBFC:2A953C:2DAA5D:6AED3763 and timestamp 2026-11-06 02:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGin-7%2Fdsh-pet-remielle%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 34FC:1BBB13:2AA49A:2DBBED:6AED3764 and timestamp 2026-11-06 02:11:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGin-7%2Fdsh-pet-remielle%20is%3Aissue%20updated%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 358C:3C57C:2A9752:2DACBB:6AED3765 and timestamp 2026-11-06 02:11:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-pet-remielle",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 3042,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-pet-remielle",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T17:40:06.690Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-pet-remielle",
+            "error": null,
+            "latest_version": "0.4.7",
+            "latest_published_at": "2026-10-27T12:47:22.066Z",
+            "latest_error": null
+        }
+    }
+}

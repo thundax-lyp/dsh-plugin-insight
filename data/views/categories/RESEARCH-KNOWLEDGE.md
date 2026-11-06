@@ -14,6 +14,8 @@
 | --- | --- | --- |
 | [@240xu/dsh-session-search](#plugin-1390987906-root) | 对本地 DSH 会话日志建立消息索引，提供跨会话关键词搜索、定位摘录和独立面板。 | 单人非敏感本地范围试用，先验已知词与长消息尾部边界，命中后核原文；完整全文/多租户需求暂缓。 |
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
+| [@hyzyn/dsh-rss](#plugin-1335046216-packages-rss) | 聚合 RSS 与 Atom 订阅生成本地日报，可选 AI 摘要，并向 DSH 会话注入有限条目。 | 先关闭AI与公告，只用少量可信源手动核对日报、latest元数据和原链接。 |
+| [@hyzyn/dsh-search](#plugin-1335046216-packages-search) | 在 DSH Web 界面统一搜索历史会话、Prompt、MCP 工具与设置，并导航到命中对象。 | 可信本机用户先用已知冷热会话、旧Prompt版本和设置卡样本核对查询及导航；空结果回原入口确认。 |
 | [AgentKey](#plugin-1218688296-root) | 提供统一外部数据服务的 Agent Skill、安装脚本与托管 MCP 接入配置。 | [Q04](../../plugins/chainbase-labs--agentkey/INSIGHT.md#research-q04) 先固定外部CLI和宿主，在隔离profile验证完整调用与费用；当前保持观察。 |
 | [AnySearch for DSH](#plugin-1333247282-root) | 在 DSH 原生网页搜索与抓取接口接入 AnySearch，并提供垂直检索和有限并发批量搜索。 | [Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 非敏感问题先比原provider与批量结果，以有效引用而非命中数决定继续；限流或缺证回人工。 |
 | [Argo](#plugin-1304997851-root) | 为 Agent 提供多源搜索、网页取证和本地资料检索，并以 CLI、Skill 与 MCP 接口交付结果。 | [Q03](../../plugins/taxueseek--argo/INSIGHT.md#research-q03) 先固定少量公开源并关闭本地并入，保留原文和失败诊断，用同任务核对正确率与全部投入。 |
@@ -41,6 +43,7 @@
 | [DARE](#plugin-1154200345-root) | 由 Markdown 技能图组织的分阶段 AI 科研流程与检查点规范 | [Q05](../../plugins/yogsoth-ai--de-anthropocentric-research-engine/INSIGHT.md#research-q05) 以单一可核验问题试用，人工抽查每阶段；引用丢失或越过规格批准则停止并退回人工计划。 |
 | [DeepRead 精读助手](#plugin-1334924880-root) | 将文本、文件和微信文章整理为精读报告、知识地图与复习问题，支持预算预检及文件导出。 | 当前建议观察。 |
 | [Distilly](#plugin-1195828337-root) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | 有合法材料并愿意逐条复核的用户，可用自己的非敏感工作资料试做一个小档案，再用未参与生成的问题检验；先关注工作事实与建议是否准确，而不是说话像不像。 |
+| [DocsMint for DSH](#plugin-1249550690-packages-dsh-plugin) | 在 DSH 侧栏浏览编辑 DocsMint，并用四个模型工具通过 REST 或 MCP 检索读写文档。 | 测试工作区做已知搜索与小文档回读，更新保留原文；失败先查远端，异常停写回原界面。 |
 | [DSH Annotation](#plugin-1369398336-packages-dsh-annotation) | 把助手回复中的选段和批注作为原生引用加入草稿，并按顺序发送。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04) 建议先用非敏感长回复在兼容客户端核对多处选段、撤销、刷新和历史；定位或草稿恢复异常时回退手工引用。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
@@ -60,6 +63,7 @@
 | [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-auto-memory](#plugin-1381430202-root) | 将项目和用户记忆写入本地文件并注入索引，可选结束时固化。 | [Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 只在测试项目验收核心工具和提示，随后对照自动固化。 |
+| [dsh-chinese-traditional-wisdom-skill](#plugin-1335061439-root) | 将玄枢传统文化 Skill、本地 TypeScript 计算和结构化事实核验资源封装进 DSH。 | 先阅读Skill和RULES，把目标限定为文化学习或核验流程研究；优先用不含个人身份的公开fixture查一个已有verifier的工具。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
 | [dsh-fund-research](#plugin-1339672104-root) | 采集中国公募基金公开数据，确定性计算指标并封存带数字回溯附录的版本化研究报告。 | 懂基金数据口径者可仅在副本工作区对一支固定离线样本试用，核对来源、日期/覆盖、关键指标和hash，停止于字段漂移、无法复算或状态异常。 |
@@ -80,10 +84,12 @@
 | [dsh-plugin-finance-data](#plugin-1336663504-root) | DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。 | 修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。 |
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
+| [dsh-quant](#plugin-1335718387-root) | DSH 量化研究工具集，提供行情、指标、回测、风险与执行模拟及结构化研究报告管线。 | 观察。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
 | [dsh-run2skill](#plugin-1339317132-root) | 从 DSH 会话提炼可审查的 Skill 提案，确认后按作用域发布。 | [Q03](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q03) 先显式生成项目草稿，核对下次用法后再扩展。 |
 | [dsh-scrape-webpage](#plugin-1334269686-root) | 抓取网页并在静态解析、curl 与浏览器路径间选择，返回适合模型消费的内容。 | 适合公开、无需登录且正文可抽查的研究页面小范围试用；登录态、强脚本渲染或付费墙继续使用宿主浏览器。 |
 | [dsh-search](#plugin-1423253220-root) | 以 DeepSeek Search/Fetch API 提供检索、正文抓取和多页研究工具。 | 可用公开、非敏感查询小范围试用；先设 count/N 上限并以 100 个查询对照内置搜索的召回、正文成功率与实际账单。 |
+| [dsh-sidebar-qa](#plugin-1334369459-root) | 在 DSH 右侧栏划选提问，按上下文策略创建同工作区独立追问会话，并可追加引文到草稿。 | 先用已知答案的小片段核子会话工作区、实际模型和背景；重要早期约束手工附原文。 |
 | [dsh-stock-market](#plugin-1331846104-root) | 在DSH侧栏显示行情，并提供沪深A股快照、走势、排行、资金流、基本面、事件、研报和资讯工具。 | 资料查阅者可先限定小样本受控试用，与原来源核对时间和口径，检查会话关闭；降级无法解释或旧数据误导时停止依赖，不作为交易依据。 |
 | [dsh-tabbit](#plugin-1334076307-root) | 将 Tabbit 浏览器任务、网页抓取和标签提及接入 DSH，并为页面访问设置审批。 | [Q03](../../plugins/tabbit-browser--dsh-tabbit/INSIGHT.md#research-q03) 先试独立实例中的合成页面。 |
 | [dsh-tavily-web](#plugin-1369301269-root) | 提供 Tavily 多密钥轮询检索工具，以及通过宿主 shell 的 curl 网页正文抓取工具。 | 在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。 |
@@ -91,7 +97,7 @@
 | [dsh-thoughtdag](#plugin-1160354976-dsh) | 将 ThoughtDAG 图形画布嵌入 DSH 并桥接会话读取和写回。 | [Q04](../../plugins/chenxiachan--thoughtdag--dsh/INSIGHT.md#research-q04) 用隔离会话并核对引用；不明写回先回原文。 |
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
-| [dsh-visualize](#plugin-1333132287-root) | 在 DSH Web 中生成、修订和重放隔离交互卡片或页面，并提供图片与草稿桥接。 | 有限试用小规模非敏感解释/原型，核已知答案再扩大；正式计算或业务系统另验。 |
+| [dsh-visualize](#plugin-1333132287-root) | 在 DSH 对话中生成、更新交互式 HTML 卡片与独立页面，支持图片嵌入和本机交互状态保存。 | 先在个人、非敏感会话中用一张已知答案的卡片检查参数变化、刷新和局部修订。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 在 WSL 中为 DSH 接入 Obscura 无头页面抓取、版本检查和 MCP 接线提示。 | 在隔离环境试非敏感公开网页，禁用私网和 eval；用静态请求或受控浏览器退出。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 让 WSL 中的 DSH Agent 搜索、读写 Windows Obsidian 笔记并打开桌面应用。 | [Q03](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q03) 先从复制库核路径、搜索与桌面打开。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
@@ -180,6 +186,38 @@
 > **建议**：可研究完整策略指纹、合并来源链及总预算约束扇出，用固定反例比较误合并、召回与总成本。当前未验证。详见[Q07](../../plugins/240xu--dsh-websearch/INSIGHT.md#research-q07)。
 
 [查看完整分析](../../plugins/240xu--dsh-websearch/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-rss"></a>
+
+## [@hyzyn/dsh-rss](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 3,743](https://img.shields.io/static/v1?label=npm+30d&message=3%2C743&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-rss) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-rss)
+
+> **用途**：已有稳定资讯源、需要在DSH回顾和引用条目的人可将多源结果整理为本地日报；合格结果须能回原文并区分发布时间与生成日期，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q01)。
+
+> **亮点**：已有增量是把阅读入口和会话引用连到自动汇总，并把单源失败与全源失败分开处理，避免网络故障直接写成无新闻。标题“值得读”不代表已评质量，净收益未测，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q01)和[Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q02)。
+
+> **思考**：AI只读feed摘要截断而非文章全文，缓存按同链接等身份复用，不比较内容、模型或提示词变化；同链接更正可能仍显示旧摘要。“今日”也只是生成日期，不保证新闻当天发布，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q01)和[Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是将缓存绑定内容与生成规则版本，分开显示日报日期与条目日期，让更正可回查；需要比较正确引用、额外调用与维护负担，见 [Q06](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-search"></a>
+
+## [@hyzyn/dsh-search](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 4,254](https://img.shields.io/static/v1?label=npm+30d&message=4%2C254&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-search) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-search)
+
+> **用途**：可信本机DSH用户需要找回既有消息、Prompt或设置位置，可用统一面板减少跨入口寻找，合格交付仍须正确打开和回看上下文，见[Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q01)。
+
+> **亮点**：贡献是把四类既有资源和导航组织为一个键盘入口，并兼顾本地候选、旧响应丢弃及可见会话过滤；净找回效果未测，见[Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q01)和[Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q02)。
+
+> **思考**：FTS和回退扫描的事件范围、排序与覆盖不同，内部超时截断未进入公开结果；空清单不能证明没有记录，见[Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是将检索模式、覆盖与失败状态传到界面，并统一FTS/回退口径；应以冷历史和失败样本比较漏检误判与额外负担，见[Q06](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1218688296-root"></a>
 
@@ -613,6 +651,22 @@
 
 [查看完整分析](../../plugins/titanwings--distilly/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1249550690-packages-dsh-plugin"></a>
+
+## [DocsMint for DSH](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 81](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=81&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/HiAi-gg/docsmint) [![npm 30d 559](https://img.shields.io/static/v1?label=npm+30d&message=559&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hiai-gg/dsh-docsmint) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hiai-gg/dsh-docsmint)
+
+> **用途**：已有 DocsMint 文档的个人用户在 DSH 研究写作中检索、引用和保存 Markdown。见 [Q01](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md#research-q01)。
+
+> **亮点**：双端面板与固定四工具、连接/OAuth和双传输适配减少配置与搬运；文档存储、混合检索和权限继承外部服务。见 [Q01](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md#research-q01)、[Q03](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md#research-q03)。
+
+> **思考**：edit卡片不是本组件的批准流程，写请求没有本地版本前置条件与幂等核验；网络失败可能已写入，MCP逐次取消也未证实。见 [Q02](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md#research-q02)。
+
+> **建议**：验证带版本前置条件、目标差异和写后回读的可靠保存；若外部服务已有同等保护或不能减少错误就不成立。见 [Q04](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/hiai-gg--docsmint--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1369398336-packages-dsh-annotation"></a>
 
 ## [DSH Annotation](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md)
@@ -916,6 +970,22 @@
 > **建议**：[Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 比较启用前后的拒答、污染和注入成本。
 
 [查看完整分析](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335061439-root"></a>
+
+## [dsh-chinese-traditional-wisdom-skill](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md)
+
+[![GitHub ★ 64](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=64&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dhicoc/dsh-chinese-traditional-wisdom-skill) [![npm 30d 1,146](https://img.shields.io/static/v1?label=npm+30d&message=1%2C146&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dhicoc/dsh-chinese-traditional-wisdom-skill) [![最新发布 2026-10-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dhicoc/dsh-chinese-traditional-wisdom-skill)
+
+> **用途**：为明确学习传统文化或比较本地规则计算的人，在DSH发现玄枢技能和资源；不为普通人生问题自动提供术数解释，也不支持专业决策保证。
+
+> **亮点**：[Q01](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md#research-q01)、[Q02](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md#research-q02)确认贡献是把玄枢技能与本地资源通过DSH provider暴露，并保留结构化计算和核验流程。适配器未创造排盘算法或自动强制核验，独立文化/科学效果均无证据。
+
+> **思考**：[Q03](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md#research-q03)表明claims一致性不是现实预测有效性，也不证明全条对话隐私。实际调用与核验仍依赖Agent遵循流程，不能用32项CLI或本地计算主张代替自主执行验收。
+
+> **建议**：[Q05](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md#research-q05)提出未验证方向，为一个非敏感、已有verifier的任务绑定本轮执行摘要与claims门禁，再允许输出“本次计算事实”。比较未验证事实泄漏、误拒和人工恢复成本，不改善或恢复过重即否定；不扩展为传统解释现实效果保证。
+
+[查看完整分析](../../plugins/dhicoc--dsh-chinese-traditional-wisdom-skill/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1359423472-root"></a>
 
@@ -1237,6 +1307,22 @@
 
 [查看完整分析](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335718387-root"></a>
+
+## [dsh-quant](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md)
+
+[![GitHub ★ 65](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=65&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/pengpengyi92/dsh-quant) [![npm 30d 1,035](https://img.shields.io/static/v1?label=npm+30d&message=1%2C035&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-quant) [![最新发布 2026-08-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-quant)
+
+> **用途**：能独立复算数值/时序口径的研究者可让Agent组织固定数据到报告；交付必须可追数据与费用假设，模拟不作实盘或收益证据，见[Q01](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q01)。
+
+> **亮点**：已有增量是把多域函数以统一工具契约和固定管线交给Agent组合，并明确次根成交/等长对齐等约定；工具数与作者测试数不代替独立数值/收益验证，见[Q01](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q01)至[Q03](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q03)。
+
+> **思考**：双均线完整平仓未把价差结转现金，却流入pipeline报告；fallback实际来源被丢弃、年化固定365，执行模拟还有乱序与满仓手续费边界。均为静态推导未运行，见[Q03](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q03)至[Q05](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q05)。
+
+> **建议**：未验证方向是在修正数值实现后，为报告强制带实际来源/闭合/输入哈希/周期和资金守恒清单，比较口径误判与维护负担，见[Q07](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md#research-q07)。
+
+[查看完整分析](../../plugins/pengpengyi92--dsh-quant/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1335047324-root"></a>
 
 ## [dsh-read-url](../../plugins/2672243194--dsh-read-url/INSIGHT.md)
@@ -1300,6 +1386,22 @@
 > **建议**：给 research 增加 maxCost 和逐 URL 去重/停止条件，可把“自动多页”变成可证明不超预算的检索单元。 详见[Q08](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-search/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334369459-root"></a>
+
+## [dsh-sidebar-qa](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ChenRuoT/dsh-sidebar-qa) [![npm 30d 2,314](https://img.shields.io/static/v1?label=npm+30d&message=2%2C314&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-sidebar-qa) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-sidebar-qa)
+
+> **用途**：面向阅读长DSH对话时需要解释一个片段的个人，直接在侧栏建立独立追问而保留主线。见 [Q01](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md#research-q01)。
+
+> **亮点**：把引文定位、上下文策略、同工作区子会话和侧栏连续问答接成一条阅读流程，相对手工复制和切换增加会话组织与装配，主会话执行队列不接收旁支prompt。净节时和正确率未实测，基础fork与模型能力来自宿主。见 [Q01](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md#research-q01)、[Q03](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md#research-q03)。
+
+> **思考**：回答出现不代表背景和模型按选择兑现。摘要失败可只保留近期文本却仍报未降级，回答模型选择失败只记录警告后继续；早期约束与费用敏感任务需核真实输入和路由。见 [Q02](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md#research-q02)。
+
+> **建议**：可试验上下文来源与实际模型回执，在缺背景或路由不符时让用户确认后再发。固定正常/失败场景比较关键事实和错误模型发现率、人工时间与重试；若干扰大于收益，收窄到异常展示。尚未实现或验证。见 [Q04](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/chenruot--dsh-sidebar-qa/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1331846104-root"></a>
 
@@ -1417,15 +1519,15 @@
 
 ## [dsh-visualize](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md)
 
-[![GitHub ★ 324](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=324&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Nagi-ovo/dsh-visualize) [![npm 30d 4,553](https://img.shields.io/static/v1?label=npm+30d&message=4%2C553&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize)
+[![GitHub ★ 335](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=335&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Nagi-ovo/dsh-visualize) [![npm 30d 6,080](https://img.shields.io/static/v1?label=npm+30d&message=6%2C080&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@nagi-ovo/dsh-visualize)
 
-> **用途**：面向参数探索、解释和UI原型，将独立HTML制作搬进DSH对话，合格结果是正确交互与可重放修订。见[Q01](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q01)。
+> **用途**：面向在 DSH Web 中讲解算法、比较参数或讨论界面原型的人，把模型生成的 HTML 直接作为可交互卡片交付。合格结果须能按已知规则交互且可回读，具体场景依据与边界见 [Q01](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q01)。
 
-> **亮点**：把生成、修订、隔离展示、重放与用户继续提问接成对话内闭环，并有有限自修复循环；模型内容和浏览器/CDN库能力不算原创。见[Q01](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q01)、[Q02](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q02)。
+> **亮点**：它把生成片段、沙箱展示、精确局部修订和会话重放接在同一对话内，读者选择还能在审阅后变成下一条问题；相对保存 HTML 再打开的流程，具体增量是减少文件交接并保持修订入口。浏览器、图表库与模型本身的能力不算本组件原创，实际理解效果仍未知。见 [Q01](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q01)、[Q03](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q03)。
 
-> **思考**：可见与可交互不等于公式或解释正确，lint/修复有范围；本机state、已开page更新、素材策略和CDN仍有限制，不能当生产应用或完整安全保证。见[Q02](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q02)至[Q05](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q05)。
+> **思考**：能展示、能修补不等于解释正确。检查器允许未改动的旧问题随警告保留，自修复只有有限启发式提醒；公式、数据和关键图片仍需用户核对。按会话分目录也不构成会话授权隔离，更新入口接受整个可视化根下的 HTML 路径，因此共享主目录场景需另验边界。见 [Q02](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q02)、[Q03](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q03)。
 
-> **建议**：把数据、单位、公式和边界断言独立绑定到交互卡，检验是否减少误导而不过度增加核验成本。见[Q06](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q06)。
+> **建议**：从创建按会话分目录、更新按全局根接受路径的差异，可推导尚未验证的会话内卡片标识方案。宿主签发卡片标识，并在更新时核对会话归属与预期内容版本，可能缩小跨会话误改和陈旧补丁覆盖，同时保留局部修订便利；代价是迁移、分享与旧路径兼容。用两会话的合法更新、越界标识、过期版本三组请求检验是否明确拒绝且原件不变，再比较正常操作负担；已有等价宿主隔离或兼容负担过高都会削弱增量。见 [Q05](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2329,4 +2431,4 @@
 
 ## 更新时间
 
-2026-11-05
+2026-11-06

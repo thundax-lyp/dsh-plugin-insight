@@ -1,0 +1,62 @@
+{
+    "repository": "a179-sanae/dsh-auto-collapse",
+    "repository_id": 1334430738,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 61,
+    "pushed_at": "2026-09-14T08:22:02Z",
+    "issues": {
+        "open": 3,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aa179-sanae%2Fdsh-auto-collapse%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4558:1B990C:29C1D7:2CD894:6AED378A and timestamp 2026-11-06 02:12:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aa179-sanae%2Fdsh-auto-collapse%20is%3Aissue%20created%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4604:1A1B5E:299119:2CA766:6AED378B and timestamp 2026-11-06 02:12:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aa179-sanae%2Fdsh-auto-collapse%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 469E:1190DF:293B6A:2C51B3:6AED378C and timestamp 2026-11-06 02:12:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aa179-sanae%2Fdsh-auto-collapse%20is%3Aissue%20updated%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4728:1BC024:293504:2C4C4F:6AED378D and timestamp 2026-11-06 02:12:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-auto-collapse",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 1525,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-auto-collapse",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T16:53:27.397Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/dsh-auto-collapse",
+            "error": null,
+            "latest_version": "0.2.1",
+            "latest_published_at": "2026-09-07T12:14:29.619Z",
+            "latest_error": null
+        }
+    }
+}

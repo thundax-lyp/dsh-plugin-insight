@@ -12,6 +12,11 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [@hyzyn/dsh-docker](#plugin-1335046216-packages-docker) | 在 DSH 中巡检本地或 SSH 主机容器，查看日志与资源，并提供默认只读的模型工具。 | 已有CLI核对能力的人可在非关键环境只观察容器列表与限定时间日志，保持Docker变更和一次性exec关闭，并且不点击或调用容器终端。 |
+| [@hyzyn/dsh-kit-settings](#plugin-1335046216-packages-kit-settings) | 在 DSH 设置中提供插件配置宿主页，集中显示其他 kit 插件注册的配置卡片。 | 已有kit卡片的用户可以先只做查找任务，对照原插件页是否更容易找到正确表单。 |
+| [@hyzyn/dsh-loglens](#plugin-1335046216-packages-loglens) | 在 DSH 中查询 Elasticsearch 与 OpenSearch 日志，提供行、计数、分页边界及模型查询工具。 | 先用可信ES/OS短窗口和已知文档对照原平台，核对方言、索引、时区、计数与截断。 |
+| [@hyzyn/dsh-mcp](#plugin-1335046216-packages-mcp) | 在 DSH 中维护 MCP 服务配置、测试连接并查看工具状态，可按会话选择托管工具的可见范围。 | 先备份共享补丁，仅在非关键profile用已知可信server核对保存、宿主连接和真实Agent工具表三种状态。 |
+| [@hyzyn/dsh-profile](#plugin-1335046216-packages-profile) | 在 DSH Web 中查看、创建、复制、重命名和删除 profile，并生成带端口的启动命令。 | 先完整备份profiles根，暂缓在有价值目录上使用复制和改名管理。 |
 | [@sueleven/dsh-auto-update](#plugin-1428034710-root) | 启动时检查已下载并启用的npm插件，展示新版并在确认后调用DSH官方通道更新。 | 先观察作更新候选，核Windows环境与路由、备份后才隔离验批量；不在生产profile依旧提示直接全更。 |
 | [AI Infrastructure Agent Skills](#plugin-1129378320-root) | 面向 AI 基础设施工程师的 Skill 集合，涵盖 GPU 开发、显存估算、训练指导和技术图表。 | [Q03](../../plugins/yzlnew--infra-skills/INSIGHT.md#research-q03) 先观察，按一项已知结果任务筛选并固定独立环境。 |
 | [Almost Full Access](#plugin-1336031182-root) | 在DSH完全访问预设上，为部分命名shell工具加入确定性/子代理审查、人工审批面板和命令记忆。 | 日常安全权限用途不推荐；只保留无敏感权限的隔离研究边界。 |
@@ -23,7 +28,7 @@
 | [billion-context-dsh](#plugin-1333322877-root) | 为 DSH 提供模型驱动的上下文压缩、恢复与压缩提示。 | [Q03](../../plugins/tyan66666--billion-context-dsh/INSIGHT.md#research-q03) 新部署保留宿主原生路径，既有安装先检查历史。 |
 | [Browser4](#plugin-124882400-root) | 通过 Rust CLI 和浏览器后端提供网页交互与批量提取。 | [Q04](../../plugins/platonai--browser4/INSIGHT.md#research-q04) 从隔离只读站点开始，写操作状态不明时人工核查。 |
 | [chicheng-gate](#plugin-1334862230-root) | 以密码门禁、反向代理和 frpc 隧道把 DSH 暴露到远端。 | 当前不建议采用；不要在持有代码、凭据或生产访问权的 DSH 上暴露，优先使用 VPN/SSH 并等待独立安全审计。 |
-| [ClawMetry](#plugin-1156882085-root) | 读取 Agent 会话与运行日志，统一展示时间轴、工具事件及可得用量的观测工具 | [Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 已有OpenClaw数据者可对照原JSONL条件试读；本目录DSH用途先观察，未核Pro适配前不采用其健康/控制判断。 |
+| [ClawMetry](#plugin-1156882085-root) | 读取多种Agent运行时会话日志，统一展示轨迹、工具调用、token和可用成本数据。 | DSH先观察：核合法reader和无敏感样本、逐事件覆盖及网络/控制/退出。 |
 | [Codex Connect](#plugin-1333646693-root) | 为 DSH 增加 ChatGPT OAuth 授权的 Codex 模型路由及可选辅助能力。 | [Q03](../../plugins/franksong2702--dsh-codex-connect/INSIGHT.md#research-q03) 先做无钥匙诊断再决定是否授权。 |
 | [Cordis Rust](#plugin-1335001737-root) | 为长期运行的 Rust 应用提供插件生命周期、服务依赖、类型化事件及资源清理框架。 | 先在隔离Rust应用里选一个确需动态依赖的组件，显式保存FiberHandle并安排关闭；检查缺依赖Pending、服务realm、apply失败和清理诊断。 |
 | [Cue Omni Reader Guard](#plugin-1244140731-dsh-cue-omni-reader-guard) | 在 DeepSeek Harness 调用 Omni Reader 解析前检查 URL、文件根与审批策略。 | [Q03](../../plugins/sensedeal--cue-skills--dsh-cue-omni-reader-guard/INSIGHT.md#research-q03) 用隔离测试验证应用层门槛。 |
@@ -132,6 +137,7 @@
 | [dsh-tts-flash](#plugin-1363291561-root) | DSH 桌面端流式回复语音朗读与等待短语播放插件，支持 Edge 和云端 TTS。 | 先在隔离桌面试听 Edge，再用受控云密钥验证长回复、中断、权限与费用。 |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | 建议观察，先固定目标宿主完成可达面和状态恢复核查；互不信任用户还需独立系统权限边界，不能把登录页当隔离验收。 |
 | [dsh-usage](#plugin-1335815757-root) | 在 DSH Web 中展示会话 Token 用量与供应商余额。 | [Q03](../../plugins/aisland-sjl--dsh-usage/INSIGHT.md#research-q03) 从关闭余额的临时目录开始。 |
+| [dsh-usage-billing](#plugin-1333954586-root) | 统计 DSH 本机会话的模型用量与费用估算，提供预算提醒、图表、导出和模型查询工具。 | 当前建议观察，暂不把它作为结算或硬预算依据。 |
 | [dsh-usage-dashboard-plus](#plugin-1334023305-root) | 在DSH侧栏显示DeepSeek余额和日志估算消费，并汇总外部视觉调用与每会话模型/延迟统计。 | 先观察，可信单用户只作趋势对照。 |
 | [dsh-usage-stats](#plugin-1333685863-root) | 在 DSH 中展示供应商账户、Token 用量、费用估算和预算，支持聚合导出。 | [Q03](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q03) 先关闭账户轮询做本地统计对照，再按 [Q02](../../plugins/ychris12138--dsh-usage-stats/INSIGHT.md#research-q02) 检查真实部署的回环和导出边界。 |
 | [dsh-vps](#plugin-1377159975-root) | 为自有 VPS 部署带登录网关、HTTPS 和服务管理的 DSH。 | 先在隔离 VPS 钉所有文件来源、演练令牌缺失/备份失败/回滚，并对照原生隧道或手工部署；正式公网持续采用需独立安全及恢复验收。 |
@@ -199,9 +205,90 @@
 | [Treg](#plugin-1301657572-root) | 为 Agent 提供工具目录、凭据注入代理和调用计费。 | 选择受控只读任务、核对账单及费用上限，异常时撤销 token 并回退直连。 |
 | [Usage Billing](#plugin-1363429979-plugin-usage-billing) | 从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。 | 先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。 |
 | [UUMit remote access for DSH](#plugin-1425349796-root) | 在 DSH 进程内连接 UUMit 通道，为网页实例提供配对、远程访问与邀请管理。 | 仅在独立web实例先试私有访问，核对配对、实例、管理隔离及撤销；不满足即停插件并回本机。 |
+| [WorkBuddy to DSH](#plugin-1404193210-dsh-plugin) | 把 WorkBuddy 账号模型接入 DSH，管理本地桥、模型目录、账号用量和媒体工具。 | 先保持观察；若继续验证，使用独立profile、单一已知账号和低额度文本请求核钱包与账本，媒体和跨账号接管另验。 |
 | [WorkDSH 企业连接](#plugin-1363739656-packages-enterprise-connection) | 从个人空间安装管理员归档后连接 WorkDSH 企业账号与协作。 | [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03) 有匹配 Desktop 与测试后台才验证归档、身份和退出；任一边界未确认即暂停分发并退回个人空间。 |
 | [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
 | [ybkkasi](#plugin-1416699252-root) | 基于 DSH 和 Cordis 的企业 Agent 治理平台，提供组织、任务、审批、用量及审计。 | [Q03](../../plugins/01men--ybkkasi/INSIGHT.md#research-q03) 在隔离实例先完成双组织拒绝验收与单任务回读，再评估真实接入。 |
+
+<a id="plugin-1335046216-packages-docker"></a>
+
+## [@hyzyn/dsh-docker](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 4,113](https://img.shields.io/static/v1?label=npm+30d&message=4%2C113&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-docker) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-docker)
+
+> **用途**：开发运维人员可在DSH会话旁查看容器与日志，把选定证据交给模型分析；合格结果要求目标、时间窗与截断边界正确，不把建议当故障已解决。场景和替代办法见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q01)。
+
+> **亮点**：可借鉴增量是将多目标巡检组织为可继续决策的Agent工具链，按目标保留部分失败和截断信息；日志交接保留发送与草稿两种责任边界。它不是单纯流程编排，但也没有证明端到端排障收益，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q01)与[Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q02)。
+
+> **思考**：关闭allowExec只约束本插件的一次性docker_exec与HTTP exec，不能约束可选ttyTerminal承载的交互式docker exec -it；已有tty部署不能据此视为整体只读。一次性exec也实际使用sh -c，首次SSH信任与日志审计各有边界；本次试用只查列表和日志，不调用容器终端，见 [Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q03)和[Q04](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q04)。
+
+> **建议**：未验证方向是把直接日志投递改为可回查证据包，固定目标、容器、时间窗、截断和脱敏片段，再由模型提出下一步只读查询。额外确认是否值得，以及可推翻条件见 [Q07](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md#research-q07)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-docker/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-kit-settings"></a>
+
+## [@hyzyn/dsh-kit-settings](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 2,427](https://img.shields.io/static/v1?label=npm+30d&message=2%2C427&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-kit-settings) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-kit-settings)
+
+> **用途**：已有 kit 插件用户可在设置页集中查找配置卡片；本包提供宿主页与组合入口，不提供卡片内部操作。用户习惯及替代办法见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md#research-q01)。
+
+> **亮点**：相对逐个进入插件页，它将配置卡片放入统一设置宿主页，并保持供给方拥有表单逻辑。这是局部组合与导航便利，不是新配置引擎；净收益未知，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md#research-q01)与[Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md#research-q02)。
+
+> **思考**：页面可加载不等于有卡片供给，更不等于配置保存正确。单装可能为空，其他插件仍须注册到指定子槽；重复入口也可能增加误选，见 [Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md#research-q03)。
+
+> **建议**：本轮未形成新机制或产品假设。先比较原入口与集中入口的真实导航任务，若原入口同样快且更少误选，就应停止扩展入口功能；依据及边界见 [Q05](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-kit-settings/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-loglens"></a>
+
+## [@hyzyn/dsh-loglens](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 1,703](https://img.shields.io/static/v1?label=npm+30d&message=1%2C703&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-loglens) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-loglens)
+
+> **用途**：已有ES/OS日志来源和权限的开发运维人员可在DSH内查询并交模型判断，合格结果要求来源、时间窗、分母与不完整状态可回查，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md#research-q01)。
+
+> **亮点**：主要增量是共用查询执行层和显式结果边界：精确总数、下界、分页、过期与分片失败分别表达，模型能依据实际结果继续查询。Docker并非本包适配器，Loki新来源未在界面主动提供；收益不能由统一UI推出，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md#research-q01)和[Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md#research-q02)。
+
+> **思考**：级别过滤只在返回页内进行，counts与truncation仍是未筛整页；日志文档也不等于异常次数。忽略这些分母和截断会把局部结果写成全量结论，统一格式并未消除该问题，见 [Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是给来源、索引、时间、方言、筛选与PIT绑定不可变查询身份，让每页和模型结论引用同一说明，并区分页内与后端筛选分母。其负担与可推翻验证见 [Q06](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-loglens/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-mcp"></a>
+
+## [@hyzyn/dsh-mcp](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 3,978](https://img.shields.io/static/v1?label=npm+30d&message=3%2C978&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-mcp) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-mcp)
+
+> **用途**：已有可信MCP服务的DSH配置者可通过卡片维护连接与工具面，合格结果分别核对落盘、宿主连接和真实Agent工具表，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q01)。
+
+> **亮点**：增量是把配置、探测与工具数量集中，并给模型提供选择当前会话托管server的入口。按需模式减少的是模型视图中的部分常驻schema，不是按需启停进程；默认仍为eager，效果与费用未知，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q01)至[Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q03)。
+
+> **思考**：可见性限制缺少宿主scope服务或下发失败时保持原工具表，台账和返回投影不等于实际生效；外部工具也不在按需层的托管白名单内。测试还会求值js并执行命令，而共享补丁写入非严格事务，见 [Q03](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q03)和[Q04](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q04)。
+
+> **建议**：未验证方向是把配置版本、宿主连接和实际Agent工具表分别回读，明确预期与生效的差异，避免保存或探测成功掩盖运行失败。验证与否定条件见 [Q06](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-mcp/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335046216-packages-profile"></a>
+
+## [@hyzyn/dsh-profile](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md)
+
+[![GitHub ★ 62](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=62&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyzyn/dsh-plugin-kit) [![npm 30d 3,253](https://img.shields.io/static/v1?label=npm+30d&message=3%2C253&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-profile) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-profile)
+
+> **用途**：需要维护多个DSH运行环境的人可通过卡片组织profile目录与启动参数；合格结果要求目录与manifest一致，失败不影响既有内容，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md#research-q01)。
+
+> **亮点**：已有贡献是把模板、目录操作和命令生成收在一张管理卡片，降低操作分散；依赖安装与profile机制归上游工具，未证明管理更快或无损，见 [Q01](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md#research-q01)。
+
+> **思考**：复制目标若已存在但没有package.json，会被recursive mkdir后错误标为本次创建，后续安装或复制失败可能递归删除原有目录。改名也会吞manifest更新失败，故管理成功与无损不等价；触发条件和未复现边界见 [Q02](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md#research-q02)。
+
+> **建议**：未验证方向是独占暂存目录完成复制、安装与manifest校验后再原子发布，只回滚自己持有的暂存目录。它针对目录所有权错误，不能仅靠增加确认解决，验证与否定条件见 [Q05](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1428034710-root"></a>
 
@@ -383,15 +470,15 @@
 
 ## [ClawMetry](../../plugins/vivekchand--clawmetry/INSIGHT.md)
 
-[![GitHub ★ 435](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=435&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vivekchand/clawmetry)
+[![GitHub ★ 436](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=436&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vivekchand/clawmetry)
 
-> **用途**：面向需要回查Agent运行轨迹的操作者；本轮重点是开放OpenClaw会话观测路径，DSH适配在闭源付费层。
+> **用途**：ClawMetry是独立Python/Web观测基础设施，读取编码Agent既有会话文件/日志，在统一看板回放会话、工具与运行时暴露的token/cost，帮助开发者或多Agent操作者分辨长运行与疑似卡住。它不是安装进DSH的原生插件，不提供DSH推理loop。合格结果应是找到准确原始事件、标明缺字段并减少诊断误判；活动量、重复调用或看板亮起都不证明任务有业务进展。
 
-> **亮点**：[Q02](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q02) 将多源会话数据归一并为部分路由标记来源，提供回放和定位入口；没有证明Agent工作质量。
+> **亮点**：[Q01](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q01)、[Q02](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q02)支持统一adapter/capability和可定位轨迹视图，公开样例有文件到API实现；不能由32目录或开源协议推出DSH读取器已审/可用，暂无独立诊断收益。
 
-> **思考**：[Q03](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q03) 空会话或空浪费标记可能来自读取失败、Pro未安装或委派异常；观测与执行前拦截也受runtime能力边界约束。
+> **思考**：[Q01](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q01)至[Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04)最影响DSH采用的是reader在闭源companion、核心解析/控制不可核；观测不等事前阻断，估算零不总能证明免费，本地无sync也有条件外发。不能把所有保证从共享看板泛化。
 
-> **建议**：[Q04](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q04) 推导每个指标携带来源/覆盖/启用/错误合同的未验证改进，以盲区误判和定位时间检验，噪声或成本抵消收益则推翻。
+> **建议**：[Q05](../../plugins/vivekchand--clawmetry/INSIGHT.md#research-q05)提出未验证的结论级覆盖/反证卡，将源缺失、跳过、成本性质和控制边界绑定结论；同轨迹测误判/诊断耗时，无收益则放弃，不计已有贡献。
 
 [查看完整分析](../../plugins/vivekchand--clawmetry/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2123,6 +2210,22 @@
 
 [查看完整分析](../../plugins/aisland-sjl--dsh-usage/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333954586-root"></a>
+
+## [dsh-usage-billing](../../plugins/940842546--dsh-usage-billing/INSIGHT.md)
+
+[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/940842546/dsh-usage-billing) [![npm 30d 515](https://img.shields.io/static/v1?label=npm+30d&message=515&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing) [![最新发布 2026-09-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-billing)
+
+> **用途**：面向在单台机器上反复使用 DSH、需要回查每个会话用量的人。合格结果是调用只计一次、会话可归因、同一输入重复回填不漂移；实际需求强度及与账户账单的关系见 [Q01](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q01)。
+
+> **亮点**：相对离线脚本，它将会话归因、估算和预算提醒接入 DSH 的工作界面，模型也能查询本地统计；这是可解释的集成增量，未证明净节时或账单准确性。调用采集和token数据来自宿主，价格计算与展示由组件组织，不把上游能力当原创，见 [Q01](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q01) 和 [Q04](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q04)。
+
+> **思考**：回填读到部分会话失败仍替换整库，且实时与历史入口没有共享调用身份去重。因此“成功回填”不等于统计完整，重叠调用存在重复累加路径；多实例心跳也只是告警。该限制触及费用观察本身，当前仅建议观察，不将面板用于结算或硬预算限制，见 [Q02](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q02) 和 [Q05](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q05)。
+
+> **建议**：未验证假设是把调用事实账本与价目视图分开，用稳定调用身份合并实时和回填，保留不可读会话的旧事实并显示覆盖缺口。它可能改善重算和解释差额，但引入身份映射、迁移及存储负担；验证与推翻条件见 [Q06](../../plugins/940842546--dsh-usage-billing/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/940842546--dsh-usage-billing/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1334023305-root"></a>
 
 ## [dsh-usage-dashboard-plus](../../plugins/1helloman1--dsh-usage-dashboard-plus/INSIGHT.md)
@@ -3195,6 +3298,22 @@
 
 [查看完整分析](../../plugins/uumit-ai--dsh-uumit-remote/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1404193210-dsh-plugin"></a>
+
+## [WorkBuddy to DSH](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 63](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=63&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ianzhyh/workbuddy-to-dsh)
+
+> **用途**：供已有WorkBuddy账号的Windows DSH用户在同一会话中使用模型与查看账号资源，具体输入到结果链路见 [Q01](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q01)。
+
+> **亮点**：把独立桥、动态模型目录、账号资源和工具接到DSH原生Provider与面板，减少分散手配和跨界面交接；构建/账号探测与取消链路有具体实现。模型、配额和网络稳定性仍来自上游，净收益未实测。见 [Q01](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q01)、[Q03](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q03)。
+
+> **思考**：自动管理不等于无副作用。启动可迁移旧路由并自动接入搜索，媒体工具会直接提交任务；传输失败重试可能遇上游已受理而再次计费，账号接管也须核钱包。当前真实请求和账本未验证，先保留观察。见 [Q02](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q02)、[Q03](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q03)。
+
+> **建议**：可研究将逻辑请求、每次尝试、账号和上游任务状态联结的对账记录，在结果未知时先核对再决定重试。它相对盲目再发多一层受理判断，但需上游可查询身份或幂等协议。用响应丢失场景测重复任务、扣费、恢复等待与人工成本；无法关联上游状态或成本更高会削弱假设。尚未实现验证。见 [Q04](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/ianzhyh--workbuddy-to-dsh--dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1363739656-packages-enterprise-connection"></a>
 
 ## [WorkDSH 企业连接](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md)
@@ -3247,4 +3366,4 @@
 
 ## 更新时间
 
-2026-11-05
+2026-11-06

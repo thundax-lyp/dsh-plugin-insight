@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "43eb9ee2ac1b37827d028b8b46483bc7",
+    "identity": "github:1335046216:packages-kit-settings",
+    "slug": "hyzyn--dsh-plugin-kit--packages-kit-settings",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335046216:packages-kit-settings",
+            "repository_id": 1335046216,
+            "component_id": "packages-kit-settings",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/kit-settings",
+            "aliases": [],
+            "name": "@hyzyn/dsh-kit-settings",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "038af0e710e09a8be67e589b75e9660364d33b47a9690de7b964fbec22d194c9",
+                "code": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                "maintenance": "549c2725dc50d53442bd565a39f71bd6f51c44fb022bd9082bb93b55b71e1cb8"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-06-01-github-1335046216-packages-kit-settings-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "51d50de9c8243deba503e3e074d670666731c13c",
+                    "retrieved_at": "2026-11-06T02:22:04.212Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-06-01-github-1335046216-packages-kit-settings-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/README.md",
+                            "content_sha256": "66ce780aac21fd80caad065618a4524a42bf7569f518c2e41003ca15eddef169"
+                        }
+                    ],
+                    "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                    "captured_at": "2026-11-06T02:22:04.212Z",
+                    "summary": "在 DSH 设置中提供插件配置宿主页，集中显示其他 kit 插件注册的配置卡片。",
+                    "artifact": "data/runs/2026-11-06-01/hyzyn--dsh-plugin-kit--packages-kit-settings/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-06-01-github-1335046216-packages-kit-settings-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/README.md",
+                            "content_sha256": "66ce780aac21fd80caad065618a4524a42bf7569f518c2e41003ca15eddef169"
+                        },
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/package.json",
+                            "content_sha256": "0b6cb7a8ebd818bd7aed4e67734a44dc17474ead13ba5077c52c454ec13e8eda"
+                        },
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/cordis.patch.yml",
+                            "content_sha256": "322a38bda52c0b4a3b35bc99534f885fc5c72f296069999922e156bab7e712b4"
+                        },
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/src/index.ts",
+                            "content_sha256": "2c0f83204ae7ff0d7dcacfede9c5d30db8d883b252826c5589a201104baff49d"
+                        },
+                        {
+                            "repository_url": "https://github.com/hyzyn/dsh-plugin-kit",
+                            "commit": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                            "path": "packages/kit-settings/client.js",
+                            "content_sha256": "0ff17c3dbd6cdaaa05f92b5808d6cbc1a749a5995eeacd43f8ea52bb23f9a584"
+                        }
+                    ],
+                    "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                    "captured_at": "2026-11-06T02:22:04.212Z",
+                    "summary": "核查 packages/kit-settings/README.md、packages/kit-settings/package.json、packages/kit-settings/cordis.patch.yml、packages/kit-settings/src/index.ts、packages/kit-settings/client.js；Host仅登记加载，客户端向settings.section注册条目并声明settings.kit.item列表子槽，再由renderSlot显示供给卡片；同步渲染错误会展示文字，见 [Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-11-06-01/hyzyn--dsh-plugin-kit--packages-kit-settings/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "已读本组件README、package、cordis补丁、Host TS与client.js全部逻辑。INVENTORY统计组件范围；没有用同仓其他插件的能力替代本包能力。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有 kit 插件用户可在设置页集中查找配置卡片；本包提供宿主页与组合入口，不提供卡片内部操作。用户习惯及替代办法见 [Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Host仅登记加载，客户端向settings.section注册条目并声明settings.kit.item列表子槽，再由renderSlot显示供给卡片；同步渲染错误会展示文字，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "已读本组件README、package、cordis补丁、Host TS与client.js全部逻辑。INVENTORY统计组件范围；没有用同仓其他插件的能力替代本包能力。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "package声明web client与bundle，Host导出只负责加载登记；实际安装分发未执行。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node >=22.19.0与package声明的DSH版本 | 启动必需 | Loader与客户端发现 | 声明不等于本轮兼容验收 |\n| React、ModuleLoader与slots | 页面必需 | 设置条目与子槽渲染 | Host日志不能证明界面加载 |\n| 向settings.kit.item注册的卡片 | 有内容必需 | 提供实际配置表单 | 本包单独可能为空，不自动生成第三方表单 |\n| locale服务 | 可选 | 中英语言目录 | 缺席时中文兜底 |",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 包安装与客户端资源，金额未知 | 安装和核对卡片供给，耗时未知 | 必须已有需要的卡片 |\n| 持续使用 | 客户端页面渲染，资源量未知 | 维护宿主兼容、识别重复入口 | 不据Host仅日志推算0成本 |\n| 失败恢复 | 保留现有插件环境，金额未知 | 排查空槽或报错并回原入口 | 自同步try/catch不涵盖所有异步错误 |\n| 退出 | 资源量未知 | 停用本包并核对页面移除 | 不改变各卡片自己的持久化规则 |",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "已有kit卡片的用户可以先只做查找任务，对照原插件页是否更容易找到正确表单。空页、误选或渲染报错出现时停用本入口并回原插件页；实际改配置仍按该卡片自己的边界处理。详细条件见 [Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 集中入口 | 一行设置及列表子槽已接线 | 真实宿主显示和导航节时 |\n| 配置正确性 | 页面转交卡片 | 各卡片保存、权限与状态一致性 |\n| 异常提示 | 同步renderSlot抛错显示文本 | 异步错误隔离与空数组提示 |",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "把页面布局与卡片逻辑分离可减少表单复制；同步错误提示和样式effect清理有明确实现。但空态只检测null，子槽返回值及错误传播依赖宿主，不能宣称所有卡片异常均被隔离，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "相对逐个进入插件页，它将配置卡片放入统一设置宿主页，并保持供给方拥有表单逻辑。这是局部组合与导航便利，不是新配置引擎；净收益未知，见 [Q01](#research-q01)与[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "页面可加载不等于有卡片供给，更不等于配置保存正确。单装可能为空，其他插件仍须注册到指定子槽；重复入口也可能增加误选，见 [Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "本轮未形成新机制或产品假设。先比较原入口与集中入口的真实导航任务，若原入口同样快且更少误选，就应停止扩展入口功能；依据及边界见 [Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335046216:packages-kit-settings",
+                            "area": "code",
+                            "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T02:22:04.212Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-06T02:22:04.212Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                "reviewed_at": "2026-11-06T02:22:04.212Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335046216:packages-kit-settings",
+                        "area": "code",
+                        "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 0,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q02](#research-q02)使用宿主现有槽注册组合页面，novelty取25%局部适配，未达50%新机制。mechanism取0%是在已查注册/渲染链后未识别突破约束的新办法，非资料缺失。transferability取25%，宿主页和供给槽的职责分离可借鉴，但依赖宿主槽契约且无跨宿主验证，未达50%。simplification取25%，少复制表单、统一布局是局部简化，供给与配置复杂性仍外置，未达50%。",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01)相对逐项插件页只增加集中导航，workflow取25%而非0%，但不改变核对和保存责任，未达50%。delivery取0%，核对页面只转交原卡片，未产生新交付或验收方式。reach取25%，给习惯设置页的人另一个入口，但仍需已有插件与DSH，未达50%。economics取0%，[Q04](#research-q04)没有改变计费、资源分配或服务模式的机制，不能把未测点击节省当成本结构增量。",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已安装 kit 插件且习惯集中设置页的 DSH 用户可试用这个配置入口，先确认所需卡片已经注册。它把原有卡片收在一页，可能减少来回查找，但不会新增配置能力或保证保存正确。用户若看到空页、重复入口造成误选或渲染报错，应停用该入口并回到原插件页。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)README:3-12及client.js:98-110明确既有人群、查配置任务和原插件页基线，超过25%偶发便利；频率与采用必要性仍一般推断，未达75%，取50%。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01)和[Q03](#research-q03)表明只是集中入口，原插件页通常也能完成，client.js:150-159没有新保存能力，取25%局部便利，未达50%可解释的重要增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)从ModuleLoader、apply、槽注册跟到renderSlot，且检查空态与同步异常，[Q03](#research-q03)依赖明确，超过25%片段，可支持入口级有限试用，取50%。未运行宿主，未达75%。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04)src/index.ts:19-28与client.js:136-159支持自有状态较少且有样式释放、原入口退路，超过25%退出缺口；真实槽回收、兼容和误选成本未测，未达75%主要失败均可发现恢复，取50%。"
+                    }
+                },
+                "score": 44,
+                "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                "reviewed_at": "2026-11-06T02:22:04.212Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-06-01-github-1335046216-packages-kit-settings-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335046216:packages-kit-settings",
+                        "area": "code",
+                        "fingerprint": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335046216:packages-kit-settings",
+            "repository": "hyzyn/dsh-plugin-kit",
+            "path": "packages/kit-settings",
+            "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+            "fingerprints": {
+                "directory": "038af0e710e09a8be67e589b75e9660364d33b47a9690de7b964fbec22d194c9",
+                "code": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+                "maintenance": "549c2725dc50d53442bd565a39f71bd6f51c44fb022bd9082bb93b55b71e1cb8"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-06T02:03:12Z",
+            "analysis_sha256": "769a38f776ee1e7bdb88aa8931f85faa6276b9d6bf838e1fdfaab8d533315e06"
+        },
+        "publication.metadata": "data/catalog/hyzyn--dsh-plugin-kit--packages-kit-settings/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 设置中提供插件配置宿主页，集中显示其他 kit 插件注册的配置卡片。",
+            "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+            "source_url": "https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+            "items": {
+                "界面": "settings.section中的kit宿主页和settings.kit.item子槽"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 插件配置宿主页 | 将已注册卡片集中显示 | 需要卡片供给，本包不生成配置功能 |\n| 同步渲染错误提示 | 说明renderSlot抛错 | 不是全部异步或单卡片异常隔离 |"
+        },
+        "publication.advice": {
+            "revision": "44554d7fec9c5ced884d7579c25f7ea1b67cb5c2",
+            "text": "已有kit卡片的用户可以先只做查找任务，对照原插件页是否更容易找到正确表单。空页、误选或渲染报错出现时停用本入口并回原插件页；实际改配置仍按该卡片自己的边界处理。详细条件见 [Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/hyzyn--dsh-plugin-kit--packages-kit-settings",
+        "reports": "# @hyzyn/dsh-kit-settings\n\n> 在 DSH 设置中提供插件配置宿主页，集中显示其他 kit 插件注册的配置卡片。\n\n## 研究范围\n\n- **仓库**：[hyzyn/dsh-plugin-kit](https://github.com/hyzyn/dsh-plugin-kit)\n- **版本号**：0.2.9（[固定提交 44554d7fec9c5ced884d7579c25f7ea1b67cb5c2](https://github.com/hyzyn/dsh-plugin-kit/tree/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2)）\n- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n宿主页注册与子槽渲染有源码支持；卡片供给、配置保存和导航节时未在本轮运行验证。没有新创新假设，不将后续导航观察当已有能力。\n\n## 洞察短评\n\n- **用途**：已有 kit 插件用户可在设置页集中查找配置卡片；本包提供宿主页与组合入口，不提供卡片内部操作。用户习惯及替代办法见 [Q01](#research-q01)。\n- **亮点**：相对逐个进入插件页，它将配置卡片放入统一设置宿主页，并保持供给方拥有表单逻辑。这是局部组合与导航便利，不是新配置引擎；净收益未知，见 [Q01](#research-q01)与[Q02](#research-q02)。\n- **思考**：页面可加载不等于有卡片供给，更不等于配置保存正确。单装可能为空，其他插件仍须注册到指定子槽；重复入口也可能增加误选，见 [Q03](#research-q03)。\n- **建议**：本轮未形成新机制或产品假设。先比较原入口与集中入口的真实导航任务，若原入口同样快且更少误选，就应停止扩展入口功能；依据及边界见 [Q05](#research-q05)。\n\n采用建议：已有kit卡片的用户可以先只做查找任务，对照原插件页是否更容易找到正确表单。空页、误选或渲染报错出现时停用本入口并回原插件页；实际改配置仍按该卡片自己的边界处理。详细条件见 [Q04](#research-q04)。\n\n## 核心贡献\n\n相对逐个进入插件页，它将配置卡片放入统一设置宿主页，并保持供给方拥有表单逻辑。这是局部组合与导航便利，不是新配置引擎；净收益未知，见 [Q01](#research-q01)与[Q02](#research-q02)。\n\n## 关键质疑\n\n页面可加载不等于有卡片供给，更不等于配置保存正确。单装可能为空，其他插件仍须注册到指定子槽；重复入口也可能增加误选，见 [Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n本轮未形成新机制或产品假设。先比较原入口与集中入口的真实导航任务，若原入口同样快且更少误选，就应停止扩展入口功能；依据及边界见 [Q05](#research-q05)。\n\n- 已检查固定版本源码。\n- 未安装、运行目标代码或做真实宿主验收。\n- 未验证其他供给卡片的保存逻辑，作者关于宿主迁移说明只作为背景。\n\n## 场景与替代办法\n\n已有 kit 插件用户可在设置页集中查找配置卡片；本包提供宿主页与组合入口，不提供卡片内部操作。用户习惯及替代办法见 [Q01](#research-q01)。\n\n原办法是继续使用宿主插件页逐项配置。本包增加导航位置，不改变各卡片的配置字段与保存逻辑，也不声称原入口不可用。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Node >=22.19.0与package声明的DSH版本 | 启动必需 | Loader与客户端发现 | 声明不等于本轮兼容验收 |\n| React、ModuleLoader与slots | 页面必需 | 设置条目与子槽渲染 | Host日志不能证明界面加载 |\n| 向settings.kit.item注册的卡片 | 有内容必需 | 提供实际配置表单 | 本包单独可能为空，不自动生成第三方表单 |\n| locale服务 | 可选 | 中英语言目录 | 缺席时中文兜底 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户记下原插件页可访问的卡片 | 保留原入口作为对照 |\n| 加载 | Host加载包，浏览器注册设置条目 | 设置页出现入口，不只看Host日志 |\n| 查找 | 用户打开宿主页寻找同一卡片 | 空页先核对供给注册，不擅改配置 |\n| 退出 | 用户停用本包并回到原插件页 | 检查条目和样式释放，本轮未实操 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次使用 | 包安装与客户端资源，金额未知 | 安装和核对卡片供给，耗时未知 | 必须已有需要的卡片 |\n| 持续使用 | 客户端页面渲染，资源量未知 | 维护宿主兼容、识别重复入口 | 不据Host仅日志推算0成本 |\n| 失败恢复 | 保留现有插件环境，金额未知 | 排查空槽或报错并回原入口 | 自同步try/catch不涵盖所有异步错误 |\n| 退出 | 资源量未知 | 停用本包并核对页面移除 | 不改变各卡片自己的持久化规则 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 集中入口 | 一行设置及列表子槽已接线 | 真实宿主显示和导航节时 |\n| 配置正确性 | 页面转交卡片 | 各卡片保存、权限与状态一致性 |\n| 异常提示 | 同步renderSlot抛错显示文本 | 异步错误隔离与空数组提示 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：配置宿主页是否为已有kit插件用户提供有用入口，入口存在与配置生效有何边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要第二个配置入口，相对原插件页增加什么？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n它适合已经使用 kit 插件、习惯在设置页集中查看表单的人。作者把它定位为替代导航入口，简单基线是继续到宿主侧栏插件页配置。实际增量是一行设置大类及一个子槽，其他插件的卡片在这里被组合；它没有生成新的配置字段，也没有实现这些卡片的后台保存。\n\n合格结果是用户在同一页找到已安装插件的卡片，并能与原入口识别为同一项设置；是否更少点击或更易理解没有测量。对只装一个插件或已经习惯原入口的人，多装一个入口可能只增加导航重复。README称两种入口指向同一配置，但本次只核实此宿主页的转交机制，不以这段说明代替每个卡片状态一致性的检查。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/kit-settings/README.md:3-12](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md#L3-L12)\n\n作者定位为习惯性设置入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n在 DSH Web GUI 里补一行**「插件配置」页**，把 dsh-plugin-kit 插件族的配置表单收在一处。\n\n## 为什么需要它\n\nDSH ≥ `0.1.6-alpha.2` 把插件配置从「设置 → 插件 → 插件配置」搬到了侧边栏的「插件」页，\n设置里那一行只剩只读清单（官方 `settings.plugin.item` 插槽已退役，见\n[官方设计笔记](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-09-16-plugin-configuration-on-the-plugins-page.zh.md)）。\n\n如果你更习惯「设置里一行、点开就是各插件配置」的形态，装上本包即可恢复：它是官方支持的\n`settings.section` 扩展点（官方的「通用设置 / 模型 / 内置插件 / Agent 预设 / 已归档会话」\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/kit-settings/README.md:20-34](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md#L20-L34)\n\n单包是宿主页，卡片来自其他插件。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n\n单独装本包不会显示任何卡片——它只是一个**宿主页**。各插件把自己的配置卡片注册进本页声明的\n子 slot `settings.kit.item`，所以：\n\n- 装了本包 + 任意 kit 插件 → 设置里出现「插件配置」行，行内是该插件的卡片；\n- 只装 kit 插件、不装本包 → 设置里没有这一行（插件照常工作，配置走侧边栏「插件」页）；\n- 只装本包、不装任何 kit 插件 → 这一行会显示「暂无可用配置项」。\n\n装 `@hyzyn/dsh-all` 全家桶会自动带上本包。\n\n## 两种配置入口的关系\n\nkit 插件同时提供两个入口，指向**同一份配置**：\n\n| 入口 | 位置 | 形态 |\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/kit-settings/client.js:98-110](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L98-L110)\n\n页面将内容渲染交给子槽，无自有配置表单。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    function KitSettingsSection(props) {\n      const renderSlot = props === undefined ? undefined : props.renderSlot\n      let body = null\n      if (typeof renderSlot === 'function') {\n        try {\n          body = renderSlot('settings.kit.item')\n        } catch (error) {\n          body = jsx('p', {\n            className: 'kit_note',\n            children: t('error.render') + String((error && error.message) || error),\n          })\n        }\n      }\n```\n\n</details>\n\n#### 缺口\n\n- 没有已有用户导航任务的对照。\n  **影响**：无法确认入口是否减少反复查找负担。\n  **进一步探讨**：让已有kit用户分别从原插件页和宿主页找到同一设置，记录耗时和误选。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 页面如何注册并渲染卡片，出错会怎样？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nHost入口只导出名称、空依赖和一条加载日志；可见功能来自客户端。客户端经ModuleLoader导出apply，要求slots服务，然后向settings.section注册id为kit的条目，并在children里声明root范围的settings.kit.item列表子槽。KitSettingsSection通过props.renderSlot调用该子槽，将返回内容放到列表中。\n\n渲染函数同步抛错会被捕获并显示错误文字；这不是每个子卡片的独立React错误边界，也不能证明异步渲染或事件处理异常都被隔离。无renderSlot时body保持null并显示空提示；如果宿主返回空数组而非null，当前分支会显示空列表而不是提示。这是返回值契约边界，未在宿主复现。样式通过effect插入且有移除回调，语言服务缺席有中文兜底。实现的可借鉴点是页面只拥有布局与槽、具体卡片由供给者负责，避免复制每个插件表单。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/kit-settings/src/index.ts:19-28](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/src/index.ts#L19-L28)\n\nHost入口没有额外运行能力。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/** 稳定插件 id：等于 cordis.patch.yml 中 insert 行的 id。 */\nexport const name = 'kit-settings'\n\n/** 不依赖任何宿主服务。 */\nexport const inject: string[] = []\n\n/** 挂载：只在宿主日志留一行，方便排查「设置里那一行为什么没出现」。 */\nexport function apply(): void {\n  console.log('[dsh-kit-settings] mounted（设置里的「插件配置」页由浏览器半体提供）')\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/kit-settings/client.js:98-131](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L98-L131)\n\n同步try/catch与严格body===null空态分支。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    function KitSettingsSection(props) {\n      const renderSlot = props === undefined ? undefined : props.renderSlot\n      let body = null\n      if (typeof renderSlot === 'function') {\n        try {\n          body = renderSlot('settings.kit.item')\n        } catch (error) {\n          body = jsx('p', {\n            className: 'kit_note',\n            children: t('error.render') + String((error && error.message) || error),\n          })\n        }\n      }\n      return jsxs('section', {\n        className: 'kit_section',\n        children: [\n          jsxs('header', {\n            className: 'kit_head',\n            children: [\n              jsx('h2', { className: 'kit_title', children: t('section.title') }),\n              jsx('p', {\n                className: 'kit_intro',\n                children: t('section.intro'),\n              }),\n            ],\n          }),\n          jsx('ul', {\n            className: 'kit_list',\n            children: body === null\n              ? jsx('li', { className: 'kit_note', children: t('list.empty') })\n              : body,\n          }),\n        ],\n      })\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/kit-settings/client.js:136-159](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L136-L159)\n\n注册settings.section与root子槽，样式提供清理回调。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n    exports.inject = ['slots']\n\n    exports.apply = (ctx) => {\n      installI18n(ctx)\n      ctx.effect(() => {\n        ensureStyle()\n        return () => {\n          styleEl?.remove()\n          styleEl = undefined\n        }\n      })\n      // 设置里的一行大类，与「通用设置」平级。\n      // 官方契约：`settings.section` 是 list slot，注册项带 id / order / label；\n      // 子 slot 通过本次注册的 children 声明，声明即拥有（只有本注册能渲染它）。\n      ctx.slots.inject('settings.section', () => ctx.slots.register({\n        name: 'settings.section',\n        id: 'kit',\n        // 15 = 官方「内置插件」，20 = 「Agent 预设」；16 让本行紧随内置插件之后。\n        order: 16,\n        label: () => t('section.title'),\n        children: {\n          'settings.kit.item': { kind: 'list', scope: 'root' },\n        },\n      }, KitSettingsSection))\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/kit-settings/client.js:74-90](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L74-L90)\n\n中文兜底与locale注册/释放。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n    }\n\n    let t = i18nFallback\n\n    /** 注册目录并绑定翻译函数（动态 inject：老宿主上保持中文兜底，卡片照挂）。 */\n    function installI18n(ctx) {\n      ctx.inject(['locale'], (i18nCtx) => {\n        const disposeZh = i18nCtx.locale.register(I18N_NS, 'zh', I18N_ZH)\n        const disposeEn = i18nCtx.locale.register(I18N_NS, 'en', I18N_EN)\n        t = i18nCtx.locale.bind(I18N_NS)\n        return () => {\n          disposeEn()\n          disposeZh()\n          t = i18nFallback\n        }\n      })\n    }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 为何单装可能为空，依赖与兼容边界是什么？\n\n**研究主题**：依赖、兼容与流程、缺陷与关键质疑\n\n#### 完整回答\n\n本包可以声明并显示宿主页，但页面内容需要其他插件确实向settings.kit.item注册。单装不会凭空发现任意第三方配置，也不会从package元数据自动生成表单；README的插件族介绍不是已检查的卡片清单。本轮只给页面与子槽两项正向能力，不把其他包的配置、网络或管理操作计入本组件。\n\npackage声明Node>=22.19.0、宿主peer范围及React，bundle补丁挂Host，web client由宿主发现。Host日志出现不能证明浏览器已取到client、slots注入成功或卡片已注册。root子槽是同一宿主页面级组织，不提供逐用户权限隔离；每张卡片能改什么仍由供给者和宿主决定。若只有空页，应先区分宿主页是否加载、是否有卡片供给和供给注册是否与该槽一致，不能直接判整个插件族不可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/kit-settings/package.json:6-35](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/package.json#L6-L35)\n\n运行时、bundle/client与peer依赖声明。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n  \"engines\": {\n    \"node\": \">=22.19.0\"\n  },\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./client\": \"./client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"dsh\": {\n    \"manifestVersion\": 1,\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"engines\": {\n      \"dsh\": \">=0.1.7-rc.2\"\n    },\n    \"client\": {\n      \"platform\": \"web\",\n      \"inject\": []\n    }\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh\": \"^0.1.7-rc.2 || ^0.2.0-rc.1 || ^0.2.0-rc.2 || ^0.2.1-alpha.1 || ^0.2.1-alpha.2 || ^0.2.1-alpha.5 || ^0.2.1-rc.1 || ^0.2.1-rc.2 || ^0.2.1-rc.3 || ^0.2.1-rc.4 || ^0.2.1-rc.5 || ^0.2.2-alpha.3 || ^0.2.2-rc.1\",\n    \"react\": \"^18.2.0\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/kit-settings/cordis.patch.yml:5-7](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/cordis.patch.yml#L5-L7)\n\nHost挂载行。\n\n```text\n- insert:\n    - id: kit-settings\n      name: '@hyzyn/dsh-kit-settings'\n```\n\n**依据 3 · 源码核查**：[packages/kit-settings/client.js:150-159](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L150-L159)\n\n唯一被此页面声明的卡片入口。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      ctx.slots.inject('settings.section', () => ctx.slots.register({\n        name: 'settings.section',\n        id: 'kit',\n        // 15 = 官方「内置插件」，20 = 「Agent 预设」；16 让本行紧随内置插件之后。\n        order: 16,\n        label: () => t('section.title'),\n        children: {\n          'settings.kit.item': { kind: 'list', scope: 'root' },\n        },\n      }, KitSettingsSection))\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/kit-settings/README.md:20-28](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md#L20-L28)\n\n作者明确单装为空的条件。\n\n```text\n\n单独装本包不会显示任何卡片——它只是一个**宿主页**。各插件把自己的配置卡片注册进本页声明的\n子 slot `settings.kit.item`，所以：\n\n- 装了本包 + 任意 kit 插件 → 设置里出现「插件配置」行，行内是该插件的卡片；\n- 只装 kit 插件、不装本包 → 设置里没有这一行（插件照常工作，配置走侧边栏「插件」页）；\n- 只装本包、不装任何 kit 插件 → 这一行会显示「暂无可用配置项」。\n\n装 `@hyzyn/dsh-all` 全家桶会自动带上本包。\n```\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何验证有用、退出及估计全周期成本？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n可以在已有兼容DSH和kit卡片的环境里做小范围入口试用，核心观察是“能否更快找到正确配置”，而不是一次加载就升级为效果证明。先从原入口记下要找的卡片，再打开设置页检查相同卡片出现；实际改配置应遵循该卡片自己的权限和恢复办法，不能用宿主页试用授权扩大到业务写入。\n\n本包自有路径主要为客户端渲染与样式，不在Host入口中写持久配置或发起模型调用，因此首次负担集中在安装和确认页面，持续负担是额外界面与版本兼容。现金、内存及人工时间均未测量，不写免费或零成本。若页面无卡片、重复入口造成误选或宿主报错，就停用该包并继续原插件页；样式有明确清理回调，但槽回收和真实禁用仍需依赖宿主生命周期，本轮未实际验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/kit-settings/src/index.ts:19-28](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/src/index.ts#L19-L28)\n\nHost实际工作只有日志。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/** 稳定插件 id：等于 cordis.patch.yml 中 insert 行的 id。 */\nexport const name = 'kit-settings'\n\n/** 不依赖任何宿主服务。 */\nexport const inject: string[] = []\n\n/** 挂载：只在宿主日志留一行，方便排查「设置里那一行为什么没出现」。 */\nexport function apply(): void {\n  console.log('[dsh-kit-settings] mounted（设置里的「插件配置」页由浏览器半体提供）')\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/kit-settings/client.js:136-159](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L136-L159)\n\n本组件自己管理的样式与注册范围。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n    exports.inject = ['slots']\n\n    exports.apply = (ctx) => {\n      installI18n(ctx)\n      ctx.effect(() => {\n        ensureStyle()\n        return () => {\n          styleEl?.remove()\n          styleEl = undefined\n        }\n      })\n      // 设置里的一行大类，与「通用设置」平级。\n      // 官方契约：`settings.section` 是 list slot，注册项带 id / order / label；\n      // 子 slot 通过本次注册的 children 声明，声明即拥有（只有本注册能渲染它）。\n      ctx.slots.inject('settings.section', () => ctx.slots.register({\n        name: 'settings.section',\n        id: 'kit',\n        // 15 = 官方「内置插件」，20 = 「Agent 预设」；16 让本行紧随内置插件之后。\n        order: 16,\n        label: () => t('section.title'),\n        children: {\n          'settings.kit.item': { kind: 'list', scope: 'root' },\n        },\n      }, KitSettingsSection))\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/kit-settings/README.md:22-34](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/README.md#L22-L34)\n\n原插件页仍是作者说明的替代入口。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n子 slot `settings.kit.item`，所以：\n\n- 装了本包 + 任意 kit 插件 → 设置里出现「插件配置」行，行内是该插件的卡片；\n- 只装 kit 插件、不装本包 → 设置里没有这一行（插件照常工作，配置走侧边栏「插件」页）；\n- 只装本包、不装任何 kit 插件 → 这一行会显示「暂无可用配置项」。\n\n装 `@hyzyn/dsh-all` 全家桶会自动带上本包。\n\n## 两种配置入口的关系\n\nkit 插件同时提供两个入口，指向**同一份配置**：\n\n| 入口 | 位置 | 形态 |\n```\n\n</details>\n\n#### 缺口\n\n- 未测宿主禁用后的槽回收及导航净收益。\n  **影响**：只支持入口级试用，不保证全生命周期无残留或提高效率。\n  **进一步探讨**：在可恢复profile内对照导航任务，并在禁用后检查设置项与样式是否消失。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 是否有依据提出新的机制或产品假设？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n本轮未形成新的机制创新或可行产品方向。现有事实只支持一个可组合的设置宿主页，核心取舍是便利入口与导航重复；没有用户找不到配置的独立案例或误操作数据，不能由空槽和聚合能力推断市场需求。\n\n最有价值的后续材料是具体导航任务对照，先判断集中入口究竟降低查找负担还是增加歧义。若原入口同样快且更少误选，就没有依据再增加自动分类、推荐或配置批量写入。这里给的是研究停止条件，不把候选设想计入插件已实现贡献。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/kit-settings/client.js:98-131](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L98-L131)\n\n页面只组合子槽内容，没有新的配置决策机制。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n    function KitSettingsSection(props) {\n      const renderSlot = props === undefined ? undefined : props.renderSlot\n      let body = null\n      if (typeof renderSlot === 'function') {\n        try {\n          body = renderSlot('settings.kit.item')\n        } catch (error) {\n          body = jsx('p', {\n            className: 'kit_note',\n            children: t('error.render') + String((error && error.message) || error),\n          })\n        }\n      }\n      return jsxs('section', {\n        className: 'kit_section',\n        children: [\n          jsxs('header', {\n            className: 'kit_head',\n            children: [\n              jsx('h2', { className: 'kit_title', children: t('section.title') }),\n              jsx('p', {\n                className: 'kit_intro',\n                children: t('section.intro'),\n              }),\n            ],\n          }),\n          jsx('ul', {\n            className: 'kit_list',\n            children: body === null\n              ? jsx('li', { className: 'kit_note', children: t('list.empty') })\n              : body,\n          }),\n        ],\n      })\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/kit-settings/client.js:150-159](https://github.com/hyzyn/dsh-plugin-kit/blob/44554d7fec9c5ced884d7579c25f7ea1b67cb5c2/packages/kit-settings/client.js#L150-L159)\n\n实现限定于一行设置与列表槽。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n      ctx.slots.inject('settings.section', () => ctx.slots.register({\n        name: 'settings.section',\n        id: 'kit',\n        // 15 = 官方「内置插件」，20 = 「Agent 预设」；16 让本行紧随内置插件之后。\n        order: 16,\n        label: () => t('section.title'),\n        children: {\n          'settings.kit.item': { kind: 'list', scope: 'root' },\n        },\n      }, KitSettingsSection))\n```\n\n</details>\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/kit-settings；内容摘要：9c96c24662bacb867ddd0256aee2a6cd5a80fe7a13d471b955a7bd15a9b5be1c。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 190 | 117 | 56 | — |\n| .md | source | 1 | 49 | — | — | 557 |\n| .ts | source | 1 | 28 | 5 | 20 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 插件配置宿主页 | 将已注册卡片集中显示 | 需要卡片供给，本包不生成配置功能 |\n| 同步渲染错误提示 | 说明renderSlot抛错 | 不是全部异步或单卡片异常隔离 |\n\n## 工程亮点\n\n把页面布局与卡片逻辑分离可减少表单复制；同步错误提示和样式effect清理有明确实现。但空态只检测null，子槽返回值及错误传播依赖宿主，不能宣称所有卡片异常均被隔离，见 [Q02](#research-q02)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/kit-settings/README.md、packages/kit-settings/package.json、packages/kit-settings/cordis.patch.yml、packages/kit-settings/src/index.ts、packages/kit-settings/client.js 及固定范围 inventory；组件：packages/kit-settings。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：已读本组件README、package、cordis补丁、Host TS与client.js全部逻辑。INVENTORY统计组件范围；没有用同仓其他插件的能力替代本包能力。\n- 下一步：- 已检查固定版本源码。\n- 未安装、运行目标代码或做真实宿主验收。\n- 未验证其他供给卡片的保存逻辑，作者关于宿主迁移说明只作为背景。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-06-01/hyzyn--dsh-plugin-kit--packages-kit-settings/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"hyzyn/dsh-plugin-kit\",\n  \"revision\": \"44554d7fec9c5ced884d7579c25f7ea1b67cb5c2\",\n  \"component\": \"packages/kit-settings\",\n  \"inspected_paths\": [\n    \"packages/kit-settings/README.md\",\n    \"packages/kit-settings/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/kit-settings/cordis.patch.yml\",\n    \"packages/kit-settings/src/index.ts\",\n    \"packages/kit-settings/client.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"配置宿主页是否为已有kit插件用户提供有用入口，入口存在与配置生效有何边界？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁需要第二个配置入口，相对原插件页增加什么？\",\n        \"answer\": \"它适合已经使用 kit 插件、习惯在设置页集中查看表单的人。作者把它定位为替代导航入口，简单基线是继续到宿主侧栏插件页配置。实际增量是一行设置大类及一个子槽，其他插件的卡片在这里被组合；它没有生成新的配置字段，也没有实现这些卡片的后台保存。\\n\\n合格结果是用户在同一页找到已安装插件的卡片，并能与原入口识别为同一项设置；是否更少点击或更易理解没有测量。对只装一个插件或已经习惯原入口的人，多装一个入口可能只增加导航重复。README称两种入口指向同一配置，但本次只核实此宿主页的转交机制，不以这段说明代替每个卡片状态一致性的检查。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/kit-settings/README.md\",\n            \"line_start\": 3,\n            \"line_end\": 12,\n            \"observation\": \"作者定位为习惯性设置入口。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/kit-settings/README.md\",\n            \"line_start\": 20,\n            \"line_end\": 34,\n            \"observation\": \"单包是宿主页，卡片来自其他插件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 98,\n            \"line_end\": 110,\n            \"observation\": \"页面将内容渲染交给子槽，无自有配置表单。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有已有用户导航任务的对照。\",\n            \"impact\": \"无法确认入口是否减少反复查找负担。\",\n            \"next_step\": \"让已有kit用户分别从原插件页和宿主页找到同一设置，记录耗时和误选。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"页面如何注册并渲染卡片，出错会怎样？\",\n        \"answer\": \"Host入口只导出名称、空依赖和一条加载日志；可见功能来自客户端。客户端经ModuleLoader导出apply，要求slots服务，然后向settings.section注册id为kit的条目，并在children里声明root范围的settings.kit.item列表子槽。KitSettingsSection通过props.renderSlot调用该子槽，将返回内容放到列表中。\\n\\n渲染函数同步抛错会被捕获并显示错误文字；这不是每个子卡片的独立React错误边界，也不能证明异步渲染或事件处理异常都被隔离。无renderSlot时body保持null并显示空提示；如果宿主返回空数组而非null，当前分支会显示空列表而不是提示。这是返回值契约边界，未在宿主复现。样式通过effect插入且有移除回调，语言服务缺席有中文兜底。实现的可借鉴点是页面只拥有布局与槽、具体卡片由供给者负责，避免复制每个插件表单。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/src/index.ts\",\n            \"line_start\": 19,\n            \"line_end\": 28,\n            \"observation\": \"Host入口没有额外运行能力。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 98,\n            \"line_end\": 131,\n            \"observation\": \"同步try/catch与严格body===null空态分支。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 136,\n            \"line_end\": 159,\n            \"observation\": \"注册settings.section与root子槽，样式提供清理回调。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 74,\n            \"line_end\": 90,\n            \"observation\": \"中文兜底与locale注册/释放。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"dependencies\",\n          \"limitations\"\n        ],\n        \"question\": \"为何单装可能为空，依赖与兼容边界是什么？\",\n        \"answer\": \"本包可以声明并显示宿主页，但页面内容需要其他插件确实向settings.kit.item注册。单装不会凭空发现任意第三方配置，也不会从package元数据自动生成表单；README的插件族介绍不是已检查的卡片清单。本轮只给页面与子槽两项正向能力，不把其他包的配置、网络或管理操作计入本组件。\\n\\npackage声明Node>=22.19.0、宿主peer范围及React，bundle补丁挂Host，web client由宿主发现。Host日志出现不能证明浏览器已取到client、slots注入成功或卡片已注册。root子槽是同一宿主页面级组织，不提供逐用户权限隔离；每张卡片能改什么仍由供给者和宿主决定。若只有空页，应先区分宿主页是否加载、是否有卡片供给和供给注册是否与该槽一致，不能直接判整个插件族不可用。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/package.json\",\n            \"line_start\": 6,\n            \"line_end\": 35,\n            \"observation\": \"运行时、bundle/client与peer依赖声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/cordis.patch.yml\",\n            \"line_start\": 5,\n            \"line_end\": 7,\n            \"observation\": \"Host挂载行。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 150,\n            \"line_end\": 159,\n            \"observation\": \"唯一被此页面声明的卡片入口。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/kit-settings/README.md\",\n            \"line_start\": 20,\n            \"line_end\": 28,\n            \"observation\": \"作者明确单装为空的条件。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"如何验证有用、退出及估计全周期成本？\",\n        \"answer\": \"可以在已有兼容DSH和kit卡片的环境里做小范围入口试用，核心观察是“能否更快找到正确配置”，而不是一次加载就升级为效果证明。先从原入口记下要找的卡片，再打开设置页检查相同卡片出现；实际改配置应遵循该卡片自己的权限和恢复办法，不能用宿主页试用授权扩大到业务写入。\\n\\n本包自有路径主要为客户端渲染与样式，不在Host入口中写持久配置或发起模型调用，因此首次负担集中在安装和确认页面，持续负担是额外界面与版本兼容。现金、内存及人工时间均未测量，不写免费或零成本。若页面无卡片、重复入口造成误选或宿主报错，就停用该包并继续原插件页；样式有明确清理回调，但槽回收和真实禁用仍需依赖宿主生命周期，本轮未实际验收。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/src/index.ts\",\n            \"line_start\": 19,\n            \"line_end\": 28,\n            \"observation\": \"Host实际工作只有日志。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 136,\n            \"line_end\": 159,\n            \"observation\": \"本组件自己管理的样式与注册范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/kit-settings/README.md\",\n            \"line_start\": 22,\n            \"line_end\": 34,\n            \"observation\": \"原插件页仍是作者说明的替代入口。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未测宿主禁用后的槽回收及导航净收益。\",\n            \"impact\": \"只支持入口级试用，不保证全生命周期无残留或提高效率。\",\n            \"next_step\": \"在可恢复profile内对照导航任务，并在禁用后检查设置项与样式是否消失。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"是否有依据提出新的机制或产品假设？\",\n        \"answer\": \"本轮未形成新的机制创新或可行产品方向。现有事实只支持一个可组合的设置宿主页，核心取舍是便利入口与导航重复；没有用户找不到配置的独立案例或误操作数据，不能由空槽和聚合能力推断市场需求。\\n\\n最有价值的后续材料是具体导航任务对照，先判断集中入口究竟降低查找负担还是增加歧义。若原入口同样快且更少误选，就没有依据再增加自动分类、推荐或配置批量写入。这里给的是研究停止条件，不把候选设想计入插件已实现贡献。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 98,\n            \"line_end\": 131,\n            \"observation\": \"页面只组合子槽内容，没有新的配置决策机制。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/kit-settings/client.js\",\n            \"line_start\": 150,\n            \"line_end\": 159,\n            \"observation\": \"实现限定于一行设置与列表槽。\"\n          }\n        ],\n        \"unknowns\": []\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/kit-settings/README.md\",\n      \"content\": \"# @hyzyn/dsh-kit-settings · kit 插件配置入口\\n\\n在 DSH Web GUI 里补一行**「插件配置」页**，把 dsh-plugin-kit 插件族的配置表单收在一处。\\n\\n## 为什么需要它\\n\\nDSH ≥ `0.1.6-alpha.2` 把插件配置从「设置 → 插件 → 插件配置」搬到了侧边栏的「插件」页，\\n设置里那一行只剩只读清单（官方 `settings.plugin.item` 插槽已退役，见\\n[官方设计笔记](https://github.com/deepseek-ai/deepseek-harness/blob/master/.agents/notes/implemented/architecture/2026-09-16-plugin-configuration-on-the-plugins-page.zh.md)）。\\n\\n如果你更习惯「设置里一行、点开就是各插件配置」的形态，装上本包即可恢复：它是官方支持的\\n`settings.section` 扩展点（官方的「通用设置 / 模型 / 内置插件 / Agent 预设 / 已归档会话」\\n五行都是这么注册的），不是绕过设计。\\n\\n## 装什么\\n\\n```sh\\ndsh plugin --profile web add @hyzyn/dsh-kit-settings\\n```\\n\\n单独装本包不会显示任何卡片——它只是一个**宿主页**。各插件把自己的配置卡片注册进本页声明的\\n子 slot `settings.kit.item`，所以：\\n\\n- 装了本包 + 任意 kit 插件 → 设置里出现「插件配置」行，行内是该插件的卡片；\\n- 只装 kit 插件、不装本包 → 设置里没有这一行（插件照常工作，配置走侧边栏「插件」页）；\\n- 只装本包、不装任何 kit 插件 → 这一行会显示「暂无可用配置项」。\\n\\n装 `@hyzyn/dsh-all` 全家桶会自动带上本包。\\n\\n## 两种配置入口的关系\\n\\nkit 插件同时提供两个入口，指向**同一份配置**：\\n\\n| 入口 | 位置 | 形态 |\\n|---|---|---|\\n| 官方插件页 | 侧边栏「插件」→ 选插件 → 该行的「配置」 | 新版两视图（一句话摘要 + 表单页） |\\n| 本包提供的行 | 设置 →「插件配置」 | 可折叠卡片 |\\n\\n## 实现\\n\\n- 宿主半体（`src/index.ts`）：只为让本包在 Loader 里成为一行，不注册路由、不占 settings 命名空间。\\n- 浏览器半体（`client.js`）：注册 `settings.section`（id `kit`，order 16，紧随官方「内置插件」），\\n  并通过本次注册的 `children` 声明子 slot `settings.kit.item`（`kind: 'list'`），\\n  再由 `renderSlot('settings.kit.item')` 渲染全部条目。\\n- 各 kit 插件注册进子 slot 时**不传 `view`**，于是卡片走各自原有的可折叠分支——两种形态共用同一份组件。\\n\\n## License\\n\\nApache-2.0\\n\"\n    },\n    {\n      \"path\": \"packages/kit-settings/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@hyzyn/dsh-kit-settings\\\",\\n  \\\"version\\\": \\\"0.2.9\\\",\\n  \\\"description\\\": \\\"DSH Web GUI 的 kit 插件配置入口：在官方「设置」里补一行与「通用设置」平级的「插件配置」页，把 dsh-plugin-kit 各插件的配置表单收在一处。\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.19.0\\\"\\n  },\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/index.d.ts\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./client\\\": \\\"./client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"manifestVersion\\\": 1,\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"engines\\\": {\\n      \\\"dsh\\\": \\\">=0.1.7-rc.2\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"inject\\\": []\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh\\\": \\\"^0.1.7-rc.2 || ^0.2.0-rc.1 || ^0.2.0-rc.2 || ^0.2.1-alpha.1 || ^0.2.1-alpha.2 || ^0.2.1-alpha.5 || ^0.2.1-rc.1 || ^0.2.1-rc.2 || ^0.2.1-rc.3 || ^0.2.1-rc.4 || ^0.2.1-rc.5 || ^0.2.2-alpha.3 || ^0.2.2-rc.1\\\",\\n    \\\"react\\\": \\\"^18.2.0\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^22.20.0\\\",\\n    \\\"react\\\": \\\"^18.2.0\\\",\\n    \\\"typescript\\\": \\\"~5.9.3\\\"\\n  },\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"typecheck\\\": \\\"tsc --noEmit && node ../../scripts/client-lint.mjs\\\",\\n    \\\"lint:client\\\": \\\"node ../../scripts/client-lint.mjs\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"client.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"license\\\": \\\"Apache-2.0\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/hyzyn/dsh-plugin-kit.git\\\",\\n    \\\"directory\\\": \\\"packages/kit-settings\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/hyzyn/dsh-plugin-kit/tree/main/packages/kit-settings#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/hyzyn/dsh-plugin-kit/issues\\\"\\n  },\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/dsh\\\": {\\n      \\\"optional\\\": true\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-plugin-kit · DSH 插件全家桶\\n\\n中文 | [English](README.en.md)\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"https://img.shields.io/github/v/release/hyzyn/dsh-plugin-kit?style=flat-square\\\" alt=\\\"Version\\\">\\n  &nbsp;\\n  <img src=\\\"https://img.shields.io/github/stars/hyzyn/dsh-plugin-kit?style=flat-square\\\" alt=\\\"Stars\\\">\\n  &nbsp;\\n  <img src=\\\"https://img.shields.io/github/forks/hyzyn/dsh-plugin-kit?style=flat-square\\\" alt=\\\"Forks\\\">\\n  &nbsp;\\n  <img src=\\\"https://img.shields.io/npm/v/@hyzyn%2Fdsh-all?style=flat-square&label=npm\\\" alt=\\\"npm\\\">\\n  &nbsp;\\n  <img src=\\\"https://img.shields.io/npm/dt/@hyzyn%2Fdsh-all?style=flat-square&label=downloads\\\" alt=\\\"Downloads\\\">\\n  &nbsp;\\n  <img src=\\\"https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square\\\" alt=\\\"License\\\">\\n</p>\\n\\n<p align=\\\"center\\\">\\n  <strong>DeepSeek Harness（DSH）Web GUI 的插件全家桶</strong><br>\\n  <em>日志查询 · 环境变量 · MCP 服务器 · Prompt · Profile · RSS · 全局搜索 · Codegraph 集成 · 终端面板 · 容器面板 · 插件脚手架</em>\\n</p>\\n\\n<p align=\\\"center\\\">\\n  <code>dsh plugin --profile web add @hyzyn/dsh-all</code><br>\\n  <sub>一次装齐，重启 <code>dsh web</code> 生效 · 只想要其中几个 → <a href=\\\"#快速开始\\\">按需安装</a></sub>\\n</p>\\n\\n<p align=\\\"center\\\">\\n\\n[是什么](#是什么) · [包索引](#包索引) · [快速开始](#快速开始) · [开发新插件](#开发新插件) · [文档地图](#文档地图) · [参与贡献](#参与贡献)\\n\\n</p>\\n\\n## 新上架 · 日志查询（`@hyzyn/dsh-loglens`）\\n\\n<p align=\\\"center\\\">\\n  <a href=\\\"packages/loglens/README.md\\\"><img src=\\\"https://cdn.jsdelivr.net/gh/hyzyn/dsh-plugin-kit@main/docs/dsh-plugin-kit-loglens-query.png\\\" alt=\\\"日志查询卡片：查询串与按方言给的可点例子、筛选芯片、时间分布（带刻度与峰值）、结果行\\\" width=\\\"900\\\"></a>\\n</p>\\n\\n在一张卡片里完成 **Elasticsearch / OpenSearch** 的日志检索：多来源统一清单、直连查询、时间分布与按字段分组下钻；\\nagent 侧注册 `loglens_*` **只读**工具（`loglens_sources` / `loglens_search` / `loglens_fields` /\\n`loglens_facets` / `loglens_context`）。Docker 容器日志不另起一套：作为**采集来源**复用现成的 `docker_logs`。\\n\\n- **统一查询面**：多个来源在同一张卡片里切换与检索；查询串按来源方言给出可点示例与占位提示\\n- **从结果继续下钻**：时间分布上点柱即缩放到该时间窗（可撤销）；字段分组榜回答「哪个服务在报错」，点榜上的值即成为筛选条件\\n- **两种消费者同源**：面板与 agent 工具走同一层归一化与参数夹取，`loglens_search` 的返回形状与面板所见一致\\n- **只读，且受围栏约束**：四条路由都在回环加固档下（除「开关」这一动作外都要同源证明）；出站按解析后的 IP 判定（链路本地 / 云元数据地址拒绝）、不跟随重定向、有体积与超时上限\\n\\n```sh\\ndsh plugin --profile web add @hyzyn/dsh-loglens\\n```\\n\\n完整用法、配置形状与契约 → [packages/loglens/README.md](packages/loglens/README.md)。\\n\\n## 是什么\\n\\ndsh-plugin-kit 是给 DeepSeek Harness（DSH）Web GUI 用的通用插件集合。所有插件都走官方 profile\\n机制挂载到 `dsh web`，**不改 DSH 源码**；可以逐个安装，也可以用聚合包一次装齐。\\n\\n<table>\\n<tr>\\n<td><img src=\\\"https://cdn.jsdelivr.net/gh/hyzyn/dsh-plugin-kit@main/docs/dsh-plugin-kit-tty.png\\\" alt=\\\"终端面板：xterm 弹窗 + 完整模式服务器状态条（CPU / 内存 / 磁盘 / 在线 / TCP / 温度 / 网络）+ 资源明细浮层（每核柱 / 上下行双线 / Top 进程）\\\" width=\\\"400\\\"></td>\\n<td><img src=\\\"https://cdn.jsdelivr.net/gh/hyzyn/dsh-plugin-kit@main/docs/dsh-plugin-kit-docker-dock.png\\\" alt=\\\"Docker 容器面板：会话右侧栏标签，与对话同屏\\\" width=\\\"400\\\"></td>\\n</tr>\\n<tr>\\n<td><img src=\\\"https://cdn.jsdelivr.net/gh/hyzyn/dsh-plugin-kit@main/docs/dsh-plugin-kit-rss-view.png\\\" alt=\\\"RSS「今日值得读」：当日条目按分类与来源分区，可搜索、按分类筛选与刷新\\\" width=\\\"400\\\"></td>\\n<td><img src=\\\"https://cdn.jsdelivr.net/gh/hyzyn/dsh-plugin-kit@main/docs/dsh-plugin-kit-search-query.png\\\" alt=\\\"全局搜索：输入 codegraph，结果按最近会话 / 历史会话 / Prompt / MCP 工具 / 设置分组\\\" width=\\\"400\\\"></td>\\n</tr>\\n</table>\\n\\n按「配置类」→「面板类」→「开发类」排：\\n\\n| 能力 | 原生 `dsh web` | dsh-plugin-kit |\\n|---|---|---|\\n| MCP 服务器 | 手改 patch / 命令行 | 可视化卡片 + 连接测试 + 保存后热加载 |\\n| 环境变量 | 手改 `env.yml` / 命令行 | Web GUI 卡片，保存即写入 `process.env` |\\n| Prompt 管理 | 手改配置 | 可视化编辑 + 版本管理 / A/B 测试 / 导出分享 |\\n| Profile 管理 | 命令行 | 可视化创建 / 复制 / 重命名 / 删除 |\\n| RSS 聚合 | 无 | 多源订阅 + 每日「今日值得读」+ 可选 AI 摘要（跟随宿主默认模型，零配置） |\\n| 全局搜索 | 仅会话标题 / 内容 | 侧边栏一处全文检索历史会话、Prompt、MCP 工具与设置面板 |\\n| 终端面板 | 无 | xterm.js 多标签真实 PTY + SSH 直连（连接簿 / 指纹钉扎 / 断线重连）+ SFTP 双栏直传；注册 `tty_*` / `sftp_*` 工具 |\\n| Docker 容器面板 | 无 | 容器 / 镜像 / Compose / 实时日志与统计 / 多目标总览；**默认只读**，变更与 exec 需显式开关；注册 `docker_*` 工具 |\\n| 日志查询 | 无 | **新**：Elasticsearch / OpenSearch 归一化成一个查询面（Docker 走现成 `docker_logs`；Loki 适配器在仓库里但**本版不在界面开放**）；面板里直接查 + 时间分布 + 分组榜；注册 `loglens_*` 工具（全 read 档） |\\n| Codegraph 集成 | 无 | 代码图谱卡片：索引状态 / 符号搜索 / 调用链 / 影响面 / 一键 sync-index |\\n| 插件开发 | 手写样板 | `pnpm create-plugin` 脚手架 + `@hyzyn/dsh-kit` 共享工具库 |\\n\\n> **每个插件的完整功能、截图与注意事项在它自己的 README 里**（见下表）。本文件只讲「是什么 + 装哪个」。\\n\\n## 包索引\\n\\n**1 个共享库 + 11 个功能插件 + 1 个聚合包**；包之间的关系、依赖方向与跨插件协作见\\n[docs/architecture.md](docs/architecture.md)。\\n\\n| 包 | 干什么 | 文档 |\\n|---|---|---|\\n| `@hyzyn/dsh-kit` | **库**（非插件）：宿主半体共享工具——HTTP 回环围栏、托管区块、`!!js` 表达式、服务读取 | [README](packages/kit/README.md) · [DEFECTS](packages/kit/DEFECTS.md) |\\n| `@hyzyn/dsh-env` | 环境变量 / 密钥管理 | [README](packages/env/README.md) |\\n| `@hyzyn/dsh-mcp` | MCP 服务器配置卡片，保存后热加载 | [README](packages/mcp/README.md) |\\n| `@hyzyn/dsh-prompt` | systemPrompt 编辑 / 版本 / A/B | [README](packages/prompt/README.md) |\\n| `@hyzyn/dsh-profile` | `~/.dsh/profiles` 图形化管理 | [README](packages/profile/README.md) |\\n| `@hyzyn/dsh-kit-settings` | 在官方「设置」里补一行「插件配置」入口 | [README](packages/kit-settings/README.md) |\\n| `@hyzyn/dsh-rss` | RSS 聚合 → 每日「今日值得读」 | [README](packages/rss/README.md) |\\n| `@hyzyn/dsh-search` | 侧边栏全局搜索（⌘ / Ctrl + K） | [README](packages/search/README.md) |\\n| `@hyzyn/dsh-codegraph` | 代码图谱卡片 + MCP 托管 + 采纳率测量 | [README](packages/codegraph/README.md) · [DEFECTS](packages/codegraph/DEFECTS.md) · [ROADMAP](packages/codegraph/ROADMAP.md) |\\n| `@hyzyn/dsh-tty` | 终端面板：PTY / SSH / SFTP / 隧道 | [README](packages/tty/README.md) · [DEFECTS](packages/tty/DEFECTS.md) · [ROADMAP](packages/tty/ROADMAP.md) |\\n| `@hyzyn/dsh-docker` | Docker 容器面板（本机 / SSH），默认只读 | [README](packages/docker/README.md) · [DEFECTS](packages/docker/DEFECTS.md) · [ROADMAP](packages/docker/ROADMAP.md) |\\n| `@hyzyn/dsh-loglens` | **新**：日志查询——Elasticsearch / OpenSearch / Docker 归一化查询前端 + `loglens_*` 工具（**只读**，无写操作） | [README](packages/loglens/README.md) · [DEFECTS](packages/loglens/DEFECTS.md) · [ROADMAP](packages/loglens/ROADMAP.md) |\\n| `@hyzyn/dsh-all` | 聚合安装包：一条 bundle patch 挂载上面 11 个插件 | [README](packages/all/README.md) |\\n\\n## 快速开始\\n\\n### 系统要求\\n\\n- 已安装 DeepSeek-Harness，`dsh web` 可正常启动。**当前适配十三档基线：DSH `0.1.7-rc.2`、`0.2.0-rc.1`、\\n  `0.2.0-rc.2`、`0.2.1-alpha.1`、`0.2.1-alpha.2`、`0.2.1-alpha.5`、`0.2.1-rc.1`、`0.2.1-rc.2`、`0.2.1-rc.3`、`0.2.1-rc.4`、`0.2.1-rc.5`、`0.2.2-alpha.3` 与 `0.2.2-rc.1`**；\\n  `0.1.6-alpha.2` 及更早不再支持（最新八档都是显式声明，但**不都是零差异**：`0.2.2-alpha.3` 移除了一个\\n  主题令牌，rss / search 的侧栏 hover 已随档适配；`0.2.1-alpha.5` 带着判定器、`engines.dsh`、凭据与\\n  macOS picker 的真实行为变化；其余六档对宿主零差异——本轮新增的 `0.2.2-rc.1` 逐文件比对\\n  只有 4 个客户端的版本串变了。逐条证据见\\n  [`scripts/check-dsh-peers.mjs`](./scripts/check-dsh-peers.mjs) 头部的 cohort 说明）。\\n- 兼容性由每个可安装插件在 `peerDependencies` 里声明的 `@deepseek-ai/dsh` 范围保证，DSH 在**安装前**\\n  与**启动时**各校验一次。被拦下长什么样、怎么临时放行 → [docs/troubleshooting.md § 兼容性校验](docs/troubleshooting.md#兼容性校验)。\\n- npm 安装无额外要求；从仓库源码安装需要 Node.js >= 22.19 与 pnpm 10（低于此版本 `pnpm install`\\n  会**直接失败**，不是警告——判据见 [docs/conventions.md § 环境下限](docs/conventions.md#环境下限声明--engine-strict-才真的会拦)）。\\n  宿主自己的 Node 下限由宿主声明：`0.2.2-alpha.3` 起要求 **Node >= 24.9**（CI 的挂载车道已切到 Node 24），\\n  但本仓的开发下限仍是 `22.19`——老 cohort 继续在 Node 22 上工作。\\n  npm 侧只会打 `EBADENGINE` 提示、不阻塞安装。\\n\\n### 从 npm 安装\\n\\n**推荐按需装**——下面一行一个包，只装你要的。从「配置三件」起步最省（`env` / `mcp` / `prompt`，\\n都不向模型注册工具）：\\n\\n```sh\\ndsh plugin --profile web add @hyzyn/dsh-env          # 环境变量 / 密钥\\ndsh plugin --profile web add @hyzyn/dsh-mcp          # MCP 服务器\\ndsh plugin --profile web add @hyzyn/dsh-prompt       # systemPrompt\\ndsh plugin --profile web add @hyzyn/dsh-profile      # Profile 管理\\ndsh plugin --profile web add @hyzyn/dsh-kit-settings # 设置里的「插件配置」入口\\ndsh plugin --profile web add @hyzyn/dsh-rss          # RSS「今日值得读」\\ndsh plugin --profile web add @hyzyn/dsh-search       # ⌘/Ctrl+K 全局搜索\\ndsh plugin --profile web add @hyzyn/dsh-codegraph    # 代码图谱卡片\\ndsh plugin --profile web add @hyzyn/dsh-tty          # 终端面板（PTY / SSH / SFTP）\\ndsh plugin --profile web add @hyzyn/dsh-docker       # Docker 容器面板\\ndsh plugin --profile web add @hyzyn/dsh-loglens      # 日志查询（ES / OpenSearch / Docker）\\n```\\n\\n包名、一句话说明与各自的文档见上方 [包索引](#包索引)。\\n\\n**装之前知道一件事：各包动到的面不一样**（细节在各包 README；机制见\\n[docs/architecture.md § 7](docs/architecture.md#7-一条请求经过什么)）：\\n\\n| 装了它 | 意味着 |\\n|---|---|\\n| **给模型注册工具**，真正改变 agent 能力 | `tty`（`tty_*` / `sftp_*`——真实的 shell / SFTP 通道）· `docker`（`docker_*`）· `loglens`（`loglens_*`，全部 **read** 档：只查你配置的日志后端）· `codegraph`（替宿主托管 codegraph MCP 行，于是 `mcp__codegraph__*` 进模型工具箱） |\\n| **只往 systemPrompt 添一段** | `rss`（「今日值得读」那段）· `search`（插件能力公告）；`prompt` 卡片做的本身就是编辑 systemPrompt |\\n| **只动你自己的配置与界面** | `env`（保存即写进宿主的 `process.env`，环境变量仍是你自己的配置）· `profile` · `kit-settings` · `mcp`（它是配置入口——自己不加工具，你填进去的服务器会） |\\n\\n一次装齐就是聚合包，**权限敞口是各包的并集**——不知道要哪个就先别装它：\\n\\n```sh\\ndsh plugin --profile web add @hyzyn/dsh-all              # 聚合安装包\\ndsh plugin --profile web add @hyzyn/dsh-plugin-kit       # 仓库根 bundle（同样挂载全家桶）\\n```\\n\\n装完**重启** `dsh web`，插件配置页里出现全部条目即生效；条目没出现多半就是没重启，\\n也可以用 `dsh --profile web --dump-config` 确认插件配置层已挂载。\\n卸载：`dsh plugin --profile web remove @hyzyn/dsh-all`（或对应子包名），再重启。\\n\\n> **配置入口在哪一版**：DSH ≥ `0.1.6-alpha.2` 有**两个**入口，指向同一份配置——侧边栏\\n> **「插件」**→ 选插件 → 该行的「配置」（官方新版两视图页面），以及**设置 →「插件配置」**\\n> （与「通用设置」平级的一行，由 `@hyzyn/dsh-kit-settings` 提供）。\\n> 客户端半体同时注册三代插槽（`plugins.row.config`、`settings.kit.item`、`settings.plugin.item`），\\n> 一份产物在各代上都能用。\\n> 这份配置本身落在**当前 profile 的插件 entry**（`cordis.patch.yml` 用户层），不再是全局 `settings.yaml`\\n> section，见 [术语表](docs/glossary.md)。\\n\\n装不上 / 卡片不出现 / **插件整体消失** / 接口报 401、403 → [docs/troubleshooting.md](docs/troubleshooting.md)。\\n\\n### 从 GitHub 仓库安装（开发调试）\\n\\n仓库根目录本身也是一个 DSH bundle（`package.json#dsh.bundle.patch`，由 `pnpm aggregate` 生成）：\\n\\n```sh\\ngit clone https://github.com/hyzyn/dsh-plugin-kit.git\\ncd dsh-plugin-kit\\npnpm install\\npnpm build\\n\\ndsh plugin --profile web add link:$(pwd)   # 根包即 bundle，等价于安装 @hyzyn/dsh-all\\ndsh web\\n```\\n\\n> ⚠️ 如果 web profile 里已经装过 `@hyzyn/dsh-all` 或任一 `@hyzyn/dsh-<包名>`，\\n> 不要再 add 根包（或 `packages/all`），否则插件行重复挂载会在启动时报\\n> `duplicate loader entry id`。\\n\\n> 只想用某个子包：最后一步改为 `dsh plugin --profile web add link:$(pwd)/packages/<name>`。\\n\\n> 根包声明了 `dsh` 字段后，GitHub 的 DSH 插件市场会把本仓库识别为 DSH 插件（cordis-plugin）。\\n\\n## 开发新插件\\n\\n```sh\\npnpm create-plugin <name> [id]\\n# 例：pnpm create-plugin timer          → packages/timer（@hyzyn/dsh-timer，插件 id: timer）\\n# 例：pnpm create-plugin pet-tracker pt → packages/pet-tracker（插件 id: pt）\\n```\\n\\n脚本会复制 `templates/hello` 模板、替换包名与插件 id，并自动更新聚合包。然后编辑\\n`packages/<name>/src/index.ts`，构建后本地调试：\\n\\n```sh\\npnpm --filter @hyzyn/dsh-<name> build\\ndsh plugin --profile web add link:$(pwd)/packages/<name>\\n```\\n\\n**新包要建哪些文档、多长、编号怎么起**，**插件包的解剖**（`dsh.bundle.patch` / `cordis.patch.yml` /\\n`src/index.ts` / `dsh.client`），以及**六条容易踩的硬规矩**（客户端半体的地址来源、逻辑抽模块、\\n点击委托作用域、样式变量名与取值等）\\n→ [docs/conventions.md § 客户端半体](docs/conventions.md#客户端半体六条硬规矩)。\\n\\n## 文档地图\\n\\n| 想知道 | 看 |\\n|---|---|\\n| 项目是什么、装哪个 | 本文件 |\\n| 刚上手，想先建立全局（按顺序读） | [docs/architecture.md](docs/architecture.md) → [docs/conventions.md](docs/conventions.md) → [docs/agent-real-test.md](docs/agent-real-test.md) |\\n| 13 个包怎么协作、依赖方向、谁写哪个配置文件 | [docs/architecture.md](docs/architecture.md) |\\n| 命名 / 提交 / 文档分层 / 编号规范 / 插件解剖 | [docs/conventions.md](docs/conventions.md) |\\n| 术语（宿主半体、托管区块、TOFU、三代插槽…） | [docs/glossary.md](docs/glossary.md) |\\n| 装不上、卡片不出现、插件整体消失、接口 401/403、已知限制 | [docs/troubleshooting.md](docs/troubleshooting.md) |\\n| 真机测试怎么跑、什么算通过 | [docs/agent-real-test.md](docs/agent-real-test.md) |\\n| 某个跨包方案的完整设计与验收（跳板机 / 就地提权 / i18n…） | `docs/` 下的 `*-plan.md` 与 `i18n.md`，由 [conventions.md 的知识归属表](docs/conventions.md) 路由 |\\n| Windows 11 真机环境搭建 | [scripts/windows/README.md](scripts/windows/README.md) |\\n| 开发环境里插件与宿主的 runtime 链接 | [docs/link-dsh-runtime.md](docs/link-dsh-runtime.md) |\\n| 跨包待办 | [ROADMAP.md](ROADMAP.md) |\\n| 发版流程（含 cohort 变更清单） | [RELEASING.md](RELEASING.md) |\\n| 某个包怎么用 | `packages/<pkg>/README.md` |\\n| 某个编号是什么意思 | `packages/<pkg>/DEFECTS.md` |\\n\\n## 参与贡献\\n\\n- 新插件用脚手架生成：`pnpm create-plugin <name> [id]`，避免手写样板。\\n- 提 issue 走模板（**Bug 报告** / **功能请求**，空白 issue 已关闭）：必填的环境 / 版本 /\\n  复现步骤 / **自查结果**对应 [docs/troubleshooting.md](docs/troubleshooting.md#通用顺序) 的\\n  通用顺序，填全了才有人能在第一轮定位。格式约束见\\n  [docs/conventions.md § Issue](docs/conventions.md#issue提-issue-的格式约束)。\\n- 提交信息遵循 Conventional Commits（如 `fix(mcp): 修复连接测试超时`），\\n  用户可见变更请附截图或验证证据。\\n- 提交前过门禁：`pnpm typecheck && pnpm build && pnpm test && pnpm aggregate`；\\n  增删插件后必须跑 `pnpm aggregate` 重新生成 `packages/all` 聚合清单。\\n- 命名 / 编号 / 文档分层等完整规范见 [docs/conventions.md](docs/conventions.md)。\\n\\n## 许可证\\n\\n本仓库以 [Apache License 2.0](LICENSE) 授权。\\n\\n## 贡献者\\n\\n<div align=\\\"center\\\">\\n\\n**喜欢这个项目？点个 Star。**\\n\\n[报告 Bug](https://github.com/hyzyn/dsh-plugin-kit/issues) · [请求功能](https://github.com/hyzyn/dsh-plugin-kit/issues) · [查看 Releases](https://github.com/hyzyn/dsh-plugin-kit/releases)\\n\\n</div>\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@hyzyn/dsh-plugin-kit\\\",\\n  \\\"version\\\": \\\"0.1.74\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"description\\\": \\\"通用 DSH 插件库（pnpm monorepo）：模板插件、插件开发工具包、一键聚合安装包。根包同时是全家桶 bundle（dsh.bundle.patch），DSH 与插件市场可直接识别安装。\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"manifestVersion\\\": 1,\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"engines\\\": {\\n      \\\"dsh\\\": \\\">=0.1.7-rc.2\\\"\\n    }\\n  },\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"pnpm -r build\\\",\\n    \\\"typecheck\\\": \\\"pnpm -r typecheck\\\",\\n    \\\"test\\\": \\\"vitest run\\\",\\n    \\\"test:watch\\\": \\\"vitest\\\",\\n    \\\"create-plugin\\\": \\\"node scripts/create-plugin.mjs\\\",\\n    \\\"aggregate\\\": \\\"node scripts/aggregate.mjs\\\",\\n    \\\"live-smoke\\\": \\\"node scripts/live-host-smoke.mjs\\\",\\n    \\\"verify:list\\\": \\\"node scripts/verify-list.mjs\\\",\\n    \\\"verify:issue-13-14\\\": \\\"node scripts/verify-issue-13-14.mjs --from test\\\",\\n    \\\"repro-flake\\\": \\\"node scripts/repro-flake.mjs\\\",\\n    \\\"aggregate:check\\\": \\\"node scripts/check-aggregate.mjs\\\",\\n    \\\"artifacts:check\\\": \\\"node scripts/check-artifacts.mjs\\\",\\n    \\\"publishable:check\\\": \\\"node scripts/check-publishable.mjs\\\",\\n    \\\"package-contents:check\\\": \\\"node scripts/check-package-contents.mjs\\\",\\n    \\\"flake:check\\\": \\\"node scripts/flake-lane.mjs\\\",\\n    \\\"coverage:check\\\": \\\"node scripts/coverage-ratchet.mjs\\\",\\n    \\\"coverage:write\\\": \\\"node scripts/coverage-ratchet.mjs --write\\\",\\n    \\\"dsh-peers:check\\\": \\\"node scripts/check-dsh-peers.mjs\\\",\\n    \\\"dsh-home:check\\\": \\\"node scripts/check-dsh-home.mjs\\\",\\n    \\\"prompt-sections:check\\\": \\\"node scripts/check-prompt-sections.mjs\\\",\\n    \\\"kit-pins:check\\\": \\\"node scripts/check-kit-pins.mjs\\\",\\n    \\\"doc-links:check\\\": \\\"node scripts/check-doc-links.mjs\\\",\\n    \\\"mcp-budget\\\": \\\"node scripts/mcp-tool-budget.mjs\\\",\\n    \\\"disclosure-report\\\": \\\"node scripts/disclosure-report.mjs\\\",\\n    \\\"test-collection:check\\\": \\\"node scripts/check-test-collection.mjs --self-test && node scripts/check-test-collection.mjs\\\",\\n    \\\"toolchain:check\\\": \\\"node scripts/check-toolchain-pins.mjs --self-test && node scripts/check-toolchain-pins.mjs\\\",\\n    \\\"engines:check\\\": \\\"node scripts/check-engine-strict.mjs --self-test && node scripts/check-engine-strict.mjs\\\",\\n    \\\"issue-forms:check\\\": \\\"node scripts/check-issue-forms.mjs --self-test && node scripts/check-issue-forms.mjs\\\",\\n    \\\"i18n:check\\\": \\\"node scripts/check-i18n.mjs --self-test && node scripts/check-i18n.mjs\\\",\\n    \\\"no-public-ip:check\\\": \\\"node scripts/check-no-public-ip.mjs --self-test && node scripts/check-no-public-ip.mjs\\\",\\n    \\\"no-public-ip:message\\\": \\\"node scripts/check-no-public-ip.mjs\\\",\\n    \\\"internal-ids:check\\\": \\\"node scripts/check-internal-identifiers.mjs --self-test && node scripts/check-internal-identifiers.mjs\\\",\\n    \\\"internal-ids:message\\\": \\\"node scripts/check-internal-identifiers.mjs\\\",\\n    \\\"readme-facts:check\\\": \\\"node scripts/check-readme-facts.mjs --self-test && node scripts/check-readme-facts.mjs\\\",\\n    \\\"readme-structure:check\\\": \\\"node scripts/check-readme-structure.mjs\\\",\\n    \\\"release:publish\\\": \\\"node scripts/release-publish-tag.mjs\\\",\\n    \\\"release:preflight\\\": \\\"node scripts/release-publish-tag.mjs --preflight\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@vitest/coverage-v8\\\": \\\"3.2.7\\\",\\n    \\\"typescript\\\": \\\"~5.9.3\\\",\\n    \\\"vitest\\\": \\\"^3.2.7\\\",\\n    \\\"yaml\\\": \\\"^2.9.1\\\"\\n  },\\n  \\\"packageManager\\\": \\\"pnpm@10.30.3\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22.19.0\\\",\\n    \\\"pnpm\\\": \\\">=10\\\"\\n  },\\n  \\\"license\\\": \\\"Apache-2.0\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/hyzyn/dsh-plugin-kit.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/hyzyn/dsh-plugin-kit#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/hyzyn/dsh-plugin-kit/issues\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\"\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"@hyzyn/dsh-codegraph\\\": \\\"0.6.20\\\",\\n    \\\"@hyzyn/dsh-docker\\\": \\\"0.15.0\\\",\\n    \\\"@hyzyn/dsh-env\\\": \\\"0.3.17\\\",\\n    \\\"@hyzyn/dsh-kit-settings\\\": \\\"0.2.9\\\",\\n    \\\"@hyzyn/dsh-loglens\\\": \\\"0.1.8\\\",\\n    \\\"@hyzyn/dsh-mcp\\\": \\\"0.3.13\\\",\\n    \\\"@hyzyn/dsh-profile\\\": \\\"0.2.15\\\",\\n    \\\"@hyzyn/dsh-prompt\\\": \\\"0.2.15\\\",\\n    \\\"@hyzyn/dsh-rss\\\": \\\"0.4.16\\\",\\n    \\\"@hyzyn/dsh-search\\\": \\\"0.4.18\\\",\\n    \\\"@hyzyn/dsh-tty\\\": \\\"0.38.0\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh\\\": \\\"^0.1.7-rc.2 || ^0.2.0-rc.1 || ^0.2.0-rc.2 || ^0.2.1-alpha.1 || ^0.2.1-alpha.2 || ^0.2.1-alpha.5 || ^0.2.1-rc.1 || ^0.2.1-rc.2 || ^0.2.1-rc.3 || ^0.2.1-rc.4 || ^0.2.1-rc.5 || ^0.2.2-alpha.3 || ^0.2.2-rc.1\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/dsh\\\": {\\n      \\\"optional\\\": true\\n    }\\n  },\\n  \\\"pnpm\\\": {\\n    \\\"overrides\\\": {\\n      \\\"@deepseek-ai/dsh\\\": \\\"link:scripts/dsh-peer-stub\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/kit-settings/cordis.patch.yml\",\n      \"content\": \"# dsh-plugin-kit/kit-settings bundle patch：把本插件行插入 profile 阵容。\\n# 作为 profile bundle 层（package.json 的 dsh.bundle.patch 字段）叠加到\\n# dsh-base 之上；启用方式：\\n#   dsh plugin --profile web add link:$(pwd)/packages/kit-settings\\n- insert:\\n    - id: kit-settings\\n      name: '@hyzyn/dsh-kit-settings'\\n\"\n    },\n    {\n      \"path\": \"packages/kit-settings/src/index.ts\",\n      \"content\": \"/**\\n * @hyzyn/dsh-kit-settings — kit 插件配置入口（宿主半体）。\\n *\\n * 本包几乎全部工作都在浏览器半体（./client）：\\n *\\n *   DSH ≥0.1.6-alpha.2 把插件配置从「设置 → 插件 → 插件配置」搬到了侧边栏的\\n *   「插件」页，设置里那一行只剩只读清单（`settings.plugin.item` 已退役）。\\n *   设置大类这个扩展点（`settings.section`）官方仍然支持——官方的「通用设置 /\\n *   模型 / 内置插件 / Agent 预设 / 已归档会话」五行都是这么注册的。\\n *\\n *   本包就注册额外的一行，把 dsh-plugin-kit 各插件的配置表单收在设置里：\\n *   它声明 `settings.section`（id `kit`）与子 slot `settings.kit.item`，\\n *   kit 各插件把自己的卡片注册进那个子 slot，由本页渲染成熟悉的可折叠卡片。\\n *\\n * 宿主半体只负责让这个包在 Loader 里成为一行（bundle patch 的 insert 行），\\n * 不注册路由、不占用 settings 命名空间、不向 systemPrompt 注入任何东西。\\n */\\n\\n/** 稳定插件 id：等于 cordis.patch.yml 中 insert 行的 id。 */\\nexport const name = 'kit-settings'\\n\\n/** 不依赖任何宿主服务。 */\\nexport const inject: string[] = []\\n\\n/** 挂载：只在宿主日志留一行，方便排查「设置里那一行为什么没出现」。 */\\nexport function apply(): void {\\n  console.log('[dsh-kit-settings] mounted（设置里的「插件配置」页由浏览器半体提供）')\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/kit-settings/client.js\",\n      \"content\": \"/* eslint-disable */\\n/**\\n * @hyzyn/dsh-kit-settings — 浏览器半体：官方「设置」里与「通用设置」平级的「插件配置」页。\\n *\\n * 背景：DSH ≥0.1.6-alpha.2 把插件配置搬到了侧边栏「插件」页，设置里那一行只剩只读清单\\n * （`settings.plugin.item` 已退役）。设置大类这个扩展点（`settings.section`）官方仍然支持\\n * ——官方的「通用设置 / 模型 / 内置插件 / Agent 预设 / 已归档会话」五行都是这么注册的。\\n *\\n * 本包注册额外一行（id `kit`），并声明子 slot `settings.kit.item`；dsh-plugin-kit 各插件把\\n * 自己的卡片注册进该子 slot，由本页渲染。因为不向卡片传 `view`，它们走的是各自原有的\\n * 可折叠卡片分支——也就是 0.1.5 时代设置里那个熟悉的样子。\\n */\\nwindow.__ModuleLoader__.load({\\n  id: '@hyzyn/dsh-kit-settings',\\n  factory: (require) => {\\n    const exports = {}\\n\\n    const React = require('react')\\n    const { jsx, jsxs } = require('react/jsx-runtime')\\n\\n    /* ================================ CSS ================================ */\\n\\n    const CSS = [\\n      '.kit_section{display:flex;flex-direction:column;gap:12px;max-width:760px;color:var(--dsw-alias-label-primary)}',\\n      '.kit_head{display:flex;flex-direction:column;gap:4px}',\\n      // 页面标题对齐官方 pageTitle：500（宿主标题不用 600/700），18px 取 26px 成对行高。\\n      '.kit_title{margin:0;font-size:18px;font-weight:500;line-height:26px}',\\n      '.kit_intro{margin:0;font-size:13px;line-height:20px;color:var(--dsw-alias-label-tertiary)}',\\n      '.kit_list{display:flex;flex-direction:column;gap:10px;margin:0;padding:0}',\\n      '.kit_note{color:var(--dsw-alias-label-tertiary);font-size:13px;line-height:20px;margin:0}',\\n    ]\\n\\n    let styleEl\\n\\n    function ensureStyle() {\\n      if (styleEl !== undefined && styleEl.isConnected) return\\n      styleEl = document.createElement('style')\\n      styleEl.textContent = CSS.join('\\\\n')\\n      document.head.appendChild(styleEl)\\n    }\\n\\n    /* ================================ 国际化 ================================ */\\n\\n    /*\\n     * 界面文案走宿主 `@deepseek-ai/dsh-client-locale` 的目录（方案见 docs/i18n.md，\\n     * 静态校验见 `scripts/check-i18n.mjs`）。目录内联在 client.js 里——本包没有构建步骤，\\n     * client.js 就是源；凭空建 client-src/ 反而会让「宿主地址来源」静态规则不再覆盖它。\\n     */\\n    /* ==== dsh-i18n:begin ==== */\\n    const I18N_NS = 'kit-settings'\\n    const I18N_ZH = {\\n      'section.title': '插件配置',\\n      'section.intro': 'dsh-plugin-kit 插件族的配置入口：环境变量、日志查询、MCP、Prompt、Profile、RSS、Codegraph、Docker、终端面板。',\\n      'list.empty': '暂无可用配置项：请先安装至少一个 kit 插件。',\\n      'error.render': '配置项渲染失败：',\\n    }\\n    const I18N_EN = {\\n      'section.title': 'Plugin configuration',\\n      'section.intro': 'Configuration entries for the dsh-plugin-kit family: env, log query, MCP, Prompt, Profile, RSS, Codegraph, Docker and the terminal panel.',\\n      'list.empty': 'No configuration entries available — install at least one kit plugin first.',\\n      'error.render': 'Failed to render the configuration entry: ',\\n    }\\n    /* ==== dsh-i18n:end ==== */\\n\\n    /** 占位符替换：`{name}` → params.name（缺参留空，不抛错——文案不该打死界面）。 */\\n    function i18nFormat(text, params) {\\n      if (params === undefined) return text\\n      return String(text).replace(/\\\\{(\\\\w+)\\\\}/g, (_match, name) => (params[name] === undefined ? '' : String(params[name])))\\n    }\\n\\n    /** 中文兜底：老宿主（DSH ≤0.1.5）没有 locale 服务时，界面不能变成一串键名。 */\\n    function i18nFallback(key, params) {\\n      return i18nFormat(I18N_ZH[key] !== undefined ? I18N_ZH[key] : key, params)\\n    }\\n\\n    let t = i18nFallback\\n\\n    /** 注册目录并绑定翻译函数（动态 inject：老宿主上保持中文兜底，卡片照挂）。 */\\n    function installI18n(ctx) {\\n      ctx.inject(['locale'], (i18nCtx) => {\\n        const disposeZh = i18nCtx.locale.register(I18N_NS, 'zh', I18N_ZH)\\n        const disposeEn = i18nCtx.locale.register(I18N_NS, 'en', I18N_EN)\\n        t = i18nCtx.locale.bind(I18N_NS)\\n        return () => {\\n          disposeEn()\\n          disposeZh()\\n          t = i18nFallback\\n        }\\n      })\\n    }\\n\\n    /* ============================ 设置大类页面 ============================ */\\n\\n    /**\\n     * `settings.section` 的一行。子 slot 由本注册的 `children` 声明，框架据此把\\n     * `renderSlot` 注入本组件的 props。\\n     */\\n    function KitSettingsSection(props) {\\n      const renderSlot = props === undefined ? undefined : props.renderSlot\\n      let body = null\\n      if (typeof renderSlot === 'function') {\\n        try {\\n          body = renderSlot('settings.kit.item')\\n        } catch (error) {\\n          body = jsx('p', {\\n            className: 'kit_note',\\n            children: t('error.render') + String((error && error.message) || error),\\n          })\\n        }\\n      }\\n      return jsxs('section', {\\n        className: 'kit_section',\\n        children: [\\n          jsxs('header', {\\n            className: 'kit_head',\\n            children: [\\n              jsx('h2', { className: 'kit_title', children: t('section.title') }),\\n              jsx('p', {\\n                className: 'kit_intro',\\n                children: t('section.intro'),\\n              }),\\n            ],\\n          }),\\n          jsx('ul', {\\n            className: 'kit_list',\\n            children: body === null\\n              ? jsx('li', { className: 'kit_note', children: t('list.empty') })\\n              : body,\\n          }),\\n        ],\\n      })\\n    }\\n\\n    /* ================================ 插件入口 ================================ */\\n\\n    exports.inject = ['slots']\\n\\n    exports.apply = (ctx) => {\\n      installI18n(ctx)\\n      ctx.effect(() => {\\n        ensureStyle()\\n        return () => {\\n          styleEl?.remove()\\n          styleEl = undefined\\n        }\\n      })\\n      // 设置里的一行大类，与「通用设置」平级。\\n      // 官方契约：`settings.section` 是 list slot，注册项带 id / order / label；\\n      // 子 slot 通过本次注册的 children 声明，声明即拥有（只有本注册能渲染它）。\\n      ctx.slots.inject('settings.section', () => ctx.slots.register({\\n        name: 'settings.section',\\n        id: 'kit',\\n        // 15 = 官方「内置插件」，20 = 「Agent 预设」；16 让本行紧随内置插件之后。\\n        order: 16,\\n        label: () => t('section.title'),\\n        children: {\\n          'settings.kit.item': { kind: 'list', scope: 'root' },\\n        },\\n      }, KitSettingsSection))\\n    }\\n\\n    return exports\\n  },\\n})\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"44554d7fec9c5ced884d7579c25f7ea1b67cb5c2\",\n    \"component\": \"packages/kit-settings\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"9c96c24662bacb867ddd0256aee2a6cd5a80fe7a13d471b955a7bd15a9b5be1c\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 190,\n        \"code\": 117,\n        \"comments\": 56,\n        \"blank\": 17\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 49,\n        \"words\": 557\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 28,\n        \"code\": 5,\n        \"comments\": 20,\n        \"blank\": 3\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/kit-settings/lib/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": [\n        {\n          \"path\": \"packages/kit-settings/client.js\",\n          \"line\": 150,\n          \"api\": \"ctx.slots.register\",\n          \"name\": \"settings.section\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ]\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [\n          \"settings.section\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "bb20428330782517e7140c1a478d8e724398225b3a2c017e5dd5c79e15208c53"
+        }
+    },
+    "unavailable_artifacts": []
+}

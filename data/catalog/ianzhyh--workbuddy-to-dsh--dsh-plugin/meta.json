@@ -1,0 +1,27 @@
+{
+    "repository": "Ianzhyh/workbuddy-to-dsh",
+    "repository_id": 1404193210,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 63,
+    "pushed_at": "2026-11-05T13:57:16Z",
+    "issues": {
+        "open": 0,
+        "closed": 16,
+        "created_30d": 16,
+        "closed_30d": 16,
+        "updated_30d": 16
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T11:33:05.584Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    }
+}

@@ -1,0 +1,54 @@
+{
+    "repository": "dhicoc/dsh-chinese-traditional-wisdom-skill",
+    "repository_id": 1335061439,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 64,
+    "pushed_at": "2026-10-08T10:21:59Z",
+    "issues": {
+        "open": 1,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adhicoc%2Fdsh-chinese-traditional-wisdom-skill%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2BEE:C8B10:289A07:2BAF0D:6AED3753 and timestamp 2026-11-06 02:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adhicoc%2Fdsh-chinese-traditional-wisdom-skill%20is%3Aissue%20updated%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C54:38D88C:2E60A5:317525:6AED3754 and timestamp 2026-11-06 02:11:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@dhicoc/dsh-chinese-traditional-wisdom-skill",
+        "captured_at": "2026-11-06T02:09:31.809Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 1146,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40dhicoc%2Fdsh-chinese-traditional-wisdom-skill",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T14:03:30.243Z",
+            "captured_at": "2026-11-06T02:09:31.809Z",
+            "source_url": "https://registry.npmjs.org/%40dhicoc%2Fdsh-chinese-traditional-wisdom-skill",
+            "error": null,
+            "latest_version": "1.3.0",
+            "latest_published_at": "2026-10-08T10:25:30.041Z",
+            "latest_error": null
+        }
+    }
+}

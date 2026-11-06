@@ -1,0 +1,45 @@
+{
+    "repository": "openma-ai/deepseek-harness-acp",
+    "repository_id": 1333224461,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 61,
+    "pushed_at": "2026-11-05T19:56:56Z",
+    "issues": {
+        "open": 1,
+        "closed": 16,
+        "created_30d": 5,
+        "closed_30d": 5,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@openma/deepseek-harness-acp",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 8391,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40openma%2Fdeepseek-harness-acp",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T01:31:25.024Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/%40openma%2Fdeepseek-harness-acp",
+            "error": null,
+            "latest_version": "0.4.40",
+            "latest_published_at": "2026-10-26T05:01:23.564Z",
+            "latest_error": null
+        }
+    }
+}
