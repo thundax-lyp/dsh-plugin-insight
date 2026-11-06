@@ -1,0 +1,45 @@
+{
+    "repository": "angelky7/dsh-browser-control",
+    "repository_id": 1342924739,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 55,
+    "pushed_at": "2026-11-04T11:33:02Z",
+    "issues": {
+        "open": 3,
+        "closed": 10,
+        "created_30d": 6,
+        "closed_30d": 9,
+        "updated_30d": 12
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@angelky7/dsh-browser-control",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 2875,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40angelky7%2Fdsh-browser-control",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-24T12:08:04.005Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/%40angelky7%2Fdsh-browser-control",
+            "error": null,
+            "latest_version": "1.7.2",
+            "latest_published_at": "2026-11-04T11:32:31.357Z",
+            "latest_error": null
+        }
+    }
+}

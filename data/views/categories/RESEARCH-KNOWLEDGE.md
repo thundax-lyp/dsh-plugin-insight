@@ -56,6 +56,7 @@
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
 | [DSH Plugins 中文导航](#plugin-1335045464-root) | 提供带安装、起步建议与限制的插件发现目录 | [Q04](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q04) 只作发现源，回源固定包版本并独立验收。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
+| [DSH Scholar](#plugin-1325458176-root) | 计算研究工作台，将项目对话、资料、受控实验、证据关系与 TeX 写作放在持久项目中。 | 保留浏览器token，在监督且隔离的本地环境用已知fixture试gate-only；先故意未批/缺metrics核拒绝与终态，异常备份Kernel和原数据回独立脚本。 |
 | [DSH SciWork](#plugin-1416950630-root) | 在 DSH 中组织科研课题、文献、数据和投稿材料。 | 先用备份课题核实确认、回执与材料；超时先查文件，投稿前人工复核。 |
 | [DSH Video Lens](#plugin-1338640495-root) | 将本地视频抽样、可选转写和视觉问答接入 DSH | [Q04](../../plugins/dundunhan--dsh-video-lens/INSIGHT.md#research-q04) 只用虚构短片验收抽样、时间和传输。 |
 | [DSH Web Search Pro](#plugin-1333320049-root) | 以按需动作和有出处的证据包组织多来源搜索 | [Q04](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q04) 公开来源起步，对照规则和远程评分。 |
@@ -75,6 +76,7 @@
 | [dsh-literature](#plugin-1351375738-root) | 在DSH侧窗识别学术文献、获取元数据和全文，提供PDF阅读、引用、笔记及本地库和目录保存。 | 先观察。 |
 | [dsh-ls125-uv-probe](#plugin-1381989584-root) | 把 LS125/UVALED-X3 私有 UART 读取协议、抓取分析工具及 F103 参考固件注册成 DSH 技能。 | 只读轮询与离线抓取先行，清零单独审批；在独立仪表/标准光源下复核后才上生产设备。 |
 | [dsh-math-olympiad](#plugin-1344714964-root) | 挂载竞赛数学解题 Skill，要求独立验证证明、诚实弃权，并可选编译 PDF。 | 已有可信 subagent 与 DSH base 的团队可隔离试题，逐题核验证器入参、标准解与弃权；详见[Q03](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md#research-q03)。 |
+| [dsh-mech-workbench](#plugin-1428637034-root) | 在 DSH 提供工科题图处理、符号数值求解、可视化、校核及题目卡片工具。 | 标准答案小题先人工核题，再看checks与图，失败/超范围即退独立计算；不用于真实设计放行。 |
 | [dsh-mneme](#plugin-1333254657-dsh-mneme) | 在DSH中以SQLite与Markdown维护跨会话记忆，提供检索、自动注入和摘要整理，隔离与内容门控有明确限制。 | [Q04](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md#research-q04) 非敏感单项目备份后试核心记忆，保持actionRun关闭并明确自动工作开关；验证任务结果和持久状态，串用/误记/超预算则关闭自动工作退手工文档，退出单独处理持久库。 |
 | [dsh-mnemon](#plugin-1329424520-root) | 为 DSH 提供可组合的分层记忆视图、读取与写入。 | [Q05](../../plugins/omdsh-dev--dsh-mnemon/INSIGHT.md#research-q05) 用虚构项目和本地独立存储试用；串项目或旧错误持续出现时停用并核查数据。 |
 | [dsh-moli](#plugin-1415767842-root) | 将本地 Moli 无头浏览器接入 DSH，提供渲染抓取、选择器读取、截图、PDF与引擎探测。 | 建议观察；先在隔离宿主准备已审引擎并设严格TLS，核对公开页面与退出；敏感登录、共享宿主和高可信取证应暂缓。 |
@@ -84,6 +86,7 @@
 | [dsh-plugin-finance-data](#plugin-1336663504-root) | DSH Agent 的确定性金融算术工具，但比率文本、跨年定投和组合再平衡路径存在可核不一致。 | 修复关键路径前不用于真实决策；以 10/100 比率、2 年月投和组合偏离样本验每个 action。 |
 | [dsh-plugin-tavily](#plugin-1334654243-root) | 接管 DSH web_search 的 Tavily provider，并提供可选提取服务、设置卡和主机探测路由。 | 待修复缓存与 keyless；需用真实凭据在受控 Profile 验证搜索/提取/回退及 API 权限；详见[Q03](../../plugins/1624318455--dsh-plugin-tavily/INSIGHT.md#research-q03)。 |
 | [dsh-plugin-verify](#plugin-1336684054-root) | 通过关键词行号、JSON/YAML检查、URL/npm/GitHub探测及有界批量输出，提供核查线索和元数据。 | 先观察，作线索而非证实/安全通行证，先修证据语义/覆盖与网络范围再评估。 |
+| [dsh-purge](#plugin-1424538914-root) | 为本机 DSH 提供提示词与宿主补丁管理、状态回滚和演练台资产记录。 | 观察：只供能检查权限/文件/加载链的研究者先阅读，后续实验需可整体丢弃的离线副本；不在日常DSH当被动插件试用。 |
 | [dsh-quant](#plugin-1335718387-root) | DSH 量化研究工具集，提供行情、指标、回测、风险与执行模拟及结构化研究报告管线。 | 观察。 |
 | [dsh-read-url](#plugin-1335047324-root) | 读取网页、JSON和RSS等内容，提取正文并输出紧凑文本或Markdown，支持批量读取与站点爬取。 | 适合用公开网页查资料并愿意核对原来源的人在独立profile试用，先明确提供方缺失时的网络回退权限，默认不加直连例外；缺页、政策误绕过或预算失控时停用。 |
 | [dsh-run2skill](#plugin-1339317132-root) | 从 DSH 会话提炼可审查的 Skill 提案，确认后按作用域发布。 | [Q03](../../plugins/qkycir-123--dsh-run2skill/INSIGHT.md#research-q03) 先显式生成项目草稿，核对下次用法后再扩展。 |
@@ -98,6 +101,7 @@
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
 | [dsh-visualize](#plugin-1333132287-root) | 在 DSH 对话中生成、更新交互式 HTML 卡片与独立页面，支持图片嵌入和本机交互状态保存。 | 先在个人、非敏感会话中用一张已知答案的卡片检查参数变化、刷新和局部修订。 |
+| [dsh-web-search-free](#plugin-1340558027-root) | 为 DSH 原生网页搜索与抓取提供多引擎轮换、并行策略、缓存及设置界面。 | 公开查询先单Key/fallback，核回源、页面完整与实际调用费用，再考虑第二源和并行。 |
 | [dsh-wsl-obscura](#plugin-1358313559-root) | 在 WSL 中为 DSH 接入 Obscura 无头页面抓取、版本检查和 MCP 接线提示。 | 在隔离环境试非敏感公开网页，禁用私网和 eval；用静态请求或受控浏览器退出。 |
 | [dsh-wsl-obsidian](#plugin-1380817560-root) | 让 WSL 中的 DSH Agent 搜索、读写 Windows Obsidian 笔记并打开桌面应用。 | [Q03](../../plugins/173787247--dsh-wsl-obsidian/INSIGHT.md#research-q03) 先从复制库核路径、搜索与桌面打开。 |
 | [dsh-wsl-vecmem](#plugin-1381726438-root) | 通过 Ollama 嵌入向量保存和检索 DSH 中的项目短记。 | [Q04](../../plugins/173787247--dsh-wsl-vecmem/INSIGHT.md#research-q04) 先隔离存储路径并保留原件。 |
@@ -859,6 +863,22 @@
 
 [查看完整分析](../../plugins/perrylink--dsh-research-report/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1325458176-root"></a>
+
+## [DSH Scholar](../../plugins/lzszq--dsh-scholar/INSIGHT.md)
+
+[![GitHub ★ 57](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=57&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/lzszq/dsh-scholar)
+
+> **用途**：监督式计算研究中管理反复变化的假设、代码数据、作业和论文依据。见 [Q01](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q01)。
+
+> **亮点**：将批准责任、不可变输入、租约作业与证据验收串成持久项目；这是工程与工作组织增量，非自动科学发现的验证。见 [Q02](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q02)至[Q04](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q04)。
+
+> **思考**：full-auto只执行限定fixture的survey_run，来源已验不代表科学正确；部署身份、远程隔离和人类复核负担仍决定价值。见 [Q02](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q02)至[Q04](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q04)。
+
+> **建议**：以版本差异视图减少Human Gate重复阅读，同时不漏掉代码/数据/指标变化；现有UI已等效或误批增加就推翻。见 [Q05](../../plugins/lzszq--dsh-scholar/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/lzszq--dsh-scholar/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1416950630-root"></a>
 
 ## [DSH SciWork](../../plugins/58catmiao--dsh-sciwork/INSIGHT.md)
@@ -1163,6 +1183,22 @@
 
 [查看完整分析](../../plugins/988hj7tczd-oss--dsh-math-olympiad/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1428637034-root"></a>
+
+## [dsh-mech-workbench](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md)
+
+[![GitHub ★ 58](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=58&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/insideyou-0501/dsh-mech-workbench) [![npm 30d 1,178](https://img.shields.io/static/v1?label=npm+30d&message=1%2C178&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mech-workbench) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mech-workbench)
+
+> **用途**：工科自学/讲解中把题图变成可核对的数值、图与假设。见 [Q01](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md#research-q01)。
+
+> **亮点**：把题图、求解、图形、警告和卡片接到DSH，展示求解降级与残差；数学库和视觉模型能力为继承。见 [Q01](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md#research-q01)、[Q03](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md#research-q03)。
+
+> **思考**：校核失败仍可ok:true，硬关卡没有跨工具状态约束；局部残差不能验证题面建模，视觉检查也非确定性正确性证明。见 [Q02](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md#research-q02)。
+
+> **建议**：以题面确认/spec摘要绑定计算和图，失败校核只能形成未完成交付；验证是否减少错单位、改题不重算和跳检。见 [Q04](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/insideyou-0501--dsh-mech-workbench/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333254657-dsh-mneme"></a>
 
 ## [dsh-mneme](../../plugins/slow-stack--mneme--dsh-mneme/INSIGHT.md)
@@ -1306,6 +1342,22 @@
 > **建议**：可探讨分级检查/覆盖收据，batch保完整来源/反证，语法/Schema/加载分开并核网络策略，资源/人工成本未验证。详见[Q05](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/863683348--dsh-plugin-verify/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1424538914-root"></a>
+
+## [dsh-purge](../../plugins/lanjingod--dsh-purge/INSIGHT.md)
+
+[![GitHub ★ 59](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=59&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LanJinGod/dsh-purge) [![npm 30d 1,916](https://img.shields.io/static/v1?label=npm+30d&message=1%2C916&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-purge) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-purge)
+
+> **用途**：具备可重建离线宿主的研究者可研究提示词与宿主限制分离；结果须记录具体改变和恢复，不以少拒绝当能力提高，见 [Q01](../../plugins/lanjingod--dsh-purge/INSIGHT.md#research-q01)。
+
+> **亮点**：把提示词、宿主patch状态、回滚与演练记录集中，并显示磁盘/运行时阶段；继承模型/宿主工具能力，不证明全模型破甲或评测更准确，见 [Q01](../../plugins/lanjingod--dsh-purge/INSIGHT.md#research-q01)、[Q02](../../plugins/lanjingod--dsh-purge/INSIGHT.md#research-q02)。
+
+> **思考**：未点应用不等于只读，新会话特定条件会提升完全访问；演练确认是布尔记录、区域gate是第一步文本启发式，不能替代执行授权与网络隔离，见 [Q03](../../plugins/lanjingod--dsh-purge/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是统一默认只观察，将运行时权限/注入和磁盘patch纳入同一差异/阶段账本，比较误归因与维护负担，见 [Q05](../../plugins/lanjingod--dsh-purge/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/lanjingod--dsh-purge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335718387-root"></a>
 
@@ -1530,6 +1582,22 @@
 > **建议**：从创建按会话分目录、更新按全局根接受路径的差异，可推导尚未验证的会话内卡片标识方案。宿主签发卡片标识，并在更新时核对会话归属与预期内容版本，可能缩小跨会话误改和陈旧补丁覆盖，同时保留局部修订便利；代价是迁移、分享与旧路径兼容。用两会话的合法更新、越界标识、过期版本三组请求检验是否明确拒绝且原件不变，再比较正常操作负担；已有等价宿主隔离或兼容负担过高都会削弱增量。见 [Q05](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/nagi-ovo--dsh-visualize/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1340558027-root"></a>
+
+## [dsh-web-search-free](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md)
+
+[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MochiNek0/dsh-web-search-free) [![npm 30d 6,350](https://img.shields.io/static/v1?label=npm+30d&message=6%2C350&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-web-search-free) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-web-search-free)
+
+> **用途**：已有多个搜索凭据、公开查询遇单源限额/不可达的用户，可自动尝试替代来源；需以正确可回查来源和总费用验收，见 [Q01](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q01)。
+
+> **亮点**：贡献是将多凭据容错、结构来源和可选并行接入原生web接口，并显式处理空来源和弱抓取；没有证明净搜索质量/费用胜出，见 [Q01](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q01)与 [Q02](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q02)。
+
+> **思考**：域名排除只过滤sources而非聚合answer，抓取缓存只按URL且新TTL不清旧项；多引擎扩大调用与外发，free不等于零成本，见 [Q02](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q02)、[Q03](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q03)和 [Q05](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q05)。
+
+> **建议**：未验证方向是给抓取缓存附实际来源/时间并绑定配置，强排除任务不使用无法归因的answer；比较错误引用改善与额外调用负担，见 [Q06](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/mochinek0--dsh-web-search-free/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1358313559-root"></a>
 

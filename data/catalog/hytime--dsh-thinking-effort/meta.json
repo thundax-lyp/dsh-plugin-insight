@@ -1,0 +1,66 @@
+{
+    "repository": "hytime/dsh-thinking-effort",
+    "repository_id": 1334875164,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 57,
+    "pushed_at": "2026-11-01T16:26:03Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahytime%2Fdsh-thinking-effort%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D94:1CBD20:D0853:E2DC2:6AED4FC4 and timestamp 2026-11-06 03:55:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahytime%2Fdsh-thinking-effort%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1DFA:1E37E3:D7405:E98FF:6AED4FC5 and timestamp 2026-11-06 03:55:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahytime%2Fdsh-thinking-effort%20is%3Aissue%20created%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1E6C:1D8E20:DAE18:ED366:6AED4FC6 and timestamp 2026-11-06 03:55:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahytime%2Fdsh-thinking-effort%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1F1E:1C5867:E3554:F5ADC:6AED4FC8 and timestamp 2026-11-06 03:55:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahytime%2Fdsh-thinking-effort%20is%3Aissue%20updated%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1FC4:1D4EF8:E096C:F3025:6AED4FC9 and timestamp 2026-11-06 03:55:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@hytime/dsh-thinking-effort",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 5406,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40hytime%2Fdsh-thinking-effort",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T10:20:45.885Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/%40hytime%2Fdsh-thinking-effort",
+            "error": null,
+            "latest_version": "0.3.12",
+            "latest_published_at": "2026-11-01T16:44:24.934Z",
+            "latest_error": null
+        }
+    }
+}
