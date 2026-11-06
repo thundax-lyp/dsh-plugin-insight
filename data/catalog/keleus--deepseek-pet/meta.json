@@ -1,0 +1,45 @@
+{
+    "repository": "keleus/deepseek-pet",
+    "repository_id": 1333285997,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 60,
+    "pushed_at": "2026-10-16T01:56:37Z",
+    "issues": {
+        "open": 0,
+        "closed": 8,
+        "created_30d": 4,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": true,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@keleus/deepseek-pet",
+        "captured_at": "2026-11-06T03:54:04.696Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40keleus%2Fdeepseek-pet",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-06T03:54:04.696Z",
+            "source_url": "https://registry.npmjs.org/%40keleus%2Fdeepseek-pet",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

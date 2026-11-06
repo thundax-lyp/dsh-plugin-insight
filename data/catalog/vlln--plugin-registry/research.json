@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "d4c8ba643584bc519a84f8ac4d6ee037",
+    "identity": "github:1323129961:root",
+    "slug": "vlln--plugin-registry",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1323129961:root",
+            "repository_id": 1323129961,
+            "component_id": "root",
+            "repository": "vlln/plugin-registry",
+            "path": "",
+            "aliases": [],
+            "name": "vlln's DSH plugins",
+            "entry_type": "infrastructure",
+            "technical_category": "runtime-deployment",
+            "business_category": "infrastructure",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "36026deacd3896d7b3407f9e33ee5f9d9159de34f07bb56aa073dfecb3fe4e13",
+                "code": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                "maintenance": "9f8f9338e85488e3e81f0d4da90781ce0365a0360464b4f72b8e20fbf8bef994"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-06-02-github-1323129961-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "retrieved_at": "2026-11-06T04:01:06.537Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-06-02-github-1323129961-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "README.md",
+                            "content_sha256": "e62262a9b5d362a72a367ea05a2d7976e3449034b66472f2989bc0d0cb1ab4ed"
+                        }
+                    ],
+                    "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                    "captured_at": "2026-11-06T04:01:06.537Z",
+                    "summary": "供 DSH 发现页消费的插件市场索引，自动探测 npm 版本或 Git 提交并生成版本条目。",
+                    "artifact": "data/runs/2026-11-06-02/vlln--plugin-registry/revision-2/vlln--plugin-registry/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-06-02-github-1323129961-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/.github/workflows/index.yml",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": ".github/workflows/index.yml",
+                            "content_sha256": "ca510dd99e8a0053073e24749a5f759d3ebb9770c5a12c18f9a2be98dbe60e6f"
+                        },
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "README.md",
+                            "content_sha256": "e62262a9b5d362a72a367ea05a2d7976e3449034b66472f2989bc0d0cb1ab4ed"
+                        },
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "index.json",
+                            "content_sha256": "92fe1b4d5366458aad04aeeaa07073676750498c5366cdc852206dbb896792aa"
+                        },
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "package.json",
+                            "content_sha256": "bd03ff96d43e0c1ba0aebf57a1ca921dae27bb14e8da47a2d8b783f8fce34cf8"
+                        },
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "scripts/build-index.mjs",
+                            "content_sha256": "6b6ec32adebb8fd92298c34d03549562a87677a12065d4735a52417176ba8d14"
+                        },
+                        {
+                            "repository_url": "https://github.com/vlln/plugin-registry",
+                            "commit": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                            "path": "plugins/dsh-share-link.json",
+                            "content_sha256": "3d150b7ef9ee2f287e49c30622352d8eb9655622c2890f4210794654942e50ab"
+                        }
+                    ],
+                    "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                    "captured_at": "2026-11-06T04:01:06.537Z",
+                    "summary": "核查 .github/workflows/index.yml、README.md、index.json、package.json、scripts/build-index.mjs、plugins/dsh-share-link.json；手写展示条目与在线发布探测合并，npm保留发布版本、Git绑定sha，经外部格式校验后写index；定时CI有变更再推送，见 [Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-11-06-02/vlln--plugin-registry/revision-2/vlln--plugin-registry/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "完整阅读唯一生成脚本、package、索引样本、一个手写条目、README和刷新workflow；未审上游校验器/宿主发现页及被收录插件，不把这些外部能力归本组件。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向常找该维护者插件的 DSH 用户，集中展示目标与安装版本，便于回原仓库核对；已经知道 spec 时可直接使用原入口，见 [Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "手写展示条目与在线发布探测合并，npm保留发布版本、Git绑定sha，经外部格式校验后写index；定时CI有变更再推送，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "完整阅读唯一生成脚本、package、索引样本、一个手写条目、README和刷新workflow；未审上游校验器/宿主发现页及被收录插件，不把这些外部能力归本组件。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "private索引仓库，消费URL而非Host插件；未核当下URL可达与发布成功。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 支持format1的DSH发现页 | 读者必需 | 消费index URL | 不表示仓库可作为Host插件加载 |\n| 可达索引URL与目标仓库/npm | 发现必需 | 展示与版本核对 | 保留原spec退路 |\n| Node>=22及市场校验器0.2.1-rc.2 | 仅维护生成必需 | 探测/验证/写盘 | 任一失败阻止刷新 |\n| GitHub/npm网络与CI写权限 | 维护刷新必需 | 版本探测及推送 | 定时定义不等于本次成功 |",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | URL访问和宿主资源，金额未知 | 添加源/核版本 | 耗时未测 |\n| 持续 | 读者网络；维护者CI/API/依赖资源 | 核新鲜度与目标可信度 | 无净节时测量 |\n| 失败恢复 | 重试和构建资源未知 | 定位单源失败/旧索引 | 整批不更新，无部分成功发布 |\n| 退出 | 既有插件资源由各插件决定 | 移除源并分别管已装目标 | 不回滚目标副作用 |",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "常查这个集合的用户可先只添加索引并核版本，不自动装目标。版本/兼容不明或索引过旧时回原仓库spec；移除索引不处理已装插件，见 [Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 集中发现 | 描述与版本集中为format1 | 比手填spec省时多少 |\n| 版本可追 | Git条目完整commit | 目标安装/运行是否有效 |\n| 刷新 | 校验后CI推送定义 | 本次远端成功与宿主排序 |",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "展示/探测分离与Git sha绑定值得借鉴。字符串排序、仅单位置兼容与整批失败降低“真实版本”可直接消费程度；格式校验不等于安装校验，见 [Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "贡献是把小范围插件展示事实与真实版本探测分开，给现有宿主发现页提供集中版本入口；已绑定Git提交不等于被收录插件运行通过，见 [Q01](#research-q01)与 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "npm顺序按字符串而非语义版本，兼容仅取engines.dsh，单源失败会阻止整批刷新；用户需核实际版本与快照，不能把索引当验收，见 [Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "未验证方向是核清宿主已有排序后，再用语义版本/稳定标签与逐源探测状态减少选版误判；须比较收益和格式维护负担，见 [Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1323129961:root",
+                            "area": "code",
+                            "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-06T04:01:06.537Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-06T04:01:06.537Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                "reviewed_at": "2026-11-06T04:01:06.537Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1323129961:root",
+                        "area": "code",
+                        "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01)沿已有市场格式，novelty25%，未达50%新方法。[Q02](#research-q02)探测/展示分离和sha绑定是局部机制，mechanism25%，排序/兼容不足未达50%。transferability25%，小索引生成可迁移但依外部协议，未达50%。simplification25%，集中数据免手填，但维护/失败未消，未达50%。",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01)集中找入口，未改变安装责任，workflow25%未达50%。delivery25%，交付可消费索引而非运行成果，未达50%。reach25%，降低spec寻找但仍需DSH与目标判断，未达50%。economics0%，未见成本组织或服务模式改变；自动CI不自动算经济创新。",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-11-06-02-github-1323129961-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "经常找这个维护者插件的 DSH 用户，可先添加索引源，只浏览并核对目标版本。它集中展示描述和安装来源，但版本排序与兼容字段仍需人工检查，不能代替目标插件验收。版本不清、索引过旧或目标不可信时，用户应移除该源并回原仓库的明确 spec，已装插件另行管理。",
+                "criteria": {
+                    "scenario": {
+                        "score": 8,
+                        "rationale": "[Q01](#research-q01)存在找小范围集合的人群和原spec办法，超过0%无需求；重复摩擦和必要性只有作者定位，未达50%，取25%。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01)主要集中入口，原spec足够；[Q03](#research-q03)版本核对仍在，符合25%局部便利而未达50%实质增量。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02)核到生成/校验/写盘/CI，[Q03](#research-q03)有失败边界，足以支持仅浏览核对试用，超25%片段；未验宿主，未达75%，取50%。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q04](#research-q04)仅添加URL不运行目标，回原spec与移除源可行，超50%显著配置；仍需版本与目标判断且未验宿主，未达100%，取75%。"
+                    }
+                },
+                "score": 42,
+                "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                "reviewed_at": "2026-11-06T04:01:06.537Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-06-02-github-1323129961-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1323129961:root",
+                        "area": "code",
+                        "fingerprint": "b237efdfd8227b71c385d36b62e323de08a9848f"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1323129961:root",
+            "repository": "vlln/plugin-registry",
+            "path": "",
+            "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+            "fingerprints": {
+                "directory": "36026deacd3896d7b3407f9e33ee5f9d9159de34f07bb56aa073dfecb3fe4e13",
+                "code": "b237efdfd8227b71c385d36b62e323de08a9848f",
+                "maintenance": "9f8f9338e85488e3e81f0d4da90781ce0365a0360464b4f72b8e20fbf8bef994"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-06T03:49:11Z",
+            "analysis_sha256": "49cde83814ae78c34885081c8b54511df75a6bd4b1f413e00e0dfe9d50ff2190"
+        },
+        "publication.metadata": "data/catalog/vlln--plugin-registry/meta.json",
+        "publication.summaries": {
+            "text": "供 DSH 发现页消费的插件市场索引，自动探测 npm 版本或 Git 提交并生成版本条目。",
+            "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+            "source_url": "https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+            "items": {
+                "后台": "维护端定时探测发布信息并生成市场索引"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 市场索引文档 | 给发现页集中展示版本 | 消费URL，不提供被收录插件运行能力 |\n| npm/Git版本探测 | 减少手填发布定位 | 字符串排序、兼容字段位置有限 |\n| 格式校验与刷新 | 合格文档有变更再发布 | 非安装验收，单源失败阻整批 |"
+        },
+        "publication.advice": {
+            "revision": "b237efdfd8227b71c385d36b62e323de08a9848f",
+            "text": "常查这个集合的用户可先只添加索引并核版本，不自动装目标。版本/兼容不明或索引过旧时回原仓库spec；移除索引不处理已装插件，见 [Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/vlln--plugin-registry",
+        "reports": "# vlln's DSH plugins\n\n> 供 DSH 发现页消费的插件市场索引，自动探测 npm 版本或 Git 提交并生成版本条目。\n\n## 研究范围\n\n- **仓库**：[vlln/plugin-registry](https://github.com/vlln/plugin-registry)\n- **版本号**：0.1.0（[固定提交 b237efdfd8227b71c385d36b62e323de08a9848f](https://github.com/vlln/plugin-registry/tree/b237efdfd8227b71c385d36b62e323de08a9848f)）\n- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n市场索引生成与CI定义已查源码，非原生插件。宿主消费/远端刷新和用户选版效果未测；新状态设计未验证。\n\n## 洞察短评\n\n- **用途**：面向常找该维护者插件的 DSH 用户，集中展示目标与安装版本，便于回原仓库核对；已经知道 spec 时可直接使用原入口，见 [Q01](#research-q01)。\n- **亮点**：贡献是把小范围插件展示事实与真实版本探测分开，给现有宿主发现页提供集中版本入口；已绑定Git提交不等于被收录插件运行通过，见 [Q01](#research-q01)与 [Q02](#research-q02)。\n- **思考**：npm顺序按字符串而非语义版本，兼容仅取engines.dsh，单源失败会阻止整批刷新；用户需核实际版本与快照，不能把索引当验收，见 [Q03](#research-q03)。\n- **建议**：未验证方向是核清宿主已有排序后，再用语义版本/稳定标签与逐源探测状态减少选版误判；须比较收益和格式维护负担，见 [Q05](#research-q05)。\n\n采用建议：常查这个集合的用户可先只添加索引并核版本，不自动装目标。版本/兼容不明或索引过旧时回原仓库spec；移除索引不处理已装插件，见 [Q04](#research-q04)。\n\n## 核心贡献\n\n贡献是把小范围插件展示事实与真实版本探测分开，给现有宿主发现页提供集中版本入口；已绑定Git提交不等于被收录插件运行通过，见 [Q01](#research-q01)与 [Q02](#research-q02)。\n\n## 关键质疑\n\nnpm顺序按字符串而非语义版本，兼容仅取engines.dsh，单源失败会阻止整批刷新；用户需核实际版本与快照，不能把索引当验收，见 [Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n未验证方向是核清宿主已有排序后，再用语义版本/稳定标签与逐源探测状态减少选版误判；须比较收益和格式维护负担，见 [Q05](#research-q05)。\n\n- 已检查固定源码和索引原件。\n- 未运行生成器、请求外部接口、添加索引或安装目标。\n- 字典序/兼容/失败边界为静态推导，宿主实际排序未知。\n\n## 场景与替代办法\n\n面向常找该维护者插件的 DSH 用户，集中展示目标与安装版本，便于回原仓库核对；已经知道 spec 时可直接使用原入口，见 [Q01](#research-q01)。\n\n宿主发现/安装来自 DSH；原办法是逐仓库找spec。此仓库只提供索引，不继承被收录项目的运行能力。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 支持format1的DSH发现页 | 读者必需 | 消费index URL | 不表示仓库可作为Host插件加载 |\n| 可达索引URL与目标仓库/npm | 发现必需 | 展示与版本核对 | 保留原spec退路 |\n| Node>=22及市场校验器0.2.1-rc.2 | 仅维护生成必需 | 探测/验证/写盘 | 任一失败阻止刷新 |\n| GitHub/npm网络与CI写权限 | 维护刷新必需 | 版本探测及推送 | 定时定义不等于本次成功 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 添加 | 用户在发现页添加URL | 可读目标条目，不安装目标 |\n| 核对 | 检查来源/commit/稳定版本与兼容 | 不明则回原项目/spec |\n| 决定 | 单独研究目标能力与权限 | 索引不替代验收 |\n| 退出 | 移除索引源 | 已装插件另行管理 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | URL访问和宿主资源，金额未知 | 添加源/核版本 | 耗时未测 |\n| 持续 | 读者网络；维护者CI/API/依赖资源 | 核新鲜度与目标可信度 | 无净节时测量 |\n| 失败恢复 | 重试和构建资源未知 | 定位单源失败/旧索引 | 整批不更新，无部分成功发布 |\n| 退出 | 既有插件资源由各插件决定 | 移除源并分别管已装目标 | 不回滚目标副作用 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 集中发现 | 描述与版本集中为format1 | 比手填spec省时多少 |\n| 版本可追 | Git条目完整commit | 目标安装/运行是否有效 |\n| 刷新 | 校验后CI推送定义 | 本次远端成功与宿主排序 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：该仓库如何帮助发现和选择可安装版本，发布探测和失败边界能否支持添加索引源？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 当前条目到底是什么，谁需要它？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n当前仓库是插件市场索引及生成工具，归为基础设施，不是可挂载的 DSH 原生插件。package 为 private，没有 Host apply/client 导出；实际消费对象是 format 1 的 index.json。用户要浏览这个维护者的小范围插件集合、选择发布版本时，可以把索引 URL 加到宿主发现页；不需要为了“安装索引”运行仓库脚本。\n\n相比逐个访问仓库并手填安装 spec，它把展示描述、类别和版本定位集中起来，版本探测避免每条都手写。宿主的发现、选择和安装仍来自 DSH，本仓库不实现安装器、插件权限检查或被收录的聊天分享/桌宠能力。README 的功能表是被收录项目自述，不能把那些功能记成本索引能力。已经有明确 spec 的用户可直接安装目标，索引增加的主要是查找便利，不保证生态完整或所列插件可用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:1-16](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/package.json#L1-L16)\n\nprivate生成包，无插件运行导出。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n{\n  \"name\": \"vlln-dsh-plugin-index\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"description\": \"Index of vlln's DeepSeek Harness (dsh) plugins, in the plugin market index format 1.\",\n  \"scripts\": {\n    \"build\": \"node scripts/build-index.mjs\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/dsh-plugin-market-index\": \"0.2.1-rc.2\"\n  },\n  \"engines\": {\n    \"node\": \">=22\"\n  },\n  \"license\": \"MIT\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:8-23](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/README.md#L8-L23)\n\n添加URL与直接spec替代。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\n## Use it as an index source\n\n1. **Plugins → Discover → Manage index sources**\n2. Add:\n\n   ```\n   https://raw.githubusercontent.com/vlln/plugin-registry/main/index.json\n   ```\n\n3. Search, pick a version, install.\n\nOr install by hand with the same specs the index lists:\n\n```sh\ndsh plugin --profile web add github:vlln/dsh-share-link\n```\n````\n\n</details>\n\n**依据 3 · 作者声明**：[README.md:47-55](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/README.md#L47-L55)\n\n手写条目、生成器与唯一客户端消费文件。\n\n```text\n\n## How this repo works\n\n| Path | Role |\n|---|---|\n| `plugins/*.json` | Hand-written display facts only: title, description, category, keywords, icon |\n| `scripts/build-index.mjs` | Probes the real facts (npm versions + publish times, or the default-branch HEAD commit and its manifest), merges, validates with `@deepseek-ai/dsh-plugin-market-index`, writes `index.json` |\n| `index.json` | The generated index — the only file a client reads |\n| `.github/workflows/index.yml` | Daily rebuild; commits only when `index.json` actually changed |\n```\n\n**依据 4 · 源码核查**：[index.json:1-12](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/index.json#L1-L12)\n\n实际format1索引。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n{\n  \"format\": 1,\n  \"title\": {\n    \"en\": \"vlln's DSH plugins\",\n    \"zh\": \"vlln 的 dsh 插件\"\n  },\n  \"description\": {\n    \"en\": \"DeepSeek Harness plugins by vlln. Add this file as an index source under Plugins → Discover.\",\n    \"zh\": \"vlln 开发的 DeepSeek Harness 插件。把本文件加成 Plugins → Discover 里的索引源即可浏览。\"\n  },\n  \"metadata\": {\n    \"categories\": {\n```\n\n</details>\n\n#### 缺口\n\n- 没有发现任务的实际用户对照。\n  **影响**：无法确认集中入口是否显著减少找错版本。\n  **进一步探讨**：用同一批目标比较直接仓库与发现页的正确定位和耗时。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 版本怎样取得、验证和发布？\n\n**研究主题**：功能与机制、依赖、兼容与流程\n\n#### 完整回答\n\n生成脚本读取 plugins/*.json，只把标题/描述等展示事实并入条目；npm 源查 registry 各版本发布时间与 engines，Git 源查默认分支最新提交，再在该 sha 上读 package.json，并将 commit 写进安装来源。这支持在一次索引快照内固定 Git 版本，而不是安装时继续追随浮动 HEAD。\n\n所有条目串行探测，任一错误抛出便终止整份构建；全部完成后调用外部 parseMarketIndex 校验，才直接 writeFile index.json。固定源码只核到调用，未独立审查上游校验器接受哪些内容，不能把格式验证当可安装性、安全性或实际宿主验收。GitHub workflow 每日03:00 UTC与手动触发，npm ci 后运行脚本，差异存在才提交推送 index；自动化定义不证明本轮远端任务成功。作者提供市场URL的可达性也未现场请求。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/build-index.mjs:42-78](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L42-L78)\n\n网络与sha/manifest探测。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n/** @param {string} url @param {Record<string, string>} [init] */\nasync function getJson(url, init) {\n  let response\n  try {\n    response = await fetch(url, { headers: { ...headers, ...init } })\n  } catch (error) {\n    throw new Error(`fetch ${url} failed: ${error?.cause?.message ?? error?.message ?? String(error)}`)\n  }\n  if (!response.ok) throw new Error(`${url} → HTTP ${response.status}`)\n  return response.json()\n}\n\n/** GitHub 默认分支 HEAD：commit sha + committer 时间（秒）。 */\nasync function headOf(repo) {\n  const commits = await getJson(`https://api.github.com/repos/${repo}/commits?per_page=1`)\n  const head = Array.isArray(commits) ? commits[0] : undefined\n  if (head === undefined) throw new Error(`${repo}: no commits`)\n  return {\n    sha: head.sha,\n    timestamp: Math.floor(Date.parse(head.commit.committer.date) / 1000),\n  }\n}\n\n/**\n * 某个 commit 上的 package.json。走 api.github.com（raw.githubusercontent.com 在\n * 部分网络下会单个 15 分钟级超时，见 AGENTS.local.md），用 raw 媒体类型取正文。\n */\nasync function manifestAt(repo, sha) {\n  const url = `https://api.github.com/repos/${repo}/contents/package.json?ref=${sha}`\n  let response\n  try {\n    response = await fetch(url, { headers: { ...headers, accept: 'application/vnd.github.raw+json' } })\n  } catch (error) {\n    throw new Error(`fetch ${url} failed: ${error?.cause?.message ?? error?.message ?? String(error)}`)\n  }\n  if (!response.ok) throw new Error(`${repo}@${sha.slice(0, 7)} package.json → HTTP ${response.status}`)\n  return response.json()\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/build-index.mjs:82-94](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L82-L94)\n\nnpm发布事实来源。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nasync function npmVersions(name) {\n  const encoded = name.replace('/', '%2F')\n  const registry = await getJson(`https://registry.npmjs.org/${encoded}`)\n  const versions = Object.keys(registry.versions ?? {})\n    .filter(version => registry.time?.[version] !== undefined)\n    .map(version => ({\n      version,\n      publishTimestamp: Math.floor(Date.parse(registry.time[version]) / 1000),\n      engines: registry.versions[version].engines ?? {},\n    }))\n  if (versions.length === 0) throw new Error(`${name}: npm has no version with a publish time`)\n  return versions.sort((left, right) => (left.version === right.version ? 0 : left.version < right.version ? 1 : -1))\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[scripts/build-index.mjs:97-136](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L97-L136)\n\n构造npm和Git安装来源。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\nasync function buildPlugin(entry) {\n  const plugin = {\n    name: entry.name,\n    ...(entry.title === undefined ? {} : { title: entry.title }),\n    ...(entry.description === undefined ? {} : { description: entry.description }),\n    ...(entry.icon === undefined ? {} : { icon: entry.icon }),\n    ...(entry.author === undefined ? {} : { author: entry.author }),\n    ...(entry.homepage === undefined ? {} : { homepage: entry.homepage }),\n    repository: { url: `https://github.com/${entry.repo}` },\n    metadata: {\n      category: entry.category,\n      keywords: entry.keywords ?? [],\n      labels: [],\n      sortKeys: {},\n    },\n  }\n\n  if (entry.source === 'npm') {\n    const versions = await npmVersions(entry.name)\n    plugin.versions = versions.map(({ version, publishTimestamp, engines }) => ({\n      version,\n      publishTimestamp,\n      source: { type: 'npm' },\n      ...(typeof engines.dsh === 'string' ? { engines: { dsh: engines.dsh } } : {}),\n    }))\n    return plugin\n  }\n\n  const head = await headOf(entry.repo)\n  const manifest = await manifestAt(entry.repo, head.sha)\n  const dshRange = manifest.engines?.dsh\n  plugin.versions = [\n    {\n      version: manifest.version,\n      publishTimestamp: head.timestamp,\n      source: { type: 'git', url: `https://github.com/${entry.repo}`, commit: head.sha },\n      ...(typeof dshRange === 'string' ? { engines: { dsh: dshRange } } : {}),\n    },\n  ]\n  return plugin\n```\n\n</details>\n\n**依据 4 · 源码核查**：[scripts/build-index.mjs:139-168](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L139-L168)\n\n串行失败终止、校验后写盘。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nconst files = (await readdir(join(ROOT, 'plugins'))).filter(file => file.endsWith('.json')).sort()\nconst entries = []\nfor (const file of files) {\n  const entry = JSON.parse(await readFile(join(ROOT, 'plugins', file), 'utf8'))\n  if (entry.category !== undefined && !Object.hasOwn(CATEGORIES, entry.category)) {\n    throw new Error(`${file}: category ${JSON.stringify(entry.category)} is not declared in CATEGORIES`)\n  }\n  entries.push({ file, entry })\n}\n\nconst document = {\n  format: 1,\n  title: TITLE,\n  description: DESCRIPTION,\n  metadata: { categories: CATEGORIES, labels: {}, sortKeys: {} },\n  plugins: [],\n}\n\nfor (const { file, entry } of entries) {\n  try {\n    document.plugins.push(await buildPlugin(entry))\n  } catch (error) {\n    throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`)\n  }\n}\n\n// 官方校验器是唯一裁判：任何一条规则不过就抛（带 JSON 路径），绝不写盘。\nconst validated = parseMarketIndex(document, INDEX_URL)\n\nawait writeFile(join(ROOT, 'index.json'), `${JSON.stringify(document, null, 2)}\\n`)\n```\n\n</details>\n\n**依据 5 · 源码核查**：[.github/workflows/index.yml:5-45](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/.github/workflows/index.yml#L5-L45)\n\n定时/手动构建及有差异提交。\n\n<details>\n<summary>查看原文（41行）</summary>\n\n```text\non:\n  schedule:\n    - cron: '0 3 * * *'\n  workflow_dispatch:\n\npermissions:\n  contents: write\n\nconcurrency:\n  group: index\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n          cache: npm\n\n      - run: npm ci --no-audit --no-fund\n\n      # 生成器自带校验：parseMarketIndex 不过就非零退出，不会写出坏索引。\n      - run: node scripts/build-index.mjs\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Commit a changed index\n        run: |\n          if git diff --quiet -- index.json; then\n            echo \"index.json is unchanged\"\n            exit 0\n          fi\n          git config user.name 'github-actions[bot]'\n          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'\n          git add index.json\n          git commit -m 'chore(index): refresh from npm and git'\n          git push\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 版本与兼容筛选有哪些局限？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nnpmVersions 的注释称新到旧，实际按版本字符串字典序倒排，未用语义版本或发布时间；例如版本跨到 0.10 时，字典序不保证比 0.9 靠前。这是代码比较规则的静态推导，未运行目标，也未证明当前客户端一定装错，因为宿主是否再次排序未审查。生成器不读取 dist-tags 选择 stable，也会保留有时间的预发布版；“已发布”不能直接当推荐最新版。\n\n兼容字段只取 manifest.engines.dsh，不读取其它位置的宿主约束；如果插件只把范围写在 dsh.engines 或 peerDependencies，这份生成结果不会带出，缺少范围不是已兼容。Git publishTimestamp实际用提交者时间而非npm发布日。另 getJson/manifestAt没有显式请求超时，单源慢可拖整次构建；有一源失败便保留远端旧索引，不会发布部分新结果，用户需区分旧快照与无更新。末尾直接覆盖文件并非原子rename，CI推送门槛可挡脚本失败，但本地中断写盘仍可能损坏文件；不将其泛化成已发生线上故障。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/build-index.mjs:54-62](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L54-L62)\n\nGit时间取committer。\n\n```text\n/** GitHub 默认分支 HEAD：commit sha + committer 时间（秒）。 */\nasync function headOf(repo) {\n  const commits = await getJson(`https://api.github.com/repos/${repo}/commits?per_page=1`)\n  const head = Array.isArray(commits) ? commits[0] : undefined\n  if (head === undefined) throw new Error(`${repo}: no commits`)\n  return {\n    sha: head.sha,\n    timestamp: Math.floor(Date.parse(head.commit.committer.date) / 1000),\n  }\n```\n\n**依据 2 · 源码核查**：[scripts/build-index.mjs:42-51](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L42-L51)\n\nfetch无显式超时。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n/** @param {string} url @param {Record<string, string>} [init] */\nasync function getJson(url, init) {\n  let response\n  try {\n    response = await fetch(url, { headers: { ...headers, ...init } })\n  } catch (error) {\n    throw new Error(`fetch ${url} failed: ${error?.cause?.message ?? error?.message ?? String(error)}`)\n  }\n  if (!response.ok) throw new Error(`${url} → HTTP ${response.status}`)\n  return response.json()\n```\n\n</details>\n\n**依据 3 · 源码核查**：[scripts/build-index.mjs:82-94](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L82-L94)\n\n字典排序且不按dist-tags过滤。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nasync function npmVersions(name) {\n  const encoded = name.replace('/', '%2F')\n  const registry = await getJson(`https://registry.npmjs.org/${encoded}`)\n  const versions = Object.keys(registry.versions ?? {})\n    .filter(version => registry.time?.[version] !== undefined)\n    .map(version => ({\n      version,\n      publishTimestamp: Math.floor(Date.parse(registry.time[version]) / 1000),\n      engines: registry.versions[version].engines ?? {},\n    }))\n  if (versions.length === 0) throw new Error(`${name}: npm has no version with a publish time`)\n  return versions.sort((left, right) => (left.version === right.version ? 0 : left.version < right.version ? 1 : -1))\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[scripts/build-index.mjs:114-134](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L114-L134)\n\n仅透传engines.dsh。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  if (entry.source === 'npm') {\n    const versions = await npmVersions(entry.name)\n    plugin.versions = versions.map(({ version, publishTimestamp, engines }) => ({\n      version,\n      publishTimestamp,\n      source: { type: 'npm' },\n      ...(typeof engines.dsh === 'string' ? { engines: { dsh: engines.dsh } } : {}),\n    }))\n    return plugin\n  }\n\n  const head = await headOf(entry.repo)\n  const manifest = await manifestAt(entry.repo, head.sha)\n  const dshRange = manifest.engines?.dsh\n  plugin.versions = [\n    {\n      version: manifest.version,\n      publishTimestamp: head.timestamp,\n      source: { type: 'git', url: `https://github.com/${entry.repo}`, commit: head.sha },\n      ...(typeof dshRange === 'string' ? { engines: { dsh: dshRange } } : {}),\n    },\n```\n\n</details>\n\n**依据 5 · 源码核查**：[scripts/build-index.mjs:157-168](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L157-L168)\n\n整批抛错和直接writeFile。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nfor (const { file, entry } of entries) {\n  try {\n    document.plugins.push(await buildPlugin(entry))\n  } catch (error) {\n    throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`)\n  }\n}\n\n// 官方校验器是唯一裁判：任何一条规则不过就抛（带 JSON 路径），绝不写盘。\nconst validated = parseMarketIndex(document, INDEX_URL)\n\nawait writeFile(join(ROOT, 'index.json'), `${JSON.stringify(document, null, 2)}\\n`)\n```\n\n</details>\n\n#### 缺口\n\n- 未核宿主版本排序与兼容字段解析。\n  **影响**：不能据生成顺序断言最终安装选择错误。\n  **进一步探讨**：在受控索引样本检查0.9/0.10、预发布及不同兼容位置，观察宿主实际选择。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 添加索引的成本与采用条件是什么？\n\n**研究主题**：效果与总成本、采用判断\n\n#### 完整回答\n\n经常寻找该维护者插件的 DSH 用户，可以只添加索引源并核对目标版本与仓库，不自动安装任何被收录包。先确认Git项有完整commit、npm项对应期望稳定版本，再回目标项目研究其权限和使用条件；发现条目不等于插件验收。关键版本顺序、兼容约束或目标URL不清时，退回明确的原仓库/spec，删除该索引源即可停止从此源发现，已装插件仍需分别管理。\n\n读者首次负担是添加URL和辨认版本，持续需核快照新鲜度与目标可信度；维护者另承担GitHub/npm请求、依赖安装和失败排查。没有本索引专用模型或付费API调用的源码，但网络、CI、人工与被安装插件的费用不能填0。索引自己不向用户运行Host能力，移除源不撤销已装目标也不回滚它的副作用。未测真实任务耗时、宿主加载和远端刷新成功，本轮建议有条件试用发现入口，不能升级安装推荐。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:8-23](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/README.md#L8-L23)\n\n索引入口与spec退路。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n````text\n## Use it as an index source\n\n1. **Plugins → Discover → Manage index sources**\n2. Add:\n\n   ```\n   https://raw.githubusercontent.com/vlln/plugin-registry/main/index.json\n   ```\n\n3. Search, pick a version, install.\n\nOr install by hand with the same specs the index lists:\n\n```sh\ndsh plugin --profile web add github:vlln/dsh-share-link\n```\n````\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/build-index.mjs:114-134](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L114-L134)\n\n用户需区分npm/git来源。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n  if (entry.source === 'npm') {\n    const versions = await npmVersions(entry.name)\n    plugin.versions = versions.map(({ version, publishTimestamp, engines }) => ({\n      version,\n      publishTimestamp,\n      source: { type: 'npm' },\n      ...(typeof engines.dsh === 'string' ? { engines: { dsh: engines.dsh } } : {}),\n    }))\n    return plugin\n  }\n\n  const head = await headOf(entry.repo)\n  const manifest = await manifestAt(entry.repo, head.sha)\n  const dshRange = manifest.engines?.dsh\n  plugin.versions = [\n    {\n      version: manifest.version,\n      publishTimestamp: head.timestamp,\n      source: { type: 'git', url: `https://github.com/${entry.repo}`, commit: head.sha },\n      ...(typeof dshRange === 'string' ? { engines: { dsh: dshRange } } : {}),\n    },\n```\n\n</details>\n\n**依据 3 · 源码核查**：[.github/workflows/index.yml:17-45](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/.github/workflows/index.yml#L17-L45)\n\n维护者构建和发布成本链。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 22\n          cache: npm\n\n      - run: npm ci --no-audit --no-fund\n\n      # 生成器自带校验：parseMarketIndex 不过就非零退出，不会写出坏索引。\n      - run: node scripts/build-index.mjs\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Commit a changed index\n        run: |\n          if git diff --quiet -- index.json; then\n            echo \"index.json is unchanged\"\n            exit 0\n          fi\n          git config user.name 'github-actions[bot]'\n          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'\n          git add index.json\n          git commit -m 'chore(index): refresh from npm and git'\n          git push\n```\n\n</details>\n\n#### 缺口\n\n- 未取得真实发现页加载与正确版本选择效果。\n  **影响**：只能支持浏览/核对的小范围试用。\n  **进一步探讨**：用测试配置添加URL并核目标，再比较原spec方式的错误/耗时。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 什么改进值得验证？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n未验证设计是按语义版本与稳定标签组织npm条目，并在生成快照记录每源探测时间及失败来源；保持一次快照要么完整发布要么维持旧版，但让用户能看出“旧”与“无变化”的区别。它来自版本字符串排序与整批失败两个已核取舍，不需要另造宿主安装器。\n\n先用合成0.9/0.10、prerelease、缺兼容字段和单源超时样本，比较当前索引与候选索引的正确选版、维护者定位失败耗时及读者误判；宿主可能已有排序，因此改排序不一定有用户收益。新增探测状态需要兼容format1可接受字段或独立维护状态页，不能未经校验塞新字段。若宿主已正确处理所有版本而额外状态只增加维护，则不做。未实现或运行，不认定为商业机会。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/build-index.mjs:82-94](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L82-L94)\n\n当前版本组织。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\nasync function npmVersions(name) {\n  const encoded = name.replace('/', '%2F')\n  const registry = await getJson(`https://registry.npmjs.org/${encoded}`)\n  const versions = Object.keys(registry.versions ?? {})\n    .filter(version => registry.time?.[version] !== undefined)\n    .map(version => ({\n      version,\n      publishTimestamp: Math.floor(Date.parse(registry.time[version]) / 1000),\n      engines: registry.versions[version].engines ?? {},\n    }))\n  if (versions.length === 0) throw new Error(`${name}: npm has no version with a publish time`)\n  return versions.sort((left, right) => (left.version === right.version ? 0 : left.version < right.version ? 1 : -1))\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/build-index.mjs:157-168](https://github.com/vlln/plugin-registry/blob/b237efdfd8227b71c385d36b62e323de08a9848f/scripts/build-index.mjs#L157-L168)\n\n当前失败和校验边界。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nfor (const { file, entry } of entries) {\n  try {\n    document.plugins.push(await buildPlugin(entry))\n  } catch (error) {\n    throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`)\n  }\n}\n\n// 官方校验器是唯一裁判：任何一条规则不过就抛（带 JSON 路径），绝不写盘。\nconst validated = parseMarketIndex(document, INDEX_URL)\n\nawait writeFile(join(ROOT, 'index.json'), `${JSON.stringify(document, null, 2)}\\n`)\n```\n\n</details>\n\n#### 缺口\n\n- 未核宿主已有排序/状态展示，未做候选对照。\n  **影响**：新增机制可能重复宿主。\n  **进一步探讨**：先核宿主消费逻辑，再按上述样本验证是否有额外价值。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a0671e291527221fd7c0a640c079e216830308ce5d27f9eeb2049090529d46ce。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 4 | 510 | — | — | 10539 |\n| .mjs | source | 1 | 175 | 136 | 27 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 市场索引文档 | 给发现页集中展示版本 | 消费URL，不提供被收录插件运行能力 |\n| npm/Git版本探测 | 减少手填发布定位 | 字符串排序、兼容字段位置有限 |\n| 格式校验与刷新 | 合格文档有变更再发布 | 非安装验收，单源失败阻整批 |\n\n## 工程亮点\n\n展示/探测分离与Git sha绑定值得借鉴。字符串排序、仅单位置兼容与整批失败降低“真实版本”可直接消费程度；格式校验不等于安装校验，见 [Q03](#research-q03)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 .github/workflows/index.yml、README.md、index.json、package.json、scripts/build-index.mjs、plugins/dsh-share-link.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：完整阅读唯一生成脚本、package、索引样本、一个手写条目、README和刷新workflow；未审上游校验器/宿主发现页及被收录插件，不把这些外部能力归本组件。\n- 下一步：- 已检查固定源码和索引原件。\n- 未运行生成器、请求外部接口、添加索引或安装目标。\n- 字典序/兼容/失败边界为静态推导，宿主实际排序未知。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-06-02/vlln--plugin-registry/revision-2/vlln--plugin-registry/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"vlln/plugin-registry\",\n  \"revision\": \"b237efdfd8227b71c385d36b62e323de08a9848f\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \".github/workflows/index.yml\",\n    \"index.json\",\n    \"scripts/build-index.mjs\",\n    \"plugins/dsh-share-link.json\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"该仓库如何帮助发现和选择可安装版本，发布探测和失败边界能否支持添加索引源？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"当前条目到底是什么，谁需要它？\",\n        \"answer\": \"当前仓库是插件市场索引及生成工具，归为基础设施，不是可挂载的 DSH 原生插件。package 为 private，没有 Host apply/client 导出；实际消费对象是 format 1 的 index.json。用户要浏览这个维护者的小范围插件集合、选择发布版本时，可以把索引 URL 加到宿主发现页；不需要为了“安装索引”运行仓库脚本。\\n\\n相比逐个访问仓库并手填安装 spec，它把展示描述、类别和版本定位集中起来，版本探测避免每条都手写。宿主的发现、选择和安装仍来自 DSH，本仓库不实现安装器、插件权限检查或被收录的聊天分享/桌宠能力。README 的功能表是被收录项目自述，不能把那些功能记成本索引能力。已经有明确 spec 的用户可直接安装目标，索引增加的主要是查找便利，不保证生态完整或所列插件可用。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 1,\n            \"line_end\": 16,\n            \"observation\": \"private生成包，无插件运行导出。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 8,\n            \"line_end\": 23,\n            \"observation\": \"添加URL与直接spec替代。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 47,\n            \"line_end\": 55,\n            \"observation\": \"手写条目、生成器与唯一客户端消费文件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.json\",\n            \"line_start\": 1,\n            \"line_end\": 12,\n            \"observation\": \"实际format1索引。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有发现任务的实际用户对照。\",\n            \"impact\": \"无法确认集中入口是否显著减少找错版本。\",\n            \"next_step\": \"用同一批目标比较直接仓库与发现页的正确定位和耗时。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"dependencies\"\n        ],\n        \"question\": \"版本怎样取得、验证和发布？\",\n        \"answer\": \"生成脚本读取 plugins/*.json，只把标题/描述等展示事实并入条目；npm 源查 registry 各版本发布时间与 engines，Git 源查默认分支最新提交，再在该 sha 上读 package.json，并将 commit 写进安装来源。这支持在一次索引快照内固定 Git 版本，而不是安装时继续追随浮动 HEAD。\\n\\n所有条目串行探测，任一错误抛出便终止整份构建；全部完成后调用外部 parseMarketIndex 校验，才直接 writeFile index.json。固定源码只核到调用，未独立审查上游校验器接受哪些内容，不能把格式验证当可安装性、安全性或实际宿主验收。GitHub workflow 每日03:00 UTC与手动触发，npm ci 后运行脚本，差异存在才提交推送 index；自动化定义不证明本轮远端任务成功。作者提供市场URL的可达性也未现场请求。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 42,\n            \"line_end\": 78,\n            \"observation\": \"网络与sha/manifest探测。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 82,\n            \"line_end\": 94,\n            \"observation\": \"npm发布事实来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 97,\n            \"line_end\": 136,\n            \"observation\": \"构造npm和Git安装来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 139,\n            \"line_end\": 168,\n            \"observation\": \"串行失败终止、校验后写盘。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \".github/workflows/index.yml\",\n            \"line_start\": 5,\n            \"line_end\": 45,\n            \"observation\": \"定时/手动构建及有差异提交。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"question\": \"版本与兼容筛选有哪些局限？\",\n        \"answer\": \"npmVersions 的注释称新到旧，实际按版本字符串字典序倒排，未用语义版本或发布时间；例如版本跨到 0.10 时，字典序不保证比 0.9 靠前。这是代码比较规则的静态推导，未运行目标，也未证明当前客户端一定装错，因为宿主是否再次排序未审查。生成器不读取 dist-tags 选择 stable，也会保留有时间的预发布版；“已发布”不能直接当推荐最新版。\\n\\n兼容字段只取 manifest.engines.dsh，不读取其它位置的宿主约束；如果插件只把范围写在 dsh.engines 或 peerDependencies，这份生成结果不会带出，缺少范围不是已兼容。Git publishTimestamp实际用提交者时间而非npm发布日。另 getJson/manifestAt没有显式请求超时，单源慢可拖整次构建；有一源失败便保留远端旧索引，不会发布部分新结果，用户需区分旧快照与无更新。末尾直接覆盖文件并非原子rename，CI推送门槛可挡脚本失败，但本地中断写盘仍可能损坏文件；不将其泛化成已发生线上故障。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 54,\n            \"line_end\": 62,\n            \"observation\": \"Git时间取committer。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 42,\n            \"line_end\": 51,\n            \"observation\": \"fetch无显式超时。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 82,\n            \"line_end\": 94,\n            \"observation\": \"字典排序且不按dist-tags过滤。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 114,\n            \"line_end\": 134,\n            \"observation\": \"仅透传engines.dsh。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 157,\n            \"line_end\": 168,\n            \"observation\": \"整批抛错和直接writeFile。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核宿主版本排序与兼容字段解析。\",\n            \"impact\": \"不能据生成顺序断言最终安装选择错误。\",\n            \"next_step\": \"在受控索引样本检查0.9/0.10、预发布及不同兼容位置，观察宿主实际选择。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"添加索引的成本与采用条件是什么？\",\n        \"answer\": \"经常寻找该维护者插件的 DSH 用户，可以只添加索引源并核对目标版本与仓库，不自动安装任何被收录包。先确认Git项有完整commit、npm项对应期望稳定版本，再回目标项目研究其权限和使用条件；发现条目不等于插件验收。关键版本顺序、兼容约束或目标URL不清时，退回明确的原仓库/spec，删除该索引源即可停止从此源发现，已装插件仍需分别管理。\\n\\n读者首次负担是添加URL和辨认版本，持续需核快照新鲜度与目标可信度；维护者另承担GitHub/npm请求、依赖安装和失败排查。没有本索引专用模型或付费API调用的源码，但网络、CI、人工与被安装插件的费用不能填0。索引自己不向用户运行Host能力，移除源不撤销已装目标也不回滚它的副作用。未测真实任务耗时、宿主加载和远端刷新成功，本轮建议有条件试用发现入口，不能升级安装推荐。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 8,\n            \"line_end\": 23,\n            \"observation\": \"索引入口与spec退路。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 114,\n            \"line_end\": 134,\n            \"observation\": \"用户需区分npm/git来源。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \".github/workflows/index.yml\",\n            \"line_start\": 17,\n            \"line_end\": 45,\n            \"observation\": \"维护者构建和发布成本链。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未取得真实发现页加载与正确版本选择效果。\",\n            \"impact\": \"只能支持浏览/核对的小范围试用。\",\n            \"next_step\": \"用测试配置添加URL并核目标，再比较原spec方式的错误/耗时。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"什么改进值得验证？\",\n        \"answer\": \"未验证设计是按语义版本与稳定标签组织npm条目，并在生成快照记录每源探测时间及失败来源；保持一次快照要么完整发布要么维持旧版，但让用户能看出“旧”与“无变化”的区别。它来自版本字符串排序与整批失败两个已核取舍，不需要另造宿主安装器。\\n\\n先用合成0.9/0.10、prerelease、缺兼容字段和单源超时样本，比较当前索引与候选索引的正确选版、维护者定位失败耗时及读者误判；宿主可能已有排序，因此改排序不一定有用户收益。新增探测状态需要兼容format1可接受字段或独立维护状态页，不能未经校验塞新字段。若宿主已正确处理所有版本而额外状态只增加维护，则不做。未实现或运行，不认定为商业机会。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 82,\n            \"line_end\": 94,\n            \"observation\": \"当前版本组织。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/build-index.mjs\",\n            \"line_start\": 157,\n            \"line_end\": 168,\n            \"observation\": \"当前失败和校验边界。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未核宿主已有排序/状态展示，未做候选对照。\",\n            \"impact\": \"新增机制可能重复宿主。\",\n            \"next_step\": \"先核宿主消费逻辑，再按上述样本验证是否有额外价值。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"<h1 align=\\\"center\\\">vlln's DSH plugins</h1>\\n\\n<p align=\\\"center\\\">\\n  <strong>Plugins I build for DeepSeek Harness (dsh), published as a plugin market index.</strong><br/>\\n  English | <a href=\\\"README.zh.md\\\">中文</a>\\n</p>\\n\\n## Use it as an index source\\n\\n1. **Plugins → Discover → Manage index sources**\\n2. Add:\\n\\n   ```\\n   https://raw.githubusercontent.com/vlln/plugin-registry/main/index.json\\n   ```\\n\\n3. Search, pick a version, install.\\n\\nOr install by hand with the same specs the index lists:\\n\\n```sh\\ndsh plugin --profile web add github:vlln/dsh-share-link\\n```\\n\\n## What's inside\\n\\n| Plugin | What it does | Install |\\n|---|---|---|\\n| [**Share Link**](https://github.com/vlln/dsh-share-link) `@vlln/dsh-share-link` | Publish a conversation or an artifact as a read-only public link; revoke anytime. | `github:vlln/dsh-share-link` |\\n| [**Video to Text**](https://github.com/vlln/dsh-video2text) `dsh-video2text` | Video link → script: sidebar player, transcript, export; bundles the `video2text` skill. | `github:vlln/dsh-video2text` |\\n| [**Pancha**](https://github.com/vlln/dsh-pancha) `dsh-pancha` | A directory as a board you can audit, annotate and act on — the agent labels, you decide. | `github:vlln/dsh-pancha` |\\n| [**Loop**](https://github.com/vlln/dsh-loop) `@vlln/dsh-loop` | Scheduled loops: `/loop` command, `loop` tool and a live activity bar. | `@vlln/dsh-loop` |\\n| [**Auto Fork**](https://github.com/vlln/dsh-autofork) `@vlln/dsh-autofork` | When the agent is busy, fork the session: the new instruction runs now, the old turn reports back later. | `github:vlln/dsh-autofork` |\\n| [**Whale Girl**](https://github.com/vlln/whale-girl) `whale-girl` | A desktop pet for the DSH Web GUI. | `whale-girl` |\\n| [**Evolution Engineering**](https://github.com/vlln/evo-engineering) `@vlln/evo-engineering` | Improve any artifact in rounds: standard, iterate, independent review, rollback. | `github:vlln/evo-engineering` |\\n| [**PR Inbox**](https://github.com/omdsh-dev/dsh-pr-inbox) `dsh-pr-inbox` | A sidebar panel for the GitHub PRs that concern you: opened, to review, merged — over your local `gh` login. | `github:omdsh-dev/dsh-pr-inbox` |\\n| [**Preset Inspector**](https://github.com/omdsh-dev/dsh-preset-inspector) `dsh-preset-inspector` | See where every line of an agent preset comes from: patch layer, package, config. | `github:omdsh-dev/dsh-preset-inspector` |\\n\\n### Archived\\n\\nStill installable by name, just no longer maintained — so they are not in the index.\\n\\n| Plugin | What it does | Install |\\n|---|---|---|\\n| [**Navbar**](https://github.com/vlln/dsh-navbar) `@vlln/dsh-navbar` | A node rail on the conversation's right edge: jump between user messages. | `@vlln/dsh-navbar` |\\n| [**Task Status**](https://github.com/vlln/dsh-task-status) `@vlln/dsh-task-status` | A status bar for background jobs: per-task progress plus a live output tail. | `@vlln/dsh-task-status` |\\n\\n## How this repo works\\n\\n| Path | Role |\\n|---|---|\\n| `plugins/*.json` | Hand-written display facts only: title, description, category, keywords, icon |\\n| `scripts/build-index.mjs` | Probes the real facts (npm versions + publish times, or the default-branch HEAD commit and its manifest), merges, validates with `@deepseek-ai/dsh-plugin-market-index`, writes `index.json` |\\n| `index.json` | The generated index — the only file a client reads |\\n| `.github/workflows/index.yml` | Daily rebuild; commits only when `index.json` actually changed |\\n\\nVersions are what is actually published: npm-published plugins list their npm versions, git-only plugins list the\\ndefault-branch HEAD commit. When a repo is ahead of npm, the index keeps the published version — install from git if\\nyou want the bleeding edge.\\n\\n## History\\n\\nUntil 2026-10-03 this repo hosted a **thin console** (a browser panel managing a profile's plugin install state) and a\\ncopy of the `make-dsh-plugin` skill. DSH's own Plugins page took over the console's job, the skill moved to\\n[vlln/dsh-skills](https://github.com/vlln/dsh-skills), and on 2026-10-21 the repo became this index.\\n\\n## License\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"vlln-dsh-plugin-index\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"description\\\": \\\"Index of vlln's DeepSeek Harness (dsh) plugins, in the plugin market index format 1.\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"node scripts/build-index.mjs\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-plugin-market-index\\\": \\\"0.2.1-rc.2\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22\\\"\\n  },\\n  \\\"license\\\": \\\"MIT\\\"\\n}\\n\"\n    },\n    {\n      \"path\": \".github/workflows/index.yml\",\n      \"content\": \"name: index\\n\\n# 每天重建一次 index.json：探测每个插件的真实发布事实（npm 版本 / git HEAD），\\n# 校验通过才提交。索引内容不变时这一步是空提交，不会有噪音。\\non:\\n  schedule:\\n    - cron: '0 3 * * *'\\n  workflow_dispatch:\\n\\npermissions:\\n  contents: write\\n\\nconcurrency:\\n  group: index\\n  cancel-in-progress: false\\n\\njobs:\\n  build:\\n    runs-on: ubuntu-latest\\n    steps:\\n      - uses: actions/checkout@v4\\n\\n      - uses: actions/setup-node@v4\\n        with:\\n          node-version: 22\\n          cache: npm\\n\\n      - run: npm ci --no-audit --no-fund\\n\\n      # 生成器自带校验：parseMarketIndex 不过就非零退出，不会写出坏索引。\\n      - run: node scripts/build-index.mjs\\n        env:\\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\\n\\n      - name: Commit a changed index\\n        run: |\\n          if git diff --quiet -- index.json; then\\n            echo \\\"index.json is unchanged\\\"\\n            exit 0\\n          fi\\n          git config user.name 'github-actions[bot]'\\n          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'\\n          git add index.json\\n          git commit -m 'chore(index): refresh from npm and git'\\n          git push\\n\"\n    },\n    {\n      \"path\": \"index.json\",\n      \"content\": \"{\\n  \\\"format\\\": 1,\\n  \\\"title\\\": {\\n    \\\"en\\\": \\\"vlln's DSH plugins\\\",\\n    \\\"zh\\\": \\\"vlln 的 dsh 插件\\\"\\n  },\\n  \\\"description\\\": {\\n    \\\"en\\\": \\\"DeepSeek Harness plugins by vlln. Add this file as an index source under Plugins → Discover.\\\",\\n    \\\"zh\\\": \\\"vlln 开发的 DeepSeek Harness 插件。把本文件加成 Plugins → Discover 里的索引源即可浏览。\\\"\\n  },\\n  \\\"metadata\\\": {\\n    \\\"categories\\\": {\\n      \\\"content\\\": {\\n        \\\"title\\\": {\\n          \\\"en\\\": \\\"Content\\\",\\n          \\\"zh\\\": \\\"内容\\\"\\n        }\\n      },\\n      \\\"conversation\\\": {\\n        \\\"title\\\": {\\n          \\\"en\\\": \\\"Conversation\\\",\\n          \\\"zh\\\": \\\"会话\\\"\\n        }\\n      },\\n      \\\"workspace\\\": {\\n        \\\"title\\\": {\\n          \\\"en\\\": \\\"Workspace\\\",\\n          \\\"zh\\\": \\\"工作区\\\"\\n        }\\n      },\\n      \\\"workflow\\\": {\\n        \\\"title\\\": {\\n          \\\"en\\\": \\\"Workflow\\\",\\n          \\\"zh\\\": \\\"工作流\\\"\\n        }\\n      },\\n      \\\"interface\\\": {\\n        \\\"title\\\": {\\n          \\\"en\\\": \\\"Interface\\\",\\n          \\\"zh\\\": \\\"界面\\\"\\n        }\\n      }\\n    },\\n    \\\"labels\\\": {},\\n    \\\"sortKeys\\\": {}\\n  },\\n  \\\"plugins\\\": [\\n    {\\n      \\\"name\\\": \\\"@vlln/dsh-autofork\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Auto Fork\\\",\\n        \\\"zh\\\": \\\"自动分叉\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"When the agent is busy, fork the session: your new instruction runs immediately while the old turn finishes in the background and reports back.\\\",\\n        \\\"zh\\\": \\\"Agent 忙时自动分叉会话：新指令立刻在新会话里得到响应，旧会话留在后台跑完并把结果回注。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-autofork.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/dsh-autofork#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/dsh-autofork\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"conversation\\\",\\n        \\\"keywords\\\": [\\n          \\\"fork\\\",\\n          \\\"session\\\",\\n          \\\"concurrency\\\",\\n          \\\"background\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.16.0\\\",\\n          \\\"publishTimestamp\\\": 1793362157,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/vlln/dsh-autofork\\\",\\n            \\\"commit\\\": \\\"6c7f83cbde1f87d3902d66a23996eabed5a04857\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"@vlln/dsh-loop\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Loop\\\",\\n        \\\"zh\\\": \\\"定时循环\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"Scheduled loops: a /loop command, a loop tool and a live activity bar, so a task reruns on its own cadence.\\\",\\n        \\\"zh\\\": \\\"定时循环：/loop 命令 + loop 工具 + 活动状态条，让任务按自己的节奏反复跑。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-loop.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/dsh-loop#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/dsh-loop\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"workflow\\\",\\n        \\\"keywords\\\": [\\n          \\\"loop\\\",\\n          \\\"schedule\\\",\\n          \\\"cron\\\",\\n          \\\"timer\\\",\\n          \\\"automation\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.4.4\\\",\\n          \\\"publishTimestamp\\\": 1793363079,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"npm\\\"\\n          },\\n          \\\"engines\\\": {\\n            \\\"dsh\\\": \\\">=0.2.0-rc.1\\\"\\n          }\\n        },\\n        {\\n          \\\"version\\\": \\\"0.4.1\\\",\\n          \\\"publishTimestamp\\\": 1788959575,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"npm\\\"\\n          },\\n          \\\"engines\\\": {\\n            \\\"dsh\\\": \\\">=0.1.0-rc.5\\\"\\n          }\\n        },\\n        {\\n          \\\"version\\\": \\\"0.3.0\\\",\\n          \\\"publishTimestamp\\\": 1787158048,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"npm\\\"\\n          },\\n          \\\"engines\\\": {\\n            \\\"dsh\\\": \\\">=0.1.0-rc.5\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"dsh-pancha\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Pancha\\\",\\n        \\\"zh\\\": \\\"盘查\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"Turn a directory into a board you can audit, annotate and act on: the agent labels, you decide.\\\",\\n        \\\"zh\\\": \\\"把磁盘变成一张可审查、可批注、可执行的盘面：Agent 标注，你来做决定。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-pancha.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/dsh-pancha#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/dsh-pancha\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"workspace\\\",\\n        \\\"keywords\\\": [\\n          \\\"disk\\\",\\n          \\\"audit\\\",\\n          \\\"annotation\\\",\\n          \\\"cleanup\\\",\\n          \\\"files\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"3.0.2\\\",\\n          \\\"publishTimestamp\\\": 1793362156,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/vlln/dsh-pancha\\\",\\n            \\\"commit\\\": \\\"229a6ca3cae15d5a085c3fda08f78c561740bae3\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"dsh-pr-inbox\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"PR Inbox\\\",\\n        \\\"zh\\\": \\\"PR 收件箱\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"A sidebar PR panel bound to the current workspace: the PRs you opened, must review and merged, rendered natively over your local gh login — read-only.\\\",\\n        \\\"zh\\\": \\\"侧边栏 PR 面板：自动绑定当前工作区的项目，按「我提的 / 待我审 / 我合并的」三桶渲染 GitHub PR，复用本机 gh 登录，只读。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-pr-inbox.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/omdsh-dev/dsh-pr-inbox#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/omdsh-dev/dsh-pr-inbox\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"workspace\\\",\\n        \\\"keywords\\\": [\\n          \\\"github\\\",\\n          \\\"pull request\\\",\\n          \\\"review\\\",\\n          \\\"sidebar\\\",\\n          \\\"gh\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.1.1\\\",\\n          \\\"publishTimestamp\\\": 1792230858,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/omdsh-dev/dsh-pr-inbox\\\",\\n            \\\"commit\\\": \\\"7b2a166d6f21029eb3744806999cbe177f7aa35b\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"dsh-preset-inspector\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Preset Inspector\\\",\\n        \\\"zh\\\": \\\"Preset 检查器\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"See where every line of an agent preset comes from: which patch layer, which package, which config.\\\",\\n        \\\"zh\\\": \\\"Agent preset 检查器：看清一个 preset 的每一行来自哪一层补丁、是什么包、配置是什么。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-preset-inspector.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/omdsh-dev/dsh-preset-inspector#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/omdsh-dev/dsh-preset-inspector\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"workflow\\\",\\n        \\\"keywords\\\": [\\n          \\\"preset\\\",\\n          \\\"agent\\\",\\n          \\\"debug\\\",\\n          \\\"inspector\\\",\\n          \\\"plugin\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.20.0\\\",\\n          \\\"publishTimestamp\\\": 1792236731,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/omdsh-dev/dsh-preset-inspector\\\",\\n            \\\"commit\\\": \\\"98d9cd5d459f99084894612df66710866d191956\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"@vlln/dsh-share-link\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Share Link\\\",\\n        \\\"zh\\\": \\\"分享链接\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"Publish a conversation or an artifact as a read-only public link — no dsh needed on the reader's side, revoke anytime.\\\",\\n        \\\"zh\\\": \\\"把一段对话或一个产物发布成只读公网链接：对方无需安装 dsh，随时可撤销。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-share-link.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/dsh-share-link#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/dsh-share-link\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"content\\\",\\n        \\\"keywords\\\": [\\n          \\\"share\\\",\\n          \\\"publish\\\",\\n          \\\"link\\\",\\n          \\\"snapshot\\\",\\n          \\\"cloudflared\\\",\\n          \\\"surge\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.7.6\\\",\\n          \\\"publishTimestamp\\\": 1793634842,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/vlln/dsh-share-link\\\",\\n            \\\"commit\\\": \\\"c4e22e979ffdd2f6535670daa41f19480ea94daa\\\"\\n          },\\n          \\\"engines\\\": {\\n            \\\"dsh\\\": \\\">=0.2.0\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"dsh-video2text\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Video to Text\\\",\\n        \\\"zh\\\": \\\"视频转文案\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"Turn a video link into a script: sidebar workspace with player, transcript and export, plus a bundled video2text skill.\\\",\\n        \\\"zh\\\": \\\"视频链接转文案：侧栏工作台（播放器 + 逐字稿 + 发布导出），自带 video2text skill。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/dsh-video2text.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/dsh-video2text#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/dsh-video2text\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"content\\\",\\n        \\\"keywords\\\": [\\n          \\\"video\\\",\\n          \\\"transcript\\\",\\n          \\\"asr\\\",\\n          \\\"subtitle\\\",\\n          \\\"skill\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.2.2\\\",\\n          \\\"publishTimestamp\\\": 1793642926,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/vlln/dsh-video2text\\\",\\n            \\\"commit\\\": \\\"66f1e34551aa2d931472fddeff674845f90b8360\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"@vlln/evo-engineering\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Evolution Engineering\\\",\\n        \\\"zh\\\": \\\"进化工程\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"Improve any artifact in rounds: define the standard, iterate, review independently — with /evo and evo_* tools, and a rollback for every round.\\\",\\n        \\\"zh\\\": \\\"让 agent 把任意产物一轮轮改得更好：先定标准、再自动改进与独立评审，人类随时能看、能喊停、能回滚。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/evo-engineering.svg\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/evo-engineering#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/evo-engineering\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"workflow\\\",\\n        \\\"keywords\\\": [\\n          \\\"evolution\\\",\\n          \\\"review\\\",\\n          \\\"iteration\\\",\\n          \\\"rsi\\\",\\n          \\\"rollback\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.1.1\\\",\\n          \\\"publishTimestamp\\\": 1792592447,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"git\\\",\\n            \\\"url\\\": \\\"https://github.com/vlln/evo-engineering\\\",\\n            \\\"commit\\\": \\\"a0da9564a3f6129094730309107fef0836b96d81\\\"\\n          }\\n        }\\n      ]\\n    },\\n    {\\n      \\\"name\\\": \\\"whale-girl\\\",\\n      \\\"title\\\": {\\n        \\\"en\\\": \\\"Whale Girl\\\",\\n        \\\"zh\\\": \\\"鲸鱼少女\\\"\\n      },\\n      \\\"description\\\": {\\n        \\\"en\\\": \\\"A desktop pet for the DSH Web GUI: a docked companion you can drag, feed and play with.\\\",\\n        \\\"zh\\\": \\\"DSH Web GUI 里的桌面宠物：右下角悬浮、可拖拽投喂玩耍的成长型伙伴。\\\"\\n      },\\n      \\\"icon\\\": \\\"icons/whale-girl.png\\\",\\n      \\\"author\\\": \\\"vlln\\\",\\n      \\\"homepage\\\": \\\"https://github.com/vlln/whale-girl#readme\\\",\\n      \\\"repository\\\": {\\n        \\\"url\\\": \\\"https://github.com/vlln/whale-girl\\\"\\n      },\\n      \\\"metadata\\\": {\\n        \\\"category\\\": \\\"interface\\\",\\n        \\\"keywords\\\": [\\n          \\\"pet\\\",\\n          \\\"desktop\\\",\\n          \\\"companion\\\",\\n          \\\"ui\\\",\\n          \\\"fun\\\"\\n        ],\\n        \\\"labels\\\": [],\\n        \\\"sortKeys\\\": {}\\n      },\\n      \\\"versions\\\": [\\n        {\\n          \\\"version\\\": \\\"0.2.4\\\",\\n          \\\"publishTimestamp\\\": 1793363051,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"npm\\\"\\n          }\\n        },\\n        {\\n          \\\"version\\\": \\\"0.1.0\\\",\\n          \\\"publishTimestamp\\\": 1787158008,\\n          \\\"source\\\": {\\n            \\\"type\\\": \\\"npm\\\"\\n          }\\n        }\\n      ]\\n    }\\n  ]\\n}\\n\"\n    },\n    {\n      \"path\": \"scripts/build-index.mjs\",\n      \"content\": \"/**\\n * 生成 index.json：把 plugins/*.json 的手写事实 + 探测到的真实发布事实，\\n * 合并成插件市场索引 format 1，然后用官方校验器自检，最后写盘。\\n *\\n * 事实来源（权威，不手填）：\\n * - git 源：GitHub 默认分支 HEAD 的 commit + 该 commit 上的 package.json（version / engines.dsh）\\n * - npm 源：registry 的 dist-tags + 每个版本的发布时间与 engines.dsh\\n *\\n * 手填的只有展示层：title / description / category / keywords / icon。\\n * 环境变量：GITHUB_TOKEN（CI 里给，避免 60 次/小时的匿名限流）\\n */\\nimport { readdir, readFile, writeFile } from 'node:fs/promises'\\nimport { dirname, join } from 'node:path'\\nimport { fileURLToPath } from 'node:url'\\n\\nimport { parseMarketIndex } from '@deepseek-ai/dsh-plugin-market-index'\\n\\nconst ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')\\nconst INDEX_URL = process.env.INDEX_URL ?? 'https://raw.githubusercontent.com/vlln/plugin-registry/main/index.json'\\nconst GITHUB_TOKEN = (process.env.GITHUB_TOKEN ?? '').trim()\\n\\nconst TITLE = { en: \\\"vlln's DSH plugins\\\", zh: 'vlln 的 dsh 插件' }\\nconst DESCRIPTION = {\\n  en: 'DeepSeek Harness plugins by vlln. Add this file as an index source under Plugins → Discover.',\\n  zh: 'vlln 开发的 DeepSeek Harness 插件。把本文件加成 Plugins → Discover 里的索引源即可浏览。',\\n}\\n\\n/** 分类 id → 标题。插件只能引用这里声明过的 id。 */\\nconst CATEGORIES = {\\n  content: { title: { en: 'Content', zh: '内容' } },\\n  conversation: { title: { en: 'Conversation', zh: '会话' } },\\n  workspace: { title: { en: 'Workspace', zh: '工作区' } },\\n  workflow: { title: { en: 'Workflow', zh: '工作流' } },\\n  interface: { title: { en: 'Interface', zh: '界面' } },\\n}\\n\\nconst headers = {\\n  accept: 'application/vnd.github+json',\\n  ...(GITHUB_TOKEN === '' ? {} : { authorization: `Bearer ${GITHUB_TOKEN}` }),\\n}\\n\\n/** @param {string} url @param {Record<string, string>} [init] */\\nasync function getJson(url, init) {\\n  let response\\n  try {\\n    response = await fetch(url, { headers: { ...headers, ...init } })\\n  } catch (error) {\\n    throw new Error(`fetch ${url} failed: ${error?.cause?.message ?? error?.message ?? String(error)}`)\\n  }\\n  if (!response.ok) throw new Error(`${url} → HTTP ${response.status}`)\\n  return response.json()\\n}\\n\\n/** GitHub 默认分支 HEAD：commit sha + committer 时间（秒）。 */\\nasync function headOf(repo) {\\n  const commits = await getJson(`https://api.github.com/repos/${repo}/commits?per_page=1`)\\n  const head = Array.isArray(commits) ? commits[0] : undefined\\n  if (head === undefined) throw new Error(`${repo}: no commits`)\\n  return {\\n    sha: head.sha,\\n    timestamp: Math.floor(Date.parse(head.commit.committer.date) / 1000),\\n  }\\n}\\n\\n/**\\n * 某个 commit 上的 package.json。走 api.github.com（raw.githubusercontent.com 在\\n * 部分网络下会单个 15 分钟级超时，见 AGENTS.local.md），用 raw 媒体类型取正文。\\n */\\nasync function manifestAt(repo, sha) {\\n  const url = `https://api.github.com/repos/${repo}/contents/package.json?ref=${sha}`\\n  let response\\n  try {\\n    response = await fetch(url, { headers: { ...headers, accept: 'application/vnd.github.raw+json' } })\\n  } catch (error) {\\n    throw new Error(`fetch ${url} failed: ${error?.cause?.message ?? error?.message ?? String(error)}`)\\n  }\\n  if (!response.ok) throw new Error(`${repo}@${sha.slice(0, 7)} package.json → HTTP ${response.status}`)\\n  return response.json()\\n}\\n\\n/** npm 上全部版本（新→旧），带发布时间与 engines.dsh。 */\\nasync function npmVersions(name) {\\n  const encoded = name.replace('/', '%2F')\\n  const registry = await getJson(`https://registry.npmjs.org/${encoded}`)\\n  const versions = Object.keys(registry.versions ?? {})\\n    .filter(version => registry.time?.[version] !== undefined)\\n    .map(version => ({\\n      version,\\n      publishTimestamp: Math.floor(Date.parse(registry.time[version]) / 1000),\\n      engines: registry.versions[version].engines ?? {},\\n    }))\\n  if (versions.length === 0) throw new Error(`${name}: npm has no version with a publish time`)\\n  return versions.sort((left, right) => (left.version === right.version ? 0 : left.version < right.version ? 1 : -1))\\n}\\n\\n/** @param {Record<string, unknown>} entry */\\nasync function buildPlugin(entry) {\\n  const plugin = {\\n    name: entry.name,\\n    ...(entry.title === undefined ? {} : { title: entry.title }),\\n    ...(entry.description === undefined ? {} : { description: entry.description }),\\n    ...(entry.icon === undefined ? {} : { icon: entry.icon }),\\n    ...(entry.author === undefined ? {} : { author: entry.author }),\\n    ...(entry.homepage === undefined ? {} : { homepage: entry.homepage }),\\n    repository: { url: `https://github.com/${entry.repo}` },\\n    metadata: {\\n      category: entry.category,\\n      keywords: entry.keywords ?? [],\\n      labels: [],\\n      sortKeys: {},\\n    },\\n  }\\n\\n  if (entry.source === 'npm') {\\n    const versions = await npmVersions(entry.name)\\n    plugin.versions = versions.map(({ version, publishTimestamp, engines }) => ({\\n      version,\\n      publishTimestamp,\\n      source: { type: 'npm' },\\n      ...(typeof engines.dsh === 'string' ? { engines: { dsh: engines.dsh } } : {}),\\n    }))\\n    return plugin\\n  }\\n\\n  const head = await headOf(entry.repo)\\n  const manifest = await manifestAt(entry.repo, head.sha)\\n  const dshRange = manifest.engines?.dsh\\n  plugin.versions = [\\n    {\\n      version: manifest.version,\\n      publishTimestamp: head.timestamp,\\n      source: { type: 'git', url: `https://github.com/${entry.repo}`, commit: head.sha },\\n      ...(typeof dshRange === 'string' ? { engines: { dsh: dshRange } } : {}),\\n    },\\n  ]\\n  return plugin\\n}\\n\\nconst files = (await readdir(join(ROOT, 'plugins'))).filter(file => file.endsWith('.json')).sort()\\nconst entries = []\\nfor (const file of files) {\\n  const entry = JSON.parse(await readFile(join(ROOT, 'plugins', file), 'utf8'))\\n  if (entry.category !== undefined && !Object.hasOwn(CATEGORIES, entry.category)) {\\n    throw new Error(`${file}: category ${JSON.stringify(entry.category)} is not declared in CATEGORIES`)\\n  }\\n  entries.push({ file, entry })\\n}\\n\\nconst document = {\\n  format: 1,\\n  title: TITLE,\\n  description: DESCRIPTION,\\n  metadata: { categories: CATEGORIES, labels: {}, sortKeys: {} },\\n  plugins: [],\\n}\\n\\nfor (const { file, entry } of entries) {\\n  try {\\n    document.plugins.push(await buildPlugin(entry))\\n  } catch (error) {\\n    throw new Error(`${file}: ${error instanceof Error ? error.message : String(error)}`)\\n  }\\n}\\n\\n// 官方校验器是唯一裁判：任何一条规则不过就抛（带 JSON 路径），绝不写盘。\\nconst validated = parseMarketIndex(document, INDEX_URL)\\n\\nawait writeFile(join(ROOT, 'index.json'), `${JSON.stringify(document, null, 2)}\\\\n`)\\n\\nconst lines = validated.plugins.map(plugin => {\\n  const versions = plugin.versions.map(version => version.version).join(', ')\\n  return `  ${plugin.name.padEnd(26)} ${versions}`\\n})\\nconsole.log(`index.json: ${validated.plugins.length} plugins, ${validated.plugins.reduce((sum, plugin) => sum + plugin.versions.length, 0)} versions`)\\nconsole.log(lines.join('\\\\n'))\\n\"\n    },\n    {\n      \"path\": \"plugins/dsh-share-link.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@vlln/dsh-share-link\\\",\\n  \\\"repo\\\": \\\"vlln/dsh-share-link\\\",\\n  \\\"source\\\": \\\"git\\\",\\n  \\\"title\\\": { \\\"en\\\": \\\"Share Link\\\", \\\"zh\\\": \\\"分享链接\\\" },\\n  \\\"description\\\": {\\n    \\\"en\\\": \\\"Publish a conversation or an artifact as a read-only public link — no dsh needed on the reader's side, revoke anytime.\\\",\\n    \\\"zh\\\": \\\"把一段对话或一个产物发布成只读公网链接：对方无需安装 dsh，随时可撤销。\\\"\\n  },\\n  \\\"author\\\": \\\"vlln\\\",\\n  \\\"icon\\\": \\\"icons/dsh-share-link.svg\\\",\\n  \\\"homepage\\\": \\\"https://github.com/vlln/dsh-share-link#readme\\\",\\n  \\\"category\\\": \\\"content\\\",\\n  \\\"keywords\\\": [\\\"share\\\", \\\"publish\\\", \\\"link\\\", \\\"snapshot\\\", \\\"cloudflared\\\", \\\"surge\\\"]\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"b237efdfd8227b71c385d36b62e323de08a9848f\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"a0671e291527221fd7c0a640c079e216830308ce5d27f9eeb2049090529d46ce\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 510,\n        \"words\": 10539\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 175,\n        \"code\": 136,\n        \"comments\": 27,\n        \"blank\": 18\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "fe6ca1a7ee695ba3e96338f7a64ac15791c28578b2c9500ab778b1035ff8a03a"
+        }
+    },
+    "unavailable_artifacts": []
+}

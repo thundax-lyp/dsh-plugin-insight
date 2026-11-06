@@ -1,0 +1,45 @@
+{
+    "repository": "ExElectron/dsh-gov-portal",
+    "repository_id": 1339390127,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 55,
+    "pushed_at": "2026-08-27T10:44:39Z",
+    "issues": {
+        "open": 2,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-gov-portal",
+        "captured_at": "2026-11-06T03:54:04.696Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/dsh-gov-portal",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-06T03:54:04.696Z",
+            "source_url": "https://registry.npmjs.org/dsh-gov-portal",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

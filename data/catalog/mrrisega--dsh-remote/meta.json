@@ -1,0 +1,45 @@
+{
+    "repository": "mrRisega/dsh-remote",
+    "repository_id": 1339875264,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 58,
+    "pushed_at": "2026-10-29T16:40:34Z",
+    "issues": {
+        "open": 7,
+        "closed": 1,
+        "created_30d": 7,
+        "closed_30d": 0,
+        "updated_30d": 7
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@mrrisega/dsh-remote",
+        "captured_at": "2026-11-06T03:54:04.696Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 7936,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40mrrisega%2Fdsh-remote",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-29T17:05:30.015Z",
+            "captured_at": "2026-11-06T03:54:04.696Z",
+            "source_url": "https://registry.npmjs.org/%40mrrisega%2Fdsh-remote",
+            "error": null,
+            "latest_version": "0.7.9",
+            "latest_published_at": "2026-10-29T16:45:35.028Z",
+            "latest_error": null
+        }
+    }
+}

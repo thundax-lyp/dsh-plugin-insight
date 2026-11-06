@@ -1,0 +1,66 @@
+{
+    "repository": "zhuiyueya/dsh-im-gateway",
+    "repository_id": 1333785789,
+    "captured_at": "2026-11-06T03:54:04.696Z",
+    "window_start": "2026-10-07T03:54:04.696Z",
+    "stars": 59,
+    "pushed_at": "2026-09-27T07:13:37Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhuiyueya%2Fdsh-im-gateway%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FE12:1DA4F3:DAC5D:ECE8B:6AED4F8D and timestamp 2026-11-06 03:54:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhuiyueya%2Fdsh-im-gateway%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FEE6:1CA151:D61FC:E841D:6AED4F8F and timestamp 2026-11-06 03:54:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhuiyueya%2Fdsh-im-gateway%20is%3Aissue%20created%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FF8C:1D7117:DEF32:F1237:6AED4F90 and timestamp 2026-11-06 03:54:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhuiyueya%2Fdsh-im-gateway%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0408:4480E:D3512:E5785:6AED4F92 and timestamp 2026-11-06 03:54:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhuiyueya%2Fdsh-im-gateway%20is%3Aissue%20updated%3A2026-10-07T03%3A54%3A04.696Z..2026-11-06T03%3A54%3A04.696Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 04BC:1CA211:EA090:FC45F:6AED4F93 and timestamp 2026-11-06 03:54:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "47792a8711b983455f3a21690de57f0e51360404",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-im-gateway",
+        "captured_at": "2026-11-06T03:54:04.696Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 1283,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/dsh-im-gateway",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T02:08:57.592Z",
+            "captured_at": "2026-11-06T03:54:04.696Z",
+            "source_url": "https://registry.npmjs.org/dsh-im-gateway",
+            "error": null,
+            "latest_version": "0.3.3",
+            "latest_published_at": "2026-10-22T12:23:13.891Z",
+            "latest_error": null
+        }
+    }
+}
