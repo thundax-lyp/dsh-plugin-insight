@@ -29,9 +29,9 @@
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
-| [dsh-im](#plugin-1334561781-root) | 把即时通讯机器人与本机 DSH 会话和工作区连接。 | [Q05](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q05) 在非敏感私聊和固定工作区试用，结果未知时暂停并对账。 |
 | [dsh-im-connect](#plugin-1335758624-root) | 把多账号 IM 聊天接入 DSH，支持会话绑定、审批和断线后交付。 | [Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 从隔离私聊开始验收，随后扩展至群聊。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
+| [dsh-lark-link](#plugin-1333470417-root) | DSH原生飞书/Lark桥，组合会话Agent、卡片、入站重放/出站队列及媒体回传。 | [Q06](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q06)观察；所有入口/实际只读/回放副作用未核前不接真实群或生产目录，未知回官方Web和人工对账。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 通过 Mac Companion 在 DSH 发通知、运行 Shortcuts 和读写剪贴板。 | [Q03](../../plugins/173787247--dsh-mac-companion/INSIGHT.md#research-q03) 仅用隔离 Mac 和无敏感通知开始，执行状态不明时回本机。 |
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。 | 远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q02)、[Q03](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q03)。 |
@@ -52,6 +52,7 @@
 | [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
 | [Plugin Session Export](#plugin-1333152408-packages-plugins-plugin-session-export) | 把 DSH live 会话投影为可读 Markdown 或自包含 HTML，并可隐藏工具参数结果 | [Q04](../../plugins/whyihaveyou--dsh-suite--packages-plugins-plugin-session-export/INSIGHT.md#research-q04) 建议个人去敏单会话有限试用，写新目录并对JSONL核查；mini必须人工审阅后才分享。 |
 | [QQBot 增强版](#plugin-1357268674-root) | 把 QQ 消息接入 DSH 会话，并提供富媒体、交付文件发送和 Web 设置。 | [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04) 先在受控群确认名单和静默策略，再测试一个文件并保留人工退路。 |
+| [Reactive Resume](#plugin-249995750-root) | 独立简历/求职文档应用，以认证MCP/API编辑用户文档、保留版本并生成PDF导出。 | [Q05](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q05)独立账户虚构数据/只读起步，版本+差异核后小写，PDF逐页验；不明退Web和本机已验文档。 |
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
@@ -331,22 +332,6 @@
 
 [查看完整分析](../../plugins/7gzgn--dsh-file-handover/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1334561781-root"></a>
-
-## [dsh-im](../../plugins/xmanrui--dsh-im/INSIGHT.md)
-
-[![GitHub ★ 3,023](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C023&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/xmanrui/dsh-im) [![npm 30d 79,244](https://img.shields.io/static/v1?label=npm+30d&message=79%2C244&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@xmanrui/dsh-im)
-
-> **用途**：[Q01](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q01) 用户希望从授权 IM 私聊操作本机 DSH，并把结果回到正确会话。
-
-> **亮点**：[Q02](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q02) 把 IM 消息映射到 DSH 工作区会话并回传，减少单独搭桥工作；不保证所有渠道具备相同能力。
-
-> **思考**：[Q03](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q03) 部分交付、未知结果及文件读取范围使目标、权限与平台记录核验必要。
-
-> **建议**：[Q04](../../plugins/xmanrui--dsh-im/INSIGHT.md#research-q04) 会话发送前展示目标和文件范围或能减少误投；需要对照实验，尚未验证。
-
-[查看完整分析](../../plugins/xmanrui--dsh-im/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1335758624-root"></a>
 
 ## [dsh-im-connect](../../plugins/michengai--dsh-im-connect/INSIGHT.md)
@@ -378,6 +363,22 @@
 > **建议**：可研究源hash/规则版本批次清单与待审核集合，确认条目才结算，并在受限worker限解压预算。当前未验证。详见[Q06](../../plugins/988hj7tczd-oss--dsh-invoice-tools/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/988hj7tczd-oss--dsh-invoice-tools/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333470417-root"></a>
+
+## [dsh-lark-link](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md)
+
+[![GitHub ★ 45](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/amlyczz/dsh-lark-link) [![npm 30d 3,293](https://img.shields.io/static/v1?label=npm+30d&message=3%2C293&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lark-link) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-lark-link)
+
+> **用途**：dsh-lark-link0.6.2是MIT的DSH原生飞书/Lark双向桥，Node>=24、Lark SDK^1.73及大量Host服务peer为*，开发依赖0.1.2-rc.1不等当前Host兼容已验。面对已有私人DSH且需要手机派低风险任务/看结果的人，相比原生Web/终端和普通飞书机器人，新增是通道会话/卡片/重投组合；真实Agent模型/工具执行属于外部Host，卡片DONE和聊天回复不证明任务正确。
+
+> **亮点**：[Q02](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q02)真实远程Host接线；[Q03](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q03)有界replay/salvage；[Q04](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q04)outbox lane/回卡组合。
+
+> **思考**：[Q02](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q02)默认开放/full access及卡片访问控制不同；[Q03](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q03)/[Q04](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q04)吞写盘失败/误完成/重复任务送达；[Q05](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q05)链接与raw诊断敏感面。
+
+> **建议**：[Q06](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q06)先统一操作者/逐请求关联与三层收据，比继续重试/卡片更值得验证。
+
+[查看完整分析](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1384810483-root"></a>
 
@@ -698,6 +699,22 @@
 > **建议**：[Q05](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q05) 对照按安排去重，测试带确认状态的去重和可控重试。
 
 [查看完整分析](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-249995750-root"></a>
+
+## [Reactive Resume](../../plugins/reactive-resume--reactive-resume/INSIGHT.md)
+
+[![GitHub ★ 45,386](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=45%2C386&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume)
+
+> **用途**：Reactive Resume6.1.0是独立Web/服务应用及MCP接口，根包为private workspace，不是DSH原生插件或单个Skill。它面向需要维护、修改、导出和分享简历/求职信并追踪申请的人；外部助手可经MCP操作用户文档，DSH若接入也只是兼容客户端。合格结果是事实准确、目标岗位匹配、文件可读且公开范围符合本人意愿，不是保存成功或录用保证。
+
+> **亮点**：[Q02](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q02)结构化履历的认证可编程编辑、版本与客户端同步；[Q04](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q04)短链接连接实际渲染导出，非录用或事实保证。
+
+> **思考**：[Q03](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q03)预期版本可选、写可影响公开，恢复不撤外流；[Q04](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q04)链接非冻结版本，PDF缺字/告警和真实排版仍须人验。
+
+> **建议**：[Q05](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q05)写前版本/公开差异和写后导出件/告警签收，故障对照验误写/误公开/返工，未实现不加分。
+
+[查看完整分析](../../plugins/reactive-resume--reactive-resume/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1294614772-root"></a>
 

@@ -1,34 +1,44 @@
 {
     "repository": "PC2005-cloud/dsh-pet",
     "repository_id": 1333652151,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 5153,
-    "pushed_at": "2026-11-01T06:09:11Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 5648,
+    "pushed_at": "2026-11-06T06:38:41Z",
     "issues": {
-        "open": 1,
-        "closed": 164,
-        "created_30d": 108,
-        "closed_30d": 110,
-        "updated_30d": 111
+        "open": 3,
+        "closed": 198,
+        "created_30d": 140,
+        "closed_30d": 138,
+        "updated_30d": 140
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-pet",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 298546,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-pet",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 415863,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-pet",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-14T08:48:57.448Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
             "source_url": "https://registry.npmjs.org/dsh-pet",
             "error": null,
-            "latest_version": "0.3.8",
-            "latest_published_at": "2026-10-22T03:19:38.514Z",
+            "latest_version": "0.4.3",
+            "latest_published_at": "2026-11-04T15:13:35.112Z",
             "latest_error": null
         }
     }

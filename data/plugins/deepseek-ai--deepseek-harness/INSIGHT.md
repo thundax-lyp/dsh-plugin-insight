@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[ce7073d](https://github.com/deepseek-ai/deepseek-harness/tree/ce7073d51254c26cd63b22a60835b8f948deb447)
+源码版本：[fcc0ad4](https://github.com/deepseek-ai/deepseek-harness/tree/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159)
 
 <!-- BEGIN META -->
-[![GitHub ★ 267,009](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=267%2C009&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
+[![GitHub ★ 273,708](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=273%2C708&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/deepseek-ai/deepseek-harness)
 <!-- END META -->
 
-> **功能**：基于插件组合提供 Agent 运行、工具调用、会话和交互的开源宿主。
+> **功能**：基于 Cordis 插件架构的开源 Agent 宿主，可组合模型、工具、执行策略、会话与交互界面。
 
-> **亮点**：宿主将插件配置、作用域工具分派和会话事件组织为可组合接缝；Cordis 基础来自上游，实际采用收益仍需任务对照。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将profile准入、作用域工具执行、审批/取消结果与会话耐久检查点组织为可扩展接缝，缺执行器/无审批渠道/flush失败都有真实拒绝路径，见 [Q02](#research-q02)至 [Q05](#research-q05)。
 
-> **主要限制**：版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
+> **主要限制**：版本准入不是运行契约或权限验证；默认policy allow不等每动作人批，ABORTED不撤副作用，内存事件/工具结果不是外部效果与持久共同事务，见 [Q03](#research-q03)至 [Q05](#research-q05)。
 
 **本文目录**
 
@@ -26,11 +26,13 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要它，它和直接编写 Agent 程序有什么区别？](#detail-section-11)
-  - [Q02 · 模型工具调用从循环到审批和执行如何接线？](#detail-section-12)
-  - [Q03 · profile 和版本准入能保证运行兼容吗？](#detail-section-13)
-  - [Q04 · 会话事件和取消对恢复意味着什么？](#detail-section-14)
-  - [Q05 · 如何进行有边界的试用，有什么可证伪假设？](#detail-section-15)
+  - [Q01 · 根仓是插件还是宿主基础设施，为谁改变什么？](#detail-section-11)
+  - [Q02 · profile和版本准入如何形成实际配置，是否等于运行兼容？](#detail-section-12)
+  - [Q03 · 模型工具调用怎样执行并回到Agent，作用域代表什么？](#detail-section-13)
+  - [Q04 · 审批、守卫和取消真实限制哪些动作？](#detail-section-14)
+  - [Q05 · 会话日志什么时候算持久，写失败是否还会执行？](#detail-section-15)
+  - [Q06 · 什么具体用法值得先试，完整负担与退路是什么？](#detail-section-16)
+  - [Q07 · 可借鉴的生产方向是什么，哪些条件会推翻？](#detail-section-17)
 
 <a id="detail-section-1"></a>
 
@@ -40,77 +42,89 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要组装模型、工具和交互面的开发者可使用该 Agent 宿主；对既有 SDK 方案的实际收益尚无同条件对照。[Q01](#research-q01)
+> **用途**：需要组装模型/工具/交互面的开发者，用一个脱敏只读任务核接线与故障，而非将宿主当第三方插件安装，见 [Q01](#research-q01)。
 
-直接使用模型 SDK 编写循环与工具调用是参照；该宿主提供组合和会话接缝，也引入版本、配置和维护成本。[Q01](#research-q01)
+自写SDK Agent循环/工具UI和既有宿主。根项目提供可组合接缝，Cordis和各执行能力来自上游/子包；没有同任务维护成本对照。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
+| 能力 | 用途 | 条件与边界 |
 | --- | --- | --- |
-| Profile 与 bundle 组合 | 将插件补丁组成宿主配置 | 不兼容项可跳过；版本通过不证明行为兼容 |
-| Native 工具执行 | 对模型工具调用应用策略并分派 | 具体配置和其他执行器需分别验证 |
-| Session 事件持久化 | 将会话事件交给配置的后端并刷新 | 内存提交不是耐久屏障，外部副作用不会自动回滚 |
+| profile | bundle/用户层组合 | skipped需查，semver非运行保证 |
+| Agent循环 | 模型到工具与后续步骤 | completed非业务验收 |
+| native执行 | policy/ask/guard/body/result | 非全部executor/OS隔离 |
+| approval | once决定与审计 | 真实answerer身份本轮未全审 |
+| 会话持久 | buffer到sync/检查点 | 条件接线、外部效果非共同事务 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| Node 与安装成品 | 必需 | 启动宿主 | 版本或产物不符时不能假定启动 |
-| 模型与凭据 | 模型任务需要 | 模型推理 | 权限、费用和可用性由配置决定 |
-| 存储后端与 flush | 耐久会话需要 | 持久化事件 | 未配置或失败不能假定事件已落盘 |
-| 审批服务 | 需要询问的工具调用需要 | 路由审批 | 不存在或无 Agent 时拒绝 |
+#### 依赖
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| 条件 | 用途 | 缺失/边界 |
 | --- | --- | --- |
-| 准备 | 开发者选择隔离配置和模型 | 依赖或权限不明确时停止 |
-| 组装 | 用户检查 profile 和插件版本 | 被跳过的 bundle 必须单独检查 |
-| 执行 | Agent 在 native 执行器路径发起工具并经过策略与审批 | 该路径拒绝或缺审批时不执行工具体；其他执行器另行核查 |
-| 恢复 | 用户检查事件和外部目标 | 不一致时停止重复执行并核对 |
+| Node>=24.9 / 成品 | Host启动 | private根非发布CLI |
+| Cordis/profile/bundle | 配置与服务作用域 | skipped不等全部加载 |
+| 模型/凭据 | 推理与usage | 可用/费用未验 |
+| 选中executor/工具/实际sandbox | 执行动作 | scope非OS隔离 |
+| 策略/approval answerer | 产生ask与处理决定 | 默认allow非强制人批 |
+| JSONL writer/checkpoint | 耐久边界 | 任意profile不能套base保证 |
+
+#### 步骤
+
+| 步骤 | 操作 | 判据/退路 |
+| --- | --- | --- |
+| 准备 | 脱敏独立profile/环境/备份 | 固定版本和一个只读工具 |
+| 配置 | 查skipped与actual executor | range通过仍核服务 |
+| 一任务 | 读小文件给可核答案 | 查Host callId/结果 |
+| 审批 | ask无渠道/never拒绝 | 不靠模型confirmed |
+| 持久 | flush并重启读取 | 无writer false需识别 |
+| 退出 | 停工作/存日志/撤权限 | 回已知profile/SDK |
+
+**效果与成本**
 
 #### 成本
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
+| 阶段 | 现金/资源 | 人工时间 | 边界 |
 | --- | --- | --- | --- |
-| 首次使用 | Node、存储及模型费用未知 | profile、权限与凭据配置耗时未知 | 开发预览需要自行验收 |
-| 持续使用 | 模型、计算和存储开销未知 | 插件兼容和任务复核 | 无同条件节时数据 |
-| 失败恢复 | 重试与外部副作用代价未知 | 核对日志、目标及备份 | 取消并不撤销已完成写入 |
+| 首次 | Node/成品/模型/隔离环境 | profile/权限/备份/接线 | 未测工时/费用 |
+| 持续 | 模型/工具/会话磁盘 | 插件升级/策略/任务复核 | 不因可组合推节时 |
+| 失败 | 重试/部分外部影响 | 日志与实际目标核对 | 无通用回滚/幂等 |
+| 退出 | 日志/附件/后台状态 | 停工作/撤凭据/清理 | 取消不等撤销 |
 
 #### 效果
 
-| 效果项 | 当前证据支持 | 尚不能确定 |
+| 项目 | 当前支持 | 未确认 |
 | --- | --- | --- |
-| 可组合宿主 | profile 与作用域工具机制存在 | 插件实际互换成本 |
-| 受控执行 | native 路径有策略、询问和守卫 | 所有部署和工具的权限正确性 |
-| 会话存储 | 内存事件、后端路由与 flush 契约存在 | 崩溃恢复率和外部副作用 |
+| 组合 | profile patch/版本声明 | 实际插件互换工时 |
+| 执行 | native策略/审批/guard/body | 全部工具/部署安全 |
+| 持久 | JSONL追加sync与checkpoint | 全迁移/断电/外部exactly-once |
+| 开发收益 | 可复用接缝 | 同任务错误/维护成本降低 |
 
-> **思考**：版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
+> **思考**：版本准入不是运行契约或权限验证；默认policy allow不等每动作人批，ABORTED不撤副作用，内存事件/工具结果不是外部效果与持久共同事务，见 [Q03](#research-q03)至 [Q05](#research-q05)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：宿主将插件配置、作用域工具分派和会话事件组织为可组合接缝；Cordis 基础来自上游，实际采用收益仍需任务对照。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：将profile准入、作用域工具执行、审批/取消结果与会话耐久检查点组织为可扩展接缝，缺执行器/无审批渠道/flush失败都有真实拒绝路径，见 [Q02](#research-q02)至 [Q05](#research-q05)。
 
-profile 显式记录跳过的 bundle；工具按作用域选择执行器，native 管线有审批与取消分支；JSONL 将事件排队并由 flush 建立耐久边界。这些接缝不能替代真实宿主与故障测试。[Q02](#research-q02) [Q04](#research-q04)
+native执行/真实approval与持久失败接线具体，scope和事件等接缝可扩展；必须限定base/特定executor/checkpoint条件，不能拿接口/实验状态代全部署验收，见 [Q02](#research-q02)至 [Q05](#research-q05)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-版本声明通过不代表运行兼容；取消等待已启动工具结束也不撤销外部副作用，内存事件尚需持久化屏障，恢复必须核对实际目标。[Q03](#research-q03) [Q04](#research-q04)
+版本准入不是运行契约或权限验证；默认policy allow不等每动作人批，ABORTED不撤副作用，内存事件/工具结果不是外部效果与持久共同事务，见 [Q03](#research-q03)至 [Q05](#research-q05)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-适合有 Agent 扩展需求的开发者先在隔离 profile、固定模型和小任务上验收；服务缺失、非预期写入或重启不一致时停止并回到已知配置。[Q05](#research-q05)
+开发者在独立脱敏profile只接一个已审只读工具，核答案/审批拒绝/flush重启；任何未预期副作用或状态不一致就停并回已知配置，见 [Q06](#research-q06)。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +132,20 @@ profile 显式记录跳过的 bundle；工具按作用域选择执行器，nativ
 
 **核查状态**：已检查源码。
 
-固定源码支持所列代表链路的机制解释，未运行宿主、插件或任务；未来设计为假设。
+根private monorepo为基础设施，0.2.2-rc.1。已定向核profile/兼容、base native工具dispatch与approval服务、Session内存到JSONL实际append/fsync和checkpoint；未运行或全审12168文件、全部工具/PTC/远程/桌面/Web鉴权/沙箱/迁移。
 
-- 已检查：作者 README、包清单、源码路径 README.md、packages/boot/app-boot/src/profile.ts、packages/core/tools/src/index.ts、packages/core/agent-loop/src/agent.ts、packages/bundle/base/cordis.patch.yml、packages/core/tool-executor-native/src/index.ts、packages/core/tools/src/pipeline.ts、packages/boot/app-boot/src/plugin-compatibility.ts、package.json、SAFETY.md、packages/core/session/src/index.ts、packages/session/session-persistence-jsonl/src/storage.ts、packages/session/session-persistence/src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.zh.md、SAFETY.md、package.json、packages/boot/app-boot/src/plugin-compatibility.ts、packages/boot/app-boot/src/profile.ts、packages/bundle/base/cordis.patch.yml、packages/core/agent-loop/src/agent.ts、packages/core/session/src/index.ts、packages/core/tool-executor-native/src/index.ts、packages/core/tools/src/index.ts、packages/core/tools/src/pipeline.ts、packages/interaction/user-approval/src/index.ts、packages/session/session-checkpoint-policy/src/index.ts、packages/session/session-persistence-jsonl/src/index.ts、packages/session/session-persistence-jsonl/src/storage.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：完整 monorepo 固定提交的 profile、native 工具执行及 session/JSONL 代表链路；未逐一审计 11888 个文件、其他执行器、宿主部署或插件，未执行目标。
-- 下一步：用隔离 profile 和固定模型分别验证插件加载、审批缺失、工具取消与持久化屏障；对照目标文件及重启结果，记录失败点。
+- 边界：root/README/SAFETY；profile加载/兼容；base tools/native/checkpoint/JSONL行；Agent最终消息和tool batch；scoped executor/pipeline snapshot/policy/guard/body/cancel；approval服务asked/decided/never/answerer；Session commit/flush、JSONL live buffer/contiguous/append fsync与rollback。未执行，未全审所有工具体/PTC/远程/沙箱/真实答复UI/多平台generation迁移/全部宿主入口。
+- 下一步：- 下一步单脱敏文件/只读工具核实际callId、答案、approval拒绝与重启日志。
+- 固定四类接缝故障，核下游是否真实未执行及已发生影响。
+- 没有运行Host/工具/模型或测试，不把仓内测试声明当本轮结果。
 
 **分析版本**
 
 - **仓库**：[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
-- **版本号**：0.2.2-alpha.2（[固定提交 ce7073d](https://github.com/deepseek-ai/deepseek-harness/tree/ce7073d51254c26cd63b22a60835b8f948deb447)）
-- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.2-rc.1（[固定提交 fcc0ad4](https://github.com/deepseek-ai/deepseek-harness/tree/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159)）
+- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +153,11 @@ profile 显式记录跳过的 bundle；工具按作用域选择执行器，nativ
 
 <a id="innovation"></a>
 
-未验证假设：在插件升级中增加作用域可见性、审批、取消和持久化接缝测试，可能比只检查版本范围发现更多真实不兼容；应比较故障检出、误报和维护时间，若额外收益不足以覆盖成本则否定。[Q05](#research-q05)
+升级时增加scope卸载/ask无渠道/已执行取消/落盘失败四接缝样本，与仅semver比较真实检出和维护负担；无净收益就放弃，见 [Q07](#research-q07)。
 
-用隔离 profile 和固定模型分别验证插件加载、审批缺失、工具取消与持久化屏障；对照目标文件及重启结果，记录失败点。
+- 下一步单脱敏文件/只读工具核实际callId、答案、approval拒绝与重启日志。
+- 固定四类接缝故障，核下游是否真实未执行及已发生影响。
+- 没有运行Host/工具/模型或测试，不把仓内测试声明当本轮结果。
 
 <a id="detail-section-9"></a>
 
@@ -148,20 +166,22 @@ profile 显式记录跳过的 bundle；工具按作用域选择执行器，nativ
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4583 | 445208 | — | — | 6503882 |
-| .mjs | source | 116 | 9859 | 7700 | 1601 | — |
-| .mjs | test | 12 | 3394 | 3209 | 83 | — |
-| .ts | source | 3050 | 538389 | 385921 | 120301 | — |
-| .ts | test | 2756 | 731803 | 641602 | 37895 | — |
-| .mjs | example | 68 | 4664 | 4141 | 324 | — |
-| .ts | example | 117 | 5587 | 4541 | 585 | — |
-| .md | test | 298 | 6745 | — | — | 57974 |
-| .js | source | 10 | 342 | 319 | 20 | — |
-| .tsx | source | 430 | 70015 | 55241 | 11384 | — |
+| .md | source | 4713 | 454537 | — | — | 6684587 |
+| .mjs | source | 126 | 10209 | 7993 | 1640 | — |
+| .mjs | test | 16 | 3614 | 3403 | 101 | — |
+| .ts | source | 3083 | 544819 | 390873 | 121490 | — |
+| .ts | test | 2811 | 749139 | 657686 | 38231 | — |
+| .mjs | example | 68 | 4695 | 4171 | 324 | — |
+| .ts | example | 119 | 5718 | 4658 | 595 | — |
+| .md | test | 323 | 7259 | — | — | 62714 |
+| .js | source | 10 | 349 | 326 | 20 | — |
+| .tsx | source | 438 | 71254 | 56214 | 11608 | — |
 | .cjs | example | 3 | 32 | 30 | 2 | — |
-| .tsx | test | 391 | 127122 | 111849 | 6162 | — |
+| .tsx | test | 404 | 131717 | 116257 | 6120 | — |
 | .md | example | 18 | 397 | — | — | 3644 |
 | .js | example | 26 | 504 | 439 | 50 | — |
 | .js | test | 5 | 977 | 851 | 44 | — |
@@ -171,58 +191,181 @@ profile 显式记录跳过的 bundle；工具按作用域选择执行器，nativ
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/deepseek-ai/deepseek-harness/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-11-01。
+统计日期：2026-11-06。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：评估 Agent 宿主的插件组合、工具调用控制与兼容边界，以及试用成本。
+**插件研究总目标**：定向核profile组合、native工具执行/审批/取消和JSONL会话持久检查点代表闭环，限定未审全仓与部署。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要它，它和直接编写 Agent 程序有什么区别？
+### Q01 · 根仓是插件还是宿主基础设施，为谁改变什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-DeepSeek Harness 是提供 Agent 运行和扩展机制的宿主基础设施，而不是第三方 DSH 插件。面向需要组装模型、工具与交互面的开发者，作者描述以插件组合的架构；代码中 profile 加载 bundle 补丁层，工具执行器按作用域注册。相对直接使用模型 SDK 编写循环，这把组合和工具接缝纳入统一宿主；同时也引入 profile、插件版本和生命周期维护。Cordis 的组合基础来自其上游，不能将其原理全部归功于本仓库。源码说明机制，尚无相同任务、同模型的人力和质量对照。
+根包@deepseek-ai/dsh-root为private monorepo，0.2.2-rc.1、Node>=24.9.0、pnpm11.28.5；这是Agent宿主/框架基础设施，不是可单独安装的第三方插件。README给出npx @deepseek-ai/dsh web和源码构建两种渠道，不能把private根包当发布CLI。面向需要组装模型、工具、交互与执行策略的开发者，参照自行用SDK写Agent循环和逐工具接UI，本项将这些接缝做成Cordis插件/作用域服务与profile组合；Cordis架构为上游依赖，不能归成本仓独创。
+
+作者明确开发者预览、兼容破坏预期；SAFETY明示未安全审计、可能执行模型代码/命令、接触被授予的凭据/文件/网络。插件化不等所有部署隔离安全，也不等已验证生产收益。本轮只定向代表执行/会话持久闭环，不把monorepo每个插件/桌面/Web/远程/sandbox全部审过。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-13](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/README.md#L5-L13)
+**依据 1 · 源码核查**：[package.json:1-18](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/package.json#L1-L18)
 
-作者说明 Agent harness、Cordis 和开发预览。
-
-```text
-DeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).
-
-It is built on an **everything-is-a-plugin** architecture and powered by [Cordis](https://github.com/cordiverse/cordis), whose design is described in [_A Programming Paradigm for Spatiotemporal Composability_](https://arxiv.org/abs/2608.25512).
-
-Documentation: [https://deepseek-harness.github.io/deepseek-harness/](https://deepseek-harness.github.io/deepseek-harness/)
-
-## Developer preview
-
-DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**
-```
-
-**依据 2 · 源码核查**：[packages/boot/app-boot/src/profile.ts:678-712](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/profile.ts#L678-L712)
-
-按 profile 列表解析 bundle、版本检查和补丁层。
+private根包/版本/Node与workspace。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-export function loadProfileDirectory(
-  binName: string,
+{
+  "name": "@deepseek-ai/dsh-root",
+  "version": "0.2.2-rc.1",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.5",
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "workspaces": [
+    "vendor/*",
+    "packages/*/*",
+    "native/system",
+    "native/system/packages/*",
+    "apps/*",
+    "website"
+  ],
+```
+
+</details>
+
+**依据 2 · 作者声明**：[README.zh.md:5-14](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.zh.md#L5-L14)
+
+作者宿主定位、Cordis及开发预览。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+DeepSeek Harness（`dsh`）是由 [DeepSeek AI](https://deepseek.com) 开发的开源 agent harness（智能体框架）。
+
+它构建于**一切皆插件**的架构之上，由 [Cordis](https://github.com/cordiverse/cordis) 驱动，其设计参见论文 [_A Programming Paradigm for Spatiotemporal Composability_](https://arxiv.org/abs/2608.25512)。
+
+文档：[https://deepseek-harness.github.io/deepseek-harness/](https://deepseek-harness.github.io/deepseek-harness/)
+
+## 开发者预览
+
+DeepSeek Harness 处于 _开发者预览_ 阶段，正在快速迭代。**未来将出现破坏兼容性的变更。**
+
+```
+
+</details>
+
+**依据 3 · 作者声明**：[README.zh.md:20-45](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.zh.md#L20-L45)
+
+发布CLI与源码构建渠道。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+````text
+
+### 通过 `npm` 运行
+
+安装 `Node.js`，然后运行：
+
+```sh
+npx @deepseek-ai/dsh web
+```
+
+该命令默认会在 `http://127.0.0.1:3080` 启动 Web UI，本机启动时还会用默认浏览器打开页面。通过 SSH 启动时只打印宿主机 URL，因为本地转发地址由 SSH 客户端或编辑器持有。传入 `--no-open` 可仅运行服务器而不打开浏览器。详见 [Web UI 指南](docs/user/guide/index.zh.md)。
+
+<a id="run-from-source"></a>
+
+### 从源码运行
+
+如需从仓库源码运行：
+
+```sh
+git clone https://github.com/deepseek-ai/deepseek-harness.git
+cd deepseek-harness
+pnpm install
+pnpm run build
+pnpm dsh web
+```
+
+`pnpm run build` 会准备仓库产物。`pnpm dsh web` 会直接使用这些已构建产物，不会重新构建。
+````
+
+</details>
+
+**依据 4 · 作者声明**：[SAFETY.md:5-17](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md#L5-L17)
+
+作者明确预览、安全审计与权限边界。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+## Experimental status
+
+DeepSeek Harness is experimental developer-preview software. It has not undergone a security audit and must not be treated as secure or production-ready.
+
+The project can execute model-generated code and commands, load third-party plugins, and access the network, processes, credentials, and files made available to it. Incorrect model output, defects, misconfiguration, malicious input, or untrusted plugins may damage the host computer, modify or delete files, disclose data or credentials, or cause other unintended effects.
+
+## Sandbox limitations
+
+Sandboxing, approval prompts, and permission controls can reduce risk, but they do not guarantee isolation or prevent damage. Even correctly enforced restrictions cannot protect resources that the project is allowed to access.
+
+Do not rely on DeepSeek Harness as the sole security control for untrusted workloads.
+
+## Responsible use
+```
+
+</details>
+
+#### 缺口
+
+- 无与现有SDK同条件接入/维护/业务结果对照，未审全部入口与部署。
+  **影响**：可判断基础设施接缝，不能凭全插件架构承诺生产收益。
+  **进一步探讨**：固定一个已有SDK小任务，比较接入一个工具和交互面的代码/维护/故障恢复，而非比较包数。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · profile和版本准入如何形成实际配置，是否等于运行兼容？
+
+**研究主题**：功能与机制、依赖、兼容与流程
+
+#### 完整回答
+
+loadProfile按manifest.dsh.profile.bundles顺序解析包，要求dsh.bundle声明，校平台/兼容后加载各patch，失败记录skippedBundles而不改manifest；用户层patch最后独立读取，错误不等同跳过整个用户配置。composeEntries对空树应用克隆后的所有patch层，顺序影响实际组合，不能把目录列表当全部已挂载。
+
+兼容检查只读manifest：自有engines.dsh存在时单独决定，忽略dsh peers；否则逐@deepseek-ai/dsh或dsh-* peer校semver，includePrerelease，workspace三种简写映射当前版本。精确name@version→runtime豁免允许带风险继续，但不是调用级权限或运行API验收。能满足range不证明slots/服务/取消/存储契约没变；跳过某bundle的profile仍可能启动而缺功能，必须查skippedBundles和实际服务。
+
+base bundle实际挂tools/native executor（PTC disabled）与session-checkpoint-policy和JSONL持久后端，为后续代表链提供接线；其他profile可覆盖或不选这些行，不给所有部署同一保证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/boot/app-boot/src/profile.ts:680-712](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/boot/app-boot/src/profile.ts#L680-L712)
+
+实际bundle准入、错误记录与用户层。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
   dir: string,
   installAnchor: string,
   options: { userLayer?: boolean } = {},
@@ -260,76 +403,188 @@ export function loadProfileDirectory(
 
 </details>
 
-**依据 3 · 源码核查**：[packages/core/tools/src/index.ts:320-349](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L320-L349)
+**依据 2 · 源码核查**：[packages/boot/app-boot/src/profile.ts:755-762](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/boot/app-boot/src/profile.ts#L755-L762)
 
-作用域内设置和卸载工具执行器。
-
-<details>
-<summary>查看原文（30行）</summary>
+有序patch应用到空配置树。
 
 ```text
-   * Provide the executor for the calling scope; an unscoped contribution is the deployment default.
-   * Rendering any executor-owned section requires the viewing scope's selection to remain available.
-   * @param executor - initialized provider owned by the contributing plugin.
-   * @returns the effect disposer. Unloading leaves the selection unavailable until it is replaced.
-   */
-  setExecutor(executor: ToolExecutor): () => void {
-    const scope = scopeOf(this.ctx)
-    const existing = scope === undefined ? this.root : this.scoped.get(scope)
-    if (existing?.executor !== undefined) throw new Error('Only one tool executor may be registered in each scope')
-    const record: Registration = { executor }
-    // oxlint-disable-next-line typescript/no-misused-promises -- synchronous cleanup; preserve the Cordis disposer identity
-    return this.ctx.effect(function* (this: ToolsService) {
-      for (const section of executor.sections ?? []) {
-        yield this.ctx.systemPrompt.section({
-          name: section.name,
-          order: section.order,
-          ...section.interpolate === undefined ? {} : { interpolate: section.interpolate },
-          text: ({ scope, toolSet }) => {
-            if (this.selectExecutor(scope) !== executor) return ''
-            return typeof section.text === 'function' ? section.text(this.definitions(scope, toolSet)) : section.text
-          },
-        })
-      }
-      if (scope === undefined) this.root = record
-      else this.scoped.set(scope, record)
-      yield () => {
-        // Keep an unavailable selection so a program cannot fall through to a different executor.
-        record.executor = undefined
-      }
-    }.bind(this), 'tools.setExecutor()')
+export function composeEntries(
+  layers: readonly PatchOptions[][], warn: (message: string) => void = () => {},
+): EntryOptions[] {
+  return applyEntryPatches([], structuredClone(layers.flat()), (message: string, ...args: unknown[]) => {
+    let index = 0
+    warn(message.replace(/%C/g, () => JSON.stringify(args[index++])))
+  })
+}
+```
+
+**依据 3 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:49-76](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/boot/app-boot/src/plugin-compatibility.ts#L49-L76)
+
+engines优先、peer与workspace规则。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+}
+
+function satisfies(runtimeVersion: string, range: string): boolean {
+  return range.trim() !== '' && semver.satisfies(runtimeVersion, range, { includePrerelease: true })
+}
+
+function unmetRequirements(fields: Record<string, unknown>, runtimeVersion: string): Record<string, string> {
+  const engines = Object.hasOwn(fields, 'engines') ? objectOf(fields.engines, 'Plugin manifest engines') : {}
+  if (Object.hasOwn(engines, 'dsh')) {
+    const range = engines.dsh
+    if (typeof range !== 'string') throw new Error('Plugin manifest engines.dsh must be a string')
+    return satisfies(runtimeVersion, range) ? {} : { 'engines.dsh': range }
+  }
+  if (!Object.hasOwn(fields, 'peerDependencies')) return {}
+  const dependencies = objectOf(fields.peerDependencies, 'Plugin manifest peerDependencies')
+  const unmet: Record<string, string> = {}
+  for (const [name, range] of Object.entries(dependencies)) {
+    if (typeof range !== 'string') {
+      throw new Error(`Plugin manifest peerDependencies[${JSON.stringify(name)}] must be a string`)
+    }
+    if (name !== '@deepseek-ai/dsh' && !name.startsWith('@deepseek-ai/dsh-')) continue
+    const requirement = ['workspace:^', 'workspace:~', 'workspace:*'].includes(range) ? runtimeVersion : range
+    if (!satisfies(runtimeVersion, requirement)) unmet[name] = range
+  }
+  return unmet
+}
+
+/**
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:89-106](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/boot/app-boot/src/plugin-compatibility.ts#L89-L106)
+
+精确豁免判定。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  exemptions: Readonly<Record<string, readonly string[]>> = {},
+  runtimeVersion = getDshRuntimeVersion(),
+): PluginCompatibility | undefined {
+  runtimeVersionOf(runtimeVersion)
+  const fields = objectOf(manifest, 'Plugin manifest')
+  const requirements = unmetRequirements(fields, runtimeVersion)
+  if (Object.keys(requirements).length === 0) return undefined
+  const name = identityField(fields, 'name')
+  const version = identityField(fields, 'version')
+  const key = `${name}@${version}`
+  const exemptedVersions = Object.hasOwn(exemptions, key) ? exemptions[key] : undefined
+  const exempted = exemptedVersions?.includes(runtimeVersion) === true
+  return { name, version, runtimeVersion, requirements, exempted }
+}
+
+/**
+ * Describe unmet requirements, their risk, and the exact-version remedy.
+ * Surfaces with their own grant mechanism or locale render the structured result themselves.
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/bundle/base/cordis.patch.yml:134-142](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/bundle/base/cordis.patch.yml#L134-L142)
+
+base JSONL后端行。
+
+```text
+    # document.
+    - id: llm-pi-ai
+      name: '@deepseek-ai/dsh-llm-pi-ai'
+
+    - id: session-persistence-jsonl
+      name: '@deepseek-ai/dsh-session-persistence-jsonl'
+      config:
+        root: !!js dshHomePath('sessions')
+
+```
+
+**依据 6 · 源码核查**：[packages/bundle/base/cordis.patch.yml:427-430](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/bundle/base/cordis.patch.yml#L427-L430)
+
+base checkpoint policy实际挂载。
+
+```text
+    # Durability checkpoints before each model request and top-level dispatch.
+    - id: session-checkpoint-policy
+      name: '@deepseek-ai/dsh-session-checkpoint-policy'
+
+```
+
+**依据 7 · 源码核查**：[packages/bundle/base/cordis.patch.yml:510-521](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/bundle/base/cordis.patch.yml#L510-L521)
+
+base tools/native及disabled PTC。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    # Shared tool definitions and the deployment’s native executor.
+    - id: tools
+      name: '@deepseek-ai/dsh-tools'
+
+    - id: tool-executor-native
+      name: '@deepseek-ai/dsh-tool-executor-native'
+
+    - id: tool-executor-ptc
+      name: '@deepseek-ai/dsh-tool-executor-ptc'
+      disabled: true
+
+    # The deployment persona is a deployment choice; plan-mode and tool plugins own
 ```
 
 </details>
 
 #### 缺口
 
-- 没有同任务同模型 SDK 实现的结果对照
-  **影响**：不能声称更准确、更快或更省维护
-  **进一步探讨**：固定任务和模型，对比配置、代码改动、恢复步骤和结果质量。
+- 未审全部profile模板/加载器解析/每个平台与豁免管理UI。
+  **影响**：本文只核base与代表准入链，版本通过不能代表真实插件可用。
+  **进一步探讨**：在独立profile核正常/不兼容/豁免/缺依赖四样本，逐一查生效配置、skippedBundles和工具实际存在。
 
-<a id="research-q02"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-13"></a>
 
-### Q02 · 模型工具调用从循环到审批和执行如何接线？
+### Q03 · 模型工具调用怎样执行并回到Agent，作用域代表什么？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-Agent 循环从模型消息提取工具调用并把 Agent、取消信号和步骤日志传给 tools.execute。工具服务按作用域选择执行器；base bundle 包含 native executor，其实现使用公共 pipeline 与批处理。pipeline 先运行 pre-execute 策略，需要询问时走审批，允许后检查守卫再分派工具；审批服务不存在或缺少 Agent 时将询问降级为拒绝。取消在执行前会跳过工具，已经开始的工具 promise 会等其结束后再形成取消结果；这不保证工具本身可中断或撤销外部写入。其他执行器与特定部署仍需分别核实。
+Agent先把最终assistant/message（含tool-call与usage）append入会话；无tool-call才completed，否则tools.execute拿当前Agent、signal、turn/step、toolSet和并发限制。附加上下文进next-step inbox；批失败保留partial附加上下文再抛cause，不能把抛错理解成所有工具没做。concluded可结束轮次，completed只是Agent循环终态，不是外部业务验收。
+
+tools.execute选择nearest scope provider，找不到/已卸载的选中executor抛ToolExecutorUnavailableError，不悄悄回退别的执行器；NativeToolExecutor实际构造共享pipeline并调用executeToolBatch。pipeline先snapshotJsonValue并deepFreeze参数，保留Host execution token/callId/rootCallId/agent/toolSet，不直接用模型自己声称的会话归属。dispatch按agent/toolSet再次resolve工具，调用真正tool.execute并规范返回/异常；并非只注册schema或把函数名输出。
+
+作用域是宿主内能力/继承选择，非OS沙箱或多用户身份隔离。本轮没有逐个工具执行体/远程适配器审计，不能从native dispatcher推出shell/文件/HTTP副作用都安全或有幂等。同样工具schema可由其他executor表现不同，需针对实际profile核。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/core/agent-loop/src/agent.ts:584-603](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/agent-loop/src/agent.ts#L584-L603)
+**依据 1 · 源码核查**：[packages/core/agent-loop/src/agent.ts:570-609](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/agent-loop/src/agent.ts#L570-L609)
 
-Agent 循环把工具调用及作用域、信号传入工具服务。
+最终消息入日志、工具批执行/附加上下文/partial失败。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
+            model: request.model,
+            ...live.replayState !== undefined ? { replayState: live.replayState } : {},
+          },
+        })
+        live.settle(
+          'assistant/message',
+          () => this.session.append('assistant/message', {
+            turn,
+            step,
+            message,
+            ...live.usage === undefined ? {} : { usage: live.usage },
+            stream: live.stream,
+          }, { surfaceOp: 'append' }).seq,
+        )
         if (finish.kind === 'max-tokens') return { kind: 'max-tokens' }
 
         const toolCalls = message.content.filter(block => block.type === 'tool-call')
@@ -350,16 +605,22 @@ Agent 循环把工具调用及作用域、信号传入工具服务。
             this.inbox.splice('next-step', this.inbox.nextStep.length, 0, [context])
           }
           throw error.cause
+        }
+      } catch (error: unknown) {
+        if (!live.ended) live.abandon()
+        throw error
+      }
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:353-376](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L376)
+**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:353-377](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts#L353-L377)
 
-按作用域选择执行器并分派。
+实际作用域选择/缺执行器拒绝。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
    * Resolve the nearest scoped provider, or the deployment default.
@@ -386,43 +647,19 @@ Agent 循环把工具调用及作用域、信号传入工具服务。
    */
   async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
     return this.selectExecutor(input.agent).execute(input)
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/bundle/base/cordis.patch.yml:494-505](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/bundle/base/cordis.patch.yml#L494-L505)
+**依据 3 · 源码核查**：[packages/core/tool-executor-native/src/index.ts:8-35](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tool-executor-native/src/index.ts#L8-L35)
 
-base bundle 声明 native 与默认禁用的另一执行器。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    # ── rows every mode mounts, whose values each overlay may state ──────────────
-
-    # Shared tool definitions and the deployment’s native executor.
-    - id: tools
-      name: '@deepseek-ai/dsh-tools'
-
-    - id: tool-executor-native
-      name: '@deepseek-ai/dsh-tool-executor-native'
-
-    - id: tool-executor-ptc
-      name: '@deepseek-ai/dsh-tool-executor-ptc'
-      disabled: true
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/core/tool-executor-native/src/index.ts:7-20](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tool-executor-native/src/index.ts#L7-L20)
-
-native 执行器使用公共 pipeline 和批处理。
+真实pipeline/executeToolBatch接线和挂载。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-/** Executes visible capabilities directly and owns their complete batch settlement. */
 export class NativeToolExecutor implements ToolExecutor {
   private readonly pipeline: ToolExecutionPipeline
 
@@ -436,13 +673,153 @@ export class NativeToolExecutor implements ToolExecutor {
 
   execute(input: ToolBatchInput): Promise<ToolBatchResult> {
     return executeToolBatch(input, this.pipeline, this.maxParallel)
+  }
+}
+
+/** Cordis plugin name. */
+export const name = 'native-tool-executor'
+/** Tool registration and scoped dispatch. */
+export const inject = ['tools']
+
+/**
+ * Select native execution in the mounting scope.
+ * @param ctx - context owning this executor's selection and lifetime.
+ */
+export function apply(ctx: Context): void {
+  ctx.tools.setExecutor(new NativeToolExecutor(ctx))
+}
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/core/tools/src/pipeline.ts:190-231](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L190-L231)
+**依据 4 · 源码核查**：[packages/core/tools/src/pipeline.ts:116-164](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L116-L164)
 
-执行前策略、审批及守卫决定是否分派。
+Host执行对象、参数快照冻结与取消状态。
+
+<details>
+<summary>查看原文（49行）</summary>
+
+```text
+  private createExecution(exec: ToolExecutionInput): ScheduledToolPreparation | { kind: 'ready'; exec: MutableToolRunContext } {
+    const deferredContexts: UserMessage[] = []
+    const token = createExecutionToken()
+    const callId = exec.callId
+    const rootCallId = exec.rootCallId ?? callId
+    const name = exec.name
+    const agent = exec.agent
+    const parent = exec.parent
+    const signal = exec.signal
+    // Executor refusals precede extensible policy; unknown tools retain dispatch-stage handling.
+    const visible = this.get(name, agent, exec.toolSet)
+    const rejection = visible === undefined ? undefined : this.source.reject?.(name, parent !== undefined)
+    const rejected = rejection !== undefined
+    const concludingExecutions = this.concludingExecutions
+    const base = {
+      token,
+      callId,
+      rootCallId,
+      name,
+      signal,
+      ...agent !== undefined ? { agent } : {},
+      ...exec.toolSet !== undefined ? { toolSet: exec.toolSet } : {},
+      ...parent !== undefined ? { parent } : {},
+      ...exec.schema !== undefined ? { schema: exec.schema } : {},
+      deferContext(context: UserMessage): void {
+        deferredContexts.push(context)
+      },
+      concludeTurn(this: ToolExecution): void {
+        concludingExecutions.add(this)
+      },
+    }
+    // Capture callbacks before argument getters run; rejected calls retain finalization only when aborted.
+    const capturedFinalizer = visible?.finalizeContent?.bind(visible)
+    const capturedProjector = visible?.projectContent?.bind(visible)
+    const finalizerFor = (): ToolDefinition['finalizeContent'] | undefined =>
+      rejected && !signal.aborted ? undefined : capturedFinalizer
+    try {
+      const detached = snapshotJsonValue(exec.arguments)
+      if (detached === undefined) {
+        throw new TypeError('tool execution arguments must be losslessly JSON-serializable')
+      }
+      const execution: MutableToolRunContext = { ...base, arguments: deepFreeze(detached) }
+      this.deferredContexts.set(execution, deferredContexts)
+      this.contentFinalizers.set(execution, finalizerFor())
+      if (!rejected) this.contentProjectors.set(execution, capturedProjector)
+      this.cancellationStates.set(execution, {
+        callerSignal: signal,
+        bodyInvoked: false,
+      })
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/core/tools/src/pipeline.ts:258-285](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L258-L285)
+
+resolve后真正执行tool.execute与返回/异常。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+  private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {
+    const state = this.cancellationStates.get(exec)
+    /* v8 ignore next -- only registry-minted executions reach the staged scheduler methods */
+    if (state === undefined) throw new Error('tool registry scheduler invariant violated: missing cancellation state')
+    const wrapperSignal = exec.signal
+    const fused = fuseToolSignals(state.callerSignal, wrapperSignal)
+    const signal = fused.signal
+
+    if (isAborted(signal)) {
+      fused.dispose()
+      return toolAbortedBeforeDispatchResult()
+    }
+    exec.signal = signal
+    try {
+      const tool = this.resolveExecution(exec.name, exec.agent, exec.parent !== undefined, exec.toolSet)
+      if (!tool) throw new ToolNotFoundError(exec.name)
+      state.bodyInvoked = true
+      const returned = await tool.execute(exec.arguments, exec)
+      const result = this.createSuccessResult(exec, tool, returned)
+      return isAborted(signal)
+        ? toolAbortedResult(result)
+        : result
+    } catch (error: unknown) {
+      return toolErrorResult(error)
+    } finally {
+      fused.dispose()
+      exec.signal = wrapperSignal
+    }
+```
+
+</details>
+
+#### 缺口
+
+- 未验全部工具体、远程/PTC executor、并发调度所有分支和OS隔离。
+  **影响**：代表native链可追，但不能外推全目录工具已安全验收或业务exactly-once。
+  **进一步探讨**：只选独立临时目录里的一个已审只读工具，核模型→Host callId→实际结果/日志，再分别试scope缺executor和partial失败。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 审批、守卫和取消真实限制哪些动作？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+pipeline顺序是pre-execute waterfall（默认allow），ask才进approval.request，allow后再checkGuards，取消/拒绝均不进入工具体；所以不是所有调用都必须人工批准，实际策略插件必须真的产生ask/deny。guards按global及继承scope顺序首个拒绝生效。ask无approval服务、无Agent或无可用answerer均拒绝；不是把模型参数confirmed=true当批准。
+
+approval服务要求当前open turn，为本次随机request id写asked/decided审计事件；never策略在派发answerer前直接rejected。ask经scope waterfall，异常/非枚举答复归unavailable，signal取消先赢则后到答案丢弃；只allowed-once成为allow。真正交互answerer与用户身份验证由具体入口承担，本轮没有全审Web/远程/CLI答复通道，不能声称任一已加载第三方插件都无法冒充策略或answerer。
+
+原caller signal独立保存，与wrapper signal融合；启动前取消跳体，已启动tool.execute则await其settle，返回成功在已abort时变ABORTED，工具原有错误仍保留。取消不是抢占式杀线程/进程，不撤销已写文件/发送请求/已提交交易；tool忽略signal或外部已执行都需查目标。完整around/post/finalization链允许插件扩展，可信插件与实际工具的合作是边界。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/core/tools/src/pipeline.ts:190-231](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L190-L231)
+
+默认allow、ask、guard与启动前取消顺序。
 
 <details>
 <summary>查看原文（42行）</summary>
@@ -494,12 +871,34 @@ export class NativeToolExecutor implements ToolExecutor {
 
 </details>
 
-**依据 6 · 源码核查**：[packages/core/tools/src/pipeline.ts:432-469](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L432-L469)
+**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:393-402](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts#L393-L402)
 
-审批缺失、拒绝、取消和不可用的分支。
+真实global/inherited guards首拒绝。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（10行）</summary>
+
+```text
+  checkGuards(exec: ToolExecution): string | undefined {
+    for (const layer of [this.guards.global, ...this.guards.chainLayers(exec.agent)]) {
+      for (const guard of layer.guards.values()) {
+        const reason = guard(exec)
+        if (reason !== undefined) return reason
+      }
+    }
+    return undefined
+  }
+
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/core/tools/src/pipeline.ts:432-472](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L432-L472)
+
+只有allowed-once放行，缺服务/Agent/渠道拒绝。
+
+<details>
+<summary>查看原文（41行）</summary>
 
 ```text
   private async serviceAsk(
@@ -540,23 +939,107 @@ export class NativeToolExecutor implements ToolExecutor {
       case 'unavailable': return {
         decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
         approvalCancelled: false,
+      }
+      default: return assertNever(outcome, 'ApprovalOutcome')
+    }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[packages/core/tools/src/pipeline.ts:253-280](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L253-L280)
+**依据 4 · 源码核查**：[packages/interaction/user-approval/src/index.ts:242-261](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/interaction/user-approval/src/index.ts#L242-L261)
 
-已开始工具等待完成，取消结果不说明副作用回滚。
+open turn与asked/decided审计。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  async request(req: ApprovalRequest): Promise<ApprovalOutcome> {
+    const session = req.agent.session
+    if (!this.approvalStateOf(session).turnOpen) {
+      throw new Error(
+        'approval.request() outside an open turn: the approval/asked + approval/decided audit pair '
+        + 'must be turn-enclosed (a bare event between turns is crash-tail garbage on reload). '
+        + 'Ask from inside the turn that needs the decision.',
+      )
+    }
+    const id = ApprovalRequestId(randomUUID())
+    session.append('approval/asked', {
+      id,
+      toolName: req.toolName,
+      ...req.callId !== undefined ? { callId: req.callId } : {},
+      ...req.reason !== undefined ? { reason: req.reason } : {},
+    })
+    const outcome = await this.decide(req, session)
+    session.append('approval/decided', { id, outcome })
+    return outcome
+  }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/interaction/user-approval/src/index.ts:293-334](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/interaction/user-approval/src/index.ts#L293-L334)
+
+never先拒绝，answerer异常/取消/晚答处理。
+
+<details>
+<summary>查看原文（42行）</summary>
+
+```text
+  private async decide(req: ApprovalRequest, session: Session): Promise<ApprovalOutcome> {
+    const signal = req.signal
+    if (signal?.aborted) return 'cancelled'
+    // The 'never' policy is decided HERE, before any dispatch: a listener
+    // registered with `prepend: true` after this service mounts would sit
+    // ahead of any gate LISTENER, so a listener-shaped gate cannot keep the
+    // documented promise that 'never' rejects deterministically regardless
+    // of registration order — only the service's own request path can.
+    if (this.effectivePolicy(session) === 'never') return 'rejected'
+    // Enter the promise chain BEFORE dispatching: a listener that throws
+    // SYNCHRONOUSLY (before its first await) must land in the same rejection
+    // path as an async one — `Promise.resolve(call())` would let it escape
+    // the containment into the caller.
+    const answer: Promise<ApprovalOutcome> = Promise.resolve().then(
+      () => this.ctx.waterfall(
+        scopeTarget(req.agent, req.agent), 'approval/request', req,
+        () => Promise.resolve<ApprovalOutcome>('unavailable'),
+      ),
+    ).then(
+      // Normalize a rogue (non-vocabulary) answerer return to the fail-closed
+      // outcome instead of leaking it into callers' closed-union switches.
+      outcome => OUTCOMES.includes(outcome) ? outcome : 'unavailable',
+      // A throwing answerer must fail the QUESTION closed, not the caller's
+      // tool call open — the seam contains its callbacks.
+      () => 'unavailable',
+    )
+    if (signal === undefined) return answer
+    return await new Promise<ApprovalOutcome>((resolve) => {
+      const onAbort = () => {
+        signal.removeEventListener('abort', onAbort)
+        resolve('cancelled')
+      }
+      signal.addEventListener('abort', onAbort, { once: true })
+      void answer.then((outcome) => {
+        signal.removeEventListener('abort', onAbort)
+        // After an abort won the race this resolve is a settled-promise no-op:
+        // the late answer is discarded by construction.
+        resolve(outcome)
+      })
+    })
+  }
+}
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/core/tools/src/pipeline.ts:258-285](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L258-L285)
+
+caller/wrapper信号融合、await body与ABORTED。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-  /**
-   * Dispatch the registered body with the original caller signal fused back
-   * into any around-wrapper replacement. Cancellation never abandons the body:
-   * a started promise reaches quiescence before its outcome becomes `ABORTED`.
-   */
   private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {
     const state = this.cancellationStates.get(exec)
     /* v8 ignore next -- only registry-minted executions reach the staged scheduler methods */
@@ -580,215 +1063,91 @@ export class NativeToolExecutor implements ToolExecutor {
         ? toolAbortedResult(result)
         : result
     } catch (error: unknown) {
+      return toolErrorResult(error)
+    } finally {
+      fused.dispose()
+      exec.signal = wrapperSignal
+    }
 ```
 
 </details>
 
-#### 缺口
+**依据 7 · 源码核查**：[packages/core/tools/src/pipeline.ts:295-326](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L295-L326)
 
-- 未在实际宿主验证具体插件与权限配置
-  **影响**：不能声称所有工具或自定义执行器均受同一实际策略保护
-  **进一步探讨**：以匹配 profile 测允许、拒绝、无审批、取消与工具已产生副作用的路径。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · profile 和版本准入能保证运行兼容吗？
-
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑
-
-#### 完整回答
-
-profile 解析已列出的 bundle，读取其 manifest 和补丁，检查平台及版本；无法读取、不支持的平台或不兼容项被收集到 skippedBundles，而用户补丁仍单独加载。版本规则优先使用 engines.dsh，否则检查 DSH peer 依赖，允许精确版本豁免；匹配只表明版本声明通过该检查，不保证服务注入、数据格式或行为相容。根包是 private monorepo、声明 Node 24.9 以上；作者标注开发预览且明确提示安全能力不能保证隔离。运行者需要按实际任务配置模型、凭据、权限和受控环境，当前未做宿主兼容或安全验收。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/boot/app-boot/src/profile.ts:678-712](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/profile.ts#L678-L712)
-
-bundle 解析、兼容检查、跳过与用户层。
+around执行后caller取消结果归一。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
-export function loadProfileDirectory(
-  binName: string,
-  dir: string,
-  installAnchor: string,
-  options: { userLayer?: boolean } = {},
-): Profile {
-  const manifest = dropRetiredBundles(dir, readProfileManifest(binName, dir))
-  const bundles = manifest.dsh?.profile?.bundles ?? []
-  const layers: ProfileLayer[] = []
-  const skippedBundles: SkippedBundle[] = []
-  const exemptions = bundles.length === 0 ? {} : readProfileVersionExemptions(dir)
-  for (const packageName of bundles) {
+  async dispatch(exec: ToolRunContext): Promise<ScheduledToolDispatch> {
     try {
-      const packageDir = resolveBundleDir(binName, packageName, installAnchor, dir)
-      const bundleManifest = readProfileManifest(binName, packageDir)
-      const bundle = bundleManifest.dsh?.bundle
-      if (bundle === undefined) {
-        throw new Error(`${binName}: profile bundle ${JSON.stringify(packageName)} declares no dsh.bundle in its package.json`)
+      const mutableExec = exec as MutableToolRunContext
+      const carrier = scopeTarget(this.tools, exec.agent)
+      const result = await this.ctx.waterfall(
+        carrier, 'tools/execute', mutableExec,
+        () => this.dispatchToolBody(mutableExec),
+      )
+      const normalized = this.normalizeDispatchResult(exec, result)
+      const deferredContexts = this.deferredContexts.get(exec)
+      /* v8 ignore next -- dispatch only receives executions minted by this registry's prepare stage */
+      if (deferredContexts === undefined) throw new Error('tool registry scheduler invariant violated: unprepared execution')
+      const resultWithDeferredContexts: ToolExecutionResult = deferredContexts.length === 0
+        ? normalized
+        : this.markCanonical(exec, {
+          ...normalized,
+          additionalContexts: [
+            ...deferredContexts,
+            ...normalized.additionalContexts ?? [],
+          ],
+        })
+      return {
+        kind: 'post-result',
+        result: this.callerCancelled(exec) && !resultWithDeferredContexts.isError
+          ? this.cancellationResult(exec, resultWithDeferredContexts)
+          : resultWithDeferredContexts,
       }
-      assertBundlePlatform(bundle.platforms, process.platform)
-      // A bundle is not a plugin row, so row admission never reads its own dsh requirements.
-      const issue = evaluatePluginCompatibility(bundleManifest, exemptions)
-      if (issue !== undefined && !issue.exempted) throw new Error(pluginCompatibilityWarning(issue))
-      const patchPaths = bundlePatchPaths(packageDir, bundle)
-      const patches = patchPaths.flatMap(patchPath => loadOverlayPatches(binName, patchPath))
-      layers.push({ packageName, packageDir, patchPaths, patches })
-    } catch (error) {
-      skippedBundles.push({ packageName, reason: String(error) })
+    } catch (error: unknown) {
+      return { kind: 'final-result', result: toolErrorResult(error) }
     }
   }
-  const patchPath = join(dir, PROFILE_PATCH_FILENAME)
-  const patches = options.userLayer !== false && existsSync(patchPath)
-    ? loadOverlayPatches(binName, patchPath)
-    : []
-  return { name: basename(dir), dir, layers, patchPath, patches, skippedBundles }
-```
 
-</details>
-
-**依据 2 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:51-73](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L51-L73)
-
-版本检查优先级和 DSH peers 的处理。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-function satisfies(runtimeVersion: string, range: string): boolean {
-  return range.trim() !== '' && semver.satisfies(runtimeVersion, range, { includePrerelease: true })
-}
-
-function unmetRequirements(fields: Record<string, unknown>, runtimeVersion: string): Record<string, string> {
-  const engines = Object.hasOwn(fields, 'engines') ? objectOf(fields.engines, 'Plugin manifest engines') : {}
-  if (Object.hasOwn(engines, 'dsh')) {
-    const range = engines.dsh
-    if (typeof range !== 'string') throw new Error('Plugin manifest engines.dsh must be a string')
-    return satisfies(runtimeVersion, range) ? {} : { 'engines.dsh': range }
-  }
-  if (!Object.hasOwn(fields, 'peerDependencies')) return {}
-  const dependencies = objectOf(fields.peerDependencies, 'Plugin manifest peerDependencies')
-  const unmet: Record<string, string> = {}
-  for (const [name, range] of Object.entries(dependencies)) {
-    if (typeof range !== 'string') {
-      throw new Error(`Plugin manifest peerDependencies[${JSON.stringify(name)}] must be a string`)
-    }
-    if (name !== '@deepseek-ai/dsh' && !name.startsWith('@deepseek-ai/dsh-')) continue
-    const requirement = ['workspace:^', 'workspace:~', 'workspace:*'].includes(range) ? runtimeVersion : range
-    if (!satisfies(runtimeVersion, requirement)) unmet[name] = range
-  }
-  return unmet
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:87-101](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L87-L101)
-
-不匹配和精确豁免结果。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-export function evaluatePluginCompatibility(
-  manifest: object,
-  exemptions: Readonly<Record<string, readonly string[]>> = {},
-  runtimeVersion = getDshRuntimeVersion(),
-): PluginCompatibility | undefined {
-  runtimeVersionOf(runtimeVersion)
-  const fields = objectOf(manifest, 'Plugin manifest')
-  const requirements = unmetRequirements(fields, runtimeVersion)
-  if (Object.keys(requirements).length === 0) return undefined
-  const name = identityField(fields, 'name')
-  const version = identityField(fields, 'version')
-  const key = `${name}@${version}`
-  const exemptedVersions = Object.hasOwn(exemptions, key) ? exemptions[key] : undefined
-  const exempted = exemptedVersions?.includes(runtimeVersion) === true
-  return { name, version, runtimeVersion, requirements, exempted }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[package.json:1-10](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/package.json#L1-L10)
-
-根包身份、版本和 Node 要求。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-{
-  "name": "@deepseek-ai/dsh-root",
-  "version": "0.2.2-alpha.2",
-  "license": "MIT",
-  "private": true,
-  "type": "module",
-  "packageManager": "pnpm@11.28.5",
-  "engines": {
-    "node": ">=24.9.0"
-  },
-```
-
-</details>
-
-**依据 5 · 作者声明**：[SAFETY.md:5-15](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/SAFETY.md#L5-L15)
-
-作者的预览状态和隔离限制说明。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-## Experimental status
-
-DeepSeek Harness is experimental developer-preview software. It has not undergone a security audit and must not be treated as secure or production-ready.
-
-The project can execute model-generated code and commands, load third-party plugins, and access the network, processes, credentials, and files made available to it. Incorrect model output, defects, misconfiguration, malicious input, or untrusted plugins may damage the host computer, modify or delete files, disclose data or credentials, or cause other unintended effects.
-
-## Sandbox limitations
-
-Sandboxing, approval prompts, and permission controls can reduce risk, but they do not guarantee isolation or prevent damage. Even correctly enforced restrictions cannot protect resources that the project is allowed to access.
-
-Do not rely on DeepSeek Harness as the sole security control for untrusted workloads.
 ```
 
 </details>
 
 #### 缺口
 
-- 没有选定插件的实际安装、加载和功能结果
-  **影响**：无法从声明范围推断互换成功或完整安全边界
-  **进一步探讨**：在隔离 profile 对目标插件逐项测试加载、作用域服务、状态迁移及权限。
+- 未审所有策略和真实人工答复端身份、沙箱/子进程终止和外部回滚。
+  **影响**：只能确认native审批接缝，不能将提示或ABORTED当全系统安全/无副作用。
+  **进一步探讨**：分别核无answerer、never、拒绝/取消、body已写后取消，检查工具确未调用/实际目标是否已变；只在临时副本测试。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 会话事件和取消对恢复意味着什么？
+### Q05 · 会话日志什么时候算持久，写失败是否还会执行？
 
-**研究主题**：功能与机制、缺陷与关键质疑、效果与总成本
+**研究主题**：工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-会话提交先验证候选，写入进程内事件日志再通知监听者；JSONL 持久化实现为活跃 writer 监听事件并排队，flush 则排空并调用持久化屏障。持久化服务契约区分尽力 append 和 flush 屏障，未物化的会话在崩溃前可能不曾对其他进程存在。因此内存中看见事件不等于已经耐久落盘；未配置后端、写失败或崩溃点都可能改变恢复结果。工具取消等待已启动工作结束也不撤销工具已经产生的外部副作用。恢复者需要检查日志、目标文件与外部系统，不能盲目重试。
+Session.commit先校event并push内存log，再通知contained session/event observers，观察者错误不会回滚已接受内存事件；内存可见不等磁盘。JSONL backend install真实监听event把已绑定writer的事件进buffer，后台失败warn且保留有序批；session/flush会await drainLive再writer.flush。drain失败将整批放回buffer、pause后抛，persistContiguous持write lease、查seq连续性、修torn tail，persistBatch成功后才移动cursor。
+
+后端persistBatch实际走首次materialize或已存在appendLines；appendLines写编码文本后handle.sync，失败尝试回滚旧文件size，回滚也失败抛AggregateError，不能假定失败总是无字节残留。这里不是仅读API注释的耐久承诺。本轮没有全审generation迁移/lease实现/Windows与zstd恢复，只核代表已有日志追加。
+
+SessionStore.flush通过原carrier收全部listener，allSettled后任何失败抛；无参与者返回false。base挂checkpoint policy：model stream在first chunk前flush，顶层有Agent且非nested工具在next body前flush，pre-step也flush；写失败会阻这些代表下游边界，nested复用outer已记录call，无sessionId/找不到session的模型调用与无Agent/nested工具不走该关。policy没有把flush false单独拒绝，所以不能把任意配置、缺writer的profile都宣称已耐久。真正工具外部副作用和记录仍非共同事务：body后断电/结果未入盘可能需要人工查目标，不承诺自动exactly-once恢复。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/core/session/src/index.ts:886-910](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/session/src/index.ts#L886-L910)
+**依据 1 · 源码核查**：[packages/core/session/src/index.ts:889-910](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts#L889-L910)
 
-提交内存日志并通知监听者。
+内存push再contained observers。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-  /**
-   * Accept one frozen candidate at the next sequence number, enter it into the
-   * log, and notify `session/event` observers with per-listener containment.
    * @param event - the candidate built at the current log length.
    * @param entry - the attachment read before the candidate was built.
    */
@@ -815,38 +1174,14 @@ Do not rely on DeepSeek Harness as the sole security control for untrusted workl
 
 </details>
 
-**依据 2 · 源码核查**：[packages/session/session-persistence-jsonl/src/storage.ts:525-560](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/session/session-persistence-jsonl/src/storage.ts#L525-L560)
+**依据 2 · 源码核查**：[packages/session/session-persistence-jsonl/src/storage.ts:549-568](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts#L549-L568)
 
-JSONL 后端监听 session 事件并在 flush 排空。
+事件buffer、flush/disposed真实接线。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-  /**
-   * Install the backend's live session routing and teardown. Persistence
-   * enforces one active write handle per id, so the listeners route published
-   * sessions' events by id; the teardown effect closes every open handle —
-   * close drains the routed buffer — and aggregates failures. This provider
-   * owns no separate storage connection, so closing handles is the complete
-   * teardown. The returned effect removes listeners before closing handles.
-   * @param ctx - the backend's resource-owning context.
-   * @returns the disposer to run after persistence consumers finish unloading.
-   */
-  install(ctx: Context): () => Promise<void> {
-    const { writers, openHandles, name } = this
-    return ctx.effect(function* () {
-      yield async () => {
-        const errors: unknown[] = []
-        for (const handle of [...openHandles]) {
-          try {
-            await handle.close()
-          } catch (error: unknown) {
-            errors.push(error)
-          }
-        }
-        if (errors.length > 0) throw new AggregateError(errors, `${name} dispose failed`)
-      }
       yield ctx.on('session/event', (session: Session, event) => {
         writers.get(session.id)?.enqueueLive(event, (error) => {
           ctx.logger.warn(`session-persistence: background write for session "${session.id}" failed (buffered events retained): ${String(error)}`)
@@ -859,54 +1194,575 @@ JSONL 后端监听 session 事件并在 flush 排空。
           await writer.drainLive()
           await writer.flush()
         })()
+      })
+      yield ctx.on('session/disposed', (session: Session) => {
+        const writer = writers.get(session.id)
+        if (writer === null || writer === undefined) return
+        writer.close().catch((error: unknown) => {
+          ctx.logger.warn(`session-persistence: final drain for session "${session.id}" failed: ${String(error)}`)
+        })
+      })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/session/session-persistence/src/index.ts:124-142](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/session/session-persistence/src/index.ts#L124-L142)
+**依据 3 · 源码核查**：[packages/session/session-persistence-jsonl/src/storage.ts:288-345](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts#L288-L345)
 
-存储契约区分尽力追加、flush 与物化。
+保留失败批、连续性/lease/写后cursor。
+
+<details>
+<summary>查看原文（58行）</summary>
+
+```text
+  drainLive(): Promise<void> {
+    return this.draining ??= this.drainBuffered().finally(() => {
+      this.draining = undefined
+    })
+  }
+
+  private async drainBuffered(): Promise<void> {
+    if (this.batchTimer !== undefined) {
+      clearTimeout(this.batchTimer)
+      this.batchTimer = undefined
+    }
+    this.drainPaused = false
+    while (this.buffered.length > 0) {
+      // Capture inside the chained turn so events landing while an earlier
+      // batch writes coalesce into the next one, in order.
+      await this.enqueueChain(async () => {
+        // Only this single-flight drain splices the buffer, so the batch the
+        // while-guard saw is still here when the chained turn runs.
+        const batch = this.buffered.splice(0)
+        try {
+          await this.persistContiguous(materializeAppendBatch(batch))
+        } catch (error: unknown) {
+          this.buffered = batch.concat(this.buffered)
+          this.drainPaused = true
+          throw error
+        }
+      })
+    }
+  }
+
+  /** The shared durable-append body: contiguity, ownership, torn-tail repair, storage write, state advance. */
+  private async persistContiguous(batch: readonly SessionEvent[]): Promise<void> {
+    if (this.access !== 'write') throw new SessionReadOnlyError(this.id, 'append')
+    if (batch.length === 0) return
+    await this.ensureLease()
+    assertContiguous(this.id, batch, this.state.cursor)
+    // Commit any pending torn-tail repair first, clearing each step's state
+    // only once it lands so a failed step retries on the next mutation:
+    // truncate the torn bytes, then durably rewrite the complete events
+    // recovered from them (already counted in the primed cursor).
+    if (this.state.tornTruncateTo !== undefined) {
+      await this.storage.truncateTornTail(this.header, this.state.tornTruncateTo)
+      this.state.tornTruncateTo = undefined
+    }
+    if (this.state.recoveredTail !== undefined) {
+      if (this.state.recoveredTail.length > 0) {
+        await this.storage.persistBatch(this.header, this.state.recoveredTail, this.state.materialized, this.state.inheritedEventCount)
+      }
+      this.state.recoveredTail = undefined
+    }
+    await this.storage.persistBatch(this.header, batch, this.state.materialized, this.state.inheritedEventCount)
+    this.state.materialized = true
+    this.state.cursor += batch.length
+    this.state.primed = undefined
+    this.observedLength = this.state.cursor
+  }
+
+  /**
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/session/session-persistence-jsonl/src/index.ts:911-937](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts#L911-L937)
+
+真实persistBatch分派。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  async persistBatch(
+    header: SessionHeader,
+    events: readonly SessionEvent[],
+    isMaterialized: boolean,
+    inheritedEventCount: SessionLogOffsetType,
+  ): Promise<void> {
+    this.coldLogMemo.delete(header.id)
+    await this.ensureRootEncoding()
+    if (isMaterialized) {
+      await this.appendLines(header, events)
+    } else {
+      await this.materialize(header, inheritedEventCount, events)
+      this.tracker.materialized(header.id)
+    }
+  }
+
+  /**
+   * Materialize a header-only artifact for an explicitly durable empty session.
+   * @param header - the session's stored header.
+   * @param inheritedEventCount - the exact fork-inherited prefix length written into the header line.
+   */
+  async persistHeader(header: SessionHeader, inheritedEventCount: SessionLogOffsetType): Promise<void> {
+    this.coldLogMemo.delete(header.id)
+    await this.ensureRootEncoding()
+    await this.materialize(header, inheritedEventCount, [])
+    this.tracker.materialized(header.id)
+  }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/session/session-persistence-jsonl/src/index.ts:1413-1442](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/index.ts#L1413-L1442)
+
+实际append write/sync与失败回滚。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  private async appendLines(meta: SessionHeader, events: readonly SessionEvent[]): Promise<void> {
+    const content = await this.encodeEventBatch(events)
+    const path = logPath(this.root, meta.cwd, meta.id, this.compression)
+    const handle = await open(path, 'a')
+    let closed = false
+    const closeAppendHandle = async (): Promise<void> => {
+      if (closed) return
+      closed = true
+      await handle.close()
+    }
+
+    try {
+      const { size: before } = await handle.stat()
+      try {
+        await handle.writeFile(content)
+        await handle.sync()
+      } catch (error) {
+        try {
+          await closeAppendHandle()
+          await this.rollbackAppend(path, before)
+        } catch (rollbackError) {
+          throw new AggregateError([error, rollbackError], `failed to roll back append to "${path}"`)
+        }
+        throw error
+      }
+    } finally {
+      await closeAppendHandle()
+    }
+  }
+
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/core/session/src/index.ts:1342-1361](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/session/src/index.ts#L1342-L1361)
+
+flush全listener结算/失败与false。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  async flush(session: Session): Promise<boolean> {
+    const { carrier } = this.liveEntryFor(session)
+    const callbackArgs: unknown[] = [session]
+    const callbacks = collectSessionCallbacks(this.ctx, [carrier, 'session/flush', session])
+    const results = await Promise.allSettled(callbacks.map((callback) => {
+      try {
+        return callback(...callbackArgs)
+      } catch (error: unknown) {
+        // Preserve the listener's exact rejection value; flush is a caller-owned
+        // failure boundary, and Cordis listeners may throw arbitrary values.
+        // oxlint-disable-next-line typescript/prefer-promise-reject-errors
+        return Promise.reject(error)
+      }
+    }))
+    const failure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected')
+    if (failure !== undefined) throw failure.reason
+    return callbacks.length > 0
+  }
+
+  /** Return the exact live entry; detached/prepared objects reject. */
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/session/session-checkpoint-policy/src/index.ts:29-37](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-checkpoint-policy/src/index.ts#L29-L37)
+
+模型flush后才next stream。
+
+```text
+function afterCheckpoint(
+  ctx: Context,
+  session: Session,
+  next: () => AsyncIterable<StreamChunk>,
+): AsyncIterable<StreamChunk> {
+  return (async function* (): AsyncIterable<StreamChunk> {
+    await ctx.sessions.flush(session)
+    yield* next()
+  })()
+```
+
+**依据 8 · 源码核查**：[packages/session/session-checkpoint-policy/src/index.ts:64-83](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-checkpoint-policy/src/index.ts#L64-L83)
+
+真实模型/top-level工具/pre-step检查点和旁路。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  ctx.on('llm/stream', (options, next): AsyncIterable<StreamChunk> => {
+    if (options.sessionId === undefined) return next()
+    const session = ctx.sessions.get(options.sessionId)
+    return session === undefined ? next() : afterCheckpoint(ctx, session, next)
+  })
+
+  ctx.on('tools/execute', async (exec, next): Promise<ToolExecutionResult> => {
+    if (exec.agent === undefined || exec.parent !== undefined) return next()
+    await ctx.sessions.flush(exec.agent.session)
+    if (exec.signal.aborted) return abortedBeforeDispatchResult()
+    return next()
+  })
+
+  // Before each request, persist everything committed by the preceding step;
+  // the first step's call is an intentional no-op beyond any prompt intake.
+  ctx.on('agent/pre-step', async ({ agent }, next): Promise<PreStepDecision> => {
+    await ctx.sessions.flush(agent.session)
+    return next()
+  })
+}
+```
+
+</details>
+
+#### 缺口
+
+- 未验崩溃/磁盘满/回滚失败、多进程lease、全部格式迁移和checkpoint覆盖。
+  **影响**：代表链强于仅内存日志，但不能承诺所有部署/外部效果自动可恢复。
+  **进一步探讨**：副本模拟后台写失败与显式flush失败，核adapter/tool未启动；再body已生效结果未落盘时核重启和实际目标，禁止盲重放。
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 什么具体用法值得先试，完整负担与退路是什么？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+有Agent扩展需求且能审插件的开发者，可在单独profile、无私密凭据的可丢弃环境，固定Host0.2.2-rc.1/模型与一个只读小工具，只做一次“读脱敏小文件并给可核答案”，核scope/native实际被选、无answerer时ask拒绝、成功结果与session flush后重启读取一致；不要首试shell写出/远程公网或多插件大组合。原SDK/已知配置是退路，出现缺服务、意外写入、日志不同步或审批边界不明就停止并回原配置。
+
+首次需Node>=24.9、构建/发布成品、profile/模型路由与凭据、工具与实际sandbox/网络、持久后端及备份；默认Web地址自述127.0.0.1:3080不证明每个部署的暴露与鉴权。持续模型输入/输出与工具资源、会话/附件磁盘，维护插件升级/策略/人工验收。失败包括重试模型/部分工具副作用、权限调查与状态恢复，时间现金没有测值，不能填零。退出需停止Agent/背景工作，保存规范日志与产物，撤profile/插件/凭据权限，清理数据按保留策略；取消/卸载不会自动撤销已发生外部效果。安全说明明确推荐可丢弃环境和最小权限，本轮照此限定而不宣称Host已生产安全。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:1-18](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/package.json#L1-L18)
+
+版本/Node/构建环境声明。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+{
+  "name": "@deepseek-ai/dsh-root",
+  "version": "0.2.2-rc.1",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.28.5",
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "workspaces": [
+    "vendor/*",
+    "packages/*/*",
+    "native/system",
+    "native/system/packages/*",
+    "apps/*",
+    "website"
+  ],
+```
+
+</details>
+
+**依据 2 · 作者声明**：[README.zh.md:20-45](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/README.zh.md#L20-L45)
+
+安装运行与本机Web入口自述。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+````text
+
+### 通过 `npm` 运行
+
+安装 `Node.js`，然后运行：
+
+```sh
+npx @deepseek-ai/dsh web
+```
+
+该命令默认会在 `http://127.0.0.1:3080` 启动 Web UI，本机启动时还会用默认浏览器打开页面。通过 SSH 启动时只打印宿主机 URL，因为本地转发地址由 SSH 客户端或编辑器持有。传入 `--no-open` 可仅运行服务器而不打开浏览器。详见 [Web UI 指南](docs/user/guide/index.zh.md)。
+
+<a id="run-from-source"></a>
+
+### 从源码运行
+
+如需从仓库源码运行：
+
+```sh
+git clone https://github.com/deepseek-ai/deepseek-harness.git
+cd deepseek-harness
+pnpm install
+pnpm run build
+pnpm dsh web
+```
+
+`pnpm run build` 会准备仓库产物。`pnpm dsh web` 会直接使用这些已构建产物，不会重新构建。
+````
+
+</details>
+
+**依据 3 · 作者声明**：[SAFETY.md:7-25](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/SAFETY.md#L7-L25)
+
+实际可能权限及可丢弃/最小权限建议。
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
-/**
- * Durable append-only session storage addressed through per-session handles.
- *
- * Storage semantics shared by every backend: events are contiguous from seq 0
- * and never rewritten; a torn physical tail is never returned to a reader and
- * is truncated by the write path before its first append; reads validate
- * current-format records only and refuse unknown vocabulary fail-closed.
- * `append` persists best-effort; `flush` — per handle or service-wide — is
- * the durability barrier.
- *
- * Visibility: a created session is observable through `stat`/`list`/`open`
- * in this process from the moment `create` resolves, even while a backend
- * defers physical materialization (a pure optimization); other processes see
- * the session only once it materializes, and a session that never
- * materialized before a crash never existed. `SessionHandle.flush` forces
- * materialization.
- *
- * Freshness: once an `append` or `flush` resolves, reads started afterwards
- * on this backend instance observe at least that prefix.
+DeepSeek Harness is experimental developer-preview software. It has not undergone a security audit and must not be treated as secure or production-ready.
+
+The project can execute model-generated code and commands, load third-party plugins, and access the network, processes, credentials, and files made available to it. Incorrect model output, defects, misconfiguration, malicious input, or untrusted plugins may damage the host computer, modify or delete files, disclose data or credentials, or cause other unintended effects.
+
+## Sandbox limitations
+
+Sandboxing, approval prompts, and permission controls can reduce risk, but they do not guarantee isolation or prevent damage. Even correctly enforced restrictions cannot protect resources that the project is allowed to access.
+
+Do not rely on DeepSeek Harness as the sole security control for untrusted workloads.
+
+## Responsible use
+
+- Run the project with the least privileges and access required.
+- Prefer a disposable virtual machine, container, or dedicated environment.
+- Keep backups of files that the project can access.
+- Do not expose sensitive credentials or data unless you accept the risk.
+- Review plugins, configuration, and proposed commands before allowing them to run.
+
+## No warranty or liability
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/core/tools/src/pipeline.ts:253-280](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L253-L280)
+**依据 4 · 源码核查**：[packages/core/tools/src/pipeline.ts:432-472](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L432-L472)
 
-等待已开始工作并返回取消结果。
+无approval/answerer失败闭合。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+  private async serviceAsk(
+    exec: ToolExecution,
+    ask: Extract<PreToolDecision, { kind: 'ask' }>,
+  ): Promise<ToolAskResolution> {
+    const approval = this.ctx.get('approval')
+    if (approval === undefined) {
+      return {
+        decision: { kind: 'deny', reason: ask.reason ?? `tool "${exec.name}" requires approval (not yet supported)` },
+        approvalCancelled: false,
+      }
+    }
+    if (exec.agent === undefined) {
+      return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but the call has no agent to route it through` },
+        approvalCancelled: false,
+      }
+    }
+    const outcome = await approval.request({
+      agent: exec.agent,
+      toolName: exec.name,
+      callId: exec.callId,
+      ...ask.reason !== undefined ? { reason: ask.reason } : {},
+      ...ask.displayReason !== undefined ? { displayReason: ask.displayReason } : {},
+      signal: exec.signal,
+    })
+    switch (outcome) {
+      case 'allowed-once': return { decision: { kind: 'allow' }, approvalCancelled: false }
+      case 'rejected': return {
+        decision: { kind: 'deny', reason: `the user rejected tool "${exec.name}"` },
+        approvalCancelled: false,
+      }
+      case 'cancelled': return {
+        decision: { kind: 'deny', reason: `approval for tool "${exec.name}" was cancelled` },
+        approvalCancelled: true,
+      }
+      case 'unavailable': return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
+        approvalCancelled: false,
+      }
+      default: return assertNever(outcome, 'ApprovalOutcome')
+    }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/session/session-checkpoint-policy/src/index.ts:64-83](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-checkpoint-policy/src/index.ts#L64-L83)
+
+代表检查点条件。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  ctx.on('llm/stream', (options, next): AsyncIterable<StreamChunk> => {
+    if (options.sessionId === undefined) return next()
+    const session = ctx.sessions.get(options.sessionId)
+    return session === undefined ? next() : afterCheckpoint(ctx, session, next)
+  })
+
+  ctx.on('tools/execute', async (exec, next): Promise<ToolExecutionResult> => {
+    if (exec.agent === undefined || exec.parent !== undefined) return next()
+    await ctx.sessions.flush(exec.agent.session)
+    if (exec.signal.aborted) return abortedBeforeDispatchResult()
+    return next()
+  })
+
+  // Before each request, persist everything committed by the preceding step;
+  // the first step's call is an intentional no-op beyond any prompt intake.
+  ctx.on('agent/pre-step', async ({ agent }, next): Promise<PreStepDecision> => {
+    await ctx.sessions.flush(agent.session)
+    return next()
+  })
+}
+```
+
+</details>
+
+#### 缺口
+
+- 没有安装/模型/工具任务实测、真实集成工时/运行账单/退出验收。
+  **影响**：只建议开发者隔离小样本试用，无法许诺更省钱省时或承接不可信生产负载。
+  **进一步探讨**：先核固定模型一个脱敏只读任务的答案、审批与重启日志，再记录接入/修复分钟和usage与原SDK比较。
+
+<a id="research-q07"></a>
+
+<a id="detail-section-17"></a>
+
+### Q07 · 可借鉴的生产方向是什么，哪些条件会推翻？
+
+**研究主题**：贡献与相对优势、新假设与验证
+
+#### 完整回答
+
+技术贡献是可组合profile到作用域工具执行与会话检查点的清晰接缝：配置声明、选中executor、审批/guard、工具结算和耐久记录各有独立语义，而非仅提供工具schema。Cordis/模型/OS执行能力来自上游和各包；根项目组合它们，不能把全仓每插件都归成本次已独立验收。已有SDK同样能实现这些机制，本项相对优势应以增量接入和故障定位成本衡量，而非包数、绿CI或“一切皆插件”口号。
+
+候选是插件升级验收增加一组真实接缝合同样本，而不只semver：scope provider卸载应拒绝而非降级、ask无answerer应拒绝、body已启动取消须保留已影响状态解释、后台落盘失败须使checkpoint阻下游。对一组固定旧新插件，在同脱敏任务与故障注入下比较“仅版本声明检查”与增加接缝样本的漏检/误报、维护时间和错误重试；若不多发现真实用户故障或维护负担超过收益就推翻。本轮只给验证设计，未运行、不是已交付兼容保证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/core/tools/src/index.ts:353-377](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/index.ts#L353-L377)
+
+作用域executor卸载失败边界。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+   * Resolve the nearest scoped provider, or the deployment default.
+   * @param scope - Agent or preset scope; omitted selects only the root contribution.
+   * @returns the selected executor; throws when it is missing or unloaded.
+   */
+  private selectExecutor(scope?: ScopeKey): ToolExecutor {
+    let record: Registration | undefined
+    for (const key of scopeChainOf(scope)) {
+      record = this.scoped.get(key)
+      if (record !== undefined) break
+    }
+    record ??= this.root
+    const executor = record?.executor
+    if (executor === undefined) throw new ToolExecutorUnavailableError()
+    return executor
+  }
+
+  /**
+   * Delegate a raw call batch to its Agent's provider or the deployment default.
+   * Select at dispatch; accepted batches settle through that provider even if it unloads.
+   * @param input - original calls, optional owning Agent, and optional logging step.
+   * @returns the selected executor's settled batch; unavailable selections reject.
+   */
+  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
+    return this.selectExecutor(input.agent).execute(input)
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/core/tools/src/pipeline.ts:432-472](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L432-L472)
+
+approval不可用拒绝。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
+  private async serviceAsk(
+    exec: ToolExecution,
+    ask: Extract<PreToolDecision, { kind: 'ask' }>,
+  ): Promise<ToolAskResolution> {
+    const approval = this.ctx.get('approval')
+    if (approval === undefined) {
+      return {
+        decision: { kind: 'deny', reason: ask.reason ?? `tool "${exec.name}" requires approval (not yet supported)` },
+        approvalCancelled: false,
+      }
+    }
+    if (exec.agent === undefined) {
+      return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but the call has no agent to route it through` },
+        approvalCancelled: false,
+      }
+    }
+    const outcome = await approval.request({
+      agent: exec.agent,
+      toolName: exec.name,
+      callId: exec.callId,
+      ...ask.reason !== undefined ? { reason: ask.reason } : {},
+      ...ask.displayReason !== undefined ? { displayReason: ask.displayReason } : {},
+      signal: exec.signal,
+    })
+    switch (outcome) {
+      case 'allowed-once': return { decision: { kind: 'allow' }, approvalCancelled: false }
+      case 'rejected': return {
+        decision: { kind: 'deny', reason: `the user rejected tool "${exec.name}"` },
+        approvalCancelled: false,
+      }
+      case 'cancelled': return {
+        decision: { kind: 'deny', reason: `approval for tool "${exec.name}" was cancelled` },
+        approvalCancelled: true,
+      }
+      case 'unavailable': return {
+        decision: { kind: 'deny', reason: `tool "${exec.name}" requires approval, but no approval channel is available` },
+        approvalCancelled: false,
+      }
+      default: return assertNever(outcome, 'ApprovalOutcome')
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/core/tools/src/pipeline.ts:258-285](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/core/tools/src/pipeline.ts#L258-L285)
+
+已启动取消结算。
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-  /**
-   * Dispatch the registered body with the original caller signal fused back
-   * into any around-wrapper replacement. Cancellation never abandons the body:
-   * a started promise reaches quiescence before its outcome becomes `ABORTED`.
-   */
   private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {
     const state = this.cancellationStates.get(exec)
     /* v8 ignore next -- only registry-minted executions reach the staged scheduler methods */
@@ -930,252 +1786,132 @@ JSONL 后端监听 session 事件并在 flush 排空。
         ? toolAbortedResult(result)
         : result
     } catch (error: unknown) {
-```
-
-</details>
-
-#### 缺口
-
-- 未进行崩溃、重启和外部副作用故障注入
-  **影响**：不能推断实际部署的恢复率或恰好一次语义
-  **进一步探讨**：在隔离 profile 在不同 flush 和工具写入边界终止进程并核对记录和目标。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 如何进行有边界的试用，有什么可证伪假设？
-
-**研究主题**：采用判断、新假设与验证、工程质量与复用
-
-#### 完整回答
-
-工具服务按作用域选择执行器；所核查的 native 执行器通过公共 pipeline 应用策略和守卫，自定义 ToolExecutor 可自行实现执行，不保证经过该 pipeline。持久化使用明确 flush 边界，这些是构造替换测试的可借鉴接缝；代价是扩展必须遵守作用域、生命周期和数据契约。未验证假设是，在升级插件时同时测试作用域工具可见性、执行前审批、取消和持久化屏障，比只检查 semver 更能发现真实不兼容；这需要维护场景和故障注入，可能增加验收成本。可用同一批插件升级样本比较版本声明检查与接缝测试发现的真实故障、误报及人工时间；若未多发现关键故障或维护成本高于收益则否定。建议有扩展需求的开发者先在隔离 profile 用固定模型和小任务核验调用、审批及重启；出现未预期写入、服务缺失或恢复不一致时停止并回到已知配置。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/core/tools/src/index.ts:353-376](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L376)
-
-工具服务选择执行器后直接委派其 execute；自定义执行器不自动经过 native pipeline。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-   * Resolve the nearest scoped provider, or the deployment default.
-   * @param scope - Agent or preset scope; omitted selects only the root contribution.
-   * @returns the selected executor; throws when it is missing or unloaded.
-   */
-  private selectExecutor(scope?: ScopeKey): ToolExecutor {
-    let record: Registration | undefined
-    for (const key of scopeChainOf(scope)) {
-      record = this.scoped.get(key)
-      if (record !== undefined) break
-    }
-    record ??= this.root
-    const executor = record?.executor
-    if (executor === undefined) throw new ToolExecutorUnavailableError()
-    return executor
-  }
-
-  /**
-   * Delegate a raw call batch to its Agent's provider or the deployment default.
-   * Select at dispatch; accepted batches settle through that provider even if it unloads.
-   * @param input - original calls, optional owning Agent, and optional logging step.
-   * @returns the selected executor's settled batch; unavailable selections reject.
-   */
-  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
-    return this.selectExecutor(input.agent).execute(input)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/core/tools/src/index.ts:353-399](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/index.ts#L353-L399)
-
-作用域执行器和守卫。
-
-<details>
-<summary>查看原文（47行）</summary>
-
-```text
-   * Resolve the nearest scoped provider, or the deployment default.
-   * @param scope - Agent or preset scope; omitted selects only the root contribution.
-   * @returns the selected executor; throws when it is missing or unloaded.
-   */
-  private selectExecutor(scope?: ScopeKey): ToolExecutor {
-    let record: Registration | undefined
-    for (const key of scopeChainOf(scope)) {
-      record = this.scoped.get(key)
-      if (record !== undefined) break
-    }
-    record ??= this.root
-    const executor = record?.executor
-    if (executor === undefined) throw new ToolExecutorUnavailableError()
-    return executor
-  }
-
-  /**
-   * Delegate a raw call batch to its Agent's provider or the deployment default.
-   * Select at dispatch; accepted batches settle through that provider even if it unloads.
-   * @param input - original calls, optional owning Agent, and optional logging step.
-   * @returns the selected executor's settled batch; unavailable selections reject.
-   */
-  async execute(input: ToolBatchInput): Promise<ToolBatchResult> {
-    return this.selectExecutor(input.agent).execute(input)
-  }
-
-  /**
-   * Register a monotonic denial in the calling scope.
-   * @param guard - evaluated after extensible pre-execute policy by the shared pipeline.
-   * @returns the effect disposer that removes this guard.
-   */
-  guard(guard: ToolGuard): () => void {
-    return this.guards.effect(this.ctx, layer => layer.guards.append(guard), { label: 'tools.guard()' })
-  }
-
-  /**
-   * Check global and inherited guards after pre-execute policy and approval resolve.
-   * @param exec - invocation whose guards are checked before dispatch.
-   * @returns the first denial reason, or undefined when no guard denies.
-   */
-  checkGuards(exec: ToolExecution): string | undefined {
-    for (const layer of [this.guards.global, ...this.guards.chainLayers(exec.agent)]) {
-      for (const guard of layer.guards.values()) {
-        const reason = guard(exec)
-        if (reason !== undefined) return reason
-      }
+      return toolErrorResult(error)
+    } finally {
+      fused.dispose()
+      exec.signal = wrapperSignal
     }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/core/tools/src/pipeline.ts:190-231](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/tools/src/pipeline.ts#L190-L231)
+**依据 4 · 源码核查**：[packages/session/session-persistence-jsonl/src/storage.ts:288-316](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-persistence-jsonl/src/storage.ts#L288-L316)
 
-所查 native pipeline 在分派前执行策略和审批。
+保留持久失败批。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-  async prepare(input: ToolExecutionInput): Promise<ScheduledToolPreparation> {
-    const created = this.createExecution(input)
-    if (created.kind !== 'ready') return created
-    const exec = created.exec
-    if (this.callerCancelled(exec)) {
-      return { kind: 'final-result', exec, result: toolAbortedBeforeDispatchResult() }
+  drainLive(): Promise<void> {
+    return this.draining ??= this.drainBuffered().finally(() => {
+      this.draining = undefined
+    })
+  }
+
+  private async drainBuffered(): Promise<void> {
+    if (this.batchTimer !== undefined) {
+      clearTimeout(this.batchTimer)
+      this.batchTimer = undefined
     }
-    try {
-      const carrier = scopeTarget(this.tools, exec.agent)
-      const gate = await this.ctx.waterfall(
-        carrier, 'tools/pre-execute', exec,
-        () => Promise.resolve<PreToolDecision>({ kind: 'allow' }),
-      )
-      const askResolution = gate.kind === 'ask'
-        ? await this.serviceAsk(exec, gate)
-        : { decision: gate, approvalCancelled: false }
-      const { decision } = askResolution
-      if (this.callerCancelled(exec) && askResolution.approvalCancelled) {
-        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
-      }
-      if (decision.kind === 'cancel') {
-        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
-      }
-      const denialReason = decision.kind === 'allow' ? this.tools.checkGuards(exec) : decision.reason
-      const denialInfo = decision.kind === 'deny' ? decision.info : undefined
-      if (denialReason !== undefined) {
-        return {
-          kind: 'post-result',
-          exec,
-          result: this.materializeFinalResult({
-            content: [{ type: 'text', text: `Error: ${denialReason}` }],
-            isError: true,
-            error: { message: denialReason, ...denialInfo === undefined ? {} : { info: denialInfo } },
-          }),
+    this.drainPaused = false
+    while (this.buffered.length > 0) {
+      // Capture inside the chained turn so events landing while an earlier
+      // batch writes coalesce into the next one, in order.
+      await this.enqueueChain(async () => {
+        // Only this single-flight drain splices the buffer, so the batch the
+        // while-guard saw is still here when the chained turn runs.
+        const batch = this.buffered.splice(0)
+        try {
+          await this.persistContiguous(materializeAppendBatch(batch))
+        } catch (error: unknown) {
+          this.buffered = batch.concat(this.buffered)
+          this.drainPaused = true
+          throw error
         }
-      }
-      if (this.callerCancelled(exec)) {
-        return { kind: 'post-result', exec, result: toolAbortedBeforeDispatchResult() }
-      }
-      return { kind: 'dispatch', exec }
-    } catch (error: unknown) {
-      return { kind: 'final-result', exec, result: toolErrorResult(error) }
+      })
+    }
+  }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/core/session/src/index.ts:1329-1358](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/core/session/src/index.ts#L1329-L1358)
+**依据 5 · 源码核查**：[packages/session/session-checkpoint-policy/src/index.ts:64-83](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/session/session-checkpoint-policy/src/index.ts#L64-L83)
 
-flush 等待所有监听并传播失败。
+checkpoint真正拦下游。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-  /**
-   * Dispatch the awaited `session/flush` durability checkpoint for `session`,
-   * with the carrier captured at {@link enter}. THE flush entry point: the
-   * store owns the carrier, so callers (the checkpoint policy's per-request
-   * barrier, goal-round-driver's idle checkpoint, teardown drains, and consumers
-   * that flush themselves before reading storage) must come through here
-   * rather than dispatch a raw `ctx.parallel('session/flush', …)` — one owner
-   * and one spelling.
-   * @param session - the session whose buffered events must reach durable storage.
-   * @returns whether at least one durability listener participated, after every
-   *   listener has settled successfully.
-   * @throws the first registered listener failure after every listener settles.
-   */
-  async flush(session: Session): Promise<boolean> {
-    const { carrier } = this.liveEntryFor(session)
-    const callbackArgs: unknown[] = [session]
-    const callbacks = collectSessionCallbacks(this.ctx, [carrier, 'session/flush', session])
-    const results = await Promise.allSettled(callbacks.map((callback) => {
-      try {
-        return callback(...callbackArgs)
-      } catch (error: unknown) {
-        // Preserve the listener's exact rejection value; flush is a caller-owned
-        // failure boundary, and Cordis listeners may throw arbitrary values.
-        // oxlint-disable-next-line typescript/prefer-promise-reject-errors
-        return Promise.reject(error)
-      }
-    }))
-    const failure = results.find((result): result is PromiseRejectedResult => result.status === 'rejected')
-    if (failure !== undefined) throw failure.reason
-    return callbacks.length > 0
+  ctx.on('llm/stream', (options, next): AsyncIterable<StreamChunk> => {
+    if (options.sessionId === undefined) return next()
+    const session = ctx.sessions.get(options.sessionId)
+    return session === undefined ? next() : afterCheckpoint(ctx, session, next)
+  })
+
+  ctx.on('tools/execute', async (exec, next): Promise<ToolExecutionResult> => {
+    if (exec.agent === undefined || exec.parent !== undefined) return next()
+    await ctx.sessions.flush(exec.agent.session)
+    if (exec.signal.aborted) return abortedBeforeDispatchResult()
+    return next()
+  })
+
+  // Before each request, persist everything committed by the preceding step;
+  // the first step's call is an intentional no-op beyond any prompt intake.
+  ctx.on('agent/pre-step', async ({ agent }, next): Promise<PreStepDecision> => {
+    await ctx.sessions.flush(agent.session)
+    return next()
+  })
+}
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:87-101](https://github.com/deepseek-ai/deepseek-harness/blob/ce7073d51254c26cd63b22a60835b8f948deb447/packages/boot/app-boot/src/plugin-compatibility.ts#L87-L101)
+**依据 6 · 源码核查**：[packages/boot/app-boot/src/plugin-compatibility.ts:49-76](https://github.com/deepseek-ai/deepseek-harness/blob/fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159/packages/boot/app-boot/src/plugin-compatibility.ts#L49-L76)
 
-版本准入只给出要求与豁免结果。
+版本范围只处理声明。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-export function evaluatePluginCompatibility(
-  manifest: object,
-  exemptions: Readonly<Record<string, readonly string[]>> = {},
-  runtimeVersion = getDshRuntimeVersion(),
-): PluginCompatibility | undefined {
-  runtimeVersionOf(runtimeVersion)
-  const fields = objectOf(manifest, 'Plugin manifest')
-  const requirements = unmetRequirements(fields, runtimeVersion)
-  if (Object.keys(requirements).length === 0) return undefined
-  const name = identityField(fields, 'name')
-  const version = identityField(fields, 'version')
-  const key = `${name}@${version}`
-  const exemptedVersions = Object.hasOwn(exemptions, key) ? exemptions[key] : undefined
-  const exempted = exemptedVersions?.includes(runtimeVersion) === true
-  return { name, version, runtimeVersion, requirements, exempted }
+}
+
+function satisfies(runtimeVersion: string, range: string): boolean {
+  return range.trim() !== '' && semver.satisfies(runtimeVersion, range, { includePrerelease: true })
+}
+
+function unmetRequirements(fields: Record<string, unknown>, runtimeVersion: string): Record<string, string> {
+  const engines = Object.hasOwn(fields, 'engines') ? objectOf(fields.engines, 'Plugin manifest engines') : {}
+  if (Object.hasOwn(engines, 'dsh')) {
+    const range = engines.dsh
+    if (typeof range !== 'string') throw new Error('Plugin manifest engines.dsh must be a string')
+    return satisfies(runtimeVersion, range) ? {} : { 'engines.dsh': range }
+  }
+  if (!Object.hasOwn(fields, 'peerDependencies')) return {}
+  const dependencies = objectOf(fields.peerDependencies, 'Plugin manifest peerDependencies')
+  const unmet: Record<string, string> = {}
+  for (const [name, range] of Object.entries(dependencies)) {
+    if (typeof range !== 'string') {
+      throw new Error(`Plugin manifest peerDependencies[${JSON.stringify(name)}] must be a string`)
+    }
+    if (name !== '@deepseek-ai/dsh' && !name.startsWith('@deepseek-ai/dsh-')) continue
+    const requirement = ['workspace:^', 'workspace:~', 'workspace:*'].includes(range) ? runtimeVersion : range
+    if (!satisfies(runtimeVersion, requirement)) unmet[name] = range
+  }
+  return unmet
+}
+
+/**
 ```
 
 </details>
 
 #### 缺口
 
-- 接缝验收假设无对照试验
-  **影响**：不能断言其预测能力或总成本更优
-  **进一步探讨**：记录真实插件升级故障、两种方法检出率与维护时间。
+- 未对真实插件升级故障集做对照。
+  **影响**：不能说接缝测试已减少事故或替代全部兼容审核。
+  **进一步探讨**：从一次已知升级故障固定重现与反例，分别计检出和维护分钟，无净收益就保留简单版本检查。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

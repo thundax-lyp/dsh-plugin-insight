@@ -152,7 +152,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "scope",
@@ -190,7 +190,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "distribution",
@@ -249,7 +249,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "value",
@@ -272,7 +272,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "engineering",
@@ -295,7 +295,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "contribution",
@@ -318,7 +318,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "critical_question",
@@ -356,7 +356,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "innovation_hypothesis",
@@ -379,7 +379,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "dependencies",
@@ -402,7 +402,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:17:02.544Z",
-                    "status": "current"
+                    "status": "needs_review"
                 }
             ],
             "last_checked_at": "2026-11-01T08:17:02.544Z",
@@ -410,7 +410,7 @@
                 "rubric": "innovation-v1",
                 "revision": "68a78d05a6c8c27305671cfc42c30cbbec8014f5",
                 "reviewed_at": "2026-11-01T08:17:02.544Z",
-                "status": "current",
+                "status": "needs_review",
                 "dependencies": [
                     {
                         "plugin_id": "github:1331636953:root",
@@ -477,7 +477,7 @@
                 "score": 39,
                 "revision": "68a78d05a6c8c27305671cfc42c30cbbec8014f5",
                 "reviewed_at": "2026-11-01T08:17:02.544Z",
-                "status": "current",
+                "status": "needs_review",
                 "evaluator": "ai",
                 "evidence_ids": [
                     "2026-11-01-03-github-1331636953-root-source"
@@ -510,23 +510,6 @@
                     }
                 ]
             }
-        },
-        "publication.records": {
-            "id": "github:1331636953:root",
-            "repository": "zhu1090093659/dsh-web",
-            "path": "",
-            "revision": "68a78d05a6c8c27305671cfc42c30cbbec8014f5",
-            "fingerprints": {
-                "directory": "3e984eebb423e9658b39aff669777edb49f9e2f9031d4c33da639ebf42b1a4f5",
-                "code": "68a78d05a6c8c27305671cfc42c30cbbec8014f5",
-                "maintenance": "1953927e6525a4cb8fe7815d5e7e3fd420fe1fd24bb57a6d0fd6ab9bb9a13431"
-            },
-            "source_urls": [
-                "https://github.com/0xsline/awesome-deepseek-harness"
-            ],
-            "status": "complete",
-            "checked_at": "2026-11-01T08:09:03Z",
-            "analysis_sha256": "773c13417de22b270a7086a415819c46e1169d22db0e9f88eebd2cbe8c553001"
         },
         "publication.metadata": "data/catalog/zhu1090093659--dsh-web/meta.json",
         "publication.summaries": {

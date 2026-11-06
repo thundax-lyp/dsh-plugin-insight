@@ -1,27 +1,36 @@
 {
     "repository": "esengine/DeepSeek-Reasonix",
     "repository_id": 1216785679,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 36014,
-    "pushed_at": "2026-11-01T06:33:56Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 36089,
+    "pushed_at": "2026-11-06T06:50:13Z",
     "issues": {
-        "open": 591,
-        "closed": 5630,
-        "created_30d": 1166,
-        "closed_30d": 767,
-        "updated_30d": 1319
+        "open": 625,
+        "closed": 5650,
+        "created_30d": 1024,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aesengine%2FDeepSeek-Reasonix%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 520C:2F5E6E:29F5C7:2D86E3:6AED7A1C and timestamp 2026-11-06 06:56:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aesengine%2FDeepSeek-Reasonix%20is%3Aissue%20updated%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5258:163BA4:2926B3:2CB7A3:6AED7A1D and timestamp 2026-11-06 06:56:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-31T09:58:25.350Z",
+        "captured_at": "2026-11-05T20:18:16.149Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11681f42b65a3872f5f2cd5c29cd4733d24592f4",
-        "blob_sha": "8dc907fcd2ec9326c363c8561ecdac288f8d1c1d",
-        "errors_blob_sha": "cf662c0dfeb8948098a54b2f4fdd2e5f6b816ae9",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
         "latest_error": null
     }
 }

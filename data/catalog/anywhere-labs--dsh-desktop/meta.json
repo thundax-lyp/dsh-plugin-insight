@@ -1,27 +1,27 @@
 {
     "repository": "anywhere-labs/dsh-desktop",
     "repository_id": 1333321333,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 34234,
-    "pushed_at": "2026-10-31T18:25:36Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 34996,
+    "pushed_at": "2026-11-04T20:24:03Z",
     "issues": {
-        "open": 316,
-        "closed": 471,
-        "created_30d": 124,
-        "closed_30d": 66,
-        "updated_30d": 157
+        "open": 309,
+        "closed": 487,
+        "created_30d": 125,
+        "closed_30d": 81,
+        "updated_30d": 159
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-31T09:58:25.350Z",
+        "captured_at": "2026-11-05T20:18:16.149Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "11681f42b65a3872f5f2cd5c29cd4733d24592f4",
-        "blob_sha": "8dc907fcd2ec9326c363c8561ecdac288f8d1c1d",
-        "errors_blob_sha": "cf662c0dfeb8948098a54b2f4fdd2e5f6b816ae9",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
         "latest_error": null
     }
 }

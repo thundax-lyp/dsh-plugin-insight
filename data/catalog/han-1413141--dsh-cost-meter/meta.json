@@ -1,34 +1,44 @@
 {
     "repository": "Han-1413141/dsh-cost-meter",
     "repository_id": 1333235870,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 589,
-    "pushed_at": "2026-11-01T03:01:57Z",
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 635,
+    "pushed_at": "2026-11-05T04:42:38Z",
     "issues": {
-        "open": 1,
-        "closed": 228,
-        "created_30d": 99,
-        "closed_30d": 99,
-        "updated_30d": 101
+        "open": 3,
+        "closed": 239,
+        "created_30d": 105,
+        "closed_30d": 103,
+        "updated_30d": 107
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-cost-meter",
-        "captured_at": "2026-10-30T01:05:22.633Z",
-        "window_start": "2026-09-30",
-        "window_end": "2026-10-29",
-        "downloads_30d": 117828,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-09-30:2026-10-29/dsh-cost-meter",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 128808,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-cost-meter",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-18T12:38:09.872Z",
-            "captured_at": "2026-10-30T01:05:22.633Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
             "source_url": "https://registry.npmjs.org/dsh-cost-meter",
             "error": null,
-            "latest_version": "1.9.46",
-            "latest_published_at": "2026-10-29T06:32:25.722Z",
+            "latest_version": "1.9.58",
+            "latest_published_at": "2026-11-05T04:44:06.279Z",
             "latest_error": null
         }
     }

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[e580bbc](https://github.com/ruvnet/ruflo/tree/e580bbc8204874f762d132fe441b18192979211b)
+源码版本：[206e592](https://github.com/ruvnet/ruflo/tree/206e59259a1d620fb320119f19399ca01053658c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 80,349](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=80%2C349&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 52,361](https://img.shields.io/static/v1?label=npm+30d&message=52%2C361&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
+[![GitHub ★ 80,987](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=80%2C987&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ruvnet/ruflo) [![npm 30d 55,572](https://img.shields.io/static/v1?label=npm+30d&message=55%2C572&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/claude-flow)
 <!-- END META -->
 
-> **功能**：提供 CLI 和 MCP 工具以登记 Agent、组织任务并调用模型服务。
+> **功能**：独立CLI/MCP协调工具，登记角色和任务、路由模型请求并集中记录状态与策略。
 
-> **亮点**：[Q02](#research-q02) 显示统一登记、模型调用与结果归档，以及中央策略接线；相对原生任务的净收益未知，登记不是已启动工作者。
+> **亮点**：[Q02](#research-q02)统一角色配置/调用/结果和完成新快照重读；[Q04](#research-q04)中央policy/envelope/可选caller验证接线。
 
-> **主要限制**：[Q03](#research-q03) 显示 task 完成和终止是状态操作；[Q04](#research-q04) 的 schema 过滤也不是授权。不能把 API 成功、隐藏 schema 或状态终止当成产物验收和物理退出。
+> **主要限制**：[Q03](#research-q03)complete/terminate是状态，API success非任务质量；[Q04](#research-q04)mode与caller开关决定实际防线，schema广告非授权；[Q05](#research-q05)净收益/退出仍未知。
 
 **本文目录**
 
@@ -26,12 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 根组件是什么，为谁组织何种工作？](#detail-section-11)
-  - [Q02 · MCP 登记与 agent_execute 实际执行什么？](#detail-section-12)
-  - [Q03 · 任务完成和终止是否证明产物与进程终态？](#detail-section-13)
-  - [Q04 · 工具展示与策略授权的真实边界是什么？](#detail-section-14)
-  - [Q05 · 使用依赖、成本及退出条件是什么？](#detail-section-15)
-  - [Q06 · 独立验收收据是否能减少误判？](#detail-section-16)
+  - [Q01 · 根Ruflo到底交付什么，相比原生Agent任务有何采用理由？](#detail-section-11)
+  - [Q02 · stdio到登记/模型响应的真实链是什么？](#detail-section-12)
+  - [Q03 · 任务完成/Agent终止和学习健康指标分别代表什么？](#detail-section-13)
+  - [Q04 · 中央policy和caller身份能提供什么，默认又缺什么？](#detail-section-14)
+  - [Q05 · 何时值得用，资源/状态与退出成本怎样估？](#detail-section-15)
+  - [Q06 · 比加Agent数量更可证伪的方向是什么？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -41,78 +41,84 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：已有协调需求的开发者可以登记角色并组织模型调用；产物审查和业务验收仍由使用者负责。
+> **用途**：根项目Ruflo当前npm包名claude-flow3.72.1，是独立CLI/MCP协调工具/多包工程，非DSH原生插件。它面向确需跨会话登记角色、配置模型、分配任务/归档和治理调用的开发者，基线是原生Task/Todo和直接模型API。成功须任务产物合格、协调责任清楚且费用可核，不是Agent登记数/状态completed/模型API成功。
 
-宿主原生子 Agent 与人工任务清单也能组织工作；本次未做同模型、同任务的质量和费用对照。
+原生Task/Todo、直接模型API和人工协调清单，现成模型/协议能力已有。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
+| 能力 | 用途 | 条件与边界 |
 |---|---|---|
-| Agent 登记 | 保存角色与模型设置 | 登记不启动工作者 |
-| 模型调用 | 对登记 Agent 发出文本请求 | 代表路径未显示工具回灌循环 |
-| 任务状态 | 保存分配、完成和取消 | 不等同产物验收或物理停止 |
-| MCP 策略 | 在 handler 前判断调用 | legacy、observe 和 enforce 行为不同 |
+| Agent登记 | 角色/模型配置 | registered非已跑worker |
+| execute | 一次provider文本响应 | 非代码工具执行循环 |
+| task状态 | 完成/取消记录 | 非独立验收/停机 |
+| policy | 中央授权 | mode/caller需核 |
+| 学习健康 | API结果反馈 | 非gold任务正确率 |
+
+**流程与依赖**
 
 #### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| 依赖或条件 | 必需性 | 用途 | 缺失/边界 |
 |---|---|---|---|
-| 匹配的 Node 与构建 dist | CLI 需要 | 加载 v3 入口 | 缺失时不能推断能运行 |
-| 模型 provider 与额度 | 模型调用需要 | 返回文本 | 凭据或服务不可用则请求失败 |
-| 受控 stdio 和政策配置 | 按部署需要 | 控制调用者与操作 | schema 过滤不构成授权 |
-| 项目状态写权限 | 持久化需要 | 保存 Agent 和任务 | 状态失败或并发冲突需核对 |
+| Node>=20/匹配dist | CLI必需 | 根代理v3/registry | 源码非成品验证 |
+| provider/Key/网络/额度 | 模型调用必需 | 真文本响应 | 非代码Agent闭环证明 |
+| 私有stdio/policy/身份配置 | 采用前提 | 约束调用 | 默认mode/auth不等enforce |
+| 项目store/可选native嵌入依赖 | 按路径 | 状态/记忆 | 多store/成本另核 |
 
 #### 启动步骤
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| 步骤 | 动作 | 判据/失败处理 |
 |---|---|---|
-| 准备 | 用户建立隔离副本和受控 stdio | 确认 root、策略、模型和费用 |
-| 登记 | 用户或调用者创建 Agent 记录 | 记录存在，不当作工作已启动 |
-| 请求 | 调用者发起模型请求 | 核对模型、停止原因与响应 |
-| 验收 | 用户独立检查产物和状态 | 无验收证据或退出不明时停止并人工核查 |
+| 比较 | 先Task/Todo/直接API | 确有持续协调需要 |
+| 隔离 | 私有stdio/副本/mode/keys | schema非权限 |
+| 小试 | 登记一角色/请求一次 | registered非运行者 |
+| 验收 | 分读状态/响应/进程/产物 | API健康非任务质量 |
+| 退出 | 核真执行路径再清状态/分支 | terminate不撤HTTP |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 安装、构建及模型资源未知 | 配置 root、权限及隔离 | 需匹配 dist |
-| 持续 | provider、重试及可选嵌入成本未知 | 分配、复核与合并 | 单次限制不等整体费用上限 |
-| 失败恢复 | 状态、日志与重试成本未知 | 核对真实运行和副作用 | 状态停止不保证物理退出 |
+| 首次 | 构建/native/模型未知 | 配dist/policy/keys | 安装可用未验 |
+| 持续 | provider/fallback/嵌入/磁盘未知 | 分配/复核/合并 | 单次限制非总费用 |
+| 故障 | 远端继续/状态重试未知 | 查产物/HTTP/工作者 | 多store非统一事务 |
+| 退出 | 状态/记忆/转录留存未知 | 停实际worker/清凭据 | best-effort清理须核 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 登记和文本调用 | MCP 接线及代表 provider 请求 | 自主代码交付和合格率 |
-| 中央策略 | handler 前有策略判断 | 当前部署是否启用 enforce 与身份认证 |
-| 任务状态 | 可以登记完成或取消 | 产物是否已独立验证 |
+| 登记/执行 | 真store/模型文本HTTP | 真实worker自治交付 |
+| 完成/终止 | 状态持久更新 | 验收/物理停止 |
+| 健康/学习 | API成功/延迟弱反馈 | 任务质量/gold效果 |
+| policy | 中央mode/envelope/身份 | 实际部署enforce/隔离 |
 
-> **思考**：[Q03](#research-q03) 显示 task 完成和终止是状态操作；[Q04](#research-q04) 的 schema 过滤也不是授权。不能把 API 成功、隐藏 schema 或状态终止当成产物验收和物理退出。
+> **思考**：[Q03](#research-q03)complete/terminate是状态，API success非任务质量；[Q04](#research-q04)mode与caller开关决定实际防线，schema广告非授权；[Q05](#research-q05)净收益/退出仍未知。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 显示统一登记、模型调用与结果归档，以及中央策略接线；相对原生任务的净收益未知，登记不是已启动工作者。
+> **亮点**：[Q02](#research-q02)统一角色配置/调用/结果和完成新快照重读；[Q04](#research-q04)中央policy/envelope/可选caller验证接线。
 
-[Q02](#research-q02) 的策略集中入口和结果重读有具体作用；[Q03](#research-q03) 的状态文件与实际运行生命周期不是同一事务，需要调用者独立核查。
+[Q02](#research-q02)中央授权/完成新快照重读有价值；[Q03](#research-q03)状态/远端生命周期与API/任务质量必须分开，[Q04](#research-q04)envelope例外/默认模式不能混同。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 显示 task 完成和终止是状态操作；[Q04](#research-q04) 的 schema 过滤也不是授权。不能把 API 成功、隐藏 schema 或状态终止当成产物验收和物理退出。
+[Q03](#research-q03)complete/terminate是状态，API success非任务质量；[Q04](#research-q04)mode与caller开关决定实际防线，schema广告非授权；[Q05](#research-q05)净收益/退出仍未知。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 建议先观察；确有需要时在隔离副本及私有受控 stdio 只测一个明确模型请求，分别核查状态、返回和独立产物。
+[Q05](#research-q05)观察；确认需要时私有stdio/隔离副本最小请求，分别核状态/响应/物理worker/独立产物。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +126,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持代表调用与状态路径；自主交付、运行表现和未来设计未验证。
+固定源码支持代表登记/模型文本调用/状态及中央策略；真实任务/worker/部署未验，观察。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、bin/cli.js、v3/@claude-flow/cli/bin/cli.js、v3/@claude-flow/cli/src/mcp-client.ts、v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts、v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts、v3/@claude-flow/cli/src/mcp-tools/task-tools.ts、v3/@claude-flow/cli/src/mcp-tools/swarm-tools.ts、v3/@claude-flow/cli/src/services/policy-runtime.ts、v3/@claude-flow/security/src/policy/engine.ts、v3/@claude-flow/security/src/policy/evaluator.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、bin/cli.js、package.json、v3/@claude-flow/cli/bin/cli.js、v3/@claude-flow/cli/src/mcp-client.ts、v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts、v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts、v3/@claude-flow/cli/src/mcp-tools/task-tools.ts、v3/@claude-flow/cli/src/services/policy-runtime.ts、v3/@claude-flow/security/src/mcp-caller-identity.ts、v3/@claude-flow/security/src/policy/engine.ts、v3/@claude-flow/security/src/policy/evaluator.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：定向检查固定根包、stdio registry、agent 代表 provider、task 状态和 policy；未执行目标、已构建 dist、真实模型或 MCP，未全审其他 provider、workflow、native workers 和所有权限配置。
-- 下一步：固定构建与 provider，在无敏感数据的副本对照宿主原生任务，测 policy 模式、终止后请求、实际产物、人工时间及费用。
+- 边界：旧12findings当前全量重核；核根/v3 stdio registry、agent登记/execute代表Anthropic文本HTTP与fallback/状态回写、task complete/cancel、policy mode/envelope/可选caller身份代表链；未全审6972文件、dist、其它provider/workflow/native worker、全密钥/anchor/HTTP与安全配置。
+- 下一步：只读固定源码，不运行CLI/MCP/dist/模型/嵌入/worker/测试；无任务效果/物理退出/部署身份或经济效益独立验证。
 
 **分析版本**
 
 - **仓库**：[ruvnet/ruflo](https://github.com/ruvnet/ruflo)
-- **版本号**：3.68.0（[固定提交 e580bbc](https://github.com/ruvnet/ruflo/tree/e580bbc8204874f762d132fe441b18192979211b)）
-- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：3.72.1（[固定提交 206e592](https://github.com/ruvnet/ruflo/tree/206e59259a1d620fb320119f19399ca01053658c)）
+- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +145,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 提出分别保存登记、响应、工作者停止和独立验收收据的未验证假设；若人工清单或原工具小修足够则不增加新系统。
+[Q06](#research-q06)登记/响应/停止/独立验收四收据，先与人工清单/小修对照，不算当前gold学习或生命周期事务。
 
-固定构建与 provider，在无敏感数据的副本对照宿主原生任务，测 policy 模式、终止后请求、实际产物、人工时间及费用。
+只读固定源码，不运行CLI/MCP/dist/模型/嵌入/worker/测试；无任务效果/物理退出/部署身份或经济效益独立验证。
 
 <a id="detail-section-9"></a>
 
@@ -150,20 +156,22 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 2235 | 482034 | — | — | 2121952 |
-| .cjs | source | 32 | 12565 | 8783 | 3090 | — |
-| .mjs | source | 386 | 72852 | 52213 | 14831 | — |
-| .js | source | 73 | 24755 | 19559 | 3939 | — |
-| .ts | source | 2308 | 656046 | 464458 | 117318 | — |
-| .mjs | test | 107 | 11470 | 9595 | 1105 | — |
-| .ts | test | 1458 | 312027 | 243663 | 23646 | — |
+| .md | source | 2254 | 483419 | — | — | 2139049 |
+| .cjs | source | 32 | 12720 | 8896 | 3121 | — |
+| .mjs | source | 395 | 74047 | 53195 | 14980 | — |
+| .js | source | 73 | 24791 | 19582 | 3953 | — |
+| .ts | source | 2331 | 660125 | 467426 | 118157 | — |
+| .mjs | test | 110 | 11588 | 9699 | 1109 | — |
+| .ts | test | 1559 | 323577 | 253319 | 24342 | — |
 | .mts | source | 6 | 598 | 568 | 25 | — |
-| .ts | example | 85 | 19167 | 14331 | 2543 | — |
+| .ts | example | 85 | 19170 | 14333 | 2544 | — |
 | .md | example | 23 | 993 | — | — | 3946 |
 | .mjs | example | 3 | 68 | 51 | 9 | — |
-| .cjs | test | 9 | 859 | 732 | 77 | — |
+| .cjs | test | 9 | 983 | 835 | 87 | — |
 | .cjs | example | 2 | 23 | 16 | 7 | — |
 | .tsx | source | 79 | 14108 | 12916 | 238 | — |
 | .js | example | 1 | 2 | 1 | 1 | — |
@@ -173,35 +181,47 @@
 
 **活跃度**
 
-[![Issue 未关闭 667](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=667&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 240](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=240&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 262](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=262&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
+[![Issue 未关闭 311](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=311&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 275](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=275&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z) [![近30天关闭 683](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=683&color=737b86&logo=github)](https://github.com/ruvnet/ruflo/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-06。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查根工具的 MCP 代表调用、状态、授权及与实际任务验收的关系。
+**插件研究总目标**：重核stdio/代表Agent文本执行、任务状态与policy身份，不把登记/API健康当自治交付。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 根组件是什么，为谁组织何种工作？
+### Q01 · 根Ruflo到底交付什么，相比原生Agent任务有何采用理由？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-根 package.json:1-15 定义 claude-flow 3.68.0 的 CLI 包，bin/cli.js:1-11 代理到 v3 CLI；它是独立 CLI/MCP 工具而不是 DSH 原生插件。对于需要登记角色、分派任务和查看调用结果的开发者，潜在价值是统一状态及模型路由；人工清单和宿主原生子 Agent 是替代。相对已有工具的质量、净人工时间和费用没有同条件实测，模型收到的 prompt 可能包含用户数据；源码可见登记不等于自主工作。
+根项目Ruflo当前npm包名claude-flow3.72.1，是独立CLI/MCP协调工具/多包工程，非DSH原生插件。它面向确需跨会话登记角色、配置模型、分配任务/归档和治理调用的开发者，基线是原生Task/Todo和直接模型API。成功须任务产物合格、协调责任清楚且费用可核，不是Agent登记数/状态completed/模型API成功。
+
+作者宣称swarm/self-learning/分布式/大量角色，不能由本轮代表路径推出所有原生worker/工作流都有效。此研究核stdio registry及agent_spawn/execute、task与中央策略；根CLI代理到v3并加载dist，不把源码存在当已构建发行验收。Node>=20/MIT，实际模型凭据/网络额度、可选嵌入/原生依赖和项目状态写权限另需配置；DSH若调用只是MCP客户端，未验接线。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-15](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/package.json#L1-L15)
+**依据 1 · 作者声明**：[README.md:100-102](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/README.md#L100-L102)
 
-根包身份及 CLI。
+作者Agent/swarm/self-learning总体主张。
+
+```text
+> **Agent = Model + Harness.** The model writes; the harness gives it tools, memory, loops, sandboxes, and controls so it can actually work. **Ruflo is the harness** — the execution layer around Claude Code and Codex that adds 100+ specialized agents, coordinated swarms, self-learning memory, federated comms across machines, and enterprise security guardrails. So agents don't just run, they collaborate.
+
+One `npx ruflo init` gives Claude Code a nervous system: agents self-organize into swarms, learn from every task, remember across sessions, and — with federation — securely talk to agents on other machines without leaking data. You keep writing code. Ruflo handles the coordination.
+```
+
+**依据 2 · 源码核查**：[package.json:1-15](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/package.json#L1-L15)
+
+根包身份/版本/入口。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -209,7 +229,7 @@
 ```text
 {
   "name": "claude-flow",
-  "version": "3.68.0",
+  "version": "3.72.1",
   "workspaces": [
     "v3/@claude-flow/codex",
     "v3/@claude-flow/mcp",
@@ -226,9 +246,27 @@
 
 </details>
 
-**依据 2 · 源码核查**：[bin/cli.js:1-11](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/bin/cli.js#L1-L11)
+**依据 3 · 源码核查**：[package.json:173-175](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/package.json#L173-L175)
 
-入口代理 v3 CLI。
+Node范围。
+
+```text
+  "engines": {
+    "node": ">=20.0.0"
+  },
+```
+
+**依据 4 · 源码核查**：[package.json:216-216](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/package.json#L216-L216)
+
+MIT声明。
+
+```text
+  "license": "MIT",
+```
+
+**依据 5 · 源码核查**：[bin/cli.js:1-11](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/bin/cli.js#L1-L11)
+
+根真实代理v3入口。
 
 <details>
 <summary>查看原文（11行）</summary>
@@ -249,70 +287,91 @@ await import(pathToFileURL(cliPath).href);
 
 </details>
 
-**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:372-393](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L372-L393)
+**依据 6 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:180-190](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/bin/cli.js#L180-L190)
 
-创建登记记录。
+stdio真实加载dist registry与policy。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-      const agent: AgentRecord = {
-        agentId,
-        agentType,
-        ...(name ? { name } : {}),
-        status: 'idle',
-        health: 1.0,
-        taskCount: 0,
-        config,
-        createdAt: new Date().toISOString(),
-        domain: input.domain as string,
-        model: routingResult.model,
+    process.exitCode = hook ? 0 : 1;
+  }
+} else if (isMCPMode) {
+  // Run MCP server mode
+  const { listMCPTools, callMCPTool, hasTool } = await import('../dist/src/mcp-client.js');
+  const { isPolicyEnforcementEnabled, loadMcpPolicy, evaluateToolCall } =
+    await import('../dist/src/mcp-tools/policy-enforcer.js');
+  // ADR-524: shared MCP revision handling (2026-07-28 + legacy initialize).
+  const mcpProtocol = await import('../dist/src/mcp-protocol.js');
+  const MCP_CAPABILITIES = { tools: { listChanged: true }, resources: {} };
+
+```
+
+</details>
+
+**依据 7 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:526-541](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L526-L541)
+
+登记结果及作者区别三种执行路径。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
         modelRoutedBy: routingResult.routedBy,
         ...(routingResult.modelId ? { modelId: routingResult.modelId } : {}),
-        ...(explicitConfigProvider
-          ? { provider: explicitConfigProvider }
-          : routingResult.provider ? { provider: routingResult.provider } : {}),
+        // #2962 — mirror the same precedence used for the stored agent
+        // record, so the response a caller sees matches what was actually
+        // persisted (previously this always reported the router's own
+        // pick, silently dropping an explicit config.provider override).
+        ...(agent.provider ? { provider: agent.provider } : {}),
         ...(routingResult.openrouterModel ? { openrouterModel: routingResult.openrouterModel } : {}),
+        status: 'registered',
+        createdAt: agent.createdAt,
+        ...(memoryBranch ? { memoryBranch, memoryBase: agent.memoryBase } : {}),
+        note: 'Agent registered for coordination. Three execution paths: ' +
+          '(1) call agent_execute(agentId, prompt) — direct LLM call via Anthropic Messages API (requires ANTHROPIC_API_KEY); ' +
+          '(2) Claude Code Task tool — spawns a real subagent; ' +
+          '(3) claude -p — headless background instance.',
       };
-
-      const store = loadAgentStore();
-      store.agents[agentId] = agent;
-      saveAgentStore(store);
 ```
 
 </details>
 
 #### 缺口
 
-- 缺同条件编码任务和用户对照
-  **影响**：不能推断相对宿主 Agent 的净收益
-  **进一步探讨**：比较同一代码任务的验收结果、人工时间和费用。
+- 构建dist/安装、真实swarm/DSH组合、任务需求和净收益未验。
+  **影响**：不能当所有worker自治交付或已安装DSH插件。
+  **进一步探讨**：先原生Task/Todo对照；只有稳定跨会话协调需求才测隔离受控stdio代表请求。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · MCP 登记与 agent_execute 实际执行什么？
+### Q02 · stdio到登记/模型响应的真实链是什么？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-v3/@claude-flow/cli/bin/cli.js:283-322 区分 tools/list 与 tools/call；src/mcp-client.ts:255-288 从注册表查工具，先调用中央授权再执行 handler。src/mcp-tools/agent-tools.ts:372-393 的 agent_spawn 保存 idle Agent 记录；520-543 的 agent_execute 校验输入后调用 executeAgentTask。agent-execute-core.ts:661-687 将记录标 busy，调用 provider；251-285 的 Anthropic 分支发送一条用户消息，291-312 抽取文本、stop reason 和 usage；832-877 重读注册表后保存结果。该代表分支是真实文本 API 请求，但并未展示工具结果回灌循环，不能把该次成功写成自主修改仓库。其他 provider、workflow 和已构建 dist 未完整核查或运行。
+stdio tools/list广告过滤schema，tools/call先hasTool/可选外层policy，再callMCPTool；中央registry再次按工具名分类authorize，只有enforcedOutcome=allowed才handler。agent_spawn实际写agent记录/可选swarm membership和记忆分支，返回status=registered并明确需其它执行路径；登记本身不启动模型工作者。
+
+agent_execute handler传ID/prompt等到executeAgentTask，读记录/角色指令，标busy并累计taskCount，然后调用provider router。所核Anthropic分支真实POST /v1/messages，带凭据/system/user文本/max_tokens和局部AbortController超时，提取content中的text为结果，不携带工具目录/工具执行循环。执行层可按retryable错误和环境fallback预算换模型重试，但不等独立代码产物或完整Agent自治。其它OpenRouter/Ollama分派存在，本研究不推广该分支行为到全部runtime。
+
+成功/失败后重读最新agent store，保createdAt身份/更新，避免旧完成覆盖新注册/terminated，写lastResult/executionHistory并返回usage/文本。API success是响应可用信号，不是任务正确或用户接受。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:283-322](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/bin/cli.js#L283-L322)
+**依据 1 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:278-326](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/bin/cli.js#L278-L326)
 
-stdio 列出和调用工具。
+真实stdio列工具/调用/结果。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（49行）</summary>
 
 ```text
       case 'tools/list': {
-        const tools = _filterAdvertisedMcpTools(listMCPTools());
+        const tools = mcpProtocol.sortToolsDeterministically(_filterAdvertisedMcpTools(listMCPTools()));
         return {
           jsonrpc: '2.0',
           id: message.id,
@@ -350,20 +409,28 @@ stdio 列出和调用工具。
         }
 
         try {
-          const result = await callMCPTool(toolName, toolParams, { sessionId, transport: 'stdio' });
+          const result = await callMCPTool(toolName, toolParams, { sessionId, transport: 'stdio', ...mcpProtocol.traceContextFields(protocol) });
+          // Failed task outcomes are data; an explicit handler error is a tool failure.
+          const isError = result !== null && typeof result === 'object'
+            && typeof result.error === 'string' && result.error.trim().length > 0;
+          return {
+            jsonrpc: '2.0',
+            id: message.id,
+            result: { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }], isError },
+          };
+        } catch (error) {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-client.ts:255-288](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-client.ts#L255-L288)
+**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-client.ts:258-286](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-client.ts#L258-L286)
 
-注册表调用及策略。
+真实registry→policy→handler。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-export async function callMCPTool<T = unknown>(
   toolName: string,
   input: Record<string, unknown> = {},
   context?: Record<string, unknown>
@@ -393,61 +460,66 @@ export async function callMCPTool<T = unknown>(
     // ADR-146 P2: scan every tool result for indirect-injection before it
     // returns to the caller. The screen is opt-in via env (default off in
     // 3.10.34 — flip to default in v4) so existing pipelines keep their
-    // exact behaviour while the call site is exercised by tests and
-    // adopters. Telemetry from the screen lands in the shared
-    // GuardrailEvent sink (P5).
-    return applyContentBoundaryGuardrail(toolName, result) as T;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:372-393](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L372-L393)
+**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:452-487](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L452-L487)
 
-保存 Agent 元数据。
+真实agent登记/swarm记录。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-      const agent: AgentRecord = {
-        agentId,
-        agentType,
-        ...(name ? { name } : {}),
-        status: 'idle',
-        health: 1.0,
-        taskCount: 0,
-        config,
-        createdAt: new Date().toISOString(),
-        domain: input.domain as string,
-        model: routingResult.model,
-        modelRoutedBy: routingResult.routedBy,
-        ...(routingResult.modelId ? { modelId: routingResult.modelId } : {}),
-        ...(explicitConfigProvider
-          ? { provider: explicitConfigProvider }
-          : routingResult.provider ? { provider: routingResult.provider } : {}),
-        ...(routingResult.openrouterModel ? { openrouterModel: routingResult.openrouterModel } : {}),
-      };
+      const members = Array.isArray(swarm?.agents) ? swarm.agents : [];
+      if (swarm && swarm.status !== 'terminated' && !members.includes(agentId)) {
+        // Terminated agents stay listed in swarm.agents; they no longer hold a slot.
+        const live = members.filter(
+          (id) => store.agents[id] && store.agents[id].status !== 'terminated',
+        ).length;
+        if (live >= swarm.maxAgents) {
+          return {
+            success: false,
+            error: `Swarm ${swarm.swarmId} is full: ${live}/${swarm.maxAgents} agents. Terminate an agent (agent_terminate) or init a swarm with a larger maxAgents.`,
+            swarmId: swarm.swarmId,
+            agentCount: live,
+            maxAgents: swarm.maxAgents,
+          };
+        }
+      }
 
-      const store = loadAgentStore();
       store.agents[agentId] = agent;
       saveAgentStore(store);
+
+      if (swarm && swarmTools && swarmStore) {
+        try {
+          if (!Array.isArray(swarm.agents)) swarm.agents = [];
+          // Idempotent — don't duplicate if agent_spawn is retried.
+          if (!swarm.agents.includes(agentId)) {
+            swarm.agents.push(agentId);
+            swarmTools.saveSwarmStore(swarmStore);
+          }
+        } catch { /* swarm store unwritable — agent still registered globally */ }
+      }
+
+      // Record agent in graph database (ADR-087, best-effort)
+      try {
+        const { addNode } = await import('../ruvector/graph-backend.js');
+        await addNode({ id: agentId, type: 'agent', name: agentType });
+      } catch { /* graph-node not available */ }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:520-543](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L520-L543)
+**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:584-602](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L584-L602)
 
-校验后执行共享 core。
+execute工具真实调用core。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-    handler: async (input) => {
-      const vId = validateIdentifier(input.agentId, 'agentId');
-      if (!vId.valid) return { success: false, error: `Input validation failed: ${vId.error}` };
-      const vP = validateText(input.prompt as string, 'prompt');
-      if (!vP.valid) return { success: false, error: `Input validation failed: ${vP.error}` };
       const pheromone = pheromoneAgentEligibility(input.agentId as string);
       if (!pheromone.eligible) {
         return {
@@ -471,14 +543,60 @@ export async function callMCPTool<T = unknown>(
 
 </details>
 
-**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:661-687](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L661-L687)
+**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:623-700](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L623-L700)
 
-调用 provider 并更新记录。
+真实记录busy/角色配置/调用provider。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（78行）</summary>
 
 ```text
+export async function executeAgentTask(input: AgentExecuteInput): Promise<AgentExecuteResult> {
+  const store = loadAgentStore();
+  const agent = store.agents[input.agentId];
+  if (!agent) return { success: false, agentId: input.agentId, error: 'Agent not found' };
+  if (agent.status === 'terminated') return { success: false, agentId: input.agentId, error: 'Agent has been terminated' };
+
+  // ADR-149 iter 13 — first-call dispatch prefers `agent.modelId` (the
+  // cost-optimal pick from the neural backend) over `MODEL_MAP[agent.model]`
+  // when present. Before this fix the first attempt always used the tier
+  // mapping; only the iter-7 fallback chain used modelId on retry, which
+  // meant the cost-optimal pick was wasted unless the first call failed
+  // with a 429/5xx.
+  //
+  // Rules:
+  //   - agent.modelId is set AND it's a non-Anthropic slug (e.g.
+  //     'inclusionai/ling-2.6-flash', 'openai/gpt-4.1') → dispatch
+  //     directly via that id. callAnthropicMessages forwards non-Anthropic
+  //     ids through OpenRouter (#2042), so this gets us the cost-optimal
+  //     model on attempt 1.
+  //   - agent.modelId starts with 'anthropic/' → strip the prefix, use the
+  //     bare Anthropic id (e.g. 'anthropic/claude-haiku-4.5' → 'claude-haiku-4.5').
+  //   - agent.modelId is unset (no neural backend fired) → fall back to the
+  //     legacy tier-mapped MODEL_MAP path. Existing behaviour preserved.
+  let firstCallModel: string;
+  if (agent.modelId) {
+    firstCallModel = agent.modelId.startsWith('anthropic/')
+      ? agent.modelId.slice('anthropic/'.length)
+      : agent.modelId;
+  } else {
+    firstCallModel = resolveAnthropicModel(agent.model || 'sonnet');
+  }
+  // Kept for legacy error-path remediation message + final-result `model` field
+  // (returned when the request fully fails with no successful retry).
+  const anthropicModel = firstCallModel;
+  // The agent registry persists per-agent instructions, including those set
+  // through agent_update. Workflow steps do not supply a systemPrompt, so
+  // omitting this fallback silently discards the configured agent context.
+  const configuredInstructions = typeof agent.config?.instructions === 'string' && agent.config.instructions.trim()
+    ? agent.config.instructions
+    : undefined;
+  const systemPrompt = input.systemPrompt ||
+    configuredInstructions ||
+    `You are a ${agent.agentType} agent operating as part of a Ruflo swarm. ` +
+    `Agent ID: ${input.agentId}. Domain: ${agent.domain ?? 'general'}. ` +
+    `Respond directly and stay focused on the task. If you need information you don't have, state that explicitly.`;
+
   const initialModelId = agent.modelId;
   const initialModel = agent.model;
   agent.status = 'busy';
@@ -506,18 +624,30 @@ export async function callMCPTool<T = unknown>(
     timeoutMs: input.timeoutMs,
     provider: agent.provider,
   });
+
+  // ADR-149 iter 7 — fallback chain on retryable failures (429, 5xx,
+  // timeout). When the cost-optimal neural backend picked a specific
+  // model id and that model fails for a transient reason, fall back to
+  // the next-cheapest candidate that clears the quality bar. Budget is
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:251-285](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L251-L285)
+**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:252-335](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L252-L335)
 
-Anthropic 单次请求。
+代表Anthropic HTTP/文本提取/超时结果。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（84行）</summary>
 
 ```text
+  if (!anthropicKey) {
+    return {
+      success: false,
+      error:
+        'No LLM provider configured. Set ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN (Tier-3), OPENROUTER_API_KEY (#2042), or OLLAMA_API_KEY (Tier-2 — #1725).',
+    };
+  }
   const model = input.model || DEFAULT_ANTHROPIC_MODEL;
   const startedAt = Date.now();
   const controller = new AbortController();
@@ -553,18 +683,11 @@ Anthropic 单次请求。
         messages: [{ role: 'user', content: input.prompt }],
       }),
       signal: controller.signal,
-```
-
-</details>
-
-**依据 7 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:291-312](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L291-L312)
-
-文本、usage 和停止原因。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
+    });
+    if (!res.ok) {
+      const errText = await res.text().catch(() => '<unreadable error body>');
+      return { success: false, model, error: `Anthropic API error ${res.status}: ${errText.slice(0, 400)}` };
+    }
     const data = await res.json() as {
       id: string;
       model: string;
@@ -587,18 +710,90 @@ Anthropic 单次请求。
         outputTokens: data.usage.output_tokens,
         totalTokens: data.usage.input_tokens + data.usage.output_tokens,
       },
+      durationMs: Date.now() - startedAt,
+    };
+  } catch (err) {
+    return {
+      success: false,
+      model,
+      error: err instanceof Error ? err.message : String(err),
+      durationMs: Date.now() - startedAt,
+    };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+/**
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:832-877](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L832-L877)
+**依据 7 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:701-744](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L701-L744)
 
-完成重读与归档。
+条件fallback模型重试预算。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
+  // bounded by CLAUDE_FLOW_ROUTER_FALLBACK_MAX_RETRIES (default 1) so
+  // upstream outages don't cause retry storms.
+  const configuredFallbackBudget = parseInt(process.env.CLAUDE_FLOW_ROUTER_FALLBACK_MAX_RETRIES ?? '1', 10);
+  const fallbackBudget = Number.isNaN(configuredFallbackBudget) ? 1 : Math.max(0, configuredFallbackBudget);
+  const fallbackHistory: Array<{ modelId: string; error: string }> = [];
+  // Keep feedback for each completed attempt before switching model identity.
+  const failedAttempts: Array<{ model: ClaudeModel; modelId: string }> = [];
+  if (!result.success && agent.modelId && fallbackBudget > 0) {
+    const isRetryable = /\b(429|500|502|503|504|timeout|ECONNRESET|ETIMEDOUT)\b/i.test(result.error ?? '');
+    if (isRetryable) {
+      try {
+        const { nextCostOptimalAlternative } = await import('../ruvector/neural-router.js');
+        // ADR-149 iter 9 — delegate to the shared task-embedder LRU. The
+        // pipeline + cache are shared with agent-tools.ts, so the embedding
+        // for this prompt is almost always already cached from the initial
+        // routing decision (no extra inference cost in steady state).
+        const { embedTaskWithCache } = await import('../ruvector/task-embedder.js');
+        const embedding = await embedTaskWithCache(input.prompt);
+        if (embedding) {
+          const excludeIds: string[] = [agent.modelId];
+          for (let attempt = 0; attempt < fallbackBudget && !result.success; attempt++) {
+            fallbackHistory.push({ modelId: excludeIds[excludeIds.length - 1], error: result.error ?? '' });
+            const alt = await nextCostOptimalAlternative(embedding, excludeIds);
+            if (!alt || !alt.modelId) break;
+            excludeIds.push(alt.modelId);
+            const altResult = await callAnthropicMessages({
+              model: alt.modelId,
+              prompt: input.prompt,
+              systemPrompt,
+              maxTokens: input.maxTokens,
+              temperature: input.temperature,
+              timeoutMs: input.timeoutMs,
+            });
+            // Record the model that ACTUALLY answered (or errored). On success,
+            // update agent.modelId so downstream observers see the retry winner.
+            failedAttempts.push({ model: agent.model ?? 'sonnet', modelId: agent.modelId! });
+            agent.modelId = alt.modelId;
+            agent.model = alt.model;
+            result = altResult;
+          }
+        }
+      } catch {
+        // Fallback chain is best-effort — preserve the original error result.
+      }
+```
+
+</details>
+
+**依据 8 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:839-902](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L839-L902)
+
+完成重读/保新状态/结果与usage。
+
+<details>
+<summary>查看原文（64行）</summary>
+
+```text
+
   const remaining = (activeExecutions.get(executionKey) || 1) - 1;
   const persistCompletion = (out?: AgentExecuteResult): void => {
     // Awaited provider/feedback work may have overlapped registration, updates,
@@ -645,36 +840,51 @@ Anthropic 单次请求。
     };
     persistCompletion(out);
     return out;
+  }
+
+  persistCompletion();
+  // No-provider-configured error → surface the same actionable message
+  // the router built, with a #2042-aware remediation pointer.
+  const noProvider = (result.error || '').includes('No LLM provider configured');
+  return {
+    success: false,
+    agentId: input.agentId,
+    model: anthropicModel,
+    error: result.error || 'agent_execute failed',
+    durationMs: result.durationMs ?? Date.now() - startedAt,
+    ...(fallbackHistory.length > 0 ? { fallbackHistory } : {}),
+    ...(noProvider && {
+      remediation:
+        'Set one of ANTHROPIC_API_KEY, OPENROUTER_API_KEY (+ optional OPENROUTER_BASE_URL), or OLLAMA_API_KEY. ' +
+        'Or set RUFLO_PROVIDER=openrouter|ollama to force a specific provider.',
 ```
 
 </details>
-
-#### 缺口
-
-- 未运行目标及其它 provider/工作流
-  **影响**：代表文本请求不证明自主执行或任务合格
-  **进一步探讨**：固定 dist 和 provider，测试真实产物、失败及结果回流。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 任务完成和终止是否证明产物与进程终态？
+### Q03 · 任务完成/Agent终止和学习健康指标分别代表什么？
 
-**研究主题**：缺陷与关键质疑、功能与机制
+**研究主题**：缺陷与关键质疑
 
 #### 完整回答
 
-task-tools.ts:294-322 的 task_complete 把调用者提供的 result 写为 completed 和 100%，没有在这条分支独立运行产物验证；550-571 的 task_cancel 写 cancelled 并释放关联 Agent。agent-tools.ts:559-583 的 terminate 标记记录 terminated，附带可选 memory 处理；未见该分支中取消正在进行的 provider HTTP 调用。agent-execute-core.ts:832-846 完成时重读并保留非 busy 的新状态，但仍可能保存返回结果。swarm-tools.ts:106-131、155-164 有孤儿状态判断和临时文件 rename，这不将多个状态文件变成一个原子事务，也不证明终止远端进程或撤销副作用。中断、多进程和外部状态尚未实测。
+task_complete接受调用者result对象，直接标completed/progress100/时间，再写任务store并释放指派agent；未在此执行验收测试或核独立产物。task_cancel对未结束任务改cancelled/原因并releaseAgents，没有在此给正在执行HTTP传AbortSignal。agent_terminate标terminated/保存并best-effort处理COW memory分支；不是杀进程或中止provider请求。所核execute独立局部计时controller，终止登记不等物理退出，迟到响应仍可能返回/归档。
+
+完成回写的最新记录重读能避免把terminated改回idle，是有用的一致性修补，但多store文件/远端请求不是统一事务。agent store直接writeFileSync，跨进程并发/崩溃需另核，不因进程内activeExecutions Map称跨实例锁。
+
+健康历史和路由/trajectory outcome success按API无error，代码也明确api-success是弱代理，单次execute不产unified diff。选择性全transcript记录为opt-in且含prompt/response，不能当gold验收/隐私免费。指标可帮助网络/服务诊断，不能拿“self-learning”或API健康分当任务质量、持续记忆或实测节时证据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:294-322](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L294-L322)
+**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:343-389](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L343-L389)
 
-task_complete 写状态和调用者结果。
+真实完成只写输入结果/任务状态与释放agent。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
     name: 'task_complete',
@@ -706,18 +916,44 @@ task_complete 写状态和调用者结果。
         task.completedAt = new Date().toISOString();
         task.result = (input.result as Record<string, unknown>) || {};
         saveTaskStore(store);
+
+        // Sync assigned agents back to idle and increment taskCount
+        updateAgents(task.assignedTo, (agent) => {
+          if (agent.currentTask === taskId) {
+            agent.status = 'idle';
+            agent.currentTask = null;
+          }
+          agent.taskCount = ((agent.taskCount as number) || 0) + 1;
+        });
+
+        return {
+          taskId: task.taskId,
+          status: task.status,
+          completedAt: task.completedAt,
+          result: task.result,
+        };
+      }
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:550-571](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L550-L571)
+**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:613-648](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L613-L648)
 
-取消写状态及释放 Agent。
+真实cancel状态与releaseAgents。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
+      const vId = validateIdentifier(input.taskId, 'taskId');
+      if (!vId.valid) return { success: false, error: vId.error };
+      if (input.reason) {
+        const v = validateText(input.reason, 'reason');
+        if (!v.valid) return { success: false, error: v.error };
+      }
+
+      const store = loadTaskStore();
       const taskId = input.taskId as string;
       const task = store.tasks[taskId];
 
@@ -740,18 +976,36 @@ task_complete 写状态和调用者结果。
         task.result = { cancelReason: input.reason || 'Cancelled by user' };
         saveTaskStore(store);
         releaseAgents(task.assignedTo, taskId);
+
+        return {
+          success: true,
+          taskId: task.taskId,
+          status: task.status,
+          previousStatus,
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:559-583](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L559-L583)
+**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:606-660](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L606-L660)
 
-终止记录及 memory 分支。
+实际terminated与记忆分支best-effort，无进程kill。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（55行）</summary>
 
 ```text
+    name: 'agent_terminate',
+    description: 'Remove a Ruflo-tracked agent from the registry and free its swarm slot. Use when you need to (a) clean up a spawned agent so its cost-tracking row finalizes, (b) reclaim a swarm-topology slot for another agent, or (c) end a stuck agent without restarting the whole swarm. For one-shot Task tool invocations that already self-terminate, this tool is not needed. Pair with agent_list first to confirm the agentId.',
+    category: 'agent',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        agentId: { type: 'string', description: 'ID of agent to terminate' },
+        force: { type: 'boolean', description: 'Force immediate termination' },
+        promoteMemory: { type: 'boolean', description: 'When the agent has a per-agent COW memory branch (spawned with memoryBase), promote (merge) its edits into the shared base on terminate. Default false → discard the branch (throw its edits away). No-op when the agent has no branch.' },
+      },
+      required: ['agentId'],
+    },
     handler: async (input) => {
       const v = validateIdentifier(input.agentId, 'agentId');
       if (!v.valid) return { success: false, error: `Input validation failed: ${v.error}` };
@@ -777,18 +1031,51 @@ task_complete 写状态和调用者结果。
               ? (await svc.promoteAgent(agentId)) as unknown as Record<string, unknown>
               : (await svc.discardAgent(agentId)) as unknown as Record<string, unknown>;
           } catch { /* best-effort teardown */ }
+        }
+
+        return {
+          success: true,
+          agentId,
+          terminated: true,
+          terminatedAt: new Date().toISOString(),
+          ...(memory ? { memory } : {}),
+        };
+      }
+
+      return {
+        success: false,
+        agentId,
+        error: 'Agent not found',
+      };
+    },
+  },
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:832-846](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L832-L846)
+**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:258-264](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L258-L264)
 
-请求完成时重读并写结果。
-
-<details>
-<summary>查看原文（15行）</summary>
+provider仅局部timeout controller。
 
 ```text
+  }
+  const model = input.model || DEFAULT_ANTHROPIC_MODEL;
+  const startedAt = Date.now();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), input.timeoutMs || 60000);
+  try {
+    const baseUrl = (process.env.ANTHROPIC_BASE_URL || 'https://api.anthropic.com').replace(/\/+$/, '');
+```
+
+**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:839-875](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L839-L875)
+
+新快照/createdAt重读及终止不复活。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+
   const remaining = (activeExecutions.get(executionKey) || 1) - 1;
   const persistCompletion = (out?: AgentExecuteResult): void => {
     // Awaited provider/feedback work may have overlapped registration, updates,
@@ -804,130 +1091,446 @@ task_complete 写状态和调用者结果。
       current.modelId = agent.modelId;
     }
     if (out) current.lastResult = out as unknown as Record<string, unknown>;
+    const previousMeasuredHealth = summarizeAgentExecutions(current.executionHistory).health;
+    const mayUpdateStoredHealth = previousMeasuredHealth === null
+      ? current.health === agent.health
+      : current.health === previousMeasuredHealth;
+    current.executionHistory = appendAgentExecution(current.executionHistory, {
+      at: new Date().toISOString(),
+      success: result.success,
+      durationMs: result.durationMs ?? Date.now() - startedAt,
+    });
+    // An explicit agent_update during the provider call still wins. The
+    // measured value remains available from executionHistory in agent_health.
+    if (mayUpdateStoredHealth) {
+      current.health = summarizeAgentExecutions(current.executionHistory).health ?? current.health;
+    }
+    saveAgentStore(latest);
+  };
+
+  if (result.success) {
+    const out: AgentExecuteResult = {
+      success: true,
+      agentId: input.agentId,
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/swarm-tools.ts:106-131](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/swarm-tools.ts#L106-L131)
+**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:81-94](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L81-L94)
 
-孤儿状态检查。
+真实agent store直接写。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-const ORPHAN_TTL_MS = 24 * 60 * 60 * 1000;
-function reconcileOrphanSwarms(store: SwarmStore): number {
-  let reconciled = 0;
-  const nowIso = new Date().toISOString();
-  const nowMs = Date.now();
-  for (const swarm of Object.values(store.swarms)) {
-    if (swarm.status !== 'running') continue;
-    let orphanReason: string | null = null;
-    if (typeof swarm.pid === 'number') {
-      if (!isPidAlive(swarm.pid)) {
-        orphanReason = `host process ${swarm.pid} exited`;
-      }
-    } else {
-      const ageMs = nowMs - new Date(swarm.updatedAt).getTime();
-      if (Number.isFinite(ageMs) && ageMs > ORPHAN_TTL_MS) {
-        orphanReason = `no pid recorded and heartbeat is ${Math.round(ageMs / 3600000)}h stale`;
-      }
-    }
-    if (orphanReason) {
-      swarm.status = 'terminated';
-      swarm.terminationReason = orphanReason;
-      swarm.updatedAt = nowIso;
-      reconciled++;
-    }
-  }
-  return reconciled;
+function loadAgentStore(): AgentStore {
+  return readRecordStore(getAgentPath(), 'agents', () => ({ agents: {}, version: '3.0.0' }));
+}
+
+/** Live canonical registry members, excluding stale or duplicate swarm IDs. */
+export function getLiveAgentIds(agentIds: string[]): string[] {
+  const { agents } = loadAgentStore();
+  return [...new Set(agentIds)].filter(id => agents[id] && agents[id].status !== 'terminated');
+}
+
+function saveAgentStore(store: AgentStore): void {
+  ensureAgentDir();
+  writeFileSync(getAgentPath(), JSON.stringify(store, null, 2), 'utf-8');
+}
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/swarm-tools.ts:155-164](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/swarm-tools.ts#L155-L164)
+**依据 7 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:802-836](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L802-L836)
 
-单文件临时写和 rename。
+作者明确api-success弱代理/无diff/可选完整transcript。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-export function saveSwarmStore(store: SwarmStore): void {
-  ensureSwarmDir();
-  const target = getSwarmStatePath();
-  const temporary = `${target}.${process.pid}.${Math.random().toString(36).slice(2)}.tmp`;
-  try {
-    writeFileSync(temporary, JSON.stringify(store, null, 2), { encoding: 'utf-8', mode: 0o600 });
-    renameSync(temporary, target);
-  } catch (error) {
-    try { unlinkSync(temporary); } catch { /* already renamed or never created */ }
-    throw error;
+        });
+      } catch { /* never break execution */ }
+    }
+    // ADR-150 weight-eft capture seam — the ONLY place a run's full outcome is
+    // known here: prompt (issue), assistant transcript, model, tier, and a
+    // resolved PROXY. Gated behind CLAUDE_FLOW_RUN_TRANSCRIPTS=1 (off by
+    // default; PII/retention surface, mirrors the router trajectory recorder).
+    // HONESTY: `resolved` here is the WEAKEST proxy — 'api-success' means only
+    // that the model returned without an API error, NOT that the output is
+    // correct (ruflo has no SWE-bench gold oracle). model_patch is '' because
+    // this single-shot execute path produces no unified diff. Both facts are
+    // stamped so no downstream weight-eft export mistakes this for gold data.
+    if (process.env.CLAUDE_FLOW_RUN_TRANSCRIPTS === '1') {
+      try {
+        const { recordRunTranscript, tierForModel } = await import('../ruvector/run-transcript-recorder.js');
+        const modelId = agent.modelId ?? String(agent.model ?? 'unknown');
+        const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
+        if (systemPrompt) messages.push({ role: 'system', content: systemPrompt });
+        messages.push({ role: 'user', content: input.prompt });
+        if (result.success && typeof result.output === 'string') {
+          messages.push({ role: 'assistant', content: result.output });
+        }
+        recordRunTranscript({
+          task: input.prompt,
+          model: modelId,
+          tier: tierForModel(modelId),
+          resolved: outcome === 'success',
+          resolvedSource: 'api-success',
+          messages,
+          source: 'agent-execute',
+          tokens: result.usage ? { input: result.usage.inputTokens, output: result.usage.outputTokens } : undefined,
+        });
+      } catch { /* never break execution */ }
+    }
+  } catch {
 ```
 
 </details>
 
 #### 缺口
 
-- 未运行进程取消及并发恢复
-  **影响**：状态不能证明外部动作停止或多文件事务
-  **进一步探讨**：隔离环境中断请求并核对进程、状态和实际副作用。
+- 真实并发/进程取消/崩溃恢复和独立产物质量未验。
+  **影响**：不能把状态终止/complete和学习成功当工作者停机/验收。
+  **进一步探讨**：在隔离环境中断请求后核HTTP/进程/状态/产物，分别记录四个收据。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 工具展示与策略授权的真实边界是什么？
+### Q04 · 中央policy和caller身份能提供什么，默认又缺什么？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-CLI bin/cli.js:41-58、283-322 仅对 tools/list 调用广告过滤，tools/call 仍通过 hasTool 检索完整注册表；因此隐藏 schema 不是调用权限。mcp-client.ts:270-281 在 handler 前调用 authorizeMcpTool 并依据 enforcedOutcome 拒绝，是真正的中央策略路径；security/src/policy/engine.ts:398-403 的初始状态是 legacy，evaluator.ts:110-128 中只有 enforce 模式把规则 outcome 用作 enforcedOutcome，其他模式返回 allowed。policy-runtime.ts:823-835 的调用者身份认证在未启用时采用环境身份或 legacy，启用后要求凭据。不能以代码存在推断当前部署启用了 enforce、身份验证或多租户隔离；应按实际 root、配置和可信 stdio 边界审计。
+中央callMCPTool不是只靠schema过滤：实际authorize后handler。engine默认mode=legacy；evaluator中普通规则的deny/approval在enforce才转enforcedOutcome拒绝，observe只观测，legacy无命中默认允许。但capability envelope越界是显式例外，所有mode都denied，不能笼统说legacy没有防线。enforce的预算还可拒绝缺costUsd/tokens计量的调用，不据token配置推总费用实际可控。
+
+caller auth开关只有CLAUDE_FLOW_MCP_CALLER_AUTH字面true启用，默认信环境principal/legacy-cli；启用后缺/坏token拒绝，实际verifyInvocationToken。worker lifetime wildcard token非每工具一次性票据，分发/公钥来源/本机威胁边界需核，不能把env身份或schema列表当账户/租户认证。
+
+带capability envelope worker从git common dir求authoritative policy root，失败拒绝，避免worktree退独立legacy。此研究只核中央mode/身份/代表预算路径，不全审trust anchor/签名钥匙/HTTP transport/全部worker沙箱与规则配置。采用必须核实际mode、caller开关和密钥/stdio归属，隐藏工具不等禁止直接tools/call。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:41-58](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/bin/cli.js#L41-L58)
+**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-client.ts:273-286](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-client.ts#L273-L286)
 
-可筛选工具广告。
+中央授权失败阻止handler。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-function _filterAdvertisedMcpTools(tools) {
-  const argv = process.argv.slice(2);
-  const toolsIndex = argv.findIndex((arg) => arg === '--tools');
-  const inlineTools = argv.find((arg) => arg.startsWith('--tools='));
-  const configured = process.env.CLAUDE_FLOW_MCP_TOOLS
-    || (toolsIndex >= 0 ? argv[toolsIndex + 1] : undefined)
-    || (inlineTools ? inlineTools.slice('--tools='.length) : undefined);
-  if (!configured || configured.trim().toLowerCase() === 'all') return tools;
-  const selectors = new Set(
-    configured.split(',').map((item) => item.trim().toLowerCase()).filter(Boolean),
-  );
-  if (selectors.size === 0) return tools;
-  return tools.filter((tool) => {
-    const name = tool.name.toLowerCase();
-    const category = typeof tool.category === 'string' ? tool.category.toLowerCase() : '';
-    return selectors.has(name)
-      || selectors.has(category)
-      || Array.from(selectors).some((selector) => name.startsWith(`${selector}_`));
+    // ADR-324: one policy chokepoint for every local CLI/MCP invocation.
+    // Policy administration is not exempt: authorization calls the engine
+    // directly, so there is no recursive MCP dispatch. In enforce mode an
+    // administrator must explicitly allow policy.* actions or use the local
+    // CLI bootstrap path.
+    const decision = await authorizeMcpTool(toolName, input, context, classifyMcpTool(toolName));
+    if (decision.enforcedOutcome !== 'allowed') {
+      throw new Error(`policy-${decision.enforcedOutcome}:${decision.reason}; receipt=${decision.receiptId}`);
+    }
+    // Call the tool handler
+    const result = await tool.handler(input, context);
+    // ADR-146 P2: scan every tool result for indirect-injection before it
+    // returns to the caller. The screen is opt-in via env (default off in
+    // 3.10.34 — flip to default in v4) so existing pipelines keep their
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:283-322](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/bin/cli.js#L283-L322)
+**依据 2 · 源码核查**：[v3/@claude-flow/security/src/policy/engine.ts:34-48](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/security/src/policy/engine.ts#L34-L48)
 
-list 筛选与 call 查询全注册表。
+默认legacy。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+    this.now = options.now ?? Date.now;
+    this.signingKey = options.signingKey;
+    this.keyId = options.keyId;
+    this.evidenceVerifier = options.evidenceVerifier;
+    this.approvalIssuerVerifier = options.approvalIssuerVerifier;
+    this.state = {
+      version: POLICY_STATE_VERSION,
+      mode: options.mode ?? 'legacy',
+      rules: [...(options.rules ?? [])],
+      budgets: [...(options.budgets ?? [])],
+      usage: [...(options.usage ?? [])],
+      approvals: [...(options.approvals ?? [])],
+      receipts: [...(options.receipts ?? [])],
+    };
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[v3/@claude-flow/security/src/policy/evaluator.ts:62-86](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/security/src/policy/evaluator.ts#L62-L86)
+
+envelope跨mode强拒。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+export function evaluatePolicy(
+  request: PolicyRequest,
+  rules: readonly PolicyRule[],
+  mode: PolicyMode,
+  verifiedEvidenceIds: readonly string[] = [],
+): Omit<PolicyDecision, 'receiptId'> {
+  const requestId = request.requestId ?? crypto.randomUUID();
+  const envelope = checkCapabilityEnvelope(
+    request.action,
+    request.context?.envelope,
+    request.context?.now,
+  );
+  if (!envelope.allowed) {
+    return {
+      requestId,
+      outcome: 'denied',
+      // A capability envelope is delegated authority, not an observation-mode
+      // rule. Crossing it is always blocked, including legacy installations.
+      enforcedOutcome: 'denied',
+      mode,
+      reason: envelope.reason ?? 'capability-envelope-denied',
+      matchedRules: [],
+      obligations: [],
+    };
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[v3/@claude-flow/security/src/policy/evaluator.ts:102-130](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/security/src/policy/evaluator.ts#L102-L130)
+
+普通规则/default及enforce区分。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+  const approval = matched.find((rule) => rule.effect === 'require_approval');
+  const allow = matched.find((rule) => rule.effect === 'allow');
+
+  let outcome: PolicyDecision['outcome'];
+  let reason: string;
+  if (deny) {
+    outcome = 'denied';
+    reason = `denied-by:${deny.id}`;
+  } else if (approval) {
+    outcome = 'approval_required';
+    reason = `approval-required-by:${approval.id}`;
+  } else if (allow) {
+    outcome = 'allowed';
+    reason = `allowed-by:${allow.id}`;
+  } else {
+    outcome = mode === 'legacy' ? 'allowed' : 'denied';
+    reason = mode === 'legacy' ? 'legacy-default-allow' : 'default-deny';
+  }
+
+  return {
+    requestId,
+    outcome,
+    enforcedOutcome: mode === 'enforce' ? outcome : 'allowed',
+    mode,
+    reason,
+    matchedRules: matched.map((rule) => rule.id),
+    obligations: approval ? ['valid-human-approval'] : [],
+  };
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[v3/@claude-flow/security/src/policy/engine.ts:281-297](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/security/src/policy/engine.ts#L281-L297)
+
+真实预算/缺计量在enforce拒。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+      }
+      if (limit.maxCostUsd !== undefined && usage.costUsd + (request.action.costUsd ?? 0) > limit.maxCostUsd) {
+        return { ...decision, outcome: 'denied', enforcedOutcome: this.state.mode === 'enforce' ? 'denied' : 'allowed', reason: `budget-exceeded:${limit.id}` };
+      }
+      if (limit.maxCostUsd !== undefined && request.action.costUsd === undefined) {
+        return { ...decision, outcome: 'denied', enforcedOutcome: this.state.mode === 'enforce' ? 'denied' : 'allowed', reason: `budget-metering-required:${limit.id}:costUsd` };
+      }
+      if (limit.maxTokens !== undefined && request.action.tokens === undefined) {
+        return { ...decision, outcome: 'denied', enforcedOutcome: this.state.mode === 'enforce' ? 'denied' : 'allowed', reason: `budget-metering-required:${limit.id}:tokens` };
+      }
+      if (limit.maxTokens !== undefined && usage.tokens + (request.action.tokens ?? 0) > limit.maxTokens) {
+        return { ...decision, outcome: 'denied', enforcedOutcome: this.state.mode === 'enforce' ? 'denied' : 'allowed', reason: `budget-exceeded:${limit.id}` };
+      }
+    }
+    return decision;
+  }
+
+```
+
+</details>
+
+**依据 6 · 源码核查**：[v3/@claude-flow/security/src/mcp-caller-identity.ts:152-158](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/security/src/mcp-caller-identity.ts#L152-L158)
+
+真实开关只literal true。
+
+```text
+const CALLER_AUTH_ENV = 'CLAUDE_FLOW_MCP_CALLER_AUTH';
+
+/** Off by default — see the file header re: key distribution being out of scope pending a follow-on ADR. Only the literal `'true'` enables enforcement. */
+export function isMcpCallerAuthEnabled(): boolean {
+  return process.env[CALLER_AUTH_ENV] === 'true';
+}
+
+```
+
+**依据 7 · 源码核查**：[v3/@claude-flow/cli/src/services/policy-runtime.ts:823-856](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/services/policy-runtime.ts#L823-L856)
+
+默认env身份与启用后真实验证。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+function resolveMcpCallerIdentity(): { id: string; type: 'agent' | 'legacy' } {
+  if (!isMcpCallerAuthEnabled()) {
+    return {
+      id: process.env.CLAUDE_FLOW_PRINCIPAL_ID ?? 'legacy-cli',
+      type: process.env.CLAUDE_FLOW_PRINCIPAL_ID ? 'agent' : 'legacy',
+    };
+  }
+
+  const encodedToken = process.env.CLAUDE_FLOW_MCP_INVOCATION_TOKEN;
+  const publicKeyHex = process.env.CLAUDE_FLOW_MCP_CALLER_PUBKEY;
+  if (!encodedToken || !publicKeyHex) {
+    throw new Error('mcp-caller-auth-enabled-but-no-token');
+  }
+
+  const token = decodeTokenEnvelope(encodedToken);
+  if (!token) {
+    throw new Error('mcp-caller-auth-enabled-but-no-token');
+  }
+
+  let publicKey;
+  try {
+    publicKey = publicKeyFromHex(publicKeyHex);
+  } catch {
+    throw new Error('mcp-caller-auth-enabled-but-no-token');
+  }
+
+  const result = verifyInvocationToken(token, publicKey, {});
+  if (!result.valid) {
+    throw new Error(`mcp-caller-auth-verification-failed:${result.reason}`);
+  }
+
+  return { id: token.callerId, type: 'agent' };
+}
+
+```
+
+</details>
+
+**依据 8 · 作者声明**：[v3/@claude-flow/cli/src/services/policy-runtime.ts:811-821](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/services/policy-runtime.ts#L811-L821)
+
+作者wildcard/lifetime与非单调用边界。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+ * Scope trade-off (deliberate — see mcp-caller-identity.ts's file header and
+ * orchestrator.ts's `workerEnvironment` for the fuller rationale): the token
+ * is minted once per worker spawn with a worker-lifetime TTL and a wildcard
+ * `toolName: '*'`, not the single-tool, 30s-TTL shape `InvocationToken` was
+ * originally designed for — so `opts.toolName` is deliberately not passed to
+ * `verifyInvocationToken` here, and the tool-mismatch check is not exercised
+ * for this use case. What this retains: a process that never received the
+ * signed token cannot forge one, so it cannot impersonate `agent:<workerId>`.
+ * What it does NOT retain: a compromised worker process can still use its
+ * own valid token for every MCP call for the rest of its lifetime — the
+ * token does not limit blast radius to a single call.
+```
+
+</details>
+
+**依据 9 · 源码核查**：[v3/@claude-flow/cli/src/services/policy-runtime.ts:872-924](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/services/policy-runtime.ts#L872-L924)
+
+capability worker root准入/身份/属性进policy。
+
+<details>
+<summary>查看原文（53行）</summary>
+
+```text
+  let projectRoot = typeof context.projectRoot === 'string' ? context.projectRoot : process.cwd();
+  let processEnvelope: CapabilityEnvelope | undefined;
+  if (process.env.CLAUDE_FLOW_CAPABILITY_ENVELOPE) {
+    try {
+      const parsed = JSON.parse(process.env.CLAUDE_FLOW_CAPABILITY_ENVELOPE) as unknown;
+      if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+        throw new Error('not an object');
+      }
+      processEnvelope = parsed as CapabilityEnvelope;
+    } catch {
+      throw new Error('invalid-worker-capability-envelope');
+    }
+    // Linked git worktrees share one immutable common git directory. Derive
+    // the coordinator checkout from that directory so a worker cannot fall
+    // back to independent legacy policy state in its isolated worktree.
+    try {
+      const cwd = realpathSync(process.cwd());
+      const common = execFileSync(
+        'git',
+        ['-C', cwd, 'rev-parse', '--path-format=absolute', '--git-common-dir'],
+        { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
+      ).trim();
+      projectRoot = dirname(realpathSync(common));
+    } catch {
+      throw new Error('authoritative-worker-policy-root-unavailable');
+    }
+  }
+  return evaluatePolicyRequest({
+    identity: resolveMcpCallerIdentity(),
+    action: {
+      type: attributes.actionType ?? 'mcp.tool.call',
+      resource: toolName,
+      tool: toolName,
+      server: typeof context.serverId === 'string' ? context.serverId : 'ruflo',
+      namespace: typeof input.namespace === 'string' ? input.namespace : undefined,
+      environment: typeof context.environment === 'string' ? context.environment : undefined,
+      costUsd: attributes.costUsd,
+      tokens: attributes.tokens,
+      concurrency: attributes.concurrency,
+      network: attributes.network === true,
+      destructive: attributes.destructive === true,
+    },
+    context: {
+      envelope: attributes.envelope ?? processEnvelope,
+      approvalIds: Array.isArray(context.approvalIds) ? context.approvalIds.map(String) : undefined,
+      evidence: Array.isArray(context.evidence) ? context.evidence as PolicyEvidence[] : undefined,
+      metadata: {
+        inputDigest: `sha256:${createHash('sha256').update(JSON.stringify(input)).digest('hex')}`,
+      },
+    },
+  }, projectRoot);
+}
+
+```
+
+</details>
+
+**依据 10 · 源码核查**：[v3/@claude-flow/cli/bin/cli.js:278-317](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/bin/cli.js#L278-L317)
+
+schema广告过滤与调用另走registry。
 
 <details>
 <summary>查看原文（40行）</summary>
 
 ```text
       case 'tools/list': {
-        const tools = _filterAdvertisedMcpTools(listMCPTools());
+        const tools = mcpProtocol.sortToolsDeterministically(_filterAdvertisedMcpTools(listMCPTools()));
         return {
           jsonrpc: '2.0',
           id: message.id,
@@ -965,149 +1568,72 @@ list 筛选与 call 查询全注册表。
         }
 
         try {
-          const result = await callMCPTool(toolName, toolParams, { sessionId, transport: 'stdio' });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-client.ts:270-288](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-client.ts#L270-L288)
-
-调用中央策略再执行 handler。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  try {
-    // ADR-324: one policy chokepoint for every local CLI/MCP invocation.
-    // Policy administration is not exempt: authorization calls the engine
-    // directly, so there is no recursive MCP dispatch. In enforce mode an
-    // administrator must explicitly allow policy.* actions or use the local
-    // CLI bootstrap path.
-    const decision = await authorizeMcpTool(toolName, input, context, classifyMcpTool(toolName));
-    if (decision.enforcedOutcome !== 'allowed') {
-      throw new Error(`policy-${decision.enforcedOutcome}:${decision.reason}; receipt=${decision.receiptId}`);
-    }
-    // Call the tool handler
-    const result = await tool.handler(input, context);
-    // ADR-146 P2: scan every tool result for indirect-injection before it
-    // returns to the caller. The screen is opt-in via env (default off in
-    // 3.10.34 — flip to default in v4) so existing pipelines keep their
-    // exact behaviour while the call site is exercised by tests and
-    // adopters. Telemetry from the screen lands in the shared
-    // GuardrailEvent sink (P5).
-    return applyContentBoundaryGuardrail(toolName, result) as T;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[v3/@claude-flow/security/src/policy/engine.ts:398-403](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/security/src/policy/engine.ts#L398-L403)
-
-默认 legacy 状态。
-
-```text
-export function createLegacyCompatibleState(source = 'pre-ADR-324'): PolicyState {
-  return {
-    version: POLICY_STATE_VERSION,
-    mode: 'legacy',
-    migratedFrom: source,
-    migratedAt: Date.now(),
-```
-
-**依据 5 · 源码核查**：[v3/@claude-flow/security/src/policy/evaluator.ts:110-128](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/security/src/policy/evaluator.ts#L110-L128)
-
-enforce 与其他模式的实际结果。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  } else if (approval) {
-    outcome = 'approval_required';
-    reason = `approval-required-by:${approval.id}`;
-  } else if (allow) {
-    outcome = 'allowed';
-    reason = `allowed-by:${allow.id}`;
-  } else {
-    outcome = mode === 'legacy' ? 'allowed' : 'denied';
-    reason = mode === 'legacy' ? 'legacy-default-allow' : 'default-deny';
-  }
-
-  return {
-    requestId,
-    outcome,
-    enforcedOutcome: mode === 'enforce' ? outcome : 'allowed',
-    mode,
-    reason,
-    matchedRules: matched.map((rule) => rule.id),
-    obligations: approval ? ['valid-human-approval'] : [],
-```
-
-</details>
-
-**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/services/policy-runtime.ts:823-835](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/services/policy-runtime.ts#L823-L835)
-
-调用者认证开关与缺凭据处理。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-function resolveMcpCallerIdentity(): { id: string; type: 'agent' | 'legacy' } {
-  if (!isMcpCallerAuthEnabled()) {
-    return {
-      id: process.env.CLAUDE_FLOW_PRINCIPAL_ID ?? 'legacy-cli',
-      type: process.env.CLAUDE_FLOW_PRINCIPAL_ID ? 'agent' : 'legacy',
-    };
-  }
-
-  const encodedToken = process.env.CLAUDE_FLOW_MCP_INVOCATION_TOKEN;
-  const publicKeyHex = process.env.CLAUDE_FLOW_MCP_CALLER_PUBKEY;
-  if (!encodedToken || !publicKeyHex) {
-    throw new Error('mcp-caller-auth-enabled-but-no-token');
-  }
+          const result = await callMCPTool(toolName, toolParams, { sessionId, transport: 'stdio', ...mcpProtocol.traceContextFields(protocol) });
 ```
 
 </details>
 
 #### 缺口
 
-- 实际部署 root、策略及调用者认证未验证
-  **影响**：不能推断生产隔离或授权强度
-  **进一步探讨**：读取受控部署的配置并在隔离 stdio 验证拒绝路径。
+- 部署enforce/keys/调用者认证和全部policy规则未验。
+  **影响**：不能把源码有安全引擎当当前部署已隔离或权限全闭环。
+  **进一步探讨**：私有stdio测试直接调用隐藏工具、不同mode/envelope/过期token和预算缺计量，核失败回执。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 使用依赖、成本及退出条件是什么？
+### Q05 · 何时值得用，资源/状态与退出成本怎样估？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：采用判断、效果与总成本
 
 #### 完整回答
 
-Node、匹配的构建 dist、私有受控 stdio、有效模型/额度及可写项目状态是代表路径的条件。agent-execute-core.ts:251-285 发出带用户 prompt 的模型请求并设置输出 token 和超时；689-700 的可重试故障在 modelId 存在时默认最多一次 fallback，因此单次超时或 maxTokens 不是整个任务及费用的完整上限。741-789 的 API 成功反馈可用于路由训练，其 success 标签并不检查任务是否正确，且可选轨迹涉及任务文本。建议先观察；如确有需求，再在独立账号、无敏感数据副本和受控 stdio 使用单项小样，明确模型、输出限额和关闭 fallback，并分开核对状态、响应与独立产物验收。身份、费用、root 或退出状态不明即停止并人工核查；实际费用、隐私留存与收益未经测试。
+先观察；已有多Agent跨会话配置/分配需求时，才在私有受控stdio和隔离副本登记一角色、发一模型请求，分别读状态/响应/外部工作者/独立产物。只需一次文本或会话内清单时，原生Task/Todo或直接API是更小基线，不为“60+角色/学习”口号额外引入系统。
+
+首次Node/dist/可选native依赖、模型/嵌入及policy/key配置，持续provider token/fallback/嵌入与归档磁盘，人分配/复核/合并，以及故障远端请求/多store重试、退出凭据/状态/可选transcript留存成本均未知，不填0。单次max_tokens/timeout/fallback次数不是总费用硬上限；API接受后timeout/重试可能重复费用，状态terminate不撤远端。
+
+退出先确认具体执行路径、外部进程/请求和文件产物，再清项目store/记忆分支/凭据/日志；分支cleanup best-effort不能当清除成功。模式、身份、状态与真实效果不一致时停新分发，回原生工具/人工清单核对，不盲重试。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[bin/cli.js:9-11](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/bin/cli.js#L9-L11)
+**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:526-541](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L526-L541)
 
-加载 v3 CLI 的前提。
-
-```text
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const cliPath = join(__dirname, '..', 'v3', '@claude-flow', 'cli', 'bin', 'cli.js');
-await import(pathToFileURL(cliPath).href);
-```
-
-**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:251-285](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L251-L285)
-
-真实请求、超时和 token 配置。
+登记与不同执行路径需要分开。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
+        modelRoutedBy: routingResult.routedBy,
+        ...(routingResult.modelId ? { modelId: routingResult.modelId } : {}),
+        // #2962 — mirror the same precedence used for the stored agent
+        // record, so the response a caller sees matches what was actually
+        // persisted (previously this always reported the router's own
+        // pick, silently dropping an explicit config.provider override).
+        ...(agent.provider ? { provider: agent.provider } : {}),
+        ...(routingResult.openrouterModel ? { openrouterModel: routingResult.openrouterModel } : {}),
+        status: 'registered',
+        createdAt: agent.createdAt,
+        ...(memoryBranch ? { memoryBranch, memoryBase: agent.memoryBase } : {}),
+        note: 'Agent registered for coordination. Three execution paths: ' +
+          '(1) call agent_execute(agentId, prompt) — direct LLM call via Anthropic Messages API (requires ANTHROPIC_API_KEY); ' +
+          '(2) Claude Code Task tool — spawns a real subagent; ' +
+          '(3) claude -p — headless background instance.',
+      };
+```
+
+</details>
+
+**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:258-294](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L258-L294)
+
+局部超时/max_tokens和实际付费请求。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+  }
   const model = input.model || DEFAULT_ANTHROPIC_MODEL;
   const startedAt = Date.now();
   const controller = new AbortController();
@@ -1143,22 +1669,19 @@ await import(pathToFileURL(cliPath).href);
         messages: [{ role: 'user', content: input.prompt }],
       }),
       signal: controller.signal,
+    });
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:689-700](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L689-L700)
+**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:701-744](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L701-L744)
 
-有限条件下默认 fallback。
+fallback额外调用/预算。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
-  // ADR-149 iter 7 — fallback chain on retryable failures (429, 5xx,
-  // timeout). When the cost-optimal neural backend picked a specific
-  // model id and that model fails for a transient reason, fall back to
-  // the next-cheapest candidate that clears the quality bar. Budget is
   // bounded by CLAUDE_FLOW_ROUTER_FALLBACK_MAX_RETRIES (default 1) so
   // upstream outages don't cause retry storms.
   const configuredFallbackBudget = parseInt(process.env.CLAUDE_FLOW_ROUTER_FALLBACK_MAX_RETRIES ?? '1', 10);
@@ -1167,67 +1690,66 @@ await import(pathToFileURL(cliPath).href);
   // Keep feedback for each completed attempt before switching model identity.
   const failedAttempts: Array<{ model: ClaudeModel; modelId: string }> = [];
   if (!result.success && agent.modelId && fallbackBudget > 0) {
-```
-
-</details>
-
-**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:753-789](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L753-L789)
-
-API outcome 与可选轨迹反馈。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-    const tier: 'haiku' | 'sonnet' | 'opus' | 'inherit' =
-      agent.model === 'opus-4.7' ? 'opus' :
-      (agent.model as 'haiku' | 'sonnet' | 'opus' | 'inherit' | undefined) ?? 'sonnet';
-    const outcome: 'success' | 'failure' = result.success ? 'success' : 'failure';
-    for (const attempt of failedAttempts) {
-      recordModelOutcome(input.prompt, attempt.model === 'opus-4.7' ? 'opus' : attempt.model, 'failure');
-      recordModelOutcomeByModelId(input.prompt, attempt.modelId, 'failure');
-    }
-    recordModelOutcome(input.prompt, tier, outcome);
-    // ADR-149 — also write to the shadow per-modelId priors when the cost-
-    // optimal neural backend picked a concrete model id. Selection logic
-    // still uses tier priors, but the per-modelId data accumulates so a
-    // future refactor can switch the selector over.
-    if (agent.modelId) {
-      recordModelOutcomeByModelId(input.prompt, agent.modelId, outcome);
-    }
-    // ADR-149 iter 17 — close the production-data side of the feedback loop.
-    // The trajectory recorder (CLAUDE_FLOW_ROUTER_TRAJECTORY=1) writes
-    // per-decision rows to .swarm/model-router-trajectories.jsonl from the
-    // model-router itself. Now we ALSO write outcome rows here so future
-    // training (scripts/train-from-trajectories.mjs, follow-up) can pair
-    // decision+outcome by task_hash and produce DRACO-shaped retraining
-    // rows from real production traffic. quality = 1.0 on success, 0.0 on
-    // failure (coarse signal; finer-grained quality from user ratings or
-    // regression-detection is a separate hook).
-    if (process.env.CLAUDE_FLOW_ROUTER_TRAJECTORY === '1') {
+    const isRetryable = /\b(429|500|502|503|504|timeout|ECONNRESET|ETIMEDOUT)\b/i.test(result.error ?? '');
+    if (isRetryable) {
       try {
-        const { recordTrajectoryOutcome } = await import('../ruvector/router-trajectory.js');
-        const scores: Record<string, number> | undefined = agent.modelId
-          ? { [agent.modelId]: outcome === 'success' ? 1.0 : 0.0 }
-          : undefined;
-        // iter 31 — pass token usage + modelId so the recorder can compute
-        // USD spend at write time. Consumers (`router decisions`, cost-
-        // savings reports) get cost without their own price table.
-        recordTrajectoryOutcome({
-          task: input.prompt,
-          quality: outcome === 'success' ? 1.0 : 0.0,
+        const { nextCostOptimalAlternative } = await import('../ruvector/neural-router.js');
+        // ADR-149 iter 9 — delegate to the shared task-embedder LRU. The
+        // pipeline + cache are shared with agent-tools.ts, so the embedding
+        // for this prompt is almost always already cached from the initial
+        // routing decision (no extra inference cost in steady state).
+        const { embedTaskWithCache } = await import('../ruvector/task-embedder.js');
+        const embedding = await embedTaskWithCache(input.prompt);
+        if (embedding) {
+          const excludeIds: string[] = [agent.modelId];
+          for (let attempt = 0; attempt < fallbackBudget && !result.success; attempt++) {
+            fallbackHistory.push({ modelId: excludeIds[excludeIds.length - 1], error: result.error ?? '' });
+            const alt = await nextCostOptimalAlternative(embedding, excludeIds);
+            if (!alt || !alt.modelId) break;
+            excludeIds.push(alt.modelId);
+            const altResult = await callAnthropicMessages({
+              model: alt.modelId,
+              prompt: input.prompt,
+              systemPrompt,
+              maxTokens: input.maxTokens,
+              temperature: input.temperature,
+              timeoutMs: input.timeoutMs,
+            });
+            // Record the model that ACTUALLY answered (or errored). On success,
+            // update agent.modelId so downstream observers see the retry winner.
+            failedAttempts.push({ model: agent.model ?? 'sonnet', modelId: agent.modelId! });
+            agent.modelId = alt.modelId;
+            agent.model = alt.model;
+            result = altResult;
+          }
+        }
+      } catch {
+        // Fallback chain is best-effort — preserve the original error result.
+      }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:559-583](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L559-L583)
+**依据 4 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:606-660](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L606-L660)
 
-终止记录范围。
+终止/记忆清理best-effort。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（55行）</summary>
 
 ```text
+    name: 'agent_terminate',
+    description: 'Remove a Ruflo-tracked agent from the registry and free its swarm slot. Use when you need to (a) clean up a spawned agent so its cost-tracking row finalizes, (b) reclaim a swarm-topology slot for another agent, or (c) end a stuck agent without restarting the whole swarm. For one-shot Task tool invocations that already self-terminate, this tool is not needed. Pair with agent_list first to confirm the agentId.',
+    category: 'agent',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        agentId: { type: 'string', description: 'ID of agent to terminate' },
+        force: { type: 'boolean', description: 'Force immediate termination' },
+        promoteMemory: { type: 'boolean', description: 'When the agent has a per-agent COW memory branch (spawned with memoryBase), promote (merge) its edits into the shared base on terminate. Default false → discard the branch (throw its edits away). No-op when the agent has no branch.' },
+      },
+      required: ['agentId'],
+    },
     handler: async (input) => {
       const v = validateIdentifier(input.agentId, 'agentId');
       if (!v.valid) return { success: false, error: `Input validation failed: ${v.error}` };
@@ -1253,42 +1775,131 @@ API outcome 与可选轨迹反馈。
               ? (await svc.promoteAgent(agentId)) as unknown as Record<string, unknown>
               : (await svc.discardAgent(agentId)) as unknown as Record<string, unknown>;
           } catch { /* best-effort teardown */ }
+        }
+
+        return {
+          success: true,
+          agentId,
+          terminated: true,
+          terminatedAt: new Date().toISOString(),
+          ...(memory ? { memory } : {}),
+        };
+      }
+
+      return {
+        success: false,
+        agentId,
+        error: 'Agent not found',
+      };
+    },
+  },
+```
+
+</details>
+
+**依据 5 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:802-836](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L802-L836)
+
+可选transcript留存。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+        });
+      } catch { /* never break execution */ }
+    }
+    // ADR-150 weight-eft capture seam — the ONLY place a run's full outcome is
+    // known here: prompt (issue), assistant transcript, model, tier, and a
+    // resolved PROXY. Gated behind CLAUDE_FLOW_RUN_TRANSCRIPTS=1 (off by
+    // default; PII/retention surface, mirrors the router trajectory recorder).
+    // HONESTY: `resolved` here is the WEAKEST proxy — 'api-success' means only
+    // that the model returned without an API error, NOT that the output is
+    // correct (ruflo has no SWE-bench gold oracle). model_patch is '' because
+    // this single-shot execute path produces no unified diff. Both facts are
+    // stamped so no downstream weight-eft export mistakes this for gold data.
+    if (process.env.CLAUDE_FLOW_RUN_TRANSCRIPTS === '1') {
+      try {
+        const { recordRunTranscript, tierForModel } = await import('../ruvector/run-transcript-recorder.js');
+        const modelId = agent.modelId ?? String(agent.model ?? 'unknown');
+        const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
+        if (systemPrompt) messages.push({ role: 'system', content: systemPrompt });
+        messages.push({ role: 'user', content: input.prompt });
+        if (result.success && typeof result.output === 'string') {
+          messages.push({ role: 'assistant', content: result.output });
+        }
+        recordRunTranscript({
+          task: input.prompt,
+          model: modelId,
+          tier: tierForModel(modelId),
+          resolved: outcome === 'success',
+          resolvedSource: 'api-success',
+          messages,
+          source: 'agent-execute',
+          tokens: result.usage ? { input: result.usage.inputTokens, output: result.usage.outputTokens } : undefined,
+        });
+      } catch { /* never break execution */ }
+    }
+  } catch {
+```
+
+</details>
+
+**依据 6 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-tools.ts:81-94](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-tools.ts#L81-L94)
+
+项目store持久写。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+function loadAgentStore(): AgentStore {
+  return readRecordStore(getAgentPath(), 'agents', () => ({ agents: {}, version: '3.0.0' }));
+}
+
+/** Live canonical registry members, excluding stale or duplicate swarm IDs. */
+export function getLiveAgentIds(agentIds: string[]): string[] {
+  const { agents } = loadAgentStore();
+  return [...new Set(agentIds)].filter(id => agents[id] && agents[id].status !== 'terminated');
+}
+
+function saveAgentStore(store: AgentStore): void {
+  ensureAgentDir();
+  writeFileSync(getAgentPath(), JSON.stringify(store, null, 2), 'utf-8');
+}
 ```
 
 </details>
 
 #### 缺口
 
-- 实际费用、保留策略及净人工未知
-  **影响**：不能按超时或模型成功估算整体成本
-  **进一步探讨**：隔离账号、显式模型及零 fallback 执行代表样本并核对账单。
+- 真实模型/嵌入费用、分配/合并人工和退出清理率未知。
+  **影响**：无依据声称比原生任务省钱省时或稳定生产。
+  **进一步探讨**：同明确小任务对照，计调用/费用/人验/恢复，只有持续净收益再扩大。
 
 <a id="research-q06"></a>
 
 <a id="detail-section-16"></a>
 
-### Q06 · 独立验收收据是否能减少误判？
+### Q06 · 比加Agent数量更可证伪的方向是什么？
 
-**研究主题**：新假设与验证、贡献与相对优势
+**研究主题**：新假设与验证、工程质量与复用
 
 #### 完整回答
 
-由 task_complete 直接记录状态、agent_execute 将 API 成功映射为弱反馈，可提出未验证假设：将登记、模型响应、工作者停止和独立产物验收分别作为有来源的收据，能减少将 API 成功误作任务完成的误解。它会增加调用与审核成本，并须先核对既有 quality hook 能否承担；对照原生任务、人工清单和本地小修，以相同任务记录误判、重复工作与人工时间。如果简单方案已足够或额外收据没有改善合格结果，应放弃独立编排扩展。无原型和效果实验。
+独立假设：把登记、模型响应、工作者实际停止、独立任务验收分为四份可核收据，路由学习只把后者当质量反馈，记录成本和来源，可能减少“状态completed/健康1=任务做对”的误判。当前的执行历史/createdAt重读可作基础，不等已有工作者生命周期事务或gold学习数据，不计当前创新。
+
+先和人工四项清单/原工具小修比较，若已够不新建平台。用状态complete但无产物、HTTP仍跑时terminate、并发新注册、provider错误/重试和观察mode允许等样本，测误验收、重复请求、未停工作者与包含人工在内总成本。若收据不减少错误或维护成本抵消收益则否定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:310-322](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L310-L322)
+**依据 1 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/task-tools.ts:363-381](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/task-tools.ts#L363-L381)
 
-任务状态由输入结果驱动。
+完成状态由输入结果而非独立验收。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-      const store = loadTaskStore();
-      const taskId = input.taskId as string;
-      const task = store.tasks[taskId];
-
       if (task) {
         if (task.status === 'completed') {
           return { taskId: task.taskId, status: task.status, completedAt: task.completedAt, result: task.result };
@@ -1298,63 +1909,120 @@ API outcome 与可选轨迹反馈。
         task.completedAt = new Date().toISOString();
         task.result = (input.result as Record<string, unknown>) || {};
         saveTaskStore(store);
+
+        // Sync assigned agents back to idle and increment taskCount
+        updateAgents(task.assignedTo, (agent) => {
+          if (agent.currentTask === taskId) {
+            agent.status = 'idle';
+            agent.currentTask = null;
+          }
+          agent.taskCount = ((agent.taskCount as number) || 0) + 1;
+        });
+
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:753-789](https://github.com/ruvnet/ruflo/blob/e580bbc8204874f762d132fe441b18192979211b/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L753-L789)
+**依据 2 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:802-836](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L802-L836)
 
-API 成功映射为反馈。
+API success弱代理/无diff。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+        });
+      } catch { /* never break execution */ }
+    }
+    // ADR-150 weight-eft capture seam — the ONLY place a run's full outcome is
+    // known here: prompt (issue), assistant transcript, model, tier, and a
+    // resolved PROXY. Gated behind CLAUDE_FLOW_RUN_TRANSCRIPTS=1 (off by
+    // default; PII/retention surface, mirrors the router trajectory recorder).
+    // HONESTY: `resolved` here is the WEAKEST proxy — 'api-success' means only
+    // that the model returned without an API error, NOT that the output is
+    // correct (ruflo has no SWE-bench gold oracle). model_patch is '' because
+    // this single-shot execute path produces no unified diff. Both facts are
+    // stamped so no downstream weight-eft export mistakes this for gold data.
+    if (process.env.CLAUDE_FLOW_RUN_TRANSCRIPTS === '1') {
+      try {
+        const { recordRunTranscript, tierForModel } = await import('../ruvector/run-transcript-recorder.js');
+        const modelId = agent.modelId ?? String(agent.model ?? 'unknown');
+        const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
+        if (systemPrompt) messages.push({ role: 'system', content: systemPrompt });
+        messages.push({ role: 'user', content: input.prompt });
+        if (result.success && typeof result.output === 'string') {
+          messages.push({ role: 'assistant', content: result.output });
+        }
+        recordRunTranscript({
+          task: input.prompt,
+          model: modelId,
+          tier: tierForModel(modelId),
+          resolved: outcome === 'success',
+          resolvedSource: 'api-success',
+          messages,
+          source: 'agent-execute',
+          tokens: result.usage ? { input: result.usage.inputTokens, output: result.usage.outputTokens } : undefined,
+        });
+      } catch { /* never break execution */ }
+    }
+  } catch {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[v3/@claude-flow/cli/src/mcp-tools/agent-execute-core.ts:839-875](https://github.com/ruvnet/ruflo/blob/206e59259a1d620fb320119f19399ca01053658c/v3/%40claude-flow/cli/src/mcp-tools/agent-execute-core.ts#L839-L875)
+
+完成重读为收据身份基础。
 
 <details>
 <summary>查看原文（37行）</summary>
 
 ```text
-    const tier: 'haiku' | 'sonnet' | 'opus' | 'inherit' =
-      agent.model === 'opus-4.7' ? 'opus' :
-      (agent.model as 'haiku' | 'sonnet' | 'opus' | 'inherit' | undefined) ?? 'sonnet';
-    const outcome: 'success' | 'failure' = result.success ? 'success' : 'failure';
-    for (const attempt of failedAttempts) {
-      recordModelOutcome(input.prompt, attempt.model === 'opus-4.7' ? 'opus' : attempt.model, 'failure');
-      recordModelOutcomeByModelId(input.prompt, attempt.modelId, 'failure');
+
+  const remaining = (activeExecutions.get(executionKey) || 1) - 1;
+  const persistCompletion = (out?: AgentExecuteResult): void => {
+    // Awaited provider/feedback work may have overlapped registration, updates,
+    // termination or deletion. Never replace that newer registry snapshot.
+    const latest = loadAgentStore();
+    const current = latest.agents[input.agentId];
+    if (!current || current.createdAt !== agent.createdAt) return;
+    if (current.status === 'busy') current.status = remaining > 0 ? 'busy' : 'idle';
+    if (agent.modelId !== initialModelId && current.modelId === initialModelId) {
+      // A fallback may also change its tier. Carry that change with the model
+      // ID, but preserve any selection the user edited during the request.
+      if (agent.model !== initialModel && current.model === initialModel) current.model = agent.model;
+      current.modelId = agent.modelId;
     }
-    recordModelOutcome(input.prompt, tier, outcome);
-    // ADR-149 — also write to the shadow per-modelId priors when the cost-
-    // optimal neural backend picked a concrete model id. Selection logic
-    // still uses tier priors, but the per-modelId data accumulates so a
-    // future refactor can switch the selector over.
-    if (agent.modelId) {
-      recordModelOutcomeByModelId(input.prompt, agent.modelId, outcome);
+    if (out) current.lastResult = out as unknown as Record<string, unknown>;
+    const previousMeasuredHealth = summarizeAgentExecutions(current.executionHistory).health;
+    const mayUpdateStoredHealth = previousMeasuredHealth === null
+      ? current.health === agent.health
+      : current.health === previousMeasuredHealth;
+    current.executionHistory = appendAgentExecution(current.executionHistory, {
+      at: new Date().toISOString(),
+      success: result.success,
+      durationMs: result.durationMs ?? Date.now() - startedAt,
+    });
+    // An explicit agent_update during the provider call still wins. The
+    // measured value remains available from executionHistory in agent_health.
+    if (mayUpdateStoredHealth) {
+      current.health = summarizeAgentExecutions(current.executionHistory).health ?? current.health;
     }
-    // ADR-149 iter 17 — close the production-data side of the feedback loop.
-    // The trajectory recorder (CLAUDE_FLOW_ROUTER_TRAJECTORY=1) writes
-    // per-decision rows to .swarm/model-router-trajectories.jsonl from the
-    // model-router itself. Now we ALSO write outcome rows here so future
-    // training (scripts/train-from-trajectories.mjs, follow-up) can pair
-    // decision+outcome by task_hash and produce DRACO-shaped retraining
-    // rows from real production traffic. quality = 1.0 on success, 0.0 on
-    // failure (coarse signal; finer-grained quality from user ratings or
-    // regression-detection is a separate hook).
-    if (process.env.CLAUDE_FLOW_ROUTER_TRAJECTORY === '1') {
-      try {
-        const { recordTrajectoryOutcome } = await import('../ruvector/router-trajectory.js');
-        const scores: Record<string, number> | undefined = agent.modelId
-          ? { [agent.modelId]: outcome === 'success' ? 1.0 : 0.0 }
-          : undefined;
-        // iter 31 — pass token usage + modelId so the recorder can compute
-        // USD spend at write time. Consumers (`router decisions`, cost-
-        // savings reports) get cost without their own price table.
-        recordTrajectoryOutcome({
-          task: input.prompt,
-          quality: outcome === 'success' ? 1.0 : 0.0,
+    saveAgentStore(latest);
+  };
+
+  if (result.success) {
+    const out: AgentExecuteResult = {
+      success: true,
+      agentId: input.agentId,
 ```
 
 </details>
 
 #### 缺口
 
-- 没有原型及任务质量实验
-  **影响**：不能证明增加收据值得
-  **进一步探讨**：与原生任务及人工清单比较误判、人工和成本。
+- 四收据对任务错误/人审负担改善未验证。
+  **影响**：不将方向写成现成自主交付或学习质量。
+  **进一步探讨**：固定故障/人工清单对照并设总成本停止阈值。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "c5b92f186a3c519034535b8f35b3e7042468c6342af26bb84ebe89f8609bbff7",
-    "index_sha256": "fbf93eba31734c4c8bdaf60eef76daff151a60a1b8c6c8567ca8481b84fca7a2",
+    "snapshot_digest": "28aefcf99adfabab08d272a2c36ce24e787216d2b3ffd6a6a0ff9ae26db9d3b7",
+    "index_sha256": "89b14f7b6aa79f6cb48154c7aa0128d7b55abe29ece92ca7fa9cc629a5d6e33a",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-06T05:11:13Z",
+        "checked_at": "2026-11-06T06:43:36Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 30，完成 29，受阻 1；已知同版本受阻跳过 17；频繁更新窗口内跳过 344；当前发布 1190",
+            "scope": "本轮所选 60，完成 39，受阻 21；已知同版本受阻跳过 18；频繁更新窗口内跳过 310；当前发布 1199",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,7 +20,7 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-06T05:11:13Z"
+            "checked_at": "2026-11-06T06:43:36Z"
         },
         "registry": {},
         "discovery": {
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-06-03",
-            "work_digest": "497878d4fc5698a88e1826ae0b3d885945d4f797854e0030fd35d5a80a66f98c"
+            "id": "2026-11-06-04",
+            "work_digest": "477bd8043653b59ce9ad6a8fdd7e8d9bea69319bb1197d2598b26f512f925a18"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -1233,6 +1233,545 @@
                 },
                 "blocked_at": "2026-11-06T05:28:45.529Z",
                 "run_id": "2026-11-06-03"
+            },
+            "github:1331636953:packages-dsh-git-graph": {
+                "plugin_id": "github:1331636953:packages-dsh-git-graph",
+                "revision": "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
+                "reason_code": "component_missing_at_fixed_revision",
+                "reason": "固定提交中 packages/dsh-git-graph 已无组件文件，材料回退根包，不能完成该稳定子组件研究。",
+                "details": {
+                    "reason_code": "component_missing_at_fixed_revision",
+                    "reason": "固定提交中 packages/dsh-git-graph 已无组件文件，材料回退根包，不能完成该稳定子组件研究。",
+                    "details": {
+                        "plugin_id": "github:1331636953:packages-dsh-git-graph",
+                        "repository": "zhu1090093659/dsh-web",
+                        "component": "packages/dsh-git-graph",
+                        "revision": "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
+                        "checked_at": "2026-11-06T06:43:36Z",
+                        "stage": "fixed component identity/material verification",
+                        "parent_verified_at": "2026-11-06T07:44:35.526586+00:00",
+                        "commands": [
+                            {
+                                "command": [
+                                    "ls-tree",
+                                    "-r",
+                                    "--name-only",
+                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
+                                    "packages/dsh-git-graph"
+                                ],
+                                "exit_code": 0,
+                                "stdout": "",
+                                "stderr": ""
+                            },
+                            {
+                                "command": [
+                                    "show",
+                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:packages/dsh-git-graph/package.json"
+                                ],
+                                "exit_code": 128,
+                                "stdout": "",
+                                "stderr": "fatal: path 'packages/dsh-git-graph/package.json' does not exist in '1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a'\n"
+                            },
+                            {
+                                "command": [
+                                    "ls-tree",
+                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:packages"
+                                ],
+                                "exit_code": 0,
+                                "stdout": "100644 blob 294cea1393a3bb83392bceb7091883147af5ecd0\tAGENTS.md\n040000 tree 65d8b5abf6ad6fbbdc86b0150c2a92d98969c765\tdsh-agents\n040000 tree bc69428e3f8e139ae3868ae9f70af64cce1b9881\tdsh-browser-view\n040000 tree 34e1f81e20305a9b22d790e06053db610590774f\tdsh-diagrams\n040000 tree d9e49376e1c9bb906a629a40069a5245a029956c\tdsh-i18n\n040000 tree 15d27669f2af78866ff06f9e0fcd99f5ecf4e683\tdsh-liangshen\n040000 tree 7209c9fa157eb2fc4dac10d1907672325bade207\tdsh-market\n040000 tree 6703ff5e4cdee56ee05066337d8e5de6372b8370\tdsh-message-edit\n040000 tree 86e67ed7eb7d70b8ed5219c958dd67e2931ee124\tdsh-plugin-manager\n040000 tree 6bb2503d193bb4edb0ed1651860e8a956332433a\tdsh-remote-bridge\n040000 tree eacbb83795a1238c71bad98754f5eb10803f2699\tdsh-remote-web-ui\n040000 tree 46880cd5471b536bb929f9da665ea34c66c4d8a7\tdsh-session-archive\n040000 tree 013388c979fc731f07519b2ad4b68dd60d56b708\tdsh-session-id\n040000 tree b2317c369ccc8629a483a7a4db0f4ebfe3656cb2\tdsh-skill-explorer\n040000 tree bf4b5fc79297cf266b4307c97ab86d9fe182902a\tdsh-ssh\n040000 tree 5461e49d50097e77edec6641de9dd3ea376ce1ff\tdsh-task-board-github\n040000 tree 1a49cc8c64512a5d7d35eeafa79bf805a24f9c17\tdsh-task-board-remote\n040000 tree 3cd5e7916a1ff8a651048be9cc59ba0da8e6bdf6\tdsh-task-board-team\n040000 tree a47352ceb06a2a3f1980f47bb6e42345cd44bea1\tdsh-task-board\n040000 tree 5b76b288aa59ff8689bc9cdedfcbbdd6f90fccde\tdsh-usage\n040000 tree 2b3d4ed447932b76c6e38739a6a79ec3249c86ac\tdsh-web-all\n040000 tree c582ab1a7829de4e3b6537e7ceadfb597e40e91a\tdsh-web-settings\n040000 tree b0cffb44c7d0fad5990a192238f27e5a1715e912\tdsh-win-bash\n",
+                                "stderr": ""
+                            },
+                            {
+                                "command": [
+                                    "show",
+                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:.gitmodules"
+                                ],
+                                "exit_code": 0,
+                                "stdout": "[submodule \"satellites/dsh-skins\"]\n\tpath = satellites/dsh-skins\n\turl = https://github.com/zhu1090093659/dsh-skins.git\n[submodule \"satellites/dsh-pet\"]\n\tpath = satellites/dsh-pet\n\turl = https://github.com/zhu1090093659/dsh-pet.git\n[submodule \"satellites/dsh-community-plugins\"]\n\tpath = satellites/dsh-community-plugins\n\turl = https://github.com/zhu1090093659/dsh-community-plugins.git\n[submodule \"satellites/dsh-presets\"]\n\tpath = satellites/dsh-presets\n\turl = https://github.com/zhu1090093659/dsh-presets.git\n",
+                                "stderr": ""
+                            }
+                        ],
+                        "material_inventory": {
+                            "artifact": "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-git-graph/INVENTORY.json",
+                            "digest": "8d4ba14f28de3d463f580eb7c8eef539044410ab4f68f54dc2a61927e73e1fca",
+                            "coverage": "git tracked files at exact commit; component scope only",
+                            "files": 0,
+                            "excluded": [],
+                            "parse_errors": []
+                        },
+                        "author_paths": [
+                            "package.json",
+                            "README.md"
+                        ],
+                        "root_package": "{\n  \"name\": \"dsh-web\",\n  \"version\": \"0.4.15\",\n  \"private\": true,\n  \"description\": \"DeepSeek Harness Web GUI 插件全家桶。皮肤、宠物与社区插件索引已拆分为独立仓库（dsh-skins / dsh-pet / dsh-community-plugins），本仓通过 npm 包内置它们。\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./packages/dsh-web-all/cordis.patch.yml\"\n    }\n  },\n  \"files\": [\n    \"package.json\",\n    \"packages/dsh-web-all/cordis.patch.yml\",\n    \"locale\"\n  ],\n  \"dependencies\": {\n    \"@linxin666/dsh-web-all\": \"^0.4.15\"\n  },\n  \"scripts\": {\n    \"build\": \"node scripts/host-sdk-link.mjs --check && pnpm -r build\",\n    \"deps:install\": \"node scripts/install-deps.mjs\",\n    \"dev:watch\": \"node scripts/dev-watch.mjs\",\n    \"host-sdk:check\": \"node scripts/host-sdk-link.mjs --check\",\n    \"host-sdk:link\": \"node scripts/host-sdk-link.mjs\",\n    \"test\": \"node scripts/host-sdk-link.mjs --check && pnpm -r test\",\n    \"test:standards\": \"node scripts/test-standards.mjs --check\",\n    \"test:standards:write\": \"node scripts/test-standards.mjs --write-baseline\",\n    \"typecheck\": \"node scripts/host-sdk-link.mjs --check && pnpm -r typecheck\",\n    \"aggregate:check\": \"node scripts/aggregate.mjs --check\",\n    \"runtime-deps:check\": \"node scripts/runtime-deps-check.mjs\",\n    \"libs:check\": \"node scripts/lib-artifact-check.mjs\",\n    \"libs:write\": \"node scripts/lib-artifact-check.mjs --write\",\n    \"i18n:check\": \"node scripts/i18n-audit.mjs --check\",\n    \"emoji:check\": \"node scripts/emoji-audit.mjs\",\n    \"lint\": \"oxlint --deny-warnings --format=unix .\",\n    \"test:scripts\": \"node --test scripts/*.test.mjs\",\n    \"test:mount\": \"bash scripts/e2e-mount.sh\",\n    \"coverage:check\": \"node scripts/coverage-gate.mjs\",\n    \"coverage:write\": \"node scripts/coverage-gate.mjs --write-baseline\",\n    \"pr:review\": \"node scripts/pr-review.mjs\",\n    \"docs:check\": \"node scripts/verify-docs.mjs\",\n    \"docs:list\": \"node scripts/verify-docs.mjs --list\",\n    \"docs:write-pair\": \"node scripts/verify-docs.mjs --write\",\n    \"sync-shared\": \"node scripts/sync-shared.mjs\",\n    \"sync-shared:check\": \"node scripts/sync-shared.mjs --check\",\n    \"market:build\": \"node scripts/market-build\",\n    \"market:check\": \"node scripts/market-build --check\",\n    \"market:fetch\": \"node scripts/market-fetch-inputs.mjs\",\n    \"market:verify\": \"node scripts/market-verify-assets.mjs\",\n    \"deploy:market\": \"node scripts/deploy-market\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.1.0\",\n    \"@deepseek-ai/dsh-agent\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-api-session-controller\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-brand\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-llm\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-sandbox\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-scope\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-session\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-settings\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-subagent\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-timeout\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-tools\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-typert-protocol\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-crypto\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-time\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-values\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-web-frontend\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-workspace\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/schemastery\": \"^3.19.0\",\n    \"@playwright/test\": \"^1.62.1\",\n    \"@typescript/native-preview\": \"7.0.0-dev.20260707.2\",\n    \"@vitest/coverage-v8\": \"^4.1.8\",\n    \"es-module-lexer\": \"2.3.2\",\n    \"lightningcss\": \"^1.32.0\",\n    \"oxlint\": \"1.88.0\",\n    \"playwright\": \"^1.62.1\",\n    \"semver\": \"^7.8.5\",\n    \"tsdown\": \"^0.22.2\"\n  },\n  \"license\": \"Apache-2.0\",\n  \"packageManager\": \"pnpm@11.24.0\"\n}\n",
+                        "semantic_failures": 0,
+                        "target_executed": false,
+                        "preserve_existing_research": true,
+                        "next_step": "后续核来源退役/迁移和真实替代组件；本轮不替换稳定ID/path，不补位，不将根聚合包研究冒充该项。"
+                    }
+                },
+                "blocked_at": "2026-11-06T07:45:06.933Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1330041615:root": {
+                "plugin_id": "github:1330041615:root",
+                "revision": "e53adfc8c837ebcb4b6a52c2c4baf7cb6e8b795e",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1330041615:root",
+                        "revision": "e53adfc8c837ebcb4b6a52c2c4baf7cb6e8b795e",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/vlln/dsh-navbar/tree/e53adfc8c837ebcb4b6a52c2c4baf7cb6e8b795e",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.495Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1347985156:root": {
+                "plugin_id": "github:1347985156:root",
+                "revision": "832387bb8605be9ed6cd83c977bea954634e5653",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1347985156:root",
+                        "revision": "832387bb8605be9ed6cd83c977bea954634e5653",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/extracurricular-ai/dsh-filesnap/tree/832387bb8605be9ed6cd83c977bea954634e5653",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.499Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1333719936:root": {
+                "plugin_id": "github:1333719936:root",
+                "revision": "421af416c92094026e9016717bbf0d178c4765f0",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1333719936:root",
+                        "revision": "421af416c92094026e9016717bbf0d178c4765f0",
+                        "stage": "首次语义失败后修订未完成；旧稿存在源码缺失误判，不可发布",
+                        "source_url": "https://github.com/railgun0325/dsh-phone/tree/421af416c92094026e9016717bbf0d178c4765f0",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 1,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.500Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1333922780:root": {
+                "plugin_id": "github:1333922780:root",
+                "revision": "a499e4ec5e0bad694373841b271e1fd9e0343d9e",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1333922780:root",
+                        "revision": "a499e4ec5e0bad694373841b271e1fd9e0343d9e",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/rirko/dsh-melody-launcher/tree/a499e4ec5e0bad694373841b271e1fd9e0343d9e",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.504Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1334767490:root": {
+                "plugin_id": "github:1334767490:root",
+                "revision": "f03f1202dd8273acc2d8f8705a6663aac09a8a38",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1334767490:root",
+                        "revision": "f03f1202dd8273acc2d8f8705a6663aac09a8a38",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/xmutfyh/dsh-plugin-writing-guard/tree/f03f1202dd8273acc2d8f8705a6663aac09a8a38",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.497Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1335024457:root": {
+                "plugin_id": "github:1335024457:root",
+                "revision": "caa75cd7b35092a276775e087edb51ec767647c6",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1335024457:root",
+                        "revision": "caa75cd7b35092a276775e087edb51ec767647c6",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/Fengze233/dsh-vscode/tree/caa75cd7b35092a276775e087edb51ec767647c6",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.501Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1335309784:root": {
+                "plugin_id": "github:1335309784:root",
+                "revision": "55c4b4f77439b37e3bc8177df63f21570710debd",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1335309784:root",
+                        "revision": "55c4b4f77439b37e3bc8177df63f21570710debd",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/Dely0/dsh-personal-workbench/tree/55c4b4f77439b37e3bc8177df63f21570710debd",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.491Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1335750234:root": {
+                "plugin_id": "github:1335750234:root",
+                "revision": "dd551970c3ebda18fa48cdacbf7dc8c8056583f4",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1335750234:root",
+                        "revision": "dd551970c3ebda18fa48cdacbf7dc8c8056583f4",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/xgone/dsh-remote/tree/dd551970c3ebda18fa48cdacbf7dc8c8056583f4",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.497Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1338006486:root": {
+                "plugin_id": "github:1338006486:root",
+                "revision": "d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1338006486:root",
+                        "revision": "d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/webkubor/dsh-bloom-theme/tree/d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.496Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1338268249:root": {
+                "plugin_id": "github:1338268249:root",
+                "revision": "f86f4dadfd4be1239b423bb893e21da4ff4d2239",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1338268249:root",
+                        "revision": "f86f4dadfd4be1239b423bb893e21da4ff4d2239",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/xohmai/dsh-session-delete/tree/f86f4dadfd4be1239b423bb893e21da4ff4d2239",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.498Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1341458981:root": {
+                "plugin_id": "github:1341458981:root",
+                "revision": "991912d87ac4a1de040d4d10b76f6a3479d495b2",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1341458981:root",
+                        "revision": "991912d87ac4a1de040d4d10b76f6a3479d495b2",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/PolinniZhong/dsh-session-workbench/tree/991912d87ac4a1de040d4d10b76f6a3479d495b2",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.493Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1333234252:root": {
+                "plugin_id": "github:1333234252:root",
+                "revision": "8bdc850732464e2c10278f47b4f2b82da38d801e",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1333234252:root",
+                        "revision": "8bdc850732464e2c10278f47b4f2b82da38d801e",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/dsh-tui/dsh-tui/tree/8bdc850732464e2c10278f47b4f2b82da38d801e",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.499Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1333757417:root": {
+                "plugin_id": "github:1333757417:root",
+                "revision": "c21fbe03e944f56a03639f9e20ccb229e005f5dd",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1333757417:root",
+                        "revision": "c21fbe03e944f56a03639f9e20ccb229e005f5dd",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/Links2008/DeepSeek-Harness-Desktop/tree/c21fbe03e944f56a03639f9e20ccb229e005f5dd",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.502Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1334015817:root": {
+                "plugin_id": "github:1334015817:root",
+                "revision": "b7dfc30ea37ba8ee5774a845c8a08a737df16326",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1334015817:root",
+                        "revision": "b7dfc30ea37ba8ee5774a845c8a08a737df16326",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/Jiyr0119/dsh-workspace-explorer/tree/b7dfc30ea37ba8ee5774a845c8a08a737df16326",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.492Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1334278770:root": {
+                "plugin_id": "github:1334278770:root",
+                "revision": "6355d9b30a1494a111ad02d721128c318f871073",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1334278770:root",
+                        "revision": "6355d9b30a1494a111ad02d721128c318f871073",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/MarvekG/deepseek-harness-model-config/tree/6355d9b30a1494a111ad02d721128c318f871073",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.503Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1335265978:root": {
+                "plugin_id": "github:1335265978:root",
+                "revision": "040769240690826c0610b0bc14e14efca64afb92",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1335265978:root",
+                        "revision": "040769240690826c0610b0bc14e14efca64afb92",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/NekroAI/nekro-nxt/tree/040769240690826c0610b0bc14e14efca64afb92",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.503Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1417162408:root": {
+                "plugin_id": "github:1417162408:root",
+                "revision": "63a575521d543b417ac033dc61d5e92f77d3cf46",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1417162408:root",
+                        "revision": "63a575521d543b417ac033dc61d5e92f77d3cf46",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/SheepofSheep/dsh-doyourweb/tree/63a575521d543b417ac033dc61d5e92f77d3cf46",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.493Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1333130893:root": {
+                "plugin_id": "github:1333130893:root",
+                "revision": "84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1333130893:root",
+                        "revision": "84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/lhh010/dsh-ui-whale/tree/84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.501Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1335613118:root": {
+                "plugin_id": "github:1335613118:root",
+                "revision": "ff878109d40e2d2b41c7bed05dee25bd2ae52b48",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1335613118:root",
+                        "revision": "ff878109d40e2d2b41c7bed05dee25bd2ae52b48",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/mingzeng21/dsh-obsidian/tree/ff878109d40e2d2b41c7bed05dee25bd2ae52b48",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.494Z",
+                "run_id": "2026-11-06-04"
+            },
+            "github:1337271325:root": {
+                "plugin_id": "github:1337271325:root",
+                "revision": "391a1bdbcbcc625199af1a1fb0cd298683a88a19",
+                "reason_code": "user_stopped_research",
+                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                "details": {
+                    "reason_code": "user_stopped_research",
+                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
+                    "details": {
+                        "instruction": "直接收尾吧，没搞完的就放弃了",
+                        "recorded_at": "2026-11-06T09:30:32.556Z",
+                        "plugin_id": "github:1337271325:root",
+                        "revision": "391a1bdbcbcc625199af1a1fb0cd298683a88a19",
+                        "stage": "尚未完成父级逐题语义验收",
+                        "source_url": "https://github.com/sunxin-ai/dsh-design-qa/tree/391a1bdbcbcc625199af1a1fb0cd298683a88a19",
+                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
+                        "substantive_failures": 0,
+                        "no_retry_cooldown": true
+                    }
+                },
+                "blocked_at": "2026-11-06T09:31:10.495Z",
+                "run_id": "2026-11-06-04"
             }
         },
         "retained_documents": {}
@@ -1445,6 +1984,7 @@
             "github:1304997851:packages-dsh-plugin",
             "github:1304997851:root",
             "github:1306637593:root",
+            "github:1307156567:root",
             "github:1308234922:root",
             "github:1308599537:host-adapters-dsh-plugin",
             "github:1309135706:root",
@@ -1591,7 +2131,9 @@
             "github:1333447648:root",
             "github:1333452358:root",
             "github:1333463381:root",
+            "github:1333470417:root",
             "github:1333471394:root",
+            "github:1333476862:root",
             "github:1333482618:root",
             "github:1333483404:root",
             "github:1333486649:root",
@@ -1620,6 +2162,7 @@
             "github:1333721673:root",
             "github:1333722443:root",
             "github:1333732838:root",
+            "github:1333737063:root",
             "github:1333738786:root",
             "github:1333741476:root",
             "github:1333748978:root",
@@ -1643,6 +2186,7 @@
             "github:1333918421:root",
             "github:1333921957:root",
             "github:1333928744:root",
+            "github:1333936445:root",
             "github:1333939283:root",
             "github:1333954586:root",
             "github:1333961389:root",
@@ -1753,6 +2297,7 @@
             "github:1334939514:root",
             "github:1334962266:root",
             "github:1335001737:root",
+            "github:1335005109:root",
             "github:1335038926:root",
             "github:1335045464:root",
             "github:1335045545:root",
@@ -1795,6 +2340,7 @@
             "github:1335241492:root",
             "github:1335244607:root",
             "github:1335253559:root",
+            "github:1335272583:root",
             "github:1335281982:root",
             "github:1335286261:root",
             "github:1335287012:root",
@@ -1855,6 +2401,7 @@
             "github:1336280167:root",
             "github:1336366824:root",
             "github:1336488925:root",
+            "github:1336524975:root",
             "github:1336538202:root",
             "github:1336571882:root",
             "github:1336582509:root",
@@ -1893,6 +2440,7 @@
             "github:1337335939:root",
             "github:1337347330:root",
             "github:1337350700:root",
+            "github:1337395971:root",
             "github:1337467566:root",
             "github:1337487779:root",
             "github:1337511446:root",
@@ -1959,6 +2507,7 @@
             "github:1340492378:root",
             "github:1340492424:root",
             "github:1340492447:root",
+            "github:1340497731:root",
             "github:1340558027:root",
             "github:1340581082:root",
             "github:1340657858:root",
@@ -3084,7 +3633,6 @@
             "github:1339737707:root",
             "github:1333171737:root",
             "github:1280115203:root",
-            "github:1331636953:root",
             "github:1331636953:packages-dsh-git-graph",
             "github:1331636953:packages-dsh-plugin-manager",
             "github:1331636953:packages-dsh-remote-web-ui",
@@ -3620,7 +4168,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -4812,7 +5370,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -6004,7 +6572,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -7196,7 +7774,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -8388,7 +8976,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "registry": [
             "github:1339316901:root",
@@ -9580,7 +10178,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "reports": [
             "github:1339316901:root",
@@ -10772,7 +11380,17 @@
             "github:1334303936:root",
             "github:1340814644:root",
             "github:1335058602:root",
-            "github:1343002927:root"
+            "github:1343002927:root",
+            "github:1336524975:root",
+            "github:1333737063:root",
+            "github:1333936445:root",
+            "github:1333476862:root",
+            "github:1307156567:root",
+            "github:1335272583:root",
+            "github:1337395971:root",
+            "github:1335005109:root",
+            "github:1340497731:root",
+            "github:1333470417:root"
         ],
         "retained_documents": []
     },
@@ -11966,7 +12584,17 @@
         "github:1334303936:root",
         "github:1340814644:root",
         "github:1335058602:root",
-        "github:1343002927:root"
+        "github:1343002927:root",
+        "github:1336524975:root",
+        "github:1333737063:root",
+        "github:1333936445:root",
+        "github:1333476862:root",
+        "github:1307156567:root",
+        "github:1335272583:root",
+        "github:1337395971:root",
+        "github:1335005109:root",
+        "github:1340497731:root",
+        "github:1333470417:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-22-02/snapshots/02muller25--dsh-api-balance/REVIEWED-SOURCE.json",
@@ -12355,47 +12983,15 @@
         "data/runs/2026-10-29-03/zju-real--polaris/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-03/5v1a-afk--dsh-sticker-pack/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-03/2384418321--dsh-integration-settings/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/pc2005-cloud--dsh-pet--dsh-pet/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/dsh-market--dsh-market/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/ranxianglei--billion-context/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/bowenliang123--dsh-context/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/morluto--rea/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/omdsh-dev--dsh-better-sidebar/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/michengai--dsh-skills-manager/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/han-1413141--dsh-cost-meter/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/anywhere-labs--dsh-desktop/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/reactive-resume--reactive-resume/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-task-board/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-skill-explorer/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/deepseek-ai--deepseek-harness/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-git-graph/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-plugin-manager/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/dddmuc--dsh-free-search/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/elysia395--dsh-wallpaper-engine/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/michengai--dsh-archive-manager/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/xmanrui--dsh-im/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/kenryu42--cc-safety-net/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/omdsh-dev--dsh-mnemon/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/nexu-io--open-design/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/ccch1mneyyy--dsh-tui/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/evermind-ai--everos/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/memtensor--memos/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-ssh/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-ssh/DEPENDENCY-SSH2.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-web-all/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/shanliuling--dsh-image-gen/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/yyh-001--dsh-meme/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/omdsh-dev--dsh-genui/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/esengine--deepseek-reasonix/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/esengine--deepseek-reasonix/DEPENDENCY-DSH-EXCERPTS.json",
-        "data/runs/2026-11-01-01/esengine--deepseek-reasonix/DEPENDENCY-DSH-CURRENT.json",
         "data/runs/2026-11-01-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/dream-num--dsh-univer-office/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/vectorize-io--hindsight--hindsight-integrations-coding-agents/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/ruvnet--ruflo/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/nanmicoder--dsh-agent-teams/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/liustack--modsearch/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-02/nocobase--nocobase/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/tt-a1i--archify/REVIEWED-SOURCE.json",
@@ -13170,6 +13766,45 @@
         "data/runs/2026-11-06-03/smalldy--godot-bridge/REVIEWED-SOURCE.json",
         "data/runs/2026-11-06-03/hanshanyike--dsh-yolo/REVIEWED-SOURCE.json",
         "data/runs/2026-11-06-03/laplaceyoung--dsh-directorx/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-06-03/phant0meow--dsh-meow-cachebilling/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-06-03/phant0meow--dsh-meow-cachebilling/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/reactive-resume--reactive-resume/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/ranxianglei--billion-context/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/morluto--rea/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/deepseek-ai--deepseek-harness/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/nexu-io--open-design/delivery-3/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/dsh-market--dsh-market/delivery-1/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/anywhere-labs--dsh-desktop/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/esengine--deepseek-reasonix-delivery-1/esengine--deepseek-reasonix/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/ruvnet--ruflo/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/vectorize-io--hindsight--hindsight-integrations-coding-agents/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/pc2005-cloud--dsh-pet--dsh-pet/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-skill-explorer/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-task-board/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/bowenliang123--dsh-context-delivery-1/bowenliang123--dsh-context/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-web-all/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/memtensor--memos-delivery-1/memtensor--memos/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/omdsh-dev--dsh-better-sidebar/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/xmanrui--dsh-im/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-plugin-manager/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-ssh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/michengai--dsh-skills-manager/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/limuyang2--agent-team/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/elysia395--dsh-wallpaper-engine/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/evermind-ai--everos/delivery-1/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/biociao--dsh-science/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/kenryu42--cc-safety-net/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/ccch1mneyyy--dsh-tui/delivery-1/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/unlinearity--dsh-code-delivery-1/unlinearity--dsh-code/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/meredith2328--dsh-sticky-note-delivery-1/meredith2328--dsh-sticky-note/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/dddmuc--dsh-free-search/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/skyf0xx--hedgehog/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/yyxcnasd--amadeus-for-dsh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/chouxiaohuai--dsh-uiskin-theme/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/nanmicoder--dsh-agent-teams/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/lhuans--dsh-genui/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/ppy-web--dsh-plugin-xiaomi-mimo-tts/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/han-1413141--dsh-cost-meter/delivery-1/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-06-04/amlyczz--dsh-lark-link/REVIEWED-SOURCE.json"
     ]
 }

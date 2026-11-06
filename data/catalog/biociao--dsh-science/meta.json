@@ -1,0 +1,66 @@
+{
+    "repository": "biociao/dsh-science",
+    "repository_id": 1333737063,
+    "captured_at": "2026-11-06T06:50:45.128Z",
+    "window_start": "2026-10-07T06:50:45.128Z",
+    "stars": 47,
+    "pushed_at": "2026-10-24T07:22:51Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Abiociao%2Fdsh-science%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9334:31177A:2B452E:2EDF2B:6AED7AC8 and timestamp 2026-11-06 06:59:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Abiociao%2Fdsh-science%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 938A:31177A:2B45D8:2EDFD2:6AED7AC9 and timestamp 2026-11-06 06:59:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abiociao%2Fdsh-science%20is%3Aissue%20created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 93E4:3A0A85:2AEFE6:2E8AC8:6AED7ACA and timestamp 2026-11-06 06:59:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abiociao%2Fdsh-science%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 942A:FEE1B:2BBB4D:2F584F:6AED7ACB and timestamp 2026-11-06 06:59:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abiociao%2Fdsh-science%20is%3Aissue%20updated%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 945E:1CA151:2A6C42:2E05F8:6AED7ACC and timestamp 2026-11-06 06:59:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-science",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 1384,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-science",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T03:14:11.420Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-science",
+            "error": null,
+            "latest_version": "0.2.0",
+            "latest_published_at": "2026-08-18T09:51:32.296Z",
+            "latest_error": null
+        }
+    }
+}
