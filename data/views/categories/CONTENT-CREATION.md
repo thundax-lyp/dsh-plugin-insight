@@ -69,7 +69,6 @@
 | [No AI Style](#plugin-1418493685-root) | 为学术和专业写作提供检查、润色和起草 Skill，以及 DSH 输入栏模式按钮。 | [Q04](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q04) 先做只审阅并复核原文。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
-| [OpenDesign](#plugin-1223170290-root) | 将编码 Agent、设计系统、原型预览与团队反馈组织在同一设计工作区。 | 已有编码 Agent 和设计经验者先在隔离账户的非敏感项目副本中试一项本地原型；截断、文件不一致或回执不明时停下并人工核对。 |
 | [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
@@ -994,22 +993,6 @@
 > **建议**：[Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 提议把已有run/fingerprint/句柄与任务板投影并列，帮助区分有文件、可收集、输入过时和已验收；先排查同等能力，若错误决策或追查成本不降就否定。
 
 [查看完整分析](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1223170290-root"></a>
-
-## [OpenDesign](../../plugins/nexu-io--open-design/INSIGHT.md)
-
-[![GitHub ★ 105,115](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=105%2C115&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nexu-io/open-design)
-
-> **用途**：需要从 brief 生成并迭代原型的设计开发者与团队，可在项目中使用编码 Agent 和查看反馈；实际协作收益尚无同条件对照。[Q01](../../plugins/nexu-io--open-design/INSIGHT.md#research-q01)
-
-> **亮点**：将 DSH 适配、制品写入和评论队列组织到设计项目，提供会话身份、manifest 和 revision 确认等明确接缝；它们支持追踪，不证明设计正确或远端已落地。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03) [Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
-
-> **思考**：max-tokens 也映射 completed，正文与 manifest 分次写；单条 Vela 返回缺 seq 时回落 0 后仍会被队列确认。协议、文件和远端回执均不能代替设计合格和云端读回。[Q02](../../plugins/nexu-io--open-design/INSIGHT.md#research-q02) [Q03](../../plugins/nexu-io--open-design/INSIGHT.md#research-q03) [Q04](../../plugins/nexu-io--open-design/INSIGHT.md#research-q04)
-
-> **建议**：未验证假设：验证单条评论回执并提供远端读回，再将反馈关联具体制品版本及人工验收，可能减少遗漏；需与原流程加清单对比错误确认、遗漏及总时间，若额外负担抵消收益则否定。[Q06](../../plugins/nexu-io--open-design/INSIGHT.md#research-q06)
-
-[查看完整分析](../../plugins/nexu-io--open-design/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1159938129-root"></a>
 

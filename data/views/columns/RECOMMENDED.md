@@ -91,8 +91,6 @@
 | [dsh-agent-recycle-guard](#plugin-1414323673-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 适合有独立备份的DSH维护者在可丢弃目录试用常见删除缓冲；须接受有限脚本覆盖并核对权限重入和回收结果。 |
 | [AgentCompare](#plugin-1442340074-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在 DSH 生成双候选界面方案，绑定共同验收并控制选择与写回。 | 需要比较界面方案的开发者可在无凭据测试仓试一次双候选并另存分支。 |
 | [HelloAGENTS](#plugin-1064776002-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为AI编码CLI提供任务路由、质量Skill、项目知识、会话恢复和交付检查脚本。 | 有多阶段跨轮编码任务的CLI用户可在一个副本项目试用。 |
-| [Hindsight 编码 Agent 记忆集成](#plugin-1086419061-hindsight-integrations-coding-agents)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 编码会话自动召回并后台保存项目记忆。 | 长期维护同一项目且已有 Hindsight 服务的 DSH 用户可在独立 bank 试用历史决策召回。 |
-| [CC Safety Net](#plugin-1122873619-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在编码 Agent 的工具调用前检查危险命令和敏感文件访问。 | 能核对规则和工具覆盖的 DSH 用户可以在隔离环境用非破坏样本试用命令检查。 |
 | [Ouroboros 规格先行引擎](#plugin-1133901637-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过访谈、固定规格、执行与多阶段评估组织 AI 软件开发任务。 | 能够审查验证命令和验收标准的开发者可在可丢弃项目副本中试一项小任务。 |
 | [PicGo](#plugin-113965016-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 重复处理文档配图且已有可信图床的创作者可用非敏感样本试用，先验证链接权限与混合失败恢复。 |
 | [See Wxapkg](#plugin-1146519069-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 自托管微信小程序 wxapkg 静态恢复工具，提供解密、解包、工程整理与结果报告。 | 拥有目标包分析权限的开发者可在受控自托管环境试用 See Wxapkg 阅读恢复工程。 |
@@ -106,12 +104,14 @@
 | [Notes](#plugin-1182135360-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | 单人撰写和分享便签的用户可以先用非敏感稿件试用主题与导出。 |
 | [ANOLISA](#plugin-1195873793-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 Agent 环境提供上下文优化、技能、工作区恢复、安全和观测组件的系统软件栈。 | 已经维护 DSH 环境且能保留原文的开发者，可以在任务副本中试用 Tokenless 输出优化这一链路。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | 有会议权限的个人或团队，可用测试账号试用小范围只读会议和录制查询。 |
+| [REA](#plugin-1209966933-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 独立CLI/MCP逆向工具，为构建物静态分析生成带身份、覆盖和限制的可回查Evidence。 | 有逆向经验且有目标检查权限的开发者，可在匹配Node的隔离环境用已知JS样本受限试静态链。 |
 | [PatentRadar](#plugin-1230059993-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 处理公开专利资料且有专业审阅者的研究人员，可以挑一个可回源案例试做特征证据表。 |
 | [Agent Handoff Skill](#plugin-1230123793-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种编码 Agent 建立仓库级交接文件，并辅助初始化、维护和归档。 | 反复更换 DSH 会话的项目维护者，可以在测试仓库先预览一套交接布局。 |
 | [WeSight](#plugin-1232030145-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为多种本地编码Agent提供桌面聊天、文件变化、配置与运行指标工作区。 | 已有多个本地编码CLI的开发者可先在副本仓库接入一个引擎试用。 |
 | [agent-qa](#plugin-1232322871-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 用自然语言描述用户旅程，在 Web、Android 或 iOS 上执行测试并保留可检查证据的 QA 工具。 | 已有 QA 能力并能提供测试副本的团队可用 agent-qa 补充自然语言旅程回归和失败证据检查。 |
 | [Supergraph](#plugin-1232531989-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为编码 Agent 集成工程工作流、代码图上下文和协作工具，包含 DSH Host 与客户端接入。 | 需要处理跨模块改动的 DSH 维护者可以在隔离 Profile 试一次图辅助扫描。 |
 | [Token Bank](#plugin-1233571420-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。 | 需要比较多个模型来源的 DSH 开发者，可以在隔离配置里用模拟上游试验网关降级。 |
+| [Caliper](#plugin-1237259189-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 真实安装 Agent Skill，重复运行任务并分别评估激活、执行检查与有无 Skill 的差异。 | 能提供独立测试环境的 Skill 维护者可先关闭用户自定义工具，用 Caliper 对自有非敏感 Skill 做小规模激活与断言回归。 |
 
 <a id="plugin-1422943787-root"></a>
 
@@ -1851,50 +1851,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1086419061-hindsight-integrations-coding-agents"></a>
-
-## [Hindsight 编码 Agent 记忆集成](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md)
-
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
-
-[![GitHub ★ 57,033](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=57%2C033&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vectorize-io/hindsight) [![npm 30d 62,152](https://img.shields.io/static/v1?label=npm+30d&message=62%2C152&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@vectorize-io/hindsight-coding-agents)
-
-**主要用途**：为 DSH 编码会话自动召回并后台保存项目记忆。
-
-**建议**：试用
-
-**推荐理由**：长期维护同一项目且已有 Hindsight 服务的 DSH 用户可在独立 bank 试用历史决策召回。相比反复粘贴摘要，该包自动绑定工作区并切除 fork 继承部分，但质量尚未对照。若停止后记忆未确认、项目串记忆或旧决策误导，应暂停自动依赖并改用人工摘要。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：[Q05](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md#research-q05) 用独立 bank 和虚构项目试用，写回未确认或项目不符时暂停并手工核查。
-
-[查看完整分析 →](../../plugins/vectorize-io--hindsight--hindsight-integrations-coding-agents/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1122873619-root"></a>
-
-## [CC Safety Net](../../plugins/kenryu42--cc-safety-net/INSIGHT.md)
-
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
-
-[![GitHub ★ 1,877](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C877&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kenryu42/cc-safety-net) [![npm 30d 89,094](https://img.shields.io/static/v1?label=npm+30d&message=89%2C094&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net)
-
-**主要用途**：在编码 Agent 的工具调用前检查危险命令和敏感文件访问。
-
-**建议**：试用
-
-**推荐理由**：能核对规则和工具覆盖的 DSH 用户可以在隔离环境用非破坏样本试用命令检查。相比仅靠提示词，它对接入的工具调用提供执行前判断，但不能替代宿主沙箱和审批。若出现误拦或未检查工具提示，用户应停止依赖该门槛并回到原生审批和人工核查。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：[Q05](../../plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q05) 建议保留宿主审批并用非破坏样本核查工具覆盖；误拦或未检查提示出现时停止依赖并人工复核。
-
-[查看完整分析 →](../../plugins/kenryu42--cc-safety-net/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1133901637-root"></a>
 
 ## [Ouroboros 规格先行引擎](../../plugins/q00--ouroboros/INSIGHT.md)
@@ -2181,6 +2137,28 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1209966933-root"></a>
+
+## [REA](../../plugins/morluto--rea/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 433,920](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=433%2C920&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/morluto/rea) [![npm 30d 1,542,817](https://img.shields.io/static/v1?label=npm+30d&message=1%2C542%2C817&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+
+**主要用途**：独立CLI/MCP逆向工具，为构建物静态分析生成带身份、覆盖和限制的可回查Evidence。
+
+**建议**：试用
+
+**推荐理由**：有逆向经验且有目标检查权限的开发者，可在匹配Node的隔离环境用已知JS样本受限试静态链。相比手工解包笔记，它把解析图、覆盖和限制绑定可回查Evidence，但不能据哈希或summary证明功能正确。关键来源缺失、部分结果边界不明或清理未完成时应停止重跑和复刻，回原始构建物/现有分析器及行为对照。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/morluto--rea/INSIGHT.md#research-q04)匹配环境/有权已知样本静态小试，保原件和全Evidence；范围/清理不明停重跑，回行为对照。
+
+[查看完整分析 →](../../plugins/morluto--rea/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1230059993-root"></a>
 
 ## [PatentRadar](../../plugins/yuc16--patentradar/INSIGHT.md)
@@ -2310,6 +2288,28 @@
 **试用条件**：只用模拟上游和临时配置检验接管、失败与退出，不能确认恢复就保留直连。见 [Q03](../../plugins/wink-run--tokenbank/INSIGHT.md#research-q03)。
 
 [查看完整分析 →](../../plugins/wink-run--tokenbank/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1237259189-root"></a>
+
+## [Caliper](../../plugins/edonadei--caliper/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 229](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=229&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/edonadei/caliper)
+
+**主要用途**：真实安装 Agent Skill，重复运行任务并分别评估激活、执行检查与有无 Skill 的差异。
+
+**建议**：试用
+
+**推荐理由**：能提供独立测试环境的 Skill 维护者可先关闭用户自定义工具，用 Caliper 对自有非敏感 Skill 做小规模激活与断言回归。相比单次手试，它区分自然加载、任务结果和基础设施失败，但缺判与环境漂移仍需逐项核对。若隔离不足、检查无判或双臂条件不一致，就停止归因并回到固定环境的原 CLI 与人工验收。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q03](../../plugins/edonadei--caliper/INSIGHT.md#research-q03)仅在独立环境对可信spec小试，先关闭user customizations并查实际工具清单。比较时审全部verdict和usable分母、同名任务语义；不一致先修实验，无法控制权限则退回原CLI手动核验。
+
+[查看完整分析 →](../../plugins/edonadei--caliper/INSIGHT.md)
 
 [返回表格](#column-index)
 
