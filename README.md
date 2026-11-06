@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1161](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1161&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1190](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1190&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -38,9 +38,9 @@
 
 > 查看最近发布的版本，了解用途和使用条件。
 
+- [Garmin Connect](data/plugins/likenttt--garmin-connect-plugin-for-dsh/INSIGHT.md) · 在 DSH 与 MCP 中查询 Garmin 健身健康数据，并支持本地 FIT 导出及预览确认后的训练管理。 · [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-garmin-connect)
+- [Bottom Info Bar](data/plugins/songoao25--dsh-bottom-info-bar/INSIGHT.md) · 在 DSH 输入框下显示当前模型、提供商余额或额度、价格及本地会话花费。 · [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bottom-info-bar)
 - [dsh-providers-hub](data/plugins/ijetli--dsh-providers-hub/INSIGHT.md) · 为 DSH 集中管理编程服务账号、凭据续期、多账号接入与本地 OpenAI 兼容网关。 · [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-providers-hub)
-- [@hyzyn/dsh-profile](data/plugins/hyzyn--dsh-plugin-kit--packages-profile/INSIGHT.md) · 在 DSH Web 中查看、创建、复制、重命名和删除 profile，并生成带端口的启动命令。 · [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-profile)
-- [@hyzyn/dsh-rss](data/plugins/hyzyn--dsh-plugin-kit--packages-rss/INSIGHT.md) · 聚合 RSS 与 Atom 订阅生成本地日报，可选 AI 摘要，并向 DSH 会话注入有限条目。 · [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hyzyn/dsh-rss)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 343 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 356 |
 | [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 46 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 146 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 355 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 68 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 150 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 361 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 70 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 199 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 203 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 3 |
 
 [浏览全部分类](data/views/categories/INDEX.md)

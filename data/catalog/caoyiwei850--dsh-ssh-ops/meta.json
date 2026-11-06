@@ -1,0 +1,45 @@
+{
+    "repository": "caoyiwei850/dsh-ssh-ops",
+    "repository_id": 1335161359,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 52,
+    "pushed_at": "2026-11-05T00:59:31Z",
+    "issues": {
+        "open": 5,
+        "closed": 27,
+        "created_30d": 17,
+        "closed_30d": 13,
+        "updated_30d": 19
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-ssh-ops",
+        "captured_at": "2026-11-03T23:26:58.125Z",
+        "window_start": "2026-10-04",
+        "window_end": "2026-11-02",
+        "downloads_30d": 5005,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/dsh-ssh-ops",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T15:50:06.856Z",
+            "captured_at": "2026-11-03T23:26:58.125Z",
+            "source_url": "https://registry.npmjs.org/dsh-ssh-ops",
+            "error": null,
+            "latest_version": "0.4.3",
+            "latest_published_at": "2026-10-25T17:45:10.073Z",
+            "latest_error": null
+        }
+    }
+}

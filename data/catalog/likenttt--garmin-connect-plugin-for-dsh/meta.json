@@ -1,0 +1,66 @@
+{
+    "repository": "Likenttt/garmin-connect-plugin-for-dsh",
+    "repository_id": 1338566237,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 53,
+    "pushed_at": "2026-11-06T04:17:10Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ALikenttt%2Fgarmin-connect-plugin-for-dsh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A7E2:18B06:115549C:18DED20:6AED62EA and timestamp 2026-11-06 05:17:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ALikenttt%2Fgarmin-connect-plugin-for-dsh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8B4:99B28:705F1F2:9EAD40B:6AED62EC and timestamp 2026-11-06 05:17:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALikenttt%2Fgarmin-connect-plugin-for-dsh%20is%3Aissue%20created%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A95E:FDDBD:71047B:A36203:6AED62ED and timestamp 2026-11-06 05:17:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALikenttt%2Fgarmin-connect-plugin-for-dsh%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9E6:18B06:1155DD0:18DFAC0:6AED62EE and timestamp 2026-11-06 05:17:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALikenttt%2Fgarmin-connect-plugin-for-dsh%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA60:3DA9A0:1163FEF:18ED33B:6AED62EF and timestamp 2026-11-06 05:17:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-garmin-connect",
+        "captured_at": "2026-11-06T05:16:47.587Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 4700,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/dsh-plugin-garmin-connect",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T17:17:27.561Z",
+            "captured_at": "2026-11-06T05:16:47.587Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-garmin-connect",
+            "error": null,
+            "latest_version": "0.1.21",
+            "latest_published_at": "2026-11-06T04:16:21.638Z",
+            "latest_error": null
+        }
+    }
+}
