@@ -1,0 +1,66 @@
+{
+    "repository": "beiyege-01/dsh-voice-ai-girlfriend-plugin",
+    "repository_id": 1336201295,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 51,
+    "pushed_at": "2026-10-24T19:59:31Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Abeiyege-01%2Fdsh-voice-ai-girlfriend-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C6DE:36C64:112EF38:189A77A:6AED631F and timestamp 2026-11-06 05:18:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Abeiyege-01%2Fdsh-voice-ai-girlfriend-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C7B2:BDDA5:10FB4CB:1858082:6AED6320 and timestamp 2026-11-06 05:18:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abeiyege-01%2Fdsh-voice-ai-girlfriend-plugin%20is%3Aissue%20created%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C8BC:36C64:112F67D:189B1B9:6AED6321 and timestamp 2026-11-06 05:18:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abeiyege-01%2Fdsh-voice-ai-girlfriend-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C97E:1AC473:11929D9:1923BFD:6AED6323 and timestamp 2026-11-06 05:18:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abeiyege-01%2Fdsh-voice-ai-girlfriend-plugin%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CA48:2BE58F:119D267:19272DC:6AED6324 and timestamp 2026-11-06 05:18:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@beiyege-01/dsh-voice-ai-girlfriend",
+        "captured_at": "2026-11-06T05:16:47.587Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40beiyege-01%2Fdsh-voice-ai-girlfriend",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-06T05:16:47.587Z",
+            "source_url": "https://registry.npmjs.org/%40beiyege-01%2Fdsh-voice-ai-girlfriend",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

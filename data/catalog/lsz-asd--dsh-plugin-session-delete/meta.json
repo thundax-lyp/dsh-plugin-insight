@@ -1,0 +1,45 @@
+{
+    "repository": "lsz-asd/dsh-plugin-session-delete",
+    "repository_id": 1334028660,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 50,
+    "pushed_at": "2026-08-14T19:12:06Z",
+    "issues": {
+        "open": 6,
+        "closed": 0,
+        "created_30d": 3,
+        "closed_30d": 0,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@huanlin/dsh-plugin-session-delete",
+        "captured_at": "2026-11-06T05:16:47.587Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40huanlin%2Fdsh-plugin-session-delete",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-06T05:16:47.587Z",
+            "source_url": "https://registry.npmjs.org/%40huanlin%2Fdsh-plugin-session-delete",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

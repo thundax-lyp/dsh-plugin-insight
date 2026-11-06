@@ -1,0 +1,66 @@
+{
+    "repository": "limbo947/dsh-recall-plugin",
+    "repository_id": 1334434866,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 53,
+    "pushed_at": "2026-11-05T17:16:56Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Alimbo947%2Fdsh-recall-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F8B8:1DDF8:1ACA7D:1D0B71:6AED62E9 and timestamp 2026-11-06 05:17:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Alimbo947%2Fdsh-recall-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F92E:37499B:1A5692:1C973B:6AED62EA and timestamp 2026-11-06 05:17:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alimbo947%2Fdsh-recall-plugin%20is%3Aissue%20created%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A86C:C937A:112BCD2:18A9A38:6AED62EB and timestamp 2026-11-06 05:17:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alimbo947%2Fdsh-recall-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8FA:99B28:705F3FE:9EAD6DD:6AED62EC and timestamp 2026-11-06 05:17:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alimbo947%2Fdsh-recall-plugin%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9B0:D1730:114E50E:18DCD75:6AED62EE and timestamp 2026-11-06 05:17:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-recall-plugin",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 7107,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-recall-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T18:15:37.250Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-recall-plugin",
+            "error": null,
+            "latest_version": "2.6.4",
+            "latest_published_at": "2026-11-04T16:21:17.010Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "repository": "lna-lab/distill-kura",
+    "repository_id": 1342235893,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 54,
+    "pushed_at": "2026-09-30T10:40:10Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alna-lab%2Fdistill-kura%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F336:37499B:1A4FC0:1C8FED:6AED62DF and timestamp 2026-11-06 05:17:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Alna-lab%2Fdistill-kura%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F3CA:57C5D:195E7D:1B9D9A:6AED62E1 and timestamp 2026-11-06 05:17:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    }
+}

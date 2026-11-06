@@ -1,0 +1,66 @@
+{
+    "repository": "Duoasa/DSH-to-Figma",
+    "repository_id": 1424114133,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 53,
+    "pushed_at": "2026-11-05T17:12:27Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ADuoasa%2FDSH-to-Figma%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AE70:C26B:1188A7C:190E514:6AED62F8 and timestamp 2026-11-06 05:17:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ADuoasa%2FDSH-to-Figma%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AF1A:18B06:11577A9:18E1FF0:6AED62F9 and timestamp 2026-11-06 05:17:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADuoasa%2FDSH-to-Figma%20is%3Aissue%20created%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AF98:FDDBD:7126B4:A39276:6AED62FA and timestamp 2026-11-06 05:17:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADuoasa%2FDSH-to-Figma%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B08E:2AE0E:11B1E2A:194567B:6AED62FB and timestamp 2026-11-06 05:17:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADuoasa%2FDSH-to-Figma%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B13C:3DA9A0:11664CF:18F06D0:6AED62FC and timestamp 2026-11-06 05:17:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T11:33:05.584Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-to-figma",
+        "captured_at": "2026-11-06T05:16:47.587Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/dsh-to-figma",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-06T05:16:47.587Z",
+            "source_url": "https://registry.npmjs.org/dsh-to-figma",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

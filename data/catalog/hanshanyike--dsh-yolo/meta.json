@@ -1,0 +1,45 @@
+{
+    "repository": "hanshanyike/dsh-yolo",
+    "repository_id": 1340814644,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 52,
+    "pushed_at": "2026-09-28T15:07:21Z",
+    "issues": {
+        "open": 3,
+        "closed": 1,
+        "created_30d": 3,
+        "closed_30d": 0,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-06T01:49:24.950Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-yolo",
+        "captured_at": "2026-11-02T21:44:22.915Z",
+        "window_start": "2026-10-03",
+        "window_end": "2026-11-01",
+        "downloads_30d": 1404,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-plugin-yolo",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-21T16:32:50.220Z",
+            "captured_at": "2026-11-02T21:44:22.915Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-yolo",
+            "error": null,
+            "latest_version": "0.5.0",
+            "latest_published_at": "2026-09-10T16:19:50.930Z",
+            "latest_error": null
+        }
+    }
+}

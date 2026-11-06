@@ -1,0 +1,58 @@
+{
+    "repository": "Moeblack/dsh-message-edit",
+    "repository_id": 1324720195,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 53,
+    "pushed_at": "2026-08-16T11:33:37Z",
+    "issues": {
+        "open": 13,
+        "closed": 1,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMoeblack%2Fdsh-message-edit%20is%3Aissue%20created%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F308:393AF1:1B4990:1D8963:6AED62DF and timestamp 2026-11-06 05:17:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMoeblack%2Fdsh-message-edit%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F38E:371B32:19FBAC:1C3A00:6AED62E0 and timestamp 2026-11-06 05:17:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AMoeblack%2Fdsh-message-edit%20is%3Aissue%20updated%3A2026-10-07T05%3A16%3A47.587Z..2026-11-06T05%3A16%3A47.587Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F45E:1B986B:1B4FA9:1D8F23:6AED62E1 and timestamp 2026-11-06 05:17:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-message-edit",
+        "captured_at": "2026-11-04T23:43:49.729Z",
+        "window_start": "2026-10-05",
+        "window_end": "2026-11-03",
+        "downloads_30d": 2491,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-message-edit",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T06:10:34.972Z",
+            "captured_at": "2026-11-04T23:43:49.729Z",
+            "source_url": "https://registry.npmjs.org/dsh-message-edit",
+            "error": null,
+            "latest_version": "0.2.3",
+            "latest_published_at": "2026-08-16T11:33:23.096Z",
+            "latest_error": null
+        }
+    }
+}

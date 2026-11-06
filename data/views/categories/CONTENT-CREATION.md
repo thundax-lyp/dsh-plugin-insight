@@ -21,12 +21,14 @@
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
+| [DirectorX视频生产插件](#plugin-1335058602-root) | 将DSH Agent接到分镜/生成提案、外部媒体模型、可重渲染时间线及技术质检与画布交付。 | [Q06](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q06)观察；可丢弃项目先mock+小额代表provider，人工查账/创作验收，企业无人值守需先补授权恢复实证。 |
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [DSH ComfyUI](#plugin-1340918386-root) | 从 DSH 调用本地或远程 ComfyUI，管理工作流参数和生成媒体。 | [Q04](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q04) 先同步试一次并检查真实队列。 |
 | [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
 | [DSH OpenMAIC](#plugin-1333147218-root) | 将完整课堂生成与会话内教学卡片接入 DSH | [Q04](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q04) 先试无敏卡片，再用模拟服务验证课堂提交。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
+| [DSH to Figma](#plugin-1424114133-root) | 将本地Figma companion或官方MCP接入DSH，读取设计上下文并编辑原生画布与资源。 | 可丢弃Figma文件受限试用，先明确后端/file/page与能力，再做少量原生节点并核结构变量/截图。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 建议先观察。 |
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
@@ -225,6 +227,22 @@
 
 [查看完整分析](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335058602-root"></a>
+
+## [DirectorX视频生产插件](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md)
+
+[![GitHub ★ 48](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=48&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LaplaceYoung/dsh-directorx)
+
+> **用途**：DirectorX0.2.0是原生DSH垂直视频生产插件，含模型工具、分镜画布客户端、bundled Skills/知识配方及媒体管线，不是另一个独立Agent runtime。它面向在DSH把brief转脚本/镜头、生成素材、人工审阅并交付视频的创作者；Agent loop/提问审批/会话由宿主提供，生成质量来自外部模型，媒体处理来自FFmpeg。成功是符合brief且素材/剪辑/声音/字幕可核的可用成片和可继续修订的项目，不是命令多/画布有节点。
+
+> **亮点**：[Q01](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q01)视频垂直工具/知识接线；[Q02](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q02)项目/参考/提案与代表生成链；[Q04](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q04)可改时间线、本地编辑和技术QC反馈。
+
+> **思考**：[Q03](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q03)proposal可自批、inBudget常量true/批准非单次能力，cancel仅本地账本；[Q04](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q04)QC不验创作发布质量；[Q05](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q05)数据/资源/费用和恢复仍待验证。
+
+> **建议**：[Q06](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q06)不可自批单次生成能力/费用任务回执与技术+创作+来源分层签收，故障对照验重复费用和净成本，未实现。
+
+[查看完整分析](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1368569221-root"></a>
 
 ## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
@@ -320,6 +338,22 @@
 > **建议**：[Q05](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q05) 可减少外部预览切换。
 
 [查看完整分析](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1424114133-root"></a>
+
+## [DSH to Figma](../../plugins/duoasa--dsh-to-figma/INSIGHT.md)
+
+[![GitHub ★ 53](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=53&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Duoasa/DSH-to-Figma)
+
+> **用途**：dsh-to-figma0.4.0是原生DSH工具/Skill插件，另含CLI与Figma companion。目标是让Agent读取设计上下文并在目标文件产出设计师可继续编辑的原生图层/组件/布局，而非只给静态截图/建议。成功须目标文件与页面正确、结构/变量和视觉符合需求，截图可核且设计师接手成本合理，不是脚本返回节点ID。
+
+> **亮点**：[Q01](../../plugins/duoasa--dsh-to-figma/INSIGHT.md#research-q01)、[Q02](../../plugins/duoasa--dsh-to-figma/INSIGHT.md#research-q02)本地可写原生画布、上下文/截图/资源与Work绑定、三后端分离和串行失败门禁，产物可继续编辑而非只给图。
+
+> **思考**：[Q03](../../plugins/duoasa--dsh-to-figma/INSIGHT.md#research-q03)任意脚本开始后可部分变更、取消不撤执行，读取解除uncertain不等视觉验收；配对副本含token/同信任域，文档对不等页面对。[Q04](../../plugins/duoasa--dsh-to-figma/INSIGHT.md#research-q04)设计质量/平台条件与总成本仍需真实验收。
+
+> **建议**：[Q05](../../plugins/duoasa--dsh-to-figma/INSIGHT.md#research-q05)提出未验证的目标/节点变量变更与视觉结构验收回执，用故障对照测错目标/重复和设计师返工，不把inspect当验收。
+
+[查看完整分析](../../plugins/duoasa--dsh-to-figma/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1427791087-root"></a>
 

@@ -24,6 +24,7 @@
 | [Awesome DeepSeek Harness](#plugin-1330942675-root) | 按场景分类整理 DSH 插件、工具和基础设施，并提供生成的仓库目录。 | 建议作为发现资源试用：按场景挑少量候选后固定目标版本核查；不可访问或过时条目退回原仓库及公开搜索，不批量安装。 |
 | [Awesome DeepSeek Harness](#plugin-1333173677-root) | 按任务分类收录 DeepSeek Harness 插件、Skill、MCP、客户端及其他配套资源的双语目录。 | 当读者尚不熟悉某类扩展时，可限时浏览目录，先从任务分类挑少量目标并记录链接，进入原仓库后另行核对版本和组件。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333171737-root) | 按能力分类整理 DSH 公开插件与扩展，并提供仓库、Star 与引用网页链接 | [Q03](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03) 只读试用候选发现；目录条目必须回目标固定源码核实，无法核实时停止将该项当推荐。 |
+| [Awesome DeepSeek Harness Plugins](#plugin-1333183810-root) | 面向 DSH 的双语插件、起步项目、工具与一手资源精选索引，含教程及源码级收录规范。 | 试用作只读学习/找一个候选，随后回直接仓库固定版本另验。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1333844474-root) | 提供 DeepSeek Harness 社区插件目录、结构化投稿审核与双语目录生成。 | [Q04](../../plugins/imsai-sh--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 先选一个公开且已定位 manifest 的仓库，从干净分支准备单条 JSON，用本地文件或隔离服务检查投影。 |
 | [Awesome DeepSeek Harness Plugins](#plugin-1336739291-root) | 将 marketplace 索引转为可浏览、可校验的双语插件目录 | [Q04](../../plugins/web-casa--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04) 用固定提交作发现源，并对实际包独立验证。 |
 | [Awesome DeepSeek Harness（libukai）](#plugin-1333167552-root) | 以中英日文指南组织官方入门、教程、客户端、插件和集成，帮助读者分清对象类型与查证版本、权限及采用条件。 | 可作为学习/查证起点，使用具体对象前回固定原仓；版本/类型/授权不明则停在阅读，见 [Q04](../../plugins/libukai--awesome-deepseek-harness/INSIGHT.md#research-q04)。 |
@@ -46,6 +47,7 @@
 | [DocsMint for DSH](#plugin-1249550690-packages-dsh-plugin) | 在 DSH 侧栏浏览编辑 DocsMint，并用四个模型工具通过 REST 或 MCP 检索读写文档。 | 测试工作区做已知搜索与小文档回读，更新保留原文；失败先查远端，异常停写回原界面。 |
 | [DSH Annotation](#plugin-1369398336-packages-dsh-annotation) | 把助手回复中的选段和批注作为原生引用加入草稿，并按顺序发送。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-annotation/INSIGHT.md#research-q04) 建议先用非敏感长回复在兼容客户端核对多处选段、撤销、刷新和历史；定位或草稿恢复异常时回退手工引用。 |
 | [DSH Data Agent](#plugin-1331112087-root) | 在 DSH Web 与 TUI 中管理数据库连接、查询、版本化业务 Catalog 和分析报告。 | [Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 仅在脱敏副本、数据库只读角色和显式readonly下试用，先核SQL/口径/截断；异常即回原客户端。 |
+| [DSH Data Quality](#plugin-1339628067-root) | 在 DSH 中确定性分析、清理、校验表格数据，提供 citation 核值服务与持久报告回读。 | 试用限定可信无链接副本的小文件分析与clean dryRun，人工核规则/分数，不提供outputPath。 |
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
 | [DSH Failover Search](#plugin-1374007757-plugins-dsh-failover-search-plugin) | 在宿主搜索与取回接缝按账号和平台故障转移 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q04) 模拟服务起步，保存原搜索和取回配置作为退出。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
@@ -98,6 +100,7 @@
 | [dsh-tavily-web](#plugin-1369301269-root) | 提供 Tavily 多密钥轮询检索工具，以及通过宿主 shell 的 curl 网页正文抓取工具。 | 在不含敏感查询的固定任务集试用，先限制凭据数与调用预算，核对返回URL、网页状态和正文。 |
 | [dsh-teaching-board](#plugin-1358319839-root) | 在 DSH 会话中展示 HTML 板书，支持圈画、方向选择及把截图作为图片消息回传。 | 先观察并补齐消息来源和提交确认，再以非敏感课程在隔离 profile 检查四工具、增量更新和截图反馈；成功需图片进入正确会话且不覆盖用户草稿。 |
 | [dsh-thoughtdag](#plugin-1160354976-dsh) | 将 ThoughtDAG 图形画布嵌入 DSH 并桥接会话读取和写回。 | [Q04](../../plugins/chenxiachan--thoughtdag--dsh/INSIGHT.md#research-q04) 用隔离会话并核对引用；不明写回先回原文。 |
+| [dsh-timeline](#plugin-1336817611-root) | 在DSH会话中提供时间轴定位、收藏文件夹、提示词/闪记与多格式内容导出。 | 当前观察；无秘密非唯一副本会话试定位/收藏，刷新核持久，导出对轮数和附件再离线打开。 |
 | [dsh-trend-radar](#plugin-1336582509-root) | 按需采集 GitHub dsh-plugin topic/awesome 快照并生成趋势报告、关键词雷达和实验性 Web 面板。 | 先隔离建立空目录并复核首轮成功，再核查报告采样分母与类别映射；勿把 top100 榜当全生态。 |
 | [dsh-ultramath](#plugin-1337487779-root) | 同步数模竞赛主控/角色预设、模型库与论文模板。 | 只在备份同名 DSH 目录的隔离 profile 试点；按题目核数据、模型、数值和论文，不以提示门禁代替独立验收。 |
 | [dsh-visualize](#plugin-1333132287-root) | 在 DSH 对话中生成、更新交互式 HTML 卡片与独立页面，支持图片嵌入和本机交互状态保存。 | 先在个人、非敏感会话中用一张已知答案的卡片检查参数变化、刷新和局部修订。 |
@@ -131,6 +134,7 @@
 | [meow-memory](#plugin-1333986968-root) | 为 DSH 提供跨会话项目记忆、召回和自动整理。 | 隔离项目核验首轮、压缩和外部库；错误时停用并回人工笔记。 |
 | [Mimir](#plugin-1340749561-root) | 在DSH中组织文献、论文编译、实验和研究记录，提供工具与工作台，编译或任务状态不替代研究结果核验。 | [Q04](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q04) 现有DSH用户从本地论文副本编译诊断试用，核实际PDF与源修改；远端unknown不自动重提。 |
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
+| [MinerU文档解析桥](#plugin-1328601495-root) | 把本地文档上传到外部MinerU服务，通过DSH模型工具查询异步任务并返回Markdown/结果路径。 | [Q03](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q03)观察；可信服务和可丢弃小样前提下人工核验，不敏感批量无人值守。 |
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 先在非敏感副本库试用 Memory CLI，明确指定库并保留笔记备份。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | [Q05](../../plugins/liustack--modsearch/INSIGHT.md#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。 |
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
@@ -350,6 +354,22 @@
 > **建议**：可以推导未验证的任务索引，在候选旁保存其解决的具体失败、固定版本证据、简单替代和一项最小验证结果，并把“链接存在”与“作者声明/源码/真实运行”分开。相对Star和网页数，增量是帮助读者决定哪一项值得进入复核，而不是暗示高热度就可靠。
 
 [查看完整分析](../../plugins/zhiyuan-fan--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333183810-root"></a>
+
+## [Awesome DeepSeek Harness Plugins](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md)
+
+[![GitHub ★ 52](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=52&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/walkinglabs/awesome-deepseek-harness-plugins)
+
+> **用途**：新开发者理解DSH插件机制，既有用户按一个任务找候选；结果是学习路径/直接仓库链接，见 [Q01](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q01)。
+
+> **亮点**：把官方教学/任务分类与非插件身份区分整合为发现资源，并明确topic/名字不足以收录；这是文档贡献，不是独立验收市场，见 [Q01](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q01)、[Q02](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q02)。
+
+> **思考**：静态筛选政策缺逐项固定审查原件，动态链接/兼容会漂移；verified字样不能代运行/安全保证，教程执行另带依赖与权限，见 [Q02](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q02)、[Q03](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向为按条目公开身份/固定版本/静态/Host任务证据层，用四样本盲读测误判与维护成本，已有简介足够则放弃，见 [Q04](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/walkinglabs--awesome-deepseek-harness-plugins/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333844474-root"></a>
 
@@ -702,6 +722,22 @@
 > **建议**：[Q04](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md#research-q04) 提议把已有Catalog版本、SQL与截断状态绑定到可回读交付收据；先核等价字段，再比较过时/错误口径发现与全部开销，无增益即否定。
 
 [查看完整分析](../../plugins/omdsh-dev--dsh-data-agent/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1339628067-root"></a>
+
+## [DSH Data Quality](../../plugins/perrylink--dsh-data-quality/INSIGHT.md)
+
+[![GitHub ★ 53](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=53&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-data-quality) [![npm 30d 3,462](https://img.shields.io/static/v1?label=npm+30d&message=3%2C462&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-data-quality) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-data-quality)
+
+> **用途**：在可信本地项目重复检查CSV/JSON的数据维护者，可用明确规则和统计报告辅助复核，见 [Q01](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q01)。
+
+> **亮点**：把列分析、声明式清理/校验和citation四状态接成Host服务与报告回读，避免模型心算；采样/分数有明确有限语义，见 [Q01](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q01)、[Q02](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q02)、[Q04](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q04)。
+
+> **思考**：词法路径不是文件系统隔离，输出先写后contract/报告且可覆盖目标；报告键缺workspace/操作唯一性，accuracy/verified不能被当现实真相，见 [Q02](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q02)至 [Q05](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q05)。
+
+> **建议**：未验证方向为contract前置与绑定输入hash/真实路径/operationId的提交收据，以三故障样本核误覆盖/重试，等价宿主机制或需求不足则放弃，见 [Q06](../../plugins/perrylink--dsh-data-quality/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/perrylink--dsh-data-quality/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1380181057-root"></a>
 
@@ -1535,6 +1571,22 @@
 
 [查看完整分析](../../plugins/chenxiachan--thoughtdag--dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1336817611-root"></a>
+
+## [dsh-timeline](../../plugins/houyanchao--dsh-timeline/INSIGHT.md)
+
+[![GitHub ★ 54](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=54&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/houyanchao/dsh-timeline) [![npm 30d 1,481](https://img.shields.io/static/v1?label=npm+30d&message=1%2C481&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-timeline) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-timeline)
+
+> **用途**：dsh-timeline0.1.3是原生浏览器UI插件，Host apply为空，不注册模型工具或服务器资料库。适合经常回查长对话、把提问/结论收成可复用资料的人；时间轴、提问列表、收藏两级文件夹、闪记、提示词和导出集中在宿主入口。成功应是更少滚动找到正确原消息、收藏可重开且导出信息足够迁移，不是看到更多按钮。
+
+> **亮点**：[Q01](../../plugins/houyanchao--dsh-timeline/INSIGHT.md#research-q01)、[Q02](../../plugins/houyanchao--dsh-timeline/INSIGHT.md#research-q02)把定位、收藏和资料带走集中到原生槽位与输入草稿，减少手工拼入口。
+
+> **思考**：[Q02](../../plugins/houyanchao--dsh-timeline/INSIGHT.md#research-q02)、[Q03](../../plugins/houyanchao--dsh-timeline/INSIGHT.md#research-q03)DOM不在可静默跳失败、历史stall仍部分导出、MD图片blob非自包含，localStorage写失败被吞且覆盖导入无事务；不适合作唯一知识档案。
+
+> **建议**：[Q04](../../plugins/houyanchao--dsh-timeline/INSIGHT.md#research-q04)提出未验证的定位/导出部分/持久失败状态链，用已知fixture与故障对照测误信和恢复，不以更多格式代完整性。
+
+[查看完整分析](../../plugins/houyanchao--dsh-timeline/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1336582509-root"></a>
 
 ## [dsh-trend-radar](../../plugins/863683348--dsh-trend-radar/INSIGHT.md)
@@ -2062,6 +2114,22 @@
 > **建议**：按project/session/turn保存写回待办与最终状态，恢复先对账请求ID再重试，比较丢失与重复记忆；先核对服务已有能力，尚未验证。[Q04](../../plugins/mindscale-noah--mindmemos/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/mindscale-noah--mindmemos/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1328601495-root"></a>
+
+## [MinerU文档解析桥](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md)
+
+[![GitHub ★ 52](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=52&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/HuanLinOTO/dsh-plugin-mineru) [![npm 30d 1,575](https://img.shields.io/static/v1?label=npm+30d&message=1%2C575&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huanlin/dsh-plugin-mineru) [![最新发布 2026-10-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huanlin/dsh-plugin-mineru)
+
+> **用途**：这是原生DSH双端插件@huanlin/dsh-plugin-mineru 0.4.2，不是OCR引擎或通用Skill。它面向已有MinerU服务、要让模型读取本地PDF/办公文档的人，提供健康、异步提交、状态、结果及一键解析五工具；成功是目标页内容和表格公式可用、可追溯且未漏页，不是completed状态。
+
+> **亮点**：[Q01](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q01)、[Q02](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q02)五模型工具、配置凭据与异步轮询/文本截断/JSON路径适配，非新OCR。
+
+> **思考**：[Q03](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q03)上传范围与数据服务身份、取消不撤远端、整读和临时留存无预算；[Q02](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q02)completed和首stem不证明完整可用。
+
+> **建议**：[Q04](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q04)当前可借鉴的是异步任务和输出截断的薄适配，但completed只表示引擎状态，首stem Markdown也不等完整交付。独立假设：增加任务/源文件摘要、请求页范围、全部stem、解析覆盖及输出资产位置的回执，由人确认漏页/表格公式，再交模型引用，可能减少错误引用和中断后重复上传。这是本研究提出的未验证方向，不计当前创新分。
+
+[查看完整分析](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1162230313-root"></a>
 

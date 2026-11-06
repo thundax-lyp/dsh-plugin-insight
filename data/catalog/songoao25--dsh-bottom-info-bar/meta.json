@@ -1,0 +1,45 @@
+{
+    "repository": "songoao25/dsh-bottom-info-bar",
+    "repository_id": 1334682582,
+    "captured_at": "2026-11-06T05:16:47.587Z",
+    "window_start": "2026-10-07T05:16:47.587Z",
+    "stars": 54,
+    "pushed_at": "2026-11-05T07:10:34Z",
+    "issues": {
+        "open": 1,
+        "closed": 14,
+        "created_30d": 3,
+        "closed_30d": 3,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "78a44191701ce88dda5bb34b45be84cd4c60ebf9",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-bottom-info-bar",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 20926,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-bottom-info-bar",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T10:15:15.843Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/dsh-bottom-info-bar",
+            "error": null,
+            "latest_version": "1.21.12",
+            "latest_published_at": "2026-11-05T07:12:04.993Z",
+            "latest_error": null
+        }
+    }
+}
