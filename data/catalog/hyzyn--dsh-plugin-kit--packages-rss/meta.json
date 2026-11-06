@@ -1,0 +1,45 @@
+{
+    "repository": "hyzyn/dsh-plugin-kit",
+    "repository_id": 1335046216,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 62,
+    "pushed_at": "2026-11-05T05:32:59Z",
+    "issues": {
+        "open": 0,
+        "closed": 14,
+        "created_30d": 9,
+        "closed_30d": 9,
+        "updated_30d": 9
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:16.149Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@hyzyn/dsh-rss",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 3743,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40hyzyn%2Fdsh-rss",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T10:31:15.085Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
+            "source_url": "https://registry.npmjs.org/%40hyzyn%2Fdsh-rss",
+            "error": null,
+            "latest_version": "0.4.16",
+            "latest_published_at": "2026-11-05T05:20:25.187Z",
+            "latest_error": null
+        }
+    }
+}

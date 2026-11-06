@@ -1,0 +1,45 @@
+{
+    "repository": "HiAi-gg/docsmint",
+    "repository_id": 1249550690,
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 81,
+    "pushed_at": "2026-11-05T16:59:22Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-05T20:18:06.627Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@hiai-gg/dsh-docsmint",
+        "captured_at": "2026-11-06T02:09:31.809Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 559,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40hiai-gg%2Fdsh-docsmint",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-04T18:44:55.940Z",
+            "captured_at": "2026-11-06T02:09:31.809Z",
+            "source_url": "https://registry.npmjs.org/%40hiai-gg%2Fdsh-docsmint",
+            "error": null,
+            "latest_version": "1.0.0",
+            "latest_published_at": "2026-11-04T22:40:47.193Z",
+            "latest_error": null
+        }
+    }
+}

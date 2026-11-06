@@ -1,32 +1,27 @@
 {
     "repository": "vivekchand/clawmetry",
     "repository_id": 1156882085,
-    "captured_at": "2026-10-28T01:52:52.223Z",
-    "window_start": "2026-09-28T01:52:52.223Z",
-    "stars": 435,
-    "pushed_at": "2026-10-26T16:04:00Z",
+    "captured_at": "2026-11-06T02:09:31.809Z",
+    "window_start": "2026-10-07T02:09:31.809Z",
+    "stars": 436,
+    "pushed_at": "2026-11-05T22:36:34Z",
     "issues": {
-        "open": null,
-        "closed": 1291,
-        "created_30d": 22,
-        "closed_30d": 10,
-        "updated_30d": 44
+        "open": 74,
+        "closed": 1292,
+        "created_30d": 20,
+        "closed_30d": 4,
+        "updated_30d": 35
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Avivekchand%2Fclawmetry%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID BE6A:112EA1:6DB58F:75FA3F:6AE15692 and timestamp 2026-10-28 01:57:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-28T00:45:33.613Z",
+        "captured_at": "2026-11-05T20:18:16.149Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "7b4e30238aa401dab10b8f6161dc963e5ee120b3",
-        "blob_sha": "e9511658ad6151b62802a66b03e0b0b7c26ea7cf",
-        "errors_blob_sha": "a90b0562f1c15b15be97b69a0be0ed5d39bfa4b2",
+        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
+        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
+        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
         "latest_error": null
     }
 }
