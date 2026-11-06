@@ -107,7 +107,7 @@
 | [dsh-openviking-enhance](#plugin-1401255267-root) | 在 DSH Web 界面展示 OpenViking Studio、会话记忆提交状态和当前召回结果。 | [Q05](../../plugins/a2chitect--dsh-openviking-enhance/INSIGHT.md#research-q05) 建议可信个人单机以非敏感会话对照一条归档和当前搜索；身份、端点或权限不符时停止并回服务端核查。 |
 | [dsh-passwords](#plugin-1333875303-root) | 为共享DSH提供账号网关、逐资源权限、粗用量配额和管理界面，需独立部署与宿主桥接。 | [Q07](../../plugins/slywalker2006--dsh-passwords/INSIGHT.md#research-q07) 仅观察可丢弃部署；先负向矩阵与密钥恢复，失败关闭外部入口，不依赖健康检查升级生产。 |
 | [dsh-permission-rules](#plugin-1333515275-root) | 把可配置的工具权限规则、审批分流和代理网络判断接入 DSH。 | [Q03](../../plugins/perrylink--dsh-permission-rules/INSIGHT.md#research-q03) 在测试 profile 先预演并记录差异。 |
-| [dsh-permissions](#plugin-1335349535-root) | 在工具执行前应用 hard、deny、ask、allow 四级规则，并提供 workspace/global 草稿式权限编辑器。 | 有明确威胁模型、能维护规则和保留宿主沙箱的团队可在非生产 profile 试用；先用只读/模拟工具跑对抗集，再启用 hard 保护真实路径。 |
+| [dsh-permissions](#plugin-1335349535-root) | 为DSH工具调用提供分级参数规则、全局/工作区作用域、审批和可视化草稿编辑器。 | 先观察，在无秘密非生产profile盘工具schema和规则对抗，保留原生沙箱。 |
 | [dsh-plugin-gating-hub](#plugin-1333974533-root) | 在 DSH 内检查框架变更和插件兼容，提供升级备份、回滚与证据禁用。 | [Q03](../../plugins/noob-stupid--dsh-plugin-gating-hub/INSIGHT.md#research-q03) 先在可弃用副本演练并保存独立恢复点。 |
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
@@ -199,12 +199,14 @@
 | [Sealos Skills](#plugin-1150374613-root) | 向 DSH 注册 Sealos 部署与运维技能，提供模板部署、数据库、存储及故障诊断指引。 | [Q04](../../plugins/labring--sealos-skills/INSIGHT.md#research-q04) 限定本地、无生产数据的小应用；同时验收页面和工作负载，托管资源缺失立即停止。 |
 | [SeekTTY](#plugin-1334096871-root) | 复用DeepSeek Harness原生服务的终端工作区，提供会话、设置及审批交互。 | [Q03](../../plugins/hilbert-beinghappy--seektty/INSIGHT.md#research-q03)复制profile固定Host/spec并禁自动更新，先核审批/恢复/退出，失败退原入口。 |
 | [SkillCorpus](#plugin-1330431542-root) | 聚合、筛选和评估技能语料，并按任务从本地与远端来源检索技能，供不同 Agent 宿主使用。 | [Q03](../../plugins/evermind-ai--skillcorpus/INSIGHT.md#research-q03) 先限定本地审核目录，关闭远端与共享，用少量可独立验收任务比较固定目录。 |
+| [sofagent（根治理基础设施）](#plugin-1273149259-root) | 以本地约束文件、审计规则、可续跑任务流程和多宿主接入组成 FDE 治理层。 | 先非敏感副本audit-only，与原CI核已知样本和退出码；loop/daemon/自动确认逐项另验，回执不完整则回原流程。 |
 | [Tingly Box](#plugin-1100971867-root) | 统一模型网关，为客户端与团队提供协议入口、路由和管理能力。 | [Q05](../../plugins/tingly-dev--tingly-box/INSIGHT.md#research-q05) 在隔离本机先测单客户端与失败路径；不满足身份、预算或恢复条件时退回原端点。 |
 | [Token Bank](#plugin-1233571420-root) | 独立运行的 AI 网关客户端，集中配置模型来源、路由与用量，并提供 DSH 配置接入。 | 只用模拟上游和临时配置检验接管、失败与退出，不能确认恢复就保留直连。 |
 | [TokenLedger](#plugin-1333969047-root) | 从 DSH 会话日志聚合 Token 用量，按路由、模型和项目展示，并提供费用估算与可选账户余额查询。 | [Q03](../../plugins/zh667--tokenledger/INSIGHT.md#research-q03) 先用副本日志核usage与归因，读failed/未知/未定价。 |
 | [Treg](#plugin-1301657572-root) | 为 Agent 提供工具目录、凭据注入代理和调用计费。 | 选择受控只读任务、核对账单及费用上限，异常时撤销 token 并回退直连。 |
 | [Usage Billing](#plugin-1363429979-plugin-usage-billing) | 从 DSH 会话日志聚合 token 用量，以价格与汇率快照估算费用并显示历史回填、预算和未计价状态。 | 先观察并用合成夹具核规则和锁价，不用于结算/硬预算；对账不一致保留旧账本回provider原始记录，见 [Q03](../../plugins/0x7a7a6572--dsh-forge-studio--plugin-usage-billing/INSIGHT.md#research-q03)。 |
 | [UUMit remote access for DSH](#plugin-1425349796-root) | 在 DSH 进程内连接 UUMit 通道，为网页实例提供配对、远程访问与邀请管理。 | 仅在独立web实例先试私有访问，核对配对、实例、管理隔离及撤销；不满足即停插件并回本机。 |
+| [vlln's DSH plugins](#plugin-1323129961-root) | 供 DSH 发现页消费的插件市场索引，自动探测 npm 版本或 Git 提交并生成版本条目。 | 常查这个集合的用户可先只添加索引并核版本，不自动装目标。 |
 | [WorkBuddy to DSH](#plugin-1404193210-dsh-plugin) | 把 WorkBuddy 账号模型接入 DSH，管理本地桥、模型目录、账号用量和媒体工具。 | 先保持观察；若继续验证，使用独立profile、单一已知账号和低额度文本请求核钱包与账本，媒体和跨账号接管另验。 |
 | [WorkDSH 企业连接](#plugin-1363739656-packages-enterprise-connection) | 从个人空间安装管理员归档后连接 WorkDSH 企业账号与协作。 | [Q03](../../plugins/techflag--workdsh--packages-enterprise-connection/INSIGHT.md#research-q03) 有匹配 Desktop 与测试后台才验证归档、身份和退出；任一边界未确认即暂停分发并退回个人空间。 |
 | [Yao Agents](#plugin-403559729-root) | 自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。 | 当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。 |
@@ -1734,15 +1736,15 @@
 
 ## [dsh-permissions](../../plugins/940842546--dsh-permissions/INSIGHT.md)
 
-[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/940842546/dsh-permissions) [![npm 30d 588](https://img.shields.io/static/v1?label=npm+30d&message=588&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-permissions) [![最新发布 2026-09-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-permissions)
+[![GitHub ★ 4](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/940842546/dsh-permissions) [![npm 30d 429](https://img.shields.io/static/v1?label=npm+30d&message=429&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-permissions) [![最新发布 2026-09-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-permissions)
 
-> **用途**：团队希望在 DSH 沙箱之外增加按工具参数和路径的可审计细粒度门禁，例如永久保护 .ssh/.env；基线是宿主全局审批姿态或每次人工确认。合格结果是 hard 永不可绕过、deny/ask/allow 优先级确定、workspace 隔离正确，规则编辑未保存前不改变执行。 详见[Q01](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q01)。
+> **用途**：dsh-permissions是双面原生插件，Host在工具执行前匹配规则，Web设置页提供草稿编辑器。适用者是已有明确工具/路径保护需求、能维护规则的DSH操作者，例如禁止write/edit命中密钥文件，而不是仅把全局审批档位开关换个皮肤。基线是宿主原生沙箱/guard与逐次人工审批；合格结果应是具体被保护资源在全部相关工具路径下不可写、普通任务不被误拦，保存规则后重启仍一致，而非规则面板里出现hard字样。
 
-> **亮点**：相对宿主粗粒度审批，它加入不可豁免 hard 层、workspace/global 作用域和参数模式，并让草稿保存成为明确生效点。价值在额外收窄而非提升权限；它不替代 DSH sandbox/tools.guard，也不证明路径字符串与真实文件解析完全等价。 详见[Q03](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q03)。
+> **亮点**：[Q01](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q01)、[Q02](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q02)支持分级规则、按workspace合并、规则级会话grant与草稿界面，较粗粒度审批有可解释增量；并不新增宿主权限，也不证明所有秘密资源已保护。
 
-> **思考**：核心质疑是字符串匹配能否覆盖别名、转义、相对路径、shell 拼接和工具 schema 变化。规则漏匹配会给出虚假安全感，过宽 hard/deny 会阻断正常任务；自建同源设置路由若缺鉴权或写入竞争，会改变全局策略。默认规则也可能不适合非 Windows 路径。 详见[Q04](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q04)。
+> **思考**：[Q03](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q03)、[Q04](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q04)表明保存先改内存且吞磁盘错误仍可能显示成功，路由认证缺失/异常继续，执行异常交后续链。hard优先只对正常匹配成立；字符串与实际资源不同，不能当唯一安全边界。
 
-> **建议**：未验证假设是把匹配输入改为工具 schema 驱动的规范化资源对象，并在执行前显示最终 canonical path，可显著减少路径绕过与误拦。最小对抗集包含 100 个绝对/相对/符号链接/引号/大小写/PowerShell 嵌套用例，比较现规则和规范化规则的漏拦、误拦与审批次数；任何已知秘密路径漏拦即否定。 详见[Q08](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q08)。
+> **建议**：[Q05](../../plugins/940842546--dsh-permissions/INSIGHT.md#research-q05)提出未验证的共用规范化资源身份与策略提交revision，明确写失败保旧并用对抗/故障集检验漏拦、误拦和重启一致；TOCTOU/兼容成本未解则收窄，不计当前贡献。
 
 [查看完整分析](../../plugins/940842546--dsh-permissions/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3202,6 +3204,22 @@
 
 [查看完整分析](../../plugins/evermind-ai--skillcorpus/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1273149259-root"></a>
+
+## [sofagent（根治理基础设施）](../../plugins/kongfangxun--sofagent/INSIGHT.md)
+
+[![GitHub ★ 55](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=55&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/KongFangXun/sofagent)
+
+> **用途**：已有编码Agent的集成者，希望为项目保留本地规则与治理记录。见 [Q01](../../plugins/kongfangxun--sofagent/INSIGHT.md#research-q01)。
+
+> **亮点**：统一治理资产与审计/反馈/恢复接线；模型、LangGraph、Git和CI能力继承已有技术。见 [Q01](../../plugins/kongfangxun--sofagent/INSIGHT.md#research-q01)、[Q03](../../plugins/kongfangxun--sofagent/INSIGHT.md#research-q03)。
+
+> **思考**：低可信FAIL可继续、自动确认只读reviewer文本，checkpoint重跑非副作用恰一次；签名链不抵御同身份改写，DSH工厂Promise调用另有降级缺口。见 [Q02](../../plugins/kongfangxun--sofagent/INSIGHT.md#research-q02)。
+
+> **建议**：以统一能力/信任/副作用回执减少completed误判，不重造引擎；六类故障与原CI对照，无收益即退回简单组合。见 [Q04](../../plugins/kongfangxun--sofagent/INSIGHT.md#research-q04)。
+
+[查看完整分析](../../plugins/kongfangxun--sofagent/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1100971867-root"></a>
 
 ## [Tingly Box](../../plugins/tingly-dev--tingly-box/INSIGHT.md)
@@ -3297,6 +3315,22 @@
 > **建议**：可探索明确授权快照时效与活动连接清退状态，区分新请求拒绝和已有连接终止，以撤销及平台故障对照验证；未实现。[Q05](../../plugins/uumit-ai--dsh-uumit-remote/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/uumit-ai--dsh-uumit-remote/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1323129961-root"></a>
+
+## [vlln's DSH plugins](../../plugins/vlln--plugin-registry/INSIGHT.md)
+
+[![GitHub ★ 60](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=60&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/vlln/plugin-registry)
+
+> **用途**：面向常找该维护者插件的 DSH 用户，集中展示目标与安装版本，便于回原仓库核对；已经知道 spec 时可直接使用原入口，见 [Q01](../../plugins/vlln--plugin-registry/INSIGHT.md#research-q01)。
+
+> **亮点**：贡献是把小范围插件展示事实与真实版本探测分开，给现有宿主发现页提供集中版本入口；已绑定Git提交不等于被收录插件运行通过，见 [Q01](../../plugins/vlln--plugin-registry/INSIGHT.md#research-q01)与 [Q02](../../plugins/vlln--plugin-registry/INSIGHT.md#research-q02)。
+
+> **思考**：npm顺序按字符串而非语义版本，兼容仅取engines.dsh，单源失败会阻止整批刷新；用户需核实际版本与快照，不能把索引当验收，见 [Q03](../../plugins/vlln--plugin-registry/INSIGHT.md#research-q03)。
+
+> **建议**：未验证方向是核清宿主已有排序后，再用语义版本/稳定标签与逐源探测状态减少选版误判；须比较收益和格式维护负担，见 [Q05](../../plugins/vlln--plugin-registry/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/vlln--plugin-registry/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1404193210-dsh-plugin"></a>
 
