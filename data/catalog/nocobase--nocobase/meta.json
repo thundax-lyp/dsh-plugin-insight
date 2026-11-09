@@ -1,27 +1,27 @@
 {
     "repository": "nocobase/nocobase",
     "repository_id": 306829688,
-    "captured_at": "2026-11-01T07:48:06.617Z",
-    "window_start": "2026-10-02T07:48:06.617Z",
-    "stars": 24798,
-    "pushed_at": "2026-10-31T14:30:32Z",
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 24868,
+    "pushed_at": "2026-11-09T02:15:03Z",
     "issues": {
-        "open": 121,
-        "closed": 1462,
-        "created_30d": 23,
-        "closed_30d": 17,
-        "updated_30d": 41
+        "open": 115,
+        "closed": 1469,
+        "created_30d": 20,
+        "closed_30d": 22,
+        "updated_30d": 40
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-31T09:58:25.350Z",
+        "captured_at": "2026-11-08T06:43:41.836Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "4c70c07056aff61df69006a55c004a0cd50ce9ec",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
         "latest_error": null
     }
 }

@@ -15,18 +15,20 @@
 | [@a9i5k4/dsh-ark9canvas](#plugin-1352959121-root) | 提供Harness生图与改图工作台、Agent生图工具、人工审批、多渠道和生成记录。 | 建议观察，先在低余额独立渠道评估审批对象、长提示词、渠道切换和超时查询。 |
 | [Adult Tension](#plugin-1339714338-root) | 面向成年人的中文互动叙事 Skill，用本地 Python 运行时管理剧情状态、时间、边界与存档。 | 只用中性合成内容和隔离项目验证存档恢复。 |
 | [AI Novel Writer for DeepSeek Harness](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在DSH Web管理本地小说项目，通过V1单资产审批或V2人审提案协作写作。 | 新用户观察冻结版本，先核兼容/备份恢复；已有用户在独立副本核read-propose-human apply-read，逐item核状态，不以Git替代DB备份。 |
-| [Answer me with HTML](#plugin-1401476500-root) | 将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。 | [Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。 |
+| [Answer me with HTML](#plugin-1401476500-root) | 将 Agent 的短 Markdown 草稿与图关系渲染为单页 HTML，DSH bundle 安装文件系统 Skill。 | [Q04](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q04) 先用非敏感项目对比原流程，按合格交付计事实差错、用时、输入及输出 token。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
 | [DeepBlend Studio Bundle](#plugin-1368481604-packages-deepblend-bundle) | 组合 DSH 中的 Blender runtime、业务 host 与工作台。 | [Q03](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q03) 固定 DSH、Node、Blender 和视频工具版本，使用独立工作目录与最小场景。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
 | [DirectorX视频生产插件](#plugin-1335058602-root) | 将DSH Agent接到分镜/生成提案、外部媒体模型、可重渲染时间线及技术质检与画布交付。 | [Q06](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q06)观察；可丢弃项目先mock+小额代表provider，人工查账/创作验收，企业无人值守需先补授权恢复实证。 |
+| [DrawAI](#plugin-1371788896-root) | 在 DSH 右侧栏编辑工作区画布，并用语义工具读写原生 .drawai 或兼容 .drawio 的插件。 | [Q01](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q01) 有独立原稿的维护者可在副本上先改一条流程标签，再从右侧栏核对节点和页面。 |
 | [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
 | [DSH ComfyUI](#plugin-1340918386-root) | 从 DSH 调用本地或远程 ComfyUI，管理工作流参数和生成媒体。 | [Q04](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q04) 先同步试一次并检查真实队列。 |
 | [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
 | [DSH OpenMAIC](#plugin-1333147218-root) | 将完整课堂生成与会话内教学卡片接入 DSH | [Q04](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q04) 先试无敏卡片，再用模拟服务验证课堂提交。 |
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
+| [DSH Qwen Studio](#plugin-1422133477-root) | 把本地 MLX 或自托管图像服务接入 DSH 对话，记录生成任务并按 ID 取回状态与附件。 | [Q01](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q01) 已有推理设备并能隔离图库的创作者，可先提交一张无敏感输入的配图再按 ID 取回。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
 | [DSH to Figma](#plugin-1424114133-root) | 将本地Figma companion或官方MCP接入DSH，读取设计上下文并编辑原生画布与资源。 | 可丢弃Figma文件受限试用，先明确后端/file/page与能力，再做少量原生节点并核结构变量/截图。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
@@ -34,7 +36,7 @@
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
-| [dsh-image-gen](#plugin-1336998801-root) | 在 DSH 对话及工作台中连接图像生成渠道与附件。 | [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。 |
+| [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | [Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中接入图像和异步视频生成渠道，统一管理任务、历史与画布，并支持本地拼接和代码渲染。 | 先观察并核清代码执行隔离和远端账单；不要把本地取消当止费，也不要把VM注释当安全验收。 |
 | [dsh-infinite-canvas](#plugin-1412882758-root) | 在 DSH 中以节点画布组织剧本、分镜、媒体生成和成片预览，并连接后期工具。 | 先保留原素材，单项目逐节点验证真实生成、任务恢复、媒体迁移和一个后期工程；记录费用与返工再决定是否扩大，当前观察。 |
@@ -44,7 +46,7 @@
 | [dsh-mimotts](#plugin-1397477851-root) | 为 DSH 助手回复合成语音，提供内联播放器、语音历史和工作区 WAV 工具。 | [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 先用可披露文本，核对音频、索引和失败再扩大使用。 |
 | [dsh-oil-creator](#plugin-1339110580-root) | 为 DSH Desktop 提供本地内容工作台，组织选题脚本、录屏工程、字幕封面、视觉审查与发布状态。 | [Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03)复制小库仅核心片库/脚本/自有会话trial，先预览不批量整理。 |
 | [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
-| [dsh-pet 素材制作工程](#plugin-1333652151-root) | 提供桌宠提示词、透明视频处理、动作对齐和播放素材制作流程。 | 有授权样片时先核对工具路径，逐动作检查透明和播放；失败停止发布。 |
+| [dsh-pet 素材制作工程](#plugin-1333652151-root) | 将自动绿幕或手工抠像片段对齐并编码为桌宠动画，另提供 Safari 兼容素材派生。 | [Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04) 用隔离样片做第一段，保存旧产物并记录工具和人工成本。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 连接 Postiz MCP，辅助 DSH 创建、排期和发布社媒内容。 | [Q04](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q04) 优先隔离账号和草稿，提交前核对目标、内容、时间及授权。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
@@ -69,7 +71,7 @@
 | [No AI Style](#plugin-1418493685-root) | 为学术和专业写作提供检查、润色和起草 Skill，以及 DSH 输入栏模式按钮。 | [Q04](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q04) 先做只审阅并复核原文。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
-| [OpenPencil](#plugin-1159938129-root) | 支持 AI Agent 和 MCP 的开源矢量设计工具。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 建议在隔离副本上试一项可验收设计，核对保存与导出；无法确认状态或权限时停止写入并回退备份。 |
+| [OpenPencil](#plugin-1159938129-root) | 独立桌面与 Web 设计应用，支持通过 MCP 读写可编辑 .op 文档和导出代码。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 单写者在可销毁文件副本上试一个节点。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
@@ -134,15 +136,15 @@
 
 ## [Answer me with HTML](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md)
 
-[![GitHub ★ 4,962](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C962&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
+[![GitHub ★ 6,062](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C062&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
 
-> **用途**：面向需要解释流程、架构或多维比较并交付单页的读者及 Agent。
+> **用途**：[Q01](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q01) 架构与因果解释可按面板阅读，原办法是 Markdown 或直接生成 HTML。
 
-> **亮点**：[Q02](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q02) 将语义草稿与页面布局分离，提供图形和写作检查；不是发明 HTML、Markdown 或可视化。作者小样本效果不代表所有任务。
+> **亮点**：[Q01](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q01) 与 [Q02](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q02) 把坐标与页面框架交给可复用 CLI，量化收益仍只有作者样本。
 
-> **思考**：[Q03](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q03) 中写作检查、原始 HTML 清理与 CSP 不能验证图关系或事实；页面可读性、跨浏览器防护和完整离线性尚未证实。
+> **思考**：[Q03](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q03) 解析与 CSP 各约束局部行为，事实正确性、文件嵌入和交付后的暴露仍需分别验收。
 
-> **建议**：[Q06](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q06) 提出图关系附来源或人工推断标记的未验证方案，须与现有代码行引用和语法检查对照并衡量错误发现率及成本。
+> **建议**：[Q05](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q05) 在重要边旁显示证据位置和人工核对状态，可能降低方向误写及审阅定位时间。以当前分离的图和代码块作对照。
 
 [查看完整分析](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md) · [返回表格](#category-index)
 
@@ -242,6 +244,22 @@
 
 [查看完整分析](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1371788896-root"></a>
+
+## [DrawAI](../../plugins/fourzkw--dsh-drawai/INSIGHT.md)
+
+[![GitHub ★ 280](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=280&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fourzkw/dsh-drawai) [![npm 30d 6,816](https://img.shields.io/static/v1?label=npm+30d&message=6%2C816&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-drawai) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-drawai)
+
+> **用途**：软件维护者在 DSH 讨论发布或故障流程，需要把讨论整理成可复核并能继续人工调整的工作区流程图。
+
+> **亮点**：[Q01](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q01) 与 [Q02](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q02) 显示，工作区文件可在 DSH 右侧栏手动调整，模型也能按节点与边的结构读取和更新同一份文档。
+
+> **思考**：[Q03](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q03) 普通版本检查与撤销保护并不对称。撤销遇到版本变化仍可把旧文本整份写回，只在后台任务节点变化时停下。
+
+> **建议**：[Q05](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q05) 对小图做迁移、带指纹写入及外部编辑后的撤销对照，可以区分语义可编辑与往返保真。
+
+[查看完整分析](../../plugins/fourzkw--dsh-drawai/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1368569221-root"></a>
 
 ## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
@@ -321,6 +339,22 @@
 > **建议**：[Q04](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q04) 可把brief中的可观察验收项绑定最终图像/节点，经独立审阅与当前digest自审做同预算对照，计误发布和人工修改；这项收益未验证。
 
 [查看完整分析](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1422133477-root"></a>
+
+## [DSH Qwen Studio](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md)
+
+[![GitHub ★ 57](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=57&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kingcharleslzy-ai/dsh-qwen-studio)
+
+> **用途**：已部署可用本地或自托管生图服务的 DSH 创作者，希望在对话中发起一张测试图，等候或切页后按任务取回结果。
+
+> **亮点**：[Q01](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q01) 和 [Q02](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q02) 显示，会话生成、任务记录和成图附件可用同一 ID 回查，减少在工具之间搬运文件。
+
+> **思考**：[Q03](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q03) 对话取消、提交回执丢失、本地终态和远端终态不同。能查本地 ID 的机制不足以证实上游没有继续执行。
+
+> **建议**：[Q05](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q05) 通过提交、轮询和取消三个故障点比较同 ID 两端状态，可验证何时安全恢复和避免重复出图。
+
+[查看完整分析](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1341430062-root"></a>
 
@@ -438,15 +472,15 @@
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
 
-[![GitHub ★ 1,036](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C036&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 44,547](https://img.shields.io/static/v1?label=npm+30d&message=44%2C547&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
+[![GitHub ★ 1,178](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C178&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 69,270](https://img.shields.io/static/v1?label=npm+30d&message=69%2C270&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
 
-> **用途**：[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) DSH 内容创作者希望生成合要求的配图并核对附件和文件保存。
+> **用途**：在 DSH 写文章或准备项目材料的创作者，需要为一组已确定的主题逐张生成、验收和保存配图。
 
-> **亮点**：[Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) 把对话生成与附件及可选工作区保存相连，减少手动搬运，但不保证输出质量或文件保存。
+> **亮点**：[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 与 [Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) 确认有从多提示词到多附件的顺序工具入口，已配置渠道可把配图生成和会话呈现接在一起。
 
-> **思考**：[Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03) 生成附件、工作区保存与批量每项结果是不同状态，须分别核对。
+> **思考**：[Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03) 批量成功、附件存在和文件可读是不同条件。取消可能发生在外部生成或附件保存之后，重跑前需要核对已有成果和上游状态。
 
-> **建议**：[Q04](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q04) 生成前显示按渠道和张数估价或可降低预算意外，需对照账单验证。
+> **建议**：[Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 逐项记录供应商响应、附件和工作区状态可能减少整批重跑，需与故障注入对照。
 
 [查看完整分析](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md) · [返回表格](#category-index)
 
@@ -598,15 +632,15 @@
 
 ## [dsh-pet 素材制作工程](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md)
 
-[![GitHub ★ 5,154](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C154&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
+[![GitHub ★ 5,847](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C847&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet)
 
-> **用途**：为 DSH 桌宠制作新角色或动作的素材作者；替代为人工视频编辑与转码。[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01)
+> **用途**：[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01) 为 DSH 桌宠新角色或新增动作制作片段，需核对连续片段的透明、站姿和脚底。
 
-> **亮点**：把提示约束、两种抠像输入、站姿对齐和播放变体组织为可重做流程；HSV、VP9 等是通用技术。[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01) [Q02](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q01) 与 [Q02](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q02) 把两类输入、可复用站姿归一化与编码串起，减少重复手工步骤的实际人时待测。
 
-> **思考**：alpha 检查抽帧失败返回 True 并计为成功，不能把检查绿灯当作素材放行。[Q03](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q03)
+> **思考**：[Q03](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q03) 的抽帧失败会计入 OK，workflow 只取样且打印流信息。发布可用性和目标端透明播放需独立验收。
 
-> **建议**：未验证假设：失败即拒绝并结合多帧透明、脚底、循环与目标端播放复核，可能减少漏检；须测误报与人工成本。[Q05](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q05)
+> **建议**：[Q05](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q05) 假设对抽帧失败拒绝发布，并结合多帧、对齐和目标播放复核，可降低漏检。对照当前单帧规则，计入误拒和复核成本。
 
 [查看完整分析](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md) · [返回表格](#category-index)
 
@@ -998,15 +1032,15 @@
 
 ## [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md)
 
-[![GitHub ★ 6,991](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C991&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
+[![GitHub ★ 7,134](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C134&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil)
 
-> **用途**：面向需要生成后继续编辑和导出设计稿的设计者及开发者。
+> **用途**：需要将生成的界面稿继续交给设计者修改节点的团队，可在可销毁的 .op 副本里试用本机 MCP。交付要能重新打开、修改并核对所选节点。[Q01](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q01) 与 [Q02](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q02) 显示 Agent 工具可操作可序列化编辑状态，较平面图保留节点级编辑的潜力；任务效果仍需验收。
+> **亮点**：[Q01](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q01) [Q02](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q02) 的增量是将 MCP 调用接到编辑器节点命令和可重新打开的 .op 文档。导出代码走独立工具，DSH 配置项指向 HTTP MCP 客户端。
 
-> **思考**：[Q03](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q03) 的主路径先修改内存再保存，失败后该片段未显示回滚；[Q04](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q04) 的 DSH 配置位于 home 层，真实宿主配置生效范围尚待核实。
+> **思考**：[Q03](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q03) 保存报错前内存可能已修改，单个进程的文档修订记录也无法证明多个进程之间有协调。文件路径参数允许另开文档，启动时选定副本本身不能限制进程可访问的文件范围。
 
-> **建议**：[Q06](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q06) 假设持久文件摘要比对、跨进程互斥与暂存发布可降低误覆盖和失败分叉；已有 revision 和临时替换并非新增，方案未验证。
+> **建议**：[Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 先在副本应用命令，再用文件协调和预期摘要提交，可能减少失败后的内存与文件分歧和并行覆盖。以有意触发的写入失败和双客户端争用对照验证。
 
 [查看完整分析](../../plugins/zseven-w--openpencil/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1190,4 +1224,4 @@
 
 ## 更新时间
 
-2026-11-06
+2026-11-09

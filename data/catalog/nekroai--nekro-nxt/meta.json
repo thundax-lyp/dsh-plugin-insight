@@ -1,0 +1,36 @@
+{
+    "repository": "NekroAI/nekro-nxt",
+    "repository_id": 1335265978,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 45,
+    "pushed_at": "2026-11-08T14:29:57Z",
+    "issues": {
+        "open": 25,
+        "closed": 126,
+        "created_30d": 137,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANekroAI%2Fnekro-nxt%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B224:5B6EA:17E155E:1A5CBD1:6AF1305D and timestamp 2026-11-09 02:30:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ANekroAI%2Fnekro-nxt%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B242:11CF2B:1708903:1983E26:6AF1305E and timestamp 2026-11-09 02:30:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T06:43:41.836Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    }
+}

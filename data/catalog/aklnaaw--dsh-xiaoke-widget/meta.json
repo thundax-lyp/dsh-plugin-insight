@@ -1,0 +1,66 @@
+{
+    "repository": "aklnaaw/dsh-xiaoke-widget",
+    "repository_id": 1389051160,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 55,
+    "pushed_at": "2026-10-12T08:18:27Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aaklnaaw%2Fdsh-xiaoke-widget%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F742:40344:1792EC6:1A0DDF7:6AF12FE3 and timestamp 2026-11-09 02:28:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aaklnaaw%2Fdsh-xiaoke-widget%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F774:49AB6:16BC01B:193700A:6AF12FE5 and timestamp 2026-11-09 02:28:53 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aaklnaaw%2Fdsh-xiaoke-widget%20is%3Aissue%20created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F796:283F02:17A38A3:1A1DEBA:6AF12FE6 and timestamp 2026-11-09 02:28:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aaklnaaw%2Fdsh-xiaoke-widget%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F79E:13C498:74CD2F:81B58B:6AF12FE7 and timestamp 2026-11-09 02:28:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aaklnaaw%2Fdsh-xiaoke-widget%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F7AE:10A38B:1842E26:1ABD7E5:6AF12FE8 and timestamp 2026-11-09 02:28:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T19:58:39.041Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-xiaoke-widget",
+        "captured_at": "2026-11-09T02:22:10.023Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-xiaoke-widget",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-09T02:22:10.023Z",
+            "source_url": "https://registry.npmjs.org/dsh-xiaoke-widget",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

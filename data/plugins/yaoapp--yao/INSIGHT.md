@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[22a7a2c](https://github.com/YaoApp/yao/tree/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3)
+源码版本：[07b5574](https://github.com/YaoApp/yao/tree/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644)
 
 <!-- BEGIN META -->
-[![GitHub ★ 8,190](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C190&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/YaoApp/yao)
+[![GitHub ★ 8,280](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C280&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/YaoApp/yao)
 <!-- END META -->
 
-> **功能**：自托管管理多设备上的Agent、工作区与任务，提供桌面、浏览器、移动端及API接入。
+> **功能**：自托管的 Agent、任务与工作区管理平台，通过自己的设备运行任务，并接入 DeepSeek Harness。
 
-> **亮点**：[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，Yao 把多机的工作区选择、任务配额与 DSH 进程启动放在同一服务中，减少人工搬运任务与节点信息的环节。
 
-> **主要限制**：[Q04](#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
+> **主要限制**：[Q03](#research-q03) 显示，缺少协议完成事件但干净退出的分支也可以在上层返回正常 stop。结合 [Q02](#research-q02) 的节点回退，流结束与正确节点上的业务交付需要分别核对。
 
 **本文目录**
 
@@ -26,15 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 跨设备Agent工作台为谁解决哪项重复工作，交付怎样验收？](#detail-section-11)
-  - [Q02 · 节点、工作区、任务与DSH执行链如何连接？](#detail-section-12)
-  - [Q03 · 相对单机CLI加人工任务板，平台的具体增量是什么？](#detail-section-13)
-  - [Q04 · “隔离”“停止”和“完成”各自容易被误解在哪里？](#detail-section-14)
-  - [Q05 · 哪些依赖属于平台部署，哪些只属于DSH接入？](#detail-section-15)
-  - [Q06 · 自托管跨设备便利把哪些成本交给使用者？](#detail-section-16)
-  - [Q07 · 哪些调度与协议设计可借鉴，哪部分未审阅？](#detail-section-17)
-  - [Q08 · 怎样把“任务运行结束”升级为可核查办结？](#detail-section-18)
-  - [Q09 · 谁值得限定试用，何时退回分散CLI？](#detail-section-19)
+  - [Q01 · 相比逐台运行 DSH，Yao 实际增加哪些任务控制？](#detail-section-11)
+  - [Q02 · 工作区和节点如何绑定到 DSH 进程？](#detail-section-12)
+  - [Q03 · 完成与取消怎么发生，哪些结果仍未知？](#detail-section-13)
+  - [Q04 · 何时值得隔离试用，需要哪些资源和退路？](#detail-section-14)
+  - [Q05 · 能否用节点、产物和取消回执减少误办结？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：Yao根项目是自托管Agent应用/运行平台，不是安装进DSH的一层插件。适合已有多台工作机器、需要把对话任务与各节点工作区统一管理的开发或运营负责人。合格结果是指定任务在预期节点处理正确工作区并产出可核查文件或业务结果；任务板显示completed不等于内容合格。简单办法是分别登录机器运行DSH/CLI并用人工任务板记录，单机用户可能无需承担平台部署。README的“越用越好”仅是作者主张，本轮未发现结果提升实验。
+> **用途**：需要协调多台机器工作区的开发团队，可以把任务登记、节点选择和 DSH 会话接在一起。
 
-贡献在于把工作区归属、机器能力选择、队列任务和DSH会话接到同一控制平面，用户不必每次人工选择远程节点并拼接模型配置。相比普通远程桌面，它提供任务/工作区身份和可流式API；相比单CLI，多节点任务组织是实质增量。DSH推理、模型和容器等来自上游或独立组件，不当作Yao原创；价值依赖跨设备需求真实存在，单机脚本可能更简单。
+在各台机器手动运行 DSH，指定目录并用任务板追踪结果。单机或低频跨节点使用可能无需另建平台。
 
 <a id="detail-section-3"></a>
 
@@ -56,67 +52,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| 节点/工作区管理 | 统一保存归属与存储位置 | 依赖Tai节点；非所有模式均OS沙箱 |
-| 任务队列 | 同会话去重及团队并发 | 并发限制不等于费用上限 |
-| DSH runner | 在指定Computer运行会话 | 模型路由、环境和配置模板须匹配 |
-| 跨端API | SSE/WebSocket接入任务 | 需认证和团队/Owner权限核对 |
+| 工作区和节点选择 | 将任务分配到指定运行环境 | 离线回退不保证已有文件可用 |
+| DSH runner | 生成配置并启动流式会话 | 节点须能运行 tai dsh |
+| 任务队列 | 按团队配额等待执行 | 任务状态不替代产物核验 |
+| 停止与清理 | 尝试终止 DSH 流及进程 | 已发生的远端副作用需对账 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Yao平台/存储/认证 | 必需 | 控制面与持久任务 | 不能作为一层DSH插件替代 |
-| Tai节点及Computer | 执行必需 | 工作区与子进程 | 离线/能力不匹配需核对调度 |
-| 模型路由和凭据 | DSH任务必需 | 请求推理 | 配置失败或无产物 |
-| Go1.25及源码依赖 | 源码构建必需 | 构建平台 | 非普通运行安装说明 |
+| Yao 独立服务 | 任务控制需要 | 管理聊天、工作区和节点 | 回到单机工具 |
+| 可用节点与 Tai 执行路径 | DSH runner 需要 | 在工作目录启动 tai dsh | 节点选择、准备或流执行失败 |
+| box 镜像 | 选择 box 时 | 准备容器运行环境 | 拉取或创建失败 |
+| 模型凭据与工作区权限 | 目标任务需要 | 推理和数据访问 | 不继续真实任务 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 1 | 运维在隔离环境部署与接节点 | 认证、节点在线和workspace一致 |
-| 2 | 用户提交只读任务 | 指定节点/输入及独立验收 |
-| 3 | 队列执行DSH并流式返回 | 核对产物，不能仅看completed |
-| 4 | 用户停止或退出 | 确认进程与部分写入再接管 |
+| 准备 | 维护者在隔离节点绑定测试工作区 | 核对节点、目录和模型 |
+| 执行 | 操作者派发一项公开样例 | 按文件和回执验收，不只看流结束 |
+| 故障核对 | 操作者制造一次离线和取消 | 核对执行落点、残留进程和外部写入 |
+| 退出 | 停止新增派发，保留日志与原文件 | 回到逐机 CLI 并对账 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次 | 平台/机器/模型/存储 | 节点、认证、备份接入 | 总部署人时未知 |
-| 持续 | 在线机器、数据库、模型 | 运维和独立验收 | 无合格任务费用对照 |
-| 失败恢复 | 部分产物与日志保留 | 核对调度、强杀、遗留进程及副作用 | 不保证自动补偿 |
-| 退出 | 原文件与任务状态 | 停队列、导出后回原CLI | 停平台不回滚项目 |
+| 首次使用 | 服务、节点、存储和模型资源 | 配置节点、镜像和授权 | 实际部署费用未知 |
+| 持续使用 | 在线机器、模型请求和数据备份 | 核对调度、权限和产物 | 合格任务费用与时延未测 |
+| 失败恢复 | 保留输出、日志及重试资源 | 对照退出和外部副作用 | 进程和数据恢复耗时未知 |
+| 退出 | 保存工作区和任务记录 | 清理在途并回到终端 | 停止不能撤销已产生写入 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 多机组织 | workspace节点绑定与能力选择存在 | 掉线后数据与状态一致性 |
-| 任务执行 | 去重、并发配额和流式DSH | completed是否业务合格 |
-| 减少人工切换 | 控制面统一入口 | 总运维人时/费用收益 |
+| 多节点组织 | 工作区绑定优先并允许选择回退 | 离线时的原数据落位 |
+| DSH 启动 | 生成路由并通过 Computer 执行 | 实际宿主兼容和任务效果 |
+| 终态 | 解析通知、退出和取消分支 | 产物合格、外部副作用回滚 |
 
-> **思考**：[Q04](#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
+> **思考**：[Q03](#research-q03) 显示，缺少协议完成事件但干净退出的分支也可以在上层返回正常 stop。结合 [Q02](#research-q02) 的节点回退，流结束与正确节点上的业务交付需要分别核对。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q03](#research-q03)识别出工作区归属、节点能力与任务队列的控制平面整合，DSH以独立runner接入。相对逐机CLI加人工任务板，增量是持续保留任务/节点身份并统一配置接线；只有跨设备任务足够频繁时才可能覆盖部署负担，不将DSH或容器能力据为原创。
+> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，Yao 把多机的工作区选择、任务配额与 DSH 进程启动放在同一服务中，减少人工搬运任务与节点信息的环节。
 
-可借鉴daemonRegistry的同chat执行去重、团队配额队列、workspace身份绑定和分层取消。DSH会话层区分completed事件、非零退出及零退出但stderr且不完整，避免仅由退出码决定成功；取消尽量先协议结束再强杀，仍需要验证取消后副作用。迁移要携带Computer抽象、chat身份和配置模板，并处理多个平台差异。本轮只抽读这些Go关键路径，inventory的JS/TS/Markdown统计不覆盖Go主体，也不是整个框架审计。
+[Q02](#research-q02) 将节点选择与 Computer 接口分开，[Q03](#research-q03) 将协议取消、进程信号和流响应分层。移植时应把缺失完成事件和实际副作用作为独立状态。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q04](#research-q04)指出workspace组织隔离不等于所有模式的OS沙箱，completed/maxTokensAsSuccess不证明交付合格，准备材料写入失败还可能只warn继续。正常完成Cleanup有意保留子进程，离线节点回退又带来数据落位未知；这些核心生命周期边界尚未形成可验证的恢复与退出契约，应先观察而非以只读小任务掩盖整个平台的采用负担。
+[Q03](#research-q03) 显示，缺少协议完成事件但干净退出的分支也可以在上层返回正常 stop。结合 [Q02](#research-q02) 的节点回退，流结束与正确节点上的业务交付需要分别核对。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。源码提供集中队列和workspace身份，但准备失败仅warn、正常完成保留子进程，以及离线调度的数据落位尚未闭合。先核对准备完整、节点身份和全部持续进程，再决定是否值得小任务试用；出现不明子进程、completed缺产物或绑定节点掉线时暂停新任务，保留工作区与状态，交由节点管理员手工接管并退回逐机CLI。根仓库不是装入日常DSH的bundle。 依据 [Q09](#research-q09)。
+[Q04](#research-q04) 若需要验证，先让隔离节点只处理可公开样例，分别核对正常、掉线和取消。看不到预期目录或产物时，保留运行记录并交由节点操作者接管。
 
 <a id="detail-section-7"></a>
 
@@ -124,18 +120,18 @@
 
 **核查状态**：已检查源码。
 
-当前贡献由固定源码支持并含解释判断；效果未实测，未来设计假设未验证。
+任务登记、工作区选择及 DSH 启动已获源码支持。固定实现中存在无完成事件但正常返回的分支。跨节点数据与真实任务效果仍待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、main.go、workspace/workspace.go、workspace/manager.go、agent/sandbox/v2/node_selector.go、agent/sandbox/v2/dsh/runner.go、agent/sandbox/v2/dsh/command.go、agent/sandbox/v2/dsh/session.go、agent/task/run.go、agent/sandbox/v2/dsh/config.go、go.mod、openapi/workspace/workspace.go、agent/task/quota.go 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、main.go、agent/sandbox/v2/init.go、agent/task/run.go、workspace/manager.go、agent/assistant/sandbox_v2.go、agent/sandbox/v2/node_selector.go、agent/sandbox/v2/lifecycle.go、agent/computer/lookup.go、agent/sandbox/v2/dsh/runner.go、agent/sandbox/v2/dsh/command.go、agent/sandbox/v2/dsh/plat_posix.go、agent/sandbox/v2/dsh/session.go、agent/sandbox/v2/dsh/parse.go、agent/sandbox/v2/stream.go、go.mod 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅固定提交源码、README、配置与相关测试定义；未安装或执行目标代码，未进行真实宿主验收。
-- 下一步：未验证假设是给每个任务增加节点/workspace身份、预期产物和独立验收结果三联收据，将执行结束、结果待验和真正办结区分。由任务completed只反映执行错误，以及离线回退和取消副作用推得，可能比继续增加入口更能提高跨设备信任。最小验证在同任务注入max-token终止、节点掉线和产物缺失，对照原状态和三联收据，测错误办结识别率、重复执行及人工核对时间；若不能在副作用发生前锁定身份或维护成本超过收益则否定。此设计未在当前提交证实，不计入现有贡献。
+- 边界：固定根组件只核查工作区、任务、Go 版 DSH runner 和关键流分支。未核查各客户端或全部 ACL，也未运行节点、模型和宿主。统计仅覆盖指定扩展名，不代表 Go 主体规模。
+- 下一步：以同一公开样例在两个隔离节点执行正常、掉线、安静退出和取消，分别核对实际文件、流终止、进程和外部测试回执。
 
 **分析版本**
 
 - **仓库**：[YaoApp/yao](https://github.com/YaoApp/yao)
-- **版本号**：未声明（[固定提交 22a7a2c](https://github.com/YaoApp/yao/tree/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3)）
-- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 07b5574](https://github.com/YaoApp/yao/tree/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644)）
+- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -143,9 +139,9 @@
 
 <a id="innovation"></a>
 
-[Q08](#research-q08)提出未验证的节点/workspace、预期产物与独立验收三联收据，分离运行结束和业务办结；用掉线、token终止及产物缺失对照误办结率和人工成本，若身份无法可信绑定或负担抵消收益则否定。
+[Q05](#research-q05) 提议用可验证的节点、工作区与产物收据记录任务是否真正办结，测试掉线和不完整退出时能否减少误判。
 
-未验证假设是给每个任务增加节点/workspace身份、预期产物和独立验收结果三联收据，将执行结束、结果待验和真正办结区分。由任务completed只反映执行错误，以及离线回退和取消副作用推得，可能比继续增加入口更能提高跨设备信任。最小验证在同任务注入max-token终止、节点掉线和产物缺失，对照原状态和三联收据，测错误办结识别率、重复执行及人工核对时间；若不能在副作用发生前锁定身份或维护成本超过收益则否定。此设计未在当前提交证实，不计入现有贡献。
+以同一公开样例在两个隔离节点执行正常、掉线、安静退出和取消，分别核对实际文件、流终止、进程和外部测试回执。
 
 <a id="detail-section-9"></a>
 
@@ -154,9 +150,11 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 127 | 53656 | — | — | 187799 |
+| .md | source | 127 | 53660 | — | — | 187846 |
 | .ts | source | 11 | 4197 | 3000 | 721 | — |
 | .js | source | 2 | 4 | 4 | 0 | — |
 | .ts | test | 14 | 948 | 781 | 49 | — |
@@ -166,36 +164,42 @@
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-10-26），可前往 [GitHub Issues](https://github.com/YaoApp/yao/issues) 查看。
+[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/YaoApp/yao/issues?q=is%3Aissue+is%3Aopen)
+
+暂未获取：近30天新建、近30天关闭。
+
+统计日期：2026-11-09。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在固定版本判断Yao Agents的贡献、关键质疑与可控采用条件。
+**插件研究总目标**：需要在多台机器使用 DSH 的团队，能否借 Yao 的工作区、节点和执行控制将任务发到正确环境，并能区分流结束、产物完成和取消边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 跨设备Agent工作台为谁解决哪项重复工作，交付怎样验收？
+### Q01 · 相比逐台运行 DSH，Yao 实际增加哪些任务控制？
 
-**研究主题**：场景与需求
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-Yao根项目是自托管Agent应用/运行平台，不是安装进DSH的一层插件。适合已有多台工作机器、需要把对话任务与各节点工作区统一管理的开发或运营负责人。合格结果是指定任务在预期节点处理正确工作区并产出可核查文件或业务结果；任务板显示completed不等于内容合格。简单办法是分别登录机器运行DSH/CLI并用人工任务板记录，单机用户可能无需承担平台部署。README的“越用越好”仅是作者主张，本轮未发现结果提升实验。
+对已经管理多台工作机器的开发负责人，手工做法是在指定机器启动 DSH，再将任务、命令结果和产物记入任务板。Yao 以独立 Go 应用启动，在自己的沙箱执行层将 DSH 注册为 runner。任务服务按聊天 ID 登记运行，重复登记被拒绝，团队并发配额不足时排队，并由已接入的 AssistantStreamFn 执行。这样能把聊天任务和工作区选择纳入同一控制面。合格交付仍要核对节点、目录与产物。作者声称可从多种客户端访问，固定服务研究只确认了运行和调度源码，未验证各客户端接入。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-49](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/README.md#L3-L49)
+**依据 1 · 作者声明**：[README.md:1-15](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/README.md#L1-L15)
 
-自托管、多设备、workspace和任务板声明
+作者定位自托管跨端平台，并声明集成 DSH。
 
 <details>
-<summary>查看原文（47行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
+# Yao Agents
+
 ✨ **All your agents and workspaces in one place, on every device you own. Track tasks on a board, accessible from desktop, mobile, browser, or API. Self-hosted.**
 
 ![How it works](docs/how-it-works.png)
@@ -209,50 +213,16 @@ Yao根项目是自托管Agent应用/运行平台，不是安装进DSH的一层�
 **📱 Android (Beta):** [https://yaoagents.com/download/yaoagents](https://yaoagents.com/download/yaoagents)
 
 ⚡⚡⚡ **DeepSeek Harness is now integrated — use it directly in the desktop app, Android, or browser, running across your devices.** [Learn more →](https://yaoagents.com/blog/en-us/2026/release/deepseek-harness)
-
-🧠 Jev is TypeSafe AI's System One model: it doesn't write text, it returns typed decisions with confidence. Now available in Yao Agents. [Learn more →](https://yaoagents.com/blog/en-us/2026/release/jev)
-
-[中文](README.zh-CN.md)
-
----
-
-## How it works
-
-Agents run on your own devices. Every machine you add is another place for them to work, all managed from one place.
-
-## Workspaces
-
-Every workspace is isolated. Work stays separate, managed across all your computers, and accumulates into documents that become your knowledge base.
-
-While working, agents can read what they need from any node.
-
-![Workspaces](https://assets.yaoagents.com/en/workspace/01-workspace-index-en-dark.png)
-
-## Task Board
-
-Say what you need in a conversation, and it becomes a task on your board.
-
-Keep the conversation going, keep it running, and it improves with use, growing into an agent purpose-built for this kind of work.
-
-Connect task agents to your apps, or share them with others.
-
-![Task Board](https://assets.yaoagents.com/en/kanban/09-kanban-daily-en-dark.png)
-
-## Open API
-
-Expert and task agents integrate into your own apps and workflows. They're built on standard APIs, with both SSE and WebSocket support.
-
-Let your agents become part of your business, wherever you need them.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[main.go:25-36](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/main.go#L25-L36)
+**依据 2 · 源码核查**：[main.go:25-37](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/main.go#L25-L37)
 
-独立yao应用CLI入口
+固定根 Go 应用具有独立命令入口。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
 func main() {
@@ -267,67 +237,131 @@ func main() {
 	// }()
 	utils.Init()
 	cmd.Execute()
+}
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[agent/sandbox/v2/init.go:12-21](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/init.go#L12-L21)
+
+DSH 和 deepseek 在 Yao runner 注册中指向 DSH 构造器。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+func init() {
+	Register("claude", func() types.Runner { return claude.New() })
+	Register("claude/cli", func() types.Runner { return claude.New() })
+	Register("opencode", func() types.Runner { return opencode.New() })
+	Register("opencode/cli", func() types.Runner { return opencode.New() })
+	Register("yaocode", func() types.Runner { return yaocode.New() })
+	Register("tai", func() types.Runner { return tairunner.New() })
+	Register("dsh", func() types.Runner { return dsh.New() })
+	Register("deepseek", func() types.Runner { return dsh.New() })
+}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[agent/task/run.go:28-48](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/task/run.go#L28-L48)
+
+任务读取、同聊天重复登记门禁和团队配额排队。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+func Run(ctx context.Context, auth *process.AuthorizedInfo, chatID string, req *RunReq) (*RunResult, error) {
+	task, err := Get(ctx, auth, chatID)
+	if err != nil {
+		return nil, err
+	}
+
+	dc := newDaemonContext(chatID)
+	if _, loaded := daemonRegistry.LoadOrStore(chatID, dc); loaded {
+		return nil, fmt.Errorf("task %s is already running or queued", chatID)
+	}
+	fmt.Printf("  • [task.run] daemon REGISTERED chatID=%s\n", chatID)
+
+	now := time.Now()
+	requestID := uuid.New().String()
+
+	if !GlobalQuota.TryAcquire(auth.TeamID, "") {
+		setStatus(chatID, "queued", auth, map[string]any{
+			"queued_at":      now,
+			"queue_priority": req.Priority,
+		})
+		entry := GlobalQuota.Enqueue(auth.TeamID, chatID, req.Priority)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[agent/task/run.go:204-228](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/task/run.go#L204-L228)
+
+实际交给 Assistant 流式函数，再分类运行错误。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+	_, err := AssistantStreamFn(task.AssistantID, agentCtx, inputToAgentMessages(req.Messages), opts)
+
+	var finalErr error
+	status := "completed"
+
+	if stdCtx.Err() == context.DeadlineExceeded {
+		finalErr = fmt.Errorf("timeout after %s", resolved.Timeout)
+		status = "failed"
+		markFailed(dc, auth, finalErr)
+	} else if dc.Context.Err() != nil && isContextCanceled(err) {
+		status = "cancelled"
+		finalErr = errUserCancelled
+		dc.Broadcast(&message.Message{
+			Type:  "text",
+			Props: map[string]interface{}{"content": "\n\n---\n*[任务已被用户取消]*"},
+		})
+		setStatus(dc.ChatID, "cancelled", auth, map[string]any{
+			"cancelled_at":  time.Now(),
+			"cancel_reason": "user_stopped",
+		})
+	} else if err != nil {
+		finalErr = err
+		status = "failed"
+		markFailed(dc, auth, finalErr)
+	}
+```
+
+</details>
+
+#### 缺口
+
+- 未量化多机用户的重复切换负担或任务交付收益。
+  **影响**：能说明操作组合，不能确认该平台比逐机 CLI 更省工。
+  **进一步探讨**：用两个隔离节点重复同一任务，记录人工切换、产物核对和恢复步骤。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 节点、工作区、任务与DSH执行链如何连接？
+### Q02 · 工作区和节点如何绑定到 DSH 进程？
 
-**研究主题**：功能与机制
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-workspace具有Owner和固定Node元数据，创建时要求节点在线并在该volume写metadata。SelectNode优先工作区绑定再检查runner和执行模式；DSH Runner准备skills、Agent定义及AGENTS.md，再按LLM路由生成Cordis配置，使用chatID作sessionID，通过Computer.Stream以工作目录/env/stdin启动进程。Task.Run用daemonRegistry阻止同chat重复执行，超配额排队，实际调用AssistantStreamFn并记录状态。该链路解释了统一管理与执行接线，不证明跨设备同步和最终输出正确。
+创建工作区要求节点可用，Owner 和 Node 随元数据落到该节点 volume。Assistant 将请求的 workspace_id、可用 runner 和镜像等条件交给节点选择器。已解析且在线的工作区绑定优先，该节点不支持 runner 或模式时报错；找不到绑定节点时，选择器落回普通筛选。获得 host 或 box Computer 后还会绑定传入的工作区。host 路径若无法找到元数据会尝试创建，不能以相同 workspace_id 推断原节点文件已同步。进入 DSH runner 后，内置 Skill、定义、AGENTS.md 写入失败可告警继续，显式准备步骤错误会返回。DSH 路由配置与聊天 session ID 进入 JSON-RPC；固定 POSIX 实现写配置后调用 tai dsh，由 Computer.Stream 传工作目录、环境和 stdin。只有实际走 box 或部署自己的隔离措施才能再谈进程边界，host 分支本身是宿主执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[workspace/workspace.go:40-61](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/workspace/workspace.go#L40-L61)
+**依据 1 · 源码核查**：[workspace/manager.go:40-79](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/workspace/manager.go#L40-L79)
 
-持久workspace与Node/Owner
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-const metadataFile = ".workspace.json"
-
-// Workspace is a persistent, user-managed storage entity.
-// It is pinned to a specific Tai node (host machine) at creation time;
-// containers referencing this workspace are automatically routed to that node.
-type Workspace struct {
-	ID        string            `json:"id"`
-	Name      string            `json:"name"`
-	Owner     string            `json:"owner"`
-	Node      string            `json:"node"`
-	Labels    map[string]string `json:"labels,omitempty"`
-	CreatedAt time.Time         `json:"created_at"`
-	UpdatedAt time.Time         `json:"updated_at"`
-}
-
-// CreateOptions configures a new workspace.
-type CreateOptions struct {
-	ID     string            // explicit ID; empty = auto-generate (uuid)
-	Name   string            // human-readable name
-	Owner  string            // user ID
-	Node   string            // target Tai node (required)
-	Labels map[string]string // arbitrary metadata
-```
-
-</details>
-
-**依据 2 · 源码核查**：[workspace/manager.go:39-80](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/workspace/manager.go#L39-L80)
-
-在线节点创建和metadata保存
+创建依赖节点在线，并把所有者和节点记录在对应 volume。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-// Create allocates storage on the target node and persists metadata.
 func (m *Manager) Create(ctx context.Context, opts CreateOptions) (*Workspace, error) {
 	if err := ValidateID(opts.ID); err != nil {
 		return nil, err
@@ -368,26 +402,54 @@ func (m *Manager) Create(ctx context.Context, opts CreateOptions) (*Workspace, e
 	}
 	if err := vol.WriteFile(ctx, id, metadataFile, data, 0644); err != nil {
 		return nil, fmt.Errorf("workspace: write metadata: %w", err)
-	}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[agent/sandbox/v2/node_selector.go:69-107](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/node_selector.go#L69-L107)
+**依据 2 · 源码核查**：[agent/assistant/sandbox_v2.go:89-112](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/assistant/sandbox_v2.go#L89-L112)
 
-绑定节点与runner/mode选择
+实际调用节点选择器并传工作区。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-// SelectNode is the centralised node selection entry point. It implements the
-// full decision flow: workspace binding -> filter -> group -> pick.
-func SelectNode(nodes []NodeCandidate, criteria *SelectionCriteria) (*SelectionResult, error) {
-	if criteria == nil {
-		return nil, fmt.Errorf("selection criteria is nil")
+	// 2. Build node snapshot + selection criteria.
+	nodes := sandboxv2.BuildNodeSnapshot()
+
+	workspaceID := ""
+	if ctx.Metadata != nil {
+		if ws, ok := ctx.Metadata["workspace_id"].(string); ok && ws != "" {
+			workspaceID = ws
+		}
 	}
 
+	criteria := &sandboxv2.SelectionCriteria{
+		WorkspaceID: workspaceID,
+		Preferred:   preferred,
+		Allowed:     allowed,
+		Image:       cfg.Computer.Image,
+		Filter:      cfg.Filter,
+		WSManager:   workspace.M(),
+	}
+
+	// 3. Select node.
+	sel, err := sandboxv2.SelectNode(nodes, criteria)
+	if err != nil {
+		closeLoadingV2(ctx, loadingMsgID, "sandbox.failed")
+		return nil, fmt.Errorf("select node: %w", err)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[agent/sandbox/v2/node_selector.go:76-123](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/node_selector.go#L76-L123)
+
+绑定优先，绑定节点不支持时报错，缺席时继续普通过滤。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
 	// STEP 0: workspace binding (highest priority)
 	if criteria.WorkspaceID != "" && criteria.WSManager != nil {
 		nodeID, err := criteria.WSManager.NodeForWorkspace(context.Background(), criteria.WorkspaceID)
@@ -420,16 +482,151 @@ func SelectNode(nodes []NodeCandidate, criteria *SelectionCriteria) (*SelectionR
 			}
 			if !found {
 				log.Warn("[node_selector] workspace %q bound to node %q, but node is offline or removed; falling through to normal selection", criteria.WorkspaceID, nodeID)
+			}
+		}
+	}
+
+	// STEP 1: filter — keep only nodes that support at least one allowed runner
+	// and pass the ComputerFilter check.
+	var filtered []NodeCandidate
+	for i := range nodes {
+		if !nodeSupportsAny(&nodes[i], criteria.Allowed) {
+			continue
+		}
+		if !passFilter(&nodes[i], criteria.Filter) {
+			continue
+		}
+		filtered = append(filtered, nodes[i])
+	}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:60-88](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L60-L88)
+**依据 4 · 源码核查**：[agent/sandbox/v2/lifecycle.go:117-145](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/lifecycle.go#L117-L145)
 
-写准备材料与提示
+按 host 或 box 准备资源，再按节点查找 Computer。
 
 <details>
 <summary>查看原文（29行）</summary>
+
+```text
+	// --- Pipeline-specific: resource preparation ---
+	switch sel.Mode {
+	case "host":
+		cfg.Kind = "host"
+		workspaceID, identifier = ensureHostWorkspace(cfg, ownerID, workspaceID, identifier)
+
+	case "box":
+		cfg.Kind = "box"
+		if _, newIdent, err := resolveBox(cfg, manager, ownerID, identifier, workspaceID); err != nil {
+			return nil, identifier, err
+		} else {
+			identifier = newIdent
+		}
+
+	default:
+		return nil, identifier, fmt.Errorf("unsupported mode %q for node %q", sel.Mode, sel.NodeID)
+	}
+
+	// --- Unified path: obtain Computer via computer.Lookup ---
+	comp, err := computer.Lookup(ctx, &computer.LookupOpts{
+		Auth:          ctx.Authorized,
+		AssistantID:   ctx.AssistantID,
+		WorkspaceID:   cfg.WorkspaceID,
+		ChatID:        ctx.ChatID,
+		Image:         cfg.Computer.Image,
+		Lifecycle:     cfg.Lifecycle,
+		NodeID:        sel.NodeID,
+		BoxIdentifier: cfg.ID,
+	})
+```
+
+</details>
+
+**依据 5 · 源码核查**：[agent/sandbox/v2/lifecycle.go:152-174](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/lifecycle.go#L152-L174)
+
+host 模式无法找到工作区时可能创建，而非自动搬运原文件。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+func ensureHostWorkspace(cfg *types.SandboxConfig, ownerID, workspaceID, identifier string) (string, string) {
+	if workspaceID == "" && cfg.NodeID != "" {
+		workspaceID = workspace.DefaultWorkspaceID(ownerID, cfg.NodeID)
+		cfg.WorkspaceID = workspaceID
+		if dot := strings.LastIndex(identifier, "."); dot >= 0 {
+			identifier = identifier[:dot+1] + workspaceID
+			cfg.ID = identifier
+		}
+	}
+
+	if workspaceID != "" {
+		wsm := workspace.M()
+		if _, err := wsm.Get(context.Background(), workspaceID); err != nil {
+			if _, createErr := wsm.Create(context.Background(), workspace.CreateOptions{
+				ID:    workspaceID,
+				Owner: ownerID,
+				Node:  cfg.NodeID,
+				Name:  "Default",
+			}); createErr != nil {
+				log.Trace("[sandbox/v2] auto-create workspace %s failed: %v", workspaceID, createErr)
+			}
+		}
+	}
+```
+
+</details>
+
+**依据 6 · 源码核查**：[agent/computer/lookup.go:74-104](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/computer/lookup.go#L74-L104)
+
+选定节点和模式最终绑定工作区。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+	// 5. Dispatch by mode + BindWorkplace
+	mgr := sandbox.M()
+	switch mode {
+	case "host":
+		host, err := mgr.Host(ctx, nodeID)
+		if err != nil {
+			return nil, fmt.Errorf("computer.Lookup: host %q: %w", nodeID, err)
+		}
+		host.BindWorkplace(opts.WorkspaceID)
+		return host, nil
+
+	case "box":
+		identifier := opts.BoxIdentifier
+		if identifier == "" {
+			identifier = resolve.BuildIdentifier(lifecycle, ownerID, opts.ChatID, opts.AssistantID, opts.WorkspaceID)
+		}
+		if identifier == "" {
+			return nil, nil // oneshot without override: cannot look up
+		}
+		box, err := mgr.Get(ctx, identifier)
+		if err != nil {
+			if errors.Is(err, sandbox.ErrNotFound) {
+				return nil, nil
+			}
+			return nil, fmt.Errorf("computer.Lookup: box %q: %w", identifier, err)
+		}
+		if box.IsStopped() {
+			return nil, nil
+		}
+		box.BindWorkplace(opts.WorkspaceID)
+		return box, nil
+```
+
+</details>
+
+**依据 7 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:60-92](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/runner.go#L60-L92)
+
+系统素材准备允许告警继续，配置步骤出错时会返回。
+
+<details>
+<summary>查看原文（33行）</summary>
 
 ```text
 	if ws := req.Computer.Workplace(); ws != nil {
@@ -461,16 +658,20 @@ func SelectNode(nodes []NodeCandidate, criteria *SelectionCriteria) (*SelectionR
 	if req.RunSteps != nil && len(steps) > 0 {
 		if err := req.RunSteps(ctx, steps, req.Computer, req.AssistantID, req.ConfigHash, req.AssistantDir); err != nil {
 			return fmt.Errorf("dsh prepare steps: %w", err)
+		}
+	}
+
+	return nil
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[agent/sandbox/v2/dsh/command.go:117-148](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/command.go#L117-L148)
+**依据 8 · 源码核查**：[agent/sandbox/v2/dsh/command.go:117-133](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/command.go#L117-L133)
 
-Cordis生成与chat会话身份
+渲染 Cordis 配置并取聊天 ID 作为会话 ID。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
 	// Render cordis.yml
@@ -490,31 +691,41 @@ Cordis生成与chat会话身份
 	if sessionID == "" {
 		sessionID = uuid.New().String()
 	}
-
-	// Pre-write .anonymous-user-id so all workspaces share the same DSH user_id.
-	// DSH reads this file during initialize; writing before process launch is required.
-	if req.ClientID != "" {
-		dshHome := filepath.Join(workDir, ".dsh")
-		os.MkdirAll(dshHome, 0755)
-		idFile := filepath.Join(dshHome, ".anonymous-user-id")
-		instanceUUID := uuid.NewSHA1(uuid.NameSpaceDNS, []byte(req.ClientID)).String()
-		os.WriteFile(idFile, []byte(instanceUUID+"\n"), 0644)
-	}
-
-	// Build JSON-RPC input
-	initMsg, err := buildInitializeMsg(workDir, "yao-primary", primary.Model, primary.MaxTokens)
-	if err != nil {
-		return command{}, err
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[agent/sandbox/v2/dsh/session.go:30-57](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/session.go#L30-L57)
+**依据 9 · 源码核查**：[agent/sandbox/v2/dsh/plat_posix.go:42-54](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/plat_posix.go#L42-L54)
 
-Computer.Stream启动
+写入工作区配置并 exec tai dsh。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（13行）</summary>
+
+```text
+func (p *posixPlatform) BuildScript(in scriptInput) (string, []byte) {
+	var s strings.Builder
+
+	s.WriteString("set -e\n")
+	s.WriteString(fmt.Sprintf("mkdir -p \"$(dirname %q)\"\n", in.configFile))
+	s.WriteString(fmt.Sprintf("cat << 'CORDISEOF' > %q\n", in.configFile))
+	s.WriteString(in.cordisYAML)
+	s.WriteString("\nCORDISEOF\n")
+	s.WriteString("set +e\n")
+
+	s.WriteString(fmt.Sprintf("exec tai dsh --config %q\n", in.configFile))
+
+	return s.String(), []byte(in.inputJSONRPC + "\n")
+```
+
+</details>
+
+**依据 10 · 源码核查**：[agent/sandbox/v2/dsh/session.go:30-45](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/session.go#L30-L45)
+
+实际调用 Computer.Stream，传递工作目录、环境与 stdin。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
 func startSession(ctx context.Context, computer infra.Computer, p platform, cmd command, chatID string, logger *agentContext.RequestLogger, locale string, prepareLoadingMsgID string) (*session, error) {
@@ -533,992 +744,100 @@ func startSession(ctx context.Context, computer infra.Computer, p platform, cmd 
 	execStream, err := computer.Stream(ctx, cmd.shell, opts...)
 	if err != nil {
 		return nil, fmt.Errorf("computer.Stream: %w", err)
-	}
-
-	return &session{
-		ctx:                 ctx,
-		computer:            computer,
-		plat:                p,
-		exec:                execStream,
-		logger:              logger,
-		chatID:              chatID,
-		locale:              locale,
-		prepareLoadingMsgID: prepareLoadingMsgID,
-	}, nil
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[agent/task/run.go:27-81](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L27-L81)
+#### 缺口
 
-去重与排队
-
-<details>
-<summary>查看原文（55行）</summary>
-
-```text
-// Run starts or queues a task execution. Atomic operation (no LLM enrichment).
-func Run(ctx context.Context, auth *process.AuthorizedInfo, chatID string, req *RunReq) (*RunResult, error) {
-	task, err := Get(ctx, auth, chatID)
-	if err != nil {
-		return nil, err
-	}
-
-	dc := newDaemonContext(chatID)
-	if _, loaded := daemonRegistry.LoadOrStore(chatID, dc); loaded {
-		return nil, fmt.Errorf("task %s is already running or queued", chatID)
-	}
-	fmt.Printf("  • [task.run] daemon REGISTERED chatID=%s\n", chatID)
-
-	now := time.Now()
-	requestID := uuid.New().String()
-
-	if !GlobalQuota.TryAcquire(auth.TeamID, "") {
-		setStatus(chatID, "queued", auth, map[string]any{
-			"queued_at":      now,
-			"queue_priority": req.Priority,
-		})
-		entry := GlobalQuota.Enqueue(auth.TeamID, chatID, req.Priority)
-		daemonWg.Add(1)
-		go func() {
-			defer daemonWg.Done()
-			select {
-			case <-entry.ready:
-				defer GlobalQuota.Release(auth.TeamID)
-				defer recoverDaemonPanic(dc)
-				setStatus(chatID, "running", auth, nil)
-				runDaemon(dc, auth, req, task)
-			case <-dc.Context.Done():
-				GlobalQuota.Dequeue(auth.TeamID, chatID)
-				setStatus(chatID, "cancelled", auth, map[string]any{
-					"cancelled_at":  time.Now(),
-					"cancel_reason": "cancelled_while_queued",
-				})
-				dc.CloseSubscribers()
-				UnregisterDaemon(chatID)
-			}
-		}()
-		pos := GlobalQuota.QueuePosition(auth.TeamID, chatID)
-		return &RunResult{ChatID: chatID, Status: "queued", RequestID: requestID, Position: pos}, nil
-	}
-
-	setStatus(chatID, "running", auth, map[string]any{"started_at": now})
-	incrementRunCount(chatID)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		defer GlobalQuota.Release(auth.TeamID)
-		defer recoverDaemonPanic(dc)
-		runDaemon(dc, auth, req, task)
-	}()
-	return &RunResult{ChatID: chatID, Status: "running", RequestID: requestID}, nil
-```
-
-</details>
+- 未实测节点掉线后实际挂载、数据是否迁移及权限隔离。
+  **影响**：节点选择回退不能证明原工作区内容可用，也不能保证跨设备连续性。
+  **进一步探讨**：准备两个节点各有不同标记，关闭绑定节点并观察工作区、目录、写入落点和权限。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 相对单机CLI加人工任务板，平台的具体增量是什么？
+### Q03 · 完成与取消怎么发生，哪些结果仍未知？
 
-**研究主题**：贡献与相对优势
-
-#### 完整回答
-
-贡献在于把工作区归属、机器能力选择、队列任务和DSH会话接到同一控制平面，用户不必每次人工选择远程节点并拼接模型配置。相比普通远程桌面，它提供任务/工作区身份和可流式API；相比单CLI，多节点任务组织是实质增量。DSH推理、模型和容器等来自上游或独立组件，不当作Yao原创；价值依赖跨设备需求真实存在，单机脚本可能更简单。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:23-49](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/README.md#L23-L49)
-
-统一应用及API目标
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-## How it works
-
-Agents run on your own devices. Every machine you add is another place for them to work, all managed from one place.
-
-## Workspaces
-
-Every workspace is isolated. Work stays separate, managed across all your computers, and accumulates into documents that become your knowledge base.
-
-While working, agents can read what they need from any node.
-
-![Workspaces](https://assets.yaoagents.com/en/workspace/01-workspace-index-en-dark.png)
-
-## Task Board
-
-Say what you need in a conversation, and it becomes a task on your board.
-
-Keep the conversation going, keep it running, and it improves with use, growing into an agent purpose-built for this kind of work.
-
-Connect task agents to your apps, or share them with others.
-
-![Task Board](https://assets.yaoagents.com/en/kanban/09-kanban-daily-en-dark.png)
-
-## Open API
-
-Expert and task agents integrate into your own apps and workflows. They're built on standard APIs, with both SSE and WebSocket support.
-
-Let your agents become part of your business, wherever you need them.
-```
-
-</details>
-
-**依据 2 · 源码核查**：[agent/sandbox/v2/node_selector.go:69-107](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/node_selector.go#L69-L107)
-
-节点绑定与能力选择
-
-<details>
-<summary>查看原文（39行）</summary>
-
-```text
-// SelectNode is the centralised node selection entry point. It implements the
-// full decision flow: workspace binding -> filter -> group -> pick.
-func SelectNode(nodes []NodeCandidate, criteria *SelectionCriteria) (*SelectionResult, error) {
-	if criteria == nil {
-		return nil, fmt.Errorf("selection criteria is nil")
-	}
-
-	// STEP 0: workspace binding (highest priority)
-	if criteria.WorkspaceID != "" && criteria.WSManager != nil {
-		nodeID, err := criteria.WSManager.NodeForWorkspace(context.Background(), criteria.WorkspaceID)
-		if err == nil && nodeID != "" {
-			found := false
-			for i := range nodes {
-				if nodes[i].ID == nodeID {
-					found = true
-					runner := ""
-					if criteria.Preferred != "" && nodeHasRunner(&nodes[i], criteria.Preferred) && containsRunner(criteria.Allowed, criteria.Preferred) {
-						runner = criteria.Preferred
-					}
-					if runner == "" {
-						runner = pickRunnerOnNode(&nodes[i], criteria)
-					}
-					if runner == "" {
-						return nil, fmt.Errorf("workspace-bound node %q does not support any of the allowed runners %v", nodeID, criteria.Allowed)
-					}
-					mode := resolve.ResolveMode(&nodes[i], runner, criteria.Image)
-					if mode == "" {
-						return nil, fmt.Errorf("workspace-bound node %q has no feasible execution mode for runner %q (CanBox=%v CanHost=%v image=%q)", nodeID, runner, nodes[i].CanBox, nodes[i].CanHost, criteria.Image)
-					}
-					return &SelectionResult{
-						NodeID:  nodeID,
-						Runner:  runner,
-						Mode:    mode,
-						IsLocal: nodes[i].IsLocal,
-					}, nil
-				}
-			}
-			if !found {
-				log.Warn("[node_selector] workspace %q bound to node %q, but node is offline or removed; falling through to normal selection", criteria.WorkspaceID, nodeID)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[agent/task/run.go:27-81](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L27-L81)
-
-任务排队和身份去重
-
-<details>
-<summary>查看原文（55行）</summary>
-
-```text
-// Run starts or queues a task execution. Atomic operation (no LLM enrichment).
-func Run(ctx context.Context, auth *process.AuthorizedInfo, chatID string, req *RunReq) (*RunResult, error) {
-	task, err := Get(ctx, auth, chatID)
-	if err != nil {
-		return nil, err
-	}
-
-	dc := newDaemonContext(chatID)
-	if _, loaded := daemonRegistry.LoadOrStore(chatID, dc); loaded {
-		return nil, fmt.Errorf("task %s is already running or queued", chatID)
-	}
-	fmt.Printf("  • [task.run] daemon REGISTERED chatID=%s\n", chatID)
-
-	now := time.Now()
-	requestID := uuid.New().String()
-
-	if !GlobalQuota.TryAcquire(auth.TeamID, "") {
-		setStatus(chatID, "queued", auth, map[string]any{
-			"queued_at":      now,
-			"queue_priority": req.Priority,
-		})
-		entry := GlobalQuota.Enqueue(auth.TeamID, chatID, req.Priority)
-		daemonWg.Add(1)
-		go func() {
-			defer daemonWg.Done()
-			select {
-			case <-entry.ready:
-				defer GlobalQuota.Release(auth.TeamID)
-				defer recoverDaemonPanic(dc)
-				setStatus(chatID, "running", auth, nil)
-				runDaemon(dc, auth, req, task)
-			case <-dc.Context.Done():
-				GlobalQuota.Dequeue(auth.TeamID, chatID)
-				setStatus(chatID, "cancelled", auth, map[string]any{
-					"cancelled_at":  time.Now(),
-					"cancel_reason": "cancelled_while_queued",
-				})
-				dc.CloseSubscribers()
-				UnregisterDaemon(chatID)
-			}
-		}()
-		pos := GlobalQuota.QueuePosition(auth.TeamID, chatID)
-		return &RunResult{ChatID: chatID, Status: "queued", RequestID: requestID, Position: pos}, nil
-	}
-
-	setStatus(chatID, "running", auth, map[string]any{"started_at": now})
-	incrementRunCount(chatID)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		defer GlobalQuota.Release(auth.TeamID)
-		defer recoverDaemonPanic(dc)
-		runDaemon(dc, auth, req, task)
-	}()
-	return &RunResult{ChatID: chatID, Status: "running", RequestID: requestID}, nil
-```
-
-</details>
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · “隔离”“停止”和“完成”各自容易被误解在哪里？
-
-**研究主题**：缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-README的workspace隔离应先理解为持久存储和归属组织，不能自动推导每种runner都在OS沙箱内：node选择区分CanBox和CanHost。运行准备会写AGENTS.md和技能目录，停止不会自动撤销。Task.run默认completed而依据timeout/cancel/error改状态，未在该完成分支检查交付物；DSH配置还设置maxTokensAsSuccess=true，因此协议/进程完成不能当业务验收。工作区绑定节点离线可fall-through普通选择，数据最终落位须进一步核查，不据此直接断言已经错写。 另有Prepare写技能、Agent定义和AGENTS.md失败只记录warn继续，正常completed的Cleanup还保留子进程；这使“启动/完成”都不足以证明准备完整或节点已无持续副作用。
+解析器以对应会话的 session.completed 标记正常完成，idle 状态不再充当完成。turn/end 的异常原因会发错误事件，但这一分支不直接把错误作为 runner 返回。另有一条具体缺口：没有完成事件时，若解析和等待无错、进程零退出且未读取到 stderr，runStream 返回 completed=false、err=nil，Runner.Stream 最后仍返回 nil，上层可按正常 stop 构造响应。完成事件也只代表协议状态，产物是否合格仍要检查。正常完成走 shutdown，关闭 stdin、等待后尝试强杀；通用 Cleanup 在 lastCompleted 时不再额外杀子进程，因此应按本次实际路径检查存活，而不能说正常完成完全没有清理。取消路径尝试 session/cancel、shutdown、信号和强杀，失败前已产生的远端副作用不在这套清理的撤销范围。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:27-31](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/README.md#L27-L31)
+**依据 1 · 源码核查**：[agent/sandbox/v2/dsh/parse.go:161-188](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/parse.go#L161-L188)
 
-作者隔离与跨节点读取声明
-
-```text
-## Workspaces
-
-Every workspace is isolated. Work stays separate, managed across all your computers, and accumulates into documents that become your knowledge base.
-
-While working, agents can read what they need from any node.
-```
-
-**依据 2 · 源码核查**：[agent/sandbox/v2/node_selector.go:52-64](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/node_selector.go#L52-L64)
-
-容器与Host执行能力不同
+只有适用会话的完成通知才设置完成，idle 不触发。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-		runners := n.Capabilities.Runners
-		if len(runners) == 0 {
-			runners = InferRunners(n, "")
-		}
-		out = append(out, NodeCandidate{
-			ID:      n.TaiID,
-			IsLocal: n.TaiID == "local" && n.Mode == "local",
-			Runners: runners,
-			CanBox:  n.Capabilities.Docker || n.Capabilities.K8s,
-			CanHost: n.Capabilities.HostExec,
-			OS:      n.System.OS,
-			Arch:    n.System.Arch,
-		})
-```
-
-</details>
-
-**依据 3 · 源码核查**：[agent/sandbox/v2/node_selector.go:94-107](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/node_selector.go#L94-L107)
-
-绑定失效时回退
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-					mode := resolve.ResolveMode(&nodes[i], runner, criteria.Image)
-					if mode == "" {
-						return nil, fmt.Errorf("workspace-bound node %q has no feasible execution mode for runner %q (CanBox=%v CanHost=%v image=%q)", nodeID, runner, nodes[i].CanBox, nodes[i].CanHost, criteria.Image)
-					}
-					return &SelectionResult{
-						NodeID:  nodeID,
-						Runner:  runner,
-						Mode:    mode,
-						IsLocal: nodes[i].IsLocal,
-					}, nil
-				}
-			}
-			if !found {
-				log.Warn("[node_selector] workspace %q bound to node %q, but node is offline or removed; falling through to normal selection", criteria.WorkspaceID, nodeID)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[agent/sandbox/v2/dsh/config.go:25-29](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/config.go#L25-L29)
-
-maxTokensAsSuccess配置
-
-```text
-const cordisTemplate = `# Generated by Yao DSH Runner
-- id: yaoapp-jsonrpc-stream
-  name: '@deepseek-ai/dsh-yaoapp-jsonrpc-stream'
-  config:
-    maxTokensAsSuccess: true
-```
-
-**依据 5 · 源码核查**：[agent/task/run.go:204-238](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L204-L238)
-
-完成状态按执行错误及异步enrich处理
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-	_, err := AssistantStreamFn(task.AssistantID, agentCtx, inputToAgentMessages(req.Messages), opts)
-
-	var finalErr error
-	status := "completed"
-
-	if stdCtx.Err() == context.DeadlineExceeded {
-		finalErr = fmt.Errorf("timeout after %s", resolved.Timeout)
-		status = "failed"
-		markFailed(dc, auth, finalErr)
-	} else if dc.Context.Err() != nil && isContextCanceled(err) {
-		status = "cancelled"
-		finalErr = errUserCancelled
-		dc.Broadcast(&message.Message{
-			Type:  "text",
-			Props: map[string]interface{}{"content": "\n\n---\n*[任务已被用户取消]*"},
-		})
-		setStatus(dc.ChatID, "cancelled", auth, map[string]any{
-			"cancelled_at":  time.Now(),
-			"cancel_reason": "user_stopped",
-		})
-	} else if err != nil {
-		finalErr = err
-		status = "failed"
-		markFailed(dc, auth, finalErr)
-	}
-
-	dc.SetStatus(DaemonStopped)
-	logTaskCompleted(dc.ChatID, columnID, task.AssistantID, status, time.Since(daemonStart), finalErr)
-
-	isFirstRun := (task.RunCount <= 1)
-	recentTexts := collectConversationText(req.Messages, dc)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		enrichTaskResult(dc.ChatID, auth, isFirstRun, finalErr, recentTexts, req.Locale)
-```
-
-</details>
-
-**依据 6 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:60-88](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L60-L88)
-
-准备材料写入失败只warn，RunSteps异常才返回失败
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-	if ws := req.Computer.Workplace(); ws != nil {
-		if err := shared.InjectSystemSkills(ws, tools.SkillsFS, ".dsh/skills"); err != nil {
-			r.logger.Warn("inject system skills: %v", err)
-		}
-		if err := shared.InjectAgentDefinitions(ws, tools.AgentsFS, prefix+"/agents"); err != nil {
-			r.logger.Warn("inject agent definitions: %v", err)
-		}
-
-		prompt, _ := tools.RenderSystemPrompt(hasVision)
-
-		if err := shared.AppendSystemPrompt(ws, "AGENTS.md", prompt); err != nil {
-			r.logger.Warn("append AGENTS.md: %v", err)
-		}
-	}
-
-	if req.SkillsDir != "" {
-		ws := req.Computer.Workplace()
-		if ws != nil {
-			src := "local:///" + req.SkillsDir
-			dst := prefix + "/skills"
-			if _, err := ws.Copy(src, dst); err != nil {
-				r.logger.Warn("copy skills %s -> %s: %v", src, dst, err)
-			}
-		}
-	}
-
-	if req.RunSteps != nil && len(steps) > 0 {
-		if err := req.RunSteps(ctx, steps, req.Computer, req.AssistantID, req.ConfigHash, req.AssistantDir); err != nil {
-			return fmt.Errorf("dsh prepare steps: %w", err)
-```
-
-</details>
-
-**依据 7 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:181-200](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L181-L200)
-
-正常completed的Cleanup保留child processes，非completed才按session或通用名清理
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-// Cleanup kills any remaining DSH processes.
-func (r *Runner) Cleanup(ctx context.Context, computer infra.Computer) error {
-	if computer == nil {
-		return nil
-	}
-
-	log.Trace("[dsh-runner] Cleanup: chatID=%s lastCompleted=%v", r.lastChatID, r.lastCompleted)
-
-	if r.lastCompleted {
-		if r.logger != nil {
-			r.logger.Info("cleanup: stream completed normally, preserving child processes")
-		}
-		return nil
-	}
-
-	p := resolvePlatform(computer)
-	if r.lastChatID != "" {
-		computer.Exec(ctx, p.KillSessionCmd("dsh-"+r.lastChatID))
-	} else {
-		computer.Exec(ctx, p.KillCmd("dsh-jsonrpc-agent"))
-```
-
-</details>
-
-#### 缺口
-
-- 节点掉线回退后的工作区定位、准备警告、遗留子进程及交付完整性未知
-  **影响**：不能把重新调度/任务completed当原工作区办结或自动回滚
-  **进一步探讨**：在两个可丢弃节点中断绑定节点，核对调度、实际写路径、task状态及验收产物
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 哪些依赖属于平台部署，哪些只属于DSH接入？
-
-**研究主题**：依赖、兼容与流程
-
-#### 完整回答
-
-平台需要Yao运行环境、数据存储/认证和可用Tai节点；源码构建声明Go1.25且有V8、数据库、Docker/K8s等依赖，不能要求用户为了试一插件装整套默认服务。DSH任务另需目标Computer可执行对应平台命令、模型路由与凭据，以及配置模板列出的DSH模块。OpenAPI workspace挂OAuth.Guard并按Owner检查，实际团队/节点授权需独立验收。容器或Host模式是条件分支，不都等价安全。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[go.mod:1-3](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/go.mod#L1-L3)
-
-源码构建Go要求
-
-```text
-module github.com/yaoapp/yao
-
-go 1.25.0
-```
-
-**依据 2 · 源码核查**：[go.mod:38-62](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/go.mod#L38-L62)
-
-依赖栈
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-	github.com/pkoukk/tiktoken-go v0.1.7
-	github.com/pmezard/go-difflib v1.0.0
-	github.com/pquerna/otp v1.5.0
-	github.com/shirou/gopsutil/v4 v4.26.5
-	github.com/spf13/cast v1.9.2
-	github.com/spf13/cobra v1.9.1
-	github.com/stretchr/testify v1.11.1
-	github.com/xuri/excelize/v2 v2.11.0
-	github.com/yaoapp/gou v0.10.3
-	github.com/yaoapp/kun v0.9.0
-	github.com/yaoapp/xun v0.9.0
-	go.mongodb.org/mongo-driver v1.17.9
-	golang.org/x/crypto v0.55.0
-	golang.org/x/image v0.44.0
-	golang.org/x/net v0.58.0
-	golang.org/x/sys v0.47.0
-	golang.org/x/text v0.41.0
-	google.golang.org/grpc v1.83.2
-	google.golang.org/protobuf v1.36.11
-	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	gopkg.in/yaml.v3 v3.0.1
-	k8s.io/api v0.34.1
-	k8s.io/apimachinery v0.34.1
-	k8s.io/client-go v0.34.1
-	rogchap.com/v8go v0.9.0
-```
-
-</details>
-
-**依据 3 · 源码核查**：[openapi/workspace/workspace.go:26-40](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/openapi/workspace/workspace.go#L26-L40)
-
-workspace API OAuth挂载
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-// Attach registers workspace management routes on the given group.
-//   - GET    /               — list workspaces (filtered by owner from token)
-//   - POST   /               — create workspace (owner from token)
-//   - GET    /:id            — get workspace (owner check)
-//   - PUT    /:id            — update workspace (owner check)
-//   - DELETE /:id            — delete workspace (owner check)
-//   - GET    /:id/files      — list files
-//   - GET    /:id/files/*path — read file
-//   - PUT    /:id/files/*path — write file
-//   - DELETE /:id/files/*path — delete file
-//   - POST   /:id/mkdir      — create directory
-//   - POST   /:id/rename     — rename file/directory
-//   - GET    /:id/rootdir   — get workspace root directory absolute path
-func Attach(group *gin.RouterGroup, oauth types.OAuth) {
-	group.Use(oauth.Guard)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[openapi/workspace/workspace.go:84-105](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/openapi/workspace/workspace.go#L84-L105)
-
-Owner检查逻辑
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-// resolveOwner returns TeamID if present, otherwise UserID.
-func resolveOwner(authInfo *types.AuthorizedInfo) string {
-	if authInfo != nil && authInfo.TeamID != "" {
-		return authInfo.TeamID
-	}
-	if authInfo != nil {
-		return authInfo.UserID
-	}
-	return ""
-}
-
-// checkWSOwner verifies the caller owns the workspace.
-func checkWSOwner(c *gin.Context, w *ws.Workspace, owner string) bool {
-	if owner == "" {
-		c.JSON(http.StatusForbidden, gin.H{"error": "identity required to access workspace"})
+func (p *streamParser) handleSessionStatus(raw json.RawMessage) (stopped bool) {
+	var params sessionStatusParams
+	if err := json.Unmarshal(raw, &params); err != nil {
 		return false
 	}
-	if w.Owner != "" && w.Owner != owner {
-		c.JSON(http.StatusForbidden, gin.H{"error": "no permission to access this workspace"})
-		return false
-	}
-	return true
-```
-
-</details>
-
-**依据 5 · 源码核查**：[agent/sandbox/v2/dsh/config.go:25-40](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/config.go#L25-L40)
-
-DSH connector模块
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-const cordisTemplate = `# Generated by Yao DSH Runner
-- id: yaoapp-jsonrpc-stream
-  name: '@deepseek-ai/dsh-yaoapp-jsonrpc-stream'
-  config:
-    maxTokensAsSuccess: true
-{{- if .PiAiRoutes }}
-
-- id: llm-pi-ai
-  name: '@deepseek-ai/dsh-llm-pi-ai'
-  config:
-    providers:
-{{- range .PiAiRoutes }}
-      {{ .Name }}:
-        api: {{ .API }}
-        baseURL: {{ .BaseURL }}
-        apiKeyEnv: {{ .APIKeyEnv }}
-```
-
-</details>
-
-**依据 6 · 源码核查**：[agent/sandbox/v2/dsh/config.go:86-117](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/config.go#L86-L117)
-
-平台shell与子进程
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-- id: subprocess
-  name: '@deepseek-ai/dsh-subprocess-local'
-
-{{- if .IsWindows }}
-
-- id: pwsh
-  name: '@deepseek-ai/dsh-pwsh-local'
-  config:
-    cwd: !!js process.env.DSH_CWD ?? process.cwd()
-    timeoutMs: 120000
-
-- id: shell-env
-  name: '@deepseek-ai/dsh-shell-env'
-
-- id: tool-pwsh
-  name: '@deepseek-ai/dsh-tool-pwsh'
-
-{{- else }}
-
-- id: bash
-  name: '@deepseek-ai/dsh-bash-local'
-  config:
-    cwd: !!js process.env.DSH_CWD ?? process.cwd()
-    timeoutMs: 120000
-
-- id: shell-env
-  name: '@deepseek-ai/dsh-shell-env'
-
-- id: tool-bash
-  name: '@deepseek-ai/dsh-tool-bash'
-  config:
-    enableRunInBackground: false
-```
-
-</details>
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 自托管跨设备便利把哪些成本交给使用者？
-
-**研究主题**：效果与总成本
-
-#### 完整回答
-
-首次包括平台部署、节点接入、模型/权限配置、工作区和数据备份；持续承担机器在线、模型调用、数据库与节点维护，任务并发配额不是费用上限。DSH准备会改AGENTS.md和技能目录；取消先发RPC再shutdown、SIGTERM、强杀，只停止执行不补偿文件或外部动作。退出应先停队列并导出工作区/状态，再回到逐机CLI，已产生副作用由人工核查。金额、人时、失败重试与合格任务成本均未量化。 正常完成会有意保留child processes，因此停队列之外还要由节点管理员核对持续进程；目前没有完整进程/状态退出实证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:60-88](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L60-L88)
-
-准备阶段文件副作用
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-	if ws := req.Computer.Workplace(); ws != nil {
-		if err := shared.InjectSystemSkills(ws, tools.SkillsFS, ".dsh/skills"); err != nil {
-			r.logger.Warn("inject system skills: %v", err)
-		}
-		if err := shared.InjectAgentDefinitions(ws, tools.AgentsFS, prefix+"/agents"); err != nil {
-			r.logger.Warn("inject agent definitions: %v", err)
-		}
-
-		prompt, _ := tools.RenderSystemPrompt(hasVision)
-
-		if err := shared.AppendSystemPrompt(ws, "AGENTS.md", prompt); err != nil {
-			r.logger.Warn("append AGENTS.md: %v", err)
-		}
-	}
-
-	if req.SkillsDir != "" {
-		ws := req.Computer.Workplace()
-		if ws != nil {
-			src := "local:///" + req.SkillsDir
-			dst := prefix + "/skills"
-			if _, err := ws.Copy(src, dst); err != nil {
-				r.logger.Warn("copy skills %s -> %s: %v", src, dst, err)
-			}
-		}
-	}
-
-	if req.RunSteps != nil && len(steps) > 0 {
-		if err := req.RunSteps(ctx, steps, req.Computer, req.AssistantID, req.ConfigHash, req.AssistantDir); err != nil {
-			return fmt.Errorf("dsh prepare steps: %w", err)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[agent/task/quota.go:24-43](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/quota.go#L24-L43)
-
-并发配额非预算
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-// GlobalQuota is the singleton quota manager
-var GlobalQuota = &QuotaManager{
-	running: make(map[string]int),
-	queue:   make(map[string]*priorityQueue),
-	limits:  make(map[string]int),
+	// session.status:idle no longer drives completion — the Node side sends
+	// session.completed after all descendants (subagents, team members, goal
+	// rounds) have settled.  Keeping idle as a pure status notification
+	// preserves event ordering for consumers that only observe status.
+	return false
 }
 
-const defaultQuotaLimit = 9
-
-// TryAcquire atomically checks and increments running count.
-// Returns true if slot acquired, false if at limit.
-func (qm *QuotaManager) TryAcquire(teamID, roleID string) bool {
-	qm.mu.Lock()
-	defer qm.mu.Unlock()
-	limit := qm.resolveLimit(teamID, roleID)
-	if qm.running[teamID] >= limit {
+// handleSessionCompleted processes the session.completed notification sent by
+// the Node side after the root agent and all descendant subagents are quiescent.
+func (p *streamParser) handleSessionCompleted(raw json.RawMessage) (stopped bool) {
+	var params sessionStatusParams
+	if err := json.Unmarshal(raw, &params); err != nil {
 		return false
 	}
-	qm.running[teamID]++
-	return true
+	if p.promptedSessionID != "" && params.SessionID != p.promptedSessionID {
+		return false
+	}
+	p.closeTextMessage()
+	p.closeThinkMessage()
+	p.closeOrphanedTools()
+	p.closeActiveLoading()
+	p.completed = true
+	return false
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[agent/sandbox/v2/dsh/session.go:130-181](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/session.go#L130-L181)
+**依据 2 · 源码核查**：[agent/sandbox/v2/dsh/parse.go:685-694](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/parse.go#L685-L694)
 
-分层取消与强杀
+turn 异常通过错误事件报告，并不在该函数返回错误值。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-func (s *session) watchCancel() func() {
-	done := make(chan struct{})
-	go func() {
-		select {
-		case <-s.ctx.Done():
-			s.logger.Info("context cancelled, initiating graceful stop")
-			stdinOK := true
-
-			// Layer 1: session/cancel RPC (idempotent x3, 1s each)
-			if stdinOK {
-				for i := 0; i < 3; i++ {
-					if err := s.writeStdin(s.buildCancelRPC()); err != nil {
-						s.logger.Warn("stdin broken, skipping to signal layer: %v", err)
-						stdinOK = false
-						break
-					}
-					if s.waitDone(done, 1*time.Second) {
-						return
-					}
-				}
-			}
-
-			// Layer 2: shutdown RPC (1s)
-			if stdinOK {
-				s.logger.Warn("cancel timeout, sending shutdown RPC")
-				if err := s.writeStdin(s.buildShutdownRPC()); err != nil {
-					stdinOK = false
-				} else if s.waitDone(done, 1*time.Second) {
-					return
-				}
-			}
-
-			// Layer 3: SIGTERM (POSIX only, 2s)
-			if s.plat.OS() != "windows" {
-				s.logger.Warn("stdin layers exhausted, sending SIGTERM")
-				s.gracefulKill()
-				if s.waitDone(done, 2*time.Second) {
-					return
-				}
-			}
-
-			// Layer 4: SIGKILL / taskkill /F
-			s.logger.Error("dsh hung, force killing")
-			killCtx, killCancel := context.WithTimeout(context.Background(), 5*time.Second)
-			defer killCancel()
-			s.killProcess(killCtx)
-			s.exec.Cancel()
-
-		case <-done:
+	// Surface DSH errors with full detail from the reason payload
+	if kind, ok := te.Reason["kind"].(string); ok && kind != "completed" && kind != "stop" {
+		errMsg := formatTurnError(te.Reason)
+		log.Warn("[dsh-parse] turn ended with error: kind=%s msg=%s", kind, errMsg)
+		if p.handler != nil {
+			p.handler(message.ChunkError, []byte(errMsg))
 		}
-	}()
-	return func() { close(done) }
+	}
+
+	return false
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[workspace/workspace.go:40-61](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/workspace/workspace.go#L40-L61)
+**依据 3 · 源码核查**：[agent/sandbox/v2/dsh/session.go:71-101](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/session.go#L71-L101)
 
-持久状态与节点归属
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-const metadataFile = ".workspace.json"
-
-// Workspace is a persistent, user-managed storage entity.
-// It is pinned to a specific Tai node (host machine) at creation time;
-// containers referencing this workspace are automatically routed to that node.
-type Workspace struct {
-	ID        string            `json:"id"`
-	Name      string            `json:"name"`
-	Owner     string            `json:"owner"`
-	Node      string            `json:"node"`
-	Labels    map[string]string `json:"labels,omitempty"`
-	CreatedAt time.Time         `json:"created_at"`
-	UpdatedAt time.Time         `json:"updated_at"`
-}
-
-// CreateOptions configures a new workspace.
-type CreateOptions struct {
-	ID     string            // explicit ID; empty = auto-generate (uuid)
-	Name   string            // human-readable name
-	Owner  string            // user ID
-	Node   string            // target Tai node (required)
-	Labels map[string]string // arbitrary metadata
-```
-
-</details>
-
-**依据 5 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:181-200](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L181-L200)
-
-正常完成保留子进程，不能把停任务当清空节点
+无完成事件、等待正常且没有 stderr 时可返回 false 与 nil。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-// Cleanup kills any remaining DSH processes.
-func (r *Runner) Cleanup(ctx context.Context, computer infra.Computer) error {
-	if computer == nil {
-		return nil
-	}
-
-	log.Trace("[dsh-runner] Cleanup: chatID=%s lastCompleted=%v", r.lastChatID, r.lastCompleted)
-
-	if r.lastCompleted {
-		if r.logger != nil {
-			r.logger.Info("cleanup: stream completed normally, preserving child processes")
-		}
-		return nil
-	}
-
-	p := resolvePlatform(computer)
-	if r.lastChatID != "" {
-		computer.Exec(ctx, p.KillSessionCmd("dsh-"+r.lastChatID))
-	} else {
-		computer.Exec(ctx, p.KillCmd("dsh-jsonrpc-agent"))
-```
-
-</details>
-
-#### 缺口
-
-- 同任务跨设备部署/维护/中断恢复总人时和资源费用未知
-  **影响**：无法判断统一平台是否覆盖自托管负担
-  **进一步探讨**：固定两节点任务对照逐机CLI，记录接入、日常操作、取消后清理及总模型费用
-
-<a id="research-q07"></a>
-
-<a id="detail-section-17"></a>
-
-### Q07 · 哪些调度与协议设计可借鉴，哪部分未审阅？
-
-**研究主题**：工程质量与复用
-
-#### 完整回答
-
-可借鉴daemonRegistry的同chat执行去重、团队配额队列、workspace身份绑定和分层取消。DSH会话层区分completed事件、非零退出及零退出但stderr且不完整，避免仅由退出码决定成功；取消尽量先协议结束再强杀，仍需要验证取消后副作用。迁移要携带Computer抽象、chat身份和配置模板，并处理多个平台差异。本轮只抽读这些Go关键路径，inventory的JS/TS/Markdown统计不覆盖Go主体，也不是整个框架审计。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[agent/task/run.go:27-81](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L27-L81)
-
-去重与配额
-
-<details>
-<summary>查看原文（55行）</summary>
-
-```text
-// Run starts or queues a task execution. Atomic operation (no LLM enrichment).
-func Run(ctx context.Context, auth *process.AuthorizedInfo, chatID string, req *RunReq) (*RunResult, error) {
-	task, err := Get(ctx, auth, chatID)
-	if err != nil {
-		return nil, err
-	}
-
-	dc := newDaemonContext(chatID)
-	if _, loaded := daemonRegistry.LoadOrStore(chatID, dc); loaded {
-		return nil, fmt.Errorf("task %s is already running or queued", chatID)
-	}
-	fmt.Printf("  • [task.run] daemon REGISTERED chatID=%s\n", chatID)
-
-	now := time.Now()
-	requestID := uuid.New().String()
-
-	if !GlobalQuota.TryAcquire(auth.TeamID, "") {
-		setStatus(chatID, "queued", auth, map[string]any{
-			"queued_at":      now,
-			"queue_priority": req.Priority,
-		})
-		entry := GlobalQuota.Enqueue(auth.TeamID, chatID, req.Priority)
-		daemonWg.Add(1)
-		go func() {
-			defer daemonWg.Done()
-			select {
-			case <-entry.ready:
-				defer GlobalQuota.Release(auth.TeamID)
-				defer recoverDaemonPanic(dc)
-				setStatus(chatID, "running", auth, nil)
-				runDaemon(dc, auth, req, task)
-			case <-dc.Context.Done():
-				GlobalQuota.Dequeue(auth.TeamID, chatID)
-				setStatus(chatID, "cancelled", auth, map[string]any{
-					"cancelled_at":  time.Now(),
-					"cancel_reason": "cancelled_while_queued",
-				})
-				dc.CloseSubscribers()
-				UnregisterDaemon(chatID)
-			}
-		}()
-		pos := GlobalQuota.QueuePosition(auth.TeamID, chatID)
-		return &RunResult{ChatID: chatID, Status: "queued", RequestID: requestID, Position: pos}, nil
-	}
-
-	setStatus(chatID, "running", auth, map[string]any{"started_at": now})
-	incrementRunCount(chatID)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		defer GlobalQuota.Release(auth.TeamID)
-		defer recoverDaemonPanic(dc)
-		runDaemon(dc, auth, req, task)
-	}()
-	return &RunResult{ChatID: chatID, Status: "running", RequestID: requestID}, nil
-```
-
-</details>
-
-**依据 2 · 源码核查**：[agent/sandbox/v2/dsh/session.go:60-100](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/session.go#L60-L100)
-
-完成与退出/错误分离
-
-<details>
-<summary>查看原文（41行）</summary>
-
-```text
-func (s *session) runStream(handler message.StreamFunc) (completed bool, err error) {
-	s.collectStderr()
-
-	cleanup := s.watchCancel()
-	defer cleanup()
-
-	parser := newStreamParser(handler, s.chatID, s.locale, s.prepareLoadingMsgID)
-	parseErr := parser.parse(s.ctx, s.exec.Stdout)
-
-	s.logger.Debug("runStream: parse returned completed=%v parseErr=%v", parser.completed, parseErr)
-
 	if parser.completed {
 		s.logger.Info("dsh stream completed normally")
 		return true, nil
@@ -1549,348 +868,142 @@ func (s *session) runStream(handler message.StreamFunc) (completed bool, err err
 	}
 
 	return false, nil
-```
-
-</details>
-
-**依据 3 · 源码核查**：[agent/sandbox/v2/dsh/session.go:130-181](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/session.go#L130-L181)
-
-分层取消
-
-<details>
-<summary>查看原文（52行）</summary>
-
-```text
-func (s *session) watchCancel() func() {
-	done := make(chan struct{})
-	go func() {
-		select {
-		case <-s.ctx.Done():
-			s.logger.Info("context cancelled, initiating graceful stop")
-			stdinOK := true
-
-			// Layer 1: session/cancel RPC (idempotent x3, 1s each)
-			if stdinOK {
-				for i := 0; i < 3; i++ {
-					if err := s.writeStdin(s.buildCancelRPC()); err != nil {
-						s.logger.Warn("stdin broken, skipping to signal layer: %v", err)
-						stdinOK = false
-						break
-					}
-					if s.waitDone(done, 1*time.Second) {
-						return
-					}
-				}
-			}
-
-			// Layer 2: shutdown RPC (1s)
-			if stdinOK {
-				s.logger.Warn("cancel timeout, sending shutdown RPC")
-				if err := s.writeStdin(s.buildShutdownRPC()); err != nil {
-					stdinOK = false
-				} else if s.waitDone(done, 1*time.Second) {
-					return
-				}
-			}
-
-			// Layer 3: SIGTERM (POSIX only, 2s)
-			if s.plat.OS() != "windows" {
-				s.logger.Warn("stdin layers exhausted, sending SIGTERM")
-				s.gracefulKill()
-				if s.waitDone(done, 2*time.Second) {
-					return
-				}
-			}
-
-			// Layer 4: SIGKILL / taskkill /F
-			s.logger.Error("dsh hung, force killing")
-			killCtx, killCancel := context.WithTimeout(context.Background(), 5*time.Second)
-			defer killCancel()
-			s.killProcess(killCtx)
-			s.exec.Cancel()
-
-		case <-done:
-		}
-	}()
-	return func() { close(done) }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[go.mod:1-3](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/go.mod#L1-L3)
-
-Go主体口径
-
-```text
-module github.com/yaoapp/yao
-
-go 1.25.0
-```
-
-<a id="research-q08"></a>
-
-<a id="detail-section-18"></a>
-
-### Q08 · 怎样把“任务运行结束”升级为可核查办结？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是给每个任务增加节点/workspace身份、预期产物和独立验收结果三联收据，将执行结束、结果待验和真正办结区分。由任务completed只反映执行错误，以及离线回退和取消副作用推得，可能比继续增加入口更能提高跨设备信任。最小验证在同任务注入max-token终止、节点掉线和产物缺失，对照原状态和三联收据，测错误办结识别率、重复执行及人工核对时间；若不能在副作用发生前锁定身份或维护成本超过收益则否定。此设计未在当前提交证实，不计入现有贡献。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[agent/task/run.go:204-238](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L204-L238)
-
-执行状态与结果enrich分离
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-	_, err := AssistantStreamFn(task.AssistantID, agentCtx, inputToAgentMessages(req.Messages), opts)
-
-	var finalErr error
-	status := "completed"
-
-	if stdCtx.Err() == context.DeadlineExceeded {
-		finalErr = fmt.Errorf("timeout after %s", resolved.Timeout)
-		status = "failed"
-		markFailed(dc, auth, finalErr)
-	} else if dc.Context.Err() != nil && isContextCanceled(err) {
-		status = "cancelled"
-		finalErr = errUserCancelled
-		dc.Broadcast(&message.Message{
-			Type:  "text",
-			Props: map[string]interface{}{"content": "\n\n---\n*[任务已被用户取消]*"},
-		})
-		setStatus(dc.ChatID, "cancelled", auth, map[string]any{
-			"cancelled_at":  time.Now(),
-			"cancel_reason": "user_stopped",
-		})
-	} else if err != nil {
-		finalErr = err
-		status = "failed"
-		markFailed(dc, auth, finalErr)
-	}
-
-	dc.SetStatus(DaemonStopped)
-	logTaskCompleted(dc.ChatID, columnID, task.AssistantID, status, time.Since(daemonStart), finalErr)
-
-	isFirstRun := (task.RunCount <= 1)
-	recentTexts := collectConversationText(req.Messages, dc)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		enrichTaskResult(dc.ChatID, auth, isFirstRun, finalErr, recentTexts, req.Locale)
-```
-
-</details>
-
-**依据 2 · 源码核查**：[agent/sandbox/v2/dsh/config.go:25-29](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/config.go#L25-L29)
-
-maxTokensAsSuccess
-
-```text
-const cordisTemplate = `# Generated by Yao DSH Runner
-- id: yaoapp-jsonrpc-stream
-  name: '@deepseek-ai/dsh-yaoapp-jsonrpc-stream'
-  config:
-    maxTokensAsSuccess: true
-```
-
-**依据 3 · 源码核查**：[agent/sandbox/v2/node_selector.go:94-107](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/node_selector.go#L94-L107)
-
-节点回退边界
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-					mode := resolve.ResolveMode(&nodes[i], runner, criteria.Image)
-					if mode == "" {
-						return nil, fmt.Errorf("workspace-bound node %q has no feasible execution mode for runner %q (CanBox=%v CanHost=%v image=%q)", nodeID, runner, nodes[i].CanBox, nodes[i].CanHost, criteria.Image)
-					}
-					return &SelectionResult{
-						NodeID:  nodeID,
-						Runner:  runner,
-						Mode:    mode,
-						IsLocal: nodes[i].IsLocal,
-					}, nil
-				}
-			}
-			if !found {
-				log.Warn("[node_selector] workspace %q bound to node %q, but node is offline or removed; falling through to normal selection", criteria.WorkspaceID, nodeID)
-```
-
-</details>
-
-<a id="research-q09"></a>
-
-<a id="detail-section-19"></a>
-
-### Q09 · 谁值得限定试用，何时退回分散CLI？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-当前建议有多机需求且能承担自托管的团队先观察，在隔离节点做架构核验，不把真实业务迁入平台。源码提供集中队列和workspace身份，但准备失败仅warn、正常完成保留子进程，以及离线调度的数据落位尚未闭合。先核对准备完整、节点身份和全部持续进程，再决定是否值得小任务试用；出现不明子进程、completed缺产物或绑定节点掉线时暂停新任务，保留工作区与状态，交由节点管理员手工接管并退回逐机CLI。根仓库不是装入日常DSH的bundle。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[workspace/workspace.go:40-61](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/workspace/workspace.go#L40-L61)
-
-workspace/node身份
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-const metadataFile = ".workspace.json"
-
-// Workspace is a persistent, user-managed storage entity.
-// It is pinned to a specific Tai node (host machine) at creation time;
-// containers referencing this workspace are automatically routed to that node.
-type Workspace struct {
-	ID        string            `json:"id"`
-	Name      string            `json:"name"`
-	Owner     string            `json:"owner"`
-	Node      string            `json:"node"`
-	Labels    map[string]string `json:"labels,omitempty"`
-	CreatedAt time.Time         `json:"created_at"`
-	UpdatedAt time.Time         `json:"updated_at"`
 }
-
-// CreateOptions configures a new workspace.
-type CreateOptions struct {
-	ID     string            // explicit ID; empty = auto-generate (uuid)
-	Name   string            // human-readable name
-	Owner  string            // user ID
-	Node   string            // target Tai node (required)
-	Labels map[string]string // arbitrary metadata
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[agent/task/run.go:204-238](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/task/run.go#L204-L238)
+**依据 4 · 源码核查**：[agent/sandbox/v2/dsh/session.go:275-293](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/session.go#L275-L293)
 
-独立验收必要性
+解析、等待和非零退出分别返回错误，干净退出可返回 nil。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-	_, err := AssistantStreamFn(task.AssistantID, agentCtx, inputToAgentMessages(req.Messages), opts)
+	if parseErr != nil {
+		if stderrStr != "" {
+			return fmt.Errorf("%w (stderr: %s)", parseErr, stderrStr)
+		}
+		return parseErr
+	}
+	if waitErr != nil {
+		if stderrStr != "" {
+			return fmt.Errorf("%w (stderr: %s)", waitErr, stderrStr)
+		}
+		return waitErr
+	}
+	if exitCode != 0 {
+		if stderrStr != "" {
+			return fmt.Errorf("dsh exited with code %d: %s", exitCode, stderrStr)
+		}
+		return fmt.Errorf("dsh exited with code %d", exitCode)
+	}
+	return nil
+```
 
-	var finalErr error
-	status := "completed"
+</details>
 
-	if stdCtx.Err() == context.DeadlineExceeded {
-		finalErr = fmt.Errorf("timeout after %s", resolved.Timeout)
-		status = "failed"
-		markFailed(dc, auth, finalErr)
-	} else if dc.Context.Err() != nil && isContextCanceled(err) {
-		status = "cancelled"
-		finalErr = errUserCancelled
-		dc.Broadcast(&message.Message{
-			Type:  "text",
-			Props: map[string]interface{}{"content": "\n\n---\n*[任务已被用户取消]*"},
-		})
-		setStatus(dc.ChatID, "cancelled", auth, map[string]any{
-			"cancelled_at":  time.Now(),
-			"cancel_reason": "user_stopped",
-		})
-	} else if err != nil {
-		finalErr = err
-		status = "failed"
-		markFailed(dc, auth, finalErr)
+**依据 5 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:160-178](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/runner.go#L160-L178)
+
+正常完成走 shutdown，未完成且无错误也返回 nil。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+	sess, err := startSession(ctx, computer, p, cmd, cmd.sessionID, r.logger, req.Locale, req.PrepareLoadingMsgID)
+	if err != nil {
+		return err
+	}
+	defer sess.exec.Cancel()
+
+	completed, streamErr := sess.runStream(handler)
+	r.lastCompleted = completed
+
+	if completed {
+		sess.shutdown()
+		return nil
 	}
 
-	dc.SetStatus(DaemonStopped)
-	logTaskCompleted(dc.ChatID, columnID, task.AssistantID, status, time.Since(daemonStart), finalErr)
+	if streamErr != nil {
+		return streamErr
+	}
 
-	isFirstRun := (task.RunCount <= 1)
-	recentTexts := collectConversationText(req.Messages, dc)
-	daemonWg.Add(1)
-	go func() {
-		defer daemonWg.Done()
-		enrichTaskResult(dc.ChatID, auth, isFirstRun, finalErr, recentTexts, req.Locale)
+	return nil
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[agent/sandbox/v2/dsh/session.go:130-181](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/session.go#L130-L181)
+**依据 6 · 源码核查**：[agent/sandbox/v2/stream.go:107-127](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/stream.go#L107-L127)
 
-取消及退出边界
+Runner 无错误时构造 stop 响应。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-func (s *session) watchCancel() func() {
-	done := make(chan struct{})
-	go func() {
-		select {
-		case <-s.ctx.Done():
-			s.logger.Info("context cancelled, initiating graceful stop")
-			stdinOK := true
+	err := req.Runner.Stream(runnerCtx, req.StreamReq, wrappedHandler)
 
-			// Layer 1: session/cancel RPC (idempotent x3, 1s each)
-			if stdinOK {
-				for i := 0; i < 3; i++ {
-					if err := s.writeStdin(s.buildCancelRPC()); err != nil {
-						s.logger.Warn("stdin broken, skipping to signal layer: %v", err)
-						stdinOK = false
-						break
-					}
-					if s.waitDone(done, 1*time.Second) {
-						return
-					}
-				}
-			}
+	if !loadingClosed && req.LoadingMsgID != "" {
+		closeLoading(ctx, req.LoadingMsgID)
+	}
 
-			// Layer 2: shutdown RPC (1s)
-			if stdinOK {
-				s.logger.Warn("cancel timeout, sending shutdown RPC")
-				if err := s.writeStdin(s.buildShutdownRPC()); err != nil {
-					stdinOK = false
-				} else if s.waitDone(done, 1*time.Second) {
-					return
-				}
-			}
-
-			// Layer 3: SIGTERM (POSIX only, 2s)
-			if s.plat.OS() != "windows" {
-				s.logger.Warn("stdin layers exhausted, sending SIGTERM")
-				s.gracefulKill()
-				if s.waitDone(done, 2*time.Second) {
-					return
-				}
-			}
-
-			// Layer 4: SIGKILL / taskkill /F
-			s.logger.Error("dsh hung, force killing")
-			killCtx, killCancel := context.WithTimeout(context.Background(), 5*time.Second)
-			defer killCancel()
-			s.killProcess(killCtx)
-			s.exec.Cancel()
-
-		case <-done:
+	if err != nil {
+		if errors.Is(err, context.Canceled) {
+			return nil, err
 		}
-	}()
-	return func() { close(done) }
+		return nil, fmt.Errorf("runner.Stream: %w", err)
+	}
+
+	resp := &agentContext.CompletionResponse{
+		Role:         "assistant",
+		FinishReason: agentContext.FinishReasonStop,
+	}
+	if len(textContent) > 0 {
+		resp.Content = string(textContent)
+	}
+	return resp, nil
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:181-200](https://github.com/YaoApp/yao/blob/22a7a2c3ea76ad37d19c19bf06457115c79bd7e3/agent/sandbox/v2/dsh/runner.go#L181-L200)
+**依据 7 · 源码核查**：[agent/sandbox/v2/dsh/session.go:222-239](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/session.go#L222-L239)
 
-观察而非直接试用由正常完成保留子进程边界支持
+完成时关闭 stdin 并在宽限后尝试强制清理。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（18行）</summary>
+
+```text
+func (s *session) shutdown() {
+	s.logger.Info("shutting down completed dsh session: chatID=%s", s.chatID)
+
+	// Close stdin → DSH detects EOF → triggers natural exit via onIdle handler.
+	if s.exec.Stdin != nil {
+		s.exec.Stdin.Close()
+	}
+
+	// Grace period: let DSH flush write-behind buffer (~200ms), dispose
+	// plugins, and kill child processes on its own.
+	time.Sleep(2 * time.Second)
+
+	// Safety net: force kill anything still lingering.
+	killCtx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	s.killProcess(killCtx)
+	s.exec.Cancel()
+}
+```
+
+</details>
+
+**依据 8 · 源码核查**：[agent/sandbox/v2/dsh/runner.go:181-203](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/runner.go#L181-L203)
+
+常规 Cleanup 对已完成运行早退，对未完成尝试杀进程。
+
+<details>
+<summary>查看原文（23行）</summary>
 
 ```text
 // Cleanup kills any remaining DSH processes.
@@ -1913,8 +1026,336 @@ func (r *Runner) Cleanup(ctx context.Context, computer infra.Computer) error {
 		computer.Exec(ctx, p.KillSessionCmd("dsh-"+r.lastChatID))
 	} else {
 		computer.Exec(ctx, p.KillCmd("dsh-jsonrpc-agent"))
+	}
+
+	return nil
 ```
 
 </details>
+
+**依据 9 · 源码核查**：[agent/sandbox/v2/dsh/session.go:138-177](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/session.go#L138-L177)
+
+取消按 RPC、关闭、信号和强制终止逐级尝试。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+			// Layer 1: session/cancel RPC (idempotent x3, 1s each)
+			if stdinOK {
+				for i := 0; i < 3; i++ {
+					if err := s.writeStdin(s.buildCancelRPC()); err != nil {
+						s.logger.Warn("stdin broken, skipping to signal layer: %v", err)
+						stdinOK = false
+						break
+					}
+					if s.waitDone(done, 1*time.Second) {
+						return
+					}
+				}
+			}
+
+			// Layer 2: shutdown RPC (1s)
+			if stdinOK {
+				s.logger.Warn("cancel timeout, sending shutdown RPC")
+				if err := s.writeStdin(s.buildShutdownRPC()); err != nil {
+					stdinOK = false
+				} else if s.waitDone(done, 1*time.Second) {
+					return
+				}
+			}
+
+			// Layer 3: SIGTERM (POSIX only, 2s)
+			if s.plat.OS() != "windows" {
+				s.logger.Warn("stdin layers exhausted, sending SIGTERM")
+				s.gracefulKill()
+				if s.waitDone(done, 2*time.Second) {
+					return
+				}
+			}
+
+			// Layer 4: SIGKILL / taskkill /F
+			s.logger.Error("dsh hung, force killing")
+			killCtx, killCancel := context.WithTimeout(context.Background(), 5*time.Second)
+			defer killCancel()
+			s.killProcess(killCtx)
+			s.exec.Cancel()
+
+```
+
+</details>
+
+#### 缺口
+
+- 没有重放安静退出、异常事件后完成和远端写入后取消。
+  **影响**：能确认静态成功归类的条件，不能确定真实节点出现频率或副作用归属。
+  **进一步探讨**：以受控进程发出无完成事件的零退出，另注入提交后取消，对照实际产物与任务状态。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 何时值得隔离试用，需要哪些资源和退路？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+只有频繁在多台机器管理工作区，并能维护节点、权限和模型的团队，才有机会抵消平台成本。根源码用 Go 1.25 构建，DSH 路径要求选定节点能运行 tai dsh、写配置、访问所选模型。模式可为 host 或 box，镜像检查与拉取是 box 分支额外步骤。模型 Key 随执行环境传给子进程，接入须限制使用的凭据和节点。先准备无敏感文件的两个隔离节点，执行正常任务、绑定节点掉线和一次取消，核对实际工作区、产物、遗留进程及远端状态。出现数据落位不明或无完成回执的正常结束时暂停新增任务，保留原文件、日志和在途状态，回到逐机终端与人工任务板。未取得真实部署的模型账单或运维时间。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[go.mod:1-3](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/go.mod#L1-L3)
+
+根源码构建工具链要求。
+
+```text
+module github.com/yaoapp/yao
+
+go 1.25.0
+```
+
+**依据 2 · 源码核查**：[agent/assistant/sandbox_v2.go:169-196](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/assistant/sandbox_v2.go#L169-L196)
+
+仅 box 模式对镜像进行预检查和拉取。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+	// 6. Image pre-check + pull (box mode only).
+	if sel.Mode == "box" && cfg.Computer.Image != "" && manager != nil {
+		updateLoadingV2(ctx, loadingMsgID, "sandbox.starting")
+		exists, existsErr := manager.ImageExists(stdCtx, sel.NodeID, cfg.Computer.Image)
+		if existsErr != nil {
+			log.Printf("[sandbox/v2] image exists check failed on node %s: %v", sel.NodeID, existsErr)
+		}
+		if existsErr == nil && !exists {
+			updateLoadingV2(ctx, loadingMsgID, "sandbox.pulling_image")
+			var pullUserID, pullTeamID string
+			if ctx.Authorized != nil {
+				pullUserID = ctx.Authorized.UserID
+				pullTeamID = ctx.Authorized.TeamID
+			}
+			pullOpts := buildImagePullOptions(pullUserID, pullTeamID)
+			ch, pullErr := manager.PullImage(stdCtx, sel.NodeID, cfg.Computer.Image, pullOpts)
+			if pullErr != nil {
+				log.Printf("[sandbox/v2] image pull failed on node %s: %v (will retry in Create)", sel.NodeID, pullErr)
+			} else if ch != nil {
+				for p := range ch {
+					if p.Error != "" {
+						log.Printf("[sandbox/v2] image pull progress error: %s", p.Error)
+						break
+					}
+				}
+			}
+		}
+	}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[agent/sandbox/v2/dsh/command.go:201-225](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/command.go#L201-L225)
+
+模型 Key 和可选地址从连接设置写入子进程环境。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+func buildEnv(req *types.StreamRequest, p platform, workDir, apiKey, baseURL, systemPrompt string) map[string]string {
+	env := make(map[string]string)
+
+	// DSH-specific — DEEPSEEK_API_KEY always set for backward compatibility
+	env["DEEPSEEK_API_KEY"] = apiKey
+	if baseURL != "" {
+		env["DEEPSEEK_BASE_URL"] = baseURL
+	}
+
+	// Per-role API keys for pi-ai routes
+	env["DSH_KEY_PRIMARY"] = apiKey
+	for roleName, c := range req.Roles {
+		if c == nil || roleName == "default" {
+			continue
+		}
+		envName := "DSH_KEY_" + strings.ToUpper(roleName)
+		// Prefer DB-backed role LLMRef for API key
+		if req.RoleLLMs != nil {
+			if ref, ok := req.RoleLLMs[roleName]; ok && ref != nil && ref.Provider != nil {
+				env[envName] = ref.Provider.APIKey
+				continue
+			}
+		}
+		if lc, ok := c.(goullm.LLMConnector); ok {
+			env[envName] = lc.GetKey()
+```
+
+</details>
+
+**依据 4 · 源码核查**：[agent/sandbox/v2/dsh/plat_posix.go:42-54](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/dsh/plat_posix.go#L42-L54)
+
+选定环境需要运行 tai dsh 并能写配置。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+func (p *posixPlatform) BuildScript(in scriptInput) (string, []byte) {
+	var s strings.Builder
+
+	s.WriteString("set -e\n")
+	s.WriteString(fmt.Sprintf("mkdir -p \"$(dirname %q)\"\n", in.configFile))
+	s.WriteString(fmt.Sprintf("cat << 'CORDISEOF' > %q\n", in.configFile))
+	s.WriteString(in.cordisYAML)
+	s.WriteString("\nCORDISEOF\n")
+	s.WriteString("set +e\n")
+
+	s.WriteString(fmt.Sprintf("exec tai dsh --config %q\n", in.configFile))
+
+	return s.String(), []byte(in.inputJSONRPC + "\n")
+```
+
+</details>
+
+**依据 5 · 源码核查**：[agent/task/run.go:85-96](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/task/run.go#L85-L96)
+
+停止入口触发取消或强制取消，返回本身不是完成证明。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+func Stop(ctx context.Context, auth *process.AuthorizedInfo, chatID string, force bool) error {
+	dc, exists := GetDaemon(chatID)
+	if !exists {
+		return fmt.Errorf("task %s is not running", chatID)
+	}
+	if force {
+		dc.ForceCancel()
+	} else {
+		dc.Cancel()
+	}
+	return nil
+}
+```
+
+</details>
+
+#### 缺口
+
+- 未实际部署客户端、节点和模型，也没有同任务费用与人时。
+  **影响**：无法给出跨平台兼容与单位任务成本。
+  **进一步探讨**：锁定发行物和节点，分别记录正常运行、失败接管和退出的人工与资源成本。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 能否用节点、产物和取消回执减少误办结？
+
+**研究主题**：新假设与验证
+
+#### 完整回答
+
+当前选择结果有节点与模式，运行流程能得到会话 ID 并对完成与错误分类。仍可在提交前为任务指定验收文件或远端收据，记录实际执行节点与工作区，再分别显示流结束、产物已核对和外部状态未知。对照只看正常结束和任务板状态的流程，给测试组注入无完成事件的零退出、切换节点和请求后丢回执。记录误判已办结、错读工作区、等待和人工对账耗时。若增加的收据无法可信绑定实际节点或误办结没有降低，或对账成本超过收益，则否定该场景的假设。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[agent/sandbox/v2/node_selector.go:94-108](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/node_selector.go#L94-L108)
+
+选择结果包含节点、runner、模式，也存在回退分支。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+					mode := resolve.ResolveMode(&nodes[i], runner, criteria.Image)
+					if mode == "" {
+						return nil, fmt.Errorf("workspace-bound node %q has no feasible execution mode for runner %q (CanBox=%v CanHost=%v image=%q)", nodeID, runner, nodes[i].CanBox, nodes[i].CanHost, criteria.Image)
+					}
+					return &SelectionResult{
+						NodeID:  nodeID,
+						Runner:  runner,
+						Mode:    mode,
+						IsLocal: nodes[i].IsLocal,
+					}, nil
+				}
+			}
+			if !found {
+				log.Warn("[node_selector] workspace %q bound to node %q, but node is offline or removed; falling through to normal selection", criteria.WorkspaceID, nodeID)
+			}
+```
+
+</details>
+
+**依据 2 · 源码核查**：[agent/sandbox/v2/stream.go:113-127](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/sandbox/v2/stream.go#L113-L127)
+
+流结束可产生 stop 响应，当前此处没有业务产物验证。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+	if err != nil {
+		if errors.Is(err, context.Canceled) {
+			return nil, err
+		}
+		return nil, fmt.Errorf("runner.Stream: %w", err)
+	}
+
+	resp := &agentContext.CompletionResponse{
+		Role:         "assistant",
+		FinishReason: agentContext.FinishReasonStop,
+	}
+	if len(textContent) > 0 {
+		resp.Content = string(textContent)
+	}
+	return resp, nil
+```
+
+</details>
+
+**依据 3 · 源码核查**：[agent/task/run.go:204-228](https://github.com/YaoApp/yao/blob/07b55742a7ed9c7ecabc92d9f04fdf133e3cc644/agent/task/run.go#L204-L228)
+
+任务运行按流函数错误和超时分类，终态不能代替外部收据。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+	_, err := AssistantStreamFn(task.AssistantID, agentCtx, inputToAgentMessages(req.Messages), opts)
+
+	var finalErr error
+	status := "completed"
+
+	if stdCtx.Err() == context.DeadlineExceeded {
+		finalErr = fmt.Errorf("timeout after %s", resolved.Timeout)
+		status = "failed"
+		markFailed(dc, auth, finalErr)
+	} else if dc.Context.Err() != nil && isContextCanceled(err) {
+		status = "cancelled"
+		finalErr = errUserCancelled
+		dc.Broadcast(&message.Message{
+			Type:  "text",
+			Props: map[string]interface{}{"content": "\n\n---\n*[任务已被用户取消]*"},
+		})
+		setStatus(dc.ChatID, "cancelled", auth, map[string]any{
+			"cancelled_at":  time.Now(),
+			"cancel_reason": "user_stopped",
+		})
+	} else if err != nil {
+		finalErr = err
+		status = "failed"
+		markFailed(dc, auth, finalErr)
+	}
+```
+
+</details>
+
+#### 缺口
+
+- 未验证收据能否真实绑定节点、文件和外部服务。
+  **影响**：不能将该设想当作当前已有能力。
+  **进一步探讨**：将两个测试节点、产物哈希和外部日志相互对照，再比较判断准确率与恢复工时。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

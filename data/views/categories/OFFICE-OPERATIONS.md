@@ -15,8 +15,8 @@
 | [@awiki/dsh-plugin](#plugin-1334428397-root) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 先观察，匿名样本验证日期/partial/写入和启用恢复后再评真实数据范围。 |
 | [AX Feishu Bridge](#plugin-1249325080-root) | 把飞书或 Lark 消息和回复卡片桥接到本机 DeepSeek Harness 或 Pi。 | [Q03](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md#research-q03) 先核隔离 app 的身份和 Host 工具，无法证实时保留 Web 工作流。 |
-| [BrowserSkill DSH 插件](#plugin-1276665883-packages-dsh-plugin-browserskill) | 将 BrowserSkill 的浏览器操作接入 DSH 模型工具并提供会话观察。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 先用测试账号、显式会话和只读网页；操作结果或目标不明时停止并核对页面与本机保存文件。 |
-| [BrowserSkill 浏览器连接工具](#plugin-1276665883-root) | 通过 bsk CLI、daemon 和浏览器扩展，让 Agent 操作已有登录态的 Chrome 或 Edge。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 在测试账号先做只读任务，确认组件版本和回执；状态不明时停止并人工核对网页及已保存副本。 |
+| [BrowserSkill](#plugin-1276665883-root) | 把可调用 bsk 的 Agent 接入 Chrome 或 Edge 的任务窗口，支持网页观察、交互和人工协作。 | [Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 用独立 home 和测试 profile 验证配对后再读取只读页面，给测试页加独有标记以识别错窗。 |
+| [BrowserSkill for DeepSeek Harness](#plugin-1276665883-packages-dsh-plugin-browserskill) | 在 DeepSeek Harness 中使用 bsk 工具浏览网页、操作页面并查看截图和会话状态。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 用单独测试 profile 和只读页面验收，明确指定浏览器与会话标识。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
@@ -42,6 +42,7 @@
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-whale-catch](#plugin-1425215508-root) | 在 DSH 侧栏收集会话产物，提供预览、差异、交付台账、体检、归档和还原。 | 先用含旧mtime复制件的固定目录核对漏收，仅复制归档；还原放在可丢弃目录并逐项确认，异常退回人工打包。 |
+| [dsh-windows-mcp](#plugin-1413849053-root) | 把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。 | [Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保持观察，先在无业务数据的 Windows VM 验收鉴权、tools.guard、双 Agent 及关闭后派发。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 在 DSH 中查看邮件信封与未读概况，并通过 notmuch 搜索。 | [Q03](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md#research-q03) 只用合成信封验证，明确 notmuch 未读计数和 Himalaya 样本的区别。 |
 | [EduWork DSH Mail](#plugin-1369398336-packages-dsh-mail) | 为 DSH 提供邮件读取、附件保存与受控 SMTP 发送工具。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q04) 隔离账户先验证权限并由用户核对；外发需明确授权，异常先查询。 |
@@ -49,7 +50,7 @@
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
 | [LeLogin for DeepSeek Harness](#plugin-1226490932-root) | 在 DSH 注册 LeLogin Skill，指导凭据引用、注入和已认证应用的本地使用。 | 先观察注册和假账号发现；对实际凭据操作保留手工退路，直到验证运行时与审批。 |
-| [NocoBase](#plugin-306829688-root) | 以无代码配置数据、页面、权限和工作流，并可接入 AI 员工与外部工具。 | 先用匿名隔离实例和两个角色验证人工、AI、MCP 及 workflow 入口；对远端成功后本地失败进行对账，异常时停用相关工具并回退人工。 |
+| [NocoBase](#plugin-306829688-root) | 用于构建、运行和持续演进业务系统的开源应用平台，提供权限、工作流及 Agent 集成。 | [Q04](../../plugins/nocobase--nocobase/INSIGHT.md#research-q04) 先隔离 runner 和样本仓库，核查实际权限、模型和受控网络。 |
 | [Plugin Session Export](#plugin-1333152408-packages-plugins-plugin-session-export) | 把 DSH live 会话投影为可读 Markdown 或自包含 HTML，并可隐藏工具参数结果 | [Q04](../../plugins/whyihaveyou--dsh-suite--packages-plugins-plugin-session-export/INSIGHT.md#research-q04) 建议个人去敏单会话有限试用，写新目录并对JSONL核查；mini必须人工审阅后才分享。 |
 | [QQBot 增强版](#plugin-1357268674-root) | 把 QQ 消息接入 DSH 会话，并提供富媒体、交付文件发送和 Web 设置。 | [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04) 先在受控群确认名单和静默策略，再测试一个文件并保留人工退路。 |
 | [Reactive Resume](#plugin-249995750-root) | 独立简历/求职文档应用，以认证MCP/API编辑用户文档、保留版本并生成PDF导出。 | [Q05](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q05)独立账户虚构数据/只读起步，版本+差异核后小写，PDF逐页验；不明退Web和本机已验文档。 |
@@ -108,37 +109,37 @@
 
 [查看完整分析](../../plugins/ax1202--ax-feishu-bridge/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
-
-## [BrowserSkill DSH 插件](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md)
-
-[![GitHub ★ 9,857](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C857&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 32,326](https://img.shields.io/static/v1?label=npm+30d&message=32%2C326&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
-
-> **用途**：面向已有 BrowserSkill CLI 和浏览器扩展、希望从 DSH 会话操作网页并查看进度的用户。
-
-> **亮点**：[Q01](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q02) 说明该插件将已有 bsk 能力映射为模型工具和可见会话，并管理注册与清理；不归因上游浏览器引擎。
-
-> **思考**：[Q03](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q03) 的插件级当前会话不是对话隔离证明；[Q04](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q04) 的取消和 Web 请求检查也不等于撤销网站操作或完整认证。
-
-> **建议**：[Q06](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q06) 在可信宿主会话身份存在时对默认及显式浏览器会话做归属检查，并保留合法共享；收益与误拒均未验证。
-
-[查看完整分析](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1276665883-root"></a>
 
-## [BrowserSkill 浏览器连接工具](../../plugins/tencent--browserskill/INSIGHT.md)
+## [BrowserSkill](../../plugins/tencent--browserskill/INSIGHT.md)
 
-[![GitHub ★ 9,857](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9%2C857&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
+[![GitHub ★ 10,163](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C163&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill)
 
-> **用途**：面向需要使用既有网页登录态，并能观察和核对动作的 Agent 用户。
+> **用途**：已有 Chromium 账号且反复查网页资料的操作者，希望让 Agent 在指定 profile 中执行可观察的任务，并在结果不明时人工接手。[Q01](../../plugins/tencent--browserskill/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/tencent--browserskill/INSIGHT.md#research-q01) 与 [Q02](../../plugins/tencent--browserskill/INSIGHT.md#research-q02) 表明根工具把登录态、可见窗口和跨宿主 CLI 接到浏览器；未测净节时和业务正确性。
+> **亮点**：[Q01](../../plugins/tencent--browserskill/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tencent--browserskill/INSIGHT.md#research-q02) 显示根项目把跨宿主 CLI、本机 IPC 和现有浏览器窗口接成一条可观察的操作路径，用户可在当前 profile 中核查任务。独立 DSH 插件负责把这条能力接入宿主工具层。
 
-> **思考**：[Q03](../../plugins/tencent--browserskill/INSIGHT.md#research-q03) 与 [Q04](../../plugins/tencent--browserskill/INSIGHT.md#research-q04) 显示停止不会回滚网页动作，本地来源检查不绑定具体扩展身份，且登录态和保存副本有各自边界。
+> **思考**：[Q03](../../plugins/tencent--browserskill/INSIGHT.md#research-q03) 本机未配对连接在默认 Warn 下仍能使用，连接状态不能单独作为设备身份证明。已配对流程能绑定设备，但业务流量和同账号进程仍有独立边界。取消仅能说明本地等待或对端控制器状态，网页动作需另行核对。
 
-> **建议**：[Q06](../../plugins/tencent--browserskill/INSIGHT.md#research-q06) 探索可撤销的本地连接方身份绑定；不能只 pin 可伪造的 Origin，安全收益、兼容及操作负担尚未测试。
+> **建议**：[Q05](../../plugins/tencent--browserskill/INSIGHT.md#research-q05) 将已有 Required 模式、已验证设备和只读页面回读纳入统一试用验收。对照默认 Warn 流程，检查能否减少误接纳，同时量化正确设备恢复时间及人工配置负担。
 
 [查看完整分析](../../plugins/tencent--browserskill/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
+
+## [BrowserSkill for DeepSeek Harness](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md)
+
+[![GitHub ★ 10,163](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C163&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) [![npm 30d 46,565](https://img.shields.io/static/v1?label=npm+30d&message=46%2C565&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin)
+
+> **用途**：已有 BrowserSkill CLI、daemon 与浏览器扩展的 DSH 用户，希望在会话里执行网页检查，并在需要时查看页面状态或接手。[Q01](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q01)
+
+> **亮点**：[Q01](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q02) 显示插件将 bsk 的会话、控制上下文和操作回执接到 DSH 工具及可选 Web 观察。用户能在宿主里跟进调用，窗口与网页执行仍由 CLI、daemon 和扩展承担。
+
+> **思考**：[Q03](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q03) 同一插件实例的默认会话按最近使用切换，侧栏的对话归属过滤没有进入普通工具的会话解析。多个对话交错时，应显式指定并回读窗口状态。中断结果也只说明插件侧尝试结束命令，页面操作可能已经发生。
+
+> **建议**：[Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 用可信的 DSH 会话身份选择默认窗口，显式目标需符合登记归属或共享授权；身份缺失则转人工确认。对照现有最近会话策略，检验交错操作的错窗率，同时记录合法共享的误拒与恢复时间。
+
+[查看完整分析](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335725068-root"></a>
 
@@ -540,6 +541,22 @@
 
 [查看完整分析](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1413849053-root"></a>
+
+## [dsh-windows-mcp](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
+
+[![GitHub ★ 224](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=224&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 716,731](https://img.shields.io/static/v1?label=npm+30d&message=716%2C731&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+
+> **用途**：在 Windows 隔离测试桌面中重复读取原生应用界面的 DSH 用户，需要可核对的画面、明确的工具暴露和可验证的停用结果。[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01)
+
+> **亮点**：[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01) [Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 根插件把依赖选择、工具诊断和宿主调用开关接入 DSH，减少手写配置。实际屏幕和输入工具由 Windows-MCP 经宿主 MCP 桥接提供。
+
+> **思考**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) Computer Use 是宿主共享状态。派发拒绝依赖 tools.guard，浏览器鉴权不可观测时插件层会继续处理修改。关闭无法据此证明已派发动作撤销，揭示也无法约束为只读。
+
+> **建议**：[Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 默认拒绝不可观测的鉴权，并在隔离环境引入限时观察许可，可能减少误开放桌面控制。用两个会话和长调用区分后续拒绝及在途效果。
+
+[查看完整分析](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1370460115-root"></a>
 
 ## [dsh-wsl-im](../../plugins/173787247--dsh-wsl-im/INSIGHT.md)
@@ -656,15 +673,15 @@
 
 ## [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md)
 
-[![GitHub ★ 24,798](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C798&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
+[![GitHub ★ 24,868](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=24%2C868&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase)
 
-> **用途**：需要反复建设内部数据录入和审批系统的业务及技术团队可用平台组合数据、页面和流程；它是独立平台，不是 DSH 插件。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01)
+> **用途**：维护 NocoBase 应用的团队可以将任务分派给已注册的 DSH runner，跟踪会话事件和交付回执。
 
-> **亮点**：相对逐项手写业务 CRUD 与模型接口，平台将数据与角色权限、可视化配置和 AI 工作流工具纳入同一业务底座；模型和底层数据库并非本项目原创。[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01) [Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02) [Q03](../../plugins/nocobase--nocobase/INSIGHT.md#research-q03)
+> **亮点**：[Q01](../../plugins/nocobase--nocobase/INSIGHT.md#research-q01) 和 [Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02) 表明，NocoBase 将独立 DSH 进程变成可领取任务的应用执行工具，记录配置、会话事件和结果状态，从而替代部分手工交接。
 
-> **思考**：ACL 入口和调用状态不能证明所有 AI 路径同权限，也不能保证外部动作可撤销；同用户缓存和以 get 命名推断自动调用需在真实配置下核验。[Q02](../../plugins/nocobase--nocobase/INSIGHT.md#research-q02) [Q04](../../plugins/nocobase--nocobase/INSIGHT.md#research-q04)
+> **思考**：[Q03](../../plugins/nocobase--nocobase/INSIGHT.md#research-q03) 表明，runner 领用授权与 DSH 子进程权限分开。正式 DSH 路径请求全权限模式，worker 回调直接允许 ACP 权限请求，因而不能将应用任务门禁当成逐工具审批或操作系统隔离。
 
-> **建议**：未验证假设：可信权限上下文版本驱动用户连接失效，并将业务操作 ID 与远端收据用于恢复对账；以现有 TTL、配置清理和调用状态为对照，测授权、重复写、误拒及恢复成本。[Q06](../../plugins/nocobase--nocobase/INSIGHT.md#research-q06)
+> **建议**：[Q05](../../plugins/nocobase--nocobase/INSIGHT.md#research-q05) 提出绑定实际运行环境与外部副作用状态，验证是否能让操作者更准确地判断任务终止和恢复。
 
 [查看完整分析](../../plugins/nocobase--nocobase/INSIGHT.md) · [返回表格](#category-index)
 
@@ -816,4 +833,4 @@
 
 ## 更新时间
 
-2026-11-06
+2026-11-09
