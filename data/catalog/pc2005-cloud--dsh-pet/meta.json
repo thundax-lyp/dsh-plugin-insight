@@ -1,36 +1,32 @@
 {
     "repository": "PC2005-cloud/dsh-pet",
     "repository_id": 1333652151,
-    "captured_at": "2026-11-01T08:13:08.475Z",
-    "window_start": "2026-10-02T08:13:08.475Z",
-    "stars": 5154,
-    "pushed_at": "2026-11-01T07:28:02Z",
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 5847,
+    "pushed_at": "2026-11-08T12:17:40Z",
     "issues": {
         "open": null,
-        "closed": null,
-        "created_30d": 108,
-        "closed_30d": 110,
-        "updated_30d": 111
+        "closed": 218,
+        "created_30d": 155,
+        "closed_30d": 155,
+        "updated_30d": 155
     },
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3APC2005-cloud%2Fdsh-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 52AC:165E:F4B055:1644807:6AE6F514 and timestamp 2026-11-01 08:15:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3APC2005-cloud%2Fdsh-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 52E6:15F1:D61C94:135F347:6AE6F515 and timestamp 2026-11-01 08:15:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3APC2005-cloud%2Fdsh-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DAC0:1B377B:59F8A1C:81373BD:6AF12F70 and timestamp 2026-11-09 02:26:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-01T06:52:54.214Z",
+        "captured_at": "2026-11-08T06:43:41.836Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
         "latest_error": null
     }
 }

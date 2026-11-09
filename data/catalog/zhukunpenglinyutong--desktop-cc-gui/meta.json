@@ -1,27 +1,48 @@
 {
     "repository": "zhukunpenglinyutong/desktop-cc-gui",
     "repository_id": 1148960257,
-    "captured_at": "2026-11-01T08:13:08.475Z",
-    "window_start": "2026-10-02T08:13:08.475Z",
-    "stars": 4553,
-    "pushed_at": "2026-11-01T03:17:30Z",
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 4582,
+    "pushed_at": "2026-11-07T07:11:42Z",
     "issues": {
-        "open": 331,
-        "closed": 221,
-        "created_30d": 26,
-        "closed_30d": 3,
-        "updated_30d": 32
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhukunpenglinyutong%2Fdesktop-cc-gui%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B92:1B377B:59FDA2F:813E703:6AF12F92 and timestamp 2026-11-09 02:27:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhukunpenglinyutong%2Fdesktop-cc-gui%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B9A:1A94CB:5A2734A:8224BED:6AF12F94 and timestamp 2026-11-09 02:27:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhukunpenglinyutong%2Fdesktop-cc-gui%20is%3Aissue%20created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6BAA:1C7601:5C9587A:84E10C4:6AF12F95 and timestamp 2026-11-09 02:27:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhukunpenglinyutong%2Fdesktop-cc-gui%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6BB4:1A94CB:5A277DC:822525E:6AF12F96 and timestamp 2026-11-09 02:27:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhukunpenglinyutong%2Fdesktop-cc-gui%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6BBE:1C3F03:5BBBB9F:8405864:6AF12F97 and timestamp 2026-11-09 02:27:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-31T09:58:25.350Z",
+        "captured_at": "2026-11-08T06:43:41.836Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
         "latest_error": null
     }
 }

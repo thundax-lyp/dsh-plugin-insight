@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "28aefcf99adfabab08d272a2c36ce24e787216d2b3ffd6a6a0ff9ae26db9d3b7",
-    "index_sha256": "89b14f7b6aa79f6cb48154c7aa0128d7b55abe29ece92ca7fa9cc629a5d6e33a",
+    "snapshot_digest": "3bbd0c5caa1db4e51ecc88a7d7e5c595f026b51348985052a4f65d5db9dee222",
+    "index_sha256": "41be7e20dcc907ba233d9f90dde82f198a3fff88704f6c9027f47e9e85c4aa76",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-06T06:43:36Z",
+        "checked_at": "2026-11-09T02:17:26Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 60，完成 39，受阻 21；已知同版本受阻跳过 18；频繁更新窗口内跳过 310；当前发布 1199",
+            "scope": "本轮所选 60，完成 56，受阻 4；已知同版本受阻跳过 31；频繁更新窗口内跳过 240；当前发布 1227",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,19 +20,19 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-06T06:43:36Z"
+            "checked_at": "2026-11-09T02:17:26Z"
         },
         "registry": {},
         "discovery": {
             "sources": [
                 {
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "51d50de9c8243deba503e3e074d670666731c13c",
+                    "revision": "668c3fa6e759f413da6b90e3f3af9a3e6b0f6ee9",
                     "complete": false
                 },
                 {
                     "url": "https://github.com/0xsline/awesome-deepseek-harness",
-                    "revision": "cd4faf97da814f06fab4a5e307e5ba0f62c638af",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
                     "complete": false
                 }
             ],
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-06-04",
-            "work_digest": "477bd8043653b59ce9ad6a8fdd7e8d9bea69319bb1197d2598b26f512f925a18"
+            "id": "2026-11-09-01",
+            "work_digest": "7ea3404c61997296dc735a281a61acb235630614d65647164afa892eb3339fcc"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -150,35 +150,6 @@
                 },
                 "blocked_at": "2026-10-21T05:37:30.870Z",
                 "run_id": "2026-10-21-06"
-            },
-            "github:1163808211:root": {
-                "plugin_id": "github:1163808211:root",
-                "revision": "ac278f885386f785dc1a35ddfbd8994bb5e744d7",
-                "reason_code": "source_text_validation_failed",
-                "reason": "固定文件src/dshPlugin.test.ts含NUL字节，inventory按文本安全规则拒绝。文件实际可以严格UTF8解码，不应误报为无效UTF8编码。",
-                "details": {
-                    "reason_code": "source_text_validation_failed",
-                    "reason": "固定文件src/dshPlugin.test.ts含NUL字节，inventory按文本安全规则拒绝。文件实际可以严格UTF8解码，不应误报为无效UTF8编码。",
-                    "details": {
-                        "repository": "liustack/modlens",
-                        "revision": "ac278f885386f785dc1a35ddfbd8994bb5e744d7",
-                        "source_path": "src/dshPlugin.test.ts",
-                        "source_url": "https://github.com/liustack/modlens/blob/ac278f885386f785dc1a35ddfbd8994bb5e744d7/src/dshPlugin.test.ts",
-                        "sha256": "c9d4b4b00f861f5f253ad37649eba232ae018f75f32abd5fdc1e20eb19028e7c",
-                        "size_bytes": 280722,
-                        "strict_utf8_decode": "passed",
-                        "nul_offsets": [
-                            113739
-                        ],
-                        "inventory_error": "not UTF-8 text: src/dshPlugin.test.ts",
-                        "validator_location": ".agents/skills/dsh-plugin-insight/scripts/plugin-inventory.mjs:101",
-                        "raw_artifact": "INVENTORY-REJECTED.blob",
-                        "impact": "完整统计被拒绝，无INVENTORY不能装配；已有ANALYSIS只保留过程。",
-                        "next_step": "维护者确认并移除源码内NUL后以新固定版本重研，或独立评审工具文本规则；本轮不转码绕过。"
-                    }
-                },
-                "blocked_at": "2026-10-26T09:27:51.229Z",
-                "run_id": "2026-10-26-03"
             },
             "github:1207780921:root": {
                 "plugin_id": "github:1207780921:root",
@@ -289,98 +260,6 @@
                 },
                 "blocked_at": "2026-11-05T02:05:59.584Z",
                 "run_id": "2026-11-05-01"
-            },
-            "github:1089365685:root": {
-                "plugin_id": "github:1089365685:root",
-                "revision": "0d478f3292015076b9795d584e77563200604b45",
-                "reason_code": "core_implementation_unavailable",
-                "reason": "固定仓库公开的是介绍、前端展示与Markdown教学示例；README明确实际exe商业模块闭源，未提供声称的实盘交易/风控/远程控制核心实现，不能完成本系统源码级研究。",
-                "details": {
-                    "reason_code": "core_implementation_unavailable",
-                    "reason": "固定仓库公开的是介绍、前端展示与Markdown教学示例；README明确实际exe商业模块闭源，未提供声称的实盘交易/风控/远程控制核心实现，不能完成本系统源码级研究。",
-                    "details": {
-                        "plugin_id": "github:1089365685:root",
-                        "repository": "https://github.com/hyqibot/A-share-Ai",
-                        "revision": "0d478f3292015076b9795d584e77563200604b45",
-                        "source_tree": [
-                            "README.md",
-                            "codes/服务器部署大模型训练股票交易的方法含代码.md",
-                            "codes/调用大模型api训练股票交易的方法含代码.md",
-                            "docs/.nojekyll",
-                            "docs/config.js",
-                            "docs/history.html",
-                            "docs/index.html",
-                            "docs/js/cache-helper.js",
-                            "docs/js/dashboard.js",
-                            "docs/js/history.js",
-                            "docs/js/portfolio.js",
-                            "docs/js/sw-helper.js",
-                            "docs/manifest.json",
-                            "docs/portfolio.html",
-                            "docs/reports/backtest_report_20251108_152132_drawdown.png",
-                            "docs/reports/backtest_report_20251108_152132_equity.png",
-                            "docs/reports/backtest_report_20251108_152132_monthly.png",
-                            "docs/reports/favicon.ico",
-                            "docs/reports/report.html",
-                            "docs/reportsall/backtest_report_20251110_025846_drawdown.png",
-                            "docs/reportsall/backtest_report_20251110_025846_equity.png",
-                            "docs/reportsall/backtest_report_20251110_025846_monthly.png",
-                            "docs/reportsall/favicon.ico",
-                            "docs/reportsall/report.html",
-                            "docs/sw.js",
-                            "financial_data.json",
-                            "investstyle.md",
-                            "newver.md"
-                        ],
-                        "source_tree_checked_with": "git ls-tree -r --name-only HEAD (fixed Git objects, not sparse filesystem)",
-                        "evidence": [
-                            {
-                                "path": "README.md",
-                                "git_blob": "ef91838d34c71d4909cff0a13e63a6c775a25d8a",
-                                "sha256": "c4737ac31ba13cb99c66e0a76baf3a5b7c02776d6d1e20ad808fb7a8bf6a4160",
-                                "line_start": 157,
-                                "line_end": 166,
-                                "excerpt": "2. 商业闭源模块\n商业模块（包括但不限于打包成exe文件内嵌的所有模块）受版权保护，基于 商业许可证 提供，核心条款如下：\n\n使用需获得有效商业授权（联系我们获取订阅 / 授权方案）；\n\n禁止未经授权分发、反编译、逆向工程或转售商业模块；\n\n商业模块仅可与本项目的开源核心模块搭配使用，不可单独使用或集成到其他未授权项目。\n\n完整商业许可证详情：LICENSE-COMMERCIAL（购买授权后提供）"
-                            },
-                            {
-                                "path": "README.md",
-                                "git_blob": "ef91838d34c71d4909cff0a13e63a6c775a25d8a",
-                                "sha256": "c4737ac31ba13cb99c66e0a76baf3a5b7c02776d6d1e20ad808fb7a8bf6a4160",
-                                "line_start": 174,
-                                "line_end": 180,
-                                "excerpt": "仅在 ./codes 目录下修改代码；\n\n提交 Pull Request，并清晰描述修改内容。\n\n详细贡献规则：CONTRIBUTING.md\n\n注意：商业模块为闭源性质，不接受外部代码贡献。"
-                            },
-                            {
-                                "path": "codes/服务器部署大模型训练股票交易的方法含代码.md",
-                                "git_blob": "3879d381812f50e9d00a08bb6ba0d28c6047edfc",
-                                "sha256": "5e8a939c9f17bc9c9f43479b7fff889e5df79c75e4a945f34343935ed172e165",
-                                "line_start": 1,
-                                "line_end": 1,
-                                "excerpt": "完整的代码和部署指南（服务器版，本地部署）"
-                            },
-                            {
-                                "path": "codes/调用大模型api训练股票交易的方法含代码.md",
-                                "git_blob": "97d7ee954f0030d659a48cc50cb83f464dacc8b4",
-                                "sha256": "bf2b57a710a313843691286d187603cbaec5e1f2cc462db7d88ff715c0fda9ed",
-                                "line_start": 743,
-                                "line_end": 776,
-                                "excerpt": "    def _execute_virtual_trade(self, symbol: str, current_data: Dict, analysis: str) -> Dict:\n        \"\"\"执行虚拟交易并跟踪结果\"\"\"\n        # 这里可以连接模拟交易API或使用历史数据回测\n        # 简化版：基于后续价格变化评估决策质量\n        \n        import yfinance as yf\n        import random\n        \n        # 模拟未来5天的表现\n        future_days = 5\n        current_price = current_data['technical_setup']['price']\n        \n        try:\n            # 获取未来数据（在实际应用中需要等待真实数据）\n            future_data = yf.download(symbol, period=f\"{future_days+5}d\")\n            if len(future_data) > future_days:\n                future_price = future_data['Close'].iloc[future_days]\n                returns = (future_price / current_price - 1) * 100\n            else:\n                # 模拟收益（实际使用时应该用真实数据）\n                returns = random.uniform(-10, 10)\n        except:\n            returns = random.uniform(-5, 5)\n        \n        # 从分析中提取决策\n        decision = self._extract_decision_from_analysis(analysis)\n        \n        return {\n            \"symbol\": symbol,\n            \"decision\": decision,\n            \"entry_price\": current_price,\n            \"returns\": returns,\n            \"holding_period\": future_days,\n            \"timestamp\": current_data['timestamp']"
-                            }
-                        ],
-                        "checked_findings": [
-                            "根树没有DSH/Cordis插件装配或公开实盘交易执行服务，不能称原生DSH插件。",
-                            "README明确商业exe内嵌模块闭源；没有购买、下载、安装、运行或逆向商业模块。",
-                            "公开Markdown _execute_virtual_trade 是虚拟交易教学示例，数据不足或异常会random.uniform生成收益，不是实盘或可验证策略收益证据。",
-                            "docs前端访问外部API，但后端不在固定树中；未访问地址，不将展示数据、收益图表当独立实盘验证。"
-                        ],
-                        "material_boundary": "四份机械材料已准备；关键业务核心实现缺口不是下载超时或统计失败，不以局部教程伪造整系统完成。",
-                        "target_executed": false,
-                        "research_completed": false,
-                        "next_step": "维护者提供对应固定版本的可审阅交易执行/风控/鉴权与订单状态实现，或用户明确另行限定为公开教学资源研究后再继续。保留本轮材料，旧有效成果不覆盖。"
-                    }
-                },
-                "blocked_at": "2026-11-03T02:36:33.871Z",
-                "run_id": "2026-11-03-01"
             },
             "github:1338526178:packages-bundle-rollback": {
                 "plugin_id": "github:1338526178:packages-bundle-rollback",
@@ -894,12 +773,12 @@
             },
             "github:1374007757:plugins-dsh-midscene-plugin": {
                 "plugin_id": "github:1374007757:plugins-dsh-midscene-plugin",
-                "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
+                "revision": "27a9c5dddfdb63b5be2cb62b4bab9db7da5dd4a0",
                 "reason_code": "insight_retry_exhausted",
-                "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
+                "reason": "同一组件两次实质研究失败后仍在 30 天冷却内，沿用原始尝试和截止时间。",
                 "details": {
                     "reason_code": "insight_retry_exhausted",
-                    "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
+                    "reason": "同一组件两次实质研究失败后仍在 30 天冷却内，沿用原始尝试和截止时间。",
                     "details": {
                         "original_block": {
                             "plugin_id": "github:1374007757:plugins-dsh-midscene-plugin",
@@ -971,20 +850,25 @@
                             }
                         ],
                         "checked_at": "2026-11-05T08:50:18Z",
-                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。"
+                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。",
+                        "previous_block": {
+                            "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
+                            "run_id": "research-20261105-09",
+                            "blocked_at": "2026-11-05T08:59:10.506Z"
+                        }
                     }
                 },
-                "blocked_at": "2026-11-05T08:59:10.506Z",
-                "run_id": "research-20261105-09"
+                "blocked_at": "2026-11-09T02:31:34.964Z",
+                "run_id": "2026-11-09-01"
             },
             "github:1374007757:plugins-dsh-semi-ui-showcase-plugin": {
                 "plugin_id": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
-                "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
+                "revision": "27a9c5dddfdb63b5be2cb62b4bab9db7da5dd4a0",
                 "reason_code": "insight_retry_exhausted",
-                "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
+                "reason": "同一组件两次实质研究失败后仍在 30 天冷却内，沿用原始尝试和截止时间。",
                 "details": {
                     "reason_code": "insight_retry_exhausted",
-                    "reason": "既有两次实质研究失败仍处于30天冷却，本轮不分派INSIGHT。",
+                    "reason": "同一组件两次实质研究失败后仍在 30 天冷却内，沿用原始尝试和截止时间。",
                     "details": {
                         "original_block": {
                             "plugin_id": "github:1374007757:plugins-dsh-semi-ui-showcase-plugin",
@@ -1064,11 +948,16 @@
                             }
                         ],
                         "checked_at": "2026-11-05T08:50:18Z",
-                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。"
+                        "handling": "沿用原始失败证据和截止时间；本轮新版本不提前重试，不补位。",
+                        "previous_block": {
+                            "revision": "d9e42b1d30a9f244a902c71ad856a05d813df9d3",
+                            "run_id": "research-20261105-09",
+                            "blocked_at": "2026-11-05T08:59:10.507Z"
+                        }
                     }
                 },
-                "blocked_at": "2026-11-05T08:59:10.507Z",
-                "run_id": "research-20261105-09"
+                "blocked_at": "2026-11-09T02:31:34.965Z",
+                "run_id": "2026-11-09-01"
             },
             "github:1323129961:packages-plugin-console": {
                 "plugin_id": "github:1323129961:packages-plugin-console",
@@ -1194,124 +1083,117 @@
             },
             "github:1334682582:plugin": {
                 "plugin_id": "github:1334682582:plugin",
-                "revision": "ab106842d81f19198a296e3292e9a1e82823f4bc",
+                "revision": "553139a1006e629ed7d01c07219b0ce2ecbd599c",
                 "reason_code": "source_entry_symlink_unsupported",
-                "reason": "固定组件入口plugin/package.json是Git符号链接；当前装配器只接受固定提交中的regular file，无法正式装配该兼容入口。",
+                "reason": "固定 plugin 子路径的清单和其余三项均为 Git 符号链接。装配器必读 plugin/package.json，且只接受固定提交中的普通文件。",
                 "details": {
+                    "plugin_id": "github:1334682582:plugin",
+                    "revision": "553139a1006e629ed7d01c07219b0ce2ecbd599c",
                     "reason_code": "source_entry_symlink_unsupported",
-                    "reason": "固定组件入口plugin/package.json是Git符号链接；当前装配器只接受固定提交中的regular file，无法正式装配该兼容入口。",
+                    "reason": "固定 plugin 子路径的清单和其余三项均为 Git 符号链接。装配器必读 plugin/package.json，且只接受固定提交中的普通文件。",
                     "details": {
-                        "id": "github:1334682582:plugin",
-                        "repository": "songoao25/dsh-bottom-info-bar",
-                        "path": "plugin",
-                        "revision": "ab106842d81f19198a296e3292e9a1e82823f4bc",
-                        "checked_at": "2026-11-06T05:11:13Z",
-                        "git_ls_tree": "120000 blob dc598c56dcec6b3c9d9ac513a41b150205abace1\tplugin/lib\n120000 blob 5e005f0e7188a32d3264d6f9f229b984c8aedd58\tplugin/locale\n120000 blob 4e26811d4163af557d0e954f41bfc07c1c0e036e\tplugin/package.json\n",
-                        "link_blobs": {
-                            "plugin/package.json": "../package.json",
-                            "plugin/lib": "../lib",
-                            "plugin/locale": "../locale"
+                        "phase": "insight_material_verification",
+                        "checked_at": "2026-11-09T02:17:26Z",
+                        "repository": "https://github.com/songoao25/dsh-bottom-info-bar",
+                        "component": "plugin",
+                        "pinned_links": {
+                            "cordis.patch.yml": {
+                                "mode": "120000",
+                                "blob": "87b2fb2ea525d88bd4b8653f008c0644387f0881",
+                                "target": "../cordis.patch.yml",
+                                "url": "https://github.com/songoao25/dsh-bottom-info-bar/blob/553139a1006e629ed7d01c07219b0ce2ecbd599c/plugin/cordis.patch.yml"
+                            },
+                            "lib": {
+                                "mode": "120000",
+                                "blob": "dc598c56dcec6b3c9d9ac513a41b150205abace1",
+                                "target": "../lib",
+                                "url": "https://github.com/songoao25/dsh-bottom-info-bar/blob/553139a1006e629ed7d01c07219b0ce2ecbd599c/plugin/lib"
+                            },
+                            "locale": {
+                                "mode": "120000",
+                                "blob": "5e005f0e7188a32d3264d6f9f229b984c8aedd58",
+                                "target": "../locale",
+                                "url": "https://github.com/songoao25/dsh-bottom-info-bar/blob/553139a1006e629ed7d01c07219b0ce2ecbd599c/plugin/locale"
+                            },
+                            "package.json": {
+                                "mode": "120000",
+                                "blob": "4e26811d4163af557d0e954f41bfc07c1c0e036e",
+                                "target": "../package.json",
+                                "url": "https://github.com/songoao25/dsh-bottom-info-bar/blob/553139a1006e629ed7d01c07219b0ce2ecbd599c/plugin/package.json"
+                            }
                         },
-                        "command": "npm run assemble:insight -- --work data/runs/2026-11-06-03/WORK.json --plugin github:1334682582:plugin --analysis data/runs/2026-11-06-03/songoao25--dsh-bottom-info-bar--plugin/ANALYSIS.json",
-                        "error": "Error: inspected path must be a pinned regular file: plugin/package.json",
-                        "stage": "assemble-insight.mjs:129 reads the component package entry through readPinnedSource (regular-file-only guard at line28), before normal source_paths packing",
-                        "research_materials": [
-                            "PLAN.md",
-                            "Q01.md",
-                            "Q02.md",
-                            "Q03.md",
-                            "Q04.md",
-                            "ANALYSIS.json",
-                            "LINKS.txt"
-                        ],
-                        "completion_boundary": "四题研究草稿及根真实路径的必要证据已保存；装配失败，未形成正式四件交付，不能以部分问题稿代替完成。未修改组件path、共享WORK、装配器或固定checkout，未将链接伪装regular原件。",
-                        "recovery": "装配入口支持真实Git symlink语义并保留链接来源/真实目的地，或上游为该组件提供regular入口后重备固定材料；不得解引用伪造当前提交原件。",
-                        "failure_class": "mechanical_material_assembly_block",
-                        "insight_semantic_failure_count": 0,
-                        "cooldown_requested": false
+                        "root_manifest": {
+                            "blob": "c53e10e504af0aed2e20d49dcd615f1e5be0c2a6",
+                            "mode": "100644",
+                            "name": "dsh-bottom-info-bar",
+                            "version": "1.21.14",
+                            "url": "https://github.com/songoao25/dsh-bottom-info-bar/blob/553139a1006e629ed7d01c07219b0ce2ecbd599c/package.json"
+                        },
+                        "verification": {
+                            "command": "git ls-tree 553139a1006e629ed7d01c07219b0ce2ecbd599c:plugin",
+                            "assembly_error": "inspected path must be a pinned regular file: plugin/package.json"
+                        },
+                        "boundary": "Git 记录显示入口为同仓根文件的别名。固定组件范围内没有可作为清单装配的普通文件。根发布包与宿主路径解析均未运行验证，也未将根改作已选组件。",
+                        "next_step": "可在独立任务核对目录身份是否应改为根包，或增加带路径约束与证据溯源的符号链接支持，再重试当前组件。",
+                        "target_executed": false
                     }
                 },
-                "blocked_at": "2026-11-06T05:28:45.529Z",
-                "run_id": "2026-11-06-03"
+                "blocked_at": "2026-11-09T02:52:30.141Z",
+                "run_id": "2026-11-09-01"
             },
             "github:1331636953:packages-dsh-git-graph": {
                 "plugin_id": "github:1331636953:packages-dsh-git-graph",
-                "revision": "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
+                "revision": "ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981",
                 "reason_code": "component_missing_at_fixed_revision",
-                "reason": "固定提交中 packages/dsh-git-graph 已无组件文件，材料回退根包，不能完成该稳定子组件研究。",
+                "reason": "固定 Git 提交中已删除 packages/dsh-git-graph 子包，无法在该提交核查独立组件的入口、实现及采用条件。",
                 "details": {
+                    "plugin_id": "github:1331636953:packages-dsh-git-graph",
+                    "revision": "ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981",
                     "reason_code": "component_missing_at_fixed_revision",
-                    "reason": "固定提交中 packages/dsh-git-graph 已无组件文件，材料回退根包，不能完成该稳定子组件研究。",
+                    "reason": "固定 Git 提交中已删除 packages/dsh-git-graph 子包，无法在该提交核查独立组件的入口、实现及采用条件。",
                     "details": {
-                        "plugin_id": "github:1331636953:packages-dsh-git-graph",
-                        "repository": "zhu1090093659/dsh-web",
+                        "phase": "insight_material_verification",
+                        "checked_at": "2026-11-09T02:35:05.603827+00:00",
+                        "repository": "https://github.com/zhu1090093659/dsh-web",
                         "component": "packages/dsh-git-graph",
-                        "revision": "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
-                        "checked_at": "2026-11-06T06:43:36Z",
-                        "stage": "fixed component identity/material verification",
-                        "parent_verified_at": "2026-11-06T07:44:35.526586+00:00",
-                        "commands": [
-                            {
-                                "command": [
-                                    "ls-tree",
-                                    "-r",
-                                    "--name-only",
-                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a",
-                                    "packages/dsh-git-graph"
-                                ],
-                                "exit_code": 0,
-                                "stdout": "",
-                                "stderr": ""
-                            },
-                            {
-                                "command": [
-                                    "show",
-                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:packages/dsh-git-graph/package.json"
-                                ],
-                                "exit_code": 128,
-                                "stdout": "",
-                                "stderr": "fatal: path 'packages/dsh-git-graph/package.json' does not exist in '1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a'\n"
-                            },
-                            {
-                                "command": [
-                                    "ls-tree",
-                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:packages"
-                                ],
-                                "exit_code": 0,
-                                "stdout": "100644 blob 294cea1393a3bb83392bceb7091883147af5ecd0\tAGENTS.md\n040000 tree 65d8b5abf6ad6fbbdc86b0150c2a92d98969c765\tdsh-agents\n040000 tree bc69428e3f8e139ae3868ae9f70af64cce1b9881\tdsh-browser-view\n040000 tree 34e1f81e20305a9b22d790e06053db610590774f\tdsh-diagrams\n040000 tree d9e49376e1c9bb906a629a40069a5245a029956c\tdsh-i18n\n040000 tree 15d27669f2af78866ff06f9e0fcd99f5ecf4e683\tdsh-liangshen\n040000 tree 7209c9fa157eb2fc4dac10d1907672325bade207\tdsh-market\n040000 tree 6703ff5e4cdee56ee05066337d8e5de6372b8370\tdsh-message-edit\n040000 tree 86e67ed7eb7d70b8ed5219c958dd67e2931ee124\tdsh-plugin-manager\n040000 tree 6bb2503d193bb4edb0ed1651860e8a956332433a\tdsh-remote-bridge\n040000 tree eacbb83795a1238c71bad98754f5eb10803f2699\tdsh-remote-web-ui\n040000 tree 46880cd5471b536bb929f9da665ea34c66c4d8a7\tdsh-session-archive\n040000 tree 013388c979fc731f07519b2ad4b68dd60d56b708\tdsh-session-id\n040000 tree b2317c369ccc8629a483a7a4db0f4ebfe3656cb2\tdsh-skill-explorer\n040000 tree bf4b5fc79297cf266b4307c97ab86d9fe182902a\tdsh-ssh\n040000 tree 5461e49d50097e77edec6641de9dd3ea376ce1ff\tdsh-task-board-github\n040000 tree 1a49cc8c64512a5d7d35eeafa79bf805a24f9c17\tdsh-task-board-remote\n040000 tree 3cd5e7916a1ff8a651048be9cc59ba0da8e6bdf6\tdsh-task-board-team\n040000 tree a47352ceb06a2a3f1980f47bb6e42345cd44bea1\tdsh-task-board\n040000 tree 5b76b288aa59ff8689bc9cdedfcbbdd6f90fccde\tdsh-usage\n040000 tree 2b3d4ed447932b76c6e38739a6a79ec3249c86ac\tdsh-web-all\n040000 tree c582ab1a7829de4e3b6537e7ceadfb597e40e91a\tdsh-web-settings\n040000 tree b0cffb44c7d0fad5990a192238f27e5a1715e912\tdsh-win-bash\n",
-                                "stderr": ""
-                            },
-                            {
-                                "command": [
-                                    "show",
-                                    "1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a:.gitmodules"
-                                ],
-                                "exit_code": 0,
-                                "stdout": "[submodule \"satellites/dsh-skins\"]\n\tpath = satellites/dsh-skins\n\turl = https://github.com/zhu1090093659/dsh-skins.git\n[submodule \"satellites/dsh-pet\"]\n\tpath = satellites/dsh-pet\n\turl = https://github.com/zhu1090093659/dsh-pet.git\n[submodule \"satellites/dsh-community-plugins\"]\n\tpath = satellites/dsh-community-plugins\n\turl = https://github.com/zhu1090093659/dsh-community-plugins.git\n[submodule \"satellites/dsh-presets\"]\n\tpath = satellites/dsh-presets\n\turl = https://github.com/zhu1090093659/dsh-presets.git\n",
-                                "stderr": ""
-                            }
-                        ],
-                        "material_inventory": {
-                            "artifact": "data/runs/2026-11-06-04/zhu1090093659--dsh-web--packages-dsh-git-graph/INVENTORY.json",
-                            "digest": "8d4ba14f28de3d463f580eb7c8eef539044410ab4f68f54dc2a61927e73e1fca",
-                            "coverage": "git tracked files at exact commit; component scope only",
-                            "files": 0,
-                            "excluded": [],
-                            "parse_errors": []
+                        "pinned_tree": {
+                            "command": [
+                                "git",
+                                "ls-tree",
+                                "ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981",
+                                "--",
+                                "packages/dsh-git-graph"
+                            ],
+                            "exit_code": 0,
+                            "stdout": "",
+                            "stderr": ""
                         },
-                        "author_paths": [
-                            "package.json",
-                            "README.md"
-                        ],
-                        "root_package": "{\n  \"name\": \"dsh-web\",\n  \"version\": \"0.4.15\",\n  \"private\": true,\n  \"description\": \"DeepSeek Harness Web GUI 插件全家桶。皮肤、宠物与社区插件索引已拆分为独立仓库（dsh-skins / dsh-pet / dsh-community-plugins），本仓通过 npm 包内置它们。\",\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./packages/dsh-web-all/cordis.patch.yml\"\n    }\n  },\n  \"files\": [\n    \"package.json\",\n    \"packages/dsh-web-all/cordis.patch.yml\",\n    \"locale\"\n  ],\n  \"dependencies\": {\n    \"@linxin666/dsh-web-all\": \"^0.4.15\"\n  },\n  \"scripts\": {\n    \"build\": \"node scripts/host-sdk-link.mjs --check && pnpm -r build\",\n    \"deps:install\": \"node scripts/install-deps.mjs\",\n    \"dev:watch\": \"node scripts/dev-watch.mjs\",\n    \"host-sdk:check\": \"node scripts/host-sdk-link.mjs --check\",\n    \"host-sdk:link\": \"node scripts/host-sdk-link.mjs\",\n    \"test\": \"node scripts/host-sdk-link.mjs --check && pnpm -r test\",\n    \"test:standards\": \"node scripts/test-standards.mjs --check\",\n    \"test:standards:write\": \"node scripts/test-standards.mjs --write-baseline\",\n    \"typecheck\": \"node scripts/host-sdk-link.mjs --check && pnpm -r typecheck\",\n    \"aggregate:check\": \"node scripts/aggregate.mjs --check\",\n    \"runtime-deps:check\": \"node scripts/runtime-deps-check.mjs\",\n    \"libs:check\": \"node scripts/lib-artifact-check.mjs\",\n    \"libs:write\": \"node scripts/lib-artifact-check.mjs --write\",\n    \"i18n:check\": \"node scripts/i18n-audit.mjs --check\",\n    \"emoji:check\": \"node scripts/emoji-audit.mjs\",\n    \"lint\": \"oxlint --deny-warnings --format=unix .\",\n    \"test:scripts\": \"node --test scripts/*.test.mjs\",\n    \"test:mount\": \"bash scripts/e2e-mount.sh\",\n    \"coverage:check\": \"node scripts/coverage-gate.mjs\",\n    \"coverage:write\": \"node scripts/coverage-gate.mjs --write-baseline\",\n    \"pr:review\": \"node scripts/pr-review.mjs\",\n    \"docs:check\": \"node scripts/verify-docs.mjs\",\n    \"docs:list\": \"node scripts/verify-docs.mjs --list\",\n    \"docs:write-pair\": \"node scripts/verify-docs.mjs --write\",\n    \"sync-shared\": \"node scripts/sync-shared.mjs\",\n    \"sync-shared:check\": \"node scripts/sync-shared.mjs --check\",\n    \"market:build\": \"node scripts/market-build\",\n    \"market:check\": \"node scripts/market-build --check\",\n    \"market:fetch\": \"node scripts/market-fetch-inputs.mjs\",\n    \"market:verify\": \"node scripts/market-verify-assets.mjs\",\n    \"deploy:market\": \"node scripts/deploy-market\"\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.1.0\",\n    \"@deepseek-ai/dsh-agent\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-api-session-controller\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-brand\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-llm\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-sandbox\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-scope\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-session\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-settings\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-subagent\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-timeout\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-tools\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-typert-protocol\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-crypto\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-time\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-util-values\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-web-frontend\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/dsh-workspace\": \"^0.2.2-rc.1\",\n    \"@deepseek-ai/schemastery\": \"^3.19.0\",\n    \"@playwright/test\": \"^1.62.1\",\n    \"@typescript/native-preview\": \"7.0.0-dev.20260707.2\",\n    \"@vitest/coverage-v8\": \"^4.1.8\",\n    \"es-module-lexer\": \"2.3.2\",\n    \"lightningcss\": \"^1.32.0\",\n    \"oxlint\": \"1.88.0\",\n    \"playwright\": \"^1.62.1\",\n    \"semver\": \"^7.8.5\",\n    \"tsdown\": \"^0.22.2\"\n  },\n  \"license\": \"Apache-2.0\",\n  \"packageManager\": \"pnpm@11.24.0\"\n}\n",
-                        "semantic_failures": 0,
-                        "target_executed": false,
-                        "preserve_existing_research": true,
-                        "next_step": "后续核来源退役/迁移和真实替代组件；本轮不替换稳定ID/path，不补位，不将根聚合包研究冒充该项。"
+                        "object_probe": {
+                            "command": [
+                                "git",
+                                "cat-file",
+                                "-t",
+                                "ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981:packages/dsh-git-graph"
+                            ],
+                            "exit_code": 128,
+                            "stdout": "",
+                            "stderr": "fatal: path 'packages/dsh-git-graph' does not exist in 'ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981'\n"
+                        },
+                        "author_evidence": {
+                            "path": ".agents/notes/implemented/simplification/2026-11-03-git-graph-package-retired.zh.md",
+                            "line_start": 13,
+                            "line_end": 27,
+                            "content": "## Decision\n\n- **包被整体删除。** `packages/dsh-git-graph/` 已删除（126 个受控文件）；聚合包不再挂载它的行、\n  不再依赖它，也不再随包发布它的 ru 字典、设置桥白名单条目、移动端屏蔽规则、测试规范与覆盖率\n  基线以及脚本门禁条目。\n- **聚合包保留旧子路径作为退役空壳。** `aggregate.yml` 的 `tombstones:` 段保留 `git-graph`，\n  `retiredPlugins:` 段登记 `{\"family\": \"git-graph\", \"plugin\":\n  \"@linxin666/dsh-client-ui-git-graph\"}`。本次改动之前写下的 profile 记录的行名是\n  `@linxin666/dsh-web-all/git-graph`：这个名字必须继续可解析（否则 import 阶段抛\n  `ERR_PACKAGE_PATH_NOT_EXPORTED`，整组聚合 boot 一起倒），而壳必须把它当静默 no-op，而不是\n  记成 degraded 插件。这与 `remote-web-ui`、`update` 已有的两段式机制相同。\n- **已发布的 npm 包继续留在 registry。** `@linxin666/dsh-client-ui-git-graph` 不下架，单独安装\n  它的用户仍能继续用；因此创意工坊徽章名单与已发布包的 e2e 名册里仍列着它。\n- **Git 变更视图交给官方插件。** 从现在起由 `workspace-changes` 承担。worktree 会话隔离交给官方\n  experimental 的 `client-ui-forge` 插件（它自带 worktree 管理与 diff），家族不再自带一套。",
+                            "url": "https://github.com/zhu1090093659/dsh-web/blob/ae4a35e1a7c4f3e27bbe6fe82d8e827d2909b981/.agents/notes/implemented/simplification/2026-11-03-git-graph-package-retired.zh.md#L13-L27"
+                        },
+                        "boundary": "作者笔记说明独立源码包删除、聚合包保留退役空壳、旧 npm 包按作者记录保留。已查本轮固定 Git 树，未核查旧 npm 包的可得性或宿主运行。准备入口的源码包只有仓库根 README/package.json，组件 inventory 没有文件。",
+                        "next_step": "保留最后成功研究和本轮材料。若未来明确研究旧 npm 包或接替能力，单独核实发布物及组件身份，不能把聚合空壳或官方替代等同于该独立组件。",
+                        "last_successful_research_revision": "68a78d05a6c8c27305671cfc42c30cbbec8014f5",
+                        "target_executed": false
                     }
                 },
-                "blocked_at": "2026-11-06T07:45:06.933Z",
-                "run_id": "2026-11-06-04"
+                "blocked_at": "2026-11-09T02:37:53.584Z",
+                "run_id": "2026-11-09-01"
             },
             "github:1330041615:root": {
                 "plugin_id": "github:1330041615:root",
@@ -1428,29 +1310,6 @@
                 "blocked_at": "2026-11-06T09:31:10.497Z",
                 "run_id": "2026-11-06-04"
             },
-            "github:1335024457:root": {
-                "plugin_id": "github:1335024457:root",
-                "revision": "caa75cd7b35092a276775e087edb51ec767647c6",
-                "reason_code": "user_stopped_research",
-                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                "details": {
-                    "reason_code": "user_stopped_research",
-                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                    "details": {
-                        "instruction": "直接收尾吧，没搞完的就放弃了",
-                        "recorded_at": "2026-11-06T09:30:32.556Z",
-                        "plugin_id": "github:1335024457:root",
-                        "revision": "caa75cd7b35092a276775e087edb51ec767647c6",
-                        "stage": "尚未完成父级逐题语义验收",
-                        "source_url": "https://github.com/Fengze233/dsh-vscode/tree/caa75cd7b35092a276775e087edb51ec767647c6",
-                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
-                        "substantive_failures": 0,
-                        "no_retry_cooldown": true
-                    }
-                },
-                "blocked_at": "2026-11-06T09:31:10.501Z",
-                "run_id": "2026-11-06-04"
-            },
             "github:1335309784:root": {
                 "plugin_id": "github:1335309784:root",
                 "revision": "55c4b4f77439b37e3bc8177df63f21570710debd",
@@ -1495,29 +1354,6 @@
                     }
                 },
                 "blocked_at": "2026-11-06T09:31:10.497Z",
-                "run_id": "2026-11-06-04"
-            },
-            "github:1338006486:root": {
-                "plugin_id": "github:1338006486:root",
-                "revision": "d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
-                "reason_code": "user_stopped_research",
-                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                "details": {
-                    "reason_code": "user_stopped_research",
-                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                    "details": {
-                        "instruction": "直接收尾吧，没搞完的就放弃了",
-                        "recorded_at": "2026-11-06T09:30:32.556Z",
-                        "plugin_id": "github:1338006486:root",
-                        "revision": "d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
-                        "stage": "尚未完成父级逐题语义验收",
-                        "source_url": "https://github.com/webkubor/dsh-bloom-theme/tree/d9dda1f7237a10e8b8c148277889782bf2aa8ebe",
-                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
-                        "substantive_failures": 0,
-                        "no_retry_cooldown": true
-                    }
-                },
-                "blocked_at": "2026-11-06T09:31:10.496Z",
                 "run_id": "2026-11-06-04"
             },
             "github:1338268249:root": {
@@ -1658,29 +1494,6 @@
                 "blocked_at": "2026-11-06T09:31:10.503Z",
                 "run_id": "2026-11-06-04"
             },
-            "github:1335265978:root": {
-                "plugin_id": "github:1335265978:root",
-                "revision": "040769240690826c0610b0bc14e14efca64afb92",
-                "reason_code": "user_stopped_research",
-                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                "details": {
-                    "reason_code": "user_stopped_research",
-                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                    "details": {
-                        "instruction": "直接收尾吧，没搞完的就放弃了",
-                        "recorded_at": "2026-11-06T09:30:32.556Z",
-                        "plugin_id": "github:1335265978:root",
-                        "revision": "040769240690826c0610b0bc14e14efca64afb92",
-                        "stage": "尚未完成父级逐题语义验收",
-                        "source_url": "https://github.com/NekroAI/nekro-nxt/tree/040769240690826c0610b0bc14e14efca64afb92",
-                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
-                        "substantive_failures": 0,
-                        "no_retry_cooldown": true
-                    }
-                },
-                "blocked_at": "2026-11-06T09:31:10.503Z",
-                "run_id": "2026-11-06-04"
-            },
             "github:1417162408:root": {
                 "plugin_id": "github:1417162408:root",
                 "revision": "63a575521d543b417ac033dc61d5e92f77d3cf46",
@@ -1702,29 +1515,6 @@
                     }
                 },
                 "blocked_at": "2026-11-06T09:31:10.493Z",
-                "run_id": "2026-11-06-04"
-            },
-            "github:1333130893:root": {
-                "plugin_id": "github:1333130893:root",
-                "revision": "84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
-                "reason_code": "user_stopped_research",
-                "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                "details": {
-                    "reason_code": "user_stopped_research",
-                    "reason": "用户要求直接收尾，未完成研究本轮放弃；保留已有有效成果，不认定新版本研究完成。",
-                    "details": {
-                        "instruction": "直接收尾吧，没搞完的就放弃了",
-                        "recorded_at": "2026-11-06T09:30:32.556Z",
-                        "plugin_id": "github:1333130893:root",
-                        "revision": "84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
-                        "stage": "尚未完成父级逐题语义验收",
-                        "source_url": "https://github.com/lhh010/dsh-ui-whale/tree/84b2573021ad5f974b6a8c2c6fb46d01790ec0ff",
-                        "next_step": "本轮不再研究或重试；保留材料和原有效档案，将来明确新任务再决定是否重试。",
-                        "substantive_failures": 0,
-                        "no_retry_cooldown": true
-                    }
-                },
-                "blocked_at": "2026-11-06T09:31:10.501Z",
                 "run_id": "2026-11-06-04"
             },
             "github:1335613118:root": {
@@ -1792,6 +1582,7 @@
             "github:1081166515:root",
             "github:1085086903:root",
             "github:1086419061:hindsight-integrations-coding-agents",
+            "github:1089365685:root",
             "github:1092940076:root",
             "github:1100971867:root",
             "github:1122873619:root",
@@ -1827,6 +1618,7 @@
             "github:1159938129:root",
             "github:1160354976:dsh",
             "github:1162230313:root",
+            "github:1163808211:root",
             "github:1163808542:root",
             "github:1164005541:root",
             "github:1166078953:root",
@@ -2075,6 +1867,7 @@
             "github:1333123776:root",
             "github:1333125623:root",
             "github:1333128726:root",
+            "github:1333130893:root",
             "github:1333132287:root",
             "github:1333132389:root",
             "github:1333136466:root",
@@ -2298,6 +2091,7 @@
             "github:1334962266:root",
             "github:1335001737:root",
             "github:1335005109:root",
+            "github:1335024457:root",
             "github:1335038926:root",
             "github:1335045464:root",
             "github:1335045545:root",
@@ -2340,6 +2134,7 @@
             "github:1335241492:root",
             "github:1335244607:root",
             "github:1335253559:root",
+            "github:1335265978:root",
             "github:1335272583:root",
             "github:1335281982:root",
             "github:1335286261:root",
@@ -2381,6 +2176,7 @@
             "github:1335912966:root",
             "github:1335928912:root",
             "github:1335944000:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
             "github:1335980444:root",
             "github:1335988605:root",
             "github:1335992154:root",
@@ -2453,6 +2249,7 @@
             "github:1337950867:root",
             "github:1337972266:root",
             "github:1337978261:root",
+            "github:1338006486:root",
             "github:1338176891:root",
             "github:1338230382:root",
             "github:1338300924:root",
@@ -2477,6 +2274,7 @@
             "github:1339262076:root",
             "github:1339263264:root",
             "github:1339286962:root",
+            "github:1339297063:packages-clutch-dsh-fireworks",
             "github:1339316901:root",
             "github:1339317132:root",
             "github:1339332869:root",
@@ -2524,6 +2322,7 @@
             "github:1341946801:root",
             "github:1341972254:root",
             "github:1342024605:root",
+            "github:1342131929:root",
             "github:1342235893:root",
             "github:1342524723:root",
             "github:1342742812:root",
@@ -2592,6 +2391,7 @@
             "github:1349444030:root",
             "github:1349635927:root",
             "github:1349641014:root",
+            "github:1349900532:root",
             "github:1350325873:root",
             "github:1350368388:packages-plugin",
             "github:1350378372:root",
@@ -2609,6 +2409,7 @@
             "github:1351375738:root",
             "github:1351594249:root",
             "github:1351845049:packages-dsh-biodsh",
+            "github:1351845049:root",
             "github:1351853812:root",
             "github:1351853863:root",
             "github:1351853903:root",
@@ -2626,9 +2427,12 @@
             "github:1351854499:root",
             "github:1351903192:root",
             "github:1351908966:root",
+            "github:1351967092:root",
             "github:1352089397:root",
             "github:1352600211:root",
             "github:1352959121:root",
+            "github:1353116530:root",
+            "github:1353296006:root",
             "github:1353534254:root",
             "github:1353726715:root",
             "github:1354283280:root",
@@ -2646,6 +2450,7 @@
             "github:1358319839:root",
             "github:1358816037:root",
             "github:1358821276:root",
+            "github:1358856799:root",
             "github:1359009818:root",
             "github:1359145352:root",
             "github:1359145374:root",
@@ -2658,6 +2463,7 @@
             "github:1363429979:plugin-notes",
             "github:1363429979:plugin-usage-billing",
             "github:1363511446:root",
+            "github:1363525420:root",
             "github:1363739656:packages-enterprise-connection",
             "github:1364181676:root",
             "github:1364387461:packages-redteam-bundle",
@@ -2674,9 +2480,11 @@
             "github:1366204745:root",
             "github:1366370702:root",
             "github:1366583376:root",
+            "github:1366979533:root",
             "github:1367299537:root",
             "github:1367305514:root",
             "github:1367482095:root",
+            "github:1367503416:root",
             "github:1367597810:root",
             "github:1367673687:root",
             "github:1367998877:root",
@@ -2694,8 +2502,11 @@
             "github:1369398336:packages-dsh-oidc",
             "github:1370460115:root",
             "github:1371644959:root",
+            "github:1371788896:root",
+            "github:1371827207:root",
             "github:1372976273:root",
             "github:1372993989:root",
+            "github:1373309426:root",
             "github:1374007757:plugins-dsh-codex-auth-plugin",
             "github:1374007757:plugins-dsh-failover-search-plugin",
             "github:1374007757:plugins-dsh-fnos-plugin",
@@ -2765,6 +2576,7 @@
             "github:1388372309:integrations-deepseek-harness",
             "github:1388463793:root",
             "github:1389035449:root",
+            "github:1389051160:root",
             "github:1389061748:root",
             "github:1389458393:root",
             "github:1389469406:root",
@@ -2806,6 +2618,7 @@
             "github:1400498179:root",
             "github:1400927706:root",
             "github:1401037852:root",
+            "github:1401098255:root",
             "github:1401255267:root",
             "github:1401476500:root",
             "github:1401618027:root",
@@ -2851,8 +2664,10 @@
             "github:1412897663:root",
             "github:1412897932:root",
             "github:1413052822:root",
+            "github:1413849053:root",
             "github:1413882487:root",
             "github:1413897334:root",
+            "github:1413949479:root",
             "github:1414017637:root",
             "github:1414238544:root",
             "github:1414323673:root",
@@ -2866,6 +2681,7 @@
             "github:1415863200:root",
             "github:1416699252:root",
             "github:1416950630:root",
+            "github:1417110833:root",
             "github:1417137113:root",
             "github:1417227361:root",
             "github:1417442557:root",
@@ -2889,6 +2705,7 @@
             "github:1421963463:root",
             "github:1422091204:root",
             "github:1422121370:root",
+            "github:1422133477:root",
             "github:1422176522:root",
             "github:1422216012:root",
             "github:1422240642:root",
@@ -4178,7 +3995,35 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1331636953:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -5380,7 +5225,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -6582,7 +6454,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -7784,7 +7683,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -8986,7 +8912,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "registry": [
             "github:1339316901:root",
@@ -10188,7 +10141,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "reports": [
             "github:1339316901:root",
@@ -11390,7 +11370,34 @@
             "github:1337395971:root",
             "github:1335005109:root",
             "github:1340497731:root",
-            "github:1333470417:root"
+            "github:1333470417:root",
+            "github:1163808211:root",
+            "github:1413849053:root",
+            "github:1335944000:tavern-plugin-packages-dsh-tavern",
+            "github:1371788896:root",
+            "github:1338006486:root",
+            "github:1351845049:root",
+            "github:1367503416:root",
+            "github:1349900532:root",
+            "github:1417110833:root",
+            "github:1353296006:root",
+            "github:1422133477:root",
+            "github:1089365685:root",
+            "github:1358856799:root",
+            "github:1353116530:root",
+            "github:1366979533:root",
+            "github:1413949479:root",
+            "github:1342131929:root",
+            "github:1389051160:root",
+            "github:1363525420:root",
+            "github:1401098255:root",
+            "github:1371827207:root",
+            "github:1373309426:root",
+            "github:1335024457:root",
+            "github:1351967092:root",
+            "github:1333130893:root",
+            "github:1335265978:root",
+            "github:1339297063:packages-clutch-dsh-fireworks"
         ],
         "retained_documents": []
     },
@@ -12594,7 +12601,34 @@
         "github:1337395971:root",
         "github:1335005109:root",
         "github:1340497731:root",
-        "github:1333470417:root"
+        "github:1333470417:root",
+        "github:1163808211:root",
+        "github:1413849053:root",
+        "github:1335944000:tavern-plugin-packages-dsh-tavern",
+        "github:1371788896:root",
+        "github:1338006486:root",
+        "github:1351845049:root",
+        "github:1367503416:root",
+        "github:1349900532:root",
+        "github:1417110833:root",
+        "github:1353296006:root",
+        "github:1422133477:root",
+        "github:1089365685:root",
+        "github:1358856799:root",
+        "github:1353116530:root",
+        "github:1366979533:root",
+        "github:1413949479:root",
+        "github:1342131929:root",
+        "github:1389051160:root",
+        "github:1363525420:root",
+        "github:1401098255:root",
+        "github:1371827207:root",
+        "github:1373309426:root",
+        "github:1335024457:root",
+        "github:1351967092:root",
+        "github:1333130893:root",
+        "github:1335265978:root",
+        "github:1339297063:packages-clutch-dsh-fireworks"
     ],
     "artifact_order": [
         "data/runs/2026-10-22-02/snapshots/02muller25--dsh-api-balance/REVIEWED-SOURCE.json",
@@ -12944,7 +12978,6 @@
         "data/runs/2026-10-27-03/whitelonng--dshcode/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-03/xiaobright--dsh-anchored-standard/REVIEWED-SOURCE.json",
         "data/runs/2026-10-28-02/xiaods--k8e/REVIEWED-SOURCE.json",
-        "data/runs/2026-10-26-03/yaoapp--yao/REVIEWED-SOURCE.json",
         "data/runs/2026-10-26-03/yjh051108--dsh-routing-suite/REVIEWED-SOURCE.json",
         "data/runs/2026-10-28-02/yogsoth-ai--de-anthropocentric-research-engine/REVIEWED-SOURCE.json",
         "data/runs/2026-10-27-03/zhiyuan-fan--awesome-deepseek-harness-plugins/REVIEWED-SOURCE.json",
@@ -12983,43 +13016,16 @@
         "data/runs/2026-10-29-03/zju-real--polaris/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-03/5v1a-afk--dsh-sticker-pack/REVIEWED-SOURCE.json",
         "data/runs/2026-10-29-03/2384418321--dsh-integration-settings/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/zhu1090093659--dsh-web--packages-dsh-git-graph/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/michengai--dsh-archive-manager/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/omdsh-dev--dsh-mnemon/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/shanliuling--dsh-image-gen/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/yyh-001--dsh-meme/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/omdsh-dev--dsh-genui/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/dream-num--dsh-univer-office/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-01/liustack--modsearch/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-02/nocobase--nocobase/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/tt-a1i--archify/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/t-auto--dsh-ops/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/zhu1090093659--dsh-web/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/tencent--weknora/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/devin-axis--ipollowork/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/tencent--browserskill/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/superdesigndev--treg/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/volcengine--openviking/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/zseven-w--openpencil/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/q00--ouroboros--integrations-dsh-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/loopx-project--loopx--packages-dsh-loopx-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/q00--ouroboros/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/pc2005-cloud--dsh-pet/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/memtensor--memos--apps-memos-local-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/kingcharleslzy-ai--dsh-purge/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/qingyuna--answer-me-with-html/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/foryourhealth111-pixel--vibe-skills/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/zhukunpenglinyutong--desktop-cc-gui/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/awesome-dsh-plugin--awesome-dsh-plugin/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/minglink--dsh-infinite-gen-5/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/c1overzz--dsh-bili-scroll/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/strukto-ai--mirage/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-01-03/dingminhua--dsh-connect-workbuddy/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/agentscope-ai--reme/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/agentscope-ai--reme--integrations-dsh/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-03/whiteguo233--openbiliclaw/REVIEWED-SOURCE.json",
@@ -13127,7 +13133,6 @@
         "data/runs/2026-11-01-07/ecnu--eduwork--packages-dsh-oidc/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-07/michengai--dsh-codex-ui/REVIEWED-SOURCE.json",
         "data/runs/2026-11-01-07/perrylink--dsh-auto-review/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-02-01/small-tailqwq--dsh-deep-whale--maid-atelier/REVIEWED-SOURCE.json",
         "data/runs/2026-11-02-01/mnemon-dev--mnemon/REVIEWED-SOURCE.json",
         "data/runs/2026-11-02-01/small-tailqwq--dsh-deep-whale/REVIEWED-SOURCE.json",
         "data/runs/2026-11-02-01/vostride--agent-qa/REVIEWED-SOURCE.json",
@@ -13805,6 +13810,64 @@
         "data/runs/2026-11-06-04/lhuans--dsh-genui/REVIEWED-SOURCE.json",
         "data/runs/2026-11-06-04/ppy-web--dsh-plugin-xiaomi-mimo-tts/REVIEWED-SOURCE.json",
         "data/runs/2026-11-06-04/han-1413141--dsh-cost-meter/delivery-1/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-06-04/amlyczz--dsh-lark-link/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-06-04/amlyczz--dsh-lark-link/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tt-a1i--archify/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tencent--weknora/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/volcengine--openviking/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tt-a1i--archify--integrations-deepseek-harness/NPM-RELEASE-EVIDENCE.json",
+        "data/runs/2026-11-09-01/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/nocobase--nocobase/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/zhu1090093659--dsh-web/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/t-auto--dsh-ops/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/tencent--browserskill/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/yaoapp--yao/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/small-tailqwq--dsh-deep-whale--maid-atelier/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/superdesigndev--treg/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/devin-axis--ipollowork/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/zseven-w--openpencil/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/loopx-project--loopx--packages-dsh-loopx-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/q00--ouroboros--integrations-dsh-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/memtensor--memos--apps-memos-local-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/q00--ouroboros/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/omdsh-dev--dsh-mnemon/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/qingyuna--answer-me-with-html/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/pc2005-cloud--dsh-pet/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/zhukunpenglinyutong--desktop-cc-gui/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/kingcharleslzy-ai--dsh-purge/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/dingminhua--dsh-connect-workbuddy/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/c1overzz--dsh-bili-scroll/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/liustack--modlens/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/shanliuling--dsh-image-gen/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/hellohub1212--dsh-windows-mcp/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/flizzywine--dsh-tavern--tavern-plugin-packages-dsh-tavern/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/fourzkw--dsh-drawai/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/webkubor--dsh-bloom-theme/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/sagirimo--biodsh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/michengai--dsh-pua/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/opdsh--unity-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/john-walks-slow--dsh-inject/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/kenz1117--dsh-engram/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/kenz1117--dsh-engram/NPM-RELEASE-EVIDENCE.json",
+        "data/runs/2026-11-09-01/kingcharleslzy-ai--dsh-qwen-studio/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/hyqibot--a-share-ai/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/michengai--dsh-btw/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/jimmy0123-ux--dsh-token-pet/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/ouli-1242--dsh-plugin-tool-management/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/dingminhua--dsh-connect-qoder/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/iceapriler--dsh-remote-mobile/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/aklnaaw--dsh-xiaoke-widget/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/gulagala001--oh-my-dsh/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/kddkbd--deepseek-splash-animation/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/polinnizhong--dsh-knit/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/ggboya--dsh-paper-reader/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/fengze233--dsh-vscode/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/weibaohui--skills-management/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/lhh010--dsh-ui-whale/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/nekroai--nekro-nxt/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-09-01/cerbur--clutch-dsh--packages-clutch-dsh-fireworks/REVIEWED-SOURCE.json"
     ]
 }

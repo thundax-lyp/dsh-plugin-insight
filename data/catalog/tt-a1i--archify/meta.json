@@ -1,27 +1,27 @@
 {
     "repository": "tt-a1i/archify",
     "repository_id": 1211139949,
-    "captured_at": "2026-11-01T08:13:08.475Z",
-    "window_start": "2026-10-02T08:13:08.475Z",
-    "stars": 92198,
-    "pushed_at": "2026-10-31T06:53:27Z",
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 94540,
+    "pushed_at": "2026-11-08T17:06:37Z",
     "issues": {
-        "open": 137,
-        "closed": 221,
-        "created_30d": 144,
-        "closed_30d": 116,
-        "updated_30d": 209
+        "open": 147,
+        "closed": 226,
+        "created_30d": 118,
+        "closed_30d": 93,
+        "updated_30d": 187
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-01T06:52:54.214Z",
+        "captured_at": "2026-11-08T06:43:41.836Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
         "latest_error": null
     }
 }
