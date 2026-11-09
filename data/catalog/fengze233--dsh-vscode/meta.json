@@ -1,0 +1,50 @@
+{
+    "repository": "Fengze233/dsh-vscode",
+    "repository_id": 1335024457,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 47,
+    "pushed_at": "2026-11-08T13:28:51Z",
+    "issues": {
+        "open": null,
+        "closed": 25,
+        "created_30d": 4,
+        "closed_30d": 8,
+        "updated_30d": 8
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFengze233%2Fdsh-vscode%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3ED0:ED4DB:5C3154F:84694D0:6AF1302A and timestamp 2026-11-09 02:30:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T06:43:41.836Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-vscode-panel",
+        "captured_at": "2026-11-09T02:22:10.023Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-vscode-panel",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-09T02:22:10.023Z",
+            "source_url": "https://registry.npmjs.org/dsh-vscode-panel",
+            "error": "fetch failed",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "fetch failed"
+        }
+    }
+}

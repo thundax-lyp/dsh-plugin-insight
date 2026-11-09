@@ -1,0 +1,27 @@
+{
+    "repository": "gulagala001/oh-my-dsh",
+    "repository_id": 1363525420,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 50,
+    "pushed_at": "2026-11-08T10:25:17Z",
+    "issues": {
+        "open": 9,
+        "closed": 21,
+        "created_30d": 16,
+        "closed_30d": 10,
+        "updated_30d": 19
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T19:58:39.041Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    }
+}

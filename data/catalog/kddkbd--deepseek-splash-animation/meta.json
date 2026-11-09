@@ -1,0 +1,45 @@
+{
+    "repository": "KDDKBD/DeepSeek-splash-animation",
+    "repository_id": 1401098255,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 53,
+    "pushed_at": "2026-10-03T10:51:04Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T01:14:05.488Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-splash-animation",
+        "captured_at": "2026-11-09T02:22:10.023Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-splash-animation",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-09T02:22:10.023Z",
+            "source_url": "https://registry.npmjs.org/dsh-splash-animation",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "repository": "helloHub1212/dsh-windows-mcp",
+    "repository_id": 1413849053,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 224,
+    "pushed_at": "2026-11-08T05:10:58Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AhelloHub1212%2Fdsh-windows-mcp%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 822C:11CF2B:1702070:197CAA3:6AF12FA2 and timestamp 2026-11-09 02:27:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AhelloHub1212%2Fdsh-windows-mcp%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2BE:29DD0E:172A738:19A4C70:6AF12FA3 and timestamp 2026-11-09 02:27:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AhelloHub1212%2Fdsh-windows-mcp%20is%3Aissue%20created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2E4:122422:16DA57A:19566D5:6AF12FA4 and timestamp 2026-11-09 02:27:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AhelloHub1212%2Fdsh-windows-mcp%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E2FC:272778:1740E63:19BB654:6AF12FA5 and timestamp 2026-11-09 02:27:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AhelloHub1212%2Fdsh-windows-mcp%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E312:1EBC4C:171EF23:19999E8:6AF12FA6 and timestamp 2026-11-09 02:27:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T01:14:05.488Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-windows-mcp",
+        "captured_at": "2026-11-08T22:11:24.754Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 716731,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-windows-mcp",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-11T02:32:11.890Z",
+            "captured_at": "2026-11-08T22:11:24.754Z",
+            "source_url": "https://registry.npmjs.org/dsh-windows-mcp",
+            "error": null,
+            "latest_version": "0.2.4",
+            "latest_published_at": "2026-11-08T05:13:24.975Z",
+            "latest_error": null
+        }
+    }
+}

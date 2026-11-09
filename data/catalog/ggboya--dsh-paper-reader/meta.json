@@ -1,0 +1,62 @@
+{
+    "repository": "GGboya/dsh-paper-reader",
+    "repository_id": 1373309426,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 49,
+    "pushed_at": "2026-11-06T10:27:24Z",
+    "issues": {
+        "open": 4,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AGGboya%2Fdsh-paper-reader%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F46E:36C568:58B6AE1:7FCD6CA:6AF1301A and timestamp 2026-11-09 02:29:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGGboya%2Fdsh-paper-reader%20is%3Aissue%20created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E218:7B484:5C4802C:847F1F5:6AF1301C and timestamp 2026-11-09 02:29:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGGboya%2Fdsh-paper-reader%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E22C:99B28:1028F9AA:16FB443F:6AF1301F and timestamp 2026-11-09 02:29:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AGGboya%2Fdsh-paper-reader%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E23A:1B377B:5A10921:815A313:6AF13021 and timestamp 2026-11-09 02:29:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T19:58:39.041Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@ggboy123/dsh-paper-reader",
+        "captured_at": "2026-11-06T23:13:23.486Z",
+        "window_start": "2026-10-07",
+        "window_end": "2026-11-05",
+        "downloads_30d": 9422,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-07:2026-11-05/%40ggboy123%2Fdsh-paper-reader",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-17T16:26:27.820Z",
+            "captured_at": "2026-11-06T23:13:23.486Z",
+            "source_url": "https://registry.npmjs.org/%40ggboy123%2Fdsh-paper-reader",
+            "error": null,
+            "latest_version": "1.8.2",
+            "latest_published_at": "2026-11-06T11:42:52.417Z",
+            "latest_error": null
+        }
+    }
+}

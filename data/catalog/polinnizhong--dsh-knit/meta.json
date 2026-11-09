@@ -1,0 +1,45 @@
+{
+    "repository": "PolinniZhong/dsh-knit",
+    "repository_id": 1371827207,
+    "captured_at": "2026-11-09T02:22:10.023Z",
+    "window_start": "2026-10-10T02:22:10.023Z",
+    "stars": 48,
+    "pushed_at": "2026-10-30T16:30:48Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-08T19:58:39.041Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
+        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
+        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-knit",
+        "captured_at": "2026-11-07T13:09:57.589Z",
+        "window_start": "2026-10-08",
+        "window_end": "2026-11-06",
+        "downloads_30d": 3757,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-08:2026-11-06/dsh-knit",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-15T17:15:47.222Z",
+            "captured_at": "2026-11-07T13:09:57.589Z",
+            "source_url": "https://registry.npmjs.org/dsh-knit",
+            "error": null,
+            "latest_version": "0.25.0",
+            "latest_published_at": "2026-10-30T16:22:17.533Z",
+            "latest_error": null
+        }
+    }
+}
