@@ -12,9 +12,26 @@
 
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
+| [A-share-Ai 公开看板](#plugin-1089365685-root) | 固定仓提供浏览器看板、静态历史报告和分析样例，实时数据及交易执行由仓外链路提供或声称。 | [Q04](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q04) 从固定材料只读核查，保留日期与来源。 |
 | [dsh-armor-switch](#plugin-1409096911-root) | 向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。 | 普通偏好优先使用既有窄配置；当前不建议新增采用整套覆盖契约。 |
 | [dsh-piano](#plugin-1412161923-root) | 在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 | 娱乐用途可观察或在隔离浏览器小范围试用，先核发声、刮奏与停用后资源；不用于需 MIDI/录音交付的场景。 |
 | [竹知了](#plugin-1319484586-root) | 在浏览器中模拟甩动传统竹知了，可按住画圈、自动甩或使用手机体感，并随动作发出模拟叫声。 | [Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04) 对源码学习可先对照指针目标、角速度和音频更新，再比较手绘与 3D 消费同一状态的方式。 |
+
+<a id="plugin-1089365685-root"></a>
+
+## [A-share-Ai 公开看板](../../plugins/hyqibot--a-share-ai/INSIGHT.md)
+
+[![GitHub ★ 134](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=134&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hyqibot/A-share-Ai)
+
+> **用途**：[Q01](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q01) 面向核对作者公开展示内容和数据出处的研究读者。可与原始记录或独立报告对照，公开页先供观察。
+
+> **亮点**：[Q01](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q01) 与 [Q02](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q02) 将持仓、历史表和性能图分视图呈现，并提供固定报表入口。可证实的是前端组织与读取。
+
+> **思考**：[Q03](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q03) 报表与示例无法证明实盘成交、模型训练与效果，部分示例可把随机收益记入知识库。[Q02](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q02) 动态结果也缺可核后端。
+
+> **建议**：[Q05](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q05) 可试验给数据状态、来源和截至时间增加可核标签，以读者误判和找出处时间与现有页对照。
+
+[查看完整分析](../../plugins/hyqibot--a-share-ai/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1409096911-root"></a>
 
@@ -68,4 +85,4 @@
 
 ## 更新时间
 
-2026-11-06
+2026-11-09

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[aab9ea1](https://github.com/QingYunA/answer-me-with-html/tree/aab9ea19f50f038054eeb60475bbb7ea26f149e3)
+源码版本：[053619b](https://github.com/QingYunA/answer-me-with-html/tree/053619b917c6bf2e17eae5496d05eb08e10fe889)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,962](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C962&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
+[![GitHub ★ 6,062](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C062&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/QingYunA/answer-me-with-html)
 <!-- END META -->
 
-> **功能**：将模型生成的扩展 Markdown 草稿排版为单页 HTML，并支持图形组件与写作检查。
+> **功能**：将 Agent 的短 Markdown 草稿与图关系渲染为单页 HTML，DSH bundle 安装文件系统 Skill。
 
-> **亮点**：[Q02](#research-q02) 将语义草稿与页面布局分离，提供图形和写作检查；不是发明 HTML、Markdown 或可视化。作者小样本效果不代表所有任务。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把坐标与页面框架交给可复用 CLI，量化收益仍只有作者样本。
 
-> **主要限制**：[Q03](#research-q03) 中写作检查、原始 HTML 清理与 CSP 不能验证图关系或事实；页面可读性、跨浏览器防护和完整离线性尚未证实。
+> **主要限制**：[Q03](#research-q03) 解析与 CSP 各约束局部行为，事实正确性、文件嵌入和交付后的暴露仍需分别验收。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要可交付页面，与直接 Markdown 和 HTML 相比变化是什么？](#detail-section-11)
-  - [Q02 · DSH 加载什么，草稿如何变成页面？](#detail-section-12)
-  - [Q03 · 渲染成功、内容检查和安全策略分别覆盖什么？](#detail-section-13)
-  - [Q04 · 首次、持续和失败恢复的成本是什么？](#detail-section-14)
-  - [Q05 · 什么任务值得试用，何时回退？](#detail-section-15)
-  - [Q06 · 能否用来源绑定检验图的语义关系？](#detail-section-16)
+  - [Q01 · 哪类解释值得做成 HTML，原办法和收益证据是什么？](#detail-section-11)
+  - [Q02 · 从 DSH 加载到解释页面，真实入口与渲染如何接线？](#detail-section-12)
+  - [Q03 · 文风与网页安全检查覆盖什么？](#detail-section-13)
+  - [Q04 · 试用依赖、文件与退出成本怎样核对？](#detail-section-14)
+  - [Q05 · 给关键图关系单独核对是否有收益？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,79 +40,77 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向需要解释流程、架构或多维比较并交付单页的读者及 Agent。
+> **用途**：[Q01](#research-q01) 架构与因果解释可按面板阅读，原办法是 Markdown 或直接生成 HTML。
 
-原生 Markdown 能表达文字和表格，Agent 手写 HTML 也能做页面；本项目减少重复页面结构与图坐标，但引入语法与文件管理。
+[Q01](#research-q01) 比较纯 Markdown 和直接生成 HTML。作者 Claude Code 三话题各三次，DSH 对照应控制模型、预期事实、核验标准，并另计实际账单。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| Skill | 指导 Agent 起草和交付 | 内部委派报告默认不生成页面 |
-| CLI | 渲染、警告、管理页面 | 需 Node；警告不等于事实校验 |
-| 图形组件 | 将结构文字布局成图 | 关系事实需人工复核 |
-| 写作检查 | 提示风格问题 | 默认警告，strict 可拒绝 |
+| 能力 | 用途 | 边界 |
+| --- | --- | --- |
+| DSH Skill | 提供草稿及调用流程 | 由 bundle 单独挂载 |
+| Markdown 与 flow | 输出解释页和关系图 | 事实与边由草稿作者提供 |
+| 检查与替换 | 定位错误和更新文件 | 警告级别与写入范围不同 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node 20+ | 必需 | 执行打包 CLI | 无法生成页面 |
-| DSH filesystem Skill provider | DSH 路径必需 | 注册 Skill 根 | 宿主不发现 Skill |
-| Agent 与可复核内容 | 必需 | 起草和审核 | 页面内容不可信 |
-| 浏览器 | 查看 HTML 时必需 | 阅读交付页面 | 可保留原 Markdown |
+| --- | --- | --- | --- |
+| Node 20+ | 是 | 执行包内 CLI | 先核对 Node 运行时 |
+| DSH profile 与文件系统 provider | 仅 DSH 路径 | 注册并读取已装 Skill | 该 profile 无此入口，CLI 可独立使用 |
+| 输出目录写权限 | 是 | 保存 HTML 与可修订草稿 | 默认目录可尝试私有临时目录，或明确指定获准位置 |
+| 可用的浏览器 | 读者验收需要 | 确认页面、图和链接 | 交付文字或另行查看 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户选择适合图示的问题 | 安装并确认 Node 与 Skill |
-| 草拟 | Agent 写扩展 Markdown | 保留来源、符合组件语法 |
-| 渲染 | CLI 解析、检查并写出页面 | 修复错误和警告 |
-| 验收 | 用户核对事实和图关系 | 无法验证时退回文本 |
+| --- | --- | --- |
+| 准备 | 操作者核对 Node 和 profile | DSH 可找到专用 Skill |
+| 生成 | Agent 写面板草稿并调用 render | 解析或组件错误按行修改 |
+| 验收 | 读者打开 HTML 并对照关系与文件范围 | 检查输出位置和内容，失败时保留旧页或恢复文字 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 安装 | Node 和本地存储 | 安装、宿主发现 | 兼容未测 |
-| 持续 | 模型 token、本地 CPU 和磁盘 | 草稿、修错与复核 | 总费用未知 |
-| 失败 | 重试资源未知 | 修复格式与旧页管理 | 旧页在新页写出前保留 |
-| 退出 | 文件整理成本未知 | 用户选择清理或回 Markdown | 更新检查可能联网 |
+| --- | --- | --- | --- |
+| 首次使用 | Node 与 DSH profile 环境，实际支出未知 | 检查安装、权限及首次浏览器打开 | 有 Node 20+ 约束，宿主兼容未实测 |
+| 持续使用 | 每题模型输入与输出 token、本地文件占用，DSH 账单未知 | 写草稿、核对图与内容，计合格交付分钟 | 作者仅报告 Claude Code 小样本 |
+| 失败恢复 | 重渲染及重复保留文件，增量未知 | 定位警告、检查实际路径、确认旧页及复核 | 默认目录可退到临时位置，外部输出就地写入 |
+| 退出 | 已生成页面和草稿的留存空间未知 | 移除一直生成页面规则，盘点和处理产物 | 页面内带源稿，dry-run 可预览清理范围 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 图布局 | 组件解析后调用布局 | 图关系真实性 |
-| 输出 token | 作者小样本声称减少 | 全轮费用和本任务效果 |
-| 文风检查 | 默认警告或严格拒绝 | 内容事实与读者理解 |
+| --- | --- | --- |
+| 生产解释页 | 源码把布局与页面框架交给 CLI | 同条件的首次合格与交付时间 |
+| 输出 token 与等待 | 作者 Claude Code 三话题各三次对照 | DSH 端总 token、真实账单与重试负担 |
+| 读者复核 | 按面板和关系图组织材料 | 错误边发现率、定位时长及可分享性 |
 
-> **思考**：[Q03](#research-q03) 中写作检查、原始 HTML 清理与 CSP 不能验证图关系或事实；页面可读性、跨浏览器防护和完整离线性尚未证实。
+> **思考**：[Q03](#research-q03) 解析与 CSP 各约束局部行为，事实正确性、文件嵌入和交付后的暴露仍需分别验收。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 将语义草稿与页面布局分离，提供图形和写作检查；不是发明 HTML、Markdown 或可视化。作者小样本效果不代表所有任务。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把坐标与页面框架交给可复用 CLI，量化收益仍只有作者样本。
 
-[Q02](#research-q02) 通过 Skill provider、打包 CLI 和模板分离内容与布局；[Q03](#research-q03) 中 CSP 和清理有明确范围，不能视作通用隔离。
+[Q02](#research-q02) 先校验后写入。[Q03](#research-q03) 区分正文过滤、显式围栏和 CSP。[Q04](#research-q04) 新页写入成功后才处理旧页。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 中写作检查、原始 HTML 清理与 CSP 不能验证图关系或事实；页面可读性、跨浏览器防护和完整离线性尚未证实。
+[Q03](#research-q03) 解析与 CSP 各约束局部行为，事实正确性、文件嵌入和交付后的暴露仍需分别验收。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 将复杂结构化说明用于隔离试用，核对箭头与事实；文本足够或无法核实就退回 Markdown。
+[Q04](#research-q04) 先用非敏感项目对比原流程，按合格交付计事实差错、用时、输入及输出 token。若中断，核对旧页及临时输出，恢复文字并盘点现有页面和草稿。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-静态核查固定源码；未安装、运行目标、打开页面或重做作者基准。
+DSH bundle、页面生成、错误拒绝与网页约束有固定源码依据。作者对照、宿主兼容、语义正确性与增量实验未复现。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、cordis.patch.yml、skills/answer-me-with-html/SKILL.md、src/cli.js、src/render.js、src/components/flow.js、src/raw-html.js、src/csp.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、skills/answer-me-with-html/SKILL.md、package.json、index.js、cordis.patch.yml、src/cli.js、src/render.js、src/components/flow.js、src/markdown.js、src/csp.js、src/code.js、src/images.js、src/update.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交静态检查根包的 DSH patch、Skill、CLI、渲染器及代表性 flow 组件，未穷尽全部视频、图表、浏览器或安全边界。
-- 下一步：以固定任务对照 Markdown、直接 HTML 与本工具，记录事实错误、读者理解、总费用及可访问性；隔离浏览器检验 CSP。
+- 边界：研究根组件的 DSH 注册、解释草稿、渲染和输出。未审全部组件、服务器、导出及视频功能，未执行目标、安装包或打开页面。
+- 下一步：用相同模型和问题比较 Markdown、直接 HTML、现有 DSL 与 [Q05](#research-q05) 假设，统计首次合格、关系定位和总成本。
 
 **分析版本**
 
 - **仓库**：[QingYunA/answer-me-with-html](https://github.com/QingYunA/answer-me-with-html)
-- **版本号**：0.5.10（[固定提交 aab9ea1](https://github.com/QingYunA/answer-me-with-html/tree/aab9ea19f50f038054eeb60475bbb7ea26f149e3)）
-- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.11（[固定提交 053619b](https://github.com/QingYunA/answer-me-with-html/tree/053619b917c6bf2e17eae5496d05eb08e10fe889)）
+- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +137,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 提出图关系附来源或人工推断标记的未验证方案，须与现有代码行引用和语法检查对照并衡量错误发现率及成本。
+[Q05](#research-q05) 在重要边旁显示证据位置和人工核对状态，可能降低方向误写及审阅定位时间。以当前分离的图和代码块作对照。
 
-以固定任务对照 Markdown、直接 HTML 与本工具，记录事实错误、读者理解、总费用及可访问性；隔离浏览器检验 CSP。
+用相同模型和问题比较 Markdown、直接 HTML、现有 DSL 与 [Q05](#research-q05) 假设，统计首次合格、关系定位和总成本。
 
 <a id="detail-section-9"></a>
 
@@ -155,50 +152,52 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 76 | 3887 | — | — | 56873 |
-| .mjs | source | 15 | 14905 | 14144 | 577 | — |
-| .js | source | 121 | 16693 | 13829 | 1848 | — |
+| .md | source | 79 | 4022 | — | — | 60682 |
+| .mjs | source | 15 | 15424 | 14654 | 586 | — |
+| .js | source | 124 | 17290 | 14343 | 1899 | — |
 | .md | example | 6 | 341 | — | — | 2286 |
-| .js | test | 84 | 19097 | 16595 | 909 | — |
+| .js | test | 88 | 20599 | 17913 | 960 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 125](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=125&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 120](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=120&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
+[![Issue 未关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 76](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=76&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 74](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=74&color=737b86&logo=github)](https://github.com/QingYunA/answer-me-with-html/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-09。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查根 Skill 的 DSH 入口、页面渲染、成本及事实与安全边界。
+**插件研究总目标**：让 Agent 用短草稿交付一页解释时，CLI 自动布局、检查和内容边界分别可验证到哪里？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要可交付页面，与直接 Markdown 和 HTML 相比变化是什么？
+### Q01 · 哪类解释值得做成 HTML，原办法和收益证据是什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向需要解释流程、架构或比较并交付单页的读者；直接 Markdown 已能交付文字与表格，模型手写 HTML 已能做网页。此项目的贡献是让模型写带结构的 Markdown 草稿，由 CLI 决定页面、样式与图布局；代价是新增草稿语法、Node 和本地文件。作者用 9 页统计输出 token，3 题各 3 次对照声称更快、省输出，且明示总账单降幅小于输出 token，不能将此推为所有任务的总成本或阅读效果。本轮未复跑，也无读者理解度对照。
+交接复杂方案、比较分支或解释因果链时，读者可按面板和箭头逐项核对。直接写 Markdown 便于随处阅读，直接写 HTML 排版自由但模型还要输出页面代码。本工具移出页面框架和布局，模型仍写草稿、节点和边。作者在 Claude Code 用 Claude Sonnet 5.5 比较三话题各三次，文中报告 4,893 对 612 个生成 token，用时对照为 31 对 12 秒的中位数，账单下降约 15% 也是作者样本口径。报告未据此核定合格率。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:49-71](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L49-L71)
+**依据 1 · 作者声明**：[README.md:47-63](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/README.md#L47-L63)
 
-作者小样本、结果和总账单条件。
+手写 HTML 对照及作者 token、时间统计。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
+## Why not just ask for HTML?
+
 You can. Models write decent HTML now. But most of what they write is not content. We counted the tokens in 9 pages the model wrote by hand, 4,893 tokens on average:
 
 | Part of the page | Share | With this skill |
@@ -214,106 +213,69 @@ With this skill the model writes only a Markdown draft. For the same questions t
 | :--- | ---: | ---: | :--- |
 | Tokens the model writes | 4,893 | **612** | **8× fewer** |
 | Time | 31 s | **12 s** | **2.6× faster** |
+```
 
-<p align="center">
-  <img src="docs/images/plain-vs-skill.png" alt="The same TCP question answered both ways" width="100%">
-</p>
+</details>
 
+**依据 2 · 作者声明**：[README.md:69-71](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/README.md#L69-L71)
+
+区分作者账单估计和输出 token。
+
+```text
 <p align="center"><sub>The same question, the same model, answered both ways. Both pages are usable.</sub></p>
 
 The token counts are saved in [bench/corpus/tokens.json](bench/corpus/tokens.json), so `node bench/corpus.mjs` gives the same numbers every time. The pages themselves are a [download](https://github.com/QingYunA/answer-me-with-html/releases/download/v0.4.14/bench-corpus-2026-10-07.zip). The bill drops less than the writing, about 15% here, because every turn also reads the system prompt, your question and the conversation, with or without the skill. See [where the cost goes](bench/README.md#where-the-cost-goes).
 ```
 
-</details>
+**依据 3 · 作者声明**：[skills/answer-me-with-html/SKILL.md:73-76](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/skills/answer-me-with-html/SKILL.md#L73-L76)
 
-**依据 2 · 作者声明**：[README.md:194-200](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L194-L200)
-
-作者解释模型写内容、CLI 负责呈现的设计。
+作者描述按问题组织面板的正常步骤。
 
 ```text
-## Background
-
-Andrej Karpathy [posted](https://x.com/karpathy/status/2105819303471976479) that as LLMs do more of the work, keeping up with their output becomes the hard part. A diagram or a web page is far easier to take in than a long block of text.
-
-I tried asking agents to answer in HTML directly. The pages were good, but slow: a decent page took a minute or two, mostly hundreds of lines of CSS that were nearly the same every time. Diagrams were worse. The model had to compute SVG coordinates by hand, and arrows often pointed at nothing.
-
-So Answer me with HTML takes that work away from the model. The model writes content. The CLI handles layout, color and drawing.
-```
-
-**依据 3 · 源码核查**：[skills/answer-me-with-html/SKILL.md:18-22](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L18-L22)
-
-Skill 将内容草稿与版式分离。
-
-```text
-# Answer me with HTML: answer a complex question with one HTML page
-
-You write only the **content draft** (extended Markdown). The `am` CLI does all layout, colours, dark mode and diagram coordinates. **Do not hand-write HTML / CSS / SVG.**
-
-Reply to the user, and write the draft, in the user's language.
+1. First list 3–8 panels in your head. Each panel answers one sub-question only.
+   The draft language follows the language of the user's question: an English question gets an English draft, a Chinese question a Chinese draft, a Japanese question a Japanese draft. The page button labels, `<html lang>` and the STE check rules switch automatically by the draft language (a draft containing kana counts as Japanese); STE applies the English or Chinese rules to each sentence by its language (Japanese sentences get only the sentence-length and paragraph-length checks, with the same character limits as Chinese; any other language gets only those two checks, counted in words). To set the language yourself, write `lang:` in the frontmatter: `en`, `zh` (Simplified Chinese), `zh-Hant` or `zh-TW` (Traditional Chinese), `ja`, or any other language tag such as `fr` or `ko`. Detection reads Chinese (Simplified, or Traditional when the text has characters written in only one form), Japanese, Korean, and Cyrillic, Arabic, Hebrew, Thai and Greek text, and reads all Latin-script text as English. Declare the language when the user writes a Latin-script language other than English, when a Chinese text is too short or too plain to show Traditional characters, or when an exact tag matters (Arabic script also writes Persian, Cyrillic also Ukrainian). A language without its own labels still gets the right `<html lang>`, with English page labels.
+2. Choose components by the shape of the information (see section 4).
+3. Render in one go with a heredoc:
 ```
 
 #### 缺口
 
-- 没有当前任务和读者对照
-  **影响**：无法证明所有回答更易理解或更便宜
-  **进一步探讨**：同一任务比较原生 Markdown、手写 HTML 和本工具的准确率、读者时间及费用。
+- 作者小样本未复测，缺独立质量标注和 DSH 对照。
+  **影响**：不能从生成 token 或作者时间推出相同质量下的收益。
+  **进一步探讨**：控制同一模型、问题和核验规则，分别记录合格交付时间、首次合格数、输入与输出 token、实际账单和核对人时。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · DSH 加载什么，草稿如何变成页面？
+### Q02 · 从 DSH 加载到解释页面，真实入口与渲染如何接线？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-package.json 将 dsh.bundle.patch 指向 cordis.patch.yml；patch 插入 filesystem skill provider、禁用默认根并定位打包 skills，index.js 自身导入无操作。被加载的 Skill 指导 Agent 写扩展 Markdown，用 Node 执行随 Skill 打包的脚本；CLI 的 render 路径读取配置并调用 renderDoc，渲染器解析、应用主题、进行写作检查、渲染块与组件并生成 HTML，CLI 写出页面。flow 组件把边和节点文本解析为模型并调用布局器，布局正确只说明渲染步骤完成，不能证明关系事实正确。无实际宿主加载或浏览器运行证据。
+根 manifest 声明 bundle。补丁插入专用文件系统 Skill provider，从宿主 profile 解析包路径，includeDefaultRoots 只约束该 provider。根 index 为空导出。Skill 文档调用内置 am 脚本，另有 npm bin。CLI 先调用 renderDoc，后计算输出路径并写入。解析与组件错误在构造页面前抛出。flow 解析作者关系，传给 Dagre 计算坐标。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-27](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/package.json#L1-L27)
+**依据 1 · 源码核查**：[package.json:22-29](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/package.json#L22-L29)
 
-包入口、二进制、DSH patch 和 Node 版本。
-
-<details>
-<summary>查看原文（27行）</summary>
+DSH bundle 和 Node 引擎约束。
 
 ```text
-{
-  "name": "answer-me-with-html",
-  "version": "0.5.10",
-  "description": "Answer hard questions with a one-page HTML: the model writes a short Markdown draft; the bundled CLI handles templates, SVG auto-layout and an STE controlled-writing check.",
-  "icon": "./docs/logo.svg",
-  "type": "module",
-  "main": "index.js",
-  "bin": {
-    "am": "bin/am.js",
-    "answer-me-with-html": "bin/am.js"
-  },
-  "files": [
-    "index.js",
-    "bin",
-    "src",
-    "skills",
-    "examples",
-    "cordis.patch.yml",
-    "docs/logo.svg",
-    "locale"
-  ],
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
   },
   "engines": {
+    "node": ">=20"
+  },
 ```
 
-</details>
+**依据 2 · 源码核查**：[index.js:1-4](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/index.js#L1-L4)
 
-**依据 2 · 源码核查**：[index.js:1-4](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/index.js#L1-L4)
-
-模块本身不提供运行时行为。
+根入口是空导出。
 
 ```text
 // Package entry for installers that require one: dsh-plugin-hub 1.6.6 and older block a git install
@@ -322,9 +284,9 @@ package.json 将 dsh.bundle.patch 指向 cordis.patch.yml；patch 插入 filesys
 export {};
 ```
 
-**依据 3 · 源码核查**：[cordis.patch.yml:13-19](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/cordis.patch.yml#L13-L19)
+**依据 3 · 源码核查**：[cordis.patch.yml:13-19](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/cordis.patch.yml#L13-L19)
 
-通过包解析定位并注册 filesystem Skill。
+插入 provider，profile 解析安装包。
 
 ```text
 - insert:
@@ -336,9 +298,9 @@ export {};
         bundledSkillDir: !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('answer-me-with-html/package.json')), 'skills')
 ```
 
-**依据 4 · 源码核查**：[skills/answer-me-with-html/SKILL.md:59-65](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L59-L65)
+**依据 4 · 作者声明**：[skills/answer-me-with-html/SKILL.md:59-65](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/skills/answer-me-with-html/SKILL.md#L59-L65)
 
-Skill 指向打包脚本及 Node 需求。
+Skill 的单文件 CLI 调用入口。
 
 ````text
 ## 2. Workflow (one Bash call)
@@ -350,68 +312,39 @@ node "${CLAUDE_SKILL_DIR}/scripts/am.mjs"
 ```
 ````
 
-**依据 5 · 源码核查**：[src/cli.js:330-354](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/cli.js#L330-L354)
+**依据 5 · 源码核查**：[src/cli.js:343-355](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L343-L355)
 
-CLI renderDoc 调用、写出与警告处理。
+CLI 先渲染再写文件。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-  if (replaced === false) {
-    fail(`✗ --replace takes a page that am render wrote (a .html file in ${join(amHome(ctx.env), 'pages')} or ${join(tempHome(), 'pages')})`);
-    return 2;
-  }
   const config = loadConfig(ctx);
   const { theme, mode, style } = config.values;
   await loadMath(src);
   let result;
   try {
-    result = renderDoc(src, { theme: opts.theme, template: opts.template, style: opts.style, mode: opts.mode }, { theme, mode, style }, { themes: ctx.themes, baseDir, codeDir: ctx.io.cwd ?? process.cwd(), update: updateFor(config, ctx), closeAfter: config.values.close_after_reply, scale: config.values.scale });
+    result = renderDoc(src, { theme: opts.theme, template: opts.template, style: opts.style, mode: opts.mode }, { theme, mode, style }, { themes: ctx.themes, baseDir, codeDir: ctx.io.cwd ?? process.cwd(), update: updateFor(config, ctx), closeAfter: config.values.close_after_reply, colophon: config.values.colophon, scale: config.values.scale });
   } catch (e) {
     return reportDraftError(e, src, from, ctx);
   }
-  const file = outputPath('pages', result.meta.title, opts, ctx);
+  const file = outputPath('pages', nameSource(result.meta), opts, ctx);
   if (!file) return 2;
   const written = emit(result, file, ctx, { fallback: opts.out ? undefined : 'pages' });
   if (!written) return 1;
-  if (opts.out && !extname(file)) print('! -o names a file without an extension; use .html for an HTML page');
-  // Delete the earlier attempt only now: a render that fails above keeps it.
-  if (replaced && replaced !== resolve(written)) removeEarlier(replaced, ctx);
-  keepDraft(result, src, from, ctx);
-  // A page with STE, code or math warnings is likely to be rendered again, so it opens only when --open asks for it.
-  const held = !opts.open && hasRetryWarnings(result) && shouldOpen(opts, ctx.env, config.values);
-  if (held) print(`  Not opened because of the warnings; to render again, add --replace ${written}`);
-  return finish(written, held ? { ...opts, 'no-open': true } : opts, config, ctx);
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/render.js:48-80](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/render.js#L48-L80)
+**依据 6 · 源码核查**：[src/render.js:66-81](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L66-L81)
 
-解析、检查、组件、模板和 HTML 生成。
+渲染汇总错误后构造页面。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-export function renderDoc(source, overrides = {}, defaults = {}, { themes = BUILTIN, previousLanguage, baseDir, codeDir, knownImages, knownCode, update, closeAfter = false, scale = 1 } = {}) {
-  const choices = { theme: themes.choices('page') };
-  const { doc: parsed, errors } = parseDocLoose(source, { defaults, choices });
-  const meta = applyOverrides(parsed.meta, overrides, { ...CHOICES, ...choices });
-  if (meta.template === 'video') throw new ParseError('template: video is a video draft; render it with am video', 0);
-  const problem = themes.problem(meta.theme, 'page');
-  if (problem) throw new ParseError(problem, 0);
-  // theme: auto becomes a real theme here, so the page, the summary and later patches name the theme that was used.
-  const doc = { ...parsed, meta: meta.theme === AUTO ? { ...meta, theme: pickTheme({ scope: 'page', template: meta.template, visuals: hasVisuals(parsed) }) } : meta };
-
-  const language = resolveLanguage({ declared: doc.meta.lang, previous: previousLanguage, text: source });
-  const warnings = doc.meta.style === 'off' ? [] : lintDoc(doc, language);
-  if (doc.meta.style === 'strict' && warnings.length) {
-    raiseAll(errors); // the draft errors come first: they have to be fixed anyway
-    throw new LintError(warnings);
-  }
-
   const stats = { panels: doc.panels.length, components: {}, code: [], codeWarnings: [], componentWarnings: [], htmlWarnings: [], mathWarnings: [] };
   const ui = language.ui;
   const ctx = { seq: 0, stats, errors, ui, dir: language.dir, scale, images: { baseDir, known: knownImages }, code: { baseDir: codeDir, known: knownCode } };
@@ -426,62 +359,58 @@ export function renderDoc(source, overrides = {}, defaults = {}, { themes = BUIL
   const page = TEMPLATES[doc.meta.template]({ meta: doc.meta, introHtml, panels, ui, language });
   // A right-to-left page isolates each run of text with no right-to-left letter as left to right (src/bidi.js).
   const body = language.dir === 'rtl' ? isolateLtrRuns(page) : page;
-  const html = shell({ meta: doc.meta, language, body, source, embedded: themes.embedFor(doc.meta.theme, 'page'), update, closeAfter, scale });
+  const html = shell({ meta: doc.meta, language, body, source, embedded: themes.embedFor(doc.meta.theme, 'page'), update, closeAfter, colophon, scale });
   return { html, warnings, stats, meta: doc.meta, language };
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/components/flow.js:77-88](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/components/flow.js#L77-L88)
+**依据 7 · 源码核查**：[src/components/flow.js:79-85](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/components/flow.js#L79-L85)
 
-结构描述经解析与布局成为图。
+将关系交给 flow 渲染。
 
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
+````text
+  example: '```flow LR\n(User) -> Gateway: HTTPS\nGateway -> Auth & *Service\nService -> [(Database)]\ngroup Backend: Auth, Service\n```',
   render(text, { args, uid, ui, warn, video, dir: pageDir = 'ltr' }) {
     const model = parseFlow(text);
     model.warnings.forEach((w) => warn?.(w));
     const flowDir = (args.match(/\b(TB|LR|BT|RL)\b/i)?.[1] ?? 'TB').toUpperCase();
-    const html = `<figure class="am-diagram am-flow">${layout(model, DIRS.has(flowDir) ? flowDir : 'TB', uid(), ui, pageDir)}</figure>`;
+    const html = `<figure class="am-diagram am-flow">${layout(model, DIRS.has(flowDir) ? flowDir : 'TB', uid(), ui, pageDir, video ? undefined : warn)}</figure>`;
     return withDelta(html, [...model.nodes.values(), ...model.edges, ...model.groups].map((x) => x.state ?? null), { ui, video });
-  },
-};
+````
 
-export function parseFlow(text) {
-  const nodes = new Map();
-  const edges = [];
+**依据 8 · 源码核查**：[src/components/flow.js:327-334](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/components/flow.js#L327-L334)
+
+把模型的边写入 Dagre 图并调用布局。
+
+```text
+  const labels = edges.map((e) => (e.label ? edgeText(e.label) : null));
+  edges.forEach((e, i) => {
+    const size = labels[i];
+    // Dagre reserves 2px more than the drawn label box, as it always did.
+    const label = size ? { label: e.label, width: size.width + 2, height: size.height, labelpos: 'c' } : {};
+    g.setEdge(key.get(e.from), key.get(e.to), label, `e${i}`);
+  });
+  dagre.layout(g, { customOrder: orderRanks });
 ```
-
-</details>
-
-#### 缺口
-
-- 未在 DSH 加载、执行 CLI 或打开页面
-  **影响**：无法保证宿主兼容和目标环境效果
-  **进一步探讨**：固定版本在隔离 profile 验证安装、选 Skill、生成和打开页面。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 渲染成功、内容检查和安全策略分别覆盖什么？
+### Q03 · 文风与网页安全检查覆盖什么？
 
 **研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-renderDoc 的 style=off 跳过写作检查，strict 存在警告时拒绝；默认风格只警告而非验证事实或图的语义，且 CLI 出现 STE、代码或数学警告时默认阻止自动打开而不是必然不写页面。Markdown 原始标签会清理部分事件处理器和危险 URL，但显式 html/svg fence 会原样进入页面；CSP 为脚本固定哈希、限制资源，并允许内联样式及 self 连接，形成浏览器端的防护层而非通用隔离或事实校验。页面封装的数据资源不意味着安装、更新、视频和所有 CLI 操作均离线。
+STE 可关闭，strict 会因 STE 警告拒绝渲染。Markdown 正文接 HTML token 过滤，显式 HTML 或 SVG 围栏则先原样返回并记录脚本提示，之后仍走通用图片嵌入。页面 shell 插入 CSP，允许指定脚本哈希，图片用 data URI，同源连接用于重载路径。HTML 或图形提示与 STE 的阻断规则分开。引用源代码会限制工作目录并筛查敏感模式，图片实现明确可读目录外路径，再以类型、大小与敏感目录规则约束。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/render.js:58-80](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/render.js#L58-L80)
+**依据 1 · 源码核查**：[src/render.js:59-64](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L59-L64)
 
-严格模式警告拒绝；渲染块后装配页面。
-
-<details>
-<summary>查看原文（23行）</summary>
+strict 拒绝 STE 警告。
 
 ```text
   const language = resolveLanguage({ declared: doc.meta.lang, previous: previousLanguage, text: source });
@@ -490,102 +419,81 @@ renderDoc 的 style=off 跳过写作检查，strict 存在警告时拒绝；默�
     raiseAll(errors); // the draft errors come first: they have to be fixed anyway
     throw new LintError(warnings);
   }
-
-  const stats = { panels: doc.panels.length, components: {}, code: [], codeWarnings: [], componentWarnings: [], htmlWarnings: [], mathWarnings: [] };
-  const ui = language.ui;
-  const ctx = { seq: 0, stats, errors, ui, dir: language.dir, scale, images: { baseDir, known: knownImages }, code: { baseDir: codeDir, known: knownCode } };
-  // A panel-only component in the intro is an error of its own, and the block renders nothing.
-  const loose = doc.intro.filter((b) => b.type === 'fence' && COMPONENTS.get(b.lang)?.panelOnly);
-  for (const b of loose) {
-    errors.push(new RenderError(`${b.lang} belongs in a panel: put it under the ## heading of the panel the answer changes`, { line: b.line, component: b.lang, example: COMPONENTS.get(b.lang).example }));
-  }
-  const introHtml = renderBlocks(doc.intro.filter((b) => !loose.includes(b)), ctx);
-  const panels = doc.panels.map((p) => ({ ...p, html: renderBlocks(p.blocks, ctx) }));
-  raiseAll(errors);
-  const page = TEMPLATES[doc.meta.template]({ meta: doc.meta, introHtml, panels, ui, language });
-  // A right-to-left page isolates each run of text with no right-to-left letter as left to right (src/bidi.js).
-  const body = language.dir === 'rtl' ? isolateLtrRuns(page) : page;
-  const html = shell({ meta: doc.meta, language, body, source, embedded: themes.embedFor(doc.meta.theme, 'page'), update, closeAfter, scale });
-  return { html, warnings, stats, meta: doc.meta, language };
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/markdown.js:77-78](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/markdown.js#L77-L78)
 
-**依据 2 · 源码核查**：[src/cli.js:343-354](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/cli.js#L343-L354)
+Markdown 配置过滤 hook。
 
-已写页面及警告时自动打开处理。
+```text
+marked.use({ hooks: { processAllTokens: (tokens) => filterBlocks(tableOptions(tokens), { lex: (source) => tableOptions(marked.lexer(source)), note }) } });
+inline.use({ hooks: { processAllTokens: (tokens) => filterInline(tokens, note) } });
+```
+
+**依据 3 · 源码核查**：[src/render.js:104-110](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L104-L110)
+
+围栏结果继续经过图片嵌入。
+
+```text
+function renderBlock(b, ctx) {
+  const { result, notes } = collectHtmlNotes(() => (b.type === 'md' ? `<div class="am-md">${md(b.text, { ui: ctx.ui, interactive: !ctx.video })}</div>` : renderFence(b, ctx)), { math: !ctx.video });
+  noteHtml(b, notes.filter((n) => !n.math), ctx);
+  noteMath(b, notes.filter((n) => n.math), ctx);
+  const out = embedImages(b, result, ctx);
+  noteRemoteImages(b, out, ctx);
+  return out;
+```
+
+**依据 4 · 源码核查**：[src/render.js:171-182](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L171-L182)
+
+显式围栏返回原文并记录脚本提示。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-  const file = outputPath('pages', result.meta.title, opts, ctx);
-  if (!file) return 2;
-  const written = emit(result, file, ctx, { fallback: opts.out ? undefined : 'pages' });
-  if (!written) return 1;
-  if (opts.out && !extname(file)) print('! -o names a file without an extension; use .html for an HTML page');
-  // Delete the earlier attempt only now: a render that fails above keeps it.
-  if (replaced && replaced !== resolve(written)) removeEarlier(replaced, ctx);
-  keepDraft(result, src, from, ctx);
-  // A page with STE, code or math warnings is likely to be rendered again, so it opens only when --open asks for it.
-  const held = !opts.open && hasRetryWarnings(result) && shouldOpen(opts, ctx.env, config.values);
-  if (held) print(`  Not opened because of the warnings; to render again, add --replace ${written}`);
-  return finish(written, held ? { ...opts, 'no-open': true } : opts, config, ctx);
+function renderFence(block, ctx) {
+  const { lang, args, text, line } = block;
+  if (RAW_LANGS.has(lang)) {
+    if (lang === 'html' || lang === 'svg') {
+      // Comments and <textarea> are skipped; so is <style> in html, whose content is raw text (in svg its children are parsed).
+      const style = lang === 'html' ? '|<style\\b[^>]*>[\\s\\S]*?(?:<\\/style\\s*>|$)' : '';
+      for (const match of text.matchAll(new RegExp(`<!--[\\s\\S]*?(?:-->|$)|<textarea\\b[^>]*>[\\s\\S]*?(?:<\\/textarea\\s*>|$)${style}|<script\\b`, 'gi'))) {
+        if (match[0].toLowerCase() !== '<script') continue;
+        ctx.stats.htmlWarnings?.push({ line: line + 1 + text.slice(0, match.index).split('\n').length - 1, message: 'this script will not run: the page allows only am\'s own scripts' });
+      }
+    }
+    return text;
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/raw-html.js:110-133](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/raw-html.js#L110-L133)
+**依据 5 · 源码核查**：[src/render.js:323-333](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L323-L333)
 
-过滤事件属性与不安全 URL。
+页面 shell 真实嵌入 CSP。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-// A link a browser would run or open as a document. An image may carry data:image/ in src.
-function unsafeUrl(element, attr, value) {
-  const url = decode(value.replace(/^["']|["']$/g, '')).replace(/[\x00-\x20\x7f]/g, '').toLowerCase();
-  if (/^(javascript|vbscript):/.test(url)) return true;
-  return url.startsWith('data:') && !(element === 'img' && attr === 'src' && url.startsWith('data:image/'));
-}
-
-function unsafe(element, attr, value) {
-  if (/^on|^(srcdoc|formaction)$/.test(attr)) return true;
-  return URL_ATTRS.has(attr) && unsafeUrl(element, attr, value);
-}
-
-// A tag that stays loses its event handlers and unsafe links. A clean tag comes back byte for byte.
-function cleanTag(tag, note) {
-  if (tag.close) return tag.text;
-  const head = 1 + tag.name.length;
-  const removed = [];
-  const attrs = tag.text.slice(head).replace(ATTR, (attr, name, value = '') => {
-    if (!unsafe(tag.name, name.toLowerCase(), value)) return attr;
-    removed.push(name);
-    return '';
-  });
-  if (removed.length) note(tag.text, `removed ${removed.join(', ')} from <${tag.name}>${removed.some((n) => URL_ATTRS.has(n.toLowerCase())) ? ' (unsafe URL)' : ''}`);
-  return tag.text.slice(0, head) + attrs;
+  // The one inline script, as the browser reads it: the policy pins a hash of exactly this text.
+  const interactiveTable = body.includes('<table data-am-table=');
+  const script = `\n${RUNTIME_JS}${interactiveTable ? TABLE_JS : ''}${hasDelta(body) ? DELTA_JS : ''}${update ? UPDATE_JS : ''}${closeAfter ? CLOSE_AFTER_JS : ''}`;
+  return `<!doctype html>
+${rootTag(root)}
+<head>
+<meta charset="utf-8">
+${cspMeta([script], { live: true })}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="Answer me with HTML ${VERSION}">
+<title>${esc(meta.title || 'Answer me with HTML')}</title>
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/csp.js:1-5](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/csp.js#L1-L5)
+**依据 6 · 源码核查**：[src/csp.js:21-35](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/csp.js#L21-L35)
 
-原始 html/svg fence 原样进入页面的背景。
-
-```text
-// The Content-Security-Policy every page carries as a <meta> tag. A raw html / svg fence reaches the page unchanged, so without a policy an
-// injected <script> or onerror= would run when the page opens, and an <img src="https://…"> or css url(https://…) would send data out
-// with no script at all. The policy allows only the page's own inline scripts, each pinned by the hash of its exact text, and no remote
-// content: images, fonts and media are data: URIs, which is how the page embeds them. Inline style stays allowed (the themes and
-// the diagrams set style attributes).
-```
-
-**依据 5 · 源码核查**：[src/csp.js:21-35](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/csp.js#L21-L35)
-
-CSP 指令与例外。
+规定脚本哈希、图片和资源策略。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -610,53 +518,140 @@ export function cspMeta(scripts, { live = false } = {}) {
 
 </details>
 
-**依据 6 · 作者声明**：[README.md:277-281](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L277-L281)
+**依据 7 · 源码核查**：[src/cli.js:908-914](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L908-L914)
 
-作者说明写作检查范围及默认警告。
+HTML 警告另有报告。
 
 ```text
-## The STE writing check
-
-[ASD-STE100](https://www.asd-ste100.org/) is a controlled form of English first used for aircraft maintenance manuals. Its rules are concrete: keep sentences short, give each word one meaning, write steps as commands. Karpathy noted that asking an LLM to follow these rules makes its writing much easier to read.
-
-Every render checks the parts a machine can check: sentence length, plain words, passive voice, and common Chinese typos and vague words. It only warns by default. Set `/answer-me-with-html:config style strict` to refuse drafts that fail, or `style:` in one draft. The full rule list: [reference](docs/reference.md#writing-check).
+// Raw HTML the render changed (a placeholder shown as text, a tag or attribute removed). Not STE warnings: they never fail style: strict.
+function printHtmlWarnings(notes = [], print) {
+  const lines = [...new Set([...notes].sort((a, b) => a.line - b.line).map((w) => `L${w.line} [html] ${w.message}`))];
+  if (!lines.length) return;
+  print(`  html ${count(lines.length, 'warning')} (the page differs from the draft here; fix the draft if that is not what you meant):`);
+  lines.slice(0, MAX_LISTED_WARNINGS).forEach((l) => print(`  ${l}`));
+  if (lines.length > MAX_LISTED_WARNINGS) print(`  … ${lines.length - MAX_LISTED_WARNINGS} more`);
 ```
+
+**依据 8 · 源码核查**：[src/code.js:89-103](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/code.js#L89-L103)
+
+代码文件边界和真实路径检查。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+// The lines the block quotes, from the file. null when the file does not exist or is outside baseDir.
+// A link is followed first, so the checks run on the file that is read and not on the name the draft gives it.
+function readSlice(ref, range, baseDir) {
+  const written = localPath(ref, baseDir);
+  if (!written) return null;
+  assertNotSecret(ref, relative(baseDir, written), false);
+  let path;
+  try {
+    path = realpathSync(written);
+    const root = realpathSync(baseDir);
+    if (!localPath(path, root)) throw new CodeError(`Code file "${ref}" is a link to a file outside the current folder ${baseDir}; only files inside it are quoted`);
+    assertNotSecret(ref, relative(root, path), true);
+  } catch (err) {
+    if (err instanceof CodeError) throw err;
+    return null;
+```
+
+</details>
+
+**依据 9 · 源码核查**：[src/code.js:114-117](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/code.js#L114-L117)
+
+代码文件做内容模式检查。
+
+```text
+  if (size > MAX_FILE_BYTES) throw new CodeError(`"${ref}" is ${(size / 1048576).toFixed(1)} MB; code files up to ${MAX_FILE_BYTES / 1048576} MB are read`);
+  const buf = readFileSync(path);
+  if (buf.includes(0)) throw new CodeError(`"${ref}" is a binary file, not code`);
+  if (SECRET_TEXT.test(buf.toString('utf8'))) throw new CodeError(`"${ref}" looks like it holds a key or a token somewhere in the file; no part of it is embedded. Write a sketch instead`);
+```
+
+**依据 10 · 源码核查**：[src/images.js:68-96](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/images.js#L68-L96)
+
+允许根外图片并验证文件类型、尺寸等。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+// True when a folder on the path holds keys or logins (.ssh, .aws, ...); nothing inside it is embedded.
+const inSecretDir = (path) => path.split(sep).some((part) => SECRET_DIR.has(part));
+
+// The data URI of the file, or null when the file does not exist.
+// Absolute paths outside the project are fine (screenshots live anywhere); what is checked is the real file behind the path.
+function readImage(ref, baseDir) {
+  const path = localPath(ref, baseDir);
+  const ext = extname(path).toLowerCase();
+  const type = TYPES[ext];
+  if (!type) throw new ImageError(`"${ref}" is not an image file; use ${Object.keys(TYPES).join(' ')}`, ref);
+  let real;
+  let stat;
+  try {
+    real = realpathSync(path);
+    stat = statSync(real);
+  } catch {
+    return null;
+  }
+  if (inSecretDir(path) || inSecretDir(real)) {
+    throw new ImageError(`"${ref}" is in a folder that holds keys or logins (${[...SECRET_DIR].join(' ')}); it is not embedded. Copy the image somewhere else first`, ref);
+  }
+  if (!stat.isFile()) throw new ImageError(`"${ref}" is not a file`, ref);
+  const size = stat.size;
+  if (size > MAX_IMAGE_BYTES) {
+    throw new ImageError(`"${ref}" is ${(size / 1048576).toFixed(1)} MB; the limit is ${MAX_IMAGE_BYTES / 1048576} MB. Shrink or crop the image first`, ref);
+  }
+  const buf = readFileSync(real);
+  if (!MAGIC[type](buf)) throw new ImageError(`"${ref}" is named ${ext} but its content is not ${type === 'image/svg+xml' ? 'SVG' : type.slice(6).toUpperCase()} data; it is not embedded`, ref);
+  if (type === 'image/svg+xml' && SECRET_TEXT.test(buf.toString('utf8'))) {
+```
+
+</details>
 
 #### 缺口
 
-- 未测多浏览器和恶意输入，也未核查所有边界
-  **影响**：不能断言无 XSS、零联网或结果可信
-  **进一步探讨**：隔离浏览器用正反例审计 CSP、导航、网络请求和内容正确性。
+- 排版正确、CSP 限制及可解析箭头均无法核对事实。浏览器执行行为、输出被复制或分享后的内容保密性和不可信文稿的覆盖均未实测。
+  **影响**：语义与数据暴露无法据静态检查推断。
+  **进一步探讨**：用可解析错误边、远程资源和样本路径做对照。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 首次、持续和失败恢复的成本是什么？
+### Q04 · 试用依赖、文件与退出成本怎样核对？
 
 **研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-需要 Node 20+，DSH 入口需要对应 Skill provider；Skill 自述 CLI 已打包、无须另装 npm 依赖，而包形式包含依赖。首次要安装并确认宿主发现 Skill；持续要写草稿、修复语法与写作警告、复核事实、保存和打开页面。默认警告不等于失败，strict 可失败；CLI 在新页面成功写出后才移除 --replace 指定的旧尝试，失败可保留旧页。作者说明更新检查可能后台联网，页面累积需用户决定清理；真实 token、模型费用、人工审核及浏览器成本未知。
+源码要求 Node 20+，Skill 说明内含独立脚本。首次试用记录安装与权限核对人时、Node 及 profile 变更。持续记录每题输入与输出 token、渲染和人工核对分钟、页面及草稿占用字节，工具保留可修订草稿。render 失败发生在写入前，旧页仍可用。默认目录权限失败可退到经检查的私有临时目录，目录可能被系统清理；旧页清理权限不足会提示留下，外部 -o 是就地写入，覆盖前需另存。退出可先移除一直生成页面的规则并恢复文字交付，清理前可用 dry-run 盘点受影响页面、视频和草稿；页面内仍带草稿，须按分享和留存要求处理。后台版本查询可关闭，更新另行发起。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:23-27](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/package.json#L23-L27)
+**依据 1 · 源码核查**：[package.json:22-29](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/package.json#L22-L29)
 
-DSH patch 与 Node 要求。
+manifest 声明 Node 版本和 bundle。
 
 ```text
+  "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
   },
   "engines": {
+    "node": ">=20"
+  },
 ```
 
-**依据 2 · 源码核查**：[skills/answer-me-with-html/SKILL.md:59-65](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L59-L65)
+**依据 2 · 作者声明**：[skills/answer-me-with-html/SKILL.md:59-71](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/skills/answer-me-with-html/SKILL.md#L59-L71)
 
-打包 CLI 与 Node 要求。
+独立脚本、输出目录和 fallback 的作者说明。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ````text
 ## 2. Workflow (one Bash call)
@@ -666,38 +661,25 @@ The CLI is bundled in this skill's directory: `scripts/am.mjs`, a single file wi
 ```bash
 node "${CLAUDE_SKILL_DIR}/scripts/am.mjs"
 ```
+
+In Claude Code, `${CLAUDE_SKILL_DIR}` is replaced with this skill's directory before you read this file, so that command and every path in this file already carry it; run them as written.
+
+On every other host the token is left as it stands or comes out empty. There, before your first command of the turn, write the absolute path of the directory that holds this `SKILL.md` in place of `${CLAUDE_SKILL_DIR}` in every command you run and in every path you read, in this file and in the files under `references/`, and check the path once with `test -f "<that directory>/scripts/am.mjs"`. Do not put the path in a shell variable and use it in a later call: the Bash tool keeps no variable from one call to the next and a file-read tool never expands one, so a `SKILL_DIR` set in one call is empty in the next and the command becomes `/scripts/am.mjs`. The directory is the one holding `SKILL.md` and `scripts/`: `~/.agents/skills/answer-me-with-html` after `npx skills add`, `~/.claude/skills/answer-me-with-html` for a Claude Code skill install, `skills/answer-me-with-html` in the plugin checkout for a plugin install, and the path printed on the host's "Base directory for this skill" line (DeepSeek Harness). If `test -f` fails, that path is not this skill's directory: find the right one before you run anything. If the user installed the `am` command globally, you can also use `am` directly.
+
+Keep the default output; it needs no flag. If the session cannot write to `~/.answer-me-with-html/pages` (a sandbox that allows writes only in the workspace), the CLI saves the page in a private folder in the system temporary folder and says so on a `!` line; the system may clear that folder. Add `-o "<absolute-workspace-path>/.tmp/answers/topic.html"` to `render -` before the heredoc only when the user wants the page in the workspace or the render fails with `Cannot write the page`. `-o` names an HTML file, not a folder; the CLI creates missing parent directories. Use `AM_HOME` only when the whole data directory must move.
 ````
 
-**依据 3 · 源码核查**：[skills/answer-me-with-html/SKILL.md:90-97](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L90-L97)
+</details>
 
-错误、重试、替换及清理授权。
+**依据 3 · 源码核查**：[src/cli.js:352-363](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L352-L363)
 
-```text
-4. Read the output:
-   - `✓ <path>`: success. Whether the browser opens automatically depends on the user's settings (`am config`); `--no-open` affects only this run. A page with STE or code warnings never opens automatically.
-   - `✗ L<line> …` + `Correct example:`: no page was written. The CLI lists every error of the draft at once, in line order (`✗ n errors in the draft`). Read all of them, fix each flagged line following its example, then render again.
-   - `  draft: <path>`: the CLI saved your stdin draft there, and every `L<line>` in the output matches that file. Change only the flagged lines in that file with your file-edit tool; do not send a new heredoc. Then run `am render <path>`; when a page was written, add `--replace` or reuse `-o` as the rule on rendering again below says. The CLI deletes the saved draft once it renders with no warnings. A draft you passed as a file path is not copied: edit that file.
-   - `code n warnings`: a code block is longer than 40 lines, or a diff hunk has a different number of lines than its `@@` header says. Cut the block or fix the header to the lines that make the point and render again, or keep it if every line matters.
-   - `STE n warnings`: rewrite the flagged lines as suggested, then render again. Retry at most 2 rounds; if warnings remain, keep the last page and say so.
-   - When rendering again after a `✓`, add `--replace <path from the last ✓ line>` for a page in the data directory's `pages/` or the temporary folder's `pages/`; the CLI deletes that page once the new one is written. For a page written with `-o`, reuse the same quoted `-o` HTML file path to overwrite it in place.
-   - `! Cleanup hint: …` or `! Update hint: …`: pass it on to the user in one sentence at the end of the reply, and ask whether to clean up / update. **Do not run am clean or the update command yourself**; wait until the user agrees. The CLI throttles these: the cleanup hint appears at most once every 7 days, the update hint at most once every 3 days.
-```
-
-**依据 4 · 源码核查**：[src/cli.js:337-354](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/cli.js#L337-L354)
-
-失败处理、写出后替换旧页面。
+新页写入成功才处理旧路径，按警告决定自动打开。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-  let result;
-  try {
-    result = renderDoc(src, { theme: opts.theme, template: opts.template, style: opts.style, mode: opts.mode }, { theme, mode, style }, { themes: ctx.themes, baseDir, codeDir: ctx.io.cwd ?? process.cwd(), update: updateFor(config, ctx), closeAfter: config.values.close_after_reply, scale: config.values.scale });
-  } catch (e) {
-    return reportDraftError(e, src, from, ctx);
-  }
-  const file = outputPath('pages', result.meta.title, opts, ctx);
+  const file = outputPath('pages', nameSource(result.meta), opts, ctx);
   if (!file) return 2;
   const written = emit(result, file, ctx, { fallback: opts.out ? undefined : 'pages' });
   if (!written) return 1;
@@ -713,9 +695,36 @@ node "${CLAUDE_SKILL_DIR}/scripts/am.mjs"
 
 </details>
 
-**依据 5 · 作者声明**：[README.md:190-192](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L190-L192)
+**依据 4 · 源码核查**：[src/cli.js:811-825](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L811-L825)
 
-作者说明更新与清理。
+pages 下临时写入再改名，其他路径就地写。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+// Write a page. A page inside the data directory makes it private first; a page saved elsewhere (-o) leaves its folder alone.
+// A page in pages/ is written to a temp file and renamed over the old one, so am serve (src/serve.js) never reloads a half-written
+// page. Elsewhere it is written in place: a rename would replace a symlink with a plain file and drop the file's mode and hard links.
+function writePage(file, html, env) {
+  const home = resolve(amHome(env));
+  const path = resolve(file);
+  if (path.startsWith(home + sep)) ensureHome(home);
+  mkdirSync(dirname(file), { recursive: true });
+  if (!path.startsWith(join(home, 'pages') + sep)) return writeFileSync(file, html);
+  const tmp = join(dirname(file), `.${basename(file)}.${process.pid}.tmp`);
+  try {
+    writeFileSync(tmp, html);
+    renameOver(tmp, file);
+  } finally {
+    rmSync(tmp, { force: true });
+```
+
+</details>
+
+**依据 5 · 作者声明**：[README.md:190-192](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/README.md#L190-L192)
+
+作者说明更新和清理边界。
 
 ```text
 ## Updating and cleaning up
@@ -723,224 +732,294 @@ node "${CLAUDE_SKILL_DIR}/scripts/am.mjs"
 Updates are manual. When used, the CLI checks GitHub for a new version in the background at most once a day. If one is available, it prompts the agent at most once every three days; nothing about you is sent. To update, tell your agent "update answer-me-with-html". Pages pile up in `~/.answer-me-with-html/`. Say "clean up the pages", and the agent asks before it deletes anything. Other install methods and every option: [reference](docs/reference.md#updating-and-cleaning-up).
 ```
 
+**依据 6 · 源码核查**：[src/update.js:78-79](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/update.js#L78-L79)
+
+版本检查配置及环境开关。
+
+```text
+// update_check off, CI and AM_NO_UPDATE_CHECK each turn off both the background check and the update notice.
+export const updateEnabled = (env, config) => !(config.update_check === false || env.CI || env.AM_NO_UPDATE_CHECK);
+```
+
+**依据 7 · 源码核查**：[src/update.js:96-108](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/update.js#L96-L108)
+
+版本检查频率和进程异常分支。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+export function shouldCheckUpdate(state, env, config, now = Date.now()) {
+  if (!updateEnabled(env, config)) return false;
+  return !state.lastUpdateCheck || now - state.lastUpdateCheck >= UPDATE.checkEveryDays * DAY;
+}
+
+export function spawnUpdateCheck(home, scriptPath) {
+  writeState(home, { lastUpdateCheck: Date.now() });
+  try {
+    spawn(process.execPath, [scriptPath, '__update-check'], { detached: true, stdio: 'ignore', env: { ...process.env, AM_HOME: home } })
+      .on('error', () => {})
+      .unref();
+  } catch {
+    // A failed background check does not affect normal use.
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/update.js:114-131](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/update.js#L114-L131)
+
+实际 fetch、超时与失败。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+export async function runUpdateCheck(home, fetchImpl = fetch) {
+  try {
+    const { version } = await fetchJson(fetchImpl, UPDATE.url);
+    if (!parseVersion(version)) return null;
+    const latest = version.trim();
+    // The highlights are optional: a missing or malformed file leaves the version check as it was.
+    const highlights = parseHighlights(await fetchJson(fetchImpl, UPDATE.highlightsUrl).catch(() => null), latest);
+    writeState(home, { latestVersion: latest, latestHighlights: highlights, lastUpdateCheck: Date.now() });
+    return latest;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchJson(fetchImpl, url) {
+  const res = await fetchImpl(url, { signal: AbortSignal.timeout(UPDATE.timeoutMs) });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+```
+
+</details>
+
+**依据 9 · 源码核查**：[src/cli.js:422-435](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L422-L435)
+
+警告时留存 stdin 草稿，修正后删除临时草稿，页面仍带源稿。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+// After a render that wrote a page: a stdin draft with warnings is saved for the fix-and-render-again round; a draft file in drafts/
+// that renders clean is deleted (the page keeps the source in #am-source).
+function keepDraft(result, src, from, ctx) {
+  const warned = hasWarnings(result);
+  if (from?.stdin && warned) {
+    const saved = saveDraft(src, ctx);
+    if (saved) ctx.print(`  draft: ${saved}`);
+  } else if (from?.file && !warned && isKeptDraft(from.file, ctx)) {
+    try {
+      rmSync(from.file, { force: true });
+    } catch (e) {
+      ctx.fail(`! Kept the draft ${from.file} (${e.code ?? e.message})`);
+    }
+  }
+```
+
+</details>
+
+**依据 10 · 源码核查**：[src/cli.js:844-870](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L844-L870)
+
+默认目录权限退让和旧页删除失败的提示。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  try {
+    writePage(file, html, env);
+    return { file };
+  } catch (e) {
+    if (!isDenied(e)) throw e;
+    if (!(fallback && inHome)) return refuse(file, e), null;
+    const spare = join(tempHome(), fallback, basename(file));
+    try {
+      checkedTempHome({ create: true });
+      writePage(spare, html, env);
+      return { file: spare, notice: `  ! ${home} is not writable (${e.code}): saved in the temporary folder, which the system may clear` };
+    } catch (t) {
+      if (t instanceof UnsafeTempHome) fail(`✗ Cannot write the page: ${home} is not writable (${e.code}) and ${t.dir} is not a private folder of this user. Give -o a file in a folder this session can write to`);
+      else if (isDenied(t)) refuse(spare, t);
+      else throw t;
+      return null;
+    }
+  }
+}
+
+// The earlier page of --replace goes away once the new one is written. A folder that cannot be changed keeps it, with one line.
+function removeEarlier(file, { fail }) {
+  try {
+    rmSync(file, { force: true });
+  } catch (e) {
+    if (!isDenied(e)) throw e;
+    fail(`! Kept the earlier page ${file} (permission denied, ${e.code})`);
+```
+
+</details>
+
+**依据 11 · 源码核查**：[src/cli.js:957-975](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/cli.js#L957-L975)
+
+清理支持 dry-run，报告占用和删除范围。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+function cmdClean(opts, { print, fail, env }) {
+  if (opts.days !== undefined && !/^\d+$/.test(opts.days.trim())) {
+    fail('✗ --days needs a non-negative integer');
+    return 2;
+  }
+  const days = opts.days === undefined ? CLEAN.days : Number(opts.days);
+  const home = amHome(env);
+  const before = usage(home);
+  // The temporary folder holds pages written while the data directory was not writable. Only a folder that exists and is private.
+  const temp = existingTempHome();
+  const tempBefore = temp && usage(temp);
+  const dry = Boolean(opts['dry-run']);
+  const r = clean(home, { days, all: Boolean(opts.all), dryRun: dry, temp });
+  const scope = opts.all ? 'all pages, videos and drafts' : `pages, videos and drafts older than ${count(days, 'day')}`;
+  print(`Data directory: ${home} (${mb(before.total)} in total: ${count(before.pages.count, 'page')}, ${count(before.videos.count, 'video')}, ${mb(before.cache.bytes)} voice-over cache)`);
+  if (temp) print(`Temporary folder: ${temp} (${mb(tempBefore.total)} in total: ${count(tempBefore.pages.count, 'page')}, ${count(tempBefore.videos.count, 'video')})`);
+  print(dry
+    ? `Would delete ${count(r.files, 'file')}, freeing ${mb(r.bytes)} (${scope} + voice-over cache). Run without --dry-run to delete.`
+    : `✓ Deleted ${count(r.files, 'file')}, freeing ${mb(r.bytes)} (${scope} + voice-over cache). Settings were kept.`);
+```
+
+</details>
+
+**依据 12 · 源码核查**：[src/render.js:347-349](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/render.js#L347-L349)
+
+页面写入源草稿。
+
+```text
+${notice.popover}${colophon ? withColophon(body, language) : body}
+${lightboxShell(ui, body.includes('class="am-diagram'))}${sourceTag(source)}
+<script>${script}</script>
+```
+
+**依据 13 · 作者声明**：[README.md:182-192](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/README.md#L182-L192)
+
+一直生成页面的规则可移除，清理与更新由用户发起。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+With always-on mode, **every conclusion comes with a page**: whenever the agent gives a conclusion, summary, plan or comparison, even a short one, it adds a small page with 2 to 4 panels and puts the path at the end of the reply. These pages never pop open, so they don't interrupt you. Casual chat and replies with no conclusion stay as they are. Claude Code makes no pages in plan mode.
+
+It is off by default. We recommend it: you stop asking for pages, and short answers read as well as long ones. Pages pile up in `~/.answer-me-with-html/`; clear them with `am clean`. To turn it on, paste this to your agent so it writes the rule into its rules file, such as `~/.claude/CLAUDE.md` or `AGENTS.md`:
+
+> Turn on always-on mode for Answer me with HTML: add a global rule — "[answer-me-with-html always-on] Whenever a reply gives a conclusion, summary, plan, comparison, review or explanation, even a short one, also make a page with the answer-me-with-html skill (2 to 4 panels for routine answers), render it with --no-open before you write the reply, and end the reply with the page link in the format SKILL.md specifies for your host. Skip casual chat, one- or two-sentence replies with no conclusion, pure command output, and requests for plain text. An internal report to another agent is not a user reply: return the findings and evidence the parent asked for, and make no page unless the task explicitly asks for one."
+
+To turn it off, delete that rule. Want fewer pages instead? See [less proactive](docs/reference.md#less-proactive).
+
+## Updating and cleaning up
+
+Updates are manual. When used, the CLI checks GitHub for a new version in the background at most once a day. If one is available, it prompts the agent at most once every three days; nothing about you is sent. To update, tell your agent "update answer-me-with-html". Pages pile up in `~/.answer-me-with-html/`. Say "clean up the pages", and the agent asks before it deletes anything. Other install methods and every option: [reference](docs/reference.md#updating-and-cleaning-up).
+```
+
+</details>
+
 #### 缺口
 
-- 没有测量安装耗时、任务总账单和额外人工
-  **影响**：无法断言净省时、省钱
-  **进一步探讨**：对照同一任务记录总模型费用、失败重试和阅读复核时间。
+- 本轮无 DSH 实际加载、文件写入、浏览器与恢复试用，缺各阶段人时、空间、账单及失败频率。
+  **影响**：无法量化日常和退出负担，临时路径与留下的旧页可能造成阅读版本混淆。
+  **进一步探讨**：用同题保存渲染前后的文件清单及字节，记录首次设置、日常核对和人为制造一次写入或清理失败的恢复时间，再按实际留存需要盘点退出。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 什么任务值得试用，何时回退？
+### Q05 · 给关键图关系单独核对是否有收益？
 
-**研究主题**：贡献与相对优势、采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-当流程、架构或多维比较确实需要图形且可以复核来源时，可对一份不敏感样本先用 --no-open 生成页面，核对关键箭头、表格与原文后再交付。对于纯文本足以理解、用户要求纯文本、对准确性无法复核或本机不能运行 Node 的情况，直接 Markdown 和原生 Agent 更合适。Skill 主张广泛主动使用，但同一份 Skill 对受委派内部报告明确要求原样汇报、默认不渲染页面，因此不能把描述中的主动触发写为每次任务必生成页面。若检查失败或内容不可信，保留草稿并回退，不把结构合法当成事实合格。
+已有 flow 的图数据含起点、终点和标签，代码围栏可读取指定文件和行，二者可分别显示。可试验在高风险箭头旁增加可展开的证据定位和人工核对状态，并区分未核对和核对失败。用同一批解释页分别计数错误方向、无来源箭头和定位所需时间，兼计草稿增长。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/answer-me-with-html/SKILL.md:5-15](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L5-L15)
+**依据 1 · 源码核查**：[src/components/flow.js:79-85](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/components/flow.js#L79-L85)
 
-广泛触发与纯文本例外。
+实际组件解析与绘制顺序。
 
-<details>
-<summary>查看原文（11行）</summary>
+````text
+  example: '```flow LR\n(User) -> Gateway: HTTPS\nGateway -> Auth & *Service\nService -> [(Database)]\ngroup Backend: Auth, Service\n```',
+  render(text, { args, uid, ui, warn, video, dir: pageDir = 'ltr' }) {
+    const model = parseFlow(text);
+    model.warnings.forEach((w) => warn?.(w));
+    const flowDir = (args.match(/\b(TB|LR|BT|RL)\b/i)?.[1] ?? 'TB').toUpperCase();
+    const html = `<figure class="am-diagram am-flow">${layout(model, DIRS.has(flowDir) ? flowDir : 'TB', uid(), ui, pageDir, video ? undefined : warn)}</figure>`;
+    return withDelta(html, [...model.nodes.values(), ...model.edges, ...model.groups].map((x) => x.state ?? null), { ui, video });
+````
+
+**依据 2 · 源码核查**：[src/components/flow.js:327-334](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/components/flow.js#L327-L334)
+
+边数据传给布局，不核验边事实。
 
 ```text
-  Turns an answer into a one-page visual HTML explainer: the model writes a short Markdown draft and
-  the bundled CLI builds one page. Use it proactively and liberally in replies to the user, without being asked, whenever a
-  page would help the reader more than plain text, even if plain text would also work: any explanation
-  of how something works or how parts relate (flow, request path, architecture, code or folder
-  structure, state machine, lifecycle, history); any comparison, trade-off or decision with pros and
-  cons; any diagnosis, review or investigation, especially with several causes or findings to rank;
-  any answer with a table, a numbered or ranked list, steps, branches or several sections; or when the
-  user says "I don't get it / draw it / explain visually / 讲讲原理 / 没看懂 / 画个图". When in doubt, use it: a
-  page is quick and cheap to make. Also for explainer videos ("make a video", "做个视频") and for changing
-  its settings. Skip only for small talk, a trivial one-line answer, or when the user asks for plain
-  text.
+  const labels = edges.map((e) => (e.label ? edgeText(e.label) : null));
+  edges.forEach((e, i) => {
+    const size = labels[i];
+    // Dagre reserves 2px more than the drawn label box, as it always did.
+    const label = size ? { label: e.label, width: size.width + 2, height: size.height, labelpos: 'c' } : {};
+    g.setEdge(key.get(e.from), key.get(e.to), label, `e${i}`);
+  });
+  dagre.layout(g, { customOrder: orderRanks });
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/code.js:64-71](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/code.js#L64-L71)
 
-**依据 2 · 源码核查**：[skills/answer-me-with-html/SKILL.md:30-44](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L30-L44)
+接受代码文件与行范围参数。
 
-页面判据及委派内部报告例外。
+```text
+export function parseCodeArgs(args, diff = false) {
+  const attrs = parseAttrs(args);
+  const keys = diff ? DIFF_KEYS : KEYS;
+  for (const [key, value] of Object.entries(attrs)) {
+    if (value !== true && !keys.has(key)) throw new CodeError(`unknown code block setting "${key}"; use ${[...keys].join(', ')}`, 0, diff ? DIFF_EXAMPLE : CODE_EXAMPLE);
+  }
+  const text = (key) => (typeof attrs[key] === 'string' || typeof attrs[key] === 'number' ? String(attrs[key]) : undefined);
+  return { src: text('src'), lines: text('lines'), hl: text('hl'), title: text('title'), start: text('start'), file: text('file') };
+```
+
+**依据 4 · 源码核查**：[src/code.js:89-103](https://github.com/QingYunA/answer-me-with-html/blob/053619b917c6bf2e17eae5496d05eb08e10fe889/src/code.js#L89-L103)
+
+文件约束与真实路径检查。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
-## 1. Decide: produce a page or not
-
-Produce a page if any of these is true:
-- There are ≥3 interrelated concepts, and the reader needs to see how they relate.
-- There is a flow, protocol, call chain or state transition (especially with branches or several actors).
-- There is a comparison across ≥3 dimensions, a trade-off between options, or a "can / cannot" list.
-- There is a hierarchy or an evolution over time.
-
-Otherwise answer in plain text. When unsure: the more the question "needs a picture to understand", the more it calls for a page.
-
-Automatic pages are for replies to the user. An internal report returned to another agent is not one:
-
-- If a parent agent or a coordinator delegated research, implementation, a review or a progress report, return the text or structure it asked for, with the findings and the evidence. Render no page.
-- The parent consolidates the reports. Its reply to the user follows the normal rules of this section.
-- If the delegated task explicitly asks for a page, render it, and return the page path together with the verification details the parent asked for. A video needs an explicit video request; delegation alone never authorizes one.
-```
-
-</details>
-
-**依据 3 · 源码核查**：[skills/answer-me-with-html/SKILL.md:90-96](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/skills/answer-me-with-html/SKILL.md#L90-L96)
-
-警告和渲染重试。
-
-```text
-4. Read the output:
-   - `✓ <path>`: success. Whether the browser opens automatically depends on the user's settings (`am config`); `--no-open` affects only this run. A page with STE or code warnings never opens automatically.
-   - `✗ L<line> …` + `Correct example:`: no page was written. The CLI lists every error of the draft at once, in line order (`✗ n errors in the draft`). Read all of them, fix each flagged line following its example, then render again.
-   - `  draft: <path>`: the CLI saved your stdin draft there, and every `L<line>` in the output matches that file. Change only the flagged lines in that file with your file-edit tool; do not send a new heredoc. Then run `am render <path>`; when a page was written, add `--replace` or reuse `-o` as the rule on rendering again below says. The CLI deletes the saved draft once it renders with no warnings. A draft you passed as a file path is not copied: edit that file.
-   - `code n warnings`: a code block is longer than 40 lines, or a diff hunk has a different number of lines than its `@@` header says. Cut the block or fix the header to the lines that make the point and render again, or keep it if every line matters.
-   - `STE n warnings`: rewrite the flagged lines as suggested, then render again. Retry at most 2 rounds; if warnings remain, keep the last page and say so.
-   - When rendering again after a `✓`, add `--replace <path from the last ✓ line>` for a page in the data directory's `pages/` or the temporary folder's `pages/`; the CLI deletes that page once the new one is written. For a page written with `-o`, reuse the same quoted `-o` HTML file path to overwrite it in place.
-```
-
-**依据 4 · 作者声明**：[README.md:49-71](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L49-L71)
-
-作者对照样本和适用范围。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-You can. Models write decent HTML now. But most of what they write is not content. We counted the tokens in 9 pages the model wrote by hand, 4,893 tokens on average:
-
-| Part of the page | Share | With this skill |
-| :--- | ---: | :--- |
-| SVG diagrams: coordinates and paths | 47% | The CLI writes it |
-| CSS | 15% | The CLI writes it |
-| HTML tags | 17% | The CLI writes it |
-| Text | 21% | The model writes it, as Markdown |
-
-With this skill the model writes only a Markdown draft. For the same questions that was 612 tokens on average, **about 1/8 of the hand-written HTML**. Less to write means less to wait for (3 topics × 3 runs, medians, Claude Sonnet 5.5, a plain Claude Code setup):
-
-| | Ask for HTML directly | Answer me with HTML | |
-| :--- | ---: | ---: | :--- |
-| Tokens the model writes | 4,893 | **612** | **8× fewer** |
-| Time | 31 s | **12 s** | **2.6× faster** |
-
-<p align="center">
-  <img src="docs/images/plain-vs-skill.png" alt="The same TCP question answered both ways" width="100%">
-</p>
-
-<p align="center"><sub>The same question, the same model, answered both ways. Both pages are usable.</sub></p>
-
-The token counts are saved in [bench/corpus/tokens.json](bench/corpus/tokens.json), so `node bench/corpus.mjs` gives the same numbers every time. The pages themselves are a [download](https://github.com/QingYunA/answer-me-with-html/releases/download/v0.4.14/bench-corpus-2026-10-07.zip). The bill drops less than the writing, about 15% here, because every turn also reads the system prompt, your question and the conversation, with or without the skill. See [where the cost goes](bench/README.md#where-the-cost-goes).
+// The lines the block quotes, from the file. null when the file does not exist or is outside baseDir.
+// A link is followed first, so the checks run on the file that is read and not on the name the draft gives it.
+function readSlice(ref, range, baseDir) {
+  const written = localPath(ref, baseDir);
+  if (!written) return null;
+  assertNotSecret(ref, relative(baseDir, written), false);
+  let path;
+  try {
+    path = realpathSync(written);
+    const root = realpathSync(baseDir);
+    if (!localPath(path, root)) throw new CodeError(`Code file "${ref}" is a link to a file outside the current folder ${baseDir}; only files inside it are quoted`);
+    assertNotSecret(ref, relative(root, path), true);
+  } catch (err) {
+    if (err instanceof CodeError) throw err;
+    return null;
 ```
 
 </details>
 
 #### 缺口
 
-- 未测特定人群的可读性和辅助技术体验
-  **影响**：不能证明页面总比 Markdown 易懂
-  **进一步探讨**：让目标读者完成固定理解任务并记录错误、时间及可访问性问题。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 能否用来源绑定检验图的语义关系？
-
-**研究主题**：新假设与验证、贡献与相对优势
-
-#### 完整回答
-
-项目已有引用代码文件和行的能力，也已有组件语法检查，因此新增“显示来源链接”或“校验草稿语法”不能当作新的贡献。未验证假设是在图的每条关键箭头上附来源位置或标记人工推断，并允许读者从关系跳转回上下文；这提高可审阅性，但不能自动保证引用支持箭头、证据完整或推断正确。对同一组架构问题比较原始页面和带关系出处页面，盲审错误箭头发现率、每项审核时间、来源正确率与额外 token；如果来源链接大多无关、发现率不提升或成本超出收益，则否定。此假设未实现、未计入现有创新分。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:265-275](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/README.md#L265-L275)
-
-已有组件和带 src/lines 的代码引用。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-| `timeline` | History, releases, phases |
-| `limits` | A value against its limit |
-| `chart` | Bars, lines or a pie from a table of numbers: several series, negative values, a highlighted row |
-| `annot` | Word-by-word notes on a sentence |
-| `kv` | Metadata, a drawing's title block |
-| `callout` | A conclusion, a tip, a warning |
-| `ask` | A decision you make on the page; the agent's suggestion has a tag; nothing starts selected |
-| Code block | Real code quoted from a file (`src=` `lines=`), or a sketch |
-| Table | Multi-way comparison. Write `ok` / `no` / `warn` in a cell to get ✓ ✗ ! |
-
-The draft format (frontmatter, `span`, `rows`, raw `html` / `svg` blocks) and how to call the CLI without an agent are in the [reference](docs/reference.md). Full syntax for a component: `am help <component>`.
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/components/flow.js:77-88](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/components/flow.js#L77-L88)
-
-当前 flow 从文本解析关系并布局。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  render(text, { args, uid, ui, warn, video, dir: pageDir = 'ltr' }) {
-    const model = parseFlow(text);
-    model.warnings.forEach((w) => warn?.(w));
-    const flowDir = (args.match(/\b(TB|LR|BT|RL)\b/i)?.[1] ?? 'TB').toUpperCase();
-    const html = `<figure class="am-diagram am-flow">${layout(model, DIRS.has(flowDir) ? flowDir : 'TB', uid(), ui, pageDir)}</figure>`;
-    return withDelta(html, [...model.nodes.values(), ...model.edges, ...model.groups].map((x) => x.state ?? null), { ui, video });
-  },
-};
-
-export function parseFlow(text) {
-  const nodes = new Map();
-  const edges = [];
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/render.js:65-80](https://github.com/QingYunA/answer-me-with-html/blob/aab9ea19f50f038054eeb60475bbb7ea26f149e3/src/render.js#L65-L80)
-
-渲染检查和页面装配路径。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  const stats = { panels: doc.panels.length, components: {}, code: [], codeWarnings: [], componentWarnings: [], htmlWarnings: [], mathWarnings: [] };
-  const ui = language.ui;
-  const ctx = { seq: 0, stats, errors, ui, dir: language.dir, scale, images: { baseDir, known: knownImages }, code: { baseDir: codeDir, known: knownCode } };
-  // A panel-only component in the intro is an error of its own, and the block renders nothing.
-  const loose = doc.intro.filter((b) => b.type === 'fence' && COMPONENTS.get(b.lang)?.panelOnly);
-  for (const b of loose) {
-    errors.push(new RenderError(`${b.lang} belongs in a panel: put it under the ## heading of the panel the answer changes`, { line: b.line, component: b.lang, example: COMPONENTS.get(b.lang).example }));
-  }
-  const introHtml = renderBlocks(doc.intro.filter((b) => !loose.includes(b)), ctx);
-  const panels = doc.panels.map((p) => ({ ...p, html: renderBlocks(p.blocks, ctx) }));
-  raiseAll(errors);
-  const page = TEMPLATES[doc.meta.template]({ meta: doc.meta, introHtml, panels, ui, language });
-  // A right-to-left page isolates each run of text with no right-to-left letter as left to right (src/bidi.js).
-  const body = language.dir === 'rtl' ? isolateLtrRuns(page) : page;
-  const html = shell({ meta: doc.meta, language, body, source, embedded: themes.embedFor(doc.meta.theme, 'page'), update, closeAfter, scale });
-  return { html, warnings, stats, meta: doc.meta, language };
-```
-
-</details>
-
-#### 缺口
-
-- 没有关系出处方案或对照实验
-  **影响**：无法证明来源绑定减少错误
-  **进一步探讨**：在小型固定题集人工标注来源和错误，比较盲审结果与额外成本。
+- 这是增量假设。如果审阅者在现有图和代码块之间同样快地发现错误，或维护引用耗时抵消收益，收据不应推广。
+  **影响**：审核增量收益未知。
+  **进一步探讨**：盲测发现错误边的时间和引用开销。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

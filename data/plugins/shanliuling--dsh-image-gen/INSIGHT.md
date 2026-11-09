@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[5c8c141](https://github.com/shanliuling/dsh-image-gen/tree/5c8c14143f7f4b707b6bb88a068a365feb2f128e)
+源码版本：[34c3841](https://github.com/shanliuling/dsh-image-gen/tree/34c3841be558cf638e8976d45bf3a3e693f7cd79)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,036](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C036&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 44,547](https://img.shields.io/static/v1?label=npm+30d&message=44%2C547&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
+[![GitHub ★ 1,178](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C178&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 69,270](https://img.shields.io/static/v1?label=npm+30d&message=69%2C270&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
 <!-- END META -->
 
-> **功能**：在 DSH 对话及工作台中连接图像生成渠道与附件。
+> **功能**：将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。
 
-> **亮点**：[Q02](#research-q02) 把对话生成与附件及可选工作区保存相连，减少手动搬运，但不保证输出质量或文件保存。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 确认有从多提示词到多附件的顺序工具入口，已配置渠道可把配图生成和会话呈现接在一起。
 
-> **主要限制**：[Q03](#research-q03) 生成附件、工作区保存与批量每项结果是不同状态，须分别核对。
+> **主要限制**：[Q03](#research-q03) 批量成功、附件存在和文件可读是不同条件。取消可能发生在外部生成或附件保存之后，重跑前需要核对已有成果和上游状态。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁使用它，需要什么？](#detail-section-11)
-  - [Q02 · 对话生成怎样到 Provider 和附件？](#detail-section-12)
-  - [Q03 · 失败、保存和隐私边界？](#detail-section-13)
-  - [Q04 · 成本和假设是什么？](#detail-section-14)
-  - [Q05 · 如何试用与退出？](#detail-section-15)
+  - [Q01 · 对话批量与手工生成、上传相比增加什么？](#detail-section-11)
+  - [Q02 · 从工具参数到供应商和附件怎样接线？](#detail-section-12)
+  - [Q03 · 部分失败和中途取消保留哪些成果？](#detail-section-13)
+  - [Q04 · 谁适合试用，失败时怎样恢复？](#detail-section-14)
+  - [Q05 · 按条对账能否减少重复生成？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,76 +40,74 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：[Q01](#research-q01) DSH 内容创作者希望生成合要求的配图并核对附件和文件保存。
+> **用途**：在 DSH 写文章或准备项目材料的创作者，需要为一组已确定的主题逐张生成、验收和保存配图。
 
-在供应商网页或工具生成后，用户手动下载并搬运到 DSH 工作区。
+使用供应商自带网站或本地工作流逐张生成，人工下载、上传到会话并整理工作区目录。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 图像生成 | 对话调用已选 Provider 并生成附件 | 依赖供应商和凭据，质量与费用未验证 |
-| 工作区保存 | 可选将结果写入会话工作区 | 可关闭、缺 cwd 或失败，需查看状态 |
-| 批量生成 | 顺序处理多条提示 | 每项可能独立失败并产生费用 |
+- **模型工具**：generate_image 和 generate_images
+- **界面**：工具输出会话附件卡，包声明 Web 客户端
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 兼容 DSH 工具与附件服务 | 必需 | 注册工具和保存结果 | 无法完成对话输出 |
-| Provider 凭据与网络或本地工作流 | 必需 | 生成图片 | 调用失败或不可用 |
-| Web 服务 | 对工作台必需 | 提供界面与路由 | 无法使用相应界面 |
+| --- | --- | --- | --- |
+| Node ^22.19 或 ≥24、DSH Tools、Attachments、Credentials | 启动必需 | 注册工具、附件与凭据服务 | Host 加载或工具注册需按实际版本排查 |
+| 云端 API Key 或相应订阅登录 | 对应云端渠道必需 | 访问选定模型 | 该渠道生成失败 |
+| 可达 ComfyUI 和 API 工作流 | 本地分支必需 | 执行工作流 | 本地分支不可用 |
+| 可写会话工作区 | 文件保存时必需 | 持久化为项目文件 | 仍可能只有附件或保存失败 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 配置 | 用户选择一个 Provider 与工作区 | 凭据和额度可用 |
-| 生成 | 用非敏感提示生成单图 | 附件可见且内容合适 |
-| 核对 | 检查工作区保存与费用 | 分别确认附件、文件和账单 |
-| 异常 | 暂停批量并核查 | 必要时回到供应商界面 |
+| --- | --- | --- |
+| 准备 | 创作者确认可信渠道与测试提示词 | 凭据与目标渠道可用 |
+| 加载 | Host 加载插件，用户选会话和保存设置 | 能调用模型工具 |
+| 执行 | 提交少量不同提示词 | 每个提示词关联附件或失败项 |
+| 验收 | 用户检查附件和实际文件 | 匹配要求后交付，缺项先核对再补 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 配置服务和凭据 | 选择渠道、模型与工作区 | 时间未知 |
-| 持续使用 | 图像调用与存储费用 | 审核和调整图片 | 实际单张价格未知 |
-| 失败恢复 | 重试可能再次计费 | 核对各项与附件 | 费用依服务而定 |
-| 退出 | 处理附件与文件存储 | 检查已有输出 | 停用不撤销已生成图片 |
+| --- | --- | --- | --- |
+| 首次使用 | 宿主、模型账号或本地计算资源 | 配置渠道、凭据和工作区 | 渠道费用、资源和配置耗时未测 |
+| 持续使用 | 逐张请求、可能的积分和文件空间 | 图质验收、确认保存和整理输出 | 实际等待、返工率及每张费用未知 |
+| 失败恢复 | 上游后台、会话附件或既有图像工具 | 核对已发生调用、下载可用图，只补缺项 | 未量化重复扣费和恢复人时 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 对话生成 | Provider 调用与附件保存源码 | 图像质量与实际节时 |
-| 工作区保存 | 可选写文件和独立错误 | 每次生成均有文件 |
+| --- | --- | --- |
+| 多图结果收集 | 批量顺序、逐项失败与会话附件有源码接线 | 对照手工上传的节时及合格率 |
+| 工作区文件 | 可选写入及失败返回与附件区分 | 不同宿主文件表现和恢复成功率 |
+| 部分失败 | 失败可定位，后项可继续或标记未启动 | 是否实际减少重发与现金成本 |
 
-> **思考**：[Q03](#research-q03) 生成附件、工作区保存与批量每项结果是不同状态，须分别核对。
+> **思考**：[Q03](#research-q03) 批量成功、附件存在和文件可读是不同条件。取消可能发生在外部生成或附件保存之后，重跑前需要核对已有成果和上游状态。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 把对话生成与附件及可选工作区保存相连，减少手动搬运，但不保证输出质量或文件保存。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 确认有从多提示词到多附件的顺序工具入口，已配置渠道可把配图生成和会话呈现接在一起。
 
-[Q02](#research-q02) 将渠道选择和附件保存集中，[Q03](#research-q03) 部分失败及工作区保存需独立处理。
+工具层保留按项失败，附件层与工作区层分步持久化。工作区有路径约束和临时文件写入，超时和取消后仍需核对已发生的上游与附件动作。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 生成附件、工作区保存与批量每项结果是不同状态，须分别核对。
+[Q03](#research-q03) 批量成功、附件存在和文件可读是不同条件。取消可能发生在外部生成或附件保存之后，重跑前需要核对已有成果和上游状态。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 单 Provider、单张非敏感提示试用，核对输出、保存和费用后再扩展。
+[Q01](#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。[Q03](#research-q03) 若缺附件、保存报错或遇到取消，先查会话、工作区和上游记录，再下载已有图或退回原工具只补缺项。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持生成、附件与工作区路径；实际供应商、图像质量和成本未验证。
+固定源码确认 Host 工具、供应商接线和保存状态边界。上游实际图片质量、扣费、市场可用性及取消后的最终结果仍需验证。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、src/index.ts、src/google.ts、src/image-tool-context.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、src/index.ts、src/openai-compatible.ts、src/workspace-save.ts、src/generation-timeout.ts、package.json、src/config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定源码静态核查对话生成及 Google 代表性路径，未运行 DSH、各 Provider 或浏览器。
-- 下一步：在测试 DSH 和单一 Provider 使用一张非敏感图片，验证附件、文件、错误及账单。
+- 边界：根组件的对话生成和批量接线及工作区写入。Studio、多模型对比、订阅条款和远端下载目标未作完整审计。
+- 下一步：固定源码核查。下一步用可记录请求次数的假供应商及临时工作区对三个固定提示词注入一次保存失败和一次附件后的取消，比较整批重跑与逐项补缺的请求数、文件完整性和人时。
 
 **分析版本**
 
 - **仓库**：[shanliuling/dsh-image-gen](https://github.com/shanliuling/dsh-image-gen)
-- **版本号**：0.10.0（[固定提交 5c8c141](https://github.com/shanliuling/dsh-image-gen/tree/5c8c14143f7f4b707b6bb88a068a365feb2f128e)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.11.1（[固定提交 34c3841](https://github.com/shanliuling/dsh-image-gen/tree/34c3841be558cf638e8976d45bf3a3e693f7cd79)）
+- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +134,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 生成前显示按渠道和张数估价或可降低预算意外，需对照账单验证。
+[Q05](#research-q05) 逐项记录供应商响应、附件和工作区状态可能减少整批重跑，需与故障注入对照。
 
-在测试 DSH 和单一 Provider 使用一张非敏感图片，验证附件、文件、错误及账单。
+固定源码核查。下一步用可记录请求次数的假供应商及临时工作区对三个固定提示词注入一次保存失败和一次附件后的取消，比较整批重跑与逐项补缺的请求数、文件完整性和人时。
 
 <a id="detail-section-9"></a>
 
@@ -147,65 +145,558 @@
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 6 | 974 | — | — | 9986 |
-| .mjs | source | 3 | 271 | 235 | 21 | — |
+| .md | source | 8 | 1118 | — | — | 13944 |
+| .mjs | source | 4 | 281 | 242 | 23 | — |
 | .mjs | example | 1 | 202 | 187 | 18 | — |
-| .ts | source | 69 | 12449 | 9900 | 1758 | — |
-| .tsx | source | 8 | 9241 | 8267 | 501 | — |
-| .ts | test | 44 | 9668 | 8538 | 402 | — |
+| .ts | source | 94 | 18133 | 14509 | 2528 | — |
+| .tsx | source | 19 | 10896 | 9472 | 832 | — |
+| .ts | test | 74 | 14665 | 13007 | 538 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/shanliuling/dsh-image-gen/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 27](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=27&color=737b86&logo=github)](https://github.com/shanliuling/dsh-image-gen/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 21](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=21&color=737b86&logo=github)](https://github.com/shanliuling/dsh-image-gen/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
+[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/shanliuling/dsh-image-gen/issues?q=is%3Aissue+is%3Aopen)
 
+暂未获取：近30天新建、近30天关闭。
 
-
-统计日期：2026-11-01。
+统计日期：2026-11-09。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查 DSH 图像生成从工具到 Provider、附件和工作区的路径及失败成本边界。
+**插件研究总目标**：判断在 DSH 为文章或项目生成一组插图的用户，能否得到逐项可验收的附件与工作区文件，并在取消或部分失败时知道从哪一项恢复。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁使用它，需要什么？
+### Q01 · 对话批量与手工生成、上传相比增加什么？
 
-**研究主题**：场景与需求、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-dsh-image-gen 面向希望在 DSH 对话中生成或编辑配图的用户，合格结果是选定渠道生成符合要求的图，附件可见且所需工作区保存状态可核对。依赖兼容 DSH 附件和工具服务、可用 Provider 与凭据或本地 ComfyUI；工作台等 HTTP 界面还需 webServer。各 Provider 的参数、权限、网络和费用不同，源码声明不证明实际账户可用。
+作者用一篇文章配多张图说明连续生成场景。固定代码注册单图和多图工具，批量共用参数、按输入顺序调用，成功直接由附件展示。相比离开会话逐张发提示词再传文件，可在原会话把多个提示词的结果收集在同一个工具回包。合格结果仍需逐项满足主题、风格、可打开，若交付需要文件还须确实存在。统一参数只表达共同约束，不能推出出图风格一致。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-5](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/package.json#L2-L5)
+**依据 1 · 作者声明**：[README.md:174-186](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/README.md#L174-L186)
 
-包与定位。
-
-```text
-  "name": "dsh-image-gen",
-  "version": "0.10.0",
-  "description": "Bring ChatGPT-like image generation to DeepSeek Harness — Gemini, OpenAI, Seedream, DashScope, local ComfyUI & more.",
-  "type": "module",
-```
-
-**依据 2 · 源码核查**：[package.json:38-55](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/package.json#L38-L55)
-
-DSH 客户端和 bundle。
+作者的批量场景、主张和示例
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-  ],
+### 🔁 对话批量生图：一句话，一整组图
+
+配图、分镜、系列插画、同一主题的多个变体，不用一张一张地催。
+
+- 用一句话描述数量和统一要求，Agent 会自己规划出一组 Prompt，**单次最多 10 张**，图片按顺序附在同一条回复里。
+- 比例、清晰度、模型、Provider 可以对整组统一指定，保证风格一致。
+- 逐张生成，**某一张失败不会影响其余图片**，最后会汇报「成功 X / 共 Y」并列出失败原因。
+- 本地 ComfyUI 和订阅通道同样支持批量。
+
+<div align="center">
+  <img src="docs/assets/readme/chat-batch.webp" alt="一条消息让 Agent 批量生成 5 张二次元插画，失败的那张自动重跑，最后整组进入图库" width="100%" />
+  <br />
+  <sub>一条消息写 5 个画面 → Agent 规划成两批生成 → 逐张出图，失败的那张自动单独重跑 → 整组进入图库。（等待部分已加速）</sub>
+```
+
+</details>
+
+**依据 2 · 源码核查**：[cordis.patch.yml:1-5](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/cordis.patch.yml#L1-L5)
+
+根插件组合及默认 provider
+
+```text
+- insert:
+    - id: image-gen
+      name: dsh-image-gen
+      config:
+        provider: google
+```
+
+**依据 3 · 源码核查**：[src/index.ts:537-561](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L537-L561)
+
+单图和批量工具在同一 Host 注册
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+  ctx.tools.register(defineTool({
+    name: 'generate_image',
+    description: 'Generate a new image with the configured provider. Use when the user asks to create or draw a new image; use edit_image instead when they want to change an existing image. Give a complete visual prompt including subject, composition, style, lighting, and any exact text that should appear. The optional provider/model arguments switch provider or model for this call only when the user asks for a specific one. A successful image is attached directly to the conversation and may also be saved under the session workspace. Do not call read, glob, or other tools to locate or verify the image.',
+    parameters: {
+      prompt: { type: 'string', required: true, description: 'Complete description of the image to generate.' },
+      provider: { type: 'string', enum: ['google', 'openai', 'openai-compat', 'seedream', 'dashscope', 'xai', 'zhipu', 'comfyui', 'chatgpt-sub', 'grok-sub', 'google-sub'], description: 'OMIT unless the user explicitly requests a specific image provider. Omission uses the saved default; never guess a channel or fill this with an empty string. chatgpt-sub, grok-sub, and google-sub use logged-in subscription accounts instead of API keys.' },
+      model: { type: 'string', description: 'OMIT unless the user explicitly requests a specific model; omission uses the configured model. Optional override for this call only. Not used by ComfyUI (use workflow instead) nor by the subscription providers (model fixed by the subscription).' },
+      channel: { type: 'string', description: 'Optional configured OpenAI-compatible channel id for this call only. Only meaningful with provider=openai-compat; omit to use the active channel.' },
+      aspect_ratio: { type: 'string', enum: ['1:1', '3:2', '2:3', '4:3', '3:4', '4:5', '5:4', '16:9', '9:16', '21:9'], description: 'Optional output aspect ratio for Google Gemini, xAI Grok, subscription channels, and ComfyUI workflows with {{width}}/{{height}} placeholders (about one megapixel).' },
+      image_size: { type: 'string', enum: ['1K', '2K', '4K'], description: 'Optional output resolution for Google Gemini, xAI Grok, Grok subscription (1K/2K), or Google subscription (1K/4K). NEVER send this for chatgpt-sub; omit unused fields entirely.' },
+      size: { type: 'string', description: 'Optional dimensions or size tier for OpenAI, Seedream, or DashScope; WIDTHxHEIGHT maps to aspect_ratio for xAI Grok and sets the frame of ComfyUI workflows with {{width}}/{{height}} placeholders. Do not combine with aspect_ratio; omit instead of using an empty string.' },
+      quality: { type: 'string', description: 'Optional generation quality for OpenAI or compatible APIs, independent of pixel size (e.g. auto, low, medium, high). Omit to use the configured default.' },
+      workflow: { type: 'string', description: 'Optional name of the ComfyUI workflow to run; omit to use the active workflow from settings. Only meaningful when the ComfyUI provider is selected.' },
+      ...gifToolParameters,
+    },
+    output: imageOutput('Generated'),
+    async execute(args, exec): Promise<GeneratedValue> {
+      return generateSingle(args, exec)
+    },
+    presentResult: (_args, result) => imagePresentation(result),
+  }))
+
+  ctx.tools.register(defineTool({
+    name: 'generate_images',
+    description: 'Generate several images in one call, one per prompt, in order. Use for batches, variations, or illustration sets; prefer generate_image for a single image. Every successful image is attached to the conversation and may be saved under the session workspace. Items generate sequentially; a failed item is reported in the failures list and does not abort the rest. The optional provider/model/size arguments apply to every item.',
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.ts:589-601](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L589-L601)
+
+批量结果与附件渲染
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+        {
+          type: 'text' as const,
+          text: `Generated ${String(value.images.length)} of ${String(value.images.length + value.failures.length)} images.\n${value.failures.map(failure => `${failure.prompt.slice(0, 80)} — failed: ${failure.error}`).join('\n')}`,
+        },
+        // Batch arguments apply to every item, so each item's summary can
+        // compare the GIF it asked for with what came back.
+        ...value.images.flatMap(image => imageOutput('Generated').render(args, image).map(block =>
+          block.type === 'text' ? { ...block, text: `${block.text}\nImage prompt: ${image.prompt}` } : block)),
+      ],
+      presentationMeta: (_args: unknown, value: BatchGeneratedValue) => ({
+        kind: 'dsh-image-gen-batch',
+        images: value.images.map(image => imageOutput('Generated').presentationMeta({ prompt: image.prompt }, image)),
+      }),
+```
+
+</details>
+
+#### 缺口
+
+- 缺少与手工上传的同主题时间及图像质量对照。
+  **影响**：无法量化合格插图的人时或一致性。
+  **进一步探讨**：用三张有预定义可验收条件的插图，比较交付人时和返工数。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 从工具参数到供应商和附件怎样接线？
+
+**研究主题**：功能与机制、工程质量与复用
+
+#### 完整回答
+
+工具接收单图或批量参数，清理覆盖参数后按活动供应商路由。ComfyUI 使用已配置工作流、订阅使用登录管理器，常规云端请求读取凭据并传超时信号。OpenAI 兼容实现 POST 模型、提示词与可选大小，再解析返回。生成成功后先保存到 DSH 附件服务，结果可带原动画与工作区状态。此链说明实际调用及保存接线，图片是否符合提示词要看具体模型和输入。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/index.ts:457-494](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L457-L494)
+
+单图共享入口、分支与凭据调用
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+  /** Per-item generation request shared by generate_image and generate_images. */
+  const generateSingle = async (rawArgs: SingleGenerationArgs, exec: { agent?: { session: { header: { cwd?: string } } }; signal: AbortSignal }): Promise<GeneratedValue> => {
+    const args = cleanImageToolArgs(rawArgs)
+    const requestConfig = configForToolCall(current(), providerOverrideOf(args.provider), args.channel)
+    const active = resolveProvider(withProviderOverrides(requestConfig, providerOverrideOf(args.provider), args.model))
+    assertGifProvider(args, active.provider)
+    if (active.provider === 'comfyui') {
+      const workflow = selectComfyUIWorkflow(active, args.workflow)
+      const slots = comfyUIWorkflowSlots(workflow.json)
+      assertImageCount(slots.images, 0)
+      const frame = comfyUIFrame(workflow.name, slots, args)
+      const generated = await generateComfyUIImage({
+        baseURL: active.baseURL,
+        workflowJson: workflow.json,
+        prompt: mergeComfyUIPrompt(workflow.presetPrompt, args.prompt),
+        timeoutMs: active.timeoutMs,
+        maxBytes: ctx.attachments.imageLimits.maxImageBytes,
+        signal: exec.signal,
+        ...(frame.size === undefined ? {} : { size: frame.size }),
+      })
+      const value = await saveGenerated(ctx, generated, active.provider, workflow.name, 'API workflow', current(), exec, knownWorkspaceRoots)
+      return frame.notice === undefined ? value : { ...value, notice: frame.notice }
+    }
+    if (active.provider === 'chatgpt-sub' || active.provider === 'grok-sub' || active.provider === 'google-sub') {
+      const subscriptionParams = subscriptionToolParameters(active.provider, { ...(args.size !== undefined ? { size: args.size } : {}), ...(args.aspect_ratio !== undefined ? { aspectRatio: args.aspect_ratio } : {}), ...(args.image_size !== undefined ? { imageSize: args.image_size } : {}) })
+      const generated = await generateSubscriptionImage({
+        manager: subscriptionManager,
+        provider: active.provider,
+        prompt: args.prompt,
+        ...subscriptionParams,
+        maxBytes: ctx.attachments.imageLimits.maxImageBytes,
+        signal: exec.signal,
+      })
+      return saveGenerated(ctx, generated, active.provider, active.model, 'subscription', current(), exec, knownWorkspaceRoots)
+    }
+    const runCloud = <T>(operation: (signal: AbortSignal) => Promise<T>, gif = false): Promise<T> =>
+      withGenerationTimeout(cloudTimeoutFor(current().cloudTimeoutMs, gif), exec.signal, operation)
+    const credential = await requireApiKey(ctx, active.provider, 'generate_image', active.provider === 'openai-compat' ? resolveOpenAICompatChannel(requestConfig, args.channel).keyRef : undefined)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/index.ts:524-534](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L524-L534)
+
+OpenAI 兼容调用后进入保存
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+    if (active.provider === 'openai' && size !== undefined) {
+      if (gifRequested) validateGifFrameSize(size)
+      else validateOfficialSize(active.model, size)
+    }
+    const quality = active.provider === 'openai-compat' ? compatRequestQuality(requestConfig, args.quality) : active.provider === 'openai' ? args.quality : undefined
+    if (active.provider === 'openai' && quality !== undefined && !officialQualityOptions(active.model).some(option => option.value === quality)) throw new Error('该 OpenAI 模型不支持所选生成质量')
+    const extraBody = channelExtraBody !== undefined ? { ...channelExtraBody, ...gifFields } : Object.keys(gifFields).length === 0 ? undefined : gifFields
+    const generated = await runCloud(signal => generateOpenAICompatibleImage({ provider: active.provider, apiKey: credential, baseURL: active.baseURL, model: active.model, prompt: args.prompt, ...(size === undefined ? {} : { size }), maxBytes: ctx.attachments.imageLimits.maxImageBytes, signal, ...(quality === undefined ? {} : { quality }), ...(extraBody === undefined ? {} : { extraBody }), ...(arkOptions === undefined ? {} : { arkOptions }) }), gifRequested)
+    const output = size ?? 'auto'
+    const value = await saveGenerated(ctx, generated, active.provider, active.model, quality === undefined ? output : `${output}, quality=${quality}`, current(), exec, knownWorkspaceRoots)
+    return active.provider === 'openai-compat' ? { ...value, channel: resolveOpenAICompatChannel(requestConfig, args.channel).id } : value
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/openai-compatible.ts:42-57](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/openai-compatible.ts#L42-L57)
+
+对选中端点发送生成请求
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  const response = await guardedFetch(`${input.provider} image request`, input.signal, () => fetch(imageEndpoint(input.baseURL, 'generations'), {
+    method: 'POST', redirect: 'error', signal: input.signal,
+    headers: { authorization: `Bearer ${input.apiKey}`, 'content-type': 'application/json' },
+    body: JSON.stringify({
+      model: input.model,
+      prompt: input.prompt,
+      ...(input.size === undefined ? {} : { size: input.size }),
+      ...(input.quality === undefined ? {} : { quality: input.quality }),
+      // `background: false` — Ark rejects `transparent` on this endpoint
+      // outright (it needs exactly one input image), so it is the edit path's
+      // option alone.
+      ...(input.provider === 'seedream' ? { response_format: 'url', ...arkOutputBody(input.arkOptions, { background: false }) } : {}),
+      ...(input.extraBody ?? {}),
+    }),
+  }), input.apiKey)
+  return parseImageResponse(response, input.provider, input)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.ts:915-938](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L915-L938)
+
+附件与可选工作区的顺序
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  if (!ctx.attachments.imageLimits.mediaTypes.includes(generated.mediaType)) throw new Error(`This DSH deployment does not accept ${generated.mediaType} generated images`)
+  const attachment = await ctx.attachments.saveImage({ data: generated.data, mediaType: generated.mediaType, name: 'generated-image' })
+  const animation = animationOf(generated)
+  // Kept before the workspace step so a result without a file (or a disabled
+  // workspace) still carries the animation the card plays.
+  const original = await keepGifOriginal(vaultConfigOf(config), generated, attachment, message => { ctx.logger.warn(message) })
+  const value: GeneratedValue = {
+    attachment, provider, model, output,
+    ...(typeof generated.seed === 'number' ? { seed: generated.seed } : {}),
+    ...(animation === undefined ? {} : { animation }),
+    ...(original === undefined ? {} : { original }),
+  }
+  if (config.saveToWorkspace === false) return value
+  const workspaceRoot = exec.agent?.session.header.cwd
+  if (workspaceRoot === undefined) return value
+  knownRoots?.add(workspaceRoot)
+  try {
+    value.savedTo = await saveImageToWorkspace({ workspaceRoot, folder: config.workspaceFolder, attachmentId: attachment.attachmentId, mediaType: generated.mediaType, data: generated.data, signal: exec.signal })
+  } catch (error) {
+    exec.signal.throwIfAborted()
+    ctx.logger.warn(`dsh-image-gen: failed to save image to workspace: ${error instanceof Error ? error.message : String(error)}`)
+    value.saveError = error instanceof Error ? error.message : String(error)
+  }
+  return value
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/index.ts:805-832](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L805-L832)
+
+附件及独立路径或保存错误的呈现
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+function imageOutput(verb: 'Generated' | 'Edited') {
+  return {
+    schema: {
+      type: 'object', additionalProperties: false, properties: {
+        attachment: { type: 'object', required: true, additionalProperties: false, properties: {
+          attachmentId: { type: 'string', required: true }, mediaType: { type: 'string', required: true }, bytes: { type: 'integer', required: true }, width: { type: 'integer', required: true }, height: { type: 'integer', required: true }, name: { type: 'string' }, originalDimensions: { type: 'object', additionalProperties: false, properties: { width: { type: 'integer', required: true }, height: { type: 'integer', required: true } } },
+        } },
+        provider: { type: 'string', required: true }, channel: { type: 'string' }, model: { type: 'string', required: true }, output: { type: 'string', required: true }, savedTo: { type: 'string' }, saveError: { type: 'string' }, seed: { type: 'integer' }, animation: animationSchema, original: originalSchema, notice: { type: 'string' },
+      },
+    },
+    render: (args: unknown, value: GeneratedValue) => {
+      const saved = typeof value.savedTo === 'string' ? ` It was also saved to the workspace as ${value.savedTo}.` : typeof value.saveError === 'string' ? ` Saving it to the workspace failed: ${value.saveError}.` : ' It has no local file path.'
+      const action = verb === 'Generated' ? 'It is already attached to the conversation.' : 'The edited image is attached to the conversation.'
+      // The fixed sentence is a parsing contract for PTC dispatch cards
+      // (image-result-node.ts); GIF facts are appended after it, never inside.
+      return [
+        { type: 'text' as const, text: `${verb} one image with ${value.provider}/${value.model} (${value.output}). Attachment ID: ${String(value.attachment.attachmentId)}. ${action}${saved} Respond to the user without reading or searching for the image.${animationNotes(args, value)}${cardNote(value)}${originalNote(value)}${value.notice === undefined ? '' : ` ${value.notice}`}` },
+        { type: 'image' as const, attachment: value.attachment },
+      ]
+    },
+    presentationMeta: (args: unknown, value: GeneratedValue) => ({
+      kind: 'dsh-image-gen', attachment: attachmentMeta(value.attachment), provider: value.provider, model: value.model, output: value.output,
+      ...(value.channel === undefined ? {} : { channel: value.channel }),
+      ...(verb === 'Edited' ? { operation: 'edit' } : {}),
+      ...(typeof value.savedTo === 'string' ? { savedTo: value.savedTo } : {}),
+      ...(typeof value.seed === 'number' ? { seed: value.seed } : {}),
+      ...(value.original === undefined ? {} : { original: { key: value.original.key, bytes: value.original.bytes, mediaType: value.original.mediaType } }),
+      prompt: (args as { prompt: string }).prompt,
+```
+
+</details>
+
+#### 缺口
+
+- 各供应商真实输出及格式能力未做同条件验证。
+  **影响**：相同参数在不同供应商上未必得到可比较的图片。
+  **进一步探讨**：先固定一个允许的渠道与期望媒体类型，逐图验收。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 部分失败和中途取消保留哪些成果？
+
+**研究主题**：缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+每批一至十项，按顺序处理。已取消时后续项以原 index 记为未启动，已开始的失败入 failures 后继续处理其他项。附件先保存，普通文件写失败附上 saveError 仍返回图片，取消时 saveGenerated 重抛而不会将该附件纳入这批成功清单。文件写入先核对工作区与真实路径，写临时文件后改名，取消或错误仅尽力清理文件。源码没有在这个失败分支回撤已保存附件。云端超时是本地取消请求，提示明确要求核对上游生成及计费。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/index.ts:603-634](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L603-L634)
+
+批次顺序、失败和取消的结果分支
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+    async execute(args, exec): Promise<BatchGeneratedValue> {
+      if (args.prompts.length === 0) throw new Error('generate_images requires at least one prompt')
+      if (args.prompts.length > 10) throw new Error(`generate_images accepts at most 10 prompts per call (got ${String(args.prompts.length)}); split larger batches into several calls`)
+      const images: BatchGeneratedValue['images'] = []
+      const failures: BatchGeneratedValue['failures'] = []
+      for (const [index, prompt] of args.prompts.entries()) {
+        if (exec.signal.aborted) {
+          failures.push({ index, prompt, error: 'aborted before this image started' })
+          continue
+        }
+        try {
+          const value = await generateSingle({
+            prompt,
+            ...(args.provider !== undefined ? { provider: args.provider } : {}),
+            ...(args.model !== undefined ? { model: args.model } : {}),
+            ...(args.channel !== undefined ? { channel: args.channel } : {}),
+            ...(args.aspect_ratio !== undefined ? { aspect_ratio: args.aspect_ratio } : {}),
+            ...(args.image_size !== undefined ? { image_size: args.image_size } : {}),
+            ...(args.size !== undefined ? { size: args.size } : {}),
+            ...(args.quality !== undefined ? { quality: args.quality } : {}),
+            ...(args.workflow !== undefined ? { workflow: args.workflow } : {}),
+            ...(args.output_format !== undefined ? { output_format: args.output_format } : {}),
+            ...(args.frame_count !== undefined ? { frame_count: args.frame_count } : {}),
+            ...(args.frame_duration_ms !== undefined ? { frame_duration_ms: args.frame_duration_ms } : {}),
+          }, exec)
+          images.push({ ...value, prompt })
+        } catch (error) {
+          failures.push({ index, prompt, error: error instanceof Error ? error.message : String(error) })
+        }
+      }
+      return { images, failures }
+    },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/index.ts:915-938](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L915-L938)
+
+附件保存先于工作区，普通失败和取消分开
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+  if (!ctx.attachments.imageLimits.mediaTypes.includes(generated.mediaType)) throw new Error(`This DSH deployment does not accept ${generated.mediaType} generated images`)
+  const attachment = await ctx.attachments.saveImage({ data: generated.data, mediaType: generated.mediaType, name: 'generated-image' })
+  const animation = animationOf(generated)
+  // Kept before the workspace step so a result without a file (or a disabled
+  // workspace) still carries the animation the card plays.
+  const original = await keepGifOriginal(vaultConfigOf(config), generated, attachment, message => { ctx.logger.warn(message) })
+  const value: GeneratedValue = {
+    attachment, provider, model, output,
+    ...(typeof generated.seed === 'number' ? { seed: generated.seed } : {}),
+    ...(animation === undefined ? {} : { animation }),
+    ...(original === undefined ? {} : { original }),
+  }
+  if (config.saveToWorkspace === false) return value
+  const workspaceRoot = exec.agent?.session.header.cwd
+  if (workspaceRoot === undefined) return value
+  knownRoots?.add(workspaceRoot)
+  try {
+    value.savedTo = await saveImageToWorkspace({ workspaceRoot, folder: config.workspaceFolder, attachmentId: attachment.attachmentId, mediaType: generated.mediaType, data: generated.data, signal: exec.signal })
+  } catch (error) {
+    exec.signal.throwIfAborted()
+    ctx.logger.warn(`dsh-image-gen: failed to save image to workspace: ${error instanceof Error ? error.message : String(error)}`)
+    value.saveError = error instanceof Error ? error.message : String(error)
+  }
+  return value
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/workspace-save.ts:108-144](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/workspace-save.ts#L108-L144)
+
+临时文件、改名和取消后尽力清理
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+export async function saveImageToWorkspace(options: {
+  workspaceRoot: string
+  folder?: string | undefined
+  attachmentId: string
+  mediaType: ImageAttachmentRef['mediaType']
+  data: Uint8Array
+  signal?: AbortSignal
+}): Promise<string> {
+  const dir = workspaceImageDir(options.workspaceRoot, options.folder)
+  options.signal?.throwIfAborted()
+  const realRoot = await realpath(resolve(options.workspaceRoot))
+  assertInsideWorkspace(realRoot, await nearestExistingRealPath(dir), options.folder)
+  const name = workspaceImageName(options.attachmentId, options.mediaType)
+  const target = join(dir, name)
+  const staging = join(dir, `.${name}.${process.pid}-${randomUUID()}.tmp`)
+  await mkdir(dir, { recursive: true })
+  // Re-validate the finished directory: creating it may have traversed a
+  // symlink, and links can be swapped in between the checks above.
+  assertInsideWorkspace(realRoot, await realpath(dir), options.folder)
+  try {
+    await writeFile(staging, options.data, { flag: 'wx', signal: options.signal })
+    options.signal?.throwIfAborted()
+    await rename(staging, target)
+  } catch (error) {
+    await unlink(staging).catch(() => {})
+    throw error
+  }
+  // Final gate: a cancellation landing during the last write/rename step must
+  // not be reported as a successful save, and the already-renamed file is
+  // removed so no orphan image outlives the cancelled call.
+  try {
+    options.signal?.throwIfAborted()
+  } catch (error) {
+    await unlink(target).catch(() => {})
+    throw error
+  }
+  return target
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/generation-timeout.ts:1-26](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/generation-timeout.ts#L1-L26)
+
+请求信号与上游结果未知提示
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+export const UPSTREAM_TIMEOUT_HINT = '上游可能已扣费或仍在生成，请到服务商后台确认'
+
+export class GenerationTimeoutError extends Error {
+  constructor(timeoutMs: number) {
+    super(`生图超时（${String(timeoutMs / 1000)} 秒未返回），请检查网络或代理后重试；${UPSTREAM_TIMEOUT_HINT}`)
+    this.name = 'GenerationTimeoutError'
+  }
+}
+
+export async function withGenerationTimeout<T>(
+  timeoutMs: number,
+  signal: AbortSignal,
+  operation: (signal: AbortSignal) => Promise<T>,
+): Promise<T> {
+  const watchdog = new AbortController()
+  const combinedSignal = AbortSignal.any([signal, watchdog.signal])
+  const timeout = setTimeout(() => { watchdog.abort() }, timeoutMs)
+  timeout.unref?.()
+  try {
+    return await operation(combinedSignal)
+  } catch (error) {
+    if (watchdog.signal.aborted && !signal.aborted) throw new GenerationTimeoutError(timeoutMs)
+    throw error
+  } finally {
+    clearTimeout(timeout)
+  }
+```
+
+</details>
+
+#### 缺口
+
+- 当前缺取消夹在附件和文件之间的故障注入。
+  **影响**：无法判断宿主实际保留哪些附件，以及供应商是否继续生成或扣费。
+  **进一步探讨**：在假供应商和临时工作区同时记录请求、附件 ID、文件和清理失败。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 谁适合试用，失败时怎样恢复？
+
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+需使用已配置的 DSH Host 服务及符合 manifest 的 Node，云端需有效凭据或已登录订阅，ComfyUI 分支需可达实例和工作流。保存默认开启，写入依赖当前会话有工作区且能在范围内落盘。适合有图像供应商、只处理无敏感内容且能人工核对的小批创作者。拿到附件而路径失败时可从会话下载再手工放入工作区。超时或取消后应先核对附件、目录与上游后台，再决定仅重跑缺项。需要明确计费、保真或私有参考图而无法核对时回到既有工具。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:39-66](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/package.json#L39-L66)
+
+根包 Web 注入和 Node 版本
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -223,584 +714,125 @@ DSH 客户端和 bundle。
       ],
       "platform": "web"
     }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[package.json:65-68](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/package.json#L65-L68)
-
-Node 版本声明。
-
-```text
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/clean-lib.mjs && tsc && tsdown",
+    "prepare": "pnpm run build",
+    "test": "vitest run",
+    "test:package": "node scripts/check-package.mjs",
+    "pack:check": "pnpm pack --dry-run"
+  },
   "engines": {
     "node": "^22.19.0 || >=24.0.0"
-  },
-  "license": "Apache-2.0",
-```
-
-**依据 4 · 作者声明**：[README.md:116-132](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/README.md#L116-L132)
-
-作者说明 Provider 与配置。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-### 2. 配置 Provider
-
-重启 DSH 后，点击左侧边栏的 **「插件」** 图标打开插件面板，在 **「已安装」** 分区点击 **dsh-image-gen**，进入插件详情页即可看到「图像生成」配置表单：
-
-**插件面板 → 已安装 → dsh-image-gen**
-
-<div align="center">
-  <img src="docs/assets/readme/plugins-entry.webp" alt="在左侧边栏点击「插件」，于「已安装」分区点击 dsh-image-gen 进入详情页" width="100%" />
-  <br />
-  <sub>点击左侧边栏「插件」图标，在「已安装」分区点击 dsh-image-gen 进入插件详情页。</sub>
-</div>
-
-> DSH 0.1.5 及更早版本没有插件面板，入口仍为「设置 → 插件 → 插件配置 → 图像生成」；插件已同时兼容两种入口。
-
-选择 Provider，填写自己的 API Key，并按需调整模型、Endpoint / Base URL 与工作区保存选项。填好 Key 后可点击**「测试连接」**验证可用性，或点击**「拉取模型」**一键获取该厂商支持的全部生图模型，无需手动查文档。使用 ComfyUI 时，请填写 DSH Host 可访问的服务地址，并导入 **API Format Workflow JSON**。
-
-已有 ChatGPT、Grok 或 Google 订阅？无需填写 API Key：展开对应的订阅 Provider 行，点击**「登录」**并在浏览器完成授权，即可直接开始文生图与图生图。
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/index.ts:140-145](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L140-L145)
+**依据 2 · 源码核查**：[src/index.ts:57-58](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L57-L58)
 
-设置及 Web 服务条件。
-
-```text
-  const settingsHealth = installImageSettings(ctx, current(), {
-    setSource: source => { current = () => migrateOpenAICompatConfig(plainConfig(source())) },
-    onChange: () => {},
-  })
-  // Every HTTP surface needs webServer, which only the web-app bundle (web,
-  // desktop) provides; the headless, acp and sdk profiles have none. Mount the
-```
-
-#### 缺口
-
-- 目标 DSH 和 Provider 的账户状态
-  **影响**：决定能否生成和保存
-  **进一步探讨**：在测试工作区检查服务与额度
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 对话生成怎样到 Provider 和附件？
-
-**研究主题**：功能与机制、贡献与相对优势
-
-#### 完整回答
-
-Host 注册 generate_image 和 generate_images；单图调用清洗参数、解析配置与渠道，选择对应分支，云端获取凭据并带超时请求。以 Google 为例，适配器 POST 提示和尺寸，处理 HTTP、JSON、无图和字节限制；成功后保存 DSH 附件，并在配置允许且会话有 cwd 时尝试写入工作区。批量最多十条，顺序逐项运行，失败项单独记录而继续其余。相比网页生成后手工搬运，它把生成与 DSH 附件及可选工作区输出连接；不等于图库、文件和生成都必然同时成功。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:277-289](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L277-L289)
-
-清洗参数、选 Provider 与本地工作流。
-
-<details>
-<summary>查看原文（13行）</summary>
+Host 核心服务
 
 ```text
-  /** Per-item generation request shared by generate_image and generate_images. */
-  const generateSingle = async (rawArgs: SingleGenerationArgs, exec: { agent?: { session: { header: { cwd?: string } } }; signal: AbortSignal }): Promise<GeneratedValue> => {
-    const args = cleanImageToolArgs(rawArgs)
-    const requestConfig = configForToolCall(current(), providerOverrideOf(args.provider), args.channel)
-    const active = resolveProvider(withProviderOverrides(requestConfig, providerOverrideOf(args.provider), args.model))
-    if (active.provider === 'comfyui') {
-      const workflow = selectComfyUIWorkflow(active, args.workflow)
-      const generated = await generateComfyUIImage({
-        baseURL: active.baseURL,
-        workflowJson: workflow.json,
-        prompt: mergeComfyUIPrompt(workflow.presetPrompt, args.prompt),
-        timeoutMs: active.timeoutMs,
-        maxBytes: ctx.attachments.imageLimits.maxImageBytes,
+export const name = 'dsh-image-gen'
+export const inject = ['tools', 'attachments', 'credentials']
 ```
 
-</details>
+**依据 3 · 源码核查**：[src/config.ts:271-275](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/config.ts#L271-L275)
 
-**依据 2 · 源码核查**：[src/index.ts:306-313](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L306-L313)
-
-云端超时、凭据与 Google 分支。
+工作区保存缺省配置
 
 ```text
-    const runCloud = <T>(operation: (signal: AbortSignal) => Promise<T>): Promise<T> =>
-      withGenerationTimeout(current().cloudTimeoutMs ?? DEFAULT_CLOUD_TIMEOUT_MS, exec.signal, operation)
-    const credential = await requireApiKey(ctx, active.provider, 'generate_image', active.provider === 'openai-compat' ? resolveOpenAICompatChannel(requestConfig, args.channel).keyRef : undefined)
-    if (active.provider === 'google') {
-      const aspectRatio = (args.aspect_ratio ?? active.aspectRatio) as AspectRatio
-      const imageSize = (args.image_size ?? active.imageSize) as ImageSize
-      const generated = await runCloud(signal => generateGoogleImage({ apiKey: credential, endpoint: active.endpoint, native: active.native, model: active.model, prompt: args.prompt, aspectRatio, imageSize, maxBytes: ctx.attachments.imageLimits.maxImageBytes, signal }))
-      return saveGenerated(ctx, generated, active.provider, active.model, `${aspectRatio}, ${imageSize}`, current(), exec, knownWorkspaceRoots)
+  comfyuiWorkflowJson: volatile(z.string().default('')),
+  comfyuiWorkflowName: volatile(z.string().default('')),
+  comfyuiTimeoutMs: volatile(z.number().min(1_000).max(3_600_000).default(DEFAULT_COMFYUI_TIMEOUT_MS)),
+  saveToWorkspace: volatile(z.boolean().default(true)),
+  workspaceFolder: volatile(z.string().default(DEFAULT_WORKSPACE_FOLDER)),
 ```
 
-**依据 3 · 源码核查**：[src/google.ts:75-115](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/google.ts#L75-L115)
+**依据 4 · 作者声明**：[README.md:360-367](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/README.md#L360-L367)
 
-Google 请求、响应和错误检查。
-
-<details>
-<summary>查看原文（41行）</summary>
+作者说明凭据、数据发送和工作区条件
 
 ```text
-/** Shared Google request, response parsing, decoding, and size enforcement. */
-async function requestGoogleImage(input: GoogleRequestBase & {
-  operation: 'generation' | 'editing'
-  interactionInput: string | Array<Record<string, string>>
-  nativeParts: Array<Record<string, unknown>>
-}): Promise<GeneratedImage> {
-  const label = `Google image ${input.operation}`
-  const endpoint = input.native ? nativeGoogleUrl(input.endpoint, input.model).toString() : input.endpoint
-  const body = input.native ? {
-    contents: [{ role: 'user', parts: input.nativeParts }],
-    generationConfig: {
-      candidateCount: 1,
-      responseModalities: ['TEXT', 'IMAGE'],
-      imageConfig: { aspectRatio: input.aspectRatio, imageSize: input.imageSize },
-    },
-  } : {
-    model: input.model,
-    input: input.interactionInput,
-    response_format: {
-      type: 'image', mime_type: REQUESTED_MEDIA_TYPE,
-      aspect_ratio: input.aspectRatio, image_size: input.imageSize,
-    },
-  }
-  const response = await guardedFetch(`${label} request`, input.signal, () => fetch(endpoint, {
-    method: 'POST',
-    redirect: 'error',
-    signal: input.signal,
-    headers: { 'content-type': 'application/json', 'x-goog-api-key': input.apiKey },
-    body: JSON.stringify(body),
-  }), input.apiKey)
-  const text = await readBoundedText(response, Math.ceil(input.maxBytes * 1.4) + ERROR_LIMIT, label)
-  if (!response.ok) throw new Error(`${label} failed (${response.status}): ${redactSecrets(text, input.apiKey).slice(0, ERROR_LIMIT)}`)
-  let payload: unknown
-  try {
-    payload = JSON.parse(text)
-  } catch {
-    throw new Error(`${label} returned invalid JSON`)
-  }
-  const image = input.native ? nativeOutputImage(payload) : outputImage(payload)
-  if (image === undefined) throw new Error(`${label} returned no image: ${redactSecrets(text, input.apiKey).slice(0, ERROR_LIMIT)}`)
-  const data = decodeBase64(image.data, label)
+## 数据与隐私
+
+- **BYOK**：API Key 通过 DSH Credentials 服务保存，设置页不会回显 Key 明文。
+- **订阅登录**：订阅账号令牌经你授权登录后保存于 DSH Credentials，与 API Key 完全隔离，浏览器侧不接触令牌。
+- **云端请求**：Prompt 与本次使用的参考图会发送给所选 Provider，请遵守对应服务条款。
+- **上游图片下载**：沿用宿主已有的网络和代理配置，不额外拦截 Fake-IP、内网或回环地址。当前未提供完整的 SSRF 目标限制。
+- **本地 ComfyUI**：请求发送到用户配置的 ComfyUI 地址。
+- **工作区文件**：开启工作区保存后，对话结果会落盘；Studio 仅保存用户选中的候选图。
 ```
 
-</details>
+**依据 5 · 源码核查**：[src/workspace-save.ts:116-143](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/workspace-save.ts#L116-L143)
 
-**依据 4 · 源码核查**：[src/index.ts:337-355](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L337-L355)
-
-单图工具注册与执行。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'generate_image',
-    description: 'Generate a new image with the configured provider. Use when the user asks to create or draw a new image; use edit_image instead when they want to change an existing image. Give a complete visual prompt including subject, composition, style, lighting, and any exact text that should appear. The optional provider/model arguments switch provider or model for this call only when the user asks for a specific one. A successful image is attached directly to the conversation and may also be saved under the session workspace. Do not call read, glob, or other tools to locate or verify the image.',
-    parameters: {
-      prompt: { type: 'string', required: true, description: 'Complete description of the image to generate.' },
-      provider: { type: 'string', enum: ['google', 'openai', 'openai-compat', 'seedream', 'dashscope', 'xai', 'zhipu', 'comfyui', 'chatgpt-sub', 'grok-sub', 'google-sub'], description: 'OMIT unless the user explicitly requests a specific image provider. Omission uses the saved default; never guess a channel or fill this with an empty string. chatgpt-sub, grok-sub, and google-sub use logged-in subscription accounts instead of API keys.' },
-      model: { type: 'string', description: 'Optional model name for this call only, overriding the configured model. Not used by ComfyUI (use workflow instead) nor by the subscription providers (model fixed by the subscription).' },
-      channel: { type: 'string', description: 'Optional configured OpenAI-compatible channel id for this call only. Only meaningful with provider=openai-compat; omit to use the active channel.' },
-      aspect_ratio: { type: 'string', enum: ['1:1', '3:2', '2:3', '4:3', '3:4', '4:5', '5:4', '16:9', '9:16', '21:9'], description: 'Optional output aspect ratio for Google Gemini, xAI Grok, and subscription channels.' },
-      image_size: { type: 'string', enum: ['1K', '2K', '4K'], description: 'Optional output resolution for Google Gemini, xAI Grok, Grok subscription (1K/2K), or Google subscription (1K/4K). NEVER send this for chatgpt-sub; omit unused fields entirely.' },
-      size: { type: 'string', description: 'Optional dimensions or size tier for OpenAI, Seedream, or DashScope; WIDTHxHEIGHT maps to aspect_ratio for xAI Grok. Do not combine with aspect_ratio; omit instead of using an empty string.' },
-      quality: { type: 'string', description: 'Optional generation quality for OpenAI or compatible APIs, independent of pixel size (e.g. auto, low, medium, high). Omit to use the configured default.' },
-      workflow: { type: 'string', description: 'Optional name of the ComfyUI workflow to run; omit to use the active workflow from settings. Only meaningful when the ComfyUI provider is selected.' },
-    },
-    output: imageOutput('Generated'),
-    async execute(args, exec): Promise<GeneratedValue> {
-      return generateSingle(args, exec)
-    },
-    presentResult: (_args, result) => imagePresentation(result),
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/index.ts:358-360](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L358-L360)
-
-批量工具语义。
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'generate_images',
-    description: 'Generate several images in one call, one per prompt, in order. Use for batches, variations, or illustration sets; prefer generate_image for a single image. Every successful image is attached to the conversation and may be saved under the session workspace. Items generate sequentially; a failed item is reported in the failures list and does not abort the rest. The optional provider/model/size arguments apply to every item.',
-```
-
-**依据 6 · 源码核查**：[src/index.ts:399-426](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L399-L426)
-
-逐项执行与失败记录。
+工作区与文件保存约束
 
 <details>
 <summary>查看原文（28行）</summary>
 
 ```text
-    async execute(args, exec): Promise<BatchGeneratedValue> {
-      if (args.prompts.length === 0) throw new Error('generate_images requires at least one prompt')
-      if (args.prompts.length > 10) throw new Error(`generate_images accepts at most 10 prompts per call (got ${String(args.prompts.length)}); split larger batches into several calls`)
-      const images: BatchGeneratedValue['images'] = []
-      const failures: BatchGeneratedValue['failures'] = []
-      for (const [index, prompt] of args.prompts.entries()) {
-        if (exec.signal.aborted) {
-          failures.push({ index, prompt, error: 'aborted before this image started' })
-          continue
-        }
-        try {
-          const value = await generateSingle({
-            prompt,
-            ...(args.provider !== undefined ? { provider: args.provider } : {}),
-            ...(args.model !== undefined ? { model: args.model } : {}),
-            ...(args.channel !== undefined ? { channel: args.channel } : {}),
-            ...(args.aspect_ratio !== undefined ? { aspect_ratio: args.aspect_ratio } : {}),
-            ...(args.image_size !== undefined ? { image_size: args.image_size } : {}),
-            ...(args.size !== undefined ? { size: args.size } : {}),
-            ...(args.quality !== undefined ? { quality: args.quality } : {}),
-            ...(args.workflow !== undefined ? { workflow: args.workflow } : {}),
-          }, exec)
-          images.push({ ...value, prompt })
-        } catch (error) {
-          failures.push({ index, prompt, error: error instanceof Error ? error.message : String(error) })
-        }
-      }
-      return { images, failures }
-```
-
-</details>
-
-**依据 7 · 源码核查**：[src/index.ts:621-648](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L621-L648)
-
-附件和可选工作区保存。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-async function saveGenerated(
-  ctx: Context,
-  generated: { data: Uint8Array; mediaType: ImageAttachmentRef['mediaType']; seed?: number },
-  provider: ImageProvider,
-  model: string,
-  output: string,
-  config: Config,
-  exec: { agent?: { session: { header: { cwd?: string } } }; signal: AbortSignal },
-  knownRoots?: Set<string>,
-): Promise<GeneratedValue> {
-  if (!ctx.attachments.imageLimits.mediaTypes.includes(generated.mediaType)) throw new Error(`This DSH deployment does not accept ${generated.mediaType} generated images`)
-  const attachment = await ctx.attachments.saveImage({ data: generated.data, mediaType: generated.mediaType, name: 'generated-image' })
-  const value: GeneratedValue = {
-    attachment, provider, model, output,
-    ...(typeof generated.seed === 'number' ? { seed: generated.seed } : {}),
-  }
-  if (config.saveToWorkspace === false) return value
-  const workspaceRoot = exec.agent?.session.header.cwd
-  if (workspaceRoot === undefined) return value
-  knownRoots?.add(workspaceRoot)
+  const dir = workspaceImageDir(options.workspaceRoot, options.folder)
+  options.signal?.throwIfAborted()
+  const realRoot = await realpath(resolve(options.workspaceRoot))
+  assertInsideWorkspace(realRoot, await nearestExistingRealPath(dir), options.folder)
+  const name = workspaceImageName(options.attachmentId, options.mediaType)
+  const target = join(dir, name)
+  const staging = join(dir, `.${name}.${process.pid}-${randomUUID()}.tmp`)
+  await mkdir(dir, { recursive: true })
+  // Re-validate the finished directory: creating it may have traversed a
+  // symlink, and links can be swapped in between the checks above.
+  assertInsideWorkspace(realRoot, await realpath(dir), options.folder)
   try {
-    value.savedTo = await saveImageToWorkspace({ workspaceRoot, folder: config.workspaceFolder, attachmentId: attachment.attachmentId, mediaType: generated.mediaType, data: generated.data, signal: exec.signal })
+    await writeFile(staging, options.data, { flag: 'wx', signal: options.signal })
+    options.signal?.throwIfAborted()
+    await rename(staging, target)
   } catch (error) {
-    exec.signal.throwIfAborted()
-    ctx.logger.warn(`dsh-image-gen: failed to save image to workspace: ${error instanceof Error ? error.message : String(error)}`)
-    value.saveError = error instanceof Error ? error.message : String(error)
+    await unlink(staging).catch(() => {})
+    throw error
   }
-  return value
-```
-
-</details>
-
-#### 缺口
-
-- 真实 Provider 的出图、附件显示与文件持久化
-  **影响**：影响完整工作流
-  **进一步探讨**：使用一张非敏感测试图核验各状态
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 失败、保存和隐私边界？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-生成成功先保存为 DSH 附件；工作区保存关闭、无 cwd 或保存出错时不一定有工作区文件，出错记录 saveError，不能把附件成功等同文件保存成功。批量是逐项执行并保留失败列表，部分成功须逐项核对。云端会收到提示词及编辑输入图，能力和费用依 Provider 变化；模型输出本身需人工验收。提示指导不主动猜测替换 Provider，失败后不应默认为已切换渠道或无费用。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:399-426](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L399-L426)
-
-批量部分失败。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-    async execute(args, exec): Promise<BatchGeneratedValue> {
-      if (args.prompts.length === 0) throw new Error('generate_images requires at least one prompt')
-      if (args.prompts.length > 10) throw new Error(`generate_images accepts at most 10 prompts per call (got ${String(args.prompts.length)}); split larger batches into several calls`)
-      const images: BatchGeneratedValue['images'] = []
-      const failures: BatchGeneratedValue['failures'] = []
-      for (const [index, prompt] of args.prompts.entries()) {
-        if (exec.signal.aborted) {
-          failures.push({ index, prompt, error: 'aborted before this image started' })
-          continue
-        }
-        try {
-          const value = await generateSingle({
-            prompt,
-            ...(args.provider !== undefined ? { provider: args.provider } : {}),
-            ...(args.model !== undefined ? { model: args.model } : {}),
-            ...(args.channel !== undefined ? { channel: args.channel } : {}),
-            ...(args.aspect_ratio !== undefined ? { aspect_ratio: args.aspect_ratio } : {}),
-            ...(args.image_size !== undefined ? { image_size: args.image_size } : {}),
-            ...(args.size !== undefined ? { size: args.size } : {}),
-            ...(args.quality !== undefined ? { quality: args.quality } : {}),
-            ...(args.workflow !== undefined ? { workflow: args.workflow } : {}),
-          }, exec)
-          images.push({ ...value, prompt })
-        } catch (error) {
-          failures.push({ index, prompt, error: error instanceof Error ? error.message : String(error) })
-        }
-      }
-      return { images, failures }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:621-648](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L621-L648)
-
-附件与工作区保存分离。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-async function saveGenerated(
-  ctx: Context,
-  generated: { data: Uint8Array; mediaType: ImageAttachmentRef['mediaType']; seed?: number },
-  provider: ImageProvider,
-  model: string,
-  output: string,
-  config: Config,
-  exec: { agent?: { session: { header: { cwd?: string } } }; signal: AbortSignal },
-  knownRoots?: Set<string>,
-): Promise<GeneratedValue> {
-  if (!ctx.attachments.imageLimits.mediaTypes.includes(generated.mediaType)) throw new Error(`This DSH deployment does not accept ${generated.mediaType} generated images`)
-  const attachment = await ctx.attachments.saveImage({ data: generated.data, mediaType: generated.mediaType, name: 'generated-image' })
-  const value: GeneratedValue = {
-    attachment, provider, model, output,
-    ...(typeof generated.seed === 'number' ? { seed: generated.seed } : {}),
-  }
-  if (config.saveToWorkspace === false) return value
-  const workspaceRoot = exec.agent?.session.header.cwd
-  if (workspaceRoot === undefined) return value
-  knownRoots?.add(workspaceRoot)
+  // Final gate: a cancellation landing during the last write/rename step must
+  // not be reported as a successful save, and the already-renamed file is
+  // removed so no orphan image outlives the cancelled call.
   try {
-    value.savedTo = await saveImageToWorkspace({ workspaceRoot, folder: config.workspaceFolder, attachmentId: attachment.attachmentId, mediaType: generated.mediaType, data: generated.data, signal: exec.signal })
+    options.signal?.throwIfAborted()
   } catch (error) {
-    exec.signal.throwIfAborted()
-    ctx.logger.warn(`dsh-image-gen: failed to save image to workspace: ${error instanceof Error ? error.message : String(error)}`)
-    value.saveError = error instanceof Error ? error.message : String(error)
+    await unlink(target).catch(() => {})
+    throw error
   }
-  return value
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/google.ts:65-70](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/google.ts#L65-L70)
-
-编辑输入图片编码后发送。
-
-```text
-    ...input,
-    operation: 'editing',
-    interactionInput,
-    nativeParts: input.native ? [
-      ...input.sourceImages.map(image => ({ inlineData: { mimeType: image.mediaType, data: Buffer.from(image.data).toString('base64') } })),
-      { text: input.prompt },
-```
-
-**依据 4 · 源码核查**：[src/google.ts:98-106](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/google.ts#L98-L106)
-
-云端请求及错误。
-
-```text
-  const response = await guardedFetch(`${label} request`, input.signal, () => fetch(endpoint, {
-    method: 'POST',
-    redirect: 'error',
-    signal: input.signal,
-    headers: { 'content-type': 'application/json', 'x-goog-api-key': input.apiKey },
-    body: JSON.stringify(body),
-  }), input.apiKey)
-  const text = await readBoundedText(response, Math.ceil(input.maxBytes * 1.4) + ERROR_LIMIT, label)
-  if (!response.ok) throw new Error(`${label} failed (${response.status}): ${redactSecrets(text, input.apiKey).slice(0, ERROR_LIMIT)}`)
-```
-
-**依据 5 · 源码核查**：[src/image-tool-context.ts:14-18](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/image-tool-context.ts#L14-L18)
-
-默认 Provider 与失败后不猜测切换的指导。
-
-```text
-  return [
-    `Image tools current default provider: ${provider}; generation model: ${JSON.stringify(model)}; editing model: ${JSON.stringify(editModel)}.`,
-    'Unless the user explicitly requests a different image provider or model, OMIT provider and model from generate_image, generate_images and edit_image. Do not guess a channel or switch channels after an error.',
-    'Omit unused optional arguments entirely; never fill them with empty strings. size and aspect_ratio are alternatives: provide at most one.',
-    'Subscription parameters: chatgpt-sub accepts size OR aspect_ratio, but NOT image_size. grok-sub image_size: 1K or 2K. google-sub image_size: 1K or 4K. Do not copy parameters from another provider.',
-```
-
 #### 缺口
 
-- 供应商真实错误、计费与附件状态
-  **影响**：影响重试和用户费用
-  **进一步探讨**：逐项核查回执与账户记录后再决定重试
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 成本和假设是什么？
-
-**研究主题**：效果与总成本、新假设与验证
-
-#### 完整回答
-
-需要配置账户、凭据或本地工作流，支付适用的模型调用与计算费用，并花时间审核图像、处理失败和保存。没有本次真实价格、耗时或返工对照，不能宣称比供应商界面更省。假设在批量生成前显示按 Provider 和张数的估算与确认，可减少预算意外；价格随渠道变化，估算维护也有成本。对照实际账单、确认耗时与取消率，若偏差过大或无帮助则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:358-360](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L358-L360)
-
-一次多张的工具语义。
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'generate_images',
-    description: 'Generate several images in one call, one per prompt, in order. Use for batches, variations, or illustration sets; prefer generate_image for a single image. Every successful image is attached to the conversation and may be saved under the session workspace. Items generate sequentially; a failed item is reported in the failures list and does not abort the rest. The optional provider/model/size arguments apply to every item.',
-```
-
-**依据 2 · 源码核查**：[src/index.ts:399-426](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L399-L426)
-
-最多十张逐项运行。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-    async execute(args, exec): Promise<BatchGeneratedValue> {
-      if (args.prompts.length === 0) throw new Error('generate_images requires at least one prompt')
-      if (args.prompts.length > 10) throw new Error(`generate_images accepts at most 10 prompts per call (got ${String(args.prompts.length)}); split larger batches into several calls`)
-      const images: BatchGeneratedValue['images'] = []
-      const failures: BatchGeneratedValue['failures'] = []
-      for (const [index, prompt] of args.prompts.entries()) {
-        if (exec.signal.aborted) {
-          failures.push({ index, prompt, error: 'aborted before this image started' })
-          continue
-        }
-        try {
-          const value = await generateSingle({
-            prompt,
-            ...(args.provider !== undefined ? { provider: args.provider } : {}),
-            ...(args.model !== undefined ? { model: args.model } : {}),
-            ...(args.channel !== undefined ? { channel: args.channel } : {}),
-            ...(args.aspect_ratio !== undefined ? { aspect_ratio: args.aspect_ratio } : {}),
-            ...(args.image_size !== undefined ? { image_size: args.image_size } : {}),
-            ...(args.size !== undefined ? { size: args.size } : {}),
-            ...(args.quality !== undefined ? { quality: args.quality } : {}),
-            ...(args.workflow !== undefined ? { workflow: args.workflow } : {}),
-          }, exec)
-          images.push({ ...value, prompt })
-        } catch (error) {
-          failures.push({ index, prompt, error: error instanceof Error ? error.message : String(error) })
-        }
-      }
-      return { images, failures }
-```
-
-</details>
-
-**依据 3 · 作者声明**：[README.md:128-132](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/README.md#L128-L132)
-
-作者说明供应商配置与授权。
-
-```text
-> DSH 0.1.5 及更早版本没有插件面板，入口仍为「设置 → 插件 → 插件配置 → 图像生成」；插件已同时兼容两种入口。
-
-选择 Provider，填写自己的 API Key，并按需调整模型、Endpoint / Base URL 与工作区保存选项。填好 Key 后可点击**「测试连接」**验证可用性，或点击**「拉取模型」**一键获取该厂商支持的全部生图模型，无需手动查文档。使用 ComfyUI 时，请填写 DSH Host 可访问的服务地址，并导入 **API Format Workflow JSON**。
-
-已有 ChatGPT、Grok 或 Google 订阅？无需填写 API Key：展开对应的订阅 Provider 行，点击**「登录」**并在浏览器完成授权，即可直接开始文生图与图生图。
-```
-
-#### 缺口
-
-- 实际费用、错误率和人工返工时间
-  **影响**：无法量化价值
-  **进一步探讨**：单 Provider 对照同任务并记录账单和耗时
+- 尚无不同渠道的每张费用、有效交付率和恢复人时。
+  **影响**：不能估算完成一组合格图的实际成本。
+  **进一步探讨**：记录单张额度、等待、审核、失败补图与人工保存时间。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 如何试用与退出？
+### Q05 · 按条对账能否减少重复生成？
 
-**研究主题**：采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-已有 DSH 且经常需要配图的用户可先选一个已配置 Provider，在测试工作区用非敏感提示生成一张并核对附件、工作区保存和账单。相比网页生成后搬运，可把生成接到当前对话；效果和成本需要实际比较。若部分失败、保存状态或费用无法核对，暂停批量并回到供应商现有界面，确认已生成附件和文件后再处理。
+用三项输入做同样两次批次，令第二项生成成功而本地写入报错，再令第三项在附件保存后收到取消。分别使用整批重跑和逐项核对再补缺两种处理。记录上游请求数、附件和文件是否可读、每条最终交付及补图工时。若按条核对没有减少重复请求，或核对成本超过补图收益，假设不获支持。真实费用需另按供应商账单核对。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:337-355](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L337-L355)
+**依据 1 · 源码核查**：[src/index.ts:608-634](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L608-L634)
 
-对话工具。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'generate_image',
-    description: 'Generate a new image with the configured provider. Use when the user asks to create or draw a new image; use edit_image instead when they want to change an existing image. Give a complete visual prompt including subject, composition, style, lighting, and any exact text that should appear. The optional provider/model arguments switch provider or model for this call only when the user asks for a specific one. A successful image is attached directly to the conversation and may also be saved under the session workspace. Do not call read, glob, or other tools to locate or verify the image.',
-    parameters: {
-      prompt: { type: 'string', required: true, description: 'Complete description of the image to generate.' },
-      provider: { type: 'string', enum: ['google', 'openai', 'openai-compat', 'seedream', 'dashscope', 'xai', 'zhipu', 'comfyui', 'chatgpt-sub', 'grok-sub', 'google-sub'], description: 'OMIT unless the user explicitly requests a specific image provider. Omission uses the saved default; never guess a channel or fill this with an empty string. chatgpt-sub, grok-sub, and google-sub use logged-in subscription accounts instead of API keys.' },
-      model: { type: 'string', description: 'Optional model name for this call only, overriding the configured model. Not used by ComfyUI (use workflow instead) nor by the subscription providers (model fixed by the subscription).' },
-      channel: { type: 'string', description: 'Optional configured OpenAI-compatible channel id for this call only. Only meaningful with provider=openai-compat; omit to use the active channel.' },
-      aspect_ratio: { type: 'string', enum: ['1:1', '3:2', '2:3', '4:3', '3:4', '4:5', '5:4', '16:9', '9:16', '21:9'], description: 'Optional output aspect ratio for Google Gemini, xAI Grok, and subscription channels.' },
-      image_size: { type: 'string', enum: ['1K', '2K', '4K'], description: 'Optional output resolution for Google Gemini, xAI Grok, Grok subscription (1K/2K), or Google subscription (1K/4K). NEVER send this for chatgpt-sub; omit unused fields entirely.' },
-      size: { type: 'string', description: 'Optional dimensions or size tier for OpenAI, Seedream, or DashScope; WIDTHxHEIGHT maps to aspect_ratio for xAI Grok. Do not combine with aspect_ratio; omit instead of using an empty string.' },
-      quality: { type: 'string', description: 'Optional generation quality for OpenAI or compatible APIs, independent of pixel size (e.g. auto, low, medium, high). Omit to use the configured default.' },
-      workflow: { type: 'string', description: 'Optional name of the ComfyUI workflow to run; omit to use the active workflow from settings. Only meaningful when the ComfyUI provider is selected.' },
-    },
-    output: imageOutput('Generated'),
-    async execute(args, exec): Promise<GeneratedValue> {
-      return generateSingle(args, exec)
-    },
-    presentResult: (_args, result) => imagePresentation(result),
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:399-426](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L399-L426)
-
-逐项失败处理。
+批量失败有原始索引，成功项附 prompt
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
-    async execute(args, exec): Promise<BatchGeneratedValue> {
-      if (args.prompts.length === 0) throw new Error('generate_images requires at least one prompt')
-      if (args.prompts.length > 10) throw new Error(`generate_images accepts at most 10 prompts per call (got ${String(args.prompts.length)}); split larger batches into several calls`)
-      const images: BatchGeneratedValue['images'] = []
-      const failures: BatchGeneratedValue['failures'] = []
       for (const [index, prompt] of args.prompts.entries()) {
         if (exec.signal.aborted) {
           failures.push({ index, prompt, error: 'aborted before this image started' })
@@ -817,6 +849,9 @@ async function saveGenerated(
             ...(args.size !== undefined ? { size: args.size } : {}),
             ...(args.quality !== undefined ? { quality: args.quality } : {}),
             ...(args.workflow !== undefined ? { workflow: args.workflow } : {}),
+            ...(args.output_format !== undefined ? { output_format: args.output_format } : {}),
+            ...(args.frame_count !== undefined ? { frame_count: args.frame_count } : {}),
+            ...(args.frame_duration_ms !== undefined ? { frame_duration_ms: args.frame_duration_ms } : {}),
           }, exec)
           images.push({ ...value, prompt })
         } catch (error) {
@@ -824,23 +859,30 @@ async function saveGenerated(
         }
       }
       return { images, failures }
+    },
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/index.ts:631-646](https://github.com/shanliuling/dsh-image-gen/blob/5c8c14143f7f4b707b6bb88a068a365feb2f128e/src/index.ts#L631-L646)
+**依据 2 · 源码核查**：[src/index.ts:915-938](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/index.ts#L915-L938)
 
-附件与文件保存状态。
+保存附件与工作区的独立落点
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
   if (!ctx.attachments.imageLimits.mediaTypes.includes(generated.mediaType)) throw new Error(`This DSH deployment does not accept ${generated.mediaType} generated images`)
   const attachment = await ctx.attachments.saveImage({ data: generated.data, mediaType: generated.mediaType, name: 'generated-image' })
+  const animation = animationOf(generated)
+  // Kept before the workspace step so a result without a file (or a disabled
+  // workspace) still carries the animation the card plays.
+  const original = await keepGifOriginal(vaultConfigOf(config), generated, attachment, message => { ctx.logger.warn(message) })
   const value: GeneratedValue = {
     attachment, provider, model, output,
     ...(typeof generated.seed === 'number' ? { seed: generated.seed } : {}),
+    ...(animation === undefined ? {} : { animation }),
+    ...(original === undefined ? {} : { original }),
   }
   if (config.saveToWorkspace === false) return value
   const workspaceRoot = exec.agent?.session.header.cwd
@@ -852,14 +894,45 @@ async function saveGenerated(
     exec.signal.throwIfAborted()
     ctx.logger.warn(`dsh-image-gen: failed to save image to workspace: ${error instanceof Error ? error.message : String(error)}`)
     value.saveError = error instanceof Error ? error.message : String(error)
+  }
+  return value
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/workspace-save.ts:127-143](https://github.com/shanliuling/dsh-image-gen/blob/34c3841be558cf638e8976d45bf3a3e693f7cd79/src/workspace-save.ts#L127-L143)
+
+在保存尾端可注入失败或取消
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  try {
+    await writeFile(staging, options.data, { flag: 'wx', signal: options.signal })
+    options.signal?.throwIfAborted()
+    await rename(staging, target)
+  } catch (error) {
+    await unlink(staging).catch(() => {})
+    throw error
+  }
+  // Final gate: a cancellation landing during the last write/rename step must
+  // not be reported as a successful save, and the already-renamed file is
+  // removed so no orphan image outlives the cancelled call.
+  try {
+    options.signal?.throwIfAborted()
+  } catch (error) {
+    await unlink(target).catch(() => {})
+    throw error
+  }
 ```
 
 </details>
 
 #### 缺口
 
-- 目标服务能力与账单
-  **影响**：影响是否值得试用
-  **进一步探讨**：先测试单张并核查文件和费用
+- 没有对照样本。
+  **影响**：不能把逐项回包直接换算成少重跑或低费用。
+  **进一步探讨**：在模拟上游固定三个提示词，给工作区写入注入错误并记录重跑次数。
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

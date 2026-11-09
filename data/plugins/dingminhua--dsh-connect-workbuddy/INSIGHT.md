@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[ad8e851](https://github.com/dingminhua/dsh-connect-workbuddy/tree/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e)
+源码版本：[893785e](https://github.com/dingminhua/dsh-connect-workbuddy/tree/893785eac560fdf5fc9e61f4d3fa264dad882eec)
 
 <!-- BEGIN META -->
-[![GitHub ★ 950](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=950&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dingminhua/dsh-connect-workbuddy) [![npm 30d 54,110](https://img.shields.io/static/v1?label=npm+30d&message=54%2C110&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy)
+[![GitHub ★ 1,336](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C336&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dingminhua/dsh-connect-workbuddy) [![npm 30d 86,218](https://img.shields.io/static/v1?label=npm+30d&message=86%2C218&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-workbuddy)
 <!-- END META -->
 
-> **功能**：将本机 WorkBuddy 账号和模型接入 DeepSeek Harness。
+> **功能**：把 WorkBuddy 国内和国际账号接入 DSH 的模型供应商插件，提供目录和可选账号池。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示将本机账号和双地区模型目录接入 DSH，提供统一宿主入口；模型能力和用户收益不归功于插件。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 核对了两个区域的独立 Host adapter、凭据与模型发现。对已有 DSH 工作流的人，它将区域模型和切换入口放到同一宿主。
 
-> **主要限制**：[Q03](#research-q03) 的输出前换号不能证明无重复计费；[Q04](#research-q04) 的拒绝后请求变化可能影响内容保真及上游规则，off 也不是全面关闭恢复链。
+> **主要限制**：[Q03](#research-q03) 单段 SSE 可能对应多次上游调用且终止帧可能由本地补出。[Q04](#research-q04) 渠道恢复会修改消息，账号池和改写开关分别控制不同路径。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要将 WorkBuddy 模型接入 DSH，相比切换原客户端有什么增量？](#detail-section-11)
-  - [Q02 · 凭据和模型请求如何经本地 shim 到上游？](#detail-section-12)
-  - [Q03 · 哪些失败允许换号，流中断和取消如何处理？](#detail-section-13)
-  - [Q04 · 入口拒绝时重试是否改变输入，如何理解风险？](#detail-section-14)
-  - [Q05 · 账号动作、运行成本和退出条件是什么？](#detail-section-15)
-  - [Q06 · 能否用预算与尝试收据减少不透明重试？](#detail-section-16)
+  - [Q01 · 统一模型入口怎样替代反复切换账号或客户端？](#detail-section-11)
+  - [Q02 · 本机登录与模型目录如何进入 DSH？](#detail-section-12)
+  - [Q03 · 换号重试如何处理无输出、已输出与未知计费？](#detail-section-13)
+  - [Q04 · 拒绝恢复与关闭开关的实际边界是什么？](#detail-section-14)
+  - [Q05 · 能否对账区分重复上游执行和一次用户输出？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,77 +40,74 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向已有 WorkBuddy 账号、希望在 DSH 中使用对应模型的用户。
+> **用途**：已有 WorkBuddy 登录且经常在 DSH 编码的用户，希望保留同一宿主交互并按区域选择模型和管理账号。
 
-直接使用原客户端或 DSH 的其他模型均可对话；此插件主要减少切换入口，质量和费用优势未对照。
+使用官方 WorkBuddy 客户端，切换区域或账号后手动继续任务，单独核对回答和积分。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 地区模型接入 | 在 DSH 调用 WorkBuddy 模型 | 需账号、宿主和上游服务 |
-| 条件换号 | 对部分输出前失败选择其他账号 | 不代表未计费或完整流恢复 |
-| 签到 | 对选定账号检查并领取 | 实际写入上游，并非只读 |
+- **界面**：DSH Web 模型选择与账号配置
+- **用户命令**：manifest 声明 dsh-connect-workbuddy CLI
+- **Host 路由**：DSH 国内、国际模型供应商
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node ^22.19 或 >=24 | 必需 | 运行插件 | 不满足版本可能无法启动 |
-| 兼容 DSH llm/settings | 宿主接入必需 | 注册模型与配置 | 适配器无法装载 |
-| WorkBuddy 账号、凭据和网络 | 模型调用需要 | 访问上游服务 | 凭据失效或网络/服务失败 |
-| 显式选定的账号池 | 仅多账号操作需要 | 选择换号和批量对象 | 默认空池不执行批量操作 |
+| --- | --- | --- | --- |
+| Node 22.19 所在 22 系或 24 及以上及相应 DSH peer | 启动必需 | 装载 bundle 和供应商 | 安装或注册结果待具体版本验证 |
+| 相应区域的有效 WorkBuddy 凭据及网络 | 聊天必需 | 获取目录与调用模型 | 目录及调用可能失败 |
+| 同区域多个可用账号 | 自动换号才需 | 提供下一个候选 | 退回原选择或向用户返回错误 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户确认服务规则、宿主与凭据来源 | 限定数据、预算并备份配置 |
-| 调用 | 用户选择地区和模型并核对输入 | 检查输出与实际账号 |
-| 异常 | 用户查看换号、拒绝或部分流 | 费用或内容不明时停止重试 |
-| 恢复 | 用户检查积分和凭据状态 | 回退原客户端或其他授权提供方 |
+| --- | --- | --- |
+| 准备 | 用户在 DSH 检测已有 WorkBuddy 登录 | 核对目标区域及选定账户 |
+| 加载 | Host 装载两路供应商并发现模型 | 目标区域的预期模型可见 |
+| 执行 | 用户先用短文本请求 | 核对输出完整、请求数及余额 |
+| 退出 | 用户关闭该区域并切回已有供应商 | 模型列表撤回，后续任务转原入口 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 安装和账号费用未知 | 核对凭据、版本和服务规则 | 需兼容宿主与上游 |
-| 持续 | 模型请求及重试积分未知 | 复核账号、输入和费用 | 上游目录与限制可能变化 |
-| 失败恢复 | 额外请求及重试费用未知 | 核查部分输出与账单 | 响应失败不证明未计费 |
+| --- | --- | --- | --- |
+| 首次使用 | DSH、WorkBuddy 账号和网络 | 配置并核对区域、目录及账户 | 上游费用和初始化耗时未知 |
+| 持续使用 | 上游请求、可能的额外积分与流延迟 | 审查重试、输出和账号账单 | 实际扣分取决于上游，频率未知 |
+| 失败恢复 | 已验证的替代供应商或官方客户端 | 停用区域、核对账单并人工重跑 | 停用控制后续入口，已发送请求效果未知 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 模型接入 | 两地区适配器及本地桥接 | 真实服务可用率 |
-| 分类换号 | 排除特定错误且候选去重 | 实际失败分类与费用 |
-| 账户操作 | 状态检查后执行签到 | 上游是否接受或实际权益变化 |
+| --- | --- | --- |
+| 区域模型入口 | 固定源码分别注册两路供应商和发现回调 | 当前账号和宿主能否访问所需模型 |
+| 账号失败恢复 | 代码可用同区候选发起重试 | 合格任务延迟、重发及积分变化 |
+| 流输出与改写 | 存在交付前重发、渠道改写与本地结束帧 | 内容保真、上游接受及客户端实际状态 |
 
-> **思考**：[Q03](#research-q03) 的输出前换号不能证明无重复计费；[Q04](#research-q04) 的拒绝后请求变化可能影响内容保真及上游规则，off 也不是全面关闭恢复链。
+> **思考**：[Q03](#research-q03) 单段 SSE 可能对应多次上游调用且终止帧可能由本地补出。[Q04](#research-q04) 渠道恢复会修改消息，账号池和改写开关分别控制不同路径。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示将本机账号和双地区模型目录接入 DSH，提供统一宿主入口；模型能力和用户收益不归功于插件。
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 核对了两个区域的独立 Host adapter、凭据与模型发现。对已有 DSH 工作流的人，它将区域模型和切换入口放到同一宿主。
 
-[Q02](#research-q02) 的凭据单飞和原子保存、[Q03](#research-q03) 的取消与候选去重针对具体失败；分类漂移和同账号内容变化仍需对照。
+模型目录、凭据与账号排序按地区隔离。账号换路、同账号请求改写、只见标记时重发与已交付流异常由不同条件决定。客户端 SSE 终止和上游执行、收费应独立观察。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 的输出前换号不能证明无重复计费；[Q04](#research-q04) 的拒绝后请求变化可能影响内容保真及上游规则，off 也不是全面关闭恢复链。
+[Q03](#research-q03) 单段 SSE 可能对应多次上游调用且终止帧可能由本地补出。[Q04](#research-q04) 渠道恢复会修改消息，账号池和改写开关分别控制不同路径。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 建议仅在允许该接入方式的隔离配置下核对账号、请求和预算；费用、凭据或输入变化不明时停止并回退。
+[Q01](#research-q01) 已有 WorkBuddy 登录并日常使用 DSH 的用户，先核对单一区域模型与一个无敏感内容的短文本回复。[Q03](#research-q03) 发现异常扣分、缺失输出、重复调用或上游拒绝即停止，关闭该区域供应商并恢复官方客户端或原有供应商。[Q04](#research-q04) 对固定请求字节的任务先留在既有入口。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-固定版本提供方、凭据与部分重试源码已检查；真实上游、计费、宿主和新方案未验证。
+源码确认双区域供应商接线、同区域换号和独立渠道恢复。实际模型访问、内容效果、积分及规则适用边界未知。
 
-- 已检查：作者 README、包清单、源码路径 package.json、src/index.ts、src/adapter.ts、src/shim.ts、src/auth.ts、src/upstream.ts、src/account-pool-run.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、src/index.ts、src/auth.ts、package.json、src/shim.ts、src/upstream.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读固定提交的包清单、提供方接入、凭据、模型流重试和批量签到样本；未读取用户凭据或运行插件、宿主、上游、账户操作和模型请求，未审计图片、视频或全部平台。
-- 下一步：在固定宿主及假上游测试前流失败、部分流、取消、账号去重、拒绝后的输入变化与未知费用；真实服务须另以授权账户和上游账单核验。
+- 边界：根 DSH 插件的模型注册、桌面登录发现、文本代理和相关恢复路径。模型效果、媒体、签到、真实费用和市场可用性另需验证。
+- 下一步：本轮为固定源码检查。下一步用两个模拟凭据和记录上游请求的假网关，比较传输断开、政策拒绝、正常文本中断、仅工具标记四种输入，分别记录每次请求和 DSH 端输出。真实账号计费需独立授权及上游账单对照。
 
 **分析版本**
 
 - **仓库**：[dingminhua/dsh-connect-workbuddy](https://github.com/dingminhua/dsh-connect-workbuddy)
-- **版本号**：5.17.0（[固定提交 ad8e851](https://github.com/dingminhua/dsh-connect-workbuddy/tree/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e)）
-- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：5.21.2（[固定提交 893785e](https://github.com/dingminhua/dsh-connect-workbuddy/tree/893785eac560fdf5fc9e61f4d3fa264dad882eec)）
+- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +134,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 假设跨所有尝试设置显式预算并提供脱敏收据，可帮助用户识别未知费用和无效重试；相对现有分类和换号提示的收益未验证。
+[Q05](#research-q05) 用逐次请求 ID 和上游账单对照客户端输出，可以定位重发和完整性问题，需先用假网关验证观测方法。
 
-在固定宿主及假上游测试前流失败、部分流、取消、账号去重、拒绝后的输入变化与未知费用；真实服务须另以授权账户和上游账单核验。
+本轮为固定源码检查。下一步用两个模拟凭据和记录上游请求的假网关，比较传输断开、政策拒绝、正常文本中断、仅工具标记四种输入，分别记录每次请求和 DSH 端输出。真实账号计费需独立授权及上游账单对照。
 
 <a id="detail-section-9"></a>
 
@@ -153,59 +149,94 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 45 | 16298 | — | — | 424245 |
-| .mjs | source | 16 | 2952 | 2116 | 618 | — |
+| .md | source | 59 | 23331 | — | — | 544869 |
+| .mjs | source | 17 | 3673 | 2563 | 854 | — |
 | .cjs | source | 1 | 140 | 95 | 34 | — |
-| .ts | source | 81 | 44970 | 21066 | 22013 | — |
-| .tsx | source | 14 | 10517 | 5744 | 4517 | — |
-| .ts | test | 139 | 45419 | 30993 | 10804 | — |
-| .tsx | test | 35 | 9356 | 6156 | 2541 | — |
+| .ts | source | 89 | 51207 | 23288 | 25874 | — |
+| .tsx | source | 17 | 13309 | 7059 | 5960 | — |
+| .ts | test | 156 | 52002 | 35217 | 12767 | — |
+| .tsx | test | 47 | 13786 | 8749 | 4084 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/dingminhua/dsh-connect-workbuddy/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 128](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=128&color=737b86&logo=github)](https://github.com/dingminhua/dsh-connect-workbuddy/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
+[![Issue 未关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/dingminhua/dsh-connect-workbuddy/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 149](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=149&color=737b86&logo=github)](https://github.com/dingminhua/dsh-connect-workbuddy/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 145](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=145&color=737b86&logo=github)](https://github.com/dingminhua/dsh-connect-workbuddy/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
 
-暂未获取：近30天关闭。
 
-统计日期：2026-11-01。
+
+统计日期：2026-11-09。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查 WorkBuddy 提供方的凭据接线、失败重试、输入与账户边界。
+**插件研究总目标**：判断已有 WorkBuddy 账号的 DSH 用户能否用统一模型入口完成任务，且能识别自动重试的账户、上游调用和输出边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要将 WorkBuddy 模型接入 DSH，相比切换原客户端有什么增量？
+### Q01 · 统一模型入口怎样替代反复切换账号或客户端？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-目标用户是已有 WorkBuddy 账号、希望在 DSH 对话中选择该模型的用户。package.json:1-5 的作者描述涵盖国内/国际版本、账号池与积分概览；src/index.ts:3795-3818 注册两个地区模型适配器和可配置提供方。直接使用 WorkBuddy 客户端或 DSH 其他模型也能完成对话，本插件提供在现有宿主中使用该账号与目录的接线，并非模型本身。无法从注册证明账号、模型或接口当前可用，也没有跨客户端任务质量、操作时间或费用对照。
+已有 WorkBuddy 登录态又以 DSH 完成日常任务的人，可通过模型选择器选区域与模型。作者描述多账号切换和积分显示，固定代码确实注册两条 adapter 与配置入口。基线是保留官方客户端，遇到积分或会话问题手动选账号和迁移上下文。新入口把选择移到同一会话界面；是否减少可接受回答的等待、重做和人时仍未实测。只在官方客户端工作，或只需单个稳定账号的人，额外接入的价值较小。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[package.json:1-5](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/package.json#L1-L5)
+**依据 1 · 作者声明**：[README.md:27-27](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/README.md#L27-L27)
 
-作者描述模型接入和账户功能。
+作者描述的用户和功能
 
 ```text
-{
-  "name": "dsh-connect-workbuddy",
-  "displayName": "DSH Connect WorkBuddy",
-  "description": "把本机登录的 WorkBuddy 模型（国内版与国际版）接入 DeepSeek Harness：每次刷新按上游目录自动读取每个模型的积分倍率，支持逐模型图片输入开关、多账号切换与账号池自动换号，并提供每日签到、卡片与输入框里的胶囊积分读数等只读积分概览。",
-  "version": "5.17.0",
+一个独立的 [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) bundle 插件。它把本机已登录的 WorkBuddy 账号（**国内版与国际版 WorkBuddy AI 均支持**）接到 DSH 的模型选择器，同时提供账号池、可勾选的模型管理，以及一套围绕积分的只读能力：**每次刷新按上游目录自动读取每个模型的积分倍率**（`x0.79` 这种，倍率完全由上游给出，插件不写死也不猜）、逐模型开关图片输入、多账号切换与账号池自动换号、每日签到、以及卡片与输入框里胶囊式的只读积分读数。**国内版与国际版是两个并行的供应商（`workbuddy` / `workbuddy-global`），可同时使用**；插件设置页以 tab 区分两者，方便统一管理。只需本机 WorkBuddy 的登录态，**或在浏览器里登录一次**即可。
 ```
 
-**依据 2 · 源码核查**：[src/index.ts:3795-3818](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L3795-L3818)
+**依据 2 · 作者声明**：[README.md:136-149](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/README.md#L136-L149)
 
-注册两个地区的模型适配器及配置项。
+作者描述的多账号操作及失败摩擦
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+一台机器上往往登录过多个 WorkBuddy 账号。**账号池**把这件事收成一次点击：把要用的账号勾进池子，然后「签到勾选的账号」或「测试勾选的账号」；再打开**启用账号池**，插件就会在请求失败时自动换号接着跑。
+
+**每个区域（国内版 / 国际版）各有独立的一池**：成员与目标模型互不影响——两边的账号本来就属于不同的上游栈。**签到只有国内版有**：海外区域不显示签到按钮，也没有那一列。
+
+> **窄栏下这张表会变成堆叠卡片。** 配置页住在设置面板里，内容列只有 **564px**（800px 面板减去 188px 导航）——五列表格塞不进去，所以窗口宽度小于 700px（量的是**表格自己**的宽度，不是视口）时，每一行改成三行：账号与操作各占一行，中间三个事实共享一行。窄栏下实测单行 **96px**（此前 157px，账号名被压成「用户75」），账号名不再截断。宽栏形态一行未改。
+
+### 自动换号（开启账号池即生效）
+
+- **谁来服务由排序决定**：开启账号池后，**每一次请求**都发给池子里排序最靠前的可用账号——所以「当前使用」显示的是排序的结果，不一定是你手动选的那个。排序规则见下一节。
+- **失败时继续往下试**：某个请求在上游失败时，插件会**依次**用池内其他可用账号重试，直到有一个接手、或全部不可用为止；全部失败才把错误报出来（并在错误里注明尝试过几个账号）。
+- **哪些失败会换号**：429 限流、402 无积分、401 凭据失效、502 网关/网络——这些都是**某个账号**的状态，换一个账号很可能就过了。
+- **哪些不会**：请求本身不合法（HTTP 400）。同一个请求体换哪个账号都是同样的 400，重试只是让用户多等几轮才看到同一个错误。**流中途断开也不会重试**——字节已经发出去了，重放会让客户端看到两段拼接的回答。
+- **已知不可用的账号会被跳过**：正在限流冷却期内、或凭据已被上游拒绝的成员不会参与（这也是「一键测试」的意义：测试结果直接决定谁能被选中）。**从没测试过的账号按「默认可用」参与**——刚发现的登录不该因为「还没测」就被排除。
+- **手动选择不会被改写**：池子通过运行时覆盖决定「谁服务」，**从不写回你保存的选择**；关闭账号池，你选定的账号立刻完全恢复生效。这也是为什么卡片要显示「当前使用」——它可能不是你在上面选的那个，而你应该看得出来。
+```
+
+</details>
+
+**依据 3 · 源码核查**：[cordis.patch.yml:1-6](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/cordis.patch.yml#L1-L6)
+
+根 bundle 装载，未声明修改默认模型
+
+```text
+# Register the WorkBuddy provider without changing the profile's default
+# model. The plugin reuses the WorkBuddy desktop app's sign-in; no separate
+# OAuth flow is started.
+- insert:
+    - id: dsh-connect-workbuddy
+      name: dsh-connect-workbuddy
+```
+
+**依据 4 · 源码核查**：[src/index.ts:4549-4572](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L4549-L4572)
+
+国内、国际两条 adapter 与设置入口注册
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -241,220 +272,258 @@
 
 #### 缺口
 
-- 没有实际账号用户和同任务对照
-  **影响**：无法量化切换节省、质量或费用
-  **进一步探讨**：固定同模型、任务和预算比较原客户端与 DSH。
+- 未取得与官方客户端的同任务实际对照。
+  **影响**：不能量化切换摩擦、上下文迁移或回答质量。
+  **进一步探讨**：记录同一无副作用短文本任务的切换次数与合格答复。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 凭据和模型请求如何经本地 shim 到上游？
+### Q02 · 本机登录与模型目录如何进入 DSH？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-src/index.ts:324-327 声明 llm 和 settings 注入；1428-1444 创建按地区配置的 shim。src/shim.ts:1529-1549 启动监听并提供 127.0.0.1 地址，src/adapter.ts:1363-1380 将目录模型映射到 shim /v1 并接入 WorkBuddy token；src/auth.ts:1836-1846 在缺失时报告错误，凭据需刷新时复用单个进行中的刷新；1118-1127 在锁内原子写入自有凭据副本并设置文件/目录模式。它是本地桥接和外部账号服务组合，回环监听、文件权限及单飞实现不等于完整认证或多平台安全性验证；未读取任何用户凭据或运行宿主。
+插件为每个区域构造凭据存储、目录和 shim，区域内可探测显式路径或已知桌面认证文件及其邻接备份。Host 注册两条 adapter，发现回调按 provider 取本区域凭据和上游模型，关闭区域时直接返回空目录，再从发现结果派生模型元数据。此链依赖可解析和有效的区域凭据、上游及 DSH 对应服务。固定 package 给出 Node 与宿主接口范围；账号可读、模型可列出和聊天可用是三个核对点。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:324-327](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L324-L327)
+**依据 1 · 源码核查**：[src/index.ts:1743-1759](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L1743-L1759)
 
-注入宿主模型与设置服务。
-
-```text
-export const name = 'dsh-connect-workbuddy'
-
-/** The model registry required before the provider can register. */
-export const inject = ['llm', 'settings']
-```
-
-**依据 2 · 源码核查**：[src/index.ts:1428-1444](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L1428-L1444)
-
-按配置创建 shim。
+每个区域独立凭据与目录
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
-    const shim = createWorkBuddyShim({
-      store,
-      client,
-      catalog,
-      logger: ctx.logger,
-      channelPerturbation: unwrapVolatile(config.channelPerturbation) ?? 'failure',
-      keepPromptLast: unwrapVolatile(config.keepPromptLast) === true,
-      extraInjectedPrefixes: unwrapVolatile(config.extraInjectedPrefixes) ?? [],
-      sessionTitle: unwrapVolatile(config.sessionTitle) ?? {},
-      /**
-       * Pool routing, bound to THIS region.
-       *
-       * The region is captured in the closure rather than passed per call: each
-       * region owns its own store, pool and shim, and routing that consulted the
-       * other region's members would bill an account from a different account
-       * pool than the one in play.
-       *
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/shim.ts:1529-1549](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1529-L1549)
-
-启动并提供 loopback 地址。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-   */
-  const ready = listenOnClientReachablePort({
-    server,
-    clientRefuses: clientRefusesPort,
-    logger,
-    cancelled: () => disposed,
-  }).catch((error: unknown) => {
-    // Re-rolled into the same contract the old `once('error', reject)` had, but
-    // logged first: `index.ts` awaits these in a `Promise.all` with no catch of
-    // its own, so a bare rejection would be easy to miss in the console.
-    logger?.error('dsh-connect-workbuddy: loopback listener failed to start', error)
-    throw error
-  })
-
-  const baseUrl = (): string => {
-    const address = server.address()
-    if (address === null || typeof address === 'string') {
-      throw new Error('workbuddy shim has no listening address')
-    }
-    return `http://127.0.0.1:${address.port}`
-  }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/adapter.ts:1363-1380](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/adapter.ts#L1363-L1380)
-
-模型映射到本地 shim 与凭据解析。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-  const buildModels = (): Model<Api>[] => {
-    // The OpenAI SDK pi-ai drives appends `/chat/completions` to baseURL,
-    // so the shim's routes line up with the `/v1` prefix in place.
-    const baseUrl = `${shim.baseUrl()}/v1`
-    return catalog.current().map(info => toPiModel(info, baseUrl, modelIdentity))
-  }
-
-  const base = createProvider({
-    id: providerId,
-    name: providerName,
-    auth: {
-      apiKey: {
-        name: 'WorkBuddy OAuth bearer token',
-        async resolve({ credential }) {
-          const apiKey = credential?.key
-          return apiKey === undefined || apiKey.length === 0
-            ? undefined
-            : { auth: { apiKey }, source: 'WorkBuddy' }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/auth.ts:1118-1127](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/auth.ts#L1118-L1127)
-
-锁内原子保存凭据副本。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-   * Memoized per directory per process, so the second account costs nothing: see
-   * the cost model in `src/windows-acl.ts` for why the per-write budget matters
-   * here.
-   */
-  await protectCredentialDirectory(dirname(dir))
-  await withFileLock(path, async () => {
-    await writeFileAtomic(path, `${JSON.stringify(vaultDocument(credential, accountId, refreshedFrom), null, 2)}\n`, {
-      mode: 0o600,
-      dirMode: 0o700,
+  const stacks = {} as Record<WorkBuddyRegion, WorkBuddyRegionStack>
+  for (const region of REGION_KEYS) {
+    // `authFile` is volatile on the 0.1.7 line: the raw config value is a live
+    // cosmokit reference, and passing it through would hand the store a
+    // reference object instead of a path.
+    const authFile = unwrapVolatile(config.authFile)
+    const store = new WorkBuddyCredentialStore({
+      region,
+      ...authFile === undefined ? {} : { desktopPath: authFile },
+      refresh: credential => client.refreshToken(credential),
     })
+    const catalog = new WorkBuddyCatalog(region)
+    // This region's OWN first-sighting history, the source of the composer
+    // pill's "· N 新模型". Region-scoped like the credential and pool copies:
+    // the two catalogs are separate, so a CN first-sighting says nothing about
+    // the international roster, and they must never overwrite each other.
+    const rosterSeen = createFileRosterSeenStore(region)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/auth.ts:1836-1846](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/auth.ts#L1836-L1846)
+**依据 2 · 源码核查**：[src/auth.ts:1524-1562](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/auth.ts#L1524-L1562)
 
-凭据缺失、刷新与单飞。
+显式与默认认证文件发现范围
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
-  async resolve(): Promise<WorkBuddyCredential> {
-    const credential = await this.current()
-    if (credential === undefined) {
-      throw await this.describeMissingCredential()
+  private async candidateFiles(): Promise<string[]> {
+    const explicitPath = this.desktopPathOverride
+      ?? ((process.env[WORKBUDDY_AUTH_FILE_ENV] ?? '').trim() !== ''
+        ? (process.env[WORKBUDDY_AUTH_FILE_ENV] as string)
+        : undefined)
+
+    const files: string[] = []
+    if (explicitPath !== undefined) {
+      files.push(explicitPath)
+      for (const backup of await this.backupsBeside(explicitPath)) files.push(backup)
+      return files
     }
-    if (!this.needsRefresh(credential)) return credential
-    this.inflight ??= this.refreshNow(credential)
-      .finally(() => {
-        this.inflight = undefined
-      })
-    return this.inflight
+
+    const dirs = this.authDirs ?? defaultDesktopAuthDirs()
+    const seen = new Set<string>()
+    for (const dir of dirs) {
+      // EVERY known live basename, not just the canonical one (issue #174): the
+      // 5.7.x app writes `workbuddy-desktop-ai.info`, so probing only
+      // `workbuddy-desktop.info` found the backups but never the live file.
+      //
+      // `backupsBeside` answers "the other .info files in this directory", so
+      // running it once per live name would return the OTHER live file as a
+      // backup — each file would then be scanned twice, and the second read
+      // would overwrite the first's rank. The set collapses that, and the live
+      // names are pushed first so their rank is decided by `fileRank`, not by
+      // which branch happened to reach them.
+      for (const name of WORKBUDDY_LIVE_FILENAMES) {
+        const live = join(dir, name)
+        if (!seen.has(live)) { seen.add(live); files.push(live) }
+      }
+      for (const name of WORKBUDDY_LIVE_FILENAMES) {
+        for (const backup of await this.backupsBeside(join(dir, name))) {
+          if (seen.has(backup)) continue
+          seen.add(backup)
+          files.push(backup)
+        }
+      }
+    }
+    return files
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/index.ts:2239-2253](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L2239-L2253)
+
+区域凭据请求上游模型目录
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  const discoverModels = async (
+    region: WorkBuddyRegion,
+    signal?: AbortSignal,
+  ): Promise<readonly WorkBuddyModelInfo[]> => {
+    const credential = await stacks[region].store.resolve()
+    // The user's own selection rides along with the refresh. The upstream
+    // roster may drop a model the user is running (the app channel's `cli`
+    // roster dropped `minimax-m2.7` on 2026-10-21), and the runtime catalog
+    // filters the roster by that selection — so without the kept ids a
+    // refresh would silently withdraw the model the user is on, which is the
+    // exact failure issue #32 was filed for. The document still publishes it
+    // and the chat endpoint still answers for it, so it stays in the roster.
+    const keep = regionStateOf(current(), region).enabledModelIds ?? []
+    return client.fetchModels(credential, signal, keep)
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.ts:4601-4629](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L4601-L4629)
+
+模型发现与关闭分支接到 Host
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+        ctx.llm.registerModelDiscovery(settingsNs, async (request, signal) => {
+          const region = regionOfProvider(request.provider ?? '')
+          if (region === undefined) return []
+          // A switched-off region advertises nothing: its route is withdrawn, so
+          // this is defence in depth against a stale model-picker refresh.
+          if (!regionEnabled(current(), region)) return []
+          const discovered = await discoverModels(region, signal)
+          // Load levels are stamped on the RUNTIME roster only — see
+          // `withBusyLevels` for why the settings draft stays free of them.
+          const live = await withBusyLevels(region, discovered, signal)
+          const state = regionStateOf(current(), region)
+          const next = withImageSelection(
+            deriveCatalog(
+              live,
+              new Set(state.enabledModelIds ?? []),
+              state.contextBudgets ?? {},
+            ),
+            // #168: a discovery read is exactly the path that reveals a NEW
+            // model, so an unedited region must be seeded from the table here
+            // rather than from the array a previous refresh wrote.
+            effectiveImageIds(state, live),
+          )
+          return next.map(model => ({
+            id: model.id,
+            name: workBuddyDisplayName(model),
+            contextWindow: model.contextWindow,
+            maxTokens: model.maxTokens,
+            inputModalities: workBuddyModelInput(model),
+          }))
+```
+
+</details>
+
+**依据 5 · 源码核查**：[package.json:89-108](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/package.json#L89-L108)
+
+宿主及可选 pi-ai peer 条件
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.1-rc.1 <5.0.0 || >=4.0.2 <5.0.0",
+    "@deepseek-ai/dsh-atomic-write": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-attachment": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-primitives": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-renderer": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-client-ui-settings": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-home-paths": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-host-webserver": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-llm": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-llm-pi-ai": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/dsh-settings": ">=0.1.7-rc.1 <0.3.0-0",
+    "@deepseek-ai/schemastery": ">=3.18.1-rc.1 <4.0.0 || >=3.18.2 <4.0.0",
+    "@earendil-works/pi-ai": ">=0.85.0 <0.88.0 || >=1.0.0-0 <2.0.0",
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": {
+      "optional": true
+    }
 ```
 
 </details>
 
 #### 缺口
 
-- 没有运行凭据刷新、宿主连接及不同平台安全实验
-  **影响**：无法证明实际可用性、权限和完整隔离
-  **进一步探讨**：固定宿主与受控测试账户，检查凭据生命周期和本地接口权限。
+- 区域凭据当前能否通过网关及真实 DSH picker 取决于环境。
+  **影响**：源码无法确认同一个目录条目此时能够完成聊天。
+  **进一步探讨**：同一次隔离验收分别检查选区、目录出现、短请求以及关闭区域后撤出。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 哪些失败允许换号，流中断和取消如何处理？
+### Q03 · 换号重试如何处理无输出、已输出与未知计费？
 
-**研究主题**：功能与机制、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-src/upstream.ts:1276-1280 和 1330-1342 根据状态或响应内容分类；src/shim.ts:1627-1643 不对 client、model_busy、channel_reject 和 model_queue 换号。1699-1709 表明连接关闭中止上游，且账号池重试只处理流开始前失败，流中途失败不重放；1876-1903 对候选去重、按间隔等待并检查取消，1904-1914 保存换号来源和原因。分类是代码选择而不是供应商保证；即使失败发生在输出开始前，也不能单凭响应状态证明上游没有计费或处理请求，部分流也不保证可恢复。未运行真实网络或计费对账。
+开启账号池时区域内按运行时排名选择，候选为空时可回退到已保存的账号。正常换号循环只在 shim 尚未开始转发结果时处理 `!ok`，跳过重复候选和客户端已取消，并排除 client、model_busy、channel_reject、model_queue。分类器另产出 `policy_reject`，它没有在这个排除列表中，因而同区域有可用候选时也可能换号，后面的策略拒绝呈现分支本身无法阻止已发生的尝试。上游 fetch 的传输异常被投影为 `server`，只能证明本机未拿到响应。普通流中断记录警告，finish 可能合成 `[DONE]`。另一分支允许仅有工具标记残留且尚未交付内容时重发，即使上游初次已返回成功响应。用户只看到一段输出并不能据此知道上游执行次数、完整性或积分。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/upstream.ts:1276-1280](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/upstream.ts#L1276-L1280)
+**依据 1 · 源码核查**：[src/index.ts:3969-3982](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L3969-L3982)
 
-将部分上游状态/内容归类。
-
-```text
-export function classifyUpstreamError(status: number, body: string): UpstreamErrorKind {
-  if (status === 402) return 'hard_credit'
-  const lower = body.toLowerCase()
-  for (const marker of HARD_CREDIT_MARKERS) {
-    if (lower.includes(marker.toLowerCase()) || body.includes(marker)) return 'hard_credit'
-```
-
-**依据 2 · 源码核查**：[src/shim.ts:1627-1643](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1627-L1643)
-
-排除请求、模型和渠道类型的跨账号重试。
+关闭时清空运行时覆盖，无候选时恢复保存选择
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-  function isFailoverWorthy(kind: UpstreamErrorKind): boolean {
-    // `channel_reject` joins the two non-failover kinds. The gate matches the
-    // OPENING of a system message, and every account sends that same opening, so
-    // the next account answers the same 11128 one round trip later — while each
-    // attempt burns real quota and records a false statistic against a credential
-    // that was never at fault (issues #87–#90 were reported as account problems
-    // for exactly this reason).
-    //
+  const applyPoolSelection = async (region: WorkBuddyRegion): Promise<void> => {
+    const store = stacks[region].store
+    if (!poolPreferencesOf(current(), region).enabled) {
+      store.setRotatedAccount(undefined)
+      return
+    }
+    const winner = rankPool(await localPoolMembers(region), Date.now(), poolPreferencesOf(current(), region).orderAccountIds)
+      .find(row => row.excludedBy === undefined)
+    // Nobody usable is NOT "no account": clearing the override hands the REQUEST
+    // to the saved selection, and the failure is then reported honestly instead of
+    // being masked by a pool with nothing better to offer. (The card does not
+    // present that fallback as healthy — see `servingAccountIsExcluded`.)
+    store.setRotatedAccount(winner?.account.id)
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/shim.ts:1658-1667](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L1658-L1667)
+
+明确换号排除集合
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
     // `model_queue` joins them for a different reason: the queue is a fact about
     // the MODEL and the platform-wide line in front of it, not about this
     // credential. The next account is put in the SAME queue with the SAME
@@ -464,39 +533,77 @@ export function classifyUpstreamError(status: number, body: string): UpstreamErr
     // walked the whole pool before the user was told their position.
     return kind !== 'client' && kind !== 'model_busy' && kind !== 'channel_reject'
       && kind !== 'model_queue'
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/shim.ts:1699-1709](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1699-L1709)
+**依据 3 · 源码核查**：[src/upstream.ts:1373-1389](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/upstream.ts#L1373-L1389)
 
-断开取消及只在输出前重试的说明。
+内容拒绝、账号受限与渠道拒绝独立分类
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-    res.on('close', () => controller.abort())
-
-    // Retry the SAME prepared body against the pool's other usable accounts,
-    // in the plugin's order, until one serves it or none is left.
-    //
-    // Only failures raised BEFORE the stream starts reach this loop: `!ok`
-    // means the upstream answered non-2xx, so not one byte has been written to
-    // the client and a retry cannot splice two responses together. A stream
-    // that dies MID-flight (the `body.on('error')` path below) is deliberately
-    // not retried — the client already received a partial answer, and
-    // replaying it would duplicate output the model may already have acted on.
+  // equivalent for real `11140` bodies while a 402, 401 or 500 that merely
+  // quotes the phrase cannot reach this line at all.
+  if (isAccountRestrictedBody(body)) return 'account_restricted'
+  if (isContentPolicyBody(body)) return 'policy_reject'
+  // AFTER the policy markers so a body that really is a content refusal keeps
+  // that (more specific) reply, and BEFORE the plain 400 fallback so the channel
+  // gate stops being filed as `client` — the misclassification that sent issues
+  // #87–#90's reporters through account swaps that could not help.
+  //
+  // ISSUE #113: the whole `11128` FAMILY is classified here, by code. The old
+  // rule excluded a body carrying the conversation-id wording, on the theory
+  // that it must be a header problem — but that wording is not reliable (a
+  // content refusal was measured carrying it), and the exclusion pushed such
+  // bodies into `client`, which skips the plugin's retry ladder entirely.
+  // Which member it actually is now decides the reply's ADVICE only
+  // (`channelGateMemberOf`), never whether the rescue path runs.
+  if (isChannelRejectBody(body)) return 'channel_reject'
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/shim.ts:1876-1903](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1876-L1903)
+**依据 4 · 源码核查**：[src/upstream.ts:4322-4340](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/upstream.ts#L4322-L4340)
 
-账号去重、延迟和取消。
+上游发送与无响应错误分类
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（19行）</summary>
+
+```text
+      const headers = {
+        ...chatHeaders(credential, await this.wireIdentity(credential)),
+        'Authorization': `Bearer ${credential.accessToken}`,
+      }
+      if (signal?.aborted === true) {
+        return { ok: false, status: 0, kind: 'server', message: 'cancelled before send' }
+      }
+      response = await fetch(`${chatBase(credential, this.cnBaseOf())}/v2/chat/completions`, {
+        method: 'POST',
+        headers,
+        body: bodyJson,
+        ...signal === undefined ? {} : { signal },
+      })
+    } catch (error: unknown) {
+      return { ok: false, status: 0, kind: 'server', message: `transport error: ${String(error)}` }
+    }
+    if (response.ok) return { ok: true, response }
+    const text = (await response.text()).slice(0, ERROR_BODY_LIMIT)
+    const kind = classifyUpstreamError(response.status, text)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/shim.ts:1899-1938](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L1899-L1938)
+
+候选去重、取消和重复上游调用
+
+<details>
+<summary>查看原文（40行）</summary>
 
 ```text
     while (!result.ok && isFailoverWorthy(result.kind) && failoverAccount !== undefined) {
@@ -527,18 +634,6 @@ export function classifyUpstreamError(status: number, body: string): UpstreamErr
         controller.signal.addEventListener('abort', () => { clearTimeout(timer); resolve() }, { once: true })
       })
       if (controller.signal.aborted) break
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/shim.ts:1904-1914](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1904-L1914)
-
-记录换号来源及原因。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
       logger?.warn(
         `dsh-connect-workbuddy: retrying chat on another pool account after ${result.kind} (http ${result.status})`,
       )
@@ -550,53 +645,132 @@ export function classifyUpstreamError(status: number, body: string): UpstreamErr
       switchedBecause ??= failoverReasonText(result)
       credential = next
       result = await client.chatStream(credential, prepared, controller.signal)
+    }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/shim.ts:689-700](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L689-L700)
+
+流中断记录到日志
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  async consume(body: ReadableStream<Uint8Array> | null): Promise<void> {
+    if (body === null) return
+    const source = Readable.fromWeb(body as Parameters<typeof Readable.fromWeb>[0])
+    try {
+      for await (const chunk of source) {
+        this.push(this.decoder.decode(chunk as Buffer, { stream: true }))
+      }
+    } catch (error: unknown) {
+      // The old pass-through logged the same way and let the response end with
+      // a synthesized terminator; that behaviour is preserved by `finish()`.
+      this.logger?.warn('dsh-connect-workbuddy: upstream stream failed mid-flight', error)
+    }
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/shim.ts:724-737](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L724-L737)
+
+终止帧可能由本地补出
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  /**
+   * Close the response: emit the block still unfinished at end-of-stream, then
+   * everything held, then the terminator.
+   */
+  finish(): void {
+    const flushed = this.buffer?.flush()
+    if (flushed !== undefined && flushed.text !== '') {
+      this.noteResidue(!flushed.prose)
+      this.emitContent(flushed.text)
+    }
+    this.closeWindow()
+    if (!this.sawDone && this.res.writable) this.emitFrame('data: [DONE]\n\n')
+    if (this.res.writable) this.res.end()
+  }
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/shim.ts:2294-2327](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L2294-L2327)
+
+已接收上游成功响应后仍有无交付工具残留的重试
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+    const writer = new RecoveryStream(res, gate, logger, notice, onUpstreamUsage)
+    await writer.consume(result.response.body)
+
+    // The one outcome that can only be recognised AFTER the stream: the turn
+    // wrote markup and nothing else, so there was never any answer to show.
+    // Retrying is safe here for exactly one reason — nothing has been written,
+    // because a turn that is still only markup is still being held. That is why
+    // the hold exists, and why an ordinary answer never pays for it.
+    if (gate !== undefined && !writer.delivered && writer.residueSeen && !controller.signal.aborted) {
+      logger?.warn('dsh-connect-workbuddy: the turn produced DSML markup only; retrying it once')
+      const retryTried = [...triedAccountIds, workbuddyAccountId(credential)]
+      let retryCredential = credential
+      for (;;) {
+        const attempt = await client.chatStream(retryCredential, prepared, controller.signal)
+        if (attempt.ok) {
+          // The first attempt's held bytes are dropped, not shown: showing them
+          // and then the retry would be the two-answers-spliced-together failure
+          // the failover loop refuses to risk.
+          writer.discard()
+          const retried = new RecoveryStream(res, gate, logger)
+          await retried.consume(attempt.response.body)
+          retried.finish()
+          reportFailures()
+          return
+        }
+        recordAttempt(retryCredential, attempt)
+        if (!isFailoverWorthy(attempt.kind) || failoverAccount === undefined) break
+        if (controller.signal.aborted) break
+        const next = await failoverAccount(retryTried).catch(() => undefined)
+        if (next === undefined) break
+        if (retryTried.includes(workbuddyAccountId(next))) break
+        retryTried.push(workbuddyAccountId(next))
+        retryCredential = next
+      }
 ```
 
 </details>
 
 #### 缺口
 
-- 没有真实流中断、上游计费及错误码对照
-  **影响**：不能证明无重复计费、恢复或错误分类准确
-  **进一步探讨**：用受控假服务模拟输出前、输出后、断线及分类漂移并核对调用数。
+- 缺逐次请求与上游积分对账。
+  **影响**：无法由 SSE 成功、终止帧或成功换号判断上游尝试次数和费用。
+  **进一步探讨**：以固定假网关验证传输断开、策略拒绝、流中断和标记残留，单独记录请求号和每次积分。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 入口拒绝时重试是否改变输入，如何理解风险？
+### Q04 · 拒绝恢复与关闭开关的实际边界是什么？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：工程质量与复用、效果与总成本、采用判断
 
 #### 完整回答
 
-src/index.ts:608-616、1041-1045 的 channelPerturbation 默认 failure；off 的说明仍保留拒绝后的恢复链，而非全面关闭所有重写。src/shim.ts:1771-1791 在渠道拒绝后可先后用变化后的请求重试，成功后在当前进程记住后续偏好；这是对上游拒绝及输入完整性的关键边界，不能把一次成功当作原请求被原样接受，也不能推断该行为符合服务方规则。自动账号切换的排除列表不等于此同账号恢复链不存在。真实内容语义、审计可见性、当前服务行为和用户配置影响未运行验证；不适合内容必须逐字保真或不允许该行为的任务。
+配置中 `off` 仍允许收到渠道拒绝后同一账号恢复。shim 可能修改消息前缀及插入不可见字符，再发上游。更窄的实现差异是稀疏改写一旦成功，会无条件写入进程内 learned 标记，后续首发可选改写路径，因而 `off` 也无法保证后续首发始终用原字节。账号池 off 能清除轮换，但这个同账号路径独立。要保留原始请求、拒绝语义或明确定价的用户可退出该 provider，改回可信的官方客户端或已验收供应商。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:608-616](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L608-L616)
+**依据 1 · 源码核查**：[src/index.ts:1220-1224](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L1220-L1224)
 
-配置含 failure、always、off；off 仍保留拒绝后恢复链。
-
-```text
-  /**
-   * When scanned messages are perturbed with invisible characters.
-   *
-   * `failure` (default) learns from a successful channel-gate rescue and starts
-   * later requests with the learned form; `always` starts every request with
-   * the dense form for a gateway whose plain attempt is a guaranteed refusal;
-   * `off` keeps only the post-failure rescue ladder.
-   */
-  channelPerturbation?: 'off' | 'failure' | 'always'
-```
-
-**依据 2 · 源码核查**：[src/index.ts:1039-1045](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L1039-L1045)
-
-基础配置默认 failure。
+配置声明的 off、failure、always
 
 ```text
-    cliBridgeConfig.default({} as any).description('Optional CodeBuddy CLI route; off by default and independent of the providers'),
-  ) as unknown as z<CliBridgeSettings>,
   channelPerturbation: asVolatile(
     z.union([z.const('off'), z.const('failure'), z.const('always')])
       .default('failure')
@@ -604,12 +778,37 @@ src/index.ts:608-616、1041-1045 的 channelPerturbation 默认 failure；off �
   ) as unknown as z<'off' | 'failure' | 'always'>,
 ```
 
-**依据 3 · 源码核查**：[src/shim.ts:1771-1791](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1771-L1791)
+**依据 2 · 源码核查**：[src/shim.ts:1747-1759](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L1747-L1759)
 
-渠道拒绝后使用变化的请求重试并可记住偏好。
+首发由配置或 learned 标记决定
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（13行）</summary>
+
+```text
+    const startPerturbed = channelPerturbation === 'always' || channelNeedsPerturbation
+    const preferred = startPerturbed
+      ? perturbChannelFingerprints(prepared, channelPerturbation === 'always') ?? prepared
+      : prepared
+    let result = await client.chatStream(credential, preferred, controller.signal)
+    // A refused PERTURBED body means the rule changed under us: fall back to the
+    // plain ladder and let it rediscover what works. Without this the plugin
+    // could keep sending a shape that no longer helps, forever. `always` is the
+    // user's explicit choice, so it is not cleared by one refusal.
+    if (channelNeedsPerturbation && !result.ok && result.kind === 'channel_reject') {
+      channelNeedsPerturbation = false
+      logger?.warn('dsh-connect-workbuddy: a perturbed body was refused too; clearing the learned preference and retrying from the plain form')
+      result = await client.chatStream(credential, prepared, controller.signal)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/shim.ts:1794-1832](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L1794-L1832)
+
+渠道拒绝在同一凭据上依次恢复，稀疏成功标记无配置条件
+
+<details>
+<summary>查看原文（39行）</summary>
 
 ```text
     let retriedWithForcedHead = false
@@ -633,238 +832,140 @@ src/index.ts:608-616、1041-1045 的 channelPerturbation 默认 failure；off �
           // Only set on SUCCESS — a perturbation that is also refused teaches
           // nothing about what the gateway wants.
           if (result.ok) channelNeedsPerturbation = true
+        }
+      }
+      // The dense rescue is deliberately last: it is the least byte-conservative
+      // form, and the gateway's own wording gives no hint that it would be needed.
+      // It exists because both measured rungs are punctuation-dependent and a
+      // fingerprinted prose span can contain no punctuation at all.
+      if (!result.ok && result.kind === 'channel_reject' && !controller.signal.aborted) {
+        const dense = perturbChannelFingerprints(forced ?? prepared, true)
+        if (dense !== undefined) {
+          logger?.warn('dsh-connect-workbuddy: the channel gate refused the sparse perturbation too; retrying once with a dense word-boundary perturbation')
+          result = await client.chatStream(credential, dense, controller.signal)
+          retriedWithDensePerturbation = true
+          // Dense is the strongest form; remembering it is safe only for the
+          // `failure` policy, which exists to learn from a successful rescue.
+          if (result.ok && channelPerturbation === 'failure') channelNeedsPerturbation = true
+        }
+      }
+    }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/shim.ts:1627-1643](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1627-L1643)
+**依据 4 · 源码核查**：[src/index.ts:3723-3742](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L3723-L3742)
 
-渠道拒绝不触发跨账号换号。
+账号池关闭时不提供换号候选
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-  function isFailoverWorthy(kind: UpstreamErrorKind): boolean {
-    // `channel_reject` joins the two non-failover kinds. The gate matches the
-    // OPENING of a system message, and every account sends that same opening, so
-    // the next account answers the same 11128 one round trip later — while each
-    // attempt burns real quota and records a false statistic against a credential
-    // that was never at fault (issues #87–#90 were reported as account problems
-    // for exactly this reason).
-    //
-    // `model_queue` joins them for a different reason: the queue is a fact about
-    // the MODEL and the platform-wide line in front of it, not about this
-    // credential. The next account is put in the SAME queue with the SAME
-    // position, so rotating spends one real request per account to learn nothing.
-    // Before it was its own kind a queue fell through to `server`/`soft_rate`
-    // (the status it rides on), both of which fail over — so one queued request
-    // walked the whole pool before the user was told their position.
-    return kind !== 'client' && kind !== 'model_busy' && kind !== 'channel_reject'
-      && kind !== 'model_queue'
+  const failoverAccountFor = async (
+    region: WorkBuddyRegion,
+    triedAccountIds: readonly string[],
+  ): Promise<WorkBuddyCredential | undefined> => {
+    if (!poolPreferencesOf(current(), region).enabled) return undefined
+    const tried = new Set(triedAccountIds)
+    // The saved manual order, so failover honors the user's preference order
+    // (issue #70's expiry guard still outranks it, inside `rankPool`).
+    const order = poolPreferencesOf(current(), region).orderAccountIds
+    for (const row of rankPool(await localPoolMembers(region), Date.now(), order)) {
+      // `excludedBy` carries the reason a measurement rules an account out.
+      // Skipping on it is what makes "try until none is usable" mean usable
+      // rather than merely "not yet tried": re-hitting an account the upstream
+      // just limited would burn a round trip to learn what we already recorded.
+      if (row.excludedBy !== undefined) continue
+      if (tried.has(row.account.id)) continue
+      const credential = await stacks[region].store.credentialFor(row.account.id)
+      if (credential !== undefined) return credential
+    }
+    return undefined
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/index.ts:4595-4607](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/index.ts#L4595-L4607)
+
+区域关闭与发现限制
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+        // Converge both regions on the saved on/off state: a region switched off
+        // while the harness was down is withdrawn here, before the startup seed
+        // below. `syncRegionRegistration` is a no-op for the freshly registered
+        // routes until this very call populates their handles.
+        syncRegionRegistration(current())
+
+        ctx.llm.registerModelDiscovery(settingsNs, async (request, signal) => {
+          const region = regionOfProvider(request.provider ?? '')
+          if (region === undefined) return []
+          // A switched-off region advertises nothing: its route is withdrawn, so
+          // this is defence in depth against a stale model-picker refresh.
+          if (!regionEnabled(current(), region)) return []
+          const discovered = await discoverModels(region, signal)
 ```
 
 </details>
 
 #### 缺口
 
-- 未测试实际请求前后内容、上游政策和用户可见性
-  **影响**：无法证明逐字保真或服务持续允许
-  **进一步探讨**：固定伪上游对比输入和重试审计，并由用户核对服务条款。
+- 改写对具体模型语义及上游对渠道的接受政策未知。
+  **影响**：内容敏感、固定字节或严格对账任务的适用性无法确认。
+  **进一步探讨**：在不访问实际限制渠道的假网关记录两次请求的文本差异和 off 切换效果。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 账号动作、运行成本和退出条件是什么？
+### Q05 · 能否对账区分重复上游执行和一次用户输出？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-package.json:18-19 要求 Node ^22.19 或 >=24，宿主及 WorkBuddy 登录与网络也决定能否工作。src/index.ts:539-544 和 788 的配置注释与 schema 表明账号池成员显式选择且默认空；account-pool-run.ts:103-128 对选定账号串行处理，148-161 先读签到状态，未签到才调用领取接口，因此积分概览可只读不等于整个插件或签到是只读。src/auth.ts:1118-1127 表明会保存凭据副本，需要备份及权限核对；模型调用、失败重试、账号动作和人工审阅有费用或时间成本，数额未知。已有账户且允许该接入方式的用户可在隔离配置中用小预算核对输入、实际账号和上游读数；凭据来源、改写或费用无法确认时停止，回退原客户端或其他已授权提供方。
+固定一个无副作用纯文本任务，先用记录每次请求的模拟上游将首次应答设为处理成功后断开，然后分别让账号池关闭、开启，记录客户端可见输出及两凭据调用次数。再设响应只含未交付工具标记和正常输出后断流两个对照，比较是否再次请求。若输出可见次数与上游调用始终一致，关于输出不足以判断重发的假设未获得该样本支持。真正计费须在授权的沙盒账号独立核对上游账单，模拟计数不能替代。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:17-19](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/package.json#L17-L19)
+**依据 1 · 源码核查**：[src/shim.ts:1899-1938](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L1899-L1938)
 
-Node 运行版本约束。
-
-```text
-  "type": "module",
-  "engines": {
-    "node": "^22.19.0 || >=24.0.0"
-```
-
-**依据 2 · 源码核查**：[src/index.ts:539-546](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L539-L546)
-
-账号池成员显式选择、默认空。
-
-```text
-   * The account ids checked into this region's pool.
-   *
-   * An EXPLICIT opt-in, and empty by default: the batch actions claim rewards
-   * and spend credits on real accounts, so membership is the user's decision
-   * rather than a consequence of which sign-ins happen to exist. Empty means
-   * the pool covers nothing and both buttons stay disabled.
-   */
-  memberAccountIds?: string[]
-```
-
-**依据 3 · 源码核查**：[src/account-pool-run.ts:103-128](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/account-pool-run.ts#L103-L128)
-
-串行处理目标账号。
+正常账号轮换发送次数由失败决定
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-export async function checkinAllAccounts(
-  targets: readonly WorkBuddyPoolTarget[],
-  deps: WorkBuddyPoolRunnerDeps,
-  nowMs: () => number = Date.now,
-): Promise<WorkBuddyPoolCheckinRow[]> {
-  void nowMs
-  const rows: WorkBuddyPoolCheckinRow[] = []
-  let issued = 0
-  for (const target of targets) {
-    // An enterprise account has no consumer check-in to claim (see
-    // `WorkBuddyPoolTarget.enterprise`). Reported as `skipped`, not `failed`:
-    // nothing is wrong with the account.
-    if (target.enterprise === true) {
-      rows.push({
-        accountId: target.accountId,
-        accountName: target.accountName,
-        status: 'skipped',
-        message: 'enterprise accounts have no daily check-in',
+    while (!result.ok && isFailoverWorthy(result.kind) && failoverAccount !== undefined) {
+      // A client that hung up is not waiting for a better account.
+      if (controller.signal.aborted) break
+      recordAttempt(credential, result)
+      triedAccountIds.push(workbuddyAccountId(credential))
+      const next = await failoverAccount(triedAccountIds).catch(() => undefined)
+      if (next === undefined) break
+      // The policy is expected to skip what was already tried, and the shim does
+      // not rely on it: a candidate that repeats one of them would re-send the
+      // same request to the same account forever, spending real quota in a loop
+      // with no upper bound. `triedAccountIds` is the only brake there is, so
+      // the identity check lives here as well as in the policy.
+      if (triedAccountIds.includes(workbuddyAccountId(next))) break
+      // Wait before hitting another account: the upstream's rate limit (6004)
+      // fires on request volume, so hammering it with zero-gap retries makes
+      // every candidate hit the same wall — 4 accounts can fail in under a
+      // second. The batch test already waits 400ms between accounts for exactly
+      // this reason; the failover loop used to wait nothing. The wait is
+      // abortable: if the client hung up we stop instead of sleeping on, and the
+      // check AFTER it ends the loop rather than spending the remaining accounts
+      // on requests whose signal is already dead.
+      if (controller.signal.aborted) break
+      await new Promise<void>(resolve => {
+        if (controller.signal.aborted) return resolve()
+        const timer = setTimeout(resolve, FAILOVER_ACCOUNT_GAP_MS)
+        controller.signal.addEventListener('abort', () => { clearTimeout(timer); resolve() }, { once: true })
       })
-      continue
-    }
-    // The gap is between REQUESTS, not between rows: a skipped row costs
-    // nothing, so it must not delay the next one.
-    if (issued > 0) await (deps.wait ?? defaultWait)(POOL_BATCH_GAP_MS)
-    issued += 1
-    rows.push(await checkinOne(target, deps))
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/account-pool-run.ts:148-161](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/account-pool-run.ts#L148-L161)
-
-状态检查后执行签到领取。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-  try {
-    const status = await deps.fetchCheckinStatus(credential)
-    // Not active (an upstream-declared closed window) is reported as `failed`
-    // rather than `already`: claiming is impossible, and saying "already
-    // checked in" would be a different, wrong claim.
-    if (!status.active) {
-      return { ...base, status: 'failed', message: 'check-in activity is not active' }
-    }
-    if (status.todayCheckedIn) return { ...base, status: 'already' }
-    const claim = await deps.claimDailyCheckin(credential)
-    return {
-      ...base,
-      status: 'claimed',
-      credit: claim.credit,
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/auth.ts:1118-1127](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/auth.ts#L1118-L1127)
-
-持久化凭据副本及权限。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-   * Memoized per directory per process, so the second account costs nothing: see
-   * the cost model in `src/windows-acl.ts` for why the per-write budget matters
-   * here.
-   */
-  await protectCredentialDirectory(dirname(dir))
-  await withFileLock(path, async () => {
-    await writeFileAtomic(path, `${JSON.stringify(vaultDocument(credential, accountId, refreshedFrom), null, 2)}\n`, {
-      mode: 0o600,
-      dirMode: 0o700,
-    })
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/index.ts:786-789](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/index.ts#L786-L789)
-
-账号池成员 schema 默认空数组。
-
-```text
-   */
-  probeInputTokens: z.number().step(1).default(0).description('Input tokens each test probe sends: 10000 / 20000 / 30000 / 50000 / 100000. Bigger probes catch a rate limit real conversations would hit, but cost more credit per test and may mark an account unusable for large requests only. 0 uses the measured default (25000)'),
-  memberAccountIds: z.array(z.string()).default([]).description('Account ids checked into this pool (opt-in; empty means the pool covers nothing)'),
-  orderAccountIds: z.array(z.string()).default([]).description('The user\'s hand-ordered pool order, as account ids. Independent of membership: an id need not be checked in (it only takes effect once the account is a member), and ids not listed sort last. Separate from memberAccountIds so reordering never conflicts with, or is destroyed by, a membership edit.'),
-```
-
-#### 缺口
-
-- 未实测服务政策、成本和凭据恢复
-  **影响**：无法确定持续可用性或费用节省
-  **进一步探讨**：隔离账户核对来源、上游读数、请求数及账户恢复。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 能否用预算与尝试收据减少不透明重试？
-
-**研究主题**：新假设与验证、贡献与相对优势
-
-#### 完整回答
-
-现有分类禁止部分换号并对换号来源和原因作提示（Q03），所以单纯增加失败分类或显示一次切换不是新方案；已有积分视图也不等于每次调用账单。未验证方案是在一个用户请求范围内设置跨账号和同账号重试的显式次数与费用预算，默认遇渠道拒绝停止并交由用户决定；生成不含凭据和原文的尝试收据，列出尝试数、粗粒度原因、账号别名及上游是否确认了费用，无法确认则显示 unknown 而非零。依赖宿主可显示收据、可归属的计费记录和可靠取消；可能增加请求等待与人工确认，不能保证上游恰好一次。用相同假上游对照现有分类/换号提示和预算收据，覆盖拒绝、超时、部分流、取消及额度未知；比较不必要请求、费用误判、用户决策时间与信息泄露。若仍超预算、把未知费用说成零、泄露凭据、阻断率超出用户收益或不能减少无效重试，则否定；方案未实现或运行。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/shim.ts:1627-1643](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1627-L1643)
-
-现有不换号分类。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-  function isFailoverWorthy(kind: UpstreamErrorKind): boolean {
-    // `channel_reject` joins the two non-failover kinds. The gate matches the
-    // OPENING of a system message, and every account sends that same opening, so
-    // the next account answers the same 11128 one round trip later — while each
-    // attempt burns real quota and records a false statistic against a credential
-    // that was never at fault (issues #87–#90 were reported as account problems
-    // for exactly this reason).
-    //
-    // `model_queue` joins them for a different reason: the queue is a fact about
-    // the MODEL and the platform-wide line in front of it, not about this
-    // credential. The next account is put in the SAME queue with the SAME
-    // position, so rotating spends one real request per account to learn nothing.
-    // Before it was its own kind a queue fell through to `server`/`soft_rate`
-    // (the status it rides on), both of which fail over — so one queued request
-    // walked the whole pool before the user was told their position.
-    return kind !== 'client' && kind !== 'model_busy' && kind !== 'channel_reject'
-      && kind !== 'model_queue'
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/shim.ts:1903-1914](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1903-L1914)
-
-已有换号来源及原因。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
       if (controller.signal.aborted) break
       logger?.warn(
         `dsh-connect-workbuddy: retrying chat on another pool account after ${result.kind} (http ${result.status})`,
@@ -877,73 +978,86 @@ export async function checkinAllAccounts(
       switchedBecause ??= failoverReasonText(result)
       credential = next
       result = await client.chatStream(credential, prepared, controller.signal)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/shim.ts:1771-1791](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/shim.ts#L1771-L1791)
-
-已有同账号拒绝后恢复链。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-    let retriedWithForcedHead = false
-    let retriedWithPerturbation = false
-    let retriedWithDensePerturbation = false
-    if (!result.ok && result.kind === 'channel_reject' && !controller.signal.aborted) {
-      const forced = forceNeutralHead(prepared)
-      if (forced !== undefined) {
-        logger?.warn('dsh-connect-workbuddy: the channel gate refused the body; retrying once with the neutral head forced in front of every opening')
-        result = await client.chatStream(credential, forced, controller.signal)
-        retriedWithForcedHead = true
-      }
-      if (!result.ok && result.kind === 'channel_reject' && !controller.signal.aborted) {
-        const rescued = perturbChannelFingerprints(forced ?? prepared)
-        if (rescued !== undefined) {
-          logger?.warn('dsh-connect-workbuddy: the channel gate refused the body again; retrying once with an invisible perturbation of the scanned text')
-          result = await client.chatStream(credential, rescued, controller.signal)
-          retriedWithPerturbation = true
-          // THE PERTURBATION IS WHAT WORKED, so remember it: the next request
-          // in this process starts perturbed and skips both doomed attempts.
-          // Only set on SUCCESS — a perturbation that is also refused teaches
-          // nothing about what the gateway wants.
-          if (result.ok) channelNeedsPerturbation = true
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/account-pool-run.ts:148-161](https://github.com/dingminhua/dsh-connect-workbuddy/blob/ad8e8515c7a46439ff2979cd3b0ea7ca02b5446e/src/account-pool-run.ts#L148-L161)
-
-状态读取与真实签到领取不同。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-  try {
-    const status = await deps.fetchCheckinStatus(credential)
-    // Not active (an upstream-declared closed window) is reported as `failed`
-    // rather than `already`: claiming is impossible, and saying "already
-    // checked in" would be a different, wrong claim.
-    if (!status.active) {
-      return { ...base, status: 'failed', message: 'check-in activity is not active' }
     }
-    if (status.todayCheckedIn) return { ...base, status: 'already' }
-    const claim = await deps.claimDailyCheckin(credential)
-    return {
-      ...base,
-      status: 'claimed',
-      credit: claim.credit,
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/shim.ts:2294-2327](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/shim.ts#L2294-L2327)
+
+标记未交付时的重发入口
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+    const writer = new RecoveryStream(res, gate, logger, notice, onUpstreamUsage)
+    await writer.consume(result.response.body)
+
+    // The one outcome that can only be recognised AFTER the stream: the turn
+    // wrote markup and nothing else, so there was never any answer to show.
+    // Retrying is safe here for exactly one reason — nothing has been written,
+    // because a turn that is still only markup is still being held. That is why
+    // the hold exists, and why an ordinary answer never pays for it.
+    if (gate !== undefined && !writer.delivered && writer.residueSeen && !controller.signal.aborted) {
+      logger?.warn('dsh-connect-workbuddy: the turn produced DSML markup only; retrying it once')
+      const retryTried = [...triedAccountIds, workbuddyAccountId(credential)]
+      let retryCredential = credential
+      for (;;) {
+        const attempt = await client.chatStream(retryCredential, prepared, controller.signal)
+        if (attempt.ok) {
+          // The first attempt's held bytes are dropped, not shown: showing them
+          // and then the retry would be the two-answers-spliced-together failure
+          // the failover loop refuses to risk.
+          writer.discard()
+          const retried = new RecoveryStream(res, gate, logger)
+          await retried.consume(attempt.response.body)
+          retried.finish()
+          reportFailures()
+          return
+        }
+        recordAttempt(retryCredential, attempt)
+        if (!isFailoverWorthy(attempt.kind) || failoverAccount === undefined) break
+        if (controller.signal.aborted) break
+        const next = await failoverAccount(retryTried).catch(() => undefined)
+        if (next === undefined) break
+        if (retryTried.includes(workbuddyAccountId(next))) break
+        retryTried.push(workbuddyAccountId(next))
+        retryCredential = next
+      }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/upstream.ts:4326-4338](https://github.com/dingminhua/dsh-connect-workbuddy/blob/893785eac560fdf5fc9e61f4d3fa264dad882eec/src/upstream.ts#L4326-L4338)
+
+传输异常丢失上游结果信息
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+      if (signal?.aborted === true) {
+        return { ok: false, status: 0, kind: 'server', message: 'cancelled before send' }
+      }
+      response = await fetch(`${chatBase(credential, this.cnBaseOf())}/v2/chat/completions`, {
+        method: 'POST',
+        headers,
+        body: bodyJson,
+        ...signal === undefined ? {} : { signal },
+      })
+    } catch (error: unknown) {
+      return { ok: false, status: 0, kind: 'server', message: `transport error: ${String(error)}` }
+    }
+    if (response.ok) return { ok: true, response }
 ```
 
 </details>
 
 #### 缺口
 
-- 跨重试总预算、费用归属和收据原型未验证
-  **影响**：无法确定能否减少费用误判或保证隐私
-  **进一步探讨**：在隔离假服务比较现有行为与预算收据并模拟未知计费。
+- 没有实际对账样本。
+  **影响**：只能确定可能再次发请求，无法推断记账结果。
+  **进一步探讨**：先用两个模拟凭据与可计数的确定性假网关对照，记录请求 ID、客户端终止和重发。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

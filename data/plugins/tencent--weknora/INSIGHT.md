@@ -1,18 +1,18 @@
-# WeKnora 知识平台
+# WeKnora
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[80e8345](https://github.com/Tencent/WeKnora/tree/80e8345903ce4af970497de8359b8b4ea4ce4917)
+源码版本：[e3fb233](https://github.com/Tencent/WeKnora/tree/e3fb2335bf3f8cadd32142380c60b2677a27bf99)
 
 <!-- BEGIN META -->
-[![GitHub ★ 36,141](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C141&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora)
+[![GitHub ★ 36,771](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C771&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora)
 <!-- END META -->
 
-> **功能**：集中管理组织知识库，提供检索问答、Agent 与 wiki 能力。
+> **功能**：面向团队文档的知识服务，提供检索问答、Agent 推理和 Wiki 管理。
 
-> **亮点**：将知识库权限、跨库向量空间与多个检索结果的融合接线组织在一起；模型、数据库和 RRF 本身不属于该项目原创。[Q02](#research-q02) [Q03](#research-q03)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持的贡献是把按知识库划定范围、混合检索、流式问答和复核资料组织成连续流程。归并知识库的权限与嵌入空间、提供回答前的引用事件，都是对索引和模型的组织工作。向量模型、关键词检索和排名融合算法本身已有独立来源。
 
-> **主要限制**：权限检查和分数归一能否在目标语料、角色和服务故障下产生正确且可追溯的回答？归一分数不是相关性概率，无可检索管线时空结果也不证明资料不存在。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：[Q03](#research-q03) 自带配置允许在检索无结果后调用模型生成兜底答复，候选引用又在生成前发出。若把正常结束或出现引用当作答复有据的验收条件，就可能把没检索到支持材料的答案送入业务流程。按角色验证范围，逐条核对关键事实与引用原文。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 平台为谁提供什么，和 DSH 适配包、简单检索有什么区别？](#detail-section-11)
-  - [Q02 · 请求如何经过授权到跨库混合检索？](#detail-section-12)
-  - [Q03 · 向量空间、融合分数和失败路径能证明什么？](#detail-section-13)
-  - [Q04 · 部署、治理、恢复和退出成本是什么？](#detail-section-14)
-  - [Q05 · 融合配置有什么可证伪改进假设？](#detail-section-15)
+  - [Q01 · 谁需要这套知识问答底座，实际交付比直接问模型多了什么？](#detail-section-11)
+  - [Q02 · 一次资料问答如何从真实路由到检索、重排和流式回答？](#detail-section-12)
+  - [Q03 · 搜索范围和引用能否承担隔离及事实核验？](#detail-section-13)
+  - [Q04 · 部署、导入、持续问答与恢复分别需要什么？](#detail-section-14)
+  - [Q05 · 如何用小范围试用判断是否值得维护该系统？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：维护组织资料并按角色查找知识的团队需要把资料、权限和可核查回答连接；根项目是知识平台而非 DSH 原生插件。[Q01](#research-q01)
+> **用途**：经常基于同一套内部手册回答问题的团队，需要限定可搜索的资料范围，并把答复和可复核的原文线索一起交给审核者。[Q01](#research-q01)
 
-文件搜索或自建文档解析、向量库和权限服务可完成部分任务；平台将这些环节接入同一服务，准确率及成本仍需对照。[Q01](#research-q01)
+人工可先在共享资料目录搜关键词，再确认版本并引用原文。直接把已知文件交给模型可简化偶发问答，但资料选择和访问边界由使用者负责。已有同类索引服务的团队应以相同语料、角色和答复验收标准比较。[Q01](#research-q01)
 
 <a id="detail-section-3"></a>
 
@@ -52,62 +52,72 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 知识库 | 管理组织资料 | 需配置身份和存储 |
-| 混合检索 | 向量和关键词结果融合 | 权限、模型空间及质量需核验 |
-| Agent/wiki | 作者描述基于同一知识库运行 | 本次未全链审计 |
+| 独立知识检索 | 按库和文档范围找候选片段 | 需要实际授权和可检索索引 |
+| 流式知识问答 | 在同一会话获取回复和检索引用 | 需要问答模型，是否检索取决于范围和配置 |
+| 候选重排 | 过滤或调整检索片段顺序 | 无重排模型或请求失败时可继续使用已有候选 |
+| 异步文件导入 | 上传文件并安排后台切块、索引 | 返回文件记录后仍要检查处理状态 |
 
-**流程与依赖**
+#### 启动与依赖
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失时 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| 平台服务、存储和数据库 | 自托管需要 | 文档、权限和索引 | 无法假定部署可用 |
-| embedding 与问答模型 | 对应检索和生成路径需要 | 构建向量和回答 | 停用路径并核对配置 |
-| 身份与库授权 | 业务必需 | 限定访问范围 | 不接入敏感语料 |
-| 备份及恢复方案 | 持续运维需要 | 保留原件及重建索引 | 暂缓生产使用 |
+| 默认 Compose 的 App、Redis、PostgreSQL、docreader | 此部署路径需要 | 启动应用、持久化、排队及文档解析 | 先核对容器和健康检查，暂不导入资料 |
+| Web 容器 | Web 试用需要 | 连接 App 的用户入口 | 可改为单独验收 API，不沿用 Web 体验结论 |
+| 有检索能力的库及配套嵌入模型 | 向量问答需要 | 对资料和查询建立相容的向量表示 | 核对是否有关键词分支，保留无结果或错误 |
+| 问答模型 | 生成需要 | 按上下文产生回复 | 保留检索和人工答复 |
+| 重排模型 | 按配置选用 | 调整检索候选顺序 | 核对日志和实际排序，重排不可用时可走已有候选 |
+| 授权角色与非敏感试用资料 | 本轮建议的业务前提 | 逐库约束访问并验证来源 | 出现越权或资料出站边界不明即停止试用 |
 
-| 步骤 | 执行者与动作 | 判据或失败处理 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 部署 | 管理员固定发行物、依赖和模型 | 验证存储与网络 |
-| 导入 | 清理匿名资料并设两种角色 | 保留原件与权限映射 |
-| 查询 | 各角色查同一问题并核对引用 | 未授权结果立即停止自动答复 |
-| 恢复 | 运维测试备份、模型及索引重建 | 状态不明回退人工搜索 |
+| 固定版本与后端 | 运维核实镜像与配置版本，设置数据库、存储和模型接入 | 核对配置与健康检查，查清启动失败项 |
+| 导入并验收索引 | 资料管理员上传小批资料并查看处理状态 | 查到已知片段，再开放给测试账号 |
+| 用两种角色问答 | 答疑人员按资料范围提问并点击引用 | 能回到获授权的原文，依据不足转人工 |
+| 保留退出路径 | 运维保管原件及必要备份，确认恢复流程 | 恢复后重查代表问题，失败时回原有资料系统 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 数据库、索引、存储与模型未知 | 部署、清洗和权限配置 | 环境未测 |
-| 持续 | embedding 和回答调用未知 | 维护资料并复核引用 | 单位成本未知 |
-| 恢复 | 重建与备份资源未知 | 核对原件与索引 | 真实恢复率未知 |
+| 首次使用 | 应用、数据库、队列、解析和索引算力 | 配置、清洗资料、授权及核对索引 | 环境和用时未知 |
+| 持续使用 | 存储、嵌入和问答调用，按配置另计重排与追踪 | 更新资料、跟踪失败及核查关键引用 | 模型价格、调用量及负荷未测 |
+| 失败恢复 | 重试、重建索引和备份空间 | 对照文件、任务及检索结果，核对哪些资料可用 | 入队失败可返回已保存记录，实际恢复时间未知 |
+| 升级或退出 | 备份与迁移期间资源 | 演练还原或重建索引，保留手工查阅路径 | 迁移兼容和数据损失范围未测 |
+
+以审核通过且能追溯原文的一次答复为单位，分别记录现金支出和人工时长。把失败、兜底、重试和复核计入总投入，并单列合格答复数与失败率。[Q04](#research-q04)
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 多库授权 | 路由和候选阶段有权限检查 | 实际跨租户一致性 |
-| 检索融合 | 分支、权重及 RRF 排序 | 召回质量或答案正确率 |
+| 权限内取材 | 会话所有权和目标库访问各有服务端检查 | 实际跨租户、撤权和引用跳转一致性 |
+| 给答疑提供出处 | 对有合并结果的问答发候选引用 | 引用是否覆盖每个关键判断 |
+| 失败可区分 | 源码分别处理取消、异常、无结果和兜底 | 目标环境的错误率和误答比例 |
+| 复用资料问答流程 | 索引、问答、引用输出已接线 | 相对人工流程能省多少操作和复核 |
 
-> **思考**：权限检查和分数归一能否在目标语料、角色和服务故障下产生正确且可追溯的回答？归一分数不是相关性概率，无可检索管线时空结果也不证明资料不存在。[Q02](#research-q02) [Q03](#research-q03)
+> **思考**：[Q03](#research-q03) 自带配置允许在检索无结果后调用模型生成兜底答复，候选引用又在生成前发出。若把正常结束或出现引用当作答复有据的验收条件，就可能把没检索到支持材料的答案送入业务流程。按角色验证范围，逐条核对关键事实与引用原文。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：将知识库权限、跨库向量空间与多个检索结果的融合接线组织在一起；模型、数据库和 RRF 本身不属于该项目原创。[Q02](#research-q02) [Q03](#research-q03)
+> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 支持的贡献是把按知识库划定范围、混合检索、流式问答和复核资料组织成连续流程。归并知识库的权限与嵌入空间、提供回答前的引用事件，都是对索引和模型的组织工作。向量模型、关键词检索和排名融合算法本身已有独立来源。
 
-按库批量校验权限和模型空间、重用查询向量，检索失败传递；模型键回退及未配置维度有边界，归一化不代表概率校准。[Q02](#research-q02) [Q03](#research-q03)
+[Q02](#research-q02) 可复用的是以知识库目标、向量空间和角色约束组织查询，再在流式生成前单独发候选引用。移植时须一起移交调用方身份、会话归属和库授权语义。单测和统计不提供真实可用性。根仓 inventory 统计 Markdown 和 JS/TS，分析重点是服务端 Go、配置及部署接线，Go 规模不纳入该表。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-权限检查和分数归一能否在目标语料、角色和服务故障下产生正确且可追溯的回答？归一分数不是相关性概率，无可检索管线时空结果也不证明资料不存在。[Q02](#research-q02) [Q03](#research-q03)
+[Q03](#research-q03) 自带配置允许在检索无结果后调用模型生成兜底答复，候选引用又在生成前发出。若把正常结束或出现引用当作答复有据的验收条件，就可能把没检索到支持材料的答案送入业务流程。按角色验证范围，逐条核对关键事实与引用原文。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先以非敏感语料和两个角色核验拒绝、引用与恢复，再对照现有搜索；出现越权或状态不明时停用自动答复。[Q04](#research-q04)
+[Q05](#research-q05) 先取十几条含正例、无依据和越权哨兵的手册问题，关闭网络检索，确认模型和资料的权限边界。用固定兜底、原文复核和人工查阅基线比一轮，出现越权或关键事实无法溯源时暂停自动答复，保留原资料和人工审核。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +125,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持目标路由、候选层授权和融合代表路径；未经固定版本部署、模型或真实权限及恢复实验。
+源码已支持快速问答、检索和引用输出的连接方式。人工复核与固定兜底的效果是待验证假设。团队级隔离、召回率、复核成本和真实运行结果待核实。
 
-- 已检查：作者 README、包清单、源码路径 README.md、internal/router/routes_knowledge.go、internal/handler/knowledgebase.go、internal/application/service/knowledgebase_search.go、internal/application/service/knowledgebase_search_fusion.go 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、internal/router/routes_chat.go、internal/application/service/session_knowledge_qa.go、internal/handler/session/qa.go、internal/application/service/chat_pipeline/search_parallel.go、internal/application/service/chat_pipeline/search.go、internal/application/service/knowledgebase_search.go、internal/application/service/knowledgebase_search_fusion.go、internal/application/service/chat_pipeline/rerank.go、internal/application/service/chat_pipeline/chat_completion_stream.go、internal/application/service/knowledgebase_search_storegroup.go、internal/application/access/kb_search.go、config/config.yaml、VERSION、docker-compose.yml、internal/application/service/knowledge_create.go、internal/application/service/knowledge_process.go 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定根仓 inventory 覆盖允许的 Markdown 和 JS/TS 文件；静态抽读 README、路由、handler 和混合检索及融合 Go blob，未全面审计 Agent、wiki、各检索器或运行环境。
-- 下一步：隔离部署按租户和角色验证读拒绝、跨库 ID、维度漂移及索引恢复，并以带标签留出集测召回、引用与成本。
+- 边界：仅静态核查根产品的快速问答主路、混合检索和默认 Compose 下的文件导入边界。根仓 VERSION 声明 0.9.0，详情中的包版本未声明源自根目录没有 npm 包清单。DSH 连接器、Agent 任务执行、Wiki 以及具体后端的全量审计均不在本次抽读范围。
+- 下一步：先在隔离环境固定部署版本和语料，再按 [Q05](#research-q05) 的问题组对照模型兜底、固定拒答加人工核对以及全人工查阅。记录未授权泄露、错误放行、误转人工、合格答复比例和人工时间。
 
 **分析版本**
 
 - **仓库**：[Tencent/WeKnora](https://github.com/Tencent/WeKnora)
-- **版本号**：未声明（[固定提交 80e8345](https://github.com/Tencent/WeKnora/tree/80e8345903ce4af970497de8359b8b4ea4ce4917)）
-- **版本日期**：2026-10-30（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：未声明（[固定提交 e3fb233](https://github.com/Tencent/WeKnora/tree/e3fb2335bf3f8cadd32142380c60b2677a27bf99)）
+- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +144,9 @@
 
 <a id="innovation"></a>
 
-假设按审核过的资料类型与查询结构选择权重并记录策略版本，可改善弱类召回；对照默认权重及单检索，在留出集检查最差类别、引用和人工成本，无改善或越权即否定。[Q05](#research-q05)
+[Q05](#research-q05) 把已有固定兜底策略和引用输出接入内部答疑复核流程。让无命中问题停止自动答复并转人工，正常回答先检查所引片段是否支持关键事实。若错误放行没有下降，或复核与转交增加的时间抵消改善，该假设不成立。
 
-隔离部署按租户和角色验证读拒绝、跨库 ID、维度漂移及索引恢复，并以带标签留出集测召回、引用与成本。
+先在隔离环境固定部署版本和语料，再按 [Q05](#research-q05) 的问题组对照模型兜底、固定拒答加人工核对以及全人工查阅。记录未授权泄露、错误放行、误转人工、合格答复比例和人工时间。
 
 <a id="detail-section-9"></a>
 
@@ -149,55 +159,53 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 155 | 38436 | — | — | 505447 |
-| .mjs | source | 30 | 3588 | 3252 | 145 | — |
-| .mjs | test | 85 | 9528 | 8332 | 399 | — |
+| .md | source | 156 | 38795 | — | — | 512254 |
+| .mjs | source | 31 | 3841 | 3478 | 158 | — |
+| .mjs | test | 86 | 9740 | 8521 | 415 | — |
 | .md | example | 4 | 261 | — | — | 1100 |
-| .ts | test | 259 | 33901 | 30491 | 939 | — |
+| .ts | test | 267 | 35562 | 32024 | 962 | — |
 | .js | source | 18 | 2330 | 2027 | 108 | — |
-| .ts | source | 359 | 109568 | 98320 | 6864 | — |
+| .ts | source | 365 | 111276 | 99902 | 6918 | — |
 | .md | test | 1 | 66 | — | — | 544 |
 | .js | test | 1 | 254 | 227 | 10 | — |
 | .mts | source | 1 | 221 | 191 | 6 | — |
-| .tsx | source | 10 | 988 | 935 | 26 | — |
+| .tsx | source | 11 | 1064 | 1006 | 28 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 423](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=423&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 311](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=311&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z) [![近30天关闭 237](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=237&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z)
+[![Issue 未关闭 509](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=509&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 364](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=364&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 192](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=192&color=737b86&logo=github)](https://github.com/Tencent/WeKnora/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-09。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：组织知识平台如何将授权、跨库嵌入与检索融合接到实际请求，质量和恢复边界是什么？
+**插件研究总目标**：已有资料问答负担的团队能否用独立部署的 WeKnora 把同一知识库接入检索问答并给出可人工复核的依据，哪些检索、隔离和维护条件会改变采用决定？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 平台为谁提供什么，和 DSH 适配包、简单检索有什么区别？
+### Q01 · 谁需要这套知识问答底座，实际交付比直接问模型多了什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-WeKnora 根仓是组织知识平台而非 DSH 原生插件。需要持续整理资料并按权限检索的团队，可在同一服务维护知识库，并在 RAG、Agent 或 wiki 流程中使用；合格结果须能返回有权限的相关资料并核对来源。相对文件搜索或自行组装模型、索引和鉴权，平台提供一体化部署和多库检索接线；检索算法、模型与数据库是依赖，不应归为独创。README 的跨渠道、组织权限和运行效果是作者主张，实际准确率、使用频率及净节时未做对照。
+面向已有资料库、经常回答同类内部问题且能管理资料授权的团队。以内部手册咨询为例，合格结果是一条按指定资料范围得出的答复，审核者能定位原文，缺依据时能交回人工。原流程可在共享目录按关键词找文件、核对版本并摘录，也可每次将已知文件交给模型。后者仍由提问者选文件和维持资料范围。WeKnora 是独立部署的知识服务，作者把快速问答、Agent 与 Wiki 放在同一知识库之上。本次核实的增量集中在快速问答。HTTP 路由有独立问答与检索入口，问答可以在开始流式生成前发出已合并的检索片段，使用者可沿这些材料复核。引用随回答提供，审核责任仍由使用者承担。对偶发、已知文件位置的问题，打开原文通常仍是可行基线。当前材料支持流程差异，无法衡量实际查询频次、命中或节省时间。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:41-49](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/README.md#L41-L49)
+**依据 1 · 作者声明**：[README.md:43-49](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/README.md#L43-L49)
 
-作者描述组织文档、RAG、Agent 和 wiki。
+作者描述团队文档及同一库上的三种使用方式。
 
 ```text
-## Overview
-
 [WeKnora](https://weknora.weixin.qq.com) is an open-source, LLM-powered knowledge framework for enterprise document understanding, semantic retrieval and reasoning. It brings a team's documents together so they can be searched, reasoned over and kept up to date.
 
 https://github.com/user-attachments/assets/de0e490a-e738-405e-bb3a-64b63edd7278
@@ -207,177 +215,566 @@ https://github.com/user-attachments/assets/de0e490a-e738-405e-bb3a-64b63edd7278
 Use RAG to look things up, the agent for multi-step tasks, and the wiki to organize knowledge. All three work on the same knowledge bases.
 ```
 
-**依据 2 · 作者声明**：[README.md:58-65](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/README.md#L58-L65)
+**依据 2 · 源码核查**：[internal/router/routes_chat.go:145-163](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/router/routes_chat.go#L145-L163)
 
-作者列出数据源、权限及部署方式。
+快速问答、Agent 问答与独立检索分别挂路由，根系统自身提供知识服务。
+
+<details>
+<summary>查看原文（19行）</summary>
 
 ```text
-Beyond the three modes:
+func RegisterChatRoutes(r *gin.RouterGroup, handler *session.Handler, g *rbacGuards) {
+	// These POST routes append messages and run generation, so a scoped key
+	// needs the explicit chat capability unless it has full tenant access.
+	knowledgeChat := g.apiKeyGroup(r.Group("/knowledge-chat", g.Viewer()), apiKeyChat(apiKeyFullAccess()))
+	{
+		knowledgeChat.POST("/:session_id", handler.KnowledgeQA)
+	}
 
-- **Memory and curation**: cross-session long-term memory keeps the profile, preferences and facts a user has confirmed. Folder uploads keep their directory tree, and retrieval chunks can be edited, diffed and rolled back.
-- **Data sources and formats**: auto-sync from Feishu wiki / Feishu Drive / Confluence / GitLab / Tencent IMA / Notion / Yuque / DingTalk Docs / Seafile / RSS, with more on the way. 10+ document formats including PDF, Word, images, Excel and XMind; Office files are parsed in-process by anydoc.
-- **Channels and integrations**: Q&A in WeCom, Feishu, Slack, Telegram and other IM apps; an embed widget for external websites; a built-in MCP Server for Cursor, Claude and other AI tools; scoped API keys with a principal model for programmatic access.
-- **Models**: 29 built-in vendors with a generated model catalog, including OpenAI, DeepSeek, Qwen (Alibaba Cloud), Zhipu, Hunyuan, Gemini, MiniMax, NVIDIA, LiteLLM and Ollama.
-- **Permissions and operations**: multi-workspace RBAC (four roles, per-resource ownership, per-workspace audit log), several storage instances per workspace, a runtime task-queue dashboard with worker-pool governance, and Langfuse tracing for agent steps, token usage and pipelines.
-- **Deployment**: LLMs, vector databases and storage backends are all swappable. Deploy locally or on a private cloud and keep the data in your own environment.
+	// Agent-based chat
+	agentChat := g.apiKeyGroup(r.Group("/agent-chat", g.Viewer()), apiKeyChat(apiKeyFullAccess()))
+	{
+		agentChat.POST("/:session_id", handler.AgentQA)
+	}
+
+	// 新增知识检索接口，不需要session_id
+	knowledgeSearch := g.apiKeyGroup(r.Group("/knowledge-search", g.Viewer()), apiKeyRetrieve(apiKeyFullAccess()))
+	{
+		knowledgeSearch.POST("", handler.SearchKnowledge)
+	}
 ```
+
+</details>
+
+**依据 3 · 源码核查**：[internal/application/service/session_knowledge_qa.go:725-732](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L725-L732)
+
+流式生成前发出检索引用，说明采用者可得到资料范围内的复核线索。
+
+```text
+		// Emit references before answer streaming so the SSE client receives
+		// them while the connection is still open. Previously references were
+		// emitted after the pipeline returned — by then the `complete` event had
+		// already closed the stream, so the frontend only saw citations on refresh.
+		if eventType == types.CHAT_COMPLETION_STREAM {
+			emitKnowledgeReferencesEvent(ctx, chatManage)
+		}
+		err := s.eventManager.Trigger(stageCtx, eventType, chatManage)
+```
+
+**依据 4 · 源码核查**：[internal/application/service/session_knowledge_qa.go:1301-1319](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L1301-L1319)
+
+输出取自 MergeResult，实际有候选时才发，和内联引用开关是两种表面。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+// emitKnowledgeReferencesEvent streams retrieved chunks to the client as a
+// `references` SSE event. These references drive the retrieval-results UI and
+// remain available even when inline citations in the model answer are disabled.
+// Must run before CHAT_COMPLETION_STREAM so the event arrives while the
+// connection is still open (complete closes the stream).
+func emitKnowledgeReferencesEvent(ctx context.Context, chatManage *types.ChatManage) {
+	if chatManage == nil || chatManage.EventBus == nil || len(chatManage.MergeResult) == 0 {
+		return
+	}
+	logger.Infof(ctx, "Emitting references event with %d results (pre-answer)", len(chatManage.MergeResult))
+	if err := chatManage.EventBus.Emit(ctx, types.Event{
+		ID:        generateEventID("references"),
+		Type:      types.EventType(event.EventAgentReferences),
+		SessionID: chatManage.SessionID,
+		Data: event.AgentReferencesData{
+			References: chatManage.MergeResult,
+		},
+	}); err != nil {
+		logger.Errorf(ctx, "Failed to emit references event: %v", err)
+```
+
+</details>
 
 #### 缺口
 
-- 真实用户任务、质量及人工成本无对照
-  **影响**：不能断言比文件搜索或现有 RAG 更经济
-  **进一步探讨**：对同一语料、角色和问题比较合格率与全流程成本
+- 缺少目标团队的资料更新频率和实际问答样本。
+  **影响**：无法判断是否值得承担索引维护和复核。
+  **进一步探讨**：从真实工作日志抽取高频、找不到资料和查错版本的问题，记录人工找原文的用时与错误。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 请求如何经过授权到跨库混合检索？
+### Q02 · 一次资料问答如何从真实路由到检索、重排和流式回答？
 
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-知识库 hybrid-search 路由置于 API key 检索能力门下，并为 JWT 侧接 Viewer 与指定库读取校验；handler 对目标库进行校验、限制请求体并检查查询文本或预计算向量，再按 rerank 参数选择服务分支。普通 HybridSearch 的候选阶段先批量取得指定知识库，逐库调用 authorizeKBAccess，再校验嵌入模型一致性；找不到指定主库返回未找到，不回退到任意其他库。之后在需要时计算一次查询向量，按存储和租户分组执行检索并融合。源码提供代表请求与逐库检查证据，不证明其他入口、所有租户及外部服务均可靠。
+客户端向知识问答路由发送带会话标识的请求，handler 解析请求并走普通问答路径，由会话服务解析知识范围和模型。只有知识范围或网络检索生效时才选择检索增强流水线，纯聊天使用另一条分支。检索增强分支按配置处理历史和记忆，随后执行查询理解、并行搜索、重排、合并和筛选，组装上下文再向模型发起流式生成。并行阶段在意图判断需要检索时才触发，实体支路没有实体会跳过，片段支路按可解析的嵌入模型分组，同模型组内的整库目标可合并检索调用。服务层仅在向量与关键词两侧都有结果时做带权排名融合，单侧走相应去重路径。重排模型缺失或加载失败时沿原结果继续，重排服务错误也有保留候选的分支，重排阈值筛空则进入无结果路径。生成模型的输出以事件流式交付，最后一个完成事件可携带截断状态。代码说明哪些阶段可被组合、跳过和降级，检索或流完成仍需另核对召回证据与答复质量。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[internal/router/routes_knowledge.go:224-228](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/router/routes_knowledge.go#L224-L228)
+**依据 1 · 源码核查**：[internal/handler/session/qa.go:1129-1143](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/handler/session/qa.go#L1129-L1143)
 
-知识库 API key 检索能力门。
-
-```text
-	// 空 allow-list 的 key 则是全租户 KB 管理、新建天然在范围内。KB 内容写入（文档/
-	// 分块/FAQ/Tag/Wiki）由对应子路由的 ingest 能力控制，不在本组。
-	kbgrp := r.Group("/knowledge-bases")
-	kb := g.apiKeyGroup(kbgrp, apiKeyRetrieve(apiKeyFullAccess()))
-	kbManagement := kb.With(apiKeyManageKnowledgeBases(apiKeyFullAccess()))
-```
-
-**依据 2 · 源码核查**：[internal/router/routes_knowledge.go:257-261](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/router/routes_knowledge.go#L257-L261)
-
-混合检索路由的角色与库读权限。
-
-```text
-		kb.PUT("/:id/pin", g.Viewer(), g.KBAccessRead("id"), handler.TogglePinKnowledgeBase)
-		// 混合搜索 — Viewer+ 且对 KB 有 read 权限 (read-only)
-		// POST is preferred; GET with JSON body is kept for backward compatibility (#1727).
-		kb.POST("/:id/hybrid-search", g.Viewer(), g.KBAccessRead("id"), handler.HybridSearch)
-		kb.GET("/:id/hybrid-search", g.Viewer(), g.KBAccessRead("id"), handler.HybridSearch)
-```
-
-**依据 3 · 源码核查**：[internal/handler/knowledgebase.go:373-405](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/handler/knowledgebase.go#L373-L405)
-
-目标库、请求和输入校验。
+固定路由 handler 解析后进入普通问答。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-func (h *KnowledgeBaseHandler) HybridSearch(c *gin.Context) {
-	ctx := c.Request.Context()
-
-	logger.Info(ctx, "Start hybrid search")
-
-	// Validate and check permission for knowledge base access
-	_, id, effectiveTenantID, _, err := h.validateAndGetKnowledgeBase(c)
+func (h *Handler) KnowledgeQA(c *gin.Context) {
+	// Parse and validate request
+	reqCtx, request, err := h.parseQARequest(c, "KnowledgeQA")
 	if err != nil {
 		c.Error(err)
 		return
 	}
 
-	// Parse request body
-	limitJSONBody(c, hybridSearchJSONMaxBytes)
-	var req types.SearchParams
-	if err := c.ShouldBindJSON(&req); err != nil {
-		if isRequestBodyTooLarge(err) {
-			_ = c.Error(apperrors.NewBadRequestError("request body is too large"))
-			return
-		}
-		logger.Error(ctx, "Failed to parse request parameters", err)
-		c.Error(apperrors.NewBadRequestError("Invalid request parameters").WithDetails(err.Error()))
+	// Execute normal mode QA, generate title unless disabled
+	if request.LocalBrowserEnabled {
+		_ = c.Error(errors.NewBadRequestError("Local browser requests must use the agent endpoint"))
 		return
 	}
-	precomputedVectorOnly := len(req.QueryEmbedding) > 0 && req.DisableKeywordsMatch && !req.DisableVectorMatch
-	if strings.TrimSpace(req.QueryText) == "" && !precomputedVectorOnly {
-		_ = c.Error(apperrors.NewBadRequestError("query_text is required"))
-		return
-	}
-	if err := req.Rerank.Validate(); err != nil {
-		_ = c.Error(apperrors.NewBadRequestError(err.Error()))
-		return
-	}
+	h.executeQA(reqCtx, qaModeNormal, !request.DisableTitle)
+}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[internal/handler/knowledgebase.go:423-445](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/handler/knowledgebase.go#L423-L445)
+**依据 2 · 源码核查**：[internal/handler/session/qa.go:1632-1643](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/handler/session/qa.go#L1632-L1643)
 
-rerank 与普通服务分支及错误传递。
+普通模式明确调用会话服务 KnowledgeQA。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-	// Execute hybrid search. Without a rerank object this is the raw recall
-	// primitive it has always been; with one, the response carries meta.
-	// Note: For shared KBs, the service uses effectiveTenantID internally via context
-	var retrieval *types.RetrievalResult
-	if req.Rerank != nil {
-		retrieval, err = h.service.HybridSearchWithRerank(c.Request.Context(), id, req)
+		// Build QA request and invoke the appropriate service
+		qaReq := reqCtx.buildQARequest()
+
+		var serviceErr error
+		var stageName string
+		if mode == qaModeNormal {
+			stageName = "knowledge_qa_execution"
+			serviceErr = h.sessionService.KnowledgeQA(streamCtx.asyncCtx, qaReq, streamCtx.eventBus)
+		} else {
+			stageName = "agent_execution"
+			serviceErr = h.sessionService.AgentQA(streamCtx.asyncCtx, qaReq, streamCtx.eventBus)
+		}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[internal/application/service/session_knowledge_qa.go:190-233](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L190-L233)
+
+实际分支和事件列表区分纯聊天与检索增强。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+	// Determine pipeline based on the effective knowledge retrieval scope and
+	// web search setting. Tag-only mentions leave the raw KB/knowledge ID slices
+	// empty but produce SearchTargets, so the unified targets must participate in
+	// this decision or the request is incorrectly downgraded to pure chat.
+	hasKB := types.HasKnowledgeRetrievalScope(searchTargets, knowledgeBaseIDs, knowledgeIDs)
+	needsRAG := hasKB || webSearchEnabled
+	hasHistory := chatManage.MaxRounds > 0
+
+	var pipeline []types.EventType
+	if !needsRAG {
+		// Pure chat — no retrieval needed.
+		userContent := req.Query
+		if req.ImageDescription != "" && !chatModelSupportsVision {
+			userContent += "\n\n[用户上传图片内容]\n" + req.ImageDescription
+		}
+		if req.QuotedContext != "" {
+			userContent += "\n\n" + req.QuotedContext
+		}
+		// Inject attachment content for pure-chat path (RAG path handles this in INTO_CHAT_MESSAGE).
+		if len(req.Attachments) > 0 {
+			userContent += req.Attachments.BuildPrompt()
+		}
+		chatManage.UserContent = userContent
+
+		pipeline = types.NewPipelineBuilder().
+			AddIf(hasHistory, types.LOAD_HISTORY).
+			Add(types.MEMORY_RECALL).
+			Add(types.CHAT_COMPLETION_STREAM).
+			Build()
 	} else {
-		var results []*types.SearchResult
-		results, err = h.service.HybridSearch(c.Request.Context(), id, req)
-		retrieval = &types.RetrievalResult{Results: results}
-	}
-	if err != nil {
-		// Service-layer typed AppErrors (e.g. ErrVectorStoreBindingInvalid,
-		// ErrVectorStoreUnavailable, BadRequest from multi-store fan-out)
-		// must reach the client with their original code rather than be
-		// downgraded to InternalServerError. Mirrors the pattern used in
-		// CreateKnowledgeBase.
-		if appErr, ok := apperrors.IsAppError(err); ok {
-			c.Error(appErr)
-			return
-		}
-		logger.ErrorWithFields(ctx, err, nil)
-		c.Error(apperrors.NewInternalServerError(err.Error()))
+		// RAG — dynamically assemble based on feature flags.
+		pipeline = types.NewPipelineBuilder().
+			AddIf(hasHistory, types.LOAD_HISTORY).
+			Add(types.MEMORY_RECALL).
+			Add(types.QUERY_UNDERSTAND).
+			Add(types.CHUNK_SEARCH_PARALLEL).
+			Add(types.CHUNK_RERANK).
+			AddIf(webSearchEnabled, types.WEB_FETCH).
+			Add(types.CHUNK_MERGE).
+			Add(types.FILTER_TOP_K).
+			AddIf(chatManage.DataAnalysisEnabled, types.DATA_ANALYSIS).
+			Add(types.INTO_CHAT_MESSAGE).
+			Add(types.CHAT_COMPLETION_STREAM).
+			Build()
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search.go:212-270](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L212-L270)
+**依据 4 · 源码核查**：[internal/application/service/chat_pipeline/search_parallel.go:114-149](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/chat_pipeline/search_parallel.go#L114-L149)
 
-批量读取、逐库授权、模型一致性和主库检查。
+片段和实体作为不同子任务执行，实体为空可跳过。
 
 <details>
-<summary>查看原文（59行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-func (s *knowledgeBaseService) hybridSearchCandidates(ctx context.Context,
-	id string,
-	params types.SearchParams,
-) ([]*types.IndexWithScore, error) {
-	// Determine the set of KB IDs to search.
-	searchKBIDs := params.KnowledgeBaseIDs
-	if len(searchKBIDs) == 0 {
-		searchKBIDs = []string{id}
+	noop := func() *PluginError { return nil }
+
+	tasks := []ParallelTask{
+		{
+			Name: "chunk_search",
+			Run: func() *PluginError {
+				err := p.searchPlugin.OnEvent(ctx, types.CHUNK_SEARCH, chunkCM, noop)
+				pipelineInfo(ctx, "SearchParallel", "chunk_search_done", map[string]interface{}{
+					"result_count": len(chunkCM.SearchResult),
+					"has_error":    err != nil && err != ErrSearchNothing,
+				})
+				if err == ErrSearchNothing {
+					return nil
+				}
+				return err
+			},
+		},
+		{
+			Name: "entity_search",
+			Run: func() *PluginError {
+				if len(chatManage.Entity) == 0 {
+					pipelineInfo(ctx, "SearchParallel", "entity_search_skip", map[string]interface{}{
+						"reason": "no_entities",
+					})
+					return nil
+				}
+				err := p.searchEntityPlugin.OnEvent(ctx, types.ENTITY_SEARCH, entityCM, noop)
+				pipelineInfo(ctx, "SearchParallel", "entity_search_done", map[string]interface{}{
+					"result_count": len(entityCM.SearchResult),
+					"has_error":    err != nil && err != ErrSearchNothing,
+				})
+				if err == ErrSearchNothing {
+					return nil
+				}
+				return err
+			},
+```
+
+</details>
+
+**依据 5 · 源码核查**：[internal/application/service/chat_pipeline/search.go:581-605](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/chat_pipeline/search.go#L581-L605)
+
+整库搜索实际将统一查询向量及目标列表交给 HybridSearch。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+			// Combined search: one HybridSearch call spanning all full-KB targets
+			if len(fullKBIDs) > 0 {
+				innerWg.Add(1)
+				go func() {
+					defer innerWg.Done()
+
+					params := types.SearchParams{
+						QueryText:             queryText,
+						QueryEmbedding:        queryEmbedding,
+						KnowledgeBaseIDs:      fullKBIDs,
+						VectorThreshold:       chatManage.VectorThreshold,
+						KeywordThreshold:      chatManage.KeywordThreshold,
+						MatchCount:            chatManage.EmbeddingTopK,
+						SkipContextEnrichment: true,
+						DisableVectorMatch:    disableVector,
+						DisableKeywordsMatch:  chatManage.DisableKeywordsMatch,
+					}
+					res, err := p.knowledgeBaseService.HybridSearch(ctx, fullKBIDs[0], params)
+					if err != nil {
+						pipelineWarn(ctx, "Search", "combined_kb_search_error", map[string]interface{}{
+							"kb_ids": fullKBIDs,
+							"error":  err.Error(),
+						})
+						recordError(err)
+						return
+```
+
+</details>
+
+**依据 6 · 源码核查**：[internal/application/service/knowledgebase_search.go:349-373](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search.go#L349-L373)
+
+下层取回分支结果并调用融合，空结果和检索错误有不同出口。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+	retrieveResults, err := s.retrieveFromStores(retrieveCtx, groups, retriever.EngineAwareNormalizer{})
+	retrieveSpan.Finish(langfuse.SummarizeRetrieveOutput(retrieveResults), nil, err)
+	if err != nil {
+		logger.ErrorWithFields(ctx, err, map[string]interface{}{
+			"knowledge_base_ids": searchKBIDs,
+			"query_text":         params.QueryText,
+		})
+		return nil, err
 	}
 
-	// QueryText is user-controlled; sanitize before logging to prevent
-	// CR/LF/tab log injection. Matches the handler-layer sanitization at
-	// handler/knowledgebase.go.
-	logger.Infof(ctx, "Hybrid search parameters, knowledge base IDs: %v, query text: %s",
-		searchKBIDs, secutils.SanitizeForLog(params.QueryText))
+	// Separate and fuse retrieval results.
+	vectorLists, keywordLists := classifyRetrievalResults(ctx, retrieveResults)
+	vectorResults, keywordResults := flattenLists(vectorLists), flattenLists(keywordLists)
+	if len(vectorResults) == 0 && len(keywordResults) == 0 {
+		logger.Info(ctx, "No search results found")
+		return nil, nil
+	}
+	logger.Infof(ctx, "Result count before fusion: vector=%d, keyword=%d",
+		len(vectorResults), len(keywordResults))
 
-	tenantInfo, _ := types.TenantInfoFromContext(ctx)
+	var retrievalCfg *types.RetrievalConfig
+	if tenantInfo != nil {
+		retrievalCfg = tenantInfo.RetrievalConfig
+	}
+	deduplicatedChunks := fuseOrDeduplicate(ctx, vectorLists, keywordLists, retrievalCfg)
+```
 
-	// Batch-load every KB in scope. Required for store grouping,
-	// embedding-model consistency validation, and FAQ type detection.
-	// GetKnowledgeBaseByIDs is intentionally tenant-agnostic at the
-	// repository layer so that Organization-shared KBs (owned by a
-	// different tenant) can be loaded here; authorization for each
-	// returned row is enforced explicitly below.
+</details>
+
+**依据 7 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:59-84](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search_fusion.go#L59-L84)
+
+融合仅用于双侧结果，关键词或向量单侧走独立去重。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+func fuseOrDeduplicate(
+	ctx context.Context, vectorLists, keywordLists [][]*types.IndexWithScore, retrievalCfg *types.RetrievalConfig,
+) []*types.IndexWithScore {
+	if len(keywordLists) == 0 {
+		// Vector-only: keep original embedding scores (important for FAQ)
+		result := deduplicateByScore(flattenLists(vectorLists))
+		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
+		return result
+	}
+	if len(vectorLists) == 0 {
+		// Keyword-only: keep relative BM25 order, but fold unbounded
+		// scores into [0, 1] before they reach rerank/MMR. Raw BM25
+		// (often >10) saturates compositeScore's 0.3*base term. BM25 from
+		// different engines or indexes is not comparable, so each list is
+		// scaled by its own best score.
+		for _, list := range keywordLists {
+			rescaleUnboundedScores(list)
+		}
+		result := deduplicateByScore(flattenLists(keywordLists))
+		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
+		return result
+	}
+	// Hybrid: use RRF fusion to merge vector + keyword results
+	result := fuseWithRRF(ctx, vectorLists, keywordLists, retrievalCfg)
+	logger.Infof(ctx, "Result count after RRF fusion: %d", len(result))
+	return result
+```
+
+</details>
+
+**依据 8 · 源码核查**：[internal/application/service/chat_pipeline/rerank.go:60-87](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/chat_pipeline/rerank.go#L60-L87)
+
+零候选、无重排模型、模型无法加载时继续流水线。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+	if len(chatManage.SearchResult) == 0 {
+		diag.Outcome = types.RerankOutcomeNoCandidates
+		pipelineInfo(ctx, "Rerank", "skip", map[string]interface{}{
+			"reason": "empty_search_result",
+		})
+		return next()
+	}
+	if chatManage.RerankModelID == "" {
+		diag.Outcome = types.RerankOutcomeNoModel
+		pipelineWarn(ctx, "Rerank", "skip", map[string]interface{}{
+			"reason": "empty_model_id",
+		})
+		return next()
+	}
+
+	// Get rerank model from service. A model that cannot be loaded (deleted,
+	// misconfigured) degrades to retrieval order like a failed rerank call,
+	// as the search APIs do, rather than failing every turn of the session.
+	rerankModel, err := p.modelService.GetRerankModel(ctx, chatManage.RerankModelID)
+	if err != nil {
+		diag.Outcome = types.RerankOutcomeModelUnavailable
+		diag.Error = err.Error()
+		pipelineWarn(ctx, "Rerank", "get_model_fallback", map[string]interface{}{
+			"model_id": chatManage.RerankModelID,
+			"error":    err.Error(),
+		})
+		return next()
+	}
+```
+
+</details>
+
+**依据 9 · 源码核查**：[internal/application/service/chat_pipeline/rerank.go:126-160](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/chat_pipeline/rerank.go#L126-L160)
+
+模型调用错误沿候选降级，重排筛空才产生无结果信号。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+	if diag.Outcome == types.RerankOutcomeModelError {
+		// Rerank API failed — fall back to the retrieval results so the
+		// pipeline can still return something useful to the caller.
+		pipelineWarn(ctx, "Rerank", "api_error_fallback", map[string]interface{}{
+			"error":         diag.Error,
+			"candidate_cnt": diag.CandidateCount,
+		})
+		chatManage.SearchResult = res.Results
+		rerankSpan.Finish(map[string]interface{}{
+			"stage":           "api_error_fallback",
+			"candidate_count": diag.CandidateCount,
+			"error":           diag.Error,
+		}, nil, nil)
+		return next()
+	}
+
+	chatManage.RerankResult = res.Results
+	for i := 0; i < min(3, len(res.Scored)); i++ {
+		pipelineInfo(ctx, "Rerank", "composite_top", map[string]interface{}{
+			"rank":        i + 1,
+			"chunk_id":    res.Scored[i].ID,
+			"base_score":  res.Scored[i].Metadata["base_score"],
+			"final_score": fmt.Sprintf("%.4f", res.Scored[i].Score),
+		})
+	}
+	rerankSpan.Finish(buildRerankSpanOutput(res, chatManage), nil, nil)
+
+	if len(chatManage.RerankResult) == 0 {
+		pipelineWarn(ctx, "Rerank", "output", map[string]interface{}{
+			"filtered_cnt": 0,
+			"outcome":      diag.Outcome,
+			"top_score":    diag.TopScore,
+			"threshold":    diag.EffectiveThreshold,
+		})
+		return ErrSearchNothing
+```
+
+</details>
+
+**依据 10 · 源码核查**：[internal/application/service/chat_pipeline/chat_completion_stream.go:245-275](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/chat_pipeline/chat_completion_stream.go#L245-L275)
+
+流式回答去重并传播完成和截断状态。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+				if response.ResponseType == types.ResponseTypeAnswer {
+					// Providers can emit a completion once for finish_reason and again
+					// for their EOF sentinel. A final answer is a terminal event for a
+					// single stream, so forwarding a later duplicate would put an answer
+					// after the session's complete event.
+					if answerCompleted {
+						continue
+					}
+					response.Content = answerDecoder.Feed(response.Content)
+					if response.Done {
+						response.Content += answerDecoder.Flush()
+						answerCompleted = true
+					}
+					if strings.TrimSpace(response.Content) != "" {
+						answerProduced = true
+					}
+					truncated := response.Done && IsLengthFinishReason(response.FinishReason)
+					if truncated && !answerProduced {
+						response.Content = EmptyTruncatedAnswerFallback
+						answerProduced = true
+					}
+					closeThinking()
+					eventBus.Emit(ctx, types.Event{
+						ID:        answerID,
+						Type:      types.EventType(event.EventAgentFinalAnswer),
+						SessionID: chatManage.SessionID,
+						Data: event.AgentFinalAnswerData{
+							Content:   response.Content,
+							Done:      response.Done,
+							Truncated: truncated,
+						},
+```
+
+</details>
+
+#### 缺口
+
+- 实际目标语料上的分组覆盖与降级结果未知。
+  **影响**：无法判断哪类问题常失去向量或重排收益，也无法量化端到端等待。
+  **进一步探讨**：固定同一组库、模型和问题，分别记录关键词单侧、向量单侧与融合在不同故障下的命中和时延。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 搜索范围和引用能否承担隔离及事实核验？
+
+**研究主题**：缺陷与关键质疑
+
+#### 完整回答
+
+可以把权限检查和引用作为试用的验收点。写入会话的普通问答先查会话所有权，并对请求合并出来的知识目标调用 API key 范围检查。混合搜索在打开各组存储前对取回的库逐个检查原调用者的库权限，并检查向量模型一致性。库权限验证错误与无权限分别走服务错误和未找到路径，工作区级 Viewer 角色本身并不能代替对目标库的授权。证据范围仅覆盖这条问答链上的会话和混合检索门禁，下载、直链、缓存、共享 Agent 的执行租户以及其他检索器需分开验证。
+
+合并候选列表在生成前就能发给前端，所以出现检索引用仅说明该请求有候选。排序分由排名融合得到，也无法直接解释为某个回答正确的概率。空候选可能来自库没有可检索索引、无相关匹配或重排筛空。会话流水线先检查取消，再将无结果送去兜底，其他阶段错误向上传递。仓库自带配置选模型兜底，实际配置可覆盖。模型兜底可在没有检索命中时调用模型流式生成，因此团队需要在验收时把该类输出与有来源回答分开。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[internal/handler/session/qa.go:281-304](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/handler/session/qa.go#L281-L304)
+
+会话写入前检查所有者并调用知识目标授权。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+	// Get session. QA writes new messages into the session, so use the strict
+	// owner scope: a tenant admin may read an API-key session but must not be
+	// able to post messages to it (which would otherwise fail later at message
+	// creation with a 500 instead of a clean not-found).
+	session, err := h.sessionService.GetOwnedSession(ctx, sessionID)
+	if err != nil {
+		logger.Errorf(ctx, "Failed to get session, session ID: %s, error: %v", sessionID, err)
+		return nil, nil, errors.NewNotFoundError("Session not found")
+	}
+	if session.Kind == types.SessionKindAutomation {
+		return nil, nil, errors.NewForbiddenError("automation conversations do not accept manual messages")
+	}
+
+	// Get custom agent if agent_id is provided. Backend resolves shared agent from share relation (no client-provided tenant).
+	customAgent, effectiveTenantID, sharedAgentReadOnly := h.resolveAgent(ctx, c, request.AgentID, request.AgentSourceTenantID)
+	if request.AgentSourceTenantID != 0 && customAgent == nil {
+		return nil, nil, errors.NewNotFoundError("Shared agent not found")
+	}
+
+	// Merge @mentioned items into knowledge_base_ids and knowledge_ids
+	kbIDs, knowledgeIDs := mergeKnowledgeTargets(request.KnowledgeBaseIDs, request.KnowledgeIDs, request.MentionedItems)
+	if err := types.AuthorizeTenantAPIKeyKnowledgeTargets(ctx, kbIDs, knowledgeIDs); err != nil {
+		return nil, nil, err
+	}
+```
+
+</details>
+
+**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search.go:236-263](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search.go#L236-L263)
+
+实际存储检索前先执行知识库权限和嵌入模型一致性检查。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
 	kbs, err := s.repo.GetKnowledgeBaseByIDs(ctx, searchKBIDs)
 	if err != nil {
 		logger.ErrorWithFields(ctx, err, map[string]interface{}{
@@ -406,183 +803,74 @@ func (s *knowledgeBaseService) hybridSearchCandidates(ctx context.Context,
 	if err := s.validateSameEmbeddingModel(ctx, kbs); err != nil {
 		return nil, err
 	}
-
-	// Resolve the primary KB — embedding model + FAQ type come from this
-	// one. Miss → 404 (no kbs[0] fallback; a silent pivot to an arbitrary
-	// KB would hide caller bugs and reveal foreign KB metadata).
-	kb := pickPrimary(kbs, id)
-	if kb == nil {
-		return nil, apperrors.NewNotFoundError("knowledge base not found")
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[internal/application/service/knowledgebase_search.go:281-304](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L281-L304)
+**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search_storegroup.go:201-208](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search_storegroup.go#L201-L208)
 
-按条件仅计算一次查询向量。
-
-<details>
-<summary>查看原文（24行）</summary>
+服务方法将授权转入实际权限实现。
 
 ```text
-	// Compute the query embedding once before fan-out and propagate via
-	// params.QueryEmbedding. Without this, each storeGroup's
-	// buildRetrievalParams would re-embed the same query text — for N
-	// stores that means N API calls of identical input.
-	//
-	// Skip when params already carries an embedding (e.g. the agent
-	// pre-computed it) or when the primary KB has no vector indexing
-	// configured.
-	embeddingKB := kb
-	if !hasEmbeddingModel(embeddingKB) {
-		embeddingKB = nil
-		for _, candidate := range kbs {
-			if hasEmbeddingModel(candidate) {
-				embeddingKB = candidate
-				break
-			}
-		}
-	}
-	if len(params.QueryEmbedding) == 0 && embeddingKB != nil && !params.DisableVectorMatch {
-		emb, embErr := s.GetQueryEmbedding(ctx, embeddingKB.ID, params.QueryText)
-		if embErr != nil {
-			return nil, embErr
-		}
-		params.QueryEmbedding = emb
-```
-
-</details>
-
-**依据 7 · 源码核查**：[internal/application/service/knowledgebase_search.go:307-318](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L307-L318)
-
-按存储分组，无可检索管线时返回空。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-	// Group KBs by (storeID, owner tenant), resolve the bound engine for
-	// each group, and build the per-group base RetrieveParams once.
-	groups, err := s.resolveStoreGroups(ctx, kb, kbs, params, matchCount)
-	if err != nil {
-		return nil, err
-	}
-	if len(groups) == 0 || allBaseParamsEmpty(groups) {
-		// Wiki-only / graph-only fan-out: every KB is non-retrievable.
-		// Preserve the existing "return empty rather than error" contract
-		// so agent tools that combine multiple KB scopes degrade gracefully.
-		logger.Infof(ctx, "No retrievable indexing pipelines across %d KBs", len(kbs))
-		return nil, nil
-```
-
-</details>
-
-#### 缺口
-
-- 所有调用入口、鉴权实现和租户配置未端到端测试
-  **影响**：不能由入口和函数调用推断所有跨租户访问安全
-  **进一步探讨**：隔离多租户用授权、拒绝、撤销和额外 KB ID 测试
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 向量空间、融合分数和失败路径能证明什么？
-
-**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-模型解析以名称、端点和配置维度形成跨库空间键；解析失败时回退模型 ID，因此不能把键当成完整模型权重或版本身份。查询向量维度与配置不匹配且预期大于零时返回带重建提示的错误；模型为空、向量长度为零或预期未配置时该函数不报错。单向量结果保留原分，单关键词按各列表最大分缩放超出 1 的分数；混合结果对每条结果各检索类型取最佳列表排名，以可配置权重和 K 做 RRF 再除最大可能值。归一和排序解决数值口径，不是相关性概率校准或答案正确性证明。无可检索管线的 wiki/graph 情况返回空，不能从空结果推断资料不存在。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search.go:109-130](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L109-L130)
-
-维度校验及不校验条件。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-// validateQueryEmbeddingDimension catches provider/model configuration drift
-// before a malformed query reaches the vector store. Without this check, a
-// provider returning a different vector size is reported as the misleading
-// generic 2201 "bound store unavailable" error (or, for dimension-partitioned
-// stores, silently produces no matches).
-func validateQueryEmbeddingDimension(model embedding.Embedder, actual int) error {
-	if model == nil || actual == 0 {
-		return nil
-	}
-	expected := model.GetDimensions()
-	if expected <= 0 || expected == actual {
-		return nil
-	}
-	return apperrors.NewVectorStoreUnavailableError(
-		"embedding vector dimension does not match the configured model",
-	).WithDetails(map[string]any{
-		"model":              model.GetModelName(),
-		"expected_dimension": expected,
-		"actual_dimension":   actual,
-		"hint":               fmt.Sprintf("check the embedding model configuration and rebuild the affected index (%d dimensions)", expected),
-	})
+// authorizeKBAccess is a service wrapper around access.AuthorizeKBAccess
+// so HybridSearch and its tests keep calling through knowledgeBaseService.
+func (s *knowledgeBaseService) authorizeKBAccess(
+	ctx context.Context,
+	kbs []*types.KnowledgeBase,
+) error {
+	return access.AuthorizeKBAccess(ctx, s.kbShareService, kbs)
 }
 ```
 
-</details>
+**依据 4 · 源码核查**：[internal/application/access/kb_search.go:32-62](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/access/kb_search.go#L32-L62)
 
-**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search.go:132-165](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L132-L165)
-
-模型空间键与解析失败回退。
+先查 API key 库范围，再逐库判 Viewer；区分查询失败与拒绝。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-// ResolveEmbeddingModelKeys resolves embedding model IDs to their actual model
-// identity key (name + endpoint + configured vector dimension). KBs using the
-// same underlying model and vector space across different tenants will share
-// the same key, enabling optimal grouping without reusing a query embedding
-// across incompatible index dimensions.
-func (s *knowledgeBaseService) ResolveEmbeddingModelKeys(ctx context.Context, kbs []*types.KnowledgeBase) map[string]string {
-	type modelRef struct {
-		ModelID  string
-		TenantID uint64
-	}
-
-	// Deduplicate model references
-	uniqueRefs := make(map[modelRef]struct{})
-	kbRefs := make(map[string]modelRef, len(kbs))
+	kbIDs := make([]string, 0, len(kbs))
 	for _, kb := range kbs {
-		ref := modelRef{ModelID: kb.EmbeddingModelID, TenantID: kb.TenantID}
-		uniqueRefs[ref] = struct{}{}
-		kbRefs[kb.ID] = ref
+		kbIDs = append(kbIDs, kb.ID)
+	}
+	if err := types.AuthorizeTenantAPIKeyKnowledgeBases(ctx, kbIDs...); err != nil {
+		return err
 	}
 
-	// Resolve each unique (modelID, tenantID) to a model identity key. The
-	// configured dimension is part of the key because providers such as OpenAI
-	// support multiple output widths for one model name and endpoint.
-	resolvedKeys := make(map[modelRef]string, len(uniqueRefs))
-	for ref := range uniqueRefs {
-		tenantCtx := types.WithExecutionTenant(ctx, ref.TenantID)
-		model, err := s.modelService.GetModelByID(tenantCtx, ref.ModelID)
-		if err != nil || model == nil {
-			logger.Warnf(ctx, "ResolveEmbeddingModelKeys: cannot resolve model %s for tenant %d: %v", ref.ModelID, ref.TenantID, err)
-			resolvedKeys[ref] = ref.ModelID
-			continue
+	requestTenantID := types.CallerFromContext(ctx).TenantID
+	permissions := NewKBPermissions(ctx, shares)
+
+	for _, kb := range kbs {
+		hasPermission, permErr := permissions.Check(kb.ID, kb.TenantID, types.OrgRoleViewer)
+		if permErr != nil {
+			logger.ErrorWithFields(ctx, permErr, map[string]interface{}{
+				"caller_tenant_id": requestTenantID,
+				"kb_tenant_id":     kb.TenantID,
+				"kb_id":            kb.ID,
+				"reason":           "shared-KB permission lookup failed",
+			})
+			return apperrors.NewInternalServerError("failed to verify knowledge base access")
 		}
-		resolvedKeys[ref] = fmt.Sprintf("%s|%s|%d", model.Name, model.Parameters.BaseURL,
-			model.Parameters.EmbeddingParameters.Dimension)
+		if !hasPermission {
+			logger.WarnWithFields(ctx, logger.Fields{
+				"caller_tenant_id": requestTenantID,
+				"kb_tenant_id":     kb.TenantID,
+				"kb_id":            kb.ID,
+				"reason":           "tenant lacks viewer permission for foreign-tenant KB",
+			}, "search scope rejected: unauthorized foreign-tenant KB")
+			return apperrors.NewNotFoundError("knowledge base not found")
+		}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search.go:307-318](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L307-L318)
+**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search.go:307-319](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search.go#L307-L319)
 
-无可检索管线返回空。
+无可检索配置可返回空结果。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
 	// Group KBs by (storeID, owner tenant), resolve the bound engine for
@@ -597,154 +885,19 @@ func (s *knowledgeBaseService) ResolveEmbeddingModelKeys(ctx context.Context, kb
 		// so agent tools that combine multiple KB scopes degrade gracefully.
 		logger.Infof(ctx, "No retrievable indexing pipelines across %d KBs", len(kbs))
 		return nil, nil
+	}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:47-83](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L47-L83)
+**依据 6 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:194-207](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledgebase_search_fusion.go#L194-L207)
 
-单检索与混合融合各分支。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-// fuseOrDeduplicate either fuses vector+keyword results via RRF or deduplicates
-// single-retriever results. Every path returns scores in [0, 1] so results of
-// separate searches (per-document targets, embedding-model groups, FAQ vs
-// document calls) can be ranked together downstream:
-//   - vector only: the engines' cosine similarity, unchanged (FAQ thresholds
-//     depend on it);
-//   - keyword only: BM25 divided by the best score of its own list;
-//   - hybrid: weighted RRF divided by its maximum (a chunk ranked first by
-//     both retrievers scores 1).
-//
-// retrievalCfg may be nil — defaults are then used for RRF parameters.
-func fuseOrDeduplicate(
-	ctx context.Context, vectorLists, keywordLists [][]*types.IndexWithScore, retrievalCfg *types.RetrievalConfig,
-) []*types.IndexWithScore {
-	if len(keywordLists) == 0 {
-		// Vector-only: keep original embedding scores (important for FAQ)
-		result := deduplicateByScore(flattenLists(vectorLists))
-		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
-		return result
-	}
-	if len(vectorLists) == 0 {
-		// Keyword-only: keep relative BM25 order, but fold unbounded
-		// scores into [0, 1] before they reach rerank/MMR. Raw BM25
-		// (often >10) saturates compositeScore's 0.3*base term. BM25 from
-		// different engines or indexes is not comparable, so each list is
-		// scaled by its own best score.
-		for _, list := range keywordLists {
-			rescaleUnboundedScores(list)
-		}
-		result := deduplicateByScore(flattenLists(keywordLists))
-		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
-		return result
-	}
-	// Hybrid: use RRF fusion to merge vector + keyword results
-	result := fuseWithRRF(ctx, vectorLists, keywordLists, retrievalCfg)
-	logger.Infof(ctx, "Result count after RRF fusion: %d", len(result))
-	return result
-```
-
-</details>
-
-**依据 5 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:125-151](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L125-L151)
-
-单列表超范围分数缩放。
+实际排序取加权名次之和再归一化。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-func rescaleUnboundedScores(results []*types.IndexWithScore) {
-	maxScore := 0.0
-	for _, r := range results {
-		if r == nil {
-			continue
-		}
-		if math.IsNaN(r.Score) || math.IsInf(r.Score, 0) {
-			continue
-		}
-		if r.Score > maxScore {
-			maxScore = r.Score
-		}
-	}
-	if maxScore <= 1 {
-		return
-	}
-	for _, r := range results {
-		if r == nil {
-			continue
-		}
-		switch {
-		case math.IsNaN(r.Score), math.IsInf(r.Score, -1), r.Score <= 0:
-			r.Score = 0
-		case math.IsInf(r.Score, 1):
-			r.Score = 1
-		default:
-			r.Score = r.Score / maxScore
-```
-
-</details>
-
-**依据 6 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
-
-RRF 及权重归一。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-// fuseWithRRF merges vector and keyword retrieval results using Reciprocal Rank Fusion.
-// RRF score = vectorWeight/(k+vectorRank) + keywordWeight/(k+keywordRank),
-// divided by its maximum (vectorWeight+keywordWeight)/(k+1) so it lands in
-// [0, 1] like the single-retriever paths. Raw RRF tops out near 0.016, which
-// made hybrid hits lose to any vector-only or keyword-only result they were
-// ranked against and left rerank's base-score term and MMR's relevance term
-// with nothing to work with.
-//
-// A chunk's rank for a retriever is its best position in any one list of
-// that retriever, each list ordered by its own score. Positions in the
-// concatenation of several lists are arbitrary: the second list's best hit
-// would otherwise rank behind every hit of the first.
-// k, vectorWeight and keywordWeight are sourced from retrievalCfg (with defaults).
-// The merged results are sorted by RRF score descending.
-func fuseWithRRF(
-	ctx context.Context, vectorLists, keywordLists [][]*types.IndexWithScore, retrievalCfg *types.RetrievalConfig,
-) []*types.IndexWithScore {
-	rrfK := retrievalCfg.GetEffectiveRRFK()
-	vectorWeight, keywordWeight := retrievalCfg.GetEffectiveRRFWeights()
-	maxRRF := (vectorWeight + keywordWeight) / float64(rrfK+1)
-```
-
-</details>
-
-**依据 7 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:177-206](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L177-L206)
-
-按 chunk 最佳排名合并并排序。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-	vectorRanks := bestRanks(vectorLists)
-	keywordRanks := bestRanks(keywordLists)
-
-	// Collect all unique chunks — prefer vector result's metadata for each chunk
-	chunkInfoMap := make(map[string]*types.IndexWithScore)
-	for _, r := range flattenLists(vectorLists) {
-		if existing, exists := chunkInfoMap[r.ChunkID]; !exists || r.Score > existing.Score {
-			chunkInfoMap[r.ChunkID] = r
-		}
-	}
-	for _, r := range flattenLists(keywordLists) {
-		if _, exists := chunkInfoMap[r.ChunkID]; !exists {
-			chunkInfoMap[r.ChunkID] = r
-		}
-	}
-
 	// Compute weighted RRF scores and assign to each chunk
 	result := make([]*types.IndexWithScore, 0, len(chunkInfoMap))
 	for chunkID, info := range chunkInfoMap {
@@ -763,248 +916,455 @@ func fuseWithRRF(
 
 </details>
 
+**依据 7 · 源码核查**：[internal/application/service/session_knowledge_qa.go:768-796](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L768-L796)
+
+取消优先于无结果兜底，非空结果类错误单独处理。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+		if ctxErr := ctx.Err(); ctxErr != nil {
+			common.PipelineWarn(ctx, "Pipeline", "stage_cancelled", map[string]interface{}{
+				"event":       string(eventType),
+				"duration_ms": stageDuration.Milliseconds(),
+				"reason":      ctxErr.Error(),
+			})
+			return ctxErr
+		}
+
+		if err == chatpipeline.ErrSearchNothing {
+			common.PipelineWarn(ctx, "Pipeline", "stage_fallback", map[string]interface{}{
+				"event":       string(eventType),
+				"duration_ms": stageDuration.Milliseconds(),
+				"reason":      "search_nothing",
+				"strategy":    string(chatManage.FallbackStrategy),
+			})
+			s.handleFallbackResponse(ctx, chatManage)
+			return nil
+		}
+
+		if err != nil {
+			common.PipelineError(ctx, "Pipeline", "stage_failed", map[string]interface{}{
+				"event":       string(eventType),
+				"duration_ms": stageDuration.Milliseconds(),
+				"error_type":  err.ErrorType,
+				"description": err.Description,
+			})
+			return err.Err
+		}
+```
+
+</details>
+
+**依据 8 · 源码核查**：[config/config.yaml:9-21](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/config/config.yaml#L9-L21)
+
+自带配置的回退策略值为 model，另有固定回退文案。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+conversation:
+  max_rounds: 5
+  keyword_threshold: 0.3
+  embedding_top_k: 30
+  vector_threshold: 0.2
+  rerank_threshold: 0.3
+  rerank_top_k: 30
+  fallback_strategy: "model"
+  fallback_response: "Sorry, I am unable to answer this question."
+  fallback_prompt_id: "default_fallback_prompt"  # from prompt_templates/fallback.yaml (mode: "model")
+  enable_rewrite: true
+  enable_query_expansion: true
+  enable_rerank: true
+```
+
+</details>
+
+**依据 9 · 源码核查**：[internal/application/service/session_knowledge_qa.go:1078-1098](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L1078-L1098)
+
+模型兜底实际调用 ChatStream，启动失败或空通道转固定回答。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+	// Start streaming response
+	fallbackMessages, modelContext := prepareFallbackMessages(chatManage, promptContent)
+	if leaks := modelContext.LeakedIdentifiers(fallbackMessages); len(leaks) > 0 {
+		logger.Warnf(ctx, "[Fallback][ModelContext] %d message field(s) carry raw identifiers after encoding: %s",
+			len(leaks), modelcontext.SummarizeLeaks(leaks))
+	}
+	responseChan, err := chatModel.ChatStream(ctx, fallbackMessages, opt)
+	if err != nil {
+		logger.Errorf(ctx, "Failed to start streaming fallback response: %v, falling back to fixed response", err)
+		s.handleFixedFallback(ctx, chatManage)
+		return
+	}
+
+	if responseChan == nil {
+		logger.Errorf(ctx, "Chat stream returned nil channel, falling back to fixed response")
+		s.handleFixedFallback(ctx, chatManage)
+		return
+	}
+
+	// Start goroutine to consume stream and emit events
+	go s.consumeFallbackStream(ctx, chatManage, responseChan, modelContext)
+```
+
+</details>
+
 #### 缺口
 
-- 语料、模型配置、FAQ 阈值及查询质量未实测
-  **影响**：无法宣称召回更好、分数可信概率或空结果即无资料
-  **进一步探讨**：针对多来源和不同模型，以有标签问题集测召回、引用和误授权
+- 未取得目标组织中共享、撤权和跨账号会话的故障注入或结果证据。
+  **影响**：无法把源码的多层检查扩展为对任意租户路径的隔离保证。
+  **进一步探讨**：用两个测试账号和各自独有的哨兵文档验证获准访问、越权、撤权后重试以及引用跳转；分开记录每条端点。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 部署、治理、恢复和退出成本是什么？
+### Q04 · 部署、导入、持续问答与恢复分别需要什么？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
+**研究主题**：依赖、兼容与流程、效果与总成本
 
 #### 完整回答
 
-自托管作者路径依赖 Docker、Compose 和 Git，还需配置模型、数据库、索引与网络；文档列出多种部署方式，不能把代码版本等同部署中的镜像或外部服务。管理员需清理资料、限定知识库角色并维护模型空间；日常还需检查引用、模型与调用费用，故障时核对原件、向量索引与备份，再判断重建。固定源码对指定资源入口有授权保护，但真实备份、迁移和外部服务并未验证。具备运维能力的团队可用非敏感资料、小规模角色和既有检索方案作试点；越权、错误引用或恢复不明时停用自动答复并回退人工检索。部署和单位合格问答成本未知。
+以仓库默认 Compose 为边界，Web 容器依赖健康的应用容器，应用启动依赖 Redis 已启动以及 PostgreSQL、docreader 健康。默认数据库和检索驱动都指向 PostgreSQL，本地上传目录有独立数据卷。配置引用的 UI、应用和解析器镜像在未指定版本时用 latest，因此按文档拉镜像不等于运行这次固定源码，应先核对版本或用对应版本构建。查库需准备与该库兼容的索引和向量模型，回答需要可用的问答模型，重排是按配置生效的增量，图谱、额外存储与追踪属于选配。使用外部模型时还要核实查询、检索片段和跟踪数据的出站与权限。
+
+上传后会先有待处理记录和原文件，随后后台任务才加工索引。文件入队报错会尝试标记失败，但服务仍可把记录返回给调用方，标记失败自身也有数据库写入出错的路径。管理员应先核对记录状态、文件及任务，再重试，最后用已知问题查出预期片段。升级或退出前应备份原件、数据库及所用外部存储，演练用同模型恢复或重建索引。对一条有原文可核对且审核通过的答复，现金与资源应计入算力、存储、模型调用及失败重试，人工时间应计入配置、授权、资料维护、故障排查和答案复核。实际金额和耗时未知，不能仅以对话接口成功或一次生成 token 推算单位成本。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:87-97](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/README.md#L87-L97)
+**依据 1 · 源码核查**：[VERSION:1-1](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/VERSION#L1-L1)
 
-作者描述自托管和 Docker 依赖。
-
-<details>
-<summary>查看原文（11行）</summary>
+根仓版本文件声明项目版本，不能据此判定任意镜像对应源码。
 
 ```text
-      <sub>SELF-HOSTED</sub><br/>
-      <b>Your own environment</b><br/>
-      Deploy with Docker or Kubernetes and configure models, storage and networking yourself.<br/><br/>
-      <a href="#run-with-docker-compose">Run with Docker Compose ↓</a>
-    </td>
-  </tr>
-</table>
+0.9.0
+```
 
+**依据 2 · 作者声明**：[README.md:95-110](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/README.md#L95-L110)
+
+作者给出 Compose 启动和本地模型接入的操作边界。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+````text
 ### Run with Docker Compose
 
 Requires [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/) and [Git](https://git-scm.com/).
+
+```bash
+git clone https://github.com/Tencent/WeKnora.git
+cd WeKnora
+cp .env.example .env    # Edit .env as needed, see comments in the file
+docker compose pull     # Pull the latest images
+docker compose up -d    # Start core services
+```
+
+Then open **http://localhost** and follow the onboarding guide. A walkthrough with sample data is in the [Quickstart](https://weknora.weixin.qq.com/docs/01-getting-started/03-quickstart).
+
+> [!TIP]
+> To use a local Ollama model, run `ollama serve > /dev/null 2>&1 &` first. For the Ollama embedding model name, `OLLAMA_BASE_URL`, and RAM notes, see [Configuration](https://weknora.weixin.qq.com/docs/01-getting-started/04-configuration).
+````
+
+</details>
+
+**依据 3 · 源码核查**：[docker-compose.yml:29-40](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/docker-compose.yml#L29-L40)
+
+Web 依赖健康 App；App 镜像在未指定变量时取 latest。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    depends_on:
+      app:
+        condition: service_healthy
+    networks:
+      - WeKnora-network
+    restart: unless-stopped
+
+  app:
+    image: wechatopenai/weknora-app:${WEKNORA_VERSION:-latest}
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.app
 ```
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:58-65](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/README.md#L58-L65)
+**依据 4 · 源码核查**：[docker-compose.yml:151-176](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/docker-compose.yml#L151-L176)
 
-作者描述权限、可替换模型和存储。
-
-```text
-Beyond the three modes:
-
-- **Memory and curation**: cross-session long-term memory keeps the profile, preferences and facts a user has confirmed. Folder uploads keep their directory tree, and retrieval chunks can be edited, diffed and rolled back.
-- **Data sources and formats**: auto-sync from Feishu wiki / Feishu Drive / Confluence / GitLab / Tencent IMA / Notion / Yuque / DingTalk Docs / Seafile / RSS, with more on the way. 10+ document formats including PDF, Word, images, Excel and XMind; Office files are parsed in-process by anydoc.
-- **Channels and integrations**: Q&A in WeCom, Feishu, Slack, Telegram and other IM apps; an embed widget for external websites; a built-in MCP Server for Cursor, Claude and other AI tools; scoped API keys with a principal model for programmatic access.
-- **Models**: 29 built-in vendors with a generated model catalog, including OpenAI, DeepSeek, Qwen (Alibaba Cloud), Zhipu, Hunyuan, Gemini, MiniMax, NVIDIA, LiteLLM and Ollama.
-- **Permissions and operations**: multi-workspace RBAC (four roles, per-resource ownership, per-workspace audit log), several storage instances per workspace, a runtime task-queue dashboard with worker-pool governance, and Langfuse tracing for agent steps, token usage and pipelines.
-- **Deployment**: LLMs, vector databases and storage backends are all swappable. Deploy locally or on a private cloud and keep the data in your own environment.
-```
-
-**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search.go:109-128](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L109-L128)
-
-维度不匹配提示检查与重建。
+默认数据库及检索驱动均配置为 PostgreSQL，未填凭据使用空默认值。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-// validateQueryEmbeddingDimension catches provider/model configuration drift
-// before a malformed query reaches the vector store. Without this check, a
-// provider returning a different vector size is reported as the misleading
-// generic 2201 "bound store unavailable" error (or, for dimension-partitioned
-// stores, silently produces no matches).
-func validateQueryEmbeddingDimension(model embedding.Embedder, actual int) error {
-	if model == nil || actual == 0 {
-		return nil
-	}
-	expected := model.GetDimensions()
-	if expected <= 0 || expected == actual {
-		return nil
-	}
-	return apperrors.NewVectorStoreUnavailableError(
-		"embedding vector dimension does not match the configured model",
-	).WithDetails(map[string]any{
-		"model":              model.GetModelName(),
-		"expected_dimension": expected,
-		"actual_dimension":   actual,
-		"hint":               fmt.Sprintf("check the embedding model configuration and rebuild the affected index (%d dimensions)", expected),
+      - DB_DRIVER=${DB_DRIVER:-postgres}
+      - DB_HOST=${DB_HOST:-postgres}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-}
+      - DB_PASSWORD=${DB_PASSWORD:-}
+      - DB_NAME=${DB_NAME:-}
+      - DB_MAX_OPEN_CONNS=${DB_MAX_OPEN_CONNS:-}
+      # SQLite 驱动时使用（DB_DRIVER=sqlite）；postgres 驱动忽略
+      # - DB_PATH=${DB_PATH:-}
+      # ========== Langfuse (optional observability) ==========
+      # Enabled automatically when LANGFUSE_PUBLIC_KEY + LANGFUSE_SECRET_KEY are set.
+      # See website-docs/03-features/16-observability.md for the full list of tuning knobs.
+      - LANGFUSE_ENABLED=${LANGFUSE_ENABLED:-}
+      - LANGFUSE_HOST=${LANGFUSE_HOST:-https://cloud.langfuse.com}
+      - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY:-}
+      - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY:-}
+      - LANGFUSE_RELEASE=${LANGFUSE_RELEASE:-}
+      - LANGFUSE_ENVIRONMENT=${LANGFUSE_ENVIRONMENT:-}
+      - LANGFUSE_FLUSH_AT=${LANGFUSE_FLUSH_AT:-}
+      - LANGFUSE_FLUSH_INTERVAL=${LANGFUSE_FLUSH_INTERVAL:-}
+      - LANGFUSE_QUEUE_SIZE=${LANGFUSE_QUEUE_SIZE:-}
+      - LANGFUSE_REQUEST_TIMEOUT=${LANGFUSE_REQUEST_TIMEOUT:-}
+      - LANGFUSE_SAMPLE_RATE=${LANGFUSE_SAMPLE_RATE:-}
+      - LANGFUSE_DEBUG=${LANGFUSE_DEBUG:-}
+      # 向量库 / 检索引擎
+      - RETRIEVE_DRIVER=${RETRIEVE_DRIVER:-postgres}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[internal/handler/knowledgebase.go:423-445](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/handler/knowledgebase.go#L423-L445)
+**依据 5 · 源码核查**：[docker-compose.yml:409-415](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/docker-compose.yml#L409-L415)
 
-服务错误返回边界。
-
-<details>
-<summary>查看原文（23行）</summary>
+App 依赖 Redis 启动和另外两项健康检查。
 
 ```text
-	// Execute hybrid search. Without a rerank object this is the raw recall
-	// primitive it has always been; with one, the response carries meta.
-	// Note: For shared KBs, the service uses effectiveTenantID internally via context
-	var retrieval *types.RetrievalResult
-	if req.Rerank != nil {
-		retrieval, err = h.service.HybridSearchWithRerank(c.Request.Context(), id, req)
-	} else {
-		var results []*types.SearchResult
-		results, err = h.service.HybridSearch(c.Request.Context(), id, req)
-		retrieval = &types.RetrievalResult{Results: results}
-	}
+    depends_on:
+      redis:
+        condition: service_started
+      postgres:
+        condition: service_healthy
+      docreader:
+        condition: service_healthy
+```
+
+**依据 6 · 源码核查**：[docker-compose.yml:54-57](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/docker-compose.yml#L54-L57)
+
+本地原件挂载到独立数据卷，配置文件也单独挂载。
+
+```text
+    volumes:
+      - data-files:/data/files
+      - docreader-tmp:/tmp/docreader:ro
+      - ./config/config.yaml:/app/config/config.yaml
+```
+
+**依据 7 · 源码核查**：[internal/application/service/knowledge_create.go:272-293](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledge_create.go#L272-L293)
+
+异步队列失败可返回已保存记录；成功入队时状态仍是 pending。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+	task := asynq.NewTask(
+		types.TypeDocumentProcess,
+		payloadBytes,
+		documentProcessTaskOptions(s.config, asynq.MaxRetry(3))...,
+	)
+	info, err := s.task.Enqueue(task)
 	if err != nil {
-		// Service-layer typed AppErrors (e.g. ErrVectorStoreBindingInvalid,
-		// ErrVectorStoreUnavailable, BadRequest from multi-store fan-out)
-		// must reach the client with their original code rather than be
-		// downgraded to InternalServerError. Mirrors the pattern used in
-		// CreateKnowledgeBase.
-		if appErr, ok := apperrors.IsAppError(err); ok {
-			c.Error(appErr)
-			return
-		}
-		logger.ErrorWithFields(ctx, err, nil)
-		c.Error(apperrors.NewInternalServerError(err.Error()))
+		logger.Errorf(ctx, "Failed to enqueue document process task: %v", err)
+		s.markKnowledgeEnqueueFailed(ctx, knowledge)
+		recordKBActivity(ctx, s.audit, knowledge.TenantID, kbID, types.AuditActionKnowledgeCreated,
+			"knowledge", knowledge.ID, types.AuditOutcomeFailed, map[string]any{
+				"title": knowledge.Title, "source_type": "file", "file_type": knowledge.FileType,
+				"processing_status": "failed", "failure_stage": "enqueue",
+			})
+		// 即使入队失败，也返回knowledge，因为文件已保存
+		return knowledge, nil
+	}
+	recordKBActivity(ctx, s.audit, knowledge.TenantID, kbID, types.AuditActionKnowledgeCreated,
+		"knowledge", knowledge.ID, types.AuditOutcomeAccepted, map[string]any{
+			"title": knowledge.Title, "source_type": "file", "file_type": knowledge.FileType,
+			"processing_status": "pending", "task_id": info.ID, "trigger": kbActivityTrigger(ctx),
+		})
 ```
 
 </details>
+
+**依据 8 · 源码核查**：[internal/application/service/knowledge_create.go:1186-1197](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledge_create.go#L1186-L1197)
+
+失败标记需要数据库写入，更新失败只记日志。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+// markKnowledgeEnqueueFailed prevents a durable knowledge row from remaining
+// indefinitely "pending" when its background processing task was never
+// created. The API may still return the row so callers can retry it.
+func (s *knowledgeService) markKnowledgeEnqueueFailed(ctx context.Context, knowledge *types.Knowledge) {
+	if knowledge == nil {
+		return
+	}
+	knowledge.ParseStatus = "failed"
+	knowledge.ErrorMessage = "Failed to enqueue processing task"
+	if err := s.repo.UpdateKnowledge(ctx, knowledge); err != nil {
+		logger.Errorf(ctx, "Failed to mark knowledge as failed after enqueue error: %v", err)
+	}
+```
+
+</details>
+
+**依据 9 · 源码核查**：[internal/application/service/knowledge_process.go:4343-4349](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/knowledge_process.go#L4343-L4349)
+
+文档切块后还有向量化与索引阶段，上传后不能直接假定资料可检索。
+
+```text
+		logger.Infof(ctx, "Split document into %d chunks for knowledge %s", len(chunks), knowledge.ID)
+	}
+	logger.Infof(ctx, "Document chunking completed in %s (knowledge=%s input_bytes=%d chunks=%d)",
+		time.Since(chunkStarted), knowledge.ID, len(convertResult.MarkdownContent), len(chunks))
+
+	// Step 4: Process chunks (vectorize + index + enqueue async tasks)
+	return s.processChunks(ctx, kb, knowledge, chunks, processOpts)
+```
 
 #### 缺口
 
-- 未部署固定版本、测恢复或核对外部服务费用
-  **影响**：无法证明成本及灾难恢复能力
-  **进一步探讨**：隔离数据验证备份、恢复、撤权与目标供应商账单
+- 缺同语料、并发与模型配置的部署/恢复记录。
+  **影响**：无法给出一次合格答复的现金、恢复时间或状态损失范围。
+  **进一步探讨**：以固定样本记录每批导入和答复的模型调用、资源账单、复核工时及恢复后的可检索性。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 融合配置有什么可证伪改进假设？
+### Q05 · 如何用小范围试用判断是否值得维护该系统？
 
-**研究主题**：新假设与验证、贡献与相对优势
+**研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-现有融合已使用 retrievalCfg 的向量/关键词权重和 RRF K，单检索有不同的保分或缩放分支；自动按问题与文档类别调权不能当成已实现。可提出未验证假设：依据已审核的资料类型和查询结构，选择预先评估过的权重，并在每次结果记录策略版本及回退原因，相比统一默认配置可能改善弱类召回和可解释性。应在留出问题集、相同角色和模型下，对照默认权重、单向量与单关键词，测每类召回、引用正确、最差类别、延迟与人工调参；仅训练集提升、弱类别明显恶化、授权结果变化或维护成本超过收益则否定。
+建议已有运维和资料治理能力的团队在隔离环境，用一组非敏感的内部手册试做常见问答。先关闭网络搜索，固定语料、角色、索引模型和问答模型，给每题标出允许的出处及合格答案；样本同时含无依据问题、同主题旧版文档以及跨角色不能读取的哨兵原件。平台已分别输出检索引用与兜底事件。由此提出待验证的流程假设：让内部答疑人员对无检索命中的题使用固定拒答，并逐条检查最关键结论是否得到当前版本原文支撑，再决定是否转人工，可减少误发缺依据的答复。增量是面向发布者的验收动作和转交规则，用户需额外花时间核对原文。
+
+最小对照在同一语料、模型和角色下比较自带模型兜底与固定拒答加引用复核，再保留人工查找并答复作为成本基线。记录错误放行、把本可回答问题转走的次数、转人工处理时间及一条合格答复的复核时间。若出现越权片段、找不到证据但仍把回答交付，或误转人工增加导致没有总负担收益，停用自动答复并退回受权限控制的文档检索和人工审核。对没有团队索引和授权维护能力、只偶尔查单文件的个人，当前采用负担难以抵消。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:47-83](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L47-L83)
+**依据 1 · 源码核查**：[internal/application/service/session_knowledge_qa.go:1022-1036](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L1022-L1036)
 
-现有分支和规范化。
+模型与固定兜底是已有可切换策略，固定兜底从配置取文案。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-// fuseOrDeduplicate either fuses vector+keyword results via RRF or deduplicates
-// single-retriever results. Every path returns scores in [0, 1] so results of
-// separate searches (per-document targets, embedding-model groups, FAQ vs
-// document calls) can be ranked together downstream:
-//   - vector only: the engines' cosine similarity, unchanged (FAQ thresholds
-//     depend on it);
-//   - keyword only: BM25 divided by the best score of its own list;
-//   - hybrid: weighted RRF divided by its maximum (a chunk ranked first by
-//     both retrievers scores 1).
-//
-// retrievalCfg may be nil — defaults are then used for RRF parameters.
-func fuseOrDeduplicate(
-	ctx context.Context, vectorLists, keywordLists [][]*types.IndexWithScore, retrievalCfg *types.RetrievalConfig,
-) []*types.IndexWithScore {
-	if len(keywordLists) == 0 {
-		// Vector-only: keep original embedding scores (important for FAQ)
-		result := deduplicateByScore(flattenLists(vectorLists))
-		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
-		return result
+// handleFallbackResponse handles fallback response based on strategy
+func (s *sessionService) handleFallbackResponse(ctx context.Context, chatManage *types.ChatManage) {
+	if chatManage.FallbackStrategy == types.FallbackStrategyModel {
+		s.handleModelFallback(ctx, chatManage)
+	} else {
+		s.handleFixedFallback(ctx, chatManage)
 	}
-	if len(vectorLists) == 0 {
-		// Keyword-only: keep relative BM25 order, but fold unbounded
-		// scores into [0, 1] before they reach rerank/MMR. Raw BM25
-		// (often >10) saturates compositeScore's 0.3*base term. BM25 from
-		// different engines or indexes is not comparable, so each list is
-		// scaled by its own best score.
-		for _, list := range keywordLists {
-			rescaleUnboundedScores(list)
-		}
-		result := deduplicateByScore(flattenLists(keywordLists))
-		logger.Infof(ctx, "Result count after deduplication: %d", len(result))
-		return result
-	}
-	// Hybrid: use RRF fusion to merge vector + keyword results
-	result := fuseWithRRF(ctx, vectorLists, keywordLists, retrievalCfg)
-	logger.Infof(ctx, "Result count after RRF fusion: %d", len(result))
-	return result
+}
+
+// handleFixedFallback handles fixed fallback response
+func (s *sessionService) handleFixedFallback(ctx context.Context, chatManage *types.ChatManage) {
+	fallbackContent := chatManage.FallbackResponse
+	chatManage.ChatResponse = &types.ChatResponse{Content: fallbackContent}
+	s.emitFallbackAnswer(ctx, chatManage, fallbackContent)
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[internal/application/service/knowledgebase_search_fusion.go:156-175](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search_fusion.go#L156-L175)
+**依据 2 · 源码核查**：[internal/application/service/session_knowledge_qa.go:1306-1318](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L1306-L1318)
 
-现有权重和 RRF K 来自配置。
+合并候选的引用事件为验收动作提供可检查对象。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-// fuseWithRRF merges vector and keyword retrieval results using Reciprocal Rank Fusion.
-// RRF score = vectorWeight/(k+vectorRank) + keywordWeight/(k+keywordRank),
-// divided by its maximum (vectorWeight+keywordWeight)/(k+1) so it lands in
-// [0, 1] like the single-retriever paths. Raw RRF tops out near 0.016, which
-// made hybrid hits lose to any vector-only or keyword-only result they were
-// ranked against and left rerank's base-score term and MMR's relevance term
-// with nothing to work with.
-//
-// A chunk's rank for a retriever is its best position in any one list of
-// that retriever, each list ordered by its own score. Positions in the
-// concatenation of several lists are arbitrary: the second list's best hit
-// would otherwise rank behind every hit of the first.
-// k, vectorWeight and keywordWeight are sourced from retrievalCfg (with defaults).
-// The merged results are sorted by RRF score descending.
-func fuseWithRRF(
-	ctx context.Context, vectorLists, keywordLists [][]*types.IndexWithScore, retrievalCfg *types.RetrievalConfig,
-) []*types.IndexWithScore {
-	rrfK := retrievalCfg.GetEffectiveRRFK()
-	vectorWeight, keywordWeight := retrievalCfg.GetEffectiveRRFWeights()
-	maxRRF := (vectorWeight + keywordWeight) / float64(rrfK+1)
+func emitKnowledgeReferencesEvent(ctx context.Context, chatManage *types.ChatManage) {
+	if chatManage == nil || chatManage.EventBus == nil || len(chatManage.MergeResult) == 0 {
+		return
+	}
+	logger.Infof(ctx, "Emitting references event with %d results (pre-answer)", len(chatManage.MergeResult))
+	if err := chatManage.EventBus.Emit(ctx, types.Event{
+		ID:        generateEventID("references"),
+		Type:      types.EventType(event.EventAgentReferences),
+		SessionID: chatManage.SessionID,
+		Data: event.AgentReferencesData{
+			References: chatManage.MergeResult,
+		},
+	}); err != nil {
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[internal/application/service/knowledgebase_search.go:369-373](https://github.com/Tencent/WeKnora/blob/80e8345903ce4af970497de8359b8b4ea4ce4917/internal/application/service/knowledgebase_search.go#L369-L373)
+**依据 3 · 源码核查**：[internal/handler/session/qa.go:1507-1527](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/handler/session/qa.go#L1507-L1527)
 
-从租户配置读取融合参数。
+普通问答累加回答片段并保留兜底、截断信息，最终交给完成处理。
+
+<details>
+<summary>查看原文（21行）</summary>
 
 ```text
-	var retrievalCfg *types.RetrievalConfig
-	if tenantInfo != nil {
-		retrievalCfg = tenantInfo.RetrievalConfig
-	}
-	deduplicatedChunks := fuseOrDeduplicate(ctx, vectorLists, keywordLists, retrievalCfg)
+		streamCtx.eventBus.On(event.EventAgentFinalAnswer, func(ctx context.Context, evt event.Event) error {
+			data, ok := evt.Data.(event.AgentFinalAnswerData)
+			if !ok {
+				return nil
+			}
+			streamCtx.assistantMessage.Content += data.Content
+			if data.IsFallback {
+				streamCtx.assistantMessage.IsFallback = true
+			}
+			if data.Truncated {
+				markQuickAnswerTruncated(streamCtx.assistantMessage)
+			}
+			if data.Done {
+				if completionHandled {
+					return nil
+				}
+				completionHandled = true
+
+				logger.Infof(streamCtx.asyncCtx, "Knowledge QA service completed for session: %s", sessionID)
+				updateCtx := context.WithValue(streamCtx.asyncCtx, types.TenantIDContextKey, reqCtx.session.TenantID)
+				h.completeQuickAnswerTurn(updateCtx, streamCtx, reqCtx.query, reqCtx.userMessageID)
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[internal/application/service/session_knowledge_qa.go:1332-1341](https://github.com/Tencent/WeKnora/blob/e3fb2335bf3f8cadd32142380c60b2677a27bf99/internal/application/service/session_knowledge_qa.go#L1332-L1341)
+
+固定回退发出明确的 IsFallback 完成事件，可与正常结果区分。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+	fallbackID := generateEventID("fallback")
+	if err := chatManage.EventBus.Emit(ctx, types.Event{
+		ID:        fallbackID,
+		Type:      types.EventType(event.EventAgentFinalAnswer),
+		SessionID: chatManage.SessionID,
+		Data: event.AgentFinalAnswerData{
+			Content:    content,
+			Done:       true,
+			IsFallback: true,
+		},
+```
+
+</details>
 
 #### 缺口
 
-- 缺少自动策略、带标签数据集与对照实验
-  **影响**：无法断言改善质量或经济性
-  **进一步探讨**：固定语料和隔离角色，比较留出集与最差类别
+- 缺上述人工复核和固定拒答对照的实际记录。
+  **影响**：不能断言会降低误答、工时或复核负担。
+  **进一步探讨**：采用事先登记的误发、误转人工、隔离和单位合格答复指标，记录所有失败尝试。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

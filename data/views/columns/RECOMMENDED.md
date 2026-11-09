@@ -91,7 +91,7 @@
 | [dsh-agent-recycle-guard](#plugin-1414323673-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 适合有独立备份的DSH维护者在可丢弃目录试用常见删除缓冲；须接受有限脚本覆盖并核对权限重入和回收结果。 |
 | [AgentCompare](#plugin-1442340074-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在 DSH 生成双候选界面方案，绑定共同验收并控制选择与写回。 | 需要比较界面方案的开发者可在无凭据测试仓试一次双候选并另存分支。 |
 | [HelloAGENTS](#plugin-1064776002-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为AI编码CLI提供任务路由、质量Skill、项目知识、会话恢复和交付检查脚本。 | 有多阶段跨轮编码任务的CLI用户可在一个副本项目试用。 |
-| [Ouroboros 规格先行引擎](#plugin-1133901637-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 通过访谈、固定规格、执行与多阶段评估组织 AI 软件开发任务。 | 能够审查验证命令和验收标准的开发者可在可丢弃项目副本中试一项小任务。 |
+| [OpenViking](#plugin-1128123594-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 AI Agent 组织、浏览、检索与复用知识、记忆和技能的上下文数据库。 | 维护 Agent 项目资料的团队可用独立测试库摄入一批可公开文档，并核对问答所指的原文。 |
 | [PicGo](#plugin-113965016-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 重复处理文档配图且已有可信图床的创作者可用非敏感样本试用，先验证链接权限与混合失败恢复。 |
 | [See Wxapkg](#plugin-1146519069-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 自托管微信小程序 wxapkg 静态恢复工具，提供解密、解包、工程整理与结果报告。 | 拥有目标包分析权限的开发者可在受控自托管环境试用 See Wxapkg 阅读恢复工程。 |
 | [Sealos Skills](#plugin-1150374613-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 向 DSH 注册 Sealos 部署与运维技能，提供模板部署、数据库、存储及故障诊断指引。 | 已有 Sealos 账号并熟悉命名空间的 DSH 用户可在本地路径试部署无生产数据的小应用。 |
@@ -1851,25 +1851,25 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1133901637-root"></a>
+<a id="plugin-1128123594-root"></a>
 
-## [Ouroboros 规格先行引擎](../../plugins/q00--ouroboros/INSIGHT.md)
+## [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md)
 
-[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
 
-[![GitHub ★ 6,299](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C299&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
+[![GitHub ★ 41,761](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41%2C761&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking)
 
-**主要用途**：通过访谈、固定规格、执行与多阶段评估组织 AI 软件开发任务。
+**主要用途**：为 AI Agent 组织、浏览、检索与复用知识、记忆和技能的上下文数据库。
 
 **建议**：试用
 
-**推荐理由**：能够审查验证命令和验收标准的开发者可在可丢弃项目副本中试一项小任务。相比人工清单，它将规格、机械证据与建议性审阅串联，但并未证明降低返工或覆盖全部需求。若无有效执行证据、检查不能对应需求或外部状态不明，应停止循环并回人工清单核对。
+**推荐理由**：维护 Agent 项目资料的团队可用独立测试库摄入一批可公开文档，并核对问答所指的原文。相比逐个翻找项目文件，它将语义检索限定在指定目录并提供摘要和原文读取入口。若命中跨越授权范围，或无法解释旧摘要与原文的差别，应暂停采集并回到原文件搜索。
 
 **核查情况**：已核查固定版本源码；无同版本宿主验收记录。
 
-**试用条件**：[Q05](../../plugins/q00--ouroboros/INSIGHT.md#research-q05) 仅在可丢弃副本试小任务并检查命令与各项验收；无有效证据或状态不明时暂停并回人工核对。
+**试用条件**：[Q04](../../plugins/volcengine--openviking/INSIGHT.md#research-q04) 使用已有原文件可恢复的隔离样本。先以一个目录的问题验证任务回执、结果路径、逐字原文，再试一个禁止访问的目录。如果授权或更新状态无法解释，保留原有搜索并停止摄入新资料。
 
-[查看完整分析 →](../../plugins/q00--ouroboros/INSIGHT.md)
+[查看完整分析 →](../../plugins/volcengine--openviking/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2317,4 +2317,4 @@
 
 ## 更新时间
 
-2026-11-06
+2026-11-09
