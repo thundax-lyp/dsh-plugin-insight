@@ -1,0 +1,45 @@
+{
+    "repository": "mingzeng21/dsh-obsidian",
+    "repository_id": 1335613118,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 47,
+    "pushed_at": "2026-11-09T06:18:30Z",
+    "issues": {
+        "open": 0,
+        "closed": 5,
+        "created_30d": 2,
+        "closed_30d": 2,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-obsidian",
+        "captured_at": "2026-11-08T17:57:25.757Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 3836,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-obsidian",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T04:26:46.462Z",
+            "captured_at": "2026-11-08T17:57:25.757Z",
+            "source_url": "https://registry.npmjs.org/dsh-obsidian",
+            "error": null,
+            "latest_version": "0.2.6",
+            "latest_published_at": "2026-09-29T13:46:36.632Z",
+            "latest_error": null
+        }
+    }
+}

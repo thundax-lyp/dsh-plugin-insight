@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[5124cc1](https://github.com/Yuuyuko-uu/dsh-fish-memory/tree/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea)
+源码版本：[9b49f20](https://github.com/Yuuyuko-uu/dsh-fish-memory/tree/9b49f20279835c1fce3e2f924a48ef0da2fd5a75)
 
 <!-- BEGIN META -->
-[![GitHub ★ 464](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=464&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-fish-memory) [![npm 30d 13,720](https://img.shields.io/static/v1?label=npm+30d&message=13%2C720&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fish-memory) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fish-memory)
+[![GitHub ★ 507](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=507&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-fish-memory) [![npm 30d 16,396](https://img.shields.io/static/v1?label=npm+30d&message=16%2C396&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fish-memory) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-fish-memory)
 <!-- END META -->
 
-> **功能**：为 DSH 会话保存带时间的长期记忆，并按相关性和鲜活度召回到上下文。
+> **功能**：为 DSH 会话保存带时间的长期记忆，并按查询相关性和鲜活度选择上下文。
 
-> **亮点**：[Q02](#research-q02)把相关性门槛与衰减排序分开，事实和事件分别分配名额；[Q03](#research-q03)用删除优先与代际检查限制异步旧结果复活。相对手工档案增加可审阅的检索和维护机制，但收益未做同条件对照。
+> **亮点**：把模型选记、文件库和可解释的召回轨迹接入 DSH。中文查询以词证据控制是否进入候选，再用鲜活度决定顺序。文件写回用清理代际拒绝旧结果。见 [Q01](#research-q01)、[Q02](#research-q02) 与 [Q03](#research-q03)。
 
-> **主要限制**：[Q02](#research-q02)确认低信息查询可在常驻事实层之前早退，重要事实不是无条件每轮注入；[Q03](#research-q03)确认后台扩词会调用模型，管理接口遇到鉴权缺失或异常还会放行。长期约束、费用和部署安全均须据实际条件收窄。
+> **主要限制**：长期事实分类在实际选择处被排除，短问可能直接不召回。后台扩词会将记忆文本送给宿主模型，清空回收区还可能留下一份恢复副本。见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 记忆属于谁，如何从写入进入当前提示，和手工短档案相比改变什么？](#detail-section-11)
-  - [Q02 · 长期事实是否每轮出现，衰减和召回阈值实际保证什么？](#detail-section-12)
-  - [Q03 · 删除、跨会话合并及异步扩词会不会恢复旧数据，维护成本由谁承担？](#detail-section-13)
-  - [Q04 · 什么任务可以尝试，如何验收、停止和退出？](#detail-section-14)
-  - [Q05 · 从遗漏与可解释轨迹能推导什么改进，怎样被证伪？](#detail-section-15)
+  - [Q01 · 会话怎么开始记忆，哪些内容实际进入库？](#detail-section-11)
+  - [Q02 · 中文单字、短问和既有事实怎样影响召回？](#detail-section-12)
+  - [Q03 · 删除、停用和后台扩词相遇时，什么会留下？](#detail-section-13)
+  - [Q04 · 管理接口的拒绝条件怎样改变试用边界？](#detail-section-14)
+  - [Q05 · 怎样判断减少无关注入的收益是否覆盖漏召回和成本？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向持续使用 DSH 对话的个人用户，保存约定和事件，并在后续提问时带入相关内容。合格结果仍以事实正确和可纠正为准，见[Q01](#research-q01)。
+> **用途**：持续使用中文 DSH 会话的个人用户，可以保存后续会问到的事件并查看其召回轨迹。固定约束仍由用户掌握。
 
-参照是用户维护并带入的短档案；本组件提供自动检索和轨迹，不能凭自动化推导更高任务质量。
+手工短档案在重要事实发生变化时需维护和重新带入，但用户可精确确认要带的内容。插件把选记、检索与轨迹接到 DSH 会话，召回效果取决于文本、分词与阈值。
 
 <a id="detail-section-3"></a>
 
@@ -51,68 +51,67 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| remember 写入 | 保存带时间的事实或事件 | 会话启用且未达每日配额，模型自行决定调用 |
-| 相关性检索 | 挑选当前提问相关事件 | queryGate、阈值和词项质量影响召回 |
-| 稳定事实层 | 优先带入少量长期约定 | 仍在查询门之后，受条数和预算约束 |
-| 工作区归库与合并 | 在同工作区会话复用记忆 | 主动扩大共享范围，旧库保留 |
-| 管理与轨迹 | 核查、纠正、删除及查看选择原因 | 鉴权依赖宿主拒绝信号，不是独立隔离边界 |
+| --- | --- | --- |
+| 记忆工具 | 记录可复用事件 | 受会话开关、模型选择与配额约束 |
+| 事件召回 | 选择与查询相关的记忆 | 低信息查询可直接跳过 |
+| 管理与诊断 | 检查记忆和轨迹，恢复已删条目 | 依赖 Web 与宿主准入服务 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH 提示、工具和 Agent 服务 | 启动必需 | 注册记忆写入和上下文 | 对应链路不能成立，声明版本不等于已验收 |
-| 本地可写目录与词表 | 保存和检索必需 | 文件库及词项筛选 | 写入报错或召回受影响，需检查具体原因 |
-| 宿主模型 | 整理和自动扩词时必需 | 生成检索词 | 可关闭 autoExpand；现有请求费用未知 |
-| connection 鉴权服务 | 共享部署必须核实 | 限制管理请求 | 当前异常和缺失会放行，不能当独立安全保证 |
+| --- | --- | --- | --- |
+| Node 22+、DSH 0.2.1-rc.2+ | 包声明 | 提供插件宿主 | 实际兼容需单独检查 |
+| 宿主 Agent、提示、工具与定时服务 | 核心 | 发现会话、写入并注入 | 对应功能无法完成 |
+| 可写本地库 | 保存必需 | 写记忆、轨迹和备份 | 检查磁盘或配置 |
+| 宿主模型服务 | 扩词等模型操作需用 | 生成检索词 | 可关闭自动扩词 |
+| webServer 与 connection | 管理操作需用 | 注册路由和准入 | 无管理页或接口拒绝 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户备份并隔离非敏感样本，确认鉴权 | 未授权管理请求被拒，否则停止 |
-| 加载 | 用户按 bundle 方式加载并启用测试会话 | remember 与注入入口出现，不以无报错代替检查 |
-| 执行 | 记录事实和事件，先关闭后台扩词 | 写盘、归库与轨迹一致，异常回到短档案 |
-| 验收 | 用户对比注入和回答，再测删除及模式切换 | 旧事实不被消费，额外调用可解释 |
+| --- | --- | --- |
+| 1 | 用户准备隔离 profile、样本和备份 | 核对匿名请求被拒并关闭自动扩词 |
+| 2 | 用户打开指定会话，记录一条样本事件 | 库中出现内容和日期，回看工具回执 |
+| 3 | 用户用相关句和无关短问触发检索 | 对照实际注入、轨迹和回答 |
+| 4 | 用户删除样本并停用该会话 | 复查历史和备份范围，必要时退回人工短档案 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 本地存储、宿主资源，金额未知 | 配置会话、鉴权、样本和备份，耗时未知 | 不读取真实隐私库 |
-| 持续使用 | 注入 token 与可选模型整理请求，费用未知 | 核对事实、归库和轨迹 | 复用 key 不等于无费用 |
-| 失败恢复与退出 | 备份、日志、旧库占用未知 | 核对删除、合并与实际副本 | 卸载不等于清空所有副本 |
+| --- | --- | --- | --- |
+| 首次 | 本地存储与已有宿主，金额未知 | 配置隔离环境、准入和样本 | 耗时未知 |
+| 持续 | 注入输入和可选额外模型请求，费用未知 | 查漏、核对召回与错条目 | 每合格任务用量未知 |
+| 退出 | 备份、日志和历史占用未知 | 停用并确认旧副本 | 清空当前库只能核对该库 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 记忆进入提示 | 有注册、检索和渲染路径 | 当前宿主实际接入和最终答案正确性 |
-| 旧结果保护 | 墓碑、代际和原子单文件替换 | 跨进程交错是否丢失 |
-| 工作区复用 | 归库键与试算合并实现 | 真实共享场景的错误率与总负担 |
+| --- | --- | --- |
+| 自动选记 | 模型调用工具后写本地库 | 应记内容的覆盖与准确性 |
+| 选择事件 | 相关证据、鲜活度和预算共同作用 | 实际漏项、无关注入及用量 |
+| 管理恢复 | 可复原软删除并拒绝部分旧写回 | 宿主鉴权和并发组合的结果 |
 
-> **思考**：[Q02](#research-q02)确认低信息查询可在常驻事实层之前早退，重要事实不是无条件每轮注入；[Q03](#research-q03)确认后台扩词会调用模型，管理接口遇到鉴权缺失或异常还会放行。长期约束、费用和部署安全均须据实际条件收窄。
+> **思考**：长期事实分类在实际选择处被排除，短问可能直接不召回。后台扩词会将记忆文本送给宿主模型，清空回收区还可能留下一份恢复副本。见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02)把相关性门槛与衰减排序分开，事实和事件分别分配名额；[Q03](#research-q03)用删除优先与代际检查限制异步旧结果复活。相对手工档案增加可审阅的检索和维护机制，但收益未做同条件对照。
+> **亮点**：把模型选记、文件库和可解释的召回轨迹接入 DSH。中文查询以词证据控制是否进入候选，再用鲜活度决定顺序。文件写回用清理代际拒绝旧结果。见 [Q01](#research-q01)、[Q02](#research-q02) 与 [Q03](#research-q03)。
 
-[Q03](#research-q03)的纯合并模块、删除优先、代际检查和单文件原子替换值得借鉴，移植时须保留错误传播与状态所有权。它不提供跨进程事务；管理鉴权异常放行是部署限制，不能因存在包装函数而视为安全已成立。
+管理路由、原子文件写入和候选打分有独立接口。运行时入口集中在 lib/index.js。注入缓存按会话和查询复用，写回检查文件代际，分别控制重复工作与过期写回，详见 [Q02](#research-q02) 和 [Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02)确认低信息查询可在常驻事实层之前早退，重要事实不是无条件每轮注入；[Q03](#research-q03)确认后台扩词会调用模型，管理接口遇到鉴权缺失或异常还会放行。长期约束、费用和部署安全均须据实际条件收窄。
+长期事实分类在实际选择处被排除，短问可能直接不召回。后台扩词会将记忆文本送给宿主模型，清空回收区还可能留下一份恢复副本。见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04)建议先观察；只在已确认鉴权的隔离本机环境使用非敏感样本检查，必要事实遗漏、旧内容污染或请求越权时停用并恢复人工短档案。
+先在单独的本机测试会话关闭自动扩词，验证无关账号无法访问管理路由。放入无敏感样本，比较库中的事实、轨迹和模型实际回答。如果出现越权或反复错召回，停用并恢复手工短档案。见 [Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-现有写入、检索与恢复设计有源码支持；实际效果及宿主兼容未验证。采用结论为观察，新的约束层只是未验证假设。
+源码支持事件记忆的选择、管理与诊断机制。长期约束实验属于未验证假设，真实采用收益及宿主边界待验。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/atomic-file.mjs、lib/store-merge.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 CHANGELOG.md、README.md、cordis.patch.yml、lib/index.js、lib/selfupdate.mjs、lib/准入.mjs、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定根组件；重点检查写入、归库、召回、注入、异步扩词、保存/删除恢复与管理鉴权，未审计全部客户端和导入细节。旧 findings 的场景、机制、范围、分发、依赖、成本、采用、效果、工程及三项综合均据当前材料重新核对。
-- 下一步：后续在隔离目录和宿主中验证短问遗漏、错误事实纠正、后台请求用量、鉴权失败与交错写入；本轮未执行。
+- 边界：检查本地写入、普通事件选择、删除、后台扩词、宿主管理与更新入口。导入、迁移、客户端和宿主实现未逐项审计。
+- 下一步：用隔离样本验证短问、同字异义、旧条目、清空与后台请求交错。管理验收先在匿名与本机登录状态下检查读取路由，避免触发真实更新。
 
 **分析版本**
 
 - **仓库**：[Yuuyuko-uu/dsh-fish-memory](https://github.com/Yuuyuko-uu/dsh-fish-memory)
-- **版本号**：1.5.2（[固定提交 5124cc1](https://github.com/Yuuyuko-uu/dsh-fish-memory/tree/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea)）
-- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.6.0（[固定提交 9b49f20](https://github.com/Yuuyuko-uu/dsh-fish-memory/tree/9b49f20279835c1fce3e2f924a48ef0da2fd5a75)）
+- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +138,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)提出未验证的用户确认加到期约束层，在事件查询门之外控制固定预算。与现有实现和人工短档案比较遗漏、过期污染、token 与维护时间；没有改善或维护更重即停止。
+可单独比较少量由用户确认且会到期的约束是否减少短问漏召回。按每份合格任务检查无关注入、过期污染、额外 token 和维护分钟。见 [Q05](#research-q05)。
 
-后续在隔离目录和宿主中验证短问遗漏、错误事实纠正、后台请求用量、鉴权失败与交错写入；本轮未执行。
+用隔离样本验证短问、同字异义、旧条目、清空与后台请求交错。管理验收先在匿名与本机登录状态下检查读取路由，避免触发真实更新。
 
 <a id="detail-section-9"></a>
 
@@ -154,86 +153,56 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 2 | 1594 | — | — | 22462 |
-| .mjs | source | 4 | 450 | 354 | 79 | — |
-| .js | source | 3 | 11768 | 9092 | 2423 | — |
-| .mjs | test | 7 | 1485 | 1326 | 41 | — |
+| .md | source | 2 | 1744 | — | — | 24778 |
+| .mjs | source | 5 | 529 | 412 | 96 | — |
+| .js | source | 3 | 12322 | 9529 | 2517 | — |
+| .mjs | test | 14 | 1812 | 1581 | 77 | — |
 | .md | test | 1 | 25 | — | — | 240 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 17](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=17&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+created%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z) [![近30天关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 21](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=21&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+created%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z) [![近30天关闭 20](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=20&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-fish-memory/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z)
 
 
 
-统计日期：2026-11-04。
+统计日期：2026-11-10。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本能否在控制过期事实、共享范围和额外调用的前提下，为长期 DSH 对话提供可审阅记忆？
+**插件研究总目标**：把中文会话里反复要用的事件和约定交给插件保存时，怎样检查其写入、召回、管理权限和退出边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 记忆属于谁，如何从写入进入当前提示，和手工短档案相比改变什么？
+### Q01 · 会话怎么开始记忆，哪些内容实际进入库？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-面向在 DSH 内持续交谈、希望跨压缩保留约定和事件的个人用户，合格结果是正确事实进入需要它的回答且错误可纠正。默认按会话保存，也可以按工作区归库；工作区模式让同一工作区的新会话复用库，属于用户主动扩大共享范围，不构成租户隔离。原办法是用户维护短档案并逐次带入提示。这里增加了 remember 工具写入、词项相关性检索、时间和重要度排序以及设置页的可见轨迹，减少手工选择上下文的步骤，但事实选择和最终答案是否正确仍须判断。
-
-包声明 bundle patch，patch 插入 memory，主文件注册 remember；工具拿执行会话 ID，检查会话开关及每日配额，保存后返回。Agent 的 systemPrompt.context 再读取当前用户文本，短输入借最近几句补线索，检索后将结果作为关闭模板插值的纯文本注入。这里跟通了工具到文件、文件到提示的路径，不能据此声称宿主已加载成功。模型自行决定是否调用工具，所以“自己挑重点”不是对每轮都进行可靠事实抽取的保证。
+想在后续对话重用具体事件和约定的 DSH 中文用户，可以让会话中的模型在识别到重要信息时调用 remember。相比自己每轮粘贴一份档案，插件把候选写入持久库并在以后按查询筛选。包声明 bundle，挂载插件后通过定时扫描和 agent/created 发现 Agent，提示层要求模型挑长期信息并调用工具。工具执行时解析当前会话、确认开关和非空内容，再查当日仍在活动库中的创建记录是否达配额。归一化后相同或足够长且相互包含的文本可以强化旧记录，新条目可按事实键标记被取代的旧条。此路径没有用户逐条确认或独立事实核查，因此关键约定仍应由用户检查记录内容。默认会话开关开启。默认会话库用会话标识，工作区模式则可让同工作区使用同一个库。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:20-46](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/package.json#L20-L46)
+**依据 1 · 源码核查**：[package.json:7-10](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/package.json#L7-L10)
 
-main、exports 与 bundle 声明定位真实插件入口。
-
-<details>
-<summary>查看原文（27行）</summary>
+声明 Node 与 DSH 版本范围。
 
 ```text
-    "url": "git+https://github.com/Yuuyuko-uu/dsh-fish-memory.git"
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.1-rc.2"
   },
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./client": "./lib/client.js",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib",
-    "cordis.patch.yml",
-    "README.md"
-  ],
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "inject": [
-        "slots"
-      ],
-      "external": [
-        "react"
-      ]
-    }
 ```
 
-</details>
+**依据 2 · 源码核查**：[cordis.patch.yml:1-3](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/cordis.patch.yml#L1-L3)
 
-**依据 2 · 源码核查**：[cordis.patch.yml:1-3](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/cordis.patch.yml#L1-L3)
-
-patch 将 memory 接入 DSH。
+宿主 patch 插入插件。
 
 ```text
 - insert:
@@ -241,9 +210,31 @@ patch 将 memory 接入 DSH。
       name: dsh-fish-memory
 ```
 
-**依据 3 · 源码核查**：[lib/index.js:409-415](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L409-L415)
+**依据 3 · 源码核查**：[lib/index.js:796-805](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L796-L805)
 
-按会话或工作区选择归库键。
+总开关、会话覆盖与默认启用。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+function isEnabled(sid) {
+  if (!globalOn()) return false
+  const c = loadCfg()
+  const s = String(sid)
+  const m = c.sessions
+  if (m && typeof m === 'object' && Object.prototype.hasOwnProperty.call(m, s)) return !!m[s]
+  // 兼容旧版：以前是「没配 = 全开」，那份白名单里的人继续开着
+  if (Array.isArray(c.enabled) && c.enabled.indexOf(s) >= 0) return true
+  return true
+}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:432-439](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L432-L439)
+
+库键随会话或工作区模式选择。
 
 ```text
 export function 库名(sid, 配置) {
@@ -253,14 +244,67 @@ export function 库名(sid, 配置) {
   if (模式 !== 'workspace') return String(sid)
   const ws = 会话的工作区(sid)
   return ws ? 'ws_' + ws : String(sid)
+}
 ```
 
-**依据 4 · 源码核查**：[lib/index.js:3615-3640](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3615-L3640)
+**依据 5 · 源码核查**：[lib/index.js:4396-4407](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4396-L4407)
 
-工具检查会话、启用状态、内容和配额。
+由提示引导模型选择内容并调用 remember。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（12行）</summary>
+
+```text
+        interpolate: false,
+        text: () => {
+          const p = ownerNameOf(sid) || pronounOf(sid)
+          const self = selfNameOf(sid)
+          return (
+            '【记忆】这一轮如果有值得长期记住的事（' + p + '重要的话、约定、' + p + '的喜好、' + p + '的状态），' +
+            '直接调用 remember 工具记下来 —— **不用等' + p + '提醒**。' +
+            '日常琐事（吃了什么、今天天气）不用记。' +
+            '**人称**：你自己是「' + selfPronounOf(sid) + '」，用户是「' + p + '」，别人和别的 AI 直接写名字' +
+            (self ? '（你写成「' + self + '」也会自动换成「我」）' : '') +
+            '；也不要写「今天/昨天」，时间交给系统。'
+          )
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/index.js:4799-4814](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4799-L4814)
+
+轮询与事件双入口。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    //   tick 本身很便宜（`agents.list()` 读内存 + 归档名单优先走服务），0.5 秒完全扛得住。
+    ctx.effect(() => ctx.interval(tick, 500))
+  } catch (error) {
+    console.error('[记忆] 定时器不可用（不影响对话）：' + (error && error.message))
+  }
+
+  // ⭐ 1.6.5（issue #27）：光靠轮询不够 —— 事件来了就当场挂，不看 list()
+  try {
+    ctx.on('agent/created', (payload) => {
+      try {
+        const a = payload && payload.agent
+        if (a) 挂一个(a)
+      } catch (error) {}
+    })
+  } catch (error) {
+    diag('agent/created 挂不上（不影响对话）：' + (error && error.message))
+```
+
+</details>
+
+**依据 7 · 源码核查**：[lib/index.js:3740-3778](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3740-L3778)
+
+执行时的身份、开关、规范化、配额和近重复条件。
+
+<details>
+<summary>查看原文（39行）</summary>
 
 ```text
     async execute(args, exec) {
@@ -289,19 +333,88 @@ export function 库名(sid, 配置) {
       const todayCount = data.memories.filter((m) => m.createdAt && dayKey(Date.parse(m.createdAt)) === today).length
       if (todayCount >= policy.dailyQuota) {
         return { ok: false, message: '今天记满了（' + policy.dailyQuota + ' 条），明天再说。' }
+      }
+
+      // 去重：内容太像的不重复记 —— 但**强化**它（照 AAAAGENT）
+      // 「她又提到这件事了」说明这件事还在她心里，该记得更牢一点 ✓
+      // （注意：只有她真的又提一次才强化；光是召回想起来**不**强化 ——
+      //   「仅浏览、搜索不会把记忆越看越重要」✓）
+      const norm = (s) => String(s || '').replace(/[\s，。、！？,.!?]/g, '')
+      const nt = norm(text)
+      for (const m of data.memories) {
+        const a = norm(m.text)
+        if (a && (a === nt || (a.length > 8 && nt.length > 8 && (a.includes(nt) || nt.includes(a))))) {
+          const I0 = typeof m.importance === 'number' ? m.importance : 0
+          const H0 = policy.baseHalfLifeDays * (1 + 2 * I0)
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:4277-4296](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4277-L4296)
+**依据 8 · 源码核查**：[lib/index.js:3872-3896](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3872-L3896)
 
-提示上下文的实际注册、纯文本设置与查询构造。
+新条目收敛、写盘与扩词排队。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-    const 注入缓存 = { 键: '', 时: 0, 文: '' }
+        // ⭐ 事实键只在真给了的时候才写字段（没给就不留空字段，老数据长什么样它长什么样）✓
+        ...(键 ? { 事实键: 键 } : {}),
+      })
+      // ⭐⭐ 同一个键只留最新那条 —— 新条**已经进库了**再收敛，
+      //   这样「最新」的比较里包含它自己，一定留的是它 ✓
+      //   （顺序很要紧：先 push 再收敛，反过来会把新条自己也算成旧的 ✗）
+      if (键) {
+        try {
+          for (const id of 按键收敛(data, 新id)) if (作废的.indexOf(id) < 0) 作废的.push(id)
+        } catch (error) {}
+      }
+      saveStore(sid, data)
+      diag('remember：' + sid + ' 记了「' + text.slice(0, 40) + '」' + (键 ? '（事实键 ' + 键 + '）' : '') + '（今天第 ' + (todayCount + 1) + ' 条）')
+      // ⭐ 自动补「检索词」：以前得她去设置页点「开始扩词」，现在记完就顺手补上
+      //    ⚠️ 不 await（模型调用要几秒，不能卡住记账）；但**必须 .catch** ——
+      //      裸的 rejected promise 会被 Node 当致命错误，整个宿主退出（今天早上刚踩过）
+      try {
+        后台排队(sid, () => 自动扩词(ctx, sid, 2))
+      } catch (error) {}
+      if (作废的.length) diag('remember：顺手把 ' + 作废的.length + ' 条旧的标成「已被取代」：' + 作废的.join(','))
+      return {
+        ok: true,
+        message:
+          '记下了（' + relTime(now, now) + '）。' +
+          (作废的.length ? '顺手把 ' + 作废的.length + ' 条被这条取代的旧记忆标成「已被取代」（不再想起来，东西还留着）。' : ''),
+```
+
+</details>
+
+#### 缺口
+
+- 模型在真实任务中如何选记、是否漏记尚无对照。
+  **影响**：用户不能预期每条关键约定都会被保留。
+  **进一步探讨**：用有意夹杂闲谈和相互矛盾的样本，核对最终库中的记录和实际工具调用。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 中文单字、短问和既有事实怎样影响召回？
+
+**研究主题**：功能与机制、贡献与相对优势、缺陷与关键质疑
+
+#### 完整回答
+
+宿主装配提示时，插件优先从刚收到的输入选查询，极短时尝试借最近会话内容补词。有效会话的查询信息量门槛可以直接返回空。通过后，检索词有多字项时丢弃单字，即使单字来自词典。全是单字时保留原词，但仍要过前面的问句门。候选筛选尝试同时用库内稀有性和通用词频，回退先用通过通用门的词，实在没有才用剩余原始词。记录按相关证据 C 判断资格、按含鲜活度的 P 排序，全未达标时另允许一条达到门槛四分之三的近阈值候选。去重后实际选取仅走普通事件列表，明确排除 stable_profile。已有长期事实即使参与前面评分，在这条注入路径也不会入选。普通事件再受条数及字数预算。用户若需要固定身份和约束，应把它们放在自己可控的宿主指令或短档案里。检索结果按文本写入上下文，关闭模板插值只避免变量解释，记忆内容仍会被模型看到。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:4432-4453](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4432-L4453)
+
+上下文接入、关闭插值与短问补词。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
     const 注入off = agent.ctx.systemPrompt.context({
       name: 'memory',
       order: 900, // 排在沙箱/审批/子代理那几条（110/115/120）后面
@@ -314,8 +427,11 @@ export function 库名(sid, 配置) {
       text: () => {
         try {
           const now = Date.now()
-          // ⭐ 1.4.0：**这一轮真正的那句优先**（会话里最后一条 user 消息）；
-          //   监听那句只在会话读不出来时兜底 —— 见 选查询词() 上面的说明。
+          // ⚠ 2026-11-04 修：**监听那句（这一轮刚收到的）优先**。
+          //   原来的注释假设「会话里最后一条 user 消息就是这一轮」，在 DSH 这个时序下不成立：
+          //   systemPrompt.context 在请求装配时求值，而 user 消息要等装配完才落进 session，
+          //   于是永远拿到上一轮 —— 实测问「莱拉是谁」，拿去检索的是前几轮那句 49 字的闲聊。
+          //   会话那句只在监听为空时兜底（插件中途挂上、重启后第一轮还没收到消息）。
           let query = 清掉注入上下文(选查询词(lastUserTextOf(agent.session), lastText))
           // ⭐ 1.4.2：一两个字的句子（「推」「在吗」）单独去搜什么都搜不到 —— 借上文一起搜
           try {
@@ -325,96 +441,98 @@ export function 库名(sid, 配置) {
 
 </details>
 
-**依据 6 · 源码核查**：[lib/index.js:4370-4388](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4370-L4388)
+**依据 2 · 源码核查**：[lib/index.js:3396-3409](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3396-L3409)
 
-保存轨迹、渲染注入；异常返回空文本，不能把无报错视为记忆正常。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-          if (同一次) data.traces[data.traces.length - 1] = 这条
-          else data.traces.push(这条)
-          // Trace persistence is auxiliary: an I/O failure must not hide a valid
-          // snapshot already read from disk. saveStore records the failure.
-          try { saveStore(sid, data) } catch (error) {}
-          const 注入文本 = render(selected, now, selfNameOf(sid))
-          // ⭐ 2026-10-22 她要能看见「这一轮到底注入了什么」：
-          //    搬到官方桌面端之后界面上看不到了，那就写进 diag.log，一眼能翻。
-          //    只记一行、截断 400 字，不占空间。
-          try {
-            diag('注入 ' + selected.length + ' 条：' + (注入文本 || '（空）').split(String.fromCharCode(10)).join(' ⏎ ').slice(0, 400))
-          } catch (error) {}
-          // ⭐ 1.5.2：记下这次的答案，同一次请求后面那几遍直接用
-          注入缓存.键 = 缓存键
-          注入缓存.时 = now
-          注入缓存.文 = 注入文本
-          return 注入文本
-        } catch (error) {
-          return '' // 记忆坏了也不能影响对话
-```
-
-</details>
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 长期事实是否每轮出现，衰减和召回阈值实际保证什么？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-长期事实并非无条件每轮进入提示。recall 先排除被取代和跳过条目，再计算问句信息量；低于 queryGate 时直接返回空集合，发生在常驻事实挑选之前。通过问句门后，事实才按重要度和创建时间取 factsMax 条，默认 2，不占事件名额。空查询、空库及调用异常也不注入。README 的“长期事实每轮都在”因而必须收窄为通过上述前置条件后至多带入部分事实，不能用于必须始终携带的硬约束。
-
-事件先用词项稀有度形成相关性 C，以 C 过阈值，鲜活度和重要度进入排序 P；这把“是否相关”和“够不够新”拆开，防止仅因时间衰减全部掉出门槛。没候选时仍可能从达到阈值 75% 的条目补一条，因此阈值不是严格的最低注入相关性保证。去重后分配事实和事件名额，再受字数预算约束；首条可以超过 maxChars，故它也不是严格总字符上限。trace 中的 assembled 表示被装入，后续词重合只能猜测被消费，不能证明回答理解正确。源码注释中的精确率和用户案例属于作者记录，未作为本次复现结果。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:18-25](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/README.md#L18-L25)
-
-作者对淡忘、事实常驻及可见性的主张。
-
-```text
-| **会淡忘** | 每条记忆有「鲜活度」，越久越淡。半衰期默认 30 天 —— 不删，只是越来越难被想起来 |
-| **自己挑重点** | 不是每句话都记。它按轮次判断哪句值得留下，每天还有配额，防止把上下文塞满 |
-| **想起来靠证据** | 你问什么，它按「命中的词够不够特别」找，再按鲜活度、重要度、情绪排序，最多注入几条。分词用的是一份通用中文词表，所以「车」不会撞进「车站」里 |
-| **要记一辈子的不淡** | 画像、喜好、约定这种标成「长期事实」，平着放着，不会过期 |
-| **长期事实每轮都在** | 它们按「重要度 → 时间」固定带前几条，**不看这句话问了什么**，也不占「最多注入几条」的位置 —— 剩下那几个位置才留给事件 |
-| **带时间** | 每条都记着「这是什么时候的事」。跨年了会写「去年 09-17」 |
-| **能导入旧档案** | 以前写过的 markdown / 纯文本档案，扫一遍出候选，你挑完它再改写成记忆 |
-| **全都看得见** | 记了什么、哪条被想起来了、为什么没被想起来、删掉的都还在 |
-```
-
-**依据 2 · 源码核查**：[lib/index.js:3256-3265](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3256-L3265)
-
-问句门早退发生在事实层之前。
+问句信息不足即整体早退。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
+  // ⭐⭐ 第一道门开在**问句**上，不在记忆上（2026-09-21 加）
+  //   「在吗」「嗯」「哈哈」这种话本身没内容，就不该去翻几百条记忆 ——
+  //   实测过：只换打分公式，它们照样六条，因为**总能比出六条来**。
+  //   尺子是「她自己怎么说话」：天天说的词不算信息，偶尔说的才算 ✓
   const 门槛 = typeof policy.queryGate === 'number' ? policy.queryGate : 0.8
   let gate = null
   if (门槛 > 0 && sid) {
     const v = 问句信息量(sid, query, df)
     if (v < 门槛) {
       // 这道门挡下来的时候**不做 851 次打分**，省一趟；理由照样记进 trace 给她看 ✓
-      return { selected: [], scored: [], 字数: 0, gate: { 信息量: Number(v.toFixed(2)), 门槛 } }
+      // 门挡住了就什么都不带（长期事实那层已经删掉了）
+      return { selected: [], scored: [], 字数: 0, gate: { 信息量: Number(v.toFixed(2)), 门槛, 挡了: true } }
     }
     gate = { 信息量: Number(v.toFixed(2)), 门槛 }
-  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:3314-3346](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3314-L3346)
+**依据 3 · 源码核查**：[lib/index.js:3430-3448](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3430-L3448)
 
-C 门槛、P 排序和近阈值补一条的具体逻辑。
+多字存在时过滤全部单字，再做稀有性与通用筛选。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（19行）</summary>
+
+```text
+  const 稀有门 = Math.max(3, memories.length * 0.01)
+  // ⭐ 1.5.10：**单字一律不当线索**。
+  //   词表里收单字是为了切分时能找到最长匹配的边界（「小源」切成「小」+「源」），
+  //   不代表这个字本身能当证据 —— 单字在库里 df 往往只有 1~2，稀有度直接满 1.0，
+  //   比正经实词还值钱，一句无关的话就能把别的记忆拽进来。
+  //   整句只剩单字时（「猫」「累」这种短句）还是留着，别让短句一个词都不剩。
+  const q原始 = [...切词(query)]
+  const q多字 = q原始.filter((k) => String(k).length > 1)
+  const q全部 = q多字.length ? q多字 : q原始
+  // ⭐⭐ 2026-09-24：**再拿通用中文过一道** —— 最常用的那些词不当线索 ✓
+  //   治「正式演出…我也该表示了」捞到「从没正式去医院确诊…明确表示不会轻生」：
+  //   那两个词在**她的库里**罕见（df 4 和 2），可它们在**通用中文**里极常见
+  //   （表示排 376、正式排 887）→ 按「库里稀不稀有」算，它俩成了最值钱的证据 ✗
+  //   ⚠ 这里只**筛掉线索**，不改打分尺度 —— 门槛（threshold）才不用跟着重调 ✓
+  const q过稀有 = q全部.filter((k) => {
+    const d = df.get(k) || 0
+    return d > 0 && d <= 稀有门
+  })
+  const q过通用 = q过稀有.filter(算线索)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:3458-3474](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3458-L3474)
+
+三级回退及评分入口。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  const 剩的能用 = q过通用.length >= 2 && q过通用.some((k) => 稀有度(df, k) > 0)
+  // ⚠ 退回 **q全部**（原来那道安全垫的写法），**不要**退回 q过稀有：
+  //   实测「我们那天办婚礼的时候，你还记得吗」——「婚礼」在库里 11 条 → 被库里那道门挡了，
+  //   通用门也没剩下什么 → 若退回 q过稀有 就只剩一个「办」，婚礼那条**想不起来** ✗
+  //   退回 q全部 才对：那句话里的词全还给它，该想起来的照样想起来 ✓
+  // ⭐ 1.5.9：安全垫分三级 ——
+  //   ① 过两道门的（最干净）
+  //   ② 只过**通用词频门**的：把「库里太常见」被挡掉、但本身是正经实词的捞回来
+  //      （「婚礼」这种：库里 11 条 → 被稀有门挡，可它确实是这句话的要点）
+  //   ③ 全都没有才退回全部
+  //   ⚠ 以前第 ② 级直接退回 q全部，于是**通用门已经判死的常用词**（对/是/在）也跟着回来，
+  //     两个假证据一凑就把不相干的记忆顶过门槛。
+  const 非通用 = q全部.filter(算线索)
+  const q留 = 剩的能用 ? q过通用 : (非通用.length ? 非通用 : q全部)
+  尺.问句词 = q留.length ? q留 : q全部
+
+  const scored = memories.map((m) => ({ m, s: evaluate(m, query, now, policy, 尺) }))
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/index.js:3474-3507](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3474-L3507)
+
+证据门槛、排序和近阈值候选。
+
+<details>
+<summary>查看原文（34行）</summary>
 
 ```text
   const scored = memories.map((m) => ({ m, s: evaluate(m, query, now, policy, 尺) }))
@@ -450,141 +568,191 @@ C 门槛、P 排序和近阈值补一条的具体逻辑。
       差点.差一点 = true
       picked.push(差点)
     }
+  }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:3418-3459](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3418-L3459)
+**依据 6 · 源码核查**：[lib/index.js:3567-3581](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3567-L3581)
 
-常驻事实、独立名额和字数预算的实际条件。
+最终仅选事件，排除 stable_profile 并施加预算。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  const 事实上限 =
-    typeof policy.factsMax === 'number' && policy.factsMax >= 0 ? Math.floor(policy.factsMax) : 2
-  const 常驻事实 = []
-  if (事实上限 > 0) {
-    const 候选 = memories
-      .filter((m) => m && m.category === 'stable_profile')
-      .slice()
-      .sort(
-        (a, b) =>
-          (Number(b.importance) || 0) - (Number(a.importance) || 0) ||
-          (Date.parse(b.createdAt || b.at || 0) || 0) - (Date.parse(a.createdAt || a.at || 0) || 0),
-      )
-    const 行表 = new Map()
-    for (const row of scored) if (row && row.m) 行表.set(String(row.m.id), row)
-    for (const m of 候选.slice(0, 事实上限)) {
-      const row = 行表.get(String(m.id)) || { m, s: { P: 1, C: 1, timeHit: 1 } }
-      row.omission = null // 常驻的不算「被筛掉」
-      row.常驻 = true
-      常驻事实.push(row)
-    }
-  }
+  // ⭐ 1.5.7：**长期事实（每轮无条件带几条）已整个删除**。
+  //   理由：闲聊时把跟当下无关的记忆塞进去，会把话带跑；身份/称呼这类由星汐每轮开头带。
+  //   现在只有「这句话检索命中」的记忆才会进上下文。
   // 普通事件：从去重后的候选里按分数拿，受 maxItems 和「这趟上限」两条约束
   const 事件们 = 去重后.map((x) => x.row).filter((row) => !row.m || row.m.category !== 'stable_profile')
   const 最高事件分 = 事件们.length && 事件们[0].s ? 事件们[0].s.C : 0
   const 事件本趟上限 = 事件们.length ? 分档.find(([线]) => 最高事件分 >= 线)[1] : 0
   const 事件名额 = Math.min(事件本趟上限, policy.maxItems)
-  const 条数内 = 常驻事实.concat(事件们.slice(0, 事件名额))
+  const 条数内 = 事件们.slice(0, 事件名额)
   for (const row of 事件们.slice(事件名额)) {
     if (!row.omission) row.omission = 'weak' // 设置页上会写「这趟给的条数到顶了」
   }
 
-  const 上限 = typeof policy.maxChars === 'number' && policy.maxChars > 0 ? policy.maxChars : 800
-  const selected = []
-  let 已用 = 0
-  for (const row of 条数内) {
-    const n = String(row.m.text || '').length
-    if (selected.length > 0 && 已用 + n > 上限) {
-      row.omission = 'budget'
-      continue
-    }
-    selected.push(row)
-    已用 += n
+  const { selected, 字数: 已用 } = 按字数收(条数内, policy)
+  const ids = new Set(selected.map((r) => r.m.id))
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:3476-3484](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3476-L3484)
+**依据 7 · 源码核查**：[lib/index.js:4530-4547](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4530-L4547)
 
-消费判断仅是词项重合启发式。
+渲染文本并返回宿主。
+
+<details>
+<summary>查看原文（18行）</summary>
 
 ```text
-// 「她的回复里像不像真的用上了这条记忆」—— 靠实词重合**猜**的，不是事实 ✓
-// 所以设置页上写「像是用上了」，不写成「用上了」。
-function 用上了(reply, memText) {
-  const keys = [...tokenize(memText)]
-  if (keys.length < 2) return false
-  const b = normalize(reply)
-  let hit = 0
-  for (const k of keys) if (b.includes(k)) hit++
-  return hit >= 2 && hit / keys.length >= 1 / 3
+          // Trace persistence is auxiliary: an I/O failure must not hide a valid
+          // snapshot already read from disk. saveStore records the failure.
+          try { saveStore(sid, data) } catch (error) {}
+          const 注入文本 = render(selected, now, selfNameOf(sid))
+          // ⭐ 2026-10-22 她要能看见「这一轮到底注入了什么」：
+          //    搬到官方桌面端之后界面上看不到了，那就写进 diag.log，一眼能翻。
+          //    只记一行、截断 400 字，不占空间。
+          try {
+            diag('注入 ' + selected.length + ' 条：' + (注入文本 || '（空）').split(String.fromCharCode(10)).join(' ⏎ ').slice(0, 400))
+          } catch (error) {}
+          // ⭐ 1.5.2：记下这次的答案，同一次请求后面那几遍直接用
+          注入缓存.键 = 缓存键
+          注入缓存.时 = now
+          注入缓存.文 = 注入文本
+          return 注入文本
+        } catch (error) {
+          return '' // 记忆坏了也不能影响对话
+        }
 ```
+
+</details>
 
 #### 缺口
 
-- 不同会话、短续问和事实数量下的遗漏率与错误事实污染未知。
-  **影响**：不能把可解释检索机制当成长期约束可靠性或效果提升。
-  **进一步探讨**：用人工标注的短问、无关问和纠错问，对比手工短档案，分别核对实际注入和最终答案。
+- 同字异义与真正需要单字的人名、短问在目标语料中的影响未知。
+  **影响**：不能把降低碎片影响等同于对真实任务准确率的提升。
+  **进一步探讨**：标注含罕见单字、短指代及过期约定的正反样本并检查选中项和漏项。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 删除、跨会话合并及异步扩词会不会恢复旧数据，维护成本由谁承担？
+### Q03 · 删除、停用和后台扩词相遇时，什么会留下？
 
-**研究主题**：依赖、兼容与流程、工程质量与复用、效果与总成本、缺陷与关键质疑
+**研究主题**：工程质量与复用、缺陷与关键质疑、效果与总成本
 
 #### 完整回答
 
-写入前重新读盘、按 ID 合并、删除墓碑优先及 purgeEpoch 共同限制旧异步任务覆盖新记忆。自动扩词等待模型后重读库，代际已变就丢弃结果，并只更新仍存在的目标 ID；彻底清理以 raw 写入换代，旧快照不应复活已清内容。atomic-file 使用同目录临时文件、排他创建、同步文件和 rename，避免半份 JSON 覆盖在线文件。这些是有针对性的恢复设计，仍不是对两个进程同时“读旧值、分别替换”的跨进程事务保证。
-
-扩词默认可由 remember 保存后后台触发；读取提示时也有尝试补词的路径。它调用现有宿主模型，复用 key 不能推导为没有额外请求或费用。autoExpand=false 能停止该后台扩词分支。需要 DSH 的提示、工具、Agent、Web 等服务和本地可写目录；词表和模型是不同用途依赖，缺模型不等于所有已存记忆都不可检索。
-
-工作区合并先试算再执行，旧会话库保留以便退出；删除只是进入 deleted，彻底销毁前还会另存副本，日常有 .bak 和按日备份，诊断日志也记入片段。因此用户要承担核对过期事实、控制共享范围和清理实际副本的工作。另一个关键部署边界是管理接口只在宿主明确返回 401/403 时拒绝；connection 缺失或抛错会放行。不能把注释“只认本人”当成独立鉴权保证，也不能仅凭源码断言特定部署已被外部利用。共享或公开网络部署需先确认宿主鉴权链路，否则本轮建议观察。
+普通删除把条目移进回收区并标记旧召回轨迹失效，可再找回。清空回收区会先尝试保留一份销毁前副本，随后按新代际原子替换当前文件。写盘前比较代际，普通保存合并磁盘现状，减少异步任务把已删内容重新写回的机会。扩词先把选中记忆文本发给宿主模型，返回后重读库，代际不同或 ID 已不在活动区就跳过。但这些措施拦的是晚到写回，发出的模型请求已经携带文本。同 ID 编辑后代码仍可能接受基于旧文本算出的词，因为这里只核对代际和 ID。提示上下文缓存按会话和查询保留约 1.5 秒，也没有在读取前把删除代际纳入键。停用卸载提示，清理当前库不会追溯已进入宿主会话的文本、备份、诊断或分支副本。扩词既可在新增后排队，也可在未被问句门拦下的空召回里节流触发。设置 autoExpand 为 false 后，新进入扩词函数的任务会提前返回，不发起新的扩词请求。已经交给宿主模型的请求没有撤回路径。只有实际发出的模型请求才可能产生额外用量或费用，取决于宿主和模型账户。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:597-665](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L597-L665)
+**依据 1 · 源码核查**：[lib/index.js:5768-5789](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L5768-L5789)
 
-保存时重读、损坏保护、代际检查、合并及原子替换。
+软删除移入回收区，显式恢复再放回活动区。
 
 <details>
-<summary>查看原文（69行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-function saveStore(sid, data, 选项) {
+        const data = loadStore(sid)
+        if (!Array.isArray(data.deleted)) data.deleted = []
+        if (action === 'delete') {
+          const i = data.memories.findIndex((m) => String(m.id) === id)
+          if (i >= 0) {
+            const m = data.memories.splice(i, 1)[0]
+            m.deletedAt = new Date().toISOString()
+            data.deleted.push(m)
+            markTraceStatus(data, id, 'invalidated') // 以前的召回记录里它失效了 ✓
+            saveStore(sid, data)
+            diag('删了一条（收起来）：' + sid + ' / ' + id + ' 「' + String(m.text).slice(0, 30) + '」')
+            out = { ok: true, message: '收起来了，还能找回来' }
+          }
+        } else if (action === 'restore') {
+          const i = data.deleted.findIndex((m) => String(m.id) === id)
+          if (i >= 0) {
+            const m = data.deleted.splice(i, 1)[0]
+            delete m.deletedAt
+            data.memories.push(m)
+            saveStore(sid, data, { restoreIds: [id] })
+            diag('找回来一条：' + sid + ' / ' + id)
+            out = { ok: true, message: '找回来了' }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:5845-5862](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L5845-L5862)
+
+永久移出当前回收区的动作与清空前备份。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+        } else if (action === 'purge') {
+          const n = data.deleted.length
+          data.deleted = data.deleted.filter((m) => String(m.id) !== id)
+          if (data.deleted.length !== n) {
+            saveStore(sid, data, { raw: true }) // 真销毁：不许合并把盘上的捡回来
+            diag('彻底清掉一条：' + sid + ' / ' + id)
+            out = { ok: true, message: '彻底清掉了' }
+          }
+        } else if (action === 'purgeall') {
+          const n = data.deleted.length
+          // ⚠⚠ 2026-09-23：**真销毁** —— 动之前另存一份带时间戳的（见 销毁前另存 的说明）✓
+          if (n > 0) {
+            销毁前另存(sid)
+            data.deleted = []
+            saveStore(sid, data, { raw: true }) // 真销毁：不许合并把盘上的捡回来
+          }
+          diag('清空已删掉的：' + sid + '（' + n + ' 条）')
+          out = { ok: true, message: n ? '清掉了 ' + n + ' 条（清空前的整份另存在「销毁前」里）' : '没有要清掉的' }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:560-578](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L560-L578)
+
+复制销毁前文件并限制副本数量。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+function 销毁前另存(sid) {
   try {
-    const path = storePath(sid)
-    let bytes, 盘 = null, recoveryEpoch
-    try {
-      bytes = readFileSync(path)
-    } catch (error) {
-      // I/O 失败不等于 JSON 损坏；不能备份不明内容或覆盖原件。
-      if (error?.code !== 'ENOENT') throw new Error('无法读取当前记忆库，本次未写入', { cause: error })
-      corruptIncidents.delete(path)
-    }
-    if (bytes !== undefined) {
+    const src = storePath(sid)
+    if (!existsSync(src)) return
+    const dir = join(STORE_DIR, '销毁前')
+    mkdirSync(dir, { recursive: true })
+    // ⚠⚠ 时间戳要**到毫秒** —— 第一版只到秒，自检里连着清 25 次
+    //   全落在同一秒 → **文件名一样、互相覆盖**，最后只剩 1 份 ✗
+    //   （自检逮到的。真出事的时候正好是连着点几下，就会踩这个）
+    const ts = new Date(Date.now() + TZ_OFFSET).toISOString().replace(/[:.]/g, '-').slice(0, 23)
+    const 头 = basename(src).replace(/\.json$/, '') + '·' + ts
+    let 名 = 头 + '.json'
+    for (let i = 2; existsSync(join(dir, 名)); i++) 名 = 头 + '·' + i + '.json' // 撞了就加序号，绝不覆盖 ✓
+    copyFileSync(src, join(dir, 名))
+    const 们 = readdirSync(dir).filter((f) => f.endsWith('.json')).sort()
+    for (const f of 们.slice(0, Math.max(0, 们.length - 20))) {
       try {
-        盘 = JSON.parse(bytes.toString('utf8'))
-        corruptIncidents.delete(path)
-      } catch (error) {
-        if (!(error instanceof SyntaxError)) throw error
-        const incident = corruptIncidents.get(path)
-        if (incident && !incident.bytes.equals(bytes)) corruptIncidents.delete(path)
-        const corrupt = corruptSnapshots.get(data)
-        if (!corrupt || corrupt.incident !== corruptIncidents.get(path) ||
-            corrupt.path !== path || !corrupt.bytes.equals(bytes) || corrupt.epoch !== purgeEpochOf(data)) {
-          throw new Error('记忆库已损坏或内容已变化，本次旧任务未写入，请重新运行')
-        }
-        // 精确保留坏文件原件，撞名不覆盖；备份失败则不进入原子写入。
-        backupCorruptStore(path)
-        recoveryEpoch = corrupt.epoch
-      }
-    }
+        rmSync(join(dir, f), { force: true })
+      } catch (error) {}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:649-683](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L649-L683)
+
+校验代际、读盘合并和原子写入。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
     const epoch = recoveryEpoch ?? purgeEpochOf(盘)
     // 清掉墓碑后，按 id 合并无法分辨新增与旧快照；先拒绝整批过期写入。
     if (purgeEpochOf(data) !== epoch) {
@@ -620,81 +788,16 @@ function saveStore(sid, data, 选项) {
       backupStore(sid)
     }
     writeFileAtomicSync(storePath(sid), JSON.stringify(data, null, 2))
-    corruptIncidents.delete(path)
-    lastSig.set(String(sid), sig)
-  } catch (error) {
-    diag('记忆写入失败：' + String(error && error.code || 'write-error'))
-    throw error
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/atomic-file.mjs:4-24](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/atomic-file.mjs#L4-L24)
+**依据 5 · 源码核查**：[lib/index.js:1765-1802](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L1765-L1802)
 
-临时文件与 fsync/rename 的单文件保证。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-// Same-directory staging keeps a failed or interrupted write away from the live
-// JSON file. This is one-file replacement, not a multi-process transaction.
-export function writeFileAtomicSync(target, text) {
-  const staged = target + '.' + randomUUID() + '.tmp'
-  let mode = 0o600
-  try { mode = fs.statSync(target).mode & 0o777 }
-  catch (error) { if (error.code !== 'ENOENT') throw error }
-  let descriptor
-  let created = false
-  let committed = false
-  try {
-    descriptor = fs.openSync(staged, 'wx', mode)
-    created = true
-    if (process.platform !== 'win32') fs.fchmodSync(descriptor, mode)
-    fs.writeFileSync(descriptor, text, 'utf8')
-    fs.fsyncSync(descriptor)
-    fs.closeSync(descriptor)
-    descriptor = undefined
-    fs.renameSync(staged, target)
-    committed = true
-  } finally {
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/store-merge.mjs:10-24](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/store-merge.mjs#L10-L24)
-
-删除优先，显式 restoreIds 才能找回。
+扩词执行顺序、文本输入及返回后的代际和 ID 核查。
 
 <details>
-<summary>查看原文（15行）</summary>
-
-```text
-  const 写记 = new Map((写.memories || []).map((m) => [String(m.id), m]))
-  const 合记 = new Map((盘.memories || []).map((m) => [String(m.id), m]))
-  for (const [id, m] of 写记) {
-    const 旧 = 合记.get(id)
-    合记.set(id, !旧 || 更新时间(m) >= 更新时间(旧) ? m : 旧)
-  }
-  const 删们 = new Map((盘.deleted || []).map((m) => [String(m.id), m]))
-  for (const m of 写.deleted || []) 删们.set(String(m.id), m)
-  // 内存里仍有一条，不等于用户要求找回。只有同步找回入口显式列出的 id 能撤销删除。
-  const 找回 = Array.isArray(选项?.restoreIds) ? 选项.restoreIds : []
-  for (const value of 找回) {
-    const id = String(value)
-    if (写记.has(id)) 删们.delete(id)
-  }
-  const memories = [...合记.values()].filter((m) => !删们.has(String(m.id)))
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1661-1702](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L1661-L1702)
-
-自动扩词调用模型、等待后重读、代际检查和错误处理。
-
-<details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
 async function 自动扩词(ctx, sid, 上限 = 2) {
@@ -710,7 +813,7 @@ async function 自动扩词(ctx, sid, 上限 = 2) {
     if (!agent) { diag('自动扩词：' + sid + ' 这会儿没有活着的 agent，跳过'); return 0 }
     const 输入 = 要扩.map((m, k) => k + 1 + '|' + String(m.text || '')).join('\n')
     const t0 = Date.now()
-    const r = await 问模型(ctx, agent, 扩词系统_v2, 输入, 6000)
+    const r = await 问模型(ctx, agent, 换自称成(换称呼(扩词系统_v2, pronounOf(sid)), selfPronounOf(sid)), 输入, 6000)
     if (!r || !r.ok) { diag('自动扩词：模型没回（' + ((r && r.message) || '?') + '）'); return 0 }
     const 表 = 解析扩词(r.text, 要扩.length)
     // ⚠⚠ 2026-10-24 修（用户报「记忆静默丢失」的**真凶**就在这几行）：
@@ -735,377 +838,423 @@ async function 自动扩词(ctx, sid, 上限 = 2) {
     }
     if (改了) saveStore(sid, 新库)
     diag('自动扩词：' + sid + ' 补了 ' + 改了 + '/' + 要扩.length + ' 条（' + (Date.now() - t0) + 'ms，' + (r.provider || '?') + '/' + (r.model || '?') + '）')
-    return 改了
-  } catch (error) {
-    diag('自动扩词出错（已忽略）：' + ((error && error.message) || error))
-    return 0
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:3758-3766](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3758-L3766)
+**依据 6 · 源码核查**：[lib/index.js:1491-1518](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L1491-L1518)
 
-remember 写入后后台触发扩词。
-
-```text
-      saveStore(sid, data)
-      diag('remember：' + sid + ' 记了「' + text.slice(0, 40) + '」' + (键 ? '（事实键 ' + 键 + '）' : '') + '（今天第 ' + (todayCount + 1) + ' 条）')
-      // ⭐ 自动补「检索词」：以前得她去设置页点「开始扩词」，现在记完就顺手补上
-      //    ⚠️ 不 await（模型调用要几秒，不能卡住记账）；但**必须 .catch** ——
-      //      裸的 rejected promise 会被 Node 当致命错误，整个宿主退出（今天早上刚踩过）
-      try {
-        Promise.resolve()
-          .then(() => 自动扩词(ctx, sid, 2))
-          .catch((error) => diag('自动扩词失败：' + ((error && error.message) || error)))
-```
-
-**依据 6 · 源码核查**：[lib/index.js:561-580](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L561-L580)
-
-日常 .bak 和按日备份的保留。
+确实以宿主 llm.stream 发出文本请求。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-function backupStore(sid) {
+  let messages
   try {
-    const src = storePath(sid)
-    if (!existsSync(src)) return
-    // ① 上一版（永远只有一份，最近一次改动前）
-    try {
-      copyFileSync(src, src + '.bak')
-    } catch (error) {}
-    // ② 每天一份（存当天最早的那一版）
-    const dir = join(BACKUP_DIR, todayKey())
-    mkdirSync(dir, { recursive: true })
-    const dst = join(dir, basename(src))
-    if (!existsSync(dst)) copyFileSync(src, dst)
-    // ③ 只留最近 14 天
-    const days = readdirSync(BACKUP_DIR).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort()
-    for (const d of days.slice(0, Math.max(0, days.length - 14))) {
-      try {
-        rmSync(join(BACKUP_DIR, d), { recursive: true, force: true })
-      } catch (error) {}
+    messages = [
+      createUserMessage({
+        content: [{ type: 'text', text: 用户 }],
+        source: { kind: 'plugin', plugin: 'dsh-fish-memory' },
+      }),
+    ]
+  } catch (error) {
+    return { ok: false, message: '构造消息失败：' + ((error && error.message) || error) }
+  }
+  let out = ''
+  // ⭐ 1.4.8：**带上会话号** —— opencode 的网关（opencode.ai/zen/go）要求请求头里有
+  //   `x-opencode-session`，不带就一律 `400 MissingSessionID`（记忆就静默不生成）。
+  //   宿主靠这个头把请求路由到「持有这段对话缓存」的节点上；插件自己发起的调用以前没带，
+  //   所以只有普通会话能用。这里把本会话的 id 交出去，和心情插件 0.7.9 的做法一致。
+  let 会话号 = ''
+  try { 会话号 = sessionIdOf(agent && agent.session) } catch { 会话号 = '' }
+  try {
+    for await (const chunk of ctx.llm.stream({
+      provider: t.provider,
+      model: t.model,
+      system: 系统,
+      messages: messages,
+      ...(会话号 ? { sessionId: 会话号 } : {}),
+      maxTokens: 最多 || 600,
+      temperature: 0.1,
+    })) {
+```
+
+</details>
+
+**依据 7 · 源码核查**：[lib/index.js:4472-4496](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4472-L4496)
+
+缓存键与未选中时扩词触发条件。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+          if (!query) return ''
+          // ⭐ 1.5.2：同一次请求里的第 2~4 遍直接复用（键 = sid + query，1.5 秒有效）
+          const 缓存键 = sid + '|' + query
+          if (缓存键 === 注入缓存.键 && now - 注入缓存.时 < 1500) {
+            return 注入缓存.文
+          }
+          const data = loadStore(sid)
+          if (!data.memories.length) return ''
+          补历史尺(sid, agent.session) // ⭐ 第一次用到时把她的会话历史补成尺子（只做一次）✓
+          const { selected, scored, gate } = recall(data, query, now, sid)
+          // ⭐ 1.4.3：「一条都没挑中」多半是那条记忆**还没扩过检索词**（related 是空的），
+          //   所以只有原词能命中、分数卡在门槛下。搜空的时候顺手补一条 —— 下次它就有词可命中了。
+          //   节流 60 秒、一次只补一条，免得一搜不到就一连串模型调用。
+          try {
+            // ⚠ 原来写的是 `!gate` —— 可门放行时 gate 也是个对象（记着信息量），
+            //   所以说过 20 句以后这里就再没进来过。要判的是「是不是被门挡了」。
+            //   常驻层那几条每轮都在，不算「挑中了」—— 看的是事件有没有挑中。
+            if (!selected.some((r) => !r.常驻) && !(gate && gate.挡了)) {
+              const 现 = Date.now()
+              const 待补 = scored.find((r) => r.omission === 'below_threshold')
+              if (待补 && 现 - 上次补词 > 60000) {
+                上次补词 = 现
+                后台排队(sid, () => 自动扩词(ctx, sid, 1))
+              }
+            }
+```
+
+</details>
+
+**依据 8 · 源码核查**：[lib/index.js:4578-4581](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4578-L4581)
+
+卸载两种提示效果。
+
+```text
+    return function off() {
+      卸掉效果(注入off)
+      卸掉效果(提示off)
     }
 ```
 
-</details>
+**依据 9 · 源码核查**：[lib/index.js:4609-4624](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4609-L4624)
 
-**依据 7 · 源码核查**：[lib/index.js:4675-4690](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4675-L4690)
-
-管理接口依赖宿主拒绝信号，未知和异常放行。
+分支复制独立库，清掉复制出来的轨迹。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-    const 只认本人 = (handler) => async (req, res) => {
-      try {
-        const 连接 = ctx.get('connection')
-        const 拒 = 连接 && typeof 连接.requestRejection === 'function' ? 连接.requestRejection(req) : undefined
-        if (拒 === 401 || 拒 === 403) {
-          diag('管理接口拒了一次外来请求（' + 拒 + '）：' + String((req && req.url) || ''))
-          try {
-            res.writeHead(拒, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-            res.end(JSON.stringify({ ok: false, error: 拒 === 401 ? 'authentication_required' : 'management_forbidden' }))
-          } catch (e2) {}
-          return
-        }
-      } catch (error) {
-        // 鉴权这条路自己坏了 → 放行，绝不让设置页打不开
-      }
-      return handler(req, res)
-```
-
-</details>
-
-**依据 8 · 源码核查**：[lib/index.js:4907-4942](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4907-L4942)
-
-合并先试算，执行保留旧库。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-        // 试算：每个工作区报一下「几间会话 / 共几条 / 去重后几条」
-        if (试算) {
-          const 报告 = []
-          for (const [ws, 库们] of 堆) {
-            const r = 合并工作区记忆(库们)
-            报告.push({
-              工作区: ws,
-              叫什么: 工作区可读名(ws).slice(0, 60),
-              会话数: 库们.length,
-              合计: r.合计,
-              去重: r.去重,
-              并完: r.记忆.length,
-              明细: r.明细.map((x) => ({ 会话: x.会话.slice(0, 22) + '…', 原有: x.原有多少, 新加: x.新加, 重复: x.重复 })),
-            })
-          }
-          return 回({
-            ok: true, 试算: true, 报告,
-            排除了归档: 被排除的.length,
-            排除条数: 被排除的.reduce((a, x) => a + x.条数, 0),
-          })
-        }
-
-        // 执行：每个工作区并一份写进工作区库；旧库**留着不删**（想退回按会话还能用）
-        const 做了 = []
-        for (const [ws, 库们] of 堆) {
-          const r = 合并工作区记忆(库们)
-          const 库名们 = 'ws_' + ws
-          const 旧 = loadStore(库名们)
-          const 原有 = Array.isArray(旧.memories) ? 旧.memories : []
-          const 见过 = new Set(原有.map((m) => String((m && m.text) || '').trim()).filter(Boolean))
-          const 新 = r.记忆.filter((m) => !见过.has(String(m.text || '').trim()))
-          // 执行前先把工作区库备份一份
-          try { backupStore(库名们) } catch (error) {}
-          旧.memories = [...原有, ...新]
-          saveStore(库名们, 旧)
-          做了.push({ 工作区: ws, 并进去: 新.length, 原来就有: 原有.length, 会话数: 库们.length })
+  function 继承分支记忆(agent, sid) {
+    const 来处 = 分支来处(agent)
+    if (!来处) return false
+    const 我的 = loadStore(sid)
+    if ((我的.memories || []).length) return false // 自己已经有记忆了，别盖
+    const 母的 = loadStore(来处)
+    if (!(母的.memories || []).length) return false // 来处也没有，没什么可继承
+    const 副本 = JSON.parse(JSON.stringify(母的))
+    adoptTargetEpoch(副本, 我的) // 明确的跨会话复制使用目标库代际
+    for (const m of 副本.memories || []) {
+      m.source = m.source ? m.source + '｜分支继承' : '分支继承'
+    }
+    副本.traces = [] // 召回历史不跟着走，分支是新的开始
+    saveStore(sid, 副本)
+    if (isEnabled(来处)) setEnabled(sid, true) // 开关也跟着来处
+    diag('分支继承：' + sid + ' ← ' + 来处 + '（' + (副本.memories || []).length + ' 条）')
 ```
 
 </details>
 
 #### 缺口
 
-- 真实部署中 connection.requestRejection 对这些路由如何生效未核实。
-  **影响**：管理接口不能按独立安全边界采用，尤其影响共享或公网部署。
-  **进一步探讨**：在隔离宿主中检查未登录、跨来源和鉴权服务故障的响应；任何不当写入应阻止部署。
-- 跨进程同时写入及整体存储量的运行表现未测。
-  **影响**：不能承诺多个宿主实例共享目录时无丢失。
-  **进一步探讨**：以独立临时目录交错两个写入者，核对新增、删除和换代结果，避免直接用真实记忆。
+- 真实宿主历史保留、分支和备份的全部副本未枚举。
+  **影响**：不能以设置页清空作为敏感信息已经消失的验收。
+  **进一步探讨**：在空库加入无敏感标记，模拟扩词时编辑、删除和清空，检查缓存、日志、文件及已持久化的会话。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 什么任务可以尝试，如何验收、停止和退出？
+### Q04 · 管理接口的拒绝条件怎样改变试用边界？
 
-**研究主题**：采用判断、效果与总成本
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑、采用判断
 
 #### 完整回答
 
-当前结论是观察。长期个人对话的记忆维护任务清楚，检索与写入链路有源码支撑，但“事实每轮在”和“无额外调用”的宽泛说法不成立，管理路由还依赖可能放行的宿主鉴权。已有关键机制材料足以形成明确研究结论，尚不足以建议把真实隐私档案交给该版本持续使用。
-
-后续可在仅本机、已确认鉴权且独立测试目录中放入少量非敏感样本：两条稳定约定、若干带绝对日期的事件、一条被替代的事实和一条已删除项。测试长问、短续问、无关问及新会话；逐项对照磁盘、注入轨迹和最终答案。先关闭自动扩词以建立不调用整理模型的基线，再单独核对开启后的请求数、成本和召回差异。合格标准是身份和归库正确，旧事实不再消费，后台结果不复活删除，管理请求确实受限。
-
-如必要事实反复缺失、过期内容被当现在事实、未授权请求能改记忆或额外调用超预期，应停用并回到用户可审阅短档案。切回会话模式不会自动迁回或删除工作区库，卸载也不能当成所有副本清除；退出前分别确认原库、合并库、备份及日志。现金、耗时和单位合格任务成本均无本次实测值，不能写成免费、低成本或已节省时间。
+设置页和管理路由需要宿主 webServer，更新路由也通过该服务接入。实际路由套住同一准入函数，拿不到 connection 或 requestRejection 抛错返回 503，宿主明确返回 401 或 403 时拒绝。浏览器标为 cross-site 或带非本机 Origin 时再拒绝，但不带 Origin 的请求仍依赖宿主判断。代码只识别宿主同步返回的两个拒绝状态，不提供独立身份验证。安装路由限定 POST，放行后可调用宿主 pluginManager.installBundle，因此远程代理或共享环境不能仅按 Origin 认为已有权限保障。推荐先在隔离本机、明确只开的测试会话关闭后台扩词，用样本验证召回和权限。若鉴权缺失或允许未授权请求，或旧内容在错误会话出现，停用并改回手工短档案。新版本修掉了旧版缺服务时默认放行的分支，实际宿主如何解析来源与会话还须核对。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:7-10](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/package.json#L7-L10)
+**依据 1 · 源码核查**：[lib/准入.mjs:9-37](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/%E5%87%86%E5%85%A5.mjs#L9-L37)
 
-声明 Node 和 DSH 范围，范围声明不是兼容验收。
-
-```text
-  "engines": {
-    "node": ">=22",
-    "dsh": ">=0.2.1-rc.2"
-  },
-```
-
-**依据 2 · 作者声明**：[README.md:29-45](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/README.md#L29-L45)
-
-作者说复用模型并给出旧版本实测对照，不能等同当前版本验收。
+缺服务与异常拒绝、只比较两个宿主返回状态、浏览器头附加过滤。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-## 需要什么
+const 本地来源 = /^(?:dsh-app:|https?:\/\/(?:127\.0\.0\.1|localhost|\[::1\])(?::\d+)?\/?$)/i
 
-- **DSH**（DeepSeek Harness），带 Web 界面
-- **一个能用的模型** —— 它借用你 DSH 里正在用的那个，**不用另外配 key、不额外花钱**
+/**
+ * 建一个准入函数。返回 null = 放行；返回 { 码, 说 } = 拒绝。
+ */
+export function 建准入(ctx, 记账 = () => {}) {
+  return function 准入(req) {
+    let 拒
+    try {
+      const 连接 = ctx.get('connection')
+      if (!连接 || typeof 连接.requestRejection !== 'function') {
+        // ⚠ 失败即拒绝：拿不到宿主的准入服务，就当这个请求不可信
+        return { 码: 503, 说: '拿不到宿主的 connection 服务' }
+      }
+      拒 = 连接.requestRejection(req)
+    } catch (error) {
+      return { 码: 503, 说: '准入服务自己抛错：' + ((error && error.message) || error) }
+    }
+    if (拒 === 401 || 拒 === 403) return { 码: 拒, 说: '宿主判了外来请求' }
 
-> 「提炼」和「扩词」这两步会调用模型（走你现有的）。不点它们就不会调用。
-
----
-
-## 适配哪个 DSH 版本（不用操心）
-
-这个插件**跟着 DSH 一起更新**：作者这边跑的就是最新版的 DSH，**最新版插件永远是给最新版 DSH 写的**。
-
-所以看到「不适配 / 不支持」之类的提示，基本都是**装到了旧版本** —— 升级到最新版、重启一次 DSH 就好。
-真遇到新版对不上（比如 DSH 刚升级、插件还没跟上），提个 issue，作者会跟着改。
-
-当前实测对照：插件 **1.3.1** ↔ DSH **0.2.1-rc.3**（2026-10-26）
+    // 再兜一层：浏览器带的「跨站」标记 / 不是本机来的 Origin
+    const 头 = (req && req.headers) || {}
+    if (String(头['sec-fetch-site'] || '').toLowerCase() === 'cross-site') {
+      return { 码: 403, 说: '跨站请求' }
+    }
+    const 源 = String(头.origin || '')
+    if (源 && !本地来源.test(源)) return { 码: 403, 说: '来源不是本机：' + 源.slice(0, 80) }
+    return null
+  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1664-1675](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L1664-L1675)
+**依据 2 · 源码核查**：[lib/准入.mjs:43-62](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/%E5%87%86%E5%85%A5.mjs#L43-L62)
 
-明确 autoExpand 开关及实际模型调用。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    const data = loadStore(sid)
-    if (!data || !Array.isArray(data.memories)) return 0
-    if (data.policy && data.policy.autoExpand === false) return 0
-    const 要扩 = data.memories.filter((m) => !Array.isArray(m.related) || !m.related.length).slice(0, Math.max(1, 上限))
-    if (!要扩.length) return 0
-    const agent = (ctx.agents && typeof ctx.agents.get === 'function' ? ctx.agents.get(sid) : null)
-      || ((ctx.agents && typeof ctx.agents.list === 'function' ? ctx.agents.list() : []) || [])[0]
-    if (!agent) { diag('自动扩词：' + sid + ' 这会儿没有活着的 agent，跳过'); return 0 }
-    const 输入 = 要扩.map((m, k) => k + 1 + '|' + String(m.text || '')).join('\n')
-    const t0 = Date.now()
-    const r = await 问模型(ctx, agent, 扩词系统_v2, 输入, 6000)
-    if (!r || !r.ok) { diag('自动扩词：模型没回（' + ((r && r.message) || '?') + '）'); return 0 }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:4830-4859](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4830-L4859)
-
-模式切换保留原库，并不执行数据迁移。
+拒绝结果提前返回给客户端。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-    //   ⚠ 切换本身**不搬动**记忆（此后读写的库换了，旧库还在原处）。
-    //   要把同一个工作区里几间会话的记忆并成一份，用下面的 /merge-workspace。
-    mroute('/dsh-fish-memory/mode', async (req, res) => {
-      const 回 = (o) => {
-        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8' })
-        res.end(JSON.stringify(o))
-      }
-      // ⚠ 1.4.7：这条路由以前**不分 GET / POST** —— 谁打进来都往下走，没请求体时
-      //   `b.模式` 是空串、被判成 'session'，然后**把配置写回 session**。
-      //   于是：切到「按工作区」之后，只要外面读一次状态（GET，没有 body），
-      //   就被悄悄掰回「按会话」，界面看着就是「点了没反应 / 按钮一直灰」。
-      //   现在只有 POST 才改；GET 只报当前值，不写盘。
-      if (String(req.method || '').toUpperCase() !== 'POST') {
-        let 当前 = 'session'
-        try { 当前 = String(loadCfg().模式 || '') === 'workspace' ? 'workspace' : 'session' } catch (error) {}
-        回({ ok: true, 模式: 当前 })
-        return
-      }
-      let body = ''
-      for await (const chunk of req) body += chunk
-      let b = {}
-      try { b = JSON.parse(body || '{}') } catch (error) {}
-      const 模式 = String(b.模式 || '') === 'workspace' ? 'workspace' : 'session'
+export function 包准入(准入, handler, 记账 = () => {}) {
+  return async function 带准入的(req, res) {
+    const 结果 = 准入(req)
+    if (结果) {
       try {
-        const c = loadCfg()
-        c.模式 = 模式
-        saveCfg(c)
-        diag('记忆归类模式 → ' + 模式)
+        记账('管理接口拒了一次（' + 结果.码 + '，' + 结果.说 + '）：' + String((req && req.url) || ''))
       } catch (error) {}
-      回({ ok: true, 模式 })
+      try {
+        res.writeHead(结果.码, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
+        res.end(JSON.stringify({
+          ok: false,
+          error: 结果.码 === 401 ? 'authentication_required'
+            : 结果.码 === 503 ? 'management_unavailable' : 'management_forbidden',
+          说: 结果.说,
+        }))
+      } catch (error) {}
+      return
+    }
+    return handler(req, res)
+  }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/index.js:5604-5621](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L5604-L5621)
+**依据 3 · 源码核查**：[lib/index.js:4860-4888](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4860-L4888)
 
-彻底清理仍有销毁前另存副本。
+设置页管理路由使用准入并按 webServer 有无注册。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-        } else if (action === 'purge') {
-          const n = data.deleted.length
-          data.deleted = data.deleted.filter((m) => String(m.id) !== id)
-          if (data.deleted.length !== n) {
-            saveStore(sid, data, { raw: true }) // 真销毁：不许合并把盘上的捡回来
-            diag('彻底清掉一条：' + sid + ' / ' + id)
-            out = { ok: true, message: '彻底清掉了' }
+    // ⭐ 1.5.7（issue #35）：准入改成**失败即拒绝**。
+    //   以前这里在拿不到 connection、或者 requestRejection 自己抛错时放行 ——
+    //   于是本机任意网页都能打到管理接口（包括一键安装）。现在判不了就拒。
+    const 准入 = 建准入(ctx, diag)
+    const 只认本人 = (handler) => 包准入(准入, handler, diag)
+
+    // ⭐ 网页服务是可选的：有 webServer 才挂设置页（跟 DSH 自己的写法一样，ctx.inject 按服务在不在挂/卸）。
+    //   没有网页服务时（无界面 profile）记忆照常记、照常想起来，只是没有设置页 —— 而不是整个插件起不来。
+    //   宿主没有 ctx.inject（老宿主 / 测试替身）就照旧直接挂。
+    const mroute = (path, handler) =>
+      typeof ctx.inject === 'function'
+        ? ctx.inject(['webServer'], (c) => 挂路由(c, path, handler))
+        : 挂路由(ctx, path, handler)
+    const 挂路由 = (ctx, path, handler) =>
+      ctx.effect(() =>
+        ctx.webServer.register({
+          kind: 'exact',
+          path: path,
+          handler: async (req, res) => {
+            try {
+              await 只认本人(handler)(req, res)
+            } catch (error) {
+              try {
+                res.writeHead(500, { 'content-type': 'application/json' })
+                res.end(JSON.stringify({ ok: false, error: String(error && error.message) }))
+              } catch (e2) {}
+            }
+          },
+        }),
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:4904-4908](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4904-L4908)
+
+更新模块注册传入相同准入。
+
+```text
+    if (typeof ctx.inject === 'function') {
+      ctx.inject(['webServer'], (c) => 自查更新.register(c, '/dsh-fish-memory', 准入))
+    } else {
+      自查更新.register(ctx, '/dsh-fish-memory', 准入)
+    }
+```
+
+**依据 5 · 源码核查**：[lib/selfupdate.mjs:168-182](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/selfupdate.mjs#L168-L182)
+
+成功后实际调用宿主 installBundle。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  async function install(ctx) {
+    if (是开发副本) {
+      return { ok: false, error: '这是本地开发副本（link: 进来的），一键更新会把你正在改的目录换成仓库里的版本 —— 要更新请在仓库里 git pull' }
+    }
+    const pm = ctx && ctx.pluginManager
+    if (!pm || typeof pm.installBundle !== 'function') {
+      return { ok: false, error: '这版 DSH 没有插件管理接口，装不了；请手动更新' }
+    }
+    const spec = 取安装来源() || (meta.name ? String(meta.name) : '')
+    if (!spec) return { ok: false, error: '不知道该从哪儿装（既没有仓库地址，也没记录安装来源）' }
+    try {
+      log('一键更新：开始装 ' + spec)
+      const r = await pm.installBundle(spec)
+      log('一键更新：' + JSON.stringify(r && (r.applied ?? r.application ?? r.reason ?? r)))
+      return { ok: true, spec, result: r || null }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/selfupdate.mjs:189-214](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/selfupdate.mjs#L189-L214)
+
+自更新路由包装同一道准入。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  function register(ctx, route, 准入) {
+    const send = (res, code, obj) => {
+      res.writeHead(code, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
+      res.end(JSON.stringify(obj))
+    }
+    // ⭐ 1.5.7（issue #35）：这两个路由以前**没有准入** —— 本机任意网页都能触发安装。
+    //   现在一律先过准入（失败即拒绝）。
+    const 过 = (handler) => async (req, res) => {
+      if (typeof 准入 === 'function') {
+        const 结果 = 准入(req)
+        if (结果) {
+          try { log('管理接口拒了一次（' + 结果.码 + '，' + 结果.说 + '）：' + String((req && req.url) || '')) } catch (e) {}
+          return send(res, 结果.码, {
+            ok: false,
+            error: 结果.码 === 401 ? 'authentication_required'
+              : 结果.码 === 503 ? 'management_unavailable' : 'management_forbidden',
+          })
+        }
+      }
+      return handler(req, res)
+    }
+    try {
+      ctx.effect(() => ctx.webServer.register({
+        kind: 'exact',
+        path: route + '/update',
+        handler: 过(async (req, res) => {
+```
+
+</details>
+
+**依据 7 · 源码核查**：[lib/selfupdate.mjs:225-238](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/selfupdate.mjs#L225-L238)
+
+安装路由检查 POST 再启动安装。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+      // ⭐ 一键更新：POST。装完的结果原样带回去（可能要重启才生效）
+      ctx.effect(() => ctx.webServer.register({
+        kind: 'exact',
+        path: route + '/install',
+        handler: 过(async (req, res) => {
+          if (req.method !== 'POST') { send(res, 405, { ok: false, error: '只接受 POST' }); return }
+          try {
+            const r = await install(ctx)
+            send(res, 200, r)
+          } catch (e) {
+            log('一键更新路由失败：' + (e && e.message))
+            send(res, 200, { ok: false, error: String((e && e.message) || e) })
           }
-        } else if (action === 'purgeall') {
-          const n = data.deleted.length
-          // ⚠⚠ 2026-09-23：**真销毁** —— 动之前另存一份带时间戳的（见 销毁前另存 的说明）✓
-          if (n > 0) {
-            销毁前另存(sid)
-            data.deleted = []
-            saveStore(sid, data, { raw: true }) // 真销毁：不许合并把盘上的捡回来
-          }
-          diag('清空已删掉的：' + sid + '（' + n + ' 条）')
-          out = { ok: true, message: n ? '清掉了 ' + n + ' 条（清空前的整份另存在「销毁前」里）' : '没有要清掉的' }
+        }),
 ```
 
 </details>
 
 #### 缺口
 
-- 没有同条件合格任务对照及真实用户负担数据。
-  **影响**：无法确认额外检索和整理成本能被节省的人工覆盖。
-  **进一步探讨**：记录同批任务的合格率、人工纠错分钟数、总模型请求和 token，包含失败重试。
+- 宿主 connection 对匿名请求及代理来源的实际判定未验证。
+  **影响**：隔离试用可先验证；共享部署所需的安全条件仍未确立。
+  **进一步探讨**：在授权的隔离实例分别使用匿名、本机登录及带跨站标记的请求观察管理端点，不调用真实安装。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 从遗漏与可解释轨迹能推导什么改进，怎样被证伪？
+### Q05 · 怎样判断减少无关注入的收益是否覆盖漏召回和成本？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、效果与总成本
 
 #### 完整回答
 
-待验证假设是把用户明确确认且有到期条件的硬约束层放在事件 queryGate 之前，并在注入轨迹显示本轮未带入的原因。它不同于当前按重要度取少量 stable_profile 的实现：当前常驻层仍被问句门阻断，亦没有本题设想的确认、有效期和冲突确认契约。推导依据是长期约定可能在短续问时缺失，而把所有长期事实强塞每轮又会固化过时内容。
-
-最小验证可在隔离会话里比较三组相同事实和任务：现有机制、人工短档案、用户确认且到期的固定预算层；保持模型与提示预算一致。观察短问的必要约束遗漏、过期事实使用、冲突纠正、每轮 token 与人工维护时间。只有约束遗漏减少且过期错误、预算与维护负担没有不可接受增长，才支持继续设计；若人工短档案同样有效且更省维护，或新层造成旧事实持续污染，则否定采用价值。鉴权是否失效是独立部署前提，不能用检索实验掩盖。该假设没有实现或运行验证，不计入插件已有贡献。
+可以比较三种同任务的做法：维护手工短档案、启用当前事件检索、为少数用户确认且有截止日的约定另设固定预算。第三种是未验证方案，目的是让关键约束跨过短问门，同时限制固定文本挤占预算。给每种做法同一组重复问候、带歧义的中文短问、变更后的约定和普通事件。插件轨迹记录候选、门槛和所选条目，配合任务验收可以区分应记而没写、该找而没找以及找对但模型回答错误。每个合格任务分别记录漏掉约定、带出无关或过期内容的次数，另统计注入 token、扩词请求与人工维护分钟。若新增固定条目导致无关注入增加，或带来的少量遗漏改善抵不过人工维护和额外输入，就保留事件检索配人工约束。当前只有源码机制和作者说明，没有可比较的结果。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:3256-3262](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3256-L3262)
+**依据 1 · 源码核查**：[lib/index.js:4480-4496](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4480-L4496)
 
-低信息问在常驻层之前被挡下，是硬约束遗漏的推导依据。
-
-```text
-  const 门槛 = typeof policy.queryGate === 'number' ? policy.queryGate : 0.8
-  let gate = null
-  if (门槛 > 0 && sid) {
-    const v = 问句信息量(sid, query, df)
-    if (v < 门槛) {
-      // 这道门挡下来的时候**不做 851 次打分**，省一趟；理由照样记进 trace 给她看 ✓
-      return { selected: [], scored: [], 字数: 0, gate: { 信息量: Number(v.toFixed(2)), 门槛 } }
-```
-
-**依据 2 · 源码核查**：[lib/index.js:3418-3437](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L3418-L3437)
-
-现有常驻事实按重要度和时间取有限条，不是确认加到期契约。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  const 事实上限 =
-    typeof policy.factsMax === 'number' && policy.factsMax >= 0 ? Math.floor(policy.factsMax) : 2
-  const 常驻事实 = []
-  if (事实上限 > 0) {
-    const 候选 = memories
-      .filter((m) => m && m.category === 'stable_profile')
-      .slice()
-      .sort(
-        (a, b) =>
-          (Number(b.importance) || 0) - (Number(a.importance) || 0) ||
-          (Date.parse(b.createdAt || b.at || 0) || 0) - (Date.parse(a.createdAt || a.at || 0) || 0),
-      )
-    const 行表 = new Map()
-    for (const row of scored) if (row && row.m) 行表.set(String(row.m.id), row)
-    for (const m of 候选.slice(0, 事实上限)) {
-      const row = 行表.get(String(m.id)) || { m, s: { P: 1, C: 1, timeHit: 1 } }
-      row.omission = null // 常驻的不算「被筛掉」
-      row.常驻 = true
-      常驻事实.push(row)
-    }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:4352-4368](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/5124cc1fa5a3149e8a68cf1d858e24b5bf2a2eea/lib/index.js#L4352-L4368)
-
-trace 记录被选与未选原因，可作为对照实验的观察入口。
+能观察到召回、空结果和额外调用触发的不同阶段。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
+          补历史尺(sid, agent.session) // ⭐ 第一次用到时把她的会话历史补成尺子（只做一次）✓
+          const { selected, scored, gate } = recall(data, query, now, sid)
+          // ⭐ 1.4.3：「一条都没挑中」多半是那条记忆**还没扩过检索词**（related 是空的），
+          //   所以只有原词能命中、分数卡在门槛下。搜空的时候顺手补一条 —— 下次它就有词可命中了。
+          //   节流 60 秒、一次只补一条，免得一搜不到就一连串模型调用。
+          try {
+            // ⚠ 原来写的是 `!gate` —— 可门放行时 gate 也是个对象（记着信息量），
+            //   所以说过 20 句以后这里就再没进来过。要判的是「是不是被门挡了」。
+            //   常驻层那几条每轮都在，不算「挑中了」—— 看的是事件有没有挑中。
+            if (!selected.some((r) => !r.常驻) && !(gate && gate.挡了)) {
+              const 现 = Date.now()
+              const 待补 = scored.find((r) => r.omission === 'below_threshold')
+              if (待补 && 现 - 上次补词 > 60000) {
+                上次补词 = 现
+                后台排队(sid, () => 自动扩词(ctx, sid, 1))
+              }
+            }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:4507-4520](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L4507-L4520)
+
+轨迹保存查询、门槛、入选 ID 和部分评分。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+          const 上一条 = data.traces[data.traces.length - 1]
+          const 同一次 = 上一条 && 上一条.query === query.slice(0, 200) &&
+            Math.abs(now - Number(上一条.at || 0)) < 3000
           const 这条 = {
             at: now,
             session: sid,
@@ -1117,20 +1266,41 @@ trace 记录被选与未选原因，可作为对照实验的观察入口。
             rows: scored.slice(0, 24).map((r) => ({
               id: r.m.id,
               C: Number(r.s.C.toFixed(3)),
-              P: Number(r.s.P.toFixed(3)),
-              omission: r.omission,
-              timeHit: r.s.timeHit,
-              // 进到提示词里的算 assembled；后面她回复里用上了就变 consumed ✓
-              status: r.omission ? null : 'assembled',
-            })),
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:3567-3581](https://github.com/Yuuyuko-uu/dsh-fish-memory/blob/9b49f20279835c1fce3e2f924a48ef0da2fd5a75/lib/index.js#L3567-L3581)
+
+现有选择规则没有常驻层，可作为实验基线。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  // ⭐ 1.5.7：**长期事实（每轮无条件带几条）已整个删除**。
+  //   理由：闲聊时把跟当下无关的记忆塞进去，会把话带跑；身份/称呼这类由星汐每轮开头带。
+  //   现在只有「这句话检索命中」的记忆才会进上下文。
+  // 普通事件：从去重后的候选里按分数拿，受 maxItems 和「这趟上限」两条约束
+  const 事件们 = 去重后.map((x) => x.row).filter((row) => !row.m || row.m.category !== 'stable_profile')
+  const 最高事件分 = 事件们.length && 事件们[0].s ? 事件们[0].s.C : 0
+  const 事件本趟上限 = 事件们.length ? 分档.find(([线]) => 最高事件分 >= 线)[1] : 0
+  const 事件名额 = Math.min(事件本趟上限, policy.maxItems)
+  const 条数内 = 事件们.slice(0, 事件名额)
+  for (const row of 事件们.slice(事件名额)) {
+    if (!row.omission) row.omission = 'weak' // 设置页上会写「这趟给的条数到顶了」
+  }
+
+  const { selected, 字数: 已用 } = 按字数收(条数内, policy)
+  const ids = new Set(selected.map((r) => r.m.id))
 ```
 
 </details>
 
 #### 缺口
 
-- 确认加到期的事实层是否优于人工短档案未知。
-  **影响**：不能把设计推演算成已有创新或推荐理由。
-  **进一步探讨**：按本题三组对照记录错误和负担，用事前定义的停止标准决定是否继续。
+- 缺少配对任务的收益和成本记录。
+  **影响**：无法判断值得承担的每任务成本。
+  **进一步探讨**：固定宿主版本、模型、题集和判据，独立记录输入、输出、轨迹及每轮额外请求。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

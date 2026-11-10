@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[d5582ce](https://github.com/liustack/modsearch/tree/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c)
+源码版本：[1ebc893](https://github.com/liustack/modsearch/tree/1ebc893da64208288d7882b125c50108b1270dea)
 
 <!-- BEGIN META -->
-[![GitHub ★ 898](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=898&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liustack/modsearch) [![npm 30d 47,908](https://img.shields.io/static/v1?label=npm+30d&message=47%2C908&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modsearch) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modsearch)
+[![GitHub ★ 962](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=962&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liustack/modsearch) [![npm 30d 63,136](https://img.shields.io/static/v1?label=npm+30d&message=63%2C136&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modsearch) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modsearch)
 <!-- END META -->
 
 > **功能**：为 DSH 提供多引擎网页搜索、X 搜索和页面读取。
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示多引擎搜索接入 DSH，同时提供 X 与页面读取；没有独立对照证明更强。
+> **亮点**：为宿主既有网页搜索增加多引擎与超时回退，并在 X 降级时标出实际语料。HTTP 引擎复用同一代理选择规则，便于受限网络配置。见 [Q01](#research-q01) 至 [Q03](#research-q03)。
 
-> **主要限制**：[Q03](#research-q03) 与 [Q04](#research-q04) 显示不同 DSH 输出保留的路由信息不同，代理和云路径存在限制，不能将私网防护当作全面隔离。
+> **主要限制**：网页输出无法回溯每次回退。代理 DNS 与云取页另有边界，设置端点是否受鉴权保护也依赖部署。见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 **本文目录**
 
@@ -26,12 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要多引擎搜索，相对宿主原生 web 和单服务商有什么增量？](#detail-section-11)
-  - [Q02 · DSH 搜索和页面请求如何走到引擎并返回？](#detail-section-12)
-  - [Q03 · 故障转移、额度和 X 降级如何表达？](#detail-section-13)
-  - [Q04 · 页面抓取的内网、代理和云披露边界是什么？](#detail-section-14)
-  - [Q05 · 安装和使用成本是什么，何时停止？](#detail-section-15)
-  - [Q06 · 能否用统一的脱敏路由摘要补足宿主侧丢失的故障转移上下文？](#detail-section-16)
+  - [Q01 · 包怎样接入 DSH，搜索与阅读走哪条路径？](#detail-section-11)
+  - [Q02 · 引擎回退和代理规则怎样影响一次检索？](#detail-section-12)
+  - [Q03 · 模型看到的来源能否说明实际搜索过哪里？](#detail-section-13)
+  - [Q04 · 代理、云读取和配置写入分别有什么边界？](#detail-section-14)
+  - [Q05 · 怎样验证统一脱敏路由摘要能减少误判？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向在 DSH 对话中检索外部信息并核查页面的用户。
+> **用途**：需要在 DSH 中检索公开资料的用户，可把网页或 X 结果纳入回答，并对照原始链接验证。
 
-宿主原生 web 搜索及单一服务商已能检索；多引擎与降级标记提供额外路由选择，收益未量化。
+宿主原生搜索与单一服务足以处理普通查询。ModSearch 在一个入口下组织多引擎、X 后备和按问题阅读，用户仍需核对结果和数据流。
 
 <a id="detail-section-3"></a>
 
@@ -52,65 +51,65 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| web 搜索 | 经多引擎提供结果 | 宿主返回不含完整尝试轨迹 |
-| X 搜索 | 查询社交内容 | 后备 web 结果标为 degraded |
-| 页面读取 | 返回内容、不确定性和警告 | 代理和云路径有不同网络边界 |
+| --- | --- | --- |
+| 网页搜索 | 按预算检索公开网页 | 依服务与网络，宿主不展示完整尝试 |
+| X 搜索 | 获取 X 或网页二手资料 | X 不可用时保留降级标记 |
+| 页面读取 | 摘要或按问题抽取内容 | 云与代理各有外发和解析边界 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node >=22.13 和 dist | 是 | 启动包内 CLI | 无法执行 |
-| 兼容 DSH web 与 tools | DSH 接入必需 | 注册 provider 和工具 | 功能不可用或部分跳过 |
-| 搜索服务与网络 | 搜索需要 | 获取外部结果 | 尝试后备或失败 |
-| 账号或密钥 | 视引擎而定 | 使用相应提供方 | 相关引擎不可用 |
+| --- | --- | --- | --- |
+| Node 22.13+ 与构建产物 | CLI 必需 | 运行搜索 | 检查包安装和 dist |
+| 兼容 DSH provider 与工具 API | 宿主使用需用 | 注册入口 | 跳过或部分功能缺失 |
+| 可达引擎及相应账号 | 视引擎而定 | 外部检索 | 按预算回退或失败 |
+| 宿主或反代鉴权 | 开放管理界面前需核实 | 保护配置读写 | 限制访问或关设置卡 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户检查宿主、凭据和数据外发许可 | 可以恢复既有入口 |
-| 检索 | 模型发出查询或 URL | 查看来源与降级状态 |
-| 核验 | 用户打开原始来源交叉检查 | 来源不可核验时不依赖结论 |
+| --- | --- | --- |
+| 1 | 用户核对包、profile、引擎和代理 | 确认可恢复原宿主路由 |
+| 2 | 用户发一条公开测试查询 | 对照引用原文与实际语料 |
+| 3 | 用户检查回退或读取警告 | 无法核对时停用并回原工具 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 安装 | 网络下载及引擎费用未知 | 核对版本与配置 | Node 版本受限 |
-| 使用 | 服务配额和网络开销未知 | 复核结果与数据外发 | 免费额度可能变化 |
-| 故障恢复 | 重试可能消耗服务配额 | 检查路由与冷却 | 宿主输出不含完整尝试 |
+| --- | --- | --- | --- |
+| 首次 | 包下载和引擎额度，费用未知 | 配置 profile、凭据和代理 | 兼容和用时未知 |
+| 持续 | 搜索、回退及传输，金额未知 | 打开来源并核对语料 | 每份合格结果费用未知 |
+| 失败与退出 | 重试消耗配额，数值未知 | 查 CLI 轨迹、保护配置并恢复原路由 | 宿主输出不能重建完整轨迹 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 多引擎 | 代码支持候选与后备 | 真实成功率 |
-| X 降级 | 代码标记 degraded | 实际数据完整性 |
-| 页面保护 | 直连逐跳检查与地址固定 | 代理和云服务全面安全性 |
+| --- | --- | --- |
+| 多引擎搜索 | 依据时间、可用性和失败种类安排后备 | 查询质量和稳定性 |
+| 代理接入 | HTTP 请求显式使用代理分流 | 真实出口和各服务接受情况 |
+| X 来源核对 | 网页回答标记为二手语料 | 用户能否一致识别及是否正确引用 |
 
-> **思考**：[Q03](#research-q03) 与 [Q04](#research-q04) 显示不同 DSH 输出保留的路由信息不同，代理和云路径存在限制，不能将私网防护当作全面隔离。
+> **思考**：网页输出无法回溯每次回退。代理 DNS 与云取页另有边界，设置端点是否受鉴权保护也依赖部署。见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示多引擎搜索接入 DSH，同时提供 X 与页面读取；没有独立对照证明更强。
+> **亮点**：为宿主既有网页搜索增加多引擎与超时回退，并在 X 降级时标出实际语料。HTTP 引擎复用同一代理选择规则，便于受限网络配置。见 [Q01](#research-q01) 至 [Q03](#research-q03)。
 
-[Q02](#research-q02) 通过子进程接入宿主，[Q03](#research-q03) 控制期限与故障链；信息在不同投影中有所裁剪，行为尚未经宿主验证。
+宿主绑定、预算调度、HTTP 请求和页面安全检查分层。运行事实由调度器覆盖，Web 与 X 的输出协议不同。见 [Q02](#research-q02) 与 [Q03](#research-q03)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 与 [Q04](#research-q04) 显示不同 DSH 输出保留的路由信息不同，代理和云路径存在限制，不能将私网防护当作全面隔离。
+网页输出无法回溯每次回退。代理 DNS 与云取页另有边界，设置端点是否受鉴权保护也依赖部署。见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 建议在可信配置和隔离凭据下小范围试用，逐项核对来源；数据不能外发或降级不适合时回退。
+先用公开查询核对目标引擎、输出和引用，再检查代理与管理权限。来源无法核对或请求不应外发时回原生工具。见 [Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -118,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-源码机制已按固定版本检查；外部服务、宿主执行、搜索质量及收益未验证。
+固定源码支持多引擎接线、代理适配及 X 降级语料标记。真实服务可用性、数据流与检索质量待验，统一摘要是未验证设想。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、dsh/index.js、src/router.ts、src/search.ts、src/providers/http/network.ts、src/providers/httpFetch.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 CHANGELOG.md、cordis.patch.yml、dsh/index.js、package.json、src/providers/firecrawl.ts、src/providers/http/network.ts、src/providers/httpFetch.ts、src/providers/keenable.ts、src/providers/youcom.ts、src/router.ts、src/search.ts、src/util/proxy.ts、src/util/timedRequest.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只读固定提交的 DSH 接入、路由、搜索、网络和依赖；未运行目标项目或外部网络，未逐项审计所有引擎。
-- 下一步：隔离宿主用固定伪引擎对照现有投影与 [Q06](#research-q06) 的统一脱敏摘要，测量来源和回退识别、敏感信息泄露及开销；另检查本地、代理和云抓取边界。
+- 边界：检查包和宿主入口、代理、预算、X 降级、云及本地读取和配置路径。第三方服务内部、具体出网和宿主运行未核验。
+- 下一步：用隔离环境做代理绕过、引擎拒绝、X 降级、云 URL 与匿名配置访问对照，记录原始来源和实际出网。
 
 **分析版本**
 
 - **仓库**：[liustack/modsearch](https://github.com/liustack/modsearch)
-- **版本号**：5.10.11（[固定提交 d5582ce](https://github.com/liustack/modsearch/tree/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c)）
-- **版本日期**：2026-10-28（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：5.10.12（[固定提交 1ebc893](https://github.com/liustack/modsearch/tree/1ebc893da64208288d7882b125c50108b1270dea)）
+- **版本日期**：2026-11-07（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,9 +136,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 假设在 web 和 X 输出增加由实际尝试记录生成的统一脱敏路由摘要，可降低回退来源误识别；X 现有 source/status 不是新增，效果和宿主兼容尚未验证。
+把实际语料、引擎和回退标志加入同一份脱敏摘要，可能减少对搜索来源的误判。以固定回退场景和合格检索数比较识别效果。见 [Q05](#research-q05)。
 
-隔离宿主用固定伪引擎对照现有投影与 [Q06](#research-q06) 的统一脱敏摘要，测量来源和回退识别、敏感信息泄露及开销；另检查本地、代理和云抓取边界。
+用隔离环境做代理绕过、引擎拒绝、X 降级、云 URL 与匿名配置访问对照，记录原始来源和实际出网。
 
 <a id="detail-section-9"></a>
 
@@ -152,106 +151,110 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 32 | 4164 | — | — | 53899 |
+| .md | source | 32 | 4191 | — | — | 54462 |
 | .js | source | 4 | 2231 | 1666 | 476 | — |
 | .mjs | source | 11 | 670 | 540 | 95 | — |
 | .mjs | test | 3 | 104 | 87 | 3 | — |
-| .ts | test | 27 | 8817 | 7566 | 733 | — |
-| .ts | source | 30 | 6582 | 4926 | 1125 | — |
+| .ts | test | 29 | 8951 | 7679 | 745 | — |
+| .ts | source | 32 | 6625 | 4948 | 1147 | — |
 | .ts | example | 1 | 50 | 39 | 10 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 12](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=12&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 13](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=13&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 10](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=10&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+created%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z) [![近30天关闭 12](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=12&color=737b86&logo=github)](https://github.com/liustack/modsearch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-10。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查 DSH 搜索接入、多引擎故障与页面获取边界。
+**插件研究总目标**：DSH 用户用 ModSearch 搜索公开网页或 X 时，如何判断真正的来源、回退和网络边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要多引擎搜索，相对宿主原生 web 和单服务商有什么增量？
+### Q01 · 包怎样接入 DSH，搜索与阅读走哪条路径？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-需要在 DSH 对话中查询外部网页、X 和读取页面的人是目标用户。原生 web 工具和单服务商搜索已能完成部分检索；本组件将多个后端接入同一个 DSH 搜索接口并增加 X 与页面读取，便于失效时换路。README.md:7-9 是作者关于免费与强度的主张，并非独立比较，准确率、成功率、隐私影响和用户需求频率未知。
+需要在 DSH 对话查公开资料的用户，可以让宿主原有 web_search 路由到 ModSearch，并使用单独的 x_search 和 read_page。根包导出 DSH 模块、声明 bundle patch，同时提供编译后的 CLI。patch 把 searchProvider 指向 modsearch，保留 web_fetch 的 http 提供者选择。宿主如果缺注册搜索提供者的 API，插件会跳过该注册并打印诊断。真正的 search、X 和页面阅读都调用 Node 子进程中的 CLI，根据调用加不同预算和参数，再解析 JSON。源码仓库若缺 dist，调用前会报缺构建产物，不能把插件成功显示在宿主列表当作已能搜索。read_page 输出可含摘要、正文和链接，原生 web_fetch 则继续负责宿主的原始取页入口。对比原生单引擎，新增的是路由、X 和聚焦阅读的组合。验收应核对选定 profile 下实际调用到的工具和能打开的来源。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:7-9](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/README.md#L7-L9)
+**依据 1 · 源码核查**：[package.json:2-8](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/package.json#L2-L8)
 
-作者描述搜索、X 与页面获取。
+CLI 包版本及 bin。
 
 ```text
-<p align="center"><b>In the chat app your model can search the web. On the API it cannot. ModSearch puts the web back: web search, X search, page fetch. Free, no signup, no API key.</b></p>
-
-<p align="center">🥇 <b>The strongest free web search plugin for DeepSeek Harness (dsh)</b> 🥇</p>
+  "name": "@liustack/modsearch",
+  "version": "5.10.12",
+  "description": "The strongest free web search plugin for coding agents. Plug-in web search, X search, and page fetch for models without native web access. Free out of the box: no signup, no API key (Firecrawl keyless, 1,000 free credits/month)",
+  "type": "module",
+  "bin": {
+    "modsearch": "./dist/main.js"
+  },
 ```
 
-**依据 2 · 源码核查**：[dsh/index.js:62-75](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L62-L75)
+**依据 2 · 源码核查**：[package.json:55-73](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/package.json#L55-L73)
 
-注册搜索提供者及两个工具。
+Node 要求、宿主入口和 bundle。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-export function apply(ctx, config = {}) {
-  if (config.searchProvider !== false) {
-    registerSearchProvider(ctx, config);
-  }
-  // Registered as raw JSON-Schema tool definitions (no dsh package imports:
-  // the developer-preview registry accepts these and out-of-tree resolution
-  // of @deepseek-ai/dsh-tools is not yet reliable), so this plugin owns its
-  // own argument validation inside execute.
-  if (config.xSearch !== false) {
-    registerXSearchTool(ctx);
-  }
-  if (config.readPage !== false) {
-    registerReadPageTool(ctx);
-  }
+  "engines": {
+    "node": ">=22.13"
+  },
+  "exports": {
+    ".": "./dsh/index.js",
+    "./dsh": "./dsh/index.js",
+    "./client": "./dsh/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web",
+      "immediately": true
+    }
+  },
 ```
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[cordis.patch.yml:9-16](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/cordis.patch.yml#L9-L16)
 
-- 没有固定版本宿主与外部服务运行验证
-  **影响**：无法推断真实成功率、兼容性或检索准确率
-  **进一步探讨**：隔离凭据，用可控引擎和宿主验证并对照来源
+接管搜索，保留原 fetch 选择。
 
-<a id="research-q02"></a>
+```text
+- id: web
+  config:
+    searchProvider: modsearch
+    fetchProvider: http
 
-<a id="detail-section-12"></a>
+- insert:
+    - id: modsearch
+      name: '@liustack/modsearch'
+```
 
-### Q02 · DSH 搜索和页面请求如何走到引擎并返回？
+**依据 4 · 源码核查**：[dsh/index.js:135-174](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L135-L174)
 
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-dsh/index.js:62-75 注册 web provider、x_search 和 read_page；135-169 的 provider 构造查询、运行包内 CLI，并把摘要、不确定性与来源投给宿主。349-365 通过 Node 子进程解析 JSON 并对 unavailable 抛错；960-976 将取消 signal 传给子进程。x_search 的结果投影包含状态、source、items 与 uncertainty，read_page 还返回 warnings；web provider 的结果没有完整 attempts 或引擎使用明细，不能认为所有路由信息均对模型可见。未运行宿主链路。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[dsh/index.js:135-169](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L135-L169)
-
-web provider 调用 CLI，返回文本与来源。
+宿主注册、预算和 CLI 调用。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
 function registerSearchProvider(ctx, config) {
@@ -289,20 +292,23 @@ function registerSearchProvider(ctx, config) {
       return {
         content: lines.filter(Boolean).join('\n'),
         sources: toSources(entry.items),
+        // The CLI already enforces --max-results; the seam re-caps regardless.
+        truncated: false,
+      };
+    },
+  });
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/index.js:224-241](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L224-L241)
+**依据 5 · 源码核查**：[dsh/index.js:226-241](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L226-L241)
 
-X 工具返回降级状态与来源。
+独立 X 工具调用。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-    async execute(args, exec) {
-      if (typeof args?.query !== 'string' || args.query.trim() === '') {
         throw new Error('x_search needs a non-empty string "query".');
       }
       const cliArgs = ['-q', args.query, '--source', 'x', ...ownToolBudget()];
@@ -323,15 +329,14 @@ X 工具返回降级状态与来源。
 
 </details>
 
-**依据 3 · 源码核查**：[dsh/index.js:288-303](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L288-L303)
+**依据 6 · 源码核查**：[dsh/index.js:289-303](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L289-L303)
 
-页面工具返回内容与 warnings。
+独立阅读路径。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-    async execute(args, exec) {
       if (typeof args?.url !== 'string' || !/^https?:\/\//i.test(args.url.trim())) {
         throw new Error('read_page needs an http(s) "url".');
       }
@@ -351,14 +356,26 @@ X 工具返回降级状态与来源。
 
 </details>
 
-**依据 4 · 源码核查**：[dsh/index.js:349-365](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L349-L365)
+**依据 7 · 源码核查**：[dsh/index.js:337-374](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L337-L374)
 
-运行包内 CLI 并解析结果。
+检查构建、启动进程和解析响应。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
+function cliPath() {
+  const cli = process.env.MODSEARCH_DSH_CLI || CLI_PATH;
+  if (!existsSync(cli)) {
+    throw new Error(
+      `modsearch's CLI build is missing (${cli}). This happens when the plugin was ` +
+        'installed from its GitHub repository, which ships source only. Remove the ' +
+        'plugin and add it again by package name: @liustack/modsearch',
+    );
+  }
+  return cli;
+}
+
 async function runCli(args, signal) {
   const cli = cliPath();
   const { stdout, stderr, code } = await run(process.execPath, [cli, ...args], signal, childEnv());
@@ -376,106 +393,204 @@ async function runCli(args, signal) {
     throw new Error('modsearch returned an envelope without a usable source entry');
   }
   if (entry.status === 'unavailable') {
-```
-
-</details>
-
-**依据 5 · 源码核查**：[dsh/index.js:960-976](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L960-L976)
-
-子进程使用 signal。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-function run(command, args, signal, env) {
-  return new Promise((resolve, reject) => {
-    const child = spawnHidden(command, args, {
-      stdio: ['ignore', 'pipe', 'pipe'],
-      signal,
-      env,
-    });
-    let stdout = '';
-    let stderr = '';
-    child.stdout.on('data', (chunk) => {
-      stdout += chunk;
-    });
-    child.stderr.on('data', (chunk) => {
-      stderr += chunk;
-    });
-    child.on('error', reject);
-    child.on('close', (code) => resolve({ stdout, stderr, code }));
+    const attempts = (Array.isArray(entry.attempts) ? entry.attempts : [])
+      .map((attempt) => `${attempt.engine}: ${attempt.error ?? 'skipped'}`)
+      .join('; ');
+    throw new Error(
+      `modsearch could not reach the requested source${attempts ? ` (${attempts})` : ''}. ` +
+        'Run `npx @liustack/modsearch doctor` in a terminal to check the engine setup.',
+    );
+  }
+  return entry;
 ```
 
 </details>
 
 #### 缺口
 
-- 没有固定版本宿主与外部服务运行验证
-  **影响**：无法推断真实成功率、兼容性或检索准确率
-  **进一步探讨**：隔离凭据，用可控引擎和宿主验证并对照来源
+- 未在真实 DSH profile 加载本版本。
+  **影响**：宿主接口及包构建可用性仍未知。
+  **进一步探讨**：在隔离 profile 检查工具表和实际子进程，以一条公开查询验收。
 
-<a id="research-q03"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-12"></a>
 
-### Q03 · 故障转移、额度和 X 降级如何表达？
+### Q02 · 引擎回退和代理规则怎样影响一次检索？
 
-**研究主题**：功能与机制、缺陷与关键质疑
+**研究主题**：功能与机制、贡献与相对优势、工程质量与复用
 
 #### 完整回答
 
-src/router.ts:100-104、125-141 明确命令行强制 engine 时不追加其他引擎，普通配置才是软偏好。src/search.ts:305-365 顺序尝试候选和密钥且受总 deadline 限制，365-396 记录脱敏失败，部分持久限制写冷却；437-446 把 X 由普通 web 回答标为 web/degraded。dsh/index.js:224-241 的 X 工具保留此状态但省略 attempts 和 warnings；web provider 也不携带完整尝试轨迹。因此引擎可用性、第三方覆盖和上游返回真实性不能由一次成功推定，实际故障率与额度未知。
+HTTP 引擎请求使用统一 requestText。它用 URL 协议读代理变量，HTTPS 可回退 HTTP 代理，用 no_proxy 的通配、域后缀和端口排除相应目标。选中代理时为这次 fetch 加 undici dispatcher，请求和读正文沿同一 abort 信号，结束后关闭 dispatcher。传输错误会附一层 cause 并脱敏，但超时路径会输出自己的超时提示。对受支持的 HTTP 引擎，这让只通过代理出网的环境可以配置一条确定的路径，而子进程引擎是否遵守该规则还取决于自己的客户端。一次运行根据剩余总预算分配每个尝试，没有预算会记录跳过。密钥类错误才在同引擎旋转下一把钥匙，其他错误进入下一引擎。Firecrawl 无钥匙遇到 401 或 403 且响应含 VPN 或 proxy 提示时会给特定错误，即使代理已能连上也可能被提供方拒绝，不能把共享额度或可用性视为保证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/router.ts:100-104](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/router.ts#L100-L104)
+**依据 1 · 源码核查**：[src/util/proxy.ts:17-24](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/util/proxy.ts#L17-L24)
 
-强制引擎无后备。
+协议和大小写变量优先级。
 
 ```text
- * An explicit --engine is a hard force: the chain holds exactly that engine,
- * with no preference list appended and no local floor. If it cannot do the job
- * it fails loudly rather than quietly spending another engine's quota. The
- * `engine` in the config file stays a soft preference (still backed by the
- * role defaults and the fetch floor), because a config choice is not a demand.
+function proxyUriForProtocol(protocol: string, env: NodeJS.ProcessEnv): string | null {
+  if (protocol === 'http:') {
+    return firstNonEmpty([env.http_proxy, env.HTTP_PROXY]);
+  }
+  if (protocol === 'https:') {
+    return firstNonEmpty([env.https_proxy, env.HTTPS_PROXY, env.http_proxy, env.HTTP_PROXY]);
+  }
+  return null;
 ```
 
-**依据 2 · 源码核查**：[src/search.ts:305-365](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/search.ts#L305-L365)
+**依据 2 · 源码核查**：[src/util/proxy.ts:34-80](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/util/proxy.ts#L34-L80)
 
-按候选和密钥尝试并受期限限制。
+排除列表的实际匹配。
 
 <details>
-<summary>查看原文（61行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
-  for (const engine of candidates) {
-    const failuresBeforeEngine = failures.length;
-    const settings = engineSettings(engine.name, config, env);
-    const model = options.model || settings.model || engine.defaultModel;
-    const apiKeys = splitApiKeys(settings.apiKey);
-    const configuredKeyRuns =
-      apiKeys.length > 0
-        ? apiKeys.map((apiKey, keyIndex) => ({ apiKey, keyIndex }))
-        : [{ apiKey: undefined, keyIndex: undefined }];
-    const keyRuns = controller
-      ? [
-          ...configuredKeyRuns.filter(
-            (run) =>
-              run.keyIndex === undefined ||
-              !coolingEntry(controller.state, engine.name, controller.now, run.keyIndex),
-          ),
-          ...configuredKeyRuns.filter(
-            (run) =>
-              run.keyIndex !== undefined &&
-              coolingEntry(controller.state, engine.name, controller.now, run.keyIndex),
-          ),
-        ]
-      : configuredKeyRuns;
+function isExcludedByNoProxy(url: URL, env: NodeJS.ProcessEnv): boolean {
+  const raw = env.no_proxy ?? env.NO_PROXY;
+  if (raw === undefined) {
+    return false;
+  }
+  const trimmed = raw.trim();
+  if (trimmed === '') {
+    return false;
+  }
+  if (trimmed === '*') {
+    return true;
+  }
 
-    let output: EngineOutput | undefined;
-    let successfulStartedAt = 0;
-    let successfulKeyIndex: number | undefined;
+  const hostname = url.hostname.toLowerCase();
+  const port = urlPort(url);
+
+  for (const part of trimmed.split(/[,\s]/)) {
+    if (!part) {
+      continue;
+    }
+    if (part === '*') {
+      return true;
+    }
+    const parsed = part.match(/^(.+):(\d+)$/);
+    const hostRaw = parsed ? parsed[1] : part;
+    const entryHost = hostRaw.replace(/^\*?\./, '').toLowerCase();
+    const entryPort = parsed ? Number.parseInt(parsed[2], 10) : undefined;
+    if (entryPort !== undefined && entryPort !== port) {
+      continue;
+    }
+    if (hostname === entryHost || hostname.endsWith(`.${entryHost}`)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+/** Which system HTTP proxy to use for this URL, or null to go direct. */
+export function resolveProxyForUrl(url: URL, env: NodeJS.ProcessEnv): string | null {
+  const proxyUrl = proxyUriForProtocol(url.protocol, env);
+  if (!proxyUrl) {
+    return null;
+  }
+  if (isExcludedByNoProxy(url, env)) {
+    return null;
+  }
+  return proxyUrl;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/util/timedRequest.ts:23-70](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/util/timedRequest.ts#L23-L70)
+
+代理 dispatcher、cause、正文和清理。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+export async function requestText(
+  label: string,
+  url: string,
+  init: RequestInit,
+  signal: AbortSignal,
+  timeoutMs: number,
+  secrets: ReadonlyArray<string | undefined | null>,
+): Promise<{ response: Response; text: string }> {
+  const fail = (error: unknown): Error =>
+    signal.aborted
+      ? new Error(`${label} timed out after ${timeoutMs} ms.`)
+      : new Error(
+          `${label} request failed: ${redactSecrets(
+            formatErrorWithCause(error),
+            secrets,
+          )}`,
+        );
+
+  const proxyUrl = resolveProxyForUrl(new URL(url), process.env);
+  // NO_PROXY was already applied above, so the agent gets an empty one and
+  // always takes the proxy it is handed.
+  const dispatcher = proxyUrl
+    ? new EnvHttpProxyAgent({ httpProxy: proxyUrl, httpsProxy: proxyUrl, noProxy: '' })
+    : undefined;
+  try {
+    let response: Response;
+    try {
+      // `dispatcher` is a Node/undici extension to fetch's options, not in the
+      // DOM RequestInit type, so it is attached through a cast.
+      response = await fetch(url, {
+        ...init,
+        signal,
+        ...(dispatcher ? { dispatcher } : {}),
+      } as RequestInit & { dispatcher?: Dispatcher });
+    } catch (error) {
+      throw fail(error);
+    }
+    try {
+      return { response, text: await response.text() };
+    } catch (error) {
+      if (!response.ok && !signal.aborted) {
+        return { response, text: '' };
+      }
+      throw fail(error);
+    }
+  } finally {
+    await dispatcher?.close();
+  }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/providers/youcom.ts:38-48](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/youcom.ts#L38-L48)
+
+真实 HTTP 引擎经公共包装发送查询。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  const url = new URL(YOUCOM_KEYLESS_ENDPOINT);
+  url.searchParams.set('query', options.query);
+  url.searchParams.set('count', String(maxResults));
+  const { response, text } = await requestText(
+    'youcom',
+    url.toString(),
+    { method: 'GET', headers: { accept: 'application/json' } },
+    AbortSignal.timeout(options.timeoutMs),
+    options.timeoutMs,
+    [],
+  );
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/search.ts:332-360](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L332-L360)
+
+剩余预算约束与跳过。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
     for (let runIndex = 0; runIndex < keyRuns.length; runIndex += 1) {
       const keyRun = keyRuns[runIndex];
       const budget = attemptBudget(timeoutMs, deadline);
@@ -505,21 +620,16 @@ src/router.ts:100-104、125-141 明确命令行强制 engine 时不追加其他�
             allowPrivateNetwork,
           },
           budget.killAfterMs,
-        );
-        successfulStartedAt = startedAt;
-        successfulKeyIndex = keyRun.keyIndex;
-        break;
-      } catch (error) {
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/search.ts:365-396](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/search.ts#L365-L396)
+**依据 6 · 源码核查**：[src/search.ts:365-402](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L365-L402)
 
-记录失败并有条件冷却。
+脱敏尝试、冷却及同引擎换钥匙条件。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
       } catch (error) {
@@ -554,18 +664,162 @@ src/router.ts:100-104、125-141 明确命令行强制 engine 时不追加其他�
           continue;
         }
         break;
+      }
+    }
+
+    if (!output) {
+      continue;
+    }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/search.ts:437-446](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/search.ts#L437-L446)
+**依据 7 · 源码核查**：[src/providers/firecrawl.ts:109-137](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/firecrawl.ts#L109-L137)
 
-X 降级标为 web 和 degraded。
+区分额度、认证和提供方代理拒绝。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+  // The API's error body is foreign text that loves to echo the Authorization
+  // header; scrub it before it travels into messages.
+  const detail = redactSecrets(text.trim(), apiKeySecrets);
+  const message = `firecrawl returned ${response.status} ${response.statusText}.${detail ? ` ${detail}` : ''}`;
+  if (response.status >= 500) {
+    throw new Error(message);
+  }
+  // A 402 or a credit/quota message is the quota class the cooldown layer reads.
+  if (response.status === 402 || isQuotaFailureMessage(detail)) {
+    throw new ApiKeyFailureError(
+      `firecrawl is out of credits: ${detail || `HTTP ${response.status}`}. Add credit or set your own key at https://firecrawl.dev, or use another engine.`,
+    );
+  }
+  if (response.status === 401 || response.status === 403) {
+    if (!apiKey) {
+      // Firecrawl turns anonymous calls away from IPs it reads as a VPN or a
+      // proxy, which a machine behind a corporate or Clash-style proxy always
+      // is. Waiting does not help there, so say what does.
+      if (/VPN or proxy/i.test(detail)) {
+        throw new Error(
+          `firecrawl does not allow keyless use from a proxy or VPN exit IP. Set a free key: modsearch config set firecrawl.apiKey <key>, or use keenable or youcom. (${detail})`,
+        );
+      }
+      throw new Error(
+        `firecrawl rejected the keyless request (${response.status}). Anonymous access may be unavailable or rate-limited. Set your own key: modsearch config set firecrawl.apiKey <key>${detail ? ` (${detail})` : ''}`,
+      );
+    }
+    throw new ApiKeyFailureError(
+      `firecrawl rejected the API key (${response.status}). Fix it: modsearch config set firecrawl.apiKey <key>${detail ? ` (${detail})` : ''}`,
+```
+
+</details>
+
+#### 缺口
+
+- 实际代理出口、服务配额和跨提供方耗时未测。
+  **影响**：不能保证接通、自动回退质量或总调用费用。
+  **进一步探讨**：用同一测试请求分别走直连、代理、排除规则和注入的拒绝，记录每次实际出口和耗时。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 模型看到的来源能否说明实际搜索过哪里？
+
+**研究主题**：功能与机制、贡献与相对优势、缺陷与关键质疑
+
+#### 完整回答
+
+CLI 的路由器先按请求语料决定尝试链。X 单独请求时可用网页引擎作为后备，若同时已请求网页且没有 X 引擎，会保留显式不可用的 X 槽。X 计划由网页引擎回答时由调度器重写 actual source 为 web、status 为 degraded，并剥掉提供方返回的路由字段，避免引擎自己改写尝试信息。DSH 的 x_search 保留 source 和 status，可以知道是网页二手覆盖，却没有返回完整尝试和实际引擎。网页 provider 只交付摘要、不确定性与引用源，成功时不保留引擎、回退警告与尝试轨迹。read_page 会保留 warnings，能显示部分云或代理提示。读者可打开引用原文，但引用列表只能说明输出带了哪些链接，无法重构调用或证明提供方摘要准确。跨源补位应以实际语料、最终引擎和原始链接分别核对。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/router.ts:248-294](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/router.ts#L248-L294)
+
+X 不可用和网页回退的选择。
+
+<details>
+<summary>查看原文（47行）</summary>
+
+```text
+    if (source === 'x') {
+      // X has one engine. When it is unusable, the web is the only thing left,
+      // and the answer must say it is second-hand. An explicit --engine carries
+      // into that fallback too, so a hard force stays a hard force.
+      const web = planRole('search', input.config, input.requestedEngine, env, input.cooldown);
+      const social = chain.filter((engine) => engine.roles.includes('social'));
+      if (social.length === 0) {
+        if (webRequested) {
+          // The web entry already answers this ground, so do not run a second
+          // identical search. But do not silently drop the X slot either: emit
+          // an explicit empty entry marked unavailable, so nobody mistakes the
+          // web result for X coverage.
+          return [
+            {
+              source: 'x' as Source,
+              fallbacks: [],
+              notes: [...notes, X_DEGRADE_NOTE],
+              unavailable: true,
+            },
+          ];
+        }
+        return [
+          {
+            source: 'x' as Source,
+            engine: web.chain[0],
+            fallbacks: web.chain.slice(1),
+            notes: [...notes, X_DEGRADE_NOTE],
+          },
+        ];
+      }
+      return [
+        {
+          source: 'x' as Source,
+          engine: social[0],
+          fallbacks: [...social.slice(1), ...web.chain],
+          // Falling back to a web engine mid-run is still second-hand evidence,
+          // so the caveat has to travel with the plan, not just the no-grok case.
+          degradeNote: X_DEGRADE_NOTE,
+          notes,
+        },
+      ];
+    }
+
+    // A web result answering a web request is not degraded. When X was also
+    // asked for and is unreachable, the explicit unavailable X entry above
+    // carries that caveat, so this entry stays a clean web answer.
+    return [{ source, engine: chain[0], fallbacks: chain.slice(1), notes }];
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/search.ts:419-447](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L419-L447)
+
+成功后补回退提示并标出实际语料。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+    const warnings = [...plan.notes, ...cooldownNotes, ...(controller?.warnings ?? [])];
+    if (failures.length > 0) {
+      const rotatedWithinEngine =
+        failuresBeforeEngine === 0 &&
+        failures.length > failuresBeforeEngine &&
+        successfulKeyIndex !== undefined;
+      warnings.push(
+        rotatedWithinEngine && successfulKeyIndex !== undefined
+          ? `Rotated to ${engine.name} API key ${successfulKeyIndex + 1} after: ${failures.join(' | ')}`
+          : `Fell back to ${engine.name} after: ${failures.join(' | ')}`,
+      );
+      // A web engine answering an X request is second-hand evidence whether the
+      // X engine was missing or died mid-run.
+      if (plan.degradeNote && !engine.roles.includes('social')) {
+        warnings.push(plan.degradeNote);
+      }
+    }
+
     // The corpus this answer really came from. An X plan served by a web engine
     // (Grok missing or dead) is second-hand web data: label it `web` with
     // `status: "degraded"` so nobody reads it as X coverage. A social engine
@@ -576,26 +830,72 @@ X 降级标为 web 和 degraded。
     if (plan.source === 'x' && !engine.roles.includes('social')) {
       actualSource = 'web';
       status = 'degraded';
+    }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[dsh/index.js:224-241](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L224-L241)
+**依据 3 · 源码核查**：[src/search.ts:454-470](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L454-L470)
 
-X 输出保留状态但没有尝试数组。
+调度器移除提供方自报路由字段。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-    async execute(args, exec) {
-      if (typeof args?.query !== 'string' || args.query.trim() === '') {
-        throw new Error('x_search needs a non-empty string "query".');
+    // The local engine hands its own runtime notices back as `warnings`. Merge
+    // those in after the routing ones. Other engines emit no warnings key.
+    const engineWarnings = Array.isArray(body.warnings)
+      ? (body.warnings as unknown[]).filter((line): line is string => typeof line === 'string')
+      : [];
+
+    // Routing facts and the warnings/attempts channels are stamped by modsearch,
+    // never by the engine: strip any key the engine returned with these names so
+    // it cannot rewrite who answered or forge a routing warning.
+    delete body.source;
+    delete body.requestedSource;
+    delete body.engine;
+    delete body.model;
+    delete body.status;
+    delete body.durationSeconds;
+    delete body.warnings;
+    delete body.attempts;
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh/index.js:161-172](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L161-L172)
+
+网页结果只投影内容和来源。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+      const entry = await runCli(args, signal);
+      const lines = [entry.summary];
+      const uncertainty = Array.isArray(entry.uncertainty) ? entry.uncertainty : [];
+      if (uncertainty.length > 0) {
+        lines.push(`Uncertain: ${uncertainty.join('; ')}`);
       }
-      const cliArgs = ['-q', args.query, '--source', 'x', ...ownToolBudget()];
-      if (typeof args.max_results === 'number' && args.max_results > 0) {
-        cliArgs.push('--max-results', String(Math.floor(args.max_results)));
-      }
+      return {
+        content: lines.filter(Boolean).join('\n'),
+        sources: toSources(entry.items),
+        // The CLI already enforces --max-results; the seam re-caps regardless.
+        truncated: false,
+      };
+```
+
+</details>
+
+**依据 5 · 源码核查**：[dsh/index.js:232-241](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L232-L241)
+
+X 保留状态和语料，不返回尝试。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
       const entry = await runCli(cliArgs, exec.signal);
       // The canonical value is the evidence plus its provenance; routing
       // details (attempts, durations, engine spend) stay operational.
@@ -610,127 +910,47 @@ X 输出保留状态但没有尝试数组。
 
 </details>
 
+**依据 6 · 源码核查**：[dsh/index.js:296-303](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L296-L303)
+
+页面阅读保留 warnings。
+
+```text
+      const entry = await runCli(cliArgs, exec.signal);
+      return {
+        summary: entry.summary,
+        content: typeof entry.content === 'string' ? entry.content : '',
+        ...(Array.isArray(entry.links) ? { links: entry.links } : {}),
+        uncertainty: Array.isArray(entry.uncertainty) ? entry.uncertainty : [],
+        warnings: Array.isArray(entry.warnings) ? entry.warnings : [],
+      };
+```
+
 #### 缺口
 
-- 没有固定版本宿主与外部服务运行验证
-  **影响**：无法推断真实成功率、兼容性或检索准确率
-  **进一步探讨**：隔离凭据，用可控引擎和宿主验证并对照来源
+- 宿主界面与模型上下文如何消费这些字段尚未验收。
+  **影响**：不能推断用户一定能识别回退或证据的二手性质。
+  **进一步探讨**：用固定代理返回一次 X 失败和网页成功，分别读取 CLI JSON、宿主工具输出和用户所见卡片。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 页面抓取的内网、代理和云披露边界是什么？
+### Q04 · 代理、云读取和配置写入分别有什么边界？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+**研究主题**：缺陷与关键质疑、效果与总成本、采用判断
 
 #### 完整回答
 
-src/providers/http/network.ts:43-61 仅允许 HTTP(S) 且拒绝 URL 内凭据，99-150 检查解析地址，默认阻止私网并为直连返回固定地址；httpFetch.ts:150-156、183-205 对每个跳转检查，直连固定 socket，而系统代理自行解析 DNS、不固定。network.ts:200-228 的云披露检查在 DNS 查不到时不阻止云引擎，并非私有目标永不外传的证明；允许私网选项也改变本地抓取边界。源码可见防护设计，代理、DNS 重绑定、云服务及 adversarial 目标未实测。
+本地取页每次重定向都先检查目标。直连使用检查结果钉住地址，代理路径仍有本地预检，但由代理重新解析，因此无法用本机预检证明代理实际连接相同地址。Firecrawl 另外拦字面私有和保留地址，对域名只在解析出的地址都被判私有或保留时阻止披露。普通 DNS 失败会视为未证实私有，混合公私地址也可能放行；实际抓取会把 URL 发送到提供方。搜索引擎同样需要接收查询，不能把默认网络限制理解成查询不外发。配置页路由可 GET 摘要、POST 写设置，限制请求体但该 handler 未检查身份或 Origin；部署应由宿主或反代保护。设置代码可改默认引擎和键控引擎地址，使用共享配置文件，所以同机不同 profile 不构成配置隔离。只适合在可控制出网和配置的环境先用公开、无敏感资料试用，遇到来源无法核对、路由外发不符合要求或配置端点可未授权访问时停用并回原生工具或本地资料。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/providers/http/network.ts:43-61](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/providers/http/network.ts#L43-L61)
+**依据 1 · 源码核查**：[src/providers/httpFetch.ts:106-142](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/httpFetch.ts#L106-L142)
 
-限制协议与嵌入凭据。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export function normalizeFetchUrl(input: string): URL {
-  const trimmed = input.trim();
-  if (!trimmed) {
-    throw new Error('Fetch URL is required.');
-  }
-
-  let parsed: URL;
-  try {
-    parsed = new URL(trimmed);
-  } catch {
-    throw new Error(`Invalid URL: ${trimmed}`);
-  }
-
-  if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
-    throw new Error('Only http/https URLs are supported.');
-  }
-
-  if (parsed.username || parsed.password) {
-    throw new Error('URL with embedded credentials is not allowed.');
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/providers/http/network.ts:99-150](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/providers/http/network.ts#L99-L150)
-
-DNS 检查及地址固定。
+逐跳预检、代理与直接钉址分流。
 
 <details>
-<summary>查看原文（52行）</summary>
-
-```text
-export async function assertSafeRemoteTarget(
-  url: URL,
-  allowPrivateNetwork: boolean,
-  signal?: AbortSignal,
-): Promise<PinnedTarget> {
-  if (isBlockedHostname(url.hostname)) {
-    throw new Error(`Blocked hostname: ${url.hostname}`);
-  }
-
-  const hostname = stripIpv6Brackets(url.hostname);
-
-  // A literal IP is its own validated target: pin straight to it.
-  const ipFamily = isIP(hostname);
-  if (ipFamily > 0) {
-    if (!allowPrivateNetwork && isPrivateIpAddress(hostname)) {
-      if (isLoopbackIpAddress(hostname)) {
-        throw new Error(privateNetworkBlockMessage(hostname));
-      }
-      throw new Error(`Blocked private network target: ${hostname}`);
-    }
-    return { hostname, address: hostname, family: ipFamily };
-  }
-
-  let resolved: Array<{ address: string; family: number }>;
-  try {
-    resolved = await lookupAll(hostname, signal);
-  } catch (error) {
-    if (signal?.aborted) {
-      throw signal.reason;
-    }
-    throw new Error(
-      `DNS lookup failed for host ${hostname}: ${error instanceof Error ? error.message : String(error)}`,
-    );
-  }
-
-  if (resolved.length === 0) {
-    throw new Error(`Host ${hostname} did not resolve to any IP address.`);
-  }
-
-  if (!allowPrivateNetwork) {
-    const blocked = resolved.find(
-      (record) => !isFakeIpPoolAddress(record.address) && isPrivateIpAddress(record.address),
-    );
-    if (blocked) {
-      throw new Error(privateNetworkBlockMessage(hostname, blocked.address));
-    }
-  }
-
-  // Return the first validated address. The direct path pins the socket here
-  // so a later DNS change cannot swap in one the check never saw.
-  const [chosen] = resolved;
-  return { hostname, address: chosen.address, family: chosen.family };
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/providers/httpFetch.ts:183-205](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/providers/httpFetch.ts#L183-L205)
-
-每跳检查与代理不固定 DNS。
-
-<details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
   try {
@@ -756,26 +976,32 @@ export async function assertSafeRemoteTarget(
       dispatchers.push(dispatcher);
 
       const { response } = await fetchOnce(currentUrl, dispatcher, deadline, timeoutMs, userAgent);
+      if (isRedirectStatus(response.status)) {
+        const location = response.headers.get('location');
+        if (!location) {
+          throw new Error(`Redirect response (${response.status}) missing location header.`);
+        }
+
+        if (i === maxRedirects) {
+          throw new Error(`Too many redirects. Max redirects: ${maxRedirects}.`);
+        }
+
+        const nextUrl = new URL(location, currentUrl);
+        redirectChain.push(currentUrl.toString());
+        currentUrl = nextUrl;
+        continue;
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/providers/http/network.ts:200-228](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/providers/http/network.ts#L200-L228)
+**依据 2 · 源码核查**：[src/providers/http/network.ts:208-228](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/http/network.ts#L208-L228)
 
-云披露检查及 DNS 不可知时行为。
+云预检混合地址及普通 DNS 失败路径。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-export async function inspectCloudDisclosureTarget(
-  url: URL,
-  signal?: AbortSignal,
-): Promise<CloudDisclosureInspection> {
-  if (isBlockedHostname(url.hostname)) {
-    return { reserved: true, addresses: [] };
-  }
-
   const hostname = stripIpv6Brackets(url.hostname);
   const ipFamily = isIP(hostname);
   if (ipFamily > 0) {
@@ -801,89 +1027,281 @@ export async function inspectCloudDisclosureTarget(
 
 </details>
 
+**依据 3 · 源码核查**：[src/providers/firecrawl.ts:216-245](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/firecrawl.ts#L216-L245)
+
+私有地址挡下，允许的 URL 发往云 API。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  if (isLiteralReservedTarget(target)) {
+    throw new Error(
+      `firecrawl does not fetch the private or reserved target ${target.hostname}. Use the local engine instead.`,
+    );
+  }
+  let disclosure: CloudDisclosureInspection;
+  try {
+    disclosure = await inspectCloudDisclosureTarget(target, deadline);
+  } catch (error) {
+    if (deadline.aborted) {
+      throw new Error(`firecrawl timed out after ${options.timeoutMs} ms.`);
+    }
+    throw error;
+  }
+  if (disclosure.reserved) {
+    const resolved =
+      disclosure.addresses.length > 0 ? ` -> ${disclosure.addresses.join(', ')}` : '';
+    throw new Error(
+      `firecrawl does not fetch the private or reserved target ${target.hostname}${resolved}. If a VPN or proxy on this machine uses fake-IP DNS, a public hostname may look reserved here. Use the local engine instead.`,
+    );
+  }
+
+  const startedAt = Date.now();
+  const data = await firecrawlPost<FirecrawlScrapeResponse>(
+    resolveEndpoint(options.settings.baseURL, FIRECRAWL_DEFAULT_BASE, '/v2/scrape'),
+    apiKey,
+    apiKeySecrets,
+    {
+      url: target.toString(),
+      formats: ['markdown', 'links'],
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/providers/keenable.ts:54-68](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/providers/keenable.ts#L54-L68)
+
+搜索文本进入提供方请求。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+  const { response, text } = await requestText(
+    'keenable',
+    resolveEndpoint(
+      options.settings.baseURL,
+      KEENABLE_DEFAULT_BASE,
+      apiKey ? '/v1/search' : '/v1/search/public',
+    ),
+    {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ query: options.query, max_results: maxResults }),
+    },
+    AbortSignal.timeout(options.timeoutMs),
+    options.timeoutMs,
+    [...apiKeySecrets, options.settings.baseURL],
+```
+
+</details>
+
+**依据 5 · 源码核查**：[dsh/index.js:548-551](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L548-L551)
+
+设置读写共享文件路径。
+
+```text
+/** ~/.modsearch/config.json, the one file every harness shares. */
+function modsearchConfigPath() {
+  return join(homedir(), '.modsearch', 'config.json');
+}
+```
+
+**依据 6 · 源码核查**：[dsh/index.js:665-692](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L665-L692)
+
+可设置引擎和提供方选项。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+function applyCardSettings(patch) {
+  const config = readModsearchConfig();
+  if (patch?.engine !== undefined) {
+    const pin = typeof patch.engine === 'string' ? patch.engine.trim() : '';
+    if (pin === '') {
+      // Empty is the CLI's own spelling of automatic, not a missing value.
+      config.engine = '';
+    } else {
+      const engine = canonicalEngine(pin);
+      if (!CARD_ENGINES.includes(engine)) {
+        throw new Error(`unknown engine: ${patch.engine}`);
+      }
+      config.engine = engine;
+    }
+  }
+  // Engine fields are edited one engine at a time, named by `target`. Absent
+  // means this save touched no engine settings, which is what a pin-only save
+  // looks like.
+  if (patch?.target !== undefined) {
+    const engine = canonicalEngine(patch.target);
+    if (!CARD_ENGINES.includes(engine)) {
+      throw new Error(`unknown engine: ${patch.target}`);
+    }
+    if (
+      !KEYED_ENGINES.includes(engine) &&
+      (patch.apiKey !== undefined || patch.baseURL !== undefined)
+    ) {
+      throw new Error(`${engine} takes no API key or base URL`);
+```
+
+</details>
+
+**依据 7 · 源码核查**：[dsh/index.js:709-716](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L709-L716)
+
+可变更 baseURL。
+
+```text
+    const settings = { ...config.engines[target] };
+    if (patch.baseURL !== undefined) {
+      const baseURL = typeof patch.baseURL === 'string' ? patch.baseURL.trim() : '';
+      if (baseURL === '') {
+        // Empty unsets the override, back to the official endpoint.
+        delete settings.baseURL;
+      } else if (!/^https?:\/\//i.test(baseURL)) {
+        // The same rule the CLI applies, and for the same reason: this host
+```
+
+**依据 8 · 源码核查**：[dsh/index.js:900-951](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L900-L951)
+
+管理路由的 GET/POST、上限及写入点。
+
+<details>
+<summary>查看原文（52行）</summary>
+
+```text
+function registerConfigRoute(ctx) {
+  const route = {
+    name: 'modsearch-config',
+    kind: 'exact',
+    path: '/modsearch/config',
+    handler: async (req, res) => {
+      const send = (status, body) => {
+        res.writeHead(status, { 'content-type': 'application/json' });
+        res.end(JSON.stringify(body));
+      };
+      if (req.method === 'GET') {
+        try {
+          const summary = engineSummary();
+          if (new URL(req.url, 'http://localhost').searchParams.has('doctor')) {
+            // null when the probe failed: the card then shows no readiness
+            // section rather than inventing one.
+            summary.readiness = await engineReadiness();
+          }
+          send(200, summary);
+        } catch (error) {
+          send(409, { error: String(error?.message ?? error) });
+        }
+        return;
+      }
+      if (req.method !== 'POST') {
+        res.writeHead(405).end();
+        return;
+      }
+      try {
+        const chunks = [];
+        let total = 0;
+        for await (const chunk of req) {
+          total += chunk.length;
+          if (total > 64 * 1024) {
+            send(413, { error: 'config payload too large' });
+            req.destroy();
+            return;
+          }
+          chunks.push(chunk);
+        }
+        applyCardSettings(JSON.parse(Buffer.concat(chunks).toString('utf8')));
+        // The cached verdict was about the file this save just rewrote. Serving
+        // it for another minute would tell the card an engine is still unset
+        // right after the key that sets it was stored.
+        readinessCache = null;
+        send(200, engineSummary());
+      } catch (error) {
+        send(400, { error: String(error?.message ?? error) });
+      }
+    },
+  };
+  ctx.effect(() => ctx.webServer.register(route), 'modsearch: settings route');
+```
+
+</details>
+
 #### 缺口
 
-- 没有固定版本宿主与外部服务运行验证
-  **影响**：无法推断真实成功率、兼容性或检索准确率
-  **进一步探讨**：隔离凭据，用可控引擎和宿主验证并对照来源
+- 实际宿主和反代的鉴权及代理 DNS 行为未验证。
+  **影响**：部署层能否保护设置路由、是否允许敏感数据外发仍未知。
+  **进一步探讨**：先以无敏感配置核对匿名请求和代理出口，再用隔离目标验证重定向和云拒绝。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 安装和使用成本是什么，何时停止？
+### Q05 · 怎样验证统一脱敏路由摘要能减少误判？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
-
-#### 完整回答
-
-package.json:55-56 要求 Node >=22.13，包内 dist 是 DSH 桥接所需；dsh/index.js:340-344 指明源码安装缺构建时应改用包名安装。网络服务商的可用性、账号、配额及代理依配置和时间变化，默认免费主张不保证长期免费或覆盖。应用场景要求用户审查查询及 URL 是否可交第三方，先隔离测试并核验来源；若降级不适合、隐私不允许或依赖不可用则停止并使用既有宿主或可信检索。成本、收益及兼容性未实测。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:55-56](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/package.json#L55-L56)
-
-Node 版本约束。
-
-```text
-  "engines": {
-    "node": ">=22.13"
-```
-
-**依据 2 · 源码核查**：[dsh/index.js:340-344](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L340-L344)
-
-缺构建的失败提示。
-
-```text
-    throw new Error(
-      `modsearch's CLI build is missing (${cli}). This happens when the plugin was ` +
-        'installed from its GitHub repository, which ships source only. Remove the ' +
-        'plugin and add it again by package name: @liustack/modsearch',
-    );
-```
-
-**依据 3 · 作者声明**：[README.md:7-9](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/README.md#L7-L9)
-
-作者描述无密钥和多服务商。
-
-```text
-<p align="center"><b>In the chat app your model can search the web. On the API it cannot. ModSearch puts the web back: web search, X search, page fetch. Free, no signup, no API key.</b></p>
-
-<p align="center">🥇 <b>The strongest free web search plugin for DeepSeek Harness (dsh)</b> 🥇</p>
-```
-
-#### 缺口
-
-- 没有固定版本宿主与外部服务运行验证
-  **影响**：无法推断真实成功率、兼容性或检索准确率
-  **进一步探讨**：隔离凭据，用可控引擎和宿主验证并对照来源
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 能否用统一的脱敏路由摘要补足宿主侧丢失的故障转移上下文？
-
-**研究主题**：新假设与验证、贡献与相对优势
+**研究主题**：新假设与验证、效果与总成本
 
 #### 完整回答
 
-现状与反证：src/search.ts:472-480 的 CLI 结果已有 requestedSource、实际 source、status、warnings 和 attempts；dsh/index.js:144-169 的 web provider 只投影摘要、不确定性和来源，未传完整 attempts。X 工具 dsh/index.js:224-241 已暴露 source 和 degraded，因此“增加降级标签”对 X 并非新增，且不能据此推断 web 路径对模型可见同样的路由上下文。
-
-未验证方案：由路由器从已验证的尝试记录生成统一、可选的脱敏路由摘要：请求源、实际源、状态、是否发生回退、尝试次数以及超时／额度／其他的粗粒度原因；禁止原始错误、密钥、查询和 URL。X 路径保留现有 source/status，并补充同一摘要；web seam 若无结构化扩展位，则通过明确标记的短文本附到 content，而不是假定宿主支持新字段。失败原因只能由实际记录映射，无法判定时标 unknown，不能声称来源可信或结果准确。
-
-验证与否定：在隔离宿主以同一固定伪引擎和相同输入，对照现行投影、统一摘要两组，覆盖首选成功、超时后回退、额度后回退、X 到 web 降级、全部失败、取消及伪造错误中的敏感信息。以真实尝试日志为裁判，比较模型与用户能否识别回退及来源，检查 X 既有字段无回归、失败/取消行为不变；记录错误识别率、泄露次数、响应体大小和耗时。若相对现状不能减少回退误识别，或任何敏感数据泄露、来源/状态不符、X 现有标记回归、宿主不接受额外文本，或经测量的成本超过收益，就否定该方案或退回现状。以上均为假设与验收条件，未实现或运行。
+可以比较一个只呈现必要字段的摘要，列出请求语料、实际语料、实际引擎和是否回退。它应从调度器生成的事实取值，沿用 X 已有状态，避免把错误正文、查询、凭据和代理地址加入用户输出。对照现有 DSH 网页和 X 投影，与模拟的统一摘要分别完成同一组任务。样本包括代理可达但提供方拒绝、密钥回退、X 改由网页回答，以及同时请求两个语料但 X 不可用。逐次对比用户能否指出实际语料和回退，核对真实来源链接，并记录每份合格结果的额外请求、输出 token、排障时间。若错误识别没有减少，或字段使凭据、查询或代理信息被披露，应回到现有最小输出。当前既没有这层统一输出，也没有真实成本对照。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/search.ts:437-446](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/search.ts#L437-L446)
+**依据 1 · 源码核查**：[src/search.ts:365-380](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L365-L380)
 
-降级标签的判定。
+已有结构化尝试记录及脱敏入口。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
+      } catch (error) {
+        // Engines redact their own errors, but attempts and warnings travel into
+        // output and model contexts, so the record gets the belt too.
+        const message = redactSecrets(
+          error instanceof Error ? error.message : String(error),
+          apiKeys,
+        );
+        const keyLabel = apiKeys.length > 1 ? ` (API key ${Number(keyRun.keyIndex) + 1})` : '';
+        failures.push(`${engine.name}${keyLabel}: ${message}`);
+        attempts.push({
+          engine: engine.name,
+          ...(apiKeys.length > 1 ? { keyIndex: keyRun.keyIndex } : {}),
+          ok: false,
+          error: message,
+          durationSeconds: (Date.now() - startedAt) / 1000,
+        });
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/search.ts:417-447](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/src/search.ts#L417-L447)
+
+已有实际语料和回退的运行事实。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+    // Routing and runtime warnings, kept apart from the engine's epistemic
+    // uncertainty. Config typos and degrade caveats travel on the plan.
+    const warnings = [...plan.notes, ...cooldownNotes, ...(controller?.warnings ?? [])];
+    if (failures.length > 0) {
+      const rotatedWithinEngine =
+        failuresBeforeEngine === 0 &&
+        failures.length > failuresBeforeEngine &&
+        successfulKeyIndex !== undefined;
+      warnings.push(
+        rotatedWithinEngine && successfulKeyIndex !== undefined
+          ? `Rotated to ${engine.name} API key ${successfulKeyIndex + 1} after: ${failures.join(' | ')}`
+          : `Fell back to ${engine.name} after: ${failures.join(' | ')}`,
+      );
+      // A web engine answering an X request is second-hand evidence whether the
+      // X engine was missing or died mid-run.
+      if (plan.degradeNote && !engine.roles.includes('social')) {
+        warnings.push(plan.degradeNote);
+      }
+    }
+
     // The corpus this answer really came from. An X plan served by a web engine
     // (Grok missing or dead) is second-hand web data: label it `web` with
     // `status: "degraded"` so nobody reads it as X coverage. A social engine
@@ -894,26 +1312,43 @@ Node 版本约束。
     if (plan.source === 'x' && !engine.roles.includes('social')) {
       actualSource = 'web';
       status = 'degraded';
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh/index.js:224-241](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L224-L241)
+**依据 3 · 源码核查**：[dsh/index.js:161-172](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L161-L172)
 
-X 工具暴露状态。
+网页投影作为对照。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-    async execute(args, exec) {
-      if (typeof args?.query !== 'string' || args.query.trim() === '') {
-        throw new Error('x_search needs a non-empty string "query".');
+      const entry = await runCli(args, signal);
+      const lines = [entry.summary];
+      const uncertainty = Array.isArray(entry.uncertainty) ? entry.uncertainty : [];
+      if (uncertainty.length > 0) {
+        lines.push(`Uncertain: ${uncertainty.join('; ')}`);
       }
-      const cliArgs = ['-q', args.query, '--source', 'x', ...ownToolBudget()];
-      if (typeof args.max_results === 'number' && args.max_results > 0) {
-        cliArgs.push('--max-results', String(Math.floor(args.max_results)));
-      }
+      return {
+        content: lines.filter(Boolean).join('\n'),
+        sources: toSources(entry.items),
+        // The CLI already enforces --max-results; the seam re-caps regardless.
+        truncated: false,
+      };
+```
+
+</details>
+
+**依据 4 · 源码核查**：[dsh/index.js:232-241](https://github.com/liustack/modsearch/blob/1ebc893da64208288d7882b125c50108b1270dea/dsh/index.js#L232-L241)
+
+X 已保留的状态与来源。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
       const entry = await runCli(cliArgs, exec.signal);
       // The canonical value is the evidence plus its provenance; routing
       // details (attempts, durations, engine spend) stay operational.
@@ -928,81 +1363,10 @@ X 工具暴露状态。
 
 </details>
 
-**依据 3 · 源码核查**：[dsh/index.js:144-169](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/dsh/index.js#L144-L169)
-
-web 适配输出边界。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  ctx.web.registerSearchProvider({
-    id: 'modsearch',
-    available: () => true,
-    async search(request, signal) {
-      const args = [
-        '-q',
-        request.query,
-        '--source',
-        'web',
-        '--timeout',
-        String(timeoutMs),
-        '--deadline',
-        String(deadlineMs),
-      ];
-      if (typeof request.maxResults === 'number') {
-        args.push('--max-results', String(request.maxResults));
-      }
-      const entry = await runCli(args, signal);
-      const lines = [entry.summary];
-      const uncertainty = Array.isArray(entry.uncertainty) ? entry.uncertainty : [];
-      if (uncertainty.length > 0) {
-        lines.push(`Uncertain: ${uncertainty.join('; ')}`);
-      }
-      return {
-        content: lines.filter(Boolean).join('\n'),
-        sources: toSources(entry.items),
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/search.ts:460-480](https://github.com/liustack/modsearch/blob/d5582ce9f2e0af09eeb85f0eb3d46eb93b5caa2c/src/search.ts#L460-L480)
-
-CLI 结果由路由器写入来源、状态、警告和尝试记录。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-    // Routing facts and the warnings/attempts channels are stamped by modsearch,
-    // never by the engine: strip any key the engine returned with these names so
-    // it cannot rewrite who answered or forge a routing warning.
-    delete body.source;
-    delete body.requestedSource;
-    delete body.engine;
-    delete body.model;
-    delete body.status;
-    delete body.durationSeconds;
-    delete body.warnings;
-    delete body.attempts;
-
-    return {
-      ...body,
-      source: actualSource,
-      requestedSource,
-      engine: engine.name,
-      model,
-      status,
-      warnings: [...warnings, ...engineWarnings],
-      attempts,
-```
-
-</details>
-
 #### 缺口
 
-- 统一路由摘要及宿主呈现均未实现或测试
-  **影响**：无法确定其是否改善识别、兼容宿主或控制泄露和额外成本
-  **进一步探讨**：隔离宿主以相同伪引擎记录运行现状和原型，比较可观察性、泄露与响应成本。
+- 缺少已有输出的来源误判率和额外字段的代价。
+  **影响**：不能判断统一摘要是否提高合格检索数。
+  **进一步探讨**：用相同伪引擎、样本和验收规则比较两种显示，并单列泄漏测试。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)

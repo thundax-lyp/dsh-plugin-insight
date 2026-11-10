@@ -1,0 +1,32 @@
+{
+    "repository": "LazyAGI/LazyMind",
+    "repository_id": 823606893,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 644,
+    "pushed_at": "2026-11-09T11:11:02Z",
+    "issues": {
+        "open": 8,
+        "closed": 8,
+        "created_30d": 6,
+        "closed_30d": 2,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALazyAGI%2FLazyMind%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A09C:3366AC:35AD32:39B951:6AF28240 and timestamp 2026-11-10 02:32:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    }
+}

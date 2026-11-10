@@ -37,7 +37,6 @@
 | [DeepSeek Harness Desktop](#plugin-1341972254-root) | 以 Tauri 管理独立 DSH 实例、桌面入口及多实例协作。 | [Q03](../../plugins/baihejiangnan--deepseek-harness-desktop/INSIGHT.md#research-q03) 空home验证后再考虑第二套实例。 |
 | [DeepSeek Harness for fnOS](#plugin-1333252932-root) | 将 DSH 打包为 fnOS 常驻应用，并提供网关与管理面板。 | [Q02](../../plugins/techysy--deepseek-harness-fnos/INSIGHT.md#research-q02) 先核实身份及直连端口，再考虑隔离NAS试用。 |
 | [DeepSeek Harness Studio](#plugin-1334747723-root) | 将 Harness 打包为桌面工作区，提供插件需求检索、确定版本安装和事务恢复界面。 | 首次要安装完整Studio、配置模型和选择profile，迁移既有插件时需记录原版本与数据；候选自然语言搜索另产生模型与npm网络成本。 |
-| [DeepSeek Harness Tauri Desktop](#plugin-1333718792-root) | 提供 DSH 桌面界面、内核与运行时管理和数据迁移。 | 在副本上验证核心、插件与关键数据；失败停止切换并核验备份。 |
 | [DeepSeek Harness 桌面版](#plugin-1333310793-root) | 将 Harness Web 与 Node 打包进独立 Electron 桌面应用。 | [Q03](../../plugins/wess09--deepseekharnessdesktop/INSIGHT.md#research-q03) 先核对制品。 |
 | [deepseek-harness-docker](#plugin-1333277183-root) | 将官方 DSH 发行物封装为带 Web UI 和 Chromium 桌面的容器运行环境。 | [Q03](../../plugins/runzhliu--deepseek-harness-docker/INSIGHT.md#research-q03) 用空卷在回环验收实际会话、浏览器和恢复，再扩大访问。 |
 | [distill-kura](#plugin-1342235893-root) | 为 Agent 提供按证据蒸馏的长期记忆、语义召回及按模式分库，含 HTTP、MCP 与 DSH 适配。 | 试用限定为有本地推理/日志运维能力的维护者在独立脱敏副本禁cues，先核召回路径、再人工审一轮草稿。 |
@@ -188,12 +187,11 @@
 | [Mebular DSH Plugin](#plugin-1339704814-packages-dsh-plugin) | 把 Mebular daemon 的 MCP 与 Console 接入 DSH，并管理连接和受管进程状态。 | [Q03](../../plugins/windsander--mebular--packages-dsh-plugin/INSIGHT.md#research-q03) 先测试节点只读。 |
 | [mem9](#plugin-1175756746-root) | 为 AI Agent 提供跨会话、跨设备的持久共享记忆和检索。 | [Q05](../../plugins/mem9-ai--mem9/INSIGHT.md#research-q05) 先关闭自动写入，在隔离空间用合成事实验证读取、更正和删除；数据授权或传播不明时回本地笔记。 |
 | [MemOS](#plugin-1014729376-root) | 独立Agent记忆基础设施；仓内另提供DSH本地自动召回、后台捕获与Viewer适配。 | [Q05](../../plugins/memtensor--memos/INSIGHT.md#research-q05)低敏独立home/profile受限试用，原笔记为对照，未知外发/过期/恢复先停，根云/自托管另审。 |
-| [Mirage](#plugin-1231135337-root) | 用虚拟文件系统、命令及运行时为 Agent 组合统一终端。 | 先用低权限假源验证权限、输出及失败恢复；无法核实 effect 时停止真实写接入。 |
+| [Mirage](#plugin-1231135337-root) | 为 Agent 组合多数据源虚拟文件系统、命令行工具与可路由运行时。 | 先用本地只读假源，比较一份已知预期的报告与两个独立接口。 |
 | [Mirage DSH Providers](#plugin-1231135337-typescript-packages-dsh) | 为 DSH 的文件和 shell provider 接入 Mirage 工作区。 | 先在独立 profile 验证只读挂载、长输出和审批；不一致则回原生 provider。 |
 | [MultiVibe Companion for DSH](#plugin-1168322081-plugins-dsh-multivibe) | 连接 DSH 与 MultiVibe 网关，并查看可用模型及连接状态。 | [Q05](../../plugins/thibautrey--multivibe--plugins-dsh-multivibe/INSIGHT.md#research-q05) 建议已有网关者在隔离 profile 使用专用密钥试配置，确认容量、状态与费用后再做获授权测试。 |
 | [NekroNXT](#plugin-1335265978-root) | 以 DSH 为内核的群聊智能体系统，提供频道绑定、入站去重、按频道递交和带回执的外发流程。 | [Q04](../../plugins/nekroai--nekro-nxt/INSIGHT.md#research-q04) 限定内置频道和隔离数据根，先确认模型与停止流程。 |
 | [Open Managed Agents](#plugin-1206555053-root) | 提供自托管 Agent 会话、工具执行和恢复基础设施。 | [Q03](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q03) 先以固定组合和模拟外部服务观察；认证、沙箱或对账不满足时停止并保留现有方案。 |
-| [opencode2dsh](#plugin-1350368388-packages-plugin) | 为 DSH 提供 OpenCode Zen 匿名模型适配与可选本地委派。 | 非敏感任务核对实际来源、输出与网络资格；不明结果先对账。 |
 | [OpenGuardrails](#plugin-1081166515-root) | 以本地规则、模型裁决、秘密替换、网关和 sandbox 为 AI Agent 提供安全检查与行为记录。 | [Q03](../../plugins/openguardrails--openguardrails/INSIGHT.md#research-q03) 仅在一次性工作区以合成秘密评本地规则，保留宿主审批，明确 observe/enforce 差异。 |
 | [OpenQuantum Web Branding](#plugin-1335086034-packages-openquantum-web-branding) | 用宿主扩展点替换OpenQuantum品牌和浏览器/PWA元信息 | [Q04](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q04) [Q04](../../plugins/xi-zhao--openquantum--packages-openquantum-web-branding/INSIGHT.md#research-q04) 先隔离核pack依赖和完整刷新回退，再考虑分发。 |
 | [OpenViking](#plugin-1128123594-root) | 为 AI Agent 组织、浏览、检索与复用知识、记忆和技能的上下文数据库。 | [Q04](../../plugins/volcengine--openviking/INSIGHT.md#research-q04) 使用已有原文件可恢复的隔离样本。 |
@@ -618,22 +616,6 @@
 > **建议**：未验证方向是在已有候选检索和安装事务之后，增加用户任务的最小可撤销验收配方：说明输入样例、预期输出、必要权限和停止条件，安装成功后只在用户确认的隔离profile执行并回传可核对证据。推导来自推荐元数据与runtime激活不等于业务有效的缺口；它相对当前链新增的是需求到验证的交接，不是再次做目录、评分或安装按钮。配方会带来隔离环境、版本绑定和失败清理成本，不能自动执行陌生插件任意样例。先找五个真正需要选插件的用户，以目录推荐和有配方推荐比较选错率、首次合格任务时间与愿意继续比例；若配方只转移人工、测试不能代表任务或现有手工方案已足够，则否定独立机会。当前未实现且无付费意愿证据。 [Q05](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/fufankeji--deepseek-harness-studio/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1333718792-root"></a>
-
-## [DeepSeek Harness Tauri Desktop](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md)
-
-[![GitHub ★ 3,385](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C385&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-tauri/deepseek-harness-desktop)
-
-> **用途**：希望图形化管理 DSH 内核、profile 和数据的用户；基线是 CLI、浏览器与手工目录管理。[Q01](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q01)
-
-> **亮点**：将运行时、内核和档案管理集成到第三方桌面；不是单一 DSH 插件。[Q01](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q01) [Q02](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q02)
-
-> **思考**：迁移统计仅比较文件数和字节，链接重建失败只告警；不能据成功提示断言关键内容和插件完全恢复。[Q03](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q03)
-
-> **建议**：未验证假设：分层展示内核、插件及关键文件/链接核对结果，可减少迁移成功误判；须测漏报和成本。[Q05](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md#research-q05)
-
-[查看完整分析](../../plugins/dsh-tauri--deepseek-harness-desktop/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333310793-root"></a>
 
@@ -3039,15 +3021,15 @@
 
 ## [Mirage](../../plugins/strukto-ai--mirage/INSIGHT.md)
 
-[![GitHub ★ 3,759](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C759&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage)
+[![GitHub ★ 3,776](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C776&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/strukto-ai/mirage)
 
-> **用途**：需要跨数据源管道的 Agent 平台开发者；单源任务可比较专用 API。[Q01](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q01)
+> **用途**：Agent 平台开发者需要一次跨源检索、过滤和报告，且希望保留各源权限。[Q01](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q01)
 
-> **亮点**：组合多源虚拟路径、命令、session 和权限，DSH 是可选接入入口，本项不研究其实现。[Q01](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q01) [Q02](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q02)
+> **亮点**：让同一会话复用路径、命令和管道处理多个数据源，并保留每个挂载的读写模式和后端能力判断。[Q01](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q01) [Q02](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q02)
 
-> **思考**：VFS 写入复查依赖 effect 声明；外部授权、runtime 隔离和跨源部分失败不能由统一路径自动保证。[Q03](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q03)
+> **思考**：挂载、命令和 runtime 的共同入口不保证所有后端写入语义一致。跨挂载移动出错可能留下部分目标内容，真实状态必须逐源核对。[Q03](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q03)
 
-> **建议**：未验证假设：显示后端、声明 effect 和部分失败恢复信息可减少误判；对照 SDK 测正确率与成本。[Q05](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q05)
+> **建议**：待验证方向是在退出码旁记录逐源阶段与结果未知的边界，检验能否减少重复写入和故障后的核对时间。[Q05](../../plugins/strukto-ai--mirage/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/strukto-ai--mirage/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3114,22 +3096,6 @@
 > **建议**：[Q04](../../plugins/openma-ai--open-managed-agents/INSIGHT.md#research-q04) 建议将外部动作凭据与可对账回执绑定，验证重复和遗漏，尚未实现或运行。
 
 [查看完整分析](../../plugins/openma-ai--open-managed-agents/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1350368388-packages-plugin"></a>
-
-## [opencode2dsh](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md)
-
-[![GitHub ★ 384](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=384&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/FishBottle7/opencode2dsh) [![npm 30d 13,802](https://img.shields.io/static/v1?label=npm+30d&message=13%2C802&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@opencode2dsh/dsh-plugin) [![最新发布 2026-10-20](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-20&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@opencode2dsh/dsh-plugin)
-
-> **用途**：希望在 DSH 使用 OpenCode Zen 匿名模型的用户；基线是现有 provider 或直接使用上游。[Q01](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q01)
-
-> **亮点**：将目录与流协议接入 DSH，不将模型服务归于适配器。[Q01](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q01) [Q02](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q02)
-
-> **思考**：目录探测与直接调用门控不同；答案或工具后中断仍需对账，不能保证恰好一次。[Q02](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q02) [Q03](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q03)
-
-> **建议**：未验证假设：分开展示目录、出口探测和实际中断状态可减少误判；须与现有机制对照。[Q05](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md#research-q05)
-
-[查看完整分析](../../plugins/fishbottle7--opencode2dsh--packages-plugin/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1081166515-root"></a>
 
@@ -3519,4 +3485,4 @@
 
 ## 更新时间
 
-2026-11-09
+2026-11-10

@@ -1,0 +1,45 @@
+{
+    "repository": "taxueseek/dsh-files",
+    "repository_id": 1333699356,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 43,
+    "pushed_at": "2026-11-07T06:36:22Z",
+    "issues": {
+        "open": 0,
+        "closed": 11,
+        "created_30d": 2,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-files",
+        "captured_at": "2026-11-10T02:28:35.946Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 204,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-files",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T07:03:33.840Z",
+            "captured_at": "2026-11-10T02:28:35.946Z",
+            "source_url": "https://registry.npmjs.org/dsh-files",
+            "error": null,
+            "latest_version": "0.0.1",
+            "latest_published_at": "2026-08-19T07:03:34.210Z",
+            "latest_error": null
+        }
+    }
+}
