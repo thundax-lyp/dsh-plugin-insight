@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1227](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1227&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1246](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1246&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -9,6 +9,14 @@
 ## [推荐尝试](data/views/columns/RECOMMENDED.md)
 
 > 看看插件能解决什么问题，以及试用前需要确认什么。
+
+- **[Awesome DSH Plugin](data/plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)** ｜ 整理 DSH 社区插件条目，生成双语目录、网站与插件市场索引。
+
+    **推荐理由**：要找某类 DSH 扩展的用户，可以用这个目录列出候选、项目链接和安装前置条件。相比逐仓搜索，目录先按类别集中条目，并给出上游和包版本的核查线索。遇到组件路径、版本或能力记录无法对应实际安装工件时，用户应暂停安装判断并回到上游核对固定版本。
+
+    **试用条件**：把目录当候选清单。先定位上游和组件，再核对准备使用的版本、安装脚本和权限。如果索引缺条目，可回网站寻找。如果扫描工件不明，应独立读所选版本。见 [Q04](data/plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md#research-q04)。
+
+    [查看完整分析](data/plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md)
 
 - **[dsh-plugin-veriscope](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)** ｜ 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
 
@@ -26,21 +34,13 @@
 
     [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
 
-- **[Tokdash](data/plugins/jingbiaomei--tokdash/INSIGHT.md)** ｜ 本地 AI 编码工具用量与费用看板，汇总会话、模型、缓存用量及使用报告。
-
-    **推荐理由**：保存 DSH 会话日志并愿意核对计数的个人开发者可试用本地 Tokdash 回顾用量。相比人工翻日志，它按会话与模型汇总，并显式处理重试和重复文件，但金额仍是本地价格估算。日志格式被跳过、模型价格缺失或样本不一致时，应暂停费用判断并回到原始日志和供应商账单。
-
-    **试用条件**：[Q04](data/plugins/jingbiaomei--tokdash/INSIGHT.md#research-q04) 限定个人本地使用回顾，先人工核对一个会话；价格或日志缺口出现即暂停金额判断。
-
-    [查看完整分析](data/plugins/jingbiaomei--tokdash/INSIGHT.md)
-
 ## [最近发布](data/views/columns/LATEST.md)
 
 > 查看最近发布的版本，了解用途和使用条件。
 
-- [dsh-image-gen](data/plugins/shanliuling--dsh-image-gen/INSIGHT.md) · 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 · [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
-- [DSH Tool Management](data/plugins/ouli-1242--dsh-plugin-tool-management/INSIGHT.md) · 在 DSH 中集中管理 MCP、技能、记忆、场景等资源及分作用域的模型工具表。 · [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-tool-management)
-- [dsh-windows-mcp](data/plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) · 把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。 · [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+- [DSH Git Bash Shell](data/plugins/kannakuron--dsh-gitbash-shell/INSIGHT.md) · 为 Windows DSH 会话提供 Git Bash、MSYS 路径转换、原生程序调用及可选预设。 · [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-gitbash-shell)
+- [DSH Vision Router](data/plugins/ysr666--dsh-vision-router/INSIGHT.md) · 为 DeepSeek Harness 的文本代理接入视觉模型，并提供截图对照与像素级图像工具。 · [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-vision-router)
+- [Trae 连接器](data/plugins/dingminhua--dsh-connect-trae/INSIGHT.md) · 将本机登录的 Trae 国内、企业和国际账号接入 DSH 模型选择器，提供用量、签到及模型管理。 · [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-connect-trae)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 368 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 48 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 153 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 376 |
-| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 71 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 373 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 51 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 155 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 385 |
+| [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 72 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 206 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 204 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 4 |
 
 [浏览全部分类](data/views/categories/INDEX.md)
@@ -76,4 +76,4 @@
 
 ## 更新时间
 
-2026-11-09
+2026-11-10

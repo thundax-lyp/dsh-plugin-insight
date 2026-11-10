@@ -8,20 +8,20 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 368 |
-| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 48 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 153 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 376 |
-| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 71 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 373 |
+| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 51 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 155 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 385 |
+| [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 72 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 206 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 204 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 4 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（368）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（373）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -33,7 +33,7 @@
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
-### [办公与运营（48）](OFFICE-OPERATIONS.md)
+### [办公与运营（51）](OFFICE-OPERATIONS.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -45,7 +45,7 @@
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（153）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（155）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -53,11 +53,11 @@
 | [WeKnora](../../plugins/tencent--weknora/INSIGHT.md) | 面向团队文档的知识服务，提供检索问答、Agent 推理和 Wiki 管理。 | [![GitHub Star 36,771](https://img.shields.io/static/v1?label=&message=36%2C771&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
 | [WeKnora DSH 连接器](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) | 让 DeepSeek Harness 在 WeKnora 知识库中检索片段、补读文档和请求综合问答。 | [![GitHub Star 36,771](https://img.shields.io/static/v1?label=&message=36%2C771&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) |
 | [Distilly](../../plugins/titanwings--distilly/INSIGHT.md) | 从消息、文档、访谈等材料提炼人物工作方法与表达偏好，并生成可复用的 Agent Skill。 | [![GitHub Star 26,004](https://img.shields.io/static/v1?label=&message=26%2C004&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/titanwings/distilly) |
-| [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) | 整理 DSH 插件候选并生成可读目录与市场索引。 | [![GitHub Star 21,705](https://img.shields.io/static/v1?label=&message=21%2C705&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) |
+| [Awesome DSH Plugin](../../plugins/awesome-dsh-plugin--awesome-dsh-plugin/INSIGHT.md) | 整理 DSH 社区插件条目，生成双语目录、网站与插件市场索引。 | [![GitHub Star 23,963](https://img.shields.io/static/v1?label=&message=23%2C963&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) |
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（376）](SOFTWARE-DELIVERY.md)
+### [软件交付（385）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -69,11 +69,11 @@
 
 [查看全部插件 →](SOFTWARE-DELIVERY.md)
 
-### [内容生产（71）](CONTENT-CREATION.md)
+### [内容生产（72）](CONTENT-CREATION.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
-| [Next AI Draw.io DSH](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [![GitHub Star 36,548](https://img.shields.io/static/v1?label=&message=36%2C548&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) |
+| [Next AI Draw.io DSH](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) | 在 DSH 接入 draw.io MCP 工具和可手工编辑、带版本与撤销的侧栏画布。 | [![GitHub Star 36,815](https://img.shields.io/static/v1?label=&message=36%2C815&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) |
 | [GPT-Image2 提示词画廊](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) | 提供可浏览、复制的图像提示词案例、模板及衍生风格 Skill。 | [![GitHub Star 35,459](https://img.shields.io/static/v1?label=&message=35%2C459&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2) |
 | [PicGo](../../plugins/molunerfinn--picgo/INSIGHT.md) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | [![GitHub Star 27,409](https://img.shields.io/static/v1?label=&message=27%2C409&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Molunerfinn/PicGo) |
 | [OpenPencil](../../plugins/zseven-w--openpencil/INSIGHT.md) | 独立桌面与 Web 设计应用，支持通过 MCP 读写可编辑 .op 文档和导出代码。 | [![GitHub Star 7,134](https://img.shields.io/static/v1?label=&message=7%2C134&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/ZSeven-W/openpencil) |
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（206）](INFRASTRUCTURE.md)
+### [基础设施（204）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -114,4 +114,4 @@
 
 ## 更新时间
 
-2026-11-09
+2026-11-10

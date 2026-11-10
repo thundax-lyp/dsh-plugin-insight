@@ -20,6 +20,7 @@
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
+| [DSH Files](#plugin-1333699356-root) | 在 DSH 内查找和引用已上传附件，通过宿主文件系统抽取常见办公文档的文字。 | [Q04](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q04) 在单用户测试 profile 用公开文字 PDF 验证检索、引用和按页抽取。 |
 | [DSH fnOS Integration](#plugin-1374007757-plugins-dsh-fnos-plugin) | 把NAS授权目录、文件打开和主题接入fnOS应用载体 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q04) 只在单用户隔离测试目录观察，先审外层网关和直达宿主路径；依赖多用户隔离的部署应继续使用fnOS原生文件管理器，直至逐入口证明用户权限。 |
 | [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
@@ -36,6 +37,7 @@
 | [dsh-md-annotator](#plugin-1335286261-root) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 建议有备份文稿的小范围试用，先验块引用/归属和冲突，结束前保存源码导出批注；复杂语法或导出不可靠时回外部编辑器。 |
 | [dsh-msg-hub](#plugin-1335387524-root) | 把微信、QQ、飞书消息接入 DSH 会话，并提供主动推送与远程审批/状态功能。 | 远程批准应先停用或仅在严格可信单 peer 环境隔离评估，修复来源绑定后再用真实渠道；详见[Q02](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q02)、[Q03](../../plugins/abcdefgxw--dsh-msg-hub/INSIGHT.md#research-q03)。 |
 | [dsh-notify-relay](#plugin-1385913707-root) | 把 DSH 生命周期事件经过去重、免打扰、摘要和重试规则转发到多种通知服务或 webhook。 | 先观察，在隔离接收器验证每类事件和部分通道失败，确认哪些内容会外发。 |
+| [dsh-office-tools](#plugin-1334828310-root) | 为 DSH 会话工作区提供 Word、Excel 与 PowerPoint 文件创建、读取和部分更新工具。 | 在隔离 profile 试用新建简报、预算表和轻量 PPT，用收件环境打开核对并保留源文件。 |
 | [dsh-plugin-balance](#plugin-1340280087-root) | DSH Web 额度悬浮窗，整合多供应商查询、会话 token 统计与费用估算。 | 先禁自定义任意 URL，以假 key 试验并同官方账单对账；只把费用视为估算。 |
 | [dsh-plugin-education](#plugin-1336663611-root) | 用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。 | 教师审阅下试用模板/转换，数值与答案复核后使用。 |
 | [dsh-plugin-mission-control](#plugin-1337780031-integrations-deepseek-harness-dsh-plugin-mission-control) | 将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。 | 已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。 |
@@ -49,10 +51,11 @@
 | [EduWork OIDC](#plugin-1369398336-packages-dsh-oidc) | 为 DSH 提供机构身份登录与授权模型接入。 | 先用隔离身份测试登录、模型类型及撤销失败，状态不明由管理员核查。 |
 | [InvoiceFlowAI DSH 发票插件](#plugin-1170373459-dsh-invoice-downloader) | 在 DSH 边栏收集邮箱发票、识别字段、分类归档并导出 Excel | 仅在 Windows x64 或 macOS Apple Silicon 上，用测试邮箱和有真值的混合批次试用；先验收原件、关键字段和可用导出，再比较人工总时间。 |
 | [InvoiceFlowAI 发票整理工具](#plugin-1170373459-root) | 从邮箱收集电子发票和下载链接，识别分类并生成 Excel 汇总 | 用测试邮箱与混合票据真值批次试用，按原件、关键字段、邮箱范围和可用导出验收；不合格先人工补齐，再决定是否继续。 |
+| [LazyMind](#plugin-823606893-root) | 提供知识、技能和可审核工作流的独立运行环境，并支持连接 DSH。 | 先用测试账号连接隔离 profile，用非敏感素材做一次带人工检查点的短演示稿。 |
 | [LeLogin for DeepSeek Harness](#plugin-1226490932-root) | 在 DSH 注册 LeLogin Skill，指导凭据引用、注入和已认证应用的本地使用。 | 先观察注册和假账号发现；对实际凭据操作保留手工退路，直到验证运行时与审批。 |
 | [NocoBase](#plugin-306829688-root) | 用于构建、运行和持续演进业务系统的开源应用平台，提供权限、工作流及 Agent 集成。 | [Q04](../../plugins/nocobase--nocobase/INSIGHT.md#research-q04) 先隔离 runner 和样本仓库，核查实际权限、模型和受控网络。 |
 | [Plugin Session Export](#plugin-1333152408-packages-plugins-plugin-session-export) | 把 DSH live 会话投影为可读 Markdown 或自包含 HTML，并可隐藏工具参数结果 | [Q04](../../plugins/whyihaveyou--dsh-suite--packages-plugins-plugin-session-export/INSIGHT.md#research-q04) 建议个人去敏单会话有限试用，写新目录并对JSONL核查；mini必须人工审阅后才分享。 |
-| [QQBot 增强版](#plugin-1357268674-root) | 把 QQ 消息接入 DSH 会话，并提供富媒体、交付文件发送和 Web 设置。 | [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04) 先在受控群确认名单和静默策略，再测试一个文件并保留人工退路。 |
+| [QQBot 增强版](#plugin-1357268674-root) | 为 DeepSeek Harness 接入 QQ 群聊和单聊，支持管理会话、切换模型及发送交付文件。 | 已有 QQ 应用的 DSH 用户可以用专用单聊做一次低风险试用。 |
 | [Reactive Resume](#plugin-249995750-root) | 独立简历/求职文档应用，以认证MCP/API编辑用户文档、保留版本并生成PDF导出。 | [Q05](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q05)独立账户虚构数据/只读起步，版本+差异核后小写，PDF逐页验；不明退Web和本机已验文档。 |
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
@@ -188,6 +191,22 @@
 > **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
 
 [查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333699356-root"></a>
+
+## [DSH Files](../../plugins/taxueseek--dsh-files/INSIGHT.md)
+
+[![GitHub ★ 43](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=43&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/taxueseek/dsh-files) [![npm 30d 204](https://img.shields.io/static/v1?label=npm+30d&message=204&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-files) [![最新发布 2026-08-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-files)
+
+> **用途**：用户在新会话复用旧会话的公开 PDF，找到指定页并核对原文。
+
+> **亮点**：[Q01](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q01) 将附件库浏览和宿主引用接进会话。[Q02](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q02) 文档内容可按页或表选择后分窗口取用。
+
+> **思考**：[Q03](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q03) Web 与模型导出使用不同写入路径，Web 的 Host 守卫未核对用户身份，递归删除也会影响此前引用。
+
+> **建议**：[Q04](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q04) 复用宿主已有附件或能减少找原件和重复粘贴，需按同一 PDF 记录时间、段落一致性和扫描件失败信号。
+
+[查看完整分析](../../plugins/taxueseek--dsh-files/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1374007757-plugins-dsh-fnos-plugin"></a>
 
@@ -445,6 +464,22 @@
 
 [查看完整分析](../../plugins/archaofan--dsh-notify-relay/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334828310-root"></a>
+
+## [dsh-office-tools](../../plugins/kw78--dsh-office-tools/INSIGHT.md)
+
+[![GitHub ★ 44](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=44&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kw78/dsh-office-tools) [![npm 30d 12,871](https://img.shields.io/static/v1?label=npm+30d&message=12%2C871&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-office-tools) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-office-tools)
+
+> **用途**：需要从同一季度数据写简报、预算和汇报稿的 DSH 用户，可让代理直接生成低复杂度 Office 初稿。见 [Q01](../../plugins/kw78--dsh-office-tools/INSIGHT.md#research-q01)。
+
+> **亮点**：用 ASCII STORE 包适配宿主文本写通道，给模型提供三种文件的结构化生成和提取。见 [Q02](../../plugins/kw78--dsh-office-tools/INSIGHT.md#research-q02)。
+
+> **思考**：Excel 更新会重建工作簿，受改单元格所在表中的缓存公式可能退化为值。PPT 图像使用外链，Word 追加会拒绝其余部件中含非 ASCII 字节的文件。见 [Q03](../../plugins/kw78--dsh-office-tools/INSIGHT.md#research-q03)。
+
+> **建议**：同源季度数据同时生成低复杂度三件套，可能减少录入和核对。以每组合格文件和收件端返工做对照。见 [Q05](../../plugins/kw78--dsh-office-tools/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/kw78--dsh-office-tools/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1340280087-root"></a>
 
 ## [dsh-plugin-balance](../../plugins/andrew111888--dsh-plugin-balance/INSIGHT.md)
@@ -653,6 +688,22 @@
 
 [查看完整分析](../../plugins/ethanyoq--invoice-downloader/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-823606893-root"></a>
+
+## [LazyMind](../../plugins/lazyagi--lazymind/INSIGHT.md)
+
+[![GitHub ★ 644](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=644&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LazyAGI/LazyMind)
+
+> **用途**：需要在生成演示稿中途审查大纲或内容的 DSH 用户，可连接 LazyMind 并在原会话核对运行。
+
+> **亮点**：把外部流程的状态、人工审核点与宿主会话接起来。Core 的通知投递与执行准入分别处理，失去回执时可按持久输入对账。见 [Q01](../../plugins/lazyagi--lazymind/INSIGHT.md#research-q01) 至 [Q03](../../plugins/lazyagi--lazymind/INSIGHT.md#research-q03)。
+
+> **思考**：宿主接收、步骤执行和文件交付是不同状态。停止仍以会话为目标，无法按预期轮次原子取消。见 [Q02](../../plugins/lazyagi--lazymind/INSIGHT.md#research-q02) 与 [Q03](../../plugins/lazyagi--lazymind/INSIGHT.md#research-q03)。
+
+> **建议**：在面板分开呈现可确认的投递、审核和文件状态，可能减少误交付。以相同演示稿任务比较断线和返工。见 [Q05](../../plugins/lazyagi--lazymind/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/lazyagi--lazymind/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1226490932-root"></a>
 
 ## [LeLogin for DeepSeek Harness](../../plugins/zcmilan--lelogin-skill/INSIGHT.md)
@@ -705,15 +756,15 @@
 
 ## [QQBot 增强版](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md)
 
-[![GitHub ★ 221](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=221&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zaofan-make/dsh-qqbot) [![npm 30d 32,354](https://img.shields.io/static/v1?label=npm+30d&message=32%2C354&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zaofan/dsh-qqbot) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zaofan/dsh-qqbot)
+[![GitHub ★ 237](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=237&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zaofan-make/dsh-qqbot) [![npm 30d 37,967](https://img.shields.io/static/v1?label=npm+30d&message=37%2C967&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zaofan/dsh-qqbot) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zaofan/dsh-qqbot)
 
-> **用途**：在 QQ 内给 DSH 发任务并接收文件的使用者，可观察渠道桥的自动交付。
+> **用途**：在 QQ 里讨论任务、已有 DSH 工作流的操作者，可以从一对一聊天触发固定会话，并在聊天里核对非敏感任务的回复和附件。
 
-> **亮点**：[Q01](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q01) 把宿主交付事件衔接到当前 QQ 会话，省去重复标记或手动转发。
+> **亮点**：把 QQ 聊天映射到 DSH 会话，可在聊天里调整活动模型，并把宿主声明的文件送回任务对话。只改思考强度时保留会话标识，切模型时派生带历史的子会话。相对只做 QQ 收发或手工复制，主要增量是会话与交付接线。见 [Q01](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q01)、[Q02](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q02) 和 [Q03](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q03)。
 
-> **思考**：[Q03](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q03) 默认访问开放，选定命令的主人回调和群聊访问是两层。
+> **思考**：最需要核对的是成功回执是否和实际状态一致。旧宿主可能只更新模型字段，文件路径又在上传完成前被登记用于去重。同群控制命令也存在与切模不同的权限路径。见 [Q02](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q02)、[Q03](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q03) 和 [Q04](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q04)。
 
-> **建议**：[Q05](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q05) 对照按安排去重，测试带确认状态的去重和可控重试。
+> **建议**：若切模确认绑定实际请求版本、投递确认绑定远端收件结果，操作者或许能减少跨端返工。以交错切模和失败上传比较每份正确交付的人工步骤和误投，结果不明时由人核对再决定是否补发。见 [Q05](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/zaofan-make--dsh-qqbot/INSIGHT.md) · [返回表格](#category-index)
 
@@ -833,4 +884,4 @@
 
 ## 更新时间
 
-2026-11-09
+2026-11-10

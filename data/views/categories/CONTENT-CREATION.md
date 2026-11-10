@@ -50,6 +50,7 @@
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 连接 Postiz MCP，辅助 DSH 创建、排期和发布社媒内容。 | [Q04](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q04) 优先隔离账号和草稿，提交前核对目标、内容、时间及授权。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
+| [dsh-share](#plugin-1332051085-root) | 在 DSH Web 选择单轮或多轮问答，导出 PNG、Markdown 或 HTML，并支持分页图片打包。 | 先在独立 Web profile 用合成会话验证 Markdown 和 HTML，再试长图分页。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
@@ -66,7 +67,7 @@
 | [Jacky Creator](#plugin-1345649791-root) | 在 DSH 内管理本地内容项目和运营工作台，按需接入字幕、封面与发布能力。 | [Q03](../../plugins/jackywxsz--dsh-creator/INSIGHT.md#research-q03) 无真实素材和外部凭据试跑。 |
 | [lightroom-py](#plugin-1225248471-root) | 通过 Python、MCP 和 DSH 接口控制 Lightroom Classic 图库及编辑。 | [Q03](../../plugins/drshy-org--lightroom-py/INSIGHT.md#research-q03) 在备份图库副本上先核依赖、选区与单项操作；结果或恢复不明确时停止写入。 |
 | [MuseAI](#plugin-1200521020-root) | 本地角色对话、文字冒险与故事世界资料管理应用。 | [Q04](../../plugins/yejiming--museai/INSIGHT.md#research-q04) 仅在可信环境用非敏感资料观察并备份；[Q03](../../plugins/yejiming--museai/INSIGHT.md#research-q03) 的状态暴露未修复核实前不启用 LAN。 |
-| [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 将 draw.io MCP 工具与可手工编辑、带版本和撤销的实时画布接入 DSH 侧栏。 | [Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 钉实际MCP版本，非敏感图核并发/撤销/重开/导出，异常另存并回手动draw.io。 |
+| [Next AI Draw.io DSH](#plugin-953521037-packages-dsh-plugin) | 在 DSH 接入 draw.io MCP 工具和可手工编辑、带版本与撤销的侧栏画布。 | 先固定实际运行的 MCP 和预览来源，用隔离 profile 试一张小图。 |
 | [NextTavern](#plugin-1366204745-root) | 为 DSH 提供角色扮演工作区，支持角色卡、世界线、记忆和小说导出。 | [Q04](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q04) 先独立工作区核对原文出稿，再决定是否启用整理。 |
 | [No AI Style](#plugin-1418493685-root) | 为学术和专业写作提供检查、润色和起草 Skill，以及 DSH 输入栏模式按钮。 | [Q04](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q04) 先做只审阅并复核原文。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
@@ -692,6 +693,22 @@
 
 [查看完整分析](../../plugins/19north--dsh-redstone-music/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1332051085-root"></a>
+
+## [dsh-share](../../plugins/hellodigua--dsh-share/INSIGHT.md)
+
+[![GitHub ★ 43](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=43&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hellodigua/dsh-share) [![npm 30d 2,310](https://img.shields.io/static/v1?label=npm+30d&message=2%2C310&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-share) [![最新发布 2026-10-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-share)
+
+> **用途**：需要定期向同事转交会话证据的 DSH Web 用户，希望把多轮不连续问答整理成一个可读附件。[Q01](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q01)
+
+> **亮点**：将可选择的问答快照、顺序、间隔提示和三个文件格式接入宿主界面，减少人工组装。[Q01](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q01) [Q03](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q03)
+
+> **思考**：隐藏过程按结构标记过滤。内容和文件名可能含敏感信息，生成 HTML 还可能请求消息图片 URL。导出或转发的副本需要在目的地处理。[Q02](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q02) [Q04](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q04)
+
+> **建议**：对比可确认的导出清单与现有操作，测错误披露、误删和人工时间。如果无净改善即放弃。[Q05](../../plugins/hellodigua--dsh-share/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/hellodigua--dsh-share/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1418769012-root"></a>
 
 ## [dsh-sticker-pack](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md)
@@ -952,15 +969,15 @@
 
 ## [Next AI Draw.io DSH](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md)
 
-[![GitHub ★ 36,548](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C548&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@next-ai-drawio/dsh)
+[![GitHub ★ 36,815](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C815&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DayuanJiang/next-ai-draw-io) [![npm 30d 925](https://img.shields.io/static/v1?label=npm+30d&message=925&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@next-ai-drawio/dsh) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@next-ai-drawio/dsh)
 
-> **用途**：DSH用户让Agent读仓库画架构图并在人机共同画布修订。
+> **用途**：在 DSH 讨论架构或流程的开发者，可让模型起草 draw.io 图，在同一画布手动修订并导出。
 
-> **亮点**：[Q01](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q01) 原生bundle的默认接线成立；并发编辑/版本由复用MCP提供，不能归为bundle新算法。
+> **亮点**：把模型工具和可编辑画布接到 DSH 对话，同提交服务检查过期编辑并保留部分冲突版本。相对手工接入，同一侧栏便于继续编辑。见 [Q01](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q02)。
 
-> **思考**：[Q03](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q03) latest使固定bundle不锁实际server；[Q02](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q02)内存提交/自动存档/业务图正确性是不同结果，不能互代。
+> **思考**：子包固定版本仍会解析 @latest。图已更新、图与历史已落盘、导出含最新手工内容分别有不同结果。见 [Q01](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q01) 与 [Q03](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q03)。
 
-> **建议**：[Q04](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q04) 绑定实际server版本和画布/磁盘/导出阶段收据；若已有导出流程等价或提示误导即否定。
+> **建议**：给画布版本、磁盘保存和实际导出各留一条可回读结果，可能减少漏改图被当成合格交付。以故障注入和重开文件验证。见 [Q05](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/dayuanjiang--next-ai-draw-io--packages-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1224,4 +1241,4 @@
 
 ## 更新时间
 
-2026-11-09
+2026-11-10
