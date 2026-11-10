@@ -1,55 +1,43 @@
 {
     "repository": "Alice-Marx/dsh-model-router",
     "repository_id": 1353534254,
-    "captured_at": "2026-11-04T02:13:37.357Z",
-    "window_start": "2026-10-05T02:13:37.357Z",
-    "stars": 700,
-    "pushed_at": "2026-11-03T10:22:36Z",
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 957,
+    "pushed_at": "2026-11-08T15:41:52Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
+        "open": 7,
+        "closed": 0,
+        "created_30d": 7,
         "closed_30d": null,
         "updated_30d": null
     },
     "errors": [
         {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A8DA:216E6F:347062:382E59:6AEA950F and timestamp 2026-11-04 02:14:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A926:2E9C57:3766B5:3B2772:6AEA9511 and timestamp 2026-11-04 02:14:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20created%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A982:2E964B:369A59:3A587A:6AEA9513 and timestamp 2026-11-04 02:14:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A9F8:2DB2F9:3608AC:39C993:6AEA9516 and timestamp 2026-11-04 02:14:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E4C:2C7E55:2827A1F:3948135:6AF28186 and timestamp 2026-11-10 02:29:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20updated%3A2026-10-05T02%3A13%3A37.357Z..2026-11-04T02%3A13%3A37.357Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID AA40:20699F:35E8A0:39AA39:6AEA9518 and timestamp 2026-11-04 02:14:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AAlice-Marx%2Fdsh-model-router%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4E66:1654:136A6E6:1BDDE11:6AF28187 and timestamp 2026-11-10 02:29:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "npm": {
-        "package_name": "@ljwei-stak/dsh-model-router",
-        "captured_at": "2026-11-03T17:06:57.509Z",
-        "window_start": "2026-10-04",
-        "window_end": "2026-11-02",
-        "downloads_30d": 5824,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-04:2026-11-02/%40ljwei-stak%2Fdsh-model-router",
+        "package_name": "@ljwei-stak/dsh-model-route-bot",
+        "captured_at": "2026-11-08T10:29:05.481Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 1474,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/%40ljwei-stak%2Fdsh-model-route-bot",
         "error": null,
         "publication": {
-            "first_published_at": "2026-10-02T17:11:45.891Z",
-            "captured_at": "2026-11-03T17:06:57.509Z",
-            "source_url": "https://registry.npmjs.org/%40ljwei-stak%2Fdsh-model-router",
+            "first_published_at": "2026-11-06T10:34:50.502Z",
+            "captured_at": "2026-11-08T10:29:05.481Z",
+            "source_url": "https://registry.npmjs.org/%40ljwei-stak%2Fdsh-model-route-bot",
             "error": null,
-            "latest_version": "0.25.5",
-            "latest_published_at": "2026-10-26T07:27:02.613Z",
+            "latest_version": "0.66.4",
+            "latest_published_at": "2026-11-07T12:06:44.199Z",
             "latest_error": null
         }
     }

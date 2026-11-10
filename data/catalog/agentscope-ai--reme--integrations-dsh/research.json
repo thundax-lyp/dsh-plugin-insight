@@ -152,7 +152,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "mechanism",
@@ -175,7 +175,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "scope",
@@ -198,7 +198,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "distribution",
@@ -221,7 +221,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "cost",
@@ -244,7 +244,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "adoption",
@@ -267,7 +267,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "value",
@@ -290,7 +290,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "engineering",
@@ -313,7 +313,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "contribution",
@@ -336,7 +336,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "critical_question",
@@ -359,7 +359,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "innovation_hypothesis",
@@ -382,7 +382,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 },
                 {
                     "id": "dependencies",
@@ -405,7 +405,7 @@
                         }
                     ],
                     "reviewed_at": "2026-11-01T08:34:47.984Z",
-                    "status": "current"
+                    "status": "needs_review"
                 }
             ],
             "last_checked_at": "2026-11-01T08:34:47.984Z",
@@ -413,7 +413,7 @@
                 "rubric": "innovation-v1",
                 "revision": "1e51e0dc1b1effe60f7ee425298f3b6f8ef4cbd9",
                 "reviewed_at": "2026-11-01T08:34:47.984Z",
-                "status": "current",
+                "status": "needs_review",
                 "dependencies": [
                     {
                         "plugin_id": "github:849121458:integrations-dsh",
@@ -480,7 +480,7 @@
                 "score": 59,
                 "revision": "1e51e0dc1b1effe60f7ee425298f3b6f8ef4cbd9",
                 "reviewed_at": "2026-11-01T08:34:47.984Z",
-                "status": "current",
+                "status": "needs_review",
                 "evaluator": "ai",
                 "evidence_ids": [
                     "2026-11-01-03-github-849121458-integrations-dsh-source"
@@ -498,23 +498,6 @@
                     }
                 ]
             }
-        },
-        "publication.records": {
-            "id": "github:849121458:integrations-dsh",
-            "repository": "agentscope-ai/ReMe",
-            "path": "integrations/dsh",
-            "revision": "1e51e0dc1b1effe60f7ee425298f3b6f8ef4cbd9",
-            "fingerprints": {
-                "directory": "245f36447f53e0ea4cf52b5e9ce203babd15a1de4655c47cb5f9891d0de25293",
-                "code": "1e51e0dc1b1effe60f7ee425298f3b6f8ef4cbd9",
-                "maintenance": "2a909858aeddde9a978eb7a2dd435126d9a472e11bb7eaadc98dced0d10b3c0c"
-            },
-            "source_urls": [
-                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
-            ],
-            "status": "complete",
-            "checked_at": "2026-11-01T08:09:03Z",
-            "analysis_sha256": "a4f1e254fb536602194f6f9f0567212cad0b03f65e4683729842fc2cce22bf42"
         },
         "publication.metadata": "data/catalog/agentscope-ai--reme--integrations-dsh/meta.json",
         "publication.summaries": {

@@ -1,61 +1,40 @@
 {
     "repository": "DayuanJiang/next-ai-draw-io",
     "repository_id": 953521037,
-    "captured_at": "2026-11-02T03:37:58.572Z",
-    "window_start": "2026-10-03T03:37:58.572Z",
-    "stars": 36548,
-    "pushed_at": "2026-11-01T13:06:18Z",
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 36815,
+    "pushed_at": "2026-11-09T18:08:51Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 32,
+        "closed": 320,
+        "created_30d": 11,
+        "closed_30d": 6,
+        "updated_30d": 29
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3ADayuanJiang%2Fnext-ai-draw-io%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 36A4:C383C:116186:12D135:6AE805DD and timestamp 2026-11-02 03:39:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3ADayuanJiang%2Fnext-ai-draw-io%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3716:B3D82:106CFF:11DC6C:6AE805DE and timestamp 2026-11-02 03:39:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ADayuanJiang%2Fnext-ai-draw-io%20is%3Aissue%20created%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3790:1A4F70:FE6D2:1154A1:6AE805DF and timestamp 2026-11-02 03:39:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ADayuanJiang%2Fnext-ai-draw-io%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 380E:30F1E6:12A5EF:14164C:6AE805E0 and timestamp 2026-11-02 03:39:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ADayuanJiang%2Fnext-ai-draw-io%20is%3Aissue%20updated%3A2026-10-03T03%3A37%3A58.572Z..2026-11-02T03%3A37%3A58.572Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 386C:197397:114D3C:12BE2C:6AE805E1 and timestamp 2026-11-02 03:39:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-02T02:44:28.269Z",
+        "captured_at": "2026-11-09T12:10:01.010Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "bc8b5f53ff025f281b66b24c419c75c79da6ab5f",
-        "blob_sha": "56b55f44676758aefb05a06fd0fe30413858eaa8",
-        "errors_blob_sha": "507914eed854a8755b97e99be4836250e2e2f99b",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
         "latest_error": null
     },
     "npm": {
         "package_name": "@next-ai-drawio/dsh",
-        "captured_at": "2026-11-02T03:37:58.572Z",
-        "window_start": "2026-10-03",
-        "window_end": "2026-11-01",
-        "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/%40next-ai-drawio%2Fdsh",
-        "error": "HTTP 404",
+        "captured_at": "2026-11-05T17:26:49.018Z",
+        "window_start": "2026-10-06",
+        "window_end": "2026-11-04",
+        "downloads_30d": 925,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40next-ai-drawio%2Fdsh",
+        "error": null,
         "publication": {
             "first_published_at": "2026-11-01T00:10:06.211Z",
-            "captured_at": "2026-11-02T03:37:58.572Z",
+            "captured_at": "2026-11-05T17:26:49.018Z",
             "source_url": "https://registry.npmjs.org/%40next-ai-drawio%2Fdsh",
             "error": null,
             "latest_version": "0.1.0",

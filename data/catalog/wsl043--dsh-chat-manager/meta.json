@@ -1,0 +1,50 @@
+{
+    "repository": "WSL043/dsh-chat-manager",
+    "repository_id": 1335110228,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 43,
+    "pushed_at": "2026-11-09T03:16:45Z",
+    "issues": {
+        "open": 1,
+        "closed": 5,
+        "created_30d": 5,
+        "closed_30d": 4,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWSL043%2Fdsh-chat-manager%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 400A:13A3B:ACB9D4:B902D8:6AF28271 and timestamp 2026-11-10 02:33:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-chat-manager",
+        "captured_at": "2026-11-09T06:42:47.767Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": 11726,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-chat-manager",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-27T07:34:56.411Z",
+            "captured_at": "2026-11-09T06:42:47.767Z",
+            "source_url": "https://registry.npmjs.org/dsh-chat-manager",
+            "error": null,
+            "latest_version": "2.0.1",
+            "latest_published_at": "2026-11-07T22:27:03.155Z",
+            "latest_error": null
+        }
+    }
+}

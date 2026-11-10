@@ -1,40 +1,27 @@
 {
     "repository": "foryourhealth111-pixel/Vibe-Skills",
     "repository_id": 1164005541,
-    "captured_at": "2026-11-01T08:13:08.475Z",
-    "window_start": "2026-10-02T08:13:08.475Z",
-    "stars": 3786,
-    "pushed_at": "2026-10-31T02:58:53Z",
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 3807,
+    "pushed_at": "2026-11-09T07:33:42Z",
     "issues": {
         "open": 39,
-        "closed": 57,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "closed": 59,
+        "created_30d": 23,
+        "closed_30d": 21,
+        "updated_30d": 24
     },
-    "errors": [
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aforyourhealth111-pixel%2FVibe-Skills%20is%3Aissue%20created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FDFE:25DFFC:F7115:111467:6AE6F53E and timestamp 2026-11-01 08:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aforyourhealth111-pixel%2FVibe-Skills%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FE2E:254F90:100CF0:11B182:6AE6F53F and timestamp 2026-11-01 08:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aforyourhealth111-pixel%2FVibe-Skills%20is%3Aissue%20updated%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FE84:11A98B:DFEEF:F9A02:6AE6F541 and timestamp 2026-11-01 08:16:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-10-31T09:58:25.350Z",
+        "captured_at": "2026-11-09T12:10:01.010Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
         "latest_error": null
     }
 }

@@ -1,34 +1,55 @@
 {
     "repository": "A8Chann/dsh-pet-live2d",
     "repository_id": 1378097401,
-    "captured_at": "2026-11-04T13:26:04.262Z",
-    "window_start": "2026-10-05T13:26:04.262Z",
-    "stars": 69,
-    "pushed_at": "2026-11-04T10:46:21Z",
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 74,
+    "pushed_at": "2026-11-09T11:48:40Z",
     "issues": {
-        "open": 3,
-        "closed": 5,
-        "created_30d": 7,
-        "closed_30d": 4,
-        "updated_30d": 7
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82F4:42A62:9D3D11:A973EF:6AF2818B and timestamp 2026-11-10 02:29:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 82FE:2F41E:9D6558:A99BFB:6AF2818B and timestamp 2026-11-10 02:29:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20created%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8306:29E38C:9A8DFF:A6C7DD:6AF2818D and timestamp 2026-11-10 02:29:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 830E:1948E:A13881:AD7337:6AF2818E and timestamp 2026-11-10 02:29:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AA8Chann%2Fdsh-pet-live2d%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 831A:2A976:98E2D8:A517CF:6AF2818F and timestamp 2026-11-10 02:29:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "npm": {
         "package_name": "dsh-pet-live2d",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 10552,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-pet-live2d",
+        "captured_at": "2026-11-08T17:57:25.757Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 14804,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-pet-live2d",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-21T15:19:30.741Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-08T17:57:25.757Z",
             "source_url": "https://registry.npmjs.org/dsh-pet-live2d",
             "error": null,
-            "latest_version": "3.4.1",
-            "latest_published_at": "2026-10-27T13:51:16.298Z",
+            "latest_version": "3.5.0",
+            "latest_published_at": "2026-11-04T10:37:13.387Z",
             "latest_error": null
         }
     }

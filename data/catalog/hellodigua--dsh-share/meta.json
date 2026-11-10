@@ -1,0 +1,50 @@
+{
+    "repository": "hellodigua/dsh-share",
+    "repository_id": 1332051085,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 43,
+    "pushed_at": "2026-10-10T09:14:50Z",
+    "issues": {
+        "open": null,
+        "closed": 5,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ahellodigua%2Fdsh-share%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F9BE:1DE7B9:A5FD28:B2449F:6AF2825A and timestamp 2026-11-10 02:32:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-share",
+        "captured_at": "2026-11-08T17:57:25.757Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 2310,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-share",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T01:48:53.512Z",
+            "captured_at": "2026-11-08T17:57:25.757Z",
+            "source_url": "https://registry.npmjs.org/dsh-share",
+            "error": null,
+            "latest_version": "0.5.0",
+            "latest_published_at": "2026-10-10T09:16:31.236Z",
+            "latest_error": null
+        }
+    }
+}

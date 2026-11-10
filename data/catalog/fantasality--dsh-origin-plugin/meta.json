@@ -1,0 +1,66 @@
+{
+    "repository": "Fantasality/dsh-origin-plugin",
+    "repository_id": 1335203486,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 44,
+    "pushed_at": "2026-10-17T06:06:13Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AFantasality%2Fdsh-origin-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A614:1EDFF9:9CB0F5:A8FA92:6AF2824B and timestamp 2026-11-10 02:32:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AFantasality%2Fdsh-origin-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A63E:3366AC:35B50B:39C1DC:6AF2824C and timestamp 2026-11-10 02:32:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFantasality%2Fdsh-origin-plugin%20is%3Aissue%20created%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A658:32D456:A23425:AE7AC2:6AF2824E and timestamp 2026-11-10 02:32:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFantasality%2Fdsh-origin-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A670:1DDE2F:9BEFD0:A833C5:6AF2824E and timestamp 2026-11-10 02:32:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AFantasality%2Fdsh-origin-plugin%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A680:2A7E52:9DB573:A9F60B:6AF2824F and timestamp 2026-11-10 02:32:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T12:10:01.010Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-origin-plugin",
+        "captured_at": "2026-11-09T19:53:03.038Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": 3066,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-origin-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T03:13:07.970Z",
+            "captured_at": "2026-11-09T19:53:03.038Z",
+            "source_url": "https://registry.npmjs.org/dsh-origin-plugin",
+            "error": null,
+            "latest_version": "2.7.3",
+            "latest_published_at": "2026-09-18T02:07:42.066Z",
+            "latest_error": null
+        }
+    }
+}

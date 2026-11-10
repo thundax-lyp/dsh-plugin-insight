@@ -1,0 +1,66 @@
+{
+    "repository": "KannaKuron/dsh-gitbash-shell",
+    "repository_id": 1343674616,
+    "captured_at": "2026-11-10T02:28:35.946Z",
+    "window_start": "2026-10-11T02:28:35.946Z",
+    "stars": 45,
+    "pushed_at": "2026-11-09T18:50:00Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AKannaKuron%2Fdsh-gitbash-shell%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A0C2:267730:9C600A:A8A5AE:6AF28247 and timestamp 2026-11-10 02:32:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AKannaKuron%2Fdsh-gitbash-shell%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A5E6:1E3E4C:A15F38:ADA168:6AF28248 and timestamp 2026-11-10 02:32:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AKannaKuron%2Fdsh-gitbash-shell%20is%3Aissue%20created%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A5F0:2AE88:A01532:AC6046:6AF28249 and timestamp 2026-11-10 02:32:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AKannaKuron%2Fdsh-gitbash-shell%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A5FE:2AEA7F:AA15C1:B65824:6AF2824A and timestamp 2026-11-10 02:32:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AKannaKuron%2Fdsh-gitbash-shell%20is%3Aissue%20updated%3A2026-10-11T02%3A28%3A35.946Z..2026-11-10T02%3A28%3A35.946Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID A62E:13A3B:AC9D89:B8E47E:6AF2824C and timestamp 2026-11-10 02:32:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-09T22:43:59.683Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "871709d75580333afd8414a2816707c6388a8fe5",
+        "blob_sha": "6da3f1d553070c6102319cb5c25a418dbbc4cc1d",
+        "errors_blob_sha": "69708e191992943575962d364615257d88e218f9",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-gitbash-shell",
+        "captured_at": "2026-11-09T19:53:03.038Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": 13622,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-gitbash-shell",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T12:17:53.516Z",
+            "captured_at": "2026-11-09T19:53:03.038Z",
+            "source_url": "https://registry.npmjs.org/dsh-gitbash-shell",
+            "error": null,
+            "latest_version": "0.53.0",
+            "latest_published_at": "2026-11-09T18:52:56.750Z",
+            "latest_error": null
+        }
+    }
+}
