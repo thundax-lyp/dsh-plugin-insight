@@ -106,7 +106,9 @@ npm run research:prepare -- \
 
 ### 2. 分派单插件洞察
 
-按下方[多 Agent 协作](#多-agent-协作)，将每项稳定 ID、固定提交、检查时间、深度、独占目录和当前相关分析／证据交给子 Agent，执行[洞察 Skill](../dsh-plugin-insight/SKILL.md)。所选更新项和新项均完整分析；未变项只保留，不伪造完成。同轮已完成且摘要正确的项跳过。
+按下方[多 Agent 协作](#多-agent-协作)，将每项稳定 ID、仓库及组件路径、固定提交、材料索引、检查时间、深度、独占目录和当前相关分析／证据交给子 Agent，执行[洞察 Skill](../dsh-plugin-insight/SKILL.md)。通过准入的更新项和新项均完整分析；未变项只保留，不伪造完成。同轮已完成且摘要正确的项跳过。
+
+收到 `ADMISSION.json` 后按[准入交接契约](../_shared/references/DATA-CONTRACT.md#init-与-insight-的源码准入交接)核对身份、固定提交及关键证据。仅 `eligible` 的完整洞察进入验收；缺少记录或绑定不符时退回补查。`not_dsh_plugin` 以同名 reason_code 登记固定版本 block 并单列拒绝数；`undetermined` 在针对缺口补证后仍无法判定时，以 `dsh_plugin_admission_undetermined` 登记 block。两者都不送研究验收、不计入两次实质失败、不触发 30 天冷却，沿用固定队列不补位。
 
 ### 3. 验收并暂存
 
