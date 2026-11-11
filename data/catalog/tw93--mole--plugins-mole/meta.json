@@ -1,0 +1,45 @@
+{
+    "repository": "tw93/Mole",
+    "repository_id": 1062356571,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 74465,
+    "pushed_at": "2026-11-10T19:05:02Z",
+    "issues": {
+        "open": 3,
+        "closed": 1188,
+        "created_30d": 129,
+        "closed_30d": 133,
+        "updated_30d": 188
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T07:46:05.409Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-mole",
+        "captured_at": "2026-11-10T21:19:39.444Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 849,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-mole",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-09T03:43:00.263Z",
+            "captured_at": "2026-11-10T21:19:39.444Z",
+            "source_url": "https://registry.npmjs.org/dsh-mole",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-11-09T13:49:30.463Z",
+            "latest_error": null
+        }
+    }
+}

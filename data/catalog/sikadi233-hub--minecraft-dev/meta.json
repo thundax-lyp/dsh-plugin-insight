@@ -1,0 +1,45 @@
+{
+    "repository": "sikadi233-hub/minecraft-dev",
+    "repository_id": 1336062434,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 41,
+    "pushed_at": "2026-11-06T04:54:22Z",
+    "issues": {
+        "open": 3,
+        "closed": 1,
+        "created_30d": 4,
+        "closed_30d": 1,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T23:44:45.448Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "minecraft-dev",
+        "captured_at": "2026-11-08T22:11:24.754Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 4332,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/minecraft-dev",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T14:40:15.553Z",
+            "captured_at": "2026-11-08T22:11:24.754Z",
+            "source_url": "https://registry.npmjs.org/minecraft-dev",
+            "error": null,
+            "latest_version": "0.13.2",
+            "latest_published_at": "2026-11-06T05:39:27.716Z",
+            "latest_error": null
+        }
+    }
+}

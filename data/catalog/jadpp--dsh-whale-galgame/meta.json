@@ -1,0 +1,66 @@
+{
+    "repository": "JAdpp/dsh-whale-galgame",
+    "repository_id": 1335381999,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 42,
+    "pushed_at": "2026-11-09T14:52:48Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AJAdpp%2Fdsh-whale-galgame%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D350:AD9AF:12087B:133759:6AF3CCF2 and timestamp 2026-11-11 02:03:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AJAdpp%2Fdsh-whale-galgame%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D364:3C2C26:11BAA9:12EA04:6AF3CCF3 and timestamp 2026-11-11 02:03:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJAdpp%2Fdsh-whale-galgame%20is%3Aissue%20created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D366:3F9F01:121A2F:13494E:6AF3CCF4 and timestamp 2026-11-11 02:03:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJAdpp%2Fdsh-whale-galgame%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D36C:13E97E:12754D:13A53F:6AF3CCF5 and timestamp 2026-11-11 02:03:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AJAdpp%2Fdsh-whale-galgame%20is%3Aissue%20updated%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D386:3DDDF6:1261DC:1391F7:6AF3CCF6 and timestamp 2026-11-11 02:03:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T17:18:51.228Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-galgame",
+        "captured_at": "2026-11-10T03:36:50.711Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 3434,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-whale-galgame",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T18:09:17.545Z",
+            "captured_at": "2026-11-10T03:36:50.711Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-galgame",
+            "error": null,
+            "latest_version": "0.7.0",
+            "latest_published_at": "2026-11-09T14:08:41.389Z",
+            "latest_error": null
+        }
+    }
+}

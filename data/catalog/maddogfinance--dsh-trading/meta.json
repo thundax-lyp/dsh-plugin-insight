@@ -1,0 +1,27 @@
+{
+    "repository": "maddogfinance/dsh-trading",
+    "repository_id": 1336940095,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 41,
+    "pushed_at": "2026-11-06T10:07:07Z",
+    "issues": {
+        "open": 3,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T23:44:45.448Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    }
+}

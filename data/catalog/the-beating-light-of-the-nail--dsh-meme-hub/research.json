@@ -1,0 +1,438 @@
+{
+    "schema_version": 4,
+    "id": "be0f232668540fa33e3818f33bd1e0a7",
+    "identity": "github:1333713967:root",
+    "slug": "the-beating-light-of-the-nail--dsh-meme-hub",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1333713967:root",
+            "repository_id": 1333713967,
+            "component_id": "root",
+            "repository": "the-beating-light-of-the-nail/dsh-meme-hub",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Meme Hub",
+            "entry_type": "resource",
+            "technical_category": "other",
+            "business_category": "other",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "d9ed96fa362822f5f020946c490010af2b99b395aa01b2e75f619acd2461ceb6",
+                "code": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                "maintenance": "f99e00d032a4fb133a57d10e0d71002c97f7f68793658de54904a385f2f1f9fc"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-11-01-github-1333713967-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-11T02:46:29.141Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-11-01-github-1333713967-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub",
+                            "commit": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                            "path": "README.md",
+                            "content_sha256": "0f0042563323941f19f1fde0ea82fd48155a411aed333871de77553c3689a022"
+                        }
+                    ],
+                    "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                    "captured_at": "2026-11-11T02:46:29.141Z",
+                    "summary": "双语 DSH 社区整活导航，将分类、上游仓库和精选预览集中在固定文档。",
+                    "artifact": "data/runs/2026-11-11-01/the-beating-light-of-the-nail--dsh-meme-hub/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-11-01-github-1333713967-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub",
+                            "commit": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                            "path": "README.md",
+                            "content_sha256": "0f0042563323941f19f1fde0ea82fd48155a411aed333871de77553c3689a022"
+                        },
+                        {
+                            "repository_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub",
+                            "commit": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                            "path": "README.zh-CN.md",
+                            "content_sha256": "27deede32826e393fb93eeb27bc66c0a5d0cb4e2fc0e736315493e8b771134ac"
+                        },
+                        {
+                            "repository_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub",
+                            "commit": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                            "path": "CONTRIBUTING.md",
+                            "content_sha256": "88d12fbe6aca236eeab6e68213e9cecd2fac38e52174e4d4c570a9aec37d8153"
+                        },
+                        {
+                            "repository_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub",
+                            "commit": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                            "path": "showcase/_manifest.json",
+                            "content_sha256": "7d4109ccffa71f74379e219736e5a4b0c381165510429394e7227da405b777db"
+                        }
+                    ],
+                    "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                    "captured_at": "2026-11-11T02:46:29.141Z",
+                    "summary": "核查 README.md、README.zh-CN.md、CONTRIBUTING.md、showcase/_manifest.json；Markdown 分类与上游链接负责导航，精选图片和无图条目补充浏览路径。",
+                    "artifact": "data/runs/2026-11-11-01/the-beating-light-of-the-nail--dsh-meme-hub/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "仅检查固定资源和 Git 跟踪清单；本组件无包清单及可执行入口，外站和所列插件均未运行。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向想浏览主题、宠物、游戏和其他整活示例的 DSH 社区读者。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Markdown 分类与上游链接负责导航，精选图片和无图条目补充浏览路径。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "仅检查固定资源和 Git 跟踪清单；本组件无包清单及可执行入口，外站和所列插件均未运行。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定提交中的双语 README、贡献指南和展示素材。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖 | 用途 | 边界 |\n| --- | --- | --- |\n| GitHub | 文档与项目入口 | 外部仓库独立变化 |\n| 展示素材 | 同页预览 | 授权取决于原作者 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 成本 | 单位 | 限制 |\n| --- | --- | --- |\n| 筛选 | 页面与点击数 | 实测未知 |\n| 维护 | 每个条目人工审核 | 无持续校验实现 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "观察，可按兴趣翻固定目录，上游使用依赖单独复核（[Q01](#research-q01)、[Q04](#research-q04)）。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果 | 判据 | 边界 |\n| --- | --- | --- |\n| 同页导航 | 可从项目行点回上游 | 不代表兼容 |\n| 截图 | 可判断外观主题 | 无法证明运行状态 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "资源仅含文档、manifest 与截图；按列表格式可以机械核对双语项目和本地图路径。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "同页聚合分类、项目短评与预览，文档内部无图项目仍能按链接找到（[Q02](#research-q02)）。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "编辑标准和截图说明不足以核实上游行为、授权或外链的安装适用性（[Q03](#research-q03)）。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "用三项同口径任务对照手工搜索的命中、点击和核对成本，检验聚合是否真省事（[Q04](#research-q04)）。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1333713967:root",
+                            "area": "code",
+                            "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:46:29.141Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-11T02:46:29.141Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                "reviewed_at": "2026-11-11T02:46:29.141Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333713967:root",
+                        "area": "code",
+                        "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 8
+                    },
+                    "rationale": "同页静态索引具备编辑可迁移性；与普通 Awesome List 同形，没有新的宿主或执行机制。",
+                    "basis": "interpretation",
+                    "score": 21,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "对偶发的娱乐插件探索提供双语同页浏览，适用范围受人工选题与时效约束。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1333713967-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "想找皮肤、桌宠或游戏示例的 DSH 用户可按类浏览固定目录。[Q01](#research-q01) 相较于逐个搜索并打开 GitHub README，这里可先同页看短评和预览，实际点击和核对次数仍待对照。[Q02](#research-q02) [Q04](#research-q04) 选中候选后，安装、引用素材或依赖其行为之前，回上游核对固定版本、授权和适用性。[Q03](#research-q03)",
+                "criteria": {
+                    "scenario": {
+                        "score": 8,
+                        "rationale": "找整活例子的读者和任务均明确，高于无任务的 0 档；偶发浏览的重复摩擦与后果未证实，未达 15 档。[Q01](#research-q01)"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "同页短评和预览提供了手工搜索之外的实质浏览便利，高于 0 档；未有命中与点击对照支持 13 档。[Q02](#research-q02) [Q04](#research-q04)"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "固定目录与 manifest 直接支持静态呈现机制，高于只依据作者介绍的 6 档；无独立浏览结果支撑 19 档。[Q02](#research-q02) [Q04](#research-q04)"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "固定目录可直接浏览，成本优于需要环境接入的 5 档；候选进入采用环节仍需检查上游版本和授权，未达 15 档。[Q03](#research-q03)"
+                    }
+                },
+                "score": 37,
+                "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                "reviewed_at": "2026-11-11T02:46:29.141Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-11-01-github-1333713967-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1333713967:root",
+                        "area": "code",
+                        "fingerprint": "3039a0ac80b0558473fee8d9917680311ef93a20"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1333713967:root",
+            "repository": "the-beating-light-of-the-nail/dsh-meme-hub",
+            "path": "",
+            "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+            "fingerprints": {
+                "directory": "d9ed96fa362822f5f020946c490010af2b99b395aa01b2e75f619acd2461ceb6",
+                "code": "3039a0ac80b0558473fee8d9917680311ef93a20",
+                "maintenance": "f99e00d032a4fb133a57d10e0d71002c97f7f68793658de54904a385f2f1f9fc"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-11T01:46:09Z",
+            "analysis_sha256": "88bd4f23f67c1f59560929e23df7c03b64503add3785b59ab6ff76346b0ffe80"
+        },
+        "publication.metadata": "data/catalog/the-beating-light-of-the-nail--dsh-meme-hub/meta.json",
+        "publication.summaries": {
+            "text": "双语 DSH 社区整活导航，将分类、上游仓库和精选预览集中在固定文档。",
+            "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+            "source_url": "https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+            "items": {},
+            "table": "| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 静态资源 | 双语项目导航与精选预览 | 无 DSH 注册、包清单和入口 |"
+        },
+        "publication.advice": {
+            "revision": "3039a0ac80b0558473fee8d9917680311ef93a20",
+            "text": "观察，可按兴趣翻固定目录，上游使用依赖单独复核（[Q01](#research-q01)、[Q04](#research-q04)）。"
+        },
+        "registry": "data/plugins/the-beating-light-of-the-nail--dsh-meme-hub",
+        "reports": "# DSH Meme Hub\n\n> 双语 DSH 社区整活导航，将分类、上游仓库和精选预览集中在固定文档。\n\n## 研究范围\n\n- **仓库**：[the-beating-light-of-the-nail/dsh-meme-hub](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub)\n- **版本号**：未声明（[固定提交 3039a0ac80b0558473fee8d9917680311ef93a20](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/tree/3039a0ac80b0558473fee8d9917680311ef93a20)）\n- **版本日期**：2026-09-08（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n资源目录的静态证据，外链交付与采用效果待核。\n\n## 洞察短评\n\n- **用途**：面向想浏览主题、宠物、游戏和其他整活示例的 DSH 社区读者。\n- **亮点**：同页聚合分类、项目短评与预览，文档内部无图项目仍能按链接找到（[Q02](#research-q02)）。\n- **思考**：编辑标准和截图说明不足以核实上游行为、授权或外链的安装适用性（[Q03](#research-q03)）。\n- **建议**：用三项同口径任务对照手工搜索的命中、点击和核对成本，检验聚合是否真省事（[Q04](#research-q04)）。\n\n采用建议：观察，可按兴趣翻固定目录，上游使用依赖单独复核（[Q01](#research-q01)、[Q04](#research-q04)）。\n\n## 核心贡献\n\n同页聚合分类、项目短评与预览，文档内部无图项目仍能按链接找到（[Q02](#research-q02)）。\n\n## 关键质疑\n\n编辑标准和截图说明不足以核实上游行为、授权或外链的安装适用性（[Q03](#research-q03)）。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n用三项同口径任务对照手工搜索的命中、点击和核对成本，检验聚合是否真省事（[Q04](#research-q04)）。\n\n对照手工搜索与固定目录，以成功命中和所需核对步骤为判据。\n\n## 场景与替代办法\n\n面向想浏览主题、宠物、游戏和其他整活示例的 DSH 社区读者。\n\n手工按话题搜索 GitHub 再逐个读 README，检索范围更宽，但要逐个找图和分类。\n\n## 依赖与流程\n\n| 依赖 | 用途 | 边界 |\n| --- | --- | --- |\n| GitHub | 文档与项目入口 | 外部仓库独立变化 |\n| 展示素材 | 同页预览 | 授权取决于原作者 |\n\n| 阶段 | 操作 | 异常 |\n| --- | --- | --- |\n| 发现 | 按主题浏览 | 未分类项目需另找 |\n| 核实 | 上游 README 与固定版本 | 正文描述有日期局限 |\n\n## 成本与效果\n\n| 成本 | 单位 | 限制 |\n| --- | --- | --- |\n| 筛选 | 页面与点击数 | 实测未知 |\n| 维护 | 每个条目人工审核 | 无持续校验实现 |\n\n| 效果 | 判据 | 边界 |\n| --- | --- | --- |\n| 同页导航 | 可从项目行点回上游 | 不代表兼容 |\n| 截图 | 可判断外观主题 | 无法证明运行状态 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：判断双语社区导航能否降低找整活插件的浏览成本，并厘清目录、预览与外链交付边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁在找什么，目录怎样替代手工搜仓库？\n\n**研究主题**：场景与需求、采用判断\n\n#### 完整回答\n\n为想按皮肤、桌宠或游戏找社区例子的读者提供分类、短评、星标快照和直接上游链接。替代做法是按主题搜仓库再逐个打开 README。本目录把预览提前到同页，但整活优先限制了它作为实用插件检索目录的覆盖。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.zh-CN.md:20-24](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L20-L24)\n\n作者定义单行介绍和精选图，星标是收录时快照。\n\n```text\n2026 年 8 月 13 日，DeepSeek 开源了 agent harness [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)，口号简单粗暴：**Everything is a Plugin**。24 小时，**45,000+ stars**。但更精彩的在后面：社区一夜之间悟了——既然万物皆插件，那广告是插件、皮肤是插件、桌宠是插件、连 Excel 都是插件。\n\n贪玩蓝鲸、QQ2006、财神鲸抽奖、像素鲸鱼、深海女仆工坊……整活浓度梦回 2005 年中文互联网。\n\n这是一个 [Awesome List](https://github.com/sindresorhus/awesome) 风格的导航仓库：每个项目一行介绍 + 一张精选截图（star 数为收录时快照）。不写代码、不教安装，只负责把你快速带到最好笑的地方。\n```\n\n**依据 2 · 源码核查**：[CONTRIBUTING.md:5-10](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/CONTRIBUTING.md#L5-L10)\n\n收录面向公开相关仓库，优先整活。\n\n```text\n## 收录标准\n\n1. 是一个真实存在的 GitHub 仓库，且公开可访问\n2. 与 DeepSeek Harness (dsh) 插件生态相关\n3. 整活浓度越高越好（广告 / 皮肤 / 宠物 / 游戏 / 抽象艺术优先）\n4. 正经干活的项目也收（进「认真干活区」）\n```\n\n#### 缺口\n\n- 节省浏览时间未测\n  **影响**：无法推到持续效率收益\n  **进一步探讨**：让读者按预定类别各找三条，记录打开页面数\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 目录、截图与外链如何关联？\n\n**研究主题**：功能与机制、贡献与相对优势\n\n#### 完整回答\n\n目录靠手写 Markdown 链接和同页图片，文字选手区保留无图项目。manifest 样例保存仓库名、README 字符数、图计数、hero 相对路径和大小数据，其中 hero 既可能为空，也可能指向外仓的素材路径。固定树只有文档和素材，本页的外链可导航到项目或外部页面。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.zh-CN.md:55-65](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L55-L65)\n\n广告插件条目下面直接嵌入 showcase 预览。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n*整活浓度最高，谨慎进入。广告 / 恶搞 / 怀旧，沾一样就算。*\n\n- 📺 **[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)** ★123 —— 是兄弟就来蹬我！把 DSH 变成 2005 年中文门户网站：贪玩蓝鲸、财神鲸抽奖、假杀毒、角落弹窗全套，关闭叉的热区还比看起来小得多\n\n  ![dsh-ads 实机：两侧广告栏、对话内信息流广告与贪玩蓝鲸海报](showcase/dsh-ads.webp)\n  *侧栏、对话、角落全塞满——但模型一直在后台干活，只是回答前得先看广告*\n\n  ![贪玩蓝鲸假游戏海报动画](showcase/dsh-ads-bluewhale.gif)\n  *这海报你熟不熟悉？是兄弟就来蹬我*\n\n  ![V4 Pro 抽奖广告：财神鲸转盘与四道解锁进度条](showcase/dsh-ads-reward.png)\n```\n\n</details>\n\n**依据 2 · 源码核查**：[README.zh-CN.md:224-236](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L224-L236)\n\n文字选手区保留无图条目。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## 📝 文字选手区\n\n*这些项目 README 没放图，点进去自己看。*\n\n- 🧰 **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** ★169 `干活` —— 一个插件一套完整工作台：文件管理、编辑预览、内嵌浏览器、真实终端、Git 面板、后台任务全都有，还支持三方拓展注册新 Tab\n- 🏷️ **[ui-status-label](https://github.com/alingalingling/ui-status-label)** ★21 `换皮` —— 把你鲸鱼娘思考时的 deep diving 自定义成任意你想要的样子，一行设置搞定\n- 🎮 **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7 `摸鱼` —— 右侧小游戏面板，18 款离线游戏全 Canvas 手绘：恐龙跳一跳、俄罗斯方块、坦克大战（带 AI）、扫雷、2048、数独、吃豆人……等了 18 款游戏的人不该没有图\n- 🎨 **[deepseek-harness-themes](https://github.com/orxz/deepseek-harness-themes)** ★1 `换皮` —— 社区维护的主题合集：只动颜色和外观，不碰模型与 agent —— One harness. Multiple styles.\n- 🖌️ **[dsh-skin](https://github.com/KinGao294/dsh-skin)** ★1 `换皮` —— Codex 精神续作款皮肤切换器：7 套精选配色 + 自定义壁纸，设置里多两行就完事\n- 💰 **[dsh-balance-meter](https://github.com/Ghost011118/dsh-balance-meter)** ★0 `干活` —— 作曲栏实时显示 DeepSeek 账户余额 + 本会话花费，每 6 小时自动拉官方价目表，峰谷调价也不慌\n- 🔦 **[dsh-spotlight](https://github.com/0xsline/dsh-spotlight)** ★0 `干活` —— 键盘优先的命令面板：斜杠命令、最近会话、界面操作、插件设置，一个面板全都有\n- 📦 **[dsh-web-archive](https://github.com/renat3u/dsh-web-archive)** ★0 `干活` —— Deep Sleeping... 把会话里 Think 推理和工具卡片全部收拢成同款小卡，世界瞬间清净\n- 🔔 **[dsh-web-attention-badge](https://github.com/Luaphes/dsh-web-attention-badge)** ★0 `干活` —— 会话需要你时三处同时亮：边框徽标、标签页标题计数、鲸鱼 favicon 变琥珀色\n```\n\n</details>\n\n**依据 3 · 源码核查**：[showcase/_manifest.json:1-22](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/showcase/_manifest.json#L1-L22)\n\n条目存在空 hero 与相对路径 hero 两种情形。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n[\n  {\n    \"name\": \"DSH-better-sidebar\",\n    \"readme_chars\": 9371,\n    \"img_count\": 0,\n    \"hero\": null,\n    \"size_mb\": 1.48\n  },\n  {\n    \"name\": \"deepseek-harness-themes\",\n    \"readme_chars\": 2867,\n    \"img_count\": 0,\n    \"hero\": null,\n    \"size_mb\": 0.26\n  },\n  {\n    \"name\": \"dsh-ads\",\n    \"readme_chars\": 2201,\n    \"img_count\": 29,\n    \"hero\": \"assets/en/posters/poster-fail-game.webp\",\n    \"size_mb\": 7.76\n  },\n```\n\n</details>\n\n#### 缺口\n\n- manifest 生成与消费路径未知\n  **影响**：无法据字段解释当前网站的索引\n  **进一步探讨**：分开核对目录、清单与外站版本\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 截图、维护和外链能承担哪些证明？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n仓库要求预览来自上游 README 或官方材料，列明拒绝恶意和失联项目，固定内容没有自动审计或持续刷新实现。固定 README 正式项目行按列表标记和星标计 38，文字介绍里的 minigames 交叉引用不重复计数；manifest 有 28 行，README 外页也标称 28 个精选，这两个 28 的内容同一性未知。上游描述及安装命令的适用性仍需单独核验。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[README.zh-CN.md:28-36](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L28-L36)\n\n外部文章和 28 个精选项目的外部页面分别链接。\n\n```text\n## 📖 配套深度长文\n\n这 24 小时的整活狂欢背后，DSH 的插件架构到底长什么样？社区为什么一点就着？👉\n\n[**china-ai-arbitrage.xyz · DSH 整活 24 小时（配套深度长文）**](https://www.china-ai-arbitrage.xyz/blog/dsh-meme-hub-24h)\n\n不爱读长文？28 个精选项目做成了一个页面，带截图、分类和一键安装命令 👉\n\n[**Install DeepSeek Harness (dsh) Plugins — 28 Community Picks**](https://www.china-ai-arbitrage.xyz/dsh-hub)\n```\n\n**依据 2 · 源码核查**：[README.zh-CN.md:240-255](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L240-L255)\n\n维护及版权说明和总数页脚。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 🚀 收录方式\n\n给 DSH 整了新活？**欢迎 PR 补充！** 皮肤、桌宠、小游戏、还是更抽象的东西都可以——附上仓库链接和一句话介绍，再带一张精选截图就更好了（没图的项目会先委屈在文字选手区）。\n\n## 🔗 相关站点\n\n- **[DeepSeek酱语录](https://ai-meme.cdqyfdbymn.me/)** —— DeepSeek 蓝色大肥鱼表情包图库：176 张台词级梗图，瀑布流浏览、标签筛选、一键生成分享卡片\n- **[deepseek-chan-meme-pack](https://github.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack)** —— 图库的社区仓库：dsh-meme 插件表情包（topic `dsh-meme-pack`）、CDN 直链热链、双语梗科普投稿入口\n\n## ©️ 版权说明\n\n本仓库所有图片均摘录自各开源项目的 README 与官方预览素材，**版权归原作者所有**。本仓库仅做导航汇总与宣传，不分发任何源码或素材。如侵犯了您的权益，请提 issue，我们会第一时间撤下。\n\n---\n\n<p align=\"center\"><b>收录 38 个项目 · 27 张精选截图</b><br><sub>整活浓度仍在上升中</sub></p>\n```\n\n</details>\n\n**依据 3 · 源码核查**：[CONTRIBUTING.md:31-45](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/CONTRIBUTING.md#L31-L45)\n\n图源要求与排除标准是编辑规则。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n````text\n## 带图加分\n\n如果你的项目有好看的截图/动图，欢迎在 PR 里一起提供，放到 `showcase/` 并在条目下方引用：\n\n```markdown\n![图注](showcase/xxx.png)\n```\n\n图片要求：来自项目自己的 README 或官方预览素材，版权归原作者所有。\n\n## 不收录\n\n- 与 dsh 无关的项目\n- 已删除或长期失联的仓库\n- 恶意代码 / 钓鱼项目\n````\n\n</details>\n\n#### 缺口\n\n- 外链可用性及授权范围未核\n  **影响**：无法转用预览素材或给安装背书\n  **进一步探讨**：抽查原始图源、授权与上游发行记录\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 如何最小验证精选目录的增益？\n\n**研究主题**：工程质量与复用、新假设与验证、采用判断\n\n#### 完整回答\n\n可先在固定 README 按类别找三个候选，再从各自上游核对插件类型。人工搜索若更快，或目录结果需重查到同样次数，预览对该任务的优势即不成立。可另做双语链接集合和本地图片路径检查；在固定材料只核对了静态目录结构。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[CONTRIBUTING.md:12-29](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/CONTRIBUTING.md#L12-L29)\n\n统一条目样式和类别给出可复查的人工规则。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n````text\n## PR 格式\n\n每个项目一个条目，格式：\n\n```markdown\n- 🎯 **[项目名](https://github.com/owner/repo)** ★star数 —— 一句话介绍，要有梗\n```\n\n放对分类：\n\n| 分类 | 放什么 |\n|---|---|\n| 🎭 抽象整活区 | 广告、恶搞、怀旧、行为艺术 |\n| 🎨 换皮区 | 皮肤、主题 |\n| 🐳 赛博宠物区 | 桌宠、鲸鱼娘 |\n| 🎮 摸鱼区 | 游戏、娱乐 |\n| 🛠️ 认真干活区 | 实用 UI 增强、效率工具 |\n| 📝 文字选手区 | README 没有图片的项目 |\n````\n\n</details>\n\n**依据 2 · 源码核查**：[README.zh-CN.md:162-166](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub/blob/3039a0ac80b0558473fee8d9917680311ef93a20/README.zh-CN.md#L162-L166)\n\n文字交叉引用与项目列表需要分别计数。\n\n```text\n  ![dsh-gomoku 五子棋对局界面](showcase/dsh-gomoku.png)\n  *黑白双方的模型和思考档位可以分开调教，棋盘随手开关，摸鱼正事两不误*\n\n> 真正的摸鱼神器 **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7（18 款离线小游戏）因为 README 没放图，被安排在了下面的文字选手区。\n\n```\n\n#### 缺口\n\n- 人群偏好和复用频率未知\n  **影响**：无法评估维护是否值得\n  **进一步探讨**：按真实找插件任务测命中和复核步骤\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：c7083c5f558468a4ffc52608edd1e7cfcbf06ce717ce023d23200c91a457e6c3。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 3 | 555 | — | — | 6808 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 用途 | 边界 |\n| --- | --- | --- |\n| 静态资源 | 双语项目导航与精选预览 | 无 DSH 注册、包清单和入口 |\n\n## 工程亮点\n\n资源仅含文档、manifest 与截图；按列表格式可以机械核对双语项目和本地图路径。\n\n## 验证与边界\n\n- 已检查：作者 README、资源文件 README.md、README.zh-CN.md、CONTRIBUTING.md、showcase/_manifest.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：外站、上游插件、安装命令或宿主验证。\n- 边界：仅检查固定资源和 Git 跟踪清单；本组件无包清单及可执行入口，外站和所列插件均未运行。\n- 下一步：对照手工搜索与固定目录，以成功命中和所需核对步骤为判据。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-11-01/the-beating-light-of-the-nail--dsh-meme-hub/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"the-beating-light-of-the-nail/dsh-meme-hub\",\n  \"revision\": \"3039a0ac80b0558473fee8d9917680311ef93a20\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"README.zh-CN.md\",\n    \"CONTRIBUTING.md\",\n    \"showcase/_manifest.json\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"判断双语社区导航能否降低找整活插件的浏览成本，并厘清目录、预览与外链交付边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"adoption\"\n        ],\n        \"question\": \"谁在找什么，目录怎样替代手工搜仓库？\",\n        \"answer\": \"为想按皮肤、桌宠或游戏找社区例子的读者提供分类、短评、星标快照和直接上游链接。替代做法是按主题搜仓库再逐个打开 README。本目录把预览提前到同页，但整活优先限制了它作为实用插件检索目录的覆盖。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 20,\n            \"line_end\": 24,\n            \"observation\": \"作者定义单行介绍和精选图，星标是收录时快照。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"CONTRIBUTING.md\",\n            \"line_start\": 5,\n            \"line_end\": 10,\n            \"observation\": \"收录面向公开相关仓库，优先整活。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"节省浏览时间未测\",\n            \"impact\": \"无法推到持续效率收益\",\n            \"next_step\": \"让读者按预定类别各找三条，记录打开页面数\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"目录、截图与外链如何关联？\",\n        \"answer\": \"目录靠手写 Markdown 链接和同页图片，文字选手区保留无图项目。manifest 样例保存仓库名、README 字符数、图计数、hero 相对路径和大小数据，其中 hero 既可能为空，也可能指向外仓的素材路径。固定树只有文档和素材，本页的外链可导航到项目或外部页面。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 55,\n            \"line_end\": 65,\n            \"observation\": \"广告插件条目下面直接嵌入 showcase 预览。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 224,\n            \"line_end\": 236,\n            \"observation\": \"文字选手区保留无图条目。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"showcase/_manifest.json\",\n            \"line_start\": 1,\n            \"line_end\": 22,\n            \"observation\": \"条目存在空 hero 与相对路径 hero 两种情形。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"manifest 生成与消费路径未知\",\n            \"impact\": \"无法据字段解释当前网站的索引\",\n            \"next_step\": \"分开核对目录、清单与外站版本\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\",\n          \"cost\"\n        ],\n        \"question\": \"截图、维护和外链能承担哪些证明？\",\n        \"answer\": \"仓库要求预览来自上游 README 或官方材料，列明拒绝恶意和失联项目，固定内容没有自动审计或持续刷新实现。固定 README 正式项目行按列表标记和星标计 38，文字介绍里的 minigames 交叉引用不重复计数；manifest 有 28 行，README 外页也标称 28 个精选，这两个 28 的内容同一性未知。上游描述及安装命令的适用性仍需单独核验。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 28,\n            \"line_end\": 36,\n            \"observation\": \"外部文章和 28 个精选项目的外部页面分别链接。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 240,\n            \"line_end\": 255,\n            \"observation\": \"维护及版权说明和总数页脚。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"CONTRIBUTING.md\",\n            \"line_start\": 31,\n            \"line_end\": 45,\n            \"observation\": \"图源要求与排除标准是编辑规则。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"外链可用性及授权范围未核\",\n            \"impact\": \"无法转用预览素材或给安装背书\",\n            \"next_step\": \"抽查原始图源、授权与上游发行记录\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"engineering\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"如何最小验证精选目录的增益？\",\n        \"answer\": \"可先在固定 README 按类别找三个候选，再从各自上游核对插件类型。人工搜索若更快，或目录结果需重查到同样次数，预览对该任务的优势即不成立。可另做双语链接集合和本地图片路径检查；在固定材料只核对了静态目录结构。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"CONTRIBUTING.md\",\n            \"line_start\": 12,\n            \"line_end\": 29,\n            \"observation\": \"统一条目样式和类别给出可复查的人工规则。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"README.zh-CN.md\",\n            \"line_start\": 162,\n            \"line_end\": 166,\n            \"observation\": \"文字交叉引用与项目列表需要分别计数。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"人群偏好和复用频率未知\",\n            \"impact\": \"无法评估维护是否值得\",\n            \"next_step\": \"按真实找插件任务测命中和复核步骤\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🐋 DSH Meme Hub\\n\\n**A curated tour of the DeepSeek Harness (dsh) community's wildest plugins** [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)\\n\\nEnglish | [简体中文](README.zh-CN.md)\\n\\n<p align=\\\"center\\\">\\n  <a href=\\\"https://dsh-meme-hub.cdqyfdbymn.me/\\\">\\n    <b>🌐 Visit the website — dsh-meme-hub.cdqyfdbymn.me</b>\\n  </a>\\n  <br><sub>Browse plugins, memes &amp; one-click installs — full site below</sub>\\n</p>\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"showcase/hero-en.png\\\" alt=\\\"Everything is a Plugin — so go tinker with anything.\\\" width=\\\"640\\\">\\n</p>\\n\\n> **Everything is a Plugin — so go tinker with anything.**\\n\\nOn August 13, 2026, DeepSeek open-sourced its agent harness [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) with a brutally simple slogan: **Everything is a Plugin**. 45,000+ stars in 24 hours. But the real show started afterwards: the community got the joke overnight — if everything is a plugin, then ads are plugins, skins are plugins, desktop pets are plugins, and yes, **even Excel is a plugin**.\\n\\nSpammy web-game ads, QQ 2006, a God-of-Wealth jackpot wheel, hand-drawn pixel whales, a Deep-Sea Maid Atelier… meme density straight out of the 2005 Chinese internet.\\n\\nThis is an [Awesome List](https://github.com/sindresorhus/awesome)-style navigation repo: one line per project + one hand-picked screenshot (star counts are snapshots from the day of listing). No code, no install tutorials — just the fastest route to the funniest corners.\\n\\n---\\n\\n## 📖 The Companion Deep Dive\\n\\nWhat does the plugin architecture behind this 24-hour meme carnival actually look like? And why did this community ignite so fast? 👉\\n\\n[**china-ai-arbitrage.xyz · DSH's First 24 Hours: A Meme Census (companion long-read)**](https://www.china-ai-arbitrage.xyz/blog/dsh-meme-hub-24h)\\n\\nPrefer browsing over reading? All 28 picks live on one page with screenshots, categories and one-click install commands 👉\\n\\n[**Install DeepSeek Harness (dsh) Plugins — 28 Community Picks**](https://www.china-ai-arbitrage.xyz/dsh-hub)\\n\\n---\\n\\n## Contents\\n\\n- [Peak Absurdity](#peak-absurdity)\\n- [Skins and Themes](#skins-and-themes)\\n- [Cyber Pets](#cyber-pets)\\n- [The Slack-Off Zone](#the-slack-off-zone)\\n- [Actually Useful](#actually-useful)\\n- [The No-Screenshot Club](#the-no-screenshot-club)\\n- [How to Get Listed](#how-to-get-listed)\\n- [Copyright](#copyright)\\n\\n---\\n\\n## Peak Absurdity\\n\\n*Highest meme concentration. Enter at your own risk. Ads, parodies, nostalgia — if it touches one of these, it belongs here.*\\n\\n- 📺 **[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)** ★123 — \\\"Bro, come kick me!\\\" Turns DSH into a 2005-era Chinese web portal: knockoff web-game banners, a God-of-Wealth jackpot wheel, fake antivirus popups, corner ads — and a close button whose hitbox is smaller than it looks\\n\\n  ![dsh-ads in action: sidebar ads, in-chat feed ads and the Wanjia Blue Whale banner](showcase/dsh-ads.webp)\\n  *Sidebar, chat, corners — all stuffed. The model keeps working in the background; your answers just have to sit through the ads first*\\n\\n  ![Animated fake-game poster: Wanjia Blue Whale](showcase/dsh-ads-bluewhale.gif)\\n  *Recognize the format? Bro, come kick me*\\n\\n  ![V4 Pro jackpot ad: God-of-Wealth whale wheel with four unlock progress bars](showcase/dsh-ads-reward.png)\\n  *One spin per turn, four progress bars to unlock. The ads are fake — your odds of winning V4 Pro are genuinely slim too*\\n\\n- 📸 **[dsh-group-photo](https://github.com/SenmuuuuW/dsh-group-photo)** ★12 — The Polaroid wall from DSH beta's closing night: GitHub OAuth with zero scopes + a frozen whitelist. Pose once, stay on the wall forever\\n\\n  ![DSH beta closing-night Polaroid wall](showcase/dsh-group-photo.jpg)\\n  *One Polaroid per person, one parting note each — the last night of the beta*\\n\\n- 🐧 **[dsh-qq2006](https://github.com/LaplaceYoung/dsh-qq2006)** ★3 — DSH's web UI fully remodeled into a QQ 2006 client: 357 period-authentic assets, working skins, sound effects and login dialogs — with 1,561 tests all green\\n\\n  ![dsh-qq2006 skin in action](showcase/dsh-qq2006.gif)\\n  *One second and you're back in 2006. Childhood DNA, activate*\\n\\n- 📗 **[dsh-deepcel](https://github.com/Small-tailqwq/dsh-deepcel)** ★3 — DSH rebuilt as a spreadsheet: sessions, tools and settings all reconstructed as interactive cells. The model is literally filling out a form this time\\n\\n  ![Deepcel skin: the DSH interface as an Excel worksheet](showcase/dsh-deepcel.webp)\\n  *Light and dark modes, full cell interactions — your boss would approve*\\n\\n- 🏃 **[dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort)** ★6 — A Codex-style model + reasoning-effort slider ported into DSH, plus a bonus fat-fish mode: drag a sprinting eight-frame fat fish to dial thinking intensity — the faster it runs, the harder the model thinks\\n\\n  ![dsh-reasoning-effort Codex-style reasoning effort slider](showcase/dsh-reasoning-effort.jpg)\\n  *Three levels — off / high / max — synced with DSH's /model command; flip one switch in settings and the plain white button turns into a sprinting fat fish*\\n\\n- ⏰ **[dsh-liangwengu](https://github.com/mozhuanzuojing/dsh-liangwengu)** ★0 — DeepSeek API pricing peak/idle alert on Beijing time: a cartoon popup yells \\\"Liang Wenfeng is coming, run!\\\" at 08:55 and declares \\\"Liangwengu is ONLINE!\\\" at 12:00 and 18:00 — 30-minute countdowns, an HP bar that doubles as boiling water, a nine-realm cultivation ladder, full-screen ascension fireworks. Peak = price ×2, run; valley = half price, farm\\n\\n  ![dsh-liangwengu cartoon mascot](showcase/dsh-liangwengu.jpg)\\n  *The mascot that screams at you twice a day about your API bill*\\n\\n- ⌚ **[liang-wenfeng-gu](https://github.com/chunfeng11221/liang-wenfeng-gu)** ★1 — The Liang schedule as a harness adapter: terse Liang-Wenfeng mode during work hours (9-12 / 14-18), full Liang-Wengu chatter the rest of the day, and a punctual 08:50 warning — \\\"Liang Wenfeng time is coming, wrap it up.\\\" Mode banner included, zero dependencies\\n\\n- 🏛️ **[dsh-gov-portal](https://github.com/ExElectron/dsh-gov-portal)** ★20 — DSH reborn as a Chinese local-government service portal: deep-blue gradient nav, red-header notice tickers, DVD-screensaver popups, \\\"this site has been visited 000042 times\\\", and a translucent APPROVED stamp slamming down when your stream finishes. The chrome is 2008; every knob is wired 1:1 to real agent capabilities\\n\\n---\\n\\n## Skins and Themes\\n\\n*Not every meme has to be absurd. Some people just want the whale girl to look nice.*\\n\\n- 🎀 **[dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale)** ★141 — Whale-girl skin series \\\"Deep-Sea Maid Atelier\\\" (maid-atelier): two maids tending the shop, deep-sea-blue lace UI + chibi sidebar, CC BY-NC-SA 4.0\\n\\n  ![Deep-Sea Maid Atelier skin preview](showcase/dsh-deep-whale.webp)\\n  *Light and dark modes, lace-trimmed deep-sea blue — the whale girl deserves nothing less*\\n\\n- 🖼️ **[dsh-plugin-background](https://github.com/gameswu/dsh-plugin-background)** ★3 — The DSH port of VSCode's background extension: independent backgrounds for chat / trace / sidebar / settings, with GIF and muted-video rotation\\n\\n  ![dsh-plugin-background settings editor](showcase/dsh-plugin-background.png)\\n  *Per-image opacity, blur and rotation; crossfade transitions included*\\n\\n- 🎮 **[gal-view](https://github.com/Ayase34/gal-view)** ★14 — Turn the chat screen into a visual novel: 16:9 stage, whale-girl maid sprite, ornate dialogue box, typewriter lines — plus a drag-and-drop scene editor that syncs straight back into play mode\\n\\n  ![gal-view visual novel chat view](showcase/gal-view.jpg)\\n  *DeepSeek as a blue-haired whale maid: \\\"Please talk to me more, master\\\"*\\n\\n---\\n\\n## Cyber Pets\\n\\n*You write your code, I raise my whale. They come in many forms — some with more facial expressions than you.*\\n\\n- 🐋 **[whale-girl](https://github.com/vlln/whale-girl)** ★28 — A whale girl in full QQ-Pet form: draggable, feedable, playable with. Finished tasks rack up seniority, titles and memories — and she sulks when one fails\\n\\n  ![whale-girl desktop pet idle animation](showcase/whale-girl.gif)\\n  *15 states: blinking, wandering, napping, cheering, startled — she really is working alongside you*\\n\\n- 🐳 **[dsh-ui-whale](https://github.com/lhh010/dsh-ui-whale)** ★16 — A fully hand-drawn pixel whale living in the session title bar: blinking, tail swishing, thinking animation, a water spout when a turn finishes, hearts when you click her — zero core modifications\\n\\n  ![dsh-ui-whale hand-drawn pixel whale demo](showcase/dsh-ui-whale.gif)\\n  *Dozes off after 10 idle seconds, tail swishing frame by frame*\\n\\n- 💻 **[dsh-pet](https://github.com/FlytoMAYDAY80/dsh-pet)** ★1 — A little whale desktop pet for macOS, with sound: always-on-top floating window, visible across fullscreen apps, senses session state even when DSH isn't open\\n\\n  ![dsh-pet desktop whale pet state collection](showcase/dsh-pet.png)\\n  *Running, awaiting approval, task done — peripheral vision is enough, and it comes with sound*\\n\\n- 🦀 **[dsh-plugin-pet-rs](https://github.com/HuanLinOTO/dsh-plugin-pet-rs)** ★1 — The same whale, rewritten in Rust: from ~100MB down to a sub-10MB target, covering Windows / macOS / Linux\\n\\n  ![dsh-plugin-pet-rs Rust desktop pet and tray icon](showcase/dsh-plugin-pet-rs.png)\\n  *5-state pixel whale + status bubbles. The author burned through their CI quota — build it yourself*\\n\\n- 🪟 **[deepseek-harness-pet](https://github.com/wraven68/deepseek-harness-pet)** ★1 — A Windows desktop pet that reads your local DSH session logs only, showing current todo progress, status and task list right on your desktop buddy; standalone exe, no Python or Node needed\\n\\n  ![deepseek-harness-pet desktop pet in working state](showcase/dsh-harness-pet.jpg)\\n  *Left-click to drag, single click for the big task panel, Ctrl+scroll to zoom; read-only, uploads nothing — it sees every late-night line of code*\\n- 🐋 **[dsh-whale-musume](https://github.com/Sutera-Diffusus/dsh-whale-musume)** ★46 — An energetic whale girl: pat her head to raise affection, she grabs a laptop when you work and never interrupts; v2.0.0 adds balance care (local proxy, key never lands), proactive care, accessibility, growth diary and theme sync — 494 worker-bee dialogue lines, 30 achievements, pure frontend injection, zero telemetry\\n\\n  ![dsh-whale-musume whale-girl desktop pet](showcase/dsh-whale-musume.png)\\n  *One-command bundle install, 38/38 CDP checks green — she really is working alongside you*\\n\\n\\n---\\n\\n## The Slack-Off Zone\\n\\n*Waiting for the model to reply is the hardest part. So someone did something about it.*\\n\\n- ♟️ **[dsh-gomoku](https://github.com/omdsh-dev/dsh-gomoku)** ★6 — Gomoku against the AI in DSH's sidebar: zero search algorithms, every move is pure LLM reasoning. Dual-AI mode lets you spectate two models trying to destroy each other\\n\\n  ![dsh-gomoku match interface](showcase/dsh-gomoku.png)\\n  *Models and thinking budgets configurable per side; the board toggles in and out — slack off and stay productive, both at once*\\n\\n> The true slack-off holy grail **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7 (18 offline mini-games) landed in the No-Screenshot Club below — its README ships without a single image.\\n\\n---\\n\\n## Actually Useful\\n\\n*Memes aside, these genuinely get work done.*\\n\\n- 🏠 **[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui)** ★580 — The big collection of DSH Web UI plugins and skins: task board, Git graph, right panel, mobile remote control, whale-girl pet, live token stats, skin center. Install piecemeal or all at once\\n\\n  ![dsh-web-ui main interface](showcase/dsh-web-ui.png)\\n  *The task board runs on cron schedules; scan a QR code from your phone to take over the workspace*\\n\\n- 📱 **[dsh-mobile-apk](https://github.com/kelai141/dsh-mobile-apk)** ★326 — The pocket DSH: an Android shell wrapping a WebView UI over an embedded Termux runtime snapshot (node/git/bash/dsh bundled, unzip-and-run) — one APK and the full web agent really executes bash on your phone; keep-alive watchdog, SAF bridge, task notifications, online runtime updates, and a real ADB channel since 0.13\\n\\n- ⌨️ **[dsh-cc-tui](https://github.com/ccch1mneyyy/dsh-cc-tui)** ★252 — No official TUI yet? The community built one first: a Claude Code-style fullscreen terminal with a pixel-whale header, live status line, streaming thought expansion, double-Esc time travel — featured by the official WeChat account\\n\\n  ![dsh-cc-tui Claude Code-style terminal interface](showcase/dsh-cc-tui.png)\\n  *Blue-and-white context progress bar + TPS gauge; mounts as a pure plugin, zero core changes*\\n\\n- 🖥️ **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** ★132 — Harness-level customization on top of the official TUI extension: TDD-driven agent workflows, evidence-gate delivery, image/vision bridging, and semantic code retrieval. Rendering core evolved from Tianshu-Tui with a pure presentation layer\\n\\n  ![dsh-tianshu-tui terminal UI screenshot](showcase/dsh-tianshu-tui.jpg)\\n  *Look, don't touch: the agent does its thing, the interface looks good doing nothing*\\n\\n- 🪄 **[dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)** ★34 — DSH answers don't have to be text: the model calls `visualize` and interactive HTML cards render straight into the chat stream — simulators, charts, UI prototypes, all fair game\\n\\n  ![dsh-visualize in-chat interactive card demo](showcase/dsh-visualize.webp)\\n  *The dsh-ads author's one legitimate advertisement*\\n\\n- 🧭 **[dsh-milestone](https://github.com/SnowCrescenter-tech/dsh-milestone)** ★12 — A milestone rail for your conversation: dotted timeline on the right, read it like a Git commit graph, jump to any question in one click\\n\\n- 🎨 **[dsh-client-ui-custom](https://github.com/yoli-mi/dsh-client-ui-custom)** ★11 — Pure front-end customization in seven standalone modules: wallpaper + frosted-glass themes with auto accent colors, custom shortcuts, usage stats, a floating history strip, message Markdown rendering, a plugin marketplace, and entrance motion presets — this update's new motion module makes the web client glide\\n\\n  ![dsh-client-ui-custom theme preview](showcase/dsh-client-ui-custom.png)\\n  *Six theme presets out of the box; every feature defaults to off, so unconfigured it stays identical to stock*\\n\\n- 🎯 **[dsh-focus-chat](https://github.com/dingyi222666/dsh-focus-chat)** ★7 — A \\\"focus chat\\\" view for dsh: silence the process noise, show only final outputs\\n\\n  ![dsh-focus-chat focus view](showcase/dsh-focus-chat.png)\\n  *Everyday on the left, focused on the right — a minimal mode for results-only readers*\\n\\n- 🖱️ **[dsh-web-review](https://github.com/CanglongCl/dsh-web-review)** ★7 — Review web pages like a design tool: circle elements in the built-in browser, annotate, tweak visuals on the fly — then the Agent edits the frontend source to match your annotations\\n\\n  ![dsh-web-review element annotation demo](showcase/dsh-web-review.jpg)\\n  *Give feedback like a designer: circle it, change it*\\n\\n- 🖥️ **[dsh-s7r](https://github.com/hunter118/dsh-s7r)** ★5 — Rebuilds DSH as a retro macOS / System 7 desktop: movable pixel windows, Workspace and Agent launcher, Finder, real zsh Terminal, global Find, Monitor, Scrapbook, persistent desktop aliases — nostalgia that can still ship code\\n\\n  ![dsh-s7r retro macOS System 7 desktop with Knowledge Desk, Finder, Monitor and Clock](showcase/dsh-s7r.png)\\n  *A 1024 × 768 workday from 1991: Agents, files, terminal and system metrics all stay wired to the real Harness underneath*\\n\\n- 📝 **[dsh-sticky-note](https://github.com/Meredith2328/dsh-sticky-note)** ★0 — Sticky notes on the composer toolbar: jot ideas as you go, auto-saved as Markdown, one click to send into the conversation\\n\\n  ![dsh-sticky-note notes interface](showcase/dsh-sticky-note.png)\\n  *Inspiration runs faster than the session — write it down first*\\n\\n---\\n\\n## The No-Screenshot Club\\n\\n*These projects ship READMEs without images. Click through and see for yourself.*\\n\\n- 🧰 **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** ★169 `workhorse` — One plugin, one complete workbench: file manager, edit preview, embedded browser, real terminal, Git panel, background tasks — and third-party plugins can register new tabs\\n- 🏷️ **[ui-status-label](https://github.com/alingalingling/ui-status-label)** ★21 `skin` — Customize your whale girl's \\\"deep diving\\\" thinking status to literally anything you want. One setting line\\n- 🎮 **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7 `slack-off` — A mini-games panel on the right: 18 offline games, all hand-drawn on canvas — dino jump, Tetris, tank battle (with AI), Minesweeper, 2048, Sudoku, Pac-Man… the people who waited for 18 games deserved at least one screenshot\\n- 🎨 **[deepseek-harness-themes](https://github.com/orxz/deepseek-harness-themes)** ★1 `skin` — Community-maintained theme collection: colors and looks only, never touching models or agents — One harness. Multiple styles.\\n- 🖌️ **[dsh-skin](https://github.com/KinGao294/dsh-skin)** ★1 `skin` — The spiritual-successor-to-Codex skin switcher: 7 curated palettes + custom wallpaper. Two lines in settings, done\\n- 💰 **[dsh-balance-meter](https://github.com/Ghost011118/dsh-balance-meter)** ★0 `workhorse` — Live DeepSeek account balance + this session's spend in the composer dock; refreshes from the official price sheet every 6 hours, peak/off-peak changes included\\n- 🔦 **[dsh-spotlight](https://github.com/0xsline/dsh-spotlight)** ★0 `workhorse` — A keyboard-first command palette: slash commands, recent sessions, UI actions, plugin settings — one panel for all of it\\n- 📦 **[dsh-web-archive](https://github.com/renat3u/dsh-web-archive)** ★0 `workhorse` — Deep Sleeping... collapses all Think reasoning rows and tool cards into uniform little cards. Instant peace\\n- 🔔 **[dsh-web-attention-badge](https://github.com/Luaphes/dsh-web-attention-badge)** ★0 `workhorse` — When a session needs you, three places light up at once: frame badge, tab-title counter, and the whale favicon turns amber\\n\\n---\\n\\n## How to Get Listed\\n\\nBuilt something new for DSH? **PRs welcome!** Skins, desktop pets, mini-games, or anything more abstract — attach the repo link and a one-line intro; bonus points for a hand-picked screenshot (projects without one wait in the No-Screenshot Club first).\\n\\n## 🔗 Related Sites\\n\\n- **[DeepSeek酱语录](https://ai-meme.cdqyfdbymn.me/)** — DeepSeek whale-girl meme gallery: 176 curated quote-caption stickers, waterfall browsing, tag filters, one-click share cards. 蓝色大肥鱼表情包图库。\\n- **[deepseek-chan-meme-pack](https://github.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack)** — the community repo behind the gallery: meme pack for the dsh-meme plugin (`dsh-meme-pack` topic), CDN hotlinks, and bilingual story submissions.\\n\\n## Copyright\\n\\nAll images in this repository are excerpted from the respective open-source projects' own READMEs and official preview materials; **copyright belongs to their original authors**. This repo is navigation and promotion only, and does not redistribute any source code or assets. If any inclusion infringes on your rights, open an issue and it will be removed promptly.\\n\\n---\\n\\n<p align=\\\"center\\\"><b>38 projects listed · 27 hand-picked screenshots</b><br><sub>The meme density is still rising</sub></p>\\n\"\n    },\n    {\n      \"path\": \"README.zh-CN.md\",\n      \"content\": \"# 🐋 DSH Meme Hub\\n\\n**DeepSeek Harness (dsh) 社区整活插件精选导航** [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)\\n\\n[English](README.md) | 简体中文\\n\\n<p align=\\\"center\\\">\\n  <a href=\\\"https://dsh-meme-hub.cdqyfdbymn.me/\\\">\\n    <b>🌐 访问网站 — dsh-meme-hub.cdqyfdbymn.me</b>\\n  </a>\\n  <br><sub>浏览插件、整活、一键安装 —— 完整站点见下方</sub>\\n</p>\\n\\n<p align=\\\"center\\\">\\n  <img src=\\\"showcase/hero-zh.png\\\" alt=\\\"一切皆插件——所以，万物皆可整活\\\" width=\\\"640\\\">\\n</p>\\n\\n> **Everything is a Plugin —— 所以，万物皆可整活。**\\n\\n2026 年 8 月 13 日，DeepSeek 开源了 agent harness [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)，口号简单粗暴：**Everything is a Plugin**。24 小时，**45,000+ stars**。但更精彩的在后面：社区一夜之间悟了——既然万物皆插件，那广告是插件、皮肤是插件、桌宠是插件、连 Excel 都是插件。\\n\\n贪玩蓝鲸、QQ2006、财神鲸抽奖、像素鲸鱼、深海女仆工坊……整活浓度梦回 2005 年中文互联网。\\n\\n这是一个 [Awesome List](https://github.com/sindresorhus/awesome) 风格的导航仓库：每个项目一行介绍 + 一张精选截图（star 数为收录时快照）。不写代码、不教安装，只负责把你快速带到最好笑的地方。\\n\\n---\\n\\n## 📖 配套深度长文\\n\\n这 24 小时的整活狂欢背后，DSH 的插件架构到底长什么样？社区为什么一点就着？👉\\n\\n[**china-ai-arbitrage.xyz · DSH 整活 24 小时（配套深度长文）**](https://www.china-ai-arbitrage.xyz/blog/dsh-meme-hub-24h)\\n\\n不爱读长文？28 个精选项目做成了一个页面，带截图、分类和一键安装命令 👉\\n\\n[**Install DeepSeek Harness (dsh) Plugins — 28 Community Picks**](https://www.china-ai-arbitrage.xyz/dsh-hub)\\n\\n---\\n\\n## Contents\\n\\n- [🎭 抽象整活区](#抽象整活区)\\n- [🎨 换皮区](#换皮区)\\n- [🐳 赛博宠物区](#赛博宠物区)\\n- [🎮 摸鱼区](#摸鱼区)\\n- [🛠️ 认真干活区](#认真干活区)\\n- [📝 文字选手区](#文字选手区)\\n- [🚀 收录方式](#收录方式)\\n- [©️ 版权说明](#版权说明)\\n\\n---\\n\\n## 🎭 抽象整活区\\n\\n*整活浓度最高，谨慎进入。广告 / 恶搞 / 怀旧，沾一样就算。*\\n\\n- 📺 **[dsh-ads](https://github.com/Nagi-ovo/dsh-ads)** ★123 —— 是兄弟就来蹬我！把 DSH 变成 2005 年中文门户网站：贪玩蓝鲸、财神鲸抽奖、假杀毒、角落弹窗全套，关闭叉的热区还比看起来小得多\\n\\n  ![dsh-ads 实机：两侧广告栏、对话内信息流广告与贪玩蓝鲸海报](showcase/dsh-ads.webp)\\n  *侧栏、对话、角落全塞满——但模型一直在后台干活，只是回答前得先看广告*\\n\\n  ![贪玩蓝鲸假游戏海报动画](showcase/dsh-ads-bluewhale.gif)\\n  *这海报你熟不熟悉？是兄弟就来蹬我*\\n\\n  ![V4 Pro 抽奖广告：财神鲸转盘与四道解锁进度条](showcase/dsh-ads-reward.png)\\n  *每轮一抽、四道进度条解锁，广告是假的，抽到 V4 Pro 的希望也是真的渺茫*\\n\\n- 📸 **[dsh-group-photo](https://github.com/SenmuuuuW/dsh-group-photo)** ★12 —— DSH 内测收官之夜的拍立得合影墙：GitHub 零权限登录 + 冻结白名单校验，入镜一次，常驻墙上\\n\\n  ![DSH 内测收官拍立得合影墙](showcase/dsh-group-photo.jpg)\\n  *内测最后一晚的纪念作品：每人一张拍立得，附一句留言*\\n\\n- 🐧 **[dsh-qq2006](https://github.com/LaplaceYoung/dsh-qq2006)** ★3 —— 把 DSH Web UI 完整改造成 QQ2006 客户端：357 份腾讯原版素材，换肤、音效、登录窗全真实，1561 个测试全绿\\n\\n  ![dsh-qq2006 皮肤实机动画](showcase/dsh-qq2006.gif)\\n  *一秒钟梦回 2006——你的童年 DNA 动了吗*\\n\\n- 📗 **[dsh-deepcel](https://github.com/Small-tailqwq/dsh-deepcel)** ★3 —— 把 DSH 变成 Deepcel 工作簿：会话、工具、设置全部重构成可交互单元格，模型这次是真的在填表\\n\\n  ![Deepcel 皮肤：DSH 界面变成 Excel 工作表](showcase/dsh-deepcel.webp)\\n  *亮色暗色双模式，单元格交互拉满——老板看了直呼内行*\\n\\n- 🏃 **[dsh-reasoning-effort](https://github.com/HanaAyane/dsh-reasoning-effort)** ★6 —— 把 Codex 风格的模型 + 推理强度滑块搬进 DSH，还能切换成大肥鱼模式：拖动一只八帧奔跑的大肥鱼来调思考强度，鱼跑得越欢，模型想得越狠\\n\\n  ![dsh-reasoning-effort Codex 风格推理强度滑块](showcase/dsh-reasoning-effort.jpg)\\n  *off / high / max 三档，和 DSH 的 /model 命令同步；设置里一个开关，纯白按钮秒变奔跑大肥鱼*\\n\\n- ⏰ **[dsh-liangwengu](https://github.com/mozhuanzuojing/dsh-liangwengu)** ★0 —— 梁文谷提醒：按 DeepSeek API 定价高峰/空闲时段（北京时间）到点大喊——08:55 播报「梁文峰要来了，块跑啊！」，12:00 和 18:00 宣布「乡亲们，梁文峰走了！！可以出来了！+ 梁文谷 启动~~~」；30 分钟倒计时、血条煮水、修仙九境渡劫、真仙飞升全屏彩蛋。峰来了价格翻倍快跑，峰走了半价开薅\\n\\n  ![dsh-liangwengu 卡通形象](showcase/dsh-liangwengu.jpg)\\n  *每天对着你的 API 账单大喊两次的卡通形象*\\n\\n- ⌚ **[liang-wenfeng-gu](https://github.com/chunfeng11221/liang-wenfeng-gu)** ★1 —— 把梁氏作息写进 harness 的适配器：上班时段（9-12 / 14-18）自动切梁文峰极简模式只留结论，下班恢复梁文谷正常话痨，08:50 准时提醒「快到梁文峰时间了，建议停下」。带模式提示框，零第三方依赖\\n\\n- 🏛️ **[dsh-gov-portal](https://github.com/ExElectron/dsh-gov-portal)** ★20 —— 把 DSH 改造成中国地方政务办事大厅：深蓝渐变导航、红头通知跑马灯、DVD 屏保弹窗、「本站已被访问 000042 次」、流式输出完还给你盖个半透明「准予办结」红章。皮是 2008 年的，每个旋钮都 1:1 接着真实 Agent 能力\\n\\n---\\n\\n## 🎨 换皮区\\n\\n*皮肤主题：不是所有整活都要抽象，也有人只想让鲸鱼娘好看一点。*\\n\\n- 🎀 **[dsh-deep-whale](https://github.com/Small-tailqwq/dsh-deep-whale)** ★141 —— 鲸鱼娘皮肤系列「深海女仆工坊 maid-atelier」：双女仆看店、深海蓝蕾丝界面 + Q 版侧栏，CC BY-NC-SA 4.0\\n\\n  ![深海女仆工坊 maid-atelier 皮肤预览](showcase/dsh-deep-whale.webp)\\n  *亮暗双模式，蕾丝边深海蓝——鲸鱼娘的排面*\\n\\n- 🖼️ **[dsh-plugin-background](https://github.com/gameswu/dsh-plugin-background)** ★3 —— VSCode background 插件的 DSH 版：对话区 / 轨迹区 / 侧边栏 / 设置页四区域各自配背景，支持 GIF 与静音视频轮播\\n\\n  ![dsh-plugin-background 背景编辑器设置界面](showcase/dsh-plugin-background.png)\\n  *每张图独立配置透明度、模糊和轮播，切图还带交叉淡入*\\n\\n- 🎮 **[gal-view](https://github.com/Ayase34/gal-view)** ★14 —— 把会话界面一键切成 Galgame：16:9 舞台 + 鲸鱼娘女仆立绘 + 华丽对话框 + 打字机台词，还自带场景可视化编辑器，拖拽换图层实时同步回游戏模式\\n\\n  ![gal-view Galgame 风格对话视图截图](showcase/gal-view.jpg)\\n  *DeepSeek 化身蓝发鲸鱼女仆，「所以主人要多对我说话才好」*\\n\\n---\\n\\n## 🐳 赛博宠物区\\n\\n*你写你的代码，我养我的鲸。鲸鱼娘形态各异，有的表情比你还丰富。*\\n\\n- 🐋 **[whale-girl](https://github.com/vlln/whale-girl)** ★28 —— QQ 宠物形态的鲸鱼娘：可拖拽、投喂、玩耍，完成任务攒资历、升称号、存回忆；任务失败还会失落\\n\\n  ![whale-girl 桌面宠物待机动画](showcase/whale-girl.gif)\\n  *15 种状态全套：眨眼、散步、打盹、欢呼、受惊——她真的在陪你上班*\\n\\n- 🐳 **[dsh-ui-whale](https://github.com/lhh010/dsh-ui-whale)** ★16 —— 会话标题栏常驻一只全手绘像素鲸鱼：眨眼、摆尾、思考流动画、回合完成喷水、点击冒爱心，零核心改动\\n\\n  ![dsh-ui-whale 手绘像素鲸鱼演示](showcase/dsh-ui-whale.gif)\\n  *空闲 10 秒还会打瞌睡，尾巴一帧一帧摆*\\n\\n- 💻 **[dsh-pet](https://github.com/FlytoMAYDAY80/dsh-pet)** ★1 —— macOS 有声桌宠小鲸鱼：悬浮窗常驻置顶、跨全屏可见，不打开 DSH 也能实时感知会话状态\\n\\n  ![dsh-pet 桌面鲸鱼宠物状态合集](showcase/dsh-pet.png)\\n  *会话在跑、等你审批、任务做完——余光即得，还带声音*\\n\\n- 🦀 **[dsh-plugin-pet-rs](https://github.com/HuanLinOTO/dsh-plugin-pet-rs)** ★1 —— 同一只鲸鱼的 Rust 重写：从约 100MB 干到目标 10MB 以内，Windows / macOS / Linux 三端通吃\\n\\n  ![dsh-plugin-pet-rs Rust 版桌宠与托盘图标](showcase/dsh-plugin-pet-rs.png)\\n  *5 态像素鲸鱼 + 状态气泡；作者 CI 额度跑不起了，请自行构建*\\n\\n- 🪟 **[deepseek-harness-pet](https://github.com/wraven68/deepseek-harness-pet)** ★1 —— Windows 桌宠：只读本机 DSH 会话日志，把当前待办任务的进度、状态、任务列表显示在桌面上的小宠物里；独立 exe，不用装 Python/Node\\n\\n  ![deepseek-harness-pet 桌宠工作状态](showcase/dsh-harness-pet.jpg)\\n  *左键拖动、单击出大号任务面板、Ctrl+滚轮缩放；只读不上传，熬夜写的代码它都看在眼里*\\n- 🐋 **[dsh-whale-musume](https://github.com/Sutera-Diffusus/dsh-whale-musume)** ★46 —— 元气鲸鱼娘：摸头涨好感、开工抱笔记本、深夜不打扰；v2.0.0 新增余额关心（本机代理，密钥不落地）、主动关怀、无障碍、成长日记与主题适配——494 句打工人台词 + 30 个成就，纯前端注入零遥测\\n\\n  ![dsh-whale-musume 元气鲸鱼娘桌宠](showcase/dsh-whale-musume.png)\\n  *bundle 一键安装，38 项 CDP 验收全绿——她是真的在陪你上班*\\n\\n\\n---\\n\\n## 🎮 摸鱼区\\n\\n*等模型回复的时间最难熬，于是有人动手了。*\\n\\n- ♟️ **[dsh-gomoku](https://github.com/omdsh-dev/dsh-gomoku)** ★6 —— 在 DSH 侧边栏和 AI 杀一盘 15×15 五子棋：没有任何搜索算法，每步都是纯 LLM 推理；双 AI 对战还能围观两个模型互相厮杀\\n\\n  ![dsh-gomoku 五子棋对局界面](showcase/dsh-gomoku.png)\\n  *黑白双方的模型和思考档位可以分开调教，棋盘随手开关，摸鱼正事两不误*\\n\\n> 真正的摸鱼神器 **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7（18 款离线小游戏）因为 README 没放图，被安排在了下面的文字选手区。\\n\\n---\\n\\n## 🛠️ 认真干活区\\n\\n*玩梗归玩梗，这些项目是真的能干活。*\\n\\n- 🏠 **[dsh-web-ui](https://github.com/zhu1090093659/dsh-web-ui)** ★580 —— DSH Web UI 插件与皮肤大集合：任务看板、Git 图谱、右侧面板、移动端远程、鲸鱼娘宠物、实时令牌统计、皮肤中心，可单装也可一次装齐\\n\\n  ![dsh-web-ui 主界面](showcase/dsh-web-ui.png)\\n  *任务看板支持 cron 定时执行，手机扫码就能远程接管工作区*\\n\\n- 📱 **[dsh-mobile-apk](https://github.com/kelai141/dsh-mobile-apk)** ★326 —— 口袋里的 DSH：安卓壳应用，WebView UI 覆盖内嵌 Termux 运行时快照（node/git/bash/dsh 全套解压即跑）——装一个 APK，完整 web agent 在手机上真跑 bash；保活看门狗、SAF 桥、任务完成通知、运行时在线更新，0.13 起还有真实 ADB 通道\\n\\n- ⌨️ **[dsh-cc-tui](https://github.com/ccch1mneyyy/dsh-cc-tui)** ★252 —— 官方还没出 TUI？社区先造了一个：Claude Code 风格全屏终端，像素鲸鱼顶栏、实时工作状态行、思考流式展开、双击 Esc 时间回溯，被官方公众号收录\\n\\n  ![dsh-cc-tui Claude Code 风格终端界面](showcase/dsh-cc-tui.png)\\n  *蓝白上下文进度条 + TPS 仪表，纯插件挂载，零核心改动*\\n\\n- 🖥️ **[dsh-tianshu-tui](https://github.com/huiliyi37/dsh-tianshu-tui)** ★132 —— 在官方 TUI 扩展之上做 harness 级定制：TDD 驱动的 agent 工作流、证据门交付、图像/视觉桥接、语义代码检索。渲染核心演化自 Tianshu-Tui，纯表现层设计\\n\\n  ![dsh-tianshu-tui 终端 UI 截图](showcase/dsh-tianshu-tui.jpg)\\n  *只看不碰：agent 该干嘛干嘛，界面负责好看*\\n\\n- 🪄 **[dsh-visualize](https://github.com/Nagi-ovo/dsh-visualize)** ★34 —— DSH 不必只用文字回答：模型调用 `visualize`，交互式 HTML 卡片直接画进会话流，模拟器、图表、UI 原型都行\\n\\n  ![dsh-visualize 对话内交互式卡片演示](showcase/dsh-visualize.webp)\\n  *dsh-ads 作者唯一一条正经广告*\\n\\n- 🧭 **[dsh-milestone](https://github.com/SnowCrescenter-tech/dsh-milestone)** ★12 —— 会话里程碑导航条：右侧点状时间线，像看 Git 提交图一样一眼定位每次提问，一键跳转任何位置\\n\\n- 🎨 **[dsh-client-ui-custom](https://github.com/yoli-mi/dsh-client-ui-custom)** ★11 —— 纯前端客制化七件套，模块随便单装：壁纸+毛玻璃主题（强调色自动取色）、自定义快捷键、用量统计、浮动历史条、消息 Markdown 渲染、插件市场、入场动效——本次更新的新模块「动效」让整个 Web 界面优雅起来\\n\\n  ![dsh-client-ui-custom 主题预览](showcase/dsh-client-ui-custom.png)\\n  *六套主题预设开箱即用；所有功能默认关闭，不配置就和原生界面一模一样*\\n\\n- 🎯 **[dsh-focus-chat](https://github.com/dingyi222666/dsh-focus-chat)** ★7 —— 给 dsh 加一个「聚焦会话」视图：屏蔽过程噪音，只看最终产出\\n\\n  ![dsh-focus-chat 聚焦会话视图](showcase/dsh-focus-chat.png)\\n  *左边是日常，右边是专注——只看结果的极简模式*\\n\\n- 🖱️ **[dsh-web-review](https://github.com/CanglongCl/dsh-web-review)** ★7 —— 像设计工具一样在内置浏览器里圈选元素、写批注、临时调视觉，确认后 Agent 照着批注直接改前端源码\\n\\n  ![dsh-web-review 网页元素批注演示](showcase/dsh-web-review.jpg)\\n  *设计师式提需求：圈哪里改哪里*\\n\\n- 🖥️ **[dsh-s7r](https://github.com/hunter118/dsh-s7r)** ★5 —— 把 DSH 重构成 retro macOS / System 7 桌面：可拖动像素窗口、工作区与 Agent 启动器、Finder、真实 zsh 终端、全局 Find、Monitor、Scrapbook、可恢复桌面快捷方式——复古归复古，代码照样能交付\\n\\n  ![dsh-s7r retro macOS System 7 桌面：Knowledge Desk、Finder、Monitor 和 Clock](showcase/dsh-s7r.png)\\n  *一套 1024 × 768 的 1991 年工作台：Agent、文件、终端和系统资源都仍然接着真实 Harness*\\n\\n- 📝 **[dsh-sticky-note](https://github.com/Meredith2328/dsh-sticky-note)** ★0 —— 编辑框工具栏上的便签：随手记点子，自动保存为 Markdown，一键发送到对话\\n\\n  ![dsh-sticky-note 便签界面](showcase/dsh-sticky-note.png)\\n  *灵感比会话跑得快，先记下来再说*\\n\\n---\\n\\n## 📝 文字选手区\\n\\n*这些项目 README 没放图，点进去自己看。*\\n\\n- 🧰 **[DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)** ★169 `干活` —— 一个插件一套完整工作台：文件管理、编辑预览、内嵌浏览器、真实终端、Git 面板、后台任务全都有，还支持三方拓展注册新 Tab\\n- 🏷️ **[ui-status-label](https://github.com/alingalingling/ui-status-label)** ★21 `换皮` —— 把你鲸鱼娘思考时的 deep diving 自定义成任意你想要的样子，一行设置搞定\\n- 🎮 **[dsh-minigames](https://github.com/lhh010/dsh-minigames)** ★7 `摸鱼` —— 右侧小游戏面板，18 款离线游戏全 Canvas 手绘：恐龙跳一跳、俄罗斯方块、坦克大战（带 AI）、扫雷、2048、数独、吃豆人……等了 18 款游戏的人不该没有图\\n- 🎨 **[deepseek-harness-themes](https://github.com/orxz/deepseek-harness-themes)** ★1 `换皮` —— 社区维护的主题合集：只动颜色和外观，不碰模型与 agent —— One harness. Multiple styles.\\n- 🖌️ **[dsh-skin](https://github.com/KinGao294/dsh-skin)** ★1 `换皮` —— Codex 精神续作款皮肤切换器：7 套精选配色 + 自定义壁纸，设置里多两行就完事\\n- 💰 **[dsh-balance-meter](https://github.com/Ghost011118/dsh-balance-meter)** ★0 `干活` —— 作曲栏实时显示 DeepSeek 账户余额 + 本会话花费，每 6 小时自动拉官方价目表，峰谷调价也不慌\\n- 🔦 **[dsh-spotlight](https://github.com/0xsline/dsh-spotlight)** ★0 `干活` —— 键盘优先的命令面板：斜杠命令、最近会话、界面操作、插件设置，一个面板全都有\\n- 📦 **[dsh-web-archive](https://github.com/renat3u/dsh-web-archive)** ★0 `干活` —— Deep Sleeping... 把会话里 Think 推理和工具卡片全部收拢成同款小卡，世界瞬间清净\\n- 🔔 **[dsh-web-attention-badge](https://github.com/Luaphes/dsh-web-attention-badge)** ★0 `干活` —— 会话需要你时三处同时亮：边框徽标、标签页标题计数、鲸鱼 favicon 变琥珀色\\n\\n---\\n\\n## 🚀 收录方式\\n\\n给 DSH 整了新活？**欢迎 PR 补充！** 皮肤、桌宠、小游戏、还是更抽象的东西都可以——附上仓库链接和一句话介绍，再带一张精选截图就更好了（没图的项目会先委屈在文字选手区）。\\n\\n## 🔗 相关站点\\n\\n- **[DeepSeek酱语录](https://ai-meme.cdqyfdbymn.me/)** —— DeepSeek 蓝色大肥鱼表情包图库：176 张台词级梗图，瀑布流浏览、标签筛选、一键生成分享卡片\\n- **[deepseek-chan-meme-pack](https://github.com/the-beating-light-of-the-nail/deepseek-chan-meme-pack)** —— 图库的社区仓库：dsh-meme 插件表情包（topic `dsh-meme-pack`）、CDN 直链热链、双语梗科普投稿入口\\n\\n## ©️ 版权说明\\n\\n本仓库所有图片均摘录自各开源项目的 README 与官方预览素材，**版权归原作者所有**。本仓库仅做导航汇总与宣传，不分发任何源码或素材。如侵犯了您的权益，请提 issue，我们会第一时间撤下。\\n\\n---\\n\\n<p align=\\\"center\\\"><b>收录 38 个项目 · 27 张精选截图</b><br><sub>整活浓度仍在上升中</sub></p>\\n\"\n    },\n    {\n      \"path\": \"CONTRIBUTING.md\",\n      \"content\": \"# 收录指南（Contributing）\\n\\n欢迎 PR 补充新的 DeepSeek Harness (dsh) 整活插件！\\n\\n## 收录标准\\n\\n1. 是一个真实存在的 GitHub 仓库，且公开可访问\\n2. 与 DeepSeek Harness (dsh) 插件生态相关\\n3. 整活浓度越高越好（广告 / 皮肤 / 宠物 / 游戏 / 抽象艺术优先）\\n4. 正经干活的项目也收（进「认真干活区」）\\n\\n## PR 格式\\n\\n每个项目一个条目，格式：\\n\\n```markdown\\n- 🎯 **[项目名](https://github.com/owner/repo)** ★star数 —— 一句话介绍，要有梗\\n```\\n\\n放对分类：\\n\\n| 分类 | 放什么 |\\n|---|---|\\n| 🎭 抽象整活区 | 广告、恶搞、怀旧、行为艺术 |\\n| 🎨 换皮区 | 皮肤、主题 |\\n| 🐳 赛博宠物区 | 桌宠、鲸鱼娘 |\\n| 🎮 摸鱼区 | 游戏、娱乐 |\\n| 🛠️ 认真干活区 | 实用 UI 增强、效率工具 |\\n| 📝 文字选手区 | README 没有图片的项目 |\\n\\n## 带图加分\\n\\n如果你的项目有好看的截图/动图，欢迎在 PR 里一起提供，放到 `showcase/` 并在条目下方引用：\\n\\n```markdown\\n![图注](showcase/xxx.png)\\n```\\n\\n图片要求：来自项目自己的 README 或官方预览素材，版权归原作者所有。\\n\\n## 不收录\\n\\n- 与 dsh 无关的项目\\n- 已删除或长期失联的仓库\\n- 恶意代码 / 钓鱼项目\\n\"\n    },\n    {\n      \"path\": \"showcase/_manifest.json\",\n      \"content\": \"[\\n  {\\n    \\\"name\\\": \\\"DSH-better-sidebar\\\",\\n    \\\"readme_chars\\\": 9371,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 1.48\\n  },\\n  {\\n    \\\"name\\\": \\\"deepseek-harness-themes\\\",\\n    \\\"readme_chars\\\": 2867,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.26\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-ads\\\",\\n    \\\"readme_chars\\\": 2201,\\n    \\\"img_count\\\": 29,\\n    \\\"hero\\\": \\\"assets/en/posters/poster-fail-game.webp\\\",\\n    \\\"size_mb\\\": 7.76\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-balance-meter\\\",\\n    \\\"readme_chars\\\": 3067,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.2\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-cc-tui\\\",\\n    \\\"readme_chars\\\": 12302,\\n    \\\"img_count\\\": 4,\\n    \\\"hero\\\": \\\"screenshots/splash.png\\\",\\n    \\\"size_mb\\\": 6.11\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-deep-whale\\\",\\n    \\\"readme_chars\\\": 1119,\\n    \\\"img_count\\\": 13,\\n    \\\"hero\\\": \\\"maid-atelier/preview/light.webp\\\",\\n    \\\"size_mb\\\": 6.69\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-deepcel\\\",\\n    \\\"readme_chars\\\": 882,\\n    \\\"img_count\\\": 2,\\n    \\\"hero\\\": \\\"deepcel/preview/light.webp\\\",\\n    \\\"size_mb\\\": 0.4\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-focus-chat\\\",\\n    \\\"readme_chars\\\": 4756,\\n    \\\"img_count\\\": 2,\\n    \\\"hero\\\": \\\"screenshots/before.png\\\",\\n    \\\"size_mb\\\": 1.37\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-gomoku\\\",\\n    \\\"readme_chars\\\": 6048,\\n    \\\"img_count\\\": 1,\\n    \\\"hero\\\": \\\"assets/screenshot.png\\\",\\n    \\\"size_mb\\\": 1.08\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-group-photo\\\",\\n    \\\"readme_chars\\\": 4310,\\n    \\\"img_count\\\": 5,\\n    \\\"hero\\\": \\\"public/bg.jpg\\\",\\n    \\\"size_mb\\\": 2.12\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-milestone\\\",\\n    \\\"readme_chars\\\": 3703,\\n    \\\"img_count\\\": 1,\\n    \\\"hero\\\": \\\"assets/logo.svg\\\",\\n    \\\"size_mb\\\": 0.43\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-minigames\\\",\\n    \\\"readme_chars\\\": 13307,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 1.2\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-pet\\\",\\n    \\\"readme_chars\\\": 4438,\\n    \\\"img_count\\\": 22,\\n    \\\"hero\\\": \\\"docs/contact-sheet.png\\\",\\n    \\\"size_mb\\\": 0.88\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-plugin-background\\\",\\n    \\\"readme_chars\\\": 2228,\\n    \\\"img_count\\\": 1,\\n    \\\"hero\\\": \\\"docs/settings-section.png\\\",\\n    \\\"size_mb\\\": 0.22\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-plugin-pet-rs\\\",\\n    \\\"readme_chars\\\": 4704,\\n    \\\"img_count\\\": 5,\\n    \\\"hero\\\": \\\"assets/tray-icon.png\\\",\\n    \\\"size_mb\\\": 0.45\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-qq2006\\\",\\n    \\\"readme_chars\\\": 2562,\\n    \\\"img_count\\\": 357,\\n    \\\"hero\\\": \\\"assets/qq2006/img/im/show3.gif\\\",\\n    \\\"size_mb\\\": 1.93\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-skin\\\",\\n    \\\"readme_chars\\\": 6142,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.04\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-spotlight\\\",\\n    \\\"readme_chars\\\": 2612,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.16\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-sticky-note\\\",\\n    \\\"readme_chars\\\": 902,\\n    \\\"img_count\\\": 1,\\n    \\\"hero\\\": \\\"assets/screenshot.png\\\",\\n    \\\"size_mb\\\": 0.15\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-tianshu-tui\\\",\\n    \\\"readme_chars\\\": 11444,\\n    \\\"img_count\\\": 1,\\n    \\\"hero\\\": \\\"docs/tui-screenshot.jpg\\\",\\n    \\\"size_mb\\\": 2.94\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-ui-whale\\\",\\n    \\\"readme_chars\\\": 7674,\\n    \\\"img_count\\\": 7,\\n    \\\"hero\\\": \\\"docs/dsh-ui-whale-demo.gif\\\",\\n    \\\"size_mb\\\": 0.99\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-visualize\\\",\\n    \\\"readme_chars\\\": 2308,\\n    \\\"img_count\\\": 2,\\n    \\\"hero\\\": \\\"assets/demo.webp\\\",\\n    \\\"size_mb\\\": 1.23\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-web-archive\\\",\\n    \\\"readme_chars\\\": 4611,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.05\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-web-attention-badge\\\",\\n    \\\"readme_chars\\\": 1515,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.02\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-web-review\\\",\\n    \\\"readme_chars\\\": 1884,\\n    \\\"img_count\\\": 3,\\n    \\\"hero\\\": \\\"docs/assets/web-review-demo.gif\\\",\\n    \\\"size_mb\\\": 7.32\\n  },\\n  {\\n    \\\"name\\\": \\\"dsh-web-ui\\\",\\n    \\\"readme_chars\\\": 5893,\\n    \\\"img_count\\\": 21,\\n    \\\"hero\\\": \\\"docs/dsh-web-ui-banner.png\\\",\\n    \\\"size_mb\\\": 7.15\\n  },\\n  {\\n    \\\"name\\\": \\\"ui-status-label\\\",\\n    \\\"readme_chars\\\": 3223,\\n    \\\"img_count\\\": 0,\\n    \\\"hero\\\": null,\\n    \\\"size_mb\\\": 0.2\\n  },\\n  {\\n    \\\"name\\\": \\\"whale-girl\\\",\\n    \\\"readme_chars\\\": 3936,\\n    \\\"img_count\\\": 31,\\n    \\\"hero\\\": \\\"docs/preview/idle.gif\\\",\\n    \\\"size_mb\\\": 3.58\\n  }\\n]\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"3039a0ac80b0558473fee8d9917680311ef93a20\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"c7083c5f558468a4ffc52608edd1e7cfcbf06ce717ce023d23200c91a457e6c3\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 555,\n        \"words\": 6808\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "8fd12721e2a83bc87ecadec30e892a1072a8699f1a098522263f6193b96417fa"
+        }
+    },
+    "unavailable_artifacts": []
+}

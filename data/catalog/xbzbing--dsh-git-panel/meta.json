@@ -1,0 +1,45 @@
+{
+    "repository": "xbzbing/dsh-git-panel",
+    "repository_id": 1385903666,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 45,
+    "pushed_at": "2026-11-09T15:01:45Z",
+    "issues": {
+        "open": 1,
+        "closed": 32,
+        "created_30d": 28,
+        "closed_30d": 29,
+        "updated_30d": 30
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T07:46:05.409Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@xbzbing/dsh-git-panel",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 9327,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/%40xbzbing%2Fdsh-git-panel",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-25T05:29:34.577Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
+            "source_url": "https://registry.npmjs.org/%40xbzbing%2Fdsh-git-panel",
+            "error": null,
+            "latest_version": "1.13.2",
+            "latest_published_at": "2026-11-08T07:26:54.218Z",
+            "latest_error": null
+        }
+    }
+}
