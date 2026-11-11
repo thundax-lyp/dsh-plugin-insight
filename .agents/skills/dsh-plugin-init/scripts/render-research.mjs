@@ -347,7 +347,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             };
         });
     const byId = new Map(items.map((p) => [p.i.id, p]));
-    const recommendations = rankedRecommendations(items);
+    const recommendations = rankedRecommendations(items.filter(({ plugin }) => plugin.entry_type !== 'resource'));
     const link = (from, to) =>
         relative(dirname(local(root, from)), local(root, to))
             .split('\\')

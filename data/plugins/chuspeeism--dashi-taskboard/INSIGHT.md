@@ -1,40 +1,35 @@
-# Codex Taskboard 本地任务看板
+# Codex Taskboard
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[9aa1f4e](https://github.com/chuspeeism/dashi-taskboard/tree/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc)
+源码版本：[bdf7698](https://github.com/chuspeeism/dashi-taskboard/tree/bdf7698f6c3f3737a65377814dbb9db7ce81ea38)
 
 <!-- BEGIN META -->
-[![GitHub ★ 3,401](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C401&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chuspeeism/dashi-taskboard)
+[![GitHub ★ 3,475](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=3%2C475&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chuspeeism/dashi-taskboard)
 <!-- END META -->
 
-> **功能**：本地优先任务看板，通过浏览器、taskctl和Skill管理项目与AI任务交接。
+> **功能**：提供可在浏览器或 Codex 中使用的本地优先任务看板，并让界面和 taskctl 共用 HTTP API。
 
-> **亮点**：[Q03](#research-q03) 把成熟的乐观并发和AI会话绑定、需求重读、待审/接受边界组织成任务交接协议，相对手工列表增加责任与状态追溯；不以任务记录宣称软件交付正确。
+> **亮点**：把读取当前要求、乐观版本认领和人类验收接入看板与 CLI 共用的记录，减少由代理另写一套交接说明的需要。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：[Q03](#research-q03) 数据库保护写入版本，不能保护交付真实性；Skill约束依赖执行者遵守，done与评论不能替代代码和用户验收证据。
+> **主要限制**：带版本写入防止陈旧覆盖，不能凭此判断操作者是否有权关闭任务。Skill 明确的认领与完成约定也不等同于所有 HTTP 客户端都遵守它。[Q02](#research-q02)
 
 **本文目录**
 
 - [1 插件分析](#detail-section-1)
   - [1.1 用途与适用场景](#detail-section-2)
   - [1.2 能力、流程与成本](#detail-section-3)
-  - [1.3 启动与依赖](#detail-section-4)
-  - [1.4 启动步骤](#detail-section-5)
-  - [1.5 成本](#detail-section-6)
-  - [1.6 效果](#detail-section-7)
-  - [1.7 工程亮点](#detail-section-8)
-  - [1.8 主要限制](#detail-section-9)
-  - [1.9 使用建议](#detail-section-10)
-  - [1.10 核查说明与分析版本](#detail-section-11)
-- [2 未来设计假设（未验证）](#detail-section-12)
-- [3 辅助信息](#detail-section-13)
-- [4 研究问题与完整回答](#detail-section-14)
-  - [Q01 · 本地看板怎样支持AI任务交接，何为办结？](#detail-section-15)
-  - [Q02 · 持久化和乐观版本如何连接到任务写入？](#detail-section-16)
-  - [Q03 · 任务协议的增量是什么，能否约束成果质量？](#detail-section-17)
-  - [Q04 · 本地服务和可选桌面注入需要承担哪些成本？](#detail-section-18)
-  - [Q05 · 绑定交付证据和任务版本能否降低错误办结？](#detail-section-19)
+  - [1.3 工程亮点](#detail-section-4)
+  - [1.4 主要限制](#detail-section-5)
+  - [1.5 使用建议](#detail-section-6)
+  - [1.6 核查说明与分析版本](#detail-section-7)
+- [2 未来设计假设（未验证）](#detail-section-8)
+- [3 辅助信息](#detail-section-9)
+- [4 研究问题与完整回答](#detail-section-10)
+  - [Q01 · 与独立看板加会话链接相比，任务交接增加什么？](#detail-section-11)
+  - [Q02 · 认领和并发写入如何保护，哪些约束依赖客户端？](#detail-section-12)
+  - [Q03 · 本地与共享部署需要什么，升级和退出有何负担？](#detail-section-13)
+  - [Q04 · 什么团队值得试，怎样验证额外的认领约束？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -44,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：有跨AI会话交接需求的开发者维护任务、需求、附件和当前责任，用户验收后才办结。
+> **用途**：需要在开发者与 Codex 间反复交接 issue 的项目可以共用看板、任务评论、验收状态和 CLI。
 
-聊天记录、手工任务表或已有外部跟踪器是简单基线；没有跨会话交接摩擦时，本地服务不一定值得引入。
+普通看板加会话链接也可组织工作，代理需要重复同步当前要求和认领状态。仅有会话历史时，人和其他会话不易看到同一验收状态。
 
 <a id="detail-section-3"></a>
 
@@ -55,121 +50,107 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 本地任务服务 | 保存项目、任务和版本 | 独立工程，需维护数据库 |
-| 交接Skill | 约束领取与用户接受 | 依赖执行者遵守，非成果证明 |
-| taskctl入口 | 脚本化任务操作 | 本轮未执行CLI |
+| --- | --- | --- |
+| 本地任务记录 | 管理 issue、活动与验收状态 | 服务与数据库可用 |
+| 版本更新 | 防止陈旧写入覆盖 | 客户端带正确版本，冲突需重新核对 |
+| 代理交接 | 按归属和验收状态推进任务 | 使用配套 Skill 或等价流程 |
 
 **流程与依赖**
 
-<a id="detail-section-4"></a>
+| 依赖 | 用途 | 边界 |
+| --- | --- | --- |
+| Node 与本地 SQLite | 启动项目并存任务 | 包要求 22.22.3 起的 22.x 或 24.8 起 |
+| 浏览器和 taskctl | 共用任务 API | 根服务可独立启动，Codex 嵌入可选 |
+| 云资源与 companion | 协作与设备路径映射 | 共享云路径需要单独设置和验证 |
 
-### 1.3 启动与依赖
-
-| 条件 | 用途 | 失效与退路 |
-|---|---|---|
-| Node>=22.5与依赖 | 运行服务和构建Web | 先核对版本 |
-| SQLite目录可写且备份 | 保存任务状态 | 隔离数据库并先验证恢复 |
-| 可选Codex/桌面/CDP | 嵌入与会话联动 | 退回独立浏览器服务 |
-
-<a id="detail-section-5"></a>
-
-### 1.4 启动步骤
-
-| 步骤 | 执行者与完成判据 | 失败处理 |
-|---|---|---|
-| 构建启动服务 | 用户直接URL可打开 | 查Node与数据库路径 |
-| 配置项目与Skill | 用户确认工作区绑定 | 不猜项目与任务身份 |
-| 读取并领取任务 | 执行者版本写入成功 | 重读协调，禁止循环抢占 |
-| 验证后待审 | 执行者留交付和风险 | 用户接受前不done |
+| 阶段 | 操作 | 异常处理 |
+| --- | --- | --- |
+| 首次 | 以 loopback 启动独立试用，创建一次性项目 | 无法启动则检查 Node 与实际监听地址 |
+| 持续 | 按任务当前版本认领、核查并提交复核 | 遇冲突先读新版本和要求，确认合法才重试 |
+| 退出 | 停止服务并备份本地数据库与附件 | 云端与本地路径独立，不能依赖自动合并 |
 
 **效果与成本**
 
+| 成本 | 承担者与口径 | 限制 |
+| --- | --- | --- |
+| 配置与运维 | 使用者配置服务与工作区，管理员处理共享部署 | 本地与云负担不同 |
+| 人工 | 每次合格交接的更新、冲突核对与验收时间 | 未测量，不推算节省 |
+| 退出 | 保存任务数据和附件，验证可恢复性 | 云和本地分别处理 |
+
+| 效果 | 验证单位 | 限制 |
+| --- | --- | --- |
+| 交接一致性 | 一个 issue 的 UI、CLI 状态和验收记录一致 | 不同来源路径另测 |
+| 防止陈旧覆盖 | 两客户端同版本提交仅一个生效 | 不覆盖操作者授权 |
+
+> **思考**：带版本写入防止陈旧覆盖，不能凭此判断操作者是否有权关闭任务。Skill 明确的认领与完成约定也不等同于所有 HTTP 客户端都遵守它。[Q02](#research-q02)
+
+<a id="detail-section-4"></a>
+
+### 1.3 工程亮点
+
+> **亮点**：把读取当前要求、乐观版本认领和人类验收接入看板与 CLI 共用的记录，减少由代理另写一套交接说明的需要。[Q01](#research-q01) [Q02](#research-q02)
+
+版本条件与活动记录同事务值得复用。浏览器 E2E 源码覆盖协作动作，但对多个真实用户以及不同宿主的覆盖需要另查。
+
+<a id="detail-section-5"></a>
+
+### 1.4 主要限制
+
+带版本写入防止陈旧覆盖，不能凭此判断操作者是否有权关闭任务。Skill 明确的认领与完成约定也不等同于所有 HTTP 客户端都遵守它。[Q02](#research-q02)
+
 <a id="detail-section-6"></a>
 
-### 1.5 成本
+### 1.5 使用建议
 
-| 阶段 | 现金／资源 | 人工／时间 |
-|---|---|---|
-| 首次 | 本地Node与数据库资源，费用未知 | 构建、配置项目/Skill，分钟未知 |
-| 持续 | 服务、AI调用或可选云资源，未知 | 维护任务、权限与备份，未知 |
-| 失败恢复 | 重试与备份资源，未知 | 重读冲突、核对外部同步和恢复库，未知 |
+先在 loopback 的独立项目试两方交接，用小任务验证只一次认领、可查看评论、显式确认后完结。若出现错项目、覆盖或未经预期的共享访问，停止并使用原看板。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
-### 1.6 效果
-
-| 合格任务 | 源码支持 | 未验证部分 |
-|---|---|---|
-| 会话任务交接 | Skill的领取、重读、待审和接受协议 | 执行者遵守与真实用户收益 |
-| 防旧版本覆盖 | 数据库409冲突 | 多客户端端到端、Jira补偿 |
-
-> **思考**：[Q03](#research-q03) 数据库保护写入版本，不能保护交付真实性；Skill约束依赖执行者遵守，done与评论不能替代代码和用户验收证据。
-
-<a id="detail-section-8"></a>
-
-### 1.7 工程亮点
-
-> **亮点**：[Q03](#research-q03) 把成熟的乐观并发和AI会话绑定、需求重读、待审/接受边界组织成任务交接协议，相对手工列表增加责任与状态追溯；不以任务记录宣称软件交付正确。
-
-数据库与HTTP状态处理有清晰接口，成熟乐观并发可复用；迁移时必须保留身份绑定、版本错误语义和外部写入后reconcile，不能只复制状态枚举。
-
-<a id="detail-section-9"></a>
-
-### 1.8 主要限制
-
-[Q03](#research-q03) 数据库保护写入版本，不能保护交付真实性；Skill约束依赖执行者遵守，done与评论不能替代代码和用户验收证据。
-
-<a id="detail-section-10"></a>
-
-### 1.9 使用建议
-
-[Q01](#research-q01)、[Q04](#research-q04) 先在非关键项目试用浏览器与CLI，验证任务版本冲突和待审接受；有明确同步收益后才考虑桌面注入或云模式，不把根目录作为DSH可装插件。
-
-<a id="detail-section-11"></a>
-
-### 1.10 核查说明与分析版本
+### 1.6 核查说明与分析版本
 
 **核查状态**：已检查源码。
 
-已检查本地数据库、任务PATCH、版本冲突与Skill协议；未运行服务或桌面注入，接受包是假设。
+固定源码支持共用工作流和本地版本保护。目标宿主、多人授权、云故障恢复和交接收益仍待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、skills/manage-taskboard/SKILL.md、server/database.mjs、server/app.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 server/database.mjs、server/app.mjs、skills/manage-taskboard/SKILL.md、cli/taskctl.mjs、package.json、docs/cloud-collaboration.md、tests/collaboration.e2e.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根工程定位为独立本地任务服务；DSH integration只是单独薄入口。本轮抽读核心状态链路，不是全API权限和平台审计。
-- 下一步：隔离数据库用两客户端同版本更新验证冲突，再核对备份恢复与需求变更后接受流程，记录错配及人工分钟；尚未执行。
+- 边界：根服务、CLI、Codex Skill 与本地数据库路径的定向源码核查；DSH 接入子包由独立条目研究。未执行项目或测试。
+- 下一步：在隔离本机服务上对照 UI 与 CLI 同版本争抢，再验证正常验收、失联恢复和对未授权请求的响应。
 
 **分析版本**
 
 - **仓库**：[chuspeeism/dashi-taskboard](https://github.com/chuspeeism/dashi-taskboard)
-- **版本号**：1.1.27（[固定提交 9aa1f4e](https://github.com/chuspeeism/dashi-taskboard/tree/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc)）
-- **版本日期**：2026-10-21（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.1.27（[固定提交 bdf7698](https://github.com/chuspeeism/dashi-taskboard/tree/bdf7698f6c3f3737a65377814dbb9db7ce81ea38)）
+- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
 
-<a id="detail-section-12"></a>
+<a id="detail-section-8"></a>
 
 ## 2 未来设计假设（未验证）
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 未验证假设是把需求版本、代码revision和验证结果绑定为接受包，用五个需求变动任务对照错配办结与人工成本；无改善或维护更重即停止。
+可把操作者和允许转换与版本校验一起放到提交路径，比较双认领、直接关闭及合法续接。若权限冲突不降或合法续接大量受阻，停止这个改法。[Q04](#research-q04)
 
-隔离数据库用两客户端同版本更新验证冲突，再核对备份恢复与需求变更后接受流程，记录错配及人工分钟；尚未执行。
+在隔离本机服务上对照 UI 与 CLI 同版本争抢，再验证正常验收、失联恢复和对未授权请求的响应。
 
-<a id="detail-section-13"></a>
+<a id="detail-section-9"></a>
 
 ## 3 辅助信息
 
 <details>
 <summary>工程统计</summary>
 
+仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。
+
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 13 | 1516 | — | — | 17217 |
+| .md | source | 13 | 1516 | — | — | 17240 |
 | .mjs | source | 50 | 23738 | 22372 | 66 | — |
+| .ts | source | 17 | 3155 | 2867 | 21 | — |
 | .js | source | 3 | 2347 | 2182 | 24 | — |
-| .mjs | test | 32 | 12686 | 11771 | 151 | — |
+| .mjs | test | 33 | 12723 | 11798 | 159 | — |
 | .tsx | example | 1 | 62 | 56 | 0 | — |
-| .ts | source | 16 | 3130 | 2846 | 16 | — |
+| .ts | test | 4 | 367 | 312 | 38 | — |
 | .tsx | source | 31 | 20219 | 19220 | 30 | — |
 | .tsx | test | 1 | 139 | 118 | 6 | — |
 
@@ -177,35 +158,35 @@
 
 **活跃度**
 
-[![Issue 未关闭 20](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=20&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=6&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+created%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z) [![近30天关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-09-27T01%3A50%3A27.819Z..2026-10-27T01%3A50%3A27.819Z)
+[![Issue 未关闭 20](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=20&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/chuspeeism/dashi-taskboard/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
 
 
-统计日期：2026-10-27。
+统计日期：2026-11-11。
 
-<a id="detail-section-14"></a>
+<a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查本地任务状态与AI会话交接的贡献、并发边界及验收缺口。
+**插件研究总目标**：独立看板能否让人和 Codex 共用带版本的交接记录，权限边界及运行负担是什么？
 
 <a id="research-q01"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-11"></a>
 
-### Q01 · 本地看板怎样支持AI任务交接，何为办结？
+### Q01 · 与独立看板加会话链接相比，任务交接增加什么？
 
-**研究主题**：场景与需求、采用判断
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-根工程是本地优先的任务看板服务、React界面、taskctl CLI与Codex Skill，不能统称可直接安装的DSH插件。适合在多个AI会话间维护任务、需求、附件和责任归属的开发者；原办法是聊天记录加手工任务表。合格结果是任务记录与项目、会话、版本和交付说明对应，并由用户确认成果后办结。Skill要求先读取任务与评论、领取后执行、验证后进入in_review，只有用户接受才done，这改变交接责任而非自动证明代码正确。没有跨会话任务交接需求的人可继续用简单列表，避免维护本地服务。
+经常在 Codex 和人工检查之间移交软件任务的人，可把 issue、当前需求、认领会话及验收记录放在一处。人工看板加会话链接也可交接，但每次读取旧要求、附验收结果与同步状态需要手工协调。Taskboard 的浏览器和 taskctl 共用 HTTP 服务，配套 Skill 给出先读评论和附件、按版本认领、回写验证再交复核、用户接受后完成的步骤。合格交接是下一操作者能定位相同问题与最近要求，并区分等待验收和已经完成。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:3-5](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/README.md#L3-L5)
+**依据 1 · 作者声明**：[README.md:3-5](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/README.md#L3-L5)
 
-作者定位根工程为本地服务，HTTP API同时驱动界面和CLI。
+作者说明本地独立服务、浏览器与 Codex 嵌入，以及 CLI 和 UI 共用 API。
 
 ```text
 # Codex Taskboard
@@ -213,9 +194,9 @@
 A local-first issue board that runs in a browser and can be embedded in Codex through the standalone CDP launcher or its injection script. The same HTTP API powers the React UI and the `taskctl` CLI used by the bundled Codex Skill.
 ```
 
-**依据 2 · 源码核查**：[skills/manage-taskboard/SKILL.md:30-38](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/skills/manage-taskboard/SKILL.md#L30-L38)
+**依据 2 · 源码核查**：[skills/manage-taskboard/SKILL.md:30-38](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/skills/manage-taskboard/SKILL.md#L30-L38)
 
-领取、验证、待审与done接受边界。
+项目交付的 Skill 对认领、冲突、验证和人验收明确分工。
 
 ```text
 ## Core workflow
@@ -229,96 +210,146 @@ A local-first issue board that runs in a browser and can be embedded in Codex th
 7. Move an issue to `done` only after the user explicitly accepts it or asks to complete it. Use `blocked` when work cannot continue and `canceled` when it will not continue.
 ```
 
+#### 缺口
+
+- 未量化相对独立看板的人工重复同步
+  **影响**：不能外推为团队效率提升
+  **进一步探讨**：同一组任务对比来回切换、补充提问、丢失验收条件数
+
 <a id="research-q02"></a>
 
-<a id="detail-section-16"></a>
+<a id="detail-section-12"></a>
 
-### Q02 · 持久化和乐观版本如何连接到任务写入？
+### Q02 · 认领和并发写入如何保护，哪些约束依赖客户端？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-Node进程通过node:sqlite的DatabaseSync建立数据库，启用外键、WAL和busy_timeout再迁移。HTTP PATCH解析version、变更和threadBinding，最终调用database.updateTask；数据库先读取当前记录并检查传入版本，不等则返回409 VERSION_CONFLICT及两个版本。因此浏览器或CLI不能安全地把旧读到的数据当最新状态写回，应重新读并协调冲突。Skill把五字段会话绑定与每次当前版本作为操作前提，但文本协议的存在不等于模型必然遵守，也不证明所有API变更都受同样的授权门控。Jira分支存在外部更新后本地失败的reconcile处理，分布式一致性不由本地SQLite事务单独保证。
+Skill 要求写入五字段会话归属并带当前版本，另一会话已认领时不接管。CLI 更新把解析出的版本放入请求；本地数据库先校验记录，在事务内以 id 和 version 作更新条件，同时写入活动并递增版本，更新失败回滚。同版本竞争只有满足当前条件的写入可成立。版本比较解决陈旧写入，不能证明任务状态转换由正确用户授权；这里只看到 Skill 对何时结束的行为约定、以及数据库持久化归属与比较版本。持有新版本的通用客户端仍需独立核查路由授权和业务转换校验，不能把 Skill 遵守规则等同于所有调用方受限。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[server/database.mjs:258-264](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/database.mjs#L258-L264)
+**依据 1 · 源码核查**：[skills/manage-taskboard/SKILL.md:46-49](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/skills/manage-taskboard/SKILL.md#L46-L49)
 
-数据库初始化与持久化设置。
-
-```text
-export class TaskboardDatabase {
-  constructor(filename) {
-    mkdirSync(path.dirname(filename), { recursive: true });
-    this.database = new DatabaseSync(filename);
-    this.database.exec("PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;");
-    this.#migrate();
-    this.interruptAbandonedAiChatRuns();
-```
-
-**依据 2 · 源码核查**：[server/database.mjs:1908-1916](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/database.mjs#L1908-L1916)
-
-写任务首先核对当前版本。
+Skill 指定归属字段、保留原绑定和版本冲突处理。
 
 ```text
-  updateTask(id, version, changes, threadId, threadBinding, actor, agentSession) {
-    const current = this.#requireTaskRecord(id);
-    this.#requireVersion(current, version);
-    const activityChanges = taskFieldChanges(current, changes);
-    const targetProject = Object.hasOwn(changes, "projectId")
-      ? this.database.prepare("SELECT id, name, workspace_path, labels FROM projects WHERE id = ?").get(changes.projectId)
-      : null;
-    if (Object.hasOwn(changes, "projectId") && !targetProject) {
-      throw new ApiError(404, "PROJECT_NOT_FOUND", `Project '${changes.projectId}' does not exist`);
+- For Codex controller attribution, let `taskctl` read `CODEX_THREAD_ID` or pass the exact Codex conversation ID with `--thread-id`. This value alone is not a complete task binding. For Claude Code, Pi, AGY, or Grok session traceability, pass `--agent-platform claude|pi|agy|grok --session-id ID` instead; see [CLI session traceability](references/cli.md#external-toolsession-traceability). External metadata is not a Codex ownership binding and never substitutes for the five fields below.
+- Any issue that the current conversation claims or continues must store a complete `threadBinding`: `threadId`, `codexProjectId`, `codexProjectKind`, `codexHostId`, and `workspacePath`. For an unbound local issue launched with injected Taskboard context, use the current `CODEX_THREAD_ID`, the injected project id and workspace path, `local` project kind, and `local` host id. Pass all five explicit `--binding-*` options on the claim and every later `issue move` that retains ownership. If any identity field is unavailable, stop before moving the issue to `in_progress`; never create a legacy binding containing only `threadId`.
+- When an issue already has a complete `threadBinding`, preserve its exact five saved values on every status write. Do not rebuild or replace it from the current context, and never take over a binding owned by another conversation.
+- Use the latest returned `version` with `--if-version` for concurrent updates. On conflict, read the issue again and reconcile before retrying.
 ```
 
-**依据 3 · 源码核查**：[server/database.mjs:2856-2862](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/database.mjs#L2856-L2862)
+**依据 2 · 源码核查**：[cli/taskctl.mjs:883-914](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/cli/taskctl.mjs#L883-L914)
 
-409版本冲突携带期望与实际值。
-
-```text
-  #requireVersion(task, expectedVersion) {
-    if (task.version !== expectedVersion) {
-      throw new ApiError(409, "VERSION_CONFLICT", "Task was changed by another client", {
-        expectedVersion,
-        actualVersion: task.version,
-      });
-    }
-```
-
-**依据 4 · 源码核查**：[server/app.mjs:2871-2882](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/app.mjs#L2871-L2882)
-
-HTTP输入到任务来源与绑定解析。
+CLI 将解析的版本带入任务补丁。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
-        if (!action && request.method === "PATCH") {
-          const actor = actorFromRequest(request);
-          const {
-            version,
-            changes,
-            threadId,
-            threadBinding,
-            agentSession,
-            assigneeTarget,
-          } = resolveInputThreadBinding(parseTaskPatch(await readJson(request), parseDevelopmentContext));
-          const source = database.getTaskSource(id);
-          if (!source) throw new ApiError(404, "TASK_NOT_FOUND", `Task '${id}' does not exist`);
+async function updateIssue(api, taskId, options, overrides) {
+  if (options.status !== undefined) assertStatus(options.status);
+  if (options.priority !== undefined) assertPriority(options.priority);
+
+  const developmentContext = developmentContextFromOptions(options, overrides);
+  const recurrence = recurrenceFromOptions(options);
+  const attribution = resolveConversationAttribution(options, overrides);
+  const patch = {
+    ...optionalField("projectId", options.project),
+    ...optionalField("title", options.title),
+    ...optionalField("status", options.status),
+    ...optionalField("priority", options.priority),
+    ...optionalField("labels", options.labels === undefined ? undefined : parseLabels(options.labels)),
+    ...optionalField("developmentContext", developmentContext),
+    ...optionalField("startDate", options["start-date"]),
+    ...optionalField("dueDate", options["due-date"]),
+    ...optionalField("recurrence", recurrence),
+  };
+  if (options.description !== undefined || options["description-file"] !== undefined) {
+    patch.description = await resolveDescription(options, overrides);
+  }
+
+  if (Object.keys(patch).length === 0 && attribution.agentSession === undefined) {
+    throw usageError("issue update requires at least one field to update");
+  }
+  Object.assign(patch, attribution);
+  patch.version = await resolveVersion(api, taskId, options["if-version"]);
+  return api.request("PATCH", taskPath(taskId), patch);
+}
+
+async function moveIssue(api, taskId, options, overrides) {
+  const status = requiredOption(options, "status");
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[server/app.mjs:2915-2935](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/app.mjs#L2915-L2935)
+**依据 3 · 源码核查**：[server/database.mjs:1997-2024](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/database.mjs#L1997-L2024)
 
-外部Jira写入与本地失败的补偿边界。
+写入归属字段并以版本作条件，变化行数异常进入冲突分支。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
+    const storedBinding = storedThreadBindingForExisting(current, threadBinding, threadId);
+    if (storedBinding && !Object.hasOwn(changes, "projectId")) {
+      assignments.push(
+        "thread_id = ?",
+        "thread_codex_project_id = ?",
+        "thread_codex_project_kind = ?",
+        "thread_codex_host_id = ?",
+        "thread_workspace_path = ?",
+      );
+      values.push(...storedBinding);
+    }
+    if (agentSession !== undefined) {
+      assignments.push("agent_session = ?");
+      values.push(agentSession ? JSON.stringify(agentSession) : null);
+    }
+    assignments.push("version = version + 1", "updated_at = ?");
+    const timestamp = now();
+    values.push(timestamp, current.id, version);
+
+    this.database.exec("BEGIN IMMEDIATE");
+    try {
+      const result = this.database.prepare(`
+        UPDATE tasks SET ${assignments.join(", ")} WHERE id = ? AND version = ?
+      `).run(...values);
+      if (result.changes !== 1) {
+        this.#throwMissingOrConflict(id, version);
+      }
+      if (Object.hasOwn(changes, "description")) {
+```
+
+</details>
+
+**依据 4 · 源码核查**：[server/database.mjs:2044-2050](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/database.mjs#L2044-L2050)
+
+活动写入同事务，失败回滚。
+
+```text
+      this.#recordTaskActivity(current.id, actor, activityChanges, timestamp);
+      this.database.exec("COMMIT");
+    } catch (error) {
+      this.database.exec("ROLLBACK");
+      throw error;
+    }
+    return this.getTask(current.id);
+```
+
+**依据 5 · 源码核查**：[server/app.mjs:2912-2925](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/app.mjs#L2912-L2925)
+
+本地任务分支调用数据库更新；不同来源走独立路径。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+            if (recurrence && !dueDate) {
+              throw new ApiError(400, "INVALID_FIELD", "A recurring issue requires a due date");
+            }
             jiraChanged = await jira.updateTask(current, changes);
           }
           if (assigneeTarget !== undefined) {
@@ -330,46 +361,233 @@ HTTP输入到任务来源与绑定解析。
           } catch (error) {
             if (jiraChanged) {
               try {
-                await jira.reconcile();
-              } catch {
-                throw new ApiError(
-                  502,
-                  "JIRA_RECONCILE_FAILED",
-                  "Jira 已更新，但 Taskboard 重新同步失败，请手动同步",
-                );
-              }
-            }
-            throw error;
 ```
 
 </details>
 
 #### 缺口
 
-- 没有实际启动并发客户端或CLI操作
-  **影响**：不能确认端到端冲突处理和外部补偿正确性
-  **进一步探讨**：隔离数据库中用两客户端同版本更新并回读，再注入远端成功本地失败
+- 未覆盖各 API 入口的完整状态转换授权矩阵
+  **影响**：不能将本地版本校验当作组织权限或代理隔离
+  **进一步探讨**：用两个独立调用者请求同版、最新版、不同绑定和完成操作，比较 CLI 和直接请求
 
 <a id="research-q03"></a>
 
-<a id="detail-section-17"></a>
+<a id="detail-section-13"></a>
 
-### Q03 · 任务协议的增量是什么，能否约束成果质量？
+### Q03 · 本地与共享部署需要什么，升级和退出有何负担？
 
-**研究主题**：贡献与相对优势、缺陷与关键质疑、工程质量与复用
+**研究主题**：依赖、兼容与流程、效果与总成本、工程质量与复用
 
 #### 完整回答
 
-相对手工列表，源码与Skill把版本冲突、会话占有、需求重读和用户接受明确拆开，尤其把in_review与done区分，能减少会话间接手时不知谁在做及旧状态覆盖的风险。乐观并发是成熟机制，这里的贡献是将它与AI任务交接约束连接，不能算新数据库算法。最关键质疑是成果是否合格仍取决于真实验证和用户接受；状态值与评论并不自动包含代码、测试、验收的充分证据。绕过Skill直接写API或模型不遵守流程都可能使记录与实际进展偏离。把任务改为done不代表测试通过，数据库的VERSION_CONFLICT只保护读写版本，不保护业务结论真实。
+根包是带浏览器 UI、HTTP 服务、SQLite 和 CLI 的独立产品，Node 版本由 package.json 约束；Codex 嵌入另有启动方式。直接启动默认绑定 0.0.0.0，README 从浏览器使用 127.0.0.1 不会改变监听范围。服务在有实例 token 时才加路径前缀，并单独检查网络请求及本机能力路由。云模式文档把业务数据交给 D1，设备映射留在 loopback companion，失败不切换 SQLite；共享密码和本机路径维护另有负担。本提交带浏览器测试脚本与协作场景断言，可借用作回归用例，但没有运行。退出需先停止服务、备份数据库和附件，独立评估云数据与设备映射，不能期待注销时自动合并。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[skills/manage-taskboard/SKILL.md:32-49](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/skills/manage-taskboard/SKILL.md#L32-L49)
+**依据 1 · 源码核查**：[package.json:2-15](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/package.json#L2-L15)
 
-交接边界、有限重试和五字段绑定明确体现流程贡献。
+根包为 private 独立包，提供 CLI 和启动脚本。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（14行）</summary>
+
+```text
+  "name": "codex-taskboard",
+  "version": "1.1.27",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^22.22.3 || >=24.8.0"
+  },
+  "bin": {
+    "taskctl": "./cli/taskctl.mjs"
+  },
+  "scripts": {
+    "codex": "node scripts/codex-injector.mjs --launch --watch --open --port 9231",
+    "codex:inject": "node scripts/codex-injector.mjs --watch",
+    "codex:daemon": "node scripts/codex-injector.mjs --daemon --open",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[server/app.mjs:1367-1382](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/app.mjs#L1367-L1382)
+
+默认监听地址、实例路由前缀和数据库初始化。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+export function resolveHost(value = process.env.CODEX_TASKBOARD_HOST ?? "0.0.0.0") {
+  const host = String(value).trim();
+  if (host !== "127.0.0.1" && host !== "0.0.0.0") {
+    throw new Error("CODEX_TASKBOARD_HOST must be 127.0.0.1 or 0.0.0.0");
+  }
+  return host;
+}
+
+export function createTaskboardServer(options = {}) {
+  const resolved = resolveServerOptions(options);
+  const codexProcessEnvironment = withoutTaskboardLauncherEnvironment(
+    options.processEnv ?? process.env,
+  );
+  const routePrefix = resolved.instanceToken ? `/${resolved.instanceToken}` : "";
+  const database = new TaskboardDatabase(resolved.databasePath);
+  const events = new EventHub();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[server/app.mjs:1731-1755](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/app.mjs#L1731-L1755)
+
+实例 token 前缀和可信网络请求检查。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+      const incomingUrl = new URL(request.url, "http://127.0.0.1");
+      if (resolved.instanceToken && incomingUrl.pathname !== "/health") {
+        if (incomingUrl.pathname === routePrefix) {
+          response.writeHead(301, { location: `${incomingUrl.pathname}/${incomingUrl.search}` });
+          response.end();
+          return;
+        }
+        if (
+          incomingUrl.pathname !== routePrefix
+          && !incomingUrl.pathname.startsWith(`${routePrefix}/`)
+        ) {
+          throw new ApiError(404, "NOT_FOUND", "Route not found");
+        }
+        request.url = `${incomingUrl.pathname.slice(routePrefix.length) || "/"}${incomingUrl.search}`;
+      }
+
+      const configuredTrustedRequest = assertTrustedNetworkRequest(
+        request,
+        Boolean(resolved.instanceToken),
+        resolved.trustedOrigins,
+      );
+      const origin = request.headers.origin;
+      const trustedEmbedOrigin = TRUSTED_EMBED_ORIGINS.has(origin)
+        || (Boolean(resolved.instanceToken) && origin === "null");
+      if (trustedEmbedOrigin) {
+```
+
+</details>
+
+**依据 4 · 作者声明**：[docs/cloud-collaboration.md:23-29](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/docs/cloud-collaboration.md#L23-L29)
+
+项目文档定义设备与云业务数据边界和不回落策略。
+
+```text
+## What stays local
+
+The cloud stores project, issue, comment, relation, and attachment data. It does not store a device's absolute project or worktree paths.
+
+Each collaborator runs the **local companion**: a **device-local loopback service** (not a chat persona) for Codex, Git/worktree scanning, installed Skill/MCP discovery, and project path mapping. The companion keeps the cloud URL, actor name, shared password, and device-specific project mappings in `.data/cloud-companion.json` with mode `0600`. Ordinary Taskboard HTTP routes (tasks, comments, attachments) are the shared API; they are not a separate “companion API”.
+
+When cloud mode is active, the cloud is the only business-data source. A failed cloud request fails visibly. The companion does not fall back to the local SQLite database and does not write to both databases. `taskctl cloud logout` returns that device to its separate local mode; it does not merge local and cloud data.
+```
+
+**依据 5 · 源码核查**：[tests/collaboration.e2e.ts:6-43](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/tests/collaboration.e2e.ts#L6-L43)
+
+测试源码覆盖评论变更和附件下载内容的断言。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+test('comment create, edit, delete and issue attachment upload, download, delete', async ({ app, screen, browser }) => {
+  await app.open('/?lang=en');
+  await createProject(screen, 'E2E comments and files');
+  await createIssue(screen, 'Discussion issue');
+  await openIssue(screen, 'Discussion issue');
+  await screen.getByRole('textbox', 'Leave a comment').fill('Initial comment');
+  await screen.getByRole('button', 'Comment').tap();
+  await expect(screen.getByText('Initial comment')).toBeVisible();
+  await screen.getByRole('button', 'Comment actions').tap();
+  await screen.getByRole('menuitem', 'Edit comment').tap();
+  await screen.getByRole('textbox', 'Edit comment').fill('Updated comment');
+  await screen.getByRole('button', 'Save').tap();
+  await expect(screen.getByText('Updated comment')).toBeVisible();
+  await browser.reload();
+  await expect(screen.getByText('Updated comment')).toBeVisible();
+  // Issue attachments live inline in the description: add the file in the
+  // description composer, then leave the composer (the Activity heading is a
+  // neutral blur target) so it saves and renders as an attachment card.
+  await screen.getByRole('button', 'Edit issue description').tap();
+  await browser.locator('.issue-description-composer input[type=file]').setInputFiles(attachmentFixture);
+  // The chip's remove control is revealed on chip hover, like the relation rows.
+  await browser.locator('.inline-media-attachment').filter({ hasText: 'attachment.txt' }).hover();
+  await expect(screen.getByRole('button', 'Remove attachment.txt')).toBeVisible();
+  await screen.getByRole('heading', 'Activity').tap();
+  await expect(screen.getByRole('link', /attachment\.txt/)).toBeVisible();
+  const downloaded = await browser.waitForDownload(() => screen.getByRole('link', /attachment\.txt/).tap());
+  expect(await readFile(downloaded.absolutePath, 'utf8')).toBe('Dashi E2E attachment fixture\n');
+  // The saved card fills the read view, so a tap would land on its link; open
+  // the editor through the read view's own Enter shortcut instead.
+  await screen.getByRole('button', 'Edit issue description').press('Enter');
+  await browser.locator('.inline-media-attachment').filter({ hasText: 'attachment.txt' }).hover();
+  await screen.getByRole('button', 'Remove attachment.txt').tap();
+  await screen.getByRole('heading', 'Activity').tap();
+  await expect(screen.getByRole('link', /attachment\.txt/)).toBeHidden();
+  await screen.getByRole('button', 'Comment actions').tap();
+  await screen.getByRole('menuitem', 'Delete comment').tap();
+  await screen.getByRole('alertdialog').getByRole('button', 'Delete comment').tap();
+  await expect(screen.getByText('Updated comment')).toBeHidden();
+```
+
+</details>
+
+#### 缺口
+
+- 未运行局域网、云或浏览器测试
+  **影响**：不确定不同部署环境的防护与故障恢复
+  **进一步探讨**：隔离配置验证远端来源拒绝、断网行为和附件备份恢复
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 什么团队值得试，怎样验证额外的认领约束？
+
+**研究主题**：采用判断、新假设与验证
+
+#### 完整回答
+
+使用 Codex 且反复在人工和代理间交接任务的小团队，可在本机 loopback 的一次性项目试用共享 UI 与 CLI。第一轮只做两个调用方的同版本认领、补充验收及显式完结；若无法解释直接请求的权限或同版本失败后数据出现分歧，停止试用并沿用原看板。进一步可尝试由服务端绑定操作者、当前任务版本和允许的状态转换，补足客户端自律边界。对照现状重放双认领、更新要求和恶意用最新版关闭三种情况；若合法接续受损而越权状态变化未减少，假设失败。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[server/database.mjs:2012-2024](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/server/database.mjs#L2012-L2024)
+
+当前约束是版本比较与条件写入，可作对照。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+    assignments.push("version = version + 1", "updated_at = ?");
+    const timestamp = now();
+    values.push(timestamp, current.id, version);
+
+    this.database.exec("BEGIN IMMEDIATE");
+    try {
+      const result = this.database.prepare(`
+        UPDATE tasks SET ${assignments.join(", ")} WHERE id = ? AND version = ?
+      `).run(...values);
+      if (result.changes !== 1) {
+        this.#throwMissingOrConflict(id, version);
+      }
+      if (Object.hasOwn(changes, "description")) {
+```
+
+</details>
+
+**依据 2 · 源码核查**：[skills/manage-taskboard/SKILL.md:32-38](https://github.com/chuspeeism/dashi-taskboard/blob/bdf7698f6c3f3737a65377814dbb9db7ce81ea38/skills/manage-taskboard/SKILL.md#L32-L38)
+
+客户端现行规范界定认领与人验收语义。
 
 ```text
 1. For an existing issue, first run `issue get` and `comment list`. Also run `attachment list --task`. On the first handoff, omit `--after` and read the full results. Keep the separate `nextCursor` from each list. When the same task resumes, run `issue get` again, then pass each saved cursor to its matching list with `--after` so only new or modified entries are returned. Comment lists include the attachments on returned comments; use `attachment list --comment` with its own cursor when a known comment attachment list can grow. Read the description and latest comments before deciding whether to start. Treat comments as current requirements, including returned work. If they say to wait, not execute, or not start now, stop and report without changing the status.
@@ -379,173 +597,12 @@ HTTP输入到任务来源与绑定解析。
 5. Execute only the requested work in the issue's branch or worktree when one is bound.
 6. Verify the requested operation path. Add a comment with the changes, verification result, outcome, and remaining risks. Read the issue again, then move it to `in_review` with its current `version`.
 7. Move an issue to `done` only after the user explicitly accepts it or asks to complete it. Use `blocked` when work cannot continue and `canceled` when it will not continue.
-
-## Other operations
-
-- Run `taskctl project readme get [PROJECT_ID]` to inspect project architecture, constraints, and conventions before planning or executing complex tasks.
-- Keep the project README focused on root overview and conventions; store detailed multi-page documentation in the local repository's `docs/` folder.
-- Preserve existing issue scope when adding requirements or acceptance details.
-- Add only relations that the work requires. Use parent for contained work, blocks or blocked_by for dependencies, and related for close association.
-- For Codex controller attribution, let `taskctl` read `CODEX_THREAD_ID` or pass the exact Codex conversation ID with `--thread-id`. This value alone is not a complete task binding. For Claude Code, Pi, AGY, or Grok session traceability, pass `--agent-platform claude|pi|agy|grok --session-id ID` instead; see [CLI session traceability](references/cli.md#external-toolsession-traceability). External metadata is not a Codex ownership binding and never substitutes for the five fields below.
-- Any issue that the current conversation claims or continues must store a complete `threadBinding`: `threadId`, `codexProjectId`, `codexProjectKind`, `codexHostId`, and `workspacePath`. For an unbound local issue launched with injected Taskboard context, use the current `CODEX_THREAD_ID`, the injected project id and workspace path, `local` project kind, and `local` host id. Pass all five explicit `--binding-*` options on the claim and every later `issue move` that retains ownership. If any identity field is unavailable, stop before moving the issue to `in_progress`; never create a legacy binding containing only `threadId`.
-- When an issue already has a complete `threadBinding`, preserve its exact five saved values on every status write. Do not rebuild or replace it from the current context, and never take over a binding owned by another conversation.
-- Use the latest returned `version` with `--if-version` for concurrent updates. On conflict, read the issue again and reconcile before retrying.
 ```
 
-</details>
+#### 缺口
 
-**依据 2 · 源码核查**：[server/database.mjs:2856-2862](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/database.mjs#L2856-L2862)
-
-版本校验只有写入一致性，不能外推为成果质量校验。
-
-```text
-  #requireVersion(task, expectedVersion) {
-    if (task.version !== expectedVersion) {
-      throw new ApiError(409, "VERSION_CONFLICT", "Task was changed by another client", {
-        expectedVersion,
-        actualVersion: task.version,
-      });
-    }
-```
-
-<a id="research-q04"></a>
-
-<a id="detail-section-18"></a>
-
-### Q04 · 本地服务和可选桌面注入需要承担哪些成本？
-
-**研究主题**：效果与总成本、依赖、兼容与流程
-
-#### 完整回答
-
-首次最小路径是Node 22.5以上、安装依赖、构建并启动本地HTTP服务，数据落在.data/taskboard.sqlite；桌面Tauri构建、Rust与平台SDK、CDP注入或云companion是不同可选路径，不应全压给只用浏览器者，也不能把源码发布脚本存在当构建成功。持续需维护数据库备份、服务和客户端兼容；AI任务调用费取决于接入模型，本轮没有价格和调用量。失败后首先确认服务与数据库位置，版本冲突按Skill重读协调且最多一次条件重试，不循环接管；浏览器直用是嵌入故障的退路。现金、人工、迁移和数据库恢复耗时未测，因此只适合有跨会话交接需求且能维护本地服务的人隔离试用。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:9-28](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/README.md#L9-L28)
-
-Node和本地运行最小路径及SQLite位置。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-````text
-## Requirements
-
-- Node.js 22.5 or newer
-- macOS App and DMG builds: Xcode Command Line Tools and Rust 1.88 or newer with the `aarch64-apple-darwin` and `x86_64-apple-darwin` targets. `npm install` installs the Tauri CLI used by this project.
-- Windows NSIS builds: the Microsoft Store Codex App, Rust 1.88 or newer, and Visual Studio Build Tools with the C++ workload and Windows SDK.
-
-## Run locally
-
-```bash
-npm install
-npm run build
-npm start
-```
-
-Open <http://127.0.0.1:47823>. The SQLite database is stored at `.data/taskboard.sqlite`.
-
-For development with live frontend reload:
-
-```bash
-npm run dev
-````
-
-</details>
-
-**依据 2 · 作者声明**：[README.md:74-101](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/README.md#L74-L101)
-
-CDP和启动器为可选嵌入路径，声明未运行。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-````text
-```
-
-After the new Codex window appears, run the injector in another terminal:
-
-```bash
-CODEX_TASKBOARD_HOST=127.0.0.1 \
-npm run codex:inject -- --port 9231 --open
-```
-
-Keep the injector terminal running while using the embedded panel. The original Codex window remains unchanged, and the new window receives the Taskboard sidebar entry. If port `9231` is occupied, use another port in both commands.
-
-### Recommended: launch an independent Taskboard window with one command
-
-Keep existing Codex windows open and run:
-
-```bash
-CODEX_TASKBOARD_HOST=127.0.0.1 npm run codex
-```
-
-This starts the local Taskboard service when needed. It reuses an open Codex with a reachable CDP renderer, opens Taskboard in the native browser panel of an ordinary Codex without CDP, or launches the official macOS Codex app with an independent profile and loopback-only port `9231` when no Codex is open. It injects a native-looking Taskboard entry after Plugins when CDP is available and keeps watching both the service and replacement renderers. Keep this command running while using the embedded panel. The launcher does not modify `ChatGPT.app` or its `app.asar`.
-
-The source launcher writes its authenticated endpoint to `.data/launcher-runtime.json`. A `taskctl` command installed with `npm link` reads this file by default, so a normal shell and a Codex task opened from the panel use the same Taskboard service without an extra environment variable.
-
-### macOS App: open and inject without a terminal
-
-For Tauri development, run:
-
-```bash
-````
-
-</details>
-
-**依据 3 · 源码核查**：[skills/manage-taskboard/SKILL.md:33-38](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/skills/manage-taskboard/SKILL.md#L33-L38)
-
-冲突重读、有限重试及失败停止。
-
-```text
-2. Treat `backlog` as not approved for execution. Unless the user explicitly authorizes that issue, do not claim it, move it to another status, or perform task work; its assignee alone is not authorization. If work may start, claim it before reading code, downloading attachments, analyzing the implementation, or doing any other task work. Move a claimable `todo` to `in_progress` with its current `version`; do not continue until the move succeeds. If it is already `in_progress`, continue only when it is bound to the current conversation. Never move an issue claimed by another conversation.
-3. If the move conflicts because the `version` is stale, run `issue get` and `comment list` again. Retry once with the latest `version` only when the issue is still a claimable `todo`, is not bound to another conversation, is not archived, and its description and latest comments are unchanged. If it was claimed, its status or requirements changed, it is archived, the service is unavailable, a permanent API error occurs, or the retry fails, stop and report. Never loop or take over another agent's claim.
-4. For a new durable requirement, run `context current`. Treat its project as a workspace match only when `project.workspacePath` is the current directory or one of its ancestors. An unmatched `local` project is the documented fallback, not proof that the requirement belongs in the global project. If the user named a target project or the working directory identifies one, run `project list`, select that exact project by id or name, and stop to ask if the result is ambiguous. Search existing project issues before creating one in that confirmed project, then pass its explicit id to `issue create`. Update a matching issue instead of creating a duplicate. Use the fallback only when the user explicitly wants the global project. Do not track trivial requests.
-5. Execute only the requested work in the issue's branch or worktree when one is bound.
-6. Verify the requested operation path. Add a comment with the changes, verification result, outcome, and remaining risks. Read the issue again, then move it to `in_review` with its current `version`.
-7. Move an issue to `done` only after the user explicitly accepts it or asks to complete it. Use `blocked` when work cannot continue and `canceled` when it will not continue.
-```
-
-<a id="research-q05"></a>
-
-<a id="detail-section-19"></a>
-
-### Q05 · 绑定交付证据和任务版本能否降低错误办结？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-未验证假设是把in_review时的代码revision、验证结果与需求版本作为一次接受包，并在任务随后修改时要求重新确认，可以减少“状态完成但交付对应旧需求”的错误。推导来自Q02的版本控制与Q03的成果语义缺口，增量在验收交接，不是再发明状态字段。最小试验取五个有中途需求变动的脱敏任务，对比现有评论流程和带版本的接受包，记录错配办结、人工修订时间与漏验项。若本来评论足够、接受包不减少错配或维护负担更高，停止产品化；尚无真实需求和付费意愿依据。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[skills/manage-taskboard/SKILL.md:35-38](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/skills/manage-taskboard/SKILL.md#L35-L38)
-
-要求验证评论和用户接受，但没有从状态直接证明交付。
-
-```text
-4. For a new durable requirement, run `context current`. Treat its project as a workspace match only when `project.workspacePath` is the current directory or one of its ancestors. An unmatched `local` project is the documented fallback, not proof that the requirement belongs in the global project. If the user named a target project or the working directory identifies one, run `project list`, select that exact project by id or name, and stop to ask if the result is ambiguous. Search existing project issues before creating one in that confirmed project, then pass its explicit id to `issue create`. Update a matching issue instead of creating a duplicate. Use the fallback only when the user explicitly wants the global project. Do not track trivial requests.
-5. Execute only the requested work in the issue's branch or worktree when one is bound.
-6. Verify the requested operation path. Add a comment with the changes, verification result, outcome, and remaining risks. Read the issue again, then move it to `in_review` with its current `version`.
-7. Move an issue to `done` only after the user explicitly accepts it or asks to complete it. Use `blocked` when work cannot continue and `canceled` when it will not continue.
-```
-
-**依据 2 · 源码核查**：[server/database.mjs:1908-1916](https://github.com/chuspeeism/dashi-taskboard/blob/9aa1f4e7936d841748ed4e0fc7781b57ae6ae6cc/server/database.mjs#L1908-L1916)
-
-任务版本可作为绑定点，新增接受包尚未实现。
-
-```text
-  updateTask(id, version, changes, threadId, threadBinding, actor, agentSession) {
-    const current = this.#requireTaskRecord(id);
-    this.#requireVersion(current, version);
-    const activityChanges = taskFieldChanges(current, changes);
-    const targetProject = Object.hasOwn(changes, "projectId")
-      ? this.database.prepare("SELECT id, name, workspace_path, labels FROM projects WHERE id = ?").get(changes.projectId)
-      : null;
-    if (Object.hasOwn(changes, "projectId") && !targetProject) {
-      throw new ApiError(404, "PROJECT_NOT_FOUND", `Project '${changes.projectId}' does not exist`);
-```
+- 尚未验证身份绑定能否覆盖本地与云两套角色
+  **影响**：无法估计集成成本或续接阻塞
+  **进一步探讨**：先用两类调用者构造权限矩阵，再测合法移交和可恢复故障
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

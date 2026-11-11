@@ -17,6 +17,7 @@
 | [AI Novel Writer for DeepSeek Harness](#plugin-1275436512-plugins-dsh-ai-novel-writer) | 在DSH Web管理本地小说项目，通过V1单资产审批或V2人审提案协作写作。 | 新用户观察冻结版本，先核兼容/备份恢复；已有用户在独立副本核read-propose-human apply-read，逐item核状态，不以Git替代DB备份。 |
 | [Answer me with HTML](#plugin-1401476500-root) | 将 Agent 的短 Markdown 草稿与图关系渲染为单页 HTML，DSH bundle 安装文件系统 Skill。 | [Q04](../../plugins/qingyuna--answer-me-with-html/INSIGHT.md#research-q04) 先用非敏感项目对比原流程，按合格交付计事实差错、用时、输入及输出 token。 |
 | [Atlas Cloud Skills](#plugin-1175716983-root) | 提供 Atlas Cloud 多媒体生成指南、视频提示技能和示例工作流。 | [Q04](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q04) 建议先核素材许可、服务政策和预算，使用非敏感小样；任务状态未知时保留 ID 回查，不盲目新提交。 |
+| [Awesome GPT-Image2](#plugin-1220744720-root) | 收录 GPT-Image2 画廊案例和工业提示词模板，并提供辅助选择模板与风格的 Skill。 | [Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04) 先用一份商品海报简报对比两种写法，再按文案、比例、构图和返工次数决定是否继续参考。 |
 | [DeepBlend Studio Bundle](#plugin-1368481604-packages-deepblend-bundle) | 组合 DSH 中的 Blender runtime、业务 host 与工作台。 | [Q03](../../plugins/pearjelly--deep-blend--packages-deepblend-bundle/INSIGHT.md#research-q03) 固定 DSH、Node、Blender 和视频工具版本，使用独立工作目录与最小场景。 |
 | [DeepSeek Design 分发与贡献入口](#plugin-1335095892-root) | 组织面向 DSH 的 Design、PPT 和 Video 可视化创作插件与上游源码。 | 核对完整许可和具体包版本，先在隔离样例验收，异常时回原设计工具。 |
 | [DeepSeek iDesign](#plugin-1335095892-packages-deepseek-idesign) | 在 DSH 对话中提供 iPolloWork Design Studio 可视化设计视图。 | 核对宿主与许可，用测试工作区验证草稿及并发保存；异常回原工具。 |
@@ -38,12 +39,12 @@
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | [Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
-| [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中接入图像和异步视频生成渠道，统一管理任务、历史与画布，并支持本地拼接和代码渲染。 | 先观察并核清代码执行隔离和远端账单；不要把本地取消当止费，也不要把VM注释当安全验收。 |
-| [dsh-infinite-canvas](#plugin-1412882758-root) | 在 DSH 中以节点画布组织剧本、分镜、媒体生成和成片预览，并连接后期工具。 | 先保留原素材，单项目逐节点验证真实生成、任务恢复、媒体迁移和一个后期工程；记录费用与返工再决定是否扩大，当前观察。 |
+| [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中提供图片与视频生成、编辑、画布节点和本地片段拼接。 | [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04) 先保留观察结论，核对异步任务账本和可终止渲染，再考虑付费工作流。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
 | [dsh-markdown-live](#plugin-1426477683-root) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | 经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。 |
 | [dsh-media-studio](#plugin-1399694663-root) | 在 DSH 会话生成或发送图片与视频，并提供内联预览和后台推送。 | [Q03](../../plugins/1497105876--dsh-media-studio/INSIGHT.md#research-q03) 先用可披露素材和测试模型核对同步，再检查后台是否可追踪。 |
 | [dsh-mimotts](#plugin-1397477851-root) | 为 DSH 助手回复合成语音，提供内联播放器、语音历史和工作区 WAV 工具。 | [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 先用可披露文本，核对音频、索引和失败再扩大使用。 |
+| [dsh-novel-forge 小说锻炉](#plugin-1366449702-root) | 为 DeepSeek Harness 提供中文长篇写作的细纲、设定账本、章节检查与版本管理。 | [Q04](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q04) 从隔离项目的一章对照开始，能解释拒绝与版本结果后再考虑扩大。 |
 | [dsh-oil-creator](#plugin-1339110580-root) | 为 DSH Desktop 提供本地内容工作台，组织选题脚本、录屏工程、字幕封面、视觉审查与发布状态。 | [Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03)复制小库仅核心片库/脚本/自有会话trial，先预览不批量整理。 |
 | [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 将自动绿幕或手工抠像片段对齐并编码为桌宠动画，另提供 Safari 兼容素材派生。 | [Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04) 用隔离样片做第一段，保存旧产物并记录工具和人工成本。 |
@@ -60,7 +61,6 @@
 | [dsh-zh-ui](#plugin-1427300390-root) | 提供中文UI设计Skill、项目设计规范注入和静态zh_design_lint检查工具。 | 中文界面团队可在源码审查阶段试用，并以真实渲染和可访问性测试复核静态结果。 |
 | [EduWork Knowledge Studio](#plugin-1369398336-packages-dsh-knowledge-studio) | 在 DSH 工作区使用资料与模型创建、管理和学习多种内容成果。 | [Q05](../../plugins/ecnu--eduwork--packages-dsh-knowledge-studio/INSIGHT.md#research-q05) 建议先用公开短资料小批试作并逐题核对；来源、答案、权限或成本不符时停止并回人工制卡。 |
 | [ff-toolkit](#plugin-1205593265-root) | 将 FFmpeg 媒体处理操作封装为 Python 和模型可调用工具。 | [Q04](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q04) 先在隔离副本中关闭覆盖、使用新路径并检查结果；不接受权限或恢复边界时停止。 |
-| [GPT-Image2 提示词画廊](#plugin-1220744720-root) | 提供可浏览、复制的图像提示词案例、模板及衍生风格 Skill。 | [Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04) 先浏览和改写模板，生成另行核对。 |
 | [gzhflow](#plugin-1339888505-root) | 把公众号素材、写作、去AI味、配图、排版、推草稿和复盘组织为随包Skill，提供七个DSH工具调用本地脚本。 | 先观察。 |
 | [HTML Studio](#plugin-1237969184-root) | 独立的本地 HTML 与 Markdown 文档浏览、编辑和版本恢复工作台。 | 仅观察隔离副本上的写范围与恢复，继续用原编辑器管理真实文件。 |
 | [humanizer-ru](#plugin-1139128402-root) | 俄语编辑技能，减少模板腔并以事实锚点与可选本地脚本复核数字、名称、条件和语义强弱。 | [Q03](../../plugins/vladimir-human--humanizer-ru/INSIGHT.md#research-q03) 仅俄语、非敏感短文副本，先只分析再定点改，保留原文；核所有数字/归属/模态和checks，失真即回退，不适用语言不自动翻译。 |
@@ -84,6 +84,7 @@
 | [书童 Pagekin](#plugin-1275436512-root) | 本地优先的长篇小说桌面写作工作区，覆盖设定、蓝图、写稿、审稿、修稿和定稿。 | 长篇作者先用非敏感一章及独立备份试用，核候选/合并/定稿待发布/导出完整链。 |
 | [催更姬](#plugin-1389035449-root) | 在 DSH 中编辑小说正文、规划情节并管理人物世界设定，支持按需查阅、版本历史与作品数据管理。 | 已有DSH且愿意维护人物和规划资料的长篇作者，可在新建副本库先试修订一章：核对维护ready、作品ID和revision，用唯一patch保存后回读正文及历史，再检查关联资料。 |
 | [大肥鱼的小说工坊](#plugin-1337043852-root) | 用阶段门禁、设定注入和版本归档管理连载小说 | [Q04](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q04) 先用虚构三章验证门禁、预算与导出。 |
+| [无限画布（Infinite Canvas）](#plugin-1412882758-root) | 在 DSH 中用节点画布组织短剧剧本、分镜、图像与视频生成，并衔接后期交付。 | 保留观察。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -164,6 +165,22 @@
 > **建议**：[Q05](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md#research-q05) 提出覆盖直接脚本提交与重试的预算和恢复状态提示；若不能改善决策或代价过高则否定。
 
 [查看完整分析](../../plugins/atlascloudai--atlas-cloud-skills/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1220744720-root"></a>
+
+## [Awesome GPT-Image2](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
+
+[![GitHub ★ 35,670](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C670&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
+
+> **用途**：经常制作商品海报和活动视觉的编辑可以查找模板、保留案例号并交接一份待审阅的提示词。
+
+> **亮点**：[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01) 将按类别选例、提示词分块和案例号交接连成一条可查路径，便于编辑复用构图与文案约束。
+
+> **思考**：[Q02](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q02) 专题的复刻只给出单次结果，原图条件和工具返回模型 ID 缺失限制了模型归因。
+
+> **建议**：[Q04](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q04) 图片旁直接标出未知模型与原图条件，可能减少将复刻误读为版本排名的情况，需用归因题和提示词查找任务验证。
+
+[查看完整分析](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1368481604-packages-deepblend-bundle"></a>
 
@@ -505,33 +522,17 @@
 
 ## [dsh-imagegen-video](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md)
 
-[![GitHub ★ 73](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=73&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/q253595422/dsh-imagegen-video) [![npm 30d 6,009](https://img.shields.io/static/v1?label=npm+30d&message=6%2C009&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video)
+[![GitHub ★ 90](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=90&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/q253595422/dsh-imagegen-video) [![npm 30d 8,815](https://img.shields.io/static/v1?label=npm+30d&message=8%2C815&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video)
 
-> **用途**：反复生成和整理图片/短视频的DSH用户可研究统一渠道、任务和历史入口，成品质量仍需人工核对。[Q01](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q01)
+> **用途**：反复在 DSH 创作短片的用户可观察统一规划、提交、恢复和历史路径，成片仍需逐条验收。
 
-> **亮点**：把模型图像/视频结果汇入同一历史和创作工作流，并把视频远端ID用于恢复、将本地取消与远端状态分开；这是适配与流程组织，不是生成模型创新。[Q01](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q01) [Q03](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q03)
+> **亮点**：[Q01](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q01) 把镜头规划、渠道模型和任务历史接成同一工作流，[Q02](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q02) 保存远端 ID 供恢复轮询。
 
-> **思考**：当前视频远端取消全部不支持，而本地代码实际帧函数不受创建阶段vm timeout抢占；因此本地取消/超时显示不能被理解为停止计费或终止任意代码。[Q03](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q03) [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04)
+> **思考**：[Q02](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q02) 本地取消无法确认远端停止，pending 写入有异步窗口。[Q03](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q03) 同步帧函数不能由前置预算检查抢占。
 
-> **建议**：将远端任务账本和可强制终止的隔离渲染分开验收，可能降低重复付费与无法收口的恢复负担；须同故障轨迹比较，尚未实现或验证。[Q05](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q05)
+> **建议**：[Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04) 远端操作账本与可终止的独立渲染进程分别接受故障验收，可能减少重复提交和宿主阻塞。
 
 [查看完整分析](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1412882758-root"></a>
-
-## [dsh-infinite-canvas](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md)
-
-[![GitHub ★ 107](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=107&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NINKCH/dsh-infinite_canvas) [![npm 30d 8,312](https://img.shields.io/static/v1?label=npm+30d&message=8%2C312&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas)
-
-> **用途**：连续短片创作者在同一项目中维护设定、分镜与媒体引用，结合对话改节点并在画布查看结果。[Q01](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q01)
-
-> **亮点**：把创意、设定、节点引用、迭代生成和后期交接集中于DSH，减少手工搬运并保留可见中间状态；已查公共编排和代表分支。[Q01](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q01)
-
-> **思考**：单个运行槽读取即清空，触发不等于已运行，超时也不是失败；工作区文档与媒体分开，CLI工程交接未证明最终渲染，尚不支持无人值守采用。[Q02](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q02) [Q03](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q03)
-
-> **建议**：未验证方向是runId持久队列及消费确认，替代单槽与文档时间归因；断连和双触发若仍错绑或引入重扣费就否定。[Q03](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q03)
-
-[查看完整分析](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1334395883-root"></a>
 
@@ -596,6 +597,22 @@
 > **建议**：[Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 让历史更新可串行提交，并区分上游成功和保存失败。
 
 [查看完整分析](../../plugins/1497105876--dsh-mimotts/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1366449702-root"></a>
+
+## [dsh-novel-forge 小说锻炉](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md)
+
+[![GitHub ★ 43](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=43&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/huangziyuan-general/dsh-novel-forge) [![npm 30d 9,896](https://img.shields.io/static/v1?label=npm+30d&message=9%2C896&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-novel-forge) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-novel-forge)
+
+> **用途**：连载作者可用一章样稿验证细纲、角色状态、章节冲突和版本回读。
+
+> **亮点**：[Q01](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q01) 把细纲、账本和文本规则放在新版本前判定，拒绝原因可以独立核对。
+
+> **思考**：[Q02](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q02) 人工与模型入口规则不同，[Q03](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q03) 正文和进度分开落盘，不能用一项成功确认全章。
+
+> **建议**：[Q05](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q05) 为每次写章记录可回查提交状态，可能减少部分完成后盲目续跑。
+
+[查看完整分析](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339110580-root"></a>
 
@@ -852,22 +869,6 @@
 > **建议**：[Q05](../../plugins/inthepond--ff-toolkit/INSIGHT.md#research-q05) 假设显式覆盖确认和清理临时清单能减少损失，需实测。
 
 [查看完整分析](../../plugins/inthepond--ff-toolkit/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1220744720-root"></a>
-
-## [GPT-Image2 提示词画廊](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md)
-
-[![GitHub ★ 35,459](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35%2C459&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/freestylefly/awesome-gpt-image-2)
-
-> **用途**：需要为商业图或插画找提示词参考的人可查画廊。
-
-> **亮点**：[Q01](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q01) 把模板和样例整理为可复用结构。
-
-> **思考**：[Q03](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q03) 单次复刻且条件不齐，无法推断模型质量。
-
-> **建议**：[Q05](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md#research-q05) 比较模板对一次合格率的影响。
-
-[查看完整分析](../../plugins/freestylefly--awesome-gpt-image-2/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339888505-root"></a>
 
@@ -1237,8 +1238,24 @@
 
 [查看完整分析](../../plugins/akira399--dsh-novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1412882758-root"></a>
+
+## [无限画布（Infinite Canvas）](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md)
+
+[![GitHub ★ 143](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=143&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/NINKCH/dsh-infinite_canvas) [![npm 30d 11,413](https://img.shields.io/static/v1?label=npm+30d&message=11%2C413&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@ninkch/dsh-infinite-canvas)
+
+> **用途**：反复制作多个场次、需要复用角色和场景设定的 DSH 用户，可以在画布上同时检查分镜、生成节点及上游关系。
+
+> **亮点**：把项目设定、可见节点和分镜检查接入宿主动作，使拆场、重做一段及人工核查共享同一份可检查的图。当前证据支持工作流结构，成片质量需单独验证。[Q01](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q01)
+
+> **思考**：报价只要见到任意相连视频就把该场计为零新增调用，实际续跑仍可补缺段。批准也不绑定单价，无法用预算指纹证明请求与金额都受控。[Q02](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q02)
+
+> **建议**：将具体剩余段、模型和价格写入审批依据，由生成器执行同一清单，并将超时未知作为待查。用部分完成和上游已受理的故障对照，若报价外或重复请求不降且正常续跑变差，就撤回。[Q04](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md) · [返回表格](#category-index)
+
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-10
+2026-11-11

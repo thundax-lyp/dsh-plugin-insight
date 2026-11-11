@@ -1,18 +1,18 @@
-# dsh-bili-subagent
+# 刷 B 站（子代理版）
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[efae852](https://github.com/Yuuyuko-uu/dsh-bili-subagent/tree/efae852a276b7b120ca9d8ef6cd5080da3023005)
+源码版本：[1297336](https://github.com/Yuuyuko-uu/dsh-bili-subagent/tree/129733635f1cc04da27c6e0700c853c81637afd5)
 
 <!-- BEGIN META -->
-[![GitHub ★ 99](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=99&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-bili-subagent) [![npm 30d 6,568](https://img.shields.io/static/v1?label=npm+30d&message=6%2C568&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-subagent) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-subagent)
+[![GitHub ★ 108](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=108&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-bili-subagent) [![npm 30d 9,155](https://img.shields.io/static/v1?label=npm+30d&message=9%2C155&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-subagent) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-bili-subagent)
 <!-- END META -->
 
-> **功能**：让 DSH 伙伴派子代理检索和阅读 B站内容，再依据设置整理报告及评论或私信。
+> **功能**：让 DSH 伙伴派子代理搜索 B 站、阅读字幕与评论，形成内部报告并按配置传递给用户。
 
-> **亮点**：把看视频形成内部报告与父伙伴组织表达分开，并在固定会话中触发；这是工作分工增量，不证明推荐价值或无额外模型成本。[Q01](#research-q01)
+> **亮点**：把内容阅读和伙伴表达分开，并把自动触发与通知接进已有会话。合格报告仍要人工抽核字幕与出处。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：自动日额度只确认触发已接受，评论调用返回结果后，无论返回成功或失败即放行私信；若调用抛错则不会走到清空语句；回复可绕过新评论门槛，MCP超时也不取消远端发送，不能把配置名当端到端交付保证。[Q02](#research-q02)
+> **主要限制**：force 和 rpid 可绕过部分发布开关，手动扫描也不关闭独立动态调度。评论业务失败仍可清除私信挂账，开关、授权和送达必须分别核对。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,9 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · bili_scan如何派活并把结果交回伙伴？](#detail-section-11)
-  - [Q02 · 调度、评论与私信的门槛和失败状态是什么？](#detail-section-12)
-  - [Q03 · 采用成本及未来验证应怎样限制？](#detail-section-13)
+  - [Q01 · 子代理看、伙伴说，比手工收藏和转述多什么？](#detail-section-11)
+  - [Q02 · 触发、子任务和通知如何记账？](#detail-section-12)
+  - [Q03 · 对外写操作开关是否等同授权和成功？](#detail-section-13)
+  - [Q04 · 怎样采用和验证逐次确认？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -38,80 +39,70 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：希望伙伴筛选B站内容的用户可研究阅读与投递分工，合格推荐应可核对视频且消息状态清楚。[Q01](#research-q01)
+> **用途**：长期与 DSH 伙伴聊天、希望定期获得有来源的视频线索的人，可把内容筛选接入同一会话。
 
-人工检索分享或独立日报脚本更直接；本组件从上游fork出父子Agent分工，底层API与MCP仍有继承归属。
+手工收藏和转述能逐条确认，日报聚合也能筛选信息。本组件沿用上游 fork，组合差异是伙伴派活和会话内报告，原创范围未知。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-#### 能力
+**能力**
 
-| 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| bili_scan | 派子代理读视频并返回报告 | 子代理模型与宿主，completed不证明内容有效 |
-| bili_search | 按配置过滤播放量与发布时间 | 依赖Python MCP和B站响应 |
-| bili_reply | 发表或回复评论 | 新评论与回复guard不同，回执需核对 |
-| bili_send_message | 发私信 | UID及配置门槛，评论尝试非成功保证 |
-| 自动时钟 | 在目标会话触发伙伴 | 配额控制触发，不控制全部后续成本 |
+| 能力 | 用途 | 边界 |
+| --- | --- | --- |
+| 子代理阅读 | 搜索字幕并返回报告 | 需模型和平台读取成功 |
+| 提醒与调度 | 把任务和通知递给伙伴 | 成功投递不等于报告完成 |
+| 对外发送 | 评论与私信 | 开关例外和未知结果需核实 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=22与匹配DSH子代理/agents/llm/web服务 | 必需，声明/源码 | 派活、目标会话和设置 | 派活或加载失败 |
-| Python或uv和MCP依赖 | 内容操作必需 | 本地Python服务 | 子进程启动失败/请求超时 |
-| B站登录凭据与网络 | 对应操作必需 | 字幕、评论及发送 | 服务错误或风控，当前未验证 |
-| 主伙伴和子代理模型 | 阅读/表达必需 | 筛选和组织内容 | 花费与质量依所选模型 |
+| 依赖 | 用途 | 边界 |
+| --- | --- | --- |
+| DSH 及 subagents | 派活与伙伴会话 | Node ≥ 22、DSH ≥ 0.2.1-rc.2 是包声明 |
+| Python／uv 与 MCP | B 站读取和写操作 | 环境、登录和接口需另测 |
+| 模型提供商 | 伙伴及子代理调用 | 可单独配置，价格和可用性未知 |
 
-#### 启动步骤
+| 阶段 | 操作 | 异常处理 |
+| --- | --- | --- |
+| 首次 | 假 MCP 核对目标会话和报告；真实账号须先验证独立拒绝全部外部写入 | 无结果则分开查触发、派活和材料 |
+| 持续 | 抽查报告原文和通知 checkpoint | 不要把投递提示当成功报告 |
+| 退出 | 停调度与提醒，禁用写操作并备份必要状态 | 核对外部登录撤销、在飞任务及报告文件 |
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户核对依赖、登录与目标会话 | whoami状态及会话可用，不能推导推荐效果 |
-| 阅读 | 父伙伴调bili_scan | 子代理completed返回报告，失败可能含partial |
-| 投递 | 父伙伴按配置调用评论/私信 | 分清尝试、回执与接收方已读 |
-| 恢复 | 用户核对超时实际结果 | 不盲重发，分别关闭自动刷和独立输出设置 |
+**效果与成本**
 
-#### 成本
+| 成本 | 单位 | 边界 |
+| --- | --- | --- |
+| 模型 | 每个合格报告的伙伴轮次与子代理 token | 未实测，路由更便宜不等于免费 |
+| 人工 | 登录维护、字幕抽查、错误恢复 | 未知结果需平台核查 |
+| 退出 | 停提醒、收敛账户与备份状态 | 耗时未测 |
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | Python/uv和依赖下载，本地存储 | 登录、模型及会话配置，时间未知 | 不执行本次安装 |
-| 持续 | 父子模型、API轮询及笔记 | 复核有用性和发送状态 | 金额和每条合格推荐耗时未知 |
-| 失败恢复 | 额外请求和重复风险 | 核实超时和部分报告 | 超时不取消Python操作 |
-| 退出 | 凭据与笔记保留 | 逐项关闭自动功能再停用 | manual仅约束自动刷一条链 |
+| 效果 | 口径 | 边界 |
+| --- | --- | --- |
+| 获得线索 | 可回查字幕的有效报告数 | 搜索派活成功不等于材料真实 |
+| 少搬运 | 每份报告人工往返次数 | 未对照测量 |
 
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 阅读交接 | 子代理报告返回父伙伴 | 推荐价值和准确率 |
-| 日额度 | 控制自动触发次数 | 总模型预算或后续成功 |
-| 投递 | 有工具和部分回执检查 | 超时实际结果及端到端可靠性 |
-
-> **思考**：自动日额度只确认触发已接受，评论调用返回结果后，无论返回成功或失败即放行私信；若调用抛错则不会走到清空语句；回复可绕过新评论门槛，MCP超时也不取消远端发送，不能把配置名当端到端交付保证。[Q02](#research-q02)
+> **思考**：force 和 rpid 可绕过部分发布开关，手动扫描也不关闭独立动态调度。评论业务失败仍可清除私信挂账，开关、授权和送达必须分别核对。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把看视频形成内部报告与父伙伴组织表达分开，并在固定会话中触发；这是工作分工增量，不证明推荐价值或无额外模型成本。[Q01](#research-q01)
+> **亮点**：把内容阅读和伙伴表达分开，并把自动触发与通知接进已有会话。合格报告仍要人工抽核字幕与出处。[Q01](#research-q01) [Q02](#research-q02)
 
-主派活明确区分completed和partial、目标投递失败退额度并加冷却有助排障；发送链仍混合尝试和成功，MCP超时没有取消协议，需要持久待核实状态而非直接重试。
+提醒批次交付后才确认，busy 和失败退避减少读提醒重叠。自动配额、子代理完成和对外送达仍是不同状态，应分别观察。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-自动日额度只确认触发已接受，评论调用返回结果后，无论返回成功或失败即放行私信；若调用抛错则不会走到清空语句；回复可绕过新评论门槛，MCP超时也不取消远端发送，不能把配置名当端到端交付保证。[Q02](#research-q02)
+force 和 rpid 可绕过部分发布开关，手动扫描也不关闭独立动态调度。评论业务失败仍可清除私信挂账，开关、授权和送达必须分别核对。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-保持观察；如果后续试验，先只阅读报告且关闭全部发送相关功能，人工核对内容价值与费用，再单独安排投递验证。[Q03](#research-q03)
+保留观察。用假 MCP 核查一次报告和原材料；若连接真实账号，先验证工具层或独立代理拒绝全部外部写入，再做读取实验。扫描手动模式不能代替这层拒绝。报告失真或权限不可解释时停用。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +110,18 @@
 
 **核查状态**：已检查源码。
 
-派活、调度、发送guard与MCP失败机制已查源码；推荐效果及外部投递未验证，持久状态方案是假设。
+源码支持派子代理、回传报告和提醒去重。写入权限、业务回执、真实宿主及平台可用性未验，逐次确认是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、index.js、lib/mcp.mjs、vendor/bilibili-mcp/mcp_server.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 index.js、lib/watch.mjs、lib/mcp.mjs、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查主派活路径、自动时钟、评论/私信guard、本地MCP及Python发送回执；未完整审计旧宿主兜底、动态、自动安装、扫码登录或所有字幕接口。
-- 下一步：后续用固定视频和可控失败回执验证内容及状态；真实发送须另有明确任务，不在本研究执行。
+- 边界：定向核查固定宿主、派活、MCP、调度和提醒实现；未运行目标、登录 B 站或调用模型。
+- 下一步：用假 MCP 和宿主重放发布业务失败、已受理超时、独立动态调度、通知中断与子代理缺服务。只有独立拒绝全部对外写入已经验证时，才接真实账号核查读取。
 
 **分析版本**
 
 - **仓库**：[Yuuyuko-uu/dsh-bili-subagent](https://github.com/Yuuyuko-uu/dsh-bili-subagent)
-- **版本号**：0.9.8（[固定提交 efae852](https://github.com/Yuuyuko-uu/dsh-bili-subagent/tree/efae852a276b7b120ca9d8ef6cd5080da3023005)）
-- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.8（[固定提交 1297336](https://github.com/Yuuyuko-uu/dsh-bili-subagent/tree/129733635f1cc04da27c6e0700c853c81637afd5)）
+- **版本日期**：2026-11-07（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +129,9 @@
 
 <a id="innovation"></a>
 
-未验证假设是持久区分阅读、发送尝试和回执确认，并为超时保留待核实状态；失败/超时对照若不减少错报或重复，就否定这种状态设计。[Q03](#research-q03)
+可将发布改为目标与正文绑定的一次确认动作，响应超时先查发布结果，比较撤销和重复回调的写入数。控制未改善或阻断正常只读流程时撤回。[Q04](#research-q04)
 
-后续用固定视频和可控失败回执验证内容及状态；真实发送须另有明确任务，不在本研究执行。
+用假 MCP 和宿主重放发布业务失败、已受理超时、独立动态调度、通知中断与子代理缺服务。只有独立拒绝全部对外写入已经验证时，才接真实账号核查读取。
 
 <a id="detail-section-9"></a>
 
@@ -163,58 +154,78 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-bili-subagent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-bili-subagent/issues?q=is%3Aissue+created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-bili-subagent/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-bili-subagent/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-bili-subagent/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
+暂未获取：近30天关闭。
 
-
-统计日期：2026-11-05。
+统计日期：2026-11-11。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：伙伴派子代理看B站再投递的流程是否把阅读与发送分清，调度和外部依赖有哪些限制？
+**插件研究总目标**：让伙伴派子代理阅读视频，再决定如何说给用户听，有什么增量与授权边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · bili_scan如何派活并把结果交回伙伴？
+### Q01 · 子代理看、伙伴说，比手工收藏和转述多什么？
 
-**研究主题**：场景与需求、功能与机制、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-它面向希望DSH伙伴持续筛选B站内容、再自行组织回复的用户。简单替代是人工关注/检索并分享链接，或由独立脚本直接生成日报。本组件是上游dsh-bili-scroll的fork，贡献归于把阅读交给spawn子代理并把文本报告返回父会话；底层B站API与Python MCP不是新实现。bili_scan进入scanWith，选择配置的provider/model或继承当前会话，等待run.result，非completed返回部分结果和错误，completed后生成父伙伴投递提示并可追加本地报告。旧宿主缺startActivation另走新会话兜底，这条返回report而hint为空，不能认为所有路径具有相同后处理。合格结果是发现与用户相关、可核对原视频的内容，并正确处理发送状态；仅子代理完成不证明内容有价值或消息已投递。
+想让 DSH 伙伴定期代为筛 B 站内容、再以已有角色语气讨论的人，可把搜索和读字幕交给子代理，再由伙伴处理内部报告及后续对话。手工收藏可由本人逐条确认，独立摘要日报也能聚合信息，但不会自然进入指定伙伴会话。作者明确注明 fork 自 dsh-bili-scroll；这里按当前派活与报告接线描述组合增量，未核对上游固定提交，不能接受整个差异表为原创证明。合格结果须能回到被筛视频和原字幕，而非仅派活成功。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:5-10](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/README.md#L5-L10)
+**依据 1 · 作者声明**：[README.md:3-28](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/README.md#L3-L28)
 
-作者明确分工和fork归属。
+作者说明来源、分工和报告去向。
 
-```text
+<details>
+<summary>查看原文（26行）</summary>
+
+````text
+> **让你的 AI 伙伴自己去刷 B站，然后回来跟你说话。**
+>
 > 插件不再自己"跑一轮然后写一份日报给你看"——它只负责**派一个子代理去看**，
 > 子代理读字幕、翻评论、挑出值得的，写一份**给伙伴看的内部报告**；
 > 再由你的伙伴（你自己的 AI）**用自己的口吻**决定怎么告诉你：公开评论只写一两句勾人，私信可以详细。
 
 > **本仓库是 [c1overzz/dsh-bili-scroll](https://github.com/c1overzz/dsh-bili-scroll) 的改版（fork）**，
 > 基于它的 `0.1.10`，沿用 MIT 许可并保留原作者署名与 LICENSE。感谢原作者把底子打好。
+
+---
+
+## 它现在怎么干活
+
 ```
+到点（或你点「现在跑一轮」）
+   ↓
+插件往「你指定的那个会话」里塞一句（文案可在设置页改）：到谷时啦，去 B 站刷一轮吧～
+   ↓
+你的伙伴看到这句 → 调 bili_scan → 插件派出一个子代理
+   ↓
+子代理只负责「看」：搜视频 → 扫标题 → 看简介 → 读整段字幕 → 翻评论区
+   ↓
+交回一份内部报告（标题 / BV号 / 讲了什么 / 为什么值得 / 评论区反响）
+   ↓
+伙伴按设置决定怎么告诉你：评论 @ 你 ／ 私信你 ／ 两个都发
+```
+````
 
-**依据 2 · 源码核查**：[index.js:905-978](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L905-L978)
+</details>
 
-主派活、模型选择、旧接口兜底和completed判定。
+**依据 2 · 源码核查**：[index.js:910-961](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L910-L961)
+
+主入口拼接任务并通过 startActivation 将结果交给调用者。
 
 <details>
-<summary>查看原文（74行）</summary>
+<summary>查看原文（52行）</summary>
 
 ```text
-  const scanWith = async (parent, direction, exec, bvid = '') => {
-    const dir = String(direction || '').trim()
-      || (Array.isArray(cfg.keywords) ? cfg.keywords.filter(Boolean).join(' ') : '')
-      || '最近有什么值得看的'
-    if (!parent) return { ok: false, error: '没有可用的会话' }
     if (!ctx.subagents) return { ok: false, error: '这台 DSH 没有子代理能力（缺少 subagents 服务）' }
 
     // 手动刷不占「每天几条」的额度（那是自动刷的账）；每次最多挑这么几条
@@ -267,78 +278,13 @@
         signal: exec?.signal || new AbortController().signal,
         delivery: 'caller',
       })
-    } catch (e) {
-      扫描中 = Math.max(0, 扫描中 - 1)
-      return { ok: false, error: '派子代理失败：' + (e?.message ?? e) }
-    }
-    let result
-    try {
-      result = await run.result
-    } catch (e) {
-      try { await run.dispose() } catch {}
-      扫描中 = Math.max(0, 扫描中 - 1)
-      return { ok: false, error: '子代理跑失败：' + (e?.message ?? e) }
-    }
-    扫描中 = Math.max(0, 扫描中 - 1)
-    const output = (result?.output || []).filter((b) => b && b.type === 'text').map((b) => b.text).join('')
-    try { await run.dispose() } catch {}
-    if (result?.stopReason !== 'completed') {
-      return { ok: false, error: '子代理没正常跑完（' + (result?.stopReason || '未知') + '）' + (result?.diagnostic ? '：' + result.diagnostic : ''), partial: output }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:985-1020](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L985-L1020)
+**依据 3 · 源码核查**：[index.js:1128-1139](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1128-L1139)
 
-父伙伴投递提示与本地报告追加。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-    //    但下面拼「评论块」和 {commentQuota} 占位符时还在用它 ⇒ 必须定义，否则整条 bili_scan 直接抛
-    //    ReferenceError（2026-10-21 用户实测：自动评论关着时刷不起来，就是这个）
-    const commentQuota = Math.max(0, Number(cfg.commentPerRound ?? 1))
-    if (commentOn) pendingComment = { at: Date.now() }   // 记账：这轮欠一条评论
-    const dmOn = Boolean(cfg.dmMode !== 'off' && Number(cfg.dmUid) > 0)
-    // ⭐ 2026-10-24：评论「怎么写」交给可改的 commentPrompt；这里只保留**机制性**的话
-    //    （用哪个工具、楼中楼别手打 @）—— 那些是必须照做的，不该被改坏
-    const 口吻 = COMMENT_STYLES[Math.floor(Math.random() * COMMENT_STYLES.length)]
-    const 评论内容 = (String(cfg.commentPrompt || '').trim() || COMMENT_TMPL)
-      .split('{owner}').join(owner)
-      .split('{mention}').join(String(cfg.mentionName || ''))
-      .split('{quota}').join(String(commentQuota))
-      .split('{style}').join(口吻)
-    const 评论块 = '· **评论区 @（公开！除了 ' + owner + '，别人也看得到）**：这是**发**评论——必须用 `bili_reply` 工具真发一条，**不是**用 `bili_comment` 去读评论（读评论是子代理已经干过的事，跟这一步无关）。**设置里已经开着，直接调 bili_reply 就行，不用传 force**。'
-      + String.fromCharCode(10) + 评论内容
-      + String.fromCharCode(10) + '  · 回别人的评论（楼中楼）就别手打 @ 了，B站 会自己加「回复 @某某」。'
-    const 私信块 = '· **私信（只 ' + owner + ' 一个人看）**：用 bili_send_message 发**详细版**——开头先叫一声「' + owner + '，」再往下说；标题、BV号、视频讲了啥都可以细说，给 UID ' + Number(cfg.dmUid) + '。'
-    const 都要块 = '⚠️ **这两件都要做，别只做一件**：先调 `bili_reply` 把评论 @ 发了，再调 `bili_send_message` 发私信（没发评论之前，私信会被拒）。'
-    const 都不要块 = '报告拿给你了，你自己看着跟' + owner + '聊。'
-    // ⭐ 2026-10-21：投递提示改成「模板常驻」（设置页里显示的就是默认文案，不是留空）
-    const hintTpl = String(cfg.hintPrompt || '').trim() || HINT_TMPL
-    // ⭐ 私信转进来的那条：回法另写一套（只私信、不评论、不带 BV），不走上面那套模板
-    const hint = (私信回话 ? dmReplyHint(owner) : hintTpl)
-      .split('{owner}').join(owner)
-      .split('{mention}').join(String(cfg.mentionName || ''))
-      .split('{commentQuota}').join(String(commentQuota))
-      .split('{uid}').join(String(Number(cfg.dmUid) || 0))
-      .split('{commentBlock}').join(commentOn ? 评论块 : '')
-      .split('{dmBlock}').join(dmOn ? 私信块 : '')
-      .split('{bothBlock}').join(commentOn && dmOn ? 都要块 : '')
-      .split('{noneBlock}').join(!commentOn && !dmOn ? 都不要块 : '')
-      // 占位符留空后会剩下空行，收一下
-      .replace(/\n{3,}/g, '\n\n')
-      .split('\n').filter((x) => x.trim() !== '').join('\n')
-    // ⭐ 每一轮的报告都写回报告文件（设置页「看报告」能回看）；「日报写多细=不写」时跳过
-    if (level !== 'off') { try { appendFileSync(reportFileOf(), '\n\n---\n\n' + output + '\n', 'utf8') } catch {} }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:1128-1139](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L1128-L1139)
-
-工具入口实际调用doScan。
+实际注册 bili_scan 工具。
 
 <details>
 <summary>查看原文（12行）</summary>
@@ -360,26 +306,144 @@
 
 </details>
 
+#### 缺口
+
+- 未核对上游相同时间基线和实际阅读质量
+  **影响**：不能确定净优势或原创范围
+  **进一步探讨**：固定上游对应版本后逐项比较任务组织，并人工抽核报告与原字幕
+
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 调度、评论与私信的门槛和失败状态是什么？
+### Q02 · 触发、子任务和通知如何记账？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-自动时钟每60秒检查模式、日额度、谷时/全天、最短间隔与retryAfter，先记账再向目标会话agent.followup投递；投递false才回退额度并冷却10分钟。它计的是触发被接受，不是子代理、阅读或社会化投递全部成功，不能把额度退回解释成所有后续失败都会退。工具通过本地Python MCP发请求，超时仅删除pending并reject，没有向Python发送取消，因此发送超时后结果可能未知，直接重发可能重复。评论guard对新评论要求autoComment/mention或force，但带rpid的回复绕过这套门槛；“只私信”不是所有公开回复的硬禁令。pendingComment在调用评论后无论返回成功失败都清空，15分钟后也不再挡私信，所以“先评论再私信”是尝试顺序，不是评论已成功保证。Python私信检查回执msg_key/seqno，仍不能证明接收方已读。依赖DSH子代理/agents/llm/web与Python环境、登录凭据和B站网络，外部资格与风控未验证。
+自动轮按配置、时段、间隔与每日次数判断，先预占额度，再把触发递到伙伴会话；投递明确失败时恢复额度并加十分钟冷却。触发成功只证明提示进入会话，伙伴是否调用 bili_scan、子代理能否读到材料仍另有状态。新宿主走 startActivation 并等待 result，失败返回错误；subagents 服务存在但缺少 startActivation 时，才兜底创建会话、等轮末或十五分钟，再读日志末句，无法仅凭这一句证明整轮成功。若整个 subagents 服务缺失，入口在派活前直接报错。通知批次最多六项，投递返回 false 时不提交 checkpoint，单进程 busy 和失败退避避免读提醒重叠。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:2093-2148](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L2093-L2148)
+**依据 1 · 源码核查**：[index.js:942-977](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L942-L977)
 
-先记额度、跟随投递结果回退与冷却。
+新旧子代理路径和等待完成结果。
 
 <details>
-<summary>查看原文（56行）</summary>
+<summary>查看原文（36行）</summary>
+
+```text
+      if (!ctx.subagents || typeof ctx.subagents.startActivation !== 'function') {
+        log('这台 DSH 没有 subagents.startActivation，改用兜底：新建会话派活')
+        const 兜 = await 兜底派活(prompt, 子provider, 子model)
+        if (!兜.ok) {
+          扫描中 = Math.max(0, 扫描中 - 1)
+          return { ok: false, error: 兜.error }
+        }
+        return { ok: true, report: 兜.output, hint: '' }
+      }
+      run = await ctx.subagents.startActivation({
+        provider: 'spawn',
+        label: '刷B站：' + dir.slice(0, 20),
+        request: {
+          prompt: [{ type: 'text', text: prompt }],
+          parent,
+          ...(子provider && 子model ? { agentOptions: { provider: 子provider, model: 子model } } : {}),
+        },
+        signal: exec?.signal || new AbortController().signal,
+        delivery: 'caller',
+      })
+    } catch (e) {
+      扫描中 = Math.max(0, 扫描中 - 1)
+      return { ok: false, error: '派子代理失败：' + (e?.message ?? e) }
+    }
+    let result
+    try {
+      result = await run.result
+    } catch (e) {
+      try { await run.dispose() } catch {}
+      扫描中 = Math.max(0, 扫描中 - 1)
+      return { ok: false, error: '子代理跑失败：' + (e?.message ?? e) }
+    }
+    扫描中 = Math.max(0, 扫描中 - 1)
+    const output = (result?.output || []).filter((b) => b && b.type === 'text').map((b) => b.text).join('')
+    try { await run.dispose() } catch {}
+    if (result?.stopReason !== 'completed') {
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:851-902](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L851-L902)
+
+旧路径按轮末或超时等候，最终读日志文本。
+
+<details>
+<summary>查看原文（52行）</summary>
+
+```text
+  const 兜底派活 = async (prompt, 子provider, 子model) => {
+    if (typeof ctx.agents?.create !== 'function') {
+      return { ok: false, error: '这台 DSH 既没有 startActivation，也不能新建会话 —— 派不了' }
+    }
+    const sid = 'session-' + randomUUID()
+    let handle = null
+    try {
+      handle = await ctx.agents.create({
+        sessionId: sid,
+        meta: { cwd: stateDir },
+        ...(子provider && 子model ? { agentOptions: { provider: 子provider, model: 子model } } : {}),
+      })
+    } catch (e) {
+      return { ok: false, error: '新建会话失败：' + (e?.message ?? e) }
+    }
+    const agent = handle && handle.agent
+    if (!agent || typeof agent.followup !== 'function') {
+      try { handle?.dispose?.() } catch (e) {}
+      return { ok: false, error: '新会话没起来' }
+    }
+    let 完了 = false
+    const 等 = new Promise((res) => {
+      try {
+        agent.ctx.on('agent/turn-stopping', () => {
+          if (完了) return
+          完了 = true
+          setTimeout(res, 1200)
+        })
+      } catch (e) {}
+      setTimeout(() => {
+        if (!完了) {
+          完了 = true
+          res()
+        }
+      }, 15 * 60_000)
+    })
+    try {
+      await agent.followup({
+        id: randomUUID(),
+        role: 'user',
+        content: [{ type: 'text', text: prompt }],
+        source: { kind: 'plugin:bili-scan' },
+      })
+    } catch (e) {
+      try { handle?.dispose?.() } catch (err) {}
+      return { ok: false, error: '派活失败：' + (e?.message ?? e) }
+    }
+    await 等
+    const 出 = 读会话日志最后一句话(sid)
+    try { handle?.dispose?.() } catch (e) {}
+    if (!出) return { ok: false, error: '派出去的会话没交出结果（日志里没找到回复）' }
+    return { ok: true, output: 出 }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[index.js:2093-2145](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L2093-L2145)
+
+自动配额预占、投递及失败退款。
+
+<details>
+<summary>查看原文（53行）</summary>
 
 ```text
   const tick = () => {
@@ -435,71 +499,98 @@
               // ⭐ 0.9.1：额度和间隔都退回，但**加 10 分钟冷却** —— 不然会话一直没醒着就每分钟撞一次
               bumpState({ ...before, retryAfter: Date.now() + 10 * 60_000 })
               log('自动刷：这一轮没投出去，额度已退回，10 分钟后再说（多半是目标会话没开着：去那儿说句话它就醒了）')
-            }
-          })
-          .catch((e) => { log('自动刷：投递异常（已兜住）' + (e?.message ?? e)) })
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:2037-2074](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L2037-L2074)
+**依据 4 · 源码核查**：[lib/watch.mjs:59-81](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/lib/watch.mjs#L59-L81)
 
-触发成功判据为agent.followup完成。
+通知投递后再确认，读取与退避单进程互斥。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-  const triggerFeiyuScan = async (why, extra, box) => {
-    const 递 = await 取目标会话('自动刷')
-    if (!递) return false
-    const { target, agent } = 递
-    const msg = {
-      id: randomUUID(),
-      role: 'user',
-      // ⭐ 这段是设置页「自动刷触发语」，可改；留空回落到内置默认
-      content: [{ type: 'text', text: (() => {
-        const ownerN = String(cfg.ownerName || '你')
-        const t = String(cfg.triggerPrompt || '').trim() || TRIGGER_TMPL
-        const base = t.split('{owner}').join(ownerN)
-        // ⭐ 2026-10-22「门对门」：这一轮如果只有私信，就别叫她去刷一整轮、也别叫她去评论 ——
-        //    原来的触发语里有「该发评论发评论」，对私信那条是错的。
-        const 全私信 = Array.isArray(box) && box.length > 0 && box.every((it) => it && it.kind === 'dm')
-        const 有视频 = Array.isArray(box) && box.some((it) => it && it.kind === 'dm' && it.bvid)
-        const 例外 = 全私信
-          ? (有视频
-            ? '⚠️ 这一轮只有' + ownerN + '私信转来的一条视频：**只看那一条**（`bili_scan` 传 bvid），别刷整轮；'
-              + '看完**私信回她**，不要发评论、不要 @、也不要去评论区。' + String.fromCharCode(10) + String.fromCharCode(10)
-            : '⚠️ 这一轮只是' + ownerN + '在 **B站 私信**里跟你说了一句话（没带视频）：'
-              + '**不用刷、不用看视频、也不用去评论区**；看完**用 `bili_send_message` 私信回**她，'
-              + '话里不用带 BV 号。' + String.fromCharCode(10) + String.fromCharCode(10))
-          : ''
-        // ⭐ 有 @ / 回复就一起递过去：一条消息里说完，别连着弹两下
-        return 例外 + (extra ? base + String.fromCharCode(10) + String.fromCharCode(10) + extra : base)
-      })() }],
-      source: { kind: 'bili-duty-scan' },
-    }
+export async function deliverWatchBatch({ privateMessages, mentions, deliver, acknowledge }) {
+  const batch = [...privateMessages, ...mentions].slice(0, 6)
+  if (!batch.length || await deliver(batch) === false) return
+  const sent = new Set(batch)
+  await acknowledge(privateMessages.filter((x) => sent.has(x)), mentions.filter((x) => sent.has(x)))
+}
+
+export function createWatchTick({ refresh, enabled, intervalMs, run, onError, now = Date.now }) {
+  let busy = false
+  let nextAt = 0
+  return async () => {
     try {
-      await agent.followup(msg)
-      // ⭐ 递出去了才记「这条是从私信来的」—— 没递进去就别乱关评论块
-      if (Array.isArray(box) && box.some((it) => it && it.kind === 'dm')) markDmShares(box)
-      log('自动刷：已触发伙伴自己刷一轮（' + why + '，会话 ' + target.slice(0, 20) + '…）')
-      return true
-    } catch (e) {
-      log('自动刷：触发失败 ' + (e?.message ?? e))
-      return false
+      refresh()
+      if (!enabled() || busy || now() < nextAt) return
+      nextAt = now() + intervalMs()
+      busy = true
+      try {
+        await run()
+      } catch (error) {
+        nextAt = now() + intervalMs() * 3
+        onError(error)
+      } finally {
+        busy = false
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:1254-1281](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L1254-L1281)
+**依据 5 · 源码核查**：[index.js:910-913](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L910-L913)
 
-回复绕过新评论门槛，调用后清pending。
-
-<details>
-<summary>查看原文（28行）</summary>
+整个 subagents 服务缺失时在兜底分支之前退出。
 
 ```text
+    if (!ctx.subagents) return { ok: false, error: '这台 DSH 没有子代理能力（缺少 subagents 服务）' }
+
+    // 手动刷不占「每天几条」的额度（那是自动刷的账）；每次最多挑这么几条
+    const perRound = Math.max(1, Number(cfg.perScan || 1))
+```
+
+#### 缺口
+
+- 宿主取消、进程重启和同时手动触发未演练
+  **影响**：不能断言端到端恰好一次或自动额度等于成功报告
+  **进一步探讨**：用无对外发送的假宿主重放每阶段中断，分别核对预占、投递、报告和 checkpoint
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 对外写操作开关是否等同授权和成功？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+评论默认可由设置限制，但已有评论回复带 rpid 时绕过自动评论开关，force 也是由模型提供的布尔值；私信收件人可由参数覆盖，并可 force 越过投递关闭，只缺 UID 才继续拒绝。两种都发时还有先评论再私信的挂账，不过评论调用返回后无论业务是否成功都会清 pendingComment；MCP 超时则是抛错而非远端失败证明。因此这些开关不能当逐次人类授权和送达回执。工具实际通过本地 MCP 发出，由 B 站登录态及外部 API 决定结果，Python／uv、依赖准备和凭据保管归用户承担。 手动刷站只关闭自动扫描。定时器先调用独立动态调度，开启 dynamicAutoOn 和 dynamicOn 时会在时间窗内派活；动态工具还支持 force 越过 dynamicOn，日限额和间隔仍会检查。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:1240-1282](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1240-L1282)
+
+回复与 force 的例外，评论业务结果未作为清挂账条件。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+    name: 'bili_reply',
+    description: '在视频下发一条评论，或回复某条评论（楼中楼）。短、干净、像人说的话。\n'
+      + '⚠️ 回复别人的评论时**正文里不要手打 @** —— B站会自己加「回复 @某某」，你再加一遍就重复了。\n'
+      + '🔴 **自己发新评论**（不带 rpid）：正文末尾**必须亲手带上「@要 @ 谁」** —— B站 新评论**不会**自动加 @，不写就没有。\n'
+      + '⚠️ 而**回别人的评论 / 楼中楼**（带 rpid）时，正文里**不要手打 @** —— B站 会自己加「回复 @某某」。\n'
+      + '✅ 设置里开着「自动评论并 @ 你」、并且填了「要 @ 谁」时，**直接调就行，不用传 force**。\n'
+      + '🔴 只有设置没开时才会拒绝；那种情况下要发才传 force: true。',
+    parameters: {
+      bvid: { type: 'string', description: 'BV号' },
+      text: { type: 'string', description: '评论正文（短、干净、纯文本 @；别写敏感词）' },
+      rpid: { type: 'number', description: '要回复的评论 id（0/不填 = 发新评论）。带了 rpid 就是"回别人"，**不受自动评论那套闸限制**' },
+      root: { type: 'number', description: '楼中楼才填：楼层根评论 id（回复一级评论不用填）。正文里**不要**手打 @，B站会自己加「回复 @某某」' },
+      force: { type: 'boolean', description: '本人当场让你发的，传 true 越过"自动评论关着"的闸' },
+    },
     async execute(args) {
       // dmMode==='only' 时本轮根本不该发公开评论；「每轮最多发几条评论」填 0 也一条都不发 —— 工具层一并挡掉（除非当场 force）
       // ⭐ 但**带 rpid 的回复（楼中楼）不走这套闸**：那是在回别人说的话，不是「自动发评论去 @ 谁」。
@@ -528,18 +619,28 @@
         const j = typeof r === 'string' ? JSON.parse(r) : r
         if (j && j.success) markInboxReplied(String(args.bvid ?? ''), Number(args.rpid) || 0)
       } catch (e) { /* 记账失败不影响回复本身 */ }
+      return r
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[index.js:1327-1342](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L1327-L1342)
+**依据 2 · 源码核查**：[index.js:1318-1342](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1318-L1342)
 
-私信条件与15分钟pending窗口。
+私信 UID、force 与先评论后私信检查。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
+    name: 'bili_send_message',
+    description: '给某人发 B 站私信（把这一轮刷到的好东西私信给他）。用于「只私信 / 评论+私信」模式，让大肥鱼亲自把结果私下递过去。\n'
+      + '🔴 安全闸：设置里「投递方式」得不是 off、且填了私信 UID，否则拒绝（本人当场让你发时传 force: true）。\n'
+      + '⚠️ 私信是写给「人」看的：干净的人话，别出现设置名/内部术语；实测 500 字符就顶，别太长。',
+    parameters: {
+      text: { type: 'string', description: '私信正文（干净的人话、不含内部术语，控制 500 字内）' },
+      uid: { type: 'number', description: '发给谁（B站 UID 数字；不填用设置里的 dmUid）' },
+      force: { type: 'boolean', description: '本人当场让你发的，传 true 越过安全闸' },
+    },
     async execute(args) {
       refreshCfg()
       const dmOn = Boolean(cfg.dmMode !== 'off' && Number(cfg.dmUid) > 0)
@@ -560,12 +661,11 @@
 
 </details>
 
-**依据 5 · 源码核查**：[lib/mcp.mjs:69-75](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/lib/mcp.mjs#L69-L75)
+**依据 3 · 源码核查**：[lib/mcp.mjs:70-75](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/lib/mcp.mjs#L70-L75)
 
-MCP工具调用边界。
+桥读取 JSON 与 isError。
 
 ```text
-  /** 调一个 MCP 工具：能解析成 JSON 就返回对象，否则返回字符串 */
   async call(name, args = {}, { timeoutMs = 180000 } = {}) {
     await this.start()
     const result = await this.#request('tools/call', { name, arguments: args }, timeoutMs)
@@ -574,12 +674,12 @@ MCP工具调用边界。
     try { return text ? JSON.parse(text) : {} } catch { return text }
 ```
 
-**依据 6 · 源码核查**：[lib/mcp.mjs:103-118](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/lib/mcp.mjs#L103-L118)
+**依据 4 · 源码核查**：[lib/mcp.mjs:103-116](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/lib/mcp.mjs#L103-L116)
 
-超时仅本地reject，无取消消息。
+超时只删除本地 pending，返回未知远端结果。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
   #request(method, params, timeoutMs = 60000) {
@@ -596,101 +696,132 @@ MCP工具调用边界。
       try { this.#send({ jsonrpc: '2.0', id, method, params }) } catch (e) {
         clearTimeout(timer); this.pending.delete(id); reject(e)
       }
-    })
-  }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[vendor/bilibili-mcp/mcp_server.py:1348-1374](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/vendor/bilibili-mcp/mcp_server.py#L1348-L1374)
+**依据 5 · 源码核查**：[package.json:54-83](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/package.json#L54-L83)
 
-私信回执检查。
+宿主、Node 和 Web 依赖声明。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-    cred = get_cred()
-
-    if not text or not text.strip():
-        return json.dumps({"success": False, "error": "text 不能为空"}, ensure_ascii=False)
-
-    try:
-        result = await session.send_msg(
-            credential=cred,
-            receiver_id=receiver_uid,
-            msg_type=session.EventType.TEXT,
-            content=text.strip(),
-        )
-        # ⭐ 校验「真的投递了」：只凭"没抛异常"就报成功是假的
-        #    （上游 0.1.18 的实测：接口 code=0 但没有 msg_key ⇒ 那条私信根本没出去，
-        #      调用方却显示"已发送"。见 issues #35 / #25）
-        data = result if isinstance(result, dict) else {}
-        msg_key = data.get("msg_key") or data.get("msg_seqno")
-        if isinstance(result, dict) and not msg_key:
-            return json.dumps({
-                "success": False,
-                "error": "接口没报错，但回执里没有 msg_key —— 这条私信大概率没真投递出去",
-                "receiver_uid": receiver_uid,
-                "data": data,
-            }, ensure_ascii=False)
-        return json.dumps({
-            "success": True,
-            "message": f"私信已发送给UID:{receiver_uid}",
+  "engines": {
+    "dsh": ">=0.2.1-rc.2",
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[index.js:43-43](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L43-L43)
+**依据 6 · 源码核查**：[index.js:1977-2007](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1977-L2007)
 
-宿主服务依赖。
+动态有独立时间窗并向选定会话投递发布提示。
 
-```text
-export const inject = ['webServer', 'tools', 'settings', 'subagents', 'agents', 'llm']
-```
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 采用成本及未来验证应怎样限制？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-当前适合熟悉B站账号与DSH工具的维护者观察，不宜把自动阅读和自动发送直接当可靠日报服务。首次需安装Python/uv及MCP依赖、登录并选择目标会话与模型；持续有父子模型token、字幕/评论请求、轮询和本地笔记存储，所谓便宜中转只是作者选择，未有当前金额或单位合格推荐成本。手动刷不占自动日额度，所以额度不是全局预算。退出应先关自动刷，同时单独检查动态和消息监听设置；tick在manual早退前仍执行独立动态逻辑，不能以“只手动”假定所有后台输出都停了。由评论尝试与成功状态混用可提出未验证假设：把阅读完成、评论尝试、评论确认、私信确认分别记为持久状态，并对发送超时提供待核实状态，可减少重复发送和误报。对照含失败回执/超时的流程，若错报和重复不降或人工负担明显增加，就否定它。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:90-98](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/README.md#L90-L98)
-
-Python/uv前提与安装动作。
+<details>
+<summary>查看原文（31行）</summary>
 
 ```text
-## 装之前（一条前提，30 秒）
+  const 动态时间窗 = (now) => {
+    const t = String(cfg.dynamicTime || '').trim()
+    const m = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(t)
+    if (!m) return false
+    const target = new Date(now)
+    target.setHours(Number(m[1]), Number(m[2]), 0, 0)
+    const diff = now.getTime() - target.getTime()
+    return diff >= 0 && diff <= 3 * 60 * 60 * 1000
+  }
 
-机器上要有 **`Python 3.10+`** 或 **`uv`** —— 有一个就够：
-
-- 有 `uv` 最好：单文件、解压就能用、不用管理员、不用进 PATH；
-- 都没有也没关系：点「装主依赖」时插件会**自己下一份 `uv`** 到自己的家目录（免管理员），
-  先直连 GitHub，不通走国内加速，下载完核对官方 `sha256`；
-- ⚠️ 杀软报这个下载：把 `%USERPROFILE%\.dsh\bili-duty\bin\` 加白；
-  不想加白就自己装一份 `uv` 或 Python 3.10+。
+  const triggerDynamicPost = async (why = 'auto') => {
+    const 递 = await 取目标会话('到点发动态', String(cfg.dynamicSession || '').trim())
+    if (!递) return false
+    const { target, agent } = 递
+    const ownerN = String(cfg.ownerName || '你')
+    const 文案 = (String(cfg.dynamicPrompt || '').trim() || DYNAMIC_TMPL)
+      .split('{owner}').join(ownerN)
+      .split('{home}').join(stateDir)
+    const msg = {
+      id: randomUUID(),
+      role: 'user',
+      content: [{ type: 'text', text: 文案 }],
+      source: { kind: 'bili-duty-dynamic' },
+    }
+    try {
+      await agent.followup(msg)
+      log('到点发动态：已派给会话 ' + target.slice(0, 20) + '…（' + why + '）')
+      return true
+    } catch (e) {
+      log('到点发动态：派活失败 ' + (e?.message ?? e))
+      return false
 ```
 
-**依据 2 · 源码核查**：[index.js:912-913](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L912-L913)
+</details>
 
-手动刷不占自动额度。
+**依据 7 · 源码核查**：[index.js:2013-2034](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L2013-L2034)
+
+独立动态派活开关和当天去重。
+
+<details>
+<summary>查看原文（22行）</summary>
 
 ```text
-    // 手动刷不占「每天几条」的额度（那是自动刷的账）；每次最多挑这么几条
-    const perRound = Math.max(1, Number(cfg.perScan || 1))
+  const 动态那一跳 = async () => {
+    if (动态派活中) return
+    if (!cfg.dynamicAutoOn || !cfg.dynamicOn) return
+    const now = new Date()
+    const today = dayKey(now)
+    const st = readJson(dutyStateFile, {})
+    if (st.dynTickDay === today) return
+    if (!动态时间窗(now)) return
+    动态派活中 = true
+    try {
+      writeJson(dutyStateFile, { ...st, dynTickDay: today })
+      const ok = await triggerDynamicPost('auto')
+      if (!ok) {
+        const cur = readJson(dutyStateFile, {})
+        if (cur.dynTickDay === today) {
+          delete cur.dynTickDay
+          writeJson(dutyStateFile, cur)
+        }
+      }
+    } finally {
+      动态派活中 = false
+    }
 ```
 
-**依据 3 · 源码核查**：[index.js:2093-2099](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L2093-L2099)
+</details>
 
-manual早退前仍执行独立动态逻辑。
+**依据 8 · 源码核查**：[index.js:2093-2100](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L2093-L2100)
+
+动态调度先于扫描 manual 早退。
 
 ```text
   const tick = () => {
@@ -700,16 +831,128 @@ manual早退前仍执行独立动态逻辑。
       Promise.resolve(动态那一跳()).catch((e) => log('到点发动态那一跳出错（已兜住）：' + (e?.message ?? e)))
       const 模式 = 自动模式()
       if (模式 === 'manual') return
+      const now = new Date()
 ```
 
-**依据 4 · 源码核查**：[index.js:1270-1281](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/index.js#L1270-L1281)
+**依据 9 · 源码核查**：[index.js:1364-1389](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1364-L1389)
 
-发送尝试和成功计账分开程度。
+force 可越过 dynamicOn，但不跳过日限额或间隔。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
+    async execute(args) {
+      refreshCfg()
+      if (!cfg.dynamicOn && !args.force) {
+        return {
+          ok: false,
+          blocked: true,
+          hint: '发公开动态得先开「允许发公开动态」（bili_config 传 {"dynamicOn":true}，或在 DSH 的插件设置里打开）。或者本人当场让你发时传 force: true。',
+        }
+      }
+      const text = String(args.text ?? '').trim()
+      if (!text) return { ok: false, blocked: true, hint: '正文不能空 —— 动态至少得有一句话。' }
+
+      // 硬闸：每天几条 + 两条间隔几分钟，都按设置来（记在 state.json，跨轮次/跨会话都算数）
+      const 每日上限 = Math.max(1, Math.min(Number(cfg.dynamicPerDay) || 3, 10))
+      const 间隔分钟 = Math.max(1, Math.min(Number(cfg.dynamicGapMin) || 10, 720))
+      const st = readJson(dutyStateFile, {})
+      const today = dayKey()
+      const 今天几条 = st.dynDay === today ? Number(st.dynCount || 0) : 0
+      const 上一条在 = Number(st.dynAt || 0)
+      if (今天几条 >= 每日上限)
+        return { ok: false, blocked: true, hint: `今天已经发过 ${今天几条} 条动态了（上限 ${每日上限} 条）—— 够了，明天再说。额度可在设置里改。` }
+      const 刚发过 = 上一条在 && Date.now() - 上一条在 < 间隔分钟 * 60 * 1000
+      if (刚发过) {
+        const 还差 = Math.ceil((间隔分钟 * 60 * 1000 - (Date.now() - 上一条在)) / 60000)
+        return { ok: false, blocked: true, hint: `刚发过一条，还要等约 ${还差} 分钟（间隔 ${间隔分钟} 分钟）—— 别连着刷屏。` }
+      }
+```
+
+</details>
+
+#### 缺口
+
+- 真实 B 站发布和权限流程未验证
+  **影响**：无法给写操作授权或重复发送保证
+  **进一步探讨**：用记录远端受理的替身检验业务失败、响应丢失、force/rpid 和独立动态触发；确保外部写入接口被独立拒绝。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 怎样采用和验证逐次确认？
+
+**研究主题**：效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+先观察。已有 DSH 伙伴且想获取视频线索的人，可先在假 MCP 中核对一次字幕报告和预期目标会话；如需接真实账号，只有宿主工具层或独立代理验证会拒绝评论、私信、动态等全部外部写入时才做读取实验。手动扫描模式和面板开关本身不构成写入隔离。模型成本包括伙伴轮次与子代理，不可由更便宜的 provider 名称推断免费，阅读失败、登录维护和报告抽查也计入每个合格报告的成本。可以把读报告与写评论分离成具有明确目标、正文摘要和一次批准凭证的动作，收到超时先查发布结果；对照当前 force/rpid，在假服务重放撤销批准、重复回调与已受理超时。若写入控制未改善却显著阻断正常报告，就撤回方案。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:951-961](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L951-L961)
+
+子代理模型可配置但价格没有被此函数验证。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+      run = await ctx.subagents.startActivation({
+        provider: 'spawn',
+        label: '刷B站：' + dir.slice(0, 20),
+        request: {
+          prompt: [{ type: 'text', text: prompt }],
+          parent,
+          ...(子provider && 子model ? { agentOptions: { provider: 子provider, model: 子model } } : {}),
+        },
+        signal: exec?.signal || new AbortController().signal,
+        delivery: 'caller',
+      })
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:1240-1282](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/index.js#L1240-L1282)
+
+现行发布接口提供要收紧的对照。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+    name: 'bili_reply',
+    description: '在视频下发一条评论，或回复某条评论（楼中楼）。短、干净、像人说的话。\n'
+      + '⚠️ 回复别人的评论时**正文里不要手打 @** —— B站会自己加「回复 @某某」，你再加一遍就重复了。\n'
+      + '🔴 **自己发新评论**（不带 rpid）：正文末尾**必须亲手带上「@要 @ 谁」** —— B站 新评论**不会**自动加 @，不写就没有。\n'
+      + '⚠️ 而**回别人的评论 / 楼中楼**（带 rpid）时，正文里**不要手打 @** —— B站 会自己加「回复 @某某」。\n'
+      + '✅ 设置里开着「自动评论并 @ 你」、并且填了「要 @ 谁」时，**直接调就行，不用传 force**。\n'
+      + '🔴 只有设置没开时才会拒绝；那种情况下要发才传 force: true。',
+    parameters: {
+      bvid: { type: 'string', description: 'BV号' },
+      text: { type: 'string', description: '评论正文（短、干净、纯文本 @；别写敏感词）' },
+      rpid: { type: 'number', description: '要回复的评论 id（0/不填 = 发新评论）。带了 rpid 就是"回别人"，**不受自动评论那套闸限制**' },
+      root: { type: 'number', description: '楼中楼才填：楼层根评论 id（回复一级评论不用填）。正文里**不要**手打 @，B站会自己加「回复 @某某」' },
+      force: { type: 'boolean', description: '本人当场让你发的，传 true 越过"自动评论关着"的闸' },
+    },
+    async execute(args) {
+      // dmMode==='only' 时本轮根本不该发公开评论；「每轮最多发几条评论」填 0 也一条都不发 —— 工具层一并挡掉（除非当场 force）
+      // ⭐ 但**带 rpid 的回复（楼中楼）不走这套闸**：那是在回别人说的话，不是「自动发评论去 @ 谁」。
+      //    （2026-10-21：不加这条的话，dmMode=only 的人永远回不了别人的评论，只能每次手带 force）
+      refreshCfg()
+      const 是回复 = Math.max(0, Number(args.rpid) || 0) > 0
+      const commentOn = Boolean(cfg.autoComment && cfg.mentionName && cfg.dmMode !== 'only')
+      if (!commentOn && !args.force && !是回复) {
+        return {
+          ok: false,
+          blocked: true,
+          hint: cfg.dmMode === 'only'
+            ? '现在是「只私信」模式（dmMode=only）—— 规定不发公开评论，改成用 bili_send_message 私信。确实要发时传 force: true。'
+            : '要发评论得满足：开着「自动评论并 @ 你」、并填了「要 @ 谁」。或者本人当场让你发时传 force: true。',
+        }
+      }
       const r = await call('bili_reply', {
         bvid: String(args.bvid ?? ''),
         text: String(args.text ?? ''),
@@ -722,45 +965,27 @@ manual早退前仍执行独立动态逻辑。
         const j = typeof r === 'string' ? JSON.parse(r) : r
         if (j && j.success) markInboxReplied(String(args.bvid ?? ''), Number(args.rpid) || 0)
       } catch (e) { /* 记账失败不影响回复本身 */ }
+      return r
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/mcp.mjs:103-118](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/efae852a276b7b120ca9d8ef6cd5080da3023005/lib/mcp.mjs#L103-L118)
+**依据 3 · 源码核查**：[lib/watch.mjs:59-63](https://github.com/Yuuyuko-uu/dsh-bili-subagent/blob/129733635f1cc04da27c6e0700c853c81637afd5/lib/watch.mjs#L59-L63)
 
-超时结果未知的推导依据。
-
-<details>
-<summary>查看原文（16行）</summary>
+提醒 checkpoint 与批次投递分离，可借鉴到写入确认。
 
 ```text
-  #request(method, params, timeoutMs = 60000) {
-    const id = this.nextId++
-    return new Promise((resolve, reject) => {
-      const timer = setTimeout(() => {
-        this.pending.delete(id)
-        reject(new Error(`MCP ${method} 超时（${timeoutMs}ms）${this.stderr ? '：' + this.stderr.slice(-200) : ''}`))
-      }, timeoutMs)
-      this.pending.set(id, {
-        resolve: (v) => { clearTimeout(timer); resolve(v) },
-        reject: (e) => { clearTimeout(timer); reject(e) },
-      })
-      try { this.#send({ jsonrpc: '2.0', id, method, params }) } catch (e) {
-        clearTimeout(timer); this.pending.delete(id); reject(e)
-      }
-    })
-  }
+export async function deliverWatchBatch({ privateMessages, mentions, deliver, acknowledge }) {
+  const batch = [...privateMessages, ...mentions].slice(0, 6)
+  if (!batch.length || await deliver(batch) === false) return
+  const sent = new Set(batch)
+  await acknowledge(privateMessages.filter((x) => sent.has(x)), mentions.filter((x) => sent.has(x)))
 ```
-
-</details>
 
 #### 缺口
 
-- 无同任务推荐价值、父子模型总账单和人工复核记录。
-  **影响**：不能确认自动筛选比人工关注/检索更值得，也不能把中转称为免费。
-  **进一步探讨**：固定视频集与同预算对比人工筛选，记录有用推荐、误读、总token和人工核对。
-- 持久投递状态假设尚未实现验证。
-  **影响**：不能保证当前发送幂等或待核实恢复。
-  **进一步探讨**：用可控回执失败及超时模拟验证状态机和重复投递情况；真实发送另需用户明确安排。
+- 单份报告实际 token、时间和质量未知
+  **影响**：无法评估持续采用收益
+  **进一步探讨**：在假 MCP 或独立拒绝全部外部写入的环境中，采集报告的调用量、人工纠错和可追溯引用。
 
-[返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
+[返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
