@@ -1,44 +1,34 @@
 {
     "repository": "q253595422/dsh-imagegen-video",
     "repository_id": 1420747575,
-    "captured_at": "2026-11-05T13:09:40.123Z",
-    "window_start": "2026-10-06T13:09:40.123Z",
-    "stars": 73,
-    "pushed_at": "2026-11-05T06:09:52Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 90,
+    "pushed_at": "2026-11-10T13:58:58Z",
     "issues": {
-        "open": 0,
-        "closed": 19,
-        "created_30d": 19,
-        "closed_30d": 19,
-        "updated_30d": 19
+        "open": 1,
+        "closed": 22,
+        "created_30d": 23,
+        "closed_30d": 22,
+        "updated_30d": 23
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-05T11:33:05.584Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
-        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
-        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@q253595422/dsh-imagegen-video",
-        "captured_at": "2026-11-04T17:18:27.577Z",
-        "window_start": "2026-10-05",
-        "window_end": "2026-11-03",
-        "downloads_30d": 6009,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/%40q253595422%2Fdsh-imagegen-video",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 8815,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/%40q253595422%2Fdsh-imagegen-video",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-18T07:26:41.792Z",
-            "captured_at": "2026-11-04T17:18:27.577Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
             "source_url": "https://registry.npmjs.org/%40q253595422%2Fdsh-imagegen-video",
             "error": null,
-            "latest_version": "1.22.1",
-            "latest_published_at": "2026-11-04T01:42:25.845Z",
+            "latest_version": "1.27.0",
+            "latest_published_at": "2026-11-09T14:09:27.993Z",
             "latest_error": null
         }
     }

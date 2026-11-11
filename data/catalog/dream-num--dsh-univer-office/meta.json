@@ -1,34 +1,44 @@
 {
     "repository": "dream-num/dsh-univer-office",
     "repository_id": 1335241492,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 650,
-    "pushed_at": "2026-10-30T07:26:17Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 706,
+    "pushed_at": "2026-11-03T09:06:43Z",
     "issues": {
-        "open": 12,
-        "closed": 39,
-        "created_30d": 11,
+        "open": 16,
+        "closed": 41,
+        "created_30d": 17,
         "closed_30d": 9,
-        "updated_30d": 21
+        "updated_30d": 25
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T17:18:51.228Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-univer-office",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 46073,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-univer-office",
+        "captured_at": "2026-11-10T03:36:50.711Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 61768,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-univer-office",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T11:52:19.400Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-10T03:36:50.711Z",
             "source_url": "https://registry.npmjs.org/dsh-univer-office",
             "error": null,
-            "latest_version": "0.3.9",
-            "latest_published_at": "2026-10-30T07:37:56.201Z",
+            "latest_version": "0.4.0",
+            "latest_published_at": "2026-11-02T11:33:31.274Z",
             "latest_error": null
         }
     }

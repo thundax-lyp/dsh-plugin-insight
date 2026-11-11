@@ -1,57 +1,39 @@
 {
     "repository": "lijiaqi-AI-Product-Manager/dsh-agent-compare",
     "repository_id": 1442340074,
-    "captured_at": "2026-11-05T05:36:35.976Z",
-    "window_start": "2026-10-06T05:36:35.976Z",
-    "stars": 87,
-    "pushed_at": "2026-11-05T05:07:12Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 298,
+    "pushed_at": "2026-11-10T18:00:33Z",
     "issues": {
         "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": 50,
-        "updated_30d": 53
+        "closed": 71,
+        "created_30d": 72,
+        "closed_30d": 71,
+        "updated_30d": 72
     },
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Alijiaqi-AI-Product-Manager%2Fdsh-agent-compare%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D0E:AE100:29E3C4:2D36EE:6AEC162D and timestamp 2026-11-05 05:37:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Alijiaqi-AI-Product-Manager%2Fdsh-agent-compare%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D3E:10F766:281696:2B68CD:6AEC162E and timestamp 2026-11-05 05:37:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Alijiaqi-AI-Product-Manager%2Fdsh-agent-compare%20is%3Aissue%20created%3A2026-10-06T05%3A36%3A35.976Z..2026-11-05T05%3A36%3A35.976Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1D80:10D257:2B13BA:2E67B3:6AEC162E and timestamp 2026-11-05 05:37:51 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Alijiaqi-AI-Product-Manager%2Fdsh-agent-compare%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 78C0:3CCEDE:142AE5:1565CE:6AF3CC44 and timestamp 2026-11-11 02:00:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-04T20:04:08.740Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e72a31dae8ad64150f14a8d934a3b09364542326",
-        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
-        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-agent-compare",
-        "captured_at": "2026-11-05T05:36:35.976Z",
-        "window_start": "2026-10-06",
-        "window_end": "2026-11-04",
-        "downloads_30d": 478,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/dsh-agent-compare",
+        "captured_at": "2026-11-10T03:36:50.711Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 8822,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-agent-compare",
         "error": null,
         "publication": {
             "first_published_at": "2026-11-03T10:41:11.580Z",
-            "captured_at": "2026-11-05T05:36:35.976Z",
+            "captured_at": "2026-11-10T03:36:50.711Z",
             "source_url": "https://registry.npmjs.org/dsh-agent-compare",
             "error": null,
-            "latest_version": "1.0.1",
-            "latest_published_at": "2026-11-04T13:37:23.391Z",
+            "latest_version": "1.3.0",
+            "latest_published_at": "2026-11-08T05:28:22.015Z",
             "latest_error": null
         }
     }

@@ -1,34 +1,51 @@
 {
     "repository": "2026heshao/dsh-armory",
     "repository_id": 1413052822,
-    "captured_at": "2026-11-04T08:22:39.587Z",
-    "window_start": "2026-10-05T08:22:39.587Z",
-    "stars": 80,
-    "pushed_at": "2026-11-02T05:08:09Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 108,
+    "pushed_at": "2026-11-09T14:29:26Z",
     "issues": {
-        "open": 0,
-        "closed": 8,
-        "created_30d": 8,
-        "closed_30d": 8,
-        "updated_30d": 8
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": 12
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 95F6:3E3EF7:119E8C:12C788:6AF3CC7B and timestamp 2026-11-11 02:01:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 95FE:38F4F2:12424D:136B11:6AF3CC7D and timestamp 2026-11-11 02:01:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9610:13F10B:126206:138A47:6AF3CC7E and timestamp 2026-11-11 02:01:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3A2026heshao%2Fdsh-armory%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 962E:14533D:11F8B2:132177:6AF3CC81 and timestamp 2026-11-11 02:01:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "npm": {
         "package_name": "dsh-armory",
-        "captured_at": "2026-11-02T11:17:42.215Z",
-        "window_start": "2026-10-03",
-        "window_end": "2026-11-01",
-        "downloads_30d": 3041,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-03:2026-11-01/dsh-armory",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 7786,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-armory",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-13T02:37:33.593Z",
-            "captured_at": "2026-11-02T11:17:42.215Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
             "source_url": "https://registry.npmjs.org/dsh-armory",
             "error": null,
-            "latest_version": "2.4.8",
-            "latest_published_at": "2026-11-02T05:07:47.675Z",
+            "latest_version": "2.5.1",
+            "latest_published_at": "2026-11-09T14:28:28.372Z",
             "latest_error": null
         }
     }
