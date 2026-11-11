@@ -1,0 +1,45 @@
+{
+    "repository": "FeatherHunter/dsh-im-companion",
+    "repository_id": 1354592524,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 45,
+    "pushed_at": "2026-11-08T23:54:55Z",
+    "issues": {
+        "open": 5,
+        "closed": 179,
+        "created_30d": 68,
+        "closed_30d": 71,
+        "updated_30d": 76
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T07:46:05.409Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-im-companion",
+        "captured_at": "2026-11-10T21:19:39.444Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 6599,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-im-companion",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-04T15:15:37.039Z",
+            "captured_at": "2026-11-10T21:19:39.444Z",
+            "source_url": "https://registry.npmjs.org/dsh-im-companion",
+            "error": null,
+            "latest_version": "0.2.27",
+            "latest_published_at": "2026-11-02T19:26:17.305Z",
+            "latest_error": null
+        }
+    }
+}

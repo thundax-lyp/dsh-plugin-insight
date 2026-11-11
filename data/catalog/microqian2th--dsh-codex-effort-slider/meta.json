@@ -1,12 +1,12 @@
 {
     "repository": "Microqian2th/dsh-codex-effort-slider",
     "repository_id": 1404377390,
-    "captured_at": "2026-11-05T13:09:40.123Z",
-    "window_start": "2026-10-06T13:09:40.123Z",
-    "stars": 243,
-    "pushed_at": "2026-10-29T15:39:00Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 260,
+    "pushed_at": "2026-11-10T17:35:41Z",
     "issues": {
-        "open": 2,
+        "open": 3,
         "closed": 8,
         "created_30d": null,
         "closed_30d": null,
@@ -15,39 +15,29 @@
     "errors": [
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6E64:3B2A46:72BDEA:7BC944:6AEC8048 and timestamp 2026-11-05 13:10:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E9B4:3D16F1:11ED83:1311A9:6AF3CC26 and timestamp 2026-11-11 02:00:07 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6EA6:3A291A:700E1C:791D86:6AEC8049 and timestamp 2026-11-05 13:10:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID E9C0:3D0082:1215C2:1339CB:6AF3CC2A and timestamp 2026-11-11 02:00:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20updated%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6ED4:2C8C5E:709A9B:79A8F9:6AEC804A and timestamp 2026-11-05 13:10:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3AMicroqian2th%2Fdsh-codex-effort-slider%20is%3Aissue%20updated%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 90E0:13B02C:114787:126A88:6AF3CC2F and timestamp 2026-11-11 02:00:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-05T11:33:05.584Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
-        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
-        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-codex-effort-slider",
-        "captured_at": "2026-11-04T23:43:49.729Z",
-        "window_start": "2026-10-05",
-        "window_end": "2026-11-03",
-        "downloads_30d": 7350,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-codex-effort-slider",
+        "captured_at": "2026-11-09T19:53:03.038Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": 9207,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/dsh-codex-effort-slider",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-14T17:13:50.451Z",
-            "captured_at": "2026-11-04T23:43:49.729Z",
+            "captured_at": "2026-11-09T19:53:03.038Z",
             "source_url": "https://registry.npmjs.org/dsh-codex-effort-slider",
             "error": null,
             "latest_version": "1.1.4",

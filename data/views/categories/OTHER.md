@@ -13,6 +13,7 @@
 | 插件 | 主要用途 | 关键使用条件 |
 | --- | --- | --- |
 | [A-share-Ai 公开看板](#plugin-1089365685-root) | 固定仓提供浏览器看板、静态历史报告和分析样例，实时数据及交易执行由仓外链路提供或声称。 | [Q04](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q04) 从固定材料只读核查，保留日期与来源。 |
+| [DSH Meme Hub](#plugin-1333713967-root) | 双语 DSH 社区整活导航，将分类、上游仓库和精选预览集中在固定文档。 | 观察，可按兴趣翻固定目录，上游使用依赖单独复核（[Q01](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md#research-q01)、[Q04](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md#research-q04)）。 |
 | [dsh-armor-switch](#plugin-1409096911-root) | 向DSH注册可切换交付规则与普通偏好，提供显式权限预设和既有改动诊断恢复。 | 普通偏好优先使用既有窄配置；当前不建议新增采用整套覆盖契约。 |
 | [dsh-piano](#plugin-1412161923-root) | 在 DSH web 提供可拖按钮、浮动键盘与 Web Audio 合成的单音和刮奏。 | 娱乐用途可观察或在隔离浏览器小范围试用，先核发声、刮奏与停用后资源；不用于需 MIDI/录音交付的场景。 |
 | [竹知了](#plugin-1319484586-root) | 在浏览器中模拟甩动传统竹知了，可按住画圈、自动甩或使用手机体感，并随动作发出模拟叫声。 | [Q04](../../plugins/imsai-sh--zhuzhiliao/INSIGHT.md#research-q04) 对源码学习可先对照指针目标、角速度和音频更新，再比较手绘与 3D 消费同一状态的方式。 |
@@ -32,6 +33,22 @@
 > **建议**：[Q05](../../plugins/hyqibot--a-share-ai/INSIGHT.md#research-q05) 可试验给数据状态、来源和截至时间增加可核标签，以读者误判和找出处时间与现有页对照。
 
 [查看完整分析](../../plugins/hyqibot--a-share-ai/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333713967-root"></a>
+
+## [DSH Meme Hub](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md)
+
+[![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/the-beating-light-of-the-nail/dsh-meme-hub)
+
+> **用途**：面向想浏览主题、宠物、游戏和其他整活示例的 DSH 社区读者。
+
+> **亮点**：同页聚合分类、项目短评与预览，文档内部无图项目仍能按链接找到（[Q02](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md#research-q02)）。
+
+> **思考**：编辑标准和截图说明不足以核实上游行为、授权或外链的安装适用性（[Q03](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md#research-q03)）。
+
+> **建议**：用三项同口径任务对照手工搜索的命中、点击和核对成本，检验聚合是否真省事（[Q04](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md#research-q04)）。
+
+[查看完整分析](../../plugins/the-beating-light-of-the-nail--dsh-meme-hub/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1409096911-root"></a>
 
@@ -85,4 +102,4 @@
 
 ## 更新时间
 
-2026-11-10
+2026-11-11

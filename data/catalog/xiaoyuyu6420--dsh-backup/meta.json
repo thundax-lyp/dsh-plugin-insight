@@ -1,0 +1,66 @@
+{
+    "repository": "xiaoyuyu6420/dsh-backup",
+    "repository_id": 1333963585,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 40,
+    "pushed_at": "2026-11-10T02:43:29Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Axiaoyuyu6420%2Fdsh-backup%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D808:133DD9:10214F:1133A8:6AF3CD29 and timestamp 2026-11-11 02:04:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Axiaoyuyu6420%2Fdsh-backup%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D81C:2E7952:1256AC:1388CF:6AF3CD2A and timestamp 2026-11-11 02:04:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Axiaoyuyu6420%2Fdsh-backup%20is%3Aissue%20created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D82C:14533D:1290AA:13C28F:6AF3CD2B and timestamp 2026-11-11 02:04:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Axiaoyuyu6420%2Fdsh-backup%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D83C:5DB79:13A973:14DC12:6AF3CD2C and timestamp 2026-11-11 02:04:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Axiaoyuyu6420%2Fdsh-backup%20is%3Aissue%20updated%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D846:313B04:129645:13C8B8:6AF3CD2D and timestamp 2026-11-11 02:04:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T17:18:51.228Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@xiaoyuyu6420/dsh-backup",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 5142,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/%40xiaoyuyu6420%2Fdsh-backup",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T15:15:13.538Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
+            "source_url": "https://registry.npmjs.org/%40xiaoyuyu6420%2Fdsh-backup",
+            "error": null,
+            "latest_version": "0.14.4",
+            "latest_published_at": "2026-11-10T02:46:18.373Z",
+            "latest_error": null
+        }
+    }
+}

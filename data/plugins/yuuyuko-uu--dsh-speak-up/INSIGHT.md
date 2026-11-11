@@ -1,18 +1,18 @@
-# dsh-speak-up
+# 主动搭话（Speak Up）
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[e3bc636](https://github.com/Yuuyuko-uu/dsh-speak-up/tree/e3bc6362208c693bb833ecf463ec6a20df4b6419)
+源码版本：[541f6c7](https://github.com/Yuuyuko-uu/dsh-speak-up/tree/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 223](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=223&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-speak-up) [![npm 30d 10,914](https://img.shields.io/static/v1?label=npm+30d&message=10%2C914&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak-up) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak-up)
+[![GitHub ★ 232](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=232&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-speak-up) [![npm 30d 17,987](https://img.shields.io/static/v1?label=npm+30d&message=17%2C987&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak-up) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-speak-up)
 <!-- END META -->
 
-> **功能**：按本地随机规则和空闲条件向选定 DSH 会话投递搭话消息，并提供演练与记录。
+> **功能**：按本地时间和概率选择 DSH 会话，在空闲时触发伙伴主动搭话，并提供试运行日志。
 
-> **亮点**：把本地随机、空闲过滤与演练接到原Agent followup，用户能检查触发原因再决定是否真发。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把本地择时和可审查的演练接到原 agent 的收件链路，让用户能先观察触发理由，再开放普通会话轮次。跟随模式降低换会话时重新勾选的负担。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：安静时段和峰谷可用不同时区，内存冷却与日志不能当持久额度，投递成功也不代表有实际回复或节费。[Q03](#research-q03)
+> **主要限制**：跟随目标可以不在手选列表内，事件回调却只用手选列表推进全局冷却；一般用户轮次也可推进它。真正收到回复的会话与冷却账本不能保证对应。[Q03](#research-q03)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要主动搭话，增量是否来自新的Agent能力？](#detail-section-11)
-  - [Q02 · 定时到点后如何选会话、掷骰和确认开口？](#detail-section-12)
-  - [Q03 · 调度规则能保证节费、安静和一次性投递吗？](#detail-section-13)
-  - [Q04 · 首次、持续、故障和退出有什么负担？](#detail-section-14)
-  - [Q05 · 如何控制试用，什么设计假设值得继续？](#detail-section-15)
+  - [Q01 · 相比自己发消息或固定提醒，原会话开轮有什么增量？](#detail-section-11)
+  - [Q02 · 目标如何选，何时才真正调用宿主？](#detail-section-12)
+  - [Q03 · 新的跟随模式是否遵守冷却，后台怎样处理失败？](#detail-section-13)
+  - [Q04 · 权限、成本和退出条件如何？](#detail-section-14)
+  - [Q05 · 怎样验证同时限制打扰、保留主动对话机会？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：希望空闲角色会话偶尔先开口的DSH用户，可配置本地触发规则并先演练。
+> **用途**：经常与同一 DSH 伙伴对话、愿意让它在空闲时偶尔先开口的用户，可在设置中选择会话和时间，先看演练记录。
 
-手动发话或固定提醒不需随机调度；本组件增加何时触发的控制，不创造新Agent生成能力。
+用户可以手工发一句开场，或用日历提醒自己打开对话。提醒不直接在既有会话投递，手工触发则保留每次发起的控制。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +51,59 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 自动随机触发 | 空闲时偶尔开启会话轮次 | 目标必须活着且可用；规则不是费用上限 |
-| 演练与手动真发 | 检查规则或明确测试一轮 | 真发绕过自动限制并产生费用 |
-| 设置与日志 | 配置频率、时区和查看原因 | 日志与冷却只在内存 |
-| 可选新建会话 | 创建专用目标 | 依赖sessionController，建成未必绑定成功 |
+| --- | --- | --- |
+| 定时择时 | 按时段、活跃与随机规则安排搭话 | 默认演练且目标为空，归档或忙碌会话跳过 |
+| 原会话投递 | 复用现有 agent 创建普通轮次 | 真发继承该会话的工具和模型环境 |
+| 可见日志 | 观察候选、命中和投递异常 | 进程重启后内存日志不保留 |
 
-#### 启动与依赖
+**流程与依赖**
 
-| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=22、DSH>=0.2.1-rc.2与web界面 | 必需 | 加载与设置 | 包声明不等于实际兼容 |
-| agents、sessions、timer等Host服务 | 调度必需 | 活会话、投递和定时 | 不自动唤醒失活目标 |
-| sessionController | 历史/建会话条件 | 最近发话与可选新会话 | 历史未知按因子1；不能建则选已有会话 |
-| 模型及会话工具权限和预算 | 真发必需 | 执行普通Agent轮次 | 费用与副作用取决原会话 |
+| 依赖 | 用途 | 边界 |
+| --- | --- | --- |
+| Node 与 DSH | 加载 Cordis 补丁和 Web 槽位 | Node ≥ 22，DSH ≥ 0.2.1-rc.2 是包声明 |
+| 活动会话与宿主服务 | 选择目标、定时、投递、尝试落盘 | 无活 agent 跳过；跟随排序取决于宿主时间戳 |
+| 目标会话预算与权限 | 真发开普通轮次 | 应核对工具权限；峰谷规则只改变命中线 |
 
-#### 启动步骤
+| 阶段 | 操作 | 异常处理 |
+| --- | --- | --- |
+| 首次 | 重启隔离宿主，只勾选一个无敏感工具的会话，保持试运行 | 查日志里的归档、忙碌和目标缺失 |
+| 持续 | 观察安静时段、候选与命中，真发前核对预算与目标 | 出现普通回复耗冷却或跟随漏冷却则保持观察 |
+| 退出 | 关总开关，停用，重启并核查在飞会话和本地配置 | 卸载与配置清理分别验证，保留必要备份 |
 
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户选独立会话并保留试运行 | 日志显示正确目标与规则 |
-| 演练 | 用户检查时区、忙和归档情况 | 只记账无followup |
-| 真发 | 用户明确触发一次并核对回复 | 投递、实际正文及费用分别可查 |
-| 恢复 | 用户关总开关并停用 | 后续自动不触发，已有副作用另核对 |
+**效果与成本**
 
-#### 成本
+| 成本 | 单位或责任 | 边界 |
+| --- | --- | --- |
+| 现金和模型 | 按得到合格搭话的真实轮次计普通会话 token | 演练只做本地规则；真实工具和模型费用未测 |
+| 人工时间 | 设置目标、查看日志、核查误投和修复配置 | 用户承担；跟随省勾选可能换来额外核查 |
+| 退出 | 停止自动，核对已投递会话和配置 | 用时未测，停计时器不能撤回已经送达的消息 |
 
-| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 包和配置资源未测 | 选目标、文案、时区与演练 | 无当前宿主执行验证 |
-| 持续 | 随机本地；真发为普通Agent费用 | 检查打扰、记录和预算 | 固定峰谷不代表真实价格 |
-| 失败恢复 | 失败轮次及工具副作用未知 | 停自动、核对回复和落盘 | 冷却和日志重启丢失 |
+| 效果 | 观察口径 | 边界 |
+| --- | --- | --- |
+| 少做手动开场 | 每个合格搭话所需用户操作次数 | 需要出现预期会话的可见回复 |
+| 减少打扰 | 禁止时段、错误目标、重复或漏掉的投递数 | 跟随冷却已见结构性缺口 |
 
-#### 效果
-
-| 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 规则化主动触发 | 过滤、随机与followup已接线 | 实际回复与体验 |
-| 先演练再真发 | 默认只记账与手动模式分离 | 演练不能证明模型或工具成功 |
-| 冷却控制 | 目标assistant正文更新时间 | 不关联主动run，非独立目标额度 |
-
-> **思考**：安静时段和峰谷可用不同时区，内存冷却与日志不能当持久额度，投递成功也不代表有实际回复或节费。[Q03](#research-q03)
+> **思考**：跟随目标可以不在手选列表内，事件回调却只用手选列表推进全局冷却；一般用户轮次也可推进它。真正收到回复的会话与冷却账本不能保证对应。[Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把本地随机、空闲过滤与演练接到原Agent followup，用户能检查触发原因再决定是否真发。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：把本地择时和可审查的演练接到原 agent 的收件链路，让用户能先观察触发理由，再开放普通会话轮次。跟随模式降低换会话时重新勾选的负担。[Q01](#research-q01) [Q02](#research-q02)
 
-[Q02](#research-q02) 共享自动/演练/真发入口及await捕错有复用价值；[Q03](#research-q03) 内存状态和异步状态窗口不能当持久调度保证。
+自动、手动演练与真发共用候选逻辑，await followup 并捕获拒绝，区分了投递错误与落盘未确认。内存状态和缺少在飞占用意味着重启及并发不具去重保证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-安静时段和峰谷可用不同时区，内存冷却与日志不能当持久额度，投递成功也不代表有实际回复或节费。[Q03](#research-q03)
+跟随目标可以不在手选列表内，事件回调却只用手选列表推进全局冷却；一般用户轮次也可推进它。真正收到回复的会话与冷却账本不能保证对应。[Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先保持试运行并使用无敏感工具的独立会话，手动真发前核对预算；发生打扰、重复或目标不符即关自动并停用。[Q05](#research-q05)
+当前先观察。在独立会话保持演练并查目标日志，关闭跟随，验明宿主访问控制后再决定是否做一次可控真发。若出现冷却漏记、错投或无法限制工具权限，停自动并沿用手工开场。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +111,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持可控本地触发和普通Agent投递；节费与体验未测，持久回执方向仍是假设。
+源码支持定时择时、演练和宿主投递。跟随模式与冷却列表不一致可直接从分支推出；真实投递频率、工具副作用和用户打扰尚未测试。按目标确认回复是假设。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/host.js、lib/client.js、lib/selfupdate.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 lib/host.js、package.json、cordis.patch.yml、lib/selfupdate.mjs、lib/client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：检查固定Host调度、消息、回执、配置与来源检查、client注册和更新安装调用；未执行目标或模型。
-- 下一步：用固定会话和模型分别核对演练与真发，模拟跨时区、重启和并发，记录投递、正文、费用及退出。
+- 边界：覆盖包入口、关键调度、会话筛选、事件、路由和更新模块源码；没有执行宿主、插件或目标测试。
+- 下一步：隔离宿主先测浏览器跨站和本地非管理者拒绝，再使用记录消息的假 agent 回放空手选列表的跟随、普通回答和重叠触发，对比合格回复、重复及误耗冷却。
 
 **分析版本**
 
 - **仓库**：[Yuuyuko-uu/dsh-speak-up](https://github.com/Yuuyuko-uu/dsh-speak-up)
-- **版本号**：0.3.0（[固定提交 e3bc636](https://github.com/Yuuyuko-uu/dsh-speak-up/tree/e3bc6362208c693bb833ecf463ec6a20df4b6419)）
-- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.3.1（[固定提交 541f6c7](https://github.com/Yuuyuko-uu/dsh-speak-up/tree/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c)）
+- **版本日期**：2026-11-07（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +130,9 @@
 
 <a id="innovation"></a>
 
-可研究统一时区、持久决策与带run关联的投递回复回执，以重启和并发tick对照验证重复、漏发及费用归因；尚未实现。[Q05](#research-q05)
+按目标占用并关联触发消息与实际回复，可能同时降低重复投递和被普通回复误耗的冷却机会。若模拟重叠滴答、切换目标与重启后，两类错误未减少或漏掉同样多的合格机会，就保留原规则。[Q05](#research-q05)
 
-用固定会话和模型分别核对演练与真发，模拟跨时区、重启和并发，记录投递、正文、费用及退出。
+隔离宿主先测浏览器跨站和本地非管理者拒绝，再使用记录消息的假 agent 回放空手选列表的跟随、普通回答和重叠触发，对比合格回复、重复及误耗冷却。
 
 <a id="detail-section-9"></a>
 
@@ -153,8 +145,8 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 2 | 500 | — | — | 7182 |
-| .js | source | 2 | 2079 | 1439 | 529 | — |
+| .md | source | 2 | 511 | — | — | 7362 |
+| .js | source | 2 | 2137 | 1485 | 540 | — |
 | .mjs | source | 1 | 234 | 192 | 32 | — |
 | .mjs | test | 2 | 1024 | 807 | 139 | — |
 
@@ -162,35 +154,35 @@
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-speak-up/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-speak-up/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=7&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-speak-up/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-speak-up/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
-暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-11-05。
+
+统计日期：2026-11-11。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：主动搭话能否在明确目标与可控频率下启动普通Agent轮次，其时区、费用与恢复边界是什么？
+**插件研究总目标**：本地择时后在原 DSH 伙伴会话开轮，能否减少手工触发，又能否控制误投、打扰和工具副作用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要主动搭话，增量是否来自新的Agent能力？
+### Q01 · 相比自己发消息或固定提醒，原会话开轮有什么增量？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-面向希望空闲角色会话偶尔自行开口、愿意明确设置频率和费用边界的DSH个人用户。相对用户手动发一句话或固定闹钟，本组件增加本地随机触发、安静时段、冷却与近期交流因子；命中后仍由原Agent的followup开启普通轮次，角色、记忆、工具和生成能力不是本组件创造。合格结果是只在选定可用会话、符合规则时投递，用户能看见为什么发或不发。无人回应是否更有陪伴感没有对照证据，主动触发也可能打扰或消耗工具资源。
+长期保留 DSH 伙伴会话、希望它偶尔自行起话头的用户，可以预先设定会话与时间条件，并让助手在已有会话中回应一段标记为 speak-up 的触发文本。手工发消息总能让用户决定何时开始，固定通知能在同一时刻提醒，但都没有本插件的按目标状态择时及干跑日志。合格的一次搭话应落在预期会话、避开禁止时段，并产生用户可见且符合语境的回复。定时器命中或 followup 返回不足以满足这个定义。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:1-13](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/README.md#L1-L13)
+**依据 1 · 作者声明**：[README.md:1-13](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/README.md#L1-L13)
 
-作者清楚区分本地随机与普通模型轮次。
+作者定义空闲主动搭话与本地骰子的使用场景。
 
 <details>
 <summary>查看原文（13行）</summary>
@@ -213,17 +205,18 @@
 
 </details>
 
-**依据 2 · 源码核查**：[lib/host.js:99-137](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L99-L137)
+**依据 2 · 源码核查**：[lib/host.js:99-115](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L99-L115)
 
-默认试运行、目标为空和调度控制。
+默认演练，默认无目标且不跟随。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
 const 默认配置 = {
   总开关: true, // 关掉就完全不动
   试运行: true, // **默认开着**：掷中了也只记账、不真发（先看几轮再关掉它）
+  跟随模式: false, // ⭐ 1.3.3（issue #9）：true = 不勾了，自己找她最近在说话的那一间
   目标会话: [], // 勾了哪些会话（**数组**，可以勾多个）；掷中一次只在其中一个里开口
   间隔分钟: 30, // 多久掷一次骰子
   // ---- 峰谷分时：贵的时候少开口，便宜的时候多开口 ----
@@ -237,62 +230,135 @@ const 默认配置 = {
   谷时命中线: 60, // 谷时（便宜）→ 命中线高一点、多开口
   // ⭐ 2026-10-26（issue #4）：峰谷是**北京时间**算的。海外机器的本地时间对不上，
   //   填个 IANA 时区名（例如 Asia/Shanghai）就按那个时区判；留空 = 跟本机时区。
-  峰谷时区: '',
-  // ⚠ 老配置里那个单独的「概率」**不再读了**（被上面两格替换）。她的旧值会被丢掉，这是预期的。
-  // ⚠ 更早一版这两格叫「峰时概率 / 谷时概率」，归一化里还认旧键名（改名兼容）。
-  // ---- 没掷中就攒加成，掷中就归零（她原话：「上次没投中，下一次就要加概率；下次如果投中了，
-  //      概率又回到一开始」）----
-  //   最终命中线 = min(100, 档位命中线 × 时机因子 + min(加成上限, 连没中 × 没中加成))
-  //   ⚠ 是**先乘因子、再加攒下来的加成**，最后夹 0~100%（顺序别写反）
-  //   ⚠ 没中加成 = 0 就等于关掉这个功能（一分不加）
-  没中加成: 10, // 每没掷中一次，下一次命中线加这么多（百分点）
-  加成上限: 40, // 加成最多加到这么多（百分点）
-  安静起: 1, // 安静时段（小时，含起不含止）；起 === 止 表示不启用
-  安静止: 8,
-  近阈值分钟: 20, // 距她上次说话 < 这么多分钟 → 命中线乘「近因子」
-  近因子: 0.15,
-  远阈值分钟: 360, // 距她上次说话 > 这么多分钟 → 命中线乘「远因子」
-  远因子: 1.5,
-  // ⚠ 这一格是**她自己开口之后的冷却**（跟上面那两个时机因子阈值是两回事：
-  //   那是"她多久没说话"，这是"我们自己多久前开过口"）。
-  //   以前这里偷偷借用了「近阈值分钟」，设置页里看不到这一格 —— 现在单独拎出来了。
-  搭话冷却分钟: 20, // 0 = 不冷却
-  触发文案: '好久没人跟我说话了，我该主动去打个招呼',
-  角色: 'user', // 'user' = 现在唯一能跑通的；'developer' = 本插件会拒绝（详见文件头注释）
-}
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[lib/host.js:843-875](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L843-L875)
+
+自动或手动可以演练，真发调用原 agent 并尝试落盘。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+    if (配置.角色 === 'developer') {
+      // 不是「没实现」，是**当前 DSH 版本上做不到**（见文件头注释的三条证据）。
+      // 在这里主动拦下来，是为了不去污染她的会话日志（真发出去会让那一轮 turn 直接 error）。
+      return 记账(`${前缀}角色填的是 developer，但当前 DSH 送不了 developer 角色（详见 README「做不到的地方」），这轮**主动不发**`)
+    }
+
+    if (演练) {
+      return 记账(`${前缀}演练：本来要往「${目标id}」送一句「${框住内心话(配置.触发文案, 现在).split(String.fromCharCode(10)).join(' ')}」`)
+    }
+
+    const 文案 = 框住内心话(配置.触发文案, 现在)
+    try {
+      const 工厂 = await 拿造消息工厂()
+      const 消息 = 工厂
+        ? 工厂.createUserMessage({ content: [{ type: 'text', text: 文案 }], source: { kind: 源标记 } })
+        : 手搓用户消息(文案)
+      // ⚠⚠ 必须 await：followup 返回的是 Promise，不接住的话——
+      //   它一旦 reject（会话正忙 / agent 已释放 / 流出错），就是**未处理的 rejection**，
+      //   Node 22+ 默认当致命错误处理 ⇒ **整个 DSH 宿主进程退出**（2026-10-21 有用户报"装了鱼就死了"）
+      await agent.followup(消息)
+      // ⭐ 0.2.9（issue #8 前半段）：这里**不再**记「自己上次开口」。
+      //   投递只是把一句念头塞进她的会话，她完全可以看完选择不说
+      //   （真机上就发生过：投递成功、这一轮 1 秒结束、一个字没发，却照样吃掉了整个冷却）。
+      //   现在改成「真的出现一条有正文的 assistant 消息」才算开口 —— 见 记她说话()。
+      记账(`${前缀}已送出一句，DSH 会照常开一轮：「${文案}」`)
+      // 让这一条先落到磁盘上，掉电也不会丢（拿不到 sessions 服务就算了）
+      try {
+        if (ctx.sessions && typeof ctx.sessions.flush === 'function') await ctx.sessions.flush(agent.session)
+      } catch (error) {
+        记账(`（提示：落盘没确认：${String((error && error.message) || error)}）`)
+      }
+    } catch (error) {
+      记账(`followup 失败：${String((error && error.message) || error)}`)
+```
+
+</details>
+
+#### 缺口
+
+- 没有用户对打扰和自然度的同条件反馈
+  **影响**：只能确定动作与人工触发的差异
+  **进一步探讨**：用同一非敏感会话对照人工发起、固定提醒和演练规则
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 定时到点后如何选会话、掷骰和确认开口？
+### Q02 · 目标如何选，何时才真正调用宿主？
 
 **研究主题**：功能与机制
 
 #### 完整回答
 
-interval调用同一个掷一次入口；自动模式检查总开关、本机安静小时、目标存在、归档、idle与全局冷却，再从可用目标随机挑一个。近期用户消息时间先从内存取，初次可查sessionController历史；峰谷基础线乘时机因子，再加没中补偿并夹到0..100，与Math.random*100比较。命中后连没中清零，默认试运行只留日志；真发构造source.kind=speak-up的user消息并await followup，然后尽力flush。冷却不是投递回执：选定目标出现任意非空assistant/message就更新时间，包括由普通用户触发的回答，并未用run关联只认主动轮次。
+Cordis 包接线启动宿主后，以配置间隔挂定时器。自动先查总开关和机器本地安静时段，默认从手选目标中剔除已归档、无活 agent 和忙碌项，只挑一个。跟随模式改用 agents.list，筛归档与状态后按会话时间戳降序，取首项再走可用性筛选。时间戳取可用字段，否则为 0，源码函数没有注释所说的文件 mtime 兜底，所以最近活跃依赖宿主数据。过冷却后，命中线由峰谷基线、最近发话时机因子和连续未中补偿组成。未中不调用模型，演练命中只记账；真发把经文字包装的内心话放进 role=user 消息，await agent.followup，再尽力 flush。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/host.js:682-743](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L682-L743)
+**依据 1 · 源码核查**：[cordis.patch.yml:5-7](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/cordis.patch.yml#L5-L7)
 
-自动过滤与随机选目标。
-
-<details>
-<summary>查看原文（62行）</summary>
+确认 Host 实际加载入口。
 
 ```text
-  async function 掷一次(来源, 模式) {
-    const 配置 = 读配置()
-    const 演练 = 模式 === '演练' || (模式 === '自动' && 配置.试运行)
-    // ⚠ 整轮**只取一次"现在"**（安静时段、峰谷判档、记账都用它）——
-    //   免得刚好压在边界上（比如 12:00:00）时，判档和记账说的不是同一档。
-    const 现在 = new Date()
+- insert:
+    - id: speak-up
+      name: 'dsh-speak-up'
+```
 
+**依据 2 · 源码核查**：[lib/host.js:486-515](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L486-L515)
+
+归档列表有磁盘兜底，最近活跃取时间戳字段，无 mtime 回退。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+function 归档名单(ctx) {
+  const 出 = new Set()
+  try {
+    const 登记 = ctx.workspaceRegistry || ctx.get('workspaceRegistry')
+    const ids = 登记 && 登记.archivedSessionIds
+    if (Array.isArray(ids)) {
+      for (const x of ids) 出.add(会话键(x))
+      return 出
+    }
+  } catch (error) {}
+  try {
+    const j = JSON.parse(readFileSync(join(目录, 'storages', 'workspace.json'), 'utf8'))
+    const ids = j && j.global && j.global.archivedSessionIds
+    if (Array.isArray(ids)) for (const x of ids) 出.add(会话键(x))
+  } catch (error) {}
+  return 出
+}
+
+/** 最近活跃：会话服务上的时间戳优先，拿不到就看会话文件 mtime。 */
+function 最近活跃(ctx, id) {
+  try {
+    const 服务 = ctx.get('sessions')
+    const 会话 = 服务 && typeof 服务.get === 'function' ? 服务.get(id) : undefined
+    for (const 键 of ['updatedAt', 'lastActiveAt', 'lastMessageAt', 'createdAt']) {
+      const 值 = 会话 && 会话[键]
+      const 数 = typeof 值 === 'number' ? 值 : Date.parse(String(值 || ''))
+      if (Number.isFinite(数) && 数 > 0) return 数
+    }
+  } catch (error) {}
+  return 0
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/host.js:730-788](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L730-L788)
+
+目标在骰子前选择并筛选；空目标不唤醒。
+
+<details>
+<summary>查看原文（59行）</summary>
+
+```text
     if (模式 === '自动' && !配置.总开关) return 记账('总开关是关着的，这轮不动')
     if (模式 === '自动') {
       const 小时 = 现在.getHours()
@@ -301,7 +367,26 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
       }
     }
 
-    if (配置.目标会话.length === 0) return 记账('还没勾「目标会话」，什么都不做（去设置里勾一个）')
+    // ⭐ 1.3.3（issue #9）：「跟随最近活跃」模式 —— 不用勾，自己找她最近在说话的那一间
+    let 候选ids = Array.isArray(配置.目标会话) ? 配置.目标会话.slice() : []
+    if (配置.跟随模式) {
+      const 归档的0 = 归档名单(ctx)
+      const 活的 = []
+      try {
+        for (const a of ctx.agents.list() || []) {
+          const id = a && (a.id || (a.session && a.session.id))
+          if (!id) continue
+          if (归档的0.has(会话键(id))) continue
+          if (a.status !== undefined && a.status !== 'idle') continue
+          活的.push({ id: String(id), 时: 最近活跃(ctx, String(id)) })
+        }
+      } catch (error) {}
+      if (!活的.length) return 记账('跟随最近活跃：现在没有活着的会话，这轮什么都不做')
+      活的.sort((x, y) => y.时 - x.时)
+      候选ids = [活的[0].id]
+      记账('跟随最近活跃：这次选 ' + 短id(活的[0].id))
+    }
+    if (候选ids.length === 0) return 记账('还没勾「目标会话」，什么都不做（去设置里勾一个，或者打开「跟随最近活跃」）')
 
     // 勾了好几个时：**这次只在其中一个里开口**（随机挑一个活着又不忙的）。
     // 为什么不全都发：一次掷中就往每个会话里说一句，等于同时开好几轮、同时烧好几份 token，
@@ -309,13 +394,9 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
     const 可用 = []
     const 不可用 = []
     // ⭐ 已归档的会话不参与（归档只是藏起来，agent 可能还在；往里塞话等于往废纸篓里说）
-    const 归档名单 = new Set()
-    try {
-      const 登记 = ctx.workspaceRegistry || ctx.get('workspaceRegistry')
-      for (const x of (登记 && 登记.archivedSessionIds) || []) 归档名单.add(String(x))
-    } catch (error) {}
-    for (const id of 配置.目标会话) {
-      if (归档名单.has(String(id))) {
+    const 归档的 = 归档名单(ctx)
+    for (const id of 候选ids) {
+      if (归档的.has(会话键(id))) {
         不可用.push(`${短id(id)}(已归档)`)
         continue
       }
@@ -337,10 +418,18 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
       )
     }
     const 挑中 = 可用[Math.floor(Math.random() * 可用.length)]
-    const 目标id = 挑中.id
-    const agent = 挑中.agent
-    const 挑的说法 = 可用.length > 1 ? `（勾了 ${可用.length} 个可用，这次挑 ${短id(目标id)}）` : ''
+```
 
+</details>
+
+**依据 4 · 源码核查**：[lib/host.js:793-850](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L793-L850)
+
+自动冷却、随机、演练与手动模式分叉。
+
+<details>
+<summary>查看原文（58行）</summary>
+
+```text
     // 「主动搭话」之后的冷却（单独一格配置；跟"她多久没说话"那两个阈值是两回事）。
     // ⚠ 0 = 不冷却：刚开口过也照投。
     if (模式 === '自动' && 配置.搭话冷却分钟 > 0 && 自己上次开口 !== 0) {
@@ -348,18 +437,10 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
       if (冷却 < 配置.搭话冷却分钟) {
         return 记账(`自己刚开过口（${冷却.toFixed(1)} 分钟前，冷却 ${配置.搭话冷却分钟} 分钟），这轮不重复`)
       }
-```
+    }
 
-</details>
-
-**依据 2 · 源码核查**：[lib/host.js:748-816](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L748-L816)
-
-掷骰、演练、followup和flush。
-
-<details>
-<summary>查看原文（69行）</summary>
-
-```text
+    // ⚠ 下面这段只给**自动**那一轮用（手动按钮不掷骰子，也不许动「连没中」计数器）。
+    //   口径是她定的：**先说最终答案（命中线），再说怎么来的**，最后说副作用（清零 / 下次变多少）。
     let 前缀 = ''
     if (模式 === '自动') {
       // ⚠ 一次掷骰**只取一次"现在"**，然后一路传下去：安静时段、峰谷判档、记账都用它，
@@ -407,8 +488,18 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
 
     if (演练) {
       return 记账(`${前缀}演练：本来要往「${目标id}」送一句「${框住内心话(配置.触发文案, 现在).split(String.fromCharCode(10)).join(' ')}」`)
-    }
+```
 
+</details>
+
+**依据 5 · 源码核查**：[lib/host.js:853-875](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L853-L875)
+
+按宿主用户消息工厂或本地构造，再等待 followup 并尽力落盘。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
     const 文案 = 框住内心话(配置.触发文案, 现在)
     try {
       const 工厂 = await 拿造消息工厂()
@@ -429,64 +520,41 @@ interval调用同一个掷一次入口；自动模式检查总开关、本机安
         if (ctx.sessions && typeof ctx.sessions.flush === 'function') await ctx.sessions.flush(agent.session)
       } catch (error) {
         记账(`（提示：落盘没确认：${String((error && error.message) || error)}）`)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host.js:886-901](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L886-L901)
-
-任意目标assistant正文更新全局冷却。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-    记她说话(session, event) {
-      if (!event) return
-      if (event.type === 'user/message') {
-        const 来源 = event.data && event.data.source
-        if (来源 && 来源.kind === 源标记) return
-        她上次说话.set(String(session.id), event.time)
-        return
       }
-      // ⭐ 0.2.9（issue #8 前半段）：冷却只认「她**真的说了话**」。
-      //   · assistant/message 里没有非空 text 块（只想了、只调了工具）→ 不算
-      //   · 不是勾着的目标会话（别的会话、子代理）→ 也不算
-      if (event.type !== 'assistant/message') return
-      if (!说了话(event.data && event.data.message)) return
-      const sid = String(session.id)
-      if (!读配置().目标会话.some((id) => 会话键(id) === 会话键(sid))) return
-      自己上次开口 = event.time
+    } catch (error) {
+      记账(`followup 失败：${String((error && error.message) || error)}`)
 ```
 
 </details>
+
+#### 缺口
+
+- 不同宿主的会话时间字段、状态和历史 API 返回未核验
+  **影响**：跟随排序可能大量并列，也不能确定最近用户发言就是所选目标
+  **进一步探讨**：在可控宿主对照两个会话的真实事件时间、列表状态和最终目标
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 调度规则能保证节费、安静和一次性投递吗？
+### Q03 · 新的跟随模式是否遵守冷却，后台怎样处理失败？
 
 **研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-峰谷线使用可选IANA时区，而安静时段在自动入口用本机getHours；海外机器设Asia/Shanghai并不会同步改变安静时段。所谓峰时贵谷时便宜是固定时段策略，未查询实际供应商价格，不能保证节费。冷却、连没中及最近60条日志放内存，重启会丢失，不能当持久额度或审计；多目标共享全局冷却也不等于各自独立频率。定时回调没有本组件串行锁，选idle后还会await历史检查和消息工厂，期间Agent状态可能变化；followup失败能捕获，但源码不是恰好一次投递协议。优点是await捕错与flush失败留痕，不能因此说已成功生成或送达用户。
+自动冷却用一个全局最近开口时间。事件回调只要见到有正文的 assistant/message 且会话在配置的手选目标里，就更新时间；这里既没有关联触发消息，也没有检查跟随模式实际选了谁。只打开跟随且手选列表为空时，即使所选会话真实回复也不会更新冷却；反过来，手选目标因用户普通提问而回答也能消耗全局冷却。这能从两个条件直接推出，尚未测量真实打扰。定时器以 void 启动异步任务，下一次滴答和手动按钮可在前一轮尚未结束时进入同一逻辑；有 catch 保住宿主，但源码没有每目标预占或去重。连续未中、日志和冷却时间存在进程内存，重启后重置。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/host.js:574-606](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L574-L606)
+**依据 1 · 源码核查**：[lib/host.js:619-648](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L619-L648)
 
-内存计数、冷却及日志。
+时机和连没中、日志为执行体内存状态。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
-function 造执行体(ctx) {
-  /** 最近几次掷骰的记录（给设置页看，也顺便写进 ctx.logger）。 */
-  const 日志 = []
-
   /** sid -> 她上次说话的时间（ms）。只看 user/message 且来源不是我们自己。 */
   const 她上次说话 = new Map()
   /** 已经翻过历史日志的 sid（翻一次就够了，别每轮都翻）。 */
@@ -516,91 +584,109 @@ function 造执行体(ctx) {
     const 条 = { 时间: 现在显示(), 文本: String(文本) }
     日志.push(条)
     if (日志.length > 日志上限) 日志.shift()
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/host.js:658-671](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L658-L671)
-
-时区峰谷线计算。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-  async function 算这次命中线(配置, sid, 现在 = new Date()) {
-    const 分钟 = await 距上次说话分钟(sid)
-    let 因子 = 1
-    if (分钟 !== undefined) {
-      if (分钟 < 配置.近阈值分钟) 因子 = 配置.近因子
-      else if (分钟 > 配置.远阈值分钟) 因子 = 配置.远因子
-    }
-
-    // 峰时还是谷时 → 挑哪一格命中线（时段写死，见 判峰时()）
-    const 基础 = 算基础命中线(配置, 现在)
-
-    // 攒下来的没中加成（先乘因子，再加这个）
-    const { 加成, 线 } = 算命中线(基础.基础命中线, 因子, 连没中, 配置.没中加成, 配置.加成上限)
-    return { 分钟, 因子, 峰: 基础.峰, 短语: 基础.短语, 基础命中线: 基础.基础命中线, 加成, 线 }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host.js:689-694](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L689-L694)
-
-安静时段取本机小时。
-
-```text
-    if (模式 === '自动' && !配置.总开关) return 记账('总开关是关着的，这轮不动')
-    if (模式 === '自动') {
-      const 小时 = 现在.getHours()
-      if (在安静时段(小时, 配置.安静起, 配置.安静止)) {
-        return 记账(`现在 ${小时} 点在安静时段（${配置.安静起}~${配置.安静止}）里，这轮不掷`)
-      }
-```
-
-**依据 4 · 源码核查**：[lib/host.js:797-818](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L797-L818)
-
-投递与flush结果分别处理。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    const 文案 = 框住内心话(配置.触发文案, 现在)
     try {
-      const 工厂 = await 拿造消息工厂()
-      const 消息 = 工厂
-        ? 工厂.createUserMessage({ content: [{ type: 'text', text: 文案 }], source: { kind: 源标记 } })
-        : 手搓用户消息(文案)
-      // ⚠⚠ 必须 await：followup 返回的是 Promise，不接住的话——
-      //   它一旦 reject（会话正忙 / agent 已释放 / 流出错），就是**未处理的 rejection**，
-      //   Node 22+ 默认当致命错误处理 ⇒ **整个 DSH 宿主进程退出**（2026-10-21 有用户报"装了鱼就死了"）
-      await agent.followup(消息)
-      // ⭐ 0.2.9（issue #8 前半段）：这里**不再**记「自己上次开口」。
-      //   投递只是把一句念头塞进她的会话，她完全可以看完选择不说
-      //   （真机上就发生过：投递成功、这一轮 1 秒结束、一个字没发，却照样吃掉了整个冷却）。
-      //   现在改成「真的出现一条有正文的 assistant 消息」才算开口 —— 见 记她说话()。
-      记账(`${前缀}已送出一句，DSH 会照常开一轮：「${文案}」`)
-      // 让这一条先落到磁盘上，掉电也不会丢（拿不到 sessions 服务就算了）
-      try {
-        if (ctx.sessions && typeof ctx.sessions.flush === 'function') await ctx.sessions.flush(agent.session)
-      } catch (error) {
-        记账(`（提示：落盘没确认：${String((error && error.message) || error)}）`)
-      }
-    } catch (error) {
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/host.js:839-853](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L839-L853)
+**依据 2 · 源码核查**：[lib/host.js:738-756](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L738-L756)
 
-interval不等待上一轮结束。
+跟随目标直接替换候选列表。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
+    // ⭐ 1.3.3（issue #9）：「跟随最近活跃」模式 —— 不用勾，自己找她最近在说话的那一间
+    let 候选ids = Array.isArray(配置.目标会话) ? 配置.目标会话.slice() : []
+    if (配置.跟随模式) {
+      const 归档的0 = 归档名单(ctx)
+      const 活的 = []
+      try {
+        for (const a of ctx.agents.list() || []) {
+          const id = a && (a.id || (a.session && a.session.id))
+          if (!id) continue
+          if (归档的0.has(会话键(id))) continue
+          if (a.status !== undefined && a.status !== 'idle') continue
+          活的.push({ id: String(id), 时: 最近活跃(ctx, String(id)) })
+        }
+      } catch (error) {}
+      if (!活的.length) return 记账('跟随最近活跃：现在没有活着的会话，这轮什么都不做')
+      活的.sort((x, y) => y.时 - x.时)
+      候选ids = [活的[0].id]
+      记账('跟随最近活跃：这次选 ' + 短id(活的[0].id))
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/host.js:793-800](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L793-L800)
+
+自动分支用执行体全局的冷却时间。
+
+```text
+    // 「主动搭话」之后的冷却（单独一格配置；跟"她多久没说话"那两个阈值是两回事）。
+    // ⚠ 0 = 不冷却：刚开口过也照投。
+    if (模式 === '自动' && 配置.搭话冷却分钟 > 0 && 自己上次开口 !== 0) {
+      const 冷却 = (Date.now() - 自己上次开口) / 60000
+      if (冷却 < 配置.搭话冷却分钟) {
+        return 记账(`自己刚开过口（${冷却.toFixed(1)} 分钟前，冷却 ${配置.搭话冷却分钟} 分钟），这轮不重复`)
+      }
+    }
+```
+
+**依据 4 · 源码核查**：[lib/host.js:942-957](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L942-L957)
+
+任何在手选目标中的非空助理消息都可更新该时间。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    记她说话(session, event) {
+      if (!event) return
+      if (event.type === 'user/message') {
+        const 来源 = event.data && event.data.source
+        if (来源 && 来源.kind === 源标记) return
+        她上次说话.set(String(session.id), event.time)
+        return
+      }
+      // ⭐ 0.2.9（issue #8 前半段）：冷却只认「她**真的说了话**」。
+      //   · assistant/message 里没有非空 text 块（只想了、只调了工具）→ 不算
+      //   · 不是勾着的目标会话（别的会话、子代理）→ 也不算
+      if (event.type !== 'assistant/message') return
+      if (!说了话(event.data && event.data.message)) return
+      const sid = String(session.id)
+      if (!读配置().目标会话.some((id) => 会话键(id) === 会话键(sid))) return
+      自己上次开口 = event.time
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/host.js:879-909](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L879-L909)
+
+定时异步链捕获失败，但没有等待上一轮的并发门。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+  /** 换表：先把旧表停掉，再按新的间隔上一块。间隔为 null 表示不上表。 */
+  function 换表(间隔分钟) {
+    if (停表 !== null) {
+      try {
+        停表()
+      } catch (error) {
+        // 停表失败也无所谓：表本身会在插件卸载时被 Cordis 收走
+      }
+      停表 = null
+    }
+    if (间隔分钟 === null) return
+    if (typeof ctx.interval !== 'function') {
+      记账('拿不到 timer 服务（ctx.interval 不在），定时掷骰不会跑 —— 但设置页和手动手动按钮还能用')
+      return
+    }
+    表上的间隔 = 间隔分钟
     停表 = ctx.interval(() => {
       void 掷一次('定时', '自动')
         .catch((error) => 记账(`这一轮出错：${String((error && error.message) || error)}`))
@@ -620,95 +706,133 @@ interval不等待上一轮结束。
 
 </details>
 
+#### 缺口
+
+- 尚无重启、重叠滴答或用户回合交错的同版本实测
+  **影响**：无法给重复投递和错过时机的频率
+  **进一步探讨**：以假的 followup 延迟和两种来源的助理事件检查冷却、重复与跳过日志
+
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 首次、持续、故障和退出有什么负担？
+### Q04 · 权限、成本和退出条件如何？
 
-**研究主题**：依赖、兼容与流程、效果与总成本
+**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-package要求Node>=22、DSH>=0.2.1-rc.2的web界面，Host依赖agents/sessions/sessionTitle/webServer/timer/workspaceRegistry；历史查询和新建会话另需sessionController。默认目标为空、试运行开启，用户先选择会话、文案、时区、安静与冷却；developer角色会主动拒发，当前真发只能走user消息。随机判断本地执行，但命中后完整Agent轮次可能调用模型和工具，真实费用、数量及打扰程度未知。配置写入失败有API错误提示，日志与冷却不持久；停用或关总开关只约束后续自动轮次，手动真发明确绕过总开关、安静、随机与试运行，已有followup副作用不自动撤销。管理路由有宿主requestRejection及本地来源检查，变更接口限POST，更新接口仍可能调用installBundle。
+包声明 Node 22、DSH 0.2.1-rc.2 及 Web 设置槽位。已运行的目标 agent 才能收到消息；真发继承目标会话能力，应先使用不配置敏感工具的独立会话。默认演练和未命中为本地日志，没有独立模型请求；真发可能消耗普通轮次 token 并触发工具，固定峰谷规则不能推断供应商费率。动作路由要求 POST，连接拒绝会终止，浏览器跨站与非本机 Origin 另有拦截；没有来源的调用能过这层判断，实际网络暴露依赖宿主。先观察，尤其在跟随模式修正或限定前保留默认演练。退出时关总开关、停用并核对在飞回合，备份配置文件；手动真发并不受总开关和演练设置保护。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:6-10](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/package.json#L6-L10)
+**依据 1 · 源码核查**：[package.json:5-49](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/package.json#L5-L49)
 
-版本要求。
+声明最低版本、宿主导出和 Web 槽位。
+
+<details>
+<summary>查看原文（45行）</summary>
 
 ```text
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
   "engines": {
     "node": ">=22",
     "dsh": ">=0.2.1-rc.2"
   },
-```
-
-**依据 2 · 源码核查**：[lib/host.js:50-57](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L50-L57)
-
-Host服务依赖。
-
-```text
-export const name = 'speak-up'
-
-/**
- * 需要宿主提供的服务。缺任何一个，install 时会直接报错（这是好事，早炸早发现）。
- * ⚠ 'sessionTitle' 是为了「活着的会话」能显示名字（朗读桥 dsh-tts-bridge 和小说插件都是这么 inject 的）。
- *   实测这台机器上它一定在。真要装到没有它的部署上：删掉这一项即可（标题会走投影缓存那条路）。
- */
-export const inject = ['agents', 'sessions', 'sessionTitle', 'webServer', 'timer', 'workspaceRegistry']
-```
-
-**依据 3 · 源码核查**：[lib/host.js:787-816](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L787-L816)
-
-developer拒绝与普通轮次。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-    if (配置.角色 === 'developer') {
-      // 不是「没实现」，是**当前 DSH 版本上做不到**（见文件头注释的三条证据）。
-      // 在这里主动拦下来，是为了不去污染她的会话日志（真发出去会让那一轮 turn 直接 error）。
-      return 记账(`${前缀}角色填的是 developer，但当前 DSH 送不了 developer 角色（详见 README「做不到的地方」），这轮**主动不发**`)
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "initiative",
+    "proactive",
+    "ai-companion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuuyuko-uu/dsh-speak-up.git"
+  },
+  "main": "lib/host.js",
+  "exports": {
+    ".": "./lib/host.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tests",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ],
+      "external": [
+        "react"
+      ]
     }
-
-    if (演练) {
-      return 记账(`${前缀}演练：本来要往「${目标id}」送一句「${框住内心话(配置.触发文案, 现在).split(String.fromCharCode(10)).join(' ')}」`)
-    }
-
-    const 文案 = 框住内心话(配置.触发文案, 现在)
-    try {
-      const 工厂 = await 拿造消息工厂()
-      const 消息 = 工厂
-        ? 工厂.createUserMessage({ content: [{ type: 'text', text: 文案 }], source: { kind: 源标记 } })
-        : 手搓用户消息(文案)
-      // ⚠⚠ 必须 await：followup 返回的是 Promise，不接住的话——
-      //   它一旦 reject（会话正忙 / agent 已释放 / 流出错），就是**未处理的 rejection**，
-      //   Node 22+ 默认当致命错误处理 ⇒ **整个 DSH 宿主进程退出**（2026-10-21 有用户报"装了鱼就死了"）
-      await agent.followup(消息)
-      // ⭐ 0.2.9（issue #8 前半段）：这里**不再**记「自己上次开口」。
-      //   投递只是把一句念头塞进她的会话，她完全可以看完选择不说
-      //   （真机上就发生过：投递成功、这一轮 1 秒结束、一个字没发，却照样吃掉了整个冷却）。
-      //   现在改成「真的出现一条有正文的 assistant 消息」才算开口 —— 见 记她说话()。
-      记账(`${前缀}已送出一句，DSH 会照常开一轮：「${文案}」`)
-      // 让这一条先落到磁盘上，掉电也不会丢（拿不到 sessions 服务就算了）
-      try {
-        if (ctx.sessions && typeof ctx.sessions.flush === 'function') await ctx.sessions.flush(agent.session)
-      } catch (error) {
-        记账(`（提示：落盘没确认：${String((error && error.message) || error)}）`)
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/host.js:1076-1128](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L1076-L1128)
+**依据 2 · 源码核查**：[lib/host.js:245-276](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L245-L276)
 
-来源门与POST包装。
+配置读取回退及直接写文件。
 
 <details>
-<summary>查看原文（53行）</summary>
+<summary>查看原文（32行）</summary>
+
+```text
+function 读配置() {
+  // 新文件优先；没有就退回旧文件（改名搬家）；都没有才回默认值。
+  // 一律不抛错 —— 设置页要能打开才有救。
+  for (const 路径 of [配置文件, 旧配置文件]) {
+    try {
+      // Windows 编辑器可能在 UTF-8 JSON 开头写 BOM；只去掉文件头，保留正文里的同字符。
+      const 原始 = JSON.parse(readFileSync(路径, 'utf8').replace(/^\uFEFF/, ''))
+      const 净 = 归一化(原始)
+      // ⭐ 2026-10-23：磁盘上要是存着「同一会话两种写法」，顺手把它洗干净写回去，
+      //   不用用户自己去改 JSON（用户报的就是这个：勾不掉、只能手改文件）。
+      try {
+        const 旧 = Array.isArray(原始 && 原始.目标会话) ? 原始.目标会话 : null
+        if (路径 === 配置文件 && 旧 && JSON.stringify(旧) !== JSON.stringify(净.目标会话)) {
+          写配置(净)
+        }
+      } catch (error) {}
+      return 净
+    } catch (error) {
+      /* 读不到 / 读坏了 → 试下一个 */
+    }
+  }
+  return 归一化(null)
+}
+
+function 写配置(配置) {
+  try {
+    mkdirSync(目录, { recursive: true })
+    writeFileSync(配置文件, JSON.stringify(配置, null, 2), 'utf8')
+    return true
+  } catch (error) {
+    return false
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/host.js:1132-1175](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L1132-L1175)
+
+守卫与动作 POST 限制，缺来源头可能继续。
+
+<details>
+<summary>查看原文（44行）</summary>
 
 ```text
   const 本机来源 = /^(?:dsh-app:|https?:\/\/(?:127\.0\.0\.1|localhost|\[::1\])(?::\d+)?\/?$)/i
@@ -755,56 +879,26 @@ developer拒绝与普通轮次。
           }
         },
       }),
-    )
+```
 
-  // ⭐ 设置页那个「检查更新」：查这个插件自己的仓库
-  //    ⚠ 这里的 diag 不能用下面的「记账」—— 它是在 apply 里才定义的，这会儿还没有
-  //    ⚠ 这条路由也要过那道门（`/install` 会真的去装东西，能被跨站点到就麻烦了）
+</details>
+
+**依据 4 · 源码核查**：[lib/host.js:1181-1184](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L1181-L1184)
+
+安装与检查更新也传入同一道守卫。
+
+```text
   createSelfUpdate({
     packageRoot: join(dirname(fileURLToPath(import.meta.url)), '..'),
     diag: (m) => { try { ctx.logger.info('speak-up 查更新: ' + m) } catch (e) { /* logger 不在就算了 */ } },
   }).register(ctx, 路由前缀, 拦住)
 ```
 
-</details>
+**依据 5 · 源码核查**：[lib/host.js:1370-1376](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L1370-L1376)
 
-**依据 5 · 源码核查**：[lib/host.js:1289-1324](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L1289-L1324)
-
-配置失败和手动真发语义。
-
-<details>
-<summary>查看原文（36行）</summary>
+手动真发显式入口，调用完成不证明助理发话。
 
 ```text
-  // 存：只覆盖传上来的字段，其余保持原样
-  路线(`${路由前缀}/save`, async (req, res) => {
-    const 来 = await 读体(req)
-    const 现在 = 体.配置()
-    const 新 = { ...现在, ...(来 && typeof 来 === 'object' ? 来 : {}) }
-    const 洗好 = 归一化(新)
-    if (!写配置(洗好)) {
-      return 回(res, { ok: false, 说: `写不进配置文件：${配置文件}` })
-    }
-    // ⚠ 间隔一改就要**立刻换表**：定时器还是按上一次的间隔挂着的，
-    //   不重新挂的话，把 15 分钟改成 1 分钟也得先干等满那 15 分钟才有第一次滴答
-    //   （踩过：她改成 1 分钟，几分钟过去一条记录都没有，看着就像坏了）。
-    {
-      const 旧间隔 = 体.当前间隔()
-      if (洗好.间隔分钟 !== 旧间隔) {
-        体.换表(洗好.间隔分钟)
-        体.记账(
-          `间隔从 ${旧间隔 === null ? '（没挂表）' : 旧间隔 + ' 分钟'} 改成 ${洗好.间隔分钟} 分钟，表已经重新挂好`,
-        )
-      }
-    }
-    体.记账(
-      `设置已保存（间隔 ${洗好.间隔分钟} 分钟、峰时命中线 ${洗好.峰时命中线}% / 谷时命中线 ${洗好.谷时命中线}%、` +
-        `没中加成 +${洗好.没中加成}/次 最多 +${洗好.加成上限}、搭话冷却 ${洗好.搭话冷却分钟} 分钟、` +
-        `安静 ${洗好.安静起}~${洗好.安静止} 点、${洗好.试运行 ? '试运行' : '真发'}）`,
-    )
-    回(res, { ...(await 概况()), 说: '保存好了' })
-  }, { 只收POST: true })
-
   // 掷一次：演练 / 真发。**这里和定时器走的是同一段逻辑**，不是另写一份。
   路线(`${路由前缀}/roll`, async (req, res) => {
     const 来 = await 读体(req)
@@ -814,151 +908,86 @@ developer拒绝与普通轮次。
   }, { 只收POST: true })
 ```
 
-</details>
+**依据 6 · 源码核查**：[lib/host.js:723-735](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L723-L735)
 
-**依据 6 · 源码核查**：[lib/selfupdate.mjs:168-185](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/selfupdate.mjs#L168-L185)
-
-更新安装的真实副作用。
+仅自动路径受总开关和安静时段约束。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-  async function install(ctx) {
-    if (是开发副本) {
-      return { ok: false, error: '这是本地开发副本（link: 进来的），一键更新会把你正在改的目录换成仓库里的版本 —— 要更新请在仓库里 git pull' }
-    }
-    const pm = ctx && ctx.pluginManager
-    if (!pm || typeof pm.installBundle !== 'function') {
-      return { ok: false, error: '这版 DSH 没有插件管理接口，装不了；请手动更新' }
-    }
-    const spec = 取安装来源() || (meta.name ? String(meta.name) : '')
-    if (!spec) return { ok: false, error: '不知道该从哪儿装（既没有仓库地址，也没记录安装来源）' }
-    try {
-      log('一键更新：开始装 ' + spec)
-      const r = await pm.installBundle(spec)
-      log('一键更新：' + JSON.stringify(r && (r.applied ?? r.application ?? r.reason ?? r)))
-      return { ok: true, spec, result: r || null }
-    } catch (e) {
-      log('一键更新失败：' + String((e && e.message) || e))
-      return { ok: false, spec, error: String((e && e.message) || e) }
+  async function 掷一次(来源, 模式) {
+    const 配置 = 读配置()
+    const 演练 = 模式 === '演练' || (模式 === '自动' && 配置.试运行)
+    // ⚠ 整轮**只取一次"现在"**（安静时段、峰谷判档、记账都用它）——
+    //   免得刚好压在边界上（比如 12:00:00）时，判档和记账说的不是同一档。
+    const 现在 = new Date()
+
+    if (模式 === '自动' && !配置.总开关) return 记账('总开关是关着的，这轮不动')
+    if (模式 === '自动') {
+      const 小时 = 现在.getHours()
+      if (在安静时段(小时, 配置.安静起, 配置.安静止)) {
+        return 记账(`现在 ${小时} 点在安静时段（${配置.安静起}~${配置.安静止}）里，这轮不掷`)
+      }
 ```
 
 </details>
+
+#### 缺口
+
+- 宿主连接拒绝、工具可用范围和实际预算未核验
+  **影响**：不能判断隔离之外的运行风险
+  **进一步探讨**：先在夹具确认未授权 POST 拒绝，并核对目标工具权限，采集一轮预算与会话事件
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 如何控制试用，什么设计假设值得继续？
+### Q05 · 怎样验证同时限制打扰、保留主动对话机会？
 
-**研究主题**：新假设与验证、采用判断
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-可在无敏感工具的独立角色会话先保持试运行，检查不同本机时间/峰谷时区、归档、忙状态和冷却日志，再由用户决定是否手动真发一次；不能用演练成功冒充生成效果。重复投递、目标不符、打扰或费用不合预期时关闭总开关并停用，回到用户手动发话。可推导一个未实现方向，将调度决策、投递和带run关联的实际回复做持久回执，并使用统一的调度时区。它增加存储和迁移成本，需在重启、并发tick和迟到回执条件下与当前实现对照；只有重复/漏发减少、费用可归因且打扰不增才支持，否则否定。
+可把候选会话及触发消息 ID 写入投递记录，等待匹配的宿主回复后只推进该目标的冷却，并为在飞轮次设置每目标占用。相对目前全局且靠手选列表更新的冷却，假设可以减少跟随误重复，也避免普通答复无故消耗主动预算。先用固定事件序列对照原规则与新规则，覆盖空手选列表、切换最近目标、用户普通对话、无正文和重启。若误重复没有降低，或未投递本应保留的合格机会同步升高，就不能认为方案更好。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/host.js:99-137](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L99-L137)
+**依据 1 · 源码核查**：[lib/host.js:853-872](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L853-L872)
 
-默认演练与明确控制项。
+当前可确认投递与落盘尝试，未从这里关联实际回复。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-const 默认配置 = {
-  总开关: true, // 关掉就完全不动
-  试运行: true, // **默认开着**：掷中了也只记账、不真发（先看几轮再关掉它）
-  目标会话: [], // 勾了哪些会话（**数组**，可以勾多个）；掷中一次只在其中一个里开口
-  间隔分钟: 30, // 多久掷一次骰子
-  // ---- 峰谷分时：贵的时候少开口，便宜的时候多开口 ----
-  // ⚠⚠ 峰谷**时段是固定的，不给她填**（周一到周五 9:00~12:00、14:00~18:00 是峰时，
-  //    其余全是谷时）。她要填的只有下面这两个数。
-  // ⚠ 这两个数**不是"概率"**（她纠正过：叫概率就不对了）—— 它们是**基础命中线**：
-  //    每轮掷一个 0~100 的数，**掷到命中线以下才开口**，掷在上面就不开。
-  //    最终命中线 = 这一格 × 时机因子 + 攒下来的没中加成（最后夹 0~100）。
-  //    判断在 判峰时() 里写死，见那个函数的注释。
-  峰时命中线: 20, // 峰时（贵）→ 命中线低一点、少开口
-  谷时命中线: 60, // 谷时（便宜）→ 命中线高一点、多开口
-  // ⭐ 2026-10-26（issue #4）：峰谷是**北京时间**算的。海外机器的本地时间对不上，
-  //   填个 IANA 时区名（例如 Asia/Shanghai）就按那个时区判；留空 = 跟本机时区。
-  峰谷时区: '',
-  // ⚠ 老配置里那个单独的「概率」**不再读了**（被上面两格替换）。她的旧值会被丢掉，这是预期的。
-  // ⚠ 更早一版这两格叫「峰时概率 / 谷时概率」，归一化里还认旧键名（改名兼容）。
-  // ---- 没掷中就攒加成，掷中就归零（她原话：「上次没投中，下一次就要加概率；下次如果投中了，
-  //      概率又回到一开始」）----
-  //   最终命中线 = min(100, 档位命中线 × 时机因子 + min(加成上限, 连没中 × 没中加成))
-  //   ⚠ 是**先乘因子、再加攒下来的加成**，最后夹 0~100%（顺序别写反）
-  //   ⚠ 没中加成 = 0 就等于关掉这个功能（一分不加）
-  没中加成: 10, // 每没掷中一次，下一次命中线加这么多（百分点）
-  加成上限: 40, // 加成最多加到这么多（百分点）
-  安静起: 1, // 安静时段（小时，含起不含止）；起 === 止 表示不启用
-  安静止: 8,
-  近阈值分钟: 20, // 距她上次说话 < 这么多分钟 → 命中线乘「近因子」
-  近因子: 0.15,
-  远阈值分钟: 360, // 距她上次说话 > 这么多分钟 → 命中线乘「远因子」
-  远因子: 1.5,
-  // ⚠ 这一格是**她自己开口之后的冷却**（跟上面那两个时机因子阈值是两回事：
-  //   那是"她多久没说话"，这是"我们自己多久前开过口"）。
-  //   以前这里偷偷借用了「近阈值分钟」，设置页里看不到这一格 —— 现在单独拎出来了。
-  搭话冷却分钟: 20, // 0 = 不冷却
-  触发文案: '好久没人跟我说话了，我该主动去打个招呼',
-  角色: 'user', // 'user' = 现在唯一能跑通的；'developer' = 本插件会拒绝（详见文件头注释）
-}
+    const 文案 = 框住内心话(配置.触发文案, 现在)
+    try {
+      const 工厂 = await 拿造消息工厂()
+      const 消息 = 工厂
+        ? 工厂.createUserMessage({ content: [{ type: 'text', text: 文案 }], source: { kind: 源标记 } })
+        : 手搓用户消息(文案)
+      // ⚠⚠ 必须 await：followup 返回的是 Promise，不接住的话——
+      //   它一旦 reject（会话正忙 / agent 已释放 / 流出错），就是**未处理的 rejection**，
+      //   Node 22+ 默认当致命错误处理 ⇒ **整个 DSH 宿主进程退出**（2026-10-21 有用户报"装了鱼就死了"）
+      await agent.followup(消息)
+      // ⭐ 0.2.9（issue #8 前半段）：这里**不再**记「自己上次开口」。
+      //   投递只是把一句念头塞进她的会话，她完全可以看完选择不说
+      //   （真机上就发生过：投递成功、这一轮 1 秒结束、一个字没发，却照样吃掉了整个冷却）。
+      //   现在改成「真的出现一条有正文的 assistant 消息」才算开口 —— 见 记她说话()。
+      记账(`${前缀}已送出一句，DSH 会照常开一轮：「${文案}」`)
+      // 让这一条先落到磁盘上，掉电也不会丢（拿不到 sessions 服务就算了）
+      try {
+        if (ctx.sessions && typeof ctx.sessions.flush === 'function') await ctx.sessions.flush(agent.session)
+      } catch (error) {
+        记账(`（提示：落盘没确认：${String((error && error.message) || error)}）`)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/host.js:574-606](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L574-L606)
+**依据 2 · 源码核查**：[lib/host.js:942-957](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/541f6c70df51c82d63e5cb69f1c5aa4e66997f7c/lib/host.js#L942-L957)
 
-持久回执方向来自内存状态。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-function 造执行体(ctx) {
-  /** 最近几次掷骰的记录（给设置页看，也顺便写进 ctx.logger）。 */
-  const 日志 = []
-
-  /** sid -> 她上次说话的时间（ms）。只看 user/message 且来源不是我们自己。 */
-  const 她上次说话 = new Map()
-  /** 已经翻过历史日志的 sid（翻一次就够了，别每轮都翻）。 */
-  const 翻过历史 = new Set()
-  /**
-   * 我们自己上次开口的时间（ms），用来做冷却，避免自己跟自己聊起来。
-   * ⭐ 0.2.9（issue #8）：这个时间点从「**投递成功**」改成「**她真的说出话**」——
-   *   设置页那格写的是「她刚自己开过口之后」，投递只是把一句念头塞进会话，她可以看完不说。
-   *   见 记她说话() 里 assistant/message 那段。
-   */
-  let 自己上次开口 = 0
-
-  /**
-   * 连着几次没掷中（攒加成的计数器）。
-   * ⚠ 只放在内存里：DSH 一重启就回到 0（设置页上写了这一点）。
-   * ⚠ 只有**自动**那一轮会动它：没中 +1、中了（含试运行掷中）归零。
-   *   手动按钮（演练/真发）不掷骰子，**不许碰它**。
-   */
-  let 连没中 = 0
-
-  /** 当前表上的间隔（分钟）；配置改了要在下一次滴答后换表。 */
-  let 表上的间隔 = null
-  /** 停表的把手。 */
-  let 停表 = null
-
-  function 记账(文本) {
-    const 条 = { 时间: 现在显示(), 文本: String(文本) }
-    日志.push(条)
-    if (日志.length > 日志上限) 日志.shift()
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host.js:886-901](https://github.com/Yuuyuko-uu/dsh-speak-up/blob/e3bc6362208c693bb833ecf463ec6a20df4b6419/lib/host.js#L886-L901)
-
-回复归因当前缺少run关联。
+冷却当前按会话条件而非触发 ID 推进。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -986,8 +1015,8 @@ function 造执行体(ctx) {
 
 #### 缺口
 
-- 没有主动触发与手动发话的费用、打扰和体验对照。
-  **影响**：不能声称主动策略更有陪伴感或更节费，建议仅可控试用。
-  **进一步探讨**：固定会话、模型和工具权限，记录投递、实际回复、Token费用及用户是否继续保留。
+- 宿主是否提供足够的端到端关联字段未核验
+  **影响**：无法断定能低成本地映射输出到触发
+  **进一步探讨**：在隔离宿主采集投递前后的消息 ID、turn 标识与非空助理事件，检查并发事件能否唯一匹配
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

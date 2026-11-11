@@ -1,0 +1,443 @@
+{
+    "schema_version": 4,
+    "id": "dc66fc6c49a11466a87e998af90a921f",
+    "identity": "github:1334388245:root",
+    "slug": "edgetype--dsh-better-deepseek",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334388245:root",
+            "repository_id": 1334388245,
+            "component_id": "root",
+            "repository": "EdgeTypE/dsh-better-deepseek",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-better-deepseek",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "4a332641d5036c258e870ce4f6e3907bdd18fd76e39a173cf8fbd13f8fb32654",
+                "code": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                "maintenance": "0316c608b1595ca1ebb10b91e24d1dc0477f85a29456170a42ad8379cc6c5cd2"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-11-01-github-1334388245-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "6367c756a871ca7a5db8c7063dd362482110f7a0",
+                    "retrieved_at": "2026-11-11T02:37:09.863Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-11-11-01-github-1334388245-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-11T02:37:09.863Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-11-01-github-1334388245-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/EdgeTypE/dsh-better-deepseek",
+                            "commit": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                            "path": "README.md",
+                            "content_sha256": "5552287381f00f24d89ac25dbe8f5cbfa76944366103f770181e03e36c26a549"
+                        }
+                    ],
+                    "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                    "captured_at": "2026-11-11T02:37:09.863Z",
+                    "summary": "为 Better DeepSeek 浏览器扩展提供 DeepSeek Harness 会话控制与事件桥接。",
+                    "artifact": "data/runs/2026-11-11-01/edgetype--dsh-better-deepseek/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-11-01-github-1334388245-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/EdgeTypE/dsh-better-deepseek",
+                            "commit": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                            "path": "package.json",
+                            "content_sha256": "6c50f2a75464ac11498ace7b03830d48d8c262c344fa2c9204cbaab85eb37ce2"
+                        },
+                        {
+                            "repository_url": "https://github.com/EdgeTypE/dsh-better-deepseek",
+                            "commit": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                            "path": "lib/index.js",
+                            "content_sha256": "a68728d5d1880a7c8bcffdbbaf91bbb04be93b2e1a64375b1d214bbd3ab395fe"
+                        },
+                        {
+                            "repository_url": "https://github.com/EdgeTypE/dsh-better-deepseek",
+                            "commit": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                            "path": "src/index.ts",
+                            "content_sha256": "c9a43db1c397833f848f7feb0ce471db9ad660b2a5f2b38937ca2020307cb705"
+                        }
+                    ],
+                    "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                    "captured_at": "2026-11-11T02:37:09.863Z",
+                    "summary": "核查 package.json、lib/index.js、src/index.ts；Web 入口创建和查找代理，SSE 集合转发会话文本与工具事件。",
+                    "artifact": "data/runs/2026-11-11-01/edgetype--dsh-better-deepseek/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定桥接包源码和发行入口，未执行扩展、宿主或外网环境，未审计扩展本身。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "浏览器扩展用户可以研究如何从网页发起并观察 DSH 任务。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Web 入口创建和查找代理，SSE 集合转发会话文本与工具事件。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定桥接包源码和发行入口，未执行扩展、宿主或外网环境，未审计扩展本身。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "根包 0.1.0 导出 lib/index.js，Cordis patch 默认开启 CORS。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web 服务与代理 | 必需 | 注册与执行会话 | 使用原生会话 |\n| 浏览器扩展 | 扩展路径需要 | 发请求和接 SSE | 原生页面处理 |\n| 经验证的会话隔离 | 真实数据使用条件 | 阻断交叉事件 | 仅隔离评估 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 环境及模型未知 | 安装与隔离核对 | 依赖声明未验 |\n| 持续 | 事件与模型开销未知 | 维护客户端和权限 | 泄露影响不可回收 |\n| 失败恢复 | 重试资源未知 | 核对代理与结果 | 取消状态不够 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 真实任务保留原生界面，只有隔离验收能证实无交叉事件和控制后再评估。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 扩展控制 | 会话创建、提示和取消接线 | 真实兼容 |\n| 事件接收 | 广播与会话标签 | 上游外层访问限制 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "分开的事件和控制接口便于接入，但全局订阅集合、只凭会话 ID 的控制和进程内状态限制复用。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 把会话创建、消息和任务结果作为扩展可调用入口提供。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "[Q02](#research-q02) SSE 广播未按订阅者过滤会话，控制分支未核对会话所有者。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 将订阅和控制统一绑定身份与会话，可能保留浏览器接线并阻断串流。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334388245:root",
+                            "area": "code",
+                            "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:37:09.863Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-11T02:37:09.863Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                "reviewed_at": "2026-11-11T02:37:09.863Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334388245:root",
+                        "area": "code",
+                        "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 相对原生 Web，HTTP/SSE 适配属小幅新颖和机制。接口可向类似扩展小幅复用，缩短接线有小幅简化。[Q02](#research-q02) 无会话过滤限制迁移与机制。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) 扩展入口小幅改变流程和结果查阅，浏览器使用者覆盖小幅。[Q03](#research-q03) 维护和排错未见成本结构优势，经济未识别增量。",
+                    "basis": "interpretation",
+                    "score": 22,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1334388245-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "not_recommended",
+                "reason": "希望从 Better DeepSeek 扩展控制 DSH 的用户可以先继续从原生页面处理真实会话。相比原生页面，桥接增加了扩展入口，但所有成功订阅的客户端共享同一事件广播。如果尚不能验证订阅与控制按会话隔离，用户可以把测试限制在没有真实任务的独立环境。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 第1–4行与入口第70–103行支持浏览器发起并跟踪会话任务，超过偶发用途；实际重复摩擦未见，未到较充分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01) 入口第125–146行增加浏览器调用便利，超过完全无功能增量；[Q02](#research-q02) 广播不按会话使真实任务的额外价值不成立，未达部分档。"
+                    },
+                    "evidence": {
+                        "score": 0,
+                        "rationale": "[Q02](#research-q02) 入口第36–49、247–265、284–291行直接反驳会话过滤这一采用前提。虽有会话标签，但在服务端广播中没有任何过滤，低于仅有局部支持的有限档。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) 入口第49–65及162–174行还需人工确认结果和取消。原生入口提供退出，所以超过完全无退路零档；交叉事件泄露后无法靠禁用回收，未达部分档。"
+                    }
+                },
+                "score": 26,
+                "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                "reviewed_at": "2026-11-11T02:37:09.863Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-11-01-github-1334388245-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334388245:root",
+                        "area": "code",
+                        "fingerprint": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334388245:root",
+            "repository": "EdgeTypE/dsh-better-deepseek",
+            "path": "",
+            "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+            "fingerprints": {
+                "directory": "4a332641d5036c258e870ce4f6e3907bdd18fd76e39a173cf8fbd13f8fb32654",
+                "code": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+                "maintenance": "0316c608b1595ca1ebb10b91e24d1dc0477f85a29456170a42ad8379cc6c5cd2"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-11T01:46:09Z",
+            "analysis_sha256": "22b2109327dd98f867dd1dd52f678ac2f9dde963e9cf908b95a1247e234bba71"
+        },
+        "publication.metadata": "data/catalog/edgetype--dsh-better-deepseek/meta.json",
+        "publication.summaries": {
+            "text": "为 Better DeepSeek 浏览器扩展提供 DeepSeek Harness 会话控制与事件桥接。",
+            "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+            "source_url": "https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+            "items": {
+                "Host 路由": "为浏览器扩展提供代理会话控制与 SSE。",
+                "事件监听": "采集助手文本、工具参数和结果并广播。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 会话控制 | 创建、提示、查询与取消代理 | 未核实请求者归属 |\n| 事件订阅 | 传递助手和工具进度 | 每个订阅者共享广播 |"
+        },
+        "publication.advice": {
+            "revision": "b1043860f5f10fd7ed12664ebe32ca4fd6445aca",
+            "text": "[Q04](#research-q04) 真实任务保留原生界面，只有隔离验收能证实无交叉事件和控制后再评估。"
+        },
+        "registry": "data/plugins/edgetype--dsh-better-deepseek",
+        "reports": "# dsh-better-deepseek\n\n> 为 Better DeepSeek 浏览器扩展提供 DeepSeek Harness 会话控制与事件桥接。\n\n## 研究范围\n\n- **仓库**：[EdgeTypE/dsh-better-deepseek](https://github.com/EdgeTypE/dsh-better-deepseek)\n- **版本号**：0.1.0（[固定提交 b1043860f5f10fd7ed12664ebe32ca4fd6445aca](https://github.com/EdgeTypE/dsh-better-deepseek/tree/b1043860f5f10fd7ed12664ebe32ca4fd6445aca)）\n- **版本日期**：2026-08-15（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定版本已核查实际包入口和 TypeScript 分发。未运行扩展或实际宿主。\n\n## 洞察短评\n\n- **用途**：浏览器扩展用户可以研究如何从网页发起并观察 DSH 任务。\n- **亮点**：[Q01](#research-q01) 把会话创建、消息和任务结果作为扩展可调用入口提供。\n- **思考**：[Q02](#research-q02) SSE 广播未按订阅者过滤会话，控制分支未核对会话所有者。\n- **建议**：[Q04](#research-q04) 将订阅和控制统一绑定身份与会话，可能保留浏览器接线并阻断串流。\n\n采用建议：[Q04](#research-q04) 真实任务保留原生界面，只有隔离验收能证实无交叉事件和控制后再评估。\n\n## 核心贡献\n\n[Q01](#research-q01) 把会话创建、消息和任务结果作为扩展可调用入口提供。\n\n## 关键质疑\n\n[Q02](#research-q02) SSE 广播未按订阅者过滤会话，控制分支未核对会话所有者。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 将订阅和控制统一绑定身份与会话，可能保留浏览器接线并阻断串流。\n\n用两组客户端在隔离宿主分别核对跨会话 SSE、控制和真实取消状态。\n\n## 场景与替代办法\n\n浏览器扩展用户可以研究如何从网页发起并观察 DSH 任务。\n\nDSH 原生 Web 可直接使用会话；扩展桥接增加独立的浏览器侧控制入口。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web 服务与代理 | 必需 | 注册与执行会话 | 使用原生会话 |\n| 浏览器扩展 | 扩展路径需要 | 发请求和接 SSE | 原生页面处理 |\n| 经验证的会话隔离 | 真实数据使用条件 | 阻断交叉事件 | 仅隔离评估 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 对照 | 使用者打开两条隔离会话 | 不同会话事件可区分 |\n| 检查 | 核对订阅与控制拒绝 | 目前固定源码未提供绑定 |\n| 退出 | 真实会话回原生页面 | 停用桥接并核对在途任务 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 环境及模型未知 | 安装与隔离核对 | 依赖声明未验 |\n| 持续 | 事件与模型开销未知 | 维护客户端和权限 | 泄露影响不可回收 |\n| 失败恢复 | 重试资源未知 | 核对代理与结果 | 取消状态不够 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 扩展控制 | 会话创建、提示和取消接线 | 真实兼容 |\n| 事件接收 | 广播与会话标签 | 上游外层访问限制 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：Better DeepSeek 扩展接入 DSH 时，桥接是否把会话动作和事件限制到正确的客户端？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 扩展怎样从网页接入代理会话？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n希望从浏览器扩展发起 DSH 任务的人，需要能创建一条有明确工作目录的会话、发送文本、观察进度并读回该会话结果。原生 Web 已能完成代理会话，桥接增加扩展可消费的 HTTP/SSE 接口。包入口注册 /api/better-deepseek，创建分支接收 cwd 并调用 agents.create，prompt 分支按 session ID 查代理并调用 followup。算法和宿主工具仍由 DSH 提供，插件增加客户端适配。作者 README 声称会话过滤，是否成立要看实际服务端事件分发。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:1-4](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/README.md#L1-L4)\n\n作者声明浏览器扩展桥接与会话过滤。\n\n```text\n# dsh-better-deepseek\n\n\nDeepSeek Harness bridge plugin for [Better DeepSeek](https://github.com/EdgeTypE/better-deepseek) Chrome extension integration. Provides an HTTP handshake endpoint and session-filtered SSE event streams over `webServer`.\n```\n\n**依据 2 · 源码核查**：[package.json:13-38](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/package.json#L13-L38)\n\n实际发布入口和 bundle 声明。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./invariant\": {\n      \"types\": \"./lib/types/invariant.d.ts\",\n      \"default\": \"./lib/invariant.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./src/*\": \"./src/*\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib/index.js\",\n    \"lib/invariant.js\",\n    \"cordis.patch.yml\",\n    \"lib/types/**/*.d.ts\"\n  ],\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:70-103](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L70-L103)\n\n输入 cwd、模型选择及代理创建。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n\t\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.create\") {\n\t\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\t\tconst cwd = body.payload?.cwd ?? process.cwd();\n\t\t\t\t\t\t\t\tconst sessionId = `session-${Date.now()}`;\n\t\t\t\t\t\t\t\tthis.latestAssistantTextBySession.set(sessionId, \"\");\n\t\t\t\t\t\t\t\tconst defaultModel = this.ctx.get(\"agentDefaultModel\");\n\t\t\t\t\t\t\t\tconst selection = defaultModel ? defaultModel.currentSelection() : {\n\t\t\t\t\t\t\t\t\tprovider: \"deepseek-official\",\n\t\t\t\t\t\t\t\t\tmodel: \"deepseek-chat\"\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t\tconst presets = this.ctx.get(\"agentPresets\");\n\t\t\t\t\t\t\t\tlet presetId;\n\t\t\t\t\t\t\t\tif (presets) try {\n\t\t\t\t\t\t\t\t\tpresetId = (await presets.resolve(void 0))?.id;\n\t\t\t\t\t\t\t\t} catch {}\n\t\t\t\t\t\t\t\tawait this.ctx.agents.create({\n\t\t\t\t\t\t\t\t\tsessionId,\n\t\t\t\t\t\t\t\t\tmeta: {\n\t\t\t\t\t\t\t\t\t\tcwd,\n\t\t\t\t\t\t\t\t\t\t...presetId !== void 0 ? { agentPreset: presetId } : {}\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tagentOptions: {\n\t\t\t\t\t\t\t\t\t\tprovider: selection.provider,\n\t\t\t\t\t\t\t\t\t\tmodel: selection.model\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\tsetup: async (agentCtx) => {\n\t\t\t\t\t\t\t\t\t\tinstallModelSelection(agentCtx, {\n\t\t\t\t\t\t\t\t\t\t\tcurrent: selection,\n\t\t\t\t\t\t\t\t\t\t\tassembled: void 0\n\t\t\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\t\t\tif (presets && presetId) await presets.mount(agentCtx, presetId);\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t});\n\t\t\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:125-146](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L125-L146)\n\n通过 session ID 将文字排入现有代理。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n\t\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.prompt\") {\n\t\t\t\t\t\t\tconst sessionId = body.payload?.sessionId ?? \"\";\n\t\t\t\t\t\t\tconst text = body.payload?.text ?? \"\";\n\t\t\t\t\t\t\tconst agent = this.ctx.agents.get(sessionId);\n\t\t\t\t\t\t\tif (agent) {\n\t\t\t\t\t\t\t\tconst userMsg = {\n\t\t\t\t\t\t\t\t\tid: crypto.randomUUID(),\n\t\t\t\t\t\t\t\t\trole: \"user\",\n\t\t\t\t\t\t\t\t\tsource: { kind: \"user\" },\n\t\t\t\t\t\t\t\t\tcontent: [{\n\t\t\t\t\t\t\t\t\t\ttype: \"text\",\n\t\t\t\t\t\t\t\t\t\ttext\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t\tagent.followup(userMsg);\n\t\t\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n\t\t\t\t\t\t\t\tres.end(JSON.stringify({\n\t\t\t\t\t\t\t\t\ttype: \"server-response\",\n\t\t\t\t\t\t\t\t\trpcId,\n\t\t\t\t\t\t\t\t\tresult: {\n\t\t\t\t\t\t\t\t\t\tok: true,\n\t\t\t\t\t\t\t\t\t\tvalue: {}\n```\n\n</details>\n\n#### 缺口\n\n- 没有实际扩展加载与消息顺序验收。\n  **影响**：不能确认浏览器客户端或打包依赖兼容。\n  **进一步探讨**：在隔离宿主核对真实扩展只访问自己创建的测试会话。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · SSE 与控制路由的会话授权在哪里？\n\n**研究主题**：缺陷与关键质疑、依赖、兼容与流程、工程质量与复用\n\n#### 完整回答\n\n固定包入口在订阅时把响应直接加入一个 Set，既未登记请求者也未绑定会话。广播时将每条 payload 写给集合中所有订阅者，payload 含 sessionId 只提供标签。工具事件还带 args 和 output。控制请求直接用请求中的 session ID 访问 ctx.agents，在所查分支没有请求者与会话归属匹配。默认允许任意 CORS Origin，关闭只改变浏览器响应头。因而即使有宿主外层路由保护，凡能成功订阅的客户端之间仍没有插件层会话隔离。宿主是否另有限制以及浏览器实际能否跨源访问仍需验证，不能推断互联网可直接访问。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:36-49](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L36-L49)\n\n订阅集合无会话筛选。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\t\t\t\t\tif (pathname === \"/api/better-deepseek/events\") {\n\t\t\t\t\t\tres.writeHead(200, {\n\t\t\t\t\t\t\t\"Content-Type\": \"text/event-stream\",\n\t\t\t\t\t\t\t\"Cache-Control\": \"no-cache\",\n\t\t\t\t\t\t\t\"Connection\": \"keep-alive\"\n\t\t\t\t\t\t});\n\t\t\t\t\t\tres.write(\": connected\\n\\n\");\n\t\t\t\t\t\tthis.sseClients.add(res);\n\t\t\t\t\t\treq.on(\"close\", () => {\n\t\t\t\t\t\t\tthis.sseClients.delete(res);\n\t\t\t\t\t\t});\n\t\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.result\" && req.method === \"GET\") {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:125-140](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L125-L140)\n\n按传入 ID 取现有代理。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n\t\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.prompt\") {\n\t\t\t\t\t\t\tconst sessionId = body.payload?.sessionId ?? \"\";\n\t\t\t\t\t\t\tconst text = body.payload?.text ?? \"\";\n\t\t\t\t\t\t\tconst agent = this.ctx.agents.get(sessionId);\n\t\t\t\t\t\t\tif (agent) {\n\t\t\t\t\t\t\t\tconst userMsg = {\n\t\t\t\t\t\t\t\t\tid: crypto.randomUUID(),\n\t\t\t\t\t\t\t\t\trole: \"user\",\n\t\t\t\t\t\t\t\t\tsource: { kind: \"user\" },\n\t\t\t\t\t\t\t\t\tcontent: [{\n\t\t\t\t\t\t\t\t\t\ttype: \"text\",\n\t\t\t\t\t\t\t\t\t\ttext\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t};\n\t\t\t\t\t\t\t\tagent.followup(userMsg);\n\t\t\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:197-208](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L197-L208)\n\n默认星号 CORS。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n\thandleCors(req, res) {\n\t\tif (this.config.enableCors !== false) {\n\t\t\tres.setHeader(\"Access-Control-Allow-Origin\", \"*\");\n\t\t\tres.setHeader(\"Access-Control-Allow-Methods\", \"GET, POST, OPTIONS\");\n\t\t\tres.setHeader(\"Access-Control-Allow-Headers\", \"Content-Type\");\n\t\t}\n\t\tif (req.method === \"OPTIONS\") {\n\t\t\tres.writeHead(204);\n\t\t\tres.end();\n\t\t\treturn true;\n\t\t}\n\t\treturn false;\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/index.js:247-265](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L247-L265)\n\n参数和工具结果进入事件。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n\t\tthis.ctx.effect(() => {\n\t\t\treturn this.ctx.on(\"tools/pre-execute\", (exec, next) => {\n\t\t\t\tconst sessionId = exec.agent?.id;\n\t\t\t\tif (sessionId !== void 0) this.broadcast(\"tool/call\", {\n\t\t\t\t\tsessionId,\n\t\t\t\t\ttool: exec.name,\n\t\t\t\t\targs: exec.arguments\n\t\t\t\t});\n\t\t\t\treturn next();\n\t\t\t});\n\t\t}, \"better-deepseek: tool pre-execute listener\");\n\t\tthis.ctx.effect(() => {\n\t\t\treturn this.ctx.on(\"tools/post-execute\", (exec, result, next) => {\n\t\t\t\tconst sessionId = exec.agent?.id;\n\t\t\t\tif (sessionId !== void 0) this.broadcast(\"tool/result\", {\n\t\t\t\t\tsessionId,\n\t\t\t\t\ttool: exec.name,\n\t\t\t\t\toutput: result\n\t\t\t\t});\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/index.js:284-291](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L284-L291)\n\n每条消息写到所有订阅者。\n\n```text\n\tbroadcast(type, payload) {\n\t\tconst data = `data: ${JSON.stringify({\n\t\t\ttype,\n\t\t\ttimestamp: Date.now(),\n\t\t\tpayload\n\t\t})}\\n\\n`;\n\t\tfor (const client of this.sseClients) client.write(data);\n\t}\n```\n\n**依据 6 · 源码核查**：[src/index.ts:339-344](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/src/index.ts#L339-L344)\n\nTypeScript 源亦遍历全部订阅。\n\n```text\n  private broadcast(type: string, payload: unknown): void {\n    const data = `data: ${JSON.stringify({ type, timestamp: Date.now(), payload })}\\n\\n`\n    for (const client of this.sseClients) {\n      client.write(data)\n    }\n  }\n```\n\n#### 缺口\n\n- 未运行真实宿主权限或浏览器网络策略。\n  **影响**：发现限于桥接接线，实际可达范围未知。\n  **进一步探讨**：用两个受控扩展连接和两条测试会话检查交叉事件与控制拒绝。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 状态回读与处理失败需要哪些成本？\n\n**研究主题**：效果与总成本、缺陷与关键质疑\n\n#### 完整回答\n\n结果接口读进程内 Map，找不到代理时给 idle，找不到文本时给空字符串，仍可回 ok。停止操作调用 agent.cancel 后立即返回 canceled，未等待实际终态或回滚工具动作。浏览器用户要承担核对会话 ID、实际工具状态和重连的时间；宿主承担代理运行、事件存储与并发资源。现有代码逐段拼接文本，普通结果接口没有明确的任务关联字段，断线后不能仅用空 idle 判断某次请求是否执行。费用和在途压力无实测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:49-65](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L49-L65)\n\n结果缺失以 idle 和空文本回退。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.result\" && req.method === \"GET\") {\n\t\t\t\t\t\tconst sessionId = url.searchParams.get(\"sessionId\") ?? \"\";\n\t\t\t\t\t\tconst finalText = this.latestAssistantTextBySession.get(sessionId) ?? \"\";\n\t\t\t\t\t\tconst agent = this.ctx.agents.get(sessionId);\n\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n\t\t\t\t\t\tres.end(JSON.stringify({\n\t\t\t\t\t\t\ttype: \"server-response\",\n\t\t\t\t\t\t\tresult: {\n\t\t\t\t\t\t\t\tok: true,\n\t\t\t\t\t\t\t\tvalue: {\n\t\t\t\t\t\t\t\t\tsessionId,\n\t\t\t\t\t\t\t\t\tstatus: agent?.status ?? \"idle\",\n\t\t\t\t\t\t\t\t\tfinalText\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}));\n\t\t\t\t\t\treturn;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:162-174](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L162-L174)\n\n调用取消即返回。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.cancel\") {\n\t\t\t\t\t\t\tconst sessionId = body.payload?.sessionId ?? \"\";\n\t\t\t\t\t\t\tconst agent = this.ctx.agents.get(sessionId);\n\t\t\t\t\t\t\tif (agent) {\n\t\t\t\t\t\t\t\tagent.cancel(\"user-request\");\n\t\t\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n\t\t\t\t\t\t\t\tres.end(JSON.stringify({\n\t\t\t\t\t\t\t\t\ttype: \"server-response\",\n\t\t\t\t\t\t\t\t\trpcId,\n\t\t\t\t\t\t\t\t\tresult: {\n\t\t\t\t\t\t\t\t\t\tok: true,\n\t\t\t\t\t\t\t\t\t\tvalue: { canceled: true }\n\t\t\t\t\t\t\t\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:222-242](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L222-L242)\n\n进程内保存并广播会话文本。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n\t\t\treturn this.ctx.on(\"session/event\", (session, event) => {\n\t\t\t\tif (event.type === \"assistant/chunk\") {\n\t\t\t\t\tconst chunkData = event.data;\n\t\t\t\t\tconst delta = chunkData.text ?? chunkData.delta ?? chunkData.chunk?.text ?? chunkData.chunk?.delta ?? \"\";\n\t\t\t\t\tif (delta) {\n\t\t\t\t\t\tconst current = this.latestAssistantTextBySession.get(session.id) ?? \"\";\n\t\t\t\t\t\tthis.latestAssistantTextBySession.set(session.id, current + delta);\n\t\t\t\t\t\tthis.broadcast(\"assistant/chunk\", {\n\t\t\t\t\t\t\tsessionId: session.id,\n\t\t\t\t\t\t\tdelta\n\t\t\t\t\t\t});\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tif (event.type === \"assistant/message\") {\n\t\t\t\t\tconst text = event.data.message?.content?.filter((c) => c.type === \"text\").map((c) => c.text).join(\"\") ?? \"\";\n\t\t\t\t\tif (text) {\n\t\t\t\t\t\tthis.latestAssistantTextBySession.set(session.id, text);\n\t\t\t\t\t\tthis.broadcast(\"assistant/message\", {\n\t\t\t\t\t\t\tsessionId: session.id,\n\t\t\t\t\t\t\ttext\n\t\t\t\t\t\t});\n```\n\n</details>\n\n#### 缺口\n\n- 未跑并发、长会话或进程重启。\n  **影响**：不能核定实际资源压力或状态恢复。\n  **进一步探讨**：在隔离环境记录重启和取消前后的实际会话和应答。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 当前如何采用，修复后怎样验收隔离？\n\n**研究主题**：采用判断、新假设与验证\n\n#### 完整回答\n\n当前不建议在处理真实会话的 DSH profile 安装这版桥接。扩展用户可以继续用原生 Web 查同一会话，保留浏览器自动化研究到无敏感资料的隔离环境。未验证设计是先给订阅和控制做明确的设备或请求者鉴权，再绑定允许的会话及工具字段，拒绝跨会话请求。用两个受控扩展尝试订阅彼此会话、发 prompt 及取消；成功要求对方无事件、控制被拒，自己的流与结束回查仍完整。任一交叉数据或状态不可确认时继续原生入口。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/index.js:36-49](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L36-L49)\n\n当前未绑定订阅者。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n\t\t\t\t\tif (pathname === \"/api/better-deepseek/events\") {\n\t\t\t\t\t\tres.writeHead(200, {\n\t\t\t\t\t\t\t\"Content-Type\": \"text/event-stream\",\n\t\t\t\t\t\t\t\"Cache-Control\": \"no-cache\",\n\t\t\t\t\t\t\t\"Connection\": \"keep-alive\"\n\t\t\t\t\t\t});\n\t\t\t\t\t\tres.write(\": connected\\n\\n\");\n\t\t\t\t\t\tthis.sseClients.add(res);\n\t\t\t\t\t\treq.on(\"close\", () => {\n\t\t\t\t\t\t\tthis.sseClients.delete(res);\n\t\t\t\t\t\t});\n\t\t\t\t\t\treturn;\n\t\t\t\t\t}\n\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.result\" && req.method === \"GET\") {\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:162-174](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L162-L174)\n\n当前取消按传入会话。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n\t\t\t\t\t\tif (pathname === \"/api/better-deepseek/session.cancel\") {\n\t\t\t\t\t\t\tconst sessionId = body.payload?.sessionId ?? \"\";\n\t\t\t\t\t\t\tconst agent = this.ctx.agents.get(sessionId);\n\t\t\t\t\t\t\tif (agent) {\n\t\t\t\t\t\t\t\tagent.cancel(\"user-request\");\n\t\t\t\t\t\t\t\tres.writeHead(200, { \"Content-Type\": \"application/json\" });\n\t\t\t\t\t\t\t\tres.end(JSON.stringify({\n\t\t\t\t\t\t\t\t\ttype: \"server-response\",\n\t\t\t\t\t\t\t\t\trpcId,\n\t\t\t\t\t\t\t\t\tresult: {\n\t\t\t\t\t\t\t\t\t\tok: true,\n\t\t\t\t\t\t\t\t\t\tvalue: { canceled: true }\n\t\t\t\t\t\t\t\t\t}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/index.js:284-291](https://github.com/EdgeTypE/dsh-better-deepseek/blob/b1043860f5f10fd7ed12664ebe32ca4fd6445aca/lib/index.js#L284-L291)\n\n广播路径提供修复对照。\n\n```text\n\tbroadcast(type, payload) {\n\t\tconst data = `data: ${JSON.stringify({\n\t\t\ttype,\n\t\t\ttimestamp: Date.now(),\n\t\t\tpayload\n\t\t})}\\n\\n`;\n\t\tfor (const client of this.sseClients) client.write(data);\n\t}\n```\n\n#### 缺口\n\n- 授权与隔离方案未实现。\n  **影响**：尚无有效整改验收。\n  **进一步探讨**：建立两个身份和会话的正反矩阵，分别读控制结果和 SSE 原文。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：a3625534bcb047ef2d4a403cdbbeb60680a57d7f6fbc3cf77533fa4c084a14a1。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 6 | 687 | 636 | 48 | — |\n| .md | source | 1 | 40 | — | — | 152 |\n| .ts | source | 2 | 371 | 307 | 25 | — |\n| .js | test | 1 | 54 | 53 | 4 | — |\n| .ts | test | 1 | 66 | 53 | 3 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 会话控制 | 创建、提示、查询与取消代理 | 未核实请求者归属 |\n| 事件订阅 | 传递助手和工具进度 | 每个订阅者共享广播 |\n\n## 工程亮点\n\n分开的事件和控制接口便于接入，但全局订阅集合、只凭会话 ID 的控制和进程内状态限制复用。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 package.json、lib/index.js、src/index.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定桥接包源码和发行入口，未执行扩展、宿主或外网环境，未审计扩展本身。\n- 下一步：用两组客户端在隔离宿主分别核对跨会话 SSE、控制和真实取消状态。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-11-01/edgetype--dsh-better-deepseek/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"EdgeTypE/dsh-better-deepseek\",\n  \"revision\": \"b1043860f5f10fd7ed12664ebe32ca4fd6445aca\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"lib/index.js\",\n    \"src/index.ts\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"Better DeepSeek 扩展接入 DSH 时，桥接是否把会话动作和事件限制到正确的客户端？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"扩展怎样从网页接入代理会话？\",\n        \"answer\": \"希望从浏览器扩展发起 DSH 任务的人，需要能创建一条有明确工作目录的会话、发送文本、观察进度并读回该会话结果。原生 Web 已能完成代理会话，桥接增加扩展可消费的 HTTP/SSE 接口。包入口注册 /api/better-deepseek，创建分支接收 cwd 并调用 agents.create，prompt 分支按 session ID 查代理并调用 followup。算法和宿主工具仍由 DSH 提供，插件增加客户端适配。作者 README 声称会话过滤，是否成立要看实际服务端事件分发。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"作者声明浏览器扩展桥接与会话过滤。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 13,\n            \"line_end\": 38,\n            \"observation\": \"实际发布入口和 bundle 声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 70,\n            \"line_end\": 103,\n            \"observation\": \"输入 cwd、模型选择及代理创建。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 125,\n            \"line_end\": 146,\n            \"observation\": \"通过 session ID 将文字排入现有代理。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有实际扩展加载与消息顺序验收。\",\n            \"impact\": \"不能确认浏览器客户端或打包依赖兼容。\",\n            \"next_step\": \"在隔离宿主核对真实扩展只访问自己创建的测试会话。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"dependencies\",\n          \"engineering\"\n        ],\n        \"question\": \"SSE 与控制路由的会话授权在哪里？\",\n        \"answer\": \"固定包入口在订阅时把响应直接加入一个 Set，既未登记请求者也未绑定会话。广播时将每条 payload 写给集合中所有订阅者，payload 含 sessionId 只提供标签。工具事件还带 args 和 output。控制请求直接用请求中的 session ID 访问 ctx.agents，在所查分支没有请求者与会话归属匹配。默认允许任意 CORS Origin，关闭只改变浏览器响应头。因而即使有宿主外层路由保护，凡能成功订阅的客户端之间仍没有插件层会话隔离。宿主是否另有限制以及浏览器实际能否跨源访问仍需验证，不能推断互联网可直接访问。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 36,\n            \"line_end\": 49,\n            \"observation\": \"订阅集合无会话筛选。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 125,\n            \"line_end\": 140,\n            \"observation\": \"按传入 ID 取现有代理。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 197,\n            \"line_end\": 208,\n            \"observation\": \"默认星号 CORS。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 247,\n            \"line_end\": 265,\n            \"observation\": \"参数和工具结果进入事件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 284,\n            \"line_end\": 291,\n            \"observation\": \"每条消息写到所有订阅者。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 339,\n            \"line_end\": 344,\n            \"observation\": \"TypeScript 源亦遍历全部订阅。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行真实宿主权限或浏览器网络策略。\",\n            \"impact\": \"发现限于桥接接线，实际可达范围未知。\",\n            \"next_step\": \"用两个受控扩展连接和两条测试会话检查交叉事件与控制拒绝。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"limitations\"\n        ],\n        \"question\": \"状态回读与处理失败需要哪些成本？\",\n        \"answer\": \"结果接口读进程内 Map，找不到代理时给 idle，找不到文本时给空字符串，仍可回 ok。停止操作调用 agent.cancel 后立即返回 canceled，未等待实际终态或回滚工具动作。浏览器用户要承担核对会话 ID、实际工具状态和重连的时间；宿主承担代理运行、事件存储与并发资源。现有代码逐段拼接文本，普通结果接口没有明确的任务关联字段，断线后不能仅用空 idle 判断某次请求是否执行。费用和在途压力无实测。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 49,\n            \"line_end\": 65,\n            \"observation\": \"结果缺失以 idle 和空文本回退。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 162,\n            \"line_end\": 174,\n            \"observation\": \"调用取消即返回。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 222,\n            \"line_end\": 242,\n            \"observation\": \"进程内保存并广播会话文本。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未跑并发、长会话或进程重启。\",\n            \"impact\": \"不能核定实际资源压力或状态恢复。\",\n            \"next_step\": \"在隔离环境记录重启和取消前后的实际会话和应答。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"当前如何采用，修复后怎样验收隔离？\",\n        \"answer\": \"当前不建议在处理真实会话的 DSH profile 安装这版桥接。扩展用户可以继续用原生 Web 查同一会话，保留浏览器自动化研究到无敏感资料的隔离环境。未验证设计是先给订阅和控制做明确的设备或请求者鉴权，再绑定允许的会话及工具字段，拒绝跨会话请求。用两个受控扩展尝试订阅彼此会话、发 prompt 及取消；成功要求对方无事件、控制被拒，自己的流与结束回查仍完整。任一交叉数据或状态不可确认时继续原生入口。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 36,\n            \"line_end\": 49,\n            \"observation\": \"当前未绑定订阅者。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 162,\n            \"line_end\": 174,\n            \"observation\": \"当前取消按传入会话。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 284,\n            \"line_end\": 291,\n            \"observation\": \"广播路径提供修复对照。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"授权与隔离方案未实现。\",\n            \"impact\": \"尚无有效整改验收。\",\n            \"next_step\": \"建立两个身份和会话的正反矩阵，分别读控制结果和 SSE 原文。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-better-deepseek\\n\\n\\nDeepSeek Harness bridge plugin for [Better DeepSeek](https://github.com/EdgeTypE/better-deepseek) Chrome extension integration. Provides an HTTP handshake endpoint and session-filtered SSE event streams over `webServer`.\\n\\n## Installation\\n\\n### Via DSH (npm)\\n```bash\\ndsh plugin --profile web add -w dsh-better-deepseek\\n```\\n\\nor\\n\\n```bash\\nnpx @deepseek-ai/dsh --profile web add -w dsh-better-deepseek\\n```\\n\\n\\n<!-- ### Via PowerShell One-Liner (Windows)\\n```powershell\\nirm https://raw.githubusercontent.com/EdgeTypE/dsh-better-deepseek/main/scripts/install.ps1 | iex\\n``` -->\\n\\n## Plugin\\n\\n`BetterDeepSeekBridgeService` registers `/api/better-deepseek/*` endpoints on `ctx.webServer`.\\n\\n| Endpoint | Method | Purpose |\\n|---|---|---|\\n| `/api/better-deepseek/ping` | GET | Handshake and health check |\\n| `/api/better-deepseek/events` | GET | Server-Sent Events (SSE) live stream |\\n| `/api/better-deepseek/session.create` | POST | Initialize an agent session with cwd |\\n| `/api/better-deepseek/session.prompt` | POST | Submit a task/prompt to the session |\\n| `/api/better-deepseek/session.result` | GET | Fetch final Markdown report and status |\\n| `/api/better-deepseek/session.cancel` | POST | Cancel a running task |\\n\\n| Config | Default | Meaning |\\n|---|---|---|\\n| `enableCors` | `true` | Enables Access-Control-Allow-Origin headers for cross-origin browser extension requests. |\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-better-deepseek\\\",\\n  \\\"description\\\": \\\"DeepSeek Harness bridge plugin for Better-DeepSeek Chrome extension integration\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\"\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/EdgeTypE/dsh-better-deepseek.git\\\",\\n    \\\"directory\\\": \\\"packages/extensions/better-deepseek\\\"\\n  },\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./invariant\\\": {\\n      \\\"types\\\": \\\"./lib/types/invariant.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/invariant.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./src/*\\\": \\\"./src/*\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib/index.js\\\",\\n    \\\"lib/invariant.js\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"lib/types/**/*.d.ts\\\"\\n  ],\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"dependencies\\\": {\\n    \\\"@deepseek-ai/schemastery\\\": \\\"workspace:^\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-host-webserver\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-agent\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-session\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"workspace:^\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-host-webserver\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-agent\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-session\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"workspace:^\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"workspace:^\\\"\\n  }\\n}\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"import { Service } from \\\"@deepseek-ai/cordis\\\";\\nimport z from \\\"@deepseek-ai/schemastery\\\";\\nimport { installModelSelection } from \\\"@deepseek-ai/dsh-agent\\\";\\n//#region lib/types/index.js\\nvar BetterDeepSeekBridgeService = class extends Service {\\n\\tconfig;\\n\\tstatic inject = [\\\"webServer\\\", \\\"agents\\\"];\\n\\tstatic Config = z.object({ enableCors: z.boolean().default(true) });\\n\\tsseClients = /* @__PURE__ */ new Set();\\n\\tlatestAssistantTextBySession = /* @__PURE__ */ new Map();\\n\\tconstructor(ctx, config) {\\n\\t\\tsuper(ctx, \\\"betterDeepSeekBridge\\\");\\n\\t\\tthis.config = config;\\n\\t\\tthis.ctx.effect(() => {\\n\\t\\t\\treturn this.ctx.webServer.register({\\n\\t\\t\\t\\tkind: \\\"prefix\\\",\\n\\t\\t\\t\\tpath: \\\"/api/better-deepseek\\\",\\n\\t\\t\\t\\thandler: async (req, res) => {\\n\\t\\t\\t\\t\\tif (this.handleCors(req, res)) return;\\n\\t\\t\\t\\t\\tconst url = new URL(req.url ?? \\\"/\\\", `http://${req.headers.host ?? \\\"127.0.0.1\\\"}`);\\n\\t\\t\\t\\t\\tconst pathname = url.pathname;\\n\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/ping\\\") {\\n\\t\\t\\t\\t\\t\\tres.writeHead(200, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\tactive: true,\\n\\t\\t\\t\\t\\t\\t\\tversion: \\\"1.6.0\\\",\\n\\t\\t\\t\\t\\t\\t\\tcapabilities: [\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"filtered_sse\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"approvals\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"rag_inject\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\\"session_result\\\"\\n\\t\\t\\t\\t\\t\\t\\t]\\n\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/events\\\") {\\n\\t\\t\\t\\t\\t\\tres.writeHead(200, {\\n\\t\\t\\t\\t\\t\\t\\t\\\"Content-Type\\\": \\\"text/event-stream\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"Cache-Control\\\": \\\"no-cache\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\\"Connection\\\": \\\"keep-alive\\\"\\n\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t\\tres.write(\\\": connected\\\\n\\\\n\\\");\\n\\t\\t\\t\\t\\t\\tthis.sseClients.add(res);\\n\\t\\t\\t\\t\\t\\treq.on(\\\"close\\\", () => {\\n\\t\\t\\t\\t\\t\\t\\tthis.sseClients.delete(res);\\n\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/session.result\\\" && req.method === \\\"GET\\\") {\\n\\t\\t\\t\\t\\t\\tconst sessionId = url.searchParams.get(\\\"sessionId\\\") ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\tconst finalText = this.latestAssistantTextBySession.get(sessionId) ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\tconst agent = this.ctx.agents.get(sessionId);\\n\\t\\t\\t\\t\\t\\tres.writeHead(200, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\tok: true,\\n\\t\\t\\t\\t\\t\\t\\t\\tvalue: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tsessionId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tstatus: agent?.status ?? \\\"idle\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tfinalText\\n\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\tif (req.method === \\\"POST\\\") {\\n\\t\\t\\t\\t\\t\\tconst body = await this.readJsonBody(req);\\n\\t\\t\\t\\t\\t\\tconst rpcId = body.rpcId ?? `bd-rpc-${Date.now()}`;\\n\\t\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/session.create\\\") {\\n\\t\\t\\t\\t\\t\\t\\ttry {\\n\\t\\t\\t\\t\\t\\t\\t\\tconst cwd = body.payload?.cwd ?? process.cwd();\\n\\t\\t\\t\\t\\t\\t\\t\\tconst sessionId = `session-${Date.now()}`;\\n\\t\\t\\t\\t\\t\\t\\t\\tthis.latestAssistantTextBySession.set(sessionId, \\\"\\\");\\n\\t\\t\\t\\t\\t\\t\\t\\tconst defaultModel = this.ctx.get(\\\"agentDefaultModel\\\");\\n\\t\\t\\t\\t\\t\\t\\t\\tconst selection = defaultModel ? defaultModel.currentSelection() : {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tprovider: \\\"deepseek-official\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tmodel: \\\"deepseek-chat\\\"\\n\\t\\t\\t\\t\\t\\t\\t\\t};\\n\\t\\t\\t\\t\\t\\t\\t\\tconst presets = this.ctx.get(\\\"agentPresets\\\");\\n\\t\\t\\t\\t\\t\\t\\t\\tlet presetId;\\n\\t\\t\\t\\t\\t\\t\\t\\tif (presets) try {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tpresetId = (await presets.resolve(void 0))?.id;\\n\\t\\t\\t\\t\\t\\t\\t\\t} catch {}\\n\\t\\t\\t\\t\\t\\t\\t\\tawait this.ctx.agents.create({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tsessionId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tmeta: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tcwd,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t...presetId !== void 0 ? { agentPreset: presetId } : {}\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tagentOptions: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tprovider: selection.provider,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tmodel: selection.model\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tsetup: async (agentCtx) => {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tinstallModelSelection(agentCtx, {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tcurrent: selection,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tassembled: void 0\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tif (presets && presetId) await presets.mount(agentCtx, presetId);\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(200, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: true,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tvalue: { sessionId }\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t} catch (err) {\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(500, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: false,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\terror: { message: err?.message ?? \\\"Failed to create session\\\" }\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/session.prompt\\\") {\\n\\t\\t\\t\\t\\t\\t\\tconst sessionId = body.payload?.sessionId ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\t\\tconst text = body.payload?.text ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\t\\tconst agent = this.ctx.agents.get(sessionId);\\n\\t\\t\\t\\t\\t\\t\\tif (agent) {\\n\\t\\t\\t\\t\\t\\t\\t\\tconst userMsg = {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tid: crypto.randomUUID(),\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trole: \\\"user\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tsource: { kind: \\\"user\\\" },\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tcontent: [{\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"text\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\ttext\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}]\\n\\t\\t\\t\\t\\t\\t\\t\\t};\\n\\t\\t\\t\\t\\t\\t\\t\\tagent.followup(userMsg);\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(200, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: true,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tvalue: {}\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(404, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: false,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\terror: { message: `Session \\\"${sessionId}\\\" not found` }\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\tif (pathname === \\\"/api/better-deepseek/session.cancel\\\") {\\n\\t\\t\\t\\t\\t\\t\\tconst sessionId = body.payload?.sessionId ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\t\\tconst agent = this.ctx.agents.get(sessionId);\\n\\t\\t\\t\\t\\t\\t\\tif (agent) {\\n\\t\\t\\t\\t\\t\\t\\t\\tagent.cancel(\\\"user-request\\\");\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(200, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: true,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tvalue: { canceled: true }\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\t\\t\\t\\tres.writeHead(404, { \\\"Content-Type\\\": \\\"application/json\\\" });\\n\\t\\t\\t\\t\\t\\t\\t\\tres.end(JSON.stringify({\\n\\t\\t\\t\\t\\t\\t\\t\\t\\ttype: \\\"server-response\\\",\\n\\t\\t\\t\\t\\t\\t\\t\\t\\trpcId,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\tresult: {\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\tok: false,\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\terror: { message: `Session \\\"${sessionId}\\\" not found` }\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\t\\t}));\\n\\t\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t\\t\\treturn;\\n\\t\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\tres.writeHead(404, { \\\"Content-Type\\\": \\\"text/plain\\\" });\\n\\t\\t\\t\\t\\tres.end(\\\"not found\\\");\\n\\t\\t\\t\\t}\\n\\t\\t\\t});\\n\\t\\t}, \\\"better-deepseek: gateway router\\\");\\n\\t\\tthis.setupEventListeners();\\n\\t}\\n\\thandleCors(req, res) {\\n\\t\\tif (this.config.enableCors !== false) {\\n\\t\\t\\tres.setHeader(\\\"Access-Control-Allow-Origin\\\", \\\"*\\\");\\n\\t\\t\\tres.setHeader(\\\"Access-Control-Allow-Methods\\\", \\\"GET, POST, OPTIONS\\\");\\n\\t\\t\\tres.setHeader(\\\"Access-Control-Allow-Headers\\\", \\\"Content-Type\\\");\\n\\t\\t}\\n\\t\\tif (req.method === \\\"OPTIONS\\\") {\\n\\t\\t\\tres.writeHead(204);\\n\\t\\t\\tres.end();\\n\\t\\t\\treturn true;\\n\\t\\t}\\n\\t\\treturn false;\\n\\t}\\n\\tasync readJsonBody(req) {\\n\\t\\tconst chunks = [];\\n\\t\\tfor await (const chunk of req) chunks.push(typeof chunk === \\\"string\\\" ? Buffer.from(chunk) : chunk);\\n\\t\\tconst raw = Buffer.concat(chunks).toString(\\\"utf8\\\");\\n\\t\\ttry {\\n\\t\\t\\treturn JSON.parse(raw);\\n\\t\\t} catch {\\n\\t\\t\\treturn {};\\n\\t\\t}\\n\\t}\\n\\tsetupEventListeners() {\\n\\t\\tthis.ctx.effect(() => {\\n\\t\\t\\treturn this.ctx.on(\\\"session/event\\\", (session, event) => {\\n\\t\\t\\t\\tif (event.type === \\\"assistant/chunk\\\") {\\n\\t\\t\\t\\t\\tconst chunkData = event.data;\\n\\t\\t\\t\\t\\tconst delta = chunkData.text ?? chunkData.delta ?? chunkData.chunk?.text ?? chunkData.chunk?.delta ?? \\\"\\\";\\n\\t\\t\\t\\t\\tif (delta) {\\n\\t\\t\\t\\t\\t\\tconst current = this.latestAssistantTextBySession.get(session.id) ?? \\\"\\\";\\n\\t\\t\\t\\t\\t\\tthis.latestAssistantTextBySession.set(session.id, current + delta);\\n\\t\\t\\t\\t\\t\\tthis.broadcast(\\\"assistant/chunk\\\", {\\n\\t\\t\\t\\t\\t\\t\\tsessionId: session.id,\\n\\t\\t\\t\\t\\t\\t\\tdelta\\n\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t}\\n\\t\\t\\t\\tif (event.type === \\\"assistant/message\\\") {\\n\\t\\t\\t\\t\\tconst text = event.data.message?.content?.filter((c) => c.type === \\\"text\\\").map((c) => c.text).join(\\\"\\\") ?? \\\"\\\";\\n\\t\\t\\t\\t\\tif (text) {\\n\\t\\t\\t\\t\\t\\tthis.latestAssistantTextBySession.set(session.id, text);\\n\\t\\t\\t\\t\\t\\tthis.broadcast(\\\"assistant/message\\\", {\\n\\t\\t\\t\\t\\t\\t\\tsessionId: session.id,\\n\\t\\t\\t\\t\\t\\t\\ttext\\n\\t\\t\\t\\t\\t\\t});\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t}\\n\\t\\t\\t});\\n\\t\\t}, \\\"better-deepseek: session event listener\\\");\\n\\t\\tthis.ctx.effect(() => {\\n\\t\\t\\treturn this.ctx.on(\\\"tools/pre-execute\\\", (exec, next) => {\\n\\t\\t\\t\\tconst sessionId = exec.agent?.id;\\n\\t\\t\\t\\tif (sessionId !== void 0) this.broadcast(\\\"tool/call\\\", {\\n\\t\\t\\t\\t\\tsessionId,\\n\\t\\t\\t\\t\\ttool: exec.name,\\n\\t\\t\\t\\t\\targs: exec.arguments\\n\\t\\t\\t\\t});\\n\\t\\t\\t\\treturn next();\\n\\t\\t\\t});\\n\\t\\t}, \\\"better-deepseek: tool pre-execute listener\\\");\\n\\t\\tthis.ctx.effect(() => {\\n\\t\\t\\treturn this.ctx.on(\\\"tools/post-execute\\\", (exec, result, next) => {\\n\\t\\t\\t\\tconst sessionId = exec.agent?.id;\\n\\t\\t\\t\\tif (sessionId !== void 0) this.broadcast(\\\"tool/result\\\", {\\n\\t\\t\\t\\t\\tsessionId,\\n\\t\\t\\t\\t\\ttool: exec.name,\\n\\t\\t\\t\\t\\toutput: result\\n\\t\\t\\t\\t});\\n\\t\\t\\t\\treturn next();\\n\\t\\t\\t});\\n\\t\\t}, \\\"better-deepseek: tool post-execute listener\\\");\\n\\t\\tthis.ctx.effect(() => {\\n\\t\\t\\treturn this.ctx.on(\\\"agent/turn-stopping\\\", (payload) => {\\n\\t\\t\\t\\tconst finalText = this.latestAssistantTextBySession.get(payload.agent.id) ?? \\\"\\\";\\n\\t\\t\\t\\tthis.broadcast(\\\"turn/complete\\\", {\\n\\t\\t\\t\\t\\tsessionId: payload.agent.id,\\n\\t\\t\\t\\t\\tturn: payload.turn,\\n\\t\\t\\t\\t\\tfinalText\\n\\t\\t\\t\\t});\\n\\t\\t\\t\\tthis.broadcast(\\\"turn/stopping\\\", {\\n\\t\\t\\t\\t\\tsessionId: payload.agent.id,\\n\\t\\t\\t\\t\\tturn: payload.turn\\n\\t\\t\\t\\t});\\n\\t\\t\\t});\\n\\t\\t}, \\\"better-deepseek: turn stopping listener\\\");\\n\\t}\\n\\tbroadcast(type, payload) {\\n\\t\\tconst data = `data: ${JSON.stringify({\\n\\t\\t\\ttype,\\n\\t\\t\\ttimestamp: Date.now(),\\n\\t\\t\\tpayload\\n\\t\\t})}\\\\n\\\\n`;\\n\\t\\tfor (const client of this.sseClients) client.write(data);\\n\\t}\\n};\\n//#endregion\\nexport { BetterDeepSeekBridgeService, BetterDeepSeekBridgeService as default };\\n\"\n    },\n    {\n      \"path\": \"src/index.ts\",\n      \"content\": \"import { Context, Service } from '@deepseek-ai/cordis'\\nimport z from '@deepseek-ai/schemastery'\\nimport type { IncomingMessage, ServerResponse } from 'node:http'\\nimport type {} from '@deepseek-ai/dsh-host-webserver'\\nimport { installModelSelection, type ModelSelectionRef } from '@deepseek-ai/dsh-agent'\\nimport type {} from '@deepseek-ai/dsh-agent'\\nimport type { SessionId, UserMessage } from '@deepseek-ai/dsh-session'\\nimport type {} from '@deepseek-ai/dsh-tools'\\n\\ndeclare module '@deepseek-ai/cordis' {\\n  interface Context {\\n    betterDeepSeekBridge: BetterDeepSeekBridgeService\\n  }\\n}\\n\\nexport interface Config {\\n  enableCors?: boolean\\n}\\n\\nexport class BetterDeepSeekBridgeService extends Service {\\n  static inject = ['webServer', 'agents']\\n  static Config: z<Config> = z.object({\\n    enableCors: z.boolean().default(true),\\n  })\\n\\n  private readonly sseClients = new Set<ServerResponse>()\\n  private readonly latestAssistantTextBySession = new Map<string, string>()\\n\\n  constructor(ctx: Context, private readonly config: Config) {\\n    super(ctx, 'betterDeepSeekBridge')\\n\\n    // Unified Better-DeepSeek Router\\n    this.ctx.effect(() => {\\n      return this.ctx.webServer.register({\\n        kind: 'prefix',\\n        path: '/api/better-deepseek',\\n        handler: async (req, res) => {\\n          if (this.handleCors(req, res)) return\\n\\n          const url = new URL(req.url ?? '/', `http://${req.headers.host ?? '127.0.0.1'}`)\\n          const pathname = url.pathname\\n\\n          // 1. Handshake Ping Endpoint\\n          if (pathname === '/api/better-deepseek/ping') {\\n            res.writeHead(200, { 'Content-Type': 'application/json' })\\n            res.end(JSON.stringify({\\n              active: true,\\n              version: '1.6.0',\\n              capabilities: ['filtered_sse', 'approvals', 'rag_inject', 'session_result'],\\n            }))\\n            return\\n          }\\n\\n          // 2. Live SSE Event Stream Endpoint\\n          if (pathname === '/api/better-deepseek/events') {\\n            res.writeHead(200, {\\n              'Content-Type': 'text/event-stream',\\n              'Cache-Control': 'no-cache',\\n              'Connection': 'keep-alive',\\n            })\\n            res.write(': connected\\\\n\\\\n')\\n            this.sseClients.add(res)\\n\\n            req.on('close', () => {\\n              this.sseClients.delete(res)\\n            })\\n            return\\n          }\\n\\n          // 3. Get Session Result (Polling / Fetching Final Response)\\n          if (pathname === '/api/better-deepseek/session.result' && req.method === 'GET') {\\n            const sessionId = url.searchParams.get('sessionId') ?? ''\\n            const finalText = this.latestAssistantTextBySession.get(sessionId) ?? ''\\n            const agent = this.ctx.agents.get(sessionId as SessionId)\\n\\n            res.writeHead(200, { 'Content-Type': 'application/json' })\\n            res.end(JSON.stringify({\\n              type: 'server-response',\\n              result: {\\n                ok: true,\\n                value: {\\n                  sessionId,\\n                  status: agent?.status ?? 'idle',\\n                  finalText,\\n                },\\n              },\\n            }))\\n            return\\n          }\\n\\n          // 4. RPC Endpoints (session.create, session.prompt, session.cancel)\\n          if (req.method === 'POST') {\\n            const body = await this.readJsonBody(req)\\n            const rpcId = body.rpcId ?? `bd-rpc-${Date.now()}`\\n\\n            // session.create\\n            if (pathname === '/api/better-deepseek/session.create') {\\n              try {\\n                const cwd = body.payload?.cwd ?? process.cwd()\\n                const sessionId = `session-${Date.now()}` as SessionId\\n                this.latestAssistantTextBySession.set(sessionId, '')\\n\\n                const defaultModel = this.ctx.get('agentDefaultModel') as any\\n                const selection = defaultModel\\n                  ? defaultModel.currentSelection()\\n                  : { provider: 'deepseek-official', model: 'deepseek-chat' }\\n\\n                const presets = this.ctx.get('agentPresets') as any\\n                let presetId: string | undefined\\n                if (presets) {\\n                  try {\\n                    const resolved = await presets.resolve(undefined)\\n                    presetId = resolved?.id\\n                  } catch {\\n                    // Ignore preset resolve failure\\n                  }\\n                }\\n\\n                await this.ctx.agents.create({\\n                  sessionId,\\n                  meta: {\\n                    cwd,\\n                    ...(presetId !== undefined ? { agentPreset: presetId } : {}),\\n                  },\\n                  agentOptions: {\\n                    provider: selection.provider,\\n                    model: selection.model,\\n                  },\\n                  setup: async (agentCtx) => {\\n                    const selected: ModelSelectionRef = { current: selection, assembled: undefined }\\n                    installModelSelection(agentCtx, selected)\\n                    if (presets && presetId) {\\n                      await presets.mount(agentCtx, presetId)\\n                    }\\n                  },\\n                })\\n\\n                res.writeHead(200, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: {\\n                    ok: true,\\n                    value: { sessionId },\\n                  },\\n                }))\\n              } catch (err: any) {\\n                res.writeHead(500, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: {\\n                    ok: false,\\n                    error: { message: err?.message ?? 'Failed to create session' },\\n                  },\\n                }))\\n              }\\n              return\\n            }\\n\\n            // session.prompt\\n            if (pathname === '/api/better-deepseek/session.prompt') {\\n              const sessionId = (body.payload?.sessionId ?? '') as SessionId\\n              const text = body.payload?.text ?? ''\\n              const agent = this.ctx.agents.get(sessionId)\\n\\n              if (agent) {\\n                const userMsg = {\\n                  id: crypto.randomUUID(),\\n                  role: 'user',\\n                  source: { kind: 'user' },\\n                  content: [{ type: 'text', text }],\\n                } as unknown as UserMessage\\n\\n                agent.followup(userMsg)\\n\\n                res.writeHead(200, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: { ok: true, value: {} },\\n                }))\\n              } else {\\n                res.writeHead(404, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: {\\n                    ok: false,\\n                    error: { message: `Session \\\"${sessionId}\\\" not found` },\\n                  },\\n                }))\\n              }\\n              return\\n            }\\n\\n            // session.cancel\\n            if (pathname === '/api/better-deepseek/session.cancel') {\\n              const sessionId = (body.payload?.sessionId ?? '') as SessionId\\n              const agent = this.ctx.agents.get(sessionId)\\n\\n              if (agent) {\\n                agent.cancel('user-request' as any)\\n                res.writeHead(200, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: { ok: true, value: { canceled: true } },\\n                }))\\n              } else {\\n                res.writeHead(404, { 'Content-Type': 'application/json' })\\n                res.end(JSON.stringify({\\n                  type: 'server-response',\\n                  rpcId,\\n                  result: {\\n                    ok: false,\\n                    error: { message: `Session \\\"${sessionId}\\\" not found` },\\n                  },\\n                }))\\n              }\\n              return\\n            }\\n          }\\n\\n          res.writeHead(404, { 'Content-Type': 'text/plain' })\\n          res.end('not found')\\n        },\\n      })\\n    }, 'better-deepseek: gateway router')\\n\\n    // 5. Event Listener Registrations\\n    this.setupEventListeners()\\n  }\\n\\n  private handleCors(req: IncomingMessage, res: ServerResponse): boolean {\\n    if (this.config.enableCors !== false) {\\n      res.setHeader('Access-Control-Allow-Origin', '*')\\n      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')\\n      res.setHeader('Access-Control-Allow-Headers', 'Content-Type')\\n    }\\n    if (req.method === 'OPTIONS') {\\n      res.writeHead(204)\\n      res.end()\\n      return true\\n    }\\n    return false\\n  }\\n\\n  private async readJsonBody(req: IncomingMessage): Promise<any> {\\n    const chunks: Buffer[] = []\\n    for await (const chunk of req) {\\n      chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk)\\n    }\\n    const raw = Buffer.concat(chunks).toString('utf8')\\n    try {\\n      return JSON.parse(raw)\\n    } catch {\\n      return {}\\n    }\\n  }\\n\\n  private setupEventListeners(): void {\\n    // Durable session event stream (assistant chunks & full messages)\\n    this.ctx.effect(() => {\\n      return this.ctx.on('session/event', (session, event) => {\\n        if (event.type === 'assistant/chunk') {\\n          const chunkData = event.data as { text?: string; delta?: string; chunk?: { text?: string; delta?: string } }\\n          const delta = chunkData.text ?? chunkData.delta ?? chunkData.chunk?.text ?? chunkData.chunk?.delta ?? ''\\n          if (delta) {\\n            const current = this.latestAssistantTextBySession.get(session.id) ?? ''\\n            this.latestAssistantTextBySession.set(session.id, current + delta)\\n            this.broadcast('assistant/chunk', {\\n              sessionId: session.id,\\n              delta,\\n            })\\n          }\\n        }\\n\\n        if (event.type === 'assistant/message') {\\n          const data = event.data as { message?: { content?: Array<{ type: string; text?: string }> } }\\n          const text = data.message?.content?.filter((c) => c.type === 'text').map((c) => c.text).join('') ?? ''\\n          if (text) {\\n            this.latestAssistantTextBySession.set(session.id, text)\\n            this.broadcast('assistant/message', {\\n              sessionId: session.id,\\n              text,\\n            })\\n          }\\n        }\\n      })\\n    }, 'better-deepseek: session event listener')\\n\\n    // Tool execution waterfalls (must call next() to delegate!)\\n    this.ctx.effect(() => {\\n      return this.ctx.on('tools/pre-execute', (exec, next) => {\\n        const sessionId = exec.agent?.id\\n        if (sessionId !== undefined) {\\n          this.broadcast('tool/call', {\\n            sessionId,\\n            tool: exec.name,\\n            args: exec.arguments,\\n          })\\n        }\\n        return next()\\n      })\\n    }, 'better-deepseek: tool pre-execute listener')\\n\\n    this.ctx.effect(() => {\\n      return this.ctx.on('tools/post-execute', (exec, result, next) => {\\n        const sessionId = exec.agent?.id\\n        if (sessionId !== undefined) {\\n          this.broadcast('tool/result', {\\n            sessionId,\\n            tool: exec.name,\\n            output: result,\\n          })\\n        }\\n        return next()\\n      })\\n    }, 'better-deepseek: tool post-execute listener')\\n\\n    // Agent turn stopping (turn/stopping & turn/complete with final text)\\n    this.ctx.effect(() => {\\n      return this.ctx.on('agent/turn-stopping', (payload) => {\\n        const finalText = this.latestAssistantTextBySession.get(payload.agent.id) ?? ''\\n        this.broadcast('turn/complete', {\\n          sessionId: payload.agent.id,\\n          turn: payload.turn,\\n          finalText,\\n        })\\n        this.broadcast('turn/stopping', {\\n          sessionId: payload.agent.id,\\n          turn: payload.turn,\\n        })\\n      })\\n    }, 'better-deepseek: turn stopping listener')\\n  }\\n\\n  private broadcast(type: string, payload: unknown): void {\\n    const data = `data: ${JSON.stringify({ type, timestamp: Date.now(), payload })}\\\\n\\\\n`\\n    for (const client of this.sseClients) {\\n      client.write(data)\\n    }\\n  }\\n}\\n\\nexport default BetterDeepSeekBridgeService\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"b1043860f5f10fd7ed12664ebe32ca4fd6445aca\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"a3625534bcb047ef2d4a403cdbbeb60680a57d7f6fbc3cf77533fa4c084a14a1\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 6,\n        \"lines\": 687,\n        \"code\": 636,\n        \"comments\": 48,\n        \"blank\": 7\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 40,\n        \"words\": 152\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 371,\n        \"code\": 307,\n        \"comments\": 25,\n        \"blank\": 40\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 54,\n        \"code\": 53,\n        \"comments\": 4,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 66,\n        \"code\": 53,\n        \"comments\": 3,\n        \"blank\": 13\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"tests/service.spec.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 44,\n          \"api\": \"req.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 222,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"session/event\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 248,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/pre-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 259,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/post-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/index.js\",\n          \"line\": 270,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"agent/turn-stopping\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 44,\n          \"api\": \"req.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 231,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"session/event\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 259,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/pre-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 272,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/post-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 286,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"agent/turn-stopping\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 64,\n          \"api\": \"req.on\",\n          \"name\": \"close\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 265,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"session/event\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 295,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/pre-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 309,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"tools/post-execute\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 324,\n          \"api\": \"this.ctx.on\",\n          \"name\": \"agent/turn-stopping\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"agent/turn-stopping\",\n          \"close\",\n          \"session/event\",\n          \"tools/post-execute\",\n          \"tools/pre-execute\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 5,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "fd4a447e9d254763c97418924a51ab17d3d84673f90dd110f8b2a8307c82249e"
+        }
+    },
+    "unavailable_artifacts": []
+}

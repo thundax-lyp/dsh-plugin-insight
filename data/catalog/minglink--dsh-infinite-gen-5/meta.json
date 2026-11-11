@@ -1,61 +1,40 @@
 {
     "repository": "Minglink/dsh-infinite-gen-5",
     "repository_id": 1335211378,
-    "captured_at": "2026-11-01T08:13:08.475Z",
-    "window_start": "2026-10-02T08:13:08.475Z",
-    "stars": 3759,
-    "pushed_at": "2026-11-01T04:36:23Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 4110,
+    "pushed_at": "2026-11-10T17:11:50Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 28,
+        "closed": 2,
+        "created_30d": 12,
+        "closed_30d": 0,
+        "updated_30d": 13
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3AMinglink%2Fdsh-infinite-gen-5%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 04A2:FE14D:E641D:1008F1:6AE6F54B and timestamp 2026-11-01 08:16:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3AMinglink%2Fdsh-infinite-gen-5%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 04CE:2571BD:E252E:FC9FF:6AE6F54C and timestamp 2026-11-01 08:16:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMinglink%2Fdsh-infinite-gen-5%20is%3Aissue%20created%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0514:268345:EA2C5:10486E:6AE6F54E and timestamp 2026-11-01 08:16:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMinglink%2Fdsh-infinite-gen-5%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 0552:1F506B:E144F:FB9B6:6AE6F550 and timestamp 2026-11-01 08:16:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AMinglink%2Fdsh-infinite-gen-5%20is%3Aissue%20updated%3A2026-10-02T08%3A13%3A08.475Z..2026-11-01T08%3A13%3A08.475Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 057E:11A98B:E07B6:FA3C7:6AE6F551 and timestamp 2026-11-01 08:16:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-01T06:52:54.214Z",
+        "captured_at": "2026-11-10T17:18:51.228Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-infinite-gen-5",
-        "captured_at": "2026-11-01T08:13:08.475Z",
-        "window_start": "2026-10-02",
-        "window_end": "2026-10-31",
+        "captured_at": "2026-11-11T01:54:58.798Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
         "downloads_30d": null,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-02:2026-10-31/dsh-infinite-gen-5",
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/dsh-infinite-gen-5",
         "error": "HTTP 404",
         "publication": {
             "first_published_at": null,
-            "captured_at": "2026-11-01T08:13:08.475Z",
+            "captured_at": "2026-11-11T01:54:58.798Z",
             "source_url": "https://registry.npmjs.org/dsh-infinite-gen-5",
             "error": "HTTP 404",
             "latest_version": null,

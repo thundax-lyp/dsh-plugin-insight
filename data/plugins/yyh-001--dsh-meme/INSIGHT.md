@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[dec558d](https://github.com/yyh-001/dsh-meme/tree/dec558d450575752eeaffeced9a6a6f2cfdc2f6c)
+源码版本：[48e10fe](https://github.com/yyh-001/dsh-meme/tree/48e10fedf1951d84c9eca4247f5c5bbc2ae38871)
 
 <!-- BEGIN META -->
-[![GitHub ★ 472](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=472&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yyh-001/dsh-meme) [![npm 30d 46,775](https://img.shields.io/static/v1?label=npm+30d&message=46%2C775&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-meme) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-meme)
+[![GitHub ★ 552](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=552&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yyh-001/dsh-meme) [![npm 30d 77,268](https://img.shields.io/static/v1?label=npm+30d&message=77%2C268&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-meme) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-meme)
 <!-- END META -->
 
-> **功能**：在 DSH 会话中搜索、展示和维护表情图库。
+> **功能**：在 DeepSeek Harness 会话中搜索和发送表情包，并管理、自建或导入图库。
 
-> **亮点**：[Q02](#research-q02) 将图片候选、展示和元数据维护带入 DSH 会话，相对手工找文件减少切换，但依赖匹配和渠道。
+> **亮点**：[Q01](#research-q01) 搜索、筛图库、选图与当前草稿接在同一界面，用户可选择先留草稿再提交。
 
-> **主要限制**：[Q03](#research-q03) 文本匹配和随机候选不保证正确图；收录失败可能留文件，IM 投递还依赖其他工具。
+> **主要限制**：[Q02](#research-q02) 不同会话的候选结果和投递方不同，工具返回不能证明接收端状态。[Q03](#research-q03) 收录时文件可能先于索引存在。
 
 **本文目录**
 
@@ -26,11 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 用户和依赖是什么？](#detail-section-11)
-  - [Q02 · 候选怎样搜索、展示和收录？](#detail-section-12)
-  - [Q03 · 风险和失败边界是什么？](#detail-section-13)
-  - [Q04 · 成本与可验证假设是什么？](#detail-section-14)
-  - [Q05 · 如何试用和退出？](#detail-section-15)
+  - [Q01 · Web 选图如何影响已有草稿与提交？](#detail-section-11)
+  - [Q02 · AI 的候选和渠道实际投递如何衔接？](#detail-section-12)
+  - [Q03 · 本地收录与对外访问如何影响成本和恢复？](#detail-section-13)
+  - [Q04 · 如何在现有手动流程上验证防误发增量？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：[Q01](#research-q01) 用户希望在 DSH 聊天中找对图、展示图并维护个人图库。
+> **用途**：常在 DSH Web 聊天里配图的用户，可以在输入框旁选图库图片并和已有草稿一起发送。
 
-用户离开会话手动浏览图片文件、挑选并通过聊天渠道发送。
+手工从图库文件夹选择并上传可以准确挑图。插件增加聊天内筛选及草稿接线，收益取决于图库质量和宿主或渠道支持。
 
 <a id="detail-section-3"></a>
 
@@ -51,65 +50,64 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 候选检索 | 在图库中按词与情绪找图 | 词匹配随机候选，需用户核对 |
-| 图库收录 | 保存用户图片并更新索引 | 文件与数据库分步写入，失败需检查残留 |
-| 图片展示 | Web 标记配图或交 IM 工具 | 依赖对应客户端和渠道，不保证送达 |
+| --- | --- | --- |
+| Web 选图 | 筛选并插入草稿 | 直接提交由设置控制 |
+| AI 找图 | 按情绪和词查候选 | 实际投递因渠道而异 |
+| 收录 | 给自有图库写图片和索引 | 模型仅在自动识别路径需要 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 兼容 DSH、工具服务和 Node | 必需 | 注册工具并读取索引 | 无法搜索或显示 |
-| 已启用且可读取图库 | 找图必需 | 提供图片及元数据 | 无候选或缺图 |
-| Web 客户端或 IM 发送工具 | 对应渠道必需 | 显示或投递图片 | 可能只显示文字或发送失败 |
+| --- | --- | --- | --- |
+| DSH Web、Node 和图库 | 本机试用必需 | 加载输入选择与本地资源 | 改手工上传 |
+| 识图模型 | 自动补分类时需要 | 提取标签和说明 | 提供人工分类 |
+| 实际渠道工具 | IM 试用需要 | 投递候选图片 | 仅在本地 Web 验证 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 配置 | 用户创建小图库并检查发送设置 | 图片和索引可读取 |
-| 测试 | 使用关键词查找并查看图 | 图与描述一致 |
-| 收录 | 用户明确要求保存测试图 | 文件和索引一致 |
-| 异常 | 停用并检查图库备份 | 返回纯文字和人工核查 |
+| --- | --- | --- |
+| 准备 | 使用者选非敏感测试图库并关闭点击即发送 | 先留草稿核对 |
+| 选图 | 筛选候选并插入原草稿 | 检查已有文字和图片 |
+| 退出 | 错图、草稿变化或仅出描述时回原流程 | 通过手工上传确认目标内容 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 本地存储与运行资源 | 准备图库和标注 | 时间未知 |
-| 持续使用 | 模型、图片和可选缩图资源 | 筛选及维护 | 真实使用频率未知 |
-| 失败恢复 | 文件和索引检查 | 清理残留与修正错图 | 实际损失未知 |
-| 退出 | 图库备份和保留资源 | 禁用并核对个人图片 | 停用不等于删除数据 |
+| --- | --- | --- | --- |
+| 首次 | 本地存储和插件资源未知 | 配测试图库与设置 | 宿主兼容未验 |
+| 持续 | 识图与渠道处理费用未知 | 核对候选和维护标签 | 节时未知 |
+| 失败恢复 | 备份和索引资源未测 | 核查落盘与发送 | 收录失败需检查残留 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 会话内找图 | 词匹配与候选返回 | 错图率与用户满意度 |
-| 图库维护 | 文件写入及索引刷新 | 异常后两者一致性 |
+| --- | --- | --- |
+| 会话内选图 | 候选筛选与草稿接线 | 真实用户误发率 |
+| 渠道配图 | 输出区分 Web 标记及外部工具 | 接收端投递 |
+| 图库收录 | 文件、SQLite 与索引刷新 | 异常后恢复速度 |
 
-> **思考**：[Q03](#research-q03) 文本匹配和随机候选不保证正确图；收录失败可能留文件，IM 投递还依赖其他工具。
+> **思考**：[Q02](#research-q02) 不同会话的候选结果和投递方不同，工具返回不能证明接收端状态。[Q03](#research-q03) 收录时文件可能先于索引存在。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 将图片候选、展示和元数据维护带入 DSH 会话，相对手工找文件减少切换，但依赖匹配和渠道。
+> **亮点**：[Q01](#research-q01) 搜索、筛图库、选图与当前草稿接在同一界面，用户可选择先留草稿再提交。
 
-[Q02](#research-q02) 通过索引和标记连接工具与前端，[Q03](#research-q03) 渠道不同且写文件与数据库存在失败间隙。
+先保留宿主插入锚点，再回退追加草稿。图库文件和索引分步写入，接收端也需独立读回。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 文本匹配和随机候选不保证正确图；收录失败可能留文件，IM 投递还依赖其他工具。
+[Q02](#research-q02) 不同会话的候选结果和投递方不同，工具返回不能证明接收端状态。[Q03](#research-q03) 收录时文件可能先于索引存在。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 用少量非敏感图片试用并核对渠道设置，错图或索引不一致时停用和核查。
+[Q04](#research-q04) 先用一条非敏感草稿核对图片与文字，发现错图或标记未渲染时暂停选择器并手工上传。
 
 <a id="detail-section-7"></a>
 
@@ -117,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持候选检索、Web 标记渲染与图库收录；实际配图、跨渠道送达和效果未验证。
+固定提交已核查 Web 草稿分支、候选和收录路径。渠道投递、接收端及恢复行为未运行验证。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、index.js、memes.js、client.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 client.js、index.js、memes.js、package.json 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅静态检查固定源码的搜索、展示与收录主路径，未运行 DSH、浏览器或 IM。
-- 下一步：在隔离 DSH、测试图库与目标客户端验证搜索、显示、明确收录及失败恢复。
+- 边界：固定版本只读抽查 Web 选图、渠道投递指引和图库收录；未安装或运行宿主、渠道、识图与测试。
+- 下一步：在隔离会话比较两种点击设置，再分别对收录索引与渠道投递注入失败并核对可见状态。
 
 **分析版本**
 
 - **仓库**：[yyh-001/dsh-meme](https://github.com/yyh-001/dsh-meme)
-- **版本号**：0.1.72（[固定提交 dec558d](https://github.com/yyh-001/dsh-meme/tree/dec558d450575752eeaffeced9a6a6f2cfdc2f6c)）
-- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.80（[固定提交 48e10fe](https://github.com/yyh-001/dsh-meme/tree/48e10fedf1951d84c9eca4247f5c5bbc2ae38871)）
+- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,9 +134,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 假设在 AI 主动向 IM 发图前，增加候选图片与目标聊天的用户确认，可降低误发；现有手动 Web 选图已支持草稿缩略预览，不能算作此假设。需对照误发率和等待成本。
+[Q04](#research-q04) 将 IM 图片候选、目标会话与用户确认绑定，可能减少错图和错目标，需用目标切换对照验证。
 
-在隔离 DSH、测试图库与目标客户端验证搜索、显示、明确收录及失败恢复。
+在隔离会话比较两种点击设置，再分别对收录索引与渠道投递注入失败并核对可见状态。
 
 <a id="detail-section-9"></a>
 
@@ -151,61 +149,81 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 8 | 852 | — | — | 12499 |
-| .js | source | 9 | 9211 | 6851 | 2226 | — |
+| .md | source | 8 | 870 | — | — | 13197 |
+| .js | source | 9 | 9433 | 6994 | 2309 | — |
 | .cjs | source | 1 | 10 | 10 | 1 | — |
 | .tsx | source | 2 | 412 | 334 | 81 | — |
-| .mjs | test | 41 | 8782 | 7166 | 962 | — |
+| .mjs | test | 48 | 9964 | 8158 | 1076 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 25](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=25&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+created%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z) [![近30天关闭 26](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=26&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T06%3A31%3A34.186Z..2026-11-01T06%3A31%3A34.186Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 25](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=25&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 27](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=27&color=737b86&logo=github)](https://github.com/yyh-001/dsh-meme/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-11。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查表情候选如何检索、显示与收录，以及发送渠道、数据一致性和成本边界。
+**插件研究总目标**：经常在 DSH 对话中配图的用户能否准确选择已知图片，控制何时发送，并发现渠道或图库失败？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 用户和依赖是什么？
+### Q01 · Web 选图如何影响已有草稿与提交？
 
-**研究主题**：场景与需求、依赖、兼容与流程
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-dsh-meme 面向希望在 DSH 聊天中查找、展示和维护表情图库的个人用户。合格结果是图与描述相符、在目标渠道可见，用户明确要求收录时对应文件和索引一致；依赖 DSH 工具与 Web/发送通道、Node 的 SQLite 和可读取图库，IM 原生图片还需对应投递工具。包与说明不证明当前宿主、图库或渠道实际可用。
+在 DSH Web 对话里常用固定图片回应的用户，可以用输入旁选图面板筛图库、情绪与关键词。一条合格消息应保留原草稿，配上预期图片并在用户想发送时才提交。客户端将候选说明制成描述标记，设置关闭点击即发送时，先使用宿主插入锚点插到光标处，API 缺失或失败则把标记追加到草稿。若设置开启，拼好草稿后即尝试调用宿主 submit，并关闭面板，错误捕获没有向用户提供失败说明。相比到外部目录翻找并上传，选图进入当前草稿，减少路径切换。最终标记如何显示还取决于宿主及插件匹配，不能把草稿出现等同于对方收到图片。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:2-5](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/package.json#L2-L5)
+**依据 1 · 作者声明**：[README.md:24-36](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/README.md#L24-L36)
 
-包名、版本与能力描述。
-
-```text
-  "name": "dsh-meme",
-  "version": "0.1.72",
-  "description": "DeepSeek Harness 表情包插件：输入框一键发图（图库/情绪多选筛选、悬浮大图预览）、多图库开关、情绪与关键词搜图、AI 学图，图库可从市场一键安装或导入/导出 ZIP。",
-  "icon": "icon.jpg",
-```
-
-**依据 2 · 源码核查**：[package.json:37-57](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/package.json#L37-L57)
-
-DSH 客户端、工具依赖及可选 sharp。
+作者介绍选择器、手动和主动配图及渠道差异。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+> [!IMPORTANT]
+> **dsh-meme 是 DeepSeek Harness 的插件，不是独立应用。**  
+> 需要先装好 DSH，再通过插件市场或 CLI 装进某个 profile；社区开源项目，并非 DeepSeek 官方产品。
+
+## 功能
+
+- 😊 **一键发图** — 输入框旁点 😊，搜索、按图库或情绪筛选，点一张直接发送；设置页可关掉「点图直接发送」，关闭后点一张只把 `[表情: 描述]` 插到输入框光标处，按回车和文字一起发出，手滑也不会误发。
+- 🎭 **主动斗图** — AI 会按聊天情绪自己找图接梗，不用等你开口；设置页可选「主动发图」四档：关闭 / 看气氛 / 活跃 / 每轮都发，也能改写提示词调整风格。
+- 📱 **IM / 手机斗图** — QQ、微信、飞书等经 dsh-im 接入后，表情包以原生图片消息发出，不用写文字标记；手机/平板经电脑局域网 IP 打开 DSH Web，设置页打开「局域网访问图库」即可收发（默认关）。QQ 大图容易被客户端当图片消息拉伸，可打开「QQ 发图尺寸」把发送副本缩到 200–450px，Web 仍用原图。
+- 🧠 **学会新图** — 上传图片后说「把这张图入库」，AI 自动识别分类和描述；也可以把图片文件直接拷进图库目录，点「扫描新增」一键入库（动图 GIF 建议走这条，原始动画保留；文件改名/删除后扫描会顺手清理失效记录）。
+- 🗂️ **整理图库** — 跟 AI 说「列一下表情包清单」「帮我查查重复」「把这张改成 work 分类」——内置 `meme_list` / `meme_update` 维护工具，改分类/描述/关键词不用手动翻面板（删除留在面板，防误删）。
+- 📦 **管理与分享** — 多图库开关、上传与编辑、ZIP 导入导出、市场安装与更新。
+- 🚀 **开箱即用** — 内置大肥鱼图库（24 张），核心功能零第三方运行依赖，使用 Node 内置 SQLite；QQ 缩图是可选能力（dsh-im 已自带 sharp，未安装时按原图发送）。
+```
+
+</details>
+
+**依据 2 · 源码核查**：[package.json:31-48](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/package.json#L31-L48)
+
+清单将当前客户端和宿主依赖声明给 Web profile。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -218,75 +236,177 @@ DSH 客户端、工具依赖及可选 sharp。
       ],
       "platform": "web"
     }
-  },
-  "peerDependencies": {
-    "@deepseek-ai/dsh-tools": "*"
-  },
-  "optionalDependencies": {
-    "sharp": "^0.35.5"
-  },
-  "keywords": [
-    "dsh-plugin",
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:29-36](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/README.md#L29-L36)
+**依据 3 · 源码核查**：[client.js:2790-2817](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/client.js#L2790-L2817)
 
-作者说明图库、学图与依赖。
+生成标记，优先插入并在失败时追加。
 
-```text
-
-- 😊 **一键发图** — 输入框旁点 😊，搜索、按图库或情绪筛选；点一张放进输入框（插在光标处，输入框上方能看到选中的图），按回车和文字一起发出；手滑不会直接发出去，`Shift+点` 才是立即发送。
-- 🎭 **主动斗图** — AI 会按聊天情绪自己找图接梗，不用等你开口；设置页可开关「AI 主动发表情」、设发图概率（0–100%）或改写提示词调整风格。
-- 📱 **IM / 手机斗图** — QQ、微信、飞书等经 dsh-im 接入后，表情包以原生图片消息发出，不用写文字标记；手机/平板经电脑局域网 IP 打开 DSH Web，设置页打开「局域网访问图库」即可收发（默认关）。QQ 大图容易被客户端当图片消息拉伸，可打开「QQ 发图尺寸」把发送副本缩到 200–450px，Web 仍用原图。
-- 🧠 **学会新图** — 上传图片后说「把这张图入库」，AI 自动识别分类和描述；也可以把图片文件直接拷进图库目录，点「扫描新增」一键入库（动图 GIF 建议走这条，原始动画保留；文件改名/删除后扫描会顺手清理失效记录）。
-- 🗂️ **整理图库** — 跟 AI 说「列一下表情包清单」「帮我查查重复」「把这张改成 work 分类」——内置 `meme_list` / `meme_update` 维护工具，改分类/描述/关键词不用手动翻面板（删除留在面板，防误删）。
-- 📦 **管理与分享** — 多图库开关、上传与编辑、ZIP 导入导出、市场安装与更新。
-- 🚀 **开箱即用** — 内置大肥鱼图库（24 张），核心功能零第三方运行依赖，使用 Node 内置 SQLite；QQ 缩图是可选能力（dsh-im 已自带 sharp，未安装时按原图发送）。
-```
-
-**依据 4 · 作者声明**：[README.md:104-106](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/README.md#L104-L106)
-
-作者说明数据位置与发送方式。
+<details>
+<summary>查看原文（28行）</summary>
 
 ```text
-默认扫描 `~/.dsh/meme-packs`，设置存 `~/.dsh/dsh-expression.json`，升级保留。ZIP 支持常规压缩和纯图片目录。
-
-**发送方式**只影响 AI：自动按渠道（Web 写标记、IM 发原图）、纯文字不发图、图片要求每次真发。**发图概率**默认关；打开后每轮按所选概率决定 AI 是否主动发图（仅「自动」发送方式生效），你明确要图时不受概率限制。**QQ 发图尺寸**默认关；打开后 QQ/IM 发送前把长边缩到所选尺寸（默认 300px），Web 聊天仍用原图，GIF 保留动画——QQ 官方机器人没有表情消息类型，缩小后更容易被客户端按表情渲染，平板端不会拉伸满屏。**表情排布**只影响前端：并排（默认）或图独占一行。
+      const markerOf = (m) => {
+        const desc = (m.caption || m.keywords || m.tag || '表情包').slice(0, 80)
+        return '[表情: ' + desc + ']'
+      }
+      const draftOf = () => (inputState && typeof inputState.draft === 'string' ? inputState.draft : '')
+      // 光标处插入优先:宿主公开的 insertText 需要同一轮拿到的插入锚点(captureInsertion),
+      // 不会覆盖草稿,也不会把已有的 quote chip 清掉。拿不到这套 API、或者当前 phase 冻结
+      // (模型还在输出)时插入会失败,退回 setDraft 追加 —— 与旧版拼法一致,至少不丢草稿。
+      const insert = (m) => {
+        if (!m) return
+        const marker = markerOf(m)
+        let inserted = false
+        try {
+          if (actions && typeof actions.captureInsertion === 'function' && typeof actions.insertText === 'function') {
+            inserted = actions.insertText(marker, actions.captureInsertion()) === true
+          }
+        } catch (e) { inserted = false }
+        if (!inserted) {
+          const cur = draftOf()
+          setText(cur.trim() ? cur + '\n' + marker : marker)
+        }
+        store.set(false)
+        // 面板一关焦点就掉到 body 了,直接敲回车不会发;顺手把焦点还给输入框,
+        // 让「选图 → 接着打字 → 回车」一串动作不用再点一下。宿主结构变了就静默跳过。
+        try {
+          const editor = document.querySelector('[data-composer-card] [contenteditable="true"]')
+          if (editor && typeof editor.focus === 'function') editor.focus()
+        } catch (e) { /* 纯增强 */ }
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[client.js:2819-2843](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/client.js#L2819-L2843)
+
+直接提交分支及图库、情绪、关键词筛选接线。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+      // 设置开启时:拼草稿并立即发送
+      const sendNow = (m) => {
+        if (!m) return
+        const cur = draftOf()
+        const marker = markerOf(m)
+        setText(cur.trim() ? cur + '\n' + marker : marker)
+        try { if (actions && actions.submit) actions.submit() } catch (e) {}
+        store.set(false)
+      }
+      const pick = (m) => {
+        if (data.pickerSendOnClick !== false) sendNow(m)
+        else insert(m)
+      }
+
+      // 多选 chip:点一下选中(只看它),再点取消;一个都不选 = 不筛
+      const toggle = (list, setList, id) => setList(list.includes(id) ? list.filter((x) => x !== id) : list.concat([id]))
+      const clearAll = () => { setQ(''); setSelPacks([]); setSelTags([]) }
+      const hasFilter = !!(q.trim() || selPacks.length || selTags.length)
+      const selCount = selPacks.length + selTags.length
+      // 展开状态记到模块级:面板关掉再打开不用重新展开(同一页面会话内)
+      const toggleFilters = () => { const next = !showFilters; pickerFiltersOpen = next; setShowFilters(next) }
+
+      const tagCounts = pickerTagCounts(data.memes, selPacks)
+      const rows = pickerFilter(data.memes, selPacks, selTags, q)
+      const cells = rows.slice(0, PICKER_MAX_CELLS)
+```
+
+</details>
 
 #### 缺口
 
-- 目标宿主、图库与渠道可用性
-  **影响**：影响选图与显示
-  **进一步探讨**：用小型私有测试图库验证
+- 未在真实宿主验证草稿、引用或发送状态。
+  **影响**：无法保证宿主更新后仍保留草稿和焦点。
+  **进一步探讨**：用含引用和前后文字的草稿，在直接与预览两档核对发出内容。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 候选怎样搜索、展示和收录？
+### Q02 · AI 的候选和渠道实际投递如何衔接？
 
-**研究主题**：功能与机制、贡献与相对优势
+**研究主题**：功能与机制、缺陷与关键质疑、依赖、兼容与流程
 
 #### 完整回答
 
-Host 在通道就绪时注册 send_meme；跨已启用图库读取索引，按描述、关键词和文件名的词匹配评分，没命中再尝试二字组合，在最高分中随机取候选。Web 模式返回表情描述标记，客户端将标记映射成图片，并通过 /dsh-memes 路由从索引白名单读取；IM 模式提供路径，需另一个渠道工具投递。learn_meme 接收用户图片附件或 URL，写图片与索引并刷新；异常返回收录失败。相比切出聊天手动查文件，它把查找和维护放到工具与界面中，但模型挑选和前端匹配不能保证用户看到正确图。
+候选选择使用关键词、标签及有条件的情绪抽样，适合减少本地图库查找范围；错标或关键词缺失仍会漏图或给出不合语境的候选。Web 模式返回描述标记，模型需要把对应文本写入回复，IM 模式要求把候选磁盘路径交给独立渠道工具。QQ 服务存在时，另一分支解析已存路径并调用 sendImage；这里没有 await，返回已发送只证明调用没有同步抛错，不能当远端确认。纯文字模式拒绝直接发送，模型指令也约束不要输出标记或调用渠道，但跨插件权限和真实投递由实际渠道决定。只在单独 Web 会话试用时无需验证外部渠道，若试 IM 则需要单独验收目标会话、返回工具和接收端。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.js:1115-1136](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1115-L1136)
+**依据 1 · 源码核查**：[index.js:1119-1168](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/index.js#L1119-L1168)
 
-通道下注册 send_meme。
+候选按关键词、标签查询，只有条件满足时回退至情绪类别。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（50行）</summary>
 
 ```text
-    tagStats: () => sampler.tagStats(),
-  })
-  const qq = ctx.get('companionQq')
+    search({ query = '', tag = '', limit = 8 } = {}) {
+      const n = Math.max(1, Math.min(Number(limit) || 8, 30))
+      const q = String(query || '').trim()
+      const t = String(tag || '').trim().toLowerCase()
+      const rows = []
+      if (q) {
+        const found = sampler.search(q, n, t)
+        for (const row of found.memes) rows.push(row)
+      } else {
+        const sampled = sampler.sampleMood(t, '', n)
+        for (const row of sampled.memes) rows.push(row)
+      }
+      const memes = rows
+        .map((row) => {
+          const info = packInfoOf(row)
+          return {
+            path: absMemePath(row),
+            tag: row.tag,
+            caption: row.caption || row.file_name || '',
+            keywords: row.keywords || '',
+            pack: info.pack,
+            packName: info.packName,
+          }
+        })
+        .filter((m) => m.path)
+      return { ok: true, query: q, memes }
+    },
+    /**
+     * 挑一张:先按关键词精确检索;查不到(且给了 tag)再按情绪抽;query/tag 都没给、
+     * 或都没命中就返回 ok:false + reason/tags/tagStats,让调用方决定换词还是别配图
+     * (不会瞎塞一张)。
+     */
+    pick({ query = '', tag = '', limit = 8 } = {}) {
+      const q = String(query || '').trim()
+      const t = String(tag || '').trim().toLowerCase()
+      if (!q && !t) return pickFailure('没有给关键词(query)或情绪桶(tag)')
+      const direct = memeService.search({ query: q, tag: t, limit })
+      if (direct.memes.length > 0) {
+        const first = direct.memes[0]
+        return { ok: true, path: first.path, tag: first.tag, caption: first.caption, keywords: first.keywords, pack: first.pack, packName: first.packName }
+      }
+      if (q && t) {
+        // 关键词没命中时,给个情绪桶兜底(但只挑 tag 匹配的,不跨情绪乱给)
+        const byTag = memeService.search({ query: '', tag: t, limit })
+        if (byTag.memes.length > 0) {
+          const first = byTag.memes[0]
+          return { ok: true, path: first.path, tag: first.tag, caption: first.caption, keywords: first.keywords, pack: first.pack, packName: first.packName }
+        }
+      }
+      return pickFailure(q ? `没找到「${q}」相关的图` : '没有打开的图库')
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:1206-1215](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/index.js#L1206-L1215)
+
+QQ 发送服务或 Web 路由存在时注册工具。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
   const sendImage = qq !== undefined && typeof qq.sendImage === 'function'
     ? (path, caption) => qq.sendImage(path, caption)
     : null
@@ -297,669 +417,18 @@ Host 在通道就绪时注册 send_meme；跨已启用图库读取索引，按�
     })
   } else {
     console.log('[dsh-expression] 无可用发送通道(需要 dsh-companion 的 QQ 或 webServer),未注册 send_meme')
-  }
-
-  // companionQq 迟到时补挂(静态插件与 companion 装载顺序不定)。
-  const register = () => {
-    if (sendImage || urlPrefix) return
-    const qqNow = ctx.get('companionQq')
-    if (qqNow !== undefined && typeof qqNow.sendImage === 'function') {
-      registerToolWhenReady(ctx, 'send_meme', () => {
-        registerSendMemeTool(ctx, sampler, (path, caption) => qqNow.sendImage(path, caption), urlPrefix, imToolOptions())
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[index.js:895-934](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L895-L934)
+**依据 3 · 源码核查**：[memes.js:927-962](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/memes.js#L927-L962)
 
-按已启用图库合并搜索。
-
-<details>
-<summary>查看原文（40行）</summary>
-
-```text
-    search(query, n, tag) {
-      const ids = enabledIds()
-      if (ids.length === 0) {
-        const { tags } = memes.list()
-        return { query: String(query || '').trim().toLowerCase(), memes: [], tags, reason: '当前没有打开任何图库，去设置页把要用的图库开关打开' }
-      }
-      const packs = packRows()
-      const active = activePackId()
-      if (ids.length === 1) {
-        const hit = packs.find((p) => p.id === ids[0]) || null
-        if (hit) {
-          const base = hit.id === active
-            ? memes.search(query, n, tag)
-            : withStore(hit.path, (store) => {
-                const all = store.list(tag)
-                return { ...searchRows(annotatePack(all.memes, hit), query, n), tags: all.tags }
-              })
-          if (base) return base
-        }
-        return memes.search(query, n, tag)
-      }
-      const merged = []
-      let tags = []
-      for (const id of ids) {
-        const hit = packs.find((p) => p.id === id)
-        if (!hit) continue
-        let store = null
-        try {
-          store = new MemesStore(hit.path)
-          const one = store.list(tag)
-          tags = one.tags.length ? one.tags : tags
-          for (const row of one.memes) {
-            // 非当前图库的路径带上包前缀,QQ 通道发图时按前缀找对图库
-            merged.push(id === active
-              ? { ...row, packId: hit.id, packName: hit.name }
-              : { ...row, path: id + '/' + row.path, packId: hit.id, packName: hit.name })
-          }
-        } catch { /* 坏包跳过,不影响其他图库 */ } finally { if (store) store.close() }
-      }
-      return { ...searchRows(merged, query, n), tags }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[memes.js:404-428](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L404-L428)
-
-词匹配、二字回退及随机候选。
+直接发送路径验证、同步调用和纯文字分支。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-export function searchRows(rows, query, limit = 8) {
-  const tokens = keywordTokens(query)
-  if (tokens.length === 0) return { query: '', tokens: [], memes: [] }
-  const scan = (words) => {
-    const hits = []
-    for (const row of rows) {
-      const hay = rowHay(row)
-      let score = 0
-      for (const w of words) if (hay.includes(w)) score++
-      if (score > 0) hits.push({ row, score })
-    }
-    return hits
-  }
-  let hits = scan(tokens)
-  if (hits.length === 0) {
-    const grams = biGrams(tokens)
-    if (grams.length) hits = scan(grams)
-  }
-  if (hits.length === 0) return { query: tokens.join(' '), tokens, memes: [] }
-  const best = Math.max(...hits.map((h) => h.score))
-  return {
-    query: tokens.join(' '),
-    tokens,
-    memes: pickRandom(hits.filter((h) => h.score === best).map((h) => h.row), limit),
-  }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[memes.js:900-918](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L900-L918)
-
-工具注册和 Web 模式行为。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'send_meme',
-    description: '发一张表情包。两种搜法:①只给 tag(情绪)→ 从该情绪里随机抽;②给 query(关键词)→ 在 caption/关键词/图名里搜,想找特定的图(「猫」「比心」「摸鱼」)就用这个;两个都给 = 在该情绪里按关键词筛,最准。' +
-      '流程:给 tag/query → 系统返回若干张候选(带 caption,数量用 limit 自己定) → 看描述觉得贴就发;不满意再 search 换一批,还不行就换词/换情绪或回文字。' +
-      '情绪字典: ' + MOOD_DICT + '。' +
-      (webMode
-        ? (imReady
-            ? '发送方式看工具结果末尾的说明:Web 聊天把 [表情: 描述] 原样写进回复(描述抄候选原文,不要带网址);IM(QQ/微信等)聊天调用 dsh_im_return_file 传候选的 path 发原生图片,不要写 [表情: ...] 标记。'
-            : '挑中后把 [表情: 描述] 原样写进回复(描述必须抄候选原文,不要带网址)——自己编的描述前端配不上图。')
-        : '两步:search 看候选,再用 send + path 发出。') +
-      '发送方式以设置里的「发送方式」下拉框为准(自动/纯文字/图片),每次结果末尾的「发图」说明会告诉你怎么发。' +
-      '气氛对了就主动发;发完短接,让图自己说话。',
-    parameters,
-    output: {
-      schema: { type: 'json' },
-      render: (_args, value) => [{ type: 'text', text: value.message }],
-    },
-    async execute(args, exec) {
-      const action = webMode ? 'search' : (args.action === 'send' ? 'send' : 'search')
-```
-
-</details>
-
-**依据 5 · 源码核查**：[memes.js:959-1000](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L959-L1000)
-
-IM 路径与 Web 标记分支。
-
-<details>
-<summary>查看原文（42行）</summary>
-
-```text
-      // 这一轮来自 dsh-im 的 IM 渠道时,图片只能作为原生图片发出:
-      // [表情: 描述] 标记只有 Web 前端会配图,IM 聊天里它只是一行方括号文字。
-      // 所以候选要带上绝对路径,交给 dsh-im 的 dsh_im_return_file 投递。
-      const imChannel = !sendImage && imChannelOf ? imChannelOf(exec?.agent?.session) : null
-      // 纯文字模式:Web/IM 都不发图;候选不带路径,免得模型顺手把 path 交给投递工具
-      const imMode = !textMode && !sendImage && !!imChannel
-      const imLabel = imMode ? (IM_CHANNEL_LABELS[imChannel] || 'IM') : ''
-
-      const captionOf = (m) => String(m.caption || m.file_name || '').slice(0, 80)
-      /** 候选的绝对路径:IM 投递工具要的是磁盘路径,不能是图库内的相对路径/包前缀路径 */
-      const absolutePathOf = (m) => {
-        try {
-          return memes.resolveStored(m.path)
-        } catch {
-          return String(m.path || '')
-        }
-      }
-      /** 候选所属图库:跨库合并时 sampler 会给每行标 packName/packId(issue #53) */
-      const libraryOf = (m) => String(m.packName || m.packId || '')
-
-      /** 发送前预处理候选路径(QQ 缩图);纯文字模式不需要路径,直接跳过。 */
-      const preparePaths = async (rows, mode, channel) => {
-        if (!prepareSendPath || textMode) return rows.map(absolutePathOf)
-        return Promise.all(rows.map(async (m) => {
-          const abs = absolutePathOf(m)
-          try {
-            const prepared = await prepareSendPath(abs, { mode, channel: channel || '' })
-            return typeof prepared === 'string' && prepared ? prepared : abs
-          } catch { return abs }
-        }))
-      }
-      const lines = (rows, paths) => rows.map((m, i) => {
-        const caption = captionOf(m)
-        const sendable = paths[i] || absolutePathOf(m)
-        // 纯文字模式:只给描述,不给 [表情: …] 标记也不给路径——标记在前端仍会配成图
-        if (textMode) return (i + 1) + '. 描述=' + caption + ' | 分类=' + m.tag
-        // IM 模式不要用 "[tag] caption" 的方括号样式:模型会照着把方括号抄进回复,
-        // 而 IM 客户端只把方括号里的文字显示出来(用户看到的是 [无语死鱼脸] 之类)。
-        if (imMode) return (i + 1) + '. path=' + sendable + ' | 分类=' + m.tag + ' | 描述=' + caption
-        return webMode
-          ? (i + 1) + '. [表情: ' + caption + ']'
-          : (i + 1) + '. path=' + absolutePathOf(m) + ' | [' + m.tag + '] ' + caption
-```
-
-</details>
-
-**依据 6 · 源码核查**：[client.js:2995-3003](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/client.js#L2995-L3003)
-
-前端识别表情标记。
-
-```text
-      // 表情文本渲染:[表情: 描述] 或旧格式 [表情: 描述](url) → 图片。
-      // 无 url 时先按描述精确匹配图库;失败再按分词在 caption/关键词里做包含匹配
-      // 兜底(模型偶尔不抄候选原文、自己编描述);仍无命中显示描述原文,
-      // 不把 [表情: ...] 标记裸露在气泡里(历史教训:社区反馈「表情显示不出来」)。
-      const MEME_TEXT_RE = /\[表情:\s*([^\]]+)\](?:\((https?:\/\/[^\s)]+)\))?/g
-      // acceptNode 用不带 g 的副本。带 g 的正则 test() 会推进 lastIndex,下一个文本节点从
-      // 上次的位置往后找——于是「这一条运气不好」的消息被静默跳过、永远不出图,还得等下一轮
-      // 扫描碰巧把游标绕回 0(历史 bug:表现就是「表情有时显示不出来」)。
-      const MEME_TEXT_TEST = /\[表情:\s*([^\]]+)\](?:\((https?:\/\/[^\s)]+)\))?/
-```
-
-**依据 7 · 源码核查**：[index.js:785-813](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L785-L813)
-
-按索引白名单读取图片。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-          // 每次请求动态构建白名单:静态快照会漏掉新上传的图(历史教训:上传后 404 图片不显示)
-          let allowed = null
-          let routeStore = null
-          try {
-            routeStore = new MemesStore(root)
-            allowed = new Set(routeStore.list().memes.map((m) => m.path))
-          } catch {
-            allowed = null
-          } finally {
-            if (routeStore) routeStore.close()
-          }
-          if (!stored || !allowed || !allowed.has(stored)) {
-            res.writeHead(404, { 'Content-Type': 'text/plain' })
-            res.end('not found')
-            return
-          }
-          try {
-            const file = join(root, stored)
-            const bytes = readFileSync(file)
-            const ext = stored.includes('.') ? stored.split('.').pop().toLowerCase() : ''
-            res.writeHead(200, {
-              'Content-Type': MIME[ext] || 'application/octet-stream',
-              'Content-Length': String(bytes.byteLength),
-              'Cache-Control': 'public, max-age=3600',
-            })
-            res.end(bytes)
-          } catch {
-            res.writeHead(404, { 'Content-Type': 'text/plain' })
-            res.end('not found')
-```
-
-</details>
-
-**依据 8 · 源码核查**：[index.js:1308-1319](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1308-L1319)
-
-注册 learn_meme 与图片来源。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    // 与 send_meme 一样走 registerToolWhenReady:冷启动时 ctx.tools 未就绪,
-    // 同步 register 静默无效,learn_meme 会跟着一起缺席(issue #51)。
-    registerToolWhenReady(ctx, 'learn_meme', () => ctx.tools.register(defineTool({
-      name: 'learn_meme',
-      description: '把一张图片收录进表情包图库(自动学图)。' +
-        '仅当用户明确要求收藏/收录/保存这张图时使用(如「收藏这个表情」「收进图库」)。' +
-        '用户发表情/发图是斗图,不是收藏请求——不要自动收录,正常回应即可。' +
-        '插件会自动识别图片内容(分类/描述/关键词)后存入图库;tag/caption/keywords 可选,手动指定优先。' +
-        '用户刚发的图片附件:直接调用即可,不必传 attachmentId(id 不会出现在 prompt 里,默认收录最近一张用户图)。也可用 attachmentId 或 http(s) imageUrl。',
-      parameters: {
-        attachmentId: { type: 'string', description: '可选。对话附件 id;不传则收录最近一张用户图片' },
-        imageUrl: { type: 'string', description: '可选。图片 http(s) URL,与附件二选一' },
-```
-
-</details>
-
-**依据 9 · 源码核查**：[index.js:1396-1416](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1396-L1416)
-
-写文件、索引、刷新及失败返回。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-          const gifFlattened = !imageUrl && /\.gif$/i.test(refName) && mime !== 'image/gif'
-          const name = Date.now() + '_' + Math.floor(Math.random() * 1000) + ext
-          const rel = 'memes/' + tag + '/' + name
-          mkdirSync(join(targetRoot, 'memes', tag), { recursive: true })
-          writeFileSync(join(targetRoot, rel), buf)
-          if (redirected) {
-            const w = openIndexWriter(targetRoot)
-            try {
-              w.prepare('INSERT INTO memes (path, tag, file_name, caption, keywords, mtime, captioned_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
-                .run(rel, tag, name, caption, keywords, Date.now(), Date.now())
-            } finally { try { w.close() } catch { /* 已关闭 */ } }
-          } else {
-            adminDb.prepare('INSERT INTO memes (path, tag, file_name, caption, keywords, mtime, captioned_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
-              .run(rel, tag, name, caption, keywords, Date.now(), Date.now())
-          }
-          memes.refresh()
-          return { ok: true, path: rel, tag, url: ROUTE + '/' + (redirected ? USER_PACK_ID + '/' : '') + rel, message: '已收录: [' + tag + '] ' + (caption || name) + (auto ? ' (AI 自动识别' + (animInfo ? ',动图 ' + animInfo.frameCount + ' 帧' + (animInfo.filmstrip ? ',已抽帧给模型' : '') : '') + ')' : '') + ' → ' + rel
-            + (redirected ? ';已存入「我的收藏」(内置图库随插件升级会被清空)' : '')
-            + (gifFlattened ? ';注意:这张 GIF 在聊天上传时已被压成单帧,想保留动画请用设置面板上传,或把 GIF 文件放进图库目录后点「扫描新增」' : '') }
-        } catch (error) {
-          return { ok: false, message: '收录失败: ' + (error instanceof Error ? error.message : String(error)) }
-```
-
-</details>
-
-#### 缺口
-
-- 前端实际匹配、图片显示和目标渠道投递
-  **影响**：决定用户是否得到正确图
-  **进一步探讨**：隔离环境用已知图库做查找、显示和收录验收
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 风险和失败边界是什么？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-搜索是词匹配及随机选择而非已证实的个性化推荐；模型需采用返回描述，Web 匹配不到可退回文字，IM 不具 Web 标记渲染而需其他投递工具。主动发图指导由设置和渠道影响，使用者需要核对实际行为。收录先写文件再写数据库，异常时返回失败，不能据此保证没有残留文件或索引不一致；图库坏包在跨库检索中跳过。URL 收录会请求外部地址，图库和备份亦可能包含私人图片；关闭展示并不等于清理数据。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[memes.js:404-428](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L404-L428)
-
-匹配和随机选择。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-export function searchRows(rows, query, limit = 8) {
-  const tokens = keywordTokens(query)
-  if (tokens.length === 0) return { query: '', tokens: [], memes: [] }
-  const scan = (words) => {
-    const hits = []
-    for (const row of rows) {
-      const hay = rowHay(row)
-      let score = 0
-      for (const w of words) if (hay.includes(w)) score++
-      if (score > 0) hits.push({ row, score })
-    }
-    return hits
-  }
-  let hits = scan(tokens)
-  if (hits.length === 0) {
-    const grams = biGrams(tokens)
-    if (grams.length) hits = scan(grams)
-  }
-  if (hits.length === 0) return { query: tokens.join(' '), tokens, memes: [] }
-  const best = Math.max(...hits.map((h) => h.score))
-  return {
-    query: tokens.join(' '),
-    tokens,
-    memes: pickRandom(hits.filter((h) => h.score === best).map((h) => h.row), limit),
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[client.js:3223-3224](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/client.js#L3223-L3224)
-
-未命中降级为描述。
-
-```text
-              // 无命中:降级只显示描述原文,不把 [表情: ...] 标记裸露给用户。方括号单独用 ghost
-              // 藏起来——可见的只有描述本身,而 textContent 仍是替换前那个 [表情: x] 逐字不差,
-```
-
-**依据 3 · 源码核查**：[memes.js:959-965](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L959-L965)
-
-IM 与 Web 投递不同。
-
-```text
-      // 这一轮来自 dsh-im 的 IM 渠道时,图片只能作为原生图片发出:
-      // [表情: 描述] 标记只有 Web 前端会配图,IM 聊天里它只是一行方括号文字。
-      // 所以候选要带上绝对路径,交给 dsh-im 的 dsh_im_return_file 投递。
-      const imChannel = !sendImage && imChannelOf ? imChannelOf(exec?.agent?.session) : null
-      // 纯文字模式:Web/IM 都不发图;候选不带路径,免得模型顺手把 path 交给投递工具
-      const imMode = !textMode && !sendImage && !!imChannel
-      const imLabel = imMode ? (IM_CHANNEL_LABELS[imChannel] || 'IM') : ''
-```
-
-**依据 4 · 源码核查**：[index.js:925-934](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L925-L934)
-
-坏图库跳过。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-          tags = one.tags.length ? one.tags : tags
-          for (const row of one.memes) {
-            // 非当前图库的路径带上包前缀,QQ 通道发图时按前缀找对图库
-            merged.push(id === active
-              ? { ...row, packId: hit.id, packName: hit.name }
-              : { ...row, path: id + '/' + row.path, packId: hit.id, packName: hit.name })
-          }
-        } catch { /* 坏包跳过,不影响其他图库 */ } finally { if (store) store.close() }
-      }
-      return { ...searchRows(merged, query, n), tags }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[index.js:1363-1364](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1363-L1364)
-
-URL 收录发起网络请求。
-
-```text
-            if (!/^https?:\/\//i.test(imageUrl)) return { ok: false, message: 'imageUrl 必须是 http(s) 链接' }
-            const res = await fetch(imageUrl, { signal: AbortSignal.timeout(15000), redirect: 'follow' })
-```
-
-**依据 6 · 源码核查**：[index.js:1396-1416](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1396-L1416)
-
-文件、索引和异常顺序。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-          const gifFlattened = !imageUrl && /\.gif$/i.test(refName) && mime !== 'image/gif'
-          const name = Date.now() + '_' + Math.floor(Math.random() * 1000) + ext
-          const rel = 'memes/' + tag + '/' + name
-          mkdirSync(join(targetRoot, 'memes', tag), { recursive: true })
-          writeFileSync(join(targetRoot, rel), buf)
-          if (redirected) {
-            const w = openIndexWriter(targetRoot)
-            try {
-              w.prepare('INSERT INTO memes (path, tag, file_name, caption, keywords, mtime, captioned_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
-                .run(rel, tag, name, caption, keywords, Date.now(), Date.now())
-            } finally { try { w.close() } catch { /* 已关闭 */ } }
-          } else {
-            adminDb.prepare('INSERT INTO memes (path, tag, file_name, caption, keywords, mtime, captioned_at) VALUES (?, ?, ?, ?, ?, ?, ?)')
-              .run(rel, tag, name, caption, keywords, Date.now(), Date.now())
-          }
-          memes.refresh()
-          return { ok: true, path: rel, tag, url: ROUTE + '/' + (redirected ? USER_PACK_ID + '/' : '') + rel, message: '已收录: [' + tag + '] ' + (caption || name) + (auto ? ' (AI 自动识别' + (animInfo ? ',动图 ' + animInfo.frameCount + ' 帧' + (animInfo.filmstrip ? ',已抽帧给模型' : '') : '') + ')' : '') + ' → ' + rel
-            + (redirected ? ';已存入「我的收藏」(内置图库随插件升级会被清空)' : '')
-            + (gifFlattened ? ';注意:这张 GIF 在聊天上传时已被压成单帧,想保留动画请用设置面板上传,或把 GIF 文件放进图库目录后点「扫描新增」' : '') }
-        } catch (error) {
-          return { ok: false, message: '收录失败: ' + (error instanceof Error ? error.message : String(error)) }
-```
-
-</details>
-
-**依据 7 · 作者声明**：[README.md:104-106](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/README.md#L104-L106)
-
-设置与数据路径。
-
-```text
-默认扫描 `~/.dsh/meme-packs`，设置存 `~/.dsh/dsh-expression.json`，升级保留。ZIP 支持常规压缩和纯图片目录。
-
-**发送方式**只影响 AI：自动按渠道（Web 写标记、IM 发原图）、纯文字不发图、图片要求每次真发。**发图概率**默认关；打开后每轮按所选概率决定 AI 是否主动发图（仅「自动」发送方式生效），你明确要图时不受概率限制。**QQ 发图尺寸**默认关；打开后 QQ/IM 发送前把长边缩到所选尺寸（默认 300px），Web 聊天仍用原图，GIF 保留动画——QQ 官方机器人没有表情消息类型，缩小后更容易被客户端按表情渲染，平板端不会拉伸满屏。**表情排布**只影响前端：并排（默认）或图独占一行。
-```
-
-#### 缺口
-
-- 真实客户端配图准确率及失败后的残留
-  **影响**：影响误图和数据维护
-  **进一步探讨**：用测试库核对文件、索引和渠道结果
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 成本与可验证假设是什么？
-
-**研究主题**：效果与总成本、新假设与验证
-
-#### 完整回答
-
-需要准备与标注图片、维护图库、检查误匹配，SQLite、本地文件、可选缩图和模型工具调用消耗资源。没有本次找图时间、匹配准确率或用户满意度对照，无法声称节时或个性化有效。现有 Web 手动选图已有草稿缩略预览，默认由用户发送，Shift 点击仍可直发；不能将手动预览说成新方案。未验证假设：给 AI 在 IM 主动发表情的路径增加候选图片及目标聊天的用户确认，可能减少错图和误发，但会打断对话并增加等待；现有读取的 IM 指导让模型选候选后交给 dsh_im_return_file，未见此人工确认步骤，其他渠道和宿主权限机制未完整审计。对照同一测试集记录 AI 实际误发率、确认等待时间与取消率；误发率未下降或等待超可接受阈值则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[memes.js:404-428](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L404-L428)
-
-词匹配及最高分随机候选。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-export function searchRows(rows, query, limit = 8) {
-  const tokens = keywordTokens(query)
-  if (tokens.length === 0) return { query: '', tokens: [], memes: [] }
-  const scan = (words) => {
-    const hits = []
-    for (const row of rows) {
-      const hay = rowHay(row)
-      let score = 0
-      for (const w of words) if (hay.includes(w)) score++
-      if (score > 0) hits.push({ row, score })
-    }
-    return hits
-  }
-  let hits = scan(tokens)
-  if (hits.length === 0) {
-    const grams = biGrams(tokens)
-    if (grams.length) hits = scan(grams)
-  }
-  if (hits.length === 0) return { query: tokens.join(' '), tokens, memes: [] }
-  const best = Math.max(...hits.map((h) => h.score))
-  return {
-    query: tokens.join(' '),
-    tokens,
-    memes: pickRandom(hits.filter((h) => h.score === best).map((h) => h.row), limit),
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[client.js:2646-2653](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/client.js#L2646-L2653)
-
-手动选择默认插入草稿并由用户发送，Shift 点击直发。
-
-```text
-      // 点一张:默认把 [表情: 描述] 插进输入框,由用户自己发送(issue #61)。
-      // 旧行为是「拼草稿 + 立即 submit」,手滑点一下就发出去了,而且会把正在打的字一起发走;
-      // 现在插入草稿,用户能接着写、能改顺序,按回车才发。Shift+点保留旧的一键直发。
-      // 纯文本标记:模型只看到文字,前端按描述配图 —— 与 AI 侧发送的约定一致。
-      const setText = (text) => { try { if (actions && actions.setDraft) actions.setDraft(text) } catch (e) {} }
-      const markerOf = (m) => {
-        const desc = (m.caption || m.keywords || m.tag || '表情包').slice(0, 80)
-        return '[表情: ' + desc + ']'
-```
-
-**依据 3 · 源码核查**：[client.js:2817-2826](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/client.js#L2817-L2826)
-
-现有草稿标记缩略预览。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-    /**
-     * 输入框上方的「将发送」表情条(issue #61)。
-     *
-     * 选图不再直接发出去,而是把 `[表情: 描述]` 标记插进草稿;光看标记文字分不清是哪张,
-     * 这条把草稿里现存的标记解析出来画成缩略图,点 × 就从草稿里删掉对应那一段。
-     *
-     * 不带自己的 state:内容完全由草稿派生 —— 用户改字、删标记、宿主发送后清空草稿,
-     * 这条都自动跟着变,不会出现「已经发了条还在」。
-     * `resolveMemeUrl` 用 apply 里那份索引(悬停面板打开过一次就有);冷启动时索引还没到,
-     * 退化成描述文字,不影响删除。
-```
-
-</details>
-
-**依据 4 · 源码核查**：[index.js:588-603](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L588-L603)
-
-IM 主动选候选并交 dsh_im_return_file 的模型指导。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  const imNoInlineImageRule = (label) => '- 回复正文只写普通聊天的文字:不要写 [表情: …] 或 [任何描述] 这类方括号标记,不要写 markdown 图片(![]()),更不要把本地文件路径贴进回复——' + label + ' 里这些只会显示成难看的文字,图片会由 dsh_im_return_file 作为原生消息发出;\n'
-  const imCompanionPrompt = (channel) => {
-    const label = IM_CHANNEL_LABELS[channel] || 'IM'
-    return '斗图规则:主动斗图,不要等用户开口:\n' +
-      '- 聊天气氛合适就主动用 send_meme 拿候选,再把挑中的候选 path(绝对路径)交给 dsh_im_return_file,让它作为 ' + label + ' 原生图片消息发出,发图优先于纯文字;\n' +
-      imNoInlineImageRule(label) +
-      '- 也不用在正文里解释图片投递过程(不必说「图已排队/等发出」),发完保持简短,让图自己说话,不啰嗦不复述;\n' +
-      '- 不用等用户先授权、先说明「可以发表情」,直接发;情绪到点、接梗、吐槽、卖萌时都主动甩图,别冷场,对方说正事/干活时克制。'
-  }
-  /** 用户自定义过提示词时不动原文,只在末尾补 IM 的投递方式 */
-  const imCompanionRules = (channel) => {
-    const label = IM_CHANNEL_LABELS[channel] || 'IM'
-    return '当前对话来自 ' + label + '(IM 聊天):\n' +
-      '- 发图方式是先调用 send_meme 拿候选,再把挑中的候选 path(工具结果里的绝对路径)传给 dsh_im_return_file,让它作为 ' + label + ' 原生图片消息发出;\n' +
-      imNoInlineImageRule(label) +
-      '- 不用等用户先授权:气氛合适就直接 send_meme → dsh_im_return_file 主动发;对方说正事/干活时克制。'
-```
-
-</details>
-
-**依据 5 · 源码核查**：[memes.js:900-911](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L900-L911)
-
-工具结果指导 Web 标记与 IM 路径。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  ctx.tools.register(defineTool({
-    name: 'send_meme',
-    description: '发一张表情包。两种搜法:①只给 tag(情绪)→ 从该情绪里随机抽;②给 query(关键词)→ 在 caption/关键词/图名里搜,想找特定的图(「猫」「比心」「摸鱼」)就用这个;两个都给 = 在该情绪里按关键词筛,最准。' +
-      '流程:给 tag/query → 系统返回若干张候选(带 caption,数量用 limit 自己定) → 看描述觉得贴就发;不满意再 search 换一批,还不行就换词/换情绪或回文字。' +
-      '情绪字典: ' + MOOD_DICT + '。' +
-      (webMode
-        ? (imReady
-            ? '发送方式看工具结果末尾的说明:Web 聊天把 [表情: 描述] 原样写进回复(描述抄候选原文,不要带网址);IM(QQ/微信等)聊天调用 dsh_im_return_file 传候选的 path 发原生图片,不要写 [表情: ...] 标记。'
-            : '挑中后把 [表情: 描述] 原样写进回复(描述必须抄候选原文,不要带网址)——自己编的描述前端配不上图。')
-        : '两步:search 看候选,再用 send + path 发出。') +
-      '发送方式以设置里的「发送方式」下拉框为准(自动/纯文字/图片),每次结果末尾的「发图」说明会告诉你怎么发。' +
-      '气氛对了就主动发;发完短接,让图自己说话。',
-```
-
-</details>
-
-**依据 6 · 作者声明**：[README.md:73-79](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/README.md#L73-L79)
-
-图库管理与发送设置。
-
-```text
-## 图库管理
-
-打开 **设置 → 表情包**：
-
-- **图库** — 卡片显示张数与占用大小，点卡片管理图片；分类下拉按真实分类筛选；「扫描新增」收编手动拷进目录的图片并清理失效记录。卡片开关决定 AI 能否使用该图库，可多选。支持新建、导入/导出 ZIP、投稿、删除和更新。
-- **发现** — 预览市场图库并一键安装（Release ZIP 校验 SHA-256）。
-- **设置** — 改扫描目录、AI 主动发表情、提示词、发送方式（自动/纯文字/图片）、发图概率（开关 + 0/10/20/30/50/70/100%）、QQ 发图尺寸（开关 + 200/300/400/450px 长边）、表情排布（并排/独占一行）、局域网访问、`AGENTS.md`。
-```
-
-#### 缺口
-
-- 真实错误率与维护耗时
-  **影响**：不能量化收益
-  **进一步探讨**：同图库对照人工找图与插件
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 如何试用和退出？
-
-**研究主题**：采用判断
-
-#### 完整回答
-
-有私人聊天需求且能维护图库的 DSH 用户可先用少量非敏感图片，明确关闭不需要的主动发送，验证关键词、图片显示和收录结果。相对离开聊天查文件，它将候选与图库管理接入会话，但不证明跨渠道送达。若出现错图、仅显示文字、意外主动插图或索引不一致，停用相关功能并检查图库备份，回到纯文字；不要把失败当成没有写入。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[README.md:73-79](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/README.md#L73-L79)
-
-作者说明图库开关与发送设置。
-
-```text
-## 图库管理
-
-打开 **设置 → 表情包**：
-
-- **图库** — 卡片显示张数与占用大小，点卡片管理图片；分类下拉按真实分类筛选；「扫描新增」收编手动拷进目录的图片并清理失效记录。卡片开关决定 AI 能否使用该图库，可多选。支持新建、导入/导出 ZIP、投稿、删除和更新。
-- **发现** — 预览市场图库并一键安装（Release ZIP 校验 SHA-256）。
-- **设置** — 改扫描目录、AI 主动发表情、提示词、发送方式（自动/纯文字/图片）、发图概率（开关 + 0/10/20/30/50/70/100%）、QQ 发图尺寸（开关 + 200/300/400/450px 长边）、表情排布（并排/独占一行）、局域网访问、`AGENTS.md`。
-```
-
-**依据 2 · 源码核查**：[memes.js:923-940](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/memes.js#L923-L940)
-
-发送模式和路径检查。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-      const sendMode = normalizeSendMode(sendModeOf())
-      const textMode = sendMode === 'text'
-      const imageMode = sendMode === 'image'
-      // 发图概率只约束「自动」模式下的主动发图;纯文字本来就不发,图片模式要求每次真发。
-      const chanceBlocked = !textMode && !imageMode && chanceBlockedFor(exec?.agent?.session)
-
       if (action === 'send') {
         if (textMode) {
           return { ok: false, message: '当前发送方式是「纯文字」,不发图片;直接用文字接梗/描述即可' }
@@ -972,23 +441,122 @@ IM 主动选候选并交 dsh_im_return_file 的模型指导。
           absolute = memes.resolveStored(path)
         } catch (error) {
           return { ok: false, message: '未知路径: ' + path + ' —— 用 search 的候选 path' }
+        }
+        if (prepareSendPath) {
+          try {
+            const prepared = await prepareSendPath(absolute, { mode: 'direct' })
+            if (typeof prepared === 'string' && prepared) absolute = prepared
+          } catch { /* 缩图失败按原图发送 */ }
+        }
+        if (sendImage) {
+          try {
+            sendImage(absolute)
+            return { ok: true, message: '已发送表情包', path }
+          } catch (error) {
+            return { ok: false, message: '发送失败: ' + (error instanceof Error ? error.message : String(error)) }
+          }
+        }
+        return { ok: false, message: '没有可用发送通道: ' + absolute }
+      }
+
+      // 这一轮来自 dsh-im 的 IM 渠道时,图片只能作为原生图片发出:
+      // [表情: 描述] 标记只有 Web 前端会配图,IM 聊天里它只是一行方括号文字。
+      // 所以候选要带上绝对路径,交给 dsh-im 的 dsh_im_return_file 投递。
+      const imChannel = !sendImage && imChannelOf ? imChannelOf(exec?.agent?.session) : null
+      // 纯文字模式:Web/IM 都不发图;候选不带路径,免得模型顺手把 path 交给投递工具
+      const imMode = !textMode && !sendImage && !!imChannel
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[index.js:1396-1416](https://github.com/yyh-001/dsh-meme/blob/dec558d450575752eeaffeced9a6a6f2cfdc2f6c/index.js#L1396-L1416)
+**依据 4 · 源码核查**：[memes.js:1022-1034](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/memes.js#L1022-L1034)
 
-写入及失败分支。
+不同会话工具输出不同投递指引。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
+      const howToSend = textMode
+        ? '发图:当前发送方式是「纯文字」,不发图片——不要写 [表情: ...] 或 [任何描述] 这类方括号标记,不要调用 dsh_im_return_file 或 qqbot_send_file,也不要把图片路径贴进回复;把下面某一行「描述=」的原文用进你的文字回复里,接梗/吐槽/卖萌即可。'
+        : chanceNote +
+          (imageMode ? '当前发送方式是「图片」:挑好图就必须真的发出去,不能只写文字描述。' : '') +
+          (imMode
+            ? (chanceBlocked ? '发图:只在用户明确要图时,把挑中的那一行 path 原样传给 dsh_im_return_file(path=...)' : '发图:把挑中的那一行 path 原样传给 dsh_im_return_file(path=...)') +
+              '——它会作为 ' + imLabel +
+              ' 原生图片消息发出' + (chanceBlocked ? '。' : ';不用等用户要求,现在就能主动发。') +
+              '回复正文只写普通文字:不要写 [表情: ...] 或 [任何描述] 这类方括号标记,不要写 markdown 图片或把本地路径贴进回复,也不用解释图片投递过程——图片会由渠道自己发出。'
+            : webMode
+              ? (chanceBlocked ? '发图:只在用户明确要图时,把下面某一行的 [表情: ...] 整段原样写进回复' : '发图:把下面某一行的 [表情: ...] 整段原样写进回复') +
+                '(描述抄候选原文,可加一两句文字,不要加网址)。候选 JSON 里的 path/library 只是出处信息,用户问「这图哪个库的/文件叫什么」可以引用;发图仍然只写 [表情: 描述],不要把路径贴进回复。' +
+                '如果本会话的工具表里有 qqbot_send_file(QQ 官方机器人的 dsh-qqbot 插件),说明当前是 QQ 机器人会话:此时不要写 [表情: ...] 标记,把挑中候选的 absPath(绝对路径)原样传给 qqbot_send_file 的 file_path 参数发出,正文只写普通文字、不要贴路径;若它返回路径白名单拒绝,提示用户在 dsh-qqbot 配置的 sendFile.extraRoots 里加上图库目录(通常是 ~/.dsh/meme-packs)。'
+```
+
+</details>
+
+#### 缺口
+
+- 未执行 IM 或 QQ，且未核对外部渠道的确认语义。
+  **影响**：不能从本包工具结果确认接收端收到。
+  **进一步探讨**：在单独测试聊天核对所选图片、目标、返回状态和接收端。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 本地收录与对外访问如何影响成本和恢复？
+
+**研究主题**：工程质量与复用、依赖、兼容与流程、效果与总成本
+
+#### 完整回答
+
+没有手工分类时，收录把图片字节交给识图服务并取标签和说明。随后文件先写个人图库，SQLite 再插入元数据，最终刷新索引。数据库插入失败后返回错误，该 catch 分支没有删除已写文件，图库中可能留下未索引文件。模型不可用时可改用明确分类走人工路径，并对失败文件单独核对。路由会根据 Host 判定回环、显式信任域名或启用局域网后的本地地址；这只说明本包 Host 策略，不建立终端用户身份，也不说明反向代理部署已隔离。资源代价分图库占用、可选识图和渠道处理，人工代价分准备标签、验证发图和索引排错；当前没有单次任务测量。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[index.js:1501-1523](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/index.js#L1501-L1523)
+
+没有标签才调用识图，随后先写文件。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
+          if (buf.byteLength === 0 || buf.byteLength > 8 * 1024 * 1024) return { ok: false, message: '图片大小超限(≤8MB)' }
+          // 未指定分类时自动识图(学图即识图)
+          let auto = false
+          let animInfo = null
+          if (!tag) {
+            const sel = recognizeSelection()
+            const r = await recognizeImageBytes(ctx.get('llm'), sel, buf, mime, fileName)
+            auto = true
+            animInfo = r.animation
+            if (!tag) tag = r.tag
+            if (!caption) caption = r.caption
+            if (!keywords) keywords = r.keywords
+          }
+          if (!tag || !validTagRe.test(tag)) return { ok: false, message: '分类无效(tag 只能小写字母/数字/-/_),请手动指定 tag' }
+          // 落点固定「我的收藏」稳定库:内置包升级、订阅库更新都碰不到它。
+          // 附件是 GIF 但字节已不是 GIF → 宿主聊天通道把它压成了单帧,结果里要给用户保真路径。
+          const targetRoot = ensureUserPack()
+          const redirected = resolve(targetRoot) !== resolve(memes.root)
           const gifFlattened = !imageUrl && /\.gif$/i.test(refName) && mime !== 'image/gif'
           const name = Date.now() + '_' + Math.floor(Math.random() * 1000) + ext
           const rel = 'memes/' + tag + '/' + name
           mkdirSync(join(targetRoot, 'memes', tag), { recursive: true })
           writeFileSync(join(targetRoot, rel), buf)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[index.js:1524-1539](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/index.js#L1524-L1539)
+
+SQLite 写入及刷新在文件之后，异常返回失败。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
           if (redirected) {
             const w = openIndexWriter(targetRoot)
             try {
@@ -1001,7 +569,7 @@ IM 主动选候选并交 dsh_im_return_file 的模型指导。
           }
           memes.refresh()
           return { ok: true, path: rel, tag, url: ROUTE + '/' + (redirected ? USER_PACK_ID + '/' : '') + rel, message: '已收录: [' + tag + '] ' + (caption || name) + (auto ? ' (AI 自动识别' + (animInfo ? ',动图 ' + animInfo.frameCount + ' 帧' + (animInfo.filmstrip ? ',已抽帧给模型' : '') : '') + ')' : '') + ' → ' + rel
-            + (redirected ? ';已存入「我的收藏」(内置图库随插件升级会被清空)' : '')
+            + ';已存入「' + USER_PACK_NAME + '」图库'
             + (gifFlattened ? ';注意:这张 GIF 在聊天上传时已被压成单帧,想保留动画请用设置面板上传,或把 GIF 文件放进图库目录后点「扫描新增」' : '') }
         } catch (error) {
           return { ok: false, message: '收录失败: ' + (error instanceof Error ? error.message : String(error)) }
@@ -1009,10 +577,157 @@ IM 主动选候选并交 dsh_im_return_file 的模型指导。
 
 </details>
 
+**依据 3 · 源码核查**：[index.js:169-183](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/index.js#L169-L183)
+
+Host 策略及局域网默认开关。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+/**
+ * 不是允许的来源就自己回 403 并返回 true,调用方直接 return。
+ * allowLan = 设置页「允许局域网访问图库」开关(默认关):打开后本机/局域网 IP
+ * 字面量的 Host 也放行,手机、平板才能看到表情包(issue #54);关闭时行为与旧版一致。
+ * 显式配置的可信域名(DSH_MEME_TRUSTED_HOSTS / config.allowedHosts)始终放行(issue #56),
+ * 用于反向代理部署;名单为空时域名形式的 Host 仍拒绝(DNS rebinding 防线)。
+ */
+export function denyNonLoopback(req, res, allowLan = false) {
+  if (hostIsLoopback(req)) return false
+  if (hostIsTrusted(req)) return false
+  if (allowLan && hostIsLocalLan(req)) return false
+  const body = JSON.stringify({ ok: false, error: '拒绝: 只接受本机(回环地址)请求。手机/局域网访问请在设置页打开「允许局域网访问图库」;反向代理域名请用 DSH_MEME_TRUSTED_HOSTS 或插件配置 allowedHosts 显式声明。' })
+  res.writeHead(403, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' })
+  res.end(body)
+  return true
+```
+
+</details>
+
+**依据 4 · 源码核查**：[package.json:50-66](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/package.json#L50-L66)
+
+工具依赖、可选 sharp 和 Node 版本约束。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "*"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.35.5"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh-meme",
+    "deepseek-harness",
+    "meme",
+    "emoticon",
+    "sticker"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13.0"
+```
+
+</details>
+
 #### 缺口
 
-- 目标环境发送设置与文件状态
-  **影响**：影响实际退出和恢复
-  **进一步探讨**：先核对设置和备份，在测试库中试验
+- 未复现磁盘与数据库不同步，也未验证实际代理的认证和转发。
+  **影响**：无法判断异常修复耗时或公网部署的访问边界。
+  **进一步探讨**：在隔离图库让索引写入失败，核对文件残留与重新扫描；网络能力用目标部署另验。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何在现有手动流程上验证防误发增量？
+
+**研究主题**：新假设与验证、采用判断
+
+#### 完整回答
+
+先在本机测试会话关闭点击即发送和主动配图，用少量非敏感图片搜索并插入带原文字的草稿。用户能看清楚候选、确认已选图和发出的消息后再保留。若出现错图、原稿改变或只显示描述标记，改回手工上传并停用自动配图。针对 IM 的改进假设是将本次选中的图库条目、目标会话和确认一起绑定给投递动作。现有 Web 预览和 IM 路径提示可作对照，但目前只是选图和工具调用。用模拟接收者对照错图、错目标、重复确认成本，尤其在切换会话后验证旧选择是否失效。误发未下降或人工等待明显增加时维持手动选择。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[client.js:2798-2831](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/client.js#L2798-L2831)
+
+Web 已具备草稿插入与直接提交切换。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+      const insert = (m) => {
+        if (!m) return
+        const marker = markerOf(m)
+        let inserted = false
+        try {
+          if (actions && typeof actions.captureInsertion === 'function' && typeof actions.insertText === 'function') {
+            inserted = actions.insertText(marker, actions.captureInsertion()) === true
+          }
+        } catch (e) { inserted = false }
+        if (!inserted) {
+          const cur = draftOf()
+          setText(cur.trim() ? cur + '\n' + marker : marker)
+        }
+        store.set(false)
+        // 面板一关焦点就掉到 body 了,直接敲回车不会发;顺手把焦点还给输入框,
+        // 让「选图 → 接着打字 → 回车」一串动作不用再点一下。宿主结构变了就静默跳过。
+        try {
+          const editor = document.querySelector('[data-composer-card] [contenteditable="true"]')
+          if (editor && typeof editor.focus === 'function') editor.focus()
+        } catch (e) { /* 纯增强 */ }
+      }
+      // 设置开启时:拼草稿并立即发送
+      const sendNow = (m) => {
+        if (!m) return
+        const cur = draftOf()
+        const marker = markerOf(m)
+        setText(cur.trim() ? cur + '\n' + marker : marker)
+        try { if (actions && actions.submit) actions.submit() } catch (e) {}
+        store.set(false)
+      }
+      const pick = (m) => {
+        if (data.pickerSendOnClick !== false) sendNow(m)
+        else insert(m)
+      }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[memes.js:1022-1034](https://github.com/yyh-001/dsh-meme/blob/48e10fedf1951d84c9eca4247f5c5bbc2ae38871/memes.js#L1022-L1034)
+
+IM 投递指引交路径，未包含用户确认流程。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+      const howToSend = textMode
+        ? '发图:当前发送方式是「纯文字」,不发图片——不要写 [表情: ...] 或 [任何描述] 这类方括号标记,不要调用 dsh_im_return_file 或 qqbot_send_file,也不要把图片路径贴进回复;把下面某一行「描述=」的原文用进你的文字回复里,接梗/吐槽/卖萌即可。'
+        : chanceNote +
+          (imageMode ? '当前发送方式是「图片」:挑好图就必须真的发出去,不能只写文字描述。' : '') +
+          (imMode
+            ? (chanceBlocked ? '发图:只在用户明确要图时,把挑中的那一行 path 原样传给 dsh_im_return_file(path=...)' : '发图:把挑中的那一行 path 原样传给 dsh_im_return_file(path=...)') +
+              '——它会作为 ' + imLabel +
+              ' 原生图片消息发出' + (chanceBlocked ? '。' : ';不用等用户要求,现在就能主动发。') +
+              '回复正文只写普通文字:不要写 [表情: ...] 或 [任何描述] 这类方括号标记,不要写 markdown 图片或把本地路径贴进回复,也不用解释图片投递过程——图片会由渠道自己发出。'
+            : webMode
+              ? (chanceBlocked ? '发图:只在用户明确要图时,把下面某一行的 [表情: ...] 整段原样写进回复' : '发图:把下面某一行的 [表情: ...] 整段原样写进回复') +
+                '(描述抄候选原文,可加一两句文字,不要加网址)。候选 JSON 里的 path/library 只是出处信息,用户问「这图哪个库的/文件叫什么」可以引用;发图仍然只写 [表情: 描述],不要把路径贴进回复。' +
+                '如果本会话的工具表里有 qqbot_send_file(QQ 官方机器人的 dsh-qqbot 插件),说明当前是 QQ 机器人会话:此时不要写 [表情: ...] 标记,把挑中候选的 absPath(绝对路径)原样传给 qqbot_send_file 的 file_path 参数发出,正文只写普通文字、不要贴路径;若它返回路径白名单拒绝,提示用户在 dsh-qqbot 配置的 sendFile.extraRoots 里加上图库目录(通常是 ~/.dsh/meme-packs)。'
+```
+
+</details>
+
+#### 缺口
+
+- 确认绑定机制未实现也未验证。
+  **影响**：无法量化误发与打断成本变化。
+  **进一步探讨**：让测试会话在选图后切换目标，对照确认前后实际接收对象和耗时。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[4d8a082](https://github.com/czcdr/dsh-plugin-rea/tree/4d8a08266d393712fcf3f1691a723f510f21e9bc)
+源码版本：[e27a3e8](https://github.com/czcdr/dsh-plugin-rea/tree/e27a3e8ac43da973816c99c5939824a7300f75cf)
 
 <!-- BEGIN META -->
-[![GitHub ★ 70](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=70&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/czcdr/dsh-plugin-rea) [![npm 30d 6,503](https://img.shields.io/static/v1?label=npm+30d&message=6%2C503&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-rea) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-rea)
+[![GitHub ★ 82](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=82&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/czcdr/dsh-plugin-rea) [![npm 30d 8,519](https://img.shields.io/static/v1?label=npm+30d&message=8%2C519&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-rea) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-rea)
 <!-- END META -->
 
-> **功能**：为 DSH 接入上游 REA 的 MCP 服务，集中准备运行时与逆向工具依赖，并提供供给状态指引。
+> **功能**：通过本地供给脚本准备 REA 运行环境，并将 REA MCP 工具接入 DeepSeek Harness。
 
-> **亮点**：把REA及其依赖供给、路径记录、镜像启动和DSH行配置组织起来，使接入状态可检查；逆向核心能力归上游，并未因此获得新算法。[Q01](#research-q01)
+> **亮点**：[Q01](#research-q01) 把组件环境与标准 MCP 行连接，[Q02](#research-q02) 显式提供系统与 bundle 的选择和供给线索。
 
-> **主要限制**：auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可能留下进程；包钉子不等于任务运行栈固定或所有工具可用。[Q03](#research-q03)
+> **主要限制**：[Q02](#research-q02) auto 可能运行系统 REA，[Q03](#research-q03) 版本探针和 doctor JSON 可读都不足以验收指定分析引擎。
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · REA接入包相对手工MCP配置增加了什么？](#detail-section-11)
-  - [Q02 · 从安装到真实REA进程经过哪些状态？](#detail-section-12)
-  - [Q03 · 固定版本和探针能保证什么，升级与进程有什么风险？](#detail-section-13)
-  - [Q04 · 供给复杂性值得承担吗，如何验证相对价值？](#detail-section-14)
+  - [Q01 · 插件把哪些工作接入 DSH，分析能力来自何处？](#detail-section-11)
+  - [Q02 · 自动供给、市场更新和启动路径如何分开？](#detail-section-12)
+  - [Q03 · setup 成功能否证明目标引擎可用，排查成本如何计？](#detail-section-13)
+  - [Q04 · 怎样判断是否进入试用，任务级版本记录如何验证？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要在DSH调用REA做授权分析的技术用户可研究集中供给与MCP启动，不把上游工具数量当正确性保证。[Q01](#research-q01)
+> **用途**：需要在 DSH 中查看已授权样本证据的工程师，可以研究 REA 工具接入及实际引擎选择。
 
-手工部署REA和各引擎再写MCP配置更直接但路径分散；本包集中版本探针和诊断，同时增加镜像与选择状态。
+独立 REA 环境已能进行分析。这里将组件供给、启动和 DSH 会话组织到一起，分析结果仍受真实引擎及样本限制。
 
 <a id="detail-section-3"></a>
 
@@ -50,68 +50,64 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| REA MCP适配 | 把上游服务接到DSH | 工具与引擎归上游，未逐一验证 |
-| 依赖供给与复用 | 记录Node/REA/引擎路径 | 网络/平台/探针条件；不是全闭包离线锁 |
-| 启动选择与状态诊断 | 辨明system或bundle及重复注册 | auto可选择较新系统REA |
-| 只读setup指引 | 显示供给状态 | 不自动替用户执行首次setup |
+| --- | --- | --- |
+| REA MCP | 会话内调用授权样本分析工具 | 引擎实际就绪另验 |
+| 运行栈供给 | 准备本机组件 | 市场替换包后需检查运行版本 |
+| 状态指南 | 查看 bundle 与 pin 对应 | 不直接执行供给 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH MCP client与stdio服务 | 接入必需 | 启动mcp-rea | 无握手则无可用工具 |
-| setup生成的镜像shim | bundle行必需 | HOME下真实入口 | 首次未供给时模块不存在 |
-| 符合manifest的Node/REA | 必需 | 运行CLI和MCP | 显式system无可用REA则失败 |
-| JDK/Ghidra等引擎 | 特定工具必需 | 上游分析 | doctor列unmet不等于整体不可启动 |
-| 网络、磁盘与解压工具 | 供给时条件 | 取得组件 | offline缺REA则拒绝安装 |
+| --- | --- | --- | --- |
+| DSH 官方 MCP 客户端和可用 Node | 接入必需 | 启动 stdio shim | 保留独立分析环境 |
+| 实际 REA 及目标引擎 | 分析必需 | 返回可定位证据 | 只保留观察 |
+| setup、缓存及可访问的可信发行来源 | 供给按需 | 配置或修复组件 | 先检查日志和锁 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户固定包和目标模式，检查授权样本 | 先dry-run理解供给计划 |
-| 供给 | 用户从安装包运行setup | 核对bundle路径/版本/日志与unmet |
-| 加载 | 宿主启动镜像shim再启动实际REA | 保存实际mode/version并验证MCP握手 |
-| 任务与退出 | 用户检验目标工具产物和进程 | 失败回独立REA，Windows核查残留进程 |
+| --- | --- | --- |
+| 确认 | 工程师核对实际 launch 与引擎 | 版本及路径可对应 |
+| 验证 | 隔离环境查一个已授权样本 | 结果定位到样本及目标工具 |
+| 退出 | 不一致时回既有环境 | 保留版本及原件 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 多组件下载/磁盘和模型费用未知 | 探针、代理、解压和版本处理 | 复用是否可行取决于环境 |
-| 持续使用 | REA进程与引擎资源未知 | 对齐包/镜像/bundle/system状态 | auto可能改变实际REA |
-| 失败恢复 | 重新供给或独立环境资源未知 | 读锁/日志、重跑setup、查残留 | 后台开始不等于MCP就绪 |
+| --- | --- | --- | --- |
+| 首次 | 多组件与磁盘未知 | 核对授权和供给 | 平台能力各异 |
+| 持续 | 进程与模型费用未知 | 核对升级与引擎 | 市场升级与 bundle 分开 |
+| 失败恢复 | 重装与日志资源未知 | 诊断回滚和替代环境 | 回滚与耗时未验 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 集中供给 | manifest、setup和bundle状态写入 | 平台完整成功率与耗时 |
-| MCP接入 | patch与shim真实spawn链 | 目标工具可用与结果正确 |
-| 诊断 | mode/unmet/重复注册等信息 | 是否降低实际排障负担 |
+| --- | --- | --- |
+| 会话工具接入 | 标准 MCP 与 shim | 目标任务效果 |
+| 运行供给 | manifest、系统选择、版本状态 | 平台覆盖和成功率 |
+| 失败诊断 | 锁、日志、旧闭包恢复尝试 | 崩溃与重试结果 |
 
-> **思考**：auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可能留下进程；包钉子不等于任务运行栈固定或所有工具可用。[Q03](#research-q03)
+> **思考**：[Q02](#research-q02) auto 可能运行系统 REA，[Q03](#research-q03) 版本探针和 doctor JSON 可读都不足以验收指定分析引擎。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把REA及其依赖供给、路径记录、镜像启动和DSH行配置组织起来，使接入状态可检查；逆向核心能力归上游，并未因此获得新算法。[Q01](#research-q01)
+> **亮点**：[Q01](#research-q01) 把组件环境与标准 MCP 行连接，[Q02](#research-q02) 显式提供系统与 bundle 的选择和供给线索。
 
-启动选择与镜像回退显式报告，ignore-scripts和offline拒绝路径说明供给边界；Windows进程树和多层状态仍是移植代价。[Q03](#research-q03)
+镜像入口、系统委派和只读指南拆开，闭包替换有恢复尝试，但 JSON 和可启动状态均未验证引擎级结果。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可能留下进程；包钉子不等于任务运行栈固定或所有工具可用。[Q03](#research-q03)
+[Q02](#research-q02) auto 可能运行系统 REA，[Q03](#research-q03) 版本探针和 doctor JSON 可读都不足以验收指定分析引擎。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先记录实际启动mode/version并核查授权样本的目标引擎，不能把probe ok或工具目录当全能力通过；不清楚就回已知独立环境。[Q04](#research-q04)
+[Q04](#research-q04) 先保留观察结论，按已授权样本验证实际运行栈和证据定位，有差异则回已验收环境。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +115,18 @@ auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可�
 
 **核查状态**：已检查源码。
 
-供给和MCP启动适配有固定源码依据，上游REA各工具及真实宿主未验证；任务清单为假设。
+已核查固定源码的 MCP、供给、状态与诊断边界，未执行任何安装或分析。
 
-- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、manifest/bundle.manifest.json、index.mjs、bin/rea-shim.mjs、scripts/setup.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 cordis.patch.yml、bin/rea-shim.mjs、scripts/setup.mjs、manifest/bundle.manifest.json、index.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：只核查接入包供给、shim、manifest与guide；REA上游算法及各引擎不在固定研究范围，未执行任何目标或下载依赖。
-- 下一步：固定实际launch模式、上游REA版本与宿主后，检查MCP初始化、一个目标工具的授权样本及取消/退出进程；再对照手工部署成本。
+- 边界：固定提交核查适配、供给与诊断状态。未执行 setup、测试、MCP、上游引擎，也未独立复核依赖安全现状。
+- 下一步：同一授权样本比较系统和 bundle 的真实工具结果，在隔离目录检查失败供给与恢复。
 
 **分析版本**
 
 - **仓库**：[czcdr/dsh-plugin-rea](https://github.com/czcdr/dsh-plugin-rea)
-- **版本号**：2.0.13（[固定提交 4d8a082](https://github.com/czcdr/dsh-plugin-rea/tree/4d8a08266d393712fcf3f1691a723f510f21e9bc)）
-- **版本日期**：2026-10-26（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.0.17（[固定提交 e27a3e8](https://github.com/czcdr/dsh-plugin-rea/tree/e27a3e8ac43da973816c99c5939824a7300f75cf)）
+- **版本日期**：2026-11-10（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +134,9 @@ auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可�
 
 <a id="innovation"></a>
 
-任务级实际启动与引擎就绪清单可能提高环境漂移后的复现，需与现有status对比排障时间和维护负担；尚未实现。[Q04](#research-q04)
+[Q04](#research-q04) 随单项分析证据记录实际启动和引擎就绪范围，可能提高多机复现与故障归因。
 
-固定实际launch模式、上游REA版本与宿主后，检查MCP初始化、一个目标工具的授权样本及取消/退出进程；再对照手工部署成本。
+同一授权样本比较系统和 bundle 的真实工具结果，在隔离目录检查失败供给与恢复。
 
 <a id="detail-section-9"></a>
 
@@ -153,72 +149,84 @@ auto可委派系统REA，doctor的probe ok仍可有unmet，Windows强杀又可�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .mjs | source | 8 | 4735 | 2981 | 1499 | — |
-| .md | source | 6 | 2492 | — | — | 37984 |
+| .mjs | source | 9 | 6375 | 3918 | 2139 | — |
+| .md | source | 8 | 3604 | — | — | 55800 |
 | .js | source | 1 | 400 | 342 | 27 | — |
-| .mjs | test | 1 | 2241 | 1731 | 346 | — |
+| .mjs | test | 4 | 3967 | 2997 | 671 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/czcdr/dsh-plugin-rea/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/czcdr/dsh-plugin-rea/issues?q=is%3Aissue+created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/czcdr/dsh-plugin-rea/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z)
+[![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/czcdr/dsh-plugin-rea/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
+暂未获取：Issue 未关闭、近30天新建。
 
-
-统计日期：2026-11-05。
+统计日期：2026-11-11。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：一体供给与shim能否使REA接入更可追溯，同时不把依赖探针当任务可用性？
+**插件研究总目标**：对有权分析的固定样本，DSH 用户如何确认插件实际启动的 REA 与分析引擎组合，并判断何时退回独立环境？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · REA接入包相对手工MCP配置增加了什么？
+### Q01 · 插件把哪些工作接入 DSH，分析能力来自何处？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-面向已获授权分析二进制或应用、希望把REA接入DSH的技术用户。它的独立贡献是供给运行环境、记录本机路径、通过stdio MCP启动上游REA并显示只读setup指引；REA自身的逆向工具、Ghidra能力不属于本包原创，也未在本次固定材料中逐一核查。相对手工安装Node/JDK/Ghidra、REA再写MCP配置，manifest与setup集中版本和探针，减少路径接线分散。合格结果是明确启动了哪个REA、必要引擎满足什么条件并能完成授权样本任务，不是看见工具目录就判定逆向结果正确。
+已有授权样本、需要从 DSH 查询反编译证据的工程师，可以研究把原本在独立进程使用的 REA 接到同一会话。合格结果要给出目标函数或段落的可定位证据和局限，不能以工具出现或伪代码完整来判断正确性。Cordis patch 配置官方 MCP 客户端，以宿主 Node 执行镜像 shim，stdio 继承给实际 REA。bundle 模式的 shim 根据本地状态为子进程构造环境、选择实际 Node 和 REA 入口。增量来自运行路径、环境变量及工具接线集中，分析算法仍由 REA 和所选引擎提供。已有独立且可重复环境的团队获得的额外价值主要是会话内调用。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[package.json:2-4](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/package.json#L2-L4)
+**依据 1 · 作者声明**：[README.md:45-69](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/README.md#L45-L69)
 
-作者一体供给定位。
-
-```text
-  "name": "dsh-plugin-rea",
-  "version": "2.0.13",
-  "description": "One-plugin bundle: provisions Node/REA/JDK/Ghidra for you, then registers the upstream REA MCP server as mcp__rea__* tools. · 一体包：自动准备 Node/REA/JDK/Ghidra，并把上游 REA 的 MCP 服务接入 DeepSeek Harness。",
-```
-
-**依据 2 · 源码核查**：[manifest/bundle.manifest.json:21-28](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/manifest/bundle.manifest.json#L21-L28)
-
-固定供给版本。
-
-```text
-  "pins": {
-    "reaAgents": "6.8.0",
-    "ghidra": "12.1.4",
-    "jdk": "21",
-    "apktool": "3.0.3",
-    "jadxHeadlessMcp": "0.7.1",
-    "node": "24.22.1",
-    "nodeEngines": "^22.23.4 || ^24.22.1 || >=26.12.1"
-```
-
-**依据 3 · 源码核查**：[cordis.patch.yml:35-56](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/cordis.patch.yml#L35-L56)
-
-stdio MCP启动镜像shim。
+作者说明官方 MCP 行及第三方接入边界。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（25行）</summary>
+
+```text
+Brings the upstream **[REA — Reverse Engineer Anything](https://github.com/morluto/rea)** MCP server into
+**DeepSeek Harness** (dsh), so its tools show up in a session as `mcp__rea__*`.
+
+![dsh-plugin-rea: the session calls the official MCP client row, which launches the bundle's shim; the shim starts the provisioned REA and the Evidence comes back](assets/screenshot-1.png)
+
+## What this is
+
+A **Cordis bundle with a provisioning layer**. `package.json` declares `dsh.bundle.patch`, and that patch
+inserts one row of the official MCP client plugin (`@deepseek-ai/dsh-mcp-client`). The row launches
+`bin/rea-shim.mjs` with the running Node executable; the shim reads the machine-local state that
+`scripts/setup.mjs` wrote and starts the REA CLI it provisioned. There is no analysis code here, and the
+published patch contains no machine path.
+
+> **Third-party adapter.** This repository is not part of REA, ships none of REA's code, and is not
+> maintained by REA's authors. It composes one configuration row and fetches upstream's own releases.
+> Upstream: [github.com/morluto/rea](https://github.com/morluto/rea) (MIT) ·
+> [docs](https://github.com/morluto/rea#what-you-can-analyze) ·
+> [rea.tools](https://rea.tools/) · npm package `rea-agents`.
+> REA's own problems go to its tracker; **this plugin's** problems go to
+> [this repository's issues](https://github.com/czcdr/dsh-plugin-rea/issues).
+
+**It adds exactly three things:** the tool registration under the `mcp__rea__*` names, the per-machine
+engine environment (`GHIDRA_INSTALL_DIR`, `JAVA_HOME`, `REA_ADB_PATH`, `REA_APKTOOL_COMMAND`,
+`REA_JADX_MCP_JAR`, `REA_BROWSER_EXECUTABLE`, …) scoped to that MCP child instead of the whole harness, and
+the provisioning that puts those components on disk.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[cordis.patch.yml:35-50](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/cordis.patch.yml#L35-L50)
+
+stdio、运行 Node 与本机 shim 路径绑定。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
 - insert:
@@ -237,43 +245,82 @@ stdio MCP启动镜像shim。
           # they cannot collide with the YAML ones.
           - !!js "(process.env.DSH_HOME && process.env.DSH_HOME.trim() !== '' ? process.env.DSH_HOME : (process.env.USERPROFILE || ((process.env.HOMEDRIVE || '') + (process.env.HOMEPATH || '')) || process.env.HOME || '') + '/.dsh') + '/plugins/rea-bundle/bin/rea-shim.mjs'"
           - mcp
-        env:
-          # Only meaningful when the harness itself runs on Electron; harmless
-          # for a plain Node host. Explicit is better than relying on this
-          # variable happening to survive the child-env scrub.
-          ELECTRON_RUN_AS_NODE: '1'
-        failOnStartupError: false
 ```
 
 </details>
+
+**依据 3 · 源码核查**：[bin/rea-shim.mjs:1373-1389](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L1373-L1389)
+
+环境生成及实际子进程启动。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  const env = childEnvironment(loaded.config);
+  if (argv.includes("--shim-print-env")) {
+    const interesting = Object.fromEntries(
+      Object.entries(env).filter(([key]) =>
+        /^(GHIDRA_INSTALL_DIR|JAVA_HOME|REA_[A-Z0-9_]+|PATH)$/.test(key),
+      ),
+    );
+    process.stdout.write(JSON.stringify(interesting, null, 2) + "\n");
+    return 0;
+  }
+
+  // Pass through whatever the row supplied; 'mcp' in the normal case.
+  const childArgs = [rea.reaEntry, ...argv];
+  const child = spawn(rea.node, childArgs, {
+    env,
+    stdio: "inherit",
+    windowsHide: true,
+```
+
+</details>
+
+#### 缺口
+
+- 没有同提交、同宿主的 MCP 握手及样本结果。
+  **影响**：无法把接线推断为目标函数的分析结果。
+  **进一步探讨**：在隔离环境用已知良性样本验证实际工具响应并与已有 REA 输出比对。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 从安装到真实REA进程经过哪些状态？
+### Q02 · 自动供给、市场更新和启动路径如何分开？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-bundle插入mcp-rea行，使用当前Node执行HOME下镜像shim，另插rea-guide读本机状态。setup才创建镜像和bundle.json；guide路由只GET/HEAD报告状态，不执行setup。shim先读状态并做启动选择：auto可使用探针可用且不旧于bundle的系统REA，无bundle时也可直接使用系统版；显式bundle保持bundle路径，显式system不可用则失败。bundle缺失/损坏可触发后台供给并立即返回失败等待后续启动；不应把“供给已开始”当MCP已就绪。bundle模式从记录导出环境并启动node+REA入口，继承stdio。
+市场替换的是插件包，manifest 钉住预期 REA、Ghidra、JDK 等组件。Web guide 只计算并报告本机状态，它不启动供给。真正启动 MCP 的 shim 在缺失、损坏或无法启动的 bundle 分支会尝试自动供给，环境变量可禁用；是否能启动仍取决于找到 setup 和锁状态。若系统 REA 可用且 bundle 不可启动、显式选 system 或系统版本不旧，auto 也可委派系统 REA，运行时未必来自 manifest。实际升级需区分包、镜像 shim、bundle 和正在运行的系统程序，分别读状态和明确重新准备。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[index.mjs:58-85](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/index.mjs#L58-L85)
+**依据 1 · 源码核查**：[manifest/bundle.manifest.json:21-28](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/manifest/bundle.manifest.json#L21-L28)
 
-只读guide路由。
-
-<details>
-<summary>查看原文（28行）</summary>
+固定组件版本约束来自 manifest。
 
 ```text
-function mountGuideRoute(host) {
-  const server = host && host.webServer
-  if (!server || typeof server.register !== 'function') return
-  if (typeof host.effect !== 'function') return
+  "pins": {
+    "reaAgents": "6.8.0",
+    "ghidra": "12.1.4",
+    "jdk": "21",
+    "apktool": "3.0.3",
+    "jadxHeadlessMcp": "0.7.1",
+    "node": "24.22.1",
+    "nodeEngines": "^22.23.4 || ^24.22.1 || >=26.12.1"
+```
 
+**依据 2 · 源码核查**：[index.mjs:63-85](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/index.mjs#L63-L85)
+
+指南只允许 GET/HEAD，计算状态不写文件。
+
+<details>
+<summary>查看原文（23行）</summary>
+
+```text
   host.effect(() =>
     server.register({
       kind: 'exact',
@@ -301,16 +348,14 @@ function mountGuideRoute(host) {
 
 </details>
 
-**依据 2 · 源码核查**：[bin/rea-shim.mjs:837-900](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L837-L900)
+**依据 3 · 源码核查**：[bin/rea-shim.mjs:899-933](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L899-L933)
 
-启动选择与系统版漂移边界。
+显式 bundle 与系统候选的实际决策。
 
 <details>
-<summary>查看原文（64行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-async function resolveLaunch({ root, bundleVersion = null, bundleProvisioned = false, env = process.env, platform = process.platform } = {}) {
-  const preference = launchPreference(env);
   if (preference.value === "bundle") {
     return { preference: preference.value, invalid: preference.invalid, mode: "bundle", reason: "pinned by REA_BUNDLE_LAUNCH=bundle" };
   }
@@ -333,68 +378,50 @@ async function resolveLaunch({ root, bundleVersion = null, bundleProvisioned = f
     const pinned = preference.value === "system";
     // No provisioned build at all: there is nothing to compare against, and the
     // machine's own REA is exactly what this mode exists to use.
-    if (!bundleProvisioned || pinned || (order !== null && order >= 0)) {
+    if (!bundleRunnable || pinned || (order !== null && order >= 0)) {
       return {
         preference: preference.value,
         invalid: preference.invalid,
         mode: "system",
         reason: pinned
           ? `pinned by REA_BUNDLE_LAUNCH=system (system ${system.version}, bundle ${bundleVersion ?? "none"})`
-          : !bundleProvisioned
-            ? `a working REA is on PATH (${system.version}) and this machine has no provisioned bundle`
+          : !bundleRunnable
+            ? bundleStateReason !== null
+              ? `a working REA is on PATH (${system.version}) and ${bundleStateReason}; using the system install`
+              : `a working REA is on PATH (${system.version}) and this machine has no provisioned bundle`
             : `the REA on PATH (${system.version}) is at least as new as the provisioned one (${bundleVersion})`,
         system,
-      };
-    }
-    return {
-      preference: preference.value,
-      invalid: preference.invalid,
-      mode: "bundle",
-      reason: order === null
-        ? `the REA on PATH (${system.version}) cannot be compared with the provisioned one (${bundleVersion}); keeping the bundle — set REA_BUNDLE_LAUNCH=system to use the system install`
-        : `the REA on PATH (${system.version}) is older than the provisioned one (${bundleVersion}); set REA_BUNDLE_LAUNCH=system to use it anyway`,
-      system,
-    };
-  }
-  if (preference.value === "system") {
-    return {
-      preference: preference.value,
-      invalid: preference.invalid,
-      mode: "system",
-      reason: `REA_BUNDLE_LAUNCH=system, but no usable REA was found (${system.reason})`,
-      system,
-      unusable: true,
-    };
-  }
-  return {
-    preference: preference.value,
-    invalid: preference.invalid,
-    mode: "bundle",
-    reason: `no usable system REA (${system.reason})`,
-    system,
-  };
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[bin/rea-shim.mjs:1240-1272](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L1240-L1272)
+**依据 4 · 源码核查**：[bin/rea-shim.mjs:251-256](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L251-L256)
 
-缺状态自动供给而非立即就绪。
-
-<details>
-<summary>查看原文（33行）</summary>
+自动供给开关、setup 和锁条件。
 
 ```text
-  if (!loaded.ok) {
-    const message =
-      loaded.code === "missing"
-        ? `No bundle state at ${loaded.file}.`
-        : `Bundle state at ${loaded.file} could not be parsed.`;
-    // Both "missing" and "malformed" start a run. A malformed file used to fail
-    // permanently: setup overwrites a bundle.json it cannot parse, but nothing
-    // ever started setup, so every restart reported the same EX_CONFIG until the
-    // operator deleted the file by hand. The lock stops a provisioning loop when
-    // writing keeps failing.
+function maybeAutoProvision(root) {
+  if (process.env.REA_BUNDLE_AUTO_PROVISION === "0") return { started: false, reason: "disabled" };
+  const setupScript = provisioningScript(root);
+  if (!setupScript) return { started: false, reason: "no-setup" };
+  const lock = path.join(root, "setup.lock");
+  const logPath = path.join(root, "logs", "setup.log");
+```
+
+**依据 5 · 源码核查**：[bin/rea-shim.mjs:1326-1346](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L1326-L1346)
+
+缺失或坏状态进入自动供给，反馈启动或已有任务。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+      : `Bundle state at ${loaded.file} parsed, but it cannot launch REA: ${bundleRea.reason}`;
+    // Both "missing"/"malformed" and "unusable" start a run. A malformed file used
+    // to fail permanently: setup overwrites a bundle.json it cannot parse, but
+    // nothing ever started setup, so every restart reported the same EX_CONFIG
+    // until the operator deleted the file by hand. The lock stops a provisioning
+    // loop when writing keeps failing.
     const provisioning = maybeAutoProvision(root);
     if (provisioning.started) {
       process.stderr.write(
@@ -410,414 +437,286 @@ async function resolveLaunch({ root, bundleVersion = null, bundleProvisioned = f
       // provisioning attempt look like a machine that simply has no bundle.
       process.stderr.write(
         `\n  dsh-plugin-rea (bundle): provisioning is already running in the background.\n  progress: ${provisioning.logPath}\n`,
-      );
-    } else if (provisioning.reason === "spawn-failed" || provisioning.reason === "unwritable") {
-      process.stderr.write(
-        `\n  dsh-plugin-rea (bundle): provisioning could not be started (${provisioning.reason}).\n` +
-          `  Run it by hand:\n    node "${path.join(root, "scripts", "setup.mjs")}" --root "${root}"\n`,
-      );
-    }
-    return fail(message, loaded.detail);
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[bin/rea-shim.mjs:1275-1312](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L1275-L1312)
+**依据 6 · 作者声明**：[README.md:29-43](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/README.md#L29-L43)
 
-真实进程与退出。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-  const rea = resolveRea(loaded.config, root);
-  if (!rea.ok) return fail(rea.reason);
-
-  const env = childEnvironment(loaded.config);
-  if (argv.includes("--shim-print-env")) {
-    const interesting = Object.fromEntries(
-      Object.entries(env).filter(([key]) =>
-        /^(GHIDRA_INSTALL_DIR|JAVA_HOME|REA_[A-Z0-9_]+|PATH)$/.test(key),
-      ),
-    );
-    process.stdout.write(JSON.stringify(interesting, null, 2) + "\n");
-    return 0;
-  }
-
-  // Pass through whatever the row supplied; 'mcp' in the normal case.
-  const childArgs = [rea.reaEntry, ...argv];
-  const child = spawn(rea.node, childArgs, {
-    env,
-    stdio: "inherit",
-    windowsHide: true,
-  });
-
-  child.on("error", (error) => {
-    process.stderr.write(
-      `rea-shim: could not start ${rea.node}\n  ${String(error && error.message)}\n`,
-    );
-    process.exit(EX_CONFIG);
-  });
-  child.on("exit", (code, signal) => {
-    if (signal) {
-      // Re-raising the signal is not portable: process.kill(pid, "SIGTERM")
-      // throws ERR_UNKNOWN_SIGNAL on Windows. Report the conventional 128+n
-      // status instead, which the harness reads the same way.
-      const signals = { SIGHUP: 1, SIGINT: 2, SIGQUIT: 3, SIGKILL: 9, SIGTERM: 15 };
-      process.exit(128 + (signals[signal] ?? 0));
-    }
-    process.exit(code ?? 0);
-  });
-```
-
-</details>
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 固定版本和探针能保证什么，升级与进程有什么风险？
-
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
-
-#### 完整回答
-
-本包manifest钉REA6.8.0、Ghidra12.1.4、JDK21及Node下限，但auto模式可能委派较新系统REA，因此同一包版本不保证相同工具集合；应记录shim-status的实际mode/version。setup下载或复用依赖，并npm install rea-agents精确版本且ignore-scripts；这不等于完整依赖闭包已离线锁定，offline时vendored REA不可用会拒绝联网安装。doctor只要可解析JSON便报告probe ok，同时列unmet，并非所有工具健康。镜像陈旧时可跳到安装包的新shim，跳转失败回旧副本；Windows强杀委派shim不带走REA子进程，用户需核对残留。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[scripts/setup.mjs:1366-1439](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/scripts/setup.mjs#L1366-L1439)
-
-offline与精确REA安装、跳过生命周期。
-
-<details>
-<summary>查看原文（74行）</summary>
-
-```text
-  // `--offline is a promise, not a hint` — and this is the one step that cannot be
-  // served from the cache: it is an npm install, not a download. It used to run
-  // anyway, so a machine with every archive pre-cached still went to the registry
-  // (or failed there) after the flag had promised it would not.
-  if (options.offline) {
-    step("reaAgents", "FAIL", `--offline and the vendored REA at ${vendor} is not usable; npm install needs the registry (drop --offline or pre-install it)`);
-    return null;
-  }
-
-  /*
-   * A plain pack+unpack cannot work here: the published tarball carries no
-   * node_modules, so the CLI would fail with ERR_MODULE_NOT_FOUND on its own
-   * dependencies. A real install resolves the dependency closure.
-   *
-   * Lifecycle scripts are skipped on purpose. REA needs no build step, the
-   * vendored copy must be byte-predictable, and pnpm/npm would otherwise be
-   * free to run arbitrary package scripts during a provisioning step.
-   */
-  mkdirSync(installRoot, { recursive: true });
-
-  /*
-   * Resolve npm, do not assume it.
-   *
-   * On the machine this bundle exists for, `npm` is only on PATH because a
-   * system Node happens to be installed; the bootstrap's whole job is the case
-   * where it is not. A bare `spawnSync("npm", ...)` therefore dies with ENOENT
-   * on exactly the target machine — and did, until this was fixed. The vendored
-   * or discovered Node ships its own npm-cli.js, which is used instead.
-   */
-  const nodeRuntime = context.resolved.node?.path && existsSync(context.resolved.node.path)
-    ? context.resolved.node.path
-    : process.execPath;
-  const npmCandidates = [
-    // Portable Windows zip: <node>\node_modules\npm\bin\npm-cli.js
-    path.join(path.dirname(nodeRuntime), "node_modules", "npm", "bin", "npm-cli.js"),
-    // POSIX tarball: <node>/lib/node_modules/npm/bin/npm-cli.js
-    path.join(path.dirname(nodeRuntime), "..", "lib", "node_modules", "npm", "bin", "npm-cli.js"),
-    // An installed Node: <prefix>/lib/node_modules/..., also covered above.
-    path.join(path.dirname(nodeRuntime), "..", "..", "lib", "node_modules", "npm", "bin", "npm-cli.js"),
-  ];
-  const npmCli = npmCandidates.find((candidate) => existsSync(candidate)) ?? null;
-
-  const installArgs = [
-    "install",
-    `rea-agents@${version}`,
-    "--prefix", installRoot,
-    "--no-save",
-    "--ignore-scripts",
-    "--no-audit",
-    "--no-fund",
-    "--loglevel", "error",
-  ];
-  if (!npmCli) {
-    step("reaAgents", "FAIL", `no npm-cli.js next to ${nodeRuntime}; cannot resolve the dependency closure without npm`);
-    return null;
-  }
-  log(`       ${path.relative(installRoot, npmCli) || npmCli} (vendored npm, not PATH)`);
-  const install = spawnSync(nodeRuntime, [npmCli, ...installArgs], {
-    cwd: installRoot,
-    encoding: "utf8",
-    timeout: 1800000,
-  });
-  if (install.status !== 0) {
-    step("reaAgents", "FAIL", `npm install failed (${install.status}): ${`${install.stderr ?? ""}${install.stdout ?? ""}`.trim().split("\n").slice(-3).join(" | ").slice(0, 300)}`);
-    // Every other component can fall back to the proxy route this script resolves
-    // itself; npm cannot, and this step is the one that fails most often on a
-    // network where the registry needs a mirror.
-    log("       npm reads HTTPS_PROXY/HTTP_PROXY and NPM_CONFIG_REGISTRY from the environment (this script's own proxy routing does not apply here)");
-    return null;
-  }
-
-  const current = probe();
-  step("reaAgents", current.ok ? "ok" : "FAIL", `${vendor}${current.ok ? "" : " — " + current.detail}`);
-  return current.ok ? { path: vendor, version } : null;
-```
-
-</details>
-
-**依据 2 · 源码核查**：[scripts/setup.mjs:1693-1733](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/scripts/setup.mjs#L1693-L1733)
-
-probe ok不要求所有检查满足。
-
-<details>
-<summary>查看原文（41行）</summary>
-
-```text
-  // Readiness probe: REA's own verdict, run through the vendored CLI.
-  //
-  // `rea doctor` exits non-zero when any check is unmet, and on Windows some
-  // checks are unmet by upstream design (Hopper is macOS-only; IDA needs a
-  // user-owned IDA). A non-zero exit is therefore NOT a provisioning failure:
-  // what matters is that the CLI runs, emits parseable JSON, and reports the
-  // tool catalog. Unmet checks are reported, not treated as errors.
-  const reaEntry = paths.reaEntry;
-  // The same two variables the mirrored shim exports. Without them REA falls
-  // back to probing the machine, so `doctor` here reported whichever Ghidra and
-  // JDK happened to be installed globally — on a machine with an older global
-  // Ghidra this run's own engine was never the thing being checked, and a broken
-  // vendor copy could still come back healthy.
-  const reaEnv = {
-    ...process.env,
-    ...(paths.ghidra ? { GHIDRA_INSTALL_DIR: paths.ghidra } : {}),
-    ...(paths.jdk ? { JAVA_HOME: paths.jdk } : {}),
-  };
-  if (existsSync(reaEntry)) {
-    const doctor = spawnSync(nodePath, [reaEntry, "doctor", "--json"], { encoding: "utf8", timeout: 300000, env: reaEnv });
-    const stdout = doctor.stdout ?? "";
-    let parsed = null;
-    try {
-      parsed = JSON.parse(stdout);
-    } catch {
-      parsed = null;
-    }
-    if (parsed) {
-      const unmet = (parsed.checks ?? []).filter((check) => !check.ok);
-      const tools = parsed.identity?.catalog?.counts?.mcp_tools ?? "?";
-      step("probe", "ok", `cli=${parsed.identity?.cli_package_version ?? "?"} healthy=${parsed.healthy} tools=${tools} unmet=${unmet.length}`);
-      for (const check of unmet) log(`       unmet: ${check.name} — ${check.remediation ?? check.detail ?? ""}`);
-    } else {
-      step(
-        "probe",
-        "FAIL",
-        `rea doctor produced no JSON (exit ${doctor.status}): ${`${stdout}${doctor.stderr ?? ""}`.trim().slice(0, 200)}`,
-      );
-    }
-  } else {
-    step("probe", "FAIL", "vendored REA CLI is missing; the MCP row will report unprovisioned");
-```
-
-</details>
-
-**依据 3 · 源码核查**：[bin/rea-shim.mjs:1143-1154](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L1143-L1154)
-
-镜像跳转失败回旧副本。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  const isCheckout = existsSync(path.join(PLUGIN_ROOT, "cordis.patch.yml"));
-  if (!isCheckout && mirror !== null && mirror.stale && process.env.REA_BUNDLE_SHIM_REEXEC !== "1" && !argv.includes("--shim-status")) {
-    const source = pluginCheckout(root);
-    if (source !== null) {
-      // It resolves only when the re-exec did not take over; while the child
-      // runs, this process is parked and the child's exit is the exit.
-      await reexecFromCheckout(source, argv);
-      // The re-exec did not take over: a spawn failure, a child that exited
-      // before its spawn event, or one that started and found its own file gone
-      // (see the exit handler). Say so and run this copy for real — the point of
-      // the fallback.
-      process.stderr.write(`rea-shim: could not run ${source}; running the mirrored copy instead.\n`);
-```
-
-</details>
-
-**依据 4 · 源码核查**：[bin/rea-shim.mjs:904-935](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L904-L935)
-
-系统委派与Windows硬杀边界。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-function launchSystemRea(system, argv) {
-  // No `["mcp"]` fallback: `main` already answers a zero-argument start, so this
-  // helper only ever sees the arguments the row passed. Keeping a fallback here
-  // made the two places disagree about what an empty argument list means, and the
-  // fallback was unreachable anyway.
-  const args = argv;
-  const useShell = process.platform === "win32" && /\.(cmd|bat)$/i.test(system.file);
-  // `REA_BUNDLE_DELEGATED` marks the child as "already the system REA". Without
-  // it a wrapper on PATH that calls this shim would delegate to itself forever.
-  const env = { ...process.env, REA_BUNDLE_DELEGATED: "1" };
-  // Only the PATH is quoted. Quoting the arguments too would hand them to a
-  // `.cmd`'s `%*` WITH their quotes (`"mcp"` instead of `mcp`) — measured — which
-  // is a different command line than the 1.x row produced. The row passes `mcp`
-  // and nothing else, so plain tokens are the contract here; an argument that
-  // needs shell quoting is not something this path supports (cmd would also
-  // expand `%NAME%` inside it).
-  const child = useShell
-    ? spawn(comspec(), ["/d", "/s", "/c", `"${[cmdQuote(system.file), ...args].join(" ")}"`], {
-        env,
-        stdio: "inherit",
-        windowsHide: true,
-        windowsVerbatimArguments: true,
-      })
-    : spawn(system.file, args, { env, stdio: "inherit", windowsHide: true });
-  // No signal forwarding on Windows, deliberately. `child.kill()` there is
-  // TerminateProcess on the cmd.exe WRAPPER — the REA inside it survives, still
-  // holding the inherited pipes — and a console Ctrl+C is delivered to the whole
-  // process group anyway, so the child already has it. A hard kill of this shim
-  // (what a supervisor or Task Manager does) runs no JavaScript at all, so the
-  // wrapper must not pretend otherwise: on Windows the delegated REA outlives a
-  // forcibly killed shim. On POSIX the child is in this process's group and gets
-  // the terminal's signal directly; `process.exit` below then ends the shim.
-```
-
-</details>
-
-#### 缺口
-
-- 上游REA固定源码、所有引擎和当前宿主MCP握手未独立核查。
-  **影响**：不能确认具体逆向工具可用或分析结果正确，运行环境可能部分满足。
-  **进一步探讨**：固定实际launch mode与REA版本，对授权小样本检查MCP握手、目标引擎、产物和退出进程树。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 供给复杂性值得承担吗，如何验证相对价值？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-首次下载与解包多个运行时/引擎或复用既有安装，需要网络、磁盘、解压工具和版本探针；具体平台资源与耗时未知。持续要对齐插件包、镜像、bundle和可选系统REA四层状态，失败需读供给日志、处理锁与残留进程；模型与逆向任务的费用另计。对于已会手工MCP接入的人，供给便利未必抵消维护层数，当前建议观察，先核查实际mode与授权小样本，而非安装后把数百工具全开放。可提出“每次任务保存实际启动与引擎就绪清单”的未验证假设，以同一环境漂移轨迹比较复现失败和排障时间；若现有status已足够或清单负担过高则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[manifest/bundle.manifest.json:3-17](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/manifest/bundle.manifest.json#L3-L17)
-
-供给而非包内再分发。
+作者说明市场升级、镜像 shim 与运行时更新的区别。
 
 <details>
 <summary>查看原文（15行）</summary>
 
 ```text
-    "Component manifest for the one-plugin bundle. Every entry is fetched from an",
-    "official vendor source and verified before use. Fields:",
-    "  sha256   - REQUIRED for offline integrity. Vendor-published where one exists;",
-    "             otherwise measured once and recorded here, and drift is reported",
-    "             rather than silently accepted. 'unverified' means neither was done",
-    "             yet, and setup then pins the hash it observes on first fetch.",
-    "  size     - expected byte count, used for truncation checks and resume math.",
-    "  license  - license of the upstream project, not a redistribution claim.",
-    "  requires - components whose binaries this one needs to run.",
-    "  binaries - workspace-relative entries inside the unpacked directory that are",
-    "             directly spawnable; the first that exists becomes the component's",
-    "             recorded path so another component can depend on it.",
-    "  executable - a placed file that must carry the POSIX exec bit (a wrapper REA",
-    "             spawns without a shell); setup chmods exactly these to 0755.",
-    "Nothing here is redistributed inside the npm package; setup downloads it."
-```
+> **You must run `node scripts/setup.mjs` yourself — once after installing, and once after every plugin
+> upgrade.** Nothing runs it for you: a market install or update replaces the package and stops there.
+> Since **2.0.8** a market upgrade keeps the *row* working (the mirrored launcher re-execs the new one), but it
+> does **not** move the bundle to the new pins — REA and the engines stay at the versions recorded by the last
+> setup run. Skip it on a first install and the row exits `MODULE_NOT_FOUND` with no tools and no message;
+> skip it after an upgrade and you keep running the old REA silently (`check-updates.ps1` reports the drift).
+> If you had enabled the Ghidra gate override (see §9 of the 2026-10-26 review), that setup run re-provisions the
+> bundled REA and the patch goes with it — re-enable it afterwards, or accept the pinned Ghidra again.
+> The full rule set is under [Updating](#updating--three-independent-things).
 
-</details>
-
-**依据 2 · 源码核查**：[bin/rea-shim.mjs:1157-1183](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/bin/rea-shim.mjs#L1157-L1183)
-
-launch和重复注册诊断。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  const loaded = readBundleConfig(root);
-  // Decide what to run before asking whether the bundle is provisioned: a
-  // machine with its own working REA must not be sent into an ~800 MB
-  // provisioning run just because this bundle has no state yet.
-  const bundleVersion = loaded.ok ? (loaded.config.versions?.reaAgents ?? null) : null;
-  const launch = await resolveLaunch({ root, bundleVersion, bundleProvisioned: loaded.ok });
-  if (launch.invalid !== null) {
-    process.stderr.write(
-      `rea-shim: REA_BUNDLE_LAUNCH="${launch.invalid}" is not one of ${LAUNCH_MODES.join("/")}; using auto.\n`,
-    );
-  }
-  // Upstream can add a second row for the same serverName; the shim cannot stop
-  // DSH from loading both rows, but saying so is better than doubled tools with
-  // no stated cause. The status report carries the same fact for diagnostics.
-  const duplicate = foreignReaRegistration(root);
-  if (duplicate && !argv.includes("--shim-status")) {
-    process.stderr.write(
-      `\n  dsh-plugin-rea (bundle): duplicate REA registration.\n` +
-        `  ${duplicate.patch} also registers serverName "rea" (id "${duplicate.id}").\n` +
-        `  This bundle's row is id "mcp-rea" with the same serverName; DSH rejects the later\n` +
-        `  entry as a duplicate server name, so only one survives. Keep exactly one of them.\n`,
-    );
-  }
-
-  if (argv.includes("--shim-status")) {
-    const report = {
-      bundleRoot: root,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[scripts/setup.mjs:1664-1686](https://github.com/czcdr/dsh-plugin-rea/blob/4d8a08266d393712fcf3f1691a723f510f21e9bc/scripts/setup.mjs#L1664-L1686)
-
-本机版本、路径与unverified记录。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-if (!options.dryRun) {
-  const bundleConfig = {
-    schema: 1,
-    provisionedAt: new Date().toISOString(),
-    host: { platform: process.platform, arch: process.arch, node: process.versions.node },
-    plugin: { name: "dsh-plugin-rea", root: sourceRoot() },
-    paths,
-    versions: {
-      reaAgents: merged.reaAgents?.version ?? null,
-      ghidra: merged.ghidra?.version ?? null,
-      jdk: merged.jdk?.version ?? null,
-      apktool: merged.apktool?.version ?? null,
-      jadxHeadlessMcp: merged.jadxHeadlessMcp?.version ?? null,
-      node: merged.node?.version ?? process.versions.node,
-    },
-    components: Object.fromEntries(
-      Object.entries(merged).map(([name, value]) => [name, value ?? { path: null, unavailable: true }]),
-    ),
-    unverifiedChecksums: Object.entries(merged)
-      .filter(([, value]) => value?.tofu)
-      .map(([name]) => name),
-  };
-  writeFileSync(path.join(options.root, "bundle.json"), JSON.stringify(bundleConfig, null, 2) + "\n");
+> **A first install and every plugin upgrade also show a one-time guide in the Web GUI.** It says whether the
+> runtime is missing or behind this package's pin, shows the exact `node "<install path>/scripts/setup.mjs"`
+> command for that install, and remembers the dismissal per plugin version. It is a notice only: it never runs
+> setup for you and never edits the bundle. Run it once, restart dsh, and the guide stays away until the next
+> plugin version.
 ```
 
 </details>
 
 #### 缺口
 
-- 没有手工接入与bundle供给的同环境时间和恢复对照。
-  **影响**：不能证明部署总负担更低。
-  **进一步探讨**：在相同OS和现有依赖条件下比较首次、升级及失败恢复的人工时间和磁盘量。
+- 未运行缺状态、锁失败及市场升级场景。
+  **影响**：不能确认真实部署会找到 setup 或选中预期的 bundle。
+  **进一步探讨**：用隔离根目录对照版本、shim 状态、日志及实际进程路径。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · setup 成功能否证明目标引擎可用，排查成本如何计？
+
+**研究主题**：缺陷与关键质疑、效果与总成本、工程质量与复用
+
+#### 完整回答
+
+安装流程把原依赖目录移走并切换到 staging 闭包，rename 失败尝试恢复；上线后运行版本探针和 doctor，若 doctor 无法输出可解析 JSON，尝试恢复旧闭包。此处成功条件只检查版本探针和 JSON 是否可解析，没有要求目标引擎工具通过一项真实分析。shim 状态退出码同样根据实际选择的 launch 是否可用，已输出的路径和版本不足以证明工具级就绪。README 还明确记录固定引擎及其版本门槛和作者认为仍需隔离的依赖风险，当前研究未独立核实漏洞状态。需要分别计供给下载与磁盘、诊断和手动升级时间、目标工具失败后的环境恢复。平台不明、引擎未核验或样本来源不明时，保留现有隔离环境。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[scripts/setup.mjs:2276-2291](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/scripts/setup.mjs#L2276-L2291)
+
+切换失败后尝试恢复旧依赖。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+    if (existsSync(live)) {
+      renameSync(live, retired);
+      parked = true;
+    }
+    renameSync(modules, live);
+  } catch (error) {
+    if (parked && !existsSync(live)) {
+      try {
+        renameSync(retired, live);
+      } catch {
+        /* the message below already says where the install did not land */
+      }
+    }
+    rmSync(staging, { recursive: true, force: true });
+    step("reaAgents", "FAIL", `could not move the new closure into ${live}: ${String(error?.message ?? error)}`);
+    return null;
+```
+
+</details>
+
+**依据 2 · 源码核查**：[scripts/setup.mjs:2309-2338](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/scripts/setup.mjs#L2309-L2338)
+
+doctor 成功判据只要求可解析 JSON，与版本探针结合。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  const current = probe();
+  const doctorRun = spawnSync(nodeRuntime, [path.join(vendor, "scripts", "rea.mjs"), "doctor", "--format", "json"], {
+    encoding: "utf8",
+    timeout: 300000,
+    windowsHide: true,
+  });
+  const doctorOutput = `${doctorRun.stdout ?? ""}`.trim();
+  const doctorAnswered = doctorOutput.startsWith("{") && (() => {
+    try {
+      JSON.parse(doctorOutput);
+      return true;
+    } catch {
+      return false;
+    }
+  })();
+
+  const restorePreviousClosure = () => {
+    if (!parked) return false;
+    try {
+      rmSync(live, { recursive: true, force: true });
+      renameSync(retired, live);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  if (!current.ok || !doctorAnswered) {
+    const why = !current.ok ? current.detail : `doctor did not answer with JSON (exit ${doctorRun.status})`;
+    const restored = restorePreviousClosure();
+```
+
+</details>
+
+**依据 3 · 源码核查**：[bin/rea-shim.mjs:1276-1292](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L1276-L1292)
+
+状态区分已解析配置与可启动。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+    if (loaded.ok) {
+      report.paths = loaded.config.paths ?? {};
+      report.versions = loaded.config.versions ?? {};
+      // `bundleUsable` is what makes the fields above trustworthy: paths and
+      // versions can be reported for a bundle that cannot start, and a caller
+      // reading only those would conclude the opposite of `rea.ok`.
+      report.bundleUsable = bundleUsable;
+      report.rea = bundleRea;
+    }
+    process.stdout.write(JSON.stringify(report, null, 2) + "\n");
+    // The row works either way round — a system launch needs no bundle, a bundle
+    // launch needs a bundle that can actually start REA. Reporting 0 off
+    // `loaded.ok` meant a parsed-but-broken bundle looked healthy until the row
+    // started and exited non-zero, which is the one thing a status command exists
+    // to prevent.
+    const usable = launch.mode === "system" ? launch.unusable !== true : bundleUsable;
+    return usable ? 0 : EX_CONFIG;
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:13-27](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/README.md#L13-L27)
+
+作者报告固定 REA 的引擎门槛及其环境风险。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+> REA **6.8.0** — this package's pin — still accepts Ghidra **12.1.x** only (12.2 is `unsupported`, and the whole
+> Ghidra decompile/analysis group disappears) and the jadx bridge **0.7.1** only (0.8.0 fails on its first call with
+> `Expected engine 0.7.1`, before any APK is loaded). Both gates were re-checked against 6.8.0 on 2026-10-26 and
+> neither one moved. JDK **21.0.13** is out upstream, but Adoptium publishes no Windows build of it, so there is
+> nothing to point at here — and it drops only three of the four eMudhra anchors. The trade-off is therefore "all
+> tools green, CVE still open": Ghidra 12.1.4's CVE-2026-100504 / 100505 / 100503 / 113604 stay in the chain — **do
+> not analyse untrusted samples with this environment** — and the JDK still trusts the eMudhra anchors. Evidence,
+> mitigations and revisit triggers: [docs/update-review-2026-10-24.md](docs/update-review-2026-10-24.md) and
+> [docs/update-review-2026-10-26.md](docs/update-review-2026-10-26.md).
+>
+> **Ghidra 12.2 itself works** — measured 2026-10-26: same 9 segments, same 341 procedures, byte-identical `entry`
+> pseudocode as 12.1.4, through REA's own bridge. What blocks it is REA's version-equality check, not the bridge.
+> If you want the CVE-fixed engine anyway, `node scripts/ghidra-gate-override.mjs --enable --version 12.2` rewrites
+> that one constant in the vendored copy, records what it changed in `<bundle>/ghidra-gate-override.json`, and
+> `--disable` restores it; re-running setup reverts it too. It needs **JDK 25+** (`application.java.min=25`).
+```
+
+</details>
+
+#### 缺口
+
+- 未重现引擎初始化、平台差异、闭包回滚和安全问题。
+  **影响**：不将 setup 成功或作者描述升格为运行栈安全和可用性结论。
+  **进一步探讨**：在隔离环境逐项运行被选引擎的最小已授权任务，并核对实际版本与读回。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 怎样判断是否进入试用，任务级版本记录如何验证？
+
+**研究主题**：新假设与验证、采用判断
+
+#### 完整回答
+
+目前适合先观察运行栈和分析范围。已具备独立 REA 的人员，可在隔离 DSH profile 中记录实际 launch mode 和引擎版本，用一个已知样本核对函数证据；若系统与 bundle 选择不符、引擎不可用或证据无法回到样本，则回独立环境。假设是在任务输出旁保存实际启动方式、REA、引擎与 readiness 的只读清单，避免只记插件包版本。在配置一台系统 REA 比 bundle 更新、另一台 bundle 可用的条件下，对照现有 shim 状态和任务内清单，记录找出运行差异的时间与误判。若记录无法跟上实际进程，或不能改善归因，则保留外部验收单。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[bin/rea-shim.mjs:1252-1284](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L1252-L1284)
+
+现有状态提供实际选择与 bundle 状态，可作为对照。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+  if (argv.includes("--shim-status")) {
+    const report = {
+      bundleRoot: root,
+      bundleFile: loaded.file,
+      provisioned: loaded.ok,
+      reason: loaded.ok ? undefined : loaded.code,
+      autoProvision: process.env.REA_BUNDLE_AUTO_PROVISION ?? "(default)",
+      launch: {
+        preference: launch.preference,
+        mode: launch.mode,
+        reason: launch.reason,
+        // Reported, not implied: `mode: "system"` with `unusable: true` is a
+        // request that cannot be met, and a caller reading only the mode would
+        // draw the opposite conclusion.
+        unusable: launch.unusable === true,
+        systemRea: launch.system?.found ? { file: launch.system.file, version: launch.system.version } : null,
+      },
+    };
+    if (launch.system?.rejected?.length) report.launch.rejected = launch.system.rejected;
+    // A mirrored copy that lags the plugin keeps working, which is exactly why
+    // nobody notices it: the row runs old code until the mirror is refreshed.
+    // Reported here so `--shim-status` answers "am I running what I installed?".
+    if (mirror !== null) report.mirror = mirror;
+    if (duplicate) report.duplicateRegistration = duplicate;
+    if (loaded.ok) {
+      report.paths = loaded.config.paths ?? {};
+      report.versions = loaded.config.versions ?? {};
+      // `bundleUsable` is what makes the fields above trustworthy: paths and
+      // versions can be reported for a bundle that cannot start, and a caller
+      // reading only those would conclude the opposite of `rea.ok`.
+      report.bundleUsable = bundleUsable;
+      report.rea = bundleRea;
+    }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[bin/rea-shim.mjs:1291-1292](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/bin/rea-shim.mjs#L1291-L1292)
+
+退出码只对应选择路径能否启动。
+
+```text
+    const usable = launch.mode === "system" ? launch.unusable !== true : bundleUsable;
+    return usable ? 0 : EX_CONFIG;
+```
+
+**依据 3 · 作者声明**：[README.md:71-83](https://github.com/czcdr/dsh-plugin-rea/blob/e27a3e8ac43da973816c99c5939824a7300f75cf/README.md#L71-L83)
+
+作者界定伪代码和结果限制。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+## What it can and cannot do
+
+The analysis is upstream's; this section only restates upstream's own contract so expectations are right.
+
+- **It cannot recover complete source code.** For native binaries upstream returns *pseudocode and
+  assembly*, for Android APKs *decompiled methods*, for JEB units *pseudocode*, and for JavaScript/Electron
+  *modules and their relations*. Upstream's tool contract states the pseudocode "is decompiler output, not
+  original source and not text-equivalent" to another provider's output.
+- Not recoverable in practice: original identifier names, types, comments, macros and template expansion,
+  build scripts and assets. Optimisation (inlining, reordering), symbol stripping, obfuscation, packing and
+  VM protection only make the output worse.
+- Every result carries **confidence and limitations** (`observed` / `derived` / `inferred`, plus an explicit
+  limitations list). Read them as evidence, never as recovered source.
+```
+
+</details>
+
+#### 缺口
+
+- 任务级版本清单未实现或验证。
+  **影响**：不能断言能减少排障时间。
+  **进一步探讨**：固定样本、两种安装状态和同一证据比对步骤。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

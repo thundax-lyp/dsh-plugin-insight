@@ -1,27 +1,27 @@
 {
     "repository": "Small-tailqwq/dsh-deep-whale",
     "repository_id": 1333123776,
-    "captured_at": "2026-11-02T02:08:50.948Z",
-    "window_start": "2026-10-03T02:08:50.948Z",
-    "stars": 2989,
-    "pushed_at": "2026-11-01T13:35:54Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 3086,
+    "pushed_at": "2026-11-08T07:16:26Z",
     "issues": {
-        "open": 6,
-        "closed": 124,
-        "created_30d": 22,
-        "closed_30d": 32,
-        "updated_30d": 36
+        "open": 8,
+        "closed": 130,
+        "created_30d": 24,
+        "closed_30d": 31,
+        "updated_30d": 37
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-01T06:52:54.214Z",
+        "captured_at": "2026-11-10T17:18:51.228Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "f5ac3ac680f52f81eb91d09243d8630ceaa6c7f8",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
         "latest_error": null
     }
 }

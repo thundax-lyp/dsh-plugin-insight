@@ -1,34 +1,44 @@
 {
     "repository": "yyh-001/dsh-meme",
     "repository_id": 1333232606,
-    "captured_at": "2026-11-01T06:31:34.186Z",
-    "window_start": "2026-10-02T06:31:34.186Z",
-    "stars": 472,
-    "pushed_at": "2026-11-01T03:09:02Z",
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 552,
+    "pushed_at": "2026-11-09T03:52:40Z",
     "issues": {
         "open": 0,
-        "closed": 38,
+        "closed": 43,
         "created_30d": 25,
-        "closed_30d": 26,
-        "updated_30d": 26
+        "closed_30d": 27,
+        "updated_30d": 27
     },
     "errors": [],
     "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T17:18:51.228Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
     "npm": {
         "package_name": "dsh-meme",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 46775,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-meme",
+        "captured_at": "2026-11-10T21:19:39.444Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 77268,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-meme",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-18T02:40:16.885Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-10T21:19:39.444Z",
             "source_url": "https://registry.npmjs.org/dsh-meme",
             "error": null,
-            "latest_version": "0.1.71",
-            "latest_published_at": "2026-10-29T12:24:29.575Z",
+            "latest_version": "0.1.80",
+            "latest_published_at": "2026-11-09T03:54:31.980Z",
             "latest_error": null
         }
     }

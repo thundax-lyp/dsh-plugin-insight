@@ -1,0 +1,45 @@
+{
+    "repository": "aa2246740/dsh-skillhub",
+    "repository_id": 1347919220,
+    "captured_at": "2026-11-11T01:54:58.798Z",
+    "window_start": "2026-10-12T01:54:58.798Z",
+    "stars": 44,
+    "pushed_at": "2026-11-04T01:17:23Z",
+    "issues": {
+        "open": 0,
+        "closed": 4,
+        "created_30d": 1,
+        "closed_30d": 3,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-10T23:44:45.448Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
+        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
+        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@aa2246740/dsh-skillhub",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 1922,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/%40aa2246740%2Fdsh-skillhub",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-23T09:28:34.028Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
+            "source_url": "https://registry.npmjs.org/%40aa2246740%2Fdsh-skillhub",
+            "error": null,
+            "latest_version": "1.0.9",
+            "latest_published_at": "2026-11-04T01:19:18.232Z",
+            "latest_error": null
+        }
+    }
+}

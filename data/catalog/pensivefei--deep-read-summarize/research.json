@@ -1,0 +1,442 @@
+{
+    "schema_version": 4,
+    "id": "3313124fd59214f50827eece52898f8b",
+    "identity": "github:1338654346:root",
+    "slug": "pensivefei--deep-read-summarize",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1338654346:root",
+            "repository_id": 1338654346,
+            "component_id": "root",
+            "repository": "PensiveFei/deep-read-summarize",
+            "path": "",
+            "aliases": [],
+            "name": "Deep Read Summarize",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "21a9a4bc86269944e48031daf2a20d2adcb84c39dd6b7a1a1da0feacc18d95d2",
+                "code": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                "maintenance": "f3f21ef9d9aed7dbe0c1e7916a4eb0d6b6a281b017a291421ad0dd10b90e69a4"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-11-01-github-1338654346-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "6367c756a871ca7a5db8c7063dd362482110f7a0",
+                    "retrieved_at": "2026-11-11T02:30:05.817Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-11-11-01-github-1338654346-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-11T02:30:05.817Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-11-01-github-1338654346-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/PensiveFei/deep-read-summarize",
+                            "commit": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                            "path": "README.md",
+                            "content_sha256": "5cfa98b9cdd0b6bbc173f50d99c210a20bf9ff6d151bb97cf195fb7f5e6622ca"
+                        }
+                    ],
+                    "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                    "captured_at": "2026-11-11T02:30:05.817Z",
+                    "summary": "对书籍、论文、网页和视频做分块精读，返回 Markdown 笔记、建议路径及质量核验。",
+                    "artifact": "data/runs/2026-11-11-01/pensivefei--deep-read-summarize/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-11-01-github-1338654346-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/index.js",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/PensiveFei/deep-read-summarize",
+                            "commit": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                            "path": "index.js",
+                            "content_sha256": "47f4ec0a8168ac5844997b5f2bddba43a9949c6c3098e713b0fd9b2db9dcddc9"
+                        },
+                        {
+                            "repository_url": "https://github.com/PensiveFei/deep-read-summarize",
+                            "commit": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                            "path": "lib/quality.js",
+                            "content_sha256": "0162d055ebbd9ce19d97a2a33407146497da1ecd3992f9bf0eee93adc3ef584d"
+                        },
+                        {
+                            "repository_url": "https://github.com/PensiveFei/deep-read-summarize",
+                            "commit": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                            "path": "README.md",
+                            "content_sha256": "5cfa98b9cdd0b6bbc173f50d99c210a20bf9ff6d151bb97cf195fb7f5e6622ca"
+                        }
+                    ],
+                    "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                    "captured_at": "2026-11-11T02:30:05.817Z",
+                    "summary": "核查 index.js、lib/quality.js、README.md；宿主工作流运行后返回笔记和质量结果，可按内容与身份复用缓存。",
+                    "artifact": "data/runs/2026-11-11-01/pensivefei--deep-read-summarize/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "只核查工具入口、跨次缓存及质量门，未运行模型或全量媒体解析。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "长资料读者需要可回查的笔记与已知内容缺口。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "宿主工作流运行后返回笔记和质量结果，可按内容与身份复用缓存。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "只核查工具入口、跨次缓存及质量门，未运行模型或全量媒体解析。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "DSH 宿主插件带技能兼容入口，发行版未验收。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 工作流与模型 | 必需 | 运行精读与核验 | 转回人工 |\n| 原文可访问 | 必需 | 分块与核验 | 报告缺口 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 模型和提取环境 | 准备来源与输出 | 耗时未知 |\n| 持续 | 分块和核验模型用量 | 核对原文与保存 | 单份费用未知 |\n| 失败 | 可能重复调用与缓存 | 定位失败块并重读 | 恢复成本未测 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q04](#research-q04) 先用公开材料并保持缓存关闭，核对实际文件和关键引文。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 笔记组织 | 工具返回正文与核验 | 事实准确性 |\n| 缺口识别 | 结构化覆盖失败 | 漏判和净节时 |",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 工作流显式释放，缓存后检查文件哈希。[Q03](#research-q03) 缺块会降低质量状态。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "comparison",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 把长文分块、核验和候选笔记组织在一次工作流里。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q03](#research-q03) 质量门能检查结构与报告，关键事实仍依赖实际原文和核验判断。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q05](#research-q05) 对摘录做独立定位，可测量错引率是否下降。",
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1338654346:root",
+                            "area": "code",
+                            "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-11T02:30:05.817Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-11T02:30:05.817Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                "reviewed_at": "2026-11-11T02:30:05.817Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1338654346:root",
+                        "area": "code",
+                        "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "相对手工分段加入结构化核验和缓存回读，是工作流组合。块身份和缺口判断改变失败表达。可迁移到其他长文本。统一交付减少人工拼接，仍需外部模型。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "从读取走到可保存笔记和核验报告，用户仍负责保存和复核。模型与来源条件限制覆盖，净费用未知。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-11-11-01-github-1338654346-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要整理长资料的 DSH 用户，可以先用一份公开论文试出带原文核验的笔记。相比手工逐段整理，工具集中返回候选笔记、范围和质量检查。若关键引文无法定位或缺页影响结论，用户应停用该结果并从原文手工核对。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README.md 55–66 行和 index.js 98–113 行给出明确长文及产物；缺真实重复频率，未到 23 分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) index.js 115–151 行组合工作流和缓存，超过入口包装；[Q03](#research-q03) 事实复核仍必需，未到 19 分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q03](#research-q03) quality.js 156–189 行和 [Q02](#research-q02) 实际运行入口可定位，无宿主用例，未到 19 分。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04) 可保留原文并关闭缓存，仍需保存、核对和模型费用，未到 15 分。"
+                    }
+                },
+                "score": 51,
+                "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                "reviewed_at": "2026-11-11T02:30:05.817Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-11-01-github-1338654346-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1338654346:root",
+                        "area": "code",
+                        "fingerprint": "51ce66b585837d3bcd4489c0a5279317ac809a2e"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1338654346:root",
+            "repository": "PensiveFei/deep-read-summarize",
+            "path": "",
+            "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+            "fingerprints": {
+                "directory": "21a9a4bc86269944e48031daf2a20d2adcb84c39dd6b7a1a1da0feacc18d95d2",
+                "code": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+                "maintenance": "f3f21ef9d9aed7dbe0c1e7916a4eb0d6b6a281b017a291421ad0dd10b90e69a4"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-11T01:46:09Z",
+            "analysis_sha256": "42a4ffe96909748bda4cf07b19c730d3a4e9792d96549ee5f810388a71e42c42"
+        },
+        "publication.metadata": "data/catalog/pensivefei--deep-read-summarize/meta.json",
+        "publication.summaries": {
+            "text": "对书籍、论文、网页和视频做分块精读，返回 Markdown 笔记、建议路径及质量核验。",
+            "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+            "source_url": "https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+            "items": {
+                "模型工具": "运行分块精读并返回笔记与核验结果"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 精读工作流 | 整理长资料并生成候选笔记 | 主 Agent 负责实际保存 |\n| 质量报告 | 定位缺块与核验结果 | 关键事实须回原文 |"
+        },
+        "publication.advice": {
+            "revision": "51ce66b585837d3bcd4489c0a5279317ac809a2e",
+            "text": "[Q04](#research-q04) 先用公开材料并保持缓存关闭，核对实际文件和关键引文。"
+        },
+        "registry": "data/plugins/pensivefei--deep-read-summarize",
+        "reports": "# Deep Read Summarize\n\n> 对书籍、论文、网页和视频做分块精读，返回 Markdown 笔记、建议路径及质量核验。\n\n## 研究范围\n\n- **仓库**：[PensiveFei/deep-read-summarize](https://github.com/PensiveFei/deep-read-summarize)\n- **版本号**：0.6.1（[固定提交 51ce66b585837d3bcd4489c0a5279317ac809a2e](https://github.com/PensiveFei/deep-read-summarize/tree/51ce66b585837d3bcd4489c0a5279317ac809a2e)）\n- **版本日期**：2026-11-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已检查固定工具、缓存和质量源码，实际阅读质量与费用未测。\n\n## 洞察短评\n\n- **用途**：长资料读者需要可回查的笔记与已知内容缺口。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 把长文分块、核验和候选笔记组织在一次工作流里。\n- **思考**：[Q03](#research-q03) 质量门能检查结构与报告，关键事实仍依赖实际原文和核验判断。\n- **建议**：[Q05](#research-q05) 对摘录做独立定位，可测量错引率是否下降。\n\n采用建议：[Q04](#research-q04) 先用公开材料并保持缓存关闭，核对实际文件和关键引文。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 把长文分块、核验和候选笔记组织在一次工作流里。\n\n## 关键质疑\n\n[Q03](#research-q03) 质量门能检查结构与报告，关键事实仍依赖实际原文和核验判断。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q05](#research-q05) 对摘录做独立定位，可测量错引率是否下降。\n\n在相同公开来源注入错引和缺页，比较报告、人工查证和费用。\n\n## 场景与替代办法\n\n长资料读者需要可回查的笔记与已知内容缺口。\n\n人工分段阅读、摘录、检查原文及保存。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH 工作流与模型 | 必需 | 运行精读与核验 | 转回人工 |\n| 原文可访问 | 必需 | 分块与核验 | 报告缺口 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户选公开可提取材料 | 原文可回读 |\n| 运行 | 工具返回笔记与质量，主 Agent 保存 | 确认文件和引文 |\n| 退出 | 缺口时改人工核对 | 保留原件 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 模型和提取环境 | 准备来源与输出 | 耗时未知 |\n| 持续 | 分块和核验模型用量 | 核对原文与保存 | 单份费用未知 |\n| 失败 | 可能重复调用与缓存 | 定位失败块并重读 | 恢复成本未测 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 笔记组织 | 工具返回正文与核验 | 事实准确性 |\n| 缺口识别 | 结构化覆盖失败 | 漏判和净节时 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：用户能否用分块精读生成可保存、可核对的长文笔记，并识别质量门的证据边界？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 精读流程解决什么反复工作？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n需要把长论文或转写材料整理成 Markdown 笔记的用户，通常手工分段、再核对引文和缺页。插件把工作流调用和质量结果放进同一工具返回，并把实际保存交给主 Agent。合格产物应有已保存文件、关键原文定位和已知缺口；仅看到工具成功还不够。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:55-66](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/README.md#L55-L66)\n\n作者说明任务、保存责任和核对。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n````text\n### 2. 发起一次精读\n\n在 DSH 对话中输入，例如：\n\n```text\n请帮我精读这篇论文，并生成一份 Markdown 阅读笔记：\nhttps://arxiv.org/abs/2307.09042\n```\n\n你也可以提供本地文件路径、网页或视频链接。如果需要，可以在请求中说明输出位置、希望保留的章节或是否需要时间戳。\n\n支持插件工具的宿主会注册 `deep_read_summarize`；旧宿主使用插件提供的技能和 workflow 入口。精读工具返回笔记正文及建议路径，**实际写入文件需要由主代理完成**。生成后请确认文件已保存，并检查结果中是否报告内容缺口或质量问题。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:98-113](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/index.js#L98-L113)\n\n工具输出正文和路径建议。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nfunction readingTool(engine, defaults, registry) {\n  return {\n    name: 'deep_read_summarize',\n    description: '深度精读书籍、论文、视频或网页，返回完整 Markdown 笔记、建议保存路径及原文质量核验结果。拿到结果后必须检查同名文件并保存 note；质量未通过或有内容缺口时必须报告。',\n    parameters: {\n      type: 'object', additionalProperties: false,\n      properties: {\n        input: { type: 'string', description: '内容链接或本地文件路径' },\n        type: { type: 'string', description: 'auto 或已注册的解析器类型，默认 auto' },\n        options: { type: 'object', additionalProperties: true, description: '覆盖当前 profile 的精读选项' }\n      }, required: ['input']\n    },\n    output: {\n      schema: { type: 'object', additionalProperties: true },\n      // Never clip the note: the main agent needs its complete value to save it.\n      render: function (args, value) { return [{ type: 'text', text: JSON.stringify(value) }]; }\n```\n\n</details>\n\n#### 缺口\n\n- 节时和人工审阅负担未测。\n  **影响**：无法证明比短文直接读更有效。\n  **进一步探讨**：比较同一长文的人工分段与工具笔记。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 工具如何运行和复用精读？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\n宿主就绪后注册模型工具，调用时启动工作流并在 finally 释放。打开可选跨次缓存时，先准备分块及文件哈希，根据来源、调用者提供的模型身份和提示词查缓存。恢复执行后再次检查来源哈希，变化则重新运行；只在通过质量检查时保存合适的未命中结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:177-199](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/index.js#L177-L199)\n\n依赖就绪后注册工具。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nfunction applyWithServiceLifecycle(ctx, config, registry) {\n  let stopped = false;\n  let releaseSkill = ctx.skills.register(skillDefinition(config, { registry: registry }));\n  function replaceSkill(toolName) {\n    if (typeof releaseSkill === 'function') releaseSkill();\n    releaseSkill = undefined;\n    releaseSkill = ctx.skills.register(skillDefinition(config, { registry: registry, toolName: toolName }));\n  }\n  function parentCanRegister() {\n    // Public Cordis FiberState: LOADING=1, ACTIVE=2; never restore while unloading.\n    return !stopped && (!ctx.fiber || ctx.fiber.state === 1 || ctx.fiber.state === 2);\n  }\n  // Cordis treats callbacks with a prototype as constructors. An arrow keeps\n  // the returned cleanup function in its effect lifecycle.\n  const child = ctx.inject(['tools', 'workflowEngine'], (ready) => {\n    const tools = optionalService(ready, 'tools');\n    const engine = optionalService(ready, 'workflowEngine');\n    const releaseTool = tools.register(readingTool(engine, normalizeOptions(config), registry));\n    try { replaceSkill('deep_read_summarize'); }\n    catch (error) {\n      if (typeof releaseTool === 'function') releaseTool();\n      if (parentCanRegister()) replaceSkill();\n      throw error;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[index.js:115-151](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/index.js#L115-L151)\n\n生命周期、缓存键、变更复查与保存条件。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\n    async execute(args, exec) {\n      if (!args || typeof args !== 'object' || Array.isArray(args)) throw new Error('[FATAL] expected an input object');\n      if (Object.keys(args).some(function (key) { return ['input', 'type', 'options'].indexOf(key) < 0; })) throw new Error('[FATAL] unknown deep_read_summarize argument');\n      if (typeof args.input !== 'string' || !args.input.trim()) throw new Error('[FATAL] args.input 必须是非空字符串');\n      if (args.type !== undefined && typeof args.type !== 'string') throw new Error('[FATAL] args.type 必须是字符串');\n      if (args.options !== undefined && (!args.options || typeof args.options !== 'object' || Array.isArray(args.options))) throw new Error('[FATAL] options 必须是对象');\n      const options = normalizeWorkflowOptions(Object.assign({}, defaults, args.options));\n      if (!exec || !exec.agent) throw new Error('deep_read_summarize requires a calling agent');\n      if (exec.signal && exec.signal.aborted) throw new Error('deep_read_summarize was cancelled before start');\n      const startArgs = { input: args.input, type: args.type || 'auto', options: options };\n      const script = workflow.buildSelfContainedScript(registry);\n      async function runWorkflow(runArgs) {\n        const run = engine.start({ script: script, meta: workflow.meta,\n          args: runArgs, parent: exec.agent, signal: exec.signal });\n        try {\n          const result = await run.result;\n          if (result.stopReason !== 'completed') throw new Error('deep_read_summarize ' + result.stopReason + ': ' + (result.error || 'workflow did not complete'));\n          if (!result.value || typeof result.value !== 'object' || Array.isArray(result.value)) throw new Error('deep_read_summarize returned an invalid workflow result');\n          return result.value;\n        } finally { await run.dispose(); }\n      }\n      if (!options.readCache) return runWorkflow(startArgs);\n      const started = Date.now();\n      const prepared = await runWorkflow(Object.assign({}, startArgs, { __cachePrepare: true }));\n      if (!prepared.__cachePrepared) return prepared;\n      if (!Array.isArray(prepared.chunkPrompts) || !Array.isArray(prepared.chunkPlan) || prepared.chunkPrompts.length !== prepared.chunkPlan.length || prepared.chunkPrompts.length > 12 || typeof prepared.tempFile !== 'string' || typeof prepared.tempDir !== 'string' || typeof prepared.selectedType !== 'string' || !prepared.fetched || typeof prepared.fetched !== 'object') throw new Error('deep_read_summarize returned invalid cache preparation');\n      const digest = readCache.sourceHash(options.tempDir, prepared.tempDir, prepared.tempFile);\n      const keys = prepared.chunkPrompts.map(function (prompt) { return readCache.keyFor(digest, options.readCacheIdentity, prompt, prepared.tempFile); });\n      const hits = keys.map(function (key) { return key ? readCache.read(options.tempDir, key) : null; });\n      const resume = { tempDir: prepared.tempDir, selectedType: prepared.selectedType, fetched: prepared.fetched, prompts: prepared.chunkPrompts, hits: hits };\n      if (exec.signal && exec.signal.aborted) throw new Error('deep_read_summarize was cancelled before cache resume');\n      const result = await runWorkflow(Object.assign({}, startArgs, { __cacheResume: resume }));\n      // Never use notes matched against a source that changed during the run.\n      if (digest && readCache.sourceHash(options.tempDir, prepared.tempDir, prepared.tempFile) !== digest) return runWorkflow(startArgs);\n      if (!(exec.signal && exec.signal.aborted) && digest && result.qualityPassed && Array.isArray(result.__cacheReads)) {\n        for (let i = 0; i < keys.length; i++) if (keys[i] && !hits[i] && readCache.portable(result.__cacheReads[i], prepared.tempDir)) readCache.write(options.tempDir, keys[i], result.__cacheReads[i]);\n      }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 质量通过能证明笔记事实正确吗？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n代码要求核验者给出若干通过标志并提供每块 ID、范围和非空摘录。缺块、重复或不完整来源会使覆盖失败。这些规则可定位结构缺口，核验者对内容、引用和完整来源的判断仍需要用户回查。抓取或转写本身有偏差时，通过并不能证明最初材料准确。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/quality.js:156-189](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/lib/quality.js#L156-L189)\n\n结构化核验和缺块、缺尾处理。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  const ctx = context || {};\n  const issues = [];\n  const gates = ['sourceChecked', 'coverage', 'citationsReal', 'terminologyConsistent', 'languageConsistent'];\n  const results = {};\n  for (const gate of gates) {\n    results[gate] = !!check && check[gate] === true;\n    if (!results[gate]) issues.push('原文核验未通过或缺失：' + gate);\n  }\n  if (check && Array.isArray(check.issues)) {\n    issues.push(...check.issues.filter(issue => typeof issue === 'string' && issue.trim()));\n  }\n  const plan = ctx.chunkPlan || [];\n  const chunkChecks = check && Array.isArray(check.chunkChecks) ? check.chunkChecks : [];\n  const seen = new Set();\n  for (const evidence of chunkChecks) {\n    const chunk = evidence && plan.find(item => item.id === evidence.chunkId);\n    if (!chunk || seen.has(evidence.chunkId) || evidence.startLine !== chunk.startLine || evidence.endLine !== chunk.endLine ||\n        typeof evidence.sourceExcerpt !== 'string' || !evidence.sourceExcerpt.trim() || evidence.covered !== true) {\n      results.coverage = false;\n      issues.push('分块核验证据无效、重复或未覆盖');\n    } else seen.add(evidence.chunkId);\n  }\n  if (plan.some(chunk => !seen.has(chunk.id))) {\n    results.coverage = false; issues.push('原文核验未逐一覆盖全部分块');\n  }\n  if (ctx.coverageComplete !== true) {\n    results.coverage = false; issues.push('获取结果缺少有效 totalLines，无法确认原文尾部是否完整覆盖');\n  }\n  if (ctx.sourceComplete === false) {\n    results.coverage = false;\n    issues.push('来源不完整：' + (ctx.textSource === 'desc' ? '仅有视频简介，不能代替完整字幕或逐字稿' : '视频来源未经确认为完整字幕或逐字稿'));\n  }\n  if (ctx.failedChunkIds && ctx.failedChunkIds.length) {\n    results.coverage = false; issues.push('精读仍有缺口，失败块：' + ctx.failedChunkIds.join(', '));\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:86-95](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/README.md#L86-L95)\n\n作者给出核验和来源限制。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n## 结果能信到什么程度？\n\n工作流会规范化分块范围，检查已知原文行号的覆盖情况；成稿后，程序检查格式和篇幅，并由独立核验代理读取取得的文本，检查分块覆盖与关键引文。核验结果可通过 `qualityPassed`、`qualityChecks` 和 `qualityEvidence` 查看。\n\n这些检查有边界：\n\n- **`qualityPassed` 不是事实正确性的证明。**覆盖和原文真实性判断仍依赖核验代理实际读取与判断；重要结论、数字和引用请自行复核。\n- **取得全文不等于理解了全文。**复杂表格、公式、图片以及提取错误可能影响结果；来源不完整或分块失败时，结果会报告缺口。\n- **字幕或转写不等于音频原文。**自动字幕和语音识别可能漏句、听错数字或否定词；核验笔记与逐字稿不能证明逐字稿本身准确。\n- **视频时间戳不能凭空推算。**可定位性取决于取得的字幕或转写是否包含时间信息。\n```\n\n</details>\n\n#### 缺口\n\n- 真实错误报告的漏判率未知。\n  **影响**：不能自动发布高影响笔记。\n  **进一步探讨**：注入错引、缺段及误转写，统计检出和人工对照。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样限制第一次试用？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、采用判断\n\n#### 完整回答\n\n用公开短论文和可恢复的输出目录试一次，确认宿主工作流可用、模型数据处理许可和笔记已实际保存。时间及费用随提取、分块和调用变化，明文缓存默认可保持关闭。发现错引、缺页或未经允许的数据流就停止，按原文手工整理。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[index.js:121-136](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/index.js#L121-L136)\n\n需调用 Agent 和宿主引擎。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n      const options = normalizeWorkflowOptions(Object.assign({}, defaults, args.options));\n      if (!exec || !exec.agent) throw new Error('deep_read_summarize requires a calling agent');\n      if (exec.signal && exec.signal.aborted) throw new Error('deep_read_summarize was cancelled before start');\n      const startArgs = { input: args.input, type: args.type || 'auto', options: options };\n      const script = workflow.buildSelfContainedScript(registry);\n      async function runWorkflow(runArgs) {\n        const run = engine.start({ script: script, meta: workflow.meta,\n          args: runArgs, parent: exec.agent, signal: exec.signal });\n        try {\n          const result = await run.result;\n          if (result.stopReason !== 'completed') throw new Error('deep_read_summarize ' + result.stopReason + ': ' + (result.error || 'workflow did not complete'));\n          if (!result.value || typeof result.value !== 'object' || Array.isArray(result.value)) throw new Error('deep_read_summarize returned an invalid workflow result');\n          return result.value;\n        } finally { await run.dispose(); }\n      }\n      if (!options.readCache) return runWorkflow(startArgs);\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:114-125](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/README.md#L114-L125)\n\n缓存和模型数据流。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n| `readCache` | `false` | 可选的跨次精读缓存；仅插件工具入口支持 |\n\n开启 `readCache` 时，还必须提供 `readCacheIdentity`，写明供应商、固定模型版本及影响输出的设置；这些信息变化时需更换身份。该身份由调用者提供，宿主无法自动验证。缓存为本地明文，可能包含原文摘录；命中后仍会执行独立原文核验。\n\n其他选项包括 `frontmatter`（`obsidian`、`generic`、`minimal`）和 `tempDir`。高级选项、取值范围、转写缓存和自定义解析器可参考[完整配置与技术参考](https://github.com/PensiveFei/deep-read-summarize/blob/main/docs/README-reference.zh.md)。\n\n## 时间、费用与隐私\n\n- **时间**取决于内容长度、获取方式、分块数量、模型和宿主并发。没有字幕的视频需要额外转写，首次使用还可能下载转写模型。\n- **费用**取决于你配置的模型、输入与输出量；本项目不能保证固定的耗时或费用。\n- **隐私**：本地语音转写在本机运行，但后续精读使用你在 DSH 中配置的模型。若使用云端模型，原文、字幕、笔记或相关上下文可能发送给对应服务商；请先确认其数据处理条款。\n- **本地文件**：临时原文、转写和可选缓存可能保存在设备上；处理敏感资料前请确认目录权限与清理方式。\n```\n\n</details>\n\n#### 缺口\n\n- 资源用量与宿主实测缺失。\n  **影响**：不能预测长文任务总成本。\n  **进一步探讨**：在公开同长材料比较调用、存储和人工复核。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 对摘录做独立位置比对能否降低误判？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可增加每块摘录与已取得原文的字面匹配及原文件定位。它只能验证摘录来源，不能解释转写或事实本身。以错引和正确改写构造对照，若错误未减少或合理改写大量误拒，则需缩小匹配适用范围。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/quality.js:167-195](https://github.com/PensiveFei/deep-read-summarize/blob/51ce66b585837d3bcd4489c0a5279317ac809a2e/lib/quality.js#L167-L195)\n\n已有块身份及核验结构可作定位输入。\n\n<details>\n<summary>查看原文（29行）</summary>\n\n```text\n  const plan = ctx.chunkPlan || [];\n  const chunkChecks = check && Array.isArray(check.chunkChecks) ? check.chunkChecks : [];\n  const seen = new Set();\n  for (const evidence of chunkChecks) {\n    const chunk = evidence && plan.find(item => item.id === evidence.chunkId);\n    if (!chunk || seen.has(evidence.chunkId) || evidence.startLine !== chunk.startLine || evidence.endLine !== chunk.endLine ||\n        typeof evidence.sourceExcerpt !== 'string' || !evidence.sourceExcerpt.trim() || evidence.covered !== true) {\n      results.coverage = false;\n      issues.push('分块核验证据无效、重复或未覆盖');\n    } else seen.add(evidence.chunkId);\n  }\n  if (plan.some(chunk => !seen.has(chunk.id))) {\n    results.coverage = false; issues.push('原文核验未逐一覆盖全部分块');\n  }\n  if (ctx.coverageComplete !== true) {\n    results.coverage = false; issues.push('获取结果缺少有效 totalLines，无法确认原文尾部是否完整覆盖');\n  }\n  if (ctx.sourceComplete === false) {\n    results.coverage = false;\n    issues.push('来源不完整：' + (ctx.textSource === 'desc' ? '仅有视频简介，不能代替完整字幕或逐字稿' : '视频来源未经确认为完整字幕或逐字稿'));\n  }\n  if (ctx.failedChunkIds && ctx.failedChunkIds.length) {\n    results.coverage = false; issues.push('精读仍有缺口，失败块：' + ctx.failedChunkIds.join(', '));\n  }\n  function normalize(value) { return typeof value === 'string' ? value.replace(/\\s+/g, ' ').trim() : ''; }\n  const citationChecks = check && Array.isArray(check.citationChecks) ? check.citationChecks : [];\n  const requiredQuotes = (ctx.quotes || []).map(normalize);\n  const verifiedQuotes = [];\n  for (const citation of citationChecks) {\n```\n\n</details>\n\n#### 缺口\n\n- 附加匹配策略未试。\n  **影响**：收益与误拒未知。\n  **进一步探讨**：对同一注入题集做配对测量。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：52eb42a61cd2a77843f5aa3ae47441d8e8ea613f4e0877b824f28f87fb632198。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 13 | 1978 | — | — | 33317 |\n| .md | example | 4 | 558 | — | — | 16831 |\n| .js | source | 20 | 3035 | 2490 | 383 | — |\n| .js | test | 20 | 4160 | 3728 | 182 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 精读工作流 | 整理长资料并生成候选笔记 | 主 Agent 负责实际保存 |\n| 质量报告 | 定位缺块与核验结果 | 关键事实须回原文 |\n\n## 工程亮点\n\n[Q02](#research-q02) 工作流显式释放，缓存后检查文件哈希。[Q03](#research-q03) 缺块会降低质量状态。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 index.js、lib/quality.js、README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：只核查工具入口、跨次缓存及质量门，未运行模型或全量媒体解析。\n- 下一步：在相同公开来源注入错引和缺页，比较报告、人工查证和费用。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-11-01/pensivefei--deep-read-summarize/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"PensiveFei/deep-read-summarize\",\n  \"revision\": \"51ce66b585837d3bcd4489c0a5279317ac809a2e\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"index.js\",\n    \"lib/quality.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"用户能否用分块精读生成可保存、可核对的长文笔记，并识别质量门的证据边界？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"精读流程解决什么反复工作？\",\n        \"answer\": \"需要把长论文或转写材料整理成 Markdown 笔记的用户，通常手工分段、再核对引文和缺页。插件把工作流调用和质量结果放进同一工具返回，并把实际保存交给主 Agent。合格产物应有已保存文件、关键原文定位和已知缺口；仅看到工具成功还不够。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 55,\n            \"line_end\": 66,\n            \"observation\": \"作者说明任务、保存责任和核对。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 98,\n            \"line_end\": 113,\n            \"observation\": \"工具输出正文和路径建议。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"节时和人工审阅负担未测。\",\n            \"impact\": \"无法证明比短文直接读更有效。\",\n            \"next_step\": \"比较同一长文的人工分段与工具笔记。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"工具如何运行和复用精读？\",\n        \"answer\": \"宿主就绪后注册模型工具，调用时启动工作流并在 finally 释放。打开可选跨次缓存时，先准备分块及文件哈希，根据来源、调用者提供的模型身份和提示词查缓存。恢复执行后再次检查来源哈希，变化则重新运行；只在通过质量检查时保存合适的未命中结果。\",\n        \"status\": \"answered\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 177,\n            \"line_end\": 199,\n            \"observation\": \"依赖就绪后注册工具。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 115,\n            \"line_end\": 151,\n            \"observation\": \"生命周期、缓存键、变更复查与保存条件。\"\n          }\n        ],\n        \"unknowns\": []\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"质量通过能证明笔记事实正确吗？\",\n        \"answer\": \"代码要求核验者给出若干通过标志并提供每块 ID、范围和非空摘录。缺块、重复或不完整来源会使覆盖失败。这些规则可定位结构缺口，核验者对内容、引用和完整来源的判断仍需要用户回查。抓取或转写本身有偏差时，通过并不能证明最初材料准确。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/quality.js\",\n            \"line_start\": 156,\n            \"line_end\": 189,\n            \"observation\": \"结构化核验和缺块、缺尾处理。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 86,\n            \"line_end\": 95,\n            \"observation\": \"作者给出核验和来源限制。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实错误报告的漏判率未知。\",\n            \"impact\": \"不能自动发布高影响笔记。\",\n            \"next_step\": \"注入错引、缺段及误转写，统计检出和人工对照。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样限制第一次试用？\",\n        \"answer\": \"用公开短论文和可恢复的输出目录试一次，确认宿主工作流可用、模型数据处理许可和笔记已实际保存。时间及费用随提取、分块和调用变化，明文缓存默认可保持关闭。发现错引、缺页或未经允许的数据流就停止，按原文手工整理。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"index.js\",\n            \"line_start\": 121,\n            \"line_end\": 136,\n            \"observation\": \"需调用 Agent 和宿主引擎。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 114,\n            \"line_end\": 125,\n            \"observation\": \"缓存和模型数据流。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"资源用量与宿主实测缺失。\",\n            \"impact\": \"不能预测长文任务总成本。\",\n            \"next_step\": \"在公开同长材料比较调用、存储和人工复核。\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"对摘录做独立位置比对能否降低误判？\",\n        \"answer\": \"可增加每块摘录与已取得原文的字面匹配及原文件定位。它只能验证摘录来源，不能解释转写或事实本身。以错引和正确改写构造对照，若错误未减少或合理改写大量误拒，则需缩小匹配适用范围。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/quality.js\",\n            \"line_start\": 167,\n            \"line_end\": 195,\n            \"observation\": \"已有块身份及核验结构可作定位输入。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"附加匹配策略未试。\",\n            \"impact\": \"收益与误拒未知。\",\n            \"next_step\": \"对同一注入题集做配对测量。\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# deep-read-summarize\\n\\n[English](https://github.com/PensiveFei/deep-read-summarize/blob/main/README.en.md) | 简体中文\\n\\n[![MIT license](https://img.shields.io/github/license/PensiveFei/deep-read-summarize)](https://github.com/PensiveFei/deep-read-summarize/blob/main/LICENSE)\\n[![release](https://img.shields.io/github/v/release/PensiveFei/deep-read-summarize)](https://github.com/PensiveFei/deep-read-summarize/releases)\\n[![CI](https://img.shields.io/github/actions/workflow/status/PensiveFei/deep-read-summarize/ci.yml)](https://github.com/PensiveFei/deep-read-summarize/actions/workflows/ci.yml)\\n[![npm total downloads](https://badgen.net/npm/dt/deep-read-summarize)](https://www.npmjs.com/package/deep-read-summarize)\\n\\n把论文、书籍、视频或网页整理成一份**可以继续阅读、编辑和回查的 Markdown 笔记**。\\n\\n这是一个运行在 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness) 中的第三方精读插件。它尝试获取来源全文，将长内容分块阅读，再合并成带 YAML frontmatter 的结构化笔记。你可以把结果放进 Obsidian、Logseq 或其他 Markdown 工具。\\n\\n[先看真实笔记](#看看笔记) · [安装与第一次使用](#开始使用) · [了解质量与限制](#结果能信到什么程度) · [常用配置](#常用配置)\\n\\n> AI 笔记可能遗漏或误解原文。请把它作为辅助阅读的起点，关键事实与引用仍需对照来源。\\n\\n## 看看笔记\\n\\n- 📄 [论文：大语言模型的情绪智力](https://github.com/PensiveFei/deep-read-summarize/blob/main/examples/emotional-intelligence.md)\\n- 📄 [论文：Chain-of-Thought Prompting](https://github.com/PensiveFei/deep-read-summarize/blob/main/examples/chain-of-thought.md)\\n- 🎬 [视频：Andrej Karpathy 的 LLM 入门讲座](https://github.com/PensiveFei/deep-read-summarize/blob/main/examples/intro-to-llms-video.md)\\n\\n这些是维护者提供的历史笔记：两篇论文有早期项目运行记录，视频笔记的生成方式尚未确认。模型、项目版本和运行耗时未记录，它们不是当前版本的性能承诺。部分引文和时间戳已抽查、并标注了公开副本的修改；详见[示例说明](https://github.com/PensiveFei/deep-read-summarize/blob/main/examples/README.md)。\\n\\n![一篇论文的结构化阅读笔记](https://raw.githubusercontent.com/PensiveFei/deep-read-summarize/main/docs/showcase/showcase-paper-note-cot.png)\\n\\n## 它能做什么\\n\\n| 你提供 | 工作流尝试获取 | 你得到 |\\n| --- | --- | --- |\\n| 书籍：PDF、EPUB、MOBI | 文本和章节 | 按主题整理的阅读笔记 |\\n| 论文：arXiv、PDF、HTML | 论文正文和结构 | 研究问题、方法、结论与局限 |\\n| 视频链接 | 优先字幕；无字幕时可尝试本地转写 | 基于已取得文本的内容拆解 |\\n| 网页链接 | 页面正文 | 要点、概念和来源信息 |\\n\\n实际提取结果取决于来源是否可访问、工具是否可用、模型和宿主权限。扫描版 PDF 通常需要先进行 OCR，工作流不内置自动 OCR；复杂公式、图表以及质量差的字幕或音频可能需要人工处理。\\n\\n笔记通常包含概述、结构拆解、术语表、关键引用、批判性分析和应用思考。最终内容仍由模型生成，不同输入和配置可能产生不同结果。\\n\\n## 开始使用\\n\\n### 1. 安装插件\\n\\n先安装并启动一次 DSH Desktop，让它初始化桌面 profile；然后**完全退出应用**，使用 Desktop 随附的 DSH 命令安装：\\n\\n```bash\\ndsh plugin --profile desktop add deep-read-summarize\\n```\\n\\n安装完成后重新打开 DSH Desktop。随附命令不一定在系统 PATH 中：可使用安装目录下 `resources/runtime/cli/bin/dsh`（Windows 为 `dsh.cmd`）。界面和命令可能随宿主版本变化，详见 [DSH Desktop 官方说明](https://github.com/deepseek-ai/deepseek-harness/blob/master/apps/desktop/README.zh.md)。请勿在 DSH profile 目录中直接运行 `npm install` 或 `npm update`。\\n\\n运行精读还需要 DSH 中可用的模型和相应权限；不同来源可能需要额外工具。例如 PDF 文本提取可能需要 `pdftotext`，YouTube 字幕获取可能需要 `yt-dlp`，无字幕视频的本地转写可能需要 `uv` 和转写模型。\\n\\n### 2. 发起一次精读\\n\\n在 DSH 对话中输入，例如：\\n\\n```text\\n请帮我精读这篇论文，并生成一份 Markdown 阅读笔记：\\nhttps://arxiv.org/abs/2307.09042\\n```\\n\\n你也可以提供本地文件路径、网页或视频链接。如果需要，可以在请求中说明输出位置、希望保留的章节或是否需要时间戳。\\n\\n支持插件工具的宿主会注册 `deep_read_summarize`；旧宿主使用插件提供的技能和 workflow 入口。精读工具返回笔记正文及建议路径，**实际写入文件需要由主代理完成**。生成后请确认文件已保存，并检查结果中是否报告内容缺口或质量问题。\\n\\n<details>\\n<summary>直接调用工具的参数示例</summary>\\n\\n```json\\n{\\n  \\\"input\\\": \\\"https://arxiv.org/abs/2307.09042\\\",\\n  \\\"type\\\": \\\"paper\\\",\\n  \\\"options\\\": {\\n    \\\"maxChunks\\\": 4,\\n    \\\"outputDir\\\": \\\"./output\\\"\\n  }\\n}\\n```\\n\\n`type` 可选 `auto`、`book`、`paper`、`video` 或 `web`。显式指定类型可以跳过部分模糊输入的识别步骤。具体工具调用方式取决于 DSH 宿主；也可以直接在对话里表达需求。\\n\\n</details>\\n\\n## 结果能信到什么程度？\\n\\n工作流会规范化分块范围，检查已知原文行号的覆盖情况；成稿后，程序检查格式和篇幅，并由独立核验代理读取取得的文本，检查分块覆盖与关键引文。核验结果可通过 `qualityPassed`、`qualityChecks` 和 `qualityEvidence` 查看。\\n\\n这些检查有边界：\\n\\n- **`qualityPassed` 不是事实正确性的证明。**覆盖和原文真实性判断仍依赖核验代理实际读取与判断；重要结论、数字和引用请自行复核。\\n- **取得全文不等于理解了全文。**复杂表格、公式、图片以及提取错误可能影响结果；来源不完整或分块失败时，结果会报告缺口。\\n- **字幕或转写不等于音频原文。**自动字幕和语音识别可能漏句、听错数字或否定词；核验笔记与逐字稿不能证明逐字稿本身准确。\\n- **视频时间戳不能凭空推算。**可定位性取决于取得的字幕或转写是否包含时间信息。\\n\\n## 常用配置\\n\\n| 选项 | 默认值 | 用途 |\\n| --- | --- | --- |\\n| `minWords` | `2500` | 最低篇幅要求；检查规则按中文字符和其他文字的词计算 |\\n| `fastMode` | `false` | 开启后省略批判性分析、个人应用和延伸阅读章节 |\\n| `maxChunks` | `4` | 分块数量上限，最大为 12；不是并发数 |\\n| `readConcurrency` | `3` | 精读并发上限；并发更高不一定更快 |\\n| `maxRetries` | `0` | 未通过质量检查时的修订次数；成稿成功后默认执行一次核验，不做修订 |\\n| `outputDir` | `./output` | 建议的笔记输出目录，由主代理完成写入 |\\n| `requireCitations` | `true` | 要求关键引用具备可核验的来源信息 |\\n| `includeTimestamps` | `false` | 视频笔记是否要求时间戳 |\\n| `transcribe` | `true` | 视频没有可用字幕时，尝试本地转写 |\\n| `whisperModel` / `language` | `small` / `zh` | 选择转写模型和语言；英文视频可显式指定 `en` |\\n| `device` / `cpuThreads` | `cpu` / `0` | 选择转写设备和 CPU 线程策略 |\\n| `transcriptCache` | `true` | 相同音频及匹配配置时复用已验证的转写缓存 |\\n| `parallelQuality` | `false` | 显式启用并行原文核验；默认保留原核验路径 |\\n| `readCache` | `false` | 可选的跨次精读缓存；仅插件工具入口支持 |\\n\\n开启 `readCache` 时，还必须提供 `readCacheIdentity`，写明供应商、固定模型版本及影响输出的设置；这些信息变化时需更换身份。该身份由调用者提供，宿主无法自动验证。缓存为本地明文，可能包含原文摘录；命中后仍会执行独立原文核验。\\n\\n其他选项包括 `frontmatter`（`obsidian`、`generic`、`minimal`）和 `tempDir`。高级选项、取值范围、转写缓存和自定义解析器可参考[完整配置与技术参考](https://github.com/PensiveFei/deep-read-summarize/blob/main/docs/README-reference.zh.md)。\\n\\n## 时间、费用与隐私\\n\\n- **时间**取决于内容长度、获取方式、分块数量、模型和宿主并发。没有字幕的视频需要额外转写，首次使用还可能下载转写模型。\\n- **费用**取决于你配置的模型、输入与输出量；本项目不能保证固定的耗时或费用。\\n- **隐私**：本地语音转写在本机运行，但后续精读使用你在 DSH 中配置的模型。若使用云端模型，原文、字幕、笔记或相关上下文可能发送给对应服务商；请先确认其数据处理条款。\\n- **本地文件**：临时原文、转写和可选缓存可能保存在设备上；处理敏感资料前请确认目录权限与清理方式。\\n\\n## 出问题时\\n\\n- **插件不可用**：确认已在正确的 DSH profile 安装、重启了桌面应用，并检查宿主版本和插件兼容信息。\\n- **获取失败或笔记缺段**：确认链接可访问、所需工具已安装；查看返回的阶段、来源状态和失败分块。\\n- **只有视频简介**：说明没有取得可确认的完整字幕或逐字稿；请检查字幕与转写条件，或提供文本。\\n- **质量检查未通过**：查看 `qualityIssues` 和 `qualityEvidence`，必要时对照原文修订；不要把未核实的笔记当作完整结论。\\n\\n仍有问题？欢迎在 [GitHub Issues](https://github.com/PensiveFei/deep-read-summarize/issues) 提供操作系统、DSH 与插件版本、输入类型和错误信息。请先去掉密钥、私有链接和个人资料。\\n\\n## 开发与贡献\\n\\n源码开发请在**独立的项目目录**进行，而不是在 DSH profile 目录运行 npm：\\n\\n```bash\\ngit clone https://github.com/PensiveFei/deep-read-summarize.git\\ncd deep-read-summarize\\nnpm ci\\nnpm test\\nnpm run test:node\\nnpm run lint\\nnpm run validate\\n```\\n\\n项目使用解析器处理不同输入类型，支持自定义解析器。代码和测试见[仓库](https://github.com/PensiveFei/deep-read-summarize)，版本变化见 [CHANGELOG](https://github.com/PensiveFei/deep-read-summarize/blob/main/CHANGELOG.md)，贡献方式见 [CONTRIBUTING](https://github.com/PensiveFei/deep-read-summarize/blob/main/CONTRIBUTING.md)。\\n\\n**兼容性：**本项目此前验证过 DSH `0.2.0-rc.2` 的相关宿主契约；DSH 接口可能变化，其他版本请以实际测试和兼容说明为准。\\n\\n## 版权与声明\\n\\n项目代码采用 [MIT License](https://github.com/PensiveFei/deep-read-summarize/blob/main/LICENSE)。示例中引用的论文、视频和短引文仍受其各自权利与授权条件约束。\\n\\ndeep-read-summarize 是独立的第三方项目，与 DeepSeek 或 DeepSeek Harness 官方没有隶属、认可或赞助关系。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"deep-read-summarize\\\",\\n  \\\"version\\\": \\\"0.6.1\\\",\\n  \\\"description\\\": \\\"Deep reading & summarization for DSH: books/papers/videos/web → structured Markdown notes with YAML frontmatter. Plugin parsers, MapReduce deep-read, JSON Schema-constrained sub-tasks.\\\",\\n  \\\"type\\\": \\\"commonjs\\\",\\n  \\\"main\\\": \\\"index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./index.js\\\",\\n    \\\"./workflow\\\": \\\"./workflow.js\\\",\\n    \\\"./parsers\\\": \\\"./parsers/index.js\\\",\\n    \\\"./schemas\\\": \\\"./schemas/index.js\\\",\\n    \\\"./lib/cache\\\": \\\"./lib/cache.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"index.js\\\",\\n    \\\"workflow.js\\\",\\n    \\\"parsers\\\",\\n    \\\"custom-parsers\\\",\\n    \\\"schemas\\\",\\n    \\\"lib\\\",\\n    \\\"skills\\\",\\n    \\\"scripts\\\",\\n    \\\"!scripts/release.js\\\",\\n    \\\"docs/RELEASE.md\\\",\\n    \\\"docs/ASR_BENCHMARK.md\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"CHANGELOG.md\\\",\\n    \\\"README.md\\\",\\n    \\\"LICENSE\\\",\\n    \\\"SECURITY.md\\\",\\n    \\\".env.example\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node tests/run-tests.js\\\",\\n    \\\"lint\\\": \\\"node scripts/lint.js\\\",\\n    \\\"validate\\\": \\\"node tests/quick_validate.js && node scripts/security-check.js\\\",\\n    \\\"security\\\": \\\"node scripts/security-check.js\\\",\\n    \\\"test:node\\\": \\\"node --test\\\",\\n    \\\"release\\\": \\\"node scripts/release.js\\\",\\n    \\\"prepublishOnly\\\": \\\"node tests/run-tests.js && node --test && node scripts/lint.js && node scripts/security-check.js\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"lockedRuntime\\\": \\\"workflow tool semantics — see CHANGELOG.md\\\",\\n    \\\"minVersion\\\": \\\"0.1.0\\\",\\n    \\\"breakingPolicy\\\": \\\"re-validate with npm test after each DSH upgrade\\\"\\n  },\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"workflow\\\",\\n    \\\"summarization\\\",\\n    \\\"deep-read\\\",\\n    \\\"obsidian\\\",\\n    \\\"markdown\\\",\\n    \\\"llm\\\",\\n    \\\"subagent\\\",\\n    \\\"mapreduce\\\",\\n    \\\"parsers\\\"\\n  ],\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"publishConfig\\\": {\\n    \\\"access\\\": \\\"public\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=18\\\",\\n    \\\"dsh\\\": \\\">=0.1.0-rc.6\\\"\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/PensiveFei/deep-read-summarize.git\\\"\\n  },\\n  \\\"dependencies\\\": {\\n    \\\"acorn\\\": \\\"8.19.0\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"index.js\",\n      \"content\": \"// ============================================================================\\n// deep-read-summarize — DSH plugin entry\\n// ============================================================================\\n// 标准 Cordis 插件（DSH 0.1.x / 0.2.x 契约，已在 0.2.0-rc.2 实测）：导出 name + inject + apply(ctx, config)。\\n// apply() 将插件自带的 SKILL.md 注册为运行时技能，并把 workflow 的\\n// meta + 自包含 script + args 示例嵌入技能内容，使模型可直接用 workflow\\n// 工具执行精读流程。\\n//\\n// config：插件级默认 options（cordis.patch.yml 的 config 段）。此前 apply()\\n// 收了 config 却从不读它——配置文件里写的那些键全是空转。现在这些键会被\\n// 校验、合并进技能里的 args 示例，成为该 profile 的默认值。\\n//\\n// 同时保留 load / workflow / parsers / schemas 导出，兼容旧式加载读取。\\n// 安装方式（dsh profile 目录）: pnpm add ./xxx.tgz → dsh.profile.bundles 追加\\n// ============================================================================\\n\\nconst { readFileSync } = require('node:fs');\\nconst path = require('node:path');\\n\\nconst workflow = require('./workflow');\\nconst parsers = require('./parsers');\\nconst schemas = require('./schemas');\\nconst { DEFAULT_OPTIONS, normalizeWorkflowOptions } = require('./lib/options');\\nconst readCache = require('./lib/read-cache');\\n\\nmodule.exports.name = 'deep-read-summarize';\\nmodule.exports.inject = ['skills'];\\n\\n/**\\n * 归一化插件 config：只认白名单里的键，类型不符就告警并忽略（不抛错，\\n * 免得一个拼错的配置项把整个 profile 拖死）。\\n * 支持 `config: { outputDir: ... }` 与 `config: { options: { outputDir: ... } }` 两种写法。\\n */\\nfunction normalizeOptions(config) {\\n  let raw = config && Object.prototype.hasOwnProperty.call(config, 'options') ? config.options : config;\\n  if (raw && typeof raw === 'object' && !Array.isArray(raw) && raw === config) {\\n    raw = Object.assign({}, raw);\\n    delete raw.customParsersDir; // plugin-only executable extension directory\\n  }\\n  return normalizeWorkflowOptions(raw, { mode: 'config', warn: function (message) { console.warn(message); } });\\n}\\n\\nfunction configuredRegistry(config) {\\n  if (!config || !Object.prototype.hasOwnProperty.call(config, 'customParsersDir')) return parsers.registry;\\n  const dir = config.customParsersDir;\\n  if (typeof dir !== 'string' || !dir.trim() || /[\\\\u0000\\\\r\\\\n]/.test(dir)) {\\n    console.warn('[deep-read-summarize] ignoring config.customParsersDir — expected a non-empty directory path');\\n    return parsers.registry;\\n  }\\n  return new parsers.ParserRegistry({ customParsersDir: dir });\\n}\\n\\n/** 组装技能内容：SKILL.md + workflow meta/script/args 示例（script 为自包含版本）。 */\\nfunction buildSkillContent(config = {}, runtime = {}) {\\n  const skillDir = path.join(__dirname, 'skills', 'deep-read-summarize');\\n  const body = readFileSync(path.join(skillDir, 'SKILL.md'), 'utf8');\\n  const argsExample = {\\n    input: '<链接或本地路径>',\\n    type: 'auto',\\n    options: normalizeOptions(config)\\n  };\\n  if (runtime.toolName) {\\n    return [body.trim(), '', '## 调用精读工具',\\n      '调用 `' + runtime.toolName + '`，只提交 input / type / options。工具返回完整 note 与建议 filePath；必须按上文执行同名文件询问、落盘和质量报告。',\\n      'args 示例（options 是本 profile 的默认值，用户另有要求时再覆盖）：',\\n      '```json', JSON.stringify(argsExample, null, 2), '```'].join('\\\\n');\\n  }\\n  return [\\n    body.trim(),\\n    '',\\n    '## 使用 workflow 工具执行',\\n    '当用户给出书籍/论文/视频/网页并要求深度精读时，调用 `workflow` 工具，按下面的 meta + script + args 提交。',\\n    '',\\n    'meta：',\\n    '```json',\\n    JSON.stringify(workflow.meta, null, 2),\\n    '```',\\n    '',\\n    'script（完整脚本，原样填入 script 参数；脚本已自包含解析器，无需宿主注入）：',\\n    '```javascript',\\n    workflow.buildSelfContainedScript(runtime.registry || configuredRegistry(config)),\\n    '```',\\n    '',\\n    'args 示例（options 是本 profile 的默认值，用户另有要求时再覆盖）：',\\n    '```json',\\n    JSON.stringify(argsExample, null, 2),\\n    '```'\\n  ].join('\\\\n');\\n}\\n\\n// This is the public DSH WorkflowEngine.start / ToolDefinition contract used\\n// by dsh-tool-workflow itself. Optional services keep older profiles working.\\nfunction optionalService(ctx, name) {\\n  if (typeof ctx.get === 'function') return ctx.get(name);\\n  return ctx[name];\\n}\\n\\nfunction readingTool(engine, defaults, registry) {\\n  return {\\n    name: 'deep_read_summarize',\\n    description: '深度精读书籍、论文、视频或网页，返回完整 Markdown 笔记、建议保存路径及原文质量核验结果。拿到结果后必须检查同名文件并保存 note；质量未通过或有内容缺口时必须报告。',\\n    parameters: {\\n      type: 'object', additionalProperties: false,\\n      properties: {\\n        input: { type: 'string', description: '内容链接或本地文件路径' },\\n        type: { type: 'string', description: 'auto 或已注册的解析器类型，默认 auto' },\\n        options: { type: 'object', additionalProperties: true, description: '覆盖当前 profile 的精读选项' }\\n      }, required: ['input']\\n    },\\n    output: {\\n      schema: { type: 'object', additionalProperties: true },\\n      // Never clip the note: the main agent needs its complete value to save it.\\n      render: function (args, value) { return [{ type: 'text', text: JSON.stringify(value) }]; }\\n    },\\n    async execute(args, exec) {\\n      if (!args || typeof args !== 'object' || Array.isArray(args)) throw new Error('[FATAL] expected an input object');\\n      if (Object.keys(args).some(function (key) { return ['input', 'type', 'options'].indexOf(key) < 0; })) throw new Error('[FATAL] unknown deep_read_summarize argument');\\n      if (typeof args.input !== 'string' || !args.input.trim()) throw new Error('[FATAL] args.input 必须是非空字符串');\\n      if (args.type !== undefined && typeof args.type !== 'string') throw new Error('[FATAL] args.type 必须是字符串');\\n      if (args.options !== undefined && (!args.options || typeof args.options !== 'object' || Array.isArray(args.options))) throw new Error('[FATAL] options 必须是对象');\\n      const options = normalizeWorkflowOptions(Object.assign({}, defaults, args.options));\\n      if (!exec || !exec.agent) throw new Error('deep_read_summarize requires a calling agent');\\n      if (exec.signal && exec.signal.aborted) throw new Error('deep_read_summarize was cancelled before start');\\n      const startArgs = { input: args.input, type: args.type || 'auto', options: options };\\n      const script = workflow.buildSelfContainedScript(registry);\\n      async function runWorkflow(runArgs) {\\n        const run = engine.start({ script: script, meta: workflow.meta,\\n          args: runArgs, parent: exec.agent, signal: exec.signal });\\n        try {\\n          const result = await run.result;\\n          if (result.stopReason !== 'completed') throw new Error('deep_read_summarize ' + result.stopReason + ': ' + (result.error || 'workflow did not complete'));\\n          if (!result.value || typeof result.value !== 'object' || Array.isArray(result.value)) throw new Error('deep_read_summarize returned an invalid workflow result');\\n          return result.value;\\n        } finally { await run.dispose(); }\\n      }\\n      if (!options.readCache) return runWorkflow(startArgs);\\n      const started = Date.now();\\n      const prepared = await runWorkflow(Object.assign({}, startArgs, { __cachePrepare: true }));\\n      if (!prepared.__cachePrepared) return prepared;\\n      if (!Array.isArray(prepared.chunkPrompts) || !Array.isArray(prepared.chunkPlan) || prepared.chunkPrompts.length !== prepared.chunkPlan.length || prepared.chunkPrompts.length > 12 || typeof prepared.tempFile !== 'string' || typeof prepared.tempDir !== 'string' || typeof prepared.selectedType !== 'string' || !prepared.fetched || typeof prepared.fetched !== 'object') throw new Error('deep_read_summarize returned invalid cache preparation');\\n      const digest = readCache.sourceHash(options.tempDir, prepared.tempDir, prepared.tempFile);\\n      const keys = prepared.chunkPrompts.map(function (prompt) { return readCache.keyFor(digest, options.readCacheIdentity, prompt, prepared.tempFile); });\\n      const hits = keys.map(function (key) { return key ? readCache.read(options.tempDir, key) : null; });\\n      const resume = { tempDir: prepared.tempDir, selectedType: prepared.selectedType, fetched: prepared.fetched, prompts: prepared.chunkPrompts, hits: hits };\\n      if (exec.signal && exec.signal.aborted) throw new Error('deep_read_summarize was cancelled before cache resume');\\n      const result = await runWorkflow(Object.assign({}, startArgs, { __cacheResume: resume }));\\n      // Never use notes matched against a source that changed during the run.\\n      if (digest && readCache.sourceHash(options.tempDir, prepared.tempDir, prepared.tempFile) !== digest) return runWorkflow(startArgs);\\n      if (!(exec.signal && exec.signal.aborted) && digest && result.qualityPassed && Array.isArray(result.__cacheReads)) {\\n        for (let i = 0; i < keys.length; i++) if (keys[i] && !hits[i] && readCache.portable(result.__cacheReads[i], prepared.tempDir)) readCache.write(options.tempDir, keys[i], result.__cacheReads[i]);\\n      }\\n      delete result.__cacheReads;\\n      if (result.timings && prepared.timings) {\\n        result.timings.detect += prepared.timings.detect || 0;\\n        result.timings.fetch += prepared.timings.fetch || 0;\\n        result.timings.total = Date.now() - started;\\n      }\\n      return result;\\n    }\\n  };\\n}\\n\\nfunction skillDefinition(config, runtime) {\\n  const skillDir = path.join(__dirname, 'skills', 'deep-read-summarize');\\n  return {\\n    name: 'deep-read-summarize',\\n    description: workflow.meta.description,\\n    whenToUse: workflow.meta.whenToUse,\\n    content: buildSkillContent(config, runtime),\\n    resourceBase: { kind: 'directory', path: skillDir },\\n    source: 'bundled'\\n  };\\n}\\n\\n// Cordis inject() owns a child fiber which activates/restarts as these optional\\n// services appear/disappear. Keep a fallback skill while that child is pending.\\nfunction applyWithServiceLifecycle(ctx, config, registry) {\\n  let stopped = false;\\n  let releaseSkill = ctx.skills.register(skillDefinition(config, { registry: registry }));\\n  function replaceSkill(toolName) {\\n    if (typeof releaseSkill === 'function') releaseSkill();\\n    releaseSkill = undefined;\\n    releaseSkill = ctx.skills.register(skillDefinition(config, { registry: registry, toolName: toolName }));\\n  }\\n  function parentCanRegister() {\\n    // Public Cordis FiberState: LOADING=1, ACTIVE=2; never restore while unloading.\\n    return !stopped && (!ctx.fiber || ctx.fiber.state === 1 || ctx.fiber.state === 2);\\n  }\\n  // Cordis treats callbacks with a prototype as constructors. An arrow keeps\\n  // the returned cleanup function in its effect lifecycle.\\n  const child = ctx.inject(['tools', 'workflowEngine'], (ready) => {\\n    const tools = optionalService(ready, 'tools');\\n    const engine = optionalService(ready, 'workflowEngine');\\n    const releaseTool = tools.register(readingTool(engine, normalizeOptions(config), registry));\\n    try { replaceSkill('deep_read_summarize'); }\\n    catch (error) {\\n      if (typeof releaseTool === 'function') releaseTool();\\n      if (parentCanRegister()) replaceSkill();\\n      throw error;\\n    }\\n    return function () {\\n      try {\\n        if (typeof releaseSkill === 'function') releaseSkill();\\n        releaseSkill = undefined;\\n      } finally {\\n        if (typeof releaseTool === 'function') releaseTool();\\n        if (parentCanRegister()) replaceSkill();\\n      }\\n    };\\n  });\\n  return async function () {\\n    stopped = true;\\n    try { if (child && typeof child.dispose === 'function') await child.dispose(); }\\n    finally {\\n      if (typeof releaseSkill === 'function') releaseSkill();\\n      releaseSkill = undefined;\\n    }\\n  };\\n}\\n\\n/** Cordis 插件入口：注册运行时技能，使模型可直接执行精读 workflow。 */\\nconst apply = (ctx, config = {}) => {\\n  const registry = configuredRegistry(config);\\n  if (typeof ctx.inject === 'function') return applyWithServiceLifecycle(ctx, config, registry);\\n  const tools = optionalService(ctx, 'tools');\\n  const engine = optionalService(ctx, 'workflowEngine');\\n  const canRunDirectly = tools && typeof tools.register === 'function' && engine && typeof engine.start === 'function';\\n  const unregisterTool = canRunDirectly ? tools.register(readingTool(engine, normalizeOptions(config), registry)) : undefined;\\n  let unregisterSkill;\\n  try { unregisterSkill = ctx.skills.register(skillDefinition(config, {\\n    registry: registry, toolName: canRunDirectly ? 'deep_read_summarize' : undefined\\n  })); } catch (error) {\\n    if (typeof unregisterTool === 'function') unregisterTool();\\n    throw error;\\n  }\\n  if (!canRunDirectly) return unregisterSkill;\\n  return function () {\\n    try { if (typeof unregisterSkill === 'function') unregisterSkill(); }\\n    finally { if (typeof unregisterTool === 'function') unregisterTool(); }\\n  };\\n};\\n\\n// 兼容旧式加载（部分工具按 load() 读取插件定义）\\nfunction load() {\\n  return { name: 'deep-read-summarize', workflow, parsers, schemas };\\n}\\n\\nmodule.exports.apply = apply;\\nmodule.exports.load = load;\\nmodule.exports.workflow = workflow;\\nmodule.exports.parsers = parsers;\\nmodule.exports.schemas = schemas;\\nmodule.exports.buildSkillContent = buildSkillContent;\\nmodule.exports.DEFAULT_OPTIONS = DEFAULT_OPTIONS;\\nmodule.exports.normalizeOptions = normalizeOptions;\\nmodule.exports.normalizeWorkflowOptions = normalizeWorkflowOptions;\\n\"\n    },\n    {\n      \"path\": \"lib/quality.js\",\n      \"content\": \"'use strict';\\n\\n// Both functions are self-contained so workflow.js can inline them into the\\n// coordination sandbox. They never evaluate YAML or read files themselves.\\nfunction checkNoteStructure(note, options) {\\n  const opts = options || {};\\n  const issues = [];\\n  if (typeof note !== 'string' || !note.trim()) {\\n    return { formatComplete: false, lengthMet: false, wordCount: 0, quotes: [], issues: ['笔记为空或不是字符串'] };\\n  }\\n  const text = note.trim().replace(/\\\\r\\\\n?/g, '\\\\n');\\n  const front = text.match(/^---[ \\\\t]*\\\\n([\\\\s\\\\S]*?)\\\\n---[ \\\\t]*(?:\\\\n|$)/);\\n  function scalar(raw) {\\n    const value = raw.trim();\\n    if (!value || /[\\\\u0000-\\\\u0008\\\\u000b\\\\u000c\\\\u000e-\\\\u001f\\\\u007f]/.test(value)) throw new Error('missing or invalid scalar');\\n    if (value[0] === '\\\"') {\\n      const parsed = JSON.parse(value);\\n      if (typeof parsed !== 'string') throw new Error('expected string');\\n      return parsed;\\n    }\\n    if (value[0] === \\\"'\\\") {\\n      if (value.length < 2 || value[value.length - 1] !== \\\"'\\\" || /(^|[^'])'([^']|$)/.test(value.slice(1, -1))) throw new Error('invalid quoted scalar');\\n      return value.slice(1, -1).replace(/''/g, \\\"'\\\");\\n    }\\n    if (value[0] === '[') {\\n      if (value[value.length - 1] !== ']') throw new Error('invalid sequence');\\n      const tokens = [];\\n      let token = '', quote = '', escaped = false;\\n      for (const character of value.slice(1, -1)) {\\n        if (quote) {\\n          token += character;\\n          if (escaped) escaped = false;\\n          else if (quote === '\\\"' && character === '\\\\\\\\') escaped = true;\\n          else if (character === quote) quote = '';\\n        } else if (character === '\\\"' || character === \\\"'\\\") {\\n          quote = character; token += character;\\n        } else if (character === ',') {\\n          tokens.push(scalar(token)); token = '';\\n        } else token += character;\\n      }\\n      if (quote) throw new Error('unclosed quote');\\n      if (token.trim()) tokens.push(scalar(token));\\n      return tokens;\\n    }\\n    if (/:(?:[ \\\\t]|$)|[\\\\[\\\\]{},]|^[!&*|>@`%#]|^[-?:](?:[ \\\\t]|$)/.test(value)) throw new Error('invalid template scalar');\\n    const plain = value.replace(/[ \\\\t]+#.*$/, '').trim();\\n    // Template values are strings. YAML null/booleans/numbers must stay quoted\\n    // instead of silently passing as a different native YAML type.\\n    if (/^(?:null|~|true|false|[-+]?(?:0o[0-7]+|0x[0-9a-f]+|[0-9]+(?:\\\\.[0-9]*)?(?:e[-+]?[0-9]+)?|\\\\.[0-9]+(?:e[-+]?[0-9]+)?|\\\\.inf)|\\\\.nan)$/i.test(plain)) throw new Error('template strings must be quoted');\\n    return plain;\\n  }\\n  function fields(lines) {\\n    const values = Object.create(null);\\n    for (const line of lines) {\\n      if (!line.trim() || /^\\\\s*#/.test(line)) continue;\\n      const match = line.match(/^([A-Za-z][\\\\w-]*):[ \\\\t]*(.*)$/);\\n      if (!match || Object.prototype.hasOwnProperty.call(values, match[1])) throw new Error('invalid or duplicate field');\\n      values[match[1]] = scalar(match[2]);\\n    }\\n    return values;\\n  }\\n  let frontmatterValid = !!front;\\n  if (!front) issues.push('缺少开头的 YAML frontmatter');\\n  else {\\n    try {\\n      const actual = fields(front[1].split('\\\\n'));\\n      const expected = fields((opts.expectedFrontmatter || []).filter(line => line !== '---'));\\n      for (const key of Object.keys(expected)) {\\n        if (!Object.prototype.hasOwnProperty.call(actual, key) || JSON.stringify(actual[key]) !== JSON.stringify(expected[key])) {\\n          frontmatterValid = false;\\n          issues.push('frontmatter 字段缺失或不符合本次模板：' + key);\\n        }\\n      }\\n      if (!Object.prototype.hasOwnProperty.call(actual, 'title') || !actual.title) {\\n        frontmatterValid = false; issues.push('frontmatter 缺少有效 title');\\n      }\\n    } catch (error) {\\n      frontmatterValid = false;\\n      issues.push('frontmatter 不符合提供的标量/列表模板，或包含重复字段');\\n    }\\n  }\\n  const body = front ? text.slice(front[0].length) : text;\\n  // Ignore fenced examples when checking real headings and prose length.\\n  const prose = [];\\n  let fence = '', fenceLength = 0;\\n  const visibleBody = body.replace(/<!--[\\\\s\\\\S]*?(?:-->|$)/g, '')\\n    .replace(/<(script|style|noscript)\\\\b[^>]*>[\\\\s\\\\S]*?(?:<\\\\/\\\\1\\\\s*>|$)/gi, '');\\n  for (const line of visibleBody.split('\\\\n')) {\\n    const marker = line.match(/^\\\\s*(`{3,}|~{3,})/);\\n    if (marker) {\\n      if (!fence) { fence = marker[1][0]; fenceLength = marker[1].length; }\\n      else if (marker[1][0] === fence && marker[1].length >= fenceLength && /^\\\\s*$/.test(line.slice(marker[0].length))) fence = '';\\n      continue;\\n    }\\n    if (!fence && !/^(?: {4}|\\\\t)/.test(line)) prose.push(line);\\n  }\\n  const proseText = prose.join('\\\\n');\\n  let sectionsComplete = /^#[ \\\\t]+\\\\S/m.test(proseText) && !fence;\\n  if (!/^#[ \\\\t]+\\\\S/m.test(proseText)) issues.push('缺少笔记一级标题');\\n  if (fence) issues.push('存在未闭合的代码围栏');\\n  const requiredCount = opts.fastMode ? 4 : 7;\\n  for (let section = 1; section <= requiredCount; section++) {\\n    const heading = new RegExp('^##[ \\\\\\\\t]+' + section + '(?:[.、．][ \\\\\\\\t]*|[ \\\\\\\\t]+)\\\\\\\\S', 'gm');\\n    const found = proseText.match(heading) || [];\\n    if (found.length !== 1) {\\n      sectionsComplete = false;\\n      issues.push('必要章节缺失或重复：第 ' + section + ' 节');\\n    }\\n  }\\n  const countable = proseText.replace(/https?:\\\\/\\\\/[^\\\\s)>\\\\]]+/g, '');\\n  const cjk = /[\\\\p{Script=Han}\\\\p{Script=Hiragana}\\\\p{Script=Katakana}]/gu;\\n  const ideographs = countable.match(cjk) || [];\\n  const words = countable.replace(cjk, ' ').match(/[\\\\p{L}\\\\p{N}]+(?:['’\\\\-][\\\\p{L}\\\\p{N}]+)*/gu) || [];\\n  const wordCount = ideographs.length + words.length;\\n  const lengthMet = wordCount >= opts.minWords;\\n  if (!lengthMet) issues.push('正文篇幅不足：计数 ' + wordCount + '，要求至少 ' + opts.minWords + '（不计 frontmatter、代码块和链接地址）');\\n  const quotes = [];\\n  function inlineText(value) {\\n    // Normalize display syntax only. Source evidence below remains literal so\\n    // emphasis cannot make an invented quote match a different source phrase.\\n    return value.replace(/!?\\\\[([^\\\\]\\\\n]+)\\\\]\\\\([^\\\\n)]*\\\\)/g, '$1')\\n      .replace(/(\\\\*\\\\*|__)(?=\\\\S)([\\\\s\\\\S]*?\\\\S)\\\\1/g, '$2')\\n      .replace(/(^|[^\\\\w\\\\\\\\])([*_])(?=\\\\S)([^\\\\n]*?\\\\S)\\\\2/g, '$1$3')\\n      .replace(/(`+)([^`\\\\n]+)\\\\1/g, '$2');\\n  }\\n  const quoteStart = prose.findIndex(line => /^##[ \\\\t]+4(?:[.、．][ \\\\t]*|[ \\\\t]+)\\\\S/.test(line));\\n  if (quoteStart !== -1) {\\n    const quoteLines = [];\\n    for (const line of prose.slice(quoteStart + 1)) {\\n      if (/^##[ \\\\t]/.test(line)) break;\\n      quoteLines.push(line);\\n    }\\n    for (const line of quoteLines) {\\n      // A blockquote can contain a quoted sentence followed by its location.\\n      // Prefer the explicit sentence so Markdown markers and locations do not become source text.\\n      const expression = /“([^”\\\\n]+)”|「([^」\\\\n]+)」|\\\"([^\\\"\\\\n]+)\\\"/g;\\n      let match, explicit = false;\\n      while ((match = expression.exec(line))) {\\n        explicit = true;\\n        const quote = inlineText(match[1] || match[2] || match[3]).trim();\\n        if (quote && quotes.indexOf(quote) === -1) quotes.push(quote);\\n      }\\n      if (!explicit && /^>[ \\\\t]+/.test(line)) {\\n        // A trailing, explicitly labelled locator belongs to the citation,\\n        // not to the sentence. Do not remove arbitrary parenthetical prose.\\n        const quote = inlineText(line.replace(/^(?:>[ \\\\t]*)+/, ''))\\n          .replace(/[ \\\\t]*[（(](?:第[ \\\\t]*\\\\d+[ \\\\t]*(?:[-–][ \\\\t]*\\\\d+[ \\\\t]*)?(?:行|页|章|节|段)|(?:lines?|pages?|chapter|section)[ \\\\t]+\\\\d+(?:[ \\\\t]*[-–][ \\\\t]*\\\\d+)?|\\\\d{1,2}:\\\\d{2}(?::\\\\d{2})?(?:\\\\.\\\\d+)?)[）)][ \\\\t]*$/i, '').trim();\\n        if (quote && quotes.indexOf(quote) === -1) quotes.push(quote);\\n      }\\n    }\\n  }\\n  return { formatComplete: frontmatterValid && sectionsComplete, lengthMet, wordCount, quotes, visibleText: inlineText(proseText), issues };\\n}\\n\\nfunction validateSourceCheck(check, context) {\\n  const ctx = context || {};\\n  const issues = [];\\n  const gates = ['sourceChecked', 'coverage', 'citationsReal', 'terminologyConsistent', 'languageConsistent'];\\n  const results = {};\\n  for (const gate of gates) {\\n    results[gate] = !!check && check[gate] === true;\\n    if (!results[gate]) issues.push('原文核验未通过或缺失：' + gate);\\n  }\\n  if (check && Array.isArray(check.issues)) {\\n    issues.push(...check.issues.filter(issue => typeof issue === 'string' && issue.trim()));\\n  }\\n  const plan = ctx.chunkPlan || [];\\n  const chunkChecks = check && Array.isArray(check.chunkChecks) ? check.chunkChecks : [];\\n  const seen = new Set();\\n  for (const evidence of chunkChecks) {\\n    const chunk = evidence && plan.find(item => item.id === evidence.chunkId);\\n    if (!chunk || seen.has(evidence.chunkId) || evidence.startLine !== chunk.startLine || evidence.endLine !== chunk.endLine ||\\n        typeof evidence.sourceExcerpt !== 'string' || !evidence.sourceExcerpt.trim() || evidence.covered !== true) {\\n      results.coverage = false;\\n      issues.push('分块核验证据无效、重复或未覆盖');\\n    } else seen.add(evidence.chunkId);\\n  }\\n  if (plan.some(chunk => !seen.has(chunk.id))) {\\n    results.coverage = false; issues.push('原文核验未逐一覆盖全部分块');\\n  }\\n  if (ctx.coverageComplete !== true) {\\n    results.coverage = false; issues.push('获取结果缺少有效 totalLines，无法确认原文尾部是否完整覆盖');\\n  }\\n  if (ctx.sourceComplete === false) {\\n    results.coverage = false;\\n    issues.push('来源不完整：' + (ctx.textSource === 'desc' ? '仅有视频简介，不能代替完整字幕或逐字稿' : '视频来源未经确认为完整字幕或逐字稿'));\\n  }\\n  if (ctx.failedChunkIds && ctx.failedChunkIds.length) {\\n    results.coverage = false; issues.push('精读仍有缺口，失败块：' + ctx.failedChunkIds.join(', '));\\n  }\\n  function normalize(value) { return typeof value === 'string' ? value.replace(/\\\\s+/g, ' ').trim() : ''; }\\n  const citationChecks = check && Array.isArray(check.citationChecks) ? check.citationChecks : [];\\n  const requiredQuotes = (ctx.quotes || []).map(normalize);\\n  const verifiedQuotes = [];\\n  for (const citation of citationChecks) {\\n    const chunk = citation && plan.find(item => item.id === citation.chunkId);\\n    const quote = normalize(citation && citation.quote);\\n    const valid = chunk && citation.verified === true && quote && requiredQuotes.includes(quote) &&\\n      normalize(ctx.visibleNote === undefined ? ctx.note : ctx.visibleNote).includes(quote) &&\\n      normalize(citation.sourceQuote).includes(quote) && typeof citation.location === 'string' && citation.location.trim() &&\\n      Number.isInteger(citation.startLine) && Number.isInteger(citation.endLine) &&\\n      citation.startLine >= chunk.startLine && citation.endLine >= citation.startLine && citation.endLine <= chunk.endLine;\\n    if (!valid) {\\n      results.citationsReal = false; issues.push('引用无法与笔记、原文摘录及分块行号对应');\\n    } else verifiedQuotes.push(quote);\\n  }\\n  if (ctx.requireCitations && (requiredQuotes.length === 0 || verifiedQuotes.length === 0)) {\\n    results.citationsReal = false; issues.push('未提交有效的原文引用核验记录');\\n  }\\n  for (const quote of ctx.quotes || []) {\\n    if (!verifiedQuotes.some(verified => verified === normalize(quote))) {\\n      results.citationsReal = false; issues.push('关键引用缺少对应的原文核验记录：' + quote);\\n    }\\n  }\\n  return { passed: issues.length === 0 && gates.every(gate => results[gate]), checks: results, issues, chunkChecks, citationChecks };\\n}\\n\\nmodule.exports = { checkNoteStructure, validateSourceCheck };\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"51ce66b585837d3bcd4489c0a5279317ac809a2e\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"52eb42a61cd2a77843f5aa3ae47441d8e8ea613f4e0877b824f28f87fb632198\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 13,\n        \"lines\": 1978,\n        \"words\": 33317\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"example\",\n        \"files\": 4,\n        \"lines\": 558,\n        \"words\": 16831\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 20,\n        \"lines\": 3035,\n        \"code\": 2490,\n        \"comments\": 383,\n        \"blank\": 185\n      },\n      {\n        \"extension\": \".js\",\n        \"role\": \"test\",\n        \"files\": 20,\n        \"lines\": 4160,\n        \"code\": 3728,\n        \"comments\": 182,\n        \"blank\": 334\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [\n        {\n          \"path\": \"skills/deep-read-summarize/SKILL.md\",\n          \"name\": \"deep-read-summarize\",\n          \"description\": \"深度精读并总结书籍/学术论文/视频/网页，输出带 YAML frontmatter 的标准 Markdown 笔记（2500+ 字，含术语表/批判分析/行动要点/延伸阅读；可直接放进 Obsidian / Logseq / 静态站点内容目录）\",\n          \"role\": \"source\",\n          \"status\": \"entry_candidate\"\n        }\n      ],\n      \"non_example_candidates\": 1,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"tests/cache-recovery.test.js\",\n          \"line\": 143,\n          \"api\": \"child.stderr.on\",\n          \"name\": \"data\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"tests/cache-recovery.test.js\",\n          \"line\": 146,\n          \"api\": \"child.on\",\n          \"name\": \"message\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"test\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "033ef5feb5b281a58248794fb144ff07eea9e7b3e20c29336bdddb0805a2794c"
+        }
+    },
+    "unavailable_artifacts": []
+}

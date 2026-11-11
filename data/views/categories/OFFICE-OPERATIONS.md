@@ -20,6 +20,7 @@
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
+| [DSH Email](#plugin-1333512933-root) | 在 DSH 中浏览、搜索邮件并编辑回复草稿，支持确认发送与可选邮件任务。 | 试用只限虚构邮件的草稿预览与禁止外发的替身，关闭定时与邮件任务。 |
 | [DSH Files](#plugin-1333699356-root) | 在 DSH 内查找和引用已上传附件，通过宿主文件系统抽取常见办公文档的文字。 | [Q04](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q04) 在单用户测试 profile 用公开文字 PDF 验证检索、引用和按页抽取。 |
 | [DSH fnOS Integration](#plugin-1374007757-plugins-dsh-fnos-plugin) | 把NAS授权目录、文件打开和主题接入fnOS应用载体 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q04) 只在单用户隔离测试目录观察，先审外层网关和直达宿主路径；依赖多用户隔离的部署应继续使用fnOS原生文件管理器，直至逐入口证明用户权限。 |
 | [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
@@ -43,6 +44,7 @@
 | [dsh-plugin-mission-control](#plugin-1337780031-integrations-deepseek-harness-dsh-plugin-mission-control) | 将 DSH 会话、消息与工具活动镜像到 JARVIS 看板，并把结束回合送入人工审查。 | 已有可信自托管JARVIS看板的用户可在无敏感信息的会话先试。 |
 | [dsh-plugin-nlbi](#plugin-1343622602-root) | 把MySQL连接、Schema驱动Text2SQL、查询结果与BI报表接入DSH对话和侧栏。 | 先观察，优先修/核多入口策略与确认，DB原生权限兜底后再评估脱敏测试库。 |
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
+| [dsh-univer-office](#plugin-1335241492-root) | 在 DeepSeek Harness 中创建、编辑和审阅电子表格、文档与演示文稿，并导出受支持的办公文件。 | [Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) 用合成小表验证草稿、批准和 Excel 重开，保留原件。 |
 | [dsh-whale-catch](#plugin-1425215508-root) | 在 DSH 侧栏收集会话产物，提供预览、差异、交付台账、体检、归档和还原。 | 先用含旧mtime复制件的固定目录核对漏收，仅复制归档；还原放在可丢弃目录并逐项确认，异常退回人工打包。 |
 | [dsh-windows-mcp](#plugin-1413849053-root) | 把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。 | [Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保持观察，先在无业务数据的 Windows VM 验收鉴权、tools.guard、双 Agent 及关闭后派发。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
@@ -59,7 +61,7 @@
 | [Reactive Resume](#plugin-249995750-root) | 独立简历/求职文档应用，以认证MCP/API编辑用户文档、保留版本并生成PDF导出。 | [Q05](../../plugins/reactive-resume--reactive-resume/INSIGHT.md#research-q05)独立账户虚构数据/只读起步，版本+差异核后小写，PDF逐页验；不明退Web和本机已验文档。 |
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
-| [Univer Office](#plugin-1335241492-root) | 在 DSH 中以 Univer 草稿编辑、预览和审阅表格、文档与演示。 | 先备份并在隔离工作区测试小型文件，验证审批、权限和目标 Office 打开效果，再决定交付；失败时保留原件。 |
+| [WeLink DSH 插件](#plugin-1184366339-plugins-dsh-welink) | 在 DSH 中按需查看授权 WeLink 会话的日期，并在获准时读取或搜索有限消息。 | 先用虚构聊天与假后端，区分日期与正文许可；无法验证后端拒绝或结果去向时保留手工复制。 |
 | [公文全流程处理专家](#plugin-1306637593-root) | 在 DSH 中调用公文检查、修复与修订工具 | [Q04](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q04) 用虚构文档验证原件、取消与渲染。 |
 | [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
@@ -191,6 +193,22 @@
 > **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
 
 [查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333512933-root"></a>
+
+## [DSH Email](../../plugins/stardustlc666--dsh-email/INSIGHT.md)
+
+[![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/STARDUSTLC666/dsh-email) [![npm 30d 11,059](https://img.shields.io/static/v1?label=npm+30d&message=11%2C059&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-email) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-email)
+
+> **用途**：经常处理邮件回复且已使用 DSH 的用户，可在工作台集中准备与核对草稿。
+
+> **亮点**：把邮件检索、草稿、收件人规则与版本核对接到同一工作台，便于发前检查。[Q01](../../plugins/stardustlc666--dsh-email/INSIGHT.md#research-q01) [Q02](../../plugins/stardustlc666--dsh-email/INSIGHT.md#research-q02)
+
+> **思考**：普通草稿与邮件任务自动回复是不同路径，未验证实际收件；未知提交应查邮箱，不能直接重发。[Q02](../../plugins/stardustlc666--dsh-email/INSIGHT.md#research-q02) [Q03](../../plugins/stardustlc666--dsh-email/INSIGHT.md#research-q03)
+
+> **建议**：将外部提交标识和可查回执关联，比较未知时能否防止重复；不可查时维持暂停而不是自动重试。[Q04](../../plugins/stardustlc666--dsh-email/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/stardustlc666--dsh-email/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333699356-root"></a>
 
@@ -560,6 +578,22 @@
 
 [查看完整分析](../../plugins/1569126506-sudo--dsh-team-cost/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335241492-root"></a>
+
+## [dsh-univer-office](../../plugins/dream-num--dsh-univer-office/INSIGHT.md)
+
+[![GitHub ★ 706](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=706&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream-num/dsh-univer-office) [![npm 30d 61,768](https://img.shields.io/static/v1?label=npm+30d&message=61%2C768&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office)
+
+> **用途**：对需要复核公式、样式和数据变化的周期性工作簿，先审阅 Agent 草稿，再生成供收件人打开的文件。
+
+> **亮点**：[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01) 把文件内的隔离工作副本和审阅状态带入 Agent 的办公工作流。审阅者仍需验证最终交付文件。
+
+> **思考**：[Q02](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q02) 模型侧返回宿主 ask，Gateway 合并后还有删除和资产发布。宿主审批与失败后的主线状态都需要独立核实。
+
+> **建议**：[Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04) 可用源修订、文件哈希与收件方复核结果绑定导出交付，试验它能否区分版本变化和转换损失。
+
+[查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1425215508-root"></a>
 
 ## [dsh-whale-catch](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md)
@@ -816,21 +850,21 @@
 
 [查看完整分析](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1335241492-root"></a>
+<a id="plugin-1184366339-plugins-dsh-welink"></a>
 
-## [Univer Office](../../plugins/dream-num--dsh-univer-office/INSIGHT.md)
+## [WeLink DSH 插件](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md)
 
-[![GitHub ★ 650](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=650&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dream-num/dsh-univer-office) [![npm 30d 46,073](https://img.shields.io/static/v1?label=npm+30d&message=46%2C073&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office) [![最新发布 2026-10-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-univer-office)
+[![GitHub ★ 319](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=319&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/runzhliu/welink)
 
-> **用途**：DSH 用户希望在会话里生成、修改并审阅办公文件，按需交付常见格式。[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01)
+> **用途**：需要查回 WeLink 会话中的日期和约定的人，可在 DSH 中定向查询已配置会话。
 
-> **亮点**：连接 DSH 工具、Univer 协作进程与审阅视图，集中编辑与发布路径；引擎和文件格式能力由上游提供。[Q01](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q01) [Q02](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q02)
+> **亮点**：把聊天检索变成几个有会话、日期和输出限额的工具，保留按需范围和截断信息。[Q01](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md#research-q01) [Q02](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md#research-q02)
 
-> **思考**：多进程草稿、导出和权限是否在真实宿主中可靠，收益能否超过格式保真和运维成本？[Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) [Q04](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q04)
+> **思考**：客户端名单不证明后端授权；回环或 HTTPS 缺 token 仍可发请求，真实后端必须独立拒绝。撤销也无法清除已传出内容。[Q03](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md#research-q03)
 
-> **建议**：假设审批卡展示导出结构差异及抽样渲染可减少格式损失漏检；以固定文件集和审阅人比较漏检、误报及时间，若收益不足则否定。[Q05](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q05)
+> **建议**：可把本地名单与后端有效授权的交集作为可核验状态，比较误判和恢复耗时；无改善或增加标识外发则放弃。[Q04](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md#research-q04)
 
-[查看完整分析](../../plugins/dream-num--dsh-univer-office/INSIGHT.md) · [返回表格](#category-index)
+[查看完整分析](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1306637593-root"></a>
 
@@ -884,4 +918,4 @@
 
 ## 更新时间
 
-2026-11-10
+2026-11-11

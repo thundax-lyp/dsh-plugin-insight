@@ -1,18 +1,18 @@
-# MemSearch DSH
+# MemSearch for DeepSeek Harness
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
 
-源码版本：[65d8b22](https://github.com/zilliztech/memsearch/tree/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh)
+源码版本：[a81ac68](https://github.com/zilliztech/memsearch/tree/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,814](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C814&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zilliztech/memsearch) [![npm 30d 3,948](https://img.shields.io/static/v1?label=npm+30d&message=3%2C948&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh)
+[![GitHub ★ 2,856](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C856&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zilliztech/memsearch) [![npm 30d 11,903](https://img.shields.io/static/v1?label=npm+30d&message=11%2C903&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@zilliz/memsearch-dsh)
 <!-- END META -->
 
-> **功能**：为 DSH 提供会话摘要日记、按需召回 Skill 与候选评审入口。
+> **功能**：为 DeepSeek Harness 捕获会话记忆、检索共享 Markdown 日记并在 Web 面板审阅技能候选。
 
-> **亮点**：[Q02](#research-q02) 将宿主生命周期、日记和按需 Skill 连接；根检索算法不属子包原创。
+> **亮点**：[Q01](#research-q01) 用宿主事件维护项目日记，并把召回线索连接到原会话，减少每次从头翻找历史所需的入口切换。
 
-> **主要限制**：[Q03](#research-q03) 摘要失败仍生成 anchor，重放去重不保证自动修复；根索引失败也可能暂缺块。
+> **主要限制**：[Q02](#research-q02) 摘要失败占位仍带有去重锚点，普通事件重放无法补摘要。[Q03](#research-q03) 候选安装返回 started 后仍需读回。
 
 **本文目录**
 
@@ -26,12 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要 DSH 适配，与根工具和手工笔记有什么不同？](#detail-section-11)
-  - [Q02 · 轮次怎样变成日记、召回入口如何接线？](#detail-section-12)
-  - [Q03 · 摘要或索引失败后能否自动修复？](#detail-section-13)
-  - [Q04 · 使用有什么依赖、隐私和退出成本？](#detail-section-14)
-  - [Q05 · 何时值得试用，什么时候回退？](#detail-section-15)
-  - [Q06 · 如何补修失败摘要而不重复捕获？](#detail-section-16)
+  - [Q01 · 哪些跨会话任务适合接入，检索结果如何回到原会话？](#detail-section-11)
+  - [Q02 · 捕获和索引的失败是否能被重放修复，接入要承担哪些成本？](#detail-section-12)
+  - [Q03 · Web 的审阅和安装响应具体承诺什么？](#detail-section-13)
+  - [Q04 · 何时可试用，怎样验证对失败占位的补修设计？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -41,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向需要跨 DSH 会话回查项目历史且能核对来源的用户。
+> **用途**：反复从新 DSH 会话接手同一项目的开发者，可以搜索上次决策并从摘要回查原话。
 
-手工 Markdown 和根 CLI 可保存搜索历史；桥接减少宿主事件接线，但增加自动摘要和索引维护。
+开发者可以手工搜索项目文档和原会话。此接入把宿主事件、可搜索日记与原文锚点串在一起，项目目录、索引和原始会话均需保持可用。
 
 <a id="detail-section-3"></a>
 
@@ -52,68 +50,63 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 首步提示 | 提醒 Agent 按需召回 | 不自动注入检索结果 |
-| 日记捕获 | 摘要与原会话 anchor | 失败写 unavailable |
-| 根索引 | 使日记可检索 | 失败可能暂缺块 |
-| 候选页面 | review 或 install | review 与安装分开，不自动证明质量 |
+| --- | --- | --- |
+| 历史召回 | 查项目日记并回到原会话 | 项目索引和原会话仍可用 |
+| 会话捕获 | 回合结束时生成日记并触发索引 | 摘要失败仍留锚点，重放不改占位 |
+| 候选审阅 | 将待审候选送给活跃代理 | 排队和安装启动分别需要核实实际结果 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 兼容 DSH 与子插件 | 必需 | 会话事件与 Skill | 不会自动接入 |
-| 根 memsearch CLI 与 Python | 检索和索引需要 | 调用索引及摘要工具 | 检索失败 |
-| 所选模型与后端 | 对应功能需要 | 摘要和 embedding | 回 unavailable 或索引失败 |
-| 可写项目目录及授权 | 捕获需要 | 日记和索引 | 暂停捕获 |
+| --- | --- | --- | --- |
+| DSH profile、Node 与 MemSearch CLI | 接入必需 | 注册会话回调、搜索及索引 | 回到原会话与文档 |
+| Python 与适用模型配置 | 摘要或原文解析时需要 | 生成摘要和按锚点读回 | 摘要失败可留占位，原文另查 |
+| 宿主 Web 和连接服务 | 候选面板需要 | 注册、鉴权并调度操作 | 无面板或请求被拒绝 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户选择隔离项目与模型 | 明确数据范围 |
-| 捕获 | 插件处理 turn/end | 检查摘要与原会话 anchor |
-| 召回 | Agent 按提示调用 Skill | 回读来源和索引报告 |
-| 恢复 | 用户核对失败与原会话 | 不把占位视为摘要 |
+| --- | --- | --- |
+| 记录 | 使用者在隔离项目完成一条测试决策 | 日记有可定位锚点 |
+| 查找 | 新会话按需搜索并核对原文 | 决策及上下文吻合 |
+| 退出 | 失败占位、错项目或原文不符时回原会话 | 暂停依赖召回结果 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 安装 | DSH、Python 和后端 | 配置 profile 与模型 | 未运行 |
-| 持续 | 摘要、embedding、存储 | 复核日记和来源 | 总成本未知 |
-| 失败 | 重试与重建资源 | 核查 anchor 和索引 | 失败占位不会因重放自动补全 |
-| 退出 | 保留数据资源 | 移除接入并清点历史 | 退出不等于撤回数据 |
+| --- | --- | --- | --- |
+| 首次 | 工具链和索引后端资源未知 | 配置 profile 与隔离目录 | 宿主组合未验 |
+| 持续 | 摘要模型、嵌入和存储开销未知 | 核对来源和质量 | 无单位回查成本记录 |
+| 失败恢复 | 重试及重建资源未知 | 区分摘要占位、索引延迟与原文缺失 | 普通重放不会改写旧占位 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 会话接入 | 事件捕获和首步提示 | 实际宿主可靠性 |
-| 去重 | session/turn anchor | 失败摘要自动恢复 |
-| 查询 | 根 CLI 接入 | 答案事实正确 |
+| --- | --- | --- |
+| 复用会话历史 | 按项目捕获、搜索和锚点回查 | 真实命中率与节时 |
+| 候选处理 | 审阅排队、安装启动 | 实际落盘和宿主加载结果 |
 
-> **思考**：[Q03](#research-q03) 摘要失败仍生成 anchor，重放去重不保证自动修复；根索引失败也可能暂缺块。
+> **思考**：[Q02](#research-q02) 摘要失败占位仍带有去重锚点，普通事件重放无法补摘要。[Q03](#research-q03) 候选安装返回 started 后仍需读回。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 将宿主生命周期、日记和按需 Skill 连接；根检索算法不属子包原创。
+> **亮点**：[Q01](#research-q01) 用宿主事件维护项目日记，并把召回线索连接到原会话，减少每次从头翻找历史所需的入口切换。
 
-[Q02](#research-q02) 首步只给提示；[Q03](#research-q03) 失败占位与 anchor 去重不构成自动补修。
+进程内串行和锚点去重降低重复捕获，日记与索引之间仍有故障边界。Web 路由按请求使用宿主鉴权，后台安装状态需要另查。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 摘要失败仍生成 anchor，重放去重不保证自动修复；根索引失败也可能暂缺块。
+[Q02](#research-q02) 摘要失败占位仍带有去重锚点，普通事件重放无法补摘要。[Q03](#research-q03) 候选安装返回 started 后仍需读回。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 先在隔离项目核查日记、索引和原会话，失败时回原文。
+[Q04](#research-q04) 先只处理无敏感内容的测试决策，逐项核对日记、检索和原会话。找不到原话时回到项目文档。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +114,18 @@
 
 **核查状态**：已检查源码。
 
-固定子包与同提交根索引路径静态核查；未运行宿主、模型或故障注入。
+固定提交已核查捕获、召回和候选路由。摘要可靠性、实际查询收益与宿主授权策略尚需验证。
 
-- 已检查：作者 README、包清单、源码路径 plugins/dsh/package.json、plugins/dsh/README.md、plugins/dsh/index.js、plugins/dsh/runtime.js、plugins/dsh/client.js、src/memsearch/core.py、src/memsearch/index_report.py 及固定范围 inventory；组件：plugins/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 plugins/dsh/index.js、plugins/dsh/skills/memory-recall/SKILL.md、plugins/dsh/runtime.js 及固定范围 inventory；组件：plugins/dsh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定 DSH 子包及同提交根索引静态核查，未运行宿主、模型或 Milvus。
-- 下一步：隔离 profile 注入摘要与索引失败、重复事件和用户编辑，核对日记、会话及 failed_files。
+- 边界：固定子包的 DSH 生命周期、候选路由和召回文档已查。未执行目标插件、模型、索引、测试或真实宿主，未全面审计 MemSearch 核心。
+- 下一步：隔离项目检查一条确定决策的回查，再分别注入摘要失败、索引失败和安装子进程失败，区分各阶段的真实结果。
 
 **分析版本**
 
 - **仓库**：[zilliztech/memsearch](https://github.com/zilliztech/memsearch)
-- **版本号**：0.1.8（[固定提交 65d8b22](https://github.com/zilliztech/memsearch/tree/65d8b220d4265f70441785aa22203f0e85ea3ec6)）
-- **版本日期**：2026-10-27（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.9（[固定提交 a81ac68](https://github.com/zilliztech/memsearch/tree/a81ac682b547f86df25cd70a9477ada543de67ae)）
+- **版本日期**：2026-11-10（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +133,9 @@
 
 <a id="innovation"></a>
 
-[Q06](#research-q06) 对失败占位做版本检查后定向补摘要并重建索引，需验证并发、误覆盖和成本。
+[Q04](#research-q04) 允许失败占位在锚点和版本匹配时定向补摘要并回读索引，可能修复可追溯但查不到有效内容的记录。
 
-隔离 profile 注入摘要与索引失败、重复事件和用户编辑，核对日记、会话及 failed_files。
+隔离项目检查一条确定决策的回查，再分别注入摘要失败、索引失败和安装子进程失败，区分各阶段的真实结果。
 
 <a id="detail-section-9"></a>
 
@@ -155,70 +148,66 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 2264 | 1702 | 445 | — |
-| .md | source | 14 | 1220 | — | — | 7678 |
-| .js | test | 5 | 1858 | 1694 | 72 | — |
+| .js | source | 3 | 2295 | 1722 | 457 | — |
+| .md | source | 14 | 1274 | — | — | 7971 |
+| .js | test | 8 | 2212 | 2028 | 88 | — |
+| .mjs | example | 1 | 38 | 35 | 2 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 42](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=42&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z) [![近30天关闭 23](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=23&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z)
+[![Issue 未关闭 41](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=41&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 19](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=19&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 28](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=28&color=737b86&logo=github)](https://github.com/zilliztech/memsearch/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
 
 
 
-统计日期：2026-11-01。
+统计日期：2026-11-11。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查固定 DSH 子包的首步提示、会话摘要和根索引失败边界。
+**插件研究总目标**：跨会话工作的开发者能否从 DSH 找回上次决策并核对原话，捕获失败或候选技能安装时有哪些状态需要另查？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要 DSH 适配，与根工具和手工笔记有什么不同？
+### Q01 · 哪些跨会话任务适合接入，检索结果如何回到原会话？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-面向想在 DSH 跨会话保存项目历史、按需检索的用户。根 MemSearch 和手工 Markdown/grep 已能保存和检索；子包增量是接入宿主生命周期、摘要日记、召回 Skill 与候选页面，不是 BM25、向量或语言模型的原创。当前固定版本 pre-step 注入的是召回提示而非自动检索结果；旧版报告所称候选注入不能直接沿用。能否减少重复交接和误召回未实测。
+经常从新 DSH 会话接手同一项目的开发者，可以用历史决策查找来检验这个接入。一个合格答案应给出上次的决定、出处及适用条件，开发者能沿日记锚点核对原会话。相比直接搜索项目文档和过去对话，宿主在首个 agent step 且项目有日记时追加提示，让代理按需调用已注册的召回 Skill。Skill 按当前工作目录的 collection 搜索，然后展开相关 Markdown 片段，再用锚点内的数据库路径和 turn 定位原始内容。召回时代理仍需主动执行这些步骤，首步钩子没有直接把查得的历史注入每轮。检索排序和索引由 MemSearch 核心提供，DSH 子包的贡献在会话生命周期与来源回查的接线。只有一条会话或已有可靠决策文档时，建立额外索引未必值得。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/dsh/package.json:1-15](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/package.json#L1-L15)
+**依据 1 · 作者声明**：[plugins/dsh/README.md:3-12](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/README.md#L3-L12)
 
-DSH 子包身份与入口。
+作者定义共享 Markdown、Milvus 和宿主挂接范围。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（10行）</summary>
 
-```text
-{
-  "name": "@zilliz/memsearch-dsh",
-  "version": "0.1.8",
-  "description": "MemSearch plugin for DeepSeek Harness: shared markdown memory across agents, with capture, on-demand recall, memory-recall skill, and a skill-candidate review panel.",
-  "type": "module",
-  "main": "index.js",
-  "exports": {
-    ".": {
-      "types": null,
-      "default": "./index.js"
-    },
-    "./client": "./client.js",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
+````text
+MemSearch plugin for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (DSH).
+It gives DSH persistent, cross-agent memory on the same `.memsearch/memory/`
+markdown store used by the Claude Code, Codex, OpenClaw, and OpenCode plugins,
+backed by a Milvus hybrid search index.
+
 ```
+capture  ── session/event turn/end ──> summarize (dsh-headless agent default, or custom-llm) ──> memory/YYYY-MM-DD.md
+hint     ── agent/pre-step step 1  ──> remind the agent to use memory-recall when needed
+recall   ── native memory-recall skill ──> search → expand → transcript
+review   ── web UI dock panel ──> GET/POST /memsearch-dsh/* ──> list candidates / queue review / install
+````
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/dsh/index.js:1233-1258](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1233-L1258)
+**依据 2 · 源码核查**：[plugins/dsh/index.js:1259-1284](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1259-L1284)
 
-注册 Skill、首步只注入召回提示。
+注册召回和配置技能，首步满足条件时追加提示。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -254,131 +243,117 @@ DSH 子包身份与入口。
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/dsh/index.js:1261-1273](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1261-L1273)
+**依据 3 · 源码核查**：[plugins/dsh/skills/memory-recall/SKILL.md:18-37](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/skills/memory-recall/SKILL.md#L18-L37)
 
-后台捕获队列。
+按项目 collection 搜索及展开。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（20行）</summary>
 
-```text
-  // --- Capture: summarize + write each completed turn, fire-and-forget ---
-  // Each turn is processed against its *own* project directory (from
-  // `session.header.cwd`), which on a long-lived web surface is not
-  // necessarily `process.cwd()` — the boot directory. Turns are serialized
-  // through a promise chain so LLM summarize calls never overlap, and the
-  // `captureExists` dedup keeps a turn idempotent if its event replays.
-  const dependencyWarnings = new Set()
-  let captureChain = Promise.resolve()
-  const enqueueCapture = (work) => {
-    captureChain = captureChain
-      .then(work)
-      .catch((error) => ctx.logger.warn(`[memsearch] capture failed: ${error.message}`))
-  }
+````text
+### 1. Search for relevant chunks
+
+Run a semantic search over the project's memsearch collection. The plugin derives the collection from the current working directory when this skill is loaded:
+
+```bash
+{{MEMSEARCH_CMD}} search "{{QUERY}}" --top-k 5 --json-output {{MILVUS_FLAG}}--default-collection "{{COLLECTION}}"
 ```
+
+Before each search, check whether `~/.memsearch/config.toml` or the project's
+`.memsearch.toml` exists. If neither exists, add `--provider onnx` to the command.
+Otherwise, leave the provider unset so the existing configuration applies.
+
+Replace `{{QUERY}}` with a concise natural-language summary of what the user needs. The `--json-output` results contain `content`, `source`, `heading`, `score`, and `chunk_hash`.
+
+### 2. Expand promising results
+
+For the most promising results, expand the full markdown section to see surrounding context:
+
+```bash
+{{MEMSEARCH_CMD}} expand <chunk_hash> {{MILVUS_FLAG}}--default-collection "{{COLLECTION}}"
+````
+
+</details>
+
+**依据 4 · 源码核查**：[plugins/dsh/skills/memory-recall/SKILL.md:40-54](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/skills/memory-recall/SKILL.md#L40-L54)
+
+锚点可作为原始对话定位参数。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+````text
+### 3. Drill into the original conversation (optional)
+
+When an expanded result contains an anchor comment like
+
+```
+<!-- session:<id> turn:<N> db:<path> -->
+```
+
+you can render the original conversation around that turn:
+
+```bash
+{{PYTHON_CMD}} "{{PLUGIN_DIR}}/scripts/parse-transcript.py" --db "<path>" --turn <N> --context 3
+```
+
+Pass `--context 0` for just the target turn, or omit `--turn` to see the most recent turns.
+````
 
 </details>
 
 #### 缺口
 
-- 没有手工笔记和宿主实际任务对照
-  **影响**：不能证明节省时间或提高答案质量
-  **进一步探讨**：固定任务比较人工交接、根 CLI 和适配器召回。
+- 没有同任务的人工查找与代理召回对照。
+  **影响**：无法量化找回正确决策的时间与来源准确率。
+  **进一步探讨**：对同一组已知决策比较两种方式，记录事实、锚点和上下文一致率。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 轮次怎样变成日记、召回入口如何接线？
+### Q02 · 捕获和索引的失败是否能被重放修复，接入要承担哪些成本？
 
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑、效果与总成本、工程质量与复用
 
 #### 完整回答
 
-apply 注册 memory-recall 等 Skill；首个 pre-step 在允许注入、有记忆文件且未拒绝/取消时追加提示，是否调用 Skill 留给 Agent。turn/end 提交到进程内 promise chain，按 session 的项目目录提取本轮内容，查找 session/turn anchor 去重，写 daily Markdown 并尝试索引。摘要支持配置的模型或 headless 模式；现有 anchor 将日记连接原会话，不证明摘要准确、索引完成或自动搜索。
+捕获按 session 工作目录排入当前进程的 Promise 链，任务串行处理并在写前查 session/turn 锚点。摘要成功后写正文，空输出或异常时仍写带原会话锚点的不可用说明，再尝试索引。重播同一 turn 已命中锚点时直接返回，单靠重播无法把失败摘要补成成功摘要。索引调用位于写入之后，日记写入和可搜索状态之间存在故障窗口。代价来自 DSH profile 和工具链配置、摘要模型或 ONNX／索引计算、日记存储、查询及原文复核。摘要启用时需核查所用模型和数据处理条件，禁用摘要时会把渲染后的对话直接作为 body 保存。每条可核对回查的开销应计入后台捕获、索引和后续纠错时间，当前无法估算。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/dsh/index.js:1169-1183](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1169-L1183)
+**依据 1 · 作者声明**：[plugins/dsh/README.md:15-25](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/README.md#L15-L25)
 
-入口和默认配置。
+作者列出 memsearch、DSH profile、Node 与 Python 前提。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（11行）</summary>
 
-```text
-export function apply(ctx, config = {}) {
-  // Recursion guard: when DSH booted this plugin as the summarizer's own
-  // headless sub-agent (`summarizeMode: dsh-headless` sets this flag), stay
-  // inert — no capture, no injection, no skill. Otherwise the summarizer's
-  // session would itself be captured and re-summarized forever.
-  if (process.env.MEMSEARCH_DSH_SUMMARIZE === '1') {
-    ctx.logger?.debug?.('[memsearch] summarize sub-agent: plugin inert')
-    return
-  }
+````text
+## Prerequisites
 
-  const opts = {
-    captureEnabled: config.captureEnabled !== false,
-    injectEnabled: config.injectEnabled !== false,
-    summarizeEnabled: config.summarizeEnabled !== false,
-    summarizeMode: config.summarizeMode,
-```
+- Install memsearch:
+
+  ```bash
+  uv tool install "memsearch[onnx]"
+  ```
+
+- A DSH profile (web / headless / tui) you want to attach memory to.
+- Node >= 22.19 (DSH's requirement).
+- Python 3 on the profile's `PATH` (`python3`, `python`, or the Windows `py -3` launcher).
+````
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/dsh/index.js:1233-1258](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1233-L1258)
+**依据 2 · 源码核查**：[plugins/dsh/index.js:1293-1312](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1293-L1312)
 
-Skill 注册和提示。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  // --- Recall skill (always available) ---
-  registerMemoryRecallSkill(ctx, opts, memsearchCmd, bootProjectDir)
-
-  // --- Config + distillation skills (always available) ---
-  registerMemoryConfigSkill(ctx)
-  registerMemoryToSkillSkill(ctx)
-
-  // --- Pre-step recall hint: the agent decides when to search ---
-  ctx.on(
-    'agent/pre-step',
-    async ({ agent, step, signal }, next) => {
-      const decision = await next()
-      if (!opts.injectEnabled) return decision
-      if (decision.kind === 'reject' || signal.aborted) return decision
-      if (step !== 1) return decision
-
-      const memoryDir = memoryDirFor(projectDirFor(agent.session))
-      if (!hasMemoryFiles(memoryDir)) return decision
-
-      const memoryMessage = await createMemoryMessage(ctx, RECALL_HINT)
-      return {
-        ...decision,
-        messages: [...decision.messages, memoryMessage],
-      }
-    },
-    { prepend: true },
-```
-
-</details>
-
-**依据 3 · 源码核查**：[plugins/dsh/index.js:1261-1284](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1261-L1284)
-
-按项目排队与 anchor 去重。
+串行链、工作目录、既有锚点提前退出及原文 body。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-  // --- Capture: summarize + write each completed turn, fire-and-forget ---
-  // Each turn is processed against its *own* project directory (from
-  // `session.header.cwd`), which on a long-lived web surface is not
-  // necessarily `process.cwd()` — the boot directory. Turns are serialized
-  // through a promise chain so LLM summarize calls never overlap, and the
-  // `captureExists` dedup keeps a turn idempotent if its event replays.
-  const dependencyWarnings = new Set()
+  const captureWarnings = new Set()
   let captureChain = Promise.resolve()
   const enqueueCapture = (work) => {
     captureChain = captureChain
@@ -396,63 +371,53 @@ Skill 注册和提示。
     const memoryDir = memoryDirFor(projectDir)
     if (captureExists(memoryDir, sessionId, turn)) return
 
+    let body = render
+    if (opts.summarizeEnabled) {
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[plugins/dsh/index.js:810-839](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L810-L839)
+**依据 3 · 源码核查**：[plugins/dsh/index.js:1314-1334](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1314-L1334)
 
-查找及写入原会话 anchor。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-/** True when a session/turn anchor already exists in any daily memory file. */
-function captureExists(memoryDir, sessionId, turn) {
-  let files
-  try {
-    files = readdirSync(memoryDir)
-  } catch {
-    return false
-  }
-  const anchor = `<!-- session:${sessionId} turn:${turn} `
-  for (const file of files) {
-    if (!DAILY_FILE_RE.test(file)) continue
-    try {
-      if (readFileSync(join(memoryDir, file), 'utf-8').includes(anchor)) return true
-    } catch { /* skip unreadable file */ }
-  }
-  return false
-}
-
-/** Append a captured turn to the daily memory file (shared 4-platform format). */
-function writeCapture(memoryDir, body, sessionId, turn, dbPath) {
-  mkdirSync(memoryDir, { recursive: true })
-  const today = todayStr()
-  const hhmm = hhmmStr()
-  const file = join(memoryDir, `${today}.md`)
-  if (!existsSync(file)) {
-    writeFileSync(file, `# ${today}\n\n## Session ${hhmm}\n\n`, 'utf-8')
-  }
-  const anchor = `<!-- session:${sessionId} turn:${turn} db:${dbPath} -->\n`
-  const entry = `### ${hhmm}\n${anchor}${body}\n\n`
-  appendFileSync(file, entry, 'utf-8')
-```
-
-</details>
-
-**依据 5 · 源码核查**：[plugins/dsh/index.js:1303-1322](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1303-L1322)
-
-写入、索引和事件触发。
+空输出和异常以不可用说明降级。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
+        const summary = await summarizeTurn(ctx, opts, render, projectDir)
+        if (summary) {
+          body = summary
+        } else {
+          ctx.logger.warn('[memsearch] summarizer returned empty output; wrote unavailable note')
+          body = '- Memory summary unavailable: summarizer returned empty output. Use the transcript anchor for progressive disclosure.'
+        }
+      } catch (error) {
+        // Collapse newlines so the reason stays a single `- ` bullet in the
+        // daily file (summarize.py stderr can span lines).
+        const reason = String(error.message).replace(/\s+/g, ' ').trim()
+        const missingCredential = opts.summarizeMode === 'dsh-headless' && /\bMISSING_CREDENTIAL\b/.test(reason)
+        const warning = missingCredential
+          ? 'DSH headless reported MISSING_CREDENTIAL. Use memory-config to check summary credentials.'
+          : `summarization failed (${reason}); wrote unavailable note`
+        const warnOnce = missingCredential || error.code === 'MEMSEARCH_DEPENDENCY_MISSING'
+        if (!warnOnce || !captureWarnings.has(warning)) {
+          ctx.logger.warn(`[memsearch] ${warning}`)
+          if (warnOnce) captureWarnings.add(warning)
+        }
         body = `- Memory summary unavailable: ${reason}; transcript content was omitted. Use the transcript anchor for progressive disclosure.`
-      }
-    }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[plugins/dsh/index.js:1337-1355](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1337-L1355)
+
+写日记后触发索引，捕获入口绑定 turn/end。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
     writeCapture(memoryDir, body, sessionId, turn, dbPath)
     // Index right after the write so the memory is searchable by the next
     // session (or by this one's later turns) instead of waiting for a future
@@ -470,471 +435,15 @@ function writeCapture(memoryDir, body, sessionId, turn, dbPath) {
         enqueueCapture(() => processTurn(session, event))
       } catch (error) {
         ctx.logger.warn(`[memsearch] capture listener failed: ${error.message}`)
-```
-
-</details>
-
-#### 缺口
-
-- 未运行 DSH、CLI 或模型
-  **影响**：无法保证真实事件加载、检索或准确摘要
-  **进一步探讨**：在隔离 profile 测正常、取消、重启和重复事件。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 摘要或索引失败后能否自动修复？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-摘要返回空或失败时，插件写入带原因的 unavailable 提示和 transcript anchor，而不是写出完整摘要；anchor 已存在时重复事件会被去重，所以不能仅靠重复 turn/end 断言摘要会自动补好。队列捕获失败只记录警告；日记写成和索引成功是不同阶段。同固定版本根 core 先删除 stale 旧块，再 embedding/upsert；根索引异常可能让派生索引暂缺，原 Markdown 仍在。本轮未模拟中断、权限失败或并发，不称永久丢失。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[plugins/dsh/index.js:810-825](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L810-L825)
-
-anchor 已存在时去重。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-/** True when a session/turn anchor already exists in any daily memory file. */
-function captureExists(memoryDir, sessionId, turn) {
-  let files
-  try {
-    files = readdirSync(memoryDir)
-  } catch {
-    return false
-  }
-  const anchor = `<!-- session:${sessionId} turn:${turn} `
-  for (const file of files) {
-    if (!DAILY_FILE_RE.test(file)) continue
-    try {
-      if (readFileSync(join(memoryDir, file), 'utf-8').includes(anchor)) return true
-    } catch { /* skip unreadable file */ }
-  }
-  return false
-```
-
-</details>
-
-**依据 2 · 源码核查**：[plugins/dsh/index.js:1268-1273](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1268-L1273)
-
-队列错误仅警告。
-
-```text
-  let captureChain = Promise.resolve()
-  const enqueueCapture = (work) => {
-    captureChain = captureChain
-      .then(work)
-      .catch((error) => ctx.logger.warn(`[memsearch] capture failed: ${error.message}`))
-  }
-```
-
-**依据 3 · 源码核查**：[plugins/dsh/index.js:1283-1306](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1283-L1306)
-
-摘要失败仍写 unavailable anchor。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-    if (captureExists(memoryDir, sessionId, turn)) return
-
-    let body = render
-    if (opts.summarizeEnabled) {
-      try {
-        const summary = await summarizeTurn(ctx, opts, render, projectDir)
-        if (summary) {
-          body = summary
-        } else {
-          ctx.logger.warn('[memsearch] summarizer returned empty output; wrote unavailable note')
-          body = '- Memory summary unavailable: summarizer returned empty output. Use the transcript anchor for progressive disclosure.'
-        }
-      } catch (error) {
-        // Collapse newlines so the reason stays a single `- ` bullet in the
-        // daily file (summarize.py stderr can span lines).
-        const reason = String(error.message).replace(/\s+/g, ' ').trim()
-        if (error.code !== 'MEMSEARCH_DEPENDENCY_MISSING' || !dependencyWarnings.has(reason)) {
-          ctx.logger.warn(`[memsearch] summarization failed (${reason}); wrote unavailable note`)
-          if (error.code === 'MEMSEARCH_DEPENDENCY_MISSING') dependencyWarnings.add(reason)
-        }
-        body = `- Memory summary unavailable: ${reason}; transcript content was omitted. Use the transcript anchor for progressive disclosure.`
       }
-    }
-    writeCapture(memoryDir, body, sessionId, turn, dbPath)
+    })
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/memsearch/core.py:178-200](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/src/memsearch/core.py#L178-L200)
+**依据 5 · 源码核查**：[plugins/dsh/index.js:836-865](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L836-L865)
 
-根索引删除旧块先于 embedding。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-        # Compute composite chunk IDs (matching OpenClaw format)
-        chunk_ids = {compute_chunk_id(c.source, c.start_line, c.end_line, c.content_hash, model) for c in chunks}
-        old_ids = self._store.hashes_by_source(source)
-
-        # Delete stale chunks that are no longer in the file
-        stale = old_ids - chunk_ids
-        if stale:
-            self._store.delete_by_hashes(list(stale))
-
-        if not chunks:
-            return 0
-
-        if not force:
-            # Only embed chunks whose ID doesn't already exist
-            chunks = [
-                c
-                for c in chunks
-                if compute_chunk_id(c.source, c.start_line, c.end_line, c.content_hash, model) not in old_ids
-            ]
-            if not chunks:
-                return 0
-
-        return await self._embed_and_store(chunks)
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/memsearch/core.py:202-214](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/src/memsearch/core.py#L202-L214)
-
-根服务分批 embedding 和 upsert。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-    async def _embed_and_store(self, chunks: list[Chunk]) -> int:
-        if not chunks:
-            return 0
-
-        model = self._embedder.model_name
-        total = 0
-        for batch in _chunk_batches(chunks, self._embedder.batch_size):
-            # Clean content for embedding: strip HTML comments and metadata noise
-            # so the embedding vector captures semantics, not UUIDs/paths.
-            # The original content is preserved in the Milvus record below.
-            contents = [clean_content_for_embedding(c.content) for c in batch]
-            embeddings = await self._embedder.embed(contents)
-            total += self._store.upsert(_records_for_chunks(batch, embeddings, model))
-```
-
-</details>
-
-#### 缺口
-
-- 未模拟重启、索引故障与恢复
-  **影响**：不能断言完整性或恢复时间
-  **进一步探讨**：隔离副本故障注入，核对日记、原会话、failed_files 并人工补摘要。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 使用有什么依赖、隐私和退出成本？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
-
-#### 完整回答
-
-需要兼容 DSH、memsearch CLI、Python、所选摘要与 embedding 后端和项目目录写权限。配置可选外部模型，后台摘要会处理对话内容；不能由 Markdown 位于本地推断全程离线。首用需固定语料和 collection，持续需模型费用、磁盘与人工复核，失败要查看日志、日记及原会话。退出要分别停自动捕获、移除 profile 接入并决定日记、索引和已安装 Skill 的保留；不能把移除插件等同撤回已发送内容或删除历史。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[plugins/dsh/package.json:1-15](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/package.json#L1-L15)
-
-子包和运行入口。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-{
-  "name": "@zilliz/memsearch-dsh",
-  "version": "0.1.8",
-  "description": "MemSearch plugin for DeepSeek Harness: shared markdown memory across agents, with capture, on-demand recall, memory-recall skill, and a skill-candidate review panel.",
-  "type": "module",
-  "main": "index.js",
-  "exports": {
-    ".": {
-      "types": null,
-      "default": "./index.js"
-    },
-    "./client": "./client.js",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
-```
-
-</details>
-
-**依据 2 · 源码核查**：[plugins/dsh/index.js:142-147](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L142-L147)
-
-查找 memsearch 或 uvx。
-
-```text
-function detectMemsearchCmd() {
-  if (process.env.MEMSEARCH_CMD) return parseCommand(process.env.MEMSEARCH_CMD, 'MEMSEARCH_CMD')
-  const executable = findExecutable('memsearch')
-  if (executable) return [executable]
-  const uvx = findExecutable(join(homedir(), '.local', 'bin', 'uvx')) || findExecutable('uvx')
-  return uvx ? [uvx, '--from', 'memsearch[onnx]', 'memsearch'] : ['memsearch']
-```
-
-**依据 3 · 源码核查**：[plugins/dsh/index.js:1179-1203](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1179-L1203)
-
-自动捕获、摘要和模型选择。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  const opts = {
-    captureEnabled: config.captureEnabled !== false,
-    injectEnabled: config.injectEnabled !== false,
-    summarizeEnabled: config.summarizeEnabled !== false,
-    summarizeMode: config.summarizeMode,
-  }
-
-  const memsearchCmd = detectMemsearchCmd()
-  // Legacy plugin-config fields were removed in favor of memsearch config /
-  // environment (aligned with the other platform plugins). A leftover field in
-  // the profile patch is now ignored; warn once so an upgrade is not silent.
-  const LEGACY_CONFIG_FIELDS = ['summarizeProvider', 'summarizeModel', 'memsearchDir', 'collection', 'milvusUri', 'agentName']
-  const legacyField = LEGACY_CONFIG_FIELDS.find((field) => config[field] !== undefined)
-  if (legacyField) {
-    ctx.logger.warn(
-      `[memsearch] config field '${legacyField}' is no longer used; provider/model/milvus/memory-dir now come from memsearch config (see README "Configuration")`,
-    )
-  }
-  // Resolve the effective summarize backend now: explicit summarizeMode wins;
-  // otherwise (auto) mirror the other plugins — a configured
-  // [plugins.dsh.summarize] provider selects custom-llm, else dsh-headless.
-  const resolvedSummarize = resolveSummarizeMode(memsearchCmd, opts, config, ctx.logger)
-  opts.summarizeMode = resolvedSummarize.mode
-  if (resolvedSummarize.provider) opts.summarizeProvider = resolvedSummarize.provider
-  if (resolvedSummarize.model) opts.summarizeModel = resolvedSummarize.model
-```
-
-</details>
-
-**依据 4 · 作者声明**：[plugins/dsh/README.md:129-143](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/README.md#L129-L143)
-
-作者说明摘要后端。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-Two backends are available, selected by `summarizeMode` — the same
-"configured choice" the Claude Code / Codex / OpenClaw / OpenCode plugins
-offer (each can summarize with their own LLM or a headless agent + small
-model). The default (`auto`) matches theirs: configure a provider and you get
-a direct LLM call; configure nothing and you get a headless agent.
-
-- **`auto`** (default) — mirrors the other platform plugins:
-  - if `[plugins.dsh.summarize] provider` is set in memsearch config
-    (`~/.memsearch/config.toml`, same place the other plugins read), use
-    `custom-llm` with that provider/model;
-  - otherwise use `dsh-headless` (zero-config DSH agent).
-  This means the plugin behaves like the other four: **configure a provider
-  → direct LLM; configure nothing → headless**.
-- **`dsh-headless`** — boots a one-shot DSH headless agent
-  (`dsh --profile headless "<summarize task>"`) to write the notes, mirroring
-```
-
-</details>
-
-**依据 5 · 源码核查**：[plugins/dsh/index.js:828-839](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L828-L839)
-
-日记落盘。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-/** Append a captured turn to the daily memory file (shared 4-platform format). */
-function writeCapture(memoryDir, body, sessionId, turn, dbPath) {
-  mkdirSync(memoryDir, { recursive: true })
-  const today = todayStr()
-  const hhmm = hhmmStr()
-  const file = join(memoryDir, `${today}.md`)
-  if (!existsSync(file)) {
-    writeFileSync(file, `# ${today}\n\n## Session ${hhmm}\n\n`, 'utf-8')
-  }
-  const anchor = `<!-- session:${sessionId} turn:${turn} db:${dbPath} -->\n`
-  const entry = `### ${hhmm}\n${anchor}${body}\n\n`
-  appendFileSync(file, entry, 'utf-8')
-```
-
-</details>
-
-#### 缺口
-
-- 未测数据流、账单和卸载
-  **影响**：不能保证离线、净节省或历史已删除
-  **进一步探讨**：隔离 profile 检查网络、目录和选定模型，记录费用与退出状态。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 何时值得试用，什么时候回退？
-
-**研究主题**：贡献与相对优势、采用判断
-
-#### 完整回答
-
-频繁跨会话且能核对原会话的用户可在非敏感项目试用，先查看自动摘要和召回提示，再用明确问题对照手工笔记。若摘要 unavailable、索引有失败或原会话不可读，则回原文而不把空检索当没有历史；涉及敏感内容或无法接受外部模型时先关闭自动捕获或选经过核对的本地配置。候选 Skill 的生成、review 和 install 是不同操作，展示页面不自动证明每次安装经过语义审核。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[plugins/dsh/index.js:1240-1256](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1240-L1256)
-
-按需召回提示。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-  // --- Pre-step recall hint: the agent decides when to search ---
-  ctx.on(
-    'agent/pre-step',
-    async ({ agent, step, signal }, next) => {
-      const decision = await next()
-      if (!opts.injectEnabled) return decision
-      if (decision.kind === 'reject' || signal.aborted) return decision
-      if (step !== 1) return decision
-
-      const memoryDir = memoryDirFor(projectDirFor(agent.session))
-      if (!hasMemoryFiles(memoryDir)) return decision
-
-      const memoryMessage = await createMemoryMessage(ctx, RECALL_HINT)
-      return {
-        ...decision,
-        messages: [...decision.messages, memoryMessage],
-      }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[plugins/dsh/index.js:1283-1306](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1283-L1306)
-
-摘要失败提示和原会话锚点。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-    if (captureExists(memoryDir, sessionId, turn)) return
-
-    let body = render
-    if (opts.summarizeEnabled) {
-      try {
-        const summary = await summarizeTurn(ctx, opts, render, projectDir)
-        if (summary) {
-          body = summary
-        } else {
-          ctx.logger.warn('[memsearch] summarizer returned empty output; wrote unavailable note')
-          body = '- Memory summary unavailable: summarizer returned empty output. Use the transcript anchor for progressive disclosure.'
-        }
-      } catch (error) {
-        // Collapse newlines so the reason stays a single `- ` bullet in the
-        // daily file (summarize.py stderr can span lines).
-        const reason = String(error.message).replace(/\s+/g, ' ').trim()
-        if (error.code !== 'MEMSEARCH_DEPENDENCY_MISSING' || !dependencyWarnings.has(reason)) {
-          ctx.logger.warn(`[memsearch] summarization failed (${reason}); wrote unavailable note`)
-          if (error.code === 'MEMSEARCH_DEPENDENCY_MISSING') dependencyWarnings.add(reason)
-        }
-        body = `- Memory summary unavailable: ${reason}; transcript content was omitted. Use the transcript anchor for progressive disclosure.`
-      }
-    }
-    writeCapture(memoryDir, body, sessionId, turn, dbPath)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[plugins/dsh/client.js:2-13](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/client.js#L2-L13)
-
-候选 review 与 install 是独立操作。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
- * memsearch-dsh — browser half (skill review panel).
- *
- * A non-blocking dock strip above the composer that lists MemSearch skill
- * candidates distilled from memory journals and lets the human review or
- * install them:
- *
- *   - data:   GET  /memsearch-dsh/skill-candidates
- *   - review: POST /memsearch-dsh/skill-review  { sessionId, name, action: 'review' }
- *             queues a user message into the live agent's inbox; the agent
- *             reviews the candidate on the next turn (non-blocking).
- *   - install:POST /memsearch-dsh/skill-review  { sessionId, name, action: 'install' }
- *             runs `memsearch skills install` in the background to the
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/memsearch/index_report.py:19-30](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/src/memsearch/index_report.py#L19-L30)
-
-根索引 degraded 与失败清单。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-@dataclass(frozen=True)
-class IndexReport:
-    """Structured result for a completed indexing pass."""
-
-    indexed_chunks: int
-    total_files: int
-    indexed_files: int
-    failed_files: tuple[IndexFailure, ...] = ()
-
-    @property
-    def status(self) -> str:
-        return "degraded" if self.failed_files else "ok"
-```
-
-</details>
-
-#### 缺口
-
-- 未测检索质量和 Skill 审核流程
-  **影响**：无法保证准确性与净收益
-  **进一步探讨**：对比同题错误引用、来源可回读率和人工时间。
-
-<a id="research-q06"></a>
-
-<a id="detail-section-16"></a>
-
-### Q06 · 如何补修失败摘要而不重复捕获？
-
-**研究主题**：新假设与验证、贡献与相对优势
-
-#### 完整回答
-
-已有 anchor 去重、失败占位和原会话链接，增加简单重试或 anchor 不是新机制。未验证方案是把 unavailable 摘要标为独立可识别状态，在用户请求后用相同 session/turn 的原会话重新生成，再以受控的比较替换该占位并重建索引；并发改写需先验证原内容版本，避免覆盖用户编辑。通过摘要失败、重放、用户编辑和索引失败故障注入，比较重复条目、恢复成功、覆盖误伤和成本；若误伤或额外负担大于恢复收益则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[plugins/dsh/index.js:810-839](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L810-L839)
-
-已有 anchor 与 append。
+查重依据仅是锚点存在，日记追加包含锚点。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -974,19 +483,202 @@ function writeCapture(memoryDir, body, sessionId, turn, dbPath) {
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/dsh/index.js:1283-1306](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/plugins/dsh/index.js#L1283-L1306)
+#### 缺口
 
-已有失败占位和去重。
+- 未测试进程崩溃、两个进程同时捕获或索引失败。
+  **影响**：不能将进程内序列和锚点判断视为跨进程一致性。
+  **进一步探讨**：用两个隔离进程回放同一测试 turn，分别在摘要、追加和索引边界中断并读回。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · Web 的审阅和安装响应具体承诺什么？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+审阅接口会把描述候选位置和核对步骤的消息追加到活跃代理的下一轮队列，缺少活跃代理时返回 404。安装分支按会话目录解析目标并启动后台 CLI，HTTP 200 中 started 只表示调用路径已启动，子进程失败会进日志，使用者仍需核对目标 SKILL 文件是否写入并被宿主识别。所有这些路由经过宿主 connection.requestRejection，连接服务不可用时返回 503；源代码只能说明委托现有宿主认证的接线，具体用户隔离和 Host／Origin 策略取决于目标宿主配置。对多项目使用者，发起安装前要核实当前会话和目标目录。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[plugins/dsh/index.js:516-536](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L516-L536)
+
+每请求委托宿主认证和策略，缺失时返回 503。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-    if (captureExists(memoryDir, sessionId, turn)) return
-
-    let body = render
-    if (opts.summarizeEnabled) {
+  const registerAuthenticatedRoute = (route) => webServer.register({
+    ...route,
+    handler: (req, res) => {
+      let rejection
       try {
+        // The connection service mounts after this plugin. Resolve it for each
+        // request and reuse DSH's authentication and Host/Origin policy.
+        const connection = ctx.get('connection')
+        rejection = typeof connection?.requestRejection === 'function'
+          ? connection.requestRejection({ headers: req.headers })
+          : 503
+      } catch {
+        rejection = 503
+      }
+      if (rejection !== undefined) {
+        return sendJson(res, rejection, {
+          error: rejection === 503 ? 'authentication unavailable' : 'request rejected',
+        })
+      }
+      return route.handler(req, res)
+    },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[plugins/dsh/index.js:580-604](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L580-L604)
+
+审阅请求查活跃代理并将消息放入下一轮。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+    path: '/memsearch-dsh/skill-review',
+    handler: async (req, res) => {
+      if (req.method !== 'POST') return sendJson(res, 405, { error: 'method not allowed' })
+      const body = await readJsonBody(req)
+      const { sessionId, name, action } = body
+      if (!name || (action !== 'review' && action !== 'install')) {
+        return sendJson(res, 400, { error: 'name and action (review|install) are required' })
+      }
+      if (action === 'review') {
+        // Non-blocking: queue a user message into the live agent's inbox.
+        // The agent picks it up on the next turn (never interrupts a running
+        // turn, never asks the human via a blocking dialog).
+        const agent = ctx.agents?.get?.(sessionId)
+        if (!agent) {
+          return sendJson(res, 404, { error: `no live agent for session ${sessionId}` })
+        }
+        const text =
+          `[memsearch] Skill candidate "${name}" is ready for review.\n\n` +
+          `Read the candidate at .memsearch/skill-candidates/${name}/ (SKILL.md plus meta.json), ` +
+          `verify it against the cited memory journals, decide whether it is worth installing, ` +
+          `and report your recommendation to the user. Installation stays a manual step: ` +
+          `memsearch skills install ${name} --path <dir>.`
+        const message = await createMemoryMessage(ctx, text)
+        agent.inbox.append('next-turn', message)
+        return sendJson(res, 200, { ok: true, action, name, injected: true })
+```
+
+</details>
+
+**依据 3 · 源码核查**：[plugins/dsh/index.js:606-622](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L606-L622)
+
+安装异步启动，失败记日志，响应字段为 started。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+      // install: background `memsearch skills install` to the resolved target.
+      // Detached + unref so the install survives the DSH process; the
+      // skill-filesystem watcher picks up the new SKILL.md automatically.
+      const projectDir = await projectDirForSession(sessionId)
+      const target = resolveSkillInstallTarget(memsearchCmd, projectDir)
+      const child = execCommand(memsearchCmd, ['skills', 'install', name, '--path', target], {
+        cwd: projectDir,
+        timeout: 60000,
+        maxBuffer: 4 * 1024 * 1024,
+        detached: true,
+        stdio: 'ignore',
+        env: { ...process.env, MEMSEARCH_NO_WATCH: '1' },
+      }, (error) => {
+        if (error) ctx.logger.warn(`[memsearch] skill install failed: ${error.message}`)
+      })
+      child.unref()
+      return sendJson(res, 200, { ok: true, action, name, started: true, target })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[plugins/dsh/index.js:1387-1407](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1387-L1407)
+
+等待 Web 服务出现后注册路由。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  // --- Skill review panel: browser-facing JSON API (web only) ---
+  // The memsearch plugin mounts in the base bundle layer, before the DSH web
+  // server service exists. Retry until the service appears (web profile) or
+  // give up silently (headless / tui profiles never provide it). The retry
+  // timer is unref'd so it never keeps the process alive, and the routes are
+  // registered exactly once.
+  let skillReviewAttempted = false
+  const tryRegisterSkillReview = () => {
+    if (skillReviewAttempted) return
+    const webServer = typeof ctx.get === 'function' ? ctx.get('webServer') : undefined
+    if (webServer === undefined) return // not available yet; retry later
+    skillReviewAttempted = true
+    try {
+      registerSkillReviewRoutes(ctx, webServer, memsearchCmd)
+    } catch (error) {
+      ctx.logger.warn(`[memsearch] skill-review route registration failed: ${error.message}`)
+    }
+  }
+  tryRegisterSkillReview()
+  const skillReviewTimer = setInterval(tryRegisterSkillReview, 1000)
+  skillReviewTimer.unref?.()
+```
+
+</details>
+
+#### 缺口
+
+- 没有同版本 Web 操作及实际跨项目权限记录。
+  **影响**：无法确认部署配置满足多人访问边界，也未证实安装后的宿主加载。
+  **进一步探讨**：在单独 Web profile 先模拟无活跃代理及安装子进程失败，再核对 HTTP、日志与目标路径。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 何时可试用，怎样验证对失败占位的补修设计？
+
+**研究主题**：新假设与验证、采用判断
+
+#### 完整回答
+
+适合在隔离项目保存一条无敏感内容的明确决策，等 turn/end 后读日记，在新会话中询问该决策并检查索引结果和原始锚点。如果只召回不可用说明、原话与摘要冲突或源锚点找不到，就回原会话和项目文档，并暂停将召回结果用于决策。现有占位保住了来源线索，却让按锚点去重的普通重播跳过补修。可检验的设计是给失败占位单独记录需补摘要状态，恢复任务按原锚点读取原文，只在版本与占位仍匹配时替换，再回读索引。用同一测试 turn 注入一次摘要失败和一次索引失败，对照现有重播，统计能否恢复原锚点、避免双份日记并找回正确决策。若导致重复、覆盖正常日记或跨项目更新，应保留人工回查。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[plugins/dsh/index.js:1301-1309](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1301-L1309)
+
+重放分支先看已存在的锚点。
+
+```text
+  const processTurn = async (session, turnEndEvent) => {
+    const projectDir = projectDirFor(session)
+    const render = renderTurn(session, turnEndEvent)
+    if (!render) return
+    const sessionId = session.id
+    const turn = turnEndEvent.data.turn
+    const dbPath = sessionLogPath(ctx, session)
+    const memoryDir = memoryDirFor(projectDir)
+    if (captureExists(memoryDir, sessionId, turn)) return
+```
+
+**依据 2 · 源码核查**：[plugins/dsh/index.js:1314-1344](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/index.js#L1314-L1344)
+
+失败占位和后续索引调用提供补修的候选边界。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
         const summary = await summarizeTurn(ctx, opts, render, projectDir)
         if (summary) {
           body = summary
@@ -998,57 +690,65 @@ function writeCapture(memoryDir, body, sessionId, turn, dbPath) {
         // Collapse newlines so the reason stays a single `- ` bullet in the
         // daily file (summarize.py stderr can span lines).
         const reason = String(error.message).replace(/\s+/g, ' ').trim()
-        if (error.code !== 'MEMSEARCH_DEPENDENCY_MISSING' || !dependencyWarnings.has(reason)) {
-          ctx.logger.warn(`[memsearch] summarization failed (${reason}); wrote unavailable note`)
-          if (error.code === 'MEMSEARCH_DEPENDENCY_MISSING') dependencyWarnings.add(reason)
+        const missingCredential = opts.summarizeMode === 'dsh-headless' && /\bMISSING_CREDENTIAL\b/.test(reason)
+        const warning = missingCredential
+          ? 'DSH headless reported MISSING_CREDENTIAL. Use memory-config to check summary credentials.'
+          : `summarization failed (${reason}); wrote unavailable note`
+        const warnOnce = missingCredential || error.code === 'MEMSEARCH_DEPENDENCY_MISSING'
+        if (!warnOnce || !captureWarnings.has(warning)) {
+          ctx.logger.warn(`[memsearch] ${warning}`)
+          if (warnOnce) captureWarnings.add(warning)
         }
         body = `- Memory summary unavailable: ${reason}; transcript content was omitted. Use the transcript anchor for progressive disclosure.`
       }
     }
     writeCapture(memoryDir, body, sessionId, turn, dbPath)
+    // Index right after the write so the memory is searchable by the next
+    // session (or by this one's later turns) instead of waiting for a future
+    // boot-time index. The index is idempotent via chunk_hash dedup.
+    const collection = resolveCollection(projectDir)
+    if (collection && hasMemoryFiles(memoryDir)) {
+      indexMemory(ctx, memsearchCmd, memoryDir, collection, projectDir, opts.milvusUri)
+    }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/memsearch/core.py:178-200](https://github.com/zilliztech/memsearch/blob/65d8b220d4265f70441785aa22203f0e85ea3ec6/src/memsearch/core.py#L178-L200)
+**依据 3 · 源码核查**：[plugins/dsh/skills/memory-recall/SKILL.md:40-58](https://github.com/zilliztech/memsearch/blob/a81ac682b547f86df25cd70a9477ada543de67ae/plugins/dsh/skills/memory-recall/SKILL.md#L40-L58)
 
-根索引更新失败窗口。
+手工回查原话与引用来源已有操作路径。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（19行）</summary>
 
-```text
-        # Compute composite chunk IDs (matching OpenClaw format)
-        chunk_ids = {compute_chunk_id(c.source, c.start_line, c.end_line, c.content_hash, model) for c in chunks}
-        old_ids = self._store.hashes_by_source(source)
+````text
+### 3. Drill into the original conversation (optional)
 
-        # Delete stale chunks that are no longer in the file
-        stale = old_ids - chunk_ids
-        if stale:
-            self._store.delete_by_hashes(list(stale))
+When an expanded result contains an anchor comment like
 
-        if not chunks:
-            return 0
-
-        if not force:
-            # Only embed chunks whose ID doesn't already exist
-            chunks = [
-                c
-                for c in chunks
-                if compute_chunk_id(c.source, c.start_line, c.end_line, c.content_hash, model) not in old_ids
-            ]
-            if not chunks:
-                return 0
-
-        return await self._embed_and_store(chunks)
 ```
+<!-- session:<id> turn:<N> db:<path> -->
+```
+
+you can render the original conversation around that turn:
+
+```bash
+{{PYTHON_CMD}} "{{PLUGIN_DIR}}/scripts/parse-transcript.py" --db "<path>" --turn <N> --context 3
+```
+
+Pass `--context 0` for just the target turn, or omit `--turn` to see the most recent turns.
+
+### 4. Report a curated summary
+
+Return a concise summary of the relevant context to the user, citing the memory source files where useful. If the search finds nothing relevant, say so plainly in one line and proceed without it. Do not fabricate memories.
+````
 
 </details>
 
 #### 缺口
 
-- 补修方案未实现，文件替换与索引一致性未证
-  **影响**：不能宣称自动可靠修复
-  **进一步探讨**：隔离目录模拟并发编辑和失败后补修，人工核查原文及索引。
+- 补修设计没有实现或测试。
+  **影响**：对恢复率、重复率和新增后台开销的影响未知。
+  **进一步探讨**：针对失败占位做有无修复任务的隔离重放对照。
 
 [返回分类](../../views/categories/RESEARCH-KNOWLEDGE.md) · [返回首页](../../../README.md)
