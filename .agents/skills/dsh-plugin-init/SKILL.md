@@ -112,6 +112,8 @@ npm run research:prepare -- \
 
 ### 3. 验收并暂存
 
+按[验收链的覆盖核查](references/HOW-TO-ACCEPT-RESEARCH.md#按题阅读与关键依赖补查)反查问题范围。更新项须核对旧结论与本轮实质变更的去向，再决定是否暂存。
+
 对照每项 PLAN，按问题 ID 读完整回答、证据、未知项与状态，检查贡献、质疑、假设和建议的推导。核对真实条目类型、身份、固定版本、材料摘要、findings 复核及两轴创新和四项采用评分；不能只核字段、题数和总分。确认完整问题对象与必要原件已自包含保存。
 
 收到交付后将 `{ id, observations, report, display }` 数组保存为本轮 `DELIVERIES.json`，先预检查并绑定完整交付：
