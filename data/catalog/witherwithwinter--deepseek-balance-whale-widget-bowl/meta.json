@@ -1,0 +1,58 @@
+{
+    "repository": "Witherwithwinter/DeepSeek-Balance-Whale-Widget-Bowl",
+    "repository_id": 1350609994,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 39,
+    "pushed_at": "2026-10-05T07:42:54Z",
+    "issues": {
+        "open": 1,
+        "closed": 0,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWitherwithwinter%2FDeepSeek-Balance-Whale-Widget-Bowl%20is%3Aissue%20created%3A2026-10-14T02%3A05%3A03.217Z..2026-11-13T02%3A05%3A03.217Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D77:20528E:680D5F:6E0FAD:6AF671E1 and timestamp 2026-11-13 02:11:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWitherwithwinter%2FDeepSeek-Balance-Whale-Widget-Bowl%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T02%3A05%3A03.217Z..2026-11-13T02%3A05%3A03.217Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 155A:126B98:6C53C8:7258A4:6AF671E3 and timestamp 2026-11-13 02:11:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWitherwithwinter%2FDeepSeek-Balance-Whale-Widget-Bowl%20is%3Aissue%20updated%3A2026-10-14T02%3A05%3A03.217Z..2026-11-13T02%3A05%3A03.217Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5000:20528E:681071:6E12F1:6AF671E5 and timestamp 2026-11-13 02:11:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T11:55:57.992Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-widget-bowl",
+        "captured_at": "2026-11-13T02:05:03.217Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-whale-widget-bowl",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-13T02:05:03.217Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-widget-bowl",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

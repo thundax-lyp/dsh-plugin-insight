@@ -1,0 +1,45 @@
+{
+    "repository": "PGZXB/dsh-feishu",
+    "repository_id": 1333870105,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 37,
+    "pushed_at": "2026-10-30T16:45:29Z",
+    "issues": {
+        "open": 2,
+        "closed": 2,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@dsh-feishu/dsh-feishu",
+        "captured_at": "2026-11-13T02:05:03.217Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 1790,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/%40dsh-feishu%2Fdsh-feishu",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T20:21:01.658Z",
+            "captured_at": "2026-11-13T02:05:03.217Z",
+            "source_url": "https://registry.npmjs.org/%40dsh-feishu%2Fdsh-feishu",
+            "error": null,
+            "latest_version": "0.3.7",
+            "latest_published_at": "2026-10-24T21:04:33.056Z",
+            "latest_error": null
+        }
+    }
+}

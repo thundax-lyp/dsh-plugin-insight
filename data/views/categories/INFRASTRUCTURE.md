@@ -41,6 +41,7 @@
 | [deepseek-harness-docker](#plugin-1333277183-root) | 将官方 DSH 发行物封装为带 Web UI 和 Chromium 桌面的容器运行环境。 | [Q03](../../plugins/runzhliu--deepseek-harness-docker/INSIGHT.md#research-q03) 用空卷在回环验收实际会话、浏览器和恢复，再扩大访问。 |
 | [distill-kura](#plugin-1342235893-root) | 为 Agent 提供按证据蒸馏的长期记忆、语义召回及按模式分库，含 HTTP、MCP 与 DSH 适配。 | 试用限定为有本地推理/日志运维能力的维护者在独立脱敏副本禁cues，先核召回路径、再人工审一轮草稿。 |
 | [DSH Backup](#plugin-1333963585-root) | 备份、校验和恢复 DeepSeek Harness 会话、设置与技能，并提供预览和独立救援入口。 | [Q04](../../plugins/xiaoyuyu6420--dsh-backup/INSIGHT.md#research-q04) 先用测试目录和固定归档验证，不开启同步。 |
+| [DSH Bridge](#plugin-1337930857-root) | 通过局域网、隧道或聊天机器人，在手机上接入并继续本机 DeepSeek Harness 任务。 | 先观察非敏感测试宿主的一条受保护入口。 |
 | [DSH Capability Menu](#plugin-1339185691-root) | 按常驻、按需和禁用管理工具与技能 | [Q04](../../plugins/pkufudawei--dsh-capability-menu/INSIGHT.md#research-q04) 隔离 profile 对照三层策略及权限。 |
 | [DSH Codex Auth](#plugin-1374007757-plugins-dsh-codex-auth-plugin) | 在 DSH 中管理 Codex 授权、模型目录和用量状态 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-codex-auth-plugin/INSIGHT.md#research-q04) 限定本机profile测试登录请求退出闭环。 |
 | [DSH Codex Desktop](#plugin-1333748978-root) | 以 Electron 启动本地 DSH，在独立桌面窗口接入工作台和预置插件。 | [Q03](../../plugins/michengai--dsh-codex-desktop/INSIGHT.md#research-q03) 隔离测试首次启动和迁移。 |
@@ -688,6 +689,22 @@
 > **建议**：[Q05](../../plugins/xiaoyuyu6420--dsh-backup/INSIGHT.md#research-q05) 分阶段回执可能缩短中断后定位原件与决定恢复的时间。
 
 [查看完整分析](../../plugins/xiaoyuyu6420--dsh-backup/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1337930857-root"></a>
+
+## [DSH Bridge](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md)
+
+[![GitHub ★ 258](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=258&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wenbin-wb/dsh-bridge) [![npm 30d 12,564](https://img.shields.io/static/v1?label=npm+30d&message=12%2C564&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wenbin_wb/dsh-bridge) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wenbin_wb/dsh-bridge)
+
+> **用途**：已经在本机运行 DSH、离开电脑后仍需查看任务和批准的用户，可以从移动网页或 IM 接入。见 [Q01](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q01)。
+
+> **亮点**：把手机入口接到实际 DSH 会话，在代理中处理两类本机签名 cookie，并在 IM 起轮时绑定发起人，普通网页审批仍留给宿主。见 [Q02](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q02)、[Q03](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q03)。
+
+> **思考**：外部入口能访问不代表拓扑认证正确。会话取消、登出、IM 发送者和宿主任务结果都需要分别回读。见 [Q02](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q02)、[Q03](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q03)。
+
+> **建议**：可保存实际入口、授权判定、批准归属和撤销回读的联合记录。若比人工日志更难定位问题，或无法更早发现漏验，则保留手工核验。见 [Q05](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/wenbin-wb--dsh-bridge/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339185691-root"></a>
 

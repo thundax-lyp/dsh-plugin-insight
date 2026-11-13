@@ -137,6 +137,7 @@
 | [DSH Sidenote](#plugin-1339293057-root) | 在 DSH Web 划选批注、打开侧边会话并把选定问答带回主线。 | 在独立 profile 先做一次脱敏引文的局部评审，检查最后正文及引用后再扩大，见 [Q04](../../plugins/g-yixuan--dsh-sidenote/INSIGHT.md#research-q04)。 |
 | [DSH Skill Explorer](#plugin-1331636953-packages-dsh-skill-explorer) | 在 DSH Web 面板中按来源浏览、查找和管理 Skill。 | 在独立工作区用一条可回退的普通 Skill 核对来源、文件变更和目标会话；发现三者不符时回到编辑器和官方目录，见 [Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-skill-explorer/INSIGHT.md#research-q04)。 |
 | [DSH Skill Hub](#plugin-1334303719-root) | 在 DSH 中浏览、筛查、安装、更新和恢复本地 Skill。 | [Q04](../../plugins/cheshireez--dsh-skill-hub/INSIGHT.md#research-q04) 只建议先用自控固定来源完成单个试验并核对文件。 |
+| [DSH Skills Manager](#plugin-1334830521-root) | 在 DeepSeek Harness 中集中发现、加载和管理本机及仓库技能，支持工作区和自定义预设。 | 先在隔离预设试一份已审阅的技能，核来源、版本和调用范围。 |
 | [DSH Subagent](#plugin-1425006726-root) | 将本机外部 CLI 注册为 DSH 子代理后端，支持调度、进度及模型回退。 | [Q04](../../plugins/1373700184--dsh-subagent/INSIGHT.md#research-q04) 先检查后端权限、工作目录与费用；不能接受默认绕过审批时不要启动相应后端。 |
 | [DSH Super Code](#plugin-1367482095-root) | 为 DSH 编码任务提供专家委派、分层记忆与删除保护。 | 隔离试用、限定分工并独立检查 diff 和测试；审批或版本异常即停止。 |
 | [DSH Task Board](#plugin-1331636953-packages-dsh-task-board) | 在 DSH Web 管理任务卡、真实会话执行和宿主定时计划。 | 先开一次只读卡，确认关闭浏览器后宿主能触发并保留实际会话输出。 |
@@ -262,7 +263,7 @@
 | [dsh-remote-ssh](#plugin-1338300924-root) | 在DSH内集成SSH连接、远程工作区、文件/终端界面与模型远程工具。 | 当前观察，仅无秘密fixture只读起步，先核所有界面实际远端/目录。 |
 | [dsh-restart-dock](#plugin-1424433303-root) | 在 DSH Web 界面提供可拖动的刷新/Windows 宿主重启坞，并用独立 helper 留下重启报告。 | [Q09](../../plugins/7gzgn--dsh-restart-dock/INSIGHT.md#research-q09) 仅供有人工救援通道的Windows插件开发者观察；先核状态与目标。 |
 | [dsh-restart-planner](#plugin-1422176522-root) | 让代理排程宿主自重启，等待会话落盘后由外部 helper 停拉进程并向原会话投递继续提示。 | 仅建议具备救援入口的插件开发环境观察；先 dryRun，随后在空闲会话做一次 confirm=true、resume=false 的真实重启，再单独验证恢复投递。 |
-| [dsh-rewind](#plugin-1336677036-root) | 在 DSH 原会话内回退到较早用户消息，并可按轻量写前备份还原已跟踪的工作区文件。 | [Q03](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q03) 固定版本并保留Git/独立备份，只在可丢弃目录先核对预览与实际结果。 |
+| [dsh-rewind](#plugin-1336677036-root) | 在同一 DSH 对话内回退到用户消息前，并可一并恢复受跟踪的工作区文件。 | [Q03](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q03) 在固定 Web profile 与可丢弃目录先试一个小文件，用 Git 差异确认结果；[Q02](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q02) 所列跳过、失败和追踪空白出现时暂停续写，先恢复独立基准。 |
 | [dsh-routing-suite](#plugin-1334586481-root) | 组合运行时注入器、思维模式路由预设与分级任务协议。 | 当前建议观察套装整体；先核对目标宿主版本与组件独立装配结果，再决定是否在隔离profile做开发实验。 |
 | [dsh-sandbox-escalation-fix](#plugin-1335780030-root) | 按 DSH 会话沙箱和审批策略调整工具升级参数、归一无效请求并过滤不适用提示。 | 先测官方是否仍反复失败，再隔离profile核正常/越界/升级矩阵；不兼容或冲突就回原生。 |
 | [dsh-secure-audit](#plugin-1339251799-root) | 为 DSH 提供启发式文本扫描、PII脱敏和本地配置审计工具。 | [Q03](../../plugins/pensivefei--dsh-secure-audit/INSIGHT.md#research-q03) 合成保留集逐字段验收后再考虑集成。 |
@@ -2424,6 +2425,22 @@
 
 [查看完整分析](../../plugins/cheshireez--dsh-skill-hub/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334830521-root"></a>
+
+## [DSH Skills Manager](../../plugins/michengai--dsh-skills-manager/INSIGHT.md)
+
+[![GitHub ★ 550](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=550&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-skills-manager) [![npm 30d 160,217](https://img.shields.io/static/v1?label=npm+30d&message=160%2C217&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-skills-manager)
+
+> **用途**：在多个 DSH 项目与预设维护技能的用户，可在设置中核对来源、调用范围和安装记录。见 [Q01](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q01)。
+
+> **亮点**：把自定义预设纳入宿主的技能候选与启停策略，保留官方预设只读。批量变更支持固定目标、差异预览和逐项来源记录。见 [Q02](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q02)、[Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03)。
+
+> **思考**：成功复制技能不保证来源记录已落盘或宿主已刷新。调用和写入还依赖当前宿主作用域及审批。见 [Q02](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q02)、[Q03](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q03)、[Q04](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q04)。
+
+> **建议**：可把来源、文件差异、目标预设及宿主可见状态组成逐项核对清单，验证是否能减少选错目录或误调用。若仍有误操作或审核负担持续高于人工，则缩小自动化范围。见 [Q05](../../plugins/michengai--dsh-skills-manager/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/michengai--dsh-skills-manager/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1425006726-root"></a>
 
 ## [DSH Subagent](../../plugins/1373700184--dsh-subagent/INSIGHT.md)
@@ -4428,15 +4445,15 @@
 
 ## [dsh-rewind](../../plugins/sirilee--dsh-rewind/INSIGHT.md)
 
-[![GitHub ★ 225](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=225&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SiriLee/dsh-rewind) [![npm 30d 28,940](https://img.shields.io/static/v1?label=npm+30d&message=28%2C940&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-rewind-plugin) [![最新发布 2026-10-26](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-26&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-rewind-plugin)
+[![GitHub ★ 260](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=260&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/SiriLee/dsh-rewind) [![npm 30d 40,496](https://img.shields.io/static/v1?label=npm+30d&message=40%2C496&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-rewind-plugin) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-rewind-plugin)
 
-> **用途**：在同一DSH会话探索方案的用户，可撤回错误轮次并选择恢复已跟踪文件，减少另建分支的切换。
+> **用途**：在一个 DSH 会话中反复试探实现方案的开发者，可以回到某次指令之前，修改提示再发送。关键验收是上下文停在预期位置，选择文件恢复时工作区差异也符合预期。
 
-> **亮点**：[Q01](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q01)、[Q02](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q02) 用追加标记保留原日志并改变模型/界面可见内容，结合消息锚定的轻量文件备份与影响预览，形成更连贯的探索退路。源码机制不能证明所有状态已恢复。
+> **亮点**：[Q01](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q01) 和 [Q02](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q02) 展示了同窗回退的组合贡献。插件复用 DSH 消息替换保持原日志，把真实用户消息同时作为文件检查点和提示词回填的锚点，使两种回退可以用一个界面发起。文件侧依靠稠密记录复用未变版本，适用范围由实际跟踪和保留窗口决定。
 
-> **思考**：[Q02](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q02)、[Q03](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q03) 对话先重绕，文件可能跳过/失败；journal写入和rescue取得均可降级继续，无法无条件保证崩溃完整回滚。未跟踪、超限和关闭备份的历史仍有缺口。
+> **思考**：[Q02](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q02) 和 [Q03](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q03) 显示，宿主先提交对话标记，再逐文件删除或替换，旧格式快照会被忽略。跳过、版本缺失或进程中断后可能留下部分恢复，未被工具跟踪的改动也无法从这些文件记录追回。预览缺失或失败回执需触发独立核对。
 
-> **建议**：[Q04](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q04) 在已有预览与分类结果上研究可恢复等级，把覆盖、rescue完整性和journal持久化结果转成确认前决策，比较误继续与额外负担；尚未验证。
+> **建议**：[Q04](../../plugins/sirilee--dsh-rewind/INSIGHT.md#research-q04) 提出把预览覆盖缺口、对话提交和逐文件结果拆成可核对的状态。以缺失备份和同大小外部编辑为对照样本，比较误继续频率及核对耗时，判断是否值得增加确认步骤。
 
 [查看完整分析](../../plugins/sirilee--dsh-rewind/INSIGHT.md) · [返回表格](#category-index)
 

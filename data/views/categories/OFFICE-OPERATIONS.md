@@ -29,10 +29,11 @@
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-automation](#plugin-1333150357-root) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | [Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 单个只读周期任务先验收。 |
 | [dsh-better-sidebar-plugin-office](#plugin-1331821326-root) | 为 better-sidebar 注册 docx、xlsx 和 pptx 侧栏预览，失败时提供原件下载。 | 先确认better-sidebar=0.6.0，用非敏感代表文件逐格式比对关键内容。 |
+| [dsh-feishu](#plugin-1333870105-root) | 将 DSH 会话接入飞书聊天，提供流式卡片、提问、审批及文件收发。 | [Q05](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q05) 保持观察，先在独立 profile 以无价值文件核对权限。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
 | [dsh-file-handover](#plugin-1422380986-root) | 将本地文件路径填入Windows原生文件框，按Win32/UIA/剪贴板回读并可确认，返回候选与动作记录。 | 先观察，单可见框probe+click=false人工核对。 |
-| [dsh-im-connect](#plugin-1335758624-root) | 把多账号 IM 聊天接入 DSH，支持会话绑定、审批和断线后交付。 | [Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 从隔离私聊开始验收，随后扩展至群聊。 |
+| [dsh-im-connect](#plugin-1335758624-root) | 把多平台即时通讯接入本机 DeepSeek Harness，会话可从聊天续接并回传结果。 | [Q05](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q05) 先在隔离工作区用单渠道私聊提交不含敏感文件的只读任务，同时在网页核对同一会话。 |
 | [dsh-invoice-tools](#plugin-1344714819-root) | 本地抽取电子发票PDF的XML/文本字段并作算术核对，汇总类别与重复提示，生成Markdown或xlsx.b64。 | 先观察；无敏感样票对照可继续研究，正式草稿也需显式files与原票复核，不把high或勾稽通过当放行。 |
 | [dsh-lark-link](#plugin-1333470417-root) | DSH原生飞书/Lark桥，组合会话Agent、卡片、入站重放/出站队列及媒体回传。 | [Q06](../../plugins/amlyczz--dsh-lark-link/INSIGHT.md#research-q06)观察；所有入口/实际只读/回放副作用未核前不接真实群或生产目录，未知回官方Web和人工对账。 |
 | [dsh-mac-companion](#plugin-1384810483-root) | 通过 Mac Companion 在 DSH 发通知、运行 Shortcuts 和读写剪贴板。 | [Q03](../../plugins/173787247--dsh-mac-companion/INSIGHT.md#research-q03) 仅用隔离 Mac 和无敏感通知开始，执行状态不明时回本机。 |
@@ -339,6 +340,22 @@
 
 [查看完整分析](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1333870105-root"></a>
+
+## [dsh-feishu](../../plugins/pgzxb--dsh-feishu/INSIGHT.md)
+
+[![GitHub ★ 37](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=37&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PGZXB/dsh-feishu) [![npm 30d 1,790](https://img.shields.io/static/v1?label=npm+30d&message=1%2C790&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dsh-feishu/dsh-feishu) [![最新发布 2026-10-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@dsh-feishu/dsh-feishu)
+
+> **用途**：在飞书中反复跟进 DSH 任务的人希望从同一聊天收到可核对的结果。
+
+> **亮点**：[Q01](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q01) 在已有飞书聊天中接入宿主会话、排队和卡片动作。[Q02](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q02) 卡片状态按请求、聊天和消息归并。
+
+> **思考**：[Q02](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q02) 卡片批准未绑定任务发起者。[Q03](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q03) send_file 的实际读路径没有工作区包含性检查。
+
+> **建议**：[Q05](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q05) 可把批准绑定具体授权主体，并由 Host 文件权限能力限制规范化路径。以错人、错卡和跨工作区测试证伪。
+
+[查看完整分析](../../plugins/pgzxb--dsh-feishu/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1418842530-root"></a>
 
 ## [dsh-feishu](../../plugins/2048lr--dsh-feishu/INSIGHT.md)
@@ -391,15 +408,15 @@
 
 ## [dsh-im-connect](../../plugins/michengai--dsh-im-connect/INSIGHT.md)
 
-[![GitHub ★ 122](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=122&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-im-connect) [![npm 30d 61,624](https://img.shields.io/static/v1?label=npm+30d&message=61%2C624&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect)
+[![GitHub ★ 136](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=136&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MichengAI/dsh-im-connect) [![npm 30d 68,285](https://img.shields.io/static/v1?label=npm+30d&message=68%2C285&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect)
 
-> **用途**：团队离开 DSH 网页后仍希望在一个聊天里提交和跟进任务。
+> **用途**：经常离开 DSH 网页的用户在手机私聊里提交只读任务、继续追问，再回到同一宿主会话核对完整结果。
 
-> **亮点**：[Q01](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q01) 将宿主会话映射到已用聊天并保留历史。
+> **亮点**：[Q01](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q01) 把即时通讯账号下的聊天和话题绑定到宿主会话，聊天发出的任务可回网页查原会话，结果仍回原聊天。[Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 将确认未送和送达未知分开处理，提供可查的文本补发记录。
 
-> **思考**：[Q02](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q02) 未知送达有独立状态，平台 ACK 和身份隔离待验。
+> **思考**：[Q02](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q02) 私聊普通准入拒绝时仍可尝试消费当前聊天的待审批票据，必须验证旧绑定和授权变化的组合。[Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) Telegram 游标先落盘可能漏掉崩溃窗口的输入，未知回复也需人工查证。
 
-> **建议**：[Q03](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q03) 比较单渠道接入与网页流程的跟进时间和重复交付。
+> **建议**：[Q05](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q05) 可让文本与按钮审批在消费同一票据时重新校验任务发起者和当前准入。若隔离回放仍允许错人批准，或合法审批频繁需要回网页，这项设计假设就不成立。
 
 [查看完整分析](../../plugins/michengai--dsh-im-connect/INSIGHT.md) · [返回表格](#category-index)
 
