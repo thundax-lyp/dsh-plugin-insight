@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1312](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1312&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1314](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1314&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -39,8 +39,8 @@
 > 查看最近发布的版本，了解用途和使用条件。
 
 - [DSH 抖音助手](data/plugins/lockybee--dsh-douyin-agent/INSIGHT.md) · 在专用 Edge 中浏览和采样抖音视频，按设置进行自主观看、许可好友互动和兴趣记录。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-douyin-browser-local)
-- [dsh-xiaomi-tts](data/plugins/ppy-web--dsh-plugin-xiaomi-mimo-tts/INSIGHT.md) · 在 DSH 中用浏览器语音或合成提供商朗读回复，支持音频下载和可选语音设备。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-xiaomi-tts)
-- [dsh-im-connect](data/plugins/michengai--dsh-im-connect/INSIGHT.md) · 把多平台即时通讯接入本机 DeepSeek Harness，会话可从聊天续接并回传结果。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect)
+- [dsh-baton-host](data/plugins/jialaoliu--dsh-baton--host/INSIGHT.md) · 把 Claude Code 或 Codex 的任务交给可见的 DSH 会话，并将结果交回原客户端。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-baton-host)
+- [dsh-deja](data/plugins/vshulcz--deja-vu--extensions-dsh/INSIGHT.md) · 在 DSH 中搜索本机编码助手历史，并可为当前会话召回相关上下文。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-deja)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,7 +54,7 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 384 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 386 |
 | [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 55 |
 | [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 165 |
 | [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 412 |

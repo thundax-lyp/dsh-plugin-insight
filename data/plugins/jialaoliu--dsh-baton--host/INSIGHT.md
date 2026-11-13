@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[58e0c89](https://github.com/JialaoLiu/dsh-baton/tree/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host)
+源码版本：[eeedd0e](https://github.com/JialaoLiu/dsh-baton/tree/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host)
 
 <!-- BEGIN META -->
-[![GitHub ★ 176](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=176&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/JialaoLiu/dsh-baton) [![npm 30d 5,184](https://img.shields.io/static/v1?label=npm+30d&message=5%2C184&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-baton-host) [![最新发布 2026-11-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-baton-host)
+[![GitHub ★ 216](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=216&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/JialaoLiu/dsh-baton) [![npm 30d 8,357](https://img.shields.io/static/v1?label=npm+30d&message=8%2C357&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-baton-host) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-baton-host)
 <!-- END META -->
 
-> **功能**：在 DSH Host 内提供本地任务交接接口，让外部客户端投递会话任务、等待并读取结果。
+> **功能**：把 Claude Code 或 Codex 的任务交给可见的 DSH 会话，并将结果交回原客户端。
 
-> **亮点**：它用requestId和run状态把外部投递接到Harness会话，并把后台活动、问题和goal状态带回交接方。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：它把外部任务与 DSH 会话中的 requestId、run 和可回读历史关联。Team 开关使用宿主现有服务，可在送入第一条消息前配置该会话。[Q01](#research-q01) [Q02](#research-q02) 客户端在具备 BEFORE 槽的宿主上保留普通消息原渲染器，仅加来源提示。[Q05](#research-q05)
 
-> **主要限制**：completed可能附活动查询失败，取消也可能仍busy；默认加载还会注册外部客户端配置，不能只看终态或把插件理解为只读桥。[Q03](#research-q03)、[Q04](#research-q04)
+> **主要限制**：活动查询持续失败时，回执可以是 completed 并附 error。会话级取消可能仍忙，启用插件默认还会改外端 MCP 注册配置。[Q02](#research-q02) [Q03](#research-q03) steering 和旧宿主仍包装渲染器，找不到 Inner 时包装返回空，来源标签也仅来自请求元数据。[Q05](#research-q05)
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · Host组件在跨客户端任务交接中承担什么？](#detail-section-11)
-  - [Q02 · 投递和完成判断如何关联到可见会话？](#detail-section-12)
-  - [Q03 · 终态、取消和重启恢复最重要的边界是什么？](#detail-section-13)
-  - [Q04 · 加载插件会改哪些配置，本地控制权限如何建立？](#detail-section-14)
-  - [Q05 · 怎样试用才能避免把交接状态误当任务成功？](#detail-section-15)
+  - [Q01 · 从 Claude Code 或 Codex 投递后，DSH 是否已执行任务，Team 开关在哪里生效？](#detail-section-11)
+  - [Q02 · 等待、goal 跟踪和历史读取能否证明会话已经交付？](#detail-section-12)
+  - [Q03 · 启用、停止与退出交接分别写入什么，谁负责处理失败？](#detail-section-13)
+  - [Q04 · 如何试验把未知终态独立标出是否真的减少误接收？](#detail-section-14)
+  - [Q05 · 发送者标签怎样与 0.2.2 前后的普通消息和 steering 渲染共存？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：已有本地Harness与MCP客户端的开发者，可将任务投递到可见会话并读取run状态。
+> **用途**：在使用 Claude Code 或 Codex 的同时需要让 DSH 在可见工作区执行独立任务的开发者，可将任务绑定到明确会话。
 
-参照复制提示和人工看界面，本组件自动关联消息与等待；任务验收仍需原项目依据。
+手工复制任务与观察 DSH 窗口可完成同样的任务执行，人工需负责对应投递、后台活动和项目验收。
 
 <a id="detail-section-3"></a>
 
@@ -51,71 +51,66 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 会话任务投递 | 新建或续接可见Harness会话 | 模型设置失败可留空会话 |
-| run等待和goal跟随 | 返回轮次与目标状态 | 超时不取消，completed需同时读error |
-| 问题回答 | 外端与Host UI协同回答 | 仅活动关联问题，非业务审批替代 |
-| 会话级取消 | 停止活动并报告仍忙 | 影响同会话队列，不回滚副作用 |
-| 外部MCP注册 | 让客户端可连接 | 默认改用户配置，可关闭并备份 |
+| --- | --- | --- |
+| 会话交接 | 对接本机外部客户端 | Team 依赖 DSH 服务与 live agent |
+| 运行追踪 | 查询问题、历史和目标状态 | 仍需读取 error 与项目结果 |
+| 会话取消 | 停止活动并报告仍忙 | 同会话其他运行也可能受影响 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| Node>=22.15、DSH>=0.2.1-rc.2 | 必需 | 加载Host包 | 实际兼容未验收 |
-| sessionController、workspaceRegistry | 必需 | 会话投递和活动管理 | 控制面不可用 |
-| dsh-baton-mcp 0.6.5与外部客户端 | MCP交接条件 | stdio到本地socket | 只加载Host不保证外端工具出现 |
-| 本地用户文件/管道权限 | 必需 | 限制控制面访问 | Windows ACL需独立核实 |
-| 模型、账户及原工具权限 | 任务条件 | 执行原会话任务 | 余额检查有限，不能保证可交付 |
+| --- | --- | --- | --- |
+| 会话控制器、工作区注册表 | 必需 | 投递、活动查询与取消 | 核心控制面无法工作 |
+| 同版本 MCP 包 | 外端接入必需 | 连接本地 socket | 客户端可能无法投递 |
+| Agent Teams 服务与 live agent | Team 开关必需 | 设置单会话 Team 模式 | 拒绝消息，某些错误会留下新会话 |
+| Web 槽位与对应消息渲染器 | 可见来源标签必需 | 新普通消息走 BEFORE，steering 与旧普通消息需 Inner | 包装找不到 Inner 时返回空 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户备份外端配置并选独立工作区 | 可关闭AUTO_REGISTER |
-| 加载 | Host建socket并可注册外端MCP | 状态页报告注册，不凭加载成功判断 |
-| 投递 | 外端明确session或cwd及模式 | 获run并核对可见会话 |
-| 等待 | 外端读终态、error、goal与项目证据 | 超时继续核查，不自动重发 |
-| 恢复 | 用户取消并查still_busy，到Host接管 | 仍忙不视作完成；退出另移MCP配置 |
+| --- | --- | --- |
+| 准备 | 用户选独立工作区并备份外端配置 | 核对 Host 与 MCP 版本 |
+| 投递 | 外端指定会话或目录并提交任务 | 核对 run、会话和入队状态 |
+| 验收 | 外端读 wait、goal、error 并运行项目验收 | 未知活动时停止自动续接 |
+| 退出 | 用户停止 Host 并移除外端 MCP 注册 | 检查队列和工作区是否还有变更 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | Host与MCP本地资源未测 | 备份配置、检查socket与跨端 | 自动注册有用户级写入 |
-| 持续 | 原模型与工具费用未知 | 区分运行终态与任务验收 | 无端到端节时对照 |
-| 失败恢复 | 重试及未完工具副作用未知 | 核error、goal、still_busy与重启状态 | 最近落盘有延迟与失败窗口 |
-| 退出 | 保留run与配置备份 | 停Host并移除外端MCP注册 | 任务副作用不回滚 |
+| --- | --- | --- | --- |
+| 首次 | 本地 Host 与外端运行开销未测 | 备份并核对版本和注册 | 安装改变外端配置 |
+| 持续 | 模型和项目测试费用取决于原任务 | 查 run、活动和测试 | 单位合格任务人时未测 |
+| 失败恢复 | 续接与重新运行可能重复消耗 | 停会话、处理仍忙、检查产物 | 工作区写入需自行恢复 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 可见会话交接 | controller.prompt与requestId关联 | 跨端实际兼容及合格交付 |
-| 等待后台活动 | quiet确认与问题返回 | 活动查询失败时仍可能完成附error |
-| 取消与恢复 | session停止重试、重启标interrupted | 取消无副作用或完整恢复 |
+| --- | --- | --- |
+| 投递可追溯 | run 与 requestId 绑定 prompt | 跨端真实兼容 |
+| 等待与回读 | 问题、超时、goal 及日志有独立路径 | 活动错误时的人工误判率 |
+| 会话取消 | 停止会话并返回仍忙及队列 | 平台权限及任务副作用恢复 |
 
-> **思考**：completed可能附活动查询失败，取消也可能仍busy；默认加载还会注册外部客户端配置，不能只看终态或把插件理解为只读桥。[Q03](#research-q03)、[Q04](#research-q04)
+> **思考**：活动查询持续失败时，回执可以是 completed 并附 error。会话级取消可能仍忙，启用插件默认还会改外端 MCP 注册配置。[Q02](#research-q02) [Q03](#research-q03) steering 和旧宿主仍包装渲染器，找不到 Inner 时包装返回空，来源标签也仅来自请求元数据。[Q05](#research-q05)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：它用requestId和run状态把外部投递接到Harness会话，并把后台活动、问题和goal状态带回交接方。[Q01](#research-q01)、[Q02](#research-q02)
+> **亮点**：它把外部任务与 DSH 会话中的 requestId、run 和可回读历史关联。Team 开关使用宿主现有服务，可在送入第一条消息前配置该会话。[Q01](#research-q01) [Q02](#research-q02) 客户端在具备 BEFORE 槽的宿主上保留普通消息原渲染器，仅加来源提示。[Q05](#research-q05)
 
-[Q02](#research-q02) requestId关联与超时非取消清楚；[Q03](#research-q03) 不确定completed和落盘失败需调用者显式处理，不能只按state放行。
+分页通过首个 cursor 固定读取窗口，兼容旧 inspect。活动查询与取消回执包含异常信息，调用者需组合多个字段判断。[Q02](#research-q02) [Q03](#research-q03) 新版普通消息改用独立子槽，减少覆盖原始渲染，steering 与旧版仍需关注渲染器优先级。[Q05](#research-q05)
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-completed可能附活动查询失败，取消也可能仍busy；默认加载还会注册外部客户端配置，不能只看终态或把插件理解为只读桥。[Q03](#research-q03)、[Q04](#research-q04)
+活动查询持续失败时，回执可以是 completed 并附 error。会话级取消可能仍忙，启用插件默认还会改外端 MCP 注册配置。[Q02](#research-q02) [Q03](#research-q03) steering 和旧宿主仍包装渲染器，找不到 Inner 时包装返回空，来源标签也仅来自请求元数据。[Q05](#research-q05)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-隔离工作区、备份外端配置，终态逐项读error和goal并检查项目结果；未知活动或仍busy时人工接管。[Q05](#research-q05)
+选隔离会话投递单一有测试判据的任务。先备份外部 MCP 配置，错误或仍忙时从 Host 回查再决定是否续接。[Q03](#research-q03) [Q04](#research-q04) 测试普通及 steering 消息正文与标签；验收交付时以事件、run 与项目结果为准。[Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -123,18 +118,18 @@ completed可能附活动查询失败，取消也可能仍busy；默认加载还�
 
 **核查状态**：已检查源码。
 
-源码支持本地控制与状态交接；实际权限、跨端兼容与业务交付未验收，终态拆分是假设。
+固定源码支持本地任务投递和回读。实际宿主兼容、权限与交付效果仍待验收，显式未知态属于待验证假设。
 
-- 已检查：作者 README、包清单、源码路径 host/README.md、host/package.json、host/lib/index.js、host/lib/socket.js、host/lib/client.js、src/register.mjs 及固定范围 inventory；组件：host。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 host/package.json、host/cordis.patch.yml、host/README.md、host/lib/index.js、src/core.mjs、host/lib/client.js 及固定范围 inventory；组件：host。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：组件Host范围统计；补读同仓src/register.mjs只核自动注册关键依赖，不把整个仓库算Host规模；未执行Host、MCP或项目测试。
-- 下一步：固定外端与Host版本验证投递、问题、超时、后台失败、取消仍忙及重启，再独立检查项目验收。
+- 边界：聚焦 Host 子组件、外端 Team 入参和客户端来源标签。对比最后完成研究与当前固定提交的关键路径。未执行目标插件、外部 MCP、真实宿主或项目任务。
+- 下一步：以两版宿主和隔离项目对照普通投递、Team 开关失败、历史分页、查询失败、重启和取消仍忙。 两版宿主分别检查普通/steering 标签和正文，附带无 Inner 与其他消息插件的覆盖。
 
 **分析版本**
 
 - **仓库**：[JialaoLiu/dsh-baton](https://github.com/JialaoLiu/dsh-baton)
-- **版本号**：0.6.5（[固定提交 58e0c89](https://github.com/JialaoLiu/dsh-baton/tree/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0)）
-- **版本日期**：2026-11-03（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.13（[固定提交 eeedd0e](https://github.com/JialaoLiu/dsh-baton/tree/eeedd0e3855bcf2798bdc72180f87d8761c21f35)）
+- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -142,9 +137,9 @@ completed可能附活动查询失败，取消也可能仍busy；默认加载还�
 
 <a id="innovation"></a>
 
-可拆分已确认静止与不确定完成，并对配置及落盘提供修复回执；以查询失败、重启和取消故障对照检验，尚未实现。[Q05](#research-q05)
+单列未知静止状态，并把项目验收与 run 终态分开记录，可能降低过早复用结果的概率。该假设可用固定故障轨迹对照。[Q04](#research-q04)
 
-固定外端与Host版本验证投递、问题、超时、后台失败、取消仍忙及重启，再独立检查项目验收。
+以两版宿主和隔离项目对照普通投递、Team 开关失败、历史分页、查询失败、重启和取消仍忙。 两版宿主分别检查普通/steering 标签和正文，附带无 Inner 与其他消息插件的覆盖。
 
 <a id="detail-section-9"></a>
 
@@ -157,143 +152,132 @@ completed可能附活动查询失败，取消也可能仍busy；默认加载还�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 1770 | 1362 | 308 | — |
-| .md | source | 1 | 76 | — | — | 893 |
+| .js | source | 3 | 1851 | 1420 | 328 | — |
+| .md | source | 2 | 57 | — | — | 532 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+created%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-06T13%3A09%3A40.123Z..2026-11-05T13%3A09%3A40.123Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z) [![近30天关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/JialaoLiu/dsh-baton/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z)
 
 
 
-统计日期：2026-11-05。
+统计日期：2026-11-13。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Host控制面能否准确区分投递、运行终态与任务成功，跨客户端配置和本地权限的边界是什么？
+**插件研究总目标**：外部客户端将工作交给可见的 DSH 会话时，固定版能如何明确已入队、仍在执行、需人工介入和实际交付？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · Host组件在跨客户端任务交接中承担什么？
+### Q01 · 从 Claude Code 或 Codex 投递后，DSH 是否已执行任务，Team 开关在哪里生效？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-这是dsh-baton的DSH Host插件子组件，不是根MCP程序本身。面向已有本地Harness和外部MCP客户端、希望把任务交给可见会话并取回状态的开发者；相对复制消息和人工盯界面，它提供本地控制socket、run标识、队列与等待接口。合格交接包括正确工作区/会话、投递可关联、返回终态及结果边界；任务测试是否通过和交付是否满足需求仍由原Agent及项目检查负责。README“交回完成结果”不应解释为Host自动验证业务正确性，模型与工具能力属于Harness。
+用户需要在外部编辑 Agent 的同时把实现交给可见的 Harness 会话；手工复制任务和观察窗口无法把后续等待与该次提交稳定关联。Host 先选会话和模型，若显式传 team 则从 live agent registry 取该会话对应对象，必要时 resolveAgent，再调用 Agent Teams 服务，随后记录 run 和 requestId 并向会话控制器发 prompt。admitted 只说明接收进会话或 Harness 队列。旧对话工具表可能把 team 发送成字符串，外端对 true/false 做有限归一；Host 仍要求布尔值并检查服务存在。服务缺失会在建会话前拒绝；服务存在但设置失败可能留下刚创建的会话和已修改的模型，不能据报错假定本地无变化。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[host/README.md:13-17](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/README.md#L13-L17)
+**依据 1 · 作者声明**：[host/README.md:3-13](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/README.md#L3-L13)
 
-作者明确Host与MCP组件关系。
-
-```text
-# dsh-baton-host
-
-The DeepSeek Harness plugin for [dsh-baton](https://github.com/JialaoLiu/dsh-baton#readme). It runs inside the Harness host (desktop app or `dsh web`) and serves a local, owner-only Unix socket (`~/.dsh-baton/host.sock`; a per-user named pipe on Windows). Through it, an MCP client can list and create workspaces, create sessions, continue a specific session, and wait for its turn to finish. All of this goes through Harness's own session controller, so the messages show up live in the Harness UI.
-
-DeepSeek Harness 插件，配合 [dsh-baton](https://github.com/JialaoLiu/dsh-baton/blob/main/README.zh-CN.md) 使用。它运行在 Harness 内部，只开一个当前用户才能访问的本地套接字，让 MCP 客户端能新建工作区和对话、续接指定对话、等待任务完成。所有操作都走 Harness 官方会话服务，界面实时可见。
-```
-
-**依据 2 · 源码核查**：[host/lib/index.js:1340-1362](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1340-L1362)
-
-实际控制方法表。
+作者将任务交接描述为两端可见流程。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-  const methods = {
-    ping: () => ({ name, version: VERSION, pid: process.pid }),
-    workspaces,
-    create_workspace: createWorkspace,
-    list_sessions: listSessions,
-    read_session: readSession,
-    models,
-    send,
-    status: async ({ run_id, session_id, tail }) => {
-      if (!run_id && session_id) return sessionStatus({ session_id })
-      const run = getRun(run_id)
-      return { ...publicRun(run, tail ?? 20), ...(isActive(run) ? {} : await goalField(run)) }
-    },
-    follow,
-    wait,
-    cancel,
-    activity,
-    rename_session: renameSession,
-    rename_workspace: renameWorkspace,
-    list_runs: ({ limit = 10, session_id } = {}) => [...runs.values()].reverse().filter((r) => !session_id || r.sessionId === session_id).slice(0, limit).map((r) => publicRun(r, 0)),
-    update_queued: updateQueued,
-    answer: answerQuestion,
-  }
+Hand coding tasks from Claude Code or Codex to DeepSeek Harness: they run live in this window and come back with the changed files and test results. [Full guide](https://github.com/JialaoLiu/dsh-baton#readme)
+
+让 Claude Code 或 Codex 把编码任务交给 DeepSeek Harness：任务在这个窗口里实时跑，做完带着改动文件和测试结果交回去。[完整说明](https://github.com/JialaoLiu/dsh-baton/blob/main/README.zh-CN.md)
+
+## Install / 安装
+
+**Install / 安装**: Plugins / 插件 → Add plugin / 添加插件 → `dsh-baton-host` → Install / 安装 → Enable now / 立即启用. That registers dsh-baton for Claude Code and Codex. / 启用后会为 Claude Code 和 Codex 注册 dsh-baton。
+
+**Check / 验证**:
+1. Open a new chat in Claude Code or Codex; Codex asks once to approve the dsh-baton tools. / 在 Claude Code 或 Codex 里新开对话，Codex 第一次会请你批准 dsh-baton 的工具。
+2. Ask it to call `dsh_list_workspaces`; it lists your Harness workspaces. / 让它调用 `dsh_list_workspaces`，会列出你的 Harness 工作区。
 ```
 
 </details>
 
-<a id="research-q02"></a>
+**依据 2 · 源码核查**：[src/core.mjs:876-882](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/src/core.mjs#L876-L882)
 
-<a id="detail-section-12"></a>
-
-### Q02 · 投递和完成判断如何关联到可见会话？
-
-**研究主题**：功能与机制
-
-#### 完整回答
-
-send先拒绝归档与缺少新会话路径，核对目录、计划模型设置，再创建/选择会话；创建成功但设模型或余额检查失败可能留下空会话，不能说整体无副作用。生成独立run和requestId后经controller.prompt投递，事件用source.rpcId匹配run，助手正文及工具轨迹归入接收者。turn/end成功后还检查session activity等待子Agent/后台任务，曾等待后台的会话再用2秒安静确认。wait超时返回timed_out而不取消运行，问题请求可与Harness UI竞答。局部完成指轮次/活动状态，不保证会话goal已完成，goalField另返回继续目标。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[host/lib/index.js:1153-1208](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1153-L1208)
-
-路径、创建、模型和真实prompt接线。
-
-<details>
-<summary>查看原文（56行）</summary>
+外端兼容旧工具表的有限字符串布尔值，并检查 Host team feature。
 
 ```text
-  async function send({ message, session_id, cwd, workspace_id, mode: asked, sender, model, reasoning_effort }) {
+    // A client whose tool list predates team (a conversation open since before an update) sends
+    // it as the string "true" or "false": take that as the boolean it means.
+    if (typeof a.team === 'string' && /^(true|false)$/i.test(a.team.trim())) a = { ...a, team: a.team.trim().toLowerCase() === 'true' }
+    // Agent Teams live in Harness itself; a plugin without the team feature would drop it silently.
+    if (a.team != null) {
+      if (!host) throw new Error('Agent Teams need the dsh-baton-host plugin running inside DeepSeek Harness. Nothing was sent.')
+      if (!hostFeatures.includes('team')) throw new Error(`The Harness plugin dsh-baton-host ${hostVersion} is too old to turn on Agent Teams; this MCP server is ${VERSION}. Nothing was sent. Update the plugin (Plugins → dsh-baton-host → Update to ${VERSION}), or send without team.`)
+```
+
+**依据 3 · 源码核查**：[host/lib/index.js:1182-1207](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1182-L1207)
+
+Host 检查 Team 服务并解析注册表中的 live agent。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  const TEAMS_UNSUPPORTED = 'this DeepSeek Harness cannot turn Agent Teams on per session; that needs Harness 0.2.2-rc.2 or later: update Harness, or send without team'
+  async function setTeam(sessionId, enabled) {
+    if (typeof teamsService?.setEnabled !== 'function') throw new Error(TEAMS_UNSUPPORTED)
+    // The exact live Agent from Harness's registry, as its own UI lookup takes it: Team rejects
+    // any other object ("subagent tree access requires the exact live caller"). A session not
+    // loaded yet is loaded first.
+    let agent = agentsService?.get?.(sessionId)
+    if (!agent && typeof controller.resolveAgent === 'function') {
+      await controller.resolveAgent(sessionId)
+      agent = agentsService?.get?.(sessionId)
+    }
+    // A finished sub-agent's session is never loaded again: name the likely cause.
+    if (!agent) throw new Error(`session ${sessionId} is not loaded in Harness; if it is a sub-agent's (teammate's) session, change Team mode on its root session instead`)
+    await teamsService.setEnabled(agent, enabled)
+  }
+
+  async function send({ message, session_id, cwd, workspace_id, mode: asked, sender, model, reasoning_effort, team }) {
     if (!message || !message.trim()) throw new Error('message is required')
     if (asked != null && asked !== 'followup' && asked !== 'steer') throw new Error('mode must be followup or steer')
+    if (team != null && typeof team !== 'boolean') throw new Error('team must be true or false')
+    // Checked before a new session is made, so a Harness without them is left as it was.
+    if (team != null && typeof teamsService?.setEnabled !== 'function') throw new Error(`Nothing was sent: ${TEAMS_UNSUPPORTED}`)
     // Without a mode, a message to a busy session does what Harness's own busy-send setting says.
     const fromHarness = asked == null ? harnessBusyMode() : null
     const mode = asked ?? fromHarness ?? 'followup'
     const modeSource = asked != null ? 'explicit' : fromHarness ? 'harness' : 'default'
-    if (sender != null && !SENDER_RE.test(sender)) throw new Error('sender must be 1-32 characters of a-z, 0-9 or -')
-    let sessionId = session_id
-    let workspace = null
-    // Harness never runs a prompt sent to an archived session: the run would stay queued forever.
-    if (sessionId && isArchived(sessionId)) {
-      throw new Error(`Session ${sessionId} is archived. Unarchive it in Harness, or start a new session with cwd or workspace_id.`)
-    }
-    if (!sessionId && !cwd && !workspace_id) throw new Error('A new session needs cwd or workspace_id. Pass session_id to continue an existing one.')
-    // A missing folder is not created: a mistyped path, or a project on a drive that is not
-    // connected, would get an empty folder (under /Volumes, even). Checked before the registry,
-    // which answers a bare ENOENT, or nothing at all for a folder registered while it was there.
-    if (!sessionId) {
-      const dir = workspace_id ? registry.get?.(workspace_id)?.path : normalizePath(cwd)
-      if (dir && !isDirectory(dir)) {
-        throw new Error(`The folder ${dir}${workspace_id ? ` (workspace ${workspace_id})` : ''} does not exist, so no session was started and nothing was sent. Check the path (a project on an external drive needs that drive connected), or create the folder first.`)
-      }
-    }
-    const plan = await planModel(sessionId, { model, reasoning_effort })
-    const isNew = !sessionId
-    if (isNew) {
-      // A folder that is not a workspace yet is registered first, so the new session shows in the sidebar.
-      workspace = workspace_id ? { id: workspace_id } : await createWorkspace({ path: cwd, create_dir: false })
-      sessionId = (await controller.create({ workspaceId: workspace.id })).sessionId
-    }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[host/lib/index.js:1232-1262](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1232-L1262)
+
+先应用模型和 Team，再建立 run 并调用 prompt；失败被登记。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
     // A model that cannot be set fails the send before the prompt goes in.
     const chosen = await applyModel(sessionId, plan, isNew).catch((error) => {
       throw new Error(`${isNew ? `Session ${sessionId} was created, but no message was sent: ` : 'No message was sent: '}the model could not be set (${error?.message ?? error})`)
     })
+    // Team mode goes on (or off) before the prompt, so the first step already has the Team tools.
+    if (team != null) {
+      await setTeam(sessionId, team).catch((error) => {
+        throw new Error(`${isNew ? `Session ${sessionId} was created, but no message was sent: ` : 'No message was sent: '}Agent Teams could not be turned ${team ? 'on' : 'off'} (${error?.message ?? error})`)
+      })
+    }
     // A session that never picked a model runs on Harness's default.
     let provider = chosen.model?.provider
     if (!provider) try { provider = defaultModel()?.currentSelection?.()?.provider } catch { /* unknown: no check */ }
@@ -319,108 +303,34 @@ send先拒绝归档与缺少新会话路径，核对目录、计划模型设置�
 
 </details>
 
-**依据 2 · 源码核查**：[host/lib/index.js:307-386](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L307-L386)
+#### 缺口
 
-requestId事件关联和turn结束。
+- 未测具体 DSH release 对 live agent 与 Team 服务的接线
+  **影响**：静态通过不能保证第一轮具备 Team 工具
+  **进一步探讨**：对支持和缺失服务两种 profile 投递并核对首轮工具和空会话
 
-<details>
-<summary>查看原文（80行）</summary>
+<a id="research-q02"></a>
 
-```text
-  ctx.on('session/event', guard('session/event', (session, event) => {
-    const data = event.data ?? {}
-    if (FOLLOW_EVENTS.has(event.type)) wakeFollowers(session.id)
-    // Turn state is kept only for a turn in progress and dropped at its end.
-    if (event.type === 'turn/start') turns.set(session.id, { hasOutput: false })
-    else if (event.type === 'assistant/message' && turns.has(session.id)) turns.get(session.id).hasOutput = true
-    // A run settled as removed from the queue whose message reaches the conversation
-    // after all (the removal check guessed wrong) is taken up again.
-    if (event.type === 'user/message') {
-      const lost = [...runs.values()].find((r) => r.removedFromQueue && r.state === 'cancelled' && r.sessionId === session.id && r.requestId === data.source?.rpcId)
-      if (lost) {
-        Object.assign(lost, { state: 'queued', removedFromQueue: false, error: null, endedAt: null })
-        pushEvent(lost, { type: 'queue_delivered' })
-      }
-    }
-    const active = activeRunsFor(session.id)
-    if (event.type === 'turn/end' && !active.some((r) => r.sawPrompt)) turns.delete(session.id)
-    if (!active.length) return
-    // Something left Harness's queue: a queued run may have been removed (session stopped,
-    // or Remove in the Harness UI) rather than started. Checked once the dust settles.
-    if (event.type === 'agent/inbox/spliced' && data.removedCount > 0 && active.some((r) => !r.sawPrompt)) {
-      scheduleQueueCheck(session.id)
-      return
-    }
-    if (event.type === 'user/message') {
-      const run = active.find((r) => r.requestId === data.source?.rpcId)
-      const opensTurn = !turns.get(session.id)?.hasOutput
-      // A user message no relayed run sent: someone typing in the Harness UI (or
-      // another client). Mid-turn it joins the work of the runs in progress, so
-      // they record it: their result then reflects that input too.
-      const fromBridge = run || [...runs.values()].some((r) => r.requestId === data.source?.rpcId)
-      if (data.source?.kind === 'user' && !fromBridge && !opensTurn) {
-        const text = textOf(data.content).slice(0, 500)
-        for (const r of outputReceiversFor(session.id)) {
-          r.humanInputs = [...(r.humanInputs ?? []), { time: iso(event.time) ?? new Date().toISOString(), text }].slice(-MAX_HUMAN_INPUTS)
-          pushEvent(r, { type: 'human_input', text })
-        }
-      }
-      // A round a Harness goal starts by itself counts like a user-started turn: the run whose
-      // turn just ended keeps that turn's reply instead of running on with the goal.
-      if ((data.source?.kind === 'user' || data.source?.kind === 'goal') && opensTurn && run?.mode !== 'steer') {
-        // A new user-started turn: runs whose own turn already ended keep their
-        // result instead of absorbing this turn's output, but still wait for any
-        // sub-agents or jobs they started. Turns woken by sub-agent results carry
-        // no user message, and a relayed steer joins the current work, so neither
-        // closes earlier runs.
-        let closed = false
-        for (const prev of active) {
-          if (prev !== run && prev.sawPrompt && prev.turnEnd && !prev.outputClosed) {
-            Object.assign(prev, { outputClosed: true, supersededBy: run?.id ?? (data.source.kind === 'goal' ? 'goal' : 'user') })
-            closed = true
-          }
-        }
-        if (closed) scheduleQuietCheck(session.id, 0)
-      }
-      if (run) { Object.assign(run, { sawPrompt: true, state: 'running' }); persist(run) }
-      return
-    }
-    const receivers = outputReceiversFor(session.id)
-    if (!receivers.length) return
-    if (event.type === 'assistant/message') {
-      const content = data.message?.content
-      const text = textOf(content)
-      for (const run of receivers) {
-        for (const call of toolCallsOf(content)) pushEvent(run, { type: 'tool_call', ...call })
-        if (text) {
-          pushEvent(run, { type: 'text', text })
-          run.finalText = text
-        }
-      }
-    } else if (event.type === 'tool/result') {
-      for (const run of receivers) pushEvent(run, { type: 'tool_result', status: data.status ?? (data.error ? 'error' : 'completed') })
-    } else if (event.type === 'turn/end') {
-      // The turn that carried these prompts is over. A failed turn ends the run; a
-      // completed one ends it only once the session is quiet (no sub-agents or jobs
-      // left), because Harness wakes the agent again when those report back.
-      const reason = data.reason ?? null
-      for (const run of receivers) { run.turnEnd = reason; persist(run) }
-      if (reason?.kind && reason.kind !== 'completed') for (const run of receivers) settle(run, 'failed')
-      else scheduleQuietCheck(session.id, 1000)
-```
+<a id="detail-section-12"></a>
 
-</details>
+### Q02 · 等待、goal 跟踪和历史读取能否证明会话已经交付？
 
-**依据 3 · 源码核查**：[host/lib/index.js:407-457](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L407-L457)
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
-后台活动与安静确认。
+#### 完整回答
+
+wait 可以首次返回需人工处理的问题，仍活跃到截止则返回 timed_out，完成时可能附 goal。quiet 检查把活动读取异常视为未知并重试，但达到上限后仍设为 completed 并附错误，外端必须解释 error，不能按终态自动确认。现代宿主用 events 逆向分页，首个 cursor 用于固定后续读取切点，回放按 seq 去重；老宿主仍走 inspect。无事件页或重复游标会提前结束，last 只在完整读入后切片，因此长会话开销和兼容性需要检验。工作是否达标仍按变更、测试和任务需求分别核对。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[host/lib/index.js:409-435](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L409-L435)
+
+活动错误累计后走 completed + error，正常分支须观察后台为空。
 
 <details>
-<summary>查看原文（51行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
-  async function checkQuiet(sessionId) {
-    quietTimers.delete(sessionId)
     const receivers = receiversFor(sessionId)
     if (!receivers.length) return
     let items
@@ -448,35 +358,94 @@ requestId事件关联和turn结束。
     const background = items.filter((g) => g.kind !== 'turn')
     for (const run of receivers.filter((r) => r.outputClosed)) {
       if (background.length === 0) settle(run, 'completed', { waitingOn: null, error: null })
-      else { run.waitingOn = summary(background); persist(run) }
-    }
-    // A run whose own turn has not ended (and that has not seen the agent idle) is not done yet.
-    const open = receivers.filter((r) => !r.outputClosed && (r.turnEnd || r.idleSeen))
-    if (items.length === 0 && open.length) {
-      // After waiting on sub-agents or jobs, Harness wakes the agent for a final
-      // turn shortly after they finish. Confirm the quiet holds for a moment (no
-      // new running status) so that last turn is not missed.
-      const waited = open.some((r) => r.waitingOn)
-      const quietSince = quietSinceBySession.get(sessionId)
-      if (waited && (quietSince === undefined || (lastRunningAt.get(sessionId) ?? 0) > quietSince)) {
-        quietSinceBySession.set(sessionId, Date.now())
-        scheduleQuietCheck(sessionId, QUIET_CONFIRM_MS)
-        return
-      }
-      quietSinceBySession.delete(sessionId)
-      for (const run of open) settle(run, 'completed', { waitingOn: null, error: null })
-      return
-    }
-    quietSinceBySession.delete(sessionId)
-    for (const run of open) run.waitingOn = items.length ? summary(items) : run.waitingOn
-    if (receiversFor(sessionId).length) scheduleQuietCheck(sessionId, 3000)
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[host/lib/index.js:1237-1272](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1237-L1272)
+**依据 2 · 源码核查**：[host/lib/index.js:742-781](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L742-L781)
 
-等待超时和goal另报。
+日志调用按 inspect/events 分支，分页固定 cursor 并排序归并。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
+  // A session's whole event log and its folder. Harness up to 0.2.1 has sessionController.inspect;
+  // 0.2.2 replaced it with paged history (events): the newest page first, beforeSeq walks back,
+  // throughSeq pins every page to the same cut. The folder then comes from the session list.
+  async function sessionLog(sessionId) {
+    if (typeof controller.inspect === 'function') return controller.inspect(sessionId, signal())
+    if (typeof controller.events !== 'function') throw new Error('This DeepSeek Harness version cannot read a session log.')
+    const address = { kind: 'session', sessionId }
+    const pages = []
+    let throughSeq
+    let beforeSeq
+    for (;;) {
+      const page = await controller.events({ address, maxMessages: 500, ...(throughSeq === undefined ? {} : { throughSeq }), ...(beforeSeq === undefined ? {} : { beforeSeq }) }, signal())
+      throughSeq ??= page.cursor
+      const events = (page.records ?? []).filter((r) => r?.type === 'event' && r.event).map((r) => r.event)
+      pages.unshift(events)
+      if (!page.hasMore || !events.length || events[0].seq === beforeSeq) break
+      beforeSeq = events[0].seq
+    }
+    const seen = new Set()
+    const events = pages.flat().filter((e) => (seen.has(e.seq) ? false : (seen.add(e.seq), true)))
+    const { items } = await controller.list({}, signal())
+    return { meta: { cwd: items.find((it) => it.sessionId === sessionId)?.cwd ?? null }, events }
+  }
+
+  async function readSession({ session_id, last = 10 }) {
+    const { meta, events } = await sessionLog(session_id)
+    const messages = []
+    let title = null
+    for (const e of events) {
+      if (e.type === 'session/title') title = e.data?.title ?? title
+      else if (e.type === 'user/message' && e.data?.source?.kind === 'user') {
+        messages.push({ role: 'user', time: iso(e.time), text: textOf(e.data.content) })
+      } else if (e.type === 'assistant/message') {
+        const content = e.data?.message?.content
+        const tools = toolCallsOf(content).map((t) => t.name ?? t.kind)
+        const text = textOf(content)
+        if (text || tools.length) messages.push({ role: 'assistant', time: iso(e.time), text, ...(tools.length ? { tools } : {}) })
+      }
+    }
+    return { session_id, ...(isArchived(session_id) ? { archived: true } : {}), cwd: meta?.cwd ?? null, title, total_messages: messages.length, messages: messages.slice(-last) }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[host/lib/index.js:913-929](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L913-L929)
+
+goal 跟踪依赖 projections，并同时取得会话日志。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  async function follow({ session_id, until = 'goal', cursor, since_ms, every_s = 600, timeout_s = 300 }) {
+    if (!session_id) throw new Error('session_id is required')
+    if (until !== 'goal' && until !== 'turn') throw new Error('until must be goal or turn')
+    if (typeof controller.projections !== 'function') throw new Error('This DeepSeek Harness version has no session projections, so its goals cannot be followed.')
+    const every = Math.max(1, Number(every_s) || 600) * 1000
+    const seconds = Number.isFinite(Number(timeout_s)) ? Math.min(Math.max(Number(timeout_s), 0), MAX_WAIT_S) : 300
+    const deadline = Date.now() + seconds * 1000
+    let mark = parseCursor(cursor)
+    const since = !mark && Number(since_ms) > 0 ? Number(since_ms) : null
+    let sawGoal = false
+    for (;;) {
+      // Followed from now on (a question that comes while the log is read is taken up), and
+      // the events so far, to tell whether one came during the read.
+      followedUntil.set(session_id, Date.now() + 60_000)
+      const gen = eventGen.get(session_id) ?? 0
+      const [goal, log] = await Promise.all([goalOf(session_id), sessionLog(session_id)])
+      const { ended, running, runningSince } = turnsOf(log?.events)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[host/lib/index.js:1292-1327](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1292-L1327)
+
+wait 分别返回问题、超时和可能附带的 goal。
 
 <details>
 <summary>查看原文（36行）</summary>
@@ -522,81 +491,60 @@ requestId事件关联和turn结束。
 
 </details>
 
-**依据 5 · 源码核查**：[host/lib/index.js:600-637](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L600-L637)
+#### 缺口
 
-UI与外部回答竞争及清理。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-  function onQuestion(request, next) {
-    const sessionId = request?.agent?.id
-    const asked = sessionId && Array.isArray(request.questions) ? outputReceiversFor(sessionId) : []
-    // Taken up too when someone follows the session's goal: the follow wait brings it back.
-    const followed = followers.has(sessionId) || (followedUntil.get(sessionId) ?? 0) > Date.now()
-    if (!asked.length && !(followed && Array.isArray(request.questions))) return next()
-    const entry = { id: `q-${crypto.randomBytes(4).toString('hex')}`, sessionId, items: request.questions, answers: new Map(), runs: asked }
-    const ours = new Promise((resolve) => { entry.resolve = resolve })
-    questions.set(sessionId, entry)
-    wakeFollowers(sessionId)
-    for (const run of asked) {
-      run.question = publicQuestion(entry)
-      pushEvent(run, { type: 'question', question_id: entry.id, count: entry.items.length })
-      needsPerson(run)
-    }
-    // The Harness UI (next) gets its own signal: once dsh_answer wins, aborting it tells
-    // the window to drop its question card, which it otherwise keeps open.
-    const ui = new AbortController()
-    const harnessSignal = request.signal
-    request.signal = harnessSignal ? AbortSignal.any([harnessSignal, ui.signal]) : ui.signal
-    // With no Harness window to answer, only dsh_answer can: that is not a failure here.
-    const theirs = Promise.resolve().then(next).catch((error) => (error?.code === 'NO_PROVIDER' || ui.signal.aborted ? new Promise(() => {}) : Promise.reject(error)))
-    const aborted = new Promise((_, reject) => harnessSignal?.addEventListener('abort', () => reject(harnessSignal.reason), { once: true }))
-    const answered = (by) => (value) => {
-      for (const run of asked) pushEvent(run, { type: 'question_answered', question_id: entry.id, by })
-      return value
-    }
-    const fromBaton = ours.then((value) => { ui.abort(new Error('answered through dsh-baton')); return value })
-    return Promise.race([theirs.then(answered('harness')), fromBaton.then(answered('dsh-baton')), aborted]).finally(() => {
-      if (questions.get(sessionId) === entry) questions.delete(sessionId)
-      wakeFollowers(sessionId)
-      for (const run of asked) {
-        if (run.question?.question_id !== entry.id) continue
-        delete run.question
-        if (run.state === 'waiting') run.state = 'running'
-        persist(run)
-      }
-    })
-```
-
-</details>
+- 未测并发写日志、空页和长历史下的实际返回
+  **影响**：日志覆盖与等待耗时仍待验证
+  **进一步探讨**：用固定页长跨页生成历史，同时追加消息并检查 seq 与回执
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 终态、取消和重启恢复最重要的边界是什么？
+### Q03 · 启用、停止与退出交接分别写入什么，谁负责处理失败？
 
-**研究主题**：缺陷与关键质疑、工程质量与复用
+**研究主题**：依赖、兼容与流程、效果与总成本、缺陷与关键质疑、采用判断
 
 #### 完整回答
 
-活动查询连续失败10次时会把run标completed但同时保留error说明子Agent可能还在跑，因此调用者必须读error与waitingOn，不能只看completed。cancel按session停止活动最多三次，每次等6秒，可能返回still_busy=true；即便名义按run取消，也影响同会话其他活动和队列，不能当单任务副作用回滚。run延迟1秒批量落盘，失败仅日志后清空dirty，突发退出或写盘失败可能丢最近记录；重启将旧active标interrupted，不会自动继续原任务。可借鉴requestId关联、明确超时非取消和重启中断状态，但尚无恰好一次交接或业务结果认证。
+Host 需要匹配的 MCP 依赖及 DSH 会话服务，默认自动注册到外部客户端，需先备份用户配置或用 AUTO_REGISTER 关闭，再由外端检查实际连接。run 本地以临时文件后重命名写入；重启扫描可将活动 run 标成 interrupted，不能替代对工作区写入的检查。取消调用会停止整个会话活动、对同会话接收项 settle，并核对队列；仍忙时回执暴露 still_busy。回滚项目变更需依赖项目自己的 Git，移除外端注册还须执行卸载指引。初次增加版本和配置核对，日常增加回执查阅，异常仍要人工接管；原模型成本及单位合格任务人时未测。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[host/lib/index.js:248-299](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L248-L299)
+**依据 1 · 源码核查**：[host/package.json:22-35](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/package.json#L22-L35)
 
-延迟落盘、失败与重启中断。
+固定 MCP 依赖版本和最低 DSH 声明。
 
 <details>
-<summary>查看原文（52行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-  function persist(run) {
-    if (!store.enabled) return
-    store.dirty.add(run.id)
+  "dependencies": {
+    "dsh-baton-mcp": "0.6.13"
+  },
+  "license": "MIT",
+  "dsh": {
+    "manifestVersion": 1,
+    "engines": {
+      "dsh": ">=0.2.1-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[host/lib/index.js:251-298](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L251-L298)
+
+run 通过临时文件持久化，活动记录重启时标为 interrupted。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
     if (!store.timer) store.timer = setTimeout(guard('persist runs', flushRuns), PERSIST_DELAY_MS)
   }
 
@@ -645,45 +593,18 @@ UI与外部回答竞争及清理。
         Object.assign(run, { state: 'interrupted', endedAt: new Date().toISOString(), error: 'Harness restarted while this run was active; its turn was stopped.' })
         persist(run)
       }
-    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[host/lib/index.js:417-426](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L417-L426)
+**依据 3 · 源码核查**：[host/lib/index.js:1350-1377](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1350-L1377)
 
-查询失败十次仍completed附error。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-      // Unknown is not idle: keep waiting and retry; give up only after repeated failures.
-      const count = (activityErrors.get(sessionId) ?? 0) + 1
-      activityErrors.set(sessionId, count)
-      const message = `could not read session activity: ${error?.message ?? error}`
-      if (count >= ACTIVITY_MAX_ERRORS) {
-        activityErrors.delete(sessionId)
-        for (const run of receivers) settle(run, 'completed', { error: `${message} (gave up after ${count} tries; sub-agents may still be running)` })
-      } else {
-        for (const run of receivers) run.error = message
-        scheduleQuietCheck(sessionId, 3000)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[host/lib/index.js:1291-1323](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1291-L1323)
-
-取消作用于session、重试和still_busy。
+取消为会话级并回报仍忙及队列信息。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-  async function cancel({ run_id, session_id }) {
-    const run = run_id ? getRun(run_id) : null
-    const sessionId = run?.sessionId ?? session_id
-    if (!sessionId) throw new Error('run_id or session_id is required')
     // A stop that arrives while sub-agents are still starting can be lost: the turn
     // carries on and starts them again. Re-issue it until the session is quiet.
     let attempts = 0
@@ -712,198 +633,16 @@ UI与外部回答竞争及清理。
       activity: still.activity,
       queued_runs: activeRunsFor(sessionId).filter((r) => !r.sawPrompt).map((r) => r.id),
       ...(removed.length ? { removed_from_queue: removed } : {}),
-    }
 ```
 
 </details>
 
-<a id="research-q04"></a>
+**依据 4 · 源码核查**：[host/lib/index.js:1461-1482](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1461-L1482)
 
-<a id="detail-section-14"></a>
-
-### Q04 · 加载插件会改哪些配置，本地控制权限如何建立？
-
-**研究主题**：依赖、兼容与流程、效果与总成本
-
-#### 完整回答
-
-Host包要求Node>=22.15、DSH>=0.2.1-rc.2，依赖同版本dsh-baton-mcp；sessionController与workspaceRegistry必需，模型、账户、goal等服务按能力注入。Unix创建自有目录0700及socket0600，拒占活socket；Windows映射到路径哈希named pipe，没有此源码中的Unix chmod，不能仅因名称含用户路径就证明严格ACL。协议无应用令牌，控制边界取决本地账户及系统权限。启用默认自动注册外部客户端：src/register.mjs可能复制MCP程序到用户目录，编辑Claude/Codex配置、补cwd和tool_timeout_sec、移除本组件旧hook并备份；这超出“只在Harness内部加载”的印象。AUTO_REGISTER=0可关闭。首次配置和跨端核对、持续模型/工具费用、失败与退出清理均有负担，费用和节时未量化；卸载Host之外还需移除外部MCP配置。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[host/package.json:1-63](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/package.json#L1-L63)
-
-子包入口、同版本MCP依赖及版本条件。
+自动注册默认启用，结果保存在注册状态。
 
 <details>
-<summary>查看原文（63行）</summary>
-
-```text
-{
-  "name": "dsh-baton-host",
-  "version": "0.6.5",
-  "description": "DeepSeek Harness plugin for dsh-baton: hand coding tasks from Claude Code or Codex to DeepSeek Harness on your machine. Adding it is the whole install: it registers the dsh-baton MCP server for Claude Code and Codex, runs each task live in the Harness window, wakes the main agent when the run ends and hands back the changed files, the project's own test results and a requirement-by-requirement checklist.",
-  "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": {
-      "default": "./lib/index.js"
-    },
-    "./client": {
-      "default": "./lib/client.js"
-    },
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib",
-    "cordis.patch.yml",
-    "README.md",
-    "LICENSE"
-  ],
-  "dependencies": {
-    "dsh-baton-mcp": "0.6.5"
-  },
-  "license": "MIT",
-  "dsh": {
-    "manifestVersion": 1,
-    "engines": {
-      "dsh": ">=0.2.1-rc.2"
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-renderer",
-        "@deepseek-ai/dsh-client-ui-chat",
-        "@deepseek-ai/dsh-client-ui-primitives"
-      ]
-    }
-  },
-  "keywords": [
-    "deepseek-harness",
-    "dsh",
-    "dsh-plugin",
-    "mcp",
-    "relay",
-    "baton"
-  ],
-  "engines": {
-    "node": ">=22.15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JialaoLiu/dsh-baton.git",
-    "directory": "host"
-  },
-  "homepage": "https://github.com/JialaoLiu/dsh-baton#readme",
-  "scripts": {
-    "prepublishOnly": "node ../scripts/version.mjs"
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[host/lib/index.js:62-78](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L62-L78)
-
-Unix路径权限与活socket检测。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-async function claimSocket(sock) {
-  // A named pipe has no file to own, chmod or clean up; it disappears with its
-  // server. Only refuse to start when another host already answers on it.
-  if (IS_WIN) {
-    if (await probe(sock)) throw new Error(`another dsh-baton-host already serves ${sock}; set DSH_BATON_SOCKET for a second host`)
-    return
-  }
-  const dir = path.dirname(sock)
-  const ours = dir === batonHome() || !fs.existsSync(dir)
-  fs.mkdirSync(dir, { recursive: true, mode: 0o700 })
-  if (ours) fs.chmodSync(dir, 0o700)
-  let st
-  try { st = fs.lstatSync(sock) } catch { return }
-  if (!st.isSocket()) throw new Error(`${sock} exists and is not a socket; point DSH_BATON_SOCKET somewhere else`)
-  const live = await probe(sock)
-  if (live) throw new Error(`another dsh-baton-host already serves ${sock}; set DSH_BATON_SOCKET for a second host`)
-  fs.unlinkSync(sock)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[host/lib/index.js:1461-1488](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1461-L1488)
-
-socket权限和卸载清理。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-  ctx.effect(() => {
-    const sock = socketPath()
-    let server = null
-    let disposed = false
-    claimSocket(sock).then(() => {
-      if (disposed) return
-      try { enableStore() } catch (error) { logError('run store', error) }
-      server = net.createServer(serve)
-      server.on('error', (error) => ctx.logger?.error?.(`dsh-baton-host socket error: ${error.message}`))
-      server.listen(sock, () => {
-        if (!IS_WIN) try { fs.chmodSync(sock, 0o600) } catch { /* best effort */ }
-        ctx.logger?.info?.(`dsh-baton-host listening on ${sock}`)
-      })
-    }).catch((error) => ctx.logger?.error?.(`dsh-baton-host not started: ${error.message}`))
-    return () => {
-      disposed = true
-      if (store.enabled) { try { flushRuns() } catch (error) { logError('persist runs', error) } }
-      store.enabled = false
-      stopping = true
-      // Release callers blocked in wait() and close open connections, so an
-      // unloaded or reloaded plugin leaves no timers or sockets behind.
-      for (const set of waiters.values()) for (const done of [...set]) done()
-      waiters.clear()
-      for (const set of followers.values()) for (const done of [...set]) done()
-      for (const conn of connections) conn.destroy()
-      if (!server) return
-      server.close()
-      if (!IS_WIN) try { if (fs.lstatSync(sock).isSocket()) fs.unlinkSync(sock) } catch { /* gone */ }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[host/lib/socket.js:38-48](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/socket.js#L38-L48)
-
-Windows路径到管道映射。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-// A Unix socket file on macOS and Linux. Node cannot listen on a socket file on
-// Windows, so there the same path maps to a named pipe: \\.\pipe\dsh-baton-<hash of
-// the path>. The default path sits in the user's own home folder, so the pipe name is
-// per user. DSH_BATON_SOCKET may be either a path (mapped the same way) or a pipe name.
-export function socketEndpoint(p, platform = process.platform, prefix = 'dsh-baton') {
-  if (platform !== 'win32' || PIPE_PREFIX.test(p)) return p
-  const key = path.win32.resolve(p).toLowerCase()
-  return `\\\\.\\pipe\\${prefix}-${crypto.createHash('sha256').update(key).digest('hex').slice(0, 16)}`
-}
-
-export const socketPath = (env = process.env) => setting('SOCKET', env) || path.join(batonHome(env), 'host.sock')
-```
-
-</details>
-
-**依据 5 · 源码核查**：[host/lib/index.js:1405-1425](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1405-L1425)
-
-默认自动注册及关闭开关。
-
-<details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
   // --- MCP registration -----------------------------------------------------
@@ -927,163 +666,47 @@ export const socketPath = (env = process.env) => setting('SOCKET', env) || path.
     }))
   } else {
     registration = { state: 'off' }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/register.mjs:544-620](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/src/register.mjs#L544-L620)
-
-真实外部配置和旧hook改动。
-
-<details>
-<summary>查看原文（77行）</summary>
-
-```text
-export function autoRegister({ root, home = os.homedir(), env = process.env, node = null, harnessDir = null, fallback = null, find = findNode, app = appDir(batonHome(env, home)) } = {}) {
-  const result = { ok: false, version: versionOf(root), clients: [], error: null, node: null, runtime: null, codexHook: null }
-  try {
-    let serverRoot = root
-    if (!fs.existsSync(path.join(root, '.git')) && path.resolve(root) !== path.resolve(app)) {
-      const installed = versionOf(app)
-      const older = !installed || compareVersions(installed, result.version) < 0
-      // Same version, other files (a fix synced before its release): copied too.
-      const changed = !older && compareVersions(installed, result.version) === 0 && appDigest(app) !== appDigest(root)
-      if (older || changed || !fs.existsSync(path.join(app, 'src', 'server.mjs'))) installApp(root, app)
-      serverRoot = app
-    }
-    const script = path.join(serverRoot, 'src', 'server.mjs')
-    // Whether an entry can start a server. A bare command (`npx -y dsh-baton-mcp`, as MCP
-    // directories suggest) is the user's own choice and resolved on the client's PATH: kept.
-    // Harness's own binary only works in Node mode.
-    const bare = (cmd) => !/[\\/]/.test(cmd)
-    const works = (e) => {
-      if (!e?.command) return false
-      // `node /old/path/server.mjs` with that file gone is still broken.
-      if (bare(e.command)) return !e.args?.[0] || bare(e.args[0]) || fs.existsSync(e.args[0])
-      if (!fs.existsSync(e.command) || !e.args?.[0] || !fs.existsSync(e.args[0])) return false
-      return !fallback || path.resolve(e.command) !== path.resolve(fallback.command) || e.env?.ELECTRON_RUN_AS_NODE === '1'
-    }
-    const list = clients(env, home)
-    // Whether Codex's table already had tool_timeout_sec: one written now (below, or with a
-    // fresh table) is noted as new, so conversations opened without it keep 270 s.
-    const codexFile = list.find((c) => c.id === 'codex')?.file
-    let hadTimeout = false
-    try { hadTimeout = readCodexToolTimeout(fs.readFileSync(codexFile, 'utf8')) !== null } catch { /* no config yet */ }
-    let launch = node ? { command: node } : null
-    for (const c of list) {
-      if (!c.present) { result.clients.push({ id: c.id, label: c.label, state: 'not-installed' }); continue }
-      try {
-        const text = fs.existsSync(c.file) ? fs.readFileSync(c.file, 'utf8') : ''
-        const current = c.read(text)
-        if (works(current)) {
-          const same = !bare(current.command) && path.resolve(current.args[0]) === path.resolve(script)
-          result.clients.push({ id: c.id, label: c.label, state: same ? 'unchanged' : 'kept', script: current.args[0] })
-          continue
-        }
-        if (!launch) {
-          const found = find({ env, exclude: [harnessDir] })
-          launch = found ? { command: found } : fallback
-        }
-        if (!launch) { result.clients.push({ id: c.id, label: c.label, state: 'failed', error: 'no-node' }); continue }
-        rewrite(c.file, (t) => c.edit(t, { ...launch, args: [script] }))
-        result.clients.push({ id: c.id, label: c.label, state: 'registered' })
-      } catch (e) {
-        result.clients.push({ id: c.id, label: c.label, state: 'failed', error: e.message })
-      }
-    }
-    const codex = list.find((c) => c.id === 'codex')
-    // Entries written before cwd or tool_timeout_sec existed get them here, and the old Codex
-    // Stop hook goes (see removeCodexHookBlock), in one write: Codex may still have the file
-    // open from the edit before, and Windows refuses to replace it then.
-    result.codexHook = 'none'
-    try {
-      if (codex?.present && fs.existsSync(codex.file)) {
-        rewrite(codex.file, (t) => {
-          const timed = addCodexToolTimeout(addCodexCwd(t, home))
-          const out = removeCodexHookBlock(timed, codex.file)
-          result.codexHook = out === timed ? 'none' : 'removed'
-          return out
-        })
-        noteCodexToolTimeout(codex.file, env, home, !hadTimeout)
-      }
-    } catch (e) {
-      result.codexHook = `failed (${e.code ?? e.message})`
-      // Codex then keeps 270 s waits and the old hook: say so where the Plugins page looks.
-      const c = result.clients.find((x) => x.id === 'codex')
-      if (c && c.state !== 'not-installed') Object.assign(c, { state: 'failed', error: `could not update ${codex.file}: ${e.code ?? e.message}` })
-    }
-    // State the hook of 0.6.0–0.6.3 kept that nothing reads any more (pending.json stays:
-    // conversations opened before still run the hook, which reads it).
-    for (const f of ['registered.json', 'trust-noted.json', 'wanted', 'alive']) {
-      try { fs.rmSync(path.join(batonHome(env, home), 'codex-hook', f), { force: true }) } catch { /* left */ }
-```
-
-</details>
-
-**依据 7 · 源码核查**：[src/register.mjs:380-411](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/src/register.mjs#L380-L411)
-
-配置备份与临时写重试。
-
-<details>
-<summary>查看原文（32行）</summary>
-
-```text
-  let after = edit(before)
-  // The edits join lines with \n; a file written with \r\n (Windows) keeps them.
-  if (before.includes('\r\n') && after !== before) after = after.replace(/\r?\n/g, '\r\n')
-  if (after === before) return 'unchanged'
-  if (before) fs.copyFileSync(file, `${file}.bak-dsh-baton`)
-  fs.mkdirSync(path.dirname(file), { recursive: true })
-  const tmp = `${file}.tmp-${process.pid}`
-  fs.writeFileSync(tmp, after, { mode: before ? fs.statSync(file).mode : 0o600 })
-  // On Windows a file another process has open (Codex reading its config just after a
-  // change, an antivirus scan) refuses the rename for a moment: try again shortly. The file
-  // is read again each time, so a change saved meanwhile (Codex's own settings) is kept.
-  let seen = before
-  for (let tries = 0; ; tries++) {
-    try { fs.renameSync(tmp, file); break } catch (e) {
-      if (tries < 20 && ['EPERM', 'EBUSY', 'EACCES'].includes(e.code)) {
-        Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, 100)
-        let now = seen
-        try { now = fs.readFileSync(file, 'utf8') } catch { /* still locked: as before */ }
-        if (now !== seen) {
-          seen = now
-          let next = edit(now)
-          if (now.includes('\r\n') && next !== now) next = next.replace(/\r?\n/g, '\r\n')
-          if (next === now) { fs.rmSync(tmp, { force: true }); return 'unchanged' }
-          fs.writeFileSync(tmp, next)
-        }
-        continue
-      }
-      try { fs.rmSync(tmp, { force: true }) } catch { /* left behind */ }
-      throw e
-    }
   }
-  return 'updated'
 ```
 
 </details>
 
-<a id="research-q05"></a>
+**依据 5 · 作者声明**：[host/README.md:23-25](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/README.md#L23-L25)
 
-<a id="detail-section-15"></a>
+作者说明卸载后另移除外端注册。
 
-### Q05 · 怎样试用才能避免把交接状态误当任务成功？
+```text
+## Remove / 卸载
+
+Uninstall, then run `npx -y dsh-baton-mcp setup --remove`. / 卸载插件后运行 `npx -y dsh-baton-mcp setup --remove`。
+```
+
+#### 缺口
+
+- 未验收 Windows 管道 ACL、自动注册写入与异常卸载
+  **影响**：不清楚目标环境能否完全恢复原配置
+  **进一步探讨**：隔离用户下对照注册文件、管道访问和卸载后配置
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 如何试验把未知终态独立标出是否真的减少误接收？
 
 **研究主题**：新假设与验证、采用判断
 
 #### 完整回答
 
-可先在独立工作区和无敏感工具会话试用，禁用自动注册或备份外部客户端配置，确认外部请求投到正确会话。依次核查正常回复、等待超时、需要人回答、后台活动查询失败、取消仍busy及重启interrupted，终态必须同时读error、goal和项目交付证据。发现错误会话、completed附活动未知或取消仍忙时停止继续发送并到Harness人工接管，恢复手工交接。可推导未实现方向，将completed-with-uncertainty与已确认静止分开，并让外部配置变更与run落盘有显式回执/修复状态。对照故障注入下的误完成率、重复投递和人工排障；若只增加协议复杂度而无改善则否定。
+可在单一隔离仓库选择一项可用固定测试验收的交接任务，先记录手工复制和当前回执的错误确认数，再模拟后台查询失败、续接已忙会话、取消仍忙和宿主重启。假设：将 completed + error 单列为未确认静止，并把项目验收单独记录，可减少过早复用未完成结果。若操作者已稳定读取错误字段，或显式状态只提高跟进时间却不降低误判，则放弃假设。现有版先选单一会话试用并分别记录 run、活动、变更与测试；出现仍忙或活动未知就暂停自动续接，人工在 Host 检查。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[host/lib/index.js:417-426](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L417-L426)
+**依据 1 · 源码核查**：[host/lib/index.js:417-428](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L417-L428)
 
-完成不确定性假设直接来自失败终态。
+后端未知时可返回 completed 附错误，构成显式未知态的比较基线。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
       // Unknown is not idle: keep waiting and retry; give up only after repeated failures.
@@ -1096,70 +719,20 @@ export function autoRegister({ root, home = os.homedir(), env = process.env, nod
       } else {
         for (const run of receivers) run.error = message
         scheduleQuietCheck(sessionId, 3000)
+      }
+      return
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[host/lib/index.js:1237-1272](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1237-L1272)
+**依据 2 · 源码核查**：[host/lib/index.js:1350-1377](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1350-L1377)
 
-超时和goal语义。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-  async function wait({ run_id, timeout_s = 300 }) {
-    const run = getRun(run_id)
-    const seconds = Number.isFinite(Number(timeout_s)) ? Math.min(Math.max(Number(timeout_s), 0), MAX_WAIT_S) : 300
-    const unseenWait = () => run.state === 'waiting' && !run.waitNoticed
-    const deadline = Date.now() + seconds * 1000
-    // A wake can also come for another reason (the delayed one for a waiting status): wait on.
-    while (isActive(run) && !unseenWait() && !stopping && Date.now() < deadline) {
-      await new Promise((resolve) => {
-        const set = waiters.get(run.id) ?? new Set()
-        waiters.set(run.id, set)
-        const done = () => {
-          clearTimeout(timer)
-          set.delete(done)
-          resolve()
-        }
-        const timer = setTimeout(done, deadline - Date.now())
-        set.add(done)
-      })
-    }
-    const done = !isActive(run)
-    if (!done && unseenWait()) {
-      run.waitNoticed = true
-      return { ...publicRun(run), needs_input: run.question ? 'answer' : 'harness-ui' }
-    }
-    return { ...publicRun(run), ...(done ? await goalField(run) : { timed_out: true }) }
-  }
-
-  // A run that completed in a session with a goal: the goal goes on after it.
-  // The session's goal, for whoever waited on a run: one that goes on after it, or one that
-  // stopped since the run began (its later rounds belong to the run's work: ended_since_run).
-  // A goal complete before the run is left out.
-  const goalField = async (run) => {
-    const goal = run.state === 'completed' ? await goalOf(run.sessionId) : null
-    if (!goal) return {}
-    const since = goal.phase !== 'active' && goal.changedAt >= (Date.parse(run.startedAt) || Infinity)
-    return goal.phase !== 'complete' || since ? { goal: since ? { ...goal, ended_since_run: true } : goal } : {}
-```
-
-</details>
-
-**依据 3 · 源码核查**：[host/lib/index.js:1291-1323](https://github.com/JialaoLiu/dsh-baton/blob/58e0c896c4950aa7bb80e1e51ad1ac5be82e61c0/host/lib/index.js#L1291-L1323)
-
-仍忙与会话级接管。
+会话取消仍忙字段可用于故障注入的观察。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-  async function cancel({ run_id, session_id }) {
-    const run = run_id ? getRun(run_id) : null
-    const sessionId = run?.sessionId ?? session_id
-    if (!sessionId) throw new Error('run_id or session_id is required')
     // A stop that arrives while sub-agents are still starting can be lost: the turn
     // carries on and starts them again. Re-issue it until the session is quiet.
     let attempts = 0
@@ -1188,15 +761,161 @@ export function autoRegister({ root, home = os.homedir(), env = process.env, nod
       activity: still.activity,
       queued_runs: activeRunsFor(sessionId).filter((r) => !r.sawPrompt).map((r) => r.id),
       ...(removed.length ? { removed_from_queue: removed } : {}),
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 发送者标签怎样与 0.2.2 前后的普通消息和 steering 渲染共存？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用、采用判断
+
+#### 完整回答
+
+Host 在 requestId 中编码经过正则限制的 sender，客户端读取 source.rpcId 的 baton 或早期 bridge 前缀，据此展示名称。这是来源提示，不校验发送方身份，也不证明任务已执行。若用户消息注册项声明 conversation.chat.user.before 子槽，插件用该槽的 source 渲染标签，不包装普通消息。无该槽的旧宿主仍包装普通消息，steering 一直使用包装。包装从同 key 的其他非字符串组件中按优先级选择 Inner；找不到时直接返回 null，因此该分支可能无法显示内容。若 renderSlotChain 已有则保留，缺失时给 Inner 一个空实现以满足新版渲染器的函数依赖。试用应核对有标签和无标签的正文都能正常渲染，普通消息与 steering 分别测试，兼容性问题时禁用插件的界面路径并从会话事件核对交接。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[host/lib/index.js:30-34](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L30-L34)
+
+Host 将 sender 写入 requestId。
+
+```text
+const PERSIST_DELAY_MS = 1000
+// A relayed prompt's request id carries its sender ("dsh-baton.<sender>.<uuid>"), so the
+// client half (lib/client.js) can label the message in the chat without any extra state.
+const SENDER_RE = /^[a-z0-9-]{1,32}$/
+const requestIdFor = (sender) => (sender ? `dsh-baton.${sender}.${crypto.randomUUID()}` : crypto.randomUUID())
+```
+
+**依据 2 · 源码核查**：[host/lib/index.js:1198-1208](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/index.js#L1198-L1208)
+
+sender 正则只验证形式，Team 和 mode 另行检查。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  async function send({ message, session_id, cwd, workspace_id, mode: asked, sender, model, reasoning_effort, team }) {
+    if (!message || !message.trim()) throw new Error('message is required')
+    if (asked != null && asked !== 'followup' && asked !== 'steer') throw new Error('mode must be followup or steer')
+    if (team != null && typeof team !== 'boolean') throw new Error('team must be true or false')
+    // Checked before a new session is made, so a Harness without them is left as it was.
+    if (team != null && typeof teamsService?.setEnabled !== 'function') throw new Error(`Nothing was sent: ${TEAMS_UNSUPPORTED}`)
+    // Without a mode, a message to a busy session does what Harness's own busy-send setting says.
+    const fromHarness = asked == null ? harnessBusyMode() : null
+    const mode = asked ?? fromHarness ?? 'followup'
+    const modeSource = asked != null ? 'explicit' : fromHarness ? 'harness' : 'default'
+    if (sender != null && !SENDER_RE.test(sender)) throw new Error('sender must be 1-32 characters of a-z, 0-9 or -')
+```
+
+</details>
+
+**依据 3 · 源码核查**：[host/lib/client.js:26-33](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/client.js#L26-L33)
+
+包装键和识别的 RPC 前缀、展示名。
+
+```text
+    const SLOT = 'conversation.chat.node'
+    const KEYS = ['user', 'steering']
+    const PRIORITY = -100
+    const NS = 'dsh-baton'
+    // dsh-bridge: messages sent before the project was renamed.
+    const RPC_RE = /^dsh-(?:baton|bridge)\.([a-z0-9-]{1,32})\./
+    // Codex shows as ChatGPT, the way the ChatGPT app labels its own cross-chat messages.
+    const NAMES = { claude: 'Claude', codex: 'ChatGPT' }
+```
+
+**依据 4 · 源码核查**：[host/lib/client.js:155-161](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/client.js#L155-L161)
+
+客户端从 source.rpcId 获取 sender。
+
+```text
+    function senderFrom(source) {
+      const rpcId = source?.rpcId
+      const m = typeof rpcId === 'string' ? RPC_RE.exec(rpcId) : null
+      return m ? m[1] : null
     }
+    const senderOf = (node) => senderFrom(node?.data?.source)
+    const nameOf = (sender) => NAMES[sender] ?? sender.charAt(0).toUpperCase() + sender.slice(1)
+```
+
+**依据 5 · 源码核查**：[host/lib/client.js:191-209](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/client.js#L191-L209)
+
+选择 Inner，缺失直接返回 null，并补 renderSlotChain 空实现。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+    // The renderer this wrapper shadows: the best-ranked entry for the key that is not ours.
+    function shipped(ctx, key, own) {
+      return ctx.slots.entries(SLOT)
+        .filter((e) => e.options?.key === key && e.component !== own && typeof e.component !== 'string')
+        .sort((a, b) => (a.options?.priority ?? 0) - (b.options?.priority ?? 0))[0]?.component
+    }
+
+    function wrapperFor(ctx, key, t) {
+      function DshBatonUserMessage(props) {
+        const Inner = shipped(ctx, key, DshBatonUserMessage)
+        if (!Inner) return null
+        // Harness 0.2.2 hands each renderer the chain renderer of its own registration; a wrapper
+        // has none to pass on, so the shipped renderer gets one that draws nothing.
+        const inner = h(Inner, props.renderSlotChain ? props : { ...props, renderSlotChain: () => null })
+        const sender = senderOf(props.node)
+        if (!sender) return inner
+        return h('div', { style: { display: 'flex', flexDirection: 'column' } },
+          h(Label, { sender, text: t('sentFrom', { name: nameOf(sender) }) }),
+          inner)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[host/lib/client.js:214-239](https://github.com/JialaoLiu/dsh-baton/blob/eeedd0e3855bcf2798bdc72180f87d8761c21f35/host/lib/client.js#L214-L239)
+
+探测子槽，普通 user 有槽即跳过包装，steering 仍包装。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+    // Harness 0.2.2 and later: the chat declares a seat above each user message (BEFORE) and
+    // hands it the message's source, so the label sits there and the user renderer is left alone.
+    // Steering messages do not get that seat, so they keep the wrapper.
+    const BEFORE = 'conversation.chat.user.before'
+    const seatsBefore = (e) => e?.options?.key === 'user' && !!(e.children?.[BEFORE] ?? e.options?.children?.[BEFORE])
+    function beforeLabel(t) {
+      return function DshBatonSender({ matched }) {
+        return h(Label, { sender: matched, text: t('sentFrom', { name: nameOf(matched) }) })
+      }
+    }
+
+    module.exports.name = 'dsh-baton-host'
+    module.exports.inject = ['slots', 'locale']
+    module.exports.apply = function apply(ctx) {
+      ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'dsh-baton: dictionaries')
+      const t = ctx.locale.bind(NS)
+      ctx.slots.inject(SLOT, function* () {
+        const seated = ctx.slots.entries(SLOT).some(seatsBefore)
+        // locale 'chat': the shipped renderer reads its strings through the `t` it is handed.
+        for (const key of KEYS) {
+          if (key === 'user' && seated) continue
+          yield ctx.slots.register({ name: SLOT, key, priority: PRIORITY, locale: 'chat' }, wrapperFor(ctx, key, t))
+        }
+      })
+      // Runs only in a Harness that declares the seat; older ones never declare it.
+      ctx.slots.inject(BEFORE, () => ctx.slots.register({ name: BEFORE, select: ({ source }) => senderFrom(source) }, beforeLabel(t)))
 ```
 
 </details>
 
 #### 缺口
 
-- 没有跨MCP客户端、系统权限和项目任务的同版本实际验收。
-  **影响**：不能证明本地账户隔离、端到端交接及任务质量可靠，采用限隔离试用。
-  **进一步探讨**：固定客户端、Host和项目版本，分别验证权限、状态故障与项目合格交付。
+- 未验收真实 0.2.1/0.2.2 槽位或其他 UI 插件的排序
+  **影响**：不能确认每一布局都保留正文和唯一标签
+  **进一步探讨**：对两版宿主发送带和不带 sender 的普通及 steering 消息，并覆盖无 Inner 与已有链渲染器
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

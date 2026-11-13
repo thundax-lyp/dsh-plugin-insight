@@ -142,7 +142,7 @@
 | [Memory Eternal](#plugin-1351908966-root) | 跨会话沉淀和审阅知识卡，并提供核心记忆与用量账本 | [Q04](../../plugins/eternalnight996--memory-eternal/INSIGHT.md#research-q04) 以隔离 vault 和虚构数据验证审核、检索和核心注入。 |
 | [memsearch](#plugin-1153190876-root) | 为 Markdown 文件提供语义与关键词混合检索，支持增量索引、实时监视及多种嵌入后端。 | [Q04](../../plugins/zilliztech--memsearch/INSIGHT.md#research-q04) 对资料副本建独立集合，核对固定题集和原文。 |
 | [MemSearch for DeepSeek Harness](#plugin-1153190876-plugins-dsh) | 为 DeepSeek Harness 捕获会话记忆、检索共享 Markdown 日记并在 Web 面板审阅技能候选。 | [Q04](../../plugins/zilliztech--memsearch--plugins-dsh/INSIGHT.md#research-q04) 先只处理无敏感内容的测试决策，逐项核对日记、检索和原会话。 |
-| [meow-memory](#plugin-1333986968-root) | 为 DSH 提供跨会话项目记忆、召回和自动整理。 | 隔离项目核验首轮、压缩和外部库；错误时停用并回人工笔记。 |
+| [Meow Memory](#plugin-1333986968-root) | 为 DeepSeek Harness 提供分层、跨会话项目记忆和自动整理。 | [Q03](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q03) 仅用非敏感项目比较注入和下一普通轮模型，不清楚时停用 delegate 与读入。 |
 | [Mimir](#plugin-1340749561-root) | 在DSH中组织文献、论文编译、实验和研究记录，提供工具与工作台，编译或任务状态不替代研究结果核验。 | [Q04](../../plugins/1692775560--dsh-mimir-academic-research/INSIGHT.md#research-q04) 现有DSH用户从本地论文副本编译诊断试用，核实际PDF与源修改；远端unknown不自动重提。 |
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
 | [MinerU文档解析桥](#plugin-1328601495-root) | 把本地文档上传到外部MinerU服务，通过DSH模型工具查询异步任务并返回Markdown/结果路径。 | [Q03](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q03)观察；可信服务和可丢弃小样前提下人工核验，不敏感批量无人值守。 |
@@ -166,7 +166,7 @@
 | [SourceDeck / 资料台](#plugin-1422910686-root) | 在 DSH 侧栏进行后台资料研究、候选筛选与对比，并将保留资料作为快照引用回对话。 | 固定RC后隔离试用，先核候选事实及草稿/附件引用，失败回到书签和手工引用。 |
 | [Stock Analysis Plugin](#plugin-1238532570-root) | 多宿主证券研究工具集，共享 Python 行情、筛查与回测能力，另有 DSH 专用分发。 | 只在隔离 Profile 用已许可的固定样本核对复盘。 |
 | [StudyHub](#plugin-1367673687-root) | 把讲义等资料生成有来源的练习题，支持复习、题库与音频转录。 | [Q04](../../plugins/ericwang1358--dsh-web-studyhub/INSIGHT.md#research-q04) 用可外发资料先生成少量题并人工核对。 |
-| [StudyMate](#plugin-1374986657-root) | 在 DSH 中组织课程大纲、课件、练习和项目，持久保存学习进度并提供阅读端。 | 建议已有DSH且能核教材的自学者限定一门小课试用，备份工作区并保留人工学习计划；发现内容错误或进度虚高则停自动推进，不跑不可信实验。 |
+| [StudyMate](#plugin-1374986657-root) | 为自学任务提供学习预设、课件与练习、答疑和独立学习工作区。 | [Q03](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q03) 限独立工作区试一课，核教材和迁移题，发现错误立即停自动推进。 |
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [Vibe Mathematics](#plugin-1319853777-root) | 为 DSH 提供多代理数学研究预设，支持任务、表决和形式化检查。 | 先观察配置和证据链，只用已知题核对所有步骤。 |
 | [WeKnora](#plugin-1024118326-root) | 面向团队文档的知识服务，提供检索问答、Agent 推理和 Wiki 管理。 | [Q05](../../plugins/tencent--weknora/INSIGHT.md#research-q05) 先取十几条含正例、无依据和越权哨兵的手册问题，关闭网络检索，确认模型和资料的权限边界。 |
@@ -2260,17 +2260,17 @@
 
 <a id="plugin-1333986968-root"></a>
 
-## [meow-memory](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md)
+## [Meow Memory](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md)
 
-[![GitHub ★ 342](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=342&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Phant0Meow/dsh-meow-memory) [![npm 30d 20,717](https://img.shields.io/static/v1?label=npm+30d&message=20%2C717&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/meow-memory) [![最新发布 2026-10-31](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-31&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/meow-memory)
+[![GitHub ★ 388](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=388&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Phant0Meow/dsh-meow-memory) [![npm 30d 36,121](https://img.shields.io/static/v1?label=npm+30d&message=36%2C121&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/meow-memory) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/meow-memory)
 
-> **用途**：希望跨会话复用项目事实的 DSH 用户；基线是人工笔记与显式检索。[Q01](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q01)
+> **用途**：反复在多个会话续接项目的用户，需要自动找回已核实的上下文。
 
-> **亮点**：将项目记忆、压缩后重注入和外部库信任门接入宿主；效果与节时未对照。[Q01](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q01) [Q02](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q01) 将工作区记忆和压缩重注入接回宿主；[Q02](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q02) 通过能力探测适配两代整理模型路由。
 
-> **思考**：注入失败会放行无记忆的原消息；信任来源不保证事实准确或以后无污染。[Q02](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q02) [Q03](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q03)
+> **思考**：[Q02](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q02) 整理后恢复依赖进程内状态和宿主选择事件，[Q03](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q03) 封存计数不能证明内容正确。
 
-> **建议**：未验证假设：显示来源、项目、确认时间及失败状态可减少误用；须比较现有信任门与人工笔记。[Q05](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q05)
+> **建议**：[Q03](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md#research-q03) 试验并列显示整理模型与恢复后的实际模型是否减少错认，尚未验证。
 
 [查看完整分析](../../plugins/phant0meow--dsh-meow-memory/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2646,15 +2646,15 @@
 
 ## [StudyMate](../../plugins/miaotofu01--study-mate/INSIGHT.md)
 
-[![GitHub ★ 1,220](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C220&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Miaotofu01/Study-Mate) [![npm 30d 6,194](https://img.shields.io/static/v1?label=npm+30d&message=6%2C194&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yunmiao/studymate) [![最新发布 2026-10-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yunmiao/studymate)
+[![GitHub ★ 1,435](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C435&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Miaotofu01/Study-Mate) [![npm 30d 7,970](https://img.shields.io/static/v1?label=npm+30d&message=7%2C970&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yunmiao/studymate) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@yunmiao/studymate)
 
-> **用途**：数学计算机自学者按前置知识推进课程并保存练习；最终标准是独立迁移任务，不是课件生成量。[Q01](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q01)
+> **用途**：数学或计算机自学者需要把课件、练习与答疑持续组织在同一学习计划。
 
-> **亮点**：把自由聊天改为文件化课程、阅读作答和跨会话进度，工具分域约束支撑协作；并不证明教学正确或比教材更有效。[Q01](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q01) [Q02](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q02)
+> **亮点**：[Q01](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q01) 把学习资料和工具绑定到 DSH 预设，按宿主解析能力适配旧子路径。[Q02](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q02) 学习工具对实际写入回调做域校验。
 
-> **思考**：格式通过与进程退出不能代替学习掌握；实验路径guard非OS沙箱，不可信代码仍以宿主身份执行；现版不承诺旧平台支持。[Q03](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q03)
+> **思考**：[Q02](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q02) 域守卫和无 shell 不能隔离不可信程序；[Q03](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q03) 课件及实验回执不能代替掌握度。
 
-> **建议**：未验证方向是以延迟复测及未见迁移题推进学习进度，在同教材预算下比最终学习质量及全成本。[Q05](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q05)
+> **建议**：[Q03](../../plugins/miaotofu01--study-mate/INSIGHT.md#research-q03) 对照现有流程试延迟复测和未见迁移题，判断是否应推进课程。
 
 [查看完整分析](../../plugins/miaotofu01--study-mate/INSIGHT.md) · [返回表格](#category-index)
 

@@ -8,7 +8,7 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 384 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 386 |
 | [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 55 |
 | [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 165 |
 | [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 412 |
@@ -21,7 +21,7 @@
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（384）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（386）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
