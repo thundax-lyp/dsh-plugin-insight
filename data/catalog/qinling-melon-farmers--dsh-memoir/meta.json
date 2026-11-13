@@ -1,0 +1,50 @@
+{
+    "repository": "Qinling-Melon-Farmers/dsh-memoir",
+    "repository_id": 1334359396,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 39,
+    "pushed_at": "2026-11-06T14:41:54Z",
+    "issues": {
+        "open": 0,
+        "closed": 14,
+        "created_30d": 2,
+        "closed_30d": 2,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AQinling-Melon-Farmers%2Fdsh-memoir%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 97C6:4387C:9ED1DB:A978CE:6AF51CB1 and timestamp 2026-11-12 01:56:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-11T17:47:29.947Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-memoir",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 4102,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-memoir",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T03:56:58.777Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
+            "source_url": "https://registry.npmjs.org/dsh-memoir",
+            "error": null,
+            "latest_version": "0.9.5",
+            "latest_published_at": "2026-11-06T14:43:45.388Z",
+            "latest_error": null
+        }
+    }
+}

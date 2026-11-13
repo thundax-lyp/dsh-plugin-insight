@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[baec191](https://github.com/LeeRolling/dsh-boot-suite/tree/baec191c80fa057cab690997e269392dc9ca841e)
+源码版本：[83645b8](https://github.com/LeeRolling/dsh-boot-suite/tree/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd)
 
 <!-- BEGIN META -->
-[![GitHub ★ 61](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=61&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LeeRolling/dsh-boot-suite) [![npm 30d 4,496](https://img.shields.io/static/v1?label=npm+30d&message=4%2C496&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-boot-suite) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-boot-suite)
+[![GitHub ★ 139](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=139&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LeeRolling/dsh-boot-suite) [![npm 30d 18,783](https://img.shields.io/static/v1?label=npm+30d&message=18%2C783&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-boot-suite) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-boot-suite)
 <!-- END META -->
 
-> **功能**：为 DSH 提供可配置启动动画、声音与模板，并设置聊天图片或循环视频背景。
+> **功能**：为 DSH 提供可配置的启动动画、声音、转场和聊天背景，支持导入图片及视频。
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持在同包组合首屏媒体和持久聊天背景，保留取消释放、模板来源隔离和更新摘要。底层HTML、媒体与脚本机制是通用技术，价值主要是个性化体验。
+> **亮点**：[Q01](#research-q01) 用同一包挂载首屏动画及持久聊天背景。[Q02](#research-q02) 主题、对比度、渐变与 iframe 来源各有实际处理。
 
-> **主要限制**：[Q03](#research-q03)、[Q04](#research-q04)最影响采用的是首屏可达性与本机副作用。startup栅栏fail-closed而wallpaper缺服务/异常放行，后者含媒体删除；更新started不是完成，回滚尽力恢复并非完整事务保证。
+> **主要限制**：[Q03](#research-q03) 壁纸管理路由在认证缺失或异常时仍调用处理器。[Q04](#research-q04) Windows 更新脚本含非 PowerShell 注释标记，启动回执也不足以确认更新完成。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 首屏动画和聊天壁纸为谁提供什么增量？](#detail-section-11)
-  - [Q02 · 首屏如何注入、播放和跳过？](#detail-section-12)
-  - [Q03 · 图片音乐、壁纸删除和请求权限边界是什么？](#detail-section-13)
-  - [Q04 · 安装、更新和黑屏恢复有什么负担？](#detail-section-14)
-  - [Q05 · 能推导什么可验证的首屏设计方向？](#detail-section-15)
+  - [Q01 · 从冷启动到可操作聊天，首屏通过什么路径释放？](#detail-section-11)
+  - [Q02 · 聊天背景和自定义模板依赖哪些宿主与浏览器行为？](#detail-section-12)
+  - [Q03 · 连接认证缺失时哪些路由继续响应？](#detail-section-13)
+  - [Q04 · 摘要校验和回滚能否证明新版更新可达？](#detail-section-14)
+  - [Q05 · 哪些验证足以改变当前观察判断？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：供自愿追求DSH启动与聊天个性化的用户使用，目标是喜欢且可退出的外观，不改善模型推理或真实任务结果。
+> **用途**：愿意个性化冷启动和聊天背景的 DSH 用户，希望外观变化能随时跳过且可恢复。
 
-相对单背景CSS增加启动时序与媒体模板，相对外部播放器接入DSH生命周期；没有独立启动性能或生产收益证据，见[Q01](#research-q01)。
+原生主题无需额外覆盖启动页面；桌面或浏览器主题可改变外观。插件进一步组合启动转场和聊天区域素材，需要验证宿主版本。
 
 <a id="detail-section-3"></a>
 
@@ -51,69 +51,64 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 首屏动画与声音 | 个性化启动体验 | 控制首屏，可跳过与兜底仍需目标环境验收 |
-| 数据/iframe模板 | 自定义播放内容 | iframe能执行脚本，非受信有sandbox与token边界 |
-| 聊天背景/循环视频 | 持续个性化界面 | 资源/可读性未测，删除视频会动Host文件 |
-| 自备媒体导入 | 保存动画与音乐 | 动画64MB、音乐100MB，目的地是DSH Host |
-| 更新与应急恢复资源 | 下载核摘要、启动外部安装及卸载 | Windows依赖，started不等完成，无全系统恢复保证 |
+| --- | --- | --- |
+| 启动动画 | 播放并可跳过首屏 | 依赖宿主注入和浏览器运行时 |
+| 聊天背景 | 设置静态图片与循环视频 | 可读性受主题、素材和外壳影响 |
+| 模板设置 | 切换内置及导入素材 | 用户 iframe 按来源隔离 |
+| 更新入口 | 验证包摘要并尝试启动更新器 | Windows 脚本与回滚须单独验证 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH webServer与connection | Host必需 | 首屏与媒体路由/请求检查 | 两侧栅栏异常策略不同，须核对部署 |
-| 浏览器音视频与存储 | 播放必需 | 动画、声音、会话/每日模式 | 权限或存储失败可能无声/重播 |
-| Host媒体目录与磁盘 | 自备素材才需 | 保存图片、动画、音乐 | 上传去Host，远端部署非浏览器本机 |
-| Windows CMD/PowerShell与退出DSH | 外部更新/应急恢复才需 | 修改安装与profile | started不等安装完成，跨平台未验 |
+| --- | --- | --- | --- |
+| DSH Host 与 Web 设置插槽 | 主要能力必需 | 提供首屏、背景设置与路由 | 验证自举和认证拒绝，缺服务时保留观察 |
+| 浏览器媒体与存储 | 依配置 | 播放视频、声音、记住已播放 | 可能静音、失败或重复播放 |
+| Windows PowerShell | 现有内置更新路径必需 | 校验、替换目录及重启 | 先解析固定脚本，更新状态单独核对 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户核对profile和界面外恢复 | 首次只用自带静态内容，不先导私密媒体 |
-| 加载 | Host注入首屏，splash播放 | 可跳过并进入聊天，不能只等进程存在 |
-| 退出播放 | 用户跳过/结束 | 根、音频与滚动锁释放，异常另核兜底范围 |
-| 维护 | 关闭DSH后按明确步骤更新或卸载 | 回读版本/profile，外部更新器启动不当成功 |
+| --- | --- | --- |
+| 准备 | 在隔离 profile 核对启动和媒体路由 | 能在界面外禁用 |
+| 验证 | 用内置静态素材对比原生主题 | 正常与异常都能进入聊天 |
+| 退出 | 发现权限或恢复异常时停用 | 确认原生聊天可用，保留日志与备份 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 包/媒体下载与磁盘资源未知 | 安装重启、设置与恢复准备 | 无模型增效依据 |
-| 持续 | 动画、音视频与背景渲染未知 | 选择素材、维护可读性和目录 | 娱乐收益及进入任务耗时未测 |
-| 失败恢复 | 界面外脚本、日志和重装资源未知 | 完全退出、核对profile和媒体保留 | 黑屏可能无法用界面设置 |
-| 升级退出 | 外部更新改安装，恢复可能失败 | 摘要核对、备份与版本回读 | 未保证完整profile事务回滚 |
+| --- | --- | --- | --- |
+| 首次 | 素材下载与磁盘 | 安装重启、核对设置 | 启动影响待测 |
+| 持续 | 音视频及背景渲染 | 核对主题及升级兼容 | 资源占用待测 |
+| 失败 | 临时解包和备份空间 | 界面外禁用、修复配置 | 完整恢复路径未实测 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 个性化 | 启动/壁纸/素材设置真实接线 | 喜好、长期保留与干扰 |
-| 可达恢复 | 取消释放、boot兜底和应急脚本 | 所有阶段黑屏与真实桌面可靠性 |
-| 来源约束 | 模板sandbox/token与更新摘要 | 目标部署权限与完整恢复 |
+| --- | --- | --- |
+| 个性化 | 启动和背景双入口及实际设置 | 偏好、长期保留和性能代价 |
+| 恢复 | 动画收尾释放和更新备份路径 | 所有阶段真实可恢复性 |
 
-> **思考**：[Q03](#research-q03)、[Q04](#research-q04)最影响采用的是首屏可达性与本机副作用。startup栅栏fail-closed而wallpaper缺服务/异常放行，后者含媒体删除；更新started不是完成，回滚尽力恢复并非完整事务保证。
+> **思考**：[Q03](#research-q03) 壁纸管理路由在认证缺失或异常时仍调用处理器。[Q04](#research-q04) Windows 更新脚本含非 PowerShell 注释标记，启动回执也不足以确认更新完成。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01)、[Q02](#research-q02)支持在同包组合首屏媒体和持久聊天背景，保留取消释放、模板来源隔离和更新摘要。底层HTML、媒体与脚本机制是通用技术，价值主要是个性化体验。
+> **亮点**：[Q01](#research-q01) 用同一包挂载首屏动画及持久聊天背景。[Q02](#research-q02) 主题、对比度、渐变与 iframe 来源各有实际处理。
 
-取消/finish集中释放、模板sandbox与来源token、更新摘要和候选目录校验可借鉴；两侧权限策略不一致与外部安装器完整恢复仍需复核，不能以合并包装推断边界统一。
+首屏标记、取消清理和 iframe 来源隔离可独立复用。透明层与亮度配置依赖外壳，更新先摘要校验但脚本存在语法风险。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03)、[Q04](#research-q04)最影响采用的是首屏可达性与本机副作用。startup栅栏fail-closed而wallpaper缺服务/异常放行，后者含媒体删除；更新started不是完成，回滚尽力恢复并非完整事务保证。
+[Q03](#research-q03) 壁纸管理路由在认证缺失或异常时仍调用处理器。[Q04](#research-q04) Windows 更新脚本含非 PowerShell 注释标记，启动回执也不足以确认更新完成。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先确认自己需要外观体验并准备界面外恢复，不以它改善工作性能。首次只用自带静态背景，测试跳过、禁用和文字可读后再考虑素材；不把视频删除当关闭。更新需完全退出并核对实际结果，首屏受阻或权限/恢复不清就停用回原生。见[Q04](#research-q04)。
+[Q05](#research-q05) 保持观察。先核对同版桌面首屏可达、媒体路由拒绝和独立禁用方法，再考虑安装。退出与恢复不清时继续原生主题。
 
 <a id="detail-section-7"></a>
 
@@ -121,18 +116,18 @@
 
 **核查状态**：已检查源码。
 
-仅源码核查首屏、播放释放、媒体路由和更新恢复关键链路；未运行媒体、桌面、更新或故障实验。非阻塞外观是假设。
+源码支持首屏与背景接线，并显示具体的认证和更新边界。真实桌面播放、端点暴露及更新脚本运行未验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、lib/index.js、lib/host-startup.js、lib/host-wallpaper.js、lib/client.js、lib/splash.js、lib/security.js、tools/update-apply.ps1、tools/emergency-uninstall.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 CHANGELOG.md、README.md、cordis.patch.yml、lib/client.js、lib/host-startup.js、lib/host-wallpaper.js、lib/index.js、lib/open-path.js、lib/splash.js、package.json、tools/update-apply.ps1 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定源码抽读Host双侧入口、HTML注入、splash退出/iframe、导入路由、壁纸删除/权限、外部更新与应急卸载；未审计全部模板媒体和安装器所有profile改写。
-- 下一步：未运行目标脚本、安装、媒体、浏览器、Windows更新、删除或故障实验；只作源码条件判断，不宣称已利用权限问题或已验收恢复。
+- 边界：固定源码抽读首屏注入、播放释放、背景管理、媒体隔离、跨平台打开器及 Windows 更新。未执行脚本、插件或宿主。
+- 下一步：先静态解析更新脚本，再用隔离 profile 检查脚本故障、认证缺失、退出可达和主题可读性。
 
 **分析版本**
 
 - **仓库**：[LeeRolling/dsh-boot-suite](https://github.com/LeeRolling/dsh-boot-suite)
-- **版本号**：2.16.11（[固定提交 baec191](https://github.com/LeeRolling/dsh-boot-suite/tree/baec191c80fa057cab690997e269392dc9ca841e)）
-- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.16.13（[固定提交 83645b8](https://github.com/LeeRolling/dsh-boot-suite/tree/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd)）
+- **版本日期**：2026-11-13（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,9 +135,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)提出未验证的非阻塞首屏和统一路由拒绝策略，保留独立进入聊天入口。比较故障矩阵中的可达时间、黑屏、播放和拒绝一致性；无改善或用户不保留则收窄，不计已有贡献。
+[Q05](#research-q05) 可以让宿主随时独立绕开首屏动画，并统一管理路由认证失败行为。对比故障条件下首次可输入时间、滚动恢复与请求拒绝，检验设计能否成立。
 
-未运行目标脚本、安装、媒体、浏览器、Windows更新、删除或故障实验；只作源码条件判断，不宣称已利用权限问题或已验收恢复。
+先静态解析更新脚本，再用隔离 profile 检查脚本故障、认证缺失、退出可达和主题可读性。
 
 <a id="detail-section-9"></a>
 
@@ -155,49 +150,51 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 102 | 11906 | — | — | 181624 |
+| .md | source | 104 | 12028 | — | — | 183071 |
 | .tsx | source | 19 | 1404 | 1242 | 86 | — |
 | .ts | source | 4 | 216 | 165 | 17 | — |
 | .mjs | source | 11 | 1590 | 1277 | 200 | — |
-| .js | source | 17 | 13808 | 11861 | 1590 | — |
-| .mjs | test | 15 | 5366 | 4646 | 411 | — |
+| .js | source | 18 | 13937 | 11933 | 1644 | — |
+| .mjs | test | 16 | 5528 | 4771 | 446 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-11-06），可前往 [GitHub Issues](https://github.com/LeeRolling/dsh-boot-suite/issues) 查看。
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/LeeRolling/dsh-boot-suite/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=5&color=737b86&logo=github)](https://github.com/LeeRolling/dsh-boot-suite/issues?q=is%3Aissue+created%3A2026-10-14T02%3A05%3A03.217Z..2026-11-13T02%3A05%3A03.217Z) [![近30天关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/LeeRolling/dsh-boot-suite/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-14T02%3A05%3A03.217Z..2026-11-13T02%3A05%3A03.217Z)
+
+
+
+统计日期：2026-11-13。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：判断首屏动画与聊天背景的实际接线、数据和退出边界及采用负担。
+**插件研究总目标**：个性化冷启动和聊天背景能否在保持首屏可达、管理权限清楚且更新可退出的前提下值得采用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 首屏动画和聊天壁纸为谁提供什么增量？
+### Q01 · 从冷启动到可操作聊天，首屏通过什么路径释放？
 
-**研究主题**：场景与需求、贡献与相对优势
+**研究主题**：场景与需求、贡献与相对优势、功能与机制
 
 #### 完整回答
 
-Boot Suite面向愿意把DSH启动和聊天界面个性化的用户，提供开场动画、声音、模板和聊天图片/循环视频背景。合格结果是用户喜欢并能及时进入聊天、壁纸不妨碍阅读且能关闭；它不是加速模型、改进任务结果或优化真实宿主启动时间的插件。相对纯背景CSS，它把启动时序、媒体导入与聊天背景设置组合起来；相对独立启动视频，不需要用户另开播放器。
+适合自愿在启动时看一段动画、进入聊天后使用自选背景的 DSH 用户。合格结果是可预测地播放、随时跳过并恢复输入与滚动。相比原生主题，增加首屏两段素材、转场和聊天背景的统一设置，但用户也承担冷启动额外时间与兼容风险。任务目标是可退出的外观体验，代码没有提供模型性能改善依据。
 
-Host入口合并startup和wallpaper两侧，仍保留两份配置，壁纸apply抛错时被catch而startup继续；客户端也提供两组设置。底层HTML注入、CSS/Canvas/媒体与浏览器存储是通用技术，具体贡献是DSH生命周期和外观控制组合。README六幕与package两幕描述不完全同一口径，不能以幕数当质量证据。
-
-每天多次打开只想立即工作的用户可能没有采用需求，声音、视频和等待反而增加干扰。没有独立用户喜好或启动对照数据，不能把“仪式感”合理定位升级为生产收益。
+Host 先注入关键样式和首屏容器，设置 boot 标记、配置与版本，再用结构化 script-src 启动运行时。空第一幕模板在配置归一化时选默认模板，构造注入行又将读取失败的选择回退到默认模板，修复历史空值导致缺行的路径。客户端用 boot 标记避免重复启动，并有运行时没起来时的自举检查。收尾将旧定时任务失效，停止音乐和配音，释放运行时资源与滚动锁，移除挂载点，再发完成事件。应用还能正常进入取决于各阶段的故障路径和宿主实际注入能力，不能从一条正常收尾函数推断所有黑屏都会恢复。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:19-35](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/README.md#L19-L35)
+**依据 1 · 作者声明**：[README.md:19-36](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/README.md#L19-L36)
 
-作者定位动画和壁纸两个侧面。
+作者描述冷启动和聊天背景的实际使用入口。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
 ## 它是什么
@@ -217,182 +214,112 @@ DeepSeek Harness（DSH）冷启动时会先播六幕动画，播完进聊天，�
 | 素材 | 5 句真声台词 + 终幕欢迎语 + 2 个界面音效（mp3） | 插件自带默认底图 + 你自己的图片 |
 | 可调 | 34 项：身份名称 / 编号 / 权限等级 / 配色 / 速度 / 音色 / 语速 / 每处文案 | 默认/自选底图、循环视频、纱的浓度、横幅文字、丢图即换 |
 
+两个半侧**各自独立**：动画坏了不影响壁纸，壁纸坏了不影响动画，界面照常进。
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1-26](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/index.js#L1-L26)
+**依据 2 · 源码核查**：[lib/host-startup.js:235-241](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L235-L241)
 
-两侧合并、配置保留与壁纸失败隔离。
-
-<details>
-<summary>查看原文（26行）</summary>
+空模板在配置归一化阶段回退。
 
 ```text
-/**
- * dsh-boot-suite — 宿主半侧（合并版）
- * ---------------------------------------------------------------------------
- *   · host-startup.js   开机动画：/dsh-startup/* 路由 + index.html 首屏注入
- *   · host-wallpaper.js 聊天壁纸：/chat-wallpaper/* 路由 + 底图/横幅配置与静态图片路由
- *
- * 两份配置刻意**没有合并**，继续读原来的两个文件，老用户的设置原样生效：
- *   · $DSH_HOME/dsh-startup.json
- *   · $DSH_HOME/chat-wallpaper.json
- */
-import * as startup from './host-startup.js'
-import wallpaperPlugin from './host-wallpaper.js'
-
-const name = 'dsh-boot-suite'
-const inject = ['webServer', 'connection']
-
-function apply(ctx) {
-  /* 壁纸半侧"绝不抛异常"：壁纸坏了只能是没有壁纸，绝不能影响 DSH 启动。 */
-  try {
-    wallpaperPlugin.apply(ctx)
-  } catch (err) {
-    try {
-      ctx.logger?.warn?.('[dsh-boot-suite] 聊天壁纸半侧启动失败，已跳过：' + String((err && err.message) || err))
-    } catch (e2) { /* 日志失败不影响加载 */ }
+    out.identityId = String(out.identity).toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12)
   }
-  startup.apply(ctx)
+  if (!String(out.identityId).trim()) out.identityId = 'OPERATOR'
+  /* 第一幕没有“不播放”语义：空串 = 内置档案暖白。归一化时就补默认值，
+     否则设置页保存的 template:"" 会一路传到首屏注入，导致模板行缺失、动画秒退。 */
+  if (!String(out.template || '').trim()) out.template = DEFAULTS.template
+  return out
 ```
 
-</details>
+**依据 3 · 源码核查**：[lib/host-startup.js:1213-1241](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L1213-L1241)
 
-**依据 3 · 源码核查**：[lib/client.js:3073-3083](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/client.js#L3073-L3083)
-
-聊天背景设置真实注册。
+结构化注入挂载点、运行时及默认模板回退。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-    function apply(ctx) {
-      /* 设置页入口：与「启动动画」并列的「聊天背景」（order 27）。 */
-      try {
-        if (ctx && ctx.slots && typeof ctx.slots.inject === 'function') {
-          ctx.slots.inject('settings.section', function () {
-            return ctx.slots.register(
-              { name: 'settings.section', id: 'chat-wallpaper', order: 27, label: '聊天背景' },
-              function () { return cwH(WallpaperPanel, {}) }
-            )
-          })
-          wdiag('settings.section 已注册（聊天背景）')
-```
-
-</details>
-
-#### 缺口
-
-- 缺少用户持续保留、可读性和进入聊天耗时记录。
-  **影响**：不能判断娱乐收益抵消等待与干扰。
-  **进一步探讨**：同一用户比较原生、静态背景和动画+背景，记录主动保留与进入任务耗时。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 首屏如何注入、播放和跳过？
-
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-startup通过webServer.tapIndex在HTML头部加样式、body前插根节点、内联配置和defer splash.js；它先于正常设置界面影响首屏，因此失败可能比普通设置页故障更难退出。splash对Host判定本次不播保留API而不建DOM，对仍是dsu-boot的根设置9秒兜底移除并解滚动锁。这个兜底检查只针对boot类状态，不能当任何阶段/任何异常都保证9秒退出。
-
-正常finish停止BGM、配音、等待、时钟与iframe清理，移除滚动锁并延迟删根，requestSkip会releaseAll再finish；session/daily播放状态写入浏览器存储，存储失败忽略，因而刷新可能重播。数据模板会校验结构、深度、节点、字符串和幕数；iframe模板则可以执行iframe脚本，非受信模板sandbox allow-scripts不含same-origin，并以source校验消息、只允许结束/跳过，不能把所有模板统称为“不执行任何代码”。
-
-这些防线证明有退出设计，不证明真实桌面、媒体权限和异常组合都通过。尤其浏览器自动播放限制、慢素材、窗口生命周期和用户跳过时的音频释放需要实际核对。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/host-startup.js:2077-2103](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L2077-L2103)
-
-HTML首屏注入与dispose。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  disposers.push(webServer.tapIndex((html) => {
-    diag('tapIndex len=' + (html ? html.length : 0))
-    if (html && html.length > 1000) dumpHtml(html)
-    if (!html || html.includes(ROUTE_BASE + '/splash.js')) return html
+  function indexInjectionRows() {
     const cfg = readConfig()
-    const head =
-      '<link rel="stylesheet" href="' + ROUTE_BASE + '/splash.css">' +
-      '<style id="dsh-startup-critical">' + CRITICAL_CSS + '</style>'
-    const body =
-      '<div id="dsh-startup-root" class="dsu-root dsu-boot"></div>' +
-      '<script>window.__DSH_STARTUP_BOOT__="index";window.__DSH_STARTUP_VERSION__=' + safeJson(PLUGIN_VERSION) + ';window.__DSH_STARTUP__=' + safeJson(cfg) + ';' + BOOTSTRAP_JS + '</script>' +
-      '<script defer src="' + ROUTE_BASE + '/splash.js"></script>'
-
-    let out = html
-    if (out.includes('</head>')) out = out.replace('</head>', head + '</head>')
-    else out = head + out
-    if (out.includes('<body>')) out = out.replace('<body>', '<body>' + body)
-    else if (out.includes('</body>')) out = out.replace('</body>', body + '</body>')
-    else out = out + body
-    return out
-  }))
-
-  ctx.effect(() => () => {
-    for (const dispose of disposers) {
-      try { dispose() } catch (err) { /* noop */ }
-    }
-  })
+    const rows = [
+      /* head：先兜底样式，保证首帧就是黑幕，不是 DSH 的启动界面 */
+      { kind: 'style', text: CRITICAL_CSS },
+      { kind: 'html', placement: 'head', html: '<link rel="stylesheet" href="' + ROUTE_BASE + '/splash.css">' },
+      { kind: 'global', name: '__DSH_STARTUP_BOOT__', value: 'index' },
+      { kind: 'global', name: '__DSH_STARTUP_VERSION__', value: PLUGIN_VERSION },
+      { kind: 'global', name: '__DSH_STARTUP__', value: cfg },
+      /* body：挂载点 → 兜底脚本 → 运行时 */
+      { kind: 'html', placement: 'body', html: '<div id="dsh-startup-root" class="dsu-root dsu-boot"></div>' },
+      { kind: 'script', placement: 'body', text: BOOTSTRAP_JS },
+      /* 运行时脚本必须用 script-src（一等公民行），**不能**包在 html 行里：
+         桌面端（file:// + IPC）的页面侧解释器按 HTML 文本插入行，innerHTML 里的
+         <script> 不会执行 —— 实测脚本标签在文档里躺着、splash.js 从不运行，
+         表现为开机动画整段消失、直接进壁纸。DSH 自己的 bundle 也是用 script-src。
+         placement=body 让它排在挂载点之后、应用主包之前（不再等主包 2~4 秒）。 */
+      { kind: 'script-preload', src: ROUTE_BASE + '/splash.js' },
+      { kind: 'script-src', placement: 'body', src: ROUTE_BASE + '/splash.js' }
+    ]
+    /* 选中的模板以纯数据形式下发（global 行）：运行时只读它，不执行任何代码。
+       放在 __DSH_STARTUP__ 之后，保证运行时能同时拿到配置与模板。 */
+    /* 双保险：即使旧配置/手工 JSON 里 template 是空串，也回落到内置档案暖白。 */
+    const tpl = readTemplate(cfg.template) || readTemplate(DEFAULTS.template)
+    let at = 5
+    if (tpl) { rows.splice(at, 0, { kind: 'global', name: '__DSH_STARTUP_TEMPLATE__', value: tpl }); at += 1 }
+    const tpl2 = readTemplate(cfg.act2)
+    if (tpl2) rows.splice(at, 0, { kind: 'global', name: '__DSH_STARTUP_TEMPLATE2__', value: tpl2 })
+    return rows
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/splash.js:550-579](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/splash.js#L550-L579)
+**依据 4 · 源码核查**：[lib/client.js:1978-2005](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/client.js#L1978-L2005)
 
-不播API与9秒boot根兜底范围。
+客户端观察运行时启动并考虑自愈。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
-
-  /* Host 侧的首屏兜底脚本已经判定"这次不播"（未启用 / 本会话已播 / 今日已播）：
-     这里不再建 DOM，但仍然暴露 API，方便设置页按需重播。 */
-  if (window.__DSH_STARTUP_SKIP__ === true) {
-    window.__DSH_STARTUP_API__ = {
-      steps: STEPS,
-      template: (TEMPLATE && TEMPLATE.id) || '',
-      replay: injectSelf,
-      pause: pause,
-      resume: resume,
-      paused: function () { return PAUSED },
-      skip: function () {},
-      finish: function () {},
-      config: C
+    var healDone = false
+    function healBlackScreen() {
+      try {
+        setTimeout(function () {
+          try {
+            if (typeof window === 'undefined' || typeof document === 'undefined') return
+            if (window.__DSH_STARTUP_FAILED__ === true) return
+            if (window.__DSH_STARTUP_LOADED__) return
+            if (window.__DSH_STARTUP_API__) return
+            var root = document.getElementById('dsh-startup-root')
+            if (!root) return
+            if ((root.className || '').indexOf('dsu-boot') === -1) return
+            /* 注意：判据只看"运行时有没有真的跑起来"，不看"文档里有没有 script 标签"。
+               2.1.1 就是栽在这上面 —— 标签在文档里但被当成 innerHTML 插进去、永远
+               不执行，于是自愈以为"只等就好"，动画彻底不出现。
+               这里直接补一次 DOM 注入的 loadScript（这条路实测一定能执行），
+               splash.js 自身的 __DSH_STARTUP_LOADED__ 单例守卫会挡住第二次初始化。 */
+            healDone = true
+            reportDiag('heal: 800ms 运行时未起来，自行注入（boot=' + String(window.__DSH_STARTUP_BOOT__) + '）')
+            markBooted()
+            injectRoot(window.__DSH_STARTUP__ || {})
+          } catch (e) { /* 自愈失败也不能带崩宿主 */ }
+        }, 800)
+      } catch (e) { /* noop */ }
     }
-    return
-  }
 
-  /* 最后一道保险：无论前面哪一步抛异常，都不许把用户留在黑幕里 */
-  setTimeout(function () {
+    /* 启动期错误回传：只关心来自 /dsh-startup/ 的脚本错误 */
     try {
-      var r = document.getElementById(ROOT_ID)
-      if (r && r.classList && r.classList.contains('dsu-boot')) {
-        if (r.parentNode) r.parentNode.removeChild(r)
-        document.documentElement.classList.remove('dsu-lock')
-        if (document.body) document.body.style.overflow = ''
-        window.__DSH_STARTUP_FAILED__ = true
-      }
-    } catch (e) { /* 兜底本身不许再抛 */ }
-  }, 9000)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/splash.js:3938-3983](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/splash.js#L3938-L3983)
+**依据 5 · 源码核查**：[lib/splash.js:3938-3976](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/splash.js#L3938-L3976)
 
-finish和skip实际清理链。
+释放声音、异步任务、滚动锁与首屏节点。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
   function finish() {
@@ -434,68 +361,154 @@ finish和skip实际清理链。
       if (root && root.parentNode) root.parentNode.removeChild(root)
       try { window.dispatchEvent(new CustomEvent('dsh-startup:done')) } catch (err) { /* noop */ }
     }, faded ? ms(200) : ms(900))
-  }
-
-  function requestSkip() {
-    if (skipped || finished) return
-    skipped = true
-    releaseAll()
-    finish()
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/security.js:95-125](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/security.js#L95-L125)
+#### 缺口
 
-模板结构校验及iframe引擎存在。
+- 未核对同版桌面端在样式和脚本故障时的实际首屏
+  **影响**：冷启动可达性仍是采用门槛
+  **进一步探讨**：在隔离 profile 分别用正常与故障素材，记录首次可操作和跳过恢复时间
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 聊天背景和自定义模板依赖哪些宿主与浏览器行为？
+
+**研究主题**：工程质量与复用、依赖、兼容与流程、功能与机制
+
+#### 完整回答
+
+聊天背景需要宿主 DOM 与外观变量。新版在亮度复核时同时重判深浅模式，照顾只有 CSS 变量变动、DOM 属性未变的宿主。外壳背景变量设为透明，将侧栏填充交给对应面板类，避免同一变量覆盖整窗；这是特定外壳的适配。设置滑块根据默认渐变比例同时更新两端，零强度时两端透明。其他主题仍可能覆盖变量或改变容器结构，文字可读性需要按实际浅色、深色和视频帧核对。
+
+首屏 iframe 按模板来源划分。用户模板使用 allow-scripts sandbox 并且不加 allow-same-origin，能力会话初始化失败的回退仍保留 sandbox。消息处理核对 iframe source，用户模板只允许发出结束类事件，控制背景音乐的路径仅留给受信内置模板。这个边界允许载入动效同时保留宿主信任区，但不能只凭 sandbox 判断用户素材均可用。浏览器禁用自动播放、媒体解码差异和用户自备资源质量仍影响效果。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/client.js:2549-2568](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/client.js#L2549-L2568)
+
+亮度复核时重判主题。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-export function validateTemplate(raw) {
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return { ok: false, reason: 'not-object' }
-  const id = String(raw.id || '').trim()
-  if (!TEMPLATE_ID_RE.test(id)) return { ok: false, reason: 'bad-id' }
-  let json = ''
-  try {
-    json = JSON.stringify(raw)
-  } catch (err) {
-    return { ok: false, reason: 'unserializable' }
-  }
-  if (json.length > MAX_TEMPLATE_BYTES) return { ok: false, reason: 'too-large' }
-  const state = { nodes: 0 }
-  const r = sanitizeValue(raw, 0, state)
-  if (!r.ok) return r
-  const out = r.value
-  out.id = id
-  if (Array.isArray(out.steps)) out.steps = out.steps.slice(0, 24)
-  if (out.layers !== undefined) {
-    if (!Array.isArray(out.layers)) return { ok: false, reason: 'bad-layers' }
-    for (const layer of out.layers) {
-      if (!layer || typeof layer !== 'object' || Array.isArray(layer)) return { ok: false, reason: 'bad-layer' }
-      if (layer.type !== undefined && typeof layer.type !== 'string') return { ok: false, reason: 'bad-layer-type' }
+
+    function refreshContrast() {
+      if (!current) return
+      /* 主题可能只改 CSS 变量、不改 html/body 属性，MutationObserver 抓不到；
+         每次亮度复核时顺带重判一次主题，保证浅色/深色切换跟手。 */
+      var darkNow = looksDark()
+      var wantClass = darkNow ? 'dsh-cw-dark' : 'dsh-cw-light'
+      if (themeClass !== wantClass) setThemeClass(darkNow)
+      var lum = effectiveLum()
+      if (!(lum >= 0)) {
+        /* 壁纸还没画出来（或视频未就绪）：先按外观主题给文字一个初值，
+           别让侧边栏/输入框在加载空档里没有对比色 */
+        setTxtMode(looksDark() ? 'dark' : 'light')
+        return
+      }
+      var mode = lum < 0.45 ? 'dark' : 'light'
+      setBgClass(mode)
+      setTxtMode(mode)
     }
-  }
-  if (out.engine !== undefined && typeof out.engine !== 'string') return { ok: false, reason: 'bad-engine' }
-  if (out.engine === 'iframe') {
-    if (out.entry !== undefined && (typeof out.entry !== 'string' || !TEMPLATE_ENTRY_RE.test(out.entry))) {
-      return { ok: false, reason: 'bad-entry' }
-    }
-  }
-  return { ok: true, value: out }
+
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[lib/splash.js:2013-2036](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/splash.js#L2013-L2036)
+**依据 2 · 源码核查**：[lib/client.js:2606-2622](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/client.js#L2606-L2622)
 
-iframe sandbox、source消息检查和受信差异。
+外壳透明变量接线。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
+      if (hasVisual || hasBanner) {
+        L.push('/* 让开的只是 html/body 自己的底色 */')
+        L.push('html.dsh-cw-light, html.dsh-cw-light body,')
+        L.push('html.dsh-cw-dark, html.dsh-cw-dark body { background: transparent !important; }')
+        L.push('html.dsh-cw-light body {')
+        L.push('  --dsw-alias-bg-base: transparent;')
+        /* v2.16.12：这个变量在 DSH 0.2.2 外壳里被当成整窗底色用（不只是侧栏），
+           填 sidebarLight/Dark 会变成覆盖整个壁纸的一层膜。侧栏填充改由
+           .dsh-cw-panel-* 类负责，这里必须让外壳真正透明。 */
+        L.push('  --dsw-specific-sidebar-fill: transparent !important;')
+        L.push('}')
+        L.push('html.dsh-cw-dark body {')
+        L.push('  --dsw-alias-bg-base: transparent;')
+        L.push('  --dsw-specific-sidebar-fill: transparent !important;')
+        L.push('}')
+        /* ── Windows 右上角：最小化 / 最大化 / 关闭 ────────────────────────
+           DSH Desktop 的 preload 在 body 里放一个隐藏 span 探针，用它的
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/client.js:3490-3506](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/client.js#L3490-L3506)
+
+滑块计算和写入两端颜色。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+              value: Math.round(veilAlpha * 100), disabled: busy,
+              style: { flex: 1 },
+              onChange: function (ev) {
+                var v = Number(ev.target.value) / 100
+                var patch = {}
+                /* 滑块是“整体强度”，两端一起缩放；否则只改 A，0% 仍会剩 B 的半层纱。
+                   基准取默认渐变（浅 .80/.68，深 .74/.62）：80% 保持默认观感，0% 两端全透明。 */
+                var BASE = dark ? { a: 0.74, b: 0.62 } : { a: 0.80, b: 0.68 }
+                var k = BASE.a > 0 ? v / BASE.a : 0
+                patch[dark ? 'veilDarkA' : 'veilLightA'] = withAlpha(veilNow, Math.min(1, BASE.a * k))
+                patch[dark ? 'veilDarkB' : 'veilLightB'] = withAlpha(dark ? data.veilDarkB : data.veilLightB, Math.min(1, BASE.b * k))
+                apply(patch, false)
+                var d = Object.assign({}, data); d.veil[dark ? 'dark' : 'light'] = v; setData(d)
+              }
+            }),
+            cwH('span', { className: '__ss_status' }, Math.round(veilAlpha * 100) + '%')
+          ),
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/splash.js:1989-2036](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/splash.js#L1989-L2036)
+
+iframe 来源与 sandbox 回退、事件来源检查。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+    var entry = String(tpl.entry || 'index.html').replace(/^\/+/, '')
+    /* F-03：先向已认证的宿主申请一次性能力 token，再决定 iframe 地址。
+       - 用户目录里的模板（untrusted）→ sandbox（无 allow-same-origin），拿不到 DSH Cookie/同源数据
+       - 插件自带模板（trusted）→ 不加 sandbox，保留原来的同源注入（样式/Esc/焦点）
+       - token 申请失败时退回旧的 template-file 同源地址，避免插件故障时开机动画卡死 */
+    var sessionP = fetch('/dsh-startup/frame-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: tpl.id })
+    }).then(function (r) { return r.json() }).catch(function () { return { ok: false } })
+    return sessionP.then(function (ts) {
+      var sandboxed = false
+      var frameSrc = ''
+      if (ts && ts.ok === true && ts.token) {
+        sandboxed = ts.untrusted === true
+        frameSrc = '/dsh-startup/template-frame/' + encodeURIComponent(ts.token) + '/' + entry + (C.bigfishForceEgg ? '?egg=1' : '')
+      } else {
+        /* F-04：能力会话失败时绝不能再退回“同源且无 sandbox”的旧地址——
+           那会让用户模板拿到 DSH 同源权限。回退也强制 sandbox，宁可动画能力受限也不放行同源。 */
+        diagRun('frame-session failed; fallback template-file (sandboxed)')
+        sandboxed = true
+        frameSrc = '/dsh-startup/template-file/' + encodeURIComponent(tpl.id) + '/' + entry + (C.bigfishForceEgg ? '?egg=1' : '')
+      }
+      var wrap = document.createElement('div')
       wrap.setAttribute('data-dsh-iframe-template', tpl.id)
       wrap.style.cssText = 'position:fixed;inset:0;z-index:2147483647;background:#000;overflow:hidden'
       var frame = document.createElement('iframe')
@@ -526,121 +539,32 @@ iframe sandbox、source消息检查和受信差异。
 
 #### 缺口
 
-- 未验证所有播放阶段异常、自动播放权限与跳过后的资源释放。
-  **影响**：不能保证无黑屏或全平台可靠进入聊天。
-  **进一步探讨**：在可恢复环境分别测试慢/坏媒体、自动播放禁止、iframe失联与每阶段跳过并核对根/声音/滚动清理。
+- 实际深浅主题、视频解码及不同外壳的可读性没有验证
+  **影响**：不能承诺不同宿主版本的视觉和播放一致
+  **进一步探讨**：先用内置静态图在两种主题核对聊天文字，再逐项验证视频与模板
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 图片音乐、壁纸删除和请求权限边界是什么？
+### Q03 · 连接认证缺失时哪些路由继续响应？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：缺陷与关键质疑、功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-自备动画POST接收指定扩展并有64MB字节上限；音乐POST限制扩展和100MB，写入Host的startup-music并记录索引。这是浏览器到DSH Host的上传，不是第三方云服务，但Host若在远端，媒体也会离开浏览器机器；“本机存储”不能脱离部署位置理解。模板能力token有随机32字节、模板root和10分钟截止，为非同源sandbox取资源提供限定入口。
+启动模块区分静态素材与管理接口。CSS、JS 及包内按文件名约束的 MP3 路由绕过插件自身的认证栅栏，因此 connection 服务不可用时仍有机会加载首屏素材。其余启动路由通过 requestRejection，缺服务或出错交给默认拒绝逻辑。静态音效受扩展名与目录约束，不能从这条例外推导用户导入文件也免鉴权。
 
-权限实现两侧不一致。startup的registerRoute对connection.requestRejection缺失/异常采取拒绝；wallpaper的rejected缺服务或catch异常直接返回false而放行。后者路由还包括根据配置视频root定位文件/项目后rmSync删除，因此并不只是无副作用取背景。正常Host提供connection并拒绝时会挡住，但栅栏故障条件下的两侧行为不同，不宜假定统一fail-closed。这里是源码确认的条件，不是已证明任意远程利用。
-
-首次宜只用自带静态背景，不导入私人媒体、不加入重要视频目录，也不点删除来代替停止播放。多用户、远程Host、代理与具体目录权限仍需定向核查，不能从本组件接口字段推出完整隔离。
+壁纸模块的认证包装在连接认证服务缺失或抛错时返回 false，外层继续调用处理器。实际注册的路由包括修改配置、目录管理和删除视频。删除按扫描清单定位素材，对项目可能递归删除；这与关闭壁纸是两种行为。新版打开目录委托跨平台 helper，能把 ENOENT 等异常收进返回值，但 spawn 事件和一秒兜底的成功都不保证用户看到了窗口。当前组件源码已显示两半的认证缺失行为不同，是否可由某一不受信客户端到达仍要检查宿主路由暴露和上游拒绝。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/host-startup.js:1428-1439](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L1428-L1439)
+**依据 1 · 源码核查**：[lib/host-startup.js:359-402](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L359-L402)
 
-动画导入扩展与64MB上限。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-    kind: 'exact',
-    path: ROUTE_BASE + '/import-animation',
-    handler: async (req, res) => {
-      if ((req.method || 'GET').toUpperCase() !== 'POST') { sendJson(res, 405, { ok: false }); return }
-      let u = null
-      try { u = new URL(String(req.url || ''), 'http://localhost') } catch (eU) { sendJson(res, 400, { ok: false, error: 'bad url' }); return }
-      const rawName = String(u.searchParams.get('name') || '').trim().slice(0, 120)
-      const extMatch = rawName.match(IMPORT_ANIM_RE)
-      if (!extMatch) { sendJson(res, 400, { ok: false, error: '只支持 mp4 / webm / gif / png / jpg / webp' }); return }
-      const kind = /^\.(mp4|webm)$/i.test(extMatch[0]) ? 'video' : 'image'
-      const bytes = await readRawBody(req, 64 * 1024 * 1024)
-      if (!bytes || !bytes.length) { sendJson(res, 413, { ok: false, error: '文件为空或超过 64MB' }); return }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/host-startup.js:1541-1563](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L1541-L1563)
-
-音乐上传、100MB和Host文件写入。
+默认启动栅栏异常拒绝，只有 guard=false 静态路由例外。
 
 <details>
-<summary>查看原文（23行）</summary>
-
-```text
-    kind: 'exact',
-    path: ROUTE_BASE + '/music/upload',
-    handler: async (req, res) => {
-      if ((req.method || 'GET').toUpperCase() !== 'POST') { sendJson(res, 405, { ok: false }); return }
-      let u = null
-      try { u = new URL(String(req.url || ''), 'http://localhost') } catch (eU) { sendJson(res, 400, { ok: false }); return }
-      const rawName = String(u.searchParams.get('name') || '').replace(/[\\/]/g, '').trim().slice(0, 160)
-      const m = rawName.match(MUSIC_EXT_RE)
-      if (!m) { sendJson(res, 400, { ok: false, error: '只支持 mp3 / wav / ogg / m4a / aac / flac' }); return }
-      const bytes = await readRawBody(req, 100 * 1024 * 1024)
-      if (!bytes || !bytes.length) { sendJson(res, 413, { ok: false, error: '文件为空或超过 100MB' }); return }
-      const ext = m[0].toLowerCase()
-      const stamp = Date.now().toString(36)
-      const rand = Math.random().toString(36).slice(2, 8)
-      const file = 'music-' + stamp + '-' + rand + ext
-      try {
-        fs.mkdirSync(MUSIC_DIR, { recursive: true })
-        fs.writeFileSync(path.join(MUSIC_DIR, file), bytes)
-        const list = readMusicIndex()
-        list.unshift({ file, name: rawName.replace(MUSIC_EXT_RE, '').slice(0, 80) || file, size: bytes.length, added: Date.now() })
-        writeMusicIndex(list.slice(0, 60))
-        sendJson(res, 200, { ok: true, file, name: rawName.replace(MUSIC_EXT_RE, ''), size: bytes.length })
-      } catch (err) { sendJson(res, 500, { ok: false, error: String((err && err.message) || err) }) }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host-startup.js:807-822](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L807-L822)
-
-随机模板能力token与范围/截止。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-    path: ROUTE_BASE + '/frame-session',
-    handler: async (req, res) => {
-      if ((req.method || 'GET').toUpperCase() !== 'POST') { sendJson(res, 405, { ok: false, error: 'method not allowed' }); return }
-      try {
-        const text = await readBody(req, 8 * 1024)
-        let payload = {}
-        try { payload = text ? JSON.parse(text) : {} } catch (err) { sendJson(res, 400, { ok: false, error: 'invalid json' }); return }
-        const id = String((payload && payload.id) || '')
-        const hit = resolveTemplateDir(id)
-        if (!hit) { sendJson(res, 404, { ok: false, error: 'template not found' }); return }
-        const now = Date.now()
-        pruneFrameTokens(now)
-        while (frameTokens.size >= 200) { const oldest = frameTokens.keys().next(); if (oldest.done) break; frameTokens.delete(oldest.value) }
-        const token = randomBytes(32).toString('hex')
-        frameTokens.set(token, { id, root: hit.root, untrusted: hit.untrusted, expires: now + 10 * 60 * 1000 })
-        sendJson(res, 200, { ok: true, token, expires: now + 10 * 60 * 1000, untrusted: hit.untrusted })
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/host-startup.js:355-390](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L355-L390)
-
-startup统一路由fail-closed。
-
-<details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
   /** 浏览器信任栅栏：自定义路由必须过一遍，否则可被任意网页读写。
@@ -672,6 +596,14 @@ startup统一路由fail-closed。
 
   function registerRoute(route) {
     const inner = route && route.handler
+    /* 静态资源（splash.js/css、音效）不碰用户数据，不挂信任栅栏：
+       桌面端 0.2.2 的 connection 服务不可用时，栅栏 fail-closed 会把
+       script 请求一起拒掉，表现为 failed to load /dsh-startup/splash.js。 */
+    if (route && route.guard === false) {
+      const clean = Object.assign({}, route)
+      delete clean.guard
+      return webServer.register(clean)
+    }
     const wrapped = Object.assign({}, route, {
       handler: async (req, res) => {
         if (rejected(req, res)) return
@@ -683,12 +615,93 @@ startup统一路由fail-closed。
 
 </details>
 
-**依据 5 · 源码核查**：[lib/host-wallpaper.js:724-738](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-wallpaper.js#L724-L738)
+**依据 2 · 源码核查**：[lib/host-startup.js:457-495](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L457-L495)
 
-wallpaper栅栏缺失或异常返回false放行。
+CSS、JS 和包目录白名单音效实际采用例外。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（39行）</summary>
+
+```text
+  disposers.push(registerRoute({
+    kind: 'exact',
+    guard: false,
+    path: ROUTE_BASE + '/splash.css',
+    handler: (req, res) => sendText(res, 'text/css; charset=utf-8', readSplashCss())
+  }))
+
+  disposers.push(registerRoute({
+    kind: 'exact',
+    guard: false,
+    path: ROUTE_BASE + '/splash.js',
+    handler: (req, res) => sendText(res, 'application/javascript; charset=utf-8', readSplashJs())
+  }))
+
+  /* 音频素材：从用户提供的音轨里抠出来的音效（选项/确认音）。
+     只读、白名单、不含子路径 —— 杜绝目录穿越。素材缺失时浏览器会自动回落到合成音。 */
+  disposers.push(registerRoute({
+    kind: 'prefix',
+    guard: false,
+    path: ROUTE_BASE + '/asset',
+    handler: (req, res) => {
+      const decodedAsset = safeDecodeURIComponent((req.url || '').split('?')[0])
+      if (decodedAsset === null) { res.writeHead(400); res.end(); return }
+      const name = path.basename(decodedAsset)
+      if (!/^[a-z0-9._-]+\.mp3$/i.test(name) || name.includes('..')) {
+        res.writeHead(404); res.end(); return
+      }
+      const file = path.join(PACKAGE_ROOT, 'lib', 'assets', name)
+      let bytes
+      try { bytes = fs.readFileSync(file) } catch (err) {
+        res.writeHead(404); res.end(); return
+      }
+      res.writeHead(200, {
+        'Content-Type': 'audio/mpeg',
+        'Cache-Control': 'no-store',
+        'Content-Length': String(bytes.length)
+      })
+      res.end(bytes)
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/host-wallpaper.js:627-644](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-wallpaper.js#L627-L644)
+
+按扫描结果删除视频或项目目录。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+    const videosDeleteHandler = (req, res) => {
+      if ((req.method || 'GET').toUpperCase() !== 'POST') { json(res, 405, { ok: false }); return }
+      let body = ''
+      req.on('data', (c) => { body += c; if (body.length > 16384) req.destroy() })
+      req.on('end', () => {
+        try {
+          const payload = JSON.parse(body || '{}')
+          const cfg = readConfig()
+          const item = videoById(cfg, payload.id)
+          if (!item) { json(res, 404, { ok: false, error: 'not found' }); return }
+          const target = item.kind === 'project' ? item.folder.replace(/\//g, '\\') : item.file.replace(/\//g, '\\')
+          if (!isInside(target, item.root)) { json(res, 400, { ok: false, error: 'outside root' }); return }
+          if (resolve(target).toLowerCase() === resolve(item.root).toLowerCase()) { json(res, 400, { ok: false, error: 'refuse root' }); return }
+          rmSync(target, { recursive: item.kind === 'project', force: true })
+          if (cfg.videoId && cfg.videoId === item.id) writeConfig({ ...cfg, videoId: '' })
+          json(res, 200, { ok: true, id: item.id, kind: item.kind, deleted: item.kind === 'project' ? item.folder : item.file })
+        } catch (e) { json(res, 500, { ok: false, error: String(e && e.message) }) }
+      })
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/host-wallpaper.js:728-757](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-wallpaper.js#L728-L757)
+
+壁纸认证异常后继续处理，且挂载写入与删除端点。
+
+<details>
+<summary>查看原文（30行）</summary>
 
 ```text
     function rejected(req, res) {
@@ -706,119 +719,133 @@ wallpaper栅栏缺失或异常返回false放行。
       const ws = resolveWebServer(ctx)
       const handler = route.handler
       ws.register(Object.assign({}, route, { handler: (req, res) => (rejected(req, res) ? undefined : handler(req, res)) }))
+    }
+
+    /* v2.13.17：开机就把丢图目录建好；老用户/新装用户都不会再看到「?」 */
+    try { mkdirSync(wallpaperImageDir(), { recursive: true }) } catch { /* 忽略 */ }
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/config', handler: configHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/image', handler: imageHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/images', handler: imagesHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/set', handler: setHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/open-dir', handler: openDirHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/videos', handler: videosHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/video', handler: videoHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/video-preview', handler: videoPreviewHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/videos/delete', handler: videosDeleteHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/videos/roots', handler: videoRootsHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/status', handler: statusHandler }))
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[lib/host-wallpaper.js:623-639](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-wallpaper.js#L623-L639)
+**依据 5 · 源码核查**：[lib/host-wallpaper.js:658-665](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-wallpaper.js#L658-L665)
 
-视频删除是文件或项目目录写操作，有root检查但非只读。
-
-<details>
-<summary>查看原文（17行）</summary>
+打开目录先确认目标在配置根目录内。
 
 ```text
-    /** POST /chat-wallpaper/videos/delete —— 删除视频（普通视频删文件；壁纸项目删整个文件夹） */
-    const videosDeleteHandler = (req, res) => {
-      if ((req.method || 'GET').toUpperCase() !== 'POST') { json(res, 405, { ok: false }); return }
-      let body = ''
-      req.on('data', (c) => { body += c; if (body.length > 16384) req.destroy() })
-      req.on('end', () => {
-        try {
-          const payload = JSON.parse(body || '{}')
-          const cfg = readConfig()
-          const item = videoById(cfg, payload.id)
-          if (!item) { json(res, 404, { ok: false, error: 'not found' }); return }
-          const target = item.kind === 'project' ? item.folder.replace(/\//g, '\\') : item.file.replace(/\//g, '\\')
-          if (!isInside(target, item.root)) { json(res, 400, { ok: false, error: 'outside root' }); return }
-          if (resolve(target).toLowerCase() === resolve(item.root).toLowerCase()) { json(res, 400, { ok: false, error: 'refuse root' }); return }
-          rmSync(target, { recursive: item.kind === 'project', force: true })
-          if (cfg.videoId && cfg.videoId === item.id) writeConfig({ ...cfg, videoId: '' })
-          json(res, 200, { ok: true, id: item.id, kind: item.kind, deleted: item.kind === 'project' ? item.folder : item.file })
+          if (action === 'open') {
+            const target = raw ? resolve(raw) : defaultVideoRoot()
+            const allowed = videoRootList(cfg).some((r) => resolve(r).toLowerCase() === target.toLowerCase())
+            if (!allowed) { json(res, 400, { ok: false, error: 'not a configured root' }); return }
+            if (!existsSync(target)) mkdirSync(target, { recursive: true })
+            const opened = await openTarget(target)
+            if (!opened.ok) { json(res, 200, { ok: false, error: '无法打开目录：' + opened.error }); return }
+            json(res, 200, { ok: true, opened: target.replace(/\\/g, '/') })
+```
+
+**依据 6 · 源码核查**：[lib/open-path.js:49-84](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/open-path.js#L49-L84)
+
+捕获启动错误，但成功只取子进程启动或兜底。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+export function openTarget(target, opts = {}) {
+  const platform = opts.platform || process.platform
+  const picked = opts.cmd
+    ? { cmd: String(opts.cmd), args: Array.isArray(opts.args) ? opts.args : [String(target)] }
+    : openCommandFor(target, platform)
+  const spawnFn = opts.spawnFn || spawn
+  const spawnOpts = { detached: true, stdio: 'ignore' }
+  if (picked.windowsHide !== undefined) spawnOpts.windowsHide = picked.windowsHide
+  return new Promise((resolve) => {
+    let settled = false
+    let timer = null
+    const done = (result) => {
+      if (settled) return
+      settled = true
+      if (timer) clearTimeout(timer)
+      resolve(result)
+    }
+    /* Node >= 20 的 spawn 一定会发 'spawn' 或 'error' 二者之一，正常不会等到这个兜底；
+       留着只是防止将来行为变化时路由永久挂起（ENOENT 的 'error' 在同一 tick 更早到达）。 */
+    timer = setTimeout(() => done({ ok: true, cmd: picked.cmd }), 1000)
+    if (timer && typeof timer.unref === 'function') timer.unref()
+    let child
+    try {
+      child = spawnFn(picked.cmd, picked.args, spawnOpts)
+    } catch (err) {
+      done({ ok: false, cmd: picked.cmd, error: errorText(err) })
+      return
+    }
+    /* 关键一步：不监听 'error' 的话，spawn 找不到命令会变成 uncaughtException */
+    if (child && typeof child.on === 'function') {
+      child.on('error', (err) => done({ ok: false, cmd: picked.cmd, error: errorText(err) }))
+      child.on('spawn', () => done({ ok: true, cmd: picked.cmd }))
+    } else {
+      done({ ok: true, cmd: picked.cmd })
+    }
+    try { if (child && typeof child.unref === 'function') child.unref() } catch (err) { /* 忽略 */ }
 ```
 
 </details>
 
 #### 缺口
 
-- 未验证远端/多用户Host的访问隔离与栅栏故障可达性。
-  **影响**：不能宣称统一安全、全链路本机隐私或删除总符合用户意图。
-  **进一步探讨**：在目标部署审查connection、代理和目录配置，先用无价值媒体验证拒绝与文件范围，保留重要素材备份。
+- 尚未核实目标 Host 如何在插件路由前拒绝未授权请求
+  **影响**：影响带副作用接口的部署判断
+  **进一步探讨**：用无价值文件、隔离 profile 和不受信请求分别验证缺 connection、拒绝和抛错路径
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 安装、更新和黑屏恢复有什么负担？
+### Q04 · 摘要校验和回滚能否证明新版更新可达？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：缺陷与关键质疑、工程质量与复用、效果与总成本
 
 #### 完整回答
 
-首次需符合包声明Node与DSH Web/desktop profile，桌面安装器另依赖Windows PowerShell/CMD。默认外观使用不需模型调用，但媒体、渲染、存储、重启及设置人工时间未知；视频背景会持续占用资源，不能因本地播放称零成本。当前建议观察，重点是它控制首屏且恢复可能需要界面外脚本，收益又主要为个人喜好。
+更新端先核对摘要，再生成 cmd 文件，以 PowerShell EncodedCommand 调用更新脚本。Host 捕获子进程 error 后写启动日志，但 HTTP 响应直接报告 started，无法证明摘要复核、安装或重启完成。脚本源码设计先比对 SHA-256、必要文件和包版本，正常更新等待退出，备份启动配置和旧插件目录，替换目录并运行安装器。失败时尽力恢复旧目录和启动配置，恢复过程仍能失败，也不覆盖安装器的全部 profile 副作用。
 
-update-apply路由先检查本地ZIP完整、GitHub Release官方SHA256摘要，再生成CMD并spawn外部更新器，返回started:true不是更新已完成。PowerShell脚本临时解压、校验版本、备份旧pkg与startup配置后运行安装器，失败尽力恢复旧目录/配置；恢复自身也可能失败且只是记录日志，不是全系统事务回滚保证。实际安装器对profile的全部修改本次没有完整审计。
-
-应急卸载脚本会备份profile package，再移除boot-suite及两个旧插件依赖、bundles和对应node_modules目录，需要用户先完全退出DSH；它不是界面开关，也不是普通跨平台方案。只关启动或壁纸不等删除已导入媒体。想继续评估应在可恢复安装上先验禁用和黑屏恢复，再考虑可选媒体/更新；若首屏卡住、字体对比不足或恢复路径不明确，停止并回原生界面。
+固定提交中的更新脚本第 39 至 40 行将说明写成 /* … */。PowerShell 的块注释标记是 <# 与 #>。这两行不会被当作注释，构成脚本在进入摘要复核和恢复逻辑之前失败的具体风险。作者把这段变更描述为缺 Get-FileHash 时走 .NET SHA256，但仅凭代码不可将其视为已可执行。先用 Windows PowerShell 只解析固定字节，再在隔离配置做 dry-run 与中断验证。首屏能播与更新能成功需要分别验收。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:55-68](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/package.json#L55-L68)
+**依据 1 · 作者声明**：[CHANGELOG.md:6-13](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/CHANGELOG.md#L6-L13)
 
-Node和Web插件声明。
-
-<details>
-<summary>查看原文（14行）</summary>
+作者说明版本变化含摘要兜底和桌面静态资源调整。
 
 ```text
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-ui-settings"
-      ],
-      "platform": "web"
-    }
-  },
-  "author": "沈宏宏 · LeeRolling",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LeeRolling/dsh-boot-suite.git"
-  },
-  "homepage": "https://github.com/LeeRolling/dsh-boot-suite#readme",
+## [2.16.12] — 2026-11-12
+
+- 修复：第一幕配置为 `template: ""`（设置页「内置档案暖白」历史保存值）时不再丢模板行、开机动画秒退；空值/非法 id 统一回落 `archive-warm`（#4）。
+- 修复：聊天背景「纱的浓度」滑块改为整体强度，浅色/深色渐变两端一起缩放；0% 两端全透明，不再剩半层纱（#4）。
+- 修复：DSH 0.2.2 外壳把 `--dsw-specific-sidebar-fill` 当整窗底色使用，导致壁纸上盖一层白膜；改为 transparent，侧栏填充交给 panel 类（#4 评论）。
+- 修复：外观主题切换只在属性变化时更新；亮度复核时同时重判主题，浅色/深色切换即时跟手（#3）。
+- 修复：桌面端 0.2.2 `connection` 服务不可用时，splash.js/css 被 fail-closed 信任栅栏一起拒绝；静态资源改为不挂栅栏，路由仍只读、无用户数据（#5）。
+- 修复：CI 里 `Get-FileHash` 不存在导致 updater dry-run 失败；改用 .NET SHA256 兜底，并恢复脚本 UTF-8 BOM。
 ```
 
-</details>
+**依据 2 · 源码核查**：[lib/host-startup.js:2051-2076](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L2051-L2076)
 
-**依据 2 · 源码核查**：[lib/host-startup.js:2009-2056](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L2009-L2056)
-
-更新摘要、外部CMD/PowerShell启动与started返回。
+摘要拒绝与只返回启动状态的分界。
 
 <details>
-<summary>查看原文（48行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-  /* 自动更新：启动外部更新器（本进程不能替换自己，必须等 DSH 退出） */
-  disposers.push(registerRoute({
-    kind: 'exact',
-    path: ROUTE_BASE + '/update-apply',
-    handler: async (req, res) => {
-      if ((req.method || 'GET').toUpperCase() !== 'POST') { sendJson(res, 405, { ok: false, error: 'method not allowed' }); return }
-      try {
-        const rel = await readLatestRelease(false)
-        const version = rel.latest
-        const zip = path.join(DSH_HOME, 'boot-suite-updates', version + '.zip')
-        if (!fs.existsSync(zip)) throw new Error('安装包不存在，请先下载')
-        /* 启动更新器前再校验一次：坏包直接删掉并让用户重下，避免更新器先解压再报“找不到中央目录” */
-        let zbuf = null
-        try { zbuf = fs.readFileSync(zip) } catch (e0) { throw new Error('安装包读取失败：' + String((e0 && e0.message) || e0)) }
-        if (!zipComplete(zbuf, rel.size || 0)) {
-          try { fs.unlinkSync(zip) } catch (e1) {}
-          diag('update-apply rejected corrupt zip size=' + zbuf.length)
-          throw new Error('安装包不完整或已损坏（zip 校验失败，' + zbuf.length + ' 字节），已删除，请重新下载后再更新')
-        }
-        const digestHex = parseDigest(rel.digest)
-        if (!digestHex) throw new Error('最新发布缺少官方 SHA-256 摘要，已拒绝更新（请等发布修复后的版本）')
-        if (!digestMatches(zbuf, rel.digest).ok) {
           try { fs.unlinkSync(zip) } catch (e2) {}
           diag('update-apply rejected digest mismatch size=' + zbuf.length)
           throw new Error('安装包 SHA-256 与官方发布不一致，已删除，请重新下载后再更新')
@@ -849,14 +876,58 @@ Node和Web插件声明。
 
 </details>
 
-**依据 3 · 源码核查**：[tools/update-apply.ps1:110-182](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/tools/update-apply.ps1#L110-L182)
+**依据 3 · 源码核查**：[tools/update-apply.ps1:37-65](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/tools/update-apply.ps1#L37-L65)
 
-候选目录、旧目录配置备份、安装器与尽力恢复。
+固定文件新增非 PowerShell 块注释标记及摘要函数。
 
 <details>
-<summary>查看原文（73行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+function Fail($m) { throw $m }
+
+/* Get-FileHash 在部分 CI/精简 PowerShell 环境里不存在（模块被裁掉），
+   这里用 .NET SHA256 兜底，避免更新器 dry-run 在 CI 里整段失败。 */
+function Get-Sha256([string]$Path) {
+  try { return (Get-FileHash -Path $Path -Algorithm SHA256).Hash.ToLower() } catch { }
+  $sha = $null; $fs = $null
+  try {
+    $sha = [System.Security.Cryptography.SHA256]::Create()
+    $fs = [System.IO.File]::OpenRead($Path)
+    $bytes = $sha.ComputeHash($fs)
+    return ([System.BitConverter]::ToString($bytes) -replace '-', '').ToLower()
+  } finally {
+    if ($fs) { $fs.Dispose() }
+    if ($sha) { $sha.Dispose() }
+  }
+}
+
+function Test-UpdateZip($path, $expectVersion) {
+  if (-not (Test-Path $path)) { Fail ('安装包不存在：' + $path) }
+  $fi = Get-Item $path
+  Log ('安装包：' + $path)
+  Log ('大小：' + $fi.Length + ' 字节')
+  $actual = Get-Sha256 $path
+  Log ('SHA256：' + $actual)
+  $expected = ([string]$Digest).ToLower() -replace '^sha256:', ''
+  if ($expected -notmatch '^[0-9a-f]{64}$') { Fail '缺少官方 SHA-256 摘要，拒绝更新（防止安装包被替换）' }
+  if ($actual -ne $expected) { Fail ('安装包 SHA-256 与官方发布不一致，拒绝更新。实际 ' + $actual) }
+  Log 'SHA256 与官方发布一致'
+```
+
+</details>
+
+**依据 4 · 源码核查**：[tools/update-apply.ps1:123-136](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/tools/update-apply.ps1#L123-L136)
+
+退出后备份启动配置并暂存解包。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  Log '已检测到 DSH 退出，开始安装…'
+
+  Log '备份配置…'
   $bk = Join-Path $work 'backup'
   New-Item -ItemType Directory -Force -Path $bk | Out-Null
   if (Test-Path $Config) { Copy-Item $Config (Join-Path $bk 'dsh-startup.json') -Force }
@@ -868,23 +939,18 @@ Node和Web插件声明。
     Expand-Archive -Path $Zip -DestinationPath $pkgNew -Force -ErrorAction Stop
   } catch {
     Fail ('解压失败（安装包可能损坏）：' + $_.Exception.Message)
-  }
+```
 
-  $pkgJson = Join-Path $pkgNew 'package.json'
-  if (-not (Test-Path $pkgJson)) { Fail '解压后没有 package.json' }
-  $bytes = [System.IO.File]::ReadAllBytes($pkgJson)
-  if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF) {
-    [System.IO.File]::WriteAllBytes($pkgJson, $bytes[3..($bytes.Length - 1)])
-    Log '已移除 package.json 的 BOM'
-  }
-  try {
-    $obj = [System.IO.File]::ReadAllText($pkgJson, [System.Text.Encoding]::UTF8) | ConvertFrom-Json
-  } catch {
-    Fail ('包内 package.json 不是合法 JSON：' + $_.Exception.Message)
-  }
-  if ([string]$obj.version -ne $Version) { Fail ('版本不匹配：包内为 ' + $obj.version + '，期望 ' + $Version) }
-  Log ('临时目录校验通过：v' + $obj.version)
+</details>
 
+**依据 5 · 源码核查**：[tools/update-apply.ps1:154-206](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/tools/update-apply.ps1#L154-L206)
+
+交换目录、安装器退出码、恢复范围和失败路径。
+
+<details>
+<summary>查看原文（53行）</summary>
+
+```text
   $hadOld = Test-Path $pkg
   if (Test-Path $pkgOld) { Remove-Item $pkgOld -Recurse -Force -ErrorAction SilentlyContinue }
   if ($hadOld) {
@@ -930,130 +996,46 @@ Node和Web插件声明。
     if (Test-Path (Join-Path $bk 'dsh-startup.json')) { Copy-Item (Join-Path $bk 'dsh-startup.json') $Config -Force }
     Log '配置已恢复。'
   } catch {}
-```
 
-</details>
-
-**依据 4 · 源码核查**：[tools/emergency-uninstall.ps1:28-58](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/tools/emergency-uninstall.ps1#L28-L58)
-
-应急卸载对profile选择与依赖修改。
-
-<details>
-<summary>查看原文（31行）</summary>
-
-```text
-} else {
-  foreach ($p in @('desktop', 'web')) { if (Test-Path (Join-Path $profilesRoot $p)) { $targets += $p } }
-}
-if ($targets.Count -eq 0) { Die '没有找到 desktop / web profile。' }
-
-$pluginNames = @('dsh-boot-suite', 'dsh-startup-screen', 'dsh-chat-wallpaper')
-$stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-
-foreach ($profile in $targets) {
-  $dir = Join-Path $profilesRoot $profile
-  $pj = Join-Path $dir 'package.json'
-  Say ''
-  Say ('=== profile: ' + $profile + ' ===')
-  if (-not (Test-Path $pj)) { Say '  （没有 package.json，跳过）'; continue }
-
-  $bk = Join-Path $dir ('_backup-uninstall-' + $stamp)
-  New-Item -ItemType Directory -Force -Path $bk | Out-Null
-  Copy-Item $pj (Join-Path $bk 'package.json') -Force
-  Say ('  备份 → ' + $bk)
-
-  # 1) 从 dependencies 删掉（直接改 JSON，不依赖 pnpm/npm 是否可用）
-  $pkg = [System.IO.File]::ReadAllText($pj) | ConvertFrom-Json
-  $removed = @()
-  if ($pkg.dependencies) {
-    foreach ($name in $pluginNames) {
-      if ($pkg.dependencies.PSObject.Properties[$name]) {
-        $pkg.dependencies.PSObject.Properties.Remove($name)
-        $removed += $name
-      }
-    }
+  if (-not $DryRun) {
+    Log '旧版插件应仍可用，正在重新打开 DSH…'
+    if (Test-Path $Exe) { Start-Process -FilePath $Exe }
+    Log ('请把「更新日志」文件发给作者：' + $log)
+    Start-Sleep -Seconds 30
   }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[tools/emergency-uninstall.ps1:59-93](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/tools/emergency-uninstall.ps1#L59-L93)
-
-bundles/node_modules清理与重启核对。
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-
-  # 2) bundles 列表清理
-  $keep = @()
-  if ($pkg.dsh -and $pkg.dsh.profile -and $pkg.dsh.profile.bundles) {
-    foreach ($b in @($pkg.dsh.profile.bundles)) {
-      if ($b -in $pluginNames) { continue }
-      $keep += $b
-    }
-    $pkg.dsh.profile.bundles = $keep
-  }
-  [System.IO.File]::WriteAllText($pj, ($pkg | ConvertTo-Json -Depth 20), (New-Object System.Text.UTF8Encoding($false)))
-  Say ('  依赖已移除：' + (($removed -join ', ') -replace '^$', '（本来就没有）'))
-  Say ('  bundles = ' + (($keep -join ', ') -replace '^$', '（空）'))
-
-  # 3) 删 node_modules 里的链接/目录
-  $nm = Join-Path $dir 'node_modules'
-  if (Test-Path $nm) {
-    foreach ($name in $pluginNames + @('dsh-boot-suite-link')) {
-      $inst = Join-Path $nm $name
-      if (-not (Test-Path $inst)) { continue }
-      $item = Get-Item $inst -Force
-      try {
-        if ($item.LinkType) { cmd /c rmdir "$inst" | Out-Null }
-        else { Remove-Item $inst -Recurse -Force -ErrorAction SilentlyContinue }
-        Say ('  已删除 node_modules\' + $name)
-      } catch { Say ('  [!] 删除失败：' + $inst) }
-    }
-  }
-  # 4) 残留 lockfile 备份，不删
-}
-
-Say ''
-Say '完成。请重新打开 DeepSeek Harness，确认界面恢复且没有开机动画。'
-Say '如果仍有动画：说明还有第二份安装（另一个 profile 或另一个插件目录），'
-Say '请双击「诊断.cmd」生成报告发给作者。'
+  exit 1
 ```
 
 </details>
 
 #### 缺口
 
-- 实际Windows更新、中断、profile恢复和跨平台资源成本未验。
-  **影响**：不能把有回滚脚本当已验收无损更新，不能推荐长期采用。
-  **进一步探讨**：在可丢弃安装分别验禁用、坏包、外部更新器失败和界面外卸载，核对profile和媒体保留范围。
+- 未运行 Windows PowerShell 解析或脚本，没有观察到具体错误码
+  **影响**：不能把风险表述为本轮已复现，也不能依赖回滚
+  **进一步探讨**：先用 Windows PowerShell Parser.ParseFile 验证固定字节，只有无解析错误才在空 profile 测摘要错误与故障恢复
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 能推导什么可验证的首屏设计方向？
+### Q05 · 哪些验证足以改变当前观察判断？
 
-**研究主题**：新假设与验证、工程质量与复用
+**研究主题**：采用判断、新假设与验证、效果与总成本
 
 #### 完整回答
 
-值得借鉴的是把媒体播放的等待纳入统一取消/释放，给首屏根节点设置兜底，更新使用发布摘要检查并在候选目录校验。它们是资源生命周期与来源完整性的已有方法在外观插件中的组合，不能据此认定动画增效或当前所有退出都可靠。壁纸与startup请求栅栏不一致也说明“合并成一个包”不代表边界自动统一。
+当前建议观察。插件可以提供启动和背景的个性化，但首屏可达和带文件操作的路由边界没有真实宿主验证，更新脚本又存在源码可见的语法问题。频繁进入聊天或不能接受启动延迟的用户可以沿用原生主题。对确有需求的使用者，在获得明确测试授权后用隔离 profile 与内置静态图做对照，依次验收可操作时间、Esc、资源缺失、退出清理、深浅主题可读性和未授权请求拒绝。任一故障使原生聊天无法进入，或管理副作用路由未按预期拒绝，就停止并通过界面外路径禁用。实际安装、网络和磁盘、渲染资源、配置时间以及故障恢复时间分别记录。
 
-未验证方向是把首屏当可随时退出的非阻塞装饰：始终保留独立可见的进入聊天入口，将音视频与聊天就绪分离，并让所有路由统一使用同一拒绝策略。相对当前方案改变的是可达性和策略一致性，而不是加入更多媒体；代价是少些沉浸效果、更多生命周期状态和维护检查。
-
-最小实验比较原生、当前首屏和非阻塞版本在慢媒体、禁止自动播放、iframe失联及栅栏故障下的进入聊天耗时、黑屏比例、无意播放与拒绝一致性。若不改善可达性或娱乐用户明确不愿保留，则收窄或放弃；本次未实现该方向，也不把它计入当前已有贡献。
+未验证的设计假设是将首屏动效从必须释放的覆盖层改成默认可从宿主独立绕开的装饰层，同时让所有管理副作用路由统一在认证不可用时拒绝。比较正常、缺媒体、缺认证和深浅主题变化下的首次可输入时间、滚动释放、错误拒绝与用户保留偏好。若首屏可达性无改善、出现错拦配置或常用主题不可读，则推翻或收窄假设。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/splash.js:3938-3983](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/splash.js#L3938-L3983)
+**依据 1 · 源码核查**：[lib/splash.js:3938-3976](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/splash.js#L3938-L3976)
 
-统一释放为取消设计的依据。
+现有首屏释放依赖 finish 与对应取消路径。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
   function finish() {
@@ -1095,95 +1077,16 @@ Say '请双击「诊断.cmd」生成报告发给作者。'
       if (root && root.parentNode) root.parentNode.removeChild(root)
       try { window.dispatchEvent(new CustomEvent('dsh-startup:done')) } catch (err) { /* noop */ }
     }, faded ? ms(200) : ms(900))
-  }
-
-  function requestSkip() {
-    if (skipped || finished) return
-    skipped = true
-    releaseAll()
-    finish()
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/splash.js:568-579](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/splash.js#L568-L579)
+**依据 2 · 源码核查**：[lib/host-wallpaper.js:728-755](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-wallpaper.js#L728-L755)
 
-boot状态兜底限定范围。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  /* 最后一道保险：无论前面哪一步抛异常，都不许把用户留在黑幕里 */
-  setTimeout(function () {
-    try {
-      var r = document.getElementById(ROOT_ID)
-      if (r && r.classList && r.classList.contains('dsu-boot')) {
-        if (r.parentNode) r.parentNode.removeChild(r)
-        document.documentElement.classList.remove('dsu-lock')
-        if (document.body) document.body.style.overflow = ''
-        window.__DSH_STARTUP_FAILED__ = true
-      }
-    } catch (e) { /* 兜底本身不许再抛 */ }
-  }, 9000)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/host-startup.js:355-390](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-startup.js#L355-L390)
-
-startup拒绝策略。
+管理副作用和认证异常放行是设计假设的对照。
 
 <details>
-<summary>查看原文（36行）</summary>
-
-```text
-  /** 浏览器信任栅栏：自定义路由必须过一遍，否则可被任意网页读写。
-      fail-closed：栅栏自身出错、或宿主没有 connection 服务时一律拒绝，绝不“放行兜底”。 */
-  function rejected(req, res) {
-    let code = null
-    let failure = null
-    try {
-      const conn = (typeof ctx.get === 'function' ? ctx.get('connection') : undefined) || ctx.connection
-      if (!conn || typeof conn.requestRejection !== 'function') {
-        failure = new Error('connection guard unavailable')
-      } else {
-        code = conn.requestRejection(req)
-      }
-    } catch (err) {
-      failure = err
-    }
-    if (failure) diag('trust guard fail-closed (' + String((failure && failure.message) || failure) + ') url=' + String((req && req.url) || ''))
-    const decision = guardDecision(failure ? null : code, failure)
-    if (!decision.reject) return false
-    try {
-      res.statusCode = decision.status
-      res.setHeader('Content-Type', 'application/json; charset=utf-8')
-      res.setHeader('Cache-Control', 'no-store')
-      res.end(JSON.stringify({ ok: false, error: decision.reason || 'request rejected' }))
-    } catch (err) { /* 响应对象已坏就放弃 */ }
-    return true
-  }
-
-  function registerRoute(route) {
-    const inner = route && route.handler
-    const wrapped = Object.assign({}, route, {
-      handler: async (req, res) => {
-        if (rejected(req, res)) return
-        return inner(req, res)
-      }
-    })
-    return webServer.register(wrapped)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/host-wallpaper.js:724-738](https://github.com/LeeRolling/dsh-boot-suite/blob/baec191c80fa057cab690997e269392dc9ca841e/lib/host-wallpaper.js#L724-L738)
-
-另一半策略不同，支撑统一边界假设。
-
-<details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（28行）</summary>
 
 ```text
     function rejected(req, res) {
@@ -1201,14 +1104,60 @@ startup拒绝策略。
       const ws = resolveWebServer(ctx)
       const handler = route.handler
       ws.register(Object.assign({}, route, { handler: (req, res) => (rejected(req, res) ? undefined : handler(req, res)) }))
+    }
+
+    /* v2.13.17：开机就把丢图目录建好；老用户/新装用户都不会再看到「?」 */
+    try { mkdirSync(wallpaperImageDir(), { recursive: true }) } catch { /* 忽略 */ }
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/config', handler: configHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/image', handler: imageHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/images', handler: imagesHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/set', handler: setHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/open-dir', handler: openDirHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/videos', handler: videosHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/video', handler: videoHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/video-preview', handler: videoPreviewHandler }))
+    ctx.effect(() => registerRoute({ kind: 'exact', path: '/chat-wallpaper/videos/delete', handler: videosDeleteHandler }))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/host-startup.js:2056-2076](https://github.com/LeeRolling/dsh-boot-suite/blob/83645b8aa9e5b9d8f964dc6e29b4c66dc40f8ddd/lib/host-startup.js#L2056-L2076)
+
+页面更新启动响应不能作为退出后恢复判据。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+        const script = path.join(PACKAGE_ROOT, 'tools', 'update-apply.ps1')
+        if (!fs.existsSync(script)) throw new Error('找不到更新脚本')
+        const q = (s3) => "'" + String(s3).replace(/'/g, "''") + "'"
+        const inner = '& ' + q(script) + ' -Zip ' + q(zip) + ' -Version ' + q(String(version)) + ' -Exe ' + q(exe) + ' -Config ' + q(CONFIG_FILE) + ' -Digest ' + q('sha256:' + digestHex)
+        const encoded = Buffer.from(inner, 'utf16le').toString('base64')
+        const outDir = path.join(process.env.LOCALAPPDATA || DSH_HOME, 'dsh-boot-suite-update')
+        fs.mkdirSync(outDir, { recursive: true })
+        const cmdFile = path.join(outDir, 'run-update.cmd')
+        const cmdText = '@echo off' + String.fromCharCode(13, 10) + 'powershell.exe -NoProfile -ExecutionPolicy Bypass -EncodedCommand ' + encoded + String.fromCharCode(13, 10)
+        fs.writeFileSync(cmdFile, cmdText, 'ascii')
+        const bootLog = path.join(DSH_HOME, 'boot-suite-updates', 'update-apply-bootstrap.log')
+        fs.mkdirSync(path.dirname(bootLog), { recursive: true })
+        const blog = (m) => { try { fs.appendFileSync(bootLog, new Date().toISOString() + '  ' + m + String.fromCharCode(10)) } catch (e) {} }
+        blog('cmd file=' + cmdFile)
+        /* F-09：shell:true + 路径含空格时 .cmd 会静默不执行；显式 cmd.exe /c */
+        const child = spawn('cmd.exe', ['/c', cmdFile], { detached: true, stdio: 'ignore', windowsHide: false })
+        child.on('error', (eC) => blog('launch error: ' + String((eC && eC.message) || eC)))
+        child.unref()
+        blog('launched pid=' + (child.pid || '?'))
+        diag('update-apply launched updater window v' + version)
+        sendJson(res, 200, { ok: true, version, started: true, manualClose: true })
 ```
 
 </details>
 
 #### 缺口
 
-- 非阻塞设计的可达性收益与娱乐偏好取舍未知。
-  **影响**：不能认定是已确认需求或已解决黑屏。
-  **进一步探讨**：在同故障矩阵测进入聊天和策略一致性，再由自愿用户判断是否愿意保留。
+- 没有真实用户偏好和首次可输入时间对照
+  **影响**：无法估计个性化收益与采用负担
+  **进一步探讨**：先按可达性和拒绝矩阵通过，再同一台机器对照原生与插件并记录用户是否保留
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -1,44 +1,65 @@
 {
     "repository": "zhu1090093659/dsh-web",
     "repository_id": 1331636953,
-    "captured_at": "2026-11-06T06:50:45.128Z",
-    "window_start": "2026-10-07T06:50:45.128Z",
-    "stars": 10117,
-    "pushed_at": "2026-11-06T04:18:14Z",
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 10353,
+    "pushed_at": "2026-11-11T16:22:02Z",
     "issues": {
-        "open": 5,
-        "closed": 1282,
-        "created_30d": 158,
-        "closed_30d": 153,
-        "updated_30d": 160
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F124:394B1B:1B73FA2:5636466:6AF51C47 and timestamp 2026-11-12 01:54:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F1A6:63047:7B1EDA:1811267:6AF51C48 and timestamp 2026-11-12 01:54:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F232:2BE5FB:2B5790E:880E8E8:6AF51C49 and timestamp 2026-11-12 01:54:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F2CA:B6B28:1B5A533:55AD55C:6AF51C4A and timestamp 2026-11-12 01:54:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F340:121E98:68B2E3:14766E8:6AF51C4B and timestamp 2026-11-12 01:54:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-05T20:18:16.149Z",
+        "captured_at": "2026-11-11T17:47:29.947Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
-        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
-        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
         "latest_error": null
     },
     "npm": {
         "package_name": "@linxin666/dsh-remote-web-ui",
-        "captured_at": "2026-11-05T17:26:49.018Z",
-        "window_start": "2026-10-06",
-        "window_end": "2026-11-04",
-        "downloads_30d": 109620,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40linxin666%2Fdsh-remote-web-ui",
+        "captured_at": "2026-11-09T06:42:47.767Z",
+        "window_start": "2026-10-10",
+        "window_end": "2026-11-08",
+        "downloads_30d": 107539,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/%40linxin666%2Fdsh-remote-web-ui",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-13T15:05:51.781Z",
-            "captured_at": "2026-11-05T17:26:49.018Z",
+            "captured_at": "2026-11-09T06:42:47.767Z",
             "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-remote-web-ui",
             "error": null,
-            "latest_version": "0.4.15",
-            "latest_published_at": "2026-11-04T16:04:48.813Z",
+            "latest_version": "0.4.16",
+            "latest_published_at": "2026-11-07T14:32:46.906Z",
             "latest_error": null
         }
     }

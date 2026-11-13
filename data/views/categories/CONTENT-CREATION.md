@@ -31,6 +31,7 @@
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [DSH Qwen Studio](#plugin-1422133477-root) | 把本地 MLX 或自托管图像服务接入 DSH 对话，记录生成任务并按 ID 取回状态与附件。 | [Q01](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q01) 已有推理设备并能隔离图库的创作者，可先提交一张无敏感输入的配图再按 ID 取回。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
+| [DSH Short Video Studio](#plugin-1345883186-root) | 在 DSH 会话中连接 ComfyUI，生成、整理和后处理短视频素材。 | 先在一次性工作区做一镜，核查文件、规格及后端状态。 |
 | [DSH to Figma](#plugin-1424114133-root) | 将本地Figma companion或官方MCP接入DSH，读取设计上下文并编辑原生画布与资源。 | 可丢弃Figma文件受限试用，先明确后端/file/page与能力，再做少量原生节点并核结构变量/截图。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 建议先观察。 |
@@ -50,10 +51,13 @@
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 将自动绿幕或手工抠像片段对齐并编码为桌宠动画，另提供 Safari 兼容素材派生。 | [Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04) 用隔离样片做第一段，保存旧产物并记录工具和人工成本。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 连接 Postiz MCP，辅助 DSH 创建、排期和发布社媒内容。 | [Q04](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q04) 优先隔离账号和草稿，提交前核对目标、内容、时间及授权。 |
+| [dsh-ppt](#plugin-1335302697-root) | 在 DSH 从大纲或结构化资料生成 HTML、可编辑 PPTX 与工程文件，并维护修订和分享。 | [Q04](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q04) 先从四页合成稿试用，按 [Q02](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q02) 验证外部编辑后拒绝覆盖，按 [Q03](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q03) 比对目标软件字体和版式。 |
 | [dsh-redstone-music](#plugin-1401037852-root) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 建议试用，但只限本地世界和测试服。 |
+| [dsh-remotion](#plugin-1334554520-root) | 在 DSH 内使用 Remotion 技能与模板管理视频工程、预览并导出 MP4。 | [Q04](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q04) 在私人隔离 Host 用公开素材测试极短片头，先核对修订与成品。 |
 | [dsh-share](#plugin-1332051085-root) | 在 DSH Web 选择单轮或多轮问答，导出 PNG、Markdown 或 HTML，并支持分页图片打包。 | 先在独立 Web profile 用合成会话验证 Markdown 和 HTML，再试长图分页。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
+| [dsh-tavern](#plugin-1335599084-root) | 管理角色卡、世界书和预设，在 DSH 会话中组织角色扮演与故事续写。 | [Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 先用虚构材料比较原生预设。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-vision](#plugin-1333755444-root) | 原生视觉透传，文本主模型经云或OCR观察桥接图片。 | [Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 固定测试图对照两阶段结果再日用。 |
@@ -390,6 +394,22 @@
 
 [查看完整分析](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1345883186-root"></a>
+
+## [DSH Short Video Studio](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md)
+
+[![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fengyungithub/dsh-short-video-studio) [![npm 30d 4,437](https://img.shields.io/static/v1?label=npm+30d&message=4%2C437&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-short-video-studio) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-short-video-studio)
+
+> **用途**：适合已维护 ComfyUI 并反复整理短镜头的创作者，见 [Q01](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q01)。
+
+> **亮点**：用能力与档位组织已安装工作流，并关联会话画布及结果文件，见 [Q01](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q01) 与 [Q02](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q02)。
+
+> **思考**：本地中断不能证明远端已停止。工具批准监听异常放行，HTTP 生成也有独立路径，见 [Q02](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q02) 与 [Q03](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q03)。
+
+> **建议**：让任务先绑定后端 ID，重开时核对状态，测试能否避免重派生成，见 [Q05](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1424114133-root"></a>
 
 ## [DSH to Figma](../../plugins/duoasa--dsh-to-figma/INSIGHT.md)
@@ -694,6 +714,22 @@
 
 [查看完整分析](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335302697-root"></a>
+
+## [dsh-ppt](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md)
+
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/STARDUSTLC666/dsh-ppt) [![npm 30d 29,827](https://img.shields.io/static/v1?label=npm+30d&message=29%2C827&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ppt) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ppt)
+
+> **用途**：需要在 DSH 会话中把周报、方案或答辩材料交付为可放映网页与可编辑演示。
+
+> **亮点**：[Q01](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q01) 以工程快照生成浏览器和 Office 两种交付。[Q02](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q02) 用修订、哈希和另存限制误覆盖。
+
+> **思考**：[Q02](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q02) 外部编辑无法合并回 JSON，逐文件提交的失败恢复也有边界。[Q03](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q03) 实际版式受渲染器和字体影响。[Q04](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q04) 分享包保留绑定摘录。
+
+> **建议**：[Q04](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q04) 在下载前列出各文件携带的来源摘录并允许选择移除项，检验是否减少误发和返工。
+
+[查看完整分析](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1401037852-root"></a>
 
 ## [dsh-redstone-music](../../plugins/19north--dsh-redstone-music/INSIGHT.md)
@@ -709,6 +745,22 @@
 > **建议**：增加听感预算门，计算 onset 偏差、丢弃音符、同 tick 峰值和声部覆盖，超阈值拒绝部署。若指标不能预测盲听缺陷则否定。 参见[Q08](../../plugins/19north--dsh-redstone-music/INSIGHT.md#research-q08)。
 
 [查看完整分析](../../plugins/19north--dsh-redstone-music/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334554520-root"></a>
+
+## [dsh-remotion](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md)
+
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/STARDUSTLC666/dsh-remotion) [![npm 30d 14,086](https://img.shields.io/static/v1?label=npm+30d&message=14%2C086&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-remotion) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-remotion)
+
+> **用途**：想用公开素材制作短片的 DSH 用户需要可保存修订、预览和输出。
+
+> **亮点**：[Q01](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q01) 将短片模板与实际 Remotion 预览、导出串联。[Q02](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q02) 任务绑定保存修订并隔离生成目录。
+
+> **思考**：[Q03](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q03) 准备环境涉及下载与本机进程，Range 仍读整份视频。[Q02](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q02) 取消回执不能直接证明所有子进程及缓存已清理。
+
+> **建议**：[Q04](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md#research-q04) 绑定修订、素材、环境和成品验收记录，测试能否减少错版交付。
+
+[查看完整分析](../../plugins/stardustlc666--dsh-remotion/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1332051085-root"></a>
 
@@ -757,6 +809,22 @@
 > **建议**：未验证假设是显式标注单位与算法覆盖，并将统计移入可取消worker，减少误验及界面阻塞；对照自交/单位错误/大网格任务，若误判或总成本不改善则否定。[Q05](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335599084-root"></a>
+
+## [dsh-tavern](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md)
+
+[![GitHub ★ 37](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=37&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chen731215-dev/dsh-tavern) [![npm 30d 10,619](https://img.shields.io/static/v1?label=npm+30d&message=10%2C619&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tavern) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tavern)
+
+> **用途**：在 DSH 写连载故事的用户，需要跨会话保持角色设定和世界规则，并可核对历史。
+
+> **亮点**：[Q01](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q01) 提供按会话装配角色与世界书的入口，并支持关键词条件减少无关词条。[Q02](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q02) 的总结和关系记录可辅助续写，需另确认会话与外发范围。
+
+> **思考**：[Q02](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q02) 的自动总结跨异步使用可变会话状态，[Q03](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q03) 的主动编辑会重写宿主历史且备份失败后仍写入。真实项目采用前应分别验证。
+
+> **建议**：[Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 提出显示本轮词条、触发词和会话来源，与当前配置比较提示长度、错配和排障成本。
+
+[查看完整分析](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1204369117-packages-dsh-tongflow"></a>
 
@@ -1258,4 +1326,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-13

@@ -1,0 +1,66 @@
+{
+    "repository": "TOBYCAI/dsh-sessions-manager",
+    "repository_id": 1340431396,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 39,
+    "pushed_at": "2026-11-06T11:56:24Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ATOBYCAI%2Fdsh-sessions-manager%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9D18:5498:A8B37A:B363AB:6AF51CBD and timestamp 2026-11-12 01:56:13 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ATOBYCAI%2Fdsh-sessions-manager%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9D58:85835:BA7A27:C562E9:6AF51CBE and timestamp 2026-11-12 01:56:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATOBYCAI%2Fdsh-sessions-manager%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9DB0:38A6B4:A59DE3:B04D57:6AF51CBE and timestamp 2026-11-12 01:56:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATOBYCAI%2Fdsh-sessions-manager%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9E26:3F3078:A4ECE4:AF9BE0:6AF51CBF and timestamp 2026-11-12 01:56:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATOBYCAI%2Fdsh-sessions-manager%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9EBC:372251:A20D5B:ACBEB4:6AF51CC0 and timestamp 2026-11-12 01:56:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T01:17:36.623Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-sessions-manager",
+        "captured_at": "2026-11-11T06:33:06.567Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 4126,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/dsh-sessions-manager",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-30T01:50:12.750Z",
+            "captured_at": "2026-11-11T06:33:06.567Z",
+            "source_url": "https://registry.npmjs.org/dsh-sessions-manager",
+            "error": null,
+            "latest_version": "3.7.10",
+            "latest_published_at": "2026-10-27T06:51:33.596Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "magian1127/deepseek-harness-zh_pro",
+    "repository_id": 1334868089,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 36,
+    "pushed_at": "2026-11-10T19:57:24Z",
+    "issues": {
+        "open": 0,
+        "closed": 14,
+        "created_30d": 3,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "deepseek-harness-zh_pro",
+        "captured_at": "2026-11-12T19:58:57.468Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 5336,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/deepseek-harness-zh_pro",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T07:33:55.586Z",
+            "captured_at": "2026-11-12T19:58:57.468Z",
+            "source_url": "https://registry.npmjs.org/deepseek-harness-zh_pro",
+            "error": null,
+            "latest_version": "0.11.1",
+            "latest_published_at": "2026-10-27T05:33:55.581Z",
+            "latest_error": null
+        }
+    }
+}

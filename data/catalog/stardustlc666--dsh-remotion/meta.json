@@ -1,0 +1,45 @@
+{
+    "repository": "STARDUSTLC666/dsh-remotion",
+    "repository_id": 1334554520,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 36,
+    "pushed_at": "2026-11-04T13:10:59Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-remotion",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 14086,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-remotion",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T20:42:23.205Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
+            "source_url": "https://registry.npmjs.org/dsh-remotion",
+            "error": null,
+            "latest_version": "0.10.5",
+            "latest_published_at": "2026-11-04T13:13:38.192Z",
+            "latest_error": null
+        }
+    }
+}

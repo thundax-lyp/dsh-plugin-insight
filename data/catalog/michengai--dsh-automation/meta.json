@@ -1,0 +1,45 @@
+{
+    "repository": "MichengAI/dsh-automation",
+    "repository_id": 1335813480,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 40,
+    "pushed_at": "2026-11-10T08:10:59Z",
+    "issues": {
+        "open": 0,
+        "closed": 22,
+        "created_30d": 9,
+        "closed_30d": 9,
+        "updated_30d": 9
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T01:17:36.623Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@michengai/dsh-automation",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 43736,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/%40michengai%2Fdsh-automation",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T18:57:32.149Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
+            "source_url": "https://registry.npmjs.org/%40michengai%2Fdsh-automation",
+            "error": null,
+            "latest_version": "1.0.22",
+            "latest_published_at": "2026-11-09T08:34:19.283Z",
+            "latest_error": null
+        }
+    }
+}

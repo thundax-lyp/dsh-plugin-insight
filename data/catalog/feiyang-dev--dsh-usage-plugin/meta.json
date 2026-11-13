@@ -1,0 +1,45 @@
+{
+    "repository": "feiyang-dev/dsh-usage-plugin",
+    "repository_id": 1334268109,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 37,
+    "pushed_at": "2026-11-01T04:29:04Z",
+    "issues": {
+        "open": 4,
+        "closed": 8,
+        "created_30d": 1,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@feiyang666/dsh-usage-plugin",
+        "captured_at": "2026-11-13T02:05:03.217Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 1927,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/%40feiyang666%2Fdsh-usage-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T11:17:17.123Z",
+            "captured_at": "2026-11-13T02:05:03.217Z",
+            "source_url": "https://registry.npmjs.org/%40feiyang666%2Fdsh-usage-plugin",
+            "error": null,
+            "latest_version": "2.0.0",
+            "latest_published_at": "2026-11-01T04:28:15.072Z",
+            "latest_error": null
+        }
+    }
+}

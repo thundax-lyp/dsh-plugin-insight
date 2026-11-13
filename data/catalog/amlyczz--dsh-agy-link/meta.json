@@ -1,65 +1,34 @@
 {
     "repository": "amlyczz/dsh-agy-link",
     "repository_id": 1339101586,
-    "captured_at": "2026-11-05T03:25:48.280Z",
-    "window_start": "2026-10-06T03:25:48.280Z",
-    "stars": 148,
-    "pushed_at": "2026-11-05T01:47:45Z",
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 171,
+    "pushed_at": "2026-11-12T10:59:56Z",
     "issues": {
-        "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 0,
+        "closed": 58,
+        "created_30d": 25,
+        "closed_30d": 25,
+        "updated_30d": 25
     },
-    "errors": [
-        {
-            "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Aamlyczz%2Fdsh-agy-link%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 276E:3F45F1:8ECCB8:98AD37:6AEBF781 and timestamp 2026-11-05 03:26:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Aamlyczz%2Fdsh-agy-link%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 27C2:2C3294:14A226:164861:6AEBF782 and timestamp 2026-11-05 03:26:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aamlyczz%2Fdsh-agy-link%20is%3Aissue%20created%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2808:35C5B1:90F78F:9AD531:6AEBF783 and timestamp 2026-11-05 03:26:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aamlyczz%2Fdsh-agy-link%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 283A:E43C4:902F74:9A10C1:6AEBF784 and timestamp 2026-11-05 03:27:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aamlyczz%2Fdsh-agy-link%20is%3Aissue%20updated%3A2026-10-06T03%3A25%3A48.280Z..2026-11-05T03%3A25%3A48.280Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 287C:3F45F1:8ECF29:98AFF5:6AEBF785 and timestamp 2026-11-05 03:27:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-04T20:04:16.278Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "d5303ca389f08f4407a543290ddcbded84852400",
-        "blob_sha": "f5f69be77bb1f62e652864a5f3f2a5500f3d3a35",
-        "errors_blob_sha": "481d4fdb05de777f9f31ed775501547dafea9d60",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-agy-link",
-        "captured_at": "2026-11-04T17:18:27.577Z",
-        "window_start": "2026-10-05",
-        "window_end": "2026-11-03",
-        "downloads_30d": 11371,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-agy-link",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 19331,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/dsh-agy-link",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-19T04:55:08.400Z",
-            "captured_at": "2026-11-04T17:18:27.577Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
             "source_url": "https://registry.npmjs.org/dsh-agy-link",
             "error": null,
-            "latest_version": "0.5.2",
-            "latest_published_at": "2026-11-04T08:29:40.401Z",
+            "latest_version": "0.6.18",
+            "latest_published_at": "2026-11-11T02:23:26.132Z",
             "latest_error": null
         }
     }
