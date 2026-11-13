@@ -1,0 +1,48 @@
+{
+    "repository": "SuperWheel/dsh-cliworker-now",
+    "repository_id": 1407409202,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 43,
+    "pushed_at": "2026-11-11T12:46:03Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ASuperWheel%2Fdsh-cliworker-now%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88BA:349D4F:B1E314:BC8FAE:6AF51C88 and timestamp 2026-11-12 01:55:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ASuperWheel%2Fdsh-cliworker-now%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88F8:410F3:A547F7:AFF52F:6AF51C89 and timestamp 2026-11-12 01:55:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASuperWheel%2Fdsh-cliworker-now%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 895C:344C62:A2A17B:AD4BE4:6AF51C8B and timestamp 2026-11-12 01:55:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASuperWheel%2Fdsh-cliworker-now%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 89CC:4345E:AA30B7:B4DD60:6AF51C8C and timestamp 2026-11-12 01:55:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASuperWheel%2Fdsh-cliworker-now%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8AB2:1A6AE7:A5F127:B0989D:6AF51C8E and timestamp 2026-11-12 01:55:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-11T07:11:08.089Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    }
+}

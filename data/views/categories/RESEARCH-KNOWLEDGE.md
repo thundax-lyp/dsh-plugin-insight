@@ -148,6 +148,7 @@
 | [ModLens](#plugin-1163808211-root) | 给 DSH 文本模型接入视觉工具，将截图或图表转换成结构化证据。 | [Q05](../../plugins/liustack--modlens/INSIGHT.md#research-q05) 只在隔离且允许单一批准端点的环境用虚构截图。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | 先用公开查询核对目标引擎、输出和引用，再检查代理与管理权限。 |
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
+| [Multisim MCP for DSH](#plugin-1327922805-integrations-deepseek-harness) | 将 Multisim MCP 的电路诊断和实验工具接入 DeepSeek Harness。 | 先用已知理论的 RC 测例核工具、模型、输出与真实量测，未知时回到人工，见 [Q04](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q04)。 |
 | [Oh My Knowledge](#plugin-1190633989-root) | 面向 AI 工作记录的知识提取、维护和载体评测工具集。 | [Q04](../../plugins/lizhiyao--oh-my-knowledge/INSIGHT.md#research-q04) 先用可信非敏感材料复核来源和模型目标；无法验证来源或执行环境不可信时停止。 |
 | [Oh-My-DSH](#plugin-1333671427-root) | 提供 DSH 插件分类目录、元数据快照与检索站点。 | [Q03](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q03) 先在固定快照查找目标，再到候选固定源核对身份、入口及权限。 |
 | [OpenContext](#plugin-1329484633-root) | 面向Agent应用的记忆、检索和图修订基础设施，提供库facade及MCP/HTTP入口。 | [Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) 先loopback单用户只读及dryRun，再由host加授权。 |
@@ -2351,6 +2352,22 @@
 > **建议**：[Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)会话固定vault/来源版本收据可探索，须先与现有显式id比较，无差异则否定。
 
 [查看完整分析](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327922805-integrations-deepseek-harness"></a>
+
+## [Multisim MCP for DSH](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/yxy050208/multisim-mcp) [![npm 30d 2,023](https://img.shields.io/static/v1?label=npm+30d&message=2%2C023&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/multisim-mcp-dsh-plugin) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/multisim-mcp-dsh-plugin)
+
+> **用途**：适合已有 Multisim 环境、在 DSH 里追踪简单电路实验的人，见 [Q01](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q01)。
+
+> **亮点**：将解释器、运行环境和工具范围组成可装载 profile，复用既有服务，见 [Q01](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q01) 与 [Q02](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q02)。
+
+> **思考**：实验验证与人类审批来源有独立路径，宿主超时也不能确定后台结果，见 [Q02](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q02) 与 [Q03](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q03)。
+
+> **建议**：把运行的凭据核验状态在输出中直接标出，比较能否减少审阅误判，见 [Q05](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1190633989-root"></a>
 

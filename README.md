@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1286](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1286&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1297](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1297&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -38,15 +38,15 @@
 
 > 查看最近发布的版本，了解用途和使用条件。
 
+- [DSH Mobile Plugin](data/plugins/wnluo--dsh-mobile-plugin/INSIGHT.md) · 提供手机连接 DSH 宿主的配对、会话、文件与远程控制接口。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mobile-plugin)
 - [DSH Design Studio](data/plugins/orderg-x--dsh-design-studio/INSIGHT.md) · 在 DSH 侧栏预览设计页面、标注反馈并检查或导出设计。 · [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-design-studio)
 - [CC Safety Net](data/plugins/kenryu42--cc-safety-net/INSIGHT.md) · 为 DSH 等编码工具提供执行前规则，检查危险命令和敏感文件访问。 · [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/cc-safety-net)
-- [DSH Free Search](data/plugins/dddmuc--dsh-free-search/INSIGHT.md) · 为 DSH 提供多引擎网页搜索、可配置回退与分层网页提取。 · [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-free-search)
 
 ## [下载热门](data/views/columns/HOT.md)
 
 > 从近期下载较多的插件中，寻找适合自己任务的工具。
 
-- [billion-context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 为多种 Agent 提供分层上下文压缩、按需恢复与搜索，并通过代理和原生插件接入长期会话。 · [![npm 30d 2,889,440](https://img.shields.io/static/v1?label=npm+30d&message=2%2C889%2C440&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
+- [Billion Context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 面向长会话的上下文压缩工具，可按范围生成摘要、检索并回读内容。 · [![npm 30d 3,310,468](https://img.shields.io/static/v1?label=npm+30d&message=3%2C310%2C468&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
 - [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过 CLI 与 MCP 分析应用构建物、二进制和网页，并输出可回查的分析证据。 · [![npm 30d 1,945,914](https://img.shields.io/static/v1?label=npm+30d&message=1%2C945%2C914&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
 - [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 · [![npm 30d 1,164,845](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164%2C845&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 378 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 381 |
 | [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 54 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 163 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 401 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 164 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 405 |
 | [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 74 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 210 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 213 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 5 |
 
 [浏览全部分类](data/views/categories/INDEX.md)

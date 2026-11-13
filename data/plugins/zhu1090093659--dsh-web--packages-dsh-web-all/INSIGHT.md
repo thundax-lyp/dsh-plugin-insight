@@ -1,18 +1,18 @@
-# dsh-web-all
+# DSH Web All
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[1f14856](https://github.com/zhu1090093659/dsh-web/tree/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all)
+源码版本：[971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10,117](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C117&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 99,379](https://img.shields.io/static/v1?label=npm+30d&message=99%2C379&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-web-all) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-web-all)
+[![GitHub ★ 10,353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 108,329](https://img.shields.io/static/v1?label=npm+30d&message=108%2C329&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-web-all) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-web-all)
 <!-- END META -->
 
-> **功能**：聚合DSH家族插件的依赖与加载行，附Web布局兼容层和旧配置隔离壳。
+> **功能**：在 DSH Web profile 聚合安装配套插件，并提供宿主界面兼容层。
 
-> **亮点**：[Q01](#research-q01)集中依赖/patch；[Q02](#research-q02)Web DOM/响应布局兼容、observer共享与cleanup；[Q03](#research-q03)旧壳有真实失败记账但覆盖受限。
+> **亮点**：将成员依赖及带稳定行号的挂载放进同一聚合包，提供独立兼容层，并保留成员直挂，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-> **主要限制**：[Q03](#research-q03)当前直接row不受旧shell自动隔离，默认opt-in不代表所有远程面停用；[Q04](#research-q04)关键子包身份/副作用与恢复未验。
+> **主要限制**：聚合依赖中的成员可以默认停用。旧壳捕获的加载异常也不能代表当前直挂成员的隔离效果，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 聚合包替用户完成什么，哪些功能与官方能力不是自己的？](#detail-section-11)
-  - [Q02 · 真正加载路径是直接子包还是隔离壳，自己的Web半部做什么？](#detail-section-12)
-  - [Q03 · 哪些故障被隔离，degraded接口和默认停用能保证什么？](#detail-section-13)
-  - [Q04 · 什么条件下值得聚合安装，退出怎样恢复？](#detail-section-14)
-  - [Q05 · 比继续加包更有价值的组合方向如何证伪？](#detail-section-15)
+  - [Q01 · 聚合包相对逐个安装能为多 profile 管理增加什么？](#detail-section-11)
+  - [Q02 · 当前成员行走原生加载还是聚合壳隔离？](#detail-section-12)
+  - [Q03 · 自带客户端依赖哪些宿主界面形状？](#detail-section-13)
+  - [Q04 · 哪类用户值得试聚合安装，怎样退出？](#detail-section-14)
+  - [Q05 · 挂载预览能否减少把已安装、已启用和已可用混在一起？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,82 +40,74 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：@linxin666/dsh-web-all 0.4.15是DSH原生插件聚合包和Web兼容层，路径packages/dsh-web-all，非独立Agent。README标题的Official是作者自称，不能据此当DSH官方维护包。目标是确实需要多项家族功能、能管理profile的用户，减少分别安装/更新和整理row的工作；基线是按需独立安装真正需要的子包及宿主现有能力，成功是所需row正确生效且无多余权限/布局故障。
+> **用途**：适合在多个 DSH Web profile 维护同组插件的管理员，见 [Q01](#research-q01)。
 
-按需独立安装子包与宿主已有功能、插件管理器，避免为少数需求引入整组依赖。
+按需逐包安装并独立固定成员版本。需要的成员少时，单包更容易管理。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 条件与边界 |
-|---|---|---|
-| 聚合依赖/row | 多功能配置 | 真子包行为须独立核 |
-| Web compat | 补DOM钩子/移动布局 | Host结构/样式耦合 |
-| 旧shell/ledger | 旧配置失败记账 | 不覆盖当前直接row |
-| 默认关闭 | SSH/skill opt-in | 非其它远程面保证 |
-
-**流程与依赖**
+| 能力 | 主要用途 | 使用条件与边界 |
+| --- | --- | --- |
+| 成员聚合 | 为 profile 集中配置扩展 | 两项可选成员默认停用 |
+| Web 兼容 | 附加布局语义与样式 | 依赖宿主 DOM |
+| 旧配置壳 | 支持旧子路径的动态挂载 | 仅适用于实际进入旧壳的行 |
 
 #### 启动与依赖
 
-| 依赖或条件 | 必需性 | 用途 | 缺失/边界 |
-|---|---|---|---|
-| DSH>=0.2.2-rc.1/Loader/Web | 必需 | patch/真实row/client | 未运行组合 |
-| workspace与外部子包 | 对应功能必需 | 实际功能 | caret/名称非固定行为验收 |
-| 现Host DOM/MutationObserver | compat需要 | 补钩子/布局 | 匹配失效/no-op |
-| 子包API/身份/存储权限 | 各自需要 | 远程/数据等 | 未全核，不作聚合保证 |
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| 匹配的 DSH Web profile | 必需 | 加载配置及浏览器出口 | 成员或兼容层缺失 |
+| 成员依赖可解析 | 启用成员时 | 加载成员真实包 | 按实际行查故障 |
+| 宿主 DOM 形状 | 兼容层所需 | 定位布局并打标 | 适配可能不完整 |
 
 #### 启动步骤
 
-| 步骤 | 动作 | 判据/失败处理 |
-|---|---|---|
-| 比较 | 列任务/所需row | 少数功能用独立包 |
-| 准备 | 备份/隔离/核Host与实际版本 | 未需row停用 |
-| 核查 | 真子包入口/身份/副作用 | 不凭UI或启动成功 |
-| 恢复 | 停具体row/刷新/还原 | 核DOM/数据/远端残留 |
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
+| --- | --- | --- |
+| 准备 | 复制 profile 并记录启用范围 | 基线可恢复 |
+| 加载 | 装入聚合包核对真实行 | 区分默认停用与失败 |
+| 退出 | 恢复 profile 或改用单包 | 确认剩余扩展按需加载 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次 | 多依赖/Host未知 | row/权限/版本核对 | 非独立安装验收 |
-| 持续 | 网络/存储/observer未知 | 整组更新/维护 | disabled仍有包依赖 |
-| 故障 | 备份/远端恢复未知 | 查真实row/壳覆盖 | 不能保证启动隔离 |
-| 退出 | 包/数据/连接留存未知 | 刷新/恢复/逐项核 | cleanup非全撤销 |
+| --- | --- | --- | --- |
+| 首次 | 包依赖及加载资源 | 核对成员、版本和覆盖 | 未测启动和安装耗时 |
+| 持续 | 包升级及运行资源 | 逐行复核需要的成员 | 整组升级影响未知 |
+| 失败恢复 | 可能重新加载依赖 | 区分直挂与旧壳后恢复 | 无法承诺直挂隔离 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 聚合 | 真依赖/patch | npm实际依赖/功能质量 |
-| compat | DOM样式/observer/cleanup | 当前Host布局/资源改善 |
-| 故障记账 | 旧shell捕获/loopback路由 | 全直接row隔离 |
-| 退出 | 自身部分清理 | 子包/远端副作用撤回 |
+| --- | --- | --- |
+| 成员配置复用 | 聚合依赖与配置行 | 实际维护节省 |
+| 界面兼容 | DOM 打标与样式 | 多宿主版本可靠性 |
 
-> **思考**：[Q03](#research-q03)当前直接row不受旧shell自动隔离，默认opt-in不代表所有远程面停用；[Q04](#research-q04)关键子包身份/副作用与恢复未验。
+> **思考**：聚合依赖中的成员可以默认停用。旧壳捕获的加载异常也不能代表当前直挂成员的隔离效果，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01)集中依赖/patch；[Q02](#research-q02)Web DOM/响应布局兼容、observer共享与cleanup；[Q03](#research-q03)旧壳有真实失败记账但覆盖受限。
+> **亮点**：将成员依赖及带稳定行号的挂载放进同一聚合包，提供独立兼容层，并保留成员直挂，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-[Q02](#research-q02)全局observer合帧和cleanup可借鉴；[Q03](#research-q03)当前row与历史壳路径必须分清，不把Map ledger当全局健康。
+当前成员用独立包入口，兼容层负责 DOM 补丁。旧壳仅隔离进入它的行，判断故障需定位实际加载路径，见 [Q02](#research-q02)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03)当前直接row不受旧shell自动隔离，默认opt-in不代表所有远程面停用；[Q04](#research-q04)关键子包身份/副作用与恢复未验。
+聚合依赖中的成员可以默认停用。旧壳捕获的加载异常也不能代表当前直挂成员的隔离效果，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04)观察；少数功能优先独立包，组合先逐row核权限/真实执行/退出，未知关键依赖不连接生产。
+先用独立 profile 记录所需成员及禁用项，加载后核对实际面板和宿主。失败时恢复原 profile 配置，见 [Q04](#research-q04)。
 
 <a id="detail-section-7"></a>
 
@@ -123,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-固定Git支持聚合声明/当前row和compat/旧shell机制；核心子包/Host组合未全核，观察并优先按需安装。
+源码确认组合配置及实际兼容层。完整成员可用性、宿主启动影响和性能需分别验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-web-all/README.md、packages/dsh-web-all/aggregate.yml、packages/dsh-web-all/cordis.patch.yml、packages/dsh-web-all/package.json、packages/dsh-web-all/src/client/body-mutations.ts、packages/dsh-web-all/src/client/index.ts、packages/dsh-web-all/src/degraded.ts、packages/dsh-web-all/src/index.ts、packages/dsh-web-all/src/shell.ts、packages/dsh-web-all/src/state.ts 及固定范围 inventory；组件：packages/dsh-web-all。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-web-all/README.md、packages/dsh-web-all/package.json、packages/dsh-web-all/cordis.patch.yml、packages/dsh-web-all/src/shell.ts、packages/dsh-web-all/tsdown.config.ts、packages/dsh-web-all/src/client/index.ts 及固定范围 inventory；组件：packages/dsh-web-all。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：旧12findings完整重核；核当前聚合package/manifest/patch、host self/shell真实import/mount/失败/ledger与loopback、client DOM/style/observer/cleanup；旧git-graph已删除不复用旧跨组件依赖结论；未全审子包、外部npm实现、Host loader/认证/网络/写入与真实运行。
-- 下一步：只读同提交Git对象，不运行安装/Host/browser/测试/真实账号远端；无性能/隔离/功能质量/经济效果或恢复独立验证。
+- 边界：只核对聚合包依赖、代表成员配置、旧壳分支及自带兼容层；成员各自运行效果、发布产物同源和宿主兼容未验。
+- 下一步：复制 profile，逐行比对默认停用、覆盖、加载状态，并模拟一条直挂与一条旧壳失败。
 
 **分析版本**
 
 - **仓库**：[zhu1090093659/dsh-web](https://github.com/zhu1090093659/dsh-web)
-- **版本号**：0.4.15（[固定提交 1f14856](https://github.com/zhu1090093659/dsh-web/tree/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a)）
-- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.16（[固定提交 971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1)）
+- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -142,9 +134,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05)以任务到真实row/权限/启动和退出收据对比现有管理器/清单，减少误配，尚未验证。
+在安装与启用之间提供 profile 挂载预览，区分默认停用、旧壳和直挂失败，比较能否减少误诊，见 [Q05](#research-q05)。
 
-只读同提交Git对象，不运行安装/Host/browser/测试/真实账号远端；无性能/隔离/功能质量/经济效果或恢复独立验证。
+复制 profile，逐行比对默认停用、覆盖、加载状态，并模拟一条直挂与一条旧壳失败。
 
 <a id="detail-section-9"></a>
 
@@ -158,119 +150,66 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 3 | 272 | — | — | 5352 |
-| .js | source | 7 | 3084 | 2618 | 498 | — |
-| .ts | source | 9 | 1374 | 758 | 560 | — |
-| .ts | test | 10 | 2017 | 1326 | 542 | — |
+| .js | source | 8 | 4321 | 3653 | 713 | — |
+| .ts | source | 9 | 1397 | 759 | 582 | — |
+| .ts | test | 10 | 2055 | 1339 | 562 | — |
 | .ts | example | 4 | 52 | 22 | 27 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 5](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=5&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 156](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=156&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
 
-暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-11-06。
+
+统计日期：2026-11-12。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核当前直接row、真实compat副作用及旧shell失败边界，不把聚合包名当全部依赖验收。
+**插件研究总目标**：确定聚合包如何配置成员与兼容层，以及默认停用、加载失败和配置回退的边界。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 聚合包替用户完成什么，哪些功能与官方能力不是自己的？
+### Q01 · 聚合包相对逐个安装能为多 profile 管理增加什么？
 
-**研究主题**：场景与需求、贡献与相对优势、依赖、兼容与流程
+**研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-@linxin666/dsh-web-all 0.4.15是DSH原生插件聚合包和Web兼容层，路径packages/dsh-web-all，非独立Agent。README标题的Official是作者自称，不能据此当DSH官方维护包。目标是确实需要多项家族功能、能管理profile的用户，减少分别安装/更新和整理row的工作；基线是按需独立安装真正需要的子包及宿主现有能力，成功是所需row正确生效且无多余权限/布局故障。
-
-包声明DSH>=0.2.2-rc.1、Apache-2.0及host/client/patch。dependencies包括workspace子包及外部community/preset/skin/pet ^0.4.15；源码固定不等npm发布依赖锁定或外部完整可审计。Git变更功能已由作者说明交官方workspace-changes、原dsh-git-graph目录删除；保留git-graph子路径导出不能当当前功能仍在。
+需要在几个 DSH Web profile 维护同一组插件的管理员，可以用一个聚合包取得成员依赖及带命名空间的挂载行。这能减少逐个拼装配置的操作。源清单保留了成员实际包名与行号，也包含自带兼容层。依赖到位和加载启用分别由依赖表与补丁决定。固定补丁默认禁用 SSH 和 Skill Explorer，Windows 辅助项另有平台条件。README 有“一装全开”的表述，也在后文列出可选项，部署前应按补丁核对实际启用集合。只要一个成员、或要独立锁定版本时，单包安装仍有明确价值。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-web-all/package.json:1-23](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/package.json#L1-L23)
+**依据 1 · 作者声明**：[packages/dsh-web-all/README.md:24-33](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/README.md#L24-L33)
 
-聚合包身份/版本/真实导出含旧git-graph。
+作者关于聚合、兼容和逐行启用的陈述。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-{
-  "name": "@linxin666/dsh-web-all",
-  "description": "DSH Web UI 全家桶聚合插件：一键安装全部功能插件（task-board / pet / web-ui-settings / skin-center / community-plugins / compat shim）。compat 桥接层已并入本包（src/client），无需独立 compat npm 包。",
-  "version": "0.4.15",
-  "icon": "icon.svg",
-  "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./client": "./lib/client.js",
-    "./shell": "./lib/shell.js",
-    "./degraded": "./lib/degraded.js",
-    "./locale/en.json": "./locale/en.json",
-    "./locale/zh.json": "./locale/zh.json",
-    "./package.json": "./package.json",
-    "./community-plugins": "./lib/shells/shell.js",
-    "./git-graph": "./lib/shells/shell.js",
-    "./plugin-manager": "./lib/shells/shell.js",
-    "./skill-explorer": "./lib/shells/shell.js",
-    "./preset-center": "./lib/shells/shell.js",
-    "./liangshen": "./lib/shells/shell.js",
-    "./market": "./lib/shells/shell.js",
-    "./pet": "./lib/shells/shell.js",
+## What it is
+
+- **One install, everything on**: its dependencies pull in every sub-plugin package of the family (task board, pet, mobile remote, remote bridge, SSH, skins, settings, community plugins and the rest — `aggregate.yml` is the complete list), and this branch bundles no external npm plugin at all. `@mlgbnb/dsh-archive-manager` (the community archive manager: group by project, search and filter, preview conversations, restore and delete) is not bundled — its upstream build still imports the removed `@deepseek-ai/dsh-client-runtime` face.
+- **Aggregation carrier**: `cordis.patch.yml` aggregates the `insert` lines of each sub-plugin plus the external plugin rows, mounted through the dsh plugin profile mechanism. External profile bundles are expanded by the generator: their patch rows become importable aggregate rows, the bundle's own harness-row patches are preserved, and an external row marked `"inactive": true` gains trailing `disabled: true` overrides so nothing mounts until you opt in.
+- **Family rows mount the real packages**: each family row's `name` is the plugin's own npm package, so the official `dsh-client-modules` serves that package's browser half directly — enabling one panel downloads one panel, instead of one copy of every family UI (issue #1901: the old shape inlined 13 family clients into this package's `lib/client.js`, a single 2.9 MB file). Row ids stay `web-ui-*`, so per-row switches recorded in an existing profile keep applying, and the row's own `disabled` now decides the family at the loader — no browser-side gate is needed. Subpath row names an older profile recorded (`@linxin666/dsh-web-all/<family>`) still resolve to a compat shell export after the upgrade.
+- **Compat is the optional patch layer**: the `web-ui-compat` row now only ships compatibility patches — the `data-pane` / `data-dsh-frame` semantic hooks plugins and skins rely on, the responsive contract, and the boot splash — and no family plugin code. Keep it on when you need those patches; it can be switched off per row in the plugin manager.
+- **Its own icon in the plugin list**: the package ships `icon.svg` and declares it as the top-level `package.json.icon`, the display-metadata field the official Plugins list (Settings → Plugins) reads, so the installed card and detail page show the family whale in both themes instead of the default artwork. Every family package ships the same asset, so a standalone install of one shows it too. DSH 0.2.1 reads subpath metadata through exported resources instead of a nested package.json, so each aggregate family row exports `<family>/icon` plus localized `locale/*.json` metadata, displaying each family's own localized title and purpose description alongside the family icon.
+- **Host-only child**: the Windows private-shell plugin (`dsh-win-bash`, row `web-ui-win-bash`) ships no browser half and carries its own platform guard into the aggregate patch, so its row is disabled on every non-Windows host and costs nothing there. It also follows the LiangShen preset's declaration: with the `liangshen` row disabled, the tool registers nothing and logs why.
+- **Opt-in rows**: low-usage family plugins ship disabled by default in the aggregate (currently SSH and skill-explorer — the `inactive` list in `aggregate.yml`; liangshen stays out of it, so the LiangShen mode lever is present on a fresh install). They never load and their settings entries stay hidden until you enable the row under Settings → Plugins → Plugin manager; the standalone packages are unaffected. Bundle rows can also ship a seed config that differs from the standalone default (the `patches` list); a settings edit wins once made.
+- **Per-row management**: every family plugin toggles individually — under Settings → Plugins → Plugin manager this package's row expands into a child list with one switch per family plugin, written to the profile override layer. A disabled row is skipped by the loader itself: it neither mounts nor serves its browser half to the page. A disabled child is never loaded while its code still updates with the bundle; install the standalone package when a plugin needs independent versioning (a standalone install wins over the aggregate row).
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-web-all/package.json:110-135](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/package.json#L110-L135)
+**依据 2 · 源码核查**：[packages/dsh-web-all/package.json:162-185](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/package.json#L162-L185)
 
-当前Host peer/许可/发布入口。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [],
-      "platform": "web"
-    }
-  },
-  "scripts": {
-    "build": "tsdown",
-    "test": "vitest run",
-    "prepare": "tsdown",
-    "typecheck": "tsgo --noEmit",
-    "watch": "tsdown --watch"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/dsh": ">=0.2.2-rc.1"
-  },
-  "license": "Apache-2.0",
-  "files": [
-    "lib",
-    "cordis.patch.yml",
-    "icon.svg",
-    "locale",
-    "shell-metadata"
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/dsh-web-all/package.json:162-185](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/package.json#L162-L185)
-
-实际workspace与外部依赖。
+依赖包含 workspace 及独立版本范围。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -296,37 +235,17 @@
     "@linxin666/dsh-i18n": "workspace:*",
     "@linxin666/dsh-client-ui-diagrams": "workspace:*",
     "@linxin666/dsh-client-ui-browser-view": "workspace:*",
-    "@linxin666/dsh-client-ui-community-plugins": "^0.4.15",
-    "@linxin666/dsh-client-ui-preset-center": "^0.4.15",
-    "@linxin666/dsh-client-ui-skin-center": "^0.4.15",
-    "@linxin666/dsh-pet": "^0.4.15"
+    "@linxin666/dsh-client-ui-community-plugins": "^0.4.16",
+    "@linxin666/dsh-client-ui-preset-center": "^0.4.16",
+    "@linxin666/dsh-client-ui-skin-center": "^0.4.16",
+    "@linxin666/dsh-pet": "^0.4.16"
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[packages/dsh-web-all/README.md:1-1](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/README.md#L1-L1)
+**依据 3 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:8-35](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L8-L35)
 
-Official仅标题作者自称。
-
-```text
-# dsh-web-all · Official All-in-One Plugin Bundle for DeepSeek Harness (DSH) Web GUI
-```
-
-**依据 5 · 作者声明**：[packages/dsh-web-all/aggregate.yml:34-38](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/aggregate.yml#L34-L38)
-
-作者明确Git组件删除/官方能力承接/退役兼容。
-
-```text
-  # dsh-git-graph 已彻底移除（包目录删除）：Git 变更视图由官方 workspace-changes 插件
-  # 承接，聚合不再挂载它的行、也不再依赖它；子路径导出按 tombstones 段留作退役空壳。
-  # dsh-update 已整包移除（2026-11-06）：聚合此前就退役了它的自更新行，包目录与发布线一并
-  # 删除，侧栏 footer action 席位上不再有任何家族行；`update` 子路径与 retiredPlugins
-  # 登记保留，老 profile 的旧行名照旧静默解析。
-```
-
-**依据 6 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:8-35](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L8-L35)
-
-实际self及真实子包row。
+自带入口和成员包直接挂载。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -364,38 +283,80 @@ Official仅标题作者自称。
 
 </details>
 
+**依据 4 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:92-118](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L92-L118)
+
+平台与默认停用条件。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+# from ../dsh-win-bash
+- insert:
+    - id: web-ui-win-bash
+      name: '@linxin666/dsh-win-bash'
+      disabled: !!js process.platform !== 'win32'
+
+# from ../dsh-i18n
+- insert:
+    - id: web-ui-i18n
+      name: '@linxin666/dsh-i18n'
+
+# from ../dsh-diagrams
+- insert:
+    - id: web-ui-diagrams
+      name: '@linxin666/dsh-client-ui-diagrams'
+
+# from ../dsh-browser-view
+- insert:
+    - id: web-ui-browser-view
+      name: '@linxin666/dsh-client-ui-browser-view'
+
+# inactive by default (opt-in rows): these ship disabled; each is enabled per row in the
+# plugin manager, whose enable writes a user-layer "disabled: false" override that wins.
+- id: web-ui-ssh
+  disabled: true
+- id: web-ui-skill-explorer
+  disabled: true
+```
+
+</details>
+
 #### 缺口
 
-- 发行物依赖解析/完整子包执行和多功能实际需求未验证。
-  **影响**：不能把聚合当所有功能验收或外部能力背书。
-  **进一步探讨**：先逐项需要/权限清单，比按需安装，再隔离profile核row。
+- 不同 profile 实际启用集合未对照
+  **影响**：单一安装命令不足以证明环境一致
+  **进一步探讨**：在独立 profile 比对成员、启用行和宿主版本
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 真正加载路径是直接子包还是隔离壳，自己的Web半部做什么？
+### Q02 · 当前成员行走原生加载还是聚合壳隔离？
 
 **研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-当前cordis.patch实际为每个web-ui-* row直接指定真实包，self row加载聚合本身；package dsh.bundle指patch，client指Web。自身host apply转shellApply，但self无plugin配置时返回no-op，不会把其它直接row自动包进shell。子插件的host/client由宿主loader按真实包负责，本轮未把它们的schema/名字算完整执行验收。
-
-聚合自身client.apply通过ctx.effect插入responsive style、boot shield，applyShims查sidebar/center/details CSS类并加data-pane/data-dsh-frame和语义属性/根锁。subscribeBodyInvalidations在DOM变化后重apply并维护移动侧栏点击监听。共享observer用global Symbol注册，一帧合并，逐订阅catch避免一个抛错中断其它，最后订阅退出disconnect/取消frame/清records；不是独立隔离进程。
-
-这实现现有Host DOM钩子/移动布局兼容，而不是新业务编排。DOM class/结构变化会让匹配失效；无DOM/MutationObserver时订阅no-op，不能当插件正确运行。自己的effect cleanup退订/移shield/style/侧栏监听，但未主动撤销所有已写data属性/根锁；停止后状态需刷新/核恢复。
+生成补丁给常用成员直接填真实包名，包括设置、看板和 SSH。当前这些行因此走宿主加载器及成员自己的客户端出口。聚合包另保留旧子路径，导出指向共享壳。壳取 config.plugin，发现包名后动态加载、检查导出并捕获启动错误；空配置的自带行可安静返回。因此壳的降级记录适用于确实进入旧壳路径的行，不能从壳存在推断当前直挂成员逐个隔离。成员独立行有助于定位配置，加载失败对其他成员的影响仍由宿主行为决定。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:8-21](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L8-L21)
+**依据 1 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:1-21](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L1-L21)
 
-实际self/子包直接row而非shell config。
+补丁注释及真实包名。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
+# AUTO-GENERATED by scripts/aggregate.mjs — do not edit
+# This file is derived from the aggregate.yml manifest in this package;
+# edit aggregate.yml and rerun `node scripts/aggregate.mjs`.
+# Rows are namespaced web-ui-* so the bundle can coexist with standalone installs.
+# Family rows mount the real plugin package: the loader then serves that package's
+# own browser half, and one family switch is one loader switch.
+
 # from self
 - insert:
     - id: web-ui-compat
@@ -414,80 +375,92 @@ Official仅标题作者自称。
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:47-65](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L47-L65)
+**依据 2 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:32-40](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L32-L40)
 
-Agents/remote/SSH实际直接row。
-
-<details>
-<summary>查看原文（19行）</summary>
+看板两条成员行直接挂包。
 
 ```text
-# from ../dsh-agents
+# from ../dsh-task-board
 - insert:
-    - id: web-ui-agents
-      name: '@linxin666/dsh-agents'
+    - id: web-ui-task-board
+      name: '@linxin666/dsh-client-ui-task-board'
 
-# from ../dsh-remote-bridge
+# from ../dsh-task-board-github
 - insert:
-    - id: web-ui-remote-bridge
-      name: '@linxin666/dsh-remote-bridge'
+    - id: web-ui-task-board-github
+      name: '@linxin666/dsh-client-ui-task-board-github'
+```
 
-# from ../dsh-task-board-remote
-- insert:
-    - id: web-ui-task-board-remote
-      name: '@linxin666/dsh-task-board-remote'
+**依据 3 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:62-75](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L62-L75)
 
+SSH 与 Skill Explorer 也直挂包。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
 # from ../dsh-ssh
 - insert:
     - id: web-ui-ssh
       name: '@linxin666/dsh-ssh'
+
+# from ../dsh-liangshen
+- insert:
+    - id: web-ui-liangshen
+      name: '@linxin666/dsh-liangshen'
+
+# from ../dsh-skill-explorer
+- insert:
+    - id: web-ui-skill-explorer
+      name: '@linxin666/dsh-client-ui-skill-explorer'
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-web-all/package.json:110-117](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/package.json#L110-L117)
+**依据 4 · 源码核查**：[packages/dsh-web-all/package.json:7-32](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/package.json#L7-L32)
 
-bundle/client真实声明。
-
-```text
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [],
-      "platform": "web"
-    }
-```
-
-**依据 4 · 源码核查**：[packages/dsh-web-all/src/index.ts:11-20](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/index.ts#L11-L20)
-
-self host真实转shellApply。
+主出口与旧壳子路径并存。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-import type { Context } from '@deepseek-ai/cordis'
-import { apply as shellApply } from './shell.ts'
-import type { ShellConfigInput } from './shell.ts'
-
-/** Required services: none — the shell must activate before anything else. */
-export const inject = [] as const
-
-/** Host plugin body: mount the configured real plugin behind the shell boundary. */
-export function apply(ctx: Context, config: ShellConfigInput): Promise<void> {
-  return shellApply(ctx, config)
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./shell": "./lib/shell.js",
+    "./degraded": "./lib/degraded.js",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json",
+    "./community-plugins": "./lib/shells/shell.js",
+    "./git-graph": "./lib/shells/shell.js",
+    "./plugin-manager": "./lib/shells/shell.js",
+    "./skill-explorer": "./lib/shells/shell.js",
+    "./preset-center": "./lib/shells/shell.js",
+    "./liangshen": "./lib/shells/shell.js",
+    "./market": "./lib/shells/shell.js",
+    "./pet": "./lib/shells/shell.js",
+    "./session-archive": "./lib/shells/shell.js",
+    "./settings": "./lib/shells/shell.js",
+    "./ssh": "./lib/shells/shell.js",
+    "./task-board": "./lib/shells/shell.js",
+    "./usage": "./lib/shells/shell.js",
+    "./skin-center": "./lib/shells/shell.js",
+    "./update": "./lib/shells/shell.js",
+    "./task-board-github": "./lib/shells/shell.js",
+    "./win-bash": "./lib/shells/shell.js",
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-web-all/src/shell.ts:370-405](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L370-L405)
+**依据 5 · 源码核查**：[packages/dsh-web-all/src/shell.ts:370-401](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/src/shell.ts#L370-L401)
 
-无plugin/退役配置实际no-op，不为其它row兜底。
+壳在配置含 plugin 时才进入相应路径。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
 export async function apply(ctx: Context, config: ShellConfigInput): Promise<void> {
@@ -522,32 +495,118 @@ export async function apply(ctx: Context, config: ShellConfigInput): Promise<voi
       if (isOverrideShape(row)) return
       recordDegraded('(no plugin)', 'shape', new Error(`shell row config is missing the "plugin" package name (row config: ${describeConfig(row)}); the entry mounted empty`))
       return
-    }
-    if (RETIRED_PLUGINS.has(spec)) {
-      // Stale row from an older profile whose plugin has been retired. Mount empty quietly.
-      return
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:333-340](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L333-L340)
+**依据 6 · 源码核查**：[packages/dsh-web-all/src/shell.ts:419-442](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/src/shell.ts#L419-L442)
 
-真实样式注入。
+动态导入与启动错误捕获。
+
+<details>
+<summary>查看原文（24行）</summary>
 
 ```text
-function ensureResponsiveStyle(): HTMLStyleElement {
-  const existing = document.querySelector<HTMLStyleElement>('style[data-dsh-compat="responsive"]')
-  if (existing !== null) return existing
-  const style = document.createElement('style')
-  style.dataset.dshCompat = 'responsive'
-  style.textContent = RESPONSIVE_CSS
-  document.head.appendChild(style)
-  return style
+    let mod: unknown
+    try {
+      mod = await import(/* @vite-ignore */ spec)
+    } catch (error) {
+      recordDegraded(spec, 'import', error)
+      return
+    }
+    const plugin = (mod as { default?: unknown; apply?: unknown })?.default ?? mod
+    if (typeof plugin !== 'function' && !(typeof plugin === 'object' && plugin !== null && typeof (plugin as { apply?: unknown }).apply === 'function')) {
+      recordDegraded(spec, 'shape', new Error(`module has no usable plugin shape (expected a function or { apply })`))
+      return
+    }
+    try {
+      // Sync application errors (invalid config, throwing apply) escape the
+      // ctx.plugin() call itself; async ones settle on the returned fiber.
+      // Both paths are captured here so the shell fiber never fails.
+      const fiber = ctx.plugin(plugin as Parameters<Context['plugin']>[0], family)
+      mounted = { spec, config: family, dispose: fiber.dispose, fiber: watchable(fiber) }
+      void Promise.resolve(fiber).then(
+        () => {},
+        error => recordDegraded(spec, 'start', error),
+      )
+    } catch (error) {
+      recordDegraded(spec, 'start', error)
 ```
 
-**依据 7 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:430-468](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L430-L468)
+</details>
 
-真实DOM属性/根锁改写。
+#### 缺口
+
+- 目标 DSH 版本遇到直挂成员导入失败后的启动结果未知
+  **影响**：不能承诺其余成员或 Web 页面继续可用
+  **进一步探讨**：用一个故意坏的直挂成员与一个壳路径分别观察故障传播
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 自带客户端依赖哪些宿主界面形状？
+
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑
+
+#### 完整回答
+
+聚合包自带客户端通过 Web 出口应用响应式样式、启动提示与 DOM 语义标记。标记以宿主元素及其 class 选择器寻找侧栏和框架，对重复设置做检查。页面元素被替换后通过失效订阅再找。释放时停止订阅并移除样式、启动提示及移动交互监听。依赖宿主 DOM 形状意味着 class 变更可能导致框架找不到，或者只发生部分标记。需要在真实页面检查；构建入口可核对但包发版与宿主版本组合未验证。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-web-all/package.json:107-118](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/package.json#L107-L118)
+
+声明最低 DSH 及 Web 客户端。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-web-all/tsdown.config.ts:17-29](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/tsdown.config.ts#L17-L29)
+
+聚合入口与旧壳构建。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+import { clientBundle } from '../../shared/tsdown.client.ts'
+
+export default clientBundle('@linxin666/dsh-web-all', ['src/index.ts'], {
+  companions: [
+    {
+      name: '@linxin666/dsh-web-all/shell',
+      // Object entries pin the output paths: the shells re-export must land
+      // exactly at lib/shells/shell.js (the exports map and the scanner
+      // marker both depend on that location).
+      entry: { shell: 'src/shell.ts', degraded: 'src/degraded.ts', 'shells/shell': 'src/shells/shell.ts' },
+      outDir: 'lib',
+      format: ['esm'],
+      platform: 'node',
+```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:453-491](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/src/client/index.ts#L453-L491)
+
+用 DOM 选择器标记框架与锁定条件。
 
 <details>
 <summary>查看原文（39行）</summary>
@@ -596,12 +655,12 @@ function syncFrameLock(present: boolean): boolean {
 
 </details>
 
-**依据 8 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:507-550](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L507-L550)
+**依据 4 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:530-572](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/src/client/index.ts#L530-L572)
 
-实际effect/shim/订阅/cleanup链。
+应用、重新检测及释放兼容层。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
 export function apply(ctx: Context): void {
@@ -647,342 +706,73 @@ export function apply(ctx: Context): void {
       responsiveStyle.remove()
       removeMobileDismiss()
     }
-  })
-```
-
-</details>
-
-**依据 9 · 源码核查**：[packages/dsh-web-all/src/client/body-mutations.ts:73-130](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/body-mutations.ts#L73-L130)
-
-实际observer全局共享/合帧/异常与释放。
-
-<details>
-<summary>查看原文（58行）</summary>
-
-```text
-export function subscribeBodyMutations(subscriber: (records: MutationRecord[]) => void): () => void {
-  if (typeof globalThis === 'undefined' || typeof document === 'undefined') return () => {}
-  if (typeof MutationObserver !== 'function') return () => {}
-  const registry = globalThis as unknown as Record<symbol, unknown>
-  let hub = registry[HUB_KEY] as BodyMutationHub | undefined
-  if (hub === undefined) {
-    const subscribers = new Set<(records: MutationRecord[]) => void>()
-    const created: BodyMutationHub = {
-      observer: undefined as unknown as MutationObserver,
-      subscribers,
-      pending: [],
-      scheduled: false,
-    }
-    const flush = (): void => {
-      created.frame = undefined
-      created.scheduled = false
-      const batch = created.pending
-      created.pending = []
-      for (const listener of [...subscribers]) {
-        if (!subscribers.has(listener)) continue
-        try {
-          listener(batch)
-        } catch {
-          // One subscriber must never break the others; the next flush retries it.
-        }
-      }
-    }
-    const schedule = (): void => {
-      if (created.scheduled) return
-      created.scheduled = true
-      if (typeof requestAnimationFrame === 'function') created.frame = requestAnimationFrame(flush)
-      else flush()
-    }
-    created.observer = new MutationObserver((records) => {
-      if (needsRecords(subscribers)) {
-        for (const record of records) created.pending.push(record)
-      }
-      schedule()
-    })
-    created.observer.observe(document.body ?? document.documentElement, { childList: true, subtree: true })
-    registry[HUB_KEY] = created
-    hub = created
-  }
-  const active = hub
-  active.subscribers.add(subscriber)
-  let subscribed = true
-  return () => {
-    if (!subscribed) return
-    subscribed = false
-    active.subscribers.delete(subscriber)
-    if (!needsRecords(active.subscribers)) active.pending = []
-    if (active.subscribers.size === 0 && registry[HUB_KEY] === active) {
-      active.observer.disconnect()
-      if (active.frame !== undefined && typeof cancelAnimationFrame === 'function') cancelAnimationFrame(active.frame)
-      active.frame = undefined
-      active.pending = []
-      active.scheduled = false
-      delete registry[HUB_KEY]
 ```
 
 </details>
 
 #### 缺口
 
-- 真实Host DOM/移动交互/子包加载、重复安装与清理效果未测。
-  **影响**：不能把静态兼容钩子等同全部子插件可用或零开销。
-  **进一步探讨**：在固定Host核所需UI、流式消息/重渲染和禁用后刷新恢复，失败回独立包。
+- 宿主 UI 改版及窄屏下的界面兼容未知
+  **影响**：聚合已加载也不保证导航正常
+  **进一步探讨**：记录两个宿主版本的桌面和窄屏下语义标记与交互
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 哪些故障被隔离，degraded接口和默认停用能保证什么？
+### Q04 · 哪类用户值得试聚合安装，怎样退出？
 
-**研究主题**：缺陷与关键质疑
+**研究主题**：效果与总成本、采用判断
 
 #### 完整回答
 
-旧shell配置plugin时真动态import→形状检查→ctx.plugin，捕获import/同步apply/Promise和nested fiber deferred失败；配置变化串行sync，旧dispose失败仅warn继续。degraded把堆栈/reason保进globalThis Map，路由只按socket remoteAddress允许127.0.0.1/::1，no-store返回。它是进程内状态、非持久恢复日志或账户认证；loopback反代可能仍算本机，不能据此保证远程用户隔离。
-
-关键反证是当前patch直接挂真实包而无plugin配置，所以这些shell catch/ledger不能保证全部直接row失败仍启动，也不自动捕获任意后台Promise/已发生副作用。README/源码注释仍混有旧壳叙述，结论以真实row为准。
-
-patch末尾SSH和skill-explorer明确disabled:true，Windows bash有平台条件，原ui-settings-plugins也被关闭；其余直接row不因“只安装未启用”而自动无副作用，remote-bridge/看板等需各自核身份/网络/数据。disabled只表示请求loader跳过，代码依赖仍安装/更新，权限/文件/远端操作回滚由真正子包和Host负责，不是聚合撤销。
+多个 profile 确实需要同组看板、归档和设置时，有理由在一个可重建的 profile 先核对聚合挂载。先列出所需成员、禁用项、宿主版本与现有覆盖，启用后逐项检查面板及宿主状态。对照逐包装配相同能力，计依赖和首次加载资源、配置及版本维护、升级故障归因和退出时间。没有固定版本的启动性能实测，也不能把 README 的旧包体积当本轮性能。若成员缺失、宿主加载失败或升级需要独立锁版本，恢复配置或回到单包安装。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-web-all/src/shell.ts:407-443](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L407-L443)
+**依据 1 · 作者声明**：[packages/dsh-web-all/README.md:32-49](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/README.md#L32-L49)
 
-真实旧shell dispose/import/mount/catch。
+作者说明逐行开关与安装和重启。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（18行）</summary>
 
-```text
-    const family = familyConfigOf(row)
-    if (mounted !== undefined && mounted.spec === spec && sameFamilyConfig(mounted.config, family)) return
-    if (mounted !== undefined) {
-      const previous = mounted
-      mounted = undefined
-      try {
-        await previous.dispose?.()
-      } catch (error) {
-        // A failed unmount must never keep the new config from mounting.
-        console.warn('[dsh-web-all] unmounting the previous family plugin failed:', error)
-      }
-    }
-    let mod: unknown
-    try {
-      mod = await import(/* @vite-ignore */ spec)
-    } catch (error) {
-      recordDegraded(spec, 'import', error)
-      return
-    }
-    const plugin = (mod as { default?: unknown; apply?: unknown })?.default ?? mod
-    if (typeof plugin !== 'function' && !(typeof plugin === 'object' && plugin !== null && typeof (plugin as { apply?: unknown }).apply === 'function')) {
-      recordDegraded(spec, 'shape', new Error(`module has no usable plugin shape (expected a function or { apply })`))
-      return
-    }
-    try {
-      // Sync application errors (invalid config, throwing apply) escape the
-      // ctx.plugin() call itself; async ones settle on the returned fiber.
-      // Both paths are captured here so the shell fiber never fails.
-      const fiber = ctx.plugin(plugin as Parameters<Context['plugin']>[0], family)
-      mounted = { spec, config: family, dispose: fiber.dispose, fiber: watchable(fiber) }
-      void Promise.resolve(fiber).then(
-        () => {},
-        error => recordDegraded(spec, 'start', error),
-      )
-    } catch (error) {
-      recordDegraded(spec, 'start', error)
-    }
+````text
+- **Opt-in rows**: low-usage family plugins ship disabled by default in the aggregate (currently SSH and skill-explorer — the `inactive` list in `aggregate.yml`; liangshen stays out of it, so the LiangShen mode lever is present on a fresh install). They never load and their settings entries stay hidden until you enable the row under Settings → Plugins → Plugin manager; the standalone packages are unaffected. Bundle rows can also ship a seed config that differs from the standalone default (the `patches` list); a settings edit wins once made.
+- **Per-row management**: every family plugin toggles individually — under Settings → Plugins → Plugin manager this package's row expands into a child list with one switch per family plugin, written to the profile override layer. A disabled row is skipped by the loader itself: it neither mounts nor serves its browser half to the page. A disabled child is never loaded while its code still updates with the bundle; install the standalone package when a plugin needs independent versioning (a standalone install wins over the aggregate row).
+
+## Install
+
+### From npm (recommended)
+
+**DSH Web CLI (Browser)**:
+```sh
+dsh plugin --profile web add @linxin666/dsh-web-all@latest
+# Restart dsh web
+dsh web
 ```
+
+**Official Desktop Client (DeepSeek Harness Desktop)**:
+- Open the official desktop client and navigate to "Settings > Plugins" (or the sidebar plugins view)
+- Enter `@linxin666/dsh-web-all` into the install input field and click Install
+- Fully quit and restart the desktop client once installation completes
+````
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-web-all/src/shell.ts:446-470](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L446-L470)
+**依据 2 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:13-35](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L13-L35)
 
-真实串行sync/volatile与deferred监听。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  const schedule = (): Promise<void> => {
-    tail = tail.then(() => sync().catch((error: unknown) => {
-      // An async apply's rejection escapes the loader lifecycle as an
-      // unhandled rejection (the host's fail-loud guard then kills the whole
-      // process), so every path out of a sync is captured here.
-      console.error('[dsh-web-all] applying the shell row config failed:', error)
-    }))
-    return tail
-  }
-
-  // A settings edit on this entry commits the new config into the reference
-  // and reaches the family plugin through this listener, not through a remount.
-  ctx.on('loader/volatile-update', () => { void schedule() })
-  ctx.on('internal/status', (fiber: unknown) => {
-    const current = mounted
-    if (current?.fiber === undefined || !isNestedFiber(current.fiber, fiber)) return
-    recordDeferredStartFailure(current.spec, current.fiber)
-  })
-  // A plugin that injects services starts LATER than this mount call: cordis
-  // creates its fiber PENDING and runs the body only once every injected
-  // service exists. A failure in that body therefore lands after the promise
-  // above has already resolved, so the fiber's own lifecycle transitions are
-  // watched as well. Transitions are rare and `await()` settles without
-  // throwing for a fiber that is still waiting, so a healthy row costs nothing.
-  await schedule()
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/dsh-web-all/src/degraded.ts:45-59](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/degraded.ts#L45-L59)
-
-实际进程Map写与读取。
+实际挂载和宿主旧设置行停用。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-/** Record (or refresh) one plugin's degraded state. Errors are logged here once. */
-export function recordDegraded(plugin: string, stage: DegradedRecord['stage'], error: unknown): void {
-  const message = error instanceof Error ? error.stack ?? error.message : String(error)
-  console.error(`[dsh-web-all] plugin degraded (${stage}): ${plugin}\n${message}`)
-  shellState().degraded.set(plugin, { plugin, stage, message, reason: failureReason(error), at: new Date().toISOString() })
-}
-
-/** Clear one plugin's degraded record (successful start after a retry/HMR reload). */
-export function clearDegraded(plugin: string): void {
-  shellState().degraded.delete(plugin)
-}
-
-/** Snapshot of all currently degraded plugins. */
-export function listDegraded(): DegradedRecord[] {
-  return [...shellState().degraded.values()]
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/dsh-web-all/src/state.ts:24-33](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/state.ts#L24-L33)
-
-global Symbol Map非持久日志。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-const KEY = Symbol.for('dsh-web-all.shell-state')
-
-/** The process-wide shared shell state (one instance across module copies). */
-export function shellState(): ShellSharedState {
-  const registry = globalThis as unknown as Record<symbol, ShellSharedState | undefined>
-  return (registry[KEY] ??= {
-    activeRows: new Set<string>(),
-    degraded: new Map<string, DegradedRecord>(),
-    healthRoutes: { count: 0 },
-  })
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/dsh-web-all/src/shell.ts:129-143](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L129-L143)
-
-真实socket loopback判断/堆栈ledger响应。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-function makeDegradedRoute(): WebRoute {
-  return {
-    kind: 'exact',
-    path: '/api/dsh-web-all/degraded',
-    handler: async (req: IncomingMessage, res: ServerResponse): Promise<void> => {
-      let remote = req.socket.remoteAddress ?? ''
-      if (remote.startsWith('::ffff:')) remote = remote.slice(7)
-      if (remote !== '127.0.0.1' && remote !== '::1') {
-        res.writeHead(403, { 'content-type': 'application/json' })
-        res.end(JSON.stringify({ ok: false, error: 'forbidden: loopback-only' }))
-        return
-      }
-      res.writeHead(200, { 'content-type': 'application/json', 'cache-control': 'no-store' })
-      res.end(JSON.stringify({ ok: true, degraded: listDegraded() }))
-    },
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:47-65](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L47-L65)
-
-当前直接挂包不会走shell配置。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-# from ../dsh-agents
+# from ../dsh-web-settings
 - insert:
-    - id: web-ui-agents
-      name: '@linxin666/dsh-agents'
+    - id: web-ui-settings
+      name: '@linxin666/dsh-client-ui-web-ui-settings'
 
-# from ../dsh-remote-bridge
-- insert:
-    - id: web-ui-remote-bridge
-      name: '@linxin666/dsh-remote-bridge'
-
-# from ../dsh-task-board-remote
-- insert:
-    - id: web-ui-task-board-remote
-      name: '@linxin666/dsh-task-board-remote'
-
-# from ../dsh-ssh
-- insert:
-    - id: web-ui-ssh
-      name: '@linxin666/dsh-ssh'
-```
-
-</details>
-
-**依据 7 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:92-118](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L92-L118)
-
-Windows条件及两项明确opt-in。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-# from ../dsh-win-bash
-- insert:
-    - id: web-ui-win-bash
-      name: '@linxin666/dsh-win-bash'
-      disabled: !!js process.platform !== 'win32'
-
-# from ../dsh-i18n
-- insert:
-    - id: web-ui-i18n
-      name: '@linxin666/dsh-i18n'
-
-# from ../dsh-diagrams
-- insert:
-    - id: web-ui-diagrams
-      name: '@linxin666/dsh-client-ui-diagrams'
-
-# from ../dsh-browser-view
-- insert:
-    - id: web-ui-browser-view
-      name: '@linxin666/dsh-client-ui-browser-view'
-
-# inactive by default (opt-in rows): these ship disabled; each is enabled per row in the
-# plugin manager, whose enable writes a user-layer "disabled: false" override that wins.
-- id: web-ui-ssh
-  disabled: true
-- id: web-ui-skill-explorer
-  disabled: true
-```
-
-</details>
-
-**依据 8 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:18-25](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L18-L25)
-
-原设置row关闭。
-
-```text
 # from ../dsh-plugin-manager
 - insert:
     - id: web-ui-plugin-manager
@@ -991,35 +781,36 @@ Windows条件及两项明确opt-in。
 # from ../dsh-plugin-manager (patch row ui-settings-plugins)
 - id: ui-settings-plugins
   disabled: true
+
+# from ../dsh-market
+- insert:
+    - id: web-ui-market
+      name: '@linxin666/dsh-client-ui-market'
+
+# from ../dsh-task-board
+- insert:
+    - id: web-ui-task-board
+      name: '@linxin666/dsh-client-ui-task-board'
 ```
 
-#### 缺口
+</details>
 
-- Host loader直接row故障/后台异常、远程bridge/看板身份副作用与默认部署未全核。
-  **影响**：核心外部功能及恢复未知，整体采用仅观察，不以壳机制担保。
-  **进一步探讨**：对所需单row独立审Host/API/权限；隔离样本测失败启动与实际撤回，再决定安装范围。
+**依据 3 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:113-118](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L113-L118)
 
-<a id="research-q04"></a>
+两个默认停用项。
 
-<a id="detail-section-14"></a>
+```text
+# inactive by default (opt-in rows): these ship disabled; each is enabled per row in the
+# plugin manager, whose enable writes a user-layer "disabled: false" override that wins.
+- id: web-ui-ssh
+  disabled: true
+- id: web-ui-skill-explorer
+  disabled: true
+```
 
-### Q04 · 什么条件下值得聚合安装，退出怎样恢复？
+**依据 4 · 源码核查**：[packages/dsh-web-all/package.json:162-185](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/package.json#L162-L185)
 
-**研究主题**：采用判断、效果与总成本
-
-#### 完整回答
-
-当前建议观察；若只要少数功能优先独立按需安装，确需多项才先备份profile、列每row需求/默认状态/包版本与真实权限，在隔离Host比较组合。默认SSH停用不等其它远程组件全部停；未核网络身份、写入和恢复前不接账号/远端。不要只以能启动或侧栏有入口验收。
-
-首次多依赖下载/Host服务/DOM兼容、持续整组更新/观察者/子包网络存储及维护，故障定位真实row与依赖版本，退出清profile/真实子包数据/连接的资源及工时都未知，不能按“全家桶”推节省。workspace与caret约束不等安装实际锁定，各子包停用并不自动卸依赖/撤数据。
-
-布局错先停兼容row并刷新核data属性/滚动；功能故障停具体row再恢复备份或改独立包，核真正进程/远端请求/写入，旧shell日志只做线索。聚合卸载不被证明可自动还原子包已写状态，外部账号/数据的恢复/留存须独立验收。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-web-all/package.json:162-185](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/package.json#L162-L185)
-
-多依赖及外部范围。
+聚合依赖规模及版本边界。
 
 <details>
 <summary>查看原文（24行）</summary>
@@ -1045,215 +836,37 @@ Windows条件及两项明确opt-in。
     "@linxin666/dsh-i18n": "workspace:*",
     "@linxin666/dsh-client-ui-diagrams": "workspace:*",
     "@linxin666/dsh-client-ui-browser-view": "workspace:*",
-    "@linxin666/dsh-client-ui-community-plugins": "^0.4.15",
-    "@linxin666/dsh-client-ui-preset-center": "^0.4.15",
-    "@linxin666/dsh-client-ui-skin-center": "^0.4.15",
-    "@linxin666/dsh-pet": "^0.4.15"
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:47-65](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L47-L65)
-
-不同远程相关row。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-# from ../dsh-agents
-- insert:
-    - id: web-ui-agents
-      name: '@linxin666/dsh-agents'
-
-# from ../dsh-remote-bridge
-- insert:
-    - id: web-ui-remote-bridge
-      name: '@linxin666/dsh-remote-bridge'
-
-# from ../dsh-task-board-remote
-- insert:
-    - id: web-ui-task-board-remote
-      name: '@linxin666/dsh-task-board-remote'
-
-# from ../dsh-ssh
-- insert:
-    - id: web-ui-ssh
-      name: '@linxin666/dsh-ssh'
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:113-118](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L113-L118)
-
-实际SSH/skill默认关闭。
-
-```text
-# inactive by default (opt-in rows): these ship disabled; each is enabled per row in the
-# plugin manager, whose enable writes a user-layer "disabled: false" override that wins.
-- id: web-ui-ssh
-  disabled: true
-- id: web-ui-skill-explorer
-  disabled: true
-```
-
-**依据 4 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:430-468](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L430-L468)
-
-DOM写属性/根锁与实际副作用。
-
-<details>
-<summary>查看原文（39行）</summary>
-
-```text
-function applyShims(): boolean {
-  let changed = false
-  for (const [selector, attribute] of COLUMN_SHIMS) {
-    const el = document.querySelector(selector)
-    const eq = attribute.indexOf('=')
-    const name = attribute.slice(0, eq)
-    const value = attribute.slice(eq + 1).replace(/^"|"$/g, '')
-    if (el !== null && el.getAttribute(name) !== value) {
-      el.setAttribute(name, value)
-      changed = true
-    }
-  }
-  // The frame is the grid item that parents the sidebar column.
-  const frame = document.querySelector('[class*="sidebarCol"]')?.parentElement ?? null
-  if (frame !== null && frame.getAttribute('data-dsh-frame') !== '') {
-    frame.setAttribute('data-dsh-frame', '')
-    changed = true
-  }
-  if (frame !== null) changed = stampSemanticParts(frame) || changed
-  // The viewport lock is scoped to this root attribute rather than to
-  // `html:has([data-dsh-frame])`; see RESPONSIVE_CSS. It mirrors the frame's
-  // presence, so it is cleared again when React replaces the shell and the
-  // next pass finds no frame (the lock must never outlive the frame it locks).
-  if (syncFrameLock(frame !== null)) changed = true
-  return changed
-}
-
-/**
- * Mirror the shell frame's presence onto the document root.
- * @param present - whether a stamped frame is currently in the document.
- * @returns whether the root attribute changed.
- */
-function syncFrameLock(present: boolean): boolean {
-  const root = document.documentElement
-  if (root === null) return false
-  if (root.hasAttribute(FRAME_LOCK_ATTRIBUTE) === present) return false
-  if (present) root.setAttribute(FRAME_LOCK_ATTRIBUTE, '')
-  else root.removeAttribute(FRAME_LOCK_ATTRIBUTE)
-  return true
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:540-549](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L540-L549)
-
-cleanup范围不含全部已写属性。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-    const unsubscribeBody = subscribeBodyInvalidations(() => {
-      applyShims()
-      ensureMobileDismiss()
-    })
-    return () => {
-      unsubscribeBody()
-      bootShield.remove()
-      responsiveStyle.remove()
-      removeMobileDismiss()
-    }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/dsh-web-all/src/shell.ts:409-424](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L409-L424)
-
-旧shell清理失败继续与导入失败。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-    if (mounted !== undefined) {
-      const previous = mounted
-      mounted = undefined
-      try {
-        await previous.dispose?.()
-      } catch (error) {
-        // A failed unmount must never keep the new config from mounting.
-        console.warn('[dsh-web-all] unmounting the previous family plugin failed:', error)
-      }
-    }
-    let mod: unknown
-    try {
-      mod = await import(/* @vite-ignore */ spec)
-    } catch (error) {
-      recordDegraded(spec, 'import', error)
-      return
+    "@linxin666/dsh-client-ui-community-plugins": "^0.4.16",
+    "@linxin666/dsh-client-ui-preset-center": "^0.4.16",
+    "@linxin666/dsh-client-ui-skin-center": "^0.4.16",
+    "@linxin666/dsh-pet": "^0.4.16"
 ```
 
 </details>
 
 #### 缺口
 
-- 真实安装/资源/维护节时、全子包权限/停用/恢复未知。
-  **影响**：未满足有明确净收益的组合验收，不能推荐生产一键安装。
-  **进一步探讨**：按需独立包作为基线，计配置/恢复/维护总人时，逐row验收再组合。
+- 同等启用范围下的安装时间、启动延迟和故障恢复时间未知
+  **影响**：不能量化维护收益
+  **进一步探讨**：在两套可重建 profile 用同一成员清单比对资源、复核与退出
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 比继续加包更有价值的组合方向如何证伪？
+### Q05 · 挂载预览能否减少把已安装、已启用和已可用混在一起？
 
-**研究主题**：新假设与验证、工程质量与复用
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-独立假设：以用户明确任务生成逐row需求/权限/默认状态/真实启动与退出收据，能减少把安装成功当功能验收、把旧壳等同现有隔离的误判。现有patch/manifest、插件管理器和ledger已有基础；增量必须是跨真实直接row的责任/副作用及恢复证据，不是假设所有子包共享隔离壳。
-
-先和按需安装清单/现有插件管理器加说明的小修比较，固定一个组合需求，测试未需remote row、真实直接row启动失败、旧shell失败、禁用后DOM/远端状态残留。测多余启用、误报健康、配置/恢复时间和资源；若清单已足够或额外平台负担抵消收益则否定，不算已实现创新。
+可让预览按 profile 列出实际依赖、启用行、匹配的覆盖、加载路径及宿主结果。与现有逐行开关相比，增量是区分默认未启用、当前直挂和旧配置壳，展示每项下一步从何核查。构造三个场景：默认禁用成员、旧壳漏配包名、直挂成员导入失败。比较现有插件列表与预览下的误诊率、恢复用时和重复安装次数。如果误诊没有减少，或预览带来更多无法验证的状态，就不推广。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:47-65](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L47-L65)
+**依据 1 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:113-118](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L113-L118)
 
-直接row与远程能力需分开。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-# from ../dsh-agents
-- insert:
-    - id: web-ui-agents
-      name: '@linxin666/dsh-agents'
-
-# from ../dsh-remote-bridge
-- insert:
-    - id: web-ui-remote-bridge
-      name: '@linxin666/dsh-remote-bridge'
-
-# from ../dsh-task-board-remote
-- insert:
-    - id: web-ui-task-board-remote
-      name: '@linxin666/dsh-task-board-remote'
-
-# from ../dsh-ssh
-- insert:
-    - id: web-ui-ssh
-      name: '@linxin666/dsh-ssh'
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:113-118](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/cordis.patch.yml#L113-L118)
-
-已有默认停用政策。
+提供默认禁用样例。
 
 ```text
 # inactive by default (opt-in rows): these ship disabled; each is enabled per row in the
@@ -1264,69 +877,83 @@ cleanup范围不含全部已写属性。
   disabled: true
 ```
 
-**依据 3 · 源码核查**：[packages/dsh-web-all/src/shell.ts:419-443](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/shell.ts#L419-L443)
+**依据 2 · 源码核查**：[packages/dsh-web-all/src/shell.ts:376-401](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/src/shell.ts#L376-L401)
 
-旧shell失败与实际覆盖范围。
+旧壳缺包名可无挂载。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
-    let mod: unknown
-    try {
-      mod = await import(/* @vite-ignore */ spec)
-    } catch (error) {
-      recordDegraded(spec, 'import', error)
+  /** Mount the real plugin the current row config names, replacing any previous mount. */
+  const sync = async (): Promise<void> => {
+    const raw = liveRowConfig(config)
+    const row = isRowConfig(raw) ? raw : undefined
+    if (row === undefined) {
+      if (raw === undefined) return
+      recordDegraded('(no plugin)', 'shape', new Error(`shell row config is not a mapping (row config: ${describeConfig(raw)}); the entry mounted empty`))
       return
     }
-    const plugin = (mod as { default?: unknown; apply?: unknown })?.default ?? mod
-    if (typeof plugin !== 'function' && !(typeof plugin === 'object' && plugin !== null && typeof (plugin as { apply?: unknown }).apply === 'function')) {
-      recordDegraded(spec, 'shape', new Error(`module has no usable plugin shape (expected a function or { apply })`))
+    const spec = row.plugin
+    if (typeof spec !== 'string' || spec === '') {
+      // Two legitimate shapes land here and must mount QUIETLY (no degraded
+      // record, no throw — an async apply's rejection escapes the loader
+      // lifecycle as an unhandled rejection and the host's fail-loud guard
+      // kills the whole process):
+      // - the SELF row (web-ui-compat): no config at all (undefined or {}).
+      //   The compat shim's host half has no host behavior; its browser half
+      //   rides the package's ./client face.
+      // - a USER bare-row override (`- id: <row>` + `config:` in a patch
+      //   layer): patch overrides REPLACE the row config wholesale, so a
+      //   hand-written tuning that drops the `plugin` key leaves this row
+      //   with nothing to mount. Silence is the documented behavior for that
+      //   shape; anything else still lands in the ledger for visibility.
+      if (isOverrideShape(row)) return
+      recordDegraded('(no plugin)', 'shape', new Error(`shell row config is missing the "plugin" package name (row config: ${describeConfig(row)}); the entry mounted empty`))
       return
-    }
-    try {
-      // Sync application errors (invalid config, throwing apply) escape the
-      // ctx.plugin() call itself; async ones settle on the returned fiber.
-      // Both paths are captured here so the shell fiber never fails.
-      const fiber = ctx.plugin(plugin as Parameters<Context['plugin']>[0], family)
-      mounted = { spec, config: family, dispose: fiber.dispose, fiber: watchable(fiber) }
-      void Promise.resolve(fiber).then(
-        () => {},
-        error => recordDegraded(spec, 'start', error),
-      )
-    } catch (error) {
-      recordDegraded(spec, 'start', error)
-    }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-web-all/src/client/index.ts:540-549](https://github.com/zhu1090093659/dsh-web/blob/1f148567c2f2c2a7ee84b8cef2d3c5fa959d2f1a/packages/dsh-web-all/src/client/index.ts#L540-L549)
+**依据 3 · 源码核查**：[packages/dsh-web-all/cordis.patch.yml:13-35](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-web-all/cordis.patch.yml#L13-L35)
 
-退出收据应核真实cleanup。
+现行成员直挂，与旧壳区分。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-    const unsubscribeBody = subscribeBodyInvalidations(() => {
-      applyShims()
-      ensureMobileDismiss()
-    })
-    return () => {
-      unsubscribeBody()
-      bootShield.remove()
-      responsiveStyle.remove()
-      removeMobileDismiss()
-    }
+# from ../dsh-web-settings
+- insert:
+    - id: web-ui-settings
+      name: '@linxin666/dsh-client-ui-web-ui-settings'
+
+# from ../dsh-plugin-manager
+- insert:
+    - id: web-ui-plugin-manager
+      name: '@linxin666/dsh-client-ui-plugin-manager'
+
+# from ../dsh-plugin-manager (patch row ui-settings-plugins)
+- id: ui-settings-plugins
+  disabled: true
+
+# from ../dsh-market
+- insert:
+    - id: web-ui-market
+      name: '@linxin666/dsh-client-ui-market'
+
+# from ../dsh-task-board
+- insert:
+    - id: web-ui-task-board
+      name: '@linxin666/dsh-client-ui-task-board'
 ```
 
 </details>
 
 #### 缺口
 
-- 任务到row收据对误配/恢复人时的改善未验证。
-  **影响**：方向不是现成依赖治理保证或业务机会证实。
-  **进一步探讨**：现有管理器/清单对照并设多余启用与总人时反证门槛。
+- 宿主是否能可靠提供直挂失败状态和覆盖优先级
+  **影响**：缺少真实状态会让预览误导
+  **进一步探讨**：用三类失败记录对照最终加载结果再测用户诊断
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

@@ -1,18 +1,18 @@
-# billion-context
+# Billion Context
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[be611a8](https://github.com/ranxianglei/billion-context/tree/be611a8566c22ee0a65fb5765365671d47e810d5)
+源码版本：[c26c31a](https://github.com/ranxianglei/billion-context/tree/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,113](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C113&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ranxianglei/billion-context) [![npm 30d 2,889,440](https://img.shields.io/static/v1?label=npm+30d&message=2%2C889%2C440&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-11-02](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-02&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
+[![GitHub ★ 6,779](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C779&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/ranxianglei/billion-context) [![npm 30d 3,310,468](https://img.shields.io/static/v1?label=npm+30d&message=3%2C310%2C468&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
 <!-- END META -->
 
-> **功能**：为多种 Agent 提供分层上下文压缩、按需恢复与搜索，并通过代理和原生插件接入长期会话。
+> **功能**：面向长会话的上下文压缩工具，可按范围生成摘要、检索并回读内容。
 
-> **亮点**：把可定位范围块/one-full缓存恢复与DSH工具/代理/压缩门禁及partial/no-op收据接成链，便于保留摘要同时有条件回读，而非每次整段重总结，见 [Q02](#research-q02)/[Q03](#research-q03)。
+> **亮点**：把 DSH 工具、代理会话、范围折叠及按块取回接入同一长任务，使模型能查询旧片段并继续用摘要组织当前上下文。范围与回读由代理内核提供，宿主接入负责归属和协调双重压缩，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-> **主要限制**：来源缺失可退回摘要而非原文，代理直连/门禁失配可能失去预期保护，HTTP取消未证服务端中止且工具成功未await落盘；5倍倍率不等当前任务保真/净费用，见 [Q03](#research-q03)至 [Q05](#research-q05)。
+> **主要限制**：用户能否分辨恢复的是原文还是摘要？两类内容可走同一输出形式。宿主写入本地压缩检查点后，归档块可能无法取回。工具返回和保存调度也有时间差，见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 **本文目录**
 
@@ -26,12 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 根项目与DSH适配是什么关系，实际任务是什么？](#detail-section-11)
-  - [Q02 · DSH压缩调用如何进入当前会话并产生可区分结果？](#detail-section-12)
-  - [Q03 · decompress能总是恢复原文吗，会不会写文件？](#detail-section-13)
-  - [Q04 · 代理、原生压缩、持久与取消的故障边界是什么？](#detail-section-14)
-  - [Q05 · 什么条件下能低风险试用，如何退出？](#detail-section-15)
-  - [Q06 · 可迁移的贡献与下一步假设是什么，怎样推翻？](#detail-section-16)
+  - [Q01 · 一个反复跨轮核对早期决策的编码任务，需要什么样的压缩与回读？](#detail-section-11)
+  - [Q02 · DSH 发出的模型请求和压缩工具怎样归属于同一会话？](#detail-section-12)
+  - [Q03 · 范围压缩成功后，回读可恢复哪些材料，失败怎样传给使用者？](#detail-section-13)
+  - [Q04 · 切换代理与宿主压缩各依赖什么，部署和退出怎样避免卡住预设？](#detail-section-14)
+  - [Q05 · 怎样判断这条链是否值得进入日常工作？](#detail-section-15)
+  - [Q06 · 能否用可辨识的恢复来源减少代理压缩造成的错误引用？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -41,89 +41,83 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：长编码任务需要保留历史决定与细节，可在脱敏独立profile核一个范围的压缩后恢复；成功是任务保真，不是token累计，见 [Q01](#research-q01)。
+> **用途**：适合用 DSH 维护长编码任务、经常要翻回早期接口决定或失败记录的开发者。可先试一段已结束的工作，确认回读的原文足以继续完成原验收，见 [Q01](#research-q01)。
 
-DSH原生整段摘要、人工换窗和保留原日志。范围块与按需回读更细，但仍有模型语义损失、复杂状态与恢复缺口。
+对照 DSH 原生压缩加人工维护决策记录。早期事实少且已有可靠文档时，新会话与短交接足以保留约束。工作反复回到不同历史细节时，按块回读才有明确增量，见 [Q01](#research-q01)。
 
 <a id="detail-section-3"></a>
 
 ### 1.2 能力、流程与成本
 
-**能力**
+#### 能力
 
-| 能力 | 用途 | 条件与边界 |
+| 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| compress | 范围摘要替换 | 保护区/net shrink非语义保真 |
-| decompress | one/full有条件取回 | 可回退summary/归档失败/文件写出 |
-| 代理 | 模型请求改写/状态 | 实际流量须核，其他传输未全验 |
-| 门禁 | 协调原生自动压缩 | 内部hook敏感、整bundle退出 |
-| 状态 | 区分partial/refused/no-op | HTTP200非效果/持久保证 |
+| compress | 按范围折叠上下文 | 需要可归属的会话及有效范围，业务可拒绝或部分应用 |
+| decompress | 按块查看旧材料 | 原文取决于缓存和现有历史，归档块可能无法恢复 |
+| search_context | 查找上下文中的匹配项 | 代理按当前会话和状态检索 |
+| /acp | 查看会话与折叠状态 | 最近会话回退需读提示并检查归属 |
+| /acp-cache | 查看提示词缓存报告 | 依赖可访问的代理与会话数据 |
+| Web 设置面板 | 查看和配置 bundle | 依赖 DSH Web 槽及模块加载器 |
 
-**流程与依赖**
+#### 启动与依赖
 
-#### 依赖
+| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
+| --- | --- | --- | --- |
+| Node 20 及以上和含 dist 的包 | 启动必需 | 提供宿主及浏览器构建 | 无 dist 的源码无法按声明加载 |
+| DSH 工具、命令和 Agent 服务 | 主入口必需 | 注册及绑定会话 | 工具与会话归属无法按接线完成 |
+| internal/config 与反射服务 | 嵌套压缩门控所需 | 调整预设并提供就绪信号 | 可能保留宿主压缩，按启动日志核查 |
+| 可达代理、模型供应方及可写目录 | 执行及回读所需 | 转发、记录块与写输出文件 | 可能直发、工具错误或导出失败 |
+| 独立摘要模型与授权 | 可选 | 由独立模型产出摘要 | 未配置走默认范围折叠 |
 
-| 条件 | 用途 | 缺失或边界 |
+#### 启动步骤
+
+| 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| Node>=20/含dist包 | 导出与CLI | 声明不等发布产物一致验收 |
-| DSH tools/commands/agents/llm | 注册/归属/路由 | 实际Host版本需核 |
-| native+独立gate整bundle | 工具和原生压缩协调 | internal/config版本敏感 |
-| 本机代理/模型供应商 | 请求与摘要 | 代理失败可直连未压缩 |
-| 可写状态/原文缓存/临时目录 | 持久与回读 | 成功响应不等已持久 |
-| 可选externalSummary | 独立摘要 | 新费用/隐私目的地 |
-
-#### 步骤
-
-| 步骤 | 操作 | 判据/退路 |
-| --- | --- | --- |
-| 准备 | 独立profile/目录、备份原日志 | 不用唯一生产会话 |
-| 接线 | 核工具、/acp、真实代理流量 | 加载不等已压缩 |
-| 门禁 | 核原生checkpoint是否停 | 只改顶层auto不够 |
-| 一范围 | 压缩已完成片段并full读取事实 | item数/内容核原文 |
-| 异常 | 查块/落盘/路由再重试 | 取消不等未提交 |
-| 退出 | 移除整bundle/重启 | 核原生压缩和配置恢复 |
-
-**效果与成本**
+| 准备 | 开发者复制脱敏 profile，保留原始记录与验收 | 原生流程可重做相同任务 |
+| 加载 | 按包方式加载并检查工具和门控 | 状态对应当前会话，启动日志无门控缺口 |
+| 执行 | 折叠已完成的范围，按块回读并执行原验收 | 原文匹配指定约束与失败输出 |
+| 退出 | 有压缩冲突、匿名转发或摘要回退时移除整个 bundle | 重启后核对原配置与任务记录 |
 
 #### 成本
 
-| 阶段 | 现金/资源 | 人工 | 限制 |
+| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 包/代理/可写状态 | profile/路由/门禁/备份 | 未测时长 |
-| 持续 | 摘要、取回、缓存变化与存储 | 事实核对/版本维护 | 倍率非净费 |
-| 失败 | 部分状态/可能服务端继续 | 查块/磁盘/日志和重试 | 成功非durable |
-| 退出 | 原文缓存/临时导出残留 | 整体卸载/配置与清理核验 | installer全量未审 |
+| 首次使用 | 包、代理及状态目录 | 复制配置和核对门控 | 部署用时未知 |
+| 持续使用 | 模型输入输出、缓存读写、可选摘要与存储 | 检查归属、回读和纠正误引 | 合格任务的净费用未知 |
+| 失败恢复 | 请求重做、磁盘和临时导出 | 排查会话、原文与检查点并重新验收 | 请求取消后服务器状态需回查 |
+| 退出 | 保留或清理状态和导出文件 | 移除 bundle 并复查原生流程 | 宿主历史仍随任务增长 |
 
 #### 效果
 
-| 项目 | 当前支持 | 未确认 |
+| 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 细范围管理 | kernel块/保护区/工具收据 | 摘要事实保真 |
-| 按需恢复 | 缓存/当前来源/full模式 | 缺失/归档无条件还原 |
-| 长会话 | 代理替换与门禁接线 | 月长生产任务成功率 |
-| 成本 | 作者倍率主张/减少输入机制 | 当前DSH单位任务净账单 |
+| 按范围控制上下文 | 代理可折叠历史并记录块 | 任务关键事实保留程度 |
+| 需要时定位原文 | 有缓存、当前消息和摘要的逐层回退 | 任意旧块是否仍有原文 |
+| 跨轮继续推进 | DSH 会话归属与独立门控有实现 | 所选宿主的长期运行稳定性 |
+| 单位合格任务净成本 | 可查看会话与缓存状态 | 同模型对照的现金、延迟和人工净变化 |
 
-> **思考**：来源缺失可退回摘要而非原文，代理直连/门禁失配可能失去预期保护，HTTP取消未证服务端中止且工具成功未await落盘；5倍倍率不等当前任务保真/净费用，见 [Q03](#research-q03)至 [Q05](#research-q05)。
+> **思考**：用户能否分辨恢复的是原文还是摘要？两类内容可走同一输出形式。宿主写入本地压缩检查点后，归档块可能无法取回。工具返回和保存调度也有时间差，见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把可定位范围块/one-full缓存恢复与DSH工具/代理/压缩门禁及partial/no-op收据接成链，便于保留摘要同时有条件回读，而非每次整段重总结，见 [Q02](#research-q02)/[Q03](#research-q03)。
+> **亮点**：把 DSH 工具、代理会话、范围折叠及按块取回接入同一长任务，使模型能查询旧片段并继续用摘要组织当前上下文。范围与回读由代理内核提供，宿主接入负责归属和协调双重压缩，见 [Q01](#research-q01) 与 [Q02](#research-q02)。
 
-范围/保护区、最近会话绑定、partial收据和独立gate有实际实现；核心边界是进程内锁非跨实例、markDirty非落盘确认、HTTP取消链缺signal，恢复来源可退化，见 [Q02](#research-q02)至 [Q04](#research-q04)。
+把独立门控注册与主模块的压缩声明分开，可降低停止主入口时预设等不到服务的风险。实际兼容仍受内部配置钩子和补丁替换规则约束。代理将传输与业务状态分开。会话锁限于单进程，工具响应后仍需考虑保存延迟，见 [Q03](#research-q03) 和 [Q04](#research-q04)。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-来源缺失可退回摘要而非原文，代理直连/门禁失配可能失去预期保护，HTTP取消未证服务端中止且工具成功未await落盘；5倍倍率不等当前任务保真/净费用，见 [Q03](#research-q03)至 [Q05](#research-q05)。
+用户能否分辨恢复的是原文还是摘要？两类内容可走同一输出形式。宿主写入本地压缩检查点后，归档块可能无法取回。工具返回和保存调度也有时间差，见 [Q03](#research-q03) 与 [Q04](#research-q04)。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-只在独立脱敏profile对一个已完成范围试压缩/全文回读，核真实代理与原生门禁；若来源退摘要、持续直连或checkpoint冲突，停扩用并移除整bundle回原生与原日志，见 [Q05](#research-q05)。
+只在脱敏的独立 profile 试一个已有验收标准的范围。记下两条必须回读的约束，确认 /acp 对应当前会话，再折叠、取回并按原测试验收。遇到匿名转发、仅摘要或压缩冲突时，从同一 profile 移除整套 bundle，保留原日志并回到原生流程，见 [Q05](#research-q05)。
 
 <a id="detail-section-7"></a>
 
@@ -131,20 +125,18 @@ DSH原生整段摘要、人工换窗和保留原日志。范围块与按需回�
 
 **核查状态**：已检查源码。
 
-固定0.1.212根含原生DSH与多宿主CLI；本轮仅定向核DSH工具→代理锁→kernel/缓存恢复及门禁/持久/取消代表链。没有执行目标、Host、模型或基准；其他宿主/完整传输/安装更新/所有搜索与存储不在已验范围。
+固定源码支持 DSH 挂载、模型请求与工具分流、范围折叠和按块回读。回读受原始材料可得性约束，宿主版本、净费用及恢复保真留待验证。来源标记是待验证设计。
 
-- 已检查：作者 README、包清单、源码路径 README.md、dsh.bundle.patch.yml、kernel/src/compress.ts、kernel/src/decompress.ts、package.json、src/agent/dsh-compaction-disable.ts、src/agent/dsh-compaction-gate.ts、src/agent/dsh-native-client.ts、src/agent/dsh-native.ts、src/agent/native-intercept.ts、src/agent/shared.ts、src/decompress-shared.ts、src/external-summary-compress.ts、src/loop/core.ts、src/persist.ts、src/plugin.ts、src/preflight.ts、src/server/admin.ts、src/session.ts、src/stream.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、dsh.bundle.patch.yml、src/decompress-shared.ts、src/agent/dsh-native.ts、src/agent/native-intercept.ts、src/plugin.ts、src/session.ts、src/loop/core.ts、src/stream.ts、src/agent/shared.ts、src/server/admin.ts、package.json、tsup.config.ts、src/agent/dsh-compaction-disable.ts、src/external-summary-compress.ts、src/agent/dsh-native-client.ts、src/agent/dsh-compaction-gate.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：根package/bundle、DSH动态工具/启动/代表fetch/归属、代理管理门禁与tool dispatch、kernel clone/保护区和stream提交/cache、decompress one/full/回退/临时文件、externalSummary取消/partial、scheduleSave代表故障/flush；未跑/未全审其他宿主/协议/WS/installer自更新/所有search-range-image及索引GC。
-- 下一步：- 下一步独立profile验证一范围压缩、精确事实回读和原生日志对照。
-- 代理断开、取消后查状态、写失败分别核结果与持久。
-- 三种来源故障盲答测试和全费记录尚未执行。
+- 边界：只核查固定提交的 DSH 宿主与 Web 挂载、代表性 fetch 归属、工具转发、压缩门控、回读与结果边界。其他宿主、协议、安装升级器与所有检索变体未逐一审计。npm 构建产物与当前提交未核实同源。
+- 下一步：在独立脱敏 DSH profile 对照原生压缩和代理折叠，记录相同验收标准下的原文保真、会话归属、故障恢复、缓存、费用及人工。对来源提示做三种材料条件的盲评，见 [Q05](#research-q05) 与 [Q06](#research-q06)。
 
 **分析版本**
 
 - **仓库**：[ranxianglei/billion-context](https://github.com/ranxianglei/billion-context)
-- **版本号**：0.1.212（[固定提交 be611a8](https://github.com/ranxianglei/billion-context/tree/be611a8566c22ee0a65fb5765365671d47e810d5)）
-- **版本日期**：2026-11-06（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.213（[固定提交 c26c31a](https://github.com/ranxianglei/billion-context/tree/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99)）
+- **版本日期**：2026-11-11（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -152,11 +144,9 @@ DSH原生整段摘要、人工换窗和保留原日志。范围块与按需回�
 
 <a id="innovation"></a>
 
-恢复结果显式区分缓存原文/当前来源/仅摘要，并用三种来源故障的事实盲答对照；若现有item数与失败已足够、误用不降或成本抵消，则放弃，见 [Q06](#research-q06)。
+可为回读标明来源和覆盖状态，验证模型是否更少把摘要当作原文。分别回放缓存完整、仅当前消息可用及两者都缺失的会话。若误引未下降或合格任务成本上升，停止推进，见 [Q06](#research-q06)。
 
-- 下一步独立profile验证一范围压缩、精确事实回读和原生日志对照。
-- 代理断开、取消后查状态、写失败分别核结果与持久。
-- 三种来源故障盲答测试和全费记录尚未执行。
+在独立脱敏 DSH profile 对照原生压缩和代理折叠，记录相同验收标准下的原文保真、会话归属、故障恢复、缓存、费用及人工。对来源提示做三种材料条件的盲评，见 [Q05](#research-q05) 与 [Q06](#research-q06)。
 
 <a id="detail-section-9"></a>
 
@@ -169,158 +159,110 @@ DSH原生整段摘要、人工换窗和保留原日志。范围块与按需回�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 146 | 20673 | — | — | 404235 |
-| .ts | source | 413 | 192185 | 129544 | 54158 | — |
-| .mjs | source | 32 | 6873 | 4813 | 1656 | — |
-| .ts | test | 1294 | 368756 | 307138 | 42273 | — |
-| .mjs | test | 5 | 835 | 636 | 186 | — |
+| .md | source | 191 | 23451 | — | — | 471031 |
+| .ts | source | 438 | 205017 | 137270 | 58836 | — |
+| .mjs | source | 33 | 7112 | 4960 | 1739 | — |
+| .ts | test | 1387 | 390862 | 324849 | 45401 | — |
+| .mjs | test | 5 | 863 | 644 | 205 | — |
 | .md | test | 1 | 359 | — | — | 2707 |
 | .mts | example | 2 | 85 | 71 | 16 | — |
 | .mjs | example | 1 | 21 | 16 | 4 | — |
 | .ts | example | 1 | 67 | 48 | 16 | — |
 | .md | example | 1 | 34 | — | — | 545 |
-| .js | source | 1 | 606 | 590 | 26 | — |
+| .js | source | 1 | 616 | 600 | 26 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 464](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=464&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,724](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C724&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z) [![近30天关闭 1,311](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C311&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z)
+[![Issue 未关闭 626](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=626&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 1,717](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=1%2C717&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 1,173](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=1%2C173&color=737b86&logo=github)](https://github.com/ranxianglei/billion-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
 
 
 
-统计日期：2026-11-06。
+统计日期：2026-11-12。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：定向核DSH原生接线、范围压缩/原文恢复与代理/门禁/取消/持久故障，分清技术贡献和未验任务效果。
+**插件研究总目标**：确定 DSH 用户能否把长任务早期细节压缩成可回读的上下文，以及怎样检验相对原生压缩的保真、恢复和净成本。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 根项目与DSH适配是什么关系，实际任务是什么？
+### Q01 · 一个反复跨轮核对早期决策的编码任务，需要什么样的压缩与回读？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-固定版本0.1.212根项目既提供bili/bili-proxy CLI、多宿主入口，也以默认exports指向DSH Host入口并声明Web/client和bundle，是包含原生DSH适配的上下文压缩插件产品，不能把根仓全部CLI能力都算DSH已验。面向长期编码任务，想在有限窗口继续使用历史决策与细节；成功应是任务正确完成和必要事实可取回，不是累计十亿token本身。参照DSH原生整段摘要和人工换窗，本项提供可定位范围块/分层摘要与按需读取材料，细粒度不同，但不是无损压缩。
-
-README的100K足够、5倍少token、月长会话是作者定位/效果主张；本轮不跑基准，不把其倍率当当前DSH端到端结果。kernel位于同仓，是产品实现的一部分，不能把DSH接线归因为重新发明整个压缩方法，亦未做新颖性穷尽检索。
+适用对象是用 DSH 维护长任务、后续仍需核对早期接口约束或测试失败原文的开发者。合格结果是后续补丁满足早期约束并通过同一组验收，且能够指出用过的原始记录。常规做法是使用宿主压缩或新建会话并手工维护决策文档，足以应对重要约束少且交接频率低的任务。固定实现额外提供按范围折叠、在摘要保留期间按块回读，以及通过 /acp 查看会话状态。宿主压缩入口由 bundle 配置和独立门控协调，折叠和回读来自代理内核。该 DSH 接入层的贡献是组合与会话归属。作者称长会话及前缀缓存友好，这仍需把恢复、缓存和任务验收一起测量。作者也明确说明发给模型的上下文变小后，宿主历史文件仍继续增长，换新会话依然是重要替代。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:1-25](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/package.json#L1-L25)
+**依据 1 · 作者声明**：[README.md:72-91](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/README.md#L72-L91)
 
-0.1.212与默认DSH、server、client及CLI出口。
+作者对照宿主摘要介绍范围压缩及按需恢复。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-{
-  "name": "billion-context",
-  "version": "0.1.212",
-  "description": "A context-compression plugin \u2014 small context windows (a 100K context is enough), 5x fewer tokens, month-long single sessions (billions of tokens), and compression quality \u2014 for all agents: pi, OpenCode, Codex, Claude Code, and more. billion-context is all you need.",
-  "type": "module",
-  "main": "dist/index.js",
-  "exports": {
-    ".": "./dist/agent/dsh-native.js",
-    "./server": "./dist/agent/opencode-native.js",
-    "./dsh": "./dist/agent/dsh-native.js",
-    "./dsh-compaction-gate": "./dist/agent/dsh-compaction-gate.js",
-    "./package.json": "./package.json",
-    "./dsh/package.json": "./package.json",
-    "./client": "./dist/agent/dsh-native-client.js"
-  },
-  "bin": {
-    "bili": "./dist/index.js",
-    "bili-proxy": "./dist/index.js"
-  },
-  "scripts": {
-    "build": "npm --prefix kernel run build && npm --prefix pi-subagents run build && tsup && node scripts/write-build-info.mjs && node scripts/check-dist-import-annotations.mjs && node scripts/check-dist-external.mjs",
-    "prepare": "node scripts/check-dist-ready.mjs",
-    "registry:snapshot": "node scripts/update-registry-snapshot.mjs",
-    "codex-models:snapshot": "node scripts/update-codex-models-snapshot.mjs",
-    "pretypecheck": "npm --prefix kernel run build && npm --prefix pi-subagents run build",
+`billion-context` sits between **any** agent and its model API, rewriting Anthropic/OpenAI streams with [acp-kernel](https://github.com/ranxianglei/acp-kernel) compression. The model decides **when** and **what** to compress into high-fidelity summaries — not a hard truncation limit.
+
+## Why
+
+Long coding sessions blow up context. Each provider charges per token, and once you pass the context window the session degrades or dies. `billion-context` compresses consumed conversation into layered summaries so you can run a single session for days — billions of tokens through one context window.
+
+Unlike a host's built-in summarizer, compression here is **incremental, reversible, and prefix-cache friendly**: summaries are written in small ranges, can be decompressed on demand, and the cache prefix stays intact.
+
+## How it works
+
+![How it works](docs/how-it-works.en.svg)
+
+### Context-management tools
+
+The proxy injects four context-management tools into the conversation; the model calls them itself as context grows, and the proxy executes `compress` server-side so folded ranges stay summarized in history until restored:
+
+- **`compress`** — fold a message range into a detailed summary.
+- **`decompress`** — restore a compressed range when exact details are needed again.
+- **`search_context`** — keyword search over compressed summaries and visible messages.
+- **`acp_status`** — context-usage overview plus which ranges are still compressible.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[package.json:95-129](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/package.json#L95-L129)
+**依据 2 · 作者声明**：[README.md:404-413](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/README.md#L404-L413)
 
-Node和发布文件/DSH声明。
+宿主历史文件仍增长是作者说明。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（10行）</summary>
 
 ```text
-  "engines": {
-    "node": ">=20"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "CONFIGURATION.md",
-    "CONFIGURATION.zh-CN.md",
-    "dist",
-    "dsh.bundle.patch.yml",
-    "hermes-plugin",
-    "paper/*.md",
-    "paper/figures/*.png",
-    "website/articles.json",
-    "website/blog/posts"
-  ],
-  "pi": {
-    "image": "https://raw.githubusercontent.com/ranxianglei/billion-context/master/docs/logo.png",
-    "extensions": [
-      "./dist/agent/pi-native.js"
-    ]
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./dsh.bundle.patch.yml"
-    },
-    "client": {
-      "platform": "web"
-    }
-  }
-}
+**Does compression shrink my client's own conversation file?** No — the most
+common surprise in very long sessions (#5796). Compression shrinks **what is
+sent to the model**: every outgoing request is rebuilt from live blocks plus
+summaries, so the wire stays small however long the conversation runs. The
+client's stored history is user data — bili never rewrites it. On dsh the
+host's auto-compaction is additionally disabled while bili is active (two
+compressors must not fight over one history, #1772/#2474/#3354), so the
+host-side file grows with every turn: each turn takes longer as it grows
+(measured: tens of seconds per turn at ~30K messages, #5796), and the
+practical convergence path is to **start a new session** when it gets heavy.
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/agent/dsh-native-client.ts:1106-1113](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native-client.ts#L1106-L1113)
+**依据 3 · 源码核查**：[dsh.bundle.patch.yml:21-39](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/dsh.bundle.patch.yml#L21-L39)
 
-Web真实settings与bundle配置slot注册。
-
-```text
-    ctx.slots.inject(
-        "settings.section",
-        () => ctx.slots.register({ name: "settings.section", id: "bili", order: 100, label: () => t("nav"), locale: NS }, panel(true)),
-    );
-    ctx.slots.inject(
-        "plugins.bundle.config",
-        () => ctx.slots.register({ name: "plugins.bundle.config", key: "billion-context", locale: NS }, panel(false)),
-    );
-```
-
-**依据 4 · 源码核查**：[dsh.bundle.patch.yml:20-38](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/dsh.bundle.patch.yml#L20-L38)
-
-真实Host双入口与compaction/preset接线。
+固定包插入两个宿主模块并改变压缩配置。
 
 <details>
 <summary>查看原文（19行）</summary>
 
 ```text
-# dsh.profile.bundles instead.
 - insert:
     - id: bili-native
       name: billion-context
@@ -339,54 +281,77 @@ Web真实settings与bundle配置slot注册。
 - id: preset-minimal
   inject: [biliBasicCompactionPolicy]
 - id: preset-cordis
+  inject: [biliBasicCompactionPolicy]
 ```
 
 </details>
 
-**依据 5 · 作者声明**：[README.md:1-7](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/README.md#L1-L7)
+**依据 4 · 源码核查**：[src/decompress-shared.ts:219-246](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/decompress-shared.ts#L219-L246)
 
-作者压缩/倍率定位。
+回读按块号与 full 参数选择内容，可能退回摘要。
+
+<details>
+<summary>查看原文（28行）</summary>
 
 ```text
-# billion-context
+    const full = args.full === true || args.full === "true";
+    const cached = ctx.session.blockContents.get(blockId);
+    let body: string;
+    let count: number;
+    if (cached) {
+        // Honor the full flag: `one` = direct msgs + nested child summaries,
+        // `full` = all original messages. Returning the cached full text
+        // unconditionally would break the default one-level semantics.
+        // `one === null` means the two views were byte-identical at cache
+        // time and deduped to one copy (#401).
+        const view = full ? cached.full : (cached.one ?? cached.full);
+        body = view.text;
+        count = view.count;
+    } else {
+        const collected = collectBlockContent(ctx.session.state, block, ctx.compressMessages ?? ctx.messages, { full });
+        body = collected.text || block.summary;
+        count = collected.count;
+    }
+    // #1336: retrieve-quality proxy — a whole-block restore where a precise
+    // path existed (per-message coverage recorded AND CCR armed ⇒ range-restore
+    // or targeted acp_retrieve would have sufficed) is the failure shape plan-
+    // aware search steering exists to prevent.
+    ctx.session.stats.wholeBlockRestores = (ctx.session.stats.wholeBlockRestores ?? 0) + 1;
+    if (coveredRefSpan(ctx.session.state, block) !== null && ccrEnabled(ctx.session)) {
+        ctx.session.stats.wholeBlockRestoresPreciseAvailable = (ctx.session.stats.wholeBlockRestoresPreciseAvailable ?? 0) + 1;
+    }
 
-<p align="center"><a href="./README.md">English</a> | <a href="./README.zh-CN.md">中文</a></p>
-
-<p align="center"><strong>Context-compression plugin</strong> — <em>billion-context is all you need.</em></p>
-
-<p align="center"><sub>small context windows (100K is enough) · <em>5× fewer tokens</em> · month-long single sessions (billions of tokens) · high compression quality</sub></p>
+    const header = `[Block ${blockId} content — ${count} item(s)${full ? ", full" : ""}]`;
 ```
+
+</details>
 
 #### 缺口
 
-- 未独立比较原生摘要保真、当前版本倍率及其他宿主。
-  **影响**：不能仅因长会话宣传推荐所有长任务。
-  **进一步探讨**：选一个脱敏长期任务，在相同模型/验收题下比较原生摘要、人工换窗和本插件。
+- 当前 DSH 固定版本没有与手工决策文档的同任务对照
+  **影响**：无法量化保真或节省是否覆盖切换成本
+  **进一步探讨**：用相同早期约束和验收脚本比较两种做法的合格交付
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · DSH压缩调用如何进入当前会话并产生可区分结果？
+### Q02 · DSH 发出的模型请求和压缩工具怎样归属于同一会话？
 
-**研究主题**：功能与机制、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用
 
 #### 完整回答
 
-native从代理manifest动态注册真实Host工具，execute读取当前活base，取exec.agent.session.id且必须非空，forwardTool用其作为conversationId而非信模型参数，附nativeCaller；代理端据会话/见证等路由，不能由此声称公开API存在加密身份认证。管理入口本身有隧道标记拒绝、loopback和Host/Origin可信名门禁，这是本机信任边界，非多用户租户隔离。
-
-handlePluginTool在同会话锁内读取remembered processed/original快照，compressMessages另传原始历史，executeProxyToolAsync分派compress到applyConfiguredCompression、decompress到共享恢复。默认压缩用模型已提交的summary/range；配置externalSummary时才另调摘要plan，取消/状态revision变化后拒绝提交，并能返回只成功部分范围的partial。applyRanges调用kernel：kernel先clone状态并计算保护区，再处理范围；Host还有覆盖不丢与net shrink等提交前门禁，之后换session.state并缓存新块原文。摘要短并不证明摘要正确，门禁不是语义验收或可信人工审批。
-
-传输ok=true只表示工具执行，另有outcome/blocksCreated；forwardTool将failure/refused标failed，DSH execute抛错让宿主显示失败；partial附文本说明。无错误但无可折范围可返回applied且blocksCreated0的no-op，不能由success统计说有效压缩已发生。
+主模块向代理取工具描述并注册到宿主。执行时取当前代理地址和调用 Agent 的会话 ID，缺任一项就报错，再把业务拒绝转成宿主工具错误。模型请求另走 fetch 与 WebSocket 拦截。工具就绪且常规宿主归属有效时，身份回调把会话 ID 写进代理头。无归属时会尝试从已知会话的续传内容认领，显式声明的模型端点也能先通过接管门槛。原始模型 URL 在普通未接管条件下可直发，识别为超窗的请求可能本地拒绝，可辨识的宿主压缩请求还会尝试分流给代理。代理可达也可能只有匿名转发，此时 /acp 会提示工具未注册。需同时检查工具、会话归属和代理，才可识别会话仍可对话但压缩已失效的情况。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/agent/dsh-native.ts:982-1013](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L982-L1013)
+**依据 1 · 源码核查**：[src/agent/dsh-native.ts:985-1014](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L985-L1014)
 
-manifest到真实注册和状态。
+读取代理清单并注册工具。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
 async function registerTools(ctx: PluginContext): Promise<void> {
@@ -419,29 +384,18 @@ async function registerTools(ctx: PluginContext): Promise<void> {
         }
         register.toolsReady = true;
         register.failStreak = 0;
-        register.lastRegistrationError = undefined;
-    })()
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/agent/dsh-native.ts:917-944](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L917-L944)
+**依据 2 · 源码核查**：[src/agent/dsh-native.ts:929-945](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L929-L945)
 
-session取自Host、活base、失败抛错。
+工具读取实时代理地址、宿主会话 ID 和取消信号。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-function toolDefinition(tool: ManifestTool): ToolDefinition {
-    return {
-        name: tool.name,
-        description: tool.description,
-        parameters: tool.inputSchema,
-        output: {
-            schema: { type: "string" },
-            render: (_args, value) => [{ type: "text", text: typeof value === "string" ? value : String(value ?? "") }],
-        },
         execute: async (args, exec) => {
             // #983: read the LIVE base — a respawn after a proxy death moves
             // the origin, and a captured base would keep firing at a dead port.
@@ -459,107 +413,199 @@ function toolDefinition(tool: ManifestTool): ToolDefinition {
             if (out.failed) throw new Error(out.text);
             return out.text;
         },
-    };
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/agent/dsh-native.ts:2366-2408](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L2366-L2408)
+
+门控有端点声明、常规归属、续传认领与拒绝。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+    state.takeoverGate = (url, body, init) => {
+        // #1295: an operator-declared endpoint is explicitly "this URL IS my
+        // model API" — declaration outranks heuristic attribution (a provider
+        // plugin's LLM call may run outside dsh's ALS initiator scope). The
+        // proxy-side body disambiguation still guards against same-path
+        // non-conversation payloads being misrouted.
+        if (matchModelEndpoint(getDeclaredModelEndpoints(), url) !== undefined) return true;
+        const attr = attributionOf(ctx);
+        if (attr.state === "ok") {
+            threwStreak = 0;
+            threwGiveUpNoticed = false;
+            noteAttrRecovery();
+            return true;
+        }
+        // #4082: before refusing an unattributed dispatch, try the negotiated
+        // recall — the body itself may prove it is a known session's
+        // continuation (retry / model switch shape). A claim here routes the
+        // request onto the plugin lane with the negotiated sid; refusal below
+        // stays byte-identical when there is no evidence. #4829: the claim may
+        // now decode content-encoded bodies, so this arm settles async — the
+        // gate contract already tolerates Promise verdicts (threw arm).
+        if (attr.state === "none") {
+            // #4829 review: without init there is no body to decode and the
+            // claim can never succeed — settle synchronously. Both gate
+            // consumers await the verdict today (fetch lane since #4829, WS
+            // lane inside its deferred window since #5838), so this is a fast
+            // path, not a verdict-class contract.
+            if (init === undefined) {
+                threwStreak = 0;
+                threwGiveUpNoticed = false;
+                return refuseUnattributed(url, attr, body, init);
+            }
+            return maybeNegotiatedClaim(url, init).then((claimed) => {
+                if (claimed !== undefined) {
+                    // Deliberately NOT noteAttrRecovery(): the host attribution
+                    // is still broken — the health signal stays honest; the
+                    // REQUEST is what got rescued, not the initiator scope (#4082).
+                    return true;
+                }
+                threwStreak = 0;
+                threwGiveUpNoticed = false;
+                return refuseUnattributed(url, attr, body, init);
+            });
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/agent/dsh-native.ts:2551-2565](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L2551-L2565)
+
+工具就绪且归属有效才写 DSH 会话头。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+    state.headersFor = (_url) => {
+        maybeRetry(ctx);
+        if (!register.toolsReady) return undefined;
+        const attr = attributionOf(ctx);
+        if (attr.state !== "ok") return undefined;
+        const sid = attr.sid;
+        ensureDshTitleReported(sid);
+        // #2381: size this request against the model IT routes to — session
+        // header first, global default only as fallback. Stamping reads ONLY
+        // that key's own entry, so a mismatched model's numbers can never be
+        // sent (the proxy-side exact-match gate stays as defense in depth).
+        const target = sessionModelTargetOf(ctx) ?? globalModelTarget(modelInfo.services);
+        refreshModelInfo(register.base, target);
+        const headers: Record<string, string> = { "x-bili-plugin": "dsh", "x-bili-plugin-conversation": sid };
+        // #3370: the incremental-turn marker (and, since #3329, the turn id)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/agent/dsh-native.ts:2905-2908](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L2905-L2908)
+
+安装 fetch 与 WebSocket 拦截。
+
+```text
+export function installDshIntercepts(state: NativeInterceptState): void {
+    installNativeFetchIntercept(state);
+    installNativeWebSocketIntercept(state);
 }
 ```
 
-</details>
+**依据 6 · 源码核查**：[src/agent/native-intercept.ts:2074-2093](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/native-intercept.ts#L2074-L2093)
 
-**依据 3 · 源码核查**：[src/agent/shared.ts:379-407](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/shared.ts#L379-L407)
-
-真实POST/nativeCaller和outcome/partial转换。
+原始 URL 分支区分宿主压缩、超窗和直发。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
-export async function forwardTool(proxyBase: string, conversationId: string, tool: string, args: unknown, signal?: AbortSignal, nativeCaller: boolean = false, toolCallId?: string): Promise<ForwardedToolResult> {
-    const body: { conversationId: string; tool: string; args: unknown; nativeCaller?: boolean; toolCallId?: string } = { conversationId, tool, args: args ?? {} };
-    if (toolCallId !== undefined) body.toolCallId = toolCallId;
-    // #2072: host-native agents (pi / dsh / opencode) stamp a per-call id minted
-    // by the host's own session manager — declare it so a stale sibling witness
-    // can neither redirect nor fail-closed the call (ladder rung 0, #2024/#2016).
-    // Truthiness guard (not .length): a host passing a non-string id degrades to
-    // the legacy id-less wire instead of throwing (same shape as src/mcp.ts).
-    if (nativeCaller && conversationId) body.nativeCaller = true;
-    const { ok, status, json } = await fetchJson(`${proxyBase}/__bili/plugin/tool`, {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(body),
-    }, effectiveToolTimeoutMs(proxyBase, tool), signal);
-    const data = json as { ok?: boolean; result?: string; error?: string; outcome?: unknown; blocksCreated?: unknown } | undefined;
-    if (!ok || !data?.ok) {
-        throw new Error(`bili proxy tool ${tool} failed (${status}): ${data?.error ?? "unknown error"}`);
-    }
-    const outcome = parseToolOutcome(data.outcome);
-    const blocksCreated = parseBlocksCreated(data.blocksCreated);
-    let text = data.result ?? "";
-    // #2752: a partial fold must stay distinguishable on lanes whose host shape
-    // carries no structured state — the note rides the text. Applied/refused/
-    // failure envelopes keep their exact historical bytes (no note).
-    if (outcome === "partial") text += `\n${partialOutcomeNote(blocksCreated)}`;
-    const out: ForwardedToolResult = { text, failed: outcome === "failure" || outcome === "refused" };
-    if (outcome !== undefined) out.outcome = outcome;
-    if (blocksCreated !== undefined) out.blocksCreated = blocksCreated;
-    return out;
+                if (fetchMethodOf(input, init) === "POST" && await dshCompactionMarkerInBody(input, init)) {
+                    const compactionOrigin = await readyOrigin(state);
+                    if (compactionOrigin !== undefined) {
+                        const diverted = `${compactionOrigin}/bili/${url}`;
+                        const stamped = withHeaders(makeTarget(diverted), hoplessForLoopback(diverted, init), { [BILI_PASSTHROUGH_HEADER]: "1" });
+                        state.onDispatch?.(diverted, "rewrite");
+                        return send(stamped.input, stamped.init);
+                    }
+                }
+                // #2924 direction 1: a provably-oversized body that the gate
+                // could not claim fails LOCALLY (422, host-visible) instead of
+                // riding #1117's direct send into a guaranteed upstream 400 —
+                // on a >window local history that 400 kills the whole session,
+                // because every later request carries the same history.
+                if (verdict === "refuse-oversized" || verdict === "refuse-oversized-unattributed") {
+                    state.onDispatch?.(url, "refused");
+                    return verdict === "refuse-oversized" ? oversizeRefusal(url) : unattributedOversizeRefusal(url);
+                }
+                return directSendOrRefuse(url, input, init);
+            }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/server/admin.ts:208-235](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/server/admin.ts#L208-L235)
+**依据 7 · 源码核查**：[src/agent/dsh-native.ts:1636-1659](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L1636-L1659)
 
-管理面隧道、回环与可信Origin/Host门禁。
+状态区分工具未就绪及读到其他会话的回退。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-    // gates below always judge a path, never a full URL.
-    const isAdminPath = isManagementPath(req.url);
-    // #409: management must never be reachable THROUGH the bili tunnel, not
-    // even from a loopback client: the tunnel's inner connection originates
-    // from the proxy itself, so the remoteAddress gate alone is satisfied and
-    // a `--host 0.0.0.0` peer could otherwise PUT /__bili/config over the
-    // tunnel. forward() stamps this marker on every /bili/ absolute-URL
-    // forward; clients have no legitimate reason to send it, and a spoofed
-    // value only locks the spoofer out of admin paths.
-    if (isAdminPath && headerValue(req, BILI_TUNNEL_HEADER) !== undefined) {
-        res.writeHead(403, { "content-type": "application/json" });
-        res.end(JSON.stringify({ error: "management endpoints are not reachable through the bili tunnel" }));
-        return;
+    // #3380 P3: wire-mode exposure — the proxy answers but the local tools are
+    // down, so every model request rides bili WITHOUT identity headers
+    // (anonymous zero-fold sessions, no compression). Say so in the panel the
+    // user already looks at instead of letting it stay silent.
+    const wireNote = !register.toolsReady && !register.dead
+        ? `⚠️ bili tools NOT registered — model requests ride bili WITHOUT identity headers (wire mode: no compression, anonymous sessions). Last error: ${register.lastRegistrationError ?? "unknown"}. Restart dsh to restore; retries continue in the background.\n\n`
+        : "";
+    // #1677: the command executor hands us the invoking session via the invocation —
+    // DSH never establishes the AsyncLocalStorage boundary on the command path, so
+    // currentInitiator() is always empty here and relying on it made /acp silently
+    // show ANOTHER (most-recently-active) session's panel. Prefer the invocation's
+    // agent session id; fall back to ALS attribution, then the latest-session fallback.
+    const sid = invocationSidOf(invocation) ?? sessionIdOf(ctx);
+    let fellBackToLatest = false;
+    let status: Record<string, unknown> | undefined = sid !== undefined ? await fetchStatus(base, sid) : undefined;
+    if (status === undefined) {
+        fellBackToLatest = true;
+        status = await fetchStatusLatest(base);
     }
-    if (isAdminPath && !isLoopbackAddress(req.socket.remoteAddress)) {
-        res.writeHead(403, { "content-type": "application/json" });
-        res.end(JSON.stringify({ error: "management endpoints are loopback-only; access denied for " + (req.socket.remoteAddress ?? "unknown") }));
-        return;
-    }
-    // localPort, not opts.port: when listening on port 0 (dynamic assignment,
-    // programmatic embedding, tests) the real port differs from opts.port and
-    // pinning to the configured value would 403 every admin request.
-    if (isAdminPath && !isTrustedAdminOrigin(req.headers.origin, req.headers.host, adminTrustedHostnames(opts.host))) {
-        res.writeHead(403, { "content-type": "application/json" });
-        res.end(JSON.stringify({ error: "management request origin does not match the local bili UI" }));
-        return;
-    }
-    if (req.method === "GET" && req.url === "/__bili/stats") return sendStats(res);
+    const panel = status?.panel;
+    if (status && typeof panel === "string" && panel.length > 0) {
+        // A panel reached through the latest-fallback belongs to some OTHER session —
+        // say so instead of presenting foreign data as the caller's own (#1677).
+        return { kind: "success", text: `${wireNote}${fellBackToLatest ? `${latestSessionNote(status, sid)}\n\n` : ""}${panel}` };
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/plugin.ts:2210-2253](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/plugin.ts#L2210-L2253)
+#### 缺口
 
-同会话锁、原始快照与实际工具执行。
+- 同模型端点的并发会话、归属缺失和重连在目标宿主上的效果未知
+  **影响**：单次看到代理请求无法支持长期归属稳定
+  **进一步探讨**：用两个标记不同的会话交错发送并对照会话 ID、工具结果和代理路径
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 范围压缩成功后，回读可恢复哪些材料，失败怎样传给使用者？
+
+**研究主题**：功能与机制、缺陷与关键质疑
+
+#### 完整回答
+
+原生工具在代理中持有会话内存锁，读取消息快照并按有效配置分派压缩或回读。普通范围折叠为新块尝试缓存单层及完整两个视图。回读优先用缓存，单层允许保留嵌套子摘要，完整视图尝试读原文。缺缓存时从仍可访问的消息重建，无可用文本才退回块摘要。宿主压缩前的归档块会明确失败。长文本可返回本地文件位置，写入异常另有回执。成功头的 full 只反映请求参数，拿到标题或文件仍要核对正文和条数。工具传输、业务状态和保存是三个不同条件。代理把业务状态放入响应，标脏只排队持久化。客户端把取消信号传给 HTTP fetch，而对应服务端 admin 调用未向处理器传入请求断开信号。客户端取消后需要回查服务端是否已经开始或应用压缩。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/plugin.ts:2410-2447](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/plugin.ts#L2410-L2447)
+
+会话锁内取快照及有效配置。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
-    delete args.conversation_id;
-    const callId = typeof parsed.toolCallId === "string" ? parsed.toolCallId : `${PLUGIN_FOLD_CALLID_PREFIX}${Date.now().toString(36)}`;
-    acquireInFlight(session);
-    let result: ProxyToolResult | undefined;
-    let retrievalExport: RetrievalExport | undefined;
-    try {
         result = await withSessionLock(session, async () => {
             if (parsed.expectedRevision !== undefined) {
                 try {
@@ -602,12 +648,36 @@ export async function forwardTool(proxyBase: string, conversationId: string, too
 
 </details>
 
-**依据 6 · 源码核查**：[src/loop/core.ts:389-424](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/loop/core.ts#L389-L424)
+**依据 2 · 源码核查**：[src/session.ts:1565-1576](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/session.ts#L1565-L1576)
 
-compress/decompress真实分派。
+锁是会话对象的进程内 Promise 链。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（12行）</summary>
+
+```text
+export async function withSessionLock<T>(session: Session, fn: () => T | Promise<T>): Promise<T> {
+    const prev = session.lockChain ?? Promise.resolve();
+    let release!: () => void;
+    const done = new Promise<void>((resolve) => { release = resolve; });
+    session.lockChain = prev.then(() => done);
+    await prev;
+    try {
+        return await fn();
+    } finally {
+        release();
+    }
+}
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/loop/core.ts:431-460](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/loop/core.ts#L431-L460)
+
+按配置分派压缩和回读。
+
+<details>
+<summary>查看原文（30行）</summary>
 
 ```text
 export async function executeProxyToolAsync(
@@ -640,177 +710,23 @@ export function executeProxyTool(
     if (toolName === "decompress") {
         return resolveDecompress(args, ctx);
     }
-    if (toolName === "search_context") {
-        return executeSearchContextTarget(args, ctx.core, ctx.session.id, ctx.session.state, ctx);
-    }
-    if (toolName === "acp_status") {
-        return handleAcpStatus(args, ctx);
-    }
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/external-summary-compress.ts:37-60](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/external-summary-compress.ts#L37-L60)
+**依据 4 · 源码核查**：[src/stream.ts:1365-1389](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/stream.ts#L1365-L1389)
 
-外部摘要可选及取消初检。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-export async function applyConfiguredCompression(input: unknown, ctx: RewriteCtx, callId?: string, signal?: AbortSignal): Promise<ProxyToolResult> {
-    if (signal?.aborted) return compressResult("[Compression FAILED: cancelled. Nothing compressed.]", "refused", 0);
-    // The plan rides the request Config rail (#833: ctx.config is the
-    // session's effective Config — same cascade that produced the wire).
-    let plan;
-    try { plan = configuredSummaryPlan((ctx.config as ResolvedKernelConfig).externalSummary, ctx.session.id); }
-    catch { return compressResult("[Compression FAILED: external summary configuration is invalid. Nothing compressed.]", "refused", 0); }
-    if (!plan) return applyRanges(parseCompressInput(input, callId), ctx);
-    const parsed = parseCompressInput(withOptionalSummaries(input), callId);
-    if (parsed.ranges.length === 0) return applyRanges(parsed, ctx);
-    normalizeRangeOrder(parsed.ranges);
-    recoverEvictedView(ctx);
-    const noView = noVisibleContextRefusal(ctx, parsed.ranges);
-    if (noView) return noView;
-    // #5558: resolve superseded refs BEFORE the probe preview — the preview
-    // judges foldability while applyRanges re-resolves refs on every entry, so
-    // judging on untranslated refs lets an unanchorable stale cite read as "no
-    // change" here yet translate and fold under a synthetic probe summary in
-    // there, committing content without the configured external summarizer.
-    // One projection for judgment AND execution (#3236 discipline).
-    const resolved = supersededRefRejection(parsed.ranges, ctx.session);
-    if (resolved.rejection !== null) return applyRanges({ ...parsed, ranges: resolved.translatedRanges }, ctx);
-    const state = ctx.session.state;
-    const revision = ctx.session.revisionEpoch;
-```
-
-</details>
-
-**依据 8 · 源码核查**：[src/external-summary-compress.ts:116-138](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/external-summary-compress.ts#L116-L138)
-
-摘要后revision/取消门禁与partial。
+折叠时尝试缓存两个视图。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-    const batch = await plan.summarize(work, signal);
-    if (signal?.aborted || ctx.session.state !== state || ctx.session.revisionEpoch !== revision) return compressResult("[Compression FAILED: cancelled or session changed while generating external summaries. Nothing compressed.]", "refused", 0);
-    const successful: ParsedRange[] = [];
-    for (const [index, result] of batch.results.entries()) {
-        if (result.status === "success") successful.push({ ...valid[index], summary: result.summary, compressCallId: newExternalCallId() });
-    }
-    // #3635: full failure description (parity with the preflight log line) so
-    // an over-cap rejection is visible with its length reason, not bare "batch=finished".
-    ctx.log(`[external-summary] completed ${successful.length}/${parsed.ranges.length} range(s); ${describeExternalSummaryFailure(batch)}`);
-    // #4833: the bounded attempt diagnostics (source + budgets + outcomes) ride
-    // the tool result too — enums and numbers only, never payload bytes.
-    if (successful.length === 0) return compressResult(`[Compression FAILED: all configured external summary candidates failed or exceeded their budget. Nothing compressed; do not retry unchanged configuration — summaries longer than the configured cap are rejected whole, so raise compress.maxSummaryLength or request less via per-range summaryMaxChars.] [${describeExternalSummaryFailure(batch)}]`, "refused", 0);
-    const applied = applyRanges({ ...parsed, ranges: successful }, ctx);
-    // Client call arguments carry only an optional hint, never the generated summary.
-    // In-place refolds retain their old call id in the kernel; keep their anchor too.
-    for (const block of ctx.session.state.blocks) {
-        if (before.get(block.blockId)?.restoredInline && !block.restoredInline) block.compressCallId = newExternalCallId();
-    }
-    if (successful.length < parsed.ranges.length && (applied.blocksCreated ?? 0) > 0) return {
-        ...applied, outcome: "partial", text: `${applied.text}\n[External summary: ${parsed.ranges.length - successful.length} selected range(s) were not compressed.]`,
-    };
-    return applied;
-}
-```
-
-</details>
-
-**依据 9 · 源码核查**：[kernel/src/compress.ts:326-363](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/kernel/src/compress.ts#L326-L363)
-
-clone状态与保护区。
-
-<details>
-<summary>查看原文（38行）</summary>
-
-```text
-  function applyCompression(
-    input: ApplyCompressionInput,
-  ): ApplyCompressionResult {
-    const state: CompressionState = cloneState(input.state);
-    // #816 family: a model-authored summary can carry an unpaired surrogate
-    // half — e.g. the model copies a literal \uXXXX escape out of tool output
-    // into the tool-call argument, and JSON.parse of that argument yields a
-    // real lone code unit. Stored verbatim, it poisons every later request
-    // body that re-serializes the state (strict upstreams reject the whole
-    // body, non-retryable). Scrub at ingest so state never carries one. The
-    // wire layer (loop fetchUpstream / relay forward) scrubs again as the
-    // belt-and-braces for already-poisoned persisted state.
-    for (const spec of input.ranges) {
-      if (spec.summary) spec.summary = scrubLoneSurrogates(spec.summary);
-    }
-    // Lazy run-id allocation (#2370): never advance nextRunId on a no-op
-    // failure — the host forkSnapshot fingerprint hashes full state, so a bump
-    // here would churn contextGeneration on every failed manual tool.
-    let allocatedRunId: string | null = null;
-    const runIdOf = (): string => (allocatedRunId ??= allocateRunId(state));
-    let blocksCreated = 0;
-    let tokensCompressed = 0;
-    const errors: string[] = [];
-    const warnings: string[] = [];
-    const notes: string[] = [];
-
-    // Default to the soft-protected zone (recent-N + last user message) when the
-    // caller doesn't pass an explicit set. This makes applyCompression safe by
-    // default; applySingleRange enforces it as a hard backstop.
-    const protectedMessageIds =
-      input.protectedMessageIds ??
-      computeProtectedRefs(
-        input.messages,
-        input.state,
-        input.config,
-        countTokens,
-      );
-
-```
-
-</details>
-
-**依据 10 · 源码核查**：[src/stream.ts:1268-1287](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/stream.ts#L1268-L1287)
-
-无net shrink拒绝后实际提交状态。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-        }
-        if (r.blocksCreated > 0 && touchedBlocks > 0 && netDelta <= 0) {
-            const detail = ranges.map((rg) => `${rg.startRef}–${rg.endRef}`).join(", ");
-            const revNote = revs.length > 0
-                ? ` Note: startId > endId in range(s) ${revs.map((rg) => `${rg.startRef}→${rg.endRef}`).join(", ")} — your refs were reversed and normalized to ascending order before evaluation.`
-                : "";
-            const netDesc = netDelta < 0
-                ? `committing it would grow the context by ${-netDelta} token(s)`
-                : `committing it leaves the context size unchanged`;
-            // #847 repeat-guard: re-issuing the SAME bloated range escalates
-            // advice; deliberately NOT fed into the #2146 circuit breaker — a
-            // too-long summary is recoverable (write a shorter one), so arming
-            // "stop calling compress entirely" would wrongly kill legit folds.
-            const specKey = normalizedSpecKey(ranges);
-            const repeatGuard = recordCompressFailure(ctx.session, specKey);
-            ctx.log(`[acp-proxy: compress REFUSED ${detail} — no net shrink (net delta=${netDelta} tok across ${touchedBlocks} touched block(s)); state left uncommitted, prefix cache untouched]`);
-            const receipt = `[Compression refused: no net shrink — the summary you supplied is not smaller than the range it replaces (${netDesc}). Nothing was folded: no block was created and the context prefix/cache were left untouched.${revNote} Do not re-issue this same range and summary; supply a much shorter summary for the range, target a larger span so the summary shrinks it, or continue your task without compressing.${repeatGuard !== "" ? " " + repeatGuard : ""}]`;
-            return compressResult(receipt, "refused", 0, "gate:no-net-shrink");
-        }
-        ctx.session.state = res.state;
-```
-
-</details>
-
-**依据 11 · 源码核查**：[src/stream.ts:1302-1322](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/stream.ts#L1302-L1322)
-
-新块缓存one/full原文。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
+        // Cache original content for newly-created blocks. At compress time the
+        // source messages are still in ctx.messages (this round's view, before
+        // the next processTurn folds them) — or in ctx.compressMessages when an
+        // EMPTY-view fold recovered its source from the unified store (#3982);
+        // collecting against [] would leave those blocks uncached for later
         // decompress/range-restore. Storing the text here lets decompress work
         // in later rounds where neither carries the originals.
         // Two views are cached so decompress can honor the `full` flag: `one`
@@ -831,213 +747,18 @@ clone状态与保护区。
                 });
             }
         }
-        // #1179 CCR v2 (fold-time storing): the moment a fold lands, its covered
 ```
 
 </details>
 
-**依据 12 · 源码核查**：[src/stream.ts:1204-1226](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/stream.ts#L1204-L1226)
+**依据 5 · 源码核查**：[src/decompress-shared.ts:195-236](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/decompress-shared.ts#L195-L236)
 
-提交前覆盖回退真实门禁。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-        {
-            const coveredAfter = new Set<string>();
-            for (const b of res.state.blocks) {
-                if (!b.active) continue;
-                for (const id of b.effectiveMessageIds) coveredAfter.add(id);
-            }
-            const lostCoverage = new Set<string>();
-            for (const b of ctx.session.state.blocks) {
-                if (!b.active) continue;
-                for (const id of b.effectiveMessageIds) {
-                    if (!coveredAfter.has(id)) lostCoverage.add(id);
-                }
-            }
-            if (lostCoverage.size > 0) {
-                const detail = ranges.map((rg) => `${rg.startRef}–${rg.endRef}`).join(", ");
-                const sample = [...lostCoverage].slice(0, 5).map((id) => saltedMsgIdForLog(id)).join(", ");
-                const specKey = normalizedSpecKey(ranges);
-                const repeatGuard = recordCompressFailure(ctx.session, specKey);
-                ctx.log(`[acp-proxy: compress REFUSED ${detail} — coverage regression: ${lostCoverage.size} previously-folded message(s) would lose ALL covering block(s) (${sample}); committing it grows the live view and can push the local estimate past the model window (#3322). State left uncommitted, prefix cache untouched.]`);
-                const receipt = `[Compression refused: coverage regression — folding these ranges would leave ${lostCoverage.size} already-folded message(s) without any covering block, so the live context view would GROW instead of shrink (and the size estimate can blow past the model window, bricking the session behind permanent preflight rejections). Nothing was folded: no block was created and the context prefix/cache were left untouched. Retry with ranges aligned to whole turns (do not cut through a reasoning/tool-call/result group), target fewer blocks, or continue your task without compressing.${repeatGuard !== "" ? " " + repeatGuard : ""}]`;
-                return compressResult(receipt, "refused", 0, "gate:coverage-regression");
-            }
-        }
-```
-
-</details>
-
-**依据 13 · 源码核查**：[kernel/src/compress.ts:1259-1271](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/kernel/src/compress.ts#L1259-L1271)
-
-pipeline实际以prune生成消息视图。
+归档失败，正常块尝试缓存、当前来源和摘要。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（42行）</summary>
 
 ```text
-const pruneNode: PipelineNode = {
-  name: "prune",
-  run(io, ctx) {
-    return {
-      ...io,
-      messages: prune(io.messages, io.state, {
-        isCompressTool: ctx.config.isCompressTool,
-      }),
-      // #2663: keep the pre-prune resent array reachable so recommend can
-      // judge foldability on the same input class applyCompression sees.
-      effects: { ...io.effects, originalMessages: io.messages },
-    };
-  },
-```
-
-</details>
-
-**依据 14 · 源码核查**：[src/preflight.ts:2105-2122](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/preflight.ts#L2105-L2122)
-
-压缩后重新processTurn/更新状态和有界视图。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-        await yieldToEventLoop();
-        // Re-run the pipeline each round: a successful compress hides its
-        // range behind a new block, changing the visible view; refs stay
-        // stable per-session snapshots (#387), but which ranges are
-        // compressible under them does not.
-        const turn = deps.core.processTurn({
-            messages,
-            state: deps.session.state,
-            config: noEmergencyTruncate(ccrLoopConfig(deps.session, activeConfig)),
-            tokenCount: currentTokens,
-            renderTags: "text-only",
-            contentStore: contentStoreOf(deps.session),
-        });
-        deps.session.state = turn.state;
-        adoptContentStore(deps.session, turn.contentStore);
-        // Absorbed pairs are hidden on the wire, so the fit check must see the
-        // same reduced payload prepare* will actually forward.
-        turn.messages = applyAbsorbView(turn.messages, turn.state, activeConfig, currentTokens);
-```
-
-</details>
-
-**依据 15 · 源码核查**：[src/plugin.ts:2298-2310](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/plugin.ts#L2298-L2310)
-
-transport ok与outcome分离。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-    // #1875: ok stays the transport/execution signal (200 = the tool ran); the
-    // business effect rides additive fields so clients can distinguish an
-    // accepted fold from a kernel refusal without parsing the receipt text.
-    const body: Record<string, unknown> = { ok: true, tool, conversationId };
-    if (result.outcome !== undefined) body.outcome = result.outcome;
-    if (result.blocksCreated !== undefined) body.blocksCreated = result.blocksCreated;
-    body.result = sentResult;
-    if (retrievalExport !== undefined) body.retrievalExport = retrievalExport;
-    res.writeHead(200, { "content-type": "application/json" });
-    res.end(JSON.stringify(body));
-}
-
-// creationTokens = Anthropic cache-write segment (cache_creation_input_tokens):
-```
-
-</details>
-
-**依据 16 · 源码核查**：[src/stream.ts:1343-1363](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/stream.ts#L1343-L1363)
-
-无错误零块no-op仍applied。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-
-        if (r.blocksCreated === 0) {
-            // #4521: the idempotent no-op class — kernel folded nothing because
-            // there was nothing left to fold (every range already covered, or
-            // entirely inside the protected zone), and that is NOT a failure:
-            // no breaker arm, no loop-guard streak, success-shaped receipt.
-            // This was the dominant "compression FAILED, retry, FAILED again"
-            // driver on long sessions (live incident: session 01a18a4d, 4
-            // consecutive refusals 20:09 over ranges that were 100% legal).
-            if (r.errors.length === 0) {
-                const warnText = r.warnings.length > 0 ? r.warnings.join(" ") : "every requested range was already folded or protected.";
-                ctx.log(`[acp-proxy: compress no-op ${detail} → 0 blocks (nothing left to fold; nothing failed)]`);
-                // Reuse the failure-path recovery hint verbatim: a model that
-                // keeps aiming at covered/protected ranges needs the live
-                // pointer (eligible ranges, distillation target, or the explicit
-                // stop wording) — without it the no-op receipt says "do not
-                // resend" but never says what TO do, which is how the retry
-                // loops persisted (#4521). eligibilityFailure stays guarded by
-                // compressionRecovery itself (never a guessed span).
-                const recovery = compressionRecovery(ctx);
-                return compressResult(`[Compression no-op: nothing was folded and nothing failed — ${warnText}${recovery.hint} Continue your current task.]`, "applied", 0, "noop");
-```
-
-</details>
-
-#### 缺口
-
-- 未全文审路由见证阶梯、全部kernel范围门禁及Host权限实现。
-  **影响**：只能确认当前DSH核心链，不保证所有并发分支/用户身份均安全正确。
-  **进一步探讨**：副本中两会话近似内容并发压缩，核实际sid、block范围、partial/refused/no-op各结果，不用HTTP200代替验收。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · decompress能总是恢复原文吗，会不会写文件？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-整块恢复先找kernel块；已归档/原生compaction前内容明确失败。找到块后默认full=false取直接消息和嵌套子摘要，full=true才全层原消息。优先blockContents缓存one/full，缺缓存则从compressMessages或当前messages收集；收不到时body=block.summary、count可为0，所以即使返回内容也不代表原文真的在手。kernel.decompress自身只是block查找，不能凭名称说已完成原文还原。
-
-普通整块读取保持折叠摘要在主历史；返回文本进入工具结果，active块会标restoredInline以便以后原位重新概括，而不是取消所有压缩。toFile有独立路径；超过10000字符会在临时目录创建0600文本，返回路径让read工具读取，写失败返回明确失败收据，不能把恢复一概称纯只读或无敏感数据副本。模型是否会主动读回、后续是否正确使用仍未知。范围恢复、图片、派生会话祖先读取与search有额外路径，本轮不全文验其全部权限/召回/覆盖语义，不外推“所有历史都可搜且无损”。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/decompress-shared.ts:171-234](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/decompress-shared.ts#L171-L234)
-
-模式、归档拒绝、缓存优先与summary回退。
-
-<details>
-<summary>查看原文（64行）</summary>
-
-```text
-export function resolveDecompress(
-    args: Record<string, unknown>,
-    ctx: ProxyToolCtx,
-): ProxyToolResult {
-    // #1995: image recovery is a distinct mode selected by a VALID imageRef — a
-    // non-blank string (mNNNNN ref or "list"), independent of blockId/range,
-    // intercepted first so an image-ref call never trips the blockId gate below.
-    // #2626: key on a NON-BLANK VALUE, not field presence — hosts/models emit
-    // ""/whitespace/null for optional fields, and presence-based dispatch hijacked
-    // the text path (valid blockId + imageRef:"" returned the image-list receipt
-    // instead of restoring the block). Blank/null/undefined ⇒ unspecified → fall
-    // through to block/range restore; a non-string non-null value is a loud param
-    // error, not a silent default to the image list.
-    const ir = args.imageRef;
-    if (ir != null && typeof ir !== "string") {
-        return toolFail('[decompress FAILED: imageRef must be a string (an mNNNNN ref or "list") — omit it to restore a text block]');
-    }
-    if (typeof ir === "string" && ir.trim() !== "") {
-        return resolveImageRestore(args, ctx);
-    }
-    const rawBlockId = args.blockId;
-    if (typeof rawBlockId !== "string" || rawBlockId.length === 0) {
-        return toolFail("[decompress FAILED: blockId is required]");
-    }
     const blockId = rawBlockId.trim();
     const block = ctx.core.decompress(blockId, ctx.session.state);
     if (!block) {
@@ -1078,16 +799,18 @@ export function resolveDecompress(
     } else {
         const collected = collectBlockContent(ctx.session.state, block, ctx.compressMessages ?? ctx.messages, { full });
         body = collected.text || block.summary;
+        count = collected.count;
+    }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/decompress-shared.ts:246-285](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/decompress-shared.ts#L246-L285)
+**依据 6 · 源码核查**：[src/decompress-shared.ts:246-259](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/decompress-shared.ts#L246-L259)
 
-文件阈值/0600/失败及restoredInline实际写状态。
+full 标记取入参，长输出可走文件。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
     const header = `[Block ${blockId} content — ${count} item(s)${full ? ", full" : ""}]`;
@@ -1104,127 +827,228 @@ export function resolveDecompress(
             return toolOk(`${header}\nContent (${body.length} chars) written to: ${outPath}\nUse the read tool to access it.`);
         } catch (e) {
             return exportFailureReceipt(outPath, e, body);
-        }
-    }
-    // #398/#403 + #1294 P2 wiring (dedup of #1316 × #1298): a successful INLINE
-    // whole-block restore hands the block's re-summarization material back to
-    // the model via this tool result, and the client keeps tool results in its
-    // re-sent history — flag restoredInline so a later compress refolds the
-    // block in place (kernel K2) instead of bouncing off "already
-    // compressed". The toFile path above returns BEFORE this point and stays
-    // byte-identical to pre-refold behavior (no flag, no hint — the material
-    // lives in a temp file, not the conversation). Range restores
-    // (startId/endId) return partial content and never reach here; inactive
-    // blocks can never refold.
-    if (!block.active) return toolOk(`${header}\n${body}`);
-    // The kernel result is idempotent — a repeat restore recomputes the same
-    // span, so the hint stays byte-identical across repeats (old contract:
-    // repeat decompress returns identical content). Only the FIRST restore
-    // pays the state write + persist.
-    const marked = markBlockRestoredInline(ctx.session.state, blockId);
-    if (block.restoredInline !== true) {
-        ctx.session.state = marked.state;
-        markDirty(ctx.session);
-        ctx.log(`[acp-decompress-inline] ${blockId}: flagged restoredInline${marked.result?.restoredStartRef ? ` (${marked.result.restoredStartRef}–${marked.result.restoredEndRef})` : ""}`);
-    }
-    return toolOk(`${header}\n${body}\n\n${refoldHint(blockId, marked.result)}`);
-}
-
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[kernel/src/compress.ts:1018-1020](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/kernel/src/compress.ts#L1018-L1020)
+**依据 7 · 源码核查**：[src/plugin.ts:2471-2501](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/plugin.ts#L2471-L2501)
 
-kernel该方法只查块。
-
-```text
-  function decompress(blockId: string, state: CompressionState) {
-    return blockById(state, blockId);
-  }
-```
-
-**依据 4 · 源码核查**：[kernel/src/decompress.ts:154-177](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/kernel/src/decompress.ts#L154-L177)
-
-one/full与保持折叠的读取设计。
+代理调度保存并区分 HTTP 和业务状态。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（31行）</summary>
 
 ```text
-  /** When true, recurse through all nested tiers to original messages. Default: false (one tier up — nested active children stay folded, their summaries shown). */
-  full?: boolean;
-}
-
-/**
- * Collect a block's content as a readable string WITHOUT modifying state.
- *
- * This is the cache-safe decompress primitive: the block stays compressed
- * (folded), its summary stays in place, and the full content is returned as
- * text for the caller to surface (e.g. as a tool result appended to the
- * conversation). Unlike deactivateBlock + prune, this does not mutate the
- * message-array prefix, so prompt cache is preserved.
- *
- * full=false (default): one tier up. Nested ACTIVE children of this block
- *   stay folded; their summaries are rendered in place of their messages.
- *   The block's own direct messages (not covered by any active child) are
- *   rendered in full.
- * full=true: recurse through all nested tiers; every effective message is
- *   rendered in full.
- *
- * Returns { text: "", count: 0 } when the block covers no messages.
- */
-export function collectBlockContent(
-  state: CompressionState,
+    releaseInFlight(session);
+    if (result === undefined) return;
+    // #760b: evidence-based plugin-mode flip. A successful MCP tool execution proves
+    // this session's host owns the bili compression tools, so bind it to plugin mode
+    // (sticky) — the next model request stops injecting the duplicate ephemeral wire
+    // tools. Guarded: only flips a session with NO existing agent binding, never
+    // overriding a pi/omp/opencode plugin or a launcher-registered agent.
+    if (typeof session.metadata.pluginAgent !== "string" && tool !== retrieveToolName(session)) {
+        session.metadata.pluginAgent = "mcp";
+    }
+    markDirty(session);
+    deps.log("info", `[${session.id}] [plugin] tool ${tool} executed via plugin (routed by ${routedBy}, #1685) (${result.text.length} chars, outcome=${result.outcome ?? "n/a"}${result.reason ? `, reason=${result.reason}` : ""})`);
+    // Same deep link on the /acp-cache display surfaces: clients wrap this text in
+    // [acp-cache]/[/acp-cache] markers and strip it from model context by marker
+    // (src/acp-panel.ts). The MCP acp_cache path shares this endpoint — one extra line
+    // is harmless context and lets the model tell the user the link, too.
+    let sentResult = result.text;
+    if (tool === "acp_cache") {
+        const wu = webSessionUrl(deps.webOrigin, session.id);
+        if (wu !== undefined) sentResult = `Web UI: ${wu}\n\n${result.text}`;
+    }
+    // #1875: ok stays the transport/execution signal (200 = the tool ran); the
+    // business effect rides additive fields so clients can distinguish an
+    // accepted fold from a kernel refusal without parsing the receipt text.
+    const body: Record<string, unknown> = { ok: true, tool, conversationId };
+    if (result.outcome !== undefined) body.outcome = result.outcome;
+    if (result.blocksCreated !== undefined) body.blocksCreated = result.blocksCreated;
+    body.result = sentResult;
+    if (retrievalExport !== undefined) body.retrievalExport = retrievalExport;
+    res.writeHead(200, { "content-type": "application/json" });
+    res.end(JSON.stringify(body));
 ```
 
 </details>
 
-#### 缺口
+**依据 8 · 源码核查**：[src/session.ts:1716-1725](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/session.ts#L1716-L1725)
 
-- 未验缓存损坏/原消息缺失、多层语义保真、全文搜索/图片/祖先边界。
-  **影响**：不得承诺无损取回/永不遗忘；敏感内容可落临时文件。
-  **进一步探讨**：埋入独特原文事实，分别正常/删缓存且删来源/原生compact后full读取，核item数、逐字内容和残留文件，不以成功标题当取回。
+调度保存及缓存的实际赋值。
 
-<a id="research-q04"></a>
+<details>
+<summary>查看原文（10行）</summary>
 
-<a id="detail-section-14"></a>
+```text
+/** Mark a session's state as changed so it is persisted on the next debounce.
+ *  Call this after any mutation (processTurn, compress, decompress, orphan GC). */
+export function markDirty(session: Session): void {
+    session.revisionEpoch = (session.revisionEpoch ?? 0) + 1;
+    getStore().scheduleSave(session);
+}
 
-### Q04 · 代理、原生压缩、持久与取消的故障边界是什么？
+/** Record original block content at compress time. */
+export function cacheBlockContent(session: Session, blockId: string, content: BlockContent): void {
+    session.blockContents.set(blockId, content);
+```
 
-**研究主题**：工程质量与复用、缺陷与关键质疑
+</details>
 
-#### 完整回答
+**依据 9 · 源码核查**：[src/agent/shared.ts:387-406](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/shared.ts#L387-L406)
 
-plan可off/attach/spawn，kill-switch优先；启动代理失败记录直连未压缩并arm恢复timer，故插件加载和工具注册不等所有模型请求已被压缩。实际全局fetch拦截将符合条件的上游改为loopback /bili/ URL，并保持session归属；本轮只核代表DSH fetch路径，不保证所有WS/签名/其他传输都被接管。
-
-bundle独立挂无依赖compaction-gate及native，在native非off声明active后，gate在Cordis internal/config树中结构匹配嵌套compaction并改配置，随后provide服务。它针对真实preset而不只顶层auto:false；但依赖内部hook，当前active声明也不证明代理健康。加载失败/门禁缺口与代理直连同时发生时不能假设原生保护自动恢复，须看/acp及真实checkpoint/流量。卸载应移除整个bundle，不能只关gate导致preset缺服务。
-
-withSessionLock确是进程内Promise串行，不是跨进程锁。markDirty调用scheduleSave，并不await落盘；持久层存在writerOff coalesced及debouncedwrite路径，前者失败记录、后者catch标lastSaveLanded=false，flushAll再排空，但工具HTTP成功没有等待该flush。不能承诺工具返回就断电持久。原始日志与block/content store均须备份，底层索引/跨实例/GC全量机制未审。
-
-DSH将exec.signal交给HTTP fetch；但本项实际admin /plugin/tool调用未传signal进deps，而执行层只是读取deps.signal，因此本条HTTP接线没有证明客户端取消能中止服务端压缩/外部摘要。响应超时或取消后，应查状态再重试，不能假定没改；已提交状态也无自动回滚承诺。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/agent/dsh-native.ts:195-214](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L195-L214)
-
-off/attach/spawn决策。
+HTTP 客户端收到取消信号并识别部分应用。
 
 <details>
 <summary>查看原文（20行）</summary>
 
 ```text
-export function shouldBootstrapNativeDsh(env: NodeJS.ProcessEnv): boolean {
-    return nativeBootstrapGate(env, "BILI_NATIVE_DSH");
-}
+    if (nativeCaller && conversationId) body.nativeCaller = true;
+    const { ok, status, json } = await fetchJson(`${proxyBase}/__bili/plugin/tool`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(body),
+    }, effectiveToolTimeoutMs(proxyBase, tool), signal);
+    const data = json as { ok?: boolean; result?: string; error?: string; outcome?: unknown; blocksCreated?: unknown } | undefined;
+    if (!ok || !data?.ok) {
+        throw new Error(`bili proxy tool ${tool} failed (${status}): ${data?.error ?? "unknown error"}`);
+    }
+    const outcome = parseToolOutcome(data.outcome);
+    const blocksCreated = parseBlocksCreated(data.blocksCreated);
+    let text = data.result ?? "";
+    // #2752: a partial fold must stay distinguishable on lanes whose host shape
+    // carries no structured state — the note rides the text. Applied/refused/
+    // failure envelopes keep their exact historical bytes (no note).
+    if (outcome === "partial") text += `\n${partialOutcomeNote(blocksCreated)}`;
+    const out: ForwardedToolResult = { text, failed: outcome === "failure" || outcome === "refused" };
+    if (outcome !== undefined) out.outcome = outcome;
+    if (blocksCreated !== undefined) out.blocksCreated = blocksCreated;
+```
 
-/** Native posture (#809 precedence, opencode plan shape): kill-switches >
- *  attach (BILLION_CONTEXT_ATTACH ?? BILLION_CONTEXT_PROXY) > spawn. A preset
- *  BILLION_CONTEXT_PROXY is the `bili dsh` launcher (or a user attach):
- *  routing is already owned (proxy envs / settings overlay), so we attach —
- *  probe first (#983), stamp plugin headers, rewrite raw model URLs like
- *  spawn mode, and fall back to spawning when the attach target is dead
- *  (at startup, #983, or at runtime, #1130). */
+</details>
+
+**依据 10 · 源码核查**：[src/server/admin.ts:802-809](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/server/admin.ts#L802-L809)
+
+admin 调用没有传入请求级 signal。
+
+```text
+    if (req.method === "POST" && req.url === "/__bili/plugin/tool") {
+        try {
+            const body = await readBody(req);
+            const webOrigin = `http://${opts.host === "0.0.0.0" ? "localhost" : opts.host}:${req.socket?.localPort ?? opts.port}`;
+            return await handlePluginTool(body.toString("utf8"), res, { core, config, log, webOrigin, inlineLane: opts.inlineLane === true });
+        } catch (err) {
+            res.writeHead(err instanceof BodyTooLargeError ? 413 : 400, { "content-type": "application/json" });
+            res.end(JSON.stringify({ ok: false, error: String(err) }));
+```
+
+#### 缺口
+
+- 代理突然退出或请求取消后的实际持久化状态未测
+  **影响**：响应或客户端报错不足以确认恢复后的块状态
+  **进一步探讨**：在工具响应前后分别断开或重启，再检查块号和原文
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 切换代理与宿主压缩各依赖什么，部署和退出怎样避免卡住预设？
+
+**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+包清单要求 Node 20 及以上，导出指向 dist 文件，tsup 映射宿主和浏览器入口。作者要求安装 npm 产物，直接安装源 checkout 缺 dist。启动可附着既有代理或启动本机代理，关闭条件可令主入口提前返回。独立门控仍通过反射注册预设等待的服务，有助于避免停主入口时丢失服务。门控用内部配置钩子找嵌套压缩行并按主入口状态决定是否改写。主入口检查接口形状并给出警告，仍需核对实际配置是否经过钩子。代理可以拒绝识别出的压缩请求，但管不到宿主本地写下的检查点。只停主模块时，补丁里的顶层压缩配置和预设注入仍在。退出走同一 profile 渠道移除整个 bundle 并重启核对，避免单停独立服务而留下预设注入。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:95-105](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/package.json#L95-L105)
+
+声明 Node 下限，包文件包含 dist 和补丁。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "docs/configuration.md",
+    "docs/configuration.zh-CN.md",
+    "dist",
+    "dsh.bundle.patch.yml",
+    "hermes-plugin",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[tsup.config.ts:5-10](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/tsup.config.ts#L5-L10)
+
+宿主入口和门控的构建映射。
+
+```text
+export default [
+defineConfig({
+    entry: ["src/index.ts", "src/mcp.ts", "src/claude-mcp-entry.ts", "src/claude-native-bootstrap.ts", "src/claude-subagent-hook.ts", "src/agent/pi.ts", "src/agent/pi-native.ts", "src/agent/omp.ts", "src/agent/omp-native.ts", "src/agent/opencode.ts", "src/agent/opencode-native.ts", "src/agent/dsh-acp.ts", "src/agent/dsh-native.ts", "src/agent/dsh-compaction-gate.ts", "src/kimi/native-mcp.ts", "src/kimi/bootstrap-hook.ts", "src/zcode/mcp-entry.ts", "src/zcode/bootstrap-hook.ts"],
+    format: ["esm"],
+    target: "node20",
+    platform: "node",
+```
+
+**依据 3 · 源码核查**：[tsup.config.ts:77-96](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/tsup.config.ts#L77-L96)
+
+浏览器构建使用宿主模块加载器与 React。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+defineConfig({
+    entry: { "agent/dsh-native-client": "src/agent/dsh-native-client.ts" },
+    format: ["cjs"],
+    target: "es2020",
+    platform: "browser",
+    external: ["react"],
+    outDir: "dist",
+    clean: false,
+    splitting: false,
+    shims: false,
+    // Keep the .js name (not tsup's default .cjs): this is a browser classic
+    // script, not a node CJS artifact, and package.json points at it as-is.
+    outExtension: () => ({ js: ".js" }),
+    banner: {
+        // Trailing balance: `load({ id, factory: (require) => {` opens call +
+        // object + arrow-body, so the footer closes all three.
+        js: "window.__ModuleLoader__.load({ id: \"billion-context\", factory: (require) => {\nvar module = { exports: {} };\nvar exports = module.exports;\n",
+    },
+    footer: {
+        js: "\nreturn module.exports;\n}});",
+```
+
+</details>
+
+**依据 4 · 作者声明**：[README.md:198-203](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/README.md#L198-L203)
+
+安装及退出渠道和 dist 限制。
+
+```text
+- **dsh:** `dsh plugin --profile <name> add billion-context` is the very
+  command `bili plugin install dsh` drives per profile (npm form only; a git
+  checkout has no published entry — pasting a GitHub address installs source
+  without `dist/` and the bundle never loads) — same end state either way
+  (pnpm into the profile, bundled patch layer mounted by dsh itself); remove
+  through the same channel. See the dsh section below.
+```
+
+**依据 5 · 源码核查**：[src/agent/dsh-native.ts:209-215](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L209-L215)
+
+启动依次检查关闭、附着与启动。
+
+```text
 export function planNativeDsh(env: NodeJS.ProcessEnv): { mode: "off" | "attach" | "spawn"; attachOrigin?: string } {
     if (env.BILLION_CONTEXT_PLUGIN === "0" || env.BILI_NATIVE_DSH === "0") return { mode: "off" };
     if (env.BILI_PROVIDER_REWRITES !== undefined) return { mode: "off" };
@@ -1232,149 +1056,17 @@ export function planNativeDsh(env: NodeJS.ProcessEnv): { mode: "off" | "attach" 
     if (attachOrigin !== undefined) return { mode: "attach", attachOrigin };
     return { mode: "spawn" };
 }
-
-const state: NativeInterceptState = { origin: undefined, ready: Promise.resolve(undefined) };
 ```
 
-</details>
+**依据 6 · 源码核查**：[src/agent/dsh-native.ts:1894-1910](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L1894-L1910)
 
-**依据 2 · 源码核查**：[src/agent/dsh-native.ts:712-739](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L712-L739)
-
-bootstrap失败直连并arm恢复。
+关闭提前返回，其余才声明代理负责压缩。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
-async function bootstrap(): Promise<string | undefined> {
-    // #3616: superseded flights must not bind the newer world's origin plane.
-    const gen = originGen;
-    try {
-        const handle = await ensureProxyRunning(
-            { host: LAUNCHER_DEFAULT_HOST, port: 0, passthrough: false, debug: false, lane: "dsh" },
-            { scriptPath: nativeProxyScriptPath() },
-        );
-        if (gen !== originGen) return handle.origin;
-        state.origin = handle.origin;
-        register.base = handle.origin;
-        // #983: do NOT write BILLION_CONTEXT_PROXY — dsh has no reader for it
-        // here (tools use register.base, /acp uses it too), and a frozen env
-        // turns a later same-process re-apply (cordis deactivate/reactivate)
-        // into an unverified attach to a possibly-dead origin. Reuse across
-        // lifecycles goes through ensureProxyRunning's instance discovery.
-        return handle.origin;
-    } catch (err) {
-        const msg = `proxy bootstrap failed — model traffic goes direct (uncompressed): ${errMessage(err)}`;
-        persistClientEvent(msg);
-        // #4811: a one-shot bootstrap failure must not become permanent. Plan-time
-        // arming normally covers this, but this is where the failure IS KNOWN —
-        // arm the recovery driver here so a base-less register always has a
-        // re-spawn loop behind it. Idempotent; the timer clears itself once
-        // healthy again (#4755 clear condition).
-        armRecoveryTimer();
-        return undefined;
-    }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/agent/dsh-native.ts:2718-2732](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L2718-L2732)
-
-真实acp/acp-cache命令及fetch interceptor安装。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-    ctx.commands.register({
-        name: "acp",
-        description: "Show bili context-compression status",
-        handler: (invocation) => statusOutcome(ctx, invocation),
-    });
-    ctx.commands.register({
-        name: "acp-cache",
-        description: "Prompt-cache reconciliation (same report as the acp_cache tool)",
-        handler: (invocation) => cacheOutcome(ctx, invocation),
-    });
-
-    // node:test drives apply() directly with a mock ctx — never patch
-    // globalThis.fetch from inside a test run.
-    if (process.env.NODE_TEST_CONTEXT === undefined) installNativeFetchIntercept(state);
-}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/agent/native-intercept.ts:1745-1793](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/native-intercept.ts#L1745-L1793)
-
-真实loopback改写/工具gate/发送。
-
-<details>
-<summary>查看原文（49行）</summary>
-
-```text
-        }
-        state.lastUnavailableReason = undefined;
-        everHeldOrigin = true;
-        // Attach mode rewrites exactly like spawn mode (#809 semantics —
-        // opencode's attach probe+rewrite; the V1 fetch patch relies on it to
-        // catch providers without an explicit baseURL). For dsh under the
-        // `bili dsh` launcher this is doubly safe: settings-overlay URLs are
-        // already `/bili/`-shaped and take the routed branch above, and
-        // rewriting a raw upstream URL to the loopback proxy bypasses the
-        // MITM envs entirely (an http loopback target is never proxied).
-        if (url.startsWith(`${origin}/`)) {
-            state.onDispatch?.(url, "self");
-            // #5418: hosts that dial the proxy directly (dsh profile bundles,
-            // #809 attach probes) land here already addressed — stamp + learn
-            // here or their watermark channel silently never seeds.
-            const selfStamp = withHeaders(input, init, pfChannel.pfRequestHeaders(outgoingHeadersOf(input, init) ?? {}));
-            const resp = await send(selfStamp.input, selfStamp.init);
-            pfChannel.pfLearnStamp(outgoingHeadersOf(selfStamp.input, selfStamp.init) ?? {}, resp.status, resp.headers);
-            noteDispatchMode("proxy");
-            return resp;
-        }
-        await waitToolsGate();
-        if (state.beforeSend !== undefined) {
-            try {
-                await state.beforeSend(url, init);
-            } catch (err) {
-                logHostEvent("error", "[native-client]", `bili-native: beforeSend hook failed (${err instanceof Error ? err.message : String(err)}) — request continues (#2399)`);
-            }
-        }
-        const first = makeTarget(`${origin}/bili/${url}`);
-        state.onDispatch?.(`${origin}/bili/${url}`, "rewrite");
-        // #5403/#5418: same single chokepoint as the routed branch — the
-        // rewrite path is where attach-mode hosts (and the V1 fetch patch)
-        // ride the proxy without a settings overlay.
-        const branchExtra = { ...(state.headersFor?.(url) ?? {}), ...pfChannel.pfRequestHeaders(outgoingHeadersOf(input, init) ?? {}), ...(resignExtra ?? {}) };
-        try {
-            const stamped = withHeaders(first, init, branchExtra);
-            const resp = await send(stamped.input, stamped.init);
-            try {
-                pfChannel.pfLearnStamp(outgoingHeadersOf(stamped.input, stamped.init) ?? {}, resp.status, resp.headers);
-                state.onResponse?.(url, resp, outgoingHeadersOf(stamped.input, stamped.init));
-            } catch {
-                // observability hook only — never break the response
-            }
-            noteDispatchMode("proxy");
-            return resp;
-        } catch (err) {
-            // The proxy can die mid-session (its parent watchdog fires when
-            // the FIRST owner exits while later sessions still ride it —
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/agent/dsh-native.ts:1789-1807](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L1789-L1807)
-
-非off声明active。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export function apply(ctx: PluginContext): void {
+export async function apply(ctx: PluginContext): Promise<void> {
     const plan = planNativeDsh(process.env);
     if (plan.mode === "off") return;
     // #3616: a fresh activation is a fresh origin world — in-flight recoveries
@@ -1391,34 +1083,16 @@ export function apply(ctx: PluginContext): void {
     // leaves every row stock while its service still lets the presets boot
     // (disabling the plugin must not brick session creation, #3662).
     declareDshCompactionActive();
-
-    // #2082: a fresh activation invalidates the "host tearing down" verdict.
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/agent/dsh-compaction-gate.ts:11-19](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-compaction-gate.ts#L11-L19)
+**依据 7 · 源码核查**：[src/agent/dsh-compaction-disable.ts:183-207](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-compaction-disable.ts#L183-L207)
 
-独立无依赖入口。
-
-```text
-import { registerCompactionDisable, type CompactionDisableHost } from "./dsh-compaction-disable.js";
-
-type PluginContext = CompactionDisableHost;
-
-export const name = "bili-compaction-gate";
-export const inject: string[] = [];
-
-export function apply(ctx: PluginContext): void {
-    registerCompactionDisable(ctx);
-```
-
-**依据 7 · 源码核查**：[src/agent/dsh-compaction-disable.ts:183-210](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-compaction-disable.ts#L183-L210)
-
-internal/config结构变换后provide。
+挂钩处理嵌套配置并提供服务。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
 export function registerCompactionDisable(ctx: CompactionDisableHost): void {
@@ -1446,330 +1120,46 @@ export function registerCompactionDisable(ctx: CompactionDisableHost): void {
     }
     // Publish only after the middleware is registered; the host owns both lifetimes.
     ctx.reflect?.provide?.(BILI_COMPACTION_DISABLE_SERVICE, Object.freeze({ owner: "billion-context", issue: "#3354" }));
-}
-
-type CompactionOverlayGap = "no-config-hook" | "no-service-provide";
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[src/session.ts:1459-1470](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/session.ts#L1459-L1470)
+**依据 8 · 源码核查**：[src/agent/dsh-native.ts:2845-2862](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L2845-L2862)
 
-真实进程内串行锁。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-export async function withSessionLock<T>(session: Session, fn: () => T | Promise<T>): Promise<T> {
-    const prev = session.lockChain ?? Promise.resolve();
-    let release!: () => void;
-    const done = new Promise<void>((resolve) => { release = resolve; });
-    session.lockChain = prev.then(() => done);
-    await prev;
-    try {
-        return await fn();
-    } finally {
-        release();
-    }
-}
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/session.ts:1612-1615](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/session.ts#L1612-L1615)
-
-markDirty仅scheduleSave。
-
-```text
-export function markDirty(session: Session): void {
-    session.revisionEpoch = (session.revisionEpoch ?? 0) + 1;
-    getStore().scheduleSave(session);
-}
-```
-
-**依据 10 · 源码核查**：[src/persist.ts:2973-2993](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/persist.ts#L2973-L2993)
-
-coalesced失败捕获与下次重试。
+接口探测缺口及本地检查点边界。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-                    settledOk = true;
-                    // #3818 writerOff safety valve REMOVED (#4216/#4242):
-                    // the orphan/reap shape is now representable — its
-                    // contents ride sessions.orphans_json in the same
-                    // transaction as everything else, so writerOff's contract
-                    // ("the index can represent everything I write") holds
-                    // without a JSON-envelope escape hatch.
-                } catch (err) {
-                    // Kernel-store never-throw save discipline: an uncaughtException
-                    // escaping this microtask is fatal in embedded/plugin hosts
-                    // without process-level handlers; the next markDirty retries.
-                    this.log("error", `[persist] writerOff coalesced build failed for ${session.id}: ${String(err)}`);
-                } finally {
-                    this.drainFlushWaiters(session.id, settledOk);
-                }
-            };
-            this.writerOffPending.set(session.id, run);
-            queueMicrotask(() => {
-                if (this.writerOffPending.get(session.id) === run) run();
-            });
-            return;
-```
-
-</details>
-
-**依据 11 · 源码核查**：[src/persist.ts:2995-3045](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/persist.ts#L2995-L3045)
-
-debounced实际write与失败标记。
-
-<details>
-<summary>查看原文（51行）</summary>
-
-```text
-        if (!this.enabled) return;
-        this.tryRecoverSidecar(); // #5188: dirty activity is the "still wanted" signal for a lost sidecar
-        const id = session.id;
-        // #5506: wrap so the settle handler can fingerprint what THIS armed
-        // save built (the builder runs inside the kernel chain, out of reach
-        // of the .then — only this slot observes its output).
-        const guarded = this.guardedBuild(session);
-        const armed: { build: () => PersistedSession; rec: PersistedSession | null } = {
-            build: () => { const r = guarded(); armed.rec = r; return r; },
-            rec: null,
-        };
-        this.saveBuilders.set(id, armed);
-        const existing = this.saveTimers.get(id);
-        if (existing) return;
-        const timer = setTimeout(() => {
-            this.saveTimers.delete(id);
-            const armed = this.saveBuilders.get(id);
-            this.saveBuilders.delete(id);
-            if (!armed) return;
-            // #4788 D2: prove what THIS write covers BEFORE the chain starts
-            // building (the closure reads live state at chain-run time; newer
-            // mutations can only ride along — the spill gate's equality check
-            // against the CURRENT epoch stays conservative). peekSession: the
-            // debounced path does not keep the Session object itself.
-            const proofRevision = peekSession(id)?.revisionEpoch;
-            // Errors are logged inside the kernel write chain; swallowing here
-            // keeps a failed timer write from becoming an unhandledRejection.
-            this.saveWritesInFlight.add(id);
-            void this.store.writeNow(id, armed.build).then(() => {
-                this.stampOwnWrite(id); // #3406: the write LANDED — prove our bytes are on disk
-                if (armed.rec) this.committedMetaFp.set(id, this.metaFingerprint(armed.rec.metadata ?? {})); // #5506: debounced save landed
-                this.noteDurable(id, proofRevision);
-                this.lastSaveLanded.set(id, true);
-                // #4788 D2: discharge the droppable fields once the debounced
-                // save has actually settled — before this PR the trio sat on
-                // landed writes that fired MID-request (#4788), where it saw
-                // inFlight>0 and skipped everything. Each drop re-checks
-                // inFlight itself; the request-end boundary (spillBetweenTurns)
-                // gives the same discharge at every turn edge.
-                this.runIdleSpillIfIdle(id);
-            }).catch(() => {
-                this.lastSaveLanded.set(id, false);
-            }).finally(() => {
-                this.saveWritesInFlight.delete(id);
-                // #5155/#4788 D2: settle waiters even on failure — waiting on a
-                // flush must never wedge a caller past a failed write (the next
-                // turn re-arms the whole path anyway). The verdict tells spill
-                // callers whether a landing proof actually exists.
-                this.drainFlushWaiters(id, this.lastSaveLanded.get(id) === true);
-            });
-        }, this.debounceMs);
-```
-
-</details>
-
-**依据 12 · 源码核查**：[src/persist.ts:3576-3585](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/persist.ts#L3576-L3585)
-
-flushAll排空及关闭。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-    async flushAll(sessions: Iterable<Session> = []): Promise<void> {
-        // #3133: run armed writerOff builds BEFORE the sidecar closes below —
-        // a stray microtask would build against a closed store and burn a
-        // 3-strike disable for no reason.
-        this.drainWriterOffPending();
-        for (const session of sessions) this.saveContentStore(session);
-        await this.flushScheduledSaves();
-        await this.store.flushAll();
-        this.shadow?.close();
-    }
-```
-
-</details>
-
-**依据 13 · 源码核查**：[src/server/admin.ts:797-806](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/server/admin.ts#L797-L806)
-
-实际HTTP调用没有传取消signal。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-    if (req.method === "POST" && req.url === "/__bili/plugin/tool") {
-        try {
-            const body = await readBody(req);
-            const webOrigin = `http://${opts.host === "0.0.0.0" ? "localhost" : opts.host}:${req.socket?.localPort ?? opts.port}`;
-            return await handlePluginTool(body.toString("utf8"), res, { core, config, log, webOrigin, inlineLane: opts.inlineLane === true });
-        } catch (err) {
-            res.writeHead(err instanceof BodyTooLargeError ? 413 : 400, { "content-type": "application/json" });
-            res.end(JSON.stringify({ ok: false, error: String(err) }));
-            return;
+        const isWeb = bundles !== undefined && bundles.includes("@deepseek-ai/dsh-web-app");
+        const gap = detectCompactionOverlayGap(ctx);
+        webProfileWarned = true;
+        if (gap !== null) {
+            // #3806/#5686: overlay failed to latch -> boot-time alarm on ANY profile shape.
+            persistClientEvent(`profile${isWeb ? " bundles include @deepseek-ai/dsh-web-app and" : bundles === undefined ? " shape could not be introspected (older dsh build) and" : " (non-web-app bundle list) and"} the load-time compaction-disable overlay (#3354) could not latch on this dsh build (${gap}) — dsh native auto-compaction is likely ARMED here. bili's wire-level refusal (#1729) refuses routed compaction calls but CANNOT stop dsh writing its checkpoint locally, so a landed checkpoint will destroy the compression substrate and surface later as a 'compression conflict' banner. Apply the #2474 full-snapshot override of preset-standard in your profile's cordis.patch.yml now (a partial snippet silently drops everything not restated; see docs/configuration.md)`);
+        } else if (isWeb) {
+            persistClientEvent("profile bundles include @deepseek-ai/dsh-web-app — its agent presets run their own compaction-basic in nested rows no patch layer can address by id (#1772/#2360); bili disables those preset rows at load time via a vendored overlay (deshark42/dsh-compaction-basic-disable, MIT, #3354; since #4147 the match is structural, covering custom presets too), so dsh native auto-compaction stays OFF in this profile (ACP compression unaffected). If you still see a dsh compaction checkpoint land on a newer/older dsh build — the overlay rides cordis' INTERNAL 'internal/config' hook and is version-sensitive — fall back to the #2474 full-snapshot override of preset-standard in your profile's cordis.patch.yml (a partial snippet silently drops everything not restated; see docs/configuration.md)." + gateCoverageSuffix());
+        } else if (bundles !== undefined && !nonWebTraceLogged) {
+            // #3651: the web-profile note above is the ONLY confirmation that
+            // the #3354 overlay took effect, and it is scoped to dsh-web-app
+            // bundles — every other profile boots silently even though
+            // registerCompactionDisable ran unconditionally. Leave one durable
+            // trace so a field log can tell "overlay registered" from "profile
+            // shape unconfirmed".
+            nonWebTraceLogged = true;
+            persistClientEvent("profile bundles do not include @deepseek-ai/dsh-web-app — the #3354 load-time compaction-disable middleware is registered anyway (it rewrites any entry's nested compaction-basic/command-compact rows through cordis' version-sensitive internal 'internal/config' hook, covering custom presets as of #4147), but no web-profile disable note applies here; if dsh native auto-compaction still lands in this profile, apply the #2474 full-snapshot override of preset-standard (docs/configuration.md) — and note the #1729 wire guard now refuses such native compaction calls unconditionally (the #2028 allowDshCompaction opt-in was removed in #3651)." + gateCoverageSuffix());
         }
 ```
 
 </details>
 
-**依据 14 · 源码核查**：[src/plugin.ts:2238-2253](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/plugin.ts#L2238-L2253)
+**依据 9 · 源码核查**：[dsh.bundle.patch.yml:14-39](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/dsh.bundle.patch.yml#L14-L39)
 
-执行将deps.signal传到工具。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-            const toolResult = await executeProxyToolAsync(tool, args, {
-                core: deps.core,
-                // #833: run proxy tools under the session's last resolved Config
-                // (same values the wire path used), not the base kernelConfig.
-                config: effectiveConfig(session, deps.config),
-                messages,
-                // #2627: compress against the RAW history, not the processed
-                // outbound view — on the Responses wire that view carries the
-                // synthetic acp_turn_sep_* ordering separators, which would be
-                // registered into new blocks' coverage and read back as
-                // permanent drift against the client's unchanged history
-                // (same split as the relay loop ctx).
-                compressMessages: mem && mem.original.length > 0 ? mem.original : undefined,
-                session,
-                log: (m) => deps.log("info", `[${session.id}] [plugin] ${m}`),
-            }, callId, undefined, deps.signal);
-```
-
-</details>
-
-#### 缺口
-
-- 未运行Host门禁/全部传输、持久断电/跨实例、取消后服务端是否已提交。
-  **影响**：生产长会话不能只凭加载或成功响应判断保护/持久/回滚。
-  **进一步探讨**：隔离profile测代理断开、Host compact、写失败及取消后查询块状态；分别记录路由/门禁/状态/落盘，异常退出bundle回原生日志。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 什么条件下能低风险试用，如何退出？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
-
-#### 完整回答
-
-已有DSH且有可丢弃脱敏长任务的开发者，可在单独profile试用含dist的0.1.212包（Node>=20声明，不等所有Node/Host版本已验）；先备份profile和原日志，只启一个独立状态目录实例，核真实工具清单、/acp会话绑定、模型流量到代理与原生compaction门禁，再压缩一个已完成范围，问一个必须恢复细节的问题并核原文。不要直接换生产长期唯一会话。
-
-必需Host tools/commands/agents和相关llm接线、本机代理、兼容Web client/gate、模型调用链、可写状态/临时目录；代理可见模型请求/原文，外部摘要开启时又多一个生成与隐私目的地。省输入不等净账单降低：原模型生成摘要、可选externalSummary、取回重新注入、缓存命中变化、代理/磁盘及人工查摘要都要算；所有倍率/现金/节时未知。首次配置/备份/路由诊断，持续核语义与更新兼容，失败查部分结果/重试/日志，退出移除整个bundle并重启，核原生自动压缩恢复、代理/环境覆盖撤除，按策略处理原文缓存和临时导出。作者写remove渠道不等本轮验证干净清理，自动更新/全部installer修改面未全审。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:95-129](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/package.json#L95-L129)
-
-Node>=20/发布文件和原生DSH。
+独立门控和顶层配置、预设注入共存。
 
 <details>
-<summary>查看原文（35行）</summary>
-
-```text
-  "engines": {
-    "node": ">=20"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "CONFIGURATION.md",
-    "CONFIGURATION.zh-CN.md",
-    "dist",
-    "dsh.bundle.patch.yml",
-    "hermes-plugin",
-    "paper/*.md",
-    "paper/figures/*.png",
-    "website/articles.json",
-    "website/blog/posts"
-  ],
-  "pi": {
-    "image": "https://raw.githubusercontent.com/ranxianglei/billion-context/master/docs/logo.png",
-    "extensions": [
-      "./dist/agent/pi-native.js"
-    ]
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./dsh.bundle.patch.yml"
-    },
-    "client": {
-      "platform": "web"
-    }
-  }
-}
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/agent/dsh-native.ts:77-78](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/agent/dsh-native.ts#L77-L78)
-
-Host必需tools/commands/agents。
-
-```text
-export const name = "bili-native";
-export const inject = ["tools", "commands", "agents"];
-```
-
-**依据 3 · 作者声明**：[README.md:191-208](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/README.md#L191-L208)
-
-作者原生安装/卸载通道。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-````text
-### Option 1 — Native plugin (`bili plugin install pi` / `omp` / `opencode` / `dsh` / `kimi` / `hermes` / `zcode`)
-
-The proxy lives inside the client: install once, then start the client
-exactly as you always do — no launcher command, no env vars, no fixed port,
-no URL edits. Supported today for **pi**, **omp**, **opencode** (1.x and
-2.x), **dsh**, **kimi**, **hermes** and **zcode**:
-
-```bash
-bili plugin install pi          # registers a "billion-context" entry in pi's settings (npm form when bili itself was npm-installed)
-bili plugin install omp         # registers an extensions entry in omp's config.yml (~/.omp/agent/config.yml)
-bili plugin install opencode    # registers the plugin in opencode's real config + disables native auto-compaction
-bili plugin install dsh         # runs 'dsh plugin --profile <name> add billion-context' for every existing profile
-bili plugin install kimi        # writes $KIMI_CODE_HOME/plugins/managed/billion-context/kimi.plugin.json (+ installed.json record); per-session routing block lands in config.toml on first start (Kimi Code >= 2.0.0)
-bili plugin install hermes      # copies the Python plugin into ~/.hermes/plugins/billion-context/ (+ machine-owned bili.json sidecar) and enables it via `hermes plugins enable billion-context`
-bili plugin install zcode       # writes hooks.enabled + a SessionStart hook + mcp.servers.bili into ~/.zcode/cli/config.json; per-session routing lands in the bigmodel provider store on first start
-bili plugin remove <client>     # undo (dsh removes through the same channel; config snapshots go to .bili-bak)
-```
-
-````
-
-</details>
-
-**依据 4 · 源码核查**：[dsh.bundle.patch.yml:14-38](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/dsh.bundle.patch.yml#L14-L38)
-
-bundle整体卸载与preset依赖接线。
-
-<details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（26行）</summary>
 
 ```text
 # #3662: the gate lives in its OWN always-on entry, not in bili-native —
@@ -1797,94 +1187,193 @@ bundle整体卸载与preset依赖接线。
 - id: preset-minimal
   inject: [biliBasicCompactionPolicy]
 - id: preset-cordis
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/external-summary-compress.ts:116-128](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/external-summary-compress.ts#L116-L128)
-
-额外摘要生成和部分失败。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-    const batch = await plan.summarize(work, signal);
-    if (signal?.aborted || ctx.session.state !== state || ctx.session.revisionEpoch !== revision) return compressResult("[Compression FAILED: cancelled or session changed while generating external summaries. Nothing compressed.]", "refused", 0);
-    const successful: ParsedRange[] = [];
-    for (const [index, result] of batch.results.entries()) {
-        if (result.status === "success") successful.push({ ...valid[index], summary: result.summary, compressCallId: newExternalCallId() });
-    }
-    // #3635: full failure description (parity with the preflight log line) so
-    // an over-cap rejection is visible with its length reason, not bare "batch=finished".
-    ctx.log(`[external-summary] completed ${successful.length}/${parsed.ranges.length} range(s); ${describeExternalSummaryFailure(batch)}`);
-    // #4833: the bounded attempt diagnostics (source + budgets + outcomes) ride
-    // the tool result too — enums and numbers only, never payload bytes.
-    if (successful.length === 0) return compressResult(`[Compression FAILED: all configured external summary candidates failed or exceeded their budget. Nothing compressed; do not retry unchanged configuration — summaries longer than the configured cap are rejected whole, so raise compress.maxSummaryLength or request less via per-range summaryMaxChars.] [${describeExternalSummaryFailure(batch)}]`, "refused", 0);
-    const applied = applyRanges({ ...parsed, ranges: successful }, ctx);
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/decompress-shared.ts:246-262](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/decompress-shared.ts#L246-L262)
-
-原文临时文件与失败处理。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-    const header = `[Block ${blockId} content — ${count} item(s)${full ? ", full" : ""}]`;
-    const toFileOut = toFilePointer(args, ctx, header, body);
-    if (toFileOut !== null) return toFileOut;
-    const safeBlockId = blockId.replace(/[^a-zA-Z0-9_-]/g, "-");
-    const outPath = body.length > 10000 ? join(tmpdir(), `acp-decompress-${safeBlockId}-${Date.now()}.txt`) : null;
-    if (outPath) {
-        try {
-            mkdirSync(dirname(outPath), { recursive: true });
-            writeFileSync(outPath, body, { encoding: "utf8", mode: 0o600 });
-            trackedTempFiles.push({ path: outPath, mtimeMs: Date.now() });
-            reapTempFiles();
-            return toolOk(`${header}\nContent (${body.length} chars) written to: ${outPath}\nUse the read tool to access it.`);
-        } catch (e) {
-            return exportFailureReceipt(outPath, e, body);
-        }
-    }
-    // #398/#403 + #1294 P2 wiring (dedup of #1316 × #1298): a successful INLINE
+  inject: [biliBasicCompactionPolicy]
 ```
 
 </details>
 
 #### 缺口
 
-- 未核npm发布包/dist一致性、完整installer/自动更新、真实费用和清理。
-  **影响**：仅隔离观察试用，不推荐直接接唯一生产会话或所有宿主。
-  **进一步探讨**：固定发布包/Host版本后查路由及门禁，跑一个脱敏恢复任务并记录总usage/人工核对，再决定是否扩大；异常完整卸载并核原生能力。
+- 目标宿主构建的内部钩子和预设解析时序未验证
+  **影响**：接口存在仍不足以确定实际配置
+  **进一步探讨**：同一脱敏 profile 对照加载、停主入口及卸载后的预设行为
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 怎样判断这条链是否值得进入日常工作？
+
+**研究主题**：效果与总成本、采用判断
+
+#### 完整回答
+
+适合小范围试用的是反复追溯接口约束、有可隔离 DSH profile 和原始记录的开发者。先在副本里选一个已完成任务范围，标出两条必须回读的约束和一段失败输出，核对 /acp 的会话与块，再折叠与完整回读，最后用恢复事实通过原验收。用同模型、同仓库及输入对照原生压缩加人工记录。现金按每次通过验收的模型费用记录，分别记输入、输出、缓存读写和可能的独立摘要费用。人工单记安装、核对、取回、纠错和退出，另记磁盘增长和每轮延迟。作者的 1,500 题结果使用 v0.1.202 和 Pi Agent，不能代入本次 DSH。若看到最近会话回退、匿名转发、只剩摘要、宿主写入压缩检查点或原验收失败，停止扩大范围，保存记录并回到原 profile。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:65-68](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/README.md#L65-L68)
+
+作者标出基准用较早版本和 Pi Agent。
+
+```text
+
+### 📊 Independent Third-Party Benchmarks
+
+- **[1,500-Item Cross-Benchmark Evaluation (`LongMemEval-S` · `ContextBench` · `MemoryAgentBench`)](./benchmarks/third-party-1500/README.md)** ([中文版](./benchmarks/third-party-1500/README.zh-CN.md)) — head-to-head comparison of `billion-context` (`v0.1.202`) against `full` context and 3 RAG arms (`bm25`, `embedding`, `embedding-rerank`) with `DeepSeek V4.1 Flash`, `Qwen3-Embedding-8B`, `Qwen3-Reranker-4B`, and `Pi Agent`: **#1 on ContextBench** (`0.3097` Utilized F1, `-58.3%` cost vs `full`), **+16.6% over best RAG on LongMemEval-S** (`79.20%` vs `62.60%`, `-71.1%` independent-session cost vs `full`), and **100% survival on 1.48M-token MemoryAgentBench TTL** (`30×` steady-state compression where `full` fails `199/199`).
+```
+
+**依据 2 · 作者声明**：[README.md:382-387](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/README.md#L382-L387)
+
+作者说明状态与缓存命令。
+
+```text
+**What does `/acp` show?** In clients with the native plugin (opencode, dsh,
+hermes), `/acp` renders the ACP status panel of the current conversation
+straight from
+the proxy (session, blocks, compressible ranges, usage); before the first model
+request it shows an idle notice instead. `/acp-cache [full]` prints the cache
+report above.
+```
+
+**依据 3 · 源码核查**：[src/agent/dsh-native.ts:1636-1659](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L1636-L1659)
+
+命令暴露匿名转发和最近会话回退。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+    // #3380 P3: wire-mode exposure — the proxy answers but the local tools are
+    // down, so every model request rides bili WITHOUT identity headers
+    // (anonymous zero-fold sessions, no compression). Say so in the panel the
+    // user already looks at instead of letting it stay silent.
+    const wireNote = !register.toolsReady && !register.dead
+        ? `⚠️ bili tools NOT registered — model requests ride bili WITHOUT identity headers (wire mode: no compression, anonymous sessions). Last error: ${register.lastRegistrationError ?? "unknown"}. Restart dsh to restore; retries continue in the background.\n\n`
+        : "";
+    // #1677: the command executor hands us the invoking session via the invocation —
+    // DSH never establishes the AsyncLocalStorage boundary on the command path, so
+    // currentInitiator() is always empty here and relying on it made /acp silently
+    // show ANOTHER (most-recently-active) session's panel. Prefer the invocation's
+    // agent session id; fall back to ALS attribution, then the latest-session fallback.
+    const sid = invocationSidOf(invocation) ?? sessionIdOf(ctx);
+    let fellBackToLatest = false;
+    let status: Record<string, unknown> | undefined = sid !== undefined ? await fetchStatus(base, sid) : undefined;
+    if (status === undefined) {
+        fellBackToLatest = true;
+        status = await fetchStatusLatest(base);
+    }
+    const panel = status?.panel;
+    if (status && typeof panel === "string" && panel.length > 0) {
+        // A panel reached through the latest-fallback belongs to some OTHER session —
+        // say so instead of presenting foreign data as the caller's own (#1677).
+        return { kind: "success", text: `${wireNote}${fellBackToLatest ? `${latestSessionNote(status, sid)}\n\n` : ""}${panel}` };
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/decompress-shared.ts:223-247](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/decompress-shared.ts#L223-L247)
+
+回读结果同一标题可含摘要。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+    if (cached) {
+        // Honor the full flag: `one` = direct msgs + nested child summaries,
+        // `full` = all original messages. Returning the cached full text
+        // unconditionally would break the default one-level semantics.
+        // `one === null` means the two views were byte-identical at cache
+        // time and deduped to one copy (#401).
+        const view = full ? cached.full : (cached.one ?? cached.full);
+        body = view.text;
+        count = view.count;
+    } else {
+        const collected = collectBlockContent(ctx.session.state, block, ctx.compressMessages ?? ctx.messages, { full });
+        body = collected.text || block.summary;
+        count = collected.count;
+    }
+    // #1336: retrieve-quality proxy — a whole-block restore where a precise
+    // path existed (per-message coverage recorded AND CCR armed ⇒ range-restore
+    // or targeted acp_retrieve would have sufficed) is the failure shape plan-
+    // aware search steering exists to prevent.
+    ctx.session.stats.wholeBlockRestores = (ctx.session.stats.wholeBlockRestores ?? 0) + 1;
+    if (coveredRefSpan(ctx.session.state, block) !== null && ccrEnabled(ctx.session)) {
+        ctx.session.stats.wholeBlockRestoresPreciseAvailable = (ctx.session.stats.wholeBlockRestoresPreciseAvailable ?? 0) + 1;
+    }
+
+    const header = `[Block ${blockId} content — ${count} item(s)${full ? ", full" : ""}]`;
+    const toFileOut = toFilePointer(args, ctx, header, body);
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/external-summary-compress.ts:37-46](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/external-summary-compress.ts#L37-L46)
+
+独立摘要是可选路径。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+export async function applyConfiguredCompression(input: unknown, ctx: RewriteCtx, callId?: string, signal?: AbortSignal): Promise<ProxyToolResult> {
+    if (signal?.aborted) return compressResult("[Compression FAILED: cancelled. Nothing compressed.]", "refused", 0);
+    // The plan rides the request Config rail (#833: ctx.config is the
+    // session's effective Config — same cascade that produced the wire).
+    let plan;
+    try { plan = configuredSummaryPlan((ctx.config as ResolvedKernelConfig).externalSummary, ctx.session.id); }
+    catch { return compressResult("[Compression FAILED: external summary configuration is invalid. Nothing compressed.]", "refused", 0); }
+    if (!plan) return applyRanges(parseCompressInput(input, callId), ctx);
+    const parsed = parseCompressInput(withOptionalSummaries(input), callId);
+    if (parsed.ranges.length === 0) return applyRanges(parsed, ctx);
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/agent/dsh-native.ts:2845-2851](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L2845-L2851)
+
+宿主检查点冲突是具体停止信号。
+
+```text
+        const isWeb = bundles !== undefined && bundles.includes("@deepseek-ai/dsh-web-app");
+        const gap = detectCompactionOverlayGap(ctx);
+        webProfileWarned = true;
+        if (gap !== null) {
+            // #3806/#5686: overlay failed to latch -> boot-time alarm on ANY profile shape.
+            persistClientEvent(`profile${isWeb ? " bundles include @deepseek-ai/dsh-web-app and" : bundles === undefined ? " shape could not be introspected (older dsh build) and" : " (non-web-app bundle list) and"} the load-time compaction-disable overlay (#3354) could not latch on this dsh build (${gap}) — dsh native auto-compaction is likely ARMED here. bili's wire-level refusal (#1729) refuses routed compaction calls but CANNOT stop dsh writing its checkpoint locally, so a landed checkpoint will destroy the compression substrate and surface later as a 'compression conflict' banner. Apply the #2474 full-snapshot override of preset-standard in your profile's cordis.patch.yml now (a partial snippet silently drops everything not restated; see docs/configuration.md)`);
+        } else if (isWeb) {
+```
+
+#### 缺口
+
+- 当前固定版本尚无同任务的净费用、延迟和人工对照
+  **影响**：无法判断长期采用是否划算
+  **进一步探讨**：分别记录账单字段、合格任务数、人工时间和出错处理
 
 <a id="research-q06"></a>
 
 <a id="detail-section-16"></a>
 
-### Q06 · 可迁移的贡献与下一步假设是什么，怎样推翻？
+### Q06 · 能否用可辨识的恢复来源减少代理压缩造成的错误引用？
 
-**研究主题**：贡献与相对优势、新假设与验证
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-贡献是将范围摘要块、one/full原文缓存与恢复、工具效果收据和原生DSH代理/压缩门禁接起来，技术上把一次大摘要替换改为可定位范围与按需回读；no-op/partial/refused和“已恢复正文”分开，可以形成可核状态。它仍不保证摘要包含关键决定，不保证模型看到回读需求，亦可能以缓存/索引/外部摘要复杂度换少输入；没有证据证明新用户群体或工作分工改变。
-
-候选假设是为恢复返回加清晰的来源等级：缓存原文/当前消息收集/仅summary回退，禁止把count0摘要回退显示成等价原文。对同一脱敏长任务埋入精确事实，覆盖缓存正常、来源缺失、原生compact归档三种样本，比现有回复和来源等级提示的事实答对率、错误自信、额外取回调用与总费；若现有item数/失败信息已足够，提示不减少误用或增加的token/人工盖过收益，就推翻。不把该假设记成本版已实现质量保证，也不继承旧版评分。
+待验证假设是给回读增加机器可读的来源和覆盖状态，并在 DSH 工具结果中说明缓存原文、可见消息重建或仅摘要。三个分支目前可产生相同形式的标题，full 随请求参数显示。保留正文和条数，新增来源及可用消息覆盖信息。仅摘要时提示查询原始记录，避免把转述当作原文。用三个脱敏回放条件测试缓存完整、缓存缺失但消息可得、两者都缺失。对照现行输出和加标记的输出，保持正文、模型、任务和 token 预算一致，盲评把转述误引为原文的次数、正确恢复率和附加成本。如果误引未减少，或原文充分时正确率下降及新增人工超出节省，则停止推进。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/decompress-shared.ts:220-245](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/decompress-shared.ts#L220-L245)
+**依据 1 · 源码核查**：[src/decompress-shared.ts:219-247](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/decompress-shared.ts#L219-L247)
 
-缓存与收集/summary回退、count不同来源。
+三种来源共用标题与导出入口。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
+    const full = args.full === true || args.full === "true";
     const cached = ctx.session.blockContents.get(blockId);
     let body: string;
     let count: number;
@@ -1911,106 +1400,53 @@ bundle整体卸载与preset依赖接线。
         ctx.session.stats.wholeBlockRestoresPreciseAvailable = (ctx.session.stats.wholeBlockRestoresPreciseAvailable ?? 0) + 1;
     }
 
+    const header = `[Block ${blockId} content — ${count} item(s)${full ? ", full" : ""}]`;
+    const toFileOut = toFilePointer(args, ctx, header, body);
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/decompress-shared.ts:199-210](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/decompress-shared.ts#L199-L210)
+**依据 2 · 源码核查**：[src/agent/dsh-native.ts:920-944](https://github.com/ranxianglei/billion-context/blob/c26c31ace45a88f42a2ed0ba23df2217d9c1ce99/src/agent/dsh-native.ts#L920-L944)
 
-归档不可恢复的真实反例。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-        // that drops blocks) still carry their preCompactionArchive entry: fail
-        // with the real reason instead of the misleading "not found" — the
-        // model got here by citing a ref from a summary it legitimately saw.
-        const selfArchived = preCompactionArchiveOf(ctx.session)[blockId];
-        if (selfArchived !== undefined) {
-            return toolFail(`[decompress FAILED: block ${blockId} is an archived block (${selfArchived.reason}) — it was removed from live state along with its covered substrate and cannot be restored.]`);
-        }
-        return resolveDerivedDecompress(args, ctx, blockId);
-    }
-    const archived = preCompactionArchiveOf(ctx.session);
-    if (archived[blockId] !== undefined) {
-        return toolFail(`[decompress FAILED: block ${blockId} is a pre-compaction archive — its content was in the history BEFORE the client's native compaction and is no longer reachable (replaced by the client's compaction summary). decompress is unavailable for archived blocks.]`);
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/stream.ts:1343-1363](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/stream.ts#L1343-L1363)
-
-no-op与块数并存。
+宿主工具结果以文本渲染，可以增加来源提示。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-
-        if (r.blocksCreated === 0) {
-            // #4521: the idempotent no-op class — kernel folded nothing because
-            // there was nothing left to fold (every range already covered, or
-            // entirely inside the protected zone), and that is NOT a failure:
-            // no breaker arm, no loop-guard streak, success-shaped receipt.
-            // This was the dominant "compression FAILED, retry, FAILED again"
-            // driver on long sessions (live incident: session 01a18a4d, 4
-            // consecutive refusals 20:09 over ranges that were 100% legal).
-            if (r.errors.length === 0) {
-                const warnText = r.warnings.length > 0 ? r.warnings.join(" ") : "every requested range was already folded or protected.";
-                ctx.log(`[acp-proxy: compress no-op ${detail} → 0 blocks (nothing left to fold; nothing failed)]`);
-                // Reuse the failure-path recovery hint verbatim: a model that
-                // keeps aiming at covered/protected ranges needs the live
-                // pointer (eligible ranges, distillation target, or the explicit
-                // stop wording) — without it the no-op receipt says "do not
-                // resend" but never says what TO do, which is how the retry
-                // loops persisted (#4521). eligibilityFailure stays guarded by
-                // compressionRecovery itself (never a guessed span).
-                const recovery = compressionRecovery(ctx);
-                return compressResult(`[Compression no-op: nothing was folded and nothing failed — ${warnText}${recovery.hint} Continue your current task.]`, "applied", 0, "noop");
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/external-summary-compress.ts:116-138](https://github.com/ranxianglei/billion-context/blob/be611a8566c22ee0a65fb5765365671d47e810d5/src/external-summary-compress.ts#L116-L138)
-
-外部摘要资源/取消与partial。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-    const batch = await plan.summarize(work, signal);
-    if (signal?.aborted || ctx.session.state !== state || ctx.session.revisionEpoch !== revision) return compressResult("[Compression FAILED: cancelled or session changed while generating external summaries. Nothing compressed.]", "refused", 0);
-    const successful: ParsedRange[] = [];
-    for (const [index, result] of batch.results.entries()) {
-        if (result.status === "success") successful.push({ ...valid[index], summary: result.summary, compressCallId: newExternalCallId() });
-    }
-    // #3635: full failure description (parity with the preflight log line) so
-    // an over-cap rejection is visible with its length reason, not bare "batch=finished".
-    ctx.log(`[external-summary] completed ${successful.length}/${parsed.ranges.length} range(s); ${describeExternalSummaryFailure(batch)}`);
-    // #4833: the bounded attempt diagnostics (source + budgets + outcomes) ride
-    // the tool result too — enums and numbers only, never payload bytes.
-    if (successful.length === 0) return compressResult(`[Compression FAILED: all configured external summary candidates failed or exceeded their budget. Nothing compressed; do not retry unchanged configuration — summaries longer than the configured cap are rejected whole, so raise compress.maxSummaryLength or request less via per-range summaryMaxChars.] [${describeExternalSummaryFailure(batch)}]`, "refused", 0);
-    const applied = applyRanges({ ...parsed, ranges: successful }, ctx);
-    // Client call arguments carry only an optional hint, never the generated summary.
-    // In-place refolds retain their old call id in the kernel; keep their anchor too.
-    for (const block of ctx.session.state.blocks) {
-        if (before.get(block.blockId)?.restoredInline && !block.restoredInline) block.compressCallId = newExternalCallId();
-    }
-    if (successful.length < parsed.ranges.length && (applied.blocksCreated ?? 0) > 0) return {
-        ...applied, outcome: "partial", text: `${applied.text}\n[External summary: ${parsed.ranges.length - successful.length} selected range(s) were not compressed.]`,
-    };
-    return applied;
-}
+function toolDefinition(tool: ManifestTool): ToolDefinition {
+    return {
+        name: tool.name,
+        description: tool.description,
+        parameters: tool.inputSchema,
+        output: {
+            schema: { type: "string" },
+            render: (_args, value) => [{ type: "text", text: typeof value === "string" ? value : String(value ?? "") }],
+        },
+        execute: async (args, exec) => {
+            // #983: read the LIVE base — a respawn after a proxy death moves
+            // the origin, and a captured base would keep firing at a dead port.
+            const base = register.base;
+            if (base === undefined) {
+                throw new Error("bili: proxy is down — recovery in progress, retry shortly");
+            }
+            const sid = exec.agent?.session?.id;
+            if (typeof sid !== "string" || sid.length === 0) {
+                throw new Error(`bili tool ${tool.name} requires an owning agent session`);
+            }
+            const out = await forwardTool(base, sid, tool.name, args, exec.signal, true);
+            // #2204: dsh tool results are plain strings — a business failure
+            // throws so the host renders an error, not success text.
+            if (out.failed) throw new Error(out.text);
+            return out.text;
 ```
 
 </details>
 
 #### 缺口
 
-- 未开展同质量对照、来源提示可用性和单位任务费用试验。
-  **影响**：只能提出有边界生产方向，不宣称已改善任务保真。
-  **进一步探讨**：先执行三类固定事实样本的盲答比较，公开失败例与完整资源成本，观察不到差异就不做此新功能。
+- 来源标记的效果未知
+  **影响**：目前只能评价机制与试验设计
+  **进一步探讨**：在三种材料条件做盲评并事先规定误引及成本阈值
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

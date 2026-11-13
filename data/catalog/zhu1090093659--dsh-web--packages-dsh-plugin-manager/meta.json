@@ -1,10 +1,10 @@
 {
     "repository": "zhu1090093659/dsh-web",
     "repository_id": 1331636953,
-    "captured_at": "2026-11-06T06:50:45.128Z",
-    "window_start": "2026-10-07T06:50:45.128Z",
-    "stars": 10117,
-    "pushed_at": "2026-11-06T04:18:14Z",
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 10353,
+    "pushed_at": "2026-11-11T16:22:02Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,51 +15,51 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8596:3A466F:2B64BB:2EFE28:6AED7AA5 and timestamp 2026-11-06 06:58:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F50A:8E45A:1A68A36:5301A99:6AF51C4F and timestamp 2026-11-12 01:54:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85F8:1CBD20:299106:2D2937:6AED7AA6 and timestamp 2026-11-06 06:58:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F566:DF009:673C11:14343A0:6AF51C50 and timestamp 2026-11-12 01:54:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8656:2F5E6E:2A5036:2DE94A:6AED7AA6 and timestamp 2026-11-06 06:58:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F5D8:147F96:2A68EAE:8550CC8:6AF51C51 and timestamp 2026-11-12 01:54:25 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 86D6:38A0C2:2A93A0:2E2CD2:6AED7AA8 and timestamp 2026-11-06 06:58:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F654:CF0A4:7789EE:1777582:6AF51C52 and timestamp 2026-11-12 01:54:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20updated%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 87A8:5C291:2BC97A:2F644E:6AED7AAA and timestamp 2026-11-06 06:58:50 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Azhu1090093659%2Fdsh-web%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B40:15BEEC:1AEF8E0:547B41E:6AF51C53 and timestamp 2026-11-12 01:54:27 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-05T20:18:16.149Z",
+        "captured_at": "2026-11-11T17:47:29.947Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
-        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
-        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
         "latest_error": null
     },
     "npm": {
         "package_name": "@linxin666/dsh-client-ui-plugin-manager",
-        "captured_at": "2026-11-05T17:26:49.018Z",
-        "window_start": "2026-10-06",
-        "window_end": "2026-11-04",
-        "downloads_30d": 94822,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40linxin666%2Fdsh-client-ui-plugin-manager",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 102054,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/%40linxin666%2Fdsh-client-ui-plugin-manager",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-19T04:28:55.777Z",
-            "captured_at": "2026-11-05T17:26:49.018Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
             "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-client-ui-plugin-manager",
             "error": null,
-            "latest_version": "0.4.15",
-            "latest_published_at": "2026-11-04T16:03:21.461Z",
+            "latest_version": "0.4.16",
+            "latest_published_at": "2026-11-07T14:31:50.633Z",
             "latest_error": null
         }
     }

@@ -1,0 +1,66 @@
+{
+    "repository": "WNLUO/dsh-mobile-plugin",
+    "repository_id": 1414092901,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 38,
+    "pushed_at": "2026-11-11T21:52:17Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AWNLUO%2Fdsh-mobile-plugin%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 41AC:114217:A4C4AE:20790C0:6AF51CD2 and timestamp 2026-11-12 01:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AWNLUO%2Fdsh-mobile-plugin%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4202:1D35E8:A9DB47:21840A7:6AF51CD3 and timestamp 2026-11-12 01:56:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWNLUO%2Fdsh-mobile-plugin%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 428C:3DBDBF:B0CE6A:22C8409:6AF51CD4 and timestamp 2026-11-12 01:56:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWNLUO%2Fdsh-mobile-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 42F8:318C3:B070B5:22E381D:6AF51CD5 and timestamp 2026-11-12 01:56:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3AWNLUO%2Fdsh-mobile-plugin%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 435C:3D79F0:AA1E72:217D807:6AF51CD6 and timestamp 2026-11-12 01:56:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-11T07:11:08.089Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-mobile-plugin",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 75541,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-mobile-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-10T15:08:08.744Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
+            "source_url": "https://registry.npmjs.org/dsh-mobile-plugin",
+            "error": null,
+            "latest_version": "0.5.41",
+            "latest_published_at": "2026-11-11T21:51:22.260Z",
+            "latest_error": null
+        }
+    }
+}

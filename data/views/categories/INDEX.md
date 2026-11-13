@@ -8,28 +8,28 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 378 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 381 |
 | [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 54 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 163 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 401 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 164 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 405 |
 | [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 74 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 210 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 213 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 5 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（378）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（381）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [Mole DSH Skill](../../plugins/tw93--mole--plugins-mole/INSIGHT.md) | 在 DSH 中用 Mole CLI 指导磁盘占用查询、清理预览、应用卸载和系统状态检查。 | [![GitHub Star 74,465](https://img.shields.io/static/v1?label=&message=74%2C465&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) |
 | [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) | 将 DeepSeek Harness 的本地 Web、Host 与插件系统整合进桌面窗口，提供工作配置、终端、更新与恢复入口。 | [![GitHub Star 34,996](https://img.shields.io/static/v1?label=&message=34%2C996&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop) |
 | [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md) | 浏览器扩展提供提示词管理，并在受支持的聊天网站提供时间线、文件夹、对话导出和公式复制。 | [![GitHub Star 20,587](https://img.shields.io/static/v1?label=&message=20%2C587&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/voyager-crew/voyager) |
-| [dsh-remote-web-ui](../../plugins/zhu1090093659--dsh-web--packages-dsh-remote-web-ui/INSIGHT.md) | 为已有 DSH 部署提供设备配对、官方 Web 远程代理和可选网络通道；此版本已弃用。 | [![GitHub Star 10,117](https://img.shields.io/static/v1?label=&message=10%2C117&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) |
 | [dsh-wallpaper-engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) | 在 DSH 对话界面显示本地场景、网页和视频壁纸，支持外观预设。 | [![GitHub Star 6,484](https://img.shields.io/static/v1?label=&message=6%2C484&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) |
+| [dsh-pet（白饭）](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) | 在 DSH 中显示随会话活动变化的宠物，支持通知、余额提示和宠物对话。 | [![GitHub Star 6,110](https://img.shields.io/static/v1?label=&message=6%2C110&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) |
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
@@ -45,7 +45,7 @@
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（163）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（164）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（401）](SOFTWARE-DELIVERY.md)
+### [软件交付（405）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（210）](INFRASTRUCTURE.md)
+### [基础设施（213）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
